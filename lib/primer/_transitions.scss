@@ -1,0 +1,14 @@
+// A helper for making basic CSS3 transitions easy to implement
+//
+// Compatability untested
+
+@mixin transition($time: 0.15s, $property: all, $timingFunc: ease-in, $delay: 0) {
+  // Future Proof™
+  // transition: $property $time $timingFunc $delay;
+
+  // Mozilla based browsers
+  -moz-transition: $property $time $timingFunc $delay;
+
+  // WebKit based browsers
+  -webkit-transition: $property $time $timingFunc $delay;
+}
