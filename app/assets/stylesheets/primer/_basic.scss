@@ -35,7 +35,7 @@ $monoFont: Consolas, Menlo, "Liberation Mono", Courier, monospace;
       clear: both;
       visibility: hidden;
   }
-  display:inline-block;
+  display: inline-block;
   display: block;
 }
 
@@ -71,7 +71,7 @@ $monoFont: Consolas, Menlo, "Liberation Mono", Courier, monospace;
   -webkit-font-smoothing: antialiased;
 }
 
-// brower Compatibility for box-sizing
+// Browser compatibility for box-sizing.
 //
 // Compatibility untested.
 @mixin box-sizing($sizing: border-box) {
@@ -80,7 +80,7 @@ $monoFont: Consolas, Menlo, "Liberation Mono", Courier, monospace;
   box-sizing: $sizing;
 }
 
-// brower Compatibility for user-select
+// Browser compatibility for user-select.
 //
 // Compatibility untested.
 @mixin user-select($select: none) {
