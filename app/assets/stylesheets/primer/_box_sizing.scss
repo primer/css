@@ -1,0 +1,8 @@
+// Browser compatibility for box-sizing.
+//
+// Compatibility untested.
+@mixin box-sizing($sizing: border-box) {
+  -webkit-box-sizing: $sizing;
+  -moz-box-sizing: $sizing;
+  box-sizing: $sizing;
+}

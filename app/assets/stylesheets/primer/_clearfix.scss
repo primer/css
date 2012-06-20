@@ -1,0 +1,14 @@
+// A clearfix suitable for modern browsers.
+//
+// Compatibility untested.
+@mixin clearfix{
+  &:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+  }
+  display: inline-block;
+  display: block;
+}
