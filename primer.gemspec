@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/github/primer"
   s.summary  = "The base coat of GitHub"
 
-  s.files = Dir["app/**/*"]
+  s.files = Dir["app/**/*", "lib/**/*"]
 
   s.add_dependency "crema"
   s.add_dependency "sass"
