@@ -139,8 +139,8 @@
 // Styleguide 7.1
 .mini-icon,
 .mega-icon {
+  @extend .icon-bootstrap;
   line-height: 1;
-  @include font-icon-stuff();
   text-decoration: none;
 }
 .mini-icon:before {
