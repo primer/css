@@ -1,6 +1,18 @@
 @import "primer/variables";
 @import "primer/mixins/transition";
+@import "primer/mixins/icon-bootstrap";
 
+@font-face {
+    font-family: 'Octicons Regular';
+    src: url('/fonts/octicons/octicons-regular-webfont.eot');
+    src: url('/fonts/octicons/octicons-regular-webfont.eot#iefix') format('embedded-opentype'),
+         url('/fonts/octicons/octicons-regular-webfont.woff') format('woff'),
+         url('/fonts/octicons/octicons-regular-webfont.ttf') format('truetype'),
+         url('/fonts/octicons/octicons-regular-webfont.svg#newFontRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 // There exists 2 types of icons, ```mini-icon``` and ```mega-icon```. Mini-icons are designed to be shown at 16px - 32px
 // Mega Icons are larger versions of our mini-icons. They are optomized for 32px and bigger.
@@ -139,7 +151,7 @@
 // Styleguide 7.1
 .mini-icon,
 .mega-icon {
-  @extend .icon-bootstrap;
+  @include icon-bootstrap();
   line-height: 1;
   text-decoration: none;
 }
