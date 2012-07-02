@@ -1,7 +1,6 @@
 Gem::Specification.new do |s|
   s.name    = "github-primer"
   s.version = "0.1.0"
-  s.version = "#{s.version}.#{ENV['GEM_VERSION_BUILD'] }" if ENV['GEM_VERSION_BUILD']
 
   s.homepage = "https://github.com/github/primer"
   s.summary  = "The base coat of GitHub"
