@@ -535,34 +535,6 @@ input[type=text] + .minibutton{ margin-left:5px; }
 
 
 
-// For AJAX watching.
-.watch-button-container .watch-button, .watch-button-container.on .unwatch-button {
-  display: inline-block;
-}
-.watch-button-container.on .watch-button, .watch-button-container .unwatch-button {
-  display: none;
-}
-.watch-button-container.loading {
-  opacity: 0.5;
-}
-
-
-// For AJAX following.
-.user-following-container .follow, .user-following-container.on .unfollow {
-  display: inline-block;
-}
-.user-following-container.on .follow, .user-following-container .unfollow {
-  display: none;
-}
-.user-following-container.loading {
-  opacity: 0.5;
-}
-
-.members .user-following-container {
-  float: right;
-}
-
-
 // A button group is a series of buttons laid out next to each other, all part
 // of one visual button, but separated by rules to be separate. It's expected
 // that inside of a .button-group are several .button-grouped that are the
@@ -616,56 +588,6 @@ input[type=text] + .minibutton{ margin-left:5px; }
   }
 }
 
-
-//
-// Do we even use any of these? Will we after a /plans redesign?
-//
-
-button.classy.silver, a.button.classy.silver,
-button.classy.silver:disabled:hover, a.button.classy.disabled.silver:hover{
-  color:#000;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-  @include gradient(#fdfdfd, #9a9a9a);
-  border-bottom-color:#c7c7c7;
-}
-
-button.classy.silver:hover, a.button.classy.silver:hover{
-  color:#000;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-  @include gradient(#fff, #eee);
-  border-bottom-color:#f7f7f7;
-  box-shadow:0 1px 4px rgba(255,255,255,0.3);
-}
-
-button.classy.silver:disabled:hover, a.button.classy.disabled.silver:hover{
-  box-shadow:0 1px 4px rgba(0,0,0,0.3);
-}
-
-button.classy.business-plan, a.button.classy.business-plan{
-  color:#fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  @include gradient(#419b36, #357f2c);
-  border-bottom-color:#3e9533;
-}
-button.classy.business-plan:hover, a.button.classy.business-plan:hover{
-  color:#fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  @include gradient(#1cbe0a, #158f07);
-  border-bottom-color:#18a609;
-}
-
-button.classy.personal-plan, a.button.classy.personal-plan{
-  color:#fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  @include gradient(#4794bc, #3a7999);
-  border-bottom-color:#438bb1;
-}
-button.classy.oauth, a.button.classy.oauth, .login_form form .submit_btn input {
-  color:#fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  @include gradient(#4794bc, #3a7999);
-  border-bottom-color:#438bb1;
-}
 
 .social-count {
   border: 1px solid #D4D4D4;
