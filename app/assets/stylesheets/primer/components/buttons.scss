@@ -1,0 +1,715 @@
+@import "primer/mixins/user-select";
+@import "primer/mixins/icon-bootstrap";
+@import "primer/mixins/gradient";
+@import "primer/variables";
+
+// Classy buttons are big clickable buttons, great for form actions and
+// primary page actions. This is used extensively around the site.
+//
+// :hover             - Buttons love hover states.
+// :disabled          - For when you shouldn't be able to click on it.
+// .disabled          - Same as the disabled pseudo-class.
+// .primary           - For the main form action, use whenever creating
+//                      something.
+//                      like posting a new issue or comment.
+// .primary:hover     - Hover state fo primary buttons.
+// .mousedown         - A brief moment of polish when the button is pressed.
+// .primary.mousedown - Even primary buttons have a down state.
+// .danger            - This button is going to do something potentially bad
+//                      or destructive.
+// .danger:hover      - Hover state for danger buttons.
+// .danger.mousedown  - Depressed danger button.
+// .danger:disabled   - Disabled danger button.
+//
+// Styleguide 1.1
+button.classy, a.button.classy,
+button.classy:disabled:hover, a.button.classy.disabled:hover {
+  display: inline-block;
+  padding: 8px 15px;
+  line-height: normal;
+  position: relative;
+
+  font-family: $bodyFont;
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+  text-shadow: 0 1px rgba(255,255,255,0.9);
+
+  @include gradient(#f5f5f5, #e5e5e5);
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-bottom-color: #bbb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.10);
+
+  cursor:pointer;
+  @include user-select(none);
+
+  &.primary {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+
+    border-color: #74bb5a;
+    border-bottom-color: #509338;
+    @include gradient(#8add6d, #60b044);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+
+    &:hover {
+      @include gradient(darken(#8add6d, 10%), darken(#60b044, 10%));
+      border-color: #4a993e;
+      color: #fff;
+    }
+    &.mousedown {
+      border-bottom-color: darken(#8add6d, 10%);
+      @include gradient(darken(#60b044, 10%), darken(#8add6d, 10%));
+    }
+  }
+
+  &.danger {
+    color: #990000;
+
+    &:hover {
+      color: #fff;
+      text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.3);
+      border-bottom-color: #cd504a;
+      @include gradient(#dc5f59, #b33630);
+    }
+
+    &:disabled, &.disabled {
+      color: #990000;
+      text-shadow: 0 1px 0 #fff;
+      border-bottom:1px solid #ebebeb;
+      @include gradient(#ffffff, #e1e1e1);
+    }
+
+    &.mousedown {
+      border-bottom-color: #dc5f59;
+      @include gradient(#b33630, #dc5f59);
+    }
+  }
+
+  &:hover {
+    color: #337797;
+    text-decoration: none;
+    @include gradient(#f0f7fa, #d8eaf2);
+    border-color: #cbe3ee;
+    border-bottom-color: #97c7dd;
+  }
+
+  &:disabled, &.disabled {
+    @extend button.classy;
+    opacity: 0.5;
+  }
+
+  &.mousedown {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    border-color: #2a65a0;
+    border-bottom-color: #0770a0;
+    @include gradient(#0770a0, #0ca6dd);
+  }
+}
+
+// Gets rid of extra space in a weird limbo space of buttons for Firefox
+button.classy::-moz-focus-inner { margin: -1px -3px; }
+
+// IE Hax?
+a.button.classy { display: inline-block; }
+
+/// Position images inside buttons correctly
+button.classy img, a.button.classy img {
+  position: relative;
+  top: -1px;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+
+
+// Minibuttons are our general action-style buttons. Generally they link to a
+// new page, popup, or activate some piece of the page. They are usually not
+// used to submit forms. Also see the `minibutton` rails helper.
+//
+// :hover            - The hover state.
+// :disabled         - A disabled button.
+// .disabled         - Same as pseudo class.
+// .mousedown        - A brief moment of polish when the button is pressed.
+// .selected         - A permenantly depressed minibutton, useful for toggles.
+// .danger           - This button might do something bad.
+// .danger:hover     - This button might do something bad.
+// .danger.mousedown - A depressed danger button.
+// .green            - A nice green button, for places like like the merge
+// .blue             - A nice blue button, for places like merge button confirm box.
+//
+// Styleguide 1.2
+.minibutton{
+  position: relative;
+  display: inline-block;
+  padding: 0 10px 0 10px;
+
+  color: #333;
+  font-family: $bodyFont;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 24px;
+  text-shadow: 0 1px 0 #fff;
+  white-space: nowrap;
+
+  border: 1px solid #d4d4d4;
+  border-bottom-color: #bcbcbc;
+  border-radius: 3px;
+
+  @include gradient(#fafafa, #eaeaea);
+
+
+  cursor: pointer;
+  @include user-select(none);
+
+  i {
+    font-weight:500;
+    font-style:normal;
+    opacity:0.6;
+  }
+
+  &.danger {
+    color: #990000;
+
+    &:hover {
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+      border-color: #d4d4d4;
+      @include gradient(#dc5f59, #b33630);
+    }
+
+    &.mousedown {
+      border-color: #a0302a;
+      border-bottom-color :#c65651;
+      @include gradient(#b33630, #dc5f59);
+    }
+  }
+
+  &.green {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+    @include gradient(#36b825, #28881b);
+    border-color: #4a993e;
+  }
+
+  &.blue {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+    border-color: #275666;
+    @include gradient(#448da6, #32687b);
+  }
+
+  &.mousedown {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    border-color: #2a65a0;
+    border-bottom-color: #518cc6;
+    @include gradient(#3072b3, #599bdc);
+  }
+
+  &.selected {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+    border-color: #686868;
+    @include gradient(#767676, #9e9e9e);
+  }
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    border-color: #518cc6;
+    border-bottom-color: #2a65a0;
+    @include gradient(#599bdc, #3072b3);
+
+    &.btn-windows:before {
+      background-position: -17px 3px;
+    }
+  }
+
+  &:disabled, &.disabled {
+    opacity:0.5;
+    cursor:default;
+  }
+}
+
+// Gets rid of extra space in a weird limbo space of buttons for Firefox
+button.minibutton::-moz-focus-inner { margin: -1px -3px;}
+
+// I have no idea.
+input[type=text] + .minibutton{ margin-left:5px; }
+
+// Minibuttons with an icon.
+//
+// .btn-admin         - Admin.
+// .btn-watch         - Watch.
+// .btn-download      - Download.
+// .btn-follow        - Follow.
+// .btn-unfollow      - Unfollow.
+// .btn-pull-request  - Pull Request.
+// .btn-fork          - Fork.
+// .btn-leave         - Leave.
+// .btn-compare       - To the compare view!
+// .btn-reply         - Reply.
+// .btn-back          - Back.
+// .btn-forward       - Forward.
+// .btn-windows       - Microsoft.
+// .btn-mac           - Mac.
+//
+// Styleguide 1.2.1
+.minibutton {
+  &.btn-admin:before,
+  &.btn-follow:before,
+  &.btn-unfollow:before,
+  &.btn-watch:before,
+  &.btn-unwatch:before,
+  &.btn-download:before,
+  &.btn-pull-request:before,
+  &.btn-fork:before,
+  &.btn-leave:before,
+  &.btn-compare:before,
+  &.btn-reply:before,
+  &.btn-back:before,
+  &.btn-forward:before,
+  &.btn-windows:before,
+  &.btn-mac:before,
+  &.btn-exclamation:before {
+    float: left;
+    margin-right: 6px;
+    @include icon-bootstrap();
+    font-size: 16px;
+    line-height: 24px;
+    width: 16px;
+  }
+  &.btn-forward:before {
+    float: right;
+    margin-left: 5px;
+    margin-right: 0;
+  }
+  &.btn-windows:before {
+    content: "";
+    background: transparent url("/images/icons/windows-sprite.png") 0 3px no-repeat;
+    height: 23px;
+    width: 16px;
+  }
+
+  &.btn-admin:before { content: "\f044"; }
+  &.btn-follow:before { content: "\f01c"; }
+  &.btn-unfollow:before { content: "\f01b"; }
+  &.btn-watch:before { content: "\f01d"; }
+  &.btn-unwatch:before { content: "\f01e"; }
+  &.btn-download:before { content: "\f00b"; }
+  &.btn-pull-request:before { content: "\f022"; }
+  &.btn-fork:before { content: "\f020"; }
+  &.btn-leave:before { content: "\f032"; }
+  &.btn-compare:before { content: "\f04d"; }
+  &.btn-reply:before { content: "\f051"; }
+  &.btn-back:before { content: "\f040"; }
+  &.btn-forward:before { content: "\f03e"; }
+  &.btn-mac:before { content: "\f036"; }
+  &.btn-exclamation:before { content: "\f02d"; }
+}
+
+// Minibuttons used to switch to something. Like an account dropdown, or
+// assignee selector.
+//
+// .with-image - Assumed to have an avatar-like image embedded in the left.
+// :hover - The hover state.
+// .selected - A sticky selected state.
+// .with-image:hover - With image, hover handed.
+// .with-image.selected - With image, selected.
+// .btn-tag - Tag switcher
+// .btn-branch - Branch switcher
+//
+// Styleguide 1.2.2
+.minibutton.switcher {
+  padding: 0;
+  height: 24px;
+  line-height: 1;
+
+  &>span {
+    display: block;
+    position: relative;
+    padding: 0 26px 0 5px;
+    line-height: 24px;
+    height: 24px;
+
+    // Dropdown arrow.
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      border: 3px solid #000;
+      border-color: #000 transparent transparent;
+      top: 10px;
+      right: 7px;
+      width: 0px;
+      height: 0px;
+    }
+
+    // Separator line between content & arrow.
+    &:after {
+      content: "";
+      display:block;
+      position: absolute;
+      border-left: 1px solid #F9F9F9;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 18px;
+      box-shadow: #e4e4e4 -1px 0 0;
+    }
+  }
+
+  &.btn-branch,
+  &.btn-tag {
+    & > span {
+      padding-left: 25px;
+    }
+  }
+  // Separator line on hover
+  &:hover>span:after {
+    border-left: 1px solid #6A9FD3;
+    box-shadow: #3C74AB -1px 0 0;
+  }
+
+  &.with-image {
+    height: 30px;
+
+    &>span {
+      display: block;
+      height: 30px;
+      line-height: 30px;
+
+      &:before {
+        top: 14px;
+      }
+    }
+
+    img{
+      position: relative;
+      top: -1px;
+      margin-right: 2px;
+      vertical-align: middle;
+      border-radius: 2px;
+    }
+
+    &.selected span:before {
+      top: 14px;
+    }
+  }
+}
+.context-menu-container.active .minibutton {
+  &.btn-assignee, &.btn-label, &.btn-milestone {
+    @extend .minibutton.selected;
+  }
+}
+.context-menu-container.active .minibutton.switcher {
+  @extend .minibutton.selected;
+}
+.minibutton.switcher.selected,
+.context-menu-container.active .minibutton.switcher {
+  // Dropdown arrow.
+  &>span:before {
+    top: 10px;
+    border-color: #fff transparent transparent;
+  }
+
+  // Separator
+  &>span:after {
+    border-left: 1px solid #a4a4a4;
+    box-shadow: #787878 -1px 0 0;
+  }
+}
+.minibutton.switcher:hover>span:before {
+  border-color: #fff transparent transparent;
+}
+
+.btn-branch:before,
+.btn-tag:before
+{
+  position: absolute;
+  left: 5px;
+  width: 16px;
+  height: 24px;
+  padding: 0 4px 0 0;
+  @include icon-bootstrap();
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.btn-branch:before { content: "\f020"; }
+.btn-tag:before { content: "\f015"; }
+
+// A simple little button to expand a bigger pane.
+//
+// :hover - The hover style.
+// .selected - Depressed state when the pane is open.
+//
+// Styleguide 1.2.3
+.context-button {
+  position: relative;
+  width: 32px;
+  height: 22px;
+  padding: 0;
+  @include icon-bootstrap();
+  line-height: 23px;
+
+  @include user-select(none);
+
+  &:before {
+    display: block;
+    padding :0;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    content: "\f02f";
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  &:after {
+    content: "";
+    display:block;
+    position: absolute;
+    border: 3px solid #000;
+    border-color: #000 transparent transparent;
+    top: 10px;
+    right: 5px;
+    width: 0px;
+    height: 0px;
+  }
+
+  &:hover:after,
+  &.selected:after {
+    border-color: #fff transparent transparent;
+  }
+}
+// For context menu behavior minibutton selected state
+.context-menu-container.active .context-button {
+  @extend .minibutton.selected;
+}
+
+// A simple button to indicate and expand hidden text.
+//
+// .inline - button will display inline rather than block
+//
+// Styleguide 1.2.4
+.hidden-text-expander {
+  display:block;
+
+  &.inline {
+    display: inline-block;
+    line-height: 0;
+    margin-left: 5px;
+    position: relative;
+    top: -1px;
+  }
+
+  a {
+    background: #ddd;
+    color: #555;
+    padding: 0 5px;
+    line-height: 6px;
+    height: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 1px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #ccc;
+      text-decoration: none;
+    }
+
+    &:active {
+      background-color: #4183C4;
+      color: #fff;
+    }
+  }
+}
+
+
+
+// For AJAX watching.
+.watch-button-container .watch-button, .watch-button-container.on .unwatch-button {
+  display: inline-block;
+}
+.watch-button-container.on .watch-button, .watch-button-container .unwatch-button {
+  display: none;
+}
+.watch-button-container.loading {
+  opacity: 0.5;
+}
+
+
+// For AJAX following.
+.user-following-container .follow, .user-following-container.on .unfollow {
+  display: inline-block;
+}
+.user-following-container.on .follow, .user-following-container .unfollow {
+  display: none;
+}
+.user-following-container.loading {
+  opacity: 0.5;
+}
+
+.members .user-following-container {
+  float: right;
+}
+
+
+// A button group is a series of buttons laid out next to each other, all part
+// of one visual button, but separated by rules to be separate. It's expected
+// that inside of a .button-group are several .button-grouped that are the
+// actual buttons.
+//
+// No styleguide reference.
+.button-group {
+  display: inline-block;
+  overflow: hidden;
+
+  border: 1px solid #d4d4d4;
+  border-radius: 3px;
+  border-bottom-color: #bcbcbc;
+  @include gradient(#f5f5f5, #e5e5e5);
+
+  li {
+    margin: 0 !important;
+
+    &:first-child .grouped-button {
+      border-left: none;
+      border-bottom-left-radius: 2px;
+      border-top-left-radius: 2px;
+    }
+    &:last-child .grouped-button {
+      border-right: none;
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+  }
+
+  .grouped-button {
+    float: left;
+
+    background: none;
+    border-bottom: none;
+    border-top: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0;
+
+    cursor: pointer;
+
+    &:hover {
+      @extend .minibutton:hover;
+    }
+  }
+
+  #files .file .meta &.actions {
+    height: auto;
+    margin-top: 4px;
+  }
+}
+
+
+//
+// Do we even use any of these? Will we after a /plans redesign?
+//
+
+button.classy.silver, a.button.classy.silver,
+button.classy.silver:disabled:hover, a.button.classy.disabled.silver:hover{
+  color:#000;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  @include gradient(#fdfdfd, #9a9a9a);
+  border-bottom-color:#c7c7c7;
+}
+
+button.classy.silver:hover, a.button.classy.silver:hover{
+  color:#000;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  @include gradient(#fff, #eee);
+  border-bottom-color:#f7f7f7;
+  box-shadow:0 1px 4px rgba(255,255,255,0.3);
+}
+
+button.classy.silver:disabled:hover, a.button.classy.disabled.silver:hover{
+  box-shadow:0 1px 4px rgba(0,0,0,0.3);
+}
+
+button.classy.business-plan, a.button.classy.business-plan{
+  color:#fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  @include gradient(#419b36, #357f2c);
+  border-bottom-color:#3e9533;
+}
+button.classy.business-plan:hover, a.button.classy.business-plan:hover{
+  color:#fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  @include gradient(#1cbe0a, #158f07);
+  border-bottom-color:#18a609;
+}
+
+button.classy.personal-plan, a.button.classy.personal-plan{
+  color:#fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  @include gradient(#4794bc, #3a7999);
+  border-bottom-color:#438bb1;
+}
+button.classy.oauth, a.button.classy.oauth, .login_form form .submit_btn input {
+  color:#fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  @include gradient(#4794bc, #3a7999);
+  border-bottom-color:#438bb1;
+}
+
+.social-count {
+  border: 1px solid #D4D4D4;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 6px 7px 5px;
+  line-height: 20px;
+  margin-left: 8px;
+  border-radius: 3px;
+  color: $bodyColor;
+  background-color: #fafafa;
+  position: relative;
+
+  &:hover {
+    color: $linkBlue;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 6px solid #D4D4D4;
+    border-color: transparent #D4D4D4 transparent transparent;
+    position: absolute;
+    right: 100%;
+    margin-right: 0;
+    top: 50%;
+    margin-top: -6px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 6px solid #fafafa;
+    border-color: transparent #fafafa transparent transparent;
+    position: absolute;
+    right: 100%;
+    margin-right: -1px;
+    top: 50%;
+    margin-top: -6px;
+  }
+}
