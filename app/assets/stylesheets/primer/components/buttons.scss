@@ -62,6 +62,15 @@ button.classy:disabled:hover, a.button.classy.disabled:hover {
       border-bottom-color: darken(#8add6d, 10%);
       @include gradient(darken(#60b044, 10%), darken(#8add6d, 10%));
     }
+
+    &:disabled, &.disabled {
+      &, &:hover {
+        color: #fff;
+        border-color: #74bb5a;
+        border-bottom-color: #509338;
+        @include gradient(#8add6d, #60b044);
+      }
+    }
   }
 
   &.danger {
@@ -75,10 +84,11 @@ button.classy:disabled:hover, a.button.classy.disabled:hover {
     }
 
     &:disabled, &.disabled {
-      color: #990000;
-      text-shadow: 0 1px 0 #fff;
-      border-bottom:1px solid #ebebeb;
-      @include gradient(#ffffff, #e1e1e1);
+      &, &:hover {
+        color: #990000;
+        text-shadow: 0 1px 0 #fff;
+        @include gradient(#ffffff, #e1e1e1);
+      }
     }
 
     &.mousedown {
@@ -98,6 +108,13 @@ button.classy:disabled:hover, a.button.classy.disabled:hover {
   &:disabled, &.disabled {
     @extend button.classy;
     opacity: 0.5;
+    &:hover {
+      color: #666;
+      @include gradient(#f5f5f5, #e5e5e5);
+      border: 1px solid #ddd;
+      border-bottom-color: #bbb;
+      cursor: default;
+    }
   }
 
   &.mousedown {
