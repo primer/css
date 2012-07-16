@@ -14,8 +14,8 @@
 }
 
 
-// There exists 2 types of icons, ```mini-icon``` and ```mega-icon```. Mini-icons are designed to be shown at 16px - 32px
-// Mega Icons are larger versions of our mini-icons. They are optomized for 32px and bigger.
+// Mini-icons are designed to be shown at 16px. Do not use
+// them at another size.
 //
 // .mini-icon-private-repo                         - UTF+f000
 // .mini-icon-public-repo                          - UTF+f001
@@ -582,8 +582,8 @@
   content: "\f080";
 }
 
-// There exists 2 types of icons, ```mini-icon``` and ```mega-icon```. Mini-icons are designed to be shown at 16px - 32px
-// Mega Icons are larger versions of our mini-icons. They are optomized for 32px and bigger.
+// Mega Icons are larger versions of our mini-icons. They are
+// optomized for 32px and bigger.
 //
 // .mega-icon-private-repo                         - UTF+f200
 // .mega-icon-public-repo                          - UTF+f201
