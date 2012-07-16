@@ -206,14 +206,31 @@
   table {
     padding: 0;
 
-    th.right,
-    td.right {
-      text-align: right;
+    th {
+      font-weight: bold;
     }
 
-    th.center,
-    td.center {
-      text-align: center;
+    th, td {
+      border: 1px solid #ccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px;
+
+      &.right {
+        text-align: right;
+      }
+
+      &.center {
+        text-align: center;
+      }
+
+      & > :first-child {
+        margin-top: 0px;
+      }
+
+      & > :last-child {
+        margin-bottom: 0px;
+      }
     }
 
     tr {
@@ -224,25 +241,6 @@
 
       &:nth-child(2n) {
         background-color: #f8f8f8;
-      }
-
-      th {
-        font-weight: bold;
-      }
-
-      th, td {
-        border: 1px solid #ccc;
-        text-align: left;
-        margin: 0;
-        padding: 6px 13px;
-
-        & > :first-child {
-          margin-top: 0px;
-        }
-
-        & > :last-child {
-          margin-bottom: 0px;
-        }
       }
     }
   }
