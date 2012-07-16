@@ -204,7 +204,6 @@
 
   // Tables
   table {
-    padding: 0;
 
     th {
       font-weight: bold;
@@ -212,32 +211,12 @@
 
     th, td {
       border: 1px solid #ccc;
-      text-align: left;
-      margin: 0;
       padding: 6px 13px;
-
-      &.right {
-        text-align: right;
-      }
-
-      &.center {
-        text-align: center;
-      }
-
-      & > :first-child {
-        margin-top: 0px;
-      }
-
-      & > :last-child {
-        margin-bottom: 0px;
-      }
     }
 
     tr {
       border-top: 1px solid #ccc;
       background-color: #fff;
-      margin: 0;
-      padding: 0;
 
       &:nth-child(2n) {
         background-color: #f8f8f8;
