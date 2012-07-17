@@ -22,3 +22,14 @@ $bodySize: 13px !default;
 //
 // Styleguide 3.1
 $monoFont: Consolas, "Liberation Mono", Courier, monospace !default;
+
+// z-index variables
+//
+// $minorZ        - for use with small tweaks, like positioning elements
+// $menuZ         - for use with Menus, Dropdowns, popups
+// $modalZ        - for use with fullscreen absolute top elements
+//
+// Sytleguide 3.2
+$minorZ: 2;
+$menuZ: 5;
+$modalZ: 10;
