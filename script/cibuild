@@ -12,4 +12,4 @@ PATH="$(pwd)/bin:$(pwd)/script:/usr/share/rbenv/shims:$PATH"
 git log -n 1 || true
 echo
 
-rake test
+bundle exec rake test
