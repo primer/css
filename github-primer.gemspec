@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.files = Dir["app/**/*", "lib/**/*"]
 
   s.add_dependency "coffee-script"
+  s.add_dependency "sass"
   s.add_dependency "sprockets"
   s.add_development_dependency "rake"
 
