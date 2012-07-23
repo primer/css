@@ -13,7 +13,7 @@ $bodyFont: Helvetica, arial, freesans, clean, sans-serif !default;
 // The base body size
 $bodySize: 13px !default;
 
-// This is the font stack we use to display code.
+// This is the font stack we use to display monospace.
 //
 // Consolas                     - Windows, Mac
 // "Liberation Mono"            - Linux
@@ -22,6 +22,16 @@ $bodySize: 13px !default;
 //
 // Styleguide 3.1
 $monoFont: Consolas, "Liberation Mono", Courier, monospace !default;
+
+// This is the font stack we use to display code.
+//
+// Consolas                     - Windows, Mac
+// "Liberation Mono"            - Linux
+// Courier                      - Windows, Mac, Linux
+// monospace                    - Everywhere
+//
+// Styleguide 3.3
+$codeFont: Consolas, "Liberation Mono", Courier, monospace !default;
 
 // z-index variables
 //
