@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name    = "github-primer"
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.homepage = "https://github.com/github/primer"
   s.summary  = "The base coat of GitHub"
