@@ -290,7 +290,7 @@ input[type=text] + .minibutton{ margin-left:5px; }
   }
   &.btn-windows:before {
     content: "";
-    background: transparent image-url("icons/windows-sprite.png") 0 3px no-repeat;
+    background: transparent image-url("primer/buttons/windows-sprite.png") 0 3px no-repeat;
     height: 23px;
     width: 16px;
   }
