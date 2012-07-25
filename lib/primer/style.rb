@@ -52,9 +52,9 @@ module Primer
     # Check if any CSS rules use js- classes or ids.
     def assert_no_js_rules(node)
       return unless node.is_a?(Sass::Tree::RuleNode)
+      fileref = "#{node.filename}:#{node.line} - " if node.filename
       assert_no_match(/(\#|\.)js-/,
-        node.rule.first, "#{node.filename}:#{node.line}" +
-        " - CSS selectors can't start with js-. See http://is.gd/eFcrSg")
+        node.rule.first, "#{fileref}CSS selectors can't start with js-. See http://is.gd/eFcrSg")
     end
   end
 end
