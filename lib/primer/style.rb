@@ -53,7 +53,8 @@ module Primer
     def assert_no_js_rules(node)
       return unless node.is_a?(Sass::Tree::RuleNode)
       assert_no_match(/(\#|\.)js-/,
-        node.rule.first, "#{node.filename}:#{node.line}")
+        node.rule.first, "#{node.filename}:#{node.line}" +
+        " - CSS selectors can't start with js-. See http://is.gd/eFcrSg")
     end
   end
 end
