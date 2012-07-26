@@ -163,20 +163,21 @@ button.classy img, a.button.classy img {
   display: inline-block;
   padding: 0 10px 0 10px;
 
-  color: #333;
   font-family: $bodyFont;
   font-size: 13px;
   font-weight: bold;
   line-height: 24px;
-  text-shadow: 0 1px 0 #fff;
   white-space: nowrap;
 
-  border: 1px solid #d4d4d4;
-  border-bottom-color: #bcbcbc;
   border-radius: 3px;
 
-  @include gradient(#fafafa, #eaeaea);
-
+  &, &.disabled:hover, &:disabled:hover {
+    color: #333;
+    text-shadow: 0 1px 0 #fff;
+    border: 1px solid #d4d4d4;
+    border-bottom-color: #bcbcbc;
+    @include gradient(#fafafa, #eaeaea);
+  }
 
   cursor: pointer;
   @include user-select(none);
@@ -188,7 +189,14 @@ button.classy img, a.button.classy img {
   }
 
   &.danger {
-    color: #990000;
+
+    &, &.disabled:hover, &:disabled:hover {
+      color: #990000;
+      text-shadow: 0 1px 0 #fff;
+      border: 1px solid #d4d4d4;
+      border-bottom-color: #bcbcbc;
+      @include gradient(#fafafa, #eaeaea);
+    }
 
     &:hover {
       color: #fff;
@@ -202,16 +210,17 @@ button.classy img, a.button.classy img {
       border-bottom-color :#c65651;
       @include gradient(#b33630, #dc5f59);
     }
+
   }
 
-  &.green {
+  &.green, &.green.disabled:hover, &.green:disabled:hover {
     color: #fff;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
     @include gradient(#36b825, #28881b);
     border-color: #4a993e;
   }
 
-  &.blue {
+  &.blue, &.blue.disabled:hover, &.blue:disabled:hover {
     color: #fff;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
     border-color: #275666;
