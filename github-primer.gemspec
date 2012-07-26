@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name    = "github-primer"
-  s.version = "0.1.0"
+  s.version = "0.1.2"
 
   s.homepage = "https://github.com/github/primer"
   s.summary  = "The base coat of GitHub"
@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.files = Dir["app/**/*", "lib/**/*"]
 
   s.add_dependency "coffee-script"
+  s.add_dependency "sass"
   s.add_dependency "sprockets"
   s.add_development_dependency "rake"
 

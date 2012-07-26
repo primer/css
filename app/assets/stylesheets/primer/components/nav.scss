@@ -1,0 +1,131 @@
+@import "primer/mixins/gradient";
+
+// A menu on the side of a page, defaults to left side. e.g. github.com/about
+//
+// .menu-side - Container for the side menu
+// .menu      - Menu ul element
+//
+// Example:
+// <div class="menu-container">
+//   <ul class="menu">
+//     <li><a href="#user">Profile</a></li>
+//   </ul>
+// </div>
+//
+// Styleguide reference 7.1
+
+.menu-container {
+  float: left;
+  width: 200px;
+  padding: 3px;
+  background: #efefef;
+  border-radius: 2px;
+}
+
+.menu {
+  background: #fafafb;
+  border-radius: 2px;
+  border: 1px solid #d8d8d8;
+  list-style: none;
+
+  // Get rid of underlines on hover
+  a:hover { text-decoration: none; }
+
+  li {
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #fff;
+
+    // Hide bottom border on last li
+    &:last-child { border-bottom: none; }
+
+    // Hide top border on first li
+    &:first-child { border-top: none; }
+  }
+
+  a {
+    display: block;
+    padding: 8px 10px;
+    text-shadow: 0 1px 0 #fff;
+
+    &:hover {
+      background: #fdfdfe;
+    }
+
+    &.selected {
+      background: #fff;
+      border-left: 2px solid #d26911;
+      font-weight: bold;
+      color: #222;
+      cursor: default;
+      box-shadow: inset 0 0px 1px rgba(0,0,0, 0.1);
+    }
+  }
+
+  .menu-warning {
+    color: #D26911;
+    float: right;
+  }
+}
+
+// Turn a menu into an accordion menu
+//
+// .accordion     - added to <ul.menu> to provide correct styles and JS hooks
+// li.section     - Container for one section of the accordion nav
+// a.section-head - The title of a section, e.g. 'github' in /settings accordion
+// .section-nav   - The navigation for sections that slides up down when
+//                  a.section-head is clicked
+//
+// Example
+// <div class="menu-container">
+//   <ul class="menu accordion">
+//     <li class="section">
+//       <a href="/settings/github" class="section-head">GitHub</a>
+//       <ul class="section-nav">
+//         <li><a href="/sshkeys">SSH Keys</a></li>
+//       </ul>
+//     </li>
+//   </ul>
+// </div>
+//
+// Styleguide reference 7.2
+
+.accordion {
+  background: #fafafb;
+  list-style: none;
+
+  .section {
+    border-top: 1px solid #d8d8d8;
+    border-top: none;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    a.section-head {
+      @include gradient(#fafafa, #e0e0e0);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+      display: block;
+      padding: 10px 10px;
+      border-bottom: 1px solid #ccc;
+      color: #222;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+
+      img {
+        float: left;
+        margin: 0 10px 0 0;
+        border-radius: 2px;
+      }
+    }
+
+    // The nested ul is the actual navigation for the section
+    .section-nav {
+      list-style: none;
+      display: none;
+
+      &.expanded { display: block; }
+    }
+  }
+}

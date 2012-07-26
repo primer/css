@@ -14,139 +14,145 @@
 }
 
 
-// There exists 2 types of icons, ```mini-icon``` and ```mega-icon```. Mini-icons are designed to be shown at 16px - 32px
-// Mega Icons are larger versions of our mini-icons. They are optomized for 32px and bigger.
+// Mini-icons are designed to be shown at 16px. Do not use
+// them at another size.
 //
-// .mini-icon-private-repo                         - UTF+f000, UTF+f200
-// .mini-icon-public-repo                          - UTF+f001, UTF+f201
-// .mini-icon-repo-forked                          - UTF+f002, UTF+f202
-// .mini-icon-create                               - UTF+f003, UTF+f203
-// .mini-icon-delete                               - UTF+f004, UTF+f204
-// .mini-icon-push                                 - UTF+f005, UTF+f205
-// .mini-icon-pull                                 - UTF+f006, UTF+f206
-// .mini-icon-wiki                                 - UTF+f007, UTF+f207
-// .mini-icon-readme                               - UTF+f007, UTF+f207
-// .mini-icon-octocat                              - UTF+f008, UTF+f208
-// .mini-icon-site-message                         - UTF+f009, UTF+f209
-// .mini-icon-blacktocat                           - UTF+f009, UTF+f209
-// .mini-icon-invertocat                           - UTF+f00a, UTF+f20a
-// .mini-icon-download                             - UTF+f00b, UTF+f20b
-// .mini-icon-upload                               - UTF+f00c, UTF+f20c
-// .mini-icon-keyboard                             - UTF+f00d, UTF+f20d
-// .mini-icon-gist                                 - UTF+f00e, UTF+f20e
-// .mini-icon-gist-private                         - UTF+f00f, UTF+f20f
-// .mini-icon-code-file                            - UTF+f010, UTF+f210
-// .mini-icon-download-unknown                     - UTF+f010, UTF+f210
-// .mini-icon-text-file                            - UTF+f011, UTF+f211
-// .mini-icon-download-text                        - UTF+f011, UTF+f211
-// .mini-icon-download-media                       - UTF+f012, UTF+f212
-// .mini-icon-download-zip                         - UTF+f013, UTF+f213
-// .mini-icon-download-pdf                         - UTF+f014, UTF+f214
-// .mini-icon-download-tag                         - UTF+f015, UTF+f215
-// .mini-icon-directory                            - UTF+f016, UTF+f216
-// .mini-icon-submodule                            - UTF+f017, UTF+f217
-// .mini-icon-person                               - UTF+f018, UTF+f218
-// .mini-icon-team                                 - UTF+f019, UTF+f219
-// .mini-icon-member-added                         - UTF+f01a, UTF+f21a
-// .mini-icon-member-removed                       - UTF+f01b, UTF+f21b
-// .mini-icon-follow                               - UTF+f01c, UTF+f21c
-// .mini-icon-watching                             - UTF+f01d, UTF+f21d
-// .mini-icon-unwatch                              - UTF+f01e, UTF+f21e
-// .mini-icon-commit                               - UTF+f01f, UTF+f21f
-// .mini-icon-public-fork                          - UTF+f020, UTF+f220
-// .mini-icon-fork                                 - UTF+f020, UTF+f220
-// .mini-icon-private-fork                         - UTF+f021, UTF+f221
-// .mini-icon-pull-request                         - UTF+f022, UTF+f222
-// .mini-icon-merge                                - UTF+f023, UTF+f223
-// .mini-icon-public-mirror                        - UTF+f024, UTF+f224
-// .mini-icon-private-mirror                       - UTF+f025, UTF+f225
-// .mini-icon-issue-opened                         - UTF+f026, UTF+f226
-// .mini-icon-issue-reopened                       - UTF+f027, UTF+f227
-// .mini-icon-issue-closed                         - UTF+f028, UTF+f228
-// .mini-icon-issue-comment                        - UTF+f029, UTF+f229
-// .mini-icon-star                                 - UTF+f02a, UTF+f22a
-// .mini-icon-commit-comment                       - UTF+f02b, UTF+f22b
-// .mini-icon-help                                 - UTF+f02c, UTF+f22c
-// .mini-icon-exclamation                          - UTF+f02d, UTF+f22d
-// .mini-icon-search-input                         - UTF+f02e, UTF+f22e
-// .mini-icon-advanced-search                      - UTF+f02f, UTF+f22f
-// .mini-icon-notifications                        - UTF+f030, UTF+f230
-// .mini-icon-account-settings                     - UTF+f031, UTF+f231
-// .mini-icon-logout                               - UTF+f032, UTF+f232
-// .mini-icon-admin-tools                          - UTF+f033, UTF+f233
-// .mini-icon-feed                                 - UTF+f034, UTF+f234
-// .mini-icon-apple                                - UTF+f036, UTF+f236
-// .mini-icon-windows                              - UTF+f037, UTF+f237
-// .mini-icon-ios                                  - UTF+f038, UTF+f238
-// .mini-icon-android                              - UTF+f039, UTF+f239
-// .mini-icon-confirm                              - UTF+f03a, UTF+f23a
-// .mini-icon-unread-note                          - UTF+f03b, UTF+f23b
-// .mini-icon-read-note                            - UTF+f03c, UTF+f23c
-// .mini-icon-arr-up                               - UTF+f03d, UTF+f23d
-// .mini-icon-arr-right                            - UTF+f03e, UTF+f23e
-// .mini-icon-arr-down                             - UTF+f03f, UTF+f23f
-// .mini-icon-arr-left                             - UTF+f040, UTF+f240
-// .mini-icon-pin                                  - UTF+f041, UTF+f241
-// .mini-icon-gift                                 - UTF+f042, UTF+f242
-// .mini-icon-graph                                - UTF+f043, UTF+f243
-// .mini-icon-wrench                               - UTF+f044, UTF+f244
-// .mini-icon-credit-card                          - UTF+f045, UTF+f245
-// .mini-icon-time                                 - UTF+f046, UTF+f246
-// .mini-icon-ruby                                 - UTF+f047, UTF+f247
-// .mini-icon-podcast                              - UTF+f048, UTF+f248
-// .mini-icon-key                                  - UTF+f049, UTF+f249
-// .mini-icon-force-push                           - UTF+f04a, UTF+f24a
-// .mini-icon-sync                                 - UTF+f04b, UTF+f24b
-// .mini-icon-clone                                - UTF+f04c, UTF+f24c
-// .mini-icon-diff                                 - UTF+f04d, UTF+f24d
-// .mini-icon-watchers                             - UTF+f04e, UTF+f24e
-// .mini-icon-discussion                           - UTF+f04f, UTF+f24f
-// .mini-icon-delete-note                          - UTF+f050, UTF+f250
-// .mini-icon-remove-close                         - UTF+f050, UTF+f250
-// .mini-icon-reply                                - UTF+f051, UTF+f251
-// .mini-icon-mail-status                          - UTF+f052, UTF+f252
-// .mini-icon-block                                - UTF+f053, UTF+f253
-// .mini-icon-tag-create                           - UTF+f054, UTF+f254
-// .mini-icon-tab-delete                           - UTF+f055, UTF+f255
-// .mini-icon-branch-create                        - UTF+f056, UTF+f256
-// .mini-icon-branch-delete                        - UTF+f057, UTF+f257
-// .mini-icon-edit                                 - UTF+f058, UTF+f258
-// .mini-icon-info                                 - UTF+f059, UTF+f259
-// .mini-icon-arr-collapsed                        - UTF+f05a, UTF+f25a
-// .mini-icon-arr-expanded                         - UTF+f05b, UTF+f25b
-// .mini-icon-link                                 - UTF+f05c, UTF+f25c
-// .mini-icon-add                                  - UTF+f05d, UTF+f25d
-// .mini-icon-reorder                              - UTF+f05e, UTF+f25e
-// .mini-icon-code                                 - UTF+f05f, UTF+f25f
-// .mini-icon-location                             - UTF+f060, UTF+f260
-// .mini-icon-u-list                               - UTF+f061, UTF+f261
-// .mini-icon-o-list                               - UTF+f062, UTF+f262
-// .mini-icon-quotemark                            - UTF+f063, UTF+f263
-// .mini-icon-version                              - UTF+f064, UTF+f264
-// .mini-icon-brightness                           - UTF+f065, UTF+f265
-// .mini-icon-fullscreen                           - UTF+f066, UTF+f266
-// .mini-icon-normalscreen                         - UTF+f067, UTF+f267
-// .mini-icon-calendar                             - UTF+f068, UTF+f268
-// .mini-icon-beer                                 - UTF+f069, UTF+f269
-// .mini-icon-lock                                 - UTF+f06a, UTF+f26a
-// .mini-icon-secure                               - UTF+f06a, UTF+f26a
-// .mini-icon-added                                - UTF+f06b, UTF+f26b
-// .mini-icon-removed                              - UTF+f06c, UTF+f26c
-// .mini-icon-modified                             - UTF+f06d, UTF+f26d
-// .mini-icon-moved                                - UTF+f06e, UTF+f26e
-// .mini-icon-renamed                              - UTF+f06e, UTF+f26e
-// .mini-icon-add-comment                          - UTF+f06f, UTF+f26f
-// .mini-icon-horizontal-rule                      - UTF+f070, UTF+f270
-// .mini-icon-arr-right-mini                       - UTF+f071, UTF+f271
-// .mini-icon-jump-down                            - UTF+f072, UTF+f272
-// .mini-icon-jump-up                              - UTF+f073, UTF+f273
-// .mini-icon-reference                            - UTF+f074, UTF+f274
-// .mini-icon-milestone                            - UTF+f075, UTF+f275
-// .mini-icon-save-document                        - UTF+f076, UTF+f276
-// .mini-icon-megaphone                            - UTF+f077, UTF+f277
-// .mini-icon-chevron                              - UTF+f078, UTF+f278
-// .mini-icon-gist-forked                          - UTF+f079, UTF+f279
-// .mini-icon-gist-add                             - UTF+f07a, UTF+f27a
+// .mini-icon-private-repo                         - UTF+f000
+// .mini-icon-public-repo                          - UTF+f001
+// .mini-icon-repo-forked                          - UTF+f002
+// .mini-icon-create                               - UTF+f003
+// .mini-icon-delete                               - UTF+f004
+// .mini-icon-push                                 - UTF+f005
+// .mini-icon-pull                                 - UTF+f006
+// .mini-icon-wiki                                 - UTF+f007
+// .mini-icon-readme                               - UTF+f007
+// .mini-icon-octocat                              - UTF+f008
+// .mini-icon-site-message                         - UTF+f009
+// .mini-icon-blacktocat                           - UTF+f009
+// .mini-icon-invertocat                           - UTF+f00a
+// .mini-icon-download                             - UTF+f00b
+// .mini-icon-upload                               - UTF+f00c
+// .mini-icon-keyboard                             - UTF+f00d
+// .mini-icon-gist                                 - UTF+f00e
+// .mini-icon-gist-private                         - UTF+f00f
+// .mini-icon-code-file                            - UTF+f010
+// .mini-icon-download-unknown                     - UTF+f010
+// .mini-icon-text-file                            - UTF+f011
+// .mini-icon-download-text                        - UTF+f011
+// .mini-icon-download-media                       - UTF+f012
+// .mini-icon-download-zip                         - UTF+f013
+// .mini-icon-download-pdf                         - UTF+f014
+// .mini-icon-download-tag                         - UTF+f015
+// .mini-icon-directory                            - UTF+f016
+// .mini-icon-submodule                            - UTF+f017
+// .mini-icon-person                               - UTF+f018
+// .mini-icon-team                                 - UTF+f019
+// .mini-icon-member-added                         - UTF+f01a
+// .mini-icon-member-removed                       - UTF+f01b
+// .mini-icon-follow                               - UTF+f01c
+// .mini-icon-watching                             - UTF+f01d
+// .mini-icon-unwatch                              - UTF+f01e
+// .mini-icon-commit                               - UTF+f01f
+// .mini-icon-public-fork                          - UTF+f020
+// .mini-icon-fork                                 - UTF+f020
+// .mini-icon-private-fork                         - UTF+f021
+// .mini-icon-pull-request                         - UTF+f022
+// .mini-icon-merge                                - UTF+f023
+// .mini-icon-public-mirror                        - UTF+f024
+// .mini-icon-private-mirror                       - UTF+f025
+// .mini-icon-issue-opened                         - UTF+f026
+// .mini-icon-issue-reopened                       - UTF+f027
+// .mini-icon-issue-closed                         - UTF+f028
+// .mini-icon-issue-comment                        - UTF+f029
+// .mini-icon-star                                 - UTF+f02a
+// .mini-icon-commit-comment                       - UTF+f02b
+// .mini-icon-help                                 - UTF+f02c
+// .mini-icon-exclamation                          - UTF+f02d
+// .mini-icon-search-input                         - UTF+f02e
+// .mini-icon-advanced-search                      - UTF+f02f
+// .mini-icon-notifications                        - UTF+f030
+// .mini-icon-account-settings                     - UTF+f031
+// .mini-icon-logout                               - UTF+f032
+// .mini-icon-admin-tools                          - UTF+f033
+// .mini-icon-feed                                 - UTF+f034
+// .mini-icon-apple                                - UTF+f036
+// .mini-icon-windows                              - UTF+f037
+// .mini-icon-ios                                  - UTF+f038
+// .mini-icon-android                              - UTF+f039
+// .mini-icon-confirm                              - UTF+f03a
+// .mini-icon-unread-note                          - UTF+f03b
+// .mini-icon-read-note                            - UTF+f03c
+// .mini-icon-arr-up                               - UTF+f03d
+// .mini-icon-arr-right                            - UTF+f03e
+// .mini-icon-arr-down                             - UTF+f03f
+// .mini-icon-arr-left                             - UTF+f040
+// .mini-icon-pin                                  - UTF+f041
+// .mini-icon-gift                                 - UTF+f042
+// .mini-icon-graph                                - UTF+f043
+// .mini-icon-wrench                               - UTF+f044
+// .mini-icon-credit-card                          - UTF+f045
+// .mini-icon-time                                 - UTF+f046
+// .mini-icon-ruby                                 - UTF+f047
+// .mini-icon-podcast                              - UTF+f048
+// .mini-icon-key                                  - UTF+f049
+// .mini-icon-force-push                           - UTF+f04a
+// .mini-icon-sync                                 - UTF+f04b
+// .mini-icon-clone                                - UTF+f04c
+// .mini-icon-diff                                 - UTF+f04d
+// .mini-icon-watchers                             - UTF+f04e
+// .mini-icon-discussion                           - UTF+f04f
+// .mini-icon-delete-note                          - UTF+f050
+// .mini-icon-remove-close                         - UTF+f050
+// .mini-icon-reply                                - UTF+f051
+// .mini-icon-mail-status                          - UTF+f052
+// .mini-icon-block                                - UTF+f053
+// .mini-icon-tag-create                           - UTF+f054
+// .mini-icon-tab-delete                           - UTF+f055
+// .mini-icon-branch-create                        - UTF+f056
+// .mini-icon-branch-delete                        - UTF+f057
+// .mini-icon-edit                                 - UTF+f058
+// .mini-icon-info                                 - UTF+f059
+// .mini-icon-arr-collapsed                        - UTF+f05a
+// .mini-icon-arr-expanded                         - UTF+f05b
+// .mini-icon-link                                 - UTF+f05c
+// .mini-icon-add                                  - UTF+f05d
+// .mini-icon-reorder                              - UTF+f05e
+// .mini-icon-code                                 - UTF+f05f
+// .mini-icon-location                             - UTF+f060
+// .mini-icon-u-list                               - UTF+f061
+// .mini-icon-o-list                               - UTF+f062
+// .mini-icon-quotemark                            - UTF+f063
+// .mini-icon-version                              - UTF+f064
+// .mini-icon-brightness                           - UTF+f065
+// .mini-icon-fullscreen                           - UTF+f066
+// .mini-icon-normalscreen                         - UTF+f067
+// .mini-icon-calendar                             - UTF+f068
+// .mini-icon-beer                                 - UTF+f069
+// .mini-icon-lock                                 - UTF+f06a
+// .mini-icon-secure                               - UTF+f06a
+// .mini-icon-added                                - UTF+f06b
+// .mini-icon-removed                              - UTF+f06c
+// .mini-icon-modified                             - UTF+f06d
+// .mini-icon-moved                                - UTF+f06e
+// .mini-icon-renamed                              - UTF+f06e
+// .mini-icon-add-comment                          - UTF+f06f
+// .mini-icon-horizontal-rule                      - UTF+f070
+// .mini-icon-arr-right-mini                       - UTF+f071
+// .mini-icon-jump-down                            - UTF+f072
+// .mini-icon-jump-up                              - UTF+f073
+// .mini-icon-reference                            - UTF+f074
+// .mini-icon-milestone                            - UTF+f075
+// .mini-icon-save-document                        - UTF+f076
+// .mini-icon-megaphone                            - UTF+f077
+// .mini-icon-chevron                              - UTF+f078
+// .mini-icon-gist-forked                          - UTF+f079
+// .mini-icon-gist-add                             - UTF+f07a
+// .mini-icon-bookmark                             - UTF+f07b
+// .mini-icon-filters                              - UTF+f07c
+// .mini-icon-dashboard                            - UTF+f07d
+// .mini-icon-history                              - UTF+f07e
+// .mini-icon-external-link                        - UTF+f07f
+// .mini-icon-mute                                 - UTF+f080
 //
 // Styleguide 7.1
 .mini-icon,
@@ -557,141 +563,164 @@
 .mini-icon-gist-add:before {
   content: "\f07a";
 }
+.mini-icon-bookmark:before {
+  content: "\f07b";
+}
+.mini-icon-filters:before {
+  content: "\f07c";
+}
+.mini-icon-dashboard:before {
+  content: "\f07d";
+}
+.mini-icon-history:before {
+  content: "\f07e";
+}
+.mini-icon-external-link:before {
+  content: "\f07f";
+}
+.mini-icon-mute:before {
+  content: "\f080";
+}
 
-
-// There exists 2 types of icons, ```mini-icon``` and ```mega-icon```. Mini-icons are designed to be shown at 16px - 32px
-// Mega Icons are larger versions of our mini-icons. They are optomized for 32px and bigger.
+// Mega Icons are larger versions of our mini-icons. They are
+// optomized for 32px and bigger.
 //
-// .mega-icon-private-repo                         - UTF+f000, UTF+f200
-// .mega-icon-public-repo                          - UTF+f001, UTF+f201
-// .mega-icon-repo-forked                          - UTF+f002, UTF+f202
-// .mega-icon-create                               - UTF+f003, UTF+f203
-// .mega-icon-delete                               - UTF+f004, UTF+f204
-// .mega-icon-push                                 - UTF+f005, UTF+f205
-// .mega-icon-pull                                 - UTF+f006, UTF+f206
-// .mega-icon-wiki                                 - UTF+f007, UTF+f207
-// .mega-icon-readme                               - UTF+f007, UTF+f207
-// .mega-icon-octocat                              - UTF+f008, UTF+f208
-// .mega-icon-site-message                         - UTF+f009, UTF+f209
-// .mega-icon-blacktocat                           - UTF+f009, UTF+f209
-// .mega-icon-invertocat                           - UTF+f00a, UTF+f20a
-// .mega-icon-download                             - UTF+f00b, UTF+f20b
-// .mega-icon-upload                               - UTF+f00c, UTF+f20c
-// .mega-icon-keyboard                             - UTF+f00d, UTF+f20d
-// .mega-icon-gist                                 - UTF+f00e, UTF+f20e
-// .mega-icon-gist-private                         - UTF+f00f, UTF+f20f
-// .mega-icon-code-file                            - UTF+f010, UTF+f210
-// .mega-icon-download-unknown                     - UTF+f010, UTF+f210
-// .mega-icon-text-file                            - UTF+f011, UTF+f211
-// .mega-icon-download-text                        - UTF+f011, UTF+f211
-// .mega-icon-download-media                       - UTF+f012, UTF+f212
-// .mega-icon-download-zip                         - UTF+f013, UTF+f213
-// .mega-icon-download-pdf                         - UTF+f014, UTF+f214
-// .mega-icon-download-tag                         - UTF+f015, UTF+f215
-// .mega-icon-directory                            - UTF+f016, UTF+f216
-// .mega-icon-submodule                            - UTF+f017, UTF+f217
-// .mega-icon-person                               - UTF+f018, UTF+f218
-// .mega-icon-team                                 - UTF+f019, UTF+f219
-// .mega-icon-member-added                         - UTF+f01a, UTF+f21a
-// .mega-icon-member-removed                       - UTF+f01b, UTF+f21b
-// .mega-icon-follow                               - UTF+f01c, UTF+f21c
-// .mega-icon-watching                             - UTF+f01d, UTF+f21d
-// .mega-icon-unwatch                              - UTF+f01e, UTF+f21e
-// .mega-icon-commit                               - UTF+f01f, UTF+f21f
-// .mega-icon-public-fork                          - UTF+f020, UTF+f220
-// .mega-icon-fork                                 - UTF+f020, UTF+f220
-// .mega-icon-private-fork                         - UTF+f021, UTF+f221
-// .mega-icon-pull-request                         - UTF+f022, UTF+f222
-// .mega-icon-merge                                - UTF+f023, UTF+f223
-// .mega-icon-public-mirror                        - UTF+f024, UTF+f224
-// .mega-icon-private-mirror                       - UTF+f025, UTF+f225
-// .mega-icon-issue-opened                         - UTF+f026, UTF+f226
-// .mega-icon-issue-reopened                       - UTF+f027, UTF+f227
-// .mega-icon-issue-closed                         - UTF+f028, UTF+f228
-// .mega-icon-issue-comment                        - UTF+f029, UTF+f229
-// .mega-icon-star                                 - UTF+f02a, UTF+f22a
-// .mega-icon-commit-comment                       - UTF+f02b, UTF+f22b
-// .mega-icon-help                                 - UTF+f02c, UTF+f22c
-// .mega-icon-exclamation                          - UTF+f02d, UTF+f22d
-// .mega-icon-search-input                         - UTF+f02e, UTF+f22e
-// .mega-icon-advanced-search                      - UTF+f02f, UTF+f22f
-// .mega-icon-notifications                        - UTF+f030, UTF+f230
-// .mega-icon-account-settings                     - UTF+f031, UTF+f231
-// .mega-icon-logout                               - UTF+f032, UTF+f232
-// .mega-icon-admin-tools                          - UTF+f033, UTF+f233
-// .mega-icon-feed                                 - UTF+f034, UTF+f234
-// .mega-icon-apple                                - UTF+f036, UTF+f236
-// .mega-icon-windows                              - UTF+f037, UTF+f237
-// .mega-icon-ios                                  - UTF+f038, UTF+f238
-// .mega-icon-android                              - UTF+f039, UTF+f239
-// .mega-icon-confirm                              - UTF+f03a, UTF+f23a
-// .mega-icon-unread-note                          - UTF+f03b, UTF+f23b
-// .mega-icon-read-note                            - UTF+f03c, UTF+f23c
-// .mega-icon-arr-up                               - UTF+f03d, UTF+f23d
-// .mega-icon-arr-right                            - UTF+f03e, UTF+f23e
-// .mega-icon-arr-down                             - UTF+f03f, UTF+f23f
-// .mega-icon-arr-left                             - UTF+f040, UTF+f240
-// .mega-icon-pin                                  - UTF+f041, UTF+f241
-// .mega-icon-gift                                 - UTF+f042, UTF+f242
-// .mega-icon-graph                                - UTF+f043, UTF+f243
-// .mega-icon-wrench                               - UTF+f044, UTF+f244
-// .mega-icon-credit-card                          - UTF+f045, UTF+f245
-// .mega-icon-time                                 - UTF+f046, UTF+f246
-// .mega-icon-ruby                                 - UTF+f047, UTF+f247
-// .mega-icon-podcast                              - UTF+f048, UTF+f248
-// .mega-icon-key                                  - UTF+f049, UTF+f249
-// .mega-icon-force-push                           - UTF+f04a, UTF+f24a
-// .mega-icon-sync                                 - UTF+f04b, UTF+f24b
-// .mega-icon-clone                                - UTF+f04c, UTF+f24c
-// .mega-icon-diff                                 - UTF+f04d, UTF+f24d
-// .mega-icon-watchers                             - UTF+f04e, UTF+f24e
-// .mega-icon-discussion                           - UTF+f04f, UTF+f24f
-// .mega-icon-delete-note                          - UTF+f050, UTF+f250
-// .mega-icon-remove-close                         - UTF+f050, UTF+f250
-// .mega-icon-reply                                - UTF+f051, UTF+f251
-// .mega-icon-mail-status                          - UTF+f052, UTF+f252
-// .mega-icon-block                                - UTF+f053, UTF+f253
-// .mega-icon-tag-create                           - UTF+f054, UTF+f254
-// .mega-icon-tab-delete                           - UTF+f055, UTF+f255
-// .mega-icon-branch-create                        - UTF+f056, UTF+f256
-// .mega-icon-branch-delete                        - UTF+f057, UTF+f257
-// .mega-icon-edit                                 - UTF+f058, UTF+f258
-// .mega-icon-info                                 - UTF+f059, UTF+f259
-// .mega-icon-arr-collapsed                        - UTF+f05a, UTF+f25a
-// .mega-icon-arr-expanded                         - UTF+f05b, UTF+f25b
-// .mega-icon-link                                 - UTF+f05c, UTF+f25c
-// .mega-icon-add                                  - UTF+f05d, UTF+f25d
-// .mega-icon-reorder                              - UTF+f05e, UTF+f25e
-// .mega-icon-code                                 - UTF+f05f, UTF+f25f
-// .mega-icon-location                             - UTF+f060, UTF+f260
-// .mega-icon-u-list                               - UTF+f061, UTF+f261
-// .mega-icon-o-list                               - UTF+f062, UTF+f262
-// .mega-icon-quotemark                            - UTF+f063, UTF+f263
-// .mega-icon-version                              - UTF+f064, UTF+f264
-// .mega-icon-brightness                           - UTF+f065, UTF+f265
-// .mega-icon-fullscreen                           - UTF+f066, UTF+f266
-// .mega-icon-normalscreen                         - UTF+f067, UTF+f267
-// .mega-icon-calendar                             - UTF+f068, UTF+f268
-// .mega-icon-beer                                 - UTF+f069, UTF+f269
-// .mega-icon-lock                                 - UTF+f06a, UTF+f26a
-// .mega-icon-secure                               - UTF+f06a, UTF+f26a
-// .mega-icon-added                                - UTF+f06b, UTF+f26b
-// .mega-icon-removed                              - UTF+f06c, UTF+f26c
-// .mega-icon-modified                             - UTF+f06d, UTF+f26d
-// .mega-icon-moved                                - UTF+f06e, UTF+f26e
-// .mega-icon-renamed                              - UTF+f06e, UTF+f26e
-// .mega-icon-add-comment                          - UTF+f06f, UTF+f26f
-// .mega-icon-horizontal-rule                      - UTF+f070, UTF+f270
-// .mega-icon-arr-right-mega                       - UTF+f071, UTF+f271
-// .mega-icon-jump-down                            - UTF+f072, UTF+f272
-// .mega-icon-jump-up                              - UTF+f073, UTF+f273
-// .mega-icon-reference                            - UTF+f074, UTF+f274
-// .mega-icon-milestone                            - UTF+f075, UTF+f275
-// .mega-icon-save-document                        - UTF+f076, UTF+f276
-// .mega-icon-megaphone                            - UTF+f077, UTF+f277
-// .mega-icon-chevron                              - UTF+f078, UTF+f278
-// .mega-icon-gist-forked                          - UTF+f079, UTF+f279
-// .mega-icon-gist-add                             - UTF+f07a, UTF+f27a
+// .mega-icon-private-repo                         - UTF+f200
+// .mega-icon-public-repo                          - UTF+f201
+// .mega-icon-repo-forked                          - UTF+f202
+// .mega-icon-create                               - UTF+f203
+// .mega-icon-delete                               - UTF+f204
+// .mega-icon-push                                 - UTF+f205
+// .mega-icon-pull                                 - UTF+f206
+// .mega-icon-wiki                                 - UTF+f207
+// .mega-icon-readme                               - UTF+f207
+// .mega-icon-octocat                              - UTF+f208
+// .mega-icon-site-message                         - UTF+f209
+// .mega-icon-blacktocat                           - UTF+f209
+// .mega-icon-invertocat                           - UTF+f20a
+// .mega-icon-download                             - UTF+f20b
+// .mega-icon-upload                               - UTF+f20c
+// .mega-icon-keyboard                             - UTF+f20d
+// .mega-icon-gist                                 - UTF+f20e
+// .mega-icon-gist-private                         - UTF+f20f
+// .mega-icon-code-file                            - UTF+f210
+// .mega-icon-download-unknown                     - UTF+f210
+// .mega-icon-text-file                            - UTF+f211
+// .mega-icon-download-text                        - UTF+f211
+// .mega-icon-download-media                       - UTF+f212
+// .mega-icon-download-zip                         - UTF+f213
+// .mega-icon-download-pdf                         - UTF+f214
+// .mega-icon-download-tag                         - UTF+f215
+// .mega-icon-directory                            - UTF+f216
+// .mega-icon-submodule                            - UTF+f217
+// .mega-icon-person                               - UTF+f218
+// .mega-icon-team                                 - UTF+f219
+// .mega-icon-member-added                         - UTF+f21a
+// .mega-icon-member-removed                       - UTF+f21b
+// .mega-icon-follow                               - UTF+f21c
+// .mega-icon-watching                             - UTF+f21d
+// .mega-icon-unwatch                              - UTF+f21e
+// .mega-icon-commit                               - UTF+f21f
+// .mega-icon-public-fork                          - UTF+f220
+// .mega-icon-fork                                 - UTF+f220
+// .mega-icon-private-fork                         - UTF+f221
+// .mega-icon-pull-request                         - UTF+f222
+// .mega-icon-merge                                - UTF+f223
+// .mega-icon-public-mirror                        - UTF+f224
+// .mega-icon-private-mirror                       - UTF+f225
+// .mega-icon-issue-opened                         - UTF+f226
+// .mega-icon-issue-reopened                       - UTF+f227
+// .mega-icon-issue-closed                         - UTF+f228
+// .mega-icon-issue-comment                        - UTF+f229
+// .mega-icon-star                                 - UTF+f22a
+// .mega-icon-commit-comment                       - UTF+f22b
+// .mega-icon-help                                 - UTF+f22c
+// .mega-icon-exclamation                          - UTF+f22d
+// .mega-icon-search-input                         - UTF+f22e
+// .mega-icon-advanced-search                      - UTF+f22f
+// .mega-icon-notifications                        - UTF+f230
+// .mega-icon-account-settings                     - UTF+f231
+// .mega-icon-logout                               - UTF+f232
+// .mega-icon-admin-tools                          - UTF+f233
+// .mega-icon-feed                                 - UTF+f234
+// .mega-icon-apple                                - UTF+f236
+// .mega-icon-windows                              - UTF+f237
+// .mega-icon-ios                                  - UTF+f238
+// .mega-icon-android                              - UTF+f239
+// .mega-icon-confirm                              - UTF+f23a
+// .mega-icon-unread-note                          - UTF+f23b
+// .mega-icon-read-note                            - UTF+f23c
+// .mega-icon-arr-up                               - UTF+f23d
+// .mega-icon-arr-right                            - UTF+f23e
+// .mega-icon-arr-down                             - UTF+f23f
+// .mega-icon-arr-left                             - UTF+f240
+// .mega-icon-pin                                  - UTF+f241
+// .mega-icon-gift                                 - UTF+f242
+// .mega-icon-graph                                - UTF+f243
+// .mega-icon-wrench                               - UTF+f244
+// .mega-icon-credit-card                          - UTF+f245
+// .mega-icon-time                                 - UTF+f246
+// .mega-icon-ruby                                 - UTF+f247
+// .mega-icon-podcast                              - UTF+f248
+// .mega-icon-key                                  - UTF+f249
+// .mega-icon-force-push                           - UTF+f24a
+// .mega-icon-sync                                 - UTF+f24b
+// .mega-icon-clone                                - UTF+f24c
+// .mega-icon-diff                                 - UTF+f24d
+// .mega-icon-watchers                             - UTF+f24e
+// .mega-icon-discussion                           - UTF+f24f
+// .mega-icon-delete-note                          - UTF+f250
+// .mega-icon-remove-close                         - UTF+f250
+// .mega-icon-reply                                - UTF+f251
+// .mega-icon-mail-status                          - UTF+f252
+// .mega-icon-block                                - UTF+f253
+// .mega-icon-tag-create                           - UTF+f254
+// .mega-icon-tab-delete                           - UTF+f255
+// .mega-icon-branch-create                        - UTF+f256
+// .mega-icon-branch-delete                        - UTF+f257
+// .mega-icon-edit                                 - UTF+f258
+// .mega-icon-info                                 - UTF+f259
+// .mega-icon-arr-collapsed                        - UTF+f25a
+// .mega-icon-arr-expanded                         - UTF+f25b
+// .mega-icon-link                                 - UTF+f25c
+// .mega-icon-add                                  - UTF+f25d
+// .mega-icon-reorder                              - UTF+f25e
+// .mega-icon-code                                 - UTF+f25f
+// .mega-icon-location                             - UTF+f260
+// .mega-icon-u-list                               - UTF+f261
+// .mega-icon-o-list                               - UTF+f262
+// .mega-icon-quotemark                            - UTF+f263
+// .mega-icon-version                              - UTF+f264
+// .mega-icon-brightness                           - UTF+f265
+// .mega-icon-fullscreen                           - UTF+f266
+// .mega-icon-normalscreen                         - UTF+f267
+// .mega-icon-calendar                             - UTF+f268
+// .mega-icon-beer                                 - UTF+f269
+// .mega-icon-lock                                 - UTF+f26a
+// .mega-icon-secure                               - UTF+f26a
+// .mega-icon-added                                - UTF+f26b
+// .mega-icon-removed                              - UTF+f26c
+// .mega-icon-modified                             - UTF+f26d
+// .mega-icon-moved                                - UTF+f26e
+// .mega-icon-renamed                              - UTF+f26e
+// .mega-icon-add-comment                          - UTF+f26f
+// .mega-icon-horizontal-rule                      - UTF+f270
+// .mega-icon-arr-right-mega                       - UTF+f271
+// .mega-icon-jump-down                            - UTF+f272
+// .mega-icon-jump-up                              - UTF+f273
+// .mega-icon-reference                            - UTF+f274
+// .mega-icon-milestone                            - UTF+f275
+// .mega-icon-save-document                        - UTF+f276
+// .mega-icon-megaphone                            - UTF+f277
+// .mega-icon-chevron                              - UTF+f278
+// .mega-icon-gist-forked                          - UTF+f279
+// .mega-icon-gist-add                             - UTF+f27a
+// .mega-icon-bookmark                             - UTF+f27b
+// .mega-icon-filters                              - UTF+f27c
+// .mega-icon-dashboard                            - UTF+f27d
+// .mega-icon-history                              - UTF+f27e
+// .mega-icon-external-link                        - UTF+f27f
+// .mega-icon-mute                                 - UTF+f280
 //
 // Styleguide 7.2
 .mega-icon:before {
@@ -1074,6 +1103,24 @@
 .mega-icon-gist-add:before {
   content: "\f27a";
 }
+.mega-icon-bookmark:before {
+  content: "\f27b";
+}
+.mega-icon-filters:before {
+  content: "\f27c";
+}
+.mega-icon-dashboard:before {
+  content: "\f27d";
+}
+.mega-icon-history:before {
+  content: "\f27e";
+}
+.mega-icon-external-link:before {
+  content: "\f27f";
+}
+.mega-icon-mute:before {
+  content: "\f280";
+}
 
 // Mini icons style for icons across the site.
 .mini-icon-clippy {
@@ -1084,7 +1131,7 @@
   background-position: 0 0;
   background-repeat: no-repeat;
   vertical-align: text-bottom;
-  background-image: url("/images/modules/buttons/clippy.png");
+  background-image: image-url("primer/icons/clippy.png");
   &:before {
     content:"";
   }

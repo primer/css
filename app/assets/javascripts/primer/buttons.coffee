@@ -4,7 +4,22 @@
 #   primer/buttons.scss
 #
 
-# Prevent menu from opening if target minibutton is disabled
-$(document).on "menu:activate", ->
-  if $(this).find(".js-menu-target").is ".minibutton.disabled"
-    return false
+# Add mousedown class to classy buttons and minibuttons
+$(document).on 'mousedown', 'button.classy, .minibutton', ->
+  return if $(this).prop 'disabled'
+  return if $(this).hasClass 'disabled'
+
+  onUp = ->
+    $(this).off 'mouseup mouseup', onUp
+    $(this).removeClass 'mousedown'
+
+  $(this).on 'mouseup mouseleave', onUp
+  $(this).addClass 'mousedown'
+
+  return
+
+# Prevent minibutton click if target is disabled
+$(document).on 'click:prepare', '.minibutton.disabled', (event) ->
+  event.preventDefault()
+  event.stopPropagation()
+  return
