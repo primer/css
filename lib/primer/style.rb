@@ -15,6 +15,8 @@ module Primer
       Dir["#{root}/**/*.scss"].each do |path|
         data = File.read(path)
         nodes << Sass::SCSS::Parser.new(data, path).parse
+        # sass wtf
+        nodes.each { |node| node.options = {:filename => path} }
       end
       nodes
     end
@@ -53,8 +55,7 @@ module Primer
     def assert_no_js_rules(node)
       return unless node.is_a?(Sass::Tree::RuleNode)
       assert_no_match(/(\#|\.)js-/,
-        node.rule.first, "#{node.filename}:#{node.line}" +
-        " - CSS selectors can't start with js-. See http://is.gd/eFcrSg")
+        node.rule.first, "#{node.filename}:#{node.line} - CSS selectors can't start with js-. See http://is.gd/eFcrSg")
     end
   end
 end
