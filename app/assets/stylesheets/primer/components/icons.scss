@@ -153,6 +153,9 @@
 // .mini-icon-history                              - UTF+f07e
 // .mini-icon-external-link                        - UTF+f07f
 // .mini-icon-mute                                 - UTF+f080
+// .mini-icon-x                                    - UTF+f090
+// .mini-icon-add-star                             - UTF+f091
+// .mini-icon-remove-star                          - UTF+f092
 //
 // Styleguide 7.1
 .mini-icon,
@@ -582,6 +585,18 @@
   content: "\f080";
 }
 
+// 081-089 are spinner icons
+
+.mini-icon-x:before {
+  content: "\f090";
+}
+.mini-icon-add-star:before {
+  content: "\f091";
+}
+.mini-icon-remove-star:before {
+  content: "\f092";
+}
+
 // Mega Icons are larger versions of our mini-icons. They are
 // optomized for 32px and bigger.
 //
@@ -721,6 +736,9 @@
 // .mega-icon-history                              - UTF+f27e
 // .mega-icon-external-link                        - UTF+f27f
 // .mega-icon-mute                                 - UTF+f280
+// .mega-icon-x                                    - UTF+f290
+// .mega-icon-add-star                             - UTF+f291
+// .mega-icon-remove-star                          - UTF+f292
 //
 // Styleguide 7.2
 .mega-icon:before {
@@ -1120,6 +1138,18 @@
 }
 .mega-icon-mute:before {
   content: "\f280";
+}
+
+// 281-289 are spinner icons
+
+.mega-icon-x:before {
+  content: "\f290";
+}
+.mega-icon-add-star:before {
+  content: "\f291";
+}
+.mega-icon-remove-star:before {
+  content: "\f292";
 }
 
 // Mini icons style for icons across the site.
