@@ -267,78 +267,80 @@ button.minibutton::-moz-focus-inner { margin: -1px -3px;}
 // I have no idea.
 input[type=text] + .minibutton{ margin-left:5px; }
 
-// Minibuttons with an icon.
-//
-// .btn-admin         - Admin.
-// .btn-watch         - Watch.
-// .btn-star          - Star.
-// .btn-download      - Download.
-// .btn-follow        - Follow.
-// .btn-unfollow      - Unfollow.
-// .btn-pull-request  - Pull Request.
-// .btn-fork          - Fork.
-// .btn-leave         - Leave.
-// .btn-compare       - To the compare view!
-// .btn-reply         - Reply.
-// .btn-back          - Back.
-// .btn-forward       - Forward.
-// .btn-windows       - Microsoft.
-// .btn-mac           - Mac.
-//
-// Styleguide 1.2.1
-.minibutton {
-  &.btn-admin:before,
-  &.btn-follow:before,
-  &.btn-unfollow:before,
-  &.btn-watch:before,
-  &.btn-unwatch:before,
-  &.btn-star:before,
-  &.btn-download:before,
-  &.btn-pull-request:before,
-  &.btn-fork:before,
-  &.btn-leave:before,
-  &.btn-compare:before,
-  &.btn-reply:before,
-  &.btn-back:before,
-  &.btn-forward:before,
-  &.btn-windows:before,
-  &.btn-mac:before,
-  &.btn-exclamation:before {
-    float: left;
-    margin-right: 6px;
-    @include icon-bootstrap();
-    font-size: 16px;
-    line-height: 24px;
-    width: 16px;
-  }
-  &.btn-forward:before {
-    float: right;
-    margin-left: 5px;
-    margin-right: 0;
-  }
-  &.btn-windows:before {
-    content: "";
-    background: transparent image-url("primer/buttons/windows-sprite.png") 0 3px no-repeat;
-    height: 23px;
-    width: 16px;
-  }
+@if $enable-font-icons {
+  // Minibuttons with an icon.
+  //
+  // .btn-admin         - Admin.
+  // .btn-watch         - Watch.
+  // .btn-star          - Star.
+  // .btn-download      - Download.
+  // .btn-follow        - Follow.
+  // .btn-unfollow      - Unfollow.
+  // .btn-pull-request  - Pull Request.
+  // .btn-fork          - Fork.
+  // .btn-leave         - Leave.
+  // .btn-compare       - To the compare view!
+  // .btn-reply         - Reply.
+  // .btn-back          - Back.
+  // .btn-forward       - Forward.
+  // .btn-windows       - Microsoft.
+  // .btn-mac           - Mac.
+  //
+  // Styleguide 1.2.1
+  .minibutton {
+    &.btn-admin:before,
+    &.btn-follow:before,
+    &.btn-unfollow:before,
+    &.btn-watch:before,
+    &.btn-unwatch:before,
+    &.btn-star:before,
+    &.btn-download:before,
+    &.btn-pull-request:before,
+    &.btn-fork:before,
+    &.btn-leave:before,
+    &.btn-compare:before,
+    &.btn-reply:before,
+    &.btn-back:before,
+    &.btn-forward:before,
+    &.btn-windows:before,
+    &.btn-mac:before,
+    &.btn-exclamation:before {
+      float: left;
+      margin-right: 6px;
+      @include icon-bootstrap();
+      font-size: 16px;
+      line-height: 24px;
+      width: 16px;
+    }
+    &.btn-forward:before {
+      float: right;
+      margin-left: 5px;
+      margin-right: 0;
+    }
+    &.btn-windows:before {
+      content: "";
+      background: transparent image-url("primer/buttons/windows-sprite.png") 0 3px no-repeat;
+      height: 23px;
+      width: 16px;
+    }
 
-  &.btn-admin:before { content: "\f044"; }
-  &.btn-follow:before { content: "\f01c"; }
-  &.btn-unfollow:before { content: "\f01b"; }
-  &.btn-watch:before { content: "\f01d"; }
-  &.btn-unwatch:before { content: "\f01e"; }
-  &.btn-star:before { content: "\f02a"; }
-  &.btn-download:before { content: "\f00b"; }
-  &.btn-pull-request:before { content: "\f022"; }
-  &.btn-fork:before { content: "\f020"; }
-  &.btn-leave:before { content: "\f032"; }
-  &.btn-compare:before { content: "\f04d"; }
-  &.btn-reply:before { content: "\f051"; }
-  &.btn-back:before { content: "\f040"; }
-  &.btn-forward:before { content: "\f03e"; }
-  &.btn-mac:before { content: "\f036"; }
-  &.btn-exclamation:before { content: "\f02d"; }
+    &.btn-admin:before { content: "\f044"; }
+    &.btn-follow:before { content: "\f01c"; }
+    &.btn-unfollow:before { content: "\f01b"; }
+    &.btn-watch:before { content: "\f01d"; }
+    &.btn-unwatch:before { content: "\f01e"; }
+    &.btn-star:before { content: "\f02a"; }
+    &.btn-download:before { content: "\f00b"; }
+    &.btn-pull-request:before { content: "\f022"; }
+    &.btn-fork:before { content: "\f020"; }
+    &.btn-leave:before { content: "\f032"; }
+    &.btn-compare:before { content: "\f04d"; }
+    &.btn-reply:before { content: "\f051"; }
+    &.btn-back:before { content: "\f040"; }
+    &.btn-forward:before { content: "\f03e"; }
+    &.btn-mac:before { content: "\f036"; }
+    &.btn-exclamation:before { content: "\f02d"; }
+  }
 }
 
 // Minibuttons used to switch to something. Like an account dropdown, or
@@ -456,21 +458,21 @@ input[type=text] + .minibutton{ margin-left:5px; }
   border-color: #fff transparent transparent;
 }
 
-.btn-branch:before,
-.btn-tag:before
-{
-  position: absolute;
-  left: 5px;
-  width: 16px;
-  height: 24px;
-  padding: 0 4px 0 0;
-  @include icon-bootstrap();
-  font-size: 16px;
-  line-height: 24px;
+@if $enable-font-icons {
+  .btn-branch:before,
+  .btn-tag:before {
+    position: absolute;
+    left: 5px;
+    width: 16px;
+    height: 24px;
+    padding: 0 4px 0 0;
+    @include icon-bootstrap();
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .btn-branch:before { content: "\f020"; }
+  .btn-tag:before { content: "\f015"; }
 }
-
-.btn-branch:before { content: "\f020"; }
-.btn-tag:before { content: "\f015"; }
 
 // A simple little button to expand a bigger pane.
 //
@@ -483,20 +485,23 @@ input[type=text] + .minibutton{ margin-left:5px; }
   width: 32px;
   height: 22px;
   padding: 0;
-  @include icon-bootstrap();
   line-height: 23px;
 
   @include user-select(none);
 
-  &:before {
-    display: block;
-    padding :0;
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    content: "\f02f";
-    font-size: 16px;
-    line-height: 16px;
+  @if $enable-font-icons {
+    @include icon-bootstrap();
+
+    &:before {
+      display: block;
+      padding :0;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      content: "\f02f";
+      font-size: 16px;
+      line-height: 16px;
+    }
   }
 
   &:after {

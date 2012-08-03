@@ -1,12 +1,16 @@
-// Has all the necessities for font icons
-//
-// Compatibility untested.
-@mixin icon-bootstrap() {
-  font-family: 'Octicons Regular';
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  text-decoration: inherit;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+$enable-font-icons: true !default;
+
+@if $enable-font-icons {
+  // Has all the necessities for font icons
+  //
+  // Compatibility untested.
+  @mixin icon-bootstrap() {
+    font-family: 'Octicons Regular';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+  }
 }
