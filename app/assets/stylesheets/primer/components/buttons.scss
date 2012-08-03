@@ -274,6 +274,7 @@ input[type=text] + .minibutton{ margin-left:5px; }
   // .btn-watch         - Watch.
   // .btn-star          - Star.
   // .btn-download      - Download.
+  // .btn-edit          - Edit.
   // .btn-follow        - Follow.
   // .btn-unfollow      - Unfollow.
   // .btn-pull-request  - Pull Request.
@@ -295,6 +296,7 @@ input[type=text] + .minibutton{ margin-left:5px; }
     &.btn-unwatch:before,
     &.btn-star:before,
     &.btn-download:before,
+    &.btn-edit:before,
     &.btn-pull-request:before,
     &.btn-fork:before,
     &.btn-leave:before,
@@ -331,6 +333,7 @@ input[type=text] + .minibutton{ margin-left:5px; }
     &.btn-unwatch:before { content: "\f01e"; }
     &.btn-star:before { content: "\f02a"; }
     &.btn-download:before { content: "\f00b"; }
+    &.btn-edit:before { content: "\f058"; }
     &.btn-pull-request:before { content: "\f022"; }
     &.btn-fork:before { content: "\f020"; }
     &.btn-leave:before { content: "\f032"; }
