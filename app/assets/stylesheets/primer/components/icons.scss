@@ -153,10 +153,10 @@
   // .mini-icon-history                              - UTF+f07e
   // .mini-icon-external-link                        - UTF+f07f
   // .mini-icon-mute                                 - UTF+f080
-  // .mini-icon-x                                    - UTF+f090
-  // .mini-icon-add-star                             - UTF+f091
-  // .mini-icon-remove-star                          - UTF+f092
-  // .mini-icon-circle-slash                         - UTF+f093
+  // .mini-icon-x                                    - UTF+f081
+  // .mini-icon-add-star                             - UTF+f082
+  // .mini-icon-remove-star                          - UTF+f083
+  // .mini-icon-circle-slash                         - UTF+f084
   //
   // Styleguide 7.1
   .mini-icon,
@@ -582,23 +582,21 @@
   .mini-icon-external-link:before {
     content: "\f07f";
   }
+
   .mini-icon-mute:before {
     content: "\f080";
   }
-
-  // 081-089 are spinner icons
-
   .mini-icon-x:before {
-    content: "\f090";
+    content: "\f081";
   }
   .mini-icon-add-star:before {
-    content: "\f091";
+    content: "\f082";
   }
   .mini-icon-remove-star:before {
-    content: "\f092";
+    content: "\f083";
   }
   .mini-icon-circle-slash:before {
-    content: "\f093";
+    content: "\f084";
   }
 
   // Mega Icons are larger versions of our mini-icons. They are
@@ -740,10 +738,10 @@
   // .mega-icon-history                              - UTF+f27e
   // .mega-icon-external-link                        - UTF+f27f
   // .mega-icon-mute                                 - UTF+f280
-  // .mega-icon-x                                    - UTF+f290
-  // .mega-icon-add-star                             - UTF+f291
-  // .mega-icon-remove-star                          - UTF+f292
-  // .mega-icon-circle-slash                         - UTF+f293
+  // .mega-icon-x                                    - UTF+f281
+  // .mega-icon-add-star                             - UTF+f282
+  // .mega-icon-remove-star                          - UTF+f283
+  // .mega-icon-circle-slash                         - UTF+f284
   //
   // Styleguide 7.2
   .mega-icon:before {
@@ -1144,20 +1142,17 @@
   .mega-icon-mute:before {
     content: "\f280";
   }
-
-  // 281-289 are spinner icons
-
   .mega-icon-x:before {
-    content: "\f290";
+    content: "\f281";
   }
   .mega-icon-add-star:before {
-    content: "\f291";
+    content: "\f282";
   }
   .mega-icon-remove-star:before {
-    content: "\f292";
+    content: "\f283";
   }
   .mega-icon-circle-slash:before {
-    content: "\f293";
+    content: "\f284";
   }
 
   // Mini icons style for icons across the site.
