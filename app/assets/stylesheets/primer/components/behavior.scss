@@ -1,0 +1,23 @@
+// css-trucate will shorten text with an elipsis. The maximum width
+// of the truncated text can be changed by overriding the max-width
+// of the .css-truncate-target
+//
+// .expandable - When hovered over, the full text expands.
+//
+// Styleguide 9.0
+.css-truncate {
+  &.css-truncate-target,
+  & .css-truncate-target {
+    max-width: 125px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+
+  &.expandable:hover .css-truncate-target,
+  &.expandable:hover.css-truncate-target {
+    max-width: 10000px !important;
+  }
+}
