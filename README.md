@@ -14,3 +14,14 @@ gem 'primer', :git => 'https://hubot:TOKEN@github.com/github/primer.git'
 ```
 
 To update, run `bundle update primer` and commit any changes to `Gemfile.lock`.
+
+## Usage
+
+```css
+@import "primer/components/behavior";
+@import "primer/components/buttons";
+@import "primer/components/icons";
+@import "primer/components/markdown";
+@import "primer/components/nav";
+@import "primer/components/pygments";
+```
