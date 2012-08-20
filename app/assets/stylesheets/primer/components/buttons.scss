@@ -306,7 +306,10 @@ input[type=text] + .minibutton{ margin-left:5px; }
     &.btn-forward:before,
     &.btn-windows:before,
     &.btn-mac:before,
-    &.btn-exclamation:before {
+    &.btn-exclamation:before,
+    &.btn-version:before,
+    &.btn-download:before,
+    &.btn-zen:before {
       float: left;
       margin-right: 6px;
       @include icon-bootstrap();
@@ -343,6 +346,9 @@ input[type=text] + .minibutton{ margin-left:5px; }
     &.btn-forward:before { content: "\f03e"; }
     &.btn-mac:before { content: "\f036"; }
     &.btn-exclamation:before { content: "\f02d"; }
+    &.btn-version:before { content: "\f064"; }
+    &.btn-download:before { content: "\f014"; }
+    &.btn-zen:before { content: "\f066"; }
   }
 }
 
@@ -398,7 +404,9 @@ input[type=text] + .minibutton{ margin-left:5px; }
   }
 
   &.btn-branch,
-  &.btn-tag {
+  &.btn-tag,
+  &.btn-version,
+  &.btn-download {
     & > span {
       padding-left: 25px;
     }
@@ -463,7 +471,9 @@ input[type=text] + .minibutton{ margin-left:5px; }
 
 @if $enable-font-icons {
   .btn-branch:before,
-  .btn-tag:before {
+  .btn-tag:before,
+  .btn-version:before,
+  .btn-download:before {
     position: absolute;
     left: 5px;
     width: 16px;
