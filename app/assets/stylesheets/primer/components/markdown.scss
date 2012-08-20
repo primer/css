@@ -153,6 +153,13 @@
     }
   }
 
+  ul ul,
+  ul ol,
+  ol ol,
+  ol ul {
+    margin-bottom: 0;
+  }
+
   dl {
     padding: 0;
   }
