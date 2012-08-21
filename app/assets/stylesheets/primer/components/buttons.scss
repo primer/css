@@ -308,7 +308,7 @@ input[type=text] + .minibutton{ margin-left:5px; }
     &.btn-mac:before,
     &.btn-exclamation:before,
     &.btn-version:before,
-    &.btn-download:before,
+    &.btn-download-format:before,
     &.btn-zen:before {
       float: left;
       margin-right: 6px;
@@ -347,7 +347,7 @@ input[type=text] + .minibutton{ margin-left:5px; }
     &.btn-mac:before { content: "\f036"; }
     &.btn-exclamation:before { content: "\f02d"; }
     &.btn-version:before { content: "\f064"; }
-    &.btn-download:before { content: "\f014"; }
+    &.btn-download-format:before { content: "\f014"; }
     &.btn-zen:before { content: "\f066"; }
   }
 }
@@ -406,7 +406,7 @@ input[type=text] + .minibutton{ margin-left:5px; }
   &.btn-branch,
   &.btn-tag,
   &.btn-version,
-  &.btn-download {
+  &.btn-download-format {
     & > span {
       padding-left: 25px;
     }
@@ -473,7 +473,7 @@ input[type=text] + .minibutton{ margin-left:5px; }
   .btn-branch:before,
   .btn-tag:before,
   .btn-version:before,
-  .btn-download:before {
+  .btn-download-format:before {
     position: absolute;
     left: 5px;
     width: 16px;
