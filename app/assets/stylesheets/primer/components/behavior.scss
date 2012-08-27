@@ -20,4 +20,9 @@
   &.expandable:hover.css-truncate-target {
     max-width: 10000px !important;
   }
+
+  &.expandable-multiline:hover .css-truncate-target,
+  &.expandable-multiline:hover.css-truncate-target {
+    white-space: normal !important;
+  }
 }
