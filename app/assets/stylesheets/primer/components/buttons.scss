@@ -267,88 +267,36 @@ button.minibutton::-moz-focus-inner { margin: -1px -3px;}
 // I have no idea.
 input[type=text] + .minibutton{ margin-left:5px; }
 
-@if $enable-font-icons {
-  // Minibuttons with an icon.
-  //
-  // .btn-admin         - Admin.
-  // .btn-watch         - Watch.
-  // .btn-star          - Star.
-  // .btn-download      - Download.
-  // .btn-edit          - Edit.
-  // .btn-follow        - Follow.
-  // .btn-unfollow      - Unfollow.
-  // .btn-pull-request  - Pull Request.
-  // .btn-fork          - Fork.
-  // .btn-leave         - Leave.
-  // .btn-compare       - To the compare view!
-  // .btn-reply         - Reply.
-  // .btn-back          - Back.
-  // .btn-forward       - Forward.
-  // .btn-windows       - Microsoft.
-  // .btn-mac           - Mac.
-  //
-  // Styleguide 1.2.1
-  .minibutton {
-    &.btn-admin:before,
-    &.btn-follow:before,
-    &.btn-unfollow:before,
-    &.btn-watch:before,
-    &.btn-unwatch:before,
-    &.btn-star:before,
-    &.btn-download:before,
-    &.btn-edit:before,
-    &.btn-pull-request:before,
-    &.btn-fork:before,
-    &.btn-leave:before,
-    &.btn-compare:before,
-    &.btn-reply:before,
-    &.btn-back:before,
-    &.btn-forward:before,
-    &.btn-windows:before,
-    &.btn-mac:before,
-    &.btn-exclamation:before,
-    &.btn-version:before,
-    &.btn-download-format:before,
-    &.btn-zen:before {
-      float: left;
-      margin-right: 6px;
-      @include icon-bootstrap();
-      font-size: 16px;
-      line-height: 24px;
-      width: 16px;
-    }
-    &.btn-forward:before {
-      float: right;
-      margin-left: 5px;
-      margin-right: 0;
-    }
-    &.btn-windows:before {
-      content: "";
-      background: transparent image-url("primer/buttons/windows-sprite.png") 0 3px no-repeat;
-      height: 23px;
-      width: 16px;
-    }
-
-    &.btn-admin:before { content: "\f044"; }
-    &.btn-follow:before { content: "\f01c"; }
-    &.btn-unfollow:before { content: "\f01b"; }
-    &.btn-watch:before { content: "\f01d"; }
-    &.btn-unwatch:before { content: "\f01e"; }
-    &.btn-star:before { content: "\f02a"; }
-    &.btn-download:before { content: "\f00b"; }
-    &.btn-edit:before { content: "\f058"; }
-    &.btn-pull-request:before { content: "\f022"; }
-    &.btn-fork:before { content: "\f020"; }
-    &.btn-leave:before { content: "\f032"; }
-    &.btn-compare:before { content: "\f04d"; }
-    &.btn-reply:before { content: "\f051"; }
-    &.btn-back:before { content: "\f040"; }
-    &.btn-forward:before { content: "\f03e"; }
-    &.btn-mac:before { content: "\f036"; }
-    &.btn-exclamation:before { content: "\f02d"; }
-    &.btn-version:before { content: "\f064"; }
-    &.btn-download-format:before { content: "\f014"; }
-    &.btn-zen:before { content: "\f066"; }
+// Minibuttons with an icon.
+//
+// .mini-icon-wrench           - Admin.
+// .mini-icon-watching         - Watch.
+// .mini-icon-star             - Star.
+// .mini-icon-download         - Download.
+// .mini-icon-edit             - Edit.
+// .mini-icon-follow           - Follow.
+// .mini-icon-member-removed   - Unfollow.
+// .mini-icon-pull-request     - Pull Request.
+// .mini-icon-fork             - Fork.
+// .mini-icon-logout           - Leave.
+// .mini-icon-diff             - To the compare view!
+// .mini-icon-reply            - Reply.
+// .mini-icon-arr-left         - Back.
+// .mini-icon-arr-right        - Forward.
+// .mini-icon-windows          - Microsoft.
+// .mini-icon-apple              - Mac.
+//
+// Styleguide 1.2.1
+.minibutton {
+  .mini-icon {
+    vertical-align: -2px;
+    margin-right: 6px;
+  }
+  .mini-icon-arr-right {
+    float: right;
+    margin-right: 0;
+    margin-left: 5px;
+    margin-top: 4px;
   }
 }
 
