@@ -43,6 +43,7 @@
   // .mini-icon-download-zip                         - UTF+f013
   // .mini-icon-download-pdf                         - UTF+f014
   // .mini-icon-download-tag                         - UTF+f015
+  // .mini-icon-tag                                  - UTF+f015
   // .mini-icon-directory                            - UTF+f016
   // .mini-icon-submodule                            - UTF+f017
   // .mini-icon-person                               - UTF+f018
@@ -55,6 +56,7 @@
   // .mini-icon-commit                               - UTF+f01f
   // .mini-icon-public-fork                          - UTF+f020
   // .mini-icon-fork                                 - UTF+f020
+  // .mini-icon-branch                               - UTF+f020
   // .mini-icon-private-fork                         - UTF+f021
   // .mini-icon-pull-request                         - UTF+f022
   // .mini-icon-merge                                - UTF+f023
@@ -166,6 +168,10 @@
     line-height: 1;
     text-decoration: none;
   }
+  .mini-icon {
+    width: 16px;
+    height: 16px;
+  }
   .mini-icon:before {
     @include transition($property: color);
     font-size: 16px;
@@ -258,7 +264,8 @@
   .mini-icon-download-pdf:before {
     content: "\f014";
   }
-  .mini-icon-download-tag:before {
+  .mini-icon-download-tag:before,
+  .mini-icon-tag:before {
     content: "\f015";
   }
   .mini-icon-directory:before {
@@ -292,7 +299,9 @@
     content: "\f01f";
   }
 
-  .mini-icon-public-fork:before, .mini-icon-fork:before {
+  .mini-icon-public-fork:before,
+  .mini-icon-fork:before,
+  .mini-icon-branch:before {
     content: "\f020";
   }
   .mini-icon-private-fork:before {
@@ -361,6 +370,11 @@
   }
   .mini-icon-windows:before {
     content: "\f037";
+    content: "";
+    background: transparent image-url("primer/buttons/windows-sprite.png") 0 0 no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
   }
   .mini-icon-ios:before {
     content: "\f038";
@@ -633,6 +647,7 @@
   // .mega-icon-download-zip                         - UTF+f213
   // .mega-icon-download-pdf                         - UTF+f214
   // .mega-icon-download-tag                         - UTF+f215
+  // .mega-icon-tag                                  - UTF+f215
   // .mega-icon-directory                            - UTF+f216
   // .mega-icon-submodule                            - UTF+f217
   // .mega-icon-person                               - UTF+f218
@@ -645,6 +660,7 @@
   // .mega-icon-commit                               - UTF+f21f
   // .mega-icon-public-fork                          - UTF+f220
   // .mega-icon-fork                                 - UTF+f220
+  // .mega-icon-branch                               - UTF+f220
   // .mega-icon-private-fork                         - UTF+f221
   // .mega-icon-pull-request                         - UTF+f222
   // .mega-icon-merge                                - UTF+f223
@@ -750,6 +766,10 @@
   // .mega-icon-pulse                                - UTF+f285
   //
   // Styleguide 7.2
+  .mega-icon {
+    width: 32px;
+    height: 32px;
+  }
   .mega-icon:before {
     @extend .mini-icon:before;
     font-size: 32px;
@@ -820,7 +840,8 @@
   .mega-icon-download-pdf:before {
     content: "\f214";
   }
-  .mega-icon-download-tag:before {
+  .mega-icon-download-tag:before,
+  .mega-icon-tag:before {
     content: "\f215";
   }
   .mega-icon-directory:before {
@@ -854,7 +875,9 @@
     content: "\f21f";
   }
 
-  .mega-icon-public-fork:before, .mega-icon-fork:before {
+  .mega-icon-public-fork:before,
+  .mega-icon-fork:before,
+  .mega-icon-branch:before {
     content: "\f220";
   }
   .mega-icon-private-fork:before {
@@ -1146,7 +1169,7 @@
   .mega-icon-external-link:before {
     content: "\f27f";
   }
-  
+
   .mega-icon-mute:before {
     content: "\f280";
   }
