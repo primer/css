@@ -250,8 +250,8 @@ button.classy img, a.button.classy img {
     border-bottom-color: #2a65a0;
     @include gradient(#599bdc, #3072b3);
 
-    &.btn-windows:before {
-      background-position: -17px 3px;
+    .mini-icon-windows:before {
+      background-position: -18px 0;
     }
   }
 
@@ -292,6 +292,9 @@ input[type=text] + .minibutton{ margin-left:5px; }
     vertical-align: -2px;
     margin-right: 6px;
   }
+  &.empty-icon .mini-icon {
+    margin-right: 0;
+  }
   .mini-icon-arr-right {
     float: right;
     margin-right: 0;
@@ -308,8 +311,6 @@ input[type=text] + .minibutton{ margin-left:5px; }
 // .selected - A sticky selected state.
 // .with-image:hover - With image, hover handed.
 // .with-image.selected - With image, selected.
-// .btn-tag - Tag switcher
-// .btn-branch - Branch switcher
 //
 // Styleguide 1.2.2
 .minibutton.switcher {
@@ -320,7 +321,7 @@ input[type=text] + .minibutton{ margin-left:5px; }
   &>span {
     display: block;
     position: relative;
-    padding: 0 26px 0 5px;
+    padding: 0 26px 0 10px;
     line-height: 24px;
     height: 24px;
 
@@ -351,14 +352,6 @@ input[type=text] + .minibutton{ margin-left:5px; }
     }
   }
 
-  &.btn-branch,
-  &.btn-tag,
-  &.btn-version,
-  &.btn-download-format {
-    & > span {
-      padding-left: 25px;
-    }
-  }
   // Separator line on hover
   &:hover>span:after {
     border-left: 1px solid #6A9FD3;
@@ -372,6 +365,7 @@ input[type=text] + .minibutton{ margin-left:5px; }
       display: block;
       height: 30px;
       line-height: 30px;
+      padding: 0 26px 0 5px;
 
       &:before {
         top: 14px;
@@ -415,24 +409,6 @@ input[type=text] + .minibutton{ margin-left:5px; }
 }
 .minibutton.switcher:hover>span:before {
   border-color: #fff transparent transparent;
-}
-
-@if $enable-font-icons {
-  .btn-branch:before,
-  .btn-tag:before,
-  .btn-version:before,
-  .btn-download-format:before {
-    position: absolute;
-    left: 5px;
-    width: 16px;
-    height: 24px;
-    padding: 0 4px 0 0;
-    @include icon-bootstrap();
-    font-size: 16px;
-    line-height: 24px;
-  }
-  .btn-branch:before { content: "\f020"; }
-  .btn-tag:before { content: "\f015"; }
 }
 
 // A simple little button to expand a bigger pane.
