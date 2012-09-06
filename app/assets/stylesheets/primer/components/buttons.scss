@@ -385,11 +385,6 @@ input[type=text] + .minibutton{ margin-left:5px; }
     }
   }
 }
-.context-menu-container.active .minibutton {
-  &.btn-assignee, &.btn-label, &.btn-milestone {
-    @extend .minibutton.selected;
-  }
-}
 .context-menu-container.active .minibutton.switcher {
   @extend .minibutton.selected;
 }
