@@ -57,6 +57,7 @@
   // .mini-icon-public-fork                          - UTF+f020
   // .mini-icon-fork                                 - UTF+f020
   // .mini-icon-branch                               - UTF+f020
+  // .mini-icon-tree                                 - UTF+f020
   // .mini-icon-private-fork                         - UTF+f021
   // .mini-icon-pull-request                         - UTF+f022
   // .mini-icon-merge                                - UTF+f023
@@ -301,7 +302,8 @@
 
   .mini-icon-public-fork:before,
   .mini-icon-fork:before,
-  .mini-icon-branch:before {
+  .mini-icon-branch:before,
+  .mini-icon-tree:before {
     content: "\f020";
   }
   .mini-icon-private-fork:before {
@@ -661,6 +663,7 @@
   // .mega-icon-public-fork                          - UTF+f220
   // .mega-icon-fork                                 - UTF+f220
   // .mega-icon-branch                               - UTF+f220
+  // .mega-icon-tree                                 - UTF+f220
   // .mega-icon-private-fork                         - UTF+f221
   // .mega-icon-pull-request                         - UTF+f222
   // .mega-icon-merge                                - UTF+f223
@@ -877,7 +880,8 @@
 
   .mega-icon-public-fork:before,
   .mega-icon-fork:before,
-  .mega-icon-branch:before {
+  .mega-icon-branch:before,
+  .mega-icon-tree:before {
     content: "\f220";
   }
   .mega-icon-private-fork:before {
