@@ -178,27 +178,6 @@
     font-size: 16px;
     text-decoration: none;
   }
-  // Icon colors
-  .mini-icon-private-repo:before,
-  .mega-icon-private-repo:before,
-  .mini-icon-repo-forked:before,
-  .mega-icon-repo-forked:before,
-  .mini-icon-private-mirror:before,
-  .mega-icon-private-mirror:before,
-  .mini-icon-public-mirror:before,
-  .mega-icon-public-mirror:before,
-  .mini-icon-public-repo:before,
-  .mega-icon-public-repo:before { color: #666; }
-  .mega-icon-mail-status:before,
-  .mini-icon-mail-status:before { color: #c6c6c6; }
-  .mega-icon-mail-status.unread:before,
-  .mini-icon-mail-status.unread:before { color: #4183c4; }
-  .mega-icon-submodule:before,
-  .mini-icon-submodule:before { color: #3cbf5e;}
-  .mega-icon-directory:before,
-  .mini-icon-directory:before { color: #80a6cd;}
-  .mega-icon-text-file:before,
-  .mini-icon-text-file:before { color: #777;}
 
   .mini-icon-private-repo:before {
     content: "\f06a";
