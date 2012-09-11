@@ -166,17 +166,15 @@
   .mini-icon,
   .mega-icon {
     @include icon-bootstrap();
+    @include transition($property: color);
     line-height: 1;
+    text-decoration: none;
     text-decoration: none;
   }
   .mini-icon {
+    font-size: 16px;
     width: 16px;
     height: 16px;
-  }
-  .mini-icon:before {
-    @include transition($property: color);
-    font-size: 16px;
-    text-decoration: none;
   }
 
   .mini-icon-private-repo:before {
@@ -749,12 +747,12 @@
   //
   // Styleguide 7.2
   .mega-icon {
+    @extend .mini-icon:before;
+  }
+  .mega-icon {
+    font-size: 32px;
     width: 32px;
     height: 32px;
-  }
-  .mega-icon:before {
-    @extend .mini-icon:before;
-    font-size: 32px;
   }
 
   .mega-icon-private-repo:before {
