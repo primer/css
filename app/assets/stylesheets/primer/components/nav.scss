@@ -5,15 +5,7 @@
 // .menu-side - Container for the side menu
 // .menu      - Menu ul element
 //
-// Example:
-// <div class="menu-container">
-//   <ul class="menu">
-//     <li><a href="#user">Profile</a></li>
-//   </ul>
-// </div>
-//
-// Styleguide reference 7.1
-
+// Styleguide 8.3
 .menu-container {
   float: left;
   width: 200px;
@@ -75,20 +67,7 @@
 // .section-nav   - The navigation for sections that slides up down when
 //                  a.section-head is clicked
 //
-// Example
-// <div class="menu-container">
-//   <ul class="menu accordion">
-//     <li class="section">
-//       <a href="/settings/github" class="section-head">GitHub</a>
-//       <ul class="section-nav">
-//         <li><a href="/sshkeys">SSH Keys</a></li>
-//       </ul>
-//     </li>
-//   </ul>
-// </div>
-//
-// Styleguide reference 7.2
-
+// Styleguide 8.3.1
 .accordion {
   background: #fafafb;
   list-style: none;
