@@ -2,8 +2,7 @@
 
 // A menu on the side of a page, defaults to left side. e.g. github.com/about
 //
-// .menu-side - Container for the side menu
-// .menu      - Menu ul element
+// .menu li.active - Something
 //
 // Styleguide 8.3
 .menu-container {
@@ -60,12 +59,6 @@
 }
 
 // Turn a menu into an accordion menu
-//
-// .accordion     - added to <ul.menu> to provide correct styles and JS hooks
-// li.section     - Container for one section of the accordion nav
-// a.section-head - The title of a section, e.g. 'github' in /settings accordion
-// .section-nav   - The navigation for sections that slides up down when
-//                  a.section-head is clicked
 //
 // Styleguide 8.3.1
 .accordion {
