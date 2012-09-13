@@ -1,11 +1,16 @@
 // Site width is 920px on most logged in pages, some marketing pages are 960px
 $siteWidth: 920px !default;
 
-// Basic colors
-$linkBlue: #4183c4 !default;
-$bodyColor: #333 !default;
-$greenOpen: #6CC644 !default;
-$redClosed: #BD2C00 !default;
+// Brand colors
+//
+// Styleguide 11.1
+$brand-linkBlue:  #4183c4 !default;
+$brand-lightGrey: #999    !default;
+$brand-medGrey:   #666    !default;
+$brand-darkGrey:  #333    !default;
+$brand-green:     #6CC644 !default;
+$brand-red:       #BD2C00 !default;
+$brand-orange:    #f93    !default;
 
 // The base body font, great everywhere.
 $bodyFont: Helvetica, arial, freesans, clean, sans-serif !default;
