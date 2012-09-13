@@ -746,9 +746,6 @@
   //
   // Styleguide 7.2
   .mega-icon {
-    @extend .mini-icon:before;
-  }
-  .mega-icon {
     font-size: 32px;
     width: 32px;
     height: 32px;
@@ -1165,7 +1162,7 @@
   .mega-icon-circle-slash:before {
     content: "\f284";
   }
-  .mega-icon-circle-slash:before {
+  .mega-icon-pulse:before {
     content: "\f285";
   }
 
