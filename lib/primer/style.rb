@@ -5,6 +5,25 @@ module Primer
   module Style
     extend self
 
+    class Logger < Sass::Logger::Base
+      def _log(level, message)
+        raise message
+      end
+    end
+
+    # Captures anything logged by Sass
+    #
+    # &block - Block to capture
+    #
+    # Returns String log output.
+    def capture_sass_logs
+      old_logger = Sass.logger
+      Sass.logger = Logger.new(:warn)
+      yield
+    ensure
+      Sass.logger = old_logger
+    end
+
     # Parse all SCSS files in a directory.
     #
     # root - String root of directory
@@ -12,11 +31,12 @@ module Primer
     # Returns an Array of Sass::Nodes.
     def parse_files(root)
       nodes = []
+      load_paths = Primer.paths.map { |p| Sass::Importers::Filesystem.new(p) }
       Dir["#{root}/**/*.scss"].each do |path|
         data = File.read(path)
         nodes << Sass::SCSS::Parser.new(data, path).parse
         # sass wtf
-        nodes.each { |node| node.options = {:filename => path} }
+        nodes.each { |node| node.options = {:filename => path, :load_paths => load_paths } }
       end
       nodes
     end
@@ -46,9 +66,19 @@ module Primer
     #
     # Returns nothing.
     def assert_style(nodes)
-      iterate_nodes(nodes) do |node|
-        assert_no_js_rules(node)
+      capture_sass_logs do
+        nodes.each do |node|
+          assert_render_root(node)
+        end
+        iterate_nodes(nodes) do |node|
+          assert_no_js_rules(node)
+        end
       end
+    end
+
+    def assert_render_root(node)
+      assert_kind_of Sass::Tree::RootNode, node
+      assert node.render
     end
 
     # Check if any CSS rules use js- classes or ids.
