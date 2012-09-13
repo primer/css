@@ -573,7 +573,7 @@ input[type=text] + .minibutton{ margin-left:5px; }
   position: relative;
 
   &:hover {
-    color: $linkBlue;
+    color: $brand-linkBlue;
     cursor: pointer;
     text-decoration: none;
   }
