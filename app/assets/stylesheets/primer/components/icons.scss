@@ -166,7 +166,7 @@
   .mini-icon,
   .mega-icon {
     @include icon-bootstrap();
-    @include transition($property: color);
+    @include transition($property: color, $time: 0.07s);
     line-height: 1;
     text-decoration: none;
   }
