@@ -291,6 +291,10 @@ input[type=text] + .minibutton{ margin-left:5px; }
   .mini-icon {
     vertical-align: -2px;
     margin-right: 6px;
+    -moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: color 0 ease-in;
+    transition: none;
   }
   &.empty-icon .mini-icon {
     margin-right: 0;
