@@ -148,7 +148,8 @@
       padding: 0;
     }
 
-    li > :first-child {
+    li > :first-child,
+    li ul:first-of-type {
       margin-top: 0px;
     }
   }
