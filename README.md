@@ -10,7 +10,11 @@ Primer is the absolute bare bones assets package for GitHub.com and GitHub prope
 ### Rails 3.x apps
 
 ``` ruby
-gem 'primer', :git => 'https://hubot:TOKEN@github.com/github/primer.git'
+# Gemfile
+gem 'github-primer', :git => 'https://hubot:TOKEN@github.com/github/primer.git'
+
+# application.rb
+require 'primer'
 ```
 
 ### Updating
