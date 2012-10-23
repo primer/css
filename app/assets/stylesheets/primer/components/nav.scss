@@ -1,3 +1,4 @@
+@import "primer/variables";
 @import "primer/mixins/gradient";
 
 // A menu on the side of a page, defaults to left side. e.g. github.com/about
@@ -35,11 +36,16 @@
 
   a {
     display: block;
-    padding: 8px 10px;
+    padding: 8px 10px 8px 8px;
     text-shadow: 0 1px 0 #fff;
+    border-left: 2px solid #fafafb;
 
     &:hover {
       background: #fdfdfe;
+    }
+
+    .mini-icon {
+      color: $brand-darkGrey;
     }
 
     &.selected {
@@ -49,6 +55,17 @@
       color: #222;
       cursor: default;
       box-shadow: inset 0 0px 1px rgba(0,0,0, 0.1);
+    }
+
+    .counter {
+      float:right;
+      margin: 0 0 0 5px;
+      padding: 1px 5px 2px 5px;
+      font-size: 10px;
+      font-weight: bold;
+      color: rgb(102, 102, 102);
+      background: rgb(229, 229, 229);
+      border-radius: 10px;
     }
   }
 
