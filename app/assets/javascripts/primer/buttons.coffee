@@ -5,7 +5,7 @@
 #
 
 # Add mousedown class to classy buttons and minibuttons
-$(document).on 'mousedown', 'button.classy, .minibutton', ->
+$(document).on 'mousedown', 'button.classy, a.button.classy, .minibutton', ->
   return if $(this).prop 'disabled'
   return if $(this).hasClass 'disabled'
 
