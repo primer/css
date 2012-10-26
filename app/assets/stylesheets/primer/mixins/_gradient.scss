@@ -8,9 +8,7 @@
   background:$start;
   // FF 3.6+
   background: -moz-linear-gradient(#{$start}, #{$end});
-  // IE10
-  background: -ms-linear-gradient(#{$start}, #{$end});
   // Safari 5.1+, Chrome 10+
   background: -webkit-linear-gradient(#{$start}, #{$end});
-  // background: linear-gradient(#{$start}, #{$end});
+  background: linear-gradient(#{$start}, #{$end});
 }
