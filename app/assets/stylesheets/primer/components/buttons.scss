@@ -156,6 +156,7 @@ button.classy img, a.button.classy img {
 // .danger.mousedown - A depressed danger button.
 // .green            - A nice green button, for places like like the merge
 // .blue             - A nice blue button, for places like merge button confirm box.
+// .dark-grey        - A dark grey button for places like the delete branch (w/ unmerged commits) box.
 //
 // Styleguide 1.2
 .minibutton{
@@ -225,6 +226,23 @@ button.classy img, a.button.classy img {
     text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
     border-color: #275666;
     @include gradient(#448da6, #32687b);
+  }
+
+  &.dark-grey {
+
+    &, &.disabled:hover, &:disabled:hover {
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+      border: 1px solid #707070;
+      border-bottom-color: #595959;
+      @include gradient(#8c8c8c, #6d6d6d);
+    }
+
+    &:hover, &.mousedown {
+      border-color: #585858;
+      @include gradient(#737373, #545454);
+    }
+
   }
 
   &.mousedown {
