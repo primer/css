@@ -549,7 +549,7 @@ input[type=text] + .minibutton{ margin-left:5px; }
     &:last-child .grouped-button {
       border-right: none;
       border-bottom-right-radius: 2px;
-      border-bottom-left-radius: 2px;
+      border-top-right-radius: 2px;
     }
   }
 
