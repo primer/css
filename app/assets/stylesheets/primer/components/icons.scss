@@ -163,6 +163,8 @@
   // .mini-icon-pulse                                - UTF+f085
   // .mini-icon-new-file                             - UTF+f086
   // .mini-icon-refresh                              - UTF+f087
+  // .mini-icon-telescope                            - UTF+f088
+  // .mini-icon-microscope                           - UTF+f089
   //
   // Styleguide 7.1
   .mini-icon,
@@ -603,6 +605,12 @@
   .mini-icon-refresh:before {
     content: "\f087";
   }
+  .mini-icon-telescope:before {
+    content: "\f088";
+  }
+  .mini-icon-microscope:before {
+    content: "\f089";
+  }
 
   // Mega Icons are larger versions of our mini-icons. They are
   // optomized for 32px and bigger.
@@ -753,6 +761,8 @@
   // .mega-icon-pulse                                - UTF+f285
   // .mega-icon-new-file                             - UTF+f286
   // .mega-icon-refresh                              - UTF+f287
+  // .mega-icon-telescope                            - UTF+f288
+  // .mega-icon-microscope                           - UTF+f289
   //
   // Styleguide 7.2
   .mega-icon {
@@ -1180,6 +1190,12 @@
   }
   .mega-icon-refresh:before {
     content: "\f287";
+  }
+  .mega-icon-refresh:before {
+    content: "\f288";
+  }
+  .mega-icon-refresh:before {
+    content: "\f289";
   }
 
   // Mini icons style for icons across the site.
