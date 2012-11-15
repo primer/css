@@ -236,6 +236,7 @@
   // Images & Stuff
   img {
     max-width: 100%;
+    @include box-sizing(border-box);
   }
 
   // Gollum Image Tags
