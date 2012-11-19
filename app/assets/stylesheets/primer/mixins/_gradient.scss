@@ -5,10 +5,12 @@
 //
 // Compatibility untested.
 @mixin gradient($start: #fafafa, $end: #eaeaea){
-  background:$start;
+  background-color: $end;
   // FF 3.6+
-  background: -moz-linear-gradient(#{$start}, #{$end});
+  background-image: -moz-linear-gradient(#{$start}, #{$end});
   // Safari 5.1+, Chrome 10+
-  background: -webkit-linear-gradient(#{$start}, #{$end});
-  background: linear-gradient(#{$start}, #{$end});
+  background-image: -webkit-linear-gradient(#{$start}, #{$end});
+  background-image: linear-gradient(#{$start}, #{$end});
+  // Only show the gradient once
+  background-repeat: repeat-x;
 }
