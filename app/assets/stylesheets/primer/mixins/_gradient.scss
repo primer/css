@@ -11,6 +11,5 @@
   // Safari 5.1+, Chrome 10+
   background-image: -webkit-linear-gradient(#{$start}, #{$end});
   background-image: linear-gradient(#{$start}, #{$end});
-  // Only show the gradient once
   background-repeat: repeat-x;
 }
