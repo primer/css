@@ -628,3 +628,14 @@ input[type=text] + .minibutton{ margin-left:5px; }
     margin-top: -6px;
   }
 }
+
+button.classy, a.button.classy, a.button.classy.primary,
+.minibutton {
+  outline:none;
+
+  &:focus {
+    border-color: #51A7E8;
+    box-shadow: rgba(81, 167, 232, 0.5) 0 0 5px;
+    text-decoration: none;
+  }
+}
