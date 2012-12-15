@@ -78,6 +78,7 @@
   // .mini-icon-logout                               - UTF+f032
   // .mini-icon-admin-tools                          - UTF+f033
   // .mini-icon-feed                                 - UTF+f034
+  // .mini-icon-clipboard                            - UTF+f035
   // .mini-icon-apple                                - UTF+f036
   // .mini-icon-windows                              - UTF+f037
   // .mini-icon-ios                                  - UTF+f038
@@ -349,6 +350,9 @@
   }
   .mini-icon-feed:before {
     content: "\f034";
+  }
+  .mini-icon-clipboard:before {
+    content: "\f035";
   }
   .mini-icon-apple:before {
     content: "\f036";
@@ -691,6 +695,7 @@
   // .mega-icon-logout                               - UTF+f232
   // .mega-icon-admin-tools                          - UTF+f233
   // .mega-icon-feed                                 - UTF+f234
+  // .mega-icon-clipboard                            - UTF+f235
   // .mega-icon-apple                                - UTF+f236
   // .mega-icon-windows                              - UTF+f237
   // .mega-icon-ios                                  - UTF+f238
@@ -956,6 +961,9 @@
   }
   .mega-icon-feed:before {
     content: "\f234";
+  }
+  .mega-icon-clipboard:before {
+    content: "\f235";
   }
   .mega-icon-apple:before {
     content: "\f236";
@@ -1229,18 +1237,4 @@
     content: "\f28d";
   }
 
-  // Mini icons style for icons across the site.
-  .mini-icon-clippy {
-    display: inline-block;
-    height: 16px;
-    width: 16px;
-    background-color: transparent;
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    vertical-align: text-bottom;
-    background-image: image-url("primer/icons/clippy.png");
-    &:before {
-      content:"";
-    }
-  }
 }
