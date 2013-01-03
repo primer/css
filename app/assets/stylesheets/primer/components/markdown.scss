@@ -152,8 +152,13 @@
     }
 
     li > :first-child,
-    li ul:first-of-type {
+    li ul:first-of-type,
+    li ol:first-of-type {
       margin-top: 0px;
+    }
+
+    li p:last-of-type {
+      margin-bottom: 0;
     }
   }
 
