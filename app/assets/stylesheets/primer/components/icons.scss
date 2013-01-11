@@ -170,6 +170,7 @@
   // .mini-icon-unalign                              - UTF+f08b
   // .mini-icon-gist-secret                          - UTF+f08c
   // .mini-icon-home                                 - UTF+f08d
+  // .mini-icon-aligned-to                           - UTF+f08e
   //
   // Styleguide 7.1
   .mini-icon,
@@ -630,6 +631,9 @@
   .mini-icon-home:before {
     content: "\f08d";
   }
+  .mini-icon-aligned-to:before {
+    content: "\f08e";
+  }
 
   // Mega Icons are larger versions of our mini-icons. They are
   // optomized for 32px and bigger.
@@ -787,6 +791,7 @@
   // .mega-icon-unalign                              - UTF+f28b
   // .mega-icon-gist-secret                          - UTF+f28c
   // .mega-icon-home                                 - UTF+f28d
+  // .mega-icon-aligned-to                           - UTF+f28e
   //
   // Styleguide 7.2
   .mega-icon {
@@ -1235,6 +1240,9 @@
   }
   .mega-icon-gist-secret:before {
     content: "\f28d";
+  }
+  .mega-icon-aligned-to:before {
+    content: "\f28e";
   }
 
 }
