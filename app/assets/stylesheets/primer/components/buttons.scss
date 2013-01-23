@@ -1,139 +1,165 @@
 @import "primer/mixins/user-select";
 @import "primer/mixins/icon-bootstrap";
 @import "primer/mixins/gradient";
+@import "primer/mixins/transition";
+@import "primer/mixins/box-sizing";
 @import "primer/variables";
 
-// Classy buttons are big clickable buttons, great for form actions and
-// primary page actions. This is used extensively around the site.
+// Use the standard, but classy, `.button` for form actions and primary
+// page actions. These are used extensively around the site.
 //
 // :hover             - Buttons love hover states.
+// :active            - Buttons love active states.
 // :disabled          - For when you shouldn't be able to click on it.
 // .disabled          - Same as the disabled pseudo-class.
-// .primary           - For the main form action, use whenever creating
-//                      something.
-//                      like posting a new issue or comment.
+// .primary           - For the main form action, use whenever creating something.
 // .primary:hover     - Hover state fo primary buttons.
-// .mousedown         - A brief moment of polish when the button is pressed.
-// .primary.mousedown - Even primary buttons have a down state.
-// .danger            - This button is going to do something potentially bad
-//                      or destructive.
+// .primary:active    - A brief moment of polish when the button is pressed.
+// .primary:disabled  - Even primary buttons have a down state.
+// .primary.disabled  - Same as the disabled pseudo-class.
+// .danger            - For potentially bad or destructive actions.
 // .danger:hover      - Hover state for danger buttons.
-// .danger.mousedown  - Depressed danger button.
+// .danger:active     - Depressed danger button.
 // .danger:disabled   - Disabled danger button.
+// .danger.disabled   - Save as the disabled pseudo-class.
 //
 // Styleguide 1.1
-button.classy, a.button.classy,
-button.classy:disabled:hover, a.button.classy.disabled:hover {
-  display: inline-block;
-  padding: 8px 15px;
-  line-height: normal;
+.button,
+.minibutton {
   position: relative;
-
-  font-family: $bodyFont;
-  font-size: 12px;
+  display: inline-block;
+  padding: 8px 15px 7px;
+  font-size: 13px;
   font-weight: bold;
-  color: #666;
-  text-shadow: 0 1px rgba(255,255,255,0.9);
-
-  @include gradient(#f5f5f5, #e5e5e5);
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255,255,255,.9);
+  white-space: nowrap;
+  @include gradient(#fafafa, #eaeaea);
   border-radius: 3px;
   border: 1px solid #ddd;
-  border-bottom-color: #bbb;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.10);
-
-  cursor:pointer;
+  border-bottom-color: #c5c5c5;
+  box-shadow: 0 1px 3px rgba(0,0,0,.075);
+  vertical-align: middle;
+  cursor: pointer;
   @include user-select(none);
 
-  &.primary {
+  &:hover,
+  &:active {
     color: #fff;
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
-
-    border-color: #74bb5a;
-    border-bottom-color: #509338;
-    @include gradient(#8add6d, #60b044);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-
-    &:hover {
-      @include gradient(darken(#8add6d, 10%), darken(#60b044, 10%));
-      border-color: #4a993e;
-      color: #fff;
-    }
-    &.mousedown {
-      border-bottom-color: darken(#8add6d, 10%);
-      @include gradient(darken(#60b044, 10%), darken(#8add6d, 10%));
-    }
-
-    &:disabled, &.disabled {
-      &, &:hover {
-        color: #fff;
-        border-color: #74bb5a;
-        border-bottom-color: #509338;
-        @include gradient(#8add6d, #60b044);
-      }
-    }
-  }
-
-  &.danger {
-    color: #990000;
-
-    &:hover {
-      color: #fff;
-      text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.3);
-      border-bottom-color: #cd504a;
-      @include gradient(#dc5f59, #b33630);
-    }
-
-    &:disabled, &.disabled {
-      &, &:hover {
-        color: #990000;
-        text-shadow: 0 1px 0 #fff;
-        @include gradient(#ffffff, #e1e1e1);
-      }
-    }
-
-    &.mousedown {
-      border-bottom-color: #dc5f59;
-      @include gradient(#b33630, #dc5f59);
-    }
-  }
-
-  &:hover {
-    color: #337797;
     text-decoration: none;
-    @include gradient(#f0f7fa, #d8eaf2);
-    border-color: #cbe3ee;
-    border-bottom-color: #97c7dd;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    @include gradient(#599bcd, #3072b3);
+    border-color: #2a65a0;
   }
 
-  &:disabled, &.disabled {
-    @extend button.classy;
-    opacity: 0.5;
-    &:hover {
+  &:active {
+    background-color: #3072b3;
+    background-image: none;
+    border-color: darken(#2a65a0, 5%);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.15);
+  }
+
+  &:disabled,
+  &.disabled {
+    &, &:hover {
+      opacity: .5;
       color: #666;
-      @include gradient(#f5f5f5, #e5e5e5);
-      border: 1px solid #ddd;
-      border-bottom-color: #bbb;
+      text-shadow: 0 1px 0 rgba(255,255,255,.9);
+      background-image: none;
+      background-color: #e5e5e5;
+      border-color: #c5c5c5;
       cursor: default;
     }
   }
 
-  &.mousedown {
+  // Green primary button
+  &.primary {
     color: #fff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-    border-color: #2a65a0;
-    border-bottom-color: #0770a0;
-    @include gradient(#0770a0, #0ca6dd);
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    @include gradient(#8add6d, #60b044);
+    border-color: darken(#60b044, 2%);
+
+    &:hover {
+      color: #fff;
+      @include gradient(darken(#8add6d, 2.5%), darken(#60b044, 2.5%));
+      border-color: #4a993e;
+    }
+
+    &:active {
+      background-color: darken(#60b044, 5%);
+      background-image: none;
+      border-color: darken(#4a993e, 5%);
+    }
+
+    &:disabled,
+    &.disabled {
+      &, &:hover {
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+        @include gradient(#8add6d, #60b044);
+        border-color: #74bb5a #74bb5a #509338;
+      }
+    }
+  }
+
+  // Red danger button
+  &.danger {
+    color: #900;
+
+    &:hover {
+      color: #fff;
+      text-shadow: 0px -1px 0 rgba(0,0,0,.3);
+      @include gradient(#dc5f59, #b33630);
+      border-color: #cd504a;
+    }
+
+    &:active {
+      color: #fff;
+      background-color: #b33630;
+      background-image: none;
+      border-color: darken(#cd504a, 15%);
+    }
+
+    &:disabled,
+    &.disabled {
+      &, &:hover {
+        color: #900;
+        text-shadow: 0 1px 0 rgba(255,255,255,.9);
+        @include gradient(#fff, #e1e1e1);
+        border-color: #c5c5c5;
+      }
+    }
+  }
+
+  // Blue button
+  &.blue {
+    &, &:hover {
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+      @include gradient(#448da6, #32687b);
+      border-color: darken(#32687b, 5%);
+    }
+
+    &:hover {
+      background-position: 0 -10px;
+    }
+
+    &:active {
+      background-color: #32687b;
+      background-image: none;
+    }
+
+    &:disabled,
+    &.disabled {
+      background-position: 0 0;
+      @include gradient(#448da6, #32687b);
+    }
+
   }
 }
 
-// Gets rid of extra space in a weird limbo space of buttons for Firefox
-button.classy::-moz-focus-inner { margin: -1px -3px; }
-
-// IE Hax?
-a.button.classy { display: inline-block; }
-
 /// Position images inside buttons correctly
-button.classy img, a.button.classy img {
+.button img {
   position: relative;
   top: -1px;
   margin-right: 3px;
@@ -147,140 +173,73 @@ button.classy img, a.button.classy img {
 // used to submit forms. Also see the `minibutton` rails helper.
 //
 // :hover            - The hover state.
+// :active           - The active state.
+// .selected         - A permenantly depressed minibutton, useful for toggles.
 // :disabled         - A disabled button.
 // .disabled         - Same as pseudo class.
-// .mousedown        - A brief moment of polish when the button is pressed.
-// .selected         - A permenantly depressed minibutton, useful for toggles.
+// .primary           - For the main form action, use whenever creating something.
+// .primary:hover     - Hover state fo primary buttons.
+// .primary:active    - A brief moment of polish when the button is pressed.
 // .danger           - This button might do something bad.
 // .danger:hover     - This button might do something bad.
-// .danger.mousedown - A depressed danger button.
-// .green            - A nice green button, for places like like the merge
+// .danger:active    - A depressed danger button.
 // .blue             - A nice blue button, for places like merge button confirm box.
 // .dark-grey        - A dark grey button for places like the delete branch (w/ unmerged commits) box.
 //
 // Styleguide 1.2
-.minibutton{
-  position: relative;
-  display: inline-block;
-  padding: 0 10px 0 10px;
-
-  font-family: $bodyFont;
-  font-size: 13px;
-  font-weight: bold;
+.minibutton {
+  padding: 0 10px;
   line-height: 24px;
-  white-space: nowrap;
-
-  border-radius: 3px;
-
-  &, &.disabled:hover, &:disabled:hover {
-    color: #333;
-    text-shadow: 0 1px 0 #fff;
-    border: 1px solid #d4d4d4;
-    border-bottom-color: #bcbcbc;
-    @include gradient(#fafafa, #eaeaea);
-  }
-
-  cursor: pointer;
-  @include user-select(none);
-
-  i {
-    font-weight:500;
-    font-style:normal;
-    opacity:0.6;
-  }
-
-  &.danger {
-
-    &, &.disabled:hover, &:disabled:hover {
-      color: #990000;
-      text-shadow: 0 1px 0 #fff;
-      border: 1px solid #d4d4d4;
-      border-bottom-color: #bcbcbc;
-      @include gradient(#fafafa, #eaeaea);
-    }
-
-    &:hover {
-      color: #fff;
-      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-      border-color: #d4d4d4;
-      @include gradient(#dc5f59, #b33630);
-    }
-
-    &.mousedown {
-      border-color: #a0302a;
-      border-bottom-color :#c65651;
-      @include gradient(#b33630, #dc5f59);
-    }
-
-  }
-
-  &.green, &.green.disabled:hover, &.green:disabled:hover {
-    color: #fff;
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
-    @include gradient(#36b825, #28881b);
-    border-color: #4a993e;
-  }
-
-  &.blue, &.blue.disabled:hover, &.blue:disabled:hover {
-    color: #fff;
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
-    border-color: #275666;
-    @include gradient(#448da6, #32687b);
-  }
-
-  &.dark-grey {
-
-    &, &.disabled:hover, &:disabled:hover {
-      color: #fff;
-      text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
-      border: 1px solid #707070;
-      border-bottom-color: #595959;
-      @include gradient(#8c8c8c, #6d6d6d);
-    }
-
-    &:hover, &.mousedown {
-      border-color: #585858;
-      @include gradient(#737373, #545454);
-    }
-
-  }
-
-  &.mousedown {
-    color: #fff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-    border-color: #2a65a0;
-    border-bottom-color: #518cc6;
-    @include gradient(#3072b3, #599bdc);
-  }
-
-  &.selected {
-    color: #fff;
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
-    border-color: #686868;
-    @include gradient(#767676, #9e9e9e);
-  }
+  box-shadow: none;
 
   &:hover {
-    color: #fff;
-    text-decoration: none;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-    border-color: #518cc6;
-    border-bottom-color: #2a65a0;
-    @include gradient(#599bdc, #3072b3);
-
     .mini-icon-windows:before {
       background-position: -18px 0;
     }
   }
 
-  &:disabled, &.disabled {
-    opacity:0.5;
-    cursor:default;
+  &.selected {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    background-color: #767676;
+    background-image: none;
+    border-color: #686868;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.15);
+  }
+
+  i {
+    font-weight: 500;
+    font-style: normal;
+    opacity: .6;
+  }
+
+  &.dark-grey {
+    &,
+    &.disabled:hover,
+    &:disabled:hover {
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+      @include gradient(#8c8c8c, #6d6d6d);
+      border: 1px solid #707070;
+      border-bottom-color: #595959;
+    }
+    &:hover,
+    &:active {
+      border-color: #585858;
+    }
+    &:hover {
+      @include gradient(#737373, #545454);
+    }
+    &:active {
+      background-color: #545454;
+      background-image: none;
+      border-color: darken(#545454, 5%);
+      box-shadow: inset 0 3px 5px rgba(0,0,0,.15);
+    }
   }
 }
 
-// Gets rid of extra space in a weird limbo space of buttons for Firefox
-button.minibutton::-moz-focus-inner { margin: -1px -3px;}
+
 
 // I have no idea.
 input[type=text] + .minibutton{ margin-left:5px; }
@@ -356,38 +315,43 @@ input[type=text] + .minibutton{ margin-left:5px; }
       border-color: #000 transparent transparent;
       top: 10px;
       right: 7px;
-      width: 0px;
-      height: 0px;
+      width: 0;
+      height: 0;
     }
 
     // Separator line between content & arrow.
     &:after {
-      content: "";
-      display:block;
       position: absolute;
-      border-left: 1px solid #F9F9F9;
       top: 0;
       bottom: 0;
-      right: 0;
-      width: 18px;
-      box-shadow: #e4e4e4 -1px 0 0;
+      right: 18px;
+      display: block;
+      content: "";
+      width: 1px;
+      background-color: #f9f9f9;
+      box-shadow: -1px 0 0 #e4e4e4;
     }
   }
 
   // Separator line on hover
-  &:hover>span:after {
-    border-left: 1px solid #6A9FD3;
-    box-shadow: #3C74AB -1px 0 0;
+  &:hover > span:after {
+    background-color: #6a9fd3;
+    box-shadow: -1px 0 0 #3c74ab;
+  }
+  // Separator line on active
+  &:active > span:after {
+    background-color: lighten(#2a65a0, 10%);
+    box-shadow: -1px 0 0 darken(#2a65a0, 5%);
   }
 
   &.with-image {
-    height: 30px;
+    height: 32px;
 
     &>span {
       display: block;
-      height: 30px;
-      line-height: 30px;
-      padding: 0 26px 0 5px;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 26px 0 6px;
 
       &:before {
         top: 14px;
@@ -420,11 +384,12 @@ input[type=text] + .minibutton{ margin-left:5px; }
 
   // Separator
   &>span:after {
-    border-left: 1px solid #a4a4a4;
-    box-shadow: #787878 -1px 0 0;
+    background-color: #888;
+    box-shadow: -1px 0 0 #585858;
   }
 }
-.minibutton.switcher:hover>span:before {
+.minibutton.switcher:hover > span:before,
+.context-menu-container.active .context-button:after {
   border-color: #fff transparent transparent;
 }
 
@@ -436,38 +401,35 @@ input[type=text] + .minibutton{ margin-left:5px; }
 // Styleguide 1.2.3
 .context-button {
   position: relative;
-  width: 32px;
+  width: 12px;
   height: 22px;
-  padding: 0;
   line-height: 23px;
-
-  @include user-select(none);
 
   @if $enable-font-icons {
     @include icon-bootstrap();
 
     &:before {
-      display: block;
-      padding :0;
       position: absolute;
       top: 3px;
       left: 3px;
       content: "\f02f";
+      display: block;
+      padding: 0;
       font-size: 16px;
       line-height: 16px;
     }
   }
 
   &:after {
-    content: "";
-    display:block;
     position: absolute;
-    border: 3px solid #000;
-    border-color: #000 transparent transparent;
     top: 10px;
     right: 5px;
-    width: 0px;
-    height: 0px;
+    content: "";
+    display:block;
+    width: 0;
+    height: 0;
+    border: 3px solid #000;
+    border-color: #000 transparent transparent;
   }
 
   &:hover:after,
@@ -480,13 +442,13 @@ input[type=text] + .minibutton{ margin-left:5px; }
   @extend .minibutton.selected;
 }
 
-// A simple button to indicate and expand hidden text.
+// Use `.hidden-text-expander` to indicate and expand hidden text.
 //
 // .inline - button will display inline rather than block
 //
 // Styleguide 1.2.4
 .hidden-text-expander {
-  display:block;
+  display: block;
 
   &.inline {
     display: inline-block;
@@ -521,6 +483,16 @@ input[type=text] + .minibutton{ margin-left:5px; }
   }
 }
 
+
+
+// Full-width button.
+//
+// No styleguide reference.
+.button-block {
+  display: block;
+  width: 100%;
+  @include box-sizing(border-box);
+}
 
 
 // A button group is a series of buttons laid out next to each other, all part
@@ -583,12 +555,13 @@ input[type=text] + .minibutton{ margin-left:5px; }
 //
 // Styleguide 1.2.5
 .social-count {
-  border: 1px solid #D4D4D4;
+  border: 1px solid #ccc;
   font-size: 11px;
   font-weight: bold;
   padding: 6px 7px 5px;
   line-height: 20px;
   margin-left: 8px;
+  vertical-align: -1px;
   border-radius: 3px;
   color: $brand-darkGrey;
   background-color: #fafafa;
@@ -605,8 +578,8 @@ input[type=text] + .minibutton{ margin-left:5px; }
     display: block;
     width: 0;
     height: 0;
-    border: 6px solid #D4D4D4;
-    border-color: transparent #D4D4D4 transparent transparent;
+    border: 6px solid #ccc;
+    border-color: transparent #ccc transparent transparent;
     position: absolute;
     right: 100%;
     margin-right: 0;
