@@ -2,13 +2,12 @@
 //
 // Compatibility untested.
 @mixin clearfix{
+  &:before,
   &:after {
-      content: ".";
-      display: block;
-      height: 0;
-      clear: both;
-      visibility: hidden;
+    content: " ";
+    display: table;
   }
-  display: inline-block;
-  display: block;
+  &:after {
+    clear: both;
+  }
 }
