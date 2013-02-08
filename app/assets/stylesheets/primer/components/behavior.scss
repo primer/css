@@ -16,6 +16,8 @@
     white-space: nowrap;
   }
 
+  &.expandable.zeroclipboard-is-hover .css-truncate-target,
+  &.expandable.zeroclipboard-is-hover.css-truncate-target,
   &.expandable:hover .css-truncate-target,
   &.expandable:hover.css-truncate-target {
     max-width: 10000px !important;
