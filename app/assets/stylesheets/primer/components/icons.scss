@@ -171,6 +171,18 @@
   // .mini-icon-gist-secret                          - UTF+f08c
   // .mini-icon-home                                 - UTF+f08d
   // .mini-icon-aligned-to                           - UTF+f08e
+  // .mini-icon-stop-spam                            - UTF+f08f
+  // .mini-icon-zap                                  - UTF+f090
+  // .mini-icon-bug                                  - UTF+f091
+  // .mini-icon-loading-inner                        - UTF+f092
+  // .mini-icon-loading-outer                        - UTF+f093
+  // .mini-icon-binary-file                          - UTF+f094
+  // .mini-icon-create-directory                     - UTF+f095
+  // .mini-icon-database                             - UTF+f096
+  // .mini-icon-server                               - UTF+f097
+  // .mini-icon-ignored-file                         - UTF+f098
+  // .mini-icon-ignore                               - UTF+f099
+  // .mini-icon-ellipsis                             - UTF+f09a
   //
   // Styleguide 7.1
   .mini-icon,
@@ -634,6 +646,43 @@
   .mini-icon-aligned-to:before {
     content: "\f08e";
   }
+  .mini-icon-stop-spam:before {
+    content: "\f08f";
+  }
+  
+  .mini-icon-zap:before {
+    content: "\f090";
+  }
+  .mini-icon-bug:before {
+    content: "\f091";
+  }
+  .mini-icon-loading-inner:before {
+    content: "\f092";
+  }
+  .mini-icon-loading-outer:before {
+    content: "\f093";
+  }
+  .mini-icon-binary-file:before {
+    content: "\f094";
+  }
+  .mini-icon-create-directory:before {
+    content: "\f095";
+  }
+  .mini-icon-database:before {
+    content: "\f096";
+  }
+  .mini-icon-server:before {
+    content: "\f097";
+  }
+  .mini-icon-ignored-file:before {
+    content: "\f098";
+  }
+  .mini-icon-ignore:before {
+    content: "\f099";
+  }
+  .mini-icon-ellipsis:before {
+    content: "\f09a";
+  }
 
   // Mega Icons are larger versions of our mini-icons. They are
   // optomized for 32px and bigger.
@@ -792,6 +841,18 @@
   // .mega-icon-gist-secret                          - UTF+f28c
   // .mega-icon-home                                 - UTF+f28d
   // .mega-icon-aligned-to                           - UTF+f28e
+  // .mega-icon-stop-spam                            - UTF+f28f
+  // .mega-icon-zap                                  - UTF+f290
+  // .mega-icon-bug                                  - UTF+f291
+  // .mega-icon-loading-inner                        - UTF+f292
+  // .mega-icon-loading-outer                        - UTF+f293
+  // .mega-icon-binary-file                          - UTF+f294
+  // .mega-icon-create-directory                     - UTF+f295
+  // .mega-icon-database                             - UTF+f296
+  // .mega-icon-server                               - UTF+f297
+  // .mega-icon-ignored-file                         - UTF+f298
+  // .mega-icon-ignore                               - UTF+f299
+  // .mega-icon-ellipsis                             - UTF+f29a
   //
   // Styleguide 7.2
   .mega-icon {
@@ -1223,10 +1284,10 @@
   .mega-icon-refresh:before {
     content: "\f287";
   }
-  .mega-icon-refresh:before {
+  .mega-icon-telescope:before {
     content: "\f288";
   }
-  .mega-icon-refresh:before {
+  .mega-icon-microscope:before {
     content: "\f289";
   }
   .mega-icon-align:before {
@@ -1238,11 +1299,47 @@
   .mega-icon-gist-secret:before {
     content: "\f28c";
   }
-  .mega-icon-gist-secret:before {
+  .mega-icon-home:before {
     content: "\f28d";
   }
   .mega-icon-aligned-to:before {
     content: "\f28e";
   }
+  .mega-icon-stop-spam:before {
+    content: "\f28f";
+  }
 
+  .mega-icon-zap:before {
+    content: "\f290";
+  }
+  .mega-icon-bug:before {
+    content: "\f291";
+  }
+  .mega-icon-loading-inner:before {
+    content: "\f292";
+  }
+  .mega-icon-loading-outer:before {
+    content: "\f293";
+  }
+  .mega-icon-binary-file:before {
+    content: "\f294";
+  }
+  .mega-icon-create-directory:before {
+    content: "\f295";
+  }
+  .mega-icon-database:before {
+    content: "\f296";
+  }
+  .mega-icon-server:before {
+    content: "\f297";
+  }
+  .mega-icon-ignored-file:before {
+    content: "\f298";
+  }
+  .mega-icon-ignore:before {
+    content: "\f299";
+  }
+  .mega-icon-ellipsis:before {
+    content: "\f29a";
+  }
 }
