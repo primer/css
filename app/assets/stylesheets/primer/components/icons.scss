@@ -183,6 +183,10 @@
   // .mini-icon-ignored-file                         - UTF+f098
   // .mini-icon-ignore                               - UTF+f099
   // .mini-icon-ellipsis                             - UTF+f09a
+  // .mini-icon-symlink                              - UTF+f09b
+  // .mini-icon-no-newline                           - UTF+f09c
+  // .mini-icon-hubot                                - UTF+f09d
+  // .mini-icon-hourglass                            - UTF+f09e
   //
   // Styleguide 7.1
   .mini-icon,
@@ -683,6 +687,18 @@
   .mini-icon-ellipsis:before {
     content: "\f09a";
   }
+  .mini-icon-symlink:before {
+    content: "\f09b";
+  }
+  .mini-icon-no-newline:before {
+    content: "\f09c";
+  }
+  .mini-icon-hubot:before {
+    content: "\f09d";
+  }
+  .mini-icon-hourglass:before {
+    content: "\f09e";
+  }
 
   // Mega Icons are larger versions of our mini-icons. They are
   // optomized for 32px and bigger.
@@ -853,6 +869,10 @@
   // .mega-icon-ignored-file                         - UTF+f298
   // .mega-icon-ignore                               - UTF+f299
   // .mega-icon-ellipsis                             - UTF+f29a
+  // .mega-icon-symlink                              - UTF+f29b
+  // .mega-icon-no-newline                           - UTF+f29c
+  // .mega-icon-hubot                                - UTF+f29d
+  // .mega-icon-hourglass                            - UTF+f29e
   //
   // Styleguide 7.2
   .mega-icon {
@@ -1341,5 +1361,17 @@
   }
   .mega-icon-ellipsis:before {
     content: "\f29a";
+  }
+  .mega-icon-symlink:before {
+    content: "\f29b";
+  }
+  .mega-icon-no-newline:before {
+    content: "\f29c";
+  }
+  .mega-icon-hubot:before {
+    content: "\f29d";
+  }
+  .mega-icon-hourglass:before {
+    content: "\f29e";
   }
 }
