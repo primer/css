@@ -63,7 +63,7 @@
 
   &:disabled,
   &.disabled {
-    &, &:hover {
+    &, &:hover, &:active {
       opacity: .5;
       color: #666;
       text-shadow: 0 1px 0 rgba(255,255,255,.9);
@@ -95,7 +95,7 @@
 
     &:disabled,
     &.disabled {
-      &, &:hover {
+      &, &:hover, &:active {
         color: #fff;
         text-shadow: 0 -1px 0 rgba(0,0,0,.25);
         @include gradient(#8add6d, #60b044);
@@ -124,7 +124,7 @@
 
     &:disabled,
     &.disabled {
-      &, &:hover {
+      &, &:hover, &:active {
         color: #900;
         text-shadow: 0 1px 0 rgba(255,255,255,.9);
         @include gradient(#fff, #e1e1e1);
@@ -228,7 +228,9 @@
   &.dark-grey {
     &,
     &.disabled:hover,
-    &:disabled:hover {
+    &:disabled:hover,
+    &.disabled:active,
+    &:disabled:active {
       color: #fff;
       text-shadow: 0 -1px 0 rgba(0,0,0,.25);
       @include gradient(#8c8c8c, #6d6d6d);
