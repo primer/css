@@ -19,7 +19,7 @@ require 'primer'
 
 ### Updating
 
-For Rails 3 apps, just run `bundle update primer` and commit any changes to `Gemfile.lock`.
+For Rails 3 apps, just run `bundle update github-primer` and commit any changes to `Gemfile.lock`.
 
 `github/github` is a special case. To update primer run `script/vendor-primer`. If there are any git pull issues, you may need to cd into `vendor/internal-gems/primer` and resolve them manually.
 
