@@ -5,7 +5,9 @@
 #
 
 # Prevent minibutton click if target is disabled
-$(document).on 'click:prepare', '.minibutton.disabled', (event) ->
-  event.preventDefault()
-  event.stopPropagation()
+document.addEventListener 'click', (event) ->
+  if $(event.target).is '.minibutton.disabled'
+    event.preventDefault()
+    event.stopPropagation()
   return
+, true
