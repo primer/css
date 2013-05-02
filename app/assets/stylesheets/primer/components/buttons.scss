@@ -205,7 +205,7 @@
   box-shadow: none;
 
   &:hover {
-    .mini-icon-windows:before {
+    .octicon-device-desktop:before {
       background-position: -18px 0;
     }
   }
@@ -260,26 +260,26 @@ input[type=text] + .minibutton{ margin-left:5px; }
 
 // Minibuttons with an icon.
 //
-// .mini-icon-wrench           - Admin.
-// .mini-icon-watching         - Watch.
-// .mini-icon-star             - Star.
-// .mini-icon-download         - Download.
-// .mini-icon-edit             - Edit.
-// .mini-icon-follow           - Follow.
-// .mini-icon-member-removed   - Unfollow.
-// .mini-icon-pull-request     - Pull Request.
-// .mini-icon-fork             - Fork.
-// .mini-icon-logout           - Leave.
-// .mini-icon-diff             - To the compare view!
-// .mini-icon-reply            - Reply.
-// .mini-icon-arr-left         - Back.
-// .mini-icon-arr-right        - Forward.
-// .mini-icon-windows          - Microsoft.
-// .mini-icon-apple              - Mac.
+// .octicon-tools           - Admin.
+// .octicon-eye-watch         - Watch.
+// .octicon-star             - Star.
+// .octicon-cloud-download         - Download.
+// .octicon-pencil             - Edit.
+// .octicon-person-follow           - Follow.
+// .octicon-person-remove   - Unfollow.
+// .octicon-git-pull-request     - Pull Request.
+// .octicon-git-branch             - Fork.
+// .octicon-log-out           - Leave.
+// .octicon-diff             - To the compare view!
+// .octicon-mail-reply            - Reply.
+// .octicon-arrow-left         - Back.
+// .octicon-arrow-right        - Forward.
+// .octicon-device-desktop          - Microsoft.
+// .octicon-device-desktop              - Mac.
 //
 // Styleguide 1.2.1
 .minibutton {
-  .mini-icon {
+  .octicon {
     vertical-align: -2px;
     margin-right: 6px;
     -moz-transition: none;
@@ -287,10 +287,10 @@ input[type=text] + .minibutton{ margin-left:5px; }
     -o-transition: color 0 ease-in;
     transition: none;
   }
-  &.empty-icon .mini-icon {
+  &.empty-icon .octicon {
     margin-right: 0;
   }
-  .mini-icon-arr-right {
+  .octicon-arrow-right {
     float: right;
     margin-right: 0;
     margin-left: 5px;
