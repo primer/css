@@ -1,12 +1,15 @@
 @import "primer/mixins/box-sizing";
 
+// All of our block level items should have the same margin
+$margin: 15px;
+
 // This is styling for generic markdownized text. Anything you put in a
 // container with .markdown-body on it should render generally well. It also
 // includes some GitHub Flavored Markdown specific styling (like @mentions)
 .markdown-body {
 
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.7;
   overflow: hidden;
 
   & > *:first-child {
@@ -35,7 +38,7 @@
 
   // Headings
   h1, h2, h3, h4, h5, h6 {
-    margin: 20px 0 10px;
+    margin: 1em 0 $margin;
     padding: 0;
     font-weight: bold;
     -webkit-font-smoothing: antialiased;
@@ -64,31 +67,30 @@
   }
 
   h1 {
-    font-size: 28px;
-    color: #000;
+    font-size: 2.5em;
+    border-bottom: 1px solid #ddd;
   }
 
   h2 {
-    font-size: 24px;
-    border-bottom: 1px solid #ccc;
-    color: #000;
+    font-size: 2em;
+    border-bottom: 1px solid #eee;
   }
 
   h3 {
-    font-size: 18px;
+    font-size: 1.5em;
   }
 
   h4 {
-    font-size: 16px;
+    font-size: 1.2em;
   }
 
   h5 {
-    font-size: 14px;
+    font-size: 1em;
   }
 
   h6 {
     color: #777;
-    font-size: 14px;
+    font-size: 1em;
   }
 
   p,
@@ -96,7 +98,7 @@
   ul, ol, dl,
   table,
   pre {
-    margin: 15px 0;
+    margin: $margin 0;
   }
 
   hr {
@@ -105,36 +107,7 @@
     color: #ccc;
     height: 4px;
     padding: 0;
-  }
-
-  & > h2:first-child,
-  & > h1:first-child,
-  & > h1:first-child + h2,
-  & > h3:first-child,
-  & > h4:first-child,
-  & > h5:first-child,
-  & > h6:first-child {
-    margin-top: 0;
-    padding-top: 0;
-  }
-
-  // fixes margin on shit like:
-  // <a name='the-heading'>
-  // <h1>The Heading</h1></a>
-  a:first-child {
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 0;
-      padding-top: 0;
-    }
-  }
-
-  h1 + p,
-  h2 + p,
-  h3 + p,
-  h4 + p,
-  h5 + p,
-  h6 + p {
-    margin-top: 0;
+    margin: $margin 0;
   }
 
   // ReST first graf in nested list
@@ -150,17 +123,36 @@
       list-style-type: none;
       padding: 0;
     }
-
-    li > :first-child,
-    li ul:first-of-type {
-      margin-top: 0px;
-    }
   }
 
+  // Did someone complain about list spacing? Encourage them
+  // to create the spacing with their markdown formatting.
+  // List behavior should be controled by the markup, not the css.
+  //
+  // For lists with padding between items, use blank
+  // lines between items. This will generate paragraphs with
+  // padding to space things out.
+  //
+  // - item
+  //
+  // - item
+  //
+  // - item
+  //
+  // For list without padding, don't use blank lines.
+  //
+  // - item
+  // - item
+  // - item
+  //
+  // Modifying the css to emulate these behaviors merely brakes
+  // one case in the process of solving another. Don't change
+  // this unless it's really really a bug.
   ul ul,
   ul ol,
   ol ol,
   ol ul {
+    margin-top: 0;
     margin-bottom: 0;
   }
 
@@ -173,30 +165,12 @@
     font-weight: bold;
     font-style: italic;
     padding: 0;
-    margin: 15px 0 5px;
-
-    &:first-child {
-      padding: 0;
-    }
-    & > :first-child {
-      margin-top: 0px;
-    }
-
-    & > :last-child {
-      margin-bottom: 0px;
-    }
+    margin-top: $margin;
   }
 
   dl dd {
-    margin: 0 0 15px;
+    margin-bottom: $margin;
     padding: 0 15px;
-    & > :first-child {
-      margin-top: 0px;
-    }
-
-    & > :last-child {
-      margin-bottom: 0px;
-    }
   }
 
   blockquote {
@@ -221,7 +195,7 @@
     }
 
     th, td {
-      border: 1px solid #ccc;
+      border: 1px solid #ddd;
       padding: 6px 13px;
     }
 
@@ -336,7 +310,7 @@
   code, tt {
     margin: 0 2px;
     padding: 0px 5px;
-    border: 1px solid #eaeaea;
+    border: 1px solid #ddd;
     background-color: #f8f8f8;
     border-radius:3px;
   }
@@ -354,7 +328,7 @@
 
   .highlight pre, pre {
     background-color: #f8f8f8;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     font-size: 13px;
     line-height: 19px;
     overflow: auto;
