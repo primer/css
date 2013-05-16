@@ -3,7 +3,7 @@ $enable-font-icons: true !default;
 // Has all the necessities for font icons
 //
 // Compatibility untested.
-@mixin icon-bootstrap($size: 16px) {
+@mixin icon-bootstrap($size) {
   font: normal normal $size 'github-octicons';
   line-height: 1;
   display: inline-block;
