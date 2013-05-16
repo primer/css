@@ -9,20 +9,30 @@
 // Use the standard, but classy, `.button` for form actions and primary
 // page actions. These are used extensively around the site.
 //
-// :hover             - Buttons love hover states.
-// :active            - Buttons love active states.
-// :disabled          - For when you shouldn't be able to click on it.
-// .disabled          - Same as the disabled pseudo-class.
-// .primary           - For the main form action, use whenever creating something.
-// .primary:hover     - Hover state fo primary buttons.
-// .primary:active    - A brief moment of polish when the button is pressed.
-// .primary:disabled  - Even primary buttons have a down state.
-// .primary.disabled  - Same as the disabled pseudo-class.
-// .danger            - For potentially bad or destructive actions.
-// .danger:hover      - Hover state for danger buttons.
-// .danger:active     - Depressed danger button.
-// .danger:disabled   - Disabled danger button.
-// .danger.disabled   - Save as the disabled pseudo-class.
+// :hover               - Buttons love hover states.
+// :active              - Buttons love active states.
+// :disabled            - For when you shouldn't be able to click on it.
+// .disabled            - Same as the disabled pseudo-class.
+// .primary             - For the main form action, use whenever creating something.
+// .primary:hover       - Hover state fo primary buttons.
+// .primary:active      - A brief moment of polish when the button is pressed.
+// .primary:disabled    - Even primary buttons have a down state.
+// .primary.disabled    - Same as the disabled pseudo-class.
+// .danger              - For potentially bad or destructive actions.
+// .danger:hover        - Hover state for danger buttons.
+// .danger:active       - Depressed danger button.
+// .danger:disabled     - Disabled danger button.
+// .danger.disabled     - Same as the disabled pseudo-class.
+// .blue                - Actions related to merges.
+// .blue:hover          - Hover state for merge buttons.
+// .blue:active         - Depressed blue button.
+// .blue:disabled       - Disabled blue button.
+// .blue.disabled       - Same as the disabled pseudo-class.
+// .dark-grey           - Alternate button.
+// .dark-grey:hover     - Hover state for alternate buttons.
+// .dark-grey:active    - Depressed alternate button.
+// .dark-grey:disabled  - Disabled alternate button.
+// .dark-grey.disabled  - Same as the disabled pseudo-class.
 //
 // Styleguide 1.1
 .button,
@@ -39,7 +49,7 @@
   border-radius: 3px;
   border: 1px solid #ddd;
   border-bottom-color: #c5c5c5;
-  box-shadow: 0 1px 3px rgba(0,0,0,.075);
+  box-shadow: 0 1px 3px rgba(0,0,0,.05);
   vertical-align: middle;
   cursor: pointer;
   @include user-select(none);
@@ -47,23 +57,22 @@
 
   &:hover,
   &:active {
-    color: #fff;
     text-decoration: none;
-    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-    @include gradient(#599bcd, #3072b3);
-    border-color: #2a65a0;
+    @include gradient(#eaeaea, #dadada);
+    border-color: #ccc #ccc #b5b5b5;
   }
 
   &:active {
-    background-color: #3072b3;
+    background-color: #dadada;
     background-image: none;
-    border-color: darken(#2a65a0, 5%);
+    border-color: #b5b5b5;
     box-shadow: inset 0 3px 5px rgba(0,0,0,.15);
   }
 
   &:disabled,
   &.disabled {
-    &, &:hover, &:active {
+    &,
+    &:hover {
       opacity: .5;
       color: #666;
       text-shadow: 0 1px 0 rgba(255,255,255,.9);
@@ -71,6 +80,7 @@
       background-color: #e5e5e5;
       border-color: #c5c5c5;
       cursor: default;
+      box-shadow: none;
     }
   }
 
@@ -83,7 +93,7 @@
 
     &:hover {
       color: #fff;
-      @include gradient(darken(#8add6d, 2.5%), darken(#60b044, 2.5%));
+      @include gradient(darken(#8add6d, 5%), darken(#60b044, 5%));
       border-color: #4a993e;
     }
 
@@ -95,7 +105,7 @@
 
     &:disabled,
     &.disabled {
-      &, &:hover, &:active {
+      &, &:hover {
         color: #fff;
         text-shadow: 0 -1px 0 rgba(0,0,0,.25);
         @include gradient(#8add6d, #60b044);
@@ -124,7 +134,7 @@
 
     &:disabled,
     &.disabled {
-      &, &:hover, &:active {
+      &, &:hover {
         color: #900;
         text-shadow: 0 1px 0 rgba(255,255,255,.9);
         @include gradient(#fff, #e1e1e1);
@@ -138,26 +148,45 @@
     &, &:hover {
       color: #fff;
       text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-      @include gradient(#448da6, #32687b);
-      border-color: darken(#32687b, 5%);
+      @include gradient(#599bcd, #3072b3);
+      border-color: #2a65a0;
     }
-
-    &:hover {
-      background-position: 0 -10px;
-    }
-
+    &:hover,
     &:active {
-      background-color: #32687b;
-      background-image: none;
+      border-color: #2a65a0;
     }
-
+    &:active {
+      background-color: #3072b3;
+      background-image: none;
+      border-color: darken(#2a65a0, 5%);
+      box-shadow: inset 0 3px 5px rgba(0,0,0,.15);
+    }
     &:disabled,
     &.disabled {
       background-position: 0 0;
-      @include gradient(#448da6, #32687b);
     }
-
   }
+
+  &.dark-grey {
+    &, &:hover {
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+      @include gradient(#8c8c8c, #6d6d6d);
+      border: 1px solid #707070;
+      border-bottom-color: #595959;
+    }
+    &:hover,
+    &:active {
+      border-color: #585858;
+    }
+    &:active {
+      background-color: #545454;
+      background-image: none;
+      border-color: darken(#545454, 5%);
+      box-shadow: inset 0 3px 5px rgba(0,0,0,.15);
+    }
+  }
+
 }
 
 .button,
@@ -177,6 +206,12 @@
   top: -1px;
   margin-right: 3px;
   vertical-align: middle;
+}
+
+// Improve octicons in buttons
+.button > .octicon {
+  vertical-align: middle;
+  margin-top: -1px;
 }
 
 
@@ -224,39 +259,46 @@
     font-style: normal;
     opacity: .6;
   }
+}
 
-  &.dark-grey {
-    &,
-    &.disabled:hover,
-    &:disabled:hover,
-    &.disabled:active,
-    &:disabled:active {
-      color: #fff;
-      text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-      @include gradient(#8c8c8c, #6d6d6d);
-      border: 1px solid #707070;
-      border-bottom-color: #595959;
-    }
-    &:hover,
-    &:active {
-      border-color: #585858;
-    }
-    &:hover {
-      @include gradient(#737373, #545454);
-    }
-    &:active {
-      background-color: #545454;
-      background-image: none;
-      border-color: darken(#545454, 5%);
-      box-shadow: inset 0 3px 5px rgba(0,0,0,.15);
-    }
+
+// Full-width button.
+//
+// No styleguide reference.
+.button-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+  @include box-sizing(border-box);
+}
+
+
+// Link button. For when you want the appearance of a link, but the
+// behavior of a button. Ideal for avoiding `href="#"`.
+//
+// No styleguide reference.
+.button-link {
+  display: inline;
+  padding: 0;
+  font-size: inherit;
+  color: $brand-linkBlue;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  @include user-select(none);
+  -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
 
-
 // I have no idea.
-input[type=text] + .minibutton{ margin-left:5px; }
+input[type=text] + .minibutton{ margin-left: 5px; }
+
+
 
 // Minibuttons with an icon.
 //
@@ -280,7 +322,8 @@ input[type=text] + .minibutton{ margin-left:5px; }
 // Styleguide 1.2.1
 .minibutton {
   .octicon {
-    vertical-align: -2px;
+    vertical-align: middle;
+    margin-top: -1px;
     margin-right: 6px;
     -moz-transition: none;
     -webkit-transition: none;
@@ -420,7 +463,7 @@ input[type=text] + .minibutton{ margin-left:5px; }
   line-height: 23px;
 
   @if $enable-font-icons {
-    @include icon-bootstrap();
+    @include icon-bootstrap(16px);
 
     &:before {
       position: absolute;
@@ -498,15 +541,6 @@ input[type=text] + .minibutton{ margin-left:5px; }
 }
 
 
-
-// Full-width button.
-//
-// No styleguide reference.
-.button-block {
-  display: block;
-  width: 100%;
-  @include box-sizing(border-box);
-}
 
 // A container that is used for social bubbles counts.
 //
@@ -590,7 +624,8 @@ input[type=text] + .minibutton{ margin-left:5px; }
     // Bring any button into forefront for proper borders given negative margin below
     &:hover,
     &:focus,
-    &:active {
+    &:active,
+    &.selected {
       z-index: 2;
     }
   }
