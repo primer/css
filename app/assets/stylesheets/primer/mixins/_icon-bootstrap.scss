@@ -3,12 +3,10 @@ $enable-font-icons: true !default;
 // Has all the necessities for font icons
 //
 // Compatibility untested.
-@mixin icon-bootstrap() {
-  font-family: 'Octicons Regular';
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  text-decoration: inherit;
+@mixin icon-bootstrap($size: 16px) {
+  font: normal normal $size 'github-octicons';
   line-height: 1;
+  display: inline-block;
+  text-decoration: none;
   -webkit-font-smoothing: antialiased;
 }

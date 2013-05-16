@@ -4,1374 +4,354 @@
 
 @if $enable-font-icons {
   @font-face {
-    font-family: 'Octicons Regular';
-    src: font-url('octicons/octicons-regular-webfont.eot');
-    src: font-url('octicons/octicons-regular-webfont.eot#iefix') format('embedded-opentype'),
-         font-url('octicons/octicons-regular-webfont.woff') format('woff'),
-         font-url('octicons/octicons-regular-webfont.ttf') format('truetype'),
-         font-url('octicons/octicons-regular-webfont.svg#newFontRegular') format('svg');
+    font-family: 'github-octicons';
+    src: font-url('octicons/github-octicons.eot');
+    src: font-url('octicons/github-octicons.eot#iefix') format('embedded-opentype'),
+         font-url('octicons/github-octicons.svg') format('svg'),
+         font-url('octicons/github-octicons.woff') format('woff'),
+         font-url('octicons/github-octicons.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
 
-  // Mini-icons are designed to be shown at 16px. Do not use
-  // them at another size.
+  // .octicon is optimized for 16px.
+  // .mega-octicon is optimized for 32px but can be used larger.
   //
-  // .mini-icon-private-repo                         - UTF+f000
-  // .mini-icon-public-repo                          - UTF+f001
-  // .mini-icon-repo-forked                          - UTF+f002
-  // .mini-icon-create                               - UTF+f003
-  // .mini-icon-delete                               - UTF+f004
-  // .mini-icon-push                                 - UTF+f005
-  // .mini-icon-pull                                 - UTF+f006
-  // .mini-icon-wiki                                 - UTF+f007
-  // .mini-icon-readme                               - UTF+f007
-  // .mini-icon-octocat                              - UTF+f008
-  // .mini-icon-site-message                         - UTF+f009
-  // .mini-icon-blacktocat                           - UTF+f009
-  // .mini-icon-invertocat                           - UTF+f00a
-  // .mini-icon-download                             - UTF+f00b
-  // .mini-icon-upload                               - UTF+f00c
-  // .mini-icon-keyboard                             - UTF+f00d
-  // .mini-icon-gist                                 - UTF+f00e
-  // .mini-icon-gist-private                         - UTF+f00f
-  // .mini-icon-code-file                            - UTF+f010
-  // .mini-icon-download-unknown                     - UTF+f010
-  // .mini-icon-text-file                            - UTF+f011
-  // .mini-icon-download-text                        - UTF+f011
-  // .mini-icon-download-media                       - UTF+f012
-  // .mini-icon-download-zip                         - UTF+f013
-  // .mini-icon-download-pdf                         - UTF+f014
-  // .mini-icon-download-tag                         - UTF+f015
-  // .mini-icon-tag                                  - UTF+f015
-  // .mini-icon-directory                            - UTF+f016
-  // .mini-icon-submodule                            - UTF+f017
-  // .mini-icon-person                               - UTF+f018
-  // .mini-icon-team                                 - UTF+f019
-  // .mini-icon-member-added                         - UTF+f01a
-  // .mini-icon-member-removed                       - UTF+f01b
-  // .mini-icon-follow                               - UTF+f01c
-  // .mini-icon-watching                             - UTF+f01d
-  // .mini-icon-unwatch                              - UTF+f01e
-  // .mini-icon-commit                               - UTF+f01f
-  // .mini-icon-public-fork                          - UTF+f020
-  // .mini-icon-fork                                 - UTF+f020
-  // .mini-icon-branch                               - UTF+f020
-  // .mini-icon-tree                                 - UTF+f020
-  // .mini-icon-private-fork                         - UTF+f021
-  // .mini-icon-pull-request                         - UTF+f022
-  // .mini-icon-merge                                - UTF+f023
-  // .mini-icon-public-mirror                        - UTF+f024
-  // .mini-icon-private-mirror                       - UTF+f025
-  // .mini-icon-issue-opened                         - UTF+f026
-  // .mini-icon-issue-reopened                       - UTF+f027
-  // .mini-icon-issue-closed                         - UTF+f028
-  // .mini-icon-issue-comment                        - UTF+f029
-  // .mini-icon-star                                 - UTF+f02a
-  // .mini-icon-commit-comment                       - UTF+f02b
-  // .mini-icon-help                                 - UTF+f02c
-  // .mini-icon-exclamation                          - UTF+f02d
-  // .mini-icon-search-input                         - UTF+f02e
-  // .mini-icon-advanced-search                      - UTF+f02f
-  // .mini-icon-notifications                        - UTF+f030
-  // .mini-icon-account-settings                     - UTF+f031
-  // .mini-icon-logout                               - UTF+f032
-  // .mini-icon-admin-tools                          - UTF+f033
-  // .mini-icon-feed                                 - UTF+f034
-  // .mini-icon-clipboard                            - UTF+f035
-  // .mini-icon-apple                                - UTF+f036
-  // .mini-icon-windows                              - UTF+f037
-  // .mini-icon-ios                                  - UTF+f038
-  // .mini-icon-android                              - UTF+f039
-  // .mini-icon-confirm                              - UTF+f03a
-  // .mini-icon-unread-note                          - UTF+f03b
-  // .mini-icon-read-note                            - UTF+f03c
-  // .mini-icon-arr-up                               - UTF+f03d
-  // .mini-icon-arr-right                            - UTF+f03e
-  // .mini-icon-arr-down                             - UTF+f03f
-  // .mini-icon-arr-left                             - UTF+f040
-  // .mini-icon-pin                                  - UTF+f041
-  // .mini-icon-gift                                 - UTF+f042
-  // .mini-icon-graph                                - UTF+f043
-  // .mini-icon-wrench                               - UTF+f044
-  // .mini-icon-credit-card                          - UTF+f045
-  // .mini-icon-time                                 - UTF+f046
-  // .mini-icon-ruby                                 - UTF+f047
-  // .mini-icon-podcast                              - UTF+f048
-  // .mini-icon-key                                  - UTF+f049
-  // .mini-icon-force-push                           - UTF+f04a
-  // .mini-icon-sync                                 - UTF+f04b
-  // .mini-icon-clone                                - UTF+f04c
-  // .mini-icon-diff                                 - UTF+f04d
-  // .mini-icon-watchers                             - UTF+f04e
-  // .mini-icon-discussion                           - UTF+f04f
-  // .mini-icon-delete-note                          - UTF+f050
-  // .mini-icon-remove-close                         - UTF+f050
-  // .mini-icon-reply                                - UTF+f051
-  // .mini-icon-mail-status                          - UTF+f052
-  // .mini-icon-block                                - UTF+f053
-  // .mini-icon-tag-create                           - UTF+f054
-  // .mini-icon-tab-delete                           - UTF+f055
-  // .mini-icon-branch-create                        - UTF+f056
-  // .mini-icon-branch-delete                        - UTF+f057
-  // .mini-icon-edit                                 - UTF+f058
-  // .mini-icon-info                                 - UTF+f059
-  // .mini-icon-arr-collapsed                        - UTF+f05a
-  // .mini-icon-arr-expanded                         - UTF+f05b
-  // .mini-icon-link                                 - UTF+f05c
-  // .mini-icon-add                                  - UTF+f05d
-  // .mini-icon-reorder                              - UTF+f05e
-  // .mini-icon-code                                 - UTF+f05f
-  // .mini-icon-location                             - UTF+f060
-  // .mini-icon-u-list                               - UTF+f061
-  // .mini-icon-o-list                               - UTF+f062
-  // .mini-icon-quotemark                            - UTF+f063
-  // .mini-icon-version                              - UTF+f064
-  // .mini-icon-brightness                           - UTF+f065
-  // .mini-icon-fullscreen                           - UTF+f066
-  // .mini-icon-normalscreen                         - UTF+f067
-  // .mini-icon-calendar                             - UTF+f068
-  // .mini-icon-beer                                 - UTF+f069
-  // .mini-icon-lock                                 - UTF+f06a
-  // .mini-icon-secure                               - UTF+f06a
-  // .mini-icon-added                                - UTF+f06b
-  // .mini-icon-removed                              - UTF+f06c
-  // .mini-icon-modified                             - UTF+f06d
-  // .mini-icon-moved                                - UTF+f06e
-  // .mini-icon-renamed                              - UTF+f06e
-  // .mini-icon-add-comment                          - UTF+f06f
-  // .mini-icon-horizontal-rule                      - UTF+f070
-  // .mini-icon-arr-right-mini                       - UTF+f071
-  // .mini-icon-jump-down                            - UTF+f072
-  // .mini-icon-jump-up                              - UTF+f073
-  // .mini-icon-reference                            - UTF+f074
-  // .mini-icon-milestone                            - UTF+f075
-  // .mini-icon-save-document                        - UTF+f076
-  // .mini-icon-megaphone                            - UTF+f077
-  // .mini-icon-chevron                              - UTF+f078
-  // .mini-icon-gist-forked                          - UTF+f079
-  // .mini-icon-gist-add                             - UTF+f07a
-  // .mini-icon-bookmark                             - UTF+f07b
-  // .mini-icon-filters                              - UTF+f07c
-  // .mini-icon-dashboard                            - UTF+f07d
-  // .mini-icon-history                              - UTF+f07e
-  // .mini-icon-external-link                        - UTF+f07f
-  // .mini-icon-mute                                 - UTF+f080
-  // .mini-icon-x                                    - UTF+f081
-  // .mini-icon-add-star                             - UTF+f082
-  // .mini-icon-remove-star                          - UTF+f083
-  // .mini-icon-circle-slash                         - UTF+f084
-  // .mini-icon-pulse                                - UTF+f085
-  // .mini-icon-new-file                             - UTF+f086
-  // .mini-icon-refresh                              - UTF+f087
-  // .mini-icon-telescope                            - UTF+f088
-  // .mini-icon-microscope                           - UTF+f089
-  // .mini-icon-align                                - UTF+f08a
-  // .mini-icon-unalign                              - UTF+f08b
-  // .mini-icon-gist-secret                          - UTF+f08c
-  // .mini-icon-home                                 - UTF+f08d
-  // .mini-icon-aligned-to                           - UTF+f08e
-  // .mini-icon-stop-spam                            - UTF+f08f
-  // .mini-icon-zap                                  - UTF+f090
-  // .mini-icon-bug                                  - UTF+f091
-  // .mini-icon-loading-inner                        - UTF+f092
-  // .mini-icon-loading-outer                        - UTF+f093
-  // .mini-icon-binary-file                          - UTF+f094
-  // .mini-icon-create-directory                     - UTF+f095
-  // .mini-icon-database                             - UTF+f096
-  // .mini-icon-server                               - UTF+f097
-  // .mini-icon-ignored-file                         - UTF+f098
-  // .mini-icon-ignore                               - UTF+f099
-  // .mini-icon-ellipsis                             - UTF+f09a
-  // .mini-icon-symlink                              - UTF+f09b
-  // .mini-icon-no-newline                           - UTF+f09c
-  // .mini-icon-hubot                                - UTF+f09d
-  // .mini-icon-hourglass                            - UTF+f09e
+  // .octicon-logo-github           - UTF+f092
+  // .octicon-mark-github-detail    - UTF+f093
+  // .octicon-alert                 - UTF+f02d
+  // .octicon-alignment-align       - UTF+f08a
+  // .octicon-alignment-aligned-to  - UTF+f08e
+  // .octicon-alignment-unalign     - UTF+f08b
+  // .octicon-arrow-up              - UTF+f03d
+  // .octicon-arrow-down            - UTF+f03f
+  // .octicon-arrow-left            - UTF+f040
+  // .octicon-arrow-right           - UTF+f03e
+  // .octicon-arrow-small-up        - UTF+f09f
+  // .octicon-arrow-small-down      - UTF+f0a0
+  // .octicon-arrow-small-left      - UTF+f0a1
+  // .octicon-arrow-small-right     - UTF+f071
+  // .octicon-beer                  - UTF+f069
+  // .octicon-book                  - UTF+f007
+  // .octicon-bookmark              - UTF+f07b
+  // .octicon-bug                   - UTF+f091
+  // .octicon-calendar              - UTF+f068
+  // .octicon-check                 - UTF+f03a
+  // .octicon-checklist             - UTF+f076
+  // .octicon-chevron-up            - UTF+f0a2
+  // .octicon-chevron-down          - UTF+f0a3
+  // .octicon-chevron-left          - UTF+f0a4
+  // .octicon-chevron-right         - UTF+f078
+  // .octicon-circle-slash          - UTF+f084
+  // .octicon-clippy                - UTF+f035
+  // .octicon-clock                 - UTF+f046
+  // .octicon-cloud-download        - UTF+f00b
+  // .octicon-cloud-upload          - UTF+f00c
+  // .octicon-code                  - UTF+f05f
+  // .octicon-color-mode            - UTF+f065
+  // .octicon-comment               - UTF+f02b
+  // .octicon-comment-add           - UTF+f06f
+  // .octicon-comment-discussion    - UTF+f04f
+  // .octicon-credit-card           - UTF+f045
+  // .octicon-dashboard             - UTF+f07d
+  // .octicon-database              - UTF+f096
+  // .octicon-device-desktop        - UTF+f27c
+  // .octicon-device-mobile         - UTF+f038
+  // .octicon-diff-added            - UTF+f06b
+  // .octicon-diff-ignored          - UTF+f099
+  // .octicon-diff-renamed          - UTF+f06e
+  // .octicon-diff-removed          - UTF+f06c
+  // .octicon-diff-modified         - UTF+f06d
+  // .octicon-diff                  - UTF+f04d
+  // .octicon-ellipsis              - UTF+f09a
+  // .octicon-eye                   - UTF+f04e
+  // .octicon-eye-watch             - UTF+f01d
+  // .octicon-eye-unwatch           - UTF+f01e
+  // .octicon-broadcast             - UTF+f048
+  // .octicon-file-add              - UTF+f086
+  // .octicon-file-binary           - UTF+f094
+  // .octicon-file-code             - UTF+f010
+  // .octicon-file-media            - UTF+f012
+  // .octicon-file-pdf              - UTF+f014
+  // .octicon-file-text             - UTF+f011
+  // .octicon-file-zip              - UTF+f013
+  // .octicon-file-directory        - UTF+f016
+  // .octicon-file-directory-create - UTF+f095
+  // .octicon-file-submodule        - UTF+f017
+  // .octicon-gear                  - UTF+f02f
+  // .octicon-gift                  - UTF+f042
+  // .octicon-gist                  - UTF+f00e
+  // .octicon-gist-fork             - UTF+f079
+  // .octicon-gist-new              - UTF+f07a
+  // .octicon-gist-private          - UTF+f00f
+  // .octicon-gist-secret           - UTF+f08c
+  // .octicon-git-commit            - UTF+f01f
+  // .octicon-git-branch            - UTF+f020
+  // .octicon-git-branch-create     - UTF+f098
+  // .octicon-git-branch-delete     - UTF+f09b
+  // .octicon-git-fork-private      - UTF+f021
+  // .octicon-git-merge             - UTF+f023
+  // .octicon-git-pull-request      - UTF+f009
+  // .octicon-graph                 - UTF+f043
+  // .octicon-history               - UTF+f07e
+  // .octicon-home                  - UTF+f08d
+  // .octicon-horizontal-rule       - UTF+f070
+  // .octicon-hourglass             - UTF+f09e
+  // .octicon-hubot                 - UTF+f09d
+  // .octicon-info                  - UTF+f059
+  // .octicon-issue-opened          - UTF+f026
+  // .octicon-issue-reopened        - UTF+f027
+  // .octicon-issue-closed          - UTF+f028
+  // .octicon-jump-up               - UTF+f073
+  // .octicon-jump-down             - UTF+f072
+  // .octicon-jump-left             - UTF+f0a5
+  // .octicon-jump-right            - UTF+f0a6
+  // .octicon-key                   - UTF+f049
+  // .octicon-keyboard              - UTF+f00d
+  // .octicon-link-external         - UTF+f07f
+  // .octicon-link                  - UTF+f05c
+  // .octicon-list-ordered          - UTF+f062
+  // .octicon-list-unordered        - UTF+f061
+  // .octicon-location              - UTF+f060
+  // .octicon-lock                  - UTF+f06a
+  // .octicon-log-out               - UTF+f032
+  // .octicon-mail                  - UTF+f03b
+  // .octicon-mail-read             - UTF+f03c
+  // .octicon-mail-reply            - UTF+f051
+  // .octicon-mark-github           - UTF+f00a
+  // .octicon-megaphone             - UTF+f077
+  // .octicon-microscope            - UTF+f089
+  // .octicon-milestone             - UTF+f075
+  // .octicon-mirror-private        - UTF+f025
+  // .octicon-mirror-public         - UTF+f024
+  // .octicon-move-up               - UTF+f0a7
+  // .octicon-move-down             - UTF+f0a8
+  // .octicon-move-left             - UTF+f074
+  // .octicon-move-right            - UTF+f0a9
+  // .octicon-mute                  - UTF+f080
+  // .octicon-no-newline            - UTF+f09c
+  // .octicon-octoface              - UTF+f008
+  // .octicon-pencil                - UTF+f058
+  // .octicon-person                - UTF+f018
+  // .octicon-person-add            - UTF+f01a
+  // .octicon-person-follow         - UTF+f01c
+  // .octicon-person-remove         - UTF+f01b
+  // .octicon-person-team           - UTF+f019
+  // .octicon-pin                   - UTF+f041
+  // .octicon-plus                  - UTF+f05d
+  // .octicon-primitive-dot         - UTF+f052
+  // .octicon-primitive-square      - UTF+f053
+  // .octicon-pulse                 - UTF+f085
+  // .octicon-question              - UTF+f02c
+  // .octicon-quote                 - UTF+f063
+  // .octicon-radio-tower           - UTF+f030
+  // .octicon-remove-close          - UTF+f050
+  // .octicon-repo                  - UTF+f001
+  // .octicon-repo-clone            - UTF+f04c
+  // .octicon-repo-create           - UTF+f003
+  // .octicon-repo-delete           - UTF+f004
+  // .octicon-repo-force-push       - UTF+f04a
+  // .octicon-repo-forked           - UTF+f002
+  // .octicon-repo-pull             - UTF+f006
+  // .octicon-repo-push             - UTF+f005
+  // .octicon-repo-sync             - UTF+f04b
+  // .octicon-rocket                - UTF+f033
+  // .octicon-rss                   - UTF+f034
+  // .octicon-ruby                  - UTF+f047
+  // .octicon-screen-full           - UTF+f066
+  // .octicon-screen-normal         - UTF+f067
+  // .octicon-search                - UTF+f02e
+  // .octicon-server                - UTF+f097
+  // .octicon-settings              - UTF+f07c
+  // .octicon-star                  - UTF+f02a
+  // .octicon-star-add              - UTF+f082
+  // .octicon-star-delete           - UTF+f083
+  // .octicon-stop                  - UTF+f08f
+  // .octicon-sync                  - UTF+f087
+  // .octicon-tag                   - UTF+f015
+  // .octicon-tag-add               - UTF+f054
+  // .octicon-tag-remove            - UTF+f055
+  // .octicon-telescope             - UTF+f088
+  // .octicon-three-bars            - UTF+f05e
+  // .octicon-tools                 - UTF+f031
+  // .octicon-triangle-up           - UTF+f0aa
+  // .octicon-triangle-down         - UTF+f05b
+  // .octicon-triangle-left         - UTF+f044
+  // .octicon-triangle-right        - UTF+f05a
+  // .octicon-versions              - UTF+f064
+  // .octicon-x                     - UTF+f081
+  // .octicon-zap                   - UTF+f090
   //
   // Styleguide 7.1
-  .mini-icon,
-  .mega-icon {
-    @include icon-bootstrap();
-    line-height: 1;
-    text-decoration: none;
+  .octicon {
+    @include icon-bootstrap(16px);
   }
-  .mini-icon {
-    font-size: 16px;
-    width: 16px;
-    height: 16px;
+  .mega-octicon {
+    @include icon-bootstrap(32px);
   }
 
-  .mini-icon-private-repo:before {
-    content: "\f06a";
-  }
-  .mini-icon-public-repo:before {
-    content: "\f001";
-  }
-  .mini-icon-repo-forked:before {
-    content: "\f002";
-  }
-  .mini-icon-create:before {
-    content: "\f003";
-  }
-  .mini-icon-delete:before {
-    content: "\f004";
-  }
-  .mini-icon-push:before {
-    content: "\f005";
-  }
-  .mini-icon-pull:before {
-    content: "\f006";
-  }
-  .mini-icon-readme:before, .mini-icon-wiki:before {
-    content: "\f007";
-  }
-  .mini-icon-octocat:before {
-    content: "\f008";
-  }
-  .mini-icon-site-message:before, .mini-icon-blacktocat:before {
-    content: "\f009";
-  }
-  .mini-icon-invertocat:before {
-    content: "\f00a";
-  }
-  .mini-icon-download:before {
-    content: "\f00b";
-  }
-  .mini-icon-upload:before {
-    content: "\f00c";
-  }
-  .mini-icon-keyboard:before {
-    content: "\f00d";
-  }
-  .mini-icon-gist:before {
-    content: "\f00e";
-  }
-  .mini-icon-gist-private:before {
-    content: "\f00f";
-  }
-
-  .mini-icon-code-file:before,
-  .mini-icon-download-unknown:before {
-    content: "\f010";
-  }
-  .mini-icon-download-text:before, .mini-icon-text-file:before {
-    content: "\f011";
-  }
-  .mini-icon-download-media:before {
-    content: "\f012";
-  }
-  .mini-icon-download-zip:before {
-    content: "\f013";
-  }
-  .mini-icon-download-pdf:before {
-    content: "\f014";
-  }
-  .mini-icon-download-tag:before,
-  .mini-icon-tag:before {
-    content: "\f015";
-  }
-  .mini-icon-directory:before {
-    content: "\f016";
-  }
-  .mini-icon-submodule:before {
-    content: "\f017";
-  }
-  .mini-icon-person:before {
-    content: "\f018";
-  }
-  .mini-icon-team:before {
-    content: "\f019";
-  }
-  .mini-icon-member-added:before {
-    content: "\f01a";
-  }
-  .mini-icon-member-removed:before {
-    content: "\f01b";
-  }
-  .mini-icon-follow:before {
-    content: "\f01c";
-  }
-  .mini-icon-watching:before {
-    content: "\f01d";
-  }
-  .mini-icon-unwatch:before {
-    content: "\f01e";
-  }
-  .mini-icon-commit:before {
-    content: "\f01f";
-  }
-
-  .mini-icon-public-fork:before,
-  .mini-icon-fork:before,
-  .mini-icon-branch:before,
-  .mini-icon-tree:before {
-    content: "\f020";
-  }
-  .mini-icon-private-fork:before {
-    content: "\f021";
-  }
-  .mini-icon-pull-request:before {
-    content: "\f022";
-  }
-  .mini-icon-merge:before {
-    content: "\f023";
-  }
-  .mini-icon-public-mirror:before {
-    content: "\f024";
-  }
-  .mini-icon-private-mirror:before {
-    content: "\f025";
-  }
-  .mini-icon-issue-opened:before {
-    content: "\f026";
-  }
-  .mini-icon-issue-reopened:before {
-    content: "\f027";
-  }
-  .mini-icon-issue-closed:before {
-    content: "\f028";
-  }
-  .mini-icon-issue-comment:before {
-    content: "\f029";
-  }
-  .mini-icon-star:before {
-    content: "\f02a";
-  }
-  .mini-icon-commit-comment:before {
-    content: "\f02b";
-  }
-  .mini-icon-help:before {
-    content: "\f02c";
-  }
-  .mini-icon-exclamation:before {
-    content: "\f02d";
-  }
-  .mini-icon-search-input:before {
-    content: "\f02e";
-  }
-  .mini-icon-advanced-search:before {
-    content: "\f02f";
-  }
-
-  .mini-icon-notifications:before {
-    content: "\f030";
-  }
-  .mini-icon-account-settings:before {
-    content: "\f031";
-  }
-  .mini-icon-logout:before {
-    content: "\f032";
-  }
-  .mini-icon-admin-tools:before {
-    content: "\f033";
-  }
-  .mini-icon-feed:before {
-    content: "\f034";
-  }
-  .mini-icon-clipboard:before {
-    content: "\f035";
-  }
-  .mini-icon-apple:before {
-    content: "\f036";
-  }
-  .mini-icon-windows:before {
-    content: "\f037";
-    content: "";
-    background: transparent image-url("primer/buttons/windows-sprite.png") 0 0 no-repeat;
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-  }
-  .mini-icon-ios:before {
-    content: "\f038";
-  }
-  .mini-icon-download-android:before, .mini-icon-android:before {
-    content: "\f039";
-  }
-  .mini-icon-confirm:before {
-    content: "\f03a";
-  }
-  .mini-icon-unread-note:before {
-    content: "\f03b";
-  }
-  .mini-icon-read-note:before {
-    content: "\f03c";
-  }
-  .mini-icon-arr-up:before {
-    content: "\f03d";
-  }
-  .mini-icon-arr-right:before {
-    content: "\f03e";
-  }
-  .mini-icon-arr-down:before {
-    content: "\f03f";
-  }
-
-  .mini-icon-arr-left:before {
-    content: "\f040";
-  }
-  .mini-icon-pin:before {
-    content: "\f041";
-  }
-  .mini-icon-gift:before {
-    content: "\f042";
-  }
-  .mini-icon-graph:before {
-    content: "\f043";
-  }
-  .mini-icon-wrench:before {
-    content: "\f044";
-  }
-  .mini-icon-credit-card:before {
-    content: "\f045";
-  }
-  .mini-icon-time:before {
-    content: "\f046";
-  }
-  .mini-icon-ruby:before {
-    content: "\f047";
-  }
-  .mini-icon-podcast:before {
-    content: "\f048";
-  }
-  .mini-icon-key:before {
-    content: "\f049";
-  }
-  .mini-icon-force-push:before {
-    content: "\f04a";
-  }
-  .mini-icon-sync:before {
-    content: "\f04b";
-  }
-  .mini-icon-clone:before {
-    content: "\f04c";
-  }
-  .mini-icon-diff:before {
-    content: "\f04d";
-  }
-  .mini-icon-watchers:before {
-    content: "\f04e";
-  }
-  .mini-icon-discussion:before {
-    content: "\f04f";
-  }
-
-  .mini-icon-delete-note:before,
-  .mini-icon-remove-close:before {
-    content: "\f050";
-  }
-  .mini-icon-reply:before {
-    content: "\f051";
-  }
-  .mini-icon-mail-status:before {
-    content: "\f052";
-  }
-  .mini-icon-block:before {
-    content: "\f053";
-  }
-  .mini-icon-tag-create:before {
-    content: "\f054";
-  }
-  .mini-icon-tab-delete:before {
-    content: "\f055";
-  }
-  .mini-icon-branch-create:before {
-    content: "\f056";
-  }
-  .mini-icon-branch-delete:before {
-    content: "\f057";
-  }
-  .mini-icon-edit:before {
-    content: "\f058";
-  }
-  .mini-icon-info:before {
-    content: "\f059";
-  }
-  .mini-icon-arr-collapsed:before {
-    content: "\f05a";
-  }
-  .mini-icon-arr-expanded:before {
-    content: "\f05b";
-  }
-  .mini-icon-link:before {
-    content: "\f05c";
-  }
-  .mini-icon-add:before {
-    content: "\f05d";
-  }
-  .mini-icon-reorder:before {
-    content: "\f05e";
-  }
-  .mini-icon-code:before {
-    content: "\f05f";
-  }
-
-  .mini-icon-location:before {
-    content: "\f060";
-  }
-  .mini-icon-u-list:before {
-    content: "\f061";
-  }
-  .mini-icon-o-list:before {
-    content: "\f062";
-  }
-  .mini-icon-quotemark:before {
-    content: "\f063";
-  }
-  .mini-icon-version:before {
-    content: "\f064";
-  }
-  .mini-icon-brightness:before {
-    content: "\f065";
-  }
-  .mini-icon-fullscreen:before {
-    content: "\f066";
-  }
-  .mini-icon-normalscreen:before {
-    content: "\f067";
-  }
-  .mini-icon-calendar:before {
-    content: "\f068";
-  }
-  .mini-icon-beer:before {
-    content: "\f069";
-  }
-  .mini-icon-secure:before,
-  .mini-icon-lock:before {
-    content: "\f06a";
-  }
-  .mini-icon-added:before {
-    content: "\f06b";
-  }
-  .mini-icon-removed:before {
-    content: "\f06c";
-  }
-  .mini-icon-modified:before {
-    content: "\f06d";
-  }
-  .mini-icon-moved:before, .mini-icon-renamed:before {
-    content: "\f06e";
-  }
-  .mini-icon-add-comment:before {
-    content: "\f06f";
-  }
-
-  .mini-icon-horizontal-rule:before {
-    content: "\f070";
-  }
-  .mini-icon-arr-right-mini:before {
-    content: "\f071";
-  }
-  .mini-icon-jump-down:before {
-    content: "\f072";
-  }
-  .mini-icon-jump-up:before {
-    content: "\f073";
-  }
-  .mini-icon-reference:before {
-    content: "\f074";
-  }
-  .mini-icon-milestone:before {
-    content: "\f075";
-  }
-  .mini-icon-save-document:before {
-    content: "\f076";
-  }
-  .mini-icon-megaphone:before {
-    content: "\f077";
-  }
-  .mini-icon-chevron:before {
-    content: "\f078";
-  }
-  .mini-icon-gist-forked:before {
-    content: "\f079";
-  }
-  .mini-icon-gist-add:before {
-    content: "\f07a";
-  }
-  .mini-icon-bookmark:before {
-    content: "\f07b";
-  }
-  .mini-icon-filters:before {
-    content: "\f07c";
-  }
-  .mini-icon-dashboard:before {
-    content: "\f07d";
-  }
-  .mini-icon-history:before {
-    content: "\f07e";
-  }
-  .mini-icon-external-link:before {
-    content: "\f07f";
-  }
-
-  .mini-icon-mute:before {
-    content: "\f080";
-  }
-  .mini-icon-x:before {
-    content: "\f081";
-  }
-  .mini-icon-add-star:before {
-    content: "\f082";
-  }
-  .mini-icon-remove-star:before {
-    content: "\f083";
-  }
-  .mini-icon-circle-slash:before {
-    content: "\f084";
-  }
-  .mini-icon-pulse:before {
-    content: "\f085";
-  }
-  .mini-icon-new-file:before {
-    content: "\f086";
-  }
-  .mini-icon-refresh:before {
-    content: "\f087";
-  }
-  .mini-icon-telescope:before {
-    content: "\f088";
-  }
-  .mini-icon-microscope:before {
-    content: "\f089";
-  }
-  .mini-icon-align:before {
-    content: "\f08a";
-  }
-  .mini-icon-unalign:before {
-    content: "\f08b";
-  }
-  .mini-icon-gist-secret:before {
-    content: "\f08c";
-  }
-  .mini-icon-home:before {
-    content: "\f08d";
-  }
-  .mini-icon-aligned-to:before {
-    content: "\f08e";
-  }
-  .mini-icon-stop-spam:before {
-    content: "\f08f";
-  }
-  
-  .mini-icon-zap:before {
-    content: "\f090";
-  }
-  .mini-icon-bug:before {
-    content: "\f091";
-  }
-  .mini-icon-loading-inner:before {
-    content: "\f092";
-  }
-  .mini-icon-loading-outer:before {
-    content: "\f093";
-  }
-  .mini-icon-binary-file:before {
-    content: "\f094";
-  }
-  .mini-icon-create-directory:before {
-    content: "\f095";
-  }
-  .mini-icon-database:before {
-    content: "\f096";
-  }
-  .mini-icon-server:before {
-    content: "\f097";
-  }
-  .mini-icon-ignored-file:before {
-    content: "\f098";
-  }
-  .mini-icon-ignore:before {
-    content: "\f099";
-  }
-  .mini-icon-ellipsis:before {
-    content: "\f09a";
-  }
-  .mini-icon-symlink:before {
-    content: "\f09b";
-  }
-  .mini-icon-no-newline:before {
-    content: "\f09c";
-  }
-  .mini-icon-hubot:before {
-    content: "\f09d";
-  }
-  .mini-icon-hourglass:before {
-    content: "\f09e";
-  }
-
-  // Mega Icons are larger versions of our mini-icons. They are
-  // optomized for 32px and bigger.
-  //
-  // .mega-icon-private-repo                         - UTF+f200
-  // .mega-icon-public-repo                          - UTF+f201
-  // .mega-icon-repo-forked                          - UTF+f202
-  // .mega-icon-create                               - UTF+f203
-  // .mega-icon-delete                               - UTF+f204
-  // .mega-icon-push                                 - UTF+f205
-  // .mega-icon-pull                                 - UTF+f206
-  // .mega-icon-wiki                                 - UTF+f207
-  // .mega-icon-readme                               - UTF+f207
-  // .mega-icon-octocat                              - UTF+f208
-  // .mega-icon-site-message                         - UTF+f209
-  // .mega-icon-blacktocat                           - UTF+f209
-  // .mega-icon-invertocat                           - UTF+f20a
-  // .mega-icon-download                             - UTF+f20b
-  // .mega-icon-upload                               - UTF+f20c
-  // .mega-icon-keyboard                             - UTF+f20d
-  // .mega-icon-gist                                 - UTF+f20e
-  // .mega-icon-gist-private                         - UTF+f20f
-  // .mega-icon-code-file                            - UTF+f210
-  // .mega-icon-download-unknown                     - UTF+f210
-  // .mega-icon-text-file                            - UTF+f211
-  // .mega-icon-download-text                        - UTF+f211
-  // .mega-icon-download-media                       - UTF+f212
-  // .mega-icon-download-zip                         - UTF+f213
-  // .mega-icon-download-pdf                         - UTF+f214
-  // .mega-icon-download-tag                         - UTF+f215
-  // .mega-icon-tag                                  - UTF+f215
-  // .mega-icon-directory                            - UTF+f216
-  // .mega-icon-submodule                            - UTF+f217
-  // .mega-icon-person                               - UTF+f218
-  // .mega-icon-team                                 - UTF+f219
-  // .mega-icon-member-added                         - UTF+f21a
-  // .mega-icon-member-removed                       - UTF+f21b
-  // .mega-icon-follow                               - UTF+f21c
-  // .mega-icon-watching                             - UTF+f21d
-  // .mega-icon-unwatch                              - UTF+f21e
-  // .mega-icon-commit                               - UTF+f21f
-  // .mega-icon-public-fork                          - UTF+f220
-  // .mega-icon-fork                                 - UTF+f220
-  // .mega-icon-branch                               - UTF+f220
-  // .mega-icon-tree                                 - UTF+f220
-  // .mega-icon-private-fork                         - UTF+f221
-  // .mega-icon-pull-request                         - UTF+f222
-  // .mega-icon-merge                                - UTF+f223
-  // .mega-icon-public-mirror                        - UTF+f224
-  // .mega-icon-private-mirror                       - UTF+f225
-  // .mega-icon-issue-opened                         - UTF+f226
-  // .mega-icon-issue-reopened                       - UTF+f227
-  // .mega-icon-issue-closed                         - UTF+f228
-  // .mega-icon-issue-comment                        - UTF+f229
-  // .mega-icon-star                                 - UTF+f22a
-  // .mega-icon-commit-comment                       - UTF+f22b
-  // .mega-icon-help                                 - UTF+f22c
-  // .mega-icon-exclamation                          - UTF+f22d
-  // .mega-icon-search-input                         - UTF+f22e
-  // .mega-icon-advanced-search                      - UTF+f22f
-  // .mega-icon-notifications                        - UTF+f230
-  // .mega-icon-account-settings                     - UTF+f231
-  // .mega-icon-logout                               - UTF+f232
-  // .mega-icon-admin-tools                          - UTF+f233
-  // .mega-icon-feed                                 - UTF+f234
-  // .mega-icon-clipboard                            - UTF+f235
-  // .mega-icon-apple                                - UTF+f236
-  // .mega-icon-windows                              - UTF+f237
-  // .mega-icon-ios                                  - UTF+f238
-  // .mega-icon-android                              - UTF+f239
-  // .mega-icon-confirm                              - UTF+f23a
-  // .mega-icon-unread-note                          - UTF+f23b
-  // .mega-icon-read-note                            - UTF+f23c
-  // .mega-icon-arr-up                               - UTF+f23d
-  // .mega-icon-arr-right                            - UTF+f23e
-  // .mega-icon-arr-down                             - UTF+f23f
-  // .mega-icon-arr-left                             - UTF+f240
-  // .mega-icon-pin                                  - UTF+f241
-  // .mega-icon-gift                                 - UTF+f242
-  // .mega-icon-graph                                - UTF+f243
-  // .mega-icon-wrench                               - UTF+f244
-  // .mega-icon-credit-card                          - UTF+f245
-  // .mega-icon-time                                 - UTF+f246
-  // .mega-icon-ruby                                 - UTF+f247
-  // .mega-icon-podcast                              - UTF+f248
-  // .mega-icon-key                                  - UTF+f249
-  // .mega-icon-force-push                           - UTF+f24a
-  // .mega-icon-sync                                 - UTF+f24b
-  // .mega-icon-clone                                - UTF+f24c
-  // .mega-icon-diff                                 - UTF+f24d
-  // .mega-icon-watchers                             - UTF+f24e
-  // .mega-icon-discussion                           - UTF+f24f
-  // .mega-icon-delete-note                          - UTF+f250
-  // .mega-icon-remove-close                         - UTF+f250
-  // .mega-icon-reply                                - UTF+f251
-  // .mega-icon-mail-status                          - UTF+f252
-  // .mega-icon-block                                - UTF+f253
-  // .mega-icon-tag-create                           - UTF+f254
-  // .mega-icon-tab-delete                           - UTF+f255
-  // .mega-icon-branch-create                        - UTF+f256
-  // .mega-icon-branch-delete                        - UTF+f257
-  // .mega-icon-edit                                 - UTF+f258
-  // .mega-icon-info                                 - UTF+f259
-  // .mega-icon-arr-collapsed                        - UTF+f25a
-  // .mega-icon-arr-expanded                         - UTF+f25b
-  // .mega-icon-link                                 - UTF+f25c
-  // .mega-icon-add                                  - UTF+f25d
-  // .mega-icon-reorder                              - UTF+f25e
-  // .mega-icon-code                                 - UTF+f25f
-  // .mega-icon-location                             - UTF+f260
-  // .mega-icon-u-list                               - UTF+f261
-  // .mega-icon-o-list                               - UTF+f262
-  // .mega-icon-quotemark                            - UTF+f263
-  // .mega-icon-version                              - UTF+f264
-  // .mega-icon-brightness                           - UTF+f265
-  // .mega-icon-fullscreen                           - UTF+f266
-  // .mega-icon-normalscreen                         - UTF+f267
-  // .mega-icon-calendar                             - UTF+f268
-  // .mega-icon-beer                                 - UTF+f269
-  // .mega-icon-lock                                 - UTF+f26a
-  // .mega-icon-secure                               - UTF+f26a
-  // .mega-icon-added                                - UTF+f26b
-  // .mega-icon-removed                              - UTF+f26c
-  // .mega-icon-modified                             - UTF+f26d
-  // .mega-icon-moved                                - UTF+f26e
-  // .mega-icon-renamed                              - UTF+f26e
-  // .mega-icon-add-comment                          - UTF+f26f
-  // .mega-icon-horizontal-rule                      - UTF+f270
-  // .mega-icon-arr-right-mini                       - UTF+f271
-  // .mega-icon-jump-down                            - UTF+f272
-  // .mega-icon-jump-up                              - UTF+f273
-  // .mega-icon-reference                            - UTF+f274
-  // .mega-icon-milestone                            - UTF+f275
-  // .mega-icon-save-document                        - UTF+f276
-  // .mega-icon-megaphone                            - UTF+f277
-  // .mega-icon-chevron                              - UTF+f278
-  // .mega-icon-gist-forked                          - UTF+f279
-  // .mega-icon-gist-add                             - UTF+f27a
-  // .mega-icon-bookmark                             - UTF+f27b
-  // .mega-icon-filters                              - UTF+f27c
-  // .mega-icon-dashboard                            - UTF+f27d
-  // .mega-icon-history                              - UTF+f27e
-  // .mega-icon-external-link                        - UTF+f27f
-  // .mega-icon-mute                                 - UTF+f280
-  // .mega-icon-x                                    - UTF+f281
-  // .mega-icon-add-star                             - UTF+f282
-  // .mega-icon-remove-star                          - UTF+f283
-  // .mega-icon-circle-slash                         - UTF+f284
-  // .mega-icon-pulse                                - UTF+f285
-  // .mega-icon-new-file                             - UTF+f286
-  // .mega-icon-refresh                              - UTF+f287
-  // .mega-icon-telescope                            - UTF+f288
-  // .mega-icon-microscope                           - UTF+f289
-  // .mega-icon-align                                - UTF+f28a
-  // .mega-icon-unalign                              - UTF+f28b
-  // .mega-icon-gist-secret                          - UTF+f28c
-  // .mega-icon-home                                 - UTF+f28d
-  // .mega-icon-aligned-to                           - UTF+f28e
-  // .mega-icon-stop-spam                            - UTF+f28f
-  // .mega-icon-zap                                  - UTF+f290
-  // .mega-icon-bug                                  - UTF+f291
-  // .mega-icon-loading-inner                        - UTF+f292
-  // .mega-icon-loading-outer                        - UTF+f293
-  // .mega-icon-binary-file                          - UTF+f294
-  // .mega-icon-create-directory                     - UTF+f295
-  // .mega-icon-database                             - UTF+f296
-  // .mega-icon-server                               - UTF+f297
-  // .mega-icon-ignored-file                         - UTF+f298
-  // .mega-icon-ignore                               - UTF+f299
-  // .mega-icon-ellipsis                             - UTF+f29a
-  // .mega-icon-symlink                              - UTF+f29b
-  // .mega-icon-no-newline                           - UTF+f29c
-  // .mega-icon-hubot                                - UTF+f29d
-  // .mega-icon-hourglass                            - UTF+f29e
-  //
-  // Styleguide 7.2
-  .mega-icon {
-    font-size: 32px;
-    width: 32px;
-    height: 32px;
-  }
-
-  .mega-icon-private-repo:before {
-    content: "\f26a";
-  }
-  .mega-icon-public-repo:before {
-    content: "\f201";
-  }
-  .mega-icon-repo-forked:before {
-    content: "\f202";
-  }
-  .mega-icon-create:before {
-    content: "\f203";
-  }
-  .mega-icon-delete:before {
-    content: "\f204";
-  }
-  .mega-icon-push:before {
-    content: "\f205";
-  }
-  .mega-icon-pull:before {
-    content: "\f206";
-  }
-  .mega-icon-readme:before, .mega-icon-wiki:before {
-    content: "\f207";
-  }
-  .mega-icon-octocat:before {
-    content: "\f208";
-  }
-  .mega-icon-site-message:before, .mega-icon-blacktocat:before {
-    content: "\f209";
-  }
-  .mega-icon-invertocat:before {
-    content: "\f20a";
-  }
-  .mega-icon-download:before {
-    content: "\f20b";
-  }
-  .mega-icon-upload:before {
-    content: "\f20c";
-  }
-  .mega-icon-keyboard:before {
-    content: "\f20d";
-  }
-  .mega-icon-gist:before {
-    content: "\f20e";
-  }
-  .mega-icon-gist-private:before {
-    content: "\f20f";
-  }
-
-  .mega-icon-code-file:before,
-  .mega-icon-download-unknown:before {
-    content: "\f210";
-  }
-  .mega-icon-download-text:before, .mega-icon-text-file:before {
-    content: "\f211";
-  }
-  .mega-icon-download-media:before {
-    content: "\f212";
-  }
-  .mega-icon-download-zip:before {
-    content: "\f213";
-  }
-  .mega-icon-download-pdf:before {
-    content: "\f214";
-  }
-  .mega-icon-download-tag:before,
-  .mega-icon-tag:before {
-    content: "\f215";
-  }
-  .mega-icon-directory:before {
-    content: "\f216";
-  }
-  .mega-icon-submodule:before {
-    content: "\f217";
-  }
-  .mega-icon-person:before {
-    content: "\f218";
-  }
-  .mega-icon-team:before {
-    content: "\f219";
-  }
-  .mega-icon-member-added:before {
-    content: "\f21a";
-  }
-  .mega-icon-member-removed:before {
-    content: "\f21b";
-  }
-  .mega-icon-follow:before {
-    content: "\f21c";
-  }
-  .mega-icon-watching:before {
-    content: "\f21d";
-  }
-  .mega-icon-unwatch:before {
-    content: "\f21e";
-  }
-  .mega-icon-commit:before {
-    content: "\f21f";
-  }
-
-  .mega-icon-public-fork:before,
-  .mega-icon-fork:before,
-  .mega-icon-branch:before,
-  .mega-icon-tree:before {
-    content: "\f220";
-  }
-  .mega-icon-private-fork:before {
-    content: "\f221";
-  }
-  .mega-icon-pull-request:before {
-    content: "\f222";
-  }
-  .mega-icon-merge:before {
-    content: "\f223";
-  }
-  .mega-icon-public-mirror:before {
-    content: "\f224";
-  }
-  .mega-icon-private-mirror:before {
-    content: "\f225";
-  }
-  .mega-icon-issue-opened:before {
-    content: "\f226";
-  }
-  .mega-icon-issue-reopened:before {
-    content: "\f227";
-  }
-  .mega-icon-issue-closed:before {
-    content: "\f228";
-  }
-  .mega-icon-issue-comment:before {
-    content: "\f229";
-  }
-  .mega-icon-star:before {
-    content: "\f22a";
-  }
-  .mega-icon-commit-comment:before {
-    content: "\f22b";
-  }
-  .mega-icon-help:before {
-    content: "\f22c";
-  }
-  .mega-icon-exclamation:before {
-    content: "\f22d";
-  }
-  .mega-icon-search-input:before {
-    content: "\f22e";
-  }
-  .mega-icon-advanced-search:before {
-    content: "\f22f";
-  }
-
-  .mega-icon-notifications:before {
-    content: "\f230";
-  }
-  .mega-icon-account-settings:before {
-    content: "\f231";
-  }
-  .mega-icon-logout:before {
-    content: "\f232";
-  }
-  .mega-icon-admin-tools:before {
-    content: "\f233";
-  }
-  .mega-icon-feed:before {
-    content: "\f234";
-  }
-  .mega-icon-clipboard:before {
-    content: "\f235";
-  }
-  .mega-icon-apple:before {
-    content: "\f236";
-  }
-  .mega-icon-windows:before {
-    content: "\f237";
-  }
-  .mega-icon-ios:before {
-    content: "\f238";
-  }
-  .mega-icon-android:before {
-    content: "\f239";
-  }
-  .mega-icon-confirm:before {
-    content: "\f23a";
-  }
-  .mega-icon-unread-note:before {
-    content: "\f23b";
-  }
-  .mega-icon-read-note:before {
-    content: "\f23c";
-  }
-  .mega-icon-arr-up:before {
-    content: "\f23d";
-  }
-  .mega-icon-arr-right:before {
-    content: "\f23e";
-  }
-  .mega-icon-arr-down:before {
-    content: "\f23f";
-  }
-
-  .mega-icon-arr-left:before {
-    content: "\f240";
-  }
-  .mega-icon-pin:before {
-    content: "\f241";
-  }
-  .mega-icon-gift:before {
-    content: "\f242";
-  }
-  .mega-icon-graph:before {
-    content: "\f243";
-  }
-  .mega-icon-wrench:before {
-    content: "\f244";
-  }
-  .mega-icon-credit-card:before {
-    content: "\f245";
-  }
-  .mega-icon-time:before {
-    content: "\f246";
-  }
-  .mega-icon-ruby:before {
-    content: "\f247";
-  }
-  .mega-icon-podcast:before {
-    content: "\f248";
-  }
-  .mega-icon-key:before {
-    content: "\f249";
-  }
-  .mega-icon-force-push:before {
-    content: "\f24a";
-  }
-  .mega-icon-sync:before {
-    content: "\f24b";
-  }
-  .mega-icon-clone:before {
-    content: "\f24c";
-  }
-  .mega-icon-diff:before {
-    content: "\f24d";
-  }
-  .mega-icon-watchers:before {
-    content: "\f24e";
-  }
-  .mega-icon-discussion:before {
-    content: "\f24f";
-  }
-
-  .mega-icon-delete-note:before,
-  .mega-icon-remove-close:before {
-    content: "\f250";
-  }
-  .mega-icon-reply:before {
-    content: "\f251";
-  }
-  .mega-icon-mail-status:before {
-    content: "\f252";
-  }
-  .mega-icon-block:before {
-    content: "\f253";
-  }
-  .mega-icon-tag-create:before {
-    content: "\f254";
-  }
-  .mega-icon-tab-delete:before {
-    content: "\f255";
-  }
-  .mega-icon-branch-create:before {
-    content: "\f256";
-  }
-  .mega-icon-branch-delete:before {
-    content: "\f257";
-  }
-  .mega-icon-edit:before {
-    content: "\f258";
-  }
-  .mega-icon-info:before {
-    content: "\f259";
-  }
-  .mega-icon-arr-collapsed:before {
-    content: "\f25a";
-  }
-  .mega-icon-arr-expanded:before {
-    content: "\f25b";
-  }
-  .mega-icon-link:before {
-    content: "\f25c";
-  }
-  .mega-icon-add:before {
-    content: "\f25d";
-  }
-  .mega-icon-reorder:before {
-    content: "\f25e";
-  }
-  .mega-icon-code:before {
-    content: "\f25f";
-  }
-
-  .mega-icon-location:before {
-    content: "\f260";
-  }
-  .mega-icon-u-list:before {
-    content: "\f261";
-  }
-  .mega-icon-o-list:before {
-    content: "\f262";
-  }
-  .mega-icon-quotemark:before {
-    content: "\f263";
-  }
-  .mega-icon-version:before {
-    content: "\f264";
-  }
-  .mega-icon-brightness:before {
-    content: "\f265";
-  }
-  .mega-icon-fullscreen:before {
-    content: "\f266";
-  }
-  .mega-icon-normalscreen:before {
-    content: "\f267";
-  }
-  .mega-icon-calendar:before {
-    content: "\f268";
-  }
-  .mega-icon-beer:before {
-    content: "\f269";
-  }
-  .mega-icon-secure:before,
-  .mega-icon-lock:before {
-    content: "\f26a";
-  }
-  .mega-icon-added:before {
-    content: "\f26b";
-  }
-  .mega-icon-removed:before {
-    content: "\f26c";
-  }
-  .mega-icon-modified:before {
-    content: "\f26d";
-  }
-  .mega-icon-moved:before, .mega-icon-renamed:before {
-    content: "\f26e";
-  }
-  .mega-icon-add-comment:before {
-    content: "\f26f";
-  }
-
-  .mega-icon-horizontal-rule:before {
-    content: "\f270";
-  }
-  .mega-icon-arr-right-mini:before {
-    content: "\f271";
-  }
-  .mega-icon-jump-down:before {
-    content: "\f272";
-  }
-  .mega-icon-jump-up:before {
-    content: "\f273";
-  }
-  .mega-icon-reference:before {
-    content: "\f274";
-  }
-  .mega-icon-milestone:before {
-    content: "\f275";
-  }
-  .mega-icon-save-document:before {
-    content: "\f276";
-  }
-  .mega-icon-megaphone:before {
-    content: "\f277";
-  }
-  .mega-icon-chevron:before {
-    content: "\f278";
-  }
-  .mega-icon-gist-forked:before {
-    content: "\f279";
-  }
-  .mega-icon-gist-add:before {
-    content: "\f27a";
-  }
-  .mega-icon-bookmark:before {
-    content: "\f27b";
-  }
-  .mega-icon-filters:before {
-    content: "\f27c";
-  }
-  .mega-icon-dashboard:before {
-    content: "\f27d";
-  }
-  .mega-icon-history:before {
-    content: "\f27e";
-  }
-  .mega-icon-external-link:before {
-    content: "\f27f";
-  }
-
-  .mega-icon-mute:before {
-    content: "\f280";
-  }
-  .mega-icon-x:before {
-    content: "\f281";
-  }
-  .mega-icon-add-star:before {
-    content: "\f282";
-  }
-  .mega-icon-remove-star:before {
-    content: "\f283";
-  }
-  .mega-icon-circle-slash:before {
-    content: "\f284";
-  }
-  .mega-icon-pulse:before {
-    content: "\f285";
-  }
-  .mega-icon-new-file:before {
-    content: "\f286";
-  }
-  .mega-icon-refresh:before {
-    content: "\f287";
-  }
-  .mega-icon-telescope:before {
-    content: "\f288";
-  }
-  .mega-icon-microscope:before {
-    content: "\f289";
-  }
-  .mega-icon-align:before {
-    content: "\f28a";
-  }
-  .mega-icon-unalign:before {
-    content: "\f28b";
-  }
-  .mega-icon-gist-secret:before {
-    content: "\f28c";
-  }
-  .mega-icon-home:before {
-    content: "\f28d";
-  }
-  .mega-icon-aligned-to:before {
-    content: "\f28e";
-  }
-  .mega-icon-stop-spam:before {
-    content: "\f28f";
-  }
-
-  .mega-icon-zap:before {
-    content: "\f290";
-  }
-  .mega-icon-bug:before {
-    content: "\f291";
-  }
-  .mega-icon-loading-inner:before {
-    content: "\f292";
-  }
-  .mega-icon-loading-outer:before {
-    content: "\f293";
-  }
-  .mega-icon-binary-file:before {
-    content: "\f294";
-  }
-  .mega-icon-create-directory:before {
-    content: "\f295";
-  }
-  .mega-icon-database:before {
-    content: "\f296";
-  }
-  .mega-icon-server:before {
-    content: "\f297";
-  }
-  .mega-icon-ignored-file:before {
-    content: "\f298";
-  }
-  .mega-icon-ignore:before {
-    content: "\f299";
-  }
-  .mega-icon-ellipsis:before {
-    content: "\f29a";
-  }
-  .mega-icon-symlink:before {
-    content: "\f29b";
-  }
-  .mega-icon-no-newline:before {
-    content: "\f29c";
-  }
-  .mega-icon-hubot:before {
-    content: "\f29d";
-  }
-  .mega-icon-hourglass:before {
-    content: "\f29e";
-  }
+  .octicon-logo-github:before { content: '\f092'; } /* '' */
+  .octicon-mark-github-detail:before { content: '\f093'; } /* '' */
+  .octicon-alert:before { content: '\f02d'; } /* '' */
+  .octicon-alignment-align:before { content: '\f08a'; } /* '' */
+  .octicon-alignment-aligned-to:before { content: '\f08e'; } /* '' */
+  .octicon-alignment-unalign:before { content: '\f08b'; } /* '' */
+  .octicon-arrow-up:before { content: '\f03d'; } /* '' */
+  .octicon-arrow-down:before { content: '\f03f'; } /* '' */
+  .octicon-arrow-left:before { content: '\f040'; } /* '' */
+  .octicon-arrow-right:before { content: '\f03e'; } /* '' */
+  .octicon-arrow-small-up:before { content: '\f09f'; } /* '' */
+  .octicon-arrow-small-down:before { content: '\f0a0'; } /* '' */
+  .octicon-arrow-small-left:before { content: '\f0a1'; } /* '' */
+  .octicon-arrow-small-right:before { content: '\f071'; } /* '' */
+  .octicon-beer:before { content: '\f069'; } /* '' */
+  .octicon-book:before { content: '\f007'; } /* '' */
+  .octicon-bookmark:before { content: '\f07b'; } /* '' */
+  .octicon-bug:before { content: '\f091'; } /* '' */
+  .octicon-calendar:before { content: '\f068'; } /* '' */
+  .octicon-check:before { content: '\f03a'; } /* '' */
+  .octicon-checklist:before { content: '\f076'; } /* '' */
+  .octicon-chevron-up:before { content: '\f0a2'; } /* '' */
+  .octicon-chevron-down:before { content: '\f0a3'; } /* '' */
+  .octicon-chevron-left:before { content: '\f0a4'; } /* '' */
+  .octicon-chevron-right:before { content: '\f078'; } /* '' */
+  .octicon-circle-slash:before { content: '\f084'; } /* '' */
+  .octicon-clippy:before { content: '\f035'; } /* '' */
+  .octicon-clock:before { content: '\f046'; } /* '' */
+  .octicon-cloud-download:before { content: '\f00b'; } /* '' */
+  .octicon-cloud-upload:before { content: '\f00c'; } /* '' */
+  .octicon-code:before { content: '\f05f'; } /* '' */
+  .octicon-color-mode:before { content: '\f065'; } /* '' */
+  .octicon-comment:before { content: '\f02b'; } /* '' */
+  .octicon-comment-add:before { content: '\f06f'; } /* '' */
+  .octicon-comment-discussion:before { content: '\f04f'; } /* '' */
+  .octicon-credit-card:before { content: '\f045'; } /* '' */
+  .octicon-dashboard:before { content: '\f07d'; } /* '' */
+  .octicon-database:before { content: '\f096'; } /* '' */
+  .octicon-device-desktop:before { content: '\f27c'; } /* '' */
+  .octicon-device-mobile:before { content: '\f038'; } /* '' */
+  .octicon-diff-added:before { content: '\f06b'; } /* '' */
+  .octicon-diff-ignored:before { content: '\f099'; } /* '' */
+  .octicon-diff-renamed:before { content: '\f06e'; } /* '' */
+  .octicon-diff-removed:before { content: '\f06c'; } /* '' */
+  .octicon-diff-modified:before { content: '\f06d'; } /* '' */
+  .octicon-diff:before { content: '\f04d'; } /* '' */
+  .octicon-ellipsis:before { content: '\f09a'; } /* '' */
+  .octicon-eye:before { content: '\f04e'; } /* '' */
+  .octicon-eye-watch:before { content: '\f01d'; } /* '' */
+  .octicon-eye-unwatch:before { content: '\f01e'; } /* '' */
+  .octicon-broadcast:before { content: '\f048'; } /* '' */
+  .octicon-file-add:before { content: '\f086'; } /* '' */
+  .octicon-file-binary:before { content: '\f094'; } /* '' */
+  .octicon-file-code:before { content: '\f010'; } /* '' */
+  .octicon-file-media:before { content: '\f012'; } /* '' */
+  .octicon-file-pdf:before { content: '\f014'; } /* '' */
+  .octicon-file-text:before { content: '\f011'; } /* '' */
+  .octicon-file-zip:before { content: '\f013'; } /* '' */
+  .octicon-file-directory:before { content: '\f016'; } /* '' */
+  .octicon-file-directory-create:before { content: '\f095'; } /* '' */
+  .octicon-file-submodule:before { content: '\f017'; } /* '' */
+  .octicon-gear:before { content: '\f02f'; } /* '' */
+  .octicon-gift:before { content: '\f042'; } /* '' */
+  .octicon-gist:before { content: '\f00e'; } /* '' */
+  .octicon-gist-fork:before { content: '\f079'; } /* '' */
+  .octicon-gist-new:before { content: '\f07a'; } /* '' */
+  .octicon-gist-private:before { content: '\f00f'; } /* '' */
+  .octicon-gist-secret:before { content: '\f08c'; } /* '' */
+  .octicon-git-commit:before { content: '\f01f'; } /* '' */
+  .octicon-git-branch:before { content: '\f020'; } /* '' */
+  .octicon-git-branch-create:before { content: '\f098'; } /* '' */
+  .octicon-git-branch-delete:before { content: '\f09b'; } /* '' */
+  .octicon-git-fork-private:before { content: '\f021'; } /* '' */
+  .octicon-git-merge:before { content: '\f023'; } /* '' */
+  .octicon-git-pull-request:before { content: '\f009'; } /* '' */
+  .octicon-graph:before { content: '\f043'; } /* '' */
+  .octicon-history:before { content: '\f07e'; } /* '' */
+  .octicon-home:before { content: '\f08d'; } /* '' */
+  .octicon-horizontal-rule:before { content: '\f070'; } /* '' */
+  .octicon-hourglass:before { content: '\f09e'; } /* '' */
+  .octicon-hubot:before { content: '\f09d'; } /* '' */
+  .octicon-info:before { content: '\f059'; } /* '' */
+  .octicon-issue-opened:before { content: '\f026'; } /* '' */
+  .octicon-issue-reopened:before { content: '\f027'; } /* '' */
+  .octicon-issue-closed:before { content: '\f028'; } /* '' */
+  .octicon-jump-up:before { content: '\f073'; } /* '' */
+  .octicon-jump-down:before { content: '\f072'; } /* '' */
+  .octicon-jump-left:before { content: '\f0a5'; } /* '' */
+  .octicon-jump-right:before { content: '\f0a6'; } /* '' */
+  .octicon-key:before { content: '\f049'; } /* '' */
+  .octicon-keyboard:before { content: '\f00d'; } /* '' */
+  .octicon-link-external:before { content: '\f07f'; } /* '' */
+  .octicon-link:before { content: '\f05c'; } /* '' */
+  .octicon-list-ordered:before { content: '\f062'; } /* '' */
+  .octicon-list-unordered:before { content: '\f061'; } /* '' */
+  .octicon-location:before { content: '\f060'; } /* '' */
+  .octicon-lock:before { content: '\f06a'; } /* '' */
+  .octicon-log-out:before { content: '\f032'; } /* '' */
+  .octicon-mail:before { content: '\f03b'; } /* '' */
+  .octicon-mail-read:before { content: '\f03c'; } /* '' */
+  .octicon-mail-reply:before { content: '\f051'; } /* '' */
+  .octicon-mark-github:before { content: '\f00a'; } /* '' */
+  .octicon-megaphone:before { content: '\f077'; } /* '' */
+  .octicon-microscope:before { content: '\f089'; } /* '' */
+  .octicon-milestone:before { content: '\f075'; } /* '' */
+  .octicon-mirror-private:before { content: '\f025'; } /* '' */
+  .octicon-mirror-public:before { content: '\f024'; } /* '' */
+  .octicon-move-up:before { content: '\f0a7'; } /* '' */
+  .octicon-move-down:before { content: '\f0a8'; } /* '' */
+  .octicon-move-left:before { content: '\f074'; } /* '' */
+  .octicon-move-right:before { content: '\f0a9'; } /* '' */
+  .octicon-mute:before { content: '\f080'; } /* '' */
+  .octicon-no-newline:before { content: '\f09c'; } /* '' */
+  .octicon-octoface:before { content: '\f008'; } /* '' */
+  .octicon-pencil:before { content: '\f058'; } /* '' */
+  .octicon-person:before { content: '\f018'; } /* '' */
+  .octicon-person-add:before { content: '\f01a'; } /* '' */
+  .octicon-person-follow:before { content: '\f01c'; } /* '' */
+  .octicon-person-remove:before { content: '\f01b'; } /* '' */
+  .octicon-person-team:before { content: '\f019'; } /* '' */
+  .octicon-pin:before { content: '\f041'; } /* '' */
+  .octicon-plus:before { content: '\f05d'; } /* '' */
+  .octicon-primitive-dot:before { content: '\f052'; } /* '' */
+  .octicon-primitive-square:before { content: '\f053'; } /* '' */
+  .octicon-pulse:before { content: '\f085'; } /* '' */
+  .octicon-question:before { content: '\f02c'; } /* '' */
+  .octicon-quote:before { content: '\f063'; } /* '' */
+  .octicon-radio-tower:before { content: '\f030'; } /* '' */
+  .octicon-remove-close:before { content: '\f050'; } /* '' */
+  .octicon-repo:before { content: '\f001'; } /* '' */
+  .octicon-repo-clone:before { content: '\f04c'; } /* '' */
+  .octicon-repo-create:before { content: '\f003'; } /* '' */
+  .octicon-repo-delete:before { content: '\f004'; } /* '' */
+  .octicon-repo-force-push:before { content: '\f04a'; } /* '' */
+  .octicon-repo-forked:before { content: '\f002'; } /* '' */
+  .octicon-repo-pull:before { content: '\f006'; } /* '' */
+  .octicon-repo-push:before { content: '\f005'; } /* '' */
+  .octicon-repo-sync:before { content: '\f04b'; } /* '' */
+  .octicon-rocket:before { content: '\f033'; } /* '' */
+  .octicon-rss:before { content: '\f034'; } /* '' */
+  .octicon-ruby:before { content: '\f047'; } /* '' */
+  .octicon-screen-full:before { content: '\f066'; } /* '' */
+  .octicon-screen-normal:before { content: '\f067'; } /* '' */
+  .octicon-search:before { content: '\f02e'; } /* '' */
+  .octicon-server:before { content: '\f097'; } /* '' */
+  .octicon-settings:before { content: '\f07c'; } /* '' */
+  .octicon-star:before { content: '\f02a'; } /* '' */
+  .octicon-star-add:before { content: '\f082'; } /* '' */
+  .octicon-star-delete:before { content: '\f083'; } /* '' */
+  .octicon-stop:before { content: '\f08f'; } /* '' */
+  .octicon-sync:before { content: '\f087'; } /* '' */
+  .octicon-tag:before { content: '\f015'; } /* '' */
+  .octicon-tag-add:before { content: '\f054'; } /* '' */
+  .octicon-tag-remove:before { content: '\f055'; } /* '' */
+  .octicon-telescope:before { content: '\f088'; } /* '' */
+  .octicon-three-bars:before { content: '\f05e'; } /* '' */
+  .octicon-tools:before { content: '\f031'; } /* '' */
+  .octicon-triangle-up:before { content: '\f0aa'; } /* '' */
+  .octicon-triangle-down:before { content: '\f05b'; } /* '' */
+  .octicon-triangle-left:before { content: '\f044'; } /* '' */
+  .octicon-triangle-right:before { content: '\f05a'; } /* '' */
+  .octicon-versions:before { content: '\f064'; } /* '' */
+  .octicon-x:before { content: '\f081'; } /* '' */
+  .octicon-zap:before { content: '\f090'; } /* '' */
 }
