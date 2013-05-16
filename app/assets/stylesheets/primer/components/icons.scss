@@ -7,9 +7,9 @@
     font-family: 'github-octicons';
     src: font-url('octicons/github-octicons.eot');
     src: font-url('octicons/github-octicons.eot#iefix') format('embedded-opentype'),
+         font-url('octicons/github-octicons.svg') format('svg'),
          font-url('octicons/github-octicons.woff') format('woff'),
-         font-url('octicons/github-octicons.ttf') format('truetype'),
-         font-url('octicons/github-octicons.svg#github-octicons') format('svg');
+         font-url('octicons/github-octicons.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
