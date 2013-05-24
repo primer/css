@@ -7,12 +7,6 @@ module Primer
   end
 
   if defined? ::Rails::Railtie
-    class Railtie < ::Rails::Railtie
-      initializer "primer" do |app|
-        Primer.paths.each do |path|
-          app.config.assets.paths << path
-        end
-      end
-    end
+    require 'primer/railtie'
   end
 end
