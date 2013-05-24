@@ -1,3 +1,5 @@
+require 'primer'
+
 module Primer
   class Railtie < ::Rails::Railtie
     initializer "primer" do |app|

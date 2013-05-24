@@ -5,8 +5,8 @@ module Primer
   def self.paths
     Dir["#{APP}/assets/*"]
   end
+end
 
-  if defined? ::Rails::Railtie
-    require 'primer/railtie'
-  end
+if defined? ::Rails::Railtie
+  require 'primer/railtie'
 end
