@@ -7,8 +7,10 @@ module Primer
       Primer.paths.each do |path|
         app.config.assets.paths << path
       end
+    end
 
-      if Rails.version < '4' # fix moment/LICENSE error due to lax regex in rails3.2
+    initializer "primer.precompile_regex" do |app|
+      if Rails::VERSION::MAJOR == 3 # fix moment/LICENSE error due to lax regex in rails3.2
         app.config.assets.precompile = [
           Proc.new { |path, fn|
             fn !~ /\/(test|spec)\// && (
