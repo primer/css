@@ -23,6 +23,10 @@ Also make sure `config/application.rb` sets:
 config.assets.initialize_on_precompile = true
 ```
 
+If you need this to be `false` for heroku, add the contents of
+`lib/primer/railtie.rb`'s initializer directly to your
+`config/application.rb`.
+
 ### Updating
 
 For Rails 3 apps, just run `bundle update github-primer` and commit any changes to `Gemfile.lock`.
