@@ -17,6 +17,12 @@ gem 'github-primer', :git => 'https://hubot:TOKEN@github.com/github/primer.git'
 require 'primer/railtie'
 ```
 
+Also make sure `config/application.rb` sets:
+
+```
+config.assets.initialize_on_precompile = true
+```
+
 ### Updating
 
 For Rails 3 apps, just run `bundle update github-primer` and commit any changes to `Gemfile.lock`.
