@@ -3,12 +3,6 @@ require 'rails'
 
 module Primer
   class Railtie < ::Rails::Engine
-    initializer "primer.assets" do |app|
-      Primer.paths.each do |path|
-        app.config.assets.paths << path
-      end
-    end
-
     initializer "primer.precompile_regex" do |app|
       if Rails::VERSION::MAJOR == 3 # fix moment/LICENSE error due to lax regex in rails3.2
         app.config.assets.precompile = [
