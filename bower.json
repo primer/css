@@ -1,0 +1,9 @@
+{
+  "name": "primer",
+  "version": "0.2.0",
+  "dependencies": {
+    "crema": "https://github.com/github/crema.git",
+    "jquery": "latest",
+    "rails-behaviors": "latest"
+  }
+}
