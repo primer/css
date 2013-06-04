@@ -5,11 +5,11 @@
 @if $enable-font-icons {
   @font-face {
     font-family: 'github-octicons';
-    src: font-url('octicons/github-octicons.eot');
-    src: font-url('octicons/github-octicons.eot#iefix') format('embedded-opentype'),
-         font-url('octicons/github-octicons.svg') format('svg'),
-         font-url('octicons/github-octicons.woff') format('woff'),
-         font-url('octicons/github-octicons.ttf') format('truetype');
+    src: font-url('primer/octicons/github-octicons.eot');
+    src: font-url('primer/octicons/github-octicons.eot#iefix') format('embedded-opentype'),
+         font-url('primer/octicons/github-octicons.svg') format('svg'),
+         font-url('primer/octicons/github-octicons.woff') format('woff'),
+         font-url('primer/octicons/github-octicons.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
