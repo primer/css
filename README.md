@@ -7,31 +7,41 @@ Primer is the absolute bare bones assets package for GitHub.com and GitHub prope
 
 ## Installation
 
-### Rails 3.x apps
+### Rails
+
+Add `https://github.com/github/primer.git` to your app's `bower.json` at `vendor/assets/bower.json`.
+
+``` json
+{
+  "name": "myapp",
+  "dependencies": {
+    "crema": "https://github.com/github/primer.git#0.x.x"
+  }
+}
+```
+
+Make sure you have `>= 0.9.2` of bower:
+
+```
+$ npm install -g bower
+$ bower -v
+0.9.2
+```
+
+To pull down the package and any updates, `cd` into `vendor/assets` and run `bower install`.
+
+```
+$ cd vendor/assets
+$ bower install
+```
+
+You should check in `bower.json` and everything under `vendor/assets/components`.
+
+**Rails 3.x Note** Rails 3.x is locked to an older version of sprockets that doesn't support bower. You can work around this by installing the [sprockets 2.2.2.backport2](http://rubygems.org/gems/sprockets/versions/2.2.2.backport2) gem.
 
 ``` ruby
-# Gemfile
-gem 'github-primer', :git => 'https://hubot:TOKEN@github.com/github/primer.git'
-
-# application.rb
-require 'primer/railtie'
+gem 'sprockets', '2.2.2.backport2'
 ```
-
-Also make sure `config/application.rb` sets:
-
-```
-config.assets.initialize_on_precompile = true
-```
-
-If you need this to be `false` for heroku, add the contents of
-`lib/primer/railtie.rb`'s initializer directly to your
-`config/application.rb`.
-
-### Updating
-
-For Rails 3 apps, just run `bundle update github-primer` and commit any changes to `Gemfile.lock`.
-
-`github/github` is a special case. To update primer run `script/vendor-primer`. If there are any git pull issues, you may need to cd into `vendor/internal-gems/primer` and resolve them manually.
 
 ## Usage
 
@@ -42,19 +52,4 @@ For Rails 3 apps, just run `bundle update github-primer` and commit any changes 
 @import "primer/components/markdown";
 @import "primer/components/nav";
 @import "primer/components/pygments";
-```
-
-## Heroku
-
-Primer registers itself as a Railtie if Rails 3 is detected and appends it's
-asset paths into the Rails asset pipeline. Unfortunately, heroku's asset
-compilation and gem bundling doesn't correctly reference the octoicons font
-files. To correct this, add the following to `application.rb`:
-
-```ruby
-# Heroku doesn't pick up on octoicon fonts
-config.assets.paths << "#{Gem.loaded_specs['github-primer'].full_gem_path}/app/assets/fonts"
-
-# Force append github-primer to sass load path
-config.sass.load_paths << "#{Gem.loaded_specs['github-primer'].full_gem_path}/app/assets/stylesheets"
 ```
