@@ -190,6 +190,10 @@ $margin: 15px;
   // Tables
   table {
 
+    width: 100%;
+    overflow: scroll;
+    display: block;
+
     th {
       font-weight: bold;
     }
