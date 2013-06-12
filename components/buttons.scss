@@ -190,6 +190,7 @@
   &.with-count {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    float: left;
   }
 
 }
@@ -553,11 +554,11 @@ input[type=text] + .minibutton{ margin-left: 5px; }
 //
 // Styleguide 1.2.5
 .social-count {
-  display: inline-block;
   padding: 0 7px 0;
-  margin-left: -4px;
   font-size: 11px;
   font-weight: bold;
+  float: left;
+  background-color: #fff;
   line-height: 24px;
   color: $brand-darkGrey;
   vertical-align: middle;
