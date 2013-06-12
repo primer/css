@@ -187,6 +187,11 @@
     }
   }
 
+  &.with-count {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
 }
 
 .button,
@@ -548,51 +553,23 @@ input[type=text] + .minibutton{ margin-left: 5px; }
 //
 // Styleguide 1.2.5
 .social-count {
-  position: relative;
   display: inline-block;
   padding: 0 7px 0;
-  margin-left: 8px;
+  margin-left: -4px;
   font-size: 11px;
   font-weight: bold;
   line-height: 24px;
   color: $brand-darkGrey;
   vertical-align: middle;
-  background-color: #fafafa;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-left: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 
   &:hover {
     color: $brand-linkBlue;
     cursor: pointer;
     text-decoration: none;
-  }
-
-  &:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border: 6px solid #ccc;
-    border-color: transparent #ccc transparent transparent;
-    position: absolute;
-    right: 100%;
-    margin-right: 0;
-    top: 50%;
-    margin-top: -6px;
-  }
-
-  &:after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border: 6px solid #fafafa;
-    border-color: transparent #fafafa transparent transparent;
-    position: absolute;
-    right: 100%;
-    margin-right: -1px;
-    top: 50%;
-    margin-top: -6px;
   }
 }
 
