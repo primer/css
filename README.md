@@ -15,7 +15,7 @@ Add `https://github.com/github/primer.git` to your app's `bower.json` at `vendor
 {
   "name": "myapp",
   "dependencies": {
-    "crema": "https://github.com/github/primer.git#0.x.x"
+    "primer": "https://github.com/github/primer.git#0.x.x"
   }
 }
 ```
