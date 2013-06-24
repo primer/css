@@ -1,6 +1,6 @@
 {
   "name": "primer",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "dependencies": {
     "crema": "https://github.com/github/crema.git",
     "jquery": "latest",
