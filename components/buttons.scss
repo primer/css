@@ -36,7 +36,8 @@
 //
 // Styleguide 1.1
 .button,
-.minibutton {
+.minibutton,
+.zeroclipboard-button {
   position: relative;
   display: inline-block;
   padding: 7px 15px;
@@ -56,13 +57,17 @@
   -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   &:hover,
-  &:active {
+  &:active,
+  &.zeroclipboard-is-hover,
+  &.zeroclipboard-is-active {
     text-decoration: none;
     @include gradient(#eaeaea, #dadada);
     border-color: #ccc #ccc #b5b5b5;
   }
 
-  &:active {
+  &:active,
+  &.selected,
+  &.zeroclipboard-is-active {
     background-color: #dadada;
     background-image: none;
     border-color: #b5b5b5;
@@ -97,7 +102,8 @@
       border-color: #4a993e;
     }
 
-    &:active {
+    &:active,
+    &.selected {
       background-color: darken(#60b044, 5%);
       background-image: none;
       border-color: darken(#4a993e, 5%);
@@ -125,7 +131,8 @@
       border-color: #cd504a;
     }
 
-    &:active {
+    &:active,
+    &.selected {
       color: #fff;
       background-color: #b33630;
       background-image: none;
@@ -155,7 +162,8 @@
     &:active {
       border-color: #2a65a0;
     }
-    &:active {
+    &:active,
+    &.selected {
       background-color: #3072b3;
       background-image: none;
       border-color: darken(#2a65a0, 5%);
@@ -176,10 +184,12 @@
       border-bottom-color: #595959;
     }
     &:hover,
-    &:active {
+    &:active,
+    &.selected {
       border-color: #585858;
     }
-    &:active {
+    &:active,
+    &.selected {
       background-color: #545454;
       background-image: none;
       border-color: darken(#545454, 5%);
@@ -240,7 +250,8 @@
 // .dark-grey        - A dark grey button for places like the delete branch (w/ unmerged commits) box.
 //
 // Styleguide 1.2
-.minibutton {
+.minibutton,
+.zeroclipboard-button {
   padding: 0 10px;
   line-height: 24px;
   box-shadow: none;
@@ -249,15 +260,6 @@
     .octicon-device-desktop:before {
       background-position: -18px 0;
     }
-  }
-
-  &.selected {
-    color: #fff;
-    text-shadow: 0 -1px 0 rgba(0,0,0,.5);
-    background-color: #767676;
-    background-image: none;
-    border-color: #686868;
-    box-shadow: inset 0 3px 5px rgba(0,0,0,.15);
   }
 
   i {
