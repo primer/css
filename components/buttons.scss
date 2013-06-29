@@ -36,8 +36,7 @@
 //
 // Styleguide 1.1
 .button,
-.minibutton,
-.zeroclipboard-button {
+.minibutton {
   position: relative;
   display: inline-block;
   padding: 7px 15px;
@@ -250,8 +249,7 @@
 // .dark-grey        - A dark grey button for places like the delete branch (w/ unmerged commits) box.
 //
 // Styleguide 1.2
-.minibutton,
-.zeroclipboard-button {
+.minibutton {
   padding: 0 10px;
   line-height: 24px;
   box-shadow: none;
@@ -337,6 +335,9 @@ input[type=text] + .minibutton{ margin-left: 5px; }
     -webkit-transition: none;
     -o-transition: color 0 ease-in;
     transition: none;
+  }
+  &.zeroclipboard-button .octicon {
+    margin-right: 0;
   }
   &.empty-icon .octicon {
     margin-right: 0;
