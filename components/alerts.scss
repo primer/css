@@ -1,0 +1,102 @@
+@import "primer/mixins/gradient";
+@import "primer/mixins/variables";
+
+// Flash Messages. Use these for temporary, dismissable notifications.
+//
+// .flash-warn    - Warning notification
+// .flash-danger  - Error notification
+//
+// Styleguide 15.0
+.flash-messages {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.flash,
+.flash-global {
+  position: relative;
+  border: 1px solid #97c1da;
+  color: #264c72;
+  @include gradient(#d8ebf8, #d0e3ef);
+  text-shadow: 0 1px 0 rgba(#fff, 0.5);
+
+  &.flash-warn {
+    color: #613A00;
+    @include gradient(#ffe3c8, #f5dac0);
+    border-color: #dca874;
+  }
+
+  &.flash-danger {
+    color: #911;
+    @include gradient(#f8d8d8, #efd0d0);
+    border-color: #da9797;
+  }
+
+  &:hover {
+    border-color: darken(#97c1da, 15%);
+  }
+
+  &.flash-warn:hover {
+    border-color: darken(#dca874, 15%);
+  }
+
+  &.flash-danger:hover {
+    border-color: darken(#da9797, 15%);
+  }
+
+  // Flashes can have an action button instead of the cross.
+  //
+  // Styleguide 15.0.1
+  .flash-action {
+    float: right;
+    margin-top: -4px;
+    margin-left: 20px;
+  }
+}
+
+.flash {
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+  & + .flash { margin-top: 5px; }
+
+  .close {
+    float: right;
+    cursor: pointer;
+    opacity: 0.6;
+    text-decoration: none;
+    margin-top: 1px;
+  }
+
+  &:hover .close {
+    opacity: 1;
+  }
+}
+
+// Global notices. Useful for site-wide banners and global notifications.
+//
+// .flash-warn    - Warning notification
+// .flash-danger  - Error notification
+//
+// Styleguide 15.1
+.flash-global {
+  padding: 10px;
+  top: -1px;
+  border-width: 1px 0;
+  z-index: 5;
+
+  h2, p {
+    font-size: 13px;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.4;
+  }
+
+  // Global flashes can have an action buttons too.
+  //
+  // Styleguide 15.1.1
+  .flash-action {
+    margin-top: 5px;
+  }
+}
