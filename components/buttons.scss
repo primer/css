@@ -471,19 +471,17 @@ input[type=text] + .minibutton{ margin-left: 5px; }
   height: 22px;
   line-height: 23px;
 
-  @if $enable-font-icons {
-    @include icon-bootstrap(16px);
+  @include icon-bootstrap(16px);
 
-    &:before {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      content: "\f02f";
-      display: block;
-      padding: 0;
-      font-size: 16px;
-      line-height: 16px;
-    }
+  &:before {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    content: "\f02f";
+    display: block;
+    padding: 0;
+    font-size: 16px;
+    line-height: 16px;
   }
 
   &:after {
