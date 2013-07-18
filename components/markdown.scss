@@ -34,6 +34,10 @@ $margin: 15px;
     top: 0;
     left: 0;
     bottom: 0;
+
+    &:focus {
+      outline: none
+    }
   }
 
   // Headings
