@@ -114,11 +114,6 @@ $margin: 15px;
     margin: $margin 0;
   }
 
-  // ReST first graf in nested list
-  li p.first {
-    display: inline-block;
-  }
-
   // Lists, Blockquotes & Such
   ul, ol {
     padding-left: 30px;
