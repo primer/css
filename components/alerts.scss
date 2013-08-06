@@ -4,7 +4,7 @@
 // Flash Messages. Use these for temporary, dismissable notifications.
 //
 // .flash-warn    - Warning notification
-// .flash-danger  - Error notification
+// .flash-error   - Error notification
 //
 // Styleguide 15.0
 .flash-messages {
@@ -26,7 +26,7 @@
     border-color: #dca874;
   }
 
-  &.flash-danger {
+  &.flash-error {
     color: #911;
     @include gradient(#f8d8d8, #efd0d0);
     border-color: #da9797;
@@ -40,7 +40,7 @@
     border-color: darken(#dca874, 15%);
   }
 
-  &.flash-danger:hover {
+  &.flash-error:hover {
     border-color: darken(#da9797, 15%);
   }
 
@@ -77,7 +77,7 @@
 // Global notices. Useful for site-wide banners and global notifications.
 //
 // .flash-warn    - Warning notification
-// .flash-danger  - Error notification
+// .flash-error  - Error notification
 //
 // Styleguide 15.1
 .flash-global {
