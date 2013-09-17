@@ -35,7 +35,7 @@ $ cd vendor/assets
 $ bower install
 ```
 
-You should check in `bower.json` and everything under `vendor/assets/bower_compoents`.
+You should check in `bower.json` and everything under `vendor/assets/bower_components`.
 
 **Rails 3.x Note** Rails 3.x is locked to an older version of sprockets that doesn't support bower. You can work around this by installing the [sprockets 2.2.2.backport2](http://rubygems.org/gems/sprockets/versions/2.2.2.backport2) gem.
 
