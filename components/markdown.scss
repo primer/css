@@ -11,6 +11,7 @@ $margin: 15px;
   font-size: 15px;
   line-height: 1.7;
   overflow: hidden;
+  word-wrap: break-word;
 
   & > *:first-child {
     margin-top: 0 !important;
