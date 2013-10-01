@@ -617,7 +617,7 @@ input[type=text] + .minibutton{ margin-left: 5px; }
     &:hover {
       box-shadow: none;
     }
-    &:active {
+    &:active, &.selected {
       box-shadow: inset 0 3px 5px rgba(0,0,0,.15)
     }
   }
