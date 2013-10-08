@@ -28,7 +28,7 @@ $ bower -v
 0.9.2
 ```
 
-To pull down the package and any updates, `cd` into `vendor/assets` and run `bower install`.
+To pull down the package, `cd` into `vendor/assets` and run `bower install`.
 
 ```
 $ cd vendor/assets
@@ -42,6 +42,10 @@ You should check in `bower.json` and everything under `vendor/assets/bower_compo
 ``` ruby
 gem 'sprockets', '2.2.2.backport2'
 ```
+
+## Updating
+
+When new versions are released, update the `bower.json` manifest to use the new version number, run `bower install`, and push up the changes.
 
 ## Usage
 
