@@ -45,7 +45,25 @@ gem 'sprockets', '2.2.2.backport2'
 
 ## Updating
 
-When new versions are released, update the `bower.json` manifest to use the new version number, run `bower install`, and push up the changes.
+Within `bower.json`, update to a new release by changing the version number that follows the `#` in the dependency URL.
+
+```json
+{
+  "name": "myapp",
+  "dependencies": {
+		"primer": "https://github.com/github/primer.git#0.x.x"
+	}
+}
+```
+
+To pull down the updated package, `cd` into `vendor/assets`, and run `bower install`.
+
+```
+$ cd vendor/assets
+$ bower install
+```
+
+Check in `bower.json` and all changes under `vendor/assets/bower_components`.
 
 ## Usage
 
