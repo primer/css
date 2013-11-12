@@ -341,6 +341,10 @@ $margin: 15px;
     border-radius:3px;
   }
 
+  pre {
+    word-wrap: normal;
+  }
+
   pre code, pre tt {
     margin: 0;
     padding: 0;
