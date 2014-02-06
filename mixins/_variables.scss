@@ -44,7 +44,17 @@ $codeFont: Consolas, "Liberation Mono", Courier, monospace !default;
 // $menuZ         - for use with Menus, Dropdowns, popups
 // $modalZ        - for use with fullscreen absolute top elements
 //
-// Sytleguide 3.2
+// Styleguide 3.2
 $minorZ: 2;
 $menuZ: 5;
 $modalZ: 10;
+
+// State indicators.
+//
+// No styleguide reference.
+$status-open:     $brand-green;
+$status-closed:   $brand-red;
+$status-reverted: $status-closed;
+$status-merged:   #6e5494;
+$status-renamed:  #fffa5d;
+$status-pending:  #cea61b;
