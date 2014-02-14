@@ -313,8 +313,7 @@ $margin: 15px;
 
   // Inline code snippets
   code, tt {
-    margin: 0 2px;
-    padding: 0px 5px;
+    margin: 0;
     border: 1px solid #ddd;
     background-color: #f8f8f8;
     border-radius:3px;
@@ -323,6 +322,12 @@ $margin: 15px;
     overflow: auto;
     vertical-align: middle;
     line-height: 1.3;
+
+    padding: 0; // don't add padding, gives scrollbars
+
+    &:before, &:after { // this creates padding
+      content: "\00a0";
+    }
   }
 
   code { white-space: nowrap; }
