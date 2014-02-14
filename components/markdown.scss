@@ -318,6 +318,10 @@ $margin: 15px;
     border: 1px solid #ddd;
     background-color: #f8f8f8;
     border-radius:3px;
+    max-width: 100%;
+    display: inline-block;
+    overflow: auto;
+    vertical-align: middle;
   }
 
   code { white-space: nowrap; }
@@ -351,5 +355,8 @@ $margin: 15px;
     background-color: transparent;
     border: none;
     word-wrap: normal;
+    max-width: initial;
+    display: inline;
+    overflow: initial;
   }
 }
