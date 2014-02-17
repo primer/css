@@ -83,12 +83,11 @@
   &.disabled {
     &,
     &:hover {
-      opacity: .5;
-      color: #666;
+      color: rgba(102, 102, 102,.5);
       text-shadow: 0 1px 0 rgba(255,255,255,.9);
       background-image: none;
-      background-color: #e5e5e5;
-      border-color: #c5c5c5;
+      background-color: rgba(229, 229, 229, .5);
+      border-color: rgba(197, 197, 197, .5);
       cursor: default;
       box-shadow: none;
     }
