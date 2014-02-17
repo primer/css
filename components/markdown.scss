@@ -365,5 +365,9 @@ $margin: 15px;
     display: inline;
     overflow: initial;
     line-height: inherit;
+
+    &:before, &:after {
+      content: normal;
+    }
   }
 }
