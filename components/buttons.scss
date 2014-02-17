@@ -116,10 +116,10 @@
     &:disabled,
     &.disabled {
       &, &:hover {
-        color: #fff;
+        color: #fefefe;
         text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-        @include gradient(#8add6d, #60b044);
-        border-color: #74bb5a #74bb5a #509338;
+        @include gradient(#d7ebd0, #e0f5d9);
+        border-color: #b9dcac #b9dcac #a7c89b;
       }
     }
   }
@@ -146,10 +146,10 @@
     &:disabled,
     &.disabled {
       &, &:hover {
-        color: #900;
+        color: #cb7f7f;
         text-shadow: 0 1px 0 rgba(255,255,255,.9);
-        @include gradient(#fff, #e1e1e1);
-        border-color: #c5c5c5;
+        @include gradient(#fefefe, #efefef);
+        border-color: #e1e1e1;
       }
     }
   }
@@ -175,6 +175,11 @@
     }
     &:disabled,
     &.disabled {
+      &, &:hover {
+        color: #fefefe;
+        @include gradient(#abcce5, #97b8d8);
+        border-color: #94b1cf;
+      }
       background-position: 0 0;
     }
   }
@@ -198,6 +203,15 @@
       background-image: none;
       border-color: darken(#545454, 5%);
       box-shadow: inset 0 3px 5px rgba(0,0,0,.15);
+    }
+    &:disabled,
+    &.disabled {
+      &, &:hover {
+        color: #fefefe;
+        @include gradient(#c4c4c4, #b5b5b5);
+        border-color: #ababab;
+      }
+      background-position: 0 0;
     }
   }
 
