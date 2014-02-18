@@ -117,8 +117,8 @@
     &.disabled {
       &, &:hover {
         color: #fefefe;
-        text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-        @include gradient(#d7ebd0, #e0f5d9);
+        text-shadow: 0 -1px 0 rgba(39,39,39,0.25);
+        @include gradient(#c3ecb4, #add39f);
         border-color: #b9dcac #b9dcac #a7c89b;
       }
     }
