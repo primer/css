@@ -327,6 +327,7 @@ $margin: 15px;
 
     &:before, &:after { // this creates padding
       content: "\00a0";
+      letter-spacing: -0.2em;
     }
   }
 
