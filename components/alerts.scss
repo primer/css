@@ -52,6 +52,11 @@
     margin-top: -4px;
     margin-left: 20px;
   }
+
+  // Make links stand out
+  a {
+    font-weight: bold;
+  }
 }
 
 .flash {
@@ -99,4 +104,12 @@
   .flash-action {
     margin-top: 5px;
   }
+}
+
+// Content within flash messages.
+//
+// No styleguide reference.
+.flash-title {
+  margin-top: 0;
+  margin-bottom: 5px;
 }
