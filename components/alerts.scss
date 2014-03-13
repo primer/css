@@ -99,6 +99,18 @@
     line-height: 1.4;
   }
 
+  // Used to vertically center close icon
+  .container {
+    position: relative;
+  }
+
+  .close {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -8px; // 50% of total icon height
+  }
+
   // Global flashes can have an action buttons too.
   //
   // Styleguide 15.1.1
