@@ -44,6 +44,18 @@
     border-color: darken(#da9797, 15%);
   }
 
+  .close {
+    float: right;
+    cursor: pointer;
+    opacity: 0.6;
+    text-decoration: none;
+    margin-top: 1px;
+  }
+
+  &:hover .close {
+    opacity: 1;
+  }
+
   // Flashes can have an action button instead of the cross.
   //
   // Styleguide 15.0.1
@@ -65,18 +77,6 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 
   & + .flash { margin-top: 5px; }
-
-  .close {
-    float: right;
-    cursor: pointer;
-    opacity: 0.6;
-    text-decoration: none;
-    margin-top: 1px;
-  }
-
-  &:hover .close {
-    opacity: 1;
-  }
 }
 
 // Global notices. Useful for site-wide banners and global notifications.
