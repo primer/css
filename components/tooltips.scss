@@ -1,0 +1,327 @@
+@import "primer/mixins/variables";
+@import "primer/mixins/transition";
+@import "primer/mixins/transform";
+
+$multiline-max-width: 250px;
+$tooltip-background-color: rgba(0, 0, 0, 0.8);
+$tooltip-text-color: #fff;
+
+// `.tooltipped` is our tooltip class used across the site. All you need to do
+// give an element the tooltip property is add an `aria-label` attribute
+// and optionally add a direction
+// `.tooltipped-n, .tooltipped-ne, .tooltipped-e, .tooltipped-se`
+// `.tooltipped-s, .tooltipped-sw, .tooltipped-w, .tooltipped-nw`
+//
+// .tooltipped-s         - Placing the tooltip below the object. South (Default)
+// .tooltipped-se        - Placing the tooltip below the object to the east. Southeast
+// .tooltipped-sw        - Placing the tooltip below the object to the west. Southwest
+// .tooltipped-n         - Placing the tooltip above the object. North
+// .tooltipped-ne        - Placing the tooltip above the object to the east. Northeast
+// .tooltipped-e         - Placing the tooltip to the right of the object. East
+// .tooltipped-w         - Placing the tooltip to the left of the object. West
+// .tooltipped-nw        - Placing the tooltip above the object to the west. Northwest
+//
+// Styleguide 9.1
+.tooltipped {
+  position: relative;
+}
+
+// Setup the tooltip bubble and the arrow
+.tooltipped:after, .tooltipped:before {
+  display: none;
+  position: absolute;
+  z-index: 1000000;
+  pointer-events: none;
+}
+
+// This is the tooltip bubble
+.tooltipped:after {
+  content:attr(aria-label);
+
+  // font stuff
+  -webkit-font-smoothing: initial;
+  font-family: $bodyFont;
+  font-size: 10px;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+
+  line-height: 1.5;
+  background: $tooltip-background-color;
+  color: $tooltip-text-color;
+  white-space: pre;
+  word-wrap: break-word;
+  padding: 5px 8px;
+  border-radius: 3px;
+
+}
+
+// This is the tooltip arrow
+.tooltipped:before {
+  width: 0;
+  content: '';
+  height: 0;
+  border: 5px solid transparent;
+  z-index: 1000001;
+}
+
+// This will indicate when we'll activate the tooltip
+.tooltipped:hover,
+.tooltipped:active,
+.tooltipped:focus {
+  &:before,
+  &:after {
+    display: inline-block;
+    text-decoration: none;
+  }
+}
+
+.tooltipped-multiline:hover,
+.tooltipped-multiline:active,
+.tooltipped-multiline:focus {
+  &:after {
+    display: table-cell;
+  }
+}
+
+// Tooltipped south
+.tooltipped-s,
+.tooltipped-se,
+.tooltipped-sw {
+  &:after,
+  &:before {
+    top: 100%;
+    right: 50%;
+  }
+
+  &:before {
+    margin-right: -5px;
+    top: auto;
+    bottom: -5px;
+    border-bottom-color: $tooltip-background-color;
+  }
+}
+
+.tooltipped-s {
+  &:after {
+    margin-top: 5px;
+  }
+}
+
+.tooltipped-se {
+  &:after {
+    margin-top: 5px;
+    right: auto;
+    left: 50%;
+    margin-left: -15px;
+  }
+}
+
+.tooltipped-sw {
+  &:after {
+    margin-top: 5px;
+    margin-right: -15px;
+  }
+}
+
+// Tooltips above the object
+.tooltipped-n,
+.tooltipped-ne,
+.tooltipped-nw {
+  &:after,
+  &:before {
+    bottom: 100%;
+    right: 50%;
+  }
+
+  &:before {
+    margin-right: -5px;
+    top: -5px;
+    bottom: auto;
+    border-top-color: $tooltip-background-color;
+  }
+}
+
+.tooltipped-n {
+  &:after {
+    margin-bottom: 5px;
+  }
+}
+
+.tooltipped-ne {
+  &:after {
+    margin-bottom: 5px;
+    left: 50%;
+    right: auto;
+    margin-left: -15px;
+  }
+}
+
+.tooltipped-nw {
+  &:after {
+    margin-bottom: 5px;
+    margin-right: -15px;
+  }
+}
+
+// Move the tooltip body to the center of the object.
+.tooltipped-s:after,
+.tooltipped-n:after {
+  @include transform(translateX(50%));
+}
+
+// Tooltipped to the left
+.tooltipped-w {
+  &:after,
+  &:before {
+    bottom: 50%;
+  }
+
+  &:after {
+    right: 100%;
+    margin-right: 5px;
+  }
+
+  &:before {
+    border-left-color: $tooltip-background-color;
+    left: -5px;
+    margin-top: -5px;
+    top: 50%;
+  }
+}
+
+// tooltipped to the right
+.tooltipped-e {
+
+  &:after,
+  &:before {
+    bottom: 50%;
+  }
+
+  &:after {
+    left: 100%;
+    margin-left: 5px;
+  }
+
+  &:before {
+    border-right-color: $tooltip-background-color;
+    right: -5px;
+    margin-top: -5px;
+    top: 50%;
+  }
+}
+
+// moving the tooltip body to the middle of the object.
+.tooltipped-w:after,
+.tooltipped-e:after {
+  @include transform(translateY(50%));
+}
+
+// `.tooltipped-multiline` Add this class when you have long content.
+// The downside is you cannot preformat the text with newlines and `[w,e]`
+// are always `$multiline-max-width` wide.
+//
+// .tooltipped-s         - Placing the tooltip below the object. South (Default)
+// .tooltipped-se        - Placing the tooltip below the object to the east. Southeast
+// .tooltipped-sw        - Placing the tooltip below the object to the west. Southwest
+// .tooltipped-n         - Placing the tooltip above the object. North
+// .tooltipped-ne        - Placing the tooltip above the object to the east. Northeast
+// .tooltipped-e         - Placing the tooltip to the right of the object. East
+// .tooltipped-w         - Placing the tooltip to the left of the object. West
+// .tooltipped-nw        - Placing the tooltip above the object to the west. Northwest
+//
+// Styleguide 9.2
+.tooltipped-multiline {
+
+  &:after {
+    word-wrap: initial;
+    white-space: pre-line;
+    word-break: break-word;
+    max-width: $multiline-max-width;
+    border-collapse: initial;
+    width: -moz-max-content;
+    width: -webkit-max-content;
+  }
+
+  &.tooltipped-s:after,
+  &.tooltipped-n:after {
+    @include transform(translateX(-50%) !important);
+    right: initial;
+    left: 50%;
+  }
+
+  &.tooltipped-w:after,
+  &.tooltipped-e:after {
+    right: 100%;
+  }
+}
+
+@media screen and (min-width:0\0) {
+  // IE9 and IE10 rule sets go here
+  .tooltipped-multiline:after {
+    width: $multiline-max-width;
+  }
+}
+
+// Always show the tooltip.
+//
+// .tooltipped-sticky - Always show the tooltip
+//
+// Styleguide 9.3
+.tooltipped-sticky {
+  &:before,
+  &:after {
+    display: inline-block;
+  }
+}
+
+.tooltipped-sticky.tooltipped-multiline {
+  &:after {
+    display: table-cell;
+  }
+}
+
+// Colors for different alert states.
+//
+// .tooltipped-error - General Error tooltip.
+//
+// Styleguide 9.4
+@mixin colorizeTooltip($text-color, $background-color) {
+  &:after {
+    color: $text-color;
+    background: $background-color;
+  }
+
+  .tooltipped-s,
+  .tooltipped-se,
+  .tooltipped-sw {
+    &:before {
+      border-bottom-color: $background-color;
+    }
+  }
+
+  &.tooltipped-n,
+  &.tooltipped-ne,
+  &.tooltipped-nw {
+    &:before {
+      border-top-color: $background-color;
+    }
+  }
+
+  &.tooltipped-e:before {
+    border-right-color: $background-color;
+  }
+
+  &.tooltipped-w:before {
+    border-left-color: $background-color;
+  }
+}
+
+.tooltipped-error  { @include colorizeTooltip(#613A00, rgba(245, 218, 192, 0.8)); }
+.fullscreen-overlay-enabled.dark-theme .tooltipped {
+  @include colorizeTooltip(#000, rgba(255, 255, 255, 0.8));
+}
