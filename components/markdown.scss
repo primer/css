@@ -331,6 +331,7 @@ $margin: 15px;
     }
   }
 
+  del code { text-decoration: inherit; vertical-align: text-top; }
   code { white-space: nowrap; }
 
   // Code tags within code blocks (<pre>s)
