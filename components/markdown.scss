@@ -317,11 +317,6 @@ $margin: 15px;
     border: 1px solid #ddd;
     background-color: #f8f8f8;
     border-radius:3px;
-    max-width: 100%;
-    display: inline-block;
-    overflow: auto;
-    vertical-align: middle;
-    line-height: 1.3;
 
     padding: 0; // don't add padding, gives scrollbars
 
@@ -329,10 +324,11 @@ $margin: 15px;
       content: "\00a0";
       letter-spacing: -0.2em;
     }
+
+    br { display: none; }
   }
 
   del code { text-decoration: inherit; vertical-align: text-top; }
-  code { white-space: nowrap; }
 
   // Code tags within code blocks (<pre>s)
   pre > code {
