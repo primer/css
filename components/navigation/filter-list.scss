@@ -1,0 +1,60 @@
+@import "mixins/variables";
+
+// A vertical list of filters. Grey text on white background.
+// Selecting a filter from the list will fill it's background
+// with blue and make the text white.
+//
+//   .small - a version of the list with shorter list items
+//
+// Styleguide 8.2
+ul.filter-list {
+  list-style-type: none;
+
+  &.small .filter-item {
+    font-size: 12px;
+    padding: 4px 10px;
+    margin: 0 0 2px;
+  }
+
+  .filter-item {
+    display: block;
+    padding: 8px 10px;
+    margin: 0 0 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #777;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+
+    &:hover { background: #eee; }
+
+    &.selected {
+      color: #fff;
+      background: #4183c4;
+
+      .octicon-remove-close {
+        float: right;
+        opacity: .8;
+        display: inline-block;
+      }
+    }
+
+    .count {
+      font-weight: bold;
+      float: right;
+    }
+  }
+
+  &.pjax-active .filter-item {
+    color: #777;
+    background: transparent;
+  }
+
+  &.pjax-active .filter-item.pjax-active {
+    color: #fff;
+    background: #4183c4;
+  }
+}

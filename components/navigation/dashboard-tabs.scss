@@ -1,0 +1,92 @@
+@import "mixins/variables";
+@import "mixins/gradient";
+
+// Dashboard tabs are tabs that extend evenly across the page.
+//
+// a.selected - the currently active tab
+//
+// Styleguide 8.4
+.dashboard-tabs {
+  position: relative;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  @include gradient();
+  border: 1px solid #eaeaea;
+  border-bottom-color: #cacaca;
+
+  border-radius: 3px;
+
+  li {
+    list-style-type: none;
+    margin: 0;
+    display: table-cell;
+    width: 1%;
+
+    &:first-child a {
+      border-left: 0;
+      border-bottom-left-radius: 3px;
+
+      &:hover,
+      &.selected {
+        border-top-left-radius: 3px;
+      }
+    }
+
+    &:last-child a {
+      border-right: 0;
+      border-bottom-right-radius: 3px;
+
+      &:hover,
+      &.selected {
+        border-top-right-radius: 3px;
+      }
+    }
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    line-height: 35px;
+    font-size: 12px;
+    color: #777;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 1.0);
+    border-right: 1px solid #eee;
+    border-right-color: rgba(0, 0, 0, .04);
+    border-left: 1px solid #fcfcfc;
+    border-left-color: rgba(255, 255, 255, .7);
+    border-bottom: 2px solid #dadada;
+
+    &:hover {
+      color: $brand-linkBlue;
+      border-bottom: 2px solid #cfdce8;
+      @include gradient(#fafbfd, #dce6ef);
+    }
+
+    &.selected,
+    &.selected:hover {
+      color: #000;
+      @include gradient(#fcfcfc, #ebebeb);
+      border-bottom: 2px solid #d26911;
+    }
+
+    .counter {
+      position: relative;
+      top: -1px;
+      display: inline-block;
+      margin: 0 0 0 5px;
+      padding: 0 8px 1px;
+      height: auto;
+      font-family: $bodyFont;
+      font-size: 10px;
+      line-height: 14px;
+      text-align: center;
+      vertical-align: text-top;
+      color: #777;
+      background: #fff;
+      border-top: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  }
+}
