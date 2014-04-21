@@ -1,0 +1,62 @@
+//------------------------------------------------------------------------------
+// @group Utility classes
+// ------------------------------------------------------------------------------
+
+// Clear floats
+.clearfix {
+  @include clearfix;
+}
+
+.danger {
+  color: #c00;
+}
+
+.mute {
+  color: #000;
+}
+
+.sparkline {
+  display: none;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-diff-added {
+  color: darken($brand-green, 10%);
+}
+
+.text-diff-deleted {
+  color: $brand-red;
+}
+
+.hidden {
+  display: none;
+}
+
+.warning {
+  background-color: #fffccc;
+  font-weight: bold;
+  padding: .5em;
+  margin-bottom: .8em;
+}
+
+.error_box {
+  padding: 1em;
+  font-weight: bold;
+  background-color: #ffebe8;
+  border: 1px solid #dd3c10;
+}

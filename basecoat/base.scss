@@ -1,0 +1,87 @@
+@import "mixins/variables";
+@import "mixins/clearfix";
+@import "mixins/box-sizing";
+
+body,
+input,
+select,
+textarea,
+button {
+  font: $bodySize $bodyFont;
+  line-height: 1.4;
+}
+
+body {
+  min-width: 1020px; // 980px container + 20px padding on either side
+  color: $brand-darkGrey;
+  background-color: #fff;
+}
+
+* { @include box-sizing; }
+
+// These selection declarations have to be separated for some reason.
+// you can't do ::-moz-selection, ::selection see github/github#9661
+@mixin text-selection {
+  text-shadow: none;
+  background: rgba(65, 131, 196, .4);
+}
+
+::-moz-selection { @include text-selection; }
+
+::selection { @include text-selection; }
+
+//------------------------------------------------------------------------------
+// @group Links
+// -----------------------------------------------------------------------------
+
+a {
+  color: $brand-linkBlue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+.action {
+  color: #d00;
+  text-decoration: underline;
+}
+
+// Horizontal lines
+hr,
+.rule {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  @include clearfix();
+}
+
+// TODO: is this necessary?
+#spinner {
+  height: 16px;
+  width: 16px;
+  background: transparent;
+  border: 0;
+  margin-right: 0;
+}
+
+ol ol,
+ul ol {
+  list-style-type: lower-roman;
+}
+
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+  list-style-type: lower-alpha;
+}
