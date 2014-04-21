@@ -1,0 +1,268 @@
+@import "primer/mixins/clearfix";
+@import "primer/mixins/gradient";
+@import "primer/mixins/transition";
+@import "primer/mixins/variables";
+
+// Sunken tabbed navigation menu. Really needs to be used with one of the
+// following modifier classes in order to make sense and not look like : poop:.
+//
+// Styleguide 8.6
+.sunken-menu {
+
+  .sunken-menu-contents,
+  .sunken-menu-item,
+  .sunken-menu-separator {
+    position: relative;
+  }
+
+  .sunken-menu-contents:before,
+  .sunken-menu-contents:after,
+  .sunken-menu-item.selected:after,
+  .sunken-menu-separator:before {
+    content: "";
+    position: absolute;
+  }
+
+  .sunken-menu-contents {
+    margin: 0;
+  }
+
+  .sunken-menu-group {
+    list-style-type: none;
+  }
+
+  .sunken-menu-item {
+    padding: 8px 10px;
+    display: block;
+    text-shadow: 0 1px 0 #fff;
+    text-decoration: none;
+    border: 1px solid transparent;
+    outline: 0;
+
+    &.selected {
+      background: #fff;
+      border: 1px solid #eee;
+      color: $brand-darkGrey;
+      font-weight: bold;
+
+      &:after {
+        @include gradient(#d26911, darken(#d26911, 5%));
+        box-shadow: inset -1px -1px 0 rgba(#000, .1);
+      }
+    }
+
+    .octicon {
+      left: -1px;
+      color: $brand-lightGrey;
+      @include transition($property: color, $time: .25s);
+      width: 16px;
+      text-align: center;
+    }
+
+    &:hover .octicon {
+      color: $brand-darkGrey;
+    }
+
+    &.selected .octicon {
+      color: $brand-darkGrey;
+    }
+
+    .counter {
+      padding: 2px 5px;
+      font-size: 11px;
+      font-weight: bold;
+      color: #999;
+      background: #eee;
+      border-radius: 2px;
+      box-shadow: inset 0 -1px 0 #e3e3e3;
+    }
+
+    .mini-loader {
+      display: none;
+      position: absolute;
+      top: 9px;
+      left: 9px;
+    }
+
+    &.is-loading {
+      .mini-loader {
+        display: inline-block;
+        -webkit-animation-duration: .4s;
+        -moz-animation-duration: .4s;
+        animation-duration: .4s;
+
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+
+        -webkit-animation-name: mini-nav-loader;
+        -moz-animation-name: mini-nav-loader;
+        animation-name: mini-nav-loader;
+      }
+    }
+
+    &.is-loading {
+      .octicon {
+        -webkit-animation-duration: .3s;
+        -moz-animation-duration: .3s;
+        animation-duration: .3s;
+
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+
+        -webkit-animation-name: mini-nav-pulse;
+        -moz-animation-name: mini-nav-pulse;
+        animation-name: mini-nav-pulse;
+      }
+    }
+  }
+}
+
+.sunken-menu.vertical-right {
+  max-width: 250px;
+
+  .sunken-menu-contents {
+    padding: 12px 0 15px;
+    box-shadow: inset 1px 0 0 #eee;
+    background-image: -webkit-linear-gradient(left, #f6f6f6 0%, #fff 8px);
+    background-image: -moz-linear-gradient(left, #f6f6f6 0%, #fff 8px);
+    background-image: linear-gradient(to right, #f6f6f6 0%, #fff 8px);
+
+    &:before,
+    &:after {
+      height: 15px;
+      width: 100%;
+      left: 0;
+      background-color: transparent;
+    }
+
+    &:before {
+      @include gradient(#fff, rgba(#fff, 0));
+      background-color: transparent;
+      top: 0;
+    }
+
+    &:after {
+      @include gradient(rgba(#fff, 0), #fff);
+      background-color: transparent;
+      bottom: 0;
+    }
+  }
+
+  .sunken-menu-item {
+    margin: 5px 0;
+
+    &:focus,
+    &:hover {
+      box-shadow: inset 2px 0 0 #ccc;
+    }
+
+    &.selected {
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, .05);
+      border-left: 1px solid transparent;
+
+      &:after {
+        width: 3px;
+        top: -1px;
+        bottom: -1px;
+        right: -1px;
+        border-radius: 0 2px 2px 0;
+      }
+    }
+
+    .counter {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+    }
+  }
+
+  .sunken-menu-separator {
+    margin: 8px 0 6px 1px;
+    height: 5px;
+    background-image: -webkit-radial-gradient(left top, farthest-side, #f4f4f4, rgba(#f4f4f4, 0));
+    background-image: -moz-radial-gradient(left top, farthest-side, #f4f4f4, rgba(#f4f4f4, 0));
+    background-image: radial-gradient(farthest-side at left top, #f4f4f4, rgba(#f4f4f4, 0));
+
+    &:before {
+      width: 100%;
+      height: 1px;
+      top: 0;
+      border-top: 1px solid #eee\9; // Hack to give IE9 at least some separator
+      background-image: -webkit-linear-gradient(left, #eee 70%, #fff 100%);
+      background-image: -moz-linear-gradient(left, #eee 70%, #fff 100%);
+      background-image: linear-gradient(to right, #eee 70%, #fff 100%);
+    }
+  }
+}
+
+@-webkit-keyframes mini-nav-pulse {
+
+  0% { -webkit-transform: scale(.9); }
+
+  25% { -webkit-transform: scale(1.0); }
+
+  70% {
+    -webkit-transform: scale(1.1);
+    opacity: 1.0;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+@-moz-keyframes mini-nav-pulse {
+
+  0% { -moz-transform: scale(.9); }
+
+  25% { -moz-transform: scale(1.0); }
+
+  70% {
+    -moz-transform: scale(1.1);
+    opacity: 1.0;
+  }
+
+  100% {
+    -moz-transform: scale(1);
+    opacity: 0;
+  }
+}
+@keyframes mini-nav-pulse {
+  0% { transform: scale(.9); }
+
+  25% { transform: scale(1.0); }
+
+  70% {
+    transform: scale(1.1);
+    opacity: 1.0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes mini-nav-loader {
+  0% { opacity: 0; }
+
+  90% { opacity: 0; }
+
+  100% { opacity: 1.0; }
+}
+@-moz-keyframes mini-nav-loader {
+  0% { opacity: 0; }
+
+  90% { opacity: 0; }
+
+  100% { opacity: 1.0; }
+}
+@keyframes mini-nav-loader {
+  0% { opacity: 0; }
+
+  90% { opacity: 0; }
+
+  100% { opacity: 1.0; }
+}
