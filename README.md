@@ -3,7 +3,12 @@
 > *primer* (noun)
 > A substance used as a preparatory coat on previously unpainted wood, metal, or canvas, esp. to prevent the absorption of subsequent layers of paint or the development of rust
 
-Primer is the absolute bare bones assets package for GitHub.com and GitHub properties. It contains scss, coffeescript, images, fonts.
+Primer is the absolute bare bones assets package for GitHub.com and GitHub properties. It contains styles to get you up and running:
+
+* base reset of styles
+* type styles
+* form styles
+* component styles like buttons, alerts, and tooltips
 
 ## Installation
 
@@ -68,6 +73,12 @@ Check in `bower.json` and all changes under `vendor/assets/bower_components`.
 ## Usage
 
 ```css
+@import "primer/basecoat/normalize";
+@import "primer/basecoat/base";
+@import "primer/basecoat/forms";
+@import "primer/basecoat/type";
+@import "primer/basecoat/utility";
+
 @import "primer/components/behavior";
 @import "primer/components/buttons";
 @import "primer/components/icons";

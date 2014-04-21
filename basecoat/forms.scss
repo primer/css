@@ -1,0 +1,951 @@
+@import "primer/mixins/variables";
+@import "primer/mixins/clearfix";
+@import "primer/mixins/gradient";
+
+
+// Base form controls
+//
+// Styleguide 2.0
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+label,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+textarea {
+  font-size: 13px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+textarea {
+  min-height: 34px;
+  padding: 7px 8px;
+  outline: none;
+  color: #333;
+  background-color: #fff;
+  background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
+  background-position: right center;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
+  vertical-align: middle;
+
+  &.focus,
+  &:focus {
+    border-color: #51a7e8;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 5px rgba(81, 167, 232, .5);
+  }
+
+  // Inputs with contrast for easy light gray backgrounds against white.
+  &.input-contrast {
+    background-color: #fafafa;
+
+    &:focus {
+      background-color: #fff;
+    }
+  }
+}
+
+// Custom styling for HTML5 validation bubbles (WebKit only)
+::-webkit-input-placeholder,
+:-moz-placeholder {
+  color: #aaa;
+}
+
+::-webkit-validation-bubble-message {
+  color: #fff;
+  background: #9c2400;
+  border: 0;
+  border-radius: 3px;
+  font-size: 12px;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
+}
+
+input::-webkit-validation-bubble-icon {
+  display: none;
+}
+
+::-webkit-validation-bubble-arrow {
+  background-color: #9c2400;
+  border: solid 1px #9c2400;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
+}
+
+// Mini inputs, to match .minibutton
+input.input-mini {
+  min-height: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+}
+
+// Large inputs
+input.input-large {
+  padding: 6px 10px;
+  font-size: 16px;
+}
+
+// Full-width inputs
+.input-block {
+  display: block;
+  width: 100%;
+}
+
+// Inputs with monospace text
+.input-monospace {
+  font-family: $monoFont;
+}
+
+// Typical form groups - `<dl.form>` with a `<dt>` containing the label and
+// `<dd> containing the form elements.
+//
+// .required - This group is required to submit the form.
+//
+// Styleguide 2.1
+dl.form {
+  margin: 15px 0;
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  textarea {
+    background-color: #fafafa;
+
+    &:focus {
+      background-color: #fff;
+    }
+  }
+
+  // The Label
+  &>dt {
+    margin: 0 0 6px;
+
+    label {
+      position: relative;
+    }
+  }
+
+  &.flattened > dt {
+    float: left;
+    line-height: 32px;
+    margin: 0;
+  }
+
+  &.flattened > dd {
+    line-height: 32px;
+  }
+
+  //
+  // Form Elements
+  //
+
+  &>dd {
+    // For entering in text.
+    //
+    // .short   - A bit shorter now.
+    // .shorter - A little bit shorter now.
+    // .long    - A bit longer now
+    //
+    // Styleguide 2.1.1
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      margin-right: 5px;
+      width: 440px;
+      max-width: 100%;
+      background-position-x: 98%;
+
+      &.short {
+        width: 250px;
+      }
+
+      &.shorter {
+        width: 130px;
+      }
+
+      &.long {
+        width: 100%;
+      }
+
+      &.is-autocheck-loading {
+        background-image: url("/images/spinners/octocat-spinner-32.gif");
+        background-size: 16px;
+      }
+
+      &.is-autocheck-successful {
+        background-image: url("/images/modules/ajax/success.png");
+      }
+
+      &.is-autocheck-errored {
+        background-image: url("/images/modules/ajax/error.png");
+      }
+    }
+
+    // For longer entries.
+    //
+    // .short - A bit shorter now
+    //
+    // Styleguide 2.1.2
+    textarea {
+      width: 100%;
+      height: 200px;
+      min-height: 200px;
+
+      &.short {
+        height: 50px;
+        min-height: 50px;
+      }
+    }
+
+    p.note {
+      margin: 4px 0 2px;
+      font-size: 12px;
+      min-height: 17px;
+      color: #777;
+
+      .spinner {
+        vertical-align: middle;
+        margin-right: 3px;
+      }
+    }
+
+    h4 {
+      margin: 4px 0 0;
+
+      &.is-error { color: $brand-red; }
+
+      &.is-success { color: $brand-green; }
+    }
+
+    h4 + p.note {
+      margin-top: 0;
+    }
+
+  }
+
+  //
+  // Variants
+  //
+
+  &.required {
+    &>dt>label:after {
+      content: "*";
+      color: #9f1006;
+      padding-left: 5px;
+    }
+  }
+}
+
+
+// For checkboxes and radio button selections.
+//
+// Styleguide 2.1.3
+.form-checkbox {
+  margin: 15px 0;
+  padding-left: 20px;
+  vertical-align: middle;
+
+  label {
+
+    em.highlight {
+      position: relative;
+      left: -4px;
+      padding: 2px 4px;
+      font-style: normal;
+      background: #fffbdc;
+      border-radius: 3px;
+    }
+  }
+
+  input[type=checkbox],
+  input[type=radio] {
+    float: left;
+    margin: 2px 0 0 -20px;
+    vertical-align: middle;
+  }
+
+  .note {
+    margin: 0;
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    color: #666;
+  }
+}
+
+// A selector for credit cards. Shows all credit cards we have available and
+// dims the non-selected ones.
+//
+// .disabled - Add to a `<.card>` to use the disabled look.
+//
+// Styleguide 2.1.4
+.form-cards {
+  margin: 0 0 15px;
+  height: 31px;
+
+  &>.cards {
+    margin: 0;
+
+    &>li {
+      list-style-type: none;
+      float: left;
+      margin: 0 4px 0 0;
+
+      &.text {
+        font-size: 11px;
+        color: #999;
+        line-height: 31px;
+      }
+    }
+
+    .card {
+      float: left;
+      width: 47px;
+      height: 31px;
+      text-indent: -9999px;
+      background-position: 0 0;
+      background-image: url("/images/modules/pricing/credit-cards-@1x.png");
+      opacity: .6;
+
+      &.visa {
+        background-position: 0 0;
+      }
+
+      &.amex {
+        background-position: -50px 0;
+      }
+
+      &.mastercard {
+        background-position: -100px 0;
+      }
+
+      &.discover {
+        background-position: -150px 0;
+      }
+
+      &.jcb {
+        background-position: -200px 0;
+      }
+
+      &.dinersclub {
+        background-position: -250px 0;
+      }
+    }
+
+    .card.enabled {
+      opacity: 1;
+    }
+
+    .card.disabled {
+      opacity: .2;
+    }
+  }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 2dppx) {
+
+  .form-cards > .cards .card {
+    background-image: url("/images/modules/pricing/credit-cards-@2x.png");
+    background-size: 300px 31px;
+  }
+
+}
+
+
+// Form fields that need feedback for AJAX loading, success
+// states and errored states.
+//
+// .loading - Sending a request, awaiting feedback.
+// .successful - :D
+// .errored - Everything is falling apart.
+//
+// Styleguide 2.1.5
+dl.form {
+  .success,
+  .error,
+  .indicator {
+    display: none;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  &.loading {
+    opacity: .5;
+
+    .indicator {
+      display: inline;
+    }
+
+    .spinner {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  &.successful {
+    .success {
+      display: inline;
+      color: #390;
+    }
+  }
+
+  &.errored {
+    &>dt label {
+      color: #900;
+    }
+
+    // General text next to the field
+    .error {
+      display: inline;
+      color: #900;
+    }
+
+    // Specific error explanations from the server
+    dd.error,
+    dd.warning {
+      display: inline-block;
+      padding: 5px;
+
+      font-size: 11px;
+      color: #494620;
+      background: #f7ea57;
+      border: 1px solid #c0b536;
+      border-top-color: #fff;
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+  }
+
+  &.warn {
+    // General text next to the field
+    .warning {
+      display: inline;
+      color: #900;
+    }
+
+    // Specific warning explanations from the server
+    dd.warning {
+      display: inline-block;
+      padding: 5px;
+
+      font-size: 11px;
+      color: #494620;
+      background: #f7ea57;
+      border: 1px solid #c0b536;
+      border-top-color: #fff;
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+  }
+
+  .form-note {
+    margin-top: -1px;
+    display: inline-block;
+    padding: 5px;
+
+    font-size: 11px;
+    color: #494620;
+    background: #f7ea57;
+    border: 1px solid #c0b536;
+    border-top-color: #fff;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+}
+
+
+// Wrap field groups in `<div.hfields>` to lay them out horizontally - great for
+// the top of pages with autosave.
+//
+// Styleguide 2.2
+.hfields {
+  margin: 15px 0;
+  @include clearfix;
+
+  dl.form {
+    float: left;
+    margin: 0 30px 0 0;
+
+    & > dt label {
+      display: inline-block;
+      margin: 5px 0 0;
+      color: #666;
+
+      img {
+        position: relative;
+        top: -2px;
+      }
+    }
+  }
+
+  .button {
+    float: left;
+    margin: 28px 25px 0 -20px;
+  }
+
+  select { margin-top: 5px; }
+}
+
+
+// DEPRECATED: Spacing alignment for fieldgroups
+.fieldgroup .fields dl.form:first-child {
+  margin-top: 0;
+}
+
+// IE 9
+html.no-dnd-uploads {
+  .drag-and-drop {
+    min-height: 32px;
+
+    .default {
+      display: none;
+    }
+  }
+
+  .upload-enabled textarea {
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.drag-and-drop {
+  margin: 0;
+  padding: 7px 10px;
+  color: #aaa;
+  font-size: 13px;
+  line-height: 16px;
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  border-top: 0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+
+  .default,
+  .loading,
+  .error {
+    display: none;
+  }
+
+  .error {
+    color: $brand-red;
+  }
+}
+
+.is-default .drag-and-drop .default {
+  display: inline-block;
+}
+
+.is-uploading .drag-and-drop .loading {
+  display: inline-block;
+
+  img { vertical-align: top; }
+}
+
+.is-bad-file .drag-and-drop .bad-file {
+  display: inline-block;
+}
+
+.is-too-big .drag-and-drop .too-big {
+  display: inline-block;
+}
+
+.is-bad-browser .drag-and-drop .bad-browser {
+  display: inline-block;
+}
+
+.drag-and-drop-error-info {
+  color: #aaa;
+  font-weight: normal;
+
+  a {
+    color: $brand-linkBlue;
+  }
+}
+
+.is-failed .drag-and-drop .failed-request {
+  display: inline-block;
+}
+
+.manual-file-chooser {
+  position: absolute;
+  width: 240px;
+  margin-left: -80px;
+  padding: 5px;
+  opacity: .0001;
+  cursor: pointer;
+}
+
+.manual-file-chooser:hover + .manual-file-chooser-text {
+  text-decoration: underline;
+}
+
+.button {
+  // align manual-file-chooser inside a button
+  .manual-file-chooser {
+    line-height: 34px;
+    top: 0;
+    padding: 0;
+  }
+}
+
+// Focused Textarea styles
+.upload-enabled textarea {
+  border-bottom: 1px dashed #ddd;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  display: block;
+}
+
+.focused .drag-and-drop {
+  @extend input[type="text"]:focus;
+  box-shadow: rgba(#51a7e8, .5) 0 0 3px;
+}
+
+// Dropping a file on top
+.dragover textarea,
+.dragover .drag-and-drop {
+  box-shadow: rgba(#c9ff00, 1.0) 0 0 3px;
+}
+
+
+// Form style with a write and a preview tab
+//
+// No styleguide reference
+.previewable-comment-form {
+  position: relative;
+
+  .tabnav {
+    position: relative;
+    padding: 10px 10px 0;
+  }
+
+  .comment {
+    border: 1px solid #cacaca;
+  }
+
+  .comment-header .comment-header-actions { display: none; }
+
+  .comment-form-error { margin-bottom: 10px; }
+
+  .write-content,
+  .preview-content {
+    display: none;
+    padding: 0 10px 10px;
+  }
+
+  &.write-selected .write-content,
+  &.preview-selected .preview-content {
+    display: block;
+  }
+
+  textarea {
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    max-height: 500px;
+    padding: 10px;
+    resize: vertical;
+
+    &.fullscreen-contents:focus {
+      border: 0;
+      box-shadow: none;
+    }
+  }
+}
+
+// A two column form, with a .main and a .sidebar column
+//
+// No styleguide reference
+div.composer {
+  margin-top: 0;
+
+  input[type="text"] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  dl.form {
+    margin: 0;
+
+    input[type="text"] { width: 100%; }
+  }
+
+  .contributing {
+    margin: 0;
+    padding: 10px 0;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    background: #ffc;
+  }
+
+  .discussion-bubble { margin-top: 0; }
+
+  .comment-content { background: inherit; }
+
+  .comment-header { display: none; }
+
+  .comment-body { padding: 4px 6px; }
+
+  .comment { border: 0; }
+
+  .composer-infobar {
+    height: 35px;
+    border-bottom: 1px solid #ddd;
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+
+  .tabnav { margin: 0 0 10px; }
+}
+
+.infobar-widget {
+
+  &.milestone {
+    position: relative; // requires so that the `right: 0;` below works
+    float: right;
+
+    .select-menu-modal-holder { right: 0; }
+  }
+
+  &.assignee {
+    float: left;
+
+    .css-truncate-target {
+      max-width: 110px;
+    }
+  }
+
+  .text,
+  .avatar,
+  .select-menu {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .text {
+    margin-top: 3px;
+
+    a {
+      color: #333;
+      font-weight: bold;
+    }
+  }
+
+  .progress-bar {
+    width: 200px;
+    line-height: 18px;
+    overflow: hidden; // round the corners if 100%
+  }
+}
+
+
+// advanced search page label
+#adv_code_search .search-page-label {
+  @extend input[type="text"];
+}
+
+
+// Hide the up/down buttons in <input type="number"> in the login form, the
+// input is used for two-factor auth codes, type="number" makes it more usable
+// on phones
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+// Input groups
+//
+// Styleguide 2.3
+.input-group {
+  display: table;
+
+  input {
+    width: 100%;
+    position: relative;
+
+    &:focus {
+      z-index: 2;
+    }
+  }
+
+  input[type="text"] + .minibutton {
+    margin-left: 0;
+  }
+
+  // For when you want the input group to behave like inline-block.
+  &.inline {
+    display: inline-table;
+  }
+}
+
+.input-group input,
+.input-group-button {
+  display: table-cell;
+}
+
+.input-group-button {
+  width: 1%;
+  vertical-align: middle; // Match the inputs
+}
+
+.input-group input:first-child,
+.input-group-button:first-child .button,
+.input-group-button:first-child .minibutton {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group-button:first-child .button,
+.input-group-button:first-child .minibutton {
+  margin-right: -1px;
+}
+
+.input-group input:last-child,
+.input-group-button:last-child .button,
+.input-group-button:last-child .minibutton {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group-button:last-child .button,
+.input-group-button:last-child .minibutton {
+  margin-left: -1px;
+}
+
+
+
+//------------------------------------------------------------------------------
+//  @group Field Groups
+//------------------------------------------------------------------------------
+
+.fieldgroup {
+  position: relative;
+  margin-top: 10px;
+}
+
+.sidebar .fieldgroup + .fieldgroup {
+  margin-top: 40px;
+}
+
+.fieldgroup h2,
+h2.account {
+  margin: 15px 0 0;
+  font-size: 18px;
+  font-weight: normal;
+  color: #666;
+}
+
+p.explain {
+  font-size: 12px;
+  color: #666;
+  position: relative;
+
+  strong {
+    color: #333;
+  }
+
+  .octicon {
+    margin-right: 5px;
+    color: #bbb;
+  }
+
+  .minibutton {
+    float: right;
+    top: -4px;
+  }
+
+}
+
+.fieldgroup p.explain {
+  margin: 0;
+}
+
+.options-content p.explain {
+  margin-top: 0;
+  border-top: 1px solid #ddd;
+  padding: 10px 10px 0;
+}
+
+.fieldgroup .fields {
+  margin: 10px 0 0;
+}
+
+.fieldgroup p.addlink {
+  margin: 15px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.fieldgroup p.checkbox label {
+  margin-left: 5px;
+}
+
+.fieldgroup p.checkbox .succeed {
+  margin-left: 10px;
+  font-weight: normal;
+  color: #3c0;
+}
+
+.fieldgroup p.danger {
+  margin: 15px 0;
+  font-weight: bold;
+  color: #c00;
+}
+
+.fieldgroup p:first-child { margin-top: 0; }
+
+.fieldgroup p.extra {
+  margin: -8px 0 15px;
+  font-size: 12px;
+  color: #666;
+}
+
+.fieldgroup p.legal {
+  margin: 15px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.fieldgroup div.error {
+  margin: 10px 0 0;
+  padding: 10px;
+  color: #fff;
+  font-weight: bold;
+  background: #a00;
+  border-radius: 4px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fieldgroup div.error p {
+  margin: 0;
+}
+
+.fieldgroup div.error p + p {
+  margin-top: 10px;
+}
