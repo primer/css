@@ -53,6 +53,12 @@
   @include user-select(none);
   -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
+  i {
+    font-weight: 500;
+    font-style: normal;
+    opacity: .6;
+  }
+
   &:focus {
     outline: none;
     text-decoration: none;
@@ -266,12 +272,6 @@
     .octicon-device-desktop:before {
       background-position: -18px 0;
     }
-  }
-
-  i {
-    font-weight: 500;
-    font-style: normal;
-    opacity: .6;
   }
 
   code {
