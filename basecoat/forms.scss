@@ -949,3 +949,61 @@ p.explain {
 .fieldgroup div.error p + p {
   margin-top: 10px;
 }
+
+.form-actions {
+  text-align: right;
+  padding-bottom: 5px;
+}
+
+.form-actions .cancel {
+  margin-top: 5px;
+  float: left;
+}
+
+.form-actions .button.cancel {
+  margin-top: 0;
+  margin-left: 2px;
+}
+
+.form-actions .minibutton.cancel {
+  margin-top: 0;
+}
+
+.form-actions .optional {
+  display: block;
+  padding-top: 8px;
+  float: left;
+  margin-right: 15px;
+}
+
+.form-actions .optional span.text {
+  padding: 0 3px;
+}
+
+.form-actions .optional input {
+  position: relative;
+  top: -1px;
+}
+
+.form-warning {
+  margin: 10px 0;
+  padding: 8px 10px;
+  border: 1px solid #e7e4c2;
+  font-size: 14px;
+  color: #333;
+  background: #ffffe2;
+  border-radius: 4px;
+}
+
+.form-warning p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.form-warning strong {
+  color: #000;
+}
+
+.form-warning a {
+  font-weight: bold;
+}
