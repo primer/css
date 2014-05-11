@@ -96,6 +96,28 @@
   color: #666;
 }
 
+
+// Tabnav extras content for custom text and links in a tabnav-widget.
+//
+// No styleguide reference
+.tabnav {
+  .tabnav-extras {
+    display: inline-block;
+    margin-left: 10px;
+
+    .octicon {
+      float: left;
+      margin-top: -1px;
+      margin-right: 5px;
+    }
+
+    &:hover {
+      color: $brand-linkBlue;
+      text-decoration: none;
+    }
+  }
+}
+
 // The tabnav search widget is a search box with a field and a submit button.
 //
 // Styleguide 8.1.4
