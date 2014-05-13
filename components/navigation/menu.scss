@@ -9,16 +9,14 @@
 .menu-container {
   float: left;
   width: 200px;
-  padding: 3px;
-  background: #efefef;
-  border-radius: 2px;
 }
 
 .menu {
   background: #fafafb;
-  border-radius: 2px;
+  border-radius: 3px;
   border: 1px solid #d8d8d8;
   list-style: none;
+  overflow: hidden;
 
   // Get rid of underlines on hover
   a:hover { text-decoration: none; }
