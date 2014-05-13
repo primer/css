@@ -85,8 +85,7 @@
   list-style: none;
 
   .section {
-    border-top: 1px solid #d8d8d8;
-    border-top: none;
+    border-bottom: 0;
 
     &:first-child {
       border-top: none;
@@ -116,6 +115,7 @@
     .section-nav {
       list-style: none;
       display: none;
+      border-bottom: 1px solid #ddd;
 
       &.expanded { display: block; }
     }
