@@ -67,6 +67,7 @@ $tooltip-text-color: #fff;
   height: 0;
   border: 5px solid transparent;
   z-index: 1000001;
+  color: $tooltip-background-color;
 }
 
 // This will indicate when we'll activate the tooltip
