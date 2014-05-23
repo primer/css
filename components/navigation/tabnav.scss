@@ -50,17 +50,7 @@
 // Styleguide 8.1.1
 .tabnav {
   .counter {
-    display: inline-block;
-    margin: 0 0 0 5px;
-    padding: 2px 5px 3px;
-    font-size: 10px;
-    font-weight: bold;
-    line-height: 1;
-    color: #666;
-    background-color: #e5e5e5;
-    border-radius: 10px;
-
-    &.blank { display: none; }
+    margin-left: 5px;
   }
 }
 
