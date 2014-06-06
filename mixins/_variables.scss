@@ -21,14 +21,14 @@ $bodySize: 13px !default;
 
 // This is the font stack we use to display monospace.
 //
-// Consolas                     - Windows, Mac
+// Consolas                     - Windows
 // "Liberation Mono"            - Linux
-// Monaco                       - Windows, Mac
+// Menlo                        - Mac
 // Courier                      - Windows, Mac, Linux
 // monospace                    - Everywhere
 //
 // Styleguide 3.1
-$monoFont: Consolas, "Liberation Mono", Monaco, Courier, monospace !default;
+$monoFont: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
 
 // z-index variables
 //
