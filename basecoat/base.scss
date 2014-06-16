@@ -19,17 +19,6 @@ body {
 
 * { @include box-sizing; }
 
-// These selection declarations have to be separated for some reason.
-// you can't do ::-moz-selection, ::selection see github/github#9661
-@mixin text-selection {
-  text-shadow: none;
-  background: rgba(65, 131, 196, .4);
-}
-
-::-moz-selection { @include text-selection; }
-
-::selection { @include text-selection; }
-
 //------------------------------------------------------------------------------
 // @group Links
 // -----------------------------------------------------------------------------
