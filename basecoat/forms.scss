@@ -677,49 +677,28 @@ html.no-dnd-uploads {
 // A two column form, with a .main and a .sidebar column
 //
 // No styleguide reference
+
+// Override some `.timeline-comment-wrapper` defaults.
+// The `div` is needed to be more specific than the other class.
 div.composer {
   margin-top: 0;
-
-  input[type="text"] {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  dl.form {
-    margin: 0;
-
-    input[type="text"] { width: 100%; }
-  }
-
-  .contributing {
-    margin: 0;
-    padding: 10px 0;
-    font-weight: bold;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-    background: #ffc;
-  }
-
-  .discussion-bubble { margin-top: 0; }
-
-  .comment-content { background: inherit; }
-
-  .comment-header { display: none; }
-
-  .comment-body { padding: 4px 6px; }
-
-  .comment { border: 0; }
-
-  .composer-infobar {
-    height: 35px;
-    border-bottom: 1px solid #ddd;
-    padding: 0 10px;
-    margin-bottom: 10px;
-  }
-
-  .tabnav { margin: 0 0 10px; }
+  border: 0;
 }
+
+// Override the previewable comment form defaults
+.composer .comment-form-textarea {
+  height: 200px;
+  min-height: 200px;
+}
+
+.composer-infobar {
+  height: 35px;
+  border-bottom: 1px solid #eee;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+.composer .tabnav { margin: 0 0 10px; }
 
 .infobar-widget {
 
