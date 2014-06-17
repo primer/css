@@ -226,21 +226,37 @@
     border-bottom-right-radius: 0;
     float: left;
   }
-
 }
 
-// Position images inside buttons correctly
-.button img {
-  position: relative;
-  top: -1px;
-  margin-right: 3px;
-  vertical-align: middle;
-}
 
-// Improve octicons in buttons
-.button > .octicon {
-  vertical-align: middle;
-  margin-top: -1px;
+// Improve alignemnt of Octicons within buttons and minibuttons. Also auto tweak
+// the right arrow to float right for ease of use.
+//
+// .octicon-tools            - Admin
+// .octicon-eye-watch        - Watch
+// .octicon-star             - Star
+// .octicon-cloud-download   - Download
+// .octicon-pencil           - Edit
+// .octicon-git-pull-request - Pull Request
+// .octicon-log-out          - Leave
+// .octicon-diff             - To the compare view
+// .octicon-arrow-left       - Back
+// .octicon-arrow-right      - Forward
+//
+// Styleguide 1.1.1
+.button,
+.minibutton {
+  > .octicon {
+    vertical-align: -1px;
+  }
+  > .octicon-arrow-right {
+    float: right;
+    margin-left: 5px;
+  }
+}
+// Required because we nuke the padding on minibuttons
+.minibutton > .octicon-arrow-right {
+  margin-top: 4px;
 }
 
 
@@ -266,87 +282,6 @@
 .minibutton {
   padding: 0 10px;
   line-height: 24px;
-  box-shadow: none;
-
-  &:hover {
-    .octicon-device-desktop:before {
-      background-position: -18px 0;
-    }
-  }
-
-  code {
-    line-height: 22px;
-  }
-}
-
-
-// Full-width button.
-//
-// No styleguide reference.
-.button-block {
-  display: block;
-  width: 100%;
-  text-align: center;
-  @include box-sizing(border-box);
-}
-
-
-// Link button. For when you want the appearance of a link, but the
-// behavior of a button. Ideal for avoiding `href="#"`.
-//
-// No styleguide reference.
-.button-link {
-  display: inline;
-  padding: 0;
-  font-size: inherit;
-  color: $brand-linkBlue;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-  @include user-select(none);
-  -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-
-// I have no idea.
-input[type=text] + .minibutton{ margin-left: 5px; }
-
-
-
-// Minibuttons with an icon.
-//
-// .octicon-tools           - Admin.
-// .octicon-eye-watch         - Watch.
-// .octicon-star             - Star.
-// .octicon-cloud-download         - Download.
-// .octicon-pencil             - Edit.
-// .octicon-person-follow           - Follow.
-// .octicon-person-remove   - Unfollow.
-// .octicon-git-pull-request     - Pull Request.
-// .octicon-git-branch             - Fork.
-// .octicon-log-out           - Leave.
-// .octicon-diff             - To the compare view!
-// .octicon-mail-reply            - Reply.
-// .octicon-arrow-left         - Back.
-// .octicon-arrow-right        - Forward.
-// .octicon-device-desktop          - Microsoft.
-// .octicon-device-desktop              - Mac.
-//
-// Styleguide 1.2.1
-.minibutton {
-  .octicon {
-    vertical-align: -1px;
-  }
-  .octicon-arrow-right {
-    float: right;
-    margin-left: 5px;
-    margin-top: 4px;
-  }
 }
 
 
@@ -354,7 +289,7 @@ input[type=text] + .minibutton{ margin-left: 5px; }
 //
 // .inline - button will display inline rather than block
 //
-// Styleguide 1.2.4
+// Styleguide 1.2.2
 .hidden-text-expander {
   display: block;
 
@@ -392,12 +327,11 @@ input[type=text] + .minibutton{ margin-left: 5px; }
 }
 
 
-
 // A container that is used for social bubbles counts.
 //
 // .social-count - social count bubble number
 //
-// Styleguide 1.2.5
+// Styleguide 1.2.3
 .social-count {
   padding: 0 7px 0;
   font-size: 11px;
@@ -420,6 +354,17 @@ input[type=text] + .minibutton{ margin-left: 5px; }
 }
 
 
+// Full-width button.
+//
+// Styleguide 1.3
+.button-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+  @include box-sizing(border-box);
+}
+
+
 // A button group is a series of buttons laid out next to each other, all part
 // of one visual button, but separated by rules to be separate. Inside each group
 // are either `.button`s or `.minibutton`s as immediate children. No extra markup is
@@ -432,7 +377,8 @@ input[type=text] + .minibutton{ margin-left: 5px; }
   vertical-align: middle;
 
   .button,
-  .minibutton {
+  .minibutton,
+  .button-outline {
     position: relative;
     float: left;
     border-radius: 0;
@@ -465,10 +411,81 @@ input[type=text] + .minibutton{ margin-left: 5px; }
       box-shadow: inset 0 3px 5px rgba(0,0,0,.15)
     }
   }
+  .button-outline + .button-outline {
+    margin-left: -1px;
+  }
 }
 // Proper spacing for multiple button groups (a la, gollum editor)
 .button-group + .button-group,
 .button-group + .button,
 .button-group + .minibutton {
   margin-left: 5px;
+}
+
+
+// Buttons backed by radio or checkbox control. Requires the use of `.hidden`
+// on the `input` to properly hide it.
+//
+// Styleguide 1.5
+
+// No styles to accompany this. See styleguide for usage guidelines.
+
+
+// Link button. For when you want the appearance of a link, but the
+// behavior of a button. Ideal for avoiding `href="#"`.
+//
+// Styleguide 1.6
+.button-link {
+  display: inline;
+  padding: 0;
+  font-size: inherit;
+  color: $brand-linkBlue;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  @include user-select(none);
+  -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+// Outline button, for when we need a linky-action that's not too heavy in busier
+// areas like conversation timelines.
+//
+// Styleguide 1.7
+.button-outline {
+  display: inline-block;
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: bold;
+  color: $brand-linkBlue;
+  white-space: nowrap;
+  background: none; // Reset default gradient backgrounds and colors
+  border-radius: 3px;
+  border: 1px solid #e5e5e5;
+  vertical-align: middle;
+  cursor: pointer;
+  @include user-select(none);
+  -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: $brand-linkBlue;
+    border-color: $brand-linkBlue;
+  }
+
+  &:disabled,
+  &.disabled,
+  &:disabled:hover,
+  &.disabled:hover {
+    color: #777;
+    cursor: not-allowed;
+    background-color: #f5f5f5;
+    border-color: #e5e5e5;
+  }
 }
