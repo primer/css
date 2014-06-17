@@ -12,6 +12,10 @@ $tooltip-text-color: #fff;
 // `.tooltipped-n, .tooltipped-ne, .tooltipped-e, .tooltipped-se`
 // `.tooltipped-s, .tooltipped-sw, .tooltipped-w, .tooltipped-nw`
 //
+// Remember, `aria-label` and tooltip classes must go directly on `<button>`
+// and `<a>` elements. Tooltip classes also conflict with Octicon clases, and as
+// such, must go on a parent element instead of the icon.
+//
 // .tooltipped-s         - Placing the tooltip below the object. South (Default)
 // .tooltipped-se        - Placing the tooltip below the object to the east. Southeast
 // .tooltipped-sw        - Placing the tooltip below the object to the west. Southwest
