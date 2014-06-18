@@ -22,13 +22,13 @@ linters:
 
   SelectorDepth:
     enabled: true
-    max_depth: 5
+    max_depth: 3
 
   NameFormat:
     enabled: false
 
   PropertySortOrder:
-    enabled: false
+    enabled: true
     order: [
       "position",
       "top",
