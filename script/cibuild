@@ -7,7 +7,7 @@ set -e
 echo "Tests started at..."
 date "+%H:%M:%S"
 
-export RBENV_VERSION="1.9.3-p194"
+export RBENV_VERSION="2.0.0-github"
 
 bundle install --path vendor/gems --binstubs
 bundle exec rake
