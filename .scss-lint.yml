@@ -6,6 +6,9 @@
 # https://github.com/causes/scss-lint/blob/master/config/default.yml
 # below is our settings.
 
+exclude:
+  - 'basecoat/normalize.scss'
+
 linters:
   StringQuotes:
     style: double_quotes
