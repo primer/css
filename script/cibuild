@@ -1,0 +1,10 @@
+#!/bin/sh
+# Usage: script/cibuild
+# CI build script
+#
+set -e
+
+echo "Tests started at..."
+date "+%H:%M:%S"
+
+export RBENV_VERSION="1.9.3-p194"
