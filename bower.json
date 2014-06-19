@@ -1,4 +1,12 @@
 {
   "name": "primer",
-  "version": "0.10.0"
+  "version": "0.10.0",
+  "ignore": [
+    ".gitignore",
+    ".scss-lint.yml",
+    "Gemfile",
+    "Gemfile.lock",
+    "Rakefile",
+    "script/"
+  ]
 }
