@@ -188,7 +188,6 @@
 }
 
 @-webkit-keyframes mini-nav-pulse {
-
   0% { -webkit-transform: scale(.9); }
 
   25% { -webkit-transform: scale(1.0); }
@@ -203,8 +202,8 @@
     opacity: 0;
   }
 }
-@-moz-keyframes mini-nav-pulse {
 
+@-moz-keyframes mini-nav-pulse {
   0% { -moz-transform: scale(.9); }
 
   25% { -moz-transform: scale(1.0); }
@@ -219,6 +218,7 @@
     opacity: 0;
   }
 }
+
 @keyframes mini-nav-pulse {
   0% { transform: scale(.9); }
 
@@ -242,6 +242,7 @@
 
   100% { opacity: 1.0; }
 }
+
 @-moz-keyframes mini-nav-loader {
   0% { opacity: 0; }
 
@@ -249,6 +250,7 @@
 
   100% { opacity: 1.0; }
 }
+
 @keyframes mini-nav-loader {
   0% { opacity: 0; }
 
