@@ -8,8 +8,8 @@
 // Styleguide 2.0
 
 fieldset {
-  margin: 0;
   padding: 0;
+  margin: 0;
   border: 0;
 }
 
@@ -37,15 +37,15 @@ input[type="url"],
 textarea {
   min-height: 34px;
   padding: 7px 8px;
-  outline: none;
   color: #333;
+  vertical-align: middle;
   background-color: #fff;
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right center;
   border: 1px solid #ccc;
   border-radius: 3px;
+  outline: none;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
-  vertical-align: middle;
 
   &.focus,
   &:focus {
@@ -70,11 +70,11 @@ textarea {
 }
 
 ::-webkit-validation-bubble-message {
+  font-size: 12px;
   color: #fff;
   background: #9c2400;
   border: 0;
   border-radius: 3px;
-  font-size: 12px;
   -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
 }
 
@@ -134,7 +134,7 @@ dl.form {
   }
 
   // The Label
-  &>dt {
+  > dt {
     margin: 0 0 6px;
 
     label {
@@ -144,8 +144,8 @@ dl.form {
 
   &.flattened > dt {
     float: left;
-    line-height: 32px;
     margin: 0;
+    line-height: 32px;
   }
 
   &.flattened > dd {
@@ -156,7 +156,7 @@ dl.form {
   // Form Elements
   //
 
-  &>dd {
+  > dd {
     // For entering in text.
     //
     // .short   - A bit shorter now.
@@ -167,9 +167,9 @@ dl.form {
     input[type="text"],
     input[type="password"],
     input[type="email"] {
-      margin-right: 5px;
       width: 440px;
       max-width: 100%;
+      margin-right: 5px;
       background-position-x: 98%;
 
       &.short {
@@ -215,14 +215,14 @@ dl.form {
     }
 
     p.note {
+      min-height: 17px;
       margin: 4px 0 2px;
       font-size: 12px;
-      min-height: 17px;
       color: #777;
 
       .spinner {
-        vertical-align: middle;
         margin-right: 3px;
+        vertical-align: middle;
       }
     }
 
@@ -245,10 +245,10 @@ dl.form {
   //
 
   &.required {
-    &>dt>label:after {
-      content: "*";
-      color: #9f1006;
+    > dt > label:after {
       padding-left: 5px;
+      color: #9f1006;
+      content: "*";
     }
   }
 }
@@ -258,8 +258,8 @@ dl.form {
 //
 // Styleguide 2.1.3
 .form-checkbox {
-  margin: 15px 0;
   padding-left: 20px;
+  margin: 15px 0;
   vertical-align: middle;
 
   label {
@@ -282,8 +282,8 @@ dl.form {
   }
 
   .note {
-    margin: 0;
     display: block;
+    margin: 0;
     font-size: 12px;
     font-weight: normal;
     color: #666;
@@ -297,21 +297,21 @@ dl.form {
 //
 // Styleguide 2.1.4
 .form-cards {
-  margin: 0 0 15px;
   height: 31px;
+  margin: 0 0 15px;
 
   > .cards {
     margin: 0;
 
     > li {
-      list-style-type: none;
       float: left;
       margin: 0 4px 0 0;
+      list-style-type: none;
 
       &.text {
         font-size: 11px;
-        color: #999;
         line-height: 31px;
+        color: #999;
       }
     }
 
@@ -320,8 +320,8 @@ dl.form {
       width: 47px;
       height: 31px;
       text-indent: -9999px;
-      background-position: 0 0;
       background-image: url("/images/modules/pricing/credit-cards-@1x.png");
+      background-position: 0 0;
       opacity: .6;
 
       &.visa {
@@ -425,7 +425,6 @@ dl.form {
     dd.warning {
       display: inline-block;
       padding: 5px;
-
       font-size: 11px;
       color: #494620;
       background: #f7ea57;
@@ -447,7 +446,6 @@ dl.form {
     dd.warning {
       display: inline-block;
       padding: 5px;
-
       font-size: 11px;
       color: #494620;
       background: #f7ea57;
@@ -459,9 +457,9 @@ dl.form {
   }
 
   .form-note {
-    margin-top: -1px;
     display: inline-block;
     padding: 5px;
+    margin-top: -1px;
     font-size: 11px;
     color: #494620;
     background: #f7ea57;
@@ -527,16 +525,16 @@ html.no-dnd-uploads {
 }
 
 .drag-and-drop {
-  margin: 0;
   padding: 7px 10px;
-  color: #aaa;
+  margin: 0;
   font-size: 13px;
   line-height: 16px;
+  color: #aaa;
   background-color: #fafafa;
   border: 1px solid #ccc;
   border-top: 0;
-  border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 
   .default,
   .loading,
@@ -547,6 +545,11 @@ html.no-dnd-uploads {
   .error {
     color: $brand-red;
   }
+
+  // Spinner
+  img {
+    vertical-align: top;
+  }
 }
 
 .is-default .drag-and-drop .default {
@@ -555,8 +558,6 @@ html.no-dnd-uploads {
 
 .is-uploading .drag-and-drop .loading {
   display: inline-block;
-
-  img { vertical-align: top; }
 }
 
 .is-bad-file .drag-and-drop .bad-file {
@@ -572,8 +573,8 @@ html.no-dnd-uploads {
 }
 
 .drag-and-drop-error-info {
-  color: #aaa;
   font-weight: normal;
+  color: #aaa;
 
   a {
     color: $brand-linkBlue;
@@ -587,10 +588,10 @@ html.no-dnd-uploads {
 .manual-file-chooser {
   position: absolute;
   width: 240px;
-  margin-left: -80px;
   padding: 5px;
-  opacity: .0001;
+  margin-left: -80px;
   cursor: pointer;
+  opacity: .0001;
 }
 
 .manual-file-chooser:hover + .manual-file-chooser-text {
@@ -600,18 +601,18 @@ html.no-dnd-uploads {
 .button {
   // align manual-file-chooser inside a button
   .manual-file-chooser {
-    line-height: 34px;
     top: 0;
     padding: 0;
+    line-height: 34px;
   }
 }
 
 // Focused Textarea styles
 .upload-enabled textarea {
-  border-bottom: 1px dashed #ddd;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
   display: block;
+  border-bottom: 1px dashed #ddd;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .focused .drag-and-drop {
@@ -690,9 +691,9 @@ div.composer {
 
 .composer-infobar {
   height: 35px;
-  border-bottom: 1px solid #eee;
   padding: 0 10px;
   margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
 }
 
 .composer .tabnav { margin: 0 0 10px; }
@@ -725,15 +726,15 @@ div.composer {
     margin-top: 3px;
 
     a {
-      color: #333;
       font-weight: bold;
+      color: #333;
     }
   }
 
   .progress-bar {
     width: 200px;
-    line-height: 18px;
     overflow: hidden; // round the corners if 100%
+    line-height: 18px;
   }
 }
 
@@ -749,8 +750,8 @@ div.composer {
 // on phones
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
   margin: 0;
+  -webkit-appearance: none;
 }
 
 
@@ -762,8 +763,8 @@ input::-webkit-inner-spin-button {
   display: table;
 
   input {
-    width: 100%;
     position: relative;
+    width: 100%;
 
     &:focus {
       z-index: 2;
@@ -838,9 +839,9 @@ h2.account {
 }
 
 p.explain {
+  position: relative;
   font-size: 12px;
   color: #666;
-  position: relative;
 
   strong {
     color: #333;
@@ -852,8 +853,8 @@ p.explain {
   }
 
   .minibutton {
-    float: right;
     top: -4px;
+    float: right;
   }
 
 }
@@ -863,9 +864,9 @@ p.explain {
 }
 
 .options-content p.explain {
+  padding: 10px 10px 0;
   margin-top: 0;
   border-top: 1px solid #ddd;
-  padding: 10px 10px 0;
 }
 
 .fieldgroup .fields {
@@ -909,10 +910,10 @@ p.explain {
 }
 
 .fieldgroup div.error {
-  margin: 10px 0 0;
   padding: 10px;
-  color: #fff;
+  margin: 10px 0 0;
   font-weight: bold;
+  color: #fff;
   background: #a00;
   border-radius: 4px;
   -webkit-font-smoothing: antialiased;
@@ -927,13 +928,13 @@ p.explain {
 }
 
 .form-actions {
-  text-align: right;
   padding-bottom: 5px;
+  text-align: right;
 }
 
 .form-actions .cancel {
-  margin-top: 5px;
   float: left;
+  margin-top: 5px;
 }
 
 .form-actions .button.cancel {
@@ -946,9 +947,8 @@ p.explain {
 }
 
 .form-actions .optional {
-  display: block;
-  padding-top: 8px;
   float: left;
+  padding-top: 8px;
   margin-right: 15px;
 }
 
@@ -962,12 +962,12 @@ p.explain {
 }
 
 .form-warning {
-  margin: 10px 0;
   padding: 8px 10px;
-  border: 1px solid #e7e4c2;
+  margin: 10px 0;
   font-size: 14px;
   color: #333;
   background: #ffffe2;
+  border: 1px solid #e7e4c2;
   border-radius: 4px;
 }
 
