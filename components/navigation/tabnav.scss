@@ -12,13 +12,20 @@
   margin: 0 0 15px;
   border-bottom: 1px solid #ddd;
 
-  .tabnav-tabs {
-    display: inline-block;
+  // Tabnav supports a counter in the tab
+  //
+  // Styleguide 8.1.1
+  .counter {
+    margin-left: 5px;
+  }
+}
 
-    > li {
-      display: inline-block;
-      margin-bottom: -1px;
-    }
+.tabnav-tabs {
+  display: inline-block;
+
+  > li {
+    display: inline-block;
+    margin-bottom: -1px;
   }
 }
 
@@ -43,17 +50,6 @@
 }
 
 
-// Tabnav supports a counter in the tab
-//
-// .counter.blank - hides the counter;
-//
-// Styleguide 8.1.1
-.tabnav {
-  .counter {
-    margin-left: 5px;
-  }
-}
-
 // Tabnav supports multiple sets of tabs. To use a second set, wrap your second
 // .tabnav-tabs in a span.tabnav-right
 //
@@ -63,6 +59,7 @@
   float: right;
 }
 
+
 // Tabnav widgets are non-tab element that sits in the tabnav.
 // Can be buttons, fields, dropdowns
 //
@@ -71,95 +68,93 @@
   display: inline-block;
   vertical-align: top;
 
-  + ul.tabnav-tabs {
+  + .tabnav-tabs {
     margin-left: 10px;
   }
-}
 
-// The tabnav text widget is text that appears within a tab nav
-// used to convey extra contextual information
-//
-// Styleguide 8.1.5
-.tabnav-widget.text {
-  margin-top: 12px;
-  font-size: 11px;
-  color: #666;
+  // The tabnav search widget is a search box with a field and a submit button.
+  //
+  // Styleguide 8.1.4
+  &.search {
+    .spinner {
+      position: absolute;
+      top: 7px;
+      left: -22px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .search-link {
+      display: inline-block;
+      height: 26px;
+      padding-right: 5px;
+      font-size: 13px;
+      font-weight: 200;
+      line-height: 26px;
+      color: #666;
+      vertical-align: top;
+    }
+
+    .fieldwrap {
+      display: inline-block;
+      height: 26px;
+      border-radius: 4px;
+
+      > input,
+      > button {
+        display: inline-block;
+      }
+    }
+
+    input {
+      min-height: 26px; // Required for Firefox
+      padding: 0 4px;
+      font-size: 12px;
+      vertical-align: top;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .minibutton {
+      position: relative;
+      height: 24px;
+      padding: 0 8px;
+      margin-left: 0;
+      vertical-align: top;
+      border-left: 0;
+      border-radius: 0 3px 3px 0;
+      @include box-sizing(content-box);
+
+      &:hover { color: #fff; }
+    }
+  }
+
+  // The tabnav text widget is text that appears within a tab nav
+  // used to convey extra contextual information
+  //
+  // Styleguide 8.1.5
+  &.text {
+    margin-top: 12px;
+    font-size: 11px;
+    color: #666;
+  }
 }
 
 
 // Tabnav extras content for custom text and links in a tabnav-widget.
 //
 // No styleguide reference
-.tabnav {
-  .tabnav-extras {
-    display: inline-block;
-    margin-left: 10px;
+.tabnav-extras {
+  display: inline-block;
+  margin-left: 10px;
 
-    .octicon {
-      float: left;
-      margin-top: -1px;
-      margin-right: 5px;
-    }
-
-    &:hover {
-      color: $brand-linkBlue;
-      text-decoration: none;
-    }
-  }
-}
-
-// The tabnav search widget is a search box with a field and a submit button.
-//
-// Styleguide 8.1.4
-.tabnav-widget.search {
-  .spinner {
-    position: absolute;
-    top: 7px;
-    left: -22px;
-    margin-right: 8px;
-    vertical-align: middle;
+  .octicon {
+    float: left;
+    margin-top: -1px;
+    margin-right: 5px;
   }
 
-  .search-link {
-    display: inline-block;
-    height: 26px;
-    padding-right: 5px;
-    font-size: 13px;
-    font-weight: 200;
-    line-height: 26px;
-    color: #666;
-    vertical-align: top;
-  }
-
-  .fieldwrap {
-    display: inline-block;
-    height: 26px;
-    border-radius: 4px;
-
-    > input,
-    > button {
-      display: inline-block;
-    }
-  }
-
-  input {
-    min-height: 26px; // Required for Firefox
-    padding: 0 4px;
-    font-size: 12px;
-    vertical-align: top;
-    border-radius: 3px 0 0 3px;
-  }
-
-  .minibutton {
-    position: relative;
-    height: 24px;
-    padding: 0 8px;
-    margin-left: 0;
-    vertical-align: top;
-    border-left: 0;
-    border-radius: 0 3px 3px 0;
-    @include box-sizing(content-box);
-
-    &:hover { color: #fff; }
+  &:hover {
+    color: $brand-linkBlue;
+    text-decoration: none;
   }
 }
