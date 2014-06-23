@@ -15,7 +15,7 @@
   .tabnav-tabs {
     display: inline-block;
 
-    & > li {
+    > li {
       display: inline-block;
       margin-bottom: -1px;
     }
@@ -71,7 +71,7 @@
   display: inline-block;
   vertical-align: top;
 
-  & + ul.tabnav-tabs {
+  + ul.tabnav-tabs {
     margin-left: 10px;
   }
 }
@@ -136,8 +136,8 @@
     height: 26px;
     border-radius: 4px;
 
-    & > input,
-    & > button {
+    > input,
+    > button {
       display: inline-block;
     }
   }
