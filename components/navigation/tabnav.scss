@@ -25,18 +25,18 @@
 .tabnav-tab {
   display: inline-block;
   padding: 8px 12px 7px;
-  border: 1px solid transparent;
-  border-bottom: 0;
   font-size: 14px;
   line-height: 20px;
   color: #666;
   text-decoration: none;
+  border: 1px solid transparent;
+  border-bottom: 0;
 
   &.selected {
+    color: #333;
+    background-color: #fff;
     border-color: #ddd;
     border-radius: 3px 3px 0 0;
-    background-color: #fff;
-    color: #333;
   }
 
   &:hover { text-decoration: none; }
@@ -113,20 +113,20 @@
 // Styleguide 8.1.4
 .tabnav-widget.search {
   .spinner {
-    vertical-align: middle;
     position: absolute;
     top: 7px;
     left: -22px;
     margin-right: 8px;
+    vertical-align: middle;
   }
 
   .search-link {
     display: inline-block;
     height: 26px;
     padding-right: 5px;
-    line-height: 26px;
-    font-weight: 200;
     font-size: 13px;
+    font-weight: 200;
+    line-height: 26px;
     color: #666;
     vertical-align: top;
   }
@@ -143,19 +143,19 @@
   }
 
   input {
+    min-height: 26px; // Required for Firefox
     padding: 0 4px;
     font-size: 12px;
-    min-height: 26px; // Required for Firefox
-    border-radius: 3px 0 0 3px;
     vertical-align: top;
+    border-radius: 3px 0 0 3px;
   }
 
   .minibutton {
     position: relative;
-    margin-left: 0;
     height: 24px;
-    vertical-align: top;
     padding: 0 8px;
+    margin-left: 0;
+    vertical-align: top;
     border-left: 0;
     border-radius: 0 3px 3px 0;
     @include box-sizing(content-box);

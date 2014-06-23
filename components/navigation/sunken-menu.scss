@@ -19,8 +19,8 @@
   .sunken-menu-contents:after,
   .sunken-menu-item.selected:after,
   .sunken-menu-separator:before {
-    content: "";
     position: absolute;
+    content: "";
   }
 
   .sunken-menu-contents {
@@ -32,18 +32,18 @@
   }
 
   .sunken-menu-item {
-    padding: 8px 10px;
     display: block;
+    padding: 8px 10px;
     text-shadow: 0 1px 0 #fff;
     text-decoration: none;
     border: 1px solid transparent;
     outline: 0;
 
     &.selected {
-      background: #fff;
-      border: 1px solid #eee;
       color: $brand-darkGrey;
       font-weight: bold;
+      border: 1px solid #eee;
+      background: #fff;
 
       &:after {
         @include gradient(#d26911, darken(#d26911, 5%));
@@ -53,10 +53,10 @@
 
     .octicon {
       left: -1px;
-      color: $brand-lightGrey;
-      @include transition($property: color, $time: .25s);
       width: 16px;
+      color: $brand-lightGrey;
       text-align: center;
+      @include transition($property: color, $time: .25s);
     }
 
     &:hover .octicon {
@@ -68,10 +68,10 @@
     }
 
     .mini-loader {
-      display: none;
       position: absolute;
       top: 9px;
       left: 9px;
+      display: none;
     }
 
     &.is-loading {
@@ -114,16 +114,16 @@
 
   .sunken-menu-contents {
     padding: 12px 0 15px;
-    box-shadow: inset 1px 0 0 #eee;
     background-image: -webkit-linear-gradient(left, #f6f6f6 0%, #fff 8px);
     background-image: -moz-linear-gradient(left, #f6f6f6 0%, #fff 8px);
     background-image: linear-gradient(to right, #f6f6f6 0%, #fff 8px);
+    box-shadow: inset 1px 0 0 #eee;
 
     &:before,
     &:after {
-      height: 15px;
-      width: 100%;
       left: 0;
+      width: 100%;
+      height: 15px;
       background-color: transparent;
     }
 
@@ -149,14 +149,14 @@
     }
 
     &.selected {
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, .05);
       border-left: 1px solid transparent;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, .05);
 
       &:after {
-        width: 3px;
         top: -1px;
-        bottom: -1px;
         right: -1px;
+        bottom: -1px;
+        width: 3px;
         border-radius: 0 2px 2px 0;
       }
     }
@@ -176,13 +176,13 @@
     background-image: radial-gradient(farthest-side at left top, #f4f4f4, rgba(#f4f4f4, 0));
 
     &:before {
+      top: 0;
       width: 100%;
       height: 1px;
-      top: 0;
-      border-top: 1px solid #eee\9; // Hack to give IE9 at least some separator
       background-image: -webkit-linear-gradient(left, #eee 70%, #fff 100%);
       background-image: -moz-linear-gradient(left, #eee 70%, #fff 100%);
       background-image: linear-gradient(to right, #eee 70%, #fff 100%);
+      border-top: 1px solid #eee\9; // Hack to give IE9 at least some separator
     }
   }
 }
@@ -190,11 +190,11 @@
 @-webkit-keyframes mini-nav-pulse {
   0% { -webkit-transform: scale(.9); }
 
-  25% { -webkit-transform: scale(1.0); }
+  25% { -webkit-transform: scale(1); }
 
   70% {
     -webkit-transform: scale(1.1);
-    opacity: 1.0;
+    opacity: 1;
   }
 
   100% {
@@ -206,11 +206,11 @@
 @-moz-keyframes mini-nav-pulse {
   0% { -moz-transform: scale(.9); }
 
-  25% { -moz-transform: scale(1.0); }
+  25% { -moz-transform: scale(1); }
 
   70% {
     -moz-transform: scale(1.1);
-    opacity: 1.0;
+    opacity: 1;
   }
 
   100% {
@@ -222,11 +222,11 @@
 @keyframes mini-nav-pulse {
   0% { transform: scale(.9); }
 
-  25% { transform: scale(1.0); }
+  25% { transform: scale(1); }
 
   70% {
     transform: scale(1.1);
-    opacity: 1.0;
+    opacity: 1;
   }
 
   100% {
@@ -240,7 +240,7 @@
 
   90% { opacity: 0; }
 
-  100% { opacity: 1.0; }
+  100% { opacity: 1; }
 }
 
 @-moz-keyframes mini-nav-loader {
@@ -248,7 +248,7 @@
 
   90% { opacity: 0; }
 
-  100% { opacity: 1.0; }
+  100% { opacity: 1; }
 }
 
 @keyframes mini-nav-loader {
@@ -256,5 +256,5 @@
 
   90% { opacity: 0; }
 
-  100% { opacity: 1.0; }
+  100% { opacity: 1; }
 }

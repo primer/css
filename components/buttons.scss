@@ -43,7 +43,7 @@
   font-size: 13px;
   font-weight: bold;
   color: #333;
-  text-shadow: 0 1px 0 rgba(255,255,255,.9);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
   white-space: nowrap;
   @include gradient(#fcfcfc, #eee);
   border-radius: 3px;
@@ -63,7 +63,7 @@
     outline: none;
     text-decoration: none;
     border-color: #51a7e8;
-    box-shadow: 0 0 5px rgba(81,167,232,.5);
+    box-shadow: 0 0 5px rgba(81, 167, 232, .5);
   }
 
   &:hover,
@@ -82,7 +82,7 @@
     background-color: #dcdcdc;
     background-image: none;
     border-color: #b5b5b5;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,.15);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15);
   }
 
   &:disabled,
@@ -90,10 +90,10 @@
     &,
     &:hover {
       color: rgba(102,102,102,.5);
-      text-shadow: 0 1px 0 rgba(255,255,255,.9);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
       background-image: none;
-      background-color: rgba(229,229,229,.5);
-      border-color: rgba(197,197,197,.5);
+      background-color: rgba(229, 229, 229, .5);
+      border-color: rgba(197, 197, 197, .5);
       cursor: default;
       box-shadow: none;
     }
@@ -102,7 +102,7 @@
   // Green primary button
   &.primary {
     color: #fff;
-    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
     @include gradient(#8add6d, #60b044);
     border-color: darken(#60b044, 2%);
 
@@ -197,7 +197,7 @@
     &,
     &:hover {
       color: #fff;
-      text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
       @include gradient(#8c8c8c, #6d6d6d);
       border: 1px solid #707070;
       border-bottom-color: #595959;
@@ -411,14 +411,14 @@
   .button + .button,
   .minibutton + .minibutton {
     margin-left: -1px;
-    box-shadow: inset 1px 0 0 rgba(255,255,255,.2);
+    box-shadow: inset 1px 0 0 rgba(255, 255, 255, .2);
 
     &:hover {
       box-shadow: none;
     }
 
     &:active, &.selected {
-      box-shadow: inset 0 3px 5px rgba(0,0,0,.15)
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, .15)
     }
   }
 
