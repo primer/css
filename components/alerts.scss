@@ -21,7 +21,7 @@
   text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
 
   &.flash-warn {
-    color: #613A00;
+    color: #613a00;
     @include gradient(#ffe3c8, #f5dac0);
     border-color: #dca874;
   }
