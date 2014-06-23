@@ -300,10 +300,10 @@ dl.form {
   margin: 0 0 15px;
   height: 31px;
 
-  &>.cards {
+  > .cards {
     margin: 0;
 
-    &>li {
+    > li {
       list-style-type: none;
       float: left;
       margin: 0 4px 0 0;
@@ -365,12 +365,10 @@ only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-o-min-device-pixel-ratio: 2/1),
 only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 2dppx) {
-
   .form-cards > .cards .card {
     background-image: url("/images/modules/pricing/credit-cards-@2x.png");
     background-size: 300px 31px;
   }
-
 }
 
 
@@ -412,7 +410,7 @@ dl.form {
   }
 
   &.errored {
-    &>dt label {
+    > dt label {
       color: #900;
     }
 
@@ -464,7 +462,6 @@ dl.form {
     margin-top: -1px;
     display: inline-block;
     padding: 5px;
-
     font-size: 11px;
     color: #494620;
     background: #f7ea57;

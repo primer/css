@@ -321,7 +321,7 @@ $tooltip-text-color: #fff;
   }
 }
 
-.tooltipped-error  { @include colorizeTooltip(#613A00, rgba(245, 218, 192, 0.8)); }
+.tooltipped-error  { @include colorizeTooltip(#613a00, rgba(245, 218, 192, 0.8)); }
 .fullscreen-overlay-enabled.dark-theme .tooltipped {
   @include colorizeTooltip(#000, rgba(255, 255, 255, 0.8));
 }
