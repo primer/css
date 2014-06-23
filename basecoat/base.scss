@@ -52,15 +52,6 @@ hr,
   @include clearfix();
 }
 
-// TODO: is this necessary?
-#spinner {
-  height: 16px;
-  width: 16px;
-  background: transparent;
-  border: 0;
-  margin-right: 0;
-}
-
 ol ol,
 ul ol {
   list-style-type: lower-roman;
