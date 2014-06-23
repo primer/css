@@ -15,10 +15,10 @@
 .flash,
 .flash-global {
   position: relative;
-  border: 1px solid #97c1da;
   color: #264c72;
-  @include gradient(#d8ebf8, #d0e3ef);
   text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+  @include gradient(#d8ebf8, #d0e3ef);
+  border: 1px solid #97c1da;
 
   &.flash-warn {
     color: #613a00;
@@ -46,11 +46,11 @@
 
   .close {
     float: right;
-    cursor: pointer;
-    opacity: .6;
-    text-decoration: none;
     margin-top: 1px;
     color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .6;
   }
 
   &:hover .close {
@@ -87,16 +87,16 @@
 //
 // Styleguide 15.1
 .flash-global {
-  padding: 10px;
   top: -1px;
-  border-width: 1px 0;
   z-index: 5;
+  padding: 10px;
+  border-width: 1px 0;
 
   h2,
   p {
-    font-size: 13px;
     margin-top: 0;
     margin-bottom: 0;
+    font-size: 13px;
     line-height: 1.4;
   }
 
@@ -107,8 +107,8 @@
 
   .close {
     position: absolute;
-    right: 0;
     top: 50%;
+    right: 0;
     margin-top: -8px; // 50% of total icon height
   }
 

@@ -45,24 +45,24 @@
   color: #333;
   text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
   white-space: nowrap;
-  @include gradient(#fcfcfc, #eee);
-  border-radius: 3px;
-  border: 1px solid #d5d5d5;
   vertical-align: middle;
   cursor: pointer;
+  @include gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
   @include user-select(none);
   -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   i {
-    font-weight: 500;
     font-style: normal;
+    font-weight: 500;
     opacity: .6;
   }
 
   &:focus {
-    outline: none;
     text-decoration: none;
     border-color: #51a7e8;
+    outline: none;
     box-shadow: 0 0 5px rgba(81, 167, 232, .5);
   }
 
@@ -91,10 +91,10 @@
     &:hover {
       color: rgba(102, 102, 102, .5);
       text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
-      background-image: none;
-      background-color: rgba(229, 229, 229, .5);
-      border-color: rgba(197, 197, 197, .5);
       cursor: default;
+      background-color: rgba(229, 229, 229, .5);
+      background-image: none;
+      border-color: rgba(197, 197, 197, .5);
       box-shadow: none;
     }
   }
