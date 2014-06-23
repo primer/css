@@ -26,10 +26,10 @@
     border-top: 1px solid #fff;
 
     // Hide bottom border on last li
-    &:last-child { border-bottom: none; }
+    &:last-child { border-bottom: 0; }
 
     // Hide top border on first li
-    &:first-child { border-top: none; }
+    &:first-child { border-top: 0; }
   }
 
   a {
@@ -63,7 +63,7 @@
   }
 
   .menu-warning {
-    color: #D26911;
+    color: #d26911;
     float: right;
   }
 }
@@ -79,7 +79,7 @@
     border-bottom: 0;
 
     &:first-child {
-      border-top: none;
+      border-top: 0;
     }
 
     .section-head {
@@ -93,7 +93,7 @@
       font-size: 14px;
       line-height: 20px;
       text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
-      border-left: 0 none;
+      border-left: 0;
 
       img {
         float: left;
