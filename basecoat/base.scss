@@ -46,15 +46,3 @@ hr,
   border-bottom: 1px solid #ddd;
   @include clearfix();
 }
-
-ol ol,
-ul ol {
-  list-style-type: lower-roman;
-}
-
-ul ul ol,
-ul ol ol,
-ol ul ol,
-ol ol ol {
-  list-style-type: lower-alpha;
-}
