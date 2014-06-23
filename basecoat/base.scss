@@ -39,6 +39,8 @@ a {
 }
 
 // Horizontal lines
+//
+// TODO-MDO: Remove `.rule` from everywhere and replace with `<hr>`s
 hr,
 .rule {
   height: 0;
