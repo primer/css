@@ -77,7 +77,7 @@
   border-radius: 3px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 
-  & + .flash { margin-top: 5px; }
+  + .flash { margin-top: 5px; }
 }
 
 // Global notices. Useful for site-wide banners and global notifications.
@@ -92,7 +92,8 @@
   border-width: 1px 0;
   z-index: 5;
 
-  h2, p {
+  h2,
+  p {
     font-size: 13px;
     margin-top: 0;
     margin-bottom: 0;
