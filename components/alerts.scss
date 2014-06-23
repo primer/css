@@ -18,7 +18,7 @@
   border: 1px solid #97c1da;
   color: #264c72;
   @include gradient(#d8ebf8, #d0e3ef);
-  text-shadow: 0 1px 0 rgba(#fff, 0.5);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
 
   &.flash-warn {
     color: #613A00;
@@ -47,7 +47,7 @@
   .close {
     float: right;
     cursor: pointer;
-    opacity: 0.6;
+    opacity: .6;
     text-decoration: none;
     margin-top: 1px;
     color: inherit;
@@ -75,7 +75,7 @@
 .flash {
   padding: 15px;
   border-radius: 3px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
 
   + .flash { margin-top: 5px; }
 }

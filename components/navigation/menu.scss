@@ -84,7 +84,7 @@
 
     .section-head {
       @include gradient(#fafafa, #efefef);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5);
       display: block;
       padding: 8px 10px;
       border-bottom: 1px solid #ccc;
@@ -92,7 +92,7 @@
       font-weight: bold;
       font-size: 14px;
       line-height: 20px;
-      text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
       border-left: 0 none;
 
       img {
