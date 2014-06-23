@@ -41,7 +41,6 @@ $tooltip-text-color: #fff;
 // This is the tooltip bubble
 .tooltipped:after {
   content:attr(aria-label);
-
   // font stuff
   -webkit-font-smoothing: initial;
   font-family: $bodyFont;
@@ -53,7 +52,6 @@ $tooltip-text-color: #fff;
   text-decoration: none;
   text-shadow: none;
   text-transform: none;
-
   line-height: 1.5;
   background: $tooltip-background-color;
   color: $tooltip-text-color;
@@ -61,7 +59,6 @@ $tooltip-text-color: #fff;
   word-wrap: break-word;
   padding: 5px 8px;
   border-radius: 3px;
-
 }
 
 // This is the tooltip arrow
@@ -201,7 +198,6 @@ $tooltip-text-color: #fff;
 
 // tooltipped to the right
 .tooltipped-e {
-
   &:after,
   &:before {
     bottom: 50%;
@@ -241,7 +237,6 @@ $tooltip-text-color: #fff;
 //
 // Styleguide 9.2
 .tooltipped-multiline {
-
   &:after {
     word-wrap: initial;
     white-space: pre-line;
