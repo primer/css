@@ -12,23 +12,21 @@
 }
 
 .menu {
-  background: #fafafb;
-  border-radius: 3px;
-  border: 1px solid #d8d8d8;
-  list-style: none;
   overflow: hidden;
+  list-style: none;
+  background: #fafafb;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
 
   // Get rid of underlines on hover
   a:hover { text-decoration: none; }
 
   li {
-    border-bottom: 1px solid #eee;
     border-top: 1px solid #fff;
+    border-bottom: 1px solid #eee;
 
-    // Hide bottom border on last li
     &:last-child { border-bottom: 0; }
 
-    // Hide top border on first li
     &:first-child { border-top: 0; }
   }
 
@@ -43,17 +41,17 @@
     }
 
     .octicon {
-      color: $brand-darkGrey;
       width: 16px;
+      color: $brand-darkGrey;
       text-align: center;
     }
 
     &.selected {
-      background: #fff;
-      border-left: 2px solid #d26911;
       font-weight: bold;
       color: #222;
       cursor: default;
+      background: #fff;
+      border-left: 2px solid #d26911;
     }
 
     .counter {
@@ -63,8 +61,8 @@
   }
 
   .menu-warning {
-    color: #d26911;
     float: right;
+    color: #d26911;
   }
 }
 
@@ -72,8 +70,8 @@
 //
 // Styleguide 8.3.1
 .accordion {
-  background: #fafafb;
   list-style: none;
+  background: #fafafb;
 
   .section {
     border-bottom: 0;
@@ -81,34 +79,34 @@
     &:first-child {
       border-top: 0;
     }
+  }
 
-    .section-head {
-      @include gradient(#fafafa, #efefef);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5);
-      display: block;
-      padding: 8px 10px;
-      border-bottom: 1px solid #ccc;
-      color: #222;
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 20px;
-      text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
-      border-left: 0;
+  .section-head {
+    display: block;
+    padding: 8px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #222;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
+    @include gradient(#fafafa, #efefef);
+    border-bottom: 1px solid #ccc;
+    border-left: 0;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5);
 
-      img {
-        float: left;
-        margin: 0 10px 0 0;
-        border-radius: 2px;
-      }
+    img {
+      float: left;
+      margin: 0 10px 0 0;
+      border-radius: 2px;
     }
+  }
 
-    // The nested ul is the actual navigation for the section
-    .section-nav {
-      list-style: none;
-      display: none;
-      border-bottom: 1px solid #ddd;
+  // The nested ul is the actual navigation for the section
+  .section-nav {
+    display: none;
+    list-style: none;
+    border-bottom: 1px solid #ddd;
 
-      &.expanded { display: block; }
-    }
+    &.expanded { display: block; }
   }
 }
