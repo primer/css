@@ -2,6 +2,10 @@
 @import "primer/mixins/clearfix";
 @import "primer/mixins/box-sizing";
 
+* {
+  @include box-sizing;
+}
+
 body,
 input,
 select,
@@ -17,20 +21,12 @@ body {
   background-color: #fff;
 }
 
-* { @include box-sizing; }
-
-//------------------------------------------------------------------------------
-// @group Links
-// -----------------------------------------------------------------------------
 
 a {
   color: $brand-linkBlue;
   text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-  }
-
+  &:hover,
   &:focus,
   &:active {
     text-decoration: underline;
