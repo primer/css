@@ -89,7 +89,7 @@
   &.disabled {
     &,
     &:hover {
-      color: rgba(102,102,102,.5);
+      color: rgba(102, 102, 102, .5);
       text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
       background-image: none;
       background-color: rgba(229, 229, 229, .5);
@@ -152,7 +152,8 @@
 
     &:disabled,
     &.disabled {
-      &, &:hover {
+      &,
+      &:hover {
         color: #cb7f7f;
         text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
         @include gradient(#fefefe, #efefef);
@@ -170,10 +171,12 @@
       @include gradient(#599bcd, #3072b3);
       border-color: #2a65a0;
     }
+
     &:hover,
     &:active {
       border-color: #2a65a0;
     }
+
     &:active,
     &.selected {
       background-color: #3072b3;
@@ -181,15 +184,17 @@
       border-color: darken(#2a65a0, 5%);
       box-shadow: inset 0 3px 5px rgba(0, 0, 0, .15);
     }
+
     &:disabled,
     &.disabled {
+      background-position: 0 0;
+
       &,
       &:hover {
         color: #fefefe;
         @include gradient(#abcce5, #97b8d8);
         border-color: #94b1cf;
       }
-      background-position: 0 0;
     }
   }
 
@@ -202,11 +207,13 @@
       border: 1px solid #707070;
       border-bottom-color: #595959;
     }
+
     &:hover,
     &:active,
     &.selected {
       border-color: #585858;
     }
+
     &:active,
     &.selected {
       background-color: #545454;
@@ -214,22 +221,24 @@
       border-color: darken(#545454, 5%);
       box-shadow: inset 0 3px 5px rgba(0, 0, 0, .15);
     }
+
     &:disabled,
     &.disabled {
+      background-position: 0 0;
+
       &,
       &:hover {
         color: #fefefe;
         @include gradient(#c4c4c4, #b5b5b5);
         border-color: #ababab;
       }
-      background-position: 0 0;
     }
   }
 
   &.with-count {
+    float: left;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    float: left;
   }
 }
 
@@ -254,11 +263,13 @@
   > .octicon {
     vertical-align: -1px;
   }
+
   > .octicon-arrow-right {
     float: right;
     margin-left: 5px;
   }
 }
+
 // Required because we nuke the padding on minibuttons
 .minibutton > .octicon-arrow-right {
   margin-top: 4px;
@@ -299,34 +310,34 @@
   display: block;
 
   &.inline {
-    display: inline-block;
-    line-height: 0;
-    margin-left: 5px;
     position: relative;
     top: -1px;
+    display: inline-block;
+    margin-left: 5px;
+    line-height: 0;
   }
 
   a {
-    background: #ddd;
-    color: #555;
-    padding: 0 5px;
-    line-height: 6px;
+    display: inline-block;
     height: 12px;
+    padding: 0 5px;
     font-size: 12px;
     font-weight: bold;
-    vertical-align: middle;
-    display: inline-block;
-    border-radius: 1px;
+    line-height: 6px;
+    color: #555;
     text-decoration: none;
+    vertical-align: middle;
+    background: #ddd;
+    border-radius: 1px;
 
     &:hover {
-      background-color: #ccc;
       text-decoration: none;
+      background-color: #ccc;
     }
 
     &:active {
-      background-color: #4183C4;
       color: #fff;
+      background-color: #4183c4;
     }
   }
 }
@@ -338,14 +349,14 @@
 //
 // Styleguide 1.2.3
 .social-count {
-  padding: 0 7px 0;
+  float: left;
+  padding: 0 7px;
   font-size: 11px;
   font-weight: bold;
-  float: left;
-  background-color: #fff;
   line-height: 24px;
   color: $brand-darkGrey;
   vertical-align: middle;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-left: 0;
   border-top-right-radius: 3px;
@@ -353,8 +364,8 @@
 
   &:hover {
     color: $brand-linkBlue;
-    cursor: pointer;
     text-decoration: none;
+    cursor: pointer;
   }
 }
 
@@ -417,8 +428,9 @@
       box-shadow: none;
     }
 
-    &:active, &.selected {
-      box-shadow: inset 0 3px 5px rgba(0, 0, 0, .15)
+    &:active,
+    &.selected {
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, .15);
     }
   }
 
@@ -453,9 +465,9 @@
   font-size: inherit;
   color: $brand-linkBlue;
   white-space: nowrap;
+  cursor: pointer;
   background-color: transparent;
   border: 0;
-  cursor: pointer;
   @include user-select(none);
   -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
@@ -476,11 +488,11 @@
   font-weight: bold;
   color: $brand-linkBlue;
   white-space: nowrap;
-  background: none; // Reset default gradient backgrounds and colors
-  border-radius: 3px;
-  border: 1px solid #e5e5e5;
   vertical-align: middle;
   cursor: pointer;
+  background: none; // Reset default gradient backgrounds and colors
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
   @include user-select(none);
   -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
 

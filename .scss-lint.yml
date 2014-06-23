@@ -30,6 +30,10 @@ linters:
   NameFormat:
     enabled: false
 
+  MergeableSelector:
+    enabled: false
+    force_nesting: false
+
   PropertySortOrder:
     enabled: true
     order: [
