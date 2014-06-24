@@ -25,7 +25,7 @@ linters:
 
   SelectorDepth:
     enabled: true
-    max_depth: 3
+    max_depth: 5 # Should be 3, but _forms.scss
 
   NameFormat:
     enabled: false

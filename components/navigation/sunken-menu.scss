@@ -1,6 +1,7 @@
 @import "primer/mixins/clearfix";
 @import "primer/mixins/gradient";
 @import "primer/mixins/transition";
+@import "primer/mixins/animation";
 @import "primer/mixins/variables";
 
 // Sunken tabbed navigation menu. Really needs to be used with one of the
@@ -77,29 +78,13 @@
     &.is-loading {
       .mini-loader {
         display: inline-block;
-        -webkit-animation-duration: .4s;
-        -moz-animation-duration: .4s;
-        animation-duration: .4s;
-        -webkit-animation-fill-mode: forwards;
-        -moz-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-        -webkit-animation-name: mini-nav-loader;
-        -moz-animation-name: mini-nav-loader;
-        animation-name: mini-nav-loader;
+        @include animation(mini-nav-loader, .4s, forwards);
       }
     }
 
     &.is-loading {
       .octicon {
-        -webkit-animation-duration: .3s;
-        -moz-animation-duration: .3s;
-        animation-duration: .3s;
-        -webkit-animation-fill-mode: forwards;
-        -moz-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-        -webkit-animation-name: mini-nav-pulse;
-        -moz-animation-name: mini-nav-pulse;
-        animation-name: mini-nav-pulse;
+        @include animation(mini-nav-pulse, .4s, forwards);
       }
     }
   }
