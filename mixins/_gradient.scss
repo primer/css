@@ -4,7 +4,7 @@
 // $end   - The color hex at the bottom.
 //
 // Compatibility untested.
-@mixin gradient($start: #fafafa, $end: #eaeaea){
+@mixin gradient($start: #fafafa, $end: #eaeaea) {
   background-color: $end;
   // FF 3.6+
   background-image: -moz-linear-gradient($start, $end);

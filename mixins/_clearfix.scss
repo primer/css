@@ -1,12 +1,13 @@
 // A clearfix suitable for modern browsers.
 //
 // Compatibility untested.
-@mixin clearfix{
+@mixin clearfix {
   &:before,
   &:after {
-    content: " ";
     display: table;
+    content: " ";
   }
+
   &:after {
     clear: both;
   }

@@ -3,7 +3,12 @@
 // Headings
 // --------------------------------------------------
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 15px;
   margin-bottom: 15px;
   line-height: 1.1;
@@ -51,6 +56,18 @@ ol {
   margin-bottom: 0;
 }
 
+ol ol,
+ul ol {
+  list-style-type: lower-roman;
+}
+
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+  list-style-type: lower-alpha;
+}
+
 dd {
   margin-left: 0;
 }
@@ -65,6 +82,7 @@ pre {
   font-family: $monoFont;
   font-size: 12px;
 }
+
 pre {
   margin-top: 0;
   margin-bottom: 0;

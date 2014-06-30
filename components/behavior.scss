@@ -7,13 +7,13 @@
 // Styleguide 9.0
 .css-truncate {
   &.css-truncate-target,
-  & .css-truncate-target {
-    max-width: 125px;
+  .css-truncate-target {
     display: inline-block;
+    max-width: 125px;
     overflow: hidden;
     text-overflow: ellipsis;
-    vertical-align: top;
     white-space: nowrap;
+    vertical-align: top;
   }
 
   &.expandable.zeroclipboard-is-hover .css-truncate-target,

@@ -2,7 +2,7 @@
 //
 // Compatibility untested.
 @mixin icon-bootstrap($size) {
-  font: normal normal $size 'octicons';
+  font: normal normal $size "octicons";
   line-height: 1;
   display: inline-block;
   text-decoration: none;

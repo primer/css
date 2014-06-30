@@ -2,6 +2,10 @@
 @import "primer/mixins/clearfix";
 @import "primer/mixins/box-sizing";
 
+* {
+  @include box-sizing;
+}
+
 body,
 input,
 select,
@@ -17,32 +21,20 @@ body {
   background-color: #fff;
 }
 
-* { @include box-sizing; }
-
-//------------------------------------------------------------------------------
-// @group Links
-// -----------------------------------------------------------------------------
-
 a {
   color: $brand-linkBlue;
   text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-  }
-
+  &:hover,
   &:focus,
   &:active {
     text-decoration: underline;
   }
 }
 
-.action {
-  color: #d00;
-  text-decoration: underline;
-}
-
 // Horizontal lines
+//
+// TODO-MDO: Remove `.rule` from everywhere and replace with `<hr>`s
 hr,
 .rule {
   height: 0;
@@ -52,25 +44,4 @@ hr,
   border: 0;
   border-bottom: 1px solid #ddd;
   @include clearfix();
-}
-
-// TODO: is this necessary?
-#spinner {
-  height: 16px;
-  width: 16px;
-  background: transparent;
-  border: 0;
-  margin-right: 0;
-}
-
-ol ol,
-ul ol {
-  list-style-type: lower-roman;
-}
-
-ul ul ol,
-ul ol ol,
-ol ul ol,
-ol ol ol {
-  list-style-type: lower-alpha;
 }
