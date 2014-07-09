@@ -80,11 +80,9 @@
         display: inline-block;
         @include animation(mini-nav-loader, .4s, forwards);
       }
-    }
 
-    &.is-loading {
       .octicon {
-        @include animation(mini-nav-pulse, .4s, forwards);
+        color: #fff;
       }
     }
   }
