@@ -167,25 +167,16 @@
 }
 
 @-webkit-keyframes mini-nav-loader {
-  0% { opacity: 0; }
-
-  90% { opacity: 0; }
-
+  0%, 90% { opacity: 0; }
   100% { opacity: 1; }
 }
 
 @-moz-keyframes mini-nav-loader {
-  0% { opacity: 0; }
-
-  90% { opacity: 0; }
-
+  0%, 90% { opacity: 0; }
   100% { opacity: 1; }
 }
 
 @keyframes mini-nav-loader {
-  0% { opacity: 0; }
-
-  90% { opacity: 0; }
-
+  0%, 90% { opacity: 0; }
   100% { opacity: 1; }
 }
