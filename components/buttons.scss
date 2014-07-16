@@ -496,7 +496,8 @@
   @include user-select(none);
   -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
-  &:hover {
+  &:hover,
+  &.zeroclipboard-is-hover {
     color: #fff;
     text-decoration: none;
     background-color: $brand-linkBlue;
