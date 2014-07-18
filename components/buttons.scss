@@ -490,7 +490,7 @@
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
-  background: none; // Reset default gradient backgrounds and colors
+  background: #fff; // Reset default gradient backgrounds and colors
   border: 1px solid #e5e5e5;
   border-radius: 3px;
   @include user-select(none);
