@@ -28,11 +28,6 @@
 // .blue:active         - Depressed blue button.
 // .blue:disabled       - Disabled blue button.
 // .blue.disabled       - Same as the disabled pseudo-class.
-// .dark-grey           - Alternate button.
-// .dark-grey:hover     - Hover state for alternate buttons.
-// .dark-grey:active    - Depressed alternate button.
-// .dark-grey:disabled  - Disabled alternate button.
-// .dark-grey.disabled  - Same as the disabled pseudo-class.
 //
 // Styleguide 1.1
 .button,
@@ -198,43 +193,6 @@
     }
   }
 
-  &.dark-grey {
-    &,
-    &:hover {
-      color: #fff;
-      text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
-      @include gradient(#8c8c8c, #6d6d6d);
-      border: 1px solid #707070;
-      border-bottom-color: #595959;
-    }
-
-    &:hover,
-    &:active,
-    &.selected {
-      border-color: #585858;
-    }
-
-    &:active,
-    &.selected {
-      background-color: #545454;
-      background-image: none;
-      border-color: darken(#545454, 5%);
-      box-shadow: inset 0 3px 5px rgba(0, 0, 0, .15);
-    }
-
-    &:disabled,
-    &.disabled {
-      background-position: 0 0;
-
-      &,
-      &:hover {
-        color: #fefefe;
-        @include gradient(#c4c4c4, #b5b5b5);
-        border-color: #ababab;
-      }
-    }
-  }
-
   &.with-count {
     float: left;
     border-top-right-radius: 0;
@@ -292,7 +250,6 @@
 // .danger:hover     - This button might do something bad.
 // .danger:active    - A depressed danger button.
 // .blue             - A nice blue button, for places like merge button confirm box.
-// .dark-grey        - A dark grey button for places like the delete branch (w/ unmerged commits) box.
 //
 // Styleguide 1.2
 .minibutton {
