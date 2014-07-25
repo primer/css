@@ -2,7 +2,7 @@
 //
 // Compatability untested
 
-@mixin transition($time: .15s, $property: all, $timingFunc: ease-in, $delay: 0) {
+@mixin transition($time: .2s, $property: all, $timingFunc: ease, $delay: 0) {
   -webkit-transition: $property $time $timingFunc $delay;
   transition: $property $time $timingFunc $delay;
 }
