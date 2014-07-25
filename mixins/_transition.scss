@@ -3,9 +3,6 @@
 // Compatability untested
 
 @mixin transition($time: .15s, $property: all, $timingFunc: ease-in, $delay: 0) {
-  // Future Proof
-  transition: $property $time $timingFunc;
-
-  // WebKit based browsers
   -webkit-transition: $property $time $timingFunc $delay;
+  transition: $property $time $timingFunc;
 }
