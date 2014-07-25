@@ -4,5 +4,5 @@
 
 @mixin transition($time: .15s, $property: all, $timingFunc: ease-in, $delay: 0) {
   -webkit-transition: $property $time $timingFunc $delay;
-  transition: $property $time $timingFunc;
+  transition: $property $time $timingFunc $delay;
 }
