@@ -16,7 +16,7 @@
   $property: all;
   $duration: .2;
   $timingFunc: ease;
-  $delay: 0;
+  $delay: null;
   $defaultProperties: ($property, $duration, $timingFunc, $delay);
 
   // Grab transition properties if they exist
