@@ -1,7 +1,5 @@
 // A helper for making basic CSS3 transitions easy to implement
 
-// A helper for making basic CSS3 transitions easy to implement
-
 // Pass in any number of transitions
 @mixin transition($transitions...) {
   $unfoldedTransitions: ();
@@ -16,7 +14,7 @@
 @function unfoldTransition ($transition) {
   // Default values
   $property: all;
-  $duration: 0.2;
+  $duration: .2;
   $timingFunc: ease;
   $delay: 0;
   $defaultProperties: ($property, $duration, $timingFunc, $delay);
