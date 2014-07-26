@@ -1,8 +1,37 @@
 // A helper for making basic CSS3 transitions easy to implement
-//
-// Compatability untested
 
-@mixin transition($time: .2s, $property: all, $timingFunc: ease, $delay: 0) {
-  -webkit-transition: $property $time $timingFunc $delay;
-  transition: $property $time $timingFunc $delay;
+// A helper for making basic CSS3 transitions easy to implement
+
+// Pass in any number of transitions
+@mixin transition($transitions...) {
+  $unfoldedTransitions: ();
+  @each $transition in $transitions {
+    $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma);
+  }
+  
+  -webkit-transition: $unfoldedTransitions;
+  transition: $unfoldedTransitions;
+}
+
+@function unfoldTransition ($transition) {
+  // Default values
+  $property: all;
+  $duration: 0.2;
+  $timingFunc: ease;
+  $delay: 0;
+  $defaultProperties: ($property, $duration, $timingFunc, $delay);
+
+  // Grab transition properties if they exist
+  $unfoldedTransition: ();
+  @for $i from 1 through length($defaultProperties) {
+    $p: null;
+    @if $i <= length($transition) {
+      $p: nth($transition, $i)
+    } @else {
+      $p: nth($defaultProperties, $i)
+    }
+    $unfoldedTransition: append($unfoldedTransition, $p);
+  }
+
+  @return $unfoldedTransition;
 }
