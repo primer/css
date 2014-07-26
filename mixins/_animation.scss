@@ -1,12 +1,9 @@
 // A helper for making basic CSS3 animations easy to implement.
 @mixin animation($name, $duration: .15s, $fill: forwards) {
   -webkit-animation-name: $name;
-  -moz-animation-name: $name;
   animation-name: $name;
   -webkit-animation-duration: $duration;
-  -moz-animation-duration: $duration;
   animation-duration: $duration;
   -webkit-animation-fill-mode: $fill;
-  -moz-animation-fill-mode: $fill;
   animation-fill-mode: $fill;
 }
