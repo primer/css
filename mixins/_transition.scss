@@ -15,9 +15,9 @@
   // Default values
   $property: all;
   $duration: .2;
-  $timingFunc: ease;
-  $delay: null;
-  $defaultProperties: ($property, $duration, $timingFunc, $delay);
+  $easing: null; // Browser default is ease, which is what we want
+  $delay: null; // Browser default is 0, which is what we want
+  $defaultProperties: ($property, $duration, $easing, $delay);
 
   // Grab transition properties if they exist
   $unfoldedTransition: ();
