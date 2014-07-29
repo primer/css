@@ -14,7 +14,7 @@
 @function unfoldTransition ($transition) {
   // Default values
   $property: all;
-  $duration: .2;
+  $duration: 0.2s;
   $easing: null; // Browser default is ease, which is what we want
   $delay: null; // Browser default is 0, which is what we want
   $defaultProperties: ($property, $duration, $easing, $delay);
