@@ -57,7 +57,7 @@
       width: 16px;
       color: $brand-lightGrey;
       text-align: center;
-      @include transition($property: color, $time: .25s);
+      @include transition(color .25s);
     }
 
     &:hover .octicon {
