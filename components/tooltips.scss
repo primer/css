@@ -57,7 +57,7 @@ $tooltip-text-color: #fff;
   content: attr(aria-label);
   background: $tooltip-background-color;
   border-radius: 3px;
-  -webkit-font-smoothing: initial;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 // This is the tooltip arrow
@@ -241,14 +241,14 @@ $tooltip-text-color: #fff;
     width: -webkit-max-content;
     max-width: $multiline-max-width;
     word-break: break-word;
-    word-wrap: initial;
+    word-wrap: normal;
     white-space: pre-line;
-    border-collapse: initial;
+    border-collapse: separate;
   }
 
   &.tooltipped-s:after,
   &.tooltipped-n:after {
-    right: initial;
+    right: auto;
     left: 50%;
     @include transform(translateX(-50%) !important);
   }
