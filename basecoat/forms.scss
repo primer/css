@@ -969,17 +969,13 @@ p.explain {
   background: #ffffe2;
   border: 1px solid #e7e4c2;
   border-radius: 4px;
-}
 
-.form-warning p {
-  margin: 0;
-  line-height: 1.5;
-}
+  p {
+    margin: 0;
+    line-height: 1.5;
+  }
 
-.form-warning strong {
-  color: #000;
-}
+  strong { color: #000; }
 
-.form-warning a {
-  font-weight: bold;
+  a { font-weight: bold; }
 }
