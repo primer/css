@@ -503,12 +503,6 @@ dl.form {
   select { margin-top: 5px; }
 }
 
-
-// DEPRECATED: Spacing alignment for fieldgroups
-.fieldgroup .fields dl.form:first-child {
-  margin-top: 0;
-}
-
 // IE 9
 html.no-dnd-uploads {
   .drag-and-drop {
@@ -817,13 +811,70 @@ input::-webkit-inner-spin-button {
 
 
 
-//------------------------------------------------------------------------------
-//  @group Field Groups
-//------------------------------------------------------------------------------
+//
+// Field Groups
+//
 
 .fieldgroup {
   position: relative;
   margin-top: 10px;
+
+  p.explain { margin: 0; }
+
+  p:first-child { margin-top: 0; }
+
+  .fields { margin: 10px 0 0; }
+
+  p.addlink {
+    margin: 15px 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  p.checkbox {
+    label { margin-left: 5px; }
+
+    .succeed {
+      margin-left: 10px;
+      font-weight: normal;
+      color: #3c0;
+    }
+  }
+
+  p.danger {
+    margin: 15px 0;
+    font-weight: bold;
+    color: #c00;
+  }
+
+  div.error {
+    padding: 10px;
+    margin: 10px 0 0;
+    font-weight: bold;
+    color: #fff;
+    background: #a00;
+    border-radius: 4px;
+    -webkit-font-smoothing: antialiased;
+
+    p { margin: 0; }
+
+    p + p { margin-top: 10px; }
+  }
+
+  p.extra {
+    margin: -8px 0 15px;
+    font-size: 12px;
+    color: #666;
+  }
+
+  p.legal {
+    margin: 15px 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  // DEPRECATED: Spacing alignment for fieldgroups
+  .fields dl.form:first-child { margin-top: 0; }
 }
 
 .sidebar .fieldgroup + .fieldgroup {
@@ -856,75 +907,12 @@ p.explain {
     top: -4px;
     float: right;
   }
-
-}
-
-.fieldgroup p.explain {
-  margin: 0;
 }
 
 .options-content p.explain {
   padding: 10px 10px 0;
   margin-top: 0;
   border-top: 1px solid #ddd;
-}
-
-.fieldgroup .fields {
-  margin: 10px 0 0;
-}
-
-.fieldgroup p.addlink {
-  margin: 15px 0;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.fieldgroup p.checkbox label {
-  margin-left: 5px;
-}
-
-.fieldgroup p.checkbox .succeed {
-  margin-left: 10px;
-  font-weight: normal;
-  color: #3c0;
-}
-
-.fieldgroup p.danger {
-  margin: 15px 0;
-  font-weight: bold;
-  color: #c00;
-}
-
-.fieldgroup p:first-child { margin-top: 0; }
-
-.fieldgroup p.extra {
-  margin: -8px 0 15px;
-  font-size: 12px;
-  color: #666;
-}
-
-.fieldgroup p.legal {
-  margin: 15px 0;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.fieldgroup div.error {
-  padding: 10px;
-  margin: 10px 0 0;
-  font-weight: bold;
-  color: #fff;
-  background: #a00;
-  border-radius: 4px;
-  -webkit-font-smoothing: antialiased;
-}
-
-.fieldgroup div.error p {
-  margin: 0;
-}
-
-.fieldgroup div.error p + p {
-  margin-top: 10px;
 }
 
 .form-actions {
