@@ -930,35 +930,35 @@ p.explain {
 .form-actions {
   padding-bottom: 5px;
   text-align: right;
-}
 
-.form-actions .cancel {
-  float: left;
-  margin-top: 5px;
-}
+  .cancel {
+    float: left;
+    margin-top: 5px;
+  }
 
-.form-actions .button.cancel {
-  margin-top: 0;
-  margin-left: 2px;
-}
+  .button.cancel {
+    margin-top: 0;
+    margin-left: 2px;
+  }
 
-.form-actions .minibutton.cancel {
-  margin-top: 0;
-}
+  .minibutton.cancel {
+    margin-top: 0;
+  }
 
-.form-actions .optional {
-  float: left;
-  padding-top: 8px;
-  margin-right: 15px;
-}
+  .optional {
+    float: left;
+    padding-top: 8px;
+    margin-right: 15px;
 
-.form-actions .optional span.text {
-  padding: 0 3px;
-}
+    span.text {
+      padding: 0 3px;
+    }
 
-.form-actions .optional input {
-  position: relative;
-  top: -1px;
+    input {
+      position: relative;
+      top: -1px;
+    }
+  }
 }
 
 .form-warning {
