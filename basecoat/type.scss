@@ -45,6 +45,11 @@ blockquote {
 .text-muted { color: #999; }
 .text-danger { color: $brand-red; }
 
+.text-emphasized {
+  color: #333;
+  font-weight: bold;
+}
+
 
 // Lists
 // --------------------------------------------------
