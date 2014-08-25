@@ -913,12 +913,12 @@ p.explain {
   top: 3px;
 }
 
-.status-indicator-success {
+.status-indicator-success:before {
   content: "\f03a"; // octicon-check
   color: $brand-green;
 }
   
-.status-indicator-fail {
+.status-indicator-failed:before {
   content: "\f02d"; // octicon-x
   color: $brand-red;
 }
