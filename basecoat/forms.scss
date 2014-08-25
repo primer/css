@@ -894,3 +894,31 @@ p.explain {
 
   a { font-weight: bold; }
 }
+
+// Inline verification
+// Used for example when autosaving checkboxes in settings
+
+.status-indicator {
+  @include icon-bootstrap(16px);
+  margin-left: 5px;
+}
+
+.status-indicator-loading {
+  width: 16px;
+  height: 16px;
+  background: url("/images/spinners/octocat-spinner-32-EAF2F5.gif") 0 0 no-repeat;
+  background-size: 16px;
+  margin-top: -2px;
+  position: relative;
+  top: 3px;
+}
+
+.status-indicator-success {
+  content: "\f03a"; // octicon-check
+  color: $brand-green;
+}
+  
+.status-indicator-fail {
+  content: "\f02d"; // octicon-x
+  color: $brand-red;
+}
