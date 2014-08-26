@@ -904,21 +904,21 @@ p.explain {
 }
 
 .status-indicator-loading {
-  width: 16px;
-  height: 16px;
-  background: url("/images/spinners/octocat-spinner-32-EAF2F5.gif") 0 0 no-repeat;
-  background-size: 16px;
-  margin-top: -4px;
   position: relative;
   top: 3px;
+  width: 16px;
+  height: 16px;
+  margin-top: -4px;
+  background: url("/images/spinners/octocat-spinner-32-EAF2F5.gif") 0 0 no-repeat;
+  background-size: 16px;
 }
 
 .status-indicator-success:before {
-  content: "\f03a"; // octicon-check
   color: $brand-green;
+  content: "\f03a"; // octicon-check
 }
   
 .status-indicator-failed:before {
-  content: "\f02d"; // octicon-x
   color: $brand-red;
+  content: "\f02d"; // octicon-x
 }
