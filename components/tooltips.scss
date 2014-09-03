@@ -32,8 +32,8 @@ $tooltip-text-color: #fff;
 // This is the tooltip bubble
 .tooltipped:after {
   position: absolute;
-  display: none;
   z-index: 1000000;
+  display: none;
   padding: 5px 8px;
   font: normal normal 10px/1.5 $bodyFont;
   color: $tooltip-text-color;
@@ -54,12 +54,12 @@ $tooltip-text-color: #fff;
 // This is the tooltip arrow
 .tooltipped:before {
   position: absolute;
-  display: none;
-  pointer-events: none;
   z-index: 1000001;
+  display: none;
   width: 0;
   height: 0;
   color: $tooltip-background-color;
+  pointer-events: none;
   content: "";
   border: 5px solid transparent;
 }
