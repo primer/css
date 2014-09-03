@@ -252,8 +252,6 @@ $tooltip-text-color: #fff;
 
 // Colors for different alert states.
 //
-// .tooltipped-error - General Error tooltip.
-//
 // Styleguide 9.4
 @mixin colorizeTooltip($text-color, $background-color) {
   &:after {
@@ -284,10 +282,6 @@ $tooltip-text-color: #fff;
   &.tooltipped-w:before {
     border-left-color: $background-color;
   }
-}
-
-.tooltipped-error {
-  @include colorizeTooltip(#613a00, rgba(245, 218, 192, .8));
 }
 
 .fullscreen-overlay-enabled.dark-theme .tooltipped {
