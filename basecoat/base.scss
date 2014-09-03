@@ -6,7 +6,6 @@
   @include box-sizing;
 }
 
-body,
 input,
 select,
 textarea,
@@ -15,6 +14,7 @@ button {
 }
 
 body {
+  font: $bodySize/1.4 $bodyFont;
   min-width: 1020px; // 980px container + 20px padding on either side
   color: $brand-darkGrey;
   background-color: #fff;
