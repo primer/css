@@ -1,4 +1,3 @@
-@import "primer/mixins/gradient";
 @import "primer/mixins/variables";
 
 // Flash Messages. Use these for temporary, dismissable notifications.
@@ -15,46 +14,34 @@
 .flash,
 .flash-global {
   position: relative;
+  font-size: 14px;
   color: #264c72;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
-  @include gradient(#d8ebf8, #d0e3ef);
-  border: 1px solid #97c1da;
+  background-color: #d9e6f3;
 
   &.flash-warn {
     color: #613a00;
-    @include gradient(#ffe3c8, #f5dac0);
-    border-color: #dca874;
+    background-color: #ffebd6;
   }
 
   &.flash-error {
     color: #911;
-    @include gradient(#f8d8d8, #efd0d0);
-    border-color: #da9797;
-  }
-
-  &:hover {
-    border-color: darken(#97c1da, 15%);
-  }
-
-  &.flash-warn:hover {
-    border-color: darken(#dca874, 15%);
-  }
-
-  &.flash-error:hover {
-    border-color: darken(#da9797, 15%);
+    background-color: #fed0d0;
   }
 
   .close {
+    position: absolute;
+    top: 0;
+    right: 0;
     float: right;
-    margin-top: 1px;
+    padding: 17px; // bigger hit area
     color: inherit;
     text-decoration: none;
     cursor: pointer;
-    opacity: .6;
-  }
+    opacity: 0.6;
 
-  &:hover .close {
-    opacity: 1;
+    &:hover {
+      opacity: 1;
+    }
   }
 
   // Flashes can have an action button instead of the cross.
@@ -73,9 +60,8 @@
 }
 
 .flash {
-  padding: 15px;
+  padding: 15px 50px 15px 15px; // right padding for close icon
   border-radius: 3px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
 
   + .flash { margin-top: 5px; }
 }
@@ -87,8 +73,6 @@
 //
 // Styleguide 15.1
 .flash-global {
-  top: -1px;
-  z-index: 5;
   padding: 10px;
   border-width: 1px 0;
 
@@ -96,7 +80,7 @@
   p {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.4;
   }
 
@@ -127,3 +111,4 @@
   margin-top: 0;
   margin-bottom: 5px;
 }
+
