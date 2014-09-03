@@ -41,11 +41,7 @@ $tooltip-text-color: #fff;
 // This is the tooltip bubble
 .tooltipped:after {
   padding: 5px 8px;
-  font-family: $bodyFont;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1.5;
+  font: normal normal 10px/1.5 $bodyFont;
   color: $tooltip-text-color;
   text-align: center;
   text-decoration: none;
