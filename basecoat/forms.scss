@@ -291,6 +291,32 @@ dl.form {
   height: 31px;
   margin: 0 0 15px;
 
+  .card {
+    float: left;
+    width: 47px;
+    height: 31px;
+    text-indent: -9999px;
+    background-image: url("/images/modules/pricing/credit-cards-@1x.png");
+    background-position: 0 0;
+    opacity: 0.6;
+
+    &.visa { background-position: 0 0; }
+
+    &.amex { background-position: -50px 0; }
+
+    &.mastercard { background-position: -100px 0; }
+
+    &.discover { background-position: -150px 0; }
+
+    &.jcb { background-position: -200px 0; }
+
+    &.dinersclub { background-position: -250px 0; }
+
+    &.enabled { opacity: 1; }
+
+    &.disabled{ opacity: 0.2; }
+  }
+
   > .cards {
     margin: 0;
 
@@ -304,48 +330,6 @@ dl.form {
         line-height: 31px;
         color: #999;
       }
-    }
-
-    .card {
-      float: left;
-      width: 47px;
-      height: 31px;
-      text-indent: -9999px;
-      background-image: url("/images/modules/pricing/credit-cards-@1x.png");
-      background-position: 0 0;
-      opacity: 0.6;
-
-      &.visa {
-        background-position: 0 0;
-      }
-
-      &.amex {
-        background-position: -50px 0;
-      }
-
-      &.mastercard {
-        background-position: -100px 0;
-      }
-
-      &.discover {
-        background-position: -150px 0;
-      }
-
-      &.jcb {
-        background-position: -200px 0;
-      }
-
-      &.dinersclub {
-        background-position: -250px 0;
-      }
-    }
-
-    .card.enabled {
-      opacity: 1;
-    }
-
-    .card.disabled {
-      opacity: 0.2;
     }
   }
 }
