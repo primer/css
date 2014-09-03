@@ -2,7 +2,7 @@
 @import "primer/mixins/transform";
 
 $multiline-max-width: 250px;
-$tooltip-background-color: rgba(0, 0, 0, .8);
+$tooltip-background-color: rgba(0, 0, 0, 0.8);
 $tooltip-text-color: #fff;
 
 // `.tooltipped` is our tooltip class used across the site. All you need to do
@@ -321,9 +321,9 @@ $tooltip-text-color: #fff;
 }
 
 .tooltipped-error {
-  @include colorizeTooltip(#613a00, rgba(245, 218, 192, .8));
+  @include colorizeTooltip(#613a00, rgba(245, 218, 192, 0.8));
 }
 
 .fullscreen-overlay-enabled.dark-theme .tooltipped {
-  @include colorizeTooltip(#000, rgba(255, 255, 255, .8));
+  @include colorizeTooltip(#000, rgba(255, 255, 255, 0.8));
 }
