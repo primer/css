@@ -30,6 +30,9 @@ linters:
   NameFormat:
     enabled: false
 
+  LeadingZero:
+    style: include_zero
+
   MergeableSelector:
     enabled: false
     force_nesting: false
