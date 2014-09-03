@@ -29,17 +29,12 @@ $tooltip-text-color: #fff;
   position: relative;
 }
 
-// Setup the tooltip bubble and the arrow
-.tooltipped:after,
-.tooltipped:before {
-  position: absolute;
-  z-index: 1000000;
-  display: none;
-  pointer-events: none;
-}
-
 // This is the tooltip bubble
 .tooltipped:after {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+  z-index: 1000000;
   padding: 5px 8px;
   font: normal normal 10px/1.5 $bodyFont;
   color: $tooltip-text-color;
@@ -58,6 +53,9 @@ $tooltip-text-color: #fff;
 
 // This is the tooltip arrow
 .tooltipped:before {
+  position: absolute;
+  display: none;
+  pointer-events: none;
   z-index: 1000001;
   width: 0;
   height: 0;
@@ -89,23 +87,18 @@ $tooltip-text-color: #fff;
 .tooltipped-s,
 .tooltipped-se,
 .tooltipped-sw {
-  &:after,
-  &:before {
+  &:after {
     top: 100%;
     right: 50%;
+    margin-top: 5px;
   }
 
   &:before {
     top: auto;
+    right: 50%;
     bottom: -5px;
     margin-right: -5px;
     border-bottom-color: $tooltip-background-color;
-  }
-}
-
-.tooltipped-s {
-  &:after {
-    margin-top: 5px;
   }
 }
 
@@ -113,39 +106,30 @@ $tooltip-text-color: #fff;
   &:after {
     right: auto;
     left: 50%;
-    margin-top: 5px;
     margin-left: -15px;
   }
 }
 
-.tooltipped-sw {
-  &:after {
-    margin-top: 5px;
-    margin-right: -15px;
-  }
+.tooltipped-sw:after {
+  margin-right: -15px;
 }
 
 // Tooltips above the object
 .tooltipped-n,
 .tooltipped-ne,
 .tooltipped-nw {
-  &:after,
-  &:before {
+  &:after {
     right: 50%;
     bottom: 100%;
+    margin-bottom: 5px;
   }
 
   &:before {
     top: -5px;
+    right: 50%;
     bottom: auto;
     margin-right: -5px;
     border-top-color: $tooltip-background-color;
-  }
-}
-
-.tooltipped-n {
-  &:after {
-    margin-bottom: 5px;
   }
 }
 
@@ -153,16 +137,12 @@ $tooltip-text-color: #fff;
   &:after {
     right: auto;
     left: 50%;
-    margin-bottom: 5px;
     margin-left: -15px;
   }
 }
 
-.tooltipped-nw {
-  &:after {
-    margin-right: -15px;
-    margin-bottom: 5px;
-  }
+.tooltipped-nw:after {
+  margin-right: -15px;
 }
 
 // Move the tooltip body to the center of the object.
@@ -173,18 +153,16 @@ $tooltip-text-color: #fff;
 
 // Tooltipped to the left
 .tooltipped-w {
-  &:after,
-  &:before {
-    bottom: 50%;
-  }
-
   &:after {
     right: 100%;
     margin-right: 5px;
+    bottom: 50%;
+    @include transform(translateY(50%));
   }
 
   &:before {
     top: 50%;
+    bottom: 50%;
     left: -5px;
     margin-top: -5px;
     border-left-color: $tooltip-background-color;
@@ -193,28 +171,20 @@ $tooltip-text-color: #fff;
 
 // tooltipped to the right
 .tooltipped-e {
-  &:after,
-  &:before {
-    bottom: 50%;
-  }
-
   &:after {
+    bottom: 50%;
     left: 100%;
     margin-left: 5px;
+    @include transform(translateY(50%));
   }
 
   &:before {
     top: 50%;
+    bottom: 50%;
     right: -5px;
     margin-top: -5px;
     border-right-color: $tooltip-background-color;
   }
-}
-
-// moving the tooltip body to the middle of the object.
-.tooltipped-w:after,
-.tooltipped-e:after {
-  @include transform(translateY(50%));
 }
 
 // `.tooltipped-multiline` Add this class when you have long content.
