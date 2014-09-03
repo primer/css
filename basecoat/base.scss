@@ -11,8 +11,7 @@ input,
 select,
 textarea,
 button {
-  font: $bodySize $bodyFont;
-  line-height: 1.4;
+  font: $bodySize/1.4 $bodyFont;
 }
 
 body {
