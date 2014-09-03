@@ -48,7 +48,7 @@
 
       &:after {
         @include gradient(#d26911, darken(#d26911, 5%));
-        box-shadow: inset -1px -1px 0 rgba(#000, .1);
+        box-shadow: inset -1px -1px 0 rgba(#000, 0.1);
       }
     }
 
@@ -57,7 +57,7 @@
       width: 16px;
       color: $brand-lightGrey;
       text-align: center;
-      @include transition(color .25s);
+      @include transition(color 0.25s);
     }
 
     &:hover .octicon {
@@ -78,7 +78,7 @@
     &.is-loading {
       .mini-loader {
         display: inline-block;
-        @include animation(mini-nav-loader, .4s, forwards);
+        @include animation(mini-nav-loader, 0.4s, forwards);
       }
 
       .octicon {
@@ -129,7 +129,7 @@
 
     &.selected {
       border-left: 1px solid transparent;
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, .05);
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
 
       &:after {
         top: -1px;
@@ -167,28 +167,28 @@
 }
 
 @-webkit-keyframes mini-nav-loader {
-  0%, 
-  90% { 
-    opacity: 0; 
+  0%,
+  90% {
+    opacity: 0;
   }
 
   100% { opacity: 1; }
 }
 
 @-moz-keyframes mini-nav-loader {
-  0%, 
-  90% { 
-    opacity: 0; 
+  0%,
+  90% {
+    opacity: 0;
   }
 
   100% { opacity: 1; }
 }
 
 @keyframes mini-nav-loader {
-  0%, 
-  90% { 
-    opacity: 0; 
+  0%,
+  90% {
+    opacity: 0;
   }
-  
+
   100% { opacity: 1; }
 }

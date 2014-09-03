@@ -36,12 +36,12 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 3px;
   outline: none;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
 
   &.focus,
   &:focus {
     border-color: #51a7e8;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 5px rgba(81, 167, 232, .5);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5);
   }
 
   // Inputs with contrast for easy light gray backgrounds against white.
@@ -66,7 +66,7 @@ textarea {
   background: #9c2400;
   border: 0;
   border-radius: 3px;
-  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 input::-webkit-validation-bubble-icon {
@@ -76,7 +76,7 @@ input::-webkit-validation-bubble-icon {
 ::-webkit-validation-bubble-arrow {
   background-color: #9c2400;
   border: solid 1px #9c2400;
-  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 // Mini inputs, to match .minibutton
@@ -313,7 +313,7 @@ dl.form {
       text-indent: -9999px;
       background-image: url("/images/modules/pricing/credit-cards-@1x.png");
       background-position: 0 0;
-      opacity: .6;
+      opacity: 0.6;
 
       &.visa {
         background-position: 0 0;
@@ -345,7 +345,7 @@ dl.form {
     }
 
     .card.disabled {
-      opacity: .2;
+      opacity: 0.2;
     }
   }
 }
@@ -381,7 +381,7 @@ dl.form {
   }
 
   &.loading {
-    opacity: .5;
+    opacity: 0.5;
 
     .indicator {
       display: inline;
@@ -576,7 +576,7 @@ html.no-dnd-uploads {
   padding: 5px;
   margin-left: -80px;
   cursor: pointer;
-  opacity: .0001;
+  opacity: 0.0001;
 }
 
 .manual-file-chooser:hover + .manual-file-chooser-text {
@@ -602,7 +602,7 @@ html.no-dnd-uploads {
 
 .focused .drag-and-drop {
   @extend input[type="text"]:focus;
-  box-shadow: rgba(#51a7e8, .5) 0 0 3px;
+  box-shadow: rgba(#51a7e8, 0.5) 0 0 3px;
 }
 
 // Dropping a file on top
@@ -884,4 +884,32 @@ p.explain {
   strong { color: #000; }
 
   a { font-weight: bold; }
+}
+
+// Inline verification
+// Used for example when autosaving checkboxes in settings
+
+.status-indicator {
+  @include icon-bootstrap(16px);
+  margin-left: 5px;
+}
+
+.status-indicator-loading {
+  position: relative;
+  top: 3px;
+  width: 16px;
+  height: 16px;
+  margin-top: -4px;
+  background: url("/images/spinners/octocat-spinner-32-EAF2F5.gif") 0 0 no-repeat;
+  background-size: 16px;
+}
+
+.status-indicator-success:before {
+  color: $brand-green;
+  content: "\f03a"; // octicon-check
+}
+
+.status-indicator-failed:before {
+  color: $brand-red;
+  content: "\f02d"; // octicon-x
 }
