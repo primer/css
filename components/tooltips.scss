@@ -33,7 +33,6 @@ $tooltip-text-color: #fff;
 .tooltipped:after {
   position: absolute;
   display: none;
-  pointer-events: none;
   z-index: 1000000;
   padding: 5px 8px;
   font: normal normal 10px/1.5 $bodyFont;
@@ -45,6 +44,7 @@ $tooltip-text-color: #fff;
   letter-spacing: normal;
   word-wrap: break-word;
   white-space: pre;
+  pointer-events: none;
   content: attr(aria-label);
   background: $tooltip-background-color;
   border-radius: 3px;
@@ -155,8 +155,8 @@ $tooltip-text-color: #fff;
 .tooltipped-w {
   &:after {
     right: 100%;
-    margin-right: 5px;
     bottom: 50%;
+    margin-right: 5px;
     @include transform(translateY(50%));
   }
 
@@ -180,8 +180,8 @@ $tooltip-text-color: #fff;
 
   &:before {
     top: 50%;
-    bottom: 50%;
     right: -5px;
+    bottom: 50%;
     margin-top: -5px;
     border-right-color: $tooltip-background-color;
   }

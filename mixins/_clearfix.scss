@@ -8,8 +8,8 @@
   }
 
   &:after {
-    clear: both;
     display: table;
+    clear: both;
     content: "";
   }
 }

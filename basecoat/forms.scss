@@ -14,8 +14,8 @@ fieldset {
 }
 
 label {
-  font-weight: bold;
   font-size: 13px;
+  font-weight: bold;
 }
 
 input[type="text"],
@@ -25,9 +25,9 @@ input[type="number"],
 input[type="tel"],
 input[type="url"],
 textarea {
-  font-size: 13px;
   min-height: 34px;
   padding: 7px 8px;
+  font-size: 13px;
   color: #333;
   vertical-align: middle;
   background-color: #fff;
