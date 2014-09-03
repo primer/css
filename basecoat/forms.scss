@@ -43,15 +43,15 @@ textarea {
     border-color: #51a7e8;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5);
   }
+}
 
-  // Inputs with contrast for easy light gray backgrounds against white.
-  &.input-contrast {
-    background-color: #fafafa;
+// Inputs with contrast for easy light gray backgrounds against white.
+// input.class is needed here to increase specifity over input[…]
+input.input-contrast,
+.input-contrast {
+  background-color: #fafafa;
 
-    &:focus {
-      background-color: #fff;
-    }
-  }
+  &:focus { background-color: #fff; }
 }
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
