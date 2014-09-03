@@ -13,7 +13,11 @@ fieldset {
   border: 0;
 }
 
-label,
+label {
+  font-weight: bold;
+  font-size: 13px;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -22,19 +26,6 @@ input[type="tel"],
 input[type="url"],
 textarea {
   font-size: 13px;
-}
-
-label {
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-input[type="tel"],
-input[type="url"],
-textarea {
   min-height: 34px;
   padding: 7px 8px;
   color: #333;
