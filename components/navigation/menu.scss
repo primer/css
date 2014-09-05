@@ -93,7 +93,11 @@
     border-bottom: 1px solid #ccc;
     border-left: 0;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
-
+    // Truncation
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
     img {
       float: left;
       margin: 0 10px 0 0;
