@@ -82,13 +82,12 @@ dd {
 // --------------------------------------------------
 
 tt,
-code,
-pre {
-  font-family: $monoFont;
-  font-size: 12px;
+code {
+  font: 12px $monoFont;
 }
 
 pre {
   margin-top: 0;
   margin-bottom: 0;
+  font: 12px $monoFont;
 }
