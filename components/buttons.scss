@@ -388,6 +388,10 @@
   &:hover {
     text-decoration: underline;
   }
+
+  &:focus {
+    outline: none; // Prevents the blue ring when clicked.
+  }
 }
 
 
