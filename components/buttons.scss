@@ -385,8 +385,13 @@
   @include user-select(none);
   -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: underline;
+  }
+
+  &:focus {
+    outline: none; // Prevents the blue ring when clicked.
   }
 }
 
