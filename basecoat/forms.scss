@@ -174,19 +174,6 @@ dl.form {
       &.long {
         width: 100%;
       }
-
-      &.is-autocheck-loading {
-        background-image: url("/images/spinners/octocat-spinner-32.gif");
-        background-size: 16px;
-      }
-
-      &.is-autocheck-successful {
-        background-image: url("/images/modules/ajax/success.png");
-      }
-
-      &.is-autocheck-errored {
-        background-image: url("/images/modules/ajax/error.png");
-      }
     }
 
     // For longer entries.
