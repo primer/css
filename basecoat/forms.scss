@@ -456,6 +456,10 @@ html.no-dnd-uploads {
   display: inline-block;
 }
 
+.is-empty .drag-and-drop .empty {
+  display: inline-block;
+}
+
 .is-bad-browser .drag-and-drop .bad-browser {
   display: inline-block;
 }
