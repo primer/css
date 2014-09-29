@@ -48,6 +48,15 @@ You should check in `bower.json` and everything under `vendor/assets/bower_compo
 gem 'sprockets', '2.2.2.backport2'
 ```
 
+## Contributing
+
+When Primer is updated, a few steps must take place after code is merged to `master` for proper versioning and usage in your apps.
+
+1. Bump the version number in `bower.json`. *It's purely placebo right now, but it's good habit.*
+2. [Create a new release](/github/primer/releases/new). Preface the tag version with a `v` (e.g., `v0.27.0`) and use that as the title as well. In the release body, give folks a brief list of what's changed.
+
+When done, move on to the [updating process[(#updating) in your app.
+
 ## Updating
 
 Within `bower.json`, update to a new release by changing the version number that follows the `#` in the dependency URL.
@@ -56,8 +65,8 @@ Within `bower.json`, update to a new release by changing the version number that
 {
   "name": "myapp",
   "dependencies": {
-		"primer": "https://github.com/github/primer.git#0.x.x"
-	}
+    "primer": "https://github.com/github/primer.git#0.x.x"
+  }
 }
 ```
 
