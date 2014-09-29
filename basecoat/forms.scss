@@ -116,6 +116,7 @@ dl.form {
   input[type="text"],
   input[type="password"],
   input[type="email"],
+  input[type="url"],
   textarea {
     background-color: #fafafa;
 
@@ -157,23 +158,20 @@ dl.form {
     // Styleguide 2.1.1
     input[type="text"],
     input[type="password"],
-    input[type="email"] {
+    input[type="email"],
+    input[type="url"] {
       width: 440px;
       max-width: 100%;
       margin-right: 5px;
       background-position-x: 98%;
+    }
 
-      &.short {
-        width: 250px;
-      }
+    input {
+      &.shorter { width: 130px; }
+      
+      &.short { width: 250px; }
 
-      &.shorter {
-        width: 130px;
-      }
-
-      &.long {
-        width: 100%;
-      }
+      &.long { width: 100%; }
     }
 
     // For longer entries.
