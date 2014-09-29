@@ -55,7 +55,7 @@ When Primer is updated, a few steps must take place after code is merged to `mas
 1. Bump the version number in `bower.json`. *It's purely placebo right now, but it's good habit.*
 2. [Create a new release](/github/primer/releases/new). Preface the tag version with a `v` (e.g., `v0.27.0`) and use that as the title as well. In the release body, give folks a brief list of what's changed.
 
-When done, move on to the [updating process[(#updating) in your app.
+When done, move on to the [updating process](#updating) in your app.
 
 ## Updating
 
