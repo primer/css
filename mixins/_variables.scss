@@ -31,14 +31,14 @@ $mono-font: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
 
 // z-index variables
 //
-// $minorZ        - for use with small tweaks, like positioning elements
-// $menuZ         - for use with Menus, Dropdowns, popups
-// $modalZ        - for use with fullscreen absolute top elements
+// $zindex-minor        - for use with small tweaks, like positioning elements
+// $zindex-menu         - for use with Menus, Dropdowns, popups
+// $zindex-modal        - for use with fullscreen absolute top elements
 //
 // Styleguide 3.2
-$minorZ: 2;
-$menuZ: 5;
-$modalZ: 10;
+$zindex-minor: 2;
+$zindex-menu: 5;
+$zindex-modal: 10;
 
 // State indicators.
 //
