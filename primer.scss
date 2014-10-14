@@ -1,0 +1,26 @@
+// Primer master file
+//
+// Imports all Primer files in their intended order for easy mass-inclusion.
+// Should you need specific files, you can easily use separate `@import`s.
+
+// Global requirements
+@import "variables";
+@import "mixins";
+
+// Basecoat
+@import "normalize";
+@import "base";
+@import "type";
+@import "forms";
+@import "utility";
+
+// Components
+@import "menu";
+@import "sunken-menu";
+@import "tabnav";
+@import "filter-list";
+@import "alerts";
+@import "truncate";
+@import "buttons";
+@import "counter";
+@import "tooltips";
