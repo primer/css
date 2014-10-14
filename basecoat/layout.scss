@@ -15,9 +15,9 @@
 // padding on `.column`s with negative margin for alignment.
 
 .columns {
-  @include clearfix();
   margin-right: -$grid-gutter;
   margin-left: -$grid-gutter;
+  @include clearfix();
 }
 
 // Base class for every column (requires a column width from below)
