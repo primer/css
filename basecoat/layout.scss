@@ -15,15 +15,15 @@
 
 .columns {
   @include clearfix();
-  margin-left: -$grid-gutter;
   margin-right: -$grid-gutter;
+  margin-left: -$grid-gutter;
 }
 
 // Base class for every column (requires a column width from below)
 .column {
   float: left;
-  padding-left: $grid-gutter;
   padding-right: $grid-gutter;
+  padding-left: $grid-gutter;
 }
 
 // Column widths
@@ -51,7 +51,7 @@
 .table-column {
   display: table-cell;
   width: 1%;
-  padding-left: $grid-gutter;
   padding-right: $grid-gutter;
+  padding-left: $grid-gutter;
   vertical-align: top;
 }
