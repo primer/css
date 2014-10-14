@@ -47,6 +47,13 @@
   width: 75%;
 }
 
+// Single column hack
+.single-column {
+  padding-left: $grid-gutter;
+  padding-right: $grid-gutter;
+}
+
+
 // Equal width columns via table sorcery.
 .table-column {
   display: table-cell;
