@@ -1,8 +1,3 @@
-@import "primer/mixins/variables";
-@import "primer/mixins/clearfix";
-@import "primer/mixins/gradient";
-
-
 // Base form controls
 //
 // Styleguide 2.0
@@ -168,7 +163,7 @@ dl.form {
 
     input {
       &.shorter { width: 130px; }
-      
+
       &.short { width: 250px; }
 
       &.long { width: 100%; }

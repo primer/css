@@ -1,7 +1,3 @@
-@import "primer/mixins/variables";
-@import "primer/mixins/clearfix";
-@import "primer/mixins/box-sizing";
-
 * {
   @include box-sizing;
 }
