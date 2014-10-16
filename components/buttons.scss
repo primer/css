@@ -1,3 +1,18 @@
+// Buttons have a few required constraints for proper functionality, accessibility, and styling.
+//
+// - Whenever possible, use `<button type="button">` over `<a href="#">`.
+// - Always declare a `type` on your `<button>` elements to ensure zero hiccups
+// with nearby forms and property order.
+// - Never set `tabindex` on buttons—let the browser automatically set that.
+// - For [tooltips](/styleguide/css/9.0#9.1), always place the
+// `aria-label` and `.tooltipped` classes directly on the `<button>` or `<a>`.
+// - Octicons and tooltips conflict, therefore Octicons should always be children
+// elements of `<button>`s or `<a>`s.
+//
+// For more general guidelines, consult the [markup and template guidelines](/styleguide/templates).
+//
+// Styleguide 1.0
+
 @import "primer/mixins/user-select";
 @import "primer/mixins/icon-bootstrap";
 @import "primer/mixins/gradient";
@@ -5,22 +20,20 @@
 @import "primer/mixins/clearfix";
 @import "primer/mixins/variables";
 
+// Button
+//
 // Use the standard, but classy, `.button` for form actions and primary
 // page actions. These are used extensively around the site.
 //
-// :hover               - Buttons love hover states.
-// :active              - Buttons love active states.
-// :disabled            - For when you shouldn't be able to click on it.
+// ```html
+// <button class="button$modifier_class">Button (button.button)</button>
+// <a href="#" class="button$modifier_class">Button (a.button)</a>
+// ```
+//
 // .disabled            - Same as the disabled pseudo-class.
 // .primary             - For the main form action, use whenever creating something.
-// .primary:hover       - Hover state fo primary buttons.
-// .primary:active      - A brief moment of polish when the button is pressed.
-// .primary:disabled    - Even primary buttons have a down state.
 // .primary.disabled    - Same as the disabled pseudo-class.
 // .danger              - For potentially bad or destructive actions.
-// .danger:hover        - Hover state for danger buttons.
-// .danger:active       - Depressed danger button.
-// .danger:disabled     - Disabled danger button.
 // .danger.disabled     - Same as the disabled pseudo-class.
 //
 // Styleguide 1.1
@@ -158,9 +171,18 @@
   }
 }
 
-
+// Octicon buttons
+//
 // Improve alignemnt of Octicons within buttons and minibuttons. Also auto tweak
 // the right arrow to float right for ease of use.
+//
+// ```html
+// <button class="button" type="button">
+//   <span class="octicon $modifier_class"></span>
+//   Button icon
+// </button>
+// <a href="#" class="minibutton"><span class="octicon $modifier_class"></span> Minibutton</a>
+// ```
 //
 // .octicon-tools            - Admin
 // .octicon-eye-watch        - Watch
@@ -191,22 +213,20 @@
   margin-top: 4px;
 }
 
-
+// Minibutton
+//
 // Minibuttons are our general action-style buttons. Generally they link to a
 // new page, popup, or activate some piece of the page. They are usually not
 // used to submit forms. Also see the `minibutton` rails helper.
 //
-// :hover            - The hover state.
-// :active           - The active state.
+// ```html
+// <a href="#" class="minibutton$modifier_class">Minibutton</a>
+// ```
+//
 // .selected         - A permenantly depressed minibutton, useful for toggles.
-// :disabled         - A disabled button.
 // .disabled         - Same as pseudo class.
 // .primary           - For the main form action, use whenever creating something.
-// .primary:hover     - Hover state fo primary buttons.
-// .primary:active    - A brief moment of polish when the button is pressed.
 // .danger           - This button might do something bad.
-// .danger:hover     - This button might do something bad.
-// .danger:active    - A depressed danger button.
 //
 // Styleguide 1.2
 .minibutton {
@@ -214,8 +234,13 @@
   line-height: 24px;
 }
 
-
+// Hidden text button
+//
 // Use `.hidden-text-expander` to indicate and expand hidden text.
+//
+// ```html
+// <span class="hidden-text-expander$modifier_class"><a href="#">…</a></span>
+// ```
 //
 // .inline - button will display inline rather than block
 //
@@ -256,10 +281,17 @@
   }
 }
 
-
+// Social count bubble
+//
 // A container that is used for social bubbles counts.
 //
-// .social-count - social count bubble number
+// ```html
+// <a href="#" class="minibutton with-count">
+//   <span class="octicon octicon-eye"></span>
+//   Watch
+// </a>
+// <a class="social-count" href="#">6</a>
+// ```
 //
 // Styleguide 1.2.3
 .social-count {
@@ -283,8 +315,14 @@
   }
 }
 
-
-// Full-width button.
+// Full-width button
+//
+// These buttons expand to the full width of their parent container
+//
+// ```html
+// <a class="button button-block" href="#">Full width button</a>
+// <button class="button button-block" type="button">Full width button</button>
+// ```
 //
 // Styleguide 1.3
 .button-block {
@@ -294,11 +332,30 @@
   @include box-sizing(border-box);
 }
 
-
+// Button group
+//
 // A button group is a series of buttons laid out next to each other, all part
 // of one visual button, but separated by rules to be separate. Inside each group
 // are either `.button`s or `.minibutton`s as immediate children. No extra markup is
 // required, and they work with any button modifier class.
+//
+// ```html
+// <p>
+//   <div class="button-group">
+//     <button type="button" class="button">Raw</button>
+//     <button type="button" class="button">Normal</button>
+//     <button type="button" class="button">History</button>
+//   </div>
+// </p>
+// <p>
+//   <div class="button-group">
+//     <button type="button" class="minibutton">Raw</button>
+//     <button type="button" class="minibutton">Normal</button>
+//     <button type="button" class="minibutton">History</button>
+//   </div>
+//   <button type="button" class="minibutton $modifier_class">Blame</button>
+// </p>
+// ```
 //
 // Styleguide 1.4
 .button-group {
@@ -360,17 +417,54 @@
   margin-left: 5px;
 }
 
-
+// Radio buttons
+//
 // Buttons backed by radio or checkbox control. Requires the use of `.hidden`
 // on the `input` to properly hide it.
+//
+// ```html
+// <p>
+//   <div class="button-group">
+//     <label class="button">
+//       <input type="radio" name="styleguide_state" class="labeled-button hidden" checked>
+//       Open
+//     </label>
+//     <label class="button">
+//       <input type="radio" name="styleguide_state" class="labeled-button hidden">
+//       Closed
+//     </label>
+//   </div>
+// </p>
+// <p>
+//   <div class="button-group">
+//     <label class="minibutton">
+//       <input type="checkbox" name="styleguide_label" class="labeled-button hidden" checked>
+//       Bug
+//     </label>
+//     <label class="minibutton">
+//       <input type="checkbox" name="styleguide_label" class="labeled-button hidden">
+//       Feature
+//     </label>
+//     <label class="minibutton">
+//       <input type="checkbox" name="styleguide_label" class="labeled-button hidden">
+//       Idea
+//     </label>
+//   </div>
+// </p>
+// ```
 //
 // Styleguide 1.5
 
 // No styles to accompany this. See styleguide for usage guidelines.
 
-
-// Link button. For when you want the appearance of a link, but the
+// Link button
+//
+// For when you want the appearance of a link, but the
 // behavior of a button. Ideal for avoiding `href="#"`.
+//
+// ```html
+// <button class="button-link" type="button">Link button</button>
+// ```
 //
 // Styleguide 1.6
 .button-link {
@@ -395,9 +489,21 @@
   }
 }
 
-
-// Outline button, for when we need a linky-action that's not too heavy in busier
+// Outline button
+//
+// for when we need a linky-action that's not too heavy in busier
 // areas like conversation timelines.
+//
+// ```html
+// <p>
+//   <button class="button-outline" type="button">Outline button</button>
+// </p>
+// <div class="button-group">
+//   <button class="button-outline" type="button">Outline button</button>
+//   <button class="button-outline" type="button">Outline button</button>
+//   <button class="button-outline" type="button">Outline button</button>
+// </div>
+// ```
 //
 // Styleguide 1.7
 .button-outline {
