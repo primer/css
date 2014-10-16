@@ -1,10 +1,29 @@
 @import "primer/mixins/variables";
 
+// Filters list
+//
 // A vertical list of filters. Grey text on white background.
 // Selecting a filter from the list will fill it's background
 // with blue and make the text white.
 //
-//   .small - a version of the list with shorter list items
+// ```html
+// <ul class="filter-list$modifier_class">
+//   <li>
+//     <a href="#" class="filter-item selected">
+//       <span class="count">21</span>
+//       First filter
+//     </a>
+//   </li>
+//   <li>
+//     <a href="#" class="filter-item">
+//       <span class="count">21</span>
+//       Second filter
+//     </a>
+//   </li>
+// </ul>
+// ```
+//
+// .small - a version of the list with shorter list items
 //
 // Styleguide 8.2
 ul.filter-list {
