@@ -278,7 +278,7 @@
   font-size: 11px;
   font-weight: bold;
   line-height: 24px;
-  color: $brand-darkGrey;
+  color: $brand-gray-dark;
   vertical-align: middle;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -287,7 +287,7 @@
   border-bottom-right-radius: 3px;
 
   &:hover {
-    color: $brand-linkBlue;
+    color: $brand-blue;
     text-decoration: none;
     cursor: pointer;
   }
@@ -449,7 +449,7 @@
   display: inline;
   padding: 0;
   font-size: inherit;
-  color: $brand-linkBlue;
+  color: $brand-blue;
   white-space: nowrap;
   cursor: pointer;
   background-color: transparent;
@@ -489,7 +489,7 @@
   padding: 7px 12px;
   font-size: 13px;
   font-weight: bold;
-  color: $brand-linkBlue;
+  color: $brand-blue;
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
@@ -503,8 +503,8 @@
   &.zeroclipboard-is-hover {
     color: #fff;
     text-decoration: none;
-    background-color: $brand-linkBlue;
-    border-color: $brand-linkBlue;
+    background-color: $brand-blue;
+    border-color: $brand-blue;
   }
 
   &:disabled,

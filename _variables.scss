@@ -9,35 +9,34 @@ $grid-gutter:     10px !default;
 // <div style="background: $modifier_description;" class="styleguide-color">$modifier_class</div>
 // ```
 //
-// .$brand-linkBlue - #4183c4
-// .$brand-lightGrey - #999
-// .$brand-medGrey - #666
-// .$brand-darkGrey - #333
+// .$brand-blue - #4183c4
+// .$brand-gray-light - #999
+// .$brand-gray - #666
+// .$brand-gray-dark - #333
 // .$brand-green - #6cc644
 // .$brand-red - #bd2c00
 // .$brand-orange - #f93
 // .$brand-purple - #6e5494
 //
 // Styleguide 11.1
-$brand-linkBlue:  #4183c4 !default;
-$brand-lightGrey: #999    !default;
-$brand-medGrey:   #666    !default;
-$brand-darkGrey:  #333    !default;
-$brand-green:     #6cc644 !default;
-$brand-red:       #bd2c00 !default;
-$brand-orange:    #f93    !default;
-$brand-purple:    #6e5494 !default;
+$brand-blue:       #4183c4 !default;
+$brand-gray-light: #999    !default;
+$brand-gray:       #666    !default;
+$brand-gray-dark:  #333    !default;
+$brand-green:      #6cc644 !default;
+$brand-red:        #bd2c00 !default;
+$brand-orange:     #f93    !default;
+$brand-purple:     #6e5494 !default;
 
 // Font stack
 //
 // The base body font, great everywhere.
-// `Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"`
 //
 // Styleguide 11.2.1
-$bodyFont: Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$body-font: Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol" !default;
 
 // The base body size
-$bodySize: 13px !default;
+$body-font-size: 13px !default;
 
 // Monospace font stack
 //
@@ -65,27 +64,9 @@ $bodySize: 13px !default;
 // </div>
 // ```
 //
-// .Consolas                     - Windows
-// ."Liberation Mono"            - Linux
-// .Menlo                        - Mac
-// .Courier                      - Windows, Mac, Linux
-// .monospace                    - Everywhere
-//
-// Styleguide 11.2.2
-$monoFont: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
+// Styleguide 3.1
+$mono-font: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
 
-// z-index variables
-//
-// These are encouraged to use with absolutely positioned elements.
-//
-// - **$minorZ** - for use with small tweaks, like positioning elements
-// - **$menuZ** - for use with Menus, Dropdowns, popups
-// - **$modalZ** - for use with fullscreen absolute top elements
-//
-// Styleguide 11.3
-$minorZ: 2;
-$menuZ: 5;
-$modalZ: 10;
 
 // State indicators.
 //
