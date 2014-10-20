@@ -7,7 +7,7 @@
 # below is our settings.
 
 exclude:
-  - 'basecoat/normalize.scss'
+  - "_normalize.scss"
 
 linters:
   StringQuotes:
