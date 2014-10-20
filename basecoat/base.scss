@@ -10,18 +10,18 @@ input,
 select,
 textarea,
 button {
-  font: #{$bodySize}/1.4 $bodyFont;
+  font: #{$body-font-size}/1.4 $body-font;
 }
 
 body {
   min-width: 1020px; // 980px container + 20px padding on either side
-  font: #{$bodySize}/1.4 $bodyFont;
-  color: $brand-darkGrey;
+  font: #{$body-font-size}/1.4 $body-font;
+  color: $brand-gray-dark;
   background-color: #fff;
 }
 
 a {
-  color: $brand-linkBlue;
+  color: $brand-blue;
   text-decoration: none;
 
   &:hover,

@@ -100,7 +100,7 @@ input.input-large {
 
 // Inputs with monospace text
 .input-monospace {
-  font-family: $monoFont;
+  font-family: $mono-font;
 }
 
 // Form groups
@@ -567,7 +567,7 @@ html.no-dnd-uploads {
   color: #aaa;
 
   a {
-    color: $brand-linkBlue;
+    color: $brand-blue;
   }
 }
 
