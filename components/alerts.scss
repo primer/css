@@ -32,6 +32,7 @@
 .flash-global {
   position: relative;
   font-size: 14px;
+  line-height: 1.6;
   color: #246;
   background-color: #e2eef9;
   border: solid 1px #bac6d3;
@@ -86,6 +87,12 @@
   a {
     font-weight: bold;
   }
+
+  .octicon {
+    float: left;
+    margin-top: 3px;
+    margin-left: -25px;
+  }
 }
 
 .flash {
@@ -93,6 +100,14 @@
   border-radius: 3px;
 
   + .flash { margin-top: 5px; }
+
+  &.flash-with-icon {
+    padding-left: 40px;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 // Global notices
