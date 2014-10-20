@@ -1,9 +1,21 @@
-// Flash Messages. Use these for temporary, dismissable notifications.
+
+// Flash Messages
+//
+// Use these for temporary, dismissable notifications.
+//
+// ```html
+// <div class="flash-messages">
+//   <div class="flash $modifier_class">
+//     <span class="octicon octicon-x flash-close js-flash-close"></span>
+//     Flash Message
+//   </div>
+// </div>
+// ```
 //
 // .flash-warn    - Warning notification
 // .flash-error   - Error notification
 //
-// Styleguide 15.0
+// Styleguide 15.1
 .flash-messages {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -45,9 +57,18 @@
     }
   }
 
+  // Flash action buttons
+  //
   // Flashes can have an action button instead of the cross.
   //
-  // Styleguide 15.0.1
+  // ```html
+  // <div class="flash">
+  //   <a href="#" class="minibutton primary flash-action">Do something</a>
+  //   Flash message with an action button
+  // </div>
+  // ```
+  //
+  // Styleguide 15.1.1
   .flash-action {
     float: right;
     margin-top: -4px;
@@ -67,12 +88,23 @@
   + .flash { margin-top: 5px; }
 }
 
-// Global notices. Useful for site-wide banners and global notifications.
+// Global notices
+//
+// Useful for site-wide banners and global notifications.
+//
+// ```html
+// <div class="flash-global $modifier_class">
+//   <div class="container">
+//     <h2>This is a global notice</h2>
+//     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+//   </div>
+// </div>
+// ```
 //
 // .flash-warn    - Warning notification
 // .flash-error  - Error notification
 //
-// Styleguide 15.1
+// Styleguide 15.2
 .flash-global {
   padding: 10px;
   border-width: 0 0 1px;
@@ -85,9 +117,23 @@
     line-height: 1.4;
   }
 
-  // Global flashes can have an action buttons too.
+  // Global flash buttons
   //
-  // Styleguide 15.1.1
+  // Global flashes can have an action buttons too. **Note:** In the example code below this, the `.container` class has been renamed
+  // so that the action button will show up given the narrower example space. In practice,
+  // you’ll need to change `.container-class-goes-here` back to just `.container`.
+  //
+  // ```html
+  // <div class="flash-global">
+  //   <div class="container-class-goes-here">
+  //     <a href="#" class="minibutton primary flash-action">Do something</a>
+  //     <h2>This is a global notice</h2>
+  //     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+  //   </div>
+  // </div>
+  // ```
+  //
+  // Styleguide 15.2.1
   .flash-action {
     margin-top: 5px;
   }
@@ -100,4 +146,3 @@
   margin-top: 0;
   margin-bottom: 5px;
 }
-

@@ -1,5 +1,36 @@
+// Sunken tab nav
+//
 // Sunken tabbed navigation menu. Really needs to be used with one of the
 // following modifier classes in order to make sense and not look like : poop:.
+//
+// ```html
+// <div class="sunken-menu vertical-right">
+//   <div class="sunken-menu-contents">
+//     <ul class="sunken-menu-group">
+//       <li>
+//         <a href="#" class="sunken-menu-item selected">
+//           <span class="octicon octicon-code"></span> Selected
+//         </a>
+//       </li>
+//       <li>
+//         <a href="#" class="sunken-menu-item is-loading">
+//           <span class="octicon octicon-issue-opened"></span> Loading
+//           <span class="counter">99</span>
+//           <img alt="" class="mini-loader" height="16" src="/images/spinners/octocat-spinner-32.gif" width="16">
+//         </a>
+//       </li>
+//     </ul>
+//     <div class="sunken-menu-separator"></div>
+//     <ul class="sunken-menu-group">
+//       <li>
+//         <a href="#" class="sunken-menu-item">
+//           <span class="octicon octicon-pulse"></span> Separated
+//         </a>
+//       </li>
+//     </ul>
+//   </div>
+// </div>
+// ```
 //
 // Styleguide 8.6
 .sunken-menu {

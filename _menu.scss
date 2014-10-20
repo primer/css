@@ -1,6 +1,17 @@
+// Side menu
+//
 // A menu on the side of a page, defaults to left side. e.g. github.com/about
 //
-// .menu li.active - Something
+// ```html
+// <div class="menu-container">
+//   <ul class="menu">
+//     <li><a href="#user" class="$modifier_class">Repositories</a></li>
+//     <li><a href="#user">Issues <span class="counter">21</span></a></li>
+//   </ul>
+// </div>
+// ```
+//
+// .selected - A selected tab
 //
 // Styleguide 8.3
 .menu-container {
@@ -63,7 +74,25 @@
   }
 }
 
+// Accordion menu
+//
 // Turn a menu into an accordion menu
+//
+// ```html
+// <div class="menu-container">
+//   <ul class="menu accordion">
+//     <li class="section">
+//       <a href="/settings/github" class="section-head">GitHub</a>
+//       <ul class="section-nav $modifier_class">
+//         <li><a href="#user">Repositories</a></li>
+//         <li><a href="#user">Issues <span class="counter">21</span></a></li>
+//       </ul>
+//     </li>
+//   </ul>
+// </div>
+// ```
+//
+// .expanded - Expand out the accordion
 //
 // Styleguide 8.3.1
 .accordion {
