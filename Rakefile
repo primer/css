@@ -1,5 +1,5 @@
 task :test do
-  lints = `scss-lint ./basecoat/ ./components/ ./mixins/`
+  lints = `scss-lint primer.scss`
   if lints != ''
     abort("scss-lint of the .scss files failed!\n#{lints}")
   end
