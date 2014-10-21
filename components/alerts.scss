@@ -65,6 +65,10 @@
     }
   }
 
+  p:last-child {
+    margin-bottom: 0;
+  }
+
   // Flash action buttons
   //
   // Flashes can have an action button instead of the cross.
@@ -87,6 +91,29 @@
   a {
     font-weight: bold;
   }
+}
+
+.flash {
+  padding: 15px;
+  border-radius: 3px;
+
+  + .flash { margin-top: 5px; }
+}
+
+// Flash messages with an icon
+//
+// Flashes can have an action button instead of the cross.
+//
+// ```html
+// <div class="flash flash-with-icon">
+//   <span class="octicon octicon-alert">
+//   Flash message with an icon.
+// </div>
+// ```
+//
+// Styleguide 15.1.2
+.flash-with-icon {
+  padding-left: 40px;
 
   .octicon {
     float: left;
@@ -95,20 +122,6 @@
   }
 }
 
-.flash {
-  padding: 15px;
-  border-radius: 3px;
-
-  + .flash { margin-top: 5px; }
-
-  &.flash-with-icon {
-    padding-left: 40px;
-  }
-
-  p:last-child {
-    margin-bottom: 0;
-  }
-}
 
 // Global notices
 //
