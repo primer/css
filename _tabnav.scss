@@ -189,7 +189,6 @@
       vertical-align: top;
       border-left: 0;
       border-radius: 0 3px 3px 0;
-      @include box-sizing(content-box);
 
       &:hover { color: #fff; }
     }

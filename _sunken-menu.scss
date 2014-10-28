@@ -82,7 +82,7 @@
       width: 16px;
       color: $brand-gray-light;
       text-align: center;
-      @include transition(color 0.25s);
+      transition: color 0.25s ease;
     }
 
     &:hover .octicon {
@@ -103,7 +103,7 @@
     &.is-loading {
       .mini-loader {
         display: inline-block;
-        @include animation(mini-nav-loader, 0.4s, forwards);
+        animation: mini-nav-loader, 0.4s, forwards;
       }
 
       .octicon {

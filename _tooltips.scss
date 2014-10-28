@@ -151,7 +151,7 @@ $tooltip-text-color: #fff;
 // Move the tooltip body to the center of the object.
 .tooltipped-s:after,
 .tooltipped-n:after {
-  @include transform(translateX(50%));
+  transform: translateX(50%);
 }
 
 // Tooltipped to the left
@@ -160,7 +160,7 @@ $tooltip-text-color: #fff;
     right: 100%;
     bottom: 50%;
     margin-right: 5px;
-    @include transform(translateY(50%));
+    transform: translateY(50%);
   }
 
   &:before {
@@ -178,7 +178,7 @@ $tooltip-text-color: #fff;
     bottom: 50%;
     left: 100%;
     margin-left: 5px;
-    @include transform(translateY(50%));
+    transform: translateY(50%);
   }
 
   &:before {
@@ -225,7 +225,7 @@ $tooltip-text-color: #fff;
   &.tooltipped-n:after {
     right: auto;
     left: 50%;
-    @include transform(translateX(-50%) !important);
+    transform: translateX(-50%);
   }
 
   &.tooltipped-w:after,
