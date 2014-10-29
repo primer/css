@@ -1,3 +1,9 @@
+@import "primer/mixins/clearfix";
+@import "primer/mixins/gradient";
+@import "primer/mixins/transition";
+@import "primer/mixins/animation";
+@import "primer/mixins/variables";
+
 // Sunken tab nav
 //
 // Sunken tabbed navigation menu. Really needs to be used with one of the
@@ -59,57 +65,6 @@
     bottom: 0;
     background-color: transparent;
     background-image: linear-gradient(rgba(#fff, 0), #fff);
-  }
-}
-
-.sunken-menu-item {
-  display: block;
-  padding: 8px 10px;
-  text-decoration: none;
-  text-shadow: 0 1px 0 #fff;
-  border: 1px solid transparent;
-  outline: 0;
-
-  &.selected {
-    font-weight: bold;
-    color: $brand-gray-dark;
-    background: #fff;
-    border: 1px solid #eee;
-
-    &:after {
-      @include gradient(#d26911, darken(#d26911, 5%));
-      box-shadow: inset -1px -1px 0 rgba(#000, 0.1);
-    }
-  }
-
-  .octicon {
-    left: -1px;
-    width: 16px;
-    color: $brand-gray-light;
-    text-align: center;
-    transition: color 0.25s ease;
-  }
-
-  &:hover .octicon {
-    color: $brand-gray-dark;
-  }
-
-  &.selected .octicon {
-    color: $brand-gray-dark;
-  }
-
-  .mini-loader {
-    position: absolute;
-    top: 9px;
-    left: 9px;
-    display: none;
-  }
-
-  &.is-loading {
-    .mini-loader {
-      display: inline-block;
-      animation: mini-nav-loader, 0.4s, forwards;
-    }
   }
 }
 
