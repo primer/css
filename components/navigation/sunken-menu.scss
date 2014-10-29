@@ -57,14 +57,14 @@
 
   &:before {
     top: 0;
-    background-image: linear-gradient(#fff, rgba(#fff, 0));
     background-color: transparent;
+    background-image: linear-gradient(#fff, rgba(#fff, 0));
   }
 
   &:after {
     bottom: 0;
-    background-image: linear-gradient(rgba(#fff, 0), #fff);
     background-color: transparent;
+    background-image: linear-gradient(rgba(#fff, 0), #fff);
   }
 }
 
@@ -76,10 +76,10 @@
 
   &:before {
     position: absolute;
-    content: "";
     top: 0;
     width: 100%;
     height: 1px;
+    content: "";
     background-image: linear-gradient(to right, #eee 70%, #fff 100%);
     border-top: 1px solid #eee\9; // Hack to give IE9 at least some separator
   }
@@ -91,9 +91,9 @@
 
 .sunken-menu-item {
   display: block;
+  padding: 8px 10px;
   margin-top: 5px;
   margin-bottom: 5px;
-  padding: 8px 10px;
   border: 1px solid transparent;
   outline: 0;
 
