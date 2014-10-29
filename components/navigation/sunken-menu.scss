@@ -7,212 +7,157 @@
 // Sunken tab nav
 //
 // Sunken tabbed navigation menu. Really needs to be used with one of the
-// following modifier classes in order to make sense and not look like : poop:.
+// following modifier classes in order to make sense and not look like :poop:.
 //
 // ```html
-// <div class="sunken-menu vertical-right">
-//   <div class="sunken-menu-contents">
-//     <ul class="sunken-menu-group">
-//       <li>
-//         <a href="#" class="sunken-menu-item selected">
-//           <span class="octicon octicon-code"></span> Selected
-//         </a>
-//       </li>
-//       <li>
-//         <a href="#" class="sunken-menu-item is-loading">
-//           <span class="octicon octicon-issue-opened"></span> Loading
-//           <span class="counter">99</span>
-//           <img alt="" class="mini-loader" height="16" src="/images/spinners/octocat-spinner-32.gif" width="16">
-//         </a>
-//       </li>
-//     </ul>
-//     <div class="sunken-menu-separator"></div>
-//     <ul class="sunken-menu-group">
-//       <li>
-//         <a href="#" class="sunken-menu-item">
-//           <span class="octicon octicon-pulse"></span> Separated
-//         </a>
-//       </li>
-//     </ul>
-//   </div>
+// <div class="sunken-menu">
+//   <ul class="sunken-menu-group">
+//     <li>
+//       <a href="#" class="sunken-menu-item selected">
+//         <span class="octicon octicon-code"></span> Selected
+//       </a>
+//     </li>
+//     <li>
+//       <a href="#" class="sunken-menu-item is-loading">
+//         <span class="octicon octicon-issue-opened"></span> Loading
+//         <span class="counter">99</span>
+//         <img alt="" class="mini-loader" height="16" src="/images/spinners/octocat-spinner-32.gif" width="16">
+//       </a>
+//     </li>
+//   </ul>
+//   <div class="sunken-menu-separator"></div>
+//   <ul class="sunken-menu-group">
+//     <li>
+//       <a href="#" class="sunken-menu-item">
+//         <span class="octicon octicon-pulse"></span> Separated
+//       </a>
+//     </li>
+//   </ul>
 // </div>
 // ```
 //
 // Styleguide 8.6
+
 .sunken-menu {
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-image: linear-gradient(to right, #f6f6f6 0%, #fff 8px);
+  box-shadow: inset 1px 0 0 #eee;
 
-  .sunken-menu-contents,
-  .sunken-menu-item,
-  .sunken-menu-separator {
-    position: relative;
-  }
-
-  .sunken-menu-contents:before,
-  .sunken-menu-contents:after,
-  .sunken-menu-item.selected:after,
-  .sunken-menu-separator:before {
+  &:before,
+  &:after {
     position: absolute;
+    left: 0;
+    width: 100%;
+    height: 15px;
     content: "";
+    background-color: transparent;
   }
 
-  .sunken-menu-contents {
-    margin: 0;
+  &:before {
+    top: 0;
+    background-color: transparent;
+    background-image: linear-gradient(#fff, rgba(#fff, 0));
   }
 
-  .sunken-menu-group {
-    list-style-type: none;
+  &:after {
+    bottom: 0;
+    background-color: transparent;
+    background-image: linear-gradient(rgba(#fff, 0), #fff);
+  }
+}
+
+.sunken-menu-separator {
+  position: relative;
+  height: 5px;
+  margin: 8px 0 6px 1px;
+  background-image: radial-gradient(farthest-side at left top, #f4f4f4, rgba(#f4f4f4, 0));
+
+  &:before {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background-image: linear-gradient(to right, #eee 70%, #fff 100%);
+    border-top: 1px solid #eee\9; // Hack to give IE9 at least some separator
+  }
+}
+
+.sunken-menu-group {
+  list-style-type: none;
+}
+
+.sunken-menu-item {
+  display: block;
+  padding: 8px 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid transparent;
+  outline: 0;
+
+  // Inner components
+  .counter {
+    position: absolute;
+    top: 8px;
+    right: 10px;
   }
 
-  .sunken-menu-item {
-    display: block;
-    padding: 8px 10px;
+  .octicon {
+    left: -1px;
+    width: 16px;
+    color: $brand-gray-light;
+    text-align: center;
+    transition: color 0.25s ease-in-out;
+  }
+
+  .mini-loader {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    display: none;
+  }
+
+  // States
+  &:focus,
+  &:hover {
     text-decoration: none;
-    text-shadow: 0 1px 0 #fff;
-    border: 1px solid transparent;
-    outline: 0;
+    box-shadow: inset 2px 0 0 #ccc;
 
-    &.selected {
-      font-weight: bold;
-      color: $brand-gray-dark;
-      background: #fff;
-      border: 1px solid #eee;
-
-      &:after {
-        @include gradient(#d26911, darken(#d26911, 5%));
-        box-shadow: inset -1px -1px 0 rgba(#000, 0.1);
-      }
-    }
-
-    .octicon {
-      left: -1px;
-      width: 16px;
-      color: $brand-gray-light;
-      text-align: center;
-      @include transition(color 0.25s);
-    }
-
-    &:hover .octicon {
-      color: $brand-gray-dark;
-    }
-
-    &.selected .octicon {
-      color: $brand-gray-dark;
-    }
-
-    .mini-loader {
-      position: absolute;
-      top: 9px;
-      left: 9px;
-      display: none;
-    }
-
-    &.is-loading {
-      .mini-loader {
-        display: inline-block;
-        @include animation(mini-nav-loader, 0.4s, forwards);
-      }
-
-      .octicon {
-        color: #fff;
-      }
-    }
+    .octicon { color: $brand-gray-dark; }
   }
-}
 
-.sunken-menu.vertical-right {
-  max-width: 250px;
+  &.selected {
+    font-weight: bold;
+    color: $brand-gray-dark;
+    background-color: #fff;
+    border-color: #eee #eee #eee transparent;
+    border-radius: 0 3px 3px 0;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
 
-  .sunken-menu-contents {
-    padding: 12px 0 15px;
-    background-image: -webkit-linear-gradient(left, #f6f6f6 0%, #fff 8px);
-    background-image: -moz-linear-gradient(left, #f6f6f6 0%, #fff 8px);
-    background-image: linear-gradient(to right, #f6f6f6 0%, #fff 8px);
-    box-shadow: inset 1px 0 0 #eee;
-
-    &:before,
     &:after {
-      left: 0;
-      width: 100%;
-      height: 15px;
-      background-color: transparent;
-    }
-
-    &:before {
+      position: absolute;
       top: 0;
-      @include gradient(#fff, rgba(#fff, 0));
-      background-color: transparent;
-    }
-
-    &:after {
+      right: 0;
       bottom: 0;
-      @include gradient(rgba(#fff, 0), #fff);
-      background-color: transparent;
-    }
-  }
-
-  .sunken-menu-item {
-    margin: 5px 0;
-
-    &:focus,
-    &:hover {
-      box-shadow: inset 2px 0 0 #ccc;
+      width: 3px;
+      content: "";
+      background-color: #d26911;
+      border-radius: 0 3px 3px 0;
     }
 
-    &.selected {
-      border-left: 1px solid transparent;
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+    .octicon { color: $brand-gray-dark; }
+  }
 
-      &:after {
-        top: -1px;
-        right: -1px;
-        bottom: -1px;
-        width: 3px;
-        border-radius: 0 2px 2px 0;
-      }
+  &.is-loading {
+    .mini-loader {
+      display: inline-block;
+      animation: mini-nav-loader, 0.4s, forwards;
     }
 
-    .counter {
-      position: absolute;
-      top: 8px;
-      right: 10px;
-    }
+    .octicon { color: #fff; }
   }
-
-  .sunken-menu-separator {
-    height: 5px;
-    margin: 8px 0 6px 1px;
-    background-image: -webkit-radial-gradient(left top, farthest-side, #f4f4f4, rgba(#f4f4f4, 0));
-    background-image: -moz-radial-gradient(left top, farthest-side, #f4f4f4, rgba(#f4f4f4, 0));
-    background-image: radial-gradient(farthest-side at left top, #f4f4f4, rgba(#f4f4f4, 0));
-
-    &:before {
-      top: 0;
-      width: 100%;
-      height: 1px;
-      background-image: -webkit-linear-gradient(left, #eee 70%, #fff 100%);
-      background-image: -moz-linear-gradient(left, #eee 70%, #fff 100%);
-      background-image: linear-gradient(to right, #eee 70%, #fff 100%);
-      border-top: 1px solid #eee\9; // Hack to give IE9 at least some separator
-    }
-  }
-}
-
-@-webkit-keyframes mini-nav-loader {
-  0%,
-  90% {
-    opacity: 0;
-  }
-
-  100% { opacity: 1; }
-}
-
-@-moz-keyframes mini-nav-loader {
-  0%,
-  90% {
-    opacity: 0;
-  }
-
-  100% { opacity: 1; }
 }
 
 @keyframes mini-nav-loader {
