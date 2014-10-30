@@ -3,139 +3,122 @@
 // A menu on the side of a page, defaults to left side. e.g. github.com/about
 //
 // ```html
-// <div class="menu-container">
-//   <ul class="menu">
-//     <li><a href="#user" class="$modifier_class">Repositories</a></li>
-//     <li><a href="#user">Issues <span class="counter">21</span></a></li>
-//   </ul>
-// </div>
+// <nav class="menu">
+//   <a class="menu-item $modifier_class" href="#">Repositories</a>
+//   <a class="menu-item" href="#">Issues <span class="counter">21</span></a>
+// </nav>
 // ```
 //
 // .selected - A selected tab
 //
 // Styleguide 8.3
-.menu-container {
-  float: left;
-  width: 200px;
-}
 
 .menu {
-  overflow: hidden;
+  margin-bottom: 15px;
   list-style: none;
-  background: #fafafb;
+  background-color: #fff;
   border: 1px solid #d8d8d8;
   border-radius: 3px;
+}
 
-  // Get rid of underlines on hover
-  a:hover { text-decoration: none; }
+.menu-item {
+  position: relative;
+  display: block;
+  padding: 8px 10px;
+  text-shadow: 0 1px 0 #fff;
+  border-bottom: 1px solid #eee;
 
-  li {
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #eee;
+  &:first-child {
+    border-top: 0;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
 
-    &:last-child { border-bottom: 0; }
-
-    &:first-child { border-top: 0; }
+    &:before { border-top-left-radius: 2px; }
   }
 
-  a {
-    display: block;
-    padding: 8px 10px 8px 8px;
-    text-shadow: 0 1px 0 #fff;
-    border-left: 2px solid #fafafb;
+  &:last-child {
+    border-bottom: 0;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
 
-    &:hover {
-      background: #fdfdfe;
-    }
+    &:before { border-bottom-left-radius: 2px; }
+  }
 
-    .octicon {
-      width: 16px;
-      color: $brand-gray-dark;
-      text-align: center;
-    }
+  &:hover {
+    text-decoration: none;
+    background-color: #f9f9f9;
+  }
 
-    &.selected {
-      font-weight: bold;
-      color: #222;
-      cursor: default;
-      background: #fff;
-      border-left: 2px solid #d26911;
-    }
+  &.selected {
+    font-weight: bold;
+    color: #222;
+    cursor: default;
+    background-color: #fff;
 
-    .counter {
-      float: right;
-      margin-left: 5px;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 2px;
+      content: "";
+      background-color: #d26911;
     }
+  }
+
+  .octicon {
+    margin-right: 5px;
+    width: 16px;
+    color: $brand-gray-dark;
+    text-align: center;
+ }
+
+  .counter {
+    float: right;
+    margin-left: 5px;
   }
 
   .menu-warning {
     float: right;
     color: #d26911;
   }
+
+  .avatar {
+    float: left;
+    margin-right: 5px;
+  }
+
+  &.alert {
+    .counter {
+      color: $brand-red;
+    }
+  }
 }
 
-// Accordion menu
-//
-// Turn a menu into an accordion menu
-//
-// ```html
-// <div class="menu-container">
-//   <ul class="menu accordion">
-//     <li class="section">
-//       <a href="/settings/github" class="section-head">GitHub</a>
-//       <ul class="section-nav $modifier_class">
-//         <li><a href="#user">Repositories</a></li>
-//         <li><a href="#user">Issues <span class="counter">21</span></a></li>
-//       </ul>
-//     </li>
-//   </ul>
-// </div>
-// ```
-//
-// .expanded - Expand out the accordion
-//
-// Styleguide 8.3.1
-.accordion {
-  list-style: none;
-  background: #fafafb;
+.menu-heading {
+  display: block;
+  padding: 8px 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #555;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #eee;
 
-  .section {
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:first-child {
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+  }
+
+  &:last-child {
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
     border-bottom: 0;
-
-    &:first-child {
-      border-top: 0;
-    }
-  }
-
-  .section-head {
-    display: block;
-    padding: 8px 10px;
-    overflow: hidden;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 20px;
-    color: #222;
-    text-overflow: ellipsis;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
-    white-space: nowrap;
-    @include gradient(#fafafa, #efefef);
-    border-bottom: 1px solid #ccc;
-    border-left: 0;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
-
-    img {
-      float: left;
-      margin: 0 10px 0 0;
-      border-radius: 2px;
-    }
-  }
-
-  // The nested ul is the actual navigation for the section
-  .section-nav {
-    display: none;
-    list-style: none;
-    border-bottom: 1px solid #ddd;
-
-    &.expanded { display: block; }
   }
 }
