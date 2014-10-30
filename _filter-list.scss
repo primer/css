@@ -24,7 +24,7 @@
 // .small - a version of the list with shorter list items
 //
 // Styleguide 8.2
-ul.filter-list {
+.filter-list {
   list-style-type: none;
 
   &.small .filter-item {
@@ -33,44 +33,59 @@ ul.filter-list {
     font-size: 12px;
   }
 
-  .filter-item {
-    display: block;
-    padding: 8px 10px;
-    margin: 0 0 5px;
-    overflow: hidden;
-    font-size: 14px;
-    color: #777;
-    text-decoration: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
-    border-radius: 3px;
-
-    &:hover { background: #eee; }
-
-    &.selected {
-      color: #fff;
-      background: #4183c4;
-
-      .octicon-remove-close {
-        float: right;
-        opacity: 0.8;
-      }
-    }
-
-    .count {
-      float: right;
-      font-weight: bold;
-    }
-  }
-
   &.pjax-active .filter-item {
     color: #777;
-    background: transparent;
+    background-color: transparent;
 
     &.pjax-active {
       color: #fff;
-      background: #4183c4;
+      background-color: $brand-blue;
     }
   }
 }
+
+.filter-item {
+  position: relative;
+  display: block;
+  padding: 8px 10px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  font-size: 14px;
+  color: #777;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 3px;
+
+  &:hover {
+    text-decoration: none;
+    background-color: #eee;
+  }
+
+  &.selected {
+    color: #fff;
+    background-color: $brand-blue;
+
+    .octicon-remove-close {
+      float: right;
+      opacity: 0.8;
+    }
+  }
+
+  .count {
+    float: right;
+    font-weight: bold;
+  }
+
+  .bar {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    bottom: 2px;
+    z-index: -1;
+    display: inline-block;
+    background-color: #f1f1f1;
+  }
+}
+
