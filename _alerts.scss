@@ -1,10 +1,3 @@
-// When you need to make people aware of something in addition to the regular information shown on the page, use an alert. If the notification only relates to the current (or most recent) action, use a normal `.flash`, otherwise, if the notification is a site-wide notification for the person, use a `.flash-global` banner instead.
-//
-// **Note** it’s important that you place any `.close` buttons or `.flash-action` buttons at the top of the flash container, otherwise you may run into spacing issues with the rest of the content.
-//
-// Styleguide 15.0
-
-@import "primer/mixins/variables";
 
 // Flash Messages
 //

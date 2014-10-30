@@ -1,25 +1,3 @@
-// Buttons have a few required constraints for proper functionality, accessibility, and styling.
-//
-// - Whenever possible, use `<button type="button">` over `<a href="#">`.
-// - Always declare a `type` on your `<button>` elements to ensure zero hiccups
-// with nearby forms and property order.
-// - Never set `tabindex` on buttons—let the browser automatically set that.
-// - For [tooltips](/styleguide/css/9.0#9.1), always place the
-// `aria-label` and `.tooltipped` classes directly on the `<button>` or `<a>`.
-// - Octicons and tooltips conflict, therefore Octicons should always be children
-// elements of `<button>`s or `<a>`s.
-//
-// For more general guidelines, consult the [markup and template guidelines](/styleguide/templates).
-//
-// Styleguide 1.0
-
-@import "primer/mixins/user-select";
-@import "primer/mixins/icon-bootstrap";
-@import "primer/mixins/gradient";
-@import "primer/mixins/box-sizing";
-@import "primer/mixins/clearfix";
-@import "primer/mixins/variables";
-
 // Button
 //
 // Use the standard, but classy, `.button` for form actions and primary
@@ -52,7 +30,7 @@
   @include gradient(#fcfcfc, #eee);
   border: 1px solid #d5d5d5;
   border-radius: 3px;
-  @include user-select(none);
+  user-select: none;
   -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   i {
@@ -329,7 +307,6 @@
   display: block;
   width: 100%;
   text-align: center;
-  @include box-sizing(border-box);
 }
 
 // Button group
@@ -476,7 +453,7 @@
   cursor: pointer;
   background-color: transparent;
   border: 0;
-  @include user-select(none);
+  user-select: none;
   -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   &:hover,
@@ -518,7 +495,7 @@
   background: #fff; // Reset default gradient backgrounds and colors
   border: 1px solid #e5e5e5;
   border-radius: 3px;
-  @include user-select(none);
+  user-select: none;
   -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   &:hover,

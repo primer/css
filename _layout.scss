@@ -1,6 +1,3 @@
-@import "primer/mixins/variables";
-@import "primer/mixins/clearfix";
-
 // Fixed-width, centered column for site content.
 .container {
   width: $container-width;
@@ -17,7 +14,7 @@
 .columns {
   margin-right: -$grid-gutter;
   margin-left: -$grid-gutter;
-  @include clearfix();
+  @include clearfix;
 }
 
 // Base class for every column (requires a column width from below)
