@@ -13,6 +13,7 @@ label {
   font-weight: bold;
 }
 
+.form-control,
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -722,12 +723,6 @@ div.composer {
     overflow: hidden; // round the corners if 100%
     line-height: 18px;
   }
-}
-
-
-// advanced search page label
-#adv_code_search .search-page-label {
-  @extend input[type="text"];
 }
 
 
