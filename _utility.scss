@@ -1,44 +1,46 @@
-//------------------------------------------------------------------------------
-// @group Utility classes
-// ------------------------------------------------------------------------------
-
 // Clear floats
 .clearfix {
   @include clearfix;
 }
 
-.danger {
-  color: #c00;
-}
+// Floats
+.right { float: right; }
 
-.mute {
-  color: #000;
-}
+.left { float: left; }
 
-.right {
-  float: right;
-}
 
-.left {
-  float: left;
-}
+// Text alignment
+.text-right { text-align: right; }
 
-.text-right {
-  text-align: right;
-}
+.text-left { text-align: left; }
 
-.text-left {
-  text-align: left;
-}
 
-.text-diff-added {
-  color: darken($brand-green, 10%);
-}
+// Text states
+.danger { color: #c00; }
 
-.text-diff-deleted {
-  color: $brand-red;
-}
+.mute { color: #000; }
 
+.text-diff-added { color: darken($brand-green, 10%); }
+
+.text-diff-deleted { color: $brand-red; }
+
+.text-open,
+.text-success { color: $status-open; }
+
+.text-closed { color: $status-closed; }
+
+.text-reverted { color: $status-reverted; }
+
+.text-merged { color: $status-merged; }
+
+.text-renamed { color: $status-renamed; }
+
+.text-pending { color: $status-pending; }
+
+.text-failure { color: $brand-red; }
+
+
+// Misc
 .hidden {
   display: none;
 }
