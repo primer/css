@@ -103,13 +103,12 @@
     width: 16px;
     color: $brand-gray-light;
     text-align: center;
-    transition: color 0.25s ease-in-out;
   }
 
   .mini-loader {
     position: absolute;
     top: 9px;
-    left: 9px;
+    left: 11px;
     display: none;
   }
 
