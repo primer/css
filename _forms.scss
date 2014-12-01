@@ -228,18 +228,6 @@ dl.form {
       }
     }
 
-    p.note {
-      min-height: 17px;
-      margin: 4px 0 2px;
-      font-size: 12px;
-      color: #777;
-
-      .spinner {
-        margin-right: 3px;
-        vertical-align: middle;
-      }
-    }
-
     h4 {
       margin: 4px 0 0;
 
@@ -264,6 +252,18 @@ dl.form {
       color: #9f1006;
       content: "*";
     }
+  }
+}
+
+.note {
+  min-height: 17px;
+  margin: 4px 0 2px;
+  font-size: 12px;
+  color: #777;
+
+  .spinner {
+    margin-right: 3px;
+    vertical-align: middle;
   }
 }
 
