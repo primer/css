@@ -1,20 +1,28 @@
 # Primer
 
 > *primer* (noun)
-> A substance used as a preparatory coat on previously unpainted wood, metal, or canvas, esp. to prevent the absorption of subsequent layers of paint or the development of rust
+>
+> 1. A substance used as a preparatory coat on previously unpainted wood, metal, or canvas, esp. to prevent the absorption of subsequent layers of paint or the development of rust.
+> 2. The internal CSS toolkit and guidelines for GitHub.
 
-Primer is the absolute bare bones assets package for GitHub.com and GitHub properties. It contains styles to get you up and running:
+[**Read the Primer documentation.**](http://github.github.com/primer)
 
-* base reset of styles
-* type styles
-* form styles
-* component styles like buttons, alerts, and tooltips
+## Contents
 
-## Installation
+- [Install with Bower](#install-with-bower)
+- [Contributing](#contributing)
+- [Documentation](#documentation)
+  - [Dependencies](#dependencies)
+  - [Running locally](#running-locally)
+  - [Publishing docs](#publishing-docs)
+- [Updating](#updating)
+- [Usage](#usage)
 
-### Rails
+## Install with Bower
 
-Add `https://github.com/github/primer.git` to your app's `bower.json` at `vendor/assets/bower.json`.
+Add `https://github.com/github/primer.git#x.x.x` to your app's `bower.json` (in `github/github`, this is `vendor/assets/bower.json`). Replace `x.x.x` with the latest version number.
+
+**Remember:** Primer is a *private* Bower project, so simply specifying a version range isn't enough. You must include the Git URL.
 
 ``` json
 {
@@ -33,14 +41,14 @@ $ bower -v
 0.9.2
 ```
 
-To pull down the package, `cd` into `vendor/assets` and run `bower install`.
+Pull down the package: `cd` into `vendor/assets` and run `bower install`.
 
 ```
 $ cd vendor/assets
 $ bower install
 ```
 
-You should check in `bower.json` and everything under `vendor/assets/bower_components`.
+Commit and push all the changes, including the `bower.json` and everything under `bower_components`.
 
 **Rails 3.x Note** Rails 3.x is locked to an older version of sprockets that doesn't support bower. You can work around this by installing the [sprockets 2.2.2.backport2](http://rubygems.org/gems/sprockets/versions/2.2.2.backport2) gem.
 
@@ -53,9 +61,50 @@ gem 'sprockets', '2.2.2.backport2'
 When Primer is updated, a few steps must take place after code is merged to `master` for proper versioning and usage in your apps.
 
 1. Bump the version number in `bower.json`. *It's purely placebo right now, but it's good habit.*
-2. [Create a new release](/github/primer/releases/new). Preface the tag version with a `v` (e.g., `v0.27.0`) and use that as the title as well. In the release body, give folks a brief list of what's changed.
+2. [Create a new release](/github/primer/releases/new). Preface the tag version with a `v` (e.g., `v0.27.0`) and use that as the title as well. In the release body, give folks a brief list of what's changed. Consider linking relevant issues and pull requests.
 
 When done, move on to the [updating process](#updating) in your app.
+
+## Documentation
+
+Primer's documentation is generated via Grunt in the `docs` branch due to the use of gems, plugins, and other dependencies. As such, there are a few prerequesites before you can start to contribute.
+
+### Dependencies
+
+You'll need the following installed:
+
+- Latest Jekyll (minimum v2.2.0): `$ gem install jekyll`
+- Latest Sass: `$ gem install sass`
+- Node.js and npm
+- Grunt
+
+Chances are you have all this already if you work on `github/github` or similar projects. If you have all those set up, now you can install the dependencies:
+
+```bash
+$ npm install
+$ bower install
+```
+
+### Running locally
+
+Now you can run the documentation locally:
+
+```bash
+$ jekyll serve --baseurl ''
+```
+
+We use the `--baseurl ''` flag at runtime to reset the GitHub Pages friendly `baseurl` of `/primer` in `_config.yml`. If you don't reset this, you'll see broken URLs and assets locally.
+
+### Publishing docs
+
+**All documentation changes should be done in the `docs` branch.** This branch has specific tooling via a Gruntfile to generate and publish to the `gh-pages` branch.
+
+Once cloned, switch to the `docs` branch to start developing. There are a few commands you'll want to know:
+
+- `$ grunt build` runs `jekyll serve`, generating our compiled site into `_site`.
+- `$ grunt buildcontrol:pages` takes the `_site` directory, generates it's own Git repository, and publishes the contents to the `gh-pages` branch here on GitHub.
+
+After you push, you should see the changes reflected in the hosted docs within a minute or so.
 
 ## Updating
 
@@ -81,17 +130,8 @@ Check in `bower.json` and all changes under `vendor/assets/bower_components`.
 
 ## Usage
 
-```css
-@import "primer/basecoat/normalize";
-@import "primer/basecoat/base";
-@import "primer/basecoat/forms";
-@import "primer/basecoat/type";
-@import "primer/basecoat/utility";
+Once included, simply `@import` either the master SCSS file, or the individual files as you need them.
 
-@import "primer/components/behavior";
-@import "primer/components/buttons";
-@import "primer/components/icons";
-@import "primer/components/markdown";
-@import "primer/components/nav";
-@import "primer/components/pygments";
+```scss
+@import "primer/primer";
 ```
