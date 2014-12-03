@@ -1,0 +1,37 @@
+{
+  "name": "octicons",
+  "description": "GitHub's icon font",
+  "license": "SIL OFL 1.1, MIT",
+  "homepage": "http://octicons.github.com",
+  "authors": [
+    "GitHub <support@github.com>"
+  ],
+  "main": [
+    "octicons/sprockets-octicons.scss",
+    "octicons/octicons.eot",
+    "octicons/octicons.svg",
+    "octicons/octicons.ttf",
+    "octicons/octicons.woff"
+  ],
+  "keywords": [
+    "GitHub",
+    "icons",
+    "font",
+    "web font",
+    "icon font"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "version": "2.1.2",
+  "_release": "2.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.1.2",
+    "commit": "0af5befb63798321e05901518796288a3932d226"
+  },
+  "_source": "git://github.com/github/octicons.git",
+  "_target": "*",
+  "_originalSource": "octicons"
+}

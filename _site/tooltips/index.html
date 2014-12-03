@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      Tooltips &middot; Primer
+    </title>
+
+    <link rel="stylesheet" href="/docs.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="/favicon.ico">
+  </head>
+  <body>
+
+    <header class="masthead">
+      <div class="container">
+        <a href="/" class="masthead-logo left">
+          <span class="mega-octicon octicon-package"></span>
+          Primer
+        </a>
+
+        <nav class="masthead-nav right">
+          <a  href="/scaffolding">Documentation</a>
+          <a  href="/about">About</a>
+          <a href="https://github.com/github/primer" target="_blank">GitHub</a>
+          <a href="https://github.com/github/primer/blob/master/README.md#installation" target="_blank">Installation</a>
+        </nav>
+      </div>
+    </header>
+
+    
+
+    <div class="container">
+      <div class="columns">
+  <div class="one-fourth column">
+    <nav class="menu docs-menu">
+  <a class="menu-item " href="/guidelines/">
+    Guidelines
+  </a>
+  <a class="menu-item " href="/scaffolding/">
+    Scaffolding
+  </a>
+  <a class="menu-item " href="/layout/">
+    Layout
+  </a>
+  <a class="menu-item " href="/type/">
+    Type
+  </a>
+  <a class="menu-item " href="/buttons/">
+    Buttons
+  </a>
+  <a class="menu-item " href="/nav/">
+    Navigation
+  </a>
+  <a class="menu-item " href="/alerts/">
+    Alerts
+  </a>
+  <a class="menu-item selected" href="/tooltips/">
+    Tooltips
+  </a>
+  <a class="menu-item " href="/utilities/">
+    Utilities
+  </a>
+</nav>
+
+  </div>
+  <div class="three-fourths column markdown-body">
+    <h1 class="page-title">
+      Tooltips
+    </h1>
+    <div class="markdown-body">
+      <p>Add tooltips built entirely in CSS to nearly any element. Just add a few classes and an <code>aria-label</code> attribute.</p>
+
+<p>In addition, you’ll want to specify a direcetion:</p>
+
+<ul>
+  <li><code>.tooltipped-n</code></li>
+  <li><code>.tooltipped-ne</code></li>
+  <li><code>.tooltipped-e</code></li>
+  <li><code>.tooltipped-se</code></li>
+  <li><code>.tooltipped-s</code></li>
+  <li><code>.tooltipped-sw</code></li>
+  <li><code>.tooltipped-w</code></li>
+  <li><code>.tooltipped-nw</code></li>
+</ul>
+
+<p>Remember, <code>aria-label</code> and tooltip classes must go directly on <code>&lt;button&gt;</code> and <code>&lt;a&gt;</code> elements. Tooltip classes also conflict with Octicon clases, and as such, must go on a parent element instead of the icon.</p>
+
+<div class="docs-example"><span class="tooltipped tooltipped-n" aria-label="This is the tooltip.">
+  Text with a tooltip
+</span></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"tooltipped tooltipped-n"</span> <span class="na">aria-label=</span><span class="s">"This is the tooltip."</span><span class="nt">&gt;</span>
+  Text with a tooltip
+<span class="nt">&lt;/span&gt;</span></code></pre></div>
+
+
+    </div>
+  </div>
+</div>
+
+
+      
+        <footer>
+          &copy; <time datetime="2014-12-03T02:12:16-08:00">2014</time>. All rights reserved.
+        </footer>
+      
+    </div>
+
+  </body>
+</html>

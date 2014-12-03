@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      Utilities &middot; Primer
+    </title>
+
+    <link rel="stylesheet" href="/docs.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="/favicon.ico">
+  </head>
+  <body>
+
+    <header class="masthead">
+      <div class="container">
+        <a href="/" class="masthead-logo left">
+          <span class="mega-octicon octicon-package"></span>
+          Primer
+        </a>
+
+        <nav class="masthead-nav right">
+          <a  href="/scaffolding">Documentation</a>
+          <a  href="/about">About</a>
+          <a href="https://github.com/github/primer" target="_blank">GitHub</a>
+          <a href="https://github.com/github/primer/blob/master/README.md#installation" target="_blank">Installation</a>
+        </nav>
+      </div>
+    </header>
+
+    
+
+    <div class="container">
+      <div class="columns">
+  <div class="one-fourth column">
+    <nav class="menu docs-menu">
+  <a class="menu-item " href="/guidelines/">
+    Guidelines
+  </a>
+  <a class="menu-item " href="/scaffolding/">
+    Scaffolding
+  </a>
+  <a class="menu-item " href="/layout/">
+    Layout
+  </a>
+  <a class="menu-item " href="/type/">
+    Type
+  </a>
+  <a class="menu-item " href="/buttons/">
+    Buttons
+  </a>
+  <a class="menu-item " href="/nav/">
+    Navigation
+  </a>
+  <a class="menu-item " href="/alerts/">
+    Alerts
+  </a>
+  <a class="menu-item " href="/tooltips/">
+    Tooltips
+  </a>
+  <a class="menu-item selected" href="/utilities/">
+    Utilities
+  </a>
+</nav>
+
+  </div>
+  <div class="three-fourths column markdown-body">
+    <h1 class="page-title">
+      Utilities
+    </h1>
+    <div class="markdown-body">
+      <p>There are a handful of utilities in Primer for quick behaviors, floats, colors, alignment, and more.</p>
+
+<h3 id="truncation">Truncation</h3>
+
+<p><code>.css-truncate</code> will shorten text with an ellipsis. The maximum width of the truncated text can be changed by overriding the max-width of the .css-truncate-target.</p>
+
+<div class="docs-example"><span class="branch-ref css-truncate css-truncate-target">
+  really-long-branch-name
+</span></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"branch-ref css-truncate css-truncate-target"</span><span class="nt">&gt;</span>
+  really-long-branch-name
+<span class="nt">&lt;/span&gt;</span></code></pre></div>
+
+<p>You can reveal the entire string on hover with the addition of <code>.expandable</code>.</p>
+
+<div class="docs-example"><span class="css-truncate expandable">
+  <span class="branch-ref css-truncate-target">this-is-a-really-long-branch-name</span>
+</span></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"css-truncate expandable"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"branch-ref css-truncate-target"</span><span class="nt">&gt;</span>this-is-a-really-long-branch-name<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/span&gt;</span></code></pre></div>
+
+<h3 id="counter">Counter</h3>
+
+<p>Add a number or unread indicator to navs and more with a counter.</p>
+
+<div class="docs-example"><span class="counter">9</span></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"counter"</span><span class="nt">&gt;</span>9<span class="nt">&lt;/span&gt;</span></code></pre></div>
+
+<h3 id="floats">Floats</h3>
+
+<p>Quickly float something to the left or right, and clear them later.</p>
+
+<div class="docs-example"><div class="clearfix">
+  <code class="left">.left</code>
+  <code class="right">.right</code>
+</div></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"clearfix"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"left"</span><span class="nt">&gt;</span>.left<span class="nt">&lt;/code&gt;</span>
+  <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"right"</span><span class="nt">&gt;</span>.right<span class="nt">&lt;/code&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<h3 id="text-alignment">Text alignment</h3>
+
+<p>Change the <code>text-align</code> on elements with a class.</p>
+
+<div class="docs-example"><p class="text-left">Left aligned text.</p>
+<p class="text-right">Right aligned text.</p></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-left"</span><span class="nt">&gt;</span>Left aligned text.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>Right aligned text.<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<h3 id="text-color">Text color</h3>
+
+<p>Change the <code>color</code> of elements with a class.</p>
+
+<div class="docs-example"><p class="text-open">Green/open text</p>
+<p class="text-closed">Red/closed text</p>
+<p class="text-merged">Merged text</p>
+<p class="text-pending">Pending text</p></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-open"</span><span class="nt">&gt;</span>Green/open text<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-closed"</span><span class="nt">&gt;</span>Red/closed text<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-merged"</span><span class="nt">&gt;</span>Merged text<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-pending"</span><span class="nt">&gt;</span>Pending text<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<p><code>.text-closed</code> and <code>.text-failure</code> are the same, as well as <code>.text-open</code> and <code>.text-success</code>.</p>
+
+    </div>
+  </div>
+</div>
+
+
+      
+        <footer>
+          &copy; <time datetime="2014-12-03T02:12:16-08:00">2014</time>. All rights reserved.
+        </footer>
+      
+    </div>
+
+  </body>
+</html>
