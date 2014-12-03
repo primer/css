@@ -1,3 +1,6 @@
 .bundle/config
 bin/
 vendor/
+.sass-cache/
+vendor/
+.ruby-version
