@@ -1,17 +1,6 @@
 // Side menu
 //
 // A menu on the side of a page, defaults to left side. e.g. github.com/about
-//
-// ```html
-// <nav class="menu">
-//   <a class="menu-item $modifier_class" href="#">Repositories</a>
-//   <a class="menu-item" href="#">Issues <span class="counter">21</span></a>
-// </nav>
-// ```
-//
-// .selected - A selected tab
-//
-// Styleguide 8.3
 
 .menu {
   margin-bottom: 15px;
