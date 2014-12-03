@@ -67,7 +67,9 @@ When done, move on to the [updating process](#updating) in your app.
 
 ## Documentation
 
-Primer's documentation is generated via Grunt in the `docs` branch due to the use of gems, plugins, and other dependencies. As such, there are a few prerequesites before you can start to contribute.
+Primer's documentation is generated via Gruntfile in the `docs` branch due to our use of gems, plugins, and other dependencies. GitHub Pages cannot automatically compile sites with these things included.
+
+As such, there are a few prerequesites before you can start to contribute.
 
 ### Dependencies
 
@@ -75,8 +77,8 @@ You'll need the following installed:
 
 - Latest Jekyll (minimum v2.2.0): `$ gem install jekyll`
 - Latest Sass: `$ gem install sass`
-- Node.js and npm
-- Grunt
+- Latest Grunt CLI: `$ npm install -g grunt-cli`
+- [Node.js and npm](http://nodejs.org/download/)
 
 Chances are you have all this already if you work on `github/github` or similar projects. If you have all those set up, now you can install the dependencies:
 
@@ -93,18 +95,18 @@ Now you can run the documentation locally:
 $ jekyll serve --baseurl ''
 ```
 
-We use the `--baseurl ''` flag at runtime to reset the GitHub Pages friendly `baseurl` of `/primer` in `_config.yml`. If you don't reset this, you'll see broken URLs and assets locally.
+**Heads up!** We use the `--baseurl ''` flag at runtime to reset the GitHub Pages friendly `baseurl` of `/primer` in `_config.yml`. If you don't reset this, you'll see broken URLs and assets locally.
 
 ### Publishing docs
 
-**All documentation changes should be done in the `docs` branch.** This branch has specific tooling via a Gruntfile to generate and publish to the `gh-pages` branch.
+**All documentation changes should be made in the `docs` branch.** This branch has a Gruntfile to generate and publish to the `gh-pages` branch.
 
 Once cloned, switch to the `docs` branch to start developing. There are a few commands you'll want to know:
 
 - `$ grunt build` runs `jekyll serve`, generating our compiled site into `_site`.
-- `$ grunt buildcontrol:pages` takes the `_site` directory, generates it's own Git repository, and publishes the contents to the `gh-pages` branch here on GitHub.
+- `$ grunt publish` takes the `_site` directory, generates it's own Git repository there, and publishes the contents to the `gh-pages` branch here on GitHub.
 
-After you push, you should see the changes reflected in the hosted docs within a minute or so.
+Changes are reflected in the hosted docs within a minute or so.
 
 ## Updating
 
