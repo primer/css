@@ -78,9 +78,87 @@
       Guidelines
     </h1>
     <div class="markdown-body">
-      <p>Welcome to the GitHub CSS Styleguide! Before continuing, you should have a general understanding for <strong>specificity</strong> and the <a href="http://sass-lang.com"><strong>SCSS</strong></a> preprocessing language.</p>
+      <p>Best practices and guidelines for writing HTML and CSS with approachable formatting, syntax, and more.</p>
 
-<h2 id="coding-style">Coding style</h2>
+<h2 id="html">HTML</h2>
+
+<h3 id="general-formatting">General formatting</h3>
+
+<ul>
+  <li>Paragraphs of text should always be placed in a <code>&lt;p&gt;</code> tag. Never use multiple <code>&lt;br&gt;</code> tags.</li>
+  <li>Items in list form should always be in <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, or <code>&lt;dl&gt;</code>. Never use a set of <code>&lt;div&gt;</code> or <code>&lt;p&gt;</code>.</li>
+  <li>Every form input that has text attached should utilize a <code>&lt;label&gt;</code> tag. <strong>Especially radio or checkbox elements.</strong></li>
+  <li>Even though quotes around attributes is optional, always put quotes around attributes for readability.</li>
+  <li>Avoid writing closing tag comments, like <code>&lt;!-- /.element --&gt;</code>. This just adds to page load time. Plus, most editors have indentation guides and open-close tag highlighting.</li>
+  <li>Avoid trailing slashes in self-closing elements. For example, <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;img&gt;</code>, and <code>&lt;input&gt;</code>.</li>
+  <li>Don’t set <code>tabindex</code> manually—rely on the browser to set the order.</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"line-note"</span> <span class="na">data-attribute=</span><span class="s">"106"</span><span class="nt">&gt;</span>
+  This is my paragraph of special text.
+<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<h3 id="boolean-attributes">Boolean attributes</h3>
+
+<p>Many attributes don’t require a value to be set, like <code>disabled</code> or <code>checked</code>, so don’t set them.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">"1"</span> <span class="na">checked</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;select&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span> <span class="na">selected</span><span class="nt">&gt;</span>1<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span></code></pre></div>
+
+<p>For more information, <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#boolean-attributes">read the WhatWG section</a>.</p>
+
+<h3 id="lean-markup">Lean markup</h3>
+
+<p>Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML. For example:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Not so great --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"avatar"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/span&gt;</span>
+
+<span class="c">&lt;!-- Better --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"avatar"</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;</span></code></pre></div>
+
+<h3 id="forms">Forms</h3>
+
+<ul>
+  <li>Lean towards radio or checkbox lists instead of select menus.</li>
+  <li>Wrap radio and checkbox inputs and their text in <code>&lt;label&gt;</code>s. No need for <code>for</code> attributes here—the wrapping automatically associates the two.</li>
+  <li>Form buttons should always include an explicit <code>type</code>. Use primary buttons for the <code>type="submit"</code> button and regular buttons for <code>type="button"</code>.</li>
+  <li>The primary form button must come first in the DOM, especially for forms with multiple submit buttons. The visual order should be preserved with <code>float: right;</code> on each button.</li>
+</ul>
+
+<h3 id="tables">Tables</h3>
+
+<p>Make use of <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;th&gt;</code> tags (and <code>scope</code> attribute) when appropriate. (Note: <code>&lt;tfoot&gt;</code> goes above <code>&lt;tbody&gt;</code> for speed reasons. You want the browser to load the footer before a table full of data.)</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table</span> <span class="na">summary=</span><span class="s">"This is a chart of invoices for 2011."</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Table header 1<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Table header 2<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tfoot&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>Table footer 1<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>Table footer 2<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tfoot&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>Table data 1<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>Table data 2<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre></div>
+
+<h2 id="css">CSS</h2>
 
 <h3 id="spacing">Spacing</h3>
 
@@ -246,5 +324,10 @@
       
     </div>
 
+    <script src="/primer/js/anchor.min.js"></script>
+    <script>
+      var selector = '.markdown-body h2, .markdown-body h3';
+      addAnchors(selector);
+    </script>
   </body>
 </html>
