@@ -1,6 +1,6 @@
 {
   "name": "primer",
-  "version": "0.39.0",
+  "version": "0.40.0",
   "ignore": [
     ".gitignore",
     ".scss-lint.yml",
