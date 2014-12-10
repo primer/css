@@ -382,8 +382,37 @@
     }
   }
 
-  .button-outline + .button-outline {
+  .button-outline + .button-outline,
+  .button_to + .button_to {
     margin-left: -1px;
+  }
+
+  .button_to {
+    float: left;
+
+    .button,
+    .minibutton,
+    .button-outline {
+      border-radius: 0;
+    }
+
+    &:first-child {
+      .button,
+      .minibutton,
+      .button-outline {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+    }
+
+    &:last-child {
+      .button,
+      .minibutton,
+      .button-outline {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+    }
   }
 }
 
