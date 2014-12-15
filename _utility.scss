@@ -40,6 +40,18 @@
 .text-failure { color: $brand-red; }
 
 
+// Muted link
+//
+// Have a link you need to be gray to start, and blue on hover? Use this.
+.muted-link {
+  color: #777;
+
+  &:hover {
+    color: $brand-blue;
+    text-decoration: none;
+  }
+}
+
 // Misc
 .hidden {
   display: none;
