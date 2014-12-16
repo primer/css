@@ -2,32 +2,6 @@ $multiline-max-width: 250px;
 $tooltip-background-color: rgba(0, 0, 0, 0.8);
 $tooltip-text-color: #fff;
 
-// Tooltips
-//
-// `.tooltipped` is our tooltip class used across the site. All you need to do
-// give an element the tooltip property is add an `aria-label` attribute
-// and optionally add a direction
-// `.tooltipped-n, .tooltipped-ne, .tooltipped-e, .tooltipped-se`
-// `.tooltipped-s, .tooltipped-sw, .tooltipped-w, .tooltipped-nw`
-//
-// Remember, `aria-label` and tooltip classes must go directly on `<button>`
-// and `<a>` elements. Tooltip classes also conflict with Octicon clases, and as
-// such, must go on a parent element instead of the icon.
-//
-// ```html
-// <span class="tooltipped $modifier_class" aria-label="This is the tooltip.">Text with a tooltip</span>
-// ```
-//
-// .tooltipped-s         - Placing the tooltip below the object. South (Default)
-// .tooltipped-se        - Placing the tooltip below the object to the east. Southeast
-// .tooltipped-sw        - Placing the tooltip below the object to the west. Southwest
-// .tooltipped-n         - Placing the tooltip above the object. North
-// .tooltipped-ne        - Placing the tooltip above the object to the east. Northeast
-// .tooltipped-e         - Placing the tooltip to the right of the object. East
-// .tooltipped-w         - Placing the tooltip to the left of the object. West
-// .tooltipped-nw        - Placing the tooltip above the object to the west. Northwest
-//
-// Styleguide 9.2.1
 .tooltipped {
   position: relative;
 }
@@ -195,21 +169,6 @@ $tooltip-text-color: #fff;
 // `.tooltipped-multiline` Add this class when you have long content.
 // The downside is you cannot preformat the text with newlines and `[w,e]`
 // are always `$multiline-max-width` wide.
-//
-// ```html
-// <span class="tooltipped tooltipped-multiline $modifier_class" aria-label="Bacon ipsum dolor sit amet turkey sausage cow, kielbasa sirloin swine andouille kevin pork loin prosciutto tenderloin beef leberkas.">Multiline tooltip</span>
-// ```
-//
-// .tooltipped-s         - Placing the tooltip below the object. South (Default)
-// .tooltipped-se        - Placing the tooltip below the object to the east. Southeast
-// .tooltipped-sw        - Placing the tooltip below the object to the west. Southwest
-// .tooltipped-n         - Placing the tooltip above the object. North
-// .tooltipped-ne        - Placing the tooltip above the object to the east. Northeast
-// .tooltipped-e         - Placing the tooltip to the right of the object. East
-// .tooltipped-w         - Placing the tooltip to the left of the object. West
-// .tooltipped-nw        - Placing the tooltip above the object to the west. Northwest
-//
-// Styleguide 9.2.2
 .tooltipped-multiline {
   &:after {
     width: -moz-max-content;
@@ -244,14 +203,6 @@ $tooltip-text-color: #fff;
 // Sticky tooltips
 //
 // Always show the tooltip.
-//
-// ```html
-// <span class="tooltipped tooltipped-n $modifier_class" aria-label="This tooltip won't go away.">Tooltipped text</span>
-// ```
-//
-// .tooltipped-sticky - Always show the tooltip
-//
-// Styleguide 9.2.3
 .tooltipped-sticky {
   &:before,
   &:after {
@@ -268,12 +219,6 @@ $tooltip-text-color: #fff;
 // Alert tooltips
 //
 // Colors for different alert states.
-//
-// ```html
-// <span class="tooltipped tooltipped-n $modifier_class" aria-label="Important Message!">Tooltipped text</span>
-// ```
-//
-// No Styleguide
 @mixin colorizeTooltip($text-color, $background-color) {
   &:after {
     color: $text-color;

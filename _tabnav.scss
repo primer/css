@@ -1,39 +1,8 @@
-// Tabnav
-//
-// Tabnav is a navigation style to be used as a lower tier tabbed navigation.
-// Tabs align on the left, and optional content such as search fields can appear
-// off to the right. Tabnav tabs can have an included span.counter that holds a number
-//
-// ```html
-// <div class="tabnav">
-//   <ul class="tabnav-tabs">
-//     <li><a href="#" class="tabnav-tab $modifier_class">Foo Tab</a></li>
-//     <li><a href="#" class="tabnav-tab">Bar Tab</a></li>
-//   </ul>
-// </div>
-// ```
-//
-// .selected - the currently active tab
-//
-// Styleguide 8.1
+// Outer wrapper
 .tabnav {
   margin: 0 0 15px;
   border-bottom: 1px solid #ddd;
 
-  // Tabnav with counter
-  //
-  // Tabnav supports a counter in the tab
-  //
-  // ```html
-  // <div class="tabnav">
-  //   <ul class="tabnav-tabs">
-  //     <li><a href="#" class="tabnav-tab selected">Foo Tab <span class="counter  $modifier_class">3</span></a></li>
-  //     <li><a href="#" class="tabnav-tab">Bar Tab <span class="counter $modifier_class">7</span></a></li>
-  //   </ul>
-  // </div>
-  // ```
-  //
-  // Styleguide 8.1.1
   .counter {
     margin-left: 5px;
   }
@@ -72,23 +41,7 @@
 //
 // Tabnav supports multiple sets of tabs. To use a second set, wrap your second
 // .tabnav-tabs in a span.tabnav-right
-//
-// ```html
-// <div class="tabnav">
-//   <ul class="tabnav-tabs">
-//     <li><a href="#" class="tabnav-tab selected">Foo Tab</a></li>
-//     <li><a href="#" class="tabnav-tab">Bar Tab</a></li>
-//   </ul>
-//   <span class="tabnav-right">
-//     <ul class="tabnav-tabs">
-//       <li><a href="#" class="tabnav-tab">Oof Tab</a></li>
-//       <li><a href="#" class="tabnav-tab">Rab Tab</a></li>
-//     </ul>
-//   </span>
-// </div>
-// ```
-//
-// Styleguide 8.1.2
+
 .tabnav-right {
   position: relative;
   float: right;
@@ -98,20 +51,7 @@
 //
 // Tabnav widgets are non-tab element that sits in the tabnav.
 // Can be buttons, fields, dropdowns
-//
-// ```html
-// <div class="tabnav">
-//   <div class="tabnav-widget">
-//     <a class="minibutton btn" href="#">Button</a>
-//   </div>
-//   <ul class="tabnav-tabs">
-//     <li><a href="#" class="tabnav-tab selected">Foo Tab</a></li>
-//     <li><a href="#" class="tabnav-tab">Bar Tab</a></li>
-//   </ul>
-// </div>
-// ```
-//
-// Styleguide 8.1.3
+
 .tabnav-widget {
   display: inline-block;
   vertical-align: top;
@@ -123,25 +63,6 @@
   // Search widget
   //
   // The tabnav search widget is a search box with a field and a submit button.
-  //
-  // ```html
-  // <div class="tabnav">
-  //   <ul class="tabnav-tabs">
-  //     <li><a href="#" class="tabnav-tab selected">Foo Tab</a></li>
-  //     <li><a href="#" class="tabnav-tab">Bar Tab</a></li>
-  //   </ul>
-  //   <div class="tabnav-right">
-  //     <div class="tabnav-widget search">
-  //       <a href="#" class="search-link">Search:</a>
-  //       <span class="fieldwrap">
-  //         <input type="text" placeholder="Search…"><button type="submit" class="minibutton"><span class="octicon octicon-search"></span></button>
-  //       </span>
-  //     </div>
-  //   </div>
-  // </div>
-  // ```
-  //
-  // Styleguide 8.1.4
   &.search {
     .spinner {
       position: absolute;
@@ -198,22 +119,6 @@
   //
   // The tabnav text widget is text that appears within a tab nav
   // used to convey extra contextual information
-  //
-  // ```html
-  // <div class="tabnav">
-  //   <ul class="tabnav-tabs">
-  //     <li><a href="#" class="tabnav-tab selected">Foo Tab</a></li>
-  //     <li><a href="#" class="tabnav-tab">Bar Tab</a></li>
-  //   </ul>
-  //   <div class="tabnav-right">
-  //     <div class="tabnav-widget text">
-  //       This is a tabnav <a href="#">text widget</a>
-  //     </div>
-  //   </div>
-  // </div>
-  // ```
-  //
-  // Styleguide 8.1.5
   &.text {
     margin-top: 12px;
     font-size: 11px;
@@ -223,8 +128,6 @@
 
 
 // Tabnav extras content for custom text and links in a tabnav-widget.
-//
-// No styleguide reference
 .tabnav-extras {
   display: inline-block;
   margin-left: 10px;
