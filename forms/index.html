@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      Forms &middot; Primer
+    </title>
+
+    <link rel="stylesheet" href="/docs.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="/favicon.ico">
+  </head>
+  <body>
+
+    <header class="masthead">
+      <div class="container">
+        <a href="/" class="masthead-logo left">
+          <span class="mega-octicon octicon-package"></span>
+          Primer
+        </a>
+
+        <nav class="masthead-nav right">
+          <a  href="/scaffolding">Documentation</a>
+          <a  href="/about">About</a>
+          <a href="https://github.com/github/primer" target="_blank">GitHub</a>
+          <a href="https://github.com/github/primer/blob/master/README.md#install" target="_blank">Install</a>
+        </nav>
+      </div>
+    </header>
+
+    
+
+    <div class="container">
+      <div class="columns">
+  <div class="one-fourth column">
+    <nav class="menu docs-menu">
+  <a class="menu-item " href="/guidelines/">
+    Guidelines
+  </a>
+  <a class="menu-item " href="/scaffolding/">
+    Scaffolding
+  </a>
+  <a class="menu-item " href="/layout/">
+    Layout
+  </a>
+  <a class="menu-item " href="/type/">
+    Type
+  </a>
+  <a class="menu-item " href="/buttons/">
+    Buttons
+  </a>
+  <a class="menu-item selected" href="/forms/">
+    Forms
+  </a>
+  <a class="menu-item " href="/nav/">
+    Navigation
+  </a>
+  <a class="menu-item " href="/alerts/">
+    Alerts
+  </a>
+  <a class="menu-item " href="/blankslate/">
+    Blankslate
+  </a>
+  <a class="menu-item " href="/avatars/">
+    Avatars
+  </a>
+  <a class="menu-item " href="/states/">
+    States
+  </a>
+  <a class="menu-item " href="/tooltips/">
+    Tooltips
+  </a>
+  <a class="menu-item " href="/utilities/">
+    Utilities
+  </a>
+</nav>
+
+  </div>
+  <div class="three-fourths column markdown-body">
+    <h1 class="page-title">
+      Forms
+    </h1>
+    <div class="markdown-body">
+      <p>Style individual form controls and utilize common layouts.</p>
+
+<div class="flash">
+  <strong>Heads up!</strong> Forms need some reworking to clean up the specificity and required markup. We'll get to that soon!
+</div>
+
+<h2 id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#contents">Contents</a></li>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#example-form">Example form</a></li>
+  <li><a href="#form-contrast">Form contrast</a></li>
+  <li><a href="#sizing">Sizing</a>    <ul>
+      <li><a href="#mini">Mini</a></li>
+      <li><a href="#large">Large</a></li>
+      <li><a href="#block">Block</a></li>
+    </ul>
+  </li>
+  <li><a href="#form-groups">Form groups</a></li>
+  <li><a href="#notes">Notes</a></li>
+  <li><a href="#checkboxes-and-radios">Checkboxes and radios</a></li>
+  <li><a href="#input-group">Input group</a></li>
+  <li><a href="#form-actions">Form actions</a></li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+
+<ul>
+  <li>We reset several elements’ default styles for cross browser consistency and easier manipulation later. This includes <code>&lt;fieldset&gt;</code>s, WebKit validation bubbles, and most textual <code>&lt;input&gt;</code>s.</li>
+  <li>Specific types of textual <code>&lt;input&gt;</code>s are styled automatically, but <code>.form-control</code> is available should you need it.</li>
+  <li>Always declare a <code>type</code> on your <code>&lt;button&gt;</code>s.</li>
+  <li>Form layouts rely on form groups.</li>
+</ul>
+
+<h2 id="example-form">Example form</h2>
+
+<p>Form controls in Primer currently have no basic layout specified (this is by design). You’ll need to use <code>&lt;fieldset&gt;</code>s, <code>&lt;div&gt;</code>s, or other elements and styles to rearrange them.</p>
+
+<div class="docs-example clearfix"><form>
+  <label for="name">Name</label>
+  <input type="text" id="name" />
+
+  <label for="email">Email address</label>
+  <input type="email" id="email" />
+
+  <label>
+    <input type="checkbox" /> Remember me
+  </label>
+
+  <label>
+    <input type="radio" id="herp" name="herpderp" checked="" /> Herp
+  </label>
+  <label>
+    <input type="radio" id="derp" name="herpderp" /> Derp
+  </label>
+
+  <button class="button" type="submit">Submit</button>
+</form></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"name"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"email"</span><span class="nt">&gt;</span>Email address<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">id=</span><span class="s">"email"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span> Remember me
+  <span class="nt">&lt;/label&gt;</span>
+
+  <span class="nt">&lt;label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"herp"</span> <span class="na">name=</span><span class="s">"herpderp"</span> <span class="na">checked</span><span class="nt">&gt;</span> Herp
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"derp"</span> <span class="na">name=</span><span class="s">"herpderp"</span><span class="nt">&gt;</span> Derp
+  <span class="nt">&lt;/label&gt;</span>
+
+  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"button"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+<h2 id="form-contrast">Form contrast</h2>
+
+<p>Textual form controls have a white background by default. You can change this to a light gray with <code>.input-contrast</code>.</p>
+
+<div class="docs-example clearfix"><form>
+  <input type="text" placeholder="Default input" />
+  <input class="input-contrast" type="text" placeholder="Input with contrast" />
+</form></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Default input"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input-contrast"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Input with contrast"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+<h2 id="sizing">Sizing</h2>
+
+<p>Make inputs smaller, larger, or full-width with an additional class.</p>
+
+<h3 id="mini">Mini</h3>
+
+<div class="docs-example clearfix"><form>
+  <input class="input-mini" type="text" placeholder="Mini input" />
+</form></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input-mini"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Mini input"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+<h3 id="large">Large</h3>
+
+<div class="docs-example clearfix"><form>
+  <input class="input-large" type="text" placeholder="Large input" />
+</form></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input-large"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Large input"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+<h3 id="block">Block</h3>
+
+<div class="docs-example clearfix"><form>
+  <input class="input-block" type="text" placeholder="Full-width input" />
+</form></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input-block"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Full-width input"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+<h2 id="form-groups">Form groups</h2>
+
+<div class="docs-example clearfix"><form>
+  <dl class="form">
+    <dt><label>Example Text</label></dt>
+    <dd><input type="text" class="textfield" value="Example Value" /></dd>
+  </dl>
+
+  <dl class="form">
+    <dt><label>Example Label</label></dt>
+    <dd>
+      <select>
+        <option>Choose an option</option>
+        <option>Git</option>
+        <option>Subversion</option>
+        <option>Social Coding</option>
+        <option>Beets</option>
+        <option>Bears</option>
+        <option>Battlestar Galactica</option>
+      </select>
+    </dd>
+  </dl>
+</form></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dt&gt;&lt;label&gt;</span>Example Text<span class="nt">&lt;/label&gt;&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"textfield"</span> <span class="na">value=</span><span class="s">"Example Value"</span><span class="nt">&gt;&lt;/dd&gt;</span>
+  <span class="nt">&lt;/dl&gt;</span>
+
+  <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dt&gt;&lt;label&gt;</span>Example Label<span class="nt">&lt;/label&gt;&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;</span>
+      <span class="nt">&lt;select&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Choose an option<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Git<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Subversion<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Social Coding<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Beets<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Bears<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Battlestar Galactica<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;/dl&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+<h2 id="notes">Notes</h2>
+
+<h2 id="checkboxes-and-radios">Checkboxes and radios</h2>
+
+<p>Utilities to spice up the alignment and styling of checkbox and radio controls.</p>
+
+<div class="docs-example clearfix"><form>
+  <div class="form-checkbox">
+    <label>
+      <input type="checkbox" checked="checked" />
+      Available for hire
+    </label>
+    <p class="note">
+      This will do insanely <strong>awesome</strong> and <strong>amazing</strong> things!
+    </p>
+  </div>
+</form></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">checked=</span><span class="s">"checked"</span><span class="nt">&gt;</span>
+      Available for hire
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"note"</span><span class="nt">&gt;</span>
+      This will do insanely <span class="nt">&lt;strong&gt;</span>awesome<span class="nt">&lt;/strong&gt;</span> and <span class="nt">&lt;strong&gt;</span>amazing<span class="nt">&lt;/strong&gt;</span> things!
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+<p>You may also add emphasis to the label:</p>
+
+<div class="docs-example clearfix"><form>
+  <div class="form-checkbox">
+    <label>
+      <input type="checkbox" checked="checked" />
+      <em class="highlight">Available for hire</em>
+    </label>
+  </div>
+</form></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">checked=</span><span class="s">"checked"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;em</span> <span class="na">class=</span><span class="s">"highlight"</span><span class="nt">&gt;</span>Available for hire<span class="nt">&lt;/em&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+<h2 id="input-group">Input group</h2>
+
+<p>Attached an input and button to one another.</p>
+
+<div class="docs-example clearfix"><form>
+  <div class="input-group">
+    <input type="text" placeholder="Username" />
+    <span class="input-group-button">
+      <button class="button">
+        <span class="octicon octicon-clippy"></span>
+      </button>
+    </span>
+  </div>
+</form></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Username"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"input-group-button"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"octicon octicon-clippy"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+<h2 id="form-actions">Form actions</h2>
+
+<p>Align buttons to the right in forms with <code>.form-actions</code>.</p>
+
+<div class="docs-example clearfix"><div class="form-actions">
+  <button type="button" class="button primary">Save changes</button>
+  <button type="button" class="button">Cancel</button>
+</div></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-actions"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"button primary"</span><span class="nt">&gt;</span>Save changes<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+    </div>
+  </div>
+</div>
+
+
+      <footer>
+        &copy; GitHub 2014. All rights reserved.
+      </footer>
+    </div>
+
+    <script src="/js/anchor.min.js"></script>
+    <script>
+      var selector = '.markdown-body h2, .markdown-body h3';
+      addAnchors(selector);
+    </script>
+  </body>
+</html>

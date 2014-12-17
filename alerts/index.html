@@ -58,11 +58,23 @@
   <a class="menu-item " href="/buttons/">
     Buttons
   </a>
+  <a class="menu-item " href="/forms/">
+    Forms
+  </a>
   <a class="menu-item " href="/nav/">
     Navigation
   </a>
   <a class="menu-item selected" href="/alerts/">
     Alerts
+  </a>
+  <a class="menu-item " href="/blankslate/">
+    Blankslate
+  </a>
+  <a class="menu-item " href="/avatars/">
+    Avatars
+  </a>
+  <a class="menu-item " href="/states/">
+    States
   </a>
   <a class="menu-item " href="/tooltips/">
     Tooltips
@@ -94,7 +106,7 @@
 
 <p>Flash messages start off looking decently neutral—they’re just light blue rounded rectangles.</p>
 
-<div class="docs-example"><div class="flash">
+<div class="docs-example clearfix"><div class="flash">
   Flash message goes here.
 </div></div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flash"</span><span class="nt">&gt;</span>
@@ -103,7 +115,7 @@
 
 <p>You can put multiple paragraphs of text in a flash message—the last paragraph’s bottom <code>margin</code> will be automatically override.</p>
 
-<div class="docs-example"><div class="flash">
+<div class="docs-example clearfix"><div class="flash">
   <p>This is a longer flash message in it's own paragraph. It ends up looking something like this. If we keep adding more text, it'll eventually wrap to a new line.</p>
   <p>And this is another paragraph.</p>
 </div></div>
@@ -114,7 +126,7 @@
 
 <p>Should the need arise, you can quickly space out your flash message from surrounding content with a <code>.flash-messages</code> wrapper. <em>Note the extra top and bottom margin in the example below.</em></p>
 
-<div class="docs-example"><div class="flash-messages">
+<div class="docs-example clearfix"><div class="flash-messages">
   <div class="flash">
     Flash message goes here.
   </div>
@@ -129,14 +141,14 @@
 
 <p>Add <code>.flash-warn</code> or <code>.flash-error</code> to the flash message to make it yellow or red, respectively.</p>
 
-<div class="docs-example"><div class="flash flash-warn">
+<div class="docs-example clearfix"><div class="flash flash-warn">
   Flash message goes here.
 </div></div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flash flash-warn"</span><span class="nt">&gt;</span>
   Flash message goes here.
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-<div class="docs-example"><div class="flash flash-error">
+<div class="docs-example clearfix"><div class="flash flash-error">
   Flash message goes here.
 </div></div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flash flash-error"</span><span class="nt">&gt;</span>
@@ -147,7 +159,7 @@
 
 <p>Add an icon to the left of the flash message to give it some funky fresh attention. Just add <code>.flash-with-icon</code> and your Octicon.</p>
 
-<div class="docs-example"><div class="flash flash-with-icon">
+<div class="docs-example clearfix"><div class="flash flash-with-icon">
   <span class="octicon octicon-alert"></span>
   Flash message with an icon goes here.
 </div></div>
@@ -160,7 +172,7 @@
 
 <p>Add a JavaScript enabled (via Crema) dismiss (close) icon on the right of any flash message.</p>
 
-<div class="docs-example"><div class="flash">
+<div class="docs-example clearfix"><div class="flash">
   <span class="octicon octicon-x flash-close js-flash-close"></span>
   Dismissable flash message goes here.
 </div></div>
