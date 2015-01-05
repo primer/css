@@ -81,7 +81,8 @@ dd {
 
 tt,
 code {
-  font: 12px $mono-font;
+  font-family: $mono-font;
+  font-size: 12px;
 }
 
 pre {
