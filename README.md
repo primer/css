@@ -17,6 +17,9 @@
   - [Publishing docs](#publishing-docs)
 - [Updating](#updating)
 - [Usage](#usage)
+- [Contributing](#contributing)
+- [Versioning](#versioning)
+- [License](#license)
 
 ## Install
 
@@ -137,6 +140,18 @@ Once included, simply `@import` either the master SCSS file, or the individual f
 ```scss
 @import "primer/primer";
 ```
+
+## Contributing
+
+Please read through our [contributing guidelines](https://github.com/github/primer/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
+
+All HTML and CSS should conform to the [style guidelines](http://primercss.io/guidelines).
+
+Editor preferences are available in the [editor config](https://github.com/github/primer/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
+
+## Versioning
+
+For transparency into our release cycle and in striving to maintain backward compatibility, Primer is maintained under [the Semantic Versioning guidelines](http://semver.org/). Sometimes we screw up, but we'll adhere to those rules whenever possible.
 
 ## License
 
