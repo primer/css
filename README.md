@@ -1,11 +1,8 @@
 # Primer
 
-> *primer* (noun)
->
-> 1. A substance used as a preparatory coat on previously unpainted wood, metal, or canvas, esp. to prevent the absorption of subsequent layers of paint or the development of rust.
-> 2. The internal CSS toolkit and guidelines for GitHub.
+Primer is the CSS toolkit that power GitHub's front-end design. It's purposefully limited to common components to provide our developers with the most flexibility and keep GitHub uniquely *GitHubby*. It's built with SCSS and available via Bower, so it's easy to include all or part of it within your project.
 
-[**Read the Primer documentation.**](http://github.github.com/primer)
+[**Read the Primer documentation**](http://primercss.io) to learn more.
 
 ## Contents
 
