@@ -1,6 +1,6 @@
 # Primer
 
-Primer is the CSS toolkit that power GitHub's front-end design. It's purposefully limited to common components to provide our developers with the most flexibility and keep GitHub uniquely *GitHubby*. It's built with SCSS and available via Bower, so it's easy to include all or part of it within your project.
+Primer is the CSS toolkit that power GitHub's front-end design. It's purposefully limited to common components to provide our developers with the most flexibility—and keep GitHub uniquely *GitHubby*. It's built with SCSS and available via Bower, so it's easy to include all or part of it within your project.
 
 [**Read the Primer documentation**](http://primercss.io) to learn more.
 
