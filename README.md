@@ -137,3 +137,7 @@ Once included, simply `@import` either the master SCSS file, or the individual f
 ```scss
 @import "primer/primer";
 ```
+
+## License
+
+Created and copyright GitHub, Inc. Released under the [MIT license](LICENSE.md).
