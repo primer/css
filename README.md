@@ -154,4 +154,4 @@ For transparency into our release cycle and in striving to maintain backward com
 
 ## License
 
-Created and copyright GitHub, Inc. Released under the [MIT license](LICENSE.md).
+Created by and copyright GitHub, Inc. Released under the [MIT license](LICENSE.md).
