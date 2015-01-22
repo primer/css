@@ -4,7 +4,7 @@ Primer is the CSS toolkit that power GitHub's front-end design. It's purposefull
 
 [**Read the Primer documentation**](http://primercss.io) to learn more.
 
-_**Heads up!** We love open source, but Primer is unlikely to add new features that are not used in GitHub.com. It's first and foremost our design toolkit. We really love to share though, so hopefully that means we're still friends <3._
+_**Heads up!** We love open source, but Primer is unlikely to add new features that are not used in GitHub.com. It's first and foremost our CSS toolkit. We really love to share though, so hopefully that means we're still friends <3._
 
 ## Contents
 
