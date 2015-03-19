@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>
-      About &middot; Primer
+      Roadmap &middot; Primer
     </title>
 
     <link rel="stylesheet" href="/docs.css">
@@ -30,7 +30,7 @@
 
         <nav class="masthead-nav">
           <a  href="/scaffolding">Docs</a>
-          <a class="active" href="/about">About</a>
+          <a  href="/about">About</a>
           <a href="https://github.com/github/primer" target="_blank">GitHub</a>
           <a href="https://github.com/github/primer/blob/master/README.md#install" target="_blank">Install</a>
         </nav>
@@ -41,30 +41,32 @@
       <div class="columns docs-layout">
   <div class="three-fourths column markdown-body">
     <h1 class="page-title">
-      About
+      Roadmap
     </h1>
     <div class="markdown-body">
-      <p>Learn more about this styleguide, particularly how it’s built and who maintains it.</p>
+      <p>A brief—and incomplete—look at potential future Primer updates with a focus on rewriting components for simplicity and durability, as well as consolidating UI options.</p>
 
-<h3 id="what-and-why">What and why</h3>
-
-<p>Primer is GitHub’s internal CSS framework. It’s not perfect, and it’s not really built for others to use in their own projects. There’s a lot we can improve upon in Primer, but there’s a lot we can all learn by having it open-sourced. While we don’t currently plan on building this out as a competitor to other front-end frameworks, we will ocassionally add, remove, or modify things as we need.</p>
-
-<h3 id="future-updates">Future updates</h3>
-
-<p>See the <a href="/roadmap">roadmap</a> for a rough outline on what’s slated for future versions of Primer.</p>
-
-<h3 id="dependencies">Dependencies</h3>
-
+<h2 id="v2">v2</h2>
 <ul>
-  <li>Bower is used to link GitHub assets, namely our <a href="http://octicons.github.com">Octicons</a> icon font and Markdown styles.</li>
-  <li>Autoprefixer is used to generate vendor-prefixed declarations and is handled via our Gruntfile.</li>
-  <li>A custom plugin for snippet and example combos, <code>example.rb</code>, was created as a fork of Jekyll’s built-in <code>highlight</code> plugin.</li>
+  <li>[ ] Refactor alerts to reduce selectors and overrides</li>
+  <li>[ ] Deprecate the gradient mixin for Autoprefixer</li>
+  <li>[ ] Clean up the utility classes
+    <ul>
+      <li>[ ] De-dupe text color utilities</li>
+      <li>[ ] Remove the <code>// Misc</code> utilities</li>
+    </ul>
+  </li>
 </ul>
 
-<h3 id="who">Who</h3>
+<h2 id="v3">v3</h2>
+<ul>
+  <li>[ ] Refactor blankslates to reduce selectors, overrides, and UI options</li>
+</ul>
 
-<p>Currently maintained by <a href="https://twitter.com/mdo">@mdo</a>, <a href="https://twitter.com/jonrohan">@jonrohan</a> and the GitHub CSS team.</p>
+<h2 id="v4">v4</h2>
+<ul>
+  <li>[ ] Refactor forms (most notably the <code>dl.form</code>)</li>
+</ul>
 
     </div>
   </div>

@@ -37,16 +37,11 @@
       </div>
     </header>
 
-    
-
     <div class="container">
       <div class="columns docs-layout">
   <div class="one-fourth column">
     
       <nav class="menu docs-menu">
-  <a class="menu-item " href="/guidelines/">
-    Guidelines
-  </a>
   <a class="menu-item " href="/scaffolding/">
     Scaffolding
   </a>
@@ -82,6 +77,15 @@
   </a>
   <a class="menu-item " href="/utilities/">
     Utilities
+  </a>
+</nav>
+
+<nav class="menu docs-menu">
+  <a class="menu-item " href="/guidelines/">
+    Code guidelines
+  </a>
+  <a class="menu-item " href="/colors/">
+    Colors
   </a>
 </nav>
 
@@ -149,7 +153,7 @@
     <input type="radio" id="derp" name="herpderp" /> Derp
   </label>
 
-  <button class="button" type="submit">Submit</button>
+  <button class="btn" type="submit">Submit</button>
 </form></div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
   <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
@@ -169,7 +173,7 @@
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"derp"</span> <span class="na">name=</span><span class="s">"herpderp"</span><span class="nt">&gt;</span> Derp
   <span class="nt">&lt;/label&gt;</span>
 
-  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"button"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></div>
 
 <h2 id="form-contrast">Form contrast</h2>
@@ -317,7 +321,7 @@
   <div class="input-group">
     <input type="text" placeholder="Username" />
     <span class="input-group-button">
-      <button class="button">
+      <button class="btn">
         <span class="octicon octicon-clippy"></span>
       </button>
     </span>
@@ -327,7 +331,7 @@
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Username"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"input-group-button"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"octicon octicon-clippy"</span><span class="nt">&gt;&lt;/span&gt;</span>
       <span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;/span&gt;</span>
@@ -336,15 +340,15 @@
 
 <h2 id="form-actions">Form actions</h2>
 
-<p>Align buttons to the right in forms with <code>.form-actions</code>.</p>
+<p>Align buttons to the right—via <code>float: right</code> on the buttons—in forms with <code>.form-actions</code>. The floats are automatically cleared for you.</p>
 
 <div class="docs-example clearfix"><div class="form-actions">
-  <button type="button" class="button primary">Save changes</button>
-  <button type="button" class="button">Cancel</button>
+  <button type="button" class="btn btn-primary">Save changes</button>
+  <button type="button" class="btn">Cancel</button>
 </div></div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-actions"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"button primary"</span><span class="nt">&gt;</span>Save changes<span class="nt">&lt;/button&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Save changes<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 
