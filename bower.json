@@ -1,0 +1,21 @@
+{
+  "name": "primer",
+  "version": "2.0.1",
+  "ignore": [
+    "docs/",
+    "script/",
+    ".gitignore",
+    ".scss-lint.yml",
+    "_config.yml",
+    "Gemfile",
+    "Gemfile.lock",
+    "Rakefile"
+  ],
+  "main": [
+    "scss/primer.scss"
+  ],
+  "dependencies": {
+    "octicons": "*",
+    "primer-user-content": "https://github.com/primer/user-content.git#2.1.7"
+  }
+}

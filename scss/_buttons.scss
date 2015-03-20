@@ -1,0 +1,380 @@
+// Shared styles
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #333;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  @include gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
+  user-select: none;
+  -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
+
+  i {
+    font-style: normal;
+    font-weight: 500;
+    opacity: 0.6;
+  }
+
+  .octicon {
+    vertical-align: text-top;
+  }
+
+  &:focus {
+    text-decoration: none;
+    border-color: #51a7e8;
+    outline: none;
+    box-shadow: 0 0 5px rgba(81, 167, 232, 0.5);
+  }
+
+  &:hover,
+  &:active,
+  &.zeroclipboard-is-hover,
+  &.zeroclipboard-is-active {
+    text-decoration: none;
+    @include gradient(#eee, #ddd);
+    border-color: #ccc;
+  }
+
+  &:active,
+  &.selected,
+  &.selected:hover,
+  &.zeroclipboard-is-active {
+    background-color: #dcdcdc;
+    background-image: none;
+    border-color: #b5b5b5;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  &:disabled,
+  &.disabled {
+    &,
+    &:hover {
+      color: rgba(102, 102, 102, 0.5);
+      cursor: default;
+      background-color: rgba(229, 229, 229, 0.5);
+      background-image: none;
+      border-color: rgba(197, 197, 197, 0.5);
+      box-shadow: none;
+    }
+  }
+}
+
+// Green primary button
+.btn-primary {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
+  @include gradient(#8add6d, #60b044);
+  border-color: darken(#60b044, 2%);
+
+  &:hover {
+    color: #fff;
+    @include gradient(darken(#8add6d, 5%), darken(#60b044, 5%));
+    border-color: #4a993e;
+  }
+
+  &:active,
+  &.selected {
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    background-color: darken(#60b044, 5%);
+    background-image: none;
+    border-color: darken(#4a993e, 5%);
+  }
+
+  &:disabled,
+  &.disabled {
+    &,
+    &:hover {
+      color: #fefefe;
+      @include gradient(#c3ecb4, #add39f);
+      border-color: #b9dcac #b9dcac #a7c89b;
+    }
+  }
+}
+
+// Red danger button
+.btn-danger {
+  color: #900;
+
+  &:hover {
+    color: #fff;
+    @include gradient(#dc5f59, #b33630);
+    border-color: #cd504a;
+  }
+
+  &:active,
+  &.selected {
+    color: #fff;
+    background-color: #b33630;
+    background-image: none;
+    border-color: darken(#cd504a, 15%);
+  }
+
+  &:disabled,
+  &.disabled {
+    &,
+    &:hover {
+      color: #cb7f7f;
+      @include gradient(#fefefe, #efefef);
+      border-color: #e1e1e1;
+    }
+  }
+}
+
+// Outline button
+//
+// For when we need a linky-action that's not too heavy in busier
+// areas like conversation timelines.
+.btn-outline {
+  color: $brand-blue;
+  background-color: #fff; // Reset default gradient backgrounds and colors
+  background-image: none;
+  border: 1px solid #e5e5e5;
+
+  &:hover,
+  &:active,
+  &.selected,
+  &.selected:hover,
+  &.zeroclipboard-is-hover,
+  &.zeroclipboard-is-active {
+    color: #fff;
+    background-color: $brand-blue;
+    background-image: none;
+    border-color: $brand-blue;
+  }
+
+  &:disabled,
+  &.disabled {
+    &,
+    &:hover {
+      color: #777;
+      background-color: #f5f5f5;
+      border-color: #e5e5e5;
+    }
+  }
+}
+
+// Social button count
+.btn-with-count {
+  float: left;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+
+// Octicon buttons
+//
+// Improve alignemnt of Octicons within buttons and minibuttons. Also auto tweak
+// the right arrow to float right for ease of use.
+.btn {
+  > .octicon-arrow-right {
+    float: right;
+    margin-left: 5px;
+  }
+}
+
+// Required because we nuke the padding on minibuttons
+.btn-sm > .octicon-arrow-right {
+  margin-top: 4px;
+}
+
+
+// Minibutton overrides
+//
+// Tweak `line-height` to make them smaller.
+.btn-sm {
+  padding: 2px 10px;
+}
+
+
+// Hidden text button
+//
+// Use `.hidden-text-expander` to indicate and expand hidden text.
+.hidden-text-expander {
+  display: block;
+
+  &.inline {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    margin-left: 5px;
+    line-height: 0;
+  }
+
+  a {
+    display: inline-block;
+    height: 12px;
+    padding: 0 5px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 6px;
+    color: #555;
+    text-decoration: none;
+    vertical-align: middle;
+    background: #ddd;
+    border-radius: 1px;
+
+    &:hover {
+      text-decoration: none;
+      background-color: #ccc;
+    }
+
+    &:active {
+      color: #fff;
+      background-color: #4183c4;
+    }
+  }
+}
+
+
+// Social count bubble
+//
+// A container that is used for social bubbles counts.
+.social-count {
+  float: left;
+  padding: 2px 7px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 20px;
+  color: $brand-gray-dark;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-left: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+
+  &:hover {
+    color: $brand-blue;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+
+// Full-width button
+//
+// These buttons expand to the full width of their parent container
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+
+// Button group
+//
+// A button group is a series of buttons laid out next to each other, all part
+// of one visual button, but separated by rules to be separate.
+.btn-group {
+  display: inline-block;
+  vertical-align: middle;
+  @include clearfix();
+
+  .btn {
+    position: relative;
+    float: left;
+
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+
+    &:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    // Bring any button into forefront for proper borders given negative margin below
+    &:hover,
+    &:focus,
+    &:active,
+    &.selected {
+      z-index: 2;
+    }
+  }
+
+  // Tuck buttons into one another to prevent double border
+  .btn + .btn {
+    margin-left: -1px;
+    box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.2);
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    &:active,
+    &.selected {
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .button_to + .button_to {
+    margin-left: -1px;
+  }
+
+  .button_to {
+    float: left;
+
+    .btn {
+      border-radius: 0;
+    }
+
+    &:first-child {
+      .btn {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+    }
+
+    &:last-child {
+      .btn {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+    }
+  }
+}
+
+// Proper spacing for multiple button groups (a la, gollum editor)
+.btn-group + .btn-group,
+.btn-group + .btn {
+  margin-left: 5px;
+}
+
+
+// Radio buttons
+//
+// Buttons backed by radio or checkbox control. Requires the use of `.hidden`
+// on the `input` to properly hide it.
+.btn-link {
+  display: inline-block;
+  padding: 0;
+  font-size: inherit;
+  color: $brand-blue;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  user-select: none;
+  -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: none; // Prevents the blue ring when clicked.
+  }
+}
