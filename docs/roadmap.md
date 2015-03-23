@@ -8,6 +8,7 @@ A brief—and incomplete—look at potential future Primer updates with a focus 
 ## v2
 - [ ] Add Hound CI for SCSS linting
 - [ ] Document the `user-content` repo somehow
+- [ ] Clarify usage of CLA in our docs
 
 ## v3
 - [ ] Refactor alerts to reduce selectors and overrides
