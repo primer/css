@@ -5,7 +5,7 @@ title: Tooltips
 
 Add tooltips built entirely in CSS to nearly any element. Just add a few classes and an `aria-label` attribute.
 
-In addition, you'll want to specify a direcetion:
+In addition, you'll want to specify a direction:
 
 - `.tooltipped-n`
 - `.tooltipped-ne`
