@@ -1,6 +1,5 @@
 {
   "name": "primer-user-content",
-  "version": "2.0.0",
   "keywords": [
     "github",
     "markdown",
@@ -14,6 +13,7 @@
     "*.js",
     "README.md",
     "Gruntfile.js",
-    "package.json"
+    "package.json",
+    "render-test.md"
   ]
 }

@@ -264,6 +264,17 @@ $margin: 16px;
     margin-bottom: 0 !important;
   }
 
+  // Anchors like <a name="examples">. These sometimes end up wrapped around
+  // text when users mistakenly forget to close the tag or use self-closing tag
+  // syntax. We don't want them to appear like links.
+  // FIXME: a:not(:link):not(:visited) would be a little clearer here (and
+  // possibly faster to match), but it breaks styling of <a href> elements due
+  // to https://bugs.webkit.org/show_bug.cgi?id=142737.
+  a:not([href]) {
+    color: inherit;
+    text-decoration: none;
+  }
+
   // Link Colors
   .absent {
     color: #c00;
@@ -272,7 +283,6 @@ $margin: 16px;
   .anchor {
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
     display: block;
     padding-right: 6px;
@@ -301,7 +311,6 @@ $margin: 16px;
     &:hover .anchor {
       padding-left: 8px;
       margin-left: -30px;
-      line-height: 1;
       text-decoration: none;
 
       .octicon-link {
@@ -320,6 +329,10 @@ $margin: 16px;
     font-size: 2.25em;
     line-height: 1.2;
     border-bottom: 1px solid #eee;
+
+    .anchor {
+      line-height: 1;
+    }
   }
 
   h2 {
@@ -327,24 +340,44 @@ $margin: 16px;
     font-size: 1.75em;
     line-height: 1.225;
     border-bottom: 1px solid #eee;
+
+    .anchor {
+      line-height: 1;
+    }
   }
 
   h3 {
     font-size: 1.5em;
     line-height: 1.43;
+
+    .anchor {
+      line-height: 1.2;
+    }
   }
 
   h4 {
     font-size: 1.25em;
+
+    .anchor {
+      line-height: 1.2;
+    }
   }
 
   h5 {
     font-size: 1em;
+
+    .anchor {
+      line-height: 1.1;
+    }
   }
 
   h6 {
     font-size: 1em;
     color: #777;
+
+    .anchor {
+      line-height: 1.1;
+    }
   }
 
   p,
@@ -473,6 +506,10 @@ $margin: 16px;
     max-width: 100%;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+  }
+  
+  .emoji {
+    max-width: none;
   }
 
   // Gollum Image Tags
@@ -639,4 +676,19 @@ $margin: 16px;
       content: normal;
     }
   }
+
+  kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 11px;
+    line-height: 10px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fcfcfc;
+    border: solid 1px #ccc;
+    border-bottom-color: #bbb;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #bbb;
+  }
 }
+
