@@ -139,6 +139,8 @@ Check in `bower.json` and all changes under `vendor/assets/bower_components`.
 
 ## Contributing
 
+By contributing to Primer, you agree to the terms presented in our [CLA](CLA.md). *More information will be provided here soon.*
+
 When contributing changes to Primer, be sure to do the following steps when opening a pull request:
 
 1. Bump the version number in `bower.json` (it's purely placebo right now, but it's good habit) and `package.json`.

@@ -41,11 +41,28 @@
       <div class="jumbotron">
         <div class="container">
           <h1>Primer</h1>
-          <p>The internal CSS toolkit and guidelines that powers GitHub.</p>
+          <p>The CSS toolkit and guidelines that power GitHub.</p>
 
           <a href="{{ site.baseurl }}/scaffolding/" class="btn btn-reverse">
             Read docs
           </a>
+        </div>
+      </div>
+
+      <div class="container about-that">
+        <div class="columns">
+          <div class="one-third column">
+            <h2>Made at GitHub</h2>
+            <p>Primer is the basecoat of GitHub, made by nerds just like you who share a passion for HTML and CSS.</p>
+          </div>
+          <div class="one-third column">
+            <h2>Open source</h2>
+            <p>Available for use under the MIT license and built with open source projects like SCSS, Jekyll, Grunt, and more.</p>
+          </div>
+          <div class="one-third column">
+            <h2>Build tools</h2>
+            <p>Includes a small Gruntfile for compiling our SCSS, Autoprefixer for vendor prefixes, and Parker for CSS stats.</p>
+          </div>
         </div>
       </div>
     {% endif %}
@@ -54,7 +71,8 @@
       {{ content }}
 
       <footer class="footer">
-        &copy; GitHub {{ site.time | date: '%Y' }}. All rights reserved.<br>
+        Copyright GitHub {{ site.time | date: '%Y' }}.<br>
+        Created and maintained by the CSS team at GitHub.
       </footer>
     </div>
 
