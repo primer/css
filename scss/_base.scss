@@ -6,7 +6,8 @@ input,
 select,
 textarea,
 button {
-  font: #{$body-font-size}/1.4 $body-font;
+  font: #{$body-font-size}/1.4 $button-font;
+  font-family: inherit;
 }
 
 body {
