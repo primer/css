@@ -16,7 +16,7 @@ In addition, you'll want to specify a direcetion:
 - `.tooltipped-w`
 - `.tooltipped-nw`
 
-Remember, `aria-label` and tooltip classes must go directly on `<button>` and `<a>` elements. Tooltip classes also conflict with Octicon clases, and as such, must go on a parent element instead of the icon.
+Remember, `aria-label` and tooltip classes must go directly on `<button>` and `<a>` elements. Tooltip classes also conflict with Octicon classes, and as such, must go on a parent element instead of the icon.
 
 {% example html %}
 <span class="tooltipped tooltipped-n" aria-label="This is the tooltip.">
