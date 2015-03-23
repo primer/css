@@ -1,6 +1,6 @@
 ---
 layout: page
-title: User content
+title: Markdown
 ---
 
 Styles for rendering GitHub Flavored Markdown in any project.
