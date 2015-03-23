@@ -164,6 +164,15 @@ body {
 }
 
 .about-that {
+
+  @media (max-width: 760px) {
+    .column {
+      float: none;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+
   p {
     padding-right: .5rem;
     color: #555;
