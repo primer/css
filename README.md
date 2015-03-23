@@ -28,15 +28,13 @@ Download the [latest release](https://github.com/github/primer/releases/latest) 
 
 ### Bower
 
-Install Primer with Bower by adding `https://github.com/github/primer.git#x.x.x` to your app's `bower.json` (in `github/github`, this is `vendor/assets/bower.json`). Replace `x.x.x` with the latest version number.
-
-**Remember:** Primer is a *private* Bower project, so simply specifying a version range isn't enough. You must include the Git URL.
+Install Primer with Bower by adding `primer-css` to your app's `bower.json` (in `github/github`, this is `vendor/assets/bower.json`). Replace `x.x.x` with the latest version number.
 
 ``` json
 {
   "name": "myapp",
   "dependencies": {
-    "primer": "https://github.com/github/primer.git#0.x.x"
+    "primer-css": "0.x.x"
   }
 }
 ```
@@ -123,7 +121,7 @@ Within `bower.json`, update to a new release by changing the version number that
 {
   "name": "myapp",
   "dependencies": {
-    "primer": "https://github.com/github/primer.git#0.x.x"
+    "primer-css": "0.x.x"
   }
 }
 ```
