@@ -135,6 +135,7 @@ body {
 
 .jumbotron {
   margin-top: -2rem;
+  margin-bottom: 3rem;
   padding-top: 2rem;
   padding-bottom: 4rem;
   background-color: $brand-blue;
@@ -159,6 +160,18 @@ body {
     padding-bottom: 8rem;
     font-size: 1.5rem;
     text-align: left;
+  }
+}
+
+.about-that {
+  p {
+    padding-right: .5rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-weight: normal;
   }
 }
 
@@ -187,7 +200,7 @@ body {
   margin-top: 3rem;
   line-height: 1.75;
   color: #7a7a7a;
-  border-top: .05rem solid #e5e5e5;
+  border-top: 1px solid #eee;
 }
 
 

@@ -1,6 +1,6 @@
 {
-  "name": "primer",
-  "version": "2.0.1",
+  "name": "primer-css",
+  "version": "2.0.2",
   "ignore": [
     "docs/",
     "script/",
