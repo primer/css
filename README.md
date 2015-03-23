@@ -45,12 +45,6 @@ Install Primer with Bower by adding `https://github.com/github/primer.git#x.x.x`
 
 **Hey, GitHubbers!** For GitHub.com, you'll need to  `cd` into `vendor/assets` and run `bower install` there. Be sure to commit and push all the changes, including the `bower.json` and everything under `bower_components`.
 
-**Rails 3.x Note** Rails 3.x is locked to an older version of sprockets that doesn't support Bower. You can work around this by installing the [sprockets 2.2.2.backport2](http://rubygems.org/gems/sprockets/versions/2.2.2.backport2) gem.
-
-``` ruby
-gem 'sprockets', '2.2.2.backport2'
-```
-
 ## Usage
 
 Once included, simply `@import` either the master SCSS file, or the individual files as you need them.
