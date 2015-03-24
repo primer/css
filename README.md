@@ -24,7 +24,7 @@ _**Heads up!** We love open source, but Primer is unlikely to add new features t
 
 ### Manually
 
-Download the [latest release](https://github.com/github/primer/releases/latest) and copy the SCSS files over to your own project. Once your files are in place, jump to the [usage guidelines](#usage) for including Primer into your own CSS.
+Download the [latest release](https://github.com/primer/primer/releases/latest) and copy the SCSS files over to your own project. Once your files are in place, jump to the [usage guidelines](#usage) for including Primer into your own CSS.
 
 ### Bower
 
@@ -138,11 +138,11 @@ When contributing changes to Primer, be sure to do the following steps when open
 1. Bump the version number in `bower.json` (it's purely placebo right now, but it's good habit) and `package.json`.
 2. Run `grunt css` and commit the changes. This compiles the SCSS to CSS so we can do basic analysis on the number of selectors, file size, etc.
 
-In addition, please read through our [contributing guidelines](https://github.com/github/primer/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
+In addition, please read through our [contributing guidelines](https://github.com/primer/primer/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
 
 All HTML and CSS should conform to the [style guidelines](http://primercss.io/guidelines).
 
-Editor preferences are available in the [editor config](https://github.com/github/primer/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
+Editor preferences are available in the [editor config](https://github.com/primer/primer/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
 
 ## Versioning
 
