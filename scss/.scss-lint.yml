@@ -19,6 +19,10 @@ linters:
     enabled: true
     severity: error
 
+  ColorVariable:
+    enabled: false
+    severity: error
+
   Comment:
     enabled: true
     severity: error
