@@ -82,7 +82,9 @@ Add a JavaScript enabled (via Crema) dismiss (close) icon on the right of any fl
 
 {% example html %}
 <div class="flash">
-  <span class="octicon octicon-x flash-close js-flash-close"></span>
+  <div class="flash-close js-flash-close">
+    <span class="octicon octicon-x"></span>
+  </div>
   Dismissable flash message goes here.
 </div>
 {% endexample %}
