@@ -12,13 +12,29 @@ h6 {
   line-height: 1.1;
 }
 
-h1 { font-size: 30px; }
-h2 { font-size: 21px; }
-h3 { font-size: 16px; }
-h4 { font-size: 14px; }
-h5 { font-size: 12px; }
-h6 { font-size: 11px; }
+h1 {
+  font-size: 30px;
+}
 
+h2 {
+  font-size: 21px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+h6 {
+  font-size: 11px;
+}
 
 // Body text
 // --------------------------------------------------
@@ -40,8 +56,13 @@ blockquote {
 }
 
 // Text utilities
-.text-muted { color: #999; }
-.text-danger { color: $brand-red; }
+.text-muted {
+  color: #999;
+}
+
+.text-danger {
+  color: $brand-red;
+}
 
 .text-emphasized {
   font-weight: bold;

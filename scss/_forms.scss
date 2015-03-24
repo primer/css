@@ -47,7 +47,9 @@ input.input-contrast,
 .input-contrast {
   background-color: #fafafa;
 
-  &:focus { background-color: #fff; }
+  &:focus {
+    background-color: #fff;
+  }
 }
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
@@ -155,11 +157,17 @@ dl.form {
     }
 
     input {
-      &.shorter { width: 130px; }
+      &.shorter {
+        width: 130px;
+      }
 
-      &.short { width: 250px; }
+      &.short {
+        width: 250px;
+      }
 
-      &.long { width: 100%; }
+      &.long {
+        width: 100%;
+      }
     }
 
     // Textarea
@@ -177,9 +185,13 @@ dl.form {
     h4 {
       margin: 4px 0 0;
 
-      &.is-error { color: $brand-red; }
+      &.is-error {
+        color: $brand-red;
+      }
 
-      &.is-success { color: $brand-green; }
+      &.is-success {
+        color: $brand-green;
+      }
     }
 
     h4 + p.note {
@@ -375,7 +387,9 @@ dl.form {
     margin: 28px 25px 0 -20px;
   }
 
-  select { margin-top: 5px; }
+  select {
+    margin-top: 5px;
+  }
 }
 
 // IE 9
@@ -513,9 +527,13 @@ html.no-dnd-uploads {
     border: 1px solid #cacaca;
   }
 
-  .comment-header .comment-header-actions { display: none; }
+  .comment-header .comment-header-actions {
+    display: none;
+  }
 
-  .comment-form-error { margin-bottom: 10px; }
+  .comment-form-error {
+    margin-bottom: 10px;
+  }
 
   .write-content,
   .preview-content {
@@ -566,7 +584,9 @@ div.composer {
   border-bottom: 1px solid #eee;
 }
 
-.composer .tabnav { margin: 0 0 10px; }
+.composer .tabnav {
+  margin: 0 0 10px;
+}
 
 .infobar-widget {
 
@@ -574,7 +594,9 @@ div.composer {
     position: relative; // requires so that the `right: 0;` below works
     float: right;
 
-    .select-menu-modal-holder { right: 0; }
+    .select-menu-modal-holder {
+      right: 0;
+    }
   }
 
   &.assignee {
@@ -731,9 +753,13 @@ p.explain {
     line-height: 1.5;
   }
 
-  strong { color: #000; }
+  strong {
+    color: #000;
+  }
 
-  a { font-weight: bold; }
+  a {
+    font-weight: bold;
+  }
 }
 
 
