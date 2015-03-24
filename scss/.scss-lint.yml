@@ -24,7 +24,7 @@ linters:
     severity: error
 
   Comment:
-    enabled: true
+    enabled: false
     severity: error
 
   DebugStatement:
