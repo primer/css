@@ -250,9 +250,13 @@
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 
+  &:hover,
+  &:active{
+    text-decoration: none;
+  }
+
   &:hover {
     color: $brand-blue;
-    text-decoration: none;
     cursor: pointer;
   }
 }
