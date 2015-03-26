@@ -59,6 +59,14 @@
   padding-left: $grid-gutter;
 }
 
+// Centers content horizontally. Can be used inside or outside the grid.
+.centered {
+  display: block;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 // Equal width columns via table sorcery.
 .table-column {
   display: table-cell;
