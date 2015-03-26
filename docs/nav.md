@@ -47,7 +47,7 @@ There are a few subcomponents and add-ons that work well with the menu, includin
 </nav>
 {% endexample %}
 
-You can also add optional headings to a menu. Feel free to use nearly semantic element with the `.menu-heading` class, including inline elements, headings, and more.
+You can also add optional headings to a menu. Feel free to use nearly any semantic element with the `.menu-heading` class, including inline elements, headings, and more.
 
 {% example html %}
 <nav class="menu">
