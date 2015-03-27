@@ -7,99 +7,94 @@
 # below is our settings.
 
 linters:
+  BangFormat:
+    enabled: true
+    space_before_bang: true
+    space_after_bang: false
+
   BorderZero:
     enabled: true
-    severity: error
-
-  CapitalizationInSelector:
-    enabled: true
-    severity: error
+    convention: zero # or `none`
 
   ColorKeyword:
     enabled: true
-    severity: error
 
   ColorVariable:
     enabled: false
-    severity: error
 
   Comment:
     enabled: false
-    severity: error
 
   DebugStatement:
     enabled: true
-    severity: error
 
   DeclarationOrder:
     enabled: true
-    severity: error
 
   DuplicateProperty:
     enabled: true
-    severity: error
 
   ElsePlacement:
     enabled: true
     style: same_line # or 'new_line'
-    severity: error
 
   EmptyLineBetweenBlocks:
     enabled: true
     ignore_single_line_blocks: true
-    severity: error
 
   EmptyRule:
     enabled: false
-    severity: error
 
   FinalNewline:
     enabled: true
     present: true
-    severity: error
 
   HexLength:
     enabled: true
     style: short # or 'long'
-    severity: error
 
   HexNotation:
     enabled: true
     style: lowercase # or 'uppercase'
-    severity: error
 
   HexValidation:
     enabled: true
-    severity: error
 
-  IdWithExtraneousSelector:
+  IdSelector:
     enabled: true
-    severity: error
+
+  ImportantRule:
+    enabled: true
+
+  ImportPath:
+    enabled: true
+    leading_underscore: false
+    filename_extension: false
 
   Indentation:
     enabled: true
+    allow_non_nested_indentation: false
     character: space # or 'tab'
     width: 2
-    severity: error
 
   LeadingZero:
     enabled: true
     style: include_zero
-    severity: error
 
   MergeableSelector:
     enabled: true
     force_nesting: true
-    severity: error
 
   NameFormat:
     enabled: false
     convention: hyphenated_lowercase # or 'BEM', or a regex pattern
-    severity: error
+
+  NestingDepth:
+    enabled: false
+    max_depth: 3
 
   PlaceholderInExtend:
     enabled: false
-    severity: error
 
   PropertySortOrder:
     enabled: false
@@ -371,82 +366,81 @@ linters:
   PropertySpelling:
     enabled: true
     extra_properties: []
-    severity: error
+
+  QualifyingElement:
+    enabled: true
+    allow_element_with_attribute: false
+    allow_element_with_class: false
+    allow_element_with_id: false
 
   SelectorDepth:
     enabled: true
     max_depth: 4
-    severity: error
 
   SelectorFormat:
     enabled: false
+    convention: hyphenated_lowercase # or 'BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
 
   Shorthand:
     enabled: true
-    severity: error
 
   SingleLinePerProperty:
     enabled: true
     allow_single_line_rule_sets: true
-    severity: error
 
   SingleLinePerSelector:
     enabled: true
-    severity: error
 
   SpaceAfterComma:
     enabled: true
-    severity: error
 
   SpaceAfterPropertyColon:
     enabled: true
-    style: one_space
-    severity: error
+    style: one_space # or 'no_space', or 'at_least_one_space', or 'aligned'
 
   SpaceAfterPropertyName:
     enabled: true
-    severity: error
 
   SpaceBeforeBrace:
     enabled: true
+    style: space # or 'new_line'
     allow_single_line_padding: true
-    severity: error
 
   SpaceBetweenParens:
     enabled: true
     spaces: 0
-    severity: error
 
   StringQuotes:
     enabled: true
     style: double_quotes
-    severity: error
 
   TrailingSemicolon:
     enabled: true
-    severity: error
+
+  TrailingZero:
+    enabled: false
 
   UnnecessaryMantissa:
     enabled: true
-    severity: error
 
   UnnecessaryParentReference:
     enabled: true
-    severity: error
 
   UrlFormat:
     enabled: true
-    severity: error
 
   UrlQuotes:
     enabled: true
-    severity: error
 
-  VendorPrefixes:
+  VariableForProperty:
+    enabled: false
+    properties: []
+
+  VendorPrefix:
     enabled: true
     identifier_list: base
-    severity: error
+    additional_identifiers: []
+    excluded_identifiers: []
 
   ZeroUnit:
     enabled: true
-    severity: error
