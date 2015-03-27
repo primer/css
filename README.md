@@ -24,7 +24,7 @@ _**Heads up!** We love open source, but Primer is unlikely to add new features t
 
 ### Manually
 
-Download the [latest release](https://github.com/github/primer/releases/latest) and copy the SCSS files over to your own project. Once your files are in place, jump to the [usage guidelines](#usage) for including Primer into your own CSS.
+Download the [latest release](https://github.com/primer/primer/releases/latest) and copy the SCSS files over to your own project. Once your files are in place, jump to the [usage guidelines](#usage) for including Primer into your own CSS.
 
 ### Bower
 
