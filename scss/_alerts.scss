@@ -69,14 +69,14 @@
 
 // Close a flash
 .flash-close {
-  float: right;
-  padding: 16px 24px; // bigger hit area
-  margin-right: -16px;
-  margin-top: -16px;
   color: inherit;
-  text-decoration: none;
   cursor: pointer;
+  float: right;
+  margin-top: -16px;
+  margin-right: -16px;
   opacity: 0.6;
+  padding: 16px 24px; // bigger hit area
+  text-decoration: none;
 
   &:hover {
     opacity: 1;
