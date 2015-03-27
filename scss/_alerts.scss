@@ -1,6 +1,6 @@
 .flash-messages {
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .flash {
@@ -29,7 +29,7 @@
   &.flash-sm {
     padding: 8px 16px;
 
-    .btn-sm {
+    .btn-sm.flash-action {
       margin-top: -2px;
     }
   }
@@ -42,7 +42,7 @@
   }
 
   // Flashes can have an action button
-  .btn {
+  .btn.flash-action {
     float: right;
     margin-top: -6px;
     margin-left: 16px;

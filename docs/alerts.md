@@ -91,12 +91,12 @@ Add a JavaScript enabled (via Crema) dismiss (close) icon on the right of any fl
 
 ## Adding other actions to flashes
 
-If you need a descriptive action on your flash message, just add a button with `.btn`.
+If you need a descriptive action on your flash message, add a button with `.flash-action`.
 
 {% example html %}
 <div class="flash">
   Actionable flash message goes here.
-  <button class="btn">Click this</button>
+  <button class="btn flash-action">Click this</button>
 </div>
 {% endexample %}
 
@@ -105,6 +105,6 @@ On small flashes, just make sure to use a `.btn-sm`:
 {% example html %}
 <div class="flash flash-sm">
   Small, actionable flash message goes here.
-  <button class="btn btn-sm">Click this</button>
+  <button class="btn btn-sm flash-action">Click this</button>
 </div>
 {% endexample %}
