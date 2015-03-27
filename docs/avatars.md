@@ -22,7 +22,7 @@ Be sure to set `width` and `height` attributes for maximum browser performance.
 
 ## Small avatars
 
-We ocassionally use smaller avatars. Anything less than `48px` wide should include the `.avatar-small` modifier class to reset the `border-radius` to a more appropriate level.
+We occasionally use smaller avatars. Anything less than `48px` wide should include the `.avatar-small` modifier class to reset the `border-radius` to a more appropriate level.
 
 {% example html %}
 <img class="avatar avatar-small" src="https://avatars3.githubusercontent.com/u/9919?v=3&s=32" width="32" height="32">

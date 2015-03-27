@@ -42,7 +42,7 @@ textarea {
 }
 
 // Inputs with contrast for easy light gray backgrounds against white.
-// input.class is needed here to increase specifity over input[…]
+// input.class is needed here to increase specificity over input[…]
 input.input-contrast,
 .input-contrast {
   background-color: #fafafa;
