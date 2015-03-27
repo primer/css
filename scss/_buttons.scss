@@ -25,6 +25,11 @@
   .octicon {
     vertical-align: text-top;
   }
+  
+  // Darken for just a tad more contrast against the button background
+  .counter {
+    background-color: #ddd;
+  }
 
   &:focus {
     text-decoration: none;
@@ -72,6 +77,11 @@
   text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
   @include gradient(#8add6d, #60b044);
   border-color: darken(#60b044, 2%);
+  
+  .counter {
+    color: #60b044;
+    background-color: #fff;
+  }
 
   &:hover {
     color: #fff;
@@ -123,6 +133,15 @@
       color: #cb7f7f;
       @include gradient(#fefefe, #efefef);
       border-color: #e1e1e1;
+    }
+  }
+  
+  &:hover,
+  &:active,
+  &.selected {
+    .counter {
+      color: #b33630;
+      background-color: #fff;
     }
   }
 }
