@@ -1,0 +1,3 @@
+scss:
+  enabled: false
+  config_file: scss/.scss-style.yml
