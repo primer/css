@@ -129,6 +129,10 @@ $ bower install
 
 Check in `bower.json` and all changes under `vendor/assets/bower_components`.
 
+## Development
+
+Development of Primer happens in our primary branch, `master`. For stable versions, see the [releases page](https://github.com/primer/primer/releases). `master` will always be up to date with the latest changes, including those which have yet to be released.
+
 ## Contributing
 
 By contributing to Primer, you agree to the terms presented in our [CLA](CLA.md). *More information will be provided here soon.*
