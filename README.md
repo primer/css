@@ -2,7 +2,7 @@
 
 Primer is the CSS toolkit that power GitHub's front-end design. It's purposefully limited to common components to provide our developers with the most flexibility, and to keep GitHub uniquely *GitHubby*. It's built with SCSS and available via Bower, so it's easy to include all or part of it within your own project.
 
-[**Read the Primer documentation**](http://primercss.io) to learn more.
+[**Read the Primer documentation**](http://primercss.io/scaffolding/) to learn more.
 
 _**Heads up!** We love open source, but Primer is unlikely to add new features that are not used in GitHub.com. It's first and foremost our CSS toolkit. We really love to share though, so hopefully that means we're still friends <3._
 
@@ -145,8 +145,6 @@ When contributing changes to Primer, be sure to do the following steps when open
 In addition, please read through our [contributing guidelines](https://github.com/primer/primer/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
 
 All HTML and CSS should conform to the [style guidelines](http://primercss.io/guidelines).
-
-Editor preferences are available in the [editor config](https://github.com/primer/primer/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
 
 ## Versioning
 
