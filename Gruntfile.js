@@ -104,5 +104,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['sass', 'jekyll', 'autoprefixer', 'parker']);
 
   // Publish to GitHub
-  grunt.registerTask('publish', ['jekyll', 'buildcontrol:pages']);
+  grunt.registerTask('publish', ['jekyll', 'autoprefixer:docs', 'buildcontrol:pages']);
 };
