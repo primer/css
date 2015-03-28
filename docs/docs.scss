@@ -281,7 +281,7 @@ body {
     border: 1px solid lighten($brand-green, 30%);
   }
 
-  // Override markdown styles
+  // Override Markdown styles to restore values from `_type.scss`
   ul {
     padding: 0;
     margin-top: 0;
