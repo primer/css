@@ -28,7 +28,7 @@ Guidelines for bug reports:
 
 2. **Check if the issue has been fixed** &mdash; try to reproduce it using the latest `master` or development branch in the repository.
 
-3. **Isolate the problem** &mdash; ideally create a [reduced test case](http://css-tricks.com/6263-reduced-test-cases/) and a live example. [This JS Bin](http://jsbin.com/lefey/1/edit?html,output) is a helpful template.
+3. **Isolate the problem** &mdash; ideally create a [reduced test case](https://css-tricks.com/reduced-test-cases/) and a live example. [This JS Bin](http://jsbin.com/lefey/1/edit?html,output) is a helpful template.
 
 A good bug report shouldn't leave others needing to chase you up for more information. Please try to be as detailed as possible in your report. What is your environment? What steps will reproduce the issue? What browser(s) and OS experience the problem? Do other browsers show the bug differently? What would you expect to be the outcome? All these details will help people to fix any potential bugs.
 
@@ -63,7 +63,7 @@ Adhering to the following process is the best way to get your work included in t
 2. Configure and install the dependencies: `bower install`
 3. Create a new branch: `git checkout -b my-branch-name`
 4. Make your change, add tests, and make sure the tests still pass
-5. Push to your fork and [submit a pull request][pr]
+5. Push to your fork and [submit a pull request][https://help.github.com/articles/creating-a-pull-request/]
 6. Pat your self on the back and wait for your pull request to be reviewed and merged.
 
 Here are a few things you can do that will increase the likelihood of your pull request being accepted:
