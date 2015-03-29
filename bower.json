@@ -9,8 +9,7 @@
     "_config.yml",
     "Gemfile",
     "Gemfile.lock",
-    "Gruntfile.js",
-    "Rakefile"
+    "Gruntfile.js"
   ],
   "main": [
     "scss/primer.scss"
