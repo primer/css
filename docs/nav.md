@@ -118,7 +118,7 @@ Additional bits of text and links can be styled for optimal placement with `.tab
 
 ## Filter list
 
-A vertical list of filters. Grey text on white background. Selecting a filter from the list will fill it's background with blue and make the text white.
+A vertical list of filters. Grey text on white background. Selecting a filter from the list will fill its background with blue and make the text white.
 
 {% example html %}
 <ul class="filter-list">

@@ -191,7 +191,7 @@ Here, we have two desktop bundles to support IE9's maximum selector limit per CS
 
 ### Including (S)CSS files
 
-Use [Sprockets](https://github.com/sstephenson/sprockets) to **require** files. However, you should explicitly **import** any scss that does not generate styles (`globals/`) in the particular SCSS file you'll be needing it's helpers in.  Here's a good example:
+Use [Sprockets](https://github.com/sstephenson/sprockets) to **require** files. However, you should explicitly **import** any scss that does not generate styles (`globals/`) in the particular SCSS file you'll be needing its helpers in.  Here's a good example:
 
 {% highlight scss %}
 //= require_tree ./plugins

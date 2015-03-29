@@ -37,7 +37,7 @@ When it helps the message, include `.mega-octicon`s as the first elements in the
 
 ## Variations
 
-Add an additional optional class to the `.blankslate` to change it's appearance.
+Add an additional optional class to the `.blankslate` to change its appearance.
 
 ### Fixed width
 
