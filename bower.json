@@ -3,13 +3,13 @@
   "version": "2.0.2",
   "ignore": [
     "docs/",
-    "script/",
     ".gitignore",
+    ".hound.yml",
     ".scss-lint.yml",
     "_config.yml",
     "Gemfile",
     "Gemfile.lock",
-    "Rakefile"
+    "Gruntfile.js"
   ],
   "main": [
     "scss/primer.scss"
