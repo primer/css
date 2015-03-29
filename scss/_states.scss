@@ -25,8 +25,14 @@
   background-color: $status-open;
 }
 
-.state-merged { background-color: $status-merged; }
+.state-merged {
+  background-color: $status-merged;
+}
 
-.state-closed { background-color: $status-closed; }
+.state-closed {
+  background-color: $status-closed;
+}
 
-.state-renamed { background-color: $status-renamed; }
+.state-renamed {
+  background-color: $status-renamed;
+}

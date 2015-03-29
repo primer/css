@@ -63,13 +63,21 @@
     border-radius: 3px;
   }
 
-  > .mega-octicon { color: #aaa; }
+  > .mega-octicon {
+    color: #aaa;
+  }
 
-  .mega-octicon + .mega-octicon { margin-left: 10px; }
+  .mega-octicon + .mega-octicon {
+    margin-left: 10px;
+  }
 
-  .tabnav + & { margin-top: 20px; }
+  .tabnav + & {
+    margin-top: 20px;
+  }
 
-  .context-loader.large-format-loader { padding-top: 50px; }
+  .context-loader.large-format-loader {
+    padding-top: 50px;
+  }
 }
 
 // Forking blank slate

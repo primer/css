@@ -22,7 +22,9 @@
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
 
-    &:before { border-top-left-radius: 2px; }
+    &:before {
+      border-top-left-radius: 2px;
+    }
   }
 
   &:last-child {
@@ -30,7 +32,9 @@
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
 
-    &:before { border-bottom-left-radius: 2px; }
+    &:before {
+      border-bottom-left-radius: 2px;
+    }
   }
 
   &:hover {
@@ -60,7 +64,7 @@
     width: 16px;
     color: $brand-gray-dark;
     text-align: center;
- }
+  }
 
   .counter {
     float: right;

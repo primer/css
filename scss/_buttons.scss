@@ -69,7 +69,7 @@
 // Green primary button
 .btn-primary {
   color: #fff;
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
   @include gradient(#8add6d, #60b044);
   border-color: darken(#60b044, 2%);
 
@@ -81,7 +81,7 @@
 
   &:active,
   &.selected {
-    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
     background-color: darken(#60b044, 5%);
     background-image: none;
     border-color: darken(#4a993e, 5%);

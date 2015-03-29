@@ -4,42 +4,69 @@
 }
 
 // Floats
-.right { float: right; }
+.right {
+  float: right;
+}
 
-.left { float: left; }
-
+.left {
+  float: left;
+}
 
 // Text alignment
-.text-right { text-align: right; }
+.text-right {
+  text-align: right;
+}
 
-.text-left { text-align: left; }
-
+.text-left {
+  text-align: left;
+}
 
 // Text states
-.danger { color: #c00; }
+.danger {
+  color: #c00;
+}
 
-.mute { color: #000; }
+.mute {
+  color: #000;
+}
 
-.text-diff-added { color: darken($brand-green, 10%); }
+.text-diff-added {
+  color: darken($brand-green, 10%);
+}
 
-.text-diff-deleted { color: $brand-red; }
+.text-diff-deleted {
+  color: $brand-red;
+}
 
 .text-open,
-.text-success { color: $status-open; }
+.text-success {
+  color: $status-open;
+}
 
-.text-closed { color: $status-closed; }
+.text-closed {
+  color: $status-closed;
+}
 
-.text-reverted { color: $status-reverted; }
+.text-reverted {
+  color: $status-reverted;
+}
 
-.text-merged { color: $status-merged; }
+.text-merged {
+  color: $status-merged;
+}
 
-.text-renamed { color: $status-renamed; }
+.text-renamed {
+  color: $status-renamed;
+}
 
-.text-pending { color: $status-pending; }
+.text-pending {
+  color: $status-pending;
+}
 
 .text-error,
-.text-failure { color: $brand-red; }
-
+.text-failure {
+  color: $brand-red;
+}
 
 // Muted link
 //
