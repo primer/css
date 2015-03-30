@@ -66,7 +66,9 @@ Wrap `<blockquote>` around any <abbr title="HyperText Markup Language">HTML</abb
 
 ## Lists
 
-**Heads up!** The broken display of lists is **intentional** as Primer globally resets `<ul>`s and `<ol>`s for the time being. This will eventually be undone in the next major version.
+<div class="flash">
+  <strong>Heads up!</strong> The broken display of lists is <strong>intentional</strong> as Primer globally resets these elements for the time being. This will eventually be undone in the next major version.
+</div>
 
 ### Unordered
 
