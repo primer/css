@@ -27,6 +27,12 @@
     vertical-align: text-top;
   }
 
+  // Darken for just a tad more contrast against the button background
+  .counter {
+    text-shadow: none;
+    background-color: #e5e5e5;
+  }
+
   &:focus {
     text-decoration: none;
     border-color: #51a7e8;
@@ -75,6 +81,11 @@
   background-color: #60b044;
   background-image: linear-gradient(#8add6d, #60b044);
   border-color: darken(#60b044, 2%);
+
+  .counter {
+    color: #60b044;
+    background-color: #fff;
+  }
 
   &:hover {
     color: #fff;
@@ -132,6 +143,15 @@
       border-color: #e1e1e1;
     }
   }
+
+  &:hover,
+  &:active,
+  &.selected {
+    .counter {
+      color: #b33630;
+      background-color: #fff;
+    }
+  }
 }
 
 // Outline button
@@ -144,6 +164,10 @@
   background-image: none;
   border: 1px solid #e5e5e5;
 
+  .counter {
+    background-color: #eee;
+  }
+
   &:hover,
   &:active,
   &.selected,
@@ -154,6 +178,11 @@
     background-color: $brand-blue;
     background-image: none;
     border-color: $brand-blue;
+
+    .counter {
+      color: $brand-blue;
+      background-color: #fff;
+    }
   }
 
   &:disabled,
