@@ -176,23 +176,6 @@
 }
 
 
-// Octicon buttons
-//
-// Improve alignment of Octicons within buttons and minibuttons. Also auto tweak
-// the right arrow to float right for ease of use.
-.btn {
-  > .octicon-arrow-right {
-    float: right;
-    margin-left: 5px;
-  }
-}
-
-// Required because we nuke the padding on minibuttons
-.btn-sm > .octicon-arrow-right {
-  margin-top: 4px;
-}
-
-
 // Minibutton overrides
 //
 // Tweak `line-height` to make them smaller.
