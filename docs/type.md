@@ -66,9 +66,11 @@ Wrap `<blockquote>` around any <abbr title="HyperText Markup Language">HTML</abb
 
 ## Lists
 
+**Heads up!** The broken display of lists is **intentional** as Primer globally resets `<ul>`s and `<ol>`s for the time being. This will eventually be undone in the next major version.
+
 ### Unordered
 
-A list of items in which the order does *not* explicitly matter. **The broken display is intended** as Primer resets `<ul>`s and `<ol>`s for the time being. This will eventually be undone in the next major version.
+A list of items in which the order does *not* explicitly matter.
 
 {% example html %}
 <ul>
