@@ -50,12 +50,15 @@
 
   &:active,
   &.selected,
-  &.selected:hover,
   &.zeroclipboard-is-active {
     background-color: #dcdcdc;
     background-image: none;
     border-color: #b5b5b5;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  &.selected:hover {
+    background-color: darken(#dcdcdc, 5%);
   }
 
   &:disabled,
