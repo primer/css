@@ -3,7 +3,7 @@ layout: page
 title: Blankslate
 ---
 
-Blankslates inform are for when there is a lack of content within a page or section. Use them as placeholders to tell users why something isn't there. Be sure to provide an action to add content as well.
+Blankslates are for when there is a lack of content within a page or section. Use them as placeholders to tell users why something isn't there. Be sure to provide an action to add content as well.
 
 ## Contents
 
@@ -37,7 +37,7 @@ When it helps the message, include `.mega-octicon`s as the first elements in the
 
 ## Variations
 
-Add an additional optional class to the `.blankslate` to change it's appearance.
+Add an additional optional class to the `.blankslate` to change its appearance.
 
 ### Fixed width
 

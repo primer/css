@@ -16,6 +16,7 @@ A brief—and incomplete—look at potential future Primer updates with a focus 
 - [ ] Clean up the utility classes
 	- [ ] De-dupe text color utilities
 	- [ ] Remove the `// Misc` utilities
+- [ ] Remove `padding` and `margin` resets on `<ul>`s and `<ol>`s
 
 ## v4
 - [ ] Refactor blankslates to reduce selectors, overrides, and UI options
