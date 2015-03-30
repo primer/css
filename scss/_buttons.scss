@@ -78,7 +78,7 @@
 // Green primary button
 .btn-primary {
   color: #fff;
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.15);
   background-color: #60b044;
   background-image: linear-gradient(#8add6d, #60b044);
   border-color: darken(#60b044, 2%);
@@ -92,7 +92,7 @@
 
   &:active,
   &.selected {
-    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
     background-color: darken(#60b044, 5%);
     background-image: none;
     border-color: darken(#4a993e, 5%);
@@ -103,6 +103,7 @@
     &,
     &:hover {
       color: #fefefe;
+      text-shadow: none;
       background-color: #add39f;
       background-image: linear-gradient(#c3ecb4, #add39f);
       border-color: #b9dcac #b9dcac #a7c89b;
