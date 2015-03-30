@@ -123,6 +123,11 @@ You can also use the [counter](utilities/#counter) component within buttons:
   Button
   <span class="counter">12</span>
 </button>
+
+<button class="btn btn-outline" type="button">
+  Button
+  <span class="counter">12</span>
+</button>
 {% endexample %}
 
 ## Button groups
