@@ -26,6 +26,9 @@ module.exports = function(grunt) {
       dist: {
         src: 'css/*.css'
       },
+      docs: {
+        src: '_site/*.css'
+      }
     },
 
     // Runs CSS reporting
@@ -60,7 +63,7 @@ module.exports = function(grunt) {
 
     watch: {
       sass: {
-        files: 'scss/**/*.scss',
+        files: ['scss/**/*.scss', 'docs/docs.scss'],
         tasks: ['sass', 'autoprefixer', 'parker']
       }
     },
@@ -98,8 +101,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
 
   // Generate and format the CSS
-  grunt.registerTask('default', ['sass', 'autoprefixer', 'parker']);
+  grunt.registerTask('default', ['sass', 'jekyll', 'autoprefixer', 'parker']);
 
   // Publish to GitHub
-  grunt.registerTask('publish', ['jekyll', 'buildcontrol:pages']);
+  grunt.registerTask('publish', ['jekyll', 'autoprefixer:docs', 'buildcontrol:pages']);
 };
