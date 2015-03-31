@@ -96,6 +96,10 @@
     border-color: darken(#438e2b, 5%);
   }
 
+  &.selected:hover {
+    background-color: darken(#51a136, 10%);
+  }
+
   &:focus,
   &:focus:hover {
     border-color: #157bca;
@@ -132,6 +136,10 @@
     border-color: darken(#cd504a, 15%);
   }
 
+  &.selected:hover {
+    background-color: darken(#b33630, 5%);
+  }
+
   &:disabled,
   &.disabled {
     &,
@@ -157,13 +165,16 @@
   &:hover,
   &:active,
   &.selected,
-  &.selected:hover,
   &.zeroclipboard-is-hover,
   &.zeroclipboard-is-active {
     color: #fff;
     background-color: $brand-blue;
     background-image: none;
     border-color: $brand-blue;
+  }
+
+  &.selected:hover {
+    background-color: darken($brand-blue, 5%);
   }
 
   &:disabled,
