@@ -3,6 +3,13 @@
 # only main files contain this front matter, not partials.
 ---
 
+/*
+ * Primer documentation styles
+ * http://primercss.io
+ *
+ * Released under MIT license. Copyright 2015 GitHub, Inc.
+ */
+
 //
 // Import Primer itself
 //
@@ -274,8 +281,9 @@ body {
     border: 1px solid lighten($brand-green, 30%);
   }
 
-  // Override markdown styles
-  ul {
+  // Override Markdown styles to restore values from `_type.scss`
+  ul,
+  ol {
     padding: 0;
     margin-top: 0;
     margin-bottom: 0;
