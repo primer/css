@@ -9,6 +9,17 @@
 .left { float: left; }
 
 
+// Layout
+
+// Centers content horizontally. Can be used inside or outside the grid.
+.centered {
+  display: block;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 // Text alignment
 .text-right { text-align: right; }
 
