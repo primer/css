@@ -38,6 +38,10 @@
     border-color: #51a7e8;
     outline: none;
     box-shadow: 0 0 5px rgba(81, 167, 232, 0.5);
+
+    &:hover {
+      border-color: #51a7e8;
+    }
   }
 
   &:hover,
@@ -52,12 +56,15 @@
 
   &:active,
   &.selected,
-  &.selected:hover,
   &.zeroclipboard-is-active {
     background-color: #dcdcdc;
     background-image: none;
     border-color: #b5b5b5;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  &.selected:hover {
+    background-color: darken(#dcdcdc, 5%);
   }
 
   &:disabled,
@@ -77,10 +84,9 @@
 // Green primary button
 .btn-primary {
   color: #fff;
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
-  background-color: #60b044;
-  background-image: linear-gradient(#8add6d, #60b044);
-  border-color: darken(#60b044, 2%);
+  background-color: #63b346;
+  background-image: linear-gradient(#68b74b, #51a136);
+  border-color: darken(#51a136, 2%);
 
   .counter {
     color: #60b044;
@@ -89,27 +95,26 @@
 
   &:hover {
     color: #fff;
-    background-color: darken(#60b044, 5%);
-    background-image: linear-gradient(darken(#8add6d, 5%), darken(#60b044, 5%));
-    border-color: #4a993e;
+    background-color: darken(#51a136, 5%);
+    background-image: linear-gradient(darken(#68b74b, 5%), darken(#51a136, 5%));
+    border-color: #438e2b;
   }
 
   &:active,
   &.selected {
-    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
-    background-color: darken(#60b044, 5%);
+    background-color: darken(#51a136, 5%);
     background-image: none;
-    border-color: darken(#4a993e, 5%);
+    border-color: darken(#438e2b, 5%);
   }
 
   &:disabled,
   &.disabled {
     &,
-    &:hover {
-      color: #fefefe;
-      background-color: #add39f;
-      background-image: linear-gradient(#c3ecb4, #add39f);
-      border-color: #b9dcac #b9dcac #a7c89b;
+    &:hover,
+    &:active {
+      color: #fff;
+      background-color: #b1d9a3;
+      border-color: #a6cc99;
     }
   }
 }
