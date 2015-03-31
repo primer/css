@@ -32,10 +32,11 @@
     border-color: #51a7e8;
     outline: none;
     box-shadow: 0 0 5px rgba(81, 167, 232, 0.5);
+  }
 
-    &:hover {
-      border-color: #51a7e8;
-    }
+  &:focus:hover,
+  &.selected:focus {
+    border-color: #51a7e8;
   }
 
   &:hover,
