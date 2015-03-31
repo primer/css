@@ -319,10 +319,13 @@
 
     // Bring any button into forefront for proper borders given negative margin below
     &:hover,
-    &:focus,
     &:active,
     &.selected {
       z-index: 2;
+    }
+
+    &:focus {
+      z-index: 3;
     }
   }
 
