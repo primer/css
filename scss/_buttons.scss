@@ -96,6 +96,11 @@
     border-color: darken(#438e2b, 5%);
   }
 
+  &:focus,
+  &:focus:hover {
+    border-color: #157bca;
+  }
+
   &:disabled,
   &.disabled {
     &,
