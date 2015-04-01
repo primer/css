@@ -106,6 +106,30 @@ You can easily append a count to a **small button**. Add the `.with-count` class
 </div>
 {% endexample %}
 
+You can also use the [counter](utilities/#counter) component within buttons:
+
+{% example html %}
+<button class="btn" type="button">
+  Button
+  <span class="counter">12</span>
+</button>
+
+<button class="btn btn-primary" type="button">
+  Button
+  <span class="counter">12</span>
+</button>
+
+<button class="btn btn-danger" type="button">
+  Button
+  <span class="counter">12</span>
+</button>
+
+<button class="btn btn-outline" type="button">
+  Button
+  <span class="counter">12</span>
+</button>
+{% endexample %}
+
 ## Button groups
 
 Have a hankering for a series of buttons that are attached to one another? Wrap them in a `.btn-group` and the buttons will be rounded and spaced automatically.

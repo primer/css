@@ -49,12 +49,12 @@ Once included, simply `@import` either the master SCSS file, or the individual f
 
 ```scss
 // Example: All of Primer
-@import "primer/scss/primer";
+@import "primer-css/scss/primer";
 
 // Example: Individual files
-@import "primer/scss/variables";
-@import "primer/scss/mixins";
-@import "primer/scss/base";
+@import "primer-css/scss/variables";
+@import "primer-css/scss/mixins";
+@import "primer-css/scss/base";
 ```
 
 ## Documentation
@@ -66,6 +66,7 @@ Primer's documentation is built with Jekyll and published to `http://primercss.i
 You'll need the following installed:
 
 - Latest Jekyll (minimum v2.2.0): `$ gem install jekyll`
+- Latest Rouge: `$ gem install rouge`
 - Latest Sass: `$ gem install sass`
 - Latest Grunt CLI: `$ npm install -g grunt-cli`
 - [Node.js and npm](http://nodejs.org/download/)
