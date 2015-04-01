@@ -105,9 +105,7 @@
     &,
     &:hover {
       color: #fff;
-      background-color: #add39f;
-      background-image: linear-gradient(#c3ecb4, #add39f);
-      border-color: #b9dcac #b9dcac #a7c89b;
+      background-color: change-color($brand-green, $lightness: 75%, $saturation: 50%);
     }
   }
 }
