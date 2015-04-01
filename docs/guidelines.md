@@ -94,7 +94,7 @@ Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and `scope` attrib
 
 
 
-## CSS
+## SCSS
 
 ### Spacing
 
