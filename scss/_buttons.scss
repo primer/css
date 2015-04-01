@@ -78,9 +78,9 @@
 .btn-primary {
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
-  background-color: #60b044;
-  background-image: linear-gradient(#8add6d, #60b044);
-  border-color: darken(#60b044, 2%);
+  background-color: $brand-green;
+  background-image: linear-gradient($brand-green, darken($brand-green, 10%));
+  border-color: darken($brand-green, 15%);
 
   .counter {
     color: #60b044;
@@ -89,17 +89,17 @@
 
   &:hover {
     color: #fff;
-    background-color: darken(#60b044, 5%);
-    background-image: linear-gradient(darken(#8add6d, 5%), darken(#60b044, 5%));
-    border-color: #4a993e;
+    background-color: darken($brand-green, 3%);
+    background-image: linear-gradient(darken($brand-green, 3%), darken($brand-green, 13%));
+    border-color: darken($brand-green, 16%);
   }
 
   &:active,
   &.selected {
     text-shadow: 0 1px 0 rgba(0,0,0,0.15);
-    background-color: darken(#60b044, 5%);
+    background-color: darken($brand-green, 13%);
     background-image: none;
-    border-color: darken(#4a993e, 5%);
+    border-color: darken($brand-green, 16%);
   }
 
   &:disabled,
