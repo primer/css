@@ -1,6 +1,6 @@
 scss:
-  enabled: false
-  config_file: scss/.scss-style.yml
+  enabled: true
+  config_file: scss/.scss-lint.yml
 
 ruby:
   enabled: false
