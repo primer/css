@@ -32,6 +32,7 @@ The grid is pretty standard—you create rows with `.columns` and individual col
 - Create your outer row to clear the floated columns with `<div class="columns">`.
 - Add your columns with individual `<div class="column">`s.
 - Add your fractional width classes to set the width of the columns (e.g., `.one-fourth`).
+- Columns can be [centered](/utilities/#centering-content) by adding `.centered` to the `.column` class.
 
 In practice, your columns will look like the example below.
 

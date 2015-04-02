@@ -47,6 +47,29 @@ Quickly float something to the left or right, and clear them later.
 </div>
 {% endexample %}
 
+## Centering content
+
+Center content if it's not taking up the full width of the container. Can be used on grid columns or any other elements.
+
+
+{% example html %}
+<div class="columns">
+  <div class="one-half column centered">
+    .one-half
+  </div>
+</div>
+
+<br />
+
+<nav class="menu centered">
+  <a class="menu-item selected" href="#">Account</a>
+  <a class="menu-item" href="#">Profile</a>
+  <a class="menu-item" href="#">Emails</a>
+  <a class="menu-item" href="#">Notifications</a>
+</nav>
+{% endexample %}
+
+
 ## Text alignment
 
 Change the `text-align` on elements with a class.
