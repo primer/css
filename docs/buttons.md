@@ -30,7 +30,7 @@ You can find them in two sizes: the default `.btn` and the smaller `.btn-sm`.
 
 ## Primary
 
-Primary buttons are green and are used to indicate the *primary* action on a page. When you need your buttons to stand out, use the `.btn.btn-primary`. You can use it with both button sizes—just add `.btn-primary`.
+Primary buttons are green and are used to indicate the *primary* action on a page. When you need your buttons to stand out, use `.btn.btn-primary`. You can use it with both button sizes—just add `.btn-primary`.
 
 {% example html %}
 <button class="btn btn-primary" type="button">Primary button</button>
