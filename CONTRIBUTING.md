@@ -6,7 +6,7 @@
 
 Hi there! We're thrilled that you'd like to contribute to this project. Your help is essential for keeping it great.
 
-After you open a PR, you will be asked to agree to [this license agreement](https://cla.github.com/). If you have any hesitation or disagreement, please note your concerns after opening the PR.
+After you open your first pull request, you will be asked to accept [this license agreement](https://cla.github.com/). Let us know in the PR if you have any hesitation or concerns.
 
 ## Using the issue tracker
 
