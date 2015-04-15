@@ -49,18 +49,9 @@ Quickly float something to the left or right, and clear them later.
 
 ## Centering content
 
-Center content if it's not taking up the full width of the container. Can be used on grid columns or any other elements.
-
+Easily center **block level content** if it's not taking up the full width of the parent. Can be used [on grid columns](/layout/#centered) or any other elements.
 
 {% example html %}
-<div class="columns">
-  <div class="one-half column centered">
-    .one-half
-  </div>
-</div>
-
-<br />
-
 <nav class="menu centered">
   <a class="menu-item selected" href="#">Account</a>
   <a class="menu-item" href="#">Profile</a>
