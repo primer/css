@@ -14,6 +14,7 @@ Best practices and guidelines for writing HTML and CSS with approachable formatt
 
 ### General formatting
 
+* Use soft-tabs with a two space indent. Spaces are the only way to guarantee code renders the same in any person's environment.
 * Paragraphs of text should always be placed in a `<p>` tag. Never use multiple `<br>` tags.
 * Items in list form should always be in `<ul>`, `<ol>`, or `<dl>`. Never use a set of `<div>` or `<p>`.
 * Every form input that has text attached should utilize a `<label>` tag. **Especially radio or checkbox elements.**
