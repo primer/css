@@ -343,6 +343,8 @@
     }
   }
 
+  .btn + .button_to,
+  .button_to + .btn,
   .button_to + .button_to {
     margin-left: -1px;
   }
