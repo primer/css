@@ -115,7 +115,7 @@
       <li><a href="#tables">Tables</a></li>
     </ul>
   </li>
-  <li><a href="#css">CSS</a>    <ul>
+  <li><a href="#scss">SCSS</a>    <ul>
       <li><a href="#spacing">Spacing</a></li>
       <li><a href="#formatting">Formatting</a></li>
       <li><a href="#misc">Misc</a></li>
@@ -140,6 +140,7 @@
 <h3 id="general-formatting">General formatting</h3>
 
 <ul>
+  <li>Use soft-tabs with a two space indent. Spaces are the only way to guarantee code renders the same in any person’s environment.</li>
   <li>Paragraphs of text should always be placed in a <code>&lt;p&gt;</code> tag. Never use multiple <code>&lt;br&gt;</code> tags.</li>
   <li>Items in list form should always be in <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, or <code>&lt;dl&gt;</code>. Never use a set of <code>&lt;div&gt;</code> or <code>&lt;p&gt;</code>.</li>
   <li>Every form input that has text attached should utilize a <code>&lt;label&gt;</code> tag. <strong>Especially radio or checkbox elements.</strong></li>
@@ -213,7 +214,7 @@
   <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span></code></pre></div>
 
-<h2 id="css">CSS</h2>
+<h2 id="scss">SCSS</h2>
 
 <h3 id="spacing">Spacing</h3>
 
@@ -230,7 +231,7 @@
 <h3 id="formatting">Formatting</h3>
 
 <ul>
-  <li>Use hex color codes <code>#000</code> unless using <code>rgba()</code>.</li>
+  <li>Use hex color codes <code>#000</code> unless using <code>rgba()</code> in raw CSS (SCSS’ <code>rgba()</code> function is overloaded to accept hex colors as a param, e.g., <code>rgba(#000, .5)</code>).</li>
   <li>Use <code>//</code> for comment blocks (instead of <code>/* */</code>).</li>
   <li>Avoid specifying units for zero values, e.g., <code>margin: 0;</code> instead of <code>margin: 0px;</code>.</li>
   <li>Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values.</li>
@@ -374,7 +375,7 @@
 
       <footer class="footer">
         Copyright GitHub 2015.<br>
-        Created and maintained by the CSS team at GitHub.
+        Created and maintained by the CSS team at GitHub. <strong>Currently v2.0.3.</strong>
       </footer>
     </div>
 
