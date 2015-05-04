@@ -14,8 +14,8 @@
 
   &.flash-warn {
     color: #4c4a42;
-    background-color: #fff9ea;
-    border-color: #dfd8c2;
+    background-color: tint($alert-warn, 92%);
+    border-color: tint($alert-warn, 60%);
   }
 
   &.flash-error {
