@@ -19,9 +19,9 @@
   }
 
   &.flash-error {
-    color: #911;
-    background-color: #fcdede;
-    border-color: #d2b2b2;
+    color: shade($alert-error, 10%);
+    background-color: tint($alert-error, 82%);
+    border-color: tint($alert-error, 70%);
   }
 
   .flash-close {
