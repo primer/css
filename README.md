@@ -136,7 +136,7 @@ Development of Primer happens in our primary branch, `master`. For stable versio
 
 ## Contributing
 
-By contributing to Primer, you agree to the terms presented in our [CLA](CLA.md). *More information will be provided here soon.*
+By contributing to Primer, you agree to the terms presented in [this license agreement](https://cla.github.com/). *More information will be provided here soon.*
 
 When contributing changes to Primer, be sure to do the following steps when opening a pull request:
 

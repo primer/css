@@ -14,6 +14,7 @@ Best practices and guidelines for writing HTML and CSS with approachable formatt
 
 ### General formatting
 
+* Use soft-tabs with a two space indent. Spaces are the only way to guarantee code renders the same in any person's environment.
 * Paragraphs of text should always be placed in a `<p>` tag. Never use multiple `<br>` tags.
 * Items in list form should always be in `<ul>`, `<ol>`, or `<dl>`. Never use a set of `<div>` or `<p>`.
 * Every form input that has text attached should utilize a `<label>` tag. **Especially radio or checkbox elements.**
@@ -94,7 +95,7 @@ Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and `scope` attrib
 
 
 
-## CSS
+## SCSS
 
 ### Spacing
 
@@ -108,7 +109,7 @@ Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and `scope` attrib
 
 ### Formatting
 
-* Use hex color codes `#000` unless using `rgba()`.
+* Use hex color codes `#000` unless using `rgba()` in raw CSS (SCSS' `rgba()` function is overloaded to accept hex colors as a param, e.g., `rgba(#000, .5)`).
 * Use `//` for comment blocks (instead of `/* */`).
 * Avoid specifying units for zero values, e.g., `margin: 0;` instead of `margin: 0px;`.
 * Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values.
