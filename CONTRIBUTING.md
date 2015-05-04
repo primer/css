@@ -6,7 +6,7 @@
 
 Hi there! We're thrilled that you'd like to contribute to this project. Your help is essential for keeping it great.
 
-Before you do, would you mind reading [this license agreement](CLA.md)? If you open a PR, we'll assume you agree to it. If you have any hesitation or disagreement, please do open a PR still, but note your concerns as well.
+After you open your first pull request, you will be asked to accept [this license agreement](https://cla.github.com/). Let us know in the PR if you have any hesitation or concerns.
 
 ## Using the issue tracker
 
@@ -63,7 +63,7 @@ Adhering to the following process is the best way to get your work included in t
 2. Configure and install the dependencies: `bower install`
 3. Create a new branch: `git checkout -b my-branch-name`
 4. Make your change, add tests, and make sure the tests still pass
-5. Push to your fork and [submit a pull request][https://help.github.com/articles/creating-a-pull-request/]
+5. Push to your fork and [submit a pull request](https://help.github.com/articles/creating-a-pull-request/)
 6. Pat your self on the back and wait for your pull request to be reviewed and merged.
 
 Here are a few things you can do that will increase the likelihood of your pull request being accepted:
