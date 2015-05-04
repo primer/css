@@ -116,28 +116,28 @@
 
 // Red danger button
 .btn-danger {
-  color: #900;
+  color: $brand-red;
 
   &:hover {
     color: #fff;
-    background-color: #b33630;
-    background-image: linear-gradient(#dc5f59, #b33630);
-    border-color: #cd504a;
+    background-color: $brand-red;
+    background-image: linear-gradient(lighten($brand-red, 2%), darken($brand-red, 2%));
+    border-color: darken($brand-red, 4%);
   }
 
   &:active,
   &.selected {
     color: #fff;
-    background-color: #b33630;
+    background-color: darken($brand-red, 4%);
     background-image: none;
-    border-color: darken(#cd504a, 15%);
+    border-color: darken($brand-red, 6%);
   }
 
   &:disabled,
   &.disabled {
     &,
     &:hover {
-      color: #cb7f7f;
+      color: tint($brand-red, 40%);
       background-color: #efefef;
       background-image: linear-gradient(#fefefe, #efefef);
       border-color: #e1e1e1;
