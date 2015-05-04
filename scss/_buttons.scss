@@ -146,7 +146,7 @@
   }
 
   &.selected:hover {
-    background-color: darken(#b33630, 5%);
+    background-color: darken($brand-red, 7%);
   }
 
   &:disabled,
@@ -164,7 +164,7 @@
   &:active,
   &.selected {
     .counter {
-      color: #b33630;
+      color: $brand-red;
       background-color: #fff;
     }
   }
