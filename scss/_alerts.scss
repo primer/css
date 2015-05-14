@@ -13,9 +13,9 @@
   border: solid 1px tint($alert-default, 80%);
 
   &.flash-warn {
-    color: #4c4a42;
-    background-color: tint($alert-warn, 92%);
-    border-color: tint($alert-warn, 60%);
+    color: adjust_hue(desaturate(darken($alert-warn, 43), 85), 14);
+    background-color: lighten($alert-warn, 26%);
+    border-color: desaturate(lighten($alert-warn, 14), 78);
   }
 
   &.flash-error {
