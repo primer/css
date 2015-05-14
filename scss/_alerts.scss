@@ -8,20 +8,20 @@
   position: relative;
   font-size: 14px;
   line-height: 1.6;
-  color: $alert-default;
-  background-color: lighten($alert-default, 66%);
-  border: solid 1px tint($alert-default, 80%);
+  color: desaturate(darken($alert-default, 23%), 2%);
+  background-color: saturate(lighten($alert-default, 43%), 38%);
+  border: solid 1px adjust_hue(desaturate(lighten($alert-default, 28%), 21%), 2%);
 
   &.flash-warn {
-    color: adjust_hue(desaturate(darken($alert-warn, 43), 85), 14);
+    color: adjust_hue(desaturate(darken($alert-warn, 43%), 85%), 14%);
     background-color: lighten($alert-warn, 26%);
-    border-color: desaturate(lighten($alert-warn, 14), 78);
+    border-color: desaturate(lighten($alert-warn, 14%), 78%);
   }
 
   &.flash-error {
     color: $alert-error;
-    background-color: saturate(lighten($alert-error, 59), 7);
-    border-color: adjust_hue(desaturate(lighten($alert-error, 41), 50), 9);
+    background-color: saturate(lighten($alert-error, 59%), 7%);
+    border-color: adjust_hue(desaturate(lighten($alert-error, 41%), 50%), 9%);
   }
 
   .flash-close {
