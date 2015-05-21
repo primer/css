@@ -75,7 +75,7 @@ linters:
     severity: error
 
   IdSelector:
-    enabled: true
+    enabled: false
     severity: warning
 
   ImportantRule:
@@ -120,7 +120,7 @@ linters:
     enabled: false
 
   PropertySortOrder:
-    enabled: true
+    enabled: false
     ignore_unspecified: true
     severity: warning
     order:
@@ -309,7 +309,7 @@ linters:
       margin: ['em', 'rem']
 
   QualifyingElement:
-    enabled: true
+    enabled: false
     allow_element_with_attribute: false
     allow_element_with_class: false
     allow_element_with_id: false
