@@ -348,11 +348,11 @@
     &:focus {
       z-index: 3;
     }
-  }
 
-  // Tuck buttons into one another to prevent double border
-  .btn + .btn {
-    margin-left: -1px;
+    // Tuck buttons into one another to prevent double border
+    + .btn {
+      margin-left: -1px;
+    }
   }
 
   .btn + .button_to,
