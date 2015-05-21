@@ -141,7 +141,7 @@ By contributing to Primer, you agree to the terms presented in [this license agr
 When contributing changes to Primer, be sure to do the following steps when opening a pull request:
 
 1. Bump the version number in `bower.json` (it's purely placebo right now, but it's good habit) and `package.json`.
-2. Run `grunt css` and commit the changes. This compiles the SCSS to CSS so we can do basic analysis on the number of selectors, file size, etc.
+2. Run `grunt` and commit the changes. This compiles the SCSS to CSS so we can do basic analysis on the number of selectors, file size, etc.
 
 In addition, please read through our [contributing guidelines](https://github.com/primer/primer/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
 
