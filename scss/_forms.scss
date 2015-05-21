@@ -51,8 +51,7 @@ input.input-contrast,
 }
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
-::-webkit-input-placeholder,
-:-moz-placeholder {
+:placeholder {
   color: #aaa;
 }
 
@@ -62,7 +61,7 @@ input.input-contrast,
   background: #9c2400;
   border: 0;
   border-radius: 3px;
-  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 input::-webkit-validation-bubble-icon {
@@ -72,7 +71,7 @@ input::-webkit-validation-bubble-icon {
 ::-webkit-validation-bubble-arrow {
   background-color: #9c2400;
   border: solid 1px #9c2400;
-  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 // Mini inputs, to match .minibutton

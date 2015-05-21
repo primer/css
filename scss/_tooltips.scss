@@ -171,8 +171,7 @@ $tooltip-text-color: #fff;
 // are always `$multiline-max-width` wide.
 .tooltipped-multiline {
   &:after {
-    width: -moz-max-content;
-    width: -webkit-max-content;
+    width: max-content;
     max-width: $multiline-max-width;
     word-break: break-word;
     word-wrap: normal;
