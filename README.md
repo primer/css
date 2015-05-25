@@ -34,7 +34,7 @@ Install Primer with Bower by adding `primer-css` to your app's `bower.json` (in 
 {
   "name": "myapp",
   "dependencies": {
-    "primer-css": "0.x.x"
+    "primer-css": "x.x.x"
   }
 }
 ```
