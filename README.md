@@ -109,7 +109,7 @@ Within `bower.json`, update to a new release by changing the version number that
 {
   "name": "myapp",
   "dependencies": {
-    "primer-css": "0.x.x"
+    "primer-css": "x.x.x"
   }
 }
 ```
