@@ -28,15 +28,8 @@ Download the [latest release](https://github.com/primer/primer/releases/latest) 
 
 ### Bower
 
-Install Primer with Bower by adding `primer-css` to your app's `bower.json` (in `github/github`, this is `vendor/assets/bower.json`). Replace `x.x.x` with the latest version number.
-
-``` json
-{
-  "name": "myapp",
-  "dependencies": {
-    "primer-css": "0.x.x"
-  }
-}
+```
+$ bower install primer-css --save
 ```
 
 ### Things to know
