@@ -11,7 +11,7 @@
   }
 
   &.pjax-active .filter-item {
-    color: #777;
+    color: $brand-gray;
     background-color: transparent;
 
     &.pjax-active {
@@ -28,7 +28,7 @@
   margin-bottom: 5px;
   overflow: hidden;
   font-size: 14px;
-  color: #777;
+  color: $brand-gray;
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -65,4 +65,3 @@
     background-color: #f1f1f1;
   }
 }
-
