@@ -42,7 +42,7 @@ textarea {
 }
 
 // Inputs with contrast for easy light gray backgrounds against white.
-// input.class is needed here to increase specificity over input[...]
+// input.class is needed here to increase specificity over input[…]
 input.input-contrast,
 .input-contrast {
   background-color: #fafafa;
@@ -53,25 +53,6 @@ input.input-contrast,
 // Custom styling for HTML5 validation bubbles (WebKit only)
 ::placeholder {
   color: #aaa;
-}
-
-::-webkit-validation-bubble-message {
-  font-size: 12px;
-  color: #fff;
-  background: #9c2400;
-  border: 0;
-  border-radius: 3px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-}
-
-input::-webkit-validation-bubble-icon {
-  display: none;
-}
-
-::-webkit-validation-bubble-arrow {
-  background-color: #9c2400;
-  border: solid 1px #9c2400;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 // Mini inputs, to match .minibutton
@@ -295,7 +276,7 @@ dl.form {
   min-height: 17px;
   margin: 4px 0 2px;
   font-size: 12px;
-  color: #777;
+  color: $brand-gray;
 
   .spinner {
     margin-right: 3px;
@@ -354,7 +335,6 @@ dl.form {
     margin: 0 30px 0 0;
 
     > dt {
-
       label {
         display: inline-block;
         margin: 5px 0 0;
