@@ -8,20 +8,20 @@
   position: relative;
   font-size: 14px;
   line-height: 1.6;
-  color: #246;
-  background-color: #e2eef9;
-  border: solid 1px #bac6d3;
+  color: desaturate(darken($alert-default, 23%), 2%);
+  background-color: saturate(lighten($alert-default, 43%), 38%);
+  border: solid 1px adjust_hue(desaturate(lighten($alert-default, 28%), 21%), 2%);
 
   &.flash-warn {
-    color: #4c4a42;
-    background-color: #fff9ea;
-    border-color: #dfd8c2;
+    color: adjust_hue(desaturate(darken($alert-warn, 43%), 85%), 14%);
+    background-color: lighten($alert-warn, 26%);
+    border-color: desaturate(lighten($alert-warn, 14%), 78%);
   }
 
   &.flash-error {
-    color: #911;
-    background-color: #fcdede;
-    border-color: #d2b2b2;
+    color: $alert-error;
+    background-color: saturate(lighten($alert-error, 59%), 7%);
+    border-color: adjust_hue(desaturate(lighten($alert-error, 41%), 50%), 9%);
   }
 
   .flash-close {

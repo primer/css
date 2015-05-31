@@ -20,7 +20,7 @@ $body-font-size: 13px !default;
 // Monospace font stack
 $mono-font: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
 
-// State indicators.
+// State indicators
 $status-open:     $brand-green;
 $status-closed:   $brand-red;
 $status-reverted: $status-closed;
@@ -32,3 +32,8 @@ $status-pending:  #cea61b;
 $repo-private-text: #a1882b;
 $repo-private-bg:   #fff9ea;
 $repo-private-icon: #e9dba5;
+
+// Alert colors
+$alert-default: $brand-blue;
+$alert-warn:    #ffd062;
+$alert-error:   #911;
