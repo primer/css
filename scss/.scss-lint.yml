@@ -1,9 +1,9 @@
-# This is the lint file for .scss files. It uses https://github.com/causes/scss-lint
+# This is the lint file for .scss files. It uses https://github.com/brigade/scss-lint
 # to search through .scss files and point out errors.
 # You can view these errors in your editor.
 #
 # Here's a link to all the default configurations
-# https://github.com/causes/scss-lint/blob/master/config/default.yml
+# https://github.com/brigade/scss-lint/blob/master/config/default.yml
 # below is our settings.
 
 linters:
@@ -11,13 +11,19 @@ linters:
     enabled: true
     space_before_bang: true
     space_after_bang: false
+    severity: error
+
+  BemDepth:
+    enabled: false
 
   BorderZero:
     enabled: true
     convention: zero # or `none`
+    severity: error
 
   ColorKeyword:
     enabled: true
+    severity: error
 
   ColorVariable:
     enabled: false
@@ -27,20 +33,24 @@ linters:
 
   DebugStatement:
     enabled: true
+    severity: error
 
   DeclarationOrder:
-    enabled: true
+    enabled: false
 
   DuplicateProperty:
     enabled: true
+    severity: error
 
   ElsePlacement:
     enabled: true
     style: same_line # or 'new_line'
+    severity: error
 
   EmptyLineBetweenBlocks:
     enabled: true
     ignore_single_line_blocks: true
+    severity: error
 
   EmptyRule:
     enabled: false
@@ -48,52 +58,65 @@ linters:
   FinalNewline:
     enabled: true
     present: true
+    severity: error
 
   HexLength:
     enabled: true
     style: short # or 'long'
+    severity: error
 
   HexNotation:
     enabled: true
     style: lowercase # or 'uppercase'
+    severity: error
 
   HexValidation:
     enabled: true
+    severity: error
 
   IdSelector:
-    enabled: true
+    enabled: false
+    severity: warning
 
   ImportantRule:
-    enabled: true
+    enabled: false
+    severity: error
 
   ImportPath:
     enabled: true
     leading_underscore: false
     filename_extension: false
+    severity: error
 
   Indentation:
     enabled: true
     allow_non_nested_indentation: false
     character: space # or 'tab'
     width: 2
+    severity: error
 
   LeadingZero:
     enabled: true
     style: include_zero
+    severity: error
 
   MergeableSelector:
     enabled: true
     force_nesting: true
+    severity: error
 
   NameFormat:
     enabled: false
-    convention: hyphenated_lowercase # or 'BEM', or a regex pattern
 
   NestingDepth:
-    enabled: false
-    max_depth: 3
+    enabled: true
+    max_depth: 5
+    severity: error
 
   PlaceholderInExtend:
+    enabled: false
+
+  PropertyCount:
     enabled: false
 
   PropertySortOrder:
@@ -273,82 +296,111 @@ linters:
 
   PropertySpelling:
     enabled: true
+    severity: error
     extra_properties: []
 
+  PropertyUnits:
+    enabled: false
+    severity: error
+    global: ['em', 'rem', '%'] # Allow relative units globally
+    properties:
+      border: ['px'] # Only pixels
+      line-height: [] # No units allowed
+      margin: ['em', 'rem']
+
   QualifyingElement:
-    enabled: true
+    enabled: false
     allow_element_with_attribute: false
     allow_element_with_class: false
     allow_element_with_id: false
+    severity: warning
 
   SelectorDepth:
     enabled: true
     max_depth: 4
+    severity: error
 
   SelectorFormat:
-    enabled: false
-    convention: hyphenated_lowercase # or 'BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
+    enabled: true
+    convention: ^((?!js\-))[a-z1-2\-\_]+
+    severity: error
 
   Shorthand:
     enabled: true
+    severity: error
 
   SingleLinePerProperty:
     enabled: true
     allow_single_line_rule_sets: true
+    severity: error
 
   SingleLinePerSelector:
     enabled: true
+    severity: error
 
   SpaceAfterComma:
     enabled: true
+    severity: error
 
   SpaceAfterPropertyColon:
     enabled: true
     style: one_space # or 'no_space', or 'at_least_one_space', or 'aligned'
+    severity: error
 
   SpaceAfterPropertyName:
     enabled: true
+    severity: error
 
   SpaceBeforeBrace:
     enabled: true
     style: space # or 'new_line'
     allow_single_line_padding: true
+    severity: error
 
   SpaceBetweenParens:
     enabled: true
     spaces: 0
+    severity: error
 
   StringQuotes:
     enabled: true
     style: double_quotes
+    severity: error
 
   TrailingSemicolon:
     enabled: true
+    severity: error
 
   TrailingZero:
-    enabled: false
+    enabled: true
+    severity: error
 
   UnnecessaryMantissa:
     enabled: true
+    severity: error
 
   UnnecessaryParentReference:
     enabled: true
+    severity: error
 
   UrlFormat:
     enabled: true
+    severity: error
 
   UrlQuotes:
     enabled: true
+    severity: error
 
   VariableForProperty:
     enabled: false
-    properties: []
 
   VendorPrefix:
     enabled: true
     identifier_list: base
     additional_identifiers: []
     excluded_identifiers: []
+    severity: error
 
   ZeroUnit:
     enabled: true
+    severity: error

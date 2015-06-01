@@ -51,8 +51,7 @@ input.input-contrast,
 }
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
-::-webkit-input-placeholder,
-:-moz-placeholder {
+::placeholder {
   color: #aaa;
 }
 
@@ -161,12 +160,11 @@ dl.form {
       &.is-error { color: $brand-red; }
 
       &.is-success { color: $brand-green; }
-    }
 
-    h4 + p.note {
-      margin-top: 0;
+      + p.note {
+        margin-top: 0;
+      }
     }
-
   }
 
   //
@@ -180,63 +178,11 @@ dl.form {
       content: "*";
     }
   }
-}
 
-.note {
-  min-height: 17px;
-  margin: 4px 0 2px;
-  font-size: 12px;
-  color: $brand-gray;
-
-  .spinner {
-    margin-right: 3px;
-    vertical-align: middle;
-  }
-}
-
-
-// Checkboxes and Radiobuttons
-//
-// For checkboxes and radio button selections.
-.form-checkbox {
-  padding-left: 20px;
-  margin: 15px 0;
-  vertical-align: middle;
-
-  label {
-
-    em.highlight {
-      position: relative;
-      left: -4px;
-      padding: 2px 4px;
-      font-style: normal;
-      background: #fffbdc;
-      border-radius: 3px;
-    }
-  }
-
-  input[type=checkbox],
-  input[type=radio] {
-    float: left;
-    margin: 2px 0 0 -20px;
-    vertical-align: middle;
-  }
-
-  .note {
-    display: block;
-    margin: 0;
-    font-size: 12px;
-    font-weight: normal;
-    color: #666;
-  }
-}
-
-
-// Form AJAX states
-//
-// Form fields that need feedback for AJAX loading, success
-// states and errored states.
-dl.form {
+  // Form AJAX states
+  //
+  // Form fields that need feedback for AJAX loading, success
+  // states and errored states.
   .success,
   .error,
   .indicator {
@@ -326,6 +272,55 @@ dl.form {
   }
 }
 
+.note {
+  min-height: 17px;
+  margin: 4px 0 2px;
+  font-size: 12px;
+  color: $brand-gray;
+
+  .spinner {
+    margin-right: 3px;
+    vertical-align: middle;
+  }
+}
+
+
+// Checkboxes and Radiobuttons
+//
+// For checkboxes and radio button selections.
+.form-checkbox {
+  padding-left: 20px;
+  margin: 15px 0;
+  vertical-align: middle;
+
+  label {
+
+    em.highlight {
+      position: relative;
+      left: -4px;
+      padding: 2px 4px;
+      font-style: normal;
+      background: #fffbdc;
+      border-radius: 3px;
+    }
+  }
+
+  input[type=checkbox],
+  input[type=radio] {
+    float: left;
+    margin: 2px 0 0 -20px;
+    vertical-align: middle;
+  }
+
+  .note {
+    display: block;
+    margin: 0;
+    font-size: 12px;
+    font-weight: normal;
+    color: #666;
+  }
+}
+
 
 // Field groups
 //
@@ -339,10 +334,12 @@ dl.form {
     float: left;
     margin: 0 30px 0 0;
 
-    & > dt label {
-      display: inline-block;
-      margin: 5px 0 0;
-      color: #666;
+    > dt {
+      label {
+        display: inline-block;
+        margin: 5px 0 0;
+        color: #666;
+      }
 
       img {
         position: relative;
