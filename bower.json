@@ -1,6 +1,5 @@
 {
   "name": "primer-css",
-  "version": "2.1.1",
   "ignore": [
     "docs/",
     ".gitignore",
