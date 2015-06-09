@@ -87,38 +87,22 @@ Make inputs smaller, larger, or full-width with an additional class.
 </form>
 {% endexample %}
 
-## Form groups
-
-{% example html %}
-<form>
-  <dl class="form">
-    <dt><label>Example Text</label></dt>
-    <dd><input type="text" class="textfield" value="Example Value"></dd>
-  </dl>
-
-  <dl class="form">
-    <dt><label>Example Label</label></dt>
-    <dd>
-      <select class="select select-sm">
-        <option>Choose an option</option>
-        <option>Git</option>
-        <option>Subversion</option>
-        <option>Social Coding</option>
-        <option>Beets</option>
-        <option>Bears</option>
-        <option>Battlestar Galactica</option>
-      </select>
-    </dd>
-  </dl>
-</form>
-{% endexample %}
-
 ## Select Boxes
 
-Custom select boxes
+Custom select boxes. Adding `.select` will add some additional visual styling.
 
 {% example html %}
 <form>
+  <select>
+    <option>Choose an option</option>
+    <option>Git</option>
+    <option>Subversion</option>
+    <option>Social Coding</option>
+    <option>Beets</option>
+    <option>Bears</option>
+    <option>Battlestar Galactica</option>
+  </select>
+
   <select class="select">
     <option>Choose an option</option>
     <option>Git</option>
@@ -131,16 +115,53 @@ Custom select boxes
 </form>
 {% endexample %}
 
-You may also add emphasis to the label:
+### Small
+
+{% example html %}
+<select class="select-small">
+  <option>Choose an option</option>
+  <option>Git</option>
+  <option>Subversion</option>
+  <option>Social Coding</option>
+  <option>Beets</option>
+  <option>Bears</option>
+  <option>Battlestar Galactica</option>
+</select>
+
+<select class="select select-small">
+  <option>Choose an option</option>
+  <option>Git</option>
+  <option>Subversion</option>
+  <option>Social Coding</option>
+  <option>Beets</option>
+  <option>Bears</option>
+  <option>Battlestar Galactica</option>
+</select>
+{% endexample %}
+
+## Form groups
 
 {% example html %}
 <form>
-  <div class="form-checkbox">
-    <label>
-      <input type="checkbox" checked="checked">
-      <em class="highlight">Available for hire</em>
-    </label>
-  </div>
+  <dl class="form">
+    <dt><label>Example Text</label></dt>
+    <dd><input type="text" class="textfield" value="Example Value"></dd>
+  </dl>
+
+  <dl class="form">
+    <dt><label>Example Label</label></dt>
+    <dd>
+      <select class="select">
+        <option>Choose an option</option>
+        <option>Git</option>
+        <option>Subversion</option>
+        <option>Social Coding</option>
+        <option>Beets</option>
+        <option>Bears</option>
+        <option>Battlestar Galactica</option>
+      </select>
+    </dd>
+  </dl>
 </form>
 {% endexample %}
 

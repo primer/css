@@ -20,6 +20,7 @@ input[type="email"],
 input[type="number"],
 input[type="tel"],
 input[type="url"],
+select,
 textarea {
   min-height: 34px;
   padding: 7px 8px;
@@ -39,6 +40,11 @@ textarea {
     border-color: #51a7e8;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5);
   }
+}
+
+select {
+  height: 34px;
+  box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.075);
 }
 
 // Inputs with contrast for easy light gray backgrounds against white.
@@ -91,7 +97,7 @@ dl.form {
   input[type="password"],
   input[type="email"],
   input[type="url"],
-  select.select,
+  select,
   textarea {
     background-color: #fafafa;
 
@@ -477,12 +483,8 @@ input::-webkit-inner-spin-button {
   display: inline-block;
   padding: 7px 24px 7px 8px;
   vertical-align: middle;
-  background-color: #fff;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAaCAMAAACNQ/wIAAAAYFBMVEUzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMS2aZBAAAAH3RSTlMAAQYNDg8VJDQ2N0JbdXZ4h4mKpL3Iycvb6vDx8vn+GLdSCAAAAHBJREFUeNq90TcSgDAMRFGRMwZMTnv/W+IBm6BxzSt/pUBGURKT73v+LdkGbNm7xDOUOXlKNOE0RaaEI7QxvIrX4db5pLgtXlqXyJH4kA5VYCr6Xw2msYxqWUgJetyGwH4cfkIjXaCsqfUd/GmMEKQdADIVzQIQilIAAAAASUVORK5CYII=) no-repeat right 8px center;
   background-size: 9px 13px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.075);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -498,7 +500,10 @@ input::-webkit-inner-spin-button {
   }
 }
 
-.select-sm {
+.select-small {
+  height: 26px;
+  min-height: 26px;
   padding-top: 3px;
-  padding-bottom: 4px; // peculiar but necessary
+  padding-bottom: 3px;
+  font-size: 12px;
 }
