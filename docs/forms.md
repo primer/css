@@ -99,7 +99,7 @@ Make inputs smaller, larger, or full-width with an additional class.
   <dl class="form">
     <dt><label>Example Label</label></dt>
     <dd>
-      <select>
+      <select class="select select-sm">
         <option>Choose an option</option>
         <option>Git</option>
         <option>Subversion</option>
@@ -113,7 +113,36 @@ Make inputs smaller, larger, or full-width with an additional class.
 </form>
 {% endexample %}
 
-## Notes
+## Select Boxes
+
+Custom select boxes
+
+{% example html %}
+<form>
+  <select class="select">
+    <option>Choose an option</option>
+    <option>Git</option>
+    <option>Subversion</option>
+    <option>Social Coding</option>
+    <option>Beets</option>
+    <option>Bears</option>
+    <option>Battlestar Galactica</option>
+  </select>
+</form>
+{% endexample %}
+
+You may also add emphasis to the label:
+
+{% example html %}
+<form>
+  <div class="form-checkbox">
+    <label>
+      <input type="checkbox" checked="checked">
+      <em class="highlight">Available for hire</em>
+    </label>
+  </div>
+</form>
+{% endexample %}
 
 ## Checkboxes and radios
 
