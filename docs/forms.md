@@ -102,7 +102,15 @@ Primer adds light `height` and `vertical-align` styles to `<select>`s for all br
     <option>Bears</option>
     <option>Battlestar Galactica</option>
   </select>
+</form>
+{% endexample %}
 
+### Custom
+
+Custom `<select>`s are also available—just add `.select`. **Only available in latest WebKit, Firefox, and IE browsers.**
+
+{% example html %}
+<form>
   <select class="select">
     <option>Choose an option</option>
     <option>Git</option>
