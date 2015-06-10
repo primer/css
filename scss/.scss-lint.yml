@@ -400,7 +400,8 @@ linters:
     additional_identifiers: []
     excluded_identifiers: []
     severity: error
-    exclude: ["_forms.scss"]
+    exclude:
+      - 'scss/_forms.scss'
 
   ZeroUnit:
     enabled: true
