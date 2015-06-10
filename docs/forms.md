@@ -125,8 +125,10 @@ Custom `<select>`s are also available—just add `.select`. **Only available in 
 
 ### Small
 
+Use the `.select-sm` class to resize both default and custom `<select>`s to match the size of [our small buttons](/buttons/#default-buttons).
+
 {% example html %}
-<select class="select-small">
+<select class="select-sm">
   <option>Choose an option</option>
   <option>Git</option>
   <option>Subversion</option>
@@ -136,7 +138,7 @@ Custom `<select>`s are also available—just add `.select`. **Only available in 
   <option>Battlestar Galactica</option>
 </select>
 
-<select class="select select-small">
+<select class="select select-sm">
   <option>Choose an option</option>
   <option>Git</option>
   <option>Subversion</option>
