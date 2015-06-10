@@ -293,6 +293,19 @@ body {
     margin-bottom: 0;
   }
 
+  dl.form {
+    margin: 15px 0;
+
+    > dt {
+      margin: 0 0 6px;
+      font-style: normal;
+    }
+
+    > dd {
+      padding: 0;
+    }
+  }
+
   // Flex table
   .flex-table-item > .btn {
     margin-left: 10px;
