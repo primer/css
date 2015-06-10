@@ -479,7 +479,10 @@ input::-webkit-inner-spin-button {
   content: "\f02d"; // octicon-x
 }
 
-// Custom select box
+
+// Custom select
+//
+// Apply `.select` to any `<select>` element for custom styles.
 
 .select {
   display: inline-block;
