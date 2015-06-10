@@ -155,7 +155,7 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
 <form>
   <dl class="form">
     <dt><label>Example Text</label></dt>
-    <dd><input type="text" class="textfield" value="Example Value"></dd>
+    <dd><input type="text" value="Example Value"></dd>
   </dl>
 
   <dl class="form">
