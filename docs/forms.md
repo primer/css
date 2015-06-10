@@ -87,9 +87,9 @@ Make inputs smaller, larger, or full-width with an additional class.
 </form>
 {% endexample %}
 
-## Select Boxes
+## Selects
 
-Custom select boxes. Adding `.select` will add some additional visual styling.
+Primer adds light `height` and `vertical-align` styles to `<select>`s for all browsers to render them consistently with textual inputs.
 
 {% example html %}
 <form>
