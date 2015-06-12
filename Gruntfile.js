@@ -19,9 +19,11 @@ module.exports = function(grunt) {
     },
 
     // Handle vendor prefixing
-    autoprefixer: {
+    postcss: {
       options: {
-        browsers: ['last 2 versions', 'ie 8', 'ie 9']
+        processors: [
+          require('autoprefixer-core')({ browsers: 'last 2 versions' }),
+        ]
       },
       dist: {
         src: 'css/*.css'
@@ -64,7 +66,7 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: ['scss/**/*.scss', 'docs/docs.scss'],
-        tasks: ['sass', 'autoprefixer', 'parker']
+        tasks: ['sass', 'postcss', 'parker']
       }
     },
 
@@ -93,7 +95,7 @@ module.exports = function(grunt) {
   });
 
   // Load dependencies
-  grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-build-control');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-jekyll');
@@ -101,8 +103,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
 
   // Generate and format the CSS
-  grunt.registerTask('default', ['sass', 'jekyll', 'autoprefixer', 'parker']);
+  grunt.registerTask('default', ['sass', 'jekyll', 'postcss', 'parker']);
 
   // Publish to GitHub
-  grunt.registerTask('publish', ['jekyll', 'autoprefixer:docs', 'buildcontrol:pages']);
+  grunt.registerTask('publish', ['jekyll', 'postcss:docs', 'buildcontrol:pages']);
 };
