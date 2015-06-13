@@ -106,7 +106,7 @@ You can easily append a count to a **small button**. Add the `.with-count` class
 </div>
 {% endexample %}
 
-You can also use the [counter](utilities/#counter) component within buttons:
+You can also use the [counter](../utilities/#counter) component within buttons:
 
 {% example html %}
 <button class="btn" type="button">
