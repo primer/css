@@ -144,4 +144,16 @@ A vertical list of filters. Grey text on white background. Selecting a filter fr
 
 ## Breadcrumb
 
-*Coming soon...*
+Navigation showing the structure of the site, from higher-up levels down to the current page.
+
+{% example html %}
+<div class="breadcrumb">
+  <a href="#" class="breadcrumb-item">First level</a>
+  <span class="breadcrumb-separator"></span>
+  <a href="#" class="breadcrumb-item">Second level</a>
+  <span class="breadcrumb-separator"></span>
+  <a href="#" class="breadcrumb-item">Third level</a>
+  <span class="breadcrumb-separator"></span>
+  <span class="breadcrumb-item active">Here</span>
+</div>
+{% endexample %}

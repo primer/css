@@ -1,0 +1,25 @@
+.breadcrumb {
+  color: $brand-gray;
+  font-size: 14px;
+}
+
+.breadcrumb-item {
+  display: inline-block;
+
+  &:first-child,
+  &.active {
+    font-weight: bold;
+  }
+
+  &.active {
+    color: $brand-gray-dark;
+  }
+}
+
+.breadcrumb-separator {
+  padding: 0 3px;
+
+  &:before {
+    content: "/";
+  }
+}
