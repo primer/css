@@ -28,7 +28,7 @@ textarea {
   vertical-align: middle;
   background-color: #fff;
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
-  background-position: right center;
+  background-position: right 8px center;
   border: 1px solid #ccc;
   border-radius: 3px;
   outline: none;
@@ -131,7 +131,6 @@ dl.form {
       width: 440px;
       max-width: 100%;
       margin-right: 5px;
-      background-position-x: 98%;
     }
 
     input {
@@ -211,53 +210,6 @@ dl.form {
     }
   }
 
-  &.errored {
-    > dt label {
-      color: #900;
-    }
-
-    // General text next to the field
-    .error {
-      display: inline;
-      color: #900;
-    }
-
-    // Specific error explanations from the server
-    dd.error,
-    dd.warning {
-      display: inline-block;
-      padding: 5px;
-      font-size: 11px;
-      color: #494620;
-      background: #f7ea57;
-      border: 1px solid #c0b536;
-      border-top-color: #fff;
-      border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px;
-    }
-  }
-
-  &.warn {
-    // General text next to the field
-    .warning {
-      display: inline;
-      color: #900;
-    }
-
-    // Specific warning explanations from the server
-    dd.warning {
-      display: inline-block;
-      padding: 5px;
-      font-size: 11px;
-      color: #494620;
-      background: #f7ea57;
-      border: 1px solid #c0b536;
-      border-top-color: #fff;
-      border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px;
-    }
-  }
-
   .form-note {
     display: inline-block;
     padding: 5px;
@@ -269,6 +221,94 @@ dl.form {
     border-top-color: #fff;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
+  }
+
+  // Form validation
+  //
+  // Our inline errors
+
+  &.warn,
+  &.errored {
+    dd.warning,
+    dd.error {
+      display: inline-block;
+      position: absolute;
+      max-width: 450px; // Keep our long errors readable
+      z-index: 10;
+      margin: 2px 0 0;
+      padding: 5px 8px;
+      font-size: 13px;
+      font-weight: normal;
+      border-radius: 3px;
+    }
+
+    dd.warning:after,
+    dd.warning:before,
+    dd.error:after,
+    dd.error:before {
+      bottom: 100%;
+      z-index: 15;
+      left: 15px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    dd.warning:after,
+    dd.error:after {
+      border-width: 5px;
+      margin-left: -5px;
+    }
+
+    dd.warning:before,
+    dd.error:before {
+      border-width: 6px;
+      margin-left: -6px;
+    }
+  }
+
+  &.warn {
+    dd.warning {
+      color: #4e401e;
+      background-color: #ffe5a7;
+      border: 1px solid #e7ce94;
+
+      &:after {
+        border-color: rgba(255, 229, 167, 0);
+        border-bottom-color: #ffe5a7;
+      }
+
+      &:before {
+        border-color: rgba(205, 186, 131, 0);
+        border-bottom-color: #cdb683;
+      }
+    }
+  }
+
+  &.errored {
+    > dt label {
+      color: $brand-red;
+    }
+
+    dd.error {
+      color: #fff;
+      background-color: #bf1515;
+      border-color: #911;
+      font-size: 13px;
+
+      &:after {
+        border-color: rgba(191, 21, 21, 0);
+        border-bottom-color: #bf1515;
+      }
+
+      &:before {
+        border-color: rgba(153, 17, 17, 0);
+        border-bottom-color: #911;
+      }
+    }
   }
 }
 
