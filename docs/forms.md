@@ -190,7 +190,7 @@ Convey errors and warnings for form groups. Add the appropriate class—either `
   <dl class="form warn">
     <dt><label>Example Text</label></dt>
     <dd><input type="text" value="Example Value"></dd>
-    <dd class="warning">This example input has an error.</dd>
+    <dd class="warning">This example input has a warning.</dd>
   </dl>
 </form>
 {% endexample %}
