@@ -210,19 +210,6 @@ dl.form {
     }
   }
 
-  .form-note {
-    display: inline-block;
-    padding: 5px;
-    margin-top: -1px;
-    font-size: 11px;
-    color: #494620;
-    background: #f7ea57;
-    border: 1px solid #c0b536;
-    border-top-color: #fff;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-  }
-
   // Form validation
   //
   // Our inline errors
@@ -266,7 +253,7 @@ dl.form {
     dd.warning:before,
     dd.error:before {
       border-width: 6px;
-      margin-left: -6px;
+      margin-left: -1px;
     }
   }
 
@@ -300,12 +287,10 @@ dl.form {
       font-size: 13px;
 
       &:after {
-        border-color: rgba(191, 21, 21, 0);
         border-bottom-color: #bf1515;
       }
 
       &:before {
-        border-color: rgba(153, 17, 17, 0);
         border-bottom-color: #911;
       }
     }
