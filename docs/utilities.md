@@ -68,6 +68,7 @@ Change the `text-align` on elements with a class.
 {% example html %}
 <p class="text-left">Left aligned text.</p>
 <p class="text-right">Right aligned text.</p>
+<p class="text-center">Center aligned text.</p>
 {% endexample %}
 
 ## Text color
