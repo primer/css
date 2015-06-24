@@ -366,6 +366,8 @@ linters:
     enabled: true
     style: double_quotes
     severity: error
+    exclude:
+      - 'docs/css/_anchor.scss'
 
   TrailingSemicolon:
     enabled: true
@@ -400,6 +402,8 @@ linters:
     additional_identifiers: []
     excluded_identifiers: []
     severity: error
+    exclude:
+      - 'scss/_forms.scss'
 
   ZeroUnit:
     enabled: true
