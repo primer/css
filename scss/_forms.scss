@@ -235,7 +235,7 @@ dl.form {
     dd.error:before {
       bottom: 100%;
       z-index: 15;
-      left: 15px;
+      left: 10px;
       border: solid transparent;
       content: " ";
       height: 0;
@@ -247,7 +247,6 @@ dl.form {
     dd.warning:after,
     dd.error:after {
       border-width: 5px;
-      margin-left: -5px;
     }
 
     dd.warning:before,
@@ -264,12 +263,10 @@ dl.form {
       border: 1px solid #e7ce94;
 
       &:after {
-        border-color: rgba(255, 229, 167, 0);
         border-bottom-color: #ffe5a7;
       }
 
       &:before {
-        border-color: rgba(205, 186, 131, 0);
         border-bottom-color: #cdb683;
       }
     }
