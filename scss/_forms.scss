@@ -29,7 +29,7 @@ textarea {
   vertical-align: middle;
   background-color: #fff;
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
-  background-position: right center;
+  background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically. 
   border: 1px solid #ccc;
   border-radius: 3px;
   outline: none;
@@ -140,7 +140,6 @@ dl.form {
       width: 440px;
       max-width: 100%;
       margin-right: 5px;
-      background-position-x: 98%;
     }
 
     input {
@@ -220,64 +219,87 @@ dl.form {
     }
   }
 
+  // Form validation
+  //
+  // Our inline errors
+
+  &.warn,
   &.errored {
-    > dt label {
-      color: #900;
-    }
-
-    // General text next to the field
-    .error {
-      display: inline;
-      color: #900;
-    }
-
-    // Specific error explanations from the server
-    dd.error,
-    dd.warning {
+    dd.warning,
+    dd.error {
       display: inline-block;
-      padding: 5px;
-      font-size: 11px;
-      color: #494620;
-      background: #f7ea57;
-      border: 1px solid #c0b536;
-      border-top-color: #fff;
-      border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px;
+      position: absolute;
+      max-width: 450px; // Keep our long errors readable
+      z-index: 10;
+      margin: 2px 0 0;
+      padding: 5px 8px;
+      font-size: 13px;
+      font-weight: normal;
+      border-radius: 3px;
+    }
+
+    dd.warning:after,
+    dd.warning:before,
+    dd.error:after,
+    dd.error:before {
+      bottom: 100%;
+      z-index: 15;
+      left: 10px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    dd.warning:after,
+    dd.error:after {
+      border-width: 5px;
+    }
+
+    dd.warning:before,
+    dd.error:before {
+      border-width: 6px;
+      margin-left: -1px;
     }
   }
 
   &.warn {
-    // General text next to the field
-    .warning {
-      display: inline;
-      color: #900;
-    }
-
-    // Specific warning explanations from the server
     dd.warning {
-      display: inline-block;
-      padding: 5px;
-      font-size: 11px;
-      color: #494620;
-      background: #f7ea57;
-      border: 1px solid #c0b536;
-      border-top-color: #fff;
-      border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px;
+      color: #4e401e;
+      background-color: #ffe5a7;
+      border: 1px solid #e7ce94;
+
+      &:after {
+        border-bottom-color: #ffe5a7;
+      }
+
+      &:before {
+        border-bottom-color: #cdb683;
+      }
     }
   }
 
-  .form-note {
-    display: inline-block;
-    padding: 5px;
-    margin-top: -1px;
-    font-size: 11px;
-    color: #494620;
-    background: #f7ea57;
-    border: 1px solid #c0b536;
-    border-top-color: #fff;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
+  &.errored {
+    > dt label {
+      color: $brand-red;
+    }
+
+    dd.error {
+      color: #fff;
+      background-color: #bf1515;
+      border-color: #911;
+      font-size: 13px;
+
+      &:after {
+        border-bottom-color: #bf1515;
+      }
+
+      &:before {
+        border-bottom-color: #911;
+      }
+    }
   }
 }
 

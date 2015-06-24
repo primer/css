@@ -175,6 +175,26 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
 </form>
 {% endexample %}
 
+## Form group validation
+
+Convey errors and warnings for form groups. Add the appropriate class—either `.errored` or `.warn`—to the `<dl class="form">` to start. Then, house your error messaging in an additional `<dd>` with either `.error` or `.warning`.
+
+{% example html %}
+<form>
+  <dl class="form errored">
+    <dt><label>Example Text</label></dt>
+    <dd><input type="text" value="Example Value"></dd>
+    <dd class="error">This example input has an error.</dd>
+  </dl>
+  <br>
+  <dl class="form warn">
+    <dt><label>Example Text</label></dt>
+    <dd><input type="text" value="Example Value"></dd>
+    <dd class="warning">This example input has a warning.</dd>
+  </dl>
+</form>
+{% endexample %}
+
 ## Checkboxes and radios
 
 Utilities to spice up the alignment and styling of checkbox and radio controls.
