@@ -87,19 +87,81 @@ Make inputs smaller, larger, or full-width with an additional class.
 </form>
 {% endexample %}
 
+## Selects
+
+Primer adds light `height` and `vertical-align` styles to `<select>`s for all browsers to render them consistently with textual inputs.
+
+{% example html %}
+<form>
+  <select>
+    <option>Choose an option</option>
+    <option>Git</option>
+    <option>Subversion</option>
+    <option>Social Coding</option>
+    <option>Beets</option>
+    <option>Bears</option>
+    <option>Battlestar Galactica</option>
+  </select>
+</form>
+{% endexample %}
+
+### Custom
+
+Custom `<select>`s are also available—just add `.select`. **Only available in latest WebKit, Firefox, and IE browsers.**
+
+{% example html %}
+<form>
+  <select class="select">
+    <option>Choose an option</option>
+    <option>Git</option>
+    <option>Subversion</option>
+    <option>Social Coding</option>
+    <option>Beets</option>
+    <option>Bears</option>
+    <option>Battlestar Galactica</option>
+  </select>
+</form>
+{% endexample %}
+
+### Small
+
+Use the `.select-sm` class to resize both default and custom `<select>`s to match the size of [our small buttons](/buttons/#default-buttons).
+
+{% example html %}
+<select class="select-sm">
+  <option>Choose an option</option>
+  <option>Git</option>
+  <option>Subversion</option>
+  <option>Social Coding</option>
+  <option>Beets</option>
+  <option>Bears</option>
+  <option>Battlestar Galactica</option>
+</select>
+
+<select class="select select-sm">
+  <option>Choose an option</option>
+  <option>Git</option>
+  <option>Subversion</option>
+  <option>Social Coding</option>
+  <option>Beets</option>
+  <option>Bears</option>
+  <option>Battlestar Galactica</option>
+</select>
+{% endexample %}
+
 ## Form groups
 
 {% example html %}
 <form>
   <dl class="form">
     <dt><label>Example Text</label></dt>
-    <dd><input type="text" class="textfield" value="Example Value"></dd>
+    <dd><input type="text" value="Example Value"></dd>
   </dl>
 
   <dl class="form">
     <dt><label>Example Label</label></dt>
     <dd>
-      <select>
+      <select class="select">
         <option>Choose an option</option>
         <option>Git</option>
         <option>Subversion</option>
@@ -112,8 +174,6 @@ Make inputs smaller, larger, or full-width with an additional class.
   </dl>
 </form>
 {% endexample %}
-
-## Notes
 
 ## Checkboxes and radios
 

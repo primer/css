@@ -20,6 +20,7 @@ input[type="email"],
 input[type="number"],
 input[type="tel"],
 input[type="url"],
+select,
 textarea {
   min-height: 34px;
   padding: 7px 8px;
@@ -38,6 +39,13 @@ textarea {
   &:focus {
     border-color: #51a7e8;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5);
+  }
+}
+
+select {
+  &:not([multiple]) {
+    height: 34px;
+    vertical-align: middle;
   }
 }
 
@@ -91,6 +99,7 @@ dl.form {
   input[type="password"],
   input[type="email"],
   input[type="url"],
+  select,
   textarea {
     background-color: #fafafa;
 
@@ -468,4 +477,41 @@ input::-webkit-inner-spin-button {
 .status-indicator-failed:before {
   color: $brand-red;
   content: "\f02d"; // octicon-x
+}
+
+
+// Custom select
+//
+// Apply `.select` to any `<select>` element for custom styles.
+
+.select {
+  display: inline-block;
+  padding: 7px 24px 7px 8px;
+  vertical-align: middle;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAaCAMAAACNQ/wIAAAAYFBMVEUzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMS2aZBAAAAH3RSTlMAAQYNDg8VJDQ2N0JbdXZ4h4mKpL3Iycvb6vDx8vn+GLdSCAAAAHBJREFUeNq90TcSgDAMRFGRMwZMTnv/W+IBm6BxzSt/pUBGURKT73v+LdkGbNm7xDOUOXlKNOE0RaaEI7QxvIrX4db5pLgtXlqXyJH4kA5VYCr6Xw2msYxqWUgJetyGwH4cfkIjXaCsqfUd/GmMEKQdADIVzQIQilIAAAAASUVORK5CYII=) no-repeat right 8px center;
+  background-size: 9px 13px;
+  box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.075);
+  // Have to include vendor prefixes as the `appearance` property isn't part of the CSS spec.
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+    border-color: #51a7e8;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5);
+  }
+
+  // Hides the caret in IE11
+  &::-ms-expand {
+    opacity: 0;
+  }
+}
+
+.select-sm {
+  height: 26px;
+  min-height: 26px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 12px;
 }
