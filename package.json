@@ -4,6 +4,7 @@
   "homepage": "http://primercss.io",
   "author": "GitHub, Inc.",
   "scss": "./scss/primer.scss",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/primer/primer.git"
