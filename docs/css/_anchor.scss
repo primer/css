@@ -8,19 +8,6 @@
   font-weight: normal;
   font-style: normal;
 }
-.icon-link {
-  font-family: 'anchorjs-link';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Icon Rendering */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 /**
  * Link placement and hover behavior.
@@ -33,6 +20,16 @@
   opacity: 0;
   color: inherit;
   text-align: center;
+  speak: none;
+  font-family: "anchorjs-link";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+
+    /* Better Icon Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   
   @media (max-width: 34em) {
     display: none;
@@ -47,11 +44,4 @@
     opacity: 1;
     text-decoration: none;
   }
-}
-.icon-link {
-  font-size: 60%;
-  vertical-align: .2em;
-}
-.icon-link:before {
-  content: "\e600";
 }
