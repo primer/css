@@ -11,11 +11,11 @@
   },
   "devDependencies": {
     "grunt": "~0.4.5",
-    "grunt-autoprefixer": "~2.2.0",
     "grunt-build-control": "~0.2.0",
     "grunt-jekyll": "~0.4.2",
     "grunt-parker": "~0.1.0",
     "grunt-sass": "~0.18.0",
-    "grunt-contrib-watch": "~0.6.1"
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-postcss": "~0.5.1"
   }
 }
