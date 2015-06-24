@@ -296,6 +296,14 @@ body {
   dl.form {
     margin: 15px 0;
 
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     > dt {
       margin: 0 0 6px;
       font-style: normal;
@@ -303,6 +311,7 @@ body {
 
     > dd {
       padding: 0;
+      margin-bottom: 0;
     }
   }
 
