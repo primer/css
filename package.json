@@ -10,6 +10,7 @@
     "url": "https://github.com/primer/primer.git"
   },
   "devDependencies": {
+    "autoprefixer-core": "~5.2.1",
     "grunt": "~0.4.5",
     "grunt-build-control": "~0.2.0",
     "grunt-jekyll": "~0.4.2",
