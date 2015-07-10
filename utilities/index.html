@@ -179,9 +179,11 @@
 <p>Change the <code>text-align</code> on elements with a class.</p>
 
 <div class="docs-example clearfix"><p class="text-left">Left aligned text.</p>
-<p class="text-right">Right aligned text.</p></div>
+<p class="text-right">Right aligned text.</p>
+<p class="text-center">Center aligned text.</p></div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-left"</span><span class="nt">&gt;</span>Left aligned text.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>Right aligned text.<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>Right aligned text.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-center"</span><span class="nt">&gt;</span>Center aligned text.<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
 <h2 id="text-color">Text color</h2>
 
@@ -243,7 +245,11 @@
     <script src="/js/anchor.min.js"></script>
     <script>
       var selector = '.markdown-body h2, .markdown-body h3';
-      addAnchors(selector);
+      anchors.options = {
+        placement: 'left',
+        class: 'anchor-link'
+      };
+      anchors.add(selector);
     </script>
   </body>
 </html>

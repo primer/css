@@ -120,8 +120,13 @@
       <li><a href="#block">Block</a></li>
     </ul>
   </li>
+  <li><a href="#selects">Selects</a>    <ul>
+      <li><a href="#custom">Custom</a></li>
+      <li><a href="#small">Small</a></li>
+    </ul>
+  </li>
   <li><a href="#form-groups">Form groups</a></li>
-  <li><a href="#notes">Notes</a></li>
+  <li><a href="#form-group-validation">Form group validation</a></li>
   <li><a href="#checkboxes-and-radios">Checkboxes and radios</a></li>
   <li><a href="#input-group">Input group</a></li>
   <li><a href="#form-actions">Form actions</a></li>
@@ -225,18 +230,115 @@
   <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input-block"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Full-width input"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></div>
 
+<h2 id="selects">Selects</h2>
+
+<p>Primer adds light <code>height</code> and <code>vertical-align</code> styles to <code>&lt;select&gt;</code>s for all browsers to render them consistently with textual inputs.</p>
+
+<div class="docs-example clearfix"><form>
+  <select>
+    <option>Choose an option</option>
+    <option>Git</option>
+    <option>Subversion</option>
+    <option>Social Coding</option>
+    <option>Beets</option>
+    <option>Bears</option>
+    <option>Battlestar Galactica</option>
+  </select>
+</form></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;select&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Choose an option<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Git<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Subversion<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Social Coding<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Beets<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Bears<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Battlestar Galactica<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+<h3 id="custom">Custom</h3>
+
+<p>Custom <code>&lt;select&gt;</code>s are also available—just add <code>.select</code>. <strong>Only available in latest WebKit, Firefox, and IE browsers.</strong></p>
+
+<div class="docs-example clearfix"><form>
+  <select class="select">
+    <option>Choose an option</option>
+    <option>Git</option>
+    <option>Subversion</option>
+    <option>Social Coding</option>
+    <option>Beets</option>
+    <option>Bears</option>
+    <option>Battlestar Galactica</option>
+  </select>
+</form></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"select"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Choose an option<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Git<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Subversion<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Social Coding<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Beets<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Bears<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Battlestar Galactica<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+<h3 id="small">Small</h3>
+
+<p>Use the <code>.select-sm</code> class to resize both default and custom <code>&lt;select&gt;</code>s to match the size of <a href="/buttons/#default-buttons">our small buttons</a>.</p>
+
+<div class="docs-example clearfix"><select class="select-sm">
+  <option>Choose an option</option>
+  <option>Git</option>
+  <option>Subversion</option>
+  <option>Social Coding</option>
+  <option>Beets</option>
+  <option>Bears</option>
+  <option>Battlestar Galactica</option>
+</select>
+
+<select class="select select-sm">
+  <option>Choose an option</option>
+  <option>Git</option>
+  <option>Subversion</option>
+  <option>Social Coding</option>
+  <option>Beets</option>
+  <option>Bears</option>
+  <option>Battlestar Galactica</option>
+</select></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"select-sm"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Choose an option<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Git<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Subversion<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Social Coding<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Beets<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Bears<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Battlestar Galactica<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span>
+
+<span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"select select-sm"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Choose an option<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Git<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Subversion<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Social Coding<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Beets<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Bears<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>Battlestar Galactica<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span></code></pre></div>
+
 <h2 id="form-groups">Form groups</h2>
 
 <div class="docs-example clearfix"><form>
   <dl class="form">
     <dt><label>Example Text</label></dt>
-    <dd><input type="text" class="textfield" value="Example Value" /></dd>
+    <dd><input type="text" value="Example Value" /></dd>
   </dl>
 
   <dl class="form">
     <dt><label>Example Label</label></dt>
     <dd>
-      <select>
+      <select class="select">
         <option>Choose an option</option>
         <option>Git</option>
         <option>Subversion</option>
@@ -251,13 +353,13 @@
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
   <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"form"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;dt&gt;&lt;label&gt;</span>Example Text<span class="nt">&lt;/label&gt;&lt;/dt&gt;</span>
-    <span class="nt">&lt;dd&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"textfield"</span> <span class="na">value=</span><span class="s">"Example Value"</span><span class="nt">&gt;&lt;/dd&gt;</span>
+    <span class="nt">&lt;dd&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"Example Value"</span><span class="nt">&gt;&lt;/dd&gt;</span>
   <span class="nt">&lt;/dl&gt;</span>
 
   <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"form"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;dt&gt;&lt;label&gt;</span>Example Label<span class="nt">&lt;/label&gt;&lt;/dt&gt;</span>
     <span class="nt">&lt;dd&gt;</span>
-      <span class="nt">&lt;select&gt;</span>
+      <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"select"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;option&gt;</span>Choose an option<span class="nt">&lt;/option&gt;</span>
         <span class="nt">&lt;option&gt;</span>Git<span class="nt">&lt;/option&gt;</span>
         <span class="nt">&lt;option&gt;</span>Subversion<span class="nt">&lt;/option&gt;</span>
@@ -270,7 +372,36 @@
   <span class="nt">&lt;/dl&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></div>
 
-<h2 id="notes">Notes</h2>
+<h2 id="form-group-validation">Form group validation</h2>
+
+<p>Convey errors and warnings for form groups. Add the appropriate class—either <code>.errored</code> or <code>.warn</code>—to the <code>&lt;dl class="form"&gt;</code> to start. Then, house your error messaging in an additional <code>&lt;dd&gt;</code> with either <code>.error</code> or <code>.warning</code>.</p>
+
+<div class="docs-example clearfix"><form>
+  <dl class="form errored">
+    <dt><label>Example Text</label></dt>
+    <dd><input type="text" value="Example Value" /></dd>
+    <dd class="error">This example input has an error.</dd>
+  </dl>
+  <br />
+  <dl class="form warn">
+    <dt><label>Example Text</label></dt>
+    <dd><input type="text" value="Example Value" /></dd>
+    <dd class="warning">This example input has an error.</dd>
+  </dl>
+</form></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"form errored"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dt&gt;&lt;label&gt;</span>Example Text<span class="nt">&lt;/label&gt;&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"Example Value"</span><span class="nt">&gt;&lt;/dd&gt;</span>
+    <span class="nt">&lt;dd</span> <span class="na">class=</span><span class="s">"error"</span><span class="nt">&gt;</span>This example input has an error.<span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;/dl&gt;</span>
+  <span class="nt">&lt;br&gt;</span>
+  <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"form warn"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dt&gt;&lt;label&gt;</span>Example Text<span class="nt">&lt;/label&gt;&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"Example Value"</span><span class="nt">&gt;&lt;/dd&gt;</span>
+    <span class="nt">&lt;dd</span> <span class="na">class=</span><span class="s">"warning"</span><span class="nt">&gt;</span>This example input has an error.<span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;/dl&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
 
 <h2 id="checkboxes-and-radios">Checkboxes and radios</h2>
 
@@ -371,7 +502,11 @@
     <script src="/js/anchor.min.js"></script>
     <script>
       var selector = '.markdown-body h2, .markdown-body h3';
-      addAnchors(selector);
+      anchors.options = {
+        placement: 'left',
+        class: 'anchor-link'
+      };
+      anchors.add(selector);
     </script>
   </body>
 </html>
