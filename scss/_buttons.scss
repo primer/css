@@ -74,6 +74,7 @@
     &:hover {
       color: rgba(102, 102, 102, 0.5);
       cursor: default;
+      pointer-events: none;
       background-color: rgba(229, 229, 229, 0.5);
       background-image: none;
       border-color: rgba(197, 197, 197, 0.5);
