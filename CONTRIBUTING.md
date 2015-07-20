@@ -6,6 +6,9 @@
 
 Hi there! We're thrilled that you'd like to contribute to this project. Your help is essential for keeping it great.
 
+This project adheres to the [Open Code of Conduct][code-of-conduct]. By participating, you are expected to honor this code.
+[code-of-conduct]: http://todogroup.org/opencodeofconduct/#Primer/opensource@github.com.
+
 After you open your first pull request, you will be asked to accept [this license agreement](https://cla.github.com/). Let us know in the PR if you have any hesitation or concerns.
 
 ## Using the issue tracker
