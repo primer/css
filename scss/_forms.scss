@@ -29,7 +29,7 @@ textarea {
   vertical-align: middle;
   background-color: #fff;
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
-  background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically. 
+  background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
   border: 1px solid #ccc;
   border-radius: 3px;
   outline: none;
@@ -531,9 +531,12 @@ input::-webkit-inner-spin-button {
 }
 
 .select-sm {
-  height: 26px;
-  min-height: 26px;
   padding-top: 3px;
   padding-bottom: 3px;
   font-size: 12px;
+  
+  &:not([multiple]) {
+    height: 26px;
+    min-height: 26px;
+  }
 }
