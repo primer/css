@@ -150,6 +150,10 @@ Here are some good examples that apply the above guidelines:
 
 In general, a flat directory of files works best, but at GitHub we break things down by bundles (separate compiled CSS files) and sections (directories of related content).
 
+### Bundles
+
+GitHub.com uses a handful of bundles. Here's a simplified representation of our two desktop bundles (split to support IE9's maximum selector limit per CSS file) and a dedicated mobile bundle for our separate mobile views.
+
 {% highlight bash %}
 stylesheets
 ├── github
@@ -163,8 +167,6 @@ stylesheets
     ├── base.scss
     └── files.scss
 {% endhighlight %}
-
-Here, we have two desktop bundles to support IE9's maximum selector limit per CSS file, as well as a dedicated mobile bundle to go with our separate mobile views.
 
 ### Including (S)CSS files
 
