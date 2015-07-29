@@ -508,10 +508,11 @@ input::-webkit-inner-spin-button {
 
 .select {
   display: inline-block;
+  max-width: 100%;
   padding: 7px 24px 7px 8px;
   vertical-align: middle;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAaCAMAAACNQ/wIAAAAYFBMVEUzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMS2aZBAAAAH3RSTlMAAQYNDg8VJDQ2N0JbdXZ4h4mKpL3Iycvb6vDx8vn+GLdSCAAAAHBJREFUeNq90TcSgDAMRFGRMwZMTnv/W+IBm6BxzSt/pUBGURKT73v+LdkGbNm7xDOUOXlKNOE0RaaEI7QxvIrX4db5pLgtXlqXyJH4kA5VYCr6Xw2msYxqWUgJetyGwH4cfkIjXaCsqfUd/GmMEKQdADIVzQIQilIAAAAASUVORK5CYII=) no-repeat right 8px center;
-  background-size: 9px 13px;
+  background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC) no-repeat right 8px center;
+  background-size: 8px 10px;
   box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.075);
   // Have to include vendor prefixes as the `appearance` property isn't part of the CSS spec.
   -webkit-appearance: none;
@@ -524,7 +525,7 @@ input::-webkit-inner-spin-button {
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5);
   }
 
-  // Hides the caret in IE11
+  // Hides the default caret in IE11
   &::-ms-expand {
     opacity: 0;
   }
@@ -534,7 +535,7 @@ input::-webkit-inner-spin-button {
   padding-top: 3px;
   padding-bottom: 3px;
   font-size: 12px;
-  
+
   &:not([multiple]) {
     height: 26px;
     min-height: 26px;
