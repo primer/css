@@ -518,6 +518,10 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  
+  // IE9 hacks to hide the background-image and reduce padding
+  padding-right: 8px \9;
+  background-image: none \9;
 
   &:focus {
     outline: none;
