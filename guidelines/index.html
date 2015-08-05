@@ -106,31 +106,31 @@
 <h2 id="contents">Contents</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#contents">Contents</a></li>
-  <li><a href="#html">HTML</a>    <ul>
-      <li><a href="#general-formatting">General formatting</a></li>
-      <li><a href="#boolean-attributes">Boolean attributes</a></li>
-      <li><a href="#lean-markup">Lean markup</a></li>
-      <li><a href="#forms">Forms</a></li>
-      <li><a href="#tables">Tables</a></li>
+  <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
+  <li><a href="#html" id="markdown-toc-html">HTML</a>    <ul>
+      <li><a href="#general-formatting" id="markdown-toc-general-formatting">General formatting</a></li>
+      <li><a href="#boolean-attributes" id="markdown-toc-boolean-attributes">Boolean attributes</a></li>
+      <li><a href="#lean-markup" id="markdown-toc-lean-markup">Lean markup</a></li>
+      <li><a href="#forms" id="markdown-toc-forms">Forms</a></li>
+      <li><a href="#tables" id="markdown-toc-tables">Tables</a></li>
     </ul>
   </li>
-  <li><a href="#scss">SCSS</a>    <ul>
-      <li><a href="#spacing">Spacing</a></li>
-      <li><a href="#formatting">Formatting</a></li>
-      <li><a href="#misc">Misc</a></li>
-      <li><a href="#examples">Examples</a></li>
+  <li><a href="#scss" id="markdown-toc-scss">SCSS</a>    <ul>
+      <li><a href="#spacing" id="markdown-toc-spacing">Spacing</a></li>
+      <li><a href="#formatting" id="markdown-toc-formatting">Formatting</a></li>
+      <li><a href="#misc" id="markdown-toc-misc">Misc</a></li>
+      <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
     </ul>
   </li>
-  <li><a href="#file-organization">File organization</a>    <ul>
-      <li><a href="#multiple-bundles">Multiple bundles</a></li>
-      <li><a href="#including-scss-files">Including (S)CSS files</a></li>
+  <li><a href="#file-organization" id="markdown-toc-file-organization">File organization</a>    <ul>
+      <li><a href="#bundles" id="markdown-toc-bundles">Bundles</a></li>
+      <li><a href="#including-scss-files" id="markdown-toc-including-scss-files">Including (S)CSS files</a></li>
     </ul>
   </li>
-  <li><a href="#pixels-vs-ems">Pixels vs. ems</a></li>
-  <li><a href="#class-naming-conventions">Class naming conventions</a></li>
-  <li><a href="#specificity-classes-vs-ids">Specificity (classes vs. ids)</a>    <ul>
-      <li><a href="#css-specificity-guidelines">CSS Specificity guidelines</a></li>
+  <li><a href="#pixels-vs-ems" id="markdown-toc-pixels-vs-ems">Pixels vs. ems</a></li>
+  <li><a href="#class-naming-conventions" id="markdown-toc-class-naming-conventions">Class naming conventions</a></li>
+  <li><a href="#specificity-classes-vs-ids" id="markdown-toc-specificity-classes-vs-ids">Specificity (classes vs. ids)</a>    <ul>
+      <li><a href="#css-specificity-guidelines" id="markdown-toc-css-specificity-guidelines">CSS Specificity guidelines</a></li>
     </ul>
   </li>
 </ul>
@@ -269,29 +269,11 @@
 
 <h2 id="file-organization">File organization</h2>
 
-<p>In general, the CSS file organization should follow something like this:</p>
+<p>In general, a flat directory of files works best, but at GitHub we break things down by bundles (separate compiled CSS files) and sections (directories of related content).</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">styles
-├── components
-│   ├── comments.scss
-│   └── listings.scss
-├── globals
-│   ├── browser_helpers.scss
-│   ├── responsive_helpers.scss
-│   └── variables.scss
-├── plugins
-│   ├── jquery.fancybox-1.3.4.css
-│   └── reset.scss
-├── sections
-│   ├── issues.scss
-│   └── profile.scss
-└── shared
-    ├── forms.scss
-    └── markdown.scss</code></pre></div>
+<h3 id="bundles">Bundles</h3>
 
-<h3 id="multiple-bundles">Multiple bundles</h3>
-
-<p>Variations on this structure include the multi-bundle Rails approach, as seen in the <code>github/github</code> repo:</p>
+<p>GitHub.com uses a handful of bundles. Here’s a simplified representation of our two desktop bundles (split to support IE9’s maximum selector limit per CSS file) and a dedicated mobile bundle for our separate mobile views.</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">stylesheets
 ├── github
@@ -302,21 +284,20 @@
 │   ├── about.scss
 │   └── blog.scss
 └── mobile
-    ├── _variables.scss
-    └── base.scss</code></pre></div>
-
-<p>Here, we have two desktop bundles to support IE9’s maximum selector limit per CSS file, as well as a dedicated mobile bundle to go with our separate mobile views.</p>
+    ├── base.scss
+    └── files.scss</code></pre></div>
 
 <h3 id="including-scss-files">Including (S)CSS files</h3>
 
-<p>Use <a href="https://github.com/sstephenson/sprockets">Sprockets</a> to <strong>require</strong> files. However, you should explicitly <strong>import</strong> any scss that does not generate styles (<code>globals/</code>) in the particular SCSS file you’ll be needing its helpers in.  Here’s a good example:</p>
+<p>Previously we used <a href="https://github.com/sstephenson/sprockets">Sprockets</a> to <strong>require</strong> files in Primer and at GitHub. Nowadays, we use explicit lists of <strong>imports</strong> to control the cascade, specificity, and more.</p>
 
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">//= require_tree ./plugins
-//= require my_awesome_styles
-</span>
-<span class="k">@import</span> <span class="s2">"../globals/basic"</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Imports
+</span><span class="k">@import</span> <span class="s2">"primer"</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">"component"</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">"another_component"</span><span class="p">;</span>
 
-<span class="nc">.rule</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></div>
+<span class="c1">// Rules
+</span><span class="nc">.rule</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></div>
 
 <p>This is also how Primer’s styles are to be included, should you need them.</p>
 
@@ -375,7 +356,7 @@
 
       <footer class="footer">
         Copyright GitHub 2015.<br>
-        Created and maintained by the CSS team at GitHub. <strong>Currently v2.3.0.</strong>
+        Created and maintained by the CSS team at GitHub. <strong>Currently v2.3.3.</strong>
       </footer>
     </div>
 
