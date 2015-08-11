@@ -23,6 +23,11 @@ a {
   &:active {
     text-decoration: underline;
   }
+  
+  &:focus {
+    background: #f5d143;
+    outline: none;
+  }
 }
 
 // Horizontal lines
