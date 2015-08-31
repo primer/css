@@ -3,7 +3,7 @@
   position: relative;
   padding: 15px;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #246;
   background-color: #e2eef9;
   border: 1px solid #bac6d3;
@@ -74,4 +74,13 @@
     margin-top: 3px;
     margin-left: -25px;
   }
+}
+
+// Content within
+//
+// Reset margins on headings and paragraphs within alerts.
+.flash-content {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
 }
