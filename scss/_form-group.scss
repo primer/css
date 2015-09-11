@@ -1,0 +1,226 @@
+// Form groups
+//
+// Typical form groups - `<dl.form>` with a `<dt>` containing the label and
+// `<dd> containing the form elements.
+dl.form {
+  margin: 15px 0;
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"],
+  select,
+  textarea {
+    background-color: #fafafa;
+
+    &:focus {
+      background-color: #fff;
+    }
+  }
+
+  // The Label
+  > dt {
+    margin: 0 0 6px;
+
+    label {
+      position: relative;
+    }
+  }
+
+  &.flattened > dt {
+    float: left;
+    margin: 0;
+    line-height: 32px;
+  }
+
+  &.flattened > dd {
+    line-height: 32px;
+  }
+
+  //
+  // Form Elements
+  //
+
+  > dd {
+    // Text fields
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"] {
+      width: 440px;
+      max-width: 100%;
+      margin-right: 5px;
+    }
+
+    input {
+      &.shorter { width: 130px; }
+
+      &.short { width: 250px; }
+
+      &.long { width: 100%; }
+    }
+
+    // Textarea
+    textarea {
+      width: 100%;
+      height: 200px;
+      min-height: 200px;
+
+      &.short {
+        height: 50px;
+        min-height: 50px;
+      }
+    }
+
+    h4 {
+      margin: 4px 0 0;
+
+      &.is-error { color: $brand-red; }
+
+      &.is-success { color: $brand-green; }
+
+      + p.note {
+        margin-top: 0;
+      }
+    }
+  }
+
+  //
+  // Variants
+  //
+
+  &.required {
+    > dt > label:after {
+      padding-left: 5px;
+      color: #9f1006;
+      content: "*";
+    }
+  }
+
+  // Form AJAX states
+  //
+  // Form fields that need feedback for AJAX loading, success
+  // states and errored states.
+  .success,
+  .error,
+  .indicator {
+    display: none;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  &.loading {
+    opacity: 0.5;
+
+    .indicator {
+      display: inline;
+    }
+
+    .spinner {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  &.successful {
+    .success {
+      display: inline;
+      color: #390;
+    }
+  }
+
+  // Form validation
+  //
+  // Our inline errors
+
+  &.warn,
+  &.errored {
+    dd.warning,
+    dd.error {
+      display: inline-block;
+      position: absolute;
+      max-width: 450px; // Keep our long errors readable
+      z-index: 10;
+      margin: 2px 0 0;
+      padding: 5px 8px;
+      font-size: 13px;
+      font-weight: normal;
+      border-radius: 3px;
+    }
+
+    dd.warning:after,
+    dd.warning:before,
+    dd.error:after,
+    dd.error:before {
+      bottom: 100%;
+      z-index: 15;
+      left: 10px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    dd.warning:after,
+    dd.error:after {
+      border-width: 5px;
+    }
+
+    dd.warning:before,
+    dd.error:before {
+      border-width: 6px;
+      margin-left: -1px;
+    }
+  }
+
+  &.warn {
+    dd.warning {
+      color: #4e401e;
+      background-color: #ffe5a7;
+      border: 1px solid #e7ce94;
+
+      &:after {
+        border-bottom-color: #ffe5a7;
+      }
+
+      &:before {
+        border-bottom-color: #cdb683;
+      }
+    }
+  }
+
+  &.errored {
+    > dt label {
+      color: $brand-red;
+    }
+
+    dd.error {
+      color: #fff;
+      background-color: #bf1515;
+      border-color: #911;
+      font-size: 13px;
+
+      &:after {
+        border-bottom-color: #bf1515;
+      }
+
+      &:before {
+        border-bottom-color: #911;
+      }
+    }
+  }
+}
+
+.note {
+  min-height: 17px;
+  margin: 4px 0 2px;
+  font-size: 12px;
+  color: $brand-gray;
+
+  .spinner {
+    margin-right: 3px;
+    vertical-align: middle;
+  }
+}
