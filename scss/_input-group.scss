@@ -1,7 +1,7 @@
 .input-group {
   display: table;
 
-  input {
+  .form-control {
     position: relative;
     width: 100%;
 
@@ -10,7 +10,7 @@
     }
   }
 
-  input[type="text"] + .btn {
+  .form-control + .btn {
     margin-left: 0;
   }
 
@@ -20,7 +20,7 @@
   }
 }
 
-.input-group input,
+.input-group .form-control,
 .input-group-button {
   display: table-cell;
 }
@@ -30,7 +30,7 @@
   vertical-align: middle; // Match the inputs
 }
 
-.input-group input:first-child,
+.input-group .form-control:first-child,
 .input-group-button:first-child .btn {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -40,7 +40,7 @@
   margin-right: -1px;
 }
 
-.input-group input:last-child,
+.input-group .form-control:last-child,
 .input-group-button:last-child .btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
