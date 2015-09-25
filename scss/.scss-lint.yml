@@ -404,6 +404,8 @@ linters:
     severity: error
     exclude:
       - 'scss/_forms.scss'
+      - 'scss/_forms-select.scss'
+      - 'scss/_alerts.scss'
 
   ZeroUnit:
     enabled: true
