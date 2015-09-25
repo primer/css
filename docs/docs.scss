@@ -250,6 +250,13 @@ body {
   border: 1px solid #e5e5e5;
   border-radius: .25rem .25rem 0 0;
 
+  // Undo `.markdown-body`
+  p,
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   + .highlight {
     margin-top: -1px;
     border: 1px solid #e5e5e5;
