@@ -108,3 +108,42 @@ Additional `margin` or `padding` may be required to properly space content.
   </div>
 </div>
 {% endexample %}
+
+## Margins
+
+Spacing utilities are immutable classes designed to do one thing really well as a means to reduce the frequency of highly repetitive declarations in CSS.
+
+{% highlight scss %}
+.m-a-0 { margin:        0 !important; }
+.m-t-0 { margin-top:    0 !important; }
+.m-r-0 { margin-right:  0 !important; }
+.m-b-0 { margin-bottom: 0 !important; }
+.m-l-0 { margin-left:   0 !important; }
+.m-x-0 { margin-right:  0 !important; margin-left:   0 !important; }
+.m-y-0 { margin-top:    0 !important; margin-bottom: 0 !important; }
+
+.m-a { margin:        $spacer !important; }
+.m-t { margin-top:    $spacer-y !important; }
+.m-r { margin-right:  $spacer-x !important; }
+.m-b { margin-bottom: $spacer-y !important; }
+.m-l { margin-left:   $spacer-x !important; }
+.m-x { margin-right:  $spacer-x !important; margin-left: $spacer-x !important; }
+.m-y { margin-top:    $spacer-y !important; margin-bottom: $spacer-y !important; }
+.m-x-auto { margin-right: auto !important; margin-left: auto !important; }
+
+.m-a-md { margin:        ($spacer * 1.5) !important; }
+.m-t-md { margin-top:    ($spacer-y * 1.5) !important; }
+.m-r-md { margin-right:  ($spacer-y * 1.5) !important; }
+.m-b-md { margin-bottom: ($spacer-y * 1.5) !important; }
+.m-l-md { margin-left:   ($spacer-y * 1.5) !important; }
+.m-x-md { margin-right:  ($spacer-x * 1.5) !important; margin-left:   ($spacer-x * 1.5) !important; }
+.m-y-md { margin-top:    ($spacer-y * 1.5) !important; margin-bottom: ($spacer-y * 1.5) !important; }
+
+.m-a-lg { margin:        ($spacer * 3) !important; }
+.m-t-lg { margin-top:    ($spacer-y * 3) !important; }
+.m-r-lg { margin-right:  ($spacer-y * 3) !important; }
+.m-b-lg { margin-bottom: ($spacer-y * 3) !important; }
+.m-l-lg { margin-left:   ($spacer-y * 3) !important; }
+.m-x-lg { margin-right:  ($spacer-x * 3) !important; margin-left:   ($spacer-x * 3) !important; }
+.m-y-lg { margin-top:    ($spacer-y * 3) !important; margin-bottom: ($spacer-y * 3) !important; }
+{% endhighlight %}
