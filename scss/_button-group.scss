@@ -42,13 +42,13 @@
     }
   }
 
-  .btn + .button_to,
-  .button_to + .btn,
-  .button_to + .button_to {
+  .btn + .btn-group-form,
+  .btn-group-form + .btn,
+  .btn-group-form + .btn-group-form {
     margin-left: -1px;
   }
 
-  .button_to {
+  .btn-group-form {
     float: left;
 
     .btn {
