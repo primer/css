@@ -1,9 +1,11 @@
 ---
 layout: page
-title: About components
+title: Components
 ---
 
-A component is a self-contained collection of HTML, CSS, and often JS, that performs a specific function. Buttons, cards, dialogs, tableviews, and navigation bars are all examples of components. Each component should have a dedicated CSS file, and live in a distinct `/components` directory.
+Components are self-contained collections of HTML, CSS, and often JS, that perform a specific function. Buttons, dialogs, tables, navbars, and dropdown menus are all examples of components.
+
+Each component should have a dedicated CSS file, and live in a distinct `/components` directory.
 
 Each component should implement a single part of the UI. Don't try to do
 too much. In addition to core styles, components often have variants; modified states for specific contexts.
@@ -20,26 +22,26 @@ namespace. For example, a component called `MyComponent` could have the
 following CSS, where every selector starts with the string `MyComponent`.
 
 {% highlight scss %}
-.MyComponent { /* ... */ }
-.MyComponent--large { /* ... */ }
-.MyComponent-title { /* ... */ }
-.MyComponent-image { /* ... */ }
-.MyComponent-text { /* ... */ }
-.MyComponent-time { /* ... */ }
+.MyComponent {}
+.MyComponent--large {}
+.MyComponent-title {}
+.MyComponent-image {}
+.MyComponent-text {}
+.MyComponent-time {}
 {% endhighlight %}
 
 Each class provides a hook to style specific elements within the HTML definition.
 
 {% highlight html %}
-<article className="MyComponent u-floatContainer">
-  <h1 className="MyComponent-title">...</h1>
-  <img className="MyComponent-image" src="" alt="">
-  <p className="MyComponent-text">
-    <span className="MyComponent-time"></span>
-    ...
+<article class="MyComponent">
+  <h1 class="MyComponent-title"></h1>
+  <img class="MyComponent-image" src="" alt="">
+  <p class="MyComponent-text">
+    <span class="MyComponent-time"></span>
   </p>
 </div>
 {% endhighlight %}
+
 
 ## Documenting implementation details
 
@@ -51,10 +53,14 @@ should seek to answer the following questions:
 * What are the reasons for specific, opaque property values.
 * What are the known limitations?
 
-[How to write your CSS comments](HTML-&-CSS-code-style#css-comments)
+[How to write your CSS comments]({{ site.baseurl }}/code-style/#css-comments)
 
 ## Naming components
-Syntax: `<ComponentName>[--modifierName|-descendentName]`
+Syntax:
+
+{% highlight bash %}
+<ComponentName>[--modifierName|-descendentName]
+{% endhighlight %}
 
 Component names should be in upper camel case. In addition to no other elements of our HTML & CSS using upper camel case, there are several benefits:
 
@@ -62,8 +68,8 @@ Component names should be in upper camel case. In addition to no other elements 
 * It keeps the specificity of selectors low
 * It helps to decouple presentation semantics from document semantics
 
-#### ComponentName
 
+#### ComponentName
 
 {% highlight scss %}
 .MyComponent
@@ -74,10 +80,11 @@ Component names should be in upper camel case. In addition to no other elements 
 {% endhighlight %}
 
 {% highlight html %}
-<div className="MyComponent">
+<div class="MyComponent">
   …
 </div>
 {% endhighlight %}
+
 
 #### ComponentName--modifierName
 
@@ -90,26 +97,27 @@ A component modifier is a class that modifies the presentation of the base compo
 {% highlight scss %}
 /* Core `SegmentedControl` styles */
 
-.SegmentedControl { /* … */ }
+.SegmentedControl {}
 
 /* High-contrast `SegementedControl` styles */
 
-.SegmentedControl--contrastHigh { /* … */ }
+.SegmentedControl--contrastHigh {}
 {% endhighlight %}
 
 {% highlight html %}
-<div className="SegmentedControl SegmentedControl--contrastHigh">…</div>
+<div class="SegmentedControl SegmentedControl--contrastHigh">…</div>
 {% endhighlight %}
+
 
 #### ComponentName-descendentName
 
 A component descendent is a class that is attached to a descendent (child) node of a component. It's responsible for applying presentation directly to the descendent on behalf of a particular component. Write descendent names in lower camel case.
 
 {% highlight html %}
-<ol className="TableView">
-  <li className="TableView-cell">
-    <h3 className="TableView-cell-title">…</h3>
-    <h4 className="TableView-cell-label">…</h4>
+<ol class="TableView">
+  <li class="TableView-cell">
+    <h3 class="TableView-cell-title">…</h3>
+    <h4 class="TableView-cell-label">…</h4>
   </li>
 </ol>
 {% endhighlight %}
@@ -123,12 +131,12 @@ This means that the same state names can be used in multiple contexts, but every
 Don't use `is-stateName` classes when you should be using a `ComponentName--modifierName` class. `is-stateName` classes should only be used for **temporary** states (e.g. don't use `is-flash` to create a flash notice when it should actually be `Notice--flash`).
 
 {% highlight scss %}
-.DropdownMenu { /* … */ }
-.DropdownMenu.is-expanded { /* … */ }
+.DropdownMenu {}
+.DropdownMenu.is-expanded {}
 {% endhighlight %}
 
 {% highlight html %}
-<div className="DropdownMenu is-expanded">
+<div class="DropdownMenu is-expanded">
   …
 </div>
 {% endhighlight %}
@@ -175,6 +183,3 @@ it in another element.
   </div>
 </article>
 {% endhighlight %}
-
-## Creating components
-Our mobile app (nicknamed [fieldagent](https://github.com/fac/fieldagent)) uses a number of components which we'll be making global and sharing across our other projects over the coming months.

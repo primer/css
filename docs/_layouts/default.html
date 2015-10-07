@@ -32,7 +32,7 @@
         </a>
 
         <nav class="masthead-nav">
-          <a {% if page.layout == "page" %}class="active"{% endif %} href="{{ site.baseurl }}/scaffolding">Docs</a>
+          <a {% if page.layout == "page" %}class="active"{% endif %} href="{{ site.baseurl }}/principles">Docs</a>
           <a {% if page.title == "About" %}class="active"{% endif %} href="{{ site.baseurl }}/about">About</a>
           <a href="{{ site.github.repo }}" target="_blank">GitHub</a>
           <a href="{{ site.github.repo }}/blob/master/README.md#install" target="_blank">Install</a>
@@ -55,16 +55,28 @@
       <div class="container about-that">
         <div class="columns">
           <div class="one-third column">
-            <h2>Utilities and utility classes</h2>
-            <p>Primer is the basecoat of GitHub, made by nerds just like you who share a passion for HTML and CSS.</p>
+            <h2>
+              Utilities
+            </h2>
+            <p>
+              The CSS that underpins everything. Utilities provide a quick way to write better CSS in a universal and controlled way.
+            </p>
           </div>
           <div class="one-third column">
-            <h2>Components</h2>
-            <p>Available for use under the MIT license and built with open source projects like SCSS, Jekyll, Grunt, and more.</p>
+            <h2>
+              Components
+            </h2>
+            <p>
+              The building blocks of our interfaces. Self-contained, plug-and-play units that serve specific functions.
+            </p>
           </div>
           <div class="one-third column">
-            <h2>Guidance</h2>
-            <p>Includes a small Gruntfile for compiling our SCSS, Autoprefixer for vendor prefixes, and Parker for CSS stats.</p>
+            <h2>
+              Guidance
+            </h2>
+            <p>
+              From <a href="{{ site.baseurl }}/principles">broad principles</a> through to the specifics of <a href="{{ site.baseurl }}/code-style">code style</a>.
+            </p>
           </div>
         </div>
       </div>
@@ -74,8 +86,7 @@
       {{ content }}
 
       <footer class="footer">
-        Copyright GitHub {{ site.time | date: '%Y' }}.<br>
-        Created and maintained by the CSS team at GitHub. <strong>Currently v{{ site.version }}.</strong>
+        This documentation format is forked from <a href="https://github.com/primer/primer">Primer</a>, copyright of GitHub {{ site.time | date: '%Y' }}.<br>
       </footer>
     </div>
 

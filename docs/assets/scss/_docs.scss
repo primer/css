@@ -40,8 +40,9 @@ a:hover {
   @include line-height(default);
 }
 
-.markdown-body .highlight code {
+.markdown-body code {
   @include font-family(monospace);
+  @include font-size(x-small);
 }
 
 .page-title + .markdown-body > p:first-child {
@@ -179,6 +180,7 @@ a:hover {
   color: #fff;
   text-align: center;
   @include background-color(fa-blue);
+  @include border-bottom(xx-thick, fa-green);
 
   h1 {
     font-size: 2.5em;
@@ -212,8 +214,7 @@ a:hover {
 
   p {
     padding-right: .5rem;
-    color: #555;
-    line-height: 1.5;
+    @include text-color(gray-6);
   }
 
   h2 {
