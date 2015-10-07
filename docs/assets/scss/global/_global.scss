@@ -1,0 +1,55 @@
+/**
+ * Ensure an element’s width and height aren’t affected by padding or borders.
+ */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/**
+ * 1. Ensure the root `font-size` is 100% of the browser default.
+ * 2. Ensure any background applied to this element will assume the full height
+ *    of the viewport.
+ */
+
+html {
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  height: 100%;
+}
+
+/**
+ * Ensure any background applied to this element will assume the full height
+ * of the viewport, and remove any default margin and padding.
+ */
+
+body {
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+}
+
+/**
+ * Define our global `font-family`, `font-size`, `line-height`, and `color`
+ * values for all elements that require global targeting.
+ */
+
+body,
+input,
+textarea,
+keygen,
+select,
+button {
+  @include font-family(default);
+  @include font-size(default);
+  @include line-height(default);
+  @include text-color(default);
+}
+
+p {
+  margin: 0 0 1em 0;
+}

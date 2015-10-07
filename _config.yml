@@ -11,7 +11,8 @@ baseurl: ""
 version: 2.3.3
 
 sass:
-  sass_dir: ../
+  # Directory points to root to allow the `@import` of .scss files from anywhere
+  sass_dir: assets/scss
   style: compressed
 
 github:

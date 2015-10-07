@@ -1,0 +1,144 @@
+/**
+ * Segmented control
+ *
+ * A segmented control is a horizontal control made of multiple segments, each
+ * segment functioning as a discrete button. Segment text get truncated when
+ * too long to fit into the width of the segment.
+ *
+ * There are three variants of SegmentedControl:
+ * — Low contrast variant: your default choice; contrasts well with other form elements
+ * — Base colour variant: use within a view when it really needs to stick out
+ * — High contrast version: to be used against a base colour background (like the NavBar)
+ */
+
+.SegmentedControl {
+  border: 1px solid $color--gray-9;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  @include border-radius(default);
+  @include line-height(tight);
+  @include flexbox(flex);
+  @include flex-align-items(stretch);
+  @include flex-direction(row);
+  @include flex-justify-content(center);
+}
+
+/**
+ * Individual segment buttons
+ */
+
+.SegmentedControl-segment {
+  background: none;
+  border-color: $color--gray-9;
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  display: inline-block;
+  margin: 0;
+  padding: 0 4px 1px 4px;
+  @include flex(1);
+  @include text-truncate;
+  @include text-color(gray-9);
+}
+
+/**
+ * Individual segment buttons in their active state
+ */
+
+.SegmentedControl-segment:active {
+  @include background-color(gray-15);
+}
+
+/**
+ * Currently selected individual segment button
+ */
+
+.SegmentedControl-segment--selected,
+.SegmentedControl-segment--selected:active {
+  color: #fff;
+  @include background-color(gray-9);
+}
+
+/**
+ * Apply appropriate border radius to the first segment in a SegmentedControl
+ */
+
+.SegmentedControl .SegmentedControl-segment:first-child {
+  border: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/**
+ * Apply appropriate border radius to the last segment in a SegmentedControl
+ */
+
+.SegmentedControl .SegmentedControl-segment:last-child {
+  border: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+/* High contrast variant
+   ========================================================================== */
+
+/**
+ * A higher contrast variant of the SegmentedControl, to be used primarily on
+ * the base colour background
+ */
+
+.SegmentedControl--contrastHigh {
+  border-color: darken($color--base, 10%);
+}
+
+.SegmentedControl--contrastHigh .SegmentedControl-segment {
+  color: darken($color--base, 10%);
+  border-color: darken($color--base, 10%);
+}
+
+.u-background-color--fa-blue .SegmentedControl--contrastHigh .SegmentedControl-segment {
+  color: darken($color--base, 15%);
+}
+
+.u-background-color--fa-blue .SegmentedControl--contrastHigh .SegmentedControl-segment:active {
+  background: darken($color--base, 1.5%);
+}
+
+.SegmentedControl--contrastHigh .SegmentedControl-segment--selected,
+.SegmentedControl--contrastHigh .SegmentedControl-segment--selected:active {
+  background: darken($color--base, 10%);
+  color: #fff !important;
+}
+
+/* Low contrast variant
+   ========================================================================== */
+
+/**
+ * Light grey variant which sits well when placed amongst other form fields
+ * and/or TableView-cells
+ */
+
+.SegmentedControl--contrastLow {
+  border-color: $color--gray-11;
+}
+
+/**
+ * Reduce opacity of the SegmentedControl when its parent TableView-cell is in a
+ * disabled state
+ */
+
+.TableView-cell.is-disabled .SegmentedControl--contrastLow {
+  opacity: 0.8;
+}
+
+.SegmentedControl--contrastLow .SegmentedControl-segment {
+  color: darken($color--gray-11, 15%);
+  border-color: $color--gray-11;
+}
+
+.SegmentedControl--contrastLow .SegmentedControl-segment--selected,
+.SegmentedControl--contrastLow .SegmentedControl-segment--selected:active,
+.TableView-cell.is-disabled .SegmentedControl--contrastLow .SegmentedControl-segment--selected,
+.TableView-cell.is-disabled .SegmentedControl--contrastLow .SegmentedControl-segment--selected:active {
+  color: #fff !important;
+  @include background-color(gray-11);
+}

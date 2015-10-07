@@ -1,0 +1,209 @@
+.TextExample {
+  margin-top: 0;
+  max-width: 40em;
+  @include font-size(xx-large);
+  @include line-height(default);
+  @include margin-bottom(default);
+}
+
+.TextExample--small {
+  @include font-size(large);
+}
+
+.TextExample--x-light {
+  @include font-weight(x-light);
+}
+
+.TextExample--x-light--italic {
+  font-style: italic;
+  @include font-weight(x-light);
+}
+
+.TextExample--light {
+  @include font-weight(light);
+}
+
+.TextExample--light--italic {
+  font-style: italic;
+  @include font-weight(light);
+}
+
+.TextExample--regular {
+  @include font-weight(normal);
+}
+
+.TextExample--regular--italic {
+  font-style: italic;
+  @include font-weight(normal);
+}
+
+.TextExample--semi-bold {
+  @include font-weight(semi-bold);
+}
+
+.TextExample--semi-bold--italic {
+  font-style: italic;
+  @include font-weight(semi-bold);
+}
+
+.TextExample--bold {
+  @include font-weight(bold);
+}
+
+.TextExample--bold--italic {
+  font-style: italic;
+  @include font-weight(bold);
+}
+
+.TextExample--black {
+  @include font-weight(black);
+}
+
+.TextExample--black--italic {
+  font-style: italic;
+  @include font-weight(black);
+}
+
+.TextExample--font-family--default {
+  @include font-family(default);
+}
+
+.TextExample--font-family--legacy {
+  @include font-family(legacy);
+}
+
+.TextExample--font-family--editorial {
+  @include font-family(editorial);
+}
+
+.TextExample--font-family--handwritten {
+  @include font-family(handwritten);
+}
+
+.TextExample--font-family--monospace {
+  @include font-family(monospace);
+}
+
+.TextExample--font-size--1 {
+  @include font-size(1);
+}
+
+.TextExample--font-size--2 {
+  @include font-size(2);
+}
+
+.TextExample--font-size--3 {
+  @include font-size(3);
+}
+
+.TextExample--font-size--4 {
+  @include font-size(4);
+}
+
+.TextExample--font-size--5 {
+  @include font-size(5);
+}
+
+.TextExample--font-size--6 {
+  @include font-size(6);
+}
+
+.TextExample--font-size--7 {
+  @include font-size(7);
+}
+
+.TextExample--font-size--8 {
+  @include font-size(8);
+  @include line-height(tight);
+}
+
+.TextExample--font-size--9 {
+  @include font-size(9);
+  @include line-height(tight);
+}
+
+.TextExample--font-size--10 {
+  @include font-size(10);
+  @include line-height(x-tight);
+}
+
+.TextExample--font-size--11 {
+  @include font-size(11);
+  @include line-height(x-tight);
+}
+
+.TextExample--font-size--12 {
+  @include font-size(12);
+  @include line-height(xx-tight);
+}
+
+.TextExample--font-size--13 {
+  @include font-size(13);
+  @include line-height(xx-tight);
+}
+
+.TextExample--font-size--14 {
+  @include font-size(14);
+  @include line-height(xx-tight);
+}
+
+.TextExample--font-size--15 {
+  @include font-size(15);
+  @include line-height(xx-tight);
+}
+
+.TextExample--font-size--16 {
+  @include font-size(16);
+  @include line-height(xx-tight);
+}
+
+.TextExample--font-size--17 {
+  @include font-size(17);
+  @include line-height(xx-tight);
+}
+
+
+
+.TextExample--line-height--1 {
+  @include line-height(1);
+}
+
+.TextExample--line-height--2 {
+  @include line-height(2);
+}
+
+.TextExample--line-height--3 {
+  @include line-height(3);
+}
+
+.TextExample--line-height--4 {
+  @include line-height(4);
+}
+
+.TextExample--line-height--5 {
+  @include line-height(5);
+}
+
+.TextExample--line-height--6 {
+  @include line-height(6);
+}
+
+.TextExample--line-height--7 {
+  @include line-height(7);
+}
+
+.TextExample--line-height--8 {
+  @include line-height(8);
+}
+
+.TextExample--line-height--9 {
+  @include line-height(9);
+}
+
+.TextExample--line-height--10 {
+  @include line-height(10);
+}
+
+.TextExample--line-height--11 {
+  @include line-height(11);
+}

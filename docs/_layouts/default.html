@@ -13,11 +13,14 @@
         {{ page.title }} &middot; Origin
     </title>
 
-    <link rel="stylesheet" href="{{ site.baseurl }}/docs.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/scss/origin.css">
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}/img/apple-touch-icon-precomposed.png">
     <link rel="icon" href="{{ site.baseurl }}/favicon.ico">
+
+    <!-- Typekit embed code for Effra and Swister -->
+    <script src="https://use.typekit.net/hnj7chl.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
   <body>
 
@@ -41,9 +44,9 @@
       <div class="jumbotron">
         <div class="container">
           <h1>Origin</h1>
-          <p>The CSS toolkit and guidelines that power GitHub.</p>
+          <p>The CSS utilities, components, and guidelines that power FreeAgent.</p>
 
-          <a href="{{ site.baseurl }}/scaffolding/" class="btn btn-reverse">
+          <a href="{{ site.baseurl }}/principles/" class="btn btn-reverse">
             Read the docs
           </a>
         </div>
@@ -52,15 +55,15 @@
       <div class="container about-that">
         <div class="columns">
           <div class="one-third column">
-            <h2>Made at GitHub</h2>
+            <h2>Utilities and utility classes</h2>
             <p>Primer is the basecoat of GitHub, made by nerds just like you who share a passion for HTML and CSS.</p>
           </div>
           <div class="one-third column">
-            <h2>Open source</h2>
+            <h2>Components</h2>
             <p>Available for use under the MIT license and built with open source projects like SCSS, Jekyll, Grunt, and more.</p>
           </div>
           <div class="one-third column">
-            <h2>Build tools</h2>
+            <h2>Guidance</h2>
             <p>Includes a small Gruntfile for compiling our SCSS, Autoprefixer for vendor prefixes, and Parker for CSS stats.</p>
           </div>
         </div>
@@ -76,7 +79,7 @@
       </footer>
     </div>
 
-    <script src="{{ site.baseurl }}/js/anchor.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/anchor.min.js"></script>
     <script>
       var selector = '.markdown-body h2, .markdown-body h3';
       anchors.options = {

@@ -1,0 +1,397 @@
+/*
+ * Primer documentation styles
+ * http://primercss.io
+ *
+ * Released under MIT license. Copyright 2015 GitHub, Inc.
+ */
+
+/* Base Primer styles */
+@import "../../bower_components/primer-user-content/components/markdown";
+@import "docs/_variables";
+@import "docs/_mixins";
+@import "docs/_layout";
+@import "docs/_anchor";
+@import "docs/_syntax";
+
+/* Primer documentation components */
+@import "docs/components/_buttons";
+@import "docs/components/_menu";
+@import "docs/components/_spacing";
+@import "docs/components/_swatches";
+@import "docs/components/_text-example";
+
+a {
+  text-decoration: none;
+  @include text-color(fa-blue);
+}
+
+a:active,
+a:focus,
+a:hover {
+  @include text-color(fa-blue--x-dark);
+}
+
+/*
+ * Overrides for GitHub markdown styles
+ */
+
+.markdown-body {
+  @include font-family(default);
+  @include line-height(default);
+}
+
+.markdown-body .highlight code {
+  @include font-family(monospace);
+}
+
+.page-title + .markdown-body > p:first-child {
+  @include font-weight(light, !important);
+  @include font-size(x-large, !important);
+  @include line-height(tight, !important);
+  @include text-color(gray-6, !important);
+}
+
+// Make containers responsive
+.container {
+  width: auto;
+  max-width: 1020px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.markdown-body {
+  overflow: visible;
+}
+
+//
+// Menu customisations
+//
+
+.menu-title {
+  @include font-size(large);
+  @include font-weight(semi-bold);
+  @include line-height(tight);
+  @include margin-bottom(small);
+  @include text-color(gray-8);
+}
+
+
+//
+// Custom button
+//
+
+.btn-reverse {
+  color: #fff;
+  background: none;
+  border: 1px solid #fff;
+
+  &:hover,
+  &:active {
+    background: #fff;
+    border-color: #fff;
+    box-shadow: none;
+    @include text-color(fa-blue);
+  }
+}
+
+
+//
+// Site header
+//
+
+.masthead {
+  padding-top:    1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  @include background-color(fa-blue);
+
+  a {
+    color: rgba(255,255,255,.5);
+
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .masthead-logo {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #fff;
+
+    .mega-octicon {
+      float: left;
+      line-height: 120%;
+      margin-right: .5rem;
+    }
+  }
+
+  @media (min-width: 34em) {
+    text-align: left;
+
+    .masthead-logo {
+      float: left;
+    }
+  }
+}
+
+.masthead-nav {
+  margin-top: 1rem;
+  font-size: 1rem;
+
+  a {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1.25rem;
+    }
+  }
+
+  .active {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  @media (max-width: 34em) {
+    padding-top: 1rem;
+    border-top: .075rem solid rgba(255, 255, 255, 0.25);
+  }
+
+  @media (min-width: 34em) {
+    float: right;
+    line-height: 120%;
+    margin-top: 0;
+  }
+}
+
+
+//
+// Homepage jumbotron
+//
+
+.jumbotron {
+  margin-top: -2rem;
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  font-size: 1.25rem;
+  color: #fff;
+  text-align: center;
+  @include background-color(fa-blue);
+
+  h1 {
+    font-size: 2.5em;
+    font-weight: normal;
+  }
+
+  .btn {
+    padding: .75em 1.15em;
+    font-size: inherit;
+    font-weight: normal;
+    line-height: 1;
+  }
+
+  @media (min-width: 34em) {
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+    font-size: 1.5rem;
+    text-align: left;
+  }
+}
+
+.about-that {
+
+  @media (max-width: 760px) {
+    .column {
+      float: none;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+
+  p {
+    padding-right: .5rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-weight: normal;
+  }
+}
+
+
+//
+// Layout
+//
+
+// Override the default layout to make it stack
+.docs-layout {
+  @media (max-width: 34em) {
+    > .column {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+//
+// Footer
+//
+
+.footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-top: 3rem;
+  line-height: 1.75;
+  color: #7a7a7a;
+  border-top: 1px solid #eee;
+
+  strong {
+    color: #333;
+  }
+}
+
+
+//
+// Side menu
+//
+
+.docs-menu {
+  margin-bottom: 1.5rem;
+  font-size: 14px;
+
+  @media (min-width: 34em) {
+    margin-right: 1rem;
+  }
+}
+
+
+//
+// Examples
+//
+
+.DocsExample {
+  @include margin-bottom(large);
+}
+
+// `-preview` is for showing manually typed previews when only showing CSS
+// examples; `-render` is forHTML actually rendered by _plugins/example.rb.
+.DocsExample-preview,
+.DocsExample-render {
+  position: relative;
+  border-radius: .25rem .25rem 0 0;
+  @include border(default, gray-14);
+  @include font-size(default, !important);
+  @include line-height(default, !important);
+  @include padding(default);
+
+  + .highlight {
+    margin-top: -1px;
+    border: 1px solid #e5e5e5;
+    border-radius: 0 0 .25rem .25rem;
+  }
+
+  > p:last-child,
+  > .menu:last-child,
+  > .tabnav:last-child,
+  > blockquote:last-child {
+    margin-bottom: 0;
+  }
+
+  .menu,
+  .filter-list,
+  .sunken-menu {
+    max-width: 200px;
+  }
+
+  // Grid
+  .container {
+    width: 100%;
+    @include padding-left(default);
+    @include padding-right(default);
+  }
+  .columns + .columns {
+    margin-top: 10px;
+  }
+  .column {
+    @include background-color(fa-green--x-light);
+    @include font-family(monospace);
+    @include padding(default);
+  }
+
+  // Override Markdown styles to restore values from `_type.scss`
+  ul,
+  ol {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  dl.form {
+    margin: 15px 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    > dt {
+      margin: 0 0 6px;
+      font-style: normal;
+    }
+
+    > dd {
+      padding: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  // Flex table
+  .flex-table-item > .btn {
+    margin-left: 10px;
+  }
+}
+
+// Hide the example preview block is we're only showing a CSS example
+.DocsExample--render--hidden .DocsExample-render {
+  display: none;
+}
+
+// Used to show spacing examples
+.DocsExample-preview-child {
+  @include background-color(gray-16);
+}
+
+.page-title + .markdown-body > p:first-child {
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: 300;
+  color: #555;
+}
+
+
+//
+// Markdown generated ToC
+//
+
+// Hide the first child li because it's always going to be "Contents".
+#markdown-toc > li:first-child {
+  display: none;
+}
+
+
+//
+// Branding colors
+//
+
+.swatch {
+  display: inline-block;
+  width: 6rem;
+  height: 6rem;
+  border-radius: .25rem;
+}

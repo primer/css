@@ -55,7 +55,7 @@ eos
       end
 
       def example(output)
-        "<div class=\"docs-example clearfix\">#{output}</div>"
+        "<div class=\"DocsExample-render clearfix\">#{output}</div>"
       end
 
       def render_rouge(code)

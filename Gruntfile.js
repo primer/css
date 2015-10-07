@@ -13,23 +13,8 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'css/primer.css': 'scss/primer.scss'
+          'assets/css/origin.css': 'assets/scss/origin.scss'
         }
-      }
-    },
-
-    // Handle vendor prefixing
-    postcss: {
-      options: {
-        processors: [
-          require('autoprefixer-core')({ browsers: ['last 2 versions', 'ie 8', 'ie 9'] })
-        ]
-      },
-      dist: {
-        src: 'css/*.css'
-      },
-      docs: {
-        src: '_site/*.css'
       }
     },
 
@@ -53,11 +38,11 @@ module.exports = function(grunt) {
           'TotalImportantKeywords',
           'TotalMediaQueries'
         ],
-        file: "css/.primer-stats.md",
+        file: "docs/assets/css/.origin-stats.md",
         usePackage: true
       },
       src: [
-        'css/*.css'
+        'assets/css/*.css'
       ]
     },
 
@@ -65,8 +50,8 @@ module.exports = function(grunt) {
 
     watch: {
       sass: {
-        files: ['scss/**/*.scss', 'docs/docs.scss'],
-        tasks: ['sass', 'postcss', 'parker']
+        files: ['assets/scss/*.scss', 'assets/scss/**/*.scss', 'assets/scss/**/**/*.scss'],
+        tasks: ['sass', 'parker']
       }
     },
 
@@ -87,7 +72,7 @@ module.exports = function(grunt) {
       },
       pages: {
         options: {
-          remote: 'git@github.com:primer/primer.git',
+          remote: 'git@github.com:fac/origin.git',
           branch: 'gh-pages'
         }
       }
@@ -95,7 +80,6 @@ module.exports = function(grunt) {
   });
 
   // Load dependencies
-  grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-build-control');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-jekyll');
@@ -103,8 +87,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
 
   // Generate and format the CSS
-  grunt.registerTask('default', ['sass', 'jekyll', 'postcss', 'parker']);
+  grunt.registerTask('default', ['sass', 'jekyll', 'parker']);
 
   // Publish to GitHub
-  grunt.registerTask('publish', ['jekyll', 'postcss:docs', 'buildcontrol:pages']);
+  grunt.registerTask('publish', ['jekyll', 'buildcontrol:pages']);
 };

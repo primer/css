@@ -1,0 +1,210 @@
+
+.SwatchGroup {
+  margin: 0;
+  padding: 0;
+}
+
+.Swatch {
+  background-color: white;
+  padding: 0;
+  @include box-shadow(0, 1px, 3px, rgba(0, 0, 0, 0.12));
+  @include margin-bottom(large);
+}
+
+.Swatch-preview {
+  content: "";
+  display: block;
+  height: 60px;
+}
+
+.Swatch-detail {
+  @include padding(small);
+  @include text-color(gray-8);
+}
+
+.Swatch-detail-variable {
+  display: block;
+  @include font-family(monospace);
+  @include font-size(small);
+}
+
+
+
+.DocsExample-preview--fa-yellow {
+  @include background-color(fa-yellow);
+}
+
+
+
+.DocsExample-preview--fa-amber {
+  @include background-color(fa-amber);
+}
+
+.DocsExample-preview--fa-amber .Swatch-detail {
+  @include text-color(fa-amber);
+}
+
+.DocsExample-preview--fa-amber--dark {
+  @include background-color(fa-amber--dark);
+}
+
+.DocsExample-preview--fa-amber--dark .Swatch-detail {
+  @include text-color(fa-amber--dark);
+}
+
+
+
+.DocsExample-preview--fa-red {
+  @include background-color(fa-red);
+}
+
+.DocsExample-preview--fa-red .Swatch-detail {
+  @include text-color(fa-red--text);
+}
+
+.DocsExample-preview--fa-red--dark {
+  @include background-color(fa-red--dark);
+}
+
+.DocsExample-preview--fa-red--dark .Swatch-detail {
+  @include text-color(fa-red--dark);
+}
+
+
+
+.DocsExample-preview--fa-green {
+  @include background-color(fa-green);
+}
+
+.DocsExample-preview--fa-green .Swatch-detail {
+  @include text-color(fa-green--text);
+}
+
+.DocsExample-preview--fa-green--dark {
+  @include background-color(fa-green--dark);
+}
+
+.DocsExample-preview--fa-green--dark .Swatch-detail {
+  @include text-color(fa-green--dark);
+}
+
+
+
+.DocsExample-preview--fa-blue {
+  @include background-color(fa-blue);
+}
+
+.DocsExample-preview--fa-blue .Swatch-detail {
+  @include text-color(fa-blue);
+}
+
+.DocsExample-preview--fa-blue--dark {
+  @include background-color(fa-blue--dark);
+}
+
+.DocsExample-preview--fa-blue--dark .Swatch-detail {
+  @include text-color(fa-blue--dark);
+}
+
+.DocsExample-preview--fa-blue--x-dark {
+  @include background-color(fa-blue--x-dark);
+}
+
+.DocsExample-preview--fa-blue--x-dark .Swatch-detail {
+  @include text-color(fa-blue--x-dark);
+}
+
+
+.DocsExample-preview--fa-purple {
+  @include background-color(fa-purple);
+}
+
+.DocsExample-preview--fa-purple .Swatch-detail {
+  @include text-color(fa-purple);
+}
+
+
+.DocsExample-preview--fa-blue--x-light {
+  @include background-color(fa-blue--x-light);
+}
+
+.DocsExample-preview--fa-red--x-light {
+  @include background-color(fa-red--x-light);
+}
+
+.DocsExample-preview--fa-green--x-light {
+  @include background-color(fa-green--x-light);
+}
+
+.DocsExample-preview--fa-yellow--x-light  {
+  @include background-color(fa-yellow--x-light);
+}
+
+.DocsExample-preview--fa-purple--x-light {
+  @include background-color(fa-purple--x-light);
+}
+
+
+.DocsExample-preview--gray-1 {
+  @include background-color(gray-1);
+}
+
+.DocsExample-preview--gray-2 {
+  @include background-color(gray-2);
+}
+
+.DocsExample-preview--gray-3 {
+  @include background-color(gray-3);
+}
+
+.DocsExample-preview--gray-4 {
+  @include background-color(gray-4);
+}
+
+.DocsExample-preview--gray-5 {
+  @include background-color(gray-5);
+}
+
+.DocsExample-preview--gray-6 {
+  @include background-color(gray-6);
+}
+
+.DocsExample-preview--gray-7 {
+  @include background-color(gray-7);
+}
+
+.DocsExample-preview--gray-8 {
+  @include background-color(gray-8);
+}
+
+.DocsExample-preview--gray-9 {
+  @include background-color(gray-9);
+}
+
+.DocsExample-preview--gray-10 {
+  @include background-color(gray-10);
+}
+
+.DocsExample-preview--gray-11 {
+  @include background-color(gray-11);
+}
+
+.DocsExample-preview--gray-12 {
+  @include background-color(gray-12);
+}
+
+.DocsExample-preview--gray-13 {
+  @include background-color(gray-13);
+}
+
+.DocsExample-preview--gray-14 {
+  @include background-color(gray-14);
+}
+
+.DocsExample-preview--gray-15 {
+  @include background-color(gray-15);
+}
+
+.DocsExample-preview--gray-16 {
+  @include background-color(gray-16);
+}

@@ -11,13 +11,15 @@
   },
   "devDependencies": {
     "autoprefixer-core": "~5.2.1",
+    "fa-css-utilities": "~1.5.0",
     "grunt": "~0.4.5",
     "grunt-build-control": "~0.2.0",
     "grunt-jekyll": "~0.4.2",
     "grunt-parker": "~0.1.0",
     "grunt-sass": "~0.18.0",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-postcss": "~0.5.1"
+    "grunt-postcss": "~0.5.1",
+    "normalize.css": "^3.0.3"
   },
   "description": "Primer is the CSS toolkit that powers GitHub's front-end design. It's purposefully limited to common components to provide our developers with the most flexibility, and to keep GitHub uniquely *GitHubby*. It's built with SCSS and available via Bower, so it's easy to include all or part of it within your own project.",
   "bugs": {

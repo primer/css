@@ -1,0 +1,124 @@
+/* Tabs
+   ========================================================================== */
+
+/**
+ * The `Tabs` component is a horizontal control made of multiple tabs, each
+ * tab functioning as a discrete button. Tab text get truncated when
+ * too long to fit into the width of its parent.
+ */
+
+.Tabs {
+  display: block;
+  height: 55px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  @include fa-background-color(fa-blue--dark);
+  @include box-shadow(0, 1px, 2px, rgba(0, 0, 0, 0.08), inset);
+  @include fa-line-height(default);
+  @include flexbox(flex);
+  @include flex-align-items(stretch);
+  @include flex-direction(row);
+  @include flex-justify-content(center);
+}
+
+/**
+ * Individual tabs
+ */
+
+.Tabs-tab {
+  background: none;
+  border-color: $color--fa-blue--x-dark;
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  height: 100%;
+  margin: 0;
+  overflow: visible !important;
+  padding: 0 0.5em;
+  position: relative;
+  @include fa-font-size(small);
+  @include flex(1);
+  @include text-truncate;
+}
+
+.retina .Tabs-tab {
+  border-right-width: 0.5px;
+}
+
+/**
+ * Individual tabs in their active state
+ *
+ * 1. Custom colour local to this particular state of this component in FreeAgent
+ *    Mobile. This is a deliberate deviation from the palette in our utility
+ *    library, as adding a new colour purely for this state is excessive and
+ *    unnecessary. Variable value can be found in stylesheets/variables/_colours.scss.
+ */
+
+.Tabs-tab:active,
+.Tabs-tab:hover {
+  /* 1 */
+  background-color: #0060A3;
+}
+
+/**
+ * Currently selected tab
+ */
+
+.Tabs-tab--selected,
+.Tabs-tab--selected:active {
+  color: #fff;
+  @include fa-background-color(fa-blue--x-dark);
+}
+
+/**
+ * Apply appropriate border radius to the last tab
+ */
+
+.Tabs .Tabs-tab:last-child {
+  border: 0;
+}
+
+.Count--tab-count {
+  left: 50%;
+  position: absolute;
+  top: 0;
+  @include transform(translateX(-50%) translateY(-50%));
+}
+
+.Count--tab-count--bottom {
+  bottom: 0;
+  top: auto;
+  @include transform(translateX(-50%) translateY(50%));
+}
+
+.Count--tab-count:before {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 100px;
+  content: "";
+  left: -4px;
+  height: calc(100% + 8px);
+  position: absolute;
+  top: -4px;
+  width: calc(100% + 8px);
+}
+
+.Count--tab-count--outerTab {
+  @include transform(translateX(-50%) translateY(-35%));
+}
+
+.Count-digit {
+  color: #fff;
+  border-radius: 100px;
+  display: inline-block;
+  min-width: 1.75em;
+  padding: 0.35em;
+  position: relative;
+  text-align: center;
+  @include fa-font-size(x-small);
+  @include fa-font-weight(semi-bold);
+  @include fa-line-height(tight);
+}

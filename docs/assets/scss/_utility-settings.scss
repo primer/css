@@ -1,0 +1,83 @@
+/**
+ * FA CSS utilities are our ‘one true source’ of design properties at FreeAgent.
+ * They give our development team a universal method of writing CSS at scale.
+ *
+ * They comprise universal scales and aliases for properties like `font-size`,
+ * `font-family`, `line-height`, `color`, `margin`, and `padding`. They also
+ * provide a library of colours for text and block-level elements, and a library
+ * of mixins and utility classes for 40+ CSS properties.
+ *
+ * Guidance and examples can be found in the repo:
+ * https://github.com/fac/fa-css-utilities
+ */
+
+
+/* Utility classes
+  ==========================================================================
+  Utility classes apply a single value to a single property, no matter what
+  (using `!important`). They should be used sparingly — in most cases a
+  component should define it's own variants and stay completely self-contained.
+  Try to only use utility classes to quickly test out ideas or for early stage
+  ‘sketching’ in the browser.
+
+  Setting these variables to `true` will render utility classes in your output
+  CSS file, allowing you to use them directly in your markup. Use with care:
+  enabling these will naturally add (significant) weight to that CSS file.
+*/
+
+$u-classes-background:           false;
+$u-classes-border-radius:        false;
+$u-classes-border:               false;
+$u-classes-box-sizing:           false;
+$u-classes-clear:                false;
+$u-classes-display:              false;
+$u-classes-flex-align-content:   false;
+$u-classes-flex-align-items:     false;
+$u-classes-flex-align-self:      false;
+$u-classes-flex-basis:           false;
+$u-classes-flex-direction:       false;
+$u-classes-flex-grow:            false;
+$u-classes-flex-justify-content: false;
+$u-classes-flex-shrink:          false;
+$u-classes-flex-wrap:            false;
+$u-classes-flexbox:              false;
+$u-classes-float:                false;
+$u-classes-font-family:          false;
+$u-classes-font-size:            false;
+$u-classes-font-weight:          false;
+$u-classes-height-width:         false;
+$u-classes-interaction:          false;
+$u-classes-letter-spacing:       false;
+$u-classes-line-height:          false;
+$u-classes-list-item-spacing:    false;
+$u-classes-list-style:           false;
+$u-classes-margin:               false;
+$u-classes-opacity:              false;
+$u-classes-overflow:             false;
+$u-classes-padding:              false;
+$u-classes-positioning:          false;
+$u-classes-text-color:           false;
+$u-classes-text-decoration:      false;
+$u-classes-text-formatting:      false;
+$u-classes-vertical-align:       false;
+$u-classes-z-index:              false;
+
+
+/* Project-specific aliases
+  ==========================================================================
+  We create friendly global aliases for our CSS values to improve the authoring
+  experience. But it's also possible to define local aliases for a particular
+  project. This is useful for defining a different default `font-size` or
+  `line-height` and being able to refer to them throughout your codebase as
+  `default` rather than `large` or `x-small`.
+*/
+
+/* Leave quotes empty if this project doesn't have custom aliases */
+$project: "";
+
+
+/* Import the utility source files and any other CSS dependencies
+  ========================================================================== */
+
+@import "../../../node_modules/normalize.css/normalize.css";
+@import "../../../node_modules/fa-css-utilities/_utilities";
