@@ -1,17 +1,22 @@
-markdown: kramdown
-highlighter: rouge
-
-kramdown:
-  auto_ids: true
+# Directory where the site will be built from
+source: docs
 
 permalink: pretty
-source: docs
+
+# Because the deployed site doesn’t live at the root fac.github.io URL; it lives
+# at fac.github.io/origin
 baseurl: "/origin"
+
+# Markdown processors
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  auto_ids: true
 
 version: 0.1.0
 
 sass:
-  # Directory points to root to allow the `@import` of .scss files from anywhere
+  # Directory points to root allowing `@import` of .scss files from anywhere
   sass_dir: assets/scss
   style: compressed
 

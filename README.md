@@ -37,10 +37,12 @@ bower install
 From the Terminal, start a local Jekyll server:
 
 ```bash
-$ jekyll serve
+$ bundle exec jekyll serve
 ```
 
-Open a second Terminal tab to automatically update our [Primer stats file](#primer-stats):
+Visit [http://localhost:4000/origin/](http://localhost:4000/origin/) in your browser.
+
+Optionally, open a second Terminal tab to automatically update our [Primer stats file](#primer-stats):
 
 ```bash
 $ grunt watch
