@@ -20,7 +20,6 @@ button:focus {
   border-color: rgba(0,0,0,0.08) rgba(0,0,0,0.15) rgba(0,0,0,0.28) rgba(0,0,0,0.15);
   cursor: pointer;
   display: inline-block;
-  letter-spacing: -0.02em;
   text-align: center;
   @include border-radius(default);
   @include box-shadow(0, 1px, 0, rgba(0,0,0,0.05));

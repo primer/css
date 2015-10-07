@@ -1,4 +1,4 @@
-# Primer
+# Origin
 
 Primer is the CSS toolkit that powers GitHub's front-end design. It's purposefully limited to common components to provide our developers with the most flexibility, and to keep GitHub uniquely *GitHubby*. It's built with SCSS and available via Bower, so it's easy to include all or part of it within your own project.
 
@@ -22,56 +22,17 @@ _**Heads up!** We love open source, but Primer is unlikely to add new features t
 
 ## Install
 
-### Manually
-
-Download the [latest release](https://github.com/primer/primer/releases/latest) and copy the SCSS files over to your own project. Once your files are in place, jump to the [usage guidelines](#usage) for including Primer into your own CSS.
-
-### Bower
+Prerequisites:[Node.js and npm](http://nodejs.org/download/)
 
 ```
-$ bower install primer-css --save
+git clone --depth 1 --origin source git@github.com:fac/fa-origin.git new-project-folder
+bundle install
+npm install
+npm install -g grunt-cli
+bower install
 ```
 
-### Things to know
-
-**Hey, GitHubbers!** For GitHub.com, you'll need to  `cd` into `vendor/assets` and run `bower install` there. Be sure to commit and push all the changes, including the `bower.json` and everything under `bower_components`.
-
-## Usage
-
-Once included, simply `@import` either the master SCSS file, or the individual files as you need them.
-
-```scss
-// Example: All of Primer
-@import "primer-css/scss/primer";
-
-// Example: Individual files
-@import "primer-css/scss/variables";
-@import "primer-css/scss/mixins";
-@import "primer-css/scss/base";
-```
-
-## Documentation
-
-Primer's documentation is built with Jekyll and published to `http://primercss.io` via the `gh-pages` branch.
-
-### Dependencies
-
-You'll need the following installed:
-
-- Latest Jekyll (minimum v2.2.0): `$ gem install jekyll`
-- Latest Rouge: `$ gem install rouge`
-- Latest Sass: `$ gem install sass`
-- Latest Grunt CLI: `$ npm install -g grunt-cli`
-- [Node.js and npm](http://nodejs.org/download/)
-
-Chances are you have all this already if you work on `github/github` or similar projects. If you have all those set up, now you can install the dependencies:
-
-```bash
-$ npm install
-$ bower install
-```
-
-### Running locally
+### Run locally
 
 From the Terminal, start a local Jekyll server:
 
@@ -79,13 +40,17 @@ From the Terminal, start a local Jekyll server:
 $ jekyll serve
 ```
 
-Open a second Terminal tab to automatically recompile the Sass files, run autoprefixer, and update our [Primer stats file](#primer-stats):
+Open a second Terminal tab to automatically update our [Primer stats file](#primer-stats):
 
 ```bash
 $ grunt watch
 ```
 
-Alternatively, you can manually run `grunt` and `jekyll serve` when needed.
+
+## Documentation
+
+Primer's documentation is built with Jekyll and published to `http://primercss.io` via the `gh-pages` branch.
+
 
 ### Publishing
 
