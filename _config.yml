@@ -6,7 +6,7 @@ kramdown:
 
 permalink: pretty
 source: docs
-baseurl: ""
+baseurl: "/origin"
 
 version: 2.3.3
 
