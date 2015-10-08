@@ -1,0 +1,351 @@
+/**
+ * Notices
+ *
+ * Notices are used to communicate messages directly to the user about the state
+ * of a view or a particular element
+ *
+ * Types of Notices include: form error notices, invoice state notices
+ */
+
+/**
+ * Base styles for Notices
+ *
+ * 1. Default; overridden with other classes
+ * 2. To help position the down arrow icon that appears as part of error notices
+ */
+
+.Notice {
+  /* 1 */
+  display: table;
+  padding: 7px 15px 8px 15px;
+  /* 2 */
+  position: relative;
+  text-align: center;
+  width: 100%;
+  @include background-color(gray-14);
+  @include font-size(small);
+  @include line-height(loose);
+  @include text-color(gray-5);
+}
+
+/**
+ * Give Notice links a heavier weight
+ */
+
+.Notice a {
+  @include font-weight(semi-bold);
+}
+
+/**
+ * Custom style for Notice titles (an optional element)
+ */
+
+.Notice-title {
+  margin: 5px 0;
+  @include font-size(default);
+  @include font-weight(semi-bold);
+}
+
+/**
+ * Increase top and bottom padding for taller notices
+ */
+
+.Notice--taller {
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+/**
+ * Style a notice for negative messages (as used by errors)
+ */
+
+.Notice--negative {
+  @include background-color(fa-red--x-light);
+  @include text-color(negative);
+}
+
+/**
+ * Style notice links for negative messages
+ */
+
+.Notice--negative a,
+.Notice--negative a:visited {
+  @include text-color(negative);
+}
+
+/**
+ * Style a notice for negative action messages
+ */
+
+.Notice--negative-action {
+  color: #fff;
+  @include background-color(fa-red);
+}
+
+/**
+ * Style notice links for negative action messages
+ */
+
+.Notice--negative-action a,
+.Notice--negative-action a:visited {
+  color: #fff;
+}
+
+/**
+ * Style a notice for positive messages
+ */
+
+.Notice--positive {
+  @include background-color(fa-green--x-light);
+  @include text-color(positive);
+}
+
+/**
+ * Style notice links for positive messages
+ */
+
+.Notice--positive a,
+.Notice--positive a:visited {
+  @include text-color(positive);
+}
+
+/**
+ * Style a notice for positive action messages
+ */
+
+.Notice--positive-action {
+  color: #fff;
+  @include background-color(fa-green);
+}
+
+/**
+ * Style notice links for positive action messages
+ */
+
+.Notice--positive-action a,
+.Notice--positive-action a:visited {
+  color: #fff;
+}
+
+/**
+ * Style a notice for warning messages
+ */
+
+.Notice--warning {
+  @include background-color(fa-yellow--x-light);
+  @include text-color(warning);
+}
+
+/**
+ * Style notice links for warning messages
+ */
+
+.Notice--warning a,
+.Notice--warning a:visited {
+  @include text-color(warning);
+}
+
+/**
+ * Style a notice for warning action messages
+ */
+
+.Notice--warning-action {
+  color: #fff;
+  @include background-color(fa-yellow);
+}
+
+/**
+ * Style notice links for warning action messages
+ */
+
+.Notice--warning-action a,
+.Notice--warning-action a:visited {
+  color: #fff;
+}
+
+/**
+ * Style a notice for messages discussing expired or written-off items
+ */
+
+.Notice--expired {
+  background: none;
+  @include text-color(gray-5);
+}
+
+/**
+ * Style notice links for expired or written-off items
+ */
+
+.Notice--expired a,
+.Notice--expired a:visited {
+  @include text-color(gray-5);
+}
+
+/**
+ * Style a notice for messages discussing refunded items
+ */
+
+.Notice--refunded {
+  @include background-color(fa-purple--x-light);
+  @include text-color(fa-purple);
+}
+
+/**
+ * Style notice links for refunded items
+ */
+
+.Notice--refunded a,
+.Notice--refunded a:visited {
+  @include text-color(fa-purple);
+}
+
+/**
+ * Style a notice like a flash message; pops down from underneath the NavBar
+ *
+ * 1. Required to prevent the element becoming visible when the user scolls
+ *    the view (it seems to stick to the viewport; hopefully a future Mobile
+ *    Safari version will remove the need for this)
+ */
+
+.Notice--flash {
+  position: absolute;
+  /* 1 */
+  visibility: hidden;
+}
+
+/**
+ * Visible state of flash message
+ */
+
+.Notice--flash.is-visible {
+  visibility: visible;
+  @include transition;
+}
+
+/**
+ * This animations quickly slides down the `Notice--flash` from below the `NavBar`
+ * and keeps it visible for a bit, then slides it quickly up underneatah the `NavBar`.
+ *
+ * We can achieve the same effect using plain css attributes and property transitions,
+ * however that approach gives us a rendering issue on the expense category page.
+ */
+@include keyframes(Notice--flash) {
+  0% {
+    @include translate3d(0, -100%, 0);
+  }
+
+  10% {
+    @include translate3d(0, 0, 0);
+  }
+
+  90% {
+    @include translate3d(0, 0, 0);
+  }
+
+  100% {
+    @include translate3d(0, -100%, 0);
+  }
+}
+
+/**
+ * Style a notice like an infobox; used for locked item notices
+ */
+
+.Notice--infobox {
+  background: #F3EDBF;
+  color: #635646;
+}
+
+/**
+ * Custom title for infobox-style notices
+ */
+
+.Notice--infobox .Notice-title {
+  color: #635646;
+}
+
+.Notice--infobox .Icon--locked .Icon-path {
+  fill: #635646;
+}
+
+/**
+ * Vertically centre notice content within its parent container
+ */
+
+.Notice-content {
+  display: block;
+  width: 100%;
+}
+
+/**
+ * Give strong notice element a heavier text weight
+ */
+
+.Notice strong {
+  @include font-weight(semi-bold);
+}
+
+/**
+ * Remove bottom padding from the last paragraph in a Notice
+ */
+
+.Notice p:last-child {
+  margin-bottom: 8px;
+}
+
+/**
+ * Arrow icons point to field with errors on them; aligned to the left by default
+ */
+
+.Notice .Icon--arrow {
+  bottom: -5px;
+  left: (15px);
+  position: absolute;
+}
+
+/**
+ * Make the down arrow icon the same colour as the negative notice background
+ */
+
+.Notice--negative .Icon--arrow--pointsDown {
+  border-top-color: $color--fa-red--x-light;
+
+  //AndyI Added in these to fix positioning
+  top: auto;
+  -webkit-transform: none;
+  transform: none;
+}
+
+/**
+ * Split the notice up into two columns if two notices exist on adjacent cells
+ */
+
+.Notice--split .Notice-content-split {
+  float: left;
+  margin-left: 10%;
+  width: 45%;
+}
+
+/**
+ * Don't include the left-hand margin on the first notice; it's parent already has padding
+ */
+
+.Notice--split .Notice-content-split:first-child {
+  margin-left: 0;
+}
+
+/**
+ * AndyI If a table cell has an error next to it - move it down a bit to line it up
+ */
+
+.has-Notice .TableView-cell--split {
+	padding-top: 41px;
+}
+
+/**
+ * AndyI Where there's long error messages, don't inherit white-space wrapping
+ */
+
+.Notice-content p {
+	white-space: normal;
+}

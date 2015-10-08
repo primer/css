@@ -45,8 +45,8 @@ Example:
 .selector-3[type="text"] {
   display: block;
   float: left;
-  @include fa-line-height(tight);
-  @include fa-text-color(fa-blue);
+  @include line-height(tight);
+  @include text-color(fa-blue);
 }
 
 /**
@@ -68,11 +68,11 @@ Example:
 .MyComponent {
   display: inline-block;
   opacity: 0.5;
-  @include fa-background-color(gray-13);
+  @include background-color(gray-13);
   @include fa-font-family(default);
-  @include fa-font-size(large);
-  @include fa-line-height(tight);
-  @include fa-text-color(fa-blue);
+  @include font-size(large);
+  @include line-height(tight);
+  @include text-color(fa-blue);
 }
 {% endhighlight %}
 
@@ -168,7 +168,7 @@ An example of various conventions.
   padding: 0;
   text-align: center;
   @include fa-border-radius(default);
-  @include fa-line-height(tight);
+  @include line-height(tight);
   @include flexbox(flex);
   @include flex-align-items(stretch);
   @include flex-direction(row);
@@ -189,7 +189,7 @@ An example of various conventions.
   padding: 0 4px 1px 4px;
   @include flex(1);
   @include text-truncate;
-  @include fa-text-color(gray-9);
+  @include text-color(gray-9);
 }
 
 /* High contrast variant

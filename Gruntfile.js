@@ -18,40 +18,12 @@ module.exports = function(grunt) {
       }
     },
 
-    // Runs CSS reporting
-    parker: {
-      options: {
-        metrics: [
-          'TotalStylesheets',
-          'TotalStylesheetSize',
-          'TotalRules',
-          'TotalSelectors',
-          'TotalIdentifiers',
-          'TotalDeclarations',
-          'SelectorsPerRule',
-          'IdentifiersPerSelector',
-          'SpecificityPerSelector',
-          'TopSelectorSpecificity',
-          'TopSelectorSpecificitySelector',
-          'TotalIdSelectors',
-          'TotalUniqueColours',
-          'TotalImportantKeywords',
-          'TotalMediaQueries'
-        ],
-        file: "docs/assets/css/.origin-stats.md",
-        usePackage: true
-      },
-      src: [
-        'assets/css/*.css'
-      ]
-    },
-
     // Build tooling
 
     watch: {
       sass: {
         files: ['assets/scss/*.scss', 'assets/scss/**/*.scss', 'assets/scss/**/**/*.scss'],
-        tasks: ['sass', 'parker']
+        tasks: ['sass']
       }
     },
 
@@ -83,11 +55,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-build-control');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-jekyll');
-  grunt.loadNpmTasks('grunt-parker');
   grunt.loadNpmTasks('grunt-sass');
 
   // Generate and format the CSS
-  grunt.registerTask('default', ['sass', 'jekyll', 'parker']);
+  grunt.registerTask('default', ['sass', 'jekyll']);
 
   // Publish to GitHub
   grunt.registerTask('publish', ['jekyll', 'buildcontrol:pages']);

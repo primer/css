@@ -12,57 +12,82 @@ Origin consumes our [CSS utilities](https://github.com/fac/fa-css-utilities) and
 - [Install](#install)
 - [Usage](#usage)
 - [Documentation](#documentation)
-  - [Dependencies](#dependencies)
-  - [Running locally](#running-locally)
+  - [Running documentation locally](#running-documentation-locally)
   - [Publishing](#publishing)
-  - [Primer stats](#primer-stats)
 - [Updating](#updating)
+- [Development](#development)
 - [Contributing](#contributing)
-- [Versioning](#versioning)
 - [License](#license)
+
 
 ## Install
 
-Prerequisites: Rails, [Node.js](http://nodejs.org/download/), [Bower](http://bower.io/).
+Origin can be installed using either npm or Bower, because we have projects that use both.
 
+### npm
+Requirements: [Node.js and npm](http://nodejs.org/download/).
+
+```bash
+$ cd <your-project-directory>
+$ npm install origin-css --save
 ```
+
+This will add the Origin files to a new `origin-css` directory inside the `node_modules` directory at the root of your project, and save `origin-css` as a dependency in your `package.json` file.
+
+If npm isn’t yet being used in your project, running the above command will create the `node_modules` directory too. You’ll want to [create a package](https://docs.npmjs.com/cli/init) to manage your npm dependencies.
+
+### Bower
+Requirements: [Node.js and npm](http://nodejs.org/download/), [Bower](http://bower.io/).
+
+```bash
+$ cd <your-project-directory>
 $ bower install origin-css --save
 ```
 
-If you also want to install and run the documentation locally:
+This will add the Origin files to a new `origin-css` directory inside the `bower_components` directory at the root of your project, and save `origin-css` as a dependency in your `bower.json` file.
 
-```
-$ bundle install
-$ npm install
-$ npm install -g grunt-cli
-$ bower install
-```
+If Bower isn’t yet being used in your project, running the above command will create the `bower_components` directory too. You’ll want to [create a package](http://bower.io/docs/creating-packages/) to manage your Bower dependencies.
+
+
+## Usage
+
+After installing, use [`origin.scss`](https://github.com/fac/origin/blob/master/assets/scss/origin.scss) as your master stylesheet.
+
+Import any components local to your project, along with any other stylesheets you have, below the point where Origin’s global components are imported.
+
+
+## Documentation
+
+Origin’s documentation is built with Jekyll and Grunt. It can be run locally, and is published to `http://fac.github.io/origin/` via the `gh-pages` branch.
+
+All documentation-related files live in the [docs](https://github.com/fac/origin/tree/master/docs) directory.
+
+Note that the [assets/scss/](https://github.com/fac/origin/blob/master/assets/scss/origin.scss) directory contains the same content as [docs/scss/](https://github.com/fac/origin/blob/master/docs/assets/scss/origin.scss), with a couple of extra additions. This allows us to use the locally running documentation as a sandbox for new ideas and approaches.
+
 
 ### Running documentation locally
 
-From the Terminal, start a local Jekyll server:
+Requirements: Ruby.
+
+```bash
+$ bundle install
+$ bower install
+$ npm install
+$ npm install -g grunt-cli
+```
+
+Then start a local Jekyll server from a Terminal window:
 
 ```bash
 $ bundle exec jekyll serve
 ```
 
-Visit [http://localhost:4000/origin/](http://localhost:4000/origin/) in your browser.
-
-Optionally, open a second Terminal tab to automatically update our [Primer stats file](#primer-stats):
-
-```bash
-$ grunt watch
-```
-
-
-## Documentation
-
-Primer's documentation is built with Jekyll and published to `http://fac.github.io/origin/` via the `gh-pages` branch.
+Visit [http://localhost:4000/origin/](http://localhost:4000/origin/) in your browser (note the trailing slash).
 
 
 ### Publishing
 
-Use the included Grunt task to generate and publish Primer's docs to the `gh-pages` branch.
+Use the included Grunt task to generate and publish Origin’s docs to the `gh-pages` branch.
 
 ```bash
 $ grunt publish
@@ -70,11 +95,23 @@ $ grunt publish
 
 This takes the `_site` directory, generates it's own Git repository there, and publishes the contents to the `gh-pages` branch here on GitHub. Changes are reflected in the hosted docs within a minute or so.
 
-### Primer stats
-
-When compiling or watching the Sass files, Primer will automatically generate a `.primer-stats.md` file. This is tracked in the Git repository to provide us historical and contextual information on the changes we introduce. For example, we'll know when the number of selectors or declarations rises sharply within a single change.
 
 ## Updating
+
+### npm
+
+Within `package.json`, update to a new release by changing the version number that follows the `#` in the dependency URL.
+
+```json
+{
+  "name": "myapp",
+  "dependencies": {
+    "origin-css": "~1.0.0"
+  }
+}
+```
+
+### Bower
 
 Within `bower.json`, update to a new release by changing the version number that follows the `#` in the dependency URL.
 
@@ -82,43 +119,38 @@ Within `bower.json`, update to a new release by changing the version number that
 {
   "name": "myapp",
   "dependencies": {
-    "primer-css": "x.x.x"
+    "origin-css": "https://github.com/fac/origin.git#1.0.0"
   }
 }
 ```
 
-To pull down the updated package, `cd` into `vendor/assets`, and run `bower install`.
-
-```
-$ cd vendor/assets
-$ bower install
-```
-
-Check in `bower.json` and all changes under `vendor/assets/bower_components`.
 
 ## Development
 
-Development of Primer happens in our primary branch, `master`. For stable versions, see the [releases page](https://github.com/primer/primer/releases). `master` will always be up to date with the latest changes, including those which have yet to be released.
+Development of Origin happens in our primary branch, `master`. For stable versions, see the [releases page](https://github.com/fac/origin/releases). `master` will always be up to date with the latest changes, including those which have yet to be released.
+
 
 ## Contributing
 
-By contributing to Primer, you agree to the terms presented in [this license agreement](https://cla.github.com/). *More information will be provided here soon.*
+All team members should be contributing back to this repo in order to improve it. The process:
 
-When contributing changes to Primer, be sure to do the following steps when opening a pull request:
+1. Make sure you're up to date with the master branch (`git fetch; git pull origin master`)
+2. Branch off master (`git checkout -b <your-branch-name>`) and make your changes
+3. Increment the version numbers in [package.json](https://github.com/fac/origin/blob/master/package.json) and [bower.json](https://github.com/fac/origin/blob/master/bower.json). Generally: backwards-compatible fixes and smaller amendments to existing code are patches, new components and breaking changes count as minor releases, and full rewrites are major releases. See [semver.org](http://semver.org/) for detailed guidance.
+4. Push up your changes (`git push origin <your-branch-name>`) and write a [helpful pull request](https://github.com/blog/1943-how-to-write-the-perfect-pull-request) describing your changes
+5. Ask a fellow designer or engineer to review your changes. Make any required changes, then merge your branch into master: `git checkout master; git merge --no-ff <your-branch-name>`
+6. Push up the new version of master (`git push origin master`).
+7. [Create a new release](https://help.github.com/articles/creating-releases/) with a useful description. **If you’re making breaking changes, provide guidance in the release notes about what people will have to change in their projects (e.g. “rename instances of `u-padding--none` to `u-padding--0`”)**
+8. [Update the NPM package](https://docs.npmjs.com/getting-started/publishing-npm-packages) (`npm publish`) with a new version number. If you don't yet have access to update the NPM package, have someone in the design team add as a contributor. There's no need to manually update the Bower package, as Bower relies solely on git tags for package version information.
+9. Consider updating the `origin` version numbers in `package.json` and `bower.json` for any other projects that should receive these updates.
 
-1. Bump the version number in `bower.json` (it's purely placebo right now, but it's good habit) and `package.json`.
-2. Run `grunt` and commit the changes. This compiles the SCSS to CSS so we can do basic analysis on the number of selectors, file size, etc.
+In addition, please read through our [contributing guidelines](https://github.com/fac/origin/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
 
-In addition, please read through our [contributing guidelines](https://github.com/primer/primer/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
+All HTML and CSS should conform to the [style guidelines](http://fac.github.io/origin/code-style/).
 
-All HTML and CSS should conform to the [style guidelines](http://primercss.io/guidelines).
+Editor preferences are available in the [editor config](https://github.com/fac/origin/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
 
-Editor preferences are available in the [editor config](https://github.com/primer/primer/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
-
-## Versioning
-
-For transparency into our release cycle and in striving to maintain backward compatibility, Primer is maintained under [the Semantic Versioning guidelines](http://semver.org/). Sometimes we screw up, but we'll adhere to those rules whenever possible.
 
 ## License
 
-Created by and copyright GitHub, Inc. Released under the [MIT license](LICENSE.md).
+Origin is based on a fork of [Primer](https://github.com/primer/primer), created by and copyright of GitHub, Inc. Released under the [MIT license](LICENSE.md).

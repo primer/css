@@ -10,7 +10,7 @@
     "url": "git+https://github.com/fac/origin.git"
   },
   "devDependencies": {
-    "fa-css-utilities": "~1.5.0",
+    "fa-css-utilities": "~1.5.2",
     "grunt": "~0.4.5",
     "grunt-build-control": "~0.2.0",
     "grunt-jekyll": "~0.4.2",

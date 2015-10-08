@@ -8,16 +8,18 @@
     "Gemfile.lock",
     ".git/",
     ".gitignore",
-    "Gruntfile.js"
+    "Gruntfile.js",
     ".hound.yml",
     ".sass-cache/",
     ".scss-lint.yml",
     "_site/"
   ],
   "main": [
-    "scss/origin.scss"
+    "assets/scss/origin.scss"
   ],
   "dependencies": {
-    "primer-markdown": "https://github.com/primer/markdown.git#2.1.7"
+    "fa-css-utilities": "https://github.com/fac/fa-css-utilities.git#1.5.2",
+    "primer-markdown": "https://github.com/primer/markdown.git#2.1.7",
+    "primer-user-content": "https://github.com/primer/user-content.git#2.1.7"
   }
 }

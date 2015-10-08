@@ -1,0 +1,103 @@
+/**
+ * Directory where fonts live. May need to be amended depending on the structure
+ * of your particular project.
+ */
+
+$font-path: "../fonts" !default;
+
+/* If `false`, references to EOT files won’t be rendered */
+
+/**
+ * If `false`, references to EOT files won’t be rendered. EOT files are only
+ * required for `@font-face` to work in < IE9, or IE9 in Compatbility Mode.
+ * In time we’ll remove this rule as we drop support for IE8.
+ */
+
+$support-ie8: true !default;
+
+/**
+ * If `true`, OpenType variants will be used instead of TrueType. In most cases
+ * the extra features OpenType provides (ligatures, stylistic alternates, etc)
+ * wont’t be required, but may be for more editorially-focussed projects.
+ */
+
+$use-opentype: false !default;
+
+
+/* Note: below are utility functions for generating correct `@font-face` code
+   ========================================================================== */
+
+/**
+ * Function to return a list of values associated with a list of keys
+ *
+ * Examples
+ *   $map: (a: 1, b: 2, c: 3)
+ *   map-selected-values($map, (a, c))
+ *     => (1, 3)
+ * Returns list
+ */
+
+@function map-select-values($map, $selection, $separator) {
+   $values: ();
+   @each $key in $selection {
+     $values: append($values, map-get($map, $key), $separator);
+   }
+   @return $values;
+}
+
+
+/**
+ * Internal: This builds the list of font formats based on what browsers and font
+ * types we're supporting.  These are defined by the global variables
+ * $support-ie8 and $use-opentype.
+ * The default is to support ie8 but not to use opentype.
+ *
+ * Supporting ie8 enables additional formats.  Using opentype makes more font
+ * styles available but for a larger download.
+ */
+
+@function choose-browser-formats() {
+   $chosen-formats: ();
+
+   @if $support-ie8 {
+      $chosen-formats: append($chosen-formats, embedded-opentype);
+   }
+
+   @if $use-opentype {
+      $chosen-formats: join($chosen-formats, opentype-woff opentype-woff2 opentype);
+   } @else {
+      $chosen-formats: join($chosen-formats, truetype-woff truetype-woff2 truetype);
+   }
+
+   @return $chosen-formats;
+}
+
+
+/**
+ * This chooses the font sources based on font type and browser support, which
+ * is set by global variables.
+ *
+ * Examples
+ * Given the following SASS:
+ *    @font-face {
+ *       src: supported-font-sources((
+ *          embedded-opentype: url('font.eot') format('embedded-opentype'),
+ *          truetype-woff2:    url('font.ttf.woff2') format('woff2'),
+ *          opentype-woff2:    url('font.otf.woff2') format('woff2'),
+ *          truetype-woff:     url('font.ttf.woff') format('woff'),
+ *          opentype-woff:     url('font.otf.woff') format('woff')
+ *    }
+ *
+ * if $enable-ie8: true and $use-opentype: true the following CSS is generated:
+ *    font-face {
+ *      src: url('font.eot') format('embedded-opentype'),
+ *       opentype-woff2:    url('font.otf.woff2') format('woff2'),
+ *       opentype-woff:     url('font.otf.woff') format('woff')
+ *    }
+ * Returns a list suitable for the src attribute of @font-face
+ */
+
+@function supported-font-sources($sources) {
+   $chosen-formats: choose-browser-formats();
+   @return map-select-values($sources, $chosen-formats, comma);
+}
