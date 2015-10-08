@@ -24,7 +24,7 @@ Origin consumes our [CSS utilities](https://github.com/fac/fa-css-utilities) and
 
 Origin can be installed using either npm or Bower, because we have projects that use both.
 
-### npm
+### Install via npm
 Requirements: [Node.js and npm](http://nodejs.org/download/).
 
 ```bash
@@ -32,11 +32,11 @@ $ cd <your-project-directory>
 $ npm install origin-css --save
 ```
 
-This will add the Origin files to a new `origin-css` directory inside the `node_modules` directory at the root of your project, and save `origin-css` as a dependency in your `package.json` file.
+This will add the Origin files to a new `/origin-css` directory inside the `/node_modules` directory at the root of your project, and save `origin-css` as a dependency in your `package.json` file.
 
-If npm isn’t yet being used in your project, running the above command will create the `node_modules` directory too. You’ll want to [create a package](https://docs.npmjs.com/cli/init) to manage your npm dependencies.
+If npm isn’t yet being used in your project, running the above command will create the `/node_modules` directory too. You’ll want to [create a package](https://docs.npmjs.com/cli/init) to manage your npm dependencies.
 
-### Bower
+### Install via Bower
 Requirements: [Node.js and npm](http://nodejs.org/download/), [Bower](http://bower.io/).
 
 ```bash
@@ -44,9 +44,9 @@ $ cd <your-project-directory>
 $ bower install origin-css --save
 ```
 
-This will add the Origin files to a new `origin-css` directory inside the `bower_components` directory at the root of your project, and save `origin-css` as a dependency in your `bower.json` file.
+This will add the Origin files to a new `/origin-css` directory inside the `/bower_components` directory at the root of your project, and save `origin-css` as a dependency in your `bower.json` file.
 
-If Bower isn’t yet being used in your project, running the above command will create the `bower_components` directory too. You’ll want to [create a package](http://bower.io/docs/creating-packages/) to manage your Bower dependencies.
+If Bower isn’t yet being used in your project, running the above command will create the `/bower_components` directory too. You’ll want to [create a package](http://bower.io/docs/creating-packages/) to manage your Bower dependencies.
 
 
 ## Usage
@@ -58,11 +58,11 @@ Import any components local to your project, along with any other stylesheets yo
 
 ## Documentation
 
-Origin’s documentation is built with Jekyll and Grunt. It can be run locally, and is published to `http://fac.github.io/origin/` via the `gh-pages` branch.
+Origin’s documentation is built with Jekyll and Grunt. It can be run locally, and is published to [http://fac.github.io/origin/](http://fac.github.io/origin/) via the [`gh-pages`](https://github.com/fac/origin/tree/gh-pages) branch.
 
-All documentation-related files live in the [docs](https://github.com/fac/origin/tree/master/docs) directory.
+All documentation-related files live in the [/docs](https://github.com/fac/origin/tree/master/docs) directory.
 
-Note that the [assets/scss/](https://github.com/fac/origin/blob/master/assets/scss/origin.scss) directory contains the same content as [docs/scss/](https://github.com/fac/origin/blob/master/docs/assets/scss/origin.scss), with a couple of extra additions. This allows us to use the locally running documentation as a sandbox for new ideas and approaches.
+Note that the [/assets/scss](https://github.com/fac/origin/blob/master/assets/scss/origin.scss) directory contains the same content as [/docs/scss](https://github.com/fac/origin/blob/master/docs/assets/scss/origin.scss), with a couple of extra additions. **This allows us to use the locally running documentation as a sandbox for new ideas and approaches before publishing them to npm or Bower**.
 
 
 ### Running documentation locally
@@ -79,7 +79,7 @@ $ npm install -g grunt-cli
 Then start a local Jekyll server from a Terminal window:
 
 ```bash
-$ bundle exec jekyll serve
+$ jekyll serve
 ```
 
 Visit [http://localhost:4000/origin/](http://localhost:4000/origin/) in your browser (note the trailing slash).
