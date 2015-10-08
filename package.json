@@ -1,16 +1,15 @@
 {
-  "name": "primer-css",
-  "version": "2.3.3",
-  "homepage": "http://primercss.io",
-  "author": "GitHub, Inc.",
-  "scss": "./scss/primer.scss",
+  "name": "origin-css",
+  "version": "0.1.0",
+  "homepage": "http://fac.github.io/origin",
+  "author": "FreeAgent",
+  "scss": "./scss/origin.scss",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/primer/primer.git"
+    "url": "git+https://github.com/fac/origin.git"
   },
   "devDependencies": {
-    "autoprefixer-core": "~5.2.1",
     "fa-css-utilities": "~1.5.0",
     "grunt": "~0.4.5",
     "grunt-build-control": "~0.2.0",
@@ -21,17 +20,16 @@
     "grunt-postcss": "~0.5.1",
     "normalize.css": "^3.0.3"
   },
-  "description": "Primer is the CSS toolkit that powers GitHub's front-end design. It's purposefully limited to common components to provide our developers with the most flexibility, and to keep GitHub uniquely *GitHubby*. It's built with SCSS and available via Bower, so it's easy to include all or part of it within your own project.",
+  "description": "Origin is FreeAgent’s internal CSS framework. We’re a growing team working across a range of different projects and codebases, and making CSS work at scale is hard. Agreed principles, approaches, and patterns mean we can do better work faster. That’s what Origin gives us.",
   "bugs": {
-    "url": "https://github.com/primer/primer/issues"
+    "url": "https://github.com/fac/origin/issues"
   },
-  "main": "css/primer.css",
+  "main": "css/origin.css",
   "directories": {
     "doc": "docs"
   },
   "dependencies": {
     "grunt-jekyll": "^0.4.2",
-    "grunt-autoprefixer": "^2.2.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-sass": "^0.18.1",
     "grunt-parker": "^0.1.3",
@@ -42,9 +40,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "primer",
+    "origin",
     "css",
-    "github",
-    "primercss"
+    "freeagent",
+    "origincss"
   ]
 }
