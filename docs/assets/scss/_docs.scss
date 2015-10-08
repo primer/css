@@ -68,6 +68,10 @@ a:hover {
 // Menu customisations
 //
 
+.menu {
+  @include text-color(gray-9);
+}
+
 .menu-title {
   @include font-size(large);
   @include font-weight(semi-bold);
@@ -76,6 +80,21 @@ a:hover {
   @include text-color(gray-8);
 }
 
+//
+// Only apply :active/:focus/:hover states to menu items that are actually links
+//
+
+.menu-item:active,
+.menu-item:focus,
+.menu-item:hover {
+  background-color: transparent;
+}
+
+a.menu-item:active,
+a.menu-item:focus,
+a.menu-item:hover {
+  @include background-color(gray-16);
+}
 
 //
 // Custom button

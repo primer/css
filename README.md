@@ -1,10 +1,11 @@
 # Origin
 
-Primer is the CSS toolkit that powers GitHub's front-end design. It's purposefully limited to common components to provide our developers with the most flexibility, and to keep GitHub uniquely *GitHubby*. It's built with SCSS and available via Bower, so it's easy to include all or part of it within your own project.
+Origin is FreeAgent’s internal CSS framework. We’re a growing team working across a range of different projects and codebases, and making CSS work at scale is hard. Agreed principles, approaches, and patterns mean we can do better work faster. That’s what Origin gives us.
 
-[**Read the Primer documentation**](http://primercss.io) to learn more.
+Origin consumes our [CSS utilities](https://github.com/fac/fa-css-utilities) and provides some global UI components. It also documents our [principles](http://fac.github.io/origin/principles/) and HTML & CSS [code style](http://fac.github.io/origin/code-style/). We use it in our desktop app, mobile apps, website, and a bunch of other projects.
 
-_**Heads up!** We love open source, but Primer is unlikely to add new features that are not used in GitHub.com. It's first and foremost our CSS toolkit. We really love to share though, so hopefully that means we're still friends <3._
+[**Read the Origin documentation**](http://fac.github.io/origin/) to learn more.
+
 
 ## Contents
 
@@ -22,17 +23,22 @@ _**Heads up!** We love open source, but Primer is unlikely to add new features t
 
 ## Install
 
-Prerequisites:[Node.js and npm](http://nodejs.org/download/)
+Prerequisites: Rails, [Node.js](http://nodejs.org/download/), [Bower](http://bower.io/).
 
 ```
-git clone --depth 1 --origin source git@github.com:fac/fa-origin.git new-project-folder
-bundle install
-npm install
-npm install -g grunt-cli
-bower install
+$ bower install origin-css --save
 ```
 
-### Run locally
+If you also want to install and run the documentation locally:
+
+```
+$ bundle install
+$ npm install
+$ npm install -g grunt-cli
+$ bower install
+```
+
+### Running documentation locally
 
 From the Terminal, start a local Jekyll server:
 
@@ -51,7 +57,7 @@ $ grunt watch
 
 ## Documentation
 
-Primer's documentation is built with Jekyll and published to `http://primercss.io` via the `gh-pages` branch.
+Primer's documentation is built with Jekyll and published to `http://fac.github.io/origin/` via the `gh-pages` branch.
 
 
 ### Publishing

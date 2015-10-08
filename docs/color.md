@@ -3,7 +3,7 @@ layout: page
 title: color
 ---
 
-These are the colors we’re actually using right now in production applications — no more. All colors are managed by [FA CSS Utilities](https://github.com/fac/fa-css-utilities).
+These are the colors we’re actually using right now in production applications — no more. All colors are managed by [fa-css-utilities](https://github.com/fac/fa-css-utilities).
 
 New colors should added only when they’re actually being used in a component or other element in production. When adding a new colour, justify it by linking to the Sass file where you’re using it in your PR. Then the team can approve the addition.
 

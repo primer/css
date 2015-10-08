@@ -3,11 +3,11 @@ layout: page
 title: Principles
 ---
 
-We write HTML & CSS using a component-based methodology, initially based on [SUIT CSS](http://suitcss.github.io/) (an adaption of [BEM](http://bem.info/method/)). It massively improves the authoring experience, ease of maintenance and code quality.
+We write HTML & CSS using a component-based methodology. It massively improves the authoring experience, ease of maintenance and code quality.
 
 This method is different to “traditional” standards-compliant HTML & CSS in that our semantics are _not_ typically content-derived. Instead we overrule the inherited styles of global HTML elements (`h1`, `p`, `li` etc) and derive class names from our design patterns and functionality. Doing so means we can:
 
-* Create highly reusable [components](HTML-&-CSS-components) and [utilities](HTML-&-CSS-utilities), named in ways that communicate useful information to developers
+* Create highly reusable [utilities]({{ site.baseurl }}/utilities/) and [components]({{ site.baseurl }}/components/), named in ways that communicate useful information to developers
 * Add semantic value for machines using global HTML elements without worrying how they affect about presentation
 
 We also use attributes like `data-ui-component` to add extra semantic value.
