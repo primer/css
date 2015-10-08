@@ -1,23 +1,35 @@
 @charset "UTF-8";
 
-/* Define font settings */
+/**
+ * Local files can be modified. Global ones can’t.
+ *
+ * Files are imported in a specific order. Don’t change it.
+ *
+ * Note: unfortunately interpolation in Sass isn’t available within the scope of
+ * `@import`. Until it is (or we come up with a workaround) we have to hard-code
+ * the paths to each global file.
+ */
+
+/* Local: font settings */
 @import "fonts/_font-settings";
 
-/* Load fonts for `@font-face` use */
-@import "fonts/_source-sans-pro";
+/* Global: functions to handle fonts correctly based on font settings */
+@import "../../../node_modules/origin-css/assets/scss/fonts/_font-functions";
 
-/* Define CSS utility settings */
-@import "_utility-settings";
+/* Global: load fonts for `@font-face` use */
+@import "../../../node_modules/origin-css/assets/scss/fonts/_source-sans-pro";
 
-/* Import utilities from npm or Bower directories, depending on install method */
-@import "../../../node_modules/fa-css-utilities/_utilities";
-// @import "../../bower_components/fa-css-utilities/_utilities";
+/* Local: CSS utility settings */
+@import "utilities/_utility-settings";
 
-/* Import base typographic, box model and colour declarations */
-@import "_base";
+/* Global: import utilities */
+@import "../../../node_modules/origin-css/node_modules/fa-css-utilities/_utilities";
 
-/* Import any required global components */
-// @import "components/_button";
-// @import "components/_notice";
-// @import "components/_segmented-control";
-// @import "components/_tabs";
+/* Local: base typographic, box model and colour declarations */
+@import "base/_base";
+
+/* Global: import any required global components */
+@import "../../../node_modules/origin-css/assets/scss/components/_button";
+@import "../../../node_modules/origin-css/assets/scss/components/_notice";
+@import "../../../node_modules/origin-css/assets/scss/components/_segmented-control";
+@import "../../../node_modules/origin-css/assets/scss/components/_tabs";
