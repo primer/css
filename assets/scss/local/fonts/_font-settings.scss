@@ -5,8 +5,6 @@
 
 $font-path: "../fonts" !default;
 
-/* If `false`, references to EOT files won’t be rendered */
-
 /**
  * If `false`, references to EOT files won’t be rendered. EOT files are only
  * required for `@font-face` to work in < IE9, or IE9 in Compatbility Mode.
