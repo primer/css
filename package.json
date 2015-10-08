@@ -1,6 +1,6 @@
 {
   "name": "origin-css",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "http://fac.github.io/origin",
   "author": "FreeAgent",
   "scss": "./assets/scss/origin.scss",
@@ -10,7 +10,6 @@
     "url": "git+https://github.com/fac/origin.git"
   },
   "devDependencies": {
-    "fa-css-utilities": "~1.5.2",
     "grunt": "~0.4.5",
     "grunt-build-control": "~0.2.0",
     "grunt-jekyll": "~0.4.2",
@@ -26,6 +25,7 @@
     "doc": "docs"
   },
   "dependencies": {
+    "fa-css-utilities": "~1.5.2",
     "grunt-jekyll": "^0.4.2",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-sass": "^0.18.1",
