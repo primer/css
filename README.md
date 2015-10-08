@@ -51,9 +51,10 @@ If Bower isn’t yet being used in your project, running the above command will 
 
 ## Usage
 
-After installing, use [`origin.scss`](https://github.com/fac/origin/blob/master/assets/scss/origin.scss) as your master stylesheet.
+After installing, do the following:
 
-Import any components local to your project, along with any other stylesheets you have, below the point where Origin’s global components are imported.
+1. Copy the contents of [/origin-css/assets/scss/local](https://github.com/fac/origin/tree/master/assets/scss/local) to your project’s stylesheet directory. Just the contents, not the directory itself.
+2. Use `origin.scss` as your master stylesheet. You’ll need to change the paths to the global Sass partials if a) the location of your stylesheets directory isn’t the standard Rails `app/assets/stylesheets` _or_ b) you installed the app via Bower (in which case swap `node_modules` for `bower_components`).
 
 
 ## Documentation

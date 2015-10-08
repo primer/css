@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/**
+ * ”Try to imagine all life as you know it stopping instantaneously and every
+ * molecule in your body exploding at the speed of light.” — Egon Spengler
+ *
+ * That’s what’ll happen if you a) modify any global files, or b) change the
+ * order in which any of the files below are imported.
+ *
+ * Note: unfortunately interpolation in Sass isn’t yet available within the
+ * scope of `@import`. Until it is (or we come up with a workaround) we have to
+ * hard-code the paths to each global file.
+ */
+
+/* Local: font settings */
+@import "fonts/_font-settings";
+
+/* Global: functions to handle fonts correctly based on font settings */
+@import "../../../node_modules/origin-css/assets/scss/global/fonts/_font-functions";
+
+/* Global: load fonts for `@font-face` use */
+@import "../../../node_modules/origin-css/assets/scss/global/fonts/_source-sans-pro";
+
+/* Local: CSS utility settings */
+@import "utilities/_utility-settings";
+
+/* Global: import utilities */
+@import "../../../node_modules/origin-css/node_modules/fa-css-utilities/_utilities";
+
+/* Local: base typographic, box model and colour declarations */
+@import "base/_base";
+
+/* Global: import any required components; comment out those not required */
+@import "../../../node_modules/origin-css/assets/scss/global/components/_button";
+@import "../../../node_modules/origin-css/assets/scss/global/components/_notice";
+@import "../../../node_modules/origin-css/assets/scss/global/components/_segmented-control";
+@import "../../../node_modules/origin-css/assets/scss/global/components/_tabs";
+
+/**
+ * You’re safe to include your project styles below here...
+ */

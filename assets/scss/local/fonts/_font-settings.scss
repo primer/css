@@ -1,0 +1,22 @@
+/**
+ * Directory where fonts live. May need to be amended depending on the structure
+ * of your particular project.
+ */
+
+$font-path: "../fonts" !default;
+
+/**
+ * If `false`, references to EOT files won’t be rendered. EOT files are only
+ * required for `@font-face` to work in < IE9, or IE9 in Compatbility Mode.
+ * In time we’ll remove this rule as we drop support for IE8.
+ */
+
+$support-ie8: true !default;
+
+/**
+ * If `true`, OpenType variants will be used instead of TrueType. In most cases
+ * the extra features OpenType provides (ligatures, stylistic alternates, etc)
+ * wont’t be required, but may be for more editorially-focussed projects.
+ */
+
+$use-opentype: false !default;
