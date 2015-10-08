@@ -14,10 +14,10 @@
 @import "fonts/_font-settings";
 
 /* Global: functions to handle fonts correctly based on font settings */
-@import "../../../node_modules/origin-css/assets/scss/fonts/_font-functions";
+@import "../../../node_modules/origin-css/assets/scss/global/fonts/_font-functions";
 
 /* Global: load fonts for `@font-face` use */
-@import "../../../node_modules/origin-css/assets/scss/fonts/_source-sans-pro";
+@import "../../../node_modules/origin-css/assets/scss/global/fonts/_source-sans-pro";
 
 /* Local: CSS utility settings */
 @import "utilities/_utility-settings";
@@ -29,7 +29,7 @@
 @import "base/_base";
 
 /* Global: import any required global components */
-@import "../../../node_modules/origin-css/assets/scss/components/_button";
-@import "../../../node_modules/origin-css/assets/scss/components/_notice";
-@import "../../../node_modules/origin-css/assets/scss/components/_segmented-control";
-@import "../../../node_modules/origin-css/assets/scss/components/_tabs";
+@import "../../../node_modules/origin-css/assets/scss/global/components/_button";
+@import "../../../node_modules/origin-css/assets/scss/global/components/_notice";
+@import "../../../node_modules/origin-css/assets/scss/global/components/_segmented-control";
+@import "../../../node_modules/origin-css/assets/scss/global/components/_tabs";
