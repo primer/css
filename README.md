@@ -136,7 +136,7 @@ All team members should be contributing back to this repo in order to improve it
 
 1. Make sure you're up to date with the master branch (`git fetch; git pull origin master`)
 2. Branch off master (`git checkout -b <your-branch-name>`) and make your changes
-3. Increment the version numbers in [package.json](https://github.com/fac/origin/blob/master/package.json) and [bower.json](https://github.com/fac/origin/blob/master/bower.json). Generally: backwards-compatible fixes and smaller amendments to existing code are patches, new components and breaking changes count as minor releases, and full rewrites are major releases. See [semver.org](http://semver.org/) for detailed guidance.
+3. Increment the version numbers in [_config.yml](https://github.com/fac/origin/blob/master/_config.yml), [package.json](https://github.com/fac/origin/blob/master/package.json) and [bower.json](https://github.com/fac/origin/blob/master/bower.json). Generally: backwards-compatible fixes and smaller amendments to existing code are patches, new components and breaking changes count as minor releases, and full rewrites are major releases. See [semver.org](http://semver.org/) for detailed guidance.
 4. Push up your changes (`git push origin <your-branch-name>`) and write a [helpful pull request](https://github.com/blog/1943-how-to-write-the-perfect-pull-request) describing your changes
 5. Ask a fellow designer or engineer to review your changes. Make any required changes, then merge your branch into master: `git checkout master; git merge --no-ff <your-branch-name>`
 6. Push up the new version of master (`git push origin master`).
