@@ -22,7 +22,9 @@ Origin consumes our [CSS utilities](https://github.com/fac/fa-css-utilities) and
 
 ## Install
 
-Origin can be installed using either npm or Bower, because we have projects that use both.
+**These instructions assume you’re implementing Origin into a new or existing project and _don’t_ want to run the documentation locally**. If you do want to run the documentation or make updates to it, skip to [Running documentation locally](#running-documentation-locally).
+
+Origin can be installed using either npm or Bower.
 
 ### Install via npm
 Requirements: [Node.js and npm](http://nodejs.org/download/).
@@ -56,6 +58,8 @@ After installing, do the following:
 1. Copy the contents of [/origin-css/assets/scss/local](https://github.com/fac/origin/tree/master/assets/scss/local) to your project’s stylesheet directory. Just the contents, not the directory itself.
 2. Use `origin.scss` as your master stylesheet. You’ll need to change the paths to the global Sass partials if a) the location of your stylesheets directory isn’t the standard Rails `app/assets/stylesheets` _or_ b) you installed the app via Bower (in which case swap `node_modules` for `bower_components`).
 
+Apart from the docs, Origin doesn’t come with built-in Sass compiler assumes you’re either integrating
+
 
 ## Documentation
 
@@ -68,20 +72,26 @@ Note that the [/assets/scss](https://github.com/fac/origin/blob/master/assets/sc
 
 ### Running documentation locally
 
+Following these steps will install Origin, allow you to view documentation locally, and allow you to push documentation changes to [fac.github.io/origin/](http://fac.github.io/origin/).
+
 Requirements: Ruby.
 
 ```bash
+$ git clone git@github.com:fac/origin.git
+$ cd origin
 $ bundle install
 $ bower install
 $ npm install
 $ npm install -g grunt-cli
 ```
 
-Then start a local Jekyll server from a Terminal window:
+Then start a local Jekyll server:
 
 ```bash
 $ jekyll serve
 ```
+
+You may need to run `bundle exec jekyll serve` depending on which version of Ruby the gems were installed to on your machine.
 
 Visit [http://localhost:4000/origin/](http://localhost:4000/origin/) in your browser (note the trailing slash).
 

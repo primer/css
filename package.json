@@ -1,6 +1,6 @@
 {
   "name": "origin-css",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "homepage": "http://fac.github.io/origin",
   "author": "FreeAgent",
   "scss": "./assets/scss/origin.scss",
@@ -11,9 +11,9 @@
   },
   "devDependencies": {
     "grunt": "~0.4.5",
-    "grunt-build-control": "~0.2.0",
+    "grunt-build-control": "~0.2.2",
     "grunt-jekyll": "~0.4.2",
-    "grunt-sass": "~0.18.0",
+    "grunt-sass": "~0.18.1",
     "grunt-contrib-watch": "~0.6.1"
   },
   "description": "Origin is FreeAgent’s internal CSS framework. We’re a growing team working across a range of different projects and codebases, and making CSS work at scale is hard. Agreed principles, approaches, and patterns mean we can do better work faster. That’s what Origin gives us.",
@@ -25,12 +25,7 @@
     "doc": "docs"
   },
   "dependencies": {
-    "fa-css-utilities": "~1.5.2",
-    "grunt-jekyll": "^0.4.2",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-sass": "^0.18.1",
-    "grunt": "^0.4.5",
-    "grunt-build-control": "^0.2.2"
+    "fa-css-utilities": "~1.5.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
