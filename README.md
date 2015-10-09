@@ -15,6 +15,7 @@ Origin consumes our [CSS utilities](https://github.com/fac/fa-css-utilities) and
 - [Publishing](#publishing)
 - [Updating the npm module](#updating-the-npm-module)
 - [Development](#development)
+  - [Developing ideas locally](#developing-ideas-locally)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -85,8 +86,7 @@ This will add the Origin files to a new `/origin-css` directory inside the `/nod
 After installing, do the following:
 
 1. Copy the contents of [/origin-css/assets/scss/local](https://github.com/fac/origin/tree/master/assets/scss/local) to your project’s stylesheet directory. Just the contents, not the directory itself.
-2. Copy the `/fonts` directory into your `/assets` directory. The directory itself, not just the contents.
-3. Either use `origin.scss` as your master stylesheet, or implement it’s contents into your existing master stylesheet. You’ll need to change the paths to the global Sass partials if the location of your stylesheets directory isn’t the standard Rails `app/assets/stylesheets`.
+2. Use `origin.scss` as your master stylesheet, or copy it’s contents into your existing master stylesheet. You’ll need to change the paths to the global Sass partials if the location of your stylesheets directory isn’t the standard Rails `app/assets/stylesheets`.
 
 
 ## Updating the npm module
@@ -106,6 +106,14 @@ Within `package.json`, update to a new release by changing the version number th
 ## Development
 
 Development of Origin happens in our primary branch, `master`. For stable versions, see the [releases page](https://github.com/fac/origin/releases). `master` will always be up to date with the latest changes, including those which have yet to be released.
+
+### Developing ideas locally
+
+The master stylesheet that powers the Origin documentation ([`docs.scss`](https://github.com/fac/origin/blob/master/docs/assets/scss/docs.scss)) is essentially a copy of the regular [`origin.scss`](https://github.com/fac/origin/blob/master/assets/scss/local/origin.scss) master stylesheet. This means we can experiment with changes to Origin locally, and preview them before ever considering them for release.
+
+Trying out edits to Origin from inside other projects is made easy by the fact that npm provides a way to point to your _local version of Origin_ instead of referencing the one installed by npm. This means you could, for example, trial changing the `background-color` of a button in Origin and see the effect it has in your app without actually having to push a new version of the Origin module to npm.
+
+[How to symlink a package folder](https://docs.npmjs.com/cli/link)
 
 
 ## Contributing
