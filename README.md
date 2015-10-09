@@ -85,7 +85,8 @@ This will add the Origin files to a new `/origin-css` directory inside the `/nod
 After installing, do the following:
 
 1. Copy the contents of [/origin-css/assets/scss/local](https://github.com/fac/origin/tree/master/assets/scss/local) to your project’s stylesheet directory. Just the contents, not the directory itself.
-2. Use `origin.scss` as your master stylesheet. You’ll need to change the paths to the global Sass partials if the location of your stylesheets directory isn’t the standard Rails `app/assets/stylesheets`.
+2. Copy the `/fonts` directory into your `/assets` directory. The directory itself, not just the contents.
+3. Either use `origin.scss` as your master stylesheet, or implement it’s contents into your existing master stylesheet. You’ll need to change the paths to the global Sass partials if the location of your stylesheets directory isn’t the standard Rails `app/assets/stylesheets`.
 
 
 ## Updating the npm module
