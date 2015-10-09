@@ -144,7 +144,7 @@ Buttons can be set using different fonts, if required.
 
 ## Multiple labels
 
-Buttons can have subheadings, which can be useful to lead into the button label.
+Buttons can have multiple labels. Secondary labels can be useful to lead into primary labels when the button represents a major action.
 
 {% example html %}
 <button class="Button Button--large" type="button">
