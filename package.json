@@ -1,6 +1,6 @@
 {
   "name": "origin-css",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "homepage": "http://fac.github.io/origin",
   "author": "FreeAgent",
   "scss": "./assets/scss/origin.scss",
