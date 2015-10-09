@@ -21,9 +21,9 @@ Origin consumes our [CSS utilities](https://github.com/fac/fa-css-utilities) and
 
 ## Install
 
-Following these steps will install Origin and it’s docs locally, and allow you to push documentation changes to [fac.github.io/origin/](http://fac.github.io/origin/).
+Following these steps will install Origin and it’s docs locally, and allow you to push documentation changes to GitHub Pages.
 
-**If you’re implementing Origin into a new or existing project and don’t want the documentation, see [Barebones installation](#barebones-installation)**
+**If you’re implementing Origin into a new or existing project and don’t want the documentation, see instructions for [Installing Origin into a new or existing project](#installing-origin-into-a-new-or-existing-project)**
 
 Requirements: Ruby, [Bundler](http://bundler.io/), [Node.js and npm](http://nodejs.org/download/)
 
