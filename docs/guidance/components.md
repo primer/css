@@ -53,7 +53,7 @@ should seek to answer the following questions:
 * What are the reasons for specific, opaque property values.
 * What are the known limitations?
 
-[How to write your CSS comments]({{ site.baseurl }}/code-style/#css-comments)
+[How to write your CSS comments]({{ site.baseurl }}/guidance/code-style/#css-comments)
 
 ## Naming components
 Syntax:
