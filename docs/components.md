@@ -149,37 +149,3 @@ The appearance of dependencies must be configured using the interface they provi
 Controlling dimensions, margins, position, and inheritable styles of a
 component can be done _indirectly_. Add a class to its root element, or wrap
 it in another element.
-
-{% highlight scss %}
-/* Excerpt */
-
-.Excerpt {
-  /* ... */
-}
-
-/* Attaches to a nested component */
-
-.Excerpt-button {
-  display: inline-block;
-  margin-top: 20px;
-}
-
-/* Wraps a nested component */
-
-.Excerpt-wrapButton {
-  display: inline-block;
-  margin-top: 20px;
-}
-{% endhighlight %}
-
-{% highlight html %}
-<article class="Excerpt u-floatContainer">
-  {{! other implementation details }}
-
-  <read-button class="Excerpt-button">Read more</read-button>
-
-  <div class="Excerpt-wrapButton">
-    <read-button>Read more</read-button>
-  </div>
-</article>
-{% endhighlight %}
