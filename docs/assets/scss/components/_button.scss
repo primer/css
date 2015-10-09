@@ -3,60 +3,104 @@
  */
 
 /**
- * Remove the default Webkit glow to more closely mimic native mobile apps
- */
-
-button:focus {
-  outline: none;
-}
-
-/**
  * Vanilla styles for any element with .Button class
+ *
+ * 1. Remove the default Webkit glow to more closely mimic native apps
+ * 2. Ensures single `Button`s are vertically aligned with `Button`s inside a
+ *    `ButtonGroup`; important because they often appear side-by-side
  */
 
 .Button {
   border-style: solid;
   border-width: 1px;
-  border-color: rgba(0,0,0,0.08) rgba(0,0,0,0.15) rgba(0,0,0,0.28) rgba(0,0,0,0.15);
+  border-color: rgba(0,0,0,0.06) rgba(0,0,0,0.12) rgba(0,0,0,0.18) rgba(0,0,0,0.12);
   cursor: pointer;
   display: inline-block;
+  /* 1 */
+  outline: none;
   text-align: center;
+  /* 2 */
+  vertical-align: middle;
   @include border-radius(default);
-  @include box-shadow(0, 1px, 0, rgba(0,0,0,0.05));
+  @include box-shadow(0, 1px, 0, rgba(0,0,0,0.04));
   @include font-size(default);
   @include font-weight(semi-bold);
-  @include linear-gradient(#fff,darken(#fff,6%));
+  @include line-height(x-tight);
+  @include linear-gradient(darken(#fff, 1%), darken(#fff, 4%));
   @include padding-bottom(3);
-  @include padding-left(6);
-  @include padding-right(6);
+  @include padding-left(5);
+  @include padding-right(5);
   @include padding-top(3);
   @include tap-highlight(none);
-  @include text-color(base);
+  @include text-color(fa-blue);
   @include user-select(none);
 }
 
-.Button:active,
-.Button:focus,
 .Button:hover {
+  background: darken(#fff, 4%);
+  border-bottom-color: rgba(0,0,0,0.16);
+  text-decoration: none;
+  @include text-color(fa-blue--x-dark);
+}
+
+.Button:active,
+.Button:focus {
   background: darken(#fff, 6%);
   border-color: rgba(0, 0, 0, 0.08);
-  color: darken($color--base, 10%);
-  text-decoration: none;
   @include box-shadow(0, 0, 0, rgba(0, 0, 0, 0));
+}
+
+/**
+ * Block, full-width variant
+ */
+
+.Button--block {
+  display: block;
+  width: 100%
+}
+
+/**
+ * Large variant
+ */
+
+.Button--large {
+  @include font-size(large);
+  @include padding-bottom(4);
+  @include padding-left(7);
+  @include padding-right(7);
+  @include padding-top(4);
+}
+
+/**
+ * Small variant
+ */
+
+.Button--small {
+  @include font-size(small);
+  @include padding-bottom(2);
+  @include padding-left(4);
+  @include padding-right(4);
+  @include padding-top(2);
 }
 
 /**
  * Button disabled state
  *
  * 'disabled' HTML attribute should also be applied to the <button> element
+ *
+ * 1. Ensures `Button--outline` border gets overridden
  */
 
-.Button.is-disabled {
-  background: rgba(0, 0, 0, 0.10) !important;
-  border: 0;
-  color: rgba(0, 0, 0, 0.2) !important;
-  cursor: pointer;
-  text-shadow: none;
+.Button.is-disabled,
+.Button.is-disabled:active,
+.Button.is-disabled:focus,
+.Button.is-disabled:hover {
+  /* 1 */
+  border: 0 !important;
+  cursor: default;
+  text-shadow: none !important;
+  @include linear-gradient($color--gray-14, $color--gray-14);
+  @include text-color(gray-10, !important);
   @include box-shadow(0, 0, 0, rgba(0, 0, 0, 0));
 }
 
@@ -66,19 +110,179 @@ button:focus {
  * Used as primary CTA for completing tasks e.g. sending an invoice
  */
 
-.Button--positive {
-  border-color: darken($color--fa-green, 3%) darken($color--fa-green, 5%) darken($color--fa-green, 10%) darken($color--fa-green, 5%);
+.Button--primary {
+  border-color: darken($color--fa-green, 3%) darken($color--fa-green, 6%) darken($color--fa-green, 12%) darken($color--fa-green, 6%);
   color: #fff;
   text-shadow: 0 1px 0 darken($color--fa-green, 10%);
   @include linear-gradient($color--fa-green, darken($color--fa-green, 5%));
 }
 
-.Button--positive:active,
-.Button--positive:focus,
-.Button--positive:hover {
-  background: darken($color--fa-green, 5%);
-  border-color: darken($color--fa-green, 3%);
+.Button--primary:hover {
+  background: darken($color--fa-green, 6%);
+  border-top-color: darken($color--fa-green, 3%);
   color: #fff;
+}
+
+.Button--primary:active,
+.Button--primary:focus {
+  background: darken($color--fa-green, 8%);
+  border-color: darken($color--fa-green, 8%);
   text-shadow: none;
-  @include box-shadow(0,0,0,rgba(0,0,0,0));
+  @include box-shadow(0, 0, 0, rgba(0, 0, 0, 0));
+}
+
+/**
+ * Neutral button variant
+ *
+ * Used when a button shouldn’t command as much attention as normal
+ */
+
+.Button--neutral {
+ @include text-color(gray-6);
+}
+
+.Button--neutral:active,
+.Button--neutral:focus,
+.Button--neutral:hover {
+  @include text-color(gray-5);
+}
+
+/**
+ * Negative button variant
+ *
+ * Used as button for deleting/removing/cancelling things
+ */
+
+.Button--negative:hover {
+  @include text-color(fa-red--text);
+}
+
+.Button--negative:active,
+.Button--negative:focus {
+  @include text-color(fa-red--dark);
+}
+
+
+/**
+ * Danger button variant
+ *
+ * Used as button for deleting/removing/cancelling things
+ */
+
+.Button--danger {
+  @include text-color(fa-red--text);
+}
+
+.Button--danger:active,
+.Button--danger:focus,
+.Button--danger:hover {
+  @include text-color(fa-red--dark);
+}
+
+/**
+ * Outline button variant
+ *
+ * Outline buttons reduce the overall emphasis of a button in an interace, while
+ * still retaining the same functionality.
+ */
+
+.Button--outline {
+  background: none;
+  text-shadow: none;
+  @include border(default, gray-13);
+  @include box-shadow(0, 0, 0, rgba(0, 0, 0, 0));
+}
+
+
+// Button group
+//
+// A button group is a series of buttons laid out next to each other, all part
+// of one visual button, but separated by rules to be separate.
+.ButtonGroup {
+  display: inline-block;
+  vertical-align: middle;
+  @include floatContainer;
+}
+
+.ButtonGroup .Button {
+  position: relative;
+  float: left;
+}
+
+.ButtonGroup .Button:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.ButtonGroup .Button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.ButtonGroup .Button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+// Bring any button into forefront for proper borders given negative margin below
+.ButtonGroup .Button:hover,
+.ButtonGroup .Button:active,
+.ButtonGroup .Button.selected {
+  z-index: 2;
+}
+
+.ButtonGroup .Button:focus {
+  z-index: 3;
+}
+
+// Tuck buttons into one another to prevent double border
+.ButtonGroup .Button + .Button {
+  margin-left: -1px;
+}
+
+// Proper spacing for multiple button groups (a la, gollum editor)
+.ButtonGroup + .ButtonGroup,
+.ButtonGroup + .Button {
+  margin-left: 5px;
+}
+
+/**
+ * Effra variant
+ */
+
+.Button--editorial {
+  @include font-family(editorial);
+  @include font-weight(normal);
+}
+
+/**
+ * Helvetica Neue variant
+ */
+
+.Button--legacy {
+  @include font-family(legacy);
+  @include font-weight(bold);
+}
+
+/**
+ * Buttons with multiple labels
+ */
+
+.Button-label {
+  display: block;
+}
+
+.Button-label--primary {
+  @include font-size(large);
+}
+
+.Button-label--secondary {
+  @include font-size(small);
+  @include font-weight(normal);
+  @include line-height(x-tight);
+  @include text-color(gray-9);
+}
+
+.Button--primary .Button-label--secondary {
+  color: darken($color--fa-green, 25%);
+  text-shadow: none;
 }

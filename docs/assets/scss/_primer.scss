@@ -40,7 +40,8 @@ a:hover {
   @include line-height(default);
 }
 
-.markdown-body code {
+.markdown-body code,
+.markdown-body pre > code {
   @include font-family(monospace);
   @include font-size(x-small);
 }
