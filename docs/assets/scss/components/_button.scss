@@ -22,7 +22,7 @@
   /* 2 */
   vertical-align: middle;
   @include border-radius(default);
-  @include box-shadow(0, 1px, 0, rgba(0,0,0,0.04));
+  @include box-shadow(0, 1px, 0, rgba(0, 0, 0, 0.04));
   @include font-size(default);
   @include font-weight(semi-bold);
   @include line-height(x-tight);
@@ -113,7 +113,8 @@
 .Button--primary {
   border-color: darken($color--fa-green, 3%) darken($color--fa-green, 6%) darken($color--fa-green, 12%) darken($color--fa-green, 6%);
   color: #fff;
-  text-shadow: 0 1px 0 darken($color--fa-green, 10%);
+  text-shadow: 0 1px 0 darken($color--fa-green, 14%);
+  @include box-shadow(0, 1px, 1px, rgba(0, 0, 0, 0.12));
   @include linear-gradient($color--fa-green, darken($color--fa-green, 5%));
 }
 
@@ -279,10 +280,10 @@
   @include font-size(small);
   @include font-weight(normal);
   @include line-height(x-tight);
-  @include text-color(gray-9);
+  @include text-color(gray-8);
 }
 
 .Button--primary .Button-label--secondary {
-  color: darken($color--fa-green, 25%);
+  color: darken($color--fa-green, 30%);
   text-shadow: none;
 }
