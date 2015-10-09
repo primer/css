@@ -48,6 +48,7 @@ The `/origin/` is required to view the documentation locally, because when the d
 
 You may need to run `bundle exec jekyll serve` depending on which version of Ruby the gems were installed to on your machine.
 
+
 ### Documentation
 
 Origin’s documentation is built with Jekyll and Grunt. It can be run locally, and is published to [http://fac.github.io/origin/](http://fac.github.io/origin/) via the [`gh-pages`](https://github.com/fac/origin/tree/gh-pages) branch.
@@ -55,6 +56,17 @@ Origin’s documentation is built with Jekyll and Grunt. It can be run locally, 
 All documentation-related files live in the [/docs](https://github.com/fac/origin/tree/master/docs) directory.
 
 Note that the [/assets/scss](https://github.com/fac/origin/blob/master/assets/scss/origin.scss) directory contains the same content as [/docs/scss](https://github.com/fac/origin/blob/master/docs/assets/scss/origin.scss), with a couple of extra additions. This gives us as a sandbox for trying new ideas and approaches before considering them for deployment.
+
+
+### Publishing
+
+Use the included Grunt task to generate and publish Origin’s docs to the `gh-pages` branch.
+
+```bash
+$ grunt publish
+```
+
+This takes the `_site` directory, generates it's own Git repository there, and publishes the contents to the `gh-pages` branch here on GitHub. Changes are reflected in the hosted docs within a minute or so.
 
 
 ## Installing Origin into a new or existing project
@@ -74,17 +86,6 @@ After installing, do the following:
 
 1. Copy the contents of [/origin-css/assets/scss/local](https://github.com/fac/origin/tree/master/assets/scss/local) to your project’s stylesheet directory. Just the contents, not the directory itself.
 2. Use `origin.scss` as your master stylesheet. You’ll need to change the paths to the global Sass partials if the location of your stylesheets directory isn’t the standard Rails `app/assets/stylesheets`.
-
-
-### Publishing
-
-Use the included Grunt task to generate and publish Origin’s docs to the `gh-pages` branch.
-
-```bash
-$ grunt publish
-```
-
-This takes the `_site` directory, generates it's own Git repository there, and publishes the contents to the `gh-pages` branch here on GitHub. Changes are reflected in the hosted docs within a minute or so.
 
 
 ## Updating the npm module
