@@ -94,7 +94,7 @@ Disable `<button>` elements with the `.is-disabled` class and boolean `disabled`
 
 ## Block buttons
 
-Make any button full-width by adding `.btn-block`. It adds `width: 100%;`, changes the `display` from `inline-block` to `block`, and centers the button text.
+Make any button assume the full-width of it’s parent.
 
 {% example html %}
 <p><button class="Button Button--block" type="button">Block button</button></p>
@@ -105,7 +105,7 @@ Make any button full-width by adding `.btn-block`. It adds `width: 100%;`, chang
 
 ## Button groups
 
-Have a hankering for a series of buttons that are attached to one another? Wrap them in a `.ButtonGroup` and the buttons will be rounded and spaced automatically.
+Group buttons by wrapping them in a `.ButtonGroup`.
 
 {% example html %}
 <div class="ButtonGroup">
