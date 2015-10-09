@@ -39,15 +39,14 @@ $ npm install -g grunt-cli
 Then start a local Jekyll server:
 
 ```bash
-$ jekyll serve --baseurl
+$ jekyll serve
 ```
 
-Visit [http://localhost:4000/](http://localhost:4000/) in your browser.
+Visit [http://localhost:4000/origin/](http://localhost:4000/origin/) in your browser — **note `/origin/`**.
 
-You may need to run `bundle exec jekyll serve --baseurl` depending on which version of Ruby the gems were installed to on your machine.
+The `/origin/` is required to view the documentation locally, because when the documentation is published to GitHub Pages it lives at `/origin`. There is an established workaround for this, but it’s not applicable to sites where the Jekyll source is anywhere other than the root directory, and ours lives in `/docs`.
 
-`--baseurl` is required to view the documentation locally at the root of `http://localhost:4000/`, because when the documentation is published to GitHub Pages it lives at `/origin`.
-
+You may need to run `bundle exec jekyll serve` depending on which version of Ruby the gems were installed to on your machine.
 
 ### Documentation
 
