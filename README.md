@@ -10,10 +10,10 @@ Origin consumes our [CSS utilities](https://github.com/fac/fa-css-utilities) and
 ## Contents
 
 - [Install](#install)
+- [Structure](#structure)
   - [Documentation](#documentation)
-- [Installing Origin into a new or existing project](#installing-origin-into-a-new-or-existing-project)
-- [Publishing](#publishing)
-- [Updating the npm module](#updating-the-npm-module)
+  - [Publishing](#publishing)
+- [Implementing Origin into a project](#implementing-origin-into-a-project)
 - [Development](#development)
   - [Developing ideas locally](#developing-ideas-locally)
 - [Contributing](#contributing)
@@ -24,7 +24,7 @@ Origin consumes our [CSS utilities](https://github.com/fac/fa-css-utilities) and
 
 Following these steps will install Origin and it’s docs locally, and allow you to push documentation changes to GitHub Pages.
 
-**If you’re implementing Origin into a new or existing project and don’t want the documentation, see instructions for [Installing Origin into a new or existing project](#installing-origin-into-a-new-or-existing-project)**
+**If you want to implement Origin into a project and don’t want the documentation, [follow these instructions](#implementing-origin-into-a-project)**
 
 Requirements: Ruby, [Bundler](http://bundler.io/), [Node.js and npm](http://nodejs.org/download/)
 
@@ -45,18 +45,40 @@ $ jekyll serve
 
 Visit [http://localhost:4000/origin/](http://localhost:4000/origin/) in your browser — **note `/origin/`**.
 
-The `/origin/` is required to view the documentation locally, because when the documentation is published to GitHub Pages it lives at `/origin`. There is an established workaround for this, but it’s not applicable to sites where the Jekyll source is anywhere other than the root directory, and ours lives in `/docs`.
-
 You may need to run `bundle exec jekyll serve` depending on which version of Ruby the gems were installed to on your machine.
 
+The `/origin/` path is required to view the documentation locally, because when the documentation is published to GitHub Pages it lives at `/origin`. There is an established workaround for this, but it’s not applicable to sites where the Jekyll source is anywhere other than the root directory, and ours lives in `/docs`.
+
+
+## Structure
+
+Very little of this repository is actually part of the [`origin-css`](https://www.npmjs.com/package/origin-css) npm package. Only:
+
+```
+.
+├── assets
+|   ├── fonts
+|   └── scss
+├── LICENSE.md
+├── package.json
+└── README.md
+```
+
+These are the only files needed to implement Origin in a project, so that’s all npm needs to know about. [`.npmignore`](https://github.com/fac/origin/blob/master/.npmignore) defines what’s hidden from npm in the same way a `.gitignore` file does.
+
+If you want to make changes to Origin, it’s these files you want to change. The rest of the repository is dedicated to the documentation.
 
 ### Documentation
 
 Origin’s documentation is built with Jekyll and Grunt. It can be run locally, and is published to [http://fac.github.io/origin/](http://fac.github.io/origin/) via the [`gh-pages`](https://github.com/fac/origin/tree/gh-pages) branch.
 
-All documentation-related files live in the [/docs](https://github.com/fac/origin/tree/master/docs) directory.
+Aside from Jekyll’s [`_config.yml`](https://github.com/fac/origin/blob/master/_config.yml) and Grunt’s [`Gruntfile.js`](https://github.com/fac/origin/blob/master/Gruntfile.js), all files related to documentation live in [`/docs`](https://github.com/fac/origin/tree/master/docs).
 
-Note that the [/assets/scss](https://github.com/fac/origin/blob/master/assets/scss/origin.scss) directory contains the same content as [/docs/scss](https://github.com/fac/origin/blob/master/docs/assets/scss/origin.scss), with a couple of extra additions. This gives us as a sandbox for trying new ideas and approaches before considering them for deployment.
+Here’s where things get a bit inception-y: **Origin’s documentation _uses Origin_ to document Origin**.
+
+The [`/docs/assets`](https://github.com/fac/origin/tree/master/docs/assets) directory contains many of the same files as the root `/assets` directory (the one included in the npm package). In this sense, the Origin docs are a good example of how you might implement Origin into a project.
+
+But the real purpose of the docs (aside from the obvious) is to give us as a sandbox for trying new ideas and approaches before considering them for deployment. It’s our “kitchen sink” view of utilities and components.
 
 
 ### Publishing
@@ -70,7 +92,7 @@ $ grunt publish
 This takes the `_site` directory, generates it's own Git repository there, and publishes the contents to the `gh-pages` branch here on GitHub. Changes are reflected in the hosted docs within a minute or so.
 
 
-## Installing Origin into a new or existing project
+## Implementing Origin into a project
 
 These instructions assume you’re implementing Origin into a new or existing project. Origin is installed via npm, and assumes your project already has mechanisms in place for compiling Sass.
 
@@ -89,29 +111,15 @@ After installing, do the following:
 2. Use `origin.scss` as your master stylesheet, or copy it’s contents into your existing master stylesheet. You’ll need to change the paths to the global Sass partials if the location of your stylesheets directory isn’t the standard Rails `app/assets/stylesheets`.
 
 
-## Updating the npm module
-
-Within `package.json`, update to a new release by changing the version number that follows the `#` in the dependency URL.
-
-```json
-{
-  "name": "myapp",
-  "dependencies": {
-    "origin-css": "~1.0.0"
-  }
-}
-```
-
-
 ## Development
 
 Development of Origin happens in our primary branch, `master`. For stable versions, see the [releases page](https://github.com/fac/origin/releases). `master` will always be up to date with the latest changes, including those which have yet to be released.
 
 ### Developing ideas locally
 
-The master stylesheet that powers the Origin documentation ([`docs.scss`](https://github.com/fac/origin/blob/master/docs/assets/scss/docs.scss)) is essentially a copy of the regular [`origin.scss`](https://github.com/fac/origin/blob/master/assets/scss/local/origin.scss) master stylesheet. This means we can experiment with changes to Origin locally, and preview them before ever considering them for release.
+As mentioned [above](#documentation), Origin’s documentation _uses_ Origin. The [`/docs`](https://github.com/fac/origin/tree/master/docs) directory is the place to experiment with new ideas before considering adding any of them to the root [`/assets`](https://github.com/fac/origin/tree/master/assets) directory.
 
-Trying out edits to Origin from inside other projects is made easy by the fact that npm provides a way to point to your _local version of Origin_ instead of referencing the one installed by npm. This means you could, for example, trial changing the `background-color` of a button in Origin and see the effect it has in your app without actually having to push a new version of the Origin module to npm.
+It’s also possible to try out new ideas for Origin in any other projects where it’s implemented. npm provides a way to point to your _local version of Origin_ instead of referencing the one installed by npm. This means you could, for example, trial changing the `background-color` of a button in Origin and see the effect it has in your app without actually having to push a new version of the Origin package to npm.
 
 [How to symlink a package folder](https://docs.npmjs.com/cli/link)
 
