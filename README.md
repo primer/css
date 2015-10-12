@@ -78,7 +78,7 @@ Here’s where things get a bit inception-y: **Origin’s documentation _uses Or
 
 The [`/docs/assets`](https://github.com/fac/origin/tree/master/docs/assets) directory contains many of the same files as the root `/assets` directory (the one included in the npm package). In this sense, the Origin docs are a good example of how you might implement Origin into a project.
 
-But the real purpose of the docs (aside from the obvious) is to give us as a sandbox for trying new ideas and approaches before considering them for deployment. It’s our “kitchen sink” view of utilities and components.
+But the real purpose of the docs (aside from the obvious) is to give us a sandbox for trying new ideas and approaches before considering them for deployment. It’s our “kitchen sink” view of utilities and components.
 
 
 ### Publishing
