@@ -15,10 +15,12 @@
 
 /* Primer documentation components */
 @import "primer/components/_buttons";
+@import "primer/components/_docs-example";
 @import "primer/components/_menu";
 @import "primer/components/_spacing";
 @import "primer/components/_swatches";
 @import "primer/components/_text-example";
+@import "primer/components/_text-color";
 
 a {
   text-decoration: none;
@@ -51,6 +53,11 @@ a:hover {
   @include font-size(x-large, !important);
   @include line-height(tight, !important);
   @include text-color(gray-6, !important);
+}
+
+.highlight .cm {
+  font-style: normal;
+  @include text-color(gray-9);
 }
 
 // Make containers responsive

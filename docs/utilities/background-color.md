@@ -1,14 +1,18 @@
 ---
 layout: page
-title: color
+title: background-color
 ---
 
-These are the colors we’re actually using right now in production applications — no more. All colors are managed by [fa-css-utilities](https://github.com/fac/fa-css-utilities).
+## Contents
 
-New colors should added only when they’re actually being used in a component or other element in production. When adding a new colour, justify it by linking to the Sass file where you’re using it in your PR. Then the team can approve the addition.
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+
+These are the background colors we’re using in production — no more. All colors are managed in [fa-css-utilities](https://github.com/fac/fa-css-utilities). New colors should be added only when they’re actually being used in a component or other element in production. When adding a new color, justify it by linking to the Sass file where you’re using it in your PR. Then the team can approve the addition.
 
 
 ## Primary palette
+
 <section class="SwatchGroup">
 
   <div class="DocsExample DocsExample--render--hidden">
@@ -17,7 +21,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(fa-yellow);
-@include text-color(fa-yellow);
 {% endexample %}
   </div>
 
@@ -27,7 +30,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(fa-amber);
-@include text-color(fa-amber);
 {% endexample %}
   </div>
 
@@ -37,7 +39,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(fa-red);
-@include text-color(fa-red--text);
 {% endexample %}
   </div>
 
@@ -47,7 +48,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(fa-purple);
-@include text-color(fa-purple);
 {% endexample %}
   </div>
 
@@ -57,7 +57,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(fa-blue);
-@include text-color(fa-blue);
 {% endexample %}
   </div>
 
@@ -67,7 +66,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(fa-green);
-@include text-color(fa-green--text);
 {% endexample %}
   </div>
 
@@ -84,7 +82,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(fa-amber--dark);
-@include text-color(fa-amber--dark);
 {% endexample %}
   </div>
 
@@ -94,7 +91,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(fa-red--dark);
-@include text-color(fa-red--dark);
 {% endexample %}
   </div>
 
@@ -104,7 +100,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(fa-blue--dark);
-@include text-color(fa-blue--dark);
 {% endexample %}
   </div>
 
@@ -114,7 +109,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(fa-blue--x-dark);
-@include text-color(fa-blue--x-dark);
 {% endexample %}
   </div>
 
@@ -124,7 +118,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(fa-green--dark);
-@include text-color(fa-green--dark);
 {% endexample %}
   </div>
 
@@ -193,7 +186,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(gray-1);
-@include text-color(gray-1);
 {% endexample %}
   </div>
 
@@ -203,7 +195,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(gray-2);
-@include text-color(gray-2);
 {% endexample %}
   </div>
 
@@ -213,7 +204,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(gray-3);
-@include text-color(gray-3);
 {% endexample %}
   </div>
 
@@ -223,7 +213,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(gray-4);
-@include text-color(gray-4);
 {% endexample %}
   </div>
 
@@ -233,7 +222,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(gray-5);
-@include text-color(gray-5);
 {% endexample %}
   </div>
 
@@ -243,7 +231,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(gray-6);
-@include text-color(gray-6);
 {% endexample %}
   </div>
 
@@ -253,7 +240,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(gray-7);
-@include text-color(gray-7);
 {% endexample %}
   </div>
 
@@ -263,7 +249,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(gray-8);
-@include text-color(gray-8);
 {% endexample %}
   </div>
 
@@ -273,7 +258,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(gray-9);
-@include text-color(gray-9);
 {% endexample %}
   </div>
 
@@ -283,7 +267,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(gray-10);
-@include text-color(gray-10);
 {% endexample %}
   </div>
 
@@ -293,7 +276,6 @@ New colors should added only when they’re actually being used in a component o
     </div>
 {% example scss %}
 @include background-color(gray-11);
-@include text-color(gray-11);
 {% endexample %}
   </div>
 
@@ -343,3 +325,5 @@ New colors should added only when they’re actually being used in a component o
   </div>
 
 </section>
+
+Related: [`text-color`]({{ site.baseurl }}/utilities/text-color/)
