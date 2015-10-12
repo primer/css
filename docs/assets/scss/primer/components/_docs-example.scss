@@ -1,0 +1,5 @@
+.DocsExample-comment {
+  margin-top: -0.5rem;
+  @include margin-bottom(large);
+  @include text-color(gray-9);
+}

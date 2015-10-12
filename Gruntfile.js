@@ -35,6 +35,24 @@ module.exports = function(grunt) {
       }
     },
 
+    browserSync: {
+      dev: {
+        bsFiles: {
+          src : [
+            '_site/*.*',
+            '_site/**/*.*',
+            '_site/**/**/*.*',
+            '_site/**/**/**/*.*',
+            '_site/**/**/**/**/*.*',
+            '_site/**/**/**/**/**/*.*'
+          ]
+        },
+        options: {
+          proxy: "localhost:4000/origin/"
+        }
+      }
+    },
+
     buildcontrol: {
       options: {
         dir: '_site',
@@ -52,13 +70,14 @@ module.exports = function(grunt) {
   });
 
   // Load dependencies
+  grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-build-control');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-sass');
 
   // Generate and format the CSS
-  grunt.registerTask('default', ['sass', 'jekyll']);
+  grunt.registerTask('default', ['browserSync', 'sass', 'jekyll']);
 
   // Publish to GitHub
   grunt.registerTask('publish', ['jekyll', 'buildcontrol:pages']);
