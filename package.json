@@ -11,10 +11,11 @@
   },
   "devDependencies": {
     "grunt": "~0.4.5",
+    "grunt-browser-sync": "^2.1.3",
     "grunt-build-control": "~0.2.2",
+    "grunt-contrib-watch": "~0.6.1",
     "grunt-jekyll": "~0.4.2",
-    "grunt-sass": "~0.18.1",
-    "grunt-contrib-watch": "~0.6.1"
+    "grunt-sass": "~0.18.1"
   },
   "description": "Origin is FreeAgent’s internal CSS framework. We’re a growing team working across a range of different projects and codebases, and making CSS work at scale is hard. Agreed principles, approaches, and patterns mean we can do better work faster. That’s what Origin gives us.",
   "bugs": {
