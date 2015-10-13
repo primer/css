@@ -31,6 +31,7 @@ Requirements: Ruby, [Bundler](http://bundler.io/), [Node.js and npm](http://node
 ```bash
 $ git clone git@github.com:fac/origin.git
 $ cd origin
+$ chruby ruby-2.1.2 (or whatever your non-system version of Ruby is)
 $ bundle install
 $ bower install
 $ npm install
