@@ -26,15 +26,16 @@ Following these steps will install Origin and it’s docs locally, and allow you
 
 **If you want to implement Origin into a project and don’t want the documentation, [follow these instructions](#implementing-origin-into-a-project)**
 
-Requirements: Ruby, [Bundler](http://bundler.io/), [Node.js and npm](http://nodejs.org/download/)
+Prerequisites: Ruby, [Bundler](http://bundler.io/), [Node.js](http://nodejs.org/download/)
 
 ```bash
 $ git clone git@github.com:fac/origin.git
 $ cd origin
 $ chruby ruby-2.1.2 (or whatever your non-system version of Ruby is)
 $ bundle install
-$ bower install
 $ npm install
+$ npm install -g bower (if you don’t already have Bower installed)
+$ bower install
 $ npm install -g grunt-cli
 ```
 
@@ -44,11 +45,13 @@ Then start a local Jekyll server:
 $ jekyll serve
 ```
 
-Visit [http://localhost:4000/origin/](http://localhost:4000/origin/) in your browser — **note `/origin/`**.
+Now open a new terminal window and start Browsersync:
 
-You may need to run `bundle exec jekyll serve` depending on which version of Ruby the gems were installed to on your machine.
+```bash
+$ grunt browserSync
+```
 
-The `/origin/` path is required to view the documentation locally, because when the documentation is published to GitHub Pages it lives at `/origin`. There is an established workaround for this, but it’s not applicable to sites where the Jekyll source is anywhere other than the root directory, and ours lives in `/docs`.
+A new browser tab should open to `http://localhost:3000/origin/`. The docs don't run at root because when published to GitHub Pages they lives at `/origin`. There is an established workaround for this, but it’s not applicable to sites where the Jekyll source is anywhere other than the root directory, and ours lives in `/docs`.
 
 
 ## Structure
