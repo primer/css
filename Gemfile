@@ -9,3 +9,4 @@ gem 'github-pages', versions['github-pages']
 gem 'jekyll'
 gem 'rouge'
 gem 'sass'
+gem 'bower'
