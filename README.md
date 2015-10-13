@@ -33,9 +33,10 @@ $ git clone git@github.com:fac/origin.git
 $ cd origin
 $ chruby ruby-2.1.2 (or whatever your non-system version of Ruby is)
 $ bundle install
-$ bower install
 $ npm install
+$ npm install -g bower
 $ npm install -g grunt-cli
+$ bower install
 ```
 
 Then start a local Jekyll server:
