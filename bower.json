@@ -1,0 +1,24 @@
+{
+  "name": "origin-css",
+  "ignore": [
+    "_config.yml",
+    ".DS_Store",
+    "docs/",
+    "Gemfile",
+    "Gemfile.lock",
+    ".git/",
+    ".gitignore",
+    "Gruntfile.js",
+    ".hound.yml",
+    ".sass-cache/",
+    ".scss-lint.yml",
+    "_site/"
+  ],
+  "main": [
+    "assets/scss/origin.scss"
+  ],
+  "dependencies": {
+    "primer-markdown": "https://github.com/primer/markdown.git#2.1.7",
+    "primer-user-content": "https://github.com/primer/user-content.git#2.1.7"
+  }
+}
