@@ -42,7 +42,7 @@ $ bower install
 Then start a local Jekyll server:
 
 ```bash
-$ jekyll serve
+$ bundle exec jekyll serve
 ```
 
 Now open a new terminal window and start Browsersync:
