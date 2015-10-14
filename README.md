@@ -130,24 +130,29 @@ It’s also possible to try out new ideas for Origin in any other projects where
 
 ## Contributing
 
-All team members should be contributing back to this repo in order to improve it. The process:
+All team members should be contributing back to this repo in order to improve it. All HTML and CSS should conform to the [style guidelines](http://fac.github.io/origin/code-style/).
+
+Editor preferences are available in the [editor config](https://github.com/fac/origin/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
+
+The process:
+
+#### Branch off, make changes, create a PR
 
 1. Make sure you're up to date with the master branch (`git fetch; git pull origin master`)
 2. Branch off master (`git checkout -b <your-branch-name>`) and make your changes
 3. Increment the version numbers in [_config.yml](https://github.com/fac/origin/blob/master/_config.yml) and [package.json](https://github.com/fac/origin/blob/master/package.json). Generally: backwards-compatible fixes and smaller amendments to existing code are patches, new components and breaking changes count as minor releases, and full rewrites are major releases. See [semver.org](http://semver.org/) for detailed guidance.
 4. Push up your changes (`git push origin <your-branch-name>`) and write a [helpful pull request](https://github.com/blog/1943-how-to-write-the-perfect-pull-request) describing your changes
+
+#### Get your PR reviewed, merge to master, create new release
+
 5. Ask a fellow designer or engineer to review your changes. Make any required changes, then merge your branch into master: `git checkout master; git merge --no-ff <your-branch-name>`
 6. Push up the new version of master (`git push origin master`).
-7. [Create a new release](https://help.github.com/articles/creating-releases/) with a useful description. **If you’re making breaking changes, provide guidance in the release notes about what people will have to change in their projects (e.g. “rename instances of `u-padding--none` to `u-padding--0`”)**
-8. [Update the NPM package](https://docs.npmjs.com/getting-started/publishing-npm-packages) (`npm publish`). If you don't yet have access to update the NPM package, have someone in the design team [add you as an owner](https://docs.npmjs.com/cli/owner).
-9. Consider updating Origin in projects that should receive these updates.
+7. [Create a new release](https://help.github.com/articles/creating-releases/) with a useful description. Your original PR is probably a good starting point. **If you’re making breaking changes, provide guidance in the release notes about what people will have to change in their projects**
+8. [Publish the NPM package](https://docs.npmjs.com/getting-started/publishing-npm-packages) (`npm publish`). If you don't yet have access to update the npm package, have someone in the design team [add you as an owner](https://docs.npmjs.com/cli/owner).
 
-In addition, please read through our [contributing guidelines](https://github.com/fac/origin/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
+#### Let people know, consider upgrading other projects
 
-All HTML and CSS should conform to the [style guidelines](http://fac.github.io/origin/code-style/).
-
-Editor preferences are available in the [editor config](https://github.com/fac/origin/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
-
+If this a major or minor release, let people in the #design and/or #dev Slack channels know by linking to the release. Consider bringing other projects up to date with your new release, especially [Origin](https://github.com/fac/origin).
 
 ## License
 
