@@ -51,7 +51,7 @@ Now open a new terminal window and start Browsersync:
 $ grunt browserSync
 ```
 
-A new browser tab should open to `http://localhost:3000/origin/`. The docs don't run at root because when published to GitHub Pages they lives at `/origin`. There is an established workaround for this, but it’s not applicable to sites where the Jekyll source is anywhere other than the root directory, and ours lives in `/docs`.
+A new browser tab should open to `http://localhost:3001/origin/`. The docs don't run at root because when published to GitHub Pages they lives at `/origin`. There is an established workaround for this, but it’s not applicable to sites where the Jekyll source is anywhere other than the root directory, and ours lives in `/docs`.
 
 
 ## Structure

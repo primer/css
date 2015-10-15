@@ -48,7 +48,7 @@ module.exports = function(grunt) {
           ]
         },
         options: {
-          proxy: "localhost:4000/origin/"
+          proxy: "localhost:4001/origin/"
         }
       }
     },
