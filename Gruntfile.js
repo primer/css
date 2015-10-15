@@ -77,7 +77,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
 
   // Generate and format the CSS
-  grunt.registerTask('default', ['browserSync', 'sass', 'jekyll']);
+  grunt.registerTask('default', ['browserSync']);
 
   // Publish to GitHub
   grunt.registerTask('publish', ['jekyll', 'buildcontrol:pages']);
