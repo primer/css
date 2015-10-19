@@ -14,7 +14,6 @@
     "scss/primer.scss"
   ],
   "dependencies": {
-    "octicons": "*",
-    "primer-markdown": "https://github.com/primer/markdown.git#2.1.7"
+    "octicons": "*"
   }
 }
