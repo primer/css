@@ -1,6 +1,6 @@
 {
   "name": "primer-css",
-  "version": "2.3.5",
+  "version": "2.4.0",
   "homepage": "http://primercss.io",
   "author": "GitHub, Inc.",
   "scss": "./scss/primer.scss",
