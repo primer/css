@@ -1,0 +1,12 @@
+scss:
+  enabled: true
+  config_file: scss/.scss-lint.yml
+
+ruby:
+  enabled: false
+
+coffee_script:
+  enabled: false
+
+java_script:
+  enabled: false

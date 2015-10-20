@@ -3,6 +3,13 @@
 # only main files contain this front matter, not partials.
 ---
 
+/*
+ * Primer documentation styles
+ * http://primercss.io
+ *
+ * Released under MIT license. Copyright 2015 GitHub, Inc.
+ */
+
 //
 // Import Primer itself
 //
@@ -15,7 +22,7 @@
 
 
 //
-// Override some shit
+// Overrides
 //
 
 // Global type
@@ -210,6 +217,10 @@ body {
   line-height: 1.75;
   color: #7a7a7a;
   border-top: 1px solid #eee;
+
+  strong {
+    color: #333;
+  }
 }
 
 
@@ -274,11 +285,34 @@ body {
     border: 1px solid lighten($brand-green, 30%);
   }
 
-  // Override markdown styles
-  ul {
+  // Override Markdown styles to restore values from `_type.scss`
+  ul,
+  ol {
     padding: 0;
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  dl.form {
+    margin: 15px 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    > dt {
+      margin: 0 0 6px;
+      font-style: normal;
+    }
+
+    > dd {
+      padding: 0;
+      margin-bottom: 0;
+    }
   }
 
   // Flex table

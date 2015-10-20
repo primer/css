@@ -20,6 +20,7 @@ input[type="email"],
 input[type="number"],
 input[type="tel"],
 input[type="url"],
+select,
 textarea {
   min-height: 34px;
   padding: 7px 8px;
@@ -28,7 +29,7 @@ textarea {
   vertical-align: middle;
   background-color: #fff;
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
-  background-position: right center;
+  background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
   border: 1px solid #ccc;
   border-radius: 3px;
   outline: none;
@@ -41,8 +42,15 @@ textarea {
   }
 }
 
+select {
+  &:not([multiple]) {
+    height: 34px;
+    vertical-align: middle;
+  }
+}
+
 // Inputs with contrast for easy light gray backgrounds against white.
-// input.class is needed here to increase specifity over input[…]
+// input.class is needed here to increase specificity over input[…]
 input.input-contrast,
 .input-contrast {
   background-color: #fafafa;
@@ -51,28 +59,8 @@ input.input-contrast,
 }
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
-::-webkit-input-placeholder,
-:-moz-placeholder {
+::placeholder {
   color: #aaa;
-}
-
-::-webkit-validation-bubble-message {
-  font-size: 12px;
-  color: #fff;
-  background: #9c2400;
-  border: 0;
-  border-radius: 3px;
-  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-}
-
-input::-webkit-validation-bubble-icon {
-  display: none;
-}
-
-::-webkit-validation-bubble-arrow {
-  background-color: #9c2400;
-  border: solid 1px #9c2400;
-  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 // Mini inputs, to match .minibutton
@@ -111,6 +99,7 @@ dl.form {
   input[type="password"],
   input[type="email"],
   input[type="url"],
+  select,
   textarea {
     background-color: #fafafa;
 
@@ -151,7 +140,6 @@ dl.form {
       width: 440px;
       max-width: 100%;
       margin-right: 5px;
-      background-position-x: 98%;
     }
 
     input {
@@ -180,12 +168,11 @@ dl.form {
       &.is-error { color: $brand-red; }
 
       &.is-success { color: $brand-green; }
-    }
 
-    h4 + p.note {
-      margin-top: 0;
+      + p.note {
+        margin-top: 0;
+      }
     }
-
   }
 
   //
@@ -199,13 +186,128 @@ dl.form {
       content: "*";
     }
   }
+
+  // Form AJAX states
+  //
+  // Form fields that need feedback for AJAX loading, success
+  // states and errored states.
+  .success,
+  .error,
+  .indicator {
+    display: none;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  &.loading {
+    opacity: 0.5;
+
+    .indicator {
+      display: inline;
+    }
+
+    .spinner {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  &.successful {
+    .success {
+      display: inline;
+      color: #390;
+    }
+  }
+
+  // Form validation
+  //
+  // Our inline errors
+
+  &.warn,
+  &.errored {
+    dd.warning,
+    dd.error {
+      display: inline-block;
+      position: absolute;
+      max-width: 450px; // Keep our long errors readable
+      z-index: 10;
+      margin: 2px 0 0;
+      padding: 5px 8px;
+      font-size: 13px;
+      font-weight: normal;
+      border-radius: 3px;
+    }
+
+    dd.warning:after,
+    dd.warning:before,
+    dd.error:after,
+    dd.error:before {
+      bottom: 100%;
+      z-index: 15;
+      left: 10px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    dd.warning:after,
+    dd.error:after {
+      border-width: 5px;
+    }
+
+    dd.warning:before,
+    dd.error:before {
+      border-width: 6px;
+      margin-left: -1px;
+    }
+  }
+
+  &.warn {
+    dd.warning {
+      color: #4e401e;
+      background-color: #ffe5a7;
+      border: 1px solid #e7ce94;
+
+      &:after {
+        border-bottom-color: #ffe5a7;
+      }
+
+      &:before {
+        border-bottom-color: #cdb683;
+      }
+    }
+  }
+
+  &.errored {
+    > dt label {
+      color: $brand-red;
+    }
+
+    dd.error {
+      color: #fff;
+      background-color: #bf1515;
+      border-color: #911;
+      font-size: 13px;
+
+      &:after {
+        border-bottom-color: #bf1515;
+      }
+
+      &:before {
+        border-bottom-color: #911;
+      }
+    }
+  }
 }
 
 .note {
   min-height: 17px;
   margin: 4px 0 2px;
   font-size: 12px;
-  color: #777;
+  color: $brand-gray;
 
   .spinner {
     margin-right: 3px;
@@ -251,101 +353,6 @@ dl.form {
 }
 
 
-// Form AJAX states
-//
-// Form fields that need feedback for AJAX loading, success
-// states and errored states.
-dl.form {
-  .success,
-  .error,
-  .indicator {
-    display: none;
-    font-size: 12px;
-    font-weight: bold;
-  }
-
-  &.loading {
-    opacity: 0.5;
-
-    .indicator {
-      display: inline;
-    }
-
-    .spinner {
-      display: inline-block;
-      vertical-align: middle;
-    }
-  }
-
-  &.successful {
-    .success {
-      display: inline;
-      color: #390;
-    }
-  }
-
-  &.errored {
-    > dt label {
-      color: #900;
-    }
-
-    // General text next to the field
-    .error {
-      display: inline;
-      color: #900;
-    }
-
-    // Specific error explanations from the server
-    dd.error,
-    dd.warning {
-      display: inline-block;
-      padding: 5px;
-      font-size: 11px;
-      color: #494620;
-      background: #f7ea57;
-      border: 1px solid #c0b536;
-      border-top-color: #fff;
-      border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px;
-    }
-  }
-
-  &.warn {
-    // General text next to the field
-    .warning {
-      display: inline;
-      color: #900;
-    }
-
-    // Specific warning explanations from the server
-    dd.warning {
-      display: inline-block;
-      padding: 5px;
-      font-size: 11px;
-      color: #494620;
-      background: #f7ea57;
-      border: 1px solid #c0b536;
-      border-top-color: #fff;
-      border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px;
-    }
-  }
-
-  .form-note {
-    display: inline-block;
-    padding: 5px;
-    margin-top: -1px;
-    font-size: 11px;
-    color: #494620;
-    background: #f7ea57;
-    border: 1px solid #c0b536;
-    border-top-color: #fff;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-  }
-}
-
-
 // Field groups
 //
 // Wrap field groups in `<div.hfields>` to lay them out horizontally - great for
@@ -358,10 +365,12 @@ dl.form {
     float: left;
     margin: 0 30px 0 0;
 
-    & > dt label {
-      display: inline-block;
-      margin: 5px 0 0;
-      color: #666;
+    > dt {
+      label {
+        display: inline-block;
+        margin: 5px 0 0;
+        color: #666;
+      }
 
       img {
         position: relative;
@@ -376,236 +385,6 @@ dl.form {
   }
 
   select { margin-top: 5px; }
-}
-
-// IE 9
-html.no-dnd-uploads {
-  .drag-and-drop {
-    min-height: 32px;
-
-    .default {
-      display: none;
-    }
-  }
-
-  .upload-enabled textarea {
-    border-bottom: 1px solid #ddd;
-  }
-}
-
-.drag-and-drop {
-  padding: 7px 10px;
-  margin: 0;
-  font-size: 13px;
-  line-height: 16px;
-  color: #aaa;
-  background-color: #fafafa;
-  border: 1px solid #ccc;
-  border-top: 0;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-
-  .default,
-  .loading,
-  .error {
-    display: none;
-  }
-
-  .error {
-    color: $brand-red;
-  }
-
-  // Spinner
-  img {
-    vertical-align: top;
-  }
-}
-
-.is-default .drag-and-drop .default {
-  display: inline-block;
-}
-
-.is-uploading .drag-and-drop .loading {
-  display: inline-block;
-}
-
-.is-bad-file .drag-and-drop .bad-file {
-  display: inline-block;
-}
-
-.is-too-big .drag-and-drop .too-big {
-  display: inline-block;
-}
-
-.is-empty .drag-and-drop .empty {
-  display: inline-block;
-}
-
-.is-bad-browser .drag-and-drop .bad-browser {
-  display: inline-block;
-}
-
-.drag-and-drop-error-info {
-  font-weight: normal;
-  color: #aaa;
-
-  a {
-    color: $brand-blue;
-  }
-}
-
-.is-failed .drag-and-drop .failed-request {
-  display: inline-block;
-}
-
-.manual-file-chooser {
-  position: absolute;
-  width: 240px;
-  padding: 5px;
-  margin-left: -80px;
-  cursor: pointer;
-  opacity: 0.0001;
-}
-
-.manual-file-chooser:hover + .manual-file-chooser-text {
-  text-decoration: underline;
-}
-
-.btn {
-  // align manual-file-chooser inside a button
-  .manual-file-chooser {
-    top: 0;
-    padding: 0;
-    line-height: 34px;
-  }
-}
-
-// Focused Textarea styles
-.upload-enabled textarea {
-  display: block;
-  border-bottom: 1px dashed #ddd;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.focused .drag-and-drop {
-  @extend input[type="text"]:focus;
-  box-shadow: rgba(#51a7e8, 0.5) 0 0 3px;
-}
-
-// Dropping a file on top
-.dragover textarea,
-.dragover .drag-and-drop {
-  box-shadow: rgba(#c9ff00, 1) 0 0 3px;
-}
-
-
-// Form style with a write and a preview tab
-.previewable-comment-form {
-  position: relative;
-
-  .tabnav {
-    position: relative;
-    padding: 10px 10px 0;
-  }
-
-  .comment {
-    border: 1px solid #cacaca;
-  }
-
-  .comment-header .comment-header-actions { display: none; }
-
-  .comment-form-error { margin-bottom: 10px; }
-
-  .write-content,
-  .preview-content {
-    display: none;
-    padding: 0 10px 10px;
-  }
-
-  &.write-selected .write-content,
-  &.preview-selected .preview-content {
-    display: block;
-  }
-
-  textarea {
-    display: block;
-    width: 100%;
-    min-height: 100px;
-    max-height: 500px;
-    padding: 10px;
-    resize: vertical;
-
-    &.fullscreen-contents:focus {
-      border: 0;
-      box-shadow: none;
-    }
-  }
-}
-
-
-// A two column form, with a .main and a .sidebar column
-//
-// Override some `.timeline-comment-wrapper` defaults.
-// The `div` is needed to be more specific than the other class.
-div.composer {
-  margin-top: 0;
-  border: 0;
-}
-
-// Override the previewable comment form defaults
-.composer .comment-form-textarea {
-  height: 200px;
-  min-height: 200px;
-}
-
-.composer-infobar {
-  height: 35px;
-  padding: 0 10px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #eee;
-}
-
-.composer .tabnav { margin: 0 0 10px; }
-
-.infobar-widget {
-
-  &.milestone {
-    position: relative; // requires so that the `right: 0;` below works
-    float: right;
-
-    .select-menu-modal-holder { right: 0; }
-  }
-
-  &.assignee {
-    float: left;
-
-    .css-truncate-target {
-      max-width: 110px;
-    }
-  }
-
-  .text,
-  .avatar,
-  .select-menu {
-    display: inline-block;
-    vertical-align: top;
-  }
-
-  .text {
-    margin-top: 3px;
-
-    a {
-      font-weight: bold;
-      color: #333;
-    }
-  }
-
-  .progress-bar {
-    width: 200px;
-    overflow: hidden; // round the corners if 100%
-    line-height: 18px;
-  }
 }
 
 
@@ -672,39 +451,6 @@ input::-webkit-inner-spin-button {
   margin-left: -1px;
 }
 
-h2.account {
-  margin: 15px 0 0;
-  font-size: 18px;
-  font-weight: normal;
-  color: #666;
-}
-
-p.explain {
-  position: relative;
-  font-size: 12px;
-  color: #666;
-
-  strong {
-    color: #333;
-  }
-
-  .octicon {
-    margin-right: 5px;
-    color: #bbb;
-  }
-
-  .minibutton {
-    top: -4px;
-    float: right;
-  }
-}
-
-.options-content p.explain {
-  padding: 10px 10px 0;
-  margin-top: 0;
-  border-top: 1px solid #ddd;
-}
-
 .form-actions {
   @include clearfix;
 
@@ -753,4 +499,49 @@ p.explain {
 .status-indicator-failed:before {
   color: $brand-red;
   content: "\f02d"; // octicon-x
+}
+
+
+// Custom select
+//
+// Apply `.select` to any `<select>` element for custom styles.
+
+.select {
+  display: inline-block;
+  max-width: 100%;
+  padding: 7px 24px 7px 8px;
+  vertical-align: middle;
+  background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC) no-repeat right 8px center;
+  background-size: 8px 10px;
+  box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.075);
+  // Have to include vendor prefixes as the `appearance` property isn't part of the CSS spec.
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  // IE9 hacks to hide the background-image and reduce padding
+  padding-right: 8px \9;
+  background-image: none \9;
+
+  &:focus {
+    outline: none;
+    border-color: #51a7e8;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5);
+  }
+
+  // Hides the default caret in IE11
+  &::-ms-expand {
+    opacity: 0;
+  }
+}
+
+.select-sm {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 12px;
+
+  &:not([multiple]) {
+    height: 26px;
+    min-height: 26px;
+  }
 }

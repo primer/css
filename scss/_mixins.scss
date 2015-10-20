@@ -21,6 +21,8 @@
 // $end   - The color hex at the bottom.
 
 @mixin gradient($start: #fafafa, $end: #eaeaea) {
+  @warn "Gradient mixin is deprecated.";
+  // scss-lint:disable VendorPrefix
   background-color: $end;
   // FF 3.6+
   background-image: -moz-linear-gradient($start, $end);

@@ -47,7 +47,7 @@ There are a few subcomponents and add-ons that work well with the menu, includin
 </nav>
 {% endexample %}
 
-You can also add optional headings to a menu. Feel free to use nearly semantic element with the `.menu-heading` class, including inline elements, headings, and more.
+You can also add optional headings to a menu. Feel free to use nearly any semantic element with the `.menu-heading` class, including inline elements, headings, and more.
 
 {% example html %}
 <nav class="menu">
@@ -118,7 +118,7 @@ Additional bits of text and links can be styled for optimal placement with `.tab
 
 ## Filter list
 
-A vertical list of filters. Grey text on white background. Selecting a filter from the list will fill it's background with blue and make the text white.
+A vertical list of filters. Grey text on white background. Selecting a filter from the list will fill its background with blue and make the text white.
 
 {% example html %}
 <ul class="filter-list">

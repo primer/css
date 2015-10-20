@@ -40,7 +40,7 @@ blockquote {
 }
 
 // Text utilities
-.text-muted { color: #999; }
+.text-muted { color: $brand-gray; }
 .text-danger { color: $brand-red; }
 
 .text-emphasized {
@@ -48,6 +48,9 @@ blockquote {
   color: #333;
 }
 
+.text-small {
+  font-size: 12px;
+}
 
 // Lists
 // --------------------------------------------------

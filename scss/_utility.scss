@@ -9,10 +9,23 @@
 .left { float: left; }
 
 
+// Layout
+
+// Centers content horizontally. Can be used inside or outside the grid.
+.centered {
+  display: block;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 // Text alignment
 .text-right { text-align: right; }
 
 .text-left { text-align: left; }
+
+.text-center { text-align: center; }
 
 
 // Text states
@@ -45,7 +58,7 @@
 //
 // Have a link you need to be gray to start, and blue on hover? Use this.
 .muted-link {
-  color: #777;
+  color: $brand-gray;
 
   &:hover {
     color: $brand-blue;

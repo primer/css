@@ -14,6 +14,7 @@ Best practices and guidelines for writing HTML and CSS with approachable formatt
 
 ### General formatting
 
+* Use soft-tabs with a two space indent. Spaces are the only way to guarantee code renders the same in any person's environment.
 * Paragraphs of text should always be placed in a `<p>` tag. Never use multiple `<br>` tags.
 * Items in list form should always be in `<ul>`, `<ol>`, or `<dl>`. Never use a set of `<div>` or `<p>`.
 * Every form input that has text attached should utilize a `<label>` tag. **Especially radio or checkbox elements.**
@@ -94,7 +95,7 @@ Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and `scope` attrib
 
 
 
-## CSS
+## SCSS
 
 ### Spacing
 
@@ -108,7 +109,7 @@ Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and `scope` attrib
 
 ### Formatting
 
-* Use hex color codes `#000` unless using `rgba()`.
+* Use hex color codes `#000` unless using `rgba()` in raw CSS (SCSS' `rgba()` function is overloaded to accept hex colors as a param, e.g., `rgba(#000, .5)`).
 * Use `//` for comment blocks (instead of `/* */`).
 * Avoid specifying units for zero values, e.g., `margin: 0;` instead of `margin: 0px;`.
 * Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values.
@@ -147,31 +148,11 @@ Here are some good examples that apply the above guidelines:
 
 ## File organization
 
-In general, the CSS file organization should follow something like this:
+In general, a flat directory of files works best, but at GitHub we break things down by bundles (separate compiled CSS files) and sections (directories of related content).
 
-{% highlight bash %}
-styles
-├── components
-│   ├── comments.scss
-│   └── listings.scss
-├── globals
-│   ├── browser_helpers.scss
-│   ├── responsive_helpers.scss
-│   └── variables.scss
-├── plugins
-│   ├── jquery.fancybox-1.3.4.css
-│   └── reset.scss
-├── sections
-│   ├── issues.scss
-│   └── profile.scss
-└── shared
-    ├── forms.scss
-    └── markdown.scss
-{% endhighlight %}
+### Bundles
 
-### Multiple bundles
-
-Variations on this structure include the multi-bundle Rails approach, as seen in the `github/github` repo:
+GitHub.com uses a handful of bundles. Here's a simplified representation of our two desktop bundles (split to support IE9's maximum selector limit per CSS file) and a dedicated mobile bundle for our separate mobile views.
 
 {% highlight bash %}
 stylesheets
@@ -183,22 +164,21 @@ stylesheets
 │   ├── about.scss
 │   └── blog.scss
 └── mobile
-    ├── _variables.scss
-    └── base.scss
+    ├── base.scss
+    └── files.scss
 {% endhighlight %}
-
-Here, we have two desktop bundles to support IE9's maximum selector limit per CSS file, as well as a dedicated mobile bundle to go with our separate mobile views.
 
 ### Including (S)CSS files
 
-Use [Sprockets](https://github.com/sstephenson/sprockets) to **require** files. However, you should explicitly **import** any scss that does not generate styles (`globals/`) in the particular SCSS file you'll be needing it's helpers in.  Here's a good example:
+Previously we used [Sprockets](https://github.com/sstephenson/sprockets) to **require** files in Primer and at GitHub. Nowadays, we use explicit lists of **imports** to control the cascade, specificity, and more.
 
 {% highlight scss %}
-//= require_tree ./plugins
-//= require my_awesome_styles
+// Imports
+@import "primer";
+@import "component";
+@import "another_component";
 
-@import "../globals/basic";
-
+// Rules
 .rule { ... }
 {% endhighlight %}
 
