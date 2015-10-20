@@ -1,0 +1,83 @@
+/* NavBar
+   ==========================================================================
+   The blue navigation bar that contains the view title and navigation options
+*/
+
+/**
+ * Base styles for the navigation bar
+ *
+ * All variants of the NavBar have these styles in common
+ */
+
+.NavBar {
+  display: block;
+  width: 100%;
+  @include background-color(fa-blue);
+  @include floatContainer;
+}
+
+/**
+ * Main navbar title
+ */
+
+.NavBar-title {
+  color: #fff;
+  margin: 0;
+  @include font-size(large);
+  @include line-height(x-tight);
+}
+
+/**
+ * Override standard link color in the navbar title
+ */
+.NavBar-title-link {
+  color: #fff;
+}
+
+/**
+ * Override standard link hover color in the navbar title
+ */
+
+.NavBar-title-link:hover,
+.NavBar-title-link:focus {
+  color: #fff;
+}
+
+
+/* Desktop NavBar
+   ==========================================================================
+   Desktop app variant of the blue navigation bar that contains the company
+   name and navigation options
+*/
+
+/**
+ * 1. Applied in the ruleset because the desktop app does not currently use
+ *   `box-sizing: border-box` by default.
+ * 2. Only has a `padding-top` value because of the tabbed navigation in the
+ *    desktop app that sits flush with the bottom of the NavBar.
+ */
+
+.NavBar--desktop {
+  /* 1 */
+  box-sizing: border-box;
+  /* 2 */
+  @include padding-top(default);
+}
+
+/**
+ * Main navbar title
+ * 1. Applied in the ruleset because the desktop app does not currently use
+ *   `box-sizing: border-box` by default.
+ * 2. Moves the title in from the left to keep it aligned with the navigation
+ *    tabs
+ * 3. Matches the `padding-top` on the `.NavBar`
+ */
+
+.NavBar--desktop .NavBar-title {
+  /* 1 */
+  box-sizing: border-box;
+  /* 2 */
+  margin-left: 15px;
+  /* 3 */
+  @include margin-bottom(default);
+}

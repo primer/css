@@ -15,7 +15,7 @@ highlighter: rouge
 kramdown:
   auto_ids: true
 
-version: 0.1.9
+version: 0.2.1
 
 sass:
   # Directory points to root allowing `@import` of .scss files from anywhere
