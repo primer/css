@@ -248,7 +248,3 @@ $tooltip-text-color: #fff;
     border-left-color: $background-color;
   }
 }
-
-.fullscreen-overlay-enabled.dark-theme .tooltipped {
-  @include colorizeTooltip(#000, rgba(255, 255, 255, 0.8));
-}

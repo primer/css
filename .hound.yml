@@ -5,8 +5,8 @@ scss:
 ruby:
   enabled: false
 
-coffee_script:
+coffeescript:
   enabled: false
 
-java_script:
+javascript:
   enabled: false
