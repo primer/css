@@ -13,7 +13,7 @@
     "autoprefixer-core": "~5.2.1",
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^2.2.0",
-    "grunt-build-control": "^0.2.2"
+    "grunt-build-control": "^0.2.2",
     "grunt-jekyll": "^0.4.2",
     "grunt-parker": "^0.1.3",
     "grunt-sass": "^1.0.0",
