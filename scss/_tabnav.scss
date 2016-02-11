@@ -30,7 +30,10 @@
     border-radius: 3px 3px 0 0;
   }
 
-  &:hover { text-decoration: none; }
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
 }
 
 // Tabnav extras
