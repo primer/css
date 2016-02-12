@@ -18,7 +18,7 @@ Changelogs are handled with dedicated tracking issues ([see example](https://git
 2. Open a new tracking issue and immediately lock it. (No comments are needed, ship lists are just for us.)
 3. As you close issues and merge pull requests, add a link to those threads to the tracking issue.
 
-When the release and milestone are about ready to ship, move on the the releasing flow.
+When the release and milestone are about ready to ship, move on the releasing flow.
 
 ## Releasing
 
