@@ -34,7 +34,7 @@ $ bower install primer-css --save
 
 ### Things to know
 
-**Hey, GitHubbers!** For GitHub.com, you'll need to  `cd` into `vendor/assets` and run `bower install` there. Be sure to commit and push all the changes, including the `bower.json` and everything under `bower_components`.
+**Hey, GitHubbers!** For GitHub.com, run `bower install` at root. Be sure to commit and push all the changes, including the `bower.json` and everything under `bower_components`.
 
 ## Usage
 
