@@ -39,17 +39,9 @@ blockquote {
   color: #555;
 }
 
-// Text utilities
-.text-muted { color: $brand-gray; }
-.text-danger { color: $brand-red; }
-
 .text-emphasized {
   font-weight: bold;
   color: #333;
-}
-
-.text-small {
-  font-size: 12px;
 }
 
 // Lists

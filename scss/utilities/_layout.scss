@@ -15,3 +15,13 @@
 .d-inline-block { display: inline-block !important; }
 .hidden, // legacy
 .d-none         { display: none !important; }
+
+
+// Clear floats
+.clearfix {
+  @include clearfix;
+}
+
+// Floats
+.right { float: right !important; }
+.left { float: left !important; }

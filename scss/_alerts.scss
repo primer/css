@@ -90,3 +90,17 @@
   margin-bottom: 0;
   line-height: 1.5;
 }
+
+.warning {
+  padding: 0.5em;
+  margin-bottom: 0.8em;
+  font-weight: bold;
+  background-color: #fffccc;
+}
+
+.error_box {
+  padding: 1em;
+  font-weight: bold;
+  background-color: #ffebe8;
+  border: 1px solid #dd3c10;
+}
