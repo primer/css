@@ -21,14 +21,45 @@ $body-font-size: 13px !default;
 $mono-font: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
 
 // State indicators.
-$status-open:     $brand-green;
-$status-closed:   $brand-red;
-$status-reverted: $status-closed;
-$status-merged:   $brand-purple;
-$status-renamed:  #fffa5d;
-$status-pending:  #cea61b;
+$status-open:     $brand-green !default;
+$status-closed:   $brand-red !default;
+$status-reverted: $status-closed !default;
+$status-merged:   $brand-purple !default;
+$status-renamed:  #fffa5d !default;
+$status-pending:  #cea61b !default;
 
 // Repository type colors
-$repo-private-text: #a1882b;
-$repo-private-bg:   #fff9ea;
-$repo-private-icon: #e9dba5;
+$repo-private-text: #a1882b !default;
+$repo-private-bg:   #fff9ea !default;
+$repo-private-icon: #e9dba5 !default;
+
+// These are our margin and padding utility spacers. The default step size we
+// use is 6px. This gives us a key of:
+//    0 => 0px
+//    1 => 3px
+//    2 => 6px
+//    3 => 12px
+//    4 => 24px
+//    5 => 36px
+$spacer: 6px !default;
+$spacers: (
+  0,
+  round($spacer / 2),
+  $spacer,
+  $spacer * 2,
+  $spacer * 4,
+  $spacer * 6
+) !default;
+
+// Aliases for easy use
+$spacer1: nth($spacers, 2) !default;
+$spacer2: nth($spacers, 3) !default;
+$spacer3: nth($spacers, 4) !default;
+$spacer4: nth($spacers, 5) !default;
+$spacer5: nth($spacers, 6) !default;
+
+$border-blue: #c5d5dd !default;
+$border-gray-light: #eee !default;
+$border-gray: #e5e5e5 !default;
+$border-gray-dark: #ddd !default;
+$border-radius: 3px !default;
