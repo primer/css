@@ -108,3 +108,91 @@ Additional `margin` or `padding` may be required to properly space content.
   </div>
 </div>
 {% endexample %}
+
+## Margin
+
+You have the option to set margin sizes from `0-5`. You also have the optional direction using `t,r,b,l,x,y`.
+
+{% example html %}
+<div class="d-inline-block border p-2 mr-0">.mr-0</div>
+<div class="d-inline-block border p-2 mr-1">.mr-1</div>
+<div class="d-inline-block border p-2 mr-2">.mr-2</div>
+<div class="d-inline-block border p-2 mr-3">.mr-3</div>
+<div class="d-inline-block border p-2 mr-4">.mr-4</div>
+<div class="d-inline-block border p-2 mr-5">.mr-5</div>
+<div class="d-inline-block border p-2 mx-2">.mx-5</div>
+<div class="d-inline-block border p-2 my-2">.my-5</div>
+<div class="d-inline-block border p-2 m-2">.m-2</div>
+{% endexample %}
+
+## Padding
+
+You have the option to set padding sizes from `0-5`. You also have the optional direction using `t,b,x,y`.
+
+{% example html %}
+<div class="d-inline-block border pt-0">.pt-0</div>
+<div class="d-inline-block border pt-1">.pt-1</div>
+<div class="d-inline-block border pt-2">.pt-2</div>
+<div class="d-inline-block border pt-3">.pt-3</div>
+<div class="d-inline-block border pt-4">.pt-4</div>
+<div class="d-inline-block border pt-5">.pt-5</div>
+<div class="d-inline-block border p-3">.p-3</div>
+<div class="d-inline-block border px-3">.px-3</div>
+<div class="d-inline-block border py-3">.py-3</div>
+{% endexample %}
+
+## Positioning
+
+We include classes for setting positioning as well as setting the `top-0, right-0, bottom-0, left-0` to zero. Your options for positioning are `position-static, position-absolute, position-relative, position-fixed`.
+
+{% example html %}
+<div class="p-3 border position-relative">
+  .position-relative
+  <div class="border position-absolute right-0 top-0 p-1">.position-absolute.right-0.top-0</div>
+</div>
+{% endexample %}
+
+## Display
+
+You can set your display with these utilities.
+
+{% example html %}
+<span class="border text-center d-block p-2">.d-block</span>
+<span class="border text-center d-inline p-2">.d-inline</span>
+<span class="border text-center d-inline-block p-2">.d-inline-block</span>
+<span class="border text-center d-none p-2">.d-none</span>
+{% endexample %}
+
+## Borders
+
+With these border utilities you can set common borders.
+
+{% example html %}
+<div class="border p-3 mb-3">.border</div>
+<div class="border-top p-3 mb-3">.border-top</div>
+<div class="border-right p-3 mb-3">.border-right</div>
+<div class="border-bottom p-3 mb-3">.border-bottom</div>
+<div class="border-left p-3 mb-3">.border-left</div>
+{% endexample %}
+
+## Border colors
+
+Add these classes with `.border` and you'll have some common border colors.
+
+{% example html %}
+<div class="border p-3 mb-3 border-blue">.border-blue</div>
+<div class="border p-3 mb-3 border-gray-light">.border-gray-light</div>
+<div class="border p-3 mb-3 border-gray-dark">.border-gray-dark</div>
+{% endexample %}
+
+## No borders
+
+To remove a border from one side you can use `-0` postfix.
+
+{% example html %}
+<div class="border border-0 p-3 mb-3">.border-0</div>
+<div class="border border-top-0 p-3 mb-3">.border-top-0</div>
+<div class="border border-right-0 p-3 mb-3">.border-right-0</div>
+<div class="border border-bottom-0 p-3 mb-3">.border-bottom-0</div>
+<div class="border border-left-0 p-3 mb-3">.border-left-0</div>
+{% endexample %}
