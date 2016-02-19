@@ -251,7 +251,7 @@
 .ellipsis-expander {
   display: inline-block;
   height: 12px;
-  padding: 0 5px;
+  padding: 0 5px 5px;
   font-size: 12px;
   font-weight: bold;
   line-height: 6px;
@@ -260,6 +260,7 @@
   vertical-align: middle;
   background: #ddd;
   border-radius: 1px;
+  border: 0;
 
   &:hover {
     text-decoration: none;
