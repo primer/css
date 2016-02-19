@@ -15,8 +15,8 @@
 .centered {
   display: block;
   float: none;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 
@@ -76,11 +76,4 @@
   margin-bottom: 0.8em;
   font-weight: bold;
   background-color: #fffccc;
-}
-
-.error_box {
-  padding: 1em;
-  font-weight: bold;
-  background-color: #ffebe8;
-  border: 1px solid #dd3c10;
 }

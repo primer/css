@@ -7,12 +7,15 @@ $tooltip-text-color: #fff;
 }
 
 // This is the tooltip bubble
-.tooltipped:after {
+.tooltipped::after {
   position: absolute;
   z-index: 1000000;
   display: none;
   padding: 5px 8px;
+  // Not an operator, font
+  // scss-lint:disable SpaceAroundOperator
   font: normal normal 11px/1.5 $body-font;
+  // scss-lint:enable SpaceAroundOperator
   color: $tooltip-text-color;
   text-align: center;
   text-decoration: none;
@@ -29,7 +32,7 @@ $tooltip-text-color: #fff;
 }
 
 // This is the tooltip arrow
-.tooltipped:before {
+.tooltipped::before {
   position: absolute;
   z-index: 1000001;
   display: none;
@@ -45,8 +48,8 @@ $tooltip-text-color: #fff;
 .tooltipped:hover,
 .tooltipped:active,
 .tooltipped:focus {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     display: inline-block;
     text-decoration: none;
   }
@@ -55,7 +58,7 @@ $tooltip-text-color: #fff;
 .tooltipped-multiline:hover,
 .tooltipped-multiline:active,
 .tooltipped-multiline:focus {
-  &:after {
+  &::after {
     display: table-cell;
   }
 }
@@ -64,13 +67,13 @@ $tooltip-text-color: #fff;
 .tooltipped-s,
 .tooltipped-se,
 .tooltipped-sw {
-  &:after {
+  &::after {
     top: 100%;
     right: 50%;
     margin-top: 5px;
   }
 
-  &:before {
+  &::before {
     top: auto;
     right: 50%;
     bottom: -5px;
@@ -80,14 +83,14 @@ $tooltip-text-color: #fff;
 }
 
 .tooltipped-se {
-  &:after {
+  &::after {
     right: auto;
     left: 50%;
     margin-left: -15px;
   }
 }
 
-.tooltipped-sw:after {
+.tooltipped-sw::after {
   margin-right: -15px;
 }
 
@@ -95,13 +98,13 @@ $tooltip-text-color: #fff;
 .tooltipped-n,
 .tooltipped-ne,
 .tooltipped-nw {
-  &:after {
+  &::after {
     right: 50%;
     bottom: 100%;
     margin-bottom: 5px;
   }
 
-  &:before {
+  &::before {
     top: -5px;
     right: 50%;
     bottom: auto;
@@ -111,33 +114,33 @@ $tooltip-text-color: #fff;
 }
 
 .tooltipped-ne {
-  &:after {
+  &::after {
     right: auto;
     left: 50%;
     margin-left: -15px;
   }
 }
 
-.tooltipped-nw:after {
+.tooltipped-nw::after {
   margin-right: -15px;
 }
 
 // Move the tooltip body to the center of the object.
-.tooltipped-s:after,
-.tooltipped-n:after {
+.tooltipped-s::after,
+.tooltipped-n::after {
   transform: translateX(50%);
 }
 
 // Tooltipped to the left
 .tooltipped-w {
-  &:after {
+  &::after {
     right: 100%;
     bottom: 50%;
     margin-right: 5px;
     transform: translateY(50%);
   }
 
-  &:before {
+  &::before {
     top: 50%;
     bottom: 50%;
     left: -5px;
@@ -148,14 +151,14 @@ $tooltip-text-color: #fff;
 
 // tooltipped to the right
 .tooltipped-e {
-  &:after {
+  &::after {
     bottom: 50%;
     left: 100%;
     margin-left: 5px;
     transform: translateY(50%);
   }
 
-  &:before {
+  &::before {
     top: 50%;
     right: -5px;
     bottom: 50%;
@@ -170,7 +173,7 @@ $tooltip-text-color: #fff;
 // The downside is you cannot preformat the text with newlines and `[w,e]`
 // are always `$multiline-max-width` wide.
 .tooltipped-multiline {
-  &:after {
+  &::after {
     width: max-content;
     max-width: $multiline-max-width;
     word-break: break-word;
@@ -179,22 +182,22 @@ $tooltip-text-color: #fff;
     border-collapse: separate;
   }
 
-  &.tooltipped-s:after,
-  &.tooltipped-n:after {
+  &.tooltipped-s::after,
+  &.tooltipped-n::after {
     right: auto;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  &.tooltipped-w:after,
-  &.tooltipped-e:after {
+  &.tooltipped-w::after,
+  &.tooltipped-e::after {
     right: 100%;
   }
 }
 
 @media screen and (min-width:0\0) {
   // IE9 and IE10 rule sets go here
-  .tooltipped-multiline:after {
+  .tooltipped-multiline::after {
     width: $multiline-max-width;
   }
 }
@@ -203,13 +206,13 @@ $tooltip-text-color: #fff;
 //
 // Always show the tooltip.
 .tooltipped-sticky {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     display: inline-block;
   }
 
   &.tooltipped-multiline {
-    &:after {
+    &::after {
       display: table-cell;
     }
   }
@@ -219,7 +222,7 @@ $tooltip-text-color: #fff;
 //
 // Colors for different alert states.
 @mixin colorizeTooltip($text-color, $background-color) {
-  &:after {
+  &::after {
     color: $text-color;
     background: $background-color;
   }
@@ -227,7 +230,7 @@ $tooltip-text-color: #fff;
   .tooltipped-s,
   .tooltipped-se,
   .tooltipped-sw {
-    &:before {
+    &::before {
       border-bottom-color: $background-color;
     }
   }
@@ -235,16 +238,16 @@ $tooltip-text-color: #fff;
   &.tooltipped-n,
   &.tooltipped-ne,
   &.tooltipped-nw {
-    &:before {
+    &::before {
       border-top-color: $background-color;
     }
   }
 
-  &.tooltipped-e:before {
+  &.tooltipped-e::before {
     border-right-color: $background-color;
   }
 
-  &.tooltipped-w:before {
+  &.tooltipped-w::before {
     border-left-color: $background-color;
   }
 }

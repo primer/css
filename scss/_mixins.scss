@@ -3,33 +3,16 @@
 // Clears floats via mixin (avoid using as a class).
 
 @mixin clearfix {
-  &:before {
+  &::before {
     display: table;
     content: "";
   }
 
-  &:after {
+  &::after {
     display: table;
     clear: both;
     content: "";
   }
-}
-
-// Creates a linear gradient background, from top to bottom.
-//
-// $start - The color hex at the top.
-// $end   - The color hex at the bottom.
-
-@mixin gradient($start: #fafafa, $end: #eaeaea) {
-  @warn "Gradient mixin is deprecated.";
-  // scss-lint:disable VendorPrefix
-  background-color: $end;
-  // FF 3.6+
-  background-image: -moz-linear-gradient($start, $end);
-  // Safari 5.1+, Chrome 10+
-  background-image: -webkit-linear-gradient($start, $end);
-  background-image: linear-gradient($start, $end);
-  background-repeat: repeat-x;
 }
 
 // Text hiding for image based text replacement.
