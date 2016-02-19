@@ -1,117 +1,125 @@
 # This is the lint file for .scss files. It uses https://github.com/brigade/scss-lint
 # to search through .scss files and point out errors.
-# You can view these errors in your editor.
+# You can view these errors in your editor. To read about all the linters, visit
+# https://github.com/brigade/scss-lint/blob/fe04ca9de2d1cf1b28122fb3add7116bef995edd/lib/scss_lint/linter/README.md
 #
-# Here's a link to all the default configurations
-# https://github.com/brigade/scss-lint/blob/master/config/default.yml
-# below is our settings.
+# These settings are always up for debate, if you would like to change a setting,
+# feel free to make a pr and cc @github/css. Change is always good :)
+
+scss_files: "scss/**/*.scss"
+
+exclude: "scss/_normalize.scss"
+
+plugin_directories:
+
+# List of gem names to load custom linters from (make sure they are already
+# installed)
+plugin_gems: []
+
+# Default severity of all linters.
+severity: error
 
 linters:
   BangFormat:
     enabled: true
     space_before_bang: true
     space_after_bang: false
-    severity: error
 
   BemDepth:
     enabled: false
 
   BorderZero:
     enabled: true
-    convention: zero # or `none`
-    severity: error
+    convention: zero
+
+  ChainedClasses:
+    enabled: false
 
   ColorKeyword:
     enabled: true
-    severity: error
 
   ColorVariable:
     enabled: false
 
   Comment:
-    enabled: false
+    enabled: true
+    allowed: ^[\/*!]
+    style: silent
 
   DebugStatement:
     enabled: true
-    severity: error
 
   DeclarationOrder:
     enabled: false
 
+  DisableLinterReason:
+    enabled: true
+
   DuplicateProperty:
     enabled: true
-    severity: error
 
   ElsePlacement:
     enabled: true
-    style: same_line # or 'new_line'
-    severity: error
+    style: same_line
 
   EmptyLineBetweenBlocks:
     enabled: true
     ignore_single_line_blocks: true
-    severity: error
 
   EmptyRule:
     enabled: false
 
+  ExtendDirective:
+    enabled: true
+
   FinalNewline:
     enabled: true
     present: true
-    severity: error
 
   HexLength:
     enabled: true
-    style: short # or 'long'
-    severity: error
+    style: short
 
   HexNotation:
     enabled: true
-    style: lowercase # or 'uppercase'
-    severity: error
+    style: lowercase
 
   HexValidation:
     enabled: true
-    severity: error
 
   IdSelector:
-    enabled: false
-    severity: warning
+    enabled: true
 
   ImportantRule:
     enabled: false
-    severity: error
 
   ImportPath:
     enabled: true
     leading_underscore: false
     filename_extension: false
-    severity: error
 
   Indentation:
     enabled: true
     allow_non_nested_indentation: false
-    character: space # or 'tab'
+    character: space
     width: 2
-    severity: error
 
   LeadingZero:
     enabled: true
     style: include_zero
-    severity: error
 
   MergeableSelector:
     enabled: true
     force_nesting: true
-    severity: error
 
   NameFormat:
     enabled: false
+    allow_leading_underscore: false
+    convention: hyphenated_lowercase
 
   NestingDepth:
     enabled: true
-    max_depth: 5
-    severity: error
+    max_depth: 3
 
   PlaceholderInExtend:
     enabled: false
@@ -120,9 +128,8 @@ linters:
     enabled: false
 
   PropertySortOrder:
-    enabled: false
+    enabled: true
     ignore_unspecified: true
-    severity: warning
     order:
       - position
       - top
@@ -296,102 +303,95 @@ linters:
 
   PropertySpelling:
     enabled: true
-    severity: error
     extra_properties: []
+    disabled_properties: []
 
   PropertyUnits:
     enabled: false
-    severity: error
-    global: ['em', 'rem', '%'] # Allow relative units globally
-    properties:
-      border: ['px'] # Only pixels
-      line-height: [] # No units allowed
-      margin: ['em', 'rem']
+    global: [
+      'ch', 'em', 'ex', 'rem',                 # Font-relative lengths
+      'cm', 'in', 'mm', 'pc', 'pt', 'px', 'q', # Absolute lengths
+      'vh', 'vw', 'vmin', 'vmax',              # Viewport-percentage lengths
+      'deg', 'grad', 'rad', 'turn',            # Angle
+      'ms', 's',                               # Duration
+      'Hz', 'kHz',                             # Frequency
+      'dpi', 'dpcm', 'dppx',                   # Resolution
+      '%']                                     # Other
+    properties: {}
+
+  PseudoElement:
+    enabled: true
 
   QualifyingElement:
-    enabled: false
+    enabled: true
     allow_element_with_attribute: false
     allow_element_with_class: false
     allow_element_with_id: false
-    severity: warning
 
   SelectorDepth:
     enabled: true
-    max_depth: 4
-    severity: error
+    max_depth: 3
 
   SelectorFormat:
     enabled: true
-    convention: ^((?!js\-))[a-z1-2\-\_]+
-    severity: error
+    convention: hyphenated_lowercase
 
   Shorthand:
     enabled: true
-    severity: error
 
   SingleLinePerProperty:
     enabled: true
     allow_single_line_rule_sets: true
-    severity: error
 
   SingleLinePerSelector:
     enabled: true
-    severity: error
 
   SpaceAfterComma:
     enabled: true
-    severity: error
 
   SpaceAfterPropertyColon:
     enabled: true
-    style: one_space # or 'no_space', or 'at_least_one_space', or 'aligned'
-    severity: error
+    style: one_space
 
   SpaceAfterPropertyName:
     enabled: true
-    severity: error
 
   SpaceBeforeBrace:
     enabled: true
-    style: space # or 'new_line'
+    style: space
     allow_single_line_padding: true
-    severity: error
 
   SpaceBetweenParens:
     enabled: true
     spaces: 0
-    severity: error
 
   StringQuotes:
     enabled: true
     style: double_quotes
-    severity: error
-    exclude:
-      - 'docs/css/_anchor.scss'
 
   TrailingSemicolon:
     enabled: true
-    severity: error
+
+  TrailingWhitespace:
+    enabled: true
+
+  TransitionAll:
+    enabled: true
 
   TrailingZero:
     enabled: true
-    severity: error
 
   UnnecessaryMantissa:
     enabled: true
-    severity: error
 
   UnnecessaryParentReference:
     enabled: true
-    severity: error
 
   UrlFormat:
     enabled: true
-    severity: error
 
   UrlQuotes:
     enabled: true
-    severity: error
 
   VariableForProperty:
     enabled: false
@@ -401,10 +401,6 @@ linters:
     identifier_list: base
     additional_identifiers: []
     excluded_identifiers: []
-    severity: error
-    exclude:
-      - 'scss/_forms.scss'
 
   ZeroUnit:
     enabled: true
-    severity: error
