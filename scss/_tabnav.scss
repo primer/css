@@ -54,10 +54,13 @@
   }
 }
 
+// When tabnav-extra are anchors
+// scss-lint:disable QualifyingElement
 a.tabnav-extra:hover {
   color: $blue;
   text-decoration: none;
 }
+// scss-lint:enable QualifyingElement
 
 // Tabnav buttons
 //

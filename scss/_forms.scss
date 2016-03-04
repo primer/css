@@ -1,3 +1,5 @@
+// Needs refactoring
+// scss-lint:disable QualifyingElement NestingDepth SelectorDepth
 // Base form controls
 //
 // Overrides for common inputs for easier styling.
@@ -180,7 +182,7 @@ dl.form {
   //
 
   &.required {
-    > dt > label:after {
+    > dt > label::after {
       padding-left: 5px;
       color: #9f1006;
       content: "*";
@@ -227,41 +229,41 @@ dl.form {
   &.errored {
     dd.warning,
     dd.error {
-      display: inline-block;
       position: absolute;
-      max-width: 450px; // Keep our long errors readable
       z-index: 10;
-      margin: 2px 0 0;
+      display: inline-block;
+      max-width: 450px; // Keep our long errors readable
       padding: 5px 8px;
+      margin: 2px 0 0;
       font-size: 13px;
       font-weight: normal;
       border-radius: 3px;
     }
 
-    dd.warning:after,
-    dd.warning:before,
-    dd.error:after,
-    dd.error:before {
-      bottom: 100%;
-      z-index: 15;
-      left: 10px;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
+    dd.warning::after,
+    dd.warning::before,
+    dd.error::after,
+    dd.error::before {
       position: absolute;
+      bottom: 100%;
+      left: 10px;
+      z-index: 15;
+      width: 0;
+      height: 0;
       pointer-events: none;
+      content: " ";
+      border: solid transparent;
     }
 
-    dd.warning:after,
-    dd.error:after {
+    dd.warning::after,
+    dd.error::after {
       border-width: 5px;
     }
 
-    dd.warning:before,
-    dd.error:before {
-      border-width: 6px;
+    dd.warning::before,
+    dd.error::before {
       margin-left: -1px;
+      border-width: 6px;
     }
   }
 
@@ -271,11 +273,11 @@ dl.form {
       background-color: #ffe5a7;
       border: 1px solid #e7ce94;
 
-      &:after {
+      &::after {
         border-bottom-color: #ffe5a7;
       }
 
-      &:before {
+      &::before {
         border-bottom-color: #cdb683;
       }
     }
@@ -287,16 +289,16 @@ dl.form {
     }
 
     dd.error {
+      font-size: 13px;
       color: #fff;
       background-color: #bf1515;
       border-color: #911;
-      font-size: 13px;
 
-      &:after {
+      &::after {
         border-bottom-color: #bf1515;
       }
 
-      &:before {
+      &::before {
         border-bottom-color: #911;
       }
     }
@@ -482,30 +484,10 @@ input::-webkit-inner-spin-button {
   a { font-weight: bold; }
 }
 
-
-// Inline verification
-//
-// Used for example when autosaving checkboxes in settings.
-.status-indicator {
-  @include icon-bootstrap(16px);
-  margin-left: 5px;
-}
-
-.status-indicator-success:before {
-  color: $green;
-  content: "\f03a"; // octicon-check
-}
-
-.status-indicator-failed:before {
-  color: $red;
-  content: "\f02d"; // octicon-x
-}
-
-
 // Custom select
 //
 // Apply `.select` to any `<select>` element for custom styles.
-
+// scss-lint:disable PropertySortOrder
 .select {
   display: inline-block;
   max-width: 100%;
@@ -518,7 +500,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  
+
   // IE9 hacks to hide the background-image and reduce padding
   padding-right: 8px \9;
   background-image: none \9;
@@ -534,6 +516,7 @@ input::-webkit-inner-spin-button {
     opacity: 0;
   }
 }
+// scss-lint:enable PropertySortOrder
 
 .select-sm {
   padding-top: 3px;

@@ -19,10 +19,10 @@
 
   &:first-child {
     border-top: 0;
-    border-top-right-radius: 2px;
     border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
 
-    &:before { border-top-left-radius: 2px; }
+    &::before { border-top-left-radius: 2px; }
   }
 
   &:last-child {
@@ -30,7 +30,7 @@
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
 
-    &:before { border-bottom-left-radius: 2px; }
+    &::before { border-bottom-left-radius: 2px; }
   }
 
   &:hover {
@@ -44,11 +44,11 @@
     cursor: default;
     background-color: #fff;
 
-    &:before {
+    &::before {
       position: absolute;
       top: 0;
-      left: 0;
       bottom: 0;
+      left: 0;
       width: 2px;
       content: "";
       background-color: #d26911;
@@ -56,8 +56,8 @@
   }
 
   .octicon {
-    margin-right: 5px;
     width: 16px;
+    margin-right: 5px;
     color: $gray-dark;
     text-align: center;
  }
@@ -101,13 +101,13 @@
   }
 
   &:first-child {
-    border-top-right-radius: 2px;
     border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
   }
 
   &:last-child {
+    border-bottom: 0;
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
-    border-bottom: 0;
   }
 }
