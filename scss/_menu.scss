@@ -5,7 +5,7 @@
 .menu {
   margin-bottom: 15px;
   list-style: none;
-  background-color: #fff;
+  background-color: $bg-white;
   border: 1px solid #d8d8d8;
   border-radius: 3px;
 }
@@ -42,7 +42,7 @@
     font-weight: bold;
     color: #222;
     cursor: default;
-    background-color: #fff;
+    background-color: $bg-white;
 
     &::before {
       position: absolute;

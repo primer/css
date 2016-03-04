@@ -12,7 +12,7 @@ button {
 body {
   font: #{$body-font-size}/1.4 $body-font;
   color: $text-gray-dark;
-  background-color: #fff;
+  background-color: $bg-white;
 }
 
 a {

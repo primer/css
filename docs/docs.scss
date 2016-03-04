@@ -53,15 +53,15 @@ body {
 //
 
 .btn-reverse {
-  color: #fff;
+  color: $text-white;
   background: none;
   border: 1px solid #fff;
 
   &:hover,
   &:active {
     color: $text-blue;
-    background: #fff;
-    border-color: #fff;
+    background: $bg-white;
+    border-color: $white;
     box-shadow: none;
   }
 }
@@ -82,7 +82,7 @@ body {
     color: rgba(255,255,255,.5);
 
     &:hover {
-      color: #fff;
+      color: $text-white;
       text-decoration: none;
     }
   }
@@ -90,7 +90,7 @@ body {
   .masthead-logo {
     display: inline-block;
     font-size: 1.5rem;
-    color: #fff;
+    color: $text-white;
 
     .mega-octicon {
       float: left;
@@ -120,7 +120,7 @@ body {
   }
 
   .active {
-    color: #fff;
+    color: $text-white;
     font-weight: 500;
   }
 
@@ -147,7 +147,7 @@ body {
   padding-bottom: 4rem;
   background-color: $bg-blue;
   font-size: 1.25rem;
-  color: #fff;
+  color: $text-white;
   text-align: center;
 
   h1 {
@@ -219,7 +219,7 @@ body {
   border-top: 1px solid #eee;
 
   strong {
-    color: #333;
+    color: $text-gray-dark;
   }
 }
 
