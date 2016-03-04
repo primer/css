@@ -59,7 +59,7 @@ body {
 
   &:hover,
   &:active {
-    color: $blue;
+    color: $text-blue;
     background: #fff;
     border-color: #fff;
     box-shadow: none;
@@ -76,7 +76,7 @@ body {
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  background-color: $blue;
+  background-color: $bg-blue;
 
   a {
     color: rgba(255,255,255,.5);
@@ -145,7 +145,7 @@ body {
   margin-bottom: 3rem;
   padding-top: 2rem;
   padding-bottom: 4rem;
-  background-color: $blue;
+  background-color: $bg-blue;
   font-size: 1.25rem;
   color: #fff;
   text-align: center;
@@ -347,12 +347,12 @@ body {
   border-radius: .25rem;
 }
 
-.swatch-blue { background-color: $blue; }
-.swatch-green { background-color: $green; }
-.swatch-red { background-color: $red; }
-.swatch-orange { background-color: $orange; }
-.swatch-purple { background-color: $purple; }
+.swatch-blue { background-color: $bg-blue; }
+.swatch-green { background-color: $bg-green; }
+.swatch-red { background-color: $bg-red; }
+.swatch-orange { background-color: $bg-orange; }
+.swatch-purple { background-color: $bg-purple; }
 
-.swatch-gray-light { background-color: $gray-light; }
-.swatch-gray { background-color: $gray; }
-.swatch-gray-dark { background-color: $gray-dark; }
+.swatch-gray-light { background-color: $bg-gray-light; }
+.swatch-gray { background-color: $bg-gray; }
+.swatch-gray-dark { background-color: $bg-gray-dark; }

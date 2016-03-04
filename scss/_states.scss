@@ -22,11 +22,11 @@
 .state-open,
 .state-proposed,
 .state-reopened {
-  background-color: $green;
+  background-color: $bg-green;
 }
 
-.state-merged { background-color: $purple; }
+.state-merged { background-color: $bg-purple; }
 
-.state-closed { background-color: $red; }
+.state-closed { background-color: $bg-red; }
 
 .state-renamed { background-color: $status-renamed; }

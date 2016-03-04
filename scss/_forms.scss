@@ -167,9 +167,9 @@ dl.form {
     h4 {
       margin: 4px 0 0;
 
-      &.is-error { color: $red; }
+      &.is-error { color: $text-red; }
 
-      &.is-success { color: $green; }
+      &.is-success { color: $text-green; }
 
       + p.note {
         margin-top: 0;
@@ -285,7 +285,7 @@ dl.form {
 
   &.errored {
     > dt label {
-      color: $red;
+      color: $text-red;
     }
 
     dd.error {
@@ -309,7 +309,7 @@ dl.form {
   min-height: 17px;
   margin: 4px 0 2px;
   font-size: 12px;
-  color: $gray;
+  color: $text-gray;
 
   .spinner {
     margin-right: 3px;

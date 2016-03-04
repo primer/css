@@ -11,12 +11,12 @@ button {
 
 body {
   font: #{$body-font-size}/1.4 $body-font;
-  color: $gray-dark;
+  color: $text-gray-dark;
   background-color: #fff;
 }
 
 a {
-  color: $blue;
+  color: $text-blue;
   text-decoration: none;
 
   &:hover,

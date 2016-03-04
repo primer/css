@@ -58,7 +58,7 @@
   .octicon {
     width: 16px;
     margin-right: 5px;
-    color: $gray-dark;
+    color: $text-gray-dark;
     text-align: center;
  }
 
@@ -79,7 +79,7 @@
 
   &.alert {
     .counter {
-      color: $red;
+      color: $text-red;
     }
   }
 }

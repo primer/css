@@ -30,13 +30,14 @@ $grid-gutter:     10px !default;
 
 // Brand
 $blue:              #4078c0 !default;
+$gray-dark:         #333    !default;
 $gray-light:        #999    !default;
 $gray:              #767676 !default;
-$gray-dark:         #333    !default;
 $green:             #6cc644 !default;
-$red:               #bd2c00 !default;
 $orange:            #c9510c !default;
 $purple:            #6e5494 !default;
+$red:               #bd2c00 !default;
+$white:             #fff !default;
 
 // State indicators.
 $status-renamed:    #fffa5d !default;
@@ -49,29 +50,32 @@ $repo-private-icon: #e9dba5 !default;
 
 // Border colors
 $border-blue:       #c5d5dd !default;
+$border-gray-dark:  #ddd !default;
 $border-gray-light: #eee !default;
 $border-gray:       #e5e5e5 !default;
-$border-gray-dark:  #ddd !default;
 
 // Background colors
-$bg-white:          #fff !default;
-$bg-blue:           $blue !default;
 $bg-blue-light:     #f2f8fa !default;
+$bg-blue:           $blue !default;
 $bg-gray-dark:      $gray-dark !default;
-$bg-gray:           #f5f5f5 !default;
 $bg-gray-light:     #fafafa !default;
+$bg-gray:           #f5f5f5 !default;
 $bg-green:          $green !default;
+$bg-orange:         $orange !default;
+$bg-purple:         $purple !default;
 $bg-red:            $red !default;
+$bg-white:          $white !default;
 
 // Text colors
 $text-blue:         $blue !default;
+$text-gray-dark:    $gray-dark !default;
 $text-gray-light:   $gray-light !default;
 $text-gray:         $gray !default;
-$text-gray-dark:    $gray-dark !default;
 $text-green:        darken($green, 10%) !default;
-$text-red:          $red !default;
 $text-orange:       $orange !default;
 $text-purple:       $purple !default;
+$text-red:          $red !default;
+$text-white:        $white !default;
 
 // Border size
 $border-radius: 3px !default;

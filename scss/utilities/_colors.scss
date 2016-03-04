@@ -14,13 +14,15 @@
 // text colors
 .text-blue          { color: $text-blue !important; }
 .danger,            // legacy
-.text-diff-deleted, // legacy
 .text-closed,       // legacy
-.text-reverted,     // legacy
+.text-danger,       // legacy
+.text-diff-deleted, // legacy
 .text-error,        // legacy
 .text-failure,      // legacy
+.text-reverted,     // legacy
 .text-red           { color: $text-red !important; }
 .text-gray-light    { color: $text-gray-light !important; }
+.text-muted,        // legacy
 .text-gray          { color: $text-gray !important; }
 .mute,              // legacy
 .text-gray-dark     { color: $text-gray-dark !important; }
@@ -31,14 +33,14 @@
 .text-orange        { color: $text-orange !important; }
 .text-merged,       // legacy
 .text-purple        { color: $text-purple !important; }
-.text-white         { color: #fff !important; }
+.text-white         { color: $text-white !important; }
 .text-inherit       { color: inherit !important; }
 
 // link colors
-.link-blue      { color: $blue !important; }
-.link-gray-dark { color: $gray-dark !important; }
+.link-blue      { color: $text-blue !important; }
+.link-gray-dark { color: $text-gray-dark !important; }
 .muted-link, // legacy
-.link-gray      { color: $gray !important; }
+.link-gray      { color: $text-gray !important; }
 
 // All links turn blue when :hover
 .link-blue,
@@ -46,7 +48,7 @@
 .muted-link, // legacy
 .link-gray {
   &:hover {
-    color: $blue !important;
+    color: $text-blue !important;
   }
 }
 
