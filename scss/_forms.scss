@@ -165,9 +165,9 @@ dl.form {
     h4 {
       margin: 4px 0 0;
 
-      &.is-error { color: $brand-red; }
+      &.is-error { color: $red; }
 
-      &.is-success { color: $brand-green; }
+      &.is-success { color: $green; }
 
       + p.note {
         margin-top: 0;
@@ -283,7 +283,7 @@ dl.form {
 
   &.errored {
     > dt label {
-      color: $brand-red;
+      color: $red;
     }
 
     dd.error {
@@ -307,7 +307,7 @@ dl.form {
   min-height: 17px;
   margin: 4px 0 2px;
   font-size: 12px;
-  color: $brand-gray;
+  color: $gray;
 
   .spinner {
     margin-right: 3px;
@@ -492,12 +492,12 @@ input::-webkit-inner-spin-button {
 }
 
 .status-indicator-success:before {
-  color: $brand-green;
+  color: $green;
   content: "\f03a"; // octicon-check
 }
 
 .status-indicator-failed:before {
-  color: $brand-red;
+  color: $red;
   content: "\f02d"; // octicon-x
 }
 

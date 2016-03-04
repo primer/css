@@ -86,7 +86,7 @@ Change the `color` of elements with a class.
 
 ## Muted link
 
-When you need a hyperlink to not be `$brand-blue`, use a `.muted-link`.
+When you need a hyperlink to not be `$blue`, use a `.muted-link`.
 
 {% example html %}
 Here is some example text. <a class="muted-link" href="#">And a muted link.</a>

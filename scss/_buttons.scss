@@ -175,7 +175,7 @@
 // For when we need a linky-action that's not too heavy in busier
 // areas like conversation timelines.
 .btn-outline {
-  color: $brand-blue;
+  color: $blue;
   background-color: #fff; // Reset default gradient backgrounds and colors
   background-image: none;
   border: 1px solid #e5e5e5;
@@ -190,25 +190,25 @@
   &.zeroclipboard-is-hover,
   &.zeroclipboard-is-active {
     color: #fff;
-    background-color: $brand-blue;
+    background-color: $blue;
     background-image: none;
-    border-color: $brand-blue;
+    border-color: $blue;
 
     .counter {
-      color: $brand-blue;
+      color: $blue;
       background-color: #fff;
     }
   }
 
   &.selected:hover {
-    background-color: darken($brand-blue, 5%);
+    background-color: darken($blue, 5%);
   }
 
   &:disabled,
   &.disabled {
     &,
     &:hover {
-      color: $brand-gray;
+      color: $gray;
       background-color: #fff;
       background-image: none;
       border-color: #e5e5e5;
@@ -282,7 +282,7 @@
   font-size: 11px;
   font-weight: bold;
   line-height: 20px;
-  color: $brand-gray-dark;
+  color: $gray-dark;
   vertical-align: middle;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -296,7 +296,7 @@
   }
 
   &:hover {
-    color: $brand-blue;
+    color: $blue;
     cursor: pointer;
   }
 }
@@ -400,7 +400,7 @@
   display: inline-block;
   padding: 0;
   font-size: inherit;
-  color: $brand-blue;
+  color: $blue;
   white-space: nowrap;
   cursor: pointer;
   background-color: transparent;

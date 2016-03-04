@@ -3,9 +3,9 @@
 
 .mute { color: #000 !important; }
 
-.text-diff-added { color: darken($brand-green, 10%) !important; }
+.text-diff-added { color: darken($green, 10%) !important; }
 
-.text-diff-deleted { color: $brand-red !important; }
+.text-diff-deleted { color: $red !important; }
 
 .text-open,
 .text-success { color: $status-open !important; }
@@ -21,16 +21,16 @@
 .text-pending { color: $status-pending !important; }
 
 .text-error,
-.text-failure { color: $brand-red !important; }
+.text-failure { color: $red !important; }
 
 // Muted link
 //
 // Have a link you need to be gray to start, and blue on hover? Use this.
 .muted-link {
-  color: $brand-gray !important;
+  color: $gray !important;
 
   &:hover {
-    color: $brand-blue !important;
+    color: $blue !important;
     text-decoration: none !important;
   }
 }

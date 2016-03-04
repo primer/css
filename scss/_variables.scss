@@ -1,38 +1,3 @@
-$container-width: 980px !default;
-$grid-gutter:     10px !default;
-
-// Brand colors
-$brand-blue:       #4078c0 !default;
-$brand-gray-light: #999    !default;
-$brand-gray:       #767676 !default;
-$brand-gray-dark:  #333    !default;
-$brand-green:      #6cc644 !default;
-$brand-red:        #bd2c00 !default;
-$brand-orange:     #c9510c !default;
-$brand-purple:     #6e5494 !default;
-
-// Font stack
-$body-font: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-
-// The base body size
-$body-font-size: 13px !default;
-
-// Monospace font stack
-$mono-font: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
-
-// State indicators.
-$status-open:     $brand-green !default;
-$status-closed:   $brand-red !default;
-$status-reverted: $status-closed !default;
-$status-merged:   $brand-purple !default;
-$status-renamed:  #fffa5d !default;
-$status-pending:  #cea61b !default;
-
-// Repository type colors
-$repo-private-text: #a1882b !default;
-$repo-private-bg:   #fff9ea !default;
-$repo-private-icon: #e9dba5 !default;
-
 // These are our margin and padding utility spacers. The default step size we
 // use is 6px. This gives us a key of:
 //    0 => 0px
@@ -52,14 +17,49 @@ $spacers: (
 ) !default;
 
 // Aliases for easy use
-$spacer1: nth($spacers, 2) !default;
-$spacer2: nth($spacers, 3) !default;
-$spacer3: nth($spacers, 4) !default;
-$spacer4: nth($spacers, 5) !default;
-$spacer5: nth($spacers, 6) !default;
+$spacer1: nth($spacers, 2) !default; // 3px
+$spacer2: nth($spacers, 3) !default; // 6px
+$spacer3: nth($spacers, 4) !default; // 12px
+$spacer4: nth($spacers, 5) !default; // 24px
+$spacer5: nth($spacers, 6) !default; // 36px
+
+$container-width: 980px !default;
+$grid-gutter:     10px !default;
+
+// Brand colors
+$blue:       #4078c0 !default;
+$gray-light: #999    !default;
+$gray:       #767676 !default;
+$gray-dark:  #333    !default;
+$green:      #6cc644 !default;
+$red:        #bd2c00 !default;
+$orange:     #c9510c !default;
+$purple:     #6e5494 !default;
+
+// State indicators.
+$status-open:     $green !default;
+$status-closed:   $red !default;
+$status-reverted: $status-closed !default;
+$status-merged:   $purple !default;
+$status-renamed:  #fffa5d !default;
+$status-pending:  #cea61b !default;
+
+// Repository type colors
+$repo-private-text: #a1882b !default;
+$repo-private-bg:   #fff9ea !default;
+$repo-private-icon: #e9dba5 !default;
 
 $border-blue: #c5d5dd !default;
 $border-gray-light: #eee !default;
 $border-gray: #e5e5e5 !default;
 $border-gray-dark: #ddd !default;
 $border-radius: 3px !default;
+
+// Font stacks
+$body-font: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+// Monospace font stack
+$mono-font: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
+
+// The base body size
+$body-font-size: 13px !default;

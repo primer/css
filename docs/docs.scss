@@ -59,7 +59,7 @@ body {
 
   &:hover,
   &:active {
-    color: $brand-blue;
+    color: $blue;
     background: #fff;
     border-color: #fff;
     box-shadow: none;
@@ -76,7 +76,7 @@ body {
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  background-color: $brand-blue;
+  background-color: $blue;
 
   a {
     color: rgba(255,255,255,.5);
@@ -145,7 +145,7 @@ body {
   margin-bottom: 3rem;
   padding-top: 2rem;
   padding-bottom: 4rem;
-  background-color: $brand-blue;
+  background-color: $blue;
   font-size: 1.25rem;
   color: #fff;
   text-align: center;
@@ -281,8 +281,8 @@ body {
   .column {
     padding: $grid-gutter;
     font-family: $mono-font;
-    background-color: lighten($brand-green, 40%);
-    border: 1px solid lighten($brand-green, 30%);
+    background-color: lighten($green, 40%);
+    border: 1px solid lighten($green, 30%);
   }
 
   // Override Markdown styles to restore values from `_type.scss`
@@ -347,12 +347,12 @@ body {
   border-radius: .25rem;
 }
 
-.swatch-blue { background-color: $brand-blue; }
-.swatch-green { background-color: $brand-green; }
-.swatch-red { background-color: $brand-red; }
-.swatch-orange { background-color: $brand-orange; }
-.swatch-purple { background-color: $brand-purple; }
+.swatch-blue { background-color: $blue; }
+.swatch-green { background-color: $green; }
+.swatch-red { background-color: $red; }
+.swatch-orange { background-color: $orange; }
+.swatch-purple { background-color: $purple; }
 
-.swatch-gray-light { background-color: $brand-gray-light; }
-.swatch-gray { background-color: $brand-gray; }
-.swatch-gray-dark { background-color: $brand-gray-dark; }
+.swatch-gray-light { background-color: $gray-light; }
+.swatch-gray { background-color: $gray; }
+.swatch-gray-dark { background-color: $gray-dark; }
