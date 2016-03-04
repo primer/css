@@ -1,9 +1,9 @@
 // Border utilities
-.border        { border: 1px $border-gray solid !important; }
-.border-top    { border-top: 1px $border-gray solid !important; }
-.border-right  { border-right: 1px $border-gray solid !important; }
-.border-bottom { border-bottom: 1px $border-gray solid !important; }
-.border-left   { border-left: 1px $border-gray solid !important; }
+.border        { border: $border !important; }
+.border-top    { border-top: $border !important; }
+.border-right  { border-right: $border !important; }
+.border-bottom { border-bottom: $border !important; }
+.border-left   { border-left: $border !important; }
 
 // Border colors
 .border-blue       { border-color: $border-blue !important; }

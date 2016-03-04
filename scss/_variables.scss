@@ -78,6 +78,10 @@ $text-red:          $red !default;
 $text-white:        $white !default;
 
 // Border size
+$border-width: 1px !default;
+$border-color: $border-gray !default;
+$border-style: solid !default;
+$border: $border-width $border-color $border-style !default;
 $border-radius: 3px !default;
 
 // Font stacks
