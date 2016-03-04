@@ -26,33 +26,54 @@ $spacer5: nth($spacers, 6) !default; // 36px
 $container-width: 980px !default;
 $grid-gutter:     10px !default;
 
-// Brand colors
-$blue:       #4078c0 !default;
-$gray-light: #999    !default;
-$gray:       #767676 !default;
-$gray-dark:  #333    !default;
-$green:      #6cc644 !default;
-$red:        #bd2c00 !default;
-$orange:     #c9510c !default;
-$purple:     #6e5494 !default;
+// ---- Colors ----
+
+// Brand
+$blue:              #4078c0 !default;
+$gray-light:        #999    !default;
+$gray:              #767676 !default;
+$gray-dark:         #333    !default;
+$green:             #6cc644 !default;
+$red:               #bd2c00 !default;
+$orange:            #c9510c !default;
+$purple:            #6e5494 !default;
 
 // State indicators.
-$status-open:     $green !default;
-$status-closed:   $red !default;
-$status-reverted: $status-closed !default;
-$status-merged:   $purple !default;
-$status-renamed:  #fffa5d !default;
-$status-pending:  #cea61b !default;
+$status-renamed:    #fffa5d !default;
+$status-pending:    #cea61b !default;
 
 // Repository type colors
 $repo-private-text: #a1882b !default;
 $repo-private-bg:   #fff9ea !default;
 $repo-private-icon: #e9dba5 !default;
 
-$border-blue: #c5d5dd !default;
+// Border colors
+$border-blue:       #c5d5dd !default;
 $border-gray-light: #eee !default;
-$border-gray: #e5e5e5 !default;
-$border-gray-dark: #ddd !default;
+$border-gray:       #e5e5e5 !default;
+$border-gray-dark:  #ddd !default;
+
+// Background colors
+$bg-white:          #fff !default;
+$bg-blue:           $blue !default;
+$bg-blue-light:     #f2f8fa !default;
+$bg-gray-dark:      $gray-dark !default;
+$bg-gray:           #f5f5f5 !default;
+$bg-gray-light:     #fafafa !default;
+$bg-green:          $green !default;
+$bg-red:            $red !default;
+
+// Text colors
+$text-blue:         $blue !default;
+$text-gray-light:   $gray-light !default;
+$text-gray:         $gray !default;
+$text-gray-dark:    $gray-dark !default;
+$text-green:        darken($green, 10%) !default;
+$text-red:          $red !default;
+$text-orange:       $orange !default;
+$text-purple:       $purple !default;
+
+// Border size
 $border-radius: 3px !default;
 
 // Font stacks

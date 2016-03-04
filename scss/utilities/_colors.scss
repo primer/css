@@ -1,36 +1,55 @@
-// Text states
-.danger { color: #c00 !important; }
+// Color utilities
+// scss-lint:disable SpaceBeforeBrace
 
-.mute { color: #000 !important; }
+// background colors
+.bg-white      { background-color: $bg-white !important; }
+.bg-blue       { background-color: $bg-blue !important; }
+.bg-blue-light { background-color: $bg-blue-light !important; }
+.bg-gray-dark  { background-color: $bg-gray-dark !important; }
+.bg-gray       { background-color: $bg-gray !important; }
+.bg-gray-light { background-color: $bg-gray-light !important; }
+.bg-green      { background-color: $bg-green !important; }
+.bg-red        { background-color: $bg-red !important; }
 
-.text-diff-added { color: darken($green, 10%) !important; }
+// text colors
+.text-blue          { color: $text-blue !important; }
+.danger,            // legacy
+.text-diff-deleted, // legacy
+.text-closed,       // legacy
+.text-reverted,     // legacy
+.text-error,        // legacy
+.text-failure,      // legacy
+.text-red           { color: $text-red !important; }
+.text-gray-light    { color: $text-gray-light !important; }
+.text-gray          { color: $text-gray !important; }
+.mute,              // legacy
+.text-gray-dark     { color: $text-gray-dark !important; }
+.text-diff-added,   // legacy
+.text-success,      // legacy
+.text-open,         // legacy
+.text-green         { color: $text-green !important; }
+.text-orange        { color: $text-orange !important; }
+.text-merged,       // legacy
+.text-purple        { color: $text-purple !important; }
+.text-white         { color: #fff !important; }
+.text-inherit       { color: inherit !important; }
 
-.text-diff-deleted { color: $red !important; }
+// link colors
+.link-blue      { color: $blue !important; }
+.link-gray-dark { color: $gray-dark !important; }
+.muted-link, // legacy
+.link-gray      { color: $gray !important; }
 
-.text-open,
-.text-success { color: $status-open !important; }
-
-.text-closed { color: $status-closed !important; }
-
-.text-reverted { color: $status-reverted !important; }
-
-.text-merged { color: $status-merged !important; }
-
-.text-renamed { color: $status-renamed !important; }
-
-.text-pending { color: $status-pending !important; }
-
-.text-error,
-.text-failure { color: $red !important; }
-
-// Muted link
-//
-// Have a link you need to be gray to start, and blue on hover? Use this.
-.muted-link {
-  color: $gray !important;
-
+// All links turn blue when :hover
+.link-blue,
+.link-gray-dark,
+.muted-link, // legacy
+.link-gray {
   &:hover {
     color: $blue !important;
-    text-decoration: none !important;
   }
 }
+
+// Text states
+.text-renamed { color: $status-renamed !important; }
+.text-pending { color: $status-pending !important; }

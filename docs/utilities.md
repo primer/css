@@ -71,25 +71,46 @@ Change the `text-align` on elements with a class.
 <p class="text-center">Center aligned text.</p>
 {% endexample %}
 
+## Background colors
+
+Fill in an element with background colors.
+
+{% example html %}
+<span class="d-inline-block p-3 bg-white">.bg-white</span>
+<span class="d-inline-block p-3 bg-gray-dark text-white">.bg-gray-dark</span>
+<span class="d-inline-block p-3 bg-blue">.bg-blue</span>
+<span class="d-inline-block p-3 bg-blue-light">.bg-blue-light</span>
+<span class="d-inline-block p-3 bg-gray">.bg-gray</span>
+<span class="d-inline-block p-3 bg-gray-light">.bg-gray-light</span>
+<span class="d-inline-block p-3 bg-green">.bg-green</span>
+<span class="d-inline-block p-3 bg-red">.bg-red</span>
+{% endexample %}
+
 ## Text color
 
 Change the `color` of elements with a class.
 
 {% example html %}
-<p class="text-open">Green/open text</p>
-<p class="text-closed">Red/closed text</p>
-<p class="text-merged">Merged text</p>
-<p class="text-pending">Pending text</p>
+<span class="text-blue">.text-blue</span>
+<span class="text-red">.text-red</span>
+<span class="text-gray-light">.text-gray-light</span>
+<span class="text-gray">.text-gray</span>
+<span class="text-gray-dark">.text-gray-dark</span>
+<span class="text-green">.text-green</span>
+<span class="text-orange">.text-orange</span>
+<span class="text-purple">.text-purple</span>
+<span class="text-white bg-gray-dark">.text-white</span>
+<span class="text-inherit">.text-inherit</span>
 {% endexample %}
 
-`.text-closed` and `.text-failure` are the same, as well as `.text-open` and `.text-success`.
+## Link colors
 
-## Muted link
-
-When you need a hyperlink to not be `$blue`, use a `.muted-link`.
+The default link color is blue, but there are a couple of other options to use for deemphasized links. On `:hover` all links will turn blue.
 
 {% example html %}
-Here is some example text. <a class="muted-link" href="#">And a muted link.</a>
+<p>Here is some example text. <a class="link-blue" href="#">And a .link-blue</a></p>
+<p>Here is some example text. <a class="link-gray" href="#">And a .link-gray</a></p>
+<p>Here is some example text. <a class="link-gray-dark" href="#">And a .link-gray-dark</a></p>
 {% endexample %}
 
 ## Flex table
