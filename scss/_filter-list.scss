@@ -11,12 +11,12 @@
   }
 
   &.pjax-active .filter-item {
-    color: $brand-gray;
+    color: $text-gray;
     background-color: transparent;
 
     &.pjax-active {
-      color: #fff;
-      background-color: $brand-blue;
+      color: $text-white;
+      background-color: $bg-blue;
     }
   }
 }
@@ -28,7 +28,7 @@
   margin-bottom: 5px;
   overflow: hidden;
   font-size: 14px;
-  color: $brand-gray;
+  color: $text-gray;
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -41,8 +41,8 @@
   }
 
   &.selected {
-    color: #fff;
-    background-color: $brand-blue;
+    color: $text-white;
+    background-color: $bg-blue;
 
     .octicon-remove-close {
       float: right;

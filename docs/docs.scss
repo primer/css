@@ -53,15 +53,15 @@ body {
 //
 
 .btn-reverse {
-  color: #fff;
+  color: $text-white;
   background: none;
   border: 1px solid #fff;
 
   &:hover,
   &:active {
-    color: $brand-blue;
-    background: #fff;
-    border-color: #fff;
+    color: $text-blue;
+    background: $bg-white;
+    border-color: $white;
     box-shadow: none;
   }
 }
@@ -76,13 +76,13 @@ body {
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  background-color: $brand-blue;
+  background-color: $bg-blue;
 
   a {
     color: rgba(255,255,255,.5);
 
     &:hover {
-      color: #fff;
+      color: $text-white;
       text-decoration: none;
     }
   }
@@ -90,7 +90,7 @@ body {
   .masthead-logo {
     display: inline-block;
     font-size: 1.5rem;
-    color: #fff;
+    color: $text-white;
 
     .mega-octicon {
       float: left;
@@ -120,7 +120,7 @@ body {
   }
 
   .active {
-    color: #fff;
+    color: $text-white;
     font-weight: 500;
   }
 
@@ -145,9 +145,9 @@ body {
   margin-bottom: 3rem;
   padding-top: 2rem;
   padding-bottom: 4rem;
-  background-color: $brand-blue;
+  background-color: $bg-blue;
   font-size: 1.25rem;
-  color: #fff;
+  color: $text-white;
   text-align: center;
 
   h1 {
@@ -219,7 +219,7 @@ body {
   border-top: 1px solid #eee;
 
   strong {
-    color: #333;
+    color: $text-gray-dark;
   }
 }
 
@@ -281,8 +281,8 @@ body {
   .column {
     padding: $grid-gutter;
     font-family: $mono-font;
-    background-color: lighten($brand-green, 40%);
-    border: 1px solid lighten($brand-green, 30%);
+    background-color: lighten($green, 40%);
+    border: 1px solid lighten($green, 30%);
   }
 
   // Override Markdown styles to restore values from `_type.scss`
@@ -347,12 +347,12 @@ body {
   border-radius: .25rem;
 }
 
-.swatch-blue { background-color: $brand-blue; }
-.swatch-green { background-color: $brand-green; }
-.swatch-red { background-color: $brand-red; }
-.swatch-orange { background-color: $brand-orange; }
-.swatch-purple { background-color: $brand-purple; }
+.swatch-blue { background-color: $bg-blue; }
+.swatch-green { background-color: $bg-green; }
+.swatch-red { background-color: $bg-red; }
+.swatch-orange { background-color: $bg-orange; }
+.swatch-purple { background-color: $bg-purple; }
 
-.swatch-gray-light { background-color: $brand-gray-light; }
-.swatch-gray { background-color: $brand-gray; }
-.swatch-gray-dark { background-color: $brand-gray-dark; }
+.swatch-gray-light { background-color: $bg-gray-light; }
+.swatch-gray { background-color: $bg-gray; }
+.swatch-gray-dark { background-color: $bg-gray-dark; }
