@@ -95,7 +95,7 @@ input.input-large {
 // Typical form groups - `<dl.form>` with a `<dt>` containing the label and
 // `<dd> containing the form elements.
 dl.form {
-  margin: 15px 0;
+  margin: 0 0 15px;
 
   input[type="text"],
   input[type="password"],
@@ -323,7 +323,7 @@ dl.form {
 // For checkboxes and radio button selections.
 .form-checkbox {
   padding-left: 20px;
-  margin: 15px 0;
+  margin-bottom: 15px;
   vertical-align: middle;
 
   label {

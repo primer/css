@@ -7,9 +7,9 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
 }
 
 h1 { font-size: 30px; }
@@ -22,6 +22,11 @@ h6 { font-size: 11px; }
 
 // Body text
 // --------------------------------------------------
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
 
 small {
   font-size: 90%;
@@ -49,7 +54,7 @@ blockquote {
 
 ul,
 ol {
-  padding: 0;
+  padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
