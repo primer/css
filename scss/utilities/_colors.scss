@@ -1,0 +1,58 @@
+// Color utilities
+// scss-lint:disable SpaceBeforeBrace EmptyLineBetweenBlocks
+
+// background colors
+.bg-white      { background-color: $bg-white !important; }
+.bg-blue       { background-color: $bg-blue !important; }
+.bg-blue-light { background-color: $bg-blue-light !important; }
+.bg-gray-dark  { background-color: $bg-gray-dark !important; }
+.bg-gray       { background-color: $bg-gray !important; }
+.bg-gray-light { background-color: $bg-gray-light !important; }
+.bg-green      { background-color: $bg-green !important; }
+.bg-red        { background-color: $bg-red !important; }
+
+// text colors
+.text-blue          { color: $text-blue !important; }
+.danger,            // legacy
+.text-closed,       // legacy
+.text-danger,       // legacy
+.text-diff-deleted, // legacy
+.text-error,        // legacy
+.text-failure,      // legacy
+.text-reverted,     // legacy
+.text-red           { color: $text-red !important; }
+.text-gray-light    { color: $text-gray-light !important; }
+.text-muted,        // legacy
+.text-gray          { color: $text-gray !important; }
+.mute,              // legacy
+.text-gray-dark     { color: $text-gray-dark !important; }
+.text-diff-added,   // legacy
+.text-success,      // legacy
+.text-open,         // legacy
+.text-green         { color: $text-green !important; }
+.text-orange        { color: $text-orange !important; }
+.text-merged,       // legacy
+.text-purple        { color: $text-purple !important; }
+.text-white         { color: $text-white !important; }
+.text-inherit       { color: inherit !important; }
+
+// link colors
+.link-blue      { color: $text-blue !important; }
+.link-gray-dark { color: $text-gray-dark !important; }
+.link-gray      { color: $text-gray !important; }
+
+// Text states
+.text-renamed { color: $status-renamed !important; }
+.text-pending { color: $status-pending !important; }
+
+// Muted link
+//
+// Have a link you need to be gray to start, and blue on hover? Use this.
+.muted-link {
+  color: $text-gray !important;
+
+  &:hover {
+    color: $text-blue !important;
+    text-decoration: none;
+  }
+}

@@ -20,17 +20,21 @@
   line-height: 20px;
   color: #666;
   text-decoration: none;
+  background-color: transparent;
   border: 1px solid transparent;
   border-bottom: 0;
 
   &.selected {
-    color: #333;
-    background-color: #fff;
+    color: $text-gray-dark;
+    background-color: $bg-white;
     border-color: #ddd;
     border-radius: 3px 3px 0 0;
   }
 
-  &:hover { text-decoration: none; }
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
 }
 
 // Tabnav extras
@@ -50,10 +54,13 @@
   }
 }
 
+// When tabnav-extra are anchors
+// scss-lint:disable QualifyingElement
 a.tabnav-extra:hover {
-  color: $brand-blue;
+  color: $text-blue;
   text-decoration: none;
 }
+// scss-lint:enable QualifyingElement
 
 // Tabnav buttons
 //

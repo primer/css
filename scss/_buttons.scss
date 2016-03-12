@@ -6,15 +6,15 @@
   font-size: 13px;
   font-weight: bold;
   line-height: 20px;
-  color: #333;
+  color: $text-gray-dark;
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
+  user-select: none;
   background-color: #eee;
   background-image: linear-gradient(#fcfcfc, #eee);
   border: 1px solid #d5d5d5;
   border-radius: 3px;
-  user-select: none;
   -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   i {
@@ -84,7 +84,7 @@
 
 // Green primary button
 .btn-primary {
-  color: #fff;
+  color: $text-white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
   background-color: #60b044;
   background-image: linear-gradient(#8add6d, #60b044);
@@ -92,11 +92,11 @@
 
   .counter {
     color: #60b044;
-    background-color: #fff;
+    background-color: $bg-white;
   }
 
   &:hover {
-    color: #fff;
+    color: $text-white;
     background-color: darken(#60b044, 5%);
     background-image: linear-gradient(darken(#8add6d, 5%), darken(#60b044, 5%));
     border-color: #4a993e;
@@ -131,7 +131,7 @@
   color: #900;
 
   &:hover {
-    color: #fff;
+    color: $text-white;
     background-color: #b33630;
     background-image: linear-gradient(#dc5f59, #b33630);
     border-color: #cd504a;
@@ -139,7 +139,7 @@
 
   &:active,
   &.selected {
-    color: #fff;
+    color: $text-white;
     background-color: #b33630;
     background-image: none;
     border-color: darken(#cd504a, 15%);
@@ -165,7 +165,7 @@
   &.selected {
     .counter {
       color: #b33630;
-      background-color: #fff;
+      background-color: $bg-white;
     }
   }
 }
@@ -175,8 +175,8 @@
 // For when we need a linky-action that's not too heavy in busier
 // areas like conversation timelines.
 .btn-outline {
-  color: $brand-blue;
-  background-color: #fff; // Reset default gradient backgrounds and colors
+  color: $text-blue;
+  background-color: $bg-white; // Reset default gradient backgrounds and colors
   background-image: none;
   border: 1px solid #e5e5e5;
 
@@ -189,27 +189,27 @@
   &.selected,
   &.zeroclipboard-is-hover,
   &.zeroclipboard-is-active {
-    color: #fff;
-    background-color: $brand-blue;
+    color: $text-white;
+    background-color: $bg-blue;
     background-image: none;
-    border-color: $brand-blue;
+    border-color: $blue;
 
     .counter {
-      color: $brand-blue;
-      background-color: #fff;
+      color: $text-blue;
+      background-color: $bg-white;
     }
   }
 
   &.selected:hover {
-    background-color: darken($brand-blue, 5%);
+    background-color: darken($blue, 5%);
   }
 
   &:disabled,
   &.disabled {
     &,
     &:hover {
-      color: $brand-gray;
-      background-color: #fff;
+      color: $text-gray;
+      background-color: $bg-white;
       background-image: none;
       border-color: #e5e5e5;
     }
@@ -245,29 +245,31 @@
     margin-left: 5px;
     line-height: 0;
   }
+}
 
-  a {
-    display: inline-block;
-    height: 12px;
-    padding: 0 5px;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 6px;
-    color: #555;
+.hidden-text-expander a,
+.ellipsis-expander {
+  display: inline-block;
+  height: 12px;
+  padding: 0 5px 5px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 6px;
+  color: #555;
+  text-decoration: none;
+  vertical-align: middle;
+  background: #ddd;
+  border-radius: 1px;
+  border: 0;
+
+  &:hover {
     text-decoration: none;
-    vertical-align: middle;
-    background: #ddd;
-    border-radius: 1px;
+    background-color: #ccc;
+  }
 
-    &:hover {
-      text-decoration: none;
-      background-color: #ccc;
-    }
-
-    &:active {
-      color: #fff;
-      background-color: #4183c4;
-    }
+  &:active {
+    color: $text-white;
+    background-color: #4183c4;
   }
 }
 
@@ -281,9 +283,9 @@
   font-size: 11px;
   font-weight: bold;
   line-height: 20px;
-  color: $brand-gray-dark;
+  color: $text-gray-dark;
   vertical-align: middle;
-  background-color: #fff;
+  background-color: $bg-white;
   border: 1px solid #ddd;
   border-left: 0;
   border-top-right-radius: 3px;
@@ -295,7 +297,7 @@
   }
 
   &:hover {
-    color: $brand-blue;
+    color: $text-blue;
     cursor: pointer;
   }
 }
@@ -310,7 +312,6 @@
   text-align: center;
 }
 
-
 // Radio buttons
 //
 // Buttons backed by radio or checkbox control. Requires the use of `.hidden`
@@ -319,12 +320,12 @@
   display: inline-block;
   padding: 0;
   font-size: inherit;
-  color: $brand-blue;
+  color: $text-blue;
   white-space: nowrap;
   cursor: pointer;
+  user-select: none;
   background-color: transparent;
   border: 0;
-  user-select: none;
   -webkit-appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   &:hover,

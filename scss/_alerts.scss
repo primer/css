@@ -25,15 +25,15 @@
   width: 34px;
   height: 44px;
   margin: -11px;
-  color: inherit;
   line-height: 40px;
+  color: inherit;
   text-align: center;
   cursor: pointer;
-  opacity: 0.6;
   // Undo `<button>` styles
   background: none;
   border: 0;
   -webkit-appearance: none;
+  opacity: 0.6;
 
   &:hover {
     opacity: 1;
@@ -89,4 +89,11 @@
   margin-top: 0;
   margin-bottom: 0;
   line-height: 1.5;
+}
+
+.warning {
+  padding: 0.5em;
+  margin-bottom: 0.8em;
+  font-weight: bold;
+  background-color: #fffccc;
 }

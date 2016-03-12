@@ -1,4 +1,4 @@
-/*
+/*!
  * Primer
  * http://primercss.io
  *
@@ -19,6 +19,7 @@
 @import "base";
 @import "type";
 @import "layout";
+@import "utilities/utilities";
 
 // Forms and buttons
 @import "forms";
@@ -42,4 +43,3 @@
 // Utilities
 @import "flex-table";
 @import "truncate";
-@import "utility";

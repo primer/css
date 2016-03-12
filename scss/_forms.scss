@@ -1,3 +1,5 @@
+// Needs refactoring
+// scss-lint:disable QualifyingElement NestingDepth SelectorDepth
 // Base form controls
 //
 // Overrides for common inputs for easier styling.
@@ -17,9 +19,9 @@ label {
   min-height: 34px;
   padding: 7px 8px;
   font-size: 13px;
-  color: #333;
+  color: $text-gray-dark;
   vertical-align: middle;
-  background-color: #fff;
+  background-color: $bg-white;
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
   border: 1px solid #ccc;
@@ -45,7 +47,7 @@ select {
 .input-contrast {
   background-color: #fafafa;
 
-  &:focus { background-color: #fff; }
+  &:focus { background-color: $bg-white; }
 }
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
@@ -179,7 +181,7 @@ input::-webkit-inner-spin-button {
   padding: 8px 10px;
   margin: 10px 0;
   font-size: 14px;
-  color: #333;
+  color: $text-gray-dark;
   background: #ffffe2;
   border: 1px solid #e7e4c2;
   border-radius: 4px;
@@ -192,23 +194,4 @@ input::-webkit-inner-spin-button {
   strong { color: #000; }
 
   a { font-weight: bold; }
-}
-
-
-// Inline verification
-//
-// Used for example when autosaving checkboxes in settings.
-.status-indicator {
-  @include icon-bootstrap(16px);
-  margin-left: 5px;
-}
-
-.status-indicator-success:before {
-  color: $brand-green;
-  content: "\f03a"; // octicon-check
-}
-
-.status-indicator-failed:before {
-  color: $brand-red;
-  content: "\f02d"; // octicon-x
 }

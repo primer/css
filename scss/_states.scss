@@ -1,11 +1,11 @@
 // A rounded corner box containing a label "open" or "closed"
 // Without a state it is grey.
 //
-// open     - green background
-// reopened - green background
-// closed   - red background
-// merged   - purple background
-// renamed  - orange background
+// open     - $green background
+// reopened - $green background
+// closed   - $red background
+// merged   - $purple background
+// renamed  - $orange background
 //
 // No styleguide reference
 .state {
@@ -13,20 +13,20 @@
   padding: 4px 8px;
   font-weight: bold;
   line-height: 20px;
-  color: #fff;
+  color: $text-white;
   text-align: center;
+  background-color: $gray-light;
   border-radius: 3px;
-  background-color: #999;
 }
 
 .state-open,
 .state-proposed,
 .state-reopened {
-  background-color: $status-open;
+  background-color: $bg-green;
 }
 
-.state-merged { background-color: $status-merged; }
+.state-merged { background-color: $bg-purple; }
 
-.state-closed { background-color: $status-closed; }
+.state-closed { background-color: $bg-red; }
 
 .state-renamed { background-color: $status-renamed; }
