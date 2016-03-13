@@ -72,6 +72,17 @@ Significantly increases the vertical padding.
 </div>
 {% endexample %}
 
+### Large
+
+Increases the size of the text in the blankslate
+
+{% example html %}
+<div class="blankslate blankslate-large">
+  <h3>This is a blank slate</h3>
+  <p>Use it to provide information when no dynamic content exists.</p>
+</div>
+{% endexample %}
+
 ### No background
 
 Removes the `background-color` and `border`.
