@@ -105,24 +105,6 @@ Primer adds light `height` and `vertical-align` styles to `<select>`s for all br
 </form>
 {% endexample %}
 
-### Custom
-
-Custom `<select>`s are also available—just add `.select`. **Only available in latest WebKit, Firefox, and IE browsers.**
-
-{% example html %}
-<form>
-  <select class="form-select">
-    <option>Choose an option</option>
-    <option>Git</option>
-    <option>Subversion</option>
-    <option>Social Coding</option>
-    <option>Beets</option>
-    <option>Bears</option>
-    <option>Battlestar Galactica</option>
-  </select>
-</form>
-{% endexample %}
-
 ### Small
 
 Use the `.select-sm` class to resize both default and custom `<select>`s to match the size of [our small buttons](/buttons/#default-buttons).
