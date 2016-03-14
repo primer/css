@@ -8,10 +8,10 @@
     &:focus {
       z-index: 2;
     }
-  }
 
-  .form-control + .btn {
-    margin-left: 0;
+    + .btn {
+      margin-left: 0;
+    }
   }
 
   // For when you want the input group to behave like inline-block.

@@ -172,7 +172,7 @@ Use `.hidden-text-expander` to indicate and toggle hidden text.
 
 {% example html %}
 <span class="hidden-text-expander">
-  <a href="#">&hellip;</a>
+  <button type="button" class="ellipsis-expander">&hellip;</button>
 </span>
 {% endexample %}
 
