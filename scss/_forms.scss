@@ -176,17 +176,15 @@ input::-webkit-inner-spin-button {
   padding: 8px 10px;
   margin: 10px 0;
   font-size: 14px;
-  color: $text-gray-dark;
-  background: #ffffe2;
-  border: 1px solid #e7e4c2;
-  border-radius: 4px;
+  color: $flash-text-yellow;
+  background: $flash-bg-yellow;
+  border: 1px solid $flash-border-yellow;
+  border-radius: 3px;
 
   p {
     margin: 0;
     line-height: 1.5;
   }
-
-  strong { color: #000; }
 
   a { font-weight: bold; }
 }
