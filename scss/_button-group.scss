@@ -2,6 +2,7 @@
 //
 // A button group is a series of buttons laid out next to each other, all part
 // of one visual button, but separated by rules to be separate.
+// scss-lint:disable NestingDepth
 .btn-group {
   display: inline-block;
   vertical-align: middle;
