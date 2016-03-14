@@ -111,7 +111,7 @@ Custom `<select>`s are also available—just add `.select`. **Only available in 
 
 {% example html %}
 <form>
-  <select class="select">
+  <select class="form-control select">
     <option>Choose an option</option>
     <option>Git</option>
     <option>Subversion</option>
@@ -138,7 +138,7 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
   <option>Battlestar Galactica</option>
 </select>
 
-<select class="select select-sm">
+<select class="form-control select-sm">
   <option>Choose an option</option>
   <option>Git</option>
   <option>Subversion</option>
@@ -153,15 +153,15 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
 
 {% example html %}
 <form>
-  <dl class="form">
+  <dl class="form-group">
     <dt><label>Example Text</label></dt>
     <dd><input class="form-control" type="text" value="Example Value"></dd>
   </dl>
 
-  <dl class="form">
-    <dt><label>Example Label</label></dt>
+  <dl class="form-group">
+    <dt><label>Example Select</label></dt>
     <dd>
-      <select class="select">
+      <select class="form-control select">
         <option>Choose an option</option>
         <option>Git</option>
         <option>Subversion</option>
@@ -172,22 +172,29 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
       </select>
     </dd>
   </dl>
+
+  <dl class="form-group">
+    <dt><label>Example Textarea</label></dt>
+    <dd>
+      <textarea class="form-control"></textarea>
+    </dd>
+  </dl>
 </form>
 {% endexample %}
 
 ## Form group validation
 
-Convey errors and warnings for form groups. Add the appropriate class—either `.errored` or `.warn`—to the `<dl class="form">` to start. Then, house your error messaging in an additional `<dd>` with either `.error` or `.warning`.
+Convey errors and warnings for form groups. Add the appropriate class—either `.errored` or `.warn`—to the `<dl class="form-group">` to start. Then, house your error messaging in an additional `<dd>` with either `.error` or `.warning`.
 
 {% example html %}
 <form>
-  <dl class="form errored">
+  <dl class="form-group errored">
     <dt><label>Example Text</label></dt>
     <dd><input class="form-control" type="text" value="Example Value"></dd>
     <dd class="error">This example input has an error.</dd>
   </dl>
   <br>
-  <dl class="form warn">
+  <dl class="form-group warn">
     <dt><label>Example Text</label></dt>
     <dd><input class="form-control" type="text" value="Example Value"></dd>
     <dd class="warning">This example input has a warning.</dd>

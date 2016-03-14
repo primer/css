@@ -1,39 +1,59 @@
 // Form groups
 //
-// Typical form groups - `<dl.form>` with a `<dt>` containing the label and
+// Typical form groups - `<dl.form-group>` with a `<dt>` containing the label and
 // `<dd> containing the form elements.
-dl.form {
+// scss-lint:disable NestingDepth
+.form-group {
   margin: 15px 0;
 
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="url"],
-  select,
-  textarea {
-    background-color: #fafafa;
+  // Text fields
+  .form-control {
+    width: 440px;
+    max-width: 100%;
+    margin-right: 5px;
+    background-color: $bg-gray-light;
 
     &:focus {
-      background-color: #fff;
+      background-color: $bg-white;
+    }
+
+    &.shorter { width: 130px; }
+
+    &.short { width: 250px; }
+
+    &.long { width: 100%; }
+  }
+
+  // Textarea
+  // scss-lint:disable QualifyingElement
+  textarea.form-control {
+    width: 100%;
+    height: 200px;
+    min-height: 200px;
+
+    &.short {
+      height: 50px;
+      min-height: 50px;
     }
   }
+  // scss-lint:enable QualifyingElement
 
   // The Label
-  > dt {
+  dt {
     margin: 0 0 6px;
-
-    label {
-      position: relative;
-    }
   }
 
-  &.flattened > dt {
+  label {
+    position: relative;
+  }
+
+  &.flattened dt {
     float: left;
     margin: 0;
     line-height: 32px;
   }
 
-  &.flattened > dd {
+  &.flattened dd {
     line-height: 32px;
   }
 
@@ -41,36 +61,7 @@ dl.form {
   // Form Elements
   //
 
-  > dd {
-    // Text fields
-    input[type="text"],
-    input[type="password"],
-    input[type="email"],
-    input[type="url"] {
-      width: 440px;
-      max-width: 100%;
-      margin-right: 5px;
-    }
-
-    input {
-      &.shorter { width: 130px; }
-
-      &.short { width: 250px; }
-
-      &.long { width: 100%; }
-    }
-
-    // Textarea
-    textarea {
-      width: 100%;
-      height: 200px;
-      min-height: 200px;
-
-      &.short {
-        height: 50px;
-        min-height: 50px;
-      }
-    }
+  dd {
 
     h4 {
       margin: 4px 0 0;
@@ -79,7 +70,7 @@ dl.form {
 
       &.is-success { color: $text-green; }
 
-      + p.note {
+      + .note {
         margin-top: 0;
       }
     }
@@ -90,9 +81,9 @@ dl.form {
   //
 
   &.required {
-    > dt > label:after {
+    dt label::after {
       padding-left: 5px;
-      color: #9f1006;
+      color: $text-red;
       content: "*";
     }
   }
@@ -125,7 +116,7 @@ dl.form {
   &.successful {
     .success {
       display: inline;
-      color: #390;
+      color: $text-green;
     }
   }
 
@@ -135,78 +126,75 @@ dl.form {
 
   &.warn,
   &.errored {
-    dd.warning,
-    dd.error {
-      display: inline-block;
+    .warning,
+    .error {
       position: absolute;
-      max-width: 450px; // Keep our long errors readable
       z-index: 10;
-      margin: 2px 0 0;
+      display: inline-block;
+      max-width: 450px; // Keep our long errors readable
       padding: 5px 8px;
+      margin: $spacer1 0 0;
       font-size: 13px;
       font-weight: normal;
+      border-style: solid;
+      border-width: 1px;
       border-radius: 3px;
-    }
 
-    dd.warning:after,
-    dd.warning:before,
-    dd.error:after,
-    dd.error:before {
-      bottom: 100%;
-      z-index: 15;
-      left: 10px;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-    }
+      &::after,
+      &::before {
+        position: absolute;
+        bottom: 100%;
+        left: 10px;
+        z-index: 15;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        content: " ";
+        border: solid transparent;
+      }
 
-    dd.warning:after,
-    dd.error:after {
-      border-width: 5px;
-    }
+      &::after {
+        border-width: 5px;
+      }
 
-    dd.warning:before,
-    dd.error:before {
-      border-width: 6px;
-      margin-left: -1px;
+      &::before {
+        margin-left: -1px;
+        border-width: 6px;
+      }
     }
   }
 
   &.warn {
-    dd.warning {
+    .warning {
       color: $flash-text-yellow;
       background-color: $flash-bg-yellow;
       border-color: $flash-border-yellow;
 
-      &:after {
+      &::after {
         border-bottom-color: $flash-bg-yellow;
       }
 
-      &:before {
+      &::before {
         border-bottom-color: $flash-border-yellow;
       }
     }
   }
 
   &.errored {
-    > dt label {
+    label {
       color: $text-red;
     }
 
-    dd.error {
-      font-size: 13px;
+    .error {
       color: $flash-text-red;
       background-color: $flash-bg-red;
       border-color: $flash-border-red;
 
-      &:after {
+      &::after {
         border-bottom-color: $flash-bg-red;
       }
 
-      &:before {
+      &::before {
         border-bottom-color: $flash-border-red;
       }
     }
