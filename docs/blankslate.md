@@ -23,13 +23,13 @@ Wrap some content in the outer `.blankslate` wrapper to give it the blankslate a
 
 ## With Octicons
 
-When it helps the message, include `.mega-octicon`s as the first elements in the blank slate. Be sure to use relevant icons.
+When it helps the message, include (relevant) icons in your blank slate. Add `.blankslate-icon` to any `.mega-octicon`s as the first elements in the blankslate, like so.
 
 {% example html %}
 <div class="blankslate">
-  <span class="mega-octicon octicon-git-commit"></span>
-  <span class="mega-octicon octicon-tag"></span>
-  <span class="mega-octicon octicon-git-branch"></span>
+  <span class="mega-octicon octicon-git-commit blankslate-icon"></span>
+  <span class="mega-octicon octicon-tag blankslate-icon"></span>
+  <span class="mega-octicon octicon-git-branch blankslate-icon"></span>
   <h3>This is a blank slate</h3>
   <p>Use it to provide information when no dynamic content exists.</p>
 </div>
@@ -44,7 +44,7 @@ Add an additional optional class to the `.blankslate` to change its appearance.
 Narrows the blankslate container to not occupy the entire available width.
 
 {% example html %}
-<div class="blankslate has-fixed-width">
+<div class="blankslate blankslate-fixed-width">
   <h3>This is a blank slate</h3>
   <p>Use it to provide information when no dynamic content exists.</p>
 </div>
@@ -55,7 +55,7 @@ Narrows the blankslate container to not occupy the entire available width.
 Removes the `border-radius` on the top corners.
 
 {% example html %}
-<div class="blankslate capped">
+<div class="blankslate blankslate-capped">
   <h3>This is a blank slate</h3>
   <p>Use it to provide information when no dynamic content exists.</p>
 </div>
@@ -66,7 +66,18 @@ Removes the `border-radius` on the top corners.
 Significantly increases the vertical padding.
 
 {% example html %}
-<div class="blankslate spacious">
+<div class="blankslate blankslate-spacious">
+  <h3>This is a blank slate</h3>
+  <p>Use it to provide information when no dynamic content exists.</p>
+</div>
+{% endexample %}
+
+### Large
+
+Increases the size of the text in the blankslate
+
+{% example html %}
+<div class="blankslate blankslate-large">
   <h3>This is a blank slate</h3>
   <p>Use it to provide information when no dynamic content exists.</p>
 </div>
@@ -77,7 +88,7 @@ Significantly increases the vertical padding.
 Removes the `background-color` and `border`.
 
 {% example html %}
-<div class="blankslate clean-background">
+<div class="blankslate blankslate-clean-background">
   <h3>This is a blank slate</h3>
   <p>Use it to provide information when no dynamic content exists.</p>
 </div>

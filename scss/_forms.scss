@@ -16,14 +16,7 @@ label {
 }
 
 .form-control,
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-input[type="tel"],
-input[type="url"],
-select,
-textarea {
+.form-select {
   min-height: 34px;
   padding: 7px 8px;
   font-size: 13px;
@@ -32,7 +25,7 @@ textarea {
   background-color: $bg-white;
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
-  border: 1px solid #ccc;
+  border: 1px solid $border-gray-dark;
   border-radius: 3px;
   outline: none;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
@@ -40,33 +33,25 @@ textarea {
   &.focus,
   &:focus {
     border-color: #51a7e8;
+    outline: none;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5);
   }
 }
 
-select {
-  &:not([multiple]) {
-    height: 34px;
-    vertical-align: middle;
-  }
-}
-
 // Inputs with contrast for easy light gray backgrounds against white.
-// input.class is needed here to increase specificity over input[…]
-input.input-contrast,
 .input-contrast {
-  background-color: #fafafa;
+  background-color: $bg-gray-light;
 
   &:focus { background-color: $bg-white; }
 }
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
 ::placeholder {
-  color: #aaa;
+  color: $text-gray-light;
 }
 
 // Mini inputs, to match .minibutton
-input.input-mini {
+.input-sm {
   min-height: 26px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -74,7 +59,7 @@ input.input-mini {
 }
 
 // Large inputs
-input.input-large {
+.input-lg {
   padding: 6px 10px;
   font-size: 16px;
 }
@@ -88,233 +73,6 @@ input.input-large {
 // Inputs with monospace text
 .input-monospace {
   font-family: $mono-font;
-}
-
-// Form groups
-//
-// Typical form groups - `<dl.form>` with a `<dt>` containing the label and
-// `<dd> containing the form elements.
-dl.form {
-  margin: 15px 0;
-
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="url"],
-  select,
-  textarea {
-    background-color: #fafafa;
-
-    &:focus {
-      background-color: $bg-white;
-    }
-  }
-
-  // The Label
-  > dt {
-    margin: 0 0 6px;
-
-    label {
-      position: relative;
-    }
-  }
-
-  &.flattened > dt {
-    float: left;
-    margin: 0;
-    line-height: 32px;
-  }
-
-  &.flattened > dd {
-    line-height: 32px;
-  }
-
-  //
-  // Form Elements
-  //
-
-  > dd {
-    // Text fields
-    input[type="text"],
-    input[type="password"],
-    input[type="email"],
-    input[type="url"] {
-      width: 440px;
-      max-width: 100%;
-      margin-right: 5px;
-    }
-
-    input {
-      &.shorter { width: 130px; }
-
-      &.short { width: 250px; }
-
-      &.long { width: 100%; }
-    }
-
-    // Textarea
-    textarea {
-      width: 100%;
-      height: 200px;
-      min-height: 200px;
-
-      &.short {
-        height: 50px;
-        min-height: 50px;
-      }
-    }
-
-    h4 {
-      margin: 4px 0 0;
-
-      &.is-error { color: $text-red; }
-
-      &.is-success { color: $text-green; }
-
-      + p.note {
-        margin-top: 0;
-      }
-    }
-  }
-
-  //
-  // Variants
-  //
-
-  &.required {
-    > dt > label::after {
-      padding-left: 5px;
-      color: #9f1006;
-      content: "*";
-    }
-  }
-
-  // Form AJAX states
-  //
-  // Form fields that need feedback for AJAX loading, success
-  // states and errored states.
-  .success,
-  .error,
-  .indicator {
-    display: none;
-    font-size: 12px;
-    font-weight: bold;
-  }
-
-  &.loading {
-    opacity: 0.5;
-
-    .indicator {
-      display: inline;
-    }
-
-    .spinner {
-      display: inline-block;
-      vertical-align: middle;
-    }
-  }
-
-  &.successful {
-    .success {
-      display: inline;
-      color: #390;
-    }
-  }
-
-  // Form validation
-  //
-  // Our inline errors
-
-  &.warn,
-  &.errored {
-    dd.warning,
-    dd.error {
-      position: absolute;
-      z-index: 10;
-      display: inline-block;
-      max-width: 450px; // Keep our long errors readable
-      padding: 5px 8px;
-      margin: 2px 0 0;
-      font-size: 13px;
-      font-weight: normal;
-      border-radius: 3px;
-    }
-
-    dd.warning::after,
-    dd.warning::before,
-    dd.error::after,
-    dd.error::before {
-      position: absolute;
-      bottom: 100%;
-      left: 10px;
-      z-index: 15;
-      width: 0;
-      height: 0;
-      pointer-events: none;
-      content: " ";
-      border: solid transparent;
-    }
-
-    dd.warning::after,
-    dd.error::after {
-      border-width: 5px;
-    }
-
-    dd.warning::before,
-    dd.error::before {
-      margin-left: -1px;
-      border-width: 6px;
-    }
-  }
-
-  &.warn {
-    dd.warning {
-      color: #4e401e;
-      background-color: #ffe5a7;
-      border: 1px solid #e7ce94;
-
-      &::after {
-        border-bottom-color: #ffe5a7;
-      }
-
-      &::before {
-        border-bottom-color: #cdb683;
-      }
-    }
-  }
-
-  &.errored {
-    > dt label {
-      color: $text-red;
-    }
-
-    dd.error {
-      font-size: 13px;
-      color: $text-white;
-      background-color: #bf1515;
-      border-color: #911;
-
-      &::after {
-        border-bottom-color: #bf1515;
-      }
-
-      &::before {
-        border-bottom-color: #911;
-      }
-    }
-  }
-}
-
-.note {
-  min-height: 17px;
-  margin: 4px 0 2px;
-  font-size: 12px;
-  color: $text-gray;
-
-  .spinner {
-    margin-right: 3px;
-    vertical-align: middle;
-  }
 }
 
 
@@ -363,11 +121,11 @@ dl.form {
   margin: 15px 0;
   @include clearfix;
 
-  dl.form {
+  .form-group {
     float: left;
     margin: 0 30px 0 0;
 
-    > dt {
+    dt {
       label {
         display: inline-block;
         margin: 5px 0 0;
@@ -386,7 +144,7 @@ dl.form {
     margin: 28px 25px 0 -20px;
   }
 
-  select { margin-top: 5px; }
+  .form-select { margin-top: 5px; }
 }
 
 
@@ -401,57 +159,6 @@ input::-webkit-inner-spin-button {
 
 
 // Input groups
-.input-group {
-  display: table;
-
-  input {
-    position: relative;
-    width: 100%;
-
-    &:focus {
-      z-index: 2;
-    }
-  }
-
-  input[type="text"] + .btn {
-    margin-left: 0;
-  }
-
-  // For when you want the input group to behave like inline-block.
-  &.inline {
-    display: inline-table;
-  }
-}
-
-.input-group input,
-.input-group-button {
-  display: table-cell;
-}
-
-.input-group-button {
-  width: 1%;
-  vertical-align: middle; // Match the inputs
-}
-
-.input-group input:first-child,
-.input-group-button:first-child .btn {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.input-group-button:first-child .btn {
-  margin-right: -1px;
-}
-
-.input-group input:last-child,
-.input-group-button:last-child .btn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.input-group-button:last-child .btn {
-  margin-left: -1px;
-}
 
 .form-actions {
   @include clearfix;
@@ -469,62 +176,15 @@ input::-webkit-inner-spin-button {
   padding: 8px 10px;
   margin: 10px 0;
   font-size: 14px;
-  color: $text-gray-dark;
-  background: #ffffe2;
-  border: 1px solid #e7e4c2;
-  border-radius: 4px;
+  color: $flash-text-yellow;
+  background: $flash-bg-yellow;
+  border: 1px solid $flash-border-yellow;
+  border-radius: 3px;
 
   p {
     margin: 0;
     line-height: 1.5;
   }
 
-  strong { color: #000; }
-
   a { font-weight: bold; }
-}
-
-// Custom select
-//
-// Apply `.select` to any `<select>` element for custom styles.
-// scss-lint:disable PropertySortOrder
-.select {
-  display: inline-block;
-  max-width: 100%;
-  padding: 7px 24px 7px 8px;
-  vertical-align: middle;
-  background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC) no-repeat right 8px center;
-  background-size: 8px 10px;
-  box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.075);
-  // Have to include vendor prefixes as the `appearance` property isn't part of the CSS spec.
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  // IE9 hacks to hide the background-image and reduce padding
-  padding-right: 8px \9;
-  background-image: none \9;
-
-  &:focus {
-    outline: none;
-    border-color: #51a7e8;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5);
-  }
-
-  // Hides the default caret in IE11
-  &::-ms-expand {
-    opacity: 0;
-  }
-}
-// scss-lint:enable PropertySortOrder
-
-.select-sm {
-  padding-top: 3px;
-  padding-bottom: 3px;
-  font-size: 12px;
-
-  &:not([multiple]) {
-    height: 26px;
-    min-height: 26px;
-  }
 }

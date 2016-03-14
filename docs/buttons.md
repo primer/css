@@ -154,13 +154,11 @@ Have a hankering for a series of buttons that are attached to one another? Wrap 
 </div>
 {% endexample %}
 
-Add `.button_to` to `<form>`s within `.btn-group`s for proper spacing and rounded corners.
-
-**Heads up!** This class name is inconsistent and will change in the next major version.
+Add `.btn-group-form` to `<form>`s within `.btn-group`s for proper spacing and rounded corners.
 
 {% example html %}
 <div class="btn-group">
-  <form class="button_to">
+  <form class="btn-group-form">
     <button class="btn" type="button">Button in a form</button>
   </form>
   <button class="btn" type="button">Button</button>
@@ -174,7 +172,7 @@ Use `.hidden-text-expander` to indicate and toggle hidden text.
 
 {% example html %}
 <span class="hidden-text-expander">
-  <a href="#">&hellip;</a>
+  <button type="button" class="ellipsis-expander">&hellip;</button>
 </span>
 {% endexample %}
 

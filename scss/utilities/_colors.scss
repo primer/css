@@ -49,10 +49,10 @@
 //
 // Have a link you need to be gray to start, and blue on hover? Use this.
 .muted-link {
-  color: $brand-gray !important;
+  color: $text-gray !important;
 
   &:hover {
-    color: $brand-blue !important;
+    color: $text-blue !important;
     text-decoration: none;
   }
 }

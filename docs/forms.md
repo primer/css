@@ -28,10 +28,10 @@ Form controls in Primer currently have no basic layout specified (this is by des
 {% example html %}
 <form>
   <label for="name">Name</label>
-  <input type="text" id="name">
+  <input class="form-control" type="text" id="name">
 
   <label for="email">Email address</label>
-  <input type="email" id="email">
+  <input class="form-control" type="email" id="email">
 
   <label>
     <input type="checkbox"> Remember me
@@ -54,8 +54,8 @@ Textual form controls have a white background by default. You can change this to
 
 {% example html %}
 <form>
-  <input type="text" placeholder="Default input">
-  <input class="input-contrast" type="text" placeholder="Input with contrast">
+  <input class="form-control" type="text" placeholder="Default input">
+  <input class="form-control input-contrast" type="text" placeholder="Input with contrast">
 </form>
 {% endexample %}
 
@@ -63,11 +63,11 @@ Textual form controls have a white background by default. You can change this to
 
 Make inputs smaller, larger, or full-width with an additional class.
 
-### Mini
+### Small
 
 {% example html %}
 <form>
-  <input class="input-mini" type="text" placeholder="Mini input">
+  <input class="form-control input-sm" type="text" placeholder="Small input">
 </form>
 {% endexample %}
 
@@ -75,7 +75,7 @@ Make inputs smaller, larger, or full-width with an additional class.
 
 {% example html %}
 <form>
-  <input class="input-large" type="text" placeholder="Large input">
+  <input class="form-control input-lg" type="text" placeholder="Large input">
 </form>
 {% endexample %}
 
@@ -83,7 +83,7 @@ Make inputs smaller, larger, or full-width with an additional class.
 
 {% example html %}
 <form>
-  <input class="input-block" type="text" placeholder="Full-width input">
+  <input class="form-control input-block" type="text" placeholder="Full-width input">
 </form>
 {% endexample %}
 
@@ -93,25 +93,7 @@ Primer adds light `height` and `vertical-align` styles to `<select>`s for all br
 
 {% example html %}
 <form>
-  <select>
-    <option>Choose an option</option>
-    <option>Git</option>
-    <option>Subversion</option>
-    <option>Social Coding</option>
-    <option>Beets</option>
-    <option>Bears</option>
-    <option>Battlestar Galactica</option>
-  </select>
-</form>
-{% endexample %}
-
-### Custom
-
-Custom `<select>`s are also available—just add `.select`. **Only available in latest WebKit, Firefox, and IE browsers.**
-
-{% example html %}
-<form>
-  <select class="select">
+  <select class="form-select">
     <option>Choose an option</option>
     <option>Git</option>
     <option>Subversion</option>
@@ -128,7 +110,7 @@ Custom `<select>`s are also available—just add `.select`. **Only available in 
 Use the `.select-sm` class to resize both default and custom `<select>`s to match the size of [our small buttons](/buttons/#default-buttons).
 
 {% example html %}
-<select class="select-sm">
+<select class="form-select select-sm">
   <option>Choose an option</option>
   <option>Git</option>
   <option>Subversion</option>
@@ -138,7 +120,7 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
   <option>Battlestar Galactica</option>
 </select>
 
-<select class="select select-sm">
+<select class="form-select select-sm">
   <option>Choose an option</option>
   <option>Git</option>
   <option>Subversion</option>
@@ -153,15 +135,15 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
 
 {% example html %}
 <form>
-  <dl class="form">
+  <dl class="form-group">
     <dt><label>Example Text</label></dt>
-    <dd><input type="text" value="Example Value"></dd>
+    <dd><input class="form-control" type="text" value="Example Value"></dd>
   </dl>
 
-  <dl class="form">
-    <dt><label>Example Label</label></dt>
+  <dl class="form-group">
+    <dt><label>Example Select</label></dt>
     <dd>
-      <select class="select">
+      <select class="form-select">
         <option>Choose an option</option>
         <option>Git</option>
         <option>Subversion</option>
@@ -172,24 +154,31 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
       </select>
     </dd>
   </dl>
+
+  <dl class="form-group">
+    <dt><label>Example Textarea</label></dt>
+    <dd>
+      <textarea class="form-control"></textarea>
+    </dd>
+  </dl>
 </form>
 {% endexample %}
 
 ## Form group validation
 
-Convey errors and warnings for form groups. Add the appropriate class—either `.errored` or `.warn`—to the `<dl class="form">` to start. Then, house your error messaging in an additional `<dd>` with either `.error` or `.warning`.
+Convey errors and warnings for form groups. Add the appropriate class—either `.errored` or `.warn`—to the `<dl class="form-group">` to start. Then, house your error messaging in an additional `<dd>` with either `.error` or `.warning`.
 
 {% example html %}
 <form>
-  <dl class="form errored">
+  <dl class="form-group errored">
     <dt><label>Example Text</label></dt>
-    <dd><input type="text" value="Example Value"></dd>
+    <dd><input class="form-control" type="text" value="Example Value"></dd>
     <dd class="error">This example input has an error.</dd>
   </dl>
   <br>
-  <dl class="form warn">
+  <dl class="form-group warn">
     <dt><label>Example Text</label></dt>
-    <dd><input type="text" value="Example Value"></dd>
+    <dd><input class="form-control" type="text" value="Example Value"></dd>
     <dd class="warning">This example input has a warning.</dd>
   </dl>
 </form>
@@ -233,7 +222,7 @@ Attached an input and button to one another.
 {% example html %}
 <form>
   <div class="input-group">
-    <input type="text" placeholder="Username">
+    <input class="form-control" type="text" placeholder="Username">
     <span class="input-group-button">
       <button class="btn">
         <span class="octicon octicon-clippy"></span>

@@ -242,6 +242,10 @@ body {
 // Examples
 //
 
+.highlight {
+  margin: 0;
+}
+
 .docs-example {
   position: relative;
   padding: 15px;
@@ -249,6 +253,13 @@ body {
   line-height: 1.4;
   border: 1px solid #e5e5e5;
   border-radius: .25rem .25rem 0 0;
+
+  // Undo `.markdown-body`
+  p,
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
   + .highlight {
     margin-top: -1px;
@@ -288,12 +299,12 @@ body {
   // Override Markdown styles to restore values from `_type.scss`
   ul,
   ol {
-    padding: 0;
+    padding-left: 0;
     margin-top: 0;
     margin-bottom: 0;
   }
 
-  dl.form {
+  .form-group {
     margin: 15px 0;
 
     &:first-child {
