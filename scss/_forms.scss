@@ -40,14 +40,14 @@ label {
 
 // Inputs with contrast for easy light gray backgrounds against white.
 .input-contrast {
-  background-color: #fafafa;
+  background-color: $bg-gray-light;
 
   &:focus { background-color: $bg-white; }
 }
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
 ::placeholder {
-  color: #aaa;
+  color: $text-gray-light;
 }
 
 // Mini inputs, to match .minibutton
