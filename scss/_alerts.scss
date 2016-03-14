@@ -4,9 +4,9 @@
   padding: 15px;
   font-size: 14px;
   line-height: 1.5;
-  color: #246;
-  background-color: #e2eef9;
-  border: 1px solid #bac6d3;
+  color: $flash-text-blue;
+  background-color: $flash-bg-blue;
+  border: 1px solid $flash-border-blue;
   border-radius: 3px;
 
   p:last-child {
@@ -53,15 +53,15 @@
 //
 
 .flash-warn {
-  color: #4c4a42;
-  background-color: #fff9ea;
-  border-color: #dfd8c2;
+  color: $flash-text-yellow;
+  background-color: $flash-bg-yellow;
+  border-color: $flash-border-yellow;
 }
 
 .flash-error {
-  color: #911;
-  background-color: #fcdede;
-  border-color: #d2b2b2;
+  color: $flash-text-red;
+  background-color: $flash-bg-red;
+  border-color: $flash-border-red;
 }
 
 .flash-full {

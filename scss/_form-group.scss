@@ -177,16 +177,16 @@ dl.form {
 
   &.warn {
     dd.warning {
-      color: #4e401e;
-      background-color: #ffe5a7;
-      border: 1px solid #e7ce94;
+      color: $flash-text-yellow;
+      background-color: $flash-bg-yellow;
+      border-color: $flash-border-yellow;
 
       &:after {
-        border-bottom-color: #ffe5a7;
+        border-bottom-color: $flash-bg-yellow;
       }
 
       &:before {
-        border-bottom-color: #cdb683;
+        border-bottom-color: $flash-border-yellow;
       }
     }
   }
@@ -197,17 +197,17 @@ dl.form {
     }
 
     dd.error {
-      color: #fff;
-      background-color: #bf1515;
-      border-color: #911;
       font-size: 13px;
+      color: $flash-text-red;
+      background-color: $flash-bg-red;
+      border-color: $flash-border-red;
 
       &:after {
-        border-bottom-color: #bf1515;
+        border-bottom-color: $flash-bg-red;
       }
 
       &:before {
-        border-bottom-color: #911;
+        border-bottom-color: $flash-border-red;
       }
     }
   }
