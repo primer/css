@@ -121,11 +121,11 @@ label {
   margin: 15px 0;
   @include clearfix;
 
-  dl.form {
+  .form-group {
     float: left;
     margin: 0 30px 0 0;
 
-    > dt {
+    dt {
       label {
         display: inline-block;
         margin: 5px 0 0;
@@ -144,7 +144,7 @@ label {
     margin: 28px 25px 0 -20px;
   }
 
-  select { margin-top: 5px; }
+  .form-select { margin-top: 5px; }
 }
 
 
