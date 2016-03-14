@@ -93,7 +93,7 @@ Primer adds light `height` and `vertical-align` styles to `<select>`s for all br
 
 {% example html %}
 <form>
-  <select class="form-control">
+  <select class="form-select">
     <option>Choose an option</option>
     <option>Git</option>
     <option>Subversion</option>
@@ -111,7 +111,7 @@ Custom `<select>`s are also available—just add `.select`. **Only available in 
 
 {% example html %}
 <form>
-  <select class="form-control select">
+  <select class="form-select">
     <option>Choose an option</option>
     <option>Git</option>
     <option>Subversion</option>
@@ -128,7 +128,7 @@ Custom `<select>`s are also available—just add `.select`. **Only available in 
 Use the `.select-sm` class to resize both default and custom `<select>`s to match the size of [our small buttons](/buttons/#default-buttons).
 
 {% example html %}
-<select class="form-control select-sm">
+<select class="form-select select-sm">
   <option>Choose an option</option>
   <option>Git</option>
   <option>Subversion</option>
@@ -138,7 +138,7 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
   <option>Battlestar Galactica</option>
 </select>
 
-<select class="form-control select-sm">
+<select class="form-select select-sm">
   <option>Choose an option</option>
   <option>Git</option>
   <option>Subversion</option>
@@ -161,7 +161,7 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
   <dl class="form-group">
     <dt><label>Example Select</label></dt>
     <dd>
-      <select class="form-control select">
+      <select class="form-select">
         <option>Choose an option</option>
         <option>Git</option>
         <option>Subversion</option>

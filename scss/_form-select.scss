@@ -1,0 +1,40 @@
+// Custom select
+//
+// Apply `.select` to any `<select>` element for custom styles.
+.form-select {
+  display: inline-block;
+  max-width: 100%;
+  // IE9 hacks to reduce padding
+  // scss-lint:disable DuplicateProperty
+  padding-right: 24px;
+  padding-right: 8px \9;
+  // scss-lint:enable DuplicateProperty
+  background: $bg-white url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC) no-repeat right 8px center;
+  // IE9 hacks to hide the background-image
+  background-image: none \9;
+  background-size: 8px 10px;
+  // Have to include vendor prefixes as the `appearance` property isn't part of the CSS spec.
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  // Hides the default caret in IE11
+  &::-ms-expand {
+    opacity: 0;
+  }
+
+  &:not([multiple]) {
+    height: 34px;
+  }
+}
+
+.select-sm {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 12px;
+
+  &:not([multiple]) {
+    height: 26px;
+    min-height: 26px;
+  }
+}
