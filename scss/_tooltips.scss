@@ -1,7 +1,3 @@
-$multiline-max-width: 250px;
-$tooltip-background-color: rgba(0, 0, 0, 0.8);
-$tooltip-text-color: #fff;
-
 .tooltipped {
   position: relative;
 }
@@ -29,6 +25,7 @@ $tooltip-text-color: #fff;
   background: $tooltip-background-color;
   border-radius: 3px;
   -webkit-font-smoothing: subpixel-antialiased;
+  opacity: 0;
 }
 
 // This is the tooltip arrow
@@ -42,6 +39,18 @@ $tooltip-text-color: #fff;
   pointer-events: none;
   content: "";
   border: 5px solid transparent;
+  opacity: 0;
+}
+
+// delay animation for tooltip
+@keyframes tooltip-appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 // This will indicate when we'll activate the tooltip
@@ -52,6 +61,21 @@ $tooltip-text-color: #fff;
   &::after {
     display: inline-block;
     text-decoration: none;
+    animation-name: tooltip-appear;
+    animation-duration: $tooltip-duration;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: $tooltip-delay;
+  }
+}
+
+.tooltipped-no-delay:hover,
+.tooltipped-no-delay:active,
+.tooltipped-no-delay:focus {
+  &::before,
+  &::after {
+    opacity: 1;
+    animation: none;
   }
 }
 
@@ -171,11 +195,11 @@ $tooltip-text-color: #fff;
 //
 // `.tooltipped-multiline` Add this class when you have long content.
 // The downside is you cannot preformat the text with newlines and `[w,e]`
-// are always `$multiline-max-width` wide.
+// are always `$tooltip-max-width` wide.
 .tooltipped-multiline {
   &::after {
     width: max-content;
-    max-width: $multiline-max-width;
+    max-width: $tooltip-max-width;
     word-break: break-word;
     word-wrap: normal;
     white-space: pre-line;
@@ -198,7 +222,7 @@ $tooltip-text-color: #fff;
 @media screen and (min-width:0\0) {
   // IE9 and IE10 rule sets go here
   .tooltipped-multiline::after {
-    width: $multiline-max-width;
+    width: $tooltip-max-width;
   }
 }
 
