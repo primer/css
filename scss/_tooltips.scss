@@ -62,9 +62,9 @@
     display: inline-block;
     text-decoration: none;
     animation-name: tooltip-appear;
-    animation-duration: 0s;
+    animation-duration: $tooltip-duration;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in;
     animation-delay: $tooltip-delay;
   }
 }
