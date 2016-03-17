@@ -69,6 +69,16 @@
   }
 }
 
+.tooltipped-no-delay:hover,
+.tooltipped-no-delay:active,
+.tooltipped-no-delay:focus {
+  &::before,
+  &::after {
+    opacity: 1;
+    animation: none;
+  }
+}
+
 .tooltipped-multiline:hover,
 .tooltipped-multiline:active,
 .tooltipped-multiline:focus {
