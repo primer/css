@@ -6,6 +6,9 @@
 // Text style
 .text-normal { font-weight: normal !important; }
 .no-underline { text-decoration: none !important; }
+.no-wrap { white-space: nowrap !important;}
+
+.vertical-middle { vertical-align: middle !important; }
 
 .text-small {
   font-size: 12px !important;

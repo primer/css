@@ -4,9 +4,12 @@
   $size: #{nth($spacers, $i)};
   $scale: #{$i - 1};
 
+  // .p-0, .p-1, .p-2...
   .p-#{$scale}   { padding       : #{$size} !important; }
   .pt-#{$scale}  { padding-top   : #{$size} !important; }
+  .pr-#{$scale}  { padding-right : #{$size} !important; }
   .pb-#{$scale}  { padding-bottom: #{$size} !important; }
+  .pl-#{$scale}  { padding-left  : #{$size} !important; }
 
   .px-#{$scale} {
     padding-right: #{$size} !important;

@@ -13,7 +13,8 @@ $spacers: (
   $spacer,
   $spacer * 2,
   $spacer * 4,
-  $spacer * 6
+  $spacer * 6,
+  $spacer * 8
 ) !default;
 
 // Aliases for easy use
@@ -22,6 +23,7 @@ $spacer2: nth($spacers, 3) !default; // 6px
 $spacer3: nth($spacers, 4) !default; // 12px
 $spacer4: nth($spacers, 5) !default; // 24px
 $spacer5: nth($spacers, 6) !default; // 36px
+$spacer6: nth($spacers, 7) !default; // 48px
 
 $container-width: 980px !default;
 $grid-gutter:     10px !default;

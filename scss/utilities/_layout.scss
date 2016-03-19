@@ -17,12 +17,14 @@
 .hidden, // legacy
 .d-none         { display: none !important; }
 
-
 // Clear floats
 .clearfix {
   @include clearfix;
 }
 
 // Floats
-.right { float: right !important; }
-.left { float: left !important; }
+.right, // legacy
+.float-right { float: right !important; }
+
+.left, // legacy
+.float-left { float: left !important; }
