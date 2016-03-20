@@ -39,12 +39,12 @@ When it helps the message, include (relevant) icons in your blank slate. Add `.b
 
 Add an additional optional class to the `.blankslate` to change its appearance.
 
-### Fixed width
+### Narrow
 
 Narrows the blankslate container to not occupy the entire available width.
 
 {% example html %}
-<div class="blankslate blankslate-fixed-width">
+<div class="blankslate blankslate-narrow">
   <h3>This is a blank slate</h3>
   <p>Use it to provide information when no dynamic content exists.</p>
 </div>
