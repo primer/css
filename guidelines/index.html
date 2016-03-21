@@ -29,7 +29,7 @@
         </a>
 
         <nav class="masthead-nav">
-          <a  href="/scaffolding">Docs</a>
+          <a class="active" href="/scaffolding">Docs</a>
           <a  href="/about">About</a>
           <a href="https://github.com/primer/primer" target="_blank">GitHub</a>
           <a href="https://github.com/primer/primer/blob/master/README.md#install" target="_blank">Install</a>
@@ -141,30 +141,30 @@
 
 <ul>
   <li>Use soft-tabs with a two space indent. Spaces are the only way to guarantee code renders the same in any person’s environment.</li>
-  <li>Paragraphs of text should always be placed in a <code>&lt;p&gt;</code> tag. Never use multiple <code>&lt;br&gt;</code> tags.</li>
-  <li>Items in list form should always be in <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, or <code>&lt;dl&gt;</code>. Never use a set of <code>&lt;div&gt;</code> or <code>&lt;p&gt;</code>.</li>
-  <li>Every form input that has text attached should utilize a <code>&lt;label&gt;</code> tag. <strong>Especially radio or checkbox elements.</strong></li>
+  <li>Paragraphs of text should always be placed in a <code class="highlighter-rouge">&lt;p&gt;</code> tag. Never use multiple <code class="highlighter-rouge">&lt;br&gt;</code> tags.</li>
+  <li>Items in list form should always be in <code class="highlighter-rouge">&lt;ul&gt;</code>, <code class="highlighter-rouge">&lt;ol&gt;</code>, or <code class="highlighter-rouge">&lt;dl&gt;</code>. Never use a set of <code class="highlighter-rouge">&lt;div&gt;</code> or <code class="highlighter-rouge">&lt;p&gt;</code>.</li>
+  <li>Every form input that has text attached should utilize a <code class="highlighter-rouge">&lt;label&gt;</code> tag. <strong>Especially radio or checkbox elements.</strong></li>
   <li>Even though quotes around attributes is optional, always put quotes around attributes for readability.</li>
-  <li>Avoid writing closing tag comments, like <code>&lt;!-- /.element --&gt;</code>. This just adds to page load time. Plus, most editors have indentation guides and open-close tag highlighting.</li>
-  <li>Avoid trailing slashes in self-closing elements. For example, <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;img&gt;</code>, and <code>&lt;input&gt;</code>.</li>
-  <li>Don’t set <code>tabindex</code> manually—rely on the browser to set the order.</li>
+  <li>Avoid writing closing tag comments, like <code class="highlighter-rouge">&lt;!-- /.element --&gt;</code>. This just adds to page load time. Plus, most editors have indentation guides and open-close tag highlighting.</li>
+  <li>Avoid trailing slashes in self-closing elements. For example, <code class="highlighter-rouge">&lt;br&gt;</code>, <code class="highlighter-rouge">&lt;hr&gt;</code>, <code class="highlighter-rouge">&lt;img&gt;</code>, and <code class="highlighter-rouge">&lt;input&gt;</code>.</li>
+  <li>Don’t set <code class="highlighter-rouge">tabindex</code> manually—rely on the browser to set the order.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"line-note"</span> <span class="na">data-attribute=</span><span class="s">"106"</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"line-note"</span> <span class="na">data-attribute=</span><span class="s">"106"</span><span class="nt">&gt;</span>
   This is my paragraph of special text.
-<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<span class="nt">&lt;/p&gt;</span></code></pre></figure>
 
 <h3 id="boolean-attributes">Boolean attributes</h3>
 
-<p>Many attributes don’t require a value to be set, like <code>disabled</code> or <code>checked</code>, so don’t set them.</p>
+<p>Many attributes don’t require a value to be set, like <code class="highlighter-rouge">disabled</code> or <code class="highlighter-rouge">checked</code>, so don’t set them.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">disabled</span><span class="nt">&gt;</span>
 
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">"1"</span> <span class="na">checked</span><span class="nt">&gt;</span>
 
 <span class="nt">&lt;select&gt;</span>
   <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span> <span class="na">selected</span><span class="nt">&gt;</span>1<span class="nt">&lt;/option&gt;</span>
-<span class="nt">&lt;/select&gt;</span></code></pre></div>
+<span class="nt">&lt;/select&gt;</span></code></pre></figure>
 
 <p>For more information, <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#boolean-attributes">read the WhatWG section</a>.</p>
 
@@ -172,28 +172,28 @@
 
 <p>Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML. For example:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Not so great --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Not so great --&gt;</span>
 <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"avatar"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/span&gt;</span>
 
 <span class="c">&lt;!-- Better --&gt;</span>
-<span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"avatar"</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;</span></code></pre></div>
+<span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"avatar"</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;</span></code></pre></figure>
 
 <h3 id="forms">Forms</h3>
 
 <ul>
   <li>Lean towards radio or checkbox lists instead of select menus.</li>
-  <li>Wrap radio and checkbox inputs and their text in <code>&lt;label&gt;</code>s. No need for <code>for</code> attributes here—the wrapping automatically associates the two.</li>
-  <li>Form buttons should always include an explicit <code>type</code>. Use primary buttons for the <code>type="submit"</code> button and regular buttons for <code>type="button"</code>.</li>
-  <li>The primary form button must come first in the DOM, especially for forms with multiple submit buttons. The visual order should be preserved with <code>float: right;</code> on each button.</li>
+  <li>Wrap radio and checkbox inputs and their text in <code class="highlighter-rouge">&lt;label&gt;</code>s. No need for <code class="highlighter-rouge">for</code> attributes here—the wrapping automatically associates the two.</li>
+  <li>Form buttons should always include an explicit <code class="highlighter-rouge">type</code>. Use primary buttons for the <code class="highlighter-rouge">type="submit"</code> button and regular buttons for <code class="highlighter-rouge">type="button"</code>.</li>
+  <li>The primary form button must come first in the DOM, especially for forms with multiple submit buttons. The visual order should be preserved with <code class="highlighter-rouge">float: right;</code> on each button.</li>
 </ul>
 
 <h3 id="tables">Tables</h3>
 
-<p>Make use of <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;th&gt;</code> tags (and <code>scope</code> attribute) when appropriate. (Note: <code>&lt;tfoot&gt;</code> goes above <code>&lt;tbody&gt;</code> for speed reasons. You want the browser to load the footer before a table full of data.)</p>
+<p>Make use of <code class="highlighter-rouge">&lt;thead&gt;</code>, <code class="highlighter-rouge">&lt;tfoot&gt;</code>, <code class="highlighter-rouge">&lt;tbody&gt;</code>, and <code class="highlighter-rouge">&lt;th&gt;</code> tags (and <code class="highlighter-rouge">scope</code> attribute) when appropriate. (Note: <code class="highlighter-rouge">&lt;tfoot&gt;</code> goes above <code class="highlighter-rouge">&lt;tbody&gt;</code> for speed reasons. You want the browser to load the footer before a table full of data.)</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table</span> <span class="na">summary=</span><span class="s">"This is a chart of invoices for 2011."</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table</span> <span class="na">summary=</span><span class="s">"This is a chart of invoices for 2011."</span><span class="nt">&gt;</span>
   <span class="nt">&lt;thead&gt;</span>
     <span class="nt">&lt;tr&gt;</span>
       <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Table header 1<span class="nt">&lt;/th&gt;</span>
@@ -212,7 +212,7 @@
       <span class="nt">&lt;td&gt;</span>Table data 2<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
   <span class="nt">&lt;/tbody&gt;</span>
-<span class="nt">&lt;/table&gt;</span></code></pre></div>
+<span class="nt">&lt;/table&gt;</span></code></pre></figure>
 
 <h2 id="scss">SCSS</h2>
 
@@ -220,8 +220,8 @@
 
 <ul>
   <li>Use soft-tabs with a two space indent. Spaces are the only way to guarantee code renders the same in any person’s environment.</li>
-  <li>Put spaces after <code>:</code> in property declarations.</li>
-  <li>Put spaces before <code>{</code> in rule declarations.</li>
+  <li>Put spaces after <code class="highlighter-rouge">:</code> in property declarations.</li>
+  <li>Put spaces before <code class="highlighter-rouge"><span class="p">{</span></code> in rule declarations.</li>
   <li>Put line breaks between rulesets.</li>
   <li>When grouping selectors, keep individual selectors to a single line.</li>
   <li>Place closing braces of declaration blocks on a new line.</li>
@@ -231,9 +231,9 @@
 <h3 id="formatting">Formatting</h3>
 
 <ul>
-  <li>Use hex color codes <code>#000</code> unless using <code>rgba()</code> in raw CSS (SCSS’ <code>rgba()</code> function is overloaded to accept hex colors as a param, e.g., <code>rgba(#000, .5)</code>).</li>
-  <li>Use <code>//</code> for comment blocks (instead of <code>/* */</code>).</li>
-  <li>Avoid specifying units for zero values, e.g., <code>margin: 0;</code> instead of <code>margin: 0px;</code>.</li>
+  <li>Use hex color codes <code class="highlighter-rouge">#000</code> unless using <code class="highlighter-rouge">rgba()</code> in raw CSS (SCSS’ <code class="highlighter-rouge">rgba()</code> function is overloaded to accept hex colors as a param, e.g., <code class="highlighter-rouge">rgba(#000, .5)</code>).</li>
+  <li>Use <code class="highlighter-rouge">//</code> for comment blocks (instead of <code class="highlighter-rouge">/* */</code>).</li>
+  <li>Avoid specifying units for zero values, e.g., <code class="highlighter-rouge">margin: 0;</code> instead of <code class="highlighter-rouge">margin: 0px;</code>.</li>
   <li>Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values.</li>
 </ul>
 
@@ -245,7 +245,7 @@
 
 <p>Here are some good examples that apply the above guidelines:</p>
 
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Example of good basic formatting practices
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Example of good basic formatting practices
 </span><span class="nc">.styleguide-format</span> <span class="p">{</span>
   <span class="nl">color</span><span class="p">:</span> <span class="mh">#000</span><span class="p">;</span>
   <span class="nl">background-color</span><span class="p">:</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="mi">.5</span><span class="p">);</span>
@@ -265,7 +265,7 @@
 <span class="p">}</span>
 <span class="nc">.good</span> <span class="p">{</span>
   <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h2 id="file-organization">File organization</h2>
 
@@ -275,7 +275,7 @@
 
 <p>GitHub.com uses a handful of bundles. Here’s a simplified representation of our two desktop bundles (split to support IE9’s maximum selector limit per CSS file) and a dedicated mobile bundle for our separate mobile views.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">stylesheets
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">stylesheets
 ├── github
 │   ├── base.scss
 │   ├── layout.scss
@@ -285,31 +285,31 @@
 │   └── blog.scss
 └── mobile
     ├── base.scss
-    └── files.scss</code></pre></div>
+    └── files.scss</code></pre></figure>
 
 <h3 id="including-scss-files">Including (S)CSS files</h3>
 
 <p>Previously we used <a href="https://github.com/sstephenson/sprockets">Sprockets</a> to <strong>require</strong> files in Primer and at GitHub. Nowadays, we use explicit lists of <strong>imports</strong> to control the cascade, specificity, and more.</p>
 
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Imports
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Imports
 </span><span class="k">@import</span> <span class="s2">"primer"</span><span class="p">;</span>
 <span class="k">@import</span> <span class="s2">"component"</span><span class="p">;</span>
 <span class="k">@import</span> <span class="s2">"another_component"</span><span class="p">;</span>
 
 <span class="c1">// Rules
-</span><span class="nc">.rule</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></div>
+</span><span class="nc">.rule</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></figure>
 
 <p>This is also how Primer’s styles are to be included, should you need them.</p>
 
 <h2 id="pixels-vs-ems">Pixels vs. ems</h2>
 
-<p>Use <code>px</code> for <code>font-size</code>, because it offers absolute control over text. Additionally, unit-less <code>line-height</code> is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the <code>font-size</code>.</p>
+<p>Use <code class="highlighter-rouge">px</code> for <code class="highlighter-rouge">font-size</code>, because it offers absolute control over text. Additionally, unit-less <code class="highlighter-rouge">line-height</code> is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the <code class="highlighter-rouge">font-size</code>.</p>
 
 <h2 id="class-naming-conventions">Class naming conventions</h2>
 
-<p>Never reference <code>js-</code> prefixed class names from CSS files. <code>js-</code> are used exclusively from JS files.</p>
+<p>Never reference <code class="highlighter-rouge">js-</code> prefixed class names from CSS files. <code class="highlighter-rouge">js-</code> are used exclusively from JS files.</p>
 
-<p>Use the <code>is-</code> prefix for state rules that are shared between CSS and JS.</p>
+<p>Use the <code class="highlighter-rouge">is-</code> prefix for state rules that are shared between CSS and JS.</p>
 
 <h2 id="specificity-classes-vs-ids">Specificity (classes vs. ids)</h2>
 
@@ -322,13 +322,13 @@
 
 <p>When styling a component, start with an element + class namespace (prefer class names over ids),  prefer direct descendant selectors by default, and use as little specificity as possible. Here is a good example:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"category-list"</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"category-list"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Category 1<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Category 2<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Category 3<span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span></code></pre></div>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.category-list</span> <span class="p">{</span> <span class="c1">// element + class namespace
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.category-list</span> <span class="p">{</span> <span class="c1">// element + class namespace
 </span>
   <span class="c1">// Direct descendant selector &gt; for list items
 </span>  <span class="o">&gt;</span> <span class="nt">li</span> <span class="p">{</span>
@@ -339,14 +339,14 @@
 </span>  <span class="nt">a</span> <span class="p">{</span>
     <span class="nl">color</span><span class="p">:</span> <span class="mh">#f00</span><span class="p">;</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="css-specificity-guidelines">CSS Specificity guidelines</h3>
 
 <ul>
-  <li>If you must use an id selector (<code>#selector</code>) make sure that you have no more than <em>one</em> in your rule declaration. A rule like <code>#header .search #quicksearch { ... }</code> is considered harmful.</li>
-  <li>When modifying an existing element for a specific use, try to use specific class names. Instead of <code>.listings-layout.bigger</code> use rules like <code>.listings-layout.listings-bigger</code>. Think about <code>ack/grep</code>ing your code in the future.</li>
-  <li>The class names <code>disabled</code>, <code>mousedown</code>, <code>danger</code>, <code>hover</code>, <code>selected</code>, and <code>active</code> should <em>always</em> be namespaced by a class (<code>button.selected</code> is a good example).</li>
+  <li>If you must use an id selector (<code class="highlighter-rouge">#selector</code>) make sure that you have no more than <em>one</em> in your rule declaration. A rule like <code class="highlighter-rouge">#header .search #quicksearch { ... }</code> is considered harmful.</li>
+  <li>When modifying an existing element for a specific use, try to use specific class names. Instead of <code class="highlighter-rouge">.listings-layout.bigger</code> use rules like <code class="highlighter-rouge">.listings-layout.listings-bigger</code>. Think about <code class="highlighter-rouge">ack/grep</code>ing your code in the future.</li>
+  <li>The class names <code class="highlighter-rouge">disabled</code>, <code class="highlighter-rouge">mousedown</code>, <code class="highlighter-rouge">danger</code>, <code class="highlighter-rouge">hover</code>, <code class="highlighter-rouge">selected</code>, and <code class="highlighter-rouge">active</code> should <em>always</em> be namespaced by a class (<code class="highlighter-rouge">button.selected</code> is a good example).</li>
 </ul>
 
     </div>
@@ -355,14 +355,14 @@
 
 
       <footer class="footer">
-        Copyright GitHub 2015.<br>
-        Created and maintained by the CSS team at GitHub. <strong>Currently v2.3.5.</strong>
+        Copyright GitHub 2016.<br>
+        Created and maintained by the CSS team at GitHub. <strong>Currently v2.7.0.</strong>
       </footer>
     </div>
 
     <script src="/js/anchor.min.js"></script>
     <script>
-      var selector = '.markdown-body h2, .markdown-body h3';
+      var selector = '.markdown-body > h2, .markdown-body > h3';
       anchors.options = {
         placement: 'left',
         class: 'anchor-link'

@@ -29,7 +29,7 @@
         </a>
 
         <nav class="masthead-nav">
-          <a  href="/scaffolding">Docs</a>
+          <a class="active" href="/scaffolding">Docs</a>
           <a  href="/about">About</a>
           <a href="https://github.com/primer/primer" target="_blank">GitHub</a>
           <a href="https://github.com/primer/primer/blob/master/README.md#install" target="_blank">Install</a>
@@ -114,31 +114,31 @@
 
 <h2 id="basic-example">Basic example</h2>
 
-<p>Add <code>.avatar</code> to any <code>&lt;img&gt;</code> element to make it an avatar. This resets some key styles for alignment, address a Firefox image placeholder bug, and rounds the corners.</p>
+<p>Add <code class="highlighter-rouge">.avatar</code> to any <code class="highlighter-rouge">&lt;img&gt;</code> element to make it an avatar. This resets some key styles for alignment, address a Firefox image placeholder bug, and rounds the corners.</p>
 
-<p>Be sure to set <code>width</code> and <code>height</code> attributes for maximum browser performance.</p>
+<p>Be sure to set <code class="highlighter-rouge">width</code> and <code class="highlighter-rouge">height</code> attributes for maximum browser performance.</p>
 
-<div class="docs-example clearfix"><img class="avatar" src="https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=72" width="72" height="72" /></div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"avatar"</span> <span class="na">src=</span><span class="s">"https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=72"</span> <span class="na">width=</span><span class="s">"72"</span> <span class="na">height=</span><span class="s">"72"</span><span class="nt">&gt;</span></code></pre></div>
+<div class="docs-example clearfix"><img class="avatar" src="https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=144" width="72" height="72" /></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"avatar"</span> <span class="na">src=</span><span class="s">"https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=144"</span> <span class="na">width=</span><span class="s">"72"</span> <span class="na">height=</span><span class="s">"72"</span><span class="nt">&gt;</span></code></pre></div>
 
 <h2 id="small-avatars">Small avatars</h2>
 
-<p>We occasionally use smaller avatars. Anything less than <code>48px</code> wide should include the <code>.avatar-small</code> modifier class to reset the <code>border-radius</code> to a more appropriate level.</p>
+<p>We occasionally use smaller avatars. Anything less than <code class="highlighter-rouge">48px</code> wide should include the <code class="highlighter-rouge">.avatar-small</code> modifier class to reset the <code class="highlighter-rouge">border-radius</code> to a more appropriate level.</p>
 
-<div class="docs-example clearfix"><img class="avatar avatar-small" src="https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=32" width="32" height="32" /></div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"avatar avatar-small"</span> <span class="na">src=</span><span class="s">"https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=32"</span> <span class="na">width=</span><span class="s">"32"</span> <span class="na">height=</span><span class="s">"32"</span><span class="nt">&gt;</span></code></pre></div>
+<div class="docs-example clearfix"><img class="avatar avatar-small" src="https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=64" width="32" height="32" /></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"avatar avatar-small"</span> <span class="na">src=</span><span class="s">"https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=64"</span> <span class="na">width=</span><span class="s">"32"</span> <span class="na">height=</span><span class="s">"32"</span><span class="nt">&gt;</span></code></pre></div>
 
 <h2 id="parent-child-avatars">Parent-child avatars</h2>
 
 <p>When you need a larger parent avatar, and a smaller child one, overlaid slightly, use the parent-child classes.</p>
 
 <div class="docs-example clearfix"><div class="avatar-parent-child left">
-  <img class="avatar" src="https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=48" width="48" height="48" />
-  <img class="avatar avatar-child" src="https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=20" width="20" height="20" />
+  <img class="avatar" src="https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=96" width="48" height="48" />
+  <img class="avatar avatar-child" src="https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=40" width="20" height="20" />
 </div></div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"avatar-parent-child left"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"avatar"</span> <span class="na">src=</span><span class="s">"https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=48"</span> <span class="na">width=</span><span class="s">"48"</span> <span class="na">height=</span><span class="s">"48"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"avatar avatar-child"</span> <span class="na">src=</span><span class="s">"https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=20"</span> <span class="na">width=</span><span class="s">"20"</span> <span class="na">height=</span><span class="s">"20"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"avatar"</span> <span class="na">src=</span><span class="s">"https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=96"</span> <span class="na">width=</span><span class="s">"48"</span> <span class="na">height=</span><span class="s">"48"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"avatar avatar-child"</span> <span class="na">src=</span><span class="s">"https://avatars3.githubusercontent.com/u/9919?v=3&amp;s=40"</span> <span class="na">width=</span><span class="s">"20"</span> <span class="na">height=</span><span class="s">"20"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 
@@ -148,14 +148,14 @@
 
 
       <footer class="footer">
-        Copyright GitHub 2015.<br>
-        Created and maintained by the CSS team at GitHub. <strong>Currently v2.3.5.</strong>
+        Copyright GitHub 2016.<br>
+        Created and maintained by the CSS team at GitHub. <strong>Currently v2.7.0.</strong>
       </footer>
     </div>
 
     <script src="/js/anchor.min.js"></script>
     <script>
-      var selector = '.markdown-body h2, .markdown-body h3';
+      var selector = '.markdown-body > h2, .markdown-body > h3';
       anchors.options = {
         placement: 'left',
         class: 'anchor-link'

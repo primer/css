@@ -29,7 +29,7 @@
         </a>
 
         <nav class="masthead-nav">
-          <a  href="/scaffolding">Docs</a>
+          <a class="active" href="/scaffolding">Docs</a>
           <a  href="/about">About</a>
           <a href="https://github.com/primer/primer" target="_blank">GitHub</a>
           <a href="https://github.com/primer/primer/blob/master/README.md#install" target="_blank">Install</a>
@@ -113,6 +113,7 @@
       <li><a href="#fixed-width" id="markdown-toc-fixed-width">Fixed width</a></li>
       <li><a href="#capped" id="markdown-toc-capped">Capped</a></li>
       <li><a href="#spacious" id="markdown-toc-spacious">Spacious</a></li>
+      <li><a href="#large" id="markdown-toc-large">Large</a></li>
       <li><a href="#no-background" id="markdown-toc-no-background">No background</a></li>
     </ul>
   </li>
@@ -120,7 +121,7 @@
 
 <h2 id="basic-example">Basic example</h2>
 
-<p>Wrap some content in the outer <code>.blankslate</code> wrapper to give it the blankslate appearance.</p>
+<p>Wrap some content in the outer <code class="highlighter-rouge">.blankslate</code> wrapper to give it the blankslate appearance.</p>
 
 <div class="docs-example clearfix"><div class="blankslate">
   <h3>This is a blank slate</h3>
@@ -133,49 +134,49 @@
 
 <h2 id="with-octicons">With Octicons</h2>
 
-<p>When it helps the message, include <code>.mega-octicon</code>s as the first elements in the blank slate. Be sure to use relevant icons.</p>
+<p>When it helps the message, include (relevant) icons in your blank slate. Add <code class="highlighter-rouge">.blankslate-icon</code> to any <code class="highlighter-rouge">.mega-octicon</code>s as the first elements in the blankslate, like so.</p>
 
 <div class="docs-example clearfix"><div class="blankslate">
-  <span class="mega-octicon octicon-git-commit"></span>
-  <span class="mega-octicon octicon-tag"></span>
-  <span class="mega-octicon octicon-git-branch"></span>
+  <span class="mega-octicon octicon-git-commit blankslate-icon"></span>
+  <span class="mega-octicon octicon-tag blankslate-icon"></span>
+  <span class="mega-octicon octicon-git-branch blankslate-icon"></span>
   <h3>This is a blank slate</h3>
   <p>Use it to provide information when no dynamic content exists.</p>
 </div></div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"blankslate"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"mega-octicon octicon-git-commit"</span><span class="nt">&gt;&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"mega-octicon octicon-tag"</span><span class="nt">&gt;&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"mega-octicon octicon-git-branch"</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"mega-octicon octicon-git-commit blankslate-icon"</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"mega-octicon octicon-tag blankslate-icon"</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"mega-octicon octicon-git-branch blankslate-icon"</span><span class="nt">&gt;&lt;/span&gt;</span>
   <span class="nt">&lt;h3&gt;</span>This is a blank slate<span class="nt">&lt;/h3&gt;</span>
   <span class="nt">&lt;p&gt;</span>Use it to provide information when no dynamic content exists.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 <h2 id="variations">Variations</h2>
 
-<p>Add an additional optional class to the <code>.blankslate</code> to change its appearance.</p>
+<p>Add an additional optional class to the <code class="highlighter-rouge">.blankslate</code> to change its appearance.</p>
 
 <h3 id="fixed-width">Fixed width</h3>
 
 <p>Narrows the blankslate container to not occupy the entire available width.</p>
 
-<div class="docs-example clearfix"><div class="blankslate has-fixed-width">
+<div class="docs-example clearfix"><div class="blankslate blankslate-fixed-width">
   <h3>This is a blank slate</h3>
   <p>Use it to provide information when no dynamic content exists.</p>
 </div></div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"blankslate has-fixed-width"</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"blankslate blankslate-fixed-width"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;h3&gt;</span>This is a blank slate<span class="nt">&lt;/h3&gt;</span>
   <span class="nt">&lt;p&gt;</span>Use it to provide information when no dynamic content exists.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 <h3 id="capped">Capped</h3>
 
-<p>Removes the <code>border-radius</code> on the top corners.</p>
+<p>Removes the <code class="highlighter-rouge">border-radius</code> on the top corners.</p>
 
-<div class="docs-example clearfix"><div class="blankslate capped">
+<div class="docs-example clearfix"><div class="blankslate blankslate-capped">
   <h3>This is a blank slate</h3>
   <p>Use it to provide information when no dynamic content exists.</p>
 </div></div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"blankslate capped"</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"blankslate blankslate-capped"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;h3&gt;</span>This is a blank slate<span class="nt">&lt;/h3&gt;</span>
   <span class="nt">&lt;p&gt;</span>Use it to provide information when no dynamic content exists.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
@@ -184,24 +185,37 @@
 
 <p>Significantly increases the vertical padding.</p>
 
-<div class="docs-example clearfix"><div class="blankslate spacious">
+<div class="docs-example clearfix"><div class="blankslate blankslate-spacious">
   <h3>This is a blank slate</h3>
   <p>Use it to provide information when no dynamic content exists.</p>
 </div></div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"blankslate spacious"</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"blankslate blankslate-spacious"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h3&gt;</span>This is a blank slate<span class="nt">&lt;/h3&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Use it to provide information when no dynamic content exists.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<h3 id="large">Large</h3>
+
+<p>Increases the size of the text in the blankslate</p>
+
+<div class="docs-example clearfix"><div class="blankslate blankslate-large">
+  <h3>This is a blank slate</h3>
+  <p>Use it to provide information when no dynamic content exists.</p>
+</div></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"blankslate blankslate-large"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;h3&gt;</span>This is a blank slate<span class="nt">&lt;/h3&gt;</span>
   <span class="nt">&lt;p&gt;</span>Use it to provide information when no dynamic content exists.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 <h3 id="no-background">No background</h3>
 
-<p>Removes the <code>background-color</code> and <code>border</code>.</p>
+<p>Removes the <code class="highlighter-rouge">background-color</code> and <code class="highlighter-rouge">border</code>.</p>
 
-<div class="docs-example clearfix"><div class="blankslate clean-background">
+<div class="docs-example clearfix"><div class="blankslate blankslate-clean-background">
   <h3>This is a blank slate</h3>
   <p>Use it to provide information when no dynamic content exists.</p>
 </div></div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"blankslate clean-background"</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"blankslate blankslate-clean-background"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;h3&gt;</span>This is a blank slate<span class="nt">&lt;/h3&gt;</span>
   <span class="nt">&lt;p&gt;</span>Use it to provide information when no dynamic content exists.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
@@ -213,14 +227,14 @@
 
 
       <footer class="footer">
-        Copyright GitHub 2015.<br>
-        Created and maintained by the CSS team at GitHub. <strong>Currently v2.3.5.</strong>
+        Copyright GitHub 2016.<br>
+        Created and maintained by the CSS team at GitHub. <strong>Currently v2.7.0.</strong>
       </footer>
     </div>
 
     <script src="/js/anchor.min.js"></script>
     <script>
-      var selector = '.markdown-body h2, .markdown-body h3';
+      var selector = '.markdown-body > h2, .markdown-body > h3';
       anchors.options = {
         placement: 'left',
         class: 'anchor-link'

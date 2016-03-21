@@ -29,7 +29,7 @@
         </a>
 
         <nav class="masthead-nav">
-          <a  href="/scaffolding">Docs</a>
+          <a class="active" href="/scaffolding">Docs</a>
           <a  href="/about">About</a>
           <a href="https://github.com/primer/primer" target="_blank">GitHub</a>
           <a href="https://github.com/primer/primer/blob/master/README.md#install" target="_blank">Install</a>
@@ -112,14 +112,22 @@
   <li><a href="#floats" id="markdown-toc-floats">Floats</a></li>
   <li><a href="#centering-content" id="markdown-toc-centering-content">Centering content</a></li>
   <li><a href="#text-alignment" id="markdown-toc-text-alignment">Text alignment</a></li>
+  <li><a href="#background-colors" id="markdown-toc-background-colors">Background colors</a></li>
   <li><a href="#text-color" id="markdown-toc-text-color">Text color</a></li>
-  <li><a href="#muted-link" id="markdown-toc-muted-link">Muted link</a></li>
+  <li><a href="#link-colors" id="markdown-toc-link-colors">Link colors</a></li>
   <li><a href="#flex-table" id="markdown-toc-flex-table">Flex table</a></li>
+  <li><a href="#margin" id="markdown-toc-margin">Margin</a></li>
+  <li><a href="#padding" id="markdown-toc-padding">Padding</a></li>
+  <li><a href="#positioning" id="markdown-toc-positioning">Positioning</a></li>
+  <li><a href="#display" id="markdown-toc-display">Display</a></li>
+  <li><a href="#borders" id="markdown-toc-borders">Borders</a></li>
+  <li><a href="#border-colors" id="markdown-toc-border-colors">Border colors</a></li>
+  <li><a href="#no-borders" id="markdown-toc-no-borders">No borders</a></li>
 </ul>
 
 <h2 id="truncation">Truncation</h2>
 
-<p><code>.css-truncate</code> will shorten text with an ellipsis. The maximum width of the truncated text can be changed by overriding the max-width of the .css-truncate-target.</p>
+<p><code class="highlighter-rouge">.css-truncate</code> will shorten text with an ellipsis. The maximum width of the truncated text can be changed by overriding the max-width of the .css-truncate-target.</p>
 
 <div class="docs-example clearfix"><span class="branch-ref css-truncate css-truncate-target">
   really-long-branch-name
@@ -128,7 +136,7 @@
   really-long-branch-name
 <span class="nt">&lt;/span&gt;</span></code></pre></div>
 
-<p>You can reveal the entire string on hover with the addition of <code>.expandable</code>.</p>
+<p>You can reveal the entire string on hover with the addition of <code class="highlighter-rouge">.expandable</code>.</p>
 
 <div class="docs-example clearfix"><span class="css-truncate expandable">
   <span class="branch-ref css-truncate-target">this-is-a-really-long-branch-name</span>
@@ -176,7 +184,7 @@
 
 <h2 id="text-alignment">Text alignment</h2>
 
-<p>Change the <code>text-align</code> on elements with a class.</p>
+<p>Change the <code class="highlighter-rouge">text-align</code> on elements with a class.</p>
 
 <div class="docs-example clearfix"><p class="text-left">Left aligned text.</p>
 <p class="text-right">Right aligned text.</p>
@@ -185,33 +193,68 @@
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>Right aligned text.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-center"</span><span class="nt">&gt;</span>Center aligned text.<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
+<h2 id="background-colors">Background colors</h2>
+
+<p>Fill in an element with background colors.</p>
+
+<div class="docs-example clearfix"><span class="d-inline-block p-3 bg-white">.bg-white</span>
+<span class="d-inline-block p-3 bg-gray-dark text-white">.bg-gray-dark</span>
+<span class="d-inline-block p-3 bg-blue">.bg-blue</span>
+<span class="d-inline-block p-3 bg-blue-light">.bg-blue-light</span>
+<span class="d-inline-block p-3 bg-gray">.bg-gray</span>
+<span class="d-inline-block p-3 bg-gray-light">.bg-gray-light</span>
+<span class="d-inline-block p-3 bg-green">.bg-green</span>
+<span class="d-inline-block p-3 bg-red">.bg-red</span></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"d-inline-block p-3 bg-white"</span><span class="nt">&gt;</span>.bg-white<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"d-inline-block p-3 bg-gray-dark text-white"</span><span class="nt">&gt;</span>.bg-gray-dark<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"d-inline-block p-3 bg-blue"</span><span class="nt">&gt;</span>.bg-blue<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"d-inline-block p-3 bg-blue-light"</span><span class="nt">&gt;</span>.bg-blue-light<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"d-inline-block p-3 bg-gray"</span><span class="nt">&gt;</span>.bg-gray<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"d-inline-block p-3 bg-gray-light"</span><span class="nt">&gt;</span>.bg-gray-light<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"d-inline-block p-3 bg-green"</span><span class="nt">&gt;</span>.bg-green<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"d-inline-block p-3 bg-red"</span><span class="nt">&gt;</span>.bg-red<span class="nt">&lt;/span&gt;</span></code></pre></div>
+
 <h2 id="text-color">Text color</h2>
 
-<p>Change the <code>color</code> of elements with a class.</p>
+<p>Change the <code class="highlighter-rouge">color</code> of elements with a class.</p>
 
-<div class="docs-example clearfix"><p class="text-open">Green/open text</p>
-<p class="text-closed">Red/closed text</p>
-<p class="text-merged">Merged text</p>
-<p class="text-pending">Pending text</p></div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-open"</span><span class="nt">&gt;</span>Green/open text<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-closed"</span><span class="nt">&gt;</span>Red/closed text<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-merged"</span><span class="nt">&gt;</span>Merged text<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-pending"</span><span class="nt">&gt;</span>Pending text<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<div class="docs-example clearfix"><span class="text-blue">.text-blue</span>
+<span class="text-red">.text-red</span>
+<span class="text-gray-light">.text-gray-light</span>
+<span class="text-gray">.text-gray</span>
+<span class="text-gray-dark">.text-gray-dark</span>
+<span class="text-green">.text-green</span>
+<span class="text-orange">.text-orange</span>
+<span class="text-purple">.text-purple</span>
+<span class="text-white bg-gray-dark">.text-white</span>
+<span class="text-inherit">.text-inherit</span></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text-blue"</span><span class="nt">&gt;</span>.text-blue<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text-red"</span><span class="nt">&gt;</span>.text-red<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text-gray-light"</span><span class="nt">&gt;</span>.text-gray-light<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text-gray"</span><span class="nt">&gt;</span>.text-gray<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text-gray-dark"</span><span class="nt">&gt;</span>.text-gray-dark<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text-green"</span><span class="nt">&gt;</span>.text-green<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text-orange"</span><span class="nt">&gt;</span>.text-orange<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text-purple"</span><span class="nt">&gt;</span>.text-purple<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text-white bg-gray-dark"</span><span class="nt">&gt;</span>.text-white<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text-inherit"</span><span class="nt">&gt;</span>.text-inherit<span class="nt">&lt;/span&gt;</span></code></pre></div>
 
-<p><code>.text-closed</code> and <code>.text-failure</code> are the same, as well as <code>.text-open</code> and <code>.text-success</code>.</p>
+<h2 id="link-colors">Link colors</h2>
 
-<h2 id="muted-link">Muted link</h2>
+<p>The default link color is blue, but there are a couple of other options to use for deemphasized links. On <code class="highlighter-rouge">:hover</code> all links will turn blue.</p>
 
-<p>When you need a hyperlink to not be <code>$brand-blue</code>, use a <code>.muted-link</code>.</p>
-
-<div class="docs-example clearfix">Here is some example text. <a class="muted-link" href="#">And a muted link.</a></div>
-<div class="highlight"><pre><code class="language-html" data-lang="html">Here is some example text. <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"muted-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>And a muted link.<span class="nt">&lt;/a&gt;</span></code></pre></div>
+<div class="docs-example clearfix"><p>Here is some example text. <a class="link-blue" href="#">And a .link-blue</a></p>
+<p>Here is some example text. <a class="link-gray" href="#">And a .link-gray</a></p>
+<p>Here is some example text. <a class="link-gray-dark" href="#">And a .link-gray-dark</a></p></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>Here is some example text. <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link-blue"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>And a .link-blue<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Here is some example text. <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link-gray"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>And a .link-gray<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Here is some example text. <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link-gray-dark"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>And a .link-gray-dark<span class="nt">&lt;/a&gt;&lt;/p&gt;</span></code></pre></div>
 
 <h2 id="flex-table">Flex table</h2>
 
 <p>Flex table is a module for creating dynamically resizable elements that always sit on the same horizontal line (e.g., they never break to a new line). Using table styles in our CSS means it’s cross browser friendly back to at least IE9.</p>
 
-<p>Additional <code>margin</code> or <code>padding</code> may be required to properly space content.</p>
+<p>Additional <code class="highlighter-rouge">margin</code> or <code class="highlighter-rouge">padding</code> may be required to properly space content.</p>
 
 <div class="docs-example clearfix"><div class="flex-table">
   <div class="flex-table-item flex-table-item-primary">
@@ -230,6 +273,119 @@
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
+<h2 id="margin">Margin</h2>
+
+<p>You have the option to set margin sizes from <code class="highlighter-rouge">0-5</code>. You also have the optional direction using <code class="highlighter-rouge">t,r,b,l,x,y</code>.</p>
+
+<div class="docs-example clearfix"><div class="d-inline-block border p-2 mr-0">.mr-0</div>
+<div class="d-inline-block border p-2 mr-1">.mr-1</div>
+<div class="d-inline-block border p-2 mr-2">.mr-2</div>
+<div class="d-inline-block border p-2 mr-3">.mr-3</div>
+<div class="d-inline-block border p-2 mr-4">.mr-4</div>
+<div class="d-inline-block border p-2 mr-5">.mr-5</div>
+<div class="d-inline-block border p-2 mx-2">.mx-5</div>
+<div class="d-inline-block border p-2 my-2">.my-5</div>
+<div class="d-inline-block border p-2 m-2">.m-2</div></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border p-2 mr-0"</span><span class="nt">&gt;</span>.mr-0<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border p-2 mr-1"</span><span class="nt">&gt;</span>.mr-1<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border p-2 mr-2"</span><span class="nt">&gt;</span>.mr-2<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border p-2 mr-3"</span><span class="nt">&gt;</span>.mr-3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border p-2 mr-4"</span><span class="nt">&gt;</span>.mr-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border p-2 mr-5"</span><span class="nt">&gt;</span>.mr-5<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border p-2 mx-2"</span><span class="nt">&gt;</span>.mx-5<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border p-2 my-2"</span><span class="nt">&gt;</span>.my-5<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border p-2 m-2"</span><span class="nt">&gt;</span>.m-2<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<h2 id="padding">Padding</h2>
+
+<p>You have the option to set padding sizes from <code class="highlighter-rouge">0-5</code>. You also have the optional direction using <code class="highlighter-rouge">t,b,x,y</code>.</p>
+
+<div class="docs-example clearfix"><div class="d-inline-block border pt-0">.pt-0</div>
+<div class="d-inline-block border pt-1">.pt-1</div>
+<div class="d-inline-block border pt-2">.pt-2</div>
+<div class="d-inline-block border pt-3">.pt-3</div>
+<div class="d-inline-block border pt-4">.pt-4</div>
+<div class="d-inline-block border pt-5">.pt-5</div>
+<div class="d-inline-block border p-3">.p-3</div>
+<div class="d-inline-block border px-3">.px-3</div>
+<div class="d-inline-block border py-3">.py-3</div></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border pt-0"</span><span class="nt">&gt;</span>.pt-0<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border pt-1"</span><span class="nt">&gt;</span>.pt-1<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border pt-2"</span><span class="nt">&gt;</span>.pt-2<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border pt-3"</span><span class="nt">&gt;</span>.pt-3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border pt-4"</span><span class="nt">&gt;</span>.pt-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border pt-5"</span><span class="nt">&gt;</span>.pt-5<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border p-3"</span><span class="nt">&gt;</span>.p-3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border px-3"</span><span class="nt">&gt;</span>.px-3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block border py-3"</span><span class="nt">&gt;</span>.py-3<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<h2 id="positioning">Positioning</h2>
+
+<p>We include classes for setting positioning as well as setting the <code class="highlighter-rouge">top-0, right-0, bottom-0, left-0</code> to zero. Your options for positioning are <code class="highlighter-rouge">position-static, position-absolute, position-relative, position-fixed</code>.</p>
+
+<div class="docs-example clearfix"><div class="p-3 border position-relative">
+  .position-relative
+  <div class="border position-absolute right-0 top-0 p-1">.position-absolute.right-0.top-0</div>
+</div></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p-3 border position-relative"</span><span class="nt">&gt;</span>
+  .position-relative
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"border position-absolute right-0 top-0 p-1"</span><span class="nt">&gt;</span>.position-absolute.right-0.top-0<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<h2 id="display">Display</h2>
+
+<p>You can set your display with these utilities.</p>
+
+<div class="docs-example clearfix"><span class="border text-center d-block p-2">.d-block</span>
+<span class="border text-center d-inline p-2">.d-inline</span>
+<span class="border text-center d-inline-block p-2">.d-inline-block</span>
+<span class="border text-center d-none p-2">.d-none</span></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"border text-center d-block p-2"</span><span class="nt">&gt;</span>.d-block<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"border text-center d-inline p-2"</span><span class="nt">&gt;</span>.d-inline<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"border text-center d-inline-block p-2"</span><span class="nt">&gt;</span>.d-inline-block<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"border text-center d-none p-2"</span><span class="nt">&gt;</span>.d-none<span class="nt">&lt;/span&gt;</span></code></pre></div>
+
+<h2 id="borders">Borders</h2>
+
+<p>With these border utilities you can set common borders.</p>
+
+<div class="docs-example clearfix"><div class="border p-3 mb-3">.border</div>
+<div class="border-top p-3 mb-3">.border-top</div>
+<div class="border-right p-3 mb-3">.border-right</div>
+<div class="border-bottom p-3 mb-3">.border-bottom</div>
+<div class="border-left p-3 mb-3">.border-left</div></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"border p-3 mb-3"</span><span class="nt">&gt;</span>.border<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"border-top p-3 mb-3"</span><span class="nt">&gt;</span>.border-top<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"border-right p-3 mb-3"</span><span class="nt">&gt;</span>.border-right<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"border-bottom p-3 mb-3"</span><span class="nt">&gt;</span>.border-bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"border-left p-3 mb-3"</span><span class="nt">&gt;</span>.border-left<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<h2 id="border-colors">Border colors</h2>
+
+<p>Add these classes with <code class="highlighter-rouge">.border</code> and you’ll have some common border colors.</p>
+
+<div class="docs-example clearfix"><div class="border p-3 mb-3 border-blue">.border-blue</div>
+<div class="border p-3 mb-3 border-gray-light">.border-gray-light</div>
+<div class="border p-3 mb-3 border-gray-dark">.border-gray-dark</div></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"border p-3 mb-3 border-blue"</span><span class="nt">&gt;</span>.border-blue<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"border p-3 mb-3 border-gray-light"</span><span class="nt">&gt;</span>.border-gray-light<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"border p-3 mb-3 border-gray-dark"</span><span class="nt">&gt;</span>.border-gray-dark<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<h2 id="no-borders">No borders</h2>
+
+<p>To remove a border from one side you can use <code class="highlighter-rouge">-0</code> postfix.</p>
+
+<div class="docs-example clearfix"><div class="border border-0 p-3 mb-3">.border-0</div>
+<div class="border border-top-0 p-3 mb-3">.border-top-0</div>
+<div class="border border-right-0 p-3 mb-3">.border-right-0</div>
+<div class="border border-bottom-0 p-3 mb-3">.border-bottom-0</div>
+<div class="border border-left-0 p-3 mb-3">.border-left-0</div></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"border border-0 p-3 mb-3"</span><span class="nt">&gt;</span>.border-0<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"border border-top-0 p-3 mb-3"</span><span class="nt">&gt;</span>.border-top-0<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"border border-right-0 p-3 mb-3"</span><span class="nt">&gt;</span>.border-right-0<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"border border-bottom-0 p-3 mb-3"</span><span class="nt">&gt;</span>.border-bottom-0<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"border border-left-0 p-3 mb-3"</span><span class="nt">&gt;</span>.border-left-0<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
 
     </div>
   </div>
@@ -237,14 +393,14 @@
 
 
       <footer class="footer">
-        Copyright GitHub 2015.<br>
-        Created and maintained by the CSS team at GitHub. <strong>Currently v2.3.5.</strong>
+        Copyright GitHub 2016.<br>
+        Created and maintained by the CSS team at GitHub. <strong>Currently v2.7.0.</strong>
       </footer>
     </div>
 
     <script src="/js/anchor.min.js"></script>
     <script>
-      var selector = '.markdown-body h2, .markdown-body h3';
+      var selector = '.markdown-body > h2, .markdown-body > h3';
       anchors.options = {
         placement: 'left',
         class: 'anchor-link'

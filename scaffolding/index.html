@@ -29,7 +29,7 @@
         </a>
 
         <nav class="masthead-nav">
-          <a  href="/scaffolding">Docs</a>
+          <a class="active" href="/scaffolding">Docs</a>
           <a  href="/about">About</a>
           <a href="https://github.com/primer/primer" target="_blank">GitHub</a>
           <a href="https://github.com/primer/primer/blob/master/README.md#install" target="_blank">Install</a>
@@ -116,14 +116,14 @@
 
 <p>Primer makes use of certain HTML elements and CSS properties that <strong>require</strong> the use of the HTML5 doctype. Include it at the beginning of all your pages.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
   ...
-<span class="nt">&lt;/html&gt;</span></code></pre></div>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
 
 <h2 id="box-sizing">Box-sizing</h2>
 
-<p>We reset <code>box-sizing</code> to <code>border-box</code> for every element in Primer. This allows us to more easily assign widths to elements that also have <code>padding</code> and <code>border</code>s.</p>
+<p>We reset <code class="highlighter-rouge">box-sizing</code> to <code class="highlighter-rouge">border-box</code> for every element in Primer. This allows us to more easily assign widths to elements that also have <code class="highlighter-rouge">padding</code> and <code class="highlighter-rouge">border</code>s.</p>
 
 <h2 id="built-on-normalize">Built on Normalize</h2>
 
@@ -135,14 +135,14 @@
 
 
       <footer class="footer">
-        Copyright GitHub 2015.<br>
-        Created and maintained by the CSS team at GitHub. <strong>Currently v2.3.5.</strong>
+        Copyright GitHub 2016.<br>
+        Created and maintained by the CSS team at GitHub. <strong>Currently v2.7.0.</strong>
       </footer>
     </div>
 
     <script src="/js/anchor.min.js"></script>
     <script>
-      var selector = '.markdown-body h2, .markdown-body h3';
+      var selector = '.markdown-body > h2, .markdown-body > h3';
       anchors.options = {
         placement: 'left',
         class: 'anchor-link'
