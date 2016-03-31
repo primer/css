@@ -8,8 +8,6 @@ permalink: pretty
 source: docs
 baseurl: ""
 
-version: 3.0.0
-
 sass:
   sass_dir: ../
   style: compressed

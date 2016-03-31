@@ -74,7 +74,14 @@ module.exports = function(grunt) {
       options: {
         src: 'docs',
         dest: '_site',
-        config: '_config.yml'
+        config: '_config.yml',
+        raw: "version: <%= pkg.version %>"
+      },
+      dist: {
+        serve: false
+      },
+      serve: {
+        serve: true
       }
     },
 
@@ -103,8 +110,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
 
   // Generate and format the CSS
-  grunt.registerTask('default', ['sass', 'jekyll', 'postcss', 'parker']);
+  grunt.registerTask('default', ['sass', 'jekyll:dist', 'postcss', 'parker']);
 
   // Publish to GitHub
-  grunt.registerTask('publish', ['jekyll', 'postcss:docs', 'buildcontrol:pages']);
+  grunt.registerTask('publish', ['jekyll:dist', 'postcss:docs', 'buildcontrol:pages']);
 };
