@@ -36,7 +36,14 @@
   ],
   "dependencies": {
     "normalize.css": "4.1.1",
-    "primer-support": "git+https://github.com/primer/support.git",
-    "primer-utilities": "git+https://github.com/primer/utilities.git"
+    "primer-support": "github:primer/support.git",
+    "primer-utilities": "github:primer/utilities.git",
+    "primer-buttons": "github:primer/buttons.git",
+    "primer-alerts": "github:primer/alerts.git",
+    "primer-forms": "github:primer/forms.git",
+    "primer-tooltips": "github:primer/tooltips.git",
+    "primer-navigation": "github:primer/navigation.git",
+    "primer-blankslate": "github:primer/blankslate.git",
+    "primer-avatars": "github:primer/avatars.git"
   }
 }

@@ -11,9 +11,17 @@ module.exports = function(grunt) {
         sourceComments: false,
         outputStyle: 'compressed'
       },
+      dist_min: {
+        files: {
+          'css/primer.min.css': 'primer.scss'
+        }
+      },
       dist: {
         files: {
           'css/primer.css': 'primer.scss'
+        },
+        options: {
+          outputStyle: 'nested'
         }
       }
     },
@@ -34,7 +42,6 @@ module.exports = function(grunt) {
     parker: {
       options: {
         metrics: [
-          'TotalStylesheets',
           'TotalStylesheetSize',
           'TotalRules',
           'TotalSelectors',
@@ -54,7 +61,7 @@ module.exports = function(grunt) {
         usePackage: true
       },
       src: [
-        'css/*.css'
+        'css/primer.css'
       ]
     }
   });

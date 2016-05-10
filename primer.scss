@@ -12,9 +12,13 @@
 
 // Global requirements
 @import "node_modules/primer-support/support";
-
-// Utilities
 @import "node_modules/primer-utilities/utilities";
-
-// Basecoat
 @import "node_modules/normalize.css/normalize";
+
+@import "node_modules/primer-buttons/buttons";
+@import "node_modules/primer-alerts/alerts";
+@import "node_modules/primer-forms/forms";
+@import "node_modules/primer-tooltips/tooltips";
+@import "node_modules/primer-navigation/navigation";
+@import "node_modules/primer-blankslate/blankslate";
+@import "node_modules/primer-avatars/avatars";
