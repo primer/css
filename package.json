@@ -1,49 +1,52 @@
 {
-  "name": "primer-css",
   "version": "4.0.0",
+  "name": "primer-css",
+  "description": "Primer is the CSS toolkit that powers GitHub's front-end design. It's purposefully limited to common components to provide our developers with the most flexibility, and to keep GitHub uniquely *GitHubby*. It's built with SCSS, so it's easy to include all or part of it within your own project.",
   "homepage": "https://github.com/styleguide",
   "author": "GitHub, Inc.",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/primer/primer.git"
-  },
-  "devDependencies": {
-    "autoprefixer-core": "~5.2.1",
-    "grunt": "^0.4.5",
-    "grunt-cli": "^1.2.0",
-    "grunt-parker": "^0.1.3",
-    "grunt-postcss": "^0.5.1",
-    "grunt-sass": "^1.0.0"
-  },
-  "description": "Primer is the CSS toolkit that powers GitHub's front-end design. It's purposefully limited to common components to provide our developers with the most flexibility, and to keep GitHub uniquely *GitHubby*. It's built with SCSS and available via Bower, so it's easy to include all or part of it within your own project.",
+  "style": "index.scss",
+  "files": [
+    "index.scss",
+    "lib"
+  ],
+  "repository": "https://github.com/primer/primer.git",
   "bugs": {
     "url": "https://github.com/primer/primer/issues"
   },
-  "main": "css/primer.css",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "grunt"
+    "build": "npm run setup && npm run preprocess",
+    "stats": "parker build/build.css > .primer-stats.md",
+    "preprocess": "node-sass index.scss --include-path node_modules | postcss -c .postcss.json -o build/build.css && npm run stats",
+    "setup": "npm install",
+    "preversion": "npm run build",
+    "test": "npm run build"
+  },
+  "dependencies": {
+    "primer-support": "*",
+    "primer-utilities": "*",
+    "primer-base": "*",
+    "primer-forms": "*",
+    "primer-buttons": "*",
+    "primer-alerts": "*",
+    "primer-avatars": "*",
+    "primer-blankslate": "*",
+    "primer-navigation": "*",
+    "primer-states": "*",
+    "primer-tooltips": "*",
+    "primer-flex-table": "*",
+    "primer-truncate": "*"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "node-sass": "^3.7.0",
+    "parker": "0.0.10",
+    "postcss-cli": "^2.5.2"
   },
   "keywords": [
     "primer",
     "css",
     "github",
     "primercss"
-  ],
-  "dependencies": {
-    "normalize.css": "4.1.1",
-    "primer-support": "github:primer/support.git",
-    "primer-utilities": "github:primer/utilities.git",
-    "primer-buttons": "github:primer/buttons.git",
-    "primer-alerts": "github:primer/alerts.git",
-    "primer-forms": "github:primer/forms.git",
-    "primer-tooltips": "github:primer/tooltips.git",
-    "primer-navigation": "github:primer/navigation.git",
-    "primer-blankslate": "github:primer/blankslate.git",
-    "primer-avatars": "github:primer/avatars.git"
-  }
+  ]
 }
