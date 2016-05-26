@@ -37,7 +37,7 @@ For a compiled **css** version of this module, a npm script is included that wil
 $ npm run build
 ```
 
-### Primer stats
+## Primer stats
 
 When compiling the Sass files, we will automatically generate a `.primer-stats.md` file. This is tracked in the Git repository to provide us historical and contextual information on the changes we introduce. For example, we'll know when the number of selectors or declarations rises sharply within a single change.
 
