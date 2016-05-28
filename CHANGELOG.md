@@ -3,4 +3,4 @@
 
 # 1.0.0
 
-  * Added: New rule `function-url-no-domain`
+  * Added: New rule `selector-no-utility`
