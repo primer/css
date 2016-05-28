@@ -1,0 +1,28 @@
+{
+  "extends": "eslint:recommended",
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "comma-dangle": [2, "only-multiline"],
+    "curly": 0,
+    "radix": 2,
+    "wrap-iife": 2,
+    "brace-style": 0,
+    "comma-style": 2,
+    "consistent-this": 0,
+    "indent": [2, 2, {
+      "SwitchCase": 1
+    }],
+    "no-console": 0,
+    "no-lonely-if": 2,
+    "no-nested-ternary": 2,
+    "no-use-before-define": [2, "nofunc"],
+    "quotes": [2, "double"],
+    "space-before-function-paren": [2, "never"],
+    "keyword-spacing": 2,
+    "space-before-blocks": [2, "always"],
+    "space-in-parens": [2, "never"],
+    "space-unary-ops": 2
+  }
+}
