@@ -31,7 +31,20 @@ function buildUtilityClasses(options) {
 module.exports = stylelint.createPlugin(ruleName, function(enabled, options) {
   return function(root, result) {
 
-    var utilityClasses = buildUtilityClasses(options)
+    var validOptions = stylelint.utils.validateOptions(result, ruleName, {
+      actual: enabled,
+      possible: [true, false]
+    })
+
+    if (!validOptions) { return }
+
+    var utilityClasses = []
+
+    try {
+      utilityClasses = buildUtilityClasses(options)
+    } catch (e) {
+      // Editor plugin won't work, needs correct path
+    }
 
     if (utilityClasses.length == 0) {
       return
