@@ -1,13 +1,13 @@
 [31mPA[39m[33mRK[39m[32mER[39m-JS
 Total Stylesheets: 1
-Total Stylesheet Size: 55900
-Total Rules: 579
-Total Selectors: 763
-Total Identifiers: 1405
-Total Declarations: 1256
-Selectors Per Rule: 1.3177892918825562
-Identifiers Per Selector: 1.836173001310616
-Specificity Per Selector: 14.613368283093054
+Total Stylesheet Size: 57139
+Total Rules: 596
+Total Selectors: 780
+Total Identifiers: 1426
+Total Declarations: 1302
+Selectors Per Rule: 1.308724832214765
+Identifiers Per Selector: 1.8205128205128205
+Specificity Per Selector: 14.517948717948718
 Top Selector Specificity: 40
 Top Selector Specificity Selector: .btn-group .btn-group-form:first-child .btn
 Total Id Selectors: 0

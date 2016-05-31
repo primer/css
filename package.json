@@ -23,19 +23,20 @@
     "test": "npm run build"
   },
   "dependencies": {
-    "primer-support": "*",
-    "primer-utilities": "*",
-    "primer-base": "*",
-    "primer-forms": "*",
-    "primer-buttons": "*",
     "primer-alerts": "*",
     "primer-avatars": "*",
+    "primer-base": "*",
     "primer-blankslate": "*",
+    "primer-buttons": "*",
+    "primer-flex-table": "*",
+    "primer-forms": "*",
+    "primer-layout": "*",
     "primer-navigation": "*",
     "primer-states": "*",
+    "primer-support": "*",
     "primer-tooltips": "*",
-    "primer-flex-table": "*",
-    "primer-truncate": "*"
+    "primer-truncate": "*",
+    "primer-utilities": "*"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
