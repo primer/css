@@ -9,7 +9,7 @@ This repository is a compilation of [several CSS modules](https://github.com/pri
 
 ## Documentation
 
-You can read more about support in the [docs][docs].
+You can read more about primer in the [docs][docs].
 
 ## Install
 
