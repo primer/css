@@ -1,0 +1,6 @@
+{
+  "use": ["autoprefixer"],
+  "autoprefixer": {
+    "browsers": "> 5%"
+  }
+}
