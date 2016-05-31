@@ -2,7 +2,7 @@
   "version": "4.0.0",
   "name": "primer-css",
   "description": "Primer is the CSS toolkit that powers GitHub's front-end design. It's purposefully limited to common components to provide our developers with the most flexibility, and to keep GitHub uniquely *GitHubby*. It's built with SCSS, so it's easy to include all or part of it within your own project.",
-  "homepage": "https://github.com/styleguide",
+  "homepage": "http://primercss.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "index.scss",
