@@ -1,10 +1,10 @@
 [31mPA[39m[33mRK[39m[32mER[39m-JS
 Total Stylesheets: 1
-Total Stylesheet Size: 57139
+Total Stylesheet Size: 42593
 Total Rules: 596
 Total Selectors: 780
-Total Identifiers: 1426
-Total Declarations: 1302
+Total Identifiers: 1414
+Total Declarations: 1298
 Selectors Per Rule: 1.308724832214765
 Identifiers Per Selector: 1.8205128205128205
 Specificity Per Selector: 14.517948717948718

@@ -16,8 +16,8 @@
   },
   "scripts": {
     "build": "npm run setup && npm run preprocess",
-    "stats": "parker build/build.css > .primer-stats.txt",
-    "preprocess": "node-sass index.scss --include-path node_modules | postcss -c .postcss.json -o build/build.css && npm run stats",
+    "stats": "parker build/build.css > build/.primer-stats.txt",
+    "preprocess": "node-sass index.scss --include-path node_modules --output-style compressed | postcss -c .postcss.json -o build/build.css && npm run stats",
     "setup": "npm install",
     "preversion": "npm run build",
     "test": "npm run build"

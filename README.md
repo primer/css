@@ -31,7 +31,7 @@ You can also import specific portions of the module by importing those partials 
 
 ## Build
 
-For a compiled **css** version of this module, a npm script is included that will output a css version to `build/build.css`
+A compiled **css** version of this module is included in the `build/build.css` folder. To rebuild you can use the included npm script that will output a new css.
 
 ```
 $ npm run build
