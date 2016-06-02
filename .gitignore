@@ -2,3 +2,5 @@
 .sass-cache
 node_modules
 build
+_site
+docs
