@@ -1,5 +1,5 @@
 {
-  "version": "4.0.1",
+  "version": "4.0.2",
   "name": "primer-css",
   "description": "Primer is the CSS toolkit that powers GitHub's front-end design. It's purposefully limited to common components to provide our developers with the most flexibility, and to keep GitHub uniquely *GitHubby*. It's built with SCSS, so it's easy to include all or part of it within your own project.",
   "homepage": "http://primercss.io/",
@@ -8,19 +8,18 @@
   "style": "index.scss",
   "files": [
     "index.scss",
-    "lib"
+    "lib",
+    "build"
   ],
   "repository": "https://github.com/primer/primer.git",
   "bugs": {
     "url": "https://github.com/primer/primer/issues"
   },
   "scripts": {
-    "build": "npm run setup && npm run preprocess",
-    "stats": "parker build/build.css > .primer-stats.txt",
-    "preprocess": "node-sass index.scss --include-path node_modules | postcss -c .postcss.json -o build/build.css && npm run stats",
-    "setup": "npm install",
-    "preversion": "npm run build",
-    "test": "npm run build"
+    "setup": "if [ ! -d \"node_modules\" ]; then npm install; fi",
+    "build": "node-sass index.scss --include-path node_modules --output-style compressed | postcss -c .postcss.json -o build/build.css",
+    "prepublish": "npm run setup && npm run build",
+    "test": "stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
     "primer-alerts": "*",
@@ -41,7 +40,6 @@
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "node-sass": "^3.7.0",
-    "parker": "0.0.10",
     "postcss-cli": "^2.5.2"
   },
   "keywords": [

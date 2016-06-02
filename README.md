@@ -7,10 +7,6 @@
 
 This repository is a compilation of [several CSS modules](https://github.com/primer).
 
-## Documentation
-
-You can read more about primer in the [docs][docs].
-
 ## Install
 
 This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-css` with this command.
@@ -31,26 +27,21 @@ You can also import specific portions of the module by importing those partials 
 
 ## Build
 
-For a compiled **css** version of this module, a npm script is included that will output a css version to `build/build.css`
+For a compiled **css** version of this module, a npm script is included that will output a css version to `build/build.css` The built css file is also included in the npm package.
 
 ```
 $ npm run build
 ```
 
-## Primer stats
+## Documentation
 
-When compiling the Sass files, we will automatically generate a `.primer-stats.md` file. This is tracked in the Git repository to provide us historical and contextual information on the changes we introduce. For example, we'll know when the number of selectors or declarations rises sharply within a single change.
-
-## Related
-
-* [Primer Documentation][docs]
-* [primer][primer-org]
+You can read more about primer in the [docs][docs].
 
 ## License
 
-MIT &copy; [GitHub](https://github.com/)
+[MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer-org]: https://github.com/primer
+[primer]: https://github.com/primer/primer
 [docs]: http://primercss.io/
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
