@@ -27,10 +27,7 @@
   },
   "homepage": "https://github.com/primer/stylelint-selector-no-utility#readme",
   "dependencies": {
-    "node-sass": "^3.7.0",
-    "postcss": "^5.0.21",
-    "postcss-value-parser": "^3.3.0",
-    "primer-utilities": "^0.2.1",
+    "primer-utilities": "^0.3.0",
     "stylelint": "^6.5.1"
   },
   "devDependencies": {

@@ -9,6 +9,10 @@ testRule(rule.rule, {
     { code: "a {  }" },
   ],
   reject: [
-    { code: ".m-0 { color: #fff; }" }
+    { code: ".m-0 { color: #fff; }" },
+    { code: ".m-0:hover { color: #fff; }" },
+    { code: ".m-2, .foo { color: #fff; }" },
+    { code: ".m-2[type=button] { color: #fff; }" },
+    { code: ".foo.m-0 { color: #fff; }" }
   ]
 })
