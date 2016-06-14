@@ -17,11 +17,13 @@ const validCss = (
   color: #333;
   background: linear-gradient(#fff, rgba(0, 0, 0, 0.8));
 }
+
 .selector-a,
 .selector-b:not(:first-child) {
   top: calc(calc(1em * 2) / 3);
   padding: 10px !important;
 }
+
 .selector-x { width: 10%; }
 .selector-y { width: 20%; }
 .selector-z { width: 30%; }
@@ -33,6 +35,7 @@ const validCss = (
     transform: translate(1, 1) scale(3);
   }
 }
+
 @media (min-orientation: portrait), projection and (color) {
   .selector-i + .selector-ii {
     font-family: helvetica, "arial black", sans-serif;

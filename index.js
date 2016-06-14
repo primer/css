@@ -220,6 +220,21 @@ module.exports = {
     "declaration-colon-newline-after": "always-multi-line",
     "declaration-colon-space-after": "always-single-line",
     "declaration-colon-space-before": "never",
+    "declaration-property-value-blacklist": {
+      "/^transition/": [
+        "/all/"
+      ],
+      "/^background/": [
+        "http:",
+        "https:"
+      ],
+      "/^border/": [
+        "none"
+      ],
+      "/.+/": [
+        "initial"
+      ]
+    },
     "font-family-name-quotes": "always-where-recommended",
     "function-calc-no-unspaced-operator": true,
     "function-comma-newline-after": "always-multi-line",
@@ -247,34 +262,26 @@ module.exports = {
     "no-duplicate-selectors": true,
     "no-eol-whitespace": true,
     "no-extra-semicolons": true,
-    "no-invalid-double-slash-comments": true,
     "no-missing-eof-newline": true,
     "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
-    "number-zero-length-no-unit": true,
     "primer/selector-no-utility": true,
     "property-case": "lower",
     "property-no-vendor-prefix": true,
-    "property-value-blacklist": {
-      "/^transition/": [
-        "/all/"
-      ],
-      "/^background/": [
-        "/http:/"
-      ],
-      "/^border/": [
-        "none"
-      ],
-      "/.+/": [
-        "initial"
-      ]
-    },
     "rule-nested-empty-line-before": [
       "always-multi-line",
       {
         "except": [
           "first-nested"
         ],
+        "ignore": [
+          "after-comment"
+        ]
+      }
+    ],
+    "rule-non-nested-empty-line-before": [
+      "always-multi-line",
+      {
         "ignore": [
           "after-comment"
         ]
