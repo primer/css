@@ -1,0 +1,35 @@
+{
+  "name": "stylelint-config-primer",
+  "version": "1.0.0",
+  "description": "Sharable stylelint config used by GitHub's CSS",
+  "main": "index.js",
+  "scripts": {
+    "ava": "ava --verbose \"__tests__/**/*.js\"",
+    "test": "npm run ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/primer/stylelint-config-primer.git"
+  },
+  "keywords": [
+    "github",
+    "primer",
+    "stylelint-config",
+    "stylelint",
+    "css"
+  ],
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/primer/stylelint-config-primer/issues"
+  },
+  "homepage": "https://github.com/primer/stylelint-config-primer#readme",
+  "dependencies": {
+    "stylelint-scss": "^1.1.1",
+    "stylelint-selector-no-utility": "^1.1.0"
+  },
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "stylelint": "^6.6.0"
+  }
+}
