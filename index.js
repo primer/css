@@ -287,7 +287,6 @@ module.exports = {
         ]
       }
     ],
-    "scss/at-extend-no-missing-placeholder": true,
     "scss/selector-no-redundant-nesting-selector": true,
     "selector-attribute-brackets-space-inside": "never",
     "selector-attribute-operator-space-after": "never",
