@@ -11,6 +11,7 @@
     "lib",
     "build"
   ],
+  "main": "build/build.css",
   "repository": "https://github.com/primer/primer.git",
   "bugs": {
     "url": "https://github.com/primer/primer/issues"
