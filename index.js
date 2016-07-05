@@ -3,7 +3,7 @@ var primerUtilities = require("primer-utilities")
 
 var ruleName = "primer/selector-no-utility"
 var messages = stylelint.utils.ruleMessages(ruleName, {
-  rejected: function(classname) { return "Avoid styling the utilty class `" + classname + "`"  },
+  rejected: function(classname) { return "Avoid styling the utilty class `" + classname + "`" }
 })
 
 module.exports = stylelint.createPlugin(ruleName, function(enabled) {

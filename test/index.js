@@ -6,7 +6,7 @@ testRule(rule.rule, {
   config: true,
   skipBasicChecks: true,
   accept: [
-    { code: "a {  }" },
+    { code: "a {  }" }
   ],
   reject: [
     { code: ".m-0 { color: #fff; }" },
