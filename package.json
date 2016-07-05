@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "ava": "ava --verbose \"__tests__/**/*.js\"",
-    "test": "npm run ava"
+    "lint": "eslint **/*.js",
+    "test": "npm run lint && npm run ava"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,8 @@
   },
   "devDependencies": {
     "ava": "^0.15.2",
+    "eslint": "^3.0.1",
+    "eslint-plugin-github": "^0.4.0",
     "stylelint": "^6.6.0"
   }
 }

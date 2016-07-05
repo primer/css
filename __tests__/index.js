@@ -1,8 +1,8 @@
-import config from "../"
-import stylelint from "stylelint"
-import test from "ava"
+const config = require("../")
+const stylelint = require("stylelint")
+const test = require("ava")
 
-const validCss = (
+const validCss =
 `@import "x.css";
 @import "y.css";
 
@@ -70,13 +70,13 @@ const validCss = (
     background-image: url("x.svg");
   }
 }
-`)
+`
 
-const invalidCss = (
+const invalidCss =
 `a {
   top: .2em;
 }
-`)
+`
 
 test("no warnings with valid css", t => {
   return stylelint.lint({
