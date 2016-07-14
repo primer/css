@@ -253,16 +253,17 @@ module.exports = {
     "media-feature-colon-space-after": "always",
     "media-feature-colon-space-before": "never",
     "media-feature-no-missing-punctuation": true,
+    "media-feature-parentheses-space-inside": "never",
     "media-feature-range-operator-space-after": "always",
     "media-feature-range-operator-space-before": "always",
     "media-query-list-comma-newline-after": "always-multi-line",
     "media-query-list-comma-space-after": "always-single-line",
     "media-query-list-comma-space-before": "never",
-    "media-query-parentheses-space-inside": "never",
     "no-duplicate-selectors": true,
     "no-eol-whitespace": true,
     "no-extra-semicolons": true,
     "no-missing-eof-newline": true,
+    "no-missing-end-of-source-newline": true,
     "no-unsupported-browser-features": [true, {
       "browsers": "> 5%, last 2 firefox versions, last 2 chrome versions, last 2 safari versions, last 2 edge versions, ie 11"
     }],
