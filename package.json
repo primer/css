@@ -26,13 +26,16 @@
   },
   "homepage": "https://github.com/primer/stylelint-config-primer#readme",
   "dependencies": {
-    "stylelint-scss": "^1.1.1",
-    "stylelint-selector-no-utility": "^1.1.0"
+    "stylelint-scss": "^1.2.1",
+    "stylelint-selector-no-utility": "^1.2.0"
   },
   "devDependencies": {
     "ava": "^0.15.2",
     "eslint": "^3.0.1",
     "eslint-plugin-github": "^0.4.0",
-    "stylelint": "^6.6.0"
+    "stylelint": "^7.0.0"
+  },
+  "peerDependencies": {
+    "stylelint": "^7.0.0"
   }
 }

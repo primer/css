@@ -115,7 +115,7 @@ This is a list of the lints turned on in this configuration, and what they do.
 * [no-duplicate-selectors](http://stylelint.io/user-guide/rules/no-duplicate-selectors/): Disallow duplicate selectors within a stylesheet.
 * [no-eol-whitespace](http://stylelint.io/user-guide/rules/no-eol-whitespace/): Disallow end-of-line whitespace.
 * [no-extra-semicolons](http://stylelint.io/user-guide/rules/no-extra-semicolons/): Disallow extra semicolons.
-* [no-missing-eof-newline](http://stylelint.io/user-guide/rules/no-missing-eof-newline/): Disallow missing end-of-file newlines in non-empty files.
+* [no-missing-end-of-source-newline](http://stylelint.io/user-guide/rules/no-missing-end-of-source-newline/): Disallow missing end-of-file newlines in non-empty files.
 
 #### Media Feature
 
@@ -127,7 +127,7 @@ This is a list of the lints turned on in this configuration, and what they do.
 
 #### Media Query
 
-* [media-query-parentheses-space-inside](http://stylelint.io/user-guide/rules/media-query-parentheses-space-inside/): There must never be whitespace on the inside the parentheses.
+* [media-feature-parentheses-space-inside](http://stylelint.io/user-guide/rules/media-feature-parentheses-space-inside/): There must never be whitespace on the inside the parentheses.
 
 #### Media Query List
 
