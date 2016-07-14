@@ -116,6 +116,7 @@ This is a list of the lints turned on in this configuration, and what they do.
 * [no-eol-whitespace](http://stylelint.io/user-guide/rules/no-eol-whitespace/): Disallow end-of-line whitespace.
 * [no-extra-semicolons](http://stylelint.io/user-guide/rules/no-extra-semicolons/): Disallow extra semicolons.
 * [no-missing-end-of-source-newline](http://stylelint.io/user-guide/rules/no-missing-end-of-source-newline/): Disallow missing end-of-file newlines in non-empty files.
+* [no-unsupported-browser-features](http://stylelint.io/user-guide/rules/no-unsupported-browser-features/): Disallow features that are unsupported by the browsers that [we are targeting in the config](https://github.com/primer/stylelint-config-primer/blob/70866772c3b916be5c62b95cfd94b37dfc6e5b04/index.js#L267)
 
 #### Media Feature
 

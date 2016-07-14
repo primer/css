@@ -263,6 +263,10 @@ module.exports = {
     "no-eol-whitespace": true,
     "no-extra-semicolons": true,
     "no-missing-end-of-source-newline": true,
+    "no-unsupported-browser-features": [true, {
+      "browsers": "> 5%, last 2 firefox versions, last 2 chrome versions, last 2 safari versions, last 2 edge versions, ie 11",
+      "severity": "warning"
+    }],
     "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
     "primer/selector-no-utility": true,
