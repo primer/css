@@ -4,6 +4,7 @@
 # 1.2.0
 
 - Updating dependency for stylelint@7.0.0
+- Updating to latest Utilities
 
 # 1.1.0
 
