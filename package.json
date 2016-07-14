@@ -28,7 +28,7 @@
   "homepage": "https://github.com/primer/stylelint-selector-no-utility#readme",
   "dependencies": {
     "primer-utilities": "^0.3.0",
-    "stylelint": "^6.5.1"
+    "stylelint": "^7.0.0"
   },
   "devDependencies": {
     "eslint": "^2.10.2",
