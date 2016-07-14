@@ -4,7 +4,7 @@
   "description": "Sharable stylelint config used by GitHub's CSS",
   "main": "index.js",
   "scripts": {
-    "ava": "ava --verbose \"__tests__/**/*.js\"",
+    "ava": "ava --verbose \"tests/**/*.js\"",
     "lint": "eslint **/*.js",
     "test": "npm run lint && npm run ava"
   },
