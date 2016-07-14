@@ -1,6 +1,10 @@
 
 # HEAD
 
+# 1.2.0
+
+- Updating dependency for stylelint@7.0.0
+
 # 1.1.0
 
   * Updated: Using updated primer-utilities module to pull classes in through exports
