@@ -27,12 +27,12 @@
   },
   "homepage": "https://github.com/primer/stylelint-selector-no-utility#readme",
   "dependencies": {
-    "primer-utilities": "^0.5.0",
+    "primer-utilities": "^0.6.0",
     "stylelint": "^7.0.0"
   },
   "devDependencies": {
-    "eslint": "^2.10.2",
-    "eslint-plugin-github": "^0.4.0",
+    "eslint": "^3.3.1",
+    "eslint-plugin-github": "^0.5.0",
     "stylelint-test-rule-tape": "^0.2.0"
   }
 }
