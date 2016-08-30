@@ -165,6 +165,7 @@ This is a list of the lints turned on in this configuration, and what they do.
 * [selector-max-specificity](http://stylelint.io/user-guide/rules/selector-max-specificity/): Limit the specificity of selectors to `"0,4,0"`.
 * [selector-no-id](http://stylelint.io/user-guide/rules/selector-no-id/): Disallow id selectors.
 * [selector-no-qualifying-type](http://stylelint.io/user-guide/rules/selector-no-qualifying-type/): Disallow qualifying a selector by type.
+* [selector-no-type](http://stylelint.io/user-guide/rules/selector-no-type/): Disallow type selectors.
 * [selector-pseudo-class-case](http://stylelint.io/user-guide/rules/selector-pseudo-class-case/): pseudo-class selectors should always be lowercase.
 * [selector-pseudo-class-parentheses-space-inside](http://stylelint.io/user-guide/rules/selector-pseudo-class-parentheses-space-inside/): There must never be whitespace on the inside the parentheses.
 * [selector-pseudo-element-case](http://stylelint.io/user-guide/rules/selector-pseudo-element-case/): pseudo-element selectors should always be lowercase.

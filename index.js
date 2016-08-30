@@ -310,6 +310,7 @@ module.exports = {
     "selector-max-specificity": "0,4,0",
     "selector-no-id": true,
     "selector-no-qualifying-type": true,
+    "selector-no-type": true,
     "selector-pseudo-class-case": "lower",
     "selector-pseudo-class-parentheses-space-inside": "never",
     "selector-pseudo-element-case": "lower",
