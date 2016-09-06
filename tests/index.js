@@ -9,7 +9,7 @@ const validCss =
 `
 
 const invalidCss =
-`a {
+`.foo {
   top: .2em;
 }
 `
