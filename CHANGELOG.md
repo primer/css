@@ -1,6 +1,10 @@
 
 # HEAD
 
+# 1.3.0
+
+- Updating to latest Utilities
+
 # 1.2.0
 
 - Updating dependency for stylelint@7.0.0
