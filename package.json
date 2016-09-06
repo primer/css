@@ -27,7 +27,7 @@
   "homepage": "https://github.com/primer/stylelint-config-primer#readme",
   "dependencies": {
     "stylelint-scss": "^1.2.1",
-    "stylelint-selector-no-utility": "^1.2.0"
+    "stylelint-selector-no-utility": "^1.3.0"
   },
   "devDependencies": {
     "ava": "^0.16.0",
