@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
-    "node-sass": "^3.7.0",
+    "node-sass": "^3.9.3",
     "postcss-cli": "^2.5.2"
   },
   "keywords": [
