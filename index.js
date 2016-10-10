@@ -248,6 +248,7 @@ module.exports = {
     "function-url-quotes": "always",
     "function-whitespace-after": "always",
     "indentation": 2,
+    "length-zero-no-unit": true,
     "max-empty-lines": 1,
     "max-nesting-depth": 3,
     "media-feature-colon-space-after": "always",
