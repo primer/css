@@ -141,6 +141,10 @@ This is a list of the lints turned on in this configuration, and what they do.
 * [number-leading-zero](http://stylelint.io/user-guide/rules/number-leading-zero/): There must always be a leading zero.
 * [number-no-trailing-zeros](http://stylelint.io/user-guide/rules/number-no-trailing-zeros/): Disallow trailing zeros in numbers.
 
+#### Length
+
+* [length-zero-no-unit](http://stylelint.io/user-guide/rules/length-zero-no-unit/): Disallow units for zero lengths.
+
 #### Property
 
 * [property-case](http://stylelint.io/user-guide/rules/property-case/): Properties must be written in lowercase.
