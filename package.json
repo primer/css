@@ -39,7 +39,7 @@
     "primer-utilities": "*"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.6",
+    "autoprefixer": "^6.5.1",
     "node-sass": "^3.7.0",
     "postcss-cli": "^2.5.2"
   },
