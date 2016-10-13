@@ -30,7 +30,7 @@
     "primer-flex-table": "*",
     "primer-forms": "*",
     "primer-layout": "*",
-    "primer-markdown": "*",
+    "primer-markdown": "3.3.1",
     "primer-navigation": "*",
     "primer-states": "*",
     "primer-support": "*",
