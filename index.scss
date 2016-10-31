@@ -11,20 +11,5 @@
 // Should you need specific files, you can easily use separate `@import`s.
 
 // Global requirements
-@import "primer-support/index.scss";
-@import "primer-base/index.scss";
-@import "primer-utilities/index.scss";
-
-@import "primer-forms/index.scss";
-@import "primer-layout/index.scss";
-@import "primer-buttons/index.scss";
-@import "primer-alerts/index.scss";
-@import "primer-avatars/index.scss";
-@import "primer-blankslate/index.scss";
-@import "primer-navigation/index.scss";
-@import "primer-states/index.scss";
-@import "primer-tooltips/index.scss";
-@import "primer-markdown/index.scss";
-
-@import "primer-flex-table/index.scss";
-@import "primer-truncate/index.scss";
+@import "primer-core/index.scss";
+@import "primer-product/index.scss";

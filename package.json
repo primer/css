@@ -17,31 +17,16 @@
   },
   "scripts": {
     "setup": "if [ ! -d \"node_modules\" ]; then npm install; fi",
-    "build": "node-sass index.scss --include-path node_modules --output-style compressed | postcss -c .postcss.json -o build/build.css",
+    "build": "primer-module-build index.scss",
     "prepublish": "npm run setup && npm run build",
     "test": "npm run build"
   },
   "dependencies": {
-    "primer-alerts": "*",
-    "primer-avatars": "*",
-    "primer-base": "*",
-    "primer-blankslate": "*",
-    "primer-buttons": "*",
-    "primer-flex-table": "*",
-    "primer-forms": "*",
-    "primer-layout": "*",
-    "primer-markdown": "*",
-    "primer-navigation": "*",
-    "primer-states": "*",
-    "primer-support": "*",
-    "primer-tooltips": "*",
-    "primer-truncate": "*",
-    "primer-utilities": "*"
+    "primer-core": "*",
+    "primer-product": "*"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.6",
-    "node-sass": "^3.7.0",
-    "postcss-cli": "^2.5.2"
+    "primer-module-build": "*"
   },
   "keywords": [
     "primer",
