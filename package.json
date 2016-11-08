@@ -22,11 +22,11 @@
     "test": "npm run build"
   },
   "dependencies": {
-    "primer-core": "*",
-    "primer-product": "*"
+    "primer-core": "^1.0.0",
+    "primer-product": "^1.0.0"
   },
   "devDependencies": {
-    "primer-module-build": "*"
+    "primer-module-build": "^1.0.2"
   },
   "keywords": [
     "primer",
