@@ -18,7 +18,7 @@ module.exports = stylelint.createPlugin(ruleName, function(enabled) {
 
     var utilityClasses = primerUtilities.cssstats.selectors.values
 
-    if (utilityClasses.length == 0) {
+    if (utilityClasses.length === 0) {
       return
     }
 
