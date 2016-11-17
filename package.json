@@ -30,7 +30,7 @@
     "stylelint-selector-no-utility": "^1.3.0"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
+    "ava": "^0.17.0",
     "eslint": "^3.0.1",
     "eslint-plugin-github": "^0.6.1",
     "stylelint": "^7.4.2"
