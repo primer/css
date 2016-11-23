@@ -1,5 +1,13 @@
 # HEAD
 
+# 4.4.0
+
+- Adding primer-marketing module to primer
+
+# 4.3.0
+
+- Using primer-core and primer-product modules
+
 # 4.1.0
 
 - Added: [primer-markdown](https://github.com/primer/markdown) to the build
