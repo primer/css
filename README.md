@@ -161,7 +161,6 @@ This is a list of the lints turned on in this configuration, and what they do.
 * [selector-attribute-brackets-space-inside](http://stylelint.io/user-guide/rules/selector-attribute-brackets-space-inside/): There must never be whitespace on the inside the brackets.
 * [selector-attribute-operator-space-after](http://stylelint.io/user-guide/rules/selector-attribute-operator-space-after/): There must never be a single after after the operator.
 * [selector-attribute-operator-space-before](http://stylelint.io/user-guide/rules/selector-attribute-operator-space-before/): There must never be a single before after the operator.
-* [selector-class-pattern](http://stylelint.io/user-guide/rules/selector-class-pattern/): Selectors must match the regex `^(?!(js\\-))[a-z\\-0-9]+$`.
 * [selector-combinator-space-after](http://stylelint.io/user-guide/rules/selector-combinator-space-after/): There must always be a single space after the combinators.
 * [selector-combinator-space-before](http://stylelint.io/user-guide/rules/selector-combinator-space-before/): There must always be a single space before the combinators.
 * [selector-max-compound-selectors](http://stylelint.io/user-guide/rules/selector-max-compound-selectors/): Limit the number of compound selectors in a selector to `3`.

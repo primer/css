@@ -1,5 +1,7 @@
 # HEAD
 
+- Removed: `selector-class-pattern` from config. https://github.com/primer/stylelint-config-primer/pull/11
+
 # 1.3.0
 
 - Added: `length-zero-no-unit` to disallow zero values with units eg `0px`

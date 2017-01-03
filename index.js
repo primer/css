@@ -296,12 +296,6 @@ module.exports = {
     "selector-attribute-brackets-space-inside": "never",
     "selector-attribute-operator-space-after": "never",
     "selector-attribute-operator-space-before": "never",
-    "selector-class-pattern": [
-      "^(?!(js\\-))[a-z\\-0-9]+$",
-      {
-        "message": "Selector should be written in lowercase with hyphens (selector-class-pattern)"
-      }
-    ],
     "selector-combinator-space-after": "always",
     "selector-combinator-space-before": "always",
     "selector-list-comma-newline-after": "always",
