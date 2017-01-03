@@ -1,5 +1,8 @@
 # HEAD
 
+# 1.4.0
+
+- Updated: Development dependencies are any version `*`
 - Removed: `selector-class-pattern` from config. https://github.com/primer/stylelint-config-primer/pull/11
 
 # 1.3.0
