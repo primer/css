@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-primer",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Sharable stylelint config used by GitHub's CSS",
   "main": "index.js",
   "scripts": {
