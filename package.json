@@ -16,9 +16,8 @@
     "url": "https://github.com/primer/primer/issues"
   },
   "scripts": {
-    "setup": "if [ ! -d \"node_modules\" ]; then npm install; fi",
     "build": "primer-module-build index.scss",
-    "prepublish": "npm run setup && npm run build",
+    "prepublish": "npm run build",
     "test": "npm run build"
   },
   "dependencies": {
@@ -27,7 +26,7 @@
     "primer-product": "^1.0.0"
   },
   "devDependencies": {
-    "primer-module-build": "^1.0.2"
+    "primer-module-build": "*"
   },
   "keywords": [
     "primer",
