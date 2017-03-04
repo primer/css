@@ -21,7 +21,7 @@
     "test": "npm run build"
   },
   "dependencies": {
-    "primer-core": "^1.0.0",
+    "primer-core": "^2.0.0",
     "primer-marketing": "^1.0.0",
     "primer-product": "^1.0.0"
   },
