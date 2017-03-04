@@ -23,7 +23,7 @@
   "dependencies": {
     "primer-core": "^2.0.0",
     "primer-marketing": "^1.0.0",
-    "primer-product": "^1.0.0"
+    "primer-product": "^2.0.0"
   },
   "devDependencies": {
     "primer-module-build": "*"
