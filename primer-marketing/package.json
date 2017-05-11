@@ -1,0 +1,42 @@
+{
+  "version": "3.0.0",
+  "name": "primer-marketing",
+  "description": "Primer CSS's marketing modules",
+  "homepage": "http://primercss.io/",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "build/build.css",
+  "main": "build/index.js",
+  "files": [
+    "index.scss",
+    "build"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/primer/primer-marketing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/primer/primer-marketing/issues"
+  },
+  "scripts": {
+    "build": "primer-module-build index.scss",
+    "prepublish": "npm run build",
+    "test": "npm run build"
+  },
+  "dependencies": {
+    "primer-breadcrumb": "^0.1.1",
+    "primer-cards": "^0.1.2",
+    "primer-marketing-support": "^0.5.0",
+    "primer-marketing-type": "^0.2.0",
+    "primer-page-headers": "^0.1.1",
+    "primer-page-sections": "^0.1.1",
+    "primer-support": "^4.0.0",
+    "primer-tables": "^0.1.2"
+  },
+  "peerDependencies": {
+    "primer-core": "^3.0.0"
+  },
+  "devDependencies": {
+    "primer-module-build": "*"
+  }
+}

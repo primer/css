@@ -1,0 +1,41 @@
+{
+  "version": "0.1.2",
+  "name": "primer-tables",
+  "description": "Styles to display tabular data for marketing websites at GitHub.",
+  "homepage": "http://primercss.io/",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "build/build.css",
+  "main": "build/index.js",
+  "files": [
+    "index.scss",
+    "lib",
+    "build"
+  ],
+  "repository": "https://github.com/primer/primer-tables.git",
+  "bugs": {
+    "url": "https://github.com/primer/primer-tables/issues"
+  },
+  "scripts": {
+    "build": "primer-module-build index.scss",
+    "prepublish": "npm run build",
+    "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
+  },
+  "dependencies": {
+    "primer-support": "*",
+    "primer-marketing-support": "*"
+  },
+  "devDependencies": {
+    "stylelint": "*",
+    "stylelint-config-primer": "*",
+    "primer-module-build": "*"
+  },
+  "keywords": [
+    "css",
+    "github",
+    "primer",
+    "primercss",
+    "style",
+    "tables"
+  ]
+}
