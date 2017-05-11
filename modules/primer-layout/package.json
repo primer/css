@@ -12,9 +12,12 @@
     "lib",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-layout.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/primer/primer-css.git"
+  },
   "bugs": {
-    "url": "https://github.com/primer/primer-layout/issues"
+    "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
     "build": "primer-module-build index.scss",
