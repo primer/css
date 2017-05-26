@@ -33,7 +33,8 @@
     "ava": "*",
     "eslint": "*",
     "eslint-plugin-github": "*",
-    "stylelint": "*"
+    "stylelint": "*",
+    "stylelint-order": "^0.4.4"
   },
   "peerDependencies": {
     "stylelint": "^7.7.1"
