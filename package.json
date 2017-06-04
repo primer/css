@@ -29,6 +29,7 @@
     "primer-product": "^3.0.0"
   },
   "devDependencies": {
+    "lerna": "^2.0.0-rc.2",
     "primer-module-build": "*"
   },
   "keywords": [
