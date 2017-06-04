@@ -12,10 +12,7 @@
     "lib",
     "build"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/primer/primer-css.git"
-  },
+  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-blankslate",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },

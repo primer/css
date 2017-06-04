@@ -11,10 +11,7 @@
     "index.scss",
     "build"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/primer/primer-css.git"
-  },
+  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-product",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },
