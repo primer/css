@@ -19,6 +19,9 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "publish": "lerna publish",
+    "updated": "lerna updated",
     "build": "primer-module-build index.scss",
     "prepublish": "npm run build",
     "test": "npm run build"
