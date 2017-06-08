@@ -1,7 +1,7 @@
 # Primer CSS Buttons
 
 [![NPM version](http://img.shields.io/npm/v/primer-buttons.svg)](https://www.npmjs.org/package/primer-buttons)
-[![Build Status](https://travis-ci.org/primer/buttons.svg?branch=master)](https://travis-ci.org/primer/buttons)
+[![Build Status](https://travis-ci.org/primer/primer-buttons.svg?branch=master)](https://travis-ci.org/primer/primer-buttons)
 
 > Buttons are used for actions, like in forms, while textual hyperlinks are used for destinations, or moving from one page to another.
 
@@ -172,27 +172,27 @@ You can easily append a count to a **small button**. Add the `.with-count` class
 </div>
 ```
 
-You can also use the [counter](../utilities/#counter) component within buttons:
+You can also use the [counter](../../product/components/labels) component within buttons:
 
 ```html
 <button class="btn" type="button">
   Button
-  <span class="counter">12</span>
+  <span class="Counter">12</span>
 </button>
 
 <button class="btn btn-primary" type="button">
   Button
-  <span class="counter">12</span>
+  <span class="Counter">12</span>
 </button>
 
 <button class="btn btn-danger" type="button">
   Button
-  <span class="counter">12</span>
+  <span class="Counter">12</span>
 </button>
 
 <button class="btn btn-outline" type="button">
   Button
-  <span class="counter">12</span>
+  <span class="Counter">12</span>
 </button>
 ```
 
