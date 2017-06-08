@@ -1,5 +1,5 @@
 {
-  "version": "1.0.6",
+  "version": "1.0.7-mono.0",
   "name": "primer-forms",
   "description": "Style individual form controls and utilize common layouts.",
   "homepage": "http://primercss.io/",
@@ -22,12 +22,12 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-support": "*"
+    "primer-support": "^4.0.1-mono.0"
   },
   "devDependencies": {
+    "primer-module-build": "*",
     "stylelint": "*",
-    "stylelint-config-primer": "*",
-    "primer-module-build": "*"
+    "stylelint-config-primer": "*"
   },
   "keywords": [
     "primer",

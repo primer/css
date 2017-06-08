@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2-mono.0",
   "name": "primer-page-sections",
   "description": "Styles to create distinct sections of marketing pages at GitHub.",
   "homepage": "http://primercss.io/",
@@ -22,13 +22,13 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-support": "*",
-    "primer-marketing-support": "*"
+    "primer-marketing-support": "*",
+    "primer-support": "^4.0.1-mono.0"
   },
   "devDependencies": {
+    "primer-module-build": "*",
     "stylelint": "*",
-    "stylelint-config-primer": "*",
-    "primer-module-build": "*"
+    "stylelint-config-primer": "*"
   },
   "keywords": [
     "css",
