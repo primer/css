@@ -1,7 +1,15 @@
 // Typography variables
 // stylelint-disable declaration-bang-space-before
 
-// Heading sizes
+// Heading sizes - mobile
+// h4—h6 remain the same size on both mobile & desktop
+$h00-size-mobile: 40px !default;
+$h0-size-mobile: 32px !default;
+$h1-size-mobile: 26px !default;
+$h2-size-mobile: 22px !default;
+$h3-size-mobile: 18px !default;
+
+// Heading sizes - desktop
 $h00-size: 48px !default;
 $h0-size: 40px !default;
 $h1-size: 32px !default;

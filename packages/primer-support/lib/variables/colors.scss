@@ -3,7 +3,6 @@
 // stylelint-disable declaration-bang-space-before
 
 // State indicators.
-$status-renamed:    $yellow-500 !default;
 $status-pending:    desaturate($yellow-700, 15%) !default;
 
 // Repository type colors
@@ -24,8 +23,12 @@ $border-blue-light:  $blue-200 !default;
 $border-green:       $green-400 !default;
 $border-green-light: desaturate($green-300, 40%) !default;
 
+$border-purple:      $purple !default;
+
 $border-red:         $red !default;
 $border-red-light:   desaturate($red-300, 60%) !default;
+
+$border-purple:      $purple !default;
 
 $border-yellow:      desaturate($yellow-300, 60%) !default;
 
