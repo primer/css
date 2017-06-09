@@ -11,10 +11,7 @@
     "lib",
     "build"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/primer/primer-css.git"
-  },
+  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-marketing",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },
@@ -32,7 +29,6 @@
     "primer-product": "^3.0.0"
   },
   "devDependencies": {
-    "lerna": "^2.0.0-rc.2",
     "primer-module-build": "*"
   },
   "keywords": [
