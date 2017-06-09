@@ -1,0 +1,44 @@
+{
+  "version": "6.0.0",
+  "name": "primer-css",
+  "description": "Primer is the CSS toolkit that powers GitHub's front-end design. It's purposefully limited to common components to provide our developers with the most flexibility, and to keep GitHub uniquely *GitHubby*. It's built with SCSS, so it's easy to include all or part of it within your own project.",
+  "homepage": "http://primercss.io/",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "build/build.css",
+  "files": [
+    "index.scss",
+    "lib",
+    "build"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/primer/primer-css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/primer/primer-css/issues"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "publish": "lerna publish",
+    "updated": "lerna updated",
+    "build": "primer-module-build index.scss",
+    "prepublish": "npm run build",
+    "test": "npm run build"
+  },
+  "dependencies": {
+    "primer-core": "^3.0.0",
+    "primer-marketing": "^3.0.0",
+    "primer-product": "^3.0.0"
+  },
+  "devDependencies": {
+    "lerna": "^2.0.0-rc.2",
+    "primer-module-build": "*"
+  },
+  "keywords": [
+    "primer",
+    "css",
+    "github",
+    "primercss"
+  ]
+}
