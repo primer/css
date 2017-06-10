@@ -6,4 +6,27 @@ env:
   - TEST_DIR=packages/primer-core
   - TEST_DIR=packages/primer-product
   - TEST_DIR=packages/primer-marketing
+  - TEST_DIR=packages/primer-alerts
+  - TEST_DIR=packages/primer-base
+  - TEST_DIR=packages/primer-blankslate
+  - TEST_DIR=packages/primer-box
+  - TEST_DIR=packages/primer-breadcrumb
+  - TEST_DIR=packages/primer-buttons
+  - TEST_DIR=packages/primer-cards
+  - TEST_DIR=packages/primer-forms
+  - TEST_DIR=packages/primer-labels
+  - TEST_DIR=packages/primer-layout
+  - TEST_DIR=packages/primer-markdown
+  - TEST_DIR=packages/primer-marketing
+  - TEST_DIR=packages/primer-marketing-type
+  - TEST_DIR=packages/primer-marketing-utilities
+  - TEST_DIR=packages/primer-navigation
+  - TEST_DIR=packages/primer-page-headers
+  - TEST_DIR=packages/primer-sections
+  - TEST_DIR=packages/primer-support
+  - TEST_DIR=packages/primer-table-object
+  - TEST_DIR=packages/primer-tables
+  - TEST_DIR=packages/primer-tooltips
+  - TEST_DIR=packages/primer-truncate
+  - TEST_DIR=packages/primer-utilities
 script: cd $TEST_DIR && npm install && npm test
