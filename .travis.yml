@@ -1,3 +1,9 @@
 language: node_js
 node_js:
   - '7'
+env:
+  - TEST_DIR=packages/primer-css
+  - TEST_DIR=packages/primer-core
+  - TEST_DIR=packages/primer-product
+  - TEST_DIR=packages/primer-marketing
+script: cd $TEST_DIR && npm install && npm test
