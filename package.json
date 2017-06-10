@@ -14,10 +14,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "publish": "lerna publish",
-    "updated": "lerna updated",
-    "build": "primer-module-build index.scss",
-    "prepublish": "npm run build",
-    "test": "npm run build"
+    "updated": "lerna updated"
   },
   "devDependencies": {
     "lerna": "^2.0.0-rc.2",
