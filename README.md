@@ -13,7 +13,7 @@ The Primer repo is managed as a monorepo that is composed of many NPM packages.
 
 | Package | Version | Status |
 |---|---|---|
-| **[primer-css](/packages/primer-css)** <br />Includes all packages | [![npm](http://img.shields.io/npm/v/primer-css.svg)](https://www.npmjs.com/package/primer-css) |  [![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css) |
+| **[primer-css](/packages/primer-css)** <br />Includes all 23 packages | [![npm](http://img.shields.io/npm/v/primer-css.svg)](https://www.npmjs.com/package/primer-css) |  [![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css) |
 | [primer-core](/packages/primer-core) | [![npm](http://img.shields.io/npm/v/primer-core.svg)](https://www.npmjs.com/package/primer-core) |  [![Build Status](https://travis-ci.org/primer/primer-core.svg?branch=master)](https://travis-ci.org/primer/primer-core) |
 | [primer-product](/packages/primer-product) |  [![npm](http://img.shields.io/npm/v/primer-product.svg)](https://www.npmjs.com/package/primer-product) | [![Build Status](https://travis-ci.org/primer/primer-product.svg?branch=master)](https://travis-ci.org/primer/primer-product) |
 | [primer-marketing](/packages/primer-marketing) | [![npm](http://img.shields.io/npm/v/primer-marketing.svg)](https://www.npmjs.com/package/primer-marketing) | [![Build Status](https://travis-ci.org/primer/primer-marketing.svg?branch=master)](https://travis-ci.org/primer/primer-marketing) |
