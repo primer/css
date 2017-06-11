@@ -17,7 +17,7 @@
   },
   "scripts": {
     "build": "primer-module-build index.scss",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "test": "npm run build"
   },
   "dependencies": {
