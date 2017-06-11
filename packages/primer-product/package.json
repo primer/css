@@ -1,5 +1,5 @@
 {
-  "version": "3.0.1-next.0",
+  "version": "3.0.1-monobeta.0",
   "name": "primer-product",
   "description": "Primer CSS's product modules",
   "homepage": "http://primercss.io/",
@@ -21,11 +21,11 @@
     "test": "npm run build"
   },
   "dependencies": {
-    "primer-alerts": "^1.1.3-monotest.0",
-    "primer-avatars": "^0.4.7-monotest.0",
-    "primer-blankslate": "^0.3.6-monotest.0",
-    "primer-labels": "^1.1.1-monotest.0",
-    "primer-markdown": "^3.3.8-monotest.0",
+    "primer-alerts": "^1.1.3-monobeta.0",
+    "primer-avatars": "^0.4.7-monobeta.0",
+    "primer-blankslate": "^0.3.6-monobeta.0",
+    "primer-labels": "^1.1.1-monobeta.0",
+    "primer-markdown": "^3.3.8-monobeta.0",
     "primer-support": "^4.0.1-monotest.0"
   },
   "peerDependencies": {
