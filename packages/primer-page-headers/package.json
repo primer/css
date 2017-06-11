@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2-mono.0",
+  "version": "0.1.2-monotest.0",
   "name": "primer-page-headers",
   "description": "Jumbotrons, heroes, and featured content sections for marketing websites at GitHub.",
   "homepage": "http://primercss.io/",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "primer-marketing-support": "*",
-    "primer-support": "^4.0.1-mono.0"
+    "primer-support": "^4.0.1-monotest.0"
   },
   "devDependencies": {
     "primer-module-build": "*",
