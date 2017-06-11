@@ -22,7 +22,7 @@ env:
   - TEST_DIR=packages/primer-marketing-utilities
   - TEST_DIR=packages/primer-navigation
   - TEST_DIR=packages/primer-page-headers
-  - TEST_DIR=packages/primer-sections
+  - TEST_DIR=packages/primer-page-sections
   - TEST_DIR=packages/primer-support
   - TEST_DIR=packages/primer-table-object
   - TEST_DIR=packages/primer-tables
