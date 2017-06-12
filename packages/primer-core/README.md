@@ -5,7 +5,7 @@
 
 > Primer core contains packages that are shared between GitHub product and marketing websites.
 
-This repository is a compilation of [several CSS packages](https://github.com/primer). You can break it down into smaller sections using NPM.
+This repository is a compilation of [several CSS packages](https://github.com/primer/primer-css). You can break it down into smaller sections using NPM.
 
 ## Install
 
