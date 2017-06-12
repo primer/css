@@ -3,7 +3,7 @@
 [![NPM version](http://img.shields.io/npm/v/primer-core.svg)](https://www.npmjs.org/package/primer-core)
 [![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
-> Primer core contains packages that are shared between GitHub product and marketing websites.
+> Primer core is one of 3 meta-packages that belong to the Primer CSS framework. Primer core contains packages that are shared between GitHub product and marketing websites.
 
 This repository is a compilation of [several CSS packages](https://github.com/primer/primer-css). You can break it down into smaller sections using NPM.
 
