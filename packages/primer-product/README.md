@@ -3,9 +3,9 @@
 [![NPM version](http://img.shields.io/npm/v/primer-product.svg)](https://www.npmjs.org/package/primer-product)
 [![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
-> Primer product is the product based modules of the primer framework. Shared between our product and marketing pages.
+> Primer product is one of 3 meta-packages that belong to the Primer CSS framework. Primer product contains packages that are used on GitHub product websites.
 
-This repository is a compilation of [several CSS packages](https://github.com/primer). You can break it down into smaller sections using NPM.
+This repository is a compilation of [several CSS packages](https://github.com/primer/primer-css). You can break it down into smaller sections using NPM.
 
 ## Install
 
