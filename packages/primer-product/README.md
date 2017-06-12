@@ -5,7 +5,7 @@
 
 > Primer product is the product based modules of the primer framework. Shared between our product and marketing pages.
 
-This repository is a compilation of [several CSS modules](https://github.com/primer). You can break it down into smaller sections using npm.
+This repository is a compilation of [several CSS packages](https://github.com/primer). You can break it down into smaller sections using NPM.
 
 ## Install
 
@@ -27,7 +27,7 @@ You can also import specific portions of the module by importing those partials 
 
 ## Build
 
-For a compiled **css** version of this module, a npm script is included that will output a css version to `build/build.css` The built css file is also included in the npm package.
+For a compiled **CSS** version of this module, a NPM script is included that will output a CSS version to `build/build.css` The built CSS file is also included in the NPM package.
 
 ```
 $ npm run build
