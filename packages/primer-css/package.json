@@ -21,9 +21,9 @@
     "test": "npm run build"
   },
   "dependencies": {
-    "primer-core": "^3.0.0",
-    "primer-marketing": "^3.0.0",
-    "primer-product": "^3.0.0"
+    "primer-core": "^3.0.1-monobeta.0",
+    "primer-marketing": "^3.0.1-monobeta.0",
+    "primer-product": "^3.0.1-monobeta.0"
   },
   "devDependencies": {
     "primer-module-build": "*"
