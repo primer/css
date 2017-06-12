@@ -9,7 +9,7 @@ This repository is a compilation of [several CSS modules](https://github.com/pri
 
 ## Install
 
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-css` with this command.
+This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `Primer-CSS` with this command.
 
 ```
 $ npm install --save primer-css
