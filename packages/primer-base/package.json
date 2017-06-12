@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1-monobeta.0",
+  "version": "1.0.1-themyscira.0",
   "name": "primer-base",
   "description": "CSS to reset the browsers default styles",
   "homepage": "http://primercss.io/",
@@ -22,7 +22,7 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-support": "^4.0.1-monotest.0"
+    "primer-support": "^4.0.1-themyscira.0"
   },
   "devDependencies": {
     "primer-module-build": "*",

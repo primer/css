@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2-monobeta.0",
+  "version": "0.1.2-themyscira.0",
   "name": "primer-breadcrumb",
   "description": "Breadcrumb navigation for pages with parents / grandparents.",
   "homepage": "http://primercss.io/",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "primer-marketing-support": "*",
-    "primer-support": "^4.0.1-monotest.0"
+    "primer-support": "^4.0.1-themyscira.0"
   },
   "devDependencies": {
     "primer-module-build": "*",

@@ -1,5 +1,5 @@
 {
-  "version": "3.0.1-monobeta2.0",
+  "version": "3.0.1-themyscira.0",
   "name": "primer-core",
   "description": "Primer CSS's core modules",
   "homepage": "http://primercss.io/",
@@ -22,16 +22,16 @@
   },
   "dependencies": {
     "primer-base": "^0.4.0",
-    "primer-box": "^2.1.3-monobeta.0",
-    "primer-buttons": "^2.0.1-monobeta.0",
-    "primer-forms": "^1.0.7-monobeta.0",
-    "primer-layout": "^0.3.3-monobeta.0",
-    "primer-navigation": "^1.0.1-monobeta.0",
-    "primer-support": "^4.0.1-monotest.0",
-    "primer-table-object": "^1.0.4-monobeta.0",
-    "primer-tooltips": "^0.5.5-monobeta.0",
-    "primer-truncate": "^0.3.3-monobeta.0",
-    "primer-utilities": "^4.2.5-monobeta.0"
+    "primer-box": "^2.1.3-themyscira.0",
+    "primer-buttons": "^2.0.1-themyscira.0",
+    "primer-forms": "^1.0.7-themyscira.0",
+    "primer-layout": "^0.3.3-themyscira.0",
+    "primer-navigation": "^1.0.1-themyscira.0",
+    "primer-support": "^4.0.1-themyscira.0",
+    "primer-table-object": "^1.0.4-themyscira.0",
+    "primer-tooltips": "^0.5.5-themyscira.0",
+    "primer-truncate": "^0.3.3-themyscira.0",
+    "primer-utilities": "^4.2.5-themyscira.0"
   },
   "devDependencies": {
     "primer-module-build": "*"
