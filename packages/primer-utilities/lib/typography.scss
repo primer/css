@@ -147,7 +147,7 @@
   margin-bottom: 30px;
   font-size: $h3-size;
   font-weight: $font-weight-light;
-  color: #555;
+  color: $gray-600;
 }
 
 // Line-height variations
@@ -208,9 +208,9 @@
 // Text Shadows
 /* Add a dark text shadow */
 .text-shadow-dark {
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px 25px rgba(0, 0, 0, 0.75);
+  text-shadow: 0 1px 1px rgba($black, 0.25), 0 1px 25px rgba($black, 0.75);
 }
 /* Add a light text shadow */
 .text-shadow-light {
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-shadow: 0 1px 0 rgba($white, 0.5);
 }
