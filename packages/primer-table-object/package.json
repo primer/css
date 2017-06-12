@@ -1,5 +1,5 @@
 {
-  "version": "1.0.4-themyscira.0",
+  "version": "1.0.4-alpha.0",
   "name": "primer-table-object",
   "description": "A module for creating dynamically resizable elements that always sit on the same horizontal line.",
   "homepage": "http://primercss.io/",
@@ -22,7 +22,7 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-support": "^4.0.1-themyscira.0"
+    "primer-support": "^4.0.2-0"
   },
   "devDependencies": {
     "primer-module-build": "*",

@@ -1,5 +1,5 @@
 {
-  "version": "0.1.5-themyscira.0",
+  "version": "0.1.5-alpha.0",
   "name": "primer-marketing-utilities",
   "description": "Immutable, atomic CSS classes to rapidly build product",
   "homepage": "http://primercss.io/",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "primer-marketing-support": "*",
-    "primer-support": "^4.0.1-themyscira.0"
+    "primer-support": "^4.0.2-0"
   },
   "devDependencies": {
     "primer-module-build": "*",

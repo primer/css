@@ -1,5 +1,5 @@
 {
-  "version": "0.3.3-themyscira.0",
+  "version": "0.3.3-alpha.0",
   "name": "primer-truncate",
   "description": "Shorten text with an ellipsis.",
   "homepage": "http://primercss.io/",
@@ -22,7 +22,7 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-support": "^4.0.1-themyscira.0"
+    "primer-support": "^4.0.2-0"
   },
   "devDependencies": {
     "primer-module-build": "*",
