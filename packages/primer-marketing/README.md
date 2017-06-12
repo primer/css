@@ -1,7 +1,7 @@
 # Primer marketing
 
 [![NPM version](http://img.shields.io/npm/v/primer-marketing.svg)](https://www.npmjs.org/package/primer-marketing)
-[![Build Status](https://travis-ci.org/primer/primer-marketing.svg?branch=master)](https://travis-ci.org/primer/primer-marketing)
+[![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
 > Primer marketing is the marketing based modules of the primer framework.
 

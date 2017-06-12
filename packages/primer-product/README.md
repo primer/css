@@ -1,7 +1,7 @@
 # Primer product
 
 [![NPM version](http://img.shields.io/npm/v/primer-product.svg)](https://www.npmjs.org/package/primer-product)
-[![Build Status](https://travis-ci.org/primer/primer-product.svg?branch=master)](https://travis-ci.org/primer/primer-product)
+[![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
 > Primer product is the product based modules of the primer framework. Shared between our product and marketing pages.
 
