@@ -1,7 +1,7 @@
 # Primer CSS Navigation
 
 [![NPM version](http://img.shields.io/npm/v/primer-navigation.svg)](https://www.npmjs.org/package/primer-navigation)
-[![Build Status](https://travis-ci.org/primer/primer-navigation.svg?branch=master)](https://travis-ci.org/primer/primer-navigation)
+[![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
 > Primer comes with several navigation components. Some were designed with singular purposes, while others were design to be more flexible and appear quite frequently.
 

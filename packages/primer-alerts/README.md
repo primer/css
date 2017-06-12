@@ -1,7 +1,7 @@
 # Primer CSS Alerts
 
 [![NPM version](http://img.shields.io/npm/v/primer-alerts.svg)](https://www.npmjs.org/package/primer-alerts)
-[![Build Status](https://travis-ci.org/primer/primer-alerts.svg?branch=master)](https://travis-ci.org/primer/primer-alerts)
+[![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
 > Flash messages, or alerts, inform users of successful or pending actions. Use them sparingly. Don’t show more than one at a time.
 
