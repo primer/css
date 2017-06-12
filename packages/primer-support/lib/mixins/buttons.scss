@@ -124,7 +124,7 @@
   background-image: none;
 
   .Counter {
-    background-color: rgba(0, 0, 0, 0.07);
+    background-color: rgba($black, 0.07);
   }
 
   &:hover,
@@ -150,7 +150,7 @@
   &.disabled {
     color: $black-fade-30;
     background-color: $bg-white;
-    border-color: rgba(0, 0, 0, 0.15);
+    border-color: $black-fade-15;
     box-shadow: none;
   }
 }
