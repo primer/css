@@ -10,9 +10,9 @@
     "index.scss",
     "lib"
   ],
-  "repository": "https://github.com/primer/primer-marketing-support.git",
+  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-marketing-support",
   "bugs": {
-    "url": "https://github.com/primer/primer-marketing-support/issues"
+    "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
     "test": "stylelint **/*.scss -c .stylelintrc.json -s scss"
