@@ -1,5 +1,5 @@
 {
-  "version": "0.1.5-alpha.0",
+  "version": "0.1.5-alpha.1",
   "name": "primer-marketing-utilities",
   "description": "Immutable, atomic CSS classes to rapidly build product",
   "homepage": "http://primercss.io/",
@@ -22,7 +22,7 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-marketing-support": "*",
+    "primer-marketing-support": "^0.5.1-0",
     "primer-support": "^4.0.2-0"
   },
   "devDependencies": {
