@@ -28,9 +28,6 @@
     "primer-markdown": "^3.3.8-alpha.0",
     "primer-support": "^4.0.2-0"
   },
-  "peerDependencies": {
-    "primer-core": "^3.0.0"
-  },
   "devDependencies": {
     "primer-module-build": "*"
   }
