@@ -89,19 +89,19 @@ $purple-900:      #29134e !default;
 $black: #1b1f23 !default;
 $white: #fff !default;
 
-$black-fade-15:      transparentize($black, 0.85) !default;
-$black-fade-30:      transparentize($black, 0.7) !default;
-$black-fade-50:      transparentize($black, 0.5) !default;
-$black-fade-70:      transparentize($black, 0.3) !default;
-$black-fade-85:      transparentize($black, 0.15) !default;
+$black-fade-15:      rgba($black, 0.15) !default;
+$black-fade-30:      rgba($black, 0.3) !default;
+$black-fade-50:      rgba($black, 0.5) !default;
+$black-fade-70:      rgba($black, 0.7) !default;
+$black-fade-85:      rgba($black, 0.85) !default;
 
-$white-fade-15:      transparentize($white, 0.85) !default;
-$white-fade-30:      transparentize($white, 0.7) !default;
-$white-fade-50:      transparentize($white, 0.5) !default;
-$white-fade-70:      transparentize($white, 0.3) !default;
-$white-fade-85:      transparentize($white, 0.15) !default;
+$white-fade-15:      rgba($white, 0.15) !default;
+$white-fade-30:      rgba($white, 0.3) !default;
+$white-fade-50:      rgba($white, 0.5) !default;
+$white-fade-70:      rgba($white, 0.7) !default;
+$white-fade-85:      rgba($white, 0.85) !default;
 
-// -------- Color System --------
+// -------- Color defaults --------
 $red:         $red-500 !default;
 $purple:      $purple-500 !default;
 $blue:        $blue-500 !default;
