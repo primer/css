@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2-alpha.1",
+  "version": "0.1.2-alpha.2",
   "name": "primer-page-sections",
   "description": "Styles to create distinct sections of marketing pages at GitHub.",
   "homepage": "http://primercss.io/",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "primer-marketing-support": "^0.5.1-0",
-    "primer-support": "^4.0.2-0"
+    "primer-support": "^4.0.2-1"
   },
   "devDependencies": {
     "primer-module-build": "*",

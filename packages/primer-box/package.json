@@ -1,5 +1,5 @@
 {
-  "version": "2.1.3-alpha.0",
+  "version": "2.1.3-alpha.1",
   "name": "primer-box",
   "description": "A module for creating rounded-corner boxes with options for headers, lists, and footers.",
   "homepage": "http://primercss.io/",
@@ -22,7 +22,7 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-support": "^4.0.2-0"
+    "primer-support": "^4.0.2-1"
   },
   "devDependencies": {
     "primer-module-build": "*",
