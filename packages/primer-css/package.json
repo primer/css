@@ -11,7 +11,7 @@
     "lib",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-marketing",
+  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-css",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },
