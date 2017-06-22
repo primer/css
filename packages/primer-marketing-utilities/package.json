@@ -1,7 +1,7 @@
 {
   "version": "0.1.5-alpha.2",
   "name": "primer-marketing-utilities",
-  "description": "Immutable, atomic CSS classes to rapidly build product",
+  "description": "Marketing specific immutable, atomic CSS classes",
   "homepage": "http://primercss.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
