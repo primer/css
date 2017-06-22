@@ -34,6 +34,25 @@ The source files included are written in [Sass][sass] (SCSS). You can point your
 @import "primer-css/index.scss";
 ```
 
+You can import individual Primer modules by installing them each with npm, for instance:
+
+```sh
+$ npm install --save primer-navigation
+```
+
+Then, you would import the module with:
+
+```scss
+@import "primer-navigation/index.scss";
+```
+
+Or, while you're figuring out which modules you need, you can import them directly from the `primer-css` [`packages` directory](./packages) like so:
+
+```scss
+@import "primer-css/packages/primer-navigation/index.css";
+```
+
+
 ## Build
 
 For a compiled **CSS** version of this module, an npm script is included that will output a CSS version to `build/build.css`. The built CSS file is also included in the npm package.
