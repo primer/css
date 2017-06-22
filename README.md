@@ -28,7 +28,7 @@ $ npm install --save primer-css
 
 ## Usage
 
-The source files included are written in [Sass][sass] (`scss`) You can simply point your sass `include-path` at your `node_modules` directory and import it like this.
+The source files included are written in [Sass][sass] (SCSS). You can point your sass `include-path` at your project's `node_modules` directory and import it like this:
 
 ```scss
 @import "primer-css/index.scss";
