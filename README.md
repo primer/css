@@ -34,8 +34,6 @@ The source files included are written in [Sass][sass] (SCSS). You can point your
 @import "primer-css/index.scss";
 ```
 
-You can also import specific portions of the module by importing those partials from the `/lib/` folder. _Make sure you import any requirements along with the modules._
-
 ## Build
 
 For a compiled **CSS** version of this module, an npm script is included that will output a CSS version to `build/build.css`. The built CSS file is also included in the npm package.
