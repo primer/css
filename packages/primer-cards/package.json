@@ -1,5 +1,5 @@
 {
-  "version": "0.1.3-alpha.2",
+  "version": "0.1.3",
   "name": "primer-cards",
   "description": "Card-like containers to group semantically related content together on marketing websites at GitHub.",
   "homepage": "http://primercss.io/",
@@ -22,8 +22,8 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-marketing-support": "^0.5.1-0",
-    "primer-support": "^4.0.2-1"
+    "primer-marketing-support": "^0.5.1",
+    "primer-support": "^4.0.2"
   },
   "devDependencies": {
     "primer-module-build": "*",
