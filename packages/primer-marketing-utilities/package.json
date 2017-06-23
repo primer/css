@@ -1,7 +1,7 @@
 {
-  "version": "0.1.5-alpha.2",
+  "version": "0.1.6",
   "name": "primer-marketing-utilities",
-  "description": "Immutable, atomic CSS classes to rapidly build product",
+  "description": "Marketing specific immutable, atomic CSS classes",
   "homepage": "http://primercss.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
@@ -22,8 +22,8 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-marketing-support": "^0.5.1-0",
-    "primer-support": "^4.0.2-1"
+    "primer-marketing-support": "^0.5.2",
+    "primer-support": "^4.0.3"
   },
   "devDependencies": {
     "primer-module-build": "*",
