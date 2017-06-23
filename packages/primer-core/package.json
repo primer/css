@@ -1,5 +1,5 @@
 {
-  "version": "4.0.1",
+  "version": "4.0.2",
   "name": "primer-core",
   "description": "Primer CSS's core modules",
   "homepage": "http://primercss.io/",
@@ -22,16 +22,16 @@
   },
   "dependencies": {
     "primer-base": "^0.4.0",
-    "primer-box": "^2.1.4",
-    "primer-buttons": "^2.0.2",
-    "primer-forms": "^1.0.9",
-    "primer-layout": "^1.0.1",
-    "primer-navigation": "^1.0.2",
-    "primer-support": "^4.0.3",
-    "primer-table-object": "^1.0.5",
-    "primer-tooltips": "^0.5.6",
-    "primer-truncate": "^0.3.4",
-    "primer-utilities": "^4.3.1"
+    "primer-box": "^2.1.5",
+    "primer-buttons": "^2.0.3",
+    "primer-forms": "^1.0.10",
+    "primer-layout": "^1.0.2",
+    "primer-navigation": "^1.0.3",
+    "primer-support": "^4.0.4",
+    "primer-table-object": "^1.0.6",
+    "primer-tooltips": "^0.5.7",
+    "primer-truncate": "^0.3.5",
+    "primer-utilities": "^4.3.2"
   },
   "devDependencies": {
     "primer-module-build": "*"
