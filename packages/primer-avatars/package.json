@@ -1,5 +1,5 @@
 {
-  "version": "0.4.7",
+  "version": "0.4.8",
   "name": "primer-avatars",
   "description": "Basic styles for user profile avatars.",
   "homepage": "http://primercss.io/",
@@ -22,7 +22,7 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-support": "^4.0.2"
+    "primer-support": "^4.0.3"
   },
   "devDependencies": {
     "primer-module-build": "*",

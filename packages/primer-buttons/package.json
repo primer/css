@@ -1,5 +1,5 @@
 {
-  "version": "2.0.1",
+  "version": "2.0.2",
   "name": "primer-buttons",
   "description": "A collection of buttons used for primary and secondary actions.",
   "homepage": "http://primercss.io/",
@@ -22,7 +22,7 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-support": "^4.0.2"
+    "primer-support": "^4.0.3"
   },
   "devDependencies": {
     "primer-module-build": "*",
