@@ -1,0 +1,39 @@
+{
+  "version": "4.0.1",
+  "name": "primer-core",
+  "description": "Primer CSS's core modules",
+  "homepage": "http://primercss.io/",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "build/build.css",
+  "main": "build/index.js",
+  "files": [
+    "index.scss",
+    "build"
+  ],
+  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-core",
+  "bugs": {
+    "url": "https://github.com/primer/primer-css/issues"
+  },
+  "scripts": {
+    "build": "primer-module-build index.scss",
+    "prepare": "npm run build",
+    "test": "npm run build"
+  },
+  "dependencies": {
+    "primer-base": "^0.4.0",
+    "primer-box": "^2.1.4",
+    "primer-buttons": "^2.0.2",
+    "primer-forms": "^1.0.9",
+    "primer-layout": "^1.0.1",
+    "primer-navigation": "^1.0.2",
+    "primer-support": "^4.0.3",
+    "primer-table-object": "^1.0.5",
+    "primer-tooltips": "^0.5.6",
+    "primer-truncate": "^0.3.4",
+    "primer-utilities": "^4.3.1"
+  },
+  "devDependencies": {
+    "primer-module-build": "*"
+  }
+}

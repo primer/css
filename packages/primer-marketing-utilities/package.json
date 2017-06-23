@@ -1,0 +1,39 @@
+{
+  "version": "0.1.6",
+  "name": "primer-marketing-utilities",
+  "description": "Marketing specific immutable, atomic CSS classes",
+  "homepage": "http://primercss.io/",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "index.scss",
+  "main": "build/index.js",
+  "files": [
+    "index.scss",
+    "lib",
+    "build"
+  ],
+  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-marketing-utilities",
+  "bugs": {
+    "url": "https://github.com/primer/primer-css/issues"
+  },
+  "scripts": {
+    "build": "primer-module-build index.scss",
+    "prepare": "npm run build",
+    "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
+  },
+  "dependencies": {
+    "primer-marketing-support": "^0.5.2",
+    "primer-support": "^4.0.3"
+  },
+  "devDependencies": {
+    "primer-module-build": "*",
+    "stylelint": "*",
+    "stylelint-config-primer": "*"
+  },
+  "keywords": [
+    "primer",
+    "css",
+    "github",
+    "primercss"
+  ]
+}
