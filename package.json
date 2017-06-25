@@ -6,6 +6,6 @@
     "updated": "lerna updated"
   },
   "devDependencies": {
-    "lerna": "^2.0.0-rc.2"
+    "lerna": "^2.0.0-rc.5"
   }
 }
