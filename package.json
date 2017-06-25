@@ -2,8 +2,13 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
+    "updated": "lerna updated",
+    "diff": "lerna diff",
     "publish": "lerna publish",
-    "updated": "lerna updated"
+    "skipgit": "lerna publish --skip-git",
+    "dev": "lerna publish --npm-tag=dev",
+    "rc": "lerna publish --npm-tag=rc"
   },
   "devDependencies": {
     "lerna": "^2.0.0-rc.5"
