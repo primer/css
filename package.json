@@ -33,6 +33,7 @@
     "ava": "*",
     "eslint": "*",
     "eslint-plugin-github": "*",
+    "eslint-plugin-import": "^2.6.0",
     "stylelint": "*",
     "stylelint-order": "^0.4.4"
   },
