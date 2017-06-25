@@ -5,7 +5,7 @@
     "publish": "lerna publish",
     "updated": "lerna updated"
   },
-  "dependencies": {
+  "devDependencies": {
     "lerna": "^2.0.0-rc.2"
   }
 }
