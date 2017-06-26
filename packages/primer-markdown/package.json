@@ -1,5 +1,5 @@
 {
-  "version": "3.3.9",
+  "version": "3.3.10",
   "name": "primer-markdown",
   "description": "GitHub stylesheets for rendering markdown.",
   "homepage": "https://github.com/primer/primer-markdown",
@@ -22,7 +22,7 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-support": "^4.0.3"
+    "primer-support": "^4.0.4"
   },
   "devDependencies": {
     "primer-module-build": "*",

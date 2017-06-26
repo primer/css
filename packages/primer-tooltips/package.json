@@ -1,5 +1,5 @@
 {
-  "version": "0.5.6",
+  "version": "0.5.7",
   "name": "primer-tooltips",
   "description": "Add tooltips built entirely in CSS to nearly any element.",
   "homepage": "http://primercss.io/",
@@ -22,7 +22,7 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-support": "^4.0.3"
+    "primer-support": "^4.0.4"
   },
   "devDependencies": {
     "primer-module-build": "*",
