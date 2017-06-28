@@ -3,9 +3,9 @@
 [![npm version](http://img.shields.io/npm/v/primer-css.svg)](https://www.npmjs.org/package/primer-css)
 [![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
-> Primer is the CSS framework that powers GitHub's front-end design. Primer CSS includes 23 packages that are grouped into 3 core meta-packages for easy install. Each package and meta-package is independently versioned and distributed via npm, so it's easy to include all or part of Primer within your own project.
+Primer is the CSS framework that powers GitHub's front-end design. Primer CSS includes 23 packages that are grouped into 3 core meta-packages for easy install. Each package and meta-package is independently versioned and distributed via npm, so it's easy to include all or part of Primer within your own project.
 
-This repository is a compilation of [several CSS modules](https://github.com/primer).
+The Primer CSS repo is managed as a monorepo that is composed of many npm packages.
 
 ## Install
 
