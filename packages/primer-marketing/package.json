@@ -1,5 +1,5 @@
 {
-  "version": "4.0.2",
+  "version": "4.0.3",
   "name": "primer-marketing",
   "description": "Primer CSS marketing packages",
   "homepage": "http://primercss.io/",
@@ -21,15 +21,15 @@
     "test": "npm run build"
   },
   "dependencies": {
-    "primer-breadcrumb": "^0.1.4",
-    "primer-cards": "^0.1.5",
-    "primer-marketing-support": "^0.5.3",
-    "primer-marketing-type": "^0.2.3",
-    "primer-marketing-utilities": "^0.1.7",
-    "primer-page-headers": "^0.1.4",
-    "primer-page-sections": "^0.1.4",
-    "primer-support": "^4.0.4",
-    "primer-tables": "^0.1.5"
+    "primer-breadcrumb": "^1.0.0",
+    "primer-cards": "^0.1.6",
+    "primer-marketing-support": "^1.0.0",
+    "primer-marketing-type": "^1.0.0",
+    "primer-marketing-utilities": "^1.0.0",
+    "primer-page-headers": "^1.0.0",
+    "primer-page-sections": "^1.0.0",
+    "primer-support": "^4.0.5",
+    "primer-tables": "^1.0.0"
   },
   "devDependencies": {
     "primer-module-build": "*"

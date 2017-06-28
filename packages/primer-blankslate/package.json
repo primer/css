@@ -1,5 +1,5 @@
 {
-  "version": "0.3.8",
+  "version": "1.0.0",
   "name": "primer-blankslate",
   "description": "Blankslates are for when there is a lack of content within a page or section.",
   "homepage": "http://primercss.io/",
@@ -22,7 +22,7 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-support": "^4.0.4"
+    "primer-support": "^4.0.5"
   },
   "devDependencies": {
     "primer-module-build": "*",
