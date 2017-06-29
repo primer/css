@@ -1,7 +1,7 @@
 {
-  "version": "4.0.3",
-  "name": "primer-marketing",
-  "description": "Primer CSS marketing packages",
+  "version": "5.0.0",
+  "name": "primer-core",
+  "description": "Primer CSS's core modules",
   "homepage": "http://primercss.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
@@ -11,7 +11,7 @@
     "index.scss",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-marketing",
+  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-core",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },
@@ -21,15 +21,17 @@
     "test": "npm run build"
   },
   "dependencies": {
-    "primer-breadcrumb": "^1.0.0",
-    "primer-cards": "^0.1.6",
-    "primer-marketing-support": "^1.0.0",
-    "primer-marketing-type": "^1.0.0",
-    "primer-marketing-utilities": "^1.0.0",
-    "primer-page-headers": "^1.0.0",
-    "primer-page-sections": "^1.0.0",
+    "primer-base": "^0.4.0",
+    "primer-box": "^2.1.6",
+    "primer-buttons": "^2.0.4",
+    "primer-forms": "^1.0.11",
+    "primer-layout": "^1.0.3",
+    "primer-navigation": "^1.0.4",
     "primer-support": "^4.0.5",
-    "primer-tables": "^1.0.0"
+    "primer-table-object": "^1.0.7",
+    "primer-tooltips": "^1.0.0",
+    "primer-truncate": "^1.0.0",
+    "primer-utilities": "^4.3.3"
   },
   "devDependencies": {
     "primer-module-build": "*"
