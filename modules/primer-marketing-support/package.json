@@ -10,7 +10,7 @@
     "index.scss",
     "lib"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-marketing-support",
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-marketing-support",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },
