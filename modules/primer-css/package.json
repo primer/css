@@ -1,0 +1,61 @@
+{
+  "version": "8.0.0",
+  "name": "primer-css",
+  "description": "Primer is the CSS framework that powers GitHub's front-end design. Primer-css includes 23 packages that are grouped into 3 core meta-packages for easy install. Each package and meta-package is independently versioned and distributed via npm, so it's easy to include all or part of Primer within your own project.",
+  "homepage": "http://primercss.io/",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "build/build.css",
+  "files": [
+    "index.scss",
+    "lib",
+    "build"
+  ],
+  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-css",
+  "bugs": {
+    "url": "https://github.com/primer/primer-css/issues"
+  },
+  "scripts": {
+    "build": "primer-module-build index.scss",
+    "prepare": "npm run build",
+    "test": "npm run build"
+  },
+  "dependencies": {
+    "primer-alerts": "^1.1.7",
+    "primer-avatars": "^1.0.1",
+    "primer-base": "^0.4.0",
+    "primer-blankslate": "^1.0.1",
+    "primer-box": "^2.1.7",
+    "primer-breadcrumb": "^1.0.1",
+    "primer-buttons": "^2.0.5",
+    "primer-cards": "^0.1.7",
+    "primer-core": "^5.0.1",
+    "primer-forms": "^1.0.12",
+    "primer-labels": "^1.1.5",
+    "primer-layout": "^1.0.4",
+    "primer-markdown": "^3.3.12",
+    "primer-marketing": "^5.0.1",
+    "primer-marketing-support": "^1.0.1",
+    "primer-marketing-type": "^1.0.1",
+    "primer-marketing-utilities": "^1.0.1",
+    "primer-navigation": "^1.0.5",
+    "primer-page-headers": "^1.0.1",
+    "primer-page-sections": "^1.0.1",
+    "primer-product": "^5.0.1",
+    "primer-support": "^4.0.6",
+    "primer-table-object": "^1.0.8",
+    "primer-tables": "^1.0.1",
+    "primer-tooltips": "^1.0.1",
+    "primer-truncate": "^1.0.1",
+    "primer-utilities": "^4.3.4"
+  },
+  "devDependencies": {
+    "primer-module-build": "*"
+  },
+  "keywords": [
+    "primer",
+    "css",
+    "github",
+    "primercss"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "version": "1.1.7",
+  "name": "primer-alerts",
+  "description": "Flash messages, or alerts, inform users of successful or pending actions.",
+  "homepage": "http://primercss.io/",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "index.scss",
+  "main": "build/index.js",
+  "files": [
+    "index.scss",
+    "lib",
+    "build"
+  ],
+  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-alerts",
+  "bugs": {
+    "url": "https://github.com/primer/primer-css/issues"
+  },
+  "scripts": {
+    "build": "primer-module-build index.scss",
+    "prepare": "npm run build",
+    "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
+  },
+  "dependencies": {
+    "primer-support": "^4.0.6"
+  },
+  "devDependencies": {
+    "primer-module-build": "*",
+    "stylelint": "*",
+    "stylelint-config-primer": "*"
+  },
+  "keywords": [
+    "alerts",
+    "callouts",
+    "css",
+    "flash",
+    "github",
+    "primer",
+    "primercss",
+    "style"
+  ]
+}

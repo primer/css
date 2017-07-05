@@ -1,0 +1,34 @@
+{
+  "version": "5.0.1",
+  "name": "primer-product",
+  "description": "Primer CSS's product modules",
+  "homepage": "http://primercss.io/",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "build/build.css",
+  "main": "build/index.js",
+  "files": [
+    "index.scss",
+    "build"
+  ],
+  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-product",
+  "bugs": {
+    "url": "https://github.com/primer/primer-css/issues"
+  },
+  "scripts": {
+    "build": "primer-module-build index.scss",
+    "prepare": "npm run build",
+    "test": "npm run build"
+  },
+  "dependencies": {
+    "primer-alerts": "^1.1.7",
+    "primer-avatars": "^1.0.1",
+    "primer-blankslate": "^1.0.1",
+    "primer-labels": "^1.1.5",
+    "primer-markdown": "^3.3.12",
+    "primer-support": "^4.0.6"
+  },
+  "devDependencies": {
+    "primer-module-build": "*"
+  }
+}
