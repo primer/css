@@ -2,41 +2,38 @@ language: node_js
 node_js:
   - '7'
 env:
-  global:
-    - COMMIT=${TRAVIS_COMMIT::8}
-  matrix:
-    - MODULE=primer-css
-    - MODULE=primer-core
-    - MODULE=primer-product
-    - MODULE=primer-marketing
-    - MODULE=primer-alerts
-    - MODULE=primer-base
-    - MODULE=primer-blankslate
-    - MODULE=primer-box
-    - MODULE=primer-breadcrumb
-    - MODULE=primer-buttons
-    - MODULE=primer-cards
-    - MODULE=primer-forms
-    - MODULE=primer-labels
-    - MODULE=primer-layout
-    - MODULE=primer-markdown
-    - MODULE=primer-marketing
-    - MODULE=primer-marketing-type
-    - MODULE=primer-marketing-utilities
-    - MODULE=primer-navigation
-    - MODULE=primer-page-headers
-    - MODULE=primer-page-sections
-    - MODULE=primer-support
-    - MODULE=primer-table-object
-    - MODULE=primer-tables
-    - MODULE=primer-tooltips
-    - MODULE=primer-truncate
-    - MODULE=primer-utilities
-    - MODULE=..;DEPLOY=true
+  - MODULE=primer-css
+  - MODULE=primer-core
+  - MODULE=primer-product
+  - MODULE=primer-marketing
+  - MODULE=primer-alerts
+  - MODULE=primer-base
+  - MODULE=primer-blankslate
+  - MODULE=primer-box
+  - MODULE=primer-breadcrumb
+  - MODULE=primer-buttons
+  - MODULE=primer-cards
+  - MODULE=primer-forms
+  - MODULE=primer-labels
+  - MODULE=primer-layout
+  - MODULE=primer-markdown
+  - MODULE=primer-marketing
+  - MODULE=primer-marketing-type
+  - MODULE=primer-marketing-utilities
+  - MODULE=primer-navigation
+  - MODULE=primer-page-headers
+  - MODULE=primer-page-sections
+  - MODULE=primer-support
+  - MODULE=primer-table-object
+  - MODULE=primer-tables
+  - MODULE=primer-tooltips
+  - MODULE=primer-truncate
+  - MODULE=primer-utilities
+  - MODULE=..;DEPLOY=true
 script: cd modules/$MODULE && npm install && npm test
 deploy:
   provider: script
-  script: cd $TRAVIS_BUILD_DIR && lerna publish --canary=commit --cd-version=patch
+  script: cd $TRAVIS_BUILD_DIR && npm install && lerna publish --canary=commit --cd-version=patch
   on:
     all_branches: true
     condition: "$DEPLOY = true && $TRAVIS_PULL_REQUEST_BRANCH != master && $TRAVIS_PULL_REQUEST_BRANCH != dev"
