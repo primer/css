@@ -2,7 +2,6 @@ language: node_js
 node_js:
   - '7'
 env:
-  - TEST_DIR=.
   - TEST_DIR=modules/primer-css
   - TEST_DIR=modules/primer-core
   - TEST_DIR=modules/primer-product
@@ -34,5 +33,5 @@ script: cd $TEST_DIR && npm install && npm test
 deploy:
   provider: script
   script: npm run devbuild
-  except:
-    - master
+  on:
+    all_branches: true
