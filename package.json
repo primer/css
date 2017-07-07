@@ -9,7 +9,8 @@
     "skipgit": "lerna publish --skip-git",
     "dev": "lerna publish --npm-tag=dev",
     "rc": "lerna publish --npm-tag=rc",
-    "force": "lerna publish --force-publish=*"
+    "force": "lerna publish --force-publish=*",
+    "devbuild": "echo '👻'"
   },
   "devDependencies": {
     "lerna": "^2.0.0-rc.5"
