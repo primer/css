@@ -2,6 +2,8 @@ language: node_js
 node_js:
   - '7'
 env:
+  global:
+    - COMMIT=${TRAVIS_COMMIT::8}
   - TEST_DIR=modules/primer-css
   - TEST_DIR=modules/primer-core
   - TEST_DIR=modules/primer-product
@@ -32,6 +34,6 @@ env:
 script: cd $TEST_DIR && npm install && npm test
 deploy:
   provider: script
-  script: cd $TRAVIS_BUILD_DIR && echo "$(npm show primer-css version)-commit.$TRAVIS_COMMIT"
+  script: cd $TRAVIS_BUILD_DIR && echo "$(npm show primer-css version)-commit.$COMMIT"
   on:
     all_branches: true
