@@ -1,3 +1,8 @@
 #!/bin/sh
-
-echo '🤡🎈 They all float down here.'
+if [[ $BRANCH = master ]];
+  npm run publish
+elif [[ $BRANCH = dev ]];
+  npm run publish-rc
+else
+  npm run publish-canary
+fi
