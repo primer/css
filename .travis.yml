@@ -34,7 +34,7 @@ script: cd modules/$MODULE && npm install && npm test
 deploy:
   provider: script
   skip_cleanup: true
-  script: cd $TRAVIS_BUILD_DIR && script/dev-deploy
+  script: cd $TRAVIS_BUILD_DIR && script/deploy
   on:
     all_branches: true
     condition: "$DEPLOY = true"
