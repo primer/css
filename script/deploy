@@ -1,8 +1,13 @@
 #!/bin/sh
 set -e
+if [[ $DEPLOY != true ]]; then
+  echo "Skipping deploy."
+  exit 1
+fi
+
 # always publish a canary release if this is a PR build
 if [[ $TRAVIS_PULL_REQUEST && $TRAVIS_PULL_REQUEST != false ]]; then
-  echo "🐦  Publishing canary version..." 
+  echo "🐦  Publishing canary version..."
   echo npm run release-canary
 # merges to dev build a release candidate
 elif [[ $TRAVIS_BRANCH = release ]]; then
