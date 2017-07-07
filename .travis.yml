@@ -30,4 +30,8 @@ env:
   - TEST_DIR=modules/primer-truncate
   - TEST_DIR=modules/primer-utilities
 script: cd $TEST_DIR && npm install && npm test
-after_success: npm run devbuild
+deploy:
+  provider: npm
+  script: npm run devbuild
+  except:
+    - master
