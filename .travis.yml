@@ -32,6 +32,6 @@ env:
 script: cd $TEST_DIR && npm install && npm test
 deploy:
   provider: script
-  script: npm run devbuild
+  script: cd $TRAVIS_BUILD_DIR && npm run devbuild
   on:
     all_branches: true
