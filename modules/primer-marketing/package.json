@@ -11,7 +11,7 @@
     "index.scss",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-marketing",
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-marketing",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },

@@ -10,7 +10,7 @@
     "index.scss",
     "lib"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-support",
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-support",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },

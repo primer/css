@@ -12,7 +12,7 @@
     "lib",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-cards",
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-cards",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },
