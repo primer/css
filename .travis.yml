@@ -33,7 +33,8 @@ env:
 script: cd modules/$MODULE && npm install && npm test
 deploy:
   provider: script
-  script: cd $TRAVIS_BUILD_DIR && npm install && lerna publish --canary=commit --cd-version=patch
+  skip_cleanup: true
+  script: cd $TRAVIS_BUILD_DIR && script/dev-deploy
   on:
     all_branches: true
-    condition: "$DEPLOY = true && $TRAVIS_PULL_REQUEST_BRANCH != master && $TRAVIS_PULL_REQUEST_BRANCH != dev"
+    condition: "$DEPLOY = true"
