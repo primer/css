@@ -1,34 +1,10 @@
 language: node_js
 node_js:
-  - '7'
-env:
-  - MODULE=primer-alerts
-  - MODULE=primer-base
-  - MODULE=primer-blankslate
-  - MODULE=primer-box
-  - MODULE=primer-breadcrumb
-  - MODULE=primer-buttons
-  - MODULE=primer-cards
-  - MODULE=primer-core
-  - MODULE=primer-css
-  - MODULE=primer-forms
-  - MODULE=primer-labels
-  - MODULE=primer-layout
-  - MODULE=primer-markdown
-  - MODULE=primer-marketing
-  - MODULE=primer-marketing
-  - MODULE=primer-marketing-type
-  - MODULE=primer-marketing-utilities
-  - MODULE=primer-navigation
-  - MODULE=primer-page-headers
-  - MODULE=primer-page-sections
-  - MODULE=primer-product
-  - MODULE=primer-support
-  - MODULE=primer-table-object
-  - MODULE=primer-tables
-  - MODULE=primer-tooltips
-  - MODULE=primer-truncate
-  - MODULE=primer-utilities
-  - MODULE=..;DEPLOY=true
-script: cd modules/$MODULE && npm install && npm test
-after_success: cd $TRAVIS_BUILD_DIR && script/deploy
+  - 7
+
+script:
+  - lerna bootstrap
+  - npm test
+
+after_success:
+  - script/deploy
