@@ -2,10 +2,6 @@ language: node_js
 node_js:
   - '7'
 env:
-  - MODULE=primer-css
-  - MODULE=primer-core
-  - MODULE=primer-product
-  - MODULE=primer-marketing
   - MODULE=primer-alerts
   - MODULE=primer-base
   - MODULE=primer-blankslate
@@ -13,16 +9,20 @@ env:
   - MODULE=primer-breadcrumb
   - MODULE=primer-buttons
   - MODULE=primer-cards
+  - MODULE=primer-core
+  - MODULE=primer-css
   - MODULE=primer-forms
   - MODULE=primer-labels
   - MODULE=primer-layout
   - MODULE=primer-markdown
+  - MODULE=primer-marketing
   - MODULE=primer-marketing
   - MODULE=primer-marketing-type
   - MODULE=primer-marketing-utilities
   - MODULE=primer-navigation
   - MODULE=primer-page-headers
   - MODULE=primer-page-sections
+  - MODULE=primer-product
   - MODULE=primer-support
   - MODULE=primer-table-object
   - MODULE=primer-tables
