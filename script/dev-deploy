@@ -1,8 +1,17 @@
 #!/bin/sh
-if [[ $BRANCH = master ]];
-  npm run publish
-elif [[ $BRANCH = dev ]];
-  npm run publish-rc
+set -e
+# always publish a canary release if this is a PR build
+if [[ $TRAVIS_PULL_REQUEST && $TRAVIS_PULL_REQUEST != false ]]; then
+  echo "🐦  Publishing canary version..." 
+  echo npm run release-canary
+# merges to dev build a release candidate
+elif [[ $TRAVIS_BRANCH = release ]]; then
+  echo "👌  Publishing release candidate..."
+  echo npm run release-candidate
+elif [[ $TRAVIS_BRANCH = master ]]; then
+  echo "📦  Publishing latest release!"
+  echo npm run release
 else
-  npm run publish-canary
+  echo "⚠️  This isn't a PR and '${TRAVIS_BRANCH}' isn't a release branch."
+  exit 1
 fi
