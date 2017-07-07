@@ -4,33 +4,34 @@ node_js:
 env:
   global:
     - COMMIT=${TRAVIS_COMMIT::8}
-  - TEST_DIR=modules/primer-css
-  - TEST_DIR=modules/primer-core
-  - TEST_DIR=modules/primer-product
-  - TEST_DIR=modules/primer-marketing
-  - TEST_DIR=modules/primer-alerts
-  - TEST_DIR=modules/primer-base
-  - TEST_DIR=modules/primer-blankslate
-  - TEST_DIR=modules/primer-box
-  - TEST_DIR=modules/primer-breadcrumb
-  - TEST_DIR=modules/primer-buttons
-  - TEST_DIR=modules/primer-cards
-  - TEST_DIR=modules/primer-forms
-  - TEST_DIR=modules/primer-labels
-  - TEST_DIR=modules/primer-layout
-  - TEST_DIR=modules/primer-markdown
-  - TEST_DIR=modules/primer-marketing
-  - TEST_DIR=modules/primer-marketing-type
-  - TEST_DIR=modules/primer-marketing-utilities
-  - TEST_DIR=modules/primer-navigation
-  - TEST_DIR=modules/primer-page-headers
-  - TEST_DIR=modules/primer-page-sections
-  - TEST_DIR=modules/primer-support
-  - TEST_DIR=modules/primer-table-object
-  - TEST_DIR=modules/primer-tables
-  - TEST_DIR=modules/primer-tooltips
-  - TEST_DIR=modules/primer-truncate
-  - TEST_DIR=modules/primer-utilities
+  matrix:
+    - TEST_DIR=modules/primer-css
+    - TEST_DIR=modules/primer-core
+    - TEST_DIR=modules/primer-product
+    - TEST_DIR=modules/primer-marketing
+    - TEST_DIR=modules/primer-alerts
+    - TEST_DIR=modules/primer-base
+    - TEST_DIR=modules/primer-blankslate
+    - TEST_DIR=modules/primer-box
+    - TEST_DIR=modules/primer-breadcrumb
+    - TEST_DIR=modules/primer-buttons
+    - TEST_DIR=modules/primer-cards
+    - TEST_DIR=modules/primer-forms
+    - TEST_DIR=modules/primer-labels
+    - TEST_DIR=modules/primer-layout
+    - TEST_DIR=modules/primer-markdown
+    - TEST_DIR=modules/primer-marketing
+    - TEST_DIR=modules/primer-marketing-type
+    - TEST_DIR=modules/primer-marketing-utilities
+    - TEST_DIR=modules/primer-navigation
+    - TEST_DIR=modules/primer-page-headers
+    - TEST_DIR=modules/primer-page-sections
+    - TEST_DIR=modules/primer-support
+    - TEST_DIR=modules/primer-table-object
+    - TEST_DIR=modules/primer-tables
+    - TEST_DIR=modules/primer-tooltips
+    - TEST_DIR=modules/primer-truncate
+    - TEST_DIR=modules/primer-utilities
 script: cd $TEST_DIR && npm install && npm test
 deploy:
   provider: script
