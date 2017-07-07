@@ -31,7 +31,7 @@ env:
   - TEST_DIR=modules/primer-utilities
 script: cd $TEST_DIR && npm install && npm test
 deploy:
-  provider: npm
+  provider: script
   script: npm run devbuild
   except:
     - master
