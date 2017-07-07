@@ -39,4 +39,4 @@ deploy:
   script: cd $TRAVIS_BUILD_DIR && echo "-commit.$COMMIT"
   on:
     all_branches: true
-    condition: "$DEPLOY = true"
+    condition: "$DEPLOY = true && $TRAVIS_PULL_REQUEST_BRANCH != master && $TRAVIS_PULL_REQUEST_BRANCH != dev"
