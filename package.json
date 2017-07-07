@@ -5,11 +5,9 @@
     "clean": "lerna clean",
     "updated": "lerna updated",
     "diff": "lerna diff",
-    "publish": "lerna publish",
-    "skipgit": "lerna publish --skip-git",
-    "dev": "lerna publish --npm-tag=dev",
-    "rc": "lerna publish --npm-tag=rc",
-    "force": "lerna publish --force-publish=*"
+    "publish": "lerna publish --skip-git",
+    "publish-rc": "npm run publish -- --npm-tag=rc",
+    "publish-canary": "npm run publish -- --canary=commit --cd-version=patch"
   },
   "devDependencies": {
     "lerna": "^2.0.0-rc.5"
