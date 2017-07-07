@@ -5,7 +5,7 @@
     "clean": "lerna clean",
     "updated": "lerna updated",
     "diff": "lerna diff",
-    "publish": "lerna publish --skip-git",
+    "publish": "echo lerna publish --skip-git",
     "publish-rc": "npm run publish -- --npm-tag=rc",
     "publish-canary": "npm run publish -- --canary=commit --cd-version=patch",
     "test": "lerna run test"
