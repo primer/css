@@ -32,9 +32,11 @@ env:
     - MODULE=primer-tooltips
     - MODULE=primer-truncate
     - MODULE=primer-utilities
+    - MODULE=..;DEPLOY=true
 script: cd modules/$MODULE && npm install && npm test
 deploy:
   provider: script
-  script: cd $TRAVIS_BUILD_DIR && echo "$(npm show $MODULE version)-commit.$COMMIT"
+  script: cd $TRAVIS_BUILD_DIR && echo "-commit.$COMMIT"
   on:
     all_branches: true
+    condition: "$DEPLOY = true"
