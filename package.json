@@ -7,7 +7,8 @@
     "diff": "lerna diff",
     "publish": "lerna publish --skip-git",
     "publish-rc": "npm run publish -- --npm-tag=rc",
-    "publish-canary": "npm run publish -- --canary=commit --cd-version=patch"
+    "publish-canary": "npm run publish -- --canary=commit --cd-version=patch",
+    "test": "lerna run test"
   },
   "devDependencies": {
     "lerna": "^2.0.0-rc.5"
