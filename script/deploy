@@ -2,7 +2,7 @@
 set -e
 
 # always publish a canary release if this is a PR build
-if [[ $TRAVIS_PULL_REQUEST && $TRAVIS_PULL_REQUEST != false ]]; then
+if [[ $TRAVIS_EVENT_TYPE = pull_request ]]; then
   echo "🐦  Publishing canary version..."
   echo npm run release-canary
 # merges to dev build a release candidate
