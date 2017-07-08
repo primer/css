@@ -1,9 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 set -e
-if [[ $DEPLOY != true ]]; then
-  echo "Skipping deploy."
-  exit 1
-fi
 
 # always publish a canary release if this is a PR build
 if [[ $TRAVIS_PULL_REQUEST && $TRAVIS_PULL_REQUEST != false ]]; then
