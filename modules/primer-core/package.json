@@ -21,7 +21,7 @@
     "test": "npm run build"
   },
   "dependencies": {
-    "primer-base": "^0.4.0",
+    "primer-base": "^1.1.4",
     "primer-box": "^2.1.7",
     "primer-buttons": "^2.0.5",
     "primer-forms": "^1.0.12",
