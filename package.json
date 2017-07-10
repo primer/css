@@ -3,11 +3,11 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean",
-    "updated": "lerna updated",
     "diff": "lerna diff",
-    "release": "lerna publish --skip-git",
-    "release-candidate": "lerna publish --skip-git --npm-tag=rc",
-    "release-canary": "lerna publish --skip-git --canary=commit --cd-version=patch",
+    "updated": "lerna updated",
+    "release": "lerna publish",
+    "release-candidate": "lerna publish --npm-tag=rc",
+    "release-canary": "lerna publish --canary=commit --cd-version=patch",
     "test": "lerna run test"
   },
   "devDependencies": {
