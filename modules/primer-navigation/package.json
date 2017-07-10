@@ -1,5 +1,5 @@
 {
-  "version": "1.0.5",
+  "version": "1.0.6",
   "name": "primer-navigation",
   "description": "Singular purpose and flexible navigation elements.",
   "homepage": "http://primercss.io/",
@@ -12,7 +12,7 @@
     "lib",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-navigation",
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-navigation",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },
@@ -22,7 +22,7 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-support": "^4.0.6"
+    "primer-support": "^4.0.7"
   },
   "devDependencies": {
     "primer-module-build": "*",

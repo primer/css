@@ -6,9 +6,8 @@
     "updated": "lerna updated",
     "diff": "lerna diff",
     "publish": "lerna publish",
-    "skipgit": "lerna publish --skip-git",
-    "dev": "lerna publish --npm-tag=dev",
-    "rc": "lerna publish --npm-tag=rc",
+    "dev": "lerna publish --npm-tag=dev --skip-git",
+    "rc": "lerna publish --npm-tag=rc --skip-git",
     "force": "lerna publish --force-publish=*"
   },
   "devDependencies": {

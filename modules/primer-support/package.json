@@ -1,5 +1,5 @@
 {
-  "version": "4.0.6",
+  "version": "4.0.7",
   "name": "primer-support",
   "description": "Sass variables, mixins, and functions for use in our components.",
   "homepage": "http://primercss.io/",
@@ -10,7 +10,7 @@
     "index.scss",
     "lib"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/packages/primer-support",
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-support",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },
