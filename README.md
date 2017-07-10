@@ -13,10 +13,10 @@ The Primer CSS repo is managed as a monorepo that is composed of many npm packag
 
 | Package | Version |
 |---|---|
-| **[primer-css](/packages/primer-css)** <br />Includes all 23 packages | [![npm](http://img.shields.io/npm/v/primer-css.svg)](https://www.npmjs.com/package/primer-css) |
-| [primer-core](/packages/primer-core) | [![npm](http://img.shields.io/npm/v/primer-core.svg)](https://www.npmjs.com/package/primer-core) |
-| [primer-product](/packages/primer-product) |  [![npm](http://img.shields.io/npm/v/primer-product.svg)](https://www.npmjs.com/package/primer-product) |
-| [primer-marketing](/packages/primer-marketing) | [![npm](http://img.shields.io/npm/v/primer-marketing.svg)](https://www.npmjs.com/package/primer-marketing) |
+| **[primer-css](/modules/primer-css)** <br />Includes all 23 packages | [![npm](http://img.shields.io/npm/v/primer-css.svg)](https://www.npmjs.com/package/primer-css) |
+| [primer-core](/modules/primer-core) | [![npm](http://img.shields.io/npm/v/primer-core.svg)](https://www.npmjs.com/package/primer-core) |
+| [primer-product](/modules/primer-product) |  [![npm](http://img.shields.io/npm/v/primer-product.svg)](https://www.npmjs.com/package/primer-product) |
+| [primer-marketing](/modules/primer-marketing) | [![npm](http://img.shields.io/npm/v/primer-marketing.svg)](https://www.npmjs.com/package/primer-marketing) |
 
 ## Install
 
