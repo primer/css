@@ -2,9 +2,11 @@ language: node_js
 node_js:
   - 7
 
-script:
+before_script:
   - lerna bootstrap
+
+script:
   - npm test
 
 after_success:
-  - script/deploy
+  - script/cibuild
