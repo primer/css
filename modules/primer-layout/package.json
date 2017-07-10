@@ -1,5 +1,5 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.5",
   "name": "primer-layout",
   "description": "Containers, rows, and columns for creating page layout.",
   "homepage": "http://primercss.io/",
@@ -22,7 +22,7 @@
     "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
   },
   "dependencies": {
-    "primer-support": "^4.0.6"
+    "primer-support": "^4.0.7"
   },
   "devDependencies": {
     "primer-module-build": "*",
