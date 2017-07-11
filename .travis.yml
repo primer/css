@@ -10,4 +10,4 @@ script:
 
 after_success:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
-  - script/cibuild
+  - script/cibuild --yes
