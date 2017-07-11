@@ -9,5 +9,5 @@ script:
   - npm test
 
 after_success:
-  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}" > .npmrc
   - script/cibuild --yes
