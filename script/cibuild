@@ -1,20 +1,20 @@
 #!/bin/bash
 set -e
 
-ci_args=${@:1}
+args=${@:1}
 
 # always publish a canary release if this is a PR build
 if [[ $TRAVIS_EVENT_TYPE = pull_request ]]; then
   echo "🐦  Publishing canary version..."
-  npm run release-canary -- ${ci_args}
+  npm run release-canary -- ${args}
 # merges to dev build a release candidate
 elif [[ $TRAVIS_BRANCH = dev ]]; then
   echo "👌  Publishing release candidate..."
-  npm run release-candidate -- ${ci_args}
+  npm run release-candidate -- ${args}
 # publish a release when we merge to master
 elif [[ $TRAVIS_BRANCH = master ]]; then
   echo "📦  Publishing latest release!"
-  npm run release -- ${ci_args}
+  npm run release -- ${args}
 else
   echo "⚠️  This isn't a PR and '${TRAVIS_BRANCH}' isn't a release branch."
   exit 1
