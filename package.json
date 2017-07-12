@@ -7,7 +7,7 @@
     "updated": "lerna updated",
     "release": "lerna publish",
     "release-candidate": "lerna publish --npm-tag=rc",
-    "release-canary": "lerna publish --canary=commit --cd-version=patch",
+    "release-canary": "lerna publish --canary --npm-tag=canary",
     "test": "lerna run test"
   },
   "devDependencies": {
