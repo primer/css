@@ -3,9 +3,9 @@
 [![NPM version](http://img.shields.io/npm/v/stylelint-selector-no-utility.svg)](https://www.npmjs.org/package/stylelint-selector-no-utility)
 [![Build Status](https://travis-ci.org/primer/stylelint-selector-no-utility.svg?branch=master)](https://travis-ci.org/primer/stylelint-selector-no-utility)
 
-**This plugin is extra specific to [primer-utilities](https://github.com/primer/utilities)** I will accept PRs to make it more generic, or feel free to fork and use it for your own classes.
+**This plugin is specific to [primer-utilities](https://github.com/primer/primer-css/tree/master/modules/primer-utilities)**. We'll accept pull requests to make it more generic, or feel free to fork and use it for your own classes.
 
-You should not be able to style a utility classes. Utility classes are single purpose, reusing them to add extra style violates their single purpose.
+Utilities are single purpose styles that should be treated as immutable CSS. They should not be altered by custom CSS as this can cause unwanted side effects.
 
 ```css
     .m-0, #bar .float-left, #hoo { border: 1px solid pink; }
