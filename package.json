@@ -35,8 +35,7 @@
     "eslint": "latest",
     "eslint-plugin-import": "latest",
     "eslint-plugin-github": "latest",
-    "stylelint": "^7.13.0",
-    "primer-utilities": "latest"
+    "stylelint": "^7.13.0"
   },
   "peerDependencies": {
     "stylelint": "^7.13.0"

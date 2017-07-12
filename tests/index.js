@@ -1,7 +1,6 @@
 const config = require("../")
 const stylelint = require("stylelint")
 const test = require("ava")
-const fs = require("fs")
 
 const validCss =
 `.selector-x { width: 10%; }
@@ -56,10 +55,8 @@ test("a warning with invalid css", t => {
 })
 
 test("No deprecated config", t => {
-  const utilities = fs.readFileSync("./node_modules/primer-utilities/lib/borders.scss")
-
   return stylelint.lint({
-    code: utilities.toString(),
+    code: "",
     config: config,
     syntax: "scss"
   })
