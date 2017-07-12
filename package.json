@@ -33,9 +33,9 @@
     "ava": "*",
     "eslint": "*",
     "eslint-plugin-github": "*",
-    "stylelint": "*"
+    "stylelint": "^7.13.0"
   },
   "peerDependencies": {
-    "stylelint": "^7.7.1"
+    "stylelint": "^7.13.0"
   }
 }
