@@ -5,10 +5,10 @@ node_js:
 before_script:
   - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
   - npm whoami
-  - echo lerna bootstrap
+  - lerna bootstrap
 
 script:
-  - echo npm test
+  - npm test
 
 after_success:
-  - echo script/cibuild --yes
+  - script/cibuild --yes
