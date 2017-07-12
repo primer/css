@@ -3,7 +3,7 @@ node_js:
   - 7
 
 before_script:
-  - echo "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}" > .npmrc
+  - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
   - npm whoami
   - echo lerna bootstrap
 
