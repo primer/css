@@ -11,6 +11,7 @@ const validCss =
 
 const invalidCss =
 `.foo {
+  color: #fff;
   top: .2em;
 }
 `
@@ -48,8 +49,9 @@ test("a warning with invalid css", t => {
       const { errored, results } = data
       const { warnings } = results[0]
       t.truthy(errored, "errored")
-      t.is(warnings.length, 1, "flags one warning")
-      t.is(warnings[0].text, "Expected a leading zero (number-leading-zero)", "correct warning text")
+      t.is(warnings.length, 2, "flags two warning")
+      t.is(warnings[0].text, 'Expected "top" to come before "color" (order/properties-order)', "correct warning text")
+      t.is(warnings[1].text, "Expected a leading zero (number-leading-zero)", "correct warning text")
     })
 })
 
