@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+# --yes gets passed in by .travis.yml,
+# which makes this easier to test locally
 args=${@:1}
 
 # always publish a canary release if this is a PR build
