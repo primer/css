@@ -12,11 +12,11 @@ if [[ $TRAVIS_EVENT_TYPE = pull_request ]]; then
 # merges to dev build a release candidate
 elif [[ $TRAVIS_BRANCH = dev ]]; then
   echo "👌  Publishing release candidate..."
-  npm run release-candidate -- ${args}
+  echo npm run release-candidate -- ${args}
 # publish a release when we merge to master
 elif [[ $TRAVIS_BRANCH = master ]]; then
   echo "📦  Publishing latest release!"
-  npm run release -- ${args}
+  echo npm run release -- ${args}
 else
   echo "⚠️  This isn't a PR and '${TRAVIS_BRANCH}' isn't a release branch."
   exit 1
