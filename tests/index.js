@@ -1,6 +1,7 @@
 const config = require("../")
 const stylelint = require("stylelint")
 const test = require("ava")
+const fs = require("fs")
 
 const validCss =
 `.selector-x { width: 10%; }
@@ -49,5 +50,20 @@ test("a warning with invalid css", t => {
       t.truthy(errored, "errored")
       t.is(warnings.length, 1, "flags one warning")
       t.is(warnings[0].text, "Expected a leading zero (number-leading-zero)", "correct warning text")
+    })
+})
+
+test("No deprecated config", t => {
+  const utilities = fs.readFileSync("./node_modules/primer-utilities/lib/borders.scss")
+
+  return stylelint.lint({
+    code: utilities.toString(),
+    config: config,
+    syntax: "scss"
+  })
+    .then(data => {
+      const { errored, results } = data
+      t.not(results.length, 0, "Did not find any resutls")
+      t.is(results[0].deprecations.length, 0, `Expected there to be no deprecated config warnings. Please fix these:\n\n${results[0].deprecations.map((d) => d.text).join("\n")}`)
     })
 })
