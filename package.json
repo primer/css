@@ -1,6 +1,6 @@
 {
   "name": "stylelint-selector-no-utility",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Stylelint rule that doesn't allow the styling of utility classes in CSS",
   "main": "index.js",
   "scripts": {
