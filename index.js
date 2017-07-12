@@ -1,8 +1,9 @@
 module.exports = {
   "plugins": [
-    "stylelint-scss",
+    "stylelint-no-unsupported-browser-features",
+    "stylelint-order",
     "stylelint-selector-no-utility",
-    "stylelint-order"
+    "stylelint-scss",
   ],
   "rules": {
     "at-rule-blacklist": ["extend"],
@@ -265,12 +266,11 @@ module.exports = {
     "no-eol-whitespace": true,
     "no-extra-semicolons": true,
     "no-missing-end-of-source-newline": true,
-    "no-unsupported-browser-features": [true, {
-      "browsers": "> 5%, last 2 firefox versions, last 2 chrome versions, last 2 safari versions, last 2 edge versions, ie 11",
-      "severity": "warning"
-    }],
     "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
+    "plugin/no-unsupported-browser-features": [true, {
+      "severity": "warning"
+    }],
     "primer/selector-no-utility": true,
     "property-case": "lower",
     "property-no-vendor-prefix": true,

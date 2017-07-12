@@ -19,6 +19,14 @@
     "stylelint",
     "css"
   ],
+  "browserslist": [
+    "> 5%",
+    "last 2 firefox versions",
+    "last 2 chrome versions",
+    "last 2 safari versions",
+    "last 2 edge versions",
+    "ie 11"
+  ],
   "author": "GitHub, Inc.",
   "license": "MIT",
   "bugs": {
@@ -26,8 +34,9 @@
   },
   "homepage": "https://github.com/primer/stylelint-config-primer#readme",
   "dependencies": {
-    "stylelint-scss": "^1.4.1",
+    "stylelint-no-unsupported-browser-features": "^1.0.0",
     "stylelint-order": "^0.4.4",
+    "stylelint-scss": "^1.4.1",
     "stylelint-selector-no-utility": "^1.5.0"
   },
   "devDependencies": {
