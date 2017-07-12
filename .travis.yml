@@ -3,11 +3,12 @@ node_js:
   - 7
 
 before_script:
-  - lerna bootstrap
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}" > .npmrc
+  - npm whoami
+  - echo lerna bootstrap
 
 script:
-  - npm test
+  - echo npm test
 
 after_success:
-  - echo "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}" > .npmrc
-  - script/cibuild --yes
+  - echo script/cibuild --yes
