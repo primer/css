@@ -30,9 +30,10 @@
     "stylelint-selector-no-utility": "^1.5.0"
   },
   "devDependencies": {
-    "ava": "*",
-    "eslint": "*",
-    "eslint-plugin-github": "*",
+    "ava": "latest",
+    "eslint": "latest",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-github": "latest",
     "stylelint": "^7.13.0"
   },
   "peerDependencies": {
