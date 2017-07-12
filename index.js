@@ -1,7 +1,8 @@
 module.exports = {
   "plugins": [
     "stylelint-scss",
-    "stylelint-selector-no-utility"
+    "stylelint-selector-no-utility",
+    "stylelint-order"
   ],
   "rules": {
     "at-rule-blacklist": ["extend"],
@@ -42,7 +43,7 @@ module.exports = {
       }
     ],
     "declaration-block-no-shorthand-property-overrides": true,
-    "declaration-block-properties-order": [
+    "order/properties-order": [
       "position",
       "top",
       "right",
