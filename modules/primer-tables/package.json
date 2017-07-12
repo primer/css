@@ -19,7 +19,8 @@
   "scripts": {
     "build": "primer-module-build index.scss",
     "prepare": "npm run build",
-    "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
+    "lint": "stylelint **/*.scss -c .stylelintrc.json -s scss",
+    "test": "npm run build && npm run lint"
   },
   "dependencies": {
     "primer-marketing-support": "^1.0.2",
