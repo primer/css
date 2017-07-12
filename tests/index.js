@@ -65,6 +65,7 @@ test("No deprecated config", t => {
   })
     .then(data => {
       const { errored, results } = data
+      t.falsy(errored, "errored")
       t.not(results.length, 0, "Did not find any resutls")
       t.is(results[0].deprecations.length, 0, `Expected there to be no deprecated config warnings. Please fix these:\n\n${results[0].deprecations.map((d) => d.text).join("\n")}`)
     })
