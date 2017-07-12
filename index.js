@@ -273,20 +273,12 @@ module.exports = {
     "primer/selector-no-utility": true,
     "property-case": "lower",
     "property-no-vendor-prefix": true,
-    "rule-nested-empty-line-before": [
+    "rule-empty-line-before": [
       "always-multi-line",
       {
         "except": [
           "first-nested"
         ],
-        "ignore": [
-          "after-comment"
-        ]
-      }
-    ],
-    "rule-non-nested-empty-line-before": [
-      "always-multi-line",
-      {
         "ignore": [
           "after-comment"
         ]
@@ -320,6 +312,6 @@ module.exports = {
     "value-list-comma-newline-after": "always-multi-line",
     "value-list-comma-space-after": "always-single-line",
     "value-list-comma-space-before": "never",
-    "value-no-vendor-prefix": true
-  }
+    "value-no-vendor-prefix": true,
+  },
 }
