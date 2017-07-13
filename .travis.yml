@@ -3,8 +3,8 @@ node_js:
   - 7
 
 before_install:
-  - echo "commit: $TRAVIS_COMMIT"
-  - echo "pr SHA: $TRAVIS_PULL_REQUEST_SHA"
+  - echo $TRAVIS_COMMIT
+  - echo $TRAVIS_PULL_REQUEST_SHA
   - exit 1
 
 before_script:
