@@ -1,0 +1,23 @@
+#!/bin/bash
+set -e
+
+# --yes gets passed in by .travis.yml,
+# which makes this easier to test locally
+args=${@:1}
+
+# always publish a canary release if this is a PR build
+if [[ $TRAVIS_EVENT_TYPE = pull_request ]]; then
+  echo "🐦  Publishing canary version..."
+  npm run release-canary -- ${args}
+# merges to dev build a release candidate
+elif [[ $TRAVIS_BRANCH = dev ]]; then
+  echo "👌  Publishing release candidate..."
+  echo npm run release-candidate -- ${args}
+# publish a release when we merge to master
+elif [[ $TRAVIS_BRANCH = master ]]; then
+  echo "📦  Publishing latest release!"
+  echo npm run release -- ${args}
+else
+  echo "⚠️  This isn't a PR and '${TRAVIS_BRANCH}' isn't a release branch."
+  exit 1
+fi
