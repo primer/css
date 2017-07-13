@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - 7
 
-before_script:
+install:
   - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
   - lerna bootstrap
 
