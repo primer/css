@@ -2,12 +2,12 @@ language: node_js
 node_js:
   - 7
 
-install:
-  - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
+after_install:
   - lerna bootstrap
 
 script:
   - npm test
 
 after_success:
+  - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
   - script/cibuild --yes
