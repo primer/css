@@ -1,0 +1,25 @@
+#!/bin/bash
+set -e
+
+args=${@:1}
+package=primer-css
+# the commit status context
+context=npm/publish/pr
+
+echo "🐦  Publishing canary version..."
+lerna publish --npm-tag=canary --canary --no-git ${args}
+
+# get the canary version of primer-css from its package.json
+version=`jq -r .version modules/${package}/package.json`
+slug="${package}@${version}"
+
+echo "📡  Transmitting release success for ${slug} ..."
+
+if [[ $TRAVIS_PULL_REQUEST_SHA ]]; then
+  # setting TRAVIS_COMMIT inline here is a fix for:
+  # <https://github.com/taskworld/commit-status/issues/5>
+  TRAVIS_COMMIT=$TRAVIS_PULL_REQUEST_SHA \
+    commit-status success ${context} \
+    "npm install ${slug}" \
+    "https://unpkg.com/${slug}/build/build.css"
+fi

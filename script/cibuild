@@ -4,16 +4,10 @@ set -e
 # --yes gets passed in by .travis.yml,
 # which makes this easier to test locally
 args=${@:1}
-package=primer-css
 
 # always publish a canary release if this is a PR build
 if [[ $TRAVIS_EVENT_TYPE = pull_request ]]; then
-  echo "🐦  Publishing canary version..."
-  npm run release-canary -- ${args}
-  version=`jq -r .version modules/${package}/package.json`
-  echo "📡  Transmitting release success for ${package}@${version} ..."
-  TRAVIS_COMMIT=$TRAVIS_PULL_REQUEST_SHA \
-    commit-status success npm/publish/pr "npm install ${package}@${version}"
+  script/release-canary ${args}
 # merges to dev build a release candidate
 elif [[ $TRAVIS_BRANCH = dev ]]; then
   echo "👌  Publishing release candidate..."
