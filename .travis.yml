@@ -2,10 +2,12 @@ language: node_js
 node_js:
   - 7
 
-before_script:
-  - echo "TRAVIS_COMMIT: ${TRAVIS_COMMIT}"
-  - echo "TRAVIS_PULL_REQUEST_SHA: ${TRAVIS_PULL_REQUEST_SHA}"
+before_install:
+  - echo "commit: $TRAVIS_COMMIT"
+  - echo "pr SHA: $TRAVIS_PULL_REQUEST_SHA"
   - exit 1
+
+before_script:
   - lerna bootstrap
 
 script:
