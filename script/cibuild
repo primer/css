@@ -5,9 +5,9 @@ set -e
 # which makes this easier to test locally
 args=${@:1}
 
-# always publish a canary release if this is a PR build
+# always publish a pr release if this is a PR build
 if [[ $TRAVIS_EVENT_TYPE = pull_request ]]; then
-  script/release-canary ${args}
+  script/release-pr ${args}
 # merges to dev build a release candidate
 elif [[ $TRAVIS_BRANCH = dev ]]; then
   script/release-candidate ${args}

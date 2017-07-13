@@ -7,10 +7,10 @@ npm_tag=pr
 # the commit status context
 context=npm/publish/${npm_tag}
 
-echo "🐦  Publishing canary version to dist-tag '${npm_tag}'..."
+echo "🐦  Publishing PR release to dist-tag '${npm_tag}'..."
 lerna publish --npm-tag=${npm_tag} --canary --no-git ${args}
 
-# get the canary version of primer-css from its package.json
+# get the published version of primer-css from its package.json
 version=`jq -r .version modules/${package}/package.json`
 slug="${package}@${version}"
 

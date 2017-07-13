@@ -5,7 +5,7 @@
     "clean": "lerna clean",
     "diff": "lerna diff",
     "updated": "lerna updated",
-    "release-canary": "script/release-canary",
+    "release-pr": "script/release-pr",
     "release-candidate": "script/release-candidate",
     "release": "script/release",
     "test": "lerna run test"
