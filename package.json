@@ -5,9 +5,9 @@
     "clean": "lerna clean",
     "diff": "lerna diff",
     "updated": "lerna updated",
-    "release": "lerna publish",
-    "release-candidate": "lerna publish --npm-tag=rc",
-    "release-canary": "lerna publish --npm-tag=canary --canary --no-git",
+    "release-canary": "script/release-canary",
+    "release-candidate": "script/release-candidate",
+    "release": "script/release",
     "test": "lerna run test"
   },
   "devDependencies": {
