@@ -4,7 +4,6 @@ node_js:
 
 before_script:
   - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
-  - npm whoami
   - lerna bootstrap
 
 script:
