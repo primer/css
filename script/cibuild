@@ -10,12 +10,10 @@ if [[ $TRAVIS_EVENT_TYPE = pull_request ]]; then
   script/release-canary ${args}
 # merges to dev build a release candidate
 elif [[ $TRAVIS_BRANCH = dev ]]; then
-  echo "👌  Publishing release candidate..."
-  echo npm run release-candidate -- ${args}
+  script/release-candidate ${args}
 # publish a release when we merge to master
 elif [[ $TRAVIS_BRANCH = master ]]; then
-  echo "📦  Publishing latest release!"
-  echo npm run release -- ${args}
+  script/release ${args}
 else
   echo "⚠️  This isn't a PR and '${TRAVIS_BRANCH}' isn't a release branch."
   exit 1

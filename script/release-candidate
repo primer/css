@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+echo "👌  Publishing release candidate..."
+echo lerna publish --npm-tag=rc
