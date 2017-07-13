@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - 7
 
-after_install:
+before_script:
   - lerna bootstrap
 
 script:
