@@ -3,14 +3,14 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean",
-    "updated": "lerna updated",
     "diff": "lerna diff",
-    "publish": "lerna publish",
-    "dev": "lerna publish --npm-tag=dev --skip-git",
-    "rc": "lerna publish --npm-tag=rc --skip-git",
-    "force": "lerna publish --force-publish=*"
+    "updated": "lerna updated",
+    "release": "lerna publish",
+    "release-candidate": "lerna publish --npm-tag=rc",
+    "release-canary": "lerna publish --npm-tag=canary --canary",
+    "test": "lerna run test"
   },
   "devDependencies": {
-    "lerna": "^2.0.0-rc.5"
+    "lerna": "^2.0.0"
   }
 }

@@ -1,0 +1,23 @@
+#!/bin/bash
+set -e
+
+# reads the tag either from $NPM_TAG or first positional arg:
+# script/compare-published [tag]
+tag=${1:-${NPM_TAG:-latest}}
+
+# this is way faster than `lerna exec npm info . .name`
+# (but will skip modules that don't have "primer-" in them)
+modules=`ls -1 modules | egrep primer-`
+
+# tabular output separator for column(1)
+s=,
+
+echo "📦  Comparing Primer modules published @${tag}..."
+(
+    echo "module${s}tag${s}published${s}local"
+    for module in $modules; do
+        v_published=`npm info ${module}@${tag} .version`
+        v_local=`jq -Mr .version modules/${module}/package.json`
+        echo "${module}${s}${tag}${s}${v_published:-x}${s}${v_local}"
+    done
+) | column -t -s=${s}
