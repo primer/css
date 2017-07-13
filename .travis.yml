@@ -3,6 +3,9 @@ node_js:
   - 7
 
 before_script:
+  - echo "TRAVIS_COMMIT: ${TRAVIS_COMMIT}"
+  - echo "TRAVIS_PULL_REQUEST_SHA: ${TRAVIS_PULL_REQUEST_SHA}"
+  - exit 1
   - lerna bootstrap
 
 script:
