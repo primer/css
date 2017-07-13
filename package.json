@@ -11,7 +11,7 @@
     "test": "lerna run test"
   },
   "devDependencies": {
-    "commit-status": "^4.1.0",
+    "commit-status": "github:shawnbot/commit-status",
     "lerna": "^2.0.0"
   }
 }
