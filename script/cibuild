@@ -13,7 +13,7 @@ if [[ $TRAVIS_EVENT_TYPE = pull_request ]]; then
   version=`jq -r .version modules/${package}/package.json`
   echo "📡  Transmitting release success for ${package}@${version} ..."
   TRAVIS_COMMIT=$TRAVIS_PULL_REQUEST_SHA \
-    commit-status success npm/publish/pr "📦  npm install ${package}@${version}"
+    commit-status success npm/publish/pr "npm install ${package}@${version}"
 # merges to dev build a release candidate
 elif [[ $TRAVIS_BRANCH = dev ]]; then
   echo "👌  Publishing release candidate..."
