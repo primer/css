@@ -11,7 +11,8 @@ if [[ $TRAVIS_EVENT_TYPE = pull_request ]]; then
   npm run release-canary -- ${args}
   version=`jq -r .version modules/primer-css/package.json`
   echo "📡  Transmitting release success for primer-css@${version} ..."
-  commit-status success npm/publish/pr "${version}"
+  TRAVIS_COMMIT=$TRAVIS_PULL_REQUEST_SHA \
+    commit-status success npm/publish/pr "${version}"
 # merges to dev build a release candidate
 elif [[ $TRAVIS_BRANCH = dev ]]; then
   echo "👌  Publishing release candidate..."
