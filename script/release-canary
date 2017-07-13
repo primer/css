@@ -3,11 +3,12 @@ set -e
 
 args=${@:1}
 package=primer-css
+npm_tag=pr
 # the commit status context
-context=npm/publish/pr
+context=npm/publish/${npm_tag}
 
-echo "🐦  Publishing canary version..."
-lerna publish --npm-tag=canary --canary --no-git ${args}
+echo "🐦  Publishing canary version to dist-tag '${npm_tag}'..."
+lerna publish --npm-tag=${npm_tag} --canary --no-git ${args}
 
 # get the canary version of primer-css from its package.json
 version=`jq -r .version modules/${package}/package.json`
