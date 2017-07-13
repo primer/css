@@ -5,6 +5,7 @@ node_js:
 before_install:
   - echo $TRAVIS_COMMIT
   - echo $TRAVIS_PULL_REQUEST_SHA
+  - git log -3
   - exit 1
 
 before_script:
