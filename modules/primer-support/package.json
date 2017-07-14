@@ -19,7 +19,7 @@
     "test": "npm run lint"
   },
   "devDependencies": {
-    "stylelint": "*",
+    "stylelint": "^7.13.0",
     "stylelint-config-primer": "^2.0.0"
   },
   "keywords": [
