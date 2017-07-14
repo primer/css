@@ -29,7 +29,7 @@
   "devDependencies": {
     "primer-module-build": "*",
     "stylelint": "*",
-    "stylelint-config-primer": "*"
+    "stylelint-config-primer": "^2.0.0-0"
   },
   "keywords": [
     "css",
