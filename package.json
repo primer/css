@@ -8,6 +8,7 @@
     "release": "lerna publish",
     "release-candidate": "lerna publish --npm-tag=rc",
     "release-canary": "lerna publish --npm-tag=canary --canary",
+    "lint": "lerna run lint",
     "test": "lerna run test"
   },
   "devDependencies": {
