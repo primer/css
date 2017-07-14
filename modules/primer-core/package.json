@@ -35,6 +35,6 @@
   },
   "devDependencies": {
     "primer-module-build": "*",
-    "stylelint-config-primer": "^2.0.0-0"
+    "stylelint-config-primer": "^2.0.0"
   }
 }

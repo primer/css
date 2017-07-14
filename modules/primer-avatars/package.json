@@ -28,7 +28,7 @@
   "devDependencies": {
     "primer-module-build": "*",
     "stylelint": "*",
-    "stylelint-config-primer": "^2.0.0-0"
+    "stylelint-config-primer": "^2.0.0"
   },
   "keywords": [
     "avatars",
