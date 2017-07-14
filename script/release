@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+echo "📦  Publishing latest release!"
+echo lerna publish

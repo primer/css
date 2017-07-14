@@ -5,12 +5,13 @@
     "clean": "lerna clean",
     "diff": "lerna diff",
     "updated": "lerna updated",
-    "release": "lerna publish",
-    "release-candidate": "lerna publish --npm-tag=rc",
-    "release-canary": "lerna publish --npm-tag=canary --canary",
+    "release-pr": "script/release-pr",
+    "release-candidate": "script/release-candidate",
+    "release": "script/release",
     "test": "lerna run test"
   },
   "devDependencies": {
+    "commit-status": "^4.1.0",
     "lerna": "^2.0.0"
   }
 }
