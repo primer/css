@@ -1,8 +1,9 @@
 module.exports = {
   "plugins": [
-    "stylelint-scss",
+    "stylelint-no-unsupported-browser-features",
+    "stylelint-order",
     "stylelint-selector-no-utility",
-    "stylelint-order"
+    "stylelint-scss",
   ],
   "rules": {
     "at-rule-blacklist": ["extend"],
@@ -254,7 +255,6 @@ module.exports = {
     "max-nesting-depth": 3,
     "media-feature-colon-space-after": "always",
     "media-feature-colon-space-before": "never",
-    "media-feature-no-missing-punctuation": true,
     "media-feature-parentheses-space-inside": "never",
     "media-feature-range-operator-space-after": "always",
     "media-feature-range-operator-space-before": "always",
@@ -265,29 +265,20 @@ module.exports = {
     "no-eol-whitespace": true,
     "no-extra-semicolons": true,
     "no-missing-end-of-source-newline": true,
-    "no-unsupported-browser-features": [true, {
-      "browsers": "> 5%, last 2 firefox versions, last 2 chrome versions, last 2 safari versions, last 2 edge versions, ie 11",
-      "severity": "warning"
-    }],
     "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
+    "plugin/no-unsupported-browser-features": [true, {
+      "severity": "warning"
+    }],
     "primer/selector-no-utility": true,
     "property-case": "lower",
     "property-no-vendor-prefix": true,
-    "rule-nested-empty-line-before": [
+    "rule-empty-line-before": [
       "always-multi-line",
       {
         "except": [
           "first-nested"
         ],
-        "ignore": [
-          "after-comment"
-        ]
-      }
-    ],
-    "rule-non-nested-empty-line-before": [
-      "always-multi-line",
-      {
         "ignore": [
           "after-comment"
         ]
@@ -303,10 +294,10 @@ module.exports = {
     "selector-list-comma-space-before": "never",
     "selector-max-compound-selectors": 3,
     "selector-max-empty-lines": 0,
+    "selector-max-id": 0,
     "selector-max-specificity": "0,4,0",
-    "selector-no-id": true,
+    "selector-max-type": 0,
     "selector-no-qualifying-type": true,
-    "selector-no-type": true,
     "selector-pseudo-class-case": "lower",
     "selector-pseudo-class-parentheses-space-inside": "never",
     "selector-pseudo-element-case": "lower",
@@ -321,6 +312,6 @@ module.exports = {
     "value-list-comma-newline-after": "always-multi-line",
     "value-list-comma-space-after": "always-single-line",
     "value-list-comma-space-before": "never",
-    "value-no-vendor-prefix": true
-  }
+    "value-no-vendor-prefix": true,
+  },
 }
