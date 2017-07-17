@@ -133,7 +133,7 @@
       z-index: 10;
       display: block; // Show up in errored/warn state
       max-width: 450px; // Keep our long errors readable
-      padding: 5px 8px;
+      padding: 5px $spacer-2;
       margin: $spacer-1 0 0;
       font-size: 13px;
       font-weight: normal;

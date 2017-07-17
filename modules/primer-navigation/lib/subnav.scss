@@ -72,7 +72,7 @@
 .subnav-search-icon {
   position: absolute;
   top: 9px;
-  left: 8px;
+  left: $spacer-2;
   display: block;
   color: darken($gray-300, 4%);
   text-align: center;

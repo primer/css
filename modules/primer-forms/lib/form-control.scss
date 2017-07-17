@@ -18,7 +18,7 @@ label {
 .form-control,
 .form-select {
   min-height: 34px;
-  padding: 6px 8px;
+  padding: 6px $spacer-2;
   font-size: $body-font-size;
   line-height: 20px;
   color: $text-gray-dark;
@@ -194,7 +194,7 @@ input::-webkit-inner-spin-button {
 }
 
 .form-warning {
-  padding: 8px 10px;
+  padding: $spacer-2 10px;
   margin: 10px 0;
   font-size: 14px;
   color: $yellow-900;
