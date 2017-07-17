@@ -55,7 +55,7 @@
 @mixin alt-h3 {
   font-size: 18px;
   font-weight: $font-weight-normal;
-  @include breakpoint(md) { font-size: 20px; }
+  @include breakpoint(md) { font-size: $h3-size; }
   @include breakpoint(lg) { font-size: 22px; }
 }
 
