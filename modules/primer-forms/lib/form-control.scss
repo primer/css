@@ -204,7 +204,7 @@ input::-webkit-inner-spin-button {
 
   p {
     margin: 0;
-    line-height: 1.5;
+    line-height: $lh-default;
   }
 
   a { font-weight: $font-weight-bold; }
