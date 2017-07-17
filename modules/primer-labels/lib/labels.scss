@@ -42,7 +42,7 @@
 .Label--outline {
   margin-top: -1px; // offsets the 1px border
   margin-bottom: -1px; // offsets the 1px border
-  font-weight: normal;
+  font-weight: $font-weight-normal;
   color: $text-gray;
   background-color: transparent;
   border: 1px solid $black-fade-15;
