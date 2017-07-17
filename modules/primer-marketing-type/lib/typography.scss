@@ -20,7 +20,7 @@
 }
 
 @mixin alt-h0 {
-  font-size: 48px;
+  font-size: $h00-size;
   font-weight: $font-weight-light;
   @include breakpoint(md) { font-size: 54px; }
   @include breakpoint(lg) { font-size: 72px; }
@@ -33,7 +33,7 @@
 @mixin alt-h1 {
   font-size: 36px;
   font-weight: $font-weight-light;
-  @include breakpoint(md) { font-size: 48px; }
+  @include breakpoint(md) { font-size: $h00-size; }
   @include breakpoint(lg) { font-size: 54px; }
 }
 
