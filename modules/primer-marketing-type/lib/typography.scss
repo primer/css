@@ -83,7 +83,7 @@
   -webkit-font-smoothing: antialiased;
   font-size: 21px;
   font-weight: $font-weight-light;
-  @include breakpoint(md) { font-size: 24px; }
+  @include breakpoint(md) { font-size: $h2-size; }
   @include breakpoint(lg) { font-size: 26px; }
 }
 
