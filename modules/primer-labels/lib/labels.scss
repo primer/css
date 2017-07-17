@@ -17,7 +17,7 @@
 .label,
 .Label {
   display: inline-block;
-  padding: 3px 4px;
+  padding: 3px $spacer-1;
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
   line-height: 1; // prevent inheritance from changing proportions

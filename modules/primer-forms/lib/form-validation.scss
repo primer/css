@@ -87,7 +87,7 @@ dl.form-group > dd {
 
     > li {
       float: left;
-      margin: 0 4px 0 0;
+      margin: 0 $spacer-1 0 0;
       list-style-type: none;
 
       &.text {
@@ -387,7 +387,7 @@ p.explain {
   }
 
   .minibutton {
-    top: -4px;
+    top: -$spacer-1;
     float: right;
   }
 }
