@@ -29,6 +29,7 @@
     "primer-support": "^4.0.7"
   },
   "devDependencies": {
-    "primer-module-build": "*"
+    "primer-module-build": "*",
+    "stylelint-config-primer": "^2.0.0"
   }
 }
