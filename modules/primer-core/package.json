@@ -34,6 +34,7 @@
     "primer-utilities": "^4.3.5"
   },
   "devDependencies": {
-    "primer-module-build": "*"
+    "primer-module-build": "*",
+    "stylelint-config-primer": "^2.0.0"
   }
 }
