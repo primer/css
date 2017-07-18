@@ -9,10 +9,18 @@
     "release-pr": "script/release-pr",
     "release-candidate": "script/release-candidate",
     "release": "script/release",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.scss": [
+      "stylelint"
+    ]
   },
   "devDependencies": {
     "commit-status": "^4.1.0",
-    "lerna": "^2.0.0"
+    "husky": "^0.14.3",
+    "lerna": "^2.0.0",
+    "lint-staged": "^4.0.2"
   }
 }
