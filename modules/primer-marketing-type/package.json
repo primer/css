@@ -1,5 +1,5 @@
 {
-  "version": "1.0.2",
+  "version": "1.1.0",
   "name": "primer-marketing-type",
   "description": "Typography for marketing websites at GitHub",
   "homepage": "http://primercss.io/",
@@ -19,16 +19,17 @@
   "scripts": {
     "build": "primer-module-build index.scss",
     "prepare": "npm run build",
-    "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
+    "lint": "stylelint **/*.scss -c .stylelintrc.json -s scss",
+    "test": "npm run build && npm run lint"
   },
   "dependencies": {
-    "primer-marketing-support": "^1.0.2",
-    "primer-support": "^4.0.7"
+    "primer-marketing-support": "^1.1.0",
+    "primer-support": "^4.1.0"
   },
   "devDependencies": {
     "primer-module-build": "*",
-    "stylelint": "*",
-    "stylelint-config-primer": "*"
+    "stylelint": "^7.13.0",
+    "stylelint-config-primer": "^2.0.0"
   },
   "keywords": [
     "css",
