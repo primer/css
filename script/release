@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 echo "📦  Publishing latest release..."
-lerna exec --bail -- npm publish
+lerna exec -- npm publish
