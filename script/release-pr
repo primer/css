@@ -2,25 +2,7 @@
 set -e
 
 args=$@
-package=primer-css
 npm_tag=pr
-# the commit status context
-context=npm/publish/${npm_tag}
 
-echo "🐦  Publishing PR release to dist-tag '${npm_tag}'..."
-lerna publish --npm-tag=${npm_tag} --canary --no-git ${args}
-
-# get the published version of primer-css from its package.json
-version=`jq -r .version modules/${package}/package.json`
-slug="${package}@${version}"
-
-if [[ $TRAVIS_PULL_REQUEST_SHA ]]; then
-  echo "📡  Transmitting release success for ${slug} ..."
-
-  # setting TRAVIS_COMMIT inline here is a fix for:
-  # <https://github.com/taskworld/commit-status/issues/5>
-  TRAVIS_COMMIT=$TRAVIS_PULL_REQUEST_SHA \
-    commit-status success ${context} \
-    "npm install ${slug}" \
-    "https://unpkg.com/${slug}/build/build.css"
-fi
+echo "🐦  Publishing PR release to dist-tag '$npm_tag'..."
+lerna publish --npm-tag=$npm_tag --canary --no-git $args
