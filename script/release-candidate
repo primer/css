@@ -16,8 +16,6 @@ function publish() {
   npm publish --silent --tag=$npm_tag $@
 }
 
-export bump publish
-
 # get the version we're publishing as a release candidate
 local_version=$(jq -r .version modules/$package/package.json)
 if [[ $local_version =~ "-" ]]; then
@@ -36,16 +34,11 @@ rc_release=${rc_version%-*}
 next_version=$(
   semver --increment prerelease --preid $npm_tag $rc_version
 )
-echo "🆙  Next version: $package@$next_version"
-
-# update primer-css to the latest new version
-pushd modules/$package
-bump $next_version
-popd
+echo "🤜  Next version: $package@$next_version"
 
 # strip the pre-release version, yielding just major.minor.patch
 pre_version=${next_version:${#local_version}}
-echo "prerelease suffix: '$pre_version'"
+echo "   Prerelease suffix: '$pre_version'"
 
 # get the name of every module
 modules=$(lerna exec pwd | xargs basename)
@@ -55,10 +48,6 @@ modules=$(lerna exec pwd | xargs basename)
 echo "Updating all module versions in place..."
 echo
 for module in $modules; do
-  if [[ $module = $package ]]; then
-    echo "Skipping $package (already bumped)"
-    continue
-  fi
   pushd modules/$module > /dev/null
 
   # determine the local version (in git)
