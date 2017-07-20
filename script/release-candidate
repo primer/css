@@ -63,4 +63,4 @@ for module in $modules; do
 done
 
 # publish all the things!
-echo lerna exec --bail -- npm --dry-run publish
+lerna exec --bail -- npm publish --tag=$npm_tag
