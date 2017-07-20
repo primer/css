@@ -5,6 +5,12 @@ set -e
 # which makes this easier to test locally
 args=$@
 
+echo "TRAVIS_ env vars:"
+echo "EVENT_TYPE:          $TRAVIS_EVENT_TYPE"
+echo "BRANCH:              $TRAVIS_BRANCH"
+echo "PULL_REQUEST_BRANCH: $TRAVIS_PULL_REQUEST_BRANCH"
+exit
+
 # always publish a pr release if this is a PR build
 if [[ "$TRAVIS_EVENT_TYPE" = "pull_request" ]]; then
   script/release-pr $args
