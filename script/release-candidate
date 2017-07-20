@@ -1,4 +1,67 @@
 #!/bin/bash
 set -e
 echo "👌  Publishing release candidate..."
-echo lerna publish --npm-tag=rc
+
+PATH=$(npm bin):$PATH
+
+package=primer-css
+npm_tag=rc
+log=/tmp/rc.log
+
+function bump() {
+  npm version --no-git $@
+}
+
+function publish() {
+  npm publish --silent --tag=$npm_tag $@
+}
+
+# get the version we're publishing as a release candidate
+local_version=$(jq -r .version modules/$package/package.json)
+if [[ $local_version =~ "-" ]]; then
+  echo "❌  Found pre-release version: $package@$local_version; bailing!"
+  exit 1
+else
+  echo "🏔  Local version: $package@$local_version"
+fi
+
+# get the version most recently published to the rc dist-tag
+rc_version=$(npm info $package@$npm_tag version)
+echo "📦  Published version for $package@$npm_tag: $rc_version"
+rc_release=${rc_version%-*}
+
+# determine the 
+next_version=$(
+  semver --increment prerelease --preid $npm_tag $rc_version
+)
+echo "🤜  Next version: $package@$next_version"
+
+# strip the pre-release version, yielding just major.minor.patch
+pre_version=${next_version:${#local_version}}
+echo "   Prerelease suffix: '$pre_version'"
+
+# get the name of every module
+# FIXME there's gotta be a better way to do this
+modules=$(lerna exec pwd | xargs basename)
+
+# if this is the same version, we need to bump the prerelease
+# for all of the modules using the same prerelease identifier
+echo "Updating all module versions in place..."
+echo
+for module in $modules; do
+  pushd modules/$module > /dev/null
+
+  # determine the local version (in git)
+  module_version=$(jq -r .version package.json)
+  module_next_version="$module_version$pre_version"
+
+  echo "$module@$module_version => $module_next_version"
+  # "upgrade" to the most recent RC version so that
+  # `npm version prerelease` can increment automatically
+  bump --quiet "$module_next_version" >> $log
+
+  popd > /dev/null
+done
+
+# publish all the things!
+lerna exec --bail -- npm publish --tag=$npm_tag

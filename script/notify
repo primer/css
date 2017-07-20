@@ -1,0 +1,22 @@
+#!/bin/bash
+set -e
+
+# the commit status context
+context="npm publish"
+
+# get the published version of primer-css from its package.json
+package=primer-css
+version=$(jq -r .version modules/$package/package.json)
+published="$package@$version"
+
+# XXX this will go away if we build pushes instead of PRs
+if [[ "$TRAVIS_PULL_REQUEST_SHA" != "" ]]; then
+  # setting TRAVIS_COMMIT inline here is a fix for:
+  # <https://github.com/taskworld/commit-status/issues/5>
+  export TRAVIS_COMMIT=$TRAVIS_PULL_REQUEST_SHA
+fi
+
+echo "📡  Transmitting publish status for $published..."
+# TODO point this at the contributing docs!
+commit-status success "$context" "$published" \
+  "https://unpkg.com/$published/build/build.css"
