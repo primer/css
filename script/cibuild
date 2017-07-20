@@ -7,14 +7,16 @@ args=$@
 
 # always publish a pr release if this is a PR build
 if [[ "$TRAVIS_EVENT_TYPE" = "pull_request" ]]; then
-  script/release-pr ${args}
+  script/release-pr $args
 # merges to dev build a release candidate
 elif [[ "$TRAVIS_BRANCH" =~ "^release-" ]]; then
-  script/release-candidate ${args}
+  script/release-candidate $args
 # publish a release when we merge to master
 elif [[ "$TRAVIS_BRANCH" = "master" ]]; then
-  script/release ${args}
+  script/release $args
 else
-  echo "⚠️  This isn't a PR and '${TRAVIS_BRANCH}' isn't a release branch."
+  echo "⚠️  This isn't a PR and '$TRAVIS_BRANCH' isn't a release branch."
   exit 1
 fi
+
+script/notify
