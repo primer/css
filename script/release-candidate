@@ -41,6 +41,7 @@ pre_version=${next_version:${#local_version}}
 echo "   Prerelease suffix: '$pre_version'"
 
 # get the name of every module
+# FIXME there's gotta be a better way to do this
 modules=$(lerna exec pwd | xargs basename)
 
 # if this is the same version, we need to bump the prerelease
