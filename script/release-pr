@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-args=${@:1}
+args=$@
 package=primer-css
 npm_tag=pr
 # the commit status context
@@ -14,9 +14,9 @@ lerna publish --npm-tag=${npm_tag} --canary --no-git ${args}
 version=`jq -r .version modules/${package}/package.json`
 slug="${package}@${version}"
 
-echo "📡  Transmitting release success for ${slug} ..."
-
 if [[ $TRAVIS_PULL_REQUEST_SHA ]]; then
+  echo "📡  Transmitting release success for ${slug} ..."
+
   # setting TRAVIS_COMMIT inline here is a fix for:
   # <https://github.com/taskworld/commit-status/issues/5>
   TRAVIS_COMMIT=$TRAVIS_PULL_REQUEST_SHA \
