@@ -6,7 +6,7 @@ context="npm publish"
 
 # get the published version of primer-css from its package.json
 package=primer-css
-version=`jq -r .version modules/$package/package.json`
+version=$(jq -r .version modules/$package/package.json)
 published="$package@$version"
 
 # XXX this will go away if we build pushes instead of PRs
