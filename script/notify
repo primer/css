@@ -1,13 +1,25 @@
 #!/bin/bash
 set -e
 
+if [[ $# -lt 1 ]]; then
+  echo "No status provided!" >&2
+  exit 1
+fi
+
 # the commit status context
 context="npm publish"
+_status=$1
 
 # get the published version of primer-css from its package.json
 package=primer-css
 version=$(jq -r .version modules/$package/package.json)
 published="$package@$version"
+
+message=""
+if [[ "$_status" = "success" ]]; then
+  # TODO point this at the contributing docs!
+  message="https://unpkg.com/$published/build/build.css"
+fi
 
 # XXX this will go away if we build pushes instead of PRs
 if [[ "$TRAVIS_PULL_REQUEST_SHA" != "" ]]; then
@@ -17,6 +29,4 @@ if [[ "$TRAVIS_PULL_REQUEST_SHA" != "" ]]; then
 fi
 
 echo "📡  Transmitting publish status for $published..."
-# TODO point this at the contributing docs!
-commit-status success "$context" "$published" \
-  "https://unpkg.com/$published/build/build.css"
+commit-status "$_status" "$context" "$published" "$message"
