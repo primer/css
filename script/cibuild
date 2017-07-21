@@ -28,10 +28,11 @@ if [[ "$branch" =~ ^release- ]]; then
     script/notify pending
     script/release-candidate $args
     script/notify success
+  else
+    echo "⚠️  This appears to be a release branch, but we only publish *push* builds."
+    echo "(TRAVIS_EVENT_TYPE: $event)"
+    exit 1
   fi
-  echo "⚠️  This appears to be a release branch, but we only publish *push* builds."
-  echo "(TRAVIS_EVENT_TYPE: $event)"
-  exit 1
 # always publish a pr release if this is a PR build
 elif [[ "$event" = "pull_request" ]]; then
   script/notify pending
