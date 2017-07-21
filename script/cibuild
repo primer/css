@@ -5,28 +5,27 @@ set -e
 # which makes this easier to test locally
 args=$@
 
-event=$TRAVIS_EVENT_TYPE
-if [[ $event = "pull_request" ]]; then
-  branch=$TRAVIS_PULL_REQUEST_BRANCH
-else
-  branch=$TRAVIS_BRANCH
-fi
+event="$TRAVIS_EVENT_TYPE"
+branch="${TRAVIS_PULL_REQUEST_BRANCH=${TRAVIS_BRANCH}}"
 
 echo "==== CI env ===="
 echo "event:  $event"
 echo "branch: $branch"
 echo "================"
+if [[ "$event" = "" || "$branch" = "" ]]; then
+  echo '❌  Missing $TRAVIS_EVENT_TYPE or $TRAVIS_BRANCH!'
+  exit 1
+fi
 
 # release branches publish a release candidate
-if [[ "$branch" =~ "^release-" ]]; then
+if [[ "$branch" =~ ^release- ]]; then
   # only publish RCs for push builds
   if [[ "$event" = "push" ]]; then
     script/notify pending
     script/release-candidate $args
     script/notify success
   fi
-  echo "⚠️  This appears to be a release branch,"
-  echo "but we only publish *push* builds."
+  echo "⚠️  This appears to be a release branch, but we only publish *push* builds."
   echo "(TRAVIS_EVENT_TYPE: $event)"
   exit 1
 # always publish a pr release if this is a PR build
