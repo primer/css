@@ -5,24 +5,38 @@ set -e
 # which makes this easier to test locally
 args=$@
 
-echo "TRAVIS_ env vars:"
-echo "EVENT_TYPE:          $TRAVIS_EVENT_TYPE"
-echo "BRANCH:              $TRAVIS_BRANCH"
-echo "PULL_REQUEST_BRANCH: $TRAVIS_PULL_REQUEST_BRANCH"
-exit
+event=$TRAVIS_EVENT_TYPE
+if [[ $event = "pull_request" ]]; then
+  branch=$TRAVIS_PULL_REQUEST_BRANCH
+else
+  branch=$TRAVIS_BRANCH
+fi
 
+echo "==== CI env ===="
+echo "event:  $event"
+echo "branch: $branch"
+echo "================"
+
+# release branches publish a release candidate
+if [[ $branch =~ "^release-" ]]; then
+  # only publish RCs for push builds
+  if [[ $event = "push" ]]; then
+    script/notify pending
+    script/release-candidate $args
+    script/notify success
+  fi
 # always publish a pr release if this is a PR build
-if [[ "$TRAVIS_EVENT_TYPE" = "pull_request" ]]; then
+elif [[ $event = "pull_request" ]]; then
+  script/notify pending
   script/release-pr $args
-# merges to dev build a release candidate
-elif [[ "$TRAVIS_BRANCH" =~ "^release-" ]]; then
-  script/release-candidate $args
+  script/notify success
 # publish a release when we merge to master
-elif [[ "$TRAVIS_BRANCH" = "master" ]]; then
+elif [[ $branch = "master" ]]; then
+  script/notify pending
   script/release $args
+  script/notify success
 else
   echo "⚠️  This isn't a PR and '$TRAVIS_BRANCH' isn't a release branch."
   exit 1
 fi
 
-script/notify
