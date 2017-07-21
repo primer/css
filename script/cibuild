@@ -6,7 +6,11 @@ set -e
 args=$@
 
 event="$TRAVIS_EVENT_TYPE"
-branch="${TRAVIS_PULL_REQUEST_BRANCH=${TRAVIS_BRANCH}}"
+branch="$TRAVIS_BRANCH"
+# use $TRAVIS_PULL_REQUEST_BRANCH if this is a PR
+if [[ "$event" = "pull_request" ]]; then
+  branch="$TRAVIS_PULL_REQUEST_BRANCH"
+fi
 
 echo "==== CI env ===="
 echo "event:  $event"
