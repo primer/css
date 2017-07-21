@@ -18,25 +18,29 @@ echo "branch: $branch"
 echo "================"
 
 # release branches publish a release candidate
-if [[ $branch =~ "^release-" ]]; then
+if [[ "$branch" =~ "^release-" ]]; then
   # only publish RCs for push builds
-  if [[ $event = "push" ]]; then
+  if [[ "$event" = "push" ]]; then
     script/notify pending
     script/release-candidate $args
     script/notify success
   fi
+  echo "⚠️  This appears to be a release branch,"
+  echo "but we only publish *push* builds."
+  echo "(TRAVIS_EVENT_TYPE: $event)"
+  exit 1
 # always publish a pr release if this is a PR build
-elif [[ $event = "pull_request" ]]; then
+elif [[ "$event" = "pull_request" ]]; then
   script/notify pending
   script/release-pr $args
   script/notify success
 # publish a release when we merge to master
-elif [[ $branch = "master" ]]; then
+elif [[ "$branch" = "master" ]]; then
   script/notify pending
   script/release $args
   script/notify success
 else
-  echo "⚠️  This isn't a PR and '$TRAVIS_BRANCH' isn't a release branch."
+  echo "⚠️  This isn't a PR and '$branch' isn't a release branch."
   exit 1
 fi
 
