@@ -1,5 +1,5 @@
 {
-  "version": "5.1.0",
+  "version": "5.1.1",
   "name": "primer-product",
   "description": "Primer CSS's product modules",
   "homepage": "http://primercss.io/",
@@ -21,12 +21,12 @@
     "test": "npm run build"
   },
   "dependencies": {
-    "primer-alerts": "^1.2.0",
-    "primer-avatars": "^1.1.0",
-    "primer-blankslate": "^1.1.0",
-    "primer-labels": "^1.2.0",
-    "primer-markdown": "^3.4.0",
-    "primer-support": "^4.1.0"
+    "primer-alerts": "^1.2.1",
+    "primer-avatars": "^1.1.1",
+    "primer-blankslate": "^1.1.1",
+    "primer-labels": "^1.2.1",
+    "primer-markdown": "^3.4.1",
+    "primer-support": "^4.1.1"
   },
   "devDependencies": {
     "primer-module-build": "*",
