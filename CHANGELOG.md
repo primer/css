@@ -1,5 +1,21 @@
 # HEAD
 
+# 9.1.0
+
+This release updates our [stylelint config](/primer/stylelint-config-primer) to [v2.0.0](https://github.com/primer/stylelint-config-primer/releases/tag/v2.0.0), and to stylelint v7.13.0. Each module also now has a `lint` npm script, and there are top-level `test` and `lint` scripts that you can use to lint and test all modules in one go.
+
+This release also includes major improvements to our Travis build scripts to automatically publish PR builds, release candidates, and the "final" versions to npm.
+
+# 9.0.0
+
+# 8.0.0
+
+# 7.0.0
+
+# 6.0.0
+
+# 5.0.0
+
 # 4.4.0
 
 - Adding primer-marketing module to primer
