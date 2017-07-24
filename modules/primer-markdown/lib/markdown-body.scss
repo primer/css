@@ -1,6 +1,5 @@
 // All of our block level items should have the same margin
 // stylelint-disable selector-max-type
-$margin: 16px;
 
 // This is styling for generic markdownized text. Anything you put in a
 // container with .markdown-body on it should render generally well. It also
@@ -49,7 +48,7 @@ $margin: 16px;
 
   .anchor {
     float: left;
-    padding-right: 4px;
+    padding-right: $spacer-1;
     margin-left: -20px;
     line-height: 1;
 
@@ -66,13 +65,13 @@ $margin: 16px;
   table,
   pre {
     margin-top: 0;
-    margin-bottom: $margin;
+    margin-bottom: $spacer-3;
   }
 
   hr {
     height: 0.25em;
     padding: 0;
-    margin: ($margin * 1.5) 0;
+    margin: $spacer-4 0;
     background-color: $gray-200;
     border: 0;
   }
