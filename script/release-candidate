@@ -12,10 +12,6 @@ function bump() {
   npm version --no-git $@
 }
 
-function publish() {
-  npm publish --silent --tag=$npm_tag $@
-}
-
 # get the version we're publishing as a release candidate
 local_version=$(jq -r .version modules/$package/package.json)
 if [[ $local_version =~ "-" ]]; then
@@ -40,16 +36,14 @@ echo "🤜  Next version: $package@$next_version"
 pre_version=${next_version:${#local_version}}
 echo "   Prerelease suffix: '$pre_version'"
 
-# get the name of every module
-# FIXME there's gotta be a better way to do this
-modules=$(lerna exec pwd | xargs basename)
-
 # if this is the same version, we need to bump the prerelease
 # for all of the modules using the same prerelease identifier
 echo "Updating all module versions in place..."
 echo
-for module in $modules; do
-  pushd modules/$module > /dev/null
+module_dirs=modules/primer-*
+for module_dir in $module_dirs; do
+  pushd $module_dir > /dev/null
+  module=$(basename $module_dir)
 
   # determine the local version (in git)
   module_version=$(jq -r .version package.json)

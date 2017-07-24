@@ -11,3 +11,7 @@ script:
 after_success:
   - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
   - script/cibuild --yes
+
+notifications:
+  slack:
+    secure: W9lPRuuPMNwElkXZ8UZtu5phgUNleDCK0PgERa28dkh5b0Y9xzRpIQPRJfqVYAPtnMVXhfYcqryMzA4oj0E4fc7OxQsKmMeF1OcTuj5N4CM5xXR/qXDehOUTp6fpCToIX9d4hZ2H///PCExpul3TcfxYJe6EWQCHYd1n6zKRl8g=
