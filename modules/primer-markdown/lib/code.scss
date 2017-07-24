@@ -38,7 +38,7 @@
   }
 
   .highlight {
-    margin-bottom: $margin;
+    margin-bottom: $spacer-3;
 
     pre {
       margin-bottom: 0;
@@ -48,7 +48,7 @@
 
   .highlight pre,
   pre {
-    padding: $margin;
+    padding: $spacer-3;
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;

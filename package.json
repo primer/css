@@ -21,6 +21,7 @@
     "commit-status": "^4.1.0",
     "husky": "^0.14.3",
     "lerna": "^2.0.0",
-    "lint-staged": "^4.0.2"
+    "lint-staged": "^4.0.2",
+    "semver": "^5.3.0"
   }
 }

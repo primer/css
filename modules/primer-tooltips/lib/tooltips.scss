@@ -7,7 +7,7 @@
   position: absolute;
   z-index: 1000000;
   display: none;
-  padding: 5px 8px;
+  padding: 5px $spacer-2;
   font: normal normal 11px/1.5 $body-font;
   -webkit-font-smoothing: subpixel-antialiased;
   color: $tooltip-text-color;
