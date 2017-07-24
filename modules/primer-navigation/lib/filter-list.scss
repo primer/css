@@ -5,7 +5,7 @@
   list-style-type: none;
 
   &.small .filter-item {
-    padding: 4px 10px;
+    padding: $spacer-1 10px;
     margin: 0 0 2px;
     font-size: $font-size-small;
   }
@@ -24,7 +24,7 @@
 .filter-item {
   position: relative;
   display: block;
-  padding: 8px 10px;
+  padding: $spacer-2 10px;
   margin-bottom: 5px;
   overflow: hidden;
   font-size: $h5-size;

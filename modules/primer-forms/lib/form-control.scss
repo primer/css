@@ -18,7 +18,7 @@ label {
 .form-control,
 .form-select {
   min-height: 34px;
-  padding: 6px 8px;
+  padding: 6px $spacer-2;
   font-size: $body-font-size;
   line-height: 20px;
   color: $text-gray-dark;
@@ -62,7 +62,7 @@ label {
 
 // Large inputs
 .input-lg {
-  padding: 4px 10px;
+  padding: $spacer-1 10px;
   font-size: $h4-size;
 }
 
@@ -99,8 +99,8 @@ label {
   label {
     em.highlight {
       position: relative;
-      left: -4px;
-      padding: 2px 4px;
+      left: -$spacer-1;
+      padding: 2px $spacer-1;
       font-style: normal;
       background: $yellow-100;
       border-radius: 3px;
@@ -194,7 +194,7 @@ input::-webkit-inner-spin-button {
 }
 
 .form-warning {
-  padding: 8px 10px;
+  padding: $spacer-2 10px;
   margin: 10px 0;
   font-size: $h5-size;
   color: $yellow-900;
