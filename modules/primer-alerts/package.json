@@ -1,5 +1,5 @@
 {
-  "version": "1.1.8",
+  "version": "1.2.0",
   "name": "primer-alerts",
   "description": "Flash messages, or alerts, inform users of successful or pending actions.",
   "homepage": "http://primercss.io/",
@@ -19,15 +19,16 @@
   "scripts": {
     "build": "primer-module-build index.scss",
     "prepare": "npm run build",
-    "test": "npm run build && stylelint **/*.scss -c .stylelintrc.json -s scss"
+    "lint": "stylelint **/*.scss -c .stylelintrc.json -s scss",
+    "test": "npm run build && npm run lint"
   },
   "dependencies": {
-    "primer-support": "^4.0.7"
+    "primer-support": "^4.1.0"
   },
   "devDependencies": {
     "primer-module-build": "*",
-    "stylelint": "*",
-    "stylelint-config-primer": "*"
+    "stylelint": "^7.13.0",
+    "stylelint-config-primer": "^2.0.0"
   },
   "keywords": [
     "alerts",

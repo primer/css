@@ -3,14 +3,17 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean",
-    "updated": "lerna updated",
     "diff": "lerna diff",
-    "publish": "lerna publish",
-    "dev": "lerna publish --npm-tag=dev --skip-git",
-    "rc": "lerna publish --npm-tag=rc --skip-git",
-    "force": "lerna publish --force-publish=*"
+    "updated": "lerna updated",
+    "lint": "lerna run lint",
+    "release-pr": "script/release-pr",
+    "release-candidate": "script/release-candidate",
+    "release": "script/release",
+    "test": "lerna run test"
   },
   "devDependencies": {
-    "lerna": "^2.0.0-rc.5"
+    "commit-status": "^4.1.0",
+    "lerna": "^2.0.0",
+    "semver": "^5.3.0"
   }
 }

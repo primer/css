@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+args=$@
+npm_tag=pr
+
+echo "🐦  Publishing PR release to dist-tag '$npm_tag'..."
+lerna publish --npm-tag=$npm_tag --canary --no-git $args
