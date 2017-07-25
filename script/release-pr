@@ -5,4 +5,6 @@ args=$@
 npm_tag=pr
 
 echo "🐦  Publishing PR release to dist-tag '$npm_tag'..."
+script/notify pending
 lerna publish --npm-tag=$npm_tag --canary --no-git $args
+script/notify success

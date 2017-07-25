@@ -1,4 +1,6 @@
 #!/bin/bash
 set -e
 echo "📦  Publishing latest release..."
+script/notify pending
 lerna exec -- npm publish
+script/notify success

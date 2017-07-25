@@ -58,4 +58,6 @@ for module_dir in $module_dirs; do
 done
 
 # publish all the things!
+script/notify pending
 lerna exec --bail -- npm publish --tag=$npm_tag
+script/notify success
