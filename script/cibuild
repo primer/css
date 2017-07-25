@@ -7,7 +7,8 @@ args=$@
 
 branch=$TRAVIS_BRANCH
 
-if [[ "$TRAVIS_EVENT_TYPE" = "pull_request" ]]; then
+# the presence of $TRAVIS_PULL_REQUEST tells us whether this is a pull request
+if [[ "$TRAVIS_PULL_REQUEST" != "" ]]; then
   target_branch=$TRAVIS_PULL_REQUEST_BRANCH
   # if the *source* branch begins with "release"
   if [[ "$branch" =~ ^release ]]; then
