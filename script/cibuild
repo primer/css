@@ -9,14 +9,20 @@ branch=$TRAVIS_BRANCH
 
 if [[ "$TRAVIS_EVENT_TYPE" = "pull_request" ]]; then
   target_branch=$TRAVIS_PULL_REQUEST_BRANCH
-  if [[ "$target_branch" =~ ^release ]]; then
+  # if the *source* branch begins with "release"
+  if [[ "$branch" =~ ^release ]]; then
     script/notify pending
     script/release-candidate $args
     script/notify success
+  # otherwise, if the *target* branch is dev
   elif [[ "$target_branch" = "dev" ]]; then
     script/notify pending
     script/release-pr $args
     script/notify success
+  else
+    echo "⚠️  This is a PR, but '$branch' isn't a release branch"
+    echo "   and '$target_branch' isn't a recognized target branch."
+    exit 1
   fi
 elif [[ "$branch" = "master" ]]; then
   script/notify pending
@@ -26,3 +32,4 @@ else
   echo "⚠️  This isn't a PR and '$branch' isn't a release branch."
   exit 1
 fi
+
