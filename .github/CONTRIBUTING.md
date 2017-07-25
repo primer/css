@@ -57,7 +57,7 @@ Good pull requests—patches, improvements, new features—are a fantastic help.
 
 **Please ask first** before embarking on any significant pull request (e.g. implementing features, refactoring code, porting to a different language), otherwise you risk spending a lot of time working on something that the project's developers might not want to merge into the project.
 
-## Updating Primer modules
+### Updating Primer modules
 
 Anyone can open a pull request on Primer CSS. You do not need to work at GitHub or be a member of the org to open a pull request. 
 
@@ -66,8 +66,8 @@ Anyone can open a pull request on Primer CSS. You do not need to work at GitHub 
 3. Check out the dev branch `git checkout dev`
 3. Create a new branch from dev `git checkout -b my-branch-name`
 4. Make your changes, add and commit them.
-5. Push your branch and open a pull request, request a review from @primer/ds-core
-6. Wait for CI tests to pass, if they do not, fix the errors or ask for help from @primer/ds-core.
+5. Push your branch and open a pull request. Add a comment describing your proposed changes and request a review from `@primer/ds-core`.
+6. Wait for CI tests to pass, if they do not, fix the errors or ask for help from `@primer/ds-core`.
 7. When CI tests pass, a new npm alpha release will be posted under the CI checks, you can use this npm version for testing in your project or with a GitHub site if you are staff.
 8. Pat yourself on the back and wait for your pull request to be reviewed.
 
