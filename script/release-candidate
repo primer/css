@@ -59,4 +59,7 @@ for module_dir in $module_dirs; do
 done
 
 # publish all the things!
-lerna exec --bail=false -- npm publish --tag=$npm_tag
+script/notify pending
+# note: this should NOT fail, so --bail=true applies
+lerna exec -- npm publish --tag=$npm_tag
+script/notify success
