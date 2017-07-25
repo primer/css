@@ -59,4 +59,4 @@ for module_dir in $module_dirs; do
 done
 
 # publish all the things!
-lerna exec --bail -- npm publish --tag=$npm_tag
+lerna exec --bail=false -- npm publish --tag=$npm_tag
