@@ -2,5 +2,7 @@
 set -e
 echo "📦  Publishing latest release..."
 script/notify pending
-lerna exec -- npm publish
+# note: try-publish should exit cleanly if it detects a duplicate
+# published version
+lerna exec -- $(pwd)/script/try-publish
 script/notify success

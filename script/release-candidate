@@ -60,5 +60,6 @@ done
 
 # publish all the things!
 script/notify pending
-lerna exec --bail=false -- npm publish --tag=$npm_tag
+# note: this should NOT fail, so --bail=true applies
+lerna exec -- npm publish --tag=$npm_tag
 script/notify success
