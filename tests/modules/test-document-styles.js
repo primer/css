@@ -9,7 +9,7 @@ const classRegex = /class="([^"]+)"/ig
 function uniqueSelectors(s) {
   return s.filter(s => {
     // remove any selectors with hover states
-    return !s.includes(":") && !s.includes(".")
+    return s.match(/^\.[a-z\-_\s\.]+$/ig)
   }).map(s => {
     // split multi-selectors into last class used .foo .bar .baz
     return s.split(" ").pop()
