@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 # pwd
-package=$(jq .name package.json)
-version=$(jq .version package.json)
+package=$(jq -r .name package.json)
+version=$(jq -r .version package.json)
 published=$(npm info $package@$version version)
 if [[ "$version" = "$published" ]]; then
   echo "⚠️   $package@$version is already published!"
