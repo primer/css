@@ -8,14 +8,6 @@ args=$@
 event=$TRAVIS_EVENT_TYPE
 branch=$TRAVIS_BRANCH
 
-echo "🐛  script/cibuild"
-(
-  echo "TRAVIS_EVENT_TYPE,$TRAVIS_EVENT_TYPE"
-  echo "TRAVIS_BRANCH,$TRAVIS_BRANCH"
-  echo "TRAVIS_PULL_REQUEST,$TRAVIS_PULL_REQUEST"
-  echo "TRAVIS_PULL_REQUEST_BRANCH,$TRAVIS_PULL_REQUEST_BRANCH"
-) | column -t -s=,
-
 # the presence of $TRAVIS_PULL_REQUEST_BRANCH tells us
 # whether this is a pull request
 if [[ "$event" = "pull_request" ]]; then
