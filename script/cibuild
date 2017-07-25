@@ -5,41 +5,19 @@ set -e
 # which makes this easier to test locally
 args=$@
 
-event="$TRAVIS_EVENT_TYPE"
-branch="$TRAVIS_BRANCH"
-# use $TRAVIS_PULL_REQUEST_BRANCH if this is a PR
-if [[ "$event" = "pull_request" ]]; then
-  branch="$TRAVIS_PULL_REQUEST_BRANCH"
-fi
+branch=$TRAVIS_BRANCH
 
-echo "===== CI build ====="
-echo " event:  $event"
-echo " branch: $branch"
-echo "===================="
-
-if [[ "$event" = "" || "$branch" = "" ]]; then
-  echo '❌  Missing $TRAVIS_EVENT_TYPE or $TRAVIS_BRANCH!'
-  exit 1
-fi
-
-# release branches publish a release candidate
-if [[ "$branch" =~ ^release- ]]; then
-  # only publish RCs for push builds
-  if [[ "$event" = "push" ]]; then
+if [[ "$TRAVIS_EVENT_TYPE" = "pull_request" ]]; then
+  target_branch=$TRAVIS_PULL_REQUEST_BRANCH
+  if [[ "$target_branch" =~ ^release ]]; then
     script/notify pending
     script/release-candidate $args
     script/notify success
-  else
-    echo "⚠️  This appears to be a release branch, but we only publish *push* builds."
-    echo "(TRAVIS_EVENT_TYPE: $event)"
-    exit 1
+  elif [[ "$target_branch" = "dev" ]]; then
+    script/notify pending
+    script/release-pr $args
+    script/notify success
   fi
-# always publish a pr release if this is a PR build
-elif [[ "$event" = "pull_request" ]]; then
-  script/notify pending
-  script/release-pr $args
-  script/notify success
-# publish a release when we merge to master
 elif [[ "$branch" = "master" ]]; then
   script/notify pending
   script/release $args
@@ -48,4 +26,3 @@ else
   echo "⚠️  This isn't a PR and '$branch' isn't a release branch."
   exit 1
 fi
-
