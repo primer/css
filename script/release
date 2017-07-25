@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 echo "📦  Publishing latest release..."
-lerna exec -- npm publish
+lerna exec -- $(pwd)/script/try-publish
