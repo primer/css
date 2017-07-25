@@ -49,7 +49,7 @@ Example:
 
 ## Feature requests
 
-Feature requests are welcome. But take a moment to find out whether your idea fits with the scope and aims of the project. It's up to *you* to make a strong case to convince the project's developers of the merits of this feature. Please provide as much detail and context as possible.
+Feature requests are welcome but take a moment to find out whether your idea fits with the scope and aims of the project. It's up to *you* to make a strong case to convince the project's developers of the merits of this feature. Please provide as much detail and context as possible.
 
 ## Pull requests
 
@@ -60,7 +60,7 @@ Good pull requests—patches, improvements, new features—are a fantastic help.
 Adhering to the following process is the best way to get your work included in the project:
 
 1. Fork and clone the repository
-2. Configure and install the dependencies: `bower install`
+2. Configure and install the dependencies: `npm install`
 3. Create a new branch: `git checkout -b my-branch-name`
 4. Make your change, add tests, and make sure the tests still pass
 5. Push to your fork and [submit a pull request][pr]
