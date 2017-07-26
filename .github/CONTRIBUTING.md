@@ -49,7 +49,7 @@ Example:
 
 ## Feature requests
 
-Feature requests are welcome but take a moment to find out whether your idea fits with the scope and aims of the project. It's up to *you* to make a strong case to convince the project's developers of the merits of this feature. Please provide as much detail and context as possible.
+Feature requests are welcome, but take a moment to find out whether your idea fits with the scope and aims of the project. It's up to *you* to make a strong case to convince the project's developers of the merits of this feature. Please provide as much detail and context as possible.
 
 ## Pull requests
 
@@ -61,13 +61,16 @@ Good pull requests—patches, improvements, new features—are a fantastic help.
 
 Anyone can open a pull request on Primer CSS. You do not need to work at GitHub or be a member of the org to open a pull request. 
 
-1. Fork and clone the primer/primer-css repository.
+1. Fork and clone [this repository](https://github.com/primer/primer-css).
 2. Configure and install the dependencies: `npm install`
 3. Check out the dev branch `git checkout dev`
 3. Create a new branch from dev `git checkout -b my-branch-name`
-4. Make your changes, add and commit them.
-5. Push your branch and open a pull request. Add a comment describing your proposed changes and request a review from `@primer/ds-core`.
-6. Wait for CI tests to pass, if they do not, fix the errors or ask for help from `@primer/ds-core`.
+4. Make your changes and commit them.
+5. Push your branch and open a pull request against `dev`. Add a comment describing your proposed changes and request a review from `@primer/ds-core`.
+6. Wait for CI tests to finish.
+  - If the tests pass, you should see a status check telling you which alpha version of primer-css you can install with npm to test your work in other projects.
+  - If the tests fail, review the logs and address any issues.
+  - If the builds fail for any other reason (as they occasionally do), they may need to be manually restarted.
 7. When CI tests pass, a new npm alpha release will be posted under the CI checks, you can use this npm version for testing in your project or with a GitHub site if you are staff.
 8. Pat yourself on the back and wait for your pull request to be reviewed.
 
