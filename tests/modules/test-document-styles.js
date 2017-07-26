@@ -28,7 +28,7 @@ function documentedClassnames(sources) {
       var match = null
 
       // While we match a classRegex in the source
-      while ((match = classRegex.exec(fs.readFileSync(g).toString())) != null) {
+      while ((match = classRegex.exec(fs.readFileSync(g, "utf8"))) != null) {
 
         // Get the matched classnames "..." and split by space into classes
         cn = cn.concat(match[1].split(" "))
