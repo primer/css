@@ -21,7 +21,7 @@
     "build": "primer-module-build index.scss",
     "prepare": "npm run build",
     "lint": "stylelint **/*.scss -c .stylelintrc.json -s scss",
-    "test": "npm run build && npm run lint && npm run test-docs"
+    "test": "npm-run-all -s build lint test-docs"
   },
   "dependencies": {
     "primer-support": "^4.1.1"
