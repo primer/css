@@ -68,9 +68,9 @@ Anyone can open a pull request on Primer CSS. You do not need to work at GitHub 
 4. Make your changes and commit them.
 5. Push your branch and open a pull request against `dev`. Add a comment describing your proposed changes and request a review from `@primer/ds-core`.
 6. Wait for CI tests to finish.
-  - If the tests pass, you should see a status check telling you which alpha version of primer-css you can install with npm to test your work in other projects.
-  - If the tests fail, review the logs and address any issues.
-  - If the builds fail for any other reason (as they occasionally do), they may need to be manually restarted.
+   - If the tests pass, you should see a status check telling you which alpha version of primer-css you can install with npm to test your work in other projects.
+   - If the tests fail, review the logs and address any issues.
+   - If the builds fail for any other reason (as they occasionally do), they may need to be manually restarted.
 7. When CI tests pass, a new npm alpha release will be posted under the CI checks, you can use this npm version for testing in your project or with a GitHub site if you are staff.
 8. Pat yourself on the back and wait for your pull request to be reviewed.
 
