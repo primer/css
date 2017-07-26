@@ -41,9 +41,9 @@ function documentedClassnames(sources) {
 }
 
 // Before all the tests get the selectors and classnames
-test.before(async t => {
-  selectors = await uniqueSelectors(css.cssstats.selectors.values)
-  classnames = await documentedClassnames([
+test.before(t => {
+  selectors = uniqueSelectors(css.cssstats.selectors.values)
+  classnames = documentedClassnames([
     'docs/*.md',
     'README.md'
   ])
