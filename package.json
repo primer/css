@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap --hoist",
     "clean": "lerna clean",
     "diff": "lerna diff",
     "updated": "lerna updated",
@@ -13,9 +13,12 @@
   },
   "devDependencies": {
     "ava": "^0.21.0",
-    "glob": "^7.1.2",
     "commit-status": "^4.1.0",
+    "glob": "^7.1.2",
     "lerna": "^2.0.0",
-    "semver": "^5.3.0"
+    "primer-module-build": "^1.0.2",
+    "semver": "^5.3.0",
+    "stylelint": "^7.13.0",
+    "stylelint-config-primer": "^2.0.0"
   }
 }

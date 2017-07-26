@@ -26,13 +26,7 @@
   "dependencies": {
     "primer-support": "^4.1.0"
   },
-  "devDependencies": {
-    "ava": "^0.21.0",
-    "glob": "^7.1.2",
-    "primer-module-build": "*",
-    "stylelint": "^7.13.0",
-    "stylelint-config-primer": "^2.0.0"
-  },
+  "devDependencies": {},
   "keywords": [
     "primer",
     "css",
