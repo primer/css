@@ -5,18 +5,37 @@ set -e
 # which makes this easier to test locally
 args=$@
 
-# always publish a pr release if this is a PR build
-if [[ "$TRAVIS_EVENT_TYPE" = "pull_request" ]]; then
-  script/release-pr $args
-# merges to dev build a release candidate
-elif [[ "$TRAVIS_BRANCH" =~ "^release-" ]]; then
-  script/release-candidate $args
-# publish a release when we merge to master
-elif [[ "$TRAVIS_BRANCH" = "master" ]]; then
+event=$TRAVIS_EVENT_TYPE
+branch=$TRAVIS_BRANCH
+
+echo "🐛  script/cibuild"
+(
+  echo "TRAVIS_EVENT_TYPE,$TRAVIS_EVENT_TYPE"
+  echo "TRAVIS_BRANCH,$TRAVIS_BRANCH"
+  echo "TRAVIS_PULL_REQUEST,$TRAVIS_PULL_REQUEST"
+  echo "TRAVIS_PULL_REQUEST_BRANCH,$TRAVIS_PULL_REQUEST_BRANCH"
+) | column -t -s=,
+
+# the presence of $TRAVIS_PULL_REQUEST_BRANCH tells us
+# whether this is a pull request
+if [[ "$event" = "pull_request" ]]; then
+  upstream_branch=$branch
+  branch=$TRAVIS_PULL_REQUEST_BRANCH
+  # if the *source* branch begins with "release"
+  if [[ "$branch" =~ ^release ]]; then
+    script/release-candidate $args
+  # otherwise, if the *target* branch is dev
+  elif [[ "$upstream_branch" = "dev" ]]; then
+    script/release-pr $args
+  else
+    echo "⚠️  This is a PR, but '$branch' isn't a release branch"
+    echo "   and '$upstream_branch' isn't a recognized upstream branch."
+    exit 1
+  fi
+elif [[ "$branch" = "master" ]]; then
   script/release $args
 else
-  echo "⚠️  This isn't a PR and '$TRAVIS_BRANCH' isn't a release branch."
+  echo "⚠️  This isn't a PR and '$branch' isn't a release branch."
   exit 1
 fi
 
-script/notify

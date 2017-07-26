@@ -1,4 +1,8 @@
 #!/bin/bash
 set -e
 echo "📦  Publishing latest release..."
-lerna exec -- npm publish
+script/notify pending
+# note: try-publish should exit cleanly if it detects a duplicate
+# published version
+lerna exec -- $(pwd)/script/try-publish
+script/notify success
