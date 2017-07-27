@@ -2,6 +2,10 @@ language: node_js
 node_js:
   - 7
 
+env:
+  global:
+    - secure: fsY9o/wT4lfo7nUTNe772p2+A8UmUNe6gq1NFVtX0+GHUNXQg2pAtQqWLTwOisylGlSaTYF1eO5TwBlcaiujzQj5IULmJARFM3ELPGDmXIy0o2Bl9iVk/97NsVHvFApiwsKk4PQhDZw6bRJPNqVGw8d5bEuCslv0W6ZpvPz/jpk=
+
 before_script:
   - lerna bootstrap
 
