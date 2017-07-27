@@ -1,0 +1,27 @@
+#!/bin/bash
+set -e
+
+function die() {
+  echo "$@" >&2
+  exit 1
+}
+
+if [[ "$SLACK_WEBHOOK_URL" = "" ]]; then
+  die "You must set SLACK_WEBHOOK_URL"
+fi
+
+package=primer-css
+version=$(jq -r .version modules/$package/package.json)
+slug="$package@$version"
+backticks="\`\`\`"
+payload=$(cat <<EOF
+{
+  "username": "npm",
+  "icon_emoji": ":npm:",
+  "text": "*<https://npm.im/primer-css|$slug> is out!*\n\nYou can install it with:\n${backticks}npm install --save --exact $slug${backticks}\nOr in github/github:\n${backticks}./script/npm-bundle $slug${backticks}",
+  "mrkdwn": true
+}
+EOF
+)
+
+curl -X POST --data-urlencode "payload=${payload}" $SLACK_WEBHOOK_URL
