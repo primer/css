@@ -6,7 +6,7 @@
 // includes some GitHub Flavored Markdown specific styling (like @mentions)
 .markdown-body {
   font-family: $body-font;
-  font-size: 16px;
+  font-size: $h4-size;
   line-height: $body-line-height;
   word-wrap: break-word;
 
@@ -50,7 +50,7 @@
     float: left;
     padding-right: $spacer-1;
     margin-left: -20px;
-    line-height: 1;
+    line-height: $lh-condensed-ultra;
 
     &:focus {
       outline: none;
