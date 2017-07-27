@@ -2,6 +2,13 @@ language: node_js
 node_js:
   - 7
 
+env:
+  global:
+    - secure: fsY9o/wT4lfo7nUTNe772p2+A8UmUNe6gq1NFVtX0+GHUNXQg2pAtQqWLTwOisylGlSaTYF1eO5TwBlcaiujzQj5IULmJARFM3ELPGDmXIy0o2Bl9iVk/97NsVHvFApiwsKk4PQhDZw6bRJPNqVGw8d5bEuCslv0W6ZpvPz/jpk=
+
+before_install:
+  - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
+
 before_script:
   - lerna bootstrap
 
@@ -9,8 +16,14 @@ script:
   - npm test
 
 after_success:
-  - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
-  - script/cibuild --yes
+  - script/after_success
+
+deploy:
+  # publish "final" releases on master
+  - provider: script
+    script: script/release
+    on:
+      branch: master
 
 notifications:
   slack:

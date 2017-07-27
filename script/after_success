@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+if [[ "$TRAVIS_EVENT_TYPE" = "pull_request" ]]; then
+  if [[ "$TRAVIS_BRANCH" = "dev" ]]; then
+    script/release-pr
+    exit
+  elif [[ "$TRAVIS_PULL_REQUEST_BRANCH" =~ ^release ]]; then
+    script/release-candidate
+    exit
+  fi
+fi
+echo "⚠️  This is not a PR against 'dev', so skipping the canary release"
