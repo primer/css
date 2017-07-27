@@ -15,7 +15,7 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "lint": "stylelint **/*.scss -c .stylelintrc.json -s scss",
+    "lint": "stylelint **/*.scss -s scss",
     "test": "npm run lint"
   },
   "devDependencies": {},
