@@ -63,7 +63,7 @@ label {
 // Large inputs
 .input-lg {
   padding: $spacer-1 10px;
-  font-size: 16px;
+  font-size: $h4-size;
 }
 
 // Full-width inputs
@@ -117,8 +117,8 @@ label {
   .note {
     display: block;
     margin: 0;
-    font-size: 12px;
-    font-weight: normal;
+    font-size: $font-size-small;
+    font-weight: $font-weight-normal;
     color: $gray-600;
   }
 }
@@ -196,7 +196,7 @@ input::-webkit-inner-spin-button {
 .form-warning {
   padding: $spacer-2 10px;
   margin: 10px 0;
-  font-size: 14px;
+  font-size: $h5-size;
   color: $yellow-900;
   background: $yellow-100;
   border: 1px solid $border-yellow;
@@ -204,7 +204,7 @@ input::-webkit-inner-spin-button {
 
   p {
     margin: 0;
-    line-height: 1.5;
+    line-height: $lh-default;
   }
 
   a { font-weight: $font-weight-bold; }

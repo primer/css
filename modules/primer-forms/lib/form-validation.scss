@@ -235,7 +235,7 @@ dl.form-group > dd {
 }
 
 .drag-and-drop-error-info {
-  font-weight: normal;
+  font-weight: $font-weight-normal;
   color: $text-gray;
 
   a {
@@ -368,13 +368,13 @@ div.composer {
 h2.account {
   margin: 15px 0 0;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: $font-weight-normal;
   color: $gray-600;
 }
 
 p.explain {
   position: relative;
-  font-size: 12px;
+  font-size: $font-size-small;
   color: $gray-600;
 
   strong {
