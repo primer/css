@@ -8,3 +8,5 @@ echo "🐦  Publishing PR release to dist-tag '$npm_tag'..."
 # script/notify pending
 lerna publish --npm-tag=$npm_tag --canary --no-git $args
 script/notify success
+# FIXME remove this before merging; just for testing
+script/notify-slack
