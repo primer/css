@@ -11,7 +11,7 @@ set -e
 {
   "username": "Travis CI",
   "icon_emoji": ":travis:",
-  "text": ":construction: Building ${slug} on Travis (<${build_url}|#${TRAVIS_BUILD_NUMBER}>) via <${commit_url}|${TRAVIS_COMMIT:7}>",
+  "text": ":construction: Building ${slug} on Travis (<${build_url}|#${TRAVIS_BUILD_NUMBER}>) via <${commit_url}|${TRAVIS_COMMIT:0:7}>",
   "mrkdwn": true
 }
 EOF
