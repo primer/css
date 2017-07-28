@@ -1,12 +1,12 @@
 #!/bin/bash
 set -e
 # pwd
-package=$(jq .name package.json)
-version=$(jq .version package.json)
-published=$(npm info "$package@$version version")
+package=$(jq -r .name package.json)
+version=$(jq -r .version package.json)
+published=$(npm info $package@$version version)
 if [[ "$version" = "$published" ]]; then
   echo "⚠️   $package@$version is already published!"
 else
-  echo "📦  npm publish: $package@$version"
+  echo "📦  Publishing: $package@$version (published: $published)"
   npm publish $@
 fi
