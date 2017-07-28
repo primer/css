@@ -28,8 +28,5 @@
     "primer-markdown": "^3.4.1",
     "primer-support": "^4.1.1"
   },
-  "devDependencies": {
-    "primer-module-build": "*",
-    "stylelint-config-primer": "^2.0.0"
-  }
+  "devDependencies": {}
 }

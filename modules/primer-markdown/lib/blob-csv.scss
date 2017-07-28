@@ -4,8 +4,8 @@
   th {
     padding: 5px;
     overflow: hidden;
-    font-size: 12px;
-    line-height: 1;
+    font-size: $font-size-small;
+    line-height: $lh-condensed-ultra;
     text-align: left;
     white-space: nowrap;
   }

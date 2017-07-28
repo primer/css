@@ -17,20 +17,17 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
+    "test-docs": "ava --verbose ../../tests/modules/test-*.js",
     "build": "primer-module-build index.scss",
     "prepare": "npm run build",
-    "lint": "stylelint **/*.scss -c .stylelintrc.json -s scss",
-    "test": "npm run build && npm run lint"
+    "lint": "stylelint **/*.scss -s scss",
+    "test": "npm-run-all -s build lint test-docs"
   },
   "dependencies": {
     "primer-marketing-support": "^1.1.0",
     "primer-support": "^4.1.1"
   },
-  "devDependencies": {
-    "primer-module-build": "*",
-    "stylelint": "^7.13.0",
-    "stylelint-config-primer": "^2.0.0"
-  },
+  "devDependencies": {},
   "keywords": [
     "css",
     "github",

@@ -1,10 +1,14 @@
 #!/bin/bash
 set -e
+echo "🐦  Publishing PR (canary) release..."
 
-args=$@
-npm_tag=pr
+PATH=$(npm bin):$PATH
 
-echo "🐦  Publishing PR release to dist-tag '$npm_tag'..."
 # script/notify pending
-lerna publish --npm-tag=$npm_tag --canary --no-git $args
-script/notify success
+
+lerna publish --npm-tag=pr --canary --no-git $@
+
+$(dirname $0)/notify success
+
+# FIXME remove this before merging; just for testing
+$(dirname $0)/notify-slack

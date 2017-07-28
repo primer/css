@@ -17,7 +17,7 @@
 .tabnav-tab {
   display: inline-block;
   padding: $spacer-2 12px;
-  font-size: 14px;
+  font-size: $h5-size;
   line-height: 20px;
   color: $gray-600;
   text-decoration: none;
@@ -48,7 +48,7 @@
   display: inline-block;
   padding-top: 10px;
   margin-left: 10px;
-  font-size: 12px;
+  font-size: $font-size-small;
   color: $gray-600;
 
   > .octicon {
