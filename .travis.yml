@@ -16,7 +16,7 @@ after_success:
 
 deploy:
   # publish release candidates on release branches
-  - provider: sript
+  - provider: script
     script: script/release-candidate
     on:
       branch: /^release/
