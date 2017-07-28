@@ -6,7 +6,7 @@ PATH=$(npm bin):$PATH
 
 # script/notify pending
 
-lerna publish --npm-tag=pr --canary --no-git --yes
+lerna publish --npm-tag=pr --canary --no-git $@
 
 $(dirname $0)/notify success
 

@@ -6,5 +6,5 @@ event=$TRAVIS_EVENT_TYPE
 
 # only publish canary releases on PRs against dev
 if [[ "$event" = "pull_request" && "$branch" = "dev" ]]; then
-  script/release-pr
+  script/release-pr --yes
 fi
