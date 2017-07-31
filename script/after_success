@@ -4,9 +4,6 @@ set -e
 branch=$TRAVIS_BRANCH
 event=$TRAVIS_EVENT_TYPE
 
-# symlink CHANGELOG.md primer-css/CHANGELOG.md
-ln -s CHANGELOG.md modules/primer-css
-
 # only publish canary releases on PRs against dev
 if [[ "$event" = "pull_request" && "$branch" = "dev" ]]; then
   script/release-pr --yes
