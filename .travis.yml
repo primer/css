@@ -10,10 +10,10 @@ before_script:
 
 script:
   - npm test
-  # symlink CHANGELOG.md primer-css/CHANGELOG.md
-  - ln -s CHANGELOG.md modules/primer-css
 
 after_success:
+  # copy the CHANGELOG.md primer-css for publishing
+  - cp CHANGELOG.md modules/primer-css
   - script/after_success
 
 deploy:
