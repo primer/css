@@ -19,7 +19,7 @@ deploy:
   - provider: script
     script: script/release-candidate
     on:
-      branch: /^release/
+      branch: release*
 
   # publish "final" releases on master
   - provider: script
