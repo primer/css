@@ -1,5 +1,5 @@
 {
-  "version": "5.1.1",
+  "version": "5.2.0",
   "name": "primer-marketing",
   "description": "Primer CSS marketing packages",
   "homepage": "http://primercss.io/",
@@ -21,18 +21,14 @@
     "test": "npm run build"
   },
   "dependencies": {
-    "primer-breadcrumb": "^1.1.1",
-    "primer-cards": "^0.2.1",
-    "primer-marketing-support": "^1.1.0",
-    "primer-marketing-type": "^1.1.1",
-    "primer-marketing-utilities": "^1.1.1",
-    "primer-page-headers": "^1.1.1",
-    "primer-page-sections": "^1.1.1",
-    "primer-support": "^4.1.1",
-    "primer-tables": "^1.1.1"
-  },
-  "devDependencies": {
-    "primer-module-build": "*",
-    "stylelint-config-primer": "^2.0.0"
+    "primer-breadcrumb": "^1.2.0",
+    "primer-cards": "^0.3.0",
+    "primer-marketing-support": "^1.2.0",
+    "primer-marketing-type": "^1.2.0",
+    "primer-marketing-utilities": "^1.2.0",
+    "primer-page-headers": "^1.2.0",
+    "primer-page-sections": "^1.2.0",
+    "primer-support": "^4.2.0",
+    "primer-tables": "^1.2.0"
   }
 }

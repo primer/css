@@ -21,7 +21,7 @@
 
   i {
     font-style: normal;
-    font-weight: 500;
+    font-weight: $font-weight-semibold;
     opacity: 0.6;
   }
 
@@ -115,7 +115,7 @@
   display: inline-block;
   height: 12px;
   padding: 0 5px 5px;
-  font-size: 12px;
+  font-size: $font-size-small;
   font-weight: $font-weight-bold;
   line-height: 6px;
   color: $gray-700;
