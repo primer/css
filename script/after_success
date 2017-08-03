@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-branch=$TRAVIS_BRANCH
+branch=$TRAVIS_PULL_REQUEST_BRANCH
 event=$TRAVIS_EVENT_TYPE
 
 # only publish canary releases on PRs against dev
