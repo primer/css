@@ -5,7 +5,7 @@ node_js:
 env:
   global:
     # npm
-    - secure: "LM0fPkeaihq3SurKho+0kWoL+ZHvXht9sZ0cnGiWTbQSE/mmQ7ekZ6YoUyITNoSJzjXfZGRMFA65bXlC0PddZ5Egrgj/AkNUs532QpABJltYXgWlIcPXUIXIWrOWWB1DNxvHSatkNYU1oM8/RgDqV8HEBLDaftxfyjJH1gfyX1A="
+    - secure: "EZewKKWQXmtCwPtYrPZq4OQblv2OyXR61qBIl3pOxGNVG2BCjD6VOgSaiYqkA9Qbt+ihfwQkiiLvTB68gbvRSiBFV9i+XLzKzt4S8CDI5RhTLAxZB3eQFVZRYzldchzWI4sdNhTvYS1kYXmsXQZD6vJmPSnFvOI/ddfzqvnNL4M="
     # github
     - secure: "J+1oWjvvXjyrwkY/4IFWKdN/weFmQcPwlRuFG4R0Gb3rYe4nqtC9l68sJvmS8asc8dQMhOhcUZCH6sjvo7l2WD4NuK4umPSbs+rJNUsfbvH4pZjStQIj/3ll1OfQelGDWAYQWhIfciYY4F3Bp0ZWTfKOppLQ2AVIYu1fPVXDdlo="
 
