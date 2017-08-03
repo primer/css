@@ -2,6 +2,13 @@ language: node_js
 node_js:
   - 7
 
+env:
+  global:
+    # npm
+    - secure: "LM0fPkeaihq3SurKho+0kWoL+ZHvXht9sZ0cnGiWTbQSE/mmQ7ekZ6YoUyITNoSJzjXfZGRMFA65bXlC0PddZ5Egrgj/AkNUs532QpABJltYXgWlIcPXUIXIWrOWWB1DNxvHSatkNYU1oM8/RgDqV8HEBLDaftxfyjJH1gfyX1A="
+    # github
+    - secure: "J+1oWjvvXjyrwkY/4IFWKdN/weFmQcPwlRuFG4R0Gb3rYe4nqtC9l68sJvmS8asc8dQMhOhcUZCH6sjvo7l2WD4NuK4umPSbs+rJNUsfbvH4pZjStQIj/3ll1OfQelGDWAYQWhIfciYY4F3Bp0ZWTfKOppLQ2AVIYu1fPVXDdlo="
+
 before_install:
   - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
 
