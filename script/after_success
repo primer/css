@@ -4,6 +4,9 @@ set -e
 branch=$TRAVIS_BRANCH
 event=$TRAVIS_EVENT_TYPE
 
+echo $TRAVIS_BRANCH
+echo $TRAVIS_EVENT_TYPE
+
 # only publish canary releases on PRs against dev
 if [[ "$event" = "pull_request" && "$branch" = "dev" ]]; then
   script/release-pr --yes
