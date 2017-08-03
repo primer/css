@@ -15,9 +15,32 @@
 // $h5-size: 14px;
 // $h6-size: 12px;
 
+@keyframes rainbow {
+  20% {
+    color: $red-500 !important;
+  }
+
+  40% {
+    color: $yellow-500 !important;
+  }
+
+  60% {
+    color: $green-500 !important;
+  }
+
+  80% {
+    color: $blue-500 !important;
+  }
+
+  100% {
+    color: $orange-500 !important;
+  }
+}
+
 /* Set the font size to 26px */
 .h1 {
   font-size: $h1-size-mobile !important;
+  animation: rainbow 1s infinite !important;
 
   @include breakpoint(md) { font-size: $h1-size !important; }
 
@@ -26,6 +49,7 @@
 /* Set the font size to 22px */
 .h2 {
   font-size: $h2-size-mobile !important;
+  animation: rainbow 2s infinite !important;
 
   @include breakpoint(md) { font-size: $h2-size !important; }
 }
@@ -33,6 +57,7 @@
 /* Set the font size to 18px */
 .h3 {
   font-size: $h3-size-mobile !important;
+  animation: rainbow 3s infinite !important;
 
   @include breakpoint(md) { font-size: $h3-size !important; }
 
