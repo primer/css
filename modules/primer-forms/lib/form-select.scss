@@ -12,7 +12,8 @@
   // IE9 hacks to hide the background-image
   background-image: none \9;
   background-size: 8px 10px;
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
 
   // Hides the default caret in IE11
   &::-ms-expand {
