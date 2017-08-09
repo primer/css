@@ -4,6 +4,6 @@ echo "🐦  Publishing PR (canary) release..."
 
 $(dirname $0)/notify pending
 
-$(npm bin)/lerna publish --npm-tag=pr --canary=pr --exact $@
+$(npm bin)/lerna publish --npm-tag=pr --canary --exact $@
 
 $(dirname $0)/notify success
