@@ -2,8 +2,6 @@
 set -e
 echo "👌  Publishing release candidate..."
 
-PATH=$(npm bin):$PATH
-
 package=primer-css
 npm_tag=rc
 
@@ -26,7 +24,7 @@ fi
 
 # determine the 
 next_version=$(
-  semver --increment prerelease --preid $npm_tag $rc_version
+  $(npm bin)/semver --increment prerelease --preid $npm_tag $rc_version
 )
 echo "🤜  Next version: $package@$next_version"
 
@@ -61,6 +59,6 @@ done
 $(dirname $0)/notify pending
 
 # note: this should NOT fail, so --bail=true applies
-lerna exec -- npm publish --tag=$npm_tag
+$(npm bin)/lerna exec -- npm publish --tag=$npm_tag
 
 $(dirname $0)/notify success

@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "primer-marketing-support",
   "description": "Sass variables, mixins, and functions for use in our components.",
   "homepage": "http://primercss.io/",
@@ -18,7 +18,6 @@
     "lint": "stylelint **/*.scss -s scss",
     "test": "npm run lint"
   },
-  "devDependencies": {},
   "keywords": [
     "primer",
     "css",
