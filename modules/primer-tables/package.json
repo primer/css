@@ -23,8 +23,8 @@
     "test": "npm-run-all -s build lint"
   },
   "dependencies": {
-    "primer-marketing-support": "^1.2.0",
-    "primer-support": "^4.2.0"
+    "primer-marketing-support": "1.2.0",
+    "primer-support": "4.2.0"
   },
   "keywords": [
     "css",
