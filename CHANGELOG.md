@@ -1,6 +1,19 @@
 # HEAD
 
+# 9.2.0
+
+## New
+
+- Add `test-docs` npm script in each module to check that every CSS class is documented (or at least mentioned) in the module's own markdown docs
+
+## Changes
+
+- Remove per-module configurations (`.gitignore`, `.postcss.json`, `.stylelintrc.json`) and `CHANGELOG.md` files in #284
+- Replace most static `font-size`, `font-weight`, and `line-height` CSS property values with their [SCSS variable equivalents](https://github.com/primer/primer-css/blob/c9ea37316fbb73c4d9931c52b42bc197260c0bf6/modules/primer-support/lib/variables/typography.scss#L12-L33) in #252
+- Refactor CI scripts to use Travis conditional deployment for release candidate and final release publish steps in #290
+
 # 9.1.1
+
 This release updates primer modules to use variables for spacing units instead of pixel values.
 
 ## Changes

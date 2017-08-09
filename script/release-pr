@@ -2,11 +2,9 @@
 set -e
 echo "🐦  Publishing PR (canary) release..."
 
-PATH=$(npm bin):$PATH
-
 # script/notify pending
 
-lerna publish --npm-tag=pr --canary --no-git $@
+$(npm bin)/lerna publish --npm-tag=pr --canary --no-git $@
 
 $(dirname $0)/notify success
 
