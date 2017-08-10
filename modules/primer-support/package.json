@@ -8,7 +8,8 @@
   "style": "index.scss",
   "files": [
     "index.scss",
-    "lib"
+    "lib",
+    "docs"
   ],
   "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-support",
   "bugs": {
