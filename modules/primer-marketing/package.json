@@ -7,6 +7,9 @@
   "license": "MIT",
   "style": "build/build.css",
   "main": "build/index.js",
+  "primer": {
+    "category": "marketing"
+  },
   "files": [
     "index.scss",
     "build"
