@@ -9,7 +9,7 @@
   "main": "build/index.js",
   "primer": {
     "category": "core",
-    "module_type": "object"
+    "module_type": "objects"
   },
   "files": [
     "index.scss",
