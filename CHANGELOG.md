@@ -152,6 +152,7 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 # 4.4.0
 
 - Adding primer-marketing module to primer
+- Update fade variables to use rgba instead of transparentize color function for better readability [#74179](https://github.com/github/github/pull/74179)
 
 # 4.3.0
 
@@ -175,7 +176,6 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 - Whole new npm build system, pulling in the code from separate component repos
 
 ## June 2017
-- Update fade variables to use rgba instead of transparentize color function for better readability [#74179](https://github.com/github/github/pull/74179)
 - Revised "gutters" grid object to include properly-named modifiers, including responsive modifiers [#74164](https://github.com/github/github/pull/74164)
 - Deprecate `single-column` and `table-column` from layout module [#74095](https://github.com/github/github/pull/74095)
 - Fix/revert $box-shadow-extra-large to .07 opacity [#74231](https://github.com/github/github/pull/74231)
