@@ -7,10 +7,15 @@
   "license": "MIT",
   "style": "index.scss",
   "main": "build/index.js",
+  "primer": {
+    "category": "core",
+    "module_type": "objects"
+  },
   "files": [
     "index.scss",
     "lib",
-    "build"
+    "build",
+    "docs"
   ],
   "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-layout",
   "bugs": {

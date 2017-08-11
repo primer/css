@@ -7,6 +7,10 @@
   "license": "MIT",
   "style": "index.scss",
   "main": "build/index.js",
+  "primer": {
+    "category": "product",
+    "module_type": "components"
+  },
   "files": [
     "index.scss",
     "lib",

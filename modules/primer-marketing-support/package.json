@@ -6,6 +6,10 @@
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "index.scss",
+  "primer": {
+    "category": "marketing",
+    "module_type": "support"
+  },
   "files": [
     "index.scss",
     "lib"

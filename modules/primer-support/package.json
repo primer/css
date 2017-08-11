@@ -6,9 +6,14 @@
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "index.scss",
+  "primer": {
+    "category": "core",
+    "module_type": "support"
+  },
   "files": [
     "index.scss",
-    "lib"
+    "lib",
+    "docs"
   ],
   "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-support",
   "bugs": {
