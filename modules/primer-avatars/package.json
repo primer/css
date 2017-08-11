@@ -27,7 +27,7 @@
     "test": "npm-run-all -s build lint"
   },
   "dependencies": {
-    "primer-support": "^4.2.0"
+    "primer-support": "4.2.0"
   },
   "keywords": [
     "avatars",

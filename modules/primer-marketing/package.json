@@ -24,14 +24,14 @@
     "test": "npm run build"
   },
   "dependencies": {
-    "primer-breadcrumb": "^1.2.0",
-    "primer-cards": "^0.3.0",
-    "primer-marketing-support": "^1.2.0",
-    "primer-marketing-type": "^1.2.0",
-    "primer-marketing-utilities": "^1.2.0",
-    "primer-page-headers": "^1.2.0",
-    "primer-page-sections": "^1.2.0",
-    "primer-support": "^4.2.0",
-    "primer-tables": "^1.2.0"
+    "primer-breadcrumb": "1.2.0",
+    "primer-cards": "0.3.0",
+    "primer-marketing-support": "1.2.0",
+    "primer-marketing-type": "1.2.0",
+    "primer-marketing-utilities": "1.2.0",
+    "primer-page-headers": "1.2.0",
+    "primer-page-sections": "1.2.0",
+    "primer-support": "4.2.0",
+    "primer-tables": "1.2.0"
   }
 }

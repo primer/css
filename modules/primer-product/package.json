@@ -24,11 +24,11 @@
     "test": "npm run build"
   },
   "dependencies": {
-    "primer-alerts": "^1.3.0",
-    "primer-avatars": "^1.2.0",
-    "primer-blankslate": "^1.2.0",
-    "primer-labels": "^1.3.0",
-    "primer-markdown": "^3.5.0",
-    "primer-support": "^4.2.0"
+    "primer-alerts": "1.3.0",
+    "primer-avatars": "1.2.0",
+    "primer-blankslate": "1.2.0",
+    "primer-labels": "1.3.0",
+    "primer-markdown": "3.5.0",
+    "primer-support": "4.2.0"
   }
 }
