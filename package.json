@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "start": "start-storybook -p 8000 -c .storybook",
     "bootstrap": "lerna bootstrap --hoist",
     "clean": "lerna clean",
     "diff": "lerna diff",
@@ -13,12 +14,17 @@
     "test": "lerna run test"
   },
   "devDependencies": {
+    "@storybook/react": "^3.2.4",
     "ava": "^0.21.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
     "commit-status": "^4.1.0",
     "glob": "^7.1.2",
     "lerna": "^2.0.0",
     "npm-run-all": "^4.0.2",
     "primer-module-build": "^1.0.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "semver": "^5.3.0",
     "stylelint": "^7.13.0",
     "stylelint-config-primer": "^2.0.0"
