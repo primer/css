@@ -156,6 +156,14 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 
 
 # 6.0.0
+- Add `State--small` to labels module
+- Fix responsive border utilities
+- Added and updated typography variables and mixins; updated variables used in typography utilities; updated margin, padding, and typography readmes
+- Darken `.box-shadow-extra-large` shadow
+- Update `.tooltip-multiline` to remove `word-break: break-word` property
+- Add `.border-purple` utility class
+- Add responsive border utilities to primer-marketing
+- Add `ws-normal` utility for `whitespace: normal`
 
 # 5.0.0
 
@@ -185,15 +193,6 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 
 - Whole new npm build system, pulling in the code from separate component repos
 
-## April 2017
-- Add `State--small` to labels module [#71975](https://github.com/github/github/pull/71975)
-- Fix responsive border utilities. [#71908](https://github.com/github/github/pull/71908)
-- Added and updated typography variables and mixins; updated variables used in typography utilities; updated margin, padding, and typography readmes. [#66821](https://github.com/github/github/pull/66821/)
-- Darken `.box-shadow-extra-large` shadow [#71314](https://github.com/github/github/pull/71314)
-- Update `.tooltip-multiline` to remove `word-break: break-word` property. [#71381](https://github.com/github/github/pull/71381)
-- Add `.border-purple` utility class. [#71658](https://github.com/github/github/pull/71658)
-- Add responsive border utilities to primer-marketing. [#71658](https://github.com/github/github/pull/71658)
-- Add `ws-normal` utility for `whitespace: normal`. [#71594](https://github.com/github/github/pull/71594)
 
 ## March 2017
 - Updated syntax and classnames for `Counters` and `Labels`, moved into combined module with states. [#67917](https://github.com/github/github/pull/67917)
