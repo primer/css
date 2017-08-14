@@ -197,11 +197,14 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 
 #4.7.0
 - Update primer modules to use bold variable applying `font-weight: 600` [#64694](https://github.com/github/github/pull/64694)
+
+# 4.6.0
 - Added `CircleBadge` component for badge-like displays within product/components/avatars. [#66834](https://github.com/github/github/pull/66834)
 - Added Box shadow utilities `box-shadow`, `box-shadow-medium`, `box-shadow-large`, `box-shadow-none`. [#66828](https://github.com/github/github/pull/65145)
 - Moved visibility and display utilities to separate partial at the end of the imports list, moved flexbox to it's own partial [#66941](https://github.com/github/github/pull/66941)
 - Added `flex-shrink-0` to address Flexbox Safari bug [#66943](https://github.com/github/github/pull/66943)
 - Updated: Using spacing variables in the `.flash` component [#65145](https://github.com/github/github/pull/65145)
+
 
 # 4.4.0
 
