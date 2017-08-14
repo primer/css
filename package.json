@@ -19,14 +19,6 @@
     "stylelint",
     "css"
   ],
-  "browserslist": [
-    "> 5%",
-    "last 2 firefox versions",
-    "last 2 chrome versions",
-    "last 2 safari versions",
-    "last 2 edge versions",
-    "ie 11"
-  ],
   "author": "GitHub, Inc.",
   "license": "MIT",
   "bugs": {
@@ -40,10 +32,11 @@
     "stylelint-selector-no-utility": "^1.5.0"
   },
   "devDependencies": {
-    "ava": "latest",
-    "eslint": "latest",
-    "eslint-plugin-import": "latest",
-    "eslint-plugin-github": "latest",
+    "ava": "^0.20.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-rule-documentation": "^1.0.11",
+    "eslint-plugin-github": "^0.12.0",
     "stylelint": "^7.13.0"
   },
   "peerDependencies": {
