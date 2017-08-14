@@ -192,7 +192,16 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 - Added `.box-shadow-extra-large` utility for large, diffused shadow
 - Updated: removed background color from markdown body
 - Updated: remove background on the only item in an avatar stack
+- Added form utility `.form-checkbox-details` to allow content to be shown/hidden based on a radio button being checked
+- Added form utility to override Webkit's incorrect assumption of where to try to autofill contact information
 
+#4.7.0
+- Update primer modules to use bold variable applying `font-weight: 600` [#64694](https://github.com/github/github/pull/64694)
+- Added `CircleBadge` component for badge-like displays within product/components/avatars. [#66834](https://github.com/github/github/pull/66834)
+- Added Box shadow utilities `box-shadow`, `box-shadow-medium`, `box-shadow-large`, `box-shadow-none`. [#66828](https://github.com/github/github/pull/65145)
+- Moved visibility and display utilities to separate partial at the end of the imports list, moved flexbox to it's own partial [#66941](https://github.com/github/github/pull/66941)
+- Added `flex-shrink-0` to address Flexbox Safari bug [#66943](https://github.com/github/github/pull/66943)
+- Updated: Using spacing variables in the `.flash` component [#65145](https://github.com/github/github/pull/65145)
 
 # 4.4.0
 
@@ -219,15 +228,6 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 
 - Whole new npm build system, pulling in the code from separate component repos
 
-## January 2017
-- Added form utility `.form-checkbox-details` to allow content to be shown/hidden based on a radio button being checked. [#67710](https://github.com/github/github/pull/67710)
-- Added form utility to override Webkit's incorrect assumption of where to try to autofill contact information. [#67710](https://github.com/github/github/pull/67710)
-- Update primer modules to use bold variable applying `font-weight: 600` [#64694](https://github.com/github/github/pull/64694)
-- Added `CircleBadge` component for badge-like displays within product/components/avatars. [#66834](https://github.com/github/github/pull/66834)
-- Added Box shadow utilities `box-shadow`, `box-shadow-medium`, `box-shadow-large`, `box-shadow-none`. [#66828](https://github.com/github/github/pull/65145)
-- Moved visibility and display utilities to separate partial at the end of the imports list, moved flexbox to it's own partial [#66941](https://github.com/github/github/pull/66941)
-- Added `flex-shrink-0` to address Flexbox Safari bug [#66943](https://github.com/github/github/pull/66943)
-- Updated: Using spacing variables in the `.flash` component [#65145](https://github.com/github/github/pull/65145)
 
 ## December 2016
 - Updated Box component styles and documentation [#63877](https://github.com/github/github/pull/63877)
