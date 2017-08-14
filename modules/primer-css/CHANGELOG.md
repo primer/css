@@ -167,7 +167,7 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 - Updated syntax and classnames for `Counters` and `Labels`, moved into combined module with states.
 
 # 5.1.0
-- Add negative margin utilities. [#70128](https://github.com/github/github/pull/70128)
+- Add negative margin utilities
 - Move `.d-flex` & `.d-flex-inline` to be with other display utility classes in `visibility-display.scss`
 - Delete `.shade-gradient` in favor of `.bg-shade-gradient`
 - Removed alt-body-font variable from primer-marketing
@@ -196,16 +196,16 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 - Added form utility to override Webkit's incorrect assumption of where to try to autofill contact information
 
 # 4.7.0
-- Update primer modules to use bold variable applying `font-weight: 600` [#64694](https://github.com/github/github/pull/64694)
+- Update primer modules to use bold variable applying `font-weight: 600`
 
 # 4.6.0
-- Added `CircleBadge` component for badge-like displays within product/components/avatars. [#66834](https://github.com/github/github/pull/66834)
-- Added Box shadow utilities `box-shadow`, `box-shadow-medium`, `box-shadow-large`, `box-shadow-none`. [#66828](https://github.com/github/github/pull/65145)
-- Moved visibility and display utilities to separate partial at the end of the imports list, moved flexbox to it's own partial [#66941](https://github.com/github/github/pull/66941)
-- Added `flex-shrink-0` to address Flexbox Safari bug [#66943](https://github.com/github/github/pull/66943)
-- Updated: Using spacing variables in the `.flash` component [#65145](https://github.com/github/github/pull/65145)
-- Updated Box component styles and documentation [#63877](https://github.com/github/github/pull/63877)
-- Added `.wb-break-all` utility [#66246](https://github.com/github/github/pull/66246)
+- Added `CircleBadge` component for badge-like displays within product/components/avatars
+- Added Box shadow utilities `box-shadow`, `box-shadow-medium`, `box-shadow-large`, `box-shadow-none`
+- Moved visibility and display utilities to separate partial at the end of the imports list, moved flexbox to it's own partial
+- Added `flex-shrink-0` to address Flexbox Safari bug
+- Updated: Using spacing variables in the `.flash` component
+- Updated Box component styles and documentation
+- Added `.wb-break-all` utility
 
 # 4.4.0
 - Adding primer-marketing module to primer
