@@ -215,8 +215,26 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 - Deprecated `link-blue`, updated `link-gray` and `link-gray-dark`, added `link-hover-blue` - Updated: blankslate module to use support variables for sizing
 
 # 4.3.0
+- Renamed `.flex-table` to `.TableObject`
+- Updated: `$spacer-1` has been changed to `4px` from `3px`
+- Updated: `$spacer-2` has been changed to `6px` from `8px`
+- Added: `.text-shadow-dark` & `.text-shadow-light` utilities
+- Updated: Moved non-framework CSS out of Primer modules. Added `box.scss` to `primer-core`. Added `discussion-timeline.scss` to `primer-product`, and moved `blob-csv.scss` into `/primer-product/markdown` directory
+- Added: Flex utilities
+- Refactor: Site typography to use Primer Marketing styles
+- Added: `.list-style-none` utility
+- Refactor: Button groups into some cleaner CSS
+- Updated: Reorganizing how we separate primer-core, primer-product, primer-marketing css
 
-- Using primer-core and primer-product modules
+
+# 4.2.0
+- Added: Responsive styles for margin and padding utilities, display,  float, and new responsive hide utility, and updates to make typography responsive
+- Added: new container styles and grid styles with responsive options
+- Added: updated underline nav styles
+- Deprecate: Deprecating a lot of color and layout utilities
+- Added: More type utilities for different weights and larger sizes.
+- Added: Well defined browser support
+
 
 # 4.1.0
 
@@ -235,32 +253,6 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 
 - Whole new npm build system, pulling in the code from separate component repos
 
-## October 2016
-- Renamed `.flex-table` to `.TableObject` [#63438](https://github.com/github/github/pull/63438)
-- Updated: `$spacer-1` has been changed to `4px` from `3px` [#63040](https://github.com/github/github/pull/63040)
-- Updated: `$spacer-2` has been changed to `6px` from `8px` https://github.com/github/github/pull/63428
-- Added: `.text-shadow-dark` & `.text-shadow-light` utilities [#63414](https://github.com/github/github/pull/63414)
-- Updated: Moved non-framework CSS out of Primer modules. Added `box.scss` to `primer-core`. Added `discussion-timeline.scss` to `primer-product`, and moved `blob-csv.scss` into `/primer-product/markdown` directory. [#62715](https://github.com/github/github/pull/62715)
-
-## September 2016
-
-- Added: Flex utilities [#56820](https://github.com/github/github/pull/56820)
-- Refactor: Site typography to use Primer Marketing styles [#62702](https://github.com/github/github/pull/62702)
-- Added: `.list-style-none` utility [#62592](https://github.com/github/github/pull/62592)
-- Refactor: Button groups into some cleaner CSS [#59986](https://github.com/github/github/pull/59986)
-- Updated: Reorganizing how we separate primer-core, primer-product, primer-marketing css [#62514](https://github.com/github/github/pull/62514)
-
-## August 2016
-
-- Added: Responsive styles for margin and padding utilities, display,  float, and new responsive hide utility, and updates to make typography responsive. [#58106](https://github.com/github/github/pull/58106)
-- Added: new container styles and grid styles with responsive options. [#58106](https://github.com/github/github/pull/58106)
-- Added: updated underline nav styles. [#58583](https://github.com/github/github/pull/58583)
-- Deprecate: Deprecating a lot of color and layout utilities [#107](https://github.com/github/design-systems/issues/107)
-
-## July 2016
-
-- Added: More type utilities for different weights and larger sizes. [#58399](https://github.com/github/github/pull/58399)
-- Added: Well defined browser support [#58252](https://github.com/github/github/pull/58252)
 
 ## June 2016
 
