@@ -166,7 +166,7 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 - Add `ws-normal` utility for `whitespace: normal`
 - Updated syntax and classnames for `Counters` and `Labels`, moved into combined module with states.
 
-#5.1.0
+# 5.1.0
 - Add negative margin utilities. [#70128](https://github.com/github/github/pull/70128)
 - Move `.d-flex` & `.d-flex-inline` to be with other display utility classes in `visibility-display.scss`
 - Delete `.shade-gradient` in favor of `.bg-shade-gradient`
@@ -195,7 +195,7 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 - Added form utility `.form-checkbox-details` to allow content to be shown/hidden based on a radio button being checked
 - Added form utility to override Webkit's incorrect assumption of where to try to autofill contact information
 
-#4.7.0
+# 4.7.0
 - Update primer modules to use bold variable applying `font-weight: 600` [#64694](https://github.com/github/github/pull/64694)
 
 # 4.6.0
