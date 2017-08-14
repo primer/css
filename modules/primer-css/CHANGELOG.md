@@ -256,16 +256,7 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 # 4.0.0
 - Whole new npm build system, pulling in the code from separate component repos
 
-
-## April 2016
-
-- Added: Creating the styleguide [#52515](https://github.com/github/github/pull/52515)
-
-## March 2016
-
-- Added: Animation utilities. [#51894](https://github.com/github/github/pull/51894)
-
-## February 2016
-
-- Added: Whitespace scale, and margin and padding utilities. [#50407](https://github.com/github/github/pull/50407)
-- Added: Border utilities [#50751](https://github.com/github/github/pull/50751)
+# 3.0.0
+- Added: Animation utilities
+- Added: Whitespace scale, and margin and padding utilities
+- Added: Border utilities
