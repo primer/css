@@ -237,37 +237,25 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 
 
 # 4.1.0
-
 - Added: [primer-markdown](https://github.com/primer/markdown) to the build
 - Fixes: Pointing "style" package.json to `build/build.css` file.
+- Added: Update font stack to system fonts
+- Added: Updated type scale as part of system font update
+- Added: `.Box` component for replacing boxed groups, simple box, and table-list styles
+- Added: New type utilities for headings and line-height
+- Deprecated: `vertical-middle` was replaced with `v-align-middle`.
+- Added: Layout utilities for vertical alignment, overflow, width and height, visibility, and display table
+- Added: Changing from font icons to SVG
 
 # 4.0.2
-
 - Added npm build scripts to add `build/build.css` to the npm package
 
 # 4.0.1
-
 - Fixed: missing primer-layout from build
 
 # 4.0.0
-
 - Whole new npm build system, pulling in the code from separate component repos
 
-
-## June 2016
-
-- Added: Update font stack to system fonts. [#56473](https://github.com/github/github/pull/56473)
-- Added: Updated type scale as part of system font update. [#56701](https://github.com/github/github/pull/56701)
-- Added: `.Box` component for replacing boxed groups, simple box, and table-list styles. [#56284](https://github.com/github/github/pull/56284)
-- Added: New type utilities for headings and line-height [#55614](https://github.com/github/github/pull/55614)
-- Deprecated: `vertical-middle` was replaced with `v-align-middle`.
-- Added: Layout utilities for vertical alignment, overflow, width and height, visibility, and display table. [#55461](https://github.com/github/github/pull/55461)
-- Added: Changing from font icons to SVG [#56408](https://github.com/github/github/pull/56408)
-
-## May 2016
-
-- Added: Bringing primer modules back into the main codebase, and publishing to external repositories [#53976](https://github.com/github/github/pull/53976)
-- Removed scss-lint and added stylelint as the CSS linter [#54908](https://github.com/github/github/pull/54908)
 
 ## April 2016
 
