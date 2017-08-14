@@ -2,7 +2,7 @@
 
 # 9.2.0
 
-## New
+## Added
 
 - Add `test-docs` npm script in each module to check that every CSS class is documented (or at least mentioned) in the module's own markdown docs
 
