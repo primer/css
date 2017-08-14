@@ -33,9 +33,10 @@
   },
   "devDependencies": {
     "ava": "^0.20.0",
-    "eslint": "^4.2.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-github": "^0.11.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-rule-documentation": "^1.0.11",
+    "eslint-plugin-github": "^0.12.0",
     "stylelint": "^7.13.0"
   },
   "peerDependencies": {

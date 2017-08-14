@@ -32,8 +32,8 @@ test("no warnings with valid css", t => {
     config: config,
   })
     .then(data => {
-      const { errored, results } = data
-      const { warnings } = results[0]
+      const {errored, results} = data
+      const {warnings} = results[0]
       t.falsy(errored, "no errored")
       t.is(warnings.length, 0, "flags no warnings")
     })
@@ -45,8 +45,8 @@ test("a warning with invalid css", t => {
     config: config,
   })
     .then(data => {
-      const { errored, results } = data
-      const { warnings } = results[0]
+      const {errored, results} = data
+      const {warnings} = results[0]
       t.truthy(errored, "errored")
       t.is(warnings.length, 2, "flags two warning")
       t.is(warnings[0].text, 'Expected "top" to come before "color" (order/properties-order)', "correct warning text")
@@ -61,9 +61,9 @@ test("No deprecated config", t => {
     syntax: "scss"
   })
     .then(data => {
-      const { errored, results } = data
+      const {errored, results} = data
       t.falsy(errored, "errored")
       t.not(results.length, 0, "Did not find any resutls")
-      t.is(results[0].deprecations.length, 0, `Expected there to be no deprecated config warnings. Please fix these:\n\n${results[0].deprecations.map((d) => d.text).join("\n")}`)
+      t.is(results[0].deprecations.length, 0, `Expected there to be no deprecated config warnings. Please fix these:\n\n${results[0].deprecations.map(d => d.text).join("\n")}`)
     })
 })
