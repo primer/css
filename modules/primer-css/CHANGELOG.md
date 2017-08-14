@@ -164,13 +164,39 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 - Add `.border-purple` utility class
 - Add responsive border utilities to primer-marketing
 - Add `ws-normal` utility for `whitespace: normal`
+- Updated syntax and classnames for `Counters` and `Labels`, moved into combined module with states.
+
+#5.1.0
+- Add negative margin utilities. [#70128](https://github.com/github/github/pull/70128)
+- Move `.d-flex` & `.d-flex-inline` to be with other display utility classes in `visibility-display.scss`
+- Delete `.shade-gradient` in favor of `.bg-shade-gradient`
+- Removed alt-body-font variable from primer-marketing
+- Removed un-used `alt` typography styles from primer-marketing
+- Add green border utility
 
 # 5.0.0
+- Added new border variable and utility, replaced deprecated flash border variables
+- Updated variable name in form validation
+- Updated `.sr-only` to not use negative margin
+- Added and removed border variables and utilities
+- Add filter utility to Primer Marketing
+- Removed all custom color variables within Primer-marketing in favor of the new color system
+- Updated style for form group error display so it is positioned properly
+- Updated state closed color and text and background pending utilities
+- Removed local font css file from primer-marketing/support
+- Updated all color variables and replaced 579 hex refs across modules with new variables, added additional shades to start introducing a new color system which required updating nearly all primer modules
+- Added layout utility `.sr-only` for creating screen reader only elements
+- Added `.flex{-infix}-item-equal` utilities for creating equal width and equal height flex items.
+- Added `.flex{-infix}-row-reverse` utility for reversing rows of content
+- Updated `.select-menu-button-large` to use `em` units for sizing of the CSS triangle.
+- Added `.box-shadow-extra-large` utility for large, diffused shadow
+- Updated: removed background color from markdown body
+- Updated: remove background on the only item in an avatar stack
+
 
 # 4.4.0
 
 - Adding primer-marketing module to primer
-- Update fade variables to use rgba instead of transparentize color function for better readability [#74179](https://github.com/github/github/pull/74179)
 
 # 4.3.0
 
@@ -192,35 +218,6 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 # 4.0.0
 
 - Whole new npm build system, pulling in the code from separate component repos
-
-
-## March 2017
-- Updated syntax and classnames for `Counters` and `Labels`, moved into combined module with states. [#67917](https://github.com/github/github/pull/67917)
-- Add negative margin utilities. [#70128](https://github.com/github/github/pull/70128)
-- Move `.d-flex` & `.d-flex-inline` to be with other display utility classes in `visibility-display.scss`. [#70079](https://github.com/github/github/pull/70079)
-- Delete `.shade-gradient` in favor of `.bg-shade-gradient`. [#70079](https://github.com/github/github/pull/70079)
-- Removed alt-body-font variable from primer-marketing. [#69247](https://github.com/github/github/pull/69247)
-- Removed un-used `alt` typography styles from primer-marketing. [#69718](https://github.com/github/github/pull/69718)
-- Add green border utility. [#68015](https://github.com/github/github/pull/68015)
-- Added new border variable and utility, replaced deprecated flash border variables. [#69657](https://github.com/github/github/pull/69657)
-- Updated variable name in form validation. [#69634](https://github.com/github/github/pull/69634)
-- Updated `.sr-only` to not use negative margin. [#69617](https://github.com/github/github/pull/69617)
-- Added and removed border variables and utilities. [#69634](https://github.com/github/github/pull/69634)
-- Add filter utility to Primer Marketing [#69497](https://github.com/github/github/pull/69497)
-- Removed all custom color variables within Primer-marketing in favor of the new color system. [#69512](https://github.com/github/github/pull/69512)
-- Updated style for form group error display so it is positioned properly. [#68267](https://github.com/github/github/pull/68845), [69666](https://github.com/github/github/pull/69666)
-- Updated state closed color and text and background pending utilities. [#69551](https://github.com/github/github/pull/69551)
-- Removed local font css file from primer-marketing/support. [#69565](https://github.com/github/github/pull/69565)
-- Updated all color variables and replaced 579 hex refs across modules with new variables, added additional shades to start introducing a new color system which required updating nearly all primer modules. [#68964](https://github.com/github/github/pull/68964)
-
-## February 2017
-- Added layout utility `.sr-only` for creating screen reader only elements. [#68267](https://github.com/github/github/pull/68267)
-- Added `.flex{-infix}-item-equal` utilities for creating equal width and equal height flex items.
-- Added `.flex{-infix}-row-reverse` utility for reversing rows of content [#68522](https://github.com/github/github/pull/68522)
-- Updated `.select-menu-button-large` to use `em` units for sizing of the CSS triangle.
-- Added `.box-shadow-extra-large` utility for large, diffused shadow [#68522](https://github.com/github/github/pull/68522)
-- Updated: removed background color from markdown body [#68364](https://github.com/github/github/pull/68364)
-- Updated: remove background on the only item in an avatar stack. [#68268](https://github.com/github/github/pull/68268)
 
 ## January 2017
 - Added form utility `.form-checkbox-details` to allow content to be shown/hidden based on a radio button being checked. [#67710](https://github.com/github/github/pull/67710)
