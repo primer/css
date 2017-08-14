@@ -204,11 +204,15 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 - Moved visibility and display utilities to separate partial at the end of the imports list, moved flexbox to it's own partial [#66941](https://github.com/github/github/pull/66941)
 - Added `flex-shrink-0` to address Flexbox Safari bug [#66943](https://github.com/github/github/pull/66943)
 - Updated: Using spacing variables in the `.flash` component [#65145](https://github.com/github/github/pull/65145)
-
+- Updated Box component styles and documentation [#63877](https://github.com/github/github/pull/63877)
+- Added `.wb-break-all` utility [#66246](https://github.com/github/github/pull/66246)
 
 # 4.4.0
-
 - Adding primer-marketing module to primer
+- Added red and blue border color variables and utilities
+- Updated: `$spacer-5` has been changed to `32px` from `36px`
+- Updated: `$spacer-6` has been changed to `40px` from `48px`
+- Deprecated `link-blue`, updated `link-gray` and `link-gray-dark`, added `link-hover-blue` - Updated: blankslate module to use support variables for sizing
 
 # 4.3.0
 
@@ -230,17 +234,6 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 # 4.0.0
 
 - Whole new npm build system, pulling in the code from separate component repos
-
-
-## December 2016
-- Updated Box component styles and documentation [#63877](https://github.com/github/github/pull/63877)
-- Added `.wb-break-all` utility [#66246](https://github.com/github/github/pull/66246)
-
-## November 2016
-- Added red and blue border color variables and utilities [#64795](https://github.com/github/github/pull/64795)
-- Updated: `$spacer-5` has been changed to `32px` from `36px` [#64635](https://github.com/github/github/pull/64635)
-- Updated: `$spacer-6` has been changed to `40px` from `48px` [#65069](https://github.com/github/github/pull/65069)
-- Deprecated `link-blue`, updated `link-gray` and `link-gray-dark`, added `link-hover-blue` - Updated: blankslate module to use support variables for sizing [#65150](https://github.com/github/github/pull/65150)
 
 ## October 2016
 - Renamed `.flex-table` to `.TableObject` [#63438](https://github.com/github/github/pull/63438)
