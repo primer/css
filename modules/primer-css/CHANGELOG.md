@@ -134,16 +134,26 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 
 #### primer-support v4.0.5
 - Update fade color variables to use rgba instead of transparentize color function for better Sass readability
+- Update support variables and mixins to use new color variables
 
 #### primer-layout v1.0.3
 - Update grid gutter styles naming convention and add responsive modifiers
 - Deprecate `single-column` and `table-column` from layout module
+- Remove `@include clearfix` from responsive container classes
 
 #### primer-utilities v4.3.3
 - Add `show-on-focus` utility class for accessibility
+- Update typography utilities to use new color variables
+- Add `.p-responsive` class
 
 #### primer-base v1.1.3
 - Update `b` tag font weight to use variable in base styles
+
+### Primer Marketing v4.0.3
+
+#### primer-tables
+- Update marketing table colors to use new variables
+
 
 # 6.0.0
 
@@ -174,20 +184,6 @@ See PR for more details on this change: https://github.com/primer/primer-css/pul
 # 4.0.0
 
 - Whole new npm build system, pulling in the code from separate component repos
-
-## June 2017
-- Revised "gutters" grid object to include properly-named modifiers, including responsive modifiers [#74164](https://github.com/github/github/pull/74164)
-- Deprecate `single-column` and `table-column` from layout module [#74095](https://github.com/github/github/pull/74095)
-- Fix/revert $box-shadow-extra-large to .07 opacity [#74231](https://github.com/github/github/pull/74231)
-- Add `.show-on-focus` utility class for accessibility [#72680](https://github.com/github/github/pull/72680)
-- Update b tag font weight in base styles [#73853](https://github.com/github/github/pull/73853)
-
-## May 2017
-- Update marketing table colors to use new variables [#73689](https://github.com/github/github/pull/73689)
-- Update typography utilities to use new color variables [#73689](https://github.com/github/github/pull/73689)
-- Update support variables and mixins to use new color variables [#73689](https://github.com/github/github/pull/73689)
-- Add `.p-responsive` class [#72006](https://github.com/github/github/pull/72006)
-- Remove `@include clearfix` from responsive container classes [#73631](https://github.com/github/github/pull/73631)
 
 ## April 2017
 - Add `State--small` to labels module [#71975](https://github.com/github/github/pull/71975)
