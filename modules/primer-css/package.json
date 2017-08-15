@@ -9,7 +9,8 @@
   "files": [
     "index.scss",
     "lib",
-    "build"
+    "build",
+    "CHANGELOG.md"
   ],
   "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-css",
   "bugs": {
