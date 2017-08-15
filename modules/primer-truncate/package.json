@@ -7,6 +7,10 @@
   "license": "MIT",
   "style": "index.scss",
   "main": "build/index.js",
+  "primer": {
+    "category": "core",
+    "module_type": "components"
+  },
   "files": [
     "index.scss",
     "lib",
@@ -24,7 +28,7 @@
     "test": "npm-run-all -s build lint test-docs"
   },
   "dependencies": {
-    "primer-support": "^4.2.0"
+    "primer-support": "4.2.0"
   },
   "keywords": [
     "primer",
