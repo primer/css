@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "name": "primer-layout",
   "description": "Containers, rows, and columns for creating page layout.",
   "homepage": "http://primercss.io/",
@@ -7,10 +7,15 @@
   "license": "MIT",
   "style": "index.scss",
   "main": "build/index.js",
+  "primer": {
+    "category": "core",
+    "module_type": "objects"
+  },
   "files": [
     "index.scss",
     "lib",
-    "build"
+    "build",
+    "docs"
   ],
   "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-layout",
   "bugs": {
@@ -23,7 +28,7 @@
     "test": "npm-run-all -s build lint"
   },
   "dependencies": {
-    "primer-support": "^4.2.0"
+    "primer-support": "4.3.0"
   },
   "keywords": [
     "primer",
