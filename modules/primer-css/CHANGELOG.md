@@ -1,6 +1,6 @@
 # HEAD
 
-# 9.3.1
+# 9.3.0
 
 ## Added
 - Docs for `primer-layout` (grid), `primer-support`, `primer-utilities`, and `primer-marketing-utilities`
