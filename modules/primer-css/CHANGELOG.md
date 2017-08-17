@@ -1,5 +1,16 @@
 # HEAD
 
+# 9.3.0
+
+## Added
+- Docs for `primer-layout` (grid), `primer-support`, `primer-utilities`, and `primer-marketing-utilities`
+- Primer keys for `category` and `module_type` to `package.json` (for use in documentation and gathering stats)
+
+## Changes
+- Removes `docs` from `gitignore`
+- Removes the `^` from all dependencies so that we can publish exact versions
+- Consolidates release notes from various sources into one changelog located in `/modules/primer-css/CHANGELOG.md`
+
 # 9.2.0
 
 ## Added
