@@ -30,6 +30,8 @@
 .v-align-text-top    { vertical-align: text-top !important; }
 /* Vertical align to the bottom of the text */
 .v-align-text-bottom { vertical-align: text-bottom !important; }
+/* Vertical align to the parent's baseline */
+.v-align-baseline    { vertical-align: baseline !important; }
 
 // Overflow utilities
 // overflow-hidden can also be used to create a new
