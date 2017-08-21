@@ -1,5 +1,5 @@
 {
-  "version": "4.4.1",
+  "version": "4.6.0",
   "name": "primer-utilities",
   "description": "Immutable, atomic CSS classes to rapidly build product",
   "homepage": "http://primercss.io/",
@@ -7,10 +7,15 @@
   "license": "MIT",
   "style": "index.scss",
   "main": "build/index.js",
+  "primer": {
+    "category": "core",
+    "module_type": "utilities"
+  },
   "files": [
     "index.scss",
     "lib",
-    "build"
+    "build",
+    "docs"
   ],
   "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-utilities",
   "bugs": {
@@ -23,9 +28,8 @@
     "test": "npm-run-all -s build lint"
   },
   "dependencies": {
-    "primer-support": "^4.1.1"
+    "primer-support": "4.3.0"
   },
-  "devDependencies": {},
   "keywords": [
     "primer",
     "css",

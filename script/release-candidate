@@ -2,11 +2,8 @@
 set -e
 echo "👌  Publishing release candidate..."
 
-PATH=$(npm bin):$PATH
-
 package=primer-css
 npm_tag=rc
-log=/tmp/rc.log
 
 # get the version we're publishing as a release candidate
 local_version=$(jq -r .version modules/$package/package.json)
@@ -27,7 +24,7 @@ fi
 
 # determine the 
 next_version=$(
-  semver --increment prerelease --preid $npm_tag $rc_version
+  $(npm bin)/semver --increment prerelease --preid $npm_tag $rc_version
 )
 echo "🤜  Next version: $package@$next_version"
 
@@ -53,13 +50,15 @@ for module_dir in $module_dirs; do
   echo "$module@$module_version => $module_next_version"
   # "upgrade" to the most recent RC version so that
   # `npm version prerelease` can increment automatically
-  npm version --no-git --quiet "$module_next_version" >> $log
+  npm version --no-git --quiet "$module_next_version"
 
   popd > /dev/null
 done
 
 # publish all the things!
-script/notify pending
+$(dirname $0)/notify pending
+
 # note: this should NOT fail, so --bail=true applies
-lerna exec -- npm publish --tag=$npm_tag
-script/notify success
+$(npm bin)/lerna exec -- npm publish --tag=$npm_tag
+
+$(dirname $0)/notify success

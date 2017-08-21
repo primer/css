@@ -1,5 +1,5 @@
 {
-  "version": "1.2.1",
+  "version": "1.4.0",
   "name": "primer-alerts",
   "description": "Flash messages, or alerts, inform users of successful or pending actions.",
   "homepage": "http://primercss.io/",
@@ -7,6 +7,10 @@
   "license": "MIT",
   "style": "index.scss",
   "main": "build/index.js",
+  "primer": {
+    "category": "product",
+    "module_type": "components"
+  },
   "files": [
     "index.scss",
     "lib",
@@ -23,9 +27,8 @@
     "test": "npm-run-all -s build lint"
   },
   "dependencies": {
-    "primer-support": "^4.1.1"
+    "primer-support": "4.3.0"
   },
-  "devDependencies": {},
   "keywords": [
     "alerts",
     "callouts",

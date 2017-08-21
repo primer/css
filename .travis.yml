@@ -2,6 +2,13 @@ language: node_js
 node_js:
   - 7
 
+env:
+  global:
+    # npm
+    - secure: "EZewKKWQXmtCwPtYrPZq4OQblv2OyXR61qBIl3pOxGNVG2BCjD6VOgSaiYqkA9Qbt+ihfwQkiiLvTB68gbvRSiBFV9i+XLzKzt4S8CDI5RhTLAxZB3eQFVZRYzldchzWI4sdNhTvYS1kYXmsXQZD6vJmPSnFvOI/ddfzqvnNL4M="
+    # github
+    - secure: "J+1oWjvvXjyrwkY/4IFWKdN/weFmQcPwlRuFG4R0Gb3rYe4nqtC9l68sJvmS8asc8dQMhOhcUZCH6sjvo7l2WD4NuK4umPSbs+rJNUsfbvH4pZjStQIj/3ll1OfQelGDWAYQWhIfciYY4F3Bp0ZWTfKOppLQ2AVIYu1fPVXDdlo="
+
 before_script:
   - lerna bootstrap
 
@@ -9,8 +16,26 @@ script:
   - npm test
 
 after_success:
+  # this will short-circuit the publish step if it fails to interpolate $NPM_API_KEY
   - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
-  - script/cibuild --yes
+  # copy the CHANGELOG.md primer-css for publishing
+  - cp CHANGELOG.md modules/primer-css
+  - script/after_success
+
+deploy:
+  # publish release candidates on release branches
+  - provider: script
+    script: script/release-candidate
+    skip_cleanup: true
+    on:
+      branch: release*
+
+  # publish "final" releases on master
+  - provider: script
+    script: script/release
+    skip_cleanup: true
+    on:
+      branch: master
 
 notifications:
   slack:
