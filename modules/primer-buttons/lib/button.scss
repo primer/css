@@ -58,7 +58,7 @@
   }
 }
 
-.btn         { @include btn-solid($text-gray-dark, $gray-000, darken($gray-100, 2%)); }
+.btn         { @include btn-solid($text-purple, $gray-000, darken($gray-100, 2%)); }
 .btn-primary { @include btn-solid($text-white, $green-400, $green-500); }
 .btn-purple  { @include btn-solid($text-white, lighten($purple-500, 5%), darken($purple-500, 5%)); }
 .btn-blue    { @include btn-solid($text-white, lighten($blue-500, 8%), darken($blue-500, 2%)); }
