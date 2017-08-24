@@ -8,7 +8,8 @@
   "style": "build/build.css",
   "main": "build/index.js",
   "primer": {
-    "category": "core"
+    "category": "core",
+    "module_type": "meta"
   },
   "files": [
     "index.scss",
