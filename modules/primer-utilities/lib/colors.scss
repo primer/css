@@ -62,6 +62,9 @@
 /* Set the text color to inherit */
 .text-inherit       { color: inherit !important; }
 
+/* Fill SVGs (such as octicons) with the current text color */
+.fill-inherit { fill: currentColor; }
+
 // Text states
 // These can probably all be regular utilities
 .text-pending { color: $yellow-800 !important; }
