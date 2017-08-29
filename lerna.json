@@ -1,4 +1,5 @@
 {
+  "lerna": "2.1.1",
   "packages": [
     "modules/*"
   ],
