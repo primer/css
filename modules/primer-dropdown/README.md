@@ -9,7 +9,7 @@ This repository is a module of the full [primer-css][primer-css] repository.
 
 ## Install
 
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-dropdown` with this command.
+This repository is distributed with [npm]. After [installing npm][install-npm], you can install `primer-dropdown` with this command.
 
 ```
 $ npm install --save primer-dropdown
