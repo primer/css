@@ -250,6 +250,7 @@ to `auto` and prevent hidden overflows on item contents and text.
     1 member selected…
     <span class="dropdown-caret"></span>
   </button>
+
   <div class="dropdown-menu-content js-menu-content">
     <ul class="dropdown-menu dropdown-menu-no-overflow dropdown-menu-se">
       <a href="#url" class="dropdown-item js-menu-close">
@@ -273,6 +274,7 @@ and display it as a link.
   <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     <img alt="@shawnbot" class="avatar" src="https://avatars0.githubusercontent.com/u/113896?v=4&amp;s=40" height="20" width="20">
   </button>
+
   <div class="dropdown-menu-content js-menu-content">
     <ul class="dropdown-menu dropdown-menu-sw">
       <li class="dropdown-header header-nav-current-user css-truncate">
