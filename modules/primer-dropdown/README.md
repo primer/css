@@ -36,22 +36,208 @@ $ npm run build
 ## Documentation
 
 <!-- %docs
-title: Table object
+title: Dropdown
 status: Stable
-key: /css/styles/core/objects/dropdown
+source: https://github.com/github/github/blob/master/app/assets/stylesheets/components/dropdown.scss
 -->
 
-The table object is a module for creating dynamically resizable elements that always sit on the same horizontal line (e.g., they never break to a new line). Using table styles in our CSS means it's cross browser friendly back to at least IE9.
+Dropdowns are lightweight, JavaScript-powered context menus for housing navigation and actions. They're great for instances where you don't need the full power (and code) of the select menu.
 
-Additional `margin` or `padding` may be required to properly space content.
+{:toc}
+
+## Basic examples
+
+Dropdowns should be trigged by a `<button>`. **[Each dropdown menu requires a directional class](#alignment)**, much like our tooltips.
+
+Using a GitHub button:
 
 ```html
-<div class="TableObject">
-  <div class="TableObject-item TableObject-item--primary">
-    <input class="input-block form-control" type="text" placeholder="Long elastic input form" aria-label="Long elastic input form">
+<div class="dropdown js-menu-container js-select-menu">
+  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+    Dropdown
+    <div class="dropdown-caret"></div>
+  </button>
+
+  <div class="dropdown-menu-content js-menu-content">
+    <ul class="dropdown-menu dropdown-menu-se">
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    </ul>
   </div>
-  <div class="TableObject-item">
-    <button class="btn ml-2" type="button">Button</button>
+</div>
+```
+
+Using a button customized with additional utilities:
+
+
+```html
+<div class="dropdown js-menu-container js-select-menu">
+  <button class="btn-link no-underline text-gray p-2 dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+    Dropdown
+    <div class="dropdown-caret"></div>
+  </button>
+
+  <div class="dropdown-menu-content js-menu-content">
+    <ul class="dropdown-menu dropdown-menu-se">
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+## Options
+
+### Alignment
+
+Align the direction of dropdown menus and their arrows with modifier classes.
+
+```html
+<div class="dropdown js-menu-container js-select-menu">
+  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+    .dropdown-ne
+    <div class="dropdown-caret"></div>
+  </button>
+
+  <div class="dropdown-menu-content js-menu-content">
+    <ul class="dropdown-menu dropdown-menu-ne">
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+```html
+<div class="dropdown float-right js-menu-container js-select-menu">
+  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+    .dropdown-e
+    <div class="dropdown-caret"></div>
+  </button>
+
+  <div class="dropdown-menu-content js-menu-content">
+    <ul class="dropdown-menu dropdown-menu-e">
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+```html
+<div class="dropdown js-menu-container js-select-menu">
+  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+    .dropdown-se
+    <div class="dropdown-caret"></div>
+  </button>
+
+  <div class="dropdown-menu-content js-menu-content">
+    <ul class="dropdown-menu dropdown-menu-se">
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+```html
+<div class="dropdown d-inline-block mx-auto js-menu-container js-select-menu">
+  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+    .dropdown-s
+    <div class="dropdown-caret"></div>
+  </button>
+
+  <div class="dropdown-menu-content js-menu-content">
+    <ul class="dropdown-menu dropdown-menu-s">
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+```html
+<div class="dropdown float-right js-menu-container js-select-menu">
+  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+    .dropdown-sw
+    <div class="dropdown-caret"></div>
+  </button>
+
+  <div class="dropdown-menu-content js-menu-content">
+    <ul class="dropdown-menu dropdown-menu-sw">
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+```html
+<div class="dropdown js-menu-container js-select-menu">
+  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+    .dropdown-w
+    <div class="dropdown-caret"></div>
+  </button>
+
+  <div class="dropdown-menu-content js-menu-content">
+    <ul class="dropdown-menu dropdown-menu-w">
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+### Dividers
+
+```html
+<div class="dropdown js-menu-container js-select-menu">
+  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+    Dropdown
+    <div class="dropdown-caret"></div>
+  </button>
+
+  <div class="dropdown-menu-content js-menu-content">
+    <ul class="dropdown-menu dropdown-menu-se">
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li class="dropdown-divider" role="separator"></li>
+      <li><a class="dropdown-item" href="#url">Another item</a></li>
+      <li><a class="dropdown-item" href="#url">One more</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+### Headers
+
+```html
+<div class="dropdown js-menu-container js-select-menu">
+  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+    Dropdown
+    <div class="dropdown-caret"></div>
+  </button>
+
+  <div class="dropdown-menu-content js-menu-content">
+    <div class="dropdown-menu dropdown-menu-se">
+      <div class="dropdown-header">
+        Dropdown header
+      </div>
+      <ul>
+        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 ```
