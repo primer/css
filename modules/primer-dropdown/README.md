@@ -241,18 +241,21 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 
 ### No overflow
 
+Use `dropdown-menu-no-overflow` modifier class to set the width of the dropdown
+to `auto` and prevent hidden overflows on item contents and text.
+
 ```html
-<div class="select-all-dropdown dropdown js-menu-container js-bulk-actions float-left js-transitionable active">
-  <button class="btn btn-sm mr-3 js-menu-target selected" type="button" aria-expanded="true" aria-haspopup="true">
+<div class="select-all-dropdown dropdown js-menu-container js-bulk-actions float-left js-transitionable">
+  <button class="btn btn-sm mr-3 js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     1 member selected…
     <span class="dropdown-caret"></span>
   </button>
   <div class="dropdown-menu-content js-menu-content">
     <ul class="dropdown-menu dropdown-menu-no-overflow dropdown-menu-se">
-      <a href="#change-role-54012" rel="facebox[.change-role-54012]" class="dropdown-item js-menu-close">
+      <a href="#url" class="dropdown-item js-menu-close">
         Change role...
       </a>
-      <a href="#remove-team-members-54012" class="dropdown-item menu-item-danger js-menu-close">
+      <a href="#url" class="dropdown-item menu-item-danger js-menu-close">
         Remove from team
       </a>
     </ul>
@@ -262,30 +265,35 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 
 ### Sign out button
 
+Use `<button class="dropdown-item dropdown-signout">` to reset button styles
+and display it as a link.
+
 ```html
-<div class="dropdown js-menu-container">
+<div class="dropdown js-menu-container float-right position-relative">
   <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     <img alt="@shawnbot" class="avatar" src="https://avatars0.githubusercontent.com/u/113896?v=4&amp;s=40" height="20" width="20">
   </button>
-  <ul class="dropdown-menu dropdown-menu-sw">
-    <li class="dropdown-header header-nav-current-user css-truncate">
+  <div class="dropdown-menu-content js-menu-content">
+    <ul class="dropdown-menu dropdown-menu-sw">
+      <li class="dropdown-header header-nav-current-user css-truncate">
       Signed in as <strong class="css-truncate-target">shawnbot</strong>
-    </li>
-    <li class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="/shawnbot">Your profile</a></li>
-    <li><a class="dropdown-item" href="/shawnbot?tab=stars">Your stars</a></li>
-    <li><a class="dropdown-item" href="https://gist.github.com/">Your Gists</a></li>
-    <li class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="https://help.github.com">Help</a></li>
-    <li><a class="dropdown-item" href="/settings/profile">Settings</a></li>
-    <li>
-      <form accept-charset="UTF-8" action="/logout" class="logout-form" method="post">
-        <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+      </li>
+      <li class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#url">Your profile</a></li>
+      <li><a class="dropdown-item" href="#url">Your stars</a></li>
+      <li><a class="dropdown-item" href="#url">Your Gists</a></li>
+      <li class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#url">Help</a></li>
+      <li><a class="dropdown-item" href="#url">Settings</a></li>
+      <li>
+        <form class="m-0" accept-charset="UTF-8" action="#url" class="logout-form" method="post">
+          <button type="submit" class="dropdown-item dropdown-signout">
           Sign out
-        </button>
-      </form>
-    </li>
-  </ul>
+          </button>
+        </form>
+      </li>
+    </ul>
+  </div>
 </div>
 ```
 
