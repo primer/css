@@ -38,7 +38,6 @@ $ npm run build
 <!-- %docs
 title: Dropdown
 status: Stable
-source: https://github.com/github/github/blob/master/app/assets/stylesheets/components/dropdown.scss
 -->
 
 {:toc}
