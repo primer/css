@@ -1,9 +1,9 @@
-# Primer CSS table object
+# Primer CSS dropdown
 
 [![npm version](http://img.shields.io/npm/v/primer-dropdown.svg)](https://www.npmjs.org/package/primer-dropdown)
 [![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
-> Table object is a module for creating dynamically resizable elements that always sit on the same horizontal line (e.g., they never break to a new line). Using table styles in our CSS means it’s cross browser friendly back to at least IE9.
+> Dropdowns are lightweight, JavaScript-powered context menus for housing navigation and actions. They're great for instances where you don't need the full power (and code) of the select menu.
 
 This repository is a module of the full [primer-css][primer-css] repository.
 
@@ -40,8 +40,6 @@ title: Dropdown
 status: Stable
 source: https://github.com/github/github/blob/master/app/assets/stylesheets/components/dropdown.scss
 -->
-
-Dropdowns are lightweight, JavaScript-powered context menus for housing navigation and actions. They're great for instances where you don't need the full power (and code) of the select menu.
 
 {:toc}
 
