@@ -240,6 +240,56 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 </div>
 ```
 
+### No overflow
+
+```html
+<div class="select-all-dropdown dropdown js-menu-container js-bulk-actions float-left js-transitionable active">
+  <button class="btn btn-sm mr-3 js-menu-target selected" type="button" aria-expanded="true" aria-haspopup="true">
+    1 member selected…
+    <span class="dropdown-caret"></span>
+  </button>
+  <div class="dropdown-menu-content js-menu-content">
+    <ul class="dropdown-menu dropdown-menu-no-overflow dropdown-menu-se">
+      <a href="#change-role-54012" rel="facebox[.change-role-54012]" class="dropdown-item js-menu-close">
+        Change role...
+      </a>
+      <a href="#remove-team-members-54012" class="dropdown-item menu-item-danger js-menu-close">
+        Remove from team
+      </a>
+    </ul>
+  </div>
+</div>
+```
+
+### Sign out button
+
+```html
+<div class="dropdown js-menu-container">
+  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+    <img alt="@shawnbot" class="avatar" src="https://avatars0.githubusercontent.com/u/113896?v=4&amp;s=40" height="20" width="20">
+  </button>
+  <ul class="dropdown-menu dropdown-menu-sw">
+    <li class="dropdown-header header-nav-current-user css-truncate">
+      Signed in as <strong class="css-truncate-target">shawnbot</strong>
+    </li>
+    <li class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="/shawnbot">Your profile</a></li>
+    <li><a class="dropdown-item" href="/shawnbot?tab=stars">Your stars</a></li>
+    <li><a class="dropdown-item" href="https://gist.github.com/">Your Gists</a></li>
+    <li class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="https://help.github.com">Help</a></li>
+    <li><a class="dropdown-item" href="/settings/profile">Settings</a></li>
+    <li>
+      <form accept-charset="UTF-8" action="/logout" class="logout-form" method="post">
+        <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+          Sign out
+        </button>
+      </form>
+    </li>
+  </ul>
+</div>
+```
+
 <!-- %enddocs -->
 
 ## License
