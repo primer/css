@@ -3,8 +3,6 @@
 [![npm version](http://img.shields.io/npm/v/primer-dropdown.svg)](https://www.npmjs.org/package/primer-dropdown)
 [![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
-> Dropdowns are lightweight, JavaScript-powered context menus for housing navigation and actions. They're great for instances where you don't need the full power (and code) of the select menu.
-
 This repository is a module of the full [primer-css][primer-css] repository.
 
 ## Install
@@ -39,6 +37,8 @@ $ npm run build
 title: Dropdown
 status: Stable
 -->
+
+Dropdowns are lightweight, JavaScript-powered context menus for housing navigation and actions. They're great for instances where you don't need the full power (and code) of the select menu.
 
 {:toc}
 
