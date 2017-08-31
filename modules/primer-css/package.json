@@ -6,6 +6,9 @@
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "build/build.css",
+  "primer": {
+    "module_type": "meta"
+  },
   "files": [
     "index.scss",
     "lib",
