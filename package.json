@@ -10,6 +10,7 @@
     "release-candidate": "script/release-candidate",
     "release": "script/release",
     "bump": "lerna publish --exact --skip-npm",
+    "new-module": "cd modules && yo primer-module",
     "test": "lerna run test"
   },
   "devDependencies": {
