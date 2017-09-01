@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "primer-dropdown",
+  "description": "A lightweight context menu for navigation and actions.",
+  "homepage": "http://primercss.io/",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "index.scss",
+  "main": "build/index.js",
+  "primer": {
+    "category": "product",
+    "module_type": "components"
+  },
+  "files": [
+    "index.scss",
+    "lib",
+    "build"
+  ],
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-dropdown",
+  "bugs": {
+    "url": "https://github.com/primer/primer-css/issues"
+  },
+  "scripts": {
+    "test-docs": "ava --verbose ../../tests/modules/test-*.js",
+    "build": "primer-module-build index.scss",
+    "prepare": "npm run build",
+    "lint": "stylelint **/*.scss -s scss",
+    "test": "npm-run-all -s build lint test-docs"
+  },
+  "dependencies": {
+    "primer-support": "4.3.0"
+  },
+  "keywords": [
+    "primer",
+    "css",
+    "github",
+    "primercss"
+  ]
+}
