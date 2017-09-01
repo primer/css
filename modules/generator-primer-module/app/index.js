@@ -143,13 +143,11 @@ module.exports = class PrimerModule extends Generator {
     )
     // this.log("package:", pkg.name, "@", pkg.version)
 
-    this.options.dependents.forEach(dependent => {
-      this._addAsDependencyTo(pkg, dependent)
-    })
-
-    this.spawnCommandSync("npm", ["run", "bootstrap"], {
-      stdio: "inherit",
-    })
+    if (this.options.test !== true) {
+      this.options.dependents.forEach(dependent => {
+        this._addAsDependencyTo(pkg, dependent)
+      })
+    }
   }
 
   end() {
@@ -158,9 +156,11 @@ module.exports = class PrimerModule extends Generator {
       chalk.green("Ready to roll!"),
       chalk.yellow("Remember to fill in real stuff if you have any TODOs listed below:")
     )
-    this.spawnCommandSync("ack", ["TODO", this.basePath], {
-      stdio: "inherit",
-    })
+    if (this.options.test !== true) {
+      this.spawnCommandSync("ack", ["TODO", this.basePath], {
+        stdio: "inherit",
+      })
+    }
   }
 
   _getDependencies() {
