@@ -12,10 +12,11 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "test": "ava"
+    "test": "ava test/**/*.spec.js"
   },
   "dependencies": {
     "chalk": "^2.1.0",
+    "fs-extra": "^4.0.1",
     "yeoman-generator": "^1.1.1"
   },
   "keywords": [
