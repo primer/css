@@ -1,10 +1,10 @@
 const chalk = require("chalk")
-const fs = require("fs")
+const fse = require("fs-extra")
 const path = require("path")
 const Generator = require("yeoman-generator")
 const capitalize = require("./lib/capitalize")
 
-const META_PACKAGES = 
+const stripPrimerPrefix = str => str.replace(/^primer-/, "")
 
 module.exports = class PrimerModule extends Generator {
 
@@ -41,7 +41,7 @@ module.exports = class PrimerModule extends Generator {
         type: "input",
         default: (answers) => {
           return capitalize(
-            (answers.module || this.options.module).replace("primer-", "")
+            stripPrimerPrefix(answers.module || this.options.module)
           )
         },
       },
@@ -71,8 +71,11 @@ module.exports = class PrimerModule extends Generator {
           if (!filePath) {
             return true
           }
-          return fs.existsSync(filePath) ||
-            `No such file: "${filePath}" in ${process.cwd()}`
+          return fse.exists(filePath)
+            .then(exists => {
+              return exits ||
+                `No such file: "${filePath}" in ${process.cwd()}`
+            })
         },
       },
     ]
@@ -89,10 +92,11 @@ module.exports = class PrimerModule extends Generator {
   }
 
   configuring() {
-    this.options.docs = this.options.docs
-      ? fs.readFileSync(this.options.docs, "utf8")
-      : "TODO: add docs here"
     this.options.dependencies = this._getDependencies()
+    if (this.options.docs) {
+      return fse.readFile(this.options.docs, "utf8")
+        .then(docs => this.options.docs = docs)
+    }
   }
 
   paths() {
@@ -124,6 +128,13 @@ module.exports = class PrimerModule extends Generator {
       this.basePath,
       data
     )
+
+    // rename lib/module.scss to lib/{name}.scss, where
+    // {name} is the module name without the "primer-" prefix
+    const name = stripPrimerPrefix(this.options.module)
+    const src = path.join(this.basePath, "lib/module.scss")
+    const dest = src.replace("module.scss", `${name}.scss`)
+    this.fs.move(src, dest)
   }
 
   install() {
