@@ -59,3 +59,34 @@ storiesOf('Typography', module)
     <p className="lead">lead</p>
   </div>
 ))
+.add('text alignment', () => (
+  <div>
+    <p className="text-left">text-left</p>
+    <p className="text-center">text-center</p>
+    <p className="text-right">text-right</p>
+  </div>
+))
+.add('responsive text alignment', () => (
+  <div>
+    <p className="text-left text-sm-center text-lg-right">Left in a small viewport, centered in mid-sized viewports, and right aligned in larger viewports</p>
+  </div>
+))
+.add('list-style-none', () => (
+  <div>
+    <ul className="list-style-none">
+      <li>list-style-none</li>
+      <li>list-style-none</li>
+      <li>list-style-none</li>
+    </ul>
+  </div>
+))
+.add('text shadows', () => (
+  <div>
+  <div className="bg-purple p-5">
+    <h3 className="text-white text-shadow-dark">.text-shadow-dark helps white text stand out on dark or photographic backgrounds</h3>
+  </div>
+  <div className="bg-yellow p-5">
+    <h3 className="text-shadow-light">.text-shadow-light creates an embossed effect for dark text</h3>
+  </div>
+  </div>
+))
