@@ -4,8 +4,8 @@
   "description": "<%= description %>",
   "homepage": "http://primercss.io/",
   "author": "GitHub, Inc.",
-  "license": "MIT",<% if (type === "css") { %>
-  "style": "index.scss",<% } %>
+  "license": "MIT",
+  "style": "index.scss",
   "main": "build/index.js",
   "repository": "https://github.com/primer/primer-css/tree/master/modules/<%= module %>",
   "bugs": {
@@ -14,7 +14,7 @@
   "scripts": {
     "build": "primer-module-build index.scss",
     "prepare": "npm run build",
-    "lint": "stylelint **/*.scss -s scss",
+    "lint": "eslint",
     "test": "npm-run-all -s build lint"
   },
   "dependencies": {
