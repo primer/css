@@ -12,7 +12,7 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "test": "ava test/**/*.spec.js"
+    "test": "ava -v test/**/*.spec.js"
   },
   "dependencies": {
     "chalk": "^2.1.0",
