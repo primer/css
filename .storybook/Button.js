@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 storiesOf('Button', module)
-  .add('default', () => (
+  .add('btn', () => (
     <button className='btn'>Button</button>
   ))
   .add('btn-primary', () => (
