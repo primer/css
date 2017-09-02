@@ -2,10 +2,10 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 storiesOf('Button', module)
-  .add('btn', () => (
+  .add('default', () => (
     <button className='btn'>Button</button>
   ))
-  .add('btn btn-primary', () => (
+  .add('btn-primary', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn btn-primary'>Button</button>
       <button className='btn btn-primary hover'>Button</button>
@@ -14,7 +14,7 @@ storiesOf('Button', module)
       <button className='btn btn-primary disabled'>Button</button>
     </div>
   ))
-  .add('btn btn-secondary', () => (
+  .add('btn-secondary', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn btn-secondary'>Button</button>
       <button className='btn btn-secondary hover'>Button</button>
@@ -23,7 +23,7 @@ storiesOf('Button', module)
       <button className='btn btn-secondary disabled'>Button</button>
     </div>
   ))
-  .add('btn btn-danger', () => (
+  .add('btn-danger', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn btn-danger'>Button</button>
       <button className='btn btn-danger hover'>Button</button>
@@ -32,7 +32,7 @@ storiesOf('Button', module)
       <button className='btn btn-danger disabled'>Button</button>
     </div>
   ))
-  .add('btn btn-outline', () => (
+  .add('btn-outline', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn btn-outline'>Button</button>
       <button className='btn btn-outline hover'>Button</button>
@@ -41,7 +41,7 @@ storiesOf('Button', module)
       <button className='btn btn-outline disabled'>Button</button>
     </div>
   ))
-  .add('btn btn-blue', () => (
+  .add('btn-blue', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn btn-blue'>Button</button>
       <button className='btn btn-blue hover'>Button</button>
@@ -50,7 +50,7 @@ storiesOf('Button', module)
       <button className='btn btn-blue disabled'>Button</button>
     </div>
   ))
-  .add('btn btn-purple', () => (
+  .add('btn-purple', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn btn-purple'>Button</button>
       <button className='btn btn-purple hover'>Button</button>
