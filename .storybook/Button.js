@@ -8,54 +8,54 @@ storiesOf('Button', module)
   .add('btn-primary', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn btn-primary'>Button</button>
-      <button className='btn btn-primary hover'>Button</button>
-      <button className='btn btn-primary focus'>Button</button>
-      <button className='btn btn-primary selected'>Button</button>
-      <button className='btn btn-primary disabled'>Button</button>
+      <button className='btn btn-primary hover'>hover</button>
+      <button className='btn btn-primary focus'>focus</button>
+      <button className='btn btn-primary selected'>selected</button>
+      <button className='btn btn-primary disabled'>disabled</button>
     </div>
   ))
   .add('btn-secondary', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn btn-secondary'>Button</button>
-      <button className='btn btn-secondary hover'>Button</button>
-      <button className='btn btn-secondary focus'>Button</button>
-      <button className='btn btn-secondary selected'>Button</button>
-      <button className='btn btn-secondary disabled'>Button</button>
+      <button className='btn btn-secondary hover'>hover</button>
+      <button className='btn btn-secondary focus'>focus</button>
+      <button className='btn btn-secondary selected'>selected</button>
+      <button className='btn btn-secondary disabled'>disabled</button>
     </div>
   ))
   .add('btn-danger', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn btn-danger'>Button</button>
-      <button className='btn btn-danger hover'>Button</button>
-      <button className='btn btn-danger focus'>Button</button>
-      <button className='btn btn-danger selected'>Button</button>
-      <button className='btn btn-danger disabled'>Button</button>
+      <button className='btn btn-danger hover'>hover</button>
+      <button className='btn btn-danger focus'>focus</button>
+      <button className='btn btn-danger selected'>selected</button>
+      <button className='btn btn-danger disabled'>disabled</button>
     </div>
   ))
   .add('btn-outline', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn btn-outline'>Button</button>
-      <button className='btn btn-outline hover'>Button</button>
-      <button className='btn btn-outline focus'>Button</button>
-      <button className='btn btn-outline selected'>Button</button>
-      <button className='btn btn-outline disabled'>Button</button>
+      <button className='btn btn-outline hover'>hover</button>
+      <button className='btn btn-outline focus'>focus</button>
+      <button className='btn btn-outline selected'>selected</button>
+      <button className='btn btn-outline disabled'>disabled</button>
     </div>
   ))
   .add('btn-blue', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn btn-blue'>Button</button>
-      <button className='btn btn-blue hover'>Button</button>
-      <button className='btn btn-blue focus'>Button</button>
-      <button className='btn btn-blue selected'>Button</button>
-      <button className='btn btn-blue disabled'>Button</button>
+      <button className='btn btn-blue hover'>hover</button>
+      <button className='btn btn-blue focus'>focus</button>
+      <button className='btn btn-blue selected'>selected</button>
+      <button className='btn btn-blue disabled'>disabled</button>
     </div>
   ))
   .add('btn-purple', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn btn-purple'>Button</button>
-      <button className='btn btn-purple hover'>Button</button>
-      <button className='btn btn-purple focus'>Button</button>
-      <button className='btn btn-purple selected'>Button</button>
-      <button className='btn btn-purple disabled'>Button</button>
+      <button className='btn btn-purple hover'>hover</button>
+      <button className='btn btn-purple focus'>focus</button>
+      <button className='btn btn-purple selected'>selected</button>
+      <button className='btn btn-purple disabled'>disabled</button>
     </div>
   ))
