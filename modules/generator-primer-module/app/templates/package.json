@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.0.1",
   "name": "<%= module %>",
   "description": "<%= description %>",
   "homepage": "http://primercss.io/",
