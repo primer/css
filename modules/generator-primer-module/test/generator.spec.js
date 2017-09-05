@@ -15,7 +15,7 @@ test("file scaffolding", t => {
       assert.file(pkg)
       assert.jsonFileContent(pkg, {name: module},
                              "Wrong module name in package.json")
-      assert.jsonFileContent(pkg, {version: "0.1.0"},
+      assert.jsonFileContent(pkg, {version: "0.0.1"},
                              "Wrong or empty version in package.json")
 
       const readme = path(module, "README.md")
