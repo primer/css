@@ -88,13 +88,6 @@
   line-height: 20px;
 }
 
-// Large button adds more padding around text. Use font-size utils to increase font-size.. e.g, <p class="text-gamma"><button class="btn btn-large btn-primary" type="button">Big green button</button></p>
-.btn-large {
-  padding: 0.75em 1.25em;
-  font-size: inherit;
-  border-radius: 6px;
-}
-
 // Hidden text button
 //
 // Use `.hidden-text-expander` to indicate and expand hidden text.

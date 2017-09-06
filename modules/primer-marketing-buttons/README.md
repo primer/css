@@ -10,16 +10,28 @@ This repository is a module of the full [primer-css][primer] repository.
 ## Documentation
 
 <!-- %docs
-title: Buttons
+title: Marketing Buttons
 status: New Release
 -->
 
-The buttons on our marketing pages are based on Primer's core with the addition of color options for outline buttons, and a transparent button.
+The buttons on our marketing pages are based on Primer's core with the addition of more color options, color outline buttons, a transparent button, and larger button sizes.
 
+
+## Color
+
+The `btn` has been extended with the marketing color palette:
+
+```html
+
+<button class="btn btn-orange" type="button">Button button</button>
+<a class="btn btn-purple" href="#url" role="button">Link button</a>
+<button class="btn btn-blue" type="button">Button button</button>
+
+```
 
 ## Outline buttons
 
-The `.btn-outline` has also been extended with the marketing color palette:
+The `btn-outline` has also been extended with the marketing color palette:
 
 ```html
 
@@ -29,6 +41,23 @@ The `.btn-outline` has also been extended with the marketing color palette:
 <div class="bg-gray-dark p-4 mt-4">
   <button class="btn btn-transparent" type="button">Button button</button>
 </div>
+
+```
+
+## Additional sizing
+There are cases where you might want to increase the size of a button, for example when putting a main CTA inside of a jumbotron or major page callout. The btn-large class does the following to make a button more prominent:
+
+1. Adds extra additional padding in `ems` so that the padding scales proportionately with the `font-size`
+2. Increases the border radius to 6px
+
+It can optionally be used in combination with a font-size utility (like `f3`) on the parent to increase the font-size.
+
+```html
+
+<p class="f3">
+  <a class="btn btn-large btn-purple" href="#url" role="button">Large link button</a>
+  <button class="btn btn-large btn-outline-blue" type="button">Large button button</button>
+</p>
 
 ```
 
