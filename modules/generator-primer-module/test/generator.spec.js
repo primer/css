@@ -1,5 +1,7 @@
 const test = require("ava")
 const assert = require("yeoman-assert")
+const fse = require("fs-extra")
+const Path = require("path")
 const generate = require("./lib/generate")
 
 // XXX: this is required to work around the low EventEmitter default of 10 max
@@ -99,4 +101,40 @@ test("status: Experimental is written to %docs comment", t => {
     assert.fileContent(path("README.md"), "\nstatus: Experimental\n")
     t.pass("status: Experimental")
   })
+})
+
+test("repository path is set properly", t => {
+  const module = "primer-xyz"
+  return generate({prompts: {module}})
+    .then(path => {
+      assert.jsonFileContent(path("package.json"), {
+        repository: `https://github.com/primer/primer-css/tree/master/modules/${module}`,
+      })
+      t.pass()
+    })
+})
+
+test("README description gets a TODO w/o prompt answer", t => {
+  return generate().then(path => {
+    assert.fileContent(path("README.md"), "> TODO:")
+    t.pass()
+  })
+})
+
+test("docs get a TODO w/o prompt answer", t => {
+  return generate().then(path => {
+    assert.fileContent(path("README.md"), "TODO: Write some documentation")
+    t.pass()
+  })
+})
+
+test("docs are filled in with file contents", t => {
+  const readme = Path.join(__dirname, "fixtures", "docs.md")
+  return fse.readFile(readme, "utf8")
+    .then(content => {
+      return generate({prompts: {docs: readme}}).then(path => {
+        assert.fileContent(path("README.md"), content)
+        t.pass()
+      })
+    })
 })
