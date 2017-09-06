@@ -5,7 +5,7 @@ const APP_PATH = path.join(__dirname, '../../app')
 // options, (positional) arguments, and prompts for all tests
 const TEST_OPTS = {test: true}
 const TEST_ARGS = []
-const TEST_PROMPTS = {}
+const TEST_PROMPTS = {module: "primer-test"}
 
 module.exports = (options) => {
   return yo.run(options.path || APP_PATH)
