@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "0.0.1",
   "name": "primer-marketing-buttons",
   "description": "Buttons for marketing websites at GitHub",
   "homepage": "http://primercss.io/",
@@ -9,14 +9,14 @@
   "main": "build/index.js",
   "primer": {
     "category": "marketing",
-    "module_type": "utilities"
+    "module_type": "components"
   },
   "files": [
     "index.scss",
     "lib",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-marketing-type",
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-marketing-buttons",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },
