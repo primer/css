@@ -159,7 +159,8 @@ module.exports = class PrimerModule extends Generator {
       return acc
     }, {})
 
-    // this.log("data:", JSON.stringify(data, null, "  "))
+    // for the index.scss import
+    data.lib = stripPrimerPrefix(data.module)
 
     // copy the whole directory with each file treated as
     // an EJS template
@@ -169,11 +170,8 @@ module.exports = class PrimerModule extends Generator {
       data
     )
 
-    // rename lib/module.scss to lib/{name}.scss, where
-    // {name} is the module name without the "primer-" prefix
-    const name = stripPrimerPrefix(this.options.module)
     const src = path.join(this.basePath, "lib/module.scss")
-    const dest = src.replace("module.scss", `${name}.scss`)
+    const dest = src.replace("module.scss", `${data.lib}.scss`)
     this.fs.move(src, dest)
   }
 

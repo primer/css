@@ -138,3 +138,13 @@ test("docs are filled in with file contents", t => {
       })
     })
 })
+
+test("index.scss imports lib/{module}.scss", t => {
+  const module = "primer-select-menu"
+  const lib = "select-menu"
+  return generate({prompts: {module}})
+    .then(path => {
+      assert.fileContent(path("index.scss"), `@import "./lib/${lib}.scss";`)
+      t.pass()
+    })
+})
