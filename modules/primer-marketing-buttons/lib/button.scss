@@ -1,0 +1,30 @@
+.btn-orange { @include btn-solid($white, lighten($orange-500, 7.5%), darken($orange-500, 7.5%)); }
+.btn-blurple { @include btn-solid($white, mix($blue-400, $purple-400, 35%), mix($blue-600, $purple-600, 35%)); }
+
+.btn-outline-purple { @include btn-outline($purple); }
+.btn-outline-orange { @include btn-outline($orange); }
+.btn-outline-green { @include btn-outline($green); }
+
+@mixin btn-transparent-active {
+  color: #333;
+  background-color: #fff;
+  background-image: none;
+  border-color: #fff;
+}
+
+.btn-transparent {
+  padding: 0.55em 1em;
+  font-size: inherit;
+  font-weight: 500; // to avoid faux-bolding
+  line-height: 1.5;
+  color: #fff;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.25em;
+
+  &:hover,
+  &:active {
+    @include btn-transparent-active;
+  }
+}
