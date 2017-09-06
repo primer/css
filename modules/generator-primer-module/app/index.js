@@ -217,7 +217,7 @@ module.exports = class PrimerModule extends Generator {
     )
 
     const destPath = require.resolve(
-      path.join(dest, "package.json")
+      path.join("../../", dest, "package.json")
     )
 
     this.fs.extendJSON(destPath, {
