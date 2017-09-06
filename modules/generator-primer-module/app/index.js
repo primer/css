@@ -8,8 +8,8 @@ const stripPrimerPrefix = str => str.replace(/^primer-/, "")
 
 module.exports = class PrimerModule extends Generator {
 
-  initializing() {
-    this.log("It looks like you are adding a new Primer module!")
+  constructor(args, opts) {
+    super(args, opts)
 
     this.argument("module", {
       desc: "The name of your module (on npm)",
@@ -22,6 +22,10 @@ module.exports = class PrimerModule extends Generator {
       type: "css",
       status: "Experimental",
     })
+  }
+
+  initializing() {
+    this.log("It looks like you are adding a new Primer module!")
   }
 
   prompting() {
