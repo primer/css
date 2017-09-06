@@ -33,31 +33,65 @@ module.exports = class PrimerModule extends Generator {
       this.log("Great, let's get you started with %s...", this.options.module)
     }
 
-    let prompts = [
+    const prompts = [
       {
         name: "module",
         message: "What should the module name be (on npm)?",
         type: "input",
+        required: true,
       },
       {
         name: "title",
         message: "What should the title be (for humans)?",
         type: "input",
-        default: (answers) => {
+        default: ({module}) => {
           return capitalize(
-            stripPrimerPrefix(answers.module || this.options.module)
+            stripPrimerPrefix(module || this.options.module)
           )
         },
       },
       {
         name: "description",
-        message: "Describe your module in a single sentence. (This will go into the package.json and README.md.)",
+        message: [
+          "Describe your module in a single sentence.",
+          chalk.yellow("(This will go into the package.json and README.md.)"),
+        ].join("\n"),
         type: "input",
         default: "TODO: fill in this description later",
       },
       {
+        name: "category",
+        message: "Which meta-package does this belong to?",
+        type: "list",
+        choices: [
+          "core",
+          "product",
+          "marketing",
+          {
+            value: "meta",
+            message: "meta (this is a new meta-package)",
+          },
+          {
+            value: undefined,
+            message: "none (I'll figure this out later)",
+          }
+        ],
+      },
+      {
+        name: "module_type",
+        message: "What type of module is this?",
+        type: "option",
+        choices: [
+          "utilities",
+          "objects",
+          "components",
+          "meta",
+        ],
+      },
+      {
         name: "dependents",
         message: "Which meta-package(s) should we add this to?",
+        when: ({category}) => category !== "meta",
         type: "checkbox",
         choices: [
           "primer-css",
@@ -69,7 +103,10 @@ module.exports = class PrimerModule extends Generator {
       },
       {
         type: "input",
-        message: "Where can we find the docs? (We'll read this file from the path you provide.)",
+        message: [
+          "Where can we find the docs?",
+          chalk.yellow("(We'll read this file from the path you provide.)"),
+        ].join("\n"),
         name: "docs",
         validate: (filePath) => {
           if (!filePath) {
@@ -85,11 +122,9 @@ module.exports = class PrimerModule extends Generator {
     ]
 
     // remove prompts for which arguments were already provided
-    prompts = prompts.filter(prompt => {
-      return !(prompt.name in this.options)
-    })
-
-    return this.prompt(prompts)
+    return this.prompt(prompts.filter(prompt => {
+        return !(prompt.name in this.options)
+      }))
       .then(answers => {
         Object.assign(this.options, answers)
       })
