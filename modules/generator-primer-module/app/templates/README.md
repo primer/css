@@ -17,7 +17,6 @@ $ npm install --save <%= module %>
 
 ## Usage
 
-<% if (type === "css") { %>
 The source files included are written in [Sass][sass] (SCSS) You can simply point your sass `include-path` at your `node_modules` directory and import it like this.
 
 ```scss
@@ -25,21 +24,14 @@ The source files included are written in [Sass][sass] (SCSS) You can simply poin
 ```
 
 You can also import specific portions of the module by importing those partials from the `/lib/` folder. _Make sure you import any requirements along with the modules._
-<% } else { %>
-<%= usage %>
-<% } %>
 
 ## Build
 
-<% if (type === "css") { %>
-For a compiled **css** version of this module, a npm script is included that will output a css version to `build/build.css` The built css file is also included in the npm package.
+For a compiled **CSS** version of this module, an npm script is included that will output a css version to `build/build.css` The built css file is also included in the npm package:
 
 ```
 $ npm run build
 ```
-<% } else { %>
-<%= build %>
-<% } %>
 
 ## Documentation
 
@@ -48,7 +40,7 @@ title: <%= title %>
 status: <%= status || "Experimental" %>
 -->
 
-<%= docs || "Documentation goes here." %>
+<%= docs || "TODO: Write some documentation here." %>
 
 <!-- %enddocs -->
 

@@ -67,26 +67,23 @@ module.exports = class PrimerModule extends Generator {
           "core",
           "product",
           "marketing",
-          {
-            value: "meta",
-            message: "meta (this is a new meta-package)",
-          },
-          {
-            value: undefined,
-            message: "none (I'll figure this out later)",
-          }
+          "meta",
+          ""
         ],
+        default: "core"
       },
       {
         name: "module_type",
         message: "What type of module is this?",
-        type: "option",
+        type: "list",
         choices: [
-          "utilities",
-          "objects",
           "components",
+          "objects",
+          "utilities",
           "meta",
+          "tools",
         ],
+        default: 0
       },
       {
         name: "dependents",
@@ -146,10 +143,12 @@ module.exports = class PrimerModule extends Generator {
     this.log("creating: %s", chalk.green(this.basePath))
 
     const data = [
-      "module",
+      "category",
       "dependencies",
       "description",
       "docs",
+      "module",
+      "module_type",
       "status",
       "title",
       "type",

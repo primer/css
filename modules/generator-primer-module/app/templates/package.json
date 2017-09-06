@@ -3,6 +3,10 @@
   "name": "<%= module %>",
   "description": "<%= description %>",
   "homepage": "http://primercss.io/",
+  "primer": {
+    "category": "<%= category %>",
+    "module_type": "<%= module_type %>"
+  },
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "index.scss",
