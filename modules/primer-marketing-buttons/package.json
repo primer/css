@@ -28,7 +28,7 @@
     "test": "npm-run-all -s build lint test-docs"
   },
   "dependencies": {
-    "primer-marketing-support": "1.3.0",
+    "primer-buttons": "2.3.0",
     "primer-support": "4.3.0"
   },
   "keywords": [
