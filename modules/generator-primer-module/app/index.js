@@ -96,7 +96,9 @@ module.exports = class PrimerModule extends Generator {
           "primer-product",
           "primer-marketing",
         ],
-        default: ["primer-css"],
+        default: ({category}) => {
+          return ["primer-css", `primer-${category}`]
+        }
       },
       {
         type: "input",
@@ -111,7 +113,7 @@ module.exports = class PrimerModule extends Generator {
           }
           return fse.exists(filePath)
             .then(exists => {
-              return exits ||
+              return exists ||
                 `No such file: "${filePath}" in ${process.cwd()}`
             })
         },
@@ -213,8 +215,7 @@ module.exports = class PrimerModule extends Generator {
   _addAsDependencyTo(pkg, dest) {
     this.log(
       "adding %s@%s as a dependency to %s...",
-      pkg.name, pkg.version, dest,
-      pkg
+      pkg.name, pkg.version, dest
     )
 
     const destPath = require.resolve(
