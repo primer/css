@@ -45,7 +45,8 @@ module.exports = class PrimerModule extends Generator {
     // have options set, then add back the "name" key to each
     const prompts = Object.entries(OPTIONS)
       .filter(([name, {prompt}]) => {
-        return prompt && !(name in this.options)
+        return prompt &&
+          (prompt.when === true || !(name in this.options))
       })
       .map(([name, {prompt}]) => {
         // bind functions to the generator as `this`
@@ -132,7 +133,9 @@ module.exports = class PrimerModule extends Generator {
   end() {
     if (this.options.todo === true) {
       this.log(
-        chalk.yellow("Remember to fill in any remaining TODOs below:")
+        "\n📝 ",
+        chalk.bold("Remember to fill in any remaining TODOs below:"),
+        "\n"
       )
       this.spawnCommandSync("ack", ["TODO", this.basePath], {
         stdio: "inherit",
