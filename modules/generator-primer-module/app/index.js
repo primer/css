@@ -30,7 +30,7 @@ module.exports = class PrimerModule extends Generator {
   }
 
   initializing() {
-    this.log("It looks like you are adding a new Primer module!")
+    // this.log("It looks like you are adding a new Primer module!")
   }
 
   prompting() {
