@@ -10,7 +10,8 @@
     "release-candidate": "script/release-candidate",
     "release": "script/release",
     "bump": "lerna publish --exact --skip-npm",
-    "new-module": "cd modules && yo ./generator-primer-module/app && npm run bootstrap",
+    "new-module": "cd modules && yo ./generator-primer-module/app",
+    "postnew-module": "npm run bootstrap",
     "test": "lerna run test"
   },
   "devDependencies": {
