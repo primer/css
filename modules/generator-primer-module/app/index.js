@@ -12,11 +12,19 @@ module.exports = class PrimerModule extends Generator {
   constructor(args, opts) {
     super(args, opts)
 
+    // initialize positional arguments and option flags
     Object.entries(OPTIONS).forEach(([name, val]) => {
       if (val.argument) {
         this.argument(name, Object.assign(val.argument, {name}))
       } else if (val.option) {
-        this.option(name, Object.assign(val.option, {name}))
+        const option = Object.assign(val.option, {name})
+        if (name.includes("_")) {
+          const alias = name.replace(/_/g, "-")
+          option.alias = option.alias
+            ? [alias].concat(option.alias)
+            : alias
+        }
+        this.option(name, option)
       }
     })
   }

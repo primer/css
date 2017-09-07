@@ -30,8 +30,10 @@ const MODULE_TYPES = [
  *   argument to the `yo` CLI.
  *
  * - "option" indicates that this option an be passed via a
- *   `--name` flag to `yo`. For convenience, "_" characters are
- *   replaced with "-".
+ *   `--name` flag to `yo`. For UNIX-y consistency, options
+ *   containing "_" characters are aliased to the version with
+ *   hyphens, so you can pass either "--module_type" or
+ *   "--module-type".
  *
  * - "prompt" will trigger a prompt for this option if it was not
  *   already set via positional argument or CLI option.
@@ -58,8 +60,11 @@ module.exports = {
   // the module type (currently only CSS is supported)
   "type": {
     option: {
+      desc: "The Primer module type (currently only CSS is supported)",
       type: String,
       default: "css",
+      // reject anything other than "css" for now
+      validate: type => type === "css",
     },
   },
 
@@ -109,7 +114,10 @@ module.exports = {
   },
 
   "module_type": {
-    option: {type: String},
+    option: {
+      type: String,
+      alias: "m",
+    },
     prompt: {
       message: "What type of module is this?",
       type: "list",
