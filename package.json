@@ -10,7 +10,7 @@
     "release-candidate": "script/release-candidate",
     "release": "script/release",
     "bump": "lerna publish --exact --skip-npm",
-    "new-module": "cd modules && yo primer-module && npm run bootstrap",
+    "new-module": "cd modules && yo ./generator-primer-module/app && npm run bootstrap",
     "test": "lerna run test"
   },
   "devDependencies": {
@@ -22,6 +22,7 @@
     "primer-module-build": "^1.0.2",
     "semver": "^5.3.0",
     "stylelint": "^7.13.0",
-    "stylelint-config-primer": "^2.0.0"
+    "stylelint-config-primer": "^2.0.0",
+    "yo": "^2.0.0"
   }
 }
