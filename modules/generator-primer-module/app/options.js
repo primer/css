@@ -138,7 +138,9 @@ module.exports = {
     prompt: {
       message: "Which meta-package(s) should we add this to?",
       type: "checkbox",
-      when: true,
+      when: function() {
+        return this.options.dependents !== false
+      },
       choices: META_PACKAGES,
       default: ({category}) => {
         const pkgs = ["primer-css"]
