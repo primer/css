@@ -71,13 +71,14 @@ module.exports = {
   // the human-readable title of the module
   "title": {
     option: {
+      desc: "The module's human-readable title",
       type: String,
       alias: "t",
     },
     prompt: {
       message: "What should the title be (for humans)?",
       type: "input",
-      default: ({module}) => {
+      default: function({module}) {
         return capitalize(
           stripPrimerPrefix(module || this.options.module)
         )

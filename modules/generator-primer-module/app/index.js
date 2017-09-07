@@ -35,7 +35,10 @@ module.exports = class PrimerModule extends Generator {
 
   prompting() {
     if (this.options.module) {
-      this.log("Great, let's get you started with %s...", this.options.module)
+      this.log(
+        "Okay, let's get you started with %s...",
+        chalk.green(this.options.module)
+      )
     }
 
     // filter out options without prompts, and which already
@@ -45,6 +48,12 @@ module.exports = class PrimerModule extends Generator {
         return prompt && !(name in this.options)
       })
       .map(([name, {prompt}]) => {
+        // bind functions to the generator as `this`
+        Object.keys(prompt).forEach(key => {
+          if (typeof prompt[key] === "function") {
+            prompt[key] = prompt[key].bind(this)
+          }
+        })
         return Object.assign(prompt, {name})
       })
 
