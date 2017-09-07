@@ -3,10 +3,20 @@ const path = require('path')
 
 const APP_PATH = path.join(__dirname, '../../app')
 
-// default options, (positional) arguments, and prompts for all tests
-const TEST_OPTS = {test: true}
+// default CLI positional arguments
 const TEST_ARGS = []
-const TEST_PROMPTS = {module: "primer-test"}
+
+// default CLI flags
+const TEST_OPTS = {
+  "dependents": false,
+  "todo": false
+}
+
+// default prompt answers, so we can call generate() w/out any arguments and
+// still get something useful
+const TEST_PROMPTS = {
+  "module": "primer-test"
+}
 
 module.exports = (config={}) => {
   const options = Object.assign({}, TEST_OPTS, config.options)

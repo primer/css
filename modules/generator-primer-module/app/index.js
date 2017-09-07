@@ -2,25 +2,22 @@ const chalk = require("chalk")
 const fse = require("fs-extra")
 const path = require("path")
 const Generator = require("yeoman-generator")
-const capitalize = require("./lib/capitalize")
 
-const stripPrimerPrefix = str => str.replace(/^primer-/, "")
+const stripPrimerPrefix = require("./lib/strip-prefix")
+
+const OPTIONS = require("./options")
 
 module.exports = class PrimerModule extends Generator {
 
   constructor(args, opts) {
     super(args, opts)
 
-    this.argument("module", {
-      desc: "The name of your module (on npm)",
-      type: String,
-      required: false,
-    })
-
-    // assign defaults
-    Object.assign(this.options, {
-      type: "css",
-      status: "Experimental",
+    Object.entries(OPTIONS).forEach(([name, val]) => {
+      if (val.argument) {
+        this.argument(name, Object.assign(val.argument, {name}))
+      } else if (val.option) {
+        this.option(name, Object.assign(val.option, {name}))
+      }
     })
   }
 
@@ -33,104 +30,25 @@ module.exports = class PrimerModule extends Generator {
       this.log("Great, let's get you started with %s...", this.options.module)
     }
 
-    const prompts = [
-      {
-        name: "module",
-        message: "What should the module name be (on npm)?",
-        type: "input",
-        required: true,
-      },
-      {
-        name: "title",
-        message: "What should the title be (for humans)?",
-        type: "input",
-        default: ({module}) => {
-          return capitalize(
-            stripPrimerPrefix(module || this.options.module)
-          )
-        },
-      },
-      {
-        name: "description",
-        message: [
-          "Describe your module in a single sentence.",
-          chalk.yellow("(This will go into the package.json and README.md.)"),
-        ].join("\n"),
-        type: "input",
-        default: "TODO: fill in this description later",
-      },
-      {
-        name: "category",
-        message: "Which meta-package does this belong to?",
-        type: "list",
-        choices: [
-          "core",
-          "product",
-          "marketing",
-          "meta",
-          ""
-        ],
-        default: "core"
-      },
-      {
-        name: "module_type",
-        message: "What type of module is this?",
-        type: "list",
-        choices: [
-          "components",
-          "objects",
-          "utilities",
-          "meta",
-          "tools",
-        ],
-        default: 0
-      },
-      {
-        name: "dependents",
-        message: "Which meta-package(s) should we add this to?",
-        when: ({category}) => category !== "meta",
-        type: "checkbox",
-        choices: [
-          "primer-css",
-          "primer-core",
-          "primer-product",
-          "primer-marketing",
-        ],
-        default: ({category}) => {
-          return ["primer-css", `primer-${category}`]
-        }
-      },
-      {
-        type: "input",
-        message: [
-          "Where can we find the docs?",
-          chalk.yellow("(We'll read this file from the path you provide.)"),
-        ].join("\n"),
-        name: "docs",
-        validate: (filePath) => {
-          if (!filePath) {
-            return true
-          }
-          return fse.exists(filePath)
-            .then(exists => {
-              return exists ||
-                `No such file: "${filePath}" in ${process.cwd()}`
-            })
-        },
-      },
-    ]
+    // filter out options without prompts, and which already
+    // have options set, then add back the "name" key to each
+    const prompts = Object.entries(OPTIONS)
+      .filter(([name, {prompt}]) => {
+        return prompt && !(name in this.options)
+      })
+      .map(([name, {prompt}]) => {
+        return Object.assign(prompt, {name})
+      })
 
     // remove prompts for which arguments were already provided
-    return this.prompt(prompts.filter(prompt => {
-        return !(prompt.name in this.options)
-      }))
+    return this.prompt(prompts)
       .then(answers => {
         Object.assign(this.options, answers)
       })
   }
 
   configuring() {
-    this.options.dependencies = this._getDependencies()
+    this.dependencies = this._getDependencies()
     if (this.options.docs) {
       return fse.readFile(this.options.docs, "utf8")
         .then(docs => this.options.docs = docs)
@@ -144,20 +62,26 @@ module.exports = class PrimerModule extends Generator {
   writing() {
     this.log("creating: %s", chalk.green(this.basePath))
 
-    const data = [
-      "category",
-      "dependencies",
-      "description",
-      "docs",
-      "module",
-      "module_type",
-      "status",
-      "title",
-      "type",
-    ].reduce((acc, key) => {
-      acc[key] = this.options[key]
-      return acc
-    }, {})
+    const data = {
+      "dependencies": this.dependencies,
+    }
+
+    Object.assign(
+      data,
+      Object.entries(OPTIONS)
+        .map(([name, value]) => [name, this.options[name]])
+        .reduce((acc, [name, value]) => {
+          acc[name] = value
+          return acc
+        }, {})
+    )
+
+    if (this.options.verbose) {
+      const debugData = Object.assign({}, data, {
+        "dependencies": Object.keys(data.dependencies),
+      })
+      console.warn(chalk.green("data:"), JSON.stringify(debugData, null, "  "))
+    }
 
     // for the index.scss import
     data.lib = stripPrimerPrefix(data.module)
@@ -181,7 +105,7 @@ module.exports = class PrimerModule extends Generator {
     )
     // this.log("package:", pkg.name, "@", pkg.version)
 
-    if (this.options.test !== true) {
+    if (Array.isArray(this.options.dependents)) {
       this.options.dependents.forEach(dependent => {
         this._addAsDependencyTo(pkg, dependent)
       })
@@ -189,12 +113,10 @@ module.exports = class PrimerModule extends Generator {
   }
 
   end() {
-    this.log(
-      "\n%s\n\n%s",
-      chalk.green("Ready to roll!"),
-      chalk.yellow("Remember to fill in real stuff if you have any TODOs listed below:")
-    )
-    if (this.options.test !== true) {
+    if (this.options.todo === true) {
+      this.log(
+        chalk.yellow("Remember to fill in any remaining TODOs below:")
+      )
       this.spawnCommandSync("ack", ["TODO", this.basePath], {
         stdio: "inherit",
       })
