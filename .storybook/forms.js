@@ -65,3 +65,76 @@ storiesOf('Forms', module)
     </textarea>
   </div>
 ))
+.add('input-group', () => (
+  <form>
+    <div className='input-group'>
+      <input className='form-control' type='text' placeholder='Username' aria-label='Username'/>
+      <span className='input-group-button'>
+        <button className='btn' type='button'>
+          Copy
+        </button>
+      </span>
+    </div>
+  </form>
+))
+.add('form-actions', () => (
+  <div className='form-actions'>
+    <button type='submit' className='btn btn-primary'>Save changes</button>
+    <button type='button' className='btn'>Cancel</button>
+  </div>
+))
+.add('label highlight', () => (
+  <div>
+    <form>
+      <div className='form-checkbox'>
+        <label>
+          <input type='checkbox' checked='checked'/>
+          <em className='highlight'>Available for hire</em>
+        </label>
+      </div>
+    </form>
+  </div>
+))
+.add('form-checkbox-details', () => (
+  <div className='form-checkbox'>
+    <label aria-live='polite'>
+      <input type='radio' className='form-checkbox-details-trigger' name='hireme'/>
+      Available for hire
+      <span className='form-checkbox-details text-normal'>
+        <span className='d-block mb-1'>Available hours per week</span>
+        <input type='text' name='' className='form-control input-contrast' size='3'/>
+        <span className='text-small text-gray pl-2'>hours per week</span>
+      </span>
+    </label>
+  </div>
+))
+.add('formgroup', () => (
+  <form>
+    <dl className='form-group'>
+      <dt><label for='example-text'>Example Text</label></dt>
+      <dd><input className='form-control' type='text' value='Example Value' id='example-text'/></dd>
+    </dl>
+
+    <dl className='form-group'>
+      <dt><label for='example-select'>Example Select</label></dt>
+      <dd>
+        <select className='form-select' id='example-select'>
+          <option>Choose an option</option>
+          <option>Git</option>
+          <option>Subversion</option>
+          <option>Social Coding</option>
+          <option>Beets</option>
+          <option>Bears</option>
+          <option>Battlestar Galactica</option>
+        </select>
+      </dd>
+    </dl>
+
+    <dl className='form-group'>
+      <dt><label for='example-textarea'>Example Textarea</label></dt>
+      <dd>
+        <textarea className='form-control' id='example-textarea'></textarea>
+      </dd>
+    </dl>
+  </form>
+))
