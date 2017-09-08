@@ -138,3 +138,20 @@ storiesOf('Forms', module)
     </dl>
   </form>
 ))
+.add('form validation', () => (
+  <div>
+    <form>
+      <dl className='form-group errored'>
+        <dt><label for='example-text-errored'>Example Text</label></dt>
+        <dd><input className='form-control' type='text' value='Example Value' id='example-text-errored' aria-describedby='form-error-text'/></dd>
+        <dd className='error' id='form-error-text'>This example input has an error.</dd>
+      </dl>
+      <br />
+      <dl className='form-group warn'>
+        <dt><label for='example-text-warn'>Example Text</label></dt>
+        <dd><input className='form-control' type='text' value='Example Value' id='example-text-warn' aria-describedby='form-warning-text'/></dd>
+        <dd className='warning' id='form-warning-text'>This example input has a warning.</dd>
+      </dl>
+    </form>
+  </div>
+))
