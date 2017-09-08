@@ -65,18 +65,6 @@ storiesOf('Forms', module)
     </textarea>
   </div>
 ))
-.add('input-group', () => (
-  <form>
-    <div className='input-group'>
-      <input className='form-control' type='text' placeholder='Username' aria-label='Username'/>
-      <span className='input-group-button'>
-        <button className='btn' type='button'>
-          Copy
-        </button>
-      </span>
-    </div>
-  </form>
-))
 .add('form-actions', () => (
   <div className='form-actions'>
     <button type='submit' className='btn btn-primary'>Save changes</button>
