@@ -69,7 +69,7 @@ const tasks = args.map(filename => {
       ).then(() => json)
     })
     .then(json => JSON.stringify(json, null, "  "))
-    .then(str => fse.writeFile(filename, str, UTF))
+    .then(str => fse.writeFile(filename, `${str}\n`, UTF))
     .then(() => filename)
 })
 
