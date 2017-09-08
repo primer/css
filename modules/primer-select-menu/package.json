@@ -1,0 +1,32 @@
+{
+  "version": "0.0.1",
+  "name": "primer-select-menu",
+  "description": "The select menu provides advanced support for navigation, filtering, and more.",
+  "homepage": "http://primercss.io/",
+  "primer": {
+    "category": "product",
+    "module_type": "components"
+  },
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "index.scss",
+  "main": "build/index.js",
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-select-menu",
+  "bugs": {
+    "url": "https://github.com/primer/primer-css/issues"
+  },
+  "scripts": {
+    "build": "primer-module-build index.scss",
+    "lint": "../../script/lint-scss",
+    "prepare": "npm run build",
+    "test": "../../script/npm-run-all build lint test-docs",
+    "test-docs": "../../script/test-docs"
+  },
+  "dependencies": {
+    "primer-support": "4.3.0"
+  },
+  "keywords": [
+    "github",
+    "primer"
+  ]
+}
