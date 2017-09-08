@@ -6,6 +6,10 @@ const yargs = require("yargs")
     describe: "Set key 'x' in the form --set.x=foo",
     alias: "s",
   })
+  .option("copy", {
+    describe: "Copy key 'x' from file.json in the form: --copy=file.json:x",
+    alias: "c",
+  })
   .option("del", {
     describe: "Delete the provided key",
     alias: "d",
@@ -17,14 +21,40 @@ const ops = []
 
 if (opts.set && typeof opts.set === "object") {
   Object.entries(opts.set).forEach(([key, val]) => {
-    ops.push(json => dot.set(json, key, val))
+    ops.push(json => {
+      dot.set(json, key, val)
+      return json
+    })
   })
+}
+
+if (opts.copy) {
+  const [file, key] = opts.copy.split(":")
+  if (file && key) {
+    console.warn("copying '%s' from %s...", key, file)
+    ops.push(json => {
+      return fse.readFile(file, UTF)
+        .then(JSON.parse)
+        .then(data => dot.get(data, key))
+        .then(data => dot.set(json, key, data))
+        .then(() => json)
+    })
+  } else {
+    console.error(
+      "malformed --copy directive; expected 'file:key', got '%s'",
+      opts.copy
+    )
+    process.exit(1)
+  }
 }
 
 if (opts.del) {
   const dels = Array.isArray(opts.del) ? opts.del : [opts.del]
   dels.forEach(key => {
-    ops.push(json => dot.set(json, key, undefined))
+    ops.push(json => {
+      dot.set(json, key, undefined)
+      return json
+    })
   })
 }
 
@@ -34,8 +64,9 @@ const tasks = args.map(filename => {
   return fse.readFile(filename, UTF)
     .then(JSON.parse)
     .then(json => {
-      ops.forEach(op => op(json))
-      return json
+      return Promise.all(
+        ops.map(op => op(json) || json)
+      ).then(() => json)
     })
     .then(json => JSON.stringify(json, null, "  "))
     .then(str => fse.writeFile(filename, str, UTF))
