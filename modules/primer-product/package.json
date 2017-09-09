@@ -8,7 +8,8 @@
   "style": "build/build.css",
   "main": "build/index.js",
   "primer": {
-    "category": "product"
+    "category": "product",
+    "module_type": "meta"
   },
   "files": [
     "index.scss",
@@ -27,6 +28,7 @@
     "primer-alerts": "1.4.0",
     "primer-avatars": "1.3.0",
     "primer-blankslate": "1.3.0",
+    "primer-dropdown": "0.1.0",
     "primer-labels": "1.4.0",
     "primer-markdown": "3.6.0",
     "primer-support": "4.3.0"

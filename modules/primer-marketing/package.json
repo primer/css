@@ -8,7 +8,8 @@
   "style": "build/build.css",
   "main": "build/index.js",
   "primer": {
-    "category": "marketing"
+    "category": "marketing",
+    "module_type": "meta"
   },
   "files": [
     "index.scss",
