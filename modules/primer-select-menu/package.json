@@ -19,8 +19,7 @@
     "build": "primer-module-build index.scss",
     "lint": "../../script/lint-scss",
     "prepare": "npm run build",
-    "test": "../../script/npm-run-all build lint test-docs",
-    "test-docs": "../../script/test-docs"
+    "test": "../../script/npm-run-all build lint"
   },
   "dependencies": {
     "primer-support": "4.3.0"
