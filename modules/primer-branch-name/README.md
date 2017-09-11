@@ -36,11 +36,25 @@ $ npm run build
 ## Documentation
 
 <!-- %docs
-title: Branch Name
-status: Experimental
+title: Branch name
+status: Stable
 -->
 
-TODO: Write some documentation here.
+Branch names can be a link name or not:
+
+```html
+<span class="branch-name">a_new_feature_branch</span>
+<a href="#url" class="branch-name">a_new_feature_branch</a>
+```
+
+You may also include an octicon before the branch name text:
+
+```html
+<span class="branch-name">
+  <%= octicon("git-branch") width:16 height:16 %>
+  a_new_feature_branch
+</span>
+```
 
 <!-- %enddocs -->
 
