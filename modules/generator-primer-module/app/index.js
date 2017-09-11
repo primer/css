@@ -45,8 +45,9 @@ module.exports = class PrimerModule extends Generator {
     // have options set, then add back the "name" key to each
     const prompts = Object.entries(OPTIONS)
       .filter(([name, {prompt}]) => {
-        return prompt &&
-          (prompt.when === true || !(name in this.options))
+        return prompt && (
+          prompt.when === true || typeof this.options[name] === "undefined"
+        )
       })
       .map(([name, {prompt}]) => {
         // bind functions to the generator as `this`
@@ -123,10 +124,13 @@ module.exports = class PrimerModule extends Generator {
     )
     // this.log("package:", pkg.name, "@", pkg.version)
 
-    if (Array.isArray(this.options.dependents)) {
-      this.options.dependents.forEach(dependent => {
+    const dependents = this.options.dependents
+    if (Array.isArray(dependents)) {
+      dependents.forEach(dependent => {
         this._addAsDependencyTo(pkg, dependent)
       })
+    } else {
+      this.log(chalk.red("No dependents!"), dependents)
     }
   }
 

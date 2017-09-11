@@ -101,7 +101,7 @@ module.exports = {
   "category": {
     option: {type: String},
     prompt: {
-      message: "Which meta-package does this belong to?",
+      message: "What category of package is this?",
       type: "list",
       choices: [
         "core",
@@ -120,7 +120,7 @@ module.exports = {
       alias: "m",
     },
     prompt: {
-      message: "What type of module is this?",
+      message: "What type/kind of module is this?",
       type: "list",
       choices: MODULE_TYPES,
       default: 0
@@ -142,8 +142,9 @@ module.exports = {
         return this.options.dependents !== false
       },
       choices: META_PACKAGES,
-      default: ({category}) => {
+      default: function({category}) {
         const pkgs = ["primer-css"]
+        category = category || this.options.category
         return (category === "meta")
           ? pkgs
           : pkgs.concat(`primer-${category}`)
