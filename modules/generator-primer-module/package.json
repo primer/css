@@ -1,0 +1,34 @@
+{
+  "version": "0.1.0",
+  "name": "generator-primer-module",
+  "description": "Use this to create a new Primer CSS modules!",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "primer": {
+    "module_type": "tools"
+  },
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/generator-primer-module",
+  "bugs": {
+    "url": "https://github.com/primer/primer-css/issues"
+  },
+  "scripts": {
+    "test": "../../node_modules/.bin/ava -v test/**/*.spec.js",
+    "watch": "npm run test -- --watch"
+  },
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "fs-extra": "^4.0.1",
+    "yeoman-generator": "^1.1.1"
+  },
+  "keywords": [
+    "primer",
+    "css",
+    "github",
+    "primercss",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.7.0"
+  }
+}
