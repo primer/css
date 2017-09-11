@@ -6,7 +6,12 @@ const glob = require("glob")
 let selectors
 let classnames
 
-const classRegex = /class="([^"]+)"/ig
+const classPatterns = [
+  // HTML class attributes
+  /class="([^"]+)"/ig,
+  // assume that ERB helpers generate an element with the same class
+  /<%= (\w+)\b/g,
+]
 
 // Find unique selectors from the cssstats selector list
 function uniqueSelectors(s) {
@@ -26,15 +31,20 @@ function uniqueSelectors(s) {
 // From the given glob sources array, read the files and return found classnames
 function documentedClassnames(sources) {
   const classes = []
-  sources.forEach(f => {
-    glob.sync(f).forEach(g => {
-      var match = null
+  const files = sources.reduce((acc, pattern) => {
+    return acc.concat(glob.sync(pattern))
+  }, [])
 
-      // While we match a classRegex in the source
-      while ((match = classRegex.exec(fs.readFileSync(g, "utf8"))) != null) {
+  files.forEach(file => {
+    let match = null
+    const content = fs.readFileSync(file, "utf8")
 
-        // Get the matched classnames "..." and split by space into classes
-        classes.push(...match[1].split(" "))
+    classPatterns.forEach(pattern => {
+      // match each pattern against the source
+      while (match = pattern.exec(content)) {
+        // get the matched classnames and split by whitespace into classes
+        const klasses = match[1].trim().split(/\s+/)
+        classes.push(...klasses)
       }
     })
   })
