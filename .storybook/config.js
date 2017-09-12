@@ -8,10 +8,15 @@ setOptions({
   showDownPanel: false,
 })
 
-const req = require.context('.', true, /\.js$/)
+const contexts = [
+  require.context('.', true, /\.js$/),
+  require.context('../modules', true, /stories.*\.js$/),
+]
 
-const load = () => {
-  req.keys().forEach(req)
-}
-
-configure(load, module)
+configure(() => {
+  contexts.forEach(context => {
+    context.keys()
+      .filter(key => !key.includes('node_modules'))
+      .forEach(context)
+  })
+}, module)
