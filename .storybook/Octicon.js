@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react'
 import octicons from 'octicons'
 import SVGInline from 'react-svg-inline'
 
-const Octicon = (props) => {
+export const Octicon = (props) => {
   const {name} = props
   if (name in octicons) {
     return <SVGInline svg={octicons[name].toSVG(props)} />
