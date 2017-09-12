@@ -2,17 +2,20 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 // sub-stories
-import inputGroups from './input-groups'
+import inputGroup from './input-group'
 
 storiesOf('Forms', module)
   .addDecorator(story => (
-    <form>{story()}</form>
+    <form>
+      {story()}
+    </form>
   ))
   .add('form-control', () => (
     <div>
       <input className='form-control' type='text' placeholder='Standard input' aria-label='Standard input'/>
     </div>
   ))
+  .add('input-group', inputGroup)
   .add('input-lg', () => (
     <div>
       <input className='form-control input-lg' type='text' placeholder='Large input' aria-label='Large input'/>
@@ -149,4 +152,3 @@ storiesOf('Forms', module)
       </form>
     </div>
   ))
-  .add('input groups', inputGroups)
