@@ -5,6 +5,9 @@ import { storiesOf } from '@storybook/react'
 import inputGroups from './input-groups'
 
 storiesOf('Forms', module)
+  .addDecorator(story => (
+    <form>{story()}</form>
+  ))
   .add('form-control', () => (
     <div>
       <input className='form-control' type='text' placeholder='Standard input' aria-label='Standard input'/>
