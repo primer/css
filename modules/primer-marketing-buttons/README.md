@@ -25,7 +25,7 @@ The `btn` has been extended with the marketing color palette:
 
 <button class="btn btn-orange" type="button">Button button</button>
 <a class="btn btn-purple" href="#url" role="button">Link button</a>
-<button class="btn btn-blue" type="button">Button button</button>
+<button class="btn btn-blurple" type="button">Button button</button>
 
 ```
 
@@ -37,9 +37,12 @@ The `btn-outline` has also been extended with the marketing color palette:
 
 <button class="btn btn-outline-orange" type="button">Button button</button>
 <a class="btn btn-outline-purple" href="#url" role="button">Link button</a>
-<button class="btn btn-outline-blue" type="button">Button button</button>
+<button class="btn btn-outline-green" type="button">Button button</button>
 <div class="bg-gray-dark p-4 mt-4">
-  <button class="btn btn-transparent" type="button">Button button</button>
+  <button class="btn btn-transparent" type="button">
+    Button button
+    <span class="Counter">12</span>
+  </button>
 </div>
 
 ```
