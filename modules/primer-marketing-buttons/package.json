@@ -28,7 +28,6 @@
     "test": "npm-run-all -s build lint test-docs"
   },
   "dependencies": {
-    "primer-buttons": "2.3.0",
     "primer-support": "4.3.0"
   },
   "keywords": [
