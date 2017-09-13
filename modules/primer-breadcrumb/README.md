@@ -44,7 +44,17 @@ Breadcrumbs are used to show taxonomical context on pages that are many levels d
 </nav>
 ```
 
-```html story=false
+```html note="this should get the default title"
+<nav aria-label="Breadcrumb">
+  <ol>
+    <li class="breadcrumb-item text-small"><a href="/business">A</a></li>
+    <li class="breadcrumb-item text-small"><a href="/business/customers">B</a></li>
+    <li class="breadcrumb-item breadcrumb-item-selected text-small text-gray" aria-current="page">C</li>
+  </ol>
+</nav>
+```
+
+```html title="this should NOT show up" story=false
 <nav aria-label="Breadcrumb">
   <ol>
     <li class="breadcrumb-item text-small"><a href="/business">A</a></li>
