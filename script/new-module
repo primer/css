@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+
+function generate() {
+  pushd modules > /dev/null
+  ../node_modules/.bin/yo ./generator-primer-module/app "$@"
+  popd > /dev/null
+}
+
+if [[ "$@" == "--help" ]]; then
+  generate "$@"
+else
+  echo
+  echo "📦  Creating a new module..."
+  echo
+  echo "   Protip: you can pass --force to skip the Yeoman conflict prompts."
+  echo "   Otherwise, press 'y' for each one or 'a' for the first."
+  echo
+
+  generate "$@"
+
+  echo "✅  All set! Let me bootstrap that new module for ya..."
+  npm run bootstrap
+fi

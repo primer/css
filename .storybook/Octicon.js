@@ -12,7 +12,7 @@ const Octicon = (props) => {
   }
 }
 
-const story = storiesOf('octicons', module)
+const story = storiesOf('Octicons', module)
 const sizes = [64, 32, 16]
 
 Object.keys(octicons).forEach(name => {

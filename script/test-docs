@@ -1,0 +1,3 @@
+#!/bin/bash
+set -e
+$(dirname $0)/npm-run ava --verbose $(dirname $0)/../tests/modules/test-*.js
