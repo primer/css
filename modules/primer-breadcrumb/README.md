@@ -22,44 +22,12 @@ Breadcrumbs are used to show taxonomical context on pages that are many levels d
 
 #### Usage
 
-```html title="This is breadcrumb!"
+```html title="Breadcrumb"
 <nav aria-label="Breadcrumb">
   <ol>
     <li class="breadcrumb-item text-small"><a href="/business">Business</a></li>
     <li class="breadcrumb-item text-small"><a href="/business/customers">Customers</a></li>
     <li class="breadcrumb-item breadcrumb-item-selected text-small text-gray" aria-current="page">MailChimp</li>
-  </ol>
-</nav>
-```
-
-#### Another example
-
-```html
-<nav aria-label="Breadcrumb">
-  <ol>
-    <li class="breadcrumb-item text-small"><a href="/business">One</a></li>
-    <li class="breadcrumb-item text-small"><a href="/business/customers">Two</a></li>
-    <li class="breadcrumb-item breadcrumb-item-selected text-small text-gray" aria-current="page">Three</li>
-  </ol>
-</nav>
-```
-
-```html note="this should get the default title"
-<nav aria-label="Breadcrumb">
-  <ol>
-    <li class="breadcrumb-item text-small"><a href="/business">A</a></li>
-    <li class="breadcrumb-item text-small"><a href="/business/customers">B</a></li>
-    <li class="breadcrumb-item breadcrumb-item-selected text-small text-gray" aria-current="page">C</li>
-  </ol>
-</nav>
-```
-
-```html title="this should NOT show up" story=false
-<nav aria-label="Breadcrumb">
-  <ol>
-    <li class="breadcrumb-item text-small"><a href="/business">A</a></li>
-    <li class="breadcrumb-item text-small"><a href="/business/customers">B</a></li>
-    <li class="breadcrumb-item breadcrumb-item-selected text-small text-gray" aria-current="page">C</li>
   </ol>
 </nav>
 ```
