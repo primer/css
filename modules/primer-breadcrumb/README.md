@@ -22,7 +22,7 @@ Breadcrumbs are used to show taxonomical context on pages that are many levels d
 
 #### Usage
 
-```html
+```html title="Breadcrumb"
 <nav aria-label="Breadcrumb">
   <ol>
     <li class="breadcrumb-item text-small"><a href="/business">Business</a></li>
