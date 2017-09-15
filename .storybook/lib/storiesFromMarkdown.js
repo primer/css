@@ -1,6 +1,5 @@
 import remark from 'remark'
 import parents from 'unist-util-parents'
-import visit from 'unist-util-visit'
 import select from 'unist-util-select'
 import findBefore from 'unist-util-find-before'
 import htmlToReact from 'html-to-react'

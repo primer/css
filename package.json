@@ -45,7 +45,6 @@
     "unist-util-find-before": "^2.0.1",
     "unist-util-parents": "^1.0.0",
     "unist-util-select": "^1.5.0",
-    "unist-util-visit": "^1.1.3",
     "yo": "^2.0.0"
   }
 }
