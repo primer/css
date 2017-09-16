@@ -3,7 +3,7 @@
 [![npm version](http://img.shields.io/npm/v/primer-cards.svg)](https://www.npmjs.org/package/primer-cards)
 [![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
-# ⚠️ primer-cards is being deprecated in primer-css@10. Use primer-box instead.
+# ⚠️ The primer-cards module is being deprecated in the next major version. Use primer-box instead.
 
 
 
