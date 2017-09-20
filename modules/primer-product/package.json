@@ -20,14 +20,16 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "build": "primer-module-build index.scss",
+    "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
-    "test": "npm run build"
+    "test": "npm run build",
+    "lint": "../../script/lint-scss"
   },
   "dependencies": {
     "primer-alerts": "1.4.0",
     "primer-avatars": "1.3.0",
     "primer-blankslate": "1.3.0",
+    "primer-dropdown": "0.1.0",
     "primer-labels": "1.4.0",
     "primer-markdown": "3.6.0",
     "primer-support": "4.3.0"
