@@ -1,5 +1,5 @@
 {
-  "version": "5.3.0",
+  "version": "5.3.1",
   "name": "primer-product",
   "description": "Primer CSS's product modules",
   "homepage": "http://primercss.io/",
@@ -8,7 +8,8 @@
   "style": "build/build.css",
   "main": "build/index.js",
   "primer": {
-    "category": "product"
+    "category": "product",
+    "module_type": "meta"
   },
   "files": [
     "index.scss",
