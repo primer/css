@@ -6,6 +6,11 @@ $(dirname $0)/notify pending
 
 # note: try-publish should exit cleanly if it detects a duplicate
 # published version
-$(npm bin)/lerna exec -- $(pwd)/script/try-publish
+$(npm bin)/lerna exec -- $(dirname $0)/try-publish
+
+$(dirname $0)/github-release || {
+  $(dirname $0)/notify error
+  exit 1
+}
 
 $(dirname $0)/notify success
