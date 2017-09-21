@@ -21,10 +21,10 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "build": "primer-module-build index.scss",
+    "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
-    "lint": "stylelint **/*.scss -s scss",
-    "test": "npm-run-all -s build lint"
+    "lint": "../../script/lint-scss",
+    "test": "../../script/npm-run-all build lint"
   },
   "dependencies": {
     "primer-marketing-support": "1.3.0",

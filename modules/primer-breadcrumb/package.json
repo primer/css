@@ -8,7 +8,7 @@
   "style": "build/build.css",
   "main": "build/index.js",
   "primer": {
-    "category": "marketing",
+    "category": "core",
     "module_type": "components"
   },
   "files": [
@@ -21,14 +21,13 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "test-docs": "ava --verbose ../../tests/modules/test-*.js",
-    "build": "primer-module-build index.scss",
+    "test-docs": "../../script/test-docs",
+    "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
-    "lint": "stylelint **/*.scss -s scss",
-    "test": "npm-run-all -s build lint test-docs"
+    "lint": "../../script/lint-scss",
+    "test": "../../script/npm-run-all build lint test-docs"
   },
   "dependencies": {
-    "primer-marketing-support": "1.3.0",
     "primer-support": "4.3.0"
   },
   "keywords": [

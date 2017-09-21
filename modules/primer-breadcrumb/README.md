@@ -1,9 +1,9 @@
-# Primer Marketing CSS Breadcrumb Navigation
+# Primer CSS Breadcrumb Navigation
 
 [![npm version](http://img.shields.io/npm/v/primer-breadcrumb.svg)](https://www.npmjs.org/package/primer-breadcrumb)
 [![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
-> Breadcrumb navigation for GitHub's marketing pages with parents / grandparents.
+> Breadcrumb navigation for GitHub's pages with parents / grandparents.
 
 This repository is a module of the full [primer-css][primer] repository.
 
@@ -22,7 +22,7 @@ Breadcrumbs are used to show taxonomical context on pages that are many levels d
 
 #### Usage
 
-```html
+```html title="Breadcrumb"
 <nav aria-label="Breadcrumb">
   <ol>
     <li class="breadcrumb-item text-small"><a href="/business">Business</a></li>
