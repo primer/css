@@ -59,7 +59,10 @@ done
 $(dirname $0)/notify pending
 
 # note: this should NOT fail, so --bail=true applies
-$(npm bin)/lerna exec -- npm publish --tag=$npm_tag
+$(npm bin)/lerna exec -- npm publish --tag=$npm_tag || {
+  $(dirname $0)/notify error
+  exit 1
+}
 
 $(npm bin)/github-release --prerelease || {
   $(dirname $0)/notify error
