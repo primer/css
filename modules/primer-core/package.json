@@ -28,6 +28,7 @@
   "dependencies": {
     "primer-base": "1.4.0",
     "primer-box": "2.4.0",
+    "primer-breadcrumb": "1.3.0",
     "primer-buttons": "2.3.0",
     "primer-forms": "1.3.0",
     "primer-layout": "1.3.0",
