@@ -7,7 +7,11 @@ env:
     # npm
     - secure: "EZewKKWQXmtCwPtYrPZq4OQblv2OyXR61qBIl3pOxGNVG2BCjD6VOgSaiYqkA9Qbt+ihfwQkiiLvTB68gbvRSiBFV9i+XLzKzt4S8CDI5RhTLAxZB3eQFVZRYzldchzWI4sdNhTvYS1kYXmsXQZD6vJmPSnFvOI/ddfzqvnNL4M="
     # github
-    - secure: "J+1oWjvvXjyrwkY/4IFWKdN/weFmQcPwlRuFG4R0Gb3rYe4nqtC9l68sJvmS8asc8dQMhOhcUZCH6sjvo7l2WD4NuK4umPSbs+rJNUsfbvH4pZjStQIj/3ll1OfQelGDWAYQWhIfciYY4F3Bp0ZWTfKOppLQ2AVIYu1fPVXDdlo="
+    - secure: "Bkv7hhppX5uWlqSDUApRfk5Vd8/f0L/swTQgJ97qcxyWOxZuil1jMpBqnS4Qb464Y8Aerx0paNXl2rImjqciFMRLsOuiomzLRdh9YrhegtBeSC0HVw0OD5NX23BfFJ7Pxay0TVwJ5s/lwE9GTDkd1J6U6LeU6aj2qrEs2w0UQRY="
+
+notifications:
+  slack:
+    secure: W9lPRuuPMNwElkXZ8UZtu5phgUNleDCK0PgERa28dkh5b0Y9xzRpIQPRJfqVYAPtnMVXhfYcqryMzA4oj0E4fc7OxQsKmMeF1OcTuj5N4CM5xXR/qXDehOUTp6fpCToIX9d4hZ2H///PCExpul3TcfxYJe6EWQCHYd1n6zKRl8g=
 
 script:
   - npm test
@@ -33,7 +37,3 @@ deploy:
     skip_cleanup: true
     on:
       branch: master
-
-notifications:
-  slack:
-    secure: W9lPRuuPMNwElkXZ8UZtu5phgUNleDCK0PgERa28dkh5b0Y9xzRpIQPRJfqVYAPtnMVXhfYcqryMzA4oj0E4fc7OxQsKmMeF1OcTuj5N4CM5xXR/qXDehOUTp6fpCToIX9d4hZ2H///PCExpul3TcfxYJe6EWQCHYd1n6zKRl8g=
