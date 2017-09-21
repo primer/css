@@ -1,45 +1,27 @@
-import remark from 'remark'
-import parents from 'unist-util-parents'
-import select from 'unist-util-select'
-import findBefore from 'unist-util-find-before'
+import parseCodeBlocks from 'code-blocks/lib/fromString'
 import htmlToReact from 'html-to-react'
-import parsePairs from 'parse-pairs'
 
 const htmlParser = new htmlToReact.Parser()
 
-const nodeToStory = (node, file) => {
-  const html = node.value
-  const element = htmlParser.parse(html)
-  const pairs = node.lang.replace(/^html\s*/, '')
-  const attrs = pairs.length ? parsePairs(pairs) : {}
-  const title = attrs.title || getPreviousHeading(node) ||
-    `story @ ${file}:${node.position.start.line}`
+const blockToStory = block => {
   return {
-    title,
-    story: () => element,
-    attrs,
-    html,
-    file,
-    node,
+    title: block.title,
+    story: () => htmlParser.parse(block.value),
+    block,
   }
-}
-
-const getPreviousHeading = node => {
-  const heading = findBefore(node.parent, node, 'heading')
-  return (heading && !heading.used)
-    ? (heading.used = true, heading.children.map(c => c.value).join(''))
-    : undefined
 }
 
 export default req => {
   return req.keys().reduce((stories, file) => {
-    const content = req(file)
-    const ast = parents(remark.parse(content))
+    const markdown = req(file)
     const path = file.replace(/^\.\//, '')
-    return stories.concat(
-      select(ast, 'code[lang^=html]')
-        .map(node => nodeToStory(node, path))
-        .filter(({attrs}) => attrs.story !== "false")
-    )
+    const blocks = parseCodeBlocks(markdown, path)
+      .filter(block => {
+        // read: ```html *
+        // skip: ```html * story="false"
+        return block.lang === 'html' && block.info.story !== 'false'
+      })
+      .map(blockToStory)
+    return stories.concat(blocks)
   }, [])
 }

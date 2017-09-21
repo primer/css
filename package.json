@@ -21,6 +21,7 @@
     "ava": "^0.21.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "code-blocks": "^1.1.0",
     "commit-status": "^4.1.0",
     "css-loader": "^0.28.4",
     "glob": "^7.1.2",
@@ -29,7 +30,6 @@
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.0.2",
     "octicons": "^6.0.1",
-    "parse-pairs": "^0.2.2",
     "postcss-loader": "^2.0.6",
     "primer-module-build": "^1.0.2",
     "raw-loader": "^0.5.1",
@@ -42,9 +42,6 @@
     "style-loader": "^0.18.2",
     "stylelint": "^7.13.0",
     "stylelint-config-primer": "^2.0.0",
-    "unist-util-find-before": "^2.0.1",
-    "unist-util-parents": "^1.0.0",
-    "unist-util-select": "^1.5.0",
     "yo": "^2.0.0"
   }
 }
