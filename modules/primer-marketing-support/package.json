@@ -19,9 +19,8 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "lint": "../../script/lint-scss",
-    "test": "npm run lint",
-    "build": "../../script/npm-run primer-module-build index.scss"
+    "lint": "stylelint **/*.scss -s scss",
+    "test": "npm run lint"
   },
   "keywords": [
     "primer",
