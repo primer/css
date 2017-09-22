@@ -6,6 +6,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.md$/,
+        use: "raw-loader",
+      },
+      {
         test: /\.scss$/,
         loaders: [
           "style-loader",
@@ -28,7 +32,7 @@ module.exports = {
           },
         ],
         include: modulesPath,
-      }
-    ]
+      },
+    ],
   },
 }

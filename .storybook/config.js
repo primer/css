@@ -1,4 +1,5 @@
-import { configure } from '@storybook/react'
+import React from 'react'
+import { configure, addDecorator } from '@storybook/react'
 import { setOptions } from '@storybook/addon-options'
 import '../modules/primer-css/index.scss'
 
@@ -8,10 +9,21 @@ setOptions({
   showDownPanel: false,
 })
 
-const req = require.context('.', true, /\.js$/)
+addDecorator(story => (
+  <div className='p-4'>
+    {story()}
+  </div>
+))
 
-const load = () => {
-  req.keys().forEach(req)
-}
+const contexts = [
+  require.context('.', true, /\.js$/),
+  require.context('../modules', true, /stories.*\.js$/),
+]
 
-configure(load, module)
+configure(() => {
+  contexts.forEach(context => {
+    context.keys()
+      .filter(key => !key.includes('node_modules'))
+      .forEach(context)
+  })
+}, module)
