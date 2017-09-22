@@ -1,3 +1,13 @@
+# 9.4.0
+
+### Added
+* Add `v-align-baseline` class to `primer-utilities` #324
+* Add deprecation warnings for `primer-cards` and `primer-forms/lib/form-validation.scss` #347 (these will be removed in v10.0.0)
+
+### Changes
+* Update npm metadata for `primer-css`, `primer-core`, `primer-product`, and `primer-marketing` #328 
+* Remove `HEAD` heading from the changelog #327
+
 # 9.3.0
 
 ## Added
