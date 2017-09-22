@@ -26,6 +26,7 @@ deploy:
     skip_cleanup: true
     on:
       branch: release*
+      tags: false
 
   # publish "final" releases on master
   - provider: script
@@ -33,6 +34,7 @@ deploy:
     skip_cleanup: true
     on:
       branch: master
+      tags: false
 
 notifications:
   slack:
