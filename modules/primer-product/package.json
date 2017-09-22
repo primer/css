@@ -1,5 +1,5 @@
 {
-  "version": "5.3.0",
+  "version": "5.3.1",
   "name": "primer-product",
   "description": "Primer CSS's product modules",
   "homepage": "http://primercss.io/",
@@ -20,9 +20,10 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "build": "primer-module-build index.scss",
+    "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
-    "test": "npm run build"
+    "test": "npm run build",
+    "lint": "../../script/lint-scss"
   },
   "dependencies": {
     "primer-alerts": "1.4.0",

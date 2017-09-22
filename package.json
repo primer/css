@@ -1,6 +1,8 @@
 {
   "private": true,
   "scripts": {
+    "postinstall": "npm run bootstrap",
+    "start": "start-storybook -p 8000 -c .storybook",
     "bootstrap": "lerna bootstrap --hoist",
     "clean": "lerna clean",
     "diff": "lerna diff",
@@ -9,18 +11,40 @@
     "release-pr": "script/release-pr",
     "release-candidate": "script/release-candidate",
     "release": "script/release",
-    "bump": "lerna publish --exact --skip-npm",
+    "bump": "lerna publish --exact --skip-npm --since \"v$(npm info primer-css version)\"",
+    "new-module": "script/new-module",
     "test": "lerna run test"
   },
   "devDependencies": {
+    "@storybook/addon-options": "^3.2.6",
+    "@storybook/react": "^3.2.4",
     "ava": "^0.21.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
     "commit-status": "^4.1.0",
+    "css-loader": "^0.28.4",
     "glob": "^7.1.2",
+    "html-to-react": "^1.2.11",
     "lerna": "^2.0.0",
+    "node-sass": "^4.5.3",
     "npm-run-all": "^4.0.2",
+    "octicons": "^6.0.1",
+    "parse-pairs": "^0.2.2",
+    "postcss-loader": "^2.0.6",
     "primer-module-build": "^1.0.2",
+    "raw-loader": "^0.5.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-svg-inline": "^2.0.0",
+    "remark": "^8.0.0",
+    "sass-loader": "^6.0.6",
     "semver": "^5.3.0",
+    "style-loader": "^0.18.2",
     "stylelint": "^7.13.0",
-    "stylelint-config-primer": "^2.0.0"
+    "stylelint-config-primer": "^2.0.0",
+    "unist-util-find-before": "^2.0.1",
+    "unist-util-parents": "^1.0.0",
+    "unist-util-select": "^1.5.0",
+    "yo": "^2.0.0"
   }
 }

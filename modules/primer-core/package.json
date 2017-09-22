@@ -1,5 +1,5 @@
 {
-  "version": "6.3.0",
+  "version": "6.3.1",
   "name": "primer-core",
   "description": "Primer CSS's core modules",
   "homepage": "http://primercss.io/",
@@ -20,21 +20,23 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "build": "primer-module-build index.scss",
+    "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
-    "test": "npm run build"
+    "test": "npm run build",
+    "lint": "../../script/lint-scss"
   },
   "dependencies": {
     "primer-base": "1.4.0",
     "primer-box": "2.4.0",
+    "primer-breadcrumb": "1.3.0",
     "primer-buttons": "2.3.0",
-    "primer-forms": "1.3.0",
+    "primer-forms": "1.3.1",
     "primer-layout": "1.3.0",
     "primer-navigation": "1.3.0",
     "primer-support": "4.3.0",
     "primer-table-object": "1.3.0",
     "primer-tooltips": "1.3.0",
     "primer-truncate": "1.3.0",
-    "primer-utilities": "4.6.0"
+    "primer-utilities": "4.7.0"
   }
 }

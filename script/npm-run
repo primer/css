@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+pushd $(dirname $0) > /dev/null
+PATH="$(npm bin):$PATH"
+popd > /dev/null
+"$@"

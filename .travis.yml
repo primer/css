@@ -9,9 +9,6 @@ env:
     # github
     - secure: "J+1oWjvvXjyrwkY/4IFWKdN/weFmQcPwlRuFG4R0Gb3rYe4nqtC9l68sJvmS8asc8dQMhOhcUZCH6sjvo7l2WD4NuK4umPSbs+rJNUsfbvH4pZjStQIj/3ll1OfQelGDWAYQWhIfciYY4F3Bp0ZWTfKOppLQ2AVIYu1fPVXDdlo="
 
-before_script:
-  - lerna bootstrap
-
 script:
   - npm test
 
@@ -29,6 +26,7 @@ deploy:
     skip_cleanup: true
     on:
       branch: release*
+      tags: false
 
   # publish "final" releases on master
   - provider: script
@@ -36,6 +34,7 @@ deploy:
     skip_cleanup: true
     on:
       branch: master
+      tags: false
 
 notifications:
   slack:
