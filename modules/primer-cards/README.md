@@ -1,7 +1,11 @@
-# Primer Marketing CSS Cards
 
+# Primer Marketing CSS Cards
 [![npm version](http://img.shields.io/npm/v/primer-cards.svg)](https://www.npmjs.org/package/primer-cards)
 [![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
+
+# ⚠️ The primer-cards module is being deprecated in the next major version. Use primer-box instead.
+
+
 
 > Card-like containers to group semantically related content together on marketing websites at GitHub.
 

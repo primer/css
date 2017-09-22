@@ -52,6 +52,8 @@ dl.form-group > dd {
 // A selector for credit cards. Shows all credit cards we have available and
 // dims the non-selected ones.
 
+@warn "primer-forms: The credit cards component is being deprecated in next major version.";
+
 .form-cards {
   height: 31px;
   margin: 0 0 15px;
