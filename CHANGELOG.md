@@ -1,7 +1,7 @@
 # 9.5.0
 
 ### Added
-- Thanks to @muan, it's now possible to style `<summary>` elements as buttons and have them appear in the active/selected state when the enclosing [`<details>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) is open. #346
+- It's now possible to style `<summary>` elements as buttons and have them appear in the active/selected state when the enclosing [`<details>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) is open. #346
 
 ### Changes
 - Updates our release candidate versioning logic so that prerelease increments are done on a per-module basis, fixing #350.
