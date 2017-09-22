@@ -246,7 +246,7 @@ Use `.hidden-text-expander` to indicate and toggle hidden text.
 You can also make the expander appear inline by adding `.inline`.
 
 
-#### `<details>`/`<summary>` button styles
+#### Details element summary buttons
 
 You can apply `.btn` classes to `<summary>` elements, and they the
 selected/active styles will be applied when the parent `<details>` is open.
