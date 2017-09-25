@@ -2,7 +2,7 @@
 set -e
 echo "👌  Publishing release candidate..."
 
-package=primer-css
+npm_tag=rc
 
 # if this is the same version, we need to bump the prerelease
 # for all of the modules using the same prerelease identifier
