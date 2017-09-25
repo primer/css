@@ -14,8 +14,6 @@ for module_dir in $module_dirs; do
   $(dirname $0)/bump-rc $module
 done
 
-exit
-
 # publish all the things!
 $(dirname $0)/notify pending
 
