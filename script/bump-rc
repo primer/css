@@ -30,7 +30,7 @@ rc_version=$(
 # if there isn't one, use the current local version
 if [[ "$rc_version" == "" ]]; then
   echo "   🤷‍♀️  no published RC; using ${bold}${local_version}${normal}"
-  rc_version=$local_version
+  rc_version="$local_version-rc.0"
 else
   echo "   📰  published RC: ${bold}${rc_version}${normal}"
 fi
