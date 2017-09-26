@@ -8,7 +8,7 @@ npm_tag=rc
 # for all of the modules using the same prerelease identifier
 echo "Updating all module versions in place..."
 echo
-module_dirs=modules/primer-*
+module_dirs=modules/*primer*
 for module_dir in $module_dirs; do
   module=$(basename $module_dir)
   $(dirname $0)/bump-rc $module
