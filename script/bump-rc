@@ -24,8 +24,7 @@ rc_version=$(
   npm info "$package@$npm_tag" --json \
     | jq -r '.versions[]' \
     | grep "^${rc_prefix/./\.}" \
-    | sort -r \
-    | head -1
+    | tail -1
 )
 # if there isn't one, use the current local version
 if [[ "$rc_version" == "" ]]; then
