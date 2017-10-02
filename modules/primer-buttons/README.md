@@ -246,10 +246,14 @@ Use `.hidden-text-expander` to indicate and toggle hidden text.
 You can also make the expander appear inline by adding `.inline`.
 
 
-#### Details element summary buttons
+#### Using button styles with the details summary element
 
-You can apply `.btn` classes to `<summary>` elements, and they the
-selected/active styles will be applied when the parent `<details>` is open.
+You can add `.btn` and `.btn-*` classes to any
+[`<summary>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary)
+element so that it gains the appearance of a button, and
+selected/active styles when the parent
+[`<details>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
+element is open.
 
 ```html
 <details>
