@@ -12,8 +12,13 @@
   }
 }
 
+nav ol:last-child .breadcrumb-item,
 .breadcrumb-item-selected {
   &::after {
     content: none;
   }
+}
+
+nav ol:first-child .breadcrumb-item {
+  margin-left: 0;
 }
