@@ -9,3 +9,11 @@ $(dirname $0)/notify pending
 $(npm bin)/lerna exec -- $(pwd)/script/try-publish
 
 $(dirname $0)/notify success
+
+package=primer-css
+version=$(jq -r .version modules/$package/package.json)
+slug="$package@$version"
+backticks='```'
+text="*<https://npmjs.com/package/$package|${slug}> is out!*\n\nYou can install it with:\n${backticks}npm install ${slug}${backticks}\nOr in github/github:\n${backticks}./bin/npm install $slug${backticks}",
+
+$(dirname $0)/notify-slack -u npm -i npm "$text"
