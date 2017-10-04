@@ -10,5 +10,10 @@ $(npm bin)/lerna publish --npm-tag=pr --canary --exact $@
 
 $(dirname $0)/notify success
 
-# FIXME remove this before merging; just for testing
-$(dirname $0)/notify-slack
+package=primer-css
+version=$(jq -r .version modules/$package/package.json)
+slug="$package@$version"
+backticks='```'
+text="*<https://unpkg.com/$slug|$slug> is built!*\n\nYou can test it with:\n${backticks}npm install ${slug}${backticks}\nOr in github/github:\n${backticks}./bin/npm install $slug${backticks}",
+
+$(dirname $0)/notify-slack -u npm -i npm "$text"

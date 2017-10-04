@@ -1,20 +1,15 @@
 #!/bin/bash
 set -e
 
-# if [[ "$TRAVIS_BRANCH" = "master" ]]; then
-  package=primer-css
-  version=$(jq -r .version modules/$package/package.json)
-  slug="$package@$version"
-  commit_url="https://github.com/$TRAVIS_REPO_SLUG/commit/$TRAVIS_COMMIT"
-  build_url="https://travis-ci.org/primer/$package/builds/$TRAVIS_BUILD_ID"
-  payload=$(cat <<EOF
-{
-  "username": "Travis CI",
-  "icon_emoji": ":travis:",
-  "text": ":construction: Building ${slug} on Travis (<${build_url}|#${TRAVIS_BUILD_NUMBER}>) via <${commit_url}|${TRAVIS_COMMIT:0:7}>",
-  "mrkdwn": true
-}
-EOF
-)
-  curl -X POST --data-urlencode "payload=${payload}" $SLACK_WEBHOOK_URL
-# fi
+package=primer-css
+version=$(jq -r .version modules/$package/package.json)
+commit_url="https://github.com/$TRAVIS_REPO_SLUG/commit/$TRAVIS_COMMIT"
+build_url="https://travis-ci.org/primer/$package/builds/$TRAVIS_BUILD_ID"
+
+if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+  text=":construction: Building $package@$version on Travis (<${build_url}|#${TRAVIS_BUILD_NUMBER}>) via <${commit_url}|${TRAVIS_COMMIT:0:7}>"
+else
+  text=":construction: Building $package via <${commit_url}|${TRAVIS_COMMIT:0:7}> on Travis (<${build_url}|#${TRAVIS_BUILD_NUMBER}>)..."
+fi
+
+$(dirname $0)/notify-slack -u "Travis CI" -i travis "$text"
