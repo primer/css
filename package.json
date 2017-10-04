@@ -20,6 +20,7 @@
     "lerna": "^2.0.0",
     "npm-run-all": "^4.0.2",
     "primer-module-build": "^1.0.2",
+    "request-promise-native": "^1.0.5",
     "semver": "^5.3.0",
     "stylelint": "^7.13.0",
     "stylelint-config-primer": "^2.0.0"
