@@ -1,24 +1,29 @@
 {
-  "version": "4.1.1",
+  "version": "4.3.0",
   "name": "primer-support",
   "description": "Sass variables, mixins, and functions for use in our components.",
   "homepage": "http://primercss.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "index.scss",
+  "primer": {
+    "category": "core",
+    "module_type": "support"
+  },
   "files": [
     "index.scss",
-    "lib"
+    "lib",
+    "docs"
   ],
   "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-support",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "lint": "stylelint **/*.scss -c .stylelintrc.json -s scss",
-    "test": "npm run lint"
+    "lint": "../../script/lint-scss",
+    "test": "npm run lint",
+    "build": "../../script/npm-run primer-module-build index.scss"
   },
-  "devDependencies": {},
   "keywords": [
     "primer",
     "css",

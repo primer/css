@@ -4,20 +4,39 @@ node_js:
 
 env:
   global:
+    # npm
+    - secure: "EZewKKWQXmtCwPtYrPZq4OQblv2OyXR61qBIl3pOxGNVG2BCjD6VOgSaiYqkA9Qbt+ihfwQkiiLvTB68gbvRSiBFV9i+XLzKzt4S8CDI5RhTLAxZB3eQFVZRYzldchzWI4sdNhTvYS1kYXmsXQZD6vJmPSnFvOI/ddfzqvnNL4M="
+    # github
+    - secure: "J+1oWjvvXjyrwkY/4IFWKdN/weFmQcPwlRuFG4R0Gb3rYe4nqtC9l68sJvmS8asc8dQMhOhcUZCH6sjvo7l2WD4NuK4umPSbs+rJNUsfbvH4pZjStQIj/3ll1OfQelGDWAYQWhIfciYY4F3Bp0ZWTfKOppLQ2AVIYu1fPVXDdlo="
+    # slack webhook
     - secure: fsY9o/wT4lfo7nUTNe772p2+A8UmUNe6gq1NFVtX0+GHUNXQg2pAtQqWLTwOisylGlSaTYF1eO5TwBlcaiujzQj5IULmJARFM3ELPGDmXIy0o2Bl9iVk/97NsVHvFApiwsKk4PQhDZw6bRJPNqVGw8d5bEuCslv0W6ZpvPz/jpk=
-
-before_install:
-  - script/before_install
-
-before_script:
-  - lerna bootstrap
 
 script:
   - npm test
 
 after_success:
+  # this will short-circuit the publish step if it fails to interpolate $NPM_API_KEY
   - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
-  - script/cibuild --yes
+  # copy the CHANGELOG.md primer-css for publishing
+  - cp CHANGELOG.md modules/primer-css
+  - script/after_success
+
+deploy:
+  # publish release candidates on release branches
+  - provider: script
+    script: script/release-candidate
+    skip_cleanup: true
+    on:
+      branch: release*
+      tags: false
+
+  # publish "final" releases on master
+  - provider: script
+    script: script/release
+    skip_cleanup: true
+    on:
+      branch: master
+      tags: false
 
 notifications:
   slack:

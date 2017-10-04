@@ -1,0 +1,32 @@
+{
+  "version": "0.0.1",
+  "name": "<%= module %>",
+  "description": "<%= description %>",
+  "homepage": "http://primercss.io/",
+  "primer": {
+    "category": "<%= category %>",
+    "module_type": "<%= module_type %>"
+  },
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "index.scss",
+  "main": "build/index.js",
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/<%= module %>",
+  "bugs": {
+    "url": "https://github.com/primer/primer-css/issues"
+  },
+  "scripts": {
+    "test-docs": "../../script/test-docs",
+    "build": "../../script/npm-run primer-module-build index.scss",
+    "prepare": "npm run build",
+    "lint": "../../script/lint-scss",
+    "test": "../../script/npm-run-all build lint test-docs"
+  },
+  "dependencies": {
+    "primer-support": "<%= dependencies['primer-support'].version %>"
+  },
+  "keywords": [
+    "github",
+    "primer"
+  ]
+}

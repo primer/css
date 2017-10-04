@@ -4,4 +4,4 @@ node_modules
 *.log
 build
 _site
-docs
+*.lerna_backup

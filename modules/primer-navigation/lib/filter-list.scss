@@ -7,7 +7,7 @@
   &.small .filter-item {
     padding: $spacer-1 10px;
     margin: 0 0 2px;
-    font-size: 12px;
+    font-size: $font-size-small;
   }
 
   &.pjax-active .filter-item {
@@ -27,7 +27,7 @@
   padding: $spacer-2 10px;
   margin-bottom: 5px;
   overflow: hidden;
-  font-size: 14px;
+  font-size: $h5-size;
   color: $text-gray;
   text-decoration: none;
   text-overflow: ellipsis;

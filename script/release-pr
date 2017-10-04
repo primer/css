@@ -1,12 +1,14 @@
 #!/bin/bash
 set -e
+echo "🐦  Publishing PR (canary) release..."
 
-args=$@
-npm_tag=pr
+# don't notify of a pending publish event because the version will differ from
+# what lerna creates as a canary release
+# $(dirname $0)/notify pending
 
-echo "🐦  Publishing PR release to dist-tag '$npm_tag'..."
-# script/notify pending
-lerna publish --npm-tag=$npm_tag --canary --no-git $args
-script/notify success
+$(npm bin)/lerna publish --npm-tag=pr --canary --exact $@
+
+$(dirname $0)/notify success
+
 # FIXME remove this before merging; just for testing
-script/notify-slack
+$(dirname $0)/notify-slack
