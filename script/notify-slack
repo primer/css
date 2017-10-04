@@ -1,27 +1,44 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env node
+const yargs = require('yargs')
+  .usage('$0 [-u username] [-i emoji] "your text message"')
+  .option('username', {
+    alias: 'u',
+    default: 'Travis CI',
+    describe: 'The user name with with to present the message',
+  })
+  .option('icon', {
+    alias: 'i',
+    default: 'travis',
+    describe: 'The emoji name to show in Slack (without the surrounding colons)',
+  })
+  .option('url', {
+    describe: 'The Slack webhook URL (default: $SLACK_WEBHOOK_URL)',
+  })
+  .demand(1)
+  .help()
 
-function die() {
-  echo "$@" >&2
-  exit 1
+const opts = yargs.argv
+const args = opts._
+const URL = opts.url || process.env.SLACK_WEBHOOK_URL
+
+if (!URL) {
+  throw new Error('You must pass --url or set $SLACK_WEBHOOK_URL')
 }
 
-if [[ "$SLACK_WEBHOOK_URL" = "" ]]; then
-  die "You must set SLACK_WEBHOOK_URL"
-fi
-
-package=primer-css
-version=$(jq -r .version modules/$package/package.json)
-slug="$package@$version"
-backticks="\`\`\`"
-payload=$(cat <<EOF
-{
-  "username": "npm",
-  "icon_emoji": ":npm:",
-  "text": "*<https://npm.im/primer-css|$slug> is out!*\n\nYou can install it with:\n${backticks}npm install --save --exact $slug${backticks}\nOr in github/github:\n${backticks}./script/npm-bundle $slug${backticks}",
-  "mrkdwn": true
-}
-EOF
-)
-
-curl -X POST --data-urlencode "payload=${payload}" $SLACK_WEBHOOK_URL
+const {post} = require('request-promise-native')
+post(URL, {
+  form: {
+    username: opts.user,
+    icon_emoji: `:${opts.icon}:`,
+    text: args.join(''),
+    mrkdwn: true,
+  },
+})
+.then(res => {
+  console.warn('Success!', res)
+  process.exit()
+})
+.catch(error => {
+  console.error('Error:', error)
+  process.exit(1)
+})
