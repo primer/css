@@ -1,5 +1,5 @@
 {
-  "version": "5.3.1",
+  "version": "5.4.0",
   "name": "primer-marketing",
   "description": "Primer CSS marketing packages",
   "homepage": "http://primercss.io/",
@@ -20,20 +20,19 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "build": "../../script/npm-run primer-module-build index.scss",
+    "build": "primer-module-build index.scss",
     "prepare": "npm run build",
-    "test": "npm run build",
-    "lint": "../../script/lint-scss"
+    "test": "npm run build"
   },
   "dependencies": {
-    "primer-breadcrumb": "1.3.0",
-    "primer-cards": "0.4.1",
+    "primer-breadcrumb": "1.4.0",
+    "primer-cards": "0.5.0",
     "primer-marketing-support": "1.3.0",
-    "primer-marketing-type": "1.3.0",
-    "primer-marketing-utilities": "1.3.0",
-    "primer-page-headers": "1.3.0",
-    "primer-page-sections": "1.3.0",
-    "primer-support": "4.3.0",
-    "primer-tables": "1.3.0"
+    "primer-marketing-type": "1.4.0",
+    "primer-marketing-utilities": "1.4.0",
+    "primer-page-headers": "1.4.0",
+    "primer-page-sections": "1.4.0",
+    "primer-support": "4.4.0",
+    "primer-tables": "1.4.0"
   }
 }

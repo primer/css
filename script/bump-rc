@@ -1,0 +1,44 @@
+#!/bin/bash
+set -e
+
+package="$1"
+npm_tag=rc
+semver=$(npm bin)/semver
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+pushd modules/$package > /dev/null
+
+# get the version we're publishing as a release candidate
+local_version=$(jq -r .version package.json)
+echo "Bumping $package@${local_version}"
+if [[ $local_version =~ "-" ]]; then
+  echo "❌ Found pre-release version: $package@$local_version; bailing!"
+  exit 1
+fi
+
+# find the *greatest* published prerelease
+rc_prefix="$local_version-rc"
+rc_version=$(
+  npm info "$package@$npm_tag" --json \
+    | jq -r '.versions[]' \
+    | grep "^${rc_prefix/./\.}" \
+    | tail -1
+)
+# if there isn't one, use the current local version
+if [[ "$rc_version" == "" ]]; then
+  echo "   🤷‍♀️  no published RC; using ${bold}${local_version}${normal}"
+  rc_version="$local_version-rc.0"
+else
+  echo "   📰  published RC: ${bold}${rc_version}${normal}"
+fi
+
+# increment by the tagged prerelease id
+next_version=$(
+  $semver -i prerelease --preid $npm_tag "$rc_version"
+)
+
+bumped=$(npm version --no-git "$next_version")
+echo "   ➡️  ${bold}${bumped}${normal}"
+popd > /dev/null

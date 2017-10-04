@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "name": "primer-marketing-utilities",
   "description": "Marketing specific immutable, atomic CSS classes",
   "homepage": "http://primercss.io/",
@@ -22,14 +22,14 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "build": "../../script/npm-run primer-module-build index.scss",
+    "build": "primer-module-build index.scss",
     "prepare": "npm run build",
-    "lint": "../../script/lint-scss",
-    "test": "../../script/npm-run-all build lint"
+    "lint": "stylelint **/*.scss -s scss",
+    "test": "npm-run-all -s build lint"
   },
   "dependencies": {
     "primer-marketing-support": "1.3.0",
-    "primer-support": "4.3.0"
+    "primer-support": "4.4.0"
   },
   "keywords": [
     "primer",
