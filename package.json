@@ -29,7 +29,7 @@
     "stylelint-no-unsupported-browser-features": "^1.0.0",
     "stylelint-order": "^0.4.4",
     "stylelint-scss": "^1.4.1",
-    "stylelint-selector-no-utility": "^1.5.0"
+    "stylelint-selector-no-utility": "^1.7.0"
   },
   "devDependencies": {
     "ava": "^0.20.0",
