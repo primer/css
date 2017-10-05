@@ -3,7 +3,7 @@
   // Inline code snippets
   code,
   tt {
-    padding: 0.2em;
+    padding: 0.2em 0.4em;
     margin: 0;
     font-size: 85%;
     background-color: rgba($black, 0.05);
@@ -59,10 +59,5 @@
     word-wrap: normal;
     background-color: transparent;
     border: 0;
-
-    &::before,
-    &::after {
-      content: normal;
-    }
   }
 }
