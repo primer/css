@@ -26,8 +26,10 @@ if (!URL) {
 }
 
 const {post} = require('request-promise-native')
-post(URL, {
-  form: {
+post({
+  url: URL,
+  json: true,
+  body: {
     username: opts.user,
     icon_emoji: `:${opts.icon}:`,
     text: args.join(''),
