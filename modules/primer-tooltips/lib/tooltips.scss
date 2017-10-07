@@ -97,14 +97,14 @@ $tooltip-duration: 0.1s !default;
   &::after {
     top: 100%;
     right: 50%;
-    margin-top: 5px;
+    margin-top: 6px;
   }
 
   &::before {
     top: auto;
     right: 50%;
-    bottom: -6px;
-    margin-right: -5px;
+    bottom: -7px;
+    margin-right: -6px;
     border-bottom-color: $tooltip-background-color;
   }
 }
@@ -113,12 +113,12 @@ $tooltip-duration: 0.1s !default;
   &::after {
     right: auto;
     left: 50%;
-    margin-left: -15px;
+    margin-left: -16px;
   }
 }
 
 .tooltipped-sw::after {
-  margin-right: -15px;
+  margin-right: -16px;
 }
 
 // Tooltips above the object
