@@ -42,7 +42,7 @@ $tooltip-duration: 0.1s !default;
   color: $tooltip-background-color;
   pointer-events: none;
   content: "";
-  border: 5px solid transparent;
+  border: 6px solid transparent;
   opacity: 0;
 }
 
@@ -103,7 +103,7 @@ $tooltip-duration: 0.1s !default;
   &::before {
     top: auto;
     right: 50%;
-    bottom: -5px;
+    bottom: -6px;
     margin-right: -5px;
     border-bottom-color: $tooltip-background-color;
   }
@@ -128,14 +128,14 @@ $tooltip-duration: 0.1s !default;
   &::after {
     right: 50%;
     bottom: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
   }
 
   &::before {
-    top: -5px;
+    top: -7px;
     right: 50%;
     bottom: auto;
-    margin-right: -5px;
+    margin-right: -6px;
     border-top-color: $tooltip-background-color;
   }
 }
@@ -144,12 +144,12 @@ $tooltip-duration: 0.1s !default;
   &::after {
     right: auto;
     left: 50%;
-    margin-left: -15px;
+    margin-left: -16px;
   }
 }
 
 .tooltipped-nw::after {
-  margin-right: -15px;
+  margin-right: -16px;
 }
 
 // Move the tooltip body to the center of the object.
@@ -163,15 +163,15 @@ $tooltip-duration: 0.1s !default;
   &::after {
     right: 100%;
     bottom: 50%;
-    margin-right: 5px;
+    margin-right: 6px;
     transform: translateY(50%);
   }
 
   &::before {
     top: 50%;
     bottom: 50%;
-    left: -5px;
-    margin-top: -5px;
+    left: -7px;
+    margin-top: -6px;
     border-left-color: $tooltip-background-color;
   }
 }
@@ -181,15 +181,15 @@ $tooltip-duration: 0.1s !default;
   &::after {
     bottom: 50%;
     left: 100%;
-    margin-left: 5px;
+    margin-left: 6px;
     transform: translateY(50%);
   }
 
   &::before {
     top: 50%;
-    right: -5px;
+    right: -7px;
     bottom: 50%;
-    margin-top: -5px;
+    margin-top: -6px;
     border-right-color: $tooltip-background-color;
   }
 }
@@ -275,12 +275,5 @@ $tooltip-duration: 0.1s !default;
 
   &.tooltipped-w::before {
     border-left-color: $background-color;
-  }
-}
-
-@include retina-media-query {
-  .tooltipped-w::after {
-    // weird bug on retina
-    margin-right: 4.5px;
   }
 }
