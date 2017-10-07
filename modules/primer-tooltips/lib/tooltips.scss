@@ -113,12 +113,12 @@ $tooltip-duration: 0.1s !default;
   &::after {
     right: auto;
     left: 50%;
-    margin-left: -16px;
+    margin-left: -$spacer-3;
   }
 }
 
 .tooltipped-sw::after {
-  margin-right: -16px;
+  margin-right: -$spacer-3;
 }
 
 // Tooltips above the object
@@ -144,12 +144,12 @@ $tooltip-duration: 0.1s !default;
   &::after {
     right: auto;
     left: 50%;
-    margin-left: -16px;
+    margin-left: -$spacer-3;
   }
 }
 
 .tooltipped-nw::after {
-  margin-right: -16px;
+  margin-right: -$spacer-3;
 }
 
 // Move the tooltip body to the center of the object.
