@@ -28,7 +28,7 @@ $tooltip-duration: 0.1s !default;
   pointer-events: none;
   content: attr(aria-label);
   background: $tooltip-background-color;
-  border-radius: 3px;
+  border-radius: $border-radius;
   opacity: 0;
 }
 
