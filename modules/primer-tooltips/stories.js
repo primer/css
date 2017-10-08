@@ -30,11 +30,6 @@ storiesOf('Tooltips', module)
     </span>
   </div>
 ))
-.add('tooltip-in-button', () => (
-  <div className='p-6'>
-    <button className='btn btn-secondary tooltipped tooltipped-n' aria-label='This is the tooltip on a button.'>Button</button>
-  </div>
-))
 .add('tootlipped-multiline', () => (
   <div className='p-6'>
     <span className='tooltipped tooltipped-multiline tooltipped-s border p-2' aria-label='This is the tooltip with multiple lines. This is the tooltip with multiple lines.'>
