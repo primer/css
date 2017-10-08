@@ -277,3 +277,25 @@ $tooltip-duration: 0.1s !default;
     border-left-color: $background-color;
   }
 }
+
+.tooltipped-align-right {
+  &::after {
+    right: 0;
+    margin-right: 0;
+  }
+
+  &::before {
+    right: 15px;
+  }
+}
+
+.tooltipped-align-left {
+  &::after {
+    left: 0;
+    margin-left: 0;
+  }
+
+  &::before {
+    left: 10px;
+  }
+}

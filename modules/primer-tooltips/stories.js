@@ -42,3 +42,31 @@ storiesOf('Tooltips', module)
     </span>
   </div>
 ))
+.add('tootlip no delay', () => (
+  <div className='p-6'>
+    <span className='tooltipped tooltipped-n tooltipped-no-delay border p-2' aria-label='This is a tooltip with no delay.'>
+      Tooltip no delay
+    </span>
+  </div>
+))
+.add('tooltip on button', () => (
+  <div className='p-6'>
+  <button className='btn btn-secondary tooltipped tooltipped-n' aria-label='This is the tooltip on a button.'>Button</button>
+  </div>
+))
+.add('tooltip aligned', () => (
+  <div className='p-4'>
+    <span className='tooltipped tooltipped-ne tooltipped-align-left border p-2 mb-2 mr-2 float-left' aria-label='Tooltipped NE and aligned left.'>
+    Tooltip North East align left
+    </span>
+    <span className='tooltipped tooltipped-se tooltipped-align-left border p-2 mb-2 mr-2 float-left' aria-label='Tooltipped SW and aigned left.'>
+    Tooltip South East align left
+    </span>
+    <span className='tooltipped tooltipped-nw tooltipped-align-right border p-2 mb-2 mr-2 float-left' aria-label='Tooltipped NW and aligned right.'>
+      Tooltip North West align right
+    </span>
+    <span className='tooltipped tooltipped-sw tooltipped-align-right border p-2 mb-2 mr-2 float-left' aria-label='Tooltipped SE and aligned right.'>
+      Tooltip South West align right
+    </span>
+  </div>
+))
