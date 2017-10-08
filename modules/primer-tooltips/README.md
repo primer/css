@@ -84,7 +84,24 @@ Tooltip classes will conflict with Octicon classes, and as such, must go on a pa
 </span>
 ```
 
-#### Tooltips with multiple lines
+### Align tooltips
+
+```html
+<span class="tooltipped tooltipped-ne tooltipped-align-left border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped NE and aligned left.">
+  Tooltip North East align left
+</span>
+<span class="tooltipped tooltipped-se tooltipped-align-left border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped SW and aigned left.">
+  Tooltip South East align left
+</span>
+<span class="tooltipped tooltipped-nw tooltipped-align-right border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped NW and aligned right.">
+  Tooltip North West align right
+</span>
+<span class="tooltipped tooltipped-sw tooltipped-align-right border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped SE and aligned right.">
+  Tooltip South West align right
+</span>
+```
+
+### Tooltips with multiple lines
 Use `.tooltipped-multiline` when you have long content. This style has some limitations: you cannot pre-format the text with newlines, and tooltips are limited to a max-width of `250px`.
 
 
@@ -94,7 +111,7 @@ Use `.tooltipped-multiline` when you have long content. This style has some limi
 </span>
 ```
 
-#### Tooltips No Delay
+### Tooltips No Delay
 
 By default the tooltips have a slight delay before appearing. This is to keep multiple tooltips in the UI from being distracting. There is a modifier class you can use to override this. `.tooltipped-no-delay`
 
