@@ -5,11 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "npm run lint && node test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/primer/stylelint-selector-no-utility.git"
+    "tape": "node test/index.js",
+    "test": "../../script/npm-run-all lint tape"
   },
   "keywords": [
     "stylelint-rule",
@@ -22,17 +19,14 @@
   ],
   "author": "GitHub, Inc.",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/primer/stylelint-selector-no-utility/issues"
-  },
-  "homepage": "https://github.com/primer/stylelint-selector-no-utility#readme",
+  "repository": "https://github.com/primer/primer-css/tree/master/tools/stylelint-selector-no-utility",
   "dependencies": {
     "primer-utilities": "4.8.0",
-    "stylelint": "^7.0.0"
+    "stylelint": "^7.13.0"
   },
   "devDependencies": {
-    "eslint": "^3.3.1",
-    "eslint-plugin-github": "^0.8.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-github": "^0.12.0",
     "stylelint-test-rule-tape": "^0.2.0"
   }
 }
