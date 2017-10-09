@@ -1,5 +1,6 @@
 import React from 'react'
 import {storiesOf} from '@storybook/react'
+
 import octicons from 'octicons'
 import SVGInline from 'react-svg-inline'
 
@@ -12,13 +13,14 @@ const Octicon = (props) => {
   }
 }
 
-const story = storiesOf('Octicons', module)
 const sizes = [64, 32, 16]
 
-Object.keys(octicons).forEach(name => {
-  story.add(name, () => (
-    <div>{sizes.map((size, i) => (
-      <Octicon name={name} width={size} height={size} key={i} />
-    ))}</div>
-  ))
-})
+storiesOf('Octicons', module)
+  .add('test', () => {
+    const name = 'beaker'
+    return (
+      <div>{sizes.map((size, i) => (
+        <Octicon name={name} width={size} height={size} key={i} />
+      ))}</div>
+    )
+  })
