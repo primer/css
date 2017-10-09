@@ -1,0 +1,38 @@
+{
+  "name": "stylelint-selector-no-utility",
+  "version": "1.7.0",
+  "description": "Stylelint rule that doesn't allow the styling of utility classes in CSS",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint && node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/primer/stylelint-selector-no-utility.git"
+  },
+  "keywords": [
+    "stylelint-rule",
+    "stylelint",
+    "url",
+    "domain",
+    "primer",
+    "github",
+    "css"
+  ],
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/primer/stylelint-selector-no-utility/issues"
+  },
+  "homepage": "https://github.com/primer/stylelint-selector-no-utility#readme",
+  "dependencies": {
+    "primer-utilities": "4.8.0",
+    "stylelint": "^7.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.3.1",
+    "eslint-plugin-github": "^0.8.0",
+    "stylelint-test-rule-tape": "^0.2.0"
+  }
+}
