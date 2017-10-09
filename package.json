@@ -3,7 +3,7 @@
   "scripts": {
     "postinstall": "npm run bootstrap",
     "start": "start-storybook -p 8000 -c .storybook",
-    "storybook": "build-storybook -c .storybook -o .out",
+    "storybook": "build-storybook -o build",
     "bootstrap": "lerna bootstrap --hoist",
     "clean": "lerna clean",
     "diff": "lerna diff",
