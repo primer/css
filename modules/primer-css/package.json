@@ -9,7 +9,6 @@
   "primer": {
     "module_type": "meta"
   },
-  "main": "build/index.js",
   "files": [
     "index.scss",
     "lib",
@@ -21,10 +20,9 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "build": "../../script/npm-run primer-module-build index.scss",
+    "build": "primer-module-build index.scss",
     "prepare": "npm run build",
-    "lint": "../../script/lint-scss",
-    "test": "../../script/npm-run-all build lint"
+    "test": "npm run build"
   },
   "dependencies": {
     "primer-alerts": "1.5.0",

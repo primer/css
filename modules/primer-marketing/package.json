@@ -20,10 +20,9 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "build": "../../script/npm-run primer-module-build index.scss",
+    "build": "primer-module-build index.scss",
     "prepare": "npm run build",
-    "test": "npm run build",
-    "lint": "../../script/lint-scss"
+    "test": "npm run build"
   },
   "dependencies": {
     "primer-breadcrumb": "1.4.0",
