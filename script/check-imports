@@ -1,0 +1,63 @@
+#!/usr/bin/env node
+const fse = require('fs-extra')
+const globby = require('globby')
+
+const DEP_FIELDS = [
+  'dependencies',
+]
+
+const parseImports = filename => {
+  return fse.readFile(filename, 'utf8')
+    .then(scss => {
+      const matches = scss.match(/\@import\s+"[-a-z]+\/index\.scss"/g)
+      return matches
+        ? Array.from(matches).map(stmt => stmt.match(/"([-a-z]+)\//)[1])
+        : []
+    })
+}
+
+globby('modules/primer-*')
+  .then(paths => {
+    return paths.reduce((modules, path) => {
+      const pkg = require(`../${path}/package.json`)
+      if (pkg.dependencies) {
+        pkg.path = path
+        modules.push(pkg)
+      } else {
+        console.warn('%s: no dependencies', pkg.name)
+      }
+      return modules
+    }, [])
+  })
+  .then(modules => {
+    console.log('⏱  checking %d modules...', modules.length)
+    const map = new Map()
+    const tasks = []
+    modules.forEach(mod => map.set(mod.name, mod))
+    modules.forEach(mod => {
+      const deps = Object.keys(mod.dependencies)
+        .filter(key => key.indexOf('primer-') === 0)
+      tasks.push(
+        parseImports(`${mod.path}/index.scss`)
+          .then(imports => {
+            console.warn('📦  %s: %d dependencies, %d imports',
+                         mod.name, deps.length, imports.length)
+            imports.forEach(imported => {
+              if (!deps.includes(imported)) {
+                throw new Error(
+                  `❌  ${mod.name} imports ${imported}, but is missing a dependency`
+                )
+              }
+            })
+          })
+      )
+    })
+    return Promise.all(tasks)
+  })
+  .catch(error => {
+    console.error(error)
+    process.exit(1)
+  })
+  .then(matches => {
+    console.warn('✅  checked %d matching version dependencies', matches.length)
+  })
