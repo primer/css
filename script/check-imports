@@ -31,6 +31,9 @@ globby('modules/primer-*')
   })
   .then(modules => {
     console.log('⏱  checking %d modules...', modules.length)
+    const maxNameLength = modules.reduce((len, {name}) => {
+      return Math.max(len, name.length)
+    }, 0)
     const map = new Map()
     const tasks = []
     modules.forEach(mod => map.set(mod.name, mod))
@@ -40,8 +43,9 @@ globby('modules/primer-*')
       tasks.push(
         parseImports(`${mod.path}/index.scss`)
           .then(imports => {
-            console.warn('📦  %s: %d dependencies, %d imports',
-                         mod.name, deps.length, imports.length)
+            console.warn('📦  %s: %s%d dependencies, %d import(s)',
+                         mod.name, ' '.repeat(maxNameLength - mod.name.length),
+                         deps.length, imports.length)
             imports.forEach(imported => {
               if (!deps.includes(imported)) {
                 throw new Error(
