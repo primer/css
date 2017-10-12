@@ -16,6 +16,8 @@ const parseImports = filename => {
     })
 }
 
+const isPrimerModule = name => name.indexOf('primer-') === 0
+
 globby('modules/primer-*')
   .then(paths => {
     return paths.reduce((modules, path) => {
@@ -44,7 +46,8 @@ globby('modules/primer-*')
 
     modules.forEach(mod => {
       const deps = Object.keys(mod.dependencies)
-        .filter(key => key.indexOf('primer-') === 0)
+        .filter(isPrimerModule)
+
       tasks.push(
         parseImports(`${mod.path}/index.scss`)
           .then(imports => {
@@ -66,6 +69,27 @@ globby('modules/primer-*')
       )
     })
     return Promise.all(tasks)
+      .then(() => {
+        const primer = map.get('primer-css')
+
+        const deps = new Set(
+          Object.keys(primer.dependencies)
+            .filter(isPrimerModule)
+            .sort()
+        )
+
+        modules
+          .map(mod => mod.name)
+          .filter(mod => mod !== primer.name)
+          .sort()
+          .forEach(mod => {
+            if (!deps.has(mod)) {
+              throw new Error(
+                `primer-css is missing dependency for ${mod}@${map.get(mod).version}`
+              )
+            }
+          })
+      })
       .then(() => matches)
   })
   .catch(error => {
