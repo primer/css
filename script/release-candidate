@@ -111,17 +111,16 @@ revertPackages()
         return pkgs.filter(pkg => updated.includes(pkg.name))
       })
       .then(updated => {
-        const changed = new Set(updated.map(pkg => pkg.name))
+        const changed = new Set(updated)
         return Promise.all(updated.map(pkg => {
           return bump(pkg, by, preid)
             .then(pkg => updateDependants(pkg, pkgs))
             .then(dependants => {
-              dependants.forEach(dep => changed.add(dep.name))
+              dependants.forEach(dep => changed.add(dep))
             })
         }))
         .then(() => {
           const tasks = Array.from(changed)
-            .map(name => pkgs.filter(pkg => pkg.name === name)[0])
             .map(writePackage)
           return Promise.all(tasks)
         })
