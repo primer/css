@@ -31,12 +31,17 @@ globby('modules/primer-*')
   })
   .then(modules => {
     console.log('⏱  checking %d modules...', modules.length)
+
     const maxNameLength = modules.reduce((len, {name}) => {
       return Math.max(len, name.length)
     }, 0)
+
     const map = new Map()
-    const tasks = []
     modules.forEach(mod => map.set(mod.name, mod))
+
+    const tasks = []
+    const matches = []
+
     modules.forEach(mod => {
       const deps = Object.keys(mod.dependencies)
         .filter(key => key.indexOf('primer-') === 0)
@@ -52,16 +57,21 @@ globby('modules/primer-*')
                   `❌  ${mod.name} imports ${imported}, but is missing a dependency`
                 )
               }
+              matches.push({
+                module: mod.name,
+                imports: imported
+              })
             })
           })
       )
     })
     return Promise.all(tasks)
+      .then(() => matches)
   })
   .catch(error => {
     console.error(error)
     process.exit(1)
   })
   .then(matches => {
-    console.warn('✅  checked %d matching version dependencies', matches.length)
+    console.warn('✅  checked %d dependency/import pairs', matches.length)
   })
