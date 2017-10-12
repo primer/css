@@ -32,6 +32,13 @@ const getUpdated = (args) => {
     .then(updated => updated.map(pkg => pkg.name))
 }
 
+const notify = status => {
+  return execa('script/notify', ['error'])
+    .catch(error => {
+      console.error('notify error:', error)
+    })
+}
+
 const writePackage = (pkg) => {
   const {dir} = pkg
   delete pkg.dir
@@ -127,9 +134,12 @@ revertPackages()
           })
           return Promise.all(tasks)
         })
+        .then(() => notify('success'))
       })
   })
   .catch(error => {
     console.error('Error:', error)
-    process.exit(1)
+    process.exitCode = 1
+    return notify('error')
   })
+  .then(() => process.exit())
