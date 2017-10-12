@@ -33,7 +33,7 @@ const getUpdated = (args) => {
 }
 
 const notify = status => {
-  return execa('script/notify', ['error'])
+  return execa('script/notify', ['error'], {env: process.env})
     .catch(error => {
       console.error('notify error:', error)
     })
