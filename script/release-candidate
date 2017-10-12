@@ -127,7 +127,7 @@ revertPackages()
         })
         .then(updated => {
           const tasks = updated.map(pkg => {
-            return execa('npm', ['pack', '--tag', DIST_TAG], {
+            return execa('npm', ['publish', '--tag', DIST_TAG], {
               cwd: pkg.dir,
               stdio: 'inherit',
             })
