@@ -15,3 +15,7 @@
     .border-#{$breakpoint}-left-0   { border-left: 0 !important; }
   }
 }
+
+.border-white-fade {
+  border-color: $white-fade-15 !important;
+}
