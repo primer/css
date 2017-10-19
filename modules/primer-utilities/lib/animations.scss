@@ -151,3 +151,13 @@
     transform: scale3d(1, 1, 1);
   }
 }
+
+/* Increase scale of an element on hover */
+
+.hover-grow {
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.025);
+  }
+}
