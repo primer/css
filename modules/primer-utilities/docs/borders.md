@@ -118,7 +118,7 @@ Add or remove rounded corners: `rounded-0` removes rounded corners, `rounded-1` 
 <div class="border rounded-1 mb-2">
   .rounded-1
 </div>
-<div class="border rounded-2">
+<div class="border rounded-2 mb-2">
   .rounded-2
 </div>
 <div class="border circle p-3" style="width: 100px; height: 100px;">
