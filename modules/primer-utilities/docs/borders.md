@@ -109,7 +109,7 @@ Use `border-dashed` to give an element a dashed border.
 
 ## Rounded corners
 
-Add or remove rounded corners: `rounded-0` removes rounded corners, `rounded-1` applies a border radius of 3px, `rounded-2` applies a border radius of 6px.
+Add or remove rounded corners: `rounded-0` removes rounded corners, `rounded-1` applies a border radius of 3px, `rounded-2` applies a border radius of 6px. `.circle` applies a border radius of 50%, which turns square elements into perfect circles.
 
 ```html
 <div class="Box rounded-0 mb-2">
@@ -120,5 +120,8 @@ Add or remove rounded corners: `rounded-0` removes rounded corners, `rounded-1` 
 </div>
 <div class="border rounded-2">
   .rounded-2
+</div>
+<div class="border circle p-3" style="width: 100px; height: 100px;">
+  .circle
 </div>
 ```
