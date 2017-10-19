@@ -25,10 +25,14 @@ Top, right, bottom, and left border utilities are can be used responsively to ad
 In addition to `.border-black-fade` which is in primer-core, primer-marketing includes `.border-white-fade`. This adds a rgba white border with an alpha transparency of `0.15`. This is useful when you want a border that is a lighter shade of the background color.
 
 ```html
-<div class="border border-white-fade bg-gray-dark p-2 mb-2">
-  .border-white-fade .bg-gray-dark
+<div class="bg-gray-dark text-white p-3 mb-2">
+  <span class="border border-white-fade p-2">
+    .border-white-fade .bg-gray-dark
+  </span>
 </div>
-<div class="border border-white-fade bg-blue p-2 mb-2">
-  .border-white-fade .bg-blue
+<div class="bg-blue text-white p-3">
+  <span class="border border-white-fade p-2">
+    .border-white-fade .bg-blue
+  </span>
 </div>
 ```
