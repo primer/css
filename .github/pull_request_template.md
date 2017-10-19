@@ -2,6 +2,8 @@
 
 ↑ Next, briefly describe your proposal in the title.
 
+Fixes: #
+ 
 Finally, tell us more about the change here, in the description.
 
 /cc @primer/ds-core
