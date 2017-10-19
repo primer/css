@@ -9,5 +9,7 @@
     .position-#{$breakpoint}-relative { position: relative !important; }
     /* Set position to absolute */
     .position-#{$breakpoint}-absolute { position: absolute !important; }
+    /* Set position to fixed */
+    .position-#{$breakpoint}-fixed    { position: fixed !important; }
   }
 }
