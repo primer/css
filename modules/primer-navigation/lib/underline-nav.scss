@@ -1,0 +1,73 @@
+.UnderlineNav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $gray-200;
+}
+
+.UnderlineNav-items {
+  display: flex;
+  margin-bottom: -1px;
+}
+
+.UnderlineNav-item {
+  padding: $spacer-3 $spacer-2;
+  margin-right: $spacer-3;
+  font-size: $body-font-size;
+  text-align: center;
+  line-height: $lh-default;
+  color: $text-gray;
+  border-bottom: 2px solid transparent;
+
+  .Counter {
+    margin-left: $spacer-1;
+  }
+
+  .octicon {
+    margin-right: $spacer-1;
+    color: $gray-400;
+  }
+
+  &:hover,
+  &:focus {
+    color: $text-gray-dark;
+    text-decoration: none;
+    border-bottom-color: $gray-300;
+    transition: 0.2s ease;
+
+    .octicon {
+      color: $gray-500;
+    }
+  }
+
+  &.selected {
+    color: $text-gray-dark;
+    border-bottom-color: $orange-600;
+    font-weight: $font-weight-bold;
+
+    .octicon {
+      color: $gray-500;
+    }
+  }
+}
+
+.UnderlineNav--right {
+  justify-content: flex-end;
+
+  .UnderlineNav-item {
+    margin-right: 0;
+    margin-left: $spacer-3;
+  }
+}
+
+.UnderlineNav-actions {
+  align-self: center;
+}
+
+.UnderlineNav--full {
+  display: block;
+
+  .container-lg {
+    display: flex;
+    justify-content: space-between;
+  }
+}
