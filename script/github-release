@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+const release = require('gh-release')
+const yargs = require('yargs')
+  .usage('$0 [options]')
+  .option('token', {
+    describe: 'Your GitHub auth token (default: $GH_TOKEN)',
+  })
+const opts = yargs.argv
+const args = opts._
+
+opts.auth = {
+  token: opts.token || process.env.GH_TOKEN
+}
+
+release(opts, function(error, result) {
+  if (error) {
+    console.error(error)
+    process.exit(1)
+  } else {
+    console.warn(result)
+    process.exit(0)
+  }
+})

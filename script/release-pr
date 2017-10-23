@@ -6,6 +6,9 @@ echo "🐦  Publishing PR (canary) release..."
 # what lerna creates as a canary release
 # $(dirname $0)/notify pending
 
-$(npm bin)/lerna publish --npm-tag=pr --canary --exact $@
+$(npm bin)/lerna publish --npm-tag=pr --canary --exact $@ || {
+  $(dirname $0)/notify error
+  exit 1
+}
 
 $(dirname $0)/notify success
