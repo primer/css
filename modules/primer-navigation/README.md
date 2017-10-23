@@ -93,6 +93,86 @@ You can also add optional headings to a menu. Feel free to use nearly any semant
 </nav>
 ```
 
+## Underline nav
+
+`.UnderlineNav` is navigation that is typically used at the top of a page as the main page navigation.
+
+```html
+
+<nav class="UnderlineNav" aria-label="Foo bar">
+  <div class="UnderlineNav-items">
+    <a href="#url" class="UnderlineNav-item selected">Item 1</a>
+    <a href="#url" class="UnderlineNav-item">Item 2</a>
+    <a href="#url" class="UnderlineNav-item">Item 3</a>
+    <a href="#url" class="UnderlineNav-item">Item 4</a>
+  </div>
+</nav>
+```
+
+You can right align the navigation.
+
+```html
+<nav class="UnderlineNav UnderlineNav--right" aria-label="Foo bar">
+  <div class="UnderlineNav-items">
+    <a href="#url" class="UnderlineNav-item selected">Item 1</a>
+    <a href="#url" class="UnderlineNav-item">Item 2</a>
+    <a href="#url" class="UnderlineNav-item">Item 3</a>
+    <a href="#url" class="UnderlineNav-item">Item 4</a>
+  </div>
+</nav>
+```
+
+
+The navigation will work with added counters and/or octicons
+
+```html
+<nav class="UnderlineNav" aria-label="Foo bar">
+  <div class="UnderlineNav-items">
+    <a href="#url" class="UnderlineNav-item selected">Item 1</a>
+    <a href="#url" class="UnderlineNav-item">Item 2
+      <span className="Counter">10</span>
+     </a>
+    <a href="#url" class="UnderlineNav-item">Item 3</a>
+    <a href="#url" class="UnderlineNav-item">Item 4</a>
+  </div>
+</nav>
+```
+
+Use `.UnderlineNav--full` to use a container within the components
+
+```html
+<nav class="UnderlineNav UnderlineNav--full" aria-label="Foo bar">
+  <div class="container-lg">
+    <div class="UnderlineNav-items">
+      <a href="#url" class="UnderlineNav-item selected">Item 1</a>
+      <a href="#url" class="UnderlineNav-item">Item 2
+        <span className="Counter">10</span>
+       </a>
+      <a href="#url" class="UnderlineNav-item">Item 3</a>
+      <a href="#url" class="UnderlineNav-item">Item 4</a>
+    </div>
+  </div>
+</nav>
+```
+
+Use `.UnderlineNav-actions` to use another element alongside the underline nav
+
+```html
+<nav class="UnderlineNav" aria-label="Foo bar">
+  <div class="UnderlineNav-items">
+    <a href="#url" class="UnderlineNav-item selected">Item 1</a>
+    <a href="#url" class="UnderlineNav-item">Item 2
+      <span class="Counter">10</span>
+     </a>
+    <a href="#url" class="UnderlineNav-item">Item 3</a>
+    <a href="#url" class="UnderlineNav-item">Item 4</a>
+  </div>
+  <div class="UnderlineNav-actions">
+    <a class="btn">Button</a>
+  </div>
+</nav>
+```
+
 
 ## Tabnav
 
@@ -245,85 +325,7 @@ You can also use a `subnav-search-context` to display search help in a select me
 </div>
 ```
 
-## Underline navigation
 
-`.UnderlineNav` is navigation that is typically used at the top of a page as the main page navigation.
-
-```html
-
-<nav class="UnderlineNav" aria-label="Foo bar">
-  <div class="UnderlineNav-items">
-    <a href="#url" class="UnderlineNav-item selected">Item 1</a>
-    <a href="#url" class="UnderlineNav-item">Item 2</a>
-    <a href="#url" class="UnderlineNav-item">Item 3</a>
-    <a href="#url" class="UnderlineNav-item">Item 4</a>
-  </div>
-</nav>
-```
-
-You can right align the navigation.
-
-```html
-<nav class="UnderlineNav UnderlineNav--right" aria-label="Foo bar">
-  <div class="UnderlineNav-items">
-    <a href="#url" class="UnderlineNav-item selected">Item 1</a>
-    <a href="#url" class="UnderlineNav-item">Item 2</a>
-    <a href="#url" class="UnderlineNav-item">Item 3</a>
-    <a href="#url" class="UnderlineNav-item">Item 4</a>
-  </div>
-</nav>
-```
-
-
-The navigation will work with added counters and/or octicons
-
-```html
-<nav class="UnderlineNav" aria-label="Foo bar">
-  <div class="UnderlineNav-items">
-    <a href="#url" class="UnderlineNav-item selected">Item 1</a>
-    <a href="#url" class="UnderlineNav-item">Item 2
-      <span className="Counter">10</span>
-     </a>
-    <a href="#url" class="UnderlineNav-item">Item 3</a>
-    <a href="#url" class="UnderlineNav-item">Item 4</a>
-  </div>
-</nav>
-```
-
-Use `.UnderlineNav--full` to use a container within the components
-
-```html
-<nav class="UnderlineNav UnderlineNav--full" aria-label="Foo bar">
-  <div class="container-lg">
-    <div class="UnderlineNav-items">
-      <a href="#url" class="UnderlineNav-item selected">Item 1</a>
-      <a href="#url" class="UnderlineNav-item">Item 2
-        <span className="Counter">10</span>
-       </a>
-      <a href="#url" class="UnderlineNav-item">Item 3</a>
-      <a href="#url" class="UnderlineNav-item">Item 4</a>
-    </div>
-  </div>
-</nav>
-```
-
-Use `.UnderlineNav-actions` to use another element alongside the underline nav
-
-```html
-<nav class="UnderlineNav" aria-label="Foo bar">
-  <div class="UnderlineNav-items">
-    <a href="#url" class="UnderlineNav-item selected">Item 1</a>
-    <a href="#url" class="UnderlineNav-item">Item 2
-      <span class="Counter">10</span>
-     </a>
-    <a href="#url" class="UnderlineNav-item">Item 3</a>
-    <a href="#url" class="UnderlineNav-item">Item 4</a>
-  </div>
-  <div class="UnderlineNav-actions">
-    <a class="btn">Button</a>
-  </div>
-</nav>
-```
 <!-- %enddocs -->
 
 ## License
