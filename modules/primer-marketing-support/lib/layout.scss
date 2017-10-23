@@ -1,0 +1,23 @@
+// Overrides $spacers variable from primer-support
+// Increases standard spacing scale by 16px step increments after 40px
+// i.e. After 40px, we have 72, 88, 104 and 120px
+$spacers: (
+  0,
+  round($spacer / 2),
+  $spacer,
+  $spacer * 2,
+  $spacer * 3,
+  $spacer * 4,
+  $spacer * 5,
+  $spacer * 7,
+  $spacer * 9,
+  $spacer * 11,
+  $spacer * 13,
+  $spacer * 15
+) !default;
+
+// Adds aliases
+$spacer-7:  nth($spacers, 8) !default;  // 72px
+$spacer-8:  nth($spacers, 9) !default;  // 88px
+$spacer-9:  nth($spacers, 10) !default; // 104px
+$spacer-10: nth($spacers, 11) !default; // 120px
