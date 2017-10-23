@@ -1,3 +1,0 @@
-#!/bin/bash
-set -e
-$(dirname $0)/npm-run npm-run-all --serial --silent "$@"

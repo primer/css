@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+const yargs = require('yargs')
+  .usage('$0 [-u username] [-i emoji] "your text message"')
+  .option('username', {
+    alias: 'u',
+    default: 'Travis CI',
+    describe: 'The user name with with to present the message',
+  })
+  .option('icon', {
+    alias: 'i',
+    default: 'travis',
+    describe: 'The emoji name to show in Slack (without the surrounding colons)',
+  })
+  .option('url', {
+    describe: 'The Slack webhook URL (default: $SLACK_WEBHOOK_URL)',
+  })
+  .demand(1)
+  .help()
+
+const opts = yargs.argv
+const args = opts._
+const URL = opts.url || process.env.SLACK_WEBHOOK_URL
+
+if (!URL) {
+  throw new Error('You must pass --url or set $SLACK_WEBHOOK_URL')
+}
+
+const {post} = require('request-promise-native')
+post({
+  url: URL,
+  json: true,
+  body: {
+    username: opts.user,
+    icon_emoji: `:${opts.icon}:`,
+    text: args.join(''),
+    mrkdwn: true,
+  },
+})
+.then(res => {
+  console.warn('Success!', res)
+  process.exit()
+})
+.catch(error => {
+  console.error('Error:', error)
+  process.exit(1)
+})
