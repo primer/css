@@ -23,7 +23,8 @@
     }
 
     &:active,
-    &.selected {
+    &.selected,
+    [open] > & {
       background-color: darken(desaturate($bg, 10%), 6%);
       background-image: none;
       border-color: rgba($black, 0.35); // repeat to avoid shift on click-drag off of button
@@ -54,7 +55,8 @@
     }
 
     &:active,
-    &.selected {
+    &.selected,
+    [open] > & {
       background-color: darken(mix($bg, $bg2, 50%), 7%);
       background-image: none;
       border-color: $black-fade-50; // repeat to avoid shift on click-drag off of button
@@ -99,7 +101,8 @@
   }
 
   &:active,
-  &.selected {
+  &.selected,
+  [open] > & {
     color: $text-white;
     background-color: darken($color, 5%);
     background-image: none;
@@ -129,7 +132,8 @@
 
   &:hover,
   &:active,
-  &.selected {
+  &.selected,
+  [open] > & {
     color: $bg-color;
     background-color: $text-color;
     background-image: none;
