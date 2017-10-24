@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+const fs = require('fs')
+const globby = require('globby')
+const path = require('path')
+
+const getPackages = (debug) => {
+  const lernaConfig = require('../lerna.json')
+  const packageGlobs = lernaConfig.packages
+  return globby(packageGlobs)
+    .then(packagePaths => {
+      return packagePaths.filter(pkg => {
+        try {
+          require.resolve(`../${pkg}/package.json`)
+          return true
+        } catch (error) {
+          if (debug) {
+            console.warn('No package.json in %s', pkg)
+          }
+        }
+      })
+    })
+}
+
+if (module.parent) {
+  module.exports = getPackages
+} else {
+  getPackages(true).then(packages => {
+    console.warn('%d packages:', packages.length)
+    packages.forEach(pkg => console.log(pkg))
+  })
+}

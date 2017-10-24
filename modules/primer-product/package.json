@@ -1,5 +1,5 @@
 {
-  "version": "5.4.0",
+  "version": "5.4.1",
   "name": "primer-product",
   "description": "Primer CSS's product modules",
   "homepage": "http://primercss.io/",
@@ -20,16 +20,17 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "build": "primer-module-build index.scss",
+    "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
-    "test": "npm run build"
+    "test": "npm run build",
+    "lint": "../../script/lint-scss"
   },
   "dependencies": {
-    "primer-alerts": "1.5.0",
-    "primer-avatars": "1.4.0",
-    "primer-blankslate": "1.4.0",
-    "primer-labels": "1.5.0",
-    "primer-markdown": "3.7.0",
-    "primer-support": "4.4.0"
+    "primer-alerts": "1.5.1",
+    "primer-avatars": "1.4.1",
+    "primer-blankslate": "1.4.1",
+    "primer-labels": "1.5.1",
+    "primer-markdown": "3.7.1",
+    "primer-support": "4.4.1"
   }
 }

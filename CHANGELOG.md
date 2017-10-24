@@ -1,3 +1,14 @@
+# 9.6.0
+
+### Added
+- Storybook. We've added a storybook prototyping environment for testing components in seclusion. To start the server run `npm start`
+- Adding yeoman generator for creating a primer module. `generator-primer-module`
+- Importing `stylelint-config-primer` from https://github.com/primer/stylelint-config-primer/ into monorepo.
+- Importing `stylelint-selector-no-utility` from https://github.com/primer/stylelint-selector-no-utility into monorepo.
+
+### Changes
+- Deployment and publishing scripts refinements.
+
 # 9.5.0
 
 ### Added
