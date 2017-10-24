@@ -2,7 +2,6 @@
 
 ### Added
 - Storybook. We've added a storybook prototyping environment for testing components in seclusion. To start the server run `npm start`
-- Adding `primer-dropdown` module as a new module, and adding to the `primer-product` meta package. https://github.com/primer/primer-css/pull/332
 - Adding yeoman generator for creating a primer module. `generator-primer-module`
 - Importing `stylelint-config-primer` from https://github.com/primer/stylelint-config-primer/ into monorepo.
 - Importing `stylelint-selector-no-utility` from https://github.com/primer/stylelint-selector-no-utility into monorepo.
