@@ -8,7 +8,7 @@
   "style": "build/build.css",
   "main": "build/index.js",
   "primer": {
-    "category": "core",
+    "category": "marketing",
     "module_type": "components"
   },
   "files": [

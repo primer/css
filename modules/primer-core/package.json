@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "primer-base": "1.5.0",
-    "primer-breadcrumb": "1.4.0",
     "primer-box": "2.5.0",
     "primer-buttons": "2.4.0",
     "primer-forms": "1.4.0",
