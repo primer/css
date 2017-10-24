@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    "eslint-plugin-github"
+  ],
+  "env": {
+    "node": true
+  },
+  "extends": [
+      "plugin:github/recommended"
+  ]
+}

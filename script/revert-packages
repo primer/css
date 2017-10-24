@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+const execa = require('execa')
+const fse = require('fs-extra')
+const globby = require('globby')
+
+const revertPackages = () => {
+  const lernaConfig = require('../lerna.json')
+  const globs = lernaConfig.packages
+  const jsons = globs.map(glob => glob + '/package.json')
+  const tarballs = globs.map(glob => glob + '/*.tgz')
+  const opts = {stdio: 'inherit'}
+  return Promise.all([
+    execa('git', ['checkout', '--'].concat(globs), opts),
+    globby(tarballs)
+      .then(paths => {
+        if (paths.length) {
+          console.warn('deleting %d tarball(s)', paths.length)
+          return Promise.all(
+            paths.map(tgz => fse.remove(tgz))
+          )
+        }
+      }),
+  ])
+}
+
+if (module.parent) {
+  module.exports = revertPackages
+} else {
+  revertPackages().then(() => process.exit(0))
+}
