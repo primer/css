@@ -1,3 +1,8 @@
+# 10.0.0
+
+### Removed
+- Removing `primer-cards` module.
+
 # 9.6.0
 
 ### Added
