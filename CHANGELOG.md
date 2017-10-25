@@ -2,6 +2,7 @@
 
 ### Removed
 - Removing `primer-cards` module.
+- Removing `.form-cards` styles.
 
 # 9.6.0
 
