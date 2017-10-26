@@ -1,0 +1,46 @@
+.Popover {
+  left: 50%;
+  z-index: 20;
+  width: 235px;
+  margin-top: 30px;
+  margin-left: -118px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+
+  // Carets
+  &::before,
+  &::after {
+    position: absolute;
+    display: inline-block;
+    content: "";
+  }
+
+  &::before {
+    top: -16px;
+    right: 109px;
+    left: auto;
+    border: 8px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.15);
+  }
+
+  &::after {
+    top: -14px;
+    right: 110px;
+    left: auto;
+    border: 7px solid transparent;
+    border-bottom-color: $bg-white;
+  }
+
+  &.top-right {
+    left: auto;
+    width: 330px;
+    margin-top: 45px;
+
+    &::before {
+      right: 20px;
+    }
+
+    &::after {
+      right: 21px;
+    }
+  }
+}
