@@ -1,46 +1,68 @@
 .Popover {
-  left: 50%;
+  position: relative;
   z-index: 20;
-  width: 235px;
-  margin-top: 30px;
-  margin-left: -118px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  max-width: 235px;
+  margin-right: auto;
+  margin-left: auto;
 
   // Carets
   &::before,
   &::after {
     position: absolute;
+    left: 50%;
     display: inline-block;
     content: "";
   }
 
   &::before {
     top: -16px;
-    right: 109px;
-    left: auto;
+    margin-left: -9px;
     border: 8px solid transparent;
     border-bottom-color: rgba(0, 0, 0, 0.15);
   }
 
   &::after {
     top: -14px;
-    right: 110px;
-    left: auto;
+    margin-left: -8px;
     border: 7px solid transparent;
     border-bottom-color: $bg-white;
   }
+}
 
-  &.top-right {
+.Popover--right {
+  right: -9px;
+  margin-right: 0;
+
+  &::before,
+  &::after {
     left: auto;
-    width: 330px;
-    margin-top: 45px;
-
-    &::before {
-      right: 20px;
-    }
-
-    &::after {
-      right: 21px;
-    }
+    margin-left: 0;
   }
+
+  &::before {
+    right: 20px;
+  }
+
+  &::after {
+    right: 21px;
+  }
+}
+
+.Popover--left {
+  left: -9px;
+  margin-left: 0;
+
+  &::before,
+  &::after {
+    left: 20px;
+    margin-left: 0;
+  }
+
+  &::after {
+    left: 21px;
+  }
+}
+
+.Popover--lg {
+  max-width: 330px;
 }

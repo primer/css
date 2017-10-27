@@ -31,6 +31,7 @@
     "primer-blankslate": "1.4.1",
     "primer-labels": "1.5.1",
     "primer-markdown": "3.7.1",
-    "primer-support": "4.4.1"
+    "primer-support": "4.4.1",
+    "primer-popover": "0.0.1"
   }
 }
