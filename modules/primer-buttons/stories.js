@@ -62,9 +62,5 @@ storiesOf('Button', module)
   .add('btn-link', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn-link'>Button</button>
-      <button className='btn-link hover'>hover</button>
-      <button className='btn-link focus'>focus</button>
-      <button className='btn-link selected'>selected</button>
-      <button className='btn-link disabled'>disabled</button>
     </div>
   ))
