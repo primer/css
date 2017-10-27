@@ -48,8 +48,8 @@
 
 .AvatarStack {
   position: absolute;
-  background: $bg-white;
   padding-right: 5px;
+  background: $bg-white;
 
   .avatar {
     position: relative;
@@ -74,9 +74,11 @@
       border-right: 0;
     }
 
+    // stylelint-disable selector-max-type
     img {
       border-radius: 2px;
     }
+    // stylelint-enable selector-max-type
 
     &:nth-child(3) {
       z-index: 1;
