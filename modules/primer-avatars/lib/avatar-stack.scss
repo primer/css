@@ -47,9 +47,7 @@
 // Refactored, new avatar stack:
 
 .AvatarStack {
-  position: absolute;
-  padding-right: 5px;
-  background: $bg-white;
+  background: inherit;
 
   .avatar {
     position: relative;
@@ -80,24 +78,16 @@
     }
     // stylelint-enable selector-max-type
 
-    &:nth-child(3) {
-      z-index: 1;
-    }
-
     // Account for 4+ avatars
     &:nth-child(n+4) {
-      z-index: 0;
       display: none;
-      margin-left: -15px;
       opacity: 0;
     }
   }
 
   &:hover .avatar:nth-child(n+4) {
     display: inline-block;
-    margin-left: 0;
     opacity: 1;
-    transition: opacity 0.1s, margin-left 0.1s;
   }
 
   &:hover .avatar {
@@ -106,23 +96,16 @@
 }
 
 .avatar.avatar-more {
+  z-index: 1;
   margin-right: 0;
   background: $gray-100;
 
-  &::before,
   &::after {
-    position: absolute;
     display: block;
     height: 20px;
     content: "";
     border-radius: 2px;
     outline: $border-width $border-style $white;
-  }
-
-  &::before {
-    z-index: 2;
-    width: 14px;
-    background: $gray-300;
   }
 
   &::after {
