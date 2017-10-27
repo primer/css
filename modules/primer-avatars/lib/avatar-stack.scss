@@ -43,3 +43,131 @@
     }
   }
 }
+
+// Refactored, new avatar stack:
+
+.temp-tooltipped-align-left {
+  &::after {
+    left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  &::before {
+    left: 5px !important;
+  }
+}
+
+.temp-avatar-stack-container {
+  min-width: 26px;
+  height: 20px;
+  position: relative;
+}
+
+.authors-2 .temp-avatar-stack-container {
+  min-width: 36px !important;
+}
+
+.authors-3 .temp-avatar-stack-container {
+  min-width: 46px !important;
+}
+
+.temp-avatar-stack {
+  position: absolute;
+  background: $bg-white;
+  padding-right: 5px;
+
+  .avatar {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    box-sizing: content-box;
+    margin-right: -15px;
+    background-color: $bg-white;
+    border-right: $border-width $border-style $white;
+    border-radius: 2px;
+    transition: margin 0.1s ease-in-out;
+
+    // &:only-child {
+    //   background-color: transparent;
+    // }
+
+    &:first-child {
+      z-index: 3;
+    }
+
+    &:last-child {
+      z-index: 1;
+      margin-right: 0;
+      border-right: 0;
+    }
+
+    // stylelint-disable selector-max-type
+    img {
+      border-radius: 2px;
+    }
+    // stylelint-enable selector-max-type
+
+    &:nth-child(3) {
+      z-index: 1;
+    }
+
+    // Account for 4+ avatars
+    &:nth-child(n+4) {
+      z-index: 0;
+      display: none;
+      margin-left: -15px;
+      opacity: 0;
+    }
+  }
+
+  &:hover .avatar:nth-child(n+4) {
+    display: inline-block;
+    margin-left: 0;
+    opacity: 1;
+    transition: opacity 0.1s, margin-left 0.1s;
+  }
+
+  &:hover .avatar {
+    margin-right: 0;
+  }
+}
+
+.avatar.avatar-more {
+  margin-right: 0;
+  background: $gray-100;
+
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    height: 20px;
+    content: "";
+    border-radius: 2px;
+    outline: $border-width $border-style $white;
+  }
+
+  &::before {
+    z-index: 2;
+    width: 14px;
+    background: $gray-300;
+  }
+
+  &::after {
+    width: 17px;
+    background: $gray-200;
+  }
+}
+
+.navigation-focus .temp-avatar-stack {
+  background: lighten($blue-000, 1%);
+}
+
+.commit-tease .temp-avatar-stack {
+  background: $blue-000;
+}
+
+.temp-avatar-stack:hover .avatar-more {
+  display: none;
+}
