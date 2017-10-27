@@ -26,6 +26,18 @@ storiesOf('Avatars', module)
   </div>
 
 ))
+.add('AvatarStack', () => (
+  <div>
+    <div className='AvatarStack tooltipped tooltipped-se temp-tooltipped-align-left' aria-label='califa, sophshep, jonrohan, and broccolini'>
+      <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
+      <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
+      <div className='avatar-more avatar'></div>
+      <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
+      <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
+      <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
+    </div>
+  </div>
+))
 .add('CircleBadge--small', () => (
   <div>
     <a className='CircleBadge CircleBadge--small' href='#url' title='Travis CI'>
