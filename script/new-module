@@ -3,7 +3,7 @@ set -e
 
 function generate() {
   pushd modules > /dev/null
-  ../node_modules/.bin/yo ./generator-primer-module/app "$@"
+  ../node_modules/.bin/yo ../tools/generator-primer-module/app "$@"
   popd > /dev/null
 }
 

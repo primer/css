@@ -1,5 +1,5 @@
 {
-  "version": "5.3.1",
+  "version": "5.4.1",
   "name": "primer-product",
   "description": "Primer CSS's product modules",
   "homepage": "http://primercss.io/",
@@ -26,12 +26,14 @@
     "lint": "../../script/lint-scss"
   },
   "dependencies": {
-    "primer-alerts": "1.4.0",
-    "primer-avatars": "1.3.0",
-    "primer-blankslate": "1.3.0",
+    "primer-alerts": "1.5.1",
+    "primer-avatars": "1.4.1",
+    "primer-blankslate": "1.4.1",
+    "primer-branch-name": "0.0.1",
     "primer-dropdown": "0.1.0",
-    "primer-labels": "1.4.0",
-    "primer-markdown": "3.6.0",
-    "primer-support": "4.3.0"
+    "primer-labels": "1.5.1",
+    "primer-markdown": "3.7.1",
+    "primer-subhead": "0.0.1",
+    "primer-support": "4.4.1"
   }
 }

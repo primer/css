@@ -21,14 +21,14 @@
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "test-docs": "../../script/test-docs",
-    "build": "../../script/npm-run primer-module-build index.scss",
+    "test-docs": "ava --verbose ../../tests/modules/test-*.js",
+    "build": "primer-module-build index.scss",
     "prepare": "npm run build",
-    "lint": "../../script/lint-scss",
-    "test": "../../script/npm-run-all build lint test-docs"
+    "lint": "stylelint **/*.scss -s scss",
+    "test": "npm-run-all -s build lint test-docs"
   },
   "dependencies": {
-    "primer-support": "4.3.0"
+    "primer-support": "4.4.1"
   },
   "keywords": [
     "primer",

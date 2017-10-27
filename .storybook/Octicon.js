@@ -13,12 +13,15 @@ export const Octicon = (props) => {
 }
 
 const story = storiesOf('Octicons', module)
-const sizes = [64, 32, 16]
 
 Object.keys(octicons).forEach(name => {
-  story.add(name, () => (
-    <div>{sizes.map((size, i) => (
-      <Octicon name={name} width={size} height={size} key={i} />
-    ))}</div>
-  ))
+  story.add(name, () => {
+    return (
+      <div>
+        <Octicon name={name} height="64" />
+        <Octicon name={name} height="32" />
+        <Octicon name={name} height="16" />
+      </div>
+    )
+  })
 })
