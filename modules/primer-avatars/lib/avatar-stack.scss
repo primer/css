@@ -57,21 +57,21 @@
   }
 }
 
-.temp-avatar-stack-container {
+.AvatarStack-container {
   min-width: 26px;
   height: 20px;
   position: relative;
 }
 
-.authors-2 .temp-avatar-stack-container {
+.authors-2 .AvatarStack-container {
   min-width: 36px !important;
 }
 
-.authors-3 .temp-avatar-stack-container {
+.authors-3 .AvatarStack-container {
   min-width: 46px !important;
 }
 
-.temp-avatar-stack {
+.AvatarStack {
   position: absolute;
   background: $bg-white;
   padding-right: 5px;
@@ -160,14 +160,14 @@
   }
 }
 
-.navigation-focus .temp-avatar-stack {
+.navigation-focus .AvatarStack {
   background: lighten($blue-000, 1%);
 }
 
-.commit-tease .temp-avatar-stack {
+.commit-tease .AvatarStack {
   background: $blue-000;
 }
 
-.temp-avatar-stack:hover .avatar-more {
+.AvatarStack:hover .avatar-more {
   display: none;
 }
