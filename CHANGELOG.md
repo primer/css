@@ -2,6 +2,7 @@
 
 ### Added
 - New module `primer-subhead`. The Subhead is a simple header with a bottom border. It&#39;s designed to be used on settings and configuration pages.
+- Importing `.input-group` into `primer-forms` module.
 
 ### Removed
 - Removing `primer-cards` module.
