@@ -21,14 +21,14 @@
   }
 
   &::before {
-    top: -16px;
+    top: -15px;
     margin-left: -9px;
     border: 8px solid transparent;
     border-bottom-color: rgba(0, 0, 0, 0.15);
   }
 
   &::after {
-    top: -14px;
+    top: -13px;
     margin-left: -8px;
     border: 7px solid transparent;
     border-bottom-color: $bg-white;
