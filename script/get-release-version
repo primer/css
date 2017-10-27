@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+const RELEASE_PREFIX = 'release-'
+
+const getReleaseVersion = (pkg, branch) => {
+  const version = require(`../modules/${pkg}/package.json`).version
+
+  if (branch && branch.indexOf(RELEASE_PREFIX) === 0) {
+    const release = branch.replace(RELEASE_PREFIX, '')
+    if (release !== version) {
+      console.warn('⚠️   Release branch version mismatch:')
+      console.warn('    "%s" should be "%s" in %s/package.json', version, release, pkg)
+    }
+    return release
+  } else {
+    return version
+  }
+}
+
+if (module.parent) {
+  module.exports = getReleaseVersion
+} else {
+  const args = process.argv.slice(2)
+  const pkg = args.shift() || 'primer-css'
+  const branch = args.shift() || process.env.TRAVIS_BRANCH
+  const version = getReleaseVersion(pkg, branch)
+  console.log(version)
+}
