@@ -102,15 +102,12 @@
 
   &::after {
     display: block;
+    width: 17px;
     height: 20px;
     content: "";
+    background: $gray-200;
     border-radius: 2px;
     outline: $border-width $border-style $white;
-  }
-
-  &::after {
-    width: 17px;
-    background: $gray-200;
   }
 }
 
