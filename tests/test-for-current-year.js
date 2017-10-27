@@ -3,6 +3,7 @@ const fs = require("fs-extra")
 const globby = require("globby")
 
 const year = (new Date()).getFullYear()
+const yearRegex = new RegExp(`Copyright \\(c\\) ${year} GitHub Inc\\.`)
 
 test(`LICENSE files have the current year ${year}`, t => {
   return globby(["**/LICENSE", "!**/node_modules/**/LICENSE"])
@@ -10,7 +11,7 @@ test(`LICENSE files have the current year ${year}`, t => {
       t.plan(paths.length)
       return paths.map(path => {
         const license = fs.readFileSync(path, "utf8")
-        return t.regex(license, new RegExp(`Copyright \\(c\\) ${year} GitHub Inc\\.`), `The license "${path}" does not include the current year ${year}`)
+        return t.regex(license, yearRegex, `The license "${path}" does not include the current year ${year}`)
       })
     })
 })
@@ -22,7 +23,7 @@ test(`Source header copyrights have the current year ${year}`, t => {
       return paths.map(path => {
         const source = fs.readFileSync(path, "utf8")
         if (source.match(/Copyright \(c\)/)) {
-          return t.regex(source, new RegExp(`Copyright \\(c\\) ${year} GitHub Inc\\.`), `The source's header "${path}" does not include the current year ${year}`)
+          return t.regex(source, yearRegex, `The source's header "${path}" does not include the current year ${year}`)
         } else {
           return t.true(true)
         }
