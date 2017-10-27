@@ -1,3 +1,47 @@
+# 10.0.0
+
+### Added
+- New module `primer-subhead`. The Subhead is a simple header with a bottom border. It&#39;s designed to be used on settings and configuration pages.
+- Importing `.input-group` into `primer-forms` module.
+- New module `primer-branch-name` "A nice, consistent way to display branch names."
+- New module `primer-dropdown` "A lightweight context menu for navigation and actions."
+
+### Removed
+- Removing `primer-cards` module.
+- Removing `.form-cards` styles.
+
+### Changes
+- Moving `primer-breadcrumb` from `primer-marketing` to `primer-core`
+
+# 9.6.0
+
+### Added
+- Storybook. We've added a storybook prototyping environment for testing components in seclusion. To start the server run `npm start`
+- Adding yeoman generator for creating a primer module. `generator-primer-module`
+- Importing `stylelint-config-primer` from https://github.com/primer/stylelint-config-primer/ into monorepo.
+- Importing `stylelint-selector-no-utility` from https://github.com/primer/stylelint-selector-no-utility into monorepo.
+
+### Changes
+- Deployment and publishing scripts refinements.
+
+# 9.5.0
+
+### Added
+- It's now possible to style `<summary>` elements as buttons and have them appear in the active/selected state when the enclosing [`<details>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) is open. #346
+
+### Changes
+- Updates our release candidate versioning logic so that prerelease increments are done on a per-module basis, fixing #350.
+
+# 9.4.0
+
+### Added
+- Add `v-align-baseline` class to `primer-utilities` #324
+- Add deprecation warnings for `primer-cards` and `primer-forms/lib/form-validation.scss` #347 (these will be removed in v10.0.0)
+
+### Changes
+- Update npm metadata for `primer-css`, `primer-core`, `primer-product`, and `primer-marketing` #328
+- Remove `HEAD` heading from the changelog #327
+
 # 9.3.0
 
 ## Added

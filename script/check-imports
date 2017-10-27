@@ -1,0 +1,101 @@
+#!/usr/bin/env node
+const fse = require('fs-extra')
+const globby = require('globby')
+
+const DEP_FIELDS = [
+  'dependencies',
+]
+
+const parseImports = filename => {
+  return fse.readFile(filename, 'utf8')
+    .then(scss => {
+      const matches = scss.match(/\@import\s+"[-a-z]+\/index\.scss"/g)
+      return matches
+        ? Array.from(matches).map(stmt => stmt.match(/"([-a-z]+)\//)[1])
+        : []
+    })
+}
+
+const isPrimerModule = name => name.indexOf('primer-') === 0
+
+globby('modules/primer-*')
+  .then(paths => {
+    return paths.reduce((modules, path) => {
+      const pkg = require(`../${path}/package.json`)
+      if (pkg.dependencies) {
+        pkg.path = path
+        modules.push(pkg)
+      } else {
+        console.warn('%s: no dependencies', pkg.name)
+      }
+      return modules
+    }, [])
+  })
+  .then(modules => {
+    console.log('⏱  checking %d modules...', modules.length)
+
+    const maxNameLength = modules.reduce((len, {name}) => {
+      return Math.max(len, name.length)
+    }, 0)
+
+    const map = new Map()
+    modules.forEach(mod => map.set(mod.name, mod))
+
+    const tasks = []
+    const matches = []
+
+    modules.forEach(mod => {
+      const deps = Object.keys(mod.dependencies)
+        .filter(isPrimerModule)
+
+      tasks.push(
+        parseImports(`${mod.path}/index.scss`)
+          .then(imports => {
+            console.warn('📦  %s: %s%d dependencies, %d import(s)',
+                         mod.name, ' '.repeat(maxNameLength - mod.name.length),
+                         deps.length, imports.length)
+            imports.forEach(imported => {
+              if (!deps.includes(imported)) {
+                throw new Error(
+                  `❌  ${mod.name} imports ${imported}, but is missing a dependency`
+                )
+              }
+              matches.push({
+                module: mod.name,
+                imports: imported
+              })
+            })
+          })
+      )
+    })
+    return Promise.all(tasks)
+      .then(() => {
+        const primer = map.get('primer-css')
+
+        const deps = new Set(
+          Object.keys(primer.dependencies)
+            .filter(isPrimerModule)
+            .sort()
+        )
+
+        modules
+          .map(mod => mod.name)
+          .filter(mod => mod !== primer.name)
+          .sort()
+          .forEach(mod => {
+            if (!deps.has(mod)) {
+              throw new Error(
+                `primer-css is missing dependency for ${mod}@${map.get(mod).version}`
+              )
+            }
+          })
+      })
+      .then(() => matches)
+  })
+  .catch(error => {
+    console.error(error)
+    process.exit(1)
+  })
+  .then(matches => {
+    console.warn('✅  checked %d dependency/import pairs', matches.length)
+  })
