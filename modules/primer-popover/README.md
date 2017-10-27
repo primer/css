@@ -45,8 +45,8 @@ status: Experimental
 ```html title="Center-aligned"
 <div class="position-relative text-center">
   <button class="btn btn-primary">UI</button>
-  <div class="position-absolute right-0 left-0 text-left">
-    <div class="Popover p-4 mt-2 mx-auto Box box-shadow-large">
+  <div class="Popover">
+    <div class="Popover-message text-left p-4 mt-2 Box box-shadow-large">
       <h4 class="mb-2">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -60,8 +60,8 @@ status: Experimental
 ```html title="Right-aligned"
 <div class="position-relative text-right">
   <button class="btn btn-primary">UI</button>
-  <div class="position-absolute right-0 left-0 text-left">
-    <div class="Popover Popover--right p-4 mt-2 Box box-shadow-large">
+  <div class="Popover">
+    <div class="Popover-message Popover-message--right text-left p-4 mt-2 Box box-shadow-large">
       <h4 class="mb-2">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -75,8 +75,8 @@ status: Experimental
 ```html title="Left-aligned"
 <div class="position-relative">
   <button class="btn btn-primary">UI</button>
-  <div class="position-absolute right-0 left-0 text-left">
-    <div class="Popover Popover--left p-4 mt-2 Box box-shadow-large">
+  <div class="Popover">
+    <div class="Popover-message Popover-message--left text-left p-4 mt-2 Box box-shadow-large">
       <h4 class="mb-2">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -90,8 +90,8 @@ status: Experimental
 ```html title="Large"
 <div class="position-relative text-center">
   <button class="btn btn-primary">UI</button>
-  <div class="position-absolute right-0 left-0 text-left">
-    <div class="Popover Popover--lg p-4 mt-2 mx-auto Box box-shadow-large">
+  <div class="Popover">
+    <div class="Popover-message Popover-message--lg text-left p-4 mt-2 Box box-shadow-large">
       <h4 class="mb-2">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>

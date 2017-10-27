@@ -1,6 +1,12 @@
 .Popover {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.Popover-message {
   position: relative;
-  z-index: 20;
   max-width: 235px;
   margin-right: auto;
   margin-left: auto;
@@ -29,7 +35,7 @@
   }
 }
 
-.Popover--right {
+.Popover-message--right {
   right: -9px;
   margin-right: 0;
 
@@ -48,7 +54,7 @@
   }
 }
 
-.Popover--left {
+.Popover-message--left {
   left: -9px;
   margin-left: 0;
 
@@ -63,6 +69,6 @@
   }
 }
 
-.Popover--lg {
+.Popover-message--lg {
   max-width: 330px;
 }
