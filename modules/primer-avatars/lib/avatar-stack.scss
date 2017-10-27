@@ -46,31 +46,6 @@
 
 // Refactored, new avatar stack:
 
-.temp-tooltipped-align-left {
-  &::after {
-    left: 0 !important;
-    margin-left: 0 !important;
-  }
-
-  &::before {
-    left: 5px !important;
-  }
-}
-
-.AvatarStack-container {
-  min-width: 26px;
-  height: 20px;
-  position: relative;
-}
-
-.authors-2 .AvatarStack-container {
-  min-width: 36px !important;
-}
-
-.authors-3 .AvatarStack-container {
-  min-width: 46px !important;
-}
-
 .AvatarStack {
   position: absolute;
   background: $bg-white;
@@ -89,10 +64,6 @@
     border-radius: 2px;
     transition: margin 0.1s ease-in-out;
 
-    // &:only-child {
-    //   background-color: transparent;
-    // }
-
     &:first-child {
       z-index: 3;
     }
@@ -103,11 +74,9 @@
       border-right: 0;
     }
 
-    // stylelint-disable selector-max-type
     img {
       border-radius: 2px;
     }
-    // stylelint-enable selector-max-type
 
     &:nth-child(3) {
       z-index: 1;
@@ -130,7 +99,7 @@
   }
 
   &:hover .avatar {
-    margin-right: 0;
+    margin-right: 3px;
   }
 }
 
@@ -160,14 +129,19 @@
   }
 }
 
-.navigation-focus .AvatarStack {
-  background: lighten($blue-000, 1%);
-}
-
-.commit-tease .AvatarStack {
-  background: $blue-000;
-}
-
 .AvatarStack:hover .avatar-more {
   display: none;
+}
+
+// Temp tooltip class to position it correctly
+
+.temp-tooltipped-align-left {
+  &::after {
+    left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  &::before {
+    left: 5px !important;
+  }
 }
