@@ -42,7 +42,7 @@ status: Experimental
 
 ### Basic example
 
-```html title="Center-aligned"
+```html title="Center-aligned (default)"
 <div class="position-relative text-center">
   <button class="btn btn-primary">UI</button>
   <div class="Popover">
