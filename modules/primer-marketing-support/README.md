@@ -24,7 +24,7 @@ Documentation & refactor coming very soon
 
 This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `support` with this command.
 
-```
+```bash
 $ npm install --save support
 ```
 

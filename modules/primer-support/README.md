@@ -13,7 +13,7 @@ This repository is a module of the full [primer-css][primer] repository.
 
 This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-support` with this command.
 
-```
+```bash
 $ npm install --save primer-support
 ```
 

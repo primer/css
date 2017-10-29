@@ -9,7 +9,7 @@ This repository is a module of the full [primer-marketing-css][primer-marketing-
 
 This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-marketing-utilities` with this command.
 
-```
+```bash
 $ npm install --save primer-marketing-utilities
 ```
 
@@ -27,7 +27,7 @@ You can also import specific portions of the module by importing those partials 
 
 For a compiled **css** version of this module, a npm script is included that will output a css version to `build/build.css` The built css file is also included in the npm package.
 
-```
+```bash
 $ npm run build
 ```
 
