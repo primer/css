@@ -27,7 +27,7 @@ Documentation & refactor coming very soon
 
 This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-cards` with this command.
 
-```bash
+```sh
 $ npm install --save primer-cards
 ```
 
@@ -45,7 +45,7 @@ You can also import specific portions of the module by importing those partials 
 
 For a compiled **css** version of this module, a npm script is included that will output a css version to `build/build.css`
 
-```bash
+```sh
 $ npm run build
 ```
 

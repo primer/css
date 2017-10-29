@@ -11,7 +11,7 @@ The Primer CSS repo is managed as a monorepo that is composed of many npm packag
 
 This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `Primer-CSS` with this command.
 
-```bash
+```sh
 $ npm install --save primer-css
 ```
 
@@ -29,7 +29,7 @@ You can also import specific portions of the module by importing those partials 
 
 For a compiled **CSS** version of this module, a npm script is included that will output a CSS version to `build/build.css` The built CSS file is also included in the npm package.
 
-```bash
+```sh
 $ npm run build
 ```
 
