@@ -53,7 +53,9 @@
 }
 
 .AvatarStack-body {
-  background: inherit;
+  position: absolute;
+  background: $bg-white;
+  padding-right: 5px;
 
   .avatar {
     position: relative;
@@ -97,7 +99,7 @@
   }
 
   &:hover .avatar {
-    margin-right: 3px;
+    margin-right: 0;
   }
 }
 
