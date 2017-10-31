@@ -47,6 +47,12 @@
 // Refactored, new avatar stack:
 
 .AvatarStack {
+  position: relative;
+  min-width: 26px;
+  height: 20px;
+}
+
+.AvatarStack-body {
   background: inherit;
 
   .avatar {
@@ -122,7 +128,7 @@
   }
 }
 
-.AvatarStack:hover .avatar-more {
+.AvatarStack-body:hover .avatar-more {
   display: none;
 }
 
