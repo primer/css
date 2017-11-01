@@ -1,3 +1,14 @@
 // Type
 $alt-body-font: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
 $alt-mono-font: $mono-font;
+
+
+// Increases standard spacing scale by 16px step increments after 40px
+// i.e. After 40px, we have 56, 72, 88, etc.
+$spacer-7:  $spacer * 7;  // 56px
+$spacer-8:  $spacer * 9;  // 72px
+$spacer-9:  $spacer * 11; // 88px
+$spacer-10: $spacer * 13; // 104px
+$spacer-11: $spacer * 15; // 120px
+
+$marketingSpacers: $spacer7, $spacer-8, $spacer-9, $spacer-10, $spacer-11;
