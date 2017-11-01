@@ -2,6 +2,9 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 storiesOf('Button', module)
+  .add('button', () => (
+    <button>Button</button>
+  ))
   .add('btn', () => (
     <button className='btn'>Button</button>
   ))
