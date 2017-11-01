@@ -50,11 +50,19 @@
   position: relative;
   min-width: 26px;
   height: 20px;
+
+  &.AvatarStack--2 {
+    min-width: 36px;
+  }
+
+  &.AvatarStack--3 {
+    min-width: 46px;
+  }
 }
 
 .AvatarStack-body {
   position: absolute;
-  padding-right: 5px;
+  padding-right: $spacer-1;
   background: $bg-white;
 
   .avatar {
