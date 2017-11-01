@@ -1,3 +1,8 @@
+# 9.6.1
+
+### Changes
+- add `border-radius: 0` to `button` to account for updates in Chroma 62 macOS
+
 # 9.6.0
 
 ### Added
