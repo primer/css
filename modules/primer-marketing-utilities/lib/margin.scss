@@ -3,7 +3,7 @@
 // stylelint-disable block-opening-brace-space-before, declaration-colon-space-before, primer/selector-no-utility, comment-empty-line-before
 @for $i from 1 through length($marketingSpacers) {
   $size: #{nth($marketingSpacers, $i)};
-  $scale: #{$i - 1};
+  $scale: #{$i + 6};  // 7, 8, 9, 10, 11
 
   /* Set a #{$size} margin on the top */
   .mt-#{$scale} { margin-top   : #{$size} !important; }
