@@ -50,7 +50,6 @@
   position: relative;
   min-width: 26px;
   height: 20px;
-  font-size: 0;
 
   &.AvatarStack--2 {
     min-width: 36px;
@@ -63,13 +62,14 @@
 
 .AvatarStack-body {
   position: absolute;
+  display: flex;
   padding-right: 2px;
   background: $bg-white;
 
   .avatar {
     position: relative;
     z-index: 2;
-    display: inline-block;
+    display: flex;
     width: 20px;
     height: 20px;
     box-sizing: content-box;
@@ -102,7 +102,7 @@
     }
 
     .avatar:nth-child(n+4) {
-      display: inline-block;
+      display: flex;
       opacity: 1;
     }
 
@@ -143,17 +143,9 @@
 .AvatarStack--right {
   .AvatarStack-body {
     right: 0;
-    display: flex;
     padding-right: 0;
     padding-left: 2px;
     flex-direction: row-reverse;
-
-    // stylelint-disable selector-max-specificity
-    &:hover .avatar:nth-child(n+4) {
-      display: inline-block;
-      opacity: 1;
-    }
-    // stylelint-enable selector-max-specificity
 
     &:hover .avatar {
       margin-right: 0;
