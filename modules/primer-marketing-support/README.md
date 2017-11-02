@@ -9,17 +9,6 @@
 
 This repository is a module of the full [primer][primer] repository.
 
-## Documentation
-
-<!-- %docs
-title: Variables
-status: In review
--->
-
-Documentation & refactor coming very soon
-
-<!-- %enddocs -->
-
 ## Install
 
 This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `support` with this command.
@@ -37,6 +26,24 @@ The source files included are written in [Sass][sass] (`scss`) You can simply po
 ```
 
 You can also import specific portions of the module by importing those partials from the `/lib/` folder. _Make sure you import any requirements along with the modules._
+
+## Documentation
+
+### Extended spacing scale
+This module includes extra variables that extend the Primer spacing scale for marketing site needs.
+Starting from where the `primer-core` spacing scale ends, we are stepping up by 16px increments...
+
+| Scale | Value |
+|-------|-------|
+| 7     | 56    |
+| 8     | 72    |
+| 9     | 88    |
+| 10    | 104   |
+| 11    | 120   |
+
+This is useful for when we want to achieve bigger vertical spacing between sections on marketing sites.
+
+See [primer-marketing-utilities](https://github.com/primer/primer-css/tree/master/modules/primer-marketing-utilities) for related spacing utilities.
 
 ## License
 
