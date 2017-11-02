@@ -5,9 +5,7 @@ set -e
 # script/compare-published [tag]
 tag=${1:-${NPM_TAG:-latest}}
 
-# this is way faster than `lerna exec npm info . .name`
-# (but will skip modules that don't have "primer-" in them)
-modules=`ls -1 modules | egrep primer-`
+packages=$($(dirname $0)/get-packages)
 
 # tabular output separator for column(1)
 s=,
@@ -15,9 +13,10 @@ s=,
 echo "📦  Comparing Primer modules published @${tag}..."
 (
     echo "module${s}tag${s}published${s}local"
-    for module in $modules; do
-        v_published=`npm info ${module}@${tag} .version`
-        v_local=`jq -Mr .version modules/${module}/package.json`
+    for package in $packages; do
+        module=$(jq -r .name "$package/package.json")
+        v_published=$(npm info "$module@$tag" .version)
+        v_local=$(jq -Mr .version "$package/package.json")
         echo "${module}${s}${tag}${s}${v_published:-x}${s}${v_local}"
     done
 ) | column -t -s=${s}
