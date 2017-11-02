@@ -72,7 +72,7 @@
     width: 20px;
     height: 20px;
     box-sizing: content-box;
-    margin-right: -15px;
+    margin-right: -11px;
     background-color: $bg-white;
     border-right: $border-width $border-style $white;
     border-radius: 2px;
@@ -108,7 +108,7 @@
     }
 
     .avatar {
-      margin-right: 0;
+      margin-right: 3px;
     }
 
     .avatar-more {
@@ -159,7 +159,8 @@
     }
 
     &:hover .avatar {
-      margin-left: 0;
+      margin-right: 0;
+      margin-left: 3px;
     }
   }
 
@@ -173,13 +174,13 @@
 
     &::after {
       background: $gray-200;
-      width: 6px;
+      width: 5px;
     }
   }
 
   .avatar {
     margin-right: 0;
-    margin-left: -15px;
+    margin-left: -11px;
     border-right: 0;
     border-left: $border-width $border-style $white;
 
