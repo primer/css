@@ -42,7 +42,7 @@ $tooltip-duration: 0.1s !default;
   color: $tooltip-background-color;
   pointer-events: none;
   content: "";
-  border: 6px solid transparent;
+  border: 6px $border-style transparent;
   opacity: 0;
 }
 
