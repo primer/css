@@ -141,3 +141,48 @@
 .AvatarStack-body:hover .avatar-more {
   display: none;
 }
+
+// Right aligned variation
+
+.AvatarStack--right {
+
+  .AvatarStack-body {
+    right: 0;
+  }
+
+  .avatar.avatar-more {
+    margin-right: -15px;
+    background: $gray-300;
+
+    &::before {
+      background: $gray-100;
+    }
+
+    &::after {
+      background: $gray-200;
+    }
+  }
+
+  .avatar {
+    margin-right: 0;
+    margin-left: -15px;
+    border-right: 0;
+    border-left: $border-width $border-style $white;
+
+    &:last-child {
+      z-index: 1;
+      margin-right: -15px;
+      margin-left: 0;
+      border-right: 0;
+    }
+  }
+
+  &:hover .avatar:nth-child(n+4) {
+    display: inline-block;
+    opacity: 1;
+  }
+
+  &:hover .avatar {
+    margin-left: 0;
+  }
+}
