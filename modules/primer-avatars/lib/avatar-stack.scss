@@ -63,7 +63,7 @@
 
 .AvatarStack-body {
   position: absolute;
-  padding-right: $spacer-1;
+  padding-right: 2px;
   background: $bg-white;
 
   .avatar {
@@ -152,6 +152,8 @@
     right: 0;
     display: flex;
     flex-direction: row-reverse;
+    padding-right: 0;
+    padding-left: 2px;
 
     // stylelint-disable selector-max-specificity
     &:hover .avatar:nth-child(n+4) {
