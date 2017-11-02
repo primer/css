@@ -1,13 +1,11 @@
 .Popover {
   position: absolute;
-  right: 0;
-  left: 0;
   z-index: 100;
 }
 
 .Popover-message {
   position: relative;
-  max-width: 235px;
+  width: 235px;
   margin-right: auto;
   margin-left: auto;
 
@@ -70,5 +68,8 @@
 }
 
 .Popover-message--lg {
-  max-width: 330px;
+
+  @include breakpoint(sm) {
+    min-width: 330px;
+  }
 }
