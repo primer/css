@@ -14,7 +14,7 @@ $tooltip-duration: 0.1s !default;
   position: absolute;
   z-index: 1000000;
   display: none;
-  padding: 0.375 0.5;
+  padding: 0.375em 0.5em;
   font: normal normal 11px/1.25 $body-font;
   -webkit-font-smoothing: subpixel-antialiased;
   color: $tooltip-text-color;
