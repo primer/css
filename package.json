@@ -14,6 +14,7 @@
     "release-pr": "script/release-pr",
     "release-candidate": "script/release-candidate",
     "release": "script/release",
+    "publish-skipgit": "lerna publish --skip-git",
     "bump": "lerna publish --exact --skip-npm --since \"v$(npm info primer-css version)\"",
     "new-module": "script/new-module",
     "test": "lerna run test"
