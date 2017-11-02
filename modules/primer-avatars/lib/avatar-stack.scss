@@ -141,16 +141,3 @@
 .AvatarStack-body:hover .avatar-more {
   display: none;
 }
-
-// Temp tooltip class to position it correctly
-
-.temp-tooltipped-align-left {
-  &::after {
-    left: 0 !important;
-    margin-left: 0 !important;
-  }
-
-  &::before {
-    left: 5px !important;
-  }
-}
