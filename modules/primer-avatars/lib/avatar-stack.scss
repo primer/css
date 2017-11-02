@@ -148,16 +148,17 @@
 // Right aligned variation
 
 .AvatarStack--right {
-
   .AvatarStack-body {
     right: 0;
     display: flex;
     flex-direction: row-reverse;
 
+    // stylelint-disable selector-max-specificity
     &:hover .avatar:nth-child(n+4) {
       display: inline-block;
       opacity: 1;
     }
+    // stylelint-enable selector-max-specificity
 
     &:hover .avatar {
       margin-right: 0;
@@ -169,13 +170,13 @@
     background: $gray-300;
 
     &::before {
-      background: $gray-100;
       width: 2px;
+      background: $gray-100;
     }
 
     &::after {
-      background: $gray-200;
       width: 5px;
+      background: $gray-200;
     }
   }
 
