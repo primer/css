@@ -83,6 +83,10 @@
       z-index: 3;
     }
 
+    &:last-child {
+      z-index: 1;
+    }
+
     // stylelint-disable selector-max-type
     img {
       border-radius: 2px;
