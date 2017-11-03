@@ -63,7 +63,6 @@
 .AvatarStack-body {
   position: absolute;
   display: flex;
-  padding-right: 2px;
   background: $bg-white;
 
   .avatar {
@@ -147,8 +146,6 @@
 .AvatarStack--right {
   .AvatarStack-body {
     right: 0;
-    padding-right: 0;
-    padding-left: 2px;
     flex-direction: row-reverse;
 
     &:hover .avatar {
