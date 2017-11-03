@@ -2,7 +2,7 @@
  * Primer-marketing
  * http://primercss.io
  *
- * Released under MIT license. Copyright 2015 GitHub, Inc.
+ * Released under MIT license. Copyright (c) 2017 GitHub Inc.
  */
 
 // Primer master file
@@ -16,7 +16,6 @@
 
 // marketing specific css modules
 @import "primer-marketing-type/index.scss";
-@import "primer-cards/index.scss";
 @import "primer-page-headers/index.scss";
 @import "primer-page-sections/index.scss";
 @import "primer-tables/index.scss";

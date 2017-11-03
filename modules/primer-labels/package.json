@@ -1,5 +1,5 @@
 {
-  "version": "1.4.0",
+  "version": "1.5.1",
   "name": "primer-labels",
   "description": "Labels add metatdata or indicate status of items and navigational elements.",
   "homepage": "http://primercss.io/",
@@ -27,7 +27,7 @@
     "test": "../../script/npm-run-all build lint"
   },
   "dependencies": {
-    "primer-support": "4.3.0"
+    "primer-support": "4.4.1"
   },
   "keywords": [
     "primer",

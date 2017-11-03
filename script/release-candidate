@@ -1,64 +1,151 @@
-#!/bin/bash
-set -e
-echo "👌  Publishing release candidate..."
+#!/usr/bin/env node
+const execa = require('execa')
+const fetch = require('isomorphic-fetch')
+const fse = require('fs-extra')
+const registryUrl = require('registry-url')
+const semver = require('semver')
 
-package=primer-css
-npm_tag=rc
+const bin = 'node_modules/.bin/'
+const lernaBin = `${bin}lerna`
+const getPackages = require('./get-packages')
+const getReleaseVersion = require('./get-release-version')
+const revertPackages = require('./revert-packages')
 
-# get the version we're publishing as a release candidate
-local_version=$(jq -r .version modules/$package/package.json)
-if [[ $local_version =~ "-" ]]; then
-  echo "❌  Found pre-release version: $package@$local_version; bailing!"
-  exit 1
-else
-  echo "🏔  Local version: $package@$local_version"
-fi
-
-# get the version most recently published to the rc dist-tag
-rc_version=$(npm info $package@$npm_tag version)
-echo "📦  Published version for $package@$npm_tag: $rc_version"
-rc_release=${rc_version%-*}
-if [[ $local_version != $rc_release ]]; then
-  rc_version=$local_version
-fi
-
-# determine the 
-next_version=$(
-  $(npm bin)/semver --increment prerelease --preid $npm_tag $rc_version
+const PRERELEASE = 'prerelease'
+const DIST_TAG = 'rc'
+const PRIMER_CSS = 'primer-css'
+const RELEASE_VERSION = getReleaseVersion(
+  PRIMER_CSS,
+  process.env.TRAVIS_BRANCH
 )
-echo "🤜  Next version: $package@$next_version"
 
-# strip the pre-release version, yielding just major.minor.patch
-pre_version=${next_version:${#local_version}}
-echo "   Prerelease suffix: '$pre_version'"
+const depFields = [
+  'dependencies',
+  'devDependencies',
+  'optionalDependencies',
+  'peerDependencies',
+]
 
-# if this is the same version, we need to bump the prerelease
-# for all of the modules using the same prerelease identifier
-echo "Updating all module versions in place..."
-echo
-module_dirs=modules/primer-*
-for module_dir in $module_dirs; do
-  pushd $module_dir > /dev/null
-  module=$(basename $module_dir)
+const getUpdated = (args) => {
+  return execa(lernaBin, ['updated', '--json'], { reject: false })
+    .then(res => {
+      if (res.stdout == "") {
+        console.warn("No packages need updating")
+        return []
+      } else {
+        return JSON.parse(res.stdout)
+      }
+    })
+    .then(updated => updated.map(pkg => pkg.name))
+}
 
-  # determine the local version (in git)
-  module_version=$(jq -r .version package.json)
-  # strip the rc version, just in case
-  module_version=${module_version%-*}
-  module_next_version="$module_version$pre_version"
+const notify = status => {
+  return execa('script/notify', [status], {env: process.env})
+    .catch(error => {
+      console.error('notify error:', error)
+    })
+}
 
-  echo "$module@$module_version => $module_next_version"
-  # "upgrade" to the most recent RC version so that
-  # `npm version prerelease` can increment automatically
-  npm version --no-git --quiet "$module_next_version"
+const writePackage = (pkg) => {
+  const {dir} = pkg
+  delete pkg.dir
+  const json = JSON.stringify(pkg, null, '  ') + '\n'
+  pkg.dir = dir
+  return fse.writeFile(`${pkg.dir}/package.json`, json, 'utf8')
+    .then(() => pkg)
+}
 
-  popd > /dev/null
-done
+const bump = (pkg, by, preid) => {
+  if (pkg.name === PRIMER_CSS) {
+    pkg.version = RELEASE_VERSION
+  }
 
-# publish all the things!
-$(dirname $0)/notify pending
+  const original = pkg.version
+  let version = increment(pkg.version, by, preid)
+  return getPackageInfo(pkg.name)
+    .then(info => {
+      while (version in info.versions) {
+        version = increment(version, by, preid)
+      }
+      console.warn('%s %s -> %s', pkg.name, original, version)
+      pkg.version = version
+      return writePackage(pkg)
+    })
+}
 
-# note: this should NOT fail, so --bail=true applies
-$(npm bin)/lerna exec -- npm publish --tag=$npm_tag
+const getPackageInfo = (name) => {
+  const url = registryUrl() + name
+  return fetch(url).then(res => res.json())
+}
 
-$(dirname $0)/notify success
+const increment = (version, by, preid) => {
+  const {major, minor, patch} = semver(version)
+  const prev = [major, minor, patch].join('.')
+  const next = semver.inc(version, by, preid)
+  // if this is a prerelease, "revert" major.minor.patch
+  // so that only the prerelease id is incremented
+  return by === PRERELEASE
+    ? next.replace(/^\d+\.\d+\.\d+/, prev)
+    : next
+}
+
+const updateDependants = (pkg, pkgs) => {
+  return pkgs.filter(other => {
+    return depFields.some(field => {
+      if (other[field] && (pkg.name in other[field])) {
+        other[field][pkg.name] = pkg.version
+        return true
+      }
+    })
+  })
+}
+
+revertPackages()
+  .then(() => getPackages())
+  .then(dirs => {
+    return dirs.map(dir => {
+      const pkg = require(`../${dir}/package.json`)
+      pkg.dir = dir
+      return pkg
+    })
+  })
+  .then(pkgs => {
+    const by = PRERELEASE
+    const preid = DIST_TAG
+    return getUpdated()
+      .then(updated => {
+        console.warn('%d packages updated...', updated.length)
+        return pkgs.filter(pkg => updated.includes(pkg.name))
+      })
+      .then(updated => {
+        const changed = new Set(updated)
+        return Promise.all(updated.map(pkg => {
+          return bump(pkg, by, preid)
+            .then(pkg => updateDependants(pkg, pkgs))
+            .then(dependants => {
+              dependants.forEach(dep => changed.add(dep))
+            })
+        }))
+        .then(() => {
+          const tasks = Array.from(changed)
+            .map(writePackage)
+          return Promise.all(tasks)
+        })
+        .then(updated => {
+          const tasks = updated.map(pkg => {
+            return execa('npm', ['publish', '--tag', DIST_TAG], {
+              cwd: pkg.dir,
+              stdio: 'inherit',
+            })
+          })
+          return Promise.all(tasks)
+        })
+        .then(() => notify('success'))
+      })
+  })
+  .catch(error => {
+    console.error('Error:', error)
+    process.exitCode = 1
+    return notify('error')
+  })
+  .then(() => process.exit())

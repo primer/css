@@ -1,24 +1,27 @@
 import React from 'react'
 import {storiesOf} from '@storybook/react'
 import octicons from 'octicons'
-import SVGInline from 'react-svg-inline'
 
-const Octicon = (props) => {
+export const Octicon = (props) => {
   const {name} = props
   if (name in octicons) {
-    return <SVGInline svg={octicons[name].toSVG(props)} />
+    const svg = octicons[name].toSVG(props)
+    return <span dangerouslySetInnerHTML={ {__html: svg } }  />
   } else {
     throw new Error(`No such octicon: "${name}"!`)
   }
 }
 
 const story = storiesOf('Octicons', module)
-const sizes = [64, 32, 16]
 
 Object.keys(octicons).forEach(name => {
-  story.add(name, () => (
-    <div>{sizes.map((size, i) => (
-      <Octicon name={name} width={size} height={size} key={i} />
-    ))}</div>
-  ))
+  story.add(name, () => {
+    return (
+      <div>
+        <Octicon name={name} height="64" />
+        <Octicon name={name} height="32" />
+        <Octicon name={name} height="16" />
+      </div>
+    )
+  })
 })

@@ -13,9 +13,9 @@
   padding: $spacer-3 $spacer-2;
   margin-right: $spacer-3;
   font-size: $body-font-size;
-  text-align: center;
   line-height: $lh-default;
   color: $text-gray;
+  text-align: center;
   border-bottom: 2px solid transparent;
 
   .Counter {
@@ -40,9 +40,9 @@
   }
 
   &.selected {
+    font-weight: $font-weight-bold;
     color: $text-gray-dark;
     border-bottom-color: $orange-600;
-    font-weight: $font-weight-bold;
 
     .octicon {
       color: $gray-500;

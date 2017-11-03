@@ -71,8 +71,7 @@
 .tooltipped-no-delay:focus {
   &::before,
   &::after {
-    opacity: 1;
-    animation: none;
+    animation-delay: 0s;
   }
 }
 

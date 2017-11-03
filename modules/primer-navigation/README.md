@@ -48,7 +48,7 @@ Primer comes with several navigation components. Some were designed with singula
 
 The menu is a vertical list of navigational links. **A menu's width and placement must be set by you.** If you like, just use our grid columns as a parent. Otherwise, apply a custom `width`.
 
-```html
+```html title="Menu"
 <nav class="menu" aria-label="Person settings">
   <a class="menu-item selected" href="#url" aria-current="page">Account</a>
   <a class="menu-item" href="#url">Profile</a>
@@ -59,7 +59,7 @@ The menu is a vertical list of navigational links. **A menu's width and placemen
 
 There are a few subcomponents and add-ons that work well with the menu, including avatars, counters, and Octicons.
 
-```html
+```html title="Menu with octicons, avatars and counters"
 <nav class="menu" aria-label="Person settings">
   <a class="menu-item selected" href="#url" aria-current="page">
     <%= octicon "tools" %>
@@ -83,7 +83,7 @@ There are a few subcomponents and add-ons that work well with the menu, includin
 
 You can also add optional headings to a menu. Feel free to use nearly any semantic element with the `.menu-heading` class, including inline elements, headings, and more.
 
-```html
+```html title="Menu with heading"
 <nav class="menu" aria-labelledby="menu-heading">
   <span class="menu-heading" id="menu-heading">Menu heading</span>
   <a class="menu-item selected" href="#url" aria-current="page">Account</a>
@@ -97,27 +97,26 @@ You can also add optional headings to a menu. Feel free to use nearly any semant
 
 `.UnderlineNav` is navigation that is typically used at the top of a page as the main page navigation.
 
-```html
-
-<nav class="UnderlineNav" aria-label="Foo bar">
+```html title="UnderlineNav"
+<nav class="UnderlineNav">
   <div class="UnderlineNav-items">
-    <a href="#url" class="UnderlineNav-item selected">Item 1</a>
-    <a href="#url" class="UnderlineNav-item">Item 2</a>
-    <a href="#url" class="UnderlineNav-item">Item 3</a>
-    <a href="#url" class="UnderlineNav-item">Item 4</a>
+    <a href="#url" role="tab" title="Item 1" class="UnderlineNav-item selected">Item 1</a>
+    <a href="#url" role="tab" title="Item 2" class="UnderlineNav-item">Item 2</a>
+    <a href="#url" role="tab" title="Item 3" class="UnderlineNav-item">Item 3</a>
+    <a href="#url" role="tab" title="Item 4" class="UnderlineNav-item">Item 4</a>
   </div>
 </nav>
 ```
 
 You can right align the navigation.
 
-```html
-<nav class="UnderlineNav UnderlineNav--right" aria-label="Foo bar">
+```html title="UnderlineNav--right"
+<nav class="UnderlineNav UnderlineNav--right">
   <div class="UnderlineNav-items">
-    <a href="#url" class="UnderlineNav-item selected">Item 1</a>
-    <a href="#url" class="UnderlineNav-item">Item 2</a>
-    <a href="#url" class="UnderlineNav-item">Item 3</a>
-    <a href="#url" class="UnderlineNav-item">Item 4</a>
+    <a href="#url" role="tab" title="Item 1" class="UnderlineNav-item selected">Item 1</a>
+    <a href="#url" role="tab" title="Item 2" class="UnderlineNav-item">Item 2</a>
+    <a href="#url" role="tab" title="Item 3" class="UnderlineNav-item">Item 3</a>
+    <a href="#url" role="tab" title="Item 4" class="UnderlineNav-item">Item 4</a>
   </div>
 </nav>
 ```
@@ -125,22 +124,33 @@ You can right align the navigation.
 
 The navigation will work with added counters and/or octicons
 
-```html
+```html title="UnderlineNav with Counter"
 <nav class="UnderlineNav" aria-label="Foo bar">
   <div class="UnderlineNav-items">
-    <a href="#url" class="UnderlineNav-item selected">Item 1</a>
-    <a href="#url" class="UnderlineNav-item">Item 2
+    <a href="#url" class="UnderlineNav-item selected">
+      <%= octicon "tools" %>
+      Item 1
+    </a>
+    <a href="#url" class="UnderlineNav-item">
+      <%= octicon "tools" %>
+      Item 2
       <span className="Counter">10</span>
      </a>
-    <a href="#url" class="UnderlineNav-item">Item 3</a>
-    <a href="#url" class="UnderlineNav-item">Item 4</a>
+     <a href="#url" class="UnderlineNav-item">
+       <%= octicon "tools" %>
+       Item 3
+    </a>
+    <a href="#url" class="UnderlineNav-item">
+      <%= octicon "tools" %>
+      Item 4
+     </a>
   </div>
 </nav>
 ```
 
 Use `.UnderlineNav--full` to use a container within the components
 
-```html
+```html title="UnderlineNav--full"
 <nav class="UnderlineNav UnderlineNav--full" aria-label="Foo bar">
   <div class="container-lg">
     <div class="UnderlineNav-items">
@@ -157,7 +167,7 @@ Use `.UnderlineNav--full` to use a container within the components
 
 Use `.UnderlineNav-actions` to use another element alongside the underline nav
 
-```html
+```html title="UnderlineNav-actions"
 <nav class="UnderlineNav" aria-label="Foo bar">
   <div class="UnderlineNav-items">
     <a href="#url" class="UnderlineNav-item selected">Item 1</a>
@@ -178,7 +188,7 @@ Use `.UnderlineNav-actions` to use another element alongside the underline nav
 
 When you need to toggle between different views, consider using a tabnav. It'll given you a left-aligned horizontal row of... tabs!
 
-```html
+```html title="tabnav"
 <div class="tabnav">
   <nav class="tabnav-tabs" aria-label="Foo bar">
     <a href="#url" class="tabnav-tab selected" aria-current="page">Foo tab</a>
@@ -189,7 +199,7 @@ When you need to toggle between different views, consider using a tabnav. It'll 
 
 Use `.float-right` to align additional elements in the `.tabnav`:
 
-```html
+```html title="tabnav with buttons"
 <div class="tabnav">
   <a class="btn btn-sm float-right" href="#url" role="button">Button</a>
   <nav class="tabnav-tabs" aria-label="Foo bar">
@@ -201,7 +211,7 @@ Use `.float-right` to align additional elements in the `.tabnav`:
 
 Additional bits of text and links can be styled for optimal placement with `.tabnav-extra`:
 
-```html
+```html title="tabnav-extra"
 <div class="tabnav">
   <div class="tabnav-extra float-right">
     Tabnav widget text here.
@@ -213,7 +223,7 @@ Additional bits of text and links can be styled for optimal placement with `.tab
 </div>
 ```
 
-```html
+```html title="tabnav with everything"
 <div class="tabnav">
   <div class="float-right">
     <a class="tabnav-extra" href="#url">
@@ -234,7 +244,7 @@ Additional bits of text and links can be styled for optimal placement with `.tab
 
 A vertical list of filters. Grey text on white background. Selecting a filter from the list will fill its background with blue and make the text white.
 
-```html
+```html title="filter-list"
 <ul class="filter-list">
   <li>
     <a href="#url" class="filter-item selected" aria-current="page">
@@ -260,7 +270,7 @@ A vertical list of filters. Grey text on white background. Selecting a filter fr
 
 `.subnav` is navigation that is typically used when on a dashboard type interface with another set of navigation above it. This helps distinguish navigation hierarchy.
 
-```html
+```html title="subnav"
 <nav class="subnav" aria-label="Respository">
   <a href="#url" class="subnav-item selected" aria-current="page">Item 1</a>
   <a href="#url" class="subnav-item">Item 2</a>
@@ -270,7 +280,7 @@ A vertical list of filters. Grey text on white background. Selecting a filter fr
 
 You can have `subnav-search` in the subnav bar.
 
-```html
+```html title="subnav-search"
 <div class="subnav">
   <nav class="subnav-links" aria-label="Repository">
     <a href="#url" class="subnav-item selected" aria-current="page">Item 1</a>
@@ -287,7 +297,7 @@ You can have `subnav-search` in the subnav bar.
 
 You can also use a `subnav-search-context` to display search help in a select menu.
 
-```html
+```html title="subnav-search-context"
 <div class="subnav">
   <nav class="subnav-links">
     <a href="#url" class="subnav-item selected">Item 1</a>
