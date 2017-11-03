@@ -41,42 +41,13 @@ status: Experimental
 -->
 
 ### Basic example
+Defaults to caret oriented top-center.
 
-```html title="Center-aligned (default)"
+```html title="Default (top-center)"
 <div class="position-relative text-center">
   <button class="btn btn-primary">UI</button>
-  <div class="Popover">
-    <div class="Popover-message text-left p-4 mt-2 Box box-shadow-large">
-      <h4 class="mb-2">Popover heading</h4>
-      <p>Message about this particular piece of UI.</p>
-      <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
-    </div>
-  </div>
-</div>
-```
-
-### Right-aligned example
-
-```html title="Right-aligned"
-<div class="position-relative text-right">
-  <button class="btn btn-primary">UI</button>
-  <div class="Popover">
-    <div class="Popover-message Popover-message--right text-left p-4 mt-2 Box box-shadow-large">
-      <h4 class="mb-2">Popover heading</h4>
-      <p>Message about this particular piece of UI.</p>
-      <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
-    </div>
-  </div>
-</div>
-```
-
-### Left-aligned example
-
-```html title="Left-aligned"
-<div class="position-relative">
-  <button class="btn btn-primary">UI</button>
-  <div class="Popover">
-    <div class="Popover-message Popover-message--left text-left p-4 mt-2 Box box-shadow-large">
+  <div class="Popover right-0 left-0">
+    <div class="Popover-message text-left p-4 mt-2 mx-auto Box box-shadow-large">
       <h4 class="mb-2">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -90,7 +61,7 @@ status: Experimental
 ```html title="Large"
 <div class="position-relative text-center">
   <button class="btn btn-primary">UI</button>
-  <div class="Popover">
+  <div class="Popover right-0 left-0">
     <div class="Popover-message Popover-message--lg text-left p-4 mt-2 Box box-shadow-large">
       <h4 class="mb-2">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
@@ -99,6 +70,58 @@ status: Experimental
   </div>
 </div>
 ```
+
+### Top-right-aligned example
+
+```html title="Top-right"
+<div class="position-relative text-right">
+  <button class="btn btn-primary">UI</button>
+  <div class="Popover right-0">
+    <div class="Popover-message Popover-message--top--right text-left p-4 mt-2 Box box-shadow-large">
+      <h4 class="mb-2">Popover heading</h4>
+      <p>Message about this particular piece of UI.</p>
+      <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+    </div>
+  </div>
+</div>
+```
+
+### Right-aligned example
+
+```html title="Right"
+<div class="Popover">
+  <div class="Popover-message Popover-message--right p-4 mt-2 Box box-shadow-large">
+    <h4 class="mb-2">Popover heading</h4>
+    <p>Message about this particular piece of UI.</p>
+    <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+  </div>
+</div>
+```
+
+### Left-aligned example
+
+```html title="Left"
+<div class="Popover">
+  <div class="Popover-message Popover-message--left p-4 mt-2 Box box-shadow-large">
+    <h4 class="mb-2">Popover heading</h4>
+    <p>Message about this particular piece of UI.</p>
+    <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+  </div>
+</div>
+```
+
+### Bottom-aligned example
+
+```html title="Bottom"
+<div class="Popover">
+  <div class="Popover-message Popover-message--bottom p-4 mt-2 mx-auto Box box-shadow-large">
+    <h4 class="mb-2">Popover heading</h4>
+    <p>Message about this particular piece of UI.</p>
+    <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+  </div>
+</div>
+```
+
 <!-- %enddocs -->
 
 ## License
