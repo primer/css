@@ -57,6 +57,10 @@
     margin-right: 0;
     margin-left: $spacer-3;
   }
+
+  .UnderlineNav-actions {
+    flex: 1 1 auto;
+  }
 }
 
 .UnderlineNav-actions {
@@ -66,7 +70,10 @@
 .UnderlineNav--full {
   display: block;
 
-  .container-lg {
+  .container-lg,
+  .container-md,
+  .container-xl
+   {
     display: flex;
     justify-content: space-between;
   }
