@@ -48,7 +48,7 @@ The `btn-outline` has also been extended with the marketing color palette:
 ```
 
 ## Additional sizing
-There are cases where you might want to increase the size of a button, for example when putting a main CTA inside of a jumbotron or major page callout. The btn-large class does the following to make a button more prominent:
+There are cases where you might want to increase the size of a button, for example when putting a main CTA inside of a jumbotron or major page callout. The `btn-large` class does the following to make a button more prominent:
 
 1. Adds extra additional padding in `ems` so that the padding scales proportionately with the `font-size`
 2. Increases the border radius to 6px
