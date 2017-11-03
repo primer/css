@@ -172,11 +172,5 @@
     margin-left: -11px;
     border-right: 0;
     border-left: $border-width $border-style $white;
-
-    &:last-child {
-      margin-right: 0;
-      margin-left: 0;
-      border-left: 0;
-    }
   }
 }
