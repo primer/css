@@ -108,7 +108,23 @@ You can also add optional headings to a menu. Feel free to use nearly any semant
 </nav>
 ```
 
-You can right align the navigation.
+Use `.UnderlineNav-actions` to use another element alongside the underline nav
+
+```html title="UnderlineNav-actions"
+<nav class="UnderlineNav" aria-label="Foo bar">
+  <div class="UnderlineNav-items">
+    <a href="#url" class="UnderlineNav-item selected">Item 1</a>
+    <a href="#url" class="UnderlineNav-item">Item 2</a>
+    <a href="#url" class="UnderlineNav-item">Item 3</a>
+    <a href="#url" class="UnderlineNav-item">Item 4</a>
+  </div>
+  <div class="UnderlineNav-actions">
+    <a class="btn">Button</a>
+  </div>
+</nav>
+```
+
+You can right align the navigation with `.UnderlineNav--right`.
 
 ```html title="UnderlineNav--right"
 <nav class="UnderlineNav UnderlineNav--right">
@@ -117,6 +133,22 @@ You can right align the navigation.
     <a href="#url" role="tab" title="Item 2" class="UnderlineNav-item">Item 2</a>
     <a href="#url" role="tab" title="Item 3" class="UnderlineNav-item">Item 3</a>
     <a href="#url" role="tab" title="Item 4" class="UnderlineNav-item">Item 4</a>
+  </div>
+</nav>
+```
+
+This also works when adding actions.
+
+```html title="UnderlineNav--right with actions"
+<nav class="UnderlineNav UnderlineNav--right" aria-label="Foo bar">
+  <div class="UnderlineNav-actions">
+    <a class="btn">Button</a>
+  </div>
+  <div class="UnderlineNav-items">
+    <a href="#url" class="UnderlineNav-item selected">Item 1</a>
+    <a href="#url" class="UnderlineNav-item">Item 2</a>
+    <a href="#url" class="UnderlineNav-item">Item 3</a>
+    <a href="#url" class="UnderlineNav-item">Item 4</a>
   </div>
 </nav>
 ```
@@ -134,7 +166,7 @@ The navigation will work with added counters and/or octicons
     <a href="#url" class="UnderlineNav-item">
       <%= octicon "tools" %>
       Item 2
-      <span className="Counter">10</span>
+      <span class="Counter">10</span>
      </a>
      <a href="#url" class="UnderlineNav-item">
        <%= octicon "tools" %>
@@ -156,32 +188,21 @@ Use `.UnderlineNav--full` to use a container within the components
     <div class="UnderlineNav-items">
       <a href="#url" class="UnderlineNav-item selected">Item 1</a>
       <a href="#url" class="UnderlineNav-item">Item 2
-        <span className="Counter">10</span>
+        <span class="Counter">10</span>
        </a>
       <a href="#url" class="UnderlineNav-item">Item 3</a>
       <a href="#url" class="UnderlineNav-item">Item 4</a>
+    </div>
+    <div class="UnderlineNav-actions">
+      <a class="btn">Button</a>
     </div>
   </div>
 </nav>
 ```
 
-Use `.UnderlineNav-actions` to use another element alongside the underline nav
 
-```html title="UnderlineNav-actions"
-<nav class="UnderlineNav" aria-label="Foo bar">
-  <div class="UnderlineNav-items">
-    <a href="#url" class="UnderlineNav-item selected">Item 1</a>
-    <a href="#url" class="UnderlineNav-item">Item 2
-      <span class="Counter">10</span>
-     </a>
-    <a href="#url" class="UnderlineNav-item">Item 3</a>
-    <a href="#url" class="UnderlineNav-item">Item 4</a>
-  </div>
-  <div class="UnderlineNav-actions">
-    <a class="btn">Button</a>
-  </div>
-</nav>
-```
+
+
 
 
 ## Tabnav
