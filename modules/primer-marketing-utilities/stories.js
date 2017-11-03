@@ -5,7 +5,7 @@ storiesOf('Marketing Utilities', module)
 .add('Responsive borders', () => (
   <div className='border-top border-sm-right border-md-bottom border-lg-top-0'>.border-top-0</div>
 ))
-.add('Border colors', () => (
+.add('border-white-fade', () => (
 <div className='bg-blue text-white p-3'>
   <span className='border border-white-fade p-2'>
     .border-white-fade
