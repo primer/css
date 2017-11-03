@@ -1,4 +1,4 @@
-# Primer CSS / Popover
+# Primer CSS Popover
 
 [![npm version](http://img.shields.io/npm/v/primer-popover.svg)](https://www.npmjs.org/package/primer-popover)
 [![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
