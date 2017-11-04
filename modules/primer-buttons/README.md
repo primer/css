@@ -126,7 +126,9 @@ Make any button full-width by adding `.btn-block`. It adds `width: 100%;`, chang
 
 ## Link button
 
-Buttons that looks like a link. **Note:** this should not be used with `.btn`.
+Create a button that looks like a link with `.btn-link`. Rather than using an `<a>` to trigger JS, this style on a `<button>` should be used for better accessibility.
+
+**The `.btn-link` class is not designed to be used with `.btn`; the overlapping styles are not compatible.**
 
 ```html
 <p><button class="btn-link" type="button">Link button</button></p>
