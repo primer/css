@@ -42,6 +42,8 @@ status: Stable
 
 Buttons are used for **actions**, like in forms, while textual hyperlinks are used for **destinations**, or moving from one page to another.
 
+{:toc}
+
 ## Primer buttons
 
 Use the standard—yet classy—`.btn` for form actions and primary page actions. These are used extensively around the site.
