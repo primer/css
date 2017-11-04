@@ -42,7 +42,7 @@ status: Stable
 
 Buttons are used for **actions**, like in forms, while textual hyperlinks are used for **destinations**, or moving from one page to another.
 
-#### Buttons
+## Buttons
 
 ```html
 <button class="m-1 btn" type="button">Close</button>
@@ -76,7 +76,7 @@ Buttons are used for **actions**, like in forms, while textual hyperlinks are us
 <button class="m-1 btn btn-purple disabled" type="button">Try if for free</button>
 ```
 
-#### Default buttons
+## Default buttons
 
 Use the standard—yet classy—`.btn` for form actions and primary page actions. These are used extensively around the site.
 
@@ -94,7 +94,7 @@ You can find them in two sizes: the default `.btn` and the smaller `.btn-sm`.
 <button class="btn btn-sm" type="button">Small button</button>
 ```
 
-#### Primary
+## Primary
 
 Primary buttons are green and are used to indicate the *primary* action on a page. When you need your buttons to stand out, use `.btn.btn-primary`. You can use it with both button sizes—just add `.btn-primary`.
 
@@ -103,7 +103,7 @@ Primary buttons are green and are used to indicate the *primary* action on a pag
 <button class="btn btn-sm btn-primary" type="button">Small primary button</button>
 ```
 
-#### Danger
+## Danger
 
 Danger buttons are red. They help reiterate that the intended action is important or potentially dangerous (e.g., deleting a repo or transferring ownership). Similar to the primary buttons, just add `.btn-danger`.
 
@@ -112,7 +112,7 @@ Danger buttons are red. They help reiterate that the intended action is importan
 <button class="btn btn-sm btn-danger" type="button">Small danger button</button>
 ```
 
-#### Outline
+## Outline
 
 Outline buttons downplay an action as they appear like boxy links. Just add `.btn-outline` and go.
 
@@ -121,7 +121,7 @@ Outline buttons downplay an action as they appear like boxy links. Just add `.bt
 <button class="btn btn-sm btn-outline" type="button">Outline button</button>
 ```
 
-#### Disabled state
+## Disabled state
 
 Disable `<button>` elements with the boolean `disabled` attribute and `<a>` elements with the `.disabled` class.
 
@@ -147,7 +147,7 @@ Similar styles are applied to primary, danger, and outline buttons:
 <a class="btn btn-outline disabled" href="#url" role="button">Disabled button</a>
 ```
 
-#### Block buttons
+## Block buttons
 
 Make any button full-width by adding `.btn-block`. It adds `width: 100%;`, changes the `display` from `inline-block` to `block`, and centers the button text.
 
@@ -156,7 +156,7 @@ Make any button full-width by adding `.btn-block`. It adds `width: 100%;`, chang
 <p><button class="btn btn-sm btn-block" type="button">Small block button</button></p>
 ```
 
-#### With counts
+## With counts
 
 You can easily append a count to a **small button**. Add the `.with-count` class to the `.btn-sm` and then add the `.social-count` after the button.
 
@@ -196,7 +196,7 @@ You can also use the [counter](../../product/components/labels) component within
 </button>
 ```
 
-#### Button groups
+## Button groups
 
 Have a hankering for a series of buttons that are attached to one another? Wrap them in a `.BtnGroup` and the buttons will be rounded and spaced automatically.
 
@@ -233,7 +233,7 @@ Add `.BtnGroup-form` to `<form>`s within `.BtnGroup`s for proper spacing and rou
 </div>
 ```
 
-#### Hidden text button
+## Hidden text button
 
 Use `.hidden-text-expander` to indicate and toggle hidden text.
 
@@ -246,7 +246,7 @@ Use `.hidden-text-expander` to indicate and toggle hidden text.
 You can also make the expander appear inline by adding `.inline`.
 
 
-#### Using button styles with the details summary element
+## Using button styles with the details summary element
 
 You can add `.btn` and `.btn-*` classes to any
 [`<summary>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary)
