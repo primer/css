@@ -42,7 +42,7 @@ status: Stable
 
 Buttons are used for **actions**, like in forms, while textual hyperlinks are used for **destinations**, or moving from one page to another.
 
-## Default buttons
+## Primer buttons
 
 Use the standard—yet classy—`.btn` for form actions and primary page actions. These are used extensively around the site.
 
@@ -60,7 +60,7 @@ You can find them in two sizes: the default `.btn` and the smaller `.btn-sm`.
 <button class="btn btn-sm" type="button">Small button</button>
 ```
 
-## Primary
+## Primary button
 
 Primary buttons are green and are used to indicate the *primary* action on a page. When you need your buttons to stand out, use `.btn.btn-primary`. You can use it with both button sizes—just add `.btn-primary`.
 
@@ -69,7 +69,7 @@ Primary buttons are green and are used to indicate the *primary* action on a pag
 <button class="btn btn-sm btn-primary" type="button">Small primary button</button>
 ```
 
-## Danger
+## Danger button
 
 Danger buttons are red. They help reiterate that the intended action is important or potentially dangerous (e.g., deleting a repo or transferring ownership). Similar to the primary buttons, just add `.btn-danger`.
 
@@ -78,7 +78,7 @@ Danger buttons are red. They help reiterate that the intended action is importan
 <button class="btn btn-sm btn-danger" type="button">Small danger button</button>
 ```
 
-## Outline
+## Outline button
 
 Outline buttons downplay an action as they appear like boxy links. Just add `.btn-outline` and go.
 
@@ -87,7 +87,7 @@ Outline buttons downplay an action as they appear like boxy links. Just add `.bt
 <button class="btn btn-sm btn-outline" type="button">Outline button</button>
 ```
 
-## Disabled state
+## Disabled button
 
 Disable `<button>` elements with the boolean `disabled` attribute and `<a>` elements with the `.disabled` class.
 
@@ -113,7 +113,7 @@ Similar styles are applied to primary, danger, and outline buttons:
 <a class="btn btn-outline disabled" href="#url" role="button">Disabled button</a>
 ```
 
-## Block buttons
+## Block button
 
 Make any button full-width by adding `.btn-block`. It adds `width: 100%;`, changes the `display` from `inline-block` to `block`, and centers the button text.
 
@@ -122,7 +122,7 @@ Make any button full-width by adding `.btn-block`. It adds `width: 100%;`, chang
 <p><button class="btn btn-sm btn-block" type="button">Small block button</button></p>
 ```
 
-## Link buttons
+## Link button
 
 Buttons that looks like a link. **Note:** this should not be used with `.btn`.
 
@@ -130,7 +130,7 @@ Buttons that looks like a link. **Note:** this should not be used with `.btn`.
 <p><button class="btn-link" type="button">Link button</button></p>
 ```
 
-## With counts
+## Button with counts
 
 You can easily append a count to a **small button**. Add the `.with-count` class to the `.btn-sm` and then add the `.social-count` after the button.
 
