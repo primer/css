@@ -44,7 +44,7 @@ Buttons are used for **actions**, like in forms, while textual hyperlinks are us
 
 {:toc}
 
-## Primer buttons
+## Default button
 
 Use the standard—yet classy—`.btn` for form actions and primary page actions. These are used extensively around the site.
 
