@@ -156,6 +156,14 @@ Make any button full-width by adding `.btn-block`. It adds `width: 100%;`, chang
 <p><button class="btn btn-sm btn-block" type="button">Small block button</button></p>
 ```
 
+## Link buttons
+
+Buttons that looks like a link. **Note:** this should not be used with `.btn`.
+
+```html
+<p><button class="btn-link" type="button">Link button</button></p>
+```
+
 ## With counts
 
 You can easily append a count to a **small button**. Add the `.with-count` class to the `.btn-sm` and then add the `.social-count` after the button.
