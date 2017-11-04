@@ -42,40 +42,6 @@ status: Stable
 
 Buttons are used for **actions**, like in forms, while textual hyperlinks are used for **destinations**, or moving from one page to another.
 
-## Buttons
-
-```html
-<button class="m-1 btn" type="button">Close</button>
-<button class="m-1 btn btn-primary" type="button">Comment</button>
-<button class="m-1 btn btn-danger" type="button">Rename repository</button>
-<button class="m-1 btn btn-blue" type="button">Sign up for free</button>
-<button class="m-1 btn btn-purple" type="button">Try if for free</button>
-<br>
-<button class="m-1 btn hover" type="button">Close</button>
-<button class="m-1 btn btn-primary hover" type="button">Comment</button>
-<button class="m-1 btn btn-danger hover" type="button">Rename repository</button>
-<button class="m-1 btn btn-blue hover" type="button">Sign up for free</button>
-<button class="m-1 btn btn-purple hover" type="button">Try if for free</button>
-<br>
-<button class="m-1 btn focus" type="button">Close</button>
-<button class="m-1 btn btn-primary focus" type="button">Comment</button>
-<button class="m-1 btn btn-danger focus" type="button">Rename repository</button>
-<button class="m-1 btn btn-blue focus" type="button">Sign up for free</button>
-<button class="m-1 btn btn-purple focus" type="button">Try if for free</button>
-<br>
-<button class="m-1 btn selected" type="button">Close</button>
-<button class="m-1 btn btn-primary selected" type="button">Comment</button>
-<button class="m-1 btn btn-danger selected" type="button">Rename repository</button>
-<button class="m-1 btn btn-blue selected" type="button">Sign up for free</button>
-<button class="m-1 btn btn-purple selected" type="button">Try if for free</button>
-<br>
-<button class="m-1 btn disabled" type="button">Close</button>
-<button class="m-1 btn btn-primary disabled" type="button">Comment</button>
-<button class="m-1 btn btn-danger disabled" type="button">Rename repository</button>
-<button class="m-1 btn btn-blue disabled" type="button">Sign up for free</button>
-<button class="m-1 btn btn-purple disabled" type="button">Try if for free</button>
-```
-
 ## Default buttons
 
 Use the standard—yet classy—`.btn` for form actions and primary page actions. These are used extensively around the site.
