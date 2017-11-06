@@ -75,14 +75,54 @@ When you need a larger parent avatar, and a smaller child one, overlaid slightly
 
 ### Avatar stack
 
-Stacked avatars can be used to show who is participating in thread when there is limited space available. When you hover over the stack, the avatars will reveal themselves. Optimally, you should put no more than 3 avatars in the stack.
+Stacked avatars can be used to show multiple collaborators or participants when there is limited space available. When you hover over the stack, the avatars will reveal themselves.
 
 ```html
-<span class="avatar-stack tooltipped tooltipped-s" aria-label="jonrohan, aaronshekey, and josh">
-  <img alt="@jonrohan" class="avatar" height="39" alt="jonrohan" src="/jonrohan.png" width="39">
-  <img alt="@aaronshekey" class="avatar" height="39" alt="aaronshekey" src="/aaronshekey.png" width="39">
-  <img alt="@josh" class="avatar" height="39" alt="josh" src="/josh.png" width="39">
-</span>
+<div class="AvatarStack AvatarStack--three-plus tooltipped tooltipped-se temp-tooltipped-align-left" aria-label="jonrohan, aaronshekey, and josh">
+  <img alt="@jonrohan" class="avatar" height="20" alt="jonrohan" src="/jonrohan.png" width="20">
+  <img alt="@aaronshekey" class="avatar" height="20" alt="aaronshekey" src="/aaronshekey.png" width="20">
+  <img alt="@josh" class="avatar" height="20" alt="josh" src="/josh.png" width="20">
+</div>
+```
+
+Based on the number of avatars in the stack, add these modifier classes:
+- `AvatarStack--two` for 2 avatars.
+- `AvatarStack--three-plus` for 3 or more avatars.
+
+If you have more than three avatars, add a div with the classes `avatar avatar-more` as the third avatar in the stack, as such:
+
+```html
+<div class="AvatarStack AvatarStack--three-plus tooltipped tooltipped-se temp-tooltipped-align-left" aria-label="jonrohan, aaronshekey, and josh">
+  <img alt="@jonrohan" class="avatar" height="20" alt="jonrohan" src="/jonrohan.png" width="20">
+  <img alt="@aaronshekey" class="avatar" height="20" alt="aaronshekey" src="/aaronshekey.png" width="20">
+  <div class="avatar avatar-more"></div>
+  <img alt="@josh" class="avatar" height="20" alt="josh" src="/josh.png" width="20">
+  <img alt="@josh" class="avatar" height="20" alt="josh" src="/josh.png" width="20">
+  <img alt="@josh" class="avatar" height="20" alt="josh" src="/josh.png" width="20">
+</div>
+```
+
+You can also link individual avatars. To do this shift the `avatar` class over to the anchor:
+
+```html
+<div class="AvatarStack AvatarStack--two tooltipped tooltipped-se temp-tooltipped-align-left" aria-label="jonrohan, aaronshekey, and josh">
+  <a href="#" class="avatar">
+    <img alt="@jonrohan" height="20" alt="jonrohan" src="/jonrohan.png" width="20">
+  </a>
+  <a href="#" class="avatar">
+    <img alt="@josh" height="20" alt="josh" src="/josh.png" width="20">
+  </a>
+</div>
+```
+
+If you'd like a right-aligned avatar stack, add the `AvatarStack--right` modifier class and switch the tooltips around:
+
+```html
+<div class="AvatarStack AvatarStack--three-plus AvatarStack--right tooltipped tooltipped-sw temp-tooltipped-align-right" aria-label="jonrohan, aaronshekey, and josh">
+  <img alt="@jonrohan" class="avatar" height="20" alt="jonrohan" src="/jonrohan.png" width="20">
+  <img alt="@aaronshekey" class="avatar" height="20" alt="aaronshekey" src="/aaronshekey.png" width="20">
+  <img alt="@josh" class="avatar" height="20" alt="josh" src="/josh.png" width="20">
+</div>
 ```
 
 ## Circle Badge
