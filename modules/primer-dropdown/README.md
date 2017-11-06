@@ -264,6 +264,41 @@ to `auto` and prevent hidden overflows on item contents and text.
 </div>
 ```
 
+### Sign out button
+
+Use `<button class="dropdown-item dropdown-signout">` to reset button styles
+and display it as a link.
+
+```html title="Sign out dropdown"
+<div class="dropdown js-menu-container float-right position-relative">
+  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+    <img alt="@shawnbot" class="avatar" src="https://avatars0.githubusercontent.com/u/113896?v=4&amp;s=40" height="20" width="20">
+  </button>
+
+  <div class="dropdown-menu-content js-menu-content">
+    <ul class="dropdown-menu dropdown-menu-sw">
+      <li class="dropdown-header header-nav-current-user css-truncate">
+      Signed in as <strong class="css-truncate-target">shawnbot</strong>
+      </li>
+      <li class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#url">Your profile</a></li>
+      <li><a class="dropdown-item" href="#url">Your stars</a></li>
+      <li><a class="dropdown-item" href="#url">Your Gists</a></li>
+      <li class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#url">Help</a></li>
+      <li><a class="dropdown-item" href="#url">Settings</a></li>
+      <li>
+        <form class="m-0" accept-charset="UTF-8" action="#url" class="logout-form" method="post">
+          <button type="submit" class="dropdown-item dropdown-signout">
+          Sign out
+          </button>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+```
+
 <!-- %enddocs -->
 
 ## License
