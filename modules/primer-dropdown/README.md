@@ -48,7 +48,7 @@ Dropdowns should be trigged by a `<button>`. **[Each dropdown menu requires a di
 
 Using a GitHub button:
 
-```html
+```html title="Dropdown from button"
 <div class="dropdown js-menu-container js-select-menu">
   <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     Dropdown
@@ -68,7 +68,7 @@ Using a GitHub button:
 Using a button customized with additional utilities:
 
 
-```html
+```html title="Dropdown"
 <div class="dropdown js-menu-container js-select-menu">
   <button class="btn-link no-underline text-gray p-2 dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     Dropdown
@@ -91,7 +91,7 @@ Using a button customized with additional utilities:
 
 Align the direction of dropdown menus and their arrows with modifier classes.
 
-```html
+```html title="dropdown-ne"
 <div class="dropdown js-menu-container js-select-menu">
   <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     .dropdown-ne
@@ -108,7 +108,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 </div>
 ```
 
-```html
+```html title="dropdown-e"
 <div class="dropdown float-right js-menu-container js-select-menu">
   <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     .dropdown-e
@@ -125,7 +125,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 </div>
 ```
 
-```html
+```html title="dropdown-se"
 <div class="dropdown js-menu-container js-select-menu">
   <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     .dropdown-se
@@ -142,7 +142,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 </div>
 ```
 
-```html
+```html title="dropdown-s"
 <div class="dropdown d-inline-block mx-auto js-menu-container js-select-menu">
   <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     .dropdown-s
@@ -159,7 +159,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 </div>
 ```
 
-```html
+```html title="dropdown-sw"
 <div class="dropdown float-right js-menu-container js-select-menu">
   <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     .dropdown-sw
@@ -176,7 +176,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 </div>
 ```
 
-```html
+```html title="dropdown-w"
 <div class="dropdown js-menu-container js-select-menu">
   <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     .dropdown-w
@@ -195,7 +195,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 
 ### Dividers
 
-```html
+```html title="Dropdown with dividers"
 <div class="dropdown js-menu-container js-select-menu">
   <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     Dropdown
@@ -217,7 +217,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 
 ### Headers
 
-```html
+```html title="Dropdown with headers"
 <div class="dropdown js-menu-container js-select-menu">
   <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     Dropdown
@@ -244,7 +244,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 Use `dropdown-menu-no-overflow` modifier class to set the width of the dropdown
 to `auto` and prevent hidden overflows on item contents and text.
 
-```html
+```html title="Dropdown with no overflow"
 <div class="select-all-dropdown dropdown js-menu-container js-bulk-actions float-left js-transitionable">
   <button class="btn btn-sm mr-3 js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     1 member selected…
@@ -259,41 +259,6 @@ to `auto` and prevent hidden overflows on item contents and text.
       <a href="#url" class="dropdown-item menu-item-danger js-menu-close">
         Remove from team
       </a>
-    </ul>
-  </div>
-</div>
-```
-
-### Sign out button
-
-Use `<button class="dropdown-item dropdown-signout">` to reset button styles
-and display it as a link.
-
-```html
-<div class="dropdown js-menu-container float-right position-relative">
-  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
-    <img alt="@shawnbot" class="avatar" src="https://avatars0.githubusercontent.com/u/113896?v=4&amp;s=40" height="20" width="20">
-  </button>
-
-  <div class="dropdown-menu-content js-menu-content">
-    <ul class="dropdown-menu dropdown-menu-sw">
-      <li class="dropdown-header header-nav-current-user css-truncate">
-      Signed in as <strong class="css-truncate-target">shawnbot</strong>
-      </li>
-      <li class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#url">Your profile</a></li>
-      <li><a class="dropdown-item" href="#url">Your stars</a></li>
-      <li><a class="dropdown-item" href="#url">Your Gists</a></li>
-      <li class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#url">Help</a></li>
-      <li><a class="dropdown-item" href="#url">Settings</a></li>
-      <li>
-        <form class="m-0" accept-charset="UTF-8" action="#url" class="logout-form" method="post">
-          <button type="submit" class="dropdown-item dropdown-signout">
-          Sign out
-          </button>
-        </form>
-      </li>
     </ul>
   </div>
 </div>
