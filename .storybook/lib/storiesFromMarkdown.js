@@ -12,7 +12,7 @@ const htmlParser = new htmlToReact.Parser()
 
 const railsOcticonToReact = (html) => {
   // <%= octicon "tools" %> to <Octicon name="tools" />
-  const octre = /<%= octicon ["']([a-z\-]+)["'] %>/gi
+  const octre = /<%= octicon ["']([a-z\-]+)["'][^%]*%>/gi
   html = html.replace(octre, (match, name) => {
     return ReactDOMServer.renderToStaticMarkup(<Octicon name={name} />)
   })
