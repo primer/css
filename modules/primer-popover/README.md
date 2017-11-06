@@ -40,6 +40,36 @@ title: Popover
 status: Experimental
 -->
 
+Popovers are used to bring attention to specific user interface elements, typically to suggest an action or to guide users through a new experience. They consist of:
+
+- The block element, `.Popover`, which simply positions its content absolutely atop other body content.
+- The child element, `.Popover-message`, which contains the markup for the intended messaging and the visual "caret."
+
+In the examples below, `Popover-message`, in particular, uses a handful of utility classes to style it appropriately. And these are intended to demonstrate the default, go-to presentation for the popover's message. By default, the message's caret is centered on the top edge of the message.
+
+The `Popover-message` element also supports several modifiers, most of which position the caret differently:
+
+- `.Popover-message--top` (default): Places the caret on the top edge of the message, horizontally centered.
+- `.Popover-message--bottom`: Places the caret on the bottom edge of the message, horizontally centered.
+- `.Popover-message--right`: Places the caret on the right edge of the message, vertically centered.
+- `.Popover-message--left`: Places the caret on the left edge of the message, vertically centered.
+
+Each of these modifiers also support a syntax for adjusting the positioning the caret to the right, left, top, or bottom of its respective edge. That syntax looks like:
+
+- `.Popover-message--top--right`
+- `.Popover-message--right--top`
+- `.Popover-message--bottom--left`
+- `.Popover-message--left--bottom`
+
+Lastly, there is an added `.Popover-message--lg` modifer, which Assumes a slightly wider popover message.
+
+### Notes
+
+The samples below include optional markup, like:
+- An outermost container that establishes stacking context (e.g. `position-relative`).
+- A choice piece of user interface (a button, in this case) to relate the popover to.
+- Use of the `Details` and `js-details` family of class names, which interact with JavaScript to demonstrate dismissal of the popover by clicking the nested "Got it!" button.
+
 ### Basic example
 Defaults to caret oriented top-center.
 
