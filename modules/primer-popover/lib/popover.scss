@@ -19,14 +19,14 @@
   }
 
   &::before {
-    top: -15px;
+    top: -16px;
     margin-left: -9px;
     border: $spacer-2 $border-style transparent;
     border-bottom-color: rgba(0, 0, 0, 0.15);
   }
 
   &::after {
-    top: -13px;
+    top: -14px;
     margin-left: -8px;
     border: 7px $border-style transparent;
     border-bottom-color: $bg-white;
@@ -44,12 +44,12 @@
   }
 
   &::before {
-    bottom: -15px;
+    bottom: -16px;
     border-top-color: rgba(0, 0, 0, 0.15);
   }
 
   &::after {
-    bottom: -13px;
+    bottom: -14px;
     border-top-color: $bg-white;
   }
 }
@@ -121,12 +121,12 @@
 .Popover-message--right--top,
 .Popover-message--right--bottom {
   &::before {
-    right: -15px;
+    right: -16px;
     border-left-color: rgba(0, 0, 0, 0.15);
   }
 
   &::after {
-    right: -13px;
+    right: -14px;
     border-left-color: $bg-white;
   }
 }
@@ -136,12 +136,12 @@
 .Popover-message--left--top,
 .Popover-message--left--bottom {
   &::before {
-    left: -15px;
+    left: -16px;
     border-right-color: rgba(0, 0, 0, 0.15);
   }
 
   &::after {
-    left: -13px;
+    left: -14px;
     border-right-color: $bg-white;
   }
 }
