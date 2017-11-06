@@ -12,19 +12,15 @@ const htmlParser = new htmlToReact.Parser()
 
 const railsOcticonToReact = (html) => {
   // <%= octicon "tools" %> to <Octicon name="tools" />
-  const octre = /<%= octicon ["']([a-z\-]+)["'] %>/gi
+  const octre = /<%= octicon ["']([a-z\-]+)["'][^%]*%>/gi
   html = html.replace(octre, (match, name) => {
     return ReactDOMServer.renderToStaticMarkup(<Octicon name={name} />)
   })
   return html
 }
 
-const isValidNode = () => {
-    return true;
-}
-
 const nodeToStory = (node, file) => {
-  let html = railsOcticonToReact(node.value)
+  const html = railsOcticonToReact(node.value)
   const element = htmlParser.parse(html)
   const pairs = node.lang.replace(/^html\s*/, '')
   const attrs = pairs.length ? parsePairs(pairs) : {}
