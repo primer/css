@@ -1,16 +1,15 @@
 ---
 title: Layout
 status: New release
-status_issue: https://github.com/github/design-systems/issues/325
 ---
 
-The following layout utilities are meant to used in addition to those within primer-core.
+Marketing layout utilities build on top of [primer-core utilities](/layout/#position), adding the option of responsive positioning.
 
 {:toc}
 
 ## Responsive position
 
-These position utilities behave the same way as the positioning utilities in primer-core, however they include responsive states so that they can be used at specific viewport widths.
+Use responsive position utilities to adjust the position of an element at different breakpoints.
 
 ```html
 <div class="position-relative p-6 bg-gray">
