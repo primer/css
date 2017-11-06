@@ -61,7 +61,7 @@ Each of these modifiers also support a syntax for adjusting the positioning the 
 - `.Popover-message--bottom--left`
 - `.Popover-message--left--bottom`
 
-Lastly, there is an added `.Popover-message--lg` modifer, which Assumes a slightly wider popover message.
+Lastly, there is an added `.Popover-message--large` modifier, which assumes a slightly wider popover message on screens wider than 544px.
 
 ### Notes
 
@@ -92,7 +92,7 @@ Defaults to caret oriented top-center.
 <div class="position-relative text-center">
   <button class="btn btn-primary">UI</button>
   <div class="Popover right-0 left-0">
-    <div class="Popover-message Popover-message--lg text-left p-4 mt-2 Box box-shadow-large">
+    <div class="Popover-message Popover-message--large text-left p-4 mt-2 Box box-shadow-large">
       <h4 class="mb-2">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
