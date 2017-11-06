@@ -166,7 +166,7 @@ Use `.UnderlineNav--right` to right align the navigation.
     <a href="#url" class="UnderlineNav-item">
       <%= octicon "tools", :class => "UnderlineNav-octicon" %>
       Item 2
-      <span class="Counter ml-1">10</span>
+      <span class="Counter">10</span>
      </a>
      <a href="#url" class="UnderlineNav-item">
        <%= octicon "tools", :class => "UnderlineNav-octicon" %>
@@ -188,7 +188,7 @@ Use `.UnderlineNav--full` in combination with container styles and `.UnderlineNa
     <div class="UnderlineNav-body">
       <a href="#url" class="UnderlineNav-item selected">Item 1</a>
       <a href="#url" class="UnderlineNav-item">Item 2
-        <span class="Counter ml-1">10</span>
+        <span class="Counter">10</span>
        </a>
       <a href="#url" class="UnderlineNav-item">Item 3</a>
       <a href="#url" class="UnderlineNav-item">Item 4</a>
