@@ -4,7 +4,7 @@
   border-bottom: 1px solid $gray-200;
 }
 
-.UnderlineNav-items {
+.UnderlineNav-body {
   display: flex;
   margin-bottom: -1px;
 }
@@ -18,15 +18,6 @@
   text-align: center;
   border-bottom: 2px solid transparent;
 
-  .Counter {
-    margin-left: $spacer-1;
-  }
-
-  .octicon {
-    margin-right: $spacer-1;
-    color: $gray-400;
-  }
-
   &:hover,
   &:focus {
     color: $text-gray-dark;
@@ -34,7 +25,7 @@
     border-bottom-color: $gray-300;
     transition: 0.2s ease;
 
-    .octicon {
+    .UnderlineNav-octicon {
       color: $gray-500;
     }
   }
@@ -44,7 +35,7 @@
     color: $text-gray-dark;
     border-bottom-color: $orange-600;
 
-    .octicon {
+    .UnderlineNav-octicon {
       color: $gray-500;
     }
   }
@@ -69,11 +60,14 @@
 
 .UnderlineNav--full {
   display: block;
+}
 
-  .container-lg,
-  .container-md,
-  .container-xl {
-    display: flex;
-    justify-content: space-between;
-  }
+.UnderlineNav-octicon {
+  margin-right: $spacer-1;
+  color: $gray-400;
+}
+
+.UnderlineNav-container {
+  display: flex;
+  justify-content: space-between;
 }

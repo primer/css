@@ -95,11 +95,11 @@ You can also add optional headings to a menu. Feel free to use nearly any semant
 
 ## Underline nav
 
-`.UnderlineNav` is navigation that is typically used at the top of a page as the main page navigation.
+Use `.UnderlineNav` to style navigation with a minimal underlined selected state. This component comes with variations to accommodate icons, counters, and button actions; and is typically used for navigation placed at the top of the page.
 
 ```html title="UnderlineNav"
 <nav class="UnderlineNav">
-  <div class="UnderlineNav-items">
+  <div class="UnderlineNav-body">
     <a href="#url" role="tab" title="Item 1" class="UnderlineNav-item selected">Item 1</a>
     <a href="#url" role="tab" title="Item 2" class="UnderlineNav-item">Item 2</a>
     <a href="#url" role="tab" title="Item 3" class="UnderlineNav-item">Item 3</a>
@@ -108,11 +108,11 @@ You can also add optional headings to a menu. Feel free to use nearly any semant
 </nav>
 ```
 
-Use `.UnderlineNav-actions` to use another element alongside the underline nav
+Use `.UnderlineNav-actions` to place another element, such as a button, to the opposite side of the navigation items.
 
 ```html title="UnderlineNav-actions"
 <nav class="UnderlineNav" aria-label="Foo bar">
-  <div class="UnderlineNav-items">
+  <div class="UnderlineNav-body">
     <a href="#url" class="UnderlineNav-item selected">Item 1</a>
     <a href="#url" class="UnderlineNav-item">Item 2</a>
     <a href="#url" class="UnderlineNav-item">Item 3</a>
@@ -124,11 +124,11 @@ Use `.UnderlineNav-actions` to use another element alongside the underline nav
 </nav>
 ```
 
-You can right align the navigation with `.UnderlineNav--right`.
+Use `.UnderlineNav--right` to right align the navigation.
 
 ```html title="UnderlineNav--right"
 <nav class="UnderlineNav UnderlineNav--right">
-  <div class="UnderlineNav-items">
+  <div class="UnderlineNav-body">
     <a href="#url" role="tab" title="Item 1" class="UnderlineNav-item selected">Item 1</a>
     <a href="#url" role="tab" title="Item 2" class="UnderlineNav-item">Item 2</a>
     <a href="#url" role="tab" title="Item 3" class="UnderlineNav-item">Item 3</a>
@@ -137,14 +137,14 @@ You can right align the navigation with `.UnderlineNav--right`.
 </nav>
 ```
 
-This also works when adding actions.
+`.UnderlineNav--right` also works with when used with `.UnderlineNav-actions`.
 
 ```html title="UnderlineNav--right with actions"
 <nav class="UnderlineNav UnderlineNav--right" aria-label="Foo bar">
   <div class="UnderlineNav-actions">
     <a class="btn">Button</a>
   </div>
-  <div class="UnderlineNav-items">
+  <div class="UnderlineNav-body">
     <a href="#url" class="UnderlineNav-item selected">Item 1</a>
     <a href="#url" class="UnderlineNav-item">Item 2</a>
     <a href="#url" class="UnderlineNav-item">Item 3</a>
@@ -153,42 +153,42 @@ This also works when adding actions.
 </nav>
 ```
 
-
-The navigation will work with added counters and/or octicons
+<!-- Update wording here -->
+`.Counters` and `.octicons` can be used with navigation items. Use `.UnderlineNav-octicon` to add color and hover styles.
 
 ```html title="UnderlineNav with Counter"
 <nav class="UnderlineNav" aria-label="Foo bar">
-  <div class="UnderlineNav-items">
+  <div class="UnderlineNav-body">
     <a href="#url" class="UnderlineNav-item selected">
-      <%= octicon "tools" %>
+      <%= octicon "tools", :class => "UnderlineNav-octicon" %>
       Item 1
     </a>
     <a href="#url" class="UnderlineNav-item">
-      <%= octicon "tools" %>
+      <%= octicon "tools", :class => "UnderlineNav-octicon" %>
       Item 2
-      <span class="Counter">10</span>
+      <span class="Counter ml-1">10</span>
      </a>
      <a href="#url" class="UnderlineNav-item">
-       <%= octicon "tools" %>
+       <%= octicon "tools", :class => "UnderlineNav-octicon" %>
        Item 3
     </a>
     <a href="#url" class="UnderlineNav-item">
-      <%= octicon "tools" %>
+      <%= octicon "tools", :class => "UnderlineNav-octicon" %>
       Item 4
      </a>
   </div>
 </nav>
 ```
 
-Use `.UnderlineNav--full` to use a container within the components
+Use `.UnderlineNav--full` in combination with container styles and `.UnderlineNav-container` to make navigation fill the width of the container.
 
 ```html title="UnderlineNav--full"
 <nav class="UnderlineNav UnderlineNav--full" aria-label="Foo bar">
-  <div class="container-lg">
-    <div class="UnderlineNav-items">
+  <div class="container-lg UnderlineNav-container">
+    <div class="UnderlineNav-body">
       <a href="#url" class="UnderlineNav-item selected">Item 1</a>
       <a href="#url" class="UnderlineNav-item">Item 2
-        <span class="Counter">10</span>
+        <span class="Counter ml-1">10</span>
        </a>
       <a href="#url" class="UnderlineNav-item">Item 3</a>
       <a href="#url" class="UnderlineNav-item">Item 4</a>
@@ -199,11 +199,6 @@ Use `.UnderlineNav--full` to use a container within the components
   </div>
 </nav>
 ```
-
-
-
-
-
 
 ## Tabnav
 
