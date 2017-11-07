@@ -95,7 +95,7 @@ You can also add optional headings to a menu. Feel free to use nearly any semant
 
 ## Underline nav
 
-Use `.UnderlineNav` to style navigation with a minimal underlined selected state. This component comes with variations to accommodate icons, counters, and button actions; and is typically used for navigation placed at the top of the page.
+Use `.UnderlineNav` to style navigation with a minimal underlined selected state, typically used for navigation placed at the top of the page. This component comes with variations to accommodate icons, containers and other content.
 
 ```html title="UnderlineNav"
 <nav class="UnderlineNav">
