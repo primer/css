@@ -43,6 +43,7 @@ A button can also be transparent and displayed with a white border with `btn-tra
 <div class="bg-gray-dark p-4 mt-4">
   <button class="btn btn-transparent" type="button">
     Button button
+    <span class="Counter">12</span>
   </button>
 </div>
 ```
