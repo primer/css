@@ -19,17 +19,15 @@ Marketing buttons extend primer-core buttons with more color and fill styles.
 
 ## Colors
 
-Marketing buttons are available in orange, purple, and green.
+Marketing buttons are available in orange.
 
 ```html
 <button class="btn btn-orange" type="button">Button button</button>
-<a class="btn btn-purple" href="#url" role="button">Link button</a>
-<a class="btn btn-green" href="#url" role="button">Link button</a>
 ```
 
 ## Outline button colors
 
-The `btn-outline` has also been extended with the marketing color palette in orange, purple, and green.
+The `btn-outline` has also been extended with orange, purple, and green.
 
 ```html
 <button class="btn btn-outline-orange" type="button">Button button</button>
