@@ -9,7 +9,6 @@
 ### Removed
 - Removing `primer-cards` module.
 - Removing `.form-cards` styles.
-- Removing `.btn-large` from `primer-buttons` module and adding to `primer-marketing-buttons`.
 
 ### Changes
 - Moving `primer-breadcrumb` from `primer-marketing` to `primer-core`
