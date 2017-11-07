@@ -55,7 +55,8 @@
     "primer-tables": "1.4.1",
     "primer-tooltips": "1.4.1",
     "primer-truncate": "1.4.1",
-    "primer-utilities": "4.8.1"
+    "primer-utilities": "4.8.1",
+    "primer-popover": "0.0.1"
   },
   "keywords": [
     "primer",
