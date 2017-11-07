@@ -14,54 +14,39 @@ title: Marketing Buttons
 status: New Release
 -->
 
-The buttons on our marketing pages are based on Primer's core with the addition of more color options, color outline buttons, a transparent button, and larger button sizes.
+Marketing buttons extend primer-core buttons with more color and fill styles.
 
 
-## Color
+## Colors
 
-The `btn` has been extended with the marketing color palette:
+Marketing buttons are available in orange, purple, and green.
 
 ```html
-
 <button class="btn btn-orange" type="button">Button button</button>
 <a class="btn btn-purple" href="#url" role="button">Link button</a>
-<button class="btn btn-blurple" type="button">Button button</button>
-
+<a class="btn btn-green" href="#url" role="button">Link button</a>
 ```
 
-## Outline buttons
+## Outline button colors
 
-The `btn-outline` has also been extended with the marketing color palette:
+The `btn-outline` has also been extended with the marketing color palette in orange, purple, and green.
 
 ```html
-
 <button class="btn btn-outline-orange" type="button">Button button</button>
 <a class="btn btn-outline-purple" href="#url" role="button">Link button</a>
 <button class="btn btn-outline-green" type="button">Button button</button>
+```
+
+## Transparent button
+
+A button can also be transparent and displayed with a white border with `btn-transparent`.
+
+```html
 <div class="bg-gray-dark p-4 mt-4">
   <button class="btn btn-transparent" type="button">
     Button button
-    <span class="Counter">12</span>
   </button>
 </div>
-
-```
-
-## Additional sizing
-There are cases where you might want to increase the size of a button, for example when putting a main CTA inside of a jumbotron or major page callout. The `btn-large` class does the following to make a button more prominent:
-
-1. Adds extra additional padding in `ems` so that the padding scales proportionately with the `font-size`
-2. Increases the border radius to 6px
-
-It can optionally be used in combination with a font-size utility (like `f3`) on the parent to increase the font-size.
-
-```html
-
-<p class="f3">
-  <a class="btn btn-large btn-purple" href="#url" role="button">Large link button</a>
-  <button class="btn btn-large btn-outline-blue" type="button">Large button button</button>
-</p>
-
 ```
 
 <!-- %enddocs -->
