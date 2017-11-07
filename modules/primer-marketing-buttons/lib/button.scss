@@ -1,5 +1,4 @@
 .btn-orange { @include btn-solid($white, lighten($orange-500, 7.5%), darken($orange-500, 7.5%)); }
-.btn-blurple { @include btn-solid($white, mix($blue-400, $purple-400, 35%), mix($blue-600, $purple-600, 35%)); }
 
 .btn-outline-purple { @include btn-outline($purple); }
 .btn-outline-orange { @include btn-outline($orange); }
