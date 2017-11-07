@@ -40,7 +40,11 @@ title: Popover
 status: Experimental
 -->
 
-Popovers are used to bring attention to specific user interface elements, typically to suggest an action or to guide users through a new experience. They consist of:
+Popovers are used to bring attention to specific user interface elements, typically to suggest an action or to guide users through a new experience.
+
+{:toc}
+
+Popover's consist of:
 
 - The block element, `.Popover`, which simply positions its content absolutely atop other body content.
 - The child element, `.Popover-message`, which contains the markup for the intended messaging and the visual "caret."
