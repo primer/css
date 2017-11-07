@@ -4,7 +4,6 @@
 - New module `primer-subhead`. The Subhead is a simple header with a bottom border. It&#39;s designed to be used on settings and configuration pages.
 - Importing `.input-group` into `primer-forms` module.
 - New module `primer-branch-name` "A nice, consistent way to display branch names."
-- New module `primer-dropdown` "A lightweight context menu for navigation and actions."
 
 ### Removed
 - Removing `primer-cards` module.
