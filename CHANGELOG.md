@@ -5,7 +5,6 @@
 - Importing `.input-group` into `primer-forms` module.
 - New module `primer-branch-name` "A nice, consistent way to display branch names."
 - New module `primer-dropdown` "A lightweight context menu for navigation and actions."
-- New module `primer-marketing-buttons`. Buttons for marketing websites at GitHub
 
 ### Removed
 - Removing `primer-cards` module.
