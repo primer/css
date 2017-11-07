@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "chalk": "^2.1.0",
-    "fs-extra": "^4.0.1",
-    "yeoman-generator": "^1.1.1"
+    "yeoman-generator": "^1.1.1",
+    "primer-support": "4.4.1"
   },
   "keywords": [
     "primer",
