@@ -51,6 +51,10 @@
   min-width: 26px;
   height: 20px;
 
+  .AvatarStack-body {
+    position: absolute;
+  }
+
   &.AvatarStack--2 {
     min-width: 36px;
   }
@@ -61,7 +65,6 @@
 }
 
 .AvatarStack-body {
-  position: absolute;
   display: flex;
   background: $bg-white;
 
