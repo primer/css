@@ -1,22 +1,17 @@
 {
-  "version": "1.4.1",
-  "name": "primer-breadcrumb",
-  "description": "Breadcrumb navigation for pages with parents / grandparents.",
+  "version": "0.0.1",
+  "name": "primer-popover",
+  "description": "Popover for suggesting, guiding, and bringing attention to specific UI elements on a page.",
   "homepage": "http://primercss.io/",
-  "author": "GitHub, Inc.",
-  "license": "MIT",
-  "style": "build/build.css",
-  "main": "build/index.js",
   "primer": {
-    "category": "core",
+    "category": "product",
     "module_type": "components"
   },
-  "files": [
-    "index.scss",
-    "lib",
-    "build"
-  ],
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-breadcrumb",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "index.scss",
+  "main": "build/index.js",
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-popover",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },
@@ -30,13 +25,11 @@
   "dependencies": {
     "primer-support": "4.4.1"
   },
+  "peerDependencies": {
+    "primer-box": "2.5.1"
+  },
   "keywords": [
-    "breadcrumb",
-    "css",
     "github",
-    "navigation",
-    "primer",
-    "primercss",
-    "style"
+    "primer"
   ]
 }

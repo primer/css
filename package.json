@@ -17,7 +17,8 @@
     "publish-skipgit": "lerna publish --skip-git",
     "bump": "lerna publish --exact --skip-npm --since \"v$(npm info primer-css version)\"",
     "new-module": "script/new-module",
-    "test": "lerna run test"
+    "test": "npm run test-all-modules && lerna run test",
+    "test-all-modules": "ava --verbose tests/test-*.js"
   },
   "devDependencies": {
     "@storybook/addon-options": "^3.2.6",
@@ -44,7 +45,6 @@
     "raw-loader": "^0.5.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-svg-inline": "^2.0.0",
     "registry-url": "^3.1.0",
     "remark": "^8.0.0",
     "sass-loader": "^6.0.6",
