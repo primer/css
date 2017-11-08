@@ -1,22 +1,17 @@
 {
-  "version": "1.4.1",
-  "name": "primer-breadcrumb",
-  "description": "Breadcrumb navigation for pages with parents / grandparents.",
+  "version": "0.0.1",
+  "name": "primer-branch-name",
+  "description": "A nice, consistent way to display branch names.",
   "homepage": "http://primercss.io/",
-  "author": "GitHub, Inc.",
-  "license": "MIT",
-  "style": "build/build.css",
-  "main": "build/index.js",
   "primer": {
-    "category": "core",
+    "category": "product",
     "module_type": "components"
   },
-  "files": [
-    "index.scss",
-    "lib",
-    "build"
-  ],
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-breadcrumb",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "index.scss",
+  "main": "build/index.js",
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-branch-name",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },
@@ -31,12 +26,7 @@
     "primer-support": "4.4.1"
   },
   "keywords": [
-    "breadcrumb",
-    "css",
     "github",
-    "navigation",
-    "primer",
-    "primercss",
-    "style"
+    "primer"
   ]
 }

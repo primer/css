@@ -1,3 +1,18 @@
+# 10.0.0
+
+### Added
+- New module `primer-subhead`. The Subhead is a simple header with a bottom border. It&#39;s designed to be used on settings and configuration pages.
+- Importing `.input-group` into `primer-forms` module.
+- New module `primer-branch-name` "A nice, consistent way to display branch names."
+
+### Removed
+- Removing `primer-cards` module.
+- Removing `.form-cards` styles.
+
+### Changes
+- Moving `primer-breadcrumb` from `primer-marketing` to `primer-core`
+- added `border-radius: 0` to `button` to account for updates in Chroma 62 macOS
+
 # 9.6.0
 
 ### Added
