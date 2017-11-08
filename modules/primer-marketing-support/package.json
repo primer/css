@@ -5,7 +5,7 @@
   "homepage": "http://primercss.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
-  "style": "index.scss",
+  "style": "build/build.css",
   "primer": {
     "category": "marketing",
     "module_type": "support"
