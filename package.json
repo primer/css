@@ -22,7 +22,6 @@
   "devDependencies": {
     "@storybook/addon-options": "^3.2.6",
     "@storybook/react": "^3.2.12",
-    "ava": "^0.21.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-minify": "^0.2.0",
     "babel-preset-react": "^6.24.1",
