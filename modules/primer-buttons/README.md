@@ -121,6 +121,31 @@ Outline buttons downplay an action as they appear like boxy links. Just add `.bt
 <button class="btn btn-sm btn-outline" type="button">Outline button</button>
 ```
 
+#### Large button
+Use `.btn-large` to increase the padding and border radius of a button. This is useful for prominent calls to action in hero sections.
+
+[Type scale utilities](https://styleguide.github.com/primer/utilities/typography/#type-scale-utilities) can be used to alter the font-size if needed. Padding is applied in em's so that it scales proportionally with the font-size.
+
+```html
+
+<p>
+  <a class="btn btn-large btn-purple" href="#url" role="button">Large link button</a>
+  <button class="btn btn-large btn-outline-blue" type="button">Large button button</button>
+</p>
+
+```
+
+Use `.btn-large` with a type scale utility to transform the text to a bigger size.
+
+```html
+
+<p class="f3">
+  <a class="btn btn-large btn-purple" href="#url" role="button">Large link button</a>
+  <button class="btn btn-large btn-outline-blue" type="button">Large button button</button>
+</p>
+
+```
+
 #### Disabled state
 
 Disable `<button>` elements with the boolean `disabled` attribute and `<a>` elements with the `.disabled` class.
@@ -244,6 +269,25 @@ Use `.hidden-text-expander` to indicate and toggle hidden text.
 ```
 
 You can also make the expander appear inline by adding `.inline`.
+
+
+#### Using button styles with the details summary element
+
+You can add `.btn` and `.btn-*` classes to any
+[`<summary>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary)
+element so that it gains the appearance of a button, and
+selected/active styles when the parent
+[`<details>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
+element is open.
+
+```html
+<details>
+  <summary class="btn btn-block btn-primary">Toggle the content</summary>
+  <p class="mt-2">
+    This content will be toggled.
+  </p>
+</details>
+```
 
 <!-- %enddocs -->
 
