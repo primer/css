@@ -65,3 +65,8 @@ storiesOf('Button', module)
       <button className="btn btn-large btn-outline-blue" type="button">Large button button</button>
     </div>
   ))
+  .add('btn-link', () => (
+      <div className='p-4 d-flex flex-justify-between'>
+        <button className='btn-link'>Button</button>
+      </div
+  ))
