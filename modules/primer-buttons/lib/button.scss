@@ -181,14 +181,12 @@
   display: inline-block;
   padding: 0;
   font-size: inherit;
-  font-weight: $font-weight-normal;
   color: $text-blue;
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
   background-color: transparent;
-  background-image: none;
   border: 0;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
