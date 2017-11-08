@@ -11,6 +11,7 @@
 
 ### Changes
 - Moving `primer-breadcrumb` from `primer-marketing` to `primer-core`
+- added `border-radius: 0` to `button` to account for updates in Chroma 62 macOS
 
 # 9.6.0
 

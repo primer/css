@@ -64,4 +64,6 @@ th {
 
 button {
   cursor: pointer;
+  // Remove border radius added by Chroma macOS
+  border-radius: 0;
 }
