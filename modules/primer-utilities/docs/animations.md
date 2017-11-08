@@ -16,6 +16,13 @@ The `.anim-fade-in` class is used to fade in an element on the page. This will r
 <span class="anim-fade-in"><%= octicon("mark-github", :height => 32, :class => "v-align-middle mr-2") %> Hello from GitHub!</span>
 ```
 
+## Fade Out
+
+The `.anim-fade-out` class is used to fade out an element on the page. This will run once when the element is revealed.
+
+```html
+<span class="anim-fade-out"><%= octicon("mark-github", :height => 32, :class => "v-align-middle mr-2") %> Hello from GitHub!</span>
+
 ## Fade Up
 
 The `.anim-fade-up` class is used to reveal an element on the page by sliding it up from below the fold. You should use this in a container with `overflow: hidden;` or on the bottom of the page.
@@ -54,4 +61,14 @@ The `.anim-pulse` class will pulse an element infinitely.
 
 ```html
 <%= octicon("mark-github", :class => "anim-pulse") %>
+```
+
+## Hover animation
+
+The `.hover-grow` class will increase the scale of the element upon hover.
+
+```html
+<div class="Box hover-grow p-4">
+  <%= octicon("mark-github", :height => 32) %>
+</div>
 ```
