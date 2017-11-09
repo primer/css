@@ -88,7 +88,7 @@
   }
 
   &::after {
-    left: 21px;
+    left: $spacer-4 + 1;
   }
 }
 
