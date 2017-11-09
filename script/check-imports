@@ -16,9 +16,9 @@ const parseImports = filename => {
     })
 }
 
-const isPrimerModule = name => name.indexOf('primer-') === 0
+const isPrimerModule = name => name.indexOf('primer') === 0
 
-globby('modules/primer-*')
+globby('modules/primer*')
   .then(paths => {
     return paths.reduce((modules, path) => {
       const pkg = require(`../${path}/package.json`)
