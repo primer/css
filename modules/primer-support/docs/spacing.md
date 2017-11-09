@@ -1,7 +1,7 @@
 ---
 title: Spacing
 status: Stable
-source: https://github.com/primer/primer-css/blob/master/modules/primer-support/lib/variables/layout.scss
+source: https://github.com/primer/primer/blob/master/modules/primer-support/lib/variables/layout.scss
 ---
 
 {:toc}

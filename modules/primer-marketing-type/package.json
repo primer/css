@@ -2,7 +2,7 @@
   "version": "1.4.1",
   "name": "primer-marketing-type",
   "description": "Typography for marketing websites at GitHub",
-  "homepage": "http://primercss.io/",
+  "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "build/build.css",
@@ -16,9 +16,9 @@
     "lib",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-marketing-type",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-marketing-type",
   "bugs": {
-    "url": "https://github.com/primer/primer-css/issues"
+    "url": "https://github.com/primer/primer/issues"
   },
   "scripts": {
     "test-docs": "../../script/test-docs",
@@ -35,7 +35,7 @@
     "css",
     "github",
     "primer",
-    "primercss",
+    "design-system",
     "style",
     "type",
     "typography"

@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "name": "primer-popover",
   "description": "Popover for suggesting, guiding, and bringing attention to specific UI elements on a page.",
-  "homepage": "http://primercss.io/",
+  "homepage": "http://primer.github.io/",
   "primer": {
     "category": "product",
     "module_type": "components"
@@ -11,9 +11,9 @@
   "license": "MIT",
   "style": "index.scss",
   "main": "build/index.js",
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-popover",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-popover",
   "bugs": {
-    "url": "https://github.com/primer/primer-css/issues"
+    "url": "https://github.com/primer/primer/issues"
   },
   "scripts": {
     "test-docs": "../../script/test-docs",
