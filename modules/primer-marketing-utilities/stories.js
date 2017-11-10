@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-storiesOf('Marketing Utilities', module)
+storiesOf('Marketing utilities', module)
 .add('Responsive borders', () => (
   <div className='border-top border-sm-right border-md-bottom border-lg-top-0'>.border-top-0</div>
 ))
