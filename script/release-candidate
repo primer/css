@@ -143,6 +143,9 @@ revertPackages()
         .then(() => {
           console.warn("📓  Updated CHANGELOG...\n")
           return execa(`${bin}lerna-changelog`, [], { env: process.env })
+            .then(result => {
+              console.warn(result.stdout)
+            })
             .catch(error => {
               console.error('lerna-changelog error:', error)
             })
