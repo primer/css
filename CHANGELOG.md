@@ -39,7 +39,7 @@
 - Add deprecation warnings for `primer-cards` and `primer-forms/lib/form-validation.scss` #347 (these will be removed in v10.0.0)
 
 ### Changes
-- Update npm metadata for `primer-css`, `primer-core`, `primer-product`, and `primer-marketing` #328
+- Update npm metadata for `primer`, `primer-core`, `primer-product`, and `primer-marketing` #328
 - Remove `HEAD` heading from the changelog #327
 
 # 9.3.0
@@ -51,7 +51,7 @@
 ## Changes
 - Removes `docs` from `gitignore`
 - Removes the `^` from all dependencies so that we can publish exact versions
-- Consolidates release notes from various sources into one changelog located in `/modules/primer-css/CHANGELOG.md`
+- Consolidates release notes from various sources into one changelog located in `/modules/primer/CHANGELOG.md`
 
 # 9.2.0
 
@@ -62,7 +62,7 @@
 ## Changes
 
 - Remove per-module configurations (`.gitignore`, `.postcss.json`, `.stylelintrc.json`) and `CHANGELOG.md` files in #284
-- Replace most static `font-size`, `font-weight`, and `line-height` CSS property values with their [SCSS variable equivalents](https://github.com/primer/primer-css/blob/c9ea37316fbb73c4d9931c52b42bc197260c0bf6/modules/primer-support/lib/variables/typography.scss#L12-L33) in #252
+- Replace most static `font-size`, `font-weight`, and `line-height` CSS property values with their [SCSS variable equivalents](https://github.com/primer/primer/blob/c9ea37316fbb73c4d9931c52b42bc197260c0bf6/modules/primer-support/lib/variables/typography.scss#L12-L33) in #252
 - Refactor CI scripts to use Travis conditional deployment for release candidate and final release publish steps in #290
 
 # 9.1.1
@@ -109,7 +109,7 @@ This release also includes major improvements to our Travis build scripts to aut
 
 We discovered that `primer-core` specified and outdated version of `primer-base` in it's dependencies. The outdated version did not have `normalize.scss` included which could cause some issues. This has issue occurred during v7.0.0 when creating the new monorepo. Also fixes repo urls in `package.json` for individual packages.
 
-See PR [#243](https://github.com/primer/primer-css/pull/243)
+See PR [#243](https://github.com/primer/primer/pull/243)
 
 ## Changes
 
@@ -154,7 +154,7 @@ See PR [#243](https://github.com/primer/primer-css/pull/243)
 
 # 8.0.0 - Imports
 
-Fixes issues with the ordering of imports in each of our meta-packages. See PR [#239](https://github.com/primer/primer-css/pull/239)
+Fixes issues with the ordering of imports in each of our meta-packages. See PR [#239](https://github.com/primer/primer/pull/239)
 
 
 ## Changes
@@ -170,7 +170,7 @@ Fixes issues with the ordering of imports in each of our meta-packages. See PR [
 
 # 7.0.0 - Monorepo
 
-In an effort to improve our publishing workflow we turned Primer CSS into a monorepo, made this repo the source of truth for Primer by removing Primer modules from GitHub, and setup Lerna for managing multiple packages and maintaining independent versioning for all our modules.
+In an effort to improve our publishing workflow we turned Primer into a monorepo, made this repo the source of truth for Primer by removing Primer modules from GitHub, and setup Lerna for managing multiple packages and maintaining independent versioning for all our modules.
 
 This is exciting because:
 
@@ -179,7 +179,7 @@ This is exciting because:
 - we no longer have files like package.json, scripts, and readme's in the GitHub app that don't really belong there
 - **we can accept pull requests from external contributors** again!
 
-See PR for more details on this change: https://github.com/primer/primer-css/pull/230
+See PR for more details on this change: https://github.com/primer/primer/pull/230
 
 ## Other changes:
 

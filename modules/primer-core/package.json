@@ -1,8 +1,8 @@
 {
   "version": "6.4.1",
   "name": "primer-core",
-  "description": "Primer CSS's core modules",
-  "homepage": "http://primercss.io/",
+  "description": "Primer's core modules",
+  "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "build/build.css",
@@ -15,9 +15,9 @@
     "index.scss",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-core",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-core",
   "bugs": {
-    "url": "https://github.com/primer/primer-css/issues"
+    "url": "https://github.com/primer/primer/issues"
   },
   "scripts": {
     "build": "../../script/npm-run primer-module-build index.scss",

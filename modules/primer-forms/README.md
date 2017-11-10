@@ -1,11 +1,11 @@
-# Primer CSS Forms
+# Primer Forms
 
 [![npm version](http://img.shields.io/npm/v/primer-forms.svg)](https://www.npmjs.org/package/primer-forms)
-[![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
+[![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Style individual form controls and utilize common layouts.
 
-This repository is a module of the full [primer-css][primer-css] repository.
+This repository is a module of the full [primer][primer] repository.
 
 ## Install
 
@@ -340,8 +340,8 @@ Align buttons to the right—via `float: right` on the buttons—in forms with `
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer-css]: https://github.com/primer/primer
-[docs]: http://primercss.io/
+[primer]: https://github.com/primer/primer
+[docs]: http://primer.github.io/
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/

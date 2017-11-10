@@ -1,11 +1,11 @@
-# Primer CSS / Subhead
+# Primer / Subhead
 
 [![npm version](http://img.shields.io/npm/v/primer-subhead.svg)](https://www.npmjs.org/package/primer-subhead)
-[![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
+[![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > The Subhead is a simple header with a bottom border. It&#39;s designed to be used on settings and configuration pages.
 
-This repository is a module of the full [primer-css][primer-css] repository.
+This repository is a module of the full [primer][primer] repository.
 
 ## Install
 
@@ -117,8 +117,8 @@ Use the `.Subhead-heading--danger` modifier to make the text bold and red. This 
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer-css]: https://github.com/primer/primer
-[docs]: http://primercss.io/
+[primer]: https://github.com/primer/primer
+[docs]: http://primer.github.io/
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/

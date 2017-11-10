@@ -13,7 +13,7 @@ const revertPackages = require('./revert-packages')
 
 const PRERELEASE = 'prerelease'
 const DIST_TAG = 'rc'
-const PRIMER_CSS = 'primer-css'
+const PRIMER_CSS = 'primer'
 const RELEASE_VERSION = getReleaseVersion(
   PRIMER_CSS,
   process.env.TRAVIS_BRANCH
