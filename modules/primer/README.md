@@ -3,7 +3,7 @@
 [![npm version](http://img.shields.io/npm/v/primer.svg)](https://www.npmjs.org/package/primer)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
-Primer is the CSS framework that powers GitHub's front-end design. Primer includes 23 packages that are grouped into 3 core meta-packages for easy install. Each package and meta-package is independently versioned and distributed via npm, so it's easy to include all or part of Primer within your own project.
+Primer is the design system that powers GitHub. Primer includes 23 packages that are grouped into 3 core meta-packages for easy install. Each package and meta-package is independently versioned and distributed via npm, so it's easy to include all or part of Primer within your own project.
 
 The Primer repo is managed as a monorepo that is composed of many npm packages.
 
