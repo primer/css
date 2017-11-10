@@ -22,6 +22,7 @@ The `.anim-fade-out` class is used to fade out an element on the page. This will
 
 ```html
 <span class="anim-fade-out"><%= octicon("mark-github", :height => 32, :class => "v-align-middle mr-2") %> Hello from GitHub!</span>
+```
 
 ## Fade Up
 
