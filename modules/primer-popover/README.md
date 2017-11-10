@@ -60,10 +60,10 @@ The `Popover-message` element also supports several modifiers, most of which pos
 
 Each of these modifiers also support a syntax for adjusting the positioning the caret to the right, left, top, or bottom of its respective edge. That syntax looks like:
 
-- `.Popover-message--top--right`
-- `.Popover-message--right--top`
-- `.Popover-message--bottom--left`
-- `.Popover-message--left--bottom`
+- `.Popover-message--top-right`
+- `.Popover-message--right-top`
+- `.Popover-message--bottom-left`
+- `.Popover-message--left-bottom`
 
 Lastly, there is an added `.Popover-message--large` modifier, which assumes a slightly wider popover message on screens wider than 544px.
 
@@ -111,7 +111,7 @@ Defaults to caret oriented top-center.
 <div class="position-relative text-right">
   <button class="btn btn-primary">UI</button>
   <div class="Popover right-0">
-    <div class="Popover-message Popover-message--top--right text-left p-4 mt-2 Box box-shadow-large">
+    <div class="Popover-message Popover-message--top-right text-left p-4 mt-2 Box box-shadow-large">
       <h4 class="mb-2">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -126,7 +126,7 @@ Defaults to caret oriented top-center.
 <div class="position-relative">
   <button class="btn btn-primary">UI</button>
   <div class="Popover">
-    <div class="Popover-message Popover-message--top--left p-4 mt-2 Box box-shadow-large">
+    <div class="Popover-message Popover-message--top-left p-4 mt-2 Box box-shadow-large">
       <h4 class="mb-2">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -175,7 +175,7 @@ Defaults to caret oriented top-center.
 
 ```html title="Bottom-right"
 <div class="Popover">
-  <div class="Popover-message Popover-message--bottom--right p-4 mt-2 mx-auto Box box-shadow-large">
+  <div class="Popover-message Popover-message--bottom-right p-4 mt-2 mx-auto Box box-shadow-large">
     <h4 class="mb-2">Popover heading</h4>
     <p>Message about this particular piece of UI.</p>
     <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -187,7 +187,7 @@ Defaults to caret oriented top-center.
 
 ```html title="Bottom-left"
 <div class="Popover">
-  <div class="Popover-message Popover-message--bottom--left p-4 mt-2 mx-auto Box box-shadow-large">
+  <div class="Popover-message Popover-message--bottom-left p-4 mt-2 mx-auto Box box-shadow-large">
     <h4 class="mb-2">Popover heading</h4>
     <p>Message about this particular piece of UI.</p>
     <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
