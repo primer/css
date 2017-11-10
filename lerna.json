@@ -5,7 +5,7 @@
     "tools/*"
   ],
   "changelog": {
-    "repo": "primer/primer-css",
+    "repo": "primer/primer",
     "labels": {
       "Tag: Breaking Change": ":boom: Breaking Change",
       "Tag: Enhancement": ":rocket: Enhancement",
