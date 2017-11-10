@@ -8,4 +8,8 @@ $(dirname $0)/notify pending
 # published version
 $(npm bin)/lerna exec -- $(pwd)/script/try-publish
 
+echo "📓  Updated CHANGELOG..."
+
+$(npm bin)/lerna-changelog
+
 $(dirname $0)/notify success
