@@ -140,6 +140,13 @@ revertPackages()
           })
           return Promise.all(tasks)
         })
+        .then(() => {
+          console.warn("📓  Updated CHANGELOG...\n")
+          return execa(`${bin}lerna-changelog`, [], { env: process.env })
+            .catch(error => {
+              console.error('lerna-changelog error:', error)
+            })
+        })
         .then(() => notify('success'))
       })
   })
