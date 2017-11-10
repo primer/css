@@ -13,7 +13,7 @@ const revertPackages = require('./revert-packages')
 
 const PRERELEASE = 'prerelease'
 const DIST_TAG = 'rc'
-const PRIMER_CSS = 'primer-css'
+const PRIMER_CSS = 'primer'
 const RELEASE_VERSION = getReleaseVersion(
   PRIMER_CSS,
   process.env.TRAVIS_BRANCH
@@ -139,6 +139,16 @@ revertPackages()
             })
           })
           return Promise.all(tasks)
+        })
+        .then(() => {
+          console.warn("📓  Updated CHANGELOG...\n")
+          return execa(`${bin}lerna-changelog`, [], { env: process.env })
+            .then(result => {
+              console.warn(result.stdout)
+            })
+            .catch(error => {
+              console.error('lerna-changelog error:', error)
+            })
         })
         .then(() => notify('success'))
       })

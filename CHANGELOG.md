@@ -1,17 +1,45 @@
-# 10.0.0
+# 10.0.0 (2017-11-10)
 
-### Added
-- New module `primer-subhead`. The Subhead is a simple header with a bottom border. It&#39;s designed to be used on settings and configuration pages.
-- Importing `.input-group` into `primer-forms` module.
-- New module `primer-branch-name` "A nice, consistent way to display branch names."
+#### :boom: Breaking Change
+* [#379](https://github.com/primer/primer-css/pull/379) Deprecating primer-cards and form-cards. ([@jonrohan](https://github.com/jonrohan))
 
-### Removed
-- Removing `primer-cards` module.
-- Removing `.form-cards` styles.
+#### :rocket: Enhancement
+* [#371](https://github.com/primer/primer-css/pull/371) Add .details-reset. ([@muan](https://github.com/muan))
+* [#375](https://github.com/primer/primer-css/pull/375) New utilities & docs - fade out, hover grow, border white fade, responsive positioning, and circle. ([@sophshep](https://github.com/sophshep))
+* [#383](https://github.com/primer/primer-css/pull/383) Add 'Popover' component. ([@brandonrosage](https://github.com/brandonrosage))
+* [#377](https://github.com/primer/primer-css/pull/377) Refactor underline nav. ([@ampinsk](https://github.com/ampinsk))
+* [#337](https://github.com/primer/primer-css/pull/337) Add marketing buttons to primer-marketing-buttons. ([@gladwearefriends](https://github.com/gladwearefriends))
+* [#342](https://github.com/primer/primer-css/pull/342) Import Subhead component. ([@shawnbot](https://github.com/shawnbot))
+* [#341](https://github.com/primer/primer-css/pull/341) Import branch-name component from github/github. ([@shawnbot](https://github.com/shawnbot))
 
-### Changes
-- Moving `primer-breadcrumb` from `primer-marketing` to `primer-core`
-- added `border-radius: 0` to `button` to account for updates in Chroma 62 macOS
+#### :bug: Bug Fix
+* [#360](https://github.com/primer/primer-css/pull/360) Removing ::before ::after padding hack on markdown. ([@jonrohan](https://github.com/jonrohan))
+* [#320](https://github.com/primer/primer-css/pull/320) remove -webkit-text-decoration-skip override. ([@antons](https://github.com/antons))
+* [#359](https://github.com/primer/primer-css/pull/359) Change markdown li break to handle Safari 10.x user stylesheet bug. ([@feministy](https://github.com/feministy))
+* [#388](https://github.com/primer/primer-css/pull/388) [WIP] Button border-radius fix. ([@broccolini](https://github.com/broccolini))
+* [#307](https://github.com/primer/primer-css/pull/307) Do not suppress opacity transition for tooltipped-no-delay. ([@astorije](https://github.com/astorije))
+
+#### :house: Internal
+* [#382](https://github.com/primer/primer-css/pull/382) Update Button docs. ([@JasonEtco](https://github.com/JasonEtco))
+* [#390](https://github.com/primer/primer-css/pull/390) Updating storiesFromMarkdown to read in rails octicons helper and replace with react component. ([@jonrohan](https://github.com/jonrohan))
+* [#389](https://github.com/primer/primer-css/pull/389) Publish alpha release any time we're not on a release branch or master. ([@jonrohan](https://github.com/jonrohan))
+* [#384](https://github.com/primer/primer-css/pull/384) Adding a test to check for the current year in the license and source…. ([@jonrohan](https://github.com/jonrohan))
+* [#374](https://github.com/primer/primer-css/pull/374) Improve Pull Request template. ([@agisilaos](https://github.com/agisilaos))
+
+#### Committers: 13
+- Agisilaos Tsaraboulidis ([agisilaos](https://github.com/agisilaos))
+- Amanda Pinsker ([ampinsk](https://github.com/ampinsk))
+- Anton Sotkov ([antons](https://github.com/antons))
+- Brandon Rosage ([brandonrosage](https://github.com/brandonrosage))
+- Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
+- Diana Mounter ([broccolini](https://github.com/broccolini))
+- Jason Etcovitch ([JasonEtco](https://github.com/JasonEtco))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- Jérémie Astori ([astorije](https://github.com/astorije))
+- Mu-An ✌️ Chiou ([muan](https://github.com/muan))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Sophie Shepherd ([sophshep](https://github.com/sophshep))
+- liz abinante! ([feministy](https://github.com/feministy))
 
 # 9.6.0
 
@@ -39,7 +67,7 @@
 - Add deprecation warnings for `primer-cards` and `primer-forms/lib/form-validation.scss` #347 (these will be removed in v10.0.0)
 
 ### Changes
-- Update npm metadata for `primer-css`, `primer-core`, `primer-product`, and `primer-marketing` #328
+- Update npm metadata for `primer`, `primer-core`, `primer-product`, and `primer-marketing` #328
 - Remove `HEAD` heading from the changelog #327
 
 # 9.3.0
@@ -51,7 +79,7 @@
 ## Changes
 - Removes `docs` from `gitignore`
 - Removes the `^` from all dependencies so that we can publish exact versions
-- Consolidates release notes from various sources into one changelog located in `/modules/primer-css/CHANGELOG.md`
+- Consolidates release notes from various sources into one changelog located in `/modules/primer/CHANGELOG.md`
 
 # 9.2.0
 
@@ -62,7 +90,7 @@
 ## Changes
 
 - Remove per-module configurations (`.gitignore`, `.postcss.json`, `.stylelintrc.json`) and `CHANGELOG.md` files in #284
-- Replace most static `font-size`, `font-weight`, and `line-height` CSS property values with their [SCSS variable equivalents](https://github.com/primer/primer-css/blob/c9ea37316fbb73c4d9931c52b42bc197260c0bf6/modules/primer-support/lib/variables/typography.scss#L12-L33) in #252
+- Replace most static `font-size`, `font-weight`, and `line-height` CSS property values with their [SCSS variable equivalents](https://github.com/primer/primer/blob/c9ea37316fbb73c4d9931c52b42bc197260c0bf6/modules/primer-support/lib/variables/typography.scss#L12-L33) in #252
 - Refactor CI scripts to use Travis conditional deployment for release candidate and final release publish steps in #290
 
 # 9.1.1
@@ -109,7 +137,7 @@ This release also includes major improvements to our Travis build scripts to aut
 
 We discovered that `primer-core` specified and outdated version of `primer-base` in it's dependencies. The outdated version did not have `normalize.scss` included which could cause some issues. This has issue occurred during v7.0.0 when creating the new monorepo. Also fixes repo urls in `package.json` for individual packages.
 
-See PR [#243](https://github.com/primer/primer-css/pull/243)
+See PR [#243](https://github.com/primer/primer/pull/243)
 
 ## Changes
 
@@ -154,7 +182,7 @@ See PR [#243](https://github.com/primer/primer-css/pull/243)
 
 # 8.0.0 - Imports
 
-Fixes issues with the ordering of imports in each of our meta-packages. See PR [#239](https://github.com/primer/primer-css/pull/239)
+Fixes issues with the ordering of imports in each of our meta-packages. See PR [#239](https://github.com/primer/primer/pull/239)
 
 
 ## Changes
@@ -170,7 +198,7 @@ Fixes issues with the ordering of imports in each of our meta-packages. See PR [
 
 # 7.0.0 - Monorepo
 
-In an effort to improve our publishing workflow we turned Primer CSS into a monorepo, made this repo the source of truth for Primer by removing Primer modules from GitHub, and setup Lerna for managing multiple packages and maintaining independent versioning for all our modules.
+In an effort to improve our publishing workflow we turned Primer into a monorepo, made this repo the source of truth for Primer by removing Primer modules from GitHub, and setup Lerna for managing multiple packages and maintaining independent versioning for all our modules.
 
 This is exciting because:
 
@@ -179,7 +207,7 @@ This is exciting because:
 - we no longer have files like package.json, scripts, and readme's in the GitHub app that don't really belong there
 - **we can accept pull requests from external contributors** again!
 
-See PR for more details on this change: https://github.com/primer/primer-css/pull/230
+See PR for more details on this change: https://github.com/primer/primer/pull/230
 
 ## Other changes:
 
