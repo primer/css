@@ -69,7 +69,7 @@ The `.anim-pulse` class will pulse an element infinitely.
 The `.hover-grow` class will increase the scale of the element upon hover.
 
 ```html
-<div class="Box hover-grow p-4">
+<div class="Box hover-grow m-3 p-4">
   <%= octicon("mark-github", :height => 32) %>
 </div>
 ```
