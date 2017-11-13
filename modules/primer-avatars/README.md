@@ -78,10 +78,12 @@ When you need a larger parent avatar, and a smaller child one, overlaid slightly
 Stacked avatars can be used to show multiple collaborators or participants when there is limited space available. When you hover over the stack, the avatars will reveal themselves.
 
 ```html
-<div class="AvatarStack AvatarStack--three-plus tooltipped tooltipped-se temp-tooltipped-align-left" aria-label="octocat, octocat, and octocat">
-  <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
-  <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
-  <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+<div class="AvatarStack AvatarStack--three-plus">
+  <div class="AvatarStack-body tooltipped tooltipped-se temp-tooltipped-align-left" aria-label="octocat, octocat, and octocat">
+    <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+    <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+    <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+  </div>
 </div>
 ```
 
@@ -92,36 +94,42 @@ Based on the number of avatars in the stack, add these modifier classes:
 If you have more than three avatars, add a div with the classes `avatar avatar-more` as the third avatar in the stack, as such:
 
 ```html
-<div class="AvatarStack AvatarStack--three-plus tooltipped tooltipped-se temp-tooltipped-align-left" aria-label="octocat, octocat, octocat, octocat, and octocat">
-  <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
-  <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
-  <div class="avatar avatar-more"></div>
-  <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
-  <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
-  <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+<div class="AvatarStack AvatarStack--three-plus">
+  <div class="AvatarStack-body tooltipped tooltipped-se temp-tooltipped-align-left" aria-label="octocat, octocat, octocat, octocat, and octocat">
+    <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+    <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+    <div class="avatar avatar-more"></div>
+    <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+    <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+    <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+  </div>
 </div>
 ```
 
 You can also link individual avatars. To do this shift the `avatar` class over to the anchor:
 
 ```html
-<div class="AvatarStack AvatarStack--two tooltipped tooltipped-se temp-tooltipped-align-left" aria-label="octocat and octocat">
-  <a href="#" class="avatar">
-    <img height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
-  </a>
-  <a href="#" class="avatar">
-    <img height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
-  </a>
+<div class="AvatarStack AvatarStack--two">
+  <div class="AvatarStack-body tooltipped tooltipped-se temp-tooltipped-align-left" aria-label="octocat and octocat">
+    <a href="#" class="avatar">
+      <img height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+    </a>
+    <a href="#" class="avatar">
+      <img height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+    </a>
+  </div>
 </div>
 ```
 
 Use `AvatarStack--right` to right-align the avatar stack. Remember to switch the alignment of tooltips when making this change.
 
 ```html
-<div class="AvatarStack AvatarStack--three-plus AvatarStack--right tooltipped tooltipped-sw temp-tooltipped-align-right" aria-label="octocat, octocat, and octocat">
-  <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
-  <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
-  <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+<div class="AvatarStack AvatarStack--three-plus AvatarStack--right">
+  <div class="AvatarStack-body tooltipped tooltipped-sw temp-tooltipped-align-right" aria-label="octocat, octocat, and octocat">
+    <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+    <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+    <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
+  </div>
 </div>
 ```
 
