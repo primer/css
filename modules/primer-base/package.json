@@ -2,7 +2,7 @@
   "version": "1.5.1",
   "name": "primer-base",
   "description": "CSS to reset the browsers default styles",
-  "homepage": "http://primercss.io/",
+  "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "index.scss",
@@ -16,9 +16,9 @@
     "lib",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-base",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-base",
   "bugs": {
-    "url": "https://github.com/primer/primer-css/issues"
+    "url": "https://github.com/primer/primer/issues"
   },
   "scripts": {
     "build": "../../script/npm-run primer-module-build index.scss",
@@ -33,7 +33,7 @@
     "primer",
     "css",
     "github",
-    "primercss",
+    "design-system",
     "base",
     "reset",
     "normalize"

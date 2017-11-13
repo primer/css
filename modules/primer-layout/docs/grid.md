@@ -2,7 +2,7 @@
 title: Grid
 status: New release
 status_issue: https://github.com/github/design-systems/issues/88
-source: https://github.com/primer/primer-css/blob/master/modules/primer-layout/lib/grid.scss
+source: https://github.com/primer/primer/blob/master/modules/primer-layout/lib/grid.scss
 ---
 
 The grid is 12 columns and percentage-based. The number of columns a container spans can be adjusted across breakpoints for responsive layouts. The grid system works with a variety of layout utilities to achieve different results.

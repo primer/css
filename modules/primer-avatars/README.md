@@ -1,11 +1,11 @@
-# Primer CSS Avatars
+# Primer Avatars
 
 [![npm version](http://img.shields.io/npm/v/primer-avatars.svg)](https://www.npmjs.org/package/primer-avatars)
-[![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
+[![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Avatars are images that users can set as their profile picture. On GitHub, they’re always going to be rounded squares. They can be custom photos, uploaded by users, or generated as Identicons as a placeholder.
 
-This repository is a module of the full [primer-css][primer-css] repository.
+This repository is a module of the full [primer][primer] repository.
 
 ## Install
 
@@ -186,8 +186,8 @@ For specific cases where two badges or more need to be shown as related or conne
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer-css]: https://github.com/primer/primer
-[docs]: http://primercss.io/
+[primer]: https://github.com/primer/primer
+[docs]: http://primer.github.io/
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/
