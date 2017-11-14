@@ -42,6 +42,9 @@ status: Stable
 
 Style individual form controls and utilize common layouts.
 
+{:toc}
+
+Overview:
 - We reset several elements' default styles for cross browser consistency and easier manipulation later. This includes `<fieldset>`s, WebKit validation bubbles, and most textual `<input>`s.
 - Specific types of textual `<input>`s are styled automatically, but `.form-control` is available should you need it.
 - Always declare a `type` on your `<button>`s.
