@@ -1,5 +1,5 @@
 {
-  "version": "6.4.1",
+  "version": "6.5.0",
   "name": "primer-core",
   "description": "Primer's core modules",
   "homepage": "http://primer.github.io/",
@@ -26,17 +26,17 @@
     "lint": "../../script/lint-scss"
   },
   "dependencies": {
-    "primer-base": "1.5.1",
-    "primer-box": "2.5.1",
-    "primer-breadcrumb": "1.4.1",
-    "primer-buttons": "2.4.1",
-    "primer-forms": "1.4.1",
-    "primer-layout": "1.4.1",
-    "primer-navigation": "1.4.1",
-    "primer-support": "4.4.1",
-    "primer-table-object": "1.4.1",
-    "primer-tooltips": "1.4.1",
-    "primer-truncate": "1.4.1",
-    "primer-utilities": "4.8.1"
+    "primer-base": "1.6.0",
+    "primer-box": "2.5.2",
+    "primer-breadcrumb": "1.4.2",
+    "primer-buttons": "2.5.0",
+    "primer-forms": "2.0.0",
+    "primer-layout": "1.4.2",
+    "primer-navigation": "1.5.0",
+    "primer-support": "4.4.2",
+    "primer-table-object": "1.4.2",
+    "primer-tooltips": "1.4.2",
+    "primer-truncate": "1.4.2",
+    "primer-utilities": "4.8.2"
   }
 }

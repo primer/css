@@ -1,5 +1,5 @@
 {
-  "version": "5.4.1",
+  "version": "5.5.0",
   "name": "primer-product",
   "description": "Primer's product modules",
   "homepage": "http://primer.github.io/",
@@ -26,14 +26,14 @@
     "lint": "../../script/lint-scss"
   },
   "dependencies": {
-    "primer-alerts": "1.5.1",
-    "primer-avatars": "1.4.1",
-    "primer-blankslate": "1.4.1",
-    "primer-branch-name": "0.0.1",
-    "primer-labels": "1.5.1",
-    "primer-markdown": "3.7.1",
-    "primer-popover": "0.0.1",
-    "primer-subhead": "0.0.1",
-    "primer-support": "4.4.1"
+    "primer-alerts": "1.5.2",
+    "primer-avatars": "1.4.2",
+    "primer-blankslate": "1.4.2",
+    "primer-branch-name": "1.0.0",
+    "primer-labels": "1.5.2",
+    "primer-markdown": "3.7.2",
+    "primer-popover": "0.0.2",
+    "primer-subhead": "1.0.0",
+    "primer-support": "4.4.2"
   }
 }
