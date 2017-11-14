@@ -3,6 +3,7 @@
 #### :boom: Breaking Change
 * [#395](https://github.com/primer/primer/pull/395) Renaming primer-css to primer. ([@jonrohan](https://github.com/jonrohan))
 * [#379](https://github.com/primer/primer/pull/379) Deprecating primer-cards and form-cards. ([@jonrohan](https://github.com/jonrohan))
+* [#336](https://github.com/primer/primer/pull/336) Move `primer-breadcrumbs` from marketing to core ([@jonrohan]((https://github.com/jonrohan))
 
 #### :rocket: Enhancement
 * [#371](https://github.com/primer/primer/pull/371) Add .details-reset. ([@muan](https://github.com/muan))
