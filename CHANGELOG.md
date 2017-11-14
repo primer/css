@@ -10,7 +10,7 @@
 * [#375](https://github.com/primer/primer/pull/375) New utilities & docs - fade out, hover grow, border white fade, responsive positioning, and circle. ([@sophshep](https://github.com/sophshep))
 * [#383](https://github.com/primer/primer/pull/383) Add 'Popover' component. ([@brandonrosage](https://github.com/brandonrosage))
 * [#377](https://github.com/primer/primer/pull/377) Refactor and add underline nav component. ([@ampinsk](https://github.com/ampinsk))
-* [#337](https://github.com/primer/primer/pull/337) Add marketing buttons to primer-marketing-buttons. ([@gladwearefriends](https://github.com/gladwearefriends))
+* [#337](https://github.com/primer/primer/pull/337) Add marketing buttons to primer-marketing. ([@gladwearefriends](https://github.com/gladwearefriends))
 * [#342](https://github.com/primer/primer/pull/342) Add Subhead component. ([@shawnbot](https://github.com/shawnbot))
 * [#341](https://github.com/primer/primer/pull/341) Add branch-name component from github/github. ([@shawnbot](https://github.com/shawnbot))
 
