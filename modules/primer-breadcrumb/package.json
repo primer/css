@@ -1,8 +1,8 @@
 {
-  "version": "1.4.1",
+  "version": "1.4.2",
   "name": "primer-breadcrumb",
   "description": "Breadcrumb navigation for pages with parents / grandparents.",
-  "homepage": "http://primercss.io/",
+  "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "build/build.css",
@@ -16,9 +16,9 @@
     "lib",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-breadcrumb",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-breadcrumb",
   "bugs": {
-    "url": "https://github.com/primer/primer-css/issues"
+    "url": "https://github.com/primer/primer/issues"
   },
   "scripts": {
     "test-docs": "../../script/test-docs",
@@ -28,7 +28,7 @@
     "test": "../../script/npm-run-all build lint test-docs"
   },
   "dependencies": {
-    "primer-support": "4.4.1"
+    "primer-support": "4.4.2"
   },
   "keywords": [
     "breadcrumb",
@@ -36,7 +36,7 @@
     "github",
     "navigation",
     "primer",
-    "primercss",
+    "design-system",
     "style"
   ]
 }

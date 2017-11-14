@@ -1,8 +1,8 @@
 {
-  "version": "1.4.1",
+  "version": "2.0.0",
   "name": "primer-forms",
   "description": "Style individual form controls and utilize common layouts.",
-  "homepage": "http://primercss.io/",
+  "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "index.scss",
@@ -16,9 +16,9 @@
     "lib",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-forms",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-forms",
   "bugs": {
-    "url": "https://github.com/primer/primer-css/issues"
+    "url": "https://github.com/primer/primer/issues"
   },
   "scripts": {
     "build": "../../script/npm-run primer-module-build index.scss",
@@ -27,13 +27,13 @@
     "test": "../../script/npm-run-all build lint"
   },
   "dependencies": {
-    "primer-support": "4.4.1"
+    "primer-support": "4.4.2"
   },
   "keywords": [
     "primer",
     "css",
     "github",
-    "primercss",
+    "design-system",
     "forms",
     "inputs",
     "select menus"
