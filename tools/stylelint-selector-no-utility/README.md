@@ -3,7 +3,7 @@
 [![NPM version](http://img.shields.io/npm/v/stylelint-selector-no-utility.svg)](https://www.npmjs.org/package/stylelint-selector-no-utility)
 [![Build Status](https://travis-ci.org/primer/stylelint-selector-no-utility.svg?branch=master)](https://travis-ci.org/primer/stylelint-selector-no-utility)
 
-**This plugin is specific to [primer-utilities](https://github.com/primer/primer-css/tree/master/modules/primer-utilities)**. We'll accept pull requests to make it more generic, or feel free to fork and use it for your own classes.
+**This plugin is specific to [primer-utilities](https://github.com/primer/primer/tree/master/modules/primer-utilities)**. We'll accept pull requests to make it more generic, or feel free to fork and use it for your own classes.
 
 Utilities are single purpose styles that should be treated as immutable CSS. They should not be altered by custom CSS as this can cause unwanted side effects.
 
@@ -57,14 +57,14 @@ In your [stylelint config](http://stylelint.io/user-guide/configuration/) add th
 ## Related
 
 * [Stylelint](http://stylelint.io/)
-* [primer-css][primer]
+* [primer][primer]
 
 ## License
 
 MIT &copy; [GitHub](https://github.com/)
 
 [primer]: https://github.com/primer/primer
-[docs]: http://primercss.io/
+[docs]: http://primer.github.io/
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/

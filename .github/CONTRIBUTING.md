@@ -2,7 +2,7 @@
 
 [fork]: https://github.com/github/primer/fork
 [pr]: https://github.com/github/primer/compare
-[style]: http://primercss.io/guidelines/
+[style]: http://primer.github.io/guidelines/
 
 Hi there! We're thrilled that you'd like to contribute to this project. Your help is essential for keeping it great.
 
@@ -59,16 +59,16 @@ Good pull requests—patches, improvements, new features—are a fantastic help.
 
 ### Updating Primer modules
 
-Anyone can open a pull request on Primer CSS. You do not need to work at GitHub or be a member of the org to open a pull request. 
+Anyone can open a pull request on Primer. You do not need to work at GitHub or be a member of the org to open a pull request. 
 
-1. Fork and clone [this repository](https://github.com/primer/primer-css).
+1. Fork and clone [this repository](https://github.com/primer/primer).
 2. Configure and install the dependencies: `npm install`
 3. Check out the dev branch `git checkout dev`
 3. Create a new branch from dev `git checkout -b my-branch-name`
 4. Make your changes and commit them.
 5. Push your branch and open a pull request against `dev`. Add a comment describing your proposed changes and request a review from `@primer/ds-core`.
 6. Wait for CI tests to finish.
-   - If the tests pass, you should see a status check telling you which alpha version of primer-css you can install with npm to test your work in other projects.
+   - If the tests pass, you should see a status check telling you which alpha version of primer you can install with npm to test your work in other projects.
    - If the tests fail, review the logs and address any issues.
    - If the builds fail for any other reason (as they occasionally do), they may need to be manually restarted.
 7. When CI tests pass, a new npm alpha release will be posted under the CI checks, you can use this npm version for testing in your project or with a GitHub site if you are staff.

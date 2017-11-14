@@ -1,7 +1,7 @@
 ---
 title: Breakpoints
 status: Stable
-source: https://github.com/primer/primer-css/blob/master/modules/primer-support/lib/mixins/layout.scss
+source: https://github.com/primer/primer/blob/master/modules/primer-support/lib/mixins/layout.scss
 ---
 
 {:toc}
