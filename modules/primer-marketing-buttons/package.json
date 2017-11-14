@@ -31,7 +31,7 @@
     "primer-support": "4.4.2"
   },
   "peerDependencies": {
-    "primer-buttons": "2.4.1"
+    "primer-buttons": ">=2.5.0"
   },
   "keywords": [
     "css",

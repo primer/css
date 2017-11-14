@@ -1,3 +1,5 @@
+
+
 {
   "version": "0.0.2",
   "name": "primer-popover",
@@ -26,7 +28,7 @@
     "primer-support": "4.4.2"
   },
   "peerDependencies": {
-    "primer-box": "2.5.1"
+    "primer-box": ">=2.5.0"
   },
   "keywords": [
     "github",
