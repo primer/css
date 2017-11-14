@@ -1,5 +1,5 @@
 {
-  "version": "5.5.0",
+  "version": "5.5.1",
   "name": "primer-product",
   "description": "Primer's product modules",
   "homepage": "http://primer.github.io/",
@@ -32,7 +32,7 @@
     "primer-branch-name": "1.0.0",
     "primer-labels": "1.5.2",
     "primer-markdown": "3.7.2",
-    "primer-popover": "0.0.2",
+    "primer-popover": "0.0.3",
     "primer-subhead": "1.0.0",
     "primer-support": "4.4.2"
   }
