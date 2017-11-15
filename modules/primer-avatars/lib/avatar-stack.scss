@@ -2,6 +2,8 @@
 // there is limited space available.
 //
 // No styleguide references
+@warn ".avatar-stack will be deprecated in version 11. Use .AvatarStack instead.";
+
 .avatar-stack {
   display: inline-block;
   white-space: nowrap;
