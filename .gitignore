@@ -6,4 +6,3 @@ node_modules
 build
 _site
 *.lerna_backup
-.changelog

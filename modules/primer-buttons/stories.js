@@ -59,14 +59,3 @@ storiesOf('Button', module)
       <button className='btn btn-purple disabled'>disabled</button>
     </div>
   ))
-  .add('btn-large', () => (
-    <div className='f3 p-4'>
-      <a className="btn btn-large btn-purple mr-6" href="#url" role="button">Large link button</a>
-      <button className="btn btn-large btn-outline-blue" type="button">Large button button</button>
-    </div>
-  ))
-  .add('btn-link', () => (
-    <div className='p-4 d-flex flex-justify-between'>
-      <button className='btn-link'>Button</button>
-    </div>
-  ))

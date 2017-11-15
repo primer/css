@@ -13,8 +13,8 @@ fi
 context="npm publish"
 _status=$1
 
-# get the published version of primer from its package.json
-package=primer
+# get the published version of primer-css from its package.json
+package=primer-css
 version=$(jq -r .version modules/$package/package.json)
 published="$package@$version"
 

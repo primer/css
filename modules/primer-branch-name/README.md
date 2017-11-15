@@ -1,11 +1,11 @@
-# Primer / Branch Name
+# Primer CSS / Branch Name
 
 [![npm version](http://img.shields.io/npm/v/primer-branch-name.svg)](https://www.npmjs.org/package/primer-branch-name)
-[![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
+[![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
 > A nice, consistent way to display branch names.
 
-This repository is a module of the full [primer][primer] repository.
+This repository is a module of the full [primer-css][primer-css] repository.
 
 ## Install
 
@@ -62,8 +62,8 @@ You may also include an octicon before the branch name text:
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer]: https://github.com/primer/primer
-[docs]: http://primer.github.io/
+[primer-css]: https://github.com/primer/primer
+[docs]: http://primercss.io/
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/

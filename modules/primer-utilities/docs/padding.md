@@ -30,7 +30,7 @@ Since padding utilities have many variations and will be used in many places, we
 
 _**Note:** The blue in the examples below represents the element, and the green represents the padding._
 
-## Uniform padding
+## Uniform spacing
 
 Use uniform spacing utilities to apply equal padding to all sides of an element. These utilities can be used with a spacing scale from 0-6.
 
@@ -58,7 +58,7 @@ Use uniform spacing utilities to apply equal padding to all sides of an element.
 </div>
 ```
 
-## Directional padding
+## Directional spacing
 
 Use directional utilities to apply padding to an individual side, or the X and Y axis of an element. Directional utilities can change or override default padding, and can be used with a spacing scale of 0-6.
 

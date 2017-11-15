@@ -1,11 +1,11 @@
-# Primer Truncate
+# Primer CSS Truncate
 
 [![npm version](http://img.shields.io/npm/v/primer-truncate.svg)](https://www.npmjs.org/package/primer-truncate)
-[![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
+[![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
 > .css-truncate will shorten text with an ellipsis. The maximum width of the truncated text can be changed by overriding the max-width of the .css-truncate-target.
 
-This repository is a module of the full [primer][primer] repository.
+This repository is a module of the full [primer-css][primer-css] repository.
 
 ## Install
 
@@ -61,8 +61,8 @@ You can reveal the entire string on hover with the addition of `.expandable`.
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer]: https://github.com/primer/primer
-[docs]: http://primer.github.io/
+[primer-css]: https://github.com/primer/primer
+[docs]: http://primercss.io/
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/
