@@ -1,11 +1,11 @@
-# Primer Forms
+# Primer CSS Forms
 
 [![npm version](http://img.shields.io/npm/v/primer-forms.svg)](https://www.npmjs.org/package/primer-forms)
-[![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
+[![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
 > Style individual form controls and utilize common layouts.
 
-This repository is a module of the full [primer][primer] repository.
+This repository is a module of the full [primer-css][primer-css] repository.
 
 ## Install
 
@@ -42,9 +42,6 @@ status: Stable
 
 Style individual form controls and utilize common layouts.
 
-{:toc}
-
-Overview:
 - We reset several elements' default styles for cross browser consistency and easier manipulation later. This includes `<fieldset>`s, WebKit validation bubbles, and most textual `<input>`s.
 - Specific types of textual `<input>`s are styled automatically, but `.form-control` is available should you need it.
 - Always declare a `type` on your `<button>`s.
@@ -343,8 +340,8 @@ Align buttons to the right—via `float: right` on the buttons—in forms with `
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer]: https://github.com/primer/primer
-[docs]: http://primer.github.io/
+[primer-css]: https://github.com/primer/primer
+[docs]: http://primercss.io/
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/

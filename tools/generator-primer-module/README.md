@@ -1,7 +1,7 @@
-# Primer Module Generator
+# Primer CSS Module Generator
 
 [![npm version](http://img.shields.io/npm/v/generator-primer-module.svg)](https://www.npmjs.org/package/generator-primer-module)
-[![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
+[![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
 Primer is the CSS framework that powers GitHub's front-end design. This is a
 [Yeoman] generator that we use to scaffold new Primer modules.
@@ -10,7 +10,7 @@ Primer is the CSS framework that powers GitHub's front-end design. This is a
 
 ### In the Monorepo
 
-1. `cd` to the top level directory of the `primer` repository
+1. `cd` to the top level directory of the `primer-css` repository
 1. Run:
 
     ```sh
@@ -69,7 +69,7 @@ npm install -g yo
 ### Standalone usage
 
 It's possible to use this generator to create "standalone" Primer modules that
-live outside of the Primer monorepo, with the following caveats:
+live outside of the Primer CSS monorepo, with the following caveats:
 
 * When prompted to add the new module to existing meta-packages, you will need
   to un-select them all.
@@ -100,7 +100,7 @@ yo primer-module primer-foo-bar
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
 [primer]: https://github.com/primer/primer
-[docs]: http://primer.github.io/
+[docs]: http://primercss.io/
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/

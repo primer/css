@@ -21,7 +21,7 @@ if (module.parent) {
   module.exports = getReleaseVersion
 } else {
   const args = process.argv.slice(2)
-  const pkg = args.shift() || 'primer'
+  const pkg = args.shift() || 'primer-css'
   const branch = args.shift() || process.env.TRAVIS_BRANCH
   const version = getReleaseVersion(pkg, branch)
   console.log(version)

@@ -1,7 +1,7 @@
 {
-  "version": "1.4.1",
-  "name": "primer-avatars",
-  "description": "Basic styles for user profile avatars.",
+  "version": "0.1.0",
+  "name": "primer-dropdown",
+  "description": "A lightweight context menu for navigation and actions.",
   "homepage": "http://primercss.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
@@ -16,21 +16,21 @@
     "lib",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-avatars",
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-dropdown",
   "bugs": {
     "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
-    "build": "../../script/npm-run primer-module-build index.scss",
+    "test-docs": "ava --verbose ../../tests/modules/test-*.js",
+    "build": "primer-module-build index.scss",
     "prepare": "npm run build",
-    "lint": "../../script/lint-scss",
-    "test": "../../script/npm-run-all build lint"
+    "lint": "stylelint **/*.scss -s scss",
+    "test": "npm-run-all -s build lint test-docs"
   },
   "dependencies": {
     "primer-support": "4.4.1"
   },
   "keywords": [
-    "avatars",
     "primer",
     "css",
     "github",

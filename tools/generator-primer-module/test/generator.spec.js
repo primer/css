@@ -22,7 +22,7 @@ test("file scaffolding", t => {
 
       const readme = path("README.md")
       assert.file(readme)
-      assert.fileContent(readme, /# Primer \/ Test/)
+      assert.fileContent(readme, /# Primer CSS \/ Test/)
       assert.fileContent(readme, `npmjs.org/package/${module}`)
       assert.fileContent(readme, `npm install --save ${module}`)
 
@@ -108,7 +108,7 @@ test("repository path is set properly", t => {
   return generate({prompts: {module}})
     .then(path => {
       assert.jsonFileContent(path("package.json"), {
-        repository: `https://github.com/primer/primer/tree/master/modules/${module}`,
+        repository: `https://github.com/primer/primer-css/tree/master/modules/${module}`,
       })
       t.pass()
     })

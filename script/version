@@ -7,7 +7,7 @@ if [[ $# -lt 1 ]]; then
 fi
 
 version=$1
-module=${2:-primer}
+module=${2:-primer-css}
 
 cd modules/$module
 echo "${module}@$(jq -r .version package.json) => ${version}"

@@ -1,8 +1,8 @@
 {
-  "version": "4.4.2",
+  "version": "4.4.1",
   "name": "primer-support",
   "description": "Sass variables, mixins, and functions for use in our components.",
-  "homepage": "http://primer.github.io/",
+  "homepage": "http://primercss.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "index.scss",
@@ -15,9 +15,9 @@
     "lib",
     "docs"
   ],
-  "repository": "https://github.com/primer/primer/tree/master/modules/primer-support",
+  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-support",
   "bugs": {
-    "url": "https://github.com/primer/primer/issues"
+    "url": "https://github.com/primer/primer-css/issues"
   },
   "scripts": {
     "lint": "../../script/lint-scss",
@@ -28,7 +28,7 @@
     "primer",
     "css",
     "github",
-    "design-system",
+    "primercss",
     "mixins",
     "functions",
     "variables",

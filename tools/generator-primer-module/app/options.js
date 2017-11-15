@@ -5,7 +5,7 @@ const capitalize = require("./lib/capitalize")
 const stripPrimerPrefix = require("./lib/strip-prefix")
 
 const META_PACKAGES = [
-  "primer",
+  "primer-css",
   "primer-core",
   "primer-product",
   "primer-marketing",
@@ -143,7 +143,7 @@ module.exports = {
       },
       choices: META_PACKAGES,
       default: function({category}) {
-        const pkgs = ["primer"]
+        const pkgs = ["primer-css"]
         category = category || this.options.category
         return (category === "meta")
           ? pkgs
