@@ -33,28 +33,28 @@ storiesOf('Tooltips', module)
 .add('tooltip aligned', () => (
   <div className='p-4'>
     <span className='tooltipped tooltipped-ne tooltipped-align-left-1 border p-2 mb-2 mr-2 float-left' aria-label='Tooltipped NE and aligned left.'>
-    Tooltip North East align left
+    Tooltip North East align left 1
     </span>
     <span className='tooltipped tooltipped-ne tooltipped-align-left-2 border p-2 mb-2 mr-2 float-left' aria-label='Tooltipped NE and aligned left.'>
-    Tooltip North East align left
+    Tooltip North East align left 2
     </span>
     <span className='tooltipped tooltipped-se tooltipped-align-left-1 border p-2 mb-2 mr-2 float-left' aria-label='Tooltipped SW and aigned left.'>
-    Tooltip South East align left
+    Tooltip South East align left 1
     </span>
     <span className='tooltipped tooltipped-se tooltipped-align-left-2 border p-2 mb-2 mr-2 float-left' aria-label='Tooltipped SW and aigned left.'>
-    Tooltip South East align left
+    Tooltip South East align left 2
     </span>
     <span className='tooltipped tooltipped-nw tooltipped-align-right-1 border p-2 mb-2 mr-2 float-left' aria-label='Tooltipped NW and aligned right.'>
-      Tooltip North West align right
+      Tooltip North West align right 1
     </span>
     <span className='tooltipped tooltipped-nw tooltipped-align-right-2 border p-2 mb-2 mr-2 float-left' aria-label='Tooltipped NW and aligned right.'>
-      Tooltip North West align right
+      Tooltip North West align right 2
     </span>
     <span className='tooltipped tooltipped-sw tooltipped-align-right-1 border p-2 mb-2 mr-2 float-left' aria-label='Tooltipped SE and aligned right.'>
-      Tooltip South West align right
+      Tooltip South West align right 1
     </span>
     <span className='tooltipped tooltipped-sw tooltipped-align-right-2 border p-2 mb-2 mr-2 float-left' aria-label='Tooltipped SE and aligned right.'>
-      Tooltip South West align right
+      Tooltip South West align right 2
     </span>
   </div>
   ))
