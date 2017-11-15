@@ -31,7 +31,7 @@ Since margin utilities have many variations and will be used in many places, we 
 
 _**Note:** The blue in the examples represents the element, and the orange represents the margin_
 
-## Uniform spacing
+## Uniform margins
 
 Use uniform spacing utilities to apply equal margin to all sides of an element. These utilities can change or override default margins, and can be used with a spacing scale from 0-6.
 
@@ -59,7 +59,7 @@ Use uniform spacing utilities to apply equal margin to all sides of an element. 
 </div>
 ```
 
-## Directional spacing
+## Directional margins
 
 Use directional utilities to apply margin to an individual side, or the X and Y axis of an element. Directional utilities can change or override default margins, and can be used with a spacing scale of 0-6.
 

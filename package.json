@@ -14,7 +14,8 @@
     "release-pr": "script/release-pr",
     "release-candidate": "script/release-candidate",
     "release": "script/release",
-    "bump": "lerna publish --exact --skip-npm --since \"v$(npm info primer-css version)\"",
+    "publish-skipgit": "lerna publish --skip-git",
+    "bump": "lerna publish --exact --skip-npm --since \"v$(npm info primer version)\"",
     "new-module": "script/new-module",
     "test": "npm run test-all-modules && lerna run test",
     "test-all-modules": "ava --verbose tests/test-*.js"
@@ -22,7 +23,7 @@
   "devDependencies": {
     "@storybook/addon-options": "^3.2.6",
     "@storybook/react": "^3.2.12",
-    "ava": "^0.21.0",
+    "ava": "^0.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-minify": "^0.2.0",
     "babel-preset-react": "^6.24.1",
@@ -36,6 +37,7 @@
     "html-to-react": "^1.2.11",
     "isomorphic-fetch": "^2.2.1",
     "lerna": "^2.4.0",
+    "lerna-changelog": "^0.7.0",
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.0.2",
     "octicons": "^6.0.1",

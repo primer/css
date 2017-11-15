@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "name": "primer-marketing-buttons",
+  "description": "Buttons for marketing websites at GitHub",
+  "homepage": "http://primer.github.io/",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "build/build.css",
+  "main": "build/index.js",
+  "primer": {
+    "category": "marketing",
+    "module_type": "components"
+  },
+  "files": [
+    "index.scss",
+    "lib",
+    "build"
+  ],
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-marketing-buttons",
+  "bugs": {
+    "url": "https://github.com/primer/primer/issues"
+  },
+  "scripts": {
+    "test-docs": "../../script/test-docs",
+    "build": "../../script/npm-run primer-module-build index.scss",
+    "prepare": "npm run build",
+    "lint": "../../script/lint-scss",
+    "test": "../../script/npm-run-all build lint test-docs"
+  },
+  "dependencies": {
+    "primer-support": "4.4.2"
+  },
+  "peerDependencies": {
+    "primer-buttons": "2.4.1"
+  },
+  "keywords": [
+    "css",
+    "github",
+    "primer",
+    "design-system",
+    "style",
+    "buttons"
+  ]
+}
