@@ -1,5 +1,5 @@
 {
-  "version": "1.4.2",
+  "version": "1.4.3",
   "name": "primer-breadcrumb",
   "description": "Breadcrumb navigation for pages with parents / grandparents.",
   "homepage": "http://primer.github.io/",
@@ -28,7 +28,7 @@
     "test": "../../script/npm-run-all build lint test-docs"
   },
   "dependencies": {
-    "primer-support": "4.4.2"
+    "primer-support": "4.5.0"
   },
   "keywords": [
     "breadcrumb",
