@@ -40,11 +40,18 @@ title: Tooltips
 status: Stable
 -->
 
-Add tooltips built entirely in CSS to nearly any element. Just add a few classes and an `aria-label` attribute.
+Add tooltips built entirely in CSS to nearly any element.
+
+{:toc}
+
+## Implementation and accessibility
 
 **Attention**: we use `aria-label` for tooltips instead of something like `data-tooltip` because it is crucial that the tooltip content is available for screen reader users as well. However, `aria-label` **replaces** the text content of an element for screen reader users, so only use tooltip if there is no better way to present the information, or consider using `title` for supplement information.
 
-In addition, you'll want to specify a direction:
+**Note:** Tooltip classes will conflict with Octicon styles, and as such, must be applied to the parent element instead of the icon.
+
+## Tooltip direction
+Specify the direction of a tooltip with north, south, east, and west directions:
 
 - `.tooltipped-n`
 - `.tooltipped-ne`
@@ -55,7 +62,6 @@ In addition, you'll want to specify a direction:
 - `.tooltipped-w`
 - `.tooltipped-nw`
 
-Tooltip classes will conflict with Octicon classes, and as such, must go on a parent element instead of the icon.
 
 ```html
 <span class="tooltipped tooltipped-n border p-2 mb-2 mr-2 float-left" aria-label="This is the tooltip on the North side.">
@@ -112,7 +118,7 @@ Use `.tooltipped-multiline` when you have long content. This style has some limi
 </span>
 ```
 
-#### Tooltips No Delay
+## Tooltips No Delay
 
 By default the tooltips have a slight delay before appearing. This is to keep multiple tooltips in the UI from being distracting. There is a modifier class you can use to override this. `.tooltipped-no-delay`
 
