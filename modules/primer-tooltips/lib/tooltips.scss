@@ -188,23 +188,41 @@
 }
 
 // Tooltip align right and left
-.tooltipped-align-right {
+.tooltipped-align-right-1,
+.tooltipped-align-right-2 {
   &::after {
     right: 0;
     margin-right: 0;
   }
+}
 
+.tooltipped-align-right-1 {
+  &::before {
+    right: 10px;
+  }
+}
+
+.tooltipped-align-right-2 {
   &::before {
     right: 15px;
   }
 }
 
-.tooltipped-align-left {
+.tooltipped-align-left-1,
+.tooltipped-align-left-2, {
   &::after {
     left: 0;
     margin-left: 0;
   }
+}
 
+.tooltipped-align-left-1 {
+  &::before {
+    left: 5px;
+  }
+}
+
+.tooltipped-align-left-2 {
   &::before {
     left: 10px;
   }
