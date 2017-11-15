@@ -1,6 +1,6 @@
 # Primer Popover
 
-[![npm version](http://img.shields.io/npm/v/primer-popover.svg)](https://www.npmjs.org/package/primer-popover)
+[![npm version](https://img.shields.io/npm/v/primer-popover.svg)](https://www.npmjs.org/package/primer-popover)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Popover for suggesting, guiding, and bringing attention to specific UI elements on a page.

@@ -1,6 +1,6 @@
 # Primer Layout
 
-[![npm version](http://img.shields.io/npm/v/primer-layout.svg)](https://www.npmjs.org/package/primer-layout)
+[![npm version](https://img.shields.io/npm/v/primer-layout.svg)](https://www.npmjs.org/package/primer-layout)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Primer’s layout includes basic page containers and a single-tiered, fraction-based grid system. That sounds more complicated than it really is though—it’s just containers, rows, and columns.

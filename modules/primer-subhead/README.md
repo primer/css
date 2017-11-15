@@ -1,6 +1,6 @@
 # Primer / Subhead
 
-[![npm version](http://img.shields.io/npm/v/primer-subhead.svg)](https://www.npmjs.org/package/primer-subhead)
+[![npm version](https://img.shields.io/npm/v/primer-subhead.svg)](https://www.npmjs.org/package/primer-subhead)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > The Subhead is a simple header with a bottom border. It&#39;s designed to be used on settings and configuration pages.

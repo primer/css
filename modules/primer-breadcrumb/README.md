@@ -1,6 +1,6 @@
 # Primer Breadcrumb Navigation
 
-[![npm version](http://img.shields.io/npm/v/primer-breadcrumb.svg)](https://www.npmjs.org/package/primer-breadcrumb)
+[![npm version](https://img.shields.io/npm/v/primer-breadcrumb.svg)](https://www.npmjs.org/package/primer-breadcrumb)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Breadcrumb navigation for GitHub's pages with parents / grandparents.

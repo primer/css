@@ -1,6 +1,6 @@
 # Primer Buttons
 
-[![npm version](http://img.shields.io/npm/v/primer-buttons.svg)](https://www.npmjs.org/package/primer-buttons)
+[![npm version](https://img.shields.io/npm/v/primer-buttons.svg)](https://www.npmjs.org/package/primer-buttons)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Buttons are used for actions, like in forms, while textual hyperlinks are used for destinations, or moving from one page to another.

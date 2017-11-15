@@ -1,6 +1,6 @@
 # Primer Tooltips
 
-[![npm version](http://img.shields.io/npm/v/primer-tooltips.svg)](https://www.npmjs.org/package/primer-tooltips)
+[![npm version](https://img.shields.io/npm/v/primer-tooltips.svg)](https://www.npmjs.org/package/primer-tooltips)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Add tooltips built entirely in CSS to nearly any element. Just add a few classes and an aria-label attribute.

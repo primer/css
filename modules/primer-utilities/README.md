@@ -1,6 +1,6 @@
 # Primer Utilities
 
-[![npm version](http://img.shields.io/npm/v/primer-utilities.svg)](https://www.npmjs.org/package/primer-utilities)
+[![npm version](https://img.shields.io/npm/v/primer-utilities.svg)](https://www.npmjs.org/package/primer-utilities)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > There are a handful of utilities in Primer for quick behaviors, floats, colors, alignment, and more.

@@ -1,6 +1,6 @@
 # Primer Core
 
-[![npm version](http://img.shields.io/npm/v/primer-core.svg)](https://www.npmjs.org/package/primer-core)
+[![npm version](https://img.shields.io/npm/v/primer-core.svg)](https://www.npmjs.org/package/primer-core)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Primer core is one of 3 meta-packages that belong to the Primer framework. Primer core contains packages that are shared between GitHub product and marketing websites.
