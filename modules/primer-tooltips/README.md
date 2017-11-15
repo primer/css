@@ -84,7 +84,25 @@ Tooltip classes will conflict with Octicon classes, and as such, must go on a pa
 </span>
 ```
 
-#### Tooltips with multiple lines
+## Tooltip alignment
+Align tooltips to the left or right of an element, combined with a directional class to specify north or south.
+
+```html
+<span class="tooltipped tooltipped-ne tooltipped-align-left border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped NE and aligned left.">
+  Tooltip North East align left
+</span>
+<span class="tooltipped tooltipped-se tooltipped-align-left border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped SW and aigned left.">
+  Tooltip South East align left
+</span>
+<span class="tooltipped tooltipped-nw tooltipped-align-right border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped NW and aligned right.">
+  Tooltip North West align right
+</span>
+<span class="tooltipped tooltipped-sw tooltipped-align-right border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped SE and aligned right.">
+  Tooltip South West align right
+</span>
+```
+
+## Tooltips with multiple lines
 Use `.tooltipped-multiline` when you have long content. This style has some limitations: you cannot pre-format the text with newlines, and tooltips are limited to a max-width of `250px`.
 
 
