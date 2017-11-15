@@ -86,17 +86,31 @@ Tooltip classes will conflict with Octicon classes, and as such, must go on a pa
 
 ### Align tooltips
 
+Tooltips can be aligned to the left or right of an element, and come with 2 variations for indenting the caret.
+
 ```html
-<span class="tooltipped tooltipped-ne tooltipped-align-left border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped NE and aligned left.">
+<span class="tooltipped tooltipped-ne tooltipped-align-left-1 border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped NE and aligned left.">
   Tooltip North East align left
 </span>
-<span class="tooltipped tooltipped-se tooltipped-align-left border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped SW and aigned left.">
+<span class="tooltipped tooltipped-ne tooltipped-align-left-2 border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped NE and aligned left.">
+  Tooltip North East align left
+</span>
+<span class="tooltipped tooltipped-se tooltipped-align-left-1 border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped SW and aigned left.">
   Tooltip South East align left
 </span>
-<span class="tooltipped tooltipped-nw tooltipped-align-right border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped NW and aligned right.">
+<span class="tooltipped tooltipped-se tooltipped-align-left-2 border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped SW and aigned left.">
+  Tooltip South East align left
+</span>
+<span class="tooltipped tooltipped-nw tooltipped-align-right-1 border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped NW and aligned right.">
   Tooltip North West align right
 </span>
-<span class="tooltipped tooltipped-sw tooltipped-align-right border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped SE and aligned right.">
+<span class="tooltipped tooltipped-nw tooltipped-align-right-2 border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped NW and aligned right.">
+  Tooltip North West align right
+</span>
+<span class="tooltipped tooltipped-sw tooltipped-align-right-1 border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped SE and aligned right.">
+  Tooltip South West align right
+</span>
+<span class="tooltipped tooltipped-sw tooltipped-align-right-2 border p-2 mb-2 mr-2 float-left" aria-label="Tooltipped SE and aligned right.">
   Tooltip South West align right
 </span>
 ```
