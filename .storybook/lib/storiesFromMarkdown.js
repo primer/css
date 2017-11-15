@@ -4,11 +4,23 @@ import select from 'unist-util-select'
 import findBefore from 'unist-util-find-before'
 import htmlToReact from 'html-to-react'
 import parsePairs from 'parse-pairs'
+import React from 'react'
+import ReactDOMServer from 'react-dom/server'
+import {Octicon} from '../Octicon'
 
 const htmlParser = new htmlToReact.Parser()
 
+const railsOcticonToReact = (html) => {
+  // <%= octicon "tools" %> to <Octicon name="tools" />
+  const octre = /<%= octicon ["']([a-z\-]+)["'][^%]*%>/gi
+  html = html.replace(octre, (match, name) => {
+    return ReactDOMServer.renderToStaticMarkup(<Octicon name={name} />)
+  })
+  return html
+}
+
 const nodeToStory = (node, file) => {
-  const html = node.value
+  const html = railsOcticonToReact(node.value)
   const element = htmlParser.parse(html)
   const pairs = node.lang.replace(/^html\s*/, '')
   const attrs = pairs.length ? parsePairs(pairs) : {}
