@@ -270,10 +270,3 @@
     border-left-color: $background-color;
   }
 }
-
-@include retina-media-query {
-  .tooltipped-w::after {
-    // weird bug on retina
-    margin-right: 4.5px;
-  }
-}
