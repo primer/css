@@ -1,3 +1,9 @@
+# 10.0.1 (2017-11-14)
+
+#### :bug: Bug Fix
+
+* Fixing `peerDependencies` to be greater than equal to versions. Fixing version mismatch with buttons and box.
+
 # 10.0.0 (2017-11-13)
 
 #### :boom: Breaking Change
