@@ -1,5 +1,5 @@
 {
-  "version": "0.0.3",
+  "version": "0.0.2",
   "name": "primer-popover",
   "description": "Popover for suggesting, guiding, and bringing attention to specific UI elements on a page.",
   "homepage": "http://primer.github.io/",
@@ -26,7 +26,7 @@
     "primer-support": "4.4.2"
   },
   "peerDependencies": {
-    "primer-box": ">=2.5.0"
+    "primer-box": "2.5.1"
   },
   "keywords": [
     "github",
