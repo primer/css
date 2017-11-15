@@ -29,7 +29,7 @@ storiesOf('Avatars', module)
 .add('AvatarStack', () => (
   <div>
     <div className='AvatarStack AvatarStack-three-plus mb-2'>
-      <div className='AvatarStack-body tooltipped tooltipped-se temp-tooltipped-align-left' aria-label='five avatars'>
+      <div className='AvatarStack-body tooltipped tooltipped-se tooltipped-align-left-1' aria-label='five avatars'>
         <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
         <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
         <div className='avatar-more avatar'></div>
@@ -39,13 +39,13 @@ storiesOf('Avatars', module)
       </div>
     </div>
     <div className='AvatarStack AvatarStack-two mb-2'>
-      <div className='AvatarStack-body tooltipped tooltipped-se temp-tooltipped-align-left' aria-label='two avatars'>
+      <div className='AvatarStack-body tooltipped tooltipped-se tooltipped-align-left-1' aria-label='two avatars'>
         <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
         <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
       </div>
     </div>
     <div className='AvatarStack AvatarStack-three-plus AvatarStack--right mb-2'>
-      <div className='AvatarStack-body tooltipped tooltipped-sw temp-tooltipped-align-right' aria-label='five avatars'>
+      <div className='AvatarStack-body tooltipped tooltipped-sw tooltipped-align-right-1' aria-label='five avatars'>
         <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
         <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
         <div className='avatar-more avatar'></div>
@@ -55,7 +55,7 @@ storiesOf('Avatars', module)
       </div>
     </div>
     <div className='AvatarStack AvatarStack-two AvatarStack--right mb-2'>
-      <div className='AvatarStack-body tooltipped tooltipped-sw temp-tooltipped-align-right' aria-label='two avatars'>
+      <div className='AvatarStack-body tooltipped tooltipped-sw tooltipped-align-right-1' aria-label='two avatars'>
         <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
         <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
       </div>
