@@ -17,7 +17,7 @@
   height: 0;
   vertical-align: middle;
   content: "";
-  border: 4px solid;
+  border: $spacer-1 solid;
   border-right-color: transparent;
   border-bottom-color: transparent;
   border-left-color: transparent;
@@ -31,14 +31,14 @@
   left: 0;
   z-index: 100;
   width: 160px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-top: 2px;
+  padding-top: $spacer-1;
+  padding-bottom: $spacer-1;
+  margin-top: $spacer-2;
   list-style: none;
   background-color: $bg-white;
   background-clip: padding-box;
   border: 1px solid $black-fade-15;
-  border-radius: 4px;
+  border-radius: $border-radius;
   box-shadow: 0 3px 12px $black-fade-15;
 
   &::before,
@@ -49,12 +49,12 @@
   }
 
   &::before {
-    border: 8px solid transparent;
+    border: $spacer-2 solid transparent;
     border-bottom-color: $black-fade-15;
   }
 
   &::after {
-    border: 7px solid transparent;
+    border: $spacer-2 solid transparent;
     border-bottom-color: $white;
   }
 
@@ -68,7 +68,7 @@
   width: auto;
 
   .dropdown-item {
-    padding: 4px 15px;
+    padding: $spacer-1 $spacer-3;
     overflow: visible;
     text-overflow: inherit;
   }
@@ -77,7 +77,7 @@
 // Dropdown items (can be links or buttons)
 .dropdown-item {
   display: block;
-  padding: 4px 10px 4px 15px;
+  padding: $spacer-1 $spacer-2 $spacer-1 $spacer-3;
   overflow: hidden;
   color: $text-gray-dark;
   text-overflow: ellipsis;
@@ -110,13 +110,13 @@
 
 .dropdown-divider {
   height: 1px;
-  margin: 8px 1px;
+  margin: $spacer-1 1px;
   background-color: $gray-200;
 }
 
 .dropdown-header {
-  padding: 4px 15px;
-  font-size: 12px;
+  padding: $spacer-1 $spacer-2 $spacer-1 $spacer-3;
+  font-size: $h6-size;
   color: $text-gray;
 }
 
@@ -142,21 +142,22 @@
   left: auto;
   width: auto;
   margin-top: 0;
-  margin-right: 10px;
+  margin-right: $spacer-2 + 1;
 
-  &::before {
-    top: 10px;
-    right: -16px;
+  &::before,
+  &::after {
+    top: $spacer-2;
     left: auto;
     border-color: transparent;
+  }
+
+  &::before {
+    right: -$spacer-3 - 1;
     border-left-color: $black-fade-15;
   }
 
   &::after {
-    top: 11px;
-    right: -14px;
-    left: auto;
-    border-color: transparent;
+    right: -$spacer-3;
     border-left-color: $white;
   }
 }
@@ -166,19 +167,21 @@
   left: 100%;
   width: auto;
   margin-top: 0;
-  margin-left: 10px;
+  margin-left: $spacer-2 + 1;
+
+  &::before,
+  &::after {
+    top: $spacer-2;
+    border-color: transparent;
+  }
 
   &::before {
-    top: 10px;
-    left: -16px;
-    border-color: transparent;
+    left: -$spacer-3 - 1;
     border-right-color: $black-fade-15;
   }
 
   &::after {
-    top: 11px;
-    left: -14px;
-    border-color: transparent;
+    left: -$spacer-3;
     border-right-color: $white;
   }
 }
@@ -187,30 +190,37 @@
   top: auto;
   bottom: 100%;
   left: 0;
-  margin-bottom: 3px;
+  margin-bottom: $spacer-2;
 
   &::before,
   &::after {
     top: auto;
     right: auto;
+    left: $spacer-2;
+    border-color: transparent;
   }
 
   &::before {
-    bottom: -8px;
-    left: 9px;
-    border-top: 8px solid $black-fade-15;
-    border-right: 8px solid transparent;
-    border-bottom: 0;
-    border-left: 8px solid transparent;
+    bottom: -$spacer-3;
+    border-top-color: $black-fade-15;
   }
 
   &::after {
-    bottom: -7px;
-    left: 10px;
-    border-top: 7px solid $white;
-    border-right: 7px solid transparent;
-    border-bottom: 0;
-    border-left: 7px solid transparent;
+    bottom: -$spacer-3 + 1;
+    border-top-color: $white;
+  }
+}
+
+// South carets
+.dropdown-menu-s,
+.dropdown-menu-se,
+.dropdown-menu-sw {
+  &::before {
+    top: -$spacer-3;
+  }
+
+  &::after {
+    top: -$spacer-3 + 1;
   }
 }
 
@@ -219,14 +229,8 @@
   left: auto;
   transform: translateX(50%);
 
-  &::before {
-    top: -16px;
-    right: 50%;
-    transform: translateX(50%);
-  }
-
+  &::before,
   &::after {
-    top: -14px;
     right: 50%;
     transform: translateX(50%);
   }
@@ -236,27 +240,16 @@
   right: 0;
   left: auto;
 
-  &::before {
-    top: -16px;
-    right: 9px;
-    left: auto;
-  }
-
+  &::before,
   &::after {
-    top: -14px;
-    right: 10px;
+    right: $spacer-2;
     left: auto;
   }
 }
 
 .dropdown-menu-se {
-  &::before {
-    top: -16px;
-    left: 9px;
-  }
-
+  &::before,
   &::after {
-    top: -14px;
-    left: 10px;
+    left: $spacer-2;
   }
 }
