@@ -1,6 +1,6 @@
 # Primer Marketing CSS Buttons
 
-[![npm version](http://img.shields.io/npm/v/primer-marketing-buttons.svg)](https://www.npmjs.org/package/primer-marketing-buttons)
+[![npm version](https://img.shields.io/npm/v/primer-marketing-buttons.svg)](https://www.npmjs.org/package/primer-marketing-buttons)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Buttons are used for actions, like in forms, while textual hyperlinks are used for destinations, or moving from one page to another.

@@ -1,6 +1,6 @@
 # selector-no-utility
 
-[![NPM version](http://img.shields.io/npm/v/stylelint-selector-no-utility.svg)](https://www.npmjs.org/package/stylelint-selector-no-utility)
+[![NPM version](https://img.shields.io/npm/v/stylelint-selector-no-utility.svg)](https://www.npmjs.org/package/stylelint-selector-no-utility)
 [![Build Status](https://travis-ci.org/primer/stylelint-selector-no-utility.svg?branch=master)](https://travis-ci.org/primer/stylelint-selector-no-utility)
 
 **This plugin is specific to [primer-utilities](https://github.com/primer/primer/tree/master/modules/primer-utilities)**. We'll accept pull requests to make it more generic, or feel free to fork and use it for your own classes.

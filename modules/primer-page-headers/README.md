@@ -1,6 +1,6 @@
 # Primer Marketing CSS Page Headers
 
-[![npm version](http://img.shields.io/npm/v/primer-page-headers.svg)](https://www.npmjs.org/package/primer-page-headers)
+[![npm version](https://img.shields.io/npm/v/primer-page-headers.svg)](https://www.npmjs.org/package/primer-page-headers)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Jumbotrons, heroes, and featured content sections for marketing websites at GitHub.

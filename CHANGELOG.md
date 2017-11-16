@@ -1,3 +1,20 @@
+## 10.1.0 (2017-11-15)
+
+#### :rocket: Enhancement
+* [#385](https://github.com/primer/primer/pull/385) New Avatar stack. ([@califa](https://github.com/califa) & [@sophshep](https://github.com/sophshep))
+* [#404](https://github.com/primer/primer/pull/404) Tooltip component updates ([@broccolini](https://github.com/broccolini))
+
+#### :memo: Documentation
+* [#405](https://github.com/primer/primer/pull/405) Add deprecation warning for `.avatar-stack`. ([@jonrohan](https://github.com/jonrohan))
+* [#391](https://github.com/primer/primer/pull/391) Update shields.io url to https. ([@NuttasitBoonwat](https://github.com/NuttasitBoonwat))
+
+#### Committers: 5
+- Diana Mounter ([broccolini](https://github.com/broccolini))
+- Joel Califa ([califa](https://github.com/califa))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- Sophie Shepherd ([sophshep](https://github.com/sophshep))
+- [NuttasitBoonwat](https://github.com/NuttasitBoonwat)
+
 # 10.0.1 (2017-11-14)
 
 #### :bug: Bug Fix

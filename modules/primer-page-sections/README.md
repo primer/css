@@ -1,6 +1,6 @@
 # Primer Page Sections
 
-[![npm version](http://img.shields.io/npm/v/primer-page-sections.svg)](https://www.npmjs.org/package/primer-page-sections)
+[![npm version](https://img.shields.io/npm/v/primer-page-sections.svg)](https://www.npmjs.org/package/primer-page-sections)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Flash messages, or alerts, inform users of successful or pending actions. Use them sparingly. Don’t show more than one at a time.

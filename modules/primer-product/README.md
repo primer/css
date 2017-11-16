@@ -1,6 +1,6 @@
 # Primer product
 
-[![npm version](http://img.shields.io/npm/v/primer-product.svg)](https://www.npmjs.org/package/primer-product)
+[![npm version](https://img.shields.io/npm/v/primer-product.svg)](https://www.npmjs.org/package/primer-product)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Primer product is one of 3 meta-packages that belong to the Primer framework. Primer product contains packages that are used on GitHub product websites.

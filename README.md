@@ -1,6 +1,6 @@
 # Primer
 
-[![npm version](http://img.shields.io/npm/v/primer.svg)](https://www.npmjs.org/package/primer)
+[![npm version](https://img.shields.io/npm/v/primer.svg)](https://www.npmjs.org/package/primer)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 Primer is the design system that powers GitHub. Primer includes 23 packages that are grouped into 3 core meta-packages for easy install. Each package and meta-package is independently versioned and distributed via npm, so it's easy to include all or part of Primer within your own project.
@@ -13,10 +13,10 @@ The Primer repo is managed as a monorepo that is composed of many npm packages.
 
 | Package | Version |
 |---|---|
-| **[primer](/modules/primer)** <br />Includes all 23 packages | [![npm](http://img.shields.io/npm/v/primer.svg)](https://www.npmjs.com/package/primer) |
-| [primer-core](/modules/primer-core) | [![npm](http://img.shields.io/npm/v/primer-core.svg)](https://www.npmjs.com/package/primer-core) |
-| [primer-product](/modules/primer-product) |  [![npm](http://img.shields.io/npm/v/primer-product.svg)](https://www.npmjs.com/package/primer-product) |
-| [primer-marketing](/modules/primer-marketing) | [![npm](http://img.shields.io/npm/v/primer-marketing.svg)](https://www.npmjs.com/package/primer-marketing) |
+| **[primer](/modules/primer)** <br />Includes all 23 packages | [![npm](https://img.shields.io/npm/v/primer.svg)](https://www.npmjs.com/package/primer) |
+| [primer-core](/modules/primer-core) | [![npm](https://img.shields.io/npm/v/primer-core.svg)](https://www.npmjs.com/package/primer-core) |
+| [primer-product](/modules/primer-product) |  [![npm](https://img.shields.io/npm/v/primer-product.svg)](https://www.npmjs.com/package/primer-product) |
+| [primer-marketing](/modules/primer-marketing) | [![npm](https://img.shields.io/npm/v/primer-marketing.svg)](https://www.npmjs.com/package/primer-marketing) |
 
 ## Install
 

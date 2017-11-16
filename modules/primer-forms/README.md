@@ -1,6 +1,6 @@
 # Primer Forms
 
-[![npm version](http://img.shields.io/npm/v/primer-forms.svg)](https://www.npmjs.org/package/primer-forms)
+[![npm version](https://img.shields.io/npm/v/primer-forms.svg)](https://www.npmjs.org/package/primer-forms)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Style individual form controls and utilize common layouts.
