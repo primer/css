@@ -1,4 +1,6 @@
-## 10.1.0 (2017-11-15)
+# 10.2.0
+
+# 10.1.0 (2017-11-15)
 
 #### :rocket: Enhancement
 * [#385](https://github.com/primer/primer/pull/385) New Avatar stack. ([@califa](https://github.com/califa) & [@sophshep](https://github.com/sophshep))
