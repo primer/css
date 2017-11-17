@@ -1,7 +1,7 @@
 # Primer Stylelint Config
 
-[![NPM version](http://img.shields.io/npm/v/stylelint-config-primer.svg)](https://www.npmjs.org/package/stylelint-config-primer)
-[![Build Status](https://travis-ci.org/primer/stylelint-config-primer.svg?branch=master)](https://travis-ci.org/primer/stylelint-config-primer)
+[![NPM version](https://img.shields.io/npm/v/stylelint-config-primer.svg)](https://www.npmjs.org/package/stylelint-config-primer)
+[![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > A sharable stylelint config object that enforces GitHub's css rules
 

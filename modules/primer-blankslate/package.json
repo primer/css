@@ -1,8 +1,8 @@
 {
-  "version": "1.4.1",
+  "version": "1.4.3",
   "name": "primer-blankslate",
   "description": "Blankslates are for when there is a lack of content within a page or section.",
-  "homepage": "http://primercss.io/",
+  "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "index.scss",
@@ -16,9 +16,9 @@
     "lib",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-blankslate",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-blankslate",
   "bugs": {
-    "url": "https://github.com/primer/primer-css/issues"
+    "url": "https://github.com/primer/primer/issues"
   },
   "scripts": {
     "build": "../../script/npm-run primer-module-build index.scss",
@@ -27,13 +27,13 @@
     "test": "../../script/npm-run-all build lint"
   },
   "dependencies": {
-    "primer-support": "4.4.1"
+    "primer-support": "4.5.0"
   },
   "keywords": [
     "primer",
     "css",
     "github",
-    "primercss",
+    "design-system",
     "blankslate",
     "empty",
     "content"

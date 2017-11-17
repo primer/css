@@ -1,8 +1,8 @@
 {
-  "version": "1.4.1",
+  "version": "1.5.0",
   "name": "primer-tooltips",
   "description": "Add tooltips built entirely in CSS to nearly any element.",
-  "homepage": "http://primercss.io/",
+  "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "index.scss",
@@ -16,9 +16,9 @@
     "lib",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-tooltips",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-tooltips",
   "bugs": {
-    "url": "https://github.com/primer/primer-css/issues"
+    "url": "https://github.com/primer/primer/issues"
   },
   "scripts": {
     "test-docs": "../../script/test-docs",
@@ -28,12 +28,12 @@
     "test": "../../script/npm-run-all build lint test-docs"
   },
   "dependencies": {
-    "primer-support": "4.4.1"
+    "primer-support": "4.5.0"
   },
   "keywords": [
     "primer",
     "css",
     "github",
-    "primercss"
+    "design-system"
   ]
 }

@@ -1,0 +1,67 @@
+{
+  "version": "10.1.0",
+  "name": "primer",
+  "description": "Primer is the CSS framework that powers GitHub's front-end design. primer includes 23 packages that are grouped into 3 core meta-packages for easy install. Each package and meta-package is independently versioned and distributed via npm, so it's easy to include all or part of Primer within your own project.",
+  "homepage": "http://primer.github.io/",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "build/build.css",
+  "primer": {
+    "module_type": "meta"
+  },
+  "main": "build/index.js",
+  "files": [
+    "index.scss",
+    "lib",
+    "build",
+    "CHANGELOG.md"
+  ],
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer",
+  "bugs": {
+    "url": "https://github.com/primer/primer/issues"
+  },
+  "scripts": {
+    "build": "../../script/npm-run primer-module-build index.scss",
+    "prepare": "npm run build",
+    "lint": "../../script/lint-scss",
+    "test": "../../script/npm-run-all build lint"
+  },
+  "dependencies": {
+    "primer-alerts": "1.5.3",
+    "primer-avatars": "1.5.0",
+    "primer-base": "1.6.1",
+    "primer-blankslate": "1.4.3",
+    "primer-box": "2.5.3",
+    "primer-branch-name": "1.0.1",
+    "primer-breadcrumb": "1.4.3",
+    "primer-buttons": "2.5.1",
+    "primer-core": "6.6.0",
+    "primer-forms": "2.0.1",
+    "primer-labels": "1.5.3",
+    "primer-layout": "1.4.3",
+    "primer-markdown": "3.7.3",
+    "primer-marketing": "6.0.2",
+    "primer-marketing-buttons": "1.0.2",
+    "primer-marketing-support": "1.3.3",
+    "primer-marketing-type": "1.4.3",
+    "primer-marketing-utilities": "1.5.1",
+    "primer-navigation": "1.5.1",
+    "primer-page-headers": "1.4.3",
+    "primer-page-sections": "1.4.3",
+    "primer-popover": "0.0.4",
+    "primer-product": "5.6.0",
+    "primer-subhead": "1.0.1",
+    "primer-support": "4.5.0",
+    "primer-table-object": "1.4.3",
+    "primer-tables": "1.4.3",
+    "primer-tooltips": "1.5.0",
+    "primer-truncate": "1.4.3",
+    "primer-utilities": "4.8.3"
+  },
+  "keywords": [
+    "primer",
+    "css",
+    "github",
+    "design-system"
+  ]
+}

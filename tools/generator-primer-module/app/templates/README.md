@@ -1,11 +1,11 @@
-# Primer CSS / <%= title %>
+# Primer / <%= title %>
 
-[![npm version](http://img.shields.io/npm/v/<%= module %>.svg)](https://www.npmjs.org/package/<%= module %>)
-[![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
+[![npm version](https://img.shields.io/npm/v/<%= module %>.svg)](https://www.npmjs.org/package/<%= module %>)
+[![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > <%= description %>
 
-This repository is a module of the full [primer-css][primer-css] repository.
+This repository is a module of the full [primer][primer] repository.
 
 ## Install
 
@@ -48,8 +48,8 @@ status: <%= status || "Experimental" %>
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer-css]: https://github.com/primer/primer
-[docs]: http://primercss.io/
+[primer]: https://github.com/primer/primer
+[docs]: http://primer.github.io/
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/

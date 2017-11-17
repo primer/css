@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-storiesOf('Typography', module)
+storiesOf('Typography utilities', module)
 .add('h1-h6', () => (
   <div>
     <h1 className='h1'>h1</h1>

@@ -1,11 +1,11 @@
-# Primer CSS Blankslate
+# Primer Blankslate
 
-[![npm version](http://img.shields.io/npm/v/primer-blankslate.svg)](https://www.npmjs.org/package/primer-blankslate)
-[![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
+[![npm version](https://img.shields.io/npm/v/primer-blankslate.svg)](https://www.npmjs.org/package/primer-blankslate)
+[![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Blankslates are for when there is a lack of content within a page or section. Use them as placeholders to tell users why something isn’t there. Be sure to provide an action to add content as well.
 
-This repository is a module of the full [primer-css][primer-css] repository.
+This repository is a module of the full [primer][primer] repository.
 
 ## Install
 
@@ -131,8 +131,8 @@ Removes the `background-color` and `border`.
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer-css]: https://github.com/primer/primer
-[docs]: http://primercss.io/
+[primer]: https://github.com/primer/primer
+[docs]: http://primer.github.io/
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/

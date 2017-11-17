@@ -1,8 +1,8 @@
 {
-  "version": "1.4.1",
+  "version": "1.4.3",
   "name": "primer-page-headers",
   "description": "Jumbotrons, heroes, and featured content sections for marketing websites at GitHub.",
-  "homepage": "http://primercss.io/",
+  "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "build/build.css",
@@ -16,9 +16,9 @@
     "lib",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-page-headers",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-page-headers",
   "bugs": {
-    "url": "https://github.com/primer/primer-css/issues"
+    "url": "https://github.com/primer/primer/issues"
   },
   "scripts": {
     "build": "../../script/npm-run primer-module-build index.scss",
@@ -27,8 +27,8 @@
     "test": "../../script/npm-run-all build lint"
   },
   "dependencies": {
-    "primer-marketing-support": "1.3.1",
-    "primer-support": "4.4.1"
+    "primer-marketing-support": "1.3.3",
+    "primer-support": "4.5.0"
   },
   "keywords": [
     "css",
@@ -37,7 +37,7 @@
     "hero",
     "jumbotron",
     "primer",
-    "primercss",
+    "design-system",
     "style"
   ]
 }
