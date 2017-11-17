@@ -1,17 +1,14 @@
 ---
-title: Margin
+title: Marketing Margin
 status: New release
 status_issue: https://github.com/github/design-systems/issues/378
 ---
 
-Margin spacing utilities can be applied to elements to achieve bigger y-directional spaces beyond the `primer-core` spacing scale.
-See [primer-marketing-support](https://github.com/primer/primer-css/tree/master/modules/primer-marketing-support) for the extended marketing spacing scale.
+Marketing margin utilities extend [core margin utilities](../../primer-marketing-support/docs/spacing) across the y-axis only. The [marketing scale](../../primer-marketing-support) starts from spacer 7 up to 12, and steps first by `8px` for spacer 7 and continues in increments of `16px` for spacer 8 to 12.
 
-## Y-Directional margin spacing
+## Y-axis margin utilities
 
-Use y-directional utilities to apply margin to the top, bottom or Y axis of an element. Directional utilities can change or override default margins, and can be used with a spacing scale of 7-11.
-
-Note: The marketing spacing scale extends the core 0-6 scale. See [primer-marketing-support](https://github.com/primer/primer-css/tree/master/modules/primer-marketing-support) for the extended marketing spacing scale.
+Use marketing margin utilities to apply margin to top, bottom, or both y-axis of an element. These utilities can change or override default margins, and can be used with a spacing scale of 7-12.
 
 ```html
 <div class="margin-orange d-inline-block">
@@ -25,9 +22,9 @@ Note: The marketing spacing scale extends the core 0-6 scale. See [primer-market
 </div>
 ```
 
-## Responsive y-directional margins
+## Responsive y-axis margin utilities
 
-All y-directional margin utilities can be adjusted per [breakpoint](/styleguide/css/modules/grid#breakpoints) using the following formula: `m[y-direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
+All marketing margin utilities can be adjusted per [breakpoint](/styleguide/css/modules/grid#breakpoints) using the following formula: `m[y-direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
 
 ```html
 <div class="d-inline-block margin-orange">

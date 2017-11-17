@@ -27,23 +27,30 @@ The source files included are written in [Sass][sass] (`scss`) You can simply po
 
 You can also import specific portions of the module by importing those partials from the `/lib/` folder. _Make sure you import any requirements along with the modules._
 
+<!-- %docs
+title:
+status:
+-->
+
 ## Documentation
 
 ### Extended spacing scale
-This module includes extra variables that extend the Primer spacing scale for marketing site needs.
-Starting from where the `primer-core` spacing scale ends, we are stepping up by 16px increments...
+This module extends the `primer-core` spacing scale for marketing site needs. These are useful for achieving bigger vertical spacing between sections on marketing sites.
+
+Starting where the `primer-core` spacing scale ends at spacer 6, the marketing scale first steps up with `8px` for spacer 7 then steps in increments of `16px` from spacer 8 up to 12.
 
 | Scale | Value |
 |-------|-------|
-| 7     | 56    |
-| 8     | 72    |
-| 9     | 88    |
-| 10    | 104   |
-| 11    | 120   |
+| 7     | 48    |
+| 8     | 64    |
+| 9     | 80    |
+| 10    | 96    |
+| 11    | 112   |
+| 12    | 128   |
 
-This is useful for when we want to achieve bigger vertical spacing between sections on marketing sites.
+See [primer-marketing-utilities](../primer-marketing-utilities) for related spacing utilities.
 
-See [primer-marketing-utilities](https://github.com/primer/primer-css/tree/master/modules/primer-marketing-utilities) for related spacing utilities.
+<!-- %enddocs -->
 
 ## License
 
