@@ -27,12 +27,12 @@ The source files included are written in [Sass][sass] (`scss`) You can simply po
 
 You can also import specific portions of the module by importing those partials from the `/lib/` folder. _Make sure you import any requirements along with the modules._
 
-<!-- %docs
-title:
-status:
--->
-
 ## Documentation
+
+<!-- %docs
+title: Marketing support
+status: new release
+-->
 
 ### Extended spacing scale
 This module extends the `primer-core` spacing scale for marketing site needs. These are useful for achieving bigger vertical spacing between sections on marketing sites.
