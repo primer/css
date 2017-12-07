@@ -7,6 +7,11 @@
     "category": "product",
     "module_type": "components"
   },
+  "files": [
+    "index.scss",
+    "lib",
+    "build"
+  ],
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "index.scss",
@@ -28,6 +33,7 @@
   },
   "keywords": [
     "github",
-    "primer"
+    "primer",
+    "design-system"
   ]
 }
