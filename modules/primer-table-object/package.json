@@ -5,7 +5,7 @@
   "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
-  "style": "index.scss",
+  "style": "build/build.css",
   "main": "build/index.js",
   "primer": {
     "category": "core",
