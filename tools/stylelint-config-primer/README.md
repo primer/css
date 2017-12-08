@@ -75,7 +75,7 @@ This is a list of the lints turned on in this configuration, and what they do.
 
 * [declaration-block-no-duplicate-properties](http://stylelint.io/user-guide/rules/declaration-block-no-duplicate-properties/): Disallow duplicate properties within declaration blocks. _Ignore_: consecutive duplicated properties.
 * [declaration-block-no-shorthand-property-overrides](http://stylelint.io/user-guide/rules/declaration-block-no-shorthand-property-overrides/): Disallow shorthand properties that override related longhand properties.
-* [declaration-block-properties-order](http://stylelint.io/user-guide/rules/declaration-block-properties-order/): Properties in declaration blocks must be [sorted according to this list](https://github.com/primer/stylelint-config-primer/blob/1ac303e9a633ee38d168a014dcea10eaf5a95aab/index.js#L45-L215).
+* [declaration-block-properties-order](http://stylelint.io/user-guide/rules/declaration-block-properties-order/): Properties in declaration blocks must be [sorted according to this list](https://github.com/primer/primer/blob/master/tools/stylelint-config-primer/index.js#L47-L217).
 * [declaration-block-semicolon-newline-after](http://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-after/): There must always be a newline after the semicolon.
 * [declaration-block-semicolon-space-before](http://stylelint.io/user-guide/rules/declaration-block-semicolon-space-before/): There must never be whitespace before the semicolons.
 * [declaration-block-single-line-max-declarations](http://stylelint.io/user-guide/rules/declaration-block-single-line-max-declarations/): There should never be more than `1` declaration per line.
@@ -116,7 +116,7 @@ This is a list of the lints turned on in this configuration, and what they do.
 * [no-eol-whitespace](http://stylelint.io/user-guide/rules/no-eol-whitespace/): Disallow end-of-line whitespace.
 * [no-extra-semicolons](http://stylelint.io/user-guide/rules/no-extra-semicolons/): Disallow extra semicolons.
 * [no-missing-end-of-source-newline](http://stylelint.io/user-guide/rules/no-missing-end-of-source-newline/): Disallow missing end-of-file newlines in non-empty files.
-* [no-unsupported-browser-features](http://stylelint.io/user-guide/rules/no-unsupported-browser-features/): Disallow features that are unsupported by the browsers that [we are targeting in the config](https://github.com/primer/stylelint-config-primer/blob/70866772c3b916be5c62b95cfd94b37dfc6e5b04/index.js#L267)
+* [no-unsupported-browser-features](http://stylelint.io/user-guide/rules/no-unsupported-browser-features/): Disallow features that are unsupported by the browsers that [we are targeting in the config](https://github.com/primer/primer/blob/master/tools/stylelint-config-primer/index.js#L272)
 
 #### Media Feature
 
