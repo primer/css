@@ -1,6 +1,5 @@
 .breadcrumb-item {
   display: inline-block;
-  margin-left: -$spacer-1;
   white-space: nowrap;
   list-style: none;
 
@@ -12,6 +11,7 @@
   }
 }
 
+:last-child .breadcrumb-item,
 .breadcrumb-item-selected {
   &::after {
     content: none;
