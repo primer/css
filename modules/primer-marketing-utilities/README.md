@@ -33,7 +33,7 @@ $ npm run build
 
 ## Documentation
 
-You can read more about utilities in the [docs folder](./docs/)
+You can read more about utilities in the [docs folder](./docs/).
 
 ## License
 
