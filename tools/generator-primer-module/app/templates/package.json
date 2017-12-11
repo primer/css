@@ -7,6 +7,11 @@
     "category": "<%= category %>",
     "module_type": "<%= module_type %>"
   },
+  "files": [
+    "index.scss",
+    "lib",
+    "build"
+  ],
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "index.scss",
