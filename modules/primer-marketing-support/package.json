@@ -6,6 +6,7 @@
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "build/build.css",
+  "sass": "index.scss",
   "primer": {
     "category": "marketing",
     "module_type": "support"

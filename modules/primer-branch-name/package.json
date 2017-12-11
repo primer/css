@@ -7,9 +7,15 @@
     "category": "product",
     "module_type": "components"
   },
+  "files": [
+    "index.scss",
+    "lib",
+    "build"
+  ],
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "index.scss",
+  "sass": "index.scss",
   "main": "build/index.js",
   "repository": "https://github.com/primer/primer/tree/master/modules/primer-branch-name",
   "bugs": {
@@ -27,6 +33,7 @@
   },
   "keywords": [
     "github",
-    "primer"
+    "primer",
+    "design-system"
   ]
 }

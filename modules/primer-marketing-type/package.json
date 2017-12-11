@@ -7,6 +7,7 @@
   "license": "MIT",
   "style": "build/build.css",
   "main": "build/index.js",
+  "sass": "index.scss",
   "primer": {
     "category": "marketing",
     "module_type": "utilities"
