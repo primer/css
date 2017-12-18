@@ -1,17 +1,16 @@
 # 10.2.0 (2017-12-11)
 
 #### :rocket: Enhancement
-
+* [#376](https://github.com/primer/primer/pull/376) Increase spacing scale. ([@gladwearefriends](https://github.com/gladwearefriends))
 * [#409](https://github.com/primer/primer/pull/409) Add Sass key to package.json. ([@broccolini](https://github.com/broccolini))
 * [#358](https://github.com/primer/primer/pull/358) automatically style first and last breadcrumb. ([@gronke](https://github.com/gronke))
 * [#394](https://github.com/primer/primer/pull/394) Point style field to built css. ([@koddsson](https://github.com/koddsson))
 
 #### :memo: Documentation
-
 * [#411](https://github.com/primer/primer/pull/411) Updates to stylelint package links/docs for new structure. ([@jonrohan](https://github.com/jonrohan))
 
 #### Committers: 4
-
+- Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
 - Diana Mounter ([broccolini](https://github.com/broccolini))
 - Jon Rohan ([jonrohan](https://github.com/jonrohan))
 - Kristján Oddsson ([koddsson](https://github.com/koddsson))
