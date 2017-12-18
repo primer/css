@@ -1,5 +1,6 @@
 .breadcrumb-item {
   display: inline-block;
+  margin-left: -0.35em;
   white-space: nowrap;
   list-style: none;
 
@@ -9,9 +10,12 @@
     color: $border-gray;
     content: "/";
   }
+
+  &:first-child {
+    margin-left: 0;
+  }
 }
 
-:last-child .breadcrumb-item,
 .breadcrumb-item-selected {
   &::after {
     content: none;
