@@ -1,11 +1,12 @@
 {
-  "version": "1.3.3",
+  "version": "1.4.0",
   "name": "primer-marketing-support",
   "description": "Sass variables, mixins, and functions for use in our components.",
   "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
-  "style": "index.scss",
+  "style": "build/build.css",
+  "sass": "index.scss",
   "primer": {
     "category": "marketing",
     "module_type": "support"

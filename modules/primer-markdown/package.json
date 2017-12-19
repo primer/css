@@ -1,11 +1,12 @@
 {
-  "version": "3.7.3",
+  "version": "3.7.4",
   "name": "primer-markdown",
   "description": "GitHub stylesheets for rendering markdown.",
   "homepage": "https://github.com/primer/primer-markdown",
   "author": "GitHub, Inc.",
   "license": "MIT",
-  "style": "index.scss",
+  "style": "build/build.css",
+  "sass": "index.scss",
   "main": "build/index.js",
   "primer": {
     "category": "product",
@@ -27,7 +28,7 @@
     "test": "../../script/npm-run-all build lint"
   },
   "dependencies": {
-    "primer-support": "4.5.0"
+    "primer-support": "4.5.1"
   },
   "keywords": [
     "github",

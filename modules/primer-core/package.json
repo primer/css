@@ -1,11 +1,12 @@
 {
-  "version": "6.6.0",
+  "version": "6.6.1",
   "name": "primer-core",
   "description": "Primer's core modules",
   "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "build/build.css",
+  "sass": "index.scss",
   "main": "build/index.js",
   "primer": {
     "category": "core",
@@ -26,17 +27,17 @@
     "lint": "../../script/lint-scss"
   },
   "dependencies": {
-    "primer-base": "1.6.1",
-    "primer-box": "2.5.3",
-    "primer-breadcrumb": "1.4.3",
-    "primer-buttons": "2.5.1",
-    "primer-forms": "2.0.1",
-    "primer-layout": "1.4.3",
-    "primer-navigation": "1.5.1",
-    "primer-support": "4.5.0",
-    "primer-table-object": "1.4.3",
-    "primer-tooltips": "1.5.0",
-    "primer-truncate": "1.4.3",
-    "primer-utilities": "4.8.3"
+    "primer-base": "1.6.2",
+    "primer-box": "2.5.4",
+    "primer-breadcrumb": "1.5.0",
+    "primer-buttons": "2.5.2",
+    "primer-forms": "2.0.2",
+    "primer-layout": "1.4.4",
+    "primer-navigation": "1.5.2",
+    "primer-support": "4.5.1",
+    "primer-table-object": "1.4.4",
+    "primer-tooltips": "1.5.1",
+    "primer-truncate": "1.4.4",
+    "primer-utilities": "4.8.4"
   }
 }

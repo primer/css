@@ -7,9 +7,15 @@
     "category": "<%= category %>",
     "module_type": "<%= module_type %>"
   },
+  "files": [
+    "index.scss",
+    "lib",
+    "build"
+  ],
   "author": "GitHub, Inc.",
   "license": "MIT",
-  "style": "index.scss",
+  "style": "build/build.css",
+  "sass": "index.scss",
   "main": "build/index.js",
   "repository": "https://github.com/primer/primer/tree/master/modules/<%= module %>",
   "bugs": {

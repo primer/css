@@ -1,11 +1,12 @@
 {
-  "version": "2.0.1",
+  "version": "2.0.2",
   "name": "primer-forms",
   "description": "Style individual form controls and utilize common layouts.",
   "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
-  "style": "index.scss",
+  "style": "build/build.css",
+  "sass": "index.scss",
   "main": "build/index.js",
   "primer": {
     "category": "core",
@@ -27,7 +28,7 @@
     "test": "../../script/npm-run-all build lint"
   },
   "dependencies": {
-    "primer-support": "4.5.0"
+    "primer-support": "4.5.1"
   },
   "keywords": [
     "primer",

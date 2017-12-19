@@ -1,11 +1,12 @@
 {
-  "version": "4.5.0",
+  "version": "4.5.1",
   "name": "primer-support",
   "description": "Sass variables, mixins, and functions for use in our components.",
   "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
-  "style": "index.scss",
+  "style": "build/build.css",
+  "sass": "index.scss",
   "primer": {
     "category": "core",
     "module_type": "support"

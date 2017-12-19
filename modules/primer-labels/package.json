@@ -1,11 +1,12 @@
 {
-  "version": "1.5.3",
+  "version": "1.5.4",
   "name": "primer-labels",
   "description": "Labels add metatdata or indicate status of items and navigational elements.",
   "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
-  "style": "index.scss",
+  "style": "build/build.css",
+  "sass": "index.scss",
   "main": "build/index.js",
   "primer": {
     "category": "product",
@@ -27,7 +28,7 @@
     "test": "../../script/npm-run-all build lint"
   },
   "dependencies": {
-    "primer-support": "4.5.0"
+    "primer-support": "4.5.1"
   },
   "keywords": [
     "primer",
