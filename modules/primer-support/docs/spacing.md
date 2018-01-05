@@ -9,32 +9,19 @@ source: https://github.com/primer/primer/blob/master/modules/primer-support/lib/
 ## Spacing scale
 The spacing scale is a **base-8** scale. We chose a base-8 scale because eight is a highly composable number (it can be divided and multiplied many times and result in whole numbers), yet allows spacing dense enough for GitHub's UI. The scale's exception is that it begins at 4px to allow smaller padding and margin for denser parts of the site, from there on it steps up consistently in equal values of `8px`.
 
-| Scale | Value |
-| --- | --- |
-| 0 | 0 |
-| 1 | 4px |
-| 2 | 8px |
-| 3 | 16px |
-| 4 | 24px |
-| 5 | 32px |
-| 6 | 40px |
+| Variable | Scale | Value |
+| --- | --- | --- |
+| $spacer-1 | 0 | 0 |
+| $spacer-1 | 1 | 4px |
+| $spacer-1 | 2 | 8px |
+| $spacer-1 | 3 | 16px |
+| $spacer-1 | 4 | 24px |
+| $spacer-1 | 5 | 32px |
+| $spacer-1 | 6 | 40px |
 
-The spacing scale is used for [margin](./utilities/margin) and [padding](./utilities/padding) utilities, and via variables within components.
+These variables are encouraged to be used within components and custom CSS. The spacing scale is also used for [margin](./utilities/margin) and [padding](./utilities/padding) utilities.
 
 See [primer-marketing-support](../primer-marketing-support) for the extended spacing scale used for marketing needs and the related y-axis spacing utilities for [margin](../primer-marketing-utilities/docs/margin.md) and [padding](../primer-marketing-utilities/docs/padding.md).
-
-## Spacer Variables
-
-These variables match the above scale and are encouraged to be used within components. They are also used in our [margin](./utilities/margin) and [padding utilities](./utilities/padding).
-
-```scss
-$spacer-1: 4px;
-$spacer-2: 8px;
-$spacer-3: 16px;
-$spacer-4: 24px;
-$spacer-5: 32px;
-$spacer-6: 40px;
-```
 
 ## Em-based spacing
 Ems are used for spacing within components such as buttons and form elements. We stick to common fractions for em values (and powers of 2 where possible) so that , in combination with typography and line-height, the total height lands on sensible numbers.
