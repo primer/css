@@ -37,12 +37,12 @@ $spacer-6: 40px;
 ```
 
 ## Em-based spacing
-Ems are used for spacing within components such as buttons and form elements. We stick to common fractions for em values so that, in combination with typography and line-height, the total height lands on sensible numbers.
+Ems are used for spacing within components such as buttons and form elements. We stick to common fractions for em values (and powers of 2 where possible) so that , in combination with typography and line-height, the total height lands on sensible numbers.
 
 We aim for whole numbers, however, GitHub's body font-size is 14px which is difficult to work with, so we sometimes can't achieve a whole number. Less desirable values are highlighted in <span class="text-red">red</span> below.
 
-| Fraction | Y Padding (em) | Total height at 14px | Total height at 16px |
-| --- | --- | --- | --- |
+| Variable | Fraction | Y Padding (em) | Total height at 14px | Total height at 16px |
+| --- | --- | --- | --- | --- |
 | $em-spacer-1 | 1/16 | .0625 | <span class="text-red">22.75</span> | 26 |
 | $em-spacer-2 | 1/8 | .125 | <span class="text-red">24.5</span> | 28 |
 | $em-spacer-3 | 1/4 | .25 | 28 | 32 |
@@ -50,4 +50,4 @@ We aim for whole numbers, however, GitHub's body font-size is 14px which is diff
 | $em-spacer-5 | 1/2 | .5 | 35 | 40 |
 | $em-spacer-6 | 3/4 | .75 | 42 | 48 |
 
-We recommend using the fractions shown above. To calculate values with other font-sizes or em values, we suggest using [Formula](http://jxnblk.com/formula/).
+The variables listed above are preferred for use within components and custom CSS. To calculate values with other font-sizes or em values, we suggest using [Formula](http://jxnblk.com/formula/).
