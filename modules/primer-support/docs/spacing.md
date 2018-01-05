@@ -23,21 +23,6 @@ The spacing scale is used for [margin](./utilities/margin) and [padding](./utili
 
 See [primer-marketing-support](../primer-marketing-support) for the extended spacing scale used for marketing needs and the related y-axis spacing utilities for [margin](../primer-marketing-utilities/docs/margin.md) and [padding](../primer-marketing-utilities/docs/padding.md).
 
-## Em-based spacing
-Ems are used for spacing within components such as buttons and form elements. We stick to common fractions for em values so that, in combination with typography and line-height, the total height lands on sensible numbers.
-
-We aim for whole numbers, however, GitHub's body font-size is 14px which is difficult to work with, so we sometimes can't achieve a whole number. Less desirable values are highlighted in <span class="text-red">red</span> below.
-
-| Fraction | Y Padding (em) | Total height at 14px | Total height at 16px |
-| --- | --- | --- | --- |
-| 3/4 | .75 | 42 | 48 |
-| 1/2 | .5 | 35 | 40 |
-| 3/8 | .375 | <span class="text-red">31.5</span> | 36 |
-| 1/4 | .25 | 28 | 32 |
-| 1/8 | .125 | <span class="text-red">24.5</span> | 28 |
-
-We recommend using the fractions shown above. To calculate values with other font-sizes or em values, we suggest using [Formula](http://jxnblk.com/formula/).
-
 ## Spacer Variables
 
 These variables match the above scale and are encouraged to be used within components. They are also used in our [margin](./utilities/margin) and [padding utilities](./utilities/padding).
@@ -50,3 +35,19 @@ $spacer-4: 24px;
 $spacer-5: 32px;
 $spacer-6: 40px;
 ```
+
+## Em-based spacing
+Ems are used for spacing within components such as buttons and form elements. We stick to common fractions for em values so that, in combination with typography and line-height, the total height lands on sensible numbers.
+
+We aim for whole numbers, however, GitHub's body font-size is 14px which is difficult to work with, so we sometimes can't achieve a whole number. Less desirable values are highlighted in <span class="text-red">red</span> below.
+
+| Fraction | Y Padding (em) | Total height at 14px | Total height at 16px |
+| --- | --- | --- | --- |
+| $em-spacer-1 | 1/16 | .0625 | <span class="text-red">22.75</span> | 26 |
+| $em-spacer-2 | 1/8 | .125 | <span class="text-red">24.5</span> | 28 |
+| $em-spacer-3 | 1/4 | .25 | 28 | 32 |
+| $em-spacer-4 | 3/8 | .375 | <span class="text-red">31.5</span> | 36 |
+| $em-spacer-5 | 1/2 | .5 | 35 | 40 |
+| $em-spacer-6 | 3/4 | .75 | 42 | 48 |
+
+We recommend using the fractions shown above. To calculate values with other font-sizes or em values, we suggest using [Formula](http://jxnblk.com/formula/).
