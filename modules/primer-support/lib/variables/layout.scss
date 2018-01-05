@@ -30,12 +30,12 @@ $spacer-5: nth($spacers, 6) !default; // 32px
 $spacer-6: nth($spacers, 7) !default; // 40px
 
 // Em spacer variables
-$em-spacer-1: 0.0625 !default; // 1/16
-$em-spacer-2: 0.125 !default;  // 1/8
-$em-spacer-3: 0.25 !default;   // 1/4
-$em-spacer-4: 0.375 !default;  // 3/8
-$em-spacer-5: 0.5 !default;    // 1/2
-$em-spacer-6: 0.75 !default;   // 3/4
+$em-spacer-1: 0.0625em !default; // 1/16
+$em-spacer-2: 0.125em !default;  // 1/8
+$em-spacer-3: 0.25em !default;   // 1/4
+$em-spacer-4: 0.375em !default;  // 3/8
+$em-spacer-5: 0.5em !default;    // 1/2
+$em-spacer-6: 0.75em !default;   // 3/4
 
 // Fixed-width container variables
 $container-width: 980px !default;
