@@ -8,8 +8,9 @@ echo "🐦  Publishing PR (canary) release..."
 
 $(npm bin)/lerna publish --npm-tag=pr --canary --exact $@
 
+$(dirname $0)/notify success
+
+echo ""
 echo "📓  Updated CHANGELOG..."
 
 $(npm bin)/lerna-changelog
-
-$(dirname $0)/notify success
