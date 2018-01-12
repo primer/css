@@ -8,6 +8,8 @@ echo "🐦  Publishing PR (canary) release..."
 
 $(npm bin)/lerna publish --npm-tag=pr --canary --exact $@
 
+git status
+
 $(dirname $0)/notify success
 
 echo ""
