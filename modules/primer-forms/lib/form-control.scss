@@ -19,7 +19,7 @@ label {
 .form-select {
   min-height: 34px;
   padding: 6px $spacer-2;
-  font-size: $body-font-size;
+  font-size: $h4-size;
   line-height: 20px;
   color: $text-gray-dark;
   vertical-align: middle;
@@ -36,6 +36,11 @@ label {
     border-color: $blue-400;
     outline: none;
     box-shadow: $form-control-shadow, $btn-input-focus-shadow;
+  }
+
+  // Ensures inputs don't zoom on mobile but are body-font size on desktop
+  @include breakpoint(md) {
+    font-size: $body-font-size;
   }
 }
 
