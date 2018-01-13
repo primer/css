@@ -45,7 +45,7 @@ The table object is a module for creating dynamically resizable elements that al
 
 Additional `margin` or `padding` may be required to properly space content.
 
-```html
+```html title="Table object"
 <div class="TableObject">
   <div class="TableObject-item TableObject-item--primary">
     <input class="input-block form-control" type="text" placeholder="Long elastic input form" aria-label="Long elastic input form">
