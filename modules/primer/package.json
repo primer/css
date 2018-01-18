@@ -49,8 +49,6 @@
     "primer-marketing-type": "1.4.11",
     "primer-marketing-utilities": "1.7.1",
     "primer-navigation": "1.5.9",
-    "primer-page-headers": "1.5.1",
-    "primer-page-sections": "1.5.1",
     "primer-pagination": "1.0.5",
     "primer-popover": "0.1.6",
     "primer-product": "5.8.0",
@@ -58,7 +56,6 @@
     "primer-subhead": "1.0.9",
     "primer-support": "4.7.0",
     "primer-table-object": "1.4.11",
-    "primer-tables": "1.5.1",
     "primer-tooltips": "1.5.9",
     "primer-truncate": "1.4.11",
     "primer-utilities": "4.14.0"
