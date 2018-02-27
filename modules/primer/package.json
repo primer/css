@@ -30,7 +30,6 @@
   "dependencies": {
     "primer-alerts": "1.5.5",
     "primer-avatars": "1.5.2",
-    "primer-base": "1.6.3",
     "primer-blankslate": "1.4.5",
     "primer-box": "2.5.5",
     "primer-branch-name": "1.0.3",
