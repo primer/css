@@ -6,8 +6,6 @@
 
 Hi there! We're thrilled that you'd like to contribute to this project. Your help is essential for keeping it great.
 
-Before you do, would you mind reading [this license agreement](LICENSE.md)? If you open a PR, we'll assume you agree to it. If you have any hesitation or disagreement, please do open a PR still, but note your concerns as well.
-
 ## Using the issue tracker
 
 The issue tracker is the preferred channel for [bug reports](#bug-reports), [features requests](#feature-requests) and [submitting pull requests](#pull-requests), but please respect the following restrictions:
