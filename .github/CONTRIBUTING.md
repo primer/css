@@ -6,8 +6,6 @@
 
 Hi there! We're thrilled that you'd like to contribute to this project. Your help is essential for keeping it great.
 
-Before you do, would you mind reading [this license agreement](CLA.md)? If you open a PR, we'll assume you agree to it. If you have any hesitation or disagreement, please do open a PR still, but note your concerns as well.
-
 ## Using the issue tracker
 
 The issue tracker is the preferred channel for [bug reports](#bug-reports), [features requests](#feature-requests) and [submitting pull requests](#pull-requests), but please respect the following restrictions:
@@ -28,7 +26,7 @@ Guidelines for bug reports:
 
 2. **Check if the issue has been fixed** &mdash; try to reproduce it using the latest `master` or development branch in the repository.
 
-3. **Isolate the problem** &mdash; ideally create a [reduced test case](http://css-tricks.com/6263-reduced-test-cases/) and a live example.
+3. **Isolate the problem** &mdash; ideally create a [reduced test case](https://css-tricks.com/reduced-test-cases/) and a live example.
 
 A good bug report shouldn't leave others needing to chase you up for more information. Please try to be as detailed as possible in your report. What is your environment? What steps will reproduce the issue? What browser(s) and OS experience the problem? Do other browsers show the bug differently? What would you expect to be the outcome? All these details will help people to fix any potential bugs.
 
@@ -59,7 +57,7 @@ Good pull requests—patches, improvements, new features—are a fantastic help.
 
 ### Updating Primer modules
 
-Anyone can open a pull request on Primer. You do not need to work at GitHub or be a member of the org to open a pull request. 
+Anyone can open a pull request on Primer. You do not need to work at GitHub or be a member of the org to open a pull request.
 
 1. Fork and clone [this repository](https://github.com/primer/primer).
 2. Configure and install the dependencies: `npm install`
