@@ -6,7 +6,7 @@
 
 Hi there! We're thrilled that you'd like to contribute to this project. Your help is essential for keeping it great.
 
-Before you do, would you mind reading [this license agreement](CLA.md)? If you open a PR, we'll assume you agree to it. If you have any hesitation or disagreement, please do open a PR still, but note your concerns as well.
+Before you do, would you mind reading [this license agreement](LICENSE.md)? If you open a PR, we'll assume you agree to it. If you have any hesitation or disagreement, please do open a PR still, but note your concerns as well.
 
 ## Using the issue tracker
 
@@ -59,7 +59,7 @@ Good pull requests—patches, improvements, new features—are a fantastic help.
 
 ### Updating Primer modules
 
-Anyone can open a pull request on Primer. You do not need to work at GitHub or be a member of the org to open a pull request. 
+Anyone can open a pull request on Primer. You do not need to work at GitHub or be a member of the org to open a pull request.
 
 1. Fork and clone [this repository](https://github.com/primer/primer).
 2. Configure and install the dependencies: `npm install`
