@@ -11,6 +11,21 @@
 /* Set position to fixed */
 .position-fixed    { position: fixed !important; }
 
+/* Responsive position utilities */
+
+@each $breakpoint in map-keys($breakpoints) {
+  @include breakpoint($breakpoint) {
+    /* Set position to relative */
+    .position-#{$breakpoint}-static { position: static !important; }
+    /* Set position to relative */
+    .position-#{$breakpoint}-relative { position: relative !important; }
+    /* Set position to absolute */
+    .position-#{$breakpoint}-absolute { position: absolute !important; }
+    /* Set position to fixed */
+    .position-#{$breakpoint}-fixed    { position: fixed !important; }
+  }
+}
+
 /* Set top 0 */
 .top-0    { top: 0 !important; }
 /* Set right 0 */
