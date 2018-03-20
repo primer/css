@@ -1,4 +1,16 @@
-# 10.4.0
+# 10.4.0 (2018-03-14)
+
+#### :rocket: Enhancement
+* [#456](https://github.com/primer/primer/pull/456) Adding height-fit utility class. ([@jonrohan](https://github.com/jonrohan))
+
+#### :memo: Documentation
+* [#455](https://github.com/primer/primer/pull/455) Add colorizeTooltip deprecation warning. ([@jonrohan](https://github.com/jonrohan))
+* [#452](https://github.com/primer/primer/pull/452) Update dead links in CONTRIBUTING.md. ([@agisilaos](https://github.com/agisilaos))
+
+#### Committers: 3
+- Agisilaos Tsaraboulidis ([agisilaos](https://github.com/agisilaos))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- [muan](https://github.com/muan)
 
 # 10.3.0 (2018-01-17)
 
