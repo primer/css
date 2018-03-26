@@ -13,7 +13,7 @@ module.exports = (config, env) => {
 
   rules.forEach((rule, index) => {
     if ('README.md'.match(rule.test)) {
-      console.warn('replacing MD rule:', rule)
+      // console.warn('replacing MD rule:', rule)
       rules.splice(index, 1, {
         test: /\.md$/,
         loader: 'raw-loader',
