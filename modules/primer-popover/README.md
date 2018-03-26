@@ -44,7 +44,7 @@ Popovers are used to bring attention to specific user interface elements, typica
 
 {:toc}
 
-Popover's consist of:
+A popover consist of:
 
 - The block element, `.Popover`, which simply positions its content absolutely atop other body content.
 - The child element, `.Popover-message`, which contains the markup for the intended messaging and the visual "caret."
@@ -60,10 +60,14 @@ The `Popover-message` element also supports several modifiers, most of which pos
 
 Each of these modifiers also support a syntax for adjusting the positioning the caret to the right, left, top, or bottom of its respective edge. That syntax looks like:
 
-- `.Popover-message--top-right`
 - `.Popover-message--right-top`
-- `.Popover-message--bottom-left`
+- `.Popover-message--top-right`
+- `.Popover-message--right-bottom`
+- `.Popover-message--bottom-right`
 - `.Popover-message--left-bottom`
+- `.Popover-message--bottom-left`
+- `.Popover-message--left-top`
+- `.Popover-message--top-left`
 
 Lastly, there is an added `.Popover-message--large` modifier, which assumes a slightly wider popover message on screens wider than 544px.
 
@@ -138,11 +142,14 @@ Defaults to caret oriented top-center.
 ### Right-aligned example
 
 ```html title="Right"
-<div class="Popover">
-  <div class="Popover-message Popover-message--right p-4 mt-2 Box box-shadow-large">
-    <h4 class="mb-2">Popover heading</h4>
-    <p>Message about this particular piece of UI.</p>
-    <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+<div class="position-relative">
+  <button class="btn btn-primary">UI</button>
+  <div class="Popover">
+    <div class="Popover-message Popover-message--right p-4 mt-2 Box box-shadow-large">
+      <h4 class="mb-2">Popover heading</h4>
+      <p>Message about this particular piece of UI.</p>
+      <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+    </div>
   </div>
 </div>
 ```
@@ -150,11 +157,14 @@ Defaults to caret oriented top-center.
 ### Left-aligned example
 
 ```html title="Left"
-<div class="Popover">
-  <div class="Popover-message Popover-message--left p-4 mt-2 Box box-shadow-large">
-    <h4 class="mb-2">Popover heading</h4>
-    <p>Message about this particular piece of UI.</p>
-    <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+<div class="position-relative">
+  <button class="btn btn-primary">UI</button>
+  <div class="Popover">
+    <div class="Popover-message Popover-message--left p-4 mt-2 Box box-shadow-large">
+      <h4 class="mb-2">Popover heading</h4>
+      <p>Message about this particular piece of UI.</p>
+      <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+    </div>
   </div>
 </div>
 ```
@@ -162,11 +172,14 @@ Defaults to caret oriented top-center.
 ### Bottom-aligned example
 
 ```html title="Bottom"
-<div class="Popover">
-  <div class="Popover-message Popover-message--bottom p-4 mt-2 mx-auto Box box-shadow-large">
-    <h4 class="mb-2">Popover heading</h4>
-    <p>Message about this particular piece of UI.</p>
-    <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+<div class="position-relative">
+  <button class="btn btn-primary">UI</button>
+  <div class="Popover">
+    <div class="Popover-message Popover-message--bottom p-4 mt-2 mx-auto Box box-shadow-large">
+      <h4 class="mb-2">Popover heading</h4>
+      <p>Message about this particular piece of UI.</p>
+      <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+    </div>
   </div>
 </div>
 ```
@@ -174,11 +187,14 @@ Defaults to caret oriented top-center.
 ### Bottom-right-aligned example
 
 ```html title="Bottom-right"
-<div class="Popover">
-  <div class="Popover-message Popover-message--bottom-right p-4 mt-2 mx-auto Box box-shadow-large">
-    <h4 class="mb-2">Popover heading</h4>
-    <p>Message about this particular piece of UI.</p>
-    <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+<div class="position-relative">
+  <button class="btn btn-primary">UI</button>
+  <div class="Popover">
+    <div class="Popover-message Popover-message--bottom-right p-4 mt-2 mx-auto Box box-shadow-large">
+      <h4 class="mb-2">Popover heading</h4>
+      <p>Message about this particular piece of UI.</p>
+      <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+    </div>
   </div>
 </div>
 ```
@@ -186,11 +202,14 @@ Defaults to caret oriented top-center.
 ### Bottom-left-aligned example
 
 ```html title="Bottom-left"
-<div class="Popover">
-  <div class="Popover-message Popover-message--bottom-left p-4 mt-2 mx-auto Box box-shadow-large">
-    <h4 class="mb-2">Popover heading</h4>
-    <p>Message about this particular piece of UI.</p>
-    <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+<div class="position-relative">
+  <button class="btn btn-primary">UI</button>
+  <div class="Popover">
+    <div class="Popover-message Popover-message--bottom-left p-4 mt-2 mx-auto Box box-shadow-large">
+      <h4 class="mb-2">Popover heading</h4>
+      <p>Message about this particular piece of UI.</p>
+      <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+    </div>
   </div>
 </div>
 ```
