@@ -156,6 +156,16 @@ Use `.width-full` to set width to 100%.
 </div>
 ```
 
+Use `.height-fit` to set max-height 100%.
+
+```html
+<div class="one-fourth column" style="height: 100px; overflow: auto;">
+  <div class="p-3 height-fit border">
+    Bacon ipsum dolor amet meatball flank beef tail pig boudin ham hock chicken capicola. Shoulder ham spare ribs turducken pork tongue. Bresaola corned beef sausage jowl ribeye kielbasa tenderloin andouille leberkas tongue. Ribeye tri-tip tenderloin pig, chuck ground round chicken tongue corned beef biltong.
+  </div>
+</div>
+```
+
 Use `.height-full` to set height to 100%.
 
 ```html

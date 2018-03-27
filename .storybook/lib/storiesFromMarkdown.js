@@ -59,9 +59,7 @@ export default req => {
         select(ast, 'code[lang^=html]')
           .map(parseBlockAttrs)
           .filter(({block}) => block.story !== "false")
-          .map(node => {
-            return nodeToStory(node, path)
-          })
+          .map(node => nodeToStory(node, path))
       )
     }, [])
 }
