@@ -1,6 +1,6 @@
-const path = require("path");
+const path = require('path');
 
-const modulesPath = path.resolve(__dirname, "../modules")
+const modulesPath = path.resolve(__dirname, '../modules')
 
 module.exports = (config, env) => {
 
@@ -9,26 +9,34 @@ module.exports = (config, env) => {
       .filter(plugin => plugin.constructor.name !== 'UglifyJsPlugin')
   }
 
-  config.module.rules.push(
-    {
-      test: /\.md$/,
-      use: "raw-loader",
-    },
+  const rules = config.module.rules
+
+  rules.forEach((rule, index) => {
+    if ('README.md'.match(rule.test)) {
+      // console.warn('replacing MD rule:', rule)
+      rules.splice(index, 1, {
+        test: /\.md$/,
+        loader: 'raw-loader',
+      })
+    }
+  })
+
+  rules.push(
     {
       test: /\.scss$/,
       loaders: [
-        "style-loader",
-        "css-loader",
+        'style-loader',
+        'css-loader',
         {
-          loader: "postcss-loader",
+          loader: 'postcss-loader',
           options: {
             config: {
-              path: require.resolve("./postcss.config.js"),
+              path: require.resolve('./postcss.config.js'),
             },
           },
         },
         {
-          loader: "sass-loader",
+          loader: 'sass-loader',
           options: {
             includePaths: [
               modulesPath,
