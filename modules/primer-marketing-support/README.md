@@ -13,7 +13,7 @@ This repository is a module of the full [primer][primer] repository.
 
 This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `support` with this command.
 
-```
+```sh
 $ npm install --save support
 ```
 

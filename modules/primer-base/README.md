@@ -11,7 +11,7 @@ This repository is a module of the full [primer][primer] repository. And is buil
 
 This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-base` with this command.
 
-```
+```sh
 $ npm install --save primer-base
 ```
 
@@ -29,7 +29,7 @@ You can also import specific portions of the module by importing those partials 
 
 For a compiled **css** version of this module, a npm script is included that will output a css version to `build/build.css` The built css file is also included in the npm package.
 
-```
+```sh
 $ npm run build
 ```
 

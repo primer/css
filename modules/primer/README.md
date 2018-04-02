@@ -11,8 +11,13 @@ The Primer repo is managed as a monorepo that is composed of many npm packages.
 
 This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer` with this command.
 
+<<<<<<< HEAD:modules/primer-css/README.md
+```sh
+$ npm install --save primer-css
+=======
 ```
 $ npm install --save primer
+>>>>>>> master:modules/primer/README.md
 ```
 
 ## Usage
@@ -29,7 +34,7 @@ You can also import specific portions of the module by importing those partials 
 
 For a compiled **CSS** version of this module, a npm script is included that will output a CSS version to `build/build.css` The built CSS file is also included in the npm package.
 
-```
+```sh
 $ npm run build
 ```
 

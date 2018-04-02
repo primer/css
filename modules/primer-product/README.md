@@ -11,7 +11,7 @@ This repository is a compilation of [several CSS packages](https://github.com/pr
 
 This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer` with this command. **You must have npm >=3.0 installed to be able to satisfy the dependency paths**
 
-```
+```sh
 $ npm install --save primer-core
 ```
 
@@ -29,7 +29,7 @@ You can also import specific portions of the module by importing those partials 
 
 For a compiled **CSS** version of this module, a npm script is included that will output a CSS version to `build/build.css` The built CSS file is also included in the npm package.
 
-```
+```sh
 $ npm run build
 ```
 

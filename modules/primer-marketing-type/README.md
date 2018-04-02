@@ -56,7 +56,7 @@ These utilities are meant to be used in addition to Primer's core utilities.
 
 This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-marketing-typography` with this command.
 
-```
+```sh
 $ npm install --save primer-marketing-typography
 ```
 
@@ -74,7 +74,7 @@ You can also import specific portions of the module by importing those partials 
 
 For a compiled **css** version of this module, a npm script is included that will output a css version to `build/build.css`
 
-```
+```sh
 $ npm run build
 ```
 
