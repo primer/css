@@ -6,7 +6,7 @@
 @mixin btn-solid($color, $bg, $bg2) {
   color: $color;
   background-color: $bg2;
-  background-image: linear-gradient(-180deg, $bg 0%, $bg2 90%);
+  background-image: linear-gradient($bg 0%, darken($bg, 10%) 50%, darken($bg, 20%) 50%, darken($bg, 30%) 100%);
 
   @if $bg == $gray-000 {
     &:focus,
@@ -49,7 +49,7 @@
     &:hover,
     &.hover {
       background-color: darken($bg2, 2%);
-      background-image: linear-gradient(-180deg, darken($bg, 2%) 0%, darken($bg2, 2%) 90%);
+      background-image: linear-gradient(darken($bg2, 5%) 0%, darken($bg2, 10%) 50%, darken($bg2, 15%) 50%, darken($bg2, 20%) 100%);
       background-position: 0 -$em-spacer-5;
       border-color: $black-fade-50;
     }
