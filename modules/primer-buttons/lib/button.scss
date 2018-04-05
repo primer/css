@@ -4,6 +4,7 @@
 .btn {
   position: relative;
   display: inline-block;
+  min-width: 7em;
   padding: 6px 12px;
   font-size: $body-font-size;
   font-weight: $font-weight-bold;
@@ -16,7 +17,7 @@
   background-position: -1px -1px;
   background-size: 110% 110%;
   border: 1px solid transparentize($black, 0.8);
-  border-radius: 0.25em;
+  border-radius: 1.3em;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   i {
