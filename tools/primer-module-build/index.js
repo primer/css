@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const build = require('./lib/build')
 
 function InputException(message) {
@@ -5,14 +6,20 @@ function InputException(message) {
   this.name = "InputException"
 }
 
-module.exports = str => {
-  if (!str.input || str.input.length === 0) {
+module.exports = ({input, flags}) => {
+  if (!input || input.length === 0) {
     throw new InputException("You must supply a file to build")
   }
 
-  if (!str.input[0].match(/\.scss$/)) {
+  const [file] = input
+  if (!file.match(/\.scss$/)) {
     throw new InputException("We are only able to handle .scss files")
   }
 
-  build(str.input[0], str.flags)
+  build(file, flags)
+    .then(files => {
+      console.warn(':tada: wrote %d files:', files.length)
+      for (const file of files) console.warn(file)
+    })
+    .catch(err => console.error(':frowny-face:', err))
 }
