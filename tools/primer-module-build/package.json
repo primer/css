@@ -22,9 +22,9 @@
     "node": ">=4"
   },
   "scripts": {
-    "ava": "ava --verbose \"tests/**/*.js\"",
-    "lint": "eslint lib/**/*.js *.js tests/**/*.js",
-    "test": "npm run lint && npm run ava"
+    "ava": "../../script/npm-run ava --verbose \"tests/**/*.js\"",
+    "lint": "../../script/npm-run eslint lib/**/*.js *.js tests/**/*.js",
+    "test": "../../script/npm-run-all lint ava"
   },
   "keywords": [
     "primer",
@@ -38,6 +38,7 @@
     "cssstats": "^3.0.0-beta.2",
     "meow": "^3.7.0",
     "node-sass": "^4.9.0",
+    "node-sass-import": "^2.0.0",
     "postcss": "^5.2.5"
   },
   "devDependencies": {
