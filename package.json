@@ -20,6 +20,10 @@
     "test": "npm run test-all-modules && lerna run test",
     "test-all-modules": "ava --verbose tests/test-*.js"
   },
+  "dependencies": {
+    "primer-module-build": "*",
+    "stylelint-config-primer": "*"
+  },
   "devDependencies": {
     "@storybook/addon-options": "^3.2.6",
     "@storybook/react": "^3.2.12",
@@ -40,6 +44,7 @@
     "lerna-changelog": "^0.7.0",
     "node-sass": "^4.9.0",
     "npm-run-all": "^4.0.2",
+    "npx": "^10.2.0",
     "octicons": "^6.0.1",
     "parse-pairs": "^0.2.2",
     "postcss-loader": "^2.0.6",
