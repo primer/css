@@ -39,6 +39,7 @@
     "meow": "^3.7.0",
     "node-sass": "^4.9.0",
     "node-sass-import": "^2.0.0",
+    "pify": "^3.0.0",
     "postcss": "^5.2.5"
   },
   "devDependencies": {
