@@ -1,3 +1,4 @@
+const {isAbsolute} = require('path')
 const cssstats = require('cssstats')
 const fse = require('fs-extra')
 const nodeSassImport = require('node-sass-import')
@@ -14,7 +15,7 @@ function arrayify(value) {
 module.exports = (src, flags) => {
 
   const cwd = process.cwd()
-  const sourceFile = `${cwd}/${src}`
+  const sourceFile = isAbsolute(src) ? src : `${cwd}/${src}`
   const outputDir = flags.outputDir || `${cwd}/build`
   const outputFile = flags.output || `${outputDir}/build.css`
   const outputJSFile = flags.outputJS || `${outputDir}/index.js`
