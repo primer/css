@@ -1,12 +1,15 @@
 const cssstats = require('cssstats')
 const fse = require('fs-extra')
-const postcss = require('postcss')
-const {promisify} = require('util')
-const sass = require('node-sass')
-const sassRender = promisify(sass.render)
 const nodeSassImport = require('node-sass-import')
+const postcss = require('postcss')
+const promisify = require('pify')
+const sass = require('node-sass')
 
-const arrayify = value => Array.isArray(value) ? value : [value]
+const sassRender = promisify(sass.render)
+
+function arrayify(value) {
+  return Array.isArray(value) ? value : [value]
+}
 
 module.exports = (src, flags) => {
 
@@ -24,17 +27,10 @@ module.exports = (src, flags) => {
     includePaths: arrayify(flags.include)
   }
 
-  console.warn('sass options:', sassOptions)
+  // console.warn('sass options:', sassOptions)
 
   return fse.mkdirp(outputDir)
-    .then(() => {
-      try {
-        return sassRender(sassOptions)
-      } catch (error) {
-        console.warn('ERROR!')
-        throw error
-      }
-    })
+    .then(() => sassRender(sassOptions))
     .then(({css}) => {
       function postcssPlugins() {
         const postcssrc = (() => {

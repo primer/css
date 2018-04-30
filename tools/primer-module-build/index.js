@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const build = require('./lib/build')
 
 function InputException(message) {
