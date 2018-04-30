@@ -1,8 +1,12 @@
 const cssstats = require('cssstats')
 const fse = require('fs-extra')
 const postcss = require('postcss')
+const {promisify} = require('util')
 const sass = require('node-sass')
+const sassRender = promisify(sass.render)
 const nodeSassImport = require('node-sass-import')
+
+const arrayify = value => Array.isArray(value) ? value : [value]
 
 module.exports = (src, flags) => {
 
@@ -13,16 +17,24 @@ module.exports = (src, flags) => {
   const outputJSFile = flags.outputJS || `${outputDir}/index.js`
   const outputDataFile = flags.outputData || `${outputDir}/data.json`
 
+  const sassOptions = {
+    file: sourceFile,
+    outputStyle: flags.outputStyle || 'compressed',
+    importer: nodeSassImport,
+    includePaths: arrayify(flags.include)
+  }
+
+  console.warn('sass options:', sassOptions)
+
   return fse.mkdirp(outputDir)
-    .then(() => new Promise((resolve, reject) => {
-      sass.render({
-        file: sourceFile,
-        outputStyle: flags.outputStyle || 'compressed',
-        importer: nodeSassImport
-      }, (error, output) => {
-        error ? reject(error) : resolve(output)
-      })
-    }))
+    .then(() => {
+      try {
+        return sassRender(sassOptions)
+      } catch (error) {
+        console.warn('ERROR!')
+        throw error
+      }
+    })
     .then(({css}) => {
       function postcssPlugins() {
         const postcssrc = (() => {

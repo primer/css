@@ -16,10 +16,5 @@ module.exports = ({input, flags}) => {
     throw new InputException("We are only able to handle .scss files")
   }
 
-  build(file, flags)
-    .then(files => {
-      console.warn(':tada: wrote %d files:', files.length)
-      for (const file of files) console.warn(file)
-    })
-    .catch(err => console.error(':frowny-face:', err))
+  return build(file, flags)
 }

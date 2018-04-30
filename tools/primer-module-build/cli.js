@@ -17,3 +17,12 @@ const cli = meow(`
 `)
 
 build(cli)
+  .then(files => {
+    console.warn('YES! wrote %d files:', files.length)
+    for (const file of files) console.warn(file)
+    process.exit(0)
+  })
+  .catch(err => {
+    console.error('NO:', err)
+    process.exit(1)
+  })
