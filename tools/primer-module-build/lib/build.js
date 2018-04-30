@@ -12,7 +12,7 @@ function arrayify(value) {
   return Array.isArray(value) ? value : [value]
 }
 
-module.exports = (src, flags) => {
+module.exports = (src, flags = {}) => {
 
   const cwd = process.cwd()
   const sourceFile = isAbsolute(src) ? src : `${cwd}/${src}`
