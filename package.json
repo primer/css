@@ -24,6 +24,7 @@
     "@storybook/addon-options": "^3.2.6",
     "@storybook/react": "^3.2.12",
     "ava": "^0.23.0",
+    "babel-core": "^6.26.3",
     "babel-preset-env": "^1.6.0",
     "babel-preset-minify": "^0.2.0",
     "babel-preset-react": "^6.24.1",
