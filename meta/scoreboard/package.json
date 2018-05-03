@@ -3,7 +3,7 @@
   "devDependencies": {
     "console.table": "^0.10.0",
     "execa": "^0.10.0",
-    "globby": "^8.0.1",
+    "globby": "^6.1.0",
     "p-queue": "^2.4.2"
   }
 }
