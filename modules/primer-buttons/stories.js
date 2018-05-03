@@ -1,10 +1,18 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { WithFigma } from 'storybook-addon-figma'
+import { figma as figmaConfig } from './package.json'
+
+const generateFigmaUrl = (name) =>
+   `${figmaConfig.url}?node-id=${figmaConfig.components[name].id.split(":")[0]}%3A${figmaConfig.components[name].id.split(":")[1]}`
 
 storiesOf('Button', module)
   .add('btn', () => (
-    <button className='btn'>Button</button>
+    <WithFigma
+      url={generateFigmaUrl('btn')}
+    >
+      <button className='btn'>Button</button>
+    </WithFigma>
   ))
   .add('btn-primary', () => (
     <div className='p-4 d-flex flex-justify-between'>

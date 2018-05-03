@@ -12,6 +12,14 @@
     "category": "core",
     "module_type": "components"
   },
+  "figma": {
+    "url": "https://www.figma.com/file/VCkfDFhhJQz32TQSxGyLntrt/primer-buttons",
+    "components": {
+      "btn": {
+        "id": "7:1"
+      }
+    }
+  },
   "files": [
     "index.scss",
     "lib",
