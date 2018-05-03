@@ -61,6 +61,9 @@ For a compiled **CSS** version of this module, an npm script is included that wi
 $ npm run build
 ```
 
+## Generating Kitchen Sink 🚰
+
+To generate a Sketch file containing all of the Primer components from Storybook, run `story2sketch` in your terminal from Primer. This command will output a .asketch.json file into the `build` folder  which you can upload to Sketch using [this plugin](https://github.com/brainly/html-sketchapp/releases/download/v3.0.2/asketch2sketch.sketchplugin.zip). More information about story2sketch [here](https://github.com/chrisvxd/story2sketch).
 ## Documentation
 
 You can read more about primer in the [docs][docs].

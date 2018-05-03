@@ -1,5 +1,5 @@
 module.exports = {
-  output: "build/great-ui.asketch.json",
+  output: "build/kitchensink.json",
   input: "build/iframe.html",
   concurrency: 2,
   viewports: {
