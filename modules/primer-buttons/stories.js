@@ -1,5 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { WithFigma } from 'storybook-addon-figma'
 
 storiesOf('Button', module)
   .add('btn', () => (
