@@ -1,5 +1,8 @@
 {
   "private": true,
+  "scripts": {
+    "test": "node index.js"
+  },
   "devDependencies": {
     "console.table": "^0.10.0",
     "execa": "^0.10.0",
