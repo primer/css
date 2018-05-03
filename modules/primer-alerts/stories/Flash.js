@@ -1,9 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { WithFigma } from 'storybook-addon-figma'
-import pjson from './../package.json'
-
-var figmaConfig = pjson.figma;
+import { figma as figmaConfig } from './../package.json'
 
 const generateFigmaUrl = (name) =>
    `${figmaConfig.url}?node-id=${figmaConfig.components[name].id.split(":")[0]}%3A${figmaConfig.components[name].id.split(":")[1]}`
