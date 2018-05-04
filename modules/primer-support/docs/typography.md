@@ -24,7 +24,7 @@ Font sizes are smaller on mobile and scale up at the `md` [breakpoint](#breakpoi
 | 5 | 14px | 14px | 17.5 | 21 |
 | 6 | 12px | 12px | 15 | 18 |
 
-The typography scale is used to create [typography utilities](./utilities/typography).
+The typography scale is used to create [typography utilities](../../utilities/typography).
 
 ## Typography variables
 
