@@ -45,7 +45,7 @@ There are known issues with using `display:table` and wrapping long strings, par
 ```
 
 ### Responsive display
-A selection of display utilities are able to be applied or changed per [breakpoint](/styleguide/css/modules/grid#breakpoints). `.d-block`, `.d-none`, `.d-inline`, and `.d-inline-block` are available as responsive utilities using the following formula: `d-[breakpoint]-[property]`. For example: `d-md-inline-block`. Each responsive display utility is applied to the specified breakpoint and up.
+A selection of display utilities are able to be applied or changed per [breakpoint](../../objects/grid#breakpoints). `.d-block`, `.d-none`, `.d-inline`, and `.d-inline-block` are available as responsive utilities using the following formula: `d-[breakpoint]-[property]`. For example: `d-md-inline-block`. Each responsive display utility is applied to the specified breakpoint and up.
 
 In the following example, the `ul` element switches from `display: block` on mobile to  `display: inline-block` at the `md` breakpoint, while the list items remain inline.
 
@@ -97,7 +97,7 @@ Use `.float-left` and `.float-right` to set floats, and `.clearfix` to clear.
 </div>
 ```
 ### Responsive floats
-Float utilities can be applied or changed per [breakpoint](/styleguide/css/modules/grid#breakpoints). This can be useful for responsive layouts when you want an element to be full width on mobile but floated at a larger breakpoint.
+Float utilities can be applied or changed per [breakpoint](../../objects/grid#breakpoints). This can be useful for responsive layouts when you want an element to be full width on mobile but floated at a larger breakpoint.
 
 Each responsive float utility is applied to the specified breakpoint and up, using the following formula:  `float-[breakpoint]-[property]`. For example: `float-md-left`. Remember to use `.clearfix` to clear.
 
