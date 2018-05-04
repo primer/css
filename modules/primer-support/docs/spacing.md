@@ -19,9 +19,9 @@ The spacing scale is a **base-8** scale. We chose a base-8 scale because eight i
 | $spacer-1 | 5 | 32px |
 | $spacer-1 | 6 | 40px |
 
-These variables are encouraged to be used within components and custom CSS. The spacing scale is also used for [margin](./utilities/margin) and [padding](./utilities/padding) utilities.
+These variables are encouraged to be used within components and custom CSS. The spacing scale is also used for [margin](../../utilities/margin) and [padding](../../utilities/padding) utilities.
 
-See [primer-marketing-support](../primer-marketing-support) for the extended spacing scale used for marketing needs and the related y-axis spacing utilities for [margin](../primer-marketing-utilities/docs/margin.md) and [padding](../primer-marketing-utilities/docs/padding.md).
+See [primer-marketing-support](../../support/marketing-variables/) for the extended spacing scale used for marketing needs and the related y-axis spacing utilities for [margin](../../utilities/marketing-margin) and [padding](../../utilities/marketing-padding).
 
 ## Em-based spacing
 Ems are used for spacing within components such as buttons and form elements. We stick to common fractions for em values (and powers of 2 where possible) so that , in combination with typography and line-height, the total height lands on sensible numbers.
