@@ -8,6 +8,17 @@
   "style": "build/build.css",
   "sass": "index.scss",
   "main": "build/index.js",
+  "figma": {
+    "url": "https://www.figma.com/file/VCkfDFhhJQz32TQSxGyLntrt/primer-buttons",
+    "components": {
+      "btn": {
+        "id": "7:1"
+      },
+      "btn-sm": {
+        "id": "12:0"
+      }
+    }
+  },
   "primer": {
     "category": "core",
     "module_type": "components"
