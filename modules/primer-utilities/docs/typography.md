@@ -3,7 +3,7 @@ title: Typography
 status: Stable
 ---
 
-Type utilities are designed to work in combination with line-height utilities so as to result in more sensible numbers wherever possible. These also exist as [variables](/styleguide/css/styles/core/support/typography#typography-variables) that you can use in components or custom CSS.
+Type utilities are designed to work in combination with line-height utilities so as to result in more sensible numbers wherever possible. These also exist as [variables](/primer/support/typography/#typography-variables) that you can use in components or custom CSS.
 
 {:toc}
 
