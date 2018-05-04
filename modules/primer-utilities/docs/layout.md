@@ -31,7 +31,7 @@ Adjust the display of an element with `.d-block`, `.d-none`, `.d-inline`, `.d-in
 </div>
 ```
 
-There are known issues with using `display:table` and wrapping long strings, particularly in Firefox. You may need to use `table-fixed` on elements with `d-table` and apply column widths to table cells, which you can do with our [column width styles](/styleguide/css/modules/grid#column-widths).
+There are known issues with using `display:table` and wrapping long strings, particularly in Firefox. You may need to use `table-fixed` on elements with `d-table` and apply column widths to table cells, which you can do with our [column width styles](../../objects/grid#column-widths).
 
 ```html
 <div class="d-table table-fixed width-full">
