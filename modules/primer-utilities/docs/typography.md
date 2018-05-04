@@ -7,7 +7,7 @@ Type utilities are designed to work in combination with line-height utilities so
 
 {:toc}
 
-Font sizes are smaller on mobile and scale up at the `md` [breakpoint](/styleguide/css/styles/core/support/breakpoints) to be larger on desktop.
+Font sizes are smaller on mobile and scale up at the `md` [breakpoint](/primer/support/breakpoints) to be larger on desktop.
 
 | Scale | Font size: mobile | Font size: desktop | 1.25 line height | 1.5 line height |
 | --- | --- | --- | --- | --- |
