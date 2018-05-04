@@ -11,7 +11,7 @@ source: https://github.com/primer/primer/blob/master/modules/primer-support/lib/
 
 The typography scale is designed to work for GitHub's product UI and marketing sites. Font sizes are designed to work in combination with line-height values so as to result in more sensible numbers wherever possible.
 
-Font sizes are smaller on mobile and scale up at the `md` [breakpoint](#breakpoints) to be larger on desktop.
+Font sizes are smaller on mobile and scale up at the `md` [breakpoint](./../breakpoints) to be larger on desktop.
 
 | Scale | Font size: mobile | Font size: desktop | 1.25 line height | 1.5 line height |
 | --- | --- | --- | --- | --- |
@@ -63,7 +63,7 @@ $lh-default: 1.5 !default;
 ```
 
 ## Typography Mixins
-Typography mixins are available for heading styles and for our type scale. They can be used within components or custom CSS. The same styles are also available as [utilities](./utilities/typography#heading-utilities) which requires no additional CSS.
+Typography mixins are available for heading styles and for our type scale. They can be used within components or custom CSS. The same styles are also available as [utilities](../../utilities/typography/#heading-utilities). which requires no additional CSS.
 
 Heading mixins are available for `h1` through to `h6`, this includes the font-size and font-weight. Example:
 
