@@ -73,7 +73,7 @@ As always, make sure to include the appropriate `aria` attributes to make the el
 <nav class="paginate-container" aria-label="Pagination">
   <div class="pagination">
     <span class="previous_page disabled">Previous</span>
-    <em class="current" aria-current="true">1</em>
+    <em class="current selected" aria-current="true">1</em>
     <a href="#url" aria-label="Page 2">2</a>
     <a href="#url" aria-label="Page 3">3</a>
     <span class="gap">…</span>
