@@ -34,7 +34,7 @@
     "babel-preset-react": "^6.24.1",
     "commit-status": "^4.1.0",
     "css-loader": "^0.28.4",
-    "execa": "^0.8.0",
+    "execa": "^0.10.0",
     "fs-extra": "^4.0.2",
     "gh-pages": "^1.0.0",
     "glob": "^7.1.2",
