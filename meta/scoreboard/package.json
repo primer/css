@@ -1,5 +1,6 @@
 {
   "private": true,
+  "name": "primer-scorecard",
   "scripts": {
     "test": "node index.js"
   },
