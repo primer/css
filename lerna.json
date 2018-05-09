@@ -1,6 +1,7 @@
 {
   "lerna": "2.4.0",
   "packages": [
+    "meta/*",
     "modules/*",
     "tools/*"
   ],
