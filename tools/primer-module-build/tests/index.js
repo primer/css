@@ -1,7 +1,7 @@
 const build = require('../lib/build.js')
 const test = require('ava')
 const tempy = require('tempy')
-const {exists, remove} = require('fs-extra')
+const {exists} = require('fs-extra')
 const {join} = require('path')
 
 function fixture(...path) {
