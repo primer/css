@@ -10,11 +10,7 @@
   "main": "build/index.js",
   "primer": {
     "category": "core",
-    "module_type": "support",
-    "class_whitelist": [
-      "octicon",
-      "rule"
-    ]
+    "module_type": "support"
   },
   "files": [
     "index.scss",

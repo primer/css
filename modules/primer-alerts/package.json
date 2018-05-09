@@ -10,10 +10,7 @@
   "main": "build/index.js",
   "primer": {
     "category": "product",
-    "module_type": "components",
-    "class_whitelist": [
-      "warning"
-    ]
+    "module_type": "components"
   },
   "files": [
     "index.scss",

@@ -19,22 +19,17 @@ const railsOcticonToReact = (html) => {
   return html
 }
 
-const parseBlockAttrs = (node, file) => {
-  const pairs = node.lang.replace(/^html\s*/, '')
-  const attrs = pairs.length ? parsePairs(pairs) : {}
-  attrs.title = attrs.title
-    || getPreviousHeading(node)
-    || `story @ ${file}:${node.position.start.line}`
-  node.block = attrs
-  return node
-}
-
 const nodeToStory = (node, file) => {
   const html = railsOcticonToReact(node.value)
-  const {title} = node.block
+  const element = htmlParser.parse(html)
+  const pairs = node.lang.replace(/^html\s*/, '')
+  const attrs = pairs.length ? parsePairs(pairs) : {}
+  const title = attrs.title || getPreviousHeading(node) ||
+    `story @ ${file}:${node.position.start.line}`
   return {
     title,
-    story: () => htmlParser.parse(html),
+    story: () => element,
+    attrs,
     html,
     file,
     node,
@@ -49,17 +44,14 @@ const getPreviousHeading = node => {
 }
 
 export default req => {
-  return req.keys()
-    .filter(file => !file.match(/node_modules/))
-    .reduce((stories, file) => {
-      const content = req(file)
-      const ast = parents(remark.parse(content))
-      const path = file.replace(/^\.\//, '')
-      return stories.concat(
-        select(ast, 'code[lang^=html]')
-          .map(parseBlockAttrs)
-          .filter(({block}) => block.story !== "false")
-          .map(node => nodeToStory(node, path))
-      )
-    }, [])
+  return req.keys().reduce((stories, file) => {
+    const content = req(file)
+    const ast = parents(remark.parse(content))
+    const path = file.replace(/^\.\//, '')
+    return stories.concat(
+      select(ast, 'code[lang^=html]')
+        .map(node => nodeToStory(node, path))
+        .filter(({attrs}) => attrs.story !== "false")
+    )
+  }, [])
 }

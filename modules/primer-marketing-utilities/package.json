@@ -10,11 +10,7 @@
   "main": "build/index.js",
   "primer": {
     "category": "marketing",
-    "module_type": "utilities",
-    "class_whitelist": [
-      "border-??-*",
-      "position-??-*"
-    ]
+    "module_type": "utilities"
   },
   "files": [
     "index.scss",
