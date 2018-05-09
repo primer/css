@@ -19,7 +19,7 @@
     cursor: pointer;
     user-select: none;
     background: $bg-white; // Reset default gradient backgrounds and colors
-    border: $border-width $border-style $border-grey;
+    border: $border-width $border-style $border-gray;
 
     &:first-child {
       margin-left: 0;
@@ -38,7 +38,7 @@
       z-index: 2;
       text-decoration: none;
       background-color: darken($gray-100, 2%);
-      border-color: $border-grey;
+      border-color: $border-gray;
     }
   }
 
