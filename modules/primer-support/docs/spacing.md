@@ -11,13 +11,13 @@ The spacing scale is a **base-8** scale. We chose a base-8 scale because eight i
 
 | Variable | Scale | Value |
 | --- | --- | --- |
-| $spacer-0 | 0 | 0 |
+| $spacer-1 | 0 | 0 |
 | $spacer-1 | 1 | 4px |
-| $spacer-2 | 2 | 8px |
-| $spacer-3 | 3 | 16px |
-| $spacer-4 | 4 | 24px |
-| $spacer-5 | 5 | 32px |
-| $spacer-6 | 6 | 40px |
+| $spacer-1 | 2 | 8px |
+| $spacer-1 | 3 | 16px |
+| $spacer-1 | 4 | 24px |
+| $spacer-1 | 5 | 32px |
+| $spacer-1 | 6 | 40px |
 
 These variables are encouraged to be used within components and custom CSS. The spacing scale is also used for [margin](./utilities/margin) and [padding](./utilities/padding) utilities.
 

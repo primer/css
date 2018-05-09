@@ -108,7 +108,7 @@
   }
 
   &::before {
-    margin-top: -($spacer-2 + 1);
+    margin-top: -9px;
   }
 
   &::after {
@@ -164,11 +164,11 @@
   }
 
   &::before {
-    bottom: $spacer-3;
+    bottom: $spacer-4;
   }
 
   &::after {
-    bottom: $spacer-3 + 1;
+    bottom: 21px;
   }
 }
 
