@@ -19,7 +19,7 @@
     cursor: pointer;
     user-select: none;
     background: $bg-white; // Reset default gradient backgrounds and colors
-    border: $border-width $border-style $gray-200;
+    border: $border-width $border-style $border-grey;
 
     &:first-child {
       margin-left: 0;
@@ -38,7 +38,7 @@
       z-index: 2;
       text-decoration: none;
       background-color: darken($gray-100, 2%);
-      border-color: $gray-200;
+      border-color: $border-grey;
     }
   }
 
@@ -49,7 +49,7 @@
     z-index: 3;
     color: $text-white;
     background-color: $bg-blue;
-    border-color: $blue;
+    border-color: $border-blue;
   }
 
   .gap,
@@ -58,7 +58,7 @@
   .disabled:hover {
     color: $gray-300;
     cursor: default;
-    background-color: $gray-000;
+    background-color: $bg-gray-light;
   }
 }
 
