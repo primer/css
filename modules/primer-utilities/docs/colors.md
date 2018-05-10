@@ -131,6 +131,16 @@ Use text color utilities to set text or [octicons](/styleguide/css/styles/core/c
 
 These are our most common text with background color combinations. They don't all pass accessibility standards currently, but will be updated in the future. **Any of the combinations with a warning icon must be used with caution**.
 
+### Text color inheritance
+
+You can set the color inheritance on an element by using the `text-inherit` class.
+
+```html
+<div class="text-purple">
+  This text is purple, <a href="#" class="text-inherit">including the link</a>
+</div>
+```
+
 ### Text on white background
 
 ```html
