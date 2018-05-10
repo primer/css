@@ -37,7 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Pagination
-status: Experimental
+status: New Release
 -->
 
 Use the pagination component to apply button styles to a connected set of links that go to related pages (for example, previous, next, or page numbers).
@@ -84,3 +84,5 @@ As always, make sure to include the appropriate `aria` attributes to make the el
   </div>
 </nav>
 ```
+
+<!-- %enddocs -->
