@@ -50,7 +50,7 @@ Box overlays come in three widths. The default `Box--overlay` is 440px wide, `Bo
 **Note:** `position: fixed` has been disabled in this example
 
 ```html
-<button type="button" class="btn" data-box-overlay-id="test-box-overlay" aria-expanded="false">Centered box</button>
+<button type="button" class="btn" data-box-overlay-id="test-box-overlay" aria-expanded="false">Centered default box</button>
 <div class="Overlay js-box-overlay-container" id="test-box-overlay" role="dialog"
      aria-labelledby="test-box-overlay-title-1" aria-describedby="test-box-overlay-description-1" hidden>
   <div class="Overlay-table-full bg-transparent-dark">
