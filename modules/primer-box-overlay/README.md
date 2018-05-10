@@ -70,6 +70,48 @@ Box overlays come in three widths. The default `Box--overlay` is 440px wide, `Bo
     </div>
   </div>
 </div>
+
+<button type="button" class="btn" data-box-overlay-id="test-box-overlay-wide" aria-expanded="false">Wide box</button>
+<div class="Overlay js-box-overlay-container" id="test-box-overlay-wide" role="dialog"
+     aria-labelledby="test-box-overlay-title-1" aria-describedby="test-box-overlay-description-1" hidden>
+  <div class="Overlay-table-full bg-transparent-dark">
+    <div class="Overlay-cell-middle">
+      <div class="Box Box-overlay--wide js-box-overlay-content">
+        <div class="Box-header clearfix">
+          <button type="button" class="Box-btn-octicon btn-octicon float-right js-box-overlay-close"><%= octicon("x", :"aria-label" => "Close") %></button>
+          <h3 class="Box-title overflow-hidden pr-3" id="test-box-overlay-title-1">Box title</h3>
+        </div>
+        <div class="Box-body">
+          <p id="test-box-overlay-description-1">
+            The quick brown fox jumps over the lazy dog and feels as if he were in the seventh heaven of typography together with Hermann Zapf, the most famous artist of the...
+          </p>
+          <button type="button" class="btn btn-block mt-2 js-box-overlay-close" autofocus>Okidoki</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn" data-box-overlay-id="test-box-overlay-narrow" aria-expanded="false">Narrow box</button>
+<div class="Overlay js-box-overlay-container" id="test-box-overlay-narrow" role="dialog"
+     aria-labelledby="test-box-overlay-title-1" aria-describedby="test-box-overlay-description-1" hidden>
+  <div class="Overlay-table-full bg-transparent-dark">
+    <div class="Overlay-cell-middle">
+      <div class="Box Box-overlay--narrow js-box-overlay-content">
+        <div class="Box-header clearfix">
+          <button type="button" class="Box-btn-octicon btn-octicon float-right js-box-overlay-close"><%= octicon("x", :"aria-label" => "Close") %></button>
+          <h3 class="Box-title overflow-hidden pr-3" id="test-box-overlay-title-1">Box title</h3>
+        </div>
+        <div class="Box-body">
+          <p id="test-box-overlay-description-1">
+            The quick brown fox jumps over the lazy dog and feels as if he were in the seventh heaven of typography together with Hermann Zapf, the most famous artist of the...
+          </p>
+          <button type="button" class="btn btn-block mt-2 js-box-overlay-close" autofocus>Okidoki</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 ```
 
 ```html
