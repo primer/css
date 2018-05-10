@@ -1,0 +1,81 @@
+// Box overlay styles
+.Box--overlay {
+  width: 448px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow-y: auto;
+  background-color: $white;
+  background-clip: padding-box;
+  border-color: $border-gray-darker;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+
+  .Box-header {
+    margin: 0;
+    border-width: 0;
+    border-bottom-width: $border-width;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+  }
+}
+
+.Box-overlay--narrow {
+  width: 320px;
+}
+
+.Box-overlay--wide {
+  width: 640px;
+}
+
+// Overlay styles
+// stylelint-disable selector-class-pattern
+
+// Postions div over other content
+.Overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99; // Update to variable when z-index scale introduced
+  overflow-y: auto;
+}
+
+// Fills the width and height of the viewport
+.Overlay-table-full {
+  display: table;
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+}
+
+.Overlay-cell-top,
+.Overlay-cell-middle {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  padding: $spacer-5; // This is an assumption, could remove this and add as a utility
+}
+
+// Vertically centers the foreground and allows content fo fill the container
+.Overlay-cell-top {
+  vertical-align: top;
+}
+
+// Vertically centers the foreground and allows content fo fill the container
+.Overlay-cell-middle {
+  vertical-align: middle;
+}
+
+// Move into color utils?
+.bg-transparent-dark {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Temporary transition */
+.transition-in-out {
+  transition: opacity 0.2s ease-in-out;
+
+  &[hidden] {
+    opacity: 0;
+  }
+}
