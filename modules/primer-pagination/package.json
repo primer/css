@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "1.0.0",
   "name": "primer-pagination",
   "description": "Pagination component for applying button styles to a connected set of links that go to related pages",
   "homepage": "http://primer.github.io/",
@@ -24,7 +24,7 @@
     "test": "../../script/npm-run-all build lint test-docs"
   },
   "dependencies": {
-    "primer-support": "4.5.2"
+    "primer-support": "4.5.3"
   },
   "keywords": [
     "github",
