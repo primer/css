@@ -214,3 +214,8 @@
 .text-shadow-light {
   text-shadow: 0 1px 0 rgba($white, 0.5);
 }
+
+/* Set to monospace font */
+.text-mono {
+  font-family: $mono-font;
+}

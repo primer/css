@@ -1,5 +1,5 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.5",
   "name": "generator-primer-module",
   "description": "Use this to create a new Primer modules!",
   "author": "GitHub, Inc.",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "chalk": "^2.1.0",
-    "primer-support": "4.5.2",
+    "primer-support": "4.5.3",
     "yeoman-generator": "^1.1.1"
   },
   "keywords": [

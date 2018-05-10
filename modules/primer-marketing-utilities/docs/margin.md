@@ -4,7 +4,8 @@ status: New release
 status_issue: https://github.com/github/design-systems/issues/378
 ---
 
-Marketing margin utilities extend [core margin utilities](../../primer-marketing-support/docs/spacing) across the y-axis only. The [marketing scale](../../primer-marketing-support) starts from spacer 7 up to 12, and steps first by `8px` for spacer 7 and continues in increments of `16px` for spacer 8 to 12.
+Marketing margin utilities extend [core margin utilities](../../support/spacing) across the y-axis only. The [marketing scale](../../support/marketing-variables/#extended-spacing-scale) starts from spacer 7 up to 12, and steps first by `8px` for spacer 7 and continues in increments of `16px` for spacer 8 to 12.
+
 
 ## Y-axis margin utilities
 
@@ -24,7 +25,7 @@ Use marketing margin utilities to apply margin to top, bottom, or both y-axis of
 
 ## Responsive y-axis margin utilities
 
-All marketing margin utilities can be adjusted per [breakpoint](/styleguide/css/modules/grid#breakpoints) using the following formula: `m[y-direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
+All marketing margin utilities can be adjusted per [breakpoint](../../objects/grid#breakpoints) using the following formula: `m[y-direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
 
 ```html
 <div class="d-inline-block margin-orange">

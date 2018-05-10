@@ -3,7 +3,7 @@ title: Margin
 status: Stable
 ---
 
-Margin utilities are based on a global [spacing scale](/styleguide/css/styles/core/support/spacing) which helps keep horizontal and vertical spacing consistent. These utilities help us reduce the amount of custom CSS that share the same properties, and allows to achieve many different page layouts using the same styles.
+Margin utilities are based on a global [spacing scale](../../support/spacing) which helps keep horizontal and vertical spacing consistent. These utilities help us reduce the amount of custom CSS that share the same properties, and allows to achieve many different page layouts using the same styles.
 
 {:toc}
 
@@ -103,7 +103,7 @@ Reset margins built into typography elements or other components with `m-0`, `mt
 
 ## Responsive margins
 
-All margin utilities, except `mx-auto`, can be adjusted per [breakpoint](/styleguide/css/modules/grid#breakpoints) using the following formula: `m[direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
+All margin utilities, except `mx-auto`, can be adjusted per [breakpoint](../../objects/grid#breakpoints) using the following formula: `m[direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
 
 ```html
 <div class="d-inline-block margin-orange">

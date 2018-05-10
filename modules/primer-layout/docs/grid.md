@@ -98,7 +98,7 @@ Column widths can be used with any other block or inline-block elements to add p
 
 ## Offset columns
 
-Using column offset classes can push a div over X number of columns. They work responsively using the [breakpoints outlined below](/styleguide/css/modules/grid#responsive-grids).
+Using column offset classes can push a div over X number of columns. They work responsively using the [breakpoints outlined below](../grid#responsive-grids).
 
 ```html title="Offset columns"
 <div class="clearfix">
@@ -188,7 +188,7 @@ You can use column widths and other utilities on elements such as lists to creat
 
 
 ## Display table grids
-Using [display table utilities](/styleguide/css/utilities/layout#display) with columns gives you some alternative layout options.
+Using [display table utilities](../../utilities/layout#display) with columns gives you some alternative layout options.
 
 A useful example is being able to keep the height of the container equal across a row when the length of content may differ.
 
@@ -205,7 +205,7 @@ A useful example is being able to keep the height of the container equal across 
   </div>
 </div>
 ```
-You can also create an alternative [media object](/styleguide/css/utilities/layout#the-media-object) layout with `.display-table` and column widths.
+You can also create an alternative [media object](../../utilities/layout#the-media-object) layout with `.display-table` and column widths.
 
 ```html title="Table grid alternative"
 <div class="d-table col-12">
@@ -238,7 +238,7 @@ Note that table cells will fill the width of their container even when the total
 
 ## Flexbox grids
 
-You can use [flex utilities](/styleguide/css/utilities/flexbox) on the container and columns to create a flexbox grid.
+You can use [flex utilities](../../utilities/flexbox) on the container and columns to create a flexbox grid.
 
 This can be useful for keeping columns the same height, justifying content and vertically aligning items. The flexbox grid is also great for working with responsive layouts.
 

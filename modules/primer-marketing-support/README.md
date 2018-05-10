@@ -48,7 +48,7 @@ Starting where the `primer-core` spacing scale ends at spacer 6, the marketing s
 | 11    | 112   |
 | 12    | 128   |
 
-See [primer-marketing-utilities](../primer-marketing-utilities) for related spacing utilities.
+See [primer-marketing-support](../../support/marketing-variables/) for the extended spacing scale used for marketing needs and the related y-axis spacing utilities for [margin](../../utilities/marketing-margin) and [padding](../../utilities/marketing-padding).
 
 <!-- %enddocs -->
 

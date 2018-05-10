@@ -1,5 +1,5 @@
 {
-  "version": "1.6.1",
+  "version": "1.6.2",
   "name": "primer-marketing-utilities",
   "description": "Marketing specific immutable, atomic CSS classes",
   "homepage": "http://primer.github.io/",
@@ -29,8 +29,8 @@
     "test": "../../script/npm-run-all build lint"
   },
   "dependencies": {
-    "primer-marketing-support": "1.5.0",
-    "primer-support": "4.5.2"
+    "primer-marketing-support": "1.5.1",
+    "primer-support": "4.5.3"
   },
   "keywords": [
     "primer",
