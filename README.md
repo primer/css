@@ -61,6 +61,10 @@ For a compiled **CSS** version of this module, an npm script is included that wi
 $ npm run build
 ```
 
+## Releasing
+
+You can find docs about our release process [here](./RELEASING.md).
+
 ## Documentation
 
 You can read more about primer in the [docs][docs].
