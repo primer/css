@@ -1,23 +1,18 @@
 {
-  "version": "1.5.2",
-  "name": "primer-breadcrumb",
-  "description": "Breadcrumb navigation for pages with parents / grandparents.",
+  "version": "1.0.0",
+  "name": "primer-pagination",
+  "description": "Pagination component for applying button styles to a connected set of links that go to related pages",
   "homepage": "http://primer.github.io/",
-  "author": "GitHub, Inc.",
-  "license": "MIT",
-  "style": "build/build.css",
-  "sass": "index.scss",
-  "main": "build/index.js",
   "primer": {
-    "category": "core",
+    "category": "product",
     "module_type": "components"
   },
-  "files": [
-    "index.scss",
-    "lib",
-    "build"
-  ],
-  "repository": "https://github.com/primer/primer/tree/master/modules/primer-breadcrumb",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "index.scss",
+  "sass": "index.scss",
+  "main": "build/index.js",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-pagination",
   "bugs": {
     "url": "https://github.com/primer/primer/issues"
   },
@@ -32,12 +27,7 @@
     "primer-support": "4.5.3"
   },
   "keywords": [
-    "breadcrumb",
-    "css",
     "github",
-    "navigation",
-    "primer",
-    "design-system",
-    "style"
+    "primer"
   ]
 }
