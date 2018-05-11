@@ -9,9 +9,9 @@
 
 2. Go through the tracking issue and make sure everything that should be merged in is merged in.
 
-3. Once your builds finishes, click on the details links for the continuous-integration/travis-ci/push build.  Expand the `Deploying application` output and you should be able to find an outputted CHANGELOG here. Copy this and update the CHANGELOG.md file in `primer`.
+3. Once your builds finishes, click on the details links for the continuous-integration/travis-ci/push build.  Expand the `Deploying application` output and you should be able to find an outputted change log here. Copy this and update the CHANGELOG.md file in `primer`.
 
-4. Run the version bump `npm run bump`.
+4. Run the version bump in your command line: `npm run bump`.
 
 5. Test your changes with the latest release candidate version in the appropriate places (styleguide, storybook, github/github).
 
@@ -41,13 +41,13 @@
 
 #### Update the Style Guide
 
-1. Update `primer` to the new version.
+1. In [github/styleguide](https://github.com/github/styleguide), Update `primer` to your newly released version.
 
-2. Run `script/update-primer-docs`.
+2. In your command line run: `script/update-primer-docs`.
 
 3. Make PR, get it approved, merge! 🚀
 
-#### Update primer.github.io
+#### Update [primer.github.io](primer.github.io)
 
 1. Edit index.html [here](https://github.com/primer/primer.github.io/blob/master/index.html) to include the latest version.
 
