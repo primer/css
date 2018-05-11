@@ -115,7 +115,7 @@ In practice, your columns will look like the example below.
 
 ##### Centered
 
-Columns can be [centered](/utilities/#centering-content) by adding `.centered` to the `.column` class.
+Columns can be centered by adding `.centered` to the `.column` class.
 
 ```html title="Grid centered"
 <div class="columns">

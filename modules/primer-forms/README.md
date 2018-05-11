@@ -176,7 +176,7 @@ Primer adds light `height` and `vertical-align` styles to `<select>`s for all br
 
 ##### Small
 
-Use the `.select-sm` class to resize both default and custom `<select>`s to match the size of [our small buttons](/buttons/#default-buttons).
+Use the `.select-sm` class to resize both default and custom `<select>`s to match the size of [our small buttons](../buttons/#default-buttons).
 
 ```html
 <select class="form-select select-sm" aria-label="Preference">

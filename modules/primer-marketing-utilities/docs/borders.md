@@ -21,7 +21,7 @@ Top, right, bottom, and left border utilities are can be used responsively to ad
 
 ### White border with alpha transparency
 
-Use `.border-white-fade` to add a white border with an alpha transparency of 0.15. This is useful when you want a border that is a lighter shade of the background color. Additional border colors are available in [primer-core border utilities](/borders/#border-colors).
+Use `.border-white-fade` to add a white border with an alpha transparency of 0.15. This is useful when you want a border that is a lighter shade of the background color. Additional border colors are available in [primer-core border utilities](..//borders/#border-colors).
 
 ```html
 <div class="bg-gray-dark text-white p-3 mb-2">

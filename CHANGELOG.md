@@ -1,3 +1,30 @@
+# 10.5.0
+
+#### :rocket: Enhancement
+* [#487](https://github.com/primer/primer/pull/487) Import Pagination Component. ([@emplums](https://github.com/emplums))
+* [#474](https://github.com/primer/primer/pull/474) Add text-mono utility class. ([@emplums](https://github.com/emplums))
+* [#456](https://github.com/primer/primer/pull/456) Adding height-fit utility class. ([@jonrohan](https://github.com/jonrohan))
+
+#### :bug: Bug Fix
+* [#465](https://github.com/primer/primer/pull/465) Fix Popover--right-bottom caret positioning. ([@shawnbot](https://github.com/shawnbot))
+* [#458](https://github.com/primer/primer/pull/458) Fix broken pointer from packages to modules. ([@tysongach](https://github.com/tysongach))
+
+#### :memo: Documentation
+* [#486](https://github.com/primer/primer/pull/486) Documenting the text-inheritance color utility. ([@jonrohan](https://github.com/jonrohan))
+* [#481](https://github.com/primer/primer/pull/481) Styleguide Polish. ([@emplums](https://github.com/emplums))
+* [#464](https://github.com/primer/primer/pull/464) Fix markdown stories. ([@shawnbot](https://github.com/shawnbot))
+* [#455](https://github.com/primer/primer/pull/455) Add colorizeTooltip deprecation warning. ([@jonrohan](https://github.com/jonrohan))
+* [#452](https://github.com/primer/primer/pull/452) Update dead links in CONTRIBUTING.md. ([@agisilaos](https://github.com/agisilaos))
+
+#### Committers: 7
+- Agisilaos Tsaraboulidis ([agisilaos](https://github.com/agisilaos))
+- Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
+- Emily ([emplums](https://github.com/emplums))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Tyson Gach ([tysongach](https://github.com/tysongach))
+- [muan](https://github.com/muan)
+
 # 10.4.0 (2018-03-14)
 
 #### :rocket: Enhancement
