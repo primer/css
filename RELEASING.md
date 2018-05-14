@@ -9,9 +9,9 @@
 
 2. Go through the tracking issue and make sure everything that should be merged in is merged in.
 
-3. Once your builds finishes, click on the details links for the continuous-integration/travis-ci/push build.  Expand the `Deploying application` output and you should be able to find an outputted change log here. Copy this and update the CHANGELOG.md file in `primer`.
+3. Once your builds finish, click on the details links for the continuous-integration/travis-ci/push build.  Expand the `Deploying application` output and you should be able to find an outputted change log here. Copy this and update the [CHANGELOG.md](https://github.com/primer/primer/blob/master/CHANGELOG.md) file.
 
-4. Run the version bump in your command line: `npm run bump`.
+4. Run the version bump in your terminal: `npm run bump`.
 
 5. Test your changes with the latest release candidate version in the appropriate places (styleguide, storybook, github/github).
 
@@ -22,9 +22,9 @@
 
 1. Create a new branch
 
-2. Update the primer version  `npm install primer@<version>`.
+2. Update the primer version in your terminal  `npm install primer@<version>`.
 
-3. Update `stylelint-config-primer` to the appropriate version.
+3. Update `stylelint-config-primer` in your terminal to the appropriate version `npm install stylelint-config-primer@latest`.
 
 4. If you need to make changes to github/github due to the Primer release, make a separate branch. When ready, merge that branch into your release branch.
 
@@ -51,7 +51,7 @@
 
 #### Update [primer.github.io](primer.github.io)
 
-1. Edit index.html [here](https://github.com/primer/primer.github.io/blob/master/index.html) to include the latest version.
+1. Edit  [index.html](https://github.com/primer/primer.github.io/blob/master/index.html) to include the latest version.
 
 #### Update Storybook
 
@@ -63,6 +63,6 @@
 
 1. Create a new release tag [here](https://github.com/primer/primer/releases/new).
 
-2. Copy the changes from the CHANGELOG and paste it into the release notes.
+2. Copy the changes from the [CHANGELOG](https://github.com/primer/primer/blob/master/CHANGELOG.md) and paste it into the release notes.
 
 3. Publish 🎉
