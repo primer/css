@@ -63,7 +63,7 @@ $ npm run build
 
 ## Releasing
 
-You can find docs about our release process [here](./RELEASING.md).
+You can find docs about our release process in [RELEASING.md](./RELEASING.md).
 
 ## Documentation
 
