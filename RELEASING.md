@@ -41,11 +41,13 @@
 
 #### Update the Style Guide
 
-1. In [github/styleguide](https://github.com/github/styleguide), Update `primer` to your newly released version.
+1. In [github/styleguide](https://github.com/github/styleguide), update `primer` to your newly released version in your terminal:
 
-2. In your command line run: `script/update-primer-docs`.
+  `npm install primer@latest`
 
-3. Make PR, get it approved, merge! 🚀
+2. Then  run: `script/update-primer-docs`.
+
+3. Commit changes, make PR, get it approved, merge! 🚀
 
 #### Update [primer.github.io](primer.github.io)
 
