@@ -61,7 +61,7 @@ For a compiled **CSS** version of this module, an npm script is included that wi
 $ npm run build
 ```
 
-## Releasing
+## Releasing (Staff only)
 
 You can find docs about our release process in [RELEASING.md](./RELEASING.md).
 
