@@ -176,6 +176,7 @@
 /* Increase scale of an element on hover */
 .hover-grow {
   transition: transform 0.3s;
+  backface-visibility: hidden;
 
   &:hover {
     transform: scale(1.025);
