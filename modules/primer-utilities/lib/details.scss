@@ -1,5 +1,5 @@
 // stylelint-disable selector-max-type
-.details-expanded[open] > summary::before {
+.details-overlay[open] > summary::before {
   position: fixed;
   top: 0;
   right: 0;
@@ -12,6 +12,6 @@
   background: transparent;
 }
 
-.details-expanded-dark[open] > summary::before {
+.details-overlay-dark[open] > summary::before {
   background: $black-fade-50;
 }
