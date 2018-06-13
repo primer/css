@@ -25,8 +25,9 @@
     "stylelint-config-primer": "file:tools/stylelint-config-primer"
   },
   "devDependencies": {
-    "@storybook/addon-options": "^3.2.6",
-    "@storybook/react": "^3.2.12",
+    "@storybook/addon-options": "3.4.3",
+    "@storybook/addons": "3.4.3",
+    "@storybook/react": "3.4.3",
     "ava": "^0.23.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.6.0",
