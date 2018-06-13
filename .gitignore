@@ -6,4 +6,3 @@ build
 _site
 *.lerna_backup
 .changelog
-**/package-lock.json
