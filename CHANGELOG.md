@@ -1,3 +1,22 @@
+# 10.6.0
+
+#### :bug: Bug Fix
+* [#491](https://github.com/primer/primer/pull/491) Add `backface-visibility` to `.hover-grow`. ([@brandonrosage](https://github.com/brandonrosage))
+
+#### :memo: Documentation
+* [#490](https://github.com/primer/primer/pull/490) Add release documentation. ([@emplums](https://github.com/emplums))
+
+#### :house: Internal
+* [#475](https://github.com/primer/primer/pull/475) Import primer-module-build to the monorepo. ([@shawnbot](https://github.com/shawnbot))
+* [#479](https://github.com/primer/primer/pull/479) Add "scoreboard" test suite. ([@shawnbot](https://github.com/shawnbot))
+
+#### Committers: 4
+- Brandon Rosage ([brandonrosage](https://github.com/brandonrosage))
+- Emily ([emplums](https://github.com/emplums))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- [muan](https://github.com/muan)
+
+
 # 10.5.0
 
 #### :rocket: Enhancement
