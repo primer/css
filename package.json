@@ -20,11 +20,9 @@
     "test": "npm run test-all-modules && lerna run test",
     "test-all-modules": "ava --verbose tests/test-*.js"
   },
-  "dependencies": {
-    "primer-module-build": "file:tools/primer-module-build",
-    "stylelint-config-primer": "file:tools/stylelint-config-primer"
-  },
   "devDependencies": {
+    "primer-module-build": "file:tools/primer-module-build",
+    "stylelint-config-primer": "^2.2.6",
     "@storybook/addon-options": "3.4.3",
     "@storybook/addons": "3.4.3",
     "@storybook/react": "3.4.3",

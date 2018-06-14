@@ -1,5 +1,5 @@
 {
-  "version": "1.5.4",
+  "version": "1.5.5",
   "name": "primer-navigation",
   "description": "Singular purpose and flexible navigation elements.",
   "homepage": "http://primer.github.io/",
@@ -28,7 +28,7 @@
     "test": "../../script/npm-run-all build lint"
   },
   "dependencies": {
-    "primer-support": "4.5.3"
+    "primer-support": "4.5.4"
   },
   "keywords": [
     "primer",

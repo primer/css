@@ -1,5 +1,5 @@
 {
-  "version": "1.0.5",
+  "version": "1.0.6",
   "name": "primer-marketing-buttons",
   "description": "Buttons for marketing websites at GitHub",
   "homepage": "http://primer.github.io/",
@@ -29,7 +29,7 @@
     "test": "../../script/npm-run-all build lint test-docs"
   },
   "dependencies": {
-    "primer-support": "4.5.3"
+    "primer-support": "4.5.4"
   },
   "peerDependencies": {
     "primer-buttons": ">=2.5.0"
