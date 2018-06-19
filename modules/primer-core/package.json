@@ -1,5 +1,5 @@
 {
-  "version": "6.10.0",
+  "version": "6.10.1",
   "name": "primer-core",
   "description": "Primer's core modules",
   "homepage": "http://primer.github.io/",
@@ -39,6 +39,6 @@
     "primer-table-object": "1.4.7",
     "primer-tooltips": "1.5.5",
     "primer-truncate": "1.4.7",
-    "primer-utilities": "4.11.0"
+    "primer-utilities": "4.11.1"
   }
 }
