@@ -5,7 +5,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 99;
+  z-index: 80;
   display: block;
   cursor: default;
   content: " ";
@@ -13,5 +13,6 @@
 }
 
 .details-overlay-dark[open] > summary::before {
+  z-index: 99;
   background: $black-fade-50;
 }

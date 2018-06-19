@@ -1,3 +1,14 @@
+## 10.6.1
+
+#### :bug: Bug Fix
+* [#506](https://github.com/primer/primer/pull/506) Fix white border on last avatar in AvatarStack (take two). ([@shawnbot](https://github.com/shawnbot))
+* [#501](https://github.com/primer/primer/pull/501) Set different z-index for .details-overlay. ([@muan](https://github.com/muan))
+
+#### Committers: 2
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- [muan](https://github.com/muan)
+
+
 # 10.6.0
 
 #### :bug: Bug Fix

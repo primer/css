@@ -91,12 +91,14 @@ const increment = (version, by, preid) => {
 
 const updateDependants = (pkg, pkgs) => {
   return pkgs.filter(other => {
-    return depFields.some(field => {
+    let changed = false
+    depFields.forEach(field => {
       if (other[field] && (pkg.name in other[field])) {
         other[field][pkg.name] = pkg.version
-        return true
+        changed = true
       }
     })
+    return changed
   })
 }
 
