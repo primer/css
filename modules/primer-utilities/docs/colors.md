@@ -20,19 +20,19 @@ Background colors are most commonly used for filling large blocks of content or 
 <div class="container-lg clearfix mb-4">
   <div class="col-3 float-left pr-4">
     <div class="h4">.bg-gray</div>
-    <code>#f5f5f5, $bg-gray</code>
+    <code>{{ site.data.primitives.colors.gray[1] }}, $bg-gray</code>
     <div class="mt-2 bg-gray" style="height: 60px;"></div>
   </div>
   <div class="col-9 float-left">
     <div class="container-lg clearfix">
       <div class="col-6 float-left">
         <div class="h4">.bg-gray-dark</div>
-        <code>#333, $bg-gray-dark</code>
+        <code>{{ site.data.primitives.colors.gray[9] }}, $bg-gray-dark</code>
         <div class="mt-2 bg-gray-dark border-right-0" style="height: 60px;"></div>
       </div>
       <div class="col-6 float-left">
         <div class="h4">.bg-gray-light</div>
-        <code>#fafafa, $bg-gray-light</code>
+        <code>{{ site.data.primitives.colors.gray[0] }}, $bg-gray-light</code>
         <div class="mt-2 bg-gray-light" style="height: 60px;"></div>
       </div>
     </div>
@@ -44,13 +44,13 @@ Background colors are most commonly used for filling large blocks of content or 
 <div class="container-lg clearfix mb-4">
   <div class="col-3 float-left pr-4">
     <div class="h4">.bg-blue</div>
-    <code>#4078c0, $bg-blue</code>
+    <code>{{ site.data.primitives.colors.blue[5] }}, $bg-blue</code>
     <div class="mt-2 bg-blue" style="height: 60px;"></div>
   </div>
   <div class="col-9 float-left">
     <div class="container-lg clearfix">
       <div class="h4">.bg-blue-light</div>
-      <code>#f2f8fa, $bg-blue-light</code>
+      <code>{{ site.data.primitives.colors.blue[0] }}, $bg-blue-light</code>
       <div class="mt-2 bg-blue-light" style="height: 60px;"></div>
     </div>
   </div>
@@ -61,13 +61,13 @@ Background colors are most commonly used for filling large blocks of content or 
 <div class="container-lg clearfix mb-4">
   <div class="col-3 float-left pr-4">
     <div class="h4">.bg-yellow</div>
-    <code>#ffd36b, $bg-yellow</code>
+    <code>{{ site.data.primitives.colors.yellow[5] }}, $bg-yellow</code>
     <div class="mt-2 bg-yellow" style="height: 60px;"></div>
   </div>
   <div class="col-9 float-left">
     <div class="container-lg clearfix">
       <div class="h4">.bg-yellow-light</div>
-      <code>#fff9ea, $bg-yellow-light</code>
+      <code>{{ site.data.primitives.colors.blue[2] }}, $bg-yellow-light</code>
       <div class="mt-2 bg-yellow-light" style="height: 60px;"></div>
     </div>
   </div>
@@ -78,13 +78,13 @@ Background colors are most commonly used for filling large blocks of content or 
 <div class="container-lg clearfix mb-4">
   <div class="col-3 float-left pr-4">
     <div class="h4">.bg-red</div>
-    <code>#bd2c00, $bg-red</code>
+    <code>{{ site.data.primitives.colors.red[5] }}, $bg-red</code>
     <div class="mt-2 bg-red" style="height: 60px;"></div>
   </div>
   <div class="col-9 float-left">
     <div class="container-lg clearfix">
       <div class="h4">.bg-red-light</div>
-      <code>#fcdede, $bg-red-light</code>
+      <code>{{ site.data.primitives.colors.red[1] }}, $bg-red-light</code>
       <div class="mt-2 bg-red-light" style="height: 60px;"></div>
     </div>
   </div>
@@ -95,13 +95,13 @@ Background colors are most commonly used for filling large blocks of content or 
 <div class="container-lg clearfix mb-4">
   <div class="col-3 float-left pr-4">
     <div class="h4">.bg-green</div>
-    <code>#6cc644, $bg-green</code>
+    <code>{{ site.data.primitives.colors.green[5] }}, $bg-green</code>
     <div class="mt-2 bg-green" style="height: 60px;"></div>
   </div>
   <div class="col-9 float-left">
     <div class="container-lg clearfix">
       <div class="h4">.bg-green-light</div>
-      <code>#eaffea, $bg-green-light</code>
+      <code>{{ site.data.primitives.colors.green[1] }}, $bg-green-light</code>
       <div class="mt-2 bg-green-light" style="height: 60px;"></div>
     </div>
   </div>
@@ -113,13 +113,13 @@ Background colors are most commonly used for filling large blocks of content or 
 <div class="container-lg clearfix mb-4">
   <div class="col-3 float-left pr-4">
     <div class="h4">.bg-purple</div>
-    <code>#6e5494, $bg-purple</code>
+    <code>{{ site.data.primitives.colors.purple[5] }}, $bg-purple</code>
     <div class="mt-2 bg-purple" style="height: 60px;"></div>
   </div>
   <div class="col-9 float-left">
     <div class="container-lg clearfix">
       <div class="h4">.bg-purple-light</div>
-      <code>#f5f0ff, $bg-purple-light</code>
+      <code>{{ site.data.primitives.colors.purple[0] }}, $bg-purple-light</code>
       <div class="mt-2 bg-purple-light" style="height: 60px;"></div>
     </div>
   </div>
