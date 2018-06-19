@@ -43,7 +43,7 @@
     "postcss": "^5.2.5"
   },
   "devDependencies": {
-    "primer-utilities": "4.9.0",
+    "primer-utilities": "4.11.1",
     "tempy": "^0.2.1"
   }
 }
