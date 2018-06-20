@@ -77,6 +77,6 @@ storiesOf('Tooltips', module)
   ))
   .add('tooltip on button', () => (
     <div className='p-6'>
-    <button className='btn btn-secondary tooltipped tooltipped-n' aria-label='This is the tooltip on a button.'>Button</button>
+      <button className='btn tooltipped tooltipped-n' aria-label='This is the tooltip on a button.'>Button</button>
     </div>
-))
+  ))

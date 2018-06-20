@@ -14,15 +14,6 @@ storiesOf('Button', module)
       <button className='btn btn-primary disabled'>disabled</button>
     </div>
   ))
-  .add('btn-secondary', () => (
-    <div className='p-4 d-flex flex-justify-between'>
-      <button className='btn btn-secondary'>Button</button>
-      <button className='btn btn-secondary hover'>hover</button>
-      <button className='btn btn-secondary focus'>focus</button>
-      <button className='btn btn-secondary selected'>selected</button>
-      <button className='btn btn-secondary disabled'>disabled</button>
-    </div>
-  ))
   .add('btn-danger', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn btn-danger'>Button</button>
