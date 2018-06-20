@@ -62,7 +62,7 @@ storiesOf('Button', module)
   .add('btn-large', () => (
     <div className='f3 p-4'>
       <a className="btn btn-large btn-purple mr-6" href="#url" role="button">Large link button</a>
-      <button className="btn btn-large btn-outline-blue" type="button">Large button button</button>
+      <button className="btn btn-large" type="button">Large button button</button>
     </div>
   ))
   .add('btn-link', () => (
