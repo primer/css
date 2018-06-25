@@ -60,7 +60,23 @@ storiesOf('Avatars', module)
         <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
       </div>
     </div>
-
+  </div>
+))
+.add('AvatarStack on blue background', () => (
+  <div className='border bg-blue-light p-4'>
+    <div className="AvatarStack flex-self-start ">
+      <div className="AvatarStack-body" aria-label="chesterbr">
+        <a className="avatar" aria-describedby="hovercard-aria-description">
+          <img height="20" width="20" alt="@github" src="https://avatars0.githubusercontent.com/github?s=60&amp;v=4" />
+        </a>
+      </div>
+    </div>
+    <div className='AvatarStack AvatarStack-two mt-2'>
+      <div className='AvatarStack-body tooltipped tooltipped-sw tooltipped-align-right-1' aria-label='two avatars'>
+        <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
+        <img className='avatar' alt='Uncle Cat' width='20' height='20' src='https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png'/>
+      </div>
+    </div>
   </div>
 ))
 .add('CircleBadge--small', () => (

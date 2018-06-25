@@ -36,7 +36,7 @@
     "primer-branch-name": "1.0.5",
     "primer-breadcrumb": "1.5.3",
     "primer-buttons": "2.5.5",
-    "primer-core": "6.10.0",
+    "primer-core": "6.10.1",
     "primer-forms": "2.1.2",
     "primer-labels": "1.5.7",
     "primer-layout": "1.4.7",
@@ -58,7 +58,7 @@
     "primer-tables": "1.4.7",
     "primer-tooltips": "1.5.5",
     "primer-truncate": "1.4.7",
-    "primer-utilities": "4.11.0"
+    "primer-utilities": "4.11.1"
   },
   "keywords": [
     "primer",
