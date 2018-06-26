@@ -135,9 +135,9 @@ This section is targeted at maintainers of primer, to instruct them on the proce
 
 1. Create a new branch
 
-2. Update the primer version in your terminal  `npm install primer@<version>`.
+2. Update the primer version in your terminal  `bin/npm install primer@<version>`.
 
-3. Update `stylelint-config-primer` in your terminal to the appropriate version `npm install stylelint-config-primer@latest`.
+3. Update `stylelint-config-primer` in your terminal to the appropriate version `bin/npm install stylelint-config-primer@latest`.
 
 4. If you need to make changes to github/github due to the Primer release, make a separate branch. When ready, merge that branch into your release branch.
 
