@@ -10,7 +10,7 @@ $(npm bin)/lerna exec -- $(pwd)/script/try-publish
 
 # Build and publish storybook
 $(npm bin)/build-storybook -o build
-$(npm bin)/gh-pages -d build -b gh-pages --silent -r https://primer-css:${GITHUB_AUTH}@github.com/primer/storybook
+$(npm bin)/gh-pages -d build -b gh-pages --silent -r https://primer-css:${GH_TOKEN}@github.com/primer/storybook
 
 echo "📓  Updated CHANGELOG..."
 
