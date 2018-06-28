@@ -11,7 +11,7 @@ then
   # Build and publish storybook
   # test. TODO: REMOVE
   $(npm bin)/build-storybook -o build
-  $(npm bin)/gh-pages -d build -b gh-pages --silent -r https://${GITHUB_AUTH}@github.com/primer/storybook
+  $(npm bin)/gh-pages -d build -b gh-pages --silent -r https://primer-css:${GITHUB_AUTH}@github.com/primer/storybook
 
   script/release-pr --yes
 fi
