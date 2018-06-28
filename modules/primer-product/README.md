@@ -12,7 +12,7 @@ This repository is a compilation of [several CSS packages](https://github.com/pr
 This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer` with this command. **You must have npm >=3.0 installed to be able to satisfy the dependency paths**
 
 ```
-$ npm install --save primer-core
+$ npm install --save primer-product
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ $ npm install --save primer-core
 The source files included are written in [Sass][sass] (`scss`) You can simply point your sass `include-path` at your `node_modules` directory and import it like this.
 
 ```scss
-@import "primer-core/index.scss";
+@import "primer-product/index.scss";
 ```
 
 You can also import specific portions of the module by importing those partials from the `/lib/` folder. _Make sure you import any requirements along with the modules._

@@ -29,7 +29,7 @@
     "primer-support": "4.5.4"
   },
   "peerDependencies": {
-    "primer-box": ">=2.5.0"
+    "primer-box": "2.5.7"
   },
   "keywords": [
     "github",
