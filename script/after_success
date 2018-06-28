@@ -7,5 +7,11 @@ event=$TRAVIS_EVENT_TYPE
 # only publish canary releases on PRs against dev
 if [[ "$event" = "pull_request" ]] && [[ !("$branch" =~ ^release-.*) ]] && [[ !("$branch" = "master") ]];
 then
+
+  # Build and publish storybook
+  # test. TODO: REMOVE
+  $(npm bin)/build-storybook -o build
+  $(npm bin)/gh-pages -d build -b gh-pages -r https://${GH_TOKEN}@github.com/primer/storybook
+
   script/release-pr --yes
 fi
