@@ -6,7 +6,9 @@
   "scripts": {
     "lint": "eslint .",
     "tape": "node test/index.js",
-    "test": "../../script/npm-run-all lint tape"
+    "test": "../../script/npm-run-all lint tape",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
   },
   "keywords": [
     "stylelint-rule",
