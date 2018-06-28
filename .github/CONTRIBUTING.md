@@ -111,7 +111,6 @@ This section is targeted at maintainers of primer, to instruct them on the proce
 
   - [ ] Update CHANGELOG
   - [ ] Run version bump
-  - [ ] Update storybook
   - [ ] Update primer.github.io
   - [ ] Update github/github
   - [ ] Update the style guide
