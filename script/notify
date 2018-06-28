@@ -2,26 +2,11 @@
 set -e
 
 if [[ "$CI" != "true" ]]; then
-  echo "(notify bailing: not in CI)"
+  echo "(bailing: not in CI)"
   exit
 elif [[ $# -lt 1 ]]; then
   echo "No status provided!" >&2
   exit 1
-fi
-
-# the commit status context
-context="npm publish"
-_status=$1
-
-# get the published version of primer from its package.json
-package=primer
-version=$(jq -r .version modules/$package/package.json)
-published="$package@$version"
-
-message=""
-if [[ "$_status" = "success" ]]; then
-  # TODO point this at the contributing docs!
-  message="https://unpkg.com/$published/build/build.css"
 fi
 
 # XXX this will go away if we build pushes instead of PRs
@@ -31,5 +16,14 @@ if [[ "$TRAVIS_PULL_REQUEST_SHA" != "" ]]; then
   export TRAVIS_COMMIT=$TRAVIS_PULL_REQUEST_SHA
 fi
 
-echo "📡  Transmitting publish status for $published..."
-commit-status "$_status" "$context" "$published" "$message"
+_status=$1
+
+version=$(jq -r .version package.json)
+name=$(jq -r .name package.json)
+
+# the commit status context
+context="npm publish $name"
+message="https://unpkg.com/$name@$version/"
+
+echo "📡 Transmitting publish status for $context $name@$version..."
+commit-status "$_status" "$context" "$name@$version" "$message"
