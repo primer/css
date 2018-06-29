@@ -24,7 +24,9 @@
   "scripts": {
     "ava": "../../script/npm-run ava --verbose \"tests/**/*.js\"",
     "lint": "../../script/npm-run eslint lib/**/*.js *.js tests/**/*.js",
-    "test": "../../script/npm-run-all lint ava"
+    "test": "../../script/npm-run-all lint ava",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
   },
   "keywords": [
     "primer",

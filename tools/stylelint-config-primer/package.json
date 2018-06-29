@@ -12,7 +12,9 @@
   "scripts": {
     "ava": "ava --verbose \"tests/**/*.js\"",
     "lint": "eslint **/*.js",
-    "test": "../../script/npm-run-all lint ava"
+    "test": "../../script/npm-run-all lint ava",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
   },
   "repository": "https://github.com/primer/primer/tree/master/tools/stylelint-config-primer",
   "dependencies": {

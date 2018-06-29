@@ -23,7 +23,9 @@
   "scripts": {
     "lint": "../../script/lint-scss",
     "test": "npm run lint",
-    "build": "../../script/npm-run primer-module-build index.scss"
+    "build": "../../script/npm-run primer-module-build index.scss",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
   },
   "keywords": [
     "primer",
