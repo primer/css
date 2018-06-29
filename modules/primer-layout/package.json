@@ -1,5 +1,5 @@
 {
-  "version": "1.4.7",
+  "version": "1.4.8",
   "name": "primer-layout",
   "description": "Containers, rows, and columns for creating page layout.",
   "homepage": "http://primer.github.io/",
@@ -31,7 +31,7 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.5.4"
+    "primer-support": "4.5.5"
   },
   "keywords": [
     "primer",
