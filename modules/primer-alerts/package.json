@@ -8,6 +8,29 @@
   "style": "build/build.css",
   "sass": "index.scss",
   "main": "build/index.js",
+  "figma": {
+    "url": "https://www.figma.com/file/GTgkWXgIN2DzTY9nVLKkpzxe/primer-alerts",
+    "components": {
+      "flash-warn": {
+        "id": "1:2"
+      },
+      "flash": {
+        "id": "1:8"
+      },
+      "flash-success": {
+        "id": "1:14"
+      },
+      "flash-error": {
+        "id": "1:20"
+      },
+      "flash with action button": {
+        "id": "11:0"
+      },
+      "flash-full": {
+        "id": "11:1"
+      }
+    }
+  },
   "primer": {
     "category": "product",
     "module_type": "components",
