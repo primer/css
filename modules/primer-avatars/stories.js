@@ -64,10 +64,10 @@ storiesOf('Avatars', module)
 ))
 .add('AvatarStack on blue background', () => (
   <div className='border bg-blue-light p-4'>
-    <div className="AvatarStack flex-self-start ">
-      <div className="AvatarStack-body" aria-label="chesterbr">
-        <a className="avatar" aria-describedby="hovercard-aria-description">
-          <img height="20" width="20" alt="@github" src="https://avatars0.githubusercontent.com/github?s=60&amp;v=4" />
+    <div className='AvatarStack flex-self-start'>
+      <div className='AvatarStack-body' aria-label='chesterbr'>
+        <a className='avatar' aria-describedby='hovercard-aria-description'>
+          <img height='20' width='20' alt='@github' src='https://avatars0.githubusercontent.com/github?s=60&amp;v=4' />
         </a>
       </div>
     </div>
