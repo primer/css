@@ -2,9 +2,14 @@
 
 const ghpages = require('gh-pages')
 
+if (!process.env.GH_TOKEN) {
+  console.error('Publish storybook: No GH_TOKEN found for storybook publishing.')
+  process.exitCode = 1
+  return
+}
+
 ghpages.publish('build',{
   branch: 'gh-pages',
-  silent: true,
   repo: `https://primer-css:${process.env.GH_TOKEN}@github.com/primer/storybook`
 }, (error) => {
   if(error) {
