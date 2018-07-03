@@ -14,7 +14,7 @@
 
 5. Once the release PR is approved and you've done necessary testing, merge to `master`. This will trigger a publish to npm.
 
-6. 1. Create a new release branch for the next release from `master` and name it `release-<version>`.
+6. Create a new release branch for the next release from `master` and name it `release-<version>`.
 
  (CI will publish a release candidate version to npm for branches prefixed with `release`. These version numbers have a `rc.<number>` suffix on them)
 
