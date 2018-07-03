@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+const ghpages = require('gh-pages')
+
+ghpages.publish('build',{
+  branch: 'gh-pages',
+  silent: true,
+  repo: `https://primer-css:${process.env.GH_TOKEN}@github.com/primer/storybook`
+}, (error) => {
+  if(error) {
+    console.error('gh-pages failed to publish:', error)
+  }
+})
