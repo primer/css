@@ -10,7 +10,11 @@ if (!process.env.GH_TOKEN) {
 
 ghpages.publish('build',{
   branch: 'gh-pages',
-  repo: `https://primer-css:${process.env.GH_TOKEN}@github.com/primer/storybook.git`
+  repo: `https://primer-css:${process.env.GH_TOKEN}@github.com/primer/storybook.git`,
+  user: {
+    name: 'Primer CSS',
+    email: 'design-systems@github.com'
+  }
 }, (error) => {
   if(error) {
     console.error('gh-pages failed to publish:', error.message.replace(process.env.GH_TOKEN, ''))
