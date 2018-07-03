@@ -22,6 +22,7 @@ $spacers: (
 ) !default;
 
 // Aliases for easy use
+$spacer-0: nth($spacers, 1) !default; // 0
 $spacer-1: nth($spacers, 2) !default; // 4px
 $spacer-2: nth($spacers, 3) !default; // 8px
 $spacer-3: nth($spacers, 4) !default; // 16px
