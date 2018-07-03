@@ -6,7 +6,7 @@
 
 1. Go through the tracking PR and make sure everything that should be merged in is merged in.
 
-2. Once your builds finish, click on the details links for the continuous-integration/travis-ci/push build.  Expand the `Deploying application` output and you should be able to find an outputted change log here. Copy this and update the [CHANGELOG.md](https://github.com/primer/primer/blob/master/CHANGELOG.md) file.
+2. To update the change log for your release, click on the details links for the continuous-integration/travis-ci/push build.  Expand the `Deploying application` output and copy the change log content. Update the [CHANGELOG.md](https://github.com/primer/primer/blob/master/CHANGELOG.md) file with the change log content from the build.
 
 3. Run the version bump in your terminal: `npm run bump`.
 
