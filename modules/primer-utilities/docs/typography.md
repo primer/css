@@ -78,6 +78,8 @@ Change the line height density with these utilities.
 </p>
 ```
 
+The `lh-0` utility class sets `line-height: 0 !important`, and can be used to remove vertical spacing from elements that inherit line-height but don't contain any text.
+
 ## Typographic styles
 Change the font weight, styles, and alignment with these utilities.
 

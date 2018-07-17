@@ -160,6 +160,8 @@
 .lh-condensed { line-height: $lh-condensed !important; }
 /* Set the line height to default */
 .lh-default { line-height: $lh-default !important; }
+/* Set the line height to zero */
+.lh-0 { line-height: 0 !important; }
 
 // Text alignments
 /* Text align to the right */
