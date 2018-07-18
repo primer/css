@@ -20,27 +20,27 @@
 .border-dashed { border-style: dashed !important; }
 
 /* Use with .border to turn the border blue */
-.border-blue       { border-color: $border-blue !important; }
+.border-blue        { border-color: $border-blue !important; }
 /* Use with .border to turn the border blue-light */
 .border-blue-light  { border-color: $border-blue-light !important; }
 /* Use with .border to turn the border green */
-.border-green        { border-color: $border-green !important; }
+.border-green       { border-color: $border-green !important; }
 /* Use with .border to turn the border green light */
 .border-green-light { border-color: $border-green-light !important; }
 /* Use with .border to turn the border red */
-.border-red        { border-color: $border-red !important; }
+.border-red         { border-color: $border-red !important; }
 /* Use with .border to turn the border red-light */
 .border-red-light   { border-color: $border-red-light !important; }
 /* Use with .border to turn the border purple */
-.border-purple  { border-color: $border-purple !important; }
+.border-purple      { border-color: $border-purple !important; }
 /* Use with .border to turn the border yellow */
-.border-yellow  { border-color: $border-yellow !important; }
+.border-yellow      { border-color: $border-yellow !important; }
 /* Use with .border to turn the border gray-light */
-.border-gray-light { border-color: $border-gray-light !important; }
+.border-gray-light  { border-color: $border-gray-light !important; }
 /* Use with .border to turn the border gray-dark */
-.border-gray-dark  { border-color: $border-gray-dark !important; }
+.border-gray-dark   { border-color: $border-gray-dark !important; }
 /* Use with .border to turn the border rgba black 0.15 */
-.border-black-fade { border-color: $border-black-fade !important; }
+.border-black-fade  { border-color: $border-black-fade !important; }
 
 $edges: (
   top: (top-left, top-right),
