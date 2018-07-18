@@ -162,20 +162,15 @@
 .lh-default { line-height: $lh-default !important; }
 
 // Text alignments
-/* Text align to the right */
-.text-right { text-align: right !important; }
-/* Text align to the left */
-.text-left { text-align: left !important; }
-/* Text align to the center */
-.text-center { text-align: center !important; }
-
 // Responsive text alignment
-// .text-md-left, .text-lg-right, ...
-@each $breakpoint in map-keys($breakpoints) {
+@each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
-    .text-#{$breakpoint}-right { text-align: right !important; }
-    .text-#{$breakpoint}-left { text-align: left !important; }
-    .text-#{$breakpoint}-center { text-align: center !important; }
+    /* Text align to the right */
+    .text#{$variant}-right { text-align: right !important; }
+    /* Text align to the left */
+    .text#{$variant}-left { text-align: left !important; }
+    /* Text align to the center */
+    .text#{$variant}-center { text-align: center !important; }
   }
 }
 
