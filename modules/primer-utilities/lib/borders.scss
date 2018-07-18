@@ -42,24 +42,54 @@
 /* Use with .border to turn the border rgba black 0.15 */
 .border-black-fade { border-color: $border-black-fade !important; }
 
-// Without borders
-/* Remove all borders */
-.border-0        { border: 0 !important; }
-/* Remove the top border */
-.border-top-0    { border-top: 0 !important; }
-/* Remove the right border */
-.border-right-0  { border-right: 0 !important; }
-/* Remove the bottom border */
-.border-bottom-0 { border-bottom: 0 !important; }
-/* Remove the left border */
-.border-left-0   { border-left: 0 !important; }
+$edges: (
+  top: (top-left, top-right),
+  right: (top-right, bottom-right),
+  bottom: (bottom-right, bottom-left),
+  left: (bottom-left, top-left)
+);
 
-// Rounded corners
-/* Remove the border-radius */
-.rounded-0 { border-radius: 0 !important; }
-/* Add a border-radius to all corners */
-.rounded-1 { border-radius: $border-radius !important; }
-/* Add a 2x border-radius to all corners */
-.rounded-2 { border-radius: $border-radius * 2 !important; }
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    .border#{$variant}-0        { border: 0 !important; }
+    /* Remove the top border */
+    .border#{$variant}-top-0    { border-top: 0 !important; }
+    /* Remove the right border */
+    .border#{$variant}-right-0  { border-right: 0 !important; }
+    /* Remove the bottom border */
+    .border#{$variant}-bottom-0 { border-bottom: 0 !important; }
+    /* Remove the left border */
+    .border#{$variant}-left-0   { border-left: 0 !important; }
+
+    // Rounded corners
+    /* Remove the border-radius */
+    .rounded#{$variant}-0 { border-radius: 0 !important; }
+    /* Add a border-radius to all corners */
+    .rounded#{$variant}-1 { border-radius: $border-radius !important; }
+    /* Add a 2x border-radius to all corners */
+    .rounded#{$variant}-2 { border-radius: $border-radius * 2 !important; }
+
+    @each $edge, $corners in $edges {
+      .rounded#{$variant}-#{$edge}-0 {
+        @each $corner in $corners {
+          border-#{$corner}-radius: 0;
+        }
+      }
+
+      .rounded#{$variant}-#{$edge}-1 {
+        @each $corner in $corners {
+          border-#{$corner}-radius: $border-radius;
+        }
+      }
+
+      .rounded#{$variant}-#{$edge}-2 {
+        @each $corner in $corners {
+          border-#{$corner}-radius: $border-radius * 2;
+        }
+      }
+    }
+  }
+}
+
 /* Add a 50% border-radius to make something into a circle */
 .circle { border-radius: 50% !important; }
