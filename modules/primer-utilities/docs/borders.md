@@ -125,3 +125,20 @@ Use the following utilities to add or remove rounded corners: `rounded-0` remove
   .circle
 </div>
 ```
+
+You can also add rounded corners to each edge (top, right, bottom, left) with the following utilities:
+
+```html
+<div class="border rounded-top mb-2">
+  .rounded-top
+</div>
+<div class="border rounded-right mb-2">
+  .rounded-right
+</div>
+<div class="border rounded-bottom mb-2">
+  .rounded-bottom
+</div>
+<div class="border rounded-left mb-2">
+  .rounded-left
+</div>
+```
