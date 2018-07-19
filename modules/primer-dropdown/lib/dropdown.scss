@@ -1,5 +1,3 @@
-// TODO add some docs here
-
 .dropdown {
   position: relative;
 
@@ -37,9 +35,9 @@
   list-style: none;
   background-color: $bg-white;
   background-clip: padding-box;
-  border: 1px solid $black-fade-15;
+  border: $border-width $border-style $black-fade-15;
   border-radius: $border-radius;
-  box-shadow: 0 3px 12px $black-fade-15;
+  box-shadow: $box-shadow-medium;
 
   &::before,
   &::after {
