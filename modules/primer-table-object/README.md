@@ -1,6 +1,6 @@
 # Primer table object
 
-[![npm version](http://img.shields.io/npm/v/primer-table-object.svg)](https://www.npmjs.org/package/primer-table-object)
+[![npm version](https://img.shields.io/npm/v/primer-table-object.svg)](https://www.npmjs.org/package/primer-table-object)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Table object is a module for creating dynamically resizable elements that always sit on the same horizontal line (e.g., they never break to a new line). Using table styles in our CSS means it’s cross browser friendly back to at least IE9.
@@ -45,7 +45,7 @@ The table object is a module for creating dynamically resizable elements that al
 
 Additional `margin` or `padding` may be required to properly space content.
 
-```html
+```html title="Table object"
 <div class="TableObject">
   <div class="TableObject-item TableObject-item--primary">
     <input class="input-block form-control" type="text" placeholder="Long elastic input form" aria-label="Long elastic input form">

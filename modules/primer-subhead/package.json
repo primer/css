@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.6",
   "name": "primer-subhead",
   "description": "The Subhead is a simple header with a bottom border. It&#39;s designed to be used on settings and configuration pages.",
   "homepage": "http://primer.github.io/",
@@ -9,7 +9,8 @@
   },
   "author": "GitHub, Inc.",
   "license": "MIT",
-  "style": "index.scss",
+  "style": "build/build.css",
+  "sass": "index.scss",
   "main": "build/index.js",
   "repository": "https://github.com/primer/primer/tree/master/modules/primer-subhead",
   "bugs": {
@@ -20,10 +21,12 @@
     "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
     "lint": "../../script/lint-scss",
-    "test": "../../script/npm-run-all build lint test-docs"
+    "test": "../../script/npm-run-all build lint test-docs",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.4.2"
+    "primer-support": "4.5.5"
   },
   "keywords": [
     "github",

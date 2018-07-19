@@ -1,6 +1,6 @@
 # Primer Support
 
-[![npm version](http://img.shields.io/npm/v/primer-support.svg)](https://www.npmjs.org/package/primer-support)
+[![npm version](https://img.shields.io/npm/v/primer-support.svg)](https://www.npmjs.org/package/primer-support)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Support files are Sass variables, mixins, and functions that we import into different bases for use across components, objects, and utilities. Sharing these common properties across GitHub sites helps us to keep our styles more consistent.

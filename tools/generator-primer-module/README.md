@@ -1,6 +1,6 @@
 # Primer Module Generator
 
-[![npm version](http://img.shields.io/npm/v/generator-primer-module.svg)](https://www.npmjs.org/package/generator-primer-module)
+[![npm version](https://img.shields.io/npm/v/generator-primer-module.svg)](https://www.npmjs.org/package/generator-primer-module)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 Primer is the CSS framework that powers GitHub's front-end design. This is a
@@ -73,8 +73,7 @@ live outside of the Primer monorepo, with the following caveats:
 
 * When prompted to add the new module to existing meta-packages, you will need
   to un-select them all.
-* You will also need to manually install all of the monorepo's top-level dev
-  dependencies to get tools like `primer-module-build` and `ava`.
+* You will also need to manually install all of the monorepo's top-level devDependencies to get tools like `primer-module-build` and `ava`.
 * The `npm test` command will not work, because it references a test spec in
   the monorepo.
 

@@ -1,11 +1,12 @@
 {
-  "version": "2.5.2",
+  "version": "2.5.8",
   "name": "primer-box",
   "description": "A module for creating rounded-corner boxes with options for headers, lists, and footers.",
   "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
-  "style": "index.scss",
+  "style": "build/build.css",
+  "sass": "index.scss",
   "main": "build/index.js",
   "primer": {
     "category": "core",
@@ -24,10 +25,12 @@
     "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
     "lint": "../../script/lint-scss",
-    "test": "../../script/npm-run-all build lint"
+    "test": "../../script/npm-run-all build lint",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.4.2"
+    "primer-support": "4.5.5"
   },
   "keywords": [
     "primer",

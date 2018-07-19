@@ -1,6 +1,6 @@
 # Primer Forms
 
-[![npm version](http://img.shields.io/npm/v/primer-forms.svg)](https://www.npmjs.org/package/primer-forms)
+[![npm version](https://img.shields.io/npm/v/primer-forms.svg)](https://www.npmjs.org/package/primer-forms)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Style individual form controls and utilize common layouts.
@@ -176,7 +176,7 @@ Primer adds light `height` and `vertical-align` styles to `<select>`s for all br
 
 ##### Small
 
-Use the `.select-sm` class to resize both default and custom `<select>`s to match the size of [our small buttons](/buttons/#default-buttons).
+Use the `.select-sm` class to resize both default and custom `<select>`s to match the size of [our small buttons](../buttons/#default-buttons).
 
 ```html
 <select class="form-select select-sm" aria-label="Preference">

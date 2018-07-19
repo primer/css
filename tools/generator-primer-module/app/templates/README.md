@@ -1,6 +1,6 @@
 # Primer / <%= title %>
 
-[![npm version](http://img.shields.io/npm/v/<%= module %>.svg)](https://www.npmjs.org/package/<%= module %>)
+[![npm version](https://img.shields.io/npm/v/<%= module %>.svg)](https://www.npmjs.org/package/<%= module %>)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > <%= description %>

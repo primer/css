@@ -1,6 +1,6 @@
 # Primer Marketing CSS Typography
 
-[![npm version](http://img.shields.io/npm/v/primer-marketing-type.svg)](https://www.npmjs.org/package/primer-marketing-type)
+[![npm version](https://img.shields.io/npm/v/primer-marketing-type.svg)](https://www.npmjs.org/package/primer-marketing-type)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Flash messages, or alerts, inform users of successful or pending actions. Use them sparingly. Don’t show more than one at a time.
@@ -21,7 +21,7 @@ The typography for our marketing pages differs slightly from what is in Primer's
 
 Use `.alt-h1` – `.alt-h6` to change an element's font, size, and weight on marketing pages.
 
-```html
+```html title="Heading Utilities"
 
 <p class="alt-h1">Pizza 1</p>
 <p class="alt-h2">Pizza 2</p>
@@ -36,7 +36,7 @@ Use `.alt-h1` – `.alt-h6` to change an element's font, size, and weight on mar
 
 These utilities are meant to be used in addition to Primer's core utilities.
 
-```html
+```html title="Typographic Utilities"
 
 <p class="alt-lead text-gray">I'm a lead paragraph. Bacon ipsum dolor amet tri-tip chicken kielbasa, cow swine beef corned beef ground round prosciutto hamburger porchetta sausage alcatra tail.</p>
 

@@ -1,6 +1,6 @@
 # Primer / Branch Name
 
-[![npm version](http://img.shields.io/npm/v/primer-branch-name.svg)](https://www.npmjs.org/package/primer-branch-name)
+[![npm version](https://img.shields.io/npm/v/primer-branch-name.svg)](https://www.npmjs.org/package/primer-branch-name)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > A nice, consistent way to display branch names.
@@ -42,16 +42,19 @@ status: Stable
 
 Branch names can be a link name or not:
 
-```html
+```html title="Branch name"
 <span class="branch-name">a_new_feature_branch</span>
+```
+
+```html title="Branch name with link"
 <a href="#url" class="branch-name">a_new_feature_branch</a>
 ```
 
 You may also include an octicon before the branch name text:
 
-```html
+```html title="Branch name with icon"
 <span class="branch-name">
-  <%= octicon("git-branch") width:16 height:16 %>
+  <%= octicon("git-branch", width:16, height:16) %>
   a_new_feature_branch
 </span>
 ```

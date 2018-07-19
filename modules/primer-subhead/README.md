@@ -1,6 +1,6 @@
 # Primer / Subhead
 
-[![npm version](http://img.shields.io/npm/v/primer-subhead.svg)](https://www.npmjs.org/package/primer-subhead)
+[![npm version](https://img.shields.io/npm/v/primer-subhead.svg)](https://www.npmjs.org/package/primer-subhead)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > The Subhead is a simple header with a bottom border. It&#39;s designed to be used on settings and configuration pages.
@@ -45,7 +45,7 @@ The basic Subhead consists of a `.Subhead` container, which has a light gray bot
 
 Use a heading element whenever possible as they can be used as navigation for assistive technologies, and avoid skipping levels.
 
-```html
+```html title="Subhead"
 <div class="Subhead">
   <div class="Subhead-heading">Plain subhead</div>
 </div>
@@ -53,7 +53,7 @@ Use a heading element whenever possible as they can be used as navigation for as
 
 To add a top margin to the Subhead, use `.Subhead--spacious`. This is useful for separating sections on a settings page.
 
-```html
+```html title="Spacious Subhead"
 <div class="Subhead Subhead--spacious">
   <div class="Subhead-heading">Spacious subhead</div>
 </div>
@@ -61,7 +61,7 @@ To add a top margin to the Subhead, use `.Subhead--spacious`. This is useful for
 
 You can add a one line description to the subhead with `.Subhead-description`.
 
-```html
+```html title="Subhead with description"
 <div class="Subhead">
   <div class="Subhead-heading">Subhead with description</div>
   <div class="Subhead-description">The subhead is a subdued header style with a light bottom border.</div>
@@ -70,7 +70,7 @@ You can add a one line description to the subhead with `.Subhead-description`.
 
 For longer descriptions, it is recommended that you use a paragraph below the Subhead.
 
-```html
+```html  title="Subhead with longer description"
 <div class="Subhead">
   <div class="Subhead-heading">Plain subhead</div>
 </div>
@@ -81,7 +81,7 @@ For longer descriptions, it is recommended that you use a paragraph below the Su
 
 You can add a button or something to the right of `.Subhead-heading` with the `.Subhead-actions` element.
 
-```html
+```html title="Subhead with actions"
 <div class="Subhead">
   <div class="Subhead-heading">Subhead with button</div>
   <div class="Subhead-actions"><a href="#url" class="btn btn-sm btn-primary" role="button">Action</a></div>
@@ -95,7 +95,7 @@ You can add a button or something to the right of `.Subhead-heading` with the `.
 
 Use all the elements together to create a Subhead with actions and a description.
 
-```html
+```html title="Subhead with actions and description"
 <div class="Subhead">
   <div class="Subhead-heading">Subhead with actions and description</div>
   <div class="Subhead-actions"><a href="#url" class="btn btn-sm btn-primary" role="button">Action</a></div>
@@ -105,7 +105,7 @@ Use all the elements together to create a Subhead with actions and a description
 
 Use the `.Subhead-heading--danger` modifier to make the text bold and red. This is useful for warning users.
 
-```html
+```html title="Subhead danger"
 <div class="Subhead">
   <div class="Subhead-heading Subhead-heading--danger">Danger zone</div>
 </div>

@@ -1,6 +1,6 @@
 # Primer Base
 
-[![npm version](http://img.shields.io/npm/v/primer-base.svg)](https://www.npmjs.org/package/primer-base)
+[![npm version](https://img.shields.io/npm/v/primer-base.svg)](https://www.npmjs.org/package/primer-base)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > GitHub's CSS to reset the browsers default styles. Built on top of normalize.css

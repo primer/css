@@ -1,6 +1,6 @@
 # Primer Truncate
 
-[![npm version](http://img.shields.io/npm/v/primer-truncate.svg)](https://www.npmjs.org/package/primer-truncate)
+[![npm version](https://img.shields.io/npm/v/primer-truncate.svg)](https://www.npmjs.org/package/primer-truncate)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > .css-truncate will shorten text with an ellipsis. The maximum width of the truncated text can be changed by overriding the max-width of the .css-truncate-target.
@@ -42,7 +42,7 @@ status: Stable
 
 `.css-truncate` will shorten text with an ellipsis. The maximum width of the truncated text can be changed by overriding the max-width of `.css-truncate-target`. Unless the full text is so long that it affects performace, always add `title` to the truncated element so the full text can still be seen.
 
-```html
+```html title="Truncate"
 <span class="branch-ref css-truncate css-truncate-target" title="really-long-branch-name">
   really-long-branch-name
 </span>
@@ -50,7 +50,7 @@ status: Stable
 
 You can reveal the entire string on hover with the addition of `.expandable`.
 
-```html
+```html title="Truncate Expandable"
 <span class="css-truncate expandable">
   <span class="branch-ref css-truncate-target">this-is-a-really-long-branch-name</span>
 </span>

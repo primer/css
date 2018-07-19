@@ -1,6 +1,6 @@
 # Primer marketing
 
-[![npm version](http://img.shields.io/npm/v/primer-marketing.svg)](https://www.npmjs.org/package/primer-marketing)
+[![npm version](https://img.shields.io/npm/v/primer-marketing.svg)](https://www.npmjs.org/package/primer-marketing)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Primer marketing is one of 3 meta-packages that belong to the Primer framework. Primer marketing contains packages that are used on GitHub marketing websites.

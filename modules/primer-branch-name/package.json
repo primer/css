@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.6",
   "name": "primer-branch-name",
   "description": "A nice, consistent way to display branch names.",
   "homepage": "http://primer.github.io/",
@@ -7,9 +7,15 @@
     "category": "product",
     "module_type": "components"
   },
+  "files": [
+    "index.scss",
+    "lib",
+    "build"
+  ],
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "index.scss",
+  "sass": "index.scss",
   "main": "build/index.js",
   "repository": "https://github.com/primer/primer/tree/master/modules/primer-branch-name",
   "bugs": {
@@ -20,13 +26,16 @@
     "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
     "lint": "../../script/lint-scss",
-    "test": "../../script/npm-run-all build lint test-docs"
+    "test": "../../script/npm-run-all build lint test-docs",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.4.2"
+    "primer-support": "4.5.5"
   },
   "keywords": [
     "github",
-    "primer"
+    "primer",
+    "design-system"
   ]
 }

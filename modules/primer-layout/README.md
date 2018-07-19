@@ -1,6 +1,6 @@
 # Primer Layout
 
-[![npm version](http://img.shields.io/npm/v/primer-layout.svg)](https://www.npmjs.org/package/primer-layout)
+[![npm version](https://img.shields.io/npm/v/primer-layout.svg)](https://www.npmjs.org/package/primer-layout)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Primer’s layout includes basic page containers and a single-tiered, fraction-based grid system. That sounds more complicated than it really is though—it’s just containers, rows, and columns.
@@ -50,9 +50,9 @@ You can find all the below styles in `_layout.scss`.
 
 Center your page's contents with a `.container`.
 
-```html+erb
-<div class="container">
-  <!-- contents here -->
+```html title="Container"
+<div class="container border">
+  Container
 </div>
 ```
 
@@ -73,7 +73,7 @@ The grid is pretty standard—you create rows with `.columns` and individual col
 
 In practice, your columns will look like the example below.
 
-```html
+```html title="Grid columns"
 <div class="container">
   <div class="columns mb-1">
     <div class="one-fifth column block-blue p-3 border">
@@ -115,11 +115,11 @@ In practice, your columns will look like the example below.
 
 ##### Centered
 
-Columns can be [centered](/utilities/#centering-content) by adding `.centered` to the `.column` class.
+Columns can be centered by adding `.centered` to the `.column` class.
 
-```html
+```html title="Grid centered"
 <div class="columns">
-  <div class="one-half column centered block-blue p-3">
+  <div class="one-half column centered block-blue border p-3">
     .one-half
   </div>
 </div>

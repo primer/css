@@ -1,6 +1,6 @@
 # Primer Buttons
 
-[![npm version](http://img.shields.io/npm/v/primer-buttons.svg)](https://www.npmjs.org/package/primer-buttons)
+[![npm version](https://img.shields.io/npm/v/primer-buttons.svg)](https://www.npmjs.org/package/primer-buttons)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Buttons are used for actions, like in forms, while textual hyperlinks are used for destinations, or moving from one page to another.
@@ -175,7 +175,7 @@ You can easily append a count to a **small button**. Add the `.with-count` class
 </div>
 ```
 
-You can also use the [counter](../../product/components/labels) component within buttons:
+You can also use the [counter](../labels#counters) component within buttons:
 
 ```html
 <button class="btn" type="button">

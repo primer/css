@@ -1,15 +1,19 @@
 {
-  "version": "1.5.2",
+  "version": "1.5.8",
   "name": "primer-alerts",
   "description": "Flash messages, or alerts, inform users of successful or pending actions.",
   "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
-  "style": "index.scss",
+  "style": "build/build.css",
+  "sass": "index.scss",
   "main": "build/index.js",
   "primer": {
     "category": "product",
-    "module_type": "components"
+    "module_type": "components",
+    "class_whitelist": [
+      "warning"
+    ]
   },
   "files": [
     "index.scss",
@@ -24,10 +28,12 @@
     "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
     "lint": "../../script/lint-scss",
-    "test": "../../script/npm-run-all build lint"
+    "test": "../../script/npm-run-all build lint",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.4.2"
+    "primer-support": "4.5.5"
   },
   "keywords": [
     "alerts",

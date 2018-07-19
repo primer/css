@@ -1,6 +1,6 @@
 # Primer Avatars
 
-[![npm version](http://img.shields.io/npm/v/primer-avatars.svg)](https://www.npmjs.org/package/primer-avatars)
+[![npm version](https://img.shields.io/npm/v/primer-avatars.svg)](https://www.npmjs.org/package/primer-avatars)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Avatars are images that users can set as their profile picture. On GitHub, they’re always going to be rounded squares. They can be custom photos, uploaded by users, or generated as Identicons as a placeholder.
@@ -79,7 +79,7 @@ Stacked avatars can be used to show multiple collaborators or participants when 
 
 ```html
 <div class="AvatarStack AvatarStack--three-plus">
-  <div class="AvatarStack-body tooltipped tooltipped-se temp-tooltipped-align-left" aria-label="octocat, octocat, and octocat">
+  <div class="AvatarStack-body tooltipped tooltipped-se tooltipped-align-left-1" aria-label="octocat, octocat, and octocat">
     <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
     <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
     <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
@@ -95,7 +95,7 @@ If you have more than three avatars, add a div with the classes `avatar avatar-m
 
 ```html
 <div class="AvatarStack AvatarStack--three-plus">
-  <div class="AvatarStack-body tooltipped tooltipped-se temp-tooltipped-align-left" aria-label="octocat, octocat, octocat, octocat, and octocat">
+  <div class="AvatarStack-body tooltipped tooltipped-se tooltipped-align-left-1" aria-label="octocat, octocat, octocat, octocat, and octocat">
     <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
     <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
     <div class="avatar avatar-more"></div>
@@ -110,7 +110,7 @@ You can also link individual avatars. To do this shift the `avatar` class over t
 
 ```html
 <div class="AvatarStack AvatarStack--two">
-  <div class="AvatarStack-body tooltipped tooltipped-se temp-tooltipped-align-left" aria-label="octocat and octocat">
+  <div class="AvatarStack-body tooltipped tooltipped-se tooltipped-align-left-1" aria-label="octocat and octocat">
     <a href="#" class="avatar">
       <img height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
     </a>
@@ -125,7 +125,7 @@ Use `AvatarStack--right` to right-align the avatar stack. Remember to switch the
 
 ```html
 <div class="AvatarStack AvatarStack--three-plus AvatarStack--right">
-  <div class="AvatarStack-body tooltipped tooltipped-sw temp-tooltipped-align-right" aria-label="octocat, octocat, and octocat">
+  <div class="AvatarStack-body tooltipped tooltipped-sw tooltipped-align-right-1" aria-label="octocat, octocat, and octocat">
     <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
     <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">
     <img class="avatar" height="20" alt="@octocat" src="https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png" width="20">

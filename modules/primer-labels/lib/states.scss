@@ -26,7 +26,7 @@
 .State--red { background-color: $red-600; }
 
 .State--small {
-  padding: 0.125em $spacer-1;
+  padding: $em-spacer-2 $spacer-1;
   font-size: $h6-size;
 
   .octicon {
