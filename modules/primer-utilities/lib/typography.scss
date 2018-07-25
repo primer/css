@@ -219,3 +219,8 @@
 .text-mono {
   font-family: $mono-font;
 }
+
+/* Disallow user from selecting text */
+.user-select-none {
+  user-select: none !important;
+}
