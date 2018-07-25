@@ -189,6 +189,8 @@
 /* Make text uppercase */
 .text-uppercase { text-transform: uppercase !important; }
 /* Underline text */
+.text-underline { text-decoration: underline !important; }
+/* Don't underline text */
 .no-underline { text-decoration: none !important; }
 /* Don't wrap white space */
 .no-wrap { white-space: nowrap !important; }
