@@ -48,11 +48,28 @@ Dropdowns are lightweight, JavaScript-powered context menus for housing navigati
 
 ## Basic examples
 
-Dropdowns should be trigged by a `<button>`. **[Each dropdown menu requires a directional class](#alignment)**, much like our tooltips.
+Dropdowns may be used with `<details>` and `<summary>` elements or JS behaviors and a `<button>`. **[Each dropdown menu requires a directional class](#alignment)**, much like our tooltips.
 
-Using a GitHub button:
+Using `<details>` and `<summary>` (no JS required!):
 
-```html title="Dropdown from button"
+```html title="Dropdown from details"
+<details class="details-reset dropdown">
+  <summary class="btn dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+    Dropdown
+    <div class="dropdown-caret"></div>
+  </summary>
+
+  <div class="dropdown-menu-content">
+    <ul class="dropdown-menu dropdown-menu-se">
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+```html title="Dropdown with JS behaviors"
 <div class="dropdown js-menu-container js-select-menu">
   <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     Dropdown
@@ -71,8 +88,7 @@ Using a GitHub button:
 
 Using a button customized with additional utilities:
 
-
-```html title="Dropdown"
+```html title="Dropdown with link-style button"
 <div class="dropdown js-menu-container js-select-menu">
   <button class="btn-link no-underline text-gray p-2 dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
     Dropdown
