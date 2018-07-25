@@ -3,7 +3,7 @@
 [![npm version](http://img.shields.io/npm/v/primer-dropdown.svg)](https://www.npmjs.org/package/primer-dropdown)
 [![Build Status](https://travis-ci.org/primer/primer-css.svg?branch=master)](https://travis-ci.org/primer/primer-css)
 
-This repository is a module of the full [primer-css][primer-css] repository.
+This repository is a submodule of the [Primer monorepo][primer].
 
 ## Install
 
@@ -15,17 +15,21 @@ $ npm install --save primer-dropdown
 
 ## Usage
 
-The source files included are written in [Sass][sass] (`scss`) You can simply point your sass `include-path` at your `node_modules` directory and import it like this.
+The source files included are written in [Sass][] with SCSS syntax. If you add your `node_modules` directory to your Sass `include-path`, you can import the source files with:
 
 ```scss
 @import "primer-dropdown/index.scss";
 ```
 
-You can also import specific portions of the module by importing those partials from the `/lib/` folder. _Make sure you import any requirements along with the modules._
+You can also import specific portions of the module by importing those partials from the `/lib/` folder. **You also need to install [primer-support] and import it** with:
+
+```scss
+@import "primer-support/index.scss";
+```
 
 ## Build
 
-For a compiled **css** version of this module, a npm script is included that will output a css version to `build/build.css` The built css file is also included in the npm package.
+The npm `build` script outputs a CSS version to `build/build.css`, which is distributed with the npm package. You can build it manually with:
 
 ```
 $ npm run build
@@ -305,8 +309,9 @@ and display it as a link.
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer-css]: https://github.com/primer/primer
 [docs]: http://primercss.io/
-[npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
+[npm]: https://www.npmjs.com/
+[primer]: https://github.com/primer/primer
+[primer-support]: https://github.com/primer/primer/tree/master/modules/primer-support
 [sass]: http://sass-lang.com/
