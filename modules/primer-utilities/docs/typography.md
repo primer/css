@@ -89,6 +89,7 @@ Change the font weight, styles, and alignment with these utilities.
 <p class="no-wrap">No wrap</p>
 <p class="ws-normal">Normal whitespace</p>
 <p class="wb-break-all">Line break long lines</p>
+<p class="text-underline">Text underline</p>
 <p class="no-underline">No underline</p>
 <p class="text-emphasized">Emphasized</p>
 <p class="text-small">Small</p>
