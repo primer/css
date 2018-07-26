@@ -94,6 +94,7 @@ Change the font weight, styles, and alignment with these utilities.
 <p class="text-small">Small</p>
 <p class="lead">Bacon ipsum dolor amet tri-tip chicken kielbasa, cow swine beef corned beef ground round prosciutto hamburger porchetta sausage alcatra tail.</p>
 <p class="text-mono">Monospace</p>
+<p class="user-select-none">User Select None</p>
 ```
 
 ## Text alignment
