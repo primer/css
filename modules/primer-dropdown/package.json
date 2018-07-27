@@ -9,7 +9,10 @@
   "main": "build/index.js",
   "primer": {
     "category": "product",
-    "module_type": "components"
+    "module_type": "components",
+    "class_whitelist": [
+      "dropdown-menu-content"
+    ]
   },
   "files": [
     "index.scss",
