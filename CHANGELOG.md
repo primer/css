@@ -6,10 +6,14 @@
 * [#548](https://github.com/primer/primer/pull/548) Add text underline utility. ([@AustinPaquette](https://github.com/AustinPaquette))
 * [#549](https://github.com/primer/primer/pull/549) Add .user-select-none utility class. ([@AustinPaquette](https://github.com/AustinPaquette))
 
+#### :memo: Documentation
+* [#528](https://github.com/primer/primer/pull/528) Update release docs. ([@emplums](https://github.com/emplums))
+
 #### Committers: 3
 - Austin Paquette ([AustinPaquette](https://github.com/AustinPaquette))
 - Shawn Allen ([shawnbot](https://github.com/shawnbot))
 - Mu-An Chiou ([@muan](https://github.com/muan))
+- Emily Plummer ([@emplums](https://github.com/emplums))
 
 # 10.7.0
 
