@@ -53,6 +53,7 @@ storiesOf('Typography utilities', module)
     <p className='no-wrap'>no-wrap</p>
     <p className='ws-normal'>ws-normal</p>
     <p className='wb-break-all'>wb-break-all</p>
+    <p className='text-underline'>text-underline</p>
     <p className='no-underline'>no-underline</p>
     <p className='text-emphasized'>text-emphasized</p>
     <p className='text-small'>text-small</p>
