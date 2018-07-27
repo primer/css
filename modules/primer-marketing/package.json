@@ -1,5 +1,5 @@
 {
-  "version": "6.2.3",
+  "version": "6.2.4",
   "name": "primer-marketing",
   "description": "Primer marketing packages",
   "homepage": "http://primer.github.io/",
@@ -29,13 +29,13 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-marketing-buttons": "1.0.7",
+    "primer-marketing-buttons": "1.0.8",
     "primer-marketing-support": "1.5.3",
-    "primer-marketing-type": "1.4.8",
-    "primer-marketing-utilities": "1.6.4",
-    "primer-page-headers": "1.4.8",
-    "primer-page-sections": "1.4.8",
-    "primer-support": "4.5.5",
-    "primer-tables": "1.4.8"
+    "primer-marketing-type": "1.4.9",
+    "primer-marketing-utilities": "1.6.5",
+    "primer-page-headers": "1.4.9",
+    "primer-page-sections": "1.4.9",
+    "primer-support": "4.6.0",
+    "primer-tables": "1.4.9"
   }
 }
