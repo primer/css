@@ -1,6 +1,7 @@
 .dropdown {
   position: relative;
 
+  // TODO: deprecate this in favor of using <details>
   &.active {
     .dropdown-menu-content {
       display: block;
@@ -9,6 +10,7 @@
   }
 }
 
+// TODO: generate this in ::after
 .dropdown-caret {
   display: inline-block;
   width: 0;
