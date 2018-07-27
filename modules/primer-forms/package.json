@@ -1,5 +1,5 @@
 {
-  "version": "2.2.0",
+  "version": "2.1.3",
   "name": "primer-forms",
   "description": "Style individual form controls and utilize common layouts.",
   "homepage": "http://primer.github.io/",
@@ -30,7 +30,7 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.6.0"
+    "primer-support": "4.5.5"
   },
   "keywords": [
     "primer",

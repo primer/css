@@ -1,5 +1,5 @@
 {
-  "version": "2.6.0",
+  "version": "2.5.8",
   "name": "primer-box",
   "description": "A module for creating rounded-corner boxes with options for headers, lists, and footers.",
   "homepage": "http://primer.github.io/",
@@ -30,7 +30,7 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.6.0"
+    "primer-support": "4.5.5"
   },
   "keywords": [
     "primer",

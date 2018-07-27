@@ -1,5 +1,5 @@
 {
-  "version": "1.6.0",
+  "version": "1.5.6",
   "name": "primer-tooltips",
   "description": "Add tooltips built entirely in CSS to nearly any element.",
   "homepage": "http://primer.github.io/",
@@ -31,7 +31,7 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.6.0"
+    "primer-support": "4.5.5"
   },
   "keywords": [
     "primer",
