@@ -54,55 +54,33 @@ Using `<details>` and `<summary>` (no JS required!):
 
 ```html title="Dropdown from details"
 <details class="details-reset dropdown">
-  <summary class="btn dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+  <summary class="btn dropdown-toggle" aria-haspopup="menu">
     Dropdown
     <div class="dropdown-caret"></div>
   </summary>
-
-  <div class="dropdown-menu-content">
-    <ul class="dropdown-menu dropdown-menu-se">
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-    </ul>
-  </div>
-</div>
-```
-
-```html title="Dropdown with JS behaviors"
-<div class="dropdown js-menu-container js-select-menu">
-  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
-    Dropdown
-    <div class="dropdown-caret"></div>
-  </button>
-
-  <div class="dropdown-menu-content js-menu-content">
-    <ul class="dropdown-menu dropdown-menu-se">
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-    </ul>
-  </div>
-</div>
+  <ul class="dropdown-menu dropdown-menu-se">
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+  </ul>
+</details>
 ```
 
 Using a button customized with additional utilities:
 
 ```html title="Dropdown with link-style button"
-<div class="dropdown js-menu-container js-select-menu">
-  <button class="btn-link no-underline text-gray p-2 dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+<details class="details-reset dropdown">
+  <summary class="btn-link no-underline text-gray p-2 dropdown-toggle" aria-haspopup="menu">
     Dropdown
     <div class="dropdown-caret"></div>
-  </button>
+  </summary>
 
-  <div class="dropdown-menu-content js-menu-content">
-    <ul class="dropdown-menu dropdown-menu-se">
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-    </ul>
-  </div>
-</div>
+  <ul class="dropdown-menu dropdown-menu-se">
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+  </ul>
+</details>
 ```
 
 ## Options
@@ -111,152 +89,130 @@ Using a button customized with additional utilities:
 
 Align the direction of dropdown menus and their arrows with modifier classes.
 
-```html title="dropdown-ne"
-<div class="dropdown js-menu-container js-select-menu">
-  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
-    .dropdown-ne
+```html title="Dropdown northeast"
+<details class="details-reset dropdown">
+  <summary class="btn dropdown-toggle" aria-haspopup="menu">
+    .dropdown-menu-ne
     <div class="dropdown-caret"></div>
-  </button>
-
-  <div class="dropdown-menu-content js-menu-content">
-    <ul class="dropdown-menu dropdown-menu-ne">
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-    </ul>
-  </div>
-</div>
+  </summary>
+  <ul class="dropdown-menu dropdown-menu-ne">
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+  </ul>
+</details>
 ```
 
-```html title="dropdown-e"
-<div class="dropdown float-right js-menu-container js-select-menu">
-  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
-    .dropdown-e
+```html title="Dropdown east"
+<details class="dropdown details-reset float-left">
+  <summary class="btn dropdown-toggle" aria-haspopup="menu">
+    .dropdown-menu-e
     <div class="dropdown-caret"></div>
-  </button>
-
-  <div class="dropdown-menu-content js-menu-content">
-    <ul class="dropdown-menu dropdown-menu-e">
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-    </ul>
-  </div>
-</div>
+  </summary>
+  <ul class="dropdown-menu dropdown-menu-e">
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+  </ul>
+</details>
 ```
 
-```html title="dropdown-se"
-<div class="dropdown js-menu-container js-select-menu">
-  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
-    .dropdown-se
+```html title="Dropdown southeast"
+<details class="dropdown details-reset">
+  <summary class="btn dropdown-toggle" aria-haspopup="menu">
+    .dropdown-menu-se
     <div class="dropdown-caret"></div>
-  </button>
-
-  <div class="dropdown-menu-content js-menu-content">
-    <ul class="dropdown-menu dropdown-menu-se">
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-    </ul>
-  </div>
-</div>
+  </summary>
+  <ul class="dropdown-menu dropdown-menu-se">
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+  </ul>
+</details>
 ```
 
-```html title="dropdown-s"
-<div class="dropdown d-inline-block mx-auto js-menu-container js-select-menu">
-  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
-    .dropdown-s
+```html title="Dropdown south"
+<details class="dropdown details-reset d-inline-block mx-auto">
+  <summary class="btn dropdown-toggle" aria-haspopup="menu">
+    .dropdown-menu-s
     <div class="dropdown-caret"></div>
-  </button>
-
-  <div class="dropdown-menu-content js-menu-content">
-    <ul class="dropdown-menu dropdown-menu-s">
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-    </ul>
-  </div>
-</div>
+  </summary>
+  <ul class="dropdown-menu dropdown-menu-s">
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+  </ul>
+</details>
 ```
 
-```html title="dropdown-sw"
-<div class="dropdown float-right js-menu-container js-select-menu">
-  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
-    .dropdown-sw
+```html title="Dropdown southwest"
+<details class="dropdown details-reset float-right">
+  <summary class="btn dropdown-toggle" aria-haspopup="menu">
+    .dropdown-menu-sw
     <div class="dropdown-caret"></div>
-  </button>
+  </summary>
 
-  <div class="dropdown-menu-content js-menu-content">
-    <ul class="dropdown-menu dropdown-menu-sw">
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-    </ul>
-  </div>
-</div>
+  <ul class="dropdown-menu dropdown-menu-sw">
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+  </ul>
+</details>
 ```
 
-```html title="dropdown-w"
-<div class="dropdown js-menu-container js-select-menu">
-  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
-    .dropdown-w
+```html title="Dropdown west"
+<details class="dropdown details-reset">
+  <summary class="btn dropdown-toggle" aria-haspopup="menu">
+    .dropdown-menu-w
     <div class="dropdown-caret"></div>
-  </button>
-
-  <div class="dropdown-menu-content js-menu-content">
-    <ul class="dropdown-menu dropdown-menu-w">
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-    </ul>
-  </div>
-</div>
+  </summary>
+  <ul class="dropdown-menu dropdown-menu-w">
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+  </ul>
+</details>
 ```
 
 ### Dividers
 
 ```html title="Dropdown with dividers"
-<div class="dropdown js-menu-container js-select-menu">
-  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+<details class="dropdown details-reset">
+  <summary class="btn dropdown-toggle" aria-haspopup="menu">
     Dropdown
     <div class="dropdown-caret"></div>
-  </button>
-
-  <div class="dropdown-menu-content js-menu-content">
-    <ul class="dropdown-menu dropdown-menu-se">
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      <li class="dropdown-divider" role="separator"></li>
-      <li><a class="dropdown-item" href="#url">Another item</a></li>
-      <li><a class="dropdown-item" href="#url">One more</a></li>
-    </ul>
-  </div>
-</div>
+  </summary>
+  <ul class="dropdown-menu dropdown-menu-se">
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    <li class="dropdown-divider" role="separator"></li>
+    <li><a class="dropdown-item" href="#url">Another item</a></li>
+    <li><a class="dropdown-item" href="#url">One more</a></li>
+  </ul>
+</details>
 ```
 
 ### Headers
 
 ```html title="Dropdown with headers"
-<div class="dropdown js-menu-container js-select-menu">
-  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+<details class="dropdown details-reset">
+  <summary class="btn dropdown-toggle" aria-haspopup="menu">
     Dropdown
     <div class="dropdown-caret"></div>
-  </button>
+  </summary>
 
-  <div class="dropdown-menu-content js-menu-content">
-    <div class="dropdown-menu dropdown-menu-se">
-      <div class="dropdown-header">
-        Dropdown header
-      </div>
-      <ul>
-        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      </ul>
+  <div class="dropdown-menu dropdown-menu-se">
+    <div class="dropdown-header">
+      Dropdown header
     </div>
+    <ul>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    </ul>
   </div>
-</div>
+</details>
 ```
 
 ### No overflow
@@ -265,23 +221,20 @@ Use `dropdown-menu-no-overflow` modifier class to set the width of the dropdown
 to `auto` and prevent hidden overflows on item contents and text.
 
 ```html title="Dropdown with no overflow"
-<div class="select-all-dropdown dropdown js-menu-container js-bulk-actions float-left js-transitionable">
-  <button class="btn btn-sm mr-3 js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+<details class="select-all-dropdown dropdown details-reset float-left js-bulk-actions js-transitionable">
+  <summary class="btn btn-sm mr-3" aria-haspopup="menu">
     1 member selected…
     <span class="dropdown-caret"></span>
-  </button>
-
-  <div class="dropdown-menu-content js-menu-content">
-    <ul class="dropdown-menu dropdown-menu-no-overflow dropdown-menu-se">
-      <a href="#url" class="dropdown-item js-menu-close">
-        Change role...
-      </a>
-      <a href="#url" class="dropdown-item menu-item-danger js-menu-close">
-        Remove from team
-      </a>
-    </ul>
-  </div>
-</div>
+  </summary>
+  <ul class="dropdown-menu dropdown-menu-no-overflow dropdown-menu-se">
+    <a href="#url" class="dropdown-item js-menu-close">
+      Change role...
+    </a>
+    <a href="#url" class="dropdown-item menu-item-danger js-menu-close">
+      Remove from team
+    </a>
+  </ul>
+</details>
 ```
 
 ### Sign out button
@@ -290,33 +243,31 @@ Use `<button class="dropdown-item dropdown-signout">` to reset button styles
 and display it as a link.
 
 ```html title="Sign out dropdown"
-<div class="dropdown js-menu-container float-right position-relative">
-  <button class="btn dropdown-toggle js-menu-target" type="button" aria-expanded="false" aria-haspopup="true">
+<details class="dropdown details-reset float-right">
+  <summary class="btn dropdown-toggle" aria-haspopup="menu">
     <img alt="@shawnbot" class="avatar" src="https://avatars0.githubusercontent.com/u/113896?v=4&amp;s=40" height="20" width="20">
-  </button>
+  </summary>
 
-  <div class="dropdown-menu-content js-menu-content">
-    <ul class="dropdown-menu dropdown-menu-sw">
-      <li class="dropdown-header header-nav-current-user css-truncate">
-      Signed in as <strong class="css-truncate-target">shawnbot</strong>
-      </li>
-      <li class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#url">Your profile</a></li>
-      <li><a class="dropdown-item" href="#url">Your stars</a></li>
-      <li><a class="dropdown-item" href="#url">Your Gists</a></li>
-      <li class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#url">Help</a></li>
-      <li><a class="dropdown-item" href="#url">Settings</a></li>
-      <li>
-        <form class="m-0" accept-charset="UTF-8" action="#url" class="logout-form" method="post">
-          <button type="submit" class="dropdown-item dropdown-signout">
-          Sign out
-          </button>
-        </form>
-      </li>
-    </ul>
-  </div>
-</div>
+  <ul class="dropdown-menu dropdown-menu-sw">
+    <li class="dropdown-header header-nav-current-user css-truncate">
+    Signed in as <strong class="css-truncate-target">shawnbot</strong>
+    </li>
+    <li class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#url">Your profile</a></li>
+    <li><a class="dropdown-item" href="#url">Your stars</a></li>
+    <li><a class="dropdown-item" href="#url">Your Gists</a></li>
+    <li class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#url">Help</a></li>
+    <li><a class="dropdown-item" href="#url">Settings</a></li>
+    <li>
+      <form class="m-0" accept-charset="UTF-8" action="#url" class="logout-form" method="post">
+        <button type="submit" class="dropdown-item dropdown-signout">
+        Sign out
+        </button>
+      </form>
+    </li>
+  </ul>
+</details>
 ```
 
 <!-- %enddocs -->
