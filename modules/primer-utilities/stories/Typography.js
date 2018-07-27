@@ -59,6 +59,7 @@ storiesOf('Typography utilities', module)
     <p className='text-small'>text-small</p>
     <p className='lead'>lead</p>
     <p className='text-mono'>text-mono</p>
+    <p className='user-select-none'>user-select-none</p>
   </div>
 ))
 .add('text alignment', () => (
