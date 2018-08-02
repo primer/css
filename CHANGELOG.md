@@ -2,6 +2,8 @@
 #### :bug: Bug Fix
 * Fixes peer dependency issues
 
+#### :memo: Documentation
+* Updates releasing documentation
 
 # 10.8.0
 #### :rocket: Enhancement
