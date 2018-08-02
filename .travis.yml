@@ -11,6 +11,7 @@ env:
 
 script:
   - npm test
+  - script/check-versions
 
 after_success:
   # this will short-circuit the publish step if it fails to interpolate $NPM_API_KEY
