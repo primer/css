@@ -1,3 +1,8 @@
+# 10.8.1
+#### :bug: Bug Fix
+* Fixes peer dependency issues
+
+
 # 10.8.0
 #### :rocket: Enhancement
 * [#525](https://github.com/primer/primer/pull/525) Add $spacer-0 alias. ([@AustinPaquette](https://github.com/AustinPaquette))
