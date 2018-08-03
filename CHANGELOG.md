@@ -1,3 +1,13 @@
+# 10.8.1
+#### :bug: Bug Fix
+* [#554](https://github.com/primer/primer/pull/554) Fixes peer dependency issues ([@emplums](https://github.com/emplums))
+
+#### :memo: Documentation
+* [#554](https://github.com/primer/primer/pull/554) Updates releasing documentation ([@emplums](https://github.com/emplums))
+
+#### :rocket: Enhancement
+* [#555](https://github.com/primer/primer/pull/555) Add version check to CI ([@shawnbot](https://github.com/shawnbot))
+
 # 10.8.0
 #### :rocket: Enhancement
 * [#525](https://github.com/primer/primer/pull/525) Add $spacer-0 alias. ([@AustinPaquette](https://github.com/AustinPaquette))

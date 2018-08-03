@@ -10,11 +10,13 @@
 
 3. Run the version bump in your terminal: `npm run bump`.
 
-4. Test your changes with the latest release candidate version in the appropriate places (styleguide, storybook, github/github).
+4. Run `script/check-versions` to double check there are no version conflicts. You may need to update peer dependencies in `primer-popover` and `primer-marketing-buttons`.
 
-5. Once the release PR is approved and you've done necessary testing, merge to `master`. This will trigger a publish to npm.
+5. Test your changes with the latest release candidate version in the appropriate places (styleguide, storybook, github/github).
 
-6. Create a new release branch for the next release from `master` and name it `release-<version>`.
+6. Once the release PR is approved and you've done necessary testing, merge to `master`. This will trigger a publish to npm.
+
+7. Create a new release branch for the next release from `master` and name it `release-<version>`.
 
  (CI will publish a release candidate version to npm for branches prefixed with `release`. These version numbers have a `rc.<number>` suffix on them)
 
