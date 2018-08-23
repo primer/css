@@ -1,5 +1,5 @@
 {
-  "version": "5.6.5",
+  "version": "5.6.7",
   "name": "primer-product",
   "description": "Primer's product modules",
   "homepage": "http://primer.github.io/",
@@ -29,14 +29,14 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-alerts": "1.5.8",
-    "primer-avatars": "1.5.5",
-    "primer-blankslate": "1.4.8",
-    "primer-branch-name": "1.0.6",
-    "primer-labels": "1.5.8",
-    "primer-markdown": "3.7.8",
-    "primer-popover": "0.1.2",
-    "primer-subhead": "1.0.6",
-    "primer-support": "4.5.5"
+    "primer-alerts": "1.5.9",
+    "primer-avatars": "1.5.6",
+    "primer-blankslate": "1.4.9",
+    "primer-branch-name": "1.0.7",
+    "primer-labels": "1.5.9",
+    "primer-markdown": "3.7.9",
+    "primer-popover": "0.1.4",
+    "primer-subhead": "1.0.7",
+    "primer-support": "4.6.0"
   }
 }

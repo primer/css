@@ -1,4 +1,29 @@
+# 10.8.1
+#### :bug: Bug Fix
+* [#554](https://github.com/primer/primer/pull/554) Fixes peer dependency issues ([@emplums](https://github.com/emplums))
+
+#### :memo: Documentation
+* [#554](https://github.com/primer/primer/pull/554) Updates releasing documentation ([@emplums](https://github.com/emplums))
+
+#### :rocket: Enhancement
+* [#555](https://github.com/primer/primer/pull/555) Add version check to CI ([@shawnbot](https://github.com/shawnbot))
+
 # 10.8.0
+#### :rocket: Enhancement
+* [#525](https://github.com/primer/primer/pull/525) Add $spacer-0 alias. ([@AustinPaquette](https://github.com/AustinPaquette))
+* [#522](https://github.com/primer/primer/pull/522) Add .BtnGroup-parent, deprecate .BtnGroup-form. ([@muan](https://github.com/muan))
+* [#544](https://github.com/primer/primer/pull/544) Add lh-0 utility class. ([@shawnbot](https://github.com/shawnbot))
+* [#548](https://github.com/primer/primer/pull/548) Add text underline utility. ([@AustinPaquette](https://github.com/AustinPaquette))
+* [#549](https://github.com/primer/primer/pull/549) Add .user-select-none utility class. ([@AustinPaquette](https://github.com/AustinPaquette))
+
+#### :memo: Documentation
+* [#528](https://github.com/primer/primer/pull/528) Update release docs. ([@emplums](https://github.com/emplums))
+
+#### Committers: 3
+- Austin Paquette ([AustinPaquette](https://github.com/AustinPaquette))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Mu-An Chiou ([@muan](https://github.com/muan))
+- Emily Plummer ([@emplums](https://github.com/emplums))
 
 # 10.7.0
 

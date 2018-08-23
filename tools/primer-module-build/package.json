@@ -1,5 +1,5 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.5",
   "name": "primer-module-build",
   "description": "Scripts to build primer SCSS modules into CSS and stats",
   "homepage": "http://primercss.io/",
@@ -45,7 +45,7 @@
     "postcss": "^5.2.5"
   },
   "devDependencies": {
-    "primer-utilities": "4.11.2",
+    "primer-utilities": "4.12.0",
     "tempy": "^0.2.1"
   }
 }
