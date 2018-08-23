@@ -86,6 +86,7 @@ Override default border colors with blue, green, red, purple, yellow, and gray b
 ```
 
 ### Borders with alpha transparency
+
 Use `border-black-fade` to add an rgba black border with an alpha transparency of `0.15`. This is useful when you want a border that tints the background color. The shade of black we use matches the hue of the GitHub dark header and our gray color palette: `rgba(27,31,35, 0.15)`.
 
 ```html
@@ -140,5 +141,15 @@ You can also add rounded corners to each edge (top, right, bottom, left) with th
 </div>
 <div class="border rounded-left mb-2">
   .rounded-left
+</div>
+```
+
+## Responsive borders
+
+Top, right, bottom, and left border utilities are can be used responsively to add or remove borders to an element at different screensizes.
+
+```html
+<div class="border-top border-sm-right border-md-bottom border-lg-top-0">
+  .border-top-0
 </div>
 ```
