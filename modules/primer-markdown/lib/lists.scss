@@ -53,6 +53,8 @@
     margin-top: $spacer-3;
   }
 
+  ol > li:first-child,
+  ul > li:first-child,
   li + li {
     margin-top: $em-spacer-3;
   }
