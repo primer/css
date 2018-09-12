@@ -4,17 +4,11 @@ const read = require('load-json-file')
 const write = require('write-json-file')
 const getPackages = require('./get-packages')
 
-async function update(file, fn, inPlace) {
-  let data = await read(file)
-  data = await fn(data) || data
-  return write(file, data, {detectIndent: true})
-}
-
-const depKeys = [
+const DEP_FIELDS = [
   'dependencies',
   'devDependencies',
   'peerDependencies',
-  'optionalDependencies'
+  'optionalDependencies',
 ]
 
 getPackages(true)
@@ -30,7 +24,7 @@ getPackages(true)
     async function setRelativeVersions(pkgPath) {
       const json = join(pkgPath, 'package.json')
       return update(json, pkg => {
-        const depLists = depKeys.filter(key => key in pkg).map(key => pkg[key])
+        const depLists = DEP_FIELDS.filter(key => key in pkg).map(key => pkg[key])
         for (const deps of depLists) {
           for (const [name, version] of Object.entries(deps)) {
             if (packageNames.includes(name)) {
@@ -65,5 +59,8 @@ getPackages(true)
     process.exitCode = 1
   })
 
-async function setRelativeVersions(pkgPath) {
+async function update(file, fn, inPlace) {
+  let data = await read(file)
+  data = await fn(data) || data
+  return write(file, data, {detectIndent: true})
 }
