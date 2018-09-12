@@ -42,7 +42,6 @@
     "lerna-changelog": "^0.7.0",
     "load-json-file": "5.0.0",
     "minimatch": "^3.0.4",
-    "node-sass": "4.9.3",
     "npm-run-all": "^4.0.2",
     "npx": "^10.2.0",
     "octicons": "^6.0.1",
