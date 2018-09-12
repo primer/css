@@ -9,6 +9,10 @@ env:
     # github changelog
     - secure: "KcGydAqL7ryDh2rTJJB4wU8NE5BRtnrRXDEcPBScSscO3zFsHXHBDvvO04B/9hFVatXzGYXmkn+FZ0P9QikhvebzdwwyqUG2SKFiHhMvbX0m0WtAhn5NqDuKU1r5qy5YQ18r/tiLfC9GSAlEpfLAH58pwpcn8srV3Mn/yKvlrfs="
 
+install:
+  # by default, Travis runs npm ci, which... fails
+  - npm install
+
 script:
   - script/check-versions
   - npm test
