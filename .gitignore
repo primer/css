@@ -1,8 +1,9 @@
-.DS_Store
-.sass-cache
-node_modules
-*.log
-build
-_site
 *.lerna_backup
+*.log
+.DS_Store
 .changelog
+.sass-cache
+build
+node_modules
+**/package-lock.json
+!./package-lock.json
