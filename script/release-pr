@@ -1,9 +1,10 @@
 #!/bin/bash
 set -e
-echo "🐦  Publishing PR (canary) release..."
+export PATH="$PATH:$(npm bin)"
 
-$(npm bin)/lerna publish --npm-tag=pr --canary --exact $@
+echo "Publishing PR (canary) release..."
+commit=$(git rev-parse --short HEAD)
+lerna publish patch --preid="pr.$commit" --npm-tag=pr $@
 
-echo "📓  Updated CHANGELOG..."
-
-$(npm bin)/lerna-changelog
+echo "Updating the changelog..."
+lerna-changelog
