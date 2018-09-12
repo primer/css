@@ -48,6 +48,7 @@
     "octicons": "^6.0.1",
     "parse-pairs": "^0.2.2",
     "postcss-loader": "^2.0.6",
+    "primer": "file:modules/primer",
     "primer-module-build": "file:tools/primer-module-build",
     "raw-loader": "^0.5.1",
     "react": "^15.6.1",
