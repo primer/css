@@ -21,8 +21,6 @@
     "test-all-modules": "ava --verbose tests/test-*.js"
   },
   "devDependencies": {
-    "primer-module-build": "file:tools/primer-module-build",
-    "stylelint-config-primer": "^2.2.6",
     "@storybook/addon-options": "3.4.3",
     "@storybook/addons": "3.4.3",
     "@storybook/react": "3.4.3",
@@ -49,6 +47,7 @@
     "octicons": "^6.0.1",
     "parse-pairs": "^0.2.2",
     "postcss-loader": "^2.0.6",
+    "primer-module-build": "file:tools/primer-module-build",
     "raw-loader": "^0.5.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -58,6 +57,7 @@
     "semver": "^5.3.0",
     "style-loader": "^0.18.2",
     "stylelint": "^7.13.0",
+    "stylelint-config-primer": "file:tools/stylelint-config-primer",
     "unist-util-find-before": "^2.0.1",
     "unist-util-parents": "^1.0.0",
     "unist-util-select": "^1.5.0",
