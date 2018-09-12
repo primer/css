@@ -9,5 +9,5 @@ if
   [[ !("$branch" =~ ^release) ]] &&
   [[ !("$branch" = "master") ]]
 then
-  script/release-pr --yes
+  npm run release-pr -- --yes
 fi
