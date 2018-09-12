@@ -2,10 +2,12 @@
 set -e
 
 branch=$TRAVIS_PULL_REQUEST_BRANCH
-event=$TRAVIS_EVENT_TYPE
 
-# only publish canary releases on non release or master branches
-if [[ "$event" = "pull_request" ]] && [[ !("$branch" =~ ^release-.*) ]] && [[ !("$branch" = "master") ]];
+# only publish canary releases on non-release or master branches
+if
+  [[ "$TRAVIS_EVENT_TYPE" = "pull_request" ]] &&
+  [[ !("$branch" =~ ^release) ]] &&
+  [[ !("$branch" = "master") ]]
 then
   script/release-pr --yes
 fi
