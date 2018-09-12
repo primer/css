@@ -3,8 +3,7 @@ set -e
 export PATH="$PATH:$(npm bin)"
 
 echo "Publishing PR (canary) release..."
-commit=$(git rev-parse --short HEAD)
-lerna publish patch --preid="pr.$commit" --npm-tag=pr $@
+lerna publish patch --canary --preid=pr --npm-tag=pr $@
 
 echo "Updating the changelog..."
 lerna-changelog
