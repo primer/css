@@ -29,14 +29,14 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-alerts": "1.5.9",
-    "primer-avatars": "1.5.6",
-    "primer-blankslate": "1.4.9",
-    "primer-branch-name": "1.0.7",
-    "primer-labels": "1.5.9",
-    "primer-markdown": "3.7.9",
-    "primer-popover": "0.1.4",
-    "primer-subhead": "1.0.7",
-    "primer-support": "4.6.0"
+    "primer-alerts": "file:../primer-alerts",
+    "primer-avatars": "file:../primer-avatars",
+    "primer-blankslate": "file:../primer-blankslate",
+    "primer-branch-name": "file:../primer-branch-name",
+    "primer-labels": "file:../primer-labels",
+    "primer-markdown": "file:../primer-markdown",
+    "primer-popover": "file:../primer-popover",
+    "primer-subhead": "file:../primer-subhead",
+    "primer-support": "file:../primer-support"
   }
 }

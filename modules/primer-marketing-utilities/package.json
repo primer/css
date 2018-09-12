@@ -35,8 +35,8 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-marketing-support": "1.5.3",
-    "primer-support": "4.6.0"
+    "primer-marketing-support": "file:../primer-marketing-support",
+    "primer-support": "file:../primer-support"
   },
   "keywords": [
     "primer",

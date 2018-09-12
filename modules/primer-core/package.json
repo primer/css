@@ -29,18 +29,18 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-base": "1.7.4",
-    "primer-box": "2.5.9",
-    "primer-breadcrumb": "1.5.5",
-    "primer-buttons": "2.6.0",
-    "primer-forms": "2.1.4",
-    "primer-layout": "1.4.9",
-    "primer-navigation": "1.5.7",
-    "primer-pagination": "1.0.3",
-    "primer-support": "4.6.0",
-    "primer-table-object": "1.4.9",
-    "primer-tooltips": "1.5.7",
-    "primer-truncate": "1.4.9",
-    "primer-utilities": "4.12.0"
+    "primer-base": "file:../primer-base",
+    "primer-box": "file:../primer-box",
+    "primer-breadcrumb": "file:../primer-breadcrumb",
+    "primer-buttons": "file:../primer-buttons",
+    "primer-forms": "file:../primer-forms",
+    "primer-layout": "file:../primer-layout",
+    "primer-navigation": "file:../primer-navigation",
+    "primer-pagination": "file:../primer-pagination",
+    "primer-support": "file:../primer-support",
+    "primer-table-object": "file:../primer-table-object",
+    "primer-tooltips": "file:../primer-tooltips",
+    "primer-truncate": "file:../primer-truncate",
+    "primer-utilities": "file:../primer-utilities"
   }
 }

@@ -1,0 +1,66 @@
+#!/usr/bin/env node
+const {basename, dirname, join} = require('path')
+const read = require('load-json-file')
+const write = require('write-json-file')
+const getPackages = require('./get-packages')
+
+const DEP_FIELDS = [
+  'dependencies',
+  'devDependencies',
+  'peerDependencies',
+  'optionalDependencies',
+]
+
+getPackages(true)
+  .then(async packagePaths => {
+    const packageNames = packagePaths.map(path => basename(path))
+    const pathForName = packageNames.reduce((map, name, i) => {
+      map.set(name, packagePaths[i])
+      return map
+    }, new Map())
+
+    const updates = []
+
+    async function setRelativeVersions(pkgPath) {
+      const json = join(pkgPath, 'package.json')
+      return update(json, pkg => {
+        const depLists = DEP_FIELDS.filter(key => key in pkg).map(key => pkg[key])
+        for (const deps of depLists) {
+          for (const [name, version] of Object.entries(deps)) {
+            if (packageNames.includes(name)) {
+              const path = getPathRelativeTo(name, pkgPath)
+              deps[name] = `file:${path}`
+              updates.push({pkg: json, name, version, path})
+            }
+          }
+        }
+      })
+    }
+
+    function getPathRelativeTo(name, pkgPath) {
+      const depPath = pathForName.get(name)
+      return dirname(depPath) === dirname(pkgPath)
+        ? join('..', name)
+        : join('../..', depPath)
+    }
+
+    for (const pkgPath of packagePaths) {
+      await setRelativeVersions(pkgPath)
+    }
+    return updates
+  })
+  .then(updates => {
+    for (const {pkg, name, version, path} of updates) {
+      console.log(`${pkg}: ${name}@${version} -> ${path}`)
+    }
+  })
+  .catch(error => {
+    console.error(`ERROR: ${error.message}`)
+    process.exitCode = 1
+  })
+
+async function update(file, fn, inPlace) {
+  let data = await read(file)
+  data = await fn(data) || data
+  return write(file, data, {detectIndent: true})
+}
