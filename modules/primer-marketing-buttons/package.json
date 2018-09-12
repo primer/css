@@ -31,10 +31,10 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.6.0"
+    "primer-support": "file:../primer-support"
   },
   "peerDependencies": {
-    "primer-buttons": "2.6.0"
+    "primer-buttons": "file:../primer-buttons"
   },
   "keywords": [
     "css",

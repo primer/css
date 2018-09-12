@@ -26,10 +26,10 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.6.0"
+    "primer-support": "file:../primer-support"
   },
   "peerDependencies": {
-    "primer-box": "2.5.9"
+    "primer-box": "file:../primer-box"
   },
   "keywords": [
     "github",

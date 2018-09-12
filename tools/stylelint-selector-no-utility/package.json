@@ -23,7 +23,7 @@
   "license": "MIT",
   "repository": "https://github.com/primer/primer/tree/master/tools/stylelint-selector-no-utility",
   "dependencies": {
-    "primer-utilities": "4.12.0",
+    "primer-utilities": "file:../../modules/primer-utilities",
     "stylelint": "^7.13.0"
   },
   "devDependencies": {
