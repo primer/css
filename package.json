@@ -37,7 +37,7 @@
     "commit-status": "^4.1.0",
     "css-loader": "^0.28.4",
     "execa": "^0.10.0",
-    "fs-extra": "^4.0.2",
+    "fs-extra": "7.0.0",
     "gh-pages": "1.2.0",
     "glob": "^7.1.2",
     "globby": "^6.1.0",
