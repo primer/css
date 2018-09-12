@@ -40,6 +40,7 @@
     "isomorphic-fetch": "^2.2.1",
     "lerna": "3.3.1",
     "lerna-changelog": "^0.7.0",
+    "load-json-file": "5.0.0",
     "minimatch": "^3.0.4",
     "node-sass": "^4.9.0",
     "npm-run-all": "^4.0.2",
@@ -61,6 +62,7 @@
     "unist-util-find-before": "^2.0.1",
     "unist-util-parents": "^1.0.0",
     "unist-util-select": "^1.5.0",
+    "write-json-file": "3.0.2",
     "yo": "^2.0.0"
   }
 }
