@@ -10,7 +10,7 @@
     "lint": "lerna run lint",
     "release-pr": "lerna publish --canary prerelease --preid=pr --npm-tag=pr",
     "postrelease-pr": "run-s update-changelog",
-    "release-candidate": "lerna publish --canary prerelease --preid=rc --npm-tag=rc",
+    "release-candidate": "lerna publish --canary prerelease --force-publish --preid=rc --npm-tag=rc",
     "postrelease-candidate": "run-s update-changelog",
     "release": "lerna publish from-git",
     "postrelease": "run-s publish-storybook update-changelog",
