@@ -25,7 +25,6 @@ deploy:
   # publish release candidates on release branches
   - provider: script
     script: npm run release-candidate
-    skip_cleanup: true
     on:
       branch: release*
       tags: false
@@ -33,7 +32,6 @@ deploy:
   # publish "final" releases on master
   - provider: script
     script: npm run release
-    skip_cleanup: true
     on:
       branch: master
       tags: false
