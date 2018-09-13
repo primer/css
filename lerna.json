@@ -10,6 +10,7 @@
     },
     "publish": {
       "exact": true,
+      "allowBranch": "*",
       "ignoreChanges": []
     }
   },
