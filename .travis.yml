@@ -22,6 +22,8 @@ script:
 after_success:
   # this will short-circuit the publish step if it fails to interpolate $NPM_API_KEY
   - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
+  # fetch tags for lerna
+  - get fetch --tags
 
 deploy:
   # publish canary releases on all branches
