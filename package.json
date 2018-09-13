@@ -8,7 +8,7 @@
     "updated": "lerna updated || exit 0",
     "diff": "lerna diff",
     "lint": "lerna run lint",
-    "release-pr": "lerna publish --canary prerelease --preid=pr --npm-tag=pr",
+    "release-pr": "lerna publish from-git --canary --preid=pr --npm-tag=pr",
     "postrelease-pr": "run-s update-changelog",
     "release-candidate": "lerna publish --canary prerelease --preid=rc --npm-tag=rc",
     "postrelease-candidate": "run-s update-changelog",
