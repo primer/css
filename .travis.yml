@@ -20,9 +20,6 @@ script:
 after_success:
   # this will short-circuit the publish step if it fails to interpolate $NPM_API_KEY
   - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
-  # copy the CHANGELOG.md primer for publishing
-  # - cp CHANGELOG.md modules/primer
-  - script/after_success
 
 deploy:
   # publish release candidates on release branches
