@@ -9,6 +9,8 @@
       "npmClientArgs": ["--no-package-lock"]
     },
     "publish": {
+      "exact": true,
+      "allowBranch": "*",
       "ignoreChanges": []
     }
   },

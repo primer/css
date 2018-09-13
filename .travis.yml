@@ -10,8 +10,10 @@ env:
     - secure: "KcGydAqL7ryDh2rTJJB4wU8NE5BRtnrRXDEcPBScSscO3zFsHXHBDvvO04B/9hFVatXzGYXmkn+FZ0P9QikhvebzdwwyqUG2SKFiHhMvbX0m0WtAhn5NqDuKU1r5qy5YQ18r/tiLfC9GSAlEpfLAH58pwpcn8srV3Mn/yKvlrfs="
 
 install:
-  # by default, Travis runs npm ci, which... fails
-  - npm install
+  # by default, Travis runs npm ci, which... fails.
+  # --no-package-lock prevents npm from updating it, which in
+  # turn prevents lerna from publishing
+  - npm install --no-package-lock
 
 script:
   - script/check-versions
@@ -20,14 +22,21 @@ script:
 after_success:
   # this will short-circuit the publish step if it fails to interpolate $NPM_API_KEY
   - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
-  # copy the CHANGELOG.md primer for publishing
-  - cp CHANGELOG.md modules/primer
-  - script/after_success
+  # fetch tags for lerna
+  - get fetch --tags
 
 deploy:
+  # publish canary releases on all branches
+  - provider: script
+    script: npm run release-pr
+    skip_cleanup: true
+    on:
+      all_branches: true
+      tags: false
+
   # publish release candidates on release branches
   - provider: script
-    script: script/release-candidate
+    script: npm run release-candidate
     skip_cleanup: true
     on:
       branch: release*
@@ -35,7 +44,7 @@ deploy:
 
   # publish "final" releases on master
   - provider: script
-    script: script/release
+    script: npm run release
     skip_cleanup: true
     on:
       branch: master
