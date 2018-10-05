@@ -78,6 +78,8 @@ Change the line height density with these utilities.
 </p>
 ```
 
+The `lh-0` utility class sets `line-height: 0 !important`, and can be used to remove vertical spacing from elements that inherit line-height but don't contain any text.
+
 ## Typographic styles
 Change the font weight, styles, and alignment with these utilities.
 
@@ -89,11 +91,13 @@ Change the font weight, styles, and alignment with these utilities.
 <p class="no-wrap">No wrap</p>
 <p class="ws-normal">Normal whitespace</p>
 <p class="wb-break-all">Line break long lines</p>
+<p class="text-underline">Text underline</p>
 <p class="no-underline">No underline</p>
 <p class="text-emphasized">Emphasized</p>
 <p class="text-small">Small</p>
 <p class="lead">Bacon ipsum dolor amet tri-tip chicken kielbasa, cow swine beef corned beef ground round prosciutto hamburger porchetta sausage alcatra tail.</p>
 <p class="text-mono">Monospace</p>
+<p class="user-select-none">User Select None</p>
 ```
 
 ## Text alignment
