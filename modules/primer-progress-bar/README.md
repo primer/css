@@ -33,14 +33,88 @@ For a compiled **CSS** version of this module, an npm script is included that wi
 $ npm run build
 ```
 
-## Documentation
+## Default
 
 <!-- %docs
 title: Progress Bar
 status: Experimental
 -->
 
-TODO: Write some documentation here.
+```html
+<div class="progress-bar">
+  <div class="progress" style="width: 50%">
+  </div>
+</div>
+
+<span class="flex-progress-bar mt-3 d-flex bg-gray overflow-hidden">
+  <span class="flex-progress-bar__to-do height-full bg-green rounded-1"></span>
+  <span class="flex-progress-bar__in-progress height-full bg-purple"></span>
+    <span class="flex-progress-bar__done height-full bg-red"></span>
+</span>
+```
+
+## With Tooltip
+
+<!-- %docs
+title: Progress Bar with Tooltip
+status: Experimental
+-->
+
+```html
+<div class="tooltipped tooltipped-n mt-3" aria-label="78 done / 6 in progress / 2 to do">
+  <div class="progress-bar">
+    <div class="progress" style="width: 50%">
+    </div>
+  </div>
+</div>
+
+```
+
+## Reverse Progress
+
+<!-- %docs
+title: Progress Bar Reverse
+status: Experimental
+-->
+
+```html
+<div class="reverse-progress-container">
+  <div style="width:50%" class="reverse-progress-bar" ></div>
+</div>
+```
+
+<!-- %enddocs -->
+
+## Progress Bar Small
+
+<!-- %docs
+title: Progress Bar Small
+status: Experimental
+-->
+
+```html
+<div class="progress-bar progress-bar-small mt-3">
+  <div class="progress" style="width:50%">
+  </div>
+</div>
+```
+
+<!-- %enddocs -->
+
+## Progress Bar Inline
+
+<!-- %docs
+title: Progress Bar Inline
+status: Experimental
+-->
+
+```html
+<div class="progress-bar-inline">
+  <span class="progress-bar">
+    <span class="progress" style="width:50%"> </span>
+  </span>
+</div>
+```
 
 <!-- %enddocs -->
 
