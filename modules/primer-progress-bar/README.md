@@ -33,7 +33,7 @@ For a compiled **CSS** version of this module, an npm script is included that wi
 $ npm run build
 ```
 
-## Default
+## Default Progress Bar
 
 <!-- %docs
 title: Progress Bar
@@ -41,19 +41,40 @@ status: Experimental
 -->
 
 ```html
-<div class="progress-bar">
+<div class="progress-bar my-4">
   <div class="progress" style="width: 50%">
   </div>
 </div>
 
-<span class="flex-progress-bar mt-3 d-flex bg-gray overflow-hidden">
-  <span class="flex-progress-bar__to-do height-full bg-green rounded-1"></span>
-  <span class="flex-progress-bar__in-progress height-full bg-purple"></span>
-    <span class="flex-progress-bar__done height-full bg-red"></span>
+<span class="flex-progress-bar d-flex bg-gray rounded-1 overflow-hidden">
+  <span class="height-full bg-green" style="width:50%"></span>
+  <span class="height-full bg-purple" style="width:25%"></span>
+  <span class="height-full bg-red" style="width:5%"></span>
 </span>
 ```
 
-## With Tooltip
+<!-- %enddocs -->
+
+## Small Progress Bar
+
+<!-- %docs
+title: Progress Bar Small
+status: Experimental
+-->
+
+```html
+<div class="progress-bar progress-bar-small my-4">
+  <div class="progress" style="width:50%"></div>
+</div>
+
+<span class="flex-progress-bar-small d-flex bg-gray rounded-1 overflow-hidden">
+  <span class="height-full bg-green" style="width:50%"></span>
+  <span class="height-full bg-purple" style="width:25%"></span>
+  <span class="height-full bg-red" style="width:5%"></span>
+</span>
+```
+
+## Progress Bar With Tooltip
 
 <!-- %docs
 title: Progress Bar with Tooltip
@@ -62,15 +83,21 @@ status: Experimental
 
 ```html
 <div class="tooltipped tooltipped-n mt-3" aria-label="78 done / 6 in progress / 2 to do">
-  <div class="progress-bar">
+  <div class="progress-bar my-4">
     <div class="progress" style="width: 50%">
     </div>
   </div>
 </div>
 
+<div class="tooltipped tooltipped-n mt-3" aria-label="78 done / 6 in progress / 2 to do">
+  <span class="flex-progress-bar d-flex bg-gray rounded-1 overflow-hidden">
+    <span class="flex-progress to-do height-full bg-green" style="width: 50%"></span>
+  </span>
+</div>
+
 ```
 
-## Reverse Progress
+## WIP Reverse Progress
 
 <!-- %docs
 title: Progress Bar Reverse
@@ -85,23 +112,7 @@ status: Experimental
 
 <!-- %enddocs -->
 
-## Progress Bar Small
-
-<!-- %docs
-title: Progress Bar Small
-status: Experimental
--->
-
-```html
-<div class="progress-bar progress-bar-small mt-3">
-  <div class="progress" style="width:50%">
-  </div>
-</div>
-```
-
-<!-- %enddocs -->
-
-## Progress Bar Inline
+## WIP Progress Bar Inline
 
 <!-- %docs
 title: Progress Bar Inline
@@ -114,6 +125,19 @@ status: Experimental
     <span class="progress" style="width:50%"> </span>
   </span>
 </div>
+```
+
+<!-- %enddocs -->
+
+## WIP Progress Gradient [Test]
+
+<!-- %docs
+title: Progress Gradient [Test]
+status: Experimental
+-->
+
+```html
+<div class="flex-progress-bar--gradient d-flex bg-gray rounded-1 overflow-hidden"></div>
 ```
 
 <!-- %enddocs -->

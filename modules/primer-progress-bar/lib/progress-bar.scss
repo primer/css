@@ -56,20 +56,28 @@
   }
 }
 
-///////// Flexbox Refactoring ///////
+// Flexbox Refactoring for Primer CSS Component //
 
 .flex-progress-bar {
   height: 15px;
 }
 
-.flex-progress-bar__to-do {
-  flex-basis: 40%;
+.flex-progress-bar-small {
+  height: 10px;
 }
 
-.flex-progress-bar__in-progress {
-  flex-basis: 30%;
-}
+// Flexbox Gradient Test //
 
-.flex-progress-bar__done {
-  flex-basis: 5%;
+.flex-progress-bar--gradient {
+  height: 15px;
+  background-image: linear-gradient(
+      to right,
+      $bg-green,
+      $bg-green 40%,
+      $purple-500 40%,
+      $purple-500 60%,
+      $red-500 60%,
+      $red-500 75%,
+      $gray-200 75%,
+    );
 }
