@@ -65,19 +65,3 @@
 .flex-progress-bar-small {
   height: 10px;
 }
-
-// Flexbox Gradient Test //
-
-.flex-progress-bar--gradient {
-  height: 15px;
-  background-image: linear-gradient(
-      to right,
-      $bg-green,
-      $bg-green 40%,
-      $purple-500 40%,
-      $purple-500 60%,
-      $red-500 60%,
-      $red-500 75%,
-      $gray-200 75%,
-    );
-}

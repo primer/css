@@ -47,9 +47,9 @@ status: Experimental
 </div>
 
 <span class="flex-progress-bar d-flex bg-gray rounded-1 overflow-hidden">
-  <span class="height-full bg-green" style="width:50%"></span>
-  <span class="height-full bg-purple" style="width:25%"></span>
-  <span class="height-full bg-red" style="width:5%"></span>
+  <span class="bg-green" style="width:50%"></span>
+  <span class="bg-purple" style="width:25%"></span>
+  <span class="bg-red" style="width:5%"></span>
 </span>
 ```
 
@@ -68,9 +68,9 @@ status: Experimental
 </div>
 
 <span class="flex-progress-bar-small d-flex bg-gray rounded-1 overflow-hidden">
-  <span class="height-full bg-green" style="width:50%"></span>
-  <span class="height-full bg-purple" style="width:25%"></span>
-  <span class="height-full bg-red" style="width:5%"></span>
+  <span class="bg-green" style="width:50%"></span>
+  <span class="bg-purple" style="width:25%"></span>
+  <span class="bg-red" style="width:5%"></span>
 </span>
 ```
 
@@ -91,7 +91,7 @@ status: Experimental
 
 <div class="tooltipped tooltipped-n mt-3" aria-label="78 done / 6 in progress / 2 to do">
   <span class="flex-progress-bar d-flex bg-gray rounded-1 overflow-hidden">
-    <span class="flex-progress to-do height-full bg-green" style="width: 50%"></span>
+    <span class="flex-progress to-do bg-green" style="width: 50%"></span>
   </span>
 </div>
 
@@ -125,19 +125,6 @@ status: Experimental
     <span class="progress" style="width:50%"> </span>
   </span>
 </div>
-```
-
-<!-- %enddocs -->
-
-## WIP Progress Gradient [Test]
-
-<!-- %docs
-title: Progress Gradient [Test]
-status: Experimental
--->
-
-```html
-<div class="flex-progress-bar--gradient d-flex bg-gray rounded-1 overflow-hidden"></div>
 ```
 
 <!-- %enddocs -->
