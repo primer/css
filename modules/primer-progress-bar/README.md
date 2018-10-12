@@ -41,15 +41,16 @@ status: Experimental
 -->
 
 ```html
-<div class="progress-bar my-4">
-  <div class="progress" style="width: 50%">
-  </div>
-</div>
-
-<span class="flex-progress-bar d-flex bg-gray rounded-1 overflow-hidden">
+<span class="flex-progress-bar d-flex bg-gray rounded-1 overflow-hidden my-4">
   <span class="bg-green" style="width:50%"></span>
   <span class="bg-purple" style="width:25%"></span>
   <span class="bg-red" style="width:5%"></span>
+</span>
+
+<span class="Progress">
+  <span class="Progress-value bg-green" style="width: 50%;"></span>
+  <span class="Progress-value bg-purple" style="width: 25%;"></span>
+  <span class="Progress-value bg-red" style="width: 5%;"></span>
 </span>
 ```
 
@@ -63,14 +64,16 @@ status: Experimental
 -->
 
 ```html
-<div class="progress-bar progress-bar-small my-4">
-  <div class="progress" style="width:50%"></div>
-</div>
-
-<span class="flex-progress-bar-small d-flex bg-gray rounded-1 overflow-hidden">
+<span class="flex-progress-bar-small d-flex bg-gray rounded-1 overflow-hidden  my-4">
   <span class="bg-green" style="width:50%"></span>
   <span class="bg-purple" style="width:25%"></span>
   <span class="bg-red" style="width:5%"></span>
+</span>
+
+<span class="Progress Progress--small">
+  <span class="Progress-value bg-green" style="width: 50%;"></span>
+  <span class="Progress-value bg-purple" style="width: 25%;"></span>
+  <span class="Progress-value bg-red" style="width: 5%;"></span>
 </span>
 ```
 
@@ -83,18 +86,16 @@ status: Experimental
 
 ```html
 <div class="tooltipped tooltipped-n mt-3" aria-label="78 done / 6 in progress / 2 to do">
-  <div class="progress-bar my-4">
-    <div class="progress" style="width: 50%">
-    </div>
-  </div>
-</div>
-
-<div class="tooltipped tooltipped-n mt-3" aria-label="78 done / 6 in progress / 2 to do">
-  <span class="flex-progress-bar d-flex bg-gray rounded-1 overflow-hidden">
-    <span class="flex-progress to-do bg-green" style="width: 50%"></span>
+  <span class="flex-progress-bar d-flex bg-gray rounded-1 overflow-hidden my-4">
+    <span class="flex-progress bg-green" style="width: 50%"></span>
   </span>
 </div>
 
+<div class="tooltipped tooltipped-n mt-3" aria-label="78 done / 6 in progress / 2 to do">
+  <span class="Progress">
+    <span class="Progress-value bg-green" style="width: 50%;"></span>
+  </span>
+</div>
 ```
 
 ## WIP Reverse Progress

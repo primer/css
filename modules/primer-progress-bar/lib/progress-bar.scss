@@ -1,67 +1,32 @@
-// A green progress bar on a grey background.
-.progress-bar {
-  display: block;
-  height: 15px;
-  overflow: hidden; // Crop the progress bar within for rounded corners
-  background-color: lighten($gray-200, 3%);
-  border-radius: 3px;
+// Progress Bar
+// Intended to replace custom styled progress flex-progress-bar-small
 
-  .progress {
-    display: block;
-    height: 100%;
-    background-color: darken($green-400, 5%);
-  }
-}
-
-// Reverse progress bar shrinks revealing the bar color which is the container background
-.reverse-progress {
-  &-container {
-    position: relative;
-    height: 3px;
-    background-color: $gray-200;
-    background-image: linear-gradient(
-      to right,
-      $bg-green,
-      $blue-600,
-      $purple-800,
-      $red-600,
-      $orange-500
-    );
-    background-size: 100% 3px;
-  }
-
-  &-bar {
-    position: absolute;
-    right: 0;
-    height: 100%;
-    background-color: $gray-200;
-  }
-}
-
-// used new milestones show page for issue reordering
-.progress-bar-small {
-  height: 10px;
-}
-
-// Used with table-list header on new milestones show page
-// A more robust fix without nesting requires refactoring issue helper
-.progress-bar-inline {
-  .progress-bar {
-    width: 100%;
-    border-color: $gray-200;
-    border-style: solid;
-    border-width: 1px;
-    border-top: 0;
-    border-radius: 0;
-  }
-}
-
-// Flexbox Refactoring for Primer CSS Component //
-
+// Flex and Functional CSS Refactoring Approach
 .flex-progress-bar {
-  height: 15px;
+  height: 10px;
 }
 
 .flex-progress-bar-small {
+  height: 8px;
+}
+
+// BEM/Semantic Approach
+
+.Progress {
   height: 10px;
+  display: flex;
+  background-color: $gray-200;
+  border-radius: $border-radius;
+  overflow: hidden;
+}
+
+.Progress-value {
+}
+
+.Progress--small {
+  height: 8px;
+}
+
+.Progress--tiny {
+  height: 5px;
 }
