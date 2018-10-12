@@ -1,4 +1,4 @@
-# Primer / Progress Bar
+# Primer / Progress
 
 [![npm version](https://img.shields.io/npm/v/primer-progress-bar.svg)](https://www.npmjs.org/package/primer-progress-bar)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
@@ -9,10 +9,10 @@ This repository is a module of the full [primer][primer] repository.
 
 ## Install
 
-This repository is distributed with [npm]. After [installing npm][install-npm], you can install `primer-progress-bar` with this command.
+This repository is distributed with [npm]. After [installing npm][install-npm], you can install `primer-progress` with this command.
 
 ```
-$ npm install --save primer-progress-bar
+$ npm install --save primer-progress
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ $ npm install --save primer-progress-bar
 The source files included are written in [Sass][sass] (SCSS) You can simply point your sass `include-path` at your `node_modules` directory and import it like this.
 
 ```scss
-@import "primer-progress-bar/index.scss";
+@import "primer-progress/index.scss";
 ```
 
 You can also import specific portions of the module by importing those partials from the `/lib/` folder. _Make sure you import any requirements along with the modules._
