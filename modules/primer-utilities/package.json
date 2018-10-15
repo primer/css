@@ -1,5 +1,5 @@
 {
-  "version": "4.11.0",
+  "version": "4.12.0",
   "name": "primer-utilities",
   "description": "Immutable, atomic CSS classes to rapidly build product",
   "homepage": "http://primer.github.io/",
@@ -26,10 +26,12 @@
     "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
     "lint": "../../script/lint-scss",
-    "test": "../../script/npm-run-all build lint"
+    "test": "../../script/npm-run-all build lint",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.5.4"
+    "primer-support": "4.6.0"
   },
   "keywords": [
     "primer",
