@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "primer-module-build": "file:tools/primer-module-build",
-    "stylelint-config-primer": "^2.2.6",
+    "stylelint-config-primer": "file:tools/stylelint-config-primer",
     "@storybook/addon-options": "3.4.3",
     "@storybook/addons": "3.4.3",
     "@storybook/react": "3.4.3",
