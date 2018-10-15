@@ -70,6 +70,12 @@
       /* Set a negative #{$size} margin on the left at the breakpoint #{$breakpoint} */
       .ml-#{$breakpoint}-n#{$scale} { margin-left  : -#{$size} !important; }
 
+      /* Set an auto margin on left & right at the breakpoint #{$breakpoint} */
+      .mx-#{$breakpoint}-auto {
+        margin-right: auto !important;
+        margin-left: auto !important;
+      }
+
       /* Set a #{$size} margin on the left & right at the breakpoint #{$breakpoint} */
       .mx-#{$breakpoint}-#{$scale} {
         margin-right: #{$size} !important;
