@@ -43,11 +43,11 @@
         margin-bottom: $size !important;
       }
     }
-  }
-}
 
-/* Set an auto margin on left & right */
-.mx-auto {
-  margin-right: auto !important;
-  margin-left: auto !important;
+    /* responsive horizontal auto margins */
+    .mx#{$variant}-auto {
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
+  }
 }
