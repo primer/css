@@ -1,3 +1,124 @@
+# 10.8.1
+#### :bug: Bug Fix
+* [#554](https://github.com/primer/primer/pull/554) Fixes peer dependency issues ([@emplums](https://github.com/emplums))
+
+#### :memo: Documentation
+* [#554](https://github.com/primer/primer/pull/554) Updates releasing documentation ([@emplums](https://github.com/emplums))
+
+#### :rocket: Enhancement
+* [#555](https://github.com/primer/primer/pull/555) Add version check to CI ([@shawnbot](https://github.com/shawnbot))
+
+# 10.8.0
+#### :rocket: Enhancement
+* [#525](https://github.com/primer/primer/pull/525) Add $spacer-0 alias. ([@AustinPaquette](https://github.com/AustinPaquette))
+* [#522](https://github.com/primer/primer/pull/522) Add .BtnGroup-parent, deprecate .BtnGroup-form. ([@muan](https://github.com/muan))
+* [#544](https://github.com/primer/primer/pull/544) Add lh-0 utility class. ([@shawnbot](https://github.com/shawnbot))
+* [#548](https://github.com/primer/primer/pull/548) Add text underline utility. ([@AustinPaquette](https://github.com/AustinPaquette))
+* [#549](https://github.com/primer/primer/pull/549) Add .user-select-none utility class. ([@AustinPaquette](https://github.com/AustinPaquette))
+
+#### :memo: Documentation
+* [#528](https://github.com/primer/primer/pull/528) Update release docs. ([@emplums](https://github.com/emplums))
+
+#### Committers: 3
+- Austin Paquette ([AustinPaquette](https://github.com/AustinPaquette))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Mu-An Chiou ([@muan](https://github.com/muan))
+- Emily Plummer ([@emplums](https://github.com/emplums))
+
+# 10.7.0
+
+#### :nail_care: Polish
+* [#511](https://github.com/primer/primer/pull/511)  change double quotes to single quotes in Avatar stack stories. ([@AustinPaquette](https://github.com/AustinPaquette))
+
+#### :memo: Documentation
+* [#520](https://github.com/primer/primer/pull/520) Update issue templates. ([@broccolini](https://github.com/broccolini))
+* [#516](https://github.com/primer/primer/pull/516) Fix modules/primer-product/README.md. ([@9585999](https://github.com/9585999))
+* [#513](https://github.com/primer/primer/pull/513) Deleting the dev branch workflow instructions. ([@jonrohan](https://github.com/jonrohan))
+* [#507](https://github.com/primer/primer/pull/507) Moving the color docs to the style guide. ([@jonrohan](https://github.com/jonrohan))
+
+#### :house: Internal
+* [#517](https://github.com/primer/primer/pull/517) Modifying notify script to publish from each package. ([@jonrohan](https://github.com/jonrohan))
+* [#515](https://github.com/primer/primer/pull/515) Auto publish storybook. ([@jonrohan](https://github.com/jonrohan))
+* [#510](https://github.com/primer/primer/pull/510) [WIP] Patch release 10.6.2. ([@shawnbot](https://github.com/shawnbot))
+
+#### Committers: 5
+- Austin Paquette ([AustinPaquette](https://github.com/AustinPaquette))
+- Diana Mounter ([broccolini](https://github.com/broccolini))
+- DieGOs ([9585999](https://github.com/9585999))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+
+# 10.6.1
+
+#### :bug: Bug Fix
+* [#506](https://github.com/primer/primer/pull/506) Fix white border on last avatar in AvatarStack (take two). ([@shawnbot](https://github.com/shawnbot))
+* [#501](https://github.com/primer/primer/pull/501) Set different z-index for .details-overlay. ([@muan](https://github.com/muan))
+
+#### Committers: 2
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- [muan](https://github.com/muan)
+
+
+# 10.6.0
+
+#### :bug: Bug Fix
+* [#491](https://github.com/primer/primer/pull/491) Add `backface-visibility` to `.hover-grow`. ([@brandonrosage](https://github.com/brandonrosage))
+
+#### :memo: Documentation
+* [#490](https://github.com/primer/primer/pull/490) Add release documentation. ([@emplums](https://github.com/emplums))
+
+#### :house: Internal
+* [#475](https://github.com/primer/primer/pull/475) Import primer-module-build to the monorepo. ([@shawnbot](https://github.com/shawnbot))
+* [#479](https://github.com/primer/primer/pull/479) Add "scoreboard" test suite. ([@shawnbot](https://github.com/shawnbot))
+
+#### Committers: 4
+- Brandon Rosage ([brandonrosage](https://github.com/brandonrosage))
+- Emily ([emplums](https://github.com/emplums))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- [muan](https://github.com/muan)
+
+
+# 10.5.0
+
+#### :rocket: Enhancement
+* [#487](https://github.com/primer/primer/pull/487) Import Pagination Component. ([@emplums](https://github.com/emplums))
+* [#474](https://github.com/primer/primer/pull/474) Add text-mono utility class. ([@emplums](https://github.com/emplums))
+* [#456](https://github.com/primer/primer/pull/456) Adding height-fit utility class. ([@jonrohan](https://github.com/jonrohan))
+
+#### :bug: Bug Fix
+* [#465](https://github.com/primer/primer/pull/465) Fix Popover--right-bottom caret positioning. ([@shawnbot](https://github.com/shawnbot))
+* [#458](https://github.com/primer/primer/pull/458) Fix broken pointer from packages to modules. ([@tysongach](https://github.com/tysongach))
+
+#### :memo: Documentation
+* [#486](https://github.com/primer/primer/pull/486) Documenting the text-inheritance color utility. ([@jonrohan](https://github.com/jonrohan))
+* [#481](https://github.com/primer/primer/pull/481) Styleguide Polish. ([@emplums](https://github.com/emplums))
+* [#464](https://github.com/primer/primer/pull/464) Fix markdown stories. ([@shawnbot](https://github.com/shawnbot))
+* [#455](https://github.com/primer/primer/pull/455) Add colorizeTooltip deprecation warning. ([@jonrohan](https://github.com/jonrohan))
+* [#452](https://github.com/primer/primer/pull/452) Update dead links in CONTRIBUTING.md. ([@agisilaos](https://github.com/agisilaos))
+
+#### Committers: 7
+- Agisilaos Tsaraboulidis ([agisilaos](https://github.com/agisilaos))
+- Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
+- Emily ([emplums](https://github.com/emplums))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Tyson Gach ([tysongach](https://github.com/tysongach))
+- [muan](https://github.com/muan)
+
+# 10.4.0 (2018-03-14)
+
+#### :rocket: Enhancement
+* [#456](https://github.com/primer/primer/pull/456) Adding height-fit utility class. ([@jonrohan](https://github.com/jonrohan))
+
+#### :memo: Documentation
+* [#455](https://github.com/primer/primer/pull/455) Add colorizeTooltip deprecation warning. ([@jonrohan](https://github.com/jonrohan))
+* [#452](https://github.com/primer/primer/pull/452) Update dead links in CONTRIBUTING.md. ([@agisilaos](https://github.com/agisilaos))
+
+#### Committers: 3
+- Agisilaos Tsaraboulidis ([agisilaos](https://github.com/agisilaos))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- [muan](https://github.com/muan)
+
 # 10.3.0 (2018-01-17)
 
 #### :rocket: Enhancement

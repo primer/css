@@ -1,5 +1,5 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.9",
   "name": "primer-marketing-buttons",
   "description": "Buttons for marketing websites at GitHub",
   "homepage": "http://primer.github.io/",
@@ -26,13 +26,15 @@
     "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
     "lint": "../../script/lint-scss",
-    "test": "../../script/npm-run-all build lint test-docs"
+    "test": "../../script/npm-run-all build lint test-docs",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.5.2"
+    "primer-support": "4.6.0"
   },
   "peerDependencies": {
-    "primer-buttons": ">=2.5.0"
+    "primer-buttons": "2.6.0"
   },
   "keywords": [
     "css",

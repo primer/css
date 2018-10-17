@@ -175,7 +175,7 @@ You can easily append a count to a **small button**. Add the `.with-count` class
 </div>
 ```
 
-You can also use the [counter](../../product/components/labels) component within buttons:
+You can also use the [counter](../labels#counters) component within buttons:
 
 ```html
 <button class="btn" type="button">
@@ -223,12 +223,12 @@ Have a hankering for a series of buttons that are attached to one another? Wrap 
 </div>
 ```
 
-Add `.BtnGroup-form` to `<form>`s within `.BtnGroup`s for proper spacing and rounded corners.
+Add `.BtnGroup-parent` to parent elements, like `<form>`s or `<details>`s, within `.BtnGroup`s for proper spacing and rounded corners.
 
 ```html
 <div class="BtnGroup">
   <button class="btn BtnGroup-item" type="button">Button</button>
-  <form class="BtnGroup-form">
+  <form class="BtnGroup-parent">
     <button class="btn BtnGroup-item" type="button">Button in a form</button>
   </form>
   <button class="btn BtnGroup-item" type="button">Button</button>
