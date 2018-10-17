@@ -1,6 +1,4 @@
-- [ ] First, change the base branch from "master" to "dev".
-
-- [ ] Next, briefly describe your proposal in the title.
+- [ ] First, briefly describe your proposal in the title.
 
 - [ ] Fixes: #  (type an issue number after the # if applicable)
 

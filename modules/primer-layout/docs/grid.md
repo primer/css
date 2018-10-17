@@ -13,7 +13,7 @@ The grid is 12 columns and percentage-based. The number of columns a container s
 
 Use `.clearfix` on the container and float utilities with columns for a floated grid layout.
 
-```html
+```html title="Float based grid"
 <div class="container-lg clearfix">
   <div class="col-4 float-left border p-4">
     My column
@@ -31,7 +31,7 @@ Use `.clearfix` on the container and float utilities with columns for a floated 
 
 To reverse the order of columns, use `float-right` to float columns to the right.
 
-```html
+```html title="Float grid reversed"
 <div class="container-lg clearfix">
   <div class="col-4 float-right border p-4">
     One
@@ -48,7 +48,7 @@ To reverse the order of columns, use `float-right` to float columns to the right
 ## Nesting
 You can infinitely nest grid layouts within other columns since the column widths are percentage based. With great flexibility comes great responsibility - be sensible with how far you nest!
 
-```html
+```html title="Nesting grids"
 <div class="clearfix">
   <div class="col-6 float-left px-1">
     <div class="border p-1">Unnested</div>
@@ -74,7 +74,8 @@ You can infinitely nest grid layouts within other columns since the column width
 ## Centering a column
 
 Use `.mx-auto` to center columns within a container.
-```html
+
+```html title="Centering a column"
 <div class="border">
   <div class="col-6 p-2 mx-auto border">
     This column is the center of my world.
@@ -85,7 +86,8 @@ Use `.mx-auto` to center columns within a container.
 
 ## Column widths
 Column widths can be used with any other block or inline-block elements to add percentage-based widths.
-```html
+
+```html title="Column widths"
 <div>
   <div class="col-4 float-right p-2 border text-red">
     <%= octicon "heart" %> Don't go bacon my heart.
@@ -96,9 +98,9 @@ Column widths can be used with any other block or inline-block elements to add p
 
 ## Offset columns
 
-Using column offset classes can push a div over X number of columns. They work responsively using the [breakpoints outlined below](/styleguide/css/modules/grid#responsive-grids).
+Using column offset classes can push a div over X number of columns. They work responsively using the [breakpoints outlined below](../grid#responsive-grids).
 
-```html
+```html title="Offset columns"
 <div class="clearfix">
   <div class="offset-1 col-3 border p-3">.offset-1</div>
   <div class="offset-2 col-3 border p-3">.offset-2</div>
@@ -108,7 +110,7 @@ Using column offset classes can push a div over X number of columns. They work r
 ## Gutters
 Use gutter styles or padding utilities to create gutters. You can use the default gutter style, `gutter`, or either of its modifiers, `gutter-condensed` or `gutter-spacious`. Gutter styles also support responsive breakpoint modifiers. Gutter styles add padding to the left and right side of each column and apply a negative margin to the container to ensure content inside each column lines up with content outside of the grid.
 
-```html
+```html title="Gutters"
 <div class="clearfix gutter-md-spacious border">
   <div class="col-3 float-left">
     <div class="border p-3">.col-md-3</div>
@@ -127,7 +129,7 @@ Use gutter styles or padding utilities to create gutters. You can use the defaul
 
 Use padding utilities to create gutters for more customized layouts.
 
-```html
+```html title="Gutters with padding"
 <div class="container-lg clearfix">
   <div class="col-3 float-left pr-2 mb-3">
     <div class="border bg-gray-light">.pr-2</div>
@@ -156,7 +158,7 @@ Use padding utilities to create gutters for more customized layouts.
 ## Inline-block grids
 Use column widths with `d-inline-block` as an alternative to floated grids.
 
-```html
+```html title="Inline-block grid"
 <div>
   <div class="col-4 d-inline-block border">
     .col-4 .d-inline-block
@@ -171,7 +173,7 @@ Use column widths with `d-inline-block` as an alternative to floated grids.
 ```
 
 You can use column widths and other utilities on elements such as lists to create the layout you need while keeping the markup semantically correct.
-```html
+```html title="Inline-block grid list"
 <ul class="list-style-none">
   <li class="d-inline-block col-2 p-2"><img class="width-full avatar" src="/broccolini.png" alt="broccolini" /></li><!--
   --><li class="d-inline-block col-2 p-2"><img class="width-full avatar" src="/jonrohan.png" alt="jonrohan" /></li><!--
@@ -186,11 +188,11 @@ You can use column widths and other utilities on elements such as lists to creat
 
 
 ## Display table grids
-Using [display table utilities](/styleguide/css/utilities/layout#display) with columns gives you some alternative layout options.
+Using [display table utilities](../../utilities/layout#display) with columns gives you some alternative layout options.
 
 A useful example is being able to keep the height of the container equal across a row when the length of content may differ.
 
-```html
+```html title="Table grid"
 <div class="d-table col-12">
   <div class="col-4 d-table-cell border p-2">
     Bacon ipsum dolor amet leberkas pork pig kielbasa shankle ribeye meatball, salami alcatra venison.
@@ -203,9 +205,9 @@ A useful example is being able to keep the height of the container equal across 
   </div>
 </div>
 ```
-You can also create an alternative [media object](/styleguide/css/utilities/layout#the-media-object) layout with `.display-table` and column widths.
+You can also create an alternative [media object](../../utilities/layout#the-media-object) layout with `.display-table` and column widths.
 
-```html
+```html title="Table grid alternative"
 <div class="d-table col-12">
   <div class="col-2 d-table-cell v-align-middle">
     <img class="width-full avatar" src="/github.png" alt="github" />
@@ -220,7 +222,7 @@ You can also create an alternative [media object](/styleguide/css/utilities/layo
 
 Note that table cells will fill the width of their container even when the total columns doesn't add up to 12.
 
-```html
+```html title="Table grid cells"
 <div class="d-table col-12">
   <div class="col-4 d-table-cell border">
     .col-4 .d-table-cell
@@ -236,11 +238,11 @@ Note that table cells will fill the width of their container even when the total
 
 ## Flexbox grids
 
-You can use [flex utilities](/styleguide/css/utilities/flexbox) on the container and columns to create a flexbox grid.
+You can use [flex utilities](../../utilities/flexbox) on the container and columns to create a flexbox grid.
 
 This can be useful for keeping columns the same height, justifying content and vertically aligning items. The flexbox grid is also great for working with responsive layouts.
 
-```html
+```html title="Flexbox grid"
 <div class="d-flex flex-column flex-md-row flex-items-center flex-md-items-center">
   <div class="col-2 d-flex flex-items-center flex-items-center flex-md-items-start">
     <img class="width-full avatar mb-2 mb-md-0" src="/github.png" alt="github" />
@@ -273,7 +275,7 @@ We use abbreviations for each breakpoint to keep the class names concise.
 
 In this example at the `sm` breakpoint 2 columns will show, at the `md` breakpoint 4 columns will show, and at the `lg` breakpoint 6 columns will show.
 
-```html
+```html title="Responsive grid"
 <div class="container-lg clearfix">
   <div class="col-sm-6 col-md-3 col-lg-2 float-left p-2 border">
     .col-sm-6 .col-md-3 .col-lg-2
@@ -298,7 +300,7 @@ In this example at the `sm` breakpoint 2 columns will show, at the `md` breakpoi
 
 For demonstration, this is how the above example would look at the `sm` breakpoint.
 
-```html
+```html title="Responsive grid small"
 <div class="container-lg clearfix">
   <div class="col-sm-6 float-left p-2 border">
     .col-sm-6
@@ -322,7 +324,7 @@ For demonstration, this is how the above example would look at the `sm` breakpoi
 ```
 This is how that same example would look at the `md` breakpoint.
 
-```html
+```html title="Responsive grid medium"
 <div class="container-lg clearfix">
   <div class="col-md-3 float-left p-2 border">
     .col-md-3
@@ -347,7 +349,7 @@ This is how that same example would look at the `md` breakpoint.
 
 This is how that example would look at the `lg` breakpoint.
 
-```html
+```html title="Responsive grid large"
 <div class="container-lg clearfix">
   <div class="col-lg-2 float-left p-2 border">
     .col-lg-2
@@ -373,7 +375,7 @@ This is how that example would look at the `lg` breakpoint.
 ## Containers
 Container widths match our breakpoints and are available at a `md`, `lg`, and `xl` size. Containers apply a max-width rather than a fixed width for responsive layouts, and they center the container.
 
-```html
+```html title="Containers sized"
 <div class="container-md border">
   .container-md, max-width 768px
 </div>
