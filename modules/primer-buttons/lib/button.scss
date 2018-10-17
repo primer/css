@@ -22,7 +22,7 @@
   i {
     font-style: normal;
     font-weight: $font-weight-semibold;
-    opacity: 0.6;
+    opacity: 0.75;
   }
 
   .octicon {
@@ -90,7 +90,7 @@
 
 // Large button adds more padding around text. Use font-size utils to increase font-size.. e.g, <p class="text-gamma"><button class="btn btn-large btn-primary" type="button">Big green button</button></p>
 .btn-large {
-  padding: 0.75em 1.25em;
+  padding: $em-spacer-6 1.25em;
   font-size: inherit;
   border-radius: 6px;
 }
@@ -201,4 +201,13 @@
       cursor: default;
     }
   }
+}
+
+.details-reset {
+  // Remove marker added by the display: list-item browser default
+  > summary { list-style: none; }
+  // Remove marker added by details polyfill
+  > summary::before { display: none; }
+  // Remove marker added by Chrome
+  > summary::-webkit-details-marker { display: none; }
 }

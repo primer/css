@@ -1,7 +1,20 @@
 {
-  "lerna": "2.0.0-rc.5",
+  "lerna": "2.4.0",
   "packages": [
-    "modules/*"
+    "modules/*",
+    "tools/*"
   ],
+  "changelog": {
+    "repo": "primer/primer",
+    "labels": {
+      "Tag: Breaking Change": ":boom: Breaking Change",
+      "Tag: Enhancement": ":rocket: Enhancement",
+      "Tag: Bug Fix": ":bug: Bug Fix",
+      "Tag: Polish": ":nail_care: Polish",
+      "Tag: Documentation": ":memo: Documentation",
+      "Tag: Internal": ":house: Internal"
+    },
+    "cacheDir": ".changelog"
+  },
   "version": "independent"
 }

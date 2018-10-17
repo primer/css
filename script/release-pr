@@ -2,10 +2,8 @@
 set -e
 echo "🐦  Publishing PR (canary) release..."
 
-# don't notify of a pending publish event because the version will differ from
-# what lerna creates as a canary release
-# $(dirname $0)/notify pending
-
 $(npm bin)/lerna publish --npm-tag=pr --canary --exact $@
 
-$(dirname $0)/notify success
+echo "📓  Updated CHANGELOG..."
+
+$(npm bin)/lerna-changelog

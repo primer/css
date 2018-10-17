@@ -3,7 +3,7 @@ title: Padding
 status: Stable
 ---
 
-Padding utilities are based on a global [spacing scale](/styleguide/css/styles/core/support/spacing) which helps keep horizontal and vertical spacing consistent. These utilities help us reduce the amount of custom CSS that could share the same properties, and allows to achieve many different page layouts using the same styles.
+Padding utilities are based on a global [spacing scale](../../support/spacing) which helps keep horizontal and vertical spacing consistent. These utilities help us reduce the amount of custom CSS that could share the same properties, and allows to achieve many different page layouts using the same styles.
 
 {:toc}
 
@@ -30,7 +30,7 @@ Since padding utilities have many variations and will be used in many places, we
 
 _**Note:** The blue in the examples below represents the element, and the green represents the padding._
 
-## Uniform spacing
+## Uniform padding
 
 Use uniform spacing utilities to apply equal padding to all sides of an element. These utilities can be used with a spacing scale from 0-6.
 
@@ -58,7 +58,7 @@ Use uniform spacing utilities to apply equal padding to all sides of an element.
 </div>
 ```
 
-## Directional spacing
+## Directional padding
 
 Use directional utilities to apply padding to an individual side, or the X and Y axis of an element. Directional utilities can change or override default padding, and can be used with a spacing scale of 0-6.
 
@@ -85,7 +85,7 @@ Use directional utilities to apply padding to an individual side, or the X and Y
 
 ## Responsive padding
 
-All padding utilities can be adjusted per [breakpoint](/styleguide/css/styles/core/support/breakpoints) using the following formula: <br /> `p-[direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
+All padding utilities can be adjusted per [breakpoint](../../support/breakpoints) using the following formula: <br /> `p-[direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
 
 ```html
 <div class="px-sm-2 px-lg-4 d-inline-block padding-green">
@@ -99,7 +99,7 @@ All padding utilities can be adjusted per [breakpoint](/styleguide/css/styles/co
 
 `.p-responsive` is a padding class that adds padding on the left and right sides of an element. On small screens, it gives the element padding of `$spacer-3`, on mid-sized screens it gives the element padding of `$spacer-6`, and on large screens, it gives the element padding of `$spacer-3`.
 
-It is intended to be used with [container styles](/styleguide/css/styles/core/objects/grid#containers)
+It is intended to be used with [container styles](../../objects/grid#containers)
 
 ```html
 <div class="container-lg p-responsive">
