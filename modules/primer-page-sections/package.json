@@ -1,5 +1,5 @@
 {
-  "version": "1.4.5",
+  "version": "1.4.9",
   "name": "primer-page-sections",
   "description": "Styles to create distinct sections of marketing pages at GitHub.",
   "homepage": "http://primer.github.io/",
@@ -25,11 +25,13 @@
     "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
     "lint": "../../script/lint-scss",
-    "test": "../../script/npm-run-all build lint"
+    "test": "../../script/npm-run-all build lint",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-marketing-support": "1.5.0",
-    "primer-support": "4.5.2"
+    "primer-marketing-support": "1.5.3",
+    "primer-support": "4.6.0"
   },
   "keywords": [
     "css",

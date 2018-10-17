@@ -26,7 +26,9 @@
     "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
     "lint": "../../script/lint-scss",
-    "test": "../../script/npm-run-all build lint test-docs"
+    "test": "../../script/npm-run-all build lint test-docs",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
   },
   "dependencies": {
     "primer-support": "<%= dependencies['primer-support'].version %>"

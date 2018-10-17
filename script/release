@@ -2,14 +2,14 @@
 set -e
 echo "📦  Publishing latest release..."
 
-$(dirname $0)/notify pending
-
 # note: try-publish should exit cleanly if it detects a duplicate
 # published version
 $(npm bin)/lerna exec -- $(pwd)/script/try-publish
 
+# Build and publish storybook
+$(npm bin)/build-storybook -o build
+script/publish-storybook
+
 echo "📓  Updated CHANGELOG..."
 
 $(npm bin)/lerna-changelog
-
-$(dirname $0)/notify success
