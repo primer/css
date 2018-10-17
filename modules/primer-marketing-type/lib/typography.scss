@@ -75,12 +75,6 @@
 
 .lead-mktg { @include lead-mktg; }
 
-// For small text
-
-.alt-text-small {
-  font-size: 14px !important;
-}
-
 // Pullquote
 
 @mixin pullquote {
