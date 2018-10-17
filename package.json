@@ -20,9 +20,9 @@
     "test": "npm run test-all-modules && lerna run test",
     "test-all-modules": "ava --verbose tests/test-*.js"
   },
-  "devDependencies": {
+  "dependencies": {
     "primer-module-build": "file:tools/primer-module-build",
-    "stylelint-config-primer": "^2.2.6",
+    "stylelint-config-primer": "file:tools/stylelint-config-primer",
     "@storybook/addon-options": "3.4.3",
     "@storybook/addons": "3.4.3",
     "@storybook/react": "3.4.3",
@@ -40,7 +40,7 @@
     "globby": "^6.1.0",
     "html-to-react": "^1.2.11",
     "isomorphic-fetch": "^2.2.1",
-    "lerna": "2.4.0",
+    "lerna": "2.11.0",
     "lerna-changelog": "^0.7.0",
     "minimatch": "^3.0.4",
     "node-sass": "^4.9.0",
