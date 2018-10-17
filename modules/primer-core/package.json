@@ -1,11 +1,12 @@
 {
-  "version": "6.3.1",
+  "version": "6.10.3",
   "name": "primer-core",
-  "description": "Primer CSS's core modules",
-  "homepage": "http://primercss.io/",
+  "description": "Primer's core modules",
+  "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "build/build.css",
+  "sass": "index.scss",
   "main": "build/index.js",
   "primer": {
     "category": "core",
@@ -15,28 +16,31 @@
     "index.scss",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-core",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-core",
   "bugs": {
-    "url": "https://github.com/primer/primer-css/issues"
+    "url": "https://github.com/primer/primer/issues"
   },
   "scripts": {
     "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
     "test": "npm run build",
-    "lint": "../../script/lint-scss"
+    "lint": "../../script/lint-scss",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-base": "1.4.0",
-    "primer-box": "2.4.0",
-    "primer-breadcrumb": "1.3.0",
-    "primer-buttons": "2.3.0",
-    "primer-forms": "1.3.1",
-    "primer-layout": "1.3.0",
-    "primer-navigation": "1.3.0",
-    "primer-support": "4.3.0",
-    "primer-table-object": "1.3.0",
-    "primer-tooltips": "1.3.0",
-    "primer-truncate": "1.3.0",
-    "primer-utilities": "4.7.0"
+    "primer-base": "1.7.4",
+    "primer-box": "2.5.9",
+    "primer-breadcrumb": "1.5.5",
+    "primer-buttons": "2.6.0",
+    "primer-forms": "2.1.4",
+    "primer-layout": "1.4.9",
+    "primer-navigation": "1.5.7",
+    "primer-pagination": "1.0.3",
+    "primer-support": "4.6.0",
+    "primer-table-object": "1.4.9",
+    "primer-tooltips": "1.5.7",
+    "primer-truncate": "1.4.9",
+    "primer-utilities": "4.12.0"
   }
 }

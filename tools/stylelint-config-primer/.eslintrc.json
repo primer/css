@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    "eslint-plugin-github"
+  ],
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+      "plugin:github/recommended",
+      "plugin:github/es6"
+  ]
+}

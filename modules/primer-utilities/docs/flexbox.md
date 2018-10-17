@@ -576,7 +576,7 @@ Use these classes to adjust the alignment of an individual flex item on the cros
 
 ## Responsive flex utilities
 
-All flexbox utilities can be adjust per [breakpoint](/styleguide/css/modules/grid#breakpoints) using the following formulas:
+All flexbox utilities can be adjust per [breakpoint](../../objects/grid#breakpoints) using the following formulas:
 
 - `d-[breakpoint]-[property]` for `display`
 - `flex-[breakpoint]-[property]-[behavior]` for various flex properties

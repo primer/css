@@ -4,19 +4,20 @@ node_js:
 
 env:
   global:
-    # npm
-    - secure: "EZewKKWQXmtCwPtYrPZq4OQblv2OyXR61qBIl3pOxGNVG2BCjD6VOgSaiYqkA9Qbt+ihfwQkiiLvTB68gbvRSiBFV9i+XLzKzt4S8CDI5RhTLAxZB3eQFVZRYzldchzWI4sdNhTvYS1kYXmsXQZD6vJmPSnFvOI/ddfzqvnNL4M="
     # github
     - secure: "J+1oWjvvXjyrwkY/4IFWKdN/weFmQcPwlRuFG4R0Gb3rYe4nqtC9l68sJvmS8asc8dQMhOhcUZCH6sjvo7l2WD4NuK4umPSbs+rJNUsfbvH4pZjStQIj/3ll1OfQelGDWAYQWhIfciYY4F3Bp0ZWTfKOppLQ2AVIYu1fPVXDdlo="
+    # github changelog
+    - secure: "KcGydAqL7ryDh2rTJJB4wU8NE5BRtnrRXDEcPBScSscO3zFsHXHBDvvO04B/9hFVatXzGYXmkn+FZ0P9QikhvebzdwwyqUG2SKFiHhMvbX0m0WtAhn5NqDuKU1r5qy5YQ18r/tiLfC9GSAlEpfLAH58pwpcn8srV3Mn/yKvlrfs="
 
 script:
   - npm test
+  - script/check-versions
 
 after_success:
   # this will short-circuit the publish step if it fails to interpolate $NPM_API_KEY
   - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
-  # copy the CHANGELOG.md primer-css for publishing
-  - cp CHANGELOG.md modules/primer-css
+  # copy the CHANGELOG.md primer for publishing
+  - cp CHANGELOG.md modules/primer
   - script/after_success
 
 deploy:

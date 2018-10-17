@@ -45,12 +45,16 @@
     margin-bottom: 0;
   }
 
+  li {
+    word-wrap: break-all;
+  }
+
   li > p {
     margin-top: $spacer-3;
   }
 
   li + li {
-    margin-top: 0.25em;
+    margin-top: $em-spacer-3;
   }
 
   dl {

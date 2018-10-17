@@ -1,3 +1,267 @@
+# 10.8.1
+#### :bug: Bug Fix
+* [#554](https://github.com/primer/primer/pull/554) Fixes peer dependency issues ([@emplums](https://github.com/emplums))
+
+#### :memo: Documentation
+* [#554](https://github.com/primer/primer/pull/554) Updates releasing documentation ([@emplums](https://github.com/emplums))
+
+#### :rocket: Enhancement
+* [#555](https://github.com/primer/primer/pull/555) Add version check to CI ([@shawnbot](https://github.com/shawnbot))
+
+# 10.8.0
+#### :rocket: Enhancement
+* [#525](https://github.com/primer/primer/pull/525) Add $spacer-0 alias. ([@AustinPaquette](https://github.com/AustinPaquette))
+* [#522](https://github.com/primer/primer/pull/522) Add .BtnGroup-parent, deprecate .BtnGroup-form. ([@muan](https://github.com/muan))
+* [#544](https://github.com/primer/primer/pull/544) Add lh-0 utility class. ([@shawnbot](https://github.com/shawnbot))
+* [#548](https://github.com/primer/primer/pull/548) Add text underline utility. ([@AustinPaquette](https://github.com/AustinPaquette))
+* [#549](https://github.com/primer/primer/pull/549) Add .user-select-none utility class. ([@AustinPaquette](https://github.com/AustinPaquette))
+
+#### :memo: Documentation
+* [#528](https://github.com/primer/primer/pull/528) Update release docs. ([@emplums](https://github.com/emplums))
+
+#### Committers: 3
+- Austin Paquette ([AustinPaquette](https://github.com/AustinPaquette))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Mu-An Chiou ([@muan](https://github.com/muan))
+- Emily Plummer ([@emplums](https://github.com/emplums))
+
+# 10.7.0
+
+#### :nail_care: Polish
+* [#511](https://github.com/primer/primer/pull/511)  change double quotes to single quotes in Avatar stack stories. ([@AustinPaquette](https://github.com/AustinPaquette))
+
+#### :memo: Documentation
+* [#520](https://github.com/primer/primer/pull/520) Update issue templates. ([@broccolini](https://github.com/broccolini))
+* [#516](https://github.com/primer/primer/pull/516) Fix modules/primer-product/README.md. ([@9585999](https://github.com/9585999))
+* [#513](https://github.com/primer/primer/pull/513) Deleting the dev branch workflow instructions. ([@jonrohan](https://github.com/jonrohan))
+* [#507](https://github.com/primer/primer/pull/507) Moving the color docs to the style guide. ([@jonrohan](https://github.com/jonrohan))
+
+#### :house: Internal
+* [#517](https://github.com/primer/primer/pull/517) Modifying notify script to publish from each package. ([@jonrohan](https://github.com/jonrohan))
+* [#515](https://github.com/primer/primer/pull/515) Auto publish storybook. ([@jonrohan](https://github.com/jonrohan))
+* [#510](https://github.com/primer/primer/pull/510) [WIP] Patch release 10.6.2. ([@shawnbot](https://github.com/shawnbot))
+
+#### Committers: 5
+- Austin Paquette ([AustinPaquette](https://github.com/AustinPaquette))
+- Diana Mounter ([broccolini](https://github.com/broccolini))
+- DieGOs ([9585999](https://github.com/9585999))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+
+# 10.6.1
+
+#### :bug: Bug Fix
+* [#506](https://github.com/primer/primer/pull/506) Fix white border on last avatar in AvatarStack (take two). ([@shawnbot](https://github.com/shawnbot))
+* [#501](https://github.com/primer/primer/pull/501) Set different z-index for .details-overlay. ([@muan](https://github.com/muan))
+
+#### Committers: 2
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- [muan](https://github.com/muan)
+
+
+# 10.6.0
+
+#### :bug: Bug Fix
+* [#491](https://github.com/primer/primer/pull/491) Add `backface-visibility` to `.hover-grow`. ([@brandonrosage](https://github.com/brandonrosage))
+
+#### :memo: Documentation
+* [#490](https://github.com/primer/primer/pull/490) Add release documentation. ([@emplums](https://github.com/emplums))
+
+#### :house: Internal
+* [#475](https://github.com/primer/primer/pull/475) Import primer-module-build to the monorepo. ([@shawnbot](https://github.com/shawnbot))
+* [#479](https://github.com/primer/primer/pull/479) Add "scoreboard" test suite. ([@shawnbot](https://github.com/shawnbot))
+
+#### Committers: 4
+- Brandon Rosage ([brandonrosage](https://github.com/brandonrosage))
+- Emily ([emplums](https://github.com/emplums))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- [muan](https://github.com/muan)
+
+
+# 10.5.0
+
+#### :rocket: Enhancement
+* [#487](https://github.com/primer/primer/pull/487) Import Pagination Component. ([@emplums](https://github.com/emplums))
+* [#474](https://github.com/primer/primer/pull/474) Add text-mono utility class. ([@emplums](https://github.com/emplums))
+* [#456](https://github.com/primer/primer/pull/456) Adding height-fit utility class. ([@jonrohan](https://github.com/jonrohan))
+
+#### :bug: Bug Fix
+* [#465](https://github.com/primer/primer/pull/465) Fix Popover--right-bottom caret positioning. ([@shawnbot](https://github.com/shawnbot))
+* [#458](https://github.com/primer/primer/pull/458) Fix broken pointer from packages to modules. ([@tysongach](https://github.com/tysongach))
+
+#### :memo: Documentation
+* [#486](https://github.com/primer/primer/pull/486) Documenting the text-inheritance color utility. ([@jonrohan](https://github.com/jonrohan))
+* [#481](https://github.com/primer/primer/pull/481) Styleguide Polish. ([@emplums](https://github.com/emplums))
+* [#464](https://github.com/primer/primer/pull/464) Fix markdown stories. ([@shawnbot](https://github.com/shawnbot))
+* [#455](https://github.com/primer/primer/pull/455) Add colorizeTooltip deprecation warning. ([@jonrohan](https://github.com/jonrohan))
+* [#452](https://github.com/primer/primer/pull/452) Update dead links in CONTRIBUTING.md. ([@agisilaos](https://github.com/agisilaos))
+
+#### Committers: 7
+- Agisilaos Tsaraboulidis ([agisilaos](https://github.com/agisilaos))
+- Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
+- Emily ([emplums](https://github.com/emplums))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Tyson Gach ([tysongach](https://github.com/tysongach))
+- [muan](https://github.com/muan)
+
+# 10.4.0 (2018-03-14)
+
+#### :rocket: Enhancement
+* [#456](https://github.com/primer/primer/pull/456) Adding height-fit utility class. ([@jonrohan](https://github.com/jonrohan))
+
+#### :memo: Documentation
+* [#455](https://github.com/primer/primer/pull/455) Add colorizeTooltip deprecation warning. ([@jonrohan](https://github.com/jonrohan))
+* [#452](https://github.com/primer/primer/pull/452) Update dead links in CONTRIBUTING.md. ([@agisilaos](https://github.com/agisilaos))
+
+#### Committers: 3
+- Agisilaos Tsaraboulidis ([agisilaos](https://github.com/agisilaos))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- [muan](https://github.com/muan)
+
+# 10.3.0 (2018-01-17)
+
+#### :rocket: Enhancement
+* [#426](https://github.com/primer/primer/pull/426) Add em spacer variables. ([@broccolini](https://github.com/broccolini))
+* [#430](https://github.com/primer/primer/pull/430) Increase input font-size to 16px on mobile. ([@broccolini](https://github.com/broccolini))
+
+#### :bug: Bug Fix
+* [#416](https://github.com/primer/primer/pull/416) Point style field to build file in subhead component. ([@muan](https://github.com/muan))
+* [#424](https://github.com/primer/primer/pull/424) Add missing $spacer-12 in $marketingSpacers variable. ([@gladwearefriends](https://github.com/gladwearefriends))
+
+#### :nail_care: Polish
+* [#418](https://github.com/primer/primer/pull/418) Button color contrast improvements. ([@broccolini](https://github.com/broccolini))
+
+#### :memo: Documentation
+* [#427](https://github.com/primer/primer/pull/427) Adding stories from markdown for the other modules that didn't have any stories. ([@jonrohan](https://github.com/jonrohan))
+
+#### :house: Internal
+* [#420](https://github.com/primer/primer/pull/420) Update licenses to 2018 🎊. ([@jonrohan](https://github.com/jonrohan))
+
+#### Committers: 4
+- Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
+- Diana Mounter ([broccolini](https://github.com/broccolini))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- [muan](https://github.com/muan)
+
+# 10.2.0 (2017-12-11)
+
+#### :rocket: Enhancement
+* [#376](https://github.com/primer/primer/pull/376) Extend spacing scale for marketing. ([@gladwearefriends](https://github.com/gladwearefriends))
+* [#409](https://github.com/primer/primer/pull/409) Add Sass key to package.json. ([@broccolini](https://github.com/broccolini))
+* [#358](https://github.com/primer/primer/pull/358) automatically style first and last breadcrumb. ([@gronke](https://github.com/gronke))
+* [#394](https://github.com/primer/primer/pull/394) Point style field to built css. ([@koddsson](https://github.com/koddsson))
+
+#### :memo: Documentation
+* [#411](https://github.com/primer/primer/pull/411) Updates to stylelint package links/docs for new structure. ([@jonrohan](https://github.com/jonrohan))
+
+#### Committers: 4
+- Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
+- Diana Mounter ([broccolini](https://github.com/broccolini))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- Kristján Oddsson ([koddsson](https://github.com/koddsson))
+- Stefan Grönke ([gronke](https://github.com/gronke))
+
+# 10.1.0 (2017-11-15)
+
+#### :rocket: Enhancement
+* [#385](https://github.com/primer/primer/pull/385) New Avatar stack. ([@califa](https://github.com/califa) & [@sophshep](https://github.com/sophshep))
+* [#404](https://github.com/primer/primer/pull/404) Tooltip component updates ([@broccolini](https://github.com/broccolini))
+
+#### :memo: Documentation
+* [#405](https://github.com/primer/primer/pull/405) Add deprecation warning for `.avatar-stack`. ([@jonrohan](https://github.com/jonrohan))
+* [#391](https://github.com/primer/primer/pull/391) Update shields.io url to https. ([@NuttasitBoonwat](https://github.com/NuttasitBoonwat))
+
+#### Committers: 5
+- Diana Mounter ([broccolini](https://github.com/broccolini))
+- Joel Califa ([califa](https://github.com/califa))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- Sophie Shepherd ([sophshep](https://github.com/sophshep))
+- [NuttasitBoonwat](https://github.com/NuttasitBoonwat)
+
+# 10.0.1 (2017-11-14)
+
+#### :bug: Bug Fix
+
+* Fixing `peerDependencies` to be greater than equal to versions. Fixing version mismatch with buttons and box.
+
+# 10.0.0 (2017-11-13)
+
+#### :boom: Breaking Change
+* [#395](https://github.com/primer/primer/pull/395) Renaming primer-css to primer. ([@jonrohan](https://github.com/jonrohan))
+* [#379](https://github.com/primer/primer/pull/379) Deprecating primer-cards and form-cards. ([@jonrohan](https://github.com/jonrohan))
+* [#336](https://github.com/primer/primer/pull/336) Move `primer-breadcrumbs` from marketing to core ([@jonrohan]((https://github.com/jonrohan))
+
+#### :rocket: Enhancement
+* [#371](https://github.com/primer/primer/pull/371) Add .details-reset. ([@muan](https://github.com/muan))
+* [#375](https://github.com/primer/primer/pull/375) New utilities & docs - fade out, hover grow, border white fade, responsive positioning, and circle. ([@sophshep](https://github.com/sophshep))
+* [#383](https://github.com/primer/primer/pull/383) Add 'Popover' component. ([@brandonrosage](https://github.com/brandonrosage))
+* [#377](https://github.com/primer/primer/pull/377) Refactor and add underline nav component. ([@ampinsk](https://github.com/ampinsk))
+* [#337](https://github.com/primer/primer/pull/337) Add marketing buttons to primer-marketing. ([@gladwearefriends](https://github.com/gladwearefriends))
+* [#342](https://github.com/primer/primer/pull/342) Add Subhead component. ([@shawnbot](https://github.com/shawnbot))
+* [#341](https://github.com/primer/primer/pull/341) Add branch-name component from github/github. ([@shawnbot](https://github.com/shawnbot))
+
+#### :bug: Bug Fix
+* [#360](https://github.com/primer/primer/pull/360) Remove ::before ::after padding hack on markdown. ([@jonrohan](https://github.com/jonrohan))
+* [#320](https://github.com/primer/primer/pull/320) Remove -webkit-text-decoration-skip override. ([@antons](https://github.com/antons))
+* [#359](https://github.com/primer/primer/pull/359) Change markdown li break to handle Safari 10.x user stylesheet bug. ([@feministy](https://github.com/feministy))
+* [#388](https://github.com/primer/primer/pull/388) Button border-radius fix to override Chroma 62. ([@broccolini](https://github.com/broccolini))
+* [#307](https://github.com/primer/primer/pull/307) Do not suppress opacity transition for tooltipped-no-delay. ([@astorije](https://github.com/astorije))
+
+#### :house: Internal
+* [#396](https://github.com/primer/primer/pull/396) Use lerna-changelog to generate a changelog. ([@jonrohan](https://github.com/jonrohan))
+* [#382](https://github.com/primer/primer/pull/382) Update Button docs. ([@JasonEtco](https://github.com/JasonEtco))
+* [#390](https://github.com/primer/primer/pull/390) Updating `storiesFromMarkdown` to read in rails Octicons helper and replace with react component. ([@jonrohan](https://github.com/jonrohan))
+* [#389](https://github.com/primer/primer/pull/389) Publish alpha release any time we're not on a release branch or master. ([@jonrohan](https://github.com/jonrohan))
+* [#384](https://github.com/primer/primer/pull/384) Add test to check for the current year in the license and source. ([@jonrohan](https://github.com/jonrohan))
+* [#374](https://github.com/primer/primer/pull/374) Improve Pull Request template. ([@agisilaos](https://github.com/agisilaos))
+
+#### Committers: 13
+- Agisilaos Tsaraboulidis ([agisilaos](https://github.com/agisilaos))
+- Amanda Pinsker ([ampinsk](https://github.com/ampinsk))
+- Anton Sotkov ([antons](https://github.com/antons))
+- Brandon Rosage ([brandonrosage](https://github.com/brandonrosage))
+- Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
+- Diana Mounter ([broccolini](https://github.com/broccolini))
+- Jason Etcovitch ([JasonEtco](https://github.com/JasonEtco))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- Jérémie Astori ([astorije](https://github.com/astorije))
+- Mu-An ✌️ Chiou ([muan](https://github.com/muan))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Sophie Shepherd ([sophshep](https://github.com/sophshep))
+- liz abinante! ([feministy](https://github.com/feministy))
+
+**Special thanks to @shaharke for transferring ownership of the Primer npm package to us so that we could make the rename  happen!** :heart:
+
+# 9.6.0
+
+### Added
+- Storybook. We've added a storybook prototyping environment for testing components in seclusion. To start the server run `npm start`
+- Adding yeoman generator for creating a primer module. `generator-primer-module`
+- Importing `stylelint-config-primer` from https://github.com/primer/stylelint-config-primer/ into monorepo.
+- Importing `stylelint-selector-no-utility` from https://github.com/primer/stylelint-selector-no-utility into monorepo.
+
+### Changes
+- Deployment and publishing scripts refinements.
+
+# 9.5.0
+
+### Added
+- It's now possible to style `<summary>` elements as buttons and have them appear in the active/selected state when the enclosing [`<details>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) is open. #346
+
+### Changes
+- Updates our release candidate versioning logic so that prerelease increments are done on a per-module basis, fixing #350.
+
+# 9.4.0
+
+### Added
+- Add `v-align-baseline` class to `primer-utilities` #324
+- Add deprecation warnings for `primer-cards` and `primer-forms/lib/form-validation.scss` #347 (these will be removed in v10.0.0)
+
+### Changes
+- Update npm metadata for `primer`, `primer-core`, `primer-product`, and `primer-marketing` #328
+- Remove `HEAD` heading from the changelog #327
+
 # 9.3.0
 
 ## Added
@@ -7,7 +271,7 @@
 ## Changes
 - Removes `docs` from `gitignore`
 - Removes the `^` from all dependencies so that we can publish exact versions
-- Consolidates release notes from various sources into one changelog located in `/modules/primer-css/CHANGELOG.md`
+- Consolidates release notes from various sources into one changelog located in `/modules/primer/CHANGELOG.md`
 
 # 9.2.0
 
@@ -18,7 +282,7 @@
 ## Changes
 
 - Remove per-module configurations (`.gitignore`, `.postcss.json`, `.stylelintrc.json`) and `CHANGELOG.md` files in #284
-- Replace most static `font-size`, `font-weight`, and `line-height` CSS property values with their [SCSS variable equivalents](https://github.com/primer/primer-css/blob/c9ea37316fbb73c4d9931c52b42bc197260c0bf6/modules/primer-support/lib/variables/typography.scss#L12-L33) in #252
+- Replace most static `font-size`, `font-weight`, and `line-height` CSS property values with their [SCSS variable equivalents](https://github.com/primer/primer/blob/c9ea37316fbb73c4d9931c52b42bc197260c0bf6/modules/primer-support/lib/variables/typography.scss#L12-L33) in #252
 - Refactor CI scripts to use Travis conditional deployment for release candidate and final release publish steps in #290
 
 # 9.1.1
@@ -65,7 +329,7 @@ This release also includes major improvements to our Travis build scripts to aut
 
 We discovered that `primer-core` specified and outdated version of `primer-base` in it's dependencies. The outdated version did not have `normalize.scss` included which could cause some issues. This has issue occurred during v7.0.0 when creating the new monorepo. Also fixes repo urls in `package.json` for individual packages.
 
-See PR [#243](https://github.com/primer/primer-css/pull/243)
+See PR [#243](https://github.com/primer/primer/pull/243)
 
 ## Changes
 
@@ -110,7 +374,7 @@ See PR [#243](https://github.com/primer/primer-css/pull/243)
 
 # 8.0.0 - Imports
 
-Fixes issues with the ordering of imports in each of our meta-packages. See PR [#239](https://github.com/primer/primer-css/pull/239)
+Fixes issues with the ordering of imports in each of our meta-packages. See PR [#239](https://github.com/primer/primer/pull/239)
 
 
 ## Changes
@@ -126,7 +390,7 @@ Fixes issues with the ordering of imports in each of our meta-packages. See PR [
 
 # 7.0.0 - Monorepo
 
-In an effort to improve our publishing workflow we turned Primer CSS into a monorepo, made this repo the source of truth for Primer by removing Primer modules from GitHub, and setup Lerna for managing multiple packages and maintaining independent versioning for all our modules.
+In an effort to improve our publishing workflow we turned Primer into a monorepo, made this repo the source of truth for Primer by removing Primer modules from GitHub, and setup Lerna for managing multiple packages and maintaining independent versioning for all our modules.
 
 This is exciting because:
 
@@ -135,7 +399,7 @@ This is exciting because:
 - we no longer have files like package.json, scripts, and readme's in the GitHub app that don't really belong there
 - **we can accept pull requests from external contributors** again!
 
-See PR for more details on this change: https://github.com/primer/primer-css/pull/230
+See PR for more details on this change: https://github.com/primer/primer/pull/230
 
 ## Other changes:
 

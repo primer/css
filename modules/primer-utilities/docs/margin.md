@@ -3,7 +3,7 @@ title: Margin
 status: Stable
 ---
 
-Margin utilities are based on a global [spacing scale](/styleguide/css/styles/core/support/spacing) which helps keep horizontal and vertical spacing consistent. These utilities help us reduce the amount of custom CSS that share the same properties, and allows to achieve many different page layouts using the same styles.
+Margin utilities are based on a global [spacing scale](../../support/spacing) which helps keep horizontal and vertical spacing consistent. These utilities help us reduce the amount of custom CSS that share the same properties, and allows to achieve many different page layouts using the same styles.
 
 {:toc}
 
@@ -31,7 +31,7 @@ Since margin utilities have many variations and will be used in many places, we 
 
 _**Note:** The blue in the examples represents the element, and the orange represents the margin_
 
-## Uniform spacing
+## Uniform margins
 
 Use uniform spacing utilities to apply equal margin to all sides of an element. These utilities can change or override default margins, and can be used with a spacing scale from 0-6.
 
@@ -59,7 +59,7 @@ Use uniform spacing utilities to apply equal margin to all sides of an element. 
 </div>
 ```
 
-## Directional spacing
+## Directional margins
 
 Use directional utilities to apply margin to an individual side, or the X and Y axis of an element. Directional utilities can change or override default margins, and can be used with a spacing scale of 0-6.
 
@@ -103,7 +103,7 @@ Reset margins built into typography elements or other components with `m-0`, `mt
 
 ## Responsive margins
 
-All margin utilities, except `mx-auto`, can be adjusted per [breakpoint](/styleguide/css/modules/grid#breakpoints) using the following formula: `m[direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
+All margin utilities, except `mx-auto`, can be adjusted per [breakpoint](../../objects/grid#breakpoints) using the following formula: `m[direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
 
 ```html
 <div class="d-inline-block margin-orange">

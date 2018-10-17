@@ -1,0 +1,40 @@
+{
+  "version": "0.0.1",
+  "name": "<%= module %>",
+  "description": "<%= description %>",
+  "homepage": "http://primer.github.io/",
+  "primer": {
+    "category": "<%= category %>",
+    "module_type": "<%= module_type %>"
+  },
+  "files": [
+    "index.scss",
+    "lib",
+    "build"
+  ],
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "build/build.css",
+  "sass": "index.scss",
+  "main": "build/index.js",
+  "repository": "https://github.com/primer/primer/tree/master/modules/<%= module %>",
+  "bugs": {
+    "url": "https://github.com/primer/primer/issues"
+  },
+  "scripts": {
+    "test-docs": "../../script/test-docs",
+    "build": "../../script/npm-run primer-module-build index.scss",
+    "prepare": "npm run build",
+    "lint": "../../script/lint-scss",
+    "test": "../../script/npm-run-all build lint test-docs",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
+  },
+  "dependencies": {
+    "primer-support": "<%= dependencies['primer-support'].version %>"
+  },
+  "keywords": [
+    "github",
+    "primer"
+  ]
+}

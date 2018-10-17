@@ -1,11 +1,12 @@
 {
-  "version": "5.3.1",
+  "version": "5.6.7",
   "name": "primer-product",
-  "description": "Primer CSS's product modules",
-  "homepage": "http://primercss.io/",
+  "description": "Primer's product modules",
+  "homepage": "http://primer.github.io/",
   "author": "GitHub, Inc.",
   "license": "MIT",
   "style": "build/build.css",
+  "sass": "index.scss",
   "main": "build/index.js",
   "primer": {
     "category": "product",
@@ -15,23 +16,27 @@
     "index.scss",
     "build"
   ],
-  "repository": "https://github.com/primer/primer-css/tree/master/modules/primer-product",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-product",
   "bugs": {
-    "url": "https://github.com/primer/primer-css/issues"
+    "url": "https://github.com/primer/primer/issues"
   },
   "scripts": {
     "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
     "test": "npm run build",
-    "lint": "../../script/lint-scss"
+    "lint": "../../script/lint-scss",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-alerts": "1.4.0",
-    "primer-avatars": "1.3.0",
-    "primer-blankslate": "1.3.0",
-    "primer-dropdown": "0.1.0",
-    "primer-labels": "1.4.0",
-    "primer-markdown": "3.6.0",
-    "primer-support": "4.3.0"
+    "primer-alerts": "1.5.9",
+    "primer-avatars": "1.5.6",
+    "primer-blankslate": "1.4.9",
+    "primer-branch-name": "1.0.7",
+    "primer-labels": "1.5.9",
+    "primer-markdown": "3.7.9",
+    "primer-popover": "0.1.4",
+    "primer-subhead": "1.0.7",
+    "primer-support": "4.6.0"
   }
 }
