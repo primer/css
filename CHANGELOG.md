@@ -1,4 +1,56 @@
-## 10.6.1
+# 10.9.0
+
+# 10.8.1
+#### :bug: Bug Fix
+* [#554](https://github.com/primer/primer/pull/554) Fixes peer dependency issues ([@emplums](https://github.com/emplums))
+
+#### :memo: Documentation
+* [#554](https://github.com/primer/primer/pull/554) Updates releasing documentation ([@emplums](https://github.com/emplums))
+
+#### :rocket: Enhancement
+* [#555](https://github.com/primer/primer/pull/555) Add version check to CI ([@shawnbot](https://github.com/shawnbot))
+
+# 10.8.0
+#### :rocket: Enhancement
+* [#525](https://github.com/primer/primer/pull/525) Add $spacer-0 alias. ([@AustinPaquette](https://github.com/AustinPaquette))
+* [#522](https://github.com/primer/primer/pull/522) Add .BtnGroup-parent, deprecate .BtnGroup-form. ([@muan](https://github.com/muan))
+* [#544](https://github.com/primer/primer/pull/544) Add lh-0 utility class. ([@shawnbot](https://github.com/shawnbot))
+* [#548](https://github.com/primer/primer/pull/548) Add text underline utility. ([@AustinPaquette](https://github.com/AustinPaquette))
+* [#549](https://github.com/primer/primer/pull/549) Add .user-select-none utility class. ([@AustinPaquette](https://github.com/AustinPaquette))
+
+#### :memo: Documentation
+* [#528](https://github.com/primer/primer/pull/528) Update release docs. ([@emplums](https://github.com/emplums))
+
+#### Committers: 3
+- Austin Paquette ([AustinPaquette](https://github.com/AustinPaquette))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Mu-An Chiou ([@muan](https://github.com/muan))
+- Emily Plummer ([@emplums](https://github.com/emplums))
+
+# 10.7.0
+
+#### :nail_care: Polish
+* [#511](https://github.com/primer/primer/pull/511)  change double quotes to single quotes in Avatar stack stories. ([@AustinPaquette](https://github.com/AustinPaquette))
+
+#### :memo: Documentation
+* [#520](https://github.com/primer/primer/pull/520) Update issue templates. ([@broccolini](https://github.com/broccolini))
+* [#516](https://github.com/primer/primer/pull/516) Fix modules/primer-product/README.md. ([@9585999](https://github.com/9585999))
+* [#513](https://github.com/primer/primer/pull/513) Deleting the dev branch workflow instructions. ([@jonrohan](https://github.com/jonrohan))
+* [#507](https://github.com/primer/primer/pull/507) Moving the color docs to the style guide. ([@jonrohan](https://github.com/jonrohan))
+
+#### :house: Internal
+* [#517](https://github.com/primer/primer/pull/517) Modifying notify script to publish from each package. ([@jonrohan](https://github.com/jonrohan))
+* [#515](https://github.com/primer/primer/pull/515) Auto publish storybook. ([@jonrohan](https://github.com/jonrohan))
+* [#510](https://github.com/primer/primer/pull/510) [WIP] Patch release 10.6.2. ([@shawnbot](https://github.com/shawnbot))
+
+#### Committers: 5
+- Austin Paquette ([AustinPaquette](https://github.com/AustinPaquette))
+- Diana Mounter ([broccolini](https://github.com/broccolini))
+- DieGOs ([9585999](https://github.com/9585999))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+
+# 10.6.1
 
 #### :bug: Bug Fix
 * [#506](https://github.com/primer/primer/pull/506) Fix white border on last avatar in AvatarStack (take two). ([@shawnbot](https://github.com/shawnbot))
