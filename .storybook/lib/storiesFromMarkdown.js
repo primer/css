@@ -11,6 +11,7 @@ const blockToStory = block => {
   }
 }
 
+export default function storiesFromMarkdown(req) {
   return req.keys().reduce((stories, file) => {
     const markdown = req(file)
     const path = file.replace(/^\.\//, '')
