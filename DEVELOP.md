@@ -10,7 +10,7 @@ The top-level `package.json` is not published, but tracks common dependencies fo
 ## Workflow
 The typical Primer workflow looks something like this:
 
-1. [Install]
+1. [Install](#install)
 2. [Start Storybook][Storybook]
 3. Navigate to the module you're working on and modify the SCSS and/or markdown files.
 4. Test your changes in Storybook.
