@@ -79,42 +79,42 @@ This section is targeted at maintainers of primer, to instruct them on the proce
 
 1. Find or create a new pull request with a release branch from `master` and name it `release-<version>`.
 
- (CI will publish a release candidate version to npm for branches prefixed with `release`. These version numbers have a `rc.<number>` suffix on them)
+   (CI will publish a release candidate version to npm for branches prefixed with `release`. These version numbers have a `rc.<number>` suffix on them)
 
- For the pull request you can use the following template.
+   For the pull request you can use the following template:
 
- ```md
-  # Primer Minor Release
+   ```md
+   # Primer [Major|Minor|Patch] Release
 
-  Tracking Issue for next release: 📦 **0.0.0**
-  Approximate release date: 📆
+   Tracking Issue for next release: 📦 **0.0.0**
+   Approximate release date: 📆 DD/MM/YY
 
-  ### Must
+   ### Must
 
-  - [ ]
+   - [ ]
 
-  ### Should
+   ### Should
 
-  - [ ]
+   - [ ]
 
-  ### Could
+   ### Could
 
-  - [ ]
+   - [ ]
 
-  ----
+   ----
 
-  ### Ship checklist
+   ### Ship checklist
 
-  - [ ] Update CHANGELOG
-  - [ ] Run version bump
-  - [ ] Update primer.github.io
-  - [ ] Update github/github
-  - [ ] Update the style guide
-  - [ ] Update the release tag note
-  - [ ] Create a new pull request for the next release
+   - [ ] Update CHANGELOG
+   - [ ] Run version bump
+   - [ ] Update primer.github.io
+   - [ ] Update github/github
+   - [ ] Update the style guide
+   - [ ] Update the release tag note
+   - [ ] Create a new pull request for the next release
 
-  /cc @primer/ds-core
- ```
+   /cc @primer/ds-core
+   ```
 
 2. Go through the tracking issue and make sure everything that should be merged in is merged in.
 
@@ -132,17 +132,15 @@ This section is targeted at maintainers of primer, to instruct them on the proce
 
 2. Update the primer version in your terminal  `bin/npm install primer@<version>`.
 
-3. Update `stylelint-config-primer` in your terminal to the appropriate version `bin/npm install stylelint-config-primer@latest`.
+3. If you need to make changes to github/github due to the Primer release, make a separate branch. When ready, merge that branch into your release branch.
 
-4. If you need to make changes to github/github due to the Primer release, make a separate branch. When ready, merge that branch into your release branch.
+4. Add reviewers.
 
-5. Add reviewers.
+5. Check that every deleted vendor file has an accompanying updated vendor file and that the version numbers look correct.
 
-6. Check that every deleted vendor file has an accompanying updated vendor file and that the version numbers look correct.
+6. Test on review-lab.
 
-7. Test on review-lab.
-
-8. When ready, merge! 🎉
+7. When ready, merge! 🎉
 
 
 ## Other items that need to be done after publishing Primer
