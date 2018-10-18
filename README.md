@@ -67,14 +67,13 @@ You can find docs about our release process in [RELEASING.md](./RELEASING.md).
 
 ## Documentation
 
-You can read more about primer in the [docs][docs].
+Primer CSS documentation is published to the [GitHub Style Guide](https://styleguide.github.com/primer/).
 
 ## License
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
 [primer]: https://github.com/primer/primer
-[docs]: http://primer.github.io/
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/
