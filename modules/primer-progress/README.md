@@ -41,11 +41,6 @@ status: Experimental
 -->
 
 ```html
-<div class="progress-bar mb-4">
-  <div class="progress" style="width: 50%">
-  </div>
-</div>
-
 <span class="Progress">
   <span class="Progress-value bg-green" style="width: 50%;"></span>
   <span class="Progress-value bg-purple" style="width: 25%;"></span>
@@ -63,17 +58,14 @@ status: Experimental
 -->
 
 ```html
-<div class="progress-bar progress-bar-small mb-4">
-  <div class="progress" style="width:50%">
-  </div>
-</div>
-
 <span class="Progress Progress--small">
   <span class="Progress-value bg-green" style="width: 50%;"></span>
   <span class="Progress-value bg-purple" style="width: 25%;"></span>
   <span class="Progress-value bg-red" style="width: 5%;"></span>
 </span>
 ```
+
+<!-- %enddocs -->
 
 ## Progress Bar With Tooltip
 
@@ -83,46 +75,11 @@ status: Experimental
 -->
 
 ```html
-<div class="tooltipped tooltipped-n mt-3" aria-label="78 done / 6 in progress / 2 to do">
-  <div class="progress-bar mb-4">
-    <div class="progress" style="width: 50%">
-    </div>
-  </div>
-</div>
-
-<div class="tooltipped tooltipped-n mt-3" aria-label="78 done / 6 in progress / 2 to do">
+<div class="tooltipped tooltipped-n" aria-label="78 done / 6 in progress / 2 to do">
   <span class="Progress">
     <span class="Progress-value bg-green" style="width: 50%;"></span>
-  </span>
-</div>
-```
-
-## WIP Reverse Progress
-
-<!-- %docs
-title: Progress Bar Reverse
-status: Experimental
--->
-
-```html
-<div class="reverse-progress-container">
-  <div style="width:50%" class="reverse-progress-bar" ></div>
-</div>
-```
-
-<!-- %enddocs -->
-
-## WIP Progress Bar Inline
-
-<!-- %docs
-title: Progress Bar Inline
-status: Experimental
--->
-
-```html
-<div class="progress-bar-inline">
-  <span class="progress-bar">
-    <span class="progress" style="width:50%"> </span>
+    <span class="Progress-value bg-purple" style="width: 25%;"></span>
+    <span class="Progress-value bg-red" style="width: 5%;"></span>
   </span>
 </div>
 ```

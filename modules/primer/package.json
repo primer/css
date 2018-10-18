@@ -61,7 +61,7 @@
     "primer-tooltips": "1.5.7",
     "primer-truncate": "1.4.9",
     "primer-utilities": "4.12.0",
-    "primer-progress": "file:../primer-progress"
+    "primer-progress": "0.0.1"
   },
   "keywords": [
     "primer",
