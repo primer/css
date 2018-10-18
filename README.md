@@ -46,16 +46,10 @@ Then, you would import the module with:
 @import "primer-navigation/index.scss";
 ```
 
-## Build
-
-For a compiled **CSS** version of this module, an npm script is included that will output a CSS version to `build/build.css`. The built CSS file is also included in the npm package.
-
-```sh
-$ npm run build
-```
+## Development
+See [DEVELOP.md](./DEVELOP.md) for development docs.
 
 ## Releasing (Staff only)
-
 You can find docs about our release process in [RELEASING.md](./RELEASING.md).
 
 ## Documentation
