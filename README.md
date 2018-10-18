@@ -46,13 +46,6 @@ Then, you would import the module with:
 @import "primer-navigation/index.scss";
 ```
 
-Or, while you're figuring out which modules you need, you can import them directly from the `primer` [`modules` directory](./modules) like so:
-
-```scss
-@import "primer/modules/primer-navigation/index.css";
-```
-
-
 ## Build
 
 For a compiled **CSS** version of this module, an npm script is included that will output a CSS version to `build/build.css`. The built CSS file is also included in the npm package.
