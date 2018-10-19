@@ -1,20 +1,24 @@
 const Metalsmith = require('metalsmith')
 const filter = require('metalsmith-filter')
-const watch = require('metalsmith-watch')
 const frontmatter = require('metalsmith-matters')
+const titleCase = require('title-case')
 const {basename, join, resolve} = require('path')
+
 const each = require('./lib/each')
 const parseDocComments = require('./lib/parse-doc-comments')
 const rename = require('./lib/rename')
 const addPackageMeta = require('./lib/add-package-meta')
 const fileMap = require('./map')
 
+const args = process.argv.slice(2)
+const has = opt => args.indexOf(opt) > -1
+
 Metalsmith(__dirname)
   .source('../modules')
   .destination('pages')
   // disable Metalsmith's built-in frontmatter parser
   .frontmatter(false)
-  .clean(true)
+  .clean(has('clean'))
   // only match these patterns
   .use(filter([
     '*/README.md',
@@ -47,9 +51,3 @@ Metalsmith(__dirname)
       throw error
     }
   })
-
-function titleCase(str) {
-  return str.split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.substr(1))
-    .join(' ')
-}
