@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "predev": "npm run prebuild",
+    "dev": "next dev",
+    "prebuild": "node metalsmith.js",
+    "build": "next build",
+    "start": "next"
+  },
+  "dependencies": {
+    "@primer/components": "^4.0.0-beta",
+    "metalsmith": "^2.3.0",
+    "metalsmith-filter": "^1.0.2",
+    "metalsmith-matters": "^1.2.0",
+    "metalsmith-watch": "^1.0.3",
+    "minimatch": "^3.0.4",
+    "next": "^7.0.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "recompose": "^0.30.0"
+  }
+}
