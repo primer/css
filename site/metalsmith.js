@@ -53,4 +53,3 @@ function titleCase(str) {
     .map(word => word.charAt(0).toUpperCase() + word.substr(1))
     .join(' ')
 }
-
