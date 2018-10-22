@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -e
+before=${1:-~/github/styleguide/src/_primer}
+pushd $before > /dev/null
+find . | sort > before.txt
+popd > /dev/null
+mv $before/before.txt .
+pushd pages > /dev/null
+find . | sort > ../after.txt
+popd > /dev/null
+diff before.txt after.txt
