@@ -14,15 +14,6 @@ storiesOf('Button', module)
       <button className='btn btn-primary disabled'>disabled</button>
     </div>
   ))
-  .add('btn-secondary', () => (
-    <div className='p-4 d-flex flex-justify-between'>
-      <button className='btn btn-secondary'>Button</button>
-      <button className='btn btn-secondary hover'>hover</button>
-      <button className='btn btn-secondary focus'>focus</button>
-      <button className='btn btn-secondary selected'>selected</button>
-      <button className='btn btn-secondary disabled'>disabled</button>
-    </div>
-  ))
   .add('btn-danger', () => (
     <div className='p-4 d-flex flex-justify-between'>
       <button className='btn btn-danger'>Button</button>
@@ -62,7 +53,7 @@ storiesOf('Button', module)
   .add('btn-large', () => (
     <div className='f3 p-4'>
       <a className="btn btn-large btn-purple mr-6" href="#url" role="button">Large link button</a>
-      <button className="btn btn-large btn-outline-blue" type="button">Large button button</button>
+      <button className="btn btn-large" type="button">Large button button</button>
     </div>
   ))
   .add('btn-link', () => (

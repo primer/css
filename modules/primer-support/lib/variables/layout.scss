@@ -65,3 +65,8 @@ $breakpoints: (
   // Extra large screen / wide desktop
   xl: $width-xl
 ) !default;
+
+$responsive-variants: ("": "");
+@each $key in map-keys($breakpoints) {
+  $responsive-variants: map-merge($responsive-variants, ($key: "-#{$key}"));
+}
