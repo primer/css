@@ -26,6 +26,9 @@ test("file scaffolding", t => {
       assert.fileContent(readme, `npmjs.org/package/${module}`)
       assert.fileContent(readme, `npm install --save ${module}`)
 
+      // default Storybook config
+      assert.fileContent(path("stories.js"), `storiesOf('Test'`)
+
       assert.file(path("lib/test.scss"))
 
       t.pass("All the files exist.")
