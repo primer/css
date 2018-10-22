@@ -50,10 +50,27 @@ status: Experimental
 
 <!-- %enddocs -->
 
+## Large Progress Bar
+
+<!-- %docs
+title: Large Progress Bar
+status: Experimental
+-->
+
+```html
+<span class="Progress Progress--large">
+  <span class="Progress-value bg-green" style="width: 50%;"></span>
+  <span class="Progress-value bg-purple" style="width: 25%;"></span>
+  <span class="Progress-value bg-red" style="width: 5%;"></span>
+</span>
+```
+
+<!-- %enddocs -->
+
 ## Small Progress Bar
 
 <!-- %docs
-title: Progress Bar Small
+title: Small Progress Bar
 status: Experimental
 -->
 
