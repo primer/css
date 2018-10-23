@@ -38,6 +38,7 @@
   "dependencies": {
     "autoprefixer": "^6.7.7",
     "cssstats": "^3.2.0",
+    "fs-extra": "^4.0.2",
     "meow": "^3.7.0",
     "node-sass": "^4.9.0",
     "node-sass-import": "^2.0.0",
