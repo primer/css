@@ -1,5 +1,5 @@
 {
-  "version": "1.5.7",
+  "version": "1.5.8",
   "name": "primer-navigation",
   "description": "Singular purpose and flexible navigation elements.",
   "homepage": "http://primer.github.io/",
@@ -30,7 +30,7 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.6.0"
+    "primer-support": "4.6.1"
   },
   "keywords": [
     "primer",
