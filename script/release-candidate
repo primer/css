@@ -29,26 +29,18 @@ const depFields = [
 ]
 
 const getUpdated = () => {
-  // first, get the latest published version
-  return execa('npm', ['view', `${PRIMER_CSS}@latest`, '.version'])
-    .then(res => res.stdout)
-    .then(version => {
-      // create a git tag for primer@<that version>
-      const tag = `${PRIMER_CSS}@${version}`
-      // and pass --since=<tag> to lerna updated, because it's not very smart
-      return execa(lernaBin, ['updated', '--json', `--since=${tag}`], {
-          reject: false
-        })
-        .then(res => {
-          if (res.stdout == '') {
-            console.warn('No packages need updating')
-            return []
-          } else {
-            return JSON.parse(res.stdout)
-          }
-        })
-        .then(updated => updated.map(pkg => pkg.name))
+  return execa(lernaBin, ['updated', '--json'], {
+      reject: false
     })
+    .then(res => {
+      if (res.stdout == '') {
+        console.warn('No packages need updating')
+        return []
+      } else {
+        return JSON.parse(res.stdout)
+      }
+    })
+    .then(updated => updated.map(pkg => pkg.name))
 }
 
 const writePackage = (pkg) => {
