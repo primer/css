@@ -1,4 +1,23 @@
 # 10.9.0
+#### :rocket: Enhancement
+* [#586](https://github.com/primer/primer/pull/586) Hiding .Counter component when it's empty.. ([@jonrohan](https://github.com/jonrohan))
+* [#545](https://github.com/primer/primer/pull/545) Simplify responsive utilities with $responsive-variants. ([@shawnbot](https://github.com/shawnbot))
+* [#557](https://github.com/primer/primer/pull/557) Add !important to [hidden]. ([@muan](https://github.com/muan))
+
+#### :memo: Documentation
+* [#580](https://github.com/primer/primer/pull/580) Remove invalid button classes. ([@shawnbot](https://github.com/shawnbot))
+
+#### :house: Internal
+* [#581](https://github.com/primer/primer/pull/581) Use code-blocks. ([@shawnbot](https://github.com/shawnbot))
+* [#530](https://github.com/primer/primer/pull/530) Adding user details to storybook publish script. ([@jonrohan](https://github.com/jonrohan))
+* [#579](https://github.com/primer/primer/pull/579) Upgrade to lerna@2.11, rebuild package-lock. ([@shawnbot](https://github.com/shawnbot))
+
+#### Committers: 5
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- Mickaël Derriey ([mderriey](https://github.com/mderriey))
+- Mu-An Chiou ([muan](https://github.com/muan))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Sophie Shepherd ([sophshep](https://github.com/sophshep))
 
 # 10.8.1
 #### :bug: Bug Fix
