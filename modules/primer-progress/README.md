@@ -40,6 +40,8 @@ title: Progress Bar
 status: Experimental
 -->
 
+Use progress bars to show progress.
+
 ```html
 <span class="Progress">
   <span class="Progress-value bg-green" style="width: 50%;"></span>
