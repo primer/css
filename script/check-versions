@@ -36,7 +36,9 @@ globby(lernaConfig.packages)
             .forEach(dep => {
               const expected = map.get(dep).version
               const actual = deps[dep]
-              if (expected !== actual) {
+              if (actual === `file:../${dep}`) {
+                console.warn(`${pkg.name} uses "${actual}" version specifier for ${dep}`)
+              } else if (expected !== actual) {
                 throw new Error(
                   `${pkg.name}.${field} has bad version for ${dep}: ${expected} != ${actual}`
                 )
