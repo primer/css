@@ -19,6 +19,8 @@ const RELEASE_VERSION = getReleaseVersion(
   process.env.TRAVIS_BRANCH
 )
 
+const dryRun = process.argv.slice(2).indexOf('--dry-run') > -1
+
 const depFields = [
   'dependencies',
   'devDependencies',
@@ -26,11 +28,13 @@ const depFields = [
   'peerDependencies',
 ]
 
-const getUpdated = (args) => {
-  return execa(lernaBin, ['updated', '--json'], { reject: false })
+const getUpdated = () => {
+  return execa(lernaBin, ['updated', '--json', '--since=master'], {
+      reject: false
+    })
     .then(res => {
-      if (res.stdout == "") {
-        console.warn("No packages need updating")
+      if (res.stdout == '') {
+        console.warn('No packages need updating')
         return []
       } else {
         return JSON.parse(res.stdout)
@@ -75,7 +79,7 @@ const increment = (version, by, preid) => {
   const {major, minor, patch} = semver(version)
   const prev = [major, minor, patch].join('.')
   const next = semver.inc(version, by, preid)
-  // if this is a prerelease, "revert" major.minor.patch
+  // if this is a prerelease, 'revert' major.minor.patch
   // so that only the prerelease id is incremented
   return by === PRERELEASE
     ? next.replace(/^\d+\.\d+\.\d+/, prev)
@@ -128,7 +132,16 @@ revertPackages()
         })
         .then(updated => {
           const tasks = updated.map(pkg => {
-            return execa('npm', ['publish', '--tag', DIST_TAG], {
+            // console.log('publish:', pkg.name, '@', pkg.version, 'in', pkg.dir)
+            const command = dryRun ? 'echo' : 'npm'
+            const args = ['publish', '--tag', DIST_TAG]
+            if (dryRun) {
+              args.unshift('npm')
+              args.push('--name', pkg.name)
+              args.push('--version', pkg.version)
+              args.push('--dir', pkg.dir)
+            }
+            return execa(command, args, {
               cwd: pkg.dir,
               stdio: 'inherit',
             })
@@ -136,7 +149,7 @@ revertPackages()
           return Promise.all(tasks)
         })
         .then(() => {
-          console.warn("📓  Updated CHANGELOG...\n")
+          console.warn('📓  Updated CHANGELOG...\n')
           return execa(`${bin}lerna-changelog`, [], { env: process.env })
             .then(result => {
               console.warn(result.stdout)
