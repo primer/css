@@ -29,7 +29,7 @@ const depFields = [
 ]
 
 const getUpdated = () => {
-  return execa(lernaBin, ['updated', '--json', '--since=master'], {
+  return execa(lernaBin, ['updated', '--json'], {
       reject: false
     })
     .then(res => {
