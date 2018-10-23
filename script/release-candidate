@@ -29,18 +29,26 @@ const depFields = [
 ]
 
 const getUpdated = () => {
-  return execa(lernaBin, ['updated', '--json'], {
-      reject: false
+  // first, get the latest published version
+  return execa('npm', ['view', `${PRIMER_CSS}@latest`, '.version'])
+    .then(res => res.stdout)
+    .then(version => {
+      // create a git tag for primer@<that version>
+      const tag = `${PRIMER_CSS}@${version}`
+      // and pass --since=<tag> to lerna updated, because it's not very smart
+      return execa(lernaBin, ['updated', '--json', `--since=${tag}`], {
+          reject: false
+        })
+        .then(res => {
+          if (res.stdout == '') {
+            console.warn('No packages need updating')
+            return []
+          } else {
+            return JSON.parse(res.stdout)
+          }
+        })
+        .then(updated => updated.map(pkg => pkg.name))
     })
-    .then(res => {
-      if (res.stdout == '') {
-        console.warn('No packages need updating')
-        return []
-      } else {
-        return JSON.parse(res.stdout)
-      }
-    })
-    .then(updated => updated.map(pkg => pkg.name))
 }
 
 const writePackage = (pkg) => {
@@ -132,14 +140,11 @@ revertPackages()
         })
         .then(updated => {
           const tasks = updated.map(pkg => {
-            // console.log('publish:', pkg.name, '@', pkg.version, 'in', pkg.dir)
-            const command = dryRun ? 'echo' : 'npm'
+            const command = 'npm'
             const args = ['publish', '--tag', DIST_TAG]
             if (dryRun) {
-              args.unshift('npm')
-              args.push('--name', pkg.name)
-              args.push('--version', pkg.version)
-              args.push('--dir', pkg.dir)
+              console.log('publish:', pkg.name, '@', pkg.version, 'in:', pkg.dir)
+              return
             }
             return execa(command, args, {
               cwd: pkg.dir,
