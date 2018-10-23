@@ -32,8 +32,7 @@ For a compiled **CSS** version of this module, an npm script is included that wi
 ```
 $ npm run build
 ```
-
-## Default Progress Bar
+## Documentation
 
 <!-- %docs
 title: Progress Bar
@@ -41,6 +40,8 @@ status: Experimental
 -->
 
 Use progress bars to show progress.
+
+## Default Progress Bar
 
 ```html
 <span class="Progress">
@@ -50,14 +51,7 @@ Use progress bars to show progress.
 </span>
 ```
 
-<!-- %enddocs -->
-
 ## Large Progress Bar
-
-<!-- %docs
-title: Large Progress Bar
-status: Experimental
--->
 
 ```html
 <span class="Progress Progress--large">
@@ -67,14 +61,7 @@ status: Experimental
 </span>
 ```
 
-<!-- %enddocs -->
-
 ## Small Progress Bar
-
-<!-- %docs
-title: Small Progress Bar
-status: Experimental
--->
 
 ```html
 <span class="Progress Progress--small">
@@ -84,14 +71,7 @@ status: Experimental
 </span>
 ```
 
-<!-- %enddocs -->
-
 ## Progress Bar With Tooltip
-
-<!-- %docs
-title: Progress Bar with Tooltip
-status: Experimental
--->
 
 ```html
 <div class="tooltipped tooltipped-n" aria-label="78 done / 6 in progress / 2 to do">
