@@ -33,6 +33,7 @@
     "primer-avatars": "1.5.7",
     "primer-blankslate": "1.4.10",
     "primer-branch-name": "1.0.8",
+    "primer-dropdown": "file:../primer-dropdown",
     "primer-labels": "1.5.10",
     "primer-markdown": "3.7.10",
     "primer-popover": "0.1.5",
