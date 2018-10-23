@@ -1,9 +1,5 @@
 ## Contributing
 
-[fork]: https://github.com/primer/primer/fork
-[pr]: https://github.com/primer/primer/compare
-[style]: https://styleguide.github.com/primer/principles/
-
 Hi there! We're thrilled that you'd like to contribute to this project. Your help is essential for keeping it great.
 
 ## Using the issue tracker
@@ -185,3 +181,7 @@ This section is targeted at maintainers of primer, to instruct them on the proce
 - [Contributing to Open Source on GitHub](https://guides.github.com/activities/contributing-to-open-source/)
 - [Using Pull Requests](https://help.github.com/articles/using-pull-requests/)
 - [GitHub Help](https://help.github.com)
+
+[fork]: https://github.com/primer/primer/fork
+[pr]: https://github.com/primer/primer/compare
+[style]: https://styleguide.github.com/primer/principles/
