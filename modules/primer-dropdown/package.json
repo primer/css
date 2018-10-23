@@ -31,7 +31,7 @@
     "test": "npm-run-all -s build lint test-docs"
   },
   "dependencies": {
-    "primer-support": "4.4.2"
+    "primer-support": "file:../primer-support"
   },
   "keywords": [
     "primer",
