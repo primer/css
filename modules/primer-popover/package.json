@@ -28,9 +28,6 @@
   "dependencies": {
     "primer-support": "4.6.1"
   },
-  "peerDependencies": {
-    "primer-box": "file:../primer-box"
-  },
   "keywords": [
     "github",
     "primer"
