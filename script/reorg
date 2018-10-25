@@ -25,9 +25,6 @@ function set_json() {
     mv "$3.tmp" "$3"
 }
 
-go git reset modules
-go rm -r modules
-go git co -- modules
 # go npx lerna clean
 
 primer=modules/primer
