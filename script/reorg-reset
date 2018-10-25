@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+git reset modules
+rm -r modules
+git co -- modules
