@@ -43,8 +43,6 @@ These utilities are meant to be used in addition to Primer's core utilities.
 
 <p class="lead-mktg text-gray">I'm a lead paragraph. Bacon ipsum dolor amet tri-tip chicken kielbasa, cow swine beef corned beef ground round prosciutto hamburger porchetta sausage alcatra tail.</p>
 
-<p class="mono-font">Occasionally we want to use a mono font, there is a utility class for that.</p>
-
 <p class="pullquote">I'm a pullquote. Someone said these words in real life, and now they're on the internet</p>
 
 ```
