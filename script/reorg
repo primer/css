@@ -3,10 +3,28 @@ set -e
 
 flag="$1"
 if [ $flag = "--help" -o $flag = "-h" ]; then
-    echo "Reorg the monorepo!"
-    echo "The only option you really need to know about is:"
     echo
-    echo "--dry-run    Echo all of the commands to be run rather than running them"
+    echo "Reorg the monorepo! There are some options available:"
+    echo
+    echo "  --dry-run    Echo all of the commands to be run rather than running them"
+    echo "  --reset      Un-stage all changes made by this script to the modules dir"
+    echo "  --help, -h   Show this helpful message"
+    echo
+    echo "Running this script will stage the entire modules directory so that you"
+    echo "can more easily see what's moved and changed. In this state, you can still"
+    echo "diff files with:"
+    echo
+    echo "  git diff --staged path/to/file"
+    echo
+    echo "To return to the original state of the git HEAD, run:"
+    echo
+    echo "  script/reorg --reset"
+    echo
+    exit
+elif [[ "$1" = "--reset" ]]; then
+    git reset modules
+    rm -r modules
+    git co -- modules
     exit
 elif [[ "$1" = "--dry-run" ]]; then
     DRY_RUN=1
@@ -69,13 +87,11 @@ for dir in $modules; do
     go pushd $dir > /dev/null
     go write "@import \"@primer/css/$name/index.scss\";" index.scss
     go set_json '.dependencies' '{"@primer/css":"file:../primer"}' package.json
-    go perl -pi -e 's#primer/primer#primer/css#' package.json README.md
-    go perl -pi -e "s#tree/master/$dir#tree/master/$dest#" package.json README.md
     go popd > /dev/null
 done
 
 # primer/primer => primer/css
-go perl -pi -e 's#primer/primer#primer/css#' modules/*/package.json
+go perl -pi -e 's#primer/primer#primer/css#' modules/*/{package.json,README.md}
 # tree/master/primer-<name> => tree/master/primer/<name>/
 go perl -pi -e "s#tree/master/primer-#tree/master/primer/#" modules/primer-*/package.json
 
