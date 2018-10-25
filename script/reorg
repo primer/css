@@ -1,0 +1,82 @@
+#!/bin/bash
+set -e
+
+packages=$($(dirname $0)/get-packages)
+modules=$(echo "$packages" | egrep 'modules/' | egrep -v 'primer$')
+tools=$(echo "$packages" | egrep 'tools/')
+last_version=10.10.0
+
+if [[ "$1" = "--dry-run" ]]; then
+    DRY_RUN=1
+else
+    DRY_RUN=0
+fi
+
+function go() {
+    if [[ $DRY_RUN -eq 1 ]]; then
+        echo $@
+    else
+        $@
+    fi
+}
+
+function set_json() {
+    jq "$1 = $2" "$3" > "$3.tmp"
+    mv "$3.tmp" "$3"
+}
+
+go git reset modules
+go rm -r modules
+go git co -- modules
+exit
+# go npx lerna clean
+
+primer=modules/primer
+
+for dir in $modules; do
+    name="${dir/modules\/primer-/}"
+    dest="$primer/$name"
+
+    if [[ -z $dest ]]; then
+        echo "Ack! Unable strip modules/primer- prefix from: '$dir'"
+        exit 1
+    fi
+
+    echo "*** $dir ***"
+    echo "    => $dest"
+
+    go rm -rf $dest
+    go mkdir -p $dest
+    go git mv $dir/index.scss $dest
+
+    if [[ -e $dir/lib ]]; then
+        go mv $dir/lib $dest
+    fi
+    if [[ -e $dir/docs ]]; then
+        go mv $dir/docs $dest
+    fi
+
+    go pushd $dest > /dev/null
+    go perl -pi -e 's#primer-#../#' index.scss
+    go popd > /dev/null
+
+    go pushd $dir > /dev/null
+    echo "@import \"@primer/css/$name/index.scss\";" > index.scss
+    go set_json '.dependencies' '{"@primer/css":"file:../primer"}' package.json
+    go perl -pi -e 's#primer/primer#primer/css#' package.json README.md
+    go perl -pi -e "s#tree/master/$dir#tree/master/$dest#" package.json README.md
+    go popd > /dev/null
+done
+
+# primer/primer => primer/css
+go perl -pi -e 's#primer/primer#primer/css#' modules/*/package.json
+# tree/master/primer-<name> => tree/master/primer/<name>/
+go perl -pi -e "s#tree/master/primer-#tree/master/primer/#" modules/primer-*/package.json
+
+go pushd $primer > /dev/null
+go set_json '.name' '"@primer/css"' package.json
+go set_json '.dependencies' '{}' package.json
+go perl -pi -e 's#primer-#./#' index.scss
+go popd > /dev/null
+
+go git add modules
