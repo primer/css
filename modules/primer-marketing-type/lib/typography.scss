@@ -18,7 +18,7 @@
   @include breakpoint(md) { font-size: $h000-size !important; }
 }
 
-.h000-mktg { @include h00-mktg; }
+.h000-mktg { @include h000-mktg; }
 
 @mixin h00-mktg {
   font-size: $h00-size-mobile !important;
