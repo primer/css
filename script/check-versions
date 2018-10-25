@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-const globby = require('globby')
-const lernaConfig = require('../lerna.json')
+const getPackages = require('./get-packages')
 
 const DEP_FIELDS = [
   'dependencies',
@@ -9,54 +8,63 @@ const DEP_FIELDS = [
   'optionalDependencies',
 ]
 
-globby(lernaConfig.packages)
+getPackages()
   .then(paths => {
     return paths.reduce((packages, path) => {
-      try {
-        const pkg = require(`../${path}/package.json`)
-        pkg.path = path
-        packages.push(pkg)
-      } catch (error) {
-      }
+      const pkg = require(`../${path}/package.json`)
+      packages[pkg.name] = pkg
       return packages
-    }, [])
+    }, {})
   })
   .then(packages => {
-    console.log('⏱   checking %d packages...', packages.length)
-    const map = new Map()
+    console.log('checking %d packages...', Object.keys(packages).length)
     const matches = []
-    packages.forEach(pkg => map.set(pkg.name, pkg))
-    packages.forEach(pkg => {
-      DEP_FIELDS
-        .filter(field => field in pkg)
-        .forEach(field => {
-          const deps = pkg[field]
-          Object.keys(deps)
-            .filter(dep => map.has(dep))
-            .forEach(dep => {
-              const expected = map.get(dep).version
-              const actual = deps[dep]
-              if (expected !== actual) {
-                throw new Error(
-                  `${pkg.name}.${field} has bad version for ${dep}: ${expected} != ${actual}`
-                )
-              } else {
-                matches.push({
-                  from: pkg.name,
-                  to: dep,
-                  field,
-                  version: expected
-                })
-              }
+    for (const [name, pkg] of Object.entries(packages)) {
+      for (const field of DEP_FIELDS) {
+        const deps = pkg[field]
+        if (deps instanceof Object) {
+          const keys = Object.keys(deps).filter(dep => dep in packages)
+          for (const dep of keys) {
+            const version = deps[dep]
+            let match = false
+            const expected = packages[dep].version
+            if (version.indexOf('file:') === 0) {
+              console.warn(`${name}.${field}.${dep} uses file specifier: "${version}"`)
+              match = true
+            } else {
+              match = expected === version
+            }
+            matches.push({
+              from: name,
+              to: dep,
+              field,
+              version,
+              expected,
+              match
             })
-        })
-    })
+          }
+        }
+      }
+    }
     return matches
+  })
+  .then(matches => {
+    let fail = 0
+    for (const item of matches) {
+      if (!item.match) {
+        const {from, to, field, expected, version} = item
+        console.warn(`X ${from}.${field}.${to} is "${version}", but should be "${expected}"`)
+        fail++
+      }
+    }
+    if (fail > 0) {
+      console.error('failed %d of %d cross-dependencies', failed, matches.length)
+      process.exitCode = 1
+    } else {
+      console.warn('all %d cross-dependencies checked out!', matches.length)
+    }
   })
   .catch(error => {
     console.error(error.message)
-    process.exit(1)
-  })
-  .then(matches => {
-    console.warn('✅   checked %d matching version dependencies', matches.length)
+    process.exitCode = 1
   })
