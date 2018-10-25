@@ -1,16 +1,23 @@
 #!/bin/bash
 set -e
 
-packages=$($(dirname $0)/get-packages)
-modules=$(echo "$packages" | egrep 'modules/' | egrep -v 'primer$')
-tools=$(echo "$packages" | egrep 'tools/')
-last_version=10.10.0
-
-if [[ "$1" = "--dry-run" ]]; then
+flag="$1"
+if [ $flag = "--help" -o $flag = "-h" ]; then
+    echo "Reorg the monorepo!"
+    echo "The only option you really need to know about is:"
+    echo
+    echo "--dry-run    Echo all of the commands to be run rather than running them"
+    exit
+elif [[ "$1" = "--dry-run" ]]; then
     DRY_RUN=1
 else
     DRY_RUN=0
 fi
+
+packages=$($(dirname $0)/get-packages)
+modules=$(echo "$packages" | egrep 'modules/' | egrep -v 'primer$')
+tools=$(echo "$packages" | egrep 'tools/')
+last_version=10.10.0
 
 function go() {
     if [[ $DRY_RUN -eq 1 ]]; then
@@ -23,6 +30,10 @@ function go() {
 function set_json() {
     jq "$1 = $2" "$3" > "$3.tmp"
     mv "$3.tmp" "$3"
+}
+
+function write() {
+    echo "$1" > "$2"
 }
 
 # go npx lerna clean
@@ -38,8 +49,7 @@ for dir in $modules; do
         exit 1
     fi
 
-    echo "*** $dir ***"
-    echo "    => $dest"
+    echo "# $dir => $dest"
 
     go rm -rf $dest
     go mkdir -p $dest
@@ -57,7 +67,7 @@ for dir in $modules; do
     go popd > /dev/null
 
     go pushd $dir > /dev/null
-    echo "@import \"@primer/css/$name/index.scss\";" > index.scss
+    go write "@import \"@primer/css/$name/index.scss\";" index.scss
     go set_json '.dependencies' '{"@primer/css":"file:../primer"}' package.json
     go perl -pi -e 's#primer/primer#primer/css#' package.json README.md
     go perl -pi -e "s#tree/master/$dir#tree/master/$dest#" package.json README.md
