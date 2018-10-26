@@ -1,5 +1,5 @@
 {
-  "version": "1.4.9",
+  "version": "1.4.10",
   "name": "primer-marketing-type",
   "description": "Typography for marketing websites at GitHub",
   "homepage": "http://primer.github.io/",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "primer-marketing-support": "1.5.3",
-    "primer-support": "4.6.0"
+    "primer-support": "4.6.1"
   },
   "keywords": [
     "css",

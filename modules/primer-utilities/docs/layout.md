@@ -224,7 +224,7 @@ Use `.position-absolute` to take elements out of the normal document flow.
 
 ```html
 <div class="position-relative" style="height:116px;">
-  <button type="button" class="btn btn-secondary mb-1">Button</button>
+  <button type="button" class="btn mb-1">Button</button>
   <div class="position-absolute border border-gray p-2">
     <a href="#url" class="d-block p-1">Mashed potatoes</a>
     <a href="#url" class="d-block p-1">Fries</a>

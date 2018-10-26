@@ -1,7 +1,7 @@
 // Fixed-width, centered column for site content.
 // This will be deprecated and replaced with container-lg in future
 .container {
-  width: $container-width;
+  max-width: $container-width;
   margin-right: auto;
   margin-left: auto;
   @include clearfix;
