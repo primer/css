@@ -33,7 +33,7 @@ Adjust the display of an element with `.d-block`, `.d-none`, `.d-inline`, `.d-in
 
 ### The HTML `hidden` attribute
 
-As of [Primer v10.9.0](https://github.com/primer/primer/releases/v10.9.0), `primer-base` includes a rule that sets `display: none !important` for any element with the [`hidden` attribute][hidden]. Because this can interfere with `d-*` utility classes, we suggest that you:
+As of [Primer v10.10.0](https://github.com/primer/primer/releases/v10.10.0), both `primer-base` and `primer-utilities` include a rule that sets `display: none !important` for any element with the [`hidden` attribute][hidden]. You can safely use the `hidden` attribute with display utilities, but we suggest:
 
 1. Use the `hidden` attribute (and corresponding JavaScript property) if you're going to programmatically show and hide content.
 1. Use `d-none` and/or its responsive variants (`d-sm-block`, `d-lg-none`) to conditionally show content at different screen sizes.
