@@ -10,12 +10,9 @@
   "main": "build/index.js",
   "figma": {
     "url": "https://www.figma.com/file/VCkfDFhhJQz32TQSxGyLntrt/primer-buttons",
-    "components": [
-      {
-        "file": "lib/buttons.scss",
-        "ids": ["7:1"]
-      }
-    ]
+    "components": {
+      "lib/buttons.scss": [ "7:1" ]
+    }
   },
   "primer": {
     "category": "core",
