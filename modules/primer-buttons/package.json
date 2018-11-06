@@ -11,7 +11,17 @@
   "figma": {
     "url": "https://www.figma.com/file/VCkfDFhhJQz32TQSxGyLntrt/primer-buttons",
     "components": {
-      "lib/button.scss": [ "7:1" ]
+      "lib/button.scss": [
+        "148:546",
+        "148:581",
+        "148:617",
+        "148:664",
+        "148:694",
+        "149:293",
+        "149:381",
+        "149:478",
+        "7:1"
+      ]
     }
   },
   "primer": {
