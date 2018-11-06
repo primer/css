@@ -4,7 +4,7 @@
 .btn {
   position: relative;
   display: inline-block;
-  padding: 6px 12px;
+  padding: $spacer-2 $spacer-3;
   font-size: $body-font-size;
   font-weight: $font-weight-bold;
   line-height: 20px; // Specifically not inherit our `<body>` default
