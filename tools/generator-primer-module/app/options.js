@@ -1,4 +1,4 @@
-const chalk = require("chalk")
+const {yellow} = require("chalk")
 const fse = require("fs-extra")
 
 const capitalize = require("./lib/capitalize")
@@ -91,7 +91,7 @@ module.exports = {
     prompt: {
       message: [
         "Describe your module in a single sentence.",
-        chalk.yellow("(This will go into the package.json and README.md.)"),
+        yellow("(This will go into the package.json and README.md.)"),
       ].join("\n"),
       type: "input",
       default: "TODO: fill in this description later",
@@ -160,7 +160,7 @@ module.exports = {
       type: "input",
       message: [
         "Where can we find the docs?",
-        chalk.yellow("(We'll read this file from the path you provide.)"),
+        yellow("(We'll read this file from the path you provide.)"),
       ].join("\n"),
       validate: (filePath) => {
         if (!filePath) {
