@@ -1,4 +1,4 @@
-const {yellow} = require("chalk")
+const {yellow} = require("colorette")
 const fse = require("fs-extra")
 
 const capitalize = require("./lib/capitalize")
