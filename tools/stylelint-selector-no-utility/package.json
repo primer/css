@@ -6,8 +6,8 @@
   "scripts": {
     "prepare": "node prepare.js",
     "lint": "eslint .",
+    "pretest": "npm run lint && npm run prepare",
     "test": "node test/index.js",
-    "pretest": "npm run prepare",
     "prepublishOnly": "../../script/notify pending",
     "publish": "../../script/notify success"
   },
