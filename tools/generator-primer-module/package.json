@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "colorette": "1.0.7",
-    "primer-support": "4.6.1",
     "yeoman-generator": "^1.1.1"
   },
   "keywords": [
@@ -28,6 +27,7 @@
     "yeoman-generator"
   ],
   "devDependencies": {
+    "primer-support": "4.6.1",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.7.0"
   }
