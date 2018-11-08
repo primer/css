@@ -1,13 +1,15 @@
 {
   "private": true,
   "scripts": {
+    "prefresh": "npm run clean || echo 'clean failed; no worries!'",
+    "fresh": "npm install",
     "postinstall": "npm run bootstrap",
     "start": "start-storybook -p 8000 -c .storybook",
     "storybook": "build-storybook -o build",
     "publish-storybook": "npm run storybook && gh-pages -d build -b gh-pages -r https://github.com/primer/storybook",
     "bootstrap": "lerna bootstrap --hoist",
-    "clean": "lerna clean",
-    "distclean": "lerna clean --yes && rm -rf node_modules",
+    "clean": "lerna clean --yes",
+    "postclean": "rm -rf node_modules {,*/*/}package-lock.json",
     "diff": "lerna diff",
     "updated": "lerna updated || exit 0",
     "lint": "lerna run lint",
