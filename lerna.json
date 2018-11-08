@@ -2,8 +2,7 @@
   "lerna": "2.4.0",
   "packages": [
     "modules/*",
-    "tools/*",
-    "!tools/generator-primer-module"
+    "tools/*"
   ],
   "changelog": {
     "repo": "primer/primer",
