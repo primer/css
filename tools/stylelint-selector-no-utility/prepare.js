@@ -13,7 +13,7 @@ const classes = utilities.cssstats.selectors.values.reduce((set, selector) => {
   return set
 }, new Set())
 
-const data = JSON.stringify(Array.from(classes), null, 2)
+const data = JSON.stringify(Array.from(classes).sort(), null, 2)
 const filename = join(__dirname, 'classes.json')
 
 writeFile(filename, data, 'utf8')
