@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "pretest": "npm run lint && npm run prepare",
     "test": "node test/index.js",
-    "prepublishOnly": "npm run prepare && ../../script/notify pending",
+    "prepublishOnly": "../../script/notify pending",
     "publish": "../../script/notify success"
   },
   "keywords": [
