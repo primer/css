@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "prefresh": "npm run clean || echo 'clean failed; no worries!'",
+    "prefresh": "npm run clean || exit 0",
     "fresh": "npm install",
     "postinstall": "npm run bootstrap",
     "start": "start-storybook -p 8000 -c .storybook",
