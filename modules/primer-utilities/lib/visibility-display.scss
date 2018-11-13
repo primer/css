@@ -22,13 +22,6 @@ $display-values: (
   }
 }
 
-/**
- * This is duplicated here so that elements with the HTML5 hidden attribute are
- * _always_ display: none, even when one of the .d-* display utilities is in
- * play. This works because [hidden] and .d-* have the same CSS specificity.
- */
-[hidden] { display: none !important; }
-
 .v-hidden { visibility: hidden !important; }
 .v-visible { visibility: visible !important; }
 
