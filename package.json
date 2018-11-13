@@ -46,7 +46,6 @@
     "minimatch": "^3.0.4",
     "node-sass": "^4.9.0",
     "npm-run-all": "^4.0.2",
-    "npx": "^10.2.0",
     "octicons": "^6.0.1",
     "postcss-loader": "^2.0.6",
     "primer-module-build": "file:tools/primer-module-build",
