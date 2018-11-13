@@ -3,8 +3,7 @@
   "version": "independent",
   "packages": [
     "modules/*",
-    "tools/*",
-    "!tools/generator-primer-module"
+    "tools/*"
   ],
   "npmClientArgs": ["--no-package-lock"],
   "changelog": {
