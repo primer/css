@@ -1,4 +1,4 @@
-const chalk = require("chalk")
+const {green, red, bold} = require("colorette")
 const fse = require("fs-extra")
 const path = require("path")
 const Generator = require("yeoman-generator")
@@ -37,7 +37,7 @@ module.exports = class PrimerModule extends Generator {
     if (this.options.module) {
       this.log(
         "Okay, let's get you started with %s...",
-        chalk.green(this.options.module)
+        green(this.options.module)
       )
     }
 
@@ -79,7 +79,7 @@ module.exports = class PrimerModule extends Generator {
   }
 
   writing() {
-    this.log("creating: %s", chalk.green(this.basePath))
+    this.log("creating: %s", green(this.basePath))
 
     const data = {
       "dependencies": this.dependencies,
@@ -99,7 +99,7 @@ module.exports = class PrimerModule extends Generator {
       const debugData = Object.assign({}, data, {
         "dependencies": Object.keys(data.dependencies),
       })
-      console.warn(chalk.green("data:"), JSON.stringify(debugData, null, "  "))
+      console.warn(green("data:"), JSON.stringify(debugData, null, "  "))
     }
 
     // for the index.scss import
@@ -130,7 +130,7 @@ module.exports = class PrimerModule extends Generator {
         this._addAsDependencyTo(pkg, dependent)
       })
     } else {
-      this.log(chalk.red("No dependents!"), dependents)
+      this.log(red("No dependents!"), dependents)
     }
   }
 
@@ -138,7 +138,7 @@ module.exports = class PrimerModule extends Generator {
     if (this.options.todo === true) {
       this.log(
         "\n📝 ",
-        chalk.bold("Remember to fill in any remaining TODOs below:"),
+        bold("Remember to fill in any remaining TODOs below:"),
         "\n"
       )
       this.spawnCommandSync("ack", ["TODO", this.basePath], {
