@@ -33,9 +33,6 @@
   "dependencies": {
     "primer-support": "4.6.1"
   },
-  "peerDependencies": {
-    "primer-buttons": "2.6.1"
-  },
   "keywords": [
     "css",
     "github",
