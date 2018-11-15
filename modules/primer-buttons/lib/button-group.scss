@@ -35,8 +35,8 @@
   &:focus,
   &:active,
   &:hover {
-    border-right-width: $border-width;
     z-index: 1;
+    border-right-width: $border-width;
 
     + .BtnGroup-item,
     + .BtnGroup-parent .BtnGroup-item,
