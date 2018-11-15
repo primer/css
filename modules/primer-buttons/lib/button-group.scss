@@ -5,39 +5,38 @@
 @warn ".BtnGroup-form will be deprecated in version 11. Use .BtnGroup-parent instead.";
 
 .BtnGroup {
-  display: inline-block;
-  vertical-align: middle;
-  @include clearfix();
+  display: inline-flex;
+  align-items: middle;
 
   // Proper spacing for multiple button groups (a la, gollum editor)
   + .BtnGroup,
   + .btn {
-    margin-left: 5px;
+    margin-left: $spacer-2;
   }
 }
 
 .BtnGroup-item {
   position: relative;
-  float: left;
   border-right-width: 0;
   border-radius: 0;
 
   &:first-child {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
   }
 
   &:last-child {
-    border-right-width: 1px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-right-width: $border-width;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
   }
 
   &.selected,
   &:focus,
   &:active,
   &:hover {
-    border-right-width: 1px;
+    z-index: 1;
+    border-right-width: $border-width;
 
     + .BtnGroup-item,
     + .BtnGroup-parent .BtnGroup-item,
@@ -49,17 +48,15 @@
 
 .BtnGroup-parent,
 .BtnGroup-form {
-  float: left;
-
   &:first-child .BtnGroup-item {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
   }
 
   &:last-child .BtnGroup-item {
-    border-right-width: 1px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-right-width: $border-width;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
   }
 
   .BtnGroup-item {
@@ -72,7 +69,7 @@
   &:active,
   &:hover {
     .BtnGroup-item {
-      border-right-width: 1px;
+      border-right-width: $border-width;
     }
 
     + .BtnGroup-item,
