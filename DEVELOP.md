@@ -23,12 +23,18 @@ Run `npm install` to install the npm dependencies and automatically run link all
 If you run into trouble installing, it's always best to ensure that you're starting from a clean slate by running the following from the repository root directory:
 
 ```sh
-npx lerna clean --yes
+npm run fresh
+```
+
+If _that_ gives you problems, then you can try manually deleting everything and starting over:
+
+```
 rm -rf node_modules
+rm -f package-lock.json */*/package-lock.json
 npm install
 ```
 
-**You may need to do this whenever switching between branches with different dependencies, submodules, or versions of Node and/or npm.** The Primer core team generally uses the latest major version of Node (10 as of this writing), but we run our CI tests on Node 8 and npm 6. You can check which versions you're running with:
+**You may need to do this whenever switching between branches with different dependencies, submodules, or versions of Node and/or npm.** The Primer core team generally uses the latest major version of Node (10 as of this writing), but our CI tests run Node 8 and npm 6. You can check which versions you're running with:
 
 ```sh
 npm --version

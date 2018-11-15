@@ -16,7 +16,7 @@
     "watch": "npm run test -- --watch"
   },
   "dependencies": {
-    "chalk": "^2.1.0",
+    "colorette": "1.0.7",
     "primer-support": "4.6.1",
     "yeoman-generator": "^1.1.1"
   },
