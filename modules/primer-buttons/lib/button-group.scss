@@ -36,6 +36,7 @@
   &:active,
   &:hover {
     border-right-width: $border-width;
+    z-index: 1;
 
     + .BtnGroup-item,
     + .BtnGroup-parent .BtnGroup-item,
