@@ -37,6 +37,7 @@
     "primer-markdown": "3.7.10",
     "primer-popover": "0.1.5",
     "primer-subhead": "1.0.8",
-    "primer-support": "4.6.1"
+    "primer-support": "4.6.1",
+    "primer-progress": "0.0.1"
   }
 }

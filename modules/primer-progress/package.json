@@ -1,0 +1,40 @@
+{
+  "version": "0.0.1",
+  "name": "primer-progress",
+  "description": "TODO: fill in this description later",
+  "homepage": "http://primer.github.io/",
+  "primer": {
+    "category": "product",
+    "module_type": "components"
+  },
+  "files": [
+    "index.scss",
+    "lib",
+    "build"
+  ],
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "build/build.css",
+  "sass": "index.scss",
+  "main": "build/index.js",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-progress-bar",
+  "bugs": {
+    "url": "https://github.com/primer/primer/issues"
+  },
+  "scripts": {
+    "test-docs": "../../script/test-docs",
+    "build": "../../script/npm-run primer-module-build index.scss",
+    "prepare": "npm run build",
+    "lint": "../../script/lint-scss",
+    "test": "../../script/npm-run-all build lint test-docs",
+    "prepublishOnly": "../../script/notify pending",
+    "publish": "../../script/notify success"
+  },
+  "dependencies": {
+    "primer-support": "4.6.1"
+  },
+  "keywords": [
+    "github",
+    "primer"
+  ]
+}
