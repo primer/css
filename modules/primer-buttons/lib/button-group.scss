@@ -5,18 +5,20 @@
 @warn ".BtnGroup-form will be deprecated in version 11. Use .BtnGroup-parent instead.";
 
 .BtnGroup {
-  display: inline-flex;
-  align-items: middle;
+  display: inline-block;
+  vertical-align: middle;
+  @include clearfix();
 
   // Proper spacing for multiple button groups (a la, gollum editor)
   + .BtnGroup,
   + .btn {
-    margin-left: $spacer-2;
+    margin-left: $spacer-1;
   }
 }
 
 .BtnGroup-item {
   position: relative;
+  float: left;
   border-right-width: 0;
   border-radius: 0;
 
@@ -35,7 +37,6 @@
   &:focus,
   &:active,
   &:hover {
-    z-index: 1;
     border-right-width: $border-width;
 
     + .BtnGroup-item,
@@ -48,6 +49,8 @@
 
 .BtnGroup-parent,
 .BtnGroup-form {
+  float: left;
+
   &:first-child .BtnGroup-item {
     border-top-left-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
@@ -77,5 +80,15 @@
     + .BtnGroup-form .BtnGroup-item {
       border-left-width: 0;
     }
+  }
+}
+
+// ensure that the focus ring sits above the adjacent buttons
+.BtnGroup-item,
+.BtnGroup-parent,
+.BtnGroup-form {
+  &:focus,
+  &:active {
+    z-index: 1;
   }
 }
