@@ -1,5 +1,5 @@
 {
-  "version": "2.6.1",
+  "version": "2.6.2",
   "name": "primer-buttons",
   "description": "A collection of buttons used for primary and secondary actions.",
   "homepage": "http://primer.github.io/",
@@ -30,7 +30,7 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.6.1"
+    "primer-support": "4.7.0"
   },
   "keywords": [
     "primer",
