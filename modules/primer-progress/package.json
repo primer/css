@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
   "name": "primer-progress",
-  "description": "TODO: fill in this description later",
+  "description": "Use Progress components to visualize task completion",
   "homepage": "http://primer.github.io/",
   "primer": {
     "category": "product",

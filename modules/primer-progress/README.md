@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/primer-progress-bar.svg)](https://www.npmjs.org/package/primer-progress-bar)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
-> TODO: fill in this description later
+> Use Progress components to visualize task completion
 
 This repository is a module of the full [primer][primer] repository.
 
