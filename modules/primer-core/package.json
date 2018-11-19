@@ -1,5 +1,5 @@
 {
-  "version": "6.10.4",
+  "version": "6.10.5",
   "name": "primer-core",
   "description": "Primer's core modules",
   "homepage": "http://primer.github.io/",
@@ -29,18 +29,18 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-base": "1.8.0",
-    "primer-box": "2.5.10",
-    "primer-breadcrumb": "1.5.6",
-    "primer-buttons": "2.6.1",
-    "primer-forms": "2.1.5",
-    "primer-layout": "1.5.0",
-    "primer-navigation": "1.5.8",
-    "primer-pagination": "1.0.4",
-    "primer-support": "4.6.1",
-    "primer-table-object": "1.4.10",
-    "primer-tooltips": "1.5.8",
-    "primer-truncate": "1.4.10",
-    "primer-utilities": "4.13.0"
+    "primer-base": "1.9.0",
+    "primer-box": "2.5.11",
+    "primer-breadcrumb": "1.5.7",
+    "primer-buttons": "2.6.2",
+    "primer-forms": "2.1.6",
+    "primer-layout": "1.6.0",
+    "primer-navigation": "1.5.9",
+    "primer-pagination": "1.0.5",
+    "primer-support": "4.7.0",
+    "primer-table-object": "1.4.11",
+    "primer-tooltips": "1.5.9",
+    "primer-truncate": "1.4.11",
+    "primer-utilities": "4.14.0"
   }
 }

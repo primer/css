@@ -1,5 +1,5 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.5",
   "name": "primer-pagination",
   "description": "Pagination component for applying button styles to a connected set of links that go to related pages",
   "homepage": "http://primer.github.io/",
@@ -26,7 +26,7 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.6.1"
+    "primer-support": "4.7.0"
   },
   "keywords": [
     "github",

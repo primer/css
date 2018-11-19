@@ -1,5 +1,5 @@
 {
-  "version": "1.5.10",
+  "version": "1.5.11",
   "name": "primer-alerts",
   "description": "Flash messages, or alerts, inform users of successful or pending actions.",
   "homepage": "http://primer.github.io/",
@@ -33,7 +33,7 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.6.1"
+    "primer-support": "4.7.0"
   },
   "keywords": [
     "alerts",

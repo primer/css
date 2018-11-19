@@ -1,23 +1,23 @@
 {
-  "version": "1.4.11",
-  "name": "primer-marketing-type",
-  "description": "Typography for marketing websites at GitHub",
+  "version": "0.1.0",
+  "name": "primer-progress",
+  "description": "Use Progress components to visualize task completion",
   "homepage": "http://primer.github.io/",
-  "author": "GitHub, Inc.",
-  "license": "MIT",
-  "style": "build/build.css",
-  "main": "build/index.js",
-  "sass": "index.scss",
   "primer": {
-    "category": "marketing",
-    "module_type": "utilities"
+    "category": "product",
+    "module_type": "components"
   },
   "files": [
     "index.scss",
     "lib",
     "build"
   ],
-  "repository": "https://github.com/primer/primer/tree/master/modules/primer-marketing-type",
+  "author": "GitHub, Inc.",
+  "license": "MIT",
+  "style": "build/build.css",
+  "sass": "index.scss",
+  "main": "build/index.js",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-progress-bar",
   "bugs": {
     "url": "https://github.com/primer/primer/issues"
   },
@@ -31,16 +31,10 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-marketing-support": "1.5.4",
     "primer-support": "4.7.0"
   },
   "keywords": [
-    "css",
     "github",
-    "primer",
-    "design-system",
-    "style",
-    "type",
-    "typography"
+    "primer"
   ]
 }

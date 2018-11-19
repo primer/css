@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "stylelint-config-primer"
+  ],
+  "rules": {
+    "primer/selector-no-utility": null
+  }
+}
