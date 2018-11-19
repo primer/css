@@ -82,3 +82,13 @@
     }
   }
 }
+
+// ensure that the focus ring sits above the adjacent buttons
+.BtnGroup-item,
+.BtnGroup-parent,
+.BtnGroup-form {
+  &:focus,
+  &:active {
+    z-index: 1;
+  }
+}
