@@ -1,3 +1,24 @@
+# 10.10.0
+#### :rocket: Enhancement
+* [#561](https://github.com/primer/primer/pull/561) Add HTML hidden attribute docs, increase [hidden] selector specificity. ([@shawnbot](https://github.com/shawnbot))
+* [#570](https://github.com/primer/primer/pull/570) Bugfix: Make blankslate-narrow responsive. ([@crhallberg](https://github.com/crhallberg))
+* [#571](https://github.com/primer/primer/pull/571) Make .container responsive. ([@crhallberg](https://github.com/crhallberg))
+
+#### :bug: Bug Fix
+* [#597](https://github.com/primer/primer/pull/597) Fix primerize, add "fresh" run-script, etc.. ([@shawnbot](https://github.com/shawnbot))
+* [#591](https://github.com/primer/primer/pull/591) Add fs-extra to primer-module-build.dependencies. ([@shawnbot](https://github.com/shawnbot))
+
+#### :memo: Documentation
+* [#585](https://github.com/primer/primer/pull/585) Improve contributing docs and add DEVELOP.md. ([@shawnbot](https://github.com/shawnbot))
+
+#### :house: Internal
+* [#597](https://github.com/primer/primer/pull/597) Fix primerize, add "fresh" run-script, etc.. ([@shawnbot](https://github.com/shawnbot))
+
+#### Committers: 3
+- Chris Hallberg ([crhallberg](https://github.com/crhallberg))
+- Emily Brick ([emilybrick](https://github.com/emilybrick))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+
 # 10.9.0
 #### :rocket: Enhancement
 * [#586](https://github.com/primer/primer/pull/586) Hiding .Counter component when it's empty.. ([@jonrohan](https://github.com/jonrohan))
