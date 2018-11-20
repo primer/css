@@ -39,7 +39,7 @@ title: Progress
 status: New Release
 -->
 
-Use progress bars to show progress.
+Use Progress components to visualize task completion.
 
 ## Default Progress
 
