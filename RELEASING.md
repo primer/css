@@ -22,7 +22,7 @@
 
 6. Once the release PR is approved and you've done necessary testing, merge to `master`. This will trigger publishing to npm.
 
-7. Create a new release branch for the next release from `master` and name it `release-<version>`. Please use the following template for the PR description, linking to pull the relevant issues and/or pull requests for each change, and removing irrelevant headings:
+7. Create a new release branch for the next release from `master` and name it `release-<version>`. Please use the following template for the PR description, linking to the relevant issues and/or pull requests for each change, and removing irrelevant headings:
 
     ```md
     # Primer [Major|Minor|Patch] Release
