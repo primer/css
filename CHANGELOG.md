@@ -1,3 +1,11 @@
+# 10.10.1
+
+#### :memo: Documentation
+* [#606](https://github.com/primer/primer/pull/606) Fix for Progress Broken Package Link. ([@emilybrick](https://github.com/emilybrick))
+
+#### Committers: 1
+- Emily Brick ([emilybrick](https://github.com/emilybrick))
+
 # 10.10.0
 
 #### :rocket: Enhancement
