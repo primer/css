@@ -1,9 +1,11 @@
 {
   "lerna": "2.4.0",
+  "version": "independent",
   "packages": [
     "modules/*",
     "tools/*"
   ],
+  "npmClientArgs": ["--no-package-lock"],
   "changelog": {
     "repo": "primer/primer",
     "labels": {
@@ -15,6 +17,5 @@
       "Tag: Internal": ":house: Internal"
     },
     "cacheDir": ".changelog"
-  },
-  "version": "independent"
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "version": "1.5.7",
+  "version": "1.5.8",
   "name": "primer-avatars",
   "description": "Basic styles for user profile avatars.",
   "homepage": "http://primer.github.io/",
@@ -30,7 +30,7 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.6.1"
+    "primer-support": "4.7.0"
   },
   "keywords": [
     "avatars",

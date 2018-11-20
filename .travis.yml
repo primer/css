@@ -23,7 +23,7 @@ after_success:
 deploy:
   # publish release candidates on release branches
   - provider: script
-    script: script/release-candidate --dry-run
+    script: script/release-candidate
     skip_cleanup: true
     on:
       branch: release*
