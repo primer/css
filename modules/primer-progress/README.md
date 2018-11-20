@@ -35,8 +35,8 @@ $ npm run build
 ## Documentation
 
 <!-- %docs
-title: Progress Bar
-status: Experimental
+title: Progress
+status: New Release
 -->
 
 Use progress bars to show progress.
