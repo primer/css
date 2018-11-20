@@ -1,5 +1,5 @@
 {
-  "version": "1.6.5",
+  "version": "1.7.1",
   "name": "primer-marketing-utilities",
   "description": "Marketing specific immutable, atomic CSS classes",
   "homepage": "http://primer.github.io/",
@@ -35,8 +35,8 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-marketing-support": "1.5.3",
-    "primer-support": "4.6.0"
+    "primer-marketing-support": "1.5.4",
+    "primer-support": "4.7.0"
   },
   "keywords": [
     "primer",
