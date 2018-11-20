@@ -17,7 +17,7 @@
   "style": "build/build.css",
   "sass": "index.scss",
   "main": "build/index.js",
-  "repository": "https://github.com/primer/primer/tree/master/modules/primer-progress-bar",
+  "repository": "https://github.com/primer/primer/tree/master/modules/primer-progress",
   "bugs": {
     "url": "https://github.com/primer/primer/issues"
   },
