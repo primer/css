@@ -12,9 +12,9 @@
 
 3. Bump the package versions in your terminal:
 
-  ```sh
-  npm run bump
-  ```
+   ```sh
+   npm run bump
+   ```
 
 4. Run `script/check-versions` to catch any cross-module version mismatches. (This will run on Travis, too.)
 
@@ -63,8 +63,6 @@
     ```
 
 
-
-
 ### In `github/github`:
 
 1. Create a new branch
@@ -88,17 +86,9 @@
 
 #### Update the Style Guide
 
-1. In [github/styleguide](https://github.com/github/styleguide), update `primer` to your newly released version in your terminal:
+1. In [github/styleguide](https://github.com/github/styleguide), update `primer` by following [these instructions](https://github.com/github/styleguide/#adding-new-content-from-primer).
 
-  `npm install primer@latest`
-
-2. Then  run: `script/update-primer-docs`.
-
-3. Commit changes, make PR, get it approved, merge! 🚀
-
-#### Update [primer.github.io](primer.github.io)
-
-1. Edit  [index.html](https://github.com/primer/primer.github.io/blob/master/index.html) to include the latest version.
+2. Commit your changes, make a pull request, get it approved, and merge! 🚀
 
 
 #### Publish release tag
