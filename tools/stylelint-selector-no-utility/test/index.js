@@ -1,5 +1,5 @@
-var testRule = require("stylelint-test-rule-tape")
-var rule = require("..")
+const testRule = require('stylelint-test-rule-tape')
+const rule = require('..')
 
 testRule(rule.rule, {
   ruleName: rule.ruleName,
@@ -7,24 +7,24 @@ testRule(rule.rule, {
   skipBasicChecks: true,
   accept: [
     {
-      code: "a {  }"
+      code: 'a {  }'
     }
   ],
   reject: [
     {
-      code: ".m-0 { color: #fff; }"
+      code: '.m-0 { color: #fff; }'
     },
     {
-      code: ".m-0:hover { color: #fff; }"
+      code: '.m-0:hover { color: #fff; }'
     },
     {
-      code: ".m-2, .foo { color: #fff; }"
+      code: '.m-2, .foo { color: #fff; }'
     },
     {
-      code: ".m-2[type=button] { color: #fff; }"
+      code: '.m-2[type=button] { color: #fff; }'
     },
     {
-      code: ".foo.m-0 { color: #fff; }"
+      code: '.foo.m-0 { color: #fff; }'
     }
   ]
 })
