@@ -1,6 +1,6 @@
 # Primer / Progress
 
-[![npm version](https://img.shields.io/npm/v/primer-progress-bar.svg)](https://www.npmjs.org/package/primer-progress-bar)
+[![npm version](https://img.shields.io/npm/v/primer-progress.svg)](https://www.npmjs.org/package/primer-progress)
 [![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 > Use Progress components to visualize task completion
