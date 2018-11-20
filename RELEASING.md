@@ -6,7 +6,9 @@
 
 1. Go through the tracking PR and make sure everything listed is merged in.
 
-2. To update the change log for your release, click on the details links for the continuous-integration/travis-ci/push build.  Expand the `Deploying application` output and copy the change log content. Update the [CHANGELOG.md](https://github.com/primer/primer/blob/master/CHANGELOG.md) file with the change log content from the build.
+2. To update the change log for your release, click on the details links for the continuous-integration/travis-ci/push build.  Expand the `Deploying application` output and copy the change log content. Update the [CHANGELOG.md](https://github.com/primer/primer/blob/master/CHANGELOG.md) file with the change log content from build
+
+    **Note**: the CHANGELOG contents may be hidden within a collapsed section of the Travis logs under `Deploying the application`. Click the ▶ to the left of that section to expand it, then scroll to the bottom of the page, and copy all of the text between the `Unreleased (YYYY-MM-DD)` heading and the exit status message (e.g. `Done. Your build exited with 0.`). You may need to copy _before_ releasing your mouse to prevent Travis from collapsing that section of the logs first.
 
 3. Bump the package versions in your terminal:
 
@@ -14,46 +16,53 @@
   npm run bump
   ```
 
-4. Run `script/check-versions` to catch any cross-module version mismatches. You may need to update peer dependencies in `primer-popover` and `primer-marketing-buttons`.
+4. Run `script/check-versions` to catch any cross-module version mismatches. (This will run on Travis, too.)
 
 5. Test your changes with the latest release candidate version in the appropriate places (styleguide, storybook, github/github).
 
 6. Once the release PR is approved and you've done necessary testing, merge to `master`. This will trigger publishing to npm.
 
-7. Create a new release branch for the next release from `master` and name it `release-<version>`. Please use the following template for the PR description:
+7. Create a new release branch for the next release from `master` and name it `release-<version>`. Please use the following template for the PR description, linking to pull the relevant issues and/or pull requests for each change, and removing irrelevant headings:
 
     ```md
     # Primer [Major|Minor|Patch] Release
 
-    Tracking Issue for next release: 📦 **0.0.0**
+    Version: 📦 **0.0.0**
     Approximate release date: 📆 DD/MM/YY
 
-    ### Must
+    ### :boom: Breaking Change
+    - [ ] Description #
 
-    - [ ]
+    ### :rocket: Enhancement
+    - [ ] Description #
 
-    ### Should
-
-    - [ ]
-
-    ### Could
-
-    - [ ]
+    ### :bug: Bug Fix
+    - [ ] Description #
+    
+    ### :nail_care: Polish
+    - [ ] Description #
+    
+    ### :memo: Documentation
+    - [ ] Description #
+    
+    ### :house: Internal
+    - [ ] Description #
 
     ----
 
     ### Ship checklist
 
-    - [ ] Update CHANGELOG
+    - [ ] Update `CHANGELOG.md`
     - [ ] Run version bump
-    - [ ] Update primer.github.io
-    - [ ] Update github/github
-    - [ ] Update the style guide
-    - [ ] Update the release tag note
+    - [ ] Create a [new release](https://github.com/primer/primer/releases/new)
+    - [ ] Update github/github with released version
+    - [ ] Update github/styleguide with released version
     - [ ] Create a new pull request for the next release
 
     /cc @primer/ds-core
     ```
+
+
 
 
 ### In `github/github`:
