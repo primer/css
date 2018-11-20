@@ -1,5 +1,5 @@
 {
-  "version": "1.5.5",
+  "version": "1.5.7",
   "name": "primer-breadcrumb",
   "description": "Breadcrumb navigation for pages with parents / grandparents.",
   "homepage": "http://primer.github.io/",
@@ -31,7 +31,7 @@
     "publish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.6.0"
+    "primer-support": "4.7.0"
   },
   "keywords": [
     "breadcrumb",

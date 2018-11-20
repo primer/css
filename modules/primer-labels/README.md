@@ -129,7 +129,7 @@ Use `State--small` for a state label with reduced padding a smaller font size. T
 
 ## Counters
 
-Use the `Counter` component to add a count to navigational elements and buttons. Counters come in 3 variations: the default `Counter` with a light gray background, `Counter--gray` with a dark-gray background and inverse white text, and `Counter--gray-light` with a light-gray background and dark gray text.
+Use the `Counter` component to add a count to navigational elements and buttons. Counters come in 3 variations: the default `Counter` with a light gray background, `Counter--gray` with a dark-gray background and inverse white text, and `Counter--gray-light` with a light-gray background and dark gray text. When a counter is empty, it's visibility will be hidden.
 
 ```html title="Counter"
 <span class="Counter">16</span>

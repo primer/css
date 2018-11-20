@@ -8,6 +8,10 @@
   color: $gray-600;
   background-color: rgba($black, 0.08);
   border-radius: 20px;
+
+  &:empty {
+    visibility: hidden;
+  }
 }
 
 .Counter--gray-light {

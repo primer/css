@@ -6,6 +6,10 @@
     "node": true
   },
   "extends": [
-      "plugin:github/recommended"
-  ]
+    "plugin:github/recommended",
+    "plugin:github/es6"
+  ],
+  "rules": {
+    "no-console": 0
+  }
 }

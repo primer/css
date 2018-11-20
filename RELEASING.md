@@ -4,21 +4,56 @@
 ### In `primer/primer`:
 
 
-1. Go through the tracking PR and make sure everything that should be merged in is merged in.
+1. Go through the tracking PR and make sure everything listed is merged in.
 
 2. To update the change log for your release, click on the details links for the continuous-integration/travis-ci/push build.  Expand the `Deploying application` output and copy the change log content. Update the [CHANGELOG.md](https://github.com/primer/primer/blob/master/CHANGELOG.md) file with the change log content from the build.
 
-3. Run the version bump in your terminal: `npm run bump`.
+3. Bump the package versions in your terminal:
 
-4. Run `script/check-versions` to double check there are no version conflicts. You may need to update peer dependencies in `primer-popover` and `primer-marketing-buttons`.
+  ```sh
+  npm run bump
+  ```
+
+4. Run `script/check-versions` to catch any cross-module version mismatches. You may need to update peer dependencies in `primer-popover` and `primer-marketing-buttons`.
 
 5. Test your changes with the latest release candidate version in the appropriate places (styleguide, storybook, github/github).
 
-6. Once the release PR is approved and you've done necessary testing, merge to `master`. This will trigger a publish to npm.
+6. Once the release PR is approved and you've done necessary testing, merge to `master`. This will trigger publishing to npm.
 
-7. Create a new release branch for the next release from `master` and name it `release-<version>`.
+7. Create a new release branch for the next release from `master` and name it `release-<version>`. Please use the following template for the PR description:
 
- (CI will publish a release candidate version to npm for branches prefixed with `release`. These version numbers have a `rc.<number>` suffix on them)
+    ```md
+    # Primer [Major|Minor|Patch] Release
+
+    Tracking Issue for next release: 📦 **0.0.0**
+    Approximate release date: 📆 DD/MM/YY
+
+    ### Must
+
+    - [ ]
+
+    ### Should
+
+    - [ ]
+
+    ### Could
+
+    - [ ]
+
+    ----
+
+    ### Ship checklist
+
+    - [ ] Update CHANGELOG
+    - [ ] Run version bump
+    - [ ] Update primer.github.io
+    - [ ] Update github/github
+    - [ ] Update the style guide
+    - [ ] Update the release tag note
+    - [ ] Create a new pull request for the next release
+
+    /cc @primer/ds-core
+    ```
 
 
 ### In `github/github`:
