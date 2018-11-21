@@ -6,7 +6,7 @@
 
 1. Go through the tracking PR and make sure everything listed is merged in.
 
-2. To update the change log for your release, click on the details links for the continuous-integration/travis-ci/push build.  Expand the `Deploying application` output and copy the change log content. Update the [CHANGELOG.md](https://github.com/primer/primer/blob/master/CHANGELOG.md) file with the change log content from build
+2. To update the change log for your release, click on the details links for the continuous-integration/travis-ci/push build. Expand the `Deploying application` output and copy the changelog content. Update the [CHANGELOG.md](https://github.com/primer/primer/blob/master/CHANGELOG.md) file with the change log content from build
 
     **Note**: the CHANGELOG contents may be hidden within a collapsed section of the Travis logs under `Deploying the application`. Click the ▶ to the left of that section to expand it, then scroll to the bottom of the page, and copy all of the text between the `Unreleased (YYYY-MM-DD)` heading and the exit status message (e.g. `Done. Your build exited with 0.`). You may need to copy _before_ releasing your mouse to prevent Travis from collapsing that section of the logs first.
 
