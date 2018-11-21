@@ -8,7 +8,13 @@
 
 2. To update the change log for your release, click on the details links for the continuous-integration/travis-ci/push build. Expand the `Deploying application` output and copy the changelog content. Update the [CHANGELOG.md](https://github.com/primer/primer/blob/master/CHANGELOG.md) file with the change log content from build
 
-    **Note**: the CHANGELOG contents may be hidden within a collapsed section of the Travis logs under `Deploying the application`. Click the ▶ to the left of that section to expand it, then scroll to the bottom of the page, and copy all of the text between the `Unreleased (YYYY-MM-DD)` heading and the exit status message (e.g. `Done. Your build exited with 0.`). You may need to copy _before_ releasing your mouse to prevent Travis from collapsing that section of the logs first.
+    **Note**: the CHANGELOG contents may be hidden within a collapsed section of the Travis logs under `Deploying the application`. Click the ▶ to the left of that section to expand it:
+    
+   ![image](https://user-images.githubusercontent.com/113896/48871307-0be2eb00-ed99-11e8-97ab-b9119ac4b7d3.png)
+
+    Then scroll to the bottom of the page, and copy all of the text between the `Unreleased (YYYY-MM-DD)` heading and the exit status message. You may need to copy _before_ releasing your mouse to prevent Travis from collapsing that section of the logs first:
+    
+   ![image](https://user-images.githubusercontent.com/113896/48871298-f7065780-ed98-11e8-9160-c1016d61d042.png)
 
 3. Bump the package versions in your terminal:
 
