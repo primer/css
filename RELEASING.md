@@ -59,10 +59,10 @@
     ### Ship checklist
 
     - [ ] Update `CHANGELOG.md`
-    - [ ] Run version bump
-    - [ ] Create a [new release](https://github.com/primer/primer/releases/new)
-    - [ ] Update github/github with released version
-    - [ ] Update github/styleguide with released version
+    - [ ] Bump versions with `npm run bump`
+    - [ ] [Create a new release](https://github.com/primer/primer/releases/new)
+    - [ ] [Update github/github](https://github.com/primer/primer/blob/master/RELEASING.md#in-githubgithub)
+    - [ ] [Update github/styleguide](https://github.com/github/styleguide/#adding-new-content-from-primer)
     - [ ] Create a new pull request for the next release
 
     /cc @primer/ds-core
@@ -88,18 +88,9 @@
 8. When ready, merge! 🎉
 
 
-## Other items that need to be done after publishing Primer
+### Publish release tag
 
-#### Update the Style Guide
-
-1. In [github/styleguide](https://github.com/github/styleguide), update `primer` by following [these instructions](https://github.com/github/styleguide/#adding-new-content-from-primer).
-
-2. Commit your changes, make a pull request, get it approved, and merge! 🚀
-
-
-#### Publish release tag
-
-1. Create a new release tag [here](https://github.com/primer/primer/releases/new).
+1. [Create a new release](https://github.com/primer/primer/releases/new) with tag `v<version>`.
 
 2. Copy the changes from the [CHANGELOG](https://github.com/primer/primer/blob/master/CHANGELOG.md) and paste it into the release notes.
 
