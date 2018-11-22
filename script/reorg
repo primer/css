@@ -87,9 +87,7 @@ for dir in $modules; do
 done
 
 # primer/primer => primer/css
-go perl -pi -e 's#primer/primer#primer/css#' modules/*/{package.json,README.md}
-# tree/master/primer-<name> => tree/master/primer/<name>/
-go perl -pi -e "s#tree/master/primer-#tree/master/primer/#" modules/primer-*/package.json
+go perl -pi -e 's#primer/primer#primer/css#' {modules,tools}/*/{package.json,README.md}
 
 go pushd $primer > /dev/null
 go set_json '.name' '"@primer/css"' package.json
