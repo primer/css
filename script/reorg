@@ -83,10 +83,7 @@ for dir in $modules; do
     go perl -pi -e 's#primer-#../#' index.scss
     go popd > /dev/null
 
-    go pushd $dir > /dev/null
-    go write "@import \"@primer/css/$name/index.scss\";" index.scss
-    go set_json '.dependencies' '{"@primer/css":"file:../primer"}' package.json
-    go popd > /dev/null
+    go git rm -r $dir
 done
 
 # primer/primer => primer/css
