@@ -73,7 +73,7 @@ for dir in $modules; do
     go git mv $dir/index.scss $dest
 
     if [[ -e $dir/lib ]]; then
-        go mv $dir/lib $dest
+        go mv $dir/lib/* $dest
     fi
     if [[ -e $dir/docs ]]; then
         go mv $dir/docs $dest
