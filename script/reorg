@@ -2,7 +2,7 @@
 set -e
 
 flag="$1"
-if [ $flag = "--help" -o $flag = "-h" ]; then
+if [[ $flag = "--help" || $flag = "-h" ]]; then
     echo
     echo "Reorg the monorepo! There are some options available:"
     echo
@@ -35,7 +35,6 @@ fi
 packages=$($(dirname $0)/get-packages)
 modules=$(echo "$packages" | egrep 'modules/' | egrep -v 'primer$')
 tools=$(echo "$packages" | egrep 'tools/')
-last_version=10.10.0
 
 function go() {
     if [[ $DRY_RUN -eq 1 ]]; then
