@@ -22,9 +22,10 @@ if [[ $flag = "--help" || $flag = "-h" ]]; then
     echo
     exit
 elif [[ "$1" = "--reset" ]]; then
-    git reset modules
-    rm -r modules
-    git co -- modules
+    dirs="modules tools"
+    git reset $dirs
+    rm -r $dirs
+    git co -- $dirs
     exit
 elif [[ "$1" = "--dry-run" ]]; then
     DRY_RUN=1
@@ -83,7 +84,7 @@ for dir in $modules; do
     go perl -pi -e 's#primer-#../#' index.scss
     go popd > /dev/null
 
-    go git rm -r $dir
+    go rm -r $dir
 done
 
 # primer/primer => primer/css
