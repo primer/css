@@ -2,6 +2,7 @@
 set -e
 
 flag="$1"
+dirs="modules tools"
 if [[ $flag = "--help" || $flag = "-h" ]]; then
     echo
     echo "Reorg the monorepo! There are some options available:"
@@ -22,7 +23,6 @@ if [[ $flag = "--help" || $flag = "-h" ]]; then
     echo
     exit
 elif [[ "$1" = "--reset" ]]; then
-    dirs="modules tools"
     git reset $dirs
     rm -r $dirs
     git co -- $dirs
@@ -58,6 +58,9 @@ function write() {
 
 primer=modules/primer
 
+# primer/primer => primer/css
+go perl -pi -e 's#primer/primer#primer/css#' {modules,tools}/*/{package.json,*.md,docs/*.md}
+
 for dir in $modules; do
     name="${dir/modules\/primer-/}"
     dest="$primer/$name"
@@ -82,13 +85,16 @@ for dir in $modules; do
 
     go pushd $dest > /dev/null
     go perl -pi -e 's#primer-#../#' index.scss
+    go perl -pi -e 's#/lib/#/#' index.scss
     go popd > /dev/null
 
     go rm -r $dir
 done
 
-# primer/primer => primer/css
-go perl -pi -e 's#primer/primer#primer/css#' {modules,tools}/*/{package.json,README.md}
+for dir in $primer/marketing-*; do
+    name="${dir/$primer\/marketing-/}"
+    go git mv $dir $primer/marketing/$name
+done
 
 go pushd $primer > /dev/null
 go set_json '.name' '"@primer/css"' package.json
@@ -96,4 +102,4 @@ go set_json '.dependencies' '{}' package.json
 go perl -pi -e 's#primer-#./#' index.scss
 go popd > /dev/null
 
-go git add modules
+go git add $dirs
