@@ -1,0 +1,7 @@
+# these are the symlinked docs
+components/**/*.md
+objects/**/*.md
+packages/**/*.md
+support/**/*.md
+utilities/**/*.md
+whats_new/**/*.md

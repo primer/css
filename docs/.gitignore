@@ -1,7 +1,1 @@
 *.txt
-pages/css/components/**/*.md
-pages/css/objects/**/*.md
-pages/css/packages/**/*.md
-pages/css/support/**/*.md
-pages/css/utilities/**/*.md
-pages/css/whats_new/**/*.md
