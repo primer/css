@@ -221,7 +221,7 @@
 
 /* Set to monospace font */
 .text-mono {
-  font-family: $mono-font;
+  font-family: $mono-font !important;
 }
 
 /* Disallow user from selecting text */
