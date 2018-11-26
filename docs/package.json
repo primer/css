@@ -1,10 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "symlink": "./symlink.js",
-    "test": "npm run symlink && ./test.sh",
+    "pretest": "npm run symlink",
+    "test": "./test.sh",
     "prestart": "npm run symlink",
-    "start": "next dev"
+    "start": "next dev",
+    "symlink": "./symlink.js"
   },
   "dependencies": {
     "colorette": "^1.0.7",
