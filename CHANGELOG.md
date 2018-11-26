@@ -1,3 +1,15 @@
+# 10.10.1
+
+#### :memo: Documentation
+* [#606](https://github.com/primer/primer/pull/606) Fix for Progress Broken Package Link. ([@emilybrick](https://github.com/emilybrick))
+
+#### :house: Internal
+* [#608](https://github.com/primer/primer/pull/608) Update releasing docs. ([@shawnbot](https://github.com/shawnbot))
+
+#### Committers: 2
+- Emily Brick ([emilybrick](https://github.com/emilybrick))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+
 # 10.10.0
 
 #### :rocket: Enhancement
