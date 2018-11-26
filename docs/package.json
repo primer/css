@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "scripts": {
+    "symlink": "./symlink.js",
+    "test": "npm run symlink && ./test.sh",
+    "prestart": "npm run symlink",
+    "start": "next dev"
+  },
+  "dependencies": {
+    "colorette": "^1.0.7",
+    "fs-extra": "^7.0.1",
+    "klaw": "^3.0.0",
+    "minimatch": "^3.0.4",
+    "next": "^7.0.2",
+    "next-page-map": "^1.0.1"
+  }
+}
