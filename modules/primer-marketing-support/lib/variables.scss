@@ -2,6 +2,10 @@
 $alt-body-font: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
 $alt-mono-font: $mono-font;
 
+// Colors
+$blue-450: mix($blue-500, $blue-400, 50%);
+$green-450: mix($green-500, $green-400, 50%);
+
 // Increases primer-core scale first by 8px for spacer-7 then by 16px step increments for spacer-8 to spacer-12
 // i.e. After 40px, we have 48, 64, 80, 96, etc.
 $spacer-7:  $spacer * 6;  // 48px
