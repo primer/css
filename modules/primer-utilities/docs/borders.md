@@ -130,17 +130,17 @@ Use the following utilities to add or remove rounded corners: `rounded-0` remove
 You can also add rounded corners to each edge (top, right, bottom, left) with the following utilities:
 
 ```html
-<div class="border rounded-top mb-2">
-  .rounded-top
+<div class="border rounded-top-1 mb-2">
+  .rounded-top-1
 </div>
-<div class="border rounded-right mb-2">
-  .rounded-right
+<div class="border rounded-right-1 mb-2">
+  .rounded-right-1
 </div>
-<div class="border rounded-bottom mb-2">
-  .rounded-bottom
+<div class="border rounded-bottom-1 mb-2">
+  .rounded-bottom-1
 </div>
-<div class="border rounded-left mb-2">
-  .rounded-left
+<div class="border rounded-left-1 mb-2">
+  .rounded-left-1
 </div>
 ```
 
