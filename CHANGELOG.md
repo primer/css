@@ -1,3 +1,15 @@
+# 10.10.2
+
+#### :memo: Documentation
+* [#614](https://github.com/primer/primer/pull/614) fix broken border-radius helper example. ([@joelhawksley](https://github.com/joelhawksley))
+
+#### :house: Internal
+* [#615](https://github.com/primer/primer/pull/615) pin npm-run-all@4.1.5. ([@shawnbot](https://github.com/shawnbot))
+
+#### Committers: 2
+- Joel Hawksley ([joelhawksley](https://github.com/joelhawksley))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+
 # 10.10.1
 
 #### :memo: Documentation
