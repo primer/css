@@ -10,7 +10,8 @@
     "now-start": "next"
   },
   "dependencies": {
-    "@primer/next": "0.0.7",
+    "@primer/components": "^7.0.0-beta",
+    "@primer/next": "0.0.8",
     "colorette": "^1.0.7",
     "fs-extra": "^7.0.1",
     "klaw": "^3.0.0",
