@@ -5,14 +5,19 @@
     "test": "./test.sh",
     "prestart": "npm run symlink",
     "start": "next dev",
-    "symlink": "./symlink.js"
+    "symlink": "./symlink.js",
+    "now-build": "next build",
+    "now-start": "next"
   },
   "dependencies": {
+    "@primer/next": "0.0.7",
     "colorette": "^1.0.7",
     "fs-extra": "^7.0.1",
     "klaw": "^3.0.0",
     "minimatch": "^3.0.4",
     "next": "^7.0.2",
-    "next-page-map": "^1.0.1"
+    "next-page-map": "^1.0.1",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   }
 }
