@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+if (process.env.NOW_URL) {
+  console.warn('copy.js should not run in Now!')
+  process.exit(0)
+}
+
 const klaw = require('klaw-sync')
 const minimatch = require('minimatch')
 const {green, red, yellow} = require('colorette')
