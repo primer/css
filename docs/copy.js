@@ -3,7 +3,7 @@ const klaw = require('klaw-sync')
 const minimatch = require('minimatch')
 const {green, red, yellow} = require('colorette')
 const {basename, dirname, join} = require('path')
-const {copySync, ensureDirSync, removeSync} = require('fs-extra')
+const {copySync, ensureDirSync, removeSync, writeFileSync} = require('fs-extra')
 
 const sourceDir = join(__dirname, '../modules')
 
@@ -74,6 +74,9 @@ if (skipped.length) {
 console.warn(yellow(`linking ${links.length} files...`))
 // put all the links in the pages/css directory
 const destDir = join(__dirname, 'pages/css')
+
+// TODO: read `join(destDir, 'copies.json')` and delete any previous copies
+
 for (const {source, dest} of links) {
   console.warn(`${source} ${yellow('->')} ${dest}`)
   const destPath = join(destDir, dest)
@@ -82,6 +85,10 @@ for (const {source, dest} of links) {
   ensureDirSync(destPathDir)
   copySync(join(sourceDir, source), destPath)
 }
+
+console.warn(yellow('writing copies.json...'))
+const copies = links.map(link => link.dest)
+writeFileSync(join(destDir, '_copies.json'), JSON.stringify(copies, null, 2), 'utf8')
 console.warn(green('done!'))
 
 function shortName(path) {
