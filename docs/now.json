@@ -1,5 +1,6 @@
 {
   "name": "primer-css",
+  "version": 1,
   "scale": {
     "sfo": {
       "min": 1,
