@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "pretest": "npm run copy",
+    "prepare": "npm run copy",
     "test": "./test.sh",
-    "prestart": "npm run copy",
+    "predev": "npm run copy",
     "dev": "next",
     "copy": "node copy.js",
     "build": "next build",
