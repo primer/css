@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-const klaw = require('klaw')
+const klaw = require('klaw-sync')
 const minimatch = require('minimatch')
 const {green, red, yellow} = require('colorette')
 const {basename, dirname, join} = require('path')
-const {copy, ensureDir, remove} = require('fs-extra')
+const {copySync, ensureDirSync, removeSync} = require('fs-extra')
 
 const sourceDir = join(__dirname, '../modules')
 
@@ -36,51 +36,53 @@ const map = {
 
 console.warn(yellow(`walking: ${sourceDir}...`))
 let skipped = []
-klaw(sourceDir)
-  .on('data', item => {
-    // item.path is fully-qualified, so we need to remove the sourceDir
-    // from the beginning of it to get the relative path
-    const source = item.path.substr(sourceDir.length + 1)
-    for (const [pattern, name] of Object.entries(map)) {
-      if (source === pattern || minimatch(source, pattern)) {
-        const dest = typeof name === 'function' ? name(source) : name
-        if (dest) {
-          links.push({source, dest})
-        }
-        return
+const items = klaw(sourceDir, {
+  nodir: true,
+  filter: ({path}) => path.indexOf('node_modules') === -1
+})
+const mapEntries = Object.entries(map)
+for (const item of items) {
+  // item.path is fully-qualified, so we need to remove the sourceDir
+  // from the beginning of it to get the relative path
+  const source = item.path.substr(sourceDir.length + 1)
+  let linked = false
+  for (const [pattern, name] of mapEntries) {
+    if (source === pattern || minimatch(source, pattern)) {
+      const dest = typeof name === 'function' ? name(source) : name
+      if (dest) {
+        links.push({source, dest})
+        linked = true
       }
+      break
     }
-    // log any markdown files that aren't matched
-    if (source.endsWith('.md')) {
-      skipped.push(source)
-    }
-  })
-  .on('end', () => {
-    // ignore modules/README.md
-    skipped = skipped.filter(file => file !== 'README.md')
-    if (skipped.length) {
-      console.warn(`skipped ${skipped.length} markdown files:`)
-      for (const file of skipped) {
-        console.warn(`${red('x')} ${file}`)
-      }
-    }
-    console.warn(yellow(`linking ${links.length} files...`))
-    // put all the links in the pages/css directory
-    const destDir = join(__dirname, 'pages/css')
-    Promise.all(links.map(({source, dest}) => {
-        console.warn(`${source} ${yellow('->')} ${dest}`)
-        const destPath = join(destDir, dest)
-        const destPathDir = dirname(destPath)
-        return remove(destPath)
-          .then(() => ensureDir(destPathDir))
-          .then(() => copy(join(sourceDir, source), destPath))
-      }))
-      .then(() => console.warn(green('done!')))
-      .catch(error => {
-        console.error(error)
-        process.exitCode = 1
-      })
-  })
+  }
+  // log any markdown files that aren't matched
+  if (!linked && source.endsWith('.md')) {
+    skipped.push(source)
+  }
+}
+
+// ignore modules/README.md
+skipped = skipped.filter(file => file !== 'README.md')
+if (skipped.length) {
+  console.warn(`skipped ${skipped.length} markdown files:`)
+  for (const file of skipped) {
+    console.warn(`${red('x')} ${file}`)
+  }
+}
+
+console.warn(yellow(`linking ${links.length} files...`))
+// put all the links in the pages/css directory
+const destDir = join(__dirname, 'pages/css')
+for (const {source, dest} of links) {
+  console.warn(`${source} ${yellow('->')} ${dest}`)
+  const destPath = join(destDir, dest)
+  const destPathDir = dirname(destPath)
+  removeSync(destPath)
+  ensureDirSync(destPathDir)
+  copySync(join(sourceDir, source), destPath)
+}
+console.warn(green('done!'))
 
 function shortName(path) {
   return path.match(/primer-([-\w]+)/)[1]
