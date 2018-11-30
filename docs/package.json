@@ -1,17 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "pretest": "npm run symlink",
+    "pretest": "npm run copy",
     "test": "./test.sh",
-    "prestart": "npm run symlink",
+    "prestart": "npm run copy",
     "start": "next dev",
-    "symlink": "./symlink.js",
+    "copy": "node copy.js",
     "now-build": "next build",
     "now-start": "next"
   },
   "dependencies": {
     "@primer/components": "^7.0.0-beta",
-    "@primer/next": "0.0.8",
+    "@primer/next": "0.0.10",
     "colorette": "^1.0.7",
     "fs-extra": "^7.0.1",
     "klaw": "^3.0.0",

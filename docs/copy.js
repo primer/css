@@ -2,8 +2,8 @@
 const klaw = require('klaw')
 const minimatch = require('minimatch')
 const {green, red, yellow} = require('colorette')
-const {basename, join} = require('path')
-const {ensureSymlink} = require('fs-extra')
+const {basename, dirname, join} = require('path')
+const {copy, ensureDir, remove} = require('fs-extra')
 
 const sourceDir = join(__dirname, '../modules')
 
@@ -69,7 +69,11 @@ klaw(sourceDir)
     const destDir = join(__dirname, 'pages/css')
     Promise.all(links.map(({source, dest}) => {
         console.warn(`${source} ${yellow('->')} ${dest}`)
-        return ensureSymlink(join(sourceDir, source), join(destDir, dest))
+        const destPath = join(destDir, dest)
+        const destPathDir = dirname(destPath)
+        return remove(destPath)
+          .then(() => ensureDir(destPathDir))
+          .then(() => copy(join(sourceDir, source), destPath))
       }))
       .then(() => console.warn(green('done!')))
       .catch(error => {
