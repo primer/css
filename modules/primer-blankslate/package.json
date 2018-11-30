@@ -12,6 +12,9 @@
     "category": "product",
     "module_type": "components"
   },
+  "figma": {
+    "url": "https://www.figma.com/file/XscebjmfHCvUkUc3J9G4yEo5/primer-blankslate"
+  },
   "files": [
     "index.scss",
     "lib",

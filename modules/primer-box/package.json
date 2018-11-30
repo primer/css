@@ -12,6 +12,9 @@
     "category": "core",
     "module_type": "components"
   },
+  "figma": {
+    "url": "https://www.figma.com/file/HpevK9RqtCVlHJwcgQFxJPHI/primer-box"
+  },
   "files": [
     "index.scss",
     "lib",

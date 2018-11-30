@@ -12,6 +12,9 @@
     "category": "product",
     "module_type": "components"
   },
+  "figma": {
+    "url": "https://www.figma.com/file/NRdQUqZUgJJ4grrIe0vfktEB/primer-avatars"
+  },
   "files": [
     "index.scss",
     "lib",

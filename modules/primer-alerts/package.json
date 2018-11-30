@@ -15,6 +15,9 @@
       "warning"
     ]
   },
+  "figma": {
+    "url": "https://www.figma.com/file/GTgkWXgIN2DzTY9nVLKkpzxe/primer-alerts"
+  },
   "files": [
     "index.scss",
     "lib",
