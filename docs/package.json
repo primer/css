@@ -4,10 +4,10 @@
     "pretest": "npm run copy",
     "test": "./test.sh",
     "prestart": "npm run copy",
-    "start": "next dev",
+    "dev": "next",
     "copy": "node copy.js",
-    "now-build": "next build",
-    "now-start": "next"
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "@primer/components": "^7.0.0-beta",
