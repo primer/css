@@ -31,3 +31,17 @@ Use responsive position utilities to adjust the position of an element at differ
   default
 </div>
 ```
+
+## Position elements with spacing utilities
+
+Position elements from all four element edges (`top`, `right`, `bottom`, and `left`) using any spacing utility from the global spacing scale and the marketing spacing scale (from `$spacer-1` to `$spacer-12`).
+
+Commonly used with `.position-absolute` to position decorative assets and shapes on marketing sites.
+
+```html
+<div className='position-relative p-6 bg-gray'>
+  <div className='position-absolute top-4 top-md-8 border bg-white p-2'>
+    .position-absolute
+  </div>
+</div>
+```
