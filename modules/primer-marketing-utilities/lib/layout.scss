@@ -16,7 +16,7 @@
   }
 }
 
-// Absolutely position content
+// Utilities to position content
 @for $i from 1 through length($allSpacers) {
   $size: #{nth($allSpacers, $i)};
   $scale: #{$i - 1};
@@ -30,7 +30,7 @@
   .left-n#{$scale} { left: -#{$size} !important; }
 }
 
-// Responsive absolute position values
+// Responsive utilities to position content
 @each $breakpoint in map-keys($breakpoints) {
   // Loop through the spacer values
   @for $i from 1 through length($allSpacers) {

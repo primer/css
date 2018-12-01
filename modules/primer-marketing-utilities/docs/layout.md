@@ -38,6 +38,8 @@ Position elements from all four element edges (`top`, `right`, `bottom`, and `le
 
 Commonly used with `.position-absolute` to position decorative assets and shapes on marketing sites.
 
+Responsive breakpoints are also supported.
+
 ```html
 <div className='position-relative p-6 bg-gray'>
   <div className='position-absolute top-4 top-md-8 border bg-white p-2'>
