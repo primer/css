@@ -23,9 +23,9 @@ Marketing buttons can be solid blue, outlined blue, or solid green.
 The solid blue and solid green buttons have more visual emphasis than the blue outlined button, therefore they should be used sparingly and only for call to actions that need emphasis.
 
 ```html
-<button class="btn-mktg" type="button">Learn more</button>
-<button class="btn-mktg btn-outline-mktg" type="button">Learn more</button>
-<button class="btn-mktg btn-primary-mktg" type="button">Sign up</button>
+<button class="btn-mktg mr-2" type="button">Learn more</button>
+<button class="btn-mktg btn-outline-mktg mr-2" type="button">Learn more</button>
+<button class="btn-mktg btn-primary-mktg mr-2" type="button">Sign up</button>
 ```
 
 ## Sizes
@@ -33,12 +33,12 @@ The solid blue and solid green buttons have more visual emphasis than the blue o
 Available in two sizes, marketing buttons have a default size and a large size.
 
 ```html
-<button class="btn-mktg" type="button">Learn more</button>
-<button class="btn-outline-mktg" type="button">Learn more</button>
-<button class="btn-primary-mktg" type="button">Sign up</button>
-<button class="btn-mktg btn-large-mktg" type="button">Learn more</button>
-<button class="btn-outline-mktg btn-large-mktg" type="button">Learn more</button>
-<button class="btn-primary-mktg btn-large-mktg" type="button">Sign up</button>
+<button class="btn-mktg mr-2" type="button">Learn more</button>
+<button class="btn-mktg btn-outline-mktg mr-2" type="button">Learn more</button>
+<button class="btn-mktg btn-primary-mktg mr-2" type="button">Sign up</button>
+<button class="btn-mktg btn-large-mktg mr-2" type="button">Learn more</button>
+<button class="btn-mktg btn-outline-mktg btn-large-mktg mr-2" type="button">Learn more</button>
+<button class="btn-mktg btn-primary-mktg btn-large-mktg mr-2" type="button">Sign up</button>
 ```
 
 <!-- %enddocs -->

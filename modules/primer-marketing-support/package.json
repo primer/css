@@ -35,5 +35,8 @@
     "functions",
     "variables",
     "scss"
-  ]
+  ],
+  "dependencies": {
+    "primer-support": "^4.7.0"
+  }
 }
