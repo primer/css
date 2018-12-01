@@ -7,13 +7,7 @@ import {Text, Flex, Link, Sticky, Box} from '@primer/components'
 
 const NavLink = withRouter(({href, router, ...rest}) => (
   <NextLink href={href}>
-    <Link
-      color="white"
-      href={href}
-      px={4}
-      fontWeight={router.pathname === href ? 'bold' : null}
-      {...rest}
-    />
+    <Link color="white" href={href} px={4} fontWeight={router.pathname === href ? 'bold' : null} {...rest} />
   </NextLink>
 ))
 
