@@ -1,9 +1,8 @@
 #!/bin/sh
-cd docs
-npm install
-npm run prepare
+set -e
 if [ -z "$NOW_TOKEN" ]; then
     echo "NOW_TOKEN is not set; skipping docs deployment"
 else
+    cd docs
     now --token=$NOW_TOKEN
 fi
