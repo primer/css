@@ -1,5 +1,6 @@
 {
   "private": true,
+  "name": "@primer/css-docs",
   "scripts": {
     "prepare": "npm run copy",
     "lint": "eslint pages",
@@ -25,15 +26,15 @@
     "eslint": "4.19.1",
     "eslint-plugin-github": "1.0.0",
     "eslint-plugin-prettier": "^3.0.0",
-    "fs-extra": "^7.0.1",
+    "fs-extra": "^4.0.2",
     "klaw": "^3.0.0",
     "mdx-live": "2.0.0-alpha.2",
     "minimatch": "^3.0.4",
     "next": "7.0.2",
     "next-compose-plugins": "2.1.1",
-    "primer": "file:../modules/primer",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "primer": "10.10.2",
+    "react": "16.6.1",
+    "react-dom": "16.6.1",
     "react-emotion": "9.2.8",
     "styled-components": "3.3.3"
   }
