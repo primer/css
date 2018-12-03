@@ -1,19 +1,14 @@
 // this runs synchronously
 require('./copy')
 
-const {join} = require('path')
+const {join, resolve} = require('path')
 const withPlugins = require('next-compose-plugins')
-const mdx = require('@zeit/next-mdx')
-const getPageMap = require('next-page-map')
+const mdx = require('./lib/mdx')
 
 const pageExtensions = ['js', 'jsx', 'md', 'mdx']
-const pageMap = getPageMap(join(__dirname, 'pages'), pageExtensions)
-
 const assetPrefix = process.env.NOW_URL
 
-module.exports = withPlugins([
-  mdx({extension: /\.mdx?$/})
-], {
+module.exports = withPlugins([mdx()], {
   /*
    * Note: Prefixing assets with the fully qualified deployment URL
    * makes them available even when the site is served from a path alias, as in
@@ -22,8 +17,7 @@ module.exports = withPlugins([
   assetPrefix: process.env.NOW_URL,
   pageExtensions,
   publicRuntimeConfig: {
-    assetPrefix,
-    pageMap
+    assetPrefix
   },
 
   webpack(config, {dev}) {
