@@ -5,16 +5,23 @@ import Head from 'next/head'
 import {withMDXLive} from 'mdx-live'
 import getConfig from 'next/config'
 import Octicon, {Pencil} from '@githubprimer/octicons-react'
+import {basename, join} from 'path'
 import * as docComponents from './doc-components'
 import * as primerComponents from '@primer/components'
-import {repository} from 'primer/package.json'
 
-const {pageMap} = getConfig().publicRuntimeConfig
 const {BaseStyles, Box, Flex, Link, Text, theme} = primerComponents
 const {SideNav, Header, IndexHero} = docComponents
 
 const DocLink = props => <Link nounderline {...props} />
-const editLinkBase = `https://github.com/${repository}/edit/master/pages`
+
+const ext = /\.mdx?$/
+const context = require.context('.', true, /\.mdx?$/)
+const pathMap = context.keys().reduce((map, key) => {
+  const base = key.replace(ext, '').replace(/\/index$/, '')
+  const path = base.substr(1) // strip the leading "."
+  map[path] = key
+  return map
+}, {})
 
 const components = {
   ...docComponents,
@@ -39,19 +46,24 @@ export default class MyApp extends App {
 
   render() {
     const {pathname} = this.props.router
-    const filename = pageMap[pathname]
+    const filename = pathMap[pathname]
     if (!filename) {
       // eslint-disable-next-line no-console
-      console.warn(`pathname "${pathname}" doesn't exist in pageMap:`, pageMap)
+      console.warn(`pathname "${pathname}" doesn't exist in:`, Object.keys(pathMap))
     }
     const {Component, page} = this.props
     const hasHero = ['/css', '/css/'].includes(pathname)
+
+    const meta = {}
+    if (filename) {
+      Object.assign(meta, context(filename).meta)
+    }
 
     return (
       <BaseStyles style={{fontFamily: theme.fonts.normal}}>
         <Container>
           <Head>
-            <title>Primer CSS</title>
+            <title>Primer CSS{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
           <Header />
           <Flex display={['block', 'block', 'flex', 'flex']} flexDirection="row-reverse">
@@ -60,18 +72,9 @@ export default class MyApp extends App {
               <Box color="gray.9" maxWidth={1012} width={'100%'} my={6} mx={'auto'} px={6} className="markdown-body">
                 <MDXProvider components={components}>
                   <Component {...page} />
+                  <pre>meta: {JSON.stringify(meta, null, 2)}</pre>
                 </MDXProvider>
-                {filename && (
-                  <Box color="gray.5" borderColor="gray.2" borderTop={1} my={6} pt={2}>
-                    <Text mr={2}>
-                      <Octicon icon={Pencil} />
-                    </Text>
-                    <DocLink muted href={`${editLinkBase}${filename}`}>
-                      Edit this page
-                    </DocLink>{' '}
-                    on GitHub
-                  </Box>
-                )}
+                {/* TODO: bring back edit link! */}
               </Box>
             </Box>
             <SideNav />
