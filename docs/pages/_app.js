@@ -8,7 +8,7 @@ import Octicon, {Pencil} from '@githubprimer/octicons-react'
 import {basename, join} from 'path'
 import * as primerComponents from '@primer/components'
 import * as docComponents from '../src/components'
-import {pathMap, requirePage} from '../src/utils'
+import {rootPage} from '../src/utils'
 
 import 'primer/index.scss'
 
@@ -39,13 +39,10 @@ export default class MyApp extends App {
   render() {
     // strip the trailing slash
     const pathname = this.props.router.pathname.replace(/\/$/, '')
-    const filename = pathMap[pathname]
     const {Component, page} = this.props
 
-    const meta = {}
-    if (filename) {
-      Object.assign(meta, requirePage(filename).meta)
-    }
+    const node = rootPage.first(node => node.path === pathname)
+    const meta = node ? node.meta : {}
 
     return (
       <BaseStyles style={{fontFamily: theme.fonts.normal}}>
