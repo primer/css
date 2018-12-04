@@ -10,6 +10,11 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => {
       }
 
       config.module.rules.push({
+        test: /\.svg$/,
+        use: {loader: '@svgr/webpack'}
+      })
+
+      config.module.rules.push({
         test,
         use: [
           options.defaultLoaders.babel,

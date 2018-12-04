@@ -1,14 +1,22 @@
 // this runs synchronously
-require('./copy')
+// require('./copy')
 
 const {join, resolve} = require('path')
 const withPlugins = require('next-compose-plugins')
 const mdx = require('./lib/mdx')
+const sass = require('@zeit/next-sass')
 
 const pageExtensions = ['js', 'jsx', 'md', 'mdx']
 const assetPrefix = process.env.NOW_URL
 
-module.exports = withPlugins([mdx()], {
+module.exports = withPlugins([
+  sass({
+    sassLoaderOptions: {
+      includePaths: [resolve(__dirname, '../modules')]
+    }
+  }),
+  mdx()
+], {
   /*
    * Note: Prefixing assets with the fully qualified deployment URL
    * makes them available even when the site is served from a path alias, as in
@@ -21,35 +29,9 @@ module.exports = withPlugins([mdx()], {
   },
 
   webpack(config, {dev}) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: {loader: '@svgr/webpack'}
-    })
 
-    if (dev) {
-      /*
-       * In development mode, we want to alias the project-root
-       * imports to the source files so that this:
-       *
-       * ```js
-       * import {Box} from '..'
-       * ```
-       *
-       * becomes:
-       *
-       * ```js
-       * import {Box} from '../src'
-       * ```
-       *
-       * Note: the '$' at the end of these tells webpack to match
-       * the end of the import path. Without it, the first alias
-       * applies to *every* import because the resolved path for
-       * every one begins with `__dirname`.
-       */
-      config.resolve.alias = {
-        [__dirname + '$']: join(__dirname, 'src/index.js'),
-        [join(__dirname, 'css$')]: join(__dirname, 'src/css.js')
-      }
+    config.resolve.alias = {
+      docs: join(__dirname, 'src')
     }
 
     const {optimization} = config
@@ -62,6 +44,7 @@ module.exports = withPlugins([mdx()], {
       }
       /* eslint-enable camelcase, no-console */
     }
+
     return config
   }
 })
