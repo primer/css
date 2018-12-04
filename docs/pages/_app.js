@@ -43,7 +43,8 @@ export default class MyApp extends App {
   }
 
   render() {
-    const {pathname} = this.props.router
+    // strip the trailing slash
+    const pathname = this.props.router.pathname.replace(/\/$/, '')
     const filename = pathMap[pathname]
     const {Component, page} = this.props
     const hasHero = ['/css', '/css/'].includes(pathname)
