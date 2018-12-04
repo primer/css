@@ -21,18 +21,18 @@ for (const file of ignored) {
 }
 
 const links = getLinks(sourceDir, destDir, {
-  '../CHANGELOG.md': 'whats_new/changelog.md',
-  'primer/README.md': 'packages/primer.md',
+  '../CHANGELOG.md': 'whats-new/changelog.md',
+  'primer/README.md': false, // 'packages/primer.md',
   'primer-base/README.md': 'support/base.md',
-  'primer-core/README.md': 'packages/primer-core.md',
+  'primer-core/README.md': false, // 'packages/primer-core.md',
   'primer-layout/README.md': 'objects/layout.md',
   'primer-layout/docs/*.md': path => `objects/${basename(path)}`,
   'primer-marketing-support/README.md': 'support/marketing-variables.md',
   'primer-marketing-type/README.md': 'utilities/marketing-type.md',
   'primer-marketing-utilities/README.md': 'utilities/marketing.md',
   'primer-marketing-utilities/docs/*.md': path => `utilities/marketing-${basename(path)}`,
-  'primer-marketing/README.md': 'packages/primer-marketing.md',
-  'primer-product/README.md': 'packages/primer-product.md',
+  'primer-marketing/README.md': false, // 'packages/primer-marketing.md',
+  'primer-product/README.md': false, // 'packages/primer-product.md',
   'primer-support/README.md': false, // 'support/index.md',
   'primer-support/docs/*.md': path => `support/${basename(path)}`,
   'primer-table-object/README.md': 'objects/table-object.md',
