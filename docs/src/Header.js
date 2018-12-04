@@ -25,10 +25,10 @@ const Header = props => (
         </NextLink>
         <Box display={['none', 'none', 'block']}>
           <NavLink href="/css">Docs</NavLink>
-          <NavLink href="/getting-started">Getting Started</NavLink>
-          <NavLink href="/principles">Principles</NavLink>
-          <NavLink href="/tools">Tools</NavLink>
-          <NavLink href="/news">What’s New</NavLink>
+          <NavLink href="/css/getting-started">Getting Started</NavLink>
+          <NavLink href="/css/principles">Principles</NavLink>
+          <NavLink href="/css/tools">Tools</NavLink>
+          <NavLink href="/css/whats-new">What’s New</NavLink>
         </Box>
         <Box display={['block', 'block', 'none']}>
           <Link nounderline href="#sidenav">
