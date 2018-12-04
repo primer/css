@@ -10,6 +10,8 @@ import * as primerComponents from '@primer/components'
 import * as docComponents from '../src/components'
 import {requirePage, pathMap} from '../src/utils'
 
+import 'primer/index.scss'
+
 const {BaseStyles, Box, Flex, Link, Text, theme} = primerComponents
 const {SideNav, Header, IndexHero} = docComponents
 
