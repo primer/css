@@ -66,6 +66,7 @@ export default class MyApp extends App {
             <Box width="100%">
               {hasHero && <IndexHero />}
               <Box color="gray.9" maxWidth={1012} width={'100%'} my={6} mx={'auto'} px={6} className="markdown-body">
+                {meta.title ? <h1>{meta.title}</h1> : null}
                 <MDXProvider components={components}>
                   <Component {...page} />
                   <pre>meta: {JSON.stringify(meta, null, 2)}</pre>
