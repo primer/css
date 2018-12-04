@@ -17,7 +17,7 @@
     "build",
     "CHANGELOG.md"
   ],
-  "repository": "https://github.com/primer/primer/tree/master/modules/primer",
+  "repository": "primer/primer",
   "bugs": {
     "url": "https://github.com/primer/primer/issues"
   },
