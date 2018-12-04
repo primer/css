@@ -47,10 +47,6 @@ export default class MyApp extends App {
   render() {
     const {pathname} = this.props.router
     const filename = pathMap[pathname]
-    if (!filename) {
-      // eslint-disable-next-line no-console
-      console.warn(`pathname "${pathname}" doesn't exist in:`, Object.keys(pathMap))
-    }
     const {Component, page} = this.props
     const hasHero = ['/css', '/css/'].includes(pathname)
 
