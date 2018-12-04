@@ -6,13 +6,11 @@ import {withMDXLive} from 'mdx-live'
 import getConfig from 'next/config'
 import Octicon, {Pencil} from '@githubprimer/octicons-react'
 import {basename, join} from 'path'
-import * as docComponents from './doc-components'
 import * as primerComponents from '@primer/components'
+import * as docComponents from '../src/components'
 
 const {BaseStyles, Box, Flex, Link, Text, theme} = primerComponents
 const {SideNav, Header, IndexHero} = docComponents
-
-const DocLink = props => <Link nounderline {...props} />
 
 const ext = /\.mdx?$/
 const context = require.context('.', true, /\.mdx?$/)
@@ -28,7 +26,7 @@ const components = {
   ...primerComponents,
   Octicon,
   // render links with our component
-  a: DocLink,
+  a: Link,
   code: withMDXLive('pre'),
   pre: props => props.children
 }
