@@ -24,10 +24,10 @@ const SideNav = props => (
     >
       <BorderBox border="none" borderBottom={1} borderRadius={0} borderColor="gray.2" bg="gray.0">
         <Flex flexDirection="column" alignItems="start" p={5}>
-          <NavLink href="/css/support/">Support</NavLink>
-          <NavLink href="/css/utilities/">Utilities</NavLink>
-          <NavLink href="/css/objects/">Objects</NavLink>
-          <NavLink href="/css/components/">Components</NavLink>
+          <NavLink href="/css/support">Support</NavLink>
+          <NavLink href="/css/utilities">Utilities</NavLink>
+          <NavLink href="/css/objects">Objects</NavLink>
+          <NavLink href="/css/components">Components</NavLink>
         </Flex>
       </BorderBox>
     </BorderBox>
