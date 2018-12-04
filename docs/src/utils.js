@@ -1,5 +1,9 @@
 import Router from 'next/router'
 import getConfig from 'next/config'
+import TreeModel from 'tree-model'
+
+const INDEX_SUFFIX = '/index'
+const INDEX_PATTERN = /\/index(\.[a-z]+)?$/
 
 export const config = getConfig().publicRuntimeConfig || {}
 
@@ -15,6 +19,20 @@ export const pathMap = requirePage.keys().reduce((map, key) => {
   map[path] = key
   return map
 }, {})
+
+const nested = nest(pathMap)
+export const pageTree = new TreeModel()
+export const rootPage = pageTree.parse(nested)
+
+rootPage.walk(node => {
+  const {model} = node
+  Object.assign(node, model)
+  if (node.file) {
+    node.meta = requirePage(node.file).meta || {}
+  } else {
+    console.warn('no file for page node:', node.path)
+  }
+})
 
 /**
  * Export this as your default from a page, and it'll redirect both server-
@@ -42,5 +60,60 @@ export function redirect(uri, status = 303) {
       Router.replace(uri)
       return null
     }
+  }
+}
+
+function nest(map) {
+  const nodeMap = {}
+  const nodes = Object.keys(map).sort().map(path => {
+    const file = map[path]
+    const keys = path.substr(1).split('/')
+    return nodeMap[path] = {
+      path,
+      file,
+      isIndex: INDEX_PATTERN.test(file),
+      parent: '/' + keys.slice(0, keys.length - 1).join('/'),
+      children: []
+    }
+  })
+
+  let root = nodeMap['/']
+  if (!root) {
+    const sorted = nodes.sort((a, b) => a.path.localeCompare(b.path))
+    root = sorted[0]
+  }
+
+  // remove root from the list of nodes
+  nodes.splice(nodes.indexOf(root), 1)
+
+  const rest = []
+  for (const node of nodes) {
+    const parent = nodeMap[node.parent]
+    if (parent) {
+      parent.children.push(node)
+    } else {
+      rest.push(node)
+    }
+  }
+
+  if (rest.length) {
+    console.warn('unable to nest some pages:', rest)
+  }
+
+  return root
+}
+
+function getPath(file) {
+  const base = file.substr(0, file.lastIndexOf('.'))
+  return removeIndexSuffix(file)
+}
+
+function removeIndexSuffix(path) {
+  if (path === INDEX_SUFFIX) {
+    return '/'
+  } else {
+    return path.endsWith(INDEX_SUFFIX)
+      ? path.substr(0, path.length - INDEX_SUFFIX.length)
+      : path
   }
 }
