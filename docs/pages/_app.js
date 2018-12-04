@@ -8,7 +8,7 @@ import Octicon, {Pencil} from '@githubprimer/octicons-react'
 import {basename, join} from 'path'
 import * as primerComponents from '@primer/components'
 import * as docComponents from '../src/components'
-import {requirePage, pathMap} from '../src/utils'
+import {pathMap, requirePage} from '../src/utils'
 
 import 'primer/index.scss'
 
