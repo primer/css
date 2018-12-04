@@ -1,4 +1,5 @@
-export {default as Header} from './Header'
-export {default as SideNav} from './SideNav'
-export {default as IndexHero} from './IndexHero'
 export {default as BoxShadow} from './BoxShadow'
+export {default as Header} from './Header'
+export {default as IndexHero} from './IndexHero'
+export {default as Link} from './Link'
+export {default as SideNav} from './SideNav'

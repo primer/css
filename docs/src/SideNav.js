@@ -1,9 +1,9 @@
 import React from 'react'
-import NextLink from 'next/link'
 import {withRouter} from 'next/router'
 import {join} from 'path'
-import {Box, BorderBox, Link, Flex, Relative} from '@primer/components'
-import {rootPage, requirePage} from './utils'
+import {Box, BorderBox, Flex, Relative} from '@primer/components'
+import Link from './Link'
+import {rootPage} from './utils'
 
 export default props => (
   <Relative is="nav">
@@ -47,29 +47,25 @@ const NavList = ({path, router}) => (
 
 const SectionLink = withRouter(({href, router, ...rest}) => (
   <Box mb={2}>
-    <NextLink href={href}>
-      <NodeLink
-        href={href}
-        color="gray.9"
-        fontSize={2}
-        fontWeight={router.pathname.startsWith(href) ? 'bold' : null}
-        {...rest}
-      />
-    </NextLink>
+    <NodeLink
+      href={href}
+      color="gray.9"
+      fontSize={2}
+      fontWeight={router.pathname.startsWith(href) ? 'bold' : null}
+      {...rest}
+    />
   </Box>
 ))
 
 const NavLink = withRouter(({href, router, ...rest}) => {
   return (
     <Box mb={2}>
-      <NextLink href={href}>
-        <NodeLink
-          href={href}
-          color={router.pathname === href ? 'black' : undefined}
-          fontSize={1}
-          {...rest}
-        />
-      </NextLink>
+      <NodeLink
+        href={href}
+        color={router.pathname === href ? 'black' : undefined}
+        fontSize={1}
+        {...rest}
+      />
     </Box>
   )
 })
@@ -80,6 +76,6 @@ function NodeLink(props) {
     return <Link {...props} />
   }
   const node = rootPage.first(node => node.path === href)
-  const children = (node ? requirePage(node.file).meta.title : null) || href
+  const children = (node ? node.meta.title : null) || href
   return <Link {...props}>{children}</Link>
 }
