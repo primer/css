@@ -33,10 +33,10 @@ const links = getLinks(sourceDir, destDir, {
   'primer-marketing-utilities/docs/*.md': path => `utilities/marketing-${basename(path)}`,
   'primer-marketing/README.md': 'packages/primer-marketing.md',
   'primer-product/README.md': 'packages/primer-product.md',
-  'primer-support/README.md': 'support/index.md',
+  'primer-support/README.md': false, // 'support/index.md',
   'primer-support/docs/*.md': path => `support/${basename(path)}`,
   'primer-table-object/README.md': 'objects/table-object.md',
-  'primer-utilities/README.md': 'utilities/index.md',
+  'primer-utilities/README.md': false, // 'utilities/index.md',
   'primer-utilities/docs/*.md': path => `utilities/${basename(path)}`,
   // this is a catch-all rule that needs to go last so that it doesn't override others
   'primer-*/README.md': path => `components/${shortName(path)}.md`,
