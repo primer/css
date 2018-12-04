@@ -3,7 +3,7 @@
 
 const {join, resolve} = require('path')
 const withPlugins = require('next-compose-plugins')
-const mdx = require('./lib/mdx')
+const configure = require('./lib/config')
 const sass = require('@zeit/next-sass')
 
 const pageExtensions = ['js', 'jsx', 'md', 'mdx']
@@ -15,7 +15,7 @@ module.exports = withPlugins([
       includePaths: [resolve(__dirname, '../modules')]
     }
   }),
-  mdx()
+  configure()
 ], {
   /*
    * Note: Prefixing assets with the fully qualified deployment URL
@@ -29,11 +29,6 @@ module.exports = withPlugins([
   },
 
   webpack(config, {dev}) {
-
-    config.resolve.alias = {
-      docs: join(__dirname, 'src')
-    }
-
     const {optimization} = config
     if (optimization && Array.isArray(optimization.minimizer)) {
       const terserPlugin = optimization.minimizer[0]
@@ -44,7 +39,6 @@ module.exports = withPlugins([
       }
       /* eslint-enable camelcase, no-console */
     }
-
     return config
   }
 })
