@@ -8,18 +8,10 @@ import Octicon, {Pencil} from '@githubprimer/octicons-react'
 import {basename, join} from 'path'
 import * as primerComponents from '@primer/components'
 import * as docComponents from '../src/components'
+import {requirePage, pathMap} from '../src/utils'
 
 const {BaseStyles, Box, Flex, Link, Text, theme} = primerComponents
 const {SideNav, Header, IndexHero} = docComponents
-
-const ext = /\.mdx?$/
-const context = require.context('.', true, /\.mdx?$/)
-const pathMap = context.keys().reduce((map, key) => {
-  const base = key.replace(ext, '').replace(/\/index$/, '')
-  const path = base.substr(1) // strip the leading "."
-  map[path] = key
-  return map
-}, {})
 
 const components = {
   ...docComponents,
@@ -47,11 +39,10 @@ export default class MyApp extends App {
     const pathname = this.props.router.pathname.replace(/\/$/, '')
     const filename = pathMap[pathname]
     const {Component, page} = this.props
-    const hasHero = ['/css', '/css/'].includes(pathname)
 
     const meta = {}
     if (filename) {
-      Object.assign(meta, context(filename).meta)
+      Object.assign(meta, requirePage(filename).meta)
     }
 
     return (
@@ -63,13 +54,15 @@ export default class MyApp extends App {
           <Header />
           <Flex display={['block', 'block', 'flex', 'flex']} flexDirection="row-reverse">
             <Box width="100%">
-              {hasHero && <IndexHero />}
-              <Box color="gray.9" maxWidth={1012} width={'100%'} my={6} mx={'auto'} px={6} className="markdown-body">
-                {meta.title ? <h1>{meta.title}</h1> : null}
-                <MDXProvider components={components}>
-                  <Component {...page} />
-                  <pre>meta: {JSON.stringify(meta, null, 2)}</pre>
-                </MDXProvider>
+              {meta.hero ? <IndexHero /> : null}
+              <Box color="gray.9" maxWidth={1012} width="100%" my={6} mx="auto" px={6}>
+                <div className="markdown-body">
+                  {meta.title ? <h1>{meta.title}</h1> : null}
+                  <MDXProvider components={components}>
+                    <Component {...page} />
+                    <pre>meta: {JSON.stringify(meta, null, 2)}</pre>
+                  </MDXProvider>
+                </div>
                 {/* TODO: bring back edit link! */}
               </Box>
             </Box>

@@ -7,6 +7,15 @@ export const assetPrefix = config.assetPrefix || ''
 export const assetPath = `${assetPrefix}/static/assets/`
 export const getAssetPath = path => `${assetPath}${path}`
 
+const ext = /\.mdx?$/
+export const requirePage = require.context('../pages', true, /\.mdx?$/)
+export const pathMap = requirePage.keys().reduce((map, key) => {
+  const base = key.replace(ext, '').replace(/\/index$/, '')
+  const path = base.substr(1) // strip the leading "."
+  map[path] = key
+  return map
+}, {})
+
 /**
  * Export this as your default from a page, and it'll redirect both server-
  * and client-side:

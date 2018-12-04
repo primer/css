@@ -1,1 +1,5 @@
+---
+hero: true
+---
+
 # Hello, world!
