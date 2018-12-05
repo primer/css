@@ -2,7 +2,7 @@ import React from 'react'
 import Document, {Main, NextScript} from 'next/document'
 import {ServerStyleSheet} from 'styled-components'
 import {extractCritical} from 'emotion-server'
-import {getAssetPath} from '../src/utils'
+import {config, getAssetPath} from '../src/utils'
 
 export default class MyDocument extends Document {
   static getInitialProps({renderPage}) {
@@ -29,7 +29,6 @@ export default class MyDocument extends Document {
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126681523-1" />
           <script async href={getAssetPath('analytics.js')} />
           <meta charSet="utf8" />
-          <link rel="stylesheet" href="/_next/static/css/styles.chunk.css" />
           <link rel="icon" href={getAssetPath('favicon.png')} />
           <link rel="apple-touch-icon" href={getAssetPath('apple-touch-icon.png')} />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -45,6 +44,7 @@ export default class MyDocument extends Document {
           <meta property="og:image:height" content="630" />
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:site" content="@githubprimer" />
+          <link rel="stylesheet" href={config.production ? getAssetPath('primer.css') : '/_next/static/css/styles.chunk.css'} />
           {styleTags}
         </head>
         <body>
