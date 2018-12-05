@@ -23,7 +23,7 @@ for (const file of ignored) {
 const links = getLinks(sourceDir, destDir, {
   '../CHANGELOG.md': 'whats-new/changelog.md',
   'primer/README.md': false, // 'packages/primer.md',
-  'primer-base/README.md': 'support/base.md',
+  'primer-base/README.md': false, // 'support/base.md',
   'primer-core/README.md': false, // 'packages/primer-core.md',
   'primer-layout/README.md': 'objects/layout.md',
   'primer-layout/docs/*.md': path => `objects/${basename(path)}`,
