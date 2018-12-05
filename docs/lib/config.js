@@ -22,6 +22,16 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => {
         ]
       })
 
+      /**
+      * in production we don't have access to ../modules, so we need to
+      * rewrite the 'primer/index.scss' import to the static CSS build
+      */
+      if (!options.dev) {
+        const primerCSS = require.resolve('primer/build/build.css')
+        config.resolve.alias['primer/index.scss$'] = primerCSS
+        console.warn('*** rewriting primer/index.scss to:', primerCSS)
+      }
+
       if (typeof nextConfig.webpack === 'function') {
         return nextConfig.webpack(config, options)
       }
