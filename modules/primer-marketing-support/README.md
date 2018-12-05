@@ -1,3 +1,7 @@
+---
+title: Marketing variables
+---
+
 # Primer Marketing Support
 
 [![npm version](https://img.shields.io/npm/v/primer-marketing-support.svg)](https://www.npmjs.org/package/primer-marketing-support)
