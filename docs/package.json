@@ -3,7 +3,7 @@
   "name": "@primer/css-docs",
   "scripts": {
     "prepare": "npm run copy",
-    "lint": "eslint pages",
+    "lint": "eslint pages src",
     "test": "./test.sh",
     "dev": "next",
     "copy": "node copy.js",
