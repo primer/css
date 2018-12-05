@@ -30,6 +30,9 @@ export default function SideNav(props) {
             <RouteMatch path="/css/tools">
               <Section path="/css/tools" />
             </RouteMatch>
+            <RouteMatch path="/css/whats-new">
+              <Section path="/css/whats-new" />
+            </RouteMatch>
             <RouteMatch path="/css">
               <Section path="/css/support" />
               <Section path="/css/utilities" />
