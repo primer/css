@@ -5,12 +5,17 @@ const {join, resolve} = require('path')
 const withPlugins = require('next-compose-plugins')
 const configure = require('./lib/config')
 const css = require('@zeit/next-css')
+const sass = require('@zeit/next-sass')
 
 const pageExtensions = ['js', 'jsx', 'md', 'mdx']
 const assetPrefix = process.env.NOW_URL
 
 module.exports = withPlugins([
-  css(),
+  css(sass({
+    sassLoaderOptions: {
+      includePaths: [resolve(__dirname, '../modules')]
+    }
+  })),
   configure()
 ], {
   /*
