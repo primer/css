@@ -7,7 +7,7 @@ const INDEX_PATTERN = /\/index(\.[a-z]+)?$/
 export const config = getConfig().publicRuntimeConfig || {}
 
 export const assetPrefix = config.assetPrefix || ''
-export const assetPath = `${assetPrefix}/static/assets/`
+export const assetPath = `${assetPrefix}/static/`
 export const getAssetPath = path => `${assetPath}${path}`
 
 const ext = /\.mdx?$/
