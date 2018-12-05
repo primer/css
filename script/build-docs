@@ -8,6 +8,6 @@ else
     cd docs
     now --token=$NOW_TOKEN | tee now-url.txt
     url=$(cat now-url.txt)
-    version=$(jq -r .name ../modules/primer/package.json)
-    npx commit-status success now "deployed primer@$version to $url" "$url"
+    version=$(jq -r .version ../modules/primer/package.json)
+    npx commit-status success docs "deployed primer@$version to $url" "$url"
 fi
