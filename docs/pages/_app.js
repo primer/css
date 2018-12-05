@@ -8,13 +8,7 @@ import {SideNav, Header, IndexHero} from '../src/components'
 import {rootPage} from '../src/utils'
 
 import 'primer/build/build.css'
-
-const components = {
-  // render links with our component
-  a: Link,
-  code: withMDXLive('pre'),
-  pre: props => props.children
-}
+import 'prism-github/prism-github.css'
 
 export default class MyApp extends App {
   static async getInitialProps({Component, ctx}) {
@@ -33,7 +27,21 @@ export default class MyApp extends App {
     const {Component, page} = this.props
 
     const node = rootPage.first(node => node.path === pathname)
-    const meta = node ? node.meta : {}
+    const {meta = {}, outline: getOutline = () => []} = node || {}
+
+    const components = {
+      // render links with our component
+      a: Link,
+      p: ({children, ...rest}) => {
+        if (children === '{:toc}') {
+          return <TableOfContents outline={getOutline()} {...rest} />
+        } else {
+          return <p {...rest}>{children}</p>
+        }
+      },
+      code: withMDXLive('pre'),
+      pre: props => props.children
+    }
 
     return (
       <BaseStyles style={{fontFamily: theme.fonts.normal}}>
@@ -63,3 +71,33 @@ export default class MyApp extends App {
     )
   }
 }
+
+function TableOfContents({outline, ...rest}) {
+  if (outline && outline.length) {
+    return (
+      <Box is="details" mb={4}>
+        <summary>Table of contents</summary>
+        <List items={outline} {...rest} />
+      </Box>
+    )
+  }
+  return null
+}
+
+function List({items, ...rest}) {
+  if (items && items.length) {
+    return (
+      <ul {...rest}>
+        {items.map(item => (
+          <li>
+            <a href={`#${item.id}`}>{item.title}</a>
+            <List items={item.children} />
+          </li>
+        ))}
+      </ul>
+    )
+  }
+  return null
+}
+
+function noop() {}

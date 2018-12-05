@@ -27,7 +27,9 @@ rootPage.walk(node => {
   const {model} = node
   Object.assign(node, model)
   if (node.file) {
-    node.meta = requirePage(node.file).meta || {}
+    const component = requirePage(node.file)
+    node.meta = component.frontMatter || {}
+    node.outline = component.tableOfContents
   } else {
     // eslint-disable-next-line no-console
     console.warn('no file for page node:', node.path)
