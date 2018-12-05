@@ -34,6 +34,7 @@
     "minimatch": "^3.0.4",
     "next": "7.0.2",
     "next-compose-plugins": "2.1.1",
+    "node-sass": "^4.10.0",
     "primer": "10.10.2",
     "primer-colors": "^1.0.1",
     "react": "16.6.1",
