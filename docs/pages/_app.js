@@ -6,19 +6,13 @@ import {withMDXLive} from 'mdx-live'
 import getConfig from 'next/config'
 import Octicon, {Pencil} from '@githubprimer/octicons-react'
 import {basename, join} from 'path'
-import * as primerComponents from '@primer/components'
-import * as docComponents from '../src/components'
+import {BaseStyles, Box, Flex, Link, Text, theme} from '@primer/components'
+import {SideNav, Header, IndexHero} from '../src/components'
 import {rootPage} from '../src/utils'
 
 import 'primer/index.scss'
 
-const {BaseStyles, Box, Flex, Link, Text, theme} = primerComponents
-const {SideNav, Header, IndexHero} = docComponents
-
 const components = {
-  ...docComponents,
-  ...primerComponents,
-  Octicon,
   // render links with our component
   a: Link,
   code: withMDXLive('pre'),
@@ -59,8 +53,8 @@ export default class MyApp extends App {
                   {meta.title ? <h1>{meta.title}</h1> : null}
                   <MDXProvider components={components}>
                     <Component {...page} />
-                    <pre>meta: {JSON.stringify(meta, null, 2)}</pre>
                   </MDXProvider>
+                  <pre>meta: {JSON.stringify(meta, null, 2)}</pre>
                 </div>
                 {/* TODO: bring back edit link! */}
               </Box>
