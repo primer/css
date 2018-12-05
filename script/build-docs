@@ -8,5 +8,5 @@ else
     npx now --token=$NOW_TOKEN > now-url.txt
     url=$(cat now-url.txt)
     version=$(jq -r .name ../modules/primer/package.json)
-    npx commit-status "deployed to <$url>" "now" "primer@$version" "$url"
+    npx commit-status success "now" "deployed primer@$version to $url" "$url"
 fi
