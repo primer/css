@@ -1,5 +1,7 @@
 module.exports = (pluginOptions = {}) => (nextConfig = {}) => {
   const test = pluginOptions.extension || /\.mdx?$/
+  const primerSCSS = 'primer/index.scss$'
+  const primerCSS = require.resolve('primer/build/build.css')
 
   return Object.assign({}, nextConfig, {
     webpack(config, options) {
@@ -26,10 +28,9 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => {
       * in production we don't have access to ../modules, so we need to
       * rewrite the 'primer/index.scss' import to the static CSS build
       */
-      if (!options.dev) {
-        const primerCSS = require.resolve('primer/build/build.css')
-        config.resolve.alias['primer/index.scss$'] = primerCSS
+      if (!options.dev && !config.resolve[primerSCSS]) {
         console.warn('*** rewriting primer/index.scss to:', primerCSS)
+        config.resolve.alias[primerSCSS] = primerCSS
       }
 
       if (typeof nextConfig.webpack === 'function') {
