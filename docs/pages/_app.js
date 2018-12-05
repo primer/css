@@ -7,7 +7,7 @@ import {BaseStyles, Box, Flex, Link, theme} from '@primer/components'
 import {SideNav, Header, IndexHero} from '../src/components'
 import {rootPage} from '../src/utils'
 
-import 'primer/build/build.css'
+import 'primer/index.scss'
 import 'prism-github/prism-github.css'
 
 export default class MyApp extends App {
