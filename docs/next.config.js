@@ -7,7 +7,7 @@ const configure = require('./lib/config')
 const css = require('@zeit/next-css')
 const sass = require('@zeit/next-sass')
 
-const {NOW_URL} = process.env
+const {NODE_ENV, NOW_URL} = process.env
 const assetPrefix = NOW_URL || ''
 
 module.exports = withPlugins([
@@ -28,6 +28,7 @@ module.exports = withPlugins([
   assetPrefix,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   publicRuntimeConfig: {
-    assetPrefix
+    assetPrefix,
+    production: NODE_ENV === 'production'
   }
 })
