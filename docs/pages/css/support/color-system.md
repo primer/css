@@ -21,7 +21,7 @@ import colors from 'primer-colors'
 
 <Flex mb={6}>
   {['gray', 'blue', 'green', 'purple', 'yellow', 'orange', 'red'].map(hue => (
-    <Box bg={`${hue}.5`} p={3} width={1/7} mr={2}>
+    <Box bg={`${hue}.5`} p={3} width={1/7} mr={2} key={hue}>
       <Text color="white">{hue}</Text>
     </Box>
   ))}
@@ -36,7 +36,7 @@ import colors from 'primer-colors'
   {[...Object.entries(colors)]
     .filter(([key, value]) => Array.isArray(value))
     .map(([key, value]) => (
-      <Flex.Item flexDirection="column" is={Box} pr={4} mb={6} width={1/2} className="markdown-no-margin">
+      <Flex.Item is={Box} pr={4} mb={6} width={1/2} className="markdown-no-margin" key={key}>
         {false ? <Heading is="h3">{key}</Heading> : null}
         <Box bg={`${key}.5`} my={2} p={3} color="white">
           <Heading pb={3} fontSize={56} fontWeight="light">{key}</Heading>
@@ -64,8 +64,8 @@ import colors from 'primer-colors'
       <Box bg="black" color="white" my={2} p={3}>
         <Heading fontWeight="light" pb={3}>Black</Heading>
         <Flex pb={1}>
-          <p class="h4 flex-auto">$black</p>
-          <p class="text-right text-mono flex-auto"><code>rgb(27,31,35)</code> {colors.black}</p>
+          <p className="h4 flex-auto">$black</p>
+          <p className="text-right text-mono flex-auto"><code>rgb(27,31,35)</code> {colors.black}</p>
         </Flex>
         <BorderBox border={0} borderTop={1} borderRadius={0} borderColor="white">
           <Text fontSize={5} pt={3}>Black fades apply alpha transparency to the <strong>$black</strong> variable. The black color value has a slight blue hue to match our grays.</Text>
@@ -73,49 +73,49 @@ import colors from 'primer-colors'
       </Box>
     </Flex>
     <Box bg="white">
-      <div class="black-fade-15">
-        <p class="h4 p-3">$black-fade-15</p>
+      <div className="black-fade-15">
+        <p className="h4 p-3">$black-fade-15</p>
       </div>
-      <div class="black-fade-30">
-        <p class="h4 p-3">$black-fade-30</p>
+      <div className="black-fade-30">
+        <p className="h4 p-3">$black-fade-30</p>
       </div>
-      <div class="black-fade-50">
-        <p class="h4 p-3">$black-fade-50</p>
+      <div className="black-fade-50">
+        <p className="h4 p-3">$black-fade-50</p>
       </div>
-      <div class="black-fade-70">
-        <p class="h4 p-3 text-white">$black-fade-70</p>
+      <div className="black-fade-70">
+        <p className="h4 p-3 text-white">$black-fade-70</p>
       </div>
-      <div class="black-fade-85">
-        <p class="h4 p-3 text-white">$black-fade-85</p>
+      <div className="black-fade-85">
+        <p className="h4 p-3 text-white">$black-fade-85</p>
       </div>
     </Box>
   </Flex>
 
-  <div class="mb-3 flex-column col-6 markdown-no-margin">
+  <div className="mb-3 flex-column col-6 markdown-no-margin">
     <h3>White fades</h3>
-    <div class="bg-white border text-gray-dark my-2 p-3">
-      <p class="f00-light pb-3">White</p>
-      <div class="d-flex pb-1">
-        <p class="h4 flex-auto">$white</p>
-        <p class="text-right text-mono flex-auto"><code>rgb(255, 255, 255)</code> {colors.white}</p>
+    <div className="bg-white border text-gray-dark my-2 p-3">
+      <p className="f00-light pb-3">White</p>
+      <div className="d-flex pb-1">
+        <p className="h4 flex-auto">$white</p>
+        <p className="text-right text-mono flex-auto"><code>rgb(255, 255, 255)</code> {colors.white}</p>
       </div>
-      <p class="f5 pt-3 border-top border-white">White fades apply alpha transparency to the <strong>$white</strong> variable, below these are shown overlaid on a dark gray background.</p>
+      <p className="f5 pt-3 border-top border-white">White fades apply alpha transparency to the <strong>$white</strong> variable, below these are shown overlaid on a dark gray background.</p>
     </div>
-    <div class="bg-gray-dark">
-      <div class="white-fade-15">
-        <p class="h4 p-3 text-white">$white-fade-15</p>
+    <div className="bg-gray-dark">
+      <div className="white-fade-15">
+        <p className="h4 p-3 text-white">$white-fade-15</p>
       </div>
-      <div class="white-fade-30">
-        <p class="h4 p-3 text-white">$white-fade-30</p>
+      <div className="white-fade-30">
+        <p className="h4 p-3 text-white">$white-fade-30</p>
       </div>
-      <div class="white-fade-50">
-        <p class="h4 p-3">$white-fade-50</p>
+      <div className="white-fade-50">
+        <p className="h4 p-3">$white-fade-50</p>
       </div>
-      <div class="white-fade-70">
-        <p class="h4 p-3">$white-fade-70</p>
+      <div className="white-fade-70">
+        <p className="h4 p-3">$white-fade-70</p>
       </div>
-      <div class="white-fade-85">
-        <p class="h4 p-3">$white-fade-85</p>
+      <div className="white-fade-85">
+        <p className="h4 p-3">$white-fade-85</p>
       </div>
     </div>
   </div>
