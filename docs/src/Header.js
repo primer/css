@@ -3,7 +3,7 @@ import {withRouter} from 'next/router'
 import Octicon, {MarkGithub} from '@githubprimer/octicons-react'
 import BoxShadow from './BoxShadow'
 import Link from './Link'
-import {Text, Flex, Sticky, Box} from '@primer/components'
+import {Text, Flex, Sticky, BorderBox, Box} from '@primer/components'
 
 const NavLink = withRouter(({href, router, ...rest}) => (
   <Link color="white" href={href} px={4} fontWeight={router.pathname === href ? 'bold' : null} {...rest} />
@@ -27,20 +27,20 @@ const Header = props => (
           <NavLink href="/css/whats-new">What’s New</NavLink>
         </Box>
         <Box display={['block', 'block', 'none']}>
-          <Link nounderline href="#sidenav">
-            <Box
+          <Link href="#sidenav">
+            <BorderBox
               border={1}
-              py="6px"
-              px="12px"
+              borderColor="gray.6"
               borderRadius={3}
               color="white"
-              borderColor="gray.6"
               display="inline-block"
+              px="12px"
+              py="6px"
             >
               <Text fontWeight="bold" fontSize={1}>
                 Menu
               </Text>
-            </Box>
+            </BorderBox>
           </Link>
         </Box>
       </Flex>
