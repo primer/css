@@ -1,4 +1,5 @@
 ---
+title: Docs
 hero: true
 ---
 
