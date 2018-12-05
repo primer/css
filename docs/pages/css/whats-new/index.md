@@ -4,12 +4,9 @@ title: Whatʼs new
 
 <p classs="f3-light">Primer is an ever-evolving design system. We’ve been listening to your feedback and using it as a basis for improvements and additions.</p>
 
-<ul class="list-style-none border-left border-thick mb-6">
-<p class="h5 mb-2">Section contents</p>
-
-  <li class="mb-3"><a class="text-bold" href="changelog">The changelog</a>: Here you’ll find our release notes with summaries of bug fixes, new features, and other updates introduced in each release.</li>
-  <li class="mb-3"><a class="text-bold" href="status-key">Status key</a>: When we add, make significant updates, or deprecate features we update their status so that it's clear what's safe to use. The status key lists the different types of status and what they mean for you.</li>
-</ul>
+> #### Section contents
+> * [The changelog](/css/whats-new/changelog): Here you’ll find our release notes with summaries of bug fixes, new features, and other updates introduced in each release.
+> * [Status key](/css/whats-new/status-key): When we add, make significant updates, or deprecate features we update their status so that it's clear what's safe to use. The status key lists the different types of status and what they mean for you.
 
 Have suggestions for a new feature or bug fix? [Open an issue](https://github.com/primer/primer/issues/new) in our repo.
 
