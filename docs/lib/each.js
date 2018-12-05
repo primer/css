@@ -6,4 +6,3 @@ module.exports = function each(fn) {
     done()
   }
 }
-

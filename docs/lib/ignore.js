@@ -14,7 +14,10 @@ function readLines(file) {
     return []
   }
 
-  return content.trim().split('\n').map(line => line.trim())
+  return content
+    .trim()
+    .split('\n')
+    .map(line => line.trim())
 }
 
 function getIgnored(file) {

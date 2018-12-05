@@ -23,7 +23,7 @@ function getPackageRelativeTo(path, root) {
   while (dir !== root) {
     const pkgPath = join(dir, 'package.json')
     if (existsSync(pkgPath)) {
-      return cache[dir] = require(pkgPath)
+      return (cache[dir] = require(pkgPath))
     }
     dir = resolve(dir, '..')
   }
