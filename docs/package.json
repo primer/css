@@ -7,6 +7,7 @@
     "test": "./test.sh",
     "dev": "next",
     "copy": "node copy.js",
+    "prebuild": "rm -rf .next",
     "build": "next build",
     "start": "next start"
   },
@@ -14,7 +15,6 @@
     "@githubprimer/octicons-react": "^8.1.3",
     "@mdx-js/tag": "0.15.0",
     "@primer/components": "^7.0.0-beta",
-    "@primer/next": "0.0.10",
     "@svgr/webpack": "2.4.1",
     "@zeit/next-css": "^1.0.1",
     "babel-core": "7.0.0-bridge.0",
