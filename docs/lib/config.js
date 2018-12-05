@@ -19,12 +19,7 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => {
         use: [
           options.defaultLoaders.babel,
           {
-            loader: '@mdx-js/loader',
-            options: pluginOptions.options
-          },
-          {
-            loader: require.resolve('./frontmatter.js'),
-            options: {raw: true}
+            loader: 'mdx-loader',
           }
         ]
       })

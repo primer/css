@@ -1,5 +1,5 @@
 // this runs synchronously
-// require('./copy')
+require('./copy')
 
 const {join, resolve} = require('path')
 const withPlugins = require('next-compose-plugins')
