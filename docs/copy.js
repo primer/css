@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 if (process.env.NOW_URL) {
   console.warn('copy.js should not run in Now!')
-  process.exit(0)
+  return
 }
 
 const {green, red, yellow} = require('colorette')
