@@ -1,4 +1,5 @@
 import React from 'react'
+import minimatch from 'minimatch'
 import {withRouter} from 'next/router'
 import {join} from 'path'
 import {Box, BorderBox, Flex, Relative} from '@primer/components'
@@ -20,10 +21,23 @@ export default function SideNav(props) {
         {...props}
       >
         <Flex flexDirection="column" alignItems="start">
-          <Section path="/css/support" />
-          <Section path="/css/utilities" />
-          <Section path="/css/objects" />
-          <Section path="/css/components" />
+          <Router>
+            <RouteMatch path="/css/getting-started*">
+              <Section path="/css/getting-started" />
+            </RouteMatch>
+            <RouteMatch path="/css/principles*">
+              <Section path="/css/principles" />
+            </RouteMatch>
+            <RouteMatch path="/css/tools*">
+              <Section path="/css/tools" />
+            </RouteMatch>
+            <RouteMatch path="/css*">
+              <Section path="/css/support" />
+              <Section path="/css/utilities" />
+              <Section path="/css/objects" />
+              <Section path="/css/components" />
+            </RouteMatch>
+          </Router>
         </Flex>
       </BorderBox>
     </Relative>
@@ -43,16 +57,18 @@ const Section = ({path, children}) => (
   </BorderBox>
 )
 
-const NavList = ({path}) => (
-  <>
-    <SectionLink href={path} />
-    {rootPage
-      .first(node => node.path === path)
-      .children.map(child => (
-        <NavLink href={child.path} key={child.path} />
-      ))}
-  </>
-)
+function NavList({path}) {
+  return (
+    <>
+      <SectionLink href={path} />
+      {rootPage
+        .first(node => node.path === path)
+        .children.map(child => (
+          <NavLink href={child.path} key={child.path} />
+        ))}
+    </>
+  )
+}
 
 const SectionLink = withRouter(({href, router, ...rest}) => (
   <Box mb={2}>
@@ -82,4 +98,22 @@ function NodeLink(props) {
   const node = rootPage.first(node => node.path === href)
   const children = (node ? node.meta.title : null) || href
   return <Link {...props}>{children}</Link>
+}
+
+const Router = withRouter(({router, children}) => {
+  let matched = false
+  return React.Children.toArray(children).map(child => {
+    if (child.props.path) {
+      const match = minimatch(router.pathname, child.props.path)
+      if (match) {
+        return matched = child
+      }
+    } else {
+      return child
+    }
+  })
+})
+
+function RouteMatch({children}) {
+  return children
 }
