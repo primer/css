@@ -2,7 +2,6 @@ import Router from 'next/router'
 import getConfig from 'next/config'
 import TreeModel from 'tree-model'
 
-const INDEX_SUFFIX = '/index'
 const INDEX_PATTERN = /\/index(\.[a-z]+)?$/
 
 export const config = getConfig().publicRuntimeConfig || {}
@@ -30,6 +29,7 @@ rootPage.walk(node => {
   if (node.file) {
     node.meta = requirePage(node.file).meta || {}
   } else {
+    // eslint-disable-next-line no-console
     console.warn('no file for page node:', node.path)
   }
 })
@@ -65,17 +65,19 @@ export function redirect(uri, status = 303) {
 
 function nest(map) {
   const nodeMap = {}
-  const nodes = Object.keys(map).sort().map(path => {
-    const file = map[path]
-    const keys = path.substr(1).split('/')
-    return nodeMap[path] = {
-      path,
-      file,
-      isIndex: INDEX_PATTERN.test(file),
-      parent: '/' + keys.slice(0, keys.length - 1).join('/'),
-      children: []
-    }
-  })
+  const nodes = Object.keys(map)
+    .sort()
+    .map(path => {
+      const file = map[path]
+      const keys = path.substr(1).split('/')
+      return (nodeMap[path] = {
+        path,
+        file,
+        isIndex: INDEX_PATTERN.test(file),
+        parent: `/${keys.slice(0, keys.length - 1).join('/')}`,
+        children: []
+      })
+    })
 
   let root = nodeMap['/']
   if (!root) {
@@ -97,23 +99,9 @@ function nest(map) {
   }
 
   if (rest.length) {
+    // eslint-disable-next-line no-console
     console.warn('unable to nest some pages:', rest)
   }
 
   return root
-}
-
-function getPath(file) {
-  const base = file.substr(0, file.lastIndexOf('.'))
-  return removeIndexSuffix(file)
-}
-
-function removeIndexSuffix(path) {
-  if (path === INDEX_SUFFIX) {
-    return '/'
-  } else {
-    return path.endsWith(INDEX_SUFFIX)
-      ? path.substr(0, path.length - INDEX_SUFFIX.length)
-      : path
-  }
 }

@@ -5,43 +5,52 @@ import {Box, BorderBox, Flex, Relative} from '@primer/components'
 import Link from './Link'
 import {rootPage} from './utils'
 
-export default props => (
-  <Relative is="nav">
-    <BorderBox
-      bg="gray.0"
-      borderColor="gray.2"
-      borderRight={1}
-      borderTop={[1, 1, 0, 0]}
-      display="inline-block"
-      height="100%"
-      id="sidenav"
-      width={['100%', '100%', 256, 256]}
-      {...props}
-    >
-      <Flex flexDirection="column" alignItems="start">
-        <Section path="/css/support" />
-        <Section path="/css/utilities" />
-        <Section path="/css/objects" />
-        <Section path="/css/components" />
-      </Flex>
-    </BorderBox>
-  </Relative>
-)
+export default function SideNav(props) {
+  return (
+    <Relative is="nav">
+      <BorderBox
+        bg="gray.0"
+        borderColor="gray.2"
+        borderRight={1}
+        borderTop={[1, 1, 0, 0]}
+        display="inline-block"
+        height="100%"
+        id="sidenav"
+        width={['100%', '100%', 256, 256]}
+        {...props}
+      >
+        <Flex flexDirection="column" alignItems="start">
+          <Section path="/css/support" />
+          <Section path="/css/utilities" />
+          <Section path="/css/objects" />
+          <Section path="/css/components" />
+        </Flex>
+      </BorderBox>
+    </Relative>
+  )
+}
 
-const Section = ({path, children, ...rest}) => (
+const Section = ({path, children}) => (
   <BorderBox p={4} border={0} borderBottom={1} borderRadius={0} width="100%">
-    {children ? React.Children.map(children, child => {
-      const href = join(path, child.props.href || '')
-      return React.cloneElement(child, {href})
-    }) : <NavList path={path} />}
+    {children ? (
+      React.Children.map(children, child => {
+        const href = join(path, child.props.href || '')
+        return React.cloneElement(child, {href})
+      })
+    ) : (
+      <NavList path={path} />
+    )}
   </BorderBox>
 )
 
-const NavList = ({path, router}) => (
+const NavList = ({path}) => (
   <>
     <SectionLink href={path} />
-    {rootPage.first(node => node.path === path).children
-      .map(child => <NavLink href={child.path} key={child.path} />)}
+    {rootPage
+      .first(node => node.path === path)
+      .children.map(child => (
+        <NavLink href={child.path} key={child.path} />
+      ))}
   </>
 )
 
@@ -60,12 +69,7 @@ const SectionLink = withRouter(({href, router, ...rest}) => (
 const NavLink = withRouter(({href, router, ...rest}) => {
   return (
     <Box mb={2}>
-      <NodeLink
-        href={href}
-        color={router.pathname === href ? 'black' : undefined}
-        fontSize={1}
-        {...rest}
-      />
+      <NodeLink href={href} color={router.pathname === href ? 'black' : undefined} fontSize={1} {...rest} />
     </Box>
   )
 })
