@@ -41,7 +41,7 @@ const NavList = ({path, router}) => (
   <>
     <SectionLink href={path} />
     {rootPage.first(node => node.path === path).children
-      .map(child => <NavLink href={child.path} />)}
+      .map(child => <NavLink href={child.path} key={child.path} />)}
   </>
 )
 
