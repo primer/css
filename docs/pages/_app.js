@@ -7,7 +7,7 @@ import {BaseStyles, Box, Flex, Link, theme} from '@primer/components'
 import {SideNav, Header, IndexHero} from '../src/components'
 import {rootPage} from '../src/utils'
 
-import 'primer/index.scss'
+import 'primer/build/build.css'
 
 const components = {
   // render links with our component
