@@ -2,7 +2,6 @@ import React from 'react'
 import {join} from 'path'
 import {withRouter} from 'next/router'
 import {Box, BorderBox, Flex, Relative} from '@primer/components'
-import Link from './Link'
 import NodeLink from './NodeLink'
 import {rootPage} from './utils'
 
@@ -95,7 +94,7 @@ const Router = withRouter(({router, children}) => {
   return React.Children.toArray(children).map(child => {
     if (child.props.path) {
       if (!matched && router.pathname.indexOf(child.props.path) === 0) {
-        return matched = child
+        return (matched = child)
       }
     } else {
       return child
@@ -106,4 +105,3 @@ const Router = withRouter(({router, children}) => {
 function RouteMatch({children}) {
   return children
 }
-

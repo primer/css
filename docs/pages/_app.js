@@ -99,5 +99,3 @@ function List({items, ...rest}) {
   }
   return null
 }
-
-function noop() {}
