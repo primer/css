@@ -21,18 +21,10 @@ export default function SideNav(props) {
       >
         <Flex flexDirection="column" alignItems="start">
           <Router>
-            <RouteMatch path="/css/getting-started">
-              <Section path="/css/getting-started" />
-            </RouteMatch>
-            <RouteMatch path="/css/principles">
-              <Section path="/css/principles" />
-            </RouteMatch>
-            <RouteMatch path="/css/tools">
-              <Section path="/css/tools" />
-            </RouteMatch>
-            <RouteMatch path="/css/whats-new">
-              <Section path="/css/whats-new" />
-            </RouteMatch>
+            <Section path="/css/getting-started" />
+            <Section path="/css/principles" />
+            <Section path="/css/tools" />
+            <Section path="/css/whats-new" />
             <RouteMatch path="/css">
               <Section path="/css/support" />
               <Section path="/css/utilities" />
