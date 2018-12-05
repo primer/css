@@ -1,9 +1,9 @@
 import React from 'react'
-import minimatch from 'minimatch'
-import {withRouter} from 'next/router'
 import {join} from 'path'
+import {withRouter} from 'next/router'
 import {Box, BorderBox, Flex, Relative} from '@primer/components'
 import Link from './Link'
+import NodeLink from './NodeLink'
 import {rootPage} from './utils'
 
 export default function SideNav(props) {
@@ -22,16 +22,16 @@ export default function SideNav(props) {
       >
         <Flex flexDirection="column" alignItems="start">
           <Router>
-            <RouteMatch path="/css/getting-started*">
+            <RouteMatch path="/css/getting-started">
               <Section path="/css/getting-started" />
             </RouteMatch>
-            <RouteMatch path="/css/principles*">
+            <RouteMatch path="/css/principles">
               <Section path="/css/principles" />
             </RouteMatch>
-            <RouteMatch path="/css/tools*">
+            <RouteMatch path="/css/tools">
               <Section path="/css/tools" />
             </RouteMatch>
-            <RouteMatch path="/css*">
+            <RouteMatch path="/css">
               <Section path="/css/support" />
               <Section path="/css/utilities" />
               <Section path="/css/objects" />
@@ -90,22 +90,11 @@ const NavLink = withRouter(({href, router, ...rest}) => {
   )
 })
 
-function NodeLink(props) {
-  const {href, children: content} = props
-  if (content) {
-    return <Link {...props} />
-  }
-  const node = rootPage.first(node => node.path === href)
-  const children = (node ? node.meta.title : null) || href
-  return <Link {...props}>{children}</Link>
-}
-
 const Router = withRouter(({router, children}) => {
   let matched = false
   return React.Children.toArray(children).map(child => {
     if (child.props.path) {
-      const match = minimatch(router.pathname, child.props.path)
-      if (match) {
+      if (!matched && router.pathname.indexOf(child.props.path) === 0) {
         return matched = child
       }
     } else {
@@ -117,3 +106,4 @@ const Router = withRouter(({router, children}) => {
 function RouteMatch({children}) {
   return children
 }
+

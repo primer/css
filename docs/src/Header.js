@@ -1,12 +1,13 @@
 import React from 'react'
 import {withRouter} from 'next/router'
 import Octicon, {MarkGithub} from '@githubprimer/octicons-react'
+import {Text, Flex, Sticky, BorderBox, Box} from '@primer/components'
 import BoxShadow from './BoxShadow'
 import Link from './Link'
-import {Text, Flex, Sticky, BorderBox, Box} from '@primer/components'
+import NodeLink from './NodeLink'
 
 const NavLink = withRouter(({href, router, ...rest}) => (
-  <Link color="white" href={href} px={4} fontWeight={router.pathname === href ? 'bold' : null} {...rest} />
+  <NodeLink href={href} color="white" px={4} fontWeight={router.pathname === href ? 'bold' : null} {...rest} />
 ))
 
 const Header = props => (
@@ -20,11 +21,11 @@ const Header = props => (
           </Flex>
         </Link>
         <Box display={['none', 'none', 'block']}>
-          <NavLink href="/css">Docs</NavLink>
-          <NavLink href="/css/getting-started">Getting Started</NavLink>
-          <NavLink href="/css/principles">Principles</NavLink>
-          <NavLink href="/css/tools">Tools</NavLink>
-          <NavLink href="/css/whats-new">What’s New</NavLink>
+          <NavLink href="/css" />
+          <NavLink href="/css/getting-started" />
+          <NavLink href="/css/principles" />
+          <NavLink href="/css/tools" />
+          <NavLink href="/css/whats-new" />
         </Box>
         <Box display={['block', 'block', 'none']}>
           <Link href="#sidenav">
