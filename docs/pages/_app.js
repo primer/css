@@ -89,7 +89,7 @@ function List({items, ...rest}) {
     return (
       <ul {...rest}>
         {items.map(item => (
-          <li>
+          <li key={item.id}>
             <a href={`#${item.id}`}>{item.title}</a>
             <List items={item.children} />
           </li>
