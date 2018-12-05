@@ -1,7 +1,5 @@
 ---
 title: Linting
-doc_type: css
-category: tools
 ---
 
 We use linters to enforce [coding principles and standards](../principles/). On every pull request we run the linters on the code to make sure any changes meet our standards. When a commit contains code that doesn't meet the standards, the build fails which blocks merging into master and deploying to production.

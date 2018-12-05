@@ -1,7 +1,5 @@
 ---
 title: Atom packages
-doc_type: css
-category: tools
 ---
 
 [Atom editor](https://atom.io/) is a _"A hackable text editor for the 21st Century"_ built by GitHub. If you use it as your editor of choice, the design systems team has a list of packages that we find useful for CSS development.

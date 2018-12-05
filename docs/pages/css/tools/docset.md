@@ -1,7 +1,5 @@
 ---
 title: Docset
-doc_type: css
-category: tools
 ---
 
 We use and ❤️ [Kapeli's Dash app][dash] for browsing API documentation. Dash comes with 150+ offline documentation sets, but doesn't have our style guide.

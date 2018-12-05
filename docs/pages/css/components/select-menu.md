@@ -2,9 +2,7 @@
 title: Select menu
 status: Stable
 source: 'https://github.com/github/github/blob/master/docs/styleguide/css/styles/product/components/select-menu.md'
-code_layout: default
 symbols: [active, close-button, css-truncate-target, description, description-inline, description-warning, disabled, filterable-empty, has-error, hidden-select-button-text, icon-only, indeterminate, is-loading, is-showing-new-item-form, label-select-menu, last-visible, menu-active, modal-backdrop, navigation-focus, octicon, octicon-check, octicon-dash, octicon-octoface, octicon-x, opaque, primary, select-menu, select-menu-action, select-menu-blankslate, select-menu-button, select-menu-button-gravatar, select-menu-button-large, select-menu-clear-item, select-menu-divider, select-menu-error, select-menu-filters, select-menu-header, select-menu-item, select-menu-item-gravatar, select-menu-item-heading, select-menu-item-icon, select-menu-item-parent, select-menu-item-template, select-menu-item-text, select-menu-list, select-menu-loading-overlay, select-menu-modal, select-menu-modal-holder, select-menu-modal-narrow, select-menu-modal-right, select-menu-new-item-form, select-menu-no-results, select-menu-tab, select-menu-tab-bucket, select-menu-tab-nav, select-menu-tabs, select-menu-text-filter, select-menu-title, selected, spinner]
-doc_type: css
 ---
 
 The select menu provides advanced support for navigation, filtering, and more. Any popover within a select menu can make use of JavaScript-enabled live filtering, selected states, tabbed lists, and keyboard navigation with a bit of markup.
@@ -15,7 +13,7 @@ The select menu provides advanced support for navigation, filtering, and more. A
 
 Select menus should be trigged by a `<button>`. In the markup below, all classes prefixed with `select-menu` and `.js-` are required.
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     Choose an item
@@ -49,7 +47,7 @@ The contents of a select menu are easily customized with support for headers, fo
 
 Add a header to any select menu's popover to house a clear title and a dismiss button.
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     Choose an item
@@ -83,7 +81,7 @@ Add a header to any select menu's popover to house a clear title and a dismiss b
 
 The list of items is arguably the most important subcomponent within the menu. Build them out of anchors, buttons, or just about any [interactive content](http://w3c.github.io/html/dom.html#interactive-content). [List items are also customizable](#menu-list-items) with options for avatars, additional icons, and multiple lines of text.
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     Choose an item
@@ -118,7 +116,7 @@ Enable live filtering of list items within a `.select-menu-list` with a search i
 
 There are no required changes for the `.select-menu-item`s.
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     <i>Label:</i>
@@ -179,7 +177,7 @@ There are no required changes for the `.select-menu-item`s.
 
 Sometimes you need two or more lists of items in your select menu, e.g. branches and tags. Select menu lists can be tabbed with the addition of the tab toggles at the top of the menu and a few changes to the `.select-menu-list`.
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     <i>Label:</i>
@@ -280,7 +278,7 @@ Sometimes you need two or more lists of items in your select menu, e.g. branches
 
 Show a filter and tabs in a single select menu.
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     <i>Label:</i>
@@ -384,7 +382,7 @@ Show a filter and tabs in a single select menu.
 
 Sometimes a select menu needs to communicate a "blank slate" where there's no content in the menu's list. Usually these include a clear call to action to add said content to the list. Swap out the contents of a `.select-menu-list` with the `.select-menu-blankslate` and customize it's contents as needed.
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     Choose an item
@@ -416,7 +414,7 @@ Select menu list items have a few options available to them for more complex inf
 
 Sometimes the contents of your select menu list require a heading and a description instead of just a string. Select menus come with some default styles for such situations with the addition of a few classes and wrapping `<span>`s.
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     <i>Multi line:</i>
@@ -470,7 +468,7 @@ Sometimes the contents of your select menu list require a heading and a descript
 
 Add avatars to a select menu to help indicate when a menu list item represents a user.
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     Choose an item
@@ -519,7 +517,7 @@ Add avatars to a select menu to help indicate when a menu list item represents a
 
 Indicate how to toggle the selected state on a select menu list item with the addition of a dismiss icon.
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     Choose an item
@@ -566,7 +564,7 @@ By default select menus are automatically aligned to the top left corner of an e
 
 When select menus are right aligned, you can also right-align the select menu's popover with `.select-menu-modal-right`.
 
-```html
+```erb
 <div class="select-menu float-right select-menu-modal-right js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     Choose an item
@@ -604,7 +602,7 @@ Customize the select menu's trigger button by changing the button modifier class
 
 Since select menus are powered by JavaScript behaviors, the specific display of your select menu button is up to you and your use case.
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     Default button
@@ -631,7 +629,7 @@ Since select menus are powered by JavaScript behaviors, the specific display of 
 </div>
 ```
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn btn-primary select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     Primary button
@@ -658,7 +656,7 @@ Since select menus are powered by JavaScript behaviors, the specific display of 
 </div>
 ```
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn btn-outline select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     Outline button
@@ -685,7 +683,7 @@ Since select menus are powered by JavaScript behaviors, the specific display of 
 </div>
 ```
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn-link select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     Link button
@@ -718,7 +716,7 @@ Select menu buttons have the option of showing the current selection in the butt
 
 Open the select menu below and click different options to see it in action.
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     <span class="js-select-button">master</span>
@@ -754,7 +752,7 @@ Sometimes you want to spice up your select menu with an emphasized label for the
 
 As shown below, emphasized text works great with the stateful text functionality mentioned above.
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     <i>Branch:</i>
@@ -789,7 +787,7 @@ As shown below, emphasized text works great with the stateful text functionality
 
 Add an avatar to the button, like we do in our context switcher on the logged in dashboard.
 
-```html
+```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     <div class="select-menu-button-gravatar js-select-button-gravatar">

@@ -1,7 +1,5 @@
 ---
 title: Prototyping
-doc_type: css
-category: tools
 ---
 
 You're welcome to use whatever prototyping tool suits your needs, however we've set up some options that will help you get started quickly.

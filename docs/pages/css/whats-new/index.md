@@ -1,8 +1,5 @@
 ---
 title: Whatʼs new
-doc_type: css
-category: whats_new
-sidebar: {root: true}
 ---
 
 <p classs="f3-light">Primer is an ever-evolving design system. We’ve been listening to your feedback and using it as a basis for improvements and additions.</p>

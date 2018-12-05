@@ -1,7 +1,5 @@
 ---
 title: Archived changelog
-doc_type: css
-category: changelog
 searchable: false
 ---
 

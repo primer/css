@@ -1,7 +1,5 @@
 ---
 title: Sketch templates
-doc_type: css
-category: tools
 ---
 
 We often use Sketch for mocking up designs before coding them. To make this process faster and to keep our designs consistent, we have created UI kits that contain many of our commonly used styles.

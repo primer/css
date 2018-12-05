@@ -1,7 +1,5 @@
 ---
 title: Local development
-doc_type: css
-category: tools
 ---
 
 When you are working with the `github/github` codebase, you can link Primer modules with your local development environment using the Primerize script. This will allow you to make changes to primer and see them reflected on `github.localhost` without the overhead of pulling in alpha releases of a package.

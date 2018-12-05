@@ -1,7 +1,5 @@
 ---
 title: Status key
-doc_type: css
-category: whats_new
 ---
 
 <p class="f3-light">Primer is constantly evolving and we have many styles to refactor and bring up to standard. The status of each package is shown with it's corresponding documentation so you can be confident which styles are safe to use.</p>
