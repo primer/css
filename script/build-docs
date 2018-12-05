@@ -5,7 +5,7 @@ if [ -z "$NOW_TOKEN" ]; then
     echo "NOW_TOKEN is not set; skipping docs deployment"
 else
     cd docs
-    now --token=$NOW_TOKEN > now-url.txt
+    npx now --token=$NOW_TOKEN > now-url.txt
     url=$(cat now-url.txt)
     version=$(jq -r .name ../modules/primer/package.json)
     npx commit-status "deployed to <$url>" "now" "primer@$version" "$url"
