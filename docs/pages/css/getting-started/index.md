@@ -51,32 +51,26 @@ sass:
 
 It's best practice to import all of this scss into one file, usually named `index.scss`. From this file you'll import your primer code and any other custom code you write.
 
-```css
----
----
-
+```scss
 @import "primer-core/index.scss";
-/* These files live in the same directory as the index file. */
-@import "custom-1.scss";
-@import "custom-2.scss";
+// These files live in the same directory as the index file.
+@import "./custom-1.scss";
+@import "./custom-2.scss";
 ```
 
 Here's an example of how it might look if you installed only a few primer components with some custom variable overrides. The `$blue` uses the default primer blue in the text utilities, then the new blue in `"custom-that-uses-primer-variables.scss"` and `.foo`.
 
-```css
----
----
-
+```scss
 @import "primer-utilities/index.scss";
 @import "primer-buttons/index.scss";
 
-/* Import color variables for custom code */
+// Import color variables for custom code
 @import "primer-support/index.scss";
 
-/* Override default blue*/
+// Override default blue
 $blue: #0000ff;
 
-@import "custom-that-uses-primer-variables.scss";
+@import "./custom-that-uses-primer-variables.scss";
 
 .foo {
   background: $blue;
@@ -93,7 +87,7 @@ Don't forget to add the compiled CSS to the `<head>` section of your page.
 
 ## Using primer on a static site
 
-You won't need to install any node modules for a static site, you can use the built CSS. The best thing to do is to [download the built CSS](https://unpkg.com/primer/build/build.css) from the npm module and host it yourself. But if that is not an option you can include the cdn link in your html.
+You won't need to install any node modules for a static site, you can use the built CSS. The best thing to do is to [download the built CSS](https://unpkg.com/primer/build/build.css) from the npm module and host it yourself. If that's not an option, you can include a CDN link in your html:
 
 ```html
 <link href="https://unpkg.com/primer/build/build.css" rel="stylesheet">

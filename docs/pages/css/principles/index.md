@@ -68,7 +68,7 @@ Components make it easier to mark up a set of elements that are commonly grouped
 * **Separate structure and skin:** This means to define repeating visual features (like background and border styles) as separate “skins” that you can mix-and-match with your various components to achieve a large amount of visual variety without much code.
 * **Separate container and content:** Essentially, this means “rarely use location-dependent styles”. A component should look the same no matter where you put it.
 
-```css
+```scss
 // structure
 .flash {...}
 
@@ -138,7 +138,7 @@ Utilities provide the building blocks for layout and handle a range common use c
 
 Examples:
 
-```css
+```scss
 .text-white { color: #fff !important; }
 
 .bg-gray-light { background-color: #ddd !important; }
@@ -186,11 +186,11 @@ Inline styles are performant and deal with one off use cases that don't need to 
 The most common use case is for applying widths and heights to images. Other use cases might be to apply a custom width to a div to work with it's content.
 
 ```html
-// Image width and height
+<!-- Image width and height -->
 <img src="images/avatar.png" width="20" height="20">
 
-// Custom width for a div that is not a repeated pattern
-<div class="d-table-cell py-3 pr-3" style="width:72px">
+<!-- Custom width for a div that is not a repeated pattern -->
+<div class="d-table-cell py-3 pr-3" style="width: 72px">
 ```
 
 ## Further reading
