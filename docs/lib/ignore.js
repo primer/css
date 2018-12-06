@@ -40,5 +40,5 @@ function setIgnored(file, files) {
     lines.splice(headerIndex + 1)
   }
   lines.push(...files)
-  writeFileSync(file, lines.join('\n'), 'utf8')
+  writeFileSync(file, lines.sort().join('\n'), 'utf8')
 }
