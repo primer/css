@@ -8,12 +8,7 @@ import {MIN_CONTRAST_RATIO} from './constants'
 
 const gradientHues = ['gray', 'blue', 'green', 'purple', 'yellow', 'orange', 'red']
 
-const OPPOSITE_COLORS = {
-  black: colors.white,
-  white: colors.black,
-  [colors.black]: colors.white,
-  [colors.white]: colors.black
-}
+const {black: BLACK, white: WHITE} = colors
 
 export function ColorPalette(props) {
   return (
@@ -22,7 +17,7 @@ export function ColorPalette(props) {
         const color = colors[hue][5]
         return (
           <Box bg={color} p={3} width={200} mr={2} key={hue}>
-            <Text fontWeight="bold" color={overlayColor(color, 'black')}>
+            <Text fontWeight="bold" color={overlayColor(color)}>
               {titleCase(hue)}
             </Text>
           </Box>
@@ -42,11 +37,11 @@ export function ColorVariables(props) {
     <>
       <Flex flexWrap="wrap" className="gutter" {...props}>
         {gradientHues.map(hue => (
-          <ColorVariable hue={hue} key={hue} />
+          <ColorVariable id={hue} hue={hue} key={hue} />
         ))}
       </Flex>
       <Flex flexWrap="wrap" {...props}>
-        <FadeVariables hue="black" bg="black" color="white">
+        <FadeVariables id="black" hue="black" bg="black" color="white">
           <BorderBox border={0} borderRadius={0} borderTop={1} borderColor="gray.5" mt={2}>
             <Text is="div" fontSize={2} pt={2} mb={0}>
               Black fades apply alpha transparency to the <Var>$black</Var> variable. The black color value has a slight
@@ -54,7 +49,7 @@ export function ColorVariables(props) {
             </Text>
           </BorderBox>
         </FadeVariables>
-        <FadeVariables hue="white" over="black">
+        <FadeVariables id="white" hue="white" over={BLACK}>
           <BorderBox border={0} borderRadius={0} borderTop={1} mt={2}>
             <Text is="div" fontSize={2} pt={2} mb={0}>
               White fades apply alpha transparency to the <Var>$white</Var> variable, below these are shown overlaid on
@@ -98,12 +93,11 @@ export function FadeVariables({hue, color, bg, over, children, ...rest}) {
   const colorValue = colors[hue]
   const alphas = [15, 30, 50, 70, 85]
   const values = alphas.map(alpha => {
+    const value = chroma(colorValue).alpha(alpha / 100).css()
     return {
       name: `${hue}-fade-${alpha}`,
-      textColor: fadeTextColor(colorValue, alpha, over),
-      value: chroma(colorValue)
-        .alpha(alpha / 100)
-        .css()
+      textColor: fadeTextColor(value, over),
+      value
     }
   })
   const boxProps = {color, bg}
@@ -139,7 +133,7 @@ FadeVariables.propTypes = {
   bg: Box.propTypes.color,
   color: Box.propTypes.color,
   hue: PropTypes.oneOf(['black', 'white']),
-  over: PropTypes.oneOf(['black', 'white'])
+  over: PropTypes.string
 }
 
 function Swatch(props) {
@@ -171,22 +165,25 @@ function Var(props) {
   return <Text is="var" fontWeight="bold" fontFamily="mono" css={{fontStyle: 'normal'}} {...props} />
 }
 
-function overlayColor(bg, fg = 'black') {
-  if (chroma.contrast(bg, fg) < MIN_CONTRAST_RATIO) {
-    return oppositeColor(fg)
-  }
-  return fg
+function overlayColor(bg) {
+  return chroma(bg).luminance() > .5 ? BLACK : WHITE
 }
 
-// eslint-disable-next-line no-unused-vars
-function fadeTextColor(color, alpha, over) {
-  /*
-   * TODO: figure out a better way to "flatten" (composite) color -> over in
-   * RGB and get the _actual_ contrast ratio
-   */
-  return alpha >= 50 ? oppositeColor(color) : color
+function fadeTextColor(fg, bg = WHITE) {
+  const rgb = compositeRGB(fg, bg)
+  return overlayColor(rgb)
 }
 
-function oppositeColor(color) {
-  return OPPOSITE_COLORS[color] || color
+/**
+ * Composite ("flatten") a foreground RGBA value with an RGB background into an
+ * RGB color for the purposes of measuring contrast or luminance.
+ */
+function compositeRGB(foreground, background) {
+  const [fr, fg, fb, fa] = chroma(foreground).rgba()
+  const [br, bg, bb] = chroma(background).rgb()
+  return chroma([
+    (1 - fa) * br + fa * fr,
+    (1 - fa) * bg + fa * fg,
+    (1 - fa) * bb + fa * fb
+  ]).css()
 }
