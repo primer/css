@@ -1,9 +1,10 @@
 const chokidar = require('chokidar')
 const klaw = require('klaw-sync')
 const minimatch = require('minimatch')
+const matter = require('gray-matter')
 const {green, red, yellow} = require('colorette')
 const {basename, dirname, join} = require('path')
-const {copySync, ensureDirSync, removeSync, writeFileSync} = require('fs-extra')
+const {copySync, ensureDirSync, existsSync, readFileSync, removeSync} = require('fs-extra')
 const {getIgnored, setIgnored} = require('./ignore')
 
 const sourceDir = join(__dirname, '../../modules')
@@ -18,7 +19,7 @@ const map = {
   'primer-layout/README.md': 'objects/layout.md',
   'primer-layout/docs/*.md': path => `objects/${basename(path)}`,
   'primer-marketing-support/README.md': 'support/marketing-variables.md',
-  'primer-marketing-type/README.md': 'utilities/marketing-type.md',
+  'primer-marketing-type/docs/index.md': 'utilities/marketing-type.md',
   'primer-marketing-utilities/README.md': false, // 'utilities/marketing.md',
   'primer-marketing-utilities/docs/*.md': path => `utilities/marketing-${basename(path)}`,
   'primer-marketing/README.md': false, // 'packages/primer-marketing.md',
@@ -38,16 +39,26 @@ function sync({debug = false}) {
   const log = debug ? console.warn : noop
   const ignored = getIgnored(ignoreFile)
   for (const file of ignored) {
-    log(`${yellow('x')} removing: ${file}`)
-    removeSync(file)
+    try {
+      removeSync(file)
+      log(`${yellow('x')} removed: ${file}`)
+    } catch (error) {
+      log(`${red('x')} missing: ${file}`)
+    }
   }
+  console.time('get links')
   const links = getLinks(sourceDir, destDir, map)
-  log(yellow(`linking ${links.length} files...`))
-  syncLinks(links)
-  const toBeIgnored = links.map(link => link.dest.substr(destDir.length + 1))
-  log(yellow(`adding ${toBeIgnored.length} files to ${ignoreFile}...`))
-  setIgnored(ignoreFile, toBeIgnored)
-  log(green('done!'))
+  console.timeEnd('get links')
+  if (links.length) {
+    log(yellow(`linking ${links.length} files...`))
+    syncLinks(links)
+    const toBeIgnored = links.map(link => link.dest.substr(destDir.length + 1))
+    log(yellow(`adding ${toBeIgnored.length} files to ${ignoreFile}...`))
+    setIgnored(ignoreFile, toBeIgnored)
+    log(green('done!'))
+  } else {
+    log(yellow('(no links to copy)'))
+  }
 }
 
 function watch(options) {
@@ -74,12 +85,16 @@ function watch(options) {
 }
 
 function syncLinks(links) {
+  const message = `sync ${links.length} links`
+  console.time(message)
   for (const {source, dest} of links) {
-    const destDir = dirname(dest)
+    console.warn(`${source.substr(sourceDir.length + 1)} ${yellow('->')} ${dest.substr(destDir.length + 1)}`)
+    const destPath = dirname(dest)
     removeSync(dest)
-    ensureDirSync(destDir)
+    ensureDirSync(destPath)
     copySync(source, dest)
   }
+  console.timeEnd(message)
 }
 
 function getLinks(sourceDir, destDir, map) {
@@ -108,7 +123,6 @@ function getLinks(sourceDir, destDir, map) {
       if (source === pattern || minimatch(source, pattern)) {
         const dest = typeof name === 'function' ? name(source) : name
         if (dest) {
-          console.warn(`${source} ${yellow('->')} ${dest}`)
           links.push({source, dest})
           linked = true
         }
@@ -120,11 +134,11 @@ function getLinks(sourceDir, destDir, map) {
     }
   }
 
-  skipped = skipped.filter(file => file !== 'README.md')
+  skipped = skipped.filter(source => source !== 'README.md')
   if (skipped.length) {
-    console.warn(`skipped ${skipped.length} markdown files:`)
-    for (const file of skipped) {
-      console.warn(`${red('x')} ${file}`)
+    console.warn(`ignored ${yellow(skipped.length)} files`)
+    for (const source of skipped) {
+      console.warn(`${yellow('-')} ${source}`)
     }
   }
 
@@ -132,6 +146,24 @@ function getLinks(sourceDir, destDir, map) {
     source: join(sourceDir, source),
     dest: join(destDir, dest)
   }))
+  .filter(({source, dest}) => {
+    if (!existsSync(source)) {
+      console.warn(`${red('x')} missing: ${source.substr(sourceDir.length + 1)}`)
+      return false
+    }
+    const sourceContent = readFileSync(source, 'utf8')
+    const {data} = matter(sourceContent)
+    if (data.docs === false) {
+      console.warn(`${yellow('x')} ${source.substr(sourceDir.length + 1)} (docs: false)`)
+      return false
+    }
+    try {
+      const destContent = readFileSync(dest, 'utf8')
+      return sourceContent !== destContent
+    } catch (error) {
+      return true
+    }
+  })
 }
 
 function shortName(path) {
