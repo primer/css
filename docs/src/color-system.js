@@ -42,16 +42,16 @@ export function ColorVariables(props) {
       </Flex>
       <Flex flexWrap="wrap" {...props}>
         <FadeVariables id="black" hue="black" bg="black" color="white">
-          <BorderBox border={0} borderRadius={0} borderTop={1} borderColor="gray.5" mt={2}>
-            <Text is="div" fontSize={2} pt={2} mb={0}>
+          <BorderBox border={0} borderRadius={0} borderTop={1} borderColor="gray.5" mt={1}>
+            <Text is="div" fontSize={2} pt={3} mb={0}>
               Black fades apply alpha transparency to the <Var>$black</Var> variable. The black color value has a slight
               blue hue to match our grays.
             </Text>
           </BorderBox>
         </FadeVariables>
         <FadeVariables id="white" hue="white" over={BLACK}>
-          <BorderBox border={0} borderRadius={0} borderTop={1} mt={2}>
-            <Text is="div" fontSize={2} pt={2} mb={0}>
+          <BorderBox border={0} borderRadius={0} borderTop={1} mt={1}>
+            <Text is="div" fontSize={2} pt={3} mb={0}>
               White fades apply alpha transparency to the <Var>$white</Var> variable, below these are shown overlaid on
               a dark gray background.
             </Text>
@@ -113,9 +113,9 @@ export function FadeVariables({hue, color, bg, over, children, ...rest}) {
             ${hue}
           </Flex.Item>
           <Text fontFamily="mono">
-            {colorValue}
-            {' / '}
             {chroma(colorValue).css()}
+            {' / '}
+            {colorValue}
           </Text>
         </Flex>
         {children}
