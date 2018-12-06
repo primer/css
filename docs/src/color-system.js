@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import chroma from 'chroma-js'
 import colors from 'primer-colors'
+import titleCase from 'title-case'
 import {BorderBox, Box, Flex, Heading, Text} from '@primer/components'
+import {MIN_CONTRAST_RATIO} from './constants'
 
 const gradientHues = ['gray', 'blue', 'green', 'purple', 'yellow', 'orange', 'red']
 
@@ -15,14 +17,21 @@ const OPPOSITE_COLORS = {
 
 export function ColorPalette(props) {
   return (
-    <Flex mb={6} {...props}>
-      {gradientHues.map(hue => (
-        <Box bg={`${hue}.5`} p={3} width={1 / 7} mr={2} key={hue}>
-          <Text color="white">{hue}</Text>
-        </Box>
-      ))}
-      <BorderBox bg="white" width={1 / 7} borderRadius={0} mr={4} p={3}>
-        <Text color="black">white</Text>
+    <Flex mb={6} className="markdown-no-margin" {...props}>
+      {gradientHues.map(hue => {
+        const color = colors[hue][5]
+        return (
+          <Box bg={color} p={3} width={200} mr={2} key={hue}>
+            <Text fontWeight="bold" color={overlayColor(color, 'black')}>
+              {titleCase(hue)}
+            </Text>
+          </Box>
+        )
+      })}
+      <BorderBox bg="white" p={3} width={200} borderRadius={0}>
+        <Text fontWeight="bold" color="black">
+          White
+        </Text>
       </BorderBox>
     </Flex>
   )
@@ -31,7 +40,7 @@ export function ColorPalette(props) {
 export function ColorVariables(props) {
   return (
     <>
-      <Flex flexWrap="wrap" {...props}>
+      <Flex flexWrap="wrap" className="gutter" {...props}>
         {gradientHues.map(hue => (
           <ColorVariable hue={hue} key={hue} />
         ))}
@@ -61,11 +70,11 @@ export function ColorVariables(props) {
 export function ColorVariable({hue, ...rest}) {
   const values = colors[hue]
   return (
-    <Flex.Item is={Box} pr={4} mb={6} width={1 / 2} className="markdown-no-margin" {...rest}>
-      {false ? <Heading is="div">{hue}</Heading> : null}
+    <Flex.Item is={Box} pr={4} mb={6} className="col-6 markdown-no-margin" {...rest}>
+      {/* <Heading is="div">{titleCase(hue)}</Heading> */}
       <Box bg={`${hue}.5`} my={2} p={3} color="white">
         <Heading is="div" pb={3} fontSize={56} fontWeight="light">
-          {hue}
+          {titleCase(hue)}
         </Heading>
         <Flex justifyContent="space-between">
           <Flex.Item flex="1 1 auto" is={Var}>
@@ -92,16 +101,18 @@ export function FadeVariables({hue, color, bg, over, children, ...rest}) {
     return {
       name: `${hue}-fade-${alpha}`,
       textColor: fadeTextColor(colorValue, alpha, over),
-      value: chroma(colorValue).alpha(alpha / 100).css()
+      value: chroma(colorValue)
+        .alpha(alpha / 100)
+        .css()
     }
   })
   const boxProps = {color, bg}
   return (
     <Flex.Item is={Box} pr={4} mb={6} width={1 / 2} className="markdown-no-margin" {...rest}>
-      {false ? <Heading is="div">{hue}</Heading> : null}
+      {/* <Heading is="div">{titleCase(hue)}</Heading> */}
       <Box my={2} p={3} {...boxProps}>
         <Heading is="div" pb={3} fontSize={56} fontWeight="light">
-          {hue}
+          {titleCase(hue)}
         </Heading>
         <Flex justifyContent="space-between">
           <Flex.Item flex="1 1 auto" is={Var}>
@@ -140,7 +151,9 @@ function Swatch(props) {
           <Var color={textColor}>${name}</Var>
         </Box>
         <Box p={3}>
-          <Text color={textColor} fontFamily="mono">{value}</Text>
+          <Text color={textColor} fontFamily="mono">
+            {value}
+          </Text>
         </Box>
       </Text>
     </Box>
@@ -159,13 +172,18 @@ function Var(props) {
 }
 
 function overlayColor(bg, fg = 'black') {
-  if (chroma.contrast(bg, fg) < 4.5) {
+  if (chroma.contrast(bg, fg) < MIN_CONTRAST_RATIO) {
     return oppositeColor(fg)
   }
   return fg
 }
 
+// eslint-disable-next-line no-unused-vars
 function fadeTextColor(color, alpha, over) {
+  /*
+   * TODO: figure out a better way to "flatten" (composite) color -> over in
+   * RGB and get the _actual_ contrast ratio
+   */
   return alpha >= 50 ? oppositeColor(color) : color
 }
 
