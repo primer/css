@@ -44,7 +44,10 @@ export default class MyDocument extends Document {
           <meta property="og:image:height" content="630" />
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:site" content="@githubprimer" />
-          <link rel="stylesheet" href={config.production ? getAssetPath('primer.css') : '/_next/static/css/styles.chunk.css'} />
+          <link
+            rel="stylesheet"
+            href={config.production ? getAssetPath('primer.css') : '/_next/static/css/styles.chunk.css'}
+          />
           {styleTags}
         </head>
         <body>
