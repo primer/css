@@ -6,11 +6,36 @@ const {basename, dirname, join} = require('path')
 const {copySync, ensureDirSync, removeSync, writeFileSync} = require('fs-extra')
 const {getIgnored, setIgnored} = require('./ignore')
 
+const sourceDir = join(__dirname, '../../modules')
+const destDir = join(__dirname, '../pages/css')
+const ignoreFile = join(destDir, '.gitignore')
+
+const map = {
+  '../CHANGELOG.md': 'whats-new/changelog.md',
+  'primer/README.md': false, // 'packages/primer.md',
+  'primer-base/README.md': false, // 'support/base.md',
+  'primer-core/README.md': false, // 'packages/primer-core.md',
+  'primer-layout/README.md': 'objects/layout.md',
+  'primer-layout/docs/*.md': path => `objects/${basename(path)}`,
+  'primer-marketing-support/README.md': 'support/marketing-variables.md',
+  'primer-marketing-type/README.md': 'utilities/marketing-type.md',
+  'primer-marketing-utilities/README.md': false, // 'utilities/marketing.md',
+  'primer-marketing-utilities/docs/*.md': path => `utilities/marketing-${basename(path)}`,
+  'primer-marketing/README.md': false, // 'packages/primer-marketing.md',
+  'primer-product/README.md': false, // 'packages/primer-product.md',
+  'primer-support/README.md': false, // 'support/index.md',
+  'primer-support/docs/*.md': path => `support/${basename(path)}`,
+  'primer-table-object/README.md': 'objects/table-object.md',
+  'primer-utilities/README.md': false, // 'utilities/index.md',
+  'primer-utilities/docs/*.md': path => `utilities/${basename(path)}`,
+  // this is a catch-all rule that needs to go last so that it doesn't override others
+  'primer-*/README.md': path => `components/${shortName(path)}.md`,
+}
+
 module.exports = {sync, watch}
 
-function sync({sourceDir, destDir, map, debug = false}) {
+function sync({debug = false}) {
   const log = debug ? console.warn : noop
-  const ignoreFile = join(destDir, '.gitignore')
   const ignored = getIgnored(ignoreFile)
   for (const file of ignored) {
     log(`${yellow('x')} removing: ${file}`)
@@ -26,19 +51,24 @@ function sync({sourceDir, destDir, map, debug = false}) {
 }
 
 function watch(options) {
-  const globs = Object.keys(map).map(path => join(sourceDir, path))
+  const {debug = false} = options
+  const keys = Object.keys(map)
+  const globs = keys.map(path => join(sourceDir, path))
+  const log = debug ? console.warn : noop
   let timeout
   const update = path => {
     if (timeout) return
     timeout = setTimeout(() => {
-      copySync(options)
+      log(`${yellow('changed')} ${path}`)
+      sync(options)
       clearTimeout(timeout)
       timeout = null
     }, 50)
   }
-  console.warn(`watching: ${globs.map(g => yellow(g)).join(', ')}`)
+  sync(options)
+  log(`watching in ${yellow(sourceDir)}: ${keys.join(', ')}`)
   return chokidar.watch(globs)
-    .on('add', update)
+    // .on('add', update)
     .on('change', update)
     .on('unlink', update)
 }
@@ -102,6 +132,10 @@ function getLinks(sourceDir, destDir, map) {
     source: join(sourceDir, source),
     dest: join(destDir, dest)
   }))
+}
+
+function shortName(path) {
+  return path.match(/primer-([-\w]+)/)[1]
 }
 
 function noop() {
