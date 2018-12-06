@@ -1,8 +1,17 @@
-import Color from 'color'
+import React from 'react'
+import PropTypes from 'prop-types'
+import chroma from 'chroma-js'
 import colors from 'primer-colors'
 import {BorderBox, Box, Flex, Heading, Text} from '@primer/components'
 
 const gradientHues = ['gray', 'blue', 'green', 'purple', 'yellow', 'orange', 'red']
+
+const OPPOSITE_COLORS = {
+  black: colors.white,
+  white: colors.black,
+  [colors.black]: colors.white,
+  [colors.white]: colors.black
+}
 
 export function ColorPalette(props) {
   return (
@@ -72,16 +81,20 @@ export function ColorVariable({hue, ...rest}) {
   )
 }
 
+ColorVariable.propTypes = {
+  hue: PropTypes.oneOf(Object.keys(colors)).isRequired
+}
+
 export function FadeVariables({hue, color, bg, over, children, ...rest}) {
   const colorValue = colors[hue]
   const alphas = [15, 30, 50, 70, 85]
-  const values = alphas.map(alpha => ({
-    name: `${hue}-fade-${alpha}`,
-    value: Color(colorValue)
-      .fade(alpha / 100)
-      .string()
-      .replace(/0{2,}\d/, '')
-  }))
+  const values = alphas.map(alpha => {
+    return {
+      name: `${hue}-fade-${alpha}`,
+      textColor: fadeTextColor(colorValue, alpha, over),
+      value: chroma(colorValue).alpha(alpha / 100).css()
+    }
+  })
   const boxProps = {color, bg}
   return (
     <Flex.Item is={Box} pr={4} mb={6} width={1 / 2} className="markdown-no-margin" {...rest}>
@@ -95,38 +108,67 @@ export function FadeVariables({hue, color, bg, over, children, ...rest}) {
             ${hue}
           </Flex.Item>
           <Text fontFamily="mono">
-            {colorValue} /{' '}
-            {Color(colorValue)
-              .rgb()
-              .string()}
+            {colorValue}
+            {' / '}
+            {chroma(colorValue).css()}
           </Text>
         </Flex>
         {children}
       </Box>
       <Box bg={over}>
-        {values.map(({name, value}) => (
-          <Swatch name={name} value={value} key={name} />
+        {values.map(swatchProps => (
+          <Swatch {...swatchProps} key={swatchProps.name} />
         ))}
       </Box>
     </Flex.Item>
   )
 }
 
-function Swatch({name, value, ...rest}) {
+FadeVariables.propTypes = {
+  bg: Box.propTypes.color,
+  color: Box.propTypes.color,
+  hue: PropTypes.oneOf(['black', 'white']),
+  over: PropTypes.oneOf(['black', 'white'])
+}
+
+function Swatch(props) {
+  const {name, value, textColor = overlayColor(value), ...rest} = props
   return (
     <Box bg={value} {...rest}>
       <Text is={Flex} fontSize={1} justifyContent="space-between">
         <Box p={3}>
-          <Var>${name}</Var>
+          <Var color={textColor}>${name}</Var>
         </Box>
         <Box p={3}>
-          <Text fontFamily="mono">{value}</Text>
+          <Text color={textColor} fontFamily="mono">{value}</Text>
         </Box>
       </Text>
     </Box>
   )
 }
 
+Swatch.propTypes = {
+  name: PropTypes.string.isRequired,
+  textColor: PropTypes.string,
+  value: PropTypes.string.isRequired
+}
+
 function Var(props) {
-  return <Text is="var" fontFamily="mono" css={{fontStyle: 'normal'}} {...props} />
+  // FIXME: fontStyle should be a prop, right?
+  return <Text is="var" fontWeight="bold" fontFamily="mono" css={{fontStyle: 'normal'}} {...props} />
+}
+
+function overlayColor(bg, fg = 'black') {
+  if (chroma.contrast(bg, fg) < 4.5) {
+    return oppositeColor(fg)
+  }
+  return fg
+}
+
+function fadeTextColor(color, alpha, over) {
+  return alpha >= 50 ? oppositeColor(color) : color
+}
+
+function oppositeColor(color) {
+  return OPPOSITE_COLORS[color] || color
 }
