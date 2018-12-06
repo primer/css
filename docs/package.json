@@ -44,6 +44,7 @@
     "react-dom": "16.6.1",
     "react-emotion": "9.2.8",
     "styled-components": "3.3.3",
+    "title-case": "^2.1.1",
     "tree-model": "^1.0.7"
   }
 }
