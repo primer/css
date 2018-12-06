@@ -1,12 +1,49 @@
+const chokidar = require('chokidar')
 const klaw = require('klaw-sync')
 const minimatch = require('minimatch')
 const {green, red, yellow} = require('colorette')
 const {basename, dirname, join} = require('path')
 const {copySync, ensureDirSync, removeSync, writeFileSync} = require('fs-extra')
+const {getIgnored, setIgnored} = require('./ignore')
 
-module.exports = {getLinks, sync}
+module.exports = {sync, watch}
 
-function sync(links) {
+function sync({sourceDir, destDir, map, debug = false}) {
+  const log = debug ? console.warn : noop
+  const ignoreFile = join(destDir, '.gitignore')
+  const ignored = getIgnored(ignoreFile)
+  for (const file of ignored) {
+    log(`${yellow('x')} removing: ${file}`)
+    removeSync(file)
+  }
+  const links = getLinks(sourceDir, destDir, map)
+  log(yellow(`linking ${links.length} files...`))
+  syncLinks(links)
+  const toBeIgnored = links.map(link => link.dest.substr(destDir.length + 1))
+  log(yellow(`adding ${toBeIgnored.length} files to ${ignoreFile}...`))
+  setIgnored(ignoreFile, toBeIgnored)
+  log(green('done!'))
+}
+
+function watch(options) {
+  const globs = Object.keys(map).map(path => join(sourceDir, path))
+  let timeout
+  const update = path => {
+    if (timeout) return
+    timeout = setTimeout(() => {
+      copySync(options)
+      clearTimeout(timeout)
+      timeout = null
+    }, 50)
+  }
+  console.warn(`watching: ${globs.map(g => yellow(g)).join(', ')}`)
+  return chokidar.watch(globs)
+    .on('add', update)
+    .on('change', update)
+    .on('unlink', update)
+}
+
+function syncLinks(links) {
   for (const {source, dest} of links) {
     const destDir = dirname(dest)
     removeSync(dest)
@@ -65,4 +102,7 @@ function getLinks(sourceDir, destDir, map) {
     source: join(sourceDir, source),
     dest: join(destDir, dest)
   }))
+}
+
+function noop() {
 }
