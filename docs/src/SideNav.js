@@ -38,6 +38,20 @@ export default function SideNav(props) {
   )
 }
 
+/**
+ * A <Section> gets a `path` and optional children. If it has children it will
+ * render those and prepend each child's `href` prop with the provided `path`.
+ * This means that you can do:
+ *
+ * ```jsx
+ * <Section path="/section">
+ *   <Link href="foo">Links to /section/foo</Link>
+ * </Section>
+ * ```
+ *
+ * If no children are provided, it renders a <NavList> with the provided
+ * `path`.
+ */
 const Section = ({path, children}) => (
   <BorderBox p={4} border={0} borderBottom={1} borderRadius={0} width="100%">
     {children ? (
@@ -51,6 +65,11 @@ const Section = ({path, children}) => (
   </BorderBox>
 )
 
+/**
+ * A <NavList> renders a <SectionLink> for the given `path` and looks up the
+ * path in the page tree. If a node is found, it renders a <NavLink> for each
+ * of the node's children.
+ */
 function NavList({path}) {
   return (
     <>
@@ -64,6 +83,10 @@ function NavList({path}) {
   )
 }
 
+/**
+ * A <SectionLink> is really just a <NodeLink> that's bold when its `href`
+ * matches the current path, wrapped in a <Box> for whitespace.
+ */
 const SectionLink = withRouter(({href, router, ...rest}) => (
   <Box mb={2}>
     <NodeLink
@@ -76,6 +99,10 @@ const SectionLink = withRouter(({href, router, ...rest}) => (
   </Box>
 ))
 
+/**
+ * A <NavLink> is a <NodeLink> that turns black when its `href` matches the
+ * current path, wrapped in a <Box> for whitespace.
+ */
 const NavLink = withRouter(({href, router, ...rest}) => {
   return (
     <Box mb={2}>
@@ -84,6 +111,12 @@ const NavLink = withRouter(({href, router, ...rest}) => {
   )
 })
 
+/**
+ * This inspired React Router's <Router> component, in that it looks for
+ * children with the `path` prop and only renders the _first_ one that matches
+ * the beginning of the current path. Children without a `path` prop are always
+ * rendered.
+ */
 const Router = withRouter(({router, children}) => {
   let matched = false
   return React.Children.toArray(children).map(child => {
