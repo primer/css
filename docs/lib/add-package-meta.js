@@ -8,8 +8,7 @@ module.exports = function addPackageMeta(options = {}) {
   return (files, metal, done) => {
     const root = metal.source()
     for (const [path, file] of Object.entries(files)) {
-      const fullPath = join(root, path)
-      const pkg = getPackageRelativeTo(dirname(fullPath))
+      const pkg = getPackageRelativeTo(path, root)
       if (pkg) {
         file[namespace].package = fields ? pluck(pkg, fields) : pkg
       } else {
@@ -20,7 +19,8 @@ module.exports = function addPackageMeta(options = {}) {
   }
 }
 
-function getPackageRelativeTo(dir) {
+function getPackageRelativeTo(file, root) {
+  let dir = join(root, dirname(file))
   if (dir in cache) {
     return cache[dir]
   }
