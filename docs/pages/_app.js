@@ -51,7 +51,7 @@ export default class MyApp extends App {
           </Head>
           <Header />
           <Flex flexDirection="row-reverse" justifyContent="space-between">
-            <Box>
+            <Box width="80%">
               {meta.hero ? <IndexHero /> : null}
               <Box color="gray.9" maxWidth={960} mx="auto" my={6} px={6}>
                 <div className="markdown-body">
