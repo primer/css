@@ -4,7 +4,7 @@ import {MDXProvider} from '@mdx-js/tag'
 import Head from 'next/head'
 import {withMDXLive} from 'mdx-live'
 import {BaseStyles, Box, Flex, Link, theme} from '@primer/components'
-import {SideNav, Header, IndexHero} from '../src/components'
+import {Header, PackageHeader, SideNav, IndexHero} from '../src/components'
 import {rootPage} from '../src/utils'
 
 import 'primer/index.scss'
@@ -56,6 +56,7 @@ export default class MyApp extends App {
               <Box color="gray.9" maxWidth={1012} width="100%" my={6} mx="auto" px={6}>
                 <div className="markdown-body">
                   {meta.title ? <h1>{meta.title}</h1> : null}
+                  <PackageHeader {...meta} />
                   <MDXProvider components={components}>
                     <Component {...page} />
                   </MDXProvider>
