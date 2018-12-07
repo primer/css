@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const sync = require('./sync')
-const {CI, NODE_ENV} = process.env
+const {CI, NODE_ENV, NOW_URL} = process.env
 
 const PRIMER_SCSS = 'primer/index.scss$'
 const PRIMER_STATIC_CSS = require.resolve('primer/build/build.css')
@@ -20,10 +20,13 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => {
 
       const {dev} = options
 
-      if (dev && !configured) {
-        sync({watch: !CI})
-      } else {
-        sync().then(files => console.warn(`synced ${files.length} docs`))
+      // only attempt to sync locally and in CI
+      if (!NOW_URL) {
+        if (dev && !configured) {
+          sync({watch: !CI})
+        } else {
+          sync().then(files => console.warn(`synced ${files.length} docs`))
+        }
       }
 
       config.module.rules.push({
