@@ -39,7 +39,7 @@ $ npm run build
 title: Labels
 path: components/labels
 status_issue: https://github.com/github/design-systems/issues/332
-status: New release
+status: Stable
 -->
 
 Labels add metatdata or indicate status of items and navigational elements. Three different types of labels are available: [Labels](#default-label-styles) for adding metadata, [States](#states) for indicating status, and [Counters](#counters) for showing the count for a number of items.

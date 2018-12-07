@@ -1,7 +1,7 @@
 ---
 title: Marketing Padding
 path: utilities/marketing-padding
-status: New release
+status: Stable
 status_issue: https://github.com/github/design-systems/issues/378
 ---
 

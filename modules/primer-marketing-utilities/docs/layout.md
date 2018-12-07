@@ -1,7 +1,7 @@
 ---
 title: Layout
 path: utilities/marketing-layout
-status: New release
+status: Stable
 ---
 
 Marketing layout utilities build on top of [primer-core utilities](../../utilities/layout/#position), adding the option of responsive positioning.
