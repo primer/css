@@ -5,6 +5,7 @@ import Head from 'next/head'
 import {BaseStyles, Box, Flex, Link, theme} from '@primer/components'
 import {Header, LiveEditor, PackageHeader, SideNav, IndexHero} from '../src/components'
 import {rootPage} from '../src/utils'
+import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 import 'primer/index.scss'
 
@@ -48,12 +49,14 @@ export default class MyApp extends App {
             <title>Primer CSS{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
           <Header />
-          <Flex flexDirection="row-reverse" justifyContent="space-between">
-            <Box width="80%">
+          <Flex
+            flexDirection={['column', 'column', 'column', 'row-reverse']}
+            justifyContent="space-between">
+            <Box width={['auto', 'auto', 'auto', '80%']}>
               {meta.hero ? <IndexHero /> : null}
-              <Box color="gray.9" maxWidth={932} mx="auto" my={6} px={6}>
+              <Box color="gray.9" maxWidth={['auto', 'auto', 'auto', CONTENT_MAX_WIDTH]} px={6} mx="auto" my={6}>
                 <div className="markdown-body">
-                  {meta.title ? <h1>{meta.title}</h1> : null}
+                  {!meta.hero && meta.title ? <h1>{meta.title}</h1> : null}
                   <PackageHeader {...meta} />
                   <MDXProvider components={components}>
                     <Component {...page} />
