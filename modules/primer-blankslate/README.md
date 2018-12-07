@@ -37,6 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Blankslate
+path: components/blankslate
 status: Stable
 -->
 

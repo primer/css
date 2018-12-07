@@ -37,6 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Forms
+path: components/forms
 status: Stable
 -->
 

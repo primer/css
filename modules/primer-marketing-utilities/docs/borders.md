@@ -1,5 +1,6 @@
 ---
 title: Borders
+path: utilities/borders
 status: New release
 ---
 

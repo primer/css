@@ -1,7 +1,3 @@
----
-title: Marketing variables
----
-
 # Primer Marketing Support
 
 [![npm version](https://img.shields.io/npm/v/primer-marketing-support.svg)](https://www.npmjs.org/package/primer-marketing-support)
@@ -35,7 +31,8 @@ You can also import specific portions of the module by importing those partials 
 
 <!-- %docs
 title: Marketing support
-status: new release
+path: support/marketing-variables
+status: Stable
 -->
 
 ### Extended spacing scale

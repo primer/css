@@ -1,5 +1,6 @@
 ---
 title: Details
+path: utilities/details
 status: New release
 ---
 

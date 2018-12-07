@@ -37,6 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Box
+path: components/box
 status_issue: https://github.com/github/design-systems/issues/198
 status: New release
 -->

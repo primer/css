@@ -1,5 +1,6 @@
 ---
 title: Grid
+path: objects/grid
 status: New release
 status_issue: https://github.com/github/design-systems/issues/88
 source: https://github.com/primer/primer/blob/master/modules/primer-layout/lib/grid.scss

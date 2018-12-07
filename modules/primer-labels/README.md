@@ -37,6 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Labels
+path: components/labels
 status_issue: https://github.com/github/design-systems/issues/332
 status: New release
 -->

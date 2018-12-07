@@ -1,5 +1,6 @@
 ---
 title: Layout
+path: utilities/layout
 status: New release
 ---
 
