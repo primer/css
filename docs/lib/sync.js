@@ -3,6 +3,7 @@ const filter = require('metalsmith-filter')
 const frontmatter = require('metalsmith-matters')
 const watch = require('metalsmith-watch')
 
+const addChangelog = require('./changelog')
 const addPackageMeta = require('./add-package-meta')
 const addSource = require('./add-source')
 const filterBy = require('./filter-by')
@@ -53,14 +54,18 @@ module.exports = function sync(options = {}) {
     )
     // rename files with their "path" frontmatter key
     .use(rename(file => `${file[ns].path}.md`), {log})
-    // write frontmatter back out to the file
-    .use(writeMeta(metaOptions))
+    .use(addChangelog('../CHANGELOG.md', 'whats-new/changelog.md', file => {
+      file[ns] = {
+        title: 'Changelog'
+      }
+    }))
     // read the changelog manually
     .use((_files, metal, done) => {
-      _files['whats-new/changelog.md'] = metal.readFile('../CHANGELOG.md')
       files = _files
       done()
     })
+    // write frontmatter back out to the file
+    .use(writeMeta(metaOptions))
     // keep .gitignore up-to-date with the list of generated files
     .use(
       gitIgnore({
