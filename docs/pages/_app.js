@@ -3,12 +3,12 @@ import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
 import Head from 'next/head'
 import {withMDXLive} from 'mdx-live'
+import {injectGlobal} from 'emotion'
 import {BaseStyles, Box, Flex, Link, theme} from '@primer/components'
 import {Header, PackageHeader, SideNav, IndexHero} from '../src/components'
 import {rootPage} from '../src/utils'
 
 import 'primer/index.scss'
-import 'prism-github/prism-github.css'
 
 export default class MyApp extends App {
   static async getInitialProps({Component, ctx}) {
@@ -50,22 +50,27 @@ export default class MyApp extends App {
             <title>Primer CSS{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
           <Header />
-          <Flex display={['block', 'block', 'flex', 'flex']} flexDirection="row-reverse">
-            <Box width="100%">
+          <Flex flexDirection="row-reverse" justifyContent="space-between">
+            <Box>
               {meta.hero ? <IndexHero /> : null}
-              <Box color="gray.9" maxWidth={1012} width="100%" my={6} mx="auto" px={6}>
+              <Box color="gray.9" maxWidth={960} mx="auto" my={6} px={6}>
                 <div className="markdown-body">
                   {meta.title ? <h1>{meta.title}</h1> : null}
                   <PackageHeader {...meta} />
                   <MDXProvider components={components}>
                     <Component {...page} />
                   </MDXProvider>
-                  <pre>meta: {JSON.stringify(meta, null, 2)}</pre>
+                  <details>
+                    <summary>Metadata</summary>
+                    <pre>meta: {JSON.stringify(meta, null, 2)}</pre>
+                  </details>
                 </div>
                 {/* TODO: bring back edit link! */}
               </Box>
             </Box>
-            <SideNav />
+            <Box width="20%" minWidth={240}>
+              <SideNav />
+            </Box>
           </Flex>
         </Container>
       </BaseStyles>
