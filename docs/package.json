@@ -2,7 +2,6 @@
   "private": true,
   "name": "@primer/css-docs",
   "scripts": {
-    "prepare": "npm run sync",
     "lint": "eslint pages src",
     "test": "./test.sh",
     "sync": "script/sync",
