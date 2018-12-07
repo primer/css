@@ -5,12 +5,20 @@ const {CI, NODE_ENV, NOW_URL} = process.env
 const PRIMER_SCSS = 'primer/index.scss$'
 const PRIMER_STATIC_CSS = require.resolve('primer/build/build.css')
 
-module.exports = (pluginOptions = {}) => (nextConfig = {}) => {
-  const test = pluginOptions.extension || /\.mdx?$/
+module.exports = (nextConfig = {}) => {
+  const {assetPrefix = NOW_URL || ''} = nextConfig
 
   let configured = false
 
   return Object.assign({}, nextConfig, {
+    assetPrefix,
+    pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+
+    publicRuntimeConfig: Object.assign({
+      assetPrefix,
+      production: NODE_ENV === 'production'
+    }, nextConfig.publicRuntimeConfig),
+
     webpack(config, options) {
       if (!options.defaultLoaders) {
         throw new Error(
@@ -21,12 +29,8 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => {
       const {dev} = options
 
       // only attempt to sync locally and in CI
-      if (!NOW_URL) {
-        if (dev && !configured) {
-          sync({watch: !CI})
-        } else {
-          sync().then(files => console.warn(`synced ${files.length} docs`))
-        }
+      if (dev && !configured) {
+        sync({watch: !CI})
       }
 
       config.module.rules.push({
@@ -35,7 +39,7 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => {
       })
 
       config.module.rules.push({
-        test,
+        test: /\.mdx?$/,
         use: [options.defaultLoaders.babel, 'mdx-loader']
       })
 
