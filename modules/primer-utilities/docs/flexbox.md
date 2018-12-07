@@ -1,8 +1,7 @@
 ---
 title: Flexbox
 path: utilities/flexbox
-status: New release
-source: /app/assets/stylesheets/primer-core/utilities/lib/layout.scss
+status: Stable
 status_issue: https://github.com/github/design-systems/issues/157
 ---
 
