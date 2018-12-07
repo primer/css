@@ -60,8 +60,8 @@ export default function PackageHeader(props) {
 PackageHeader.propTypes = {
   package: PropTypes.shape({
     name: PropTypes.string.isRequired
-  }).isRequired,
-  source: PropTypes.string.isRequired,
+  }),
+  source: PropTypes.string,
   status: PropTypes.string
 }
 
