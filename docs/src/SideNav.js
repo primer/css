@@ -13,10 +13,8 @@ export default function SideNav(props) {
         borderColor="gray.2"
         borderRight={1}
         borderTop={[1, 1, 0, 0]}
-        display="inline-block"
         height="100%"
         id="sidenav"
-        width={['100%', '100%', 256, 256]}
         {...props}
       >
         <Flex flexDirection="column" alignItems="start">
