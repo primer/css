@@ -2,12 +2,11 @@
   "private": true,
   "name": "@primer/css-docs",
   "scripts": {
-    "prepare": "npm run copy",
     "lint": "eslint pages src",
     "test": "./test.sh",
+    "sync": "script/sync",
+    "watch": "script/sync --watch",
     "dev": "next",
-    "copy": "script/copy",
-    "watch": "script/copy --watch",
     "prebuild": "rm -rf .next",
     "build": "next build",
     "start": "next start"
