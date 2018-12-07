@@ -6,7 +6,7 @@ if [ -z "$NOW_TOKEN" ]; then
 else
     cp modules/primer/build/build.css docs/static/primer.css
     cd docs
-    npm run prepare
+    npm run sync
     now --token=$NOW_TOKEN | tee now-url.txt
     url=$(cat now-url.txt)
     version=$(jq -r .version ../modules/primer/package.json)
