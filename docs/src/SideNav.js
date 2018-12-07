@@ -71,14 +71,13 @@ const Section = ({path, children}) => (
  * of the node's children.
  */
 function NavList({path}) {
+  const node = rootPage.first(node => node.path === path)
   return (
     <>
       <SectionLink href={path} />
-      {rootPage
-        .first(node => node.path === path)
-        .children.map(child => (
-          <NavLink href={child.path} key={child.path} />
-        ))}
+      {node ? node.children.map(child => (
+        <NavLink href={child.path} key={child.path} />
+      )) : null}
     </>
   )
 }
