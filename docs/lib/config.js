@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 module.exports = (pluginOptions = {}) => (nextConfig = {}) => {
   const test = pluginOptions.extension || /\.mdx?$/
   const primerSCSS = 'primer/index.scss$'
@@ -18,16 +20,13 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => {
 
       config.module.rules.push({
         test,
-        use: [
-          options.defaultLoaders.babel,
-          'mdx-loader'
-        ]
+        use: [options.defaultLoaders.babel, 'mdx-loader']
       })
 
       /**
-      * in production we don't have access to ../modules, so we need to
-      * rewrite the 'primer/index.scss' import to the static CSS build
-      */
+       * in production we don't have access to ../modules, so we need to
+       * rewrite the 'primer/index.scss' import to the static CSS build
+       */
       if (!options.dev && !config.resolve[primerSCSS]) {
         console.warn('*** rewriting primer/index.scss to:', primerCSS)
         config.resolve.alias[primerSCSS] = primerCSS

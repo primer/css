@@ -1,174 +1,80 @@
-const chokidar = require('chokidar')
-const klaw = require('klaw-sync')
-const minimatch = require('minimatch')
-const matter = require('gray-matter')
-const {green, red, yellow} = require('colorette')
-const {basename, dirname, join} = require('path')
-const {copySync, ensureDirSync, existsSync, readFileSync, removeSync} = require('fs-extra')
-const {getIgnored, setIgnored} = require('./ignore')
+const Metalsmith = require('metalsmith')
+const filter = require('metalsmith-filter')
+const frontmatter = require('metalsmith-matters')
+const watch = require('metalsmith-watch')
 
-const sourceDir = join(__dirname, '../../modules')
-const destDir = join(__dirname, '../pages/css')
-const ignoreFile = join(destDir, '.gitignore')
+const addPackageMeta = require('./add-package-meta')
+const addSource = require('./add-source')
+const filterBy = require('./filter-by')
+const parseDocComments = require('./parse-doc-comments')
+const rename = require('./rename')
+const writeMeta = require('./write-meta')
+const gitIgnore = require('./ignore')
 
-const map = {
-  '../CHANGELOG.md': 'whats-new/changelog.md',
-  'primer/README.md': false, // 'packages/primer.md',
-  'primer-base/README.md': false, // 'support/base.md',
-  'primer-core/README.md': false, // 'packages/primer-core.md',
-  'primer-layout/README.md': 'objects/layout.md',
-  'primer-layout/docs/*.md': path => `objects/${basename(path)}`,
-  'primer-marketing-support/README.md': 'support/marketing-variables.md',
-  'primer-marketing-type/docs/index.md': 'utilities/marketing-type.md',
-  'primer-marketing-utilities/README.md': false, // 'utilities/marketing.md',
-  'primer-marketing-utilities/docs/*.md': path => `utilities/marketing-${basename(path)}`,
-  'primer-marketing/README.md': false, // 'packages/primer-marketing.md',
-  'primer-product/README.md': false, // 'packages/primer-product.md',
-  'primer-support/README.md': false, // 'support/index.md',
-  'primer-support/docs/*.md': path => `support/${basename(path)}`,
-  'primer-table-object/README.md': 'objects/table-object.md',
-  'primer-utilities/README.md': false, // 'utilities/index.md',
-  'primer-utilities/docs/*.md': path => `utilities/${basename(path)}`,
-  // this is a catch-all rule that needs to go last so that it doesn't override others
-  'primer-*/README.md': path => `components/${shortName(path)}.md`,
-}
+module.exports = function sync(options = {}) {
+  // eslint-disable-next-line no-console
+  const {log = console.warn} = options
 
-module.exports = {sync, watch}
+  const metaOptions = options.meta || {namespace: 'data', log}
+  const ns = metaOptions.namespace
 
-function sync({debug = false}) {
-  const log = debug ? console.warn : noop
-  const ignored = getIgnored(ignoreFile)
-  for (const file of ignored) {
-    try {
-      removeSync(file)
-      log(`${yellow('x')} removed: ${file}`)
-    } catch (error) {
-      log(`${red('x')} missing: ${file}`)
-    }
-  }
-  console.time('get links')
-  const links = getLinks(sourceDir, destDir, map)
-  console.timeEnd('get links')
-  if (links.length) {
-    log(yellow(`linking ${links.length} files...`))
-    syncLinks(links)
-    const toBeIgnored = links.map(link => link.dest.substr(destDir.length + 1))
-    log(yellow(`adding ${toBeIgnored.length} files to ${ignoreFile}...`))
-    setIgnored(ignoreFile, toBeIgnored)
-    log(green('done!'))
-  } else {
-    log(yellow('(no links to copy)'))
-  }
-}
+  // this is what we'll resolve our Promise with later
+  let files
 
-function watch(options) {
-  const {debug = false} = options
-  const keys = Object.keys(map)
-  const globs = keys.map(path => join(sourceDir, path))
-  const log = debug ? console.warn : noop
-  let timeout
-  const update = path => {
-    if (timeout) return
-    timeout = setTimeout(() => {
-      log(`${yellow('changed')} ${path}`)
-      sync(options)
-      clearTimeout(timeout)
-      timeout = null
-    }, 50)
-  }
-  sync(options)
-  log(`watching in ${yellow(sourceDir)}: ${keys.join(', ')}`)
-  return chokidar.watch(globs)
-    // .on('add', update)
-    .on('change', update)
-    .on('unlink', update)
-}
+  const metal = Metalsmith(process.cwd())
+    .source('../modules')
+    .destination('pages/css')
+    .clean(false)
+    .frontmatter(false)
+    // ignore anything containing "node_modules" in its path
+    .ignore(path => path.includes('node_modules'))
+    // only match files that look like docs
+    .use(filter(['**/README.md', '**/docs/*.md']))
+    // convert <!-- %docs -->...<!-- %enddocs --> blocks into frontmatter
+    .use(parseDocComments({log}))
+    // parse frontmatter into "data" key of each file
+    .use(frontmatter(metaOptions))
+    // only match files that have a "path" key in their frontmatter
+    .use(filterBy(file => file[ns].path))
+    // write the source frontmatter key to the relative source path
+    .use(
+      addSource({
+        branch: 'master',
+        repo: 'primer/primer',
+        log
+      })
+    )
+    // copy a subset of fields from the nearest package.json
+    .use(
+      addPackageMeta({
+        fields: ['name', 'description', 'version'],
+        namespace: ns
+      })
+    )
+    // rename files with their "path" frontmatter key
+    .use(rename(file => `${file[ns].path}.md`), {log})
+    // write frontmatter back out to the file
+    .use(writeMeta(metaOptions))
+    // read the changelog manually
+    .use((_files, metal, done) => {
+      _files['whats-new/changelog.md'] = metal.readFile('../CHANGELOG.md')
+      files = _files
+      done()
+    })
+    // keep .gitignore up-to-date with the list of generated files
+    .use(
+      gitIgnore({
+        header: '# DO NOT EDIT: automatically generated by ignore.js'
+      })
+    )
 
-function syncLinks(links) {
-  const message = `sync ${links.length} links`
-  console.time(message)
-  for (const {source, dest} of links) {
-    console.warn(`${source.substr(sourceDir.length + 1)} ${yellow('->')} ${dest.substr(destDir.length + 1)}`)
-    const destPath = dirname(dest)
-    removeSync(dest)
-    ensureDirSync(destPath)
-    copySync(source, dest)
-  }
-  console.timeEnd(message)
-}
-
-function getLinks(sourceDir, destDir, map) {
-  const links = []
-
-  const mapEntries = Object.entries(map)
-  for (const [source, dest] of mapEntries) {
-    if (source.indexOf('..') === 0 && typeof dest === 'string') {
-      links.push({source, dest})
-    }
+  if (options.watch) {
+    metal.use(watch(typeof options.watch === 'object' ? options.watch : {}))
   }
 
-  console.warn(yellow(`walking: ${sourceDir}...`))
-  const items = klaw(sourceDir, {
-    nodir: true,
-    filter: item => item.path.indexOf('node_modules') === -1
+  return new Promise((resolve, reject) => {
+    metal.build(error => {
+      error ? reject(error) : resolve(files)
+    })
   })
-
-  let skipped = []
-  for (const item of items) {
-    // item.path is fully-qualified, so we need to remove the sourceDir
-    // from the beginning of it to get the relative path
-    const source = item.path.substr(sourceDir.length + 1)
-    let linked = false
-    for (const [pattern, name] of mapEntries) {
-      if (source === pattern || minimatch(source, pattern)) {
-        const dest = typeof name === 'function' ? name(source) : name
-        if (dest) {
-          links.push({source, dest})
-          linked = true
-        }
-        break
-      }
-    }
-    if (!linked && source.endsWith('.md')) {
-      skipped.push(source)
-    }
-  }
-
-  skipped = skipped.filter(source => source !== 'README.md')
-  if (skipped.length) {
-    console.warn(`ignored ${yellow(skipped.length)} files`)
-    for (const source of skipped) {
-      console.warn(`${yellow('-')} ${source}`)
-    }
-  }
-
-  return links.map(({source, dest}) => ({
-    source: join(sourceDir, source),
-    dest: join(destDir, dest)
-  }))
-  .filter(({source, dest}) => {
-    if (!existsSync(source)) {
-      console.warn(`${red('x')} missing: ${source.substr(sourceDir.length + 1)}`)
-      return false
-    }
-    const sourceContent = readFileSync(source, 'utf8')
-    const {data} = matter(sourceContent)
-    if (data.docs === false) {
-      console.warn(`${yellow('x')} ${source.substr(sourceDir.length + 1)} (docs: false)`)
-      return false
-    }
-    try {
-      const destContent = readFileSync(dest, 'utf8')
-      return sourceContent !== destContent
-    } catch (error) {
-      return true
-    }
-  })
-}
-
-function shortName(path) {
-  return path.match(/primer-([-\w]+)/)[1]
-}
-
-function noop() {
 }
