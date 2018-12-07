@@ -1,8 +1,8 @@
 ---
 title: Typography
 path: support/typography
+status: Stable
 status_issue: https://github.com/github/design-systems/issues/329
-status: New release
 source: https://github.com/primer/primer/blob/master/modules/primer-support/lib/variables/typography.scss
 ---
 
