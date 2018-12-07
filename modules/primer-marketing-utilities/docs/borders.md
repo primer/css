@@ -1,6 +1,6 @@
 ---
 title: Borders
-path: utilities/borders
+path: utilities/marketing-borders
 status: New release
 ---
 

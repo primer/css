@@ -1,6 +1,6 @@
 ---
 title: Layout
-path: utilities/layout
+path: utilities/marketing-layout
 status: New release
 ---
 
