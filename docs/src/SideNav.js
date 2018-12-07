@@ -129,6 +129,18 @@ const Router = withRouter(({router, children}) => {
   })
 })
 
+/**
+ * <RouteMatch> is just a way to conditonally render content without a wrapper
+ * element when contained directly in a <Router>:
+ *
+ * ```jsx
+ * <Router>
+ *   <RouteMatch path="/some/dir">
+ *     this will only show up on pages whose path begins with "/some/dir"
+ *   </RouteMatch>
+ * </Router>
+ * ```
+ */
 function RouteMatch({children}) {
   return children
 }
