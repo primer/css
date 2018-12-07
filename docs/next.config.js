@@ -6,12 +6,6 @@ const configure = require('./lib/config')
 
 const {NODE_ENV, NOW_URL} = process.env
 
-if (!NOW_URL) {
-  const {watch} = require('./lib/sync')
-  const watcher = watch({debug: true})
-  process.on('exit', () => watcher.close())
-}
-
 const assetPrefix = NOW_URL || ''
 
 module.exports = withPlugins([

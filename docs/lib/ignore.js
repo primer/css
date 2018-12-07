@@ -6,6 +6,7 @@ module.exports = function gitIgnore(options = {}) {
   if (!header) {
     throw new Error(`getIgnore(): the "header" is required (got: ${JSON.stringify(header)})`)
   }
+  const set = new Set()
   return (files, metal, done) => {
     const ignoreFile = join(metal.destination(), '.gitignore')
     // first, get the list of previously ignored files and remove them (sync)
@@ -15,7 +16,10 @@ module.exports = function gitIgnore(options = {}) {
         removeSync(file)
       }
     }
-    setIgnored(ignoreFile, Object.keys(files), header, log)
+    for (const file of Object.keys(files)) {
+      set.add(file)
+    }
+    setIgnored(ignoreFile, Array.from(set), header, log)
     done()
   }
 }
