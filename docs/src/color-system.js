@@ -4,7 +4,6 @@ import chroma from 'chroma-js'
 import colors from 'primer-colors'
 import titleCase from 'title-case'
 import {BorderBox, Box, Flex, Heading, Text} from '@primer/components'
-import {MIN_CONTRAST_RATIO} from './constants'
 
 const gradientHues = ['gray', 'blue', 'green', 'purple', 'yellow', 'orange', 'red']
 
@@ -93,7 +92,9 @@ export function FadeVariables({hue, color, bg, over, children, ...rest}) {
   const colorValue = colors[hue]
   const alphas = [15, 30, 50, 70, 85]
   const values = alphas.map(alpha => {
-    const value = chroma(colorValue).alpha(alpha / 100).css()
+    const value = chroma(colorValue)
+      .alpha(alpha / 100)
+      .css()
     return {
       name: `${hue}-fade-${alpha}`,
       textColor: fadeTextColor(value, over),
@@ -166,7 +167,7 @@ function Var(props) {
 }
 
 function overlayColor(bg) {
-  return chroma(bg).luminance() > .5 ? BLACK : WHITE
+  return chroma(bg).luminance() > 0.5 ? BLACK : WHITE
 }
 
 function fadeTextColor(fg, bg = WHITE) {
@@ -181,9 +182,5 @@ function fadeTextColor(fg, bg = WHITE) {
 function compositeRGB(foreground, background) {
   const [fr, fg, fb, fa] = chroma(foreground).rgba()
   const [br, bg, bb] = chroma(background).rgb()
-  return chroma([
-    (1 - fa) * br + fa * fr,
-    (1 - fa) * bg + fa * fg,
-    (1 - fa) * bb + fa * fb
-  ]).css()
+  return chroma([(1 - fa) * br + fa * fr, (1 - fa) * bg + fa * fg, (1 - fa) * bb + fa * fb]).css()
 }

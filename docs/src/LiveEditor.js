@@ -7,4 +7,3 @@ LiveEditor.defaultProps = {
 }
 
 export default withMDXLive('pre')
-
