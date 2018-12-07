@@ -2,10 +2,9 @@ import React from 'react'
 import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
 import Head from 'next/head'
-import {withMDXLive} from 'mdx-live'
 import {injectGlobal} from 'emotion'
 import {BaseStyles, Box, Flex, Link, theme} from '@primer/components'
-import {Header, PackageHeader, SideNav, IndexHero} from '../src/components'
+import {Header, LiveEditor, PackageHeader, SideNav, IndexHero} from '../src/components'
 import {rootPage} from '../src/utils'
 
 import 'primer/index.scss'
@@ -39,7 +38,7 @@ export default class MyApp extends App {
           return <p {...rest}>{children}</p>
         }
       },
-      code: withMDXLive('pre'),
+      code: LiveEditor,
       pre: props => props.children
     }
 
@@ -53,7 +52,7 @@ export default class MyApp extends App {
           <Flex flexDirection="row-reverse" justifyContent="space-between">
             <Box width="80%">
               {meta.hero ? <IndexHero /> : null}
-              <Box color="gray.9" maxWidth={960} mx="auto" my={6} px={6}>
+              <Box color="gray.9" maxWidth={932} mx="auto" my={6} px={6}>
                 <div className="markdown-body">
                   {meta.title ? <h1>{meta.title}</h1> : null}
                   <PackageHeader {...meta} />
