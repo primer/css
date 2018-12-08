@@ -3,7 +3,7 @@ import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
 import Head from 'next/head'
 import {BaseStyles, Box, Flex, Link, theme} from '@primer/components'
-import {Header, LiveEditor, PackageHeader, SideNav, IndexHero} from '../src/components'
+import {Header, CodeExample, PackageHeader, SideNav, IndexHero} from '../src/components'
 import {rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
@@ -31,6 +31,7 @@ export default class MyApp extends App {
     const components = {
       // render links with our component
       a: Link,
+      // render the outline for <p> tags with exactly the text "{:toc}"
       p: ({children, ...rest}) => {
         if (children === '{:toc}') {
           return <TableOfContents outline={getOutline()} {...rest} />
@@ -38,7 +39,8 @@ export default class MyApp extends App {
           return <p {...rest}>{children}</p>
         }
       },
-      code: LiveEditor,
+      // render code blocks with our wrapper around mdx-live
+      code: CodeExample,
       pre: props => props.children
     }
 
