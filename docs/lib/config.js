@@ -40,7 +40,17 @@ module.exports = (nextConfig = {}) => {
 
       config.module.rules.push({
         test: /\.mdx?$/,
-        use: [options.defaultLoaders.babel, 'mdx-loader']
+        use: [
+          options.defaultLoaders.babel,
+          {
+            loader: 'mdx-loader',
+            options: {
+              // nix rehype-prism, which does syntax highlighting *before* we
+              // can attach live editors
+              hastPlugins: []
+            }
+          }
+        ]
       })
 
       /**
