@@ -32,15 +32,15 @@ export default function PackageHeader(props) {
 
   return (
     <Flex justifyContent="space-between" mb={4} {...rest}>
-      <Box>
+      <Text is="div" fontSize={1}>
         {status ? (
           <BorderBox is="a" href="/css/whats-new/status-key" display="inline-block" px={2} py={1} mr={2}>
             <Octicon icon={PrimitiveDot} color={getStatusColor(status)} mr={2} />
             {status}
           </BorderBox>
         ) : null}
-        <Text fontSize={1}>{info}</Text>
-      </Box>
+        {info}
+      </Text>
       <Box>
         {issue ? (
           <Link href={issue} ml={2}>
