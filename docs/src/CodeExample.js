@@ -1,10 +1,15 @@
 import {withMDXLive} from 'mdx-live'
-import parseStyle from 'style-parser'
+import HTMLtoJSX from 'html-2-jsx'
+
+const converter = new HTMLtoJSX({
+  indent: '  ',
+  createClass: false
+})
 
 const LiveEditor = withMDXLive('pre')
 
 LiveEditor.defaultProps = {
-  // match ```html and ```jsx fenced code blocks
+  // match ```html and ```jsx fenced code blocks, with or without "."
   match: /\blanguage\-\.?(html|jsx)\b/
 }
 
@@ -16,27 +21,6 @@ export default function CodeExample(props) {
   const html = unsafeInnerHTML
     ? unsafeInnerHTML.__html
     : React.Children.toArray(children).join('\n')
-  const jsx = htmlToJSX(html)
+  const jsx = converter.convert(html)
   return <LiveEditor {...rest}>{jsx}</LiveEditor>
-}
-
-/**
- * HACKS AHOY!
- *
- * There are at least a couple of things that we need to do to make our HTML
- * code snippets runnable in the live editor:
- *
- * 1. Comment out ERB.
- * 2. Replace `style` attribute string values with JSX-friendly style object
- *    notation.
- *
- * Time will tell what else we need to do here!
- */
-function htmlToJSX(html) {
-  return html
-    .replace(/<%=([^%]+)%>/g, erb => `{/* ERB: ${erb} */}`)
-    .replace(/style="([^"]+)"/g, (_, styleString) => {
-      const styles = parseStyle(styleString)
-      return `style={${JSON.stringify(styles)}}`
-    })
 }
