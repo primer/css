@@ -1,3 +1,4 @@
+import React from 'react'
 import {Heading, Link} from '@primer/components'
 import CodeExample from './CodeExample'
 import Outline from './Outline'

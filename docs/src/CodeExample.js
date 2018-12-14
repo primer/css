@@ -35,9 +35,7 @@ export default function CodeExample(props) {
   const {unsafeInnerHTML, children, ...rest} = props
   const lang = getLanguage(props.className)
   rest.transformCode = getTransformForLanguage(lang)
-  const code = unsafeInnerHTML
-    ? unsafeInnerHTML.__html
-    : React.Children.toArray(children).join('\n')
+  const code = unsafeInnerHTML ? unsafeInnerHTML.__html : React.Children.toArray(children).join('\n')
   rest.children = code
   return (
     <BorderBox bg="gray.1" my={4}>
@@ -52,7 +50,5 @@ function getLanguage(className) {
 }
 
 function getTransformForLanguage(lang) {
-  return lang === 'jsx'
-    ? defaultTransform
-    : html => defaultTransform(converter.convert(html))
+  return lang === 'jsx' ? defaultTransform : html => defaultTransform(converter.convert(html))
 }

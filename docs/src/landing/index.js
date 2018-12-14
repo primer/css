@@ -32,7 +32,7 @@ export function StylesOverview(props) {
   return (
     <Flex {...props}>
       {styleTypes.map(({name, desc, image}) => (
-        <Flex.Item is={Text} textAlign="center" mx={4}>
+        <Flex.Item is={Text} textAlign="center" mx={4} key={name}>
           <Image src={image} height={90} mb={2} />
           <OverviewTitle>{name}</OverviewTitle>
           <OverviewText>{desc}</OverviewText>
@@ -43,11 +43,13 @@ export function StylesOverview(props) {
 }
 
 StylesOverview.propTypes = {
-  types: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.node,
-    desc: PropTypes.node,
-    image: PropTypes.func
-  }))
+  types: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.node,
+      desc: PropTypes.node,
+      image: PropTypes.func
+    })
+  )
 }
 
 export function PrimitivesOverview(props) {
@@ -69,7 +71,7 @@ export function PrimitivesOverview(props) {
     }
   ]
   return (
-    <Box width={["auto", "auto", 10/12]} mx="auto" {...props}>
+    <Box width={['auto', 'auto', 10 / 12]} mx="auto" {...props}>
       {primitiveTypes.map(({name, desc, image}) => (
         <Flex key={name} my={6} alignItems="center">
           <Box width={300} mr={6} py={2}>
@@ -86,11 +88,13 @@ export function PrimitivesOverview(props) {
 }
 
 PrimitivesOverview.propTypes = {
-  types: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.node,
-    desc: PropTypes.node,
-    image: PropTypes.func
-  }))
+  types: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.node,
+      desc: PropTypes.node,
+      image: PropTypes.func
+    })
+  )
 }
 
 function Image(props) {
@@ -111,11 +115,10 @@ export function PrimerPackageBox({data, count, ...rest}) {
       <BorderBox bg="gray.1" width="auto" px={6} py={3} my={4}>
         <Flex alignItems="center" justifyContent="space-around">
           <Text fontSize={3} fontWeight="bold" mb={2} textAlign="center">
-            <Link href={packageSourceURL('primer')} color="inherit">Primer</Link>
-            {' '}
-            <Link href={packageURL('primer')}>
-              {data.version}
-            </Link>
+            <Link href={packageSourceURL('primer')} color="inherit">
+              Primer
+            </Link>{' '}
+            <Link href={packageURL('primer')}>{data.version}</Link>
           </Text>
           <Link href="https://travis-ci.org/primer/primer" mt={-1}>
             <img alt="Build Status" src="https://travis-ci.org/primer/primer.svg?branch=master" />
@@ -136,9 +139,10 @@ export function MetaPackageBox({children, data, title, ...rest}) {
   return (
     <Flex.Item is={BorderBox} bg="white" mx={4} flexShrink={0} {...rest}>
       <Heading fontSize={2} is={BorderBox} bg="gray.1" border={0} borderBottom={1} px={3} py={2}>
-        <Link href={packageSourceURL(data.name)}>{title}</Link>
-        {' '}
-        <Link href={packageURL(data.name)} ml={2}>{data.version}</Link>
+        <Link href={packageSourceURL(data.name)}>{title}</Link>{' '}
+        <Link href={packageURL(data.name)} ml={2}>
+          {data.version}
+        </Link>
       </Heading>
       <Text is="div" fontSize={1} p={3}>
         {children}
@@ -147,7 +151,9 @@ export function MetaPackageBox({children, data, title, ...rest}) {
         </Text>
         <ul className="list-style-none pl-0">
           {deps.map(dep => (
-            <li><Link href={packageURL(dep)}>{dep}</Link></li>
+            <li key={dep}>
+              <Link href={packageURL(dep)}>{dep}</Link>
+            </li>
           ))}
         </ul>
       </Text>

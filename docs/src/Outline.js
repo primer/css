@@ -1,3 +1,4 @@
+import React from 'react'
 import {Box} from '@primer/components'
 
 export default function Outline({outline, ...rest}) {
@@ -5,7 +6,7 @@ export default function Outline({outline, ...rest}) {
     return (
       <Box is="details" mb={4}>
         <summary>Table of contents</summary>
-        <TOCList items={outline} {...rest} />
+        <OutlineList items={outline} {...rest} />
       </Box>
     )
   }
