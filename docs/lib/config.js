@@ -42,14 +42,7 @@ module.exports = (nextConfig = {}) => {
         test: /\.mdx?$/,
         use: [
           options.defaultLoaders.babel,
-          {
-            loader: 'mdx-loader',
-            options: {
-              // nix rehype-prism, which does syntax highlighting *before* we
-              // can attach live editors
-              hastPlugins: []
-            }
-          }
+          require.resolve('./mdx-loader')
         ]
       })
 
