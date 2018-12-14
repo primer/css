@@ -29,6 +29,8 @@
     "fs-extra": "^4.0.2",
     "gray-matter": "^4.0.1",
     "html-2-jsx": "^0.5.1-dev",
+    "loader-utils": "^1.1.0",
+    "mdx-constant": "^0.1.0",
     "mdx-live": "2.0.0-alpha.2",
     "mdx-loader": "^2.0.2",
     "metalsmith": "^2.3.0",
@@ -47,8 +49,13 @@
     "react": "16.6.1",
     "react-dom": "16.6.1",
     "react-emotion": "9.2.8",
+    "remark-emoji": "^2.0.2",
+    "remark-images": "^0.16.1",
+    "remark-textr": "^3.0.3",
+    "remark-toc": "^5.1.1",
     "styled-components": "3.3.3",
     "title-case": "^2.1.1",
-    "tree-model": "^1.0.7"
+    "tree-model": "^1.0.7",
+    "typographic-base": "^1.0.4"
   }
 }
