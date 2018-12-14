@@ -5,6 +5,7 @@ const watch = require('metalsmith-watch')
 
 const addChangelog = require('./changelog')
 const addPackageMeta = require('./add-package-meta')
+const {extractPackages, writePackagesJSON} = require('./extract-packages-json')
 const addSource = require('./add-source')
 const filterBy = require('./filter-by')
 const parseDocComments = require('./parse-doc-comments')
@@ -30,13 +31,15 @@ module.exports = function sync(options = {}) {
     // ignore anything containing "node_modules" in its path
     .ignore(path => path.includes('node_modules'))
     // only match files that look like docs
-    .use(filter(['**/README.md', '**/docs/*.md']))
+    .use(filter(['*/README.md', '*/docs/*.md', '*/package.json']))
+    .use(extractPackages())
     // convert <!-- %docs -->...<!-- %enddocs --> blocks into frontmatter
     .use(parseDocComments({log}))
     // parse frontmatter into "data" key of each file
     .use(frontmatter(metaOptions))
     // only match files that have a "path" key in their frontmatter
     .use(filterBy(file => file[ns].path))
+    .use(writePackagesJSON({path: 'packages.json'}))
     // write the source frontmatter key to the relative source path
     .use(
       addSource({
@@ -53,7 +56,7 @@ module.exports = function sync(options = {}) {
       })
     )
     // rename files with their "path" frontmatter key
-    .use(rename(file => `${file[ns].path}.md`), {log})
+    .use(rename(file => file[ns] ? `${file[ns].path}.md` : true), {log})
     .use(addChangelog('../CHANGELOG.md', 'whats-new/changelog.md', file => {
       file[ns] = {
         title: 'Changelog'

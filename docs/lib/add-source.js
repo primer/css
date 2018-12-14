@@ -9,6 +9,8 @@ module.exports = function addSource(options = {}) {
   }
   const {branch, repo} = options
   return each((file, source) => {
-    file[namespace].source = `https://github.com/${repo}/tree/${branch}/modules/${source}`
+    if (file[namespace]) {
+      file[namespace].source = `https://github.com/${repo}/tree/${branch}/modules/${source}`
+    }
   })
 }

@@ -12,7 +12,7 @@ module.exports = function addPackageMeta(options = {}) {
       if (pkg) {
         file[namespace].package = fields ? pluck(pkg, fields) : pkg
       } else {
-        log('no package.json found relative to', fullPath)
+        log('no package.json found relative to', path)
       }
     }
     done()
