@@ -4,6 +4,7 @@ import {MDXProvider} from '@mdx-js/tag'
 import Head from 'next/head'
 import {BaseStyles, Box, Flex, Link, theme} from '@primer/components'
 import {Header, CodeExample, PackageHeader, SideNav, IndexHero} from '../src/components'
+import getComponents from '../src/markdown'
 import {rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
@@ -27,23 +28,8 @@ export default class MyApp extends App {
     const {Component, page} = this.props
 
     const node = rootPage.first(node => node.path === pathname)
-    const {meta = {}, outline: getOutline = () => []} = node || {}
-
-    const components = {
-      // render links with our component
-      a: Link,
-      // render the outline for <p> tags with exactly the text "{:toc}"
-      p: ({children, ...rest}) => {
-        if (children === '{:toc}') {
-          return <TableOfContents outline={getOutline()} {...rest} />
-        } else {
-          return <p {...rest}>{children}</p>
-        }
-      },
-      // render code blocks with our wrapper around mdx-live
-      code: CodeExample,
-      pre: props => props.children
-    }
+    const {meta = {}} = node || {}
+    const components = getComponents(node)
 
     return (
       <BaseStyles style={{fontFamily: theme.fonts.normal}}>
@@ -52,9 +38,7 @@ export default class MyApp extends App {
             <title>Primer CSS{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
           <Header />
-          <Flex
-            flexDirection={['column', 'column', 'column', 'row-reverse']}
-            justifyContent="space-between">
+          <Flex flexDirection={['column', 'column', 'column', 'row-reverse']} justifyContent="space-between">
             <Box width={['auto', 'auto', 'auto', '80%']}>
               {meta.hero ? <IndexHero /> : null}
               <Box color="gray.9" maxWidth={['auto', 'auto', 'auto', CONTENT_MAX_WIDTH]} px={6} mx="auto" my={6}>
@@ -80,32 +64,4 @@ export default class MyApp extends App {
       </BaseStyles>
     )
   }
-}
-
-function TableOfContents({outline, ...rest}) {
-  if (outline && outline.length) {
-    return (
-      <Box is="details" mb={4}>
-        <summary>Table of contents</summary>
-        <List items={outline} {...rest} />
-      </Box>
-    )
-  }
-  return null
-}
-
-function List({items, ...rest}) {
-  if (items && items.length) {
-    return (
-      <ul {...rest}>
-        {items.map(item => (
-          <li key={item.id}>
-            <a href={`#${item.id}`}>{item.title}</a>
-            <List items={item.children} />
-          </li>
-        ))}
-      </ul>
-    )
-  }
-  return null
 }
