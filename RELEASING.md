@@ -6,50 +6,63 @@
 
 1. Go through the tracking PR and make sure everything listed is merged in.
 
-2. To update the change log for your release, click on the details links for the continuous-integration/travis-ci/push build.  Expand the `Deploying application` output and copy the change log content. Update the [CHANGELOG.md](https://github.com/primer/primer/blob/master/CHANGELOG.md) file with the change log content from the build.
+2. To update the changelog for your release, click on the details links for the continuous-integration/travis-ci/push build. Expand the `Deploying application` output and copy the changelog content. Update the [CHANGELOG.md](https://github.com/primer/primer/blob/master/CHANGELOG.md) file with the changelog content from build
+
+    **Note**: the CHANGELOG contents may be hidden within a collapsed section of the Travis logs under `Deploying the application`. Click the ▶ to the left of that section to expand it:
+    
+   ![image](https://user-images.githubusercontent.com/113896/48871307-0be2eb00-ed99-11e8-97ab-b9119ac4b7d3.png)
+
+    Then scroll to the bottom of the page, and copy all of the text between the `Unreleased (YYYY-MM-DD)` heading and the exit status message. You may need to copy _before_ releasing your mouse to prevent Travis from collapsing that section of the logs first:
+    
+   ![image](https://user-images.githubusercontent.com/113896/48871298-f7065780-ed98-11e8-9160-c1016d61d042.png)
 
 3. Bump the package versions in your terminal:
 
-  ```sh
-  npm run bump
-  ```
+   ```sh
+   npm run bump
+   ```
 
-4. Run `script/check-versions` to catch any cross-module version mismatches. You may need to update peer dependencies in `primer-popover` and `primer-marketing-buttons`.
+4. Run `script/check-versions` to catch any cross-module version mismatches. (This will run on Travis, too.)
 
 5. Test your changes with the latest release candidate version in the appropriate places (styleguide, storybook, github/github).
 
 6. Once the release PR is approved and you've done necessary testing, merge to `master`. This will trigger publishing to npm.
 
-7. Create a new release branch for the next release from `master` and name it `release-<version>`. Please use the following template for the PR description:
+7. Create a new release branch for the next release from `master` and name it `release-<version>`. Please use the following template for the PR description, linking to the relevant issues and/or pull requests for each change, and removing irrelevant headings:
 
     ```md
     # Primer [Major|Minor|Patch] Release
 
-    Tracking Issue for next release: 📦 **0.0.0**
+    Version: 📦 **0.0.0**
     Approximate release date: 📆 DD/MM/YY
 
-    ### Must
+    ### :boom: Breaking Change
+    - [ ] Description #
 
-    - [ ]
+    ### :rocket: Enhancement
+    - [ ] Description #
 
-    ### Should
-
-    - [ ]
-
-    ### Could
-
-    - [ ]
+    ### :bug: Bug Fix
+    - [ ] Description #
+    
+    ### :nail_care: Polish
+    - [ ] Description #
+    
+    ### :memo: Documentation
+    - [ ] Description #
+    
+    ### :house: Internal
+    - [ ] Description #
 
     ----
 
     ### Ship checklist
 
-    - [ ] Update CHANGELOG
-    - [ ] Run version bump
-    - [ ] Update primer.github.io
-    - [ ] Update github/github
-    - [ ] Update the style guide
-    - [ ] Update the release tag note
+    - [ ] Update `CHANGELOG.md`
+    - [ ] Bump versions with `npm run bump`
+    - [ ] [Create a new release](https://github.com/primer/primer/releases/new)
+    - [ ] [Update github/github](https://github.com/primer/primer/blob/master/RELEASING.md#in-githubgithub)
+    - [ ] [Update github/styleguide](https://github.com/github/styleguide/#adding-new-content-from-primer)
     - [ ] Create a new pull request for the next release
 
     /cc @primer/ds-core
@@ -75,26 +88,9 @@
 8. When ready, merge! 🎉
 
 
-## Other items that need to be done after publishing Primer
+### Publish release tag
 
-#### Update the Style Guide
-
-1. In [github/styleguide](https://github.com/github/styleguide), update `primer` to your newly released version in your terminal:
-
-  `npm install primer@latest`
-
-2. Then  run: `script/update-primer-docs`.
-
-3. Commit changes, make PR, get it approved, merge! 🚀
-
-#### Update [primer.github.io](primer.github.io)
-
-1. Edit  [index.html](https://github.com/primer/primer.github.io/blob/master/index.html) to include the latest version.
-
-
-#### Publish release tag
-
-1. Create a new release tag [here](https://github.com/primer/primer/releases/new).
+1. [Create a new release](https://github.com/primer/primer/releases/new) with tag `v<version>`.
 
 2. Copy the changes from the [CHANGELOG](https://github.com/primer/primer/blob/master/CHANGELOG.md) and paste it into the release notes.
 
