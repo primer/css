@@ -3,6 +3,7 @@ import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
 import Head from 'next/head'
 import {BaseStyles, Box, Flex, theme} from '@primer/components'
+import {injectGlobal} from 'emotion'
 import {Header, PackageHeader, SideNav, IndexHero} from '../src/components'
 import getComponents from '../src/markdown'
 import {rootPage} from '../src/utils'
@@ -10,6 +11,22 @@ import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 import 'primer/index.scss'
 import 'prism-github'
+
+// XXX undo .markdown-body .rule (:facepalm:)
+injectGlobal`
+  .markdown-body .rule.token {
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    border-bottom: none;
+  }
+
+  .markdown-body .rule.token::before,
+  .markdown-body .rule.token::after {
+    display: none;
+  }
+}
+`
 
 export default class MyApp extends App {
   static async getInitialProps({Component, ctx}) {
