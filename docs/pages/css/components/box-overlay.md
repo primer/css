@@ -1,15 +1,13 @@
 ---
 title: Box overlay
-status_issue: 'https://github.com/github/design-systems/issues/374'
 status: Experimental
+status_issue: 'https://github.com/github/design-systems/issues/374'
 source: 'https://github.com/github/github/tree/master/app/assets/stylesheets/components/box-overlay.scss'
-code_layout: default
 symbols: [Box--overlay, Box-header, Box-overlay--narrow, Box-overlay--wide]
 keywords: [box, overlay]
-doc_type: css
-scripts:
-  - /assets/npm/details-dialog-element.js
 ---
+
+import DetailsDialog from '../../../src/DetailsDialog'
 
 ## Box overlays
 Use the `Box--overlay` with the `<details>` and [`<details-dialog>`](https://github.com/github/details-dialog), and add the `details-overlay-dark` utility if you wish to apply a dark transparent background.
@@ -36,21 +34,21 @@ Box overlays come in three widths. The default `Box--overlay` is 440px wide, `Bo
       </div>
       <ul>
         <li class="Box-row">
-          <img class="avatar v-align-middle mr-2" src="https://avatars.githubusercontent.com/broccolini?s=48" alt="" width="24" height="24">
+          <img class="avatar v-align-middle mr-2" src="https://avatars.githubusercontent.com/broccolini?s=48" alt="broccolini" width="24" height="24">
           @broccolini
         </li>
         <li class="Box-row border-bottom">
-          <img class="avatar v-align-middle mr-2" src="https://avatars.githubusercontent.com/jonrohan?s=48" alt="" width="24" height="24">
+          <img class="avatar v-align-middle mr-2" src="https://avatars.githubusercontent.com/jonrohan?s=48" alt="jonrohan" width="24" height="24">
           @jonrohan
         </li>
         <li class="Box-row border-bottom">
-          <img class="avatar v-align-middle mr-2" src="https://avatars.githubusercontent.com/shawnbot?s=48" alt="" width="24" height="24">
+          <img class="avatar v-align-middle mr-2" src="https://avatars.githubusercontent.com/shawnbot?s=48" alt="shawnbot" width="24" height="24">
           @shawnbot
         </li>
       </ul>
     </div>
     <div class="Box-footer">
-      <button type="button" class="btn btn-block" autofocus data-close-dialog>Okidoki</button>
+      <button type="button" class="btn btn-block" data-close-dialog>Okidoki</button>
     </div>
   </details-dialog>
 </details>
@@ -68,7 +66,7 @@ In github.com there is a shared dialog partial. You will only have to pass in th
     <p>
       This action is irreversible.
     </p>
-    <button type="button" class="btn btn-block btn-danger mt-2" data-close-dialog autofocus>
+    <button type="button" class="btn btn-block btn-danger mt-2" data-close-dialog>
       Delete
     </button>
   </div>
