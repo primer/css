@@ -1,7 +1,5 @@
 ---
 title: Contributing
-doc_type: css
-category: getting_started
 ---
 
 Guidelines for contributing to GitHub's CSS.
@@ -212,7 +210,7 @@ If you add an article to the `.sort.yml` file, then that section will be sorted 
 
 ### Special tags
 
-#### Table of contents
+#### Tables of contents
 
 In the style guide you can add a `{:toc}` tag to have a table of contents automatically generated.
 
@@ -221,9 +219,9 @@ In the style guide you can add a `{:toc}` tag to have a table of contents automa
 When using code blocks for demo purposes, you can choose to render each of the blocks differently by specifying the layout in the info string. For example if you want to use `toggle` as the layout for a code block:
 
 ```markdown
-    ```html layout=toggle
-      <div class="p-5">Animation</div>
-    ```
+  ```html layout=toggle
+  <div class="p-5">Animation</div>
+  ```
 ```
 
 ## Primer modules
