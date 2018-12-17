@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  LiveEditor,
-  LiveError,
-  LivePreview,
-  LiveProvider
-} from 'react-live'
+import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
 import {getIconByName} from '@githubprimer/octicons-react'
 import {Absolute, BorderBox, Box, StyledOcticon as Octicon, Relative, Text, theme} from '@primer/components'
 import ClipboardCopy from './ClipboardCopy'
@@ -51,10 +46,14 @@ export default function CodeExample(props) {
               <ClipboardCopy value={source} />
             </Absolute>
           </Relative>
-          <Text is={LiveError} fontFamily="mono" css={{
-            overflow: 'auto',
-            whiteSpace: 'pre'
-          }} />
+          <Text
+            is={LiveError}
+            fontFamily="mono"
+            css={{
+              overflow: 'auto',
+              whiteSpace: 'pre'
+            }}
+          />
         </BorderBox>
       </LiveProvider>
     )
@@ -70,39 +69,35 @@ function getLanguage(className) {
 }
 
 function getTransformForLanguage(lang) {
-  return (lang in languageTransforms)
-    ? languageTransforms[lang]
-    : null
+  return lang in languageTransforms ? languageTransforms[lang] : null
 }
 
 function sanitizeERB(html) {
   return html
     .replace(/&lt;%= octicon\("([-\w]+)"([^%]+)\)\s*%&gt;/g, erbOcticon)
-    .replace(/&lt;\%([^%]+)%gt;/g, '{/* ERB: `$1` */}')
+    .replace(/&lt;%([^%]+)%gt;/g, '{/* ERB: `$1` */}')
 }
 
-const RUBY_ARG_PATTERNS = [
-  /^:(\w+) ?=&gt; ?(.+)$/,
-  /^(\w+): ?(.+)$/
-]
+const RUBY_ARG_PATTERNS = [/^:(\w+) ?=&gt; ?(.+)$/, /^(\w+): ?(.+)$/]
 
 function erbOcticon(substr, name, argString) {
   let args = ''
   if (argString) {
-    args = argString.split(/,\s*/).slice(1).map(arg => {
-      for (const pattern of RUBY_ARG_PATTERNS) {
-        const match = arg.match(pattern)
-        if (match) {
-          const attr = match[1]
-          const value = match[2].charAt(0) === '"'
-            ? match[2]
-            : `{${match[2]}}`
-          return `${attr}=${value}`
+    args = argString
+      .split(/,\s*/)
+      .slice(1)
+      .map(arg => {
+        for (const pattern of RUBY_ARG_PATTERNS) {
+          const match = arg.match(pattern)
+          if (match) {
+            const attr = match[1]
+            const value = match[2].charAt(0) === '"' ? match[2] : `{${match[2]}}`
+            return `${attr}=${value}`
+          }
         }
-      }
-      return ''
-    }).join(' ')
-    console.warn('args: `%s` => `%s`', argString, args)
+        return ''
+      })
+      .join(' ')
   }
   return `<Octicon icon={getIconByName("${name}")} ${args} />`
 }

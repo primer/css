@@ -8,6 +8,7 @@ export default class ClipboardCopy extends React.Component {
     const {value = ''} = this.props
     const {clipboard} = window.navigator
     const done = () => {
+      // eslint-disable-next-line react/no-find-dom-node
       findDOMNode(this).dispatchEvent(new CustomEvent('copy', {bubbles: false}))
     }
     if (clipboard) {
@@ -15,13 +16,14 @@ export default class ClipboardCopy extends React.Component {
     } else if (!document.body) {
       return
     } else {
-      var node = document.createElement('pre')
+      const node = document.createElement('pre')
       node.style.width = '1px'
       node.style.height = '1px'
       node.style.position = 'fixed'
       node.style.top = '5px'
       node.textContent = value
 
+      const selection = window.getSelection()
       document.body.appendChild(node)
       selection.removeAllRanges()
       const range = document.createRange()
