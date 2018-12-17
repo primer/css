@@ -1,17 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Comment, Info, FileCode, PrimitiveDot} from '@githubprimer/octicons-react'
+import {Comment, Info, FileCode, Alert, PrimitiveDot} from '@githubprimer/octicons-react'
 import {BorderBox, Box, Flex, Link, StyledOcticon as Octicon, Text} from '@primer/components'
 
 export default function PackageHeader(props) {
-  const {description, package: pkg, source = '', status, status_issue: issue, ...rest} = props
+  const {description, internal = false, package: pkg, source = '', status, status_issue: issue, ...rest} = props
 
   const isPackage = pkg && source.indexOf('/modules/') > -1
-  const isPrivate = source.indexOf('https://github.com/github/github') === 0
+  const isInternal = internal || source.indexOf('https://github.com/github/github') === 0
 
   let info
-  if (isPackage && isPrivate) {
-    info = <Text fontWeight="bold">Not yet part of Primer CSS</Text>
+  if (isInternal) {
+    info = (
+      <Text fontWeight="bold" color="red.5">
+        <Octicon icon={Alert} mr={1} />
+        For GitHub internal use only
+      </Text>
+    )
   } else if (isPackage) {
     info = (
       <>
