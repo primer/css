@@ -1,11 +1,8 @@
 ---
 title: Dropdown
 status: Stable
-source: 'https://github.com/github/github/blob/master/docs/styleguide/css/styles/product/components/dropdown.md'
-code_layout: default
-keywords: [dropdown]
+source: 'https://github.com/github/github/tree/master/app/assets/stylesheets/components/dropdown.scss'
 symbols: [active, anim-scale-in, btn-link, dropdown, dropdown-caret, dropdown-divider, dropdown-header, dropdown-item, dropdown-menu, dropdown-menu-content, dropdown-menu-e, dropdown-menu-ne, dropdown-menu-no-overflow, dropdown-menu-s, dropdown-menu-se, dropdown-menu-sw, dropdown-menu-w, dropdown-signout, octicon, zeroclipboard-is-hover]
-doc_type: css
 ---
 
 Dropdowns are lightweight, JavaScript-powered context menus for housing navigation and actions. They're great for instances where you don't need the full power (and code) of the select menu.
