@@ -1,10 +1,9 @@
 ---
 title: Pagehead
 status: Stable
-source: 'https://github.com/github/github/blob/master/docs/styleguide/css/styles/product/components/pagehead.md'
-code_layout: default
-symbols: [Counter, account-switcher, active, admin, avatar, dropdown-menu-content, experiment-repo-nav, fork, fork-flag, mirror, mirror-flag, octicon, octicon-lock, octicon-mirror, octicon-mute, pagehead, pagehead-actions, pagehead-heading, pagehead-tabs-item, path-divider, png, private, repohead, repohead-details-container, reponav, reponav-dropdown, reponav-item, select-menu, select-menu-modal-holder, selected, underline-nav]
-doc_type: css
+internal: true
+source: 'https://github.com/github/github/tree/master/app/assets/stylesheets/components/pagehead.scss'
+symbols: [account-switcher, active, admin, avatar, dropdown-menu-content, experiment-repo-nav, fork, fork-flag, mirror, mirror-flag, octicon, octicon-lock, octicon-mirror, octicon-mute, pagehead, pagehead-actions, pagehead-heading, pagehead-tabs-item, path-divider, png, private, repohead, repohead-details-container, reponav, reponav-dropdown, reponav-item, select-menu, select-menu-modal-holder, selected, underline-nav]
 ---
 
 Give a page a clear, separated title and optional top nav by adding a `.pagehead`.
