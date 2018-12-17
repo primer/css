@@ -2,7 +2,7 @@ import React from 'react'
 import Document, {Main, NextScript} from 'next/document'
 import {ServerStyleSheet} from 'styled-components'
 import {extractCritical} from 'emotion-server'
-import {config, getAssetPath} from '../src/utils'
+import {config, rootPage, getAssetPath} from '../src/utils'
 
 export default class MyDocument extends Document {
   static getInitialProps({renderPage}) {
@@ -44,6 +44,7 @@ export default class MyDocument extends Document {
           <meta property="og:image:height" content="630" />
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:site" content="@githubprimer" />
+          <link rel="stylesheet" href={getAssetPath('github/styleguide.css')} />
           <link
             rel="stylesheet"
             href={config.production ? getAssetPath('primer.css') : '/_next/static/css/styles.chunk.css'}
@@ -53,6 +54,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script src={getAssetPath('github/styleguide.js')} />
         </body>
       </html>
     )
