@@ -1,7 +1,5 @@
 ---
 title: HTML
-doc_type: css
-category: principles
 ---
 
 {:toc}

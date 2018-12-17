@@ -1,7 +1,5 @@
 ---
 title: Getting started
-doc_type: css
-category: getting_started
 sidebar: {root: true}
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Accessibility
-category: principles
 ---
 
 Accessibility is everyone’s responsibility, and the purpose of this document is to provide general accessibility guidelines to developers and designers.

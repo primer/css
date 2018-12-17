@@ -1,7 +1,5 @@
 ---
 title: SCSS
-doc_type: css
-category: principles
 ---
 
 {:toc}

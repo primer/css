@@ -1,7 +1,5 @@
 ---
 title: Principles
-doc_type: css
-category: principles
 sidebar: {root: true}
 ---
 
