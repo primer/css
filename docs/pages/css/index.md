@@ -38,7 +38,7 @@ Each component or group of styles is packaged up and distributed via npm. Primer
 
 <PrimerPackageBox data={packages.primer} count={Object.keys(packages).length - 1} mb={4} />
 
-<Flex justifyContent="space-around">
+<Flex justifyContent="space-around" mb={6}>
   <MetaPackageBox title="Core" data={packages['primer-core']} width={1/3}>
     The core package contains modules that are shared between GitHub product and marketing websites.
   </MetaPackageBox>
@@ -49,3 +49,14 @@ Each component or group of styles is packaged up and distributed via npm. Primer
     The marketing package contains modules that are used on GitHub marketing websites.
   </MetaPackageBox>
 </Flex>
+
+
+<div class="bg-gray py-6">
+  <div class="d-flex flex-wrap flex-md-nowrap px-6 gutter-lg">
+    <div class="col-12 col-md-9 pr-0 pr-lg-2">
+      <h3 class="f3 text-normal m-0">Use Primer in your project</h3>
+      <p class="my-3">Pick and choose what you need. Install the entire Primer bundle or individual packages via npm.</p>
+      <a href="/css/getting-started/" class="btn btn-outline">Installation instructions</a>
+    </div>
+  </div>
+</div>
