@@ -22,6 +22,7 @@
     "chroma-js": "^1.4.1",
     "clipboard-copy-element": "^0.5.0",
     "colorette": "^1.0.7",
+    "details-dialog-element": "^1.4.0",
     "emotion": "9.2.8",
     "emotion-server": "9.2.8",
     "eslint": "4.19.1",
