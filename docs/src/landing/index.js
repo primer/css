@@ -137,12 +137,12 @@ export function PrimerPackageBox({data, count, ...rest}) {
 export function MetaPackageBox({children, data, title, ...rest}) {
   const deps = data.dependencies || []
   return (
-    <Flex.Item is={BorderBox} bg="white" mx={4} flexShrink={0} {...rest}>
+    <Flex.Item is={BorderBox} bg="white" maxWidth={220} {...rest}>
       <Heading fontSize={2} is={BorderBox} bg="gray.1" border={0} borderBottom={1} px={3} py={2}>
-        <Link href={packageSourceURL(data.name)}>{title}</Link>{' '}
-        <Link href={packageURL(data.name)} ml={2}>
-          {data.version}
-        </Link>
+        <Link href={packageSourceURL(data.name)} color="inherit">
+          {title}
+        </Link>{' '}
+        <Link href={packageURL(data.name)}>{data.version}</Link>
       </Heading>
       <Text is="div" fontSize={1} p={3}>
         {children}
@@ -165,7 +165,7 @@ function packageURL(name) {
   return `https://www.npmjs.com/package/${name}`
 }
 
-function packageSourceURL(name) {
+function packageSourceURL(name, branch = 'master') {
   // TODO get this from Metalsmith or page metadata???
-  return `https://github.com/primer/primer/blob/master/modules/${name}`
+  return `https://github.com/primer/primer/blob/${branch}/modules/${name}`
 }
