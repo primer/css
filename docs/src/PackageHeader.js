@@ -12,7 +12,7 @@ export default function PackageHeader(props) {
   let info
   if (isInternal) {
     info = (
-      <Text fontWeight="bold" color="red.5">
+      <Text fontWeight="bold" color="orange.5">
         <Octicon icon={Alert} mr={1} />
         For GitHub internal use only
       </Text>
