@@ -3,6 +3,7 @@ const mdx = require('@mdx-js/mdx')
 
 const emoji = require('remark-emoji')
 const images = require('remark-images')
+const rehypePrism = require('./rehype-prism')
 const textr = require('remark-textr')
 const toc = require('remark-toc')
 
@@ -18,13 +19,14 @@ module.exports = async function(source) {
   const options = Object.assign(
     {
       mdPlugins: [
-        // remark-toc uses remark-slug, so we don't need it
         [toc, {heading: '(table of|section)? contents'}],
         images,
         emoji,
         [textr, {plugins: [typographicBase]}]
       ],
-      hastPlugins: [],
+      hastPlugins: [
+        rehypePrism
+      ],
       compilers: [mdxExportJSONByDefault('frontMatter', data)]
     },
     getOptions(this),
