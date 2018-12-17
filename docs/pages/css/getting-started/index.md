@@ -29,16 +29,15 @@ npm install primer --save
 
 ### For a Jekyll site
 
-Make sure you have jekyll >= `3.3.1`
+Make sure you have [Jekyll](https://jekyllrb.com/) version `3.3.1` or greater with:
 
 ```
-❯ jekyll -v
-jekyll 3.3.1
+jekyll -v
 ```
 
-If you have an older version, jekyllrb.com has some useful [upgrading docs](https://jekyllrb.com/docs/upgrading/).
+If you have an older version, follow the instructions in the [upgrading docs](https://jekyllrb.com/docs/upgrading/).
 
-Once you have jekyll up and running, you will need to add this configuration to your `_config.yml` file. This let's the sass compiler know where your code lives.
+Once you have Jekyll up and running, you will need to add this configuration to your `_config.yml` file. This let's the sass compiler know where your code lives.
 
 ```yml
 sass:
@@ -81,7 +80,7 @@ $blue: #0000ff;
 
 Don't forget to add the compiled CSS to the `<head>` section of your page.
 
-```html
+```html dead
 <link href="/assets/css/index.css" rel="stylesheet">
 ```
 
@@ -89,6 +88,6 @@ Don't forget to add the compiled CSS to the `<head>` section of your page.
 
 You won't need to install any node modules for a static site, you can use the built CSS. The best thing to do is to [download the built CSS](https://unpkg.com/primer/build/build.css) from the npm module and host it yourself. If that's not an option, you can include a CDN link in your html:
 
-```html
+```html dead
 <link href="https://unpkg.com/primer/build/build.css" rel="stylesheet">
 ```
