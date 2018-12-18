@@ -70,10 +70,11 @@ const Section = ({path, children}) => (
  */
 function NavList({path}) {
   const node = rootPage.first(node => node.path === path)
+  const children = node ? node.children.sort(nodeSort) : []
   return (
     <>
       <SectionLink href={path} />
-      {node ? node.children.map(child => <NavLink href={child.path} key={child.path} />) : null}
+      {children.map(child => <NavLink href={child.path} key={child.path} />)}
     </>
   )
 }
@@ -139,4 +140,14 @@ const Router = withRouter(({router, children}) => {
  */
 function RouteMatch({children}) {
   return children
+}
+
+function sortCompare(a, b, get) {
+  const aa = get(a)
+  const bb = get(b)
+  return typeof aa === 'string' && typeof bb === 'string' ? aa.localeCompare(bb) : undefined
+}
+
+function nodeSort(a, b) {
+  return sortCompare(a, b, node => node.meta.sort_title || node.meta.title)
 }
