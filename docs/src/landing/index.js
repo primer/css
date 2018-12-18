@@ -109,7 +109,7 @@ function Image(props) {
   }
 }
 
-export function PrimerPackageBox({data, count, ...rest}) {
+export function PrimerPackageBox({data = {}, count, ...rest}) {
   return (
     <Flex justifyContent="space-around" {...rest}>
       <BorderBox bg="gray.1" width="auto" px={6} py={3} my={4}>
@@ -134,7 +134,7 @@ export function PrimerPackageBox({data, count, ...rest}) {
   )
 }
 
-export function MetaPackageBox({children, data, title, ...rest}) {
+export function MetaPackageBox({children, data = {}, title, ...rest}) {
   const deps = data.dependencies || []
   return (
     <Flex.Item is={BorderBox} bg="white" maxWidth={220} {...rest}>
