@@ -1,5 +1,6 @@
 ---
-title: Layout
+title: Marketing Layout
+sort_title: Layout Marketing
 path: utilities/marketing-layout
 status: Stable
 ---

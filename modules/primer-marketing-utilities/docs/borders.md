@@ -1,5 +1,6 @@
 ---
-title: Borders
+title: Marketing Borders
+sort_title: Borders Marketing
 path: utilities/marketing-borders
 status: Stable
 ---
