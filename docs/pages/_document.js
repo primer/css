@@ -25,17 +25,19 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <head>
-          <title>Primer Components</title>
+          <title>Primer CSS</title>
+          {/* TODO: update this with a new id
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126681523-1" />
           <script async href={getAssetPath('analytics.js')} />
+          */}
           <meta charSet="utf8" />
           <link rel="icon" href={getAssetPath('favicon.png')} />
           <link rel="apple-touch-icon" href={getAssetPath('apple-touch-icon.png')} />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
-          <meta property="og:title" content="Primer Components" />
+          <meta property="og:title" content="Primer CSS" />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://primer.style/components/" />
-          <meta property="og:description" content="Primer components built with React.js." />
+          <meta property="og:url" content="https://primer.style/css/" />
+          <meta property="og:description" content="CSS for GitHub's Primer design system" />
           <meta
             property="og:image"
             content="https://user-images.githubusercontent.com/586552/47590375-121cad80-d93a-11e8-89f2-a1cf108e0548.png"
