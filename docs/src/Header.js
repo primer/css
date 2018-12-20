@@ -21,7 +21,7 @@ const Header = props => (
           </Flex>
         </Link>
         <Box display={['none', 'none', 'block']}>
-          <NavLink href="/css" />
+          <NavLink href="/css">Docs</NavLink>
           <NavLink href="/css/getting-started" />
           <NavLink href="/css/principles" />
           <NavLink href="/css/tools" />
