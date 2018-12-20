@@ -28,7 +28,7 @@ export default function CodeExample(props) {
     rest.scope = {Octicon, getIconByName}
     rest.transformCode = getTransformForLanguage(lang)
     return (
-      <LiveProvider {...rest}>
+      <LiveProvider mountStylesheet={false} {...rest}>
         <BorderBox bg="gray.1" my={4}>
           <Box bg="white" p={3} className="clearfix">
             <LivePreview />
