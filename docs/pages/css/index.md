@@ -1,12 +1,6 @@
----
-title: Docs
----
-
 import {Box, Flex, Heading, Link, Text} from '@primer/components'
 import {
   MetaPackageBox,
-  OverviewTitle,
-  OverviewText,
   PrimerPackageBox,
   PrimitivesOverview,
   StylesOverview
@@ -19,17 +13,15 @@ import packages from './packages.json'
 
 Our goal is to create a system that enables us to build consistent user experiences with ease, yet with enough flexibility to support the broad spectrum of GitHub websites. This goal is embedded in our design and code decisions. Our approach to CSS is influenced by Object Oriented CSS principles, functional CSS, and BEM architecture.
 
-<Box my={6}>
-  <Heading fontSize={5} fontWeight="normal" textAlign="center">Highly reusable, flexible styles</Heading>
-  <Text is="p" fontSize={3}>Styles can be mixed and matched to achieve many different layouts, independent of their location. These styles fall into three categories:</Text>
-</Box>
+## Highly reusable, flexible styles
+
+Styles can be mixed and matched to achieve many different layouts, independent of their location. These styles fall into three categories:
 
 <StylesOverview m={6} />
 
-<Box my={6}>
-  <Heading fontSize={5} fontWeight="normal" textAlign="center">Systematically designed for GitHub</Heading>
-  <Text is="p" fontSize={3}>Primer is built upon systems that form the foundation of our styles such as spacing, typography, and color. This systematic approach helps ensure our styles are consistent and interoperable with each other.</Text>
-</Box>
+## Systematically designed for GitHub
+
+Primer is built upon systems that form the foundation of our styles such as spacing, typography, and color. This systematic approach helps ensure our styles are consistent and interoperable with each other.
 
 <PrimitivesOverview />
 
