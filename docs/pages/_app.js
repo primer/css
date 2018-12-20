@@ -25,6 +25,10 @@ injectGlobal`
   .markdown-body .rule.token::after {
     display: none;
   }
+
+  .language-html .token {
+    color: ${theme.colors.gray[8]} !important;
+  }
 }
 `
 
