@@ -8,15 +8,7 @@ import {rootPage} from './utils'
 export default function SideNav(props) {
   return (
     <Relative is="nav">
-      <BorderBox
-        bg="gray.0"
-        borderColor="gray.2"
-        borderRight={1}
-        borderTop={[1, 1, 0, 0]}
-        height="100%"
-        id="sidenav"
-        {...props}
-      >
+      <Box id="sidenav" {...props}>
         <Flex flexDirection="column" alignItems="start">
           <Router>
             <Section path="/css/getting-started" />
@@ -31,7 +23,7 @@ export default function SideNav(props) {
             </RouteMatch>
           </Router>
         </Flex>
-      </BorderBox>
+      </Box>
     </Relative>
   )
 }
