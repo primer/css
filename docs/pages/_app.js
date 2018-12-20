@@ -2,7 +2,7 @@ import React from 'react'
 import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
 import Head from 'next/head'
-import {BaseStyles, Box, Flex, theme} from '@primer/components'
+import {BaseStyles, BorderBox, Box, Flex, theme} from '@primer/components'
 import {injectGlobal} from 'emotion'
 import {Header, PackageHeader, SideNav, IndexHero} from '../src/components'
 import getComponents from '../src/markdown'
@@ -59,7 +59,11 @@ export default class MyApp extends App {
             <title>Primer CSS{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
           <Header />
-          <Flex flexDirection={['column', 'column', 'column', 'row-reverse']} justifyContent="space-between">
+          <Flex
+            flexDirection={['column', 'column', 'column', 'row-reverse']}
+            alignContent="stretch"
+            justifyContent="space-between"
+          >
             <Box width={['auto', 'auto', 'auto', '80%']}>
               {meta.hero ? <IndexHero /> : null}
               <Box color="gray.9" maxWidth={['auto', 'auto', 'auto', CONTENT_MAX_WIDTH]} px={6} mx="auto" my={6}>
@@ -77,9 +81,18 @@ export default class MyApp extends App {
                 {/* TODO: bring back edit link! */}
               </Box>
             </Box>
-            <Box width="20%" minWidth={240}>
+            <BorderBox
+              width="20%"
+              minWidth={240}
+              bg="gray.0"
+              borderColor="gray.2"
+              borderRadius={0}
+              border={0}
+              borderRight={1}
+              borderTop={[1, 1, 0, 0]}
+            >
               <SideNav />
-            </Box>
+            </BorderBox>
           </Flex>
         </Container>
       </BaseStyles>

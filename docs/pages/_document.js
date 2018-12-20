@@ -2,7 +2,7 @@ import React from 'react'
 import Document, {Main, NextScript} from 'next/document'
 import {ServerStyleSheet} from 'styled-components'
 import {extractCritical} from 'emotion-server'
-import {config, rootPage, getAssetPath} from '../src/utils'
+import {config, getAssetPath} from '../src/utils'
 
 export default class MyDocument extends Document {
   static getInitialProps({renderPage}) {

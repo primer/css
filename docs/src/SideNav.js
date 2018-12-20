@@ -66,7 +66,9 @@ function NavList({path}) {
   return (
     <>
       <SectionLink href={path} />
-      {children.map(child => <NavLink href={child.path} key={child.path} />)}
+      {children.map(child => (
+        <NavLink href={child.path} key={child.path} />
+      ))}
     </>
   )
 }
