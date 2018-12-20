@@ -5,7 +5,7 @@ import {CONTENT_MAX_WIDTH} from './constants'
 
 const IndexHero = () => (
   <Box bg="blue.5">
-    <Box maxWidth={CONTENT_MAX_WIDTH} px={6} py={6} mx="auto" mb={3}>
+    <Box maxWidth={CONTENT_MAX_WIDTH} p={6} mx="auto" mb={3}>
       <Box mt={4} mb={4}>
         <Heading color="white" fontSize={7} fontWeight="light">
           Primer CSS
