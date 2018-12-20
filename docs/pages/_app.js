@@ -4,9 +4,9 @@ import {MDXProvider} from '@mdx-js/tag'
 import Head from 'next/head'
 import {BaseStyles, BorderBox, Box, Flex, theme} from '@primer/components'
 import {injectGlobal} from 'emotion'
-import {Header, PackageHeader, SideNav, IndexHero} from '../src/components'
+import {Header, PackageHeader, SideNav} from '../src/components'
 import getComponents from '../src/markdown'
-import {rootPage} from '../src/utils'
+import {requirePage, rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 import 'primer/index.scss'
@@ -52,6 +52,8 @@ export default class MyApp extends App {
     const {meta = {}} = node || {}
     const components = getComponents(node)
 
+    const Hero = node.file ? requirePage(node.file).Hero : null
+
     return (
       <BaseStyles style={{fontFamily: theme.fonts.normal}}>
         <Container>
@@ -65,7 +67,7 @@ export default class MyApp extends App {
             justifyContent="space-between"
           >
             <Box width={['auto', 'auto', 'auto', '80%']}>
-              {meta.hero ? <IndexHero /> : null}
+              {Hero ? <Hero /> : null}
               <Box color="gray.9" maxWidth={['auto', 'auto', 'auto', CONTENT_MAX_WIDTH]} px={6} mx="auto" my={6}>
                 <div className="markdown-body">
                   {!meta.hero && meta.title ? <h1>{meta.title}</h1> : null}
