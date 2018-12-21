@@ -1,20 +1,20 @@
 #!/usr/bin/env node
 const fs = require('fs')
 const globby = require('globby')
-const path = require('path')
+const {join} = require('path')
 
-const getPackages = (debug) => {
+const getPackages = (debug = false) => {
   const lernaConfig = require('../lerna.json')
   const packageGlobs = lernaConfig.packages
   return globby(packageGlobs)
     .then(packagePaths => {
       return packagePaths.filter(pkg => {
         try {
-          require.resolve(`../${pkg}/package.json`)
-          return true
+          const json = require(join('..', pkg, 'package.json'))
+          return !json['private']
         } catch (error) {
           if (debug) {
-            console.warn('No package.json in %s', pkg)
+            console.warn(`No package.json in ${pkg}: ${error}`)
           }
         }
       })
