@@ -27,80 +27,6 @@ const depFields = [
   'optionalDependencies',
   'peerDependencies',
 ]
-
-const getUpdated = () => {
-  return execa(lernaBin, ['updated', '--json'], {
-      reject: false
-    })
-    .then(res => {
-      if (res.stdout == '') {
-        console.warn('No packages need updating')
-        return []
-      } else {
-        return JSON.parse(res.stdout)
-      }
-    })
-    .then(updated => updated
-      .filter(pkg => !pkg['private'])
-      .map(pkg => pkg.name))
-}
-
-const writePackage = (pkg) => {
-  const {dir} = pkg
-  delete pkg.dir
-  const json = JSON.stringify(pkg, null, '  ') + '\n'
-  pkg.dir = dir
-  return fse.writeFile(`${pkg.dir}/package.json`, json, 'utf8')
-    .then(() => pkg)
-}
-
-const bump = (pkg, by, preid) => {
-  if (pkg.name === PRIMER_CSS) {
-    pkg.version = RELEASE_VERSION
-  }
-
-  const original = pkg.version
-  let version = increment(pkg.version, by, preid)
-  return getPackageInfo(pkg.name)
-    .then(info => {
-      while (version in info.versions) {
-        version = increment(version, by, preid)
-      }
-      console.warn('%s %s -> %s', pkg.name, original, version)
-      pkg.version = version
-      return writePackage(pkg)
-    })
-}
-
-const getPackageInfo = (name) => {
-  const url = registryUrl() + name
-  return fetch(url).then(res => res.json())
-}
-
-const increment = (version, by, preid) => {
-  const {major, minor, patch} = semver(version)
-  const prev = [major, minor, patch].join('.')
-  const next = semver.inc(version, by, preid)
-  // if this is a prerelease, 'revert' major.minor.patch
-  // so that only the prerelease id is incremented
-  return by === PRERELEASE
-    ? next.replace(/^\d+\.\d+\.\d+/, prev)
-    : next
-}
-
-const updateDependants = (pkg, pkgs) => {
-  return pkgs.filter(other => {
-    let changed = false
-    depFields.forEach(field => {
-      if (other[field] && (pkg.name in other[field])) {
-        other[field][pkg.name] = pkg.version
-        changed = true
-      }
-    })
-    return changed
-  })
-}
-
 revertPackages()
   .then(() => getPackages())
   .then(dirs => {
@@ -132,18 +58,7 @@ revertPackages()
           return Promise.all(tasks)
         })
         .then(updated => {
-          const tasks = updated.map(pkg => {
-            const command = 'npm'
-            const args = ['publish', '--tag', DIST_TAG]
-            if (dryRun) {
-              console.log('publish:', pkg.name, '@', pkg.version, 'in:', pkg.dir)
-              return
-            }
-            return execa(command, args, {
-              cwd: pkg.dir,
-              stdio: 'inherit',
-            })
-          })
+          const tasks = updated.filter(pkg => !pkg['private']).map(publishPackage)
           return Promise.all(tasks)
         })
         .then(() => {
@@ -164,3 +79,89 @@ revertPackages()
     return
   })
   .then(() => process.exit())
+
+function getUpdated() {
+  return execa(lernaBin, ['updated', '--json'], {
+      reject: false
+    })
+    .then(res => {
+      if (res.stdout == '') {
+        console.warn('No packages need updating')
+        return []
+      } else {
+        return JSON.parse(res.stdout)
+      }
+    })
+    .then(updated => updated
+      .filter(pkg => !pkg['private'])
+      .map(pkg => pkg.name))
+}
+
+function writePackage(pkg) {
+  const {dir} = pkg
+  delete pkg.dir
+  const json = JSON.stringify(pkg, null, '  ') + '\n'
+  pkg.dir = dir
+  return fse.writeFile(`${pkg.dir}/package.json`, json, 'utf8')
+    .then(() => pkg)
+}
+
+function bump(pkg, by, preid) {
+  if (pkg.name === PRIMER_CSS) {
+    pkg.version = RELEASE_VERSION
+  }
+
+  const original = pkg.version
+  let version = increment(pkg.version, by, preid)
+  return getPackageInfo(pkg.name)
+    .then(info => {
+      while (version in info.versions) {
+        version = increment(version, by, preid)
+      }
+      console.warn('%s %s -> %s', pkg.name, original, version)
+      pkg.version = version
+      return writePackage(pkg)
+    })
+}
+
+function getPackageInfo(name) {
+  const url = registryUrl() + name
+  return fetch(url).then(res => res.json())
+}
+
+function increment(version, by, preid) {
+  const {major, minor, patch} = semver(version)
+  const prev = [major, minor, patch].join('.')
+  const next = semver.inc(version, by, preid)
+  // if this is a prerelease, 'revert' major.minor.patch
+  // so that only the prerelease id is incremented
+  return by === PRERELEASE
+    ? next.replace(/^\d+\.\d+\.\d+/, prev)
+    : next
+}
+
+function updateDependants(pkg, pkgs) {
+  return pkgs.filter(other => {
+    let changed = false
+    depFields.forEach(field => {
+      if (other[field] && (pkg.name in other[field])) {
+        other[field][pkg.name] = pkg.version
+        changed = true
+      }
+    })
+    return changed
+  })
+}
+
+function publishPackage(pkg) {
+  const command = 'npm'
+  const args = ['publish', '--tag', DIST_TAG]
+  if (dryRun) {
+    console.log('publish:', pkg.name, '@', pkg.version, 'in:', pkg.dir)
+    return
+  }
+  return execa(command, args, {
+    cwd: pkg.dir,
+    stdio: 'inherit',
+  })
+}
