@@ -17,7 +17,7 @@ else
     else
         branch=$TRAVIS_BRANCH
     fi
-    alias="primer-css-$branch.now.sh"
+    alias="primer-css-${branch//\./_}.now.sh"
     echo "aliasing..."
     $now alias $url $alias
     url="https://$alias"
