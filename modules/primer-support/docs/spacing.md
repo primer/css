@@ -1,5 +1,6 @@
 ---
 title: Spacing
+path: support/spacing
 status: Stable
 source: https://github.com/primer/primer/blob/master/modules/primer-support/lib/variables/layout.scss
 ---

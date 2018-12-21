@@ -1,6 +1,8 @@
 ---
 title: Marketing Margin
-status: New release
+sort_title: Margin Marketing
+path: utilities/marketing-margin
+status: Stable
 status_issue: https://github.com/github/design-systems/issues/378
 ---
 

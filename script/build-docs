@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+if [ -z "$NOW_TOKEN" ]; then
+    echo "NOW_TOKEN is not set; skipping docs deployment"
+else
+    cp modules/primer/build/build.css docs/static/primer.css
+    cd docs
+    npm run sync
+    now --token=$NOW_TOKEN | tee now-url.txt
+    url=$(cat now-url.txt)
+    version=$(jq -r .version ../modules/primer/package.json)
+    npx commit-status success docs "deployed primer@$version to $url" "$url"
+fi

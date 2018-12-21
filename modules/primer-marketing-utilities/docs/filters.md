@@ -1,6 +1,7 @@
 ---
-title: Filters
-status: New release
+title: Marketing Filters
+path: utilities/marketing-filters
+status: Stable
 status_issue: https://github.com/github/design-systems/issues/302
 ---
 

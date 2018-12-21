@@ -37,6 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Popover
+path: components/popover
 status: Experimental
 -->
 

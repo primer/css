@@ -1,5 +1,6 @@
 ---
 title: Margin
+path: utilities/margin
 status: Stable
 ---
 

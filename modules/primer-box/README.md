@@ -37,8 +37,9 @@ $ npm run build
 
 <!-- %docs
 title: Box
+path: components/box
 status_issue: https://github.com/github/design-systems/issues/198
-status: New release
+status: Stable
 -->
 
 The `.Box` component can be used for something as simple as a rounded corner box, or more complex lists and forms. It includes optional modifiers for padding density and color themes.

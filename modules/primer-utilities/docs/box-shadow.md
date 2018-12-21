@@ -1,6 +1,7 @@
 ---
 title: Box shadow
-status: New release
+path: utilities/box-shadow
+status: Stable
 status_issue: https://github.com/github/design-systems/issues/269
 ---
 

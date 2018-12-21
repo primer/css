@@ -1,5 +1,6 @@
 ---
 title: Padding
+path: utilities/padding
 status: Stable
 ---
 
