@@ -127,8 +127,7 @@ revertPackages()
             })
         }))
         .then(() => {
-          const tasks = Array.from(changed)
-            .map(writePackage)
+          const tasks = Array.from(changed).map(writePackage)
           return Promise.all(tasks)
         })
         .then(updated => {
