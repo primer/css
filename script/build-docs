@@ -12,5 +12,8 @@ else
     url=$(cat now-url.txt)
     version=$(jq -r .version ../modules/primer/package.json)
     npx commit-status success docs "deployed primer@$version to $url" "$url"
-    $now alias $url "primer-css-$TRAVIS_BRANCH.now.sh"
+    alias="primer-css-$TRAVIS_BRANCH.now.sh"
+    echo "aliasing..."
+    $now alias $url $alias
+    npx commit-status success docs "deployed primer@$version to $alias" "$alias"
 fi
