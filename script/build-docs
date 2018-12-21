@@ -15,5 +15,6 @@ else
     alias="primer-css-$TRAVIS_BRANCH.now.sh"
     echo "aliasing..."
     $now alias $url $alias
-    npx commit-status success docs "deployed primer@$version to $alias" "$alias"
+    url="https://$alias"
+    npx commit-status success docs "deployed primer@$version to $url" "$url"
 fi
