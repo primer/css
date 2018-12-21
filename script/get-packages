@@ -10,8 +10,7 @@ const getPackages = (debug = false) => {
     .then(packagePaths => {
       return packagePaths.filter(pkg => {
         try {
-          const json = require(join('..', pkg, 'package.json'))
-          return !json['private']
+          require.resolve(join('..', pkg, 'package.json'))
         } catch (error) {
           if (debug) {
             console.warn(`No package.json in ${pkg}: ${error}`)
