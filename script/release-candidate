@@ -40,6 +40,7 @@ const getUpdated = () => {
         return JSON.parse(res.stdout)
       }
     })
+    .then(updated => updated.filter(pkg => !pkg['private']))
     .then(updated => updated.map(pkg => pkg.name))
 }
 
