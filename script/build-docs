@@ -7,8 +7,14 @@ else
     cp modules/primer/build/build.css docs/static/primer.css
     cd docs
     npm run sync
-    now --token=$NOW_TOKEN | tee now-url.txt
+    now="now --token=$NOW_TOKEN"
+    $now | tee now-url.txt
     url=$(cat now-url.txt)
     version=$(jq -r .version ../modules/primer/package.json)
+    npx commit-status success docs "deployed primer@$version to $url" "$url"
+    alias="primer-css-$TRAVIS_BRANCH.now.sh"
+    echo "aliasing..."
+    $now alias $url $alias
+    url="https://$alias"
     npx commit-status success docs "deployed primer@$version to $url" "$url"
 fi

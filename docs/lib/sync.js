@@ -57,12 +57,12 @@ module.exports = function sync(options = {}) {
     )
     // rename files with their "path" frontmatter key
     .use(rename(file => file[ns] ? `${file[ns].path}.md` : true), {log})
+    // read the changelog manually
     .use(addChangelog('../CHANGELOG.md', 'whats-new/changelog.md', file => {
       file[ns] = {
         title: 'Changelog'
       }
     }))
-    // read the changelog manually
     .use((_files, metal, done) => {
       files = _files
       done()
