@@ -52,7 +52,7 @@ We use [Metalsmith] to sync the source docs to the `pages` directory and transfo
 
 All of the logic for syncing the source docs (and transforming them in transit) is controlled in [`lib/sync.js`](./lib/sync.js), and each "step" in the transformation (as well as the watching) is implemented as a Metalsmith plugin.
 
-**Why Metalsmith?** We're glad you asked! `@shawnbot` likes the simplicity of Metalsmith's core and how easy it is to write powerful plugins.
+**Why [Metalsmith]?** We're glad you asked! `@shawnbot` likes the simplicity of Metalsmith's core and how easy it is to write powerful plugins.
 
 [Metalsmith]: https://metalsmith.io/
 [Next]: https://github.com/zeit/next.js
