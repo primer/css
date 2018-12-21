@@ -12,7 +12,12 @@ else
     url=$(cat now-url.txt)
     version=$(jq -r .version ../modules/primer/package.json)
     npx commit-status success docs "deployed primer@$version to $url" "$url"
-    alias="primer-css-$TRAVIS_PULL_REQUEST_BRANCH.now.sh"
+    if [[ $TRAVIS_EVENT_TYPE = "pull_request" ]]; then
+        branch=$TRAVIS_PULL_REQUEST_BRANCH
+    else
+        branch=$TRAVIS_BRANCH
+    fi
+    alias="primer-css-$branch.now.sh"
     echo "aliasing..."
     $now alias $url $alias
     url="https://$alias"
