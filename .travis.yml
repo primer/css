@@ -10,7 +10,6 @@ env:
     - secure: "KcGydAqL7ryDh2rTJJB4wU8NE5BRtnrRXDEcPBScSscO3zFsHXHBDvvO04B/9hFVatXzGYXmkn+FZ0P9QikhvebzdwwyqUG2SKFiHhMvbX0m0WtAhn5NqDuKU1r5qy5YQ18r/tiLfC9GSAlEpfLAH58pwpcn8srV3Mn/yKvlrfs="
 
 script:
-  - script/build-docs
   - npm test
   - script/check-versions
 
@@ -36,6 +35,13 @@ deploy:
     skip_cleanup: true
     on:
       branch: master
+      tags: false
+
+  - provider: script
+    script: script/deploy-docs
+    skip_cleanup: true
+    on:
+      all_branches: true
       tags: false
 
 notifications:
