@@ -5,8 +5,6 @@ const fse = require('fs-extra')
 const registryUrl = require('registry-url')
 const semver = require('semver')
 
-const bin = 'node_modules/.bin/'
-const lernaBin = `${bin}lerna`
 const getPackages = require('./get-packages')
 const getReleaseVersion = require('./get-release-version')
 const revertPackages = require('./revert-packages')
@@ -27,27 +25,26 @@ const depFields = [
   'optionalDependencies',
   'peerDependencies',
 ]
+
 revertPackages()
   .then(() => getPackages())
-  .then(dirs => {
-    return dirs.map(dir => {
-      const pkg = require(`../${dir}/package.json`)
-      pkg.dir = dir
-      return pkg
-    })
-  })
+  .then(dirs => dirs.map(dir => {
+    const pkg = require(`../${dir}/package.json`)
+    pkg.dir = dir
+    return pkg
+  }))
   .then(pkgs => {
-    const by = PRERELEASE
-    const preid = DIST_TAG
     return getUpdated()
+      .then(updated => pkgs.filter(pkg => updated.includes(pkg.name)))
       .then(updated => {
+        if (updated.length === 0) {
+          console.warn('No packages updated! Aborting.')
+          return
+        }
         console.warn('%d packages updated...', updated.length)
-        return pkgs.filter(pkg => updated.includes(pkg.name))
-      })
-      .then(updated => {
         const changed = new Set(updated)
         return Promise.all(updated.map(pkg => {
-          return bump(pkg, by, preid)
+          return bump(pkg, PRERELEASE, DIST_TAG)
             .then(pkg => updateDependants(pkg, pkgs))
             .then(dependants => {
               dependants.forEach(dep => changed.add(dep))
@@ -63,7 +60,7 @@ revertPackages()
         })
         .then(() => {
           console.warn('📓  Updated CHANGELOG...\n')
-          return execa(`${bin}lerna-changelog`, [], { env: process.env })
+          return execa('npx', ['lerna-changelog'], {env: process.env})
             .then(result => {
               console.warn(result.stdout)
             })
@@ -76,12 +73,10 @@ revertPackages()
   .catch(error => {
     console.error('Error:', error)
     process.exitCode = 1
-    return
   })
-  .then(() => process.exit())
 
 function getUpdated() {
-  return execa(lernaBin, ['updated', '--json'], {
+  return execa('npx', ['lernal', 'updated', '--json'], {
       reject: false
     })
     .then(res => {
@@ -162,6 +157,6 @@ function publishPackage(pkg) {
   }
   return execa(command, args, {
     cwd: pkg.dir,
-    stdio: 'inherit',
+    stdio: 'inherit'
   })
 }
