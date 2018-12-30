@@ -1,9 +1,7 @@
 #!/bin/bash
 set -e
+
 echo "🐦  Publishing PR (canary) release..."
+npx lerna publish --npm-tag=pr --canary --exact $@
 
-$(npm bin)/lerna publish --npm-tag=pr --canary --exact $@
-
-echo "📓  Updated CHANGELOG..."
-
-$(npm bin)/lerna-changelog
+script/generate-changelog
