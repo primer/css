@@ -8,7 +8,7 @@ else
     cd docs
     npm run sync
 
-    version=$(jq -r .version ../modules/primer/package.json)
+    version=$(cat ../VERSION)
     actual=$(jq -r .dependencies.primer package.json)
 
     # here, we need to manually update the primer dependency
@@ -17,8 +17,8 @@ else
     jq ".dependencies.primer = \"$version\"" package.json > package.json.tmp
     mv package.json.tmp package.json
 
-    now="now --token=$NOW_TOKEN"
-    $now | tee now-url.txt
+    now_args="--token=$NOW_TOKEN"
+    now $now_args | tee now-url.txt
     url=$(cat now-url.txt)
     npx commit-status success docs "deployed primer@$version to $url" "$url"
     if [[ $TRAVIS_EVENT_TYPE = "pull_request" ]]; then
@@ -28,7 +28,7 @@ else
     fi
     alias="primer-css-${branch//\./-}.now.sh"
     echo "aliasing..."
-    $now alias $url $alias
+    now $now_args alias $url $alias
     url="https://$alias"
     npx commit-status success docs "deployed primer@$version to $url" "$url"
 fi
