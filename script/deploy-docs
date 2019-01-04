@@ -4,8 +4,8 @@ set -e
 if [ -z "$NOW_TOKEN" ]; then
     echo "NOW_TOKEN is not set; skipping docs deployment"
 else
-    if [[ -e VERSION ]]; then
-        version=$(cat VERSION)
+    if [[ -e primer-version.txt ]]; then
+        version=$(cat primer-version.txt)
     else
         version=$(jq -r .version modules/primer/package.json)
     fi
