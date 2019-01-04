@@ -27,6 +27,7 @@ else
     now_args="--token=$NOW_TOKEN"
     npx commit-status pending docs "deploying primer@$version with now..."
 
+    echo "deploying..."
     now $now_args | tee now-url.txt
     url=$(cat now-url.txt)
     npx commit-status success docs "deployed primer@$version to $url" "$url"
@@ -38,8 +39,7 @@ else
     fi
 
     alias="primer-css-${branch//\./-}.now.sh"
-    echo "aliasing..."
+    echo "aliasing to '$alias'..."
     now $now_args alias $url $alias
-    url="https://$alias"
-    npx commit-status success docs "deployed primer@$version to $url" "$url"
+    npx commit-status success docs "primer@$version docs: $url" "https://$alias"
 fi
