@@ -25,6 +25,8 @@ else
     fi
 
     now_args="--token=$NOW_TOKEN"
+    npx commit-status pending docs "deploying primer@$version with now..."
+
     now $now_args | tee now-url.txt
     url=$(cat now-url.txt)
     npx commit-status success docs "deployed primer@$version to $url" "$url"
