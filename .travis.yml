@@ -20,6 +20,15 @@ after_success:
   - cp CHANGELOG.md modules/primer
 
 deploy:
+  # publish canary releases on all branches
+  # (the script will bail on release branches and master)
+  - provider: script
+    script: script/release-pr --yes
+    skip_cleanup: true
+    on:
+      all_branches: true
+      tags: false
+
   # publish release candidates on release branches
   - provider: script
     script: script/release-candidate --yes
