@@ -16,21 +16,25 @@ else
 
     actual=$(jq -r .dependencies.primer package.json)
 
-    # here, we need to manually update the primer dependency
-    # version to the one that we published
-    echo "primer has '$version' in package.json; docs wants '$actual'"
-    jq ".dependencies.primer = \"$version\"" package.json > package.json.tmp
-    mv package.json.tmp package.json
+    if [[ "$version" != "$actual" ]]; then
+        # here, we need to manually update the primer dependency
+        # version to the one that we published
+        echo "primer has '$version' in package.json; docs wants '$actual'"
+        jq ".dependencies.primer = \"$version\"" package.json > package.json.tmp
+        mv package.json.tmp package.json
+    fi
 
     now_args="--token=$NOW_TOKEN"
     now $now_args | tee now-url.txt
     url=$(cat now-url.txt)
     npx commit-status success docs "deployed primer@$version to $url" "$url"
+
     if [[ $TRAVIS_EVENT_TYPE = "pull_request" ]]; then
         branch=$TRAVIS_PULL_REQUEST_BRANCH
     else
         branch=$TRAVIS_BRANCH
     fi
+
     alias="primer-css-${branch//\./-}.now.sh"
     echo "aliasing..."
     now $now_args alias $url $alias
