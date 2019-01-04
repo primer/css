@@ -7,7 +7,8 @@ else
   publish_args=$@
 fi
 
-echo "📦  Publishing canary release..."
+echo "🦜 Publishing canary release..."
 npx lerna publish --canary --exact --npm-tag=rc $publish_args
 
-script/generate-changelog
+echo "📓  Generating CHANGELOG..."
+npx lerna-changelog

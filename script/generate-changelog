@@ -1,5 +1,0 @@
-#!/bin/bash
-set -e
-
-echo "📓  Generating CHANGELOG..."
-npx lerna-changelog
