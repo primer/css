@@ -148,65 +148,11 @@ The status option is a tag that will tag a module as a thing, displaying what st
 
 ```yml
 ---
-source: /app/assets/stylesheets/primer-product/avatars/lib/avatar-stack.scss
+source: https://github.com/github/github/tree/master/app/assets/stylesheets/components/x.scss
 ---
 ```
 
-The source option will let you point the document to the source file. This will then display a link in the styleguide to the sourcefile.
-
-```yml
----
-homepage: https://github.com/primer/primer
----
-```
-
-Homepage is useful for when you want to point a guide to public source code. When it exists the source icon and link will be displayed publicly.
-
-```yml
----
-draft: true
----
-```
-
-When a section is public, but you want to keep some of the sections in the guide private, you can set `draft: true`. This will only show that guide to users who meet the `draft_user?` criteria.
-
-### Sorting articles
-
-```yml
-# These sort arrays would manual sort these items above the other items in the
-# page. The rest of the articles will be sorted alphabetically
-
-# Sort topic sections
-css:
-  - support
-
-# Sort section articles
-css/codestyle:
-  - principles
-  - SCSS
-```
-
-You have the ability to sort the articles manually within each section. create an array with the key that is the styleguide path of the section, ie `css/codestyle` is the array, with `principles` being sorted first.
-
-By default the articles inside each section are sorted alphabetically. When you land on a page like /styleguide/ruby
-
-What you see is something like this.
-
-```
-1. README - _the README for the section is always stuck up top, with no sidebar nav_
-2. Article A
-3. Article B
-4. Article C
-```
-
-If you add an article to the `.sort.yml` file, then that section will be sorted above the alphabetical section, according to the index of the article in the yml array.
-
-```
-1. README - _the README for the section is always stuck up top, with no sidebar nav_
-2. Article B - `sort: 1`
-3. Article C - `sort: 2`
-4. Article A
-```
+The source option will let you point the document to the source file. **This is only necessary for components that still live in the `github/github` repo**; Primer CSS source files will have the `source` field populated automatically.
 
 ### Special tags
 
@@ -305,64 +251,4 @@ To publish, there are two requirements. First, you must be on the `master` branc
 
 All the individual Primer modules are [semver](http://semver.org/) versioned. This helps others know when a change is a patch, minor, or breaking change.
 
-When you're ready to cut a new release for a specific module, you'll want to update that module's version number in the `package.json` file inside of the `github/github` repository.
-
-To help determine what version number to update for the modules, there's a command in `script/css-modules --version` that will interactively step through each module, show you what's changed, and ask if you would like to make a `(M)ajor, M(i)nor, (P)atch` update. The output will look something like this:
-
-```
-Changes to primer-navigation since last version 0.3.0:
-
- * Updating link to real primer repository - Jon Rohan [github/github@bbaedda](https://github.com/github/github/commit/bbaedda)
- * Updating the modules stylelint - Jon Rohan [github/github@389609f](https://github.com/github/github/commit/389609f)
- * move over all bold variable changes - Mark Otto [github/github@6b5b021](https://github.com/github/github/commit/6b5b021)
-
-Do you want to create a new version? (M)ajor, M(i)nor, (P)atch, (S)kip i
- [✓] Updated version number to 0.4.0
-```
-
 To understand what choice to make, you'll need to understand semver and know if one of the changes shown is a major, minor, or patch. Semver is confusing at first, so I recommend reviewing [semver](http://semver.org/) and/or ask in [#design-systems](https://github.slack.com/archives/design-systems) or and experienced open-source contributor.
-
-**Running through this script is not required**, but it helps updating the version numbers across all the modules. Afterwards you should have a bunch of updated version numbers in the modules.
-
-### Publishing
-
-After you've [versioned](#versioning) your modules and the new version numbers are on the `master` branch. You're ready to publish those modules to the primer org.
-
-To begin publishing, run `script/css-modules --publish`. This will publish all the commits since the last publish to the primer org.
-
-If any of the modules fail to publish, the script will fail out for that module, and continue with the next.
-
-### NPM
-
-We publish the modules to NPM to make them easy for others to use. You won't need to do anything for this to happen. Once you've [published](#publishing) the module. [TravisCI](https://travis-ci.org/primer) takes over. It runs lint tests on the code, then auto publishes the module to npm.
-
-
-## Ship checklist
-
-Our CSS framework—[Primer](http://primercss.io/)—is published to [NPM](https://www.npmjs.com/package/primer) and the [Primer organization](https://github.com/primer) on GitHub. When changes are made to primer-core, primer-product, or primer-marketing modules, a few steps are required to keep the framework up-to-date and reliable for everyone to use.
-
-### Required steps
-- update the style guide [changelog](../changelog) with a link to the corresponding pull request
-- update the Primer module version number according to the [semantic versioning system](http://semver.org/)
-- add the labels `design-systems` and `status: review needed` to your pull request, and ensure a design systems [core maintainer](https://github.com/github/design-systems/#core-maintainers) reviews the changes before shipping
-- run the publish script once changes are merged into master, if you hit any issues with this please reach out to the [design systems team](https://github.com/github/design-systems)
-
-### Optional steps
-Depending on the changes made, you may need to complete these additional steps:
-- add a new repo to the [Primer organization](https://github.com/primer) if you are adding a new module
-- update the style guide [status](/css#status) in the documentation if the status of the module has changed, and if needed, create a new [feedback issue](https://github.com/github/design-systems/issues?q=is%3Aissue+is%3Aopen+label%3A%22type%3A+feedback%22) in the design systems repo and link it to the documentation
-- add documentation when adding a new module, or update documentation if code changes to class names or other implementation details have changed
-- write a team post if changes are significant, ask a [core maintainer](https://github.com/github/design-systems/#core-maintainers) to review before posting
-
-To make it clear to reviewers, add the following checklist to your pull request description (edit items as needed):
-
-```md
-### Ship checklist
-- [ ] Update documentation
-- [ ] Update status label
-- [ ] Update Changelog.md
-- [ ] Update primer module version number
-- [ ] Add repo to Primer organization
-- [ ] Run publish script to update Primer modules
-- [ ] Write team post
-```
