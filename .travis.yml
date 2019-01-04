@@ -34,7 +34,7 @@ deploy:
     script: script/release-candidate --yes
     skip_cleanup: true
     on:
-      branch: release*
+      branch: release-*
       tags: false
 
   # publish "final" releases on master
@@ -45,6 +45,7 @@ deploy:
       branch: master
       tags: false
 
+  # lastly, deploy the docs site with whatever was published
   - provider: script
     script: script/deploy-docs
     skip_cleanup: true
