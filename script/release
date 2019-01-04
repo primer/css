@@ -10,5 +10,3 @@ npx lerna exec $@ -- script/try-publish
 # Build and publish storybook
 npx build-storybook -o build
 script/publish-storybook
-
-script/generate-changelog
