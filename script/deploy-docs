@@ -4,11 +4,16 @@ set -e
 if [ -z "$NOW_TOKEN" ]; then
     echo "NOW_TOKEN is not set; skipping docs deployment"
 else
+    if [[ -e VERSION ]]; then
+        version=$(cat VERSION)
+    else
+        version=$(jq -r .version modules/primer/package.json)
+    fi
+
     cp modules/primer/build/build.css docs/static/primer.css
     cd docs
     npm run sync
 
-    version=$(cat ../VERSION)
     actual=$(jq -r .dependencies.primer package.json)
 
     # here, we need to manually update the primer dependency
