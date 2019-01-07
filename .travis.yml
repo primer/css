@@ -22,7 +22,6 @@ before_deploy:
 deploy:
   # publish canary releases on all branches *except* master and release-*
   - provider: script
-    condition: $TRAVIS_BRANCH != 'master' && ! $TRAVIS_PULL_REQUEST_BRANCH =~ ^release-
     script: script/release-pr --yes
     skip_cleanup: true
     on:
