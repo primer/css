@@ -37,6 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Buttons
+path: components/buttons
 status: Stable
 -->
 

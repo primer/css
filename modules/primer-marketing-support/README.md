@@ -31,7 +31,8 @@ You can also import specific portions of the module by importing those partials 
 
 <!-- %docs
 title: Marketing support
-status: new release
+path: support/marketing-variables
+status: Stable
 -->
 
 ### Extended spacing scale

@@ -37,6 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Alerts
+path: components/alerts
 status: Stable
 -->
 

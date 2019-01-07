@@ -11,6 +11,7 @@ This repository is a module of the full [primer][primer] repository.
 
 <!-- %docs
 title: Breadcrumbs
+path: components/breadcrumb
 status: Stable
 -->
 

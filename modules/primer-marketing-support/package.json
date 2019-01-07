@@ -1,5 +1,5 @@
 {
-  "version": "1.5.4",
+  "version": "1.5.5",
   "name": "primer-marketing-support",
   "description": "Sass variables, mixins, and functions for use in our components.",
   "homepage": "http://primer.github.io/",
@@ -24,7 +24,7 @@
     "test": "npm run lint",
     "build": "../../script/npm-run primer-module-build index.scss",
     "prepublishOnly": "../../script/notify pending",
-    "publish": "../../script/notify success"
+    "postpublish": "../../script/notify success"
   },
   "keywords": [
     "primer",

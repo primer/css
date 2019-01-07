@@ -1,5 +1,6 @@
 ---
 title: Animations
+path: utilities/animations
 example_layout: toggle
 status: Stable
 ---

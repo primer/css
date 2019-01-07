@@ -1,3 +1,16 @@
+# 10.10.3
+#### :memo: Documentation
+* [#632](https://github.com/primer/primer/pull/632) Happy new year! ([@shawnbot](https://github.com/shawnbot))
+* [#626](https://github.com/primer/primer/pull/626) Branch deployment, docs for the docs. ([@shawnbot](https://github.com/shawnbot))
+* [#616](https://github.com/primer/primer/pull/616) Start up the docs directory. ([@shawnbot](https://github.com/shawnbot))
+
+#### :house: Internal
+* [#631](https://github.com/primer/primer/pull/631) Docs release fixes. ([@shawnbot](https://github.com/shawnbot))
+
+#### Committers: 2
+- Emily Brick ([emilybrick](https://github.com/emilybrick))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+
 # 10.10.2
 
 #### :memo: Documentation

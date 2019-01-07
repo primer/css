@@ -37,6 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Avatars
+path: components/avatars
 status: Stable
 -->
 
