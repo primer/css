@@ -46,7 +46,7 @@
     "next-compose-plugins": "2.1.1",
     "node-sass": "^4.10.0",
     "now": "^12.1.8",
-    "primer": "10.10.2",
+    "primer": "10.10.3",
     "primer-colors": "^1.0.1",
     "prism-github": "^1.1.0",
     "prop-types": "^15.6.2",
