@@ -1,11 +1,5 @@
 #!/bin/bash
 set -e
 
-branch="${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}"
-
-if [[ ! "$branch" =~ ^(master|release-) ]]; then
-    echo "🐦  Publishing PR (canary) release..."
-    npx lerna publish --canary --exact --npm-tag=pr $@
-else
-    echo "Skipping PR release because '$branch' is master or release"
-fi
+echo "🐦  Publishing PR (canary) release..."
+npx lerna publish --canary --exact --npm-tag=pr $@

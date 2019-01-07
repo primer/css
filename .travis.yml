@@ -22,31 +22,7 @@ before_deploy:
 deploy:
   # publish canary releases on all branches *except* master and release-*
   - provider: script
-    script: script/release-pr --yes
-    skip_cleanup: true
-    on:
-      all_branches: true
-      tags: false
-
-  # publish release candidates on release branches
-  - provider: script
-    script: script/release-candidate --yes
-    skip_cleanup: true
-    on:
-      branch: release-*
-      tags: false
-
-  # publish "final" releases on master
-  - provider: script
-    script: script/release --yes
-    skip_cleanup: true
-    on:
-      branch: master
-      tags: false
-
-  # lastly, deploy the docs site with whatever was published
-  - provider: script
-    script: script/deploy-docs
+    script: script/deploy --yes
     skip_cleanup: true
     on:
       all_branches: true
