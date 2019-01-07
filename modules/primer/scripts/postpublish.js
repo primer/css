@@ -1,6 +1,6 @@
 const execa = require('execa')
 const {writeFileSync} = require('fs')
-const {join} = require('path')
+const {join, resolve} = require('path')
 
 const root = resolve(__dirname, '../../..')
 const version = require('../package.json').version
