@@ -5,7 +5,7 @@ echo "📦  Publishing latest release..."
 
 # note: try-publish should exit cleanly if it detects a duplicate
 # published version
-npx lerna exec $@ -- script/try-publish
+npx lerna exec $@ -- $(dirname $0)/try-publish
 
 # Build and publish storybook
 npx build-storybook -o build
