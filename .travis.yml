@@ -20,9 +20,9 @@ before_deploy:
   - cp CHANGELOG.md modules/primer
 
 deploy:
-  # publish canary releases on all branches
-  # (the script will bail on release branches and master)
+  # publish canary releases on all branches *except* master and release-*
   - provider: script
+    condition: $TRAVIS_BRANCH != 'master' && ! $TRAVIS_PULL_REQUEST_BRANCH =~ ^release-
     script: script/release-pr --yes
     skip_cleanup: true
     on:

@@ -1,17 +1,5 @@
 #!/bin/bash
 set -e
 
-branch=${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
-echo "[release-pr] branch='$branch'"
-
-if [[ "$branch" = "master" ]]; then
-    reason="this is the master branch"
-elif [[ "$branch" =~ ^release- ]]; then
-    reason="this is a release branch"
-else
-    echo "🐦  Publishing PR (canary) release..."
-    npx lerna publish --canary --exact --npm-tag=pr $@
-    exit 0
-fi
-
-echo "Skipping PR release because $reason (TRAVIS_PULL_REQUEST_BRANCH = '$branch')"
+echo "🐦  Publishing PR (canary) release..."
+npx lerna publish --canary --exact --npm-tag=pr $@
