@@ -1,5 +1,5 @@
 {
-  "version": "1.5.11",
+  "version": "1.5.12",
   "name": "primer-labels",
   "description": "Labels add metatdata or indicate status of items and navigational elements.",
   "homepage": "http://primer.github.io/",
@@ -30,7 +30,7 @@
     "postpublish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.7.0"
+    "primer-support": "4.7.1"
   },
   "keywords": [
     "primer",

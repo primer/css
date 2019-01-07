@@ -1,5 +1,5 @@
 {
-  "version": "1.5.1",
+  "version": "1.5.2",
   "name": "primer-tables",
   "description": "Styles to display tabular data for marketing websites at GitHub.",
   "homepage": "http://primer.github.io/",
@@ -30,8 +30,8 @@
     "postpublish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-marketing-support": "1.5.4",
-    "primer-support": "4.7.0"
+    "primer-marketing-support": "1.5.5",
+    "primer-support": "4.7.1"
   },
   "keywords": [
     "css",

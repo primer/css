@@ -1,5 +1,5 @@
 {
-  "version": "1.4.11",
+  "version": "1.4.12",
   "name": "primer-table-object",
   "description": "A module for creating dynamically resizable elements that always sit on the same horizontal line.",
   "homepage": "http://primer.github.io/",
@@ -31,7 +31,7 @@
     "postpublish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.7.0"
+    "primer-support": "4.7.1"
   },
   "keywords": [
     "primer",
