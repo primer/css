@@ -17,7 +17,7 @@
     "release-candidate": "script/release-candidate",
     "release": "script/release",
     "publish-skipgit": "lerna publish --skip-git",
-    "bump": "lerna publish --exact --skip-npm --since \"v$(npm info primer version)\"",
+    "bump": "script/bump --scope='primer*'",
     "new-module": "script/new-module",
     "test": "npm run test-all-modules && lerna run test",
     "test-all-modules": "ava --verbose tests/test-*.js"
