@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-branch=$TRAVIS_PULL_REQUEST_BRANCH
+branch=${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
+echo "[release-pr] branch='$branch'"
 
 if [[ "$branch" = "master" ]]; then
     reason="this is the master branch"
