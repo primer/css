@@ -26,7 +26,7 @@
     "test": "npm run build",
     "lint": "../../script/lint-scss",
     "prepublishOnly": "../../script/notify pending",
-    "publish": "../../script/notify success"
+    "postpublish": "../../script/notify success"
   },
   "dependencies": {
     "primer-alerts": "1.5.11",
