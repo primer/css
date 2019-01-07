@@ -2,8 +2,11 @@ const execa = require('execa')
 const {writeFileSync} = require('fs')
 const {join} = require('path')
 
+const root = resolve(__dirname, '../../..')
 const version = require('../package.json').version
-const path = join(__dirname, '../../../primer-version.txt')
+
+const path = join(root, 'primer-version.txt')
 writeFileSync(path, version, 'utf8')
 
-execa.sync('../../script/notify', ['success'], {stdio: 'inherit'})
+const cwd = process.cwd()
+execa.sync(join(root, 'script/notify'), ['success'], {cwd, stdio: 'inherit'})
