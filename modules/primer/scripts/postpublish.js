@@ -1,6 +1,9 @@
-const fs = require('fs')
+const execa = require('execa')
+const {writeFileSync} = require('fs')
 const {join} = require('path')
 
 const version = require('../package.json').version
 const path = join(__dirname, '../../../primer-version.txt')
-fs.writeFileSync(path, version, 'utf8')
+writeFileSync(path, version, 'utf8')
+
+execa.sync('../../script/notify', ['success'], {stdio: 'inherit'})
