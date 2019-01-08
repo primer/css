@@ -33,3 +33,14 @@ Use responsive position utilities to adjust the position of an element at differ
   default
 </div>
 ```
+
+## Negative offset columns
+
+Using column offset classes can pull a div over X number of columns to the left. They work responsively using the [breakpoints outlined below](../grid#responsive-grids).
+
+```html title="Negative offset columns"
+<div class="clearfix">
+  <div class="offset-n1 col-3 border p-3">.offset-n1</div>
+  <div class="offset-n2 col-3 border p-3">.offset-n2</div>
+</div>
+```
