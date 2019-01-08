@@ -6,7 +6,7 @@ import {BaseStyles, BorderBox, Box, Flex, theme} from '@primer/components'
 import {injectGlobal} from 'emotion'
 import {Header, PackageHeader, SideNav} from '../src/components'
 import getComponents from '../src/markdown'
-import {requirePage, rootPage} from '../src/utils'
+import {config, requirePage, rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 import 'primer/index.scss'
@@ -75,10 +75,12 @@ export default class MyApp extends App {
                   <MDXProvider components={components}>
                     <Component {...page} />
                   </MDXProvider>
-                  <details>
-                    <summary>Metadata</summary>
-                    <pre>meta: {JSON.stringify(meta, null, 2)}</pre>
-                  </details>
+                  {config.production ? null : (
+                    <details>
+                      <summary>Metadata</summary>
+                      <pre>{JSON.stringify(meta, null, 2)}</pre>
+                    </details>
+                  )}
                 </div>
                 {/* TODO: bring back edit link! */}
               </Box>
