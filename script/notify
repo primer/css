@@ -26,4 +26,5 @@ context="npm publish $name"
 message="https://unpkg.com/$name@$version/"
 
 echo "📡 Transmitting publish status for $context $name@$version..."
+pwd
 commit-status "$_status" "$context" "$name@$version" "$message"
