@@ -1,4 +1,3 @@
-const execa = require('execa')
 const {writeFileSync} = require('fs')
 const {join, resolve} = require('path')
 
