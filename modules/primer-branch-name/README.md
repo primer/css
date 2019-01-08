@@ -37,6 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Branch name
+path: components/branch-name
 status: Stable
 -->
 

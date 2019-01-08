@@ -1,5 +1,5 @@
 {
-  "version": "2.1.6",
+  "version": "2.1.7",
   "name": "primer-forms",
   "description": "Style individual form controls and utilize common layouts.",
   "homepage": "http://primer.github.io/",
@@ -27,10 +27,10 @@
     "lint": "../../script/lint-scss",
     "test": "../../script/npm-run-all build lint",
     "prepublishOnly": "../../script/notify pending",
-    "publish": "../../script/notify success"
+    "postpublish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.7.0"
+    "primer-support": "4.7.1"
   },
   "keywords": [
     "primer",

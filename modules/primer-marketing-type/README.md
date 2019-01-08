@@ -10,7 +10,8 @@ This repository is a module of the full [primer][primer] repository.
 ## Documentation
 
 <!-- %docs
-title: Typography
+title: Marketing Typography
+path: utilities/marketing-type
 status: New Release
 -->
 

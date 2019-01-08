@@ -37,6 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Navigation
+path: components/navigation
 status: Stable
 -->
 

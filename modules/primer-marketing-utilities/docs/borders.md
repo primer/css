@@ -1,6 +1,8 @@
 ---
-title: Borders
-status: New release
+title: Marketing Borders
+sort_title: Borders Marketing
+path: utilities/marketing-borders
+status: Stable
 ---
 
 The following border utilities are meant to used in addition to those within primer-core.

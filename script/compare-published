@@ -15,8 +15,10 @@ echo "📦  Comparing Primer modules published @${tag}..."
     echo "module${s}tag${s}published${s}local"
     for package in $packages; do
         module=$(jq -r .name "$package/package.json")
-        v_published=$(npm info "$module@$tag" .version)
-        v_local=$(jq -Mr .version "$package/package.json")
-        echo "${module}${s}${tag}${s}${v_published:-x}${s}${v_local}"
+        if [[ "$(jq -r .private $package/package.json)" != "true" ]]; then
+            v_published=$(npm info "$module@$tag" .version || echo '0.0.0')
+            v_local=$(jq -Mr .version "$package/package.json")
+            echo "${module}${s}${tag}${s}${v_published:-x}${s}${v_local}"
+        fi
     done
 ) | column -t -s=${s}

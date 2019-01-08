@@ -1,0 +1,45 @@
+#!/bin/bash
+set -e
+
+if [ -z "$NOW_TOKEN" ]; then
+    echo "NOW_TOKEN is not set; skipping docs deployment"
+else
+    if [[ -e primer-version.txt ]]; then
+        version=$(cat primer-version.txt)
+    else
+        version=$(jq -r .version modules/primer/package.json)
+    fi
+
+    cp modules/primer/build/build.css docs/static/primer.css
+    cd docs
+    npm run sync
+
+    actual=$(jq -r .dependencies.primer package.json)
+
+    if [[ "$version" != "$actual" ]]; then
+        # here, we need to manually update the primer dependency
+        # version to the one that we published
+        echo "primer has '$version' in package.json; docs wants '$actual'"
+        jq ".dependencies.primer = \"$version\"" package.json > package.json.tmp
+        mv package.json.tmp package.json
+    fi
+
+    now_args="--token=$NOW_TOKEN"
+    npx commit-status pending docs "deploying primer@$version with now..."
+
+    echo "deploying..."
+    now $now_args | tee now-url.txt
+    url=$(cat now-url.txt)
+    npx commit-status success docs "deployed primer@$version to $url" "$url"
+
+    if [[ $TRAVIS_EVENT_TYPE = "pull_request" ]]; then
+        branch=$TRAVIS_PULL_REQUEST_BRANCH
+    else
+        branch=$TRAVIS_BRANCH
+    fi
+
+    alias="primer-css-${branch//\./-}.now.sh"
+    echo "aliasing to '$alias'..."
+    now $now_args alias $url $alias
+    npx commit-status success docs "primer@$version docs: $url" "https://$alias"
+fi

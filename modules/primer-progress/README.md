@@ -36,6 +36,7 @@ $ npm run build
 
 <!-- %docs
 title: Progress
+path: components/progress
 status: New Release
 -->
 

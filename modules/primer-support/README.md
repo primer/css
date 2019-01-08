@@ -31,6 +31,7 @@ You can also import specific portions of the module by importing those partials 
 
 <!-- %docs
 title: Support
+path: support/index
 -->
 
 Primer is built on systems that form the foundation of our styles, and inform the way we write and organize our CSS. Building upon systems helps us make styles consistent and interoperable with each other, and assists us with visual hierarchy and vertical rhythm.

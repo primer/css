@@ -1,5 +1,6 @@
 ---
 title: Typography
+path: utilities/typography
 status: Stable
 ---
 
