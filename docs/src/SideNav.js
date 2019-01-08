@@ -17,7 +17,7 @@ export default function SideNav(props) {
             <Section path="/css/whats-new" />
             <RouteMatch path="/css">
               <Section>
-                <NavLink href="status-key" />
+                <SectionLink href="status-key" />
               </Section>
               <Section path="support" />
               <Section path="utilities" />
