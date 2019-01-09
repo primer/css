@@ -45,8 +45,9 @@ A list of all the specific rules we have enabled are documented in [the reposito
 ### Disabling
 
 We use linters to help ensure our CSS is written according to our principles. On occasion it's necessary to break those principles and disable a linter. This is usually because of one of the following scenarios:
+
 - There is no other way to achieve the desired style due to other code limitations, such as the way the views are rendered or the way the content is output (such as rendered markdown).
--  There is no other way to achieve the desired style due to conflicts with existing styles that would require considerable effort to fix.
+- There is no other way to achieve the desired style due to conflicts with existing styles that would require considerable effort to fix.
 - Breaking a lint rule offers an improvement to code readability and/or maintainability (this is often the case when writing components and supporting SCSS, such as mixins and functions).
 
 To disable a linter, place a `// stylelint-disable` comment around the specific block of CSS that you need to override. For example:
@@ -58,11 +59,13 @@ a.branch-name { color: $brand-blue; }
 // stylelint-enable selector-no-qualifying-type
 ```
 
+#### If you choose to disable a linting rule...
+
 1. You'll need to specify a reason for disabling the lint.
 2. Say what lint you're disabling, this example has `selector-no-qualifying-type`.
-3. Make sure to `disable` then `enable` the lint again after your code block. This is so the lint is in effect for only that specific rule block.
+3. Make sure to `disable` then `enable` the lint again after your code block. This ensures that the rule is re-enabled for any code after the block in question.
 
-When you disable a linter on GitHub, [Sentinel](https://github.com/github/sentinel) will post a comment on your pull request notifying the Design Systems team of this override. This is because disabled lints act as a signal that there may be problems with our style guide or with the CSS being added.
+When you disable a linter on GitHub, [Sentinel](https://github.com/github/sentinel) will post a comment on your pull request notifying the Design Systems team of this override. This is because disabled lints act as a signal that there may be issues with Primer and/or the CSS in question.
 
 While linters shouldn't be disabled without consideration, essentially they act as a guide to how we write CSS rather than steadfast rules. For more info on disabling configuration, visit the [stylelint docs](http://stylelint.io/user-guide/configuration/#turning-rules-off-from-within-your-css).
 
