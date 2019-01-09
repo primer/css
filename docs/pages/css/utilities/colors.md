@@ -21,7 +21,7 @@ Use color utilities to apply color to the background of elements, text, and bord
 
 ## Background colors
 
-Background colors are most commonly used for filling large blocks of content or areas with a color. When selecting a background color, make sure the foreground color contrast passes a minimum WCAG accessibility rating of [level AA](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html). Meeting these standards ensures that content is accessible by everyone, regardless of disability or user device. You can [check your color combination with this demo site](http://jxnblk.com/colorable/demos/text/). For more information, read our [accessibility standards](/primer/principles/accessibility).
+Background colors are most commonly used for filling large blocks of content or areas with a color. When selecting a background color, make sure the foreground color contrast passes a minimum WCAG accessibility rating of [level AA](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html). Meeting these standards ensures that content is accessible by everyone, regardless of disability or user device. You can [check your color combination with this demo site](http://jxnblk.com/colorable/demos/text/). For more information, read our [accessibility standards](../principles/accessibility).
 
 ### Gray
 
@@ -135,7 +135,7 @@ Background colors are most commonly used for filling large blocks of content or 
 
 ## Text colors
 
-Use text color utilities to set text or [octicons](/styleguide/css/styles/core/components/octicons) to a specific color. Color contrast must pass a minimum WCAG accessibility rating of [level AA](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html). This ensures that viewers who cannot see the full color spectrum are able to read the text. To customize outside of the suggested combinations below, we recommend using this [color contrast testing tool](http://jxnblk.com/colorable/demos/text/). For more information, read our [accessibility standards](/primer/principles/accessibility).
+Use text color utilities to set text or [Octicons](https://octicons.github.com) to a specific color. Color contrast must pass a minimum WCAG accessibility rating of [level AA](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html). This ensures that viewers who cannot see the full color spectrum are able to read the text. To customize outside of the suggested combinations below, we recommend using this [color contrast testing tool](http://jxnblk.com/colorable/demos/text/). For more information, read our [accessibility standards](../principles/accessibility).
 
 These are our most common text with background color combinations. They don't all pass accessibility standards currently, but will be updated in the future. **Any of the combinations with a warning icon must be used with caution**.
 
@@ -247,4 +247,4 @@ Use `link-hover-blue` to make any text color used with links to turn blue on hov
 
 ## Border colors
 
-Border colors are documented on the [border utilities page](../../utilities/borders#border-width-style-and-color-utilities).
+Border colors are documented on the [border utilities page](../utilities/borders#border-width-style-and-color-utilities).

@@ -66,7 +66,7 @@ Each component or group of styles is packaged up and distributed via npm. Primer
     <div class="col-12 col-md-9 pr-0 pr-lg-2">
       <h3 class="f3 text-normal m-0">Use Primer in your project</h3>
       <p class="my-3">Pick and choose what you need. Install the entire Primer bundle or individual packages via npm.</p>
-      <a href="/css/getting-started/" class="btn btn-outline">Installation instructions</a>
+      <a href="/css/getting-started" class="btn btn-outline">Installation instructions</a>
     </div>
   </div>
 </div>
