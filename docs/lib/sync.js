@@ -3,7 +3,6 @@ const filter = require('metalsmith-filter')
 const frontmatter = require('metalsmith-matters')
 const watch = require('metalsmith-watch')
 
-const addChangelog = require('./changelog')
 const addPackageMeta = require('./add-package-meta')
 const {extractPackages, writePackagesJSON} = require('./extract-packages-json')
 const addSource = require('./add-source')
@@ -57,12 +56,6 @@ module.exports = function sync(options = {}) {
     )
     // rename files with their "path" frontmatter key
     .use(rename(file => file[ns] ? `${file[ns].path}.md` : true), {log})
-    // read the changelog manually
-    .use(addChangelog('../CHANGELOG.md', 'whats-new/changelog.md', file => {
-      file[ns] = {
-        title: 'Changelog'
-      }
-    }))
     .use((_files, metal, done) => {
       files = _files
       done()
