@@ -90,7 +90,7 @@ const SectionLink = withRouter(({href, router, ...rest}) => (
  */
 const NavLink = withRouter(({href, router, ...rest}) => {
   return (
-    <Box mt={3}>
+    <Box mt={2}>
       <NodeLink href={href} color={router.pathname === href ? 'black' : undefined} fontSize={1} {...rest} />
     </Box>
   )
