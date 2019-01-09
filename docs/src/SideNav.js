@@ -16,10 +16,13 @@ export default function SideNav(props) {
             <Section path="/css/tools" />
             <Section path="/css/whats-new" />
             <RouteMatch path="/css">
-              <Section path="/css/support" />
-              <Section path="/css/utilities" />
-              <Section path="/css/objects" />
-              <Section path="/css/components" />
+              <Section>
+                <SectionLink href="status-key" />
+              </Section>
+              <Section path="support" />
+              <Section path="utilities" />
+              <Section path="objects" />
+              <Section path="components" />
             </RouteMatch>
           </Router>
         </Flex>
@@ -44,14 +47,7 @@ export default function SideNav(props) {
  */
 const Section = ({path, children}) => (
   <BorderBox p={4} border={0} borderBottom={1} borderRadius={0} width="100%">
-    {children ? (
-      React.Children.map(children, child => {
-        const href = join(path, child.props.href || '')
-        return React.cloneElement(child, {href})
-      })
-    ) : (
-      <NavList path={path} />
-    )}
+    {children && path ? React.Children.map(children, child => addPath(child, path)) : <NavList path={path} />}
   </BorderBox>
 )
 
@@ -132,8 +128,8 @@ const Router = withRouter(({router, children}) => {
  * </Router>
  * ```
  */
-function RouteMatch({children}) {
-  return children
+function RouteMatch({path, children}) {
+  return path ? React.Children.map(children, child => addPath(child, path)) : children
 }
 
 function sortCompare(a, b, get) {
@@ -144,4 +140,21 @@ function sortCompare(a, b, get) {
 
 function nodeSort(a, b) {
   return sortCompare(a, b, node => node.meta.sort_title || node.meta.title)
+}
+
+function addPath(el, path) {
+  // if there's no path, just return the element
+  if (!path) return el
+
+  // if this is a link it'll have an "href"; otherwise, add "path"
+  const prop = el.props.href ? 'href' : 'path'
+  const value = el.props[prop]
+  const props = {}
+  // if there's a value and it's not absolute, prefix it with the path
+  if (value && !value.match(/^(\/|https?:)/)) {
+    props[prop] = join(path, value)
+  } else {
+    props[prop] = path
+  }
+  return React.cloneElement(el, props)
 }

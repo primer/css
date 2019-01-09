@@ -5,9 +5,10 @@ import {Text, Flex, Sticky, BorderBox, Box} from '@primer/components'
 import BoxShadow from './BoxShadow'
 import Link from './Link'
 import NodeLink from './NodeLink'
+import {repository} from 'primer/package.json'
 
-const NavLink = withRouter(({href, router, ...rest}) => (
-  <NodeLink href={href} color="white" px={4} fontWeight={router.pathname === href ? 'bold' : null} {...rest} />
+const NavLink = withRouter(({is: Tag = NodeLink, href, router, ...rest}) => (
+  <Tag href={href} color="white" px={4} fontWeight={router.pathname === href ? 'bold' : null} {...rest} />
 ))
 
 const HeaderText = props => <Text fontSize={2} {...props} />
@@ -28,7 +29,7 @@ const Header = props => (
             <NavLink href="/css/getting-started" />
             <NavLink href="/css/principles" />
             <NavLink href="/css/tools" />
-            <NavLink href="/css/whats-new" />
+            <NavLink is={Link} href="https://github.com/primer/primer/releases">Releases</NavLink>
           </HeaderText>
         </Box>
         <Box display={['block', 'block', 'none']}>
