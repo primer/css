@@ -46,7 +46,7 @@ export default function SideNav(props) {
  * `path`.
  */
 const Section = ({path, children}) => (
-  <BorderBox p={4} border={0} borderBottom={1} borderRadius={0} width="100%">
+  <BorderBox p={5} border={0} borderBottom={1} borderRadius={0} width="100%">
     {children && path ? React.Children.map(children, child => addPath(child, path)) : <NavList path={path} />}
   </BorderBox>
 )
@@ -61,7 +61,7 @@ function NavList({path}) {
   const children = node ? node.children.sort(nodeSort) : []
   return (
     <>
-      <SectionLink href={path} />
+      <SectionLink href={path} mb={3} />
       {children.map(child => (
         <NavLink href={child.path} key={child.path} />
       ))}
@@ -74,13 +74,12 @@ function NavList({path}) {
  * matches the current path, wrapped in a <Box> for whitespace.
  */
 const SectionLink = withRouter(({href, router, ...rest}) => (
-  <Box mb={2}>
+  <Box {...rest}>
     <NodeLink
       href={href}
       color="gray.9"
       fontSize={2}
       fontWeight={router.pathname.startsWith(href) ? 'bold' : null}
-      {...rest}
     />
   </Box>
 ))
@@ -91,7 +90,7 @@ const SectionLink = withRouter(({href, router, ...rest}) => (
  */
 const NavLink = withRouter(({href, router, ...rest}) => {
   return (
-    <Box mb={2}>
+    <Box mt={3}>
       <NodeLink href={href} color={router.pathname === href ? 'black' : undefined} fontSize={1} {...rest} />
     </Box>
   )
