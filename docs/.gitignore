@@ -1,3 +1,3 @@
 .next/
-after.txt
+*.txt
 static/primer.css
