@@ -3,6 +3,7 @@
   "name": "@primer/css-docs",
   "scripts": {
     "lint": "eslint pages src",
+    "pretest": "npm run sync",
     "test": "node test/urls.js",
     "sync": "script/sync",
     "watch": "script/sync --watch",
