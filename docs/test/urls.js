@@ -36,15 +36,14 @@ const exceptions = {
   '/whats_new/status-key': moved('/status-key')
 }
 
+const STYLEGUIDE_ROOT = join(__dirname, '../../../../github/styleguide')
+const BEFORE_FILE = 'before.txt'
 const {CI} = process.env
 const CLEAN = process.argv.slice(2).includes('--clean')
 
 const log = console.warn
 
 const before = getStyleguidePaths()
-  .then(paths => paths.filter(path => !path.includes('code_example.html')))
-  .then(normalizePaths)
-  .then(writeLines('before.txt'))
 
 const after = getPaths(resolve(__dirname, '../pages/css'))
   .then(normalizePaths)
@@ -52,7 +51,7 @@ const after = getPaths(resolve(__dirname, '../pages/css'))
 
 Promise.all([before, after])
   .then(([beforePaths, afterPaths]) => {
-    log(`got ${beforePaths.length} pages in github/styleguide, ${afterPaths.length} here`)
+    log(`Found ${beforePaths.length} paths in github/styleguide, ${afterPaths.length} here.\n`)
     const excepted = []
     const missing = beforePaths.filter(path => !afterPaths.includes(path))
       .filter(path => {
@@ -66,7 +65,7 @@ Promise.all([before, after])
       log(`Some files were missing, but these had known exceptions:`)
       for (const path of excepted) {
         const exception = exceptions[path]
-        const prefix = `✓ ${yellow(path)}`
+        const prefix = `${green('✓')} ${yellow(path)}`
         if (typeof exception === 'function') {
           const {pass, message} = exception(afterPaths)
           if (pass) {
@@ -91,27 +90,48 @@ Promise.all([before, after])
       }
       process.exitCode = 1
     } else {
-      log(`${green('✓')} All good!`)
+      log(`\n${green('✓')} All good!`)
     }
   })
 
 function getStyleguidePaths() {
   if (CI) {
-    return readLines('before.txt')
+    return readLines(BEFORE_FILE)
   }
   return buildStyleguide()
-    .then(root => getPaths(join(root, '_site/primer')))
+    .then(getPathsFromStyleguide)
+    .then(writeLines(BEFORE_FILE))
+    .catch(error => {
+      /*
+      * If _anything_ goes wrong (on CI, no styleguide repo), just get the list
+      * of paths from the committed file.
+      */
+      log(`${yellow('!!!')} Unable to get styleguide paths:\n\n  ${error}\n`)
+      log(`Using the paths in before.txt instead...\n`)
+      return readLines(BEFORE_FILE)
+    })
 }
 
 function buildStyleguide() {
-  const root = resolve(__dirname, '../../../../github/styleguide')
   if (CLEAN) {
-    return execa('script/bootstrap', {cwd: root})
-      .then(() => execa('npm', ['run', 'build-site'], {cwd: root}))
-      .then(() => root)
-  } else {
-    return Promise.resolve(root)
+    const cwd = STYLEGUIDE_ROOT
+    return pathExists(cwd)
+      .then(exists => {
+        if (exists) {
+          return execa('script/bootstrap', {cwd})
+            .then(() => execa('npm', ['run', 'build-site'], {cwd}))
+        } else {
+          throw new ERror(`The styleguide root (${cwd}) doesn't exist`)
+        }
+      })
   }
+  return Promise.resolve(true)
+}
+
+function getPathsFromStyleguide() {
+  return getPaths(join(STYLEGUIDE_ROOT, '_site/primer'))
+    .then(paths => paths.filter(path => !path.includes('code_example.html')))
+    .then(normalizePaths)
 }
 
 function getPaths(dir, options) {
