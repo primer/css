@@ -13,8 +13,9 @@ const {yellow, green, red} = require('colorette')
  * status object with `pass` and `message` props.
  */
 module.exports = {
-  removed: yellow('removed'),
+  removed: red('removed'),
   deprecated: yellow('deprecated'),
+  redirect: url => `${green('redirect')} → ${url}`,
   moved: path => paths => {
     if (paths.includes(path)) {
       return {pass: true, message: `→ ${green(path)}`}

@@ -4,7 +4,7 @@ const {basename, dirname, join, resolve} = require('path')
 const {promisify} = require('util')
 const {readFile, writeFile} = require('fs-extra')
 const {bold, yellow, green, red} = require('colorette')
-const {deprecated, removed, moved} = require('./exceptions')
+const {deprecated, moved, redirect, removed} = require('./exceptions')
 
 /**
  * This is where we track "exceptions" to paths that don't have 1:1 matches
@@ -18,7 +18,7 @@ const {deprecated, removed, moved} = require('./exceptions')
  * to understand how this works.)
  */
 const exceptions = {
-  '/components/octicons': removed,
+  '/components/octicons': redirect('https://octicons.github.com'),
   '/components/page-headers': deprecated,
   '/components/page-sections': deprecated,
   '/components/tables': deprecated,
@@ -30,7 +30,7 @@ const exceptions = {
   '/packages/primer-product': removed,
   '/principles/HTML': moved('/principles/html'),
   '/principles/SCSS': moved('/principles/scss'),
-  '/whats_new': removed,
+  '/whats_new': redirect('https://github.com/primer/primer/releases'),
   '/whats_new/changelog': removed,
   '/whats_new/changelog/archived_changelog': removed,
   '/whats_new/status-key': moved('/status-key')
