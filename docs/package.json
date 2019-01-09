@@ -3,7 +3,8 @@
   "name": "@primer/css-docs",
   "scripts": {
     "lint": "eslint pages src",
-    "test": "./test.sh",
+    "pretest": "npm run sync",
+    "test": "node test/urls.js",
     "sync": "script/sync",
     "watch": "script/sync --watch",
     "dev": "next",
@@ -34,6 +35,7 @@
     "hast-util-to-html": "^5.0.0",
     "hast-util-to-string": "^1.0.1",
     "html-2-jsx": "^0.5.1-dev",
+    "klaw": "^3.0.0",
     "loader-utils": "^1.1.0",
     "mdx-constant": "^0.1.0",
     "mdx-live": "2.0.0-alpha.2",
