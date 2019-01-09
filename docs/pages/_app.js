@@ -55,7 +55,7 @@ export default class MyApp extends App {
     const Hero = node.file ? requirePage(node.file).Hero : null
 
     return (
-      <BaseStyles style={{fontFamily: theme.fonts.normal}}>
+      <BaseStyles fontSize={2} style={{fontFamily: theme.fonts.normal}}>
         <Container>
           <Head>
             <title>Primer CSS{meta.title ? ` / ${meta.title}` : null}</title>
@@ -66,7 +66,7 @@ export default class MyApp extends App {
             alignContent="stretch"
             justifyContent="space-between"
           >
-            <Box width={['auto', 'auto', 'auto', '80%']}>
+            <Box width={['auto', 'auto', '100%']}>
               {Hero ? <Hero /> : null}
               <Box color="gray.9" maxWidth={['auto', 'auto', 'auto', CONTENT_MAX_WIDTH]} px={6} mx="auto" my={6}>
                 <div className="markdown-body">
@@ -86,8 +86,8 @@ export default class MyApp extends App {
               </Box>
             </Box>
             <BorderBox
-              width="20%"
-              minWidth={240}
+              width={['100%', '100%', 256]}
+              minWidth={256}
               bg="gray.0"
               borderColor="gray.2"
               borderRadius={0}
