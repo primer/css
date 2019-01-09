@@ -55,7 +55,7 @@ Many designers and developers will edit and add to our CSS. Write CSS in a way t
 
 * Choose verbose over clever. A little duplication is worthwhile if it adds clarity.
 * Don't prioritize being DRY if  it means it's hard to read and understand, creates dependencies, or hides what the code is really doing.
-*  Avoid overusing pre-processor features that make the code less approachable. Keep it CSS'y and limit the use of Sass features like nesting, variables, functions. For more detail on this check out our [Sass guidelines and lint rules](./code-style.md#scss).
+*  Avoid overusing pre-processor features that make the code less approachable. Keep it CSS'y and limit the use of Sass features like nesting, variables, functions. For more detail on this check out our [Sass guidelines and lint rules](./scss).
 
 
 ## Components
