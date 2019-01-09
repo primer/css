@@ -10,22 +10,26 @@ const NavLink = withRouter(({href, router, ...rest}) => (
   <NodeLink href={href} color="white" px={4} fontWeight={router.pathname === href ? 'bold' : null} {...rest} />
 ))
 
+const HeaderText = props => <Text fontSize={2} {...props} />
+
 const Header = props => (
   <Sticky zIndex={100}>
     <BoxShadow py={3} bg="gray.9" color="white" {...props}>
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
-        <Link ml={3} color="white" href="/css">
+        <Link href="/css" color="white" ml={3}>
           <Flex alignItems="center" justifyContent="center">
             <Octicon icon={MarkGithub} size="medium" />
-            <Text ml={3}>Primer CSS</Text>
+            <HeaderText ml={3}>Primer CSS</HeaderText>
           </Flex>
         </Link>
         <Box display={['none', 'none', 'block']}>
-          <NavLink href="/css">Docs</NavLink>
-          <NavLink href="/css/getting-started" />
-          <NavLink href="/css/principles" />
-          <NavLink href="/css/tools" />
-          <NavLink href="/css/whats-new" />
+          <HeaderText>
+            <NavLink href="/css">Docs</NavLink>
+            <NavLink href="/css/getting-started" />
+            <NavLink href="/css/principles" />
+            <NavLink href="/css/tools" />
+            <NavLink href="/css/whats-new" />
+          </HeaderText>
         </Box>
         <Box display={['block', 'block', 'none']}>
           <Link href="#sidenav">
