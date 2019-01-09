@@ -17,7 +17,6 @@
 }
 
 // Negative offset columns
-.offset-0 { margin-left: 0; }
 .offset-n1 { margin-left: -(1 / 12 * 100%); }
 .offset-n2 { margin-left: -(2 / 12 * 100%); }
 .offset-n3 { margin-left: -(3 / 12 * 100%); }
@@ -33,7 +32,6 @@
 // Responsive classes for negative offset columns
 @each $breakpoint in map-keys($breakpoints) {
   @include breakpoint($breakpoint) {
-    .offset-#{$breakpoint}-0 { margin-left: 0; }
     .offset-#{$breakpoint}-n1 { margin-left: -(1 / 12 * 100%); }
     .offset-#{$breakpoint}-n2 { margin-left: -(2 / 12 * 100%); }
     .offset-#{$breakpoint}-n3 { margin-left: -(3 / 12 * 100%); }
