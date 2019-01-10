@@ -103,7 +103,7 @@ function Image(props) {
   const {src, ...rest} = props
   switch (typeof src) {
     case 'string':
-      return <Box is="img" width="100%" {...props} />
+      return <Box is="img" width="100%" alt="" {...props} />
     case 'function':
       return <Box is={src} {...rest} />
     default:
