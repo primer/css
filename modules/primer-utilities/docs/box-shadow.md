@@ -19,7 +19,7 @@ Default shadows are mainly used on things that need to appear slightly elevated,
 </div>
 ```
 
-These types of shadows are typically applied to elements with borders, like [`Box`](/styleguide/css/styles/core/components/box).
+These types of shadows are typically applied to elements with borders, such as the [Box component](/css/components/box).
 
 ```html
 <div class="col-5">
