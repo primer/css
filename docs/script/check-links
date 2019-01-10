@@ -2,6 +2,7 @@
 const spinner = require('char-spinner')
 const {gray, green, yellow, red, bold} = require('colorette')
 const {SiteChecker} = require('broken-link-checker')
+
 const yargs = require('yargs')
   .option('filter-level', {type: Number, alias: 'L', default: 3})
   .option('recursive', {type: Boolean, alias: 'r'})
