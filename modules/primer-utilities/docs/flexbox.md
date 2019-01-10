@@ -576,7 +576,7 @@ Use these classes to adjust the alignment of an individual flex item on the cros
 
 ## Responsive flex utilities
 
-All flexbox utilities can be adjust per [breakpoint](../../objects/grid#breakpoints) using the following formulas:
+All flexbox utilities can be adjusted per [breakpoint](/css/objects/grid#breakpoints) using the following formulas:
 
 - `d-[breakpoint]-[property]` for `display`
 - `flex-[breakpoint]-[property]-[behavior]` for various flex properties
@@ -647,7 +647,7 @@ Here is an example of a media object that is **vertically centered on large scre
 ```html
 <div class="border p-3 d-flex flex-column flex-md-row flex-md-items-center">
   <div class="pr-0 pr-md-3 mb-3 mb-md-0 d-flex flex-justify-center flex-md-justify-start">
-    <img style="max-width:100px; max-height:100px;" src="/images/gravatars/gravatar-user-420.png" />
+    <img style="max-width:100px; max-height:100px;" src="https://avatars1.githubusercontent.com/u/9919?v=4&s=200" />
   </div>
   <div class="d-flex text-center text-md-left">
     <p><b>Body</b> Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison.</p>
@@ -660,6 +660,6 @@ Here is an example of a media object that is **vertically centered on large scre
 
 ## Flexbox bugs
 
-This section lists flexbox bugs that affect browsers we [currently support](.../styles#user-content-browser-support).
+This section lists flexbox bugs that affect browsers we currently support (**citation needed**).
 
 **1. Minimum content sizing of flex items not honored:** Some browsers don't respect flex item size. Instead of respecting the minimum content size, items shrink below their minimum size which can create some undesirable results, such as overflowing text. The workaround is to apply `flex-shrink: 0;` to the items using `d-flex`. This can be applied with the `flex-shrink-0` utility. For more information read [philipwalton/flexbugs](https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored).

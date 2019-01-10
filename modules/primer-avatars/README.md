@@ -52,7 +52,7 @@ Add `.avatar` to any `<img>` element to make it an avatar. This resets some key 
 Be sure to set `width` and `height` attributes for maximum browser performance.
 
 ```html
-<img class="avatar" alt="jonrohan" src="/jonrohan.png?v=3&s=144" width="72" height="72">
+<img class="avatar" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=144" width="72" height="72">
 ```
 
 ### Small avatars
@@ -60,7 +60,7 @@ Be sure to set `width` and `height` attributes for maximum browser performance.
 We occasionally use smaller avatars. Anything less than `48px` wide should include the `.avatar-small` modifier class to reset the `border-radius` to a more appropriate level.
 
 ```html
-<img class="avatar avatar-small" alt="jonrohan" src="/jonrohan.png?v=3&s=64" width="32" height="32">
+<img class="avatar avatar-small" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=64" width="32" height="32">
 ```
 
 ### Parent-child avatars
@@ -69,8 +69,8 @@ When you need a larger parent avatar, and a smaller child one, overlaid slightly
 
 ```html
 <div class="avatar-parent-child float-left">
-  <img class="avatar" alt="jonrohan" src="/jonrohan.png?v=3&s=96" width="48" height="48">
-  <img class="avatar avatar-child" alt="josh" src="/josh.png?v=3&s=40" width="20" height="20">
+  <img class="avatar" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=96" width="48" height="48">
+  <img class="avatar avatar-child" alt="josh" src="https://github.com/josh.png?v=3&s=40" width="20" height="20">
 </div>
 ```
 
