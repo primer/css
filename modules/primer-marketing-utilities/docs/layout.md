@@ -5,7 +5,7 @@ path: utilities/marketing-layout
 status: Stable
 ---
 
-Marketing layout utilities build on top of [primer-core utilities](../../utilities/layout/#position), adding the option of responsive positioning.
+Marketing layout utilities build on top of [primer-core utilities](/css/utilities/layout#position), adding the option of responsive positioning.
 
 {:toc}
 

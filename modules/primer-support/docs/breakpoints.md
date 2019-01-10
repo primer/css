@@ -19,7 +19,7 @@ We use abbreviations for each breakpoint to keep the class names concise. This a
 
 **Note:** The `lg` breakpoint matches our current page width of `980px` including left and right padding of `16px` (`$spacer-3`). This is so that content doesn't touch the edges of the window when resized.
 
-Responsive styles are available for [margin](../../utilities/margin/#responsive-margins), [padding](../../utilities/padding#responsive-padding), [layout](../../utilities/layout), [flexbox](../../utilities/flexbox#responsive-flex-utilities), and the [grid](../../objects/grid#responsive-grids) system.
+Responsive styles are available for [margin](/css/utilities/margin#responsive-margins), [padding](/css/utilities/padding#responsive-padding), [layout](/css/utilities/layout), [flexbox](/css/utilities/flexbox#responsive-flex-utilities), and the [grid](/css/objects/grid#responsive-grids) system.
 
 ## Breakpoint variables
 

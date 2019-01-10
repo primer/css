@@ -39,10 +39,11 @@ Primer is built on systems that form the foundation of our styles, and inform th
 We use Sass variables to keep color, typography, spacing, and other foundations of our system consistent. Occasionally we use Sass mixins to apply multiple CSS properties, they are a convenient solution for frequently-used verbose patterns.
 
 We've documented variables, mixins, and the systems they are built on for the following:
-- [Breakpoints](./support/breakpoints)
-- [Colors](./support/color-system)
-- [Spacing](./support/spacing)
-- [Typography](./support/typography)
+
+- [Breakpoints](/css/support/breakpoints)
+- [Colors](/css/support/color-system)
+- [Spacing](/css/support/spacing)
+- [Typography](/css/support/typography)
 
 <!-- %enddocs -->
 

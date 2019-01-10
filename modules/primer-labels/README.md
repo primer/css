@@ -138,7 +138,7 @@ Use the `Counter` component to add a count to navigational elements and buttons.
 <span class="Counter Counter--gray-light">64</span>
 ```
 
-Use the `Counter` in navigation to indicate the number of items without the user having to click through or count the items, such as open issues in a GitHub repo. See more options in [navigation](../navigation).
+Use the `Counter` in navigation to indicate the number of items without the user having to click through or count the items, such as open issues in a GitHub repo. See more options in [navigation](./navigation).
 
 ```html title="Counter in tabs"
 <div class="tabnav">
@@ -149,7 +149,7 @@ Use the `Counter` in navigation to indicate the number of items without the user
 </div>
 ```
 
-Counters can also be used in `Box` headers to indicate the number of items in a list. See more on the [box component](../box).
+Counters can also be used in `Box` headers to indicate the number of items in a list. See more on the [box component](./box).
 
 ```html title="Counter in Box headers"
 <div class="Box">
