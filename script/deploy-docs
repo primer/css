@@ -42,4 +42,10 @@ else
     echo "aliasing to '$alias'..."
     now $now_args alias $url $alias
     npx commit-status success docs "v$version docs: $alias" "https://$alias"
+
+    npx blc -ogr "https://$alias/css" || {
+        echo "*** There are some broken links! ***"
+        echo "Check the report above for more info, and/or"
+        echo "run script/check-local-links locally for fast checks."
+    }
 fi
