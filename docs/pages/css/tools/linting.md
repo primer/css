@@ -2,7 +2,7 @@
 title: Linting
 ---
 
-We use linters to enforce [coding principles and standards](../principles). On every pull request we run the linters on the code to make sure any changes meet our standards. When a commit contains code that doesn't meet the standards, the build fails which blocks merging into master and deploying to production.
+We use linters to enforce [coding principles and standards](/css/principles). On every pull request we run the linters on the code to make sure any changes meet our standards. When a commit contains code that doesn't meet the standards, the build fails which blocks merging into master and deploying to production.
 
 For teams working on `github/github` this configuration is all setup for you. While we do recommend you also [setup a plugin](#plugins) in your editor, this is not required.
 
@@ -40,7 +40,7 @@ To [use the configuration](https://github.com/primer/primer/tree/master/tools/st
 }
 ```
 
-A list of all the specific rules we have enabled are documented in [the repository README](https://github.com/primer/primer/tree/master/tools/stylelint-config-primer#documentation).
+A list of all the specific rules we have enabled are documented in [the package README](https://www.npmjs.com/package/stylelint-config-primer#documentation).
 
 ### Disabling
 
@@ -101,4 +101,4 @@ We test for the proper use of the [Octicons helper](https://github.com/primer/oc
 
 ## IE rule limit
 
-We check that our compiled CSS assets don't contain more selectors than the [IE CSS selector limits](https://blogs.msdn.microsoft.com/ieinternals/2011/05/14/stylesheet-limits-in-internet-explorer/). We keep the rule limit in line with our [browser support](../#browser-support).
+We check that our compiled CSS assets don't contain more selectors than the [IE CSS selector limits](https://blogs.msdn.microsoft.com/ieinternals/2011/05/14/stylesheet-limits-in-internet-explorer/).
