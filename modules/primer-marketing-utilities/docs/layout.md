@@ -34,15 +34,15 @@ Use responsive position utilities to adjust the position of an element at differ
 
 ## Position elements with spacing utilities
 
-Position elements from all four element edges (`top`, `right`, `bottom`, and `left`) using any spacing utility from the global spacing scale and the marketing spacing scale (from `$spacer-1` to `$spacer-12`).
+Position elements from all four element edges (`top`, `right`, `bottom`, and `left`) using any spacing utility from the global spacing scale and the marketing spacing scale (from `$spacer-1` to `$spacer-12`), including negative and 0 values.
 
 Commonly used with `.position-absolute` to position decorative assets and shapes on marketing sites.
 
-Responsive breakpoints are also supported.
+In an effort to reduce css bloat, responsive breakpoints are only supported for `md` and `lg` breakpoints. There is no support for `sm` and `xl` breakpoints.
 
 ```html
 <div className='position-relative p-6 bg-gray'>
-  <div className='position-absolute top-4 top-md-8 border bg-white p-2'>
+  <div className='position-absolute top-2 top-md-8 top-lg-0 border bg-white p-2'>
     .position-absolute
   </div>
 </div>

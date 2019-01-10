@@ -17,16 +17,30 @@
 }
 
 // Responsive utilities to position content
-@each $breakpoint, $variant in $responsive-variants {
+// No utilities for sm and xl breakpoints
+@each $breakpoint, $variant in $responsive-variants-positionUtils {
   @include breakpoint($breakpoint) {
-    // loop through spacer values
-    @for $i from 1 through length($allSpacers) {
-      $size: nth($allSpacers, $i); // sm, md, lg, xl
-      $scale: $i - 1; // 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+    // loop through all spacer values with 0 spacer added
+    $positionSpacers: join(0, $allSpacers);
+    @for $i from 1 through length($positionSpacers) {
+      $size: nth($positionSpacers, $i);
+      $scale: $i - 1; // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
       .top#{$variant}-#{$scale}     { top: $size !important; }
       .right#{$variant}-#{$scale}   { right: $size !important; }
       .bottom#{$variant}-#{$scale}  { bottom: $size !important; }
       .left#{$variant}-#{$scale}    { left: $size !important; }
+    }
+  }
+}
+
+// Responsive negative utilities to position content
+// Similarly no utilities for sm and xl breakpoints, and no support for 0 (e.g. top-n0)
+@each $breakpoint, $variant in $responsive-variants-positionUtils {
+  @include breakpoint($breakpoint) {
+    // loop through spacer values
+    @for $i from 1 through length($allSpacers) {
+      $size: nth($allSpacers, $i);
+      $scale: $i; // 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
       .top#{$variant}-n#{$scale}    { top: -$size !important; }
       .right#{$variant}-n#{$scale}  { right: -$size !important; }
       .bottom#{$variant}-n#{$scale} { bottom: -$size !important; }
