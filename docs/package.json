@@ -5,7 +5,7 @@
     "lint": "eslint pages src",
     "pretest": "npm run sync",
     "test": "node test/urls.js",
-    "test-links": "blc -ergo http://127.0.01:3000/css",
+    "check-links": "script/check-links -rv http://localhost:3000/css",
     "sync": "script/sync",
     "watch": "script/sync --watch",
     "dev": "next",
