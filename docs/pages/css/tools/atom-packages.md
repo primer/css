@@ -14,7 +14,7 @@ apm install $(curl -L https://raw.githubusercontent.com/primer/atom-packages/mas
 
 ## Autocomplete Primer
 
-The [Autocomplete Primer package](https://atom.io/packages/autocomplete-primer) is a custom [Primer](https://github.com/primer) package that autocompletes class names for [utilities](https://github.com/primer/primer/tree/master/modules/primer-utilities) and rails helper tags for [octicons](https://github.com/primer/octicons/tree/master/lib/octicons_helper).
+The [Autocomplete Primer package](https://atom.io/packages/autocomplete-primer) is a custom [Primer](https://github.com/primer) package that autocompletes class names for [utilities](/css/utilities) and Rails helper tags for [Octicons](https://github.com/primer/octicons/tree/master/lib/octicons_helper#readme).
 
 Install [autocomplete-primer](https://atom.io/packages/autocomplete-primer) using Atom's package manager or enter this into your terminal:
 
@@ -44,7 +44,7 @@ apm install pigments
 
 ## Stylelint linter
 
-We use [Stylelint](./linting/) for linting our CSS, which is an extension to the [Atom linter](https://atom.io/packages/linter) package. To prevent linting errors during the build we recommend you install [linter-stylelint](https://atom.io/packages/linter-stylelint) which will alert you of any errors locally while you work.
+We use [Stylelint](https://stylelint.io/), an extension to the [Atom linter package](https://atom.io/packages/linter), for [linting our SCSS](/css/tools/linting). To prevent linting errors during the build we recommend you install [linter-stylelint](https://atom.io/packages/linter-stylelint), which will alert you of any errors locally while you work.
 
 Install [linter-stylelint](https://atom.io/packages/linter-stylelint) using Atom's package manager or enter this into your terminal:
 

@@ -77,7 +77,7 @@ The Design Systems team recommends using [Atom](https://atom.io/) with the  [lin
 
 ![image](https://cloud.githubusercontent.com/assets/54012/21456489/6a10b370-c8f6-11e6-9199-bb3709e79794.png)
 
-We also have a [list of Atom plugins](../tools/atom-plugins) that we find useful for development.
+We also have a [list of Atom packages](/css/tools/atom-packages) that we find useful for development.
 
 ## HTML
 
