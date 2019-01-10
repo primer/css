@@ -23,6 +23,7 @@
     "@zeit/next-sass": "^1.0.1",
     "babel-core": "7.0.0-bridge.0",
     "broken-link-checker": "^0.7.8",
+    "char-spinner": "^1.0.1",
     "chroma-js": "^1.4.1",
     "clipboard-copy-element": "^0.5.0",
     "colorette": "^1.0.7",
