@@ -73,7 +73,7 @@ storiesOf('Marketing utilities', module)
   ))
   .add('Position with spacing utils', () => (
     <div className='position-relative p-6 bg-gray'>
-      <div className='position-absolute top-2 top-md-8 top-lg-0 border bg-white p-2'>
+      <div className='position-absolute top-2 top-md-0 top-lg-8 border bg-white p-2'>
         .position-absolute
       </div>
     </div>
