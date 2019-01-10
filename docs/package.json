@@ -60,12 +60,16 @@
     "refractor": "^2.6.2",
     "remark-emoji": "^2.0.2",
     "remark-images": "^0.16.1",
+    "remark-parse": "^6.0.3",
     "remark-textr": "^3.0.3",
     "remark-toc": "^5.1.1",
     "styled-components": "3.3.3",
     "title-case": "^2.1.1",
     "tree-model": "^1.0.7",
     "typographic-base": "^1.0.4",
+    "unified": "^7.1.0",
+    "unist-util-select": "^2.0.0",
+    "unist-util-stringify-position": "^2.0.0",
     "unist-util-visit": "^1.4.0"
   }
 }
