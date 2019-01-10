@@ -5,20 +5,24 @@ const {SiteChecker} = require('broken-link-checker')
 
 const yargs = require('yargs')
   .option('filter-level', {type: Number, alias: 'L', default: 3})
-  .option('recursive', {type: Boolean, alias: 'r'})
-  .option('verbose', {type: Boolean, alias: 'v'})
+  .option('verbose', {type: Boolean, alias: 'v', default: false})
 
-const options = Object.assign({
-  excludedKeywords: [
-    'https://github.com/github/*'
-  ]
-}, yargs.argv)
+const options = Object.assign(
+  {
+    excludedKeywords: [
+      // exclude dash-feed:// URLs (in meta)
+      'dash-feed',
+      // exclude github org repos, which are (mostly) private
+      'https://github.com/github/*'
+    ]
+  },
+  yargs.argv
+)
 
 const args = options._
 
 const pages = []
 const seen = new Set()
-let page
 
 const VERBOSE = options.v === true
 const OK = ' ✓ '
@@ -33,12 +37,14 @@ if (URL) {
   process.exit(1)
 }
 
+let page = {url: URL, links: []}
+
 const checker = new SiteChecker(options, {
   page(error, url) {
     if (error) {
       log(red('ERR'), `${url} (${error.code})`)
     } else if (page) {
-      const {url, response, links} = page
+      const {url, response, links = []} = page
       const num = String(links.length).padEnd(TAG_LENGTH)
       let message = `${bold(num)} unique links`
       if (!VERBOSE) message = `${message} on ${yellow(url)}`
@@ -51,23 +57,23 @@ const checker = new SiteChecker(options, {
 
   html(tree, robots, response, url) {
     if (VERBOSE) log(yellow('get'), url)
-    page = {tree, robots, response, url, links: []}
+    page = {url, links: []}
   },
 
   junk(result) {
-    const url = result.url.resolved
-    if (seen.has(url)) {
+    const url = result.url.resolved || result.url.original
+    if (!url || seen.has(url)) {
       return
     } else if (VERBOSE) {
       log(' '.repeat(TAG_LENGTH), gray(`skip ${shorten(url)}`))
-    } else if (result.excluded) {
-      log(yellow(' ? '), gray('skip'), yellow(url))
+    } else if (result.excluded && url.indexOf(URL) !== 0) {
+      log(yellow('???'), gray(`skip ${url}`))
     }
     seen.add(url)
   },
 
   link(result) {
-    const url = result.url.resolved
+    const url = result.url.resolved || result.url.original
     if (VERBOSE && !seen.has(url)) log(' + ', gray('link'), shorten(url))
     if (!seen.has(url)) page.links.push(result)
     seen.add(url)
@@ -82,26 +88,29 @@ const checker = new SiteChecker(options, {
       if (!broken.length && !VERBOSE) {
         continue
       } else {
-        const num = broken.length
-          ? red(` ${broken.length}`.padEnd(TAG_LENGTH))
-          : green(' 0').padEnd(TAG_LENGTH)
-        log(bold(num), `broken links on ${bold(shorten(page.url))}`)
+        const num = broken.length ? red(` ${broken.length}`.padEnd(TAG_LENGTH)) : green(' 0').padEnd(TAG_LENGTH)
+        log(bold(num), `broken links on ${bold(page.url)}`)
       }
 
       for (const link of page.links) {
         if (!link.broken && !VERBOSE) continue
         const tag = link.broken ? red(NOT_OK) : green(OK)
         const reason = link.broken ? yellow(link.brokenReason) : ''
-        log(tag, shorten(link.url.resolved), reason)
+        const url = link.url.resolved || link.url.original
+        log(tag, shorten(url), reason)
       }
       log('')
     }
+
     if (brokenTotal) {
       log(red(String(brokenTotal).padEnd(TAG_LENGTH)), 'broken links!')
       process.exitCode = 1
     } else {
+      log('')
       log(green(OK), bold('0'.padEnd(TAG_LENGTH)), 'broken links; nice work!')
     }
+
+    log('')
   }
 })
 
@@ -115,5 +124,5 @@ function log(tag, ...args) {
 }
 
 function shorten(url) {
-  return url.indexOf(URL) === 0 ? (url.substr(URL.length) || '/') : url
+  return String(url).indexOf(URL) === 0 ? url.substr(URL.length) || '/' : url
 }
