@@ -56,7 +56,13 @@ const checker = new SiteChecker(options, {
 
   junk(result) {
     const url = result.url.resolved
-    if (VERBOSE && !seen.has(url)) log(' '.repeat(TAG_LENGTH), gray(`skip ${shorten(url)}`))
+    if (seen.has(url)) {
+      return
+    } else if (VERBOSE) {
+      log(' '.repeat(TAG_LENGTH), gray(`skip ${shorten(url)}`))
+    } else if (result.excluded) {
+      log(yellow(' ? '), gray('skip'), yellow(url))
+    }
     seen.add(url)
   },
 
