@@ -94,7 +94,7 @@ const checker = new SiteChecker(options, {
       log(red(String(brokenTotal).padEnd(TAG_LENGTH)), 'broken links!')
       process.exitCode = 1
     } else {
-      log(green(OK), bold('0'.padEnd(TAG_LENGTH)) 'broken links; nice work!')
+      log(green(OK), bold('0'.padEnd(TAG_LENGTH)), 'broken links; nice work!')
     }
   }
 })
