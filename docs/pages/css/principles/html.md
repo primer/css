@@ -44,11 +44,11 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 ```html
 <!-- Not so great -->
 <span class="avatar">
-  <img src="...">
+  <img src="https://github.com/github.png">
 </span>
 
 <!-- Better -->
-<img class="avatar" src="...">
+<img class="avatar" src="https://github.com/github.png">
 ```
 
 ## Forms
