@@ -14,7 +14,7 @@ Guidelines for contributing to GitHub's CSS.
 
 ### Components
 
-[Components](./codestyle/principles#components) are frequently used visual patterns we've abstracted into a set of convenient styles, that would be otherwise difficult to achieve with utilities and layout objects.
+[Components](/css/components) are frequently used visual patterns we've abstracted into a set of convenient styles, that would be otherwise difficult to achieve with utilities and layout objects.
 
 Making a decision on whether new components should be added is done on a case by case basis. It's not always easy to make that decision but here are some questions you should ask yourself before moving forward with a pull request. The design systems team will help you make this decision.
 
@@ -31,13 +31,13 @@ Making a decision on whether new components should be added is done on a case by
 ### Objects and utilities
 
 Many of the same questions can be applied to objects and utilities, however the purpose of these styles is different:
-* [Objects](./codestyle/principles#objects) aren't concerned with thematic styles. They are for common display and positioning styles we find in page layouts and common content types.
-* [Utilities](./codestyle/principles#utilities) do one thing well and one thing only. These styles are immutable and therefore often use the `!important` tag. For this reason we aim not to change the properties of utilities very often. They often form the building blocks of our pages and when we introduce new ones we need to do so with care as we'll likely need to live with these styles for a long time. When assessing whether there is a need to add a new utility, consider these additional questions:
- - how does this new utility fit within our existing set of utilities? If it is an addition to an existing set then it should follow the same naming convention.
- - is it for a property that would likely need to be changed at different breakpoints? If so it may need responsive options.
- - if this style is part of a family of properties, do we need to consider adding the full set? Reasons for adding a full set could be that the other property values are often used, or that there would be a need to switch the property on and off (such as display or visibility).
- - does introducing this new utility cause any clashes or potential confusion with the use of existing utilities? If so, what steps can we take to avoid those issues.
- - does the utility have a connection with a set of variables? If so do the corresponding variables need to be updated?
+* [Objects](/css/objects) aren't concerned with thematic styles. They are for common display and positioning styles we find in page layouts and common content types.
+* [Utilities](/css/utilities) do one thing well and one thing only. These styles are immutable and therefore often use the `!important` tag. For this reason we aim not to change the properties of utilities very often. They often form the building blocks of our pages and when we introduce new ones we need to do so with care as we'll likely need to live with these styles for a long time. When assessing whether there is a need to add a new utility, consider these additional questions:
+    - how does this new utility fit within our existing set of utilities? If it is an addition to an existing set then it should follow the same naming convention.
+    - is it for a property that would likely need to be changed at different breakpoints? If so it may need responsive options.
+    - if this style is part of a family of properties, do we need to consider adding the full set? Reasons for adding a full set could be that the other property values are often used, or that there would be a need to switch the property on and off (such as display or visibility).
+    - does introducing this new utility cause any clashes or potential confusion with the use of existing utilities? If so, what steps can we take to avoid those issues.
+    - does the utility have a connection with a set of variables? If so do the corresponding variables need to be updated?
 
 ## Step-by-step instructions for adding new styles
 
