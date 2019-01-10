@@ -1,0 +1,112 @@
+#!/usr/bin/env node
+const spinner = require('char-spinner')
+const {gray, green, yellow, red, bold} = require('colorette')
+const {SiteChecker} = require('broken-link-checker')
+const yargs = require('yargs')
+  .option('filter-level', {type: Number, alias: 'L', default: 3})
+  .option('recursive', {type: Boolean, alias: 'r'})
+  .option('verbose', {type: Boolean, alias: 'v'})
+
+const options = Object.assign({
+  excludedKeywords: [
+    'https://github.com/github/*'
+  ]
+}, yargs.argv)
+
+const args = options._
+
+const pages = []
+const seen = new Set()
+let page
+
+const VERBOSE = options.v === true
+const OK = ' ✓ '
+const NOT_OK = ' ✘ '
+const TAG_LENGTH = 3
+
+const URL = args[0]
+if (URL) {
+  log(green('go!'), bold(URL))
+} else {
+  log('err', 'you must provide a URL')
+  process.exit(1)
+}
+
+const checker = new SiteChecker(options, {
+  page(error, url) {
+    if (error) {
+      log(red('ERR'), `${url} (${error.code})`)
+    } else if (page) {
+      const {url, response, links} = page
+      const num = String(links.length).padEnd(TAG_LENGTH)
+      let message = `${bold(num)} unique links`
+      if (!VERBOSE) message = `${message} on ${yellow(url)}`
+      log(OK, message)
+      if (links.length) {
+        pages.push(page)
+      }
+    }
+  },
+
+  html(tree, robots, response, url) {
+    if (VERBOSE) log(yellow('get'), url)
+    page = {tree, robots, response, url, links: []}
+  },
+
+  junk(result) {
+    const url = result.url.resolved
+    if (VERBOSE && !seen.has(url)) log(' '.repeat(TAG_LENGTH), gray(`skip ${shorten(url)}`))
+    seen.add(url)
+  },
+
+  link(result) {
+    const url = result.url.resolved
+    if (VERBOSE && !seen.has(url)) log(' + ', gray('link'), shorten(url))
+    if (!seen.has(url)) page.links.push(result)
+    seen.add(url)
+  },
+
+  end() {
+    let brokenTotal = 0
+    for (const page of pages) {
+      const broken = page.links.filter(link => link.broken)
+      brokenTotal += broken.length
+
+      if (!broken.length && !VERBOSE) {
+        continue
+      } else {
+        const num = broken.length
+          ? red(` ${broken.length}`.padEnd(TAG_LENGTH))
+          : green(' 0').padEnd(TAG_LENGTH)
+        log(bold(num), `broken links on ${bold(shorten(page.url))}`)
+      }
+
+      for (const link of page.links) {
+        if (!link.broken && !VERBOSE) continue
+        const tag = link.broken ? red(NOT_OK) : green(OK)
+        const reason = link.broken ? yellow(link.brokenReason) : ''
+        log(tag, shorten(link.url.resolved), reason)
+      }
+      log('')
+    }
+    if (brokenTotal) {
+      log(red(String(brokenTotal).padEnd(TAG_LENGTH)), 'broken links!')
+      process.exitCode = 1
+    } else {
+      log(green(OK), bold('0'.padEnd(TAG_LENGTH)) 'broken links; nice work!')
+    }
+  }
+})
+
+spinner()
+checker.enqueue(URL)
+checker.resume()
+
+function log(tag, ...args) {
+  spinner.clear()
+  console.log(tag ? gray(`[${tag}]`) : '', ...args)
+}
+
+function shorten(url) {
+  return url.indexOf(URL) === 0 ? (url.substr(URL.length) || '/') : url
+}
