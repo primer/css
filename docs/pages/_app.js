@@ -48,11 +48,11 @@ export default class MyApp extends App {
     const pathname = this.props.router.pathname.replace(/\/$/, '')
     const {Component, page} = this.props
 
-    const node = rootPage.first(node => node.path === pathname)
-    const {meta = {}} = node || {}
+    const node = rootPage.first(node => node.path === pathname) || {}
+    const {file, meta = {}} = node || {}
     const components = getComponents(node)
 
-    const Hero = node.file ? requirePage(node.file).Hero : null
+    const Hero = file ? requirePage(file).Hero : null
 
     return (
       <BaseStyles fontSize={2} style={{fontFamily: theme.fonts.normal}}>
