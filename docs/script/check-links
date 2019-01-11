@@ -94,10 +94,10 @@ const checker = new SiteChecker(options, {
   },
 
   end() {
-    let brokenTotal = 0
+    const allBroken = []
     for (const page of pages) {
       const broken = page.links.filter(link => link.broken)
-      brokenTotal += broken.length
+      allBroken.push(...broken)
 
       if (!broken.length && !VERBOSE) {
         continue
@@ -109,9 +109,11 @@ const checker = new SiteChecker(options, {
       for (const link of page.links) {
         if (!link.broken && !VERBOSE) continue
         const tag = link.broken ? red(NOT_OK) : green(OK)
-        const reason = link.broken ? yellow(link.brokenReason) : ''
+        const reason = link.broken ? yellow(link.brokenReason.replace(/HTTP_/, '')) : ''
         const url = link.url.resolved || link.url.original
         log(tag, shorten(url), reason)
+        link.source = url
+        link.reason = reason
       }
       log('')
     }
@@ -120,13 +122,17 @@ const checker = new SiteChecker(options, {
       log(yellow(OK), `Excepted ${excepted.size} links:`)
       const exceptedURLs = Array.from(excepted.keys()).sort()
       for (const url of exceptedURLs) {
-        log(yellow(OK), `${gray(url)} ${yellow(excepted.get(url))}`)
+        log(yellow(OK), `${yellow(excepted.get(url))} ${gray(url)}`)
       }
       log('')
     }
 
-    if (brokenTotal) {
-      log(red(NOT_OK), `${red(brokenTotal)} broken links`)
+    if (allBroken.length) {
+      log(red(NOT_OK), `${red(allBroken.length)} broken links:`)
+      for (const link of allBroken) {
+        log(red(NOT_OK), shorten(link.url.original), link.reason, gray('from'), shorten(link.source))
+      }
+      log('')
       process.exitCode = 1
     } else {
       log(green(OK), bold('0'), 'broken links')
@@ -146,5 +152,5 @@ function log(tag, ...args) {
 }
 
 function shorten(url) {
-  return String(url).indexOf(URL) === 0 ? gray(url) + (url.substr(URL.length) || '/') : url
+  return String(url).indexOf(URL) === 0 ? gray(URL) + (url.substr(URL.length) || '/') : url
 }
