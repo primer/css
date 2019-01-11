@@ -10,7 +10,6 @@ else
         version=$(jq -r .version modules/primer/package.json)
     fi
 
-    cp modules/primer/build/build.css docs/static/primer.css
     cd docs
     npm run sync
 
