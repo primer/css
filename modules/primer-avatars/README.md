@@ -144,7 +144,7 @@ Use `AvatarStack--right` to right-align the avatar stack. Remember to switch the
 
 ```html
 <a class="CircleBadge CircleBadge--small float-left mr-2" href="#small" title="Travis CI">
-  <img src="<%= image_path "modules/site/travis-logo.png" %>"  class="CircleBadge-icon" alt="">
+  <img src="https://github.com/travis-ci.png"  class="CircleBadge-icon" alt="">
 </a>
 <a class="CircleBadge CircleBadge--small bg-yellow" title="Zap this!" href="#small">
   <%= octicon "zap",  :class => "CircleBadge-icon text-white" %>
@@ -155,7 +155,7 @@ Use `AvatarStack--right` to right-align the avatar stack. Remember to switch the
 
 ```html
 <div class="CircleBadge CircleBadge--medium bg-gray-dark">
-    <img src="<%= image_path "modules/site/travis-logo.png" %>"  alt="Travis CI" class="CircleBadge-icon">
+    <img src="https://github.com/travis-ci.png"  alt="Travis CI" class="CircleBadge-icon">
 </div>
 ```
 
@@ -163,7 +163,7 @@ Use `AvatarStack--right` to right-align the avatar stack. Remember to switch the
 
 ```html
 <div class="CircleBadge CircleBadge--large">
-  <img src="<%= image_path "modules/site/travis-logo.png" %>"  alt="Travis CI" class="CircleBadge-icon">
+  <img src="https://github.com/travis-ci.png"  alt="Travis CI" class="CircleBadge-icon">
 </div>
 ```
 
@@ -179,11 +179,11 @@ For specific cases where two badges or more need to be shown as related or conne
     </li>
 
     <li class="CircleBadge CircleBadge--small" aria-label="Slack">
-        <img src="<%= image_path "modules/site/logos/slack-logo.png" %>"  alt="" class="CircleBadge-icon">
+        <img src="https://github.com/slackhq.png"  alt="" class="CircleBadge-icon">
     </li>
 
     <li class="CircleBadge CircleBadge--small" aria-label="Travis CI">
-        <img src="<%= image_path "modules/site/travis-logo.png" %>"  alt="" class="CircleBadge-icon">
+        <img src="https://github.com/travis-ci.png"  alt="" class="CircleBadge-icon">
     </li>
   </ul>
 </div>
