@@ -142,7 +142,7 @@ Use `AvatarStack--right` to right-align the avatar stack. Remember to switch the
 
 ### Small
 
-```html
+```erb
 <a class="CircleBadge CircleBadge--small float-left mr-2" href="#small" title="Travis CI">
   <img src="https://github.com/travis-ci.png"  class="CircleBadge-icon" alt="">
 </a>
@@ -171,7 +171,7 @@ Use `AvatarStack--right` to right-align the avatar stack. Remember to switch the
 
 For specific cases where two badges or more need to be shown as related or connected (such as integrations or specific product workflows), a `DashedConnection` class was created. Use utility classes to ensure badges are spaced correctly.
 
-```html
+```erb
 <div class="DashedConnection">
   <ul class="d-flex list-style-none flex-justify-between" aria-label="A sample GitHub workflow">
     <li class="CircleBadge CircleBadge--small" aria-label="GitHub">

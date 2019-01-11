@@ -16,7 +16,7 @@ Box overlays come in three widths. The default `Box--overlay` is 440px wide, `Bo
 
 **Note:** `position: fixed` has been disabled in this example
 
-```html
+```erb
 <details class="details-reset details-overlay details-overlay-dark">
   <summary class="btn" aria-haspopup="dialog">Open dialog</summary>
   <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast">
@@ -56,7 +56,7 @@ Box overlays come in three widths. The default `Box--overlay` is 440px wide, `Bo
 
 In github.com there is a shared dialog partial. You will only have to pass in the modal content:
 
-```
+```erb
 <%= render layout: "shared/details_dialog", locals: {
   button_text: "Delete account",
   title: "Are you sure you want to delete this account?",
