@@ -55,5 +55,6 @@ else
         echo "    script/check-links -rv http://localhost:3000"
         echo
         echo "locally for more info."
+        exit 1
     }
 fi
