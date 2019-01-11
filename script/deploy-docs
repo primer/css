@@ -45,7 +45,7 @@ else
     echo
     echo "Running script/check-links in $(pwd)..."
     echo
-    script/check-links "https://$alias/css" || {
+    script/check-links -v -m=5 "https://$alias/css" || {
         echo
         echo "⚠️  Link check failed! ⚠️"
         echo
