@@ -486,7 +486,7 @@ Add avatars to a select menu to help indicate when a menu list item represents a
             <%= avatar_for(current_user, 20, :alt => "") %>
           </span>
           <span class="select-menu-item-text js-select-button-text">
-            <%= current_user.to_s %>
+            probot
           </span>
         </a>
         <a href="#url" class="select-menu-item js-navigation-item">
@@ -495,7 +495,7 @@ Add avatars to a select menu to help indicate when a menu list item represents a
             <%= avatar_for(current_user, 20, :alt => "") %>
           </span>
           <span class="select-menu-item-text js-select-button-text">
-            <%= current_user.to_s %>
+            probot
           </span>
         </a>
         <a href="#url" class="select-menu-item js-navigation-item">
@@ -504,7 +504,7 @@ Add avatars to a select menu to help indicate when a menu list item represents a
             <%= avatar_for(current_user, 20, :alt => "") %>
           </span>
           <span class="select-menu-item-text js-select-button-text">
-            <%= current_user.to_s %>
+            probot
           </span>
         </a>
       </div>
@@ -793,7 +793,7 @@ Add an avatar to the button, like we do in our context switcher on the logged in
     <div class="select-menu-button-gravatar js-select-button-gravatar">
       <%= avatar_for(current_user, 20, :"aria-label" => "") %>
     </div>
-    <span class="js-select-button css-truncate css-truncate-target"><%= current_user.to_s %></span>
+    <span class="js-select-button css-truncate css-truncate-target">probot</span>
   </button>
   <div class="select-menu-modal-holder">
     <div class="select-menu-modal js-menu-content">
@@ -808,7 +808,7 @@ Add an avatar to the button, like we do in our context switcher on the logged in
             <%= avatar_for(current_user, 20, :"aria-label" => "") %>
           </span>
           <span class="select-menu-item-text js-select-button-text">
-            <%= current_user.to_s %>
+            probot
           </span>
         </a>
         <a href="#url" class="select-menu-item js-navigation-item">
@@ -817,7 +817,7 @@ Add an avatar to the button, like we do in our context switcher on the logged in
             <%= avatar_for(current_user, 20, :"aria-label" => "") %>
           </span>
           <span class="select-menu-item-text js-select-button-text">
-            <%= current_user.to_s %>
+            probot
           </span>
         </a>
         <a href="#url" class="select-menu-item js-navigation-item">
@@ -826,7 +826,7 @@ Add an avatar to the button, like we do in our context switcher on the logged in
             <%= avatar_for(current_user, 20, :"aria-label" => "") %>
           </span>
           <span class="select-menu-item-text js-select-button-text">
-            <%= current_user.to_s %>
+            probot
           </span>
         </a>
       </div>
