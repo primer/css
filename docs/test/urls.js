@@ -115,7 +115,7 @@ function buildStyleguide() {
       if (exists) {
         return execa('script/bootstrap', {cwd}).then(() => execa('npm', ['run', 'build-site'], {cwd}))
       } else {
-        throw new ERror(`The styleguide root (${cwd}) doesn't exist`)
+        throw new Error(`The styleguide root (${cwd}) doesn't exist`)
       }
     })
   }
