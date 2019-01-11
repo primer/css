@@ -51,7 +51,7 @@ Medium box shadows are more diffused and slightly larger than small box shadows.
 
 Medium box shadows are typically used on editorialized content that needs to appear elevated. Most of the time, the elements using this level of shadow will be clickable.
 
-```html
+```erb
 <div class="col-6">
   <a class="d-block box-shadow-medium px-3 pt-4 pb-6 position-relative rounded-1 overflow-hidden no-underline" href="#">
     <div class="bg-blue position-absolute top-0 left-0 py-1 width-full"></div>

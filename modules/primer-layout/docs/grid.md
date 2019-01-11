@@ -88,7 +88,7 @@ Use `.mx-auto` to center columns within a container.
 ## Column widths
 Column widths can be used with any other block or inline-block elements to add percentage-based widths.
 
-```html title="Column widths"
+```erb title="Column widths"
 <div>
   <div class="col-4 float-right p-2 border text-red">
     <%= octicon "heart" %> Don't go bacon my heart.

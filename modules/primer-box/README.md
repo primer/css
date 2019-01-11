@@ -359,7 +359,7 @@ Use `flash-full` for flash alert inside a box to remove the rounded corners. Pla
 
 Flash alerts come in three different colors and can be used with icons and buttons, see the [alert documentation](./alerts) for more information.
 
-```html
+```erb
 <div class="Box">
   <div class="Box-header">
     Box header
@@ -386,36 +386,36 @@ Flash alerts come in three different colors and can be used with icons and butto
 ## Boxes with icons
 Use `Box-btn-octicon` with `btn-octicon` when you want the icon to maintain the same padding as other box elements. This selector offsets margin to ensure it lines up on the left and right sides of the box so you may need to add padding neighboring elements.
 
-```html
-  <div class="Box">
-    <div class="Box-body">
-      <span class="pr-2">Box body</span>
-      <button href="#" class="Box-btn-octicon btn-octicon"><%= octicon("pencil") %></button>
-    </div>
+```erb
+<div class="Box">
+  <div class="Box-body">
+    <span class="pr-2">Box body</span>
+    <button href="#" class="Box-btn-octicon btn-octicon"><%= octicon "pencil" %></button>
   </div>
+</div>
 ```
 
 It's common to want to float icons to the far left or right and stop the `Box-title`from wrapping underneath. To do this you'll need to create a media object with utilities. Add `clearfix` to the surrounding div (this could be the header, body, or rows), add `overflow-hidden` to the title (or other text element), and float the icons as desired.
 
-```html
-  <div class="Box">
-    <div class="Box-header clearfix">
-      <button href="#" class="Box-btn-octicon btn-octicon float-right"><%= octicon("x") %></button>
-      <h3 class="Box-title overflow-hidden pr-3">A very long title that wraps onto multiple lines without overlapping or wrapping underneath the icon to it's right</h3>
-    </div>
-    <div class="Box-body">
-      Box body
-    </div>
+```erb
+<div class="Box">
+  <div class="Box-header clearfix">
+    <button href="#" class="Box-btn-octicon btn-octicon float-right"><%= octicon "x" %></button>
+    <h3 class="Box-title overflow-hidden pr-3">A very long title that wraps onto multiple lines without overlapping or wrapping underneath the icon to it's right</h3>
   </div>
+  <div class="Box-body">
+    Box body
+  </div>
+</div>
 ```
 
-```html
-  <div class="Box">
-    <div class="Box-row clearfix">
-      <button href="#" class="Box-btn-octicon btn-octicon float-left"><%= octicon "check" %></button>
-      <p class="overflow-hidden pl-3">A very long paragraph that wraps onto multiple lines without overlapping or wrapping underneath the icon to it's left</p>
-    </div>
+```erb
+<div class="Box">
+  <div class="Box-row clearfix">
+    <button href="#" class="Box-btn-octicon btn-octicon float-left"><%= octicon "check" %></button>
+    <p class="overflow-hidden pl-3">A very long paragraph that wraps onto multiple lines without overlapping or wrapping underneath the icon to it's left</p>
   </div>
+</div>
 ```
 
 ## Box headers with counters

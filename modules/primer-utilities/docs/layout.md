@@ -189,7 +189,7 @@ Use `.height-fit` to set max-height 100%.
 
 Use `.height-full` to set height to 100%.
 
-```html
+```erb
 <div class="d-table border border-gray">
   <div class="d-table-cell height-full v-align-middle pl-3">
     <%= octicon "three-bars" %>
@@ -206,11 +206,12 @@ Position utilities can be used to alter the default document flow. **Be careful 
 Use `.position-relative` to create a new stacking context.
 
 _Note how the other elements are displayed as if "Two" were in its normal position and taking up space._
+
 ```html
 <div class="d-inline-block float-left bg-blue text-white m-3" style="width:100px; height:100px;">
   One
 </div>
-<div class="d-inline-block float-left position-relative bg-blue text-white m-3" style="width:100px; height:100px;  top:12px; left:12px;">
+<div class="d-inline-block float-left position-relative bg-blue text-white m-3" style="width:100px; height:100px; top:12px; left:12px;">
   Two
 </div>
 <div class="d-inline-block float-left bg-blue text-white m-3" style="width:100px; height:100px;">

@@ -644,7 +644,7 @@ You can use flex utilities to make a simple media object, like this:
 
 Here is an example of a media object that is **vertically centered on large screens**, but converts to a stacked column layout on small screens.
 
-```html
+```erb
 <div class="border p-3 d-flex flex-column flex-md-row flex-md-items-center">
   <div class="pr-0 pr-md-3 mb-3 mb-md-0 d-flex flex-justify-center flex-md-justify-start">
     <img style="max-width:100px; max-height:100px;" src="https://avatars1.githubusercontent.com/u/9919?v=4&s=200" />

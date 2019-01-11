@@ -315,7 +315,7 @@ Content that is hidden by default should only be done so if it is non-essential 
 
 Attached an input and button to one another.
 
-```html
+```erb
 <form>
   <div class="input-group">
     <input class="form-control" type="text" placeholder="Username" aria-label="Username">

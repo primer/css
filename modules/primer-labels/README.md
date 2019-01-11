@@ -112,7 +112,7 @@ Use state labels to inform users of an items status. States are large labels wit
 ### State themes
 States come in a few variations that apply different colors. Use the state that best communicates the status or function.
 
-```html title="State themes"
+```erb title="State themes"
 <span title="Status: open" class="State State--green"><%= octicon "git-pull-request" %> Open</span>
 <span title="Status: closed" class="State State--red"><%= octicon "git-pull-request" %> Closed</span>
 <span title="Status: merged" class="State State--purple"><%= octicon "git-merge" %> Merged</span>
@@ -123,7 +123,7 @@ States come in a few variations that apply different colors. Use the state that 
 ### Small states
 Use `State--small` for a state label with reduced padding a smaller font size. This is useful in denser areas of content.
 
-```html title="Small states"
+```erb title="Small states"
 <span title="Status: open" class="State State--green State--small"><%= octicon "issue-opened" %> Open</span>
 <span title="Status: closed" class="State State--red State--small"><%= octicon "issue-closed" %> Closed</span>
 ```
