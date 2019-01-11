@@ -3,7 +3,7 @@ import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
 import Head from 'next/head'
 import {BaseStyles, BorderBox, Box, Flex, theme} from '@primer/components'
-import {injectGlobal} from 'emotion'
+import {createGlobalStyle} from 'styled-components'
 import {Header, PackageHeader, SideNav} from '../src/components'
 import getComponents from '../src/markdown'
 import {config, requirePage, rootPage} from '../src/utils'
@@ -13,7 +13,7 @@ import 'primer/index.scss'
 import 'prism-github'
 
 // XXX undo .markdown-body .rule (:facepalm:)
-injectGlobal`
+const GlobalStyles = createGlobalStyle`
   .markdown-body .rule.token {
     height: auto;
     margin: 0;
@@ -56,6 +56,7 @@ export default class MyApp extends App {
 
     return (
       <BaseStyles fontSize={2} style={{fontFamily: theme.fonts.normal}}>
+        <GlobalStyles />
         <Container>
           <Head>
             <title>Primer CSS{meta.title ? ` / ${meta.title}` : null}</title>

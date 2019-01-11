@@ -1,7 +1,6 @@
 import React from 'react'
 import Document, {Main, NextScript} from 'next/document'
 import {ServerStyleSheet} from 'styled-components'
-import {extractCritical} from 'emotion-server'
 import {config, getAssetPath} from '../src/utils'
 
 export default class MyDocument extends Document {
@@ -10,12 +9,7 @@ export default class MyDocument extends Document {
     const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
     return {
       ...page,
-      styleTags: (
-        <>
-          <style id="emotion-static">{extractCritical(page.html).css}</style>
-          {sheet.getStyleElement()}
-        </>
-      )
+      styleTags: sheet.getStyleElement()
     }
   }
 
