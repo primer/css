@@ -7,24 +7,15 @@ const yargs = require('yargs')
   .option('filter-level', {type: Number, alias: 'L', default: 3})
   .option('verbose', {type: Boolean, alias: 'v', default: false})
 
-const options = Object.assign(
-  {
-    excludedKeywords: [
-      // exclude dash-feed:// URLs (in meta)
-      'dash-feed',
-      // exclude github org repos, which are (mostly) private
-      'https://github.com/github/*'
-    ]
-  },
-  yargs.argv
-)
+const options = yargs.argv
 
 const args = options._
+const VERBOSE = options.verbose
 
 const pages = []
 const seen = new Set()
+const excepted = new Map()
 
-const VERBOSE = options.v === true
 const OK = ' ✓ '
 const NOT_OK = ' ✘ '
 const TAG_LENGTH = 3
@@ -39,6 +30,19 @@ if (URL) {
 
 let page = {url: URL, links: []}
 
+const exceptions = {
+  'Dash feed URL': url => url.startsWith('dash-feed://'),
+  'GitHub private repo': url =>
+    [
+      // this is a list of known GitHub private repos
+      'https://github.com/github/accessibility',
+      'https://github.com/github/design',
+      'https://github.com/github/design-systems',
+      'https://github.com/github/github',
+      'https://github.com/github/sentinel'
+    ].some(repo => url.startsWith(repo))
+}
+
 const checker = new SiteChecker(options, {
   page(error, url) {
     if (error) {
@@ -46,7 +50,7 @@ const checker = new SiteChecker(options, {
     } else if (page) {
       const {url, response, links = []} = page
       const num = String(links.length).padEnd(TAG_LENGTH)
-      let message = `${bold(num)} unique links`
+      let message = `${bold(num)}${pages.length ? ' unique' : ''} links`
       if (!VERBOSE) message = `${message} on ${yellow(url)}`
       log(OK, message)
       if (links.length) {
@@ -67,7 +71,7 @@ const checker = new SiteChecker(options, {
     } else if (VERBOSE) {
       log(' '.repeat(TAG_LENGTH), gray(`skip ${shorten(url)}`))
     } else if (result.excluded && url.indexOf(URL) !== 0) {
-      log(yellow('???'), gray(`skip ${url}`))
+      log(yellow('---'), gray(`excluded: ${url}`))
     }
     seen.add(url)
   },
@@ -75,6 +79,16 @@ const checker = new SiteChecker(options, {
   link(result) {
     const url = result.url.resolved || result.url.original
     if (VERBOSE && !seen.has(url)) log(' + ', gray('link'), shorten(url))
+
+    for (const [reason, test] of Object.entries(exceptions)) {
+      if (test(url)) {
+        log(yellow('---'), gray(`skip ${url}`), yellow(reason))
+        excepted.set(url, reason)
+        seen.add(url)
+        return
+      }
+    }
+
     if (!seen.has(url)) page.links.push(result)
     seen.add(url)
   },
@@ -102,12 +116,20 @@ const checker = new SiteChecker(options, {
       log('')
     }
 
+    if (excepted.size) {
+      log(yellow(OK), `Excepted ${excepted.size} links:`)
+      const exceptedURLs = Array.from(excepted.keys()).sort()
+      for (const url of exceptedURLs) {
+        log(yellow(OK), `${gray(url)} ${yellow(excepted.get(url))}`)
+      }
+      log('')
+    }
+
     if (brokenTotal) {
-      log(red(String(brokenTotal).padEnd(TAG_LENGTH)), 'broken links!')
+      log(red(NOT_OK), `${red(brokenTotal)} broken links`)
       process.exitCode = 1
     } else {
-      log('')
-      log(green(OK), bold('0'.padEnd(TAG_LENGTH)), 'broken links; nice work!')
+      log(green(OK), bold('0'), 'broken links')
     }
 
     log('')
@@ -124,5 +146,5 @@ function log(tag, ...args) {
 }
 
 function shorten(url) {
-  return String(url).indexOf(URL) === 0 ? url.substr(URL.length) || '/' : url
+  return String(url).indexOf(URL) === 0 ? gray(url) + (url.substr(URL.length) || '/') : url
 }
