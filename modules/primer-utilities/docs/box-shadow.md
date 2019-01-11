@@ -25,7 +25,7 @@ These types of shadows are typically applied to elements with borders, such as t
 <div class="col-5">
   <div class="Box box-shadow">
     <div class="Box-row">
-      <h3 class="mb-0">Organization</h3>
+      <h3 class="m-0">Organization</h3>
     </div>
     <div class="Box-row">
       <p class="mb-0 alt-text-small text-gray">
