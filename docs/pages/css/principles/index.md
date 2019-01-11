@@ -184,7 +184,7 @@ The most common use case is for applying widths and heights to images. Other use
 
 ```html
 <!-- Image width and height -->
-<img width="20" height="20" src="https://avatars1.githubusercontent.com/u/9919?v=4&s=40">
+<img width="20" height="20" src="https://github.com/github.png">
 
 <!-- Custom width for a div that is not a repeated pattern -->
 <div class="d-table-cell py-3 pr-3" style="width: 72px">

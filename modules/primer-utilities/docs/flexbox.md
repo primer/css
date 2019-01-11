@@ -647,7 +647,7 @@ Here is an example of a media object that is **vertically centered on large scre
 ```erb
 <div class="border p-3 d-flex flex-column flex-md-row flex-md-items-center">
   <div class="pr-0 pr-md-3 mb-3 mb-md-0 d-flex flex-justify-center flex-md-justify-start">
-    <img style="max-width:100px; max-height:100px;" src="https://avatars1.githubusercontent.com/u/9919?v=4&s=200" />
+    <img style="max-width:100px; max-height:100px;" src="https://github.com/github.png" />
   </div>
   <div class="d-flex text-center text-md-left">
     <p><b>Body</b> Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison.</p>
