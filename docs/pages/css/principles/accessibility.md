@@ -24,9 +24,9 @@ Making our products accessible benefits everyone, not just people with disabilit
 
 ### Semantic markup
 
-Always use semantic HTML elements, like `button`, `ul`, `nav`. Most modern browsers implement the accessibility features outlined in the specs for these elements; without them, elements will need additional [ARIA attributes and roles](http://www.w3.org/TR/wai-aria/) to be recognized by assistive technologies.
+Always use semantic HTML elements, like `button`, `ul`, `nav`. Most modern browsers implement the accessibility features outlined in the specs for these elements; without them, elements will need additional [ARIA attributes and roles](https://www.w3.org/WAI/PF/aria) to be recognized by assistive technologies.
 
-Elements like `h1`-`h6`, `nav`, `footer`, `header` have [meaningful roles](https://www.w3.org/TR/wai-aria/roles#role_definitions_header) assigned, so use them, and use them carefully. This can help assistive technologies read the page better and help users find information quicker.
+Elements like `h1`-`h6`, `nav`, `footer`, `header` have [meaningful roles](https://www.w3.org/WAI/PF/aria/roles) assigned, so use them, and use them carefully. This can help assistive technologies read the page better and help users find information quicker.
 
 Only use a `div` or a `span` to markup up content when there isn't another HTML element that would semantically be more appropriate, or when an element is needed exclusively for applying CSS styles or JS behaviors.
 

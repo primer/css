@@ -40,7 +40,7 @@ As a rule of thumb, avoid unnecessary nesting in SCSS. At most, aim for three le
 * ID selectors: no
 * Leading zero: yes
 * Naming format: lowercase-with-hyphens
-* Property order: see [HTML property order](../HTML/)
+* Property order: see [HTML property order](./html)
 * Selector depth: 3
 * Single line properties: yes
 

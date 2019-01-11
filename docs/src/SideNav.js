@@ -16,10 +16,13 @@ export default function SideNav(props) {
             <Section path="/css/tools" />
             <Section path="/css/whats-new" />
             <RouteMatch path="/css">
-              <Section path="/css/support" />
-              <Section path="/css/utilities" />
-              <Section path="/css/objects" />
-              <Section path="/css/components" />
+              <Section>
+                <SectionLink href="status-key" />
+              </Section>
+              <Section path="support" />
+              <Section path="utilities" />
+              <Section path="objects" />
+              <Section path="components" />
             </RouteMatch>
           </Router>
         </Flex>
@@ -43,15 +46,8 @@ export default function SideNav(props) {
  * `path`.
  */
 const Section = ({path, children}) => (
-  <BorderBox p={4} border={0} borderBottom={1} borderRadius={0} width="100%">
-    {children ? (
-      React.Children.map(children, child => {
-        const href = join(path, child.props.href || '')
-        return React.cloneElement(child, {href})
-      })
-    ) : (
-      <NavList path={path} />
-    )}
+  <BorderBox p={5} border={0} borderBottom={1} borderRadius={0} width="100%">
+    {children && path ? React.Children.map(children, child => addPath(child, path)) : <NavList path={path} />}
   </BorderBox>
 )
 
@@ -65,7 +61,7 @@ function NavList({path}) {
   const children = node ? node.children.sort(nodeSort) : []
   return (
     <>
-      <SectionLink href={path} />
+      <SectionLink href={path} mb={3} />
       {children.map(child => (
         <NavLink href={child.path} key={child.path} />
       ))}
@@ -78,13 +74,12 @@ function NavList({path}) {
  * matches the current path, wrapped in a <Box> for whitespace.
  */
 const SectionLink = withRouter(({href, router, ...rest}) => (
-  <Box mb={2}>
+  <Box {...rest}>
     <NodeLink
       href={href}
       color="gray.9"
       fontSize={2}
       fontWeight={router.pathname.startsWith(href) ? 'bold' : null}
-      {...rest}
     />
   </Box>
 ))
@@ -95,7 +90,7 @@ const SectionLink = withRouter(({href, router, ...rest}) => (
  */
 const NavLink = withRouter(({href, router, ...rest}) => {
   return (
-    <Box mb={2}>
+    <Box mt={2}>
       <NodeLink href={href} color={router.pathname === href ? 'black' : undefined} fontSize={1} {...rest} />
     </Box>
   )
@@ -132,8 +127,8 @@ const Router = withRouter(({router, children}) => {
  * </Router>
  * ```
  */
-function RouteMatch({children}) {
-  return children
+function RouteMatch({path, children}) {
+  return path ? React.Children.map(children, child => addPath(child, path)) : children
 }
 
 function sortCompare(a, b, get) {
@@ -144,4 +139,21 @@ function sortCompare(a, b, get) {
 
 function nodeSort(a, b) {
   return sortCompare(a, b, node => node.meta.sort_title || node.meta.title)
+}
+
+function addPath(el, path) {
+  // if there's no path, just return the element
+  if (!path) return el
+
+  // if this is a link it'll have an "href"; otherwise, add "path"
+  const prop = el.props.href ? 'href' : 'path'
+  const value = el.props[prop]
+  const props = {}
+  // if there's a value and it's not absolute, prefix it with the path
+  if (value && !value.match(/^(\/|https?:)/)) {
+    props[prop] = join(path, value)
+  } else {
+    props[prop] = path
+  }
+  return React.cloneElement(el, props)
 }

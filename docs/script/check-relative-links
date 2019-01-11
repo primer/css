@@ -1,0 +1,65 @@
+#!/usr/bin/env node
+const globby = require('globby')
+const remark = require('remark-parse')
+const stringify = require('remark-stringify')
+const stringifyPosition = require('unist-util-stringify-position')
+const unified = require('unified')
+const {green, yellow, red} = require('colorette')
+const {join} = require('path')
+const {readFile} = require('fs-extra')
+const {selectAll} = require('unist-util-select')
+
+const processor = unified()
+  .use(remark)
+  .use(stringify)
+
+const checks = {
+  'relative (.)': ({href}) => href.startsWith('./'),
+  'relative (..)': ({href}) => href.startsWith('../'),
+  'trailing slash': ({href}) => stripFragment(href).endsWith('/')
+}
+
+const dir = join(__dirname, '../pages/css')
+globby(join(dir, '**/*.md'))
+  .then(docs => Promise.all(docs.map(getLinks)))
+  .then(docs => {
+    const links = docs
+      .reduce((list, doc) => {
+        const path = doc.path.substr(dir.length + 1)
+        return list.concat(doc.links.map(link => Object.assign({path}, link)))
+      }, [])
+      // exclude anchor links
+      .filter(({href}) => href.charAt(0) !== '#')
+      // exclude fully-qualified URLs
+      .filter(({href}) => !href.match(/^https?:/))
+
+    for (const checkName of Object.keys(checks)) {
+      const matches = links.filter(checks[checkName])
+      if (matches.length) {
+        console.warn(`${matches.length} link(s) with ${checkName}:`)
+        for (const {path, text, href, position} of matches) {
+          console.warn(`  ${path} @ ${yellow(position)}: ${green(href)} ('${text}')`)
+        }
+      }
+    }
+  })
+
+function getLinks(path) {
+  return readFile(path, 'utf8')
+    .then(parseLinks)
+    .then(links => ({path, links}))
+}
+
+function parseLinks(str) {
+  const tree = processor.parse(str)
+  const nodes = selectAll('link', tree)
+  return nodes.map(node => ({
+    href: node.url,
+    text: processor.stringify({type: 'paragraph', children: node.children}).trim(),
+    position: stringifyPosition(node)
+  }))
+}
+
+function stripFragment(url) {
+  return url.replace(/#.*$/, '')
+}

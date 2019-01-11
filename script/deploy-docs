@@ -10,7 +10,6 @@ else
         version=$(jq -r .version modules/primer/package.json)
     fi
 
-    cp modules/primer/build/build.css docs/static/primer.css
     cd docs
     npm run sync
 
@@ -25,12 +24,12 @@ else
     fi
 
     now_args="--token=$NOW_TOKEN"
-    npx commit-status pending docs "deploying primer@$version with now..."
+    npx commit-status pending docs "deploying v$version docs..."
 
     echo "deploying..."
     now $now_args | tee now-url.txt
     url=$(cat now-url.txt)
-    npx commit-status success docs "deployed primer@$version to $url" "$url"
+    npx commit-status success docs "v$version docs: $url" "$url"
 
     if [[ $TRAVIS_EVENT_TYPE = "pull_request" ]]; then
         branch=$TRAVIS_PULL_REQUEST_BRANCH
@@ -41,5 +40,20 @@ else
     alias="primer-css-${branch//\./-}.now.sh"
     echo "aliasing to '$alias'..."
     now $now_args alias $url $alias
-    npx commit-status success docs "primer@$version docs: $url" "https://$alias"
+    npx commit-status success docs "v$version docs: $alias" "https://$alias"
+
+    echo
+    echo "Running script/check-links in $(pwd)..."
+    echo
+    script/check-links -v -m=5 "https://$alias/css" || {
+        echo
+        echo "⚠️  Link check failed! ⚠️"
+        echo
+        echo "Check the report above for more info, and/or run:"
+        echo
+        echo "    script/check-links http://localhost:3000 -v"
+        echo
+        echo "locally for more info."
+        exit 1
+    }
 fi
