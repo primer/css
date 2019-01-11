@@ -81,7 +81,7 @@ These shadows are used for marketing content, UI screenshots, and content that a
 
 ```html
 <div class="box-shadow-large rounded-2 overflow-hidden">
-  <img src="<%= image_path "modules/site/org_example_nasa.png" %>" class="img-responsive" alt="NASA is on GitHub">
+  <img src="https://github.com/nasa.png" class="img-responsive" alt="NASA is on GitHub">
 </div>
 ```
 
