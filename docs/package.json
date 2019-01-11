@@ -5,7 +5,7 @@
     "lint": "eslint pages src",
     "pretest": "npm run sync",
     "test": "node test/urls.js",
-    "check-links": "script/check-links -v http://localhost:3000/css",
+    "check-links": "script/check-links http://localhost:3000/css -v",
     "sync": "script/sync",
     "watch": "script/sync --watch",
     "dev": "next",
