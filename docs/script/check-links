@@ -4,7 +4,9 @@ const {gray, green, yellow, red, bold} = require('colorette')
 const {SiteChecker} = require('broken-link-checker')
 
 const yargs = require('yargs')
+  .option('excluded-schemes', {type: String, alias: 's', default: ['dash-feed', 'mailto']})
   .option('filter-level', {type: Number, alias: 'L', default: 3})
+  .option('max-sockets-per-host', {type: Number, alias: 'm', default: 1})
   .option('verbose', {type: Boolean, alias: 'v', default: false})
 
 const options = yargs.argv
@@ -31,7 +33,6 @@ if (URL) {
 let page = {url: URL, links: []}
 
 const exceptions = {
-  'Dash feed URL': url => url.startsWith('dash-feed://'),
   'GitHub private repo': url =>
     [
       // this is a list of known GitHub private repos
@@ -109,9 +110,9 @@ const checker = new SiteChecker(options, {
       for (const link of page.links) {
         if (!link.broken && !VERBOSE) continue
         const tag = link.broken ? red(NOT_OK) : green(OK)
-        const reason = link.broken ? yellow(link.brokenReason.replace(/HTTP_/, '')) : ''
+        const reason = link.broken ? link.brokenReason.replace(/HTTP_/, '') : ''
         const url = link.url.resolved || link.url.original
-        log(tag, shorten(url), reason)
+        log(tag, shorten(url), yellow(reason))
         link.source = url
         link.reason = reason
       }
@@ -130,7 +131,7 @@ const checker = new SiteChecker(options, {
     if (allBroken.length) {
       log(red(NOT_OK), `${red(allBroken.length)} broken links:`)
       for (const link of allBroken) {
-        log(red(NOT_OK), shorten(link.url.original), link.reason, gray('from'), shorten(link.source))
+        log(red(NOT_OK), red(link.reason), link.url.original, gray('from'), shorten(link.source))
       }
       log('')
       process.exitCode = 1
