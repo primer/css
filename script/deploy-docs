@@ -51,7 +51,7 @@ else
         echo
         echo "Check the report above for more info, and/or run:"
         echo
-        echo "    script/check-links -rv http://localhost:3000"
+        echo "    script/check-links http://localhost:3000 -v"
         echo
         echo "locally for more info."
         exit 1
