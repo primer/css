@@ -5,7 +5,7 @@ import {Absolute, BorderBox, Box, StyledOcticon as Octicon, Relative, Text, them
 import ClipboardCopy from './ClipboardCopy'
 import HTMLtoJSX from 'html-2-jsx'
 
-const LANG_PATTERN = /\blanguage-\.?(erb|jsx|html)\b/
+const LANG_PATTERN = /\blanguage-\.?(jsx?|html)\b/
 
 const converter = new HTMLtoJSX({
   indent: '  ',
