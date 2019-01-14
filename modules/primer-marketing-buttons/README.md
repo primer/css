@@ -11,6 +11,7 @@ This repository is a module of the full [primer][primer] repository.
 
 <!-- %docs
 title: Marketing Buttons
+path: components/marketing-buttons
 status: New Release
 -->
 

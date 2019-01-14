@@ -37,6 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Branch name
+path: components/branch-name
 status: Stable
 -->
 
@@ -52,7 +53,7 @@ Branch names can be a link name or not:
 
 You may also include an octicon before the branch name text:
 
-```html title="Branch name with icon"
+```erb title="Branch name with icon"
 <span class="branch-name">
   <%= octicon("git-branch", width:16, height:16) %>
   a_new_feature_branch

@@ -37,8 +37,9 @@ $ npm run build
 
 <!-- %docs
 title: Labels
+path: components/labels
 status_issue: https://github.com/github/design-systems/issues/332
-status: New release
+status: Stable
 -->
 
 Labels add metatdata or indicate status of items and navigational elements. Three different types of labels are available: [Labels](#default-label-styles) for adding metadata, [States](#states) for indicating status, and [Counters](#counters) for showing the count for a number of items.
@@ -111,7 +112,7 @@ Use state labels to inform users of an items status. States are large labels wit
 ### State themes
 States come in a few variations that apply different colors. Use the state that best communicates the status or function.
 
-```html title="State themes"
+```erb title="State themes"
 <span title="Status: open" class="State State--green"><%= octicon "git-pull-request" %> Open</span>
 <span title="Status: closed" class="State State--red"><%= octicon "git-pull-request" %> Closed</span>
 <span title="Status: merged" class="State State--purple"><%= octicon "git-merge" %> Merged</span>
@@ -122,7 +123,7 @@ States come in a few variations that apply different colors. Use the state that 
 ### Small states
 Use `State--small` for a state label with reduced padding a smaller font size. This is useful in denser areas of content.
 
-```html title="Small states"
+```erb title="Small states"
 <span title="Status: open" class="State State--green State--small"><%= octicon "issue-opened" %> Open</span>
 <span title="Status: closed" class="State State--red State--small"><%= octicon "issue-closed" %> Closed</span>
 ```
@@ -137,7 +138,7 @@ Use the `Counter` component to add a count to navigational elements and buttons.
 <span class="Counter Counter--gray-light">64</span>
 ```
 
-Use the `Counter` in navigation to indicate the number of items without the user having to click through or count the items, such as open issues in a GitHub repo. See more options in [navigation](../navigation).
+Use the `Counter` in navigation to indicate the number of items without the user having to click through or count the items, such as open issues in a GitHub repo. See more options in [navigation](./navigation).
 
 ```html title="Counter in tabs"
 <div class="tabnav">
@@ -148,7 +149,7 @@ Use the `Counter` in navigation to indicate the number of items without the user
 </div>
 ```
 
-Counters can also be used in `Box` headers to indicate the number of items in a list. See more on the [box component](../box).
+Counters can also be used in `Box` headers to indicate the number of items in a list. See more on the [box component](./box).
 
 ```html title="Counter in Box headers"
 <div class="Box">

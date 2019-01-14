@@ -6,4 +6,5 @@
 .sass-cache
 _site
 build
+primer-version.txt
 node_modules

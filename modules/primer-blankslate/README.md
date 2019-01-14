@@ -37,6 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Blankslate
+path: components/blankslate
 status: Stable
 -->
 
@@ -57,7 +58,7 @@ Wrap some content in the outer `.blankslate` wrapper to give it the blankslate a
 
 When it helps the message, include (relevant) icons in your blank slate. Add `.blankslate-icon` to any `.mega-octicon`s as the first elements in the blankslate, like so.
 
-```html
+```erb
 <div class="blankslate">
   <%= octicon "git-commit", :height => 32, :class => "blankslate-icon" %>
   <%= octicon "tag", :height => 32, :class => "blankslate-icon" %>

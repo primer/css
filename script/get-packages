@@ -1,21 +1,25 @@
 #!/usr/bin/env node
 const fs = require('fs')
 const globby = require('globby')
-const path = require('path')
+const {join} = require('path')
 
-const getPackages = (debug) => {
+const getPackages = (debug = false) => {
   const lernaConfig = require('../lerna.json')
-  const packageGlobs = lernaConfig.packages
+  const packageGlobs = lernaConfig.packages.concat('!**/*.md')
   return globby(packageGlobs)
     .then(packagePaths => {
+      if (debug) {
+        console.warn(`Filtering ${packagePaths.length} paths...`)
+      }
       return packagePaths.filter(pkg => {
         try {
-          require.resolve(`../${pkg}/package.json`)
+          require.resolve(join('..', pkg, 'package.json'))
           return true
         } catch (error) {
           if (debug) {
-            console.warn('No package.json in %s', pkg)
+            console.warn(`No package.json in ${pkg}: ${error}`)
           }
+          return false
         }
       })
     })
