@@ -46,6 +46,7 @@ else
     now $now_args alias $url $alias
     npx commit-status success docs "v$version docs: $alias" "https://$alias"
 
+    exit 0
     echo
     echo "Running script/check-links in $(pwd)..."
     echo
