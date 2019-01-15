@@ -1,9 +1,29 @@
 import React from 'react'
 import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
+import {createGlobalStyle} from 'styled-components'
 import {getIconByName} from '@githubprimer/octicons-react'
 import {Absolute, BorderBox, Box, StyledOcticon as Octicon, Relative, Text, theme} from '@primer/components'
 import ClipboardCopy from './ClipboardCopy'
-import HTMLtoJSX from 'html-2-jsx'
+import Frame from './Frame'
+import {CommonStyles, CommonScripts} from './utils'
+
+import 'prism-github'
+
+// XXX undo .markdown-body .rule (:facepalm:)
+const RuleOverrideStyles = createGlobalStyle`
+  .markdown-body .rule.token {
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    border-bottom: none;
+  }
+
+  .markdown-body .rule.token::before,
+  .markdown-body .rule.token::after {
+    display: none;
+  }
+}
+`
 
 const LANG_PATTERN = /\blanguage-\.?(jsx?|html)\b/
 
@@ -30,14 +50,14 @@ export default function CodeExample(props) {
     return (
       <LiveProvider mountStylesheet={false} {...rest}>
         <BorderBox bg="gray.1" my={4}>
-          <Box bg="white" p={3} className="clearfix">
+          <Frame head={<CommonStyles />}>
             <LivePreview />
-          </Box>
+            <CommonScripts />
+          </Frame>
           <Relative p={3}>
             <Text
-              is={LiveEditor}
+              as={LiveEditor}
               fontFamily="mono"
-              lineHeight="normal"
               bg="transparent"
               p="0 !important"
               m="0 !important"
@@ -45,9 +65,10 @@ export default function CodeExample(props) {
             <Absolute right={theme.space[3]} top={theme.space[3]}>
               <ClipboardCopy value={source} />
             </Absolute>
+            <RuleOverrideStyles />
           </Relative>
           <Text
-            is={LiveError}
+            as={LiveError}
             fontFamily="mono"
             css={{
               overflow: 'auto',
@@ -62,6 +83,7 @@ export default function CodeExample(props) {
     return <pre data-source={source} {...rest} />
   }
 }
+
 
 function getLanguage(className) {
   const match = className && className.match(LANG_PATTERN)
