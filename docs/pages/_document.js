@@ -1,5 +1,5 @@
 import React from 'react'
-import Document, {Main, NextScript} from 'next/document'
+import Document, {Head, Main, NextScript} from 'next/document'
 import {ServerStyleSheet} from 'styled-components'
 import {config, getAssetPath, CommonStyles, CommonScripts} from '../src/utils'
 
@@ -18,8 +18,7 @@ export default class MyDocument extends Document {
 
     return (
       <html lang="en">
-        <head>
-          <title>Primer CSS</title>
+        <Head>
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126681523-2" />
           <script async href={getAssetPath('analytics.js')} />
           <meta charSet="utf8" />
@@ -40,7 +39,7 @@ export default class MyDocument extends Document {
           <meta property="twitter:site" content="@githubprimer" />
           <CommonStyles />
           {renderedStyles}
-        </head>
+        </Head>
         <body>
           <Main />
           <NextScript />
