@@ -8,6 +8,8 @@ import ClipboardCopy from './ClipboardCopy'
 import Frame from './Frame'
 import {CommonStyles, CommonScripts} from './utils'
 
+import 'prism-github/prism-github.scss'
+
 // XXX undo .markdown-body .rule (:facepalm:)
 const RuleOverrideStyles = createGlobalStyle`
   .markdown-body .rule.token {

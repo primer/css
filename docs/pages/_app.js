@@ -9,7 +9,6 @@ import {config, requirePage, rootPage} from '../src/utils'
 import {CONTENT_MAX_WIDTH} from '../src/constants'
 
 import 'primer/index.scss'
-import 'prism-github'
 
 export default class MyApp extends App {
   static async getInitialProps({Component, ctx}) {
