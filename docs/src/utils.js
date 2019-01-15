@@ -2,12 +2,13 @@ import Router from 'next/router'
 import getConfig from 'next/config'
 import TreeModel from 'tree-model'
 
-export const CommonStyles = () => (
-  <>
-    <link rel="stylesheet" href={assetPrefix + '/_next/static/css/styles.chunk.css'} />
-    <link rel="stylesheet" href={getAssetPath('github/styleguide.css')} />
-  </>
-)
+export const CommonStyles = () => {
+  const sheets = [
+    config.production ? getAssetPath('primer.css') : assetPrefix + '/_next/static/css/styles.chunk.css',
+    getAssetPath('github/styleguide.css')
+  ]
+  return sheets.map(href => <link href={href} rel="stylesheet" />)
+}
 
 export const CommonScripts = () => (
   <script src={getAssetPath('github/styleguide.js')} />
