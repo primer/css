@@ -20,10 +20,8 @@ export default class MyDocument extends Document {
       <html lang="en">
         <head>
           <title>Primer CSS</title>
-          {/* TODO: update this with a new id
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126681523-1" />
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126681523-2" />
           <script async href={getAssetPath('analytics.js')} />
-          */}
           <meta charSet="utf8" />
           <link rel="icon" href={getAssetPath('favicon.png')} />
           <link rel="apple-touch-icon" href={getAssetPath('apple-touch-icon.png')} />
