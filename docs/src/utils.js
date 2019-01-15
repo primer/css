@@ -4,7 +4,6 @@ import TreeModel from 'tree-model'
 
 export const CommonStyles = () => {
   const sheets = [
-    config.production ? getAssetPath('primer.css') : assetPrefix + '/_next/static/css/styles.chunk.css',
     getAssetPath('github/styleguide.css')
   ]
   return sheets.map(href => <link href={href} rel="stylesheet" />)
