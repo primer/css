@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
   }
 
   render() {
-    const {renderedStyles} = this.props
+    const {files, renderedStyles} = this.props
 
     return (
       <html lang="en">
@@ -40,7 +40,7 @@ export default class MyDocument extends Document {
           <CommonStyles />
           {renderedStyles}
         </Head>
-        <body>
+        <body data-context={JSON.stringify({files})}>
           <Main />
           <NextScript />
           <CommonScripts />
