@@ -7,7 +7,7 @@ import {rootPage} from './utils'
 
 export default function SideNav(props) {
   return (
-    <Relative is="nav">
+    <Relative as="nav">
       <Box id="sidenav" {...props}>
         <Flex flexDirection="column" alignItems="start">
           <Router>
