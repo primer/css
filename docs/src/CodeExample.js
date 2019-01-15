@@ -1,8 +1,9 @@
 import React from 'react'
+import HTMLtoJSX from 'html-2-jsx'
+import {Absolute, BorderBox, Box, StyledOcticon as Octicon, Relative, Text, theme} from '@primer/components'
 import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
 import {createGlobalStyle} from 'styled-components'
 import {getIconByName} from '@githubprimer/octicons-react'
-import {Absolute, BorderBox, Box, StyledOcticon as Octicon, Relative, Text, theme} from '@primer/components'
 import ClipboardCopy from './ClipboardCopy'
 import Frame from './Frame'
 import {CommonStyles, CommonScripts} from './utils'
@@ -35,7 +36,7 @@ const converter = new HTMLtoJSX({
 const defaultTransform = code => `<React.Fragment>${code}</React.Fragment>`
 
 const languageTransforms = {
-  erb: erb => sanitizeERB(languageTransforms.html(erb)),
+  // erb: erb => sanitizeERB(languageTransforms.html(erb)),
   html: html => defaultTransform(converter.convert(html)),
   jsx: defaultTransform
 }
