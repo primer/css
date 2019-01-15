@@ -2,6 +2,17 @@ import Router from 'next/router'
 import getConfig from 'next/config'
 import TreeModel from 'tree-model'
 
+export const CommonStyles = () => (
+  <>
+    <link rel="stylesheet" href={assetPrefix + '/_next/static/css/styles.chunk.css'} />
+    <link rel="stylesheet" href={getAssetPath('github/styleguide.css')} />
+  </>
+)
+
+export const CommonScripts = () => (
+  <script src={getAssetPath('github/styleguide.js')} />
+)
+
 const INDEX_PATTERN = /\/index(\.[a-z]+)?$/
 
 export const config = getConfig().publicRuntimeConfig || {}
