@@ -9,7 +9,6 @@
     "sync": "script/sync",
     "watch": "script/sync --watch",
     "dev": "next",
-    "prebuild": "cp node_modules/primer/build/build.css static/primer.css",
     "build": "next build",
     "start": "next start"
   },
