@@ -1,7 +1,7 @@
 import React from 'react'
 import Document, {Main, NextScript} from 'next/document'
 import {ServerStyleSheet} from 'styled-components'
-import {config, getAssetPath} from '../src/utils'
+import {config, getAssetPath, CommonStyles, CommonScripts} from '../src/utils'
 
 export default class MyDocument extends Document {
   static getInitialProps({renderPage}) {
@@ -9,12 +9,12 @@ export default class MyDocument extends Document {
     const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
     return {
       ...page,
-      styleTags: sheet.getStyleElement()
+      renderedStyles: sheet.getStyleElement()
     }
   }
 
   render() {
-    const {styleTags} = this.props
+    const {renderedStyles} = this.props
 
     return (
       <html lang="en">
@@ -38,17 +38,13 @@ export default class MyDocument extends Document {
           <meta property="og:image:height" content="630" />
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:site" content="@githubprimer" />
-          <link rel="stylesheet" href={getAssetPath('github/styleguide.css')} />
-          <link
-            rel="stylesheet"
-            href={config.production ? getAssetPath('primer.css') : '/_next/static/css/styles.chunk.css'}
-          />
-          {styleTags}
+          <CommonStyles />
+          {renderedStyles}
         </head>
         <body>
           <Main />
           <NextScript />
-          <script src={getAssetPath('github/styleguide.js')} />
+          <CommonScripts />
         </body>
       </html>
     )
