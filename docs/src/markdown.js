@@ -12,6 +12,8 @@ export default function getComponents(page = {}) {
     h1: H1,
     // render links with our component
     a: Link,
+    // render code blocks with our wrapper around mdx-live
+    code: CodeExample,
     // render the outline for <p> tags with exactly the text "{:toc}"
     p: ({children, ...rest}) => {
       if (children === '{:toc}') {
@@ -20,8 +22,7 @@ export default function getComponents(page = {}) {
         return <p {...rest}>{children}</p>
       }
     },
-    // render code blocks with our wrapper around mdx-live
-    code: CodeExample,
+    // "unwrap" <pre> elements around <code> blocks
     pre: props => props.children
   }
 }
