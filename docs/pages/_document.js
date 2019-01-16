@@ -40,7 +40,7 @@ export default class MyDocument extends Document {
           <CommonStyles />
           {renderedStyles}
         </Head>
-        <body data-context={JSON.stringify({files})}>
+        <body data-files={JSON.stringify(files)}>
           <Main />
           <NextScript />
           <CommonScripts />
