@@ -30,6 +30,12 @@ module.exports = (nextConfig = {}) => {
         sync({watch: !CI})
       }
 
+      // in production, we don't need to compile Primer from SCSS; just inline
+      // the CSS build!
+      if (!dev) {
+        config.resolve.alias['primer/index.scss$'] = require.resolve('primer/build/build.css')
+      }
+
       config.module.rules.push({
         test: /\.svg$/,
         use: '@svgr/webpack'

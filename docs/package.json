@@ -18,6 +18,7 @@
     "@mdx-js/tag": "0.15.0",
     "@primer/components": "^8.2.0-beta",
     "@svgr/webpack": "2.4.1",
+    "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "babel-core": "7.0.0-bridge.0",
     "broken-link-checker": "^0.7.8",
