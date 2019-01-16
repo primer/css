@@ -2,12 +2,6 @@ import Router from 'next/router'
 import getConfig from 'next/config'
 import TreeModel from 'tree-model'
 
-export const DocumentContext = React.createContext({
-  _documentProps: {
-    files: []
-  }
-})
-
 export const CommonStyles = () => {
   const sheets = [getAssetPath('github/styleguide.css')]
   return sheets.map(href => <link href={href} rel="stylesheet" />)
