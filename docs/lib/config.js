@@ -2,9 +2,6 @@
 const sync = require('./sync')
 const {CI, NODE_ENV, NOW_URL} = process.env
 
-const PRIMER_SCSS = 'primer/index.scss$'
-const PRIMER_STATIC_CSS = require.resolve('primer/build/build.css')
-
 module.exports = (nextConfig = {}) => {
   const {assetPrefix = NOW_URL || ''} = nextConfig
 
@@ -45,18 +42,6 @@ module.exports = (nextConfig = {}) => {
           require.resolve('./mdx-loader')
         ]
       })
-
-      /**
-       * in production we don't have access to ../modules, so we need to
-       * rewrite the 'primer/index.scss' import to the static CSS build
-       */
-      if (!dev) {
-        config.resolve.alias[PRIMER_SCSS] = PRIMER_STATIC_CSS
-        // only log the aliasing once
-        if (!configured) {
-          console.warn(`*** rewriting ${PRIMER_SCSS} to ${PRIMER_STATIC_CSS}`)
-        }
-      }
 
       configured = true
       if (typeof nextConfig.webpack === 'function') {
