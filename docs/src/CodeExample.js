@@ -10,22 +10,6 @@ import {CommonStyles, CommonScripts} from './utils'
 
 import 'prism-github/prism-github.scss'
 
-// XXX undo .markdown-body .rule (:facepalm:)
-const RuleOverrideStyles = createGlobalStyle`
-  .markdown-body .rule.token {
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    border-bottom: none;
-  }
-
-  .markdown-body .rule.token::before,
-  .markdown-body .rule.token::after {
-    display: none;
-  }
-}
-`
-
 const LANG_PATTERN = /\blanguage-\.?(jsx?|html)\b/
 
 const converter = new HTMLtoJSX({
@@ -45,44 +29,50 @@ export default function CodeExample(props) {
   const {children, dangerouslySetInnerHTML, dead, source, ...rest} = props
   const lang = getLanguage(props.className)
   if (lang && !dead) {
-    rest.code = source
-    rest.scope = {Octicon, getIconByName}
-    rest.transformCode = getTransformForLanguage(lang)
+    const liveProps = {
+      code: source,
+      scope: {Octicon, getIconByName},
+      transformCode: getTransformForLanguage(lang),
+      mountStylesheet: false
+    }
     return (
-      <LiveProvider mountStylesheet={false} {...rest}>
-        <BorderBox bg="gray.1" my={4}>
-          <Frame head={<CommonStyles />}>
-            <LivePreview />
-            <CommonScripts />
-          </Frame>
-          <Relative p={3}>
-            <Text
-              as={LiveEditor}
-              fontFamily="mono"
-              bg="transparent"
-              p="0 !important"
-              m="0 !important"
-            />
-            <Absolute right={theme.space[3]} top={theme.space[3]}>
+      <LiveProvider {...liveProps}>
+        <BorderBox {...rest}>
+          <BorderBox bg="white" p={3} border={0} borderBottom={1} borderRadius={0}>
+            <Frame>
+              <LivePreview />
+            </Frame>
+          </BorderBox>
+          <Box is={Relative} bg="gray.1" p={3}>
+            <LiveEditor style={{margin: 0, padding: 0}} />
+            <Absolute right={0} top={0} m={3}>
               <ClipboardCopy value={source} />
             </Absolute>
-            <RuleOverrideStyles />
-          </Relative>
-          <Text
-            as={LiveError}
-            fontFamily="mono"
-            css={{
-              overflow: 'auto',
-              whiteSpace: 'pre'
-            }}
-          />
+            <Text
+              as={LiveError}
+              fontFamily="mono"
+              css={{
+                overflow: 'auto',
+                whiteSpace: 'pre'
+              }}
+            />
+          </Box>
         </BorderBox>
       </LiveProvider>
     )
   } else {
-    Object.assign(rest, {children, dangerouslySetInnerHTML})
-    return <pre data-source={source} {...rest} />
+    const rest = {
+      children,
+      dangerouslySetInnerHTML
+    }
+    return (
+      <BorderBox data-source={source} is="pre" {...rest} />
+    )
   }
+}
+
+CodeExample.defaultProps = {
+  my: 4
 }
 
 
