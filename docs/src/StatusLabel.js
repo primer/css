@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import {BorderBox, StyledOcticon as Octicon, Text} from '@primer/components'
 import {PrimitiveDot} from '@githubprimer/octicons-react'

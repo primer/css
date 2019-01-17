@@ -5,7 +5,6 @@ import {Text, Flex, Sticky, BorderBox, Box} from '@primer/components'
 import BoxShadow from './BoxShadow'
 import Link from './Link'
 import NodeLink from './NodeLink'
-import {repository} from 'primer/package.json'
 
 const NavLink = withRouter(({is: Tag = NodeLink, href, router, ...rest}) => (
   <Tag href={href} color="white" px={4} fontWeight={router.pathname === href ? 'bold' : null} {...rest} />

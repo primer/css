@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Comment, Info, FileCode, Alert, PrimitiveDot} from '@githubprimer/octicons-react'
-import {BorderBox, Box, Flex, Link, StyledOcticon as Octicon, Text} from '@primer/components'
+import {Comment, Info, FileCode, Alert} from '@githubprimer/octicons-react'
+import {Box, Flex, Link, StyledOcticon as Octicon, Text} from '@primer/components'
 import StatusLabel from './StatusLabel'
 
 export default function PackageHeader(props) {

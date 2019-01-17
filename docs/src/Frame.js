@@ -1,7 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
-import Document, {Head} from 'next/document'
 import {BorderBox} from '@primer/components'
 import {assetPrefix} from './utils'
 
@@ -23,6 +21,7 @@ export default class Frame extends React.Component {
   componentDidMount() {
     this.doc = this.node.contentDocument
     const files = JSON.parse(document.body.dataset.files || '[]')
+    // eslint-disable-next-line react/no-did-mount-set-state
     this.setState({files})
     this.node.addEventListener('load', () => this.setState({loaded: true}))
   }

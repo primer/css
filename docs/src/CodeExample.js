@@ -1,12 +1,10 @@
 import React from 'react'
 import HTMLtoJSX from 'html-2-jsx'
-import {Absolute, BorderBox, Box, StyledOcticon as Octicon, Relative, Text, theme} from '@primer/components'
+import {Absolute, BorderBox, Box, StyledOcticon as Octicon, Relative, Text} from '@primer/components'
 import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
-import {createGlobalStyle} from 'styled-components'
 import {getIconByName} from '@githubprimer/octicons-react'
 import ClipboardCopy from './ClipboardCopy'
 import Frame from './Frame'
-import {CommonStyles, CommonScripts} from './utils'
 
 import 'prism-github/prism-github.scss'
 
@@ -20,7 +18,6 @@ const converter = new HTMLtoJSX({
 const defaultTransform = code => `<React.Fragment>${code}</React.Fragment>`
 
 const languageTransforms = {
-  // erb: erb => sanitizeERB(languageTransforms.html(erb)),
   html: html => defaultTransform(converter.convert(html)),
   jsx: defaultTransform
 }
@@ -65,6 +62,7 @@ export default function CodeExample(props) {
       children,
       dangerouslySetInnerHTML
     }
+    // eslint-disable-next-line react/no-danger-with-children
     return <BorderBox data-source={source} is="pre" {...rest} />
   }
 }
@@ -80,34 +78,4 @@ function getLanguage(className) {
 
 function getTransformForLanguage(lang) {
   return lang in languageTransforms ? languageTransforms[lang] : null
-}
-
-function sanitizeERB(html) {
-  return html
-    .replace(/&lt;%= octicon\("([-\w]+)"([^%]+)\)\s*%&gt;/g, erbOcticon)
-    .replace(/&lt;%([^%]+)%gt;/g, '{/* ERB: `$1` */}')
-}
-
-const RUBY_ARG_PATTERNS = [/^:(\w+) ?=&gt; ?(.+)$/, /^(\w+): ?(.+)$/]
-
-function erbOcticon(substr, name, argString) {
-  let args = ''
-  if (argString) {
-    args = argString
-      .split(/,\s*/)
-      .slice(1)
-      .map(arg => {
-        for (const pattern of RUBY_ARG_PATTERNS) {
-          const match = arg.match(pattern)
-          if (match) {
-            const attr = match[1]
-            const value = match[2].charAt(0) === '"' ? match[2] : `{${match[2]}}`
-            return `${attr}=${value}`
-          }
-        }
-        return ''
-      })
-      .join(' ')
-  }
-  return `<Octicon icon={getIconByName("${name}")} ${args} />`
 }
