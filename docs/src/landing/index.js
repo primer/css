@@ -140,15 +140,17 @@ export function MetaPackageBox({children, data = {}, title, ...rest}) {
   const deps = data.dependencies || []
   return (
     <Flex.Item as={BorderBox} bg="white" maxWidth={220} {...rest}>
-      <Heading fontSize={2} as={BorderBox} bg="gray.1" border={0} borderBottom={1} px={3} py={2}>
-        <Link href={packageSourceURL(data.name)} color="inherit">
-          {title}
-        </Link>{' '}
-        <Link href={packageURL(data.name)}>{data.version}</Link>
-      </Heading>
-      <Text as="div" fontSize={1} p={3}>
+      <BorderBox bg="gray.1" border={0} borderBottom={1} borderRadius={0} px={3} py={2}>
+        <Heading as="div" fontSize={2}>
+          <Link href={packageSourceURL(data.name)} color="inherit">
+            {title}
+          </Link>{' '}
+          <Link href={packageURL(data.name)}>{data.version}</Link>
+        </Heading>
+      </BorderBox>
+      <Text is="div" fontSize={1} p={3}>
         {children}
-        <Text fontWeight="bold" as="div" mt={4} mb={2}>
+        <Text is="div" fontWeight="bold" mt={4} mb={2}>
           {deps.length} packages:
         </Text>
         <ul className="list-style-none pl-0">
