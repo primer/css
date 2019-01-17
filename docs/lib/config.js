@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const sync = require('./sync')
+const cssLoaderConfig = require('@zeit/next-css/css-loader-config')
 const {CI, NODE_ENV, NOW_URL} = process.env
 
 module.exports = (nextConfig = {}) => {
@@ -23,7 +24,7 @@ module.exports = (nextConfig = {}) => {
         )
       }
 
-      const {dev} = options
+      const {dev, isServer} = options
 
       // only attempt to sync locally and in CI
       if (dev && !configured) {
@@ -34,6 +35,16 @@ module.exports = (nextConfig = {}) => {
       // the CSS build!
       if (!dev) {
         config.resolve.alias['primer/index.scss$'] = require.resolve('primer/build/build.css')
+
+        const cssLoader = cssLoaderConfig(config, {
+          dev,
+          isServer
+        })
+        options.defaultLoaders.css = cssLoader
+        config.module.rules.push({
+          test: /\.css$/,
+          loader: cssLoader
+        })
       }
 
       config.module.rules.push({
