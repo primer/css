@@ -28,4 +28,3 @@ export default function redirect(uri, status = 303) {
     }
   }
 }
-

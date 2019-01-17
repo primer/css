@@ -75,12 +75,7 @@ function NavList({path}) {
  */
 const SectionLink = withRouter(({href, router, ...rest}) => (
   <Box {...rest}>
-    <NodeLink
-      href={href}
-      color="gray.9"
-      fontSize={2}
-      fontWeight={router.pathname.startsWith(href) ? 'bold' : null}
-    />
+    <NodeLink href={href} color="gray.9" fontSize={2} fontWeight={router.pathname.startsWith(href) ? 'bold' : null} />
   </Box>
 ))
 

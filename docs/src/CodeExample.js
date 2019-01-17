@@ -65,16 +65,13 @@ export default function CodeExample(props) {
       children,
       dangerouslySetInnerHTML
     }
-    return (
-      <BorderBox data-source={source} is="pre" {...rest} />
-    )
+    return <BorderBox data-source={source} is="pre" {...rest} />
   }
 }
 
 CodeExample.defaultProps = {
   my: 4
 }
-
 
 function getLanguage(className) {
   const match = className && className.match(LANG_PATTERN)

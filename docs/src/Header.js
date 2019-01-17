@@ -29,7 +29,9 @@ const Header = props => (
             <NavLink href="/css/getting-started" />
             <NavLink href="/css/principles" />
             <NavLink href="/css/tools" />
-            <NavLink as={Link} href="https://github.com/primer/primer/releases">Releases</NavLink>
+            <NavLink as={Link} href="https://github.com/primer/primer/releases">
+              Releases
+            </NavLink>
           </HeaderText>
         </Box>
         <Box display={['block', 'block', 'none']}>
