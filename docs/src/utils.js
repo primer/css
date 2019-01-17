@@ -1,10 +1,10 @@
-import Router from 'next/router'
+import React from 'react'
 import getConfig from 'next/config'
 import TreeModel from 'tree-model'
 
 export const CommonStyles = () => {
   const sheets = [getAssetPath('github/styleguide.css')]
-  return sheets.map(href => <link href={href} rel="stylesheet" />)
+  return sheets.map(href => <link href={href} rel="stylesheet" key={href} />)
 }
 
 export const CommonScripts = () => <script src={getAssetPath('github/styleguide.js')} />
@@ -42,35 +42,6 @@ rootPage.walk(node => {
     console.warn('no file for page node:', node.path)
   }
 })
-
-/**
- * Export this as your default from a page, and it'll redirect both server-
- * and client-side:
- *
- * ```js
- * import {redirect} from '../src/utils'
- * export default redirect('/some/path')
- * ```
- */
-export function redirect(uri, status = 303) {
-  // XXX this doesn't need to extend React.Component because
-  // it doesn't "do" anything React-y
-  return class {
-    static getInitialProps({res}) {
-      // the "context" object passed to getInitialProps() will
-      // have a "res" (response) object if we're server-side
-      if (res) {
-        res.writeHead(status, {Location: uri})
-        res.end()
-      }
-    }
-
-    render() {
-      Router.replace(uri)
-      return null
-    }
-  }
-}
 
 function nest(map) {
   const nodeMap = {}
