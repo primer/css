@@ -46,7 +46,7 @@ else
     now "$now_args" alias "$url" "$alias"
     npx commit-status success docs "v$version docs: $alias" "https://$alias"
 
-    if [[ "$TRAVIS_COMMIT_MESSAGE" =~ \[check-links\] ]]; then
+    if [[ "$CHECK_LINKS" = "1" ]]; then
         echo
         echo "Running script/check-links in $(pwd)..."
         echo
@@ -61,5 +61,7 @@ else
             echo "locally for more info."
             exit 1
         }
+    else
+        echo "Set CHECK_LINKS=1 to check links on Travis"
     fi
 fi
