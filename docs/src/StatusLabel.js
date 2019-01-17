@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import {BorderBox, StyledOcticon as Octicon, Text} from '@primer/components'
 import {PrimitiveDot} from '@githubprimer/octicons-react'
@@ -19,7 +20,9 @@ export default function StatusLabel({status, children, ...rest}) {
   return (
     <StyledLabel px={2} py={1} {...rest}>
       <Octicon icon={PrimitiveDot} color={getStatusColor(status)} mr={2} />
-      <Text color='black' fontSize={1}>{children || status}</Text>
+      <Text color="black" fontSize={1}>
+        {children || status}
+      </Text>
     </StyledLabel>
   )
 }

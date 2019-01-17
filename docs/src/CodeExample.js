@@ -1,9 +1,12 @@
 import React from 'react'
+import HTMLtoJSX from 'html-2-jsx'
+import {Absolute, BorderBox, Box, StyledOcticon as Octicon, Relative, Text} from '@primer/components'
 import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
 import {getIconByName} from '@githubprimer/octicons-react'
-import {Absolute, BorderBox, Box, StyledOcticon as Octicon, Relative, Text, theme} from '@primer/components'
 import ClipboardCopy from './ClipboardCopy'
-import HTMLtoJSX from 'html-2-jsx'
+import Frame from './Frame'
+
+import 'prism-github/prism-github.scss'
 
 const LANG_PATTERN = /\blanguage-\.?(jsx?|html)\b/
 
@@ -15,7 +18,6 @@ const converter = new HTMLtoJSX({
 const defaultTransform = code => `<React.Fragment>${code}</React.Fragment>`
 
 const languageTransforms = {
-  erb: erb => sanitizeERB(languageTransforms.html(erb)),
   html: html => defaultTransform(converter.convert(html)),
   jsx: defaultTransform
 }
@@ -24,43 +26,49 @@ export default function CodeExample(props) {
   const {children, dangerouslySetInnerHTML, dead, source, ...rest} = props
   const lang = getLanguage(props.className)
   if (lang && !dead) {
-    rest.code = source
-    rest.scope = {Octicon, getIconByName}
-    rest.transformCode = getTransformForLanguage(lang)
+    const liveProps = {
+      code: source,
+      scope: {Octicon, getIconByName},
+      transformCode: getTransformForLanguage(lang),
+      mountStylesheet: false
+    }
     return (
-      <LiveProvider mountStylesheet={false} {...rest}>
-        <BorderBox bg="gray.1" my={4}>
-          <Box bg="white" p={3} className="clearfix">
-            <LivePreview />
-          </Box>
-          <Relative p={3}>
-            <Text
-              is={LiveEditor}
-              fontFamily="mono"
-              lineHeight="normal"
-              bg="transparent"
-              p="0 !important"
-              m="0 !important"
-            />
-            <Absolute right={theme.space[3]} top={theme.space[3]}>
+      <LiveProvider {...liveProps}>
+        <BorderBox {...rest}>
+          <BorderBox bg="white" p={3} border={0} borderBottom={1} borderRadius={0}>
+            <Frame>
+              <LivePreview />
+            </Frame>
+          </BorderBox>
+          <Box is={Relative} bg="gray.1" p={3}>
+            <LiveEditor style={{margin: 0, padding: 0}} />
+            <Absolute right={0} top={0} m={3}>
               <ClipboardCopy value={source} />
             </Absolute>
-          </Relative>
-          <Text
-            is={LiveError}
-            fontFamily="mono"
-            css={{
-              overflow: 'auto',
-              whiteSpace: 'pre'
-            }}
-          />
+            <Text
+              as={LiveError}
+              fontFamily="mono"
+              css={{
+                overflow: 'auto',
+                whiteSpace: 'pre'
+              }}
+            />
+          </Box>
         </BorderBox>
       </LiveProvider>
     )
   } else {
-    Object.assign(rest, {children, dangerouslySetInnerHTML})
-    return <pre data-source={source} {...rest} />
+    const rest = {
+      children,
+      dangerouslySetInnerHTML
+    }
+    // eslint-disable-next-line react/no-danger-with-children
+    return <BorderBox data-source={source} is="pre" {...rest} />
   }
+}
+
+CodeExample.defaultProps = {
+  my: 4
 }
 
 function getLanguage(className) {
@@ -70,34 +78,4 @@ function getLanguage(className) {
 
 function getTransformForLanguage(lang) {
   return lang in languageTransforms ? languageTransforms[lang] : null
-}
-
-function sanitizeERB(html) {
-  return html
-    .replace(/&lt;%= octicon\("([-\w]+)"([^%]+)\)\s*%&gt;/g, erbOcticon)
-    .replace(/&lt;%([^%]+)%gt;/g, '{/* ERB: `$1` */}')
-}
-
-const RUBY_ARG_PATTERNS = [/^:(\w+) ?=&gt; ?(.+)$/, /^(\w+): ?(.+)$/]
-
-function erbOcticon(substr, name, argString) {
-  let args = ''
-  if (argString) {
-    args = argString
-      .split(/,\s*/)
-      .slice(1)
-      .map(arg => {
-        for (const pattern of RUBY_ARG_PATTERNS) {
-          const match = arg.match(pattern)
-          if (match) {
-            const attr = match[1]
-            const value = match[2].charAt(0) === '"' ? match[2] : `{${match[2]}}`
-            return `${attr}=${value}`
-          }
-        }
-        return ''
-      })
-      .join(' ')
-  }
-  return `<Octicon icon={getIconByName("${name}")} ${args} />`
 }

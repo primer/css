@@ -9,7 +9,6 @@
     "sync": "script/sync",
     "watch": "script/sync --watch",
     "dev": "next",
-    "prebuild": "cp node_modules/primer/build/build.css static/primer.css",
     "build": "next build",
     "start": "next start"
   },
@@ -17,7 +16,7 @@
     "@githubprimer/octicons-react": "^8.1.3",
     "@mdx-js/mdx": "^0.16.6",
     "@mdx-js/tag": "0.15.0",
-    "@primer/components": "^8.0.0-beta",
+    "@primer/components": "^8.2.0-beta",
     "@svgr/webpack": "2.4.1",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
