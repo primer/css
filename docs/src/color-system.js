@@ -140,15 +140,13 @@ FadeVariables.propTypes = {
 function Swatch(props) {
   const {name, value, textColor = overlayColor(value), ...rest} = props
   return (
-    <Box bg={value} {...rest}>
+    <Box bg={value} color={textColor} {...rest}>
       <Text as={Flex} fontSize={1} justifyContent="space-between">
         <Box p={3}>
-          <Var color={textColor}>${name}</Var>
+          <Var>${name}</Var>
         </Box>
         <Box p={3}>
-          <Text color={textColor} fontFamily="mono">
-            {value}
-          </Text>
+          <Text fontFamily="mono">{value}</Text>
         </Box>
       </Text>
     </Box>
@@ -163,7 +161,7 @@ Swatch.propTypes = {
 
 function Var(props) {
   // FIXME: fontStyle should be a prop, right?
-  return <Text as="var" fontWeight="bold" fontFamily="mono" css={{fontStyle: 'normal'}} {...props} />
+  return <Text as="var" fontWeight="bold" fontFamily="mono" style={{fontStyle: 'normal'}} {...props} />
 }
 
 function overlayColor(bg) {

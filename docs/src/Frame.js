@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Measure from 'react-measure'
 import {BorderBox} from '@primer/components'
 import {assetPrefix} from './utils'
 
@@ -19,14 +20,16 @@ export default class Frame extends React.Component {
   }
 
   componentDidMount() {
-    this.doc = this.node.contentDocument
+    this.doc = this.iframe.contentDocument
     const files = JSON.parse(document.body.dataset.files || '[]')
     // eslint-disable-next-line react/no-did-mount-set-state
-    this.setState({files})
-    this.node.addEventListener('load', () => this.setState({loaded: true}))
+    this.setState({loaded: false, files})
+    this.iframe.addEventListener('load', () => {
+      this.setState({loaded: true})
+    })
   }
 
-  getCssLinks() {
+  getHead() {
     const {files} = this.state
     return files
       ? files
@@ -35,21 +38,26 @@ export default class Frame extends React.Component {
       : null
   }
 
-  getHeight() {
-    if (!this.node) return null
-    this.node.style.height = 'max-content'
-    const {body} = this.node.contentDocument
-    return body.offsetHeight > DEFAULT_IFRAME_HEIGHT ? body.offsetHeight : body.scrollHeight
+  getBody(children) {
+    return (
+      <Measure bounds onResize={rect => this.setHeight(rect.bounds.height)}>
+        {({measureRef}) => <div ref={measureRef}>{children}</div>}
+      </Measure>
+    )
+  }
+
+  setHeight(height) {
+    // console.warn('height:', height)
+    this.setState({height})
   }
 
   render() {
     const {children, ...rest} = this.props
-    const height = this.getHeight()
-    const style = height ? {height} : null
+    const {height = 'auto'} = this.state
     return (
-      <BorderBox as="iframe" style={style} {...rest} ref={node => (this.node = node)}>
+      <BorderBox as="iframe" style={{height}} {...rest} ref={node => (this.iframe = node)}>
         {this.doc
-          ? [ReactDOM.createPortal(this.getCssLinks(), this.doc.head), ReactDOM.createPortal(children, this.doc.body)]
+          ? [ReactDOM.createPortal(this.getHead(), this.doc.head), ReactDOM.createPortal(this.getBody(children), this.doc.body)]
           : null}
       </BorderBox>
     )
