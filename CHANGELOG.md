@@ -1,3 +1,19 @@
+# 10.10.5
+
+#### :bug: Bug Fix
+* [#650](https://github.com/primer/primer/pull/650) Fix border radius edge utility specificity. ([@shawnbot](https://github.com/shawnbot))
+
+#### :memo: Documentation
+* [#649](https://github.com/primer/primer/pull/649) Sandboxed code examples. ([@shawnbot](https://github.com/shawnbot))
+
+#### :house: Internal
+- Only check links on Travis if `[check-links]` is included in the commit message
+- a5658d3 Run `now alias` without the branch name on merge to `master`
+
+#### Committers: 1
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+
+
 # 10.10.4
 
 #### :memo: Documentation

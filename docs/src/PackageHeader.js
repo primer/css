@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Comment, Info, FileCode, Alert, PrimitiveDot} from '@githubprimer/octicons-react'
-import {BorderBox, Box, Flex, Link, StyledOcticon as Octicon, Text} from '@primer/components'
+import {Comment, Info, FileCode, Alert} from '@githubprimer/octicons-react'
+import {Box, Flex, Link, StyledOcticon as Octicon, Text} from '@primer/components'
 import StatusLabel from './StatusLabel'
 
 export default function PackageHeader(props) {
@@ -38,8 +38,8 @@ export default function PackageHeader(props) {
 
   return (
     <Flex justifyContent="space-between" mb={4} {...rest}>
-      <Text is="div" fontSize={1}>
-        {status ? <StatusLabel status={status} is="a" href="/css/status-key" mr={2} /> : null}
+      <Text as="div" fontSize={1}>
+        {status ? <StatusLabel status={status} as="a" href="/css/status-key" mr={2} /> : null}
         {info}
       </Text>
       <Box>
