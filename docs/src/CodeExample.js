@@ -48,7 +48,7 @@ export default function CodeExample(props) {
             <Text
               as={LiveError}
               fontFamily="mono"
-              css={{
+              style={{
                 overflow: 'auto',
                 whiteSpace: 'pre'
               }}
