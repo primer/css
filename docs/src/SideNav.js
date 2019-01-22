@@ -111,7 +111,7 @@ const Router = withRouter(({router, children}) => {
 })
 
 /**
- * <RouteMatch> is just a way to conditonally render content without a wrapper
+ * <RouteMatch> is just a way to conditionally render content without a wrapper
  * element when contained directly in a <Router>:
  *
  * ```jsx
