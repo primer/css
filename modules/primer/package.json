@@ -1,5 +1,5 @@
 {
-  "version": "10.10.4",
+  "version": "10.10.5",
   "name": "primer",
   "description": "Primer is the CSS framework that powers GitHub's front-end design. primer includes 23 packages that are grouped into 3 core meta-packages for easy install. Each package and meta-package is independently versioned and distributed via npm, so it's easy to include all or part of Primer within your own project.",
   "homepage": "http://primer.github.io/",
@@ -38,7 +38,7 @@
     "primer-branch-name": "1.0.11",
     "primer-breadcrumb": "1.5.9",
     "primer-buttons": "2.6.4",
-    "primer-core": "6.10.8",
+    "primer-core": "6.10.9",
     "primer-forms": "2.1.8",
     "primer-labels": "1.5.13",
     "primer-layout": "1.6.2",
@@ -61,7 +61,7 @@
     "primer-tables": "1.5.3",
     "primer-tooltips": "1.5.11",
     "primer-truncate": "1.4.13",
-    "primer-utilities": "4.14.3"
+    "primer-utilities": "4.14.4"
   },
   "keywords": [
     "primer",

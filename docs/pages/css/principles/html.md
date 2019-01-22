@@ -15,8 +15,8 @@ title: HTML
 * Avoid trailing slashes in self-closing elements. For example, `<br>`, `<hr>`, `<img>`, and `<input>`.
 * Don't set `tabindex` manually—rely on the browser to set the order.
 
-```html
-<p class="line-note" data-attribute="106">
+```html dead={true}
+<p class="line-note m-0" data-attribute="106">
   This is my paragraph of special text.
 </p>
 ```
@@ -25,7 +25,7 @@ title: HTML
 
 Many attributes don't require a value to be set, like `disabled` or `checked`, so don't set them.
 
-```html
+```html dead={true}
 <input type="text" disabled>
 
 <input type="checkbox" value="1" checked>
@@ -41,7 +41,7 @@ For more information, [read the WhatWG section](http://www.whatwg.org/specs/web-
 
 Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML. For example:
 
-```html
+```html dead={true}
 <!-- Not so great -->
 <span class="avatar">
   <img src="https://github.com/github.png">
@@ -62,7 +62,7 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 
 Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and `scope` attribute) when appropriate. (Note: `<tfoot>` goes above `<tbody>` for speed reasons. You want the browser to load the footer before a table full of data.)
 
-```html
+```html dead={true}
 <table summary="This is a chart of invoices for 2011.">
   <thead>
     <tr>

@@ -27,7 +27,7 @@ else
     npx commit-status pending docs "deploying v$version docs..."
 
     echo "deploying..."
-    now $now_args | tee now-url.txt
+    now "$now_args" | tee now-url.txt
     url=$(cat now-url.txt)
     npx commit-status success docs "v$version docs: $url" "$url"
 
@@ -37,23 +37,31 @@ else
         branch=$TRAVIS_BRANCH
     fi
 
-    alias="primer-css-${branch//\./-}.now.sh"
+    if [[ "$branch" = "master" ]]; then
+        alias=$(jq -r .alias now.json)
+    else
+        alias="primer-css-${branch//\./-}.now.sh"
+    fi
     echo "aliasing to '$alias'..."
-    now $now_args alias $url $alias
+    now "$now_args" alias "$url" "$alias"
     npx commit-status success docs "v$version docs: $alias" "https://$alias"
 
-    echo
-    echo "Running script/check-links in $(pwd)..."
-    echo
-    script/check-links -v -m=5 "https://$alias/css" || {
+    if [[ "$CHECK_LINKS" = "1" ]]; then
         echo
-        echo "⚠️  Link check failed! ⚠️"
+        echo "Running script/check-links in $(pwd)..."
         echo
-        echo "Check the report above for more info, and/or run:"
-        echo
-        echo "    script/check-links http://localhost:3000 -v"
-        echo
-        echo "locally for more info."
-        exit 1
-    }
+        script/check-links -v -m=5 "https://$alias/css" || {
+            echo
+            echo "⚠️  Link check failed! ⚠️"
+            echo
+            echo "Check the report above for more info, and/or run:"
+            echo
+            echo "    script/check-links http://localhost:3000 -v"
+            echo
+            echo "locally for more info."
+            exit 1
+        }
+    else
+        echo "Set CHECK_LINKS=1 to check links on Travis"
+    fi
 fi

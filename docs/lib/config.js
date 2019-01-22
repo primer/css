@@ -1,9 +1,7 @@
 /* eslint-disable no-console */
 const sync = require('./sync')
+const cssLoaderConfig = require('@zeit/next-css/css-loader-config')
 const {CI, NODE_ENV, NOW_URL} = process.env
-
-const PRIMER_SCSS = 'primer/index.scss$'
-const PRIMER_STATIC_CSS = require.resolve('primer/build/build.css')
 
 module.exports = (nextConfig = {}) => {
   const {assetPrefix = NOW_URL || ''} = nextConfig
@@ -26,11 +24,27 @@ module.exports = (nextConfig = {}) => {
         )
       }
 
-      const {dev} = options
+      const {dev, isServer} = options
 
       // only attempt to sync locally and in CI
       if (dev && !configured) {
         sync({watch: !CI})
+      }
+
+      // in production, we don't need to compile Primer from SCSS; just inline
+      // the CSS build!
+      if (!dev) {
+        config.resolve.alias['primer/index.scss$'] = require.resolve('primer/build/build.css')
+
+        const cssLoader = cssLoaderConfig(config, {
+          dev,
+          isServer
+        })
+        options.defaultLoaders.css = cssLoader
+        config.module.rules.push({
+          test: /\.css$/,
+          loader: cssLoader
+        })
       }
 
       config.module.rules.push({
@@ -45,18 +59,6 @@ module.exports = (nextConfig = {}) => {
           require.resolve('./mdx-loader')
         ]
       })
-
-      /**
-       * in production we don't have access to ../modules, so we need to
-       * rewrite the 'primer/index.scss' import to the static CSS build
-       */
-      if (!dev) {
-        config.resolve.alias[PRIMER_SCSS] = PRIMER_STATIC_CSS
-        // only log the aliasing once
-        if (!configured) {
-          console.warn(`*** rewriting ${PRIMER_SCSS} to ${PRIMER_STATIC_CSS}`)
-        }
-      }
 
       configured = true
       if (typeof nextConfig.webpack === 'function') {

@@ -7,7 +7,7 @@ import {rootPage} from './utils'
 
 export default function SideNav(props) {
   return (
-    <Relative is="nav">
+    <Relative as="nav">
       <Box id="sidenav" {...props}>
         <Flex flexDirection="column" alignItems="start">
           <Router>
@@ -75,12 +75,7 @@ function NavList({path}) {
  */
 const SectionLink = withRouter(({href, router, ...rest}) => (
   <Box {...rest}>
-    <NodeLink
-      href={href}
-      color="gray.9"
-      fontSize={2}
-      fontWeight={router.pathname.startsWith(href) ? 'bold' : null}
-    />
+    <NodeLink href={href} color="gray.9" fontSize={2} fontWeight={router.pathname.startsWith(href) ? 'bold' : null} />
   </Box>
 ))
 
