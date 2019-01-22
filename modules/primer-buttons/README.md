@@ -37,6 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Buttons
+path: components/buttons
 status: Stable
 -->
 
@@ -95,10 +96,9 @@ Use `.btn-large` to increase the padding and border radius of a button. This is 
 [Type scale utilities](https://styleguide.github.com/primer/utilities/typography/#type-scale-utilities) can be used to alter the font-size if needed. Padding is applied in em's so that it scales proportionally with the font-size.
 
 ```html
-
 <p>
   <a class="btn btn-large btn-purple" href="#url" role="button">Large link button</a>
-  <button class="btn btn-large btn-outline-blue" type="button">Large button button</button>
+  <button class="btn btn-large" type="button">Large button button</button>
 </p>
 
 ```
@@ -106,12 +106,10 @@ Use `.btn-large` to increase the padding and border radius of a button. This is 
 Use `.btn-large` with a type scale utility to transform the text to a bigger size.
 
 ```html
-
 <p class="f3">
   <a class="btn btn-large btn-purple" href="#url" role="button">Large link button</a>
   <button class="btn btn-large btn-outline-blue" type="button">Large button button</button>
 </p>
-
 ```
 
 ## Disabled state
@@ -165,7 +163,7 @@ You can easily append a count to a **small button**. Add the `.with-count` class
 
 **Be sure to clear the float added by the additional class.**
 
-```html
+```erb
 <div class="clearfix">
   <a class="btn btn-sm btn-with-count" href="#url" role="button">
     <%= octicon "eye" %>
@@ -175,7 +173,7 @@ You can easily append a count to a **small button**. Add the `.with-count` class
 </div>
 ```
 
-You can also use the [counter](../labels#counters) component within buttons:
+You can also use the [counter](./labels#counters) component within buttons:
 
 ```html
 <button class="btn" type="button">

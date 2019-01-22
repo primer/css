@@ -1,5 +1,6 @@
 ---
 title: Layout
+path: utilities/layout
 status: Stable
 ---
 
@@ -31,7 +32,27 @@ Adjust the display of an element with `.d-block`, `.d-none`, `.d-inline`, `.d-in
 </div>
 ```
 
-There are known issues with using `display:table` and wrapping long strings, particularly in Firefox. You may need to use `table-fixed` on elements with `d-table` and apply column widths to table cells, which you can do with our [column width styles](../../objects/grid#column-widths).
+### The HTML `hidden` attribute
+
+As of [Primer v10.10.0](https://github.com/primer/primer/releases/v10.10.0), `primer-base` includes a rule that sets `display: none !important` for any element with the [`hidden` attribute][hidden]. You can safely use the `hidden` attribute with display utilities, but we suggest:
+
+1. Use the `hidden` attribute (and corresponding JavaScript property) if you're going to programmatically show and hide content.
+1. Use `d-none` and/or its responsive variants (`d-sm-block`, `d-lg-none`) to conditionally show content at different screen sizes.
+
+Rather than toggling the `d-none` class in JavaScript, you should toggle the `hidden` property on an element. This means that you won't have to restore any more specific display utility (`d-inline` or `d-flex`, for instance) just to work around the order in which they're listed in the stylesheet.
+
+```js
+// Good:
+element.hidden = !visible
+
+// Bad:
+element.classList.toggle('d-none', !visible)
+element.classList.toggle('d-inline', visible)
+```
+
+### `display:table` wrapping issues
+
+There are known issues with using `display:table` and wrapping long strings, particularly in Firefox. You may need to use `table-fixed` on elements with `d-table` and apply column widths to table cells, which you can do with our [column width styles](/css/objects/grid#column-widths).
 
 ```html
 <div class="d-table table-fixed width-full">
@@ -45,7 +66,7 @@ There are known issues with using `display:table` and wrapping long strings, par
 ```
 
 ### Responsive display
-A selection of display utilities are able to be applied or changed per [breakpoint](../../objects/grid#breakpoints). `.d-block`, `.d-none`, `.d-inline`, and `.d-inline-block` are available as responsive utilities using the following formula: `d-[breakpoint]-[property]`. For example: `d-md-inline-block`. Each responsive display utility is applied to the specified breakpoint and up.
+A selection of display utilities are able to be applied or changed per [breakpoint](/css/objects/grid#breakpoints). `.d-block`, `.d-none`, `.d-inline`, and `.d-inline-block` are available as responsive utilities using the following formula: `d-[breakpoint]-[property]`. For example: `d-md-inline-block`. Each responsive display utility is applied to the specified breakpoint and up.
 
 In the following example, the `ul` element switches from `display: block` on mobile to  `display: inline-block` at the `md` breakpoint, while the list items remain inline.
 
@@ -97,7 +118,7 @@ Use `.float-left` and `.float-right` to set floats, and `.clearfix` to clear.
 </div>
 ```
 ### Responsive floats
-Float utilities can be applied or changed per [breakpoint](../../objects/grid#breakpoints). This can be useful for responsive layouts when you want an element to be full width on mobile but floated at a larger breakpoint.
+Float utilities can be applied or changed per [breakpoint](/css/objects/grid#breakpoints). This can be useful for responsive layouts when you want an element to be full width on mobile but floated at a larger breakpoint.
 
 Each responsive float utility is applied to the specified breakpoint and up, using the following formula:  `float-[breakpoint]-[property]`. For example: `float-md-left`. Remember to use `.clearfix` to clear.
 
@@ -142,7 +163,7 @@ Use `.width-fit` to set max-width 100%.
 
 ```html
 <div class="one-fourth column">
-  <img class="width-fit bg-gray" src="/images/gravatars/gravatar-user-420.png" alt="width fitted octocat" />
+  <img class="width-fit bg-gray" src="https://github.com/github.png" alt="width fitted octocat" />
 </div>
 ```
 
@@ -168,7 +189,7 @@ Use `.height-fit` to set max-height 100%.
 
 Use `.height-full` to set height to 100%.
 
-```html
+```erb
 <div class="d-table border border-gray">
   <div class="d-table-cell height-full v-align-middle pl-3">
     <%= octicon "three-bars" %>
@@ -185,11 +206,12 @@ Position utilities can be used to alter the default document flow. **Be careful 
 Use `.position-relative` to create a new stacking context.
 
 _Note how the other elements are displayed as if "Two" were in its normal position and taking up space._
+
 ```html
 <div class="d-inline-block float-left bg-blue text-white m-3" style="width:100px; height:100px;">
   One
 </div>
-<div class="d-inline-block float-left position-relative bg-blue text-white m-3" style="width:100px; height:100px;  top:12px; left:12px;">
+<div class="d-inline-block float-left position-relative bg-blue text-white m-3" style="width:100px; height:100px; top:12px; left:12px;">
   Two
 </div>
 <div class="d-inline-block float-left bg-blue text-white m-3" style="width:100px; height:100px;">
@@ -204,7 +226,7 @@ Use `.position-absolute` to take elements out of the normal document flow.
 
 ```html
 <div class="position-relative" style="height:116px;">
-  <button type="button" class="btn btn-secondary mb-1">Button</button>
+  <button type="button" class="btn mb-1">Button</button>
   <div class="position-absolute border border-gray p-2">
     <a href="#url" class="d-block p-1">Mashed potatoes</a>
     <a href="#url" class="d-block p-1">Fries</a>
@@ -298,3 +320,5 @@ Create a double-sided media object for a container with a flexible center.
 ```
 
 You can also create a media object with [flexbox utilities](./flexbox#media-object) instead of floats which can be useful for changing the vertical alignment.
+
+[hidden]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden

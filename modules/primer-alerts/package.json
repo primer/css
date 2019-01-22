@@ -1,5 +1,5 @@
 {
-  "version": "1.5.9",
+  "version": "1.5.13",
   "name": "primer-alerts",
   "description": "Flash messages, or alerts, inform users of successful or pending actions.",
   "homepage": "http://primer.github.io/",
@@ -30,10 +30,10 @@
     "lint": "../../script/lint-scss",
     "test": "../../script/npm-run-all build lint",
     "prepublishOnly": "../../script/notify pending",
-    "publish": "../../script/notify success"
+    "postpublish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.6.0"
+    "primer-support": "4.7.2"
   },
   "keywords": [
     "alerts",

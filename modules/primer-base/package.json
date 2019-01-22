@@ -1,5 +1,5 @@
 {
-  "version": "1.7.4",
+  "version": "1.9.2",
   "name": "primer-base",
   "description": "CSS to reset the browsers default styles",
   "homepage": "http://primer.github.io/",
@@ -31,10 +31,10 @@
     "lint": "../../script/lint-scss",
     "test": "../../script/npm-run-all build lint",
     "prepublishOnly": "../../script/notify pending",
-    "publish": "../../script/notify success"
+    "postpublish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.6.0"
+    "primer-support": "4.7.2"
   },
   "keywords": [
     "primer",

@@ -1,6 +1,6 @@
 {
-  "version": "1.0.8",
   "name": "generator-primer-module",
+  "version": "1.2.1",
   "description": "Use this to create a new Primer modules!",
   "author": "GitHub, Inc.",
   "license": "MIT",
@@ -16,8 +16,8 @@
     "watch": "npm run test -- --watch"
   },
   "dependencies": {
-    "chalk": "^2.1.0",
-    "primer-support": "4.6.0",
+    "colorette": "1.0.7",
+    "primer-support": "4.7.2",
     "yeoman-generator": "^1.1.1"
   },
   "keywords": [

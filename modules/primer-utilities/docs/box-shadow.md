@@ -1,6 +1,7 @@
 ---
 title: Box shadow
-status: New release
+path: utilities/box-shadow
+status: Stable
 status_issue: https://github.com/github/design-systems/issues/269
 ---
 
@@ -18,13 +19,13 @@ Default shadows are mainly used on things that need to appear slightly elevated,
 </div>
 ```
 
-These types of shadows are typically applied to elements with borders, like [`Box`](/styleguide/css/styles/core/components/box).
+These types of shadows are typically applied to elements with borders, such as the [Box component](/css/components/box).
 
 ```html
 <div class="col-5">
   <div class="Box box-shadow">
     <div class="Box-row">
-      <h3 class="mb-0">Organization</h3>
+      <h3 class="m-0">Organization</h3>
     </div>
     <div class="Box-row">
       <p class="mb-0 text-gray">
@@ -50,7 +51,7 @@ Medium box shadows are more diffused and slightly larger than small box shadows.
 
 Medium box shadows are typically used on editorialized content that needs to appear elevated. Most of the time, the elements using this level of shadow will be clickable.
 
-```html
+```erb
 <div class="col-6">
   <a class="d-block box-shadow-medium px-3 pt-4 pb-6 position-relative rounded-1 overflow-hidden no-underline" href="#">
     <div class="bg-blue position-absolute top-0 left-0 py-1 width-full"></div>
@@ -80,7 +81,7 @@ These shadows are used for marketing content, UI screenshots, and content that a
 
 ```html
 <div class="box-shadow-large rounded-2 overflow-hidden">
-  <img src="<%= image_path "modules/site/org_example_nasa.png" %>" class="img-responsive" alt="NASA is on GitHub">
+  <img src="https://github.com/nasa.png" class="img-responsive" alt="NASA is on GitHub">
 </div>
 ```
 
