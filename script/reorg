@@ -37,7 +37,7 @@ packages=$($(dirname $0)/get-packages)
 modules=$(echo "$packages" | egrep 'modules/' | egrep -v 'primer$')
 tools=$(echo "$packages" | egrep 'tools/')
 
-function go() {
+function __() {
     if [[ $DRY_RUN -eq 1 ]]; then
         echo $@
     else
@@ -54,12 +54,12 @@ function write() {
     echo "$1" > "$2"
 }
 
-# go npx lerna clean
+# __ npx lerna clean
 
 primer=modules/primer
 
 # primer/primer => primer/css
-go perl -pi -e 's#primer/primer#primer/css#' {modules,tools}/*/{package.json,*.md,docs/*.md}
+__ perl -pi -e 's#primer/primer#primer/css#' {modules,tools}/*/{package.json,*.md,docs/*.md}
 
 for dir in $modules; do
     name="${dir/modules\/primer-/}"
@@ -72,34 +72,34 @@ for dir in $modules; do
 
     echo "# $dir => $dest"
 
-    go rm -rf $dest
-    go mkdir -p $dest
-    go git mv $dir/index.scss $dest
+    __ rm -rf $dest
+    __ mkdir -p $dest
+    __ git mv $dir/index.scss $dest
 
     if [[ -e $dir/lib ]]; then
-        go mv $dir/lib/* $dest
+        __ mv $dir/lib/* $dest
     fi
     if [[ -e $dir/docs ]]; then
-        go mv $dir/docs $dest
+        __ mv $dir/docs $dest
     fi
 
-    go pushd $dest > /dev/null
-    go perl -pi -e 's#primer-#../#' index.scss
-    go perl -pi -e 's#/lib/#/#' index.scss
-    go popd > /dev/null
+    __ pushd $dest > /dev/null
+    __ perl -pi -e 's#primer-#../#' index.scss
+    __ perl -pi -e 's#/lib/#/#' index.scss
+    __ popd > /dev/null
 
-    go rm -r $dir
+    __ rm -r $dir
 done
 
 for dir in $primer/marketing-*; do
     name="${dir/$primer\/marketing-/}"
-    go git mv $dir $primer/marketing/$name
+    __ git mv $dir $primer/marketing/$name
 done
 
-go pushd $primer > /dev/null
-go set_json '.name' '"@primer/css"' package.json
-go set_json '.dependencies' '{}' package.json
-go perl -pi -e 's#primer-#./#' index.scss
-go popd > /dev/null
+__ pushd $primer > /dev/null
+__ set_json '.name' '"@primer/css"' package.json
+__ set_json '.dependencies' '{}' package.json
+__ perl -pi -e 's#primer-#./#' index.scss
+__ popd > /dev/null
 
-go git add $dirs
+__ git add $dirs
