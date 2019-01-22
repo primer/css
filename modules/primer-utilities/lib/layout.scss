@@ -2,27 +2,14 @@
 // stylelint-disable block-opening-brace-space-after, block-opening-brace-space-before, primer/selector-no-utility
 // stylelint-disable comment-empty-line-before
 
-/* Set position to static */
-.position-static   { position: static !important; }
-/* Set position to relative */
-.position-relative { position: relative !important; }
-/* Set position to absolute */
-.position-absolute { position: absolute !important; }
-/* Set position to fixed */
-.position-fixed    { position: fixed !important; }
-
-/* Responsive position utilities */
-
-@each $breakpoint in map-keys($breakpoints) {
+// Loop through the breakpoint values
+@each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
-    /* Set position to relative */
-    .position-#{$breakpoint}-static { position: static !important; }
-    /* Set position to relative */
-    .position-#{$breakpoint}-relative { position: relative !important; }
-    /* Set position to absolute */
-    .position-#{$breakpoint}-absolute { position: absolute !important; }
-    /* Set position to fixed */
-    .position-#{$breakpoint}-fixed    { position: fixed !important; }
+    @each $position in $responsive-positions {
+      .position#{$variant}-#{$position} {
+        position: $position !important;
+      }
+    }
   }
 }
 
