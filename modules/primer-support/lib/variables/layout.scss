@@ -70,3 +70,11 @@ $responsive-variants: ("": "");
 @each $key in map-keys($breakpoints) {
   $responsive-variants: map-merge($responsive-variants, ($key: "-#{$key}"));
 }
+
+// responive utility position values
+$responsive-positions: (
+  static,
+  relative,
+  absolute,
+  fixed
+) !default;
