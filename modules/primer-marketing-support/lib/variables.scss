@@ -29,3 +29,31 @@ $spacer-11: $spacer * 14; // 112px
 $spacer-12: $spacer * 16; // 128px
 
 $marketingSpacers: $spacer-7, $spacer-8, $spacer-9, $spacer-10, $spacer-11, $spacer-12;
+$allSpacers: $spacer-1, $spacer-2, $spacer-3, $spacer-4, $spacer-5, $spacer-6, $spacer-7, $spacer-8, $spacer-9, $spacer-10, $spacer-11, $spacer-12;
+
+$marketing-spacers: (
+  7: $spacer-7,
+  8: $spacer-8,
+  9: $spacer-9,
+  10: $spacer-10,
+  11: $spacer-11,
+  12: $spacer-12,
+) !default;
+
+$marketing-all-spacers: map-merge(
+  (
+    1: $spacer-1,
+    2: $spacer-2,
+    3: $spacer-3,
+    4: $spacer-4,
+    5: $spacer-5,
+    6: $spacer-6,
+  ),
+  $marketing-spacers,
+) !default;
+
+$marketing-position-variants: (
+  "": "",
+  md: "-md",
+  lg: "-lg",
+) !default;

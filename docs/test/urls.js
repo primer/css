@@ -30,7 +30,6 @@ const exceptions = {
   '/packages/primer-product': removed,
   '/principles/HTML': moved('/principles/html'),
   '/principles/SCSS': moved('/principles/scss'),
-  '/utilities/marketing-layout': moved('/utilities/layout'),
   '/whats_new': redirect('https://github.com/primer/primer/releases'),
   '/whats_new/changelog': removed,
   '/whats_new/changelog/archived_changelog': removed,
