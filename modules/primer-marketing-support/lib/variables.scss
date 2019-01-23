@@ -14,15 +14,29 @@ $spacer-12: $spacer * 16; // 128px
 $marketingSpacers: $spacer-7, $spacer-8, $spacer-9, $spacer-10, $spacer-11, $spacer-12;
 $allSpacers: $spacer-1, $spacer-2, $spacer-3, $spacer-4, $spacer-5, $spacer-6, $spacer-7, $spacer-8, $spacer-9, $spacer-10, $spacer-11, $spacer-12;
 
-// Breakpoints for position utils, no sm or xl
-$breakpoints-positionUtils: (
-  // Medium screen / tablet
-  md: $width-md,
-  // Large screen / desktop (980 + (16 * 2)) <= container + gutters
-  lg: $width-lg,
+$marketing-spacers: (
+  7: $spacer-7,
+  8: $spacer-8,
+  9: $spacer-9,
+  10: $spacer-10,
+  11: $spacer-11,
+  12: $spacer-12,
 ) !default;
 
-$responsive-variants-positionUtils: ("": "");
-@each $key in map-keys($breakpoints-positionUtils) {
-  $responsive-variants-positionUtils: map-merge($responsive-variants-positionUtils, ($key: "-#{$key}"));
-}
+$marketing-all-spacers: map-merge(
+  (
+    1: $spacer-1,
+    2: $spacer-2,
+    3: $spacer-3,
+    4: $spacer-4,
+    5: $spacer-5,
+    6: $spacer-6,
+  ),
+  $marketing-spacers,
+) !default;
+
+$marketing-position-variants: (
+  '': '',
+  md: '-md',
+  lg: '-lg',
+) !default;
