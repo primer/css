@@ -37,6 +37,6 @@
     "scss"
   ],
   "dependencies": {
-    "primer-support": "^4.7.0"
+    "primer-support": "4.7.2"
   }
 }
