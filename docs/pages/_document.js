@@ -1,8 +1,7 @@
 import React from 'react'
-import Document, {Main, NextScript} from 'next/document'
+import Document, {Head, Main, NextScript} from 'next/document'
 import {ServerStyleSheet} from 'styled-components'
-import {extractCritical} from 'emotion-server'
-import {config, getAssetPath} from '../src/utils'
+import {getAssetPath, CommonStyles, CommonScripts} from '../src/utils'
 
 export default class MyDocument extends Document {
   static getInitialProps({renderPage}) {
@@ -10,26 +9,18 @@ export default class MyDocument extends Document {
     const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
     return {
       ...page,
-      styleTags: (
-        <>
-          <style id="emotion-static">{extractCritical(page.html).css}</style>
-          {sheet.getStyleElement()}
-        </>
-      )
+      renderedStyles: sheet.getStyleElement()
     }
   }
 
   render() {
-    const {styleTags} = this.props
+    const {files, renderedStyles} = this.props
 
     return (
       <html lang="en">
-        <head>
-          <title>Primer CSS</title>
-          {/* TODO: update this with a new id
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126681523-1" />
+        <Head>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126681523-2" />
           <script async href={getAssetPath('analytics.js')} />
-          */}
           <meta charSet="utf8" />
           <link rel="icon" href={getAssetPath('favicon.png')} />
           <link rel="apple-touch-icon" href={getAssetPath('apple-touch-icon.png')} />
@@ -46,17 +37,13 @@ export default class MyDocument extends Document {
           <meta property="og:image:height" content="630" />
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:site" content="@githubprimer" />
-          <link rel="stylesheet" href={getAssetPath('github/styleguide.css')} />
-          <link
-            rel="stylesheet"
-            href={config.production ? getAssetPath('primer.css') : '/_next/static/css/styles.chunk.css'}
-          />
-          {styleTags}
-        </head>
-        <body>
+          <CommonStyles />
+          {renderedStyles}
+        </Head>
+        <body data-files={JSON.stringify(files)}>
           <Main />
           <NextScript />
-          <script src={getAssetPath('github/styleguide.js')} />
+          <CommonScripts />
         </body>
       </html>
     )

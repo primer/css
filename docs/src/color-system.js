@@ -42,7 +42,7 @@ export function ColorVariables(props) {
       <Flex flexWrap="wrap" {...props}>
         <FadeVariables id="black" hue="black" bg="black" color="white">
           <BorderBox border={0} borderRadius={0} borderTop={1} borderColor="gray.5" mt={1}>
-            <Text is="div" fontSize={2} pt={3} mb={0}>
+            <Text as="div" fontSize={2} pt={3} mb={0}>
               Black fades apply alpha transparency to the <Var>$black</Var> variable. The black color value has a slight
               blue hue to match our grays.
             </Text>
@@ -50,7 +50,7 @@ export function ColorVariables(props) {
         </FadeVariables>
         <FadeVariables id="white" hue="white" over={BLACK}>
           <BorderBox border={0} borderRadius={0} borderTop={1} mt={1}>
-            <Text is="div" fontSize={2} pt={3} mb={0}>
+            <Text as="div" fontSize={2} pt={3} mb={0}>
               White fades apply alpha transparency to the <Var>$white</Var> variable, below these are shown overlaid on
               a dark gray background.
             </Text>
@@ -64,14 +64,14 @@ export function ColorVariables(props) {
 export function ColorVariable({hue, ...rest}) {
   const values = colors[hue]
   return (
-    <Flex.Item is={Box} pr={4} mb={6} className="col-6 markdown-no-margin" {...rest}>
-      {/* <Heading is="div">{titleCase(hue)}</Heading> */}
+    <Flex.Item as={Box} pr={4} mb={6} className="col-6 markdown-no-margin" {...rest}>
+      {/* <Heading as="div">{titleCase(hue)}</Heading> */}
       <Box bg={`${hue}.5`} my={2} p={3} color="white">
-        <Heading is="div" pb={3} fontSize={56} fontWeight="light">
+        <Heading as="div" pb={3} fontSize={56} fontWeight="light">
           {titleCase(hue)}
         </Heading>
         <Flex justifyContent="space-between">
-          <Flex.Item flex="1 1 auto" is={Var}>
+          <Flex.Item flex="1 1 auto" as={Var}>
             ${hue}-500
           </Flex.Item>
           <Text fontFamily="mono">{values[5]}</Text>
@@ -103,14 +103,14 @@ export function FadeVariables({hue, color, bg, over, children, ...rest}) {
   })
   const boxProps = {color, bg}
   return (
-    <Flex.Item is={Box} pr={4} mb={6} width={1 / 2} className="markdown-no-margin" {...rest}>
-      {/* <Heading is="div">{titleCase(hue)}</Heading> */}
+    <Flex.Item as={Box} pr={4} mb={6} width={1 / 2} className="markdown-no-margin" {...rest}>
+      {/* <Heading as="div">{titleCase(hue)}</Heading> */}
       <Box my={2} p={3} {...boxProps}>
-        <Heading is="div" pb={3} fontSize={56} fontWeight="light">
+        <Heading as="div" pb={3} fontSize={56} fontWeight="light">
           {titleCase(hue)}
         </Heading>
         <Flex justifyContent="space-between">
-          <Flex.Item flex="1 1 auto" is={Var}>
+          <Flex.Item flex="1 1 auto" as={Var}>
             ${hue}
           </Flex.Item>
           <Text fontFamily="mono">
@@ -140,15 +140,13 @@ FadeVariables.propTypes = {
 function Swatch(props) {
   const {name, value, textColor = overlayColor(value), ...rest} = props
   return (
-    <Box bg={value} {...rest}>
-      <Text is={Flex} fontSize={1} justifyContent="space-between">
+    <Box bg={value} color={textColor} {...rest}>
+      <Text as={Flex} fontSize={1} justifyContent="space-between">
         <Box p={3}>
-          <Var color={textColor}>${name}</Var>
+          <Var>${name}</Var>
         </Box>
         <Box p={3}>
-          <Text color={textColor} fontFamily="mono">
-            {value}
-          </Text>
+          <Text fontFamily="mono">{value}</Text>
         </Box>
       </Text>
     </Box>
@@ -163,7 +161,7 @@ Swatch.propTypes = {
 
 function Var(props) {
   // FIXME: fontStyle should be a prop, right?
-  return <Text is="var" fontWeight="bold" fontFamily="mono" css={{fontStyle: 'normal'}} {...props} />
+  return <Text as="var" fontWeight="bold" fontFamily="mono" style={{fontStyle: 'normal'}} {...props} />
 }
 
 function overlayColor(bg) {

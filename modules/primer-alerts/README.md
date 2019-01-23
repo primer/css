@@ -98,7 +98,7 @@ Add `.flash-warn`, `.flash-error`, or `.flash-success` to the flash message to m
 
 Add an icon to the left of the flash message to give it some funky fresh attention.
 
-```html
+```erb
 <div class="flash">
   <%= octicon "alert" %>
   Flash message with an icon goes here.
@@ -109,7 +109,7 @@ Add an icon to the left of the flash message to give it some funky fresh attenti
 
 Add a JavaScript enabled (via Crema) dismiss (close) icon on the right of any flash message.
 
-```html
+```erb
 <div class="flash">
   <button class="flash-close js-flash-close" type="button"><%= octicon "x", :"aria-label" => "Close" %></button>
   Dismissable flash message goes here.

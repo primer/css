@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Comment, Info, FileCode, Alert, PrimitiveDot} from '@githubprimer/octicons-react'
-import {BorderBox, Box, Flex, Link, StyledOcticon as Octicon, Text} from '@primer/components'
+import {Comment, Info, FileCode, Alert} from '@githubprimer/octicons-react'
+import {Box, Flex, Link, StyledOcticon as Octicon, Text} from '@primer/components'
+import StatusLabel from './StatusLabel'
 
 export default function PackageHeader(props) {
   const {description, internal = false, package: pkg, source = '', status, status_issue: issue, ...rest} = props
@@ -37,13 +38,8 @@ export default function PackageHeader(props) {
 
   return (
     <Flex justifyContent="space-between" mb={4} {...rest}>
-      <Text is="div" fontSize={1}>
-        {status ? (
-          <BorderBox is="a" href="/css/whats-new/status-key" display="inline-block" px={2} py={1} mr={2}>
-            <Octicon icon={PrimitiveDot} color={getStatusColor(status)} mr={2} />
-            {status}
-          </BorderBox>
-        ) : null}
+      <Text as="div" fontSize={1}>
+        {status ? <StatusLabel status={status} as="a" href="/css/status-key" mr={2} /> : null}
         {info}
       </Text>
       <Box>
@@ -68,15 +64,4 @@ PackageHeader.propTypes = {
   }),
   source: PropTypes.string,
   status: PropTypes.string
-}
-
-function getStatusColor(status) {
-  return (
-    {
-      stable: 'green.6',
-      'new release': 'yellow.7',
-      deprecated: 'red.7',
-      experimental: 'orange.5'
-    }[status.toLowerCase()] || 'gray.5'
-  )
 }

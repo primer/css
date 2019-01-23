@@ -6,9 +6,9 @@ status: Stable
 status_issue: https://github.com/github/design-systems/issues/378
 ---
 
-Marketing padding utilities extend [core margin utilities](../../support/spacing) across the x and y axis. The [marketing scale](../../support/marketing-variables/#extended-spacing-scale) starts from spacer 7 up to 12, and steps first by `8px` for spacer 7 and continues in increments of `16px` for spacer 8 to 12.
+Marketing padding utilities extend [core margin utilities](/css/utilities/margin) across the x and y axis. The [marketing scale](/css/support/marketing-variables#extended-spacing-scale) starts from spacer 7 up to 12, and steps first by `8px` for spacer 7 and continues in increments of `16px` for spacer 8 to 12.
 
-## Y-axis padding utilities
+## Padding utilities
 
 Use marketing padding utilities to apply padding to top, right, bottom, left, x-axis, or y axis of an element. These utilities can change or override default padding, and can be used with a spacing scale of 7-12.
 
@@ -33,9 +33,9 @@ Use marketing padding utilities to apply padding to top, right, bottom, left, x-
 </div>
 ```
 
-## Responsive y-axis padding utilities
+## Responsive padding utilities
 
-All marketing padding utilities can be adjusted per [breakpoint](../../objects/grid#breakpoints) using the following formula: `p[y-direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
+All marketing padding utilities can be adjusted per [breakpoint](/css/objects/grid#breakpoints) using the following formula: `p[y-direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
 
 ```html
 <div class="d-inline-block margin-orange">

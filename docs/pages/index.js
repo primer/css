@@ -1,2 +1,2 @@
-import {redirect} from '../src/utils'
+import redirect from '../src/redirect'
 export default redirect('/css')

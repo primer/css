@@ -17,3 +17,5 @@ elif [[ "$branch" =~ ^release- ]]; then
 else
     script/release-pr $args
 fi
+
+script/deploy-docs

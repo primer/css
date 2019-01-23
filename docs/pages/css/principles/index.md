@@ -55,7 +55,7 @@ Many designers and developers will edit and add to our CSS. Write CSS in a way t
 
 * Choose verbose over clever. A little duplication is worthwhile if it adds clarity.
 * Don't prioritize being DRY if  it means it's hard to read and understand, creates dependencies, or hides what the code is really doing.
-*  Avoid overusing pre-processor features that make the code less approachable. Keep it CSS'y and limit the use of Sass features like nesting, variables, functions. For more detail on this check out our [Sass guidelines and lint rules](./code-style.md#scss).
+*  Avoid overusing pre-processor features that make the code less approachable. Keep it CSS'y and limit the use of Sass features like nesting, variables, functions. For more detail on this check out our [Sass guidelines and lint rules](/css/principles/scss).
 
 
 ## Components
@@ -184,7 +184,7 @@ The most common use case is for applying widths and heights to images. Other use
 
 ```html
 <!-- Image width and height -->
-<img src="images/avatar.png" width="20" height="20">
+<img width="20" height="20" src="https://github.com/github.png">
 
 <!-- Custom width for a div that is not a repeated pattern -->
 <div class="d-table-cell py-3 pr-3" style="width: 72px">

@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "colorette": "1.0.7",
-    "primer-support": "4.7.1",
+    "primer-support": "4.7.2",
     "yeoman-generator": "^1.1.1"
   },
   "keywords": [
