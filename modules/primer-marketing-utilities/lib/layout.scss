@@ -10,6 +10,11 @@
       .right#{$variant}-#{$scale}   { right: $size !important; }
       .bottom#{$variant}-#{$scale}  { bottom: $size !important; }
       .left#{$variant}-#{$scale}    { left: $size !important; }
+
+      .top#{$variant}-n#{$scale}     { top: -$size !important; }
+      .right#{$variant}-n#{$scale}   { right: -$size !important; }
+      .bottom#{$variant}-n#{$scale}  { bottom: -$size !important; }
+      .left#{$variant}-n#{$scale}    { left: -$size !important; }
     }
   }
 }
