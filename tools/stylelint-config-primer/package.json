@@ -21,7 +21,7 @@
     "stylelint-no-unsupported-browser-features": "^1.0.0",
     "stylelint-order": "^0.4.4",
     "stylelint-scss": "^1.4.1",
-    "stylelint-selector-no-utility": "2.0.1"
+    "stylelint-selector-no-utility": "2.0.2"
   },
   "devDependencies": {
     "eslint": "^3.19.0",

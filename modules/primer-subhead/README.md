@@ -37,7 +37,8 @@ $ npm run build
 
 <!-- %docs
 title: Subhead
-status: New release
+path: components/subhead
+status: Stable
 status_issue: https://github.com/github/design-systems/issues/101
 -->
 

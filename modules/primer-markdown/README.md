@@ -37,6 +37,7 @@ $ npm run build
 
 <!-- %docs
 title: Markdown
+path: components/markdown
 status: Stable
 -->
 

@@ -13,28 +13,19 @@ script:
   - npm test
   - script/check-versions
 
-after_success:
+before_deploy:
   # this will short-circuit the publish step if it fails to interpolate $NPM_API_KEY
   - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
   # copy the CHANGELOG.md primer for publishing
   - cp CHANGELOG.md modules/primer
-  - script/after_success
 
 deploy:
-  # publish release candidates on release branches
+  # publish canary releases on all branches *except* master and release-*
   - provider: script
-    script: script/release-candidate
+    script: script/deploy --yes
     skip_cleanup: true
     on:
-      branch: release*
-      tags: false
-
-  # publish "final" releases on master
-  - provider: script
-    script: script/release
-    skip_cleanup: true
-    on:
-      branch: master
+      all_branches: true
       tags: false
 
 notifications:
