@@ -36,7 +36,7 @@ $marketing-all-spacers: map-merge(
 ) !default;
 
 $marketing-position-variants: (
-  '': '',
-  md: '-md',
-  lg: '-lg',
+  "": "",
+  md: "-md",
+  lg: "-lg",
 ) !default;
