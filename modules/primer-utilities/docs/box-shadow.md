@@ -28,7 +28,7 @@ These types of shadows are typically applied to elements with borders, such as t
       <h3 class="m-0">Organization</h3>
     </div>
     <div class="Box-row">
-      <p class="mb-0 alt-text-small text-gray">
+      <p class="mb-0 text-gray">
         Taxidermy live-edge mixtape, keytar tumeric locavore meh selvage deep v letterpress vexillologist lo-fi tousled church-key thundercats. Brooklyn bicycle rights tousled, marfa actually.
       </p>
     </div>
@@ -56,7 +56,7 @@ Medium box shadows are typically used on editorialized content that needs to app
   <a class="d-block box-shadow-medium px-3 pt-4 pb-6 position-relative rounded-1 overflow-hidden no-underline" href="#">
     <div class="bg-blue position-absolute top-0 left-0 py-1 width-full"></div>
     <h3 class="text-gray-dark">Serverless architecture</h3>
-    <p class="alt-text-small text-gray">
+    <p class="text-gray">
       Build powerful, event-driven, serverless architectures with these open-source libraries and frameworks.
     </p>
     <ul class="position-absolute bottom-0 pb-3 text-small text-gray list-style-none ">
