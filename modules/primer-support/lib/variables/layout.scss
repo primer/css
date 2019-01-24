@@ -80,10 +80,24 @@ $breakpoints: (
   xl: $width-xl
 ) !default;
 
-$responsive-variants: ("": "");
-@each $key in map-keys($breakpoints) {
-  $responsive-variants: map-merge($responsive-variants, ($key: "-#{$key}"));
-}
+// This map in the form (breakpoint: variant) is used to iterate over
+// breakpoints and create both responsive and non-responsive classes in one
+// loop:
+//
+// ```scss
+// @each $breakpoint, $variant of $responsive-variants {
+//   @include breakpoint($breakpoint) {
+//     .foo#{$variant}-bar { foo: bar !important; }
+//   }
+// }
+// ```
+$responsive-variants: (
+  "": "",
+  sm: "-sm",
+  md: "-md",
+  lg: "-lg",
+  xl: "-xl",
+) !default;
 
 // responive utility position values
 $responsive-positions: (
