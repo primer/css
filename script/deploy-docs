@@ -23,19 +23,22 @@ else
         mv package.json.tmp package.json
     fi
 
-    now_args="--token=$NOW_TOKEN"
-    npx commit-status pending docs "deploying v$version docs..."
-
-    echo "deploying..."
-    now "$now_args" | tee now-url.txt
-    url=$(cat now-url.txt)
-    npx commit-status success docs "v$version docs: $url" "$url"
-
     if [[ $TRAVIS_EVENT_TYPE = "pull_request" ]]; then
         branch=$TRAVIS_PULL_REQUEST_BRANCH
     else
         branch=$TRAVIS_BRANCH
     fi
+
+    # add metadata to now deployments so that we can find them more easily
+    meta_args="-m branch=$branch -m version=$version"
+
+    npx commit-status pending docs "deploying v$version docs..."
+
+    echo "deploying..."
+    now_args="--token=$NOW_TOKEN"
+    now "$now_args" "$meta_args" | tee now-url.txt
+    url=$(cat now-url.txt)
+    npx commit-status success docs "v$version docs: $url" "$url"
 
     if [[ "$branch" = "master" ]]; then
         alias=$(jq -r .alias now.json)
