@@ -13,6 +13,10 @@ script:
   - npm test
   - script/check-versions
 
+after_script:
+  - echo "generating selector diff report..."
+  - script/selector-diff-report
+
 before_deploy:
   # this will short-circuit the publish step if it fails to interpolate $NPM_API_KEY
   - npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
