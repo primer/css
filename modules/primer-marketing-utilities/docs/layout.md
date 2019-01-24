@@ -13,16 +13,14 @@ Marketing layout utilities build on top of [primer-core utilities](/css/utilitie
 
 Position elements from all four element edges (`top`, `right`, `bottom`, and `left`) using any spacing utility from the global spacing scale and the marketing spacing scale (from `$spacer-1` to `$spacer-12`), including negative and 0 values.
 
-Commonly used with `.position-absolute` to position decorative assets and shapes on marketing sites.
+Use these with `.position-absolute` to position decorative assets and shapes on marketing sites.
 
-In an effort to reduce css bloat, responsive breakpoints are only supported for `md` and `lg` breakpoints. There is no support for `sm` and `xl` breakpoints.
+In an effort to reduce the size of our CSS, responsive breakpoints are only supported for `md` and `lg` breakpoints. **There is no support for `sm` and `xl` breakpoints.**
 
 ```html
 <div class="position-relative p-6 bg-gray">
-  <div class="position-absolute top-2 top-md-0 top-lg-8 border bg-white p-2">
-    <span class="d-md-none">.top-2</span>
-    <span class="d-none d-md-inline d-lg-none">.top-md-0</span>
-    <span class="d-none d-lg-inline">.top-lg-8</span>
-  </div>
+  <div class="border bg-white position-absolute top-2">.top-2</div>
+  <div class="border bg-white position-absolute position-lg-static right-md-4">.right-md-4</div>
+  <div class="border bg-white position-lg-absolute left-lg-1">.left-lg-1</div>
 </div>
 ```
