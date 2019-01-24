@@ -57,26 +57,26 @@ $container-width: 980px !default;
 $grid-gutter:     10px !default;
 
 // Breakpoint widths
-$width-xs: 0;
-$width-sm: 544px;
-$width-md: 768px;
-$width-lg: 1012px;
-$width-xl: 1280px;
+$width-xs: 0 !default;
+// Small screen / phone
+$width-sm: 544px !default;
+// Medium screen / tablet
+$width-md: 768px !default;
+// Large screen / desktop (980 + (16 * 2)) <= container + gutters
+$width-lg: 1012px !default;
+// Extra large screen / wide desktop
+$width-xl: 1280px !default;
 
 // Responsive container widths
 $container-md: $width-md !default;
 $container-lg: $width-lg !default;
 $container-xl: $width-xl !default;
 
-// Breakpoints
+// Breakpoints in the form (name: length)
 $breakpoints: (
-  // Small screen / phone
   sm: $width-sm,
-  // Medium screen / tablet
   md: $width-md,
-  // Large screen / desktop (980 + (16 * 2)) <= container + gutters
   lg: $width-lg,
-  // Extra large screen / wide desktop
   xl: $width-xl
 ) !default;
 
