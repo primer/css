@@ -22,9 +22,8 @@ version=$(jq -r .version package.json)
 name=$(jq -r .name package.json)
 
 # the commit status context
-context="npm publish $name"
+context="$name@$version"
 message="https://unpkg.com/$name@$version/"
 
-echo "📡 Transmitting publish status for $context $name@$version..."
-pwd
-commit-status "$_status" "$context" "$name@$version" "$message"
+echo "📡 Transmitting publish status for $context..."
+commit-status "$_status" "$context" "publish" "$message"
