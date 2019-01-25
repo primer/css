@@ -14,7 +14,6 @@ script:
   - script/check-versions
 
 after_script:
-  - echo "generating selector diff report..."
   - script/selector-diff-report
 
 before_deploy:
