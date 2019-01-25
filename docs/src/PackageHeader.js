@@ -38,8 +38,8 @@ export default function PackageHeader(props) {
 
   return (
     <Flex justifyContent="space-between" mb={4} {...rest}>
-      <Text as="div" fontSize={1}>
-        {status ? <StatusLabel status={status} as="a" href="/css/status-key" mr={2} /> : null}
+      <Text is="div" fontSize={1}>
+        {status ? <StatusLabel status={status} is="a" href="/css/status-key" mr={2} /> : null}
         {info}
       </Text>
       <Box>
