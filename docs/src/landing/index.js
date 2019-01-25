@@ -10,7 +10,7 @@ import ColorImage from './ColorImage.svg'
 
 export {default as HeaderImage} from './HeaderImage.svg'
 
-const OverviewTitle = props => <Heading fontSize={3} fontWeight="normal" as="div" {...props} />
+const OverviewTitle = props => <Heading fontSize={3} fontWeight="normal" is="div" {...props} />
 const OverviewText = props => <Text fontSize={1} {...props} />
 
 export function StylesOverview(props) {
@@ -34,7 +34,7 @@ export function StylesOverview(props) {
   return (
     <Flex {...props}>
       {styleTypes.map(({name, desc, image}) => (
-        <Flex.Item as={Text} textAlign="center" mx={4} key={name}>
+        <Flex.Item is={Text} textAlign="center" mx={4} key={name}>
           <Image src={image} height={90} mb={2} />
           <OverviewTitle>{name}</OverviewTitle>
           <OverviewText>{desc}</OverviewText>
@@ -103,9 +103,9 @@ function Image(props) {
   const {src, ...rest} = props
   switch (typeof src) {
     case 'string':
-      return <Box as="img" width="100%" alt="" {...props} />
+      return <Box is="img" width="100%" alt="" {...props} />
     case 'function':
-      return <Box as={src} {...rest} />
+      return <Box is={src} {...rest} />
     default:
       throw new Error(`Unrecognized Image.src type: "${typeof src}"`)
   }
@@ -127,7 +127,7 @@ export function PrimerPackageBox({data = {}, count, ...rest}) {
           </Link>
         </Flex>
         {count ? (
-          <Text as="div" textAlign="center">
+          <Text is="div" textAlign="center">
             This package includes all {count} Primer modules.
           </Text>
         ) : null}
@@ -139,9 +139,9 @@ export function PrimerPackageBox({data = {}, count, ...rest}) {
 export function MetaPackageBox({children, data = {}, title, ...rest}) {
   const deps = data.dependencies || []
   return (
-    <Flex.Item as={BorderBox} bg="white" maxWidth={220} {...rest}>
+    <Flex.Item is={BorderBox} bg="white" maxWidth={220} {...rest}>
       <BorderBox bg="gray.1" border={0} borderBottom={1} borderRadius={0} px={3} py={2}>
-        <Heading as="div" fontSize={2}>
+        <Heading is="div" fontSize={2}>
           <Link href={packageSourceURL(data.name)} color="inherit">
             {title}
           </Link>{' '}

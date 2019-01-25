@@ -24,7 +24,7 @@ else
     fi
 
     now_args="--token=$NOW_TOKEN"
-    npx commit-status pending docs "deploying v$version docs..."
+    npx commit-status pending docs "deploying docs for primer@$version"
 
     echo "deploying..."
     now "$now_args" | tee now-url.txt

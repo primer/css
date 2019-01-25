@@ -1,5 +1,5 @@
 {
-  "version": "1.5.6",
+  "version": "2.0.0",
   "name": "primer-marketing-support",
   "description": "Sass variables, mixins, and functions for use in our components.",
   "homepage": "http://primer.github.io/",
@@ -13,6 +13,7 @@
   },
   "files": [
     "index.scss",
+    "fonts",
     "lib"
   ],
   "repository": "https://github.com/primer/primer/tree/master/modules/primer-marketing-support",
@@ -35,5 +36,8 @@
     "functions",
     "variables",
     "scss"
-  ]
+  ],
+  "dependencies": {
+    "primer-support": "5.0.0"
+  }
 }

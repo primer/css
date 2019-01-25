@@ -46,7 +46,7 @@ export default function CodeExample(props) {
               <ClipboardCopy value={source} />
             </Absolute>
             <Text
-              as={LiveError}
+              is={LiveError}
               fontFamily="mono"
               style={{
                 overflow: 'auto',

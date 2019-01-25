@@ -12,6 +12,7 @@ env:
 script:
   - npm test
   - script/check-versions
+  - script/selector-diff-report
 
 before_deploy:
   # this will short-circuit the publish step if it fails to interpolate $NPM_API_KEY
