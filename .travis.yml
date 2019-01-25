@@ -12,8 +12,6 @@ env:
 script:
   - npm test
   - script/check-versions
-
-after_script:
   - script/selector-diff-report
 
 before_deploy:
