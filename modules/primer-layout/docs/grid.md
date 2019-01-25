@@ -374,9 +374,13 @@ This is how that example would look at the `lg` breakpoint.
 ```
 
 ## Containers
-Container widths match our breakpoints and are available at a `md`, `lg`, and `xl` size. Containers apply a max-width rather than a fixed width for responsive layouts, and they center the container.
+Container widths match our breakpoints and are available at a `sm`, `md`, `lg`, and `xl` size. Containers apply a max-width rather than a fixed width for responsive layouts, and they center the container.
 
 ```html title="Containers sized"
+<div class="container-sm border">
+  .container-sm, max-width 544px
+</div>
+
 <div class="container-md border">
   .container-md, max-width 768px
 </div>
@@ -389,5 +393,3 @@ Container widths match our breakpoints and are available at a `md`, `lg`, and `x
   .container-xl, max-width 1280px
 </div>
 ```
-
-**Note:** `.container` is being replaced with `.container-lg`. To match the current fixed page width use `.container-lg` with `px-3`. This gives the container padding on smaller screens which works better for responsive layouts.
