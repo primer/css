@@ -273,6 +273,18 @@ _Note: fixed positioning has been disabled here for demonstration only._
 </div>
 ```
 
+### Responsive position
+
+Position utilities can be applied or changed per breakpoint in responsive layouts. Each responsive position utility is applied to the specified breakpoint and up, using the following formula: `position-[breakpoint]-[property]`. For example: `position-md-absolute`.
+
+```html
+<div style="height: 64px;">
+  <div class="border position-md-absolute top-0 right-0">
+    .position-md-absolute .top-0 .right-0
+  </div>
+</div>
+```
+
 ### Screen reader only
 
 Use `.sr-only` to position an element outside of the viewport for screen reader access only. **Even though the element can't be seen, make sure it still has a sensible tab order.**

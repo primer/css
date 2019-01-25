@@ -7,7 +7,7 @@ import {rootPage} from './utils'
 
 export default function SideNav(props) {
   return (
-    <Relative as="nav">
+    <Relative is="nav">
       <Box id="sidenav" {...props}>
         <Flex flexDirection="column" alignItems="start">
           <Router>
@@ -111,7 +111,7 @@ const Router = withRouter(({router, children}) => {
 })
 
 /**
- * <RouteMatch> is just a way to conditonally render content without a wrapper
+ * <RouteMatch> is just a way to conditionally render content without a wrapper
  * element when contained directly in a <Router>:
  *
  * ```jsx
