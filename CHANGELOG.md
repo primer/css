@@ -1,3 +1,34 @@
+# 11.0.0
+
+#### :boom: Breaking Change
+* [#438](https://github.com/primer/primer/pull/438) Remove `primer-page-sections` package. ([@sophshep](https://github.com/sophshep))
+* [#439](https://github.com/primer/primer/pull/439) Remove `primer-page-headers` package. ([@sophshep](https://github.com/sophshep))
+* [#440](https://github.com/primer/primer/pull/440) Remove `primer-tables` package. ([@sophshep](https://github.com/sophshep))
+* [#459](https://github.com/primer/primer/pull/459) Move responsive position utilities from marketing to core. ([@sophshep](https://github.com/sophshep))
+* [#656](https://github.com/primer/primer/pull/656) Remove colorizeTooltip mixin. ([@shawnbot](https://github.com/shawnbot))
+* [#657](https://github.com/primer/primer/pull/657) Remove `BtnGroup-form` class. ([@shawnbot](https://github.com/shawnbot))
+* [#658](https://github.com/primer/primer/pull/658) Remove `.avatar-stack` in favor of `.AvatarStack`. ([@shawnbot](https://github.com/shawnbot))
+
+#### :rocket: Enhancement
+* [#583](https://github.com/primer/primer/pull/583) Updates to Marketing Typography. ([@sophshep](https://github.com/sophshep))
+* [#660](https://github.com/primer/primer/pull/660) Add `$marketing-font-path`. ([@shawnbot](https://github.com/shawnbot))
+* [#661](https://github.com/primer/primer/pull/661) Spacer variable refactor. ([@shawnbot](https://github.com/shawnbot))
+* [#663](https://github.com/primer/primer/pull/663) Add deprecation warning for column grid classes and add `container-sm` utility class. ([@jonrohan](https://github.com/jonrohan))
+
+#### :bug: Bug Fix
+* [#654](https://github.com/primer/primer/pull/654) Fix typo ("Chroma") in `primer-base` comment. ([@Jiang-Xuan](https://github.com/Jiang-Xuan))
+* [#655](https://github.com/primer/primer/pull/655) Fix typo ("conditonally") in `docs/src/SideNav.js` comment. ([@0xflotus](https://github.com/0xflotus))
+
+### :house: Internal
+* [#659](https://github.com/primer/primer/pull/659) Generate CSS selector diff report on Travis. ([@shawnbot](https://github.com/shawnbot))
+
+#### Committers: 4
+- 0xflotus ([0xflotus](https://github.com/0xflotus))
+- Jiang-Xuan ([Jiang-Xuan](https://github.com/Jiang-Xuan))
+- Jon Rohan ([jonrohan](https://github.com/jonrohan))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Sophie Shepherd ([sophshep](https://github.com/sophshep))
+
 # 10.10.5
 
 #### :bug: Bug Fix
