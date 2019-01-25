@@ -30,12 +30,12 @@ $transition-time: 0.4s;
 
 // Increases primer-core scale first by 8px for spacer-7 then by 16px step increments for spacer-8 to spacer-12
 // i.e. After 40px, we have 48, 64, 80, 96, etc.
-$spacer-7:  $spacer * 6;  // 48px
-$spacer-8:  $spacer * 8;  // 64px
-$spacer-9:  $spacer * 10; // 80px
-$spacer-10: $spacer * 12; // 96px
-$spacer-11: $spacer * 14; // 112px
-$spacer-12: $spacer * 16; // 128px
+$spacer-7:  $spacer * 6 !default;  // 48px
+$spacer-8:  $spacer * 8 !default;  // 64px
+$spacer-9:  $spacer * 10 !default; // 80px
+$spacer-10: $spacer * 12 !default; // 96px
+$spacer-11: $spacer * 14 !default; // 112px
+$spacer-12: $spacer * 16 !default; // 128px
 
 $marketingSpacers: $spacer-7, $spacer-8, $spacer-9, $spacer-10, $spacer-11, $spacer-12;
 $allSpacers: $spacer-1, $spacer-2, $spacer-3, $spacer-4, $spacer-5, $spacer-6, $spacer-7, $spacer-8, $spacer-9, $spacer-10, $spacer-11, $spacer-12;
