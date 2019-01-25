@@ -21,6 +21,13 @@ $font-mktg: InterUI, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, A
 $h000-size: 64px !default;
 $h000-size-mobile: 48px !default;
 
+// Colors
+$blue-450: mix($blue-500, $blue-400, 50%);
+$green-450: mix($green-500, $green-400, 50%);
+
+// Animations
+$transition-time: 0.4s;
+
 // Increases primer-core scale first by 8px for spacer-7 then by 16px step increments for spacer-8 to spacer-12
 // i.e. After 40px, we have 48, 64, 80, 96, etc.
 $spacer-7:  $spacer * 6;  // 48px
