@@ -16,7 +16,7 @@
     "prepublishOnly": "../../script/notify pending",
     "publish": "../../script/notify success"
   },
-  "repository": "https://github.com/primer/primer/tree/master/tools/stylelint-config-primer",
+  "repository": "https://github.com/primer/css/tree/master/tools/stylelint-config-primer",
   "dependencies": {
     "stylelint-no-unsupported-browser-features": "^1.0.0",
     "stylelint-order": "^0.4.4",

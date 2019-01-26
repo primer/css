@@ -12,10 +12,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/primer/primer-module-build.git"
+    "url": "git+https://github.com/primer/css-module-build.git"
   },
   "bugs": {
-    "url": "https://github.com/primer/primer-module-build/issues"
+    "url": "https://github.com/primer/css-module-build/issues"
   },
   "bin": "cli.js",
   "engines": {

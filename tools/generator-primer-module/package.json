@@ -7,9 +7,9 @@
   "primer": {
     "module_type": "tools"
   },
-  "repository": "https://github.com/primer/primer/tree/master/modules/generator-primer-module",
+  "repository": "https://github.com/primer/css/tree/master/modules/generator-primer-module",
   "bugs": {
-    "url": "https://github.com/primer/primer/issues"
+    "url": "https://github.com/primer/css/issues"
   },
   "scripts": {
     "test": "../../node_modules/.bin/ava -v test/**/*.spec.js",

@@ -1,5 +1,5 @@
 /*!
- * Primer
+ * Primer-marketing
  * http://primer.github.io
  *
  * Released under MIT license. Copyright (c) 2019 GitHub Inc.
@@ -11,6 +11,10 @@
 // Should you need specific files, you can easily use separate `@import`s.
 
 // Global requirements
-@import "./core/index.scss";
-@import "./product/index.scss";
-@import "./marketing/index.scss";
+@import "../support/index.scss";
+@import "../marketing-support/index.scss";
+
+// marketing specific css modules
+@import "../marketing-type/index.scss";
+@import "../marketing-buttons/index.scss";
+@import "../marketing-utilities/index.scss";

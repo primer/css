@@ -1,7 +1,7 @@
 # Primer Module Generator
 
 [![npm version](https://img.shields.io/npm/v/generator-primer-module.svg)](https://www.npmjs.org/package/generator-primer-module)
-[![Build Status](https://travis-ci.org/primer/primer.svg?branch=master)](https://travis-ci.org/primer/primer)
+[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
 
 Primer is the CSS framework that powers GitHub's front-end design. This is a
 [Yeoman] generator that we use to scaffold new Primer modules.
@@ -98,7 +98,7 @@ yo primer-module primer-foo-bar
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer]: https://github.com/primer/primer
+[primer]: https://github.com/primer/css
 [docs]: http://primer.github.io/
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
