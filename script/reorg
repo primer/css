@@ -102,4 +102,5 @@ __ set_json '.dependencies' '{}' package.json
 __ perl -pi -e 's#primer-#./#' index.scss
 __ popd > /dev/null
 
+__ rm -rf tools/generator-primer-module
 __ git add $dirs
