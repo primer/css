@@ -20,31 +20,18 @@
 }
 
 // Negative offset columns
-.offset-n1 { margin-left: -(1 / 12 * 100%); }
-.offset-n2 { margin-left: -(2 / 12 * 100%); }
-.offset-n3 { margin-left: -(3 / 12 * 100%); }
-.offset-n4 { margin-left: -(4 / 12 * 100%); }
-.offset-n5 { margin-left: -(5 / 12 * 100%); }
-.offset-n6 { margin-left: -(6 / 12 * 100%); }
-.offset-n7 { margin-left: -(7 / 12 * 100%); }
-.offset-n8 { margin-left: -(8 / 12 * 100%); }
-.offset-n9 { margin-left: -(9 / 12 * 100%); }
-.offset-n10 { margin-left: -(10 / 12 * 100%); }
-.offset-n11 { margin-left: -(11 / 12 * 100%); }
-
-// Responsive classes for negative offset columns
-@each $breakpoint in map-keys($breakpoints) {
+@each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
-    .offset-#{$breakpoint}-n1 { margin-left: -(1 / 12 * 100%); }
-    .offset-#{$breakpoint}-n2 { margin-left: -(2 / 12 * 100%); }
-    .offset-#{$breakpoint}-n3 { margin-left: -(3 / 12 * 100%); }
-    .offset-#{$breakpoint}-n4 { margin-left: -(4 / 12 * 100%); }
-    .offset-#{$breakpoint}-n5 { margin-left: -(5 / 12 * 100%); }
-    .offset-#{$breakpoint}-n6 { margin-left: -(6 / 12 * 100%); }
-    .offset-#{$breakpoint}-n7 { margin-left: -(7 / 12 * 100%); }
-    .offset-#{$breakpoint}-n8 { margin-left: -(8 / 12 * 100%); }
-    .offset-#{$breakpoint}-n9 { margin-left: -(9 / 12 * 100%); }
-    .offset-#{$breakpoint}-n10 { margin-left: -(10 / 12 * 100%); }
-    .offset-#{$breakpoint}-n11 { margin-left: -(11 / 12 * 100%); }
+    @for $offset from 1 through 7 {
+      .offset#{$variant}-n#{$offset} { margin-left: -($offset / 12 * 100%); }
+    }
+  }
+}
+
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    @for $offset from 1 through 7 {
+      .offset#{$variant}-n#{$offset} { margin-left: -($offset / 12 * 100%); }
+    }
   }
 }
