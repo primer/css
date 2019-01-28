@@ -1,6 +1,6 @@
 // Layout
-// stylelint-disable block-opening-brace-space-after, block-opening-brace-space-before, primer/selector-no-utility
-// stylelint-disable comment-empty-line-before
+// stylelint-disable primer/selector-no-utility
+// stylelint-disable block-opening-brace-space-after, block-opening-brace-space-before, comment-empty-line-before
 
 // Loop through the breakpoint values
 @each $breakpoint, $variant in $responsive-variants {

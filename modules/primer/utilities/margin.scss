@@ -1,5 +1,6 @@
 // Margin spacer utilities
-// stylelint-disable block-opening-brace-space-before, declaration-colon-space-before, primer/selector-no-utility, comment-empty-line-before
+// stylelint-disable primer/selector-no-utility
+// stylelint-disable block-opening-brace-space-before, declaration-colon-space-before, comment-empty-line-before
 
 // Loop through the breakpoint values
 @each $breakpoint, $variant in $responsive-variants {
