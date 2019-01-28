@@ -46,7 +46,7 @@
     "minimatch": "^3.0.4",
     "next": "7.0.2",
     "next-compose-plugins": "2.1.1",
-    "node-sass": "^4.10.0",
+    "node-sass": "^4.11.0",
     "now": "^12.1.8",
     "@primer/css": "11.0.0",
     "primer-colors": "^1.0.1",
