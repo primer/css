@@ -37,6 +37,7 @@
     "design-system"
   ],
   "devDependencies": {
+    "cssstats-cli": "^1.0.0-beta.2",
     "jest": "^24.0.0",
     "node-sass": "^4.11.0",
     "stylelint": "^9.10.1"
