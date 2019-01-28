@@ -11,10 +11,9 @@
 // Should you need specific files, you can easily use separate `@import`s.
 
 // Global requirements
-@import "../support/index.scss";
-@import "../marketing-support/index.scss";
+@import "./support/index.scss";
 
 // marketing specific css modules
-@import "../marketing-type/index.scss";
-@import "../marketing-buttons/index.scss";
-@import "../marketing-utilities/index.scss";
+@import "./type/index.scss";
+@import "./buttons/index.scss";
+@import "./marketing/utilities/index.scss";
