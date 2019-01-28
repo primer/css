@@ -27,7 +27,7 @@ In an effort to reduce the size of our CSS, responsive breakpoints are only supp
 
 ## Negative offset columns
 
-Using column offset classes can pull a div over X number of columns to the left. They work responsively using the [breakpoints outlined below](../grid#responsive-grids).
+Using column offset classes can pull a div over X number of columns to the left. Negative offsets are available in [spacings from 1](../support/spacing/#spacing-scale) [to 7](../support/marketing-variables/).
 
 ```html
 <div class="clearfix">
