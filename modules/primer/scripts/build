@@ -1,0 +1,26 @@
+#!/bin/bash
+set -e
+
+outdir=build
+rm -rf $outdir
+mkdir -p $outdir
+
+indexes=$(find . -name index.scss | egrep -v node_modules | perl -pe 's#^\./##')
+root=$(pwd)
+
+for index in $indexes; do
+    if [[ $index = "index.scss" ]]; then
+        dir=.
+        name="primer"
+    else
+        dir=$(dirname $index)
+        name=${dir//\//-}
+    fi
+    file="$outdir/$name.css"
+    pushd $dir > /dev/null
+    echo "[build] $index -> $file"
+    npx node-sass --include-path=$root index.scss > "$root/$file"
+    npx cssstats "$root/$file" > "$root/$outdir/$name.json"
+    echo "module.exports = {cssstats: require('./$name.json')}" > "$root/$outdir/$name.js"
+    popd > /dev/null
+done
