@@ -22,18 +22,23 @@
     "url": "https://github.com/primer/css/issues"
   },
   "scripts": {
-    "build": "../../script/npm-run primer-module-build index.scss",
+    "build": "scripts/build",
     "prepare": "npm run build",
-    "lint": "../../script/lint-scss",
-    "test": "../../script/npm-run-all build lint",
+    "lint": "stylelint --quiet --syntax scss **/*.scss",
+    "pretest": "npm run lint",
+    "test": "jest",
     "prepublishOnly": "../../script/notify pending",
     "postpublish": "../../script/notify success"
   },
-  "dependencies": {},
   "keywords": [
     "primer",
     "css",
     "github",
     "design-system"
-  ]
+  ],
+  "devDependencies": {
+    "jest": "^24.0.0",
+    "node-sass": "^4.11.0",
+    "stylelint": "^9.10.1"
+  }
 }
