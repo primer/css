@@ -26,10 +26,8 @@
   "dependencies": {
     "stylelint": "^7.13.0"
   },
-  "peerDependencies": {
-    "@primer/css": "11.0.0"
-  },
   "devDependencies": {
+    "@primer/css": "11.0.0",
     "eslint": "^3.19.0",
     "eslint-plugin-github": "^0.12.0",
     "fs-extra": "^4.0.2",
