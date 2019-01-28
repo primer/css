@@ -27,7 +27,7 @@
     "stylelint": "^7.13.0"
   },
   "peerDependencies": {
-    "@primer/css": "*"
+    "@primer/css": "11.0.0"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
