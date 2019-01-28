@@ -1,5 +1,5 @@
 {
-  "version": "1.9.1",
+  "version": "2.0.0",
   "name": "primer-base",
   "description": "CSS to reset the browsers default styles",
   "homepage": "http://primer.github.io/",
@@ -34,7 +34,7 @@
     "postpublish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-support": "4.7.1"
+    "primer-support": "5.0.0"
   },
   "keywords": [
     "primer",

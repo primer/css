@@ -78,7 +78,7 @@ $blue: #0000ff;
 Don't forget to add the compiled CSS to the `<head>` section of your page.
 
 ```html dead
-<link href="/assets/css/index.css" rel="stylesheet">
+<link href="path/to/style.css" rel="stylesheet">
 ```
 
 ## Using primer on a static site

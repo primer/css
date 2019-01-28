@@ -8,8 +8,10 @@ import ComponentsImage from './ComponentsImage.svg'
 import SpacingImage from './SpacingImage.svg'
 import ColorImage from './ColorImage.svg'
 
-export const OverviewTitle = props => <Heading fontSize={3} fontWeight="normal" is="div" {...props} />
-export const OverviewText = props => <Text fontSize={1} {...props} />
+export {default as HeaderImage} from './HeaderImage.svg'
+
+const OverviewTitle = props => <Heading fontSize={3} fontWeight="normal" is="div" {...props} />
+const OverviewText = props => <Text fontSize={1} {...props} />
 
 export function StylesOverview(props) {
   const styleTypes = [
@@ -101,7 +103,7 @@ function Image(props) {
   const {src, ...rest} = props
   switch (typeof src) {
     case 'string':
-      return <Box is="img" width="100%" {...props} />
+      return <Box is="img" width="100%" alt="" {...props} />
     case 'function':
       return <Box is={src} {...rest} />
     default:
@@ -138,15 +140,17 @@ export function MetaPackageBox({children, data = {}, title, ...rest}) {
   const deps = data.dependencies || []
   return (
     <Flex.Item is={BorderBox} bg="white" maxWidth={220} {...rest}>
-      <Heading fontSize={2} is={BorderBox} bg="gray.1" border={0} borderBottom={1} px={3} py={2}>
-        <Link href={packageSourceURL(data.name)} color="inherit">
-          {title}
-        </Link>{' '}
-        <Link href={packageURL(data.name)}>{data.version}</Link>
-      </Heading>
+      <BorderBox bg="gray.1" border={0} borderBottom={1} borderRadius={0} px={3} py={2}>
+        <Heading is="div" fontSize={2}>
+          <Link href={packageSourceURL(data.name)} color="inherit">
+            {title}
+          </Link>{' '}
+          <Link href={packageURL(data.name)}>{data.version}</Link>
+        </Heading>
+      </BorderBox>
       <Text is="div" fontSize={1} p={3}>
         {children}
-        <Text fontWeight="bold" is="div" mt={4} mb={2}>
+        <Text is="div" fontWeight="bold" mt={4} mb={2}>
           {deps.length} packages:
         </Text>
         <ul className="list-style-none pl-0">

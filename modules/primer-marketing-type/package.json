@@ -1,5 +1,5 @@
 {
-  "version": "1.4.12",
+  "version": "2.0.0",
   "name": "primer-marketing-type",
   "description": "Typography for marketing websites at GitHub",
   "homepage": "http://primer.github.io/",
@@ -31,8 +31,8 @@
     "postpublish": "../../script/notify success"
   },
   "dependencies": {
-    "primer-marketing-support": "1.5.5",
-    "primer-support": "4.7.1"
+    "primer-marketing-support": "2.0.0",
+    "primer-support": "5.0.0"
   },
   "keywords": [
     "css",
