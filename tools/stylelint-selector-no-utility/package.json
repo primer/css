@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepare": "node prepare.js",
-    "lint": "eslint .",
+    "lint": "eslint *.js test",
     "pretest": "npm run lint && npm run prepare",
     "test": "node test/index.js",
     "prepublishOnly": "../../script/notify pending",
