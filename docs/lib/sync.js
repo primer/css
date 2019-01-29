@@ -23,14 +23,14 @@ module.exports = function sync(options = {}) {
   let files
 
   const metal = Metalsmith(process.cwd())
-    .source('../modules')
+    .source('../modules/primer')
     .destination('pages/css')
     .clean(false)
     .frontmatter(false)
     // ignore anything containing "node_modules" in its path
     .ignore(path => path.includes('node_modules'))
     // only match files that look like docs
-    .use(filter(['*/README.md', '*/docs/*.md', '*/package.json']))
+    .use(filter(['**/*.md']))
     .use(extractPackages())
     // convert <!-- %docs -->...<!-- %enddocs --> blocks into frontmatter
     .use(parseDocComments({log}))
