@@ -4,8 +4,6 @@ import Measure from 'react-measure'
 import {BorderBox} from '@primer/components'
 import {assetPrefix} from './utils'
 
-const DEFAULT_IFRAME_HEIGHT = 150
-
 export default class Frame extends React.Component {
   static defaultProps = {
     border: 0,
