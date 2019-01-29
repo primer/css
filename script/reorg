@@ -74,13 +74,13 @@ for dir in $modules; do
 
     __ rm -rf $dest
     __ mkdir -p $dest
-    __ git mv $dir/index.scss $dest
+    __ git mv $dir/index.scss $dir/README.md $dest
 
     if [[ -e $dir/lib ]]; then
-        __ mv $dir/lib/* $dest
+        __ git mv $dir/lib/* $dest
     fi
     if [[ -e $dir/docs ]]; then
-        __ mv $dir/docs $dest
+        __ git mv $dir/docs $dest
     fi
 
     __ pushd $dest > /dev/null
