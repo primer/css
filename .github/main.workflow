@@ -8,7 +8,7 @@ workflow "Lint and test" {
 
 action "npm install" {
   uses = "actions/npm@94e6933"
-  args = "ci"
+  args = "install"
 }
 
 action "npm lint" {
