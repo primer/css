@@ -55,7 +55,10 @@ export default class Frame extends React.Component {
     return (
       <BorderBox as="iframe" style={{height}} {...rest} ref={node => (this.iframe = node)}>
         {this.doc
-          ? [ReactDOM.createPortal(this.getHead(), this.doc.head), ReactDOM.createPortal(this.getBody(children), this.doc.body)]
+          ? [
+              ReactDOM.createPortal(this.getHead(), this.doc.head),
+              ReactDOM.createPortal(this.getBody(children), this.doc.body)
+            ]
           : null}
       </BorderBox>
     )
