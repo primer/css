@@ -70,7 +70,7 @@
 
 .Box-header {
   padding: $spacer-3;
-  margin: -1px -1px 0 -1px;
+  margin: -$border-width -$border-width 0;
   background-color: $bg-gray;
   border-color: $border-gray-dark;
   border-style: $border-style;
@@ -90,7 +90,7 @@
 
   // Ensures bottom-border doesn't poke out when .Box-body used without box-footer
   &:last-of-type {
-    margin-bottom: -1px;
+    margin-bottom: -$border-width;
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
   }
