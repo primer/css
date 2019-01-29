@@ -1,18 +1,18 @@
-# Primer
+# Primer product
 
-[![npm version](https://img.shields.io/npm/v/primer.svg)](https://www.npmjs.org/package/primer)
+[![npm version](https://img.shields.io/npm/v/primer-product.svg)](https://www.npmjs.org/package/primer-product)
 [![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
 
-Primer is the design system that powers GitHub. Primer includes 23 packages that are grouped into 3 core meta-packages for easy install. Each package and meta-package is independently versioned and distributed via npm, so it's easy to include all or part of Primer within your own project.
+> Primer product is one of 3 meta-packages that belong to the Primer framework. Primer product contains packages that are used on GitHub product websites.
 
-The Primer repo is managed as a monorepo that is composed of many npm packages.
+This repository is a compilation of [several CSS packages](https://github.com/primer/css). You can break it down into smaller sections using npm.
 
 ## Install
 
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer` with this command.
+This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer` with this command. **You must have npm >=3.0 installed to be able to satisfy the dependency paths**
 
 ```
-$ npm install --save primer
+$ npm install --save primer-product
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ $ npm install --save primer
 The source files included are written in [Sass][sass] (`scss`) You can simply point your sass `include-path` at your `node_modules` directory and import it like this.
 
 ```scss
-@import "primer/index.scss";
+@import "primer-product/index.scss";
 ```
 
 You can also import specific portions of the module by importing those partials from the `/lib/` folder. _Make sure you import any requirements along with the modules._
