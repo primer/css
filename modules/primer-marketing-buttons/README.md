@@ -19,7 +19,7 @@ Marketing buttons come in different colors and sizes, and are also available in 
 
 ## Colors and outlined
 
-Marketing buttons can be solid blue, outlined blue, or solid green.
+Marketing buttons can be solid blue, outlined blue, solid green, or transparent.
 
 The solid blue and solid green buttons have more visual emphasis than the blue outlined button, therefore they should be used sparingly and only for call to actions that need emphasis.
 
@@ -27,6 +27,9 @@ The solid blue and solid green buttons have more visual emphasis than the blue o
 <button class="btn-mktg mr-2" type="button">Learn more</button>
 <button class="btn-mktg btn-outline-mktg mr-2" type="button">Learn more</button>
 <button class="btn-mktg btn-primary-mktg mr-2" type="button">Sign up</button>
+<div class="bg-gray-dark">
+  <button class="btn-mktg btn-transparent m-2" type="button">Learn more</button>
+</div>
 ```
 
 ## Sizes
