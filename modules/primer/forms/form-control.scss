@@ -134,8 +134,9 @@ label {
 
 .form-checkbox-details-trigger {
   &:checked {
-    ~ * .form-checkbox-details, // child of sibling
-    ~ .form-checkbox-details { // or sibling
+    // child of sibling or sibling
+    ~ * .form-checkbox-details,
+    ~ .form-checkbox-details { // eslint-disable selector-combinator-space-before
       display: block;
     }
   }
