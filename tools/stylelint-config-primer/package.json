@@ -10,8 +10,8 @@
     "module_type": "tools"
   },
   "scripts": {
-    "ava": "ava --verbose \"tests/**/*.js\"",
-    "lint": "eslint **/*.js",
+    "ava": "ava --verbose 'tests/*.js'",
+    "lint": "eslint *.js tests",
     "test": "../../script/npm-run-all lint ava",
     "prepublishOnly": "../../script/notify pending",
     "publish": "../../script/notify success"
