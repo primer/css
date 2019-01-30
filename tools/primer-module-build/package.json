@@ -23,7 +23,7 @@
   },
   "scripts": {
     "ava": "../../script/npm-run ava --verbose \"tests/**/*.js\"",
-    "lint": "../../script/npm-run eslint lib/**/*.js *.js tests/**/*.js",
+    "lint": "../../script/npm-run eslint *.js lib tests",
     "test": "../../script/npm-run ava",
     "prepublishOnly": "../../script/notify pending",
     "publish": "../../script/notify success"
