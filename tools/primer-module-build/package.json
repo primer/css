@@ -23,7 +23,7 @@
   },
   "scripts": {
     "lint": "../../script/npm-run eslint *.js lib tests",
-    "test": "ava --verbose tests",
+    "test": "ava -v tests",
     "prepublishOnly": "../../script/notify pending",
     "publish": "../../script/notify success"
   },
@@ -36,6 +36,7 @@
   ],
   "dependencies": {
     "autoprefixer": "^6.7.7",
+    "ava": "1.2.0",
     "cssstats": "^3.2.0",
     "fs-extra": "^4.0.2",
     "meow": "^3.7.0",
