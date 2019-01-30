@@ -11,7 +11,7 @@
   },
   "scripts": {
     "lint": "eslint *.js tests",
-    "test": "../../script/npm-run ava --verbose 'tests/*.js'",
+    "test": "ava --verbose tests",
     "prepublishOnly": "../../script/notify pending",
     "publish": "../../script/notify success"
   },
@@ -23,6 +23,7 @@
     "stylelint-selector-no-utility": "2.0.2"
   },
   "devDependencies": {
+    "ava": "^0.23.0",
     "eslint": "^3.19.0",
     "eslint-plugin-github": "^0.12.0",
     "eslint-plugin-import": "^2.2.0",
