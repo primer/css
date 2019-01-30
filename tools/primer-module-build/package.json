@@ -22,9 +22,8 @@
     "node": ">=4"
   },
   "scripts": {
-    "ava": "../../script/npm-run ava --verbose \"tests/**/*.js\"",
     "lint": "../../script/npm-run eslint *.js lib tests",
-    "test": "../../script/npm-run ava",
+    "test": "../../script/npm-run ava --verbose 'tests/**/*.js'",
     "prepublishOnly": "../../script/notify pending",
     "publish": "../../script/notify success"
   },
