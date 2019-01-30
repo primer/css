@@ -20,6 +20,7 @@
     "publish-skipgit": "lerna publish --skip-git",
     "bump": "script/bump",
     "new-module": "script/new-module",
+    "pretest": "lerna bootstrap --hoist",
     "test": "lerna --concurrency=1 run --stream --prefix test",
     "posttest": "npm run test-all-modules",
     "test-all-modules": "ava --verbose tests/test-*.js"
