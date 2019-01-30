@@ -11,7 +11,7 @@
   },
   "scripts": {
     "lint": "eslint *.js tests",
-    "test": "ava --verbose tests",
+    "test": "ava --verbose tests.js",
     "prepublishOnly": "../../script/notify pending",
     "publish": "../../script/notify success"
   },

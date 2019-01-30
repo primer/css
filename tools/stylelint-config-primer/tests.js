@@ -1,4 +1,4 @@
-const config = require("../")
+const config = require("./")
 const stylelint = require("stylelint")
 const test = require("ava")
 
