@@ -22,7 +22,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "lint": "../../script/npm-run eslint *.js lib tests",
+    "lint": "eslint *.js lib tests",
     "test": "ava -v tests",
     "prepublishOnly": "../../script/notify pending",
     "publish": "../../script/notify success"
@@ -39,13 +39,16 @@
     "cssstats": "^3.2.0",
     "fs-extra": "^4.0.2",
     "meow": "^3.7.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "4.10.0",
     "node-sass-import": "^2.0.0",
     "pify": "^3.0.0",
     "postcss": "^5.2.5"
   },
   "devDependencies": {
     "ava": "1.2.0",
+    "eslint": "4.19.1",
+    "eslint-plugin-github": "1.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "primer-utilities": "5.0.0",
     "tempy": "^0.2.1"
   }
