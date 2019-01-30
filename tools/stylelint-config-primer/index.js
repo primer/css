@@ -1,11 +1,11 @@
 module.exports = {
-  "plugins": [
+  plugins: [
     "stylelint-no-unsupported-browser-features",
     "stylelint-order",
     "stylelint-selector-no-utility",
-    "stylelint-scss",
+    "stylelint-scss"
   ],
-  "rules": {
+  rules: {
     "at-rule-blacklist": ["extend"],
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always-single-line",
@@ -24,12 +24,8 @@ module.exports = {
     "comment-empty-line-before": [
       "always",
       {
-        "except": [
-          "first-nested"
-        ],
-        "ignore": [
-          "stylelint-commands"
-        ]
+        except: ["first-nested"],
+        ignore: ["stylelint-commands"]
       }
     ],
     "comment-whitespace-inside": "always",
@@ -38,9 +34,7 @@ module.exports = {
     "declaration-block-no-duplicate-properties": [
       true,
       {
-        "ignore": [
-          "consecutive-duplicates"
-        ]
+        ignore: ["consecutive-duplicates"]
       }
     ],
     "declaration-block-no-shorthand-property-overrides": true,
@@ -223,19 +217,10 @@ module.exports = {
     "declaration-colon-space-after": "always-single-line",
     "declaration-colon-space-before": "never",
     "declaration-property-value-blacklist": {
-      "/^transition/": [
-        "/all/"
-      ],
-      "/^background/": [
-        "http:",
-        "https:"
-      ],
-      "/^border/": [
-        "none"
-      ],
-      "/.+/": [
-        "initial"
-      ]
+      "/^transition/": ["/all/"],
+      "/^background/": ["http:", "https:"],
+      "/^border/": ["none"],
+      "/.+/": ["initial"]
     },
     "font-family-name-quotes": "always-where-recommended",
     "function-calc-no-unspaced-operator": true,
@@ -249,7 +234,7 @@ module.exports = {
     "function-parentheses-space-inside": "never-single-line",
     "function-url-quotes": "always",
     "function-whitespace-after": "always",
-    "indentation": 2,
+    indentation: 2,
     "length-zero-no-unit": true,
     "max-empty-lines": 1,
     "max-nesting-depth": 3,
@@ -267,29 +252,28 @@ module.exports = {
     "no-missing-end-of-source-newline": true,
     "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
-    "plugin/no-unsupported-browser-features": [true, {
-      "severity": "warning",
-      "browsers": [
-        "> 5%",
-        "last 2 firefox versions",
-        "last 2 chrome versions",
-        "last 2 safari versions",
-        "last 2 edge versions",
-        "ie 11"
-      ]
-    }],
+    "plugin/no-unsupported-browser-features": [
+      true,
+      {
+        severity: "warning",
+        browsers: [
+          "> 5%",
+          "last 2 firefox versions",
+          "last 2 chrome versions",
+          "last 2 safari versions",
+          "last 2 edge versions",
+          "ie 11"
+        ]
+      }
+    ],
     "primer/selector-no-utility": true,
     "property-case": "lower",
     "property-no-vendor-prefix": true,
     "rule-empty-line-before": [
       "always-multi-line",
       {
-        "except": [
-          "first-nested"
-        ],
-        "ignore": [
-          "after-comment"
-        ]
+        except: ["first-nested"],
+        ignore: ["after-comment"]
       }
     ],
     "scss/selector-no-redundant-nesting-selector": true,
@@ -320,6 +304,6 @@ module.exports = {
     "value-list-comma-newline-after": "always-multi-line",
     "value-list-comma-space-after": "always-single-line",
     "value-list-comma-space-before": "never",
-    "value-no-vendor-prefix": true,
-  },
-}
+    "value-no-vendor-prefix": true
+  }
+};
