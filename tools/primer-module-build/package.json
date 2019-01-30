@@ -36,7 +36,6 @@
   ],
   "dependencies": {
     "autoprefixer": "^6.7.7",
-    "ava": "1.2.0",
     "cssstats": "^3.2.0",
     "fs-extra": "^4.0.2",
     "meow": "^3.7.0",
@@ -46,7 +45,7 @@
     "postcss": "^5.2.5"
   },
   "devDependencies": {
-    "ava": "^0.23.0",
+    "ava": "1.2.0",
     "primer-utilities": "5.0.0",
     "tempy": "^0.2.1"
   }

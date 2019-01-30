@@ -17,14 +17,13 @@
   },
   "repository": "https://github.com/primer/primer/tree/master/tools/stylelint-config-primer",
   "dependencies": {
-    "ava": "1.2.0",
     "stylelint-no-unsupported-browser-features": "^1.0.0",
     "stylelint-order": "^0.4.4",
     "stylelint-scss": "^1.4.1",
     "stylelint-selector-no-utility": "2.0.2"
   },
   "devDependencies": {
-    "ava": "^0.23.0",
+    "ava": "1.2.0",
     "eslint": "^3.19.0",
     "eslint-plugin-github": "^0.12.0",
     "eslint-plugin-import": "^2.2.0",
