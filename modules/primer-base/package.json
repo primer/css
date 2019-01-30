@@ -29,7 +29,7 @@
     "build": "../../script/npm-run primer-module-build index.scss",
     "prepare": "npm run build",
     "lint": "../../script/lint-scss",
-    "test": "../../script/npm-run-all build lint",
+    "test": "npm run build",
     "prepublishOnly": "../../script/notify pending",
     "postpublish": "../../script/notify success"
   },

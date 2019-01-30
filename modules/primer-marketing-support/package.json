@@ -22,7 +22,7 @@
   },
   "scripts": {
     "lint": "../../script/lint-scss",
-    "test": "npm run lint",
+    "test": "npm run build",
     "build": "../../script/npm-run primer-module-build index.scss",
     "prepublishOnly": "../../script/notify pending",
     "postpublish": "../../script/notify success"
