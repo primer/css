@@ -10,7 +10,6 @@ const utilityClasses = require('./classes.json')
 
 module.exports = stylelint.createPlugin(ruleName, enabled => {
   return (root, result) => {
-
     const validOptions = stylelint.utils.validateOptions(result, ruleName, {
       actual: enabled,
       possible: [true, false]
@@ -30,8 +29,8 @@ module.exports = stylelint.createPlugin(ruleName, enabled => {
           stylelint.utils.report({
             message: messages.rejected(ruleClass),
             node: rule,
-            result: result,
-            ruleName: ruleName
+            result,
+            ruleName
           })
         }
       }
