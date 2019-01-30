@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-'use strict'
+"use strict";
 /* eslint-disable no-console */
-const meow = require('meow')
-const build = require('./')
+const meow = require("meow");
+const build = require("./");
 
 const cli = meow(`
   Usage
@@ -15,20 +15,20 @@ const cli = meow(`
 
   Example
     $ primer-module-build index.scss
-`)
+`);
 
 build(cli)
   .then(files => {
-    const cwd = process.cwd()
-    const prefix = `${cwd}/`
-    console.warn(`Success! wrote ${files.length} files:`)
+    const cwd = process.cwd();
+    const prefix = `${cwd}/`;
+    console.warn(`Success! wrote ${files.length} files:`);
     for (const file of files) {
-      console.warn(file.replace(prefix, ''))
+      console.warn(file.replace(prefix, ""));
     }
-    process.exitCode = 0
+    process.exitCode = 0;
   })
   .catch(error => {
-    console.error(`Error: ${error}`)
-    process.exitCode = 1
-    return
-  })
+    console.error(`Error: ${error}`);
+    process.exitCode = 1;
+    return;
+  });
