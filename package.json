@@ -20,7 +20,8 @@
     "publish-skipgit": "lerna publish --skip-git",
     "bump": "script/bump --scope='primer*'",
     "new-module": "script/new-module",
-    "test": "npm run test-all-modules && lerna run test",
+    "test": "lerna run test",
+    "posttest": "npm run test-all-modules",
     "test-all-modules": "ava --verbose tests/test-*.js"
   },
   "dependencies": {
