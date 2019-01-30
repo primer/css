@@ -23,7 +23,7 @@
   },
   "scripts": {
     "lint": "../../script/npm-run eslint *.js lib tests",
-    "test": "../../script/npm-run ava --verbose 'tests/**/*.js'",
+    "test": "ava --verbose tests",
     "prepublishOnly": "../../script/notify pending",
     "publish": "../../script/notify success"
   },
@@ -45,6 +45,7 @@
     "postcss": "^5.2.5"
   },
   "devDependencies": {
+    "ava": "^0.23.0",
     "primer-utilities": "5.0.0",
     "tempy": "^0.2.1"
   }
