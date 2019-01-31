@@ -14,7 +14,7 @@ action "lerna bootstrap" {
 
 action "npm install" {
   uses = "actions/npm@94e6933"
-  args = "ci"
+  args = "install"
 }
 
 action "npm lint" {
@@ -27,4 +27,10 @@ action "npm test" {
   uses = "actions/npm@94e6933"
   needs = ["lerna bootstrap"]
   args = "test"
+}
+
+action "deploy docs" {
+  uses = "primer/deploy@f7affe4"
+  needs = "lerna bootstrap"
+  args = "docs"
 }
