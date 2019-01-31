@@ -3,6 +3,7 @@ workflow "Lint and test" {
   resolves = [
     "npm lint",
     "npm test",
+    "deploy",
   ]
 }
 
@@ -29,8 +30,8 @@ action "npm test" {
   args = "test"
 }
 
-action "deploy docs" {
-  uses = "primer/deploy@f7affe4"
+action "deploy" {
+  uses = "primer/deploy@6e9ebc1"
   needs = "lerna bootstrap"
   args = "docs"
 }
