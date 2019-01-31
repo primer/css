@@ -4,7 +4,6 @@ workflow "lint, test, deploy" {
     "npm lint",
     "npm test",
     "deploy",
-    "build docs",
   ]
 }
 
@@ -31,15 +30,8 @@ action "npm test" {
   args = "test"
 }
 
-action "build docs" {
-  uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
-  args = "run build docs"
-}
-
-
 action "deploy" {
   uses = "primer/deploy@6e9ebc1"
   args = "docs"
-  needs = "build docs"
   secrets = ["GITHUB_TOKEN", "NOW_TOKEN"]
 }
