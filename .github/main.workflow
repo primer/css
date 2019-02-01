@@ -29,8 +29,8 @@ action "npm test" {
 }
 
 action "deploy" {
-  uses = "primer/deploy@e4407a2"
+  uses = "primer/deploy@5ea00ad"
   needs = ["lerna bootstrap"]
-  args = "-- docs"
+  runs = ["node", "/entrypoint.js", "--", "docs"]
   secrets = ["GITHUB_TOKEN", "NOW_TOKEN"]
 }
