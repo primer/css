@@ -31,7 +31,7 @@ action "npm test" {
 }
 
 action "deploy" {
-  uses = "primer/deploy@b984e06"
+  uses = "primer/deploy@a66f053"
   args = "docs"
   secrets = ["GITHUB_TOKEN", "NOW_TOKEN"]
 }
