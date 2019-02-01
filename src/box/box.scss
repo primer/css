@@ -276,14 +276,26 @@
 .Box-row--yellow {
   // stylelint-disable-next-line primer/colors
   background-color: $yellow-100;
+
+  &:first-of-type {
+    border-top: $border-width $border-style $border-gray;
+  }
 }
 
 .Box-row--blue {
   background-color: $bg-blue-light;
+
+  &:first-of-type {
+    border-top: $border-width $border-style $border-gray;
+  }
 }
 
 .Box-row--gray {
   background-color: $bg-gray;
+
+  &:first-of-type {
+    border-top: $border-width $border-style $border-gray;
+  }
 }
 
 //Box with btn-octicon
