@@ -7,7 +7,7 @@
     "start": "start-storybook -p 8000 -c .storybook",
     "storybook": "build-storybook -o build",
     "publish-storybook": "npm run storybook && gh-pages -d build -b gh-pages -r https://github.com/primer/storybook",
-    "bootstrap": "lerna bootstrap --hoist",
+    "bootstrap": "lerna bootstrap",
     "clean": "lerna clean --yes",
     "postclean": "rm -rf node_modules {,*/*/}package-lock.json",
     "diff": "lerna diff",
