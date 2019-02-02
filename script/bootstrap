@@ -1,0 +1,21 @@
+#!/bin/bash -l
+set -e
+
+if [[ "$GITHUB_REF" != "" ]]; then
+    # We explicitly ignore lifecycle scripts here because this happens
+    # automatically in the Actions environment; this makes it easier to test
+    # locally.
+    npm --ignore-scripts install
+
+    # This happens in the "postinstall" hook when you run "npm install" without
+    # --ignore-scripts
+    npm run bootstrap
+
+    # We need to sync up the docs pages before deploying, so 
+    cd docs
+    npm run sync
+    cd -
+else
+    # local installs can just reinstall from scratch, which is more reliable
+    npm run fresh
+fi
