@@ -17,7 +17,7 @@ The typical Primer workflow looks something like this:
 5. Push your work to a new branch to test it on Travis and have it reviewed by the Primer "core" team.
 
 ## Install
-Run `npm install` to install the npm dependencies and automatically run link all of the local packages together with `npm run bootstrap`.
+Run `script/bootstrap` to install the npm dependencies and automatically link all of the local packages together with [Lerna].
 
 ### Troubleshooting install problems
 If you run into trouble installing, it's always best to ensure that you're starting from a clean slate by running the following from the repository root directory:
