@@ -12,7 +12,7 @@
     "url": "https://github.com/primer/primer/issues"
   },
   "scripts": {
-    "test": "../../node_modules/.bin/ava -v test/**/*.spec.js",
+    "test": "ava -v 'test/**/*.spec.js'",
     "watch": "npm run test -- --watch"
   },
   "dependencies": {
@@ -28,6 +28,7 @@
     "yeoman-generator"
   ],
   "devDependencies": {
+    "ava": "1.2.0",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.7.0"
   }
