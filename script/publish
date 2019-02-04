@@ -1,0 +1,37 @@
+#!/bin/bash
+set -e
+
+if [[ -z $GITHUB_REF ]]; then
+    echo "[publish] GITHUB_REF is not set; bailing"
+    exit
+fi
+
+name=$(cat package.json | fx .name)
+branch="${GITHUB_REF/refs\/heads\//}"
+sha="${GITHUB_SHA:0:7}"
+
+echo "[publish] $name (branch: '$branch', sha: '$sha')"
+
+flags="--dry-run"
+if [[ $branch = "master" ]]; then
+    version=$(cat package.json | fx .version)
+    if [[ $(npm view "$name@$version") = $version ]]; then
+        echo "[publish] $name@$version is already published; bailing"
+        exit
+    else
+        echo "[publish] here we go!"
+    fi
+elif [[ $branch =~ ^release- ]]; then
+    npm version "${branch/release-/}-pre.$sha"
+    flags="$flags --tag next"
+else
+    npm version "0.0.0-alpha.$sha"
+    flags="$flags --tag canary"
+fi
+
+context="npm publish primer"
+
+export GH_TOKEN=$GITHUB_TOKEN
+npx commit-status $context pending "publishing $version..."
+npm publish $flags
+npx commit-status $context success "published $version" "https://unpkg.com/$name@$version/"
