@@ -1,0 +1,7 @@
+#!/bin/bash
+
+files=$(git ls-files src | sed -e 's#^src/##' | sed -e 's#/.*$##' | sort -u)
+echo $files > publish-files.txt
+cd src
+cp -rv $files ..
+cd -

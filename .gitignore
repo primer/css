@@ -9,4 +9,5 @@ _site
 build/
 node_modules
 primer-version.txt
+publish-files.txt
 static/primer.css

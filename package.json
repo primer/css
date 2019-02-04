@@ -34,7 +34,9 @@
     "check-links": "script/check-links http://localhost:3000/css -v",
     "test-all-modules": "ava --verbose tests/test-*.js",
     "now-build": "next build",
-    "now-start": "next start"
+    "now-start": "next start",
+    "prepublishOnly:" "script/prepublish",
+    "postpublish": "script/postpublish"
   },
   "devDependencies": {
     "@githubprimer/octicons-react": "^8.1.3",
