@@ -9,15 +9,6 @@
     }
   },
   "engines": {
-    "node": "8"
-  },
-  "files": [
-    "copy.js",
-    "lib",
-    "next.config.js",
-    "package-lock.json",
-    "pages",
-    "src",
-    "static"
-  ]
+    "node": "10"
+  }
 }
