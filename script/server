@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if [[ "$NODE_ENV" = "production" ]]; then
-    npx next
-else
-    npx next dev
-fi
