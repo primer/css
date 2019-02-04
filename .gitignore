@@ -6,7 +6,7 @@
 .next/
 .sass-cache
 _site
-build
+build/
 node_modules
 primer-version.txt
 static/primer.css
