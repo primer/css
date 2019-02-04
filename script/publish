@@ -33,5 +33,9 @@ context="npm publish primer"
 
 export GH_TOKEN=$GITHUB_TOKEN
 npx commit-status $context pending "publishing $version..."
+
+script/prepublish
 npm publish $flags
+script/postpublish
+
 npx commit-status $context success "published $version" "https://unpkg.com/$name@$version/"
