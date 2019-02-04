@@ -12,7 +12,7 @@
   "scripts": {
     "ava": "ava --verbose \"tests/**/*.js\"",
     "lint": "eslint **/*.js",
-    "test": "../../script/npm-run-all lint ava",
+    "test": "npm-run-all lint ava",
     "prepublishOnly": "../../script/notify pending",
     "publish": "../../script/notify success"
   },
@@ -27,7 +27,8 @@
     "eslint": "^3.19.0",
     "eslint-plugin-github": "^0.12.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-rule-documentation": "^1.0.11"
+    "eslint-rule-documentation": "^1.0.11",
+    "npm-run-all": "4.1.5"
   },
   "keywords": [
     "github",
