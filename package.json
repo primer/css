@@ -19,7 +19,7 @@
     "design-system"
   ],
   "scripts": {
-    "build": "scripts/build",
+    "build": "script/build",
     "prepare": "npm run build",
     "lint": "stylelint --quiet --syntax scss .",
     "start": "next",
@@ -79,7 +79,6 @@
     "html-to-react": "^1.2.11",
     "isomorphic-fetch": "^2.2.1",
     "jest": "24.0.0",
-    "jest": "^24.0.0",
     "klaw": "^3.0.0",
     "lerna-changelog": "^0.7.0",
     "loader-utils": "^1.1.0",
@@ -92,8 +91,7 @@
     "minimatch": "^3.0.4",
     "next": "7.0.2",
     "next-compose-plugins": "2.1.1",
-    "node-sass": "^4.11.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "4.11.0",
     "now": "^12.1.8",
     "npm-run-all": "4.1.5",
     "octicons": "^6.0.1",

@@ -3,9 +3,10 @@ set -e
 
 outdir=build
 rm -rf $outdir
-mkdir -p $outdir
+mkdir -p src/$outdir
 
-indexes=$(find . -name index.scss | egrep -v node_modules | perl -pe 's#^\./##')
+pushd src > /dev/null
+indexes=$(find . -name index.scss | perl -pe 's#^\./##')
 root=$(pwd)
 
 for index in $indexes; do
@@ -24,3 +25,5 @@ for index in $indexes; do
     echo "module.exports = {cssstats: require('./$name.json')}" > "$root/$outdir/$name.js"
     popd > /dev/null
 done
+popd > /dev/null
+mv src/$outdir $outdir
