@@ -1,9 +1,10 @@
-workflow "lint, test, deploy" {
+workflow "lint, test, deploy, publish" {
   on = "push"
   resolves = [
     "lint",
     "test",
     "deploy",
+    "publish",
   ]
 }
 
@@ -27,6 +28,7 @@ action "test" {
 action "deploy" {
   needs = "install"
   uses = "primer/deploy@master"
+  secrets = ["NOW_TOKEN"]
 }
 
 action "publish" {
