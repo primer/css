@@ -26,7 +26,7 @@
     "start-storybook": "start-storybook -p 8000 -c .storybook",
     "build-storybook": "build-storybook -o build",
     "publish-storybook": "npm run storybook && gh-pages -d build -b gh-pages -r https://github.com/primer/storybook",
-    "postlint": "eslint src pages",
+    "postlint": "eslint docs pages",
     "test": "jest",
     "sync": "script/sync",
     "watch": "script/sync --watch",
