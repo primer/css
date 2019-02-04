@@ -22,13 +22,11 @@
    npm run bump
    ```
 
-4. Run `script/check-versions` to catch any cross-module version mismatches. (This will run on Travis, too.)
+4. Test your changes with the latest release candidate version in the appropriate places (styleguide, storybook, github/github).
 
-5. Test your changes with the latest release candidate version in the appropriate places (styleguide, storybook, github/github).
+5. Once the release PR is approved and you've done necessary testing, merge to `master`. This will trigger publishing to npm.
 
-6. Once the release PR is approved and you've done necessary testing, merge to `master`. This will trigger publishing to npm.
-
-7. Create a new release branch for the next release from `master` and name it `release-<version>`. Please use the following template for the PR description, linking to the relevant issues and/or pull requests for each change, and removing irrelevant headings:
+6. Create a new release branch for the next release from `master` and name it `release-<version>`. Please use the following template for the PR description, linking to the relevant issues and/or pull requests for each change, and removing irrelevant headings:
 
     ```md
     # Primer [Major|Minor|Patch] Release
@@ -73,19 +71,17 @@
 
 1. Create a new branch
 
-2. Update the primer version in your terminal  `bin/npm install primer@<version>`.
+2. Update the primer version in your terminal  `bin/npm install @primer/css@<version>`.
 
-3. Update `stylelint-config-primer` in your terminal to the appropriate version `bin/npm install stylelint-config-primer@latest`.
+3. If you need to make changes to github/github due to the Primer release, make a separate branch. When ready, merge that branch into your release branch.
 
-4. If you need to make changes to github/github due to the Primer release, make a separate branch. When ready, merge that branch into your release branch.
+4. Add reviewers.
 
-5. Add reviewers.
+5. Check that every deleted vendor file has an accompanying updated vendor file and that the version numbers look correct.
 
-6. Check that every deleted vendor file has an accompanying updated vendor file and that the version numbers look correct.
+6. Test on review-lab.
 
-7. Test on review-lab.
-
-8. When ready, merge! 🎉
+7. When ready, merge! 🎉
 
 
 ### Publish release tag
