@@ -1,4 +1,3 @@
-*.lerna_backup
 *.log
 */*/package-lock.json
 .DS_Store
@@ -7,7 +6,5 @@
 .sass-cache
 _site
 build/
-node_modules
-primer-version.txt
+node_modules/
 publish-files.txt
-static/primer.css
