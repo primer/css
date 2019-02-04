@@ -54,13 +54,13 @@
 
 .btn-outline-mktg {
   color: $blue-450;
-  background-color: $white;
+  background-color: rgba($white, 0);
   border-color: rgba($blue-450, 0.5);
 
   &:hover {
     color: $blue-500;
     text-decoration: none;
-    background-color: $white;
+    background-color: rgba($white, 0);
     border-color: rgba($blue-450, 1);
   }
 }
