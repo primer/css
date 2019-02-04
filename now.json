@@ -2,6 +2,15 @@
   "version": 1,
   "name": "primer-css",
   "alias": "primer-css.now.sh",
+  "files": [
+    "docs",
+    "lib",
+    "next.config.js",
+    "package.json",
+    "package-lock.json",
+    "pages",
+    "src"
+  ],
   "scale": {
     "sfo": {
       "min": 1,
