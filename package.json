@@ -23,7 +23,7 @@
     "build-storybook": "build-storybook -o build",
     "check-links": "script/check-links http://localhost:3000/css -v",
     "lint": "stylelint --quiet --syntax scss src/**/*.scss",
-    "build": "next build",
+    "now-build": "next build",
     "now-start": "next start",
     "postlint": "echo 'TODO: eslint docs pages'",
     "postpublish": "script/postpublish",
