@@ -31,7 +31,7 @@ fi
 
 context="npm publish primer"
 
-export GH_TOKEN=$GITHUB_TOKEN
+export GH_STATUS_TOKEN=$GITHUB_TOKEN
 npx commit-status $context pending "publishing $version..."
 
 script/prepublish
