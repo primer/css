@@ -1,2 +1,2 @@
-import redirect from '../src/redirect'
+import redirect from '../docs/redirect'
 export default redirect('/css')

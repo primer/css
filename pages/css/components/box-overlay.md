@@ -7,7 +7,7 @@ symbols: [Box--overlay, Box-header, Box-overlay--narrow, Box-overlay--wide]
 keywords: [box, overlay]
 ---
 
-import DetailsDialog from '../../../src/DetailsDialog'
+import DetailsDialog from '../../../docs/DetailsDialog'
 
 ## Box overlays
 Use the `Box--overlay` with the `<details>` and [`<details-dialog>`](https://github.com/github/details-dialog), and add the `details-overlay-dark` utility if you wish to apply a dark transparent background.

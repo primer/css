@@ -10,7 +10,7 @@ package:
 ---
 
 import {BorderBox, Box, Flex, Heading, Text} from '@primer/components'
-import {ColorPalette, ColorVariables} from '../../../src/color-system'
+import {ColorPalette, ColorVariables} from '../../../docs/color-system'
 
 {:toc}
 

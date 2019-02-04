@@ -5,8 +5,8 @@ import {
   PrimerPackageBox,
   PrimitivesOverview,
   StylesOverview
-} from '../../src/landing'
-import {CONTENT_MAX_WIDTH} from '../../src/constants'
+} from '../../docs/landing'
+import {CONTENT_MAX_WIDTH} from '../../docs/constants'
 import {name, version} from '../../package.json'
 import packages from './packages.json'
 
