@@ -78,7 +78,7 @@ The [`script` directory](./script) houses a collection of scripts that we use to
     
     If you're looking for more detail, you can also run `npx lerna ls`, which will list the packages by name along with their versions.
     
-Scripts like `lint-scss`, `notify`, and `test-docs` are called from individual packages to run specific common tasks; `npm-run` and `npm-run-all` are used more generally to run monorepo-installed npm utilities within the package directory, and can probably be refactored to simply run [npx].
+Scripts like `lint-scss`, `notify`, and `test-docs` are called from individual packages to run specific common tasks.
 
 
 [monorepo]: https://github.com/babel/babel/blob/master/doc/design/monorepo.md
