@@ -8,7 +8,7 @@ import getComponents from '../docs/markdown'
 import {config, requirePage, rootPage} from '../docs/utils'
 import {CONTENT_MAX_WIDTH} from '../docs/constants'
 
-import '../index.scss'
+import '../src/index.scss'
 
 export default class MyApp extends App {
   static async getInitialProps({Component, ctx}) {
