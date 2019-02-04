@@ -21,7 +21,7 @@
   "scripts": {
     "build": "script/build",
     "prepare": "npm run build",
-    "lint": "stylelint --quiet --syntax scss .",
+    "lint": "stylelint --quiet --syntax scss src/**/*.scss",
     "start": "next",
     "start-storybook": "start-storybook -p 8000 -c .storybook",
     "build-storybook": "build-storybook -o build",
