@@ -7,7 +7,7 @@ import {
   StylesOverview
 } from '../../src/landing'
 import {CONTENT_MAX_WIDTH} from '../../src/constants'
-import {name, version} from 'primer/package.json'
+import {name, version} from '../../package.json'
 import packages from './packages.json'
 
 export const Hero = () => (
