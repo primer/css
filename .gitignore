@@ -3,8 +3,10 @@
 */*/package-lock.json
 .DS_Store
 .changelog
+.next/
 .sass-cache
 _site
 build
-primer-version.txt
 node_modules
+primer-version.txt
+static/primer.css
