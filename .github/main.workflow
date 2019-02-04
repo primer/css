@@ -27,5 +27,10 @@ action "test" {
 action "deploy" {
   needs = "install"
   uses = "primer/deploy@master"
-  args = "test"
+}
+
+action "publish" {
+  needs = ["lint", "test"]
+  uses = "actions/npm@master"
+  runs = "script/publish"
 }
