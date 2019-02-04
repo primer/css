@@ -1,23 +1,24 @@
 #!/usr/bin/env node
 
 const ghpages = require('gh-pages')
+const {GITHUB_ACTOR, GITHUB_TOKEN} = process.env
 
-if (!process.env.GH_TOKEN) {
-  console.error('Publish storybook: No GH_TOKEN found for storybook publishing.')
+if (GITHUB_TOKEN) {
+  console.error('Publish storybook: No GITHUB_TOKEN found for storybook publishing.')
   process.exitCode = 1
   return
 }
 
-ghpages.publish('build',{
+ghpages.publish('build', {
   branch: 'gh-pages',
-  repo: `https://primer-css:${process.env.GH_TOKEN}@github.com/primer/storybook.git`,
+  repo: `https://${GITHUB_ACTOR}:${process.env.GITHUB_TOKEN}@github.com/primer/storybook.git`,
   user: {
     name: 'Primer CSS',
     email: 'design-systems@github.com'
   }
-}, (error) => {
-  if(error) {
-    console.error('gh-pages failed to publish:', error.message.replace(process.env.GH_TOKEN, ''))
+}, error => {
+  if (error) {
+    console.error('gh-pages failed to publish:', error.message.replace(process.env.GITHUB_TOKEN, '[secret]'))
     process.exitCode = 1
   }
 })
