@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-outdir=build
+outdir=dist
 rm -rf $outdir
 mkdir -p src/$outdir
 
@@ -19,7 +19,7 @@ for index in $indexes; do
     fi
     file="$outdir/$name.css"
     pushd $dir > /dev/null
-    echo "[build] $index -> $file"
+    echo "[dist] $index -> $file"
     npx node-sass --include-path=$root index.scss > "$root/$file"
     npx cssstats "$root/$file" > "$root/$outdir/$name.json"
     echo "module.exports = {cssstats: require('./$name.json')}" > "$root/$outdir/$name.js"

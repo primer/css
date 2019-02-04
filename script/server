@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ "$NODE_ENV" = "production" ]]; then
+    next
+else
+    next start
+fi

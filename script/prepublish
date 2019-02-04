@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# generate the build directory
+npm run dist
+
 files=$(git ls-files src | sed -e 's#^src/##' | sed -e 's#/.*$##' | sort -u)
 echo $files > publish-files.txt
 cd src
