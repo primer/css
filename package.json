@@ -35,7 +35,7 @@
     "test-all-modules": "ava --verbose tests/test-*.js",
     "now-build": "next build",
     "now-start": "next start",
-    "prepublishOnly:" "script/prepublish",
+    "prepublishOnly": "script/prepublish",
     "postpublish": "script/postpublish"
   },
   "devDependencies": {
