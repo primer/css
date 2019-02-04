@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-module=${1:-primer}
+module=${1:-@primer/css}
 version=${2:-latest}
 
 function log() {
@@ -12,13 +12,11 @@ log "Pulling the latest ${module}/build/data.json ..."
 curl -sL "https://unpkg.com/${module}@${version}/build/data.json" > before.json
 
 log "Building ${module}/build/data.json locally..."
-pushd modules/${module} > /dev/null
 npm run build
-popd > /dev/null
-cp modules/${module}/build/data.json after.json
+cp build/data.json after.json
 
 function list_selectors() {
-    jq -r .cssstats.selectors.values[] $1 | sort
+    jq -r '.cssstats.selectors.values[]' $1 | sort
 }
 
 list_selectors before.json > before.txt
