@@ -19,8 +19,6 @@ The included source files are written in [Sass][sass] with the SCSS syntax. Afte
 
 You can import individual Primer modules directly from the `@primer/css` package:
 
-Then, you would import the module with:
-
 ```scss
 @import "@primer/css/core/index.scss";
 @import "@primer/css/product/index.scss";
