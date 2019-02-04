@@ -1,2 +1,7 @@
-*.yml
+*.log
 .postcss.json
+.next/
+next.config.js
+docs/
+lib/
+pages/
