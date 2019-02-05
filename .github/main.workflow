@@ -29,10 +29,16 @@ action "deploy" {
   needs = "install"
   uses = "primer/deploy@master"
   secrets = ["NOW_TOKEN"]
+  env = {
+    STATUS_CONTEXT = "docs"
+  }
 }
 
 action "publish" {
   needs = ["lint", "test"]
   uses = "actions/npm@master"
   runs = "script/publish"
+  env = {
+    STATUS_CONTEXT = "npm publish primer"
+  }
 }
