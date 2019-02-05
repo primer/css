@@ -6,7 +6,7 @@ if [[ -z $GITHUB_REF ]]; then
     exit
 fi
 
-name=$(cat package.json | fx .name)
+name=$(cat package.json | npx fx .name)
 branch="${GITHUB_REF/refs\/heads\//}"
 sha="${GITHUB_SHA:0:7}"
 
@@ -14,7 +14,7 @@ echo "[publish] $name (branch: '$branch', sha: '$sha')"
 
 flags="--dry-run"
 if [[ $branch = "master" ]]; then
-    version=$(cat package.json | fx .version)
+    version=$(cat package.json | npx fx .version)
     if [[ $(npm view "$name@$version") = $version ]]; then
         echo "[publish] $name@$version is already published; bailing"
         exit
