@@ -25,7 +25,7 @@ action "test" {
   args = "test"
 }
 
-action "deploy" {
+action "docs" {
   needs = "install"
   uses = "primer/deploy@b539208"
   secrets = [
