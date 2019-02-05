@@ -36,6 +36,6 @@ action "publish" {
   uses = "actions/npm@master"
   runs = "script/publish"
   env = {
-    STATUS_CONTEXT = "npm publish primer"
+    PUBLISH_STATUS_CONTEXT = "npm publish primer"
   }
 }
