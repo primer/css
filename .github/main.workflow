@@ -27,11 +27,8 @@ action "test" {
 
 action "deploy" {
   needs = "install"
-  uses = "primer/deploy@master"
+  uses = "primer/deploy@b539208"
   secrets = ["NOW_TOKEN"]
-  env = {
-    STATUS_CONTEXT = "docs"
-  }
 }
 
 action "publish" {
