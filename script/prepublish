@@ -1,5 +1,7 @@
 #!/bin/bash
 
+npx action-status --context="$STATUS_CONTEXT" --state=pending --description="publishing $version..."
+
 # generate the build directory
 npm run dist
 

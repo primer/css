@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+npx action-status --context="$STATUS_CONTEXT" --state=success --description="published $version" --url="https://unpkg.com/$name@$version/"
+
 file=publish-files.txt
 if [[ -f $file ]]; then
     echo "deleting all files listed in $file..."
