@@ -28,7 +28,10 @@ action "test" {
 action "deploy" {
   needs = "install"
   uses = "primer/deploy@b539208"
-  secrets = ["NOW_TOKEN"]
+  secrets = [
+    "NOW_TOKEN",
+    "GITHUB_TOKEN",
+  ]
 }
 
 action "publish" {
