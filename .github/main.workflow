@@ -25,9 +25,9 @@ action "test" {
   args = "test"
 }
 
-action "docs" {
+action "deploy" {
   needs = "install"
-  uses = "primer/deploy@b539208"
+  uses = "primer/deploy@status-config-redux"
   secrets = [
     "NOW_TOKEN",
     "GITHUB_TOKEN",
