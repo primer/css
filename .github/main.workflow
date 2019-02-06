@@ -27,7 +27,7 @@ action "test" {
 
 action "deploy" {
   needs = "install"
-  uses = "primer/deploy@status-config-redux"
+  uses = "primer/deploy@v2.2.0"
   secrets = [
     "GITHUB_TOKEN",
     "NOW_TOKEN",
