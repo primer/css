@@ -29,12 +29,13 @@ action "deploy" {
   needs = "install"
   uses = "primer/deploy@status-config-redux"
   secrets = [
-    "NOW_TOKEN",
     "GITHUB_TOKEN",
+    "NOW_TOKEN",
   ]
 }
 
 action "publish" {
   needs = ["lint", "test"]
   uses = "primer/publish@8435e6f"
+  secrets = ["GITHUB_TOKEN", "NPM_AUTH_TOKEN"]
 }
