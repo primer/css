@@ -36,9 +36,6 @@ action "docs" {
 
 action "publish" {
   needs = ["lint", "test"]
-  uses = "actions/npm@master"
-  runs = "script/publish"
-  env = {
-    PUBLISH_STATUS_CONTEXT = "npm publish primer"
-  }
+  uses = "primer/publish@make-it-work"
+  args = "--dry-run"
 }
