@@ -4,7 +4,7 @@ workflow "lint, test, deploy, publish" {
     "lint",
     "test",
     "deploy",
-    "publish",
+    "npm publish primer",
   ]
 }
 
@@ -34,7 +34,7 @@ action "deploy" {
   ]
 }
 
-action "publish" {
+action "npm publish primer" {
   needs = ["lint", "test"]
   uses = "primer/publish@8435e6f"
   secrets = ["GITHUB_TOKEN", "NPM_AUTH_TOKEN"]
