@@ -36,6 +36,5 @@ action "deploy" {
 
 action "publish" {
   needs = ["lint", "test"]
-  uses = "primer/publish@make-it-work"
-  args = "--dry-run"
+  uses = "primer/publish@8435e6f"
 }
