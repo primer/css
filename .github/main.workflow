@@ -10,7 +10,7 @@ workflow "lint, test, deploy, publish" {
 
 action "install" {
   uses = "actions/npm@master"
-  args = "install"
+  args = "ci"
 }
 
 action "lint" {
