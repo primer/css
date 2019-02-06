@@ -9,19 +9,19 @@ workflow "lint, test, deploy, publish" {
 }
 
 action "install" {
-  uses = "actions/npm@master"
+  uses = "actions/npm@v2.0.0"
   args = "ci"
 }
 
 action "lint" {
   needs = "install"
-  uses = "actions/npm@master"
+  uses = "actions/npm@v2.0.0"
   args = "run lint"
 }
 
 action "test" {
   needs = "install"
-  uses = "actions/npm@master"
+  uses = "actions/npm@v2.0.0"
   args = "test"
 }
 
