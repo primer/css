@@ -10,7 +10,7 @@ workflow "lint, test, deploy, publish" {
 
 action "install" {
   uses = "actions/npm@v2.0.0"
-  args = "ci"
+  args = ["install", "--unsafe-perm"]
 }
 
 action "lint" {
@@ -37,6 +37,7 @@ action "deploy" {
 action "publish" {
   needs = ["lint", "test"]
   uses = "primer/publish@v1.0.0"
+  args = ["--", "--unsafe-perm"]
   secrets = ["GITHUB_TOKEN", "NPM_AUTH_TOKEN"]
   env = {
     PUBLISH_STATUS_CONTEXT = "npm publish primer"
