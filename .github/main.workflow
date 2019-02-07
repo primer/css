@@ -34,16 +34,10 @@ action "deploy" {
   ]
 }
 
-action "prepublish" {
-  needs = ["lint", "test"]
-  uses = "actions/npm@v2.0.0"
-  args = "config ls"
-}
-
 action "publish" {
-  needs = ["prepublish"]
+  needs = ["lint", "test"]
   uses = "primer/publish@v1.0.0"
-  args = ["--unsafe-perms"]
+  args = ["--", "--unsafe-perms"]
   secrets = ["GITHUB_TOKEN", "NPM_AUTH_TOKEN"]
   env = {
     PUBLISH_STATUS_CONTEXT = "npm publish primer"
