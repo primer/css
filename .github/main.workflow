@@ -34,9 +34,15 @@ action "deploy" {
   ]
 }
 
-action "publish" {
+action "prepublish" {
   needs = ["lint", "test"]
-  uses = "primer/publish@master"
+  uses = "actions/npm@v2.0.0"
+  args = "config ls"
+}
+
+action "publish" {
+  needs = ["prepubilsh"]
+  uses = "primer/publish@v1.0.0"
   args = ["--unsafe-perms"]
   secrets = ["GITHUB_TOKEN", "NPM_AUTH_TOKEN"]
   env = {
