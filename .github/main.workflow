@@ -37,7 +37,6 @@ action "deploy" {
 action "publish" {
   needs = ["lint", "test"]
   uses = "primer/publish@v1.0.0"
-  args = ["--", "--unsafe-perms"]
   secrets = ["GITHUB_TOKEN", "NPM_AUTH_TOKEN"]
   env = {
     PUBLISH_STATUS_CONTEXT = "npm publish primer"
