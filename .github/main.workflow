@@ -41,7 +41,7 @@ action "prepublish" {
 }
 
 action "publish" {
-  needs = ["prepubilsh"]
+  needs = ["prepublish"]
   uses = "primer/publish@v1.0.0"
   args = ["--unsafe-perms"]
   secrets = ["GITHUB_TOKEN", "NPM_AUTH_TOKEN"]
