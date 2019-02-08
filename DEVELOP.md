@@ -5,7 +5,7 @@ If you've made it this far, **thank you**! We appreciate your contribution, and 
 ## Structure
 The project is structured as a [monorepo] made up of lots of small npm modules, many of which depend on each other. We use [Lerna] to manage, version, and publish all of the packages together.
 
-The top-level `package.json` is not published, but tracks common dependencies for developing Primer, and hosts some useful npm [run-scripts]. See the [scripts section](#scripts) for more info.
+The top-level `package.json` is not published, but tracks common dependencies for developing Primer, and hosts some useful npm [run-scripts](#scripts).
 
 ## Workflow
 The typical Primer workflow looks something like this:
@@ -57,28 +57,12 @@ storiesFromMarkdown(require.context('.', true, /\.md$/))
 
 This is how we find all of the Markdown files in the package directory and generate stories from their code blocks. Storybook sections are labeled by the first argument to `storiesOf()` (in the above example, "Module name"), and individual stories get their titles from either the previous Markdown heading or the `title` attribute in the fenced code block. See the [`code-blocks` docs](https://npmjs.com/package/code-blocks) and the [`storiesFromMarkdown()` source](./.storybook/lib/storiesFromMarkdown.js) for more info.
 
-## CSS packages
-All of the Primer CSS packages live in the [modules](./modules) subdirectory, including the [`primer`](./modules/package) omnibus package.
-
-## Tools
-Many tools specific to development of Primer CSS live in the [tools](./tools) subdirectory. 
-
 ## Scripts
-The [`script` directory](./script) houses a collection of scripts that we use to maintain, test, build, and publish packages. Some scripts of note:
+Our [`package.json`](package.json) houses a collection of [run-scripts] that we use to maintain, test, build, and publish Primer CSS. You can list them with:
 
-* `script/check-imports` compares the list of Primer npm dependencies for each package with SCSS `@import` statements in its source, and warns if any mismatches (dependencies without corresponding imports, or vice-versa) are found.
-* `script/compare-published` compares the latest published versions of each Primer CSS package with the `version` field in its local `package.json`, and reports any discrepancies.
-* `script/get-packages` lists all of the package subdirectories from both `modules` and `tools` directories, and is useful for iterating in shell scripts:
-
-    ```sh
-    for pkg in $(script/get-packages); do
-      echo $pkg
-    done
-    ```
-    
-    If you're looking for more detail, you can also run `npx lerna ls`, which will list the packages by name along with their versions.
-    
-Scripts like `lint-scss`, `notify`, and `test-docs` are called from individual packages to run specific common tasks; `npm-run` and `npm-run-all` are used more generally to run monorepo-installed npm utilities within the package directory, and can probably be refactored to simply run [npx].
+```sh
+npm run
+```
 
 
 [monorepo]: https://github.com/babel/babel/blob/master/doc/design/monorepo.md

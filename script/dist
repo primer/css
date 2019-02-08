@@ -1,0 +1,28 @@
+#!/bin/bash
+set -e
+
+outdir=dist
+rm -rf $outdir
+mkdir -p src/$outdir
+
+pushd src > /dev/null
+indexes=$(find . -name index.scss | perl -pe 's#^\./##')
+root=$(pwd)
+
+for index in $indexes; do
+    if [[ $index = "index.scss" ]]; then
+        dir=.
+        name="primer"
+    else
+        dir=$(dirname $index)
+        name=${dir//\//-}
+    fi
+    file="$outdir/$name.css"
+    pushd $dir > /dev/null
+    echo "[dist] $index -> $file"
+    npx node-sass --include-path=$root index.scss > "$root/$file"
+    npx cssstats "$root/$file" > "$root/$outdir/$name.json"
+    popd > /dev/null
+done
+popd > /dev/null
+mv src/$outdir $outdir

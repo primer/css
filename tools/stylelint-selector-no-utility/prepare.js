@@ -1,6 +1,6 @@
 const {join} = require('path')
 const {writeFile} = require('fs-extra')
-const utilities = require('primer-utilities')
+const utilities = require('@primer/css/build/utilities')
 const match = require('./match')
 
 const classes = utilities.cssstats.selectors.values.reduce((set, selector) => {
