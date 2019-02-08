@@ -1,6 +1,9 @@
 #!/bin/bash
 
-npx action-status --context="$PUBLISH_STATUS_CONTEXT" --state=pending --description="publishing $version..."
+slug=$(cat package.json | npx fx 'p => `${p.name}@${p.version}`')
+npx action-status --context="$PUBLISH_STATUS_CONTEXT" \
+    --state=pending \
+    --description="publishing $slug..."
 
 # generate the build directory
 npm run dist

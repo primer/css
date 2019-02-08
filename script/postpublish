@@ -1,7 +1,11 @@
 #!/bin/bash
 set -e
 
-npx action-status --context="$PUBLISH_STATUS_CONTEXT" --state=success --description="published $version" --url="https://unpkg.com/$name@$version/"
+slug=$(cat package.json | npx fx 'p => `${p.name}@${p.version}`')
+npx action-status --context="$PUBLISH_STATUS_CONTEXT" \
+    --state=success \
+    --description="published $version" \
+    --url="https://unpkg.com/$slug/"
 
 file=publish-files.txt
 if [[ -f $file ]]; then
