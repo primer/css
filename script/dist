@@ -22,7 +22,6 @@ for index in $indexes; do
     echo "[dist] $index -> $file"
     npx node-sass --include-path=$root index.scss > "$root/$file"
     npx cssstats "$root/$file" > "$root/$outdir/$name.json"
-    echo "module.exports = {cssstats: require('./$name.json')}" > "$root/$outdir/$name.js"
     popd > /dev/null
 done
 popd > /dev/null
