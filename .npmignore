@@ -1,7 +1,15 @@
 *.log
+.github/
 .postcss.json
 .next/
+.storybook/
 next.config.js
+now.json
 docs/
+docs-test/
 lib/
 pages/
+script/
+static/
+tests/
+tools/
