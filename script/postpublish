@@ -7,7 +7,7 @@ npx action-status --context="$PUBLISH_STATUS_CONTEXT" \
     --description="published $version" \
     --url="https://unpkg.com/$slug/"
 
-file=publish-files.txt
+file=publish-files.log
 if [[ -f $file ]]; then
     echo "deleting all files listed in $file..."
     cat $file | xargs rm -rfv

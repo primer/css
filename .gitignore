@@ -8,4 +8,3 @@ _site
 build/
 dist/
 node_modules/
-publish-files.txt

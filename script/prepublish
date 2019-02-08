@@ -9,7 +9,7 @@ npx action-status --context="$PUBLISH_STATUS_CONTEXT" \
 npm run dist
 
 files=$(git ls-files src | sed -e 's#^src/##' | sed -e 's#/.*$##' | sort -u)
-echo $files > publish-files.txt
+echo $files > publish-files.log
 cd src
 cp -rv $files ..
 cd -
