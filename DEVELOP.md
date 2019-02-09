@@ -46,9 +46,42 @@ Then visit http://localhost:3000/css to view the site.
 
 :rotating_light: **Warning:** Next.js has a [long-running issue](https://github.com/zeit/next.js/issues/1189) with trailing slashes in URLs. Avoid visiting `http://localhost:3000/` if possible, as this may cause your development server to fail in less-than-graceful ways.
 
+
+### Syncing the docs
+Both before and while the Next dev server runs, all of the Markdown files within the `src/` directory are synced to Next's `pages/` directory and rewritten to include useful metadata.
+
+If, for whatever reason, the dev server isn't syncing files from `src/` to `pages/`, you have two choices:
+
+1. Stop the server (`ctrl-C`) and restart it (`npm start`), which will re-sync the files and clear Next's cache.
+2. Run [script/sync](./script/sync) manually:
+
+    ```sh
+    # in the docs directory
+    script/sync
+    ```
+
+    **If you find yourself needing to do this often, please [file an issue](/primer/primer/issues/new) and tag `@shawnbot`**. :bow:
+
+### The pages directory
+The [pages directory](./pages/) contains all of the files that map to URLs on the site. Because we plan to host the site at `primer.style/css` (and because of the way that Now's path aliasing feature works), we nest all of our documentation under the [css subdirectory](./pages/css).
+
+The sync task maintains a listing of files that it's copied from the modules directory in `pages/css/.gitignore`, which ensures that none of these files are checked into git.
+
+### Sync internals
+We use [Metalsmith] to sync the source docs to the `pages` directory and transform them in the following ways:
+
+1. We filter the list of files to only Markdown documents (`**/*.md`).
+1. Many package `README.md`s wrap the actual documentation content in `<!-- %docs -->` HTML comments that usually include YAML frontmatter. In these instances, we extract the content that portion and reformat the frontmatter.
+1. We filter out any Markdown files that _don't_ include a `path` frontmatter key, and rename the destination file to match the `path` (e.g. `path: foo/bar` writes to `pages/css/foo/bar.md`).
+1. We set the `source` frontmatter key to a fully-qualified `github.com` URL for the source file so that we can link directly to it.
+1. We read the list of files from `pages/css/.gitignore` and delete them from the filesystem, then write the new list of paths so that they aren't committed to git.
+
+All of the logic for syncing the source docs (and transforming them in transit) is controlled in [`lib/sync.js`](./lib/sync.js), and each "step" in the transformation (as well as the watching) is implemented as a Metalsmith plugin.
+
+**Why [Metalsmith]?** We're glad you asked! `@shawnbot` likes the simplicity of Metalsmith's core and how easy it is to write powerful plugins. If you have ideas for improving this process, [we're all ears](/primer/css/issues/new)!
+
 ### TODO
 * Document URL tests
-* Document how the sync script works
 
 ## Storybook
 To borrow a [metaphor from Brad Frost](http://bradfrost.com/blog/post/the-workshop-and-the-storefront/), the [docs site](#docs-site) is Primer CSS's storefront, and [Storybook] is its workshop.
@@ -86,8 +119,8 @@ npm run
 
 
 [@primer/css]: https://www.npmjs.com/package/@primer/css
-[monorepo]: https://github.com/babel/babel/blob/master/doc/design/monorepo.md
+[metalsmith]: https://metalsmith.io/
 [run-scripts]: https://docs.npmjs.com/cli/run-script
-[Storybook]: https://storybook.js.org/
+[storybook]: https://storybook.js.org/
 [npm]: https://www.npmjs.com/
 [npx]: https://www.npmjs.com/package/npx
