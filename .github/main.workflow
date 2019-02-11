@@ -3,8 +3,8 @@ workflow "lint, test, deploy, publish" {
   resolves = [
     "lint",
     "test",
-    "deploy",
     "publish",
+    "deploy",
   ]
 }
 
@@ -25,15 +25,6 @@ action "test" {
   args = "test"
 }
 
-action "deploy" {
-  needs = "install"
-  uses = "primer/deploy@v2.2.0"
-  secrets = [
-    "GITHUB_TOKEN",
-    "NOW_TOKEN",
-  ]
-}
-
 action "publish" {
   needs = ["lint", "test"]
   uses = "primer/publish@v1.0.0"
@@ -42,4 +33,13 @@ action "publish" {
   env = {
     PUBLISH_STATUS_CONTEXT = "npm publish primer"
   }
+}
+
+action "deploy" {
+  needs = "install"
+  uses = "primer/deploy@v2.2.0"
+  secrets = [
+    "GITHUB_TOKEN",
+    "NOW_TOKEN",
+  ]
 }
