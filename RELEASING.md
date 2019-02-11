@@ -41,8 +41,8 @@
 
     - [ ] Update `CHANGELOG.md`
     - [ ] Increment version in `package.json` with `npm version`
-    - [ ] [Create a new release](https://github.com/primer/primer/releases/new)
-    - [ ] [Update github/github](https://github.com/primer/primer/blob/master/RELEASING.md#in-githubgithub)
+    - [ ] [Create a new release](https://github.com/primer/css/releases/new)
+    - [ ] [Update github/github](https://github.com/primer/css/blob/master/RELEASING.md#in-githubgithub)
     - [ ] Create a new pull request for the next release
 
     /cc @primer/ds-core
