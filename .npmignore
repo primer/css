@@ -1,6 +1,5 @@
 *.log
 .github/
-.postcss.json
 .next/
 .storybook/
 next.config.js

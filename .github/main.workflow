@@ -16,13 +16,13 @@ action "install" {
 action "lint" {
   needs = "install"
   uses = "actions/npm@v2.0.0"
-  args = "run lint"
+  args = ["--unsafe-perm", "run", "lint"]
 }
 
 action "test" {
   needs = "install"
   uses = "actions/npm@v2.0.0"
-  args = "test"
+  args = ["--unsafe-perm", "test"]
 }
 
 action "publish" {
