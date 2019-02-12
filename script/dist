@@ -1,29 +1,49 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env node
+const globby = require('globby')
+const cssstats = require('cssstats')
+const postcss = require('postcss')
+const loadConfig = require('postcss-load-config')
+const {remove, mkdir, readFile, writeFile} = require('fs-extra')
+const {dirname, basename, join} = require('path')
+const {promisify} = require('util')
 
-outdir=dist
-rm -rf $outdir
-mkdir -p src/$outdir
+const inDir = 'src'
+const outDir = 'dist'
 
-pushd src > /dev/null
-indexes=$(find . -name index.scss | perl -pe 's#^\./##')
-root=$(pwd)
+remove(outDir)
+  .then(() => mkdir(outDir))
+  .then(() => globby([`${inDir}/**/index.scss`]))
+  .then(files => {
+    return loadConfig({
+    }).then(({plugins, options}) => {
 
-for index in $indexes; do
-    if [[ $index = "index.scss" ]]; then
-        dir=.
-        name="primer"
-    else
-        dir=$(dirname $index)
-        name=${dir//\//-}
-    fi
-    file="$outdir/$name.css"
-    pushd $dir > /dev/null
-    echo "[dist] $index -> $file"
-    npx node-sass --include-path=$root index.scss > "$root/$file"
-    npx cssstats "$root/$file" > "$root/$outdir/$name.stats.json"
-    echo "module.exports = {cssstats: require('./$name.stats.json')}" > "$root/$outdir/$name.js"
-    popd > /dev/null
-done
-popd > /dev/null
-mv src/$outdir $outdir
+      const processor = postcss(plugins)
+
+      const inPattern = new RegExp(`^${inDir}/`)
+      const names = {
+        'index.scss': 'primer'
+      }
+      const tasks = files.map(file => {
+        const path = file.replace(inPattern, '')
+        const name = names[path] || dirname(path).replace(/\//g, '-')
+        const dest = join(outDir, `${name}.css`)
+        const stats = join(outDir, `${name}.stats.json`)
+        const js = join(outDir, `${name}.js`)
+        const opts = Object.assign({from: file, to: dest}, options)
+        return readFile(file)
+          .then(scss => processor.process(scss, opts))
+          .then(result => Promise.all([
+            writeFile(dest, result.css, 'utf8'),
+            writeFile(stats, JSON.stringify(cssstats(result.css)), 'utf8'),
+            writeFile(js, `module.exports = {cssstats: require('./${name}.stats.json'}`, 'utf8'),
+            result.map ? writeFile(`${dest}.map`, result.map, 'utf8') : null
+          ]))
+      })
+
+      return Promise.all(tasks)
+    })
+  })
+  .catch(error => {
+    console.error(error)
+    process.exitCode = 1
+  })
