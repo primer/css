@@ -10,6 +10,7 @@ const {promisify} = require('util')
 const inDir = 'src'
 const outDir = 'dist'
 const statsDir = join(outDir, 'stats')
+const encoding = 'utf8'
 
 remove(outDir)
   .then(() => mkdirp(statsDir))
@@ -22,24 +23,38 @@ remove(outDir)
       const names = {
         'index.scss': 'primer'
       }
-      const tasks = files.map(file => {
-        const path = file.replace(inPattern, '')
+      const tasks = files.map(from => {
+        const path = from.replace(inPattern, '')
         const name = names[path] || dirname(path).replace(/\//g, '-')
 
-        const dest = join(outDir, `${name}.css`)
-        const opts = Object.assign({from: file, to: dest}, options)
+        const to = join(outDir, `${name}.css`)
+        const info = {
+          name,
+          source: from,
+          sass: `@primer/css/${path}`,
+          css: to,
+          map: `${to}.map`,
+          js: join(outDir, `${name}.js`),
+          stats: join(statsDir, `${name}.json`),
+          legacy: `primer-${name}/index.scss`
+        }
 
-        return readFile(file)
-          .then(scss => processor.process(scss, opts))
+        return readFile(from)
+          .then(scss => processor.process(scss, Object.assign({from, to}, options)))
           .then(result => Promise.all([
-            writeFile(dest, result.css, 'utf8'),
-            writeFile(join(statsDir, `${name}.json`), JSON.stringify(cssstats(result.css)), 'utf8'),
-            writeFile(join(outDir, `${name}.js`), `module.exports = {cssstats: require('./stats/${name}.json')}`, 'utf8'),
-            result.map ? writeFile(`${dest}.map`, result.map, 'utf8') : null
+            writeFile(to, result.css, encoding),
+            writeFile(info.stats, JSON.stringify(cssstats(result.css)), encoding),
+            writeFile(info.js, `module.exports = {cssstats: require('./stats/${name}.json')}`, encoding),
+            result.map ? writeFile(info.map, result.map, encoding) : null
           ]))
+          .then(() => info)
       })
 
       return Promise.all(tasks)
+    })
+    .then(files => {
+      const meta = {files}
+      return writeFile(join(outDir, 'meta.json'), JSON.stringify(meta, null, 2), encoding)
     })
   })
   .catch(error => {
