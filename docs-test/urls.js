@@ -24,6 +24,7 @@ const exceptions = {
   '/components/tables': deprecated,
   '/getting_started': moved('/getting-started/contributing'),
   '/getting_started/contributing': moved('/getting-started/contributing'),
+  '/packages': removed,
   '/packages/primer': removed,
   '/packages/primer-core': removed,
   '/packages/primer-marketing': removed,
