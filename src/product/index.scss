@@ -1,19 +1,14 @@
 /*!
- * Primer-product
- * http://primer.github.io
+ * @primer/css/product
+ * http://primer.style/css
  *
- * Released under MIT license. Copyright (c) 2019 GitHub Inc.
+ * MIT license. Copyright (c) 2019 GitHub Inc.
  */
-
-// Primer master file
-//
-// Imports all Primer files in their intended order for easy mass-inclusion.
-// Should you need specific files, you can easily use separate `@import`s.
 
 // Global requirements
 @import "../support/index.scss";
 
-// Product specific css modules
+// Product-specific styles
 @import "../alerts/index.scss";
 @import "../avatars/index.scss";
 @import "../blankslate/index.scss";

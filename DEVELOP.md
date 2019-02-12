@@ -18,7 +18,7 @@ Here's what you need to know about how the files are structured in both git and 
     ```scss
     @import "@primer/css/utilities/index.scss";
     ```
-    
+
 * All module interdependencies within Primer CSS are defined as relative imports (e.g. with `../`), so everything should work fine as long as the `@primer/css` directory is in one of your Sass include paths (i.e. `node_modules`).
 
 

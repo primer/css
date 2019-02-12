@@ -111,16 +111,15 @@ function Image(props) {
   }
 }
 
-export function PrimerPackageBox({data = {}, count, ...rest}) {
+export function PrimerPackageBox({count, ...rest}) {
   return (
     <Flex justifyContent="space-around" {...rest}>
       <BorderBox bg="gray.1" width="auto" px={6} py={3} my={4}>
         <Flex alignItems="center" justifyContent="space-around">
           <Text fontSize={3} fontWeight="bold" mb={2} textAlign="center">
-            <Link href={packageSourceURL('primer')} color="inherit">
+            <Link href={bundleSourceURL('primer')} color="inherit">
               Primer
-            </Link>{' '}
-            <Link href={packageURL('primer')}>{data.version}</Link>
+            </Link>
           </Text>
           <Link href="https://travis-ci.org/primer/primer" mt={-1}>
             <img alt="Build Status" src="https://travis-ci.org/primer/primer.svg?branch=master" />
@@ -136,27 +135,32 @@ export function PrimerPackageBox({data = {}, count, ...rest}) {
   )
 }
 
-export function MetaPackageBox({children, data = {}, title, ...rest}) {
-  const deps = data.dependencies || []
+PrimerPackageBox.propTypes = {
+  count: PropTypes.number
+}
+
+export function MetaPackageBox({children, meta = {}, title, ...rest}) {
+  const {name, imports = []} = meta
+  const bundles = imports.filter(bundle => !/support/.test(bundle))
   return (
     <Flex.Item is={BorderBox} bg="white" maxWidth={220} {...rest}>
       <BorderBox bg="gray.1" border={0} borderBottom={1} borderRadius={0} px={3} py={2}>
         <Heading is="div" fontSize={2}>
-          <Link href={packageSourceURL(data.name)} color="inherit">
+          <Link href={bundleSourceURL(name)} color="inherit">
             {title}
-          </Link>{' '}
-          <Link href={packageURL(data.name)}>{data.version}</Link>
+          </Link>
         </Heading>
       </BorderBox>
       <Text is="div" fontSize={1} p={3}>
         {children}
         <Text is="div" fontWeight="bold" mt={4} mb={2}>
-          {deps.length} packages:
+          {bundles.length} bundles:
         </Text>
         <ul className="list-style-none pl-0">
-          {deps.map(dep => (
-            <li key={dep}>
-              <Link href={packageURL(dep)}>{dep}</Link>
+          {bundles.map(bundle => (
+            <li key={bundle}>
+              {/* TODO: link to the actual page! */}
+              <Link href={bundleURL(bundle)}>{bundle}</Link>
             </li>
           ))}
         </ul>
@@ -165,11 +169,19 @@ export function MetaPackageBox({children, data = {}, title, ...rest}) {
   )
 }
 
-function packageURL(name) {
-  return `https://www.npmjs.com/package/${name}`
+MetaPackageBox.propTypes = {
+  meta: PropTypes.shape({
+    name: PropTypes.string,
+    imports: PropTypes.arrayOf(PropTypes.string)
+  }),
+  title: PropTypes.node
 }
 
-function packageSourceURL(name, branch = 'master') {
+function bundleURL(name) {
+  return `/css/bundle?name=${name}`
+}
+
+function bundleSourceURL(name, branch = 'master') {
   // TODO get this from Metalsmith or page metadata???
-  return `https://github.com/primer/primer/blob/${branch}/modules/${name}`
+  return `https://github.com/primer/css/blob/${branch}/src/${name}`
 }
