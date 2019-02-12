@@ -1,3 +1,10 @@
+# 12.0.0
+
+:rotating_light: **Starting with version 12.0.0, the `primer` package is now known as `@primer/css`**. See [MIGRATING.md](https://github.com/primer/css/tree/master/MIGRATING.md) for more info.
+
+#### :boom: Breaking Change
+* [#666](https://github.com/primer/css/pull/666) Reorganize into a single `@primer/css` package ([@shawnbot](https://github.com/shawnbot))
+
 # 11.0.0
 
 #### :boom: Breaking Change
