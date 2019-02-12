@@ -137,7 +137,7 @@ export function PrimerPackageBox({data = {}, count, ...rest}) {
 }
 
 export function MetaPackageBox({children, data = {}, title, ...rest}) {
-  const deps = data.dependencies || []
+  const deps = data.imports || []
   return (
     <Flex.Item is={BorderBox} bg="white" maxWidth={220} {...rest}>
       <BorderBox bg="gray.1" border={0} borderBottom={1} borderRadius={0} px={3} py={2}>
