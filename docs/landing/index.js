@@ -111,7 +111,7 @@ function Image(props) {
   }
 }
 
-export function PrimerPackageBox({meta = {}, count, ...rest}) {
+export function PrimerPackageBox({count, ...rest}) {
   return (
     <Flex justifyContent="space-around" {...rest}>
       <BorderBox bg="gray.1" width="auto" px={6} py={3} my={4}>
@@ -135,14 +135,8 @@ export function PrimerPackageBox({meta = {}, count, ...rest}) {
   )
 }
 
-const MetaPropType = PropTypes.shape({
-  name: PropTypes.string,
-  imports: PropTypes.arrayOf(PropTypes.string)
-})
-
 PrimerPackageBox.propTypes = {
-  count: PropTypes.number,
-  meta: MetaPropType
+  count: PropTypes.number
 }
 
 export function MetaPackageBox({children, meta = {}, title, ...rest}) {
@@ -176,8 +170,11 @@ export function MetaPackageBox({children, meta = {}, title, ...rest}) {
 }
 
 MetaPackageBox.propTypes = {
-  meta: MetaPropType,
-  title: PropTypes.element
+  meta: PropTypes.shape({
+    name: PropTypes.string,
+    imports: PropTypes.arrayOf(PropTypes.string)
+  }),
+  title: PropTypes.node
 }
 
 function bundleURL(name) {
