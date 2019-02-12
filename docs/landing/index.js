@@ -121,9 +121,6 @@ export function PrimerPackageBox({count, ...rest}) {
               Primer
             </Link>
           </Text>
-          <Link href="https://travis-ci.org/primer/primer" mt={-1}>
-            <img alt="Build Status" src="https://travis-ci.org/primer/primer.svg?branch=master" />
-          </Link>
         </Flex>
         {count ? (
           <Text is="div" textAlign="center">
