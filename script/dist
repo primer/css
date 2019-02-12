@@ -3,20 +3,19 @@ const globby = require('globby')
 const cssstats = require('cssstats')
 const postcss = require('postcss')
 const loadConfig = require('postcss-load-config')
-const {remove, mkdir, readFile, writeFile} = require('fs-extra')
+const {remove, mkdirp, readFile, writeFile} = require('fs-extra')
 const {dirname, basename, join} = require('path')
 const {promisify} = require('util')
 
 const inDir = 'src'
 const outDir = 'dist'
+const statsDir = join(outDir, 'stats')
 
 remove(outDir)
-  .then(() => mkdir(outDir))
+  .then(() => mkdirp(statsDir))
   .then(() => globby([`${inDir}/**/index.scss`]))
   .then(files => {
-    return loadConfig({
-    }).then(({plugins, options}) => {
-
+    return loadConfig().then(({plugins, options}) => {
       const processor = postcss(plugins)
 
       const inPattern = new RegExp(`^${inDir}/`)
@@ -26,16 +25,16 @@ remove(outDir)
       const tasks = files.map(file => {
         const path = file.replace(inPattern, '')
         const name = names[path] || dirname(path).replace(/\//g, '-')
+
         const dest = join(outDir, `${name}.css`)
-        const stats = join(outDir, `${name}.stats.json`)
-        const js = join(outDir, `${name}.js`)
         const opts = Object.assign({from: file, to: dest}, options)
+
         return readFile(file)
           .then(scss => processor.process(scss, opts))
           .then(result => Promise.all([
             writeFile(dest, result.css, 'utf8'),
-            writeFile(stats, JSON.stringify(cssstats(result.css)), 'utf8'),
-            writeFile(js, `module.exports = {cssstats: require('./${name}.stats.json'}`, 'utf8'),
+            writeFile(join(statsDir, `${name}.json`), JSON.stringify(cssstats(result.css)), 'utf8'),
+            writeFile(join(outDir, `${name}.js`), `module.exports = {cssstats: require('./stats/${name}.json')}`, 'utf8'),
             result.map ? writeFile(`${dest}.map`, result.map, 'utf8') : null
           ]))
       })
