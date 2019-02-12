@@ -8,6 +8,7 @@
     "next.config.js",
     "package.json",
     "package-lock.json",
+    "postcss.config.js",
     "pages",
     "script",
     "src"
