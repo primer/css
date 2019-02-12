@@ -1,17 +1,9 @@
 #!/bin/bash
 set -e
 
-slug=$(cat package.json | npx fx 'p => `${p.name}@${p.version}`')
-npx action-status --context="$PUBLISH_STATUS_CONTEXT" \
-    --state=success \
-    --description="published $version" \
-    --url="https://unpkg.com/$slug/"
-
 file=publish-files.log
 if [[ -f $file ]]; then
     echo "deleting all files listed in $file..."
     cat $file | xargs rm -rfv
     rm $file
 fi
-
-rm -rf build/
