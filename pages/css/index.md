@@ -46,16 +46,16 @@ Primer is built upon systems that form the foundation of our styles such as spac
 
 Each component or group of styles is packaged up and distributed via npm. Primer includes 23 packages that are grouped into useful meta-packages for easy install. Each package and meta-package is independently versioned and distributed via npm, so it's easy to include all or part of Primer within your own project.
 
-<PrimerPackageBox data={bundles.primer} count={Object.keys(bundles).length - 1} mb={4} />
+<PrimerPackageBox meta={bundles.primer} count={Object.keys(bundles).length - 1} mb={4} />
 
 <Flex justifyContent="space-around" mb={6}>
-  <MetaPackageBox title="Core" data={bundles.core} width={1/3}>
+  <MetaPackageBox title="Core" meta={bundles.core} width={1/3}>
     The core bundle contains styles that are shared between GitHub product and marketing websites.
   </MetaPackageBox>
-  <MetaPackageBox title="Product" data={bundles.product} width={1/3}>
+  <MetaPackageBox title="Product" meta={bundles.product} width={1/3}>
     The product bundle contains styles that are used on GitHub product websites.
   </MetaPackageBox>
-  <MetaPackageBox title="Marketing" data={bundles.marketing} width={1/3}>
+  <MetaPackageBox title="Marketing" meta={bundles.marketing} width={1/3}>
     The marketing bundle contains styles that are used on GitHub marketing websites.
   </MetaPackageBox>
 </Flex>
