@@ -10,8 +10,10 @@ old_path="primer/build/data.json"
 log "Pulling the old $old_path ..."
 curl -sL "https://unpkg.com/$old_path" > before.json
 
-log "Building the stats locally..."
-npm run dist
+if [[ ! -f dist/stats/primer.json ]]; then
+    log "Building the stats locally..."
+    npm run dist
+fi
 cp dist/stats/primer.json after.json
 
 function list_selectors() {
@@ -21,5 +23,8 @@ function list_selectors() {
 jq -r '.cssstats.selectors.values[]' before.json > before.txt
 jq -r '.selectors.values[]' after.json > after.txt
 
+echo "[selector report] diff:"
 (diff before.txt after.txt | tee selector-diff.log) || log "(no diff!)"
+echo "[selector report] end"
+
 rm {before,after}.{json,txt}
