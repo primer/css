@@ -13,3 +13,5 @@ if [[ -f $file ]]; then
     cat $file | xargs rm -rfv
     rm $file
 fi
+
+rm -rf build/
