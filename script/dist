@@ -23,6 +23,9 @@ remove(outDir)
       const names = {
         'index.scss': 'primer'
       }
+
+      const bundles = {}
+
       const tasks = files.map(from => {
         const path = from.replace(inPattern, '')
         const name = names[path] || dirname(path).replace(/\//g, '-')
@@ -39,21 +42,30 @@ remove(outDir)
           legacy: `primer-${name}/index.scss`
         }
 
-        return readFile(from)
-          .then(scss => processor.process(scss, Object.assign({from, to}, options)))
+        return readFile(from, encoding)
+          .then(scss => {
+            info.imports = getExternalImports(scss, path)
+              .map(dirname)
+              .filter(ext => ext !== 'support')
+            return processor.process(scss, Object.assign({from, to}, options))
+          })
           .then(result => Promise.all([
             writeFile(to, result.css, encoding),
             writeFile(info.stats, JSON.stringify(cssstats(result.css)), encoding),
             writeFile(info.js, `module.exports = {cssstats: require('./stats/${name}.json')}`, encoding),
             result.map ? writeFile(info.map, result.map, encoding) : null
           ]))
-          .then(() => info)
+          .then(() => {
+            bundles[name] = info
+            return info
+          })
       })
 
       return Promise.all(tasks)
+        .then(() => bundles)
     })
-    .then(files => {
-      const meta = {files}
+    .then(bundles => {
+      const meta = {bundles}
       return writeFile(join(outDir, 'meta.json'), JSON.stringify(meta, null, 2), encoding)
     })
   })
@@ -61,3 +73,11 @@ remove(outDir)
     console.error(error)
     process.exitCode = 1
   })
+
+function getExternalImports(scss, relativeTo) {
+  const imports = []
+  scss.replace(/@import "(..\/[^"]+)";/g, (_, dep) => {
+    imports.push(join(dirname(relativeTo), dep))
+  })
+  return imports
+}
