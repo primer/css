@@ -1,0 +1,35 @@
+#!/bin/bash
+set -e
+
+dir=$(mktemp -d)
+
+cat << BEFORE > $dir/before.scss
+@import 'primer-core/index.scss';
+@import "primer/index.scss";
+@import "primer-marketing-utilities/index.scss";
+@import "primer-marketing-utilities/lib/layout.scss";
+@import "../node_modules/primer-product/index.scss";
+@import "primer-product";
+@import "primer";
+@import "primer-avatars/lib/avatar.scss";
+@import "primer-navigation/lib/subnav.scss";
+BEFORE
+
+cat << AFTER > $dir/after.scss
+@import '@primer/css/core/index.scss';
+@import "@primer/css/index.scss";
+@import "@primer/css/marketing/utilities/index.scss";
+@import "@primer/css/marketing/utilities/layout.scss";
+@import "../node_modules/@primer/css/product/index.scss";
+@import "@primer/css/product";
+@import "@primer/css";
+@import "@primer/css/avatars/avatar.scss";
+@import "@primer/css/navigation/subnav.scss";
+AFTER
+
+cat $dir/before.scss | bin/primer-migrate > $dir/migrated.scss
+diff $dir/{after,migrated}.scss || (
+    echo "Uh-oh, there was a diff!"
+    exit 1
+)
+echo "Success!"
