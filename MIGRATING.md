@@ -49,12 +49,10 @@ If your text editor supports search and replace regular expressions, the followi
 | `primer\b` | `@primer/css`
 
 #### `primer-migrate`
-You can also use [the included `primer-migrate` script](bin/primer-migrate):
+You can also use the included [`primer-migrate` script](bin/primer-migrate):
 
 ```sh
 npx -p @primer/css primer-migrate path/to/**/*.scss
-# or, if you have @primer/css installed:
-npx primer-migrate path/to/**/*.scss
 ```
 
 ### Sass include paths
