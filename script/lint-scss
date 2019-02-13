@@ -1,3 +1,0 @@
-#!/bin/bash
-set -e
-npx stylelint --quiet --syntax scss **/*.scss
