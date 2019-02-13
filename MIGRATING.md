@@ -44,13 +44,18 @@ If your text editor supports search and replace regular expressions, the followi
 
 | find | replace |
 | :--- | :--- |
-| `primer-marketing-(\w+)/lib/` | `@primer/css/marketing/$1/` |
-| `primer-marketing-(\w+)` | `@primer/css/marketing/$1` |
-| `primer-(\w+)/lib/` | `@primer/css/$1/` |
-| `primer-(\w+)` | `@primer/css/$1` |
-| `primer/index.scss` | `@primer/css/index.scss` |
+| `primer-marketing-(\w+)(\/lib)?` | `@primer/css/marketing/$1` |
+| `primer-(\w+)(\/lib)?` | `@primer/css/$1` |
+| `primer\b` | `@primer/css`
 
-:warning: **If you use unqualified import paths** (e.g. `@import "primer-support"`), you will need to adjust these patterns accordingly.
+#### `primer-migrate`
+You can also use [the included `primer-migrate` script](bin/primer-migrate):
+
+```sh
+npx -p @primer/css primer-migrate path/to/**/*.scss
+# or, if you have @primer/css installed:
+npx primer-migrate path/to/**/*.scss
+```
 
 ### Sass include paths
 If you've installed Primer CSS with npm, you very likely already have `node_modules` listed in your Sass `includePaths` option, and you won't need to change anything. :tada:
