@@ -3,7 +3,7 @@ set -e
 
 dir=$(mktemp -d)
 
-cat << BEFORE > $dir/before.scss
+cat << BEFORE > $dir/input.scss
 @import 'primer-core/index.scss';
 @import "primer/index.scss";
 @import "primer-marketing-utilities/index.scss";
@@ -15,7 +15,7 @@ cat << BEFORE > $dir/before.scss
 @import "primer-navigation/lib/subnav.scss";
 BEFORE
 
-cat << AFTER > $dir/after.scss
+cat << AFTER > $dir/expected.scss
 @import '@primer/css/core/index.scss';
 @import "@primer/css/index.scss";
 @import "@primer/css/marketing/utilities/index.scss";
@@ -27,8 +27,8 @@ cat << AFTER > $dir/after.scss
 @import "@primer/css/navigation/subnav.scss";
 AFTER
 
-cat $dir/before.scss | bin/primer-migrate > $dir/migrated.scss
-diff $dir/{after,migrated}.scss || (
+cat $dir/input.scss | bin/primer-migrate > $dir/output.scss
+diff $dir/{expected,output}.scss || (
     echo "Uh-oh, there was a diff!"
     exit 1
 )
