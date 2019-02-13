@@ -62,6 +62,6 @@ The marketing-specific font files published in the [`fonts` directory](https://u
 
 1. Update any scripts that copy the `.woff` font files from `node_modules/primer-marketing-support/fonts` into your application to look for them in `node_modules/@primer/css/fonts`.
 1. Update any webpack (or other bundler) resolution rules that look for fonts in `primer-marketing-support/fonts` to look for them in `@primer/css/fonts`.
-1. Customize the [`$marketing-font-path` variable](https://github.com/primer/css/blob/645f5f8/modules/primer-marketing-support/lib/variables.scss#L1) (**TODO**: update link to new path in master) to match where they're hosted.
+1. Customize the [`$marketing-font-path` variable](src/marketing/support/variables.scss#L1) to match the path from which they're served.
 
 [help]: https://github.com/primer/css/issues/new?title=Help!
