@@ -26,17 +26,31 @@ And, if you're feeling saucy, uninstall them all by piping that to `xargs npm un
 There are a couple of things you'll need to change in your Sass setup when migrating to v12. This section is intentionally vague because environments vary wildly between text editors, Sass implementations, and application frameworks. When in doubt, consult the relevant documentation, and feel free to [file an issue][help] if you think that we can help.
 
 ### Sass imports
-Generally speaking, all of your Sass `@import` statements can be migrated with three search-and-replace operations, in this order:
+Generally speaking, all of your Sass `@import` statements can be migrated with the following search-and-replace operations, **in the following order**:
+
+* If you import `primer/index.scss` or `primer`, just replace `primer` with `@primer/css` and you're done!
+* Otherwise...
+    1. Replace `primer-marketing-` with `@primer/css/marketing/`, e.g.
+        * `primer-marketing-buttons/index.scss` becomes `@primer/css/marketing/buttons/index.scss`
+        * `primer-marketing-utilities/index.scss` becomes `@primer/css/marketing/utilities/index.scss`
+    1. Replace `primer-` with `@primer/css/`, e.g.
+        * `primer-markdown/index.scss` becomes `@primer/css/markdown/index.scss`
+        * `primer-utilities/index.scss` becomes `@primer/css/utilities/index.scss`
+    1. Delete `lib/` from every Primer CSS path, e.g.
+        * `primer-forms/lib/form-control.scss` becomes `@primer/css/forms/form-control.scss`
+        * `primer-navigation/lib/subnav.scss` becomes `@primer/css/navigation/subnav.scss`
+
+If your text editor supports search and replace regular expressions, the following patterns should work:
 
 | find | replace |
 | :--- | :--- |
+| `primer-marketing-(\w+)/lib/` | `@primer/css/marketing/$1/` |
+| `primer-marketing-(\w+)` | `@primer/css/marketing/$1` |
+| `primer-(\w+)/lib/` | `@primer/css/$1/` |
+| `primer-(\w+)` | `@primer/css/$1` |
 | `primer/index.scss` | `@primer/css/index.scss` |
-| `primer-marketing-<package>/index.scss` | `@primer/css/marketing/<package>/index.scss` |
-| `primer-<package>/index.scss` | `@primer/css/<package>/index.scss` |
 
-Here's the full list of path changes, if you'd like to check your work:
-
-**:rotating_light: TODO :rotating_light:**
+:warning: **If you use unqualified import paths** (e.g. `@import "primer-support"`), you will need to adjust these patterns accordingly.
 
 ### Sass include paths
 If you've installed Primer CSS with npm, you very likely already have `node_modules` listed in your Sass `includePaths` option, and you won't need to change anything. :tada:
@@ -44,7 +58,7 @@ If you've installed Primer CSS with npm, you very likely already have `node_modu
 If you've installed Primer CSS with something _other than_ npm, or you don't know how it was installed, consult the documentation for your setup first, then [let us know][help] if you still can't figure it out.
 
 ## Fonts
-The marketing-specific font files published in the [`fonts` directory](https://unpkg.com/primer-marketing-support@2.0.0/fonts/) of `primer-marketing-support@2.0.0` are published in the `fonts` directory of `@primer/css`. If you use these fonts, you'll need to do two things to migrate:
+The marketing-specific font files published in the [`fonts` directory](https://unpkg.com/primer-marketing-support@2.0.0/fonts/) of `primer-marketing-support@2.0.0` are published in the `fonts` directory of `@primer/css`. If you use these fonts, you'll need to do the following:
 
 1. Update any scripts that copy the `.woff` font files from `node_modules/primer-marketing-support/fonts` into your application to look for them in `node_modules/@primer/css/fonts`.
 1. Update any webpack (or other bundler) resolution rules that look for fonts in `primer-marketing-support/fonts` to look for them in `@primer/css/fonts`.
