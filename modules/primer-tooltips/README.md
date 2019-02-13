@@ -47,7 +47,11 @@ Add tooltips built entirely in CSS to nearly any element.
 
 ## Implementation and accessibility
 
-**Attention**: we use `aria-label` for tooltips instead of something like `data-tooltip` because it is crucial that the tooltip content is available for screen reader users as well. However, `aria-label` **replaces** the text content of an element for screen reader users, so only use tooltip if there is no better way to present the information, or consider using `title` for supplement information.
+Tooltips as a UI pattern should be your last resort for conveying information because it is hidden by default and often with zero or little visual indicator of its existence.
+
+Before you add a tooltip, please consider: Is this information essential and necessary* Can the UI be made clearer? Can the information be shown on the page by default?
+
+**Attention**: we use `aria-label` for tooltip contents, because it is crucial that they are accessible to screen reader users. However, `aria-label` **replaces** the text content of an element in screen readers, so only use `.tooltipped` on elements with no existing text content, or consider using `title` for supplement information.
 
 **Note:** Tooltip classes will conflict with Octicon styles, and as such, must be applied to the parent element instead of the icon.
 
