@@ -1,15 +1,17 @@
 {
   "extends": [
-    "plugin:github/es6",
     "plugin:github/react",
     "plugin:jsx-a11y/recommended"
   ],
+  "rules": {
+    "import/no-namespace": 0,
+    "no-unused-vars": ["error", {
+      "ignoreRestSiblings": true
+    }]
+  },
   "settings": {
     "react": {
-      "version": "^16.6"
+      "version": "detect"
     }
-  },
-  "rules": {
-    "import/no-namespace": 0
   }
 }

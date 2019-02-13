@@ -1,3 +1,0 @@
-#!/bin/bash
-set -e
-npx ava --verbose $(dirname $0)/../tests/modules/test-document-styles.js "$@"
