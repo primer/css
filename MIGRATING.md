@@ -64,4 +64,4 @@ The marketing-specific font files published in the [`fonts` directory](https://u
 1. Update any webpack (or other bundler) resolution rules that look for fonts in `primer-marketing-support/fonts` to look for them in `@primer/css/fonts`.
 1. Customize the [`$marketing-font-path` variable](src/marketing/support/variables.scss#L1) to match the path from which they're served.
 
-[help]: https://github.com/primer/css/issues/new?title=Help!
+[help]: https://github.com/primer/css/issues/new?title=Help!&labels=v12,migration
