@@ -78,10 +78,14 @@ We use [Metalsmith] to sync the source docs to the `pages` directory and transfo
 
 All of the logic for syncing the source docs (and transforming them in transit) is controlled in [`lib/sync.js`](./lib/sync.js), and each "step" in the transformation (as well as the watching) is implemented as a Metalsmith plugin.
 
-**Why [Metalsmith]?** We're glad you asked! `@shawnbot` likes the simplicity of Metalsmith's core and how easy it is to write powerful plugins. If you have ideas for improving this process, [we're all ears](/primer/css/issues/new)!
+### URL tests
+We have a script that catches inadvertent URL changes caused by renaming or deleting Markdown docs:
 
-### TODO
-* Document URL tests
+```sh
+npm run test-urls
+```
+
+This script includes some exceptions for URLs that have been intentionally moved or removed in the process of moving away from the [GitHub Style Guide](https://styleguide.github.com/primer/), and which you will need to modify if you rename or remove either Markdown docs or their `path` frontmatter. See [#641](https://github.com/primer/css/pull/641) for more information.
 
 ## Storybook
 To borrow a [metaphor from Brad Frost](http://bradfrost.com/blog/post/the-workshop-and-the-storefront/), the [docs site](#docs-site) is Primer CSS's storefront, and [Storybook] is its workshop.
