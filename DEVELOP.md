@@ -19,7 +19,7 @@ Here's what you need to know about how the files are structured in both git and 
     @import "@primer/css/utilities/index.scss";
     ```
 
-* All module interdependencies within Primer CSS are defined as relative imports (e.g. with `../`), so everything should work fine as long as the `@primer/css` directory is in one of your Sass include paths (i.e. `node_modules`).
+* All bundle interdependencies within Primer CSS are defined as relative imports (e.g. with `../`), so everything should work fine as long as the `@primer/css` directory is in one of your Sass include paths (i.e. `node_modules`).
 
 
 ## Workflow
@@ -71,7 +71,7 @@ The sync task maintains a listing of files that it's copied from the modules dir
 We use [Metalsmith] to sync the source docs to the `pages` directory and transform them in the following ways:
 
 1. We filter the list of files to only Markdown documents (`**/*.md`).
-1. Many package `README.md`s wrap the actual documentation content in `<!-- %docs -->` HTML comments that usually include YAML frontmatter. In these instances, we extract the content that portion and reformat the frontmatter.
+1. Many bundle `README.md`s wrap the actual documentation content in `<!-- %docs -->` HTML comments that usually include YAML frontmatter. In these instances, we extract the content that portion and reformat the frontmatter.
 1. We filter out any Markdown files that _don't_ include a `path` frontmatter key, and rename the destination file to match the `path` (e.g. `path: foo/bar` writes to `pages/css/foo/bar.md`).
 1. We set the `source` frontmatter key to a fully-qualified `github.com` URL for the source file so that we can link directly to it.
 1. We read the list of files from `pages/css/.gitignore` and delete them from the filesystem, then write the new list of paths so that they aren't committed to git.
@@ -101,7 +101,7 @@ Then visit http://localhost:8000 to test your work.
 ### Code blocks
 All `html` fenced code blocks in `src/**/*.md` will be rendered as stories and listed under the relevant module's name in the left-hand nav. File changes should trigger a live reload automatically (after a brief delay).
 
-If the package you're working on has a `stories.js`, it probably includes a snippet like this:
+If the bundle you're working on has a `stories.js`, it probably includes a snippet like this:
 
 ```js
 const stories = storiesOf('Module name', module)
