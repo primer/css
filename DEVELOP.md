@@ -112,10 +112,22 @@ storiesFromMarkdown(require.context('.', true, /\.md$/))
   })
 ```
 
-This is how we find all of the Markdown files in the package directory and generate stories from their code blocks. Storybook sections are labeled by the first argument to `storiesOf()` (in the above example, "Module name"), and individual stories get their titles from either the previous Markdown heading or the `title` attribute in the fenced code block. See the [`code-blocks` docs](https://npmjs.com/package/code-blocks) and the [`storiesFromMarkdown()` source](./.storybook/lib/storiesFromMarkdown.js) for more info.
+This is how we find all of the Markdown files in the bundle directory and generate stories from their code blocks. Storybook sections are labeled by the first argument to `storiesOf()` (in the above example, "Module name"), and individual stories get their titles from either the previous Markdown heading or the `title` attribute in the fenced code block. See the [`code-blocks` docs](https://npmjs.com/package/code-blocks) and the [`storiesFromMarkdown()` source](./.storybook/lib/storiesFromMarkdown.js) for more info.
 
 ## Scripts
-Our [`package.json`](package.json) houses a collection of [run-scripts] that we use to maintain, test, build, and publish Primer CSS. You can list them with:
+Our [`package.json`](package.json) houses a collection of [run-scripts] that we use to maintain, test, build, and publish Primer CSS, notably:
+
+* `dist` runs `script/dist`, which creates CSS bundles of all the `index.scss` files in `src/`.
+* `check-links` runs a link checker on your local development server (`localhost:3000`, started with `npm start`).
+* `lint` lints all of our SCSS source files.
+* `lint-js` lints the docs site and supporting scripts.
+* `now-build` and `now-start` are run on [Now] to build and start the docs site server.
+* `sync` copies Markdown docs from `src/` to `pages/css/` and preps them for inclusion in the docs site.
+* `test-urls` compares a (pre-generated) list of paths from the [Primer Style Guide](https://styleguide.github.com/primer/) to files in `pages/css`, and lets us know if we've inadvertently deleted or renamed anything.
+* `test-migrate` tests the [`primer-migrate`](MIGRATING.md#primer-migrate) command line utility.
+* `watch` runs the sync script in watch mode, copying files as they're changed from `src/` to `pages/css/`.
+
+You can list all of the available scripts with:
 
 ```sh
 npm run
