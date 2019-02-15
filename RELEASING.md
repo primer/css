@@ -1,7 +1,7 @@
-## Releasing a new Primer version 🎉
+# Releasing a new version of Primer CSS 🎉
 
 
-### In this repo <a name="in-primerprimer"></a>
+## In this repo
 
 1. Check off all of the boxes in your release PR.
 
@@ -48,14 +48,21 @@
     /cc @primer/ds-core
     ```
 
+1. Wait for your checks to pass, and take note of the version that [primer/publish] lists in your status checks.
+
+    **ProTip:** The release candidate version will always be `<version>-rc.<sha>`, where `<version>` comes from the branch name and `<sha>` is the 7-character commit SHA.
 
 ### In `github/github`:
 
-1. Create a new branch
+1. Create a new branch.
 
-1. Update the primer version in your terminal  `bin/npm install @primer/css@<version>`. [primer/publish](/primer/publish) will create a check status listing the published version.
-   * If you're working on a release candidate, the `<version>` will be suffixed with `-rc.<sha>`, where `<sha>` is the 7-character SHA of the most recently published commit.
-   * Otherwise, your work will be published to the `canary` dist-tag as `0.0.0-sha.<sha>`.
+1. Update the Primer CSS version to the published release candidate with:
+
+    ```sh
+    bin/npm install @primer/css@<version>-rc.<sha>
+    ```
+
+    Then commit and push the changes to `package.json`, `package-lock.json`, and `vendor/npm`.
 
 1. If you need to make changes to github/github due to the Primer release, do them in a branch and merge _that_ into your release branch after testing.
 
@@ -63,16 +70,22 @@
 
 1. Test on review-lab.
 
-1. Publish `@primer/css` to the `latest` dist-tag by merging the release branch and waiting for the publish action to finish.
+1. Publish `@primer/css` to the `latest` dist-tag by merging the release branch and waiting for [primer/publish] to finish.
 
-1. Run `bin/npm install @primer/css@<version>` with the published version and commit the resulting changes.
+1. Install the latest published version with:
 
-1. Push your changes and fix any breaking tests.
+    ```
+    bin/npm install @primer/css@<version>
+    ```
+
+    Then commit and push the changes to `package.json`, `package-lock.json`, and `vendor/npm`.
+
+1. Fix any breaking tests.
 
 1. Deploy! :rocket:
 
 
-### Publish release tag
+### Publish the release
 
 1. [Create a new release](https://github.com/primer/primer/releases/new) with tag `v<version>`.
 
@@ -81,3 +94,4 @@
 3. Publish 🎉
 
 [changelog]: ../CHANGELOG.md
+[primer/publish]: https://github.com/primer/publish
