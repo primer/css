@@ -3,7 +3,7 @@
 If you've made it this far, **thank you**! We appreciate your contribution, and hope that this document helps you along the way. If you have any questions or problems, don't hesitate to [reach out to us on Spectrum](https://spectrum.chat/primer).
 
 ## Structure
-Primer CSS is published to [npm] as [@primer/css]. Each of Primer CSS's "modules" lives in git as a directory of SCSS source files under `src/` with an `index.scss` in it. Generally speaking, the styles are divided into three primary themes:
+Primer CSS is published to [npm] as [@primer/css]. Each of Primer CSS's "modules" lives in a subfolder under `src/` with an `index.scss` in it. Generally speaking, the styles are divided into three primary themes:
 
 * **Core** styles (in `core/`) are common dependencies, which include support variables, native element and typography styles, buttons, navigation, tooltips, etc.
 * **Product** styles (in `product/`) are specific to github.com, and include components such as avatars, labels, markdown styles, popovers, and progress indicators.
