@@ -65,7 +65,7 @@ If, for whatever reason, the dev server isn't syncing files from `src/` to `page
 ### The pages directory
 The [pages directory](./pages/) contains all of the files that map to URLs on the site. Because we plan to host the site at `primer.style/css` (and because of the way that Now's path aliasing feature works), we nest all of our documentation under the [css subdirectory](./pages/css).
 
-The sync task maintains a listing of files that it's copied from the modules directory in `pages/css/.gitignore`, which ensures that none of these files are checked into git.
+The sync task maintains a list of files copied from `src/` in `pages/css/.gitignore`, which ensures that none of these generated files are checked into git.
 
 ### Sync internals
 We use [Metalsmith] to sync the source docs to the `pages` directory and transform them in the following ways:
