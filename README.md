@@ -32,17 +32,14 @@ See [DEVELOP.md](./DEVELOP.md) for development docs.
 You can find docs about our release process in [RELEASING.md](./RELEASING.md).
 
 ## Documentation
-The Primer CSS docs site in this repo is created with [Primer Components], [Next], and hosted on [Now].
+The [Primer CSS docs site](https://primer.style/css) is deployed from this repo with [primer/deploy](https://github.com/primer/deploy). See [the development docs](DEVELOP.md#docs-site) for more info.
 
 ## License
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
 
-[next]: https://github.com/zeit/next.js
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [npm]: https://www.npmjs.com/
 [primer]: https://primer.style
 [sass]: http://sass-lang.com/
-[primer components]: https://primer.style/components
-[now]: https://zeit.co/now
