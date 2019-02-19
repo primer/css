@@ -9,7 +9,7 @@ export default class extends React.Component {
   }
 
   render() {
-    const {url, statusCode} = this.props
+    const {url, statusCode = 500} = this.props
     return <>
       <Heading>Whoops! That’s a {statusCode}.</Heading>
       <p>
