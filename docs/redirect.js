@@ -31,11 +31,11 @@ export default function redirect(uri, status = 303) {
 }
 
 export function redirectTrailingSlash(context, status = 301) {
-  const {req, res, err} = context
+  const {req, res} = context
   if (req.url.endsWith('/')) {
     const {url} = req
     const withoutSlash = url.substr(0, url.length - 1)
-    res.writeHead(301, {Location: withoutSlash})
+    res.writeHead(status, {Location: withoutSlash})
     res.end()
     return true
   } else {
