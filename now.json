@@ -7,5 +7,8 @@
   ],
   "routes": [
     {"src": "(.+)/", "dest": "/css/$1"}
-  ]
+  ],
+  "engines": {
+    "node": "10"
+  }
 }
