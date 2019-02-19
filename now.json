@@ -1,7 +1,10 @@
 {
-  "version": 1,
+  "version": 2,
   "name": "primer-css",
   "alias": "primer-css.now.sh",
+  "routes": [
+    {"src": "(.+)/", "dest": "/css/$1"}
+  ],
   "files": [
     "docs",
     "lib",
@@ -11,7 +14,8 @@
     "postcss.config.js",
     "pages",
     "script",
-    "src"
+    "src",
+    "static"
   ],
   "scale": {
     "sfo": {
