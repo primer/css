@@ -1,20 +1,11 @@
 {
-  "version": 2,
   "name": "primer-css",
   "alias": "primer-css.now.sh",
+  "version": 2,
   "builds": [
     {"src": "next.config.js", "use": "@now/next"}
   ],
   "routes": [
     {"src": "(.+)/", "dest": "/css/$1"}
-  ],
-  "scale": {
-    "sfo": {
-      "min": 1,
-      "max": 3
-    }
-  },
-  "engines": {
-    "node": "10"
-  }
+  ]
 }
