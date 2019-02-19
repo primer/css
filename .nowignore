@@ -1,0 +1,8 @@
+*.log
+*.md
+/build
+/dist
+/docs-test
+/prettier.config.js
+/tests
+docs

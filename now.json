@@ -5,18 +5,6 @@
   "routes": [
     {"src": "(.+)/", "dest": "/css/$1"}
   ],
-  "files": [
-    "docs",
-    "lib",
-    "next.config.js",
-    "package.json",
-    "package-lock.json",
-    "postcss.config.js",
-    "pages",
-    "script",
-    "src",
-    "static"
-  ],
   "scale": {
     "sfo": {
       "min": 1,
