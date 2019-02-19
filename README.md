@@ -3,6 +3,9 @@
 
 Primer CSS is the Sass implementation of [Primer], the design system that powers GitHub.
 
+## Migrating
+:rotating_light: **If you currently use the `primer` or `primer-`-prefixed npm packages, please read [the migration guide](MIGRATING.md)!**
+
 ## Install
 This repository is distributed with [npm]. After [installing npm][install-npm], you can install `@primer/css` with this command:
 
