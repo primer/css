@@ -2,6 +2,9 @@
   "version": 2,
   "name": "primer-css",
   "alias": "primer-css.now.sh",
+  "builds": [
+    {"src": "next.config.js", "use": "@now/next"}
+  ],
   "routes": [
     {"src": "(.+)/", "dest": "/css/$1"}
   ],
