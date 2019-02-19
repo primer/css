@@ -12,3 +12,6 @@ module.exports = configure(
     }
   })
 )
+
+// for Now v2
+module.exports.target = 'serverless'
