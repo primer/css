@@ -30,7 +30,10 @@ export default function redirect(uri, status = 303) {
 }
 
 export function redirectTrailingSlash(context, status = 301) {
-  const {req: {url}, res} = context
+  const {
+    req: {url},
+    res
+  } = context
   if (url.endsWith('/')) {
     const withoutSlash = url.substr(0, url.length - 1)
     res.writeHead(status, {Location: withoutSlash})
