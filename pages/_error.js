@@ -3,7 +3,9 @@ import {Heading} from '@primer/components'
 import {redirectTrailingSlash} from '../docs/redirect'
 
 export default class extends React.Component {
-  static getInitialProps = redirectTrailingSlash
+  static getInitialProps(context) {
+    return redirectTrailingSlash(context) || getErrorProps(context)
+  }
 
   render() {
     const {url, statusCode} = this.props
@@ -11,8 +13,13 @@ export default class extends React.Component {
       <Heading>Whoops! That’s a {statusCode}.</Heading>
       <p>
         We couldn’t find anything at <code>{url}</code>.
-        Have you tried <a href={`/css/search?q=${encodeURIComponent(url)}`}>searching</a>?
+        {null && <>Have you tried <a href={`/css/search?q=${encodeURIComponent(url)}`}>searching</a>?</>}
       </p>
     </>
   }
+}
+
+function getErrorProps({req, res, err}) {
+  const {statusCode} = err || res
+  return {statusCode, url: req.url}
 }
