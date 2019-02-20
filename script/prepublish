@@ -1,0 +1,20 @@
+#!/bin/bash
+set -e
+
+# generate the build directory
+npm run dist
+
+# run the selector diff report
+script/selector-diff-report
+
+# TODO: remove this in v13
+mkdir -p build
+cp dist/primer.css build/build.css
+cp dist/stats/primer.json build/build.json
+echo "module.exports = {cssstats: require('./build.json')}" > build/index.js
+
+files=$(git ls-files src | sed -e 's#^src/##' | sed -e 's#/.*$##' | sort -u)
+echo $files > publish-files.log
+cd src
+cp -rv $files ..
+cd -

@@ -1,28 +1,30 @@
 #!/bin/bash
 set -e
 
-module=${1:-primer}
-version=${2:-latest}
-
 function log() {
     echo "$@" 1>&2
 }
 
-log "Pulling the latest ${module}/build/data.json ..."
-curl -sL "https://unpkg.com/${module}@${version}/build/data.json" > before.json
+# TODO: update this to pull from @primer/css
+old_path="primer/build/data.json"
+log "Pulling the old $old_path ..."
+curl -sL "https://unpkg.com/$old_path" > before.json
 
-log "Building ${module}/build/data.json locally..."
-pushd modules/${module} > /dev/null
-npm run build
-popd > /dev/null
-cp modules/${module}/build/data.json after.json
+if [[ ! -f dist/stats/primer.json ]]; then
+    log "Building the stats locally..."
+    npm run dist
+fi
+cp dist/stats/primer.json after.json
 
 function list_selectors() {
-    jq -r .cssstats.selectors.values[] $1 | sort
+    jq -r '.cssstats.selectors.values[]' $1 | sort
 }
 
-list_selectors before.json > before.txt
-list_selectors after.json > after.txt
+jq -r '.cssstats.selectors.values[]' before.json > before.txt
+jq -r '.selectors.values[]' after.json > after.txt
 
-diff before.txt after.txt && log "(no diff!)"
+echo "[selector report] diff:"
+(diff before.txt after.txt | tee selector-diff.log) || log "(no diff!)"
+echo "[selector report] end"
+
 rm {before,after}.{json,txt}

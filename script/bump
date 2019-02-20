@@ -1,4 +1,0 @@
-#!/bin/bash
-set -e
-
-npx lerna publish --exact --skip-npm --since=master $@
