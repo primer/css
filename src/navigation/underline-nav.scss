@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid $gray-200;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .UnderlineNav-body {
