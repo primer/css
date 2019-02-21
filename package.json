@@ -30,7 +30,6 @@
     "lint-js": "eslint lib docs",
     "now-build": "next build",
     "now-start": "next start",
-    "postversion": "git commit -m \"chore: v$npm_package_version\" package*.json",
     "now-test": "npm-run-all -s now-build now-start",
     "postpublish": "script/postpublish",
     "prepare": "npm run dist",
