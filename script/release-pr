@@ -1,5 +1,0 @@
-#!/bin/bash
-set -e
-
-echo "🐦  Publishing PR (canary) release..."
-npx lerna publish --canary --exact --npm-tag=pr $@

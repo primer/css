@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+asset_path=./static
+
+bundles="styleguide.js styleguide.css"
+
+echo "Grabbing the latest assets from github.com..."
+for bundle in $bundles; do
+    echo "Downloading $bundle -> $asset_path/github/$bundle ..."
+    curl -fsSLo "$asset_path/github/$bundle" "https://github.com/site/assets/$bundle"
+done
