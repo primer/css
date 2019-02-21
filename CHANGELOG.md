@@ -1,3 +1,13 @@
+# 12.0.1
+
+### :bug: Bug Fix
+- Add missing `h000-mktg` class [#667](https://github.com/primer/css/pull/667)
+- Fix UnderlineNav overflow issues [#684](https://github.com/primer/css/pull/684)
+- Fix double borders on Box-header [#686](https://github.com/primer/css/pull/686)
+
+### :house: Internal
+- Add `postversion` npm script that commits `package.json` and `package-lock.json` with consistent commit messages (`chore: v<version>`)
+
 # 12.0.0
 
 :rotating_light: **Starting with version 12.0.0, the `primer` package is now known as `@primer/css`**. See [MIGRATING.md](https://github.com/primer/css/tree/master/MIGRATING.md) for more info.

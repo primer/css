@@ -70,7 +70,7 @@
 
 .Box-header {
   padding: $spacer-3;
-  margin: -$border-width -$border-width 0;
+  margin: (-$border-width) (-$border-width) 0;
   background-color: $bg-gray;
   border-color: $border-gray-dark;
   border-style: $border-style;
