@@ -136,5 +136,8 @@
     "unist-util-stringify-position": "^2.0.0",
     "unist-util-visit": "^1.4.0",
     "webpack": "4.20.2"
+  },
+  "dependencies": {
+    "react-bodymovin": "2.0.0"
   }
 }

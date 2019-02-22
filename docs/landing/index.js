@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {BorderBox, Box, Flex, Heading, Link, Text} from '@primer/components'
-import {getAssetPath} from '../utils'
+import { BorderBox, Box, Flex, Heading, Link, Text } from '@primer/components'
+import { getAssetPath } from '../utils'
 import UtilitiesImage from './UtilitiesImage.svg'
 import ObjectsImage from './ObjectsImage.svg'
 import ComponentsImage from './ComponentsImage.svg'
 import SpacingImage from './SpacingImage.svg'
 import ColorImage from './ColorImage.svg'
 
-export {default as HeaderImage} from './HeaderImage.svg'
+export { default as PrimerCSSAnimation } from './PrimerCSSAnimation.js'
 
 const OverviewTitle = props => <Heading fontSize={3} fontWeight="normal" is="div" {...props} />
 const OverviewText = props => <Text fontSize={1} {...props} />
@@ -33,7 +33,7 @@ export function StylesOverview(props) {
   ]
   return (
     <Flex {...props}>
-      {styleTypes.map(({name, desc, image}) => (
+      {styleTypes.map(({ name, desc, image }) => (
         <Flex.Item is={Text} textAlign="center" mx={4} key={name}>
           <Image src={image} height={90} mb={2} />
           <OverviewTitle>{name}</OverviewTitle>
@@ -74,7 +74,7 @@ export function PrimitivesOverview(props) {
   ]
   return (
     <Box width={['auto', 'auto', 10 / 12]} mx="auto" {...props}>
-      {primitiveTypes.map(({name, desc, image}) => (
+      {primitiveTypes.map(({ name, desc, image }) => (
         <Flex key={name} my={6} alignItems="center">
           <Box width={300} mr={6} py={2}>
             <Image src={image} />
@@ -100,7 +100,7 @@ PrimitivesOverview.propTypes = {
 }
 
 function Image(props) {
-  const {src, ...rest} = props
+  const { src, ...rest } = props
   switch (typeof src) {
     case 'string':
       return <Box is="img" width="100%" alt="" {...props} />
@@ -111,7 +111,7 @@ function Image(props) {
   }
 }
 
-export function PrimerPackageBox({count, ...rest}) {
+export function PrimerPackageBox({ count, ...rest }) {
   return (
     <Flex justifyContent="space-around" {...rest}>
       <BorderBox bg="gray.1" width="auto" px={6} py={3} my={4}>
@@ -136,8 +136,8 @@ PrimerPackageBox.propTypes = {
   count: PropTypes.number
 }
 
-export function MetaPackageBox({children, meta = {}, title, ...rest}) {
-  const {name, imports = []} = meta
+export function MetaPackageBox({ children, meta = {}, title, ...rest }) {
+  const { name, imports = [] } = meta
   const bundles = imports.filter(bundle => !/support/.test(bundle))
   return (
     <Flex.Item is={BorderBox} bg="white" maxWidth={220} {...rest}>

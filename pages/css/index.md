@@ -1,6 +1,6 @@
 import {Box, Flex, Heading, Link, Text} from '@primer/components'
 import {
-  HeaderImage,
+  PrimerCSSAnimation,
   MetaPackageBox,
   PrimerPackageBox,
   PrimitivesOverview,
@@ -20,7 +20,7 @@ export const Hero = () => (
         <Text is="div" color="blue.2" fontSize={2} mb={4}>
           v{version}
         </Text>
-        <Box is={HeaderImage} mb={6} />
+        <Box is={PrimerCSSAnimation} mb={6} />
       </Box>
     </Box>
   </Box>
