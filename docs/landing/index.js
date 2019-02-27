@@ -8,7 +8,7 @@ import ComponentsImage from './ComponentsImage.svg'
 import SpacingImage from './SpacingImage.svg'
 import ColorImage from './ColorImage.svg'
 
-export {default as HeaderImage} from './HeaderImage.svg'
+export {default as PrimerCSSAnimation} from './PrimerCSSAnimation.js'
 
 const OverviewTitle = props => <Heading fontSize={3} fontWeight="normal" is="div" {...props} />
 const OverviewText = props => <Text fontSize={1} {...props} />
