@@ -11,7 +11,8 @@
     "postcss.config.js",
     "pages",
     "script",
-    "src"
+    "src",
+    "static"
   ],
   "scale": {
     "sfo": {

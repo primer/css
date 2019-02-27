@@ -40,7 +40,7 @@
     ### Ship checklist
 
     - [ ] Update `CHANGELOG.md`
-    - [ ] Update the version in `package.json` with `npm version <version>`
+    - [ ] Update the `version` field in `package.json` to match the release version
     - [ ] [Create a new release](https://github.com/primer/css/releases/new)
     - [ ] [Update github/github](https://github.com/primer/css/blob/master/RELEASING.md#in-githubgithub)
     - [ ] Create a new pull request for the next release

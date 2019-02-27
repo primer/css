@@ -1,7 +1,28 @@
-# Primer
-[![npm version](https://img.shields.io/npm/v/@primer/css.svg)](https://www.npmjs.org/package/@primer/css)
+<p align="center">
+  <img width="300px" src="./static/readme.png">
+</p>
 
-Primer CSS is the Sass implementation of [Primer], the design system that powers GitHub.
+<h1 align="center">Primer CSS</h1>
+
+<p align="center">The CSS implementation of GitHub's Primer Design System</p>
+
+<p align="center">
+  <a aria-label="npm package" href="https://www.npmjs.com/package/@primer/css">
+    <img alt="" src="https://img.shields.io/npm/v/@primer/css.svg">
+  </a>
+  <a aria-label="contributors graph" href="https://github.com/primer/css/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/primer/css.svg">
+  </a>
+  <a aria-label="last commit" href="https://github.com/primer/css/commits/master">
+    <img alt="" src="https://img.shields.io/github/last-commit/primer/css.svg">
+  </a>
+  <a aria-label="join us in spectrum" href="https://spectrum.chat/primer">
+    <img alt="" src="https://withspectrum.github.io/badge/badge.svg">
+  </a>
+  <a aria-label="license" href="https://github.com/primer/css/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/primer/css.svg" alt="">
+  </a>
+</p>
 
 ## Migrating
 :rotating_light: **If you currently use the `primer` or `primer-`-prefixed npm packages, please read [the migration guide](MIGRATING.md)!**
