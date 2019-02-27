@@ -1,5 +1,8 @@
 # 12.0.2
 
+### :bug: Bug fix
+- Restore missing marketing padding utilities [#695](https://github.com/primer/css/pull/695)
+
 ### :memo: Documentation
 - Explain why `.tooltipped` should be used sparingly [#676](https://github.com/primer/css/pull/676)
 - Fix trailing slash errors in Next.js [#681](https://github.com/primer/css/pull/681)
@@ -8,6 +11,7 @@
 
 ### :house: Internal
 - Remove `postversion` script from `package.json` and update the [PR template](https://github.com/primer/css/blob/master/RELEASING.md#in-this-repo)
+- Rename InterUI font to "Inter", per [inter v3.3](https://github.com/rsms/inter/releases/tag/v3.3) [#696](https://github.com/primer/css/pull/696)
 
 #### Committers: 2
 - Ash Guillaume ([ashygee](https://github.com/ashygee))
@@ -23,8 +27,10 @@
 ### :house: Internal
 - Add `postversion` npm script that commits `package.json` and `package-lock.json` with consistent commit messages (`chore: v<version>`)
 
-#### Committers: 2
+#### Committers: 4
 - Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
+- David Graham ([dgraham](https://github.com/dgraham))
+- Mu-An Chiou ([muan](https://github.com/muan))
 - Shawn Allen ([shawnbot](https://github.com/shawnbot))
 
 # 12.0.0
