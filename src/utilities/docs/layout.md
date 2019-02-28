@@ -41,7 +41,7 @@ As of [Primer v10.10.0](https://github.com/primer/css/releases/v10.10.0), `prime
 
 Rather than toggling the `d-none` class in JavaScript, you should toggle the `hidden` property on an element. This means that you won't have to restore any more specific display utility (`d-inline` or `d-flex`, for instance) just to work around the order in which they're listed in the stylesheet.
 
-```js
+```js dead
 // Good:
 element.hidden = !visible
 
