@@ -1,3 +1,49 @@
+# 12.0.2
+
+### :bug: Bug fix
+- Restore missing marketing padding utilities [#695](https://github.com/primer/css/pull/695)
+
+### :memo: Documentation
+- Explain why `.tooltipped` should be used sparingly [#676](https://github.com/primer/css/pull/676)
+- Fix trailing slash errors in Next.js [#681](https://github.com/primer/css/pull/681)
+- Add static assets to Now deployments [#687](https://github.com/primer/css/pull/687)
+- Shiny new social and README header by @ashygee [#689](https://github.com/primer/css/pull/689)
+
+### :house: Internal
+- Remove `postversion` script from `package.json` and update the [PR template](https://github.com/primer/css/blob/master/RELEASING.md#in-this-repo)
+- Rename InterUI font to "Inter", per [inter v3.3](https://github.com/rsms/inter/releases/tag/v3.3) [#696](https://github.com/primer/css/pull/696)
+
+#### Committers: 2
+- Ash Guillaume ([ashygee](https://github.com/ashygee))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+
+# 12.0.1
+
+### :bug: Bug Fix
+- Add missing `h000-mktg` class [#667](https://github.com/primer/css/pull/667)
+- Fix UnderlineNav overflow issues [#684](https://github.com/primer/css/pull/684)
+- Fix double borders on Box-header [#686](https://github.com/primer/css/pull/686)
+
+### :house: Internal
+- Add `postversion` npm script that commits `package.json` and `package-lock.json` with consistent commit messages (`chore: v<version>`)
+
+#### Committers: 4
+- Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
+- David Graham ([dgraham](https://github.com/dgraham))
+- Mu-An Chiou ([muan](https://github.com/muan))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+
+# 12.0.0
+
+:rotating_light: **Starting with version 12.0.0, the `primer` package is now known as `@primer/css`**. See [MIGRATING.md](https://github.com/primer/css/tree/master/MIGRATING.md) for more info.
+
+#### :boom: Breaking Change
+* [#666](https://github.com/primer/css/pull/666) Reorganize into a single `@primer/css` package ([@shawnbot](https://github.com/shawnbot))
+
+#### Committers: 2
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
+
 # 11.0.0
 
 #### :boom: Breaking Change
