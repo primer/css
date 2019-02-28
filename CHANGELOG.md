@@ -1,3 +1,22 @@
+# 12.1.0
+
+### :rocket: Enhancement
+- Per-axis overflow utilities [#701](https://github.com/primer/css/pull/701)
+- Add `0` to responsive marketing positioning utilities (`top-lg-0`, et al) [#697](https://github.com/primer/css/pull/697)
+- Add negative offset utilities to marketing/utilities/layout [#639](https://github.com/primer/css/pull/639)
+
+### :memo: Documentation
+- Fix changelog committers list for 12.0.2 (accidentally listed under 12.0.1)
+
+### :house: Internal
+- Remove a bunch of unused dev dependencies [#703](https://github.com/primer/css/pull/703)
+- Update `script/selector-diff-report` to compare against `@primer/css` (not `primer`!)
+
+#### Committers: 3
+- Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Tyson Rosage ([trosage](https://github.com/trosage))
+
 # 12.0.2
 
 ### :bug: Bug fix
