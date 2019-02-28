@@ -38,12 +38,11 @@
 // Overflow utilities
 // overflow-hidden can also be used to create a new
 // block formatting context or clear floats.
-/* Set the overflow hidden */
-.overflow-hidden { overflow: hidden !important; }
-/* Set the overflow scroll */
-.overflow-scroll { overflow: scroll !important; }
-/* Set the overflow auto */
-.overflow-auto   { overflow: auto !important; }
+@each $overflow in (hidden, scroll, auto) {
+  .overflow-#{$overflow} { overflow: $overflow !important; }
+  .overflow-x-#{$overflow} { overflow-x: $overflow !important; }
+  .overflow-y-#{$overflow} { overflow-y: $overflow !important; }
+}
 
 // Clear floats
 /* Clear floats around the element */
