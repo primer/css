@@ -39,9 +39,8 @@
     "dev": "next dev",
     "start-storybook": "start-storybook -p 8000 -c .storybook",
     "sync": "script/sync",
-    "test": "npm-run-all -s test-jest test-urls test-migrate",
+    "test": "npm-run-all -s test-urls test-migrate",
     "test-all-modules": "ava --verbose tests/test-*.js",
-    "test-jest": "jest --passWithNoTests",
     "test-urls": "npm run sync && node docs-test/urls.js",
     "test-migrate": "script/test-migrate",
     "watch": "script/sync --watch"
@@ -87,7 +86,6 @@
     "html-2-jsx": "^0.5.1-dev",
     "html-to-react": "^1.2.11",
     "isomorphic-fetch": "^2.2.1",
-    "jest": "24.0.0",
     "klaw": "^3.0.0",
     "loader-utils": "^1.1.0",
     "mdx-constant": "^0.1.0",
