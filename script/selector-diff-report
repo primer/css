@@ -15,7 +15,7 @@ warn "Pulling the old $path from unpkg.com..."
 curl -sL "https://unpkg.com/$pkg/$path" > before.json
 
 warn "Building the stats locally..."
-npm run dist
+npm run --silent dist
 cp $path after.json
 
 function list_selectors() {
