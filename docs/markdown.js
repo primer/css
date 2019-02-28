@@ -12,7 +12,7 @@ export default function getComponents(page = {}) {
     h1: H1,
     // render links with our component
     a: Link,
-    // render code blocks with our wrapper around mdx-live
+    // render code blocks with our wrapper around react-live
     code: CodeExample,
     // render the outline for <p> tags with exactly the text "{:toc}"
     p: ({children, ...rest}) => {

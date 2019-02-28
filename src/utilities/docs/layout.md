@@ -41,7 +41,7 @@ As of [Primer v10.10.0](https://github.com/primer/css/releases/v10.10.0), `prime
 
 Rather than toggling the `d-none` class in JavaScript, you should toggle the `hidden` property on an element. This means that you won't have to restore any more specific display utility (`d-inline` or `d-flex`, for instance) just to work around the order in which they're listed in the stylesheet.
 
-```js
+```js dead
 // Good:
 element.hidden = !visible
 
@@ -104,6 +104,15 @@ Adjust the visibility of an element with `.v-hidden` and `.v-visible`.
 
 ## Overflow
 Adjust element overflow with `.overflow-hidden`, `.overflow-scroll`, and `.overflow-auto`. `.overflow-hidden` can also be used to create a new [block formatting context](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context) or clear floats.
+
+Overflow utilities can also target x- and y-axes independently via:
+
+* `.overflow-x-auto`
+* `.overflow-x-hidden`
+* `.overflow-x-scroll`
+* `.overflow-y-auto`
+* `.overflow-y-hidden`
+* `.overflow-y-scroll`
 
 ## Floats
 Use `.float-left` and `.float-right` to set floats, and `.clearfix` to clear.
