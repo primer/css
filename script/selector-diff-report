@@ -5,15 +5,17 @@ function log() {
     echo "$@" 1>&2
 }
 
+function warn() {
+    echo "$@" 1>&2
+}
+
 pkg="@primer/css"
 path="dist/stats/primer.json"
-log "Pulling the old $path from unpkg.com..."
+warn "Pulling the old $path from unpkg.com..."
 curl -sL "https://unpkg.com/$pkg/$path" > before.json
 
-if [[ ! -f $path ]]; then
-    log "Building the stats locally..."
-    npm run dist
-fi
+warn "Building the stats locally..."
+npm run dist
 cp $path after.json
 
 function list_selectors() {
@@ -23,10 +25,6 @@ function list_selectors() {
 key=".selectors.values[]"
 jq -r $key before.json > before.txt
 jq -r $key after.json > after.txt
-
-function warn() {
-    echo "$@" 1>&2
-}
 
 warn "[selector report] diff:"
 (diff before.txt after.txt | tee selector-diff.log) || log "(no diff!)"
