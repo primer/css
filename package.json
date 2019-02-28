@@ -22,6 +22,7 @@
     "primer-migrate": "bin/primer-migrate"
   },
   "scripts": {
+    "fresh": "rm -rf node_modules; npm install",
     "dist": "script/dist",
     "build-storybook": "build-storybook -o build",
     "check-links": "script/check-links http://localhost:3000/css -v",
