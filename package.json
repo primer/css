@@ -81,6 +81,7 @@
     "hast-util-to-string": "^1.0.1",
     "html-2-jsx": "^0.5.1-dev",
     "html-to-react": "^1.2.11",
+    "klaw": "3.0.0",
     "loader-utils": "^1.1.0",
     "mdx-constant": "^0.1.0",
     "metalsmith": "^2.3.0",
