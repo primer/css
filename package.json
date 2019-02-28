@@ -101,6 +101,7 @@
     "prop-types": "^15.6.2",
     "raw-loader": "^0.5.1",
     "react": "16.6.1",
+    "react-bodymovin": "2.0.0",
     "react-dom": "16.6.1",
     "react-measure": "^2.2.2",
     "refractor": "^2.6.2",
@@ -124,8 +125,5 @@
     "unist-util-stringify-position": "^2.0.0",
     "unist-util-visit": "^1.4.0",
     "webpack": "4.20.2"
-  },
-  "dependencies": {
-    "react-bodymovin": "2.0.0"
   }
 }
