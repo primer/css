@@ -5,26 +5,31 @@ function log() {
     echo "$@" 1>&2
 }
 
-# TODO: update this to pull from @primer/css
-old_path="primer/build/data.json"
-log "Pulling the old $old_path ..."
-curl -sL "https://unpkg.com/$old_path" > before.json
+pkg="@primer/css"
+path="dist/stats/primer.json"
+log "Pulling the old $path from unpkg.com..."
+curl -sL "https://unpkg.com/$pkg/$path" > before.json
 
-if [[ ! -f dist/stats/primer.json ]]; then
+if [[ ! -f $path ]]; then
     log "Building the stats locally..."
     npm run dist
 fi
-cp dist/stats/primer.json after.json
+cp $path after.json
 
 function list_selectors() {
     jq -r '.cssstats.selectors.values[]' $1 | sort
 }
 
-jq -r '.cssstats.selectors.values[]' before.json > before.txt
-jq -r '.selectors.values[]' after.json > after.txt
+key=".selectors.values[]"
+jq -r $key before.json > before.txt
+jq -r $key after.json > after.txt
 
-echo "[selector report] diff:"
+function warn() {
+    echo "$@" 1>&2
+}
+
+warn "[selector report] diff:"
 (diff before.txt after.txt | tee selector-diff.log) || log "(no diff!)"
-echo "[selector report] end"
+warn "[selector report] end"
 
 rm {before,after}.{json,txt}
