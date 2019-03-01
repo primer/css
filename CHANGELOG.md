@@ -1,3 +1,22 @@
+# 12.1.0
+
+### :rocket: Enhancement
+- Per-axis overflow utilities [#701](https://github.com/primer/css/pull/701)
+- Add `0` to responsive marketing positioning utilities (`top-lg-0`, et al) [#697](https://github.com/primer/css/pull/697)
+- Add negative offset utilities to marketing/utilities/layout [#639](https://github.com/primer/css/pull/639)
+
+### :memo: Documentation
+- Fix changelog committers list for 12.0.2 (accidentally listed under 12.0.1)
+
+### :house: Internal
+- Remove a bunch of unused dev dependencies [#703](https://github.com/primer/css/pull/703)
+- Update `script/selector-diff-report` to compare against `@primer/css` (not `primer`!)
+
+#### Committers: 3
+- Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Tyson Rosage ([trosage](https://github.com/trosage))
+
 # 12.0.2
 
 ### :bug: Bug fix
@@ -13,8 +32,10 @@
 - Remove `postversion` script from `package.json` and update the [PR template](https://github.com/primer/css/blob/master/RELEASING.md#in-this-repo)
 - Rename InterUI font to "Inter", per [inter v3.3](https://github.com/rsms/inter/releases/tag/v3.3) [#696](https://github.com/primer/css/pull/696)
 
-#### Committers: 2
+#### Committers: 4
 - Ash Guillaume ([ashygee](https://github.com/ashygee))
+- David Graham ([dgraham](https://github.com/dgraham))
+- Mu-An Chiou ([muan](https://github.com/muan))
 - Shawn Allen ([shawnbot](https://github.com/shawnbot))
 
 # 12.0.1
@@ -27,10 +48,8 @@
 ### :house: Internal
 - Add `postversion` npm script that commits `package.json` and `package-lock.json` with consistent commit messages (`chore: v<version>`)
 
-#### Committers: 4
+#### Committers: 2
 - Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
-- David Graham ([dgraham](https://github.com/dgraham))
-- Mu-An Chiou ([muan](https://github.com/muan))
 - Shawn Allen ([shawnbot](https://github.com/shawnbot))
 
 # 12.0.0
