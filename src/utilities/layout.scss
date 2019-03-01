@@ -36,13 +36,17 @@
 .v-align-baseline    { vertical-align: baseline !important; }
 
 // Overflow utilities
-// overflow-hidden can also be used to create a new
-// block formatting context or clear floats.
-@each $overflow in (hidden, scroll, auto) {
-  .overflow-#{$overflow} { overflow: $overflow !important; }
-  .overflow-x-#{$overflow} { overflow-x: $overflow !important; }
-  .overflow-y-#{$overflow} { overflow-y: $overflow !important; }
-}
+.overflow-hidden { overflow: hidden !important; }
+.overflow-x-hidden { overflow-x: hidden !important; }
+.overflow-y-hidden { overflow-y: hidden !important; }
+
+.overflow-auto { overflow: auto !important; }
+.overflow-x-auto { overflow-x: auto !important; }
+.overflow-y-auto { overflow-y: auto !important; }
+
+.overflow-scroll { overflow: scroll !important; }
+.overflow-x-scroll { overflow-x: scroll !important; }
+.overflow-y-scroll { overflow-y: scroll !important; }
 
 // Clear floats
 /* Clear floats around the element */
