@@ -18,10 +18,6 @@ warn "Building the stats locally..."
 npm run --silent dist
 cp $path after.json
 
-function list_selectors() {
-    jq -r '.cssstats.selectors.values[]' $1 | sort
-}
-
 key=".selectors.values[]"
 jq -r $key before.json > before.txt
 jq -r $key after.json > after.txt
