@@ -2,7 +2,7 @@
 title: Marketing Typography
 path: utilities/marketing-type
 status: New Release
-source: 'https://github.com/primer/css/tree/master/modules/marketing/type/README.md'
+source: 'https://github.com/primer/css/tree/master/src/marketing/type'
 bundle: marketing-type
 ---
 
