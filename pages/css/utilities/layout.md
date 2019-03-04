@@ -2,7 +2,7 @@
 title: Layout
 path: utilities/layout
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/utilities/docs/layout.md'
+source: 'https://github.com/primer/css/blob/master/src/utilities/layout.scss'
 bundle: utilities
 ---
 
