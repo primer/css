@@ -1,19 +1,9 @@
 # Primer / Subhead
 
-[![npm version](https://img.shields.io/npm/v/primer-subhead.svg)](https://www.npmjs.org/package/primer-subhead)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > The Subhead is a simple header with a bottom border. It&#39;s designed to be used on settings and configuration pages.
 
 This repository is a module of the full [primer][primer] repository.
 
-## Install
-
-This repository is distributed with [npm]. After [installing npm][install-npm], you can install `primer-subhead` with this command.
-
-```
-$ npm install --save primer-subhead
-```
 
 ## Usage
 

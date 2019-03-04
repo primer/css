@@ -1,8 +1,5 @@
 # Primer Marketing CSS Buttons
 
-[![npm version](https://img.shields.io/npm/v/primer-marketing-buttons.svg)](https://www.npmjs.org/package/primer-marketing-buttons)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > Buttons are used for actions, like in forms, while textual hyperlinks are used for destinations, or moving from one page to another.
 
 This repository is a module of the full [primer][primer] repository.
@@ -10,14 +7,6 @@ This repository is a module of the full [primer][primer] repository.
 ## Documentation
 
 Find further documentation at [primer.style/css/utilities/marketing-buttons](https://primer.style/css/utilities/marketing-buttons).
-
-## Install
-
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-marketing-buttons` with this command.
-
-```
-$ npm install --save primer-marketing-buttons
-```
 
 ## Usage
 

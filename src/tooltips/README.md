@@ -1,19 +1,8 @@
 # Primer Tooltips
 
-[![npm version](https://img.shields.io/npm/v/primer-tooltips.svg)](https://www.npmjs.org/package/primer-tooltips)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > Add tooltips built entirely in CSS to nearly any element. Just add a few classes and an aria-label attribute.
 
 This repository is a module of the full [primer][primer] repository.
-
-## Install
-
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-tooltips` with this command.
-
-```
-$ npm install --save primer-tooltips
-```
 
 ## Usage
 

@@ -1,19 +1,8 @@
 # Primer Truncate
 
-[![npm version](https://img.shields.io/npm/v/primer-truncate.svg)](https://www.npmjs.org/package/primer-truncate)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > .css-truncate will shorten text with an ellipsis. The maximum width of the truncated text can be changed by overriding the max-width of the .css-truncate-target.
 
 This repository is a module of the full [primer][primer] repository.
-
-## Install
-
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-truncate` with this command.
-
-```
-$ npm install --save primer-truncate
-```
 
 ## Usage
 

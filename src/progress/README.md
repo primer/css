@@ -1,19 +1,8 @@
 # Primer / Progress
 
-[![npm version](https://img.shields.io/npm/v/primer-progress.svg)](https://www.npmjs.org/package/primer-progress)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > Use Progress components to visualize task completion
 
 This repository is a module of the full [primer][primer] repository.
-
-## Install
-
-This repository is distributed with [npm]. After [installing npm][install-npm], you can install `primer-progress` with this command.
-
-```
-$ npm install --save primer-progress
-```
 
 ## Usage
 

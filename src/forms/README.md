@@ -1,19 +1,8 @@
 # Primer Forms
 
-[![npm version](https://img.shields.io/npm/v/primer-forms.svg)](https://www.npmjs.org/package/primer-forms)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > Style individual form controls and utilize common layouts.
 
 This repository is a module of the full [primer][primer] repository.
-
-## Install
-
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-forms` with this command.
-
-```
-$ npm install --save primer-forms
-```
 
 ## Usage
 

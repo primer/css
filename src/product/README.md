@@ -1,19 +1,8 @@
 # Primer product
 
-[![npm version](https://img.shields.io/npm/v/primer-product.svg)](https://www.npmjs.org/package/primer-product)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > Primer product is one of 3 meta-packages that belong to the Primer framework. Primer product contains packages that are used on GitHub product websites.
 
 This repository is a compilation of [several CSS packages](https://github.com/primer/css). You can break it down into smaller sections using npm.
-
-## Install
-
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer` with this command. **You must have npm >=3.0 installed to be able to satisfy the dependency paths**
-
-```
-$ npm install --save primer-product
-```
 
 ## Usage
 

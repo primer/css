@@ -1,8 +1,5 @@
 # Primer Marketing CSS Typography
 
-[![npm version](https://img.shields.io/npm/v/primer-marketing-type.svg)](https://www.npmjs.org/package/primer-marketing-type)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > Flash messages, or alerts, inform users of successful or pending actions. Use them sparingly. Don’t show more than one at a time.
 
 This repository is a module of the full [primer][primer] repository.
@@ -10,14 +7,6 @@ This repository is a module of the full [primer][primer] repository.
 ## Documentation
 
 Find further documentation at [primer.style/css/utilities/marketing-type](https://primer.style/css/utilities/marketing-type).
-
-## Install
-
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-marketing-typography` with this command.
-
-```
-$ npm install --save primer-marketing-typography
-```
 
 ## Usage
 

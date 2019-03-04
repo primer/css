@@ -1,19 +1,8 @@
 # Primer Layout
 
-[![npm version](https://img.shields.io/npm/v/primer-layout.svg)](https://www.npmjs.org/package/primer-layout)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > Primer’s layout includes basic page containers and a single-tiered, fraction-based grid system. That sounds more complicated than it really is though—it’s just containers, rows, and columns.
 
 This repository is a module of the full [primer][primer] repository.
-
-## Install
-
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-layout` with this command.
-
-```
-$ npm install --save primer-layout
-```
 
 ## Usage
 

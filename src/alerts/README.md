@@ -1,19 +1,7 @@
 # Primer Alerts
-
-[![npm version](https://img.shields.io/npm/v/primer-alerts.svg)](https://www.npmjs.org/package/primer-alerts)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > Flash messages, or alerts, inform users of successful or pending actions. Use them sparingly. Don’t show more than one at a time.
 
 This repository is a module of the full [primer][primer] repository.
-
-## Install
-
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-alerts` with this command.
-
-```
-$ npm install --save primer-alerts
-```
 
 ## Usage
 

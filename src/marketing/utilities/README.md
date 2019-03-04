@@ -1,17 +1,6 @@
 # Primer Marketing CSS Utilities
 
-[![npm version](https://img.shields.io/npm/v/primer-marketing-utilities.svg)](https://www.npmjs.org/package/primer-marketing-utilities)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 This repository is a module of the full [primer-marketing-css][primer-marketing-css] repository.
-
-## Install
-
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-marketing-utilities` with this command.
-
-```
-$ npm install --save primer-marketing-utilities
-```
 
 ## Usage
 

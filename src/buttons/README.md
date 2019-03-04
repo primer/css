@@ -1,19 +1,8 @@
 # Primer Buttons
 
-[![npm version](https://img.shields.io/npm/v/primer-buttons.svg)](https://www.npmjs.org/package/primer-buttons)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > Buttons are used for actions, like in forms, while textual hyperlinks are used for destinations, or moving from one page to another.
 
 This repository is a module of the full [primer][primer] repository.
-
-## Install
-
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-buttons` with this command.
-
-```
-$ npm install --save primer-buttons
-```
 
 ## Usage
 

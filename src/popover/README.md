@@ -1,19 +1,8 @@
 # Primer Popover
 
-[![npm version](https://img.shields.io/npm/v/primer-popover.svg)](https://www.npmjs.org/package/primer-popover)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > Popover for suggesting, guiding, and bringing attention to specific UI elements on a page.
 
 This repository is a module of the full [primer][primer] repository.
-
-## Install
-
-This repository is distributed with [npm]. After [installing npm][install-npm], you can install `primer-popover` with this command.
-
-```
-$ npm install --save primer-popover
-```
 
 ## Usage
 

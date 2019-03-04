@@ -1,19 +1,8 @@
 # Primer Pagination
 
-[![npm version](https://img.shields.io/npm/v/primer-pagination.svg)](https://www.npmjs.org/package/primer-pagination)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > Pagination component for applying button styles to a connected set of links that go to related pages
 
 This repository is a module of the full [primer][primer] repository.
-
-## Install
-
-This repository is distributed with [npm]. After [installing npm][install-npm], you can install `primer-pagination` with this command.
-
-```
-$ npm install --save primer-pagination
-```
 
 ## Usage
 

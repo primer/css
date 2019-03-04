@@ -1,19 +1,8 @@
 # Primer box
 
-[![npm version](https://img.shields.io/npm/v/primer-box.svg)](https://www.npmjs.org/package/primer-box)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > Box is a module for creating rounded-corner boxes with a white background and gray borders. Box has optional element styles for headers, lists, and footers.
 
 This repository is a module of the full [primer][primer] repository.
-
-## Install
-
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-box` with this command.
-
-```
-$ npm install --save primer-box
-```
 
 ## Usage
 

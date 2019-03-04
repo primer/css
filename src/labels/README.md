@@ -1,19 +1,8 @@
 # Primer Labels
 
-[![npm version](https://img.shields.io/npm/v/primer-labels.svg)](https://www.npmjs.org/package/primer-labels)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > Labels add metadata or indicate status of items and navigational elements.
 
 This repository is a module of the full [primer][primer] repository.
-
-## Install
-
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-labels` with this command.
-
-```
-$ npm install --save primer-labels
-```
 
 ## Usage
 

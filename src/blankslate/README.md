@@ -1,19 +1,8 @@
 # Primer Blankslate
 
-[![npm version](https://img.shields.io/npm/v/primer-blankslate.svg)](https://www.npmjs.org/package/primer-blankslate)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > Blankslates are for when there is a lack of content within a page or section. Use them as placeholders to tell users why something isn’t there. Be sure to provide an action to add content as well.
 
 This repository is a module of the full [primer][primer] repository.
-
-## Install
-
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-blankslate` with this command.
-
-```
-$ npm install --save primer-blankslate
-```
 
 ## Usage
 

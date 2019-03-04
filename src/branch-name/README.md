@@ -1,19 +1,8 @@
 # Primer / Branch Name
 
-[![npm version](https://img.shields.io/npm/v/primer-branch-name.svg)](https://www.npmjs.org/package/primer-branch-name)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > A nice, consistent way to display branch names.
 
 This repository is a module of the full [primer][primer] repository.
-
-## Install
-
-This repository is distributed with [npm]. After [installing npm][install-npm], you can install `primer-branch-name` with this command.
-
-```
-$ npm install --save primer-branch-name
-```
 
 ## Usage
 
