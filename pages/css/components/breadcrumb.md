@@ -2,7 +2,7 @@
 title: Breadcrumbs
 path: components/breadcrumb
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/breadcrumb/README.md'
+source: 'https://github.com/primer/css/tree/master/src/breadcrumb'
 bundle: breadcrumb
 ---
 
