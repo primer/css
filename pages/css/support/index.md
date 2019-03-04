@@ -1,7 +1,7 @@
 ---
 title: Support
 path: support/index
-source: 'https://github.com/primer/css/tree/master/modules/support/README.md'
+source: 'https://github.com/primer/css/tree/master/src/support'
 bundle: support
 ---
 
