@@ -2,7 +2,7 @@
 title: Tooltips
 path: components/tooltips
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/tooltips/README.md'
+source: 'https://github.com/primer/css/tree/master/src/tooltips'
 bundle: tooltips
 ---
 
