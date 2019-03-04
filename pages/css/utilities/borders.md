@@ -3,7 +3,7 @@ title: Borders
 path: utilities/borders
 status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/72'
-source: 'https://github.com/primer/css/tree/master/modules/utilities/docs/borders.md'
+source: 'https://github.com/primer/css/tree/master/src/utilities/borders.scss'
 bundle: utilities
 ---
 
