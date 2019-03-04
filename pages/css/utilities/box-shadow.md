@@ -3,7 +3,7 @@ title: Box shadow
 path: utilities/box-shadow
 status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/269'
-source: 'https://github.com/primer/css/tree/master/modules/utilities/docs/box-shadow.md'
+source: 'https://github.com/primer/css/tree/master/src/utilities/box-shadow.scss'
 bundle: utilities
 ---
 
