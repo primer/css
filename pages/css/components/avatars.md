@@ -2,7 +2,7 @@
 title: Avatars
 path: components/avatars
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/avatars/README.md'
+source: 'https://github.com/primer/css/tree/master/src/avatars'
 bundle: avatars
 ---
 
