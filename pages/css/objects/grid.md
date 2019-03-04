@@ -3,7 +3,7 @@ title: Grid
 path: objects/grid
 status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/88'
-source: 'https://github.com/primer/css/tree/master/modules/layout/docs/grid.md'
+source: 'https://github.com/primer/css/tree/master/src/layout/grid.scss'
 bundle: layout
 ---
 
