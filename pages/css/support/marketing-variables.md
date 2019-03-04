@@ -2,7 +2,7 @@
 title: Marketing support
 path: support/marketing-variables
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/marketing/support/README.md'
+source: 'https://github.com/primer/css/tree/master/src/marketing/support'
 bundle: marketing-support
 ---
 
