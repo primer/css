@@ -2,7 +2,7 @@
 title: Table object
 path: objects/table-object
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/table-object/README.md'
+source: 'https://github.com/primer/css/tree/master/src/table-object'
 bundle: table-object
 ---
 
