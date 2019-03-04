@@ -2,7 +2,7 @@
 title: Padding
 path: utilities/padding
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/utilities/docs/padding.md'
+source: 'https://github.com/primer/css/tree/master/src/utilities/padding.scss'
 bundle: utilities
 ---
 
