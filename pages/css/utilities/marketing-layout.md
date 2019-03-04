@@ -3,8 +3,7 @@ title: Marketing Layout
 sort_title: Layout Marketing
 path: utilities/marketing-layout
 status: Stable
-source: >-
-  https://github.com/primer/css/tree/master/modules/marketing/utilities/docs/layout.md
+source: 'https://github.com/primer/css/blob/master/src/marketing/utilities/layout.scss'
 bundle: marketing-utilities
 ---
 
