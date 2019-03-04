@@ -2,7 +2,7 @@
 title: Progress
 path: components/progress
 status: New Release
-source: 'https://github.com/primer/css/tree/master/modules/progress/README.md'
+source: 'https://github.com/primer/css/tree/master/src/progress'
 bundle: progress
 ---
 
