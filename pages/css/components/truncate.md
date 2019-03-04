@@ -2,7 +2,7 @@
 title: Truncate
 path: components/truncate
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/truncate/README.md'
+source: 'https://github.com/primer/css/tree/master/src/truncate'
 bundle: truncate
 ---
 
