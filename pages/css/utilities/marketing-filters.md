@@ -2,7 +2,10 @@
 title: Marketing Filters
 path: utilities/marketing-filters
 status: Stable
-status_issue: https://github.com/github/design-systems/issues/302
+status_issue: 'https://github.com/github/design-systems/issues/302'
+source: >-
+  https://github.com/primer/css/tree/master/modules/marketing/utilities/docs/filters.md
+bundle: marketing-utilities
 ---
 
 Filter utility classes can be applied to divs or images to apply visual effects.

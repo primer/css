@@ -3,7 +3,10 @@ title: Marketing Padding
 sort_title: Padding Marketing
 path: utilities/marketing-padding
 status: Stable
-status_issue: https://github.com/github/design-systems/issues/378
+status_issue: 'https://github.com/github/design-systems/issues/378'
+source: >-
+  https://github.com/primer/css/tree/master/modules/marketing/utilities/docs/padding.md
+bundle: marketing-utilities
 ---
 
 Marketing padding utilities extend [core margin utilities](/css/utilities/margin) across the x and y axis. The [marketing scale](/css/support/marketing-variables#extended-spacing-scale) starts from spacer 7 up to 12, and steps first by `8px` for spacer 7 and continues in increments of `16px` for spacer 8 to 12.

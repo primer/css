@@ -2,6 +2,8 @@
 title: Details
 path: utilities/details
 status: Stable
+source: 'https://github.com/primer/css/tree/master/modules/utilities/docs/details.md'
+bundle: utilities
 ---
 
 Details classes are created to enhance the native behaviors of `<details>`.

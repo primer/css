@@ -29,36 +29,14 @@ You can also import specific portions of the module by importing those partials 
 
 ## Documentation
 
-<!-- %docs
-title: Marketing support
-path: support/marketing-variables
-status: Stable
--->
-
-### Extended spacing scale
-This module extends the `primer-core` spacing scale for marketing site needs. These are useful for achieving bigger vertical spacing between sections on marketing sites.
-
-Starting where the `primer-core` spacing scale ends at spacer 6, the marketing scale first steps up with `8px` for spacer 7 then steps in increments of `16px` from spacer 8 up to 12.
-
-| Scale | Value |
-|-------|-------|
-| 7     | 48    |
-| 8     | 64    |
-| 9     | 80    |
-| 10    | 96    |
-| 11    | 112   |
-| 12    | 128   |
-
-See [primer-marketing-support](https://npm.im/primer-marketing-support) for the extended spacing scale used for marketing needs and the related y-axis spacing utilities for [margin](/css/utilities/marketing-margin) and [padding](/css/utilities/marketing-padding).
-
-<!-- %enddocs -->
+Find further documentation at [primer.style/css/support/marketing-variables](https://primer.style/css/support/marketing-variables).
 
 ## License
 
 MIT &copy; [GitHub](https://github.com/)
 
 [primer]: https://github.com/primer/css
-[docs]: http://primer.github.io/
+[docs]: https://primer.style/css
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/

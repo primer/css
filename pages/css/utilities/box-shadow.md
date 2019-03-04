@@ -2,7 +2,9 @@
 title: Box shadow
 path: utilities/box-shadow
 status: Stable
-status_issue: https://github.com/github/design-systems/issues/269
+status_issue: 'https://github.com/github/design-systems/issues/269'
+source: 'https://github.com/primer/css/tree/master/modules/utilities/docs/box-shadow.md'
+bundle: utilities
 ---
 
 Box shadows are used to make content appear elevated. They are typically applied to containers of content that users need to pay attention to or content that appears on top of (overlapping) other elements on the page (like a pop-over or modal).

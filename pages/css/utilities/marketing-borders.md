@@ -3,6 +3,9 @@ title: Marketing Borders
 sort_title: Borders Marketing
 path: utilities/marketing-borders
 status: Stable
+source: >-
+  https://github.com/primer/css/tree/master/modules/marketing/utilities/docs/borders.md
+bundle: marketing-utilities
 ---
 
 The following border utilities are meant to used in addition to those within primer-core.

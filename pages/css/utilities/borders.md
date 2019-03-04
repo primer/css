@@ -2,7 +2,9 @@
 title: Borders
 path: utilities/borders
 status: Stable
-status_issue: https://github.com/github/design-systems/issues/72
+status_issue: 'https://github.com/github/design-systems/issues/72'
+source: 'https://github.com/primer/css/tree/master/modules/utilities/docs/borders.md'
+bundle: utilities
 ---
 
 Utilities for borders, border radius, and box shadows.

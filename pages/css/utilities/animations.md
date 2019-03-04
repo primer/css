@@ -3,6 +3,8 @@ title: Animations
 path: utilities/animations
 example_layout: toggle
 status: Stable
+source: 'https://github.com/primer/css/tree/master/modules/utilities/docs/animations.md'
+bundle: utilities
 ---
 
 Animations are reusable animation classes that you can use to emphasize an element. All of these animations will animate if you toggle their visibility using the "Toggle" button.

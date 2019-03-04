@@ -2,7 +2,9 @@
 title: Flexbox
 path: utilities/flexbox
 status: Stable
-status_issue: https://github.com/github/design-systems/issues/157
+status_issue: 'https://github.com/github/design-systems/issues/157'
+source: 'https://github.com/primer/css/tree/master/modules/utilities/docs/flexbox.md'
+bundle: utilities
 ---
 
 Flex utilities can be used to apply `flexbox` behaviors to elements by using utility classes.

@@ -2,6 +2,8 @@
 title: Typography
 path: utilities/typography
 status: Stable
+source: 'https://github.com/primer/css/tree/master/modules/utilities/docs/typography.md'
+bundle: utilities
 ---
 
 Type utilities are designed to work in combination with line-height utilities so as to result in more sensible numbers wherever possible. These also exist as [variables](/css/support/typography#typography-variables) that you can use in components or custom CSS.

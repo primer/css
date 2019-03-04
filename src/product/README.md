@@ -42,7 +42,7 @@ You can read more about primer in the [docs][docs].
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
 [primer]: https://github.com/primer/css
-[docs]: http://primer.github.io/
+[docs]: https://primer.style/css
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/

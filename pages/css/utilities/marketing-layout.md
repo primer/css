@@ -3,6 +3,9 @@ title: Marketing Layout
 sort_title: Layout Marketing
 path: utilities/marketing-layout
 status: Stable
+source: >-
+  https://github.com/primer/css/tree/master/modules/marketing/utilities/docs/layout.md
+bundle: marketing-utilities
 ---
 
 Marketing layout utilities build on top of [primer-core utilities](/css/utilities/layout#position), adding the option of responsive positioning.

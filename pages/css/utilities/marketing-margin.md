@@ -3,7 +3,10 @@ title: Marketing Margin
 sort_title: Margin Marketing
 path: utilities/marketing-margin
 status: Stable
-status_issue: https://github.com/github/design-systems/issues/378
+status_issue: 'https://github.com/github/design-systems/issues/378'
+source: >-
+  https://github.com/primer/css/tree/master/modules/marketing/utilities/docs/margin.md
+bundle: marketing-utilities
 ---
 
 Marketing margin utilities extend [core margin utilities](/css/support/spacing) across the y-axis only. The [marketing scale](/css/support/marketing-variables#extended-spacing-scale) starts from spacer 7 up to 12, and steps first by `8px` for spacer 7 and continues in increments of `16px` for spacer 8 to 12.

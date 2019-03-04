@@ -2,6 +2,8 @@
 title: Layout
 path: utilities/layout
 status: Stable
+source: 'https://github.com/primer/css/tree/master/modules/utilities/docs/layout.md'
+bundle: utilities
 ---
 
 Change the document layout with display, float, alignment, and other utilities.

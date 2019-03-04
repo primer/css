@@ -35,39 +35,14 @@ $ npm run build
 
 ## Documentation
 
-<!-- %docs
-title: Branch name
-path: components/branch-name
-status: Stable
--->
-
-Branch names can be a link name or not:
-
-```html title="Branch name"
-<span class="branch-name">a_new_feature_branch</span>
-```
-
-```html title="Branch name with link"
-<a href="#url" class="branch-name">a_new_feature_branch</a>
-```
-
-You may also include an octicon before the branch name text:
-
-```erb title="Branch name with icon"
-<span class="branch-name">
-  <%= octicon("git-branch", width:16, height:16) %>
-  a_new_feature_branch
-</span>
-```
-
-<!-- %enddocs -->
+Find further documentation at [primer.style/css/components/branch-name](https://primer.style/css/components/branch-name).
 
 ## License
 
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
 [primer]: https://github.com/primer/css
-[docs]: http://primer.github.io/
+[docs]: https://primer.style/css
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/
