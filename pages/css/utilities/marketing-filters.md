@@ -3,8 +3,7 @@ title: Marketing Filters
 path: utilities/marketing-filters
 status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/302'
-source: >-
-  https://github.com/primer/css/tree/master/modules/marketing/utilities/docs/filters.md
+source: 'https://github.com/primer/css/blob/master/src/marketing/utilities/filters.scss'
 bundle: marketing-utilities
 ---
 
