@@ -2,7 +2,7 @@
 title: Blankslate
 path: components/blankslate
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/blankslate/README.md'
+source: 'https://github.com/primer/css/tree/master/src/blankslate'
 bundle: blankslate
 ---
 
