@@ -2,7 +2,7 @@
 title: Spacing
 path: support/spacing
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/support/docs/spacing.md'
+source: 'https://github.com/primer/css/blob/master/src/support/variables/layout.scss'
 bundle: support
 ---
 
