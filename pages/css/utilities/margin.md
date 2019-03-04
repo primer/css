@@ -2,7 +2,7 @@
 title: Margin
 path: utilities/margin
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/utilities/docs/margin.md'
+source: 'https://github.com/primer/css/blob/master/src/utilities/margin.scss'
 bundle: utilities
 ---
 
