@@ -3,7 +3,7 @@ title: Layout
 path: objects/layout
 status: Deprecated
 status_issue: 'https://github.com/github/design-systems/issues/59'
-source: 'https://github.com/primer/css/tree/master/modules/layout/README.md'
+source: 'https://github.com/primer/css/tree/master/src/layout'
 bundle: layout
 ---
 
