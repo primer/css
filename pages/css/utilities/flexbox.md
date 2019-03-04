@@ -3,7 +3,7 @@ title: Flexbox
 path: utilities/flexbox
 status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/157'
-source: 'https://github.com/primer/css/tree/master/modules/utilities/docs/flexbox.md'
+source: 'https://github.com/primer/css/blob/master/src/utilities/flexbox.scss'
 bundle: utilities
 ---
 
