@@ -2,7 +2,7 @@
 title: Pagination
 path: components/pagination
 status: New Release
-source: 'https://github.com/primer/css/tree/master/modules/pagination/README.md'
+source: 'https://github.com/primer/css/tree/master/src/pagination'
 bundle: pagination
 ---
 
