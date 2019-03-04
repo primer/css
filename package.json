@@ -39,12 +39,10 @@
     "start": "next dev",
     "dev": "next dev",
     "start-storybook": "start-storybook -p 8000 -c .storybook",
-    "sync": "script/sync",
     "test": "npm-run-all -s test-urls test-migrate",
     "test-all-modules": "ava --verbose tests/test-*.js",
-    "test-urls": "npm run sync && node docs-test/urls.js",
-    "test-migrate": "script/test-migrate",
-    "watch": "script/sync --watch"
+    "test-urls": "node docs-test/urls.js",
+    "test-migrate": "script/test-migrate"
   },
   "devDependencies": {
     "@githubprimer/octicons-react": "^8.1.3",
