@@ -2,7 +2,7 @@
 title: Forms
 path: components/forms
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/forms/README.md'
+source: 'https://github.com/primer/css/tree/master/src/forms'
 bundle: forms
 ---
 
