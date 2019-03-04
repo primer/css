@@ -3,7 +3,7 @@ title: Box
 path: components/box
 status_issue: 'https://github.com/github/design-systems/issues/198'
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/box/README.md'
+source: 'https://github.com/primer/css/tree/master/src/box'
 bundle: box
 ---
 
