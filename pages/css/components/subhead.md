@@ -3,7 +3,7 @@ title: Subhead
 path: components/subhead
 status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/101'
-source: 'https://github.com/primer/css/tree/master/modules/subhead/README.md'
+source: 'https://github.com/primer/css/tree/master/src/subhead'
 bundle: subhead
 ---
 
