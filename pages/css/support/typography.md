@@ -3,7 +3,7 @@ title: Typography
 path: support/typography
 status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/329'
-source: 'https://github.com/primer/css/tree/master/modules/support/docs/typography.md'
+source: 'https://github.com/primer/css/blob/master/src/support/variables/typography.scss'
 bundle: support
 ---
 
