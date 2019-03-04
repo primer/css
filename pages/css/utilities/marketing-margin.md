@@ -4,8 +4,7 @@ sort_title: Margin Marketing
 path: utilities/marketing-margin
 status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/378'
-source: >-
-  https://github.com/primer/css/tree/master/modules/marketing/utilities/docs/margin.md
+source: 'https://github.com/primer/css/blob/master/src/marketing/utilities/margin.scss'
 bundle: marketing-utilities
 ---
 
