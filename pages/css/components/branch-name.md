@@ -2,7 +2,7 @@
 title: Branch name
 path: components/branch-name
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/branch-name/README.md'
+source: 'https://github.com/primer/css/tree/master/src/branch-name'
 bundle: branch-name
 ---
 
