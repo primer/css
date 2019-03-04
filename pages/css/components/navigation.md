@@ -2,7 +2,7 @@
 title: Navigation
 path: components/navigation
 status: Stable
-source: 'https://github.com/primer/css/tree/master/modules/navigation/README.md'
+source: 'https://github.com/primer/css/tree/master/src/navigation'
 bundle: navigation
 ---
 
