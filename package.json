@@ -24,7 +24,6 @@
   "scripts": {
     "fresh": "rm -rf node_modules; npm install",
     "dist": "script/dist",
-    "build-storybook": "build-storybook -o build",
     "check-links": "script/check-links http://localhost:3000/css -v",
     "lint": "npm-run-all -s lint-css lint-js",
     "lint-css": "stylelint --quiet --syntax scss src/**/*.scss",
@@ -38,7 +37,8 @@
     "publish-storybook": "npm run storybook && gh-pages -d build -b gh-pages -r https://github.com/primer/storybook",
     "start": "next dev",
     "dev": "next dev",
-    "start-storybook": "start-storybook -p 8000 -c .storybook",
+    "start-storybook": "start-storybook -p 8001",
+    "build-storybook": "build-storybook -o build",
     "sync": "script/sync",
     "test": "npm-run-all -s test-urls test-migrate",
     "test-all-modules": "ava --verbose tests/test-*.js",
