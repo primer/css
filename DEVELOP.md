@@ -96,23 +96,12 @@ Our Storybook setup allows you to view every HTML code block in Primer CSS's Mar
 npm run start-storybook
 ```
 
-Then visit http://localhost:8000 to test your work.
+This should open up the site in your browser (if not, navigate to `http://localhost:8001`).
 
 ### Code blocks
 All `html` fenced code blocks in `src/**/*.md` will be rendered as stories and listed under the relevant module's name in the left-hand nav. File changes should trigger a live reload automatically (after a brief delay).
 
-If the bundle you're working on has a `stories.js`, it probably includes a snippet like this:
-
-```js
-const stories = storiesOf('Module name', module)
-
-storiesFromMarkdown(require.context('.', true, /\.md$/))
-  .forEach(({title, story}) => {
-    stories.add(title, story)
-  })
-```
-
-This is how we find all of the Markdown files in the bundle directory and generate stories from their code blocks. Storybook sections are labeled by the first argument to `storiesOf()` (in the above example, "Module name"), and individual stories get their titles from either the previous Markdown heading or the `title` attribute in the fenced code block. See the [`code-blocks` docs](https://npmjs.com/package/code-blocks) and the [`storiesFromMarkdown()` source](./.storybook/lib/storiesFromMarkdown.js) for more info.
+Note: At this time, we do not load any stories from `src/**/stories.js`.
 
 ## Scripts
 Our [`package.json`](package.json) houses a collection of [run-scripts] that we use to maintain, test, build, and publish Primer CSS, notably:
@@ -121,7 +110,7 @@ Our [`package.json`](package.json) houses a collection of [run-scripts] that we 
 * `check-links` runs a link checker on your local development server (`localhost:3000`, started with `npm start`).
 * `lint` lints all of our SCSS source files.
 * `lint-js` lints the docs site and supporting scripts.
-* `now-build` and `now-start` are run on [Now] to build and start the docs site server.
+* `now-build` and `now-start` are run on [Now] to build and start the docs site server. `now-test` runs them both in order.
 * `sync` copies Markdown docs from `src/` to `pages/css/` and preps them for inclusion in the docs site.
 * `test-urls` compares a (pre-generated) list of paths from the [Primer Style Guide](https://styleguide.github.com/primer/) to files in `pages/css`, and lets us know if we've inadvertently deleted or renamed anything.
 * `test-migrate` tests the [`primer-migrate`](MIGRATING.md#primer-migrate) command line utility.
