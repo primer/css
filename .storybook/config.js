@@ -3,7 +3,11 @@ import {configure, addParameters, addDecorator} from '@storybook/react'
 import {name, homepage, version} from '../package.json'
 import {INITIAL_VIEWPORTS} from '@storybook/addon-viewport'
 
+// this enables HMR for the SCSS source files
 import '../src/index.scss'
+
+// wrap every view in 4x padding
+addDecorator(story => <div className="p-4">{story()}</div>)
 
 addParameters({
   options: {
@@ -14,27 +18,25 @@ addParameters({
   viewport: {
     viewports: {
       sm: {
-        name: 'Primer: sm ($width-sm)',
-        styles: {width: '544px', height: '100%'}
+        name: 'Small ($width-sm)',
+        styles: {width: '544px', height: 'auto'}
       },
       md: {
-        name: 'Primer: md ($width-md)',
-        styles: {width: '768px', height: '100%'}
+        name: 'Medium ($width-md)',
+        styles: {width: '768px', height: 'auto'}
       },
       lg: {
-        name: 'Primer: lg ($width-lg)',
-        styles: {width: '1012px', height: '100%'}
+        name: 'Large ($width-lg)',
+        styles: {width: '1012px', height: 'auto'}
       },
       xl: {
-        name: 'Primer: xl ($width-xl)',
-        styles: {width: '1280px', height: '100%'}
+        name: 'XL ($width-xl)',
+        styles: {width: '1280px', height: 'auto'}
       },
       ...INITIAL_VIEWPORTS
     }
   }
 })
-
-// addDecorator(story => <div className="p-4">{story()}</div>)
 
 configure(() => {
   const loadMarkdown = require.context('../src', true, /\.md$/)
