@@ -17,7 +17,7 @@ module.exports = ({config}) => {
       loaders: [
         babel,
         {
-          loader: require.resolve('./lib/storiesFromMarkdown'),
+          loader: require.resolve('./story-loader'),
           options: {
             sourcePath
           }

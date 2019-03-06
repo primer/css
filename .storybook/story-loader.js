@@ -2,7 +2,7 @@
 const {dirname} = require('path')
 const parseFromString = require('code-blocks/lib/fromString')
 
-module.exports = function codeBlockLoader(markdown) {
+module.exports = function storyLoader(markdown) {
   // resourcePath is the full path ("/Users/probot/primer/css/...") to the file being parsed
   // rootContext is really just dirname(resourcePath)
   const {resourcePath = '', rootContext} = this
