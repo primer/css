@@ -12,28 +12,29 @@ addParameters({
     showAddonsPanel: false
   },
   viewport: {
-    viewports: Object.assign(INITIAL_VIEWPORTS, {
+    viewports: {
       sm: {
-        name: '$width-sm',
+        name: 'Primer: sm ($width-sm)',
         styles: {width: '544px', height: '100%'}
       },
       md: {
-        name: '$width-md',
+        name: 'Primer: md ($width-md)',
         styles: {width: '768px', height: '100%'}
       },
       lg: {
-        name: '$width-lg',
+        name: 'Primer: lg ($width-lg)',
         styles: {width: '1012px', height: '100%'}
       },
       xl: {
-        name: '$width-xl',
+        name: 'Primer: xl ($width-xl)',
         styles: {width: '1280px', height: '100%'}
-      }
-    })
+      },
+      ...INITIAL_VIEWPORTS
+    }
   }
 })
 
-addDecorator(story => <div className="p-4">{story()}</div>)
+// addDecorator(story => <div className="p-4">{story()}</div>)
 
 configure(() => {
   const loadMarkdown = require.context('../src', true, /\.md$/)
