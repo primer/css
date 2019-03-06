@@ -1,27 +1,51 @@
-import parseCodeBlocks from 'code-blocks/lib/fromString'
-import htmlToReact from 'html-to-react'
+const {dirname} = require('path')
+const parseFromString = require('code-blocks/lib/fromString')
+
+module.exports = function codeBlockLoader(markdown) {
+  // resourcePath is the full path ("/Users/probot/primer/css/...") to the file being parsed
+  // rootContext is really just dirname(resourcePath)
+  const {resourcePath = '', rootContext} = this
+
+  // the sourcePath option provides a way to collapse the
+  // navigation hierarchy by trimming even more of the
+  // resourcePath's prefix; if it's not provided, use the
+  // rootContext
+  const {sourcePath = rootContext} = this.query || {}
+
+  // strip the sourcePath from the beginning of the resourcePath
+  const file = resourcePath.replace(`${sourcePath}/`, '')
+  // finally, remove "/README" or "/docs" from the path,
+  // then strip the ".md" filename extension
+  const path = dirname(file)
+    .replace(/(\/README|\/docs)/, '')
+    .replace(/\.md$/, '')
+
+  const stories = storiesFromMarkdown(markdown, file)
+  if (stories.length) {
+    console.warn(`${stories.length} stories found in ${file}!`)
+    return `
+const {storiesOf} = require('@storybook/react')
+const htmlToReact = require('html-to-react')
+
+const chapter = storiesOf(${JSON.stringify(path)}, module)
+const stories = ${JSON.stringify(stories)}
 
 const htmlParser = new htmlToReact.Parser()
-
-const blockToStory = block => {
-  return {
-    title: block.title,
-    story: () => htmlParser.parse(block.value),
-    block,
+for (const {title, value} of stories) {
+  chapter.add(title, () => htmlParser.parse(value))
+}
+`
+  } else {
+    return `module.exports = {markdown: ${JSON.stringify(markdown)}}`
   }
 }
 
-export default function storiesFromMarkdown(req) {
-  return req.keys().reduce((stories, file) => {
-    const markdown = req(file)
-    const path = file.replace(/^\.\//, '')
-    const blocks = parseCodeBlocks(markdown, path)
-      .filter(block => {
-        // read: ```html *
-        // skip: ```html * story="false"
-        return block.lang === 'html' && block.info.story !== 'false'
-      })
-      .map(blockToStory)
-    return stories.concat(blocks)
-  }, [])
+function storiesFromMarkdown(markdown, file) {
+  const path = file.replace(/^\.\//, '')
+  return parseFromString(markdown, path).filter(block => {
+    // yes: ```html
+    // no:  ```html dead
+    // no:  ```html inert
+    return block.lang === 'html' && !block.info.dead && !block.info.inert
+  })
 }
