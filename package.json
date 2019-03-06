@@ -123,6 +123,7 @@
     "unified": "^7.1.0",
     "unist-util-select": "^2.0.0",
     "unist-util-stringify-position": "^2.0.0",
-    "unist-util-visit": "^1.4.0"
+    "unist-util-visit": "^1.4.0",
+    "webpack": "4.20.2"
   }
 }
