@@ -8,7 +8,7 @@ import Frame from './Frame'
 
 import 'prism-github/prism-github.scss'
 
-const LANG_PATTERN = /\blanguage-\.?(jsx?|html)\b/
+const LANG_PATTERN = /\blanguage-\.?(jsx|html)\b/
 
 const converter = new HTMLtoJSX({
   indent: '  ',
