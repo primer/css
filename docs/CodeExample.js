@@ -23,9 +23,9 @@ const languageTransforms = {
 }
 
 export default function CodeExample(props) {
-  const {children, dangerouslySetInnerHTML, dead, source, ...rest} = props
+  const {children, dangerouslySetInnerHTML, inert, source, ...rest} = props
   const lang = getLanguage(props.className)
-  if (lang && !dead) {
+  if (lang && !inert) {
     const liveProps = {
       code: source,
       scope: {Octicon, getIconByName},
