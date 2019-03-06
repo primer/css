@@ -1,5 +1,5 @@
 import React from 'react'
-import {configure, addParameters, addDecorator, storiesOf} from '@storybook/react'
+import {configure, addParameters, addDecorator} from '@storybook/react'
 import {name, homepage, version} from '../package.json'
 import {INITIAL_VIEWPORTS} from '@storybook/addon-viewport'
 
@@ -12,8 +12,7 @@ addParameters({
     showAddonsPanel: false
   },
   viewport: {
-    viewports: {
-      ...INITIAL_VIEWPORTS,
+    viewports: Object.assign(INITIAL_VIEWPORTS, {
       sm: {
         name: '$width-sm',
         styles: {width: '544px', height: '100%'}
@@ -30,7 +29,7 @@ addParameters({
         name: '$width-xl',
         styles: {width: '1280px', height: '100%'}
       }
-    }
+    })
   }
 })
 

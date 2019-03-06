@@ -1,7 +1,7 @@
 const {resolve} = require('path')
 const sourcePath = resolve(__dirname, '../src')
 
-module.exports = ({config, mode}) => {
+module.exports = ({config}) => {
   const babel = config.module.rules.find(rule => {
     return rule.test.test('test.js')
   }).use[0]

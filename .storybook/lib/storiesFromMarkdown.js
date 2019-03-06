@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const {dirname} = require('path')
 const parseFromString = require('code-blocks/lib/fromString')
 
