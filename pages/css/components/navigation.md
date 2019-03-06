@@ -169,7 +169,7 @@ Use `.UnderlineNav--full` in combination with container styles and `.UnderlineNa
 
 ## Tabnav
 
-When you need to toggle between different views, consider using a tabnav. It'll given you a left-aligned horizontal row of... tabs!
+When you need to toggle between different views, consider using a tabnav. It'll give you a left-aligned horizontal row of... tabs!
 
 ```html title="tabnav"
 <div class="tabnav">
