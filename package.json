@@ -28,7 +28,7 @@
     "check-links": "script/check-links http://localhost:3000/css -v",
     "lint": "npm-run-all -s lint-css lint-js",
     "lint-css": "stylelint --quiet --syntax scss src/**/*.scss",
-    "lint-js": "eslint lib docs",
+    "lint-js": "eslint lib docs .storybook",
     "now-build": "next build",
     "now-start": "next start",
     "now-test": "npm-run-all -s now-build now-start",
