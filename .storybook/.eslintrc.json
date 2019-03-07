@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "plugin:github/react"
+  ],
+  "rules": {
+    "import/no-namespace": 0
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

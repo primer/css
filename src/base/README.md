@@ -1,19 +1,7 @@
 # Primer Base
-
-[![npm version](https://img.shields.io/npm/v/primer-base.svg)](https://www.npmjs.org/package/primer-base)
-[![Build Status](https://travis-ci.org/primer/css.svg?branch=master)](https://travis-ci.org/primer/primer)
-
 > GitHub's CSS to reset the browsers default styles. Built on top of normalize.css
 
 This repository is a module of the full [primer][primer] repository. And is built off of [normalize.css](https://github.com/necolas/normalize.css/)
-
-## Install
-
-This repository is distributed with [npm][npm]. After [installing npm][install-npm], you can install `primer-base` with this command.
-
-```
-$ npm install --save primer-base
-```
 
 ## Usage
 
@@ -42,7 +30,7 @@ You can read more about base in the [docs][docs].
 [MIT](./LICENSE) &copy; [GitHub](https://github.com/)
 
 [primer]: https://github.com/primer/css
-[docs]: http://primer.github.io/
+[docs]: https://primer.style/css
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [sass]: http://sass-lang.com/
