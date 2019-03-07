@@ -7,3 +7,7 @@ if [[ -f $file ]]; then
     cat $file | xargs rm -rfv
     rm $file
 fi
+
+if [[ "$GITHUB_REF" = "refs/heads/master" ]]; then
+    npm run publish-storybook
+fi
