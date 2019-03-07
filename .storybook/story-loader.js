@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-const {dirname} = require('path')
+const {basename, dirname, join} = require('path')
 const parseFromString = require('code-blocks/lib/fromString')
 
 module.exports = function storyLoader(markdown) {
@@ -15,11 +15,7 @@ module.exports = function storyLoader(markdown) {
 
   // strip the sourcePath from the beginning of the resourcePath
   const file = resourcePath.replace(`${sourcePath}/`, '')
-  // finally, remove "/README" or "/docs" from the path,
-  // then strip the ".md" filename extension
-  const path = dirname(file)
-    .replace(/(\/README|\/docs)/, '')
-    .replace(/\.md$/, '')
+  const path = join(dirname(file), basename(file, '.md'))
 
   const stories = storiesFromMarkdown(markdown, file)
   if (stories.length) {

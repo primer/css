@@ -77,7 +77,7 @@ $blue: #0000ff;
 
 Don't forget to add the compiled CSS to the `<head>` section of your page.
 
-```html dead
+```html inert=true
 <link href="path/to/style.css" rel="stylesheet">
 ```
 
@@ -85,6 +85,6 @@ Don't forget to add the compiled CSS to the `<head>` section of your page.
 
 You won't need to install any node modules for a static site, you can use the built CSS. The best thing to do is to [download the built CSS](https://unpkg.com/primer/build/build.css) from the npm module and host it yourself. If that's not an option, you can include a CDN link in your html:
 
-```html dead
+```html inert=true
 <link href="https://unpkg.com/primer/build/build.css" rel="stylesheet">
 ```

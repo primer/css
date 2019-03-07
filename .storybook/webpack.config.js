@@ -1,10 +1,8 @@
 const {resolve} = require('path')
-const sourcePath = resolve(__dirname, '../src')
+const pagesPath = resolve(__dirname, '../pages/css')
 
 module.exports = ({config}) => {
-  const babel = config.module.rules.find(rule => {
-    return rule.test.test('test.js')
-  }).use[0]
+  const babel = config.module.rules[0].use[0]
 
   config.module.rules = config.module.rules.filter(rule => {
     return !rule.test.test('test.md')
@@ -13,20 +11,19 @@ module.exports = ({config}) => {
   config.module.rules.push(
     {
       test: /\.md$/,
-      include: sourcePath,
+      include: pagesPath,
       loaders: [
         babel,
         {
           loader: require.resolve('./story-loader'),
           options: {
-            sourcePath
+            sourcePath: pagesPath
           }
         }
       ]
     },
     {
       test: /\.scss$/,
-      include: sourcePath,
       loaders: [
         'style-loader',
         'css-loader',

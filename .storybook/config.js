@@ -39,7 +39,7 @@ addParameters({
 })
 
 configure(() => {
-  const loadMarkdown = require.context('../src', true, /\.md$/)
+  const loadMarkdown = require.context('../pages/css', true, /\.md$/)
   for (const path of loadMarkdown.keys()) {
     loadMarkdown(path)
   }
