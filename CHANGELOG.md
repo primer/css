@@ -1,3 +1,19 @@
+# 12.1.1
+
+### :bug: Bug Fix
+- Remove UI from font file path [#709](https://github.com/primer/css/pull/709)
+
+### :memo: Documentation
+- Removes sync functionality from docs [#710](https://github.com/primer/css/pull/710)
+
+### :house: Internal
+- Fixes Storybook [#707](https://github.com/primer/css/pull/707) and [#711](https://github.com/primer/css/pull/711)
+
+#### Committers: 3
+- Catherine Bui ([gladwearefriends](https://github.com/gladwearefriends))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Emily Plummer ([emplums](https://github.com/emplums))
+
 # 12.1.0
 
 ### :rocket: Enhancement
