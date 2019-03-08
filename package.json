@@ -28,7 +28,7 @@
     "lint": "npm-run-all -s lint-css lint-js",
     "lint-css": "stylelint --quiet --syntax scss src/**/*.scss",
     "lint-js": "eslint lib docs .storybook",
-    "now-build": "next build",
+    "now-build": "npm run dist && next build",
     "now-start": "next start",
     "now-test": "npm-run-all -s now-build now-start",
     "postpublish": "script/postpublish",
