@@ -32,7 +32,6 @@
     "now-start": "next start",
     "now-test": "npm-run-all -s now-build now-start",
     "postpublish": "script/postpublish",
-    "prepare": "npm run dist",
     "prepublishOnly": "script/prepublish",
     "publish-storybook": "script/publish-storybook",
     "start": "next dev",
