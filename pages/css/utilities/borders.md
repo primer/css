@@ -101,6 +101,16 @@ Use `border-black-fade` to add an rgba black border with an alpha transparency o
 </div>
 ```
 
+On dark backgrounds use `border-white-fade` instead. It adds an rgba white border with an alpha transparency of `0.15`.
+
+```html
+<div class="bg-gray-dark text-white p-3">
+  <div class="border border-white-fade p-2">
+    .border-white-fade
+  </div>
+</div>
+```
+
 ## Border style
 
 Use `border-dashed` to give an element a dashed border.

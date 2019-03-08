@@ -38,6 +38,8 @@
 .border-gray-dark   { border-color: $border-gray-dark !important; }
 /* Use with .border to turn the border rgba black 0.15 */
 .border-black-fade  { border-color: $border-black-fade !important; }
+/* Use with .border to turn the border rgba white 0.15 */
+.border-white-fade  { border-color: $border-white-fade !important; }
 
 $edges: (
   top: (top-left, top-right),
