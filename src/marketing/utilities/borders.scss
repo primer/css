@@ -1,11 +1,4 @@
-// Border utilities
+// Marketing border utilities
 
 // XXX If you're looking for responsive border utilities, they've moved to
 // ../../utilities/borders.scss
-
-/* Use with .border to turn the border white with transparency */
-.border-white-fade-15 { border-color: $white-fade-15 !important; }
-.border-white-fade-30 { border-color: $white-fade-30 !important; }
-.border-white-fade-50 { border-color: $white-fade-50 !important; }
-.border-white-fade-70 { border-color: $white-fade-70 !important; }
-.border-white-fade-85 { border-color: $white-fade-85 !important; }

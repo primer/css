@@ -1,4 +1,4 @@
-// Border utilities
+// Core border utilities
 // stylelint-disable primer/selector-no-utility
 // stylelint-disable block-opening-brace-space-before, comment-empty-line-before
 
@@ -41,6 +41,13 @@
 .border-black-fade  { border-color: $border-black-fade !important; }
 /* Use with .border to turn the border rgba white 0.15 */
 .border-white-fade  { border-color: $border-white-fade !important; }
+
+/* Use with .border to turn the border white w/varying transparency */
+.border-white-fade-15 { border-color: $white-fade-15 !important; }
+.border-white-fade-30 { border-color: $white-fade-30 !important; }
+.border-white-fade-50 { border-color: $white-fade-50 !important; }
+.border-white-fade-70 { border-color: $white-fade-70 !important; }
+.border-white-fade-85 { border-color: $white-fade-85 !important; }
 
 $edges: (
   top: (top-left, top-right),
