@@ -1,3 +1,18 @@
+# 12.2.0
+
+### :rocket: Enhancement
+- Add more `.border-white-fade` utilities [#713](https://github.com/primer/css/pull/713)
+
+### :nail_care: Polish
+- Fix `<details>` spacing [#675](https://github.com/primer/css/pull/675)
+
+### :memo: Documentation
+- Fix scrolling of code examples [#717](https://github.com/primer/css/pull/717)
+
+#### Committers:
+- Max Stoiber ([https://github.com/mxstbr](mxstbr))
+- Simurai ([https://github.com/simurai](simurai))
+
 # 12.1.1
 
 ### :bug: Bug Fix
