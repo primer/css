@@ -1,10 +1,10 @@
-*.lerna_backup
 *.log
-*/*/package-lock.json
+*.tgz
 .DS_Store
 .changelog
+.next/
 .sass-cache
+.storybuild/
 _site
-build
-primer-version.txt
-node_modules
+dist/
+node_modules/

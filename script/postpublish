@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+file=publish-files.log
+if [[ -f $file ]]; then
+    echo "deleting all files listed in $file..."
+    cat $file | xargs rm -rfv
+    rm $file
+fi
+
+if [[ "$GITHUB_REF" = "refs/heads/master" ]]; then
+    npm run publish-storybook
+fi

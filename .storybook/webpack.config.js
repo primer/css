@@ -1,27 +1,27 @@
-const path = require('path');
+const {resolve} = require('path')
+const pagesPath = resolve(__dirname, '../pages/css')
 
-const modulesPath = path.resolve(__dirname, '../modules')
+module.exports = ({config}) => {
+  const babel = config.module.rules[0].use[0]
 
-module.exports = (config, env) => {
-
-  if (env === 'PRODUCTION') {
-    config.plugins = config.plugins
-      .filter(plugin => plugin.constructor.name !== 'UglifyJsPlugin')
-  }
-
-  const rules = config.module.rules
-
-  rules.forEach((rule, index) => {
-    if ('README.md'.match(rule.test)) {
-      // console.warn('replacing MD rule:', rule)
-      rules.splice(index, 1, {
-        test: /\.md$/,
-        loader: 'raw-loader',
-      })
-    }
+  config.module.rules = config.module.rules.filter(rule => {
+    return !rule.test.test('test.md')
   })
 
-  rules.push(
+  config.module.rules.push(
+    {
+      test: /\.md$/,
+      include: pagesPath,
+      loaders: [
+        babel,
+        {
+          loader: require.resolve('./story-loader'),
+          options: {
+            sourcePath: pagesPath
+          }
+        }
+      ]
+    },
     {
       test: /\.scss$/,
       loaders: [
@@ -31,20 +31,11 @@ module.exports = (config, env) => {
           loader: 'postcss-loader',
           options: {
             config: {
-              path: require.resolve('./postcss.config.js'),
-            },
-          },
-        },
-        {
-          loader: 'sass-loader',
-          options: {
-            includePaths: [
-              modulesPath,
-            ],
+              path: require.resolve('../postcss.config.js')
+            }
           }
-        },
-      ],
-      include: modulesPath,
+        }
+      ]
     }
   )
 

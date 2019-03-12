@@ -1,28 +1,29 @@
 #!/bin/bash
 set -e
 
-module=${1:-primer}
-version=${2:-latest}
-
 function log() {
     echo "$@" 1>&2
 }
 
-log "Pulling the latest ${module}/build/data.json ..."
-curl -sL "https://unpkg.com/${module}@${version}/build/data.json" > before.json
-
-log "Building ${module}/build/data.json locally..."
-pushd modules/${module} > /dev/null
-npm run build
-popd > /dev/null
-cp modules/${module}/build/data.json after.json
-
-function list_selectors() {
-    jq -r .cssstats.selectors.values[] $1 | sort
+function warn() {
+    echo "$@" 1>&2
 }
 
-list_selectors before.json > before.txt
-list_selectors after.json > after.txt
+pkg="@primer/css"
+path="dist/stats/primer.json"
+warn "Pulling the old $path from unpkg.com..."
+curl -sL "https://unpkg.com/$pkg/$path" > before.json
 
-diff before.txt after.txt && log "(no diff!)"
+warn "Building the stats locally..."
+npm run --silent dist
+cp $path after.json
+
+key=".selectors.values[]"
+jq -r $key before.json > before.txt
+jq -r $key after.json > after.txt
+
+warn "[selector report] diff:"
+(diff before.txt after.txt | tee selector-diff.log) || log "(no diff!)"
+warn "[selector report] end"
+
 rm {before,after}.{json,txt}
