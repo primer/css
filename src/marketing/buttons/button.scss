@@ -8,16 +8,16 @@
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  background-color: $blue-500;
-  border: 1px solid $blue-500;
+  background-color: $blue-mktg;
+  border: 1px solid $blue-mktg;
   border-radius: $border-radius;
   transition: $transition-time / 2;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   &:hover {
     text-decoration: none;
-    background-color: $blue-600;
-    border-color: $blue-600;
+    background-color: $blue-500;
+    border-color: $blue-500;
   }
 
   &:focus {
@@ -53,15 +53,15 @@
 }
 
 .btn-outline-mktg {
-  color: $blue-500;
+  color: $blue-mktg;
   background-color: rgba($white, 0);
-  border-color: rgba($blue-500, 0.5);
+  border-color: rgba($blue-mktg, 0.5);
 
   &:hover {
     color: $blue-500;
     text-decoration: none;
     background-color: rgba($white, 0);
-    border-color: rgba($blue-500, 1);
+    border-color: rgba($blue-mktg, 1);
   }
 }
 
