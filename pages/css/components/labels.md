@@ -57,13 +57,13 @@ Use `Label--orange` to communicate "warning". The orange background color is ver
 Use `Label--outline` to create a label with gray text, a gray border, and a transparent background. The outline reduces the contrast of this label in combination with filled labels. Use this in contexts where you need it to stand out less than other labels and communicate a neutral message.
 
 ```html title="Label outline"
-<span title="Label: outline label" class="Label Label--outline">outlined label</span>
+<span title="Label: outline label" class="Label Label--outline m-0">outlined label</span>
 ```
 
 Use `Label--outline-green` in combination with `Label--outline` to communicate a positive message.
 
 ```html title="Label outline green"
-<span title="Label: green outline label" class="Label Label--outline Label--outline-green">green outlined label</span>
+<span title="Label: green outline label" class="Label Label--outline Label--outline-green m-0">green outlined label</span>
 ```
 
 
@@ -138,5 +138,3 @@ Counters can also be used in `Box` headers to indicate the number of items in a 
   </ul>
 </div>
 ```
-
-
