@@ -7,4 +7,4 @@ source: 'https://github.com/primer/css/blob/master/src/marketing/utilities/borde
 bundle: marketing-utilities
 ---
 
-The `.border-white-fade` styles are now part of [primer-core border utilities](/css/utilities/borders#border-colors).
+The `.border-white-fade` styles are now part of [core border utilities](/css/utilities/borders#border-colors).
