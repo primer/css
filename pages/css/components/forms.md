@@ -205,7 +205,7 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
 Convey errors and warnings for form groups. Add the appropriate class—either `.errored` or `.warn`—to the `<dl class="form-group">` to start. Then, house your error messaging in an additional `<dd>` with either `.error` or `.warning`.
 
 ```html
-<form>
+<form class="pb-2">
   <dl class="form-group errored">
     <dt><label for="example-text-errored">Example Text</label></dt>
     <dd><input class="form-control" type="text" value="Example Value" id="example-text-errored" aria-describedby="form-error-text"></dd>
@@ -256,7 +256,7 @@ You may also add emphasis to the label:
 Content that is hidden by default should only be done so if it is non-essential for the context of the surrounding content. Be sure to use the `aria-live="polite"` attribute on the parent label for added content to be announced when displayed.
 
 ```html
-<form>
+<form class="pl-2">
   <div class="form-checkbox">
     <label>
       <input type="radio" name="hireme">
