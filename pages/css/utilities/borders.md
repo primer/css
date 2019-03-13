@@ -115,36 +115,36 @@ Use `.border-white-fade-xx` to add a white border with various levels of alpha t
 
 ```html
 <div class="bg-gray-dark text-white p-3 mb-3">
-  <div class="border-bottom border-white-fade-15 p-2 mb-2">
+  <div class="border border-white-fade-15 p-2 mb-2">
     .border-white-fade-15
   </div>
-  <div class="border-bottom border-white-fade-30 p-2 mb-2">
+  <div class="border border-white-fade-30 p-2 mb-2">
     .border-white-fade-30
   </div>
-  <div class="border-bottom border-white-fade-50 p-2 mb-2">
+  <div class="border border-white-fade-50 p-2 mb-2">
     .border-white-fade-50
   </div>
-  <div class="border-bottom border-white-fade-70 p-2 mb-2">
+  <div class="border border-white-fade-70 p-2 mb-2">
     .border-white-fade-70
   </div>
-  <div class="border-bottom border-white-fade-85 p-2 mb-2">
+  <div class="border border-white-fade-85 p-2 mb-2">
     .border-white-fade-85
   </div>
 </div>
 <div class="bg-blue text-white p-3">
-  <div class="border-bottom border-white-fade-15 p-2 mb-2">
+  <div class="border border-white-fade-15 p-2 mb-2">
     .border-white-fade-15
   </div>
-  <div class="border-bottom border-white-fade-30 p-2 mb-2">
+  <div class="border border-white-fade-30 p-2 mb-2">
     .border-white-fade-30
   </div>
-  <div class="border-bottom border-white-fade-50 p-2 mb-2">
+  <div class="border border-white-fade-50 p-2 mb-2">
     .border-white-fade-50
   </div>
-  <div class="border-bottom border-white-fade-70 p-2 mb-2">
+  <div class="border border-white-fade-70 p-2 mb-2">
     .border-white-fade-70
   </div>
-  <div class="border-bottom border-white-fade-85 p-2 mb-2">
+  <div class="border border-white-fade-85 p-2 mb-2">
     .border-white-fade-85
   </div>
 </div>
