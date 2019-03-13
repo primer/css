@@ -39,7 +39,11 @@ export default class Frame extends React.Component {
   getBody(children) {
     return (
       <Measure bounds onResize={rect => this.setHeight(rect.bounds.height)}>
-        {({measureRef}) => <div ref={measureRef}>{children}</div>}
+        {({measureRef}) => (
+          <div ref={measureRef} style={{overflow: 'auto'}}>
+            {children}
+          </div>
+        )}
       </Measure>
     )
   }
