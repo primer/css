@@ -6,11 +6,19 @@
 ### :nail_care: Polish
 - Fix `<details>` spacing [#675](https://github.com/primer/css/pull/675)
 
+### :bug: Bug Fixes
+- Accessibility fixes for marketing buttons [#716](https://github.com/primer/css/pull/716) 
+
 ### :memo: Documentation
 - Fix scrolling of code examples [#717](https://github.com/primer/css/pull/717)
 
-#### Committers:
+### :house: Internal
+- Fix `npm link` ([#715](https://github.com/primer/css/issue/715)) by removing `prepare` npm script [#718](https://github.com/primer/css/pull/718) 
+
+#### Committers: 4
+- Diana Mounter ([broccolini](https://github.com/broccolini))
 - Max Stoiber ([https://github.com/mxstbr](mxstbr))
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
 - Simurai ([https://github.com/simurai](simurai))
 
 # 12.1.1
