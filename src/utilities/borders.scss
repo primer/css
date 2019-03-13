@@ -42,13 +42,6 @@
 /* Use with .border to turn the border rgba white 0.15 */
 .border-white-fade  { border-color: $border-white-fade !important; }
 
-/* Use with .border to turn the border white w/varying transparency */
-.border-white-fade-15 { border-color: $white-fade-15 !important; }
-.border-white-fade-30 { border-color: $white-fade-30 !important; }
-.border-white-fade-50 { border-color: $white-fade-50 !important; }
-.border-white-fade-70 { border-color: $white-fade-70 !important; }
-.border-white-fade-85 { border-color: $white-fade-85 !important; }
-
 $edges: (
   top: (top-left, top-right),
   right: (top-right, bottom-right),
@@ -106,6 +99,13 @@ $edges: (
     }
   }
 }
+
+/* Use with .border to turn the border white w/varying transparency */
+.border-white-fade-15 { border-color: $white-fade-15 !important; }
+.border-white-fade-30 { border-color: $white-fade-30 !important; }
+.border-white-fade-50 { border-color: $white-fade-50 !important; }
+.border-white-fade-70 { border-color: $white-fade-70 !important; }
+.border-white-fade-85 { border-color: $white-fade-85 !important; }
 
 /* Add a 50% border-radius to make something into a circle */
 .circle { border-radius: 50% !important; }
