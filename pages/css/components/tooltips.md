@@ -27,32 +27,32 @@ Specify the direction of a tooltip with north, south, east, and west directions:
 ```html
 <div class="d-flex flex-justify-center pt-5">
   <span class="tooltipped tooltipped-nw m-2 p-2 border" aria-label="This is the tooltip on the North West side.">
-    tooltipped-nw
+    .tooltipped-nw
   </span>
   <span class="tooltipped tooltipped-n m-2 p-2 border" aria-label="This is the tooltip on the North side.">
-    tooltipped-n
+    .tooltipped-n
   </span>
   <span class="tooltipped tooltipped-ne m-2 p-2 border" aria-label="This is the tooltip on the North East side.">
-    tooltipped-ne
+    .tooltipped-ne
   </span>
 </div>
 <div class="d-flex flex-justify-center">
   <span class="tooltipped tooltipped-w m-2 p-2 border" aria-label="This is the tooltip on the West side.">
-    tooltipped-w
+    .tooltipped-w
   </span>
   <span class="tooltipped tooltipped-e m-2 p-2 border" aria-label="This is the tooltip on the East side.">
-    tooltipped-e
+    .tooltipped-e
   </span>
 </div>
 <div class="d-flex flex-justify-center pb-5">
   <span class="tooltipped tooltipped-sw m-2 p-2 border" aria-label="This is the tooltip on the South West side.">
-    tooltipped-sw
+    .tooltipped-sw
   </span>
   <span class="tooltipped tooltipped-s m-2 p-2 border" aria-label="This is the tooltip on the South side.">
-    tooltipped-s
+    .tooltipped-s
   </span>
   <span class="tooltipped tooltipped-se m-2 p-2 border" aria-label="This is the tooltip on the South East side.">
-    tooltipped-se
+    .tooltipped-se
   </span>
 </div>
 ```
@@ -63,34 +63,34 @@ Align tooltips to the left or right of an element, combined with a directional c
 ```html
 <div class="d-flex flex-justify-center pt-5">
   <span class="tooltipped tooltipped-nw tooltipped-align-right-1 m-2 p-2 border" aria-label="Tooltipped NW and aligned right.">
-    tooltipped-nw tooltipped-align-right-1
+    .tooltipped-nw .tooltipped-align-right-1
   </span>
   <span class="tooltipped tooltipped-ne tooltipped-align-left-1 m-2 p-2 border" aria-label="Tooltipped NE and aligned left.">
-    tooltipped-ne tooltipped-align-left-1
+    .tooltipped-ne .tooltipped-align-left-1
   </span>
 </div>
 <div class="d-flex flex-justify-center">
   <span class="tooltipped tooltipped-nw tooltipped-align-right-2 m-2 p-2 border" aria-label="Tooltipped NW and aligned right.">
-    tooltipped-nw tooltipped-align-right-2
+    .tooltipped-nw .tooltipped-align-right-2
   </span>
   <span class="tooltipped tooltipped-ne tooltipped-align-left-2 m-2 p-2 border" aria-label="Tooltipped NE and aligned left.">
-    tooltipped-ne tooltipped-align-left-2
+    .tooltipped-ne .tooltipped-align-left-2
   </span>
 </div>
 <div class="d-flex flex-justify-center">
   <span class="tooltipped tooltipped-sw tooltipped-align-right-1 m-2 p-2 border" aria-label="Tooltipped SE and aligned right.">
-    tooltipped-sw tooltipped-align-right-1
+    .tooltipped-sw .tooltipped-align-right-1
   </span>
   <span class="tooltipped tooltipped-se tooltipped-align-left-1 m-2 p-2 border" aria-label="Tooltipped SW and aigned left.">
-    tooltipped-se tooltipped-align-left-1
+    .tooltipped-se .tooltipped-align-left-1
   </span>
 </div>
 <div class="d-flex flex-justify-center pb-5">
   <span class="tooltipped tooltipped-sw tooltipped-align-right-2 m-2 p-2 border" aria-label="Tooltipped SE and aligned right.">
-    tooltipped-sw tooltipped-align-right-2
+    .tooltipped-sw .tooltipped-align-right-2
   </span>
   <span class="tooltipped tooltipped-se tooltipped-align-left-2 m-2 p-2 border" aria-label="Tooltipped SW and aigned left.">
-    tooltipped-se tooltipped-align-left-2
+    .tooltipped-se .tooltipped-align-left-2
   </span>
 </div>
 ```
@@ -102,7 +102,7 @@ Use `.tooltipped-multiline` when you have long content. This style has some limi
 ```html
 <div class="d-flex flex-justify-center pt-6">
   <span class="tooltipped tooltipped-n tooltipped-multiline m-2 p-2 border" aria-label="This is the tooltip with multiple lines. This is the tooltip with multiple lines.">
-    tooltipped-multiline
+    .tooltipped-multiline
   </span>
 </div>
 ```
@@ -114,7 +114,7 @@ By default the tooltips have a slight delay before appearing. This is to keep mu
 ```html
 <div class="d-flex flex-justify-center pt-5">
   <span class="tooltipped tooltipped-n tooltipped-no-delay m-2 p-2 border" aria-label="This is the tooltip on the no delay side.">
-    tooltipped-no-delay
+    .tooltipped-no-delay
   </span>
 </div>
 ```
