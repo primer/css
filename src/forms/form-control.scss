@@ -56,6 +56,26 @@ label {
   color: $text-gray-light;
 }
 
+// Inputs on dark backgrounds.
+.input-dark {
+  color: $white;
+  background-color: $white-fade-15;
+  border-color: transparent;
+  box-shadow: none;
+
+  &::placeholder {
+    color: inherit;
+    opacity: .6; // inceases contrast ratio to 4.52
+  }
+
+  &.focus,
+  &:focus {
+    background-color: rgba($white, .075);
+    border-color: $black-fade-30;
+    box-shadow: 0 0 0 0.2em rgba($blue-300, .4);
+  }
+}
+
 // Mini inputs, to match .minibutton
 .input-sm {
   min-height: 28px;

@@ -86,6 +86,14 @@ Textual form controls have a white background by default. You can change this to
 </form>
 ```
 
+On dark backgrounds use `.input-dark` to make inputs have a semi transparent white background.
+
+```html
+<form class="bg-gray-dark p-3">
+  <input class="form-control input-dark" type="search" placeholder="Dark input" aria-label="Dark input">
+</form>
+```
+
 #### Sizing
 
 Make inputs smaller, larger, or full-width with an additional class.
