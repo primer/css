@@ -6,6 +6,7 @@ import {assetPrefix} from './utils'
 
 export default class Frame extends React.Component {
   static defaultProps = {
+    display: 'block',
     border: 0,
     borderRadius: 0,
     minHeight: 0,
