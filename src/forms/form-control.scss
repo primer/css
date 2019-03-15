@@ -65,14 +65,14 @@ label {
 
   &::placeholder {
     color: inherit;
-    opacity: .6; // inceases contrast ratio to 4.52
+    opacity: 0.6; // inceases contrast ratio to 4.52
   }
 
   &.focus,
   &:focus {
-    background-color: rgba($white, .075);
+    background-color: rgba($white, 0.075);
     border-color: $black-fade-30;
-    box-shadow: 0 0 0 0.2em rgba($blue-300, .4);
+    box-shadow: 0 0 0 0.2em rgba($blue-300, 0.4);
   }
 }
 
