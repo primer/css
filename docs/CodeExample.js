@@ -34,10 +34,12 @@ export default function CodeExample(props) {
     }
     return (
       <LiveProvider {...liveProps}>
-        <BorderBox {...rest}>
+        <BorderBox>
           <BorderBox bg="white" border={0} borderBottom={1} borderRadius={0}>
             <Frame>
-              <LivePreview />
+              <div {...rest}>
+                <LivePreview />
+              </div>
             </Frame>
           </BorderBox>
           <Box is={Relative} bg="gray.1" p={3}>
