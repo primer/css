@@ -41,7 +41,7 @@ export default class Frame extends React.Component {
     return (
       <Measure bounds onResize={rect => this.setHeight(rect.bounds.height)}>
         {({measureRef}) => (
-          <div ref={measureRef} class="p-3 overflow-auto">
+          <div ref={measureRef} className="p-3 overflow-auto">
             {children}
           </div>
         )}
