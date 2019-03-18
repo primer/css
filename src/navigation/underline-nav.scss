@@ -2,7 +2,7 @@
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
-  border-bottom: 1px solid $gray-200;
+  border-bottom: $border;
   justify-content: space-between;
 }
 
@@ -17,7 +17,7 @@
   line-height: $lh-default;
   color: $text-gray;
   text-align: center;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px $border-style transparent;
 
   &:hover,
   &:focus {
