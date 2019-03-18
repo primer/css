@@ -256,7 +256,7 @@ You may also add emphasis to the label:
 Content that is hidden by default should only be done so if it is non-essential for the context of the surrounding content. Be sure to use the `aria-live="polite"` attribute on the parent label for added content to be announced when displayed.
 
 ```html
-<form class="pl-2">
+<form>
   <div class="form-checkbox">
     <label>
       <input type="radio" name="hireme">

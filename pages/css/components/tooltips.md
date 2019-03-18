@@ -25,7 +25,7 @@ Before adding a tooltip, please consider: Is this information essential and nece
 Specify the direction of a tooltip with north, south, east, and west directions:
 
 ```html
-<div class="d-flex flex-justify-center pt-5">
+<div class="d-flex flex-justify-center pt-4">
   <span class="tooltipped tooltipped-nw m-2 p-2 border" aria-label="This is the tooltip on the North West side.">
     .tooltipped-nw
   </span>
@@ -44,7 +44,7 @@ Specify the direction of a tooltip with north, south, east, and west directions:
     .tooltipped-e
   </span>
 </div>
-<div class="d-flex flex-justify-center pb-5">
+<div class="d-flex flex-justify-center pb-4">
   <span class="tooltipped tooltipped-sw m-2 p-2 border" aria-label="This is the tooltip on the South West side.">
     .tooltipped-sw
   </span>
@@ -61,7 +61,7 @@ Specify the direction of a tooltip with north, south, east, and west directions:
 Align tooltips to the left or right of an element, combined with a directional class to specify north or south. Use a modifier of `1` or `2` to choose how much the tooltip's arrow is indented.
 
 ```html
-<div class="d-flex flex-justify-center pt-5">
+<div class="d-flex flex-justify-center pt-4">
   <span class="tooltipped tooltipped-nw tooltipped-align-right-1 m-2 p-2 border" aria-label="Tooltipped NW and aligned right.">
     .tooltipped-nw .tooltipped-align-right-1
   </span>
@@ -85,7 +85,7 @@ Align tooltips to the left or right of an element, combined with a directional c
     .tooltipped-se .tooltipped-align-left-1
   </span>
 </div>
-<div class="d-flex flex-justify-center pb-5">
+<div class="d-flex flex-justify-center pb-4">
   <span class="tooltipped tooltipped-sw tooltipped-align-right-2 m-2 p-2 border" aria-label="Tooltipped SE and aligned right.">
     .tooltipped-sw .tooltipped-align-right-2
   </span>
@@ -112,7 +112,7 @@ Use `.tooltipped-multiline` when you have long content. This style has some limi
 By default the tooltips have a slight delay before appearing. This is to keep multiple tooltips in the UI from being distracting. There is a `.tooltipped-no-delay` modifier class you can use to override this.
 
 ```html
-<div class="d-flex flex-justify-center pt-5">
+<div class="d-flex flex-justify-center pt-4">
   <span class="tooltipped tooltipped-n tooltipped-no-delay m-2 p-2 border" aria-label="This is the tooltip on the no delay side.">
     .tooltipped-no-delay
   </span>

@@ -94,7 +94,7 @@ Defaults to caret oriented top-center.
 ### Bottom-right
 
 ```html title="Bottom-right"
-<div class="position-relative text-right pr-3">
+<div class="position-relative text-right pr-2">
   <div class="Popover position-relative">
     <div class="Popover-message Popover-message--bottom-right p-4 mb-2 text-left Box box-shadow-large">
       <h4 class="mb-2">Popover heading</h4>
@@ -109,7 +109,7 @@ Defaults to caret oriented top-center.
 ### Bottom-left
 
 ```html title="Bottom-left"
-<div class="Popover position-relative pl-3">
+<div class="Popover position-relative pl-2">
   <div class="Popover-message Popover-message--bottom-left p-4 mb-2 Box box-shadow-large">
     <h4 class="mb-2">Popover heading</h4>
     <p>Message about this particular piece of UI.</p>
@@ -212,7 +212,7 @@ Defaults to caret oriented top-center.
 ### Top-left
 
 ```html title="Top-left"
-<div class="position-relative pl-3">
+<div class="position-relative pl-2">
   <button class="btn btn-primary">UI</button>
   <div class="Popover position-relative">
     <div class="Popover-message Popover-message--top-left p-4 mt-2 Box box-shadow-large">
@@ -227,7 +227,7 @@ Defaults to caret oriented top-center.
 ### Top-right
 
 ```html title="Top-right"
-<div class="position-relative text-right pr-3">
+<div class="position-relative text-right pr-2">
   <button class="btn btn-primary">UI</button>
   <div class="Popover right-0 position-relative">
     <div class="Popover-message Popover-message--top-right text-left p-4 mt-2 Box box-shadow-large">

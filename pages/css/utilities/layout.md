@@ -250,7 +250,7 @@ Use `.position-fixed` to position an element relative to the viewport. **Be care
 _Note: This example is shown in an `<iframe>` and therefore will not be positioned to the viewport of this page._
 
 ```html
-<div class="border p-6">
+<div style="height: 64px;">
   <div class="position-fixed right-0 bottom-0 bg-gray-light border p-2">
     .position-fixed
   </div>
