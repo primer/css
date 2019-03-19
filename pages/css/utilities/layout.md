@@ -247,11 +247,13 @@ Use `.position-absolute` to take elements out of the normal document flow.
 
 Use `.position-fixed` to position an element relative to the viewport. **Be careful when using fixed positioning. It is tricky to use and can lead to unwanted side effects.**
 
-_Note: fixed positioning has been disabled here for demonstration only._
+_Note: This example is shown in an `<iframe>` and therefore will not be positioned to the viewport of this page._
 
 ```html
-<div class="position-fixed bg-gray-light border-bottom border-gray p-3">
-  .position-fixed
+<div style="height: 64px;">
+  <div class="position-fixed right-0 bottom-0 bg-gray-light border p-2">
+    .position-fixed
+  </div>
 </div>
 ```
 

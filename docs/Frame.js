@@ -6,6 +6,7 @@ import {assetPrefix} from './utils'
 
 export default class Frame extends React.Component {
   static defaultProps = {
+    display: 'block',
     border: 0,
     borderRadius: 0,
     minHeight: 0,
@@ -40,7 +41,7 @@ export default class Frame extends React.Component {
     return (
       <Measure bounds onResize={rect => this.setHeight(rect.bounds.height)}>
         {({measureRef}) => (
-          <div ref={measureRef} style={{overflow: 'auto'}}>
+          <div ref={measureRef} className="p-3 overflow-auto">
             {children}
           </div>
         )}
