@@ -27,6 +27,8 @@
 .bg-yellow     { background-color: $bg-yellow !important; }
 /* Set the background to $bg-yellow-light */
 .bg-yellow-light     { background-color: $bg-yellow-light !important; }
+/* Set the background to $bg-yellow-dark */
+.bg-yellow-dark      { background-color: $yellow-700 !important; }
 /* Set the background to $bg-purple */
 .bg-purple     { background-color: $bg-purple !important; }
 /* Set the background to $bg-purple-light */
@@ -51,6 +53,8 @@
 .text-gray-dark     { color: $text-gray-dark !important; }
 /* Set the text color to $text-green */
 .text-green         { color: $text-green !important; }
+/* Set the text color to $text-yellow */
+.text-yellow        { color: $yellow-800 !important; }
 /* Set the text color to $text-orange */
 .text-orange        { color: $text-orange !important; }
 /* Set the text color to $text-orange-light */
