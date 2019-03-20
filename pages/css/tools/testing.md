@@ -1,5 +1,6 @@
 ---
 title: Testing resources
+path: tools/testing
 ---
 
 At GitHub we use a staging environment called review-lab for testing with production data. Deploying a branch to [review-lab](https://github.com/github/github/blob/master/docs/deployment.md#test-in-lab-environments) for testing is one of the best ways to test your work with real production data prior to an actual production deployment.

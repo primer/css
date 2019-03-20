@@ -1,6 +1,7 @@
 ---
 title: Dropdown
 status: Stable
+path: components/dropdown
 source: 'https://github.com/github/github/tree/master/app/assets/stylesheets/components/dropdown.scss'
 symbols: [active, anim-scale-in, btn-link, dropdown, dropdown-caret, dropdown-divider, dropdown-header, dropdown-item, dropdown-menu, dropdown-menu-content, dropdown-menu-e, dropdown-menu-ne, dropdown-menu-no-overflow, dropdown-menu-s, dropdown-menu-se, dropdown-menu-sw, dropdown-menu-w, dropdown-signout, octicon, zeroclipboard-is-hover]
 ---

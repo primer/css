@@ -1,9 +1,10 @@
 ---
 title: Colors
+path: utilities/colors
 description: 'Immutable, atomic CSS classes to rapidly build product'
 status: Stable
 package:
-  name: primer-utilities
+name: primer-utilities
 source: 'https://github.com/primer/primer/tree/master/modules/primer-utilities/lib/colors.scss'
 status_issue: 'https://github.com/github/design-systems/issues/97'
 ---

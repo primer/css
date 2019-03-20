@@ -1,5 +1,6 @@
 ---
 title: SCSS
+path: principles/scss
 ---
 
 {:toc}
