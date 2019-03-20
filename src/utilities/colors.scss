@@ -66,10 +66,10 @@
 /* Set the text color to inherit */
 .text-inherit       { color: inherit !important; }
 
-// Text states
-// These can probably all be regular utilities
+// Pending states
+// This will be deprecated in the future, use .text-yellow instead
 .text-pending { color: $yellow-800 !important; }
-// Separate text and background colors in future to improve a11y
+// This will be deprecated in the future, use .bg-yellow-dark instead
 .bg-pending { color: $yellow-700 !important; }
 
 // Link colors
