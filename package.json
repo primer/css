@@ -124,6 +124,8 @@
     "webpack": "4.20.2"
   },
   "dependencies": {
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "fuse.js": "3.4.4",
+    "lunr": "2.3.6"
   }
 }

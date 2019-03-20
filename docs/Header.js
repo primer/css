@@ -5,6 +5,7 @@ import {Text, Flex, Sticky, BorderBox, Box} from '@primer/components'
 import BoxShadow from './BoxShadow'
 import Link from './Link'
 import NodeLink from './NodeLink'
+import Search from './Search'
 
 const NavLink = withRouter(({is: Tag = NodeLink, href, router, ...rest}) => (
   <Tag href={href} color="white" px={4} fontWeight={router.pathname === href ? 'bold' : null} {...rest} />
@@ -22,6 +23,7 @@ const Header = props => (
             <HeaderText ml={3}>Primer CSS</HeaderText>
           </Flex>
         </Link>
+        <Search />
         <Box display={['none', 'none', 'block']}>
           <HeaderText>
             <NavLink href="/css">Docs</NavLink>

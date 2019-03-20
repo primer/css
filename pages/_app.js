@@ -7,8 +7,6 @@ import {Header, PackageHeader, SideNav} from '../docs/components'
 import getComponents from '../docs/markdown'
 import {config, requirePage, rootPage} from '../docs/utils'
 import {CONTENT_MAX_WIDTH} from '../docs/constants'
-import data from '../searchIndex'
-console.log(data)
 
 import '../src/index.scss'
 
