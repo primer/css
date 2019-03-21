@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
 import lunr from 'lunr'
+import styled from 'styled-components'
 import {TextInput, Absolute, Relative, BorderBox, Box} from '@primer/components'
 import Link from './Link'
 import documents from '../searchIndex'
 import SearchInput from './SearchInput'
+import SearchItem from './SearchItem'
 import SearchResults from './SearchResults'
 
 function Search() {
@@ -43,14 +45,16 @@ function Search() {
     return results.map((result) => {
       const doc = documents[result.ref]
       return (
-        <Box><Link href={`/css/${doc.path}`}>{doc.title}</Link></Box>
+        <SearchItem href={`/css/${doc.path}`}>
+          {doc.title}
+        </SearchItem>
       )
     })
   }
 
   return (
     <Box is={Relative}>
-      <SearchInput aria-label="search docs" onChange={e => onChange(e)}/>
+      <SearchInput aria-label="search docs" placeholder="Search" onChange={e => onChange(e)}/>
       {results.length > 0 &&
         <SearchResults open={open}>
           {renderResults()}

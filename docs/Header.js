@@ -17,13 +17,15 @@ const Header = props => (
   <Sticky zIndex={100}>
     <BoxShadow py={3} bg="gray.9" color="white" {...props}>
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
-        <Link href="/css" color="white" ml={3}>
-          <Flex alignItems="center" justifyContent="center">
-            <Octicon icon={MarkGithub} size="medium" />
-            <HeaderText ml={3}>Primer CSS</HeaderText>
-          </Flex>
-        </Link>
-        <Search />
+        <Flex alignItems="center" justifyContent="center">
+          <Link href="/css" color="white" ml={3}>
+            <Flex alignItems='center'>
+              <Octicon icon={MarkGithub} size="medium" />
+              <HeaderText ml={3} mr={3}>Primer CSS</HeaderText>
+            </Flex>
+          </Link>
+          <Search />
+        </Flex>
         <Box display={['none', 'none', 'block']}>
           <HeaderText>
             <NavLink href="/css">Docs</NavLink>
