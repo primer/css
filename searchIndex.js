@@ -1,7 +1,7 @@
 export default {
-  "index": {
-    "title": "CSS",
-    "path": "index"
+  "status-key": {
+    "title": "Status key",
+    "path": "status-key"
   },
   "components/alerts": {
     "title": "Alerts",
@@ -11,9 +11,9 @@ export default {
     "title": "Avatars",
     "path": "components/avatars"
   },
-  "status-key": {
-    "title": "Status key",
-    "path": "status-key"
+  "index": {
+    "title": "CSS",
+    "path": "index"
   },
   "components/blankslate": {
     "title": "Blankslate",
@@ -43,13 +43,13 @@ export default {
     "title": "Buttons",
     "path": "components/buttons"
   },
-  "components/dropdown": {
-    "title": "Dropdown",
-    "path": "components/dropdown"
-  },
   "components/flash-banner": {
     "title": "Flash banner",
     "path": "components/flash-banner"
+  },
+  "components/dropdown": {
+    "title": "Dropdown",
+    "path": "components/dropdown"
   },
   "components/index": {
     "title": "Components",
@@ -63,13 +63,13 @@ export default {
     "title": "Markdown",
     "path": "components/markdown"
   },
-  "components/pagehead": {
-    "title": "Pagehead",
-    "path": "components/pagehead"
-  },
   "components/marketing-buttons": {
     "title": "Marketing Buttons",
     "path": "components/marketing-buttons"
+  },
+  "components/pagehead": {
+    "title": "Pagehead",
+    "path": "components/pagehead"
   },
   "components/pagination": {
     "title": "Pagination",
@@ -95,13 +95,13 @@ export default {
     "title": "Getting started",
     "path": "getting-started/index"
   },
-  "objects/layout": {
-    "title": "Layout",
-    "path": "objects/layout"
-  },
   "objects/index": {
     "title": "Objects",
     "path": "objects/index"
+  },
+  "objects/layout": {
+    "title": "Layout",
+    "path": "objects/layout"
   },
   "objects/table-object": {
     "title": "Table object",
@@ -115,25 +115,25 @@ export default {
     "title": "SCSS",
     "path": "principles/scss"
   },
-  "support/color-system": {
-    "title": "Color system",
-    "path": "support/color-system"
-  },
   "support/breakpoints": {
     "title": "Breakpoints",
     "path": "support/breakpoints"
+  },
+  "support/color-system": {
+    "title": "Color system",
+    "path": "support/color-system"
   },
   "support/index": {
     "title": "Support",
     "path": "support/index"
   },
-  "support/marketing-variables": {
-    "title": "Marketing support",
-    "path": "support/marketing-variables"
-  },
   "support/spacing": {
     "title": "Spacing",
     "path": "support/spacing"
+  },
+  "support/marketing-variables": {
+    "title": "Marketing support",
+    "path": "support/marketing-variables"
   },
   "support/typography": {
     "title": "Typography",
@@ -143,13 +143,13 @@ export default {
     "title": "Atom packages",
     "path": "tools/atom-packages"
   },
-  "tools/docset": {
-    "title": "Docset",
-    "path": "tools/docset"
-  },
   "tools/index": {
     "title": "Tools",
     "path": "tools/index"
+  },
+  "tools/docset": {
+    "title": "Docset",
+    "path": "tools/docset"
   },
   "tools/linting": {
     "title": "Linting",
@@ -163,21 +163,21 @@ export default {
     "title": "Prototyping",
     "path": "tools/prototyping"
   },
-  "tools/testing": {
-    "title": "Testing resources",
-    "path": "tools/testing"
-  },
-  "utilities/animations": {
-    "title": "Animations",
-    "path": "utilities/animations"
-  },
   "tools/sketch-templates": {
     "title": "Sketch templates",
     "path": "tools/sketch-templates"
   },
+  "tools/testing": {
+    "title": "Testing resources",
+    "path": "tools/testing"
+  },
   "utilities/borders": {
     "title": "Borders",
     "path": "utilities/borders"
+  },
+  "utilities/animations": {
+    "title": "Animations",
+    "path": "utilities/animations"
   },
   "utilities/box-shadow": {
     "title": "Box shadow",
@@ -191,13 +191,13 @@ export default {
     "title": "Utilities",
     "path": "utilities/index"
   },
-  "utilities/margin": {
-    "title": "Margin",
-    "path": "utilities/margin"
-  },
   "utilities/marketing-borders": {
     "title": "Marketing Borders",
     "path": "utilities/marketing-borders"
+  },
+  "utilities/margin": {
+    "title": "Margin",
+    "path": "utilities/margin"
   },
   "utilities/marketing-filters": {
     "title": "Marketing Filters",
@@ -219,13 +219,13 @@ export default {
     "title": "Marketing Typography",
     "path": "utilities/marketing-type"
   },
-  "utilities/padding": {
-    "title": "Padding",
-    "path": "utilities/padding"
-  },
   "utilities/typography": {
     "title": "Typography",
     "path": "utilities/typography"
+  },
+  "utilities/padding": {
+    "title": "Padding",
+    "path": "utilities/padding"
   },
   "components/box": {
     "title": "Box",

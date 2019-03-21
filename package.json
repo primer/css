@@ -128,6 +128,7 @@
     "fs": "0.0.1-security",
     "fuse.js": "3.4.4",
     "lunr": "2.3.6",
-    "react-autocomplete": "1.8.1"
+    "react-autocomplete": "1.8.1",
+    "uuid": "3.3.2"
   }
 }

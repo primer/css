@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-
-
 const SearchItem = styled.a`
   display: block;
   text-decoration: none;

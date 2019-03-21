@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import lunr from 'lunr'
+import uuid from 'uuid'
 import styled from 'styled-components'
 import Autocomplete from 'react-autocomplete'
 import Router from 'next/router'
@@ -31,7 +32,7 @@ function Search() {
   const renderItem = (item, isHighlighted) => {
     const doc = documents[item.ref]
     return (
-      <SearchItem key={doc.title} isHighlighted={isHighlighted} href={`/css/${doc.path}`}>
+      <SearchItem key={uuid()} isHighlighted={isHighlighted} href={`/css/${doc.path}`}>
         {doc.title}
       </SearchItem>
     )
