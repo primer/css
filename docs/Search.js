@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import lunr from 'lunr'
-import {TextInput, Absolute, BorderBox, Box} from '@primer/components'
+import {TextInput, Absolute, Relative, BorderBox, Box} from '@primer/components'
 import Link from './Link'
 import documents from '../searchIndex'
+import SearchInput from './SearchInput'
+import SearchResults from './SearchResults'
 
 function Search() {
   const idx = lunr(function () {
@@ -47,11 +49,13 @@ function Search() {
   }
 
   return (
-    <Box>
-      <TextInput aria-label="search docs" onChange={e => onChange(e)}/>
-      <BorderBox display={open ? 'block' : 'none'} p={2} is={Absolute} borderRadius={1} bg='white'>
-        {renderResults()}
-      </BorderBox>
+    <Box is={Relative}>
+      <SearchInput aria-label="search docs" onChange={e => onChange(e)}/>
+      {results.length > 0 &&
+        <SearchResults open={open}>
+          {renderResults()}
+        </SearchResults>
+      }
     </Box>
   )
 }
