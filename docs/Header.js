@@ -19,9 +19,11 @@ const Header = props => (
       <Flex className="p-responsive" alignItems="center" justifyContent="space-between">
         <Flex alignItems="center" justifyContent="center">
           <Link href="/css" color="white" ml={3}>
-            <Flex alignItems='center'>
+            <Flex alignItems="center">
               <Octicon icon={MarkGithub} size="medium" />
-              <HeaderText ml={3} mr={3}>Primer CSS</HeaderText>
+              <HeaderText ml={3} mr={3}>
+                Primer CSS
+              </HeaderText>
             </Flex>
           </Link>
           <Search />

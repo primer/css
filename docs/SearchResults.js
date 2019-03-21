@@ -1,15 +1,14 @@
 import styled from 'styled-components'
 
-
 const SearchResults = styled.div`
-  box-shadow: 0 1px 5px rgba(27,31,35,0.15);
+  box-shadow: 0 1px 5px rgba(27, 31, 35, 0.15);
   width: 100%;
   height: 92vh;
   padding-bottom: 128px;
   overflow: auto;
   right: 0;
   background-color: #fff;
-  display: ${props => props.open ? 'block' : 'none' };
+  display: ${props => (props.open ? 'block' : 'none')};
   position: absolute;
 
   @media (min-width: 1012px) {
