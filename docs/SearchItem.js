@@ -5,13 +5,9 @@ import styled from 'styled-components'
 const SearchItem = styled.a`
   display: block;
   text-decoration: none;
-  color: #24292e;
+  color: ${props => props.isHighlighted ? '#fff' : '#24292e'};
+  background-color: ${props => props.isHighlighted ? '#0366d6' : '#fff'};
   padding: 8px;
-  &:focus, &:hover {
-    color: #fff;
-    background-color: #0366d6;
-    text-decoration: none;
-  }
 `
 
 export default SearchItem

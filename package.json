@@ -124,8 +124,10 @@
     "webpack": "4.20.2"
   },
   "dependencies": {
+    "accessible-autocomplete": "1.6.2",
     "fs": "0.0.1-security",
     "fuse.js": "3.4.4",
-    "lunr": "2.3.6"
+    "lunr": "2.3.6",
+    "react-autocomplete": "1.8.1"
   }
 }
