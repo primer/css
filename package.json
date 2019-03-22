@@ -65,6 +65,7 @@
     "css-loader": "^0.28.4",
     "cssstats": "3.2.0",
     "details-dialog-element": "^1.4.0",
+    "downshift": "3.2.7",
     "eslint": "4.19.1",
     "eslint-plugin-github": "1.0.0",
     "execa": "^0.10.0",
@@ -79,6 +80,7 @@
     "html-to-react": "^1.2.11",
     "klaw": "3.0.0",
     "loader-utils": "^1.1.0",
+    "lunr": "2.3.6",
     "mdx-constant": "^0.1.0",
     "metalsmith": "^2.3.0",
     "metalsmith-filter": "^1.0.2",
@@ -121,14 +123,10 @@
     "unist-util-select": "^2.0.0",
     "unist-util-stringify-position": "^2.0.0",
     "unist-util-visit": "^1.4.0",
+    "uuid": "3.3.2",
     "webpack": "4.20.2"
   },
   "dependencies": {
-    "accessible-autocomplete": "1.6.2",
-    "fs": "0.0.1-security",
-    "fuse.js": "3.4.4",
-    "lunr": "2.3.6",
-    "react-autocomplete": "1.8.1",
-    "uuid": "3.3.2"
+    "fs": "0.0.1-security"
   }
 }

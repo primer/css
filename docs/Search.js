@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 import lunr from 'lunr'
-import uuid from 'uuid'
-import Autocomplete from 'react-autocomplete'
 import Router from 'next/router'
 import {Relative, Box} from '@primer/components'
 import documents from '../searchIndex'
 import SearchItem from './SearchItem'
+import Downshift from 'downshift'
+import SearchInput from './SearchInput'
+import SearchResults from './SearchResults'
 
 function Search() {
   const idx = lunr(function() {
@@ -20,32 +21,56 @@ function Search() {
   })
 
   const [results, setResults] = useState([])
-  const [value, setValue] = useState('')
 
   const onChange = e => {
-    setValue(e.target.value)
-    setResults(idx.search(e.target.value))
+    if (e.target) {
+      setResults(idx.search(e.target.value))
+    }
   }
 
-  const renderItem = (item, isHighlighted) => {
-    const doc = documents[item.ref]
-    return (
-      <SearchItem key={uuid()} isHighlighted={isHighlighted} href={`/css/${doc.path}`}>
-        {doc.title}
-      </SearchItem>
-    )
+  const renderResults = (selectedItem, getItemProps, highlightedIndex) => {
+    return results.map((result, index) => {
+      const doc = documents[result.ref]
+      return (
+        <SearchItem //eslint-disable-line
+          {...getItemProps({
+            item: result,
+            index,
+            key: result.ref,
+            href: `/css/${doc.path}`,
+            isHighlighted: highlightedIndex === index
+          })}
+        >
+          {doc.title}
+        </SearchItem>
+      )
+    })
   }
 
   return (
     <Box is={Relative}>
-      <Autocomplete
-        getItemValue={item => documents[item.ref].title}
-        items={results}
-        renderItem={(item, isHighlighted) => renderItem(item, isHighlighted)}
-        value={value}
-        onChange={e => onChange(e)}
-        onSelect={(value, item) => Router.push(`/css/${item.ref}`)}
-      />
+      <Downshift
+        onChange={onChange}
+        itemToString={item => (item ? documents[item.ref].title : '')}
+        onSelect={item => Router.push(`/css/${item.ref}`)}
+      >
+        {({getInputProps, getMenuProps, getLabelProps, getItemProps, isOpen, highlightedIndex, selectedItem}) => (
+          <div>
+            <label {...getLabelProps()}>
+              Search docs
+              <SearchInput
+                placeholder="Search"
+                {...getInputProps({
+                  onChange
+                })}
+              />
+              <SearchResults open={isOpen} {...getMenuProps()}>
+                {renderResults(selectedItem, getItemProps, highlightedIndex)}
+              </SearchResults>
+            </label>
+          </div>
+        )}
+      </Downshift>
     </Box>
   )
 }
