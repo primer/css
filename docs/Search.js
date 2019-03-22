@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import lunr from 'lunr'
 import Router from 'next/router'
+import lunr from 'lunr'
 import {Relative, Box} from '@primer/components'
 import documents from '../searchIndex'
 import SearchItem from './SearchItem'
@@ -32,7 +32,7 @@ function Search() {
     return results.map((result, index) => {
       const doc = documents[result.ref]
       return (
-        <SearchItem //eslint-disable-line
+        <SearchItem
           {...getItemProps({
             item: result,
             index,
@@ -54,20 +54,26 @@ function Search() {
         itemToString={item => (item ? documents[item.ref].title : '')}
         onSelect={item => Router.push(`/css/${item.ref}`)}
       >
-        {({getInputProps, getMenuProps, getLabelProps, getItemProps, isOpen, highlightedIndex, selectedItem}) => (
+        {({
+          getInputProps,
+          getMenuProps,
+          getLabelProps,
+          getItemProps,
+          isOpen,
+          highlightedIndex,
+          selectedItem
+        }) => (
           <div>
-            <label {...getLabelProps()}>
-              Search docs
-              <SearchInput
-                placeholder="Search"
-                {...getInputProps({
-                  onChange
-                })}
-              />
-              <SearchResults open={isOpen} {...getMenuProps()}>
-                {renderResults(selectedItem, getItemProps, highlightedIndex)}
-              </SearchResults>
-            </label>
+            <label hidden {...getLabelProps()}>Search docs</label>
+            <SearchInput
+              placeholder="Search"
+              {...getInputProps({
+                onChange
+              })}
+            />
+            <SearchResults open={isOpen} {...getMenuProps()}>
+              {renderResults(selectedItem, getItemProps, highlightedIndex)}
+            </SearchResults>
           </div>
         )}
       </Downshift>
