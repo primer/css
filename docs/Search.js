@@ -32,7 +32,7 @@ function Search() {
     return results.map((result, index) => {
       const doc = documents[result.ref]
       return (
-        <SearchItem
+        <SearchItem //eslint-disable-line
           {...getItemProps({
             item: result,
             index,
@@ -54,17 +54,12 @@ function Search() {
         itemToString={item => (item ? documents[item.ref].title : '')}
         onSelect={item => Router.push(`/css/${item.ref}`)}
       >
-        {({
-          getInputProps,
-          getMenuProps,
-          getLabelProps,
-          getItemProps,
-          isOpen,
-          highlightedIndex,
-          selectedItem
-        }) => (
+        {({getInputProps, getMenuProps, getLabelProps, getItemProps, isOpen, highlightedIndex, selectedItem}) => (
           <div>
-            <label hidden {...getLabelProps()}>Search docs</label>
+            <label hidden {...getLabelProps()}>
+              {' '}
+              //eslint-disable-line Search docs
+            </label>
             <SearchInput
               placeholder="Search"
               {...getInputProps({
