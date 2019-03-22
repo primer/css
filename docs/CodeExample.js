@@ -35,7 +35,7 @@ export default function CodeExample(props) {
     return (
       <LiveProvider {...liveProps}>
         <BorderBox {...rest}>
-          <BorderBox bg="white" p={3} border={0} borderBottom={1} borderRadius={0}>
+          <BorderBox bg="white" border={0} borderBottom={1} borderRadius={0}>
             <Frame>
               <LivePreview />
             </Frame>

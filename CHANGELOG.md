@@ -1,3 +1,20 @@
+# 12.2.1
+
+### :bug: Bug Fix
+- Fix source order of directional border utilities [#727](https://github.com/primer/css/pull/727)
+- Fix UnderlineNav selected border width [#733](https://github.com/primer/css/pull/733)
+
+### :memo: Documentation
+- Fix changelog committers listings for versions 12.0.1 and 12.0.2 [#729](https://github.com/primer/css/pull/729)
+- Fix code examples from being cut off [#725](https://github.com/primer/css/pull/725)
+
+### :house: Internal
+- Prevent Storybook publish failures from breaking builds on `master` [#728](https://github.com/primer/css/pull/728)
+
+#### Committers: 2
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Simurai ([simurai](https://github.com/simurai))
+
 # 12.2.0
 
 ### :rocket: Enhancement
@@ -17,9 +34,9 @@
 
 #### Committers: 4
 - Diana Mounter ([broccolini](https://github.com/broccolini))
-- Max Stoiber ([https://github.com/mxstbr](mxstbr))
+- Max Stoiber ([mxstbr](https://github.com/mxstbr))
 - Shawn Allen ([shawnbot](https://github.com/shawnbot))
-- Simurai ([https://github.com/simurai](simurai))
+- Simurai ([simurai](https://github.com/simurai))
 
 # 12.1.1
 

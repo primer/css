@@ -16,39 +16,6 @@
 
 .border-dashed { border-style: dashed !important; }
 
-/* Use with .border to turn the border blue */
-.border-blue        { border-color: $border-blue !important; }
-/* Use with .border to turn the border blue-light */
-.border-blue-light  { border-color: $border-blue-light !important; }
-/* Use with .border to turn the border green */
-.border-green       { border-color: $border-green !important; }
-/* Use with .border to turn the border green light */
-.border-green-light { border-color: $border-green-light !important; }
-/* Use with .border to turn the border red */
-.border-red         { border-color: $border-red !important; }
-/* Use with .border to turn the border red-light */
-.border-red-light   { border-color: $border-red-light !important; }
-/* Use with .border to turn the border purple */
-.border-purple      { border-color: $border-purple !important; }
-/* Use with .border to turn the border yellow */
-.border-yellow      { border-color: $border-yellow !important; }
-/* Use with .border to turn the border gray-light */
-.border-gray-light  { border-color: $border-gray-light !important; }
-/* Use with .border to turn the border gray-dark */
-.border-gray-dark   { border-color: $border-gray-dark !important; }
-
-/* Use with .border to turn the border rgba black 0.15 */
-.border-black-fade  { border-color: $border-black-fade !important; }
-/* Use with .border to turn the border rgba white 0.15 */
-.border-white-fade  { border-color: $border-white-fade !important; }
-
-/* Use with .border to turn the border white w/varying transparency */
-.border-white-fade-15 { border-color: $white-fade-15 !important; }
-.border-white-fade-30 { border-color: $white-fade-30 !important; }
-.border-white-fade-50 { border-color: $white-fade-50 !important; }
-.border-white-fade-70 { border-color: $white-fade-70 !important; }
-.border-white-fade-85 { border-color: $white-fade-85 !important; }
-
 $edges: (
   top: (top-left, top-right),
   right: (top-right, bottom-right),
@@ -109,3 +76,36 @@ $edges: (
 
 /* Add a 50% border-radius to make something into a circle */
 .circle { border-radius: 50% !important; }
+
+/* Use with .border to turn the border blue */
+.border-blue        { border-color: $border-blue !important; }
+/* Use with .border to turn the border blue-light */
+.border-blue-light  { border-color: $border-blue-light !important; }
+/* Use with .border to turn the border green */
+.border-green       { border-color: $border-green !important; }
+/* Use with .border to turn the border green light */
+.border-green-light { border-color: $border-green-light !important; }
+/* Use with .border to turn the border red */
+.border-red         { border-color: $border-red !important; }
+/* Use with .border to turn the border red-light */
+.border-red-light   { border-color: $border-red-light !important; }
+/* Use with .border to turn the border purple */
+.border-purple      { border-color: $border-purple !important; }
+/* Use with .border to turn the border yellow */
+.border-yellow      { border-color: $border-yellow !important; }
+/* Use with .border to turn the border gray-light */
+.border-gray-light  { border-color: $border-gray-light !important; }
+/* Use with .border to turn the border gray-dark */
+.border-gray-dark   { border-color: $border-gray-dark !important; }
+
+/* Use with .border to turn the border rgba black 0.15 */
+.border-black-fade  { border-color: $border-black-fade !important; }
+/* Use with .border to turn the border rgba white 0.15 */
+.border-white-fade  { border-color: $border-white-fade !important; }
+
+/* Use with .border to turn the border white w/varying transparency */
+.border-white-fade-15 { border-color: $white-fade-15 !important; }
+.border-white-fade-30 { border-color: $white-fade-30 !important; }
+.border-white-fade-50 { border-color: $white-fade-50 !important; }
+.border-white-fade-70 { border-color: $white-fade-70 !important; }
+.border-white-fade-85 { border-color: $white-fade-85 !important; }
