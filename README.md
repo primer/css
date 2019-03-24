@@ -23,6 +23,7 @@
     <img src="https://img.shields.io/github/license/primer/css.svg" alt="">
   </a>
 </p>
+<p>Привет Санечек</p>
 
 ## Migrating
 :rotating_light: **If you currently use the `primer` or `primer-`-prefixed npm packages, please read [the migration guide](MIGRATING.md)!**
