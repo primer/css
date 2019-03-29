@@ -2,6 +2,8 @@
 // stylelint-disable primer/selector-no-utility
 // stylelint-disable block-opening-brace-space-before, comment-empty-line-before
 
+@warn ".text-pending and .bg-pending will be deprecated in the future, use .text-yellow and .bg-yellow-dark instead";
+
 // background colors
 /* Set the background to $bg-white */
 .bg-white      { background-color: $bg-white !important; }
