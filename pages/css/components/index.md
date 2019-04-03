@@ -1,5 +1,6 @@
 ---
 title: Components
+path: components/index
 ---
 
 Components make it easier to mark up a set of elements that are commonly grouped together with similar visual styles. Their base styles are shared and variants are added with modifier classes, so usually components are comprised of multiple classes. Most importantly, components should be highly reusable across the site, rather than built for specific pages or features. To achieve this:

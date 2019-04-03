@@ -1,5 +1,6 @@
 ---
 title: Flash banner
+path: components/flash-banner
 status: In review
 status_issue: 'https://github.com/github/design-systems/issues/99'
 source: 'https://github.com/github/github/tree/master/app/assets/stylesheets/components/flash-banner.scss'

@@ -1,3 +1,8 @@
+---
+title: CSS
+path: /
+---
+
 import {Box, Flex, Heading, Link, Text} from '@primer/components'
 import {
   PrimerCSSAnimation,
@@ -17,10 +22,10 @@ export const Hero = () => (
         <Heading color="blue.4" fontSize={7} pb={3} m={0}>
           Primer CSS
         </Heading>
-        <Text is="div" color="blue.2" fontSize={2} mb={4}>
+        <Text as="div" color="blue.2" fontSize={2} mb={4}>
           v{version}
         </Text>
-        <Box is={PrimerCSSAnimation} mb={6} />
+        <Box as={PrimerCSSAnimation} mb={6} />
       </Box>
     </Box>
   </Box>

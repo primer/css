@@ -5,7 +5,7 @@ import Router from 'next/router'
  * and client-side:
  *
  * ```js
- * import {redirect} from '../docs/utils'
+ * import {redirect} from '../src/utils'
  * export default redirect('/some/path')
  * ```
  */

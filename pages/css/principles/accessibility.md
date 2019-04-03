@@ -1,5 +1,6 @@
 ---
 title: Accessibility
+path: principles/accessibility
 ---
 
 Accessibility is everyone’s responsibility, and the purpose of this document is to provide general accessibility guidelines to developers and designers.
@@ -41,7 +42,7 @@ Only use a `div` or a `span` to markup up content when there isn't another HTML 
 ```
 
 > More on semantic markup:
-> 
+>
 > - [Semantic Structure – WebAIM](http://webaim.org/techniques/semanticstructure/)
 
 ### Keyboard accessibility
@@ -85,7 +86,7 @@ Be mindful when using small font size, thin font weight, low contrast colors in 
 Instead of relying solely on color to communicate information, always combine color with another factor, like shape or position change. This is important because some colors can be hard to tell apart due to color blindness or weak eyesight.
 
 > More on visual accessibility:
-> 
+>
 > - [Use of Color – Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html)
 > - [Contrast – Understanding WCAG 2.0](http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
 
@@ -120,7 +121,7 @@ Use `aria-label` when there is no text.
 Navigating from a list of all the links on a given web page is very common for assistive technology users. We should make sure that the link text itself is meaningful and unique, and there should be as few duplicated references as possible.
 
 > More on link responsibly:
-> 
+>
 > - [Link Purpose – Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-refs.html)
 
 ### Dynamic content
@@ -128,7 +129,7 @@ Navigating from a list of all the links on a given web page is very common for a
 When using JavaScript to change the content on the page, always make sure that screen reader users are informed about the change. This can be done with `aria-live`, or focus management.
 
 > More on dynamic content:
-> 
+>
 > - [ARIA Live Regions – MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions)
 
 ### Focus management
