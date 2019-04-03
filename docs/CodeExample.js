@@ -12,7 +12,7 @@ const StyledLiveProvider = styled(LiveProvider)`
   ${CodeExampleStyles}
 `
 
-const LANG_PATTERN = /\blanguage-\.?(jsx?|html)\b/
+const LANG_PATTERN = /\blanguage-\.?(jsx|html)\b/
 
 const converter = new HTMLtoJSX({
   indent: '  ',
@@ -27,9 +27,9 @@ const languageTransforms = {
 }
 
 export default function CodeExample(props) {
-  const {children, dangerouslySetInnerHTML, dead, source, ...rest} = props
+  const {children, dangerouslySetInnerHTML, inert, source, ...rest} = props
   const lang = getLanguage(props.className)
-  if (lang && !dead) {
+  if (lang && !inert) {
     const liveProps = {
       code: source,
       scope: {Octicon, getIconByName},
@@ -39,7 +39,7 @@ export default function CodeExample(props) {
     return (
       <StyledLiveProvider {...liveProps}>
         <BorderBox {...rest}>
-          <BorderBox bg="white" p={3} border={0} borderBottom={1} borderRadius={0}>
+          <BorderBox bg="white" border={0} borderBottom={1} borderRadius={0}>
             <Frame>
               <LivePreview />
             </Frame>

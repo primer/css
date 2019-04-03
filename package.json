@@ -123,6 +123,7 @@
     "fs": "0.0.1-security",
     "html-2-jsx": "0.5.1-dev",
     "react": "16.8.1",
-    "react-dom": "16.8.1"
+    "react-dom": "16.8.1",
+    "@primer/blueprints": "3.0.1"
   }
 }
