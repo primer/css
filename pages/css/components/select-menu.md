@@ -1,5 +1,6 @@
 ---
 title: Select menu
+path: components/select-menu
 status: Stable
 source: 'https://github.com/github/github/blob/master/docs/styleguide/css/styles/product/components/select-menu.md'
 symbols: [active, close-button, css-truncate-target, description, description-inline, description-warning, disabled, filterable-empty, has-error, hidden-select-button-text, icon-only, indeterminate, is-loading, is-showing-new-item-form, label-select-menu, last-visible, menu-active, modal-backdrop, navigation-focus, octicon, octicon-check, octicon-dash, octicon-octoface, octicon-x, opaque, primary, select-menu, select-menu-action, select-menu-blankslate, select-menu-button, select-menu-button-gravatar, select-menu-button-large, select-menu-clear-item, select-menu-divider, select-menu-error, select-menu-filters, select-menu-header, select-menu-item, select-menu-item-gravatar, select-menu-item-heading, select-menu-item-icon, select-menu-item-parent, select-menu-item-template, select-menu-item-text, select-menu-list, select-menu-loading-overlay, select-menu-modal, select-menu-modal-holder, select-menu-modal-narrow, select-menu-modal-right, select-menu-new-item-form, select-menu-no-results, select-menu-tab, select-menu-tab-bucket, select-menu-tab-nav, select-menu-tabs, select-menu-text-filter, select-menu-title, selected, spinner]

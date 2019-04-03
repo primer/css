@@ -1,3 +1,8 @@
+---
+title: CSS
+path: /
+---
+
 import {Box, Flex, Heading, Link, Text} from '@primer/components'
 import {
   PrimerCSSAnimation,
