@@ -1,6 +1,6 @@
 const {join, resolve} = require('path')
 const withSass = require('@zeit/next-sass')
-const configure = require('./lib/config')
+const configure = require('@primer/blueprints/lib/config')
 
 module.exports = configure(
   withSass({
