@@ -10,7 +10,7 @@ import ColorImage from './ColorImage.svg'
 
 export {default as PrimerCSSAnimation} from './PrimerCSSAnimation.js'
 
-const OverviewTitle = props => <Heading fontSize={3} fontWeight="normal" is="div" {...props} />
+const OverviewTitle = props => <Heading fontSize={3} fontWeight="normal" as="div" {...props} />
 const OverviewText = props => <Text fontSize={1} {...props} />
 
 export function StylesOverview(props) {
@@ -34,7 +34,7 @@ export function StylesOverview(props) {
   return (
     <Flex {...props}>
       {styleTypes.map(({name, desc, image}) => (
-        <Flex.Item is={Text} textAlign="center" mx={4} key={name}>
+        <Flex.Item as={Text} textAlign="center" mx={4} key={name}>
           <Image src={image} height={90} mb={2} />
           <OverviewTitle>{name}</OverviewTitle>
           <OverviewText>{desc}</OverviewText>
@@ -103,9 +103,9 @@ function Image(props) {
   const {src, ...rest} = props
   switch (typeof src) {
     case 'string':
-      return <Box is="img" width="100%" alt="" {...props} />
+      return <Box as="img" width="100%" alt="" {...props} />
     case 'function':
-      return <Box is={src} {...rest} />
+      return <Box as={src} {...rest} />
     default:
       throw new Error(`Unrecognized Image.src type: "${typeof src}"`)
   }
@@ -123,7 +123,7 @@ export function PrimerPackageBox({count, ...rest}) {
           </Text>
         </Flex>
         {count ? (
-          <Text is="div" textAlign="center">
+          <Text as="div" textAlign="center">
             This package includes all {count} Primer modules.
           </Text>
         ) : null}
@@ -140,17 +140,17 @@ export function MetaPackageBox({children, meta = {}, title, ...rest}) {
   const {name, imports = []} = meta
   const bundles = imports.filter(bundle => !/support/.test(bundle))
   return (
-    <Flex.Item is={BorderBox} bg="white" maxWidth={220} {...rest}>
+    <Flex.Item as={BorderBox} bg="white" maxWidth={220} {...rest}>
       <BorderBox bg="gray.1" border={0} borderBottom={1} borderRadius={0} px={3} py={2}>
-        <Heading is="div" fontSize={2}>
+        <Heading as="div" fontSize={2}>
           <Link href={bundleSourceURL(name)} color="inherit">
             {title}
           </Link>
         </Heading>
       </BorderBox>
-      <Text is="div" fontSize={1} p={3}>
+      <Text as="div" fontSize={1} p={3}>
         {children}
-        <Text is="div" fontWeight="bold" mt={4} mb={2}>
+        <Text as="div" fontWeight="bold" mt={4} mb={2}>
           {bundles.length} bundles:
         </Text>
         <ul className="list-style-none pl-0">

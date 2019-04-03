@@ -122,6 +122,7 @@
   "dependencies": {
     "@primer/blueprints": "0.0.0-06ea294",
     "@primer/components": "12.0.1",
+    "@primer/next-pages": "0.0.3",
     "fs": "0.0.1-security",
     "html-2-jsx": "0.5.1-dev",
     "react": "16.8.1",

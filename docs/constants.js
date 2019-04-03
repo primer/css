@@ -1,5 +1,6 @@
-export const WCAG_AA = 4.5
-export const WCAG_AAA = 7
-export const MIN_CONTRAST_RATIO = WCAG_AAA
+import {themeGet, get as getKey} from 'styled-system'
+import {theme} from '@primer/components'
+
+export const get = key => themeGet(key, getKey(theme, key))
 
 export const CONTENT_MAX_WIDTH = 1012
