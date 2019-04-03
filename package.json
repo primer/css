@@ -47,7 +47,6 @@
     "@githubprimer/octicons-react": "^8.1.3",
     "@mdx-js/mdx": "^0.16.6",
     "@mdx-js/tag": "0.15.0",
-    "@primer/components": "11.0.0",
     "@storybook/addon-viewport": "5.0.0",
     "@storybook/react": "5.0.0",
     "@svgr/webpack": "2.4.1",
@@ -75,7 +74,6 @@
     "gray-matter": "^4.0.1",
     "hast-util-to-html": "^5.0.0",
     "hast-util-to-string": "^1.0.1",
-    "html-2-jsx": "^0.5.1-dev",
     "html-to-react": "^1.2.11",
     "klaw": "3.0.0",
     "loader-utils": "^1.1.0",
@@ -96,9 +94,7 @@
     "prism-github": "^1.1.0",
     "prop-types": "^15.6.2",
     "raw-loader": "^0.5.1",
-    "react": "16.6.1",
     "react-bodymovin": "2.0.0",
-    "react-dom": "16.6.1",
     "react-live": "1.12.0",
     "react-measure": "^2.2.2",
     "refractor": "^2.6.2",
@@ -122,5 +118,13 @@
     "unist-util-stringify-position": "^2.0.0",
     "unist-util-visit": "^1.4.0",
     "webpack": "4.20.2"
+  },
+  "dependencies": {
+    "@primer/blueprints": "0.0.0-06ea294",
+    "@primer/components": "12.0.1",
+    "fs": "0.0.1-security",
+    "html-2-jsx": "0.5.1-dev",
+    "react": "16.8.1",
+    "react-dom": "16.8.1"
   }
 }
