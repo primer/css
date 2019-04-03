@@ -3,7 +3,6 @@ import getConfig from 'next/config'
 import TreeModel from 'tree-model'
 import {join} from 'path'
 
-
 export const CommonStyles = () => {
   const sheets = [getAssetPath('github/styleguide.css')]
   return sheets.map(href => <link href={href} rel="stylesheet" key={href} />)
