@@ -1,7 +1,7 @@
 {
   "version": 1,
   "name": "primer-css",
-  "alias=": "primer-css.now.sh",
+  "alias": "primer-css.now.sh",
   "files": [
     "docs",
     "lib",
