@@ -1,6 +1,6 @@
 import React from 'react'
 import {Heading, Link} from '@primer/components'
-import CodeExample from './CodeExample'
+import {CodeExample} from '@primer/blueprints'
 import Outline from './Outline'
 
 export const H1 = props => <Heading fontSize={6} fontWeight="light" {...props} />

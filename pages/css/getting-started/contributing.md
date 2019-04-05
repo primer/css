@@ -1,5 +1,6 @@
 ---
 title: Contributing
+path: getting-started/contributing
 ---
 
 Guidelines for contributing to GitHub's CSS.

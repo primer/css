@@ -1,5 +1,6 @@
 ---
 title: Status key
+path: status-key
 ---
 
 import StatusLabel from '../../docs/StatusLabel'

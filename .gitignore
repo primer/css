@@ -8,3 +8,4 @@
 _site
 dist/
 node_modules/
+searchIndex.js

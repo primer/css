@@ -1,5 +1,6 @@
 ---
 title: Pagehead
+path: components/pagehead
 status: Stable
 internal: true
 source: 'https://github.com/github/github/tree/master/app/assets/stylesheets/components/pagehead.scss'

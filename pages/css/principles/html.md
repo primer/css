@@ -1,5 +1,6 @@
 ---
 title: HTML
+path: principles/html
 ---
 
 {:toc}

@@ -3,8 +3,9 @@ import App, {Container} from 'next/app'
 import {MDXProvider} from '@mdx-js/tag'
 import Head from 'next/head'
 import {BaseStyles, BorderBox, Box, Flex, theme} from '@primer/components'
-import {Header, PackageHeader, SideNav} from '../docs/components'
+import {Header, JumpNav, Section, RouteMatch, SectionLink, PackageHeader, SideNav} from '../docs/components'
 import getComponents from '../docs/markdown'
+import documents from '../searchIndex'
 import {config, requirePage, rootPage} from '../docs/utils'
 import {CONTENT_MAX_WIDTH} from '../docs/constants'
 
@@ -38,7 +39,15 @@ export default class MyApp extends App {
           <Head>
             <title>Primer CSS{meta.title ? ` / ${meta.title}` : null}</title>
           </Head>
-          <Header />
+          <Header
+            documents={documents}
+            root="https://primer.style"
+            subfolder="css"
+            title="Primer"
+            subtitle="CSS"
+          >
+            <JumpNav />
+          </Header>
           <Flex
             flexDirection={['column', 'column', 'column', 'row-reverse']}
             alignContent="stretch"
@@ -60,7 +69,6 @@ export default class MyApp extends App {
                     </details>
                   )}
                 </div>
-                {/* TODO: bring back edit link! */}
               </Box>
             </Box>
             <BorderBox
@@ -73,7 +81,21 @@ export default class MyApp extends App {
               borderRight={1}
               borderTop={[1, 1, 0, 0]}
             >
-              <SideNav />
+              <SideNav>
+                <Section path="/css/getting-started" />
+                <Section path="/css/principles" />
+                <Section path="/css/tools" />
+                <Section path="/css/whats-new" />
+                <RouteMatch path="/css">
+                  <Section>
+                    <SectionLink color='black' href="status-key" />
+                  </Section>
+                  <Section path="support" />
+                  <Section path="utilities" />
+                  <Section path="objects" />
+                  <Section path="components" />
+                </RouteMatch>
+              </SideNav>
             </BorderBox>
           </Flex>
         </Container>

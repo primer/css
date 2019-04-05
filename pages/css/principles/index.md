@@ -1,5 +1,6 @@
 ---
 title: Principles
+path: principles/index
 ---
 
 The CSS styleguide enables us to create a consistent user experience across GitHub, manage CSS bloat, and make our CSS easier to maintain. These principles should serve as guidelines for how we write and use CSS.
