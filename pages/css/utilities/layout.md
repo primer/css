@@ -85,9 +85,9 @@ Hide utilities are able to be applied or changed per breakpoint using the follow
 
 | Shorthand | Range |
 | --- | --- |
-| -sm | 0—544px |
-| -md | 544px—768px |
-| -lg | 768px—1004px |
+| -sm | 0—543px |
+| -md | 544px—767px |
+| -lg | 768px—1003px |
 | -xl | 1004px and above |
 
 ```html
