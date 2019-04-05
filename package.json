@@ -49,7 +49,6 @@
     "@mdx-js/tag": "0.15.0",
     "@primer/blueprints": "3.0.1",
     "@primer/components": "12.0.1",
-    "@primer/next-pages": "0.0.3",
     "@storybook/addon-viewport": "5.0.0",
     "@storybook/react": "5.0.0",
     "@svgr/webpack": "2.4.1",
