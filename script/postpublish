@@ -9,5 +9,7 @@ if [[ -f $file ]]; then
 fi
 
 if [[ "$GITHUB_REF" = "refs/heads/master" ]]; then
-    npm run publish-storybook
+    npm run --silent publish-storybook || (
+        echo "Whoops! Failed to publish Storybook. This is not a fatal error."
+    )
 fi
