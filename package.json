@@ -70,7 +70,6 @@
     "eslint": "4.19.1",
     "eslint-plugin-github": "1.0.0",
     "execa": "^0.10.0",
-    "fs": "0.0.1-security",
     "fs-extra": "^4.0.2",
     "fx": "11.0.1",
     "gh-pages": "^1.0.0",
