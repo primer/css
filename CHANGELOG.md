@@ -5,6 +5,7 @@
 
 ### :house: Internal
 - Prevent Storybook publish failures from breaking builds on `master` [#728](https://github.com/primer/css/pull/728)
+- Upgrade to [cssstats v3.3.0](https://github.com/cssstats/cssstats/releases/tag/v3.3.0), which fixes our selector stats JSON files
 
 #### Committers: 2
 - Shawn Allen ([shawnbot](https://github.com/shawnbot))
