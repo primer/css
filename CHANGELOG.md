@@ -1,10 +1,14 @@
 # 12.2.2
 
+### :bug: Bug Fix
+- Fix hide utilities when toggling between breakpoints [#746](https://github.com/primer/css/pull/746) 
+
 ### :house: Internal
 - Prevent Storybook publish failures from breaking builds on `master` [#728](https://github.com/primer/css/pull/728)
 
-#### Committers: 1
+#### Committers: 2
 - Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Simurai ([simurai](https://github.com/simurai))
 
 # 12.2.1
 
