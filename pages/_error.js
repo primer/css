@@ -1,6 +1,6 @@
 import React from 'react'
 import {Heading} from '@primer/components'
-import {redirectTrailingSlash} from '../docs/redirect'
+import {redirectTrailingSlash} from '@primer/blueprints'
 
 export default class extends React.Component {
   static getInitialProps(context) {
