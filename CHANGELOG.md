@@ -1,3 +1,16 @@
+# 12.2.2
+
+### :bug: Bug Fix
+- Fix hide utilities when toggling between breakpoints [#746](https://github.com/primer/css/pull/746) 
+
+### :house: Internal
+- Prevent Storybook publish failures from breaking builds on `master` [#728](https://github.com/primer/css/pull/728)
+- Upgrade to [cssstats v3.3.0](https://github.com/cssstats/cssstats/releases/tag/v3.3.0), which fixes our selector stats JSON files
+
+#### Committers: 2
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Simurai ([simurai](https://github.com/simurai))
+
 # 12.2.1
 
 ### :bug: Bug Fix
@@ -7,9 +20,6 @@
 ### :memo: Documentation
 - Fix changelog committers listings for versions 12.0.1 and 12.0.2 [#729](https://github.com/primer/css/pull/729)
 - Fix code examples from being cut off [#725](https://github.com/primer/css/pull/725)
-
-### :house: Internal
-- Prevent Storybook publish failures from breaking builds on `master` [#728](https://github.com/primer/css/pull/728)
 
 #### Committers: 2
 - Shawn Allen ([shawnbot](https://github.com/shawnbot))
@@ -24,13 +34,13 @@
 - Fix `<details>` spacing [#675](https://github.com/primer/css/pull/675)
 
 ### :bug: Bug Fixes
-- Accessibility fixes for marketing buttons [#716](https://github.com/primer/css/pull/716) 
+- Accessibility fixes for marketing buttons [#716](https://github.com/primer/css/pull/716)
 
 ### :memo: Documentation
 - Fix scrolling of code examples [#717](https://github.com/primer/css/pull/717)
 
 ### :house: Internal
-- Fix `npm link` ([#715](https://github.com/primer/css/issue/715)) by removing `prepare` npm script [#718](https://github.com/primer/css/pull/718) 
+- Fix `npm link` ([#715](https://github.com/primer/css/issue/715)) by removing `prepare` npm script [#718](https://github.com/primer/css/pull/718)
 
 #### Committers: 4
 - Diana Mounter ([broccolini](https://github.com/broccolini))
