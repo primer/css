@@ -1,2 +1,2 @@
-import redirect from '../docs/redirect'
+import {redirect} from '@primer/blueprints'
 export default redirect('/css')
