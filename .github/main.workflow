@@ -34,7 +34,7 @@ action "publish" {
 
 action "deploy" {
   needs = "install"
-  uses = "primer/deploy@v2.2.0"
+  uses = "primer/deploy@v3.0.0"
   secrets = [
     "GITHUB_TOKEN",
     "NOW_TOKEN",
