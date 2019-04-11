@@ -115,7 +115,7 @@
     "style-loader": "^0.18.2",
     "styled-components": "4.1.2",
     "stylelint": "9.10.1",
-    "stylelint-config-primer": "4.0.0",
+    "stylelint-config-primer": "7.0.0",
     "title-case": "^2.1.1",
     "tree-model": "^1.0.7",
     "typographic-base": "^1.0.4",
