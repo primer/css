@@ -1,3 +1,14 @@
+# 12.2.3
+
+### :bug: Bug Fix
+- Remove references to a non-existent `Progress-value` class https://github.com/primer/css/pull/753
+
+### :house: Internal
+- Upgrade stylelint config https://github.com/primer/css/pull/751
+
+#### Committers: 1
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+
 # 12.2.2
 
 ### :bug: Bug Fix
