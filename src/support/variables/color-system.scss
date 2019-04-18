@@ -126,7 +126,7 @@ $grays: (
   7: $gray-700,
   8: $gray-800,
   9: $gray-900,
-);
+) !default;
 
 $blues: (
   0: $blue-000,
@@ -139,7 +139,7 @@ $blues: (
   7: $blue-700,
   8: $blue-800,
   9: $blue-900,
-);
+) !default;
 
 $greens: (
   0: $green-000,
@@ -152,7 +152,7 @@ $greens: (
   7: $green-700,
   8: $green-800,
   9: $green-900,
-);
+) !default;
 
 $yellows: (
   0: $yellow-000,
@@ -165,7 +165,7 @@ $yellows: (
   7: $yellow-700,
   8: $yellow-800,
   9: $yellow-900,
-);
+) !default;
 
 $oranges: (
   0: $orange-000,
@@ -178,7 +178,7 @@ $oranges: (
   7: $orange-700,
   8: $orange-800,
   9: $orange-900,
-);
+) !default;
 
 $reds: (
   0: $red-000,
@@ -191,7 +191,7 @@ $reds: (
   7: $red-700,
   8: $red-800,
   9: $red-900,
-);
+) !default;
 
 $purples: (
   0: $purple-000,
@@ -204,4 +204,14 @@ $purples: (
   7: $purple-700,
   8: $purple-800,
   9: $purple-900,
-);
+) !default;
+
+$hue-maps: (
+  gray: $grays,
+  blue: $blues,
+  green: $greens,
+  yellow: $yellows,
+  orange: $oranges,
+  red: $reds,
+  purple: $purples,
+) !default;
