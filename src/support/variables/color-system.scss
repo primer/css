@@ -238,6 +238,31 @@ $purple-800: map-get($purples, 8) !default;
 $purple-9: map-get($purples, 9) !default;
 $purple-900: map-get($purples, 9) !default;
 
+
+$gray: $gray-5 !default;
+$blue: $blue-5 !default;
+$green: $green-5 !default;
+$yellow: $yellow-5 !default;
+$orange: $orange-5 !default;
+$red: $red-5 !default;
+$purple: $purple-5 !default;
+
+$gray-dark: $gray-900 !default;
+$gray-light: $gray-400 !default;
+$gray: $gray-500 !default;
+
+$black-fade-15: rgba($black, 0.15) !default;
+$black-fade-30: rgba($black, 0.30) !default;
+$black-fade-50: rgba($black, 0.50) !default;
+$black-fade-70: rgba($black, 0.70) !default;
+$black-fade-85: rgba($black, 0.85) !default;
+
+$white-fade-15: rgba($white, 0.15) !default;
+$white-fade-30: rgba($white, 0.30) !default;
+$white-fade-50: rgba($white, 0.50) !default;
+$white-fade-70: rgba($white, 0.70) !default;
+$white-fade-85: rgba($white, 0.85) !default;
+
 $hue-maps: (
   gray: $grays,
   blue: $blues,
@@ -247,5 +272,4 @@ $hue-maps: (
   red: $reds,
   purple: $purples,
 ) !default;
-
 

@@ -19,6 +19,24 @@ for (const [name, value] of Object.entries(colors)) {
   }
 }
 
+write('')
+for (const hue of Object.keys(hues)) {
+  writeVariable(hue, `$${hue}-5`)
+}
+
+write('')
+writeVariable('gray-dark', '$gray-900')
+writeVariable('gray-light', '$gray-400')
+writeVariable('gray', '$gray-500')
+write('')
+
+for (const color of ['black', 'white']) {
+  for (const alpha of [15, 30, 50, 70, 85]) {
+    writeVariable(`${color}-fade-${alpha}`, `rgba($${color}, 0.${alpha})`)
+  }
+  write('')
+}
+
 writeArray('hue-maps', hues)
 
 function writeVariable(name, value) {
