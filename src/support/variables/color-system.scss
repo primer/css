@@ -1,210 +1,242 @@
-//
-//
-// -------- Grays --------
-$gray-000:        #fafbfc !default;
-$gray-100:        #f6f8fa !default;
-$gray-200:        #e1e4e8 !default;
-$gray-300:        #d1d5da !default;
-$gray-400:        #959da5 !default;
-$gray-500:        #6a737d !default;
-$gray-600:        #586069 !default;
-$gray-700:        #444d56 !default;
-$gray-800:        #2f363d !default;
-$gray-900:        #24292e !default; // body font color
-
-// -------- Blue --------
-$blue-000:        #f1f8ff !default;
-$blue-100:        #dbedff !default;
-$blue-200:        #c8e1ff !default;
-$blue-300:        #79b8ff !default;
-$blue-400:        #2188ff !default;
-$blue-500:        #0366d6 !default; // Default: Passes AA with #fff
-$blue-600:        #005cc5 !default;
-$blue-700:        #044289 !default;
-$blue-800:        #032f62 !default;
-$blue-900:        #05264c !default; // Passes with 1/2/300 blues
-
-// -------- Green --------
-$green-000:       #f0fff4 !default;
-$green-100:       #dcffe4 !default;
-$green-200:       #bef5cb !default;
-$green-300:       #85e89d !default;
-$green-400:       #34d058 !default;
-$green-500:       #28a745 !default; // Default. passes AA Large
-$green-600:       #22863a !default; // Text green, passes AA on #fff
-$green-700:       #176f2c !default;
-$green-800:       #165c26 !default;
-$green-900:       #144620 !default;
-
-// -------- Yellow --------
-$yellow-000:      #fffdef !default;
-$yellow-100:      #fffbdd !default;
-$yellow-200:      #fff5b1 !default;
-$yellow-300:      #ffea7f !default;
-$yellow-400:      #ffdf5d !default;
-$yellow-500:      #ffd33d !default;
-$yellow-600:      #f9c513 !default;
-$yellow-700:      #dbab09 !default;
-$yellow-800:      #b08800 !default;
-$yellow-900:      #735c0f !default;
-
-// -------- Orange --------
-$orange-000:      #fff8f2 !default;
-$orange-100:      #ffebda !default;
-$orange-200:      #ffd1ac !default;
-$orange-300:      #ffab70 !default;
-$orange-400:      #fb8532 !default;
-$orange-500:      #f66a0a !default; // Default. passes AA Large with #fff
-$orange-600:      #e36209 !default;
-$orange-700:      #d15704 !default;
-$orange-800:      #c24e00 !default;
-$orange-900:      #a04100 !default;
-
-// -------- Red --------
-$red-000:         #ffeef0 !default;
-$red-100:         #ffdce0 !default;
-$red-200:         #fdaeb7 !default;
-$red-300:         #f97583 !default;
-$red-400:         #ea4a5a !default;
-$red-500:         #d73a49 !default; // Default. passes AA
-$red-600:         #cb2431 !default;
-$red-700:         #b31d28 !default;
-$red-800:         #9e1c23 !default;
-$red-900:         #86181d !default;
-
-// -------- Purple --------
-$purple-000:      #f5f0ff !default;
-$purple-100:      #e6dcfd !default;
-$purple-200:      #d1bcf9 !default;
-$purple-300:      #b392f0 !default;
-$purple-400:      #8a63d2 !default;
-$purple-500:      #6f42c1 !default; // passes AA with #fff
-$purple-600:      #5a32a3 !default;
-$purple-700:      #4c2889 !default;
-$purple-800:      #3a1d6e !default;
-$purple-900:      #29134e !default;
-
-// -------- Fades --------
-// Black based on same hue as $gray-900
 $black: #1b1f23 !default;
 $white: #fff !default;
-
-$black-fade-15:      rgba($black, 0.15) !default;
-$black-fade-30:      rgba($black, 0.3) !default;
-$black-fade-50:      rgba($black, 0.5) !default;
-$black-fade-70:      rgba($black, 0.7) !default;
-$black-fade-85:      rgba($black, 0.85) !default;
-
-$white-fade-15:      rgba($white, 0.15) !default;
-$white-fade-30:      rgba($white, 0.3) !default;
-$white-fade-50:      rgba($white, 0.5) !default;
-$white-fade-70:      rgba($white, 0.7) !default;
-$white-fade-85:      rgba($white, 0.85) !default;
-
-// -------- Color defaults --------
-$red:         $red-500 !default;
-$purple:      $purple-500 !default;
-$blue:        $blue-500 !default;
-$green:       $green-500 !default;
-$yellow:      $yellow-500 !default;
-$orange:      $orange-500 !default;
-
-$gray-dark:   $gray-900 !default;
-$gray-light:  $gray-400 !default;
-$gray:        $gray-500 !default;
-
-// -------- Color gradient maps --------
-
 $grays: (
-  0: $gray-000,
-  1: $gray-100,
-  2: $gray-200,
-  3: $gray-300,
-  4: $gray-400,
-  5: $gray-500,
-  6: $gray-600,
-  7: $gray-700,
-  8: $gray-800,
-  9: $gray-900,
+  0: #fafbfc,
+  1: #f6f8fa,
+  2: #e1e4e8,
+  3: #d1d5da,
+  4: #959da5,
+  5: #6a737d,
+  6: #586069,
+  7: #444d56,
+  8: #2f363d,
+  9: #24292e,
 ) !default;
+
+$gray-0: map-get($grays, 0) !default;
+$gray-000: map-get($grays, 0) !default;
+$gray-1: map-get($grays, 1) !default;
+$gray-100: map-get($grays, 1) !default;
+$gray-2: map-get($grays, 2) !default;
+$gray-200: map-get($grays, 2) !default;
+$gray-3: map-get($grays, 3) !default;
+$gray-300: map-get($grays, 3) !default;
+$gray-4: map-get($grays, 4) !default;
+$gray-400: map-get($grays, 4) !default;
+$gray-5: map-get($grays, 5) !default;
+$gray-500: map-get($grays, 5) !default;
+$gray-6: map-get($grays, 6) !default;
+$gray-600: map-get($grays, 6) !default;
+$gray-7: map-get($grays, 7) !default;
+$gray-700: map-get($grays, 7) !default;
+$gray-8: map-get($grays, 8) !default;
+$gray-800: map-get($grays, 8) !default;
+$gray-9: map-get($grays, 9) !default;
+$gray-900: map-get($grays, 9) !default;
 
 $blues: (
-  0: $blue-000,
-  1: $blue-100,
-  2: $blue-200,
-  3: $blue-300,
-  4: $blue-400,
-  5: $blue-500,
-  6: $blue-600,
-  7: $blue-700,
-  8: $blue-800,
-  9: $blue-900,
+  0: #f1f8ff,
+  1: #dbedff,
+  2: #c8e1ff,
+  3: #79b8ff,
+  4: #2188ff,
+  5: #0366d6,
+  6: #005cc5,
+  7: #044289,
+  8: #032f62,
+  9: #05264c,
 ) !default;
+
+$blue-0: map-get($blues, 0) !default;
+$blue-000: map-get($blues, 0) !default;
+$blue-1: map-get($blues, 1) !default;
+$blue-100: map-get($blues, 1) !default;
+$blue-2: map-get($blues, 2) !default;
+$blue-200: map-get($blues, 2) !default;
+$blue-3: map-get($blues, 3) !default;
+$blue-300: map-get($blues, 3) !default;
+$blue-4: map-get($blues, 4) !default;
+$blue-400: map-get($blues, 4) !default;
+$blue-5: map-get($blues, 5) !default;
+$blue-500: map-get($blues, 5) !default;
+$blue-6: map-get($blues, 6) !default;
+$blue-600: map-get($blues, 6) !default;
+$blue-7: map-get($blues, 7) !default;
+$blue-700: map-get($blues, 7) !default;
+$blue-8: map-get($blues, 8) !default;
+$blue-800: map-get($blues, 8) !default;
+$blue-9: map-get($blues, 9) !default;
+$blue-900: map-get($blues, 9) !default;
 
 $greens: (
-  0: $green-000,
-  1: $green-100,
-  2: $green-200,
-  3: $green-300,
-  4: $green-400,
-  5: $green-500,
-  6: $green-600,
-  7: $green-700,
-  8: $green-800,
-  9: $green-900,
+  0: #f0fff4,
+  1: #dcffe4,
+  2: #bef5cb,
+  3: #85e89d,
+  4: #34d058,
+  5: #28a745,
+  6: #22863a,
+  7: #176f2c,
+  8: #165c26,
+  9: #144620,
 ) !default;
+
+$green-0: map-get($greens, 0) !default;
+$green-000: map-get($greens, 0) !default;
+$green-1: map-get($greens, 1) !default;
+$green-100: map-get($greens, 1) !default;
+$green-2: map-get($greens, 2) !default;
+$green-200: map-get($greens, 2) !default;
+$green-3: map-get($greens, 3) !default;
+$green-300: map-get($greens, 3) !default;
+$green-4: map-get($greens, 4) !default;
+$green-400: map-get($greens, 4) !default;
+$green-5: map-get($greens, 5) !default;
+$green-500: map-get($greens, 5) !default;
+$green-6: map-get($greens, 6) !default;
+$green-600: map-get($greens, 6) !default;
+$green-7: map-get($greens, 7) !default;
+$green-700: map-get($greens, 7) !default;
+$green-8: map-get($greens, 8) !default;
+$green-800: map-get($greens, 8) !default;
+$green-9: map-get($greens, 9) !default;
+$green-900: map-get($greens, 9) !default;
 
 $yellows: (
-  0: $yellow-000,
-  1: $yellow-100,
-  2: $yellow-200,
-  3: $yellow-300,
-  4: $yellow-400,
-  5: $yellow-500,
-  6: $yellow-600,
-  7: $yellow-700,
-  8: $yellow-800,
-  9: $yellow-900,
+  0: #fffdef,
+  1: #fffbdd,
+  2: #fff5b1,
+  3: #ffea7f,
+  4: #ffdf5d,
+  5: #ffd33d,
+  6: #f9c513,
+  7: #dbab09,
+  8: #b08800,
+  9: #735c0f,
 ) !default;
+
+$yellow-0: map-get($yellows, 0) !default;
+$yellow-000: map-get($yellows, 0) !default;
+$yellow-1: map-get($yellows, 1) !default;
+$yellow-100: map-get($yellows, 1) !default;
+$yellow-2: map-get($yellows, 2) !default;
+$yellow-200: map-get($yellows, 2) !default;
+$yellow-3: map-get($yellows, 3) !default;
+$yellow-300: map-get($yellows, 3) !default;
+$yellow-4: map-get($yellows, 4) !default;
+$yellow-400: map-get($yellows, 4) !default;
+$yellow-5: map-get($yellows, 5) !default;
+$yellow-500: map-get($yellows, 5) !default;
+$yellow-6: map-get($yellows, 6) !default;
+$yellow-600: map-get($yellows, 6) !default;
+$yellow-7: map-get($yellows, 7) !default;
+$yellow-700: map-get($yellows, 7) !default;
+$yellow-8: map-get($yellows, 8) !default;
+$yellow-800: map-get($yellows, 8) !default;
+$yellow-9: map-get($yellows, 9) !default;
+$yellow-900: map-get($yellows, 9) !default;
 
 $oranges: (
-  0: $orange-000,
-  1: $orange-100,
-  2: $orange-200,
-  3: $orange-300,
-  4: $orange-400,
-  5: $orange-500,
-  6: $orange-600,
-  7: $orange-700,
-  8: $orange-800,
-  9: $orange-900,
+  0: #fff8f2,
+  1: #ffebda,
+  2: #ffd1ac,
+  3: #ffab70,
+  4: #fb8532,
+  5: #f66a0a,
+  6: #e36209,
+  7: #d15704,
+  8: #c24e00,
+  9: #a04100,
 ) !default;
+
+$orange-0: map-get($oranges, 0) !default;
+$orange-000: map-get($oranges, 0) !default;
+$orange-1: map-get($oranges, 1) !default;
+$orange-100: map-get($oranges, 1) !default;
+$orange-2: map-get($oranges, 2) !default;
+$orange-200: map-get($oranges, 2) !default;
+$orange-3: map-get($oranges, 3) !default;
+$orange-300: map-get($oranges, 3) !default;
+$orange-4: map-get($oranges, 4) !default;
+$orange-400: map-get($oranges, 4) !default;
+$orange-5: map-get($oranges, 5) !default;
+$orange-500: map-get($oranges, 5) !default;
+$orange-6: map-get($oranges, 6) !default;
+$orange-600: map-get($oranges, 6) !default;
+$orange-7: map-get($oranges, 7) !default;
+$orange-700: map-get($oranges, 7) !default;
+$orange-8: map-get($oranges, 8) !default;
+$orange-800: map-get($oranges, 8) !default;
+$orange-9: map-get($oranges, 9) !default;
+$orange-900: map-get($oranges, 9) !default;
 
 $reds: (
-  0: $red-000,
-  1: $red-100,
-  2: $red-200,
-  3: $red-300,
-  4: $red-400,
-  5: $red-500,
-  6: $red-600,
-  7: $red-700,
-  8: $red-800,
-  9: $red-900,
+  0: #ffeef0,
+  1: #ffdce0,
+  2: #fdaeb7,
+  3: #f97583,
+  4: #ea4a5a,
+  5: #d73a49,
+  6: #cb2431,
+  7: #b31d28,
+  8: #9e1c23,
+  9: #86181d,
 ) !default;
 
+$red-0: map-get($reds, 0) !default;
+$red-000: map-get($reds, 0) !default;
+$red-1: map-get($reds, 1) !default;
+$red-100: map-get($reds, 1) !default;
+$red-2: map-get($reds, 2) !default;
+$red-200: map-get($reds, 2) !default;
+$red-3: map-get($reds, 3) !default;
+$red-300: map-get($reds, 3) !default;
+$red-4: map-get($reds, 4) !default;
+$red-400: map-get($reds, 4) !default;
+$red-5: map-get($reds, 5) !default;
+$red-500: map-get($reds, 5) !default;
+$red-6: map-get($reds, 6) !default;
+$red-600: map-get($reds, 6) !default;
+$red-7: map-get($reds, 7) !default;
+$red-700: map-get($reds, 7) !default;
+$red-8: map-get($reds, 8) !default;
+$red-800: map-get($reds, 8) !default;
+$red-9: map-get($reds, 9) !default;
+$red-900: map-get($reds, 9) !default;
+
 $purples: (
-  0: $purple-000,
-  1: $purple-100,
-  2: $purple-200,
-  3: $purple-300,
-  4: $purple-400,
-  5: $purple-500,
-  6: $purple-600,
-  7: $purple-700,
-  8: $purple-800,
-  9: $purple-900,
+  0: #f5f0ff,
+  1: #e6dcfd,
+  2: #d1bcf9,
+  3: #b392f0,
+  4: #8a63d2,
+  5: #6f42c1,
+  6: #5a32a3,
+  7: #4c2889,
+  8: #3a1d6e,
+  9: #29134e,
 ) !default;
+
+$purple-0: map-get($purples, 0) !default;
+$purple-000: map-get($purples, 0) !default;
+$purple-1: map-get($purples, 1) !default;
+$purple-100: map-get($purples, 1) !default;
+$purple-2: map-get($purples, 2) !default;
+$purple-200: map-get($purples, 2) !default;
+$purple-3: map-get($purples, 3) !default;
+$purple-300: map-get($purples, 3) !default;
+$purple-4: map-get($purples, 4) !default;
+$purple-400: map-get($purples, 4) !default;
+$purple-5: map-get($purples, 5) !default;
+$purple-500: map-get($purples, 5) !default;
+$purple-6: map-get($purples, 6) !default;
+$purple-600: map-get($purples, 6) !default;
+$purple-7: map-get($purples, 7) !default;
+$purple-700: map-get($purples, 7) !default;
+$purple-8: map-get($purples, 8) !default;
+$purple-800: map-get($purples, 8) !default;
+$purple-9: map-get($purples, 9) !default;
+$purple-900: map-get($purples, 9) !default;
 
 $hue-maps: (
   gray: $grays,
@@ -215,3 +247,5 @@ $hue-maps: (
   red: $reds,
   purple: $purples,
 ) !default;
+
+
