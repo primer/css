@@ -9,6 +9,7 @@ for (const [name, value] of Object.entries(colors)) {
     const mapName = `${name}s`
     writeArray(mapName, value)
     for (const index of Object.keys(value)) {
+      writeVariable(`${name}-${index}`, `map-get($${mapName}, ${index})`)
       writeVariable(`${name}-${index}00`, `map-get($${mapName}, ${index})`)
     }
     hues[name] = `$${mapName}`
@@ -18,7 +19,7 @@ for (const [name, value] of Object.entries(colors)) {
   }
 }
 
-writeArray('hue-map', hues)
+writeArray('hue-maps', hues)
 
 function writeVariable(name, value) {
   write(`$${name}: ${value} !default;`)
