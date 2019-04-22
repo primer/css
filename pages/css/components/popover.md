@@ -9,7 +9,7 @@ bundle: popover
 
 Popovers are used to bring attention to specific user interface elements, typically to suggest an action or to guide users through a new experience.
 
-{:toc}
+## Table of Contents
 
 A popover consist of:
 

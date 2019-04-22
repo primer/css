@@ -9,7 +9,7 @@ bundle: forms
 
 Style individual form controls and utilize common layouts.
 
-{:toc}
+## Table of Contents
 
 Overview:
 - We reset several elements' default styles for cross browser consistency and easier manipulation later. This includes `<fieldset>`s, WebKit validation bubbles, and most textual `<input>`s.
