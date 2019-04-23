@@ -83,7 +83,6 @@
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
 
-
     // Auto varients
     .width#{$variant}-auto { width: auto !important; }
 
