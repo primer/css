@@ -4,7 +4,7 @@ import {CodeExample} from '@primer/blueprints'
 
 export const H1 = props => <Heading fontSize={6} fontWeight="light" {...props} />
 
-export default function getComponents(page = {}) {
+export default function getComponents() {
   return {
     h1: H1,
     // render links with our component
