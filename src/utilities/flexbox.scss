@@ -48,5 +48,11 @@
       flex-grow: 1;
       flex-basis: 0;
     }
+
+    .flex#{$variant}-grow-0 { flex-grow: 0 !important; }
+
+    .flex#{$variant}-order-none { order: inherit !important; }
+    .flex#{$variant}-order-1 { order: 1 !important; }
+    .flex#{$variant}-order-2 { order: 2 !important; }
   }
 }

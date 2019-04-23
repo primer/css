@@ -82,6 +82,11 @@
 
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
+
+
+    // Auto varients
+    .width#{$variant}-auto { width: auto !important; }
+
     /* Set the direction to rtl */
     .direction#{$variant}-rtl { direction: rtl !important; }
     /* Set the direction to ltr */
