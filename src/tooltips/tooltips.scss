@@ -280,9 +280,10 @@
 
 // Responsive tooltips
 //
-// Hide tooltips when primary input mechanism cannot hover
+// Hide tooltips when primary input mechanism cannot hover (default)
+// Enable tooltips for touch input with .tooltipped-touch
 @media (hover: none) {
-  .tooltipped:hover {
+  .tooltipped:not(.tooltipped-touch):hover {
     &::before,
     &::after {
       display: none;
