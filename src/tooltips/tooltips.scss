@@ -277,3 +277,15 @@
     }
   }
 }
+
+// Responsive tooltips
+//
+// Hide tooltips when primary input mechanism cannot hover
+@media (hover: none) {
+  .tooltipped:hover {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
