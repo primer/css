@@ -118,3 +118,22 @@ By default the tooltips have a slight delay before appearing. This is to keep mu
   </span>
 </div>
 ```
+
+## Tooltips for touch input
+
+**Note**: We hide tooltips when the primary input mechanism cannot hover. For example on mobile phones or tablets where the primary input method is touch.
+
+Use the `tooltipped-touch` modifier class to enable tooltips also for touch input. Most mobile browsers mimick hovering by tapping once. Try to avoid using tooltips on mobile where a user performs a certain action (buttons, links), because the tooltip will only show up after the action already happened.
+
+```html
+<div>
+  <span class="tooltipped tooltipped-e d-inline-block border p-2" aria-label="Hidden on mobile">
+    .tooltipped
+  </span>
+</div>
+<div class="mt-3">
+  <span class="tooltipped tooltipped-touch tooltipped-n d-inline-block border p-2" aria-label="Shows on mobile">
+    .tooltipped .tooltipped-touch
+  </span>
+</div>
+```
