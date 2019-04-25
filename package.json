@@ -82,7 +82,6 @@
     "klaw": "3.0.0",
     "loader-utils": "^1.1.0",
     "mdx-constant": "^0.1.0",
-    "mdx-live": "2.0.0-alpha.2",
     "metalsmith": "^2.3.0",
     "metalsmith-filter": "^1.0.2",
     "metalsmith-matters": "^1.2.0",

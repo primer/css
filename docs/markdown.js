@@ -5,7 +5,6 @@ import Outline from './Outline'
 
 export const H1 = props => <Heading fontSize={6} fontWeight="light" {...props} />
 
-
 export default function getComponents(page = {}) {
   const {outline: getOutline = () => []} = page
 
@@ -14,7 +13,7 @@ export default function getComponents(page = {}) {
     // render links with our component
     a: Link,
     // render code blocks with our wrapper around react-live
-    code: (props) => <CodeExample {...props}/>,
+    code: CodeExample,
     // render the outline for <p> tags with exactly the text "{:toc}"
     p: ({children, ...rest}) => {
       if (children === '{:toc}') {
