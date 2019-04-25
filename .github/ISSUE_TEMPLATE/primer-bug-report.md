@@ -1,6 +1,6 @@
 ---
-name: Primer bug report
-about: Create a report to help us improve primer
+name: Primer CSS bug report
+about: Create a report to help us improve Primer CSS
 
 ---
 

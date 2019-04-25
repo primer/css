@@ -43,13 +43,13 @@ Styles can be mixed and matched to achieve many different layouts, independent o
 
 ## Systematically designed for GitHub
 
-Primer is built upon systems that form the foundation of our styles such as spacing, typography, and color. This systematic approach helps ensure our styles are consistent and interoperable with each other.
+Primer CSS is built upon systems that form the foundation of our styles such as spacing, typography, and color. This systematic approach helps ensure our styles are consistent and interoperable with each other.
 
 <PrimitivesOverview />
 
-## Primer packages
+## Primer CSS packages
 
-Each component or group of styles is packaged up and distributed via npm. Primer includes 23 packages that are grouped into useful meta-packages for easy install. Each package and meta-package is independently versioned and distributed via npm, so it's easy to include all or part of Primer within your own project.
+Each component or group of styles is packaged up and distributed via npm. Primer CSS includes 23 packages that are grouped into useful meta-packages for easy install. Each package and meta-package is independently versioned and distributed via npm, so it's easy to include all or part of Primer CSS within your own project.
 
 <PrimerPackageBox meta={bundles.primer} count={Object.keys(bundles).length - 1} mb={4} />
 
@@ -69,8 +69,8 @@ Each component or group of styles is packaged up and distributed via npm. Primer
 <div class="bg-gray py-6">
   <div class="d-flex flex-wrap flex-md-nowrap px-6 gutter-lg">
     <div class="col-12 col-md-9 pr-0 pr-lg-2">
-      <h3 class="f3 text-normal m-0">Use Primer in your project</h3>
-      <p class="my-3">Pick and choose what you need. Install the entire Primer bundle or individual packages via npm.</p>
+      <h3 class="f3 text-normal m-0">Use Primer CSS in your project</h3>
+      <p class="my-3">Pick and choose what you need. Install the entire Primer CSS bundle or individual packages via npm.</p>
       <a href="/css/getting-started" class="btn btn-outline">Installation instructions</a>
     </div>
   </div>

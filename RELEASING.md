@@ -12,7 +12,7 @@
 1. Create a new release branch for the next release from `master` and name it `release-<version>`. Please use the following template for the PR description, linking to the relevant issues and/or pull requests for each change, and removing irrelevant headings:
 
     ```md
-    # Primer [Major|Minor|Patch] Release
+    # Primer CSS [Major|Minor|Patch] Release
 
     Version: 📦 **0.0.0**
     Approximate release date: 📆 DD/MM/YY
@@ -25,13 +25,13 @@
 
     ### :bug: Bug Fix
     - [ ] Description #
-    
+
     ### :nail_care: Polish
     - [ ] Description #
-    
+
     ### :memo: Documentation
     - [ ] Description #
-    
+
     ### :house: Internal
     - [ ] Description #
 
@@ -64,7 +64,7 @@
 
     Then commit and push the changes to `package.json`, `package-lock.json`, and `vendor/npm`.
 
-1. If you need to make changes to github/github due to the Primer release, do them in a branch and merge _that_ into your release branch after testing.
+1. If you need to make changes to github/github due to the Primer CSS release, do them in a branch and merge _that_ into your release branch after testing.
 
 1. Add or re-request reviewers and fix any breaking tests.
 
@@ -87,7 +87,7 @@
 
 ### Publish the release
 
-1. [Create a new release](https://github.com/primer/primer/releases/new) with tag `v<version>`.
+1. [Create a new release](https://github.com/primer/css/releases/new) with tag `v<version>`.
 
 2. Copy the changes from the [CHANGELOG] and paste them into the release notes.
 

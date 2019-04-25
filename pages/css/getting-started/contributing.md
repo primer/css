@@ -8,7 +8,7 @@ Guidelines for contributing to GitHub's CSS.
 - [Decision process for adding new styles](#decision-process-for-adding-new-styles)
 - [Step-by-step instructions for adding new styles](#step-by-step-instructions-for-adding-new-styles)
 - [Documentation structure](#documentation-structure)
-- [Primer modules](#primer-modules)
+- [Primer CSS modules](#primer-modules)
 - [Ship checklist](#ship-checklist)
 
 ## Decision process for adding new styles
@@ -72,7 +72,7 @@ Let the [design systems team](https://github.com/github/design-systems) know if 
 
 ## Documentation structure
 
-_**Note:** Documentation for Primer modules should live in the `README` of that module, see the [primer modules](#primer-modules) section below for more details. The [anatomy of a guide](#anatomy-of-a-guide) will work the same as part of a module README as well as regular markdown documentation._
+_**Note:** Documentation for Primer CSS modules should live in the `README` of that module, see the [primer modules](#primer-modules) section below for more details. The [anatomy of a guide](#anatomy-of-a-guide) will work the same as part of a module README as well as regular markdown documentation._
 
 The style guide takes a content first approach. Everything you see on the site is built from markdown files found in this folder.
 
@@ -171,7 +171,7 @@ When using code blocks for demo purposes, you can choose to render each of the b
   ```
 ```
 
-## Primer modules
+## Primer CSS modules
 
 Modules are created for all the styles we include in the Primer framework. Modules are folders with a specific structure that include CSS, a `package.json`, and other files for publishing to repositories in our GitHub Primer organization and NPM.
 
@@ -250,6 +250,6 @@ To publish, there are two requirements. First, you must be on the `master` branc
 
 #### Versioning
 
-All the individual Primer modules are [semver](http://semver.org/) versioned. This helps others know when a change is a patch, minor, or breaking change.
+All the individual Primer CSS modules are [semver](http://semver.org/) versioned. This helps others know when a change is a patch, minor, or breaking change.
 
 To understand what choice to make, you'll need to understand semver and know if one of the changes shown is a major, minor, or patch. Semver is confusing at first, so I recommend reviewing [semver](http://semver.org/) and/or ask in [#design-systems](https://github.slack.com/archives/design-systems) or and experienced open-source contributor.
