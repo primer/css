@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+echo "Reporting bundle sizes..."
+script/bundle-size-report
+
+echo "Reporting selector diffs..."
+script/selector-diff-report
