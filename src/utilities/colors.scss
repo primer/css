@@ -35,7 +35,7 @@
 // Generate a foreground and background utility for every shade of every hue
 @each $hue, $shades in $hue-maps {
   @each $index, $color in $shades {
-    .fg-#{$hue}-#{$index} { color: $color !important; }
+    .color-#{$hue}-#{$index} { color: $color !important; }
     .bg-#{$hue}-#{$index} { background-color: $color !important; }
   }
 }
