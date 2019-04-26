@@ -2,7 +2,7 @@
 set -e
 
 echo "Reporting bundle sizes..."
-script/bundle-size-report
+script/bundle-size-report --all
 
 echo "Reporting selector diffs..."
 script/selector-diff-report
