@@ -2,11 +2,11 @@
 set -e
 
 function log() {
-    echo "$@" 1>&2
+  echo "$@" 1>&2
 }
 
 function warn() {
-    echo "$@" 1>&2
+  echo "$@" 1>&2
 }
 
 pkg="@primer/css"
@@ -23,7 +23,7 @@ jq -r $key before.json > before.txt
 jq -r $key after.json > after.txt
 
 warn "[selector report] diff:"
-(diff before.txt after.txt | tee selector-diff.log) || log "(no diff!)"
+(diff {before,after}.txt | tee selector-diff.log) || log "(no diff!)"
 warn "[selector report] end"
 
 rm {before,after}.{json,txt}
