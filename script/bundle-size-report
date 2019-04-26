@@ -1,0 +1,109 @@
+#!/usr/bin/env node
+const fetch = require('node-fetch')
+const filesize = require('filesize')
+const minimist = require('minimist')
+const {green, gray, yellow, red} = require('colorette')
+const {table, getBorderCharacters} = require('table')
+
+const options = minimist(process.argv.slice(2))
+
+const DELTA = '±'
+const VERSION = options.version || 'latest'
+const QUIET = options.quiet || options.q || 0
+const SORT = options.sort || options.s || 'gzip'
+const ASCENDING = options.asc || options.a || false
+
+const {name} = require('../package.json')
+const unpkgBaseURL = `https://unpkg.com/${name}@${VERSION}/`
+
+// ensure that K and B values line up vertically
+const filesizeConfig = {symbols: {KB: 'K'}}
+const prettySize = bytes => filesize(bytes, filesizeConfig)
+const meta = require('../dist/meta.json')
+
+Promise.all(
+  Object.values(meta.bundles).map(bundle => {
+    const entry = {
+      path: bundle.css,
+      local: require(`../${bundle.stats}`)
+    }
+    return fetch(unpkgBaseURL + bundle.stats)
+      .then(res => res.json())
+      .then(stats => (entry.remote = stats))
+      .then(() => entry)
+  })
+).then(entries => {
+  const columns = [
+    {title: 'path', value: d => d.path, alignment: 'left'},
+
+    // CSS selector count
+    {title: 'selectors', value: d => d.local.selectors.total},
+    {title: DELTA, value: delta(d => d.selectors.total), id: 'selector-delta'},
+
+    // gzipped size (bytes)
+    {title: 'gzip size', value: d => prettySize(d.local.gzipSize), id: 'gzip'},
+    {title: DELTA, value: delta(d => d.gzipSize, prettySize), id: 'gzip-delta'},
+
+    // raw size (bytes)
+    {title: 'raw size', value: d => prettySize(d.local.size), id: 'size'},
+    {title: DELTA, value: delta(d => d.size, prettySize), id: 'size-delta'}
+  ]
+
+  for (const [index, column] of Object.entries(columns)) {
+    column.index = index
+  }
+
+  const header = columns.map(c => c.title)
+  const data = entries.map(entry => columns.map(c => c.value(entry)))
+
+  if (SORT) {
+    const sortColumn = columns.find(c => c.id === SORT || c.title === SORT)
+    if (sortColumn) {
+      const order = ASCENDING ? (a, b) => (a - b) : (a, b) => (b - a)
+      const {index} = sortColumn
+      data.sort((a, b) => order(a[index].value, b[index].value))
+    } else {
+      console.warn(`No such sort column: "${SORT}"! Output will not be sorted.`)
+    }
+  }
+
+  const rows = data.map(cells => cells.map(String))
+
+  console.log(table([header].concat(rows), {
+    columns,
+    columnDefault: {
+      alignment: 'right'
+    },
+    border: getBorderCharacters('norc'),
+    drawHorizontalLine(index, size) {
+      return index <= 1 || index === size
+    }
+  }))
+})
+
+function delta(getter, format = String, options = {}) {
+  const {
+    moreIsGood = false,
+    badThreshold = 1000
+  } = options
+  return entry => {
+    const local = getter(entry.local)
+    const remote = getter(entry.remote)
+    const value = local - remote
+    if (value === 0) {
+      return {
+        value,
+        toString: () => `  ${gray(0)}`
+      }
+    } else {
+      const sign = value > 0 ? '+' : '-'
+      const num = Math.abs(value)
+      const good = moreIsGood ? value > 0 : value < 0
+      const color = good ? green : value >= badThreshold ? red : yellow
+      return {
+        value,
+        toString: () => color(`${sign} ${format(num)}`)
+      }
+    }
+  }
+}
