@@ -16,6 +16,7 @@ import {repository} from '../package.json'
 import '../src/index.scss'
 
 const DocLink = props => <Link nounderline {...props} />
+const editLinkBase = `${repository}/edit/master/pages`
 
 export default class MyApp extends App {
   static async getInitialProps({Component, ctx}) {
@@ -35,7 +36,6 @@ export default class MyApp extends App {
     const node = rootPage.first(node => node.path === pathname) || {}
     const {file, meta = {}} = node || {}
     const isIndex = file.includes('index')
-    const editLinkBase = `${repository}/edit/master/pages`
     const components = getComponents(node)
 
     const Hero = file ? requirePage(file).Hero : null
