@@ -84,6 +84,9 @@ $purple-700:      #4c2889 !default;
 $purple-800:      #3a1d6e !default;
 $purple-900:      #29134e !default;
 
+// -------- Pink --------
+$pink-500: #ea4aaa;
+
 // -------- Fades --------
 // Black based on same hue as $gray-900
 $black: #1b1f23 !default;
@@ -112,3 +115,106 @@ $orange:      $orange-500 !default;
 $gray-dark:   $gray-900 !default;
 $gray-light:  $gray-400 !default;
 $gray:        $gray-500 !default;
+
+// -------- Color gradient maps --------
+
+$grays: (
+  0: $gray-000,
+  1: $gray-100,
+  2: $gray-200,
+  3: $gray-300,
+  4: $gray-400,
+  5: $gray-500,
+  6: $gray-600,
+  7: $gray-700,
+  8: $gray-800,
+  9: $gray-900,
+) !default;
+
+$blues: (
+  0: $blue-000,
+  1: $blue-100,
+  2: $blue-200,
+  3: $blue-300,
+  4: $blue-400,
+  5: $blue-500,
+  6: $blue-600,
+  7: $blue-700,
+  8: $blue-800,
+  9: $blue-900,
+) !default;
+
+$greens: (
+  0: $green-000,
+  1: $green-100,
+  2: $green-200,
+  3: $green-300,
+  4: $green-400,
+  5: $green-500,
+  6: $green-600,
+  7: $green-700,
+  8: $green-800,
+  9: $green-900,
+) !default;
+
+$yellows: (
+  0: $yellow-000,
+  1: $yellow-100,
+  2: $yellow-200,
+  3: $yellow-300,
+  4: $yellow-400,
+  5: $yellow-500,
+  6: $yellow-600,
+  7: $yellow-700,
+  8: $yellow-800,
+  9: $yellow-900,
+) !default;
+
+$oranges: (
+  0: $orange-000,
+  1: $orange-100,
+  2: $orange-200,
+  3: $orange-300,
+  4: $orange-400,
+  5: $orange-500,
+  6: $orange-600,
+  7: $orange-700,
+  8: $orange-800,
+  9: $orange-900,
+) !default;
+
+$reds: (
+  0: $red-000,
+  1: $red-100,
+  2: $red-200,
+  3: $red-300,
+  4: $red-400,
+  5: $red-500,
+  6: $red-600,
+  7: $red-700,
+  8: $red-800,
+  9: $red-900,
+) !default;
+
+$purples: (
+  0: $purple-000,
+  1: $purple-100,
+  2: $purple-200,
+  3: $purple-300,
+  4: $purple-400,
+  5: $purple-500,
+  6: $purple-600,
+  7: $purple-700,
+  8: $purple-800,
+  9: $purple-900,
+) !default;
+
+$hue-maps: (
+  gray: $grays,
+  blue: $blues,
+  green: $greens,
+  yellow: $yellows,
+  orange: $oranges,
+  red: $reds,
+  purple: $purples,
+) !default;
