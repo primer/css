@@ -19,7 +19,7 @@ Begin by initializing your project with a `package.json` file. You can read more
 
 ### Install Primer CSS
 
-Install the Primer CSS modules you wish to use by running the npm install command. This will install the module and all the dependencies into the `node_modules` directory.
+Install the Primer CSS npm package modules by running `npm install @primer/css`. This will install all of the SCSS source files into the `node_modules/@primer/css` directory.
 
 ```
 npm install primer --save
