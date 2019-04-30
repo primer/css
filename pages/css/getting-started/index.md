@@ -46,7 +46,7 @@ sass:
     - node_modules/
 ```
 
-It's best practice to import all of this scss into one file, usually named `index.scss`. From this file you'll import your Primer CSS code and any other custom code you write.
+It's best practice to import all of this scss into one file, usually named `index.scss`. From this file you'll import one or more Primer CSS bundles and any other custom code you write.
 
 ```scss
 @import "primer-core/index.scss";
