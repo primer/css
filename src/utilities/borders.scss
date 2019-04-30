@@ -32,13 +32,17 @@ $edges: (
     .border#{$variant}-0      { border: 0 !important; }
 
     /* Add a gray border to the top */
-    .border#{$variant}-top    { border-top: $border !important; }
+    .border#{$variant}-top,
+    .border#{$variant}-top-1  { border-top: $border !important; }
     /* Add a gray border to the right */
-    .border#{$variant}-right  { border-right: $border !important; }
+    .border#{$variant}-right,
+    .border#{$variant}-right-1 { border-right: $border !important; }
     /* Add a gray border to the bottom */
-    .border#{$variant}-bottom { border-bottom: $border !important; }
+    .border#{$variant}-bottom,
+    .border#{$variant}-bottom-1 { border-bottom: $border !important; }
     /* Add a gray border to the left */
-    .border#{$variant}-left   { border-left: $border !important; }
+    .border#{$variant}-left,
+    .border#{$variant}-left-1 { border-left: $border !important; }
 
     /* Remove the top border */
     .border#{$variant}-top-0    { border-top: 0 !important; }
