@@ -17,7 +17,7 @@ Primer CSS requires npm version 3 or above. You can check which version you have
 
 Begin by initializing your project with a `package.json` file. You can read more on how to do this [in the npm documentation](https://docs.npmjs.com/getting-started/using-a-package.json#creating-a-packagejson).
 
-### Install Primer CSS modules
+### Install Primer CSS
 
 Install the Primer CSS modules you wish to use by running the npm install command. This will install the module and all the dependencies into the `node_modules` directory.
 
