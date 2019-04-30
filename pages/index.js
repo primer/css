@@ -1,2 +1,2 @@
-import {redirect} from '@primer/blueprints/dist/next-components-index.umd.js'
+import {redirect} from '@primer/blueprints/next-components'
 export default redirect('/css')
