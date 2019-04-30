@@ -198,10 +198,18 @@ You can also add rounded corners to each edge (top, right, bottom, left) with th
 
 ## Responsive borders
 
-Top, right, bottom, and left border utilities are can be used responsively to add or remove borders to an element at different screensizes.
+You can adjust border widths on all sides or each side individually with responsive border utilities:
+
+* `border-(sm|md|lg|xl)-1` adds borders on all sides at and above the breakpoint. The `border-(sm|md|lg|xl)` shorthand is also supported.
+* `border-(sm|md|lg|xl)-0` removes borders from all sides at and above the breakpoint.
+* `border-(sm|md|lg|xl)-(top|right|bottom|left)-1` adds a border on the given side at and above the breakpoint.
+* `border-(sm|md|lg|xl)-(top|right|bottom|left)-0` the border from the given side at and above the breakpoint.
 
 ```html
 <div class="border-top border-sm-right border-md-bottom border-lg-top-0">
-  .border-top-0
+  <span class="d-md-none">.border-top</span>
+  <span class="d-md-none">.border-sm-right</span>
+  <span class="d-none d-md-inline">.border-md-bottom</span>
+  <span class="d-none d-lg-inline">.border-lg-top-0</span>
 </div>
 ```
