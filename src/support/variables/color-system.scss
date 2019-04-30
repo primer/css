@@ -218,6 +218,19 @@ $purples: (
   9: $purple-900,
 ) !default;
 
+$pinks: (
+  0: $pink-000,
+  1: $pink-100,
+  2: $pink-200,
+  3: $pink-300,
+  4: $pink-400,
+  5: $pink-500,
+  6: $pink-600,
+  7: $pink-700,
+  8: $pink-800,
+  9: $pink-900,
+) !default;
+
 $hue-maps: (
   gray: $grays,
   blue: $blues,
@@ -226,4 +239,5 @@ $hue-maps: (
   orange: $oranges,
   red: $reds,
   purple: $purples,
+  pink: $pinks
 ) !default;
