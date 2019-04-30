@@ -58,7 +58,7 @@ It's best practice to import all of this scss into one file, usually named `inde
 Here's an example of how it might look if you installed only a few Primer CSS components with some custom variable overrides. The `$blue` uses the default primer blue in the text utilities, then the new blue in `"custom-that-uses-primer-variables.scss"` and `.foo`.
 
 ```scss
-@import "primer-utilities/index.scss";
+@import "@primer/css/utilities/index.scss";
 @import "primer-buttons/index.scss";
 
 // Import color variables for custom code
