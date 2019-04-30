@@ -1,6 +1,6 @@
 import React from 'react'
 import {Heading, Link} from '@primer/components'
-import {CodeExample} from '@primer/blueprints/dist/next-components-index.umd.js'
+import {CodeExample} from '@primer/blueprints/next-components'
 import Outline from './Outline'
 
 export const H1 = props => <Heading fontSize={6} fontWeight="light" {...props} />
