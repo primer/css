@@ -49,7 +49,7 @@ sass:
 It's best practice to import all of this scss into one file, usually named `index.scss`. From this file you'll import one or more Primer CSS bundles and any other custom code you write.
 
 ```scss
-@import "primer-core/index.scss";
+@import "@primer/css/core/index.scss";
 // These files live in the same directory as the index file.
 @import "./custom-1.scss";
 @import "./custom-2.scss";
