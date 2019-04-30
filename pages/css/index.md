@@ -49,7 +49,7 @@ Primer CSS is built upon systems that form the foundation of our styles such as 
 
 ## Primer CSS bundles
 
-Each component or group of styles is packaged up and distributed via npm. Primer CSS includes 23 packages that are grouped into useful meta-packages for easy install. Each package and meta-package is independently versioned and distributed via npm, so it's easy to include all or part of Primer CSS within your own project.
+Each component or group of styles is distributed via npm as a separate CSS file, or "bundle". We also distribute "meta-packages" for core (shared) elements, product-specific (github.com) styles, and marketing.
 
 <PrimerPackageBox meta={bundles.primer} count={Object.keys(bundles).length - 1} mb={4} />
 
