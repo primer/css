@@ -22,7 +22,7 @@ Begin by initializing your project with a `package.json` file. You can read more
 Install the Primer CSS npm package modules by running `npm install @primer/css`. This will install all of the SCSS source files into the `node_modules/@primer/css` directory.
 
 ```
-npm install primer --save
+npm install @primer/css --save
 ```
 
 ### For a Jekyll site
