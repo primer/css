@@ -4,7 +4,7 @@ import {MDXProvider} from '@mdx-js/tag'
 import Head from 'next/head'
 import {BaseStyles, BorderBox, Box, Flex, theme} from '@primer/components'
 import {PackageHeader} from '../docs/components'
-import {Header, JumpNav, Section, Router, RouteMatch, SectionLink, SideNav} from '@primer/blueprints'
+import {Header, MarkdownHeading, JumpNav, SideNav} from '@primer/blueprints'
 import {NavList} from '@primer/blueprints/next-components'
 import getComponents from '../docs/markdown'
 import documents from '../searchIndex'
@@ -58,7 +58,7 @@ export default class MyApp extends App {
               {Hero ? <Hero /> : null}
               <Box color="gray.9" maxWidth={['auto', 'auto', 'auto', CONTENT_MAX_WIDTH]} px={6} mx="auto" my={6}>
                 <div className="markdown-body">
-                  {!meta.hero && meta.title ? <h1>{meta.title}</h1> : null}
+                  {!meta.hero && meta.title ? <MarkdownHeading>{meta.title}</MarkdownHeading> : null}
                   <PackageHeader {...meta} />
                   <MDXProvider components={components}>
                     <Component {...page} />
