@@ -3,7 +3,7 @@ title: Getting started
 path: getting-started/index
 ---
 
-Our CSS framework, Primer CSS, is [open-sourced on GitHub](https://github.com/primer/primer) and [hosted on npm](https://www.npmjs.com/package/primer). Our modules are grouped into three packages: [primer-core](https://github.com/primer/primer/tree/master/modules/primer-core), [primer-product](https://github.com/primer/primer/tree/master/modules/primer-product), and [primer-marketing](https://github.com/primer/primer/tree/master/modules/primer-marketing). `primer-core` contains packages used in both product (github.com) and marketing (logged out homepage). To install all of primer, you can use [primer](https://github.com/primer/primer) which is a grouping of core, product and marketing.
+Primer CSS is [open-sourced on GitHub](https://github.com/primer/primer) and [available on npm](https://www.npmjs.com/package/primer).
 
 ## Installing via npm
 
