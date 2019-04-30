@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@octokit/rest": "^16"
+  }
+}

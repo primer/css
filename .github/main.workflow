@@ -1,11 +1,16 @@
 workflow "lint, test, deploy, publish" {
   on = "push"
   resolves = [
+    "changelog",
     "lint",
     "test",
     "publish",
     "deploy",
   ]
+}
+
+action "changelog" {
+  uses = "./actions/changelog"
 }
 
 action "install" {
