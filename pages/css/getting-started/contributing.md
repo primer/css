@@ -8,7 +8,7 @@ Guidelines for contributing to GitHub's CSS.
 - [Decision process for adding new styles](#decision-process-for-adding-new-styles)
 - [Step-by-step instructions for adding new styles](#step-by-step-instructions-for-adding-new-styles)
 - [Documentation structure](#documentation-structure)
-- [Primer CSS modules](#primer-modules)
+- [Primer CSS modules](#primer-css-modules)
 - [Ship checklist](#ship-checklist)
 
 ## Decision process for adding new styles
