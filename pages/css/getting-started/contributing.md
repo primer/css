@@ -250,6 +250,6 @@ To publish, there are two requirements. First, you must be on the `master` branc
 
 #### Versioning
 
-All the individual Primer CSS modules are [semver](http://semver.org/) versioned. This helps others know when a change is a patch, minor, or breaking change.
+Primer CSS follows [semantic versioning](http://semver.org/) conventions. This helps others know when a change is a patch, minor, or breaking change.
 
 To understand what choice to make, you'll need to understand semver and know if one of the changes shown is a major, minor, or patch. Semver is confusing at first, so I recommend reviewing [semver](http://semver.org/) and/or ask in [#design-systems](https://github.slack.com/archives/design-systems) or and experienced open-source contributor.
