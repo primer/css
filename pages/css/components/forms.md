@@ -50,7 +50,7 @@ All our inputs and buttons side-by-side for easy testing of sizing and alignment
 
 #### Example form
 
-Form controls in Primer currently have no basic layout specified (this is by design). You'll need to use `<fieldset>`s, `<div>`s, or other elements and styles to rearrange them.
+Form controls in Primer CSS currently have no basic layout specified (this is by design). You'll need to use `<fieldset>`s, `<div>`s, or other elements and styles to rearrange them.
 
 ```html
 <form>
@@ -125,7 +125,7 @@ Webkit sometimes gets confused and tries to add an icon/dropdown to autofill con
 
 #### Selects
 
-Primer adds light `height` and `vertical-align` styles to `<select>`s for all browsers to render them consistently with textual inputs.
+Primer CSS adds light `height` and `vertical-align` styles to `<select>`s for all browsers to render them consistently with textual inputs.
 
 ```html
 <form>

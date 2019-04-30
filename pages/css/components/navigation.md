@@ -7,7 +7,7 @@ bundle: navigation
 ---
 
 
-Primer comes with several navigation components. Some were designed with singular purposes, while others were design to be more flexible and appear quite frequently.
+Primer CSS comes with several navigation components. Some were designed with singular purposes, while others were design to be more flexible and appear quite frequently.
 
 ## Table of Contents
 
@@ -317,5 +317,3 @@ You can also use a `subnav-search-context` to display search help in a select me
   </div>
 </div>
 ```
-
-
