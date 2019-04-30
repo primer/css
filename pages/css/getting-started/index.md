@@ -7,7 +7,7 @@ Primer CSS is [open-sourced on GitHub](https://github.com/primer/primer) and [av
 
 ## Installing via npm
 
-We recommend using npm to install Primer CSS because of how easy npm is for managing dependencies.
+We recommend installing Primer CSS with npm: `npm install --save @primer/css`.
 
 ### Before you start
 
