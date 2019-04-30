@@ -11,7 +11,7 @@ We recommend using npm to install Primer CSS because of how easy npm is for mana
 
 ### Before you start
 
-Primer CSS packages require npm version 3 or above. You can check what version you have by running `npm -v`. If you have a version that's older than 3.0, you can update it by running `npm install npm@latest -g`. For more info, read the [npm install docs](https://docs.npmjs.com/getting-started/installing-node).
+Primer CSS requires npm version 3 or above. You can check which version you have by running `npm -v`. If you have a version that's older than 3.0, you can update it with `npm install npm@latest -g`. For more info, read the [npm install docs](https://docs.npmjs.com/getting-started/installing-node).
 
 ### Initialize npm project
 
