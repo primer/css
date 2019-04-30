@@ -207,9 +207,9 @@ You can adjust border widths on all sides or each side individually with respons
 
 ```html
 <div class="border-top border-sm-right border-md-bottom border-lg-top-0">
-  <span class="d-md-none">.border-top</span>
-  <span class="d-md-none">.border-sm-right</span>
-  <span class="d-none d-md-inline">.border-md-bottom</span>
-  <span class="d-none d-lg-inline">.border-lg-top-0</span>
+  .border-top
+  <span class="d-none d-sm-inline">.border-sm-right </span>
+  <span class="d-none d-md-inline">.border-md-bottom </span>
+  <span class="d-none d-lg-inline">.border-lg-top-0 </span>
 </div>
 ```
