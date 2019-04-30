@@ -84,7 +84,7 @@ Don't forget to add the compiled CSS to the `<head>` section of your page.
 
 ## Using Primer CSS on a static site
 
-You won't need to install any node modules for a static site, you can use the built CSS. The best thing to do is to [download the built CSS](https://unpkg.com/primer/build/build.css) from the npm module and host it yourself. If that's not an option, you can include a CDN link in your html:
+You won't need to install any node modules or Sass compilers for a static site; you can use the built CSS. The best thing to do is to [download the built CSS](https://unpkg.com/@primer/css/dist/primer.css) from the [unpkg.com](https://unpkg.com) and host it yourself. If that's not an option, you can include a CDN link in your HTML:
 
 ```html inert=true
 <link href="https://unpkg.com/primer/build/build.css" rel="stylesheet">
