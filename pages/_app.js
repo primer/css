@@ -4,7 +4,8 @@ import {MDXProvider} from '@mdx-js/tag'
 import Head from 'next/head'
 import {BaseStyles, BorderBox, Box, Flex, theme} from '@primer/components'
 import {PackageHeader} from '../docs/components'
-import {Header, JumpNav, Section, RouteMatch, SectionLink, SideNav} from '@primer/blueprints'
+import {Header, JumpNav, Section, Router, RouteMatch, SectionLink, SideNav} from '@primer/blueprints'
+import {NavList} from '@primer/blueprints/next-components'
 import getComponents from '../docs/markdown'
 import documents from '../searchIndex'
 import {config, requirePage, rootPage} from '../docs/utils'
@@ -27,7 +28,6 @@ export default class MyApp extends App {
     // strip the trailing slash
     const pathname = this.props.router.pathname.replace(/\/$/, '')
     const {Component, page} = this.props
-
     const node = rootPage.first(node => node.path === pathname) || {}
     const {file, meta = {}} = node || {}
     const components = getComponents(node)
@@ -83,19 +83,13 @@ export default class MyApp extends App {
               borderTop={[1, 1, 0, 0]}
             >
               <SideNav>
-                <Section path="/css/getting-started" />
-                <Section path="/css/principles" />
-                <Section path="/css/tools" />
-                <Section path="/css/whats-new" />
-                <RouteMatch path="/css">
-                  <Section>
-                    <SectionLink color='black' href="status-key" />
-                  </Section>
-                  <Section path="support" />
-                  <Section path="utilities" />
-                  <Section path="objects" />
-                  <Section path="components" />
-                </RouteMatch>
+                <NavList currentPath={pathname} path="/css/getting-started" />
+                <NavList currentPath={pathname} path="/css/tools" />
+                <NavList currentPath={pathname} path="/css/principles" />
+                <NavList currentPath={pathname} path="/css/support" />
+                <NavList currentPath={pathname} path="/css/utilities" />
+                <NavList currentPath={pathname} path="/css/objects" />
+                <NavList currentPath={pathname} path="/css/components" />
               </SideNav>
             </BorderBox>
           </Flex>
