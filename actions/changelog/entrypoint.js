@@ -34,7 +34,7 @@ Toolkit.run(async tools => {
     Object.assign(config, args)
 
     const closed = await getJSON(tools.github.pulls.list, {owner, repo, head: branch, state: 'closed'})
-    tools.log.debug(`Got closed:`, closed)
+    tools.log.debug(`Got %d closed PRs`, closed.length)
     const pulls = []
     for (const pull of closed) {
       const merged = await getJSON(tools.github.pulls.checkIfMerged, {
