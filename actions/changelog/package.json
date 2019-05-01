@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "@octokit/rest": "^16"
+    "actions-toolkit": "^2.0.0"
   }
 }
