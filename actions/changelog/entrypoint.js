@@ -6,6 +6,7 @@ const DEFAULT_CONFIG = require('./default-config')
 
 Toolkit.run(async tools => {
   const {ref} = tools.context
+
   if (!ref) {
     tools.log.info(`This doesn't appear to be a PR; bailing.`, tools.context)
     return
@@ -16,6 +17,12 @@ Toolkit.run(async tools => {
   onCommand(tools, async args => {
     const branch = ref.replace('refs/heads/', '')
     const {owner, repo} = tools.context.repo
+    const pullContext = tools.context.issue.number
+      ? tools.context.issue
+      : await tools.github.pulls
+          .list({owner, repo, head: branch, state: 'open'})
+          .then(res => res.data[0])
+    tools.log.info(`pull context:`, pullContext)
 
     const config = {}
     // apply the default config
@@ -114,7 +121,7 @@ ${'```'}
       .createComment({
         owner,
         repo,
-        issue_number: tools.context.issue.number,
+        issue_number: pullContext.number,
         body: message
       })
       .then(getData)
