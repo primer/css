@@ -110,12 +110,11 @@ ${JSON.stringify(changes, null, 2)}
 ${'```'}
 `
 
-    const added = await tools.github.pulls
+    const added = await tools.github.issues
       .createComment({
         owner,
         repo,
-        pull_number: tools.context.issue.number,
-        commit_id: tools.context.sha,
+        issue_number: tools.context.issue.number,
         body: message
       })
       .then(getData)
