@@ -11,6 +11,8 @@ Toolkit.run(async tools => {
     return
   }
 
+  const getData = res => res.data
+
   onCommand(tools, async args => {
     const branch = ref.replace('refs/heads/', '')
     const {owner, repo} = tools.context.repo
@@ -33,16 +35,21 @@ Toolkit.run(async tools => {
     // and lastly, any arguments passed in the slash command...
     Object.assign(config, args)
 
-    const closed = await getJSON(tools.github.pulls.list, {owner, repo, head: branch, state: 'closed'})
+    const closed = await tools.github.pulls.list({owner, repo, head: branch, state: 'closed'}).then(getData)
     tools.log.debug(`Got %d closed PRs`, closed.length)
     const pulls = []
     for (const pull of closed) {
       tools.log.pending(`Checking if #${pull.number} is merged...`)
-      const merged = await getJSON(tools.github.pulls.checkIfMerged, {
-        owner,
-        repo,
-        pull_number: pull.number
-      })
+
+      const merged = await tools.github.pulls
+        .checkIfMerged({
+          owner,
+          repo,
+          pull_number: pull.number
+        })
+        .then(() => true)
+        .catch(() => false)
+
       tools.log.info(`#${pull.number} merged:`, merged)
       if (merged) {
         pulls.push(pull)
@@ -72,11 +79,13 @@ Toolkit.run(async tools => {
           }
           categorized = true
           tools.log.pending(`Getting commits for #${pull.number}...`)
-          const commits = await getJSON(tools.github.pulls.listCommits, {
-            owner,
-            repo,
-            pull_number: pull.number
-          })
+          const commits = await tools.github.pulls
+            .listCommits({
+              owner,
+              repo,
+              pull_number: pull.number
+            })
+            .then(getData)
           tools.log.info(`Got %d commits for #${pull.number}`, commits.length)
           for (const commit of commits) {
             committers[commit.author.email] = true
@@ -102,12 +111,14 @@ ${JSON.stringify(changes, null, 2)}
 ${'```'}
 `
 
-    const added = await getJSON(tools.github.pulls.createComment, {
-      owner,
-      repo,
-      pull_number: tools.context.issue.number,
-      body: message
-    })
+    const added = await tools.github.pulls
+      .createComment({
+        owner,
+        repo,
+        pull_number: tools.context.issue.number,
+        body: message
+      })
+      .then(getData)
 
     tools.log.debug('added?', added)
   }),
@@ -115,10 +126,6 @@ ${'```'}
       event: ['push']
     }
 })
-
-async function getJSON(fetch, ...args) {
-  return fetch(...args).then(res => res.data)
-}
 
 function onCommand(tools, fn) {
   return fn({}) // FIXME: tools.command('changelog', fn)
