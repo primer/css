@@ -5,14 +5,14 @@ const {Toolkit} = require('actions-toolkit')
 const DEFAULT_CONFIG = require('./default-config')
 
 Toolkit.run(async tools => {
-  const {ref} = tools.context
+  const {ref, issue} = tools.context
 
   if (!ref) {
     tools.log.info(`This doesn't appear to be a PR; bailing.`, tools.context)
     return
   }
 
-  const branch = ref.replace('refs/heads/', '')
+  let branch = ref.replace('refs/heads/', '')
 
   const config = {}
   // apply the default config
@@ -36,7 +36,10 @@ Toolkit.run(async tools => {
     // and lastly, any arguments passed in the slash command...
     Object.assign(config, args)
 
-    const commentContext = await getCommentContext({branch, args})
+    if (args.branch) {
+      tools.log.info(`Listing pulls for branch "${args.branch}", from /command args:`, args)
+      branch = args.branch
+    }
 
     const closed = await tools.github.pulls
       .list({owner, repo, head: branch, state: 'closed'})
@@ -73,7 +76,7 @@ ${'```'}
       .createComment({
         owner,
         repo,
-        issue_number: commentContext.number,
+        issue_number: issue.number,
         body: message
       })
       .then(res => {
@@ -171,34 +174,6 @@ ${'```'}
       categories,
       committers: Array.from(committers)
     }
-  }
-
-  async function getCommentContext({branch, args}) {
-    const {issue} = tools.context
-    const {owner, repo} = tools.context.repo
-    if (issue.number) {
-      return issue
-    } else if (args.branch) {
-      return getPullForBranch({owner, repo, branch})
-    } else if (args.pull) {
-      return getPullByNumber({owner, repo, number: args.pull})
-    }
-  }
-
-  async function getPullByNumber({owner, repo, number}) {
-    return await tools.github.pulls.get({owner, repo, pull_number: number}).then(getData)
-  }
-
-  async function getPullForBranch({owner, repo, branch}) {
-    return await tools.github.pulls
-      .list({
-        owner,
-        repo,
-        head: branch,
-        state: 'open'
-      })
-      .then(getData)
-      .then(list => list[0])
   }
 })
 
