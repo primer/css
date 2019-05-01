@@ -9,7 +9,7 @@ workflow "lint, test, deploy, publish" {
 }
 
 workflow "comment: /changelog" {
-  on = ["issue_comment", "push"]
+  on = "push"
   resolves = "changelog"
 }
 
