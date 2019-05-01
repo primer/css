@@ -3,26 +3,26 @@ title: Getting started
 path: getting-started/index
 ---
 
-Our CSS framework, Primer, is [open-sourced on GitHub](https://github.com/primer/primer) and [hosted on npm](https://www.npmjs.com/package/primer). Our modules are grouped into three packages: [primer-core](https://github.com/primer/primer/tree/master/modules/primer-core), [primer-product](https://github.com/primer/primer/tree/master/modules/primer-product), and [primer-marketing](https://github.com/primer/primer/tree/master/modules/primer-marketing). `primer-core` contains packages used in both product (github.com) and marketing (logged out homepage). To install all of primer, you can use [primer](https://github.com/primer/primer) which is a grouping of core, product and marketing.
+Primer CSS is [open-sourced on GitHub](https://github.com/primer/primer) and [available on npm](https://www.npmjs.com/package/primer).
 
 ## Installing via npm
 
-We recommend using npm to install primer because of how easy npm is for managing dependencies.
+We recommend installing Primer CSS with npm: `npm install --save @primer/css`.
 
 ### Before you start
 
-Primer packages require npm version 3 or above. You can check what version you have by running `npm -v`. If you have a version that's older than 3.0, you can update it by running `npm install npm@latest -g`. For more info, read the [npm install docs](https://docs.npmjs.com/getting-started/installing-node).
+Primer CSS requires npm version 3 or above. You can check which version you have by running `npm -v`. If you have a version that's older than 3.0, you can update it with `npm install npm@latest -g`. For more info, read the [npm install docs](https://docs.npmjs.com/getting-started/installing-node).
 
 ### Initialize npm project
 
 Begin by initializing your project with a `package.json` file. You can read more on how to do this [in the npm documentation](https://docs.npmjs.com/getting-started/using-a-package.json#creating-a-packagejson).
 
-### Install primer modules
+### Install Primer CSS
 
-Install the primer modules you wish to use by running the npm install command. This will install the module and all the dependencies into the `node_modules` directory.
+Install the Primer CSS npm package modules by running `npm install @primer/css`. This will install all of the SCSS source files into the `node_modules/@primer/css` directory.
 
 ```
-npm install primer --save
+npm install @primer/css --save
 ```
 
 ### For a Jekyll site
@@ -46,19 +46,19 @@ sass:
     - node_modules/
 ```
 
-It's best practice to import all of this scss into one file, usually named `index.scss`. From this file you'll import your primer code and any other custom code you write.
+It's best practice to import all of this scss into one file, usually named `index.scss`. From this file you'll import one or more Primer CSS bundles and any other custom code you write.
 
 ```scss
-@import "primer-core/index.scss";
+@import "@primer/css/core/index.scss";
 // These files live in the same directory as the index file.
 @import "./custom-1.scss";
 @import "./custom-2.scss";
 ```
 
-Here's an example of how it might look if you installed only a few primer components with some custom variable overrides. The `$blue` uses the default primer blue in the text utilities, then the new blue in `"custom-that-uses-primer-variables.scss"` and `.foo`.
+Here's an example of how it might look if you installed only a few Primer CSS components with some custom variable overrides. The `$blue` uses the default primer blue in the text utilities, then the new blue in `"custom-that-uses-primer-variables.scss"` and `.foo`.
 
 ```scss
-@import "primer-utilities/index.scss";
+@import "@primer/css/utilities/index.scss";
 @import "primer-buttons/index.scss";
 
 // Import color variables for custom code
@@ -82,9 +82,9 @@ Don't forget to add the compiled CSS to the `<head>` section of your page.
 <link href="path/to/style.css" rel="stylesheet">
 ```
 
-## Using primer on a static site
+## Using Primer CSS on a static site
 
-You won't need to install any node modules for a static site, you can use the built CSS. The best thing to do is to [download the built CSS](https://unpkg.com/primer/build/build.css) from the npm module and host it yourself. If that's not an option, you can include a CDN link in your html:
+You won't need to install any node modules or Sass compilers for a static site; you can use the built CSS. The best thing to do is to [download the built CSS](https://unpkg.com/@primer/css/dist/primer.css) from the [unpkg.com](https://unpkg.com) and host it yourself. If that's not an option, you can include a CDN link in your HTML:
 
 ```html inert=true
 <link href="https://unpkg.com/primer/build/build.css" rel="stylesheet">
