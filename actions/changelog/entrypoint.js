@@ -12,40 +12,86 @@ Toolkit.run(async tools => {
     return
   }
 
+  const config = {}
+  // apply the default config
+  Object.assign(config, DEFAULT_CONFIG)
+
+  // apply config from package.json under the "changelog" key
+  try {
+    Object.assign(config, tools.config('changelog'))
+  } catch (error) {
+    tools.log.info(`No "changelog" config found; using the default`)
+  }
+
+  // apply arguments to the action itself, so you can do this:
+  // args = ["--labels.internal=internal"]
+  Object.assign(config, tools.arguments)
+
   const getData = res => res.data
+  const {owner, repo} = tools.context.repo
 
   onCommand(tools, async args => {
-    const branch = ref.replace('refs/heads/', '')
-    const {owner, repo} = tools.context.repo
-    const pullContext = tools.context.issue.number
-      ? tools.context.issue
-      : await tools.github.pulls
-          .list({owner, repo, head: branch, state: 'open'})
-          .then(res => res.data[0])
-    tools.log.info(`pull context:`, pullContext)
-
-    const config = {}
-    // apply the default config
-    Object.assign(config, DEFAULT_CONFIG)
-
-    // apply config from package.json under the "changelog" key
-    try {
-      Object.assign(config, tools.config('changelog'))
-    } catch (error) {
-      tools.log.info(`No "changelog" config found; using the default`)
-    }
-
-    // apply arguments to the action itself, so you can do this:
-    // args = ["--labels.internal=internal"]
-    Object.assign(config, tools.arguments)
-
     // and lastly, any arguments passed in the slash command...
     Object.assign(config, args)
 
-    const closed = await tools.github.pulls.list({owner, repo, head: branch, state: 'closed'}).then(getData)
+    const branch = ref.replace('refs/heads/', '')
+    const pullContext = tools.context.issue.number
+      ? tools.context.issue
+      : await tools.github.pulls.list({owner, repo, head: branch, state: 'open'}).then(res => res.data[0])
+
+    if (pullContext) {
+      tools.log.info(`Pull context: #${pullContext.number}`)
+    } else {
+      tools.log.fatal(`No pull context found for this command; bailing! issue context:`, tools.context.issue)
+      return
+    }
+
+    const closed = await tools.github.pulls
+      .list({owner, repo, head: branch, state: 'closed'})
+      .then(getData)
+      .catch(() => [])
     tools.log.debug(`Found %d closed PRs`, closed.length)
+
+    const changes = await getChanges(closed)
+
+    const message = `
+Hi, here's the changelog for this pull request:
+
+${'```json'}
+${JSON.stringify(changes, null, 2)}
+${'```'}
+`
+
+    tools.log.debug(`Changes:`, changes)
+    tools.log.debug(`Message:`, message)
+    return
+
+    /*
+    const added = await tools.github.issues
+      .createComment({
+        owner,
+        repo,
+        issue_number: pullContext.number,
+        body: message
+      })
+      .then(getData)
+
+    tools.log.debug('added?', added)
+    */
+  })
+
+  async function getChanges(prs) {
+    if (!prs.length) {
+      return [
+        {
+          category: {title: 'No PRs in which to find changes'},
+          pulls: []
+        }
+      ]
+    }
+
     const pulls = []
-    for (const pull of closed) {
+    for (const pull of prs) {
       const merged = await tools.github.pulls
         .checkIfMerged({
           owner,
@@ -61,7 +107,7 @@ Toolkit.run(async tools => {
         // tools.log.info(`#${pull.number} not merged; skipping`)
       }
     }
-    tools.log.debug(`Found %d merged PRs (%d skipped)`, pulls.length, closed.length - pulls.length)
+    tools.log.debug(`Found %d merged PRs (%d skipped)`, pulls.length, prs.length - pulls.length)
 
     const groups = {}
     const committers = {}
@@ -99,6 +145,7 @@ Toolkit.run(async tools => {
           }
         }
       }
+
       if (categorized) {
         tools.log.success(`Categorized #${pull.number} as "${categorized}"`)
       } else {
@@ -106,36 +153,14 @@ Toolkit.run(async tools => {
       }
     }
 
-    const changes = Object.entries(groups).map(([categoryId, pulls]) => {
+    return Object.entries(groups).map(([categoryId, pulls]) => {
       const category = config.categories[categoryId] || {title: categoryId}
       return {
         category,
         pulls
       }
     })
-
-    const message = `
-Hi, here's the changelog for this pull request:
-
-${'```json'}
-${JSON.stringify(changes, null, 2)}
-${'```'}
-`
-
-    const added = await tools.github.issues
-      .createComment({
-        owner,
-        repo,
-        issue_number: pullContext.number,
-        body: message
-      })
-      .then(getData)
-
-    tools.log.debug('added?', added)
-  }),
-    {
-      event: ['push']
-    }
+  }
 })
 
 function onCommand(tools, fn) {
