@@ -6,7 +6,6 @@ const DEFAULT_CONFIG = require('./default-config')
 
 Toolkit.run(async tools => {
   const {ref, issue} = tools.context
-  tools.log.info(`Issue context:`, issue)
 
   if (!ref) {
     tools.log.info(`This doesn't appear to be a PR; bailing.`, tools.context)
@@ -14,6 +13,7 @@ Toolkit.run(async tools => {
   }
 
   let branch = ref.replace('refs/heads/', '')
+  tools.log.info(`Branch: "${branch}"; issue context:`, issue)
 
   const config = {}
   // apply the default config
@@ -58,15 +58,10 @@ Toolkit.run(async tools => {
       .then(getData)
       .catch(() => [])
 
-    const merged = await closed.filter(async pull => {
-      return await tools.github.pulls
-        .checkIfMerged({owner, repo, pull_number: pull.number})
-        .then(() => true)
-        .catch(() => false)
-    })
+    const merged = closed.length ? await filterMergedPulls(closed) : []
     tools.log.debug(`Found %d merged PRs (out of %d in closed state)`, merged.length, closed.length)
 
-    const {categories, committers} = await getChanges(merged)
+    const {categories = [], committers = []} = await getChanges(merged)
 
     tools.log.debug(`Changes:`, categories)
     tools.log.debug(`Committers:`, committers)
@@ -101,12 +96,8 @@ ${'```'}
 
   async function getChanges(pulls) {
     if (!pulls.length) {
-      return [
-        {
-          category: {title: 'No PRs in which to find changes'},
-          pulls: []
-        }
-      ]
+      tools.log.warn(`No pulls from which to get changes!`)
+      return {}
     }
 
     const groups = {}
@@ -186,6 +177,15 @@ ${'```'}
       categories,
       committers: Array.from(committers)
     }
+  }
+
+  async function filterMergedPulls(pulls) {
+    return await pulls.filter(async pull => {
+      return await tools.github.pulls
+        .checkIfMerged({owner, repo, pull_number: pull.number})
+        .then(() => true)
+        .catch(() => false)
+    })
   }
 })
 
