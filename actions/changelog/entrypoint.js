@@ -12,7 +12,7 @@ Toolkit.run(async tools => {
     return
   }
 
-  tools.command('changelog', async args => {
+  onCommand(tools, async args => {
     const base = ref.replace('refs/heads/', '')
     const {owner, repo} = tools.context.repo
 
@@ -35,6 +35,7 @@ Toolkit.run(async tools => {
     Object.assign(config, args)
 
     const closed = await tools.github.pulls.list({owner, repo, base, state: 'closed'})
+    tools.log.info(`Got %d closed PRs`, closed.length)
     const pulls = []
     for (const pull of closed) {
       const merged = await tools.github.pulls.checkIfMerged({
@@ -46,6 +47,7 @@ Toolkit.run(async tools => {
         pulls.push(pull)
       }
     }
+    tools.log.info(`Got %d merged PRs`, pulls.length)
 
     const groups = {}
     const committers = {}
@@ -105,5 +107,12 @@ ${'```'}
     })
 
     tools.log.info(`added? ${JSON.stringify(added, null, 2)}`)
-  })
+  }),
+  {
+    event: ['push']
+  }
 })
+
+function onCommand(tools, fn) {
+  return fn({}) // FIXME: tools.command('changelog', fn)
+}
