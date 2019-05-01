@@ -43,7 +43,7 @@ Toolkit.run(async tools => {
     Object.assign(config, args)
 
     const closed = await tools.github.pulls.list({owner, repo, head: branch, state: 'closed'}).then(getData)
-    tools.log.debug(`Got %d closed PRs`, closed.length)
+    tools.log.debug(`Found %d closed PRs`, closed.length)
     const pulls = []
     for (const pull of closed) {
       const merged = await tools.github.pulls
@@ -55,26 +55,26 @@ Toolkit.run(async tools => {
         .then(() => true)
         .catch(() => false)
       if (merged) {
-        tools.log.success(`#${pull.number} merged!`)
+        // tools.log.success(`#${pull.number} merged!`)
         pulls.push(pull)
       } else {
-        tools.log.info(`#${pull.number} not merged; skipping`)
+        // tools.log.info(`#${pull.number} not merged; skipping`)
       }
     }
-    tools.log.debug(`Got %d merged PRs`, pulls.length)
+    tools.log.debug(`Found %d merged PRs (%d skipped)`, pulls.length, closed.length - pulls.length)
 
     const groups = {}
     const committers = {}
 
     for (const pull of pulls) {
-      for (const label of pull.labels) {
-        let categorized = false
+      let categorized = false
 
-        if (label in config.labels) {
+      for (const label of pull.labels) {
+        if (label.name in config.labels) {
           const category = config.labels[label.name]
           if (category && categorized) {
             tools.log.error(
-              `PR #{pull.number} has multiple categorized labels: "${pull.labels
+              `PR #{pull.number} has multiple changelog category labels: "${pull.labels
                 .map(label => label.name)
                 .join('", "')}"`
             )
@@ -83,8 +83,8 @@ Toolkit.run(async tools => {
           } else if (category) {
             groups[category] = [pull]
           }
-          categorized = true
-          tools.log.pending(`Getting commits for #${pull.number}...`)
+          categorized = category
+          tools.log.pending(`Fetching commits for #${pull.number}...`)
           const commits = await tools.github.pulls
             .listCommits({
               owner,
@@ -98,6 +98,11 @@ Toolkit.run(async tools => {
             committers[commit.committer.email] = true
           }
         }
+      }
+      if (categorized) {
+        tools.log.success(`Categorized #${pull.number} as "${categorized}"`)
+      } else {
+        tools.log.warn(`#${pull.number} doesn't have any category labels`)
       }
     }
 
