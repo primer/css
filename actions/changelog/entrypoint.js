@@ -37,11 +37,13 @@ Toolkit.run(async tools => {
     tools.log.debug(`Got %d closed PRs`, closed.length)
     const pulls = []
     for (const pull of closed) {
+      tools.log.pending(`Checking if #${pull.number} is merged...`)
       const merged = await getJSON(tools.github.pulls.checkIfMerged, {
         owner,
         repo,
         pull_number: pull.number
       })
+      tools.log.info(`#${pull.number} merged:`, merged)
       if (merged) {
         pulls.push(pull)
       }
@@ -69,11 +71,13 @@ Toolkit.run(async tools => {
             groups[category] = [pull]
           }
           categorized = true
+          tools.log.pending(`Getting commits for #${pull.number}...`)
           const commits = await getJSON(tools.github.pulls.listCommits, {
             owner,
             repo,
             pull_number: pull.number
           })
+          tools.log.info(`Got %d commits for #${pull.number}`, commits.length)
           for (const commit of commits) {
             committers[commit.author.email] = true
             committers[commit.committer.email] = true
