@@ -38,8 +38,8 @@ Toolkit.run(async tools => {
     const pullContext = tools.context.issue.number
       ? tools.context.issue
       : args.pull
-        ? await tools.github.pulls.get({owner, repo, pull_number: args.pull}).then(getData)
-        : await tools.github.pulls.list({owner, repo, head: branch, state: 'open'}).then(res => res.data[0])
+      ? await tools.github.pulls.get({owner, repo, pull_number: args.pull}).then(getData)
+      : await tools.github.pulls.list({owner, repo, head: branch, state: 'open'}).then(res => res.data[0])
 
     if (pullContext) {
       tools.log.info(`Pull context: #${pullContext.number}`)
@@ -54,23 +54,29 @@ Toolkit.run(async tools => {
       .catch(() => [])
 
     const merged = await closed.filter(async pull => {
-      return tools.github.pulls.checkIfMerged({owner, repo, pull_number: pull.number})
+      return tools.github.pulls
+        .checkIfMerged({owner, repo, pull_number: pull.number})
         .then(() => true)
         .catch(() => false)
     })
     tools.log.debug(`Found %d merged PRs (out of %d in closed state)`, merged.length, closed.length)
 
-    const changes = await getChanges(merged)
+    const {categories, committers} = await getChanges(merged)
+
+    tools.log.debug(`Changes:`, categories)
+    tools.log.debug(`Committers:`, committers)
 
     const message = `
 Hi, here's the changelog for this pull request:
 
 ${'```json'}
-${JSON.stringify(changes, null, 2)}
+${categories.map(formatChanges).join('\n\n')}
+
+### Committers
+${committers.map(formatCommitter).join('\n')}
 ${'```'}
 `
 
-    tools.log.debug(`Changes:`, changes)
     tools.log.debug(`Message:`, message)
     return
 
@@ -142,35 +148,59 @@ ${'```'}
       }
     }
 
-    return Object.entries(groups)
+    const categories = Object.entries(groups)
       .map(([categoryId, pulls]) => {
         const category = config.categories[categoryId] || {title: categoryId}
         return {
           category,
-          pulls: pulls.map(pull => {
-            const {number, title, body, user, labels} = pull
-            return {
-              number,
-              title,
-              body,
-              author: user.login,
-              link: pull.html_url,
-              branch: pull.head.ref,
-              created: pull.created_at,
-              merged: pull.merged_at,
-              labels: labels.map(label => label.name)
-            }
-          })
+          pulls: pulls
+            .map(pull => {
+              const {number, title, body, user, labels} = pull
+              return {
+                number,
+                title,
+                body,
+                author: user.login,
+                link: pull.html_url,
+                branch: pull.head.ref,
+                created: pull.created_at,
+                merged: pull.merged_at,
+                labels: labels.map(label => label.name)
+              }
+            })
+            .sort((a, b) => ascending(a, b, d => d.merged))
         }
       })
-      .sort((a, b) => compare(a, b, d => (isNaN(d.category.order) ? d.category.title : d.category.order)))
+      .sort((a, b) => ascending(a, b, getCategorySortValue))
+
+    return {
+      categories,
+      committers: Object.keys(committers)
+    }
   }
 })
+
+function formatChanges({category, pulls}) {
+  return `### ${category.title}
+${pulls.map(formatPull).join('\n')}`
+}
+
+function formatPull(pull) {
+  return `- [#${pull.number}](${pull.link}) ${pull.title} ([${pull.author}](https://github.com/${pull.author})`
+}
+
+function formatCommitter(login) {
+  return `- [@${login}](https://github.com/${login})`
+}
 
 function onCommand(tools, fn) {
   return fn({pull: 773}) // FIXME: tools.command('changelog', fn)
 }
 
-function compare(a, b, value) {
-  return value(b) - value(a)
+function ascending(a, b, value) {
+  return value(a) - value(b)
+}
+
+function getCategorySortValue({order, title}) {
+  return isNaN(order) ? title : order
 }
