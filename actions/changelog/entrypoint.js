@@ -51,7 +51,7 @@ Toolkit.run(async tools => {
       .then(getData)
       .then(closed => closed.filter(pull => pull.merged))
       .catch(() => [])
-    tools.log.debug(`Found %d merged PRs`, merged.length)
+    tools.log.debug(`Found %d merged PRs`, pulls.length)
 
     const changes = await getChanges(pulls)
 
