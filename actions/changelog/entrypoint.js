@@ -105,7 +105,7 @@ ${'```'}
     }
 
     const groups = {}
-    const committers = {}
+    const committers = new Set()
 
     for (const pull of pulls) {
       let categorized = false
@@ -125,6 +125,10 @@ ${'```'}
             groups[category] = [pull]
           }
           categorized = category
+
+          // XXX should we count the PR author as a committer?
+          committers.add(pull.author.login)
+
           tools.log.pending(`Fetching commits for #${pull.number}...`)
           const commits = await tools.github.pulls
             .listCommits({
@@ -135,8 +139,8 @@ ${'```'}
             .then(getData)
           tools.log.info(`Got %d commits for #${pull.number}`, commits.length)
           for (const commit of commits) {
-            committers[commit.author.email] = true
-            committers[commit.committer.email] = true
+            committers.add(commit.author.login)
+            committers.add(commit.committer.login)
           }
         }
       }
@@ -175,7 +179,7 @@ ${'```'}
 
     return {
       categories,
-      committers: Object.keys(committers)
+      committers: Array.from(committers)
     }
   }
 })
@@ -186,11 +190,15 @@ ${pulls.map(formatPull).join('\n')}`
 }
 
 function formatPull(pull) {
-  return `- [#${pull.number}](${pull.link}) ${pull.title} ([${pull.author}](https://github.com/${pull.author})`
+  return `- [#${pull.number}](${pull.link}) ${pull.title} (${formatUser(pull.author)})
 }
 
 function formatCommitter(login) {
-  return `- [@${login}](https://github.com/${login})`
+  return `- ${formatLogin(login)}`
+}
+
+function formatLogin(login) {
+  return `[@${login}](https://github.com/${login})`
 }
 
 function onCommand(tools, fn) {
