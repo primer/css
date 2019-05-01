@@ -11,27 +11,33 @@ module.exports = {
   categories: {
     breaking: {
       title: ':boom: Breaking Change',
-      version: 'major'
+      version: 'major',
+      order: 0
     },
     enhancement: {
       title: ':rocket: Enhancement',
-      version: 'minor'
+      version: 'minor',
+      order: 1
     },
     fix: {
       title: ':bug: Bug Fix',
-      version: 'patch'
+      version: 'patch',
+      order: 2
     },
     docs: {
       title: ':memo: Documentation',
-      version: 'patch'
+      version: 'patch',
+      order: 3
     },
     polish: {
       title: ':nail_care: Polish',
-      version: null // no version bump
+      version: null, // no version bump
+      order: 4
     },
     internal: {
       title: ':house: Internal',
-      version: null // no version bump
+      version: null, // no version bump
+      order: 5
     }
   },
 }
