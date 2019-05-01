@@ -39,6 +39,14 @@
   @each $index, $color in $shades {
     .color-#{$hue}-#{$index} { color: $color !important; }
     .bg-#{$hue}-#{$index} { background-color: $color !important; }
+
+    // set the color of an element on hover/focus
+    .hover-color-#{$hue}-#{$index}:hover,
+    .hover-color-#{$hue}-#{$index}:focus { color: $color !important; }
+
+    // set the background color of an element on hover/focus
+    .hover-bg-#{$hue}-#{$index}:hover,
+    .hover-bg-#{$hue}-#{$index}:focus { background-color: $color !important; }
   }
 }
 
