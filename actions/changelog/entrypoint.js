@@ -127,7 +127,7 @@ ${'```'}
           categorized = category
 
           // XXX should we count the PR author as a committer?
-          committers.add(pull.author.login)
+          committers.add(pull.user.login)
 
           tools.log.pending(`Fetching commits for #${pull.number}...`)
           const commits = await tools.github.pulls
@@ -190,7 +190,7 @@ ${pulls.map(formatPull).join('\n')}`
 }
 
 function formatPull(pull) {
-  return `- [#${pull.number}](${pull.link}) ${pull.title} (${formatUser(pull.author)})`
+  return `- [#${pull.number}](${pull.link}) ${pull.title} (${formatLogin(pull.author)})`
 }
 
 function formatCommitter(login) {
