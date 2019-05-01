@@ -15,6 +15,7 @@ workflow "comment: /changelog" {
 
 action "changelog" {
   uses = "./actions/changelog"
+  secrets = ["GITHUB_TOKEN"]
 }
 
 action "install" {
