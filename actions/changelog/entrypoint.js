@@ -6,6 +6,7 @@ const DEFAULT_CONFIG = require('./default-config')
 
 Toolkit.run(async tools => {
   const {ref, issue} = tools.context
+  tools.log.info(`Issue context:`, issue)
 
   if (!ref) {
     tools.log.info(`This doesn't appear to be a PR; bailing.`, tools.context)
@@ -36,18 +37,29 @@ Toolkit.run(async tools => {
     // and lastly, any arguments passed in the slash command...
     Object.assign(config, args)
 
+    const issueContext = issue.number
+      ? issue
+      : await tools.github.pulls
+          .list({owner, repo, head: branch, state: 'open'})
+          .then(getData)
+          .then(list => list[0])
+
+    if (!issueContext) {
+      return tools.log.fatal(`Unable to get issue context for branch "${branch}"`)
+    }
+
     if (args.branch) {
       tools.log.info(`Listing pulls for branch "${args.branch}", from /command args:`, args)
       branch = args.branch
     }
 
     const closed = await tools.github.pulls
-      .list({owner, repo, head: branch, state: 'closed'})
+      .list({owner, repo, base: branch, state: 'closed'})
       .then(getData)
       .catch(() => [])
 
     const merged = await closed.filter(async pull => {
-      return tools.github.pulls
+      return await tools.github.pulls
         .checkIfMerged({owner, repo, pull_number: pull.number})
         .then(() => true)
         .catch(() => false)
@@ -76,7 +88,7 @@ ${'```'}
       .createComment({
         owner,
         repo,
-        issue_number: issue.number,
+        issue_number: issueContext.number,
         body: message
       })
       .then(res => {
