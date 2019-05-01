@@ -47,6 +47,7 @@ Toolkit.run(async tools => {
     if (!issueContext) {
       return tools.log.fatal(`Unable to get issue context for branch "${branch}"`)
     }
+    tools.log.info(`Issue context (for comments):`, issueContext)
 
     if (args.branch) {
       tools.log.info(`Listing pulls for branch "${args.branch}", from /command args:`, args)
@@ -60,6 +61,7 @@ Toolkit.run(async tools => {
 
     const merged = closed.length ? await filterMergedPulls(closed) : []
     tools.log.debug(`Found %d merged PRs (out of %d in closed state)`, merged.length, closed.length)
+    return
 
     const {categories = [], committers = []} = await getChanges(merged)
 
