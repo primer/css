@@ -48,14 +48,19 @@ Toolkit.run(async tools => {
       return
     }
 
-    const pulls = await tools.github.pulls
+    const closed = await tools.github.pulls
       .list({owner, repo, head: branch, state: 'closed'})
       .then(getData)
-      .then(closed => closed.filter(pull => pull.merged))
       .catch(() => [])
-    tools.log.debug(`Found %d merged PRs`, pulls.length)
 
-    const changes = await getChanges(pulls)
+    const merged = await closed.filter(async pull => {
+      return tools.github.pulls.checkIfMerged({owner, repo, pull_number: pull.number})
+        .then(() => true)
+        .catch(() => false)
+    })
+    tools.log.debug(`Found %d merged PRs (out of %d in closed state)`, merged.length, closed.length)
+
+    const changes = await getChanges(merged)
 
     const message = `
 Hi, here's the changelog for this pull request:
