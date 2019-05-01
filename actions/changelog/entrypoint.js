@@ -39,8 +39,6 @@ Toolkit.run(async tools => {
     tools.log.debug(`Got %d closed PRs`, closed.length)
     const pulls = []
     for (const pull of closed) {
-      tools.log.pending(`Checking if #${pull.number} is merged...`)
-
       const merged = await tools.github.pulls
         .checkIfMerged({
           owner,
@@ -49,10 +47,11 @@ Toolkit.run(async tools => {
         })
         .then(() => true)
         .catch(() => false)
-
-      tools.log.info(`#${pull.number} merged:`, merged)
       if (merged) {
+        tools.log.success(`#${pull.number} merged!`)
         pulls.push(pull)
+      } else {
+        tools.log.info(`#${pull.number} not merged; skipping`)
       }
     }
     tools.log.debug(`Got %d merged PRs`, pulls.length)
@@ -116,6 +115,7 @@ ${'```'}
         owner,
         repo,
         pull_number: tools.context.issue.number,
+        commit_id: tools.context.sha,
         body: message
       })
       .then(getData)
