@@ -12,6 +12,8 @@ Toolkit.run(async tools => {
     return
   }
 
+  const branch = ref.replace('refs/heads/', '')
+
   const config = {}
   // apply the default config
   Object.assign(config, DEFAULT_CONFIG)
@@ -34,19 +36,7 @@ Toolkit.run(async tools => {
     // and lastly, any arguments passed in the slash command...
     Object.assign(config, args)
 
-    const branch = ref.replace('refs/heads/', '')
-    const pullContext = tools.context.issue.number
-      ? tools.context.issue
-      : args.pull
-      ? await tools.github.pulls.get({owner, repo, pull_number: args.pull}).then(getData)
-      : await tools.github.pulls.list({owner, repo, head: branch, state: 'open'}).then(res => res.data[0])
-
-    if (pullContext) {
-      tools.log.info(`Pull context: #${pullContext.number}`)
-    } else {
-      tools.log.fatal(`No pull context found for this command; bailing! issue context:`, tools.context.issue)
-      return
-    }
+    const commentContext = await getCommentContext({branch, args})
 
     const closed = await tools.github.pulls
       .list({owner, repo, head: branch, state: 'closed'})
@@ -83,7 +73,7 @@ ${'```'}
       .createComment({
         owner,
         repo,
-        issue_number: pullContext.number,
+        issue_number: commentContext.number,
         body: message
       })
       .then(res => {
@@ -181,6 +171,34 @@ ${'```'}
       categories,
       committers: Array.from(committers)
     }
+  }
+
+  async function getCommentContext({branch, args}) {
+    const {issue} = tools.context
+    const {owner, repo} = tools.context.repo
+    if (issue.number) {
+      return issue
+    } else if (args.branch) {
+      return getPullForBranch({owner, repo, branch})
+    } else if (args.pull) {
+      return getPullByNumber({owner, repo, number: args.pull})
+    }
+  }
+
+  async function getPullByNumber({owner, repo, number}) {
+    return await tools.github.pulls.get({owner, repo, pull_number: number}).then(getData)
+  }
+
+  async function getPullForBranch({owner, repo, branch}) {
+    return await tools.github.pulls
+      .list({
+        owner,
+        repo,
+        head: branch,
+        state: 'open'
+      })
+      .then(getData)
+      .then(list => list[0])
   }
 })
 
