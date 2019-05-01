@@ -78,20 +78,20 @@ ${'```'}
 `
 
     tools.log.debug(`Message:`, message)
-    return
 
-    /*
-    const added = await tools.github.issues
+    return tools.github.issues
       .createComment({
         owner,
         repo,
         issue_number: pullContext.number,
         body: message
       })
-      .then(getData)
-
-    tools.log.debug('added?', added)
-    */
+      .then(res => {
+        tools.log.debug(`Comment created:`, res)
+      })
+      .catch(error => {
+        tools.log.fatal(`Unable to create comment:`, error)
+      })
   })
 
   async function getChanges(pulls) {
