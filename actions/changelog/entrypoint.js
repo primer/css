@@ -190,7 +190,7 @@ ${pulls.map(formatPull).join('\n')}`
 }
 
 function formatPull(pull) {
-  return `- [#${pull.number}](${pull.link}) ${pull.title} (${formatUser(pull.author)})
+  return `- [#${pull.number}](${pull.link}) ${pull.title} (${formatUser(pull.author)})`
 }
 
 function formatCommitter(login) {
