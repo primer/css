@@ -37,7 +37,9 @@ Toolkit.run(async tools => {
     const branch = ref.replace('refs/heads/', '')
     const pullContext = tools.context.issue.number
       ? tools.context.issue
-      : await tools.github.pulls.list({owner, repo, head: branch, state: 'open'}).then(res => res.data[0])
+      : args.pull
+        ? await tools.github.pulls.get({owner, repo, pull_number: args.pull}).then(getData)
+        : await tools.github.pulls.list({owner, repo, head: branch, state: 'open'}).then(res => res.data[0])
 
     if (pullContext) {
       tools.log.info(`Pull context: #${pullContext.number}`)
@@ -161,7 +163,7 @@ ${'```'}
 })
 
 function onCommand(tools, fn) {
-  return fn({}) // FIXME: tools.command('changelog', fn)
+  return fn({pull: 773}) // FIXME: tools.command('changelog', fn)
 }
 
 function compare(a, b, value) {
