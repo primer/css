@@ -157,7 +157,7 @@ ${'```'}
       const category = config.categories[categoryId] || {title: categoryId}
       return {
         category,
-        pulls
+        pulls: pulls.map(({number, title}) => ({number, title}))
       }
     })
   }
