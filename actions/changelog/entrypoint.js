@@ -12,7 +12,7 @@ Toolkit.run(async tools => {
   }
 
   onCommand(tools, async args => {
-    const base = ref.replace('refs/heads/', '')
+    const branch = ref.replace('refs/heads/', '')
     const {owner, repo} = tools.context.repo
 
     const config = {}
@@ -33,11 +33,11 @@ Toolkit.run(async tools => {
     // and lastly, any arguments passed in the slash command...
     Object.assign(config, args)
 
-    const closed = await tools.github.pulls.list({owner, repo, base, state: 'closed'})
+    const closed = await getJSON(tools.github.pulls.list, {owner, repo, head: branch, state: 'closed'})
     tools.log.debug(`Got closed:`, closed)
     const pulls = []
     for (const pull of closed) {
-      const merged = await tools.github.pulls.checkIfMerged({
+      const merged = await getJSON(tools.github.pulls.checkIfMerged, {
         owner,
         repo,
         pull_number: pull.number
@@ -69,7 +69,7 @@ Toolkit.run(async tools => {
             groups[category] = [pull]
           }
           categorized = true
-          const commits = await tools.github.pulls.listCommits({
+          const commits = await getJSON(tools.github.pulls.listCommits, {
             owner,
             repo,
             pull_number: pull.number
@@ -98,7 +98,7 @@ ${JSON.stringify(changes, null, 2)}
 ${'```'}
 `
 
-    const added = await tools.github.pulls.createComment({
+    const added = await getJSON(tools.github.pulls.createComment, {
       owner,
       repo,
       pull_number: tools.context.issue.number,
@@ -107,10 +107,14 @@ ${'```'}
 
     tools.log.debug('added?', added)
   }),
-  {
-    event: ['push']
-  }
+    {
+      event: ['push']
+    }
 })
+
+async function getJSON(fetch, ...args) {
+  return fetch(...args).then(res => res.data)
+}
 
 function onCommand(tools, fn) {
   return fn({}) // FIXME: tools.command('changelog', fn)
