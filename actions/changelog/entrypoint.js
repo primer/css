@@ -7,8 +7,7 @@ const DEFAULT_CONFIG = require('./default-config')
 Toolkit.run(async tools => {
   const {ref} = tools.context
   if (!ref) {
-    tools.log.info(`This doesn't appear to be a PR; bailing.`)
-    tools.log.info(tools.context)
+    tools.log.info(`This doesn't appear to be a PR; bailing.`, tools.context)
     return
   }
 
@@ -35,7 +34,7 @@ Toolkit.run(async tools => {
     Object.assign(config, args)
 
     const closed = await tools.github.pulls.list({owner, repo, base, state: 'closed'})
-    tools.log.info(`Got %d closed PRs`, closed.length)
+    tools.log.debug(`Got %d closed PRs`, closed.length)
     const pulls = []
     for (const pull of closed) {
       const merged = await tools.github.pulls.checkIfMerged({
@@ -47,7 +46,7 @@ Toolkit.run(async tools => {
         pulls.push(pull)
       }
     }
-    tools.log.info(`Got %d merged PRs`, pulls.length)
+    tools.log.debug(`Got %d merged PRs`, pulls.length)
 
     const groups = {}
     const committers = {}
@@ -106,7 +105,7 @@ ${'```'}
       body: message
     })
 
-    tools.log.info(`added? ${JSON.stringify(added, null, 2)}`)
+    tools.log.debug('added?', added)
   }),
   {
     event: ['push']
