@@ -6,6 +6,12 @@ const DEFAULT_CONFIG = require('./default-config')
 
 Toolkit.run(
   async tools => {
+    if (!tools.context.ref) {
+      tools.log.info(`This doesn't appear to be a PR; bailing.`)
+      tools.log.info(tools.context)
+      return
+    }
+
     const base = (tools.context.ref || '').replace('refs/heads/', '')
     const {owner, repo} = tools.context.repo
 
@@ -102,6 +108,6 @@ ${'```'}
     })
   },
   {
-    event: ['push']
+    event: ['pull_request.opened', 'pull_request.edited', 'pull_request_review.submitted', 'issue_comment.created']
   }
 )
