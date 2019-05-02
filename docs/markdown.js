@@ -2,7 +2,6 @@ import React from 'react'
 import {Link} from '@primer/components'
 import {MarkdownHeading} from '@primer/blueprints'
 import {CodeExample} from '@primer/blueprints/next-components'
-import Outline from './Outline'
 
 export const H1 = props => <MarkdownHeading {...props} />
 export const H2 = props => <MarkdownHeading as="h2" {...props} />
