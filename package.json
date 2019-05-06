@@ -120,6 +120,7 @@
     "stylelint": "9.10.1",
     "stylelint-config-primer": "7.0.0",
     "table": "5.2.3",
+    "tar": "4.4.8",
     "title-case": "^2.1.1",
     "tree-model": "^1.0.7",
     "typographic-base": "^1.0.4",
