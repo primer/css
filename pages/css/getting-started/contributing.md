@@ -34,16 +34,16 @@ Making a decision on whether new components should be added is done on a case by
 Many of the same questions can be applied to objects and utilities, however the purpose of these styles is different:
 * [Objects](/css/objects) aren't concerned with thematic styles. They are for common display and positioning styles we find in page layouts and common content types.
 * [Utilities](/css/utilities) do one thing well and one thing only. These styles are immutable and therefore often use the `!important` tag. For this reason we aim not to change the properties of utilities very often. They often form the building blocks of our pages and when we introduce new ones we need to do so with care as we'll likely need to live with these styles for a long time. When assessing whether there is a need to add a new utility, consider these additional questions:
-    - how does this new utility fit within our existing set of utilities? If it is an addition to an existing set then it should follow the same naming convention.
-    - is it for a property that would likely need to be changed at different breakpoints? If so it may need responsive options.
-    - if this style is part of a family of properties, do we need to consider adding the full set? Reasons for adding a full set could be that the other property values are often used, or that there would be a need to switch the property on and off (such as display or visibility).
-    - does introducing this new utility cause any clashes or potential confusion with the use of existing utilities? If so, what steps can we take to avoid those issues.
-    - does the utility have a connection with a set of variables? If so do the corresponding variables need to be updated?
+    - How does this new utility fit within our existing set of utilities? If it is an addition to an existing set then it should follow the same naming convention.
+    - Is it for a property that would likely need to be changed at different breakpoints? If so it may need responsive options.
+    - If this style is part of a family of properties, do we need to consider adding the full set? Reasons for adding a full set could be that the other property values are often used, or that there would be a need to switch the property on and off (such as display or visibility).
+    - Does introducing this new utility cause any clashes or potential confusion with the use of existing utilities? If so, what steps can we take to avoid those issues.
+    - Does the utility have a connection with a set of variables? If so do the corresponding variables need to be updated?
 
 ## Step-by-step instructions for adding new styles
 
 ### Step 1: Open an issue
-It's usually better to open an issue before investing time in spiking out a new pattern. This gives the design systems team a heads up and allows other designers to share thoughts. Here's and outline of what's helpful to include in a new style issue:
+It's usually better to open an issue before investing time in spiking out a new pattern. This gives the design systems team a heads up and allows other designers to share thoughts. Here's an outline of what's helpful to include in a new style issue:
 
 1. What the pattern is and how it's being used across the site - post screenshots and urls where possible. If you need help identifying where the pattern is being used, call that out here and cc the relevant team and/or cc `@product-design` to help.
 2. Why you think a new pattern is needed (this should answer the relevant questions above).
@@ -72,17 +72,26 @@ Let the [design systems team](https://github.com/github/design-systems) know if 
 
 ## Documentation structure
 
-_**Note:** Documentation for Primer CSS modules should live in the `README` of that module, see the [primer modules](#primer-modules) section below for more details. The [anatomy of a guide](#anatomy-of-a-guide) will work the same as part of a module README as well as regular markdown documentation._
+- Our documentation site for Primer CSS is built using Next.js and deployed with Now. Our site is built from the `pages` folder and uses MDX to render markdown.
 
-The style guide takes a content first approach. Everything you see on the site is built from markdown files found in this folder.
+- Documentation for Primer CSS modules should live in the corresponding `.md` file for that module in the `/pages/css` folder. 
 
-Currently there’s a few levels of hierarchy. The top level is `styleguide/` inside the only content rendered is the `README.md` file on the style guide homepage.
+-There are separate folders in `/pages/css` for component, object, support, and utilities docs, as well as separate folders for more general documentation such as principles and tooling.
 
-The folders immediately in `styleguide/` represent top level navigation. There’s a little bit of setup needed to create a new top level navigation item.
+- Each folder corresponds to a new url such as `primer.style/css/utilities`.
 
-* Create a new navigation tab in the navigation partial `github/github/app/views/navigation/_styleguide.html.erb`
+- To add new documentation, locate the appropriate folder and create a new `.md` file. Be sure to include the proper front matter (at minimum, title, path and status). For example:
 
-Everything inside these top level navigation items gets built into the guide for that section. `README.md` files will be returned for sections (ie. `primer`, `js`, `ruby`, `branding`) when the user is on a section landing page ie `/primer/`.
+```
+---
+title: Alerts
+path: components/alerts
+status: Stable
+source: 'https://github.com/primer/css/tree/master/src/alerts'
+bundle: alerts
+---
+
+```
 
 ### Anatomy of a guide
 
@@ -108,7 +117,7 @@ Typically the file will look something like this:
 
 Which consists of three parts:
 
-1. **YML frontmatter** _(optional)_, similar to jekyll’s frontmatter, this is a way to pass info to the controller
+1. **YML frontmatter** _(optional)_, similar to jekyll’s frontmatter, this is used to generate the sidebar and title components.
 2. **Docs section** _(required)_, This is the section between the YML and the first `````html`
 3. **The example section** _(optional)_, This section is denoted by ````html` and will render into an example used in the page. This can contain rails helpers also eg. `<%= octicons 'fire' %>`
 
@@ -159,7 +168,7 @@ The source option will let you point the document to the source file. **This is 
 
 #### Tables of contents
 
-In the style guide you can add a `{:toc}` tag to have a table of contents automatically generated.
+In the style guide you can add a `## Table of Contents` headeing to have a table of contents automatically generated.
 
 #### Code blocks
 
