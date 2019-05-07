@@ -1,0 +1,74 @@
+// stylelint-disable selector-no-qualifying-type, selector-max-type, selector-max-specificity, selector-max-compound-selectors
+
+// Modal
+
+.Modal {
+
+}
+
+.Modal[open] > summary:before {
+  background-color: $black-fade-50;
+
+  @include breakpoint(md) {
+    background-color: transparent;
+  }
+}
+
+.Modal-box {
+  position: fixed;
+  z-index: 99;
+  top: $spacer-3;
+  left: $spacer-3;
+  right: $spacer-3;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(md) {
+    position: absolute;
+    width: 300px;
+    margin-top: $spacer-1;
+    top: auto;
+    left: auto;
+    right: auto;
+    height: auto;
+  }
+}
+
+
+.Modal-content {
+  flex: auto;
+}
+
+
+// Select Menu
+
+.SelectMenu {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  max-height: 400px;
+  overflow: auto;
+}
+
+// List item within the select-menu.
+.SelectMenu-item {
+  display: block;
+  padding: $spacer-2 $spacer-2 $spacer-2 30px; // extra left padding for negative margined icon
+  overflow: hidden;
+  color: inherit;
+  cursor: pointer;
+  border-bottom: $border-width $border-style lighten($gray-200, 3%);
+
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus {
+    color: $text-white;
+    background-color: $bg-blue;
+    text-decoration: none;
+  }
+}

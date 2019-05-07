@@ -1,0 +1,607 @@
+// stylelint-disable selector-no-qualifying-type, selector-max-type, selector-max-specificity, selector-max-compound-selectors
+
+// Styles for the click target button for the select-menu
+.select-menu-button {
+  // Caret
+  &::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: -2px;
+    content: "";
+    border: 4px solid;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  &.icon-only {
+    padding-left: 7px;
+  }
+
+  &.primary {
+    &::after {
+      border-top-color: $white;
+
+      &:active {
+        background-color: $bg-green;
+      }
+    }
+  }
+}
+
+.select-menu-button-large::after {
+  margin-left: 0.25em;
+  border-width: 0.33em;
+}
+
+// Select menu
+//
+// Select-menu is a button-activated modal box that contains
+// a header with a close button, a list of options to pick from,
+// and a footer that contains a link to related content.
+
+.select-menu {
+  .spinner {
+    float: left;
+    margin: $spacer-1 0 0 (-$spacer-4);
+  }
+
+  &.active {
+    .select-menu-modal-holder {
+      display: block;
+    }
+  }
+
+  &.select-menu-modal-right {
+    position: relative;
+
+    .select-menu-modal-holder {
+      right: 0;
+    }
+  }
+
+  .select-menu-clear-item {
+    display: block;
+
+    .octicon { color: inherit; }
+
+    + .select-menu-no-results {
+      display: none !important;
+    }
+  }
+
+  &.is-loading {
+    .select-menu-loading-overlay { display: block; }
+
+    // Ensure menu contents is at least 200px when showing the loader overlay
+    .select-menu-modal { min-height: 200px; }
+  }
+
+  &.has-error {
+    .select-menu-error { display: block; }
+  }
+}
+
+.select-menu-error {
+  display: none;
+}
+
+// Menus with loading
+//
+// Select menus can have a loading state
+// .select-menu-loading-overlay should appear just before the closing select menu modal tag
+
+.select-menu-loading-overlay {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($white, 0.8);
+  border: $border-width $border-style transparent;
+  border-radius: 5px;
+
+  .octicon-octoface {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -$spacer-3 0 0 (-$spacer-3);
+  }
+}
+
+// A div to hold the position of the modal. This is necessary, because
+// static positioning is necessary for border-radius to crop content,
+// which is seen in .select-menu-modal
+.select-menu-modal-holder {
+  position: absolute;
+  z-index: 30;
+  display: none;
+}
+
+// Box that contains the select-menu list and filters
+.select-menu-modal {
+  position: relative;
+  width: 300px;
+  margin-top: $spacer-1;
+  margin-bottom: 20px; // prevent popovers at bottom of page from touching edge
+  overflow: hidden;
+  font-size: $h6-size;
+  color: $gray-600;
+  background-color: $bg-white;
+  background-clip: padding-box;
+  border: $border-width $border-style $black-fade-15;
+  border-radius: 3px;
+  box-shadow: 0 3px 12px $black-fade-15;
+}
+
+.select-menu-modal-narrow {
+  width: 200px;
+}
+
+// Title and close button for the select-menu
+.select-menu-header,
+.select-menu-divider {
+  padding: $spacer-2 10px;
+  line-height: 16px;
+  background: $gray-100;
+  border-bottom: $border-width $border-style $border-gray;
+}
+
+.select-menu-header .select-menu-title,
+.select-menu-divider {
+  font-weight: $font-weight-bold;
+  color: $text-gray-dark;
+}
+
+.select-menu-divider {
+  margin-top: -1px;
+  border-top: $border-width $border-style $border-gray;
+}
+
+.select-menu-header {
+  .close-button,
+  .octicon {
+    display: block;
+    float: right;
+    color: darken($gray-300, 4%);
+    cursor: pointer;
+
+    &:hover { color: $gray-700; }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// A section that holds either text or tab based filters
+.select-menu-filters {
+  background-color: $gray-100;
+}
+
+// Text field filter
+//
+// Text field for filtering items in the select-menu
+
+.select-menu-text-filter {
+  padding: 10px 10px 0;
+
+  &:first-child:last-child {
+    padding-bottom: 10px;
+    border-bottom: $border-width $border-style lighten($gray-300, 5%);
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 5px;
+    border: $border-width $border-style lighten($gray-300, 5%);
+    border-radius: 3px;
+
+    &::placeholder {
+      color: lighten($gray-400, 5%);
+    }
+  }
+}
+
+// Menu with tabs
+//
+// Tabs for filtering or presenting multiple lists within the select-menu
+
+.select-menu-tabs {
+  padding: 10px 10px 0;
+  border-bottom: $border-width $border-style lighten($gray-300, 5%);
+
+  ul {
+    position: relative;
+    bottom: -1px; // We want this to hang over the content below it
+  }
+
+  .select-menu-tab {
+    display: inline-block;
+  }
+
+  a,
+  .select-menu-tab-nav {
+    display: inline-block;
+    padding: $spacer-1 $spacer-2 2px;
+    font-size: 11px;
+    font-weight: $font-weight-bold;
+    color: $gray-500;
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    border: $border-width $border-style transparent;
+    border-radius: 3px 3px 0 0;
+
+    &:hover {
+      color: $text-gray-dark;
+    }
+
+    &[aria-selected="true"],
+    &.selected {
+      color: $text-gray-dark;
+      background-color: $bg-white;
+      border-color: lighten($gray-300, 5%);
+      border-bottom-color: $white;
+    }
+  }
+}
+
+// List of items within the select-menu
+.select-menu-list {
+  position: relative;
+  max-height: 400px;
+  overflow: auto;
+
+  &.is-showing-new-item-form {
+    .select-menu-new-item-form { display: block; }
+
+    .select-menu-no-results,
+    .select-menu-clear-item {
+      display: none;
+    }
+  }
+}
+
+.select-menu-blankslate {
+  padding: $spacer-3;
+  text-align: center;
+
+  svg {
+    display: block;
+    margin-right: auto;
+    margin-bottom: 9px;
+    margin-left: auto;
+    fill: darken($gray-400, 5%);
+  }
+
+  h3 {
+    font-size: $h5-size;
+    color: $text-gray-dark;
+  }
+
+  p {
+    width: 195px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+  }
+}
+
+// List item within the select-menu.
+.select-menu-item {
+  display: block;
+  padding: $spacer-2 $spacer-2 $spacer-2 30px; // extra left padding for negative margined icon
+  overflow: hidden;
+  color: inherit;
+  cursor: pointer;
+  border-bottom: $border-width $border-style lighten($gray-200, 3%);
+
+  .select-menu-item-text .octicon-x {
+    display: none;
+    float: right;
+    margin: 1px 10px 0 0;
+    opacity: 0.6;
+  }
+
+  &:hover { text-decoration: none; }
+
+  &.select-menu-item-template { display: none; }
+
+  &.disabled,
+  &[disabled],
+  &[aria-disabled="true"],
+  &.disabled.selected {
+    color: $text-gray-light;
+    cursor: default;
+
+    .description { color: $text-gray-light; }
+
+    &.opaque { opacity: 0.7; }
+
+    .select-menu-item-gravatar { opacity: 0.5; }
+  }
+
+  .octicon {
+    vertical-align: middle;
+  }
+
+  .octicon-check,
+  .octicon-circle-slash,
+  input[type="radio"]:not(:checked) + .octicon-check,
+  input[type="radio"]:not(:checked) + .octicon-circle-slash {
+    visibility: hidden;
+  }
+
+  &.selected .octicon-circle-slash.select-menu-item-icon {
+    color: $text-gray-light !important;
+  }
+
+  .octicon-circle-slash {
+    color: $text-gray-light;
+  }
+
+  &.excluded {
+    background-color: $bg-gray;
+  }
+
+  input[type="radio"] { display: none; }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:hover.selected,
+  &:hover.select-menu-action,
+  &:hover .description-inline,
+  &:focus,
+  &:focus.selected,
+  &:focus.select-menu-action,
+  &:focus .description-inline,
+  &.navigation-focus,
+  &.navigation-focus.selected,
+  &.navigation-focus.select-menu-action,
+  &.navigation-focus .description-inline,
+  &[aria-checked="true"]:focus,
+  &[aria-checked="true"]:hover,
+  &[aria-selected="true"]:hover,
+  &[aria-selected="true"]:focus,
+  &[aria-selected="true"].select-menu-action,
+  &[aria-selected="true"] .description-inline {
+    color: $text-white;
+    background-color: $bg-blue;
+
+    > .octicon { color: $white; }
+
+    .description,
+    .description-warning {
+      color: $white;
+    }
+  }
+
+  &:hover.disabled,
+  &[disabled]:hover,
+  &[aria-disabled="true"]:hover,
+  &[aria-selected="true"].disabled,
+  &.navigation-focus.disabled {
+    color: $white-fade-50;
+
+    .description { color: rgba($white, 0.6); }
+  }
+
+  > .octicon-dash {
+    display: none;
+  }
+
+  &.indeterminate {
+    > .octicon-check { display: none; }
+
+    > .octicon-dash { display: block; }
+  }
+
+  input:checked + .octicon-check {
+    color: inherit;
+    visibility: visible;
+  }
+
+  details-menu &[aria-checked="true"],
+  details-menu &[aria-selected="true"],
+  &.selected {
+    color: $text-gray-dark;
+
+    .description { color: $gray-600; }
+    > .octicon { color: $text-gray-dark; }
+
+    .octicon-check,
+    .octicon-circle-slash {
+      color: inherit;
+      visibility: visible;
+    }
+
+    .select-menu-item-text .octicon-x {
+      display: block;
+      color: inherit;
+    }
+  }
+
+  .select-menu.label-select-menu &:active { background-color: transparent !important; }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .hidden-select-button-text { display: none; }
+
+  .css-truncate-target {
+    max-width: 100%;
+  }
+}
+
+// Menu items that aren't selectable but have
+// sub-items that are
+.select-menu-item-parent {
+  pointer-events: none;
+
+  &:hover {
+    cursor: default;
+  }
+
+  &.navigation-focus,
+  &.navigation-focus.selected,
+  &[aria-selected="true"],
+  &[aria-selected="true"].selected {
+    color: $text-gray-dark;
+    background-color: $bg-blue-light;
+
+    .octicon-check {
+      color: $text-gray-dark;
+    }
+  }
+}
+
+.select-menu-item-icon {
+  float: left;
+  margin-left: -20px;
+}
+
+form.select-menu-item > div:first-child { display: none !important; } // stupid hack to override the auth token div inline style
+
+// Round the corners of the last menu items, only if the menu item
+// list is the last item.
+// .select-menu-item.last-visible,
+.select-menu-list:last-child .select-menu-item:last-child,
+.select-menu-item.last-visible {
+  border-bottom: 0;
+  border-radius: 0 0 3px 3px;
+}
+
+// Stick links at the end of a long select menu list that behave
+// just like `.select-menu-item`s.
+.select-menu-action {
+  font-weight: $font-weight-normal;
+  color: $gray-700;
+
+  > .octicon { color: inherit; }
+
+  &:hover {
+    color: $text-blue;
+  }
+}
+
+// List item that indicates there is nothing to show as a result of the filtering
+.select-menu-no-results {
+  display: none;
+  padding: 9px;
+  color: $text-gray;
+  cursor: auto;
+
+  .select-menu-list.filterable-empty &,
+  &:only-child {
+    display: block;
+  }
+}
+
+// Avatar menu
+//
+// select-menus can include avatars
+
+.select-menu-button-gravatar,
+.select-menu-item-gravatar {
+  width: 20px;
+  overflow: hidden;
+  line-height: 0;
+
+  img {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+  }
+}
+
+.select-menu-item-gravatar {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-right: $spacer-2;
+  border-radius: 2px;
+}
+
+.select-menu-button-gravatar {
+  float: left;
+  margin-right: 5px;
+}
+
+// Text of the list picker item. This content is grouped for positioning purposes.
+.select-menu-item-text {
+  display: block;
+  text-align: left;
+
+  .description {
+    display: block;
+    max-width: 265px;
+    font-size: $h6-size;
+    color: $text-gray;
+  }
+
+  .description-inline {
+    font-size: 10px;
+    color: $text-gray;
+  }
+
+  .description-warning {
+    color: $text-red;
+  }
+
+  mark {
+    font-weight: $font-weight-bold;
+    color: inherit;
+    background-color: inherit;
+  }
+}
+
+.select-menu-item-heading {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: $h5-size;
+  font-weight: $font-weight-bold;
+
+  .description {
+    display: inline;
+    font-weight: $font-weight-normal;
+  }
+}
+
+// Menus with new item form
+//
+// Select-menus can include a form that appears when a filter
+// doesn't match any items
+
+.select-menu-new-item-form {
+  display: none;
+
+  .octicon { color: $text-blue; }
+}
+
+// Covers all elements on the page to block interaction
+.modal-backdrop {
+  display: none;
+  user-select: none;
+
+  body.menu-active & {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+}
