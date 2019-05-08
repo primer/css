@@ -1,45 +1,117 @@
 // stylelint-disable selector-no-qualifying-type, selector-max-type, selector-max-specificity, selector-max-compound-selectors
 
-// Modal
+/* Modal component
+
+ * Modifiers
+ * .Modal-backcover--blocking -> Blocks clicking on the content below
+ * .Modal-box--autoHeight -> Variable height + vertical centering
+
+*/
+
+$breakpoint: sm;
 
 .Modal {
-
-}
-
-.Modal[open] > summary:before {
-  background-color: $black-fade-50;
-
-  @include breakpoint(md) {
-    background-color: transparent;
-  }
-}
-
-.Modal-box {
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 99;
-  top: $spacer-3;
-  left: $spacer-3;
-  right: $spacer-3;
-  height: 80%;
   display: flex;
   flex-direction: column;
+  pointer-events: none;
 
-  @include breakpoint(md) {
+  @include breakpoint($breakpoint) {
     position: absolute;
-    width: 300px;
-    margin-top: $spacer-1;
     top: auto;
     left: auto;
     right: auto;
-    height: auto;
+    bottom: auto;
   }
 }
 
+// Backdrop
+.Modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $black-fade-50;
+  pointer-events: none;
+
+  @include breakpoint($breakpoint) {
+    display: none;
+  }
+}
+
+.Modal--blocking::before {
+  pointer-events: auto;
+}
+
+// The box of the modal
+.Modal-box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: $spacer-3;
+  height: 80%;
+  background-color: $white;
+  border: $border-width $border-style $border-gray-darker;
+  border-radius: $border-radius;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+  pointer-events: auto;
+
+  @include breakpoint($breakpoint) {
+    width: 300px;
+    height: auto;
+    margin: $spacer-1 0 $spacer-3 0;
+    border-color: $border-gray-dark;
+    box-shadow: $box-shadow-medium;
+  }
+}
+
+.Modal-box--autoHeight {
+  height: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+// Header
+.Modal-header {
+  padding: $spacer-3;
+  background-color: $bg-gray;
+  border-bottom: $border;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+
+  @include breakpoint($breakpoint) {
+    padding: $spacer-2;
+  }
+}
+
+.Modal-title {
+  font-size: $body-font-size;
+  font-weight: $font-weight-bold;
+}
 
 .Modal-content {
   flex: auto;
 }
 
+// Footer
+.Modal-footer {
+  padding: $spacer-3;
+  background-color: $bg-gray;
+  border-top: $border;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+
+  @include breakpoint($breakpoint) {
+    padding: $spacer-2;
+  }
+}
 
 // Select Menu
 
@@ -47,8 +119,10 @@
   margin: 0;
   padding: 0;
   position: relative;
-  max-height: 400px;
   overflow: auto;
+  @include breakpoint($breakpoint) {
+    max-height: 400px;
+  }
 }
 
 // List item within the select-menu.

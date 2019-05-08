@@ -17,32 +17,46 @@ Select menus should be wrapped by a `<details>` element.
 ```html
 
 <link href="/static/github/styleguide.css" rel="stylesheet">
-<div class="p-5" style="height: 500px">
+<div class="p-5">
 
-<details class="Modal details-reset details-overlay">
+<p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+
+<details class="details-reset details-overlay" open>
   <summary class="btn" aria-haspopup="menu">
     Choose an item
   </summary>
-  <div class="Modal-box Box Box--condensed box-shadow-medium">
-    <header class="Box-header">
-      <h3 class="Box-title">Title</h3>
-    </header>
-    <menu class="Modal-content SelectMenu" role="menu">
-      <a class="SelectMenu-item selected" href="#url">
-        <span class="SelectMenu-text">Item 1</span>
-      </a>
-      <a class="SelectMenu-item" href="#url">
-        <span class="SelectMenu-text">Item 2</span>
-      </a>
-      <a class="SelectMenu-item" href="#url">
-        <span class="SelectMenu-text">Item 3</span>
-      </a>
-    </menu>
-    <footer class="Box-footer">
-      Footer
-    </footer>
+  <div class="Modal">
+    <div class="Modal-box">
+      <header class="Modal-header">
+        <h3 class="Modal-title">Title</h3>
+      </header>
+      <menu class="Modal-content SelectMenu">
+        <a class="SelectMenu-item selected" href="#url">
+          <span class="SelectMenu-text">Item 1</span>
+        </a>
+        <a class="SelectMenu-item" href="#url">
+          <span class="SelectMenu-text">Item 2</span>
+        </a>
+        <a class="SelectMenu-item" href="#url">
+          <span class="SelectMenu-text">Item 3</span>
+        </a>
+      </menu>
+      <footer class="Modal-footer">
+        Footer
+      </footer>
+    </div>
   </div>
 </details>
+
+<p class="mt-3">
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+
+<p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
 
 </div>
 ```
