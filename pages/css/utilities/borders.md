@@ -200,9 +200,9 @@ You can also add rounded corners to each edge (top, right, bottom, left) with th
 
 You can adjust border widths on all sides or each side individually with responsive border utilities:
 
-* `border-(sm|md|lg|xl)-1` adds borders on all sides at and above the breakpoint. The `border-(sm|md|lg|xl)` shorthand is also supported.
+* `border-(sm|md|lg|xl)` adds borders on all sides at and above the breakpoint. The `border-(sm|md|lg|xl)` shorthand is also supported.
 * `border-(sm|md|lg|xl)-0` removes borders from all sides at and above the breakpoint.
-* `border-(sm|md|lg|xl)-(top|right|bottom|left)-1` adds a border on the given side at and above the breakpoint.
+* `border-(sm|md|lg|xl)-(top|right|bottom|left)` adds a border on the given side at and above the breakpoint.
 * `border-(sm|md|lg|xl)-(top|right|bottom|left)-0` the border from the given side at and above the breakpoint.
 
 ```html
