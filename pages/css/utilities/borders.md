@@ -21,7 +21,7 @@ The default border utility applies a solid, 1px border, with a default gray colo
 </div>
 ```
 
-Borders can be applied to a specific edge or to the Y axis.
+Borders can be applied to a specific edge or to the X and Y axes individually:
 
 ```html
 <div class="d-flex mb-3">
@@ -37,6 +37,9 @@ Borders can be applied to a specific edge or to the Y axis.
   <div class="border-right col-3">
     .border-right
   </div>
+</div>
+<div class="border-x">
+  .border-x
 </div>
 <div class="border-y">
   .border-y
