@@ -7,8 +7,8 @@
 
 /* Add a gray border to the left and right */
 .border-x {
-  border-left: $border !important;
   border-right: $border !important;
+  border-left: $border !important;
 }
 
 /* Add a gray border to the top and bottom */
