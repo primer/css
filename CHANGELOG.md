@@ -4,7 +4,7 @@
 - Add `aria-selected="true"` support to tabbed navigation styles to play nicely with [`<tab-container>`](https://github.com/github/tab-container-element)
 
 ### 🏠 Internal
-- Resolve the vulnerability alert with `tar<4.4.2` in [CVE-2018-20834](https://nvd.nist.gov/vuln/detail/CVE-2018-20834)
+- Resolve the vulnerability alert with `tar@<4.4.2` in [CVE-2018-20834](https://nvd.nist.gov/vuln/detail/CVE-2018-20834)
 
 ### Committers
 - [@shawnbot](https://github.com/shawnbot)
