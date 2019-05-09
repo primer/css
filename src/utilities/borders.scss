@@ -5,6 +5,12 @@
 /* Add a gray border on all edges */
 .border { border: $border !important; }
 
+/* Add a gray border to the left and right */
+.border-x {
+  border-left: $border !important;
+  border-right: $border !important;
+}
+
 /* Add a gray border to the top and bottom */
 .border-y {
   border-top: $border !important;
