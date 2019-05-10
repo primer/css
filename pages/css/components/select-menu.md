@@ -12,14 +12,30 @@ The select menu provides advanced support for navigation, filtering, and more. A
 
 ## Basic example
 
-Select menus should be wrapped by a `<details>` element.
+```html
+<menu class="SelectMenu">
+  <a class="SelectMenu-item selected" href="#url">
+    <span class="SelectMenu-text">Item 1</span>
+  </a>
+  <a class="SelectMenu-item" href="#url">
+    <span class="SelectMenu-text">Item 2</span>
+  </a>
+  <a class="SelectMenu-item" href="#url">
+    <span class="SelectMenu-text">Item 3</span>
+  </a>
+</menu>
+```
+
+## Modal
+
+Modal that contains a Select menu. Wrapped by a `<details>` element.
 
 ```html
 
 <link href="/static/github/styleguide.css" rel="stylesheet">
 <div class="p-5">
 
-<p>
+<p class="mb-3">
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 </p>
 
@@ -32,7 +48,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
       <header class="Modal-header">
         <h3 class="Modal-title">Title</h3>
       </header>
-      <menu class="Modal-content SelectMenu">
+      <menu class="Modal-content SelectMenu border-0">
         <a class="SelectMenu-item selected" href="#url">
           <span class="SelectMenu-text">Item 1</span>
         </a>

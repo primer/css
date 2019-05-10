@@ -1,12 +1,6 @@
 // stylelint-disable selector-no-qualifying-type, selector-max-type, selector-max-specificity, selector-max-compound-selectors
 
-/* Modal component
-
- * Modifiers
- * .Modal-backcover--blocking -> Blocks clicking on the content below
- * .Modal-box--autoHeight -> Variable height + vertical centering
-
-*/
+// Modal component
 
 $breakpoint: sm;
 
@@ -19,6 +13,7 @@ $breakpoint: sm;
   z-index: 99;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   pointer-events: none;
 
   @include breakpoint($breakpoint) {
@@ -46,9 +41,6 @@ $breakpoint: sm;
   }
 }
 
-.Modal--blocking::before {
-  pointer-events: auto;
-}
 
 // The box of the modal
 .Modal-box {
@@ -56,7 +48,6 @@ $breakpoint: sm;
   flex-direction: column;
   position: relative;
   margin: $spacer-3;
-  height: 80%;
   background-color: $white;
   border: $border-width $border-style $border-gray-darker;
   border-radius: $border-radius;
@@ -70,12 +61,6 @@ $breakpoint: sm;
     border-color: $border-gray-dark;
     box-shadow: $box-shadow-medium;
   }
-}
-
-.Modal-box--autoHeight {
-  height: auto;
-  margin-top: auto;
-  margin-bottom: auto;
 }
 
 // Header
@@ -113,6 +98,30 @@ $breakpoint: sm;
   }
 }
 
+// Modal Modifiers
+
+// .Modal--fullHeight -> Covers the entire height but leaves some space at the bottom
+.Modal--fullHeight .Modal-box {
+  height: 80%;
+}
+
+// .Modal--top -> Shows the Modal box at the top
+.Modal--top {
+  justify-content: flex-start;
+}
+
+// .Modal--bottom -> Shows the Modal box at the bottom
+.Modal--bottom {
+  justify-content: flex-end;
+}
+
+// .Modal--blocking -> Blocks clicking on the content below
+.Modal--blocking::before {
+  pointer-events: auto;
+}
+
+
+
 // Select Menu
 
 .SelectMenu {
@@ -120,6 +129,8 @@ $breakpoint: sm;
   padding: 0;
   position: relative;
   overflow: auto;
+  border: $border;
+
   @include breakpoint($breakpoint) {
     max-height: 400px;
   }
@@ -128,11 +139,19 @@ $breakpoint: sm;
 // List item within the select-menu.
 .SelectMenu-item {
   display: block;
-  padding: $spacer-2 $spacer-2 $spacer-2 30px; // extra left padding for negative margined icon
+  padding: $spacer-3 $spacer-2 $spacer-3 30px; // extra left padding for negative margined icon
   overflow: hidden;
   color: inherit;
   cursor: pointer;
-  border-bottom: $border-width $border-style lighten($gray-200, 3%);
+
+  & + & {
+    border-top: $border-width $border-style lighten($gray-200, 3%);
+  }
+
+  @include breakpoint($breakpoint) {
+    padding-top: $spacer-2;
+    padding-bottom: $spacer-2;
+  }
 
 
   &:focus {
