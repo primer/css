@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang=en>
+  <head>
+    <title>Tiktok Wallet</title>
+    <script src=//cdn.polyfill.io/v2/polyfill.js crossorigin=anonymous></script>
+    
+      <script src=//cdn.ravenjs.com/3.24.1/raven.min.js crossorigin=anonymous></script>
+    
+    <script src=//s0.ipstatp.com/static_magic/toutiao/monitor/sdk/slardar.js crossorigin=anonymous></script>
+    <script src=//s0.ipstatp.com/static_magic/pgc/tech/collect/collect-v.3.1.29.js crossorigin=anonymous></script>
+    <script id=monitorInit>window.Slardar&&window.Slardar.install({sampleRate:.5,bid:"tiktok_wallet",pid:window.location.pathname.substr(1).replace(/\//g,"_")}),function(n,a){if(n.TeaAnalyticsObject=a,!n[a]){function e(){return e.q.push(arguments),e}e.q=e.q||[],n[a]=e}n[a].l=+new Date}(window,"collectEvent"),window.Raven&&window.Raven.config("//4b9bace858ac4f58b4d040948d1ad512@aliva-sentry.byteoversea.com/7",{environment:"production"}).install()</script>
+    <script>!function(){function a(e,r){n.src=m+"private/setresult/"+e+"&"+function(e){if(void 0===e)return e;var r,t,n,o,c,a;for(n=e.length,t=0,r="";t<n;){if(o=255&e.charCodeAt(t++),t==n){r+=f.charAt(o>>2),r+=f.charAt((3&o)<<4),r+="==";break}if(c=e.charCodeAt(t++),t==n){r+=f.charAt(o>>2),r+=f.charAt((3&o)<<4|(240&c)>>4),r+=f.charAt((15&c)<<2),r+="=";break}a=e.charCodeAt(t++),r+=f.charAt(o>>2),r+=f.charAt((3&o)<<4|(240&c)>>4),r+=f.charAt((15&c)<<2|(192&a)>>6),r+=f.charAt(63&a)}return r}(o.encode(r))}function t(e,r,t,n){if(n=n||1,e&&"string"==typeof e){"object"!=typeof r&&(r={}),r=function(e,r){if("share"==e){if(r&&!function(e){for(var r in e)return!1;return!0}(r))return r;var t="",n="",o="",c=document.querySelector("title"),a=document.querySelector("meta[name=description]"),i=document.querySelector("link[rel*=apple-touch-icon]"),f=document.querySelector("link[rel*=shortcut]");if(c&&(t=c.innerText),a&&(n=a.content),f&&(o=f.href),i&&(o=i.href),!o)for(var u=document.querySelectorAll("body img"),d=0;d<u.length;d++){var l=u[d];if(100<l.naturalWidth&&100<l.naturalHeight){o=l.src;break}}return{platform:"weixin_moments",url:location.href,title:t,desc:n,image:o}}return r}(e,r);var o=(d++).toString();"function"==typeof t&&(l[o]=t);var c={JSSDK:n,func:e,params:r,__msg_type:"call",__callback_id:o};u.push(c),i.src=m+"dispatch_message/"}}var i,n,o={encode:function(e){e=(e=e||"").replace(/\r\n/g,"\n");for(var r="",t=0;t<e.length;t++){var n=e.charCodeAt(t);n<128?r+=String.fromCharCode(n):(127<n&&n<2048?r+=String.fromCharCode(n>>6|192):(r+=String.fromCharCode(n>>12|224),r+=String.fromCharCode(n>>6&63|128)),r+=String.fromCharCode(63&n|128))}return r},decode:function(e){for(var r="",t=0,n=c1=c2=0;t<e.length;)(n=e.charCodeAt(t))<128?(r+=String.fromCharCode(n),t++):191<n&&n<224?(c2=e.charCodeAt(t+1),r+=String.fromCharCode((31&n)<<6|63&c2),t+=2):(c2=e.charCodeAt(t+1),c3=e.charCodeAt(t+2),r+=String.fromCharCode((15&n)<<12|(63&c2)<<6|63&c3),t+=3);return r}},f="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",u=[],d=1e3,l={},h={},m="bytedance://";window.ToutiaoJSBridge={call:t,on:function(e,r){e&&"string"==typeof e&&"function"==typeof r&&(h[e]=r,t("addEventListener",{name:e},null))},trigger:function(e,r){"function"==typeof h[e]&&h[e](r)},_fetchQueue:function(){var e=JSON.stringify(u);return u=[],a("SCENE_FETCHQUEUE",e),e},_handleMessageFromToutiao:function(e){var r,t=e.__msg_type,n=e.__params,o=e.__event_id,c=e.__callback_id;return"callback"==t?(r={__err_code:"cb404"},"string"==typeof c&&"function"==typeof l[c]&&(r=l[c](n),delete l[c])):"event"==t&&(r={__err_code:"ev404"},"string"==typeof o&&"function"==typeof h[o]&&(r=h[o](n))),a("SCENE_HANDLEMSGFROMTT",JSON.stringify(r)),JSON.stringify(r)}},(n=document.createElement("iframe")).id="__ToutiaoJSBridgeIframe_SetResult",n.style.display="none",document.documentElement.appendChild(n),(i=document.createElement("iframe")).id="__ToutiaoJSBridgeIframe",i.style.display="none",document.documentElement.appendChild(i)}()</script>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1,minimal-ui">
+    <meta name=theme-color content=#000>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=Edge;chrome=1">
+    <meta http-equiv=cache-control content=no-cache>
+    <meta name=baidu-site-verification content=szjdG38sKy>
+    <meta name=keywords content=抖音、抖音音乐、抖音短视频、抖音官网、amemv>
+    <meta name=description content=抖音短视频-记录美好生活的视频平台>
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=default>
+    <meta name=screen-orientation content=portrait>
+    <meta name=format-detection content="telephoe=no">
+    <meta name=format-detection content="email=no">
+    <meta name=x5-orientation content=portrait>
+    <link rel=dns-prefetch href=//cdn.polyfill.io>
+    <link rel=dns-prefetch href=//cdn.ravenjs.com>
+    <link rel=dns-prefetch href=//m.toutiao.com>
+    <link rel=dns-prefetch href=//s3.bytecdn.cn>
+    <link rel=dns-prefetch href=//s16.tiktokcdn.com/ >
+    <link rel=dns-prefetch href=//s0.ipstatp.com>
+    <link rel="shortcut icon" href=/static/favicon.ico>
+  <link href=about:wk?://s16.tiktokcdn.com/tiktok/falcon/wallet/style/index.0f6a929721ba3bbe3ba2.css rel=stylesheet></head>
+  <body>
+    <div id=root></div>
+    <div id=iphoneX></div>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+  <script type=text/javascript src=about:wk?://s16.tiktokcdn.com/tiktok/falcon/wallet/script/index.89a60fa6.js></script><script type=text/javascript src=about:wk?://s16.tiktokcdn.com/tiktok/falcon/wallet/script/vendors.0b1583b5.js></script></body>
+  
+  <script id=pageActiveDetect>var SS=window.sessionStorage;if(SS){var PREFIX="tiktok-wallet:",activeFlag="isPageActive",STORAGE_ACTIVE_FLAG=PREFIX+activeFlag,countdownTotalTime=60,countdownIntervalTime=5,calTime=countdownTotalTime,countdownInterval=window.setInterval(function(){1===parseInt(SS.getItem(STORAGE_ACTIVE_FLAG)||0,10)&&(calTime=countdownTotalTime,SS.setItem(STORAGE_ACTIVE_FLAG,2)),(calTime-=countdownIntervalTime)<0&&(clearInterval(countdownInterval),countdownInterval=null,SS.setItem(STORAGE_ACTIVE_FLAG,0))},1e3*countdownIntervalTime);document.addEventListener("click",function(){0!==parseInt(SS.getItem(STORAGE_ACTIVE_FLAG)||0,10)&&SS.setItem(STORAGE_ACTIVE_FLAG,1)},!1)}</script>
+</html>
