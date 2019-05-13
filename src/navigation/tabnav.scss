@@ -25,6 +25,7 @@
   border: 1px solid transparent;
   border-bottom: 0;
 
+  &[aria-selected=true],
   &.selected {
     color: $text-gray-dark;
     background-color: $bg-white;

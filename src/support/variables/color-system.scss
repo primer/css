@@ -84,6 +84,18 @@ $purple-700:      #4c2889 !default;
 $purple-800:      #3a1d6e !default;
 $purple-900:      #29134e !default;
 
+// -------- Pink --------
+$pink-000:      #ffeef8 !default;
+$pink-100:      #fedbf0 !default;
+$pink-200:      #f9b3dd !default;
+$pink-300:      #f692ce !default;
+$pink-400:      #ec6cb9 !default;
+$pink-500:      #ea4aaa !default;
+$pink-600:      #d03592 !default;
+$pink-700:      #b93a86 !default;
+$pink-800:      #99306f !default;
+$pink-900:      #6d224f !default;
+
 // -------- Fades --------
 // Black based on same hue as $gray-900
 $black: #1b1f23 !default;
@@ -206,6 +218,19 @@ $purples: (
   9: $purple-900,
 ) !default;
 
+$pinks: (
+  0: $pink-000,
+  1: $pink-100,
+  2: $pink-200,
+  3: $pink-300,
+  4: $pink-400,
+  5: $pink-500,
+  6: $pink-600,
+  7: $pink-700,
+  8: $pink-800,
+  9: $pink-900,
+) !default;
+
 $hue-maps: (
   gray: $grays,
   blue: $blues,
@@ -214,4 +239,5 @@ $hue-maps: (
   orange: $oranges,
   red: $reds,
   purple: $purples,
+  pink: $pinks,
 ) !default;
