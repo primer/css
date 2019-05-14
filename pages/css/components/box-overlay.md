@@ -1,5 +1,6 @@
 ---
 title: Box overlay
+path: components/box-overlay
 status: Experimental
 status_issue: 'https://github.com/github/design-systems/issues/374'
 source: 'https://github.com/github/github/tree/master/app/assets/stylesheets/components/box-overlay.scss'

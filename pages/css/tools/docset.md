@@ -1,5 +1,6 @@
 ---
 title: Docset
+path: tools/docset
 ---
 
 We use and ❤️ [Kapeli's Dash app][dash] for browsing API documentation. Dash comes with 150+ offline documentation sets, but doesn't have our style guide.

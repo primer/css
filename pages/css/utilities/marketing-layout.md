@@ -32,8 +32,8 @@ In an effort to reduce the size of our CSS, responsive breakpoints are only supp
 Using column offset classes can pull a div over X number of columns to the left. Negative offsets are available in [spacings from 1](../support/spacing/#spacing-scale) [to 7](../support/marketing-variables/).
 
 ```html
-<div class="clearfix">
-  <div class="offset-n1 col-3 border p-3">.offset-n1</div>
-  <div class="offset-n2 col-3 border p-3">.offset-n2</div>
+<div class="mx-auto border" style="width: 300px">
+  <div class="offset-n1 col-4 border p-3">.offset-n1</div>
+  <div class="offset-n2 col-4 border p-3">.offset-n2</div>
 </div>
 ```

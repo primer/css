@@ -1,5 +1,6 @@
 ---
 title: Color system
+path: support/color-system
 description: 'Sass variables, mixins, and functions for use in our components.'
 source: 'https://github.com/primer/primer/blob/master/modules/primer-support/lib/variables/color-system.scss'
 symbols: [gray, grey, blue, green, purple, yellow, orange, red, black, white]

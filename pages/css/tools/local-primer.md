@@ -1,9 +1,10 @@
 ---
 title: Local development
 internal: true
+path: tools/local-primer
 ---
 
-When you are working with the `github/github` codebase, you can link Primer modules with your local development environment using the Primerize script. This will allow you to make changes to primer and see them reflected on `github.localhost` without the overhead of pulling in alpha releases of a package.
+When you are working with the `github/github` codebase, you can link Primer CSS modules with your local development environment using the Primerize script. This will allow you to make changes to Primer CSS and see them reflected on `github.localhost` without the overhead of pulling in alpha releases of a package.
 
 ## Prerequisites
 
@@ -18,7 +19,7 @@ When you are working with the `github/github` codebase, you can link Primer modu
 └── primer
 ```
 
-## Linking to your local primer repository
+## Linking to your local Primer CSS repository
 
 In your terminal start the server with the environment variable `LOCAL_PRIMER=1`. For example.
 
@@ -26,7 +27,7 @@ In your terminal start the server with the environment variable `LOCAL_PRIMER=1`
 > LOCAL_PRIMER=1 script/server
 ```
 
-When the variable is present, the script will check for linked local Primer packages. If it's not linked, then it will proceed to link the primer packages in `../primer` to your GitHub application. When the server starts with successfully linked packages, you will see a clear message.
+When the variable is present, the script will check for linked local Primer CSS packages. If it's not linked, then it will proceed to link the Primer CSS packages in `../primer` to your GitHub application. When the server starts with successfully linked packages, you will see a clear message.
 
 **Example output:**
 

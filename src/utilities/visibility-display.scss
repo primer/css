@@ -27,19 +27,19 @@ $display-values: (
 
 // Hide utilities for each breakpoint
 // Each hide utility only applies to one breakpoint range.
-@media (max-width: $width-sm) {
+@media (max-width: $width-sm - 1px) {
   .hide-sm {
     display: none !important;
   }
 }
 
-@media (min-width: $width-sm) and (max-width: $width-md) {
+@media (min-width: $width-sm) and (max-width: $width-md - 1px) {
   .hide-md {
     display: none !important;
   }
 }
 
-@media (min-width: $width-md) and (max-width: $width-lg) {
+@media (min-width: $width-md) and (max-width: $width-lg - 1px) {
   .hide-lg {
     display: none !important;
   }

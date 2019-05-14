@@ -1,5 +1,6 @@
 ---
 title: Colors
+path: utilities/colors
 description: 'Immutable, atomic CSS classes to rapidly build product'
 status: Stable
 package:

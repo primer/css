@@ -50,7 +50,7 @@ All our inputs and buttons side-by-side for easy testing of sizing and alignment
 
 #### Example form
 
-Form controls in Primer currently have no basic layout specified (this is by design). You'll need to use `<fieldset>`s, `<div>`s, or other elements and styles to rearrange them.
+Form controls in Primer CSS currently have no basic layout specified (this is by design). You'll need to use `<fieldset>`s, `<div>`s, or other elements and styles to rearrange them.
 
 ```html
 <form>
@@ -125,7 +125,7 @@ Webkit sometimes gets confused and tries to add an icon/dropdown to autofill con
 
 #### Selects
 
-Primer adds light `height` and `vertical-align` styles to `<select>`s for all browsers to render them consistently with textual inputs.
+Primer CSS adds light `height` and `vertical-align` styles to `<select>`s for all browsers to render them consistently with textual inputs.
 
 ```html
 <form>
@@ -205,7 +205,7 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
 Convey errors and warnings for form groups. Add the appropriate class—either `.errored` or `.warn`—to the `<dl class="form-group">` to start. Then, house your error messaging in an additional `<dd>` with either `.error` or `.warning`.
 
 ```html
-<form>
+<form class="pb-2">
   <dl class="form-group errored">
     <dt><label for="example-text-errored">Example Text</label></dt>
     <dd><input class="form-control" type="text" value="Example Value" id="example-text-errored" aria-describedby="form-error-text"></dd>

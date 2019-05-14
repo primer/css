@@ -1,10 +1,11 @@
 ---
 title: Status key
+path: status-key
 ---
 
 import StatusLabel from '../../docs/StatusLabel'
 
-Primer is constantly evolving and we have many styles to refactor and bring up to standard. The status of each package is shown with it's corresponding documentation so you can be confident which styles are safe to use.
+Primer CSS is constantly evolving and we have many styles to refactor and bring up to standard. The status of each package is shown with it's corresponding documentation so you can be confident which styles are safe to use.
 
 | Label | Description |
 | :----- | :--- |

@@ -138,5 +138,3 @@ Counters can also be used in `Box` headers to indicate the number of items in a 
   </ul>
 </div>
 ```
-
-

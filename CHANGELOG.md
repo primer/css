@@ -1,3 +1,75 @@
+# 12.3.1
+
+### 🐛 Bug Fix
+- Add `aria-selected="true"` support to tabbed navigation styles to play nicely with [`<tab-container>`](https://github.com/github/tab-container-element)
+
+### 🏠 Internal
+- Resolve the vulnerability alert with `tar@<4.4.2` in [CVE-2018-20834](https://nvd.nist.gov/vuln/detail/CVE-2018-20834)
+
+### Committers
+- [@shawnbot](https://github.com/shawnbot)
+
+# 12.3.0
+
+### :rocket: Enhancement
+- More color utilities! [#760](https://github.com/primer/css/pull/760) ([@shawnbot](https://github.com/shawnbot))
+- Add pink to Primer! 💖🌸💕🌷💞🎀💗🌺💝 [#776](https://github.com/primer/css/pull/776), [#778](https://github.com/primer/css/pull/778) ([@emplums](https://github.com/emplums)))
+
+### :house: Internal
+- Update storybook [#777](https://github.com/primer/css/pull/777) ([@emplums](https://github.com/emplums))
+- Add bundle size report [#772](https://github.com/primer/css/pull/772) ([@shawnbot](https://github.com/shawnbot))
+
+### :memo: Documentation
+- Update Primer references to Primer CSS [#771](https://github.com/primer/css/pull/771) ([@emplums](https://github.com/emplums))
+- Add Edit on GitHub links to docs [#770](https://github.com/primer/css/pull/770) ([@emplums](https://github.com/emplums))
+- Anchor Link in Docs [#768](https://github.com/primer/css/pull/768) ([@emplums](https://github.com/emplums))
+
+### :house: Internal
+- Update RELEASING [#757](https://github.com/primer/css/pull/757) ([@simurai](https://github.com/simurai))
+
+### Committers
+- [@emplums](https://github.com/emplums)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+
+# 12.2.3
+
+### :bug: Bug Fix
+- Remove references to a non-existent `Progress-value` class https://github.com/primer/css/pull/751
+
+### :house: Internal
+- Upgrade stylelint config https://github.com/primer/css/pull/753
+
+#### Committers: 1
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+
+# 12.2.2
+
+### :bug: Bug Fix
+- Fix hide utilities when toggling between breakpoints [#746](https://github.com/primer/css/pull/746) 
+
+### :house: Internal
+- Prevent Storybook publish failures from breaking builds on `master` [#728](https://github.com/primer/css/pull/728)
+- Upgrade to [cssstats v3.3.0](https://github.com/cssstats/cssstats/releases/tag/v3.3.0), which fixes our selector stats JSON files
+
+#### Committers: 2
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Simurai ([simurai](https://github.com/simurai))
+
+# 12.2.1
+
+### :bug: Bug Fix
+- Fix source order of directional border utilities [#727](https://github.com/primer/css/pull/727)
+- Fix UnderlineNav selected border width [#733](https://github.com/primer/css/pull/733)
+
+### :memo: Documentation
+- Fix changelog committers listings for versions 12.0.1 and 12.0.2 [#729](https://github.com/primer/css/pull/729)
+- Fix code examples from being cut off [#725](https://github.com/primer/css/pull/725)
+
+#### Committers: 2
+- Shawn Allen ([shawnbot](https://github.com/shawnbot))
+- Simurai ([simurai](https://github.com/simurai))
+
 # 12.2.0
 
 ### :rocket: Enhancement
@@ -7,19 +79,19 @@
 - Fix `<details>` spacing [#675](https://github.com/primer/css/pull/675)
 
 ### :bug: Bug Fixes
-- Accessibility fixes for marketing buttons [#716](https://github.com/primer/css/pull/716) 
+- Accessibility fixes for marketing buttons [#716](https://github.com/primer/css/pull/716)
 
 ### :memo: Documentation
 - Fix scrolling of code examples [#717](https://github.com/primer/css/pull/717)
 
 ### :house: Internal
-- Fix `npm link` ([#715](https://github.com/primer/css/issue/715)) by removing `prepare` npm script [#718](https://github.com/primer/css/pull/718) 
+- Fix `npm link` ([#715](https://github.com/primer/css/issue/715)) by removing `prepare` npm script [#718](https://github.com/primer/css/pull/718)
 
 #### Committers: 4
 - Diana Mounter ([broccolini](https://github.com/broccolini))
-- Max Stoiber ([https://github.com/mxstbr](mxstbr))
+- Max Stoiber ([mxstbr](https://github.com/mxstbr))
 - Shawn Allen ([shawnbot](https://github.com/shawnbot))
-- Simurai ([https://github.com/simurai](simurai))
+- Simurai ([simurai](https://github.com/simurai))
 
 # 12.1.1
 
