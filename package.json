@@ -58,8 +58,6 @@
     "action-status": "0.1.1",
     "autoprefixer": "9.4.7",
     "ava": "1.4.1",
-    "broken-link-checker": "^0.7.8",
-    "char-spinner": "^1.0.1",
     "chroma-js": "^1.4.1",
     "clipboard-copy-element": "^0.5.0",
     "code-blocks": "^1.1.0",
