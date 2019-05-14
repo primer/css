@@ -105,16 +105,18 @@ Hide utilities are able to be applied or changed per breakpoint using the follow
 Adjust the visibility of an element with `.v-hidden` and `.v-visible`.
 
 ## Overflow
-Adjust element overflow with `.overflow-hidden`, `.overflow-scroll`, and `.overflow-auto`. `.overflow-hidden` can also be used to create a new [block formatting context](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context) or clear floats.
+Adjust element overflow with `.overflow-hidden`, `.overflow-scroll`, and `.overflow-auto`, or use `.overflow-visible` to undo the effects of CSS with overflow issues. `.overflow-hidden` can also be used to create a new [block formatting context](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context) or clear floats.
 
 Overflow utilities can also target x- and y-axes independently via:
 
 * `.overflow-x-auto`
 * `.overflow-x-hidden`
 * `.overflow-x-scroll`
+* `.overflow-x-visible`
 * `.overflow-y-auto`
 * `.overflow-y-hidden`
 * `.overflow-y-scroll`
+* `.overflow-y-visible`
 
 ## Floats
 Use `.float-left` and `.float-right` to set floats, and `.clearfix` to clear.
