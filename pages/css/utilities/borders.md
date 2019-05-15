@@ -21,7 +21,7 @@ The default border utility applies a solid, 1px border, with a default gray colo
 </div>
 ```
 
-Borders can be applied to a specific edge or to the Y axis.
+Borders can be applied to a specific edge or to the X and Y axes individually:
 
 ```html
 <div class="d-flex mb-3">
@@ -37,6 +37,9 @@ Borders can be applied to a specific edge or to the Y axis.
   <div class="border-right col-3">
     .border-right
   </div>
+</div>
+<div class="border-x">
+  .border-x
 </div>
 <div class="border-y">
   .border-y
@@ -198,10 +201,18 @@ You can also add rounded corners to each edge (top, right, bottom, left) with th
 
 ## Responsive borders
 
-Top, right, bottom, and left border utilities are can be used responsively to add or remove borders to an element at different screensizes.
+You can adjust border widths on all sides or each side individually with responsive border utilities:
+
+* `border-(sm|md|lg|xl)` adds borders on all sides at and above the breakpoint. The `border-(sm|md|lg|xl)` shorthand is also supported.
+* `border-(sm|md|lg|xl)-0` removes borders from all sides at and above the breakpoint.
+* `border-(sm|md|lg|xl)-(top|right|bottom|left)` adds a border on the given side at and above the breakpoint.
+* `border-(sm|md|lg|xl)-(top|right|bottom|left)-0` the border from the given side at and above the breakpoint.
 
 ```html
-<div class="border-top border-sm-right border-md-bottom border-lg-top-0">
-  .border-top-0
+ <div class="border-top border-sm-right border-md-bottom border-md-top-0">
+  .border-top
+  <span class="d-none d-sm-inline">.border-sm-right </span>
+  <span class="d-none d-md-inline">.border-md-bottom </span>
+  <span class="d-none d-lg-inline">.border-md-top-0 </span>
 </div>
 ```

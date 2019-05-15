@@ -2,19 +2,25 @@
 // stylelint-disable primer/selector-no-utility
 // stylelint-disable block-opening-brace-space-before, comment-empty-line-before
 
-/* Add a gray border on all sides */
+/* Add a gray border on all edges */
 .border { border: $border !important; }
 
 /* Add a gray border to the left and right */
+.border-x {
+  border-right: $border !important;
+  border-left: $border !important;
+}
+
+/* Add a gray border to the top and bottom */
 .border-y {
   border-top: $border !important;
   border-bottom: $border !important;
 }
 
-/* Remove borders from all sides */
-.border-0 { border: 0 !important; }
-
-.border-dashed { border-style: dashed !important; }
+/* Change the border style to dashed, in conjunction with another utility */
+.border-dashed {
+  border-style: dashed !important;
+}
 
 $edges: (
   top: (top-left, top-right),
@@ -23,9 +29,14 @@ $edges: (
   left: (bottom-left, top-left)
 );
 
+/* Responsive gray borders */
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
-    /* Add a gray border */
+    /* Add a gray border on all sides at/above this breakpoint */
+    .border#{$variant}        { border: $border !important; }
+    /* Set the border width to 0 on all sides at/above this breakpoint */
+    .border#{$variant}-0      { border: 0 !important; }
+
     /* Add a gray border to the top */
     .border#{$variant}-top    { border-top: $border !important; }
     /* Add a gray border to the right */
