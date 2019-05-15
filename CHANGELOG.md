@@ -1,3 +1,22 @@
+# 12.4.0
+
+### :rocket: Enhancement
+- More responsive border utilities [#775](https://github.com/primer/css/pull/775)
+- Add `overflow: visible` utilities [#798](https://github.com/primer/css/pull/798)
+- Add `yellow` color utilities that will replace `pending` [#737](https://github.com/primer/css/pull/737)
+
+### :bug: Bug Fix
+- Fix Ruby Sass compiler warnings by quoting keys in `$hue-maps` declaration [#794](https://github.com/primer/css/pull/794)
+
+### :house: Internal
+- Remove `test-all-modules` scripts and old monorepo test scripts [#795](https://github.com/primer/css/pull/795)
+- Resolve all but one ([#796](https://github.com/primer/css/pull/796)) vulnerability in npm dev dependencies [#797](https://github.com/primer/css/pull/797)
+
+### Committers
+- [@broccolini](https://github.com/broccolini)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+
 # 12.3.1
 
 ### 🐛 Bug Fix
