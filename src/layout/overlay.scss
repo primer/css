@@ -1,0 +1,162 @@
+// stylelint-disable selector-no-qualifying-type, selector-max-type, selector-max-specificity, selector-max-compound-selectors
+
+// Overlay component
+
+$breakpoint: sm;
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  display: flex;
+  padding: $spacer-3;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+// Backdrop
+.Overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $black-fade-50;
+  pointer-events: none;
+}
+
+
+// The box of the overlay
+.Overlay-box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-height: 60%;
+  margin: auto 0;
+  background-color: $bg-white;
+  border: $border-width $border-style $border-gray-darker;
+  border-radius: $border-radius;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+  pointer-events: auto;
+}
+
+// Header
+.Overlay-header {
+  display: flex;
+  padding: $spacer-3;
+  border-bottom: $border;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  background-color: $bg-gray;
+}
+
+.Overlay-title {
+  flex: auto;
+  font-size: $body-font-size;
+  font-weight: $font-weight-bold;
+}
+
+.Overlay-closeButton {
+  padding: 0;
+  fill: $text-gray-light;
+  border: none;
+  background-color: transparent;
+}
+
+.Overlay-content {
+  flex: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; // Adds momentum + bouncy scrolling
+}
+
+// Footer
+.Overlay-footer {
+  padding: $spacer-3;
+  border-top: $border;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  background-color: $bg-gray;
+}
+
+// Overlay Modifiers
+
+// .Overlay--fullHeight -> Covers the entire height but leaves some space at the bottom
+.Overlay--full .Overlay-box {
+  height: 80%;
+  max-height: none;
+  margin-top: 0;
+}
+
+// .Overlay--blocking -> Blocks clicking on the content below
+.Overlay--blocking::before {
+  pointer-events: auto;
+}
+
+// .Overlay--transparent -> Removes the backdrop
+.Overlay--transparent {
+  .Overlay-box {
+    border-color: $border-gray-dark;
+    box-shadow: $box-shadow-medium;
+  }
+  &::before {
+    display: none;
+  }
+}
+
+// TODO: Find better name
+.Overlay-sm--compact {
+  @include breakpoint($breakpoint) {
+    position: absolute;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    padding: 0;
+
+    // Backdrop
+    &::before {
+      display: none;
+    }
+
+    .Overlay-box {
+      margin: $spacer-1 0 $spacer-3 0;
+      border-color: $border-gray-dark;
+      box-shadow: $box-shadow-medium;
+      width: 250px;
+      height: auto;
+      max-height: 350px;
+    }
+
+    .Overlay-header,
+    .Overlay-footer {
+      padding: $spacer-2;
+    }
+  }
+}
+
+// TODO: Find better name
+.Overlay-sm--mini {
+  @include breakpoint($breakpoint) {
+    .Overlay-box {
+      max-width: 250px;
+      width: auto;
+      max-height: none;
+    }
+  }
+}
+
+// Dialogs keep backdrop and are centered
+.Overlay-sm--dialog {
+  @include breakpoint($breakpoint) {
+    .Overlay-box {
+      width: 500px;
+      max-height: none;
+      margin: auto;
+    }
+  }
+}

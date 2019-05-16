@@ -1,127 +1,5 @@
 // stylelint-disable selector-no-qualifying-type, selector-max-type, selector-max-specificity, selector-max-compound-selectors
 
-// Modal component
-
-$breakpoint: sm;
-
-.Modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  pointer-events: none;
-
-  @include breakpoint($breakpoint) {
-    position: absolute;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
-  }
-}
-
-// Backdrop
-.Modal::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: $black-fade-50;
-  pointer-events: none;
-
-  @include breakpoint($breakpoint) {
-    display: none;
-  }
-}
-
-
-// The box of the modal
-.Modal-box {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin: $spacer-3;
-  background-color: $white;
-  border: $border-width $border-style $border-gray-darker;
-  border-radius: $border-radius;
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
-  pointer-events: auto;
-
-  @include breakpoint($breakpoint) {
-    width: 300px;
-    height: auto;
-    margin: $spacer-1 0 $spacer-3 0;
-    border-color: $border-gray-dark;
-    box-shadow: $box-shadow-medium;
-  }
-}
-
-// Header
-.Modal-header {
-  padding: $spacer-3;
-  background-color: $bg-gray;
-  border-bottom: $border;
-  border-top-left-radius: $border-radius;
-  border-top-right-radius: $border-radius;
-
-  @include breakpoint($breakpoint) {
-    padding: $spacer-2;
-  }
-}
-
-.Modal-title {
-  font-size: $body-font-size;
-  font-weight: $font-weight-bold;
-}
-
-.Modal-content {
-  flex: auto;
-}
-
-// Footer
-.Modal-footer {
-  padding: $spacer-3;
-  background-color: $bg-gray;
-  border-top: $border;
-  border-bottom-left-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
-
-  @include breakpoint($breakpoint) {
-    padding: $spacer-2;
-  }
-}
-
-// Modal Modifiers
-
-// .Modal--fullHeight -> Covers the entire height but leaves some space at the bottom
-.Modal--fullHeight .Modal-box {
-  height: 80%;
-}
-
-// .Modal--top -> Shows the Modal box at the top
-.Modal--top {
-  justify-content: flex-start;
-}
-
-// .Modal--bottom -> Shows the Modal box at the bottom
-.Modal--bottom {
-  justify-content: flex-end;
-}
-
-// .Modal--blocking -> Blocks clicking on the content below
-.Modal--blocking::before {
-  pointer-events: auto;
-}
-
-
-
 // Select Menu
 
 .SelectMenu {
@@ -132,7 +10,7 @@ $breakpoint: sm;
   border: $border;
 
   @include breakpoint($breakpoint) {
-    max-height: 400px;
+    max-height: 300px;
   }
 }
 
@@ -142,6 +20,7 @@ $breakpoint: sm;
   padding: $spacer-3 $spacer-2 $spacer-3 30px; // extra left padding for negative margined icon
   overflow: hidden;
   color: inherit;
+  background-color: $white;
   cursor: pointer;
 
   & + & {
