@@ -16,12 +16,7 @@ The Overlay object provides a responsive container that can be used in a various
 A common way to show Overlays is by wrapping them in a `<details>` element. Overlays come with an `.Overlay-header` and `.Overlay-footer`, but both are optional. `.Overlay-content` is a container, ready to be filled. If the content overflows, for example on mobile phones, `.Overlay-content` starts to vertically scroll.
 
 ```html
-
 <div class="p-5">
-
-<p class="mb-3">
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-</p>
 
 <details class="details-reset details-overlay" open>
   <summary class="btn">
@@ -48,6 +43,10 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 </p>
 
+<p class="mt-3">
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+
 </div>
 ```
 
@@ -56,7 +55,6 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 Use an Overlay as a wrapper for Menus. Add the `border-0` utility to remove the Menu's default border.
 
 ```html
-
 <div class="p-5">
 
 <details class="details-reset details-overlay" open>
@@ -106,8 +104,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 Select Menus are more advanced menus with extra functionality. Such as allowing multiple selections and filtering the list. To give SelectMenus a bit more space on mobile, use the `.Overlay--full` modifier. It's also recomended whenever a filter/search is present. That way, the Overlay box stays in place and doesn't jump in position.
 
 ```html
-
-<div class="p-5">
+<div class="p-5" style="min-height: 450px;">
 
 <details class="details-reset details-overlay" open>
   <summary class="btn" aria-haspopup="menu">
@@ -177,7 +174,6 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 Dialogs ususally ask the user to make a choice. You can use the `.Box` component to further style the content. Use `.Overlay--blocking` to disable the dismissal of the dialog when clicking outside of the box.
 
 ```html
-
 <div class="p-5">
 
 <details class="details-reset details-overlay" open>
@@ -237,10 +233,13 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 Popovers can be used to inform users about new product features. They stick around until dissmissed.
 
 ```html
-
 <div class="p-5">
 
-<div class="Overlay Overlay--popover">
+<p class="mb-3">
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+
+<div class="Overlay Overlay--popover Overlay--caretTop">
   <div class="Overlay-box mb-0">
     <button class="Overlay-closeButton" type="button">
       <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>

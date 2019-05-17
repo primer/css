@@ -97,6 +97,32 @@ $breakpoint: sm;
 
 // Responsive Modifiers
 
+@include breakpoint($breakpoint) {
+  .Overlay--caretTop .Overlay-box {
+    &::before,
+    &::after {
+      position: absolute;
+      left: 50%;
+      display: inline-block;
+      content: "";
+    }
+
+    &::before {
+      top: -$spacer-3;
+      margin-left: -9px;
+      border: $spacer-2 $border-style transparent;
+      border-bottom-color: $border-black-fade;
+    }
+
+    &::after {
+      top: -14px;
+      margin-left: -$spacer-2;
+      border: 7px $border-style transparent;
+      border-bottom-color: $bg-white;
+    }
+  }
+}
+
 // Default .Overlay
 @include breakpoint($breakpoint) {
   .Overlay-box {
