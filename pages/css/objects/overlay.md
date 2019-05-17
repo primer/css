@@ -27,17 +27,14 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
   <summary class="btn">
     Choose an item
   </summary>
-  <div class="Overlay Overlay-sm--compact">
+  <div class="Overlay">
     <div class="Overlay-box">
       <header class="Overlay-header">
         <h3 class="Overlay-title">Title</h3>
         <button class="Overlay-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <main class="Overlay-content text-center p-5">
-        <div class="blankslate">
-          <h3>Content goes here</h3>
-          <p>For example this is a blankslate</p>
-        </div>
+        Content goes here
       </main>
       <footer class="Overlay-footer">
         Footer
@@ -65,7 +62,7 @@ Use an Overlay as a wrapper for Menus. Add the `border-0` utility to remove the 
   <summary class="btn" aria-haspopup="menu">
     File
   </summary>
-  <div class="Overlay Overlay-sm--compact Overlay-sm--mini">
+  <div class="Overlay Overlay-sm--dropdown">
     <div class="Overlay-box">
       <main class="Overlay-content">
         <menu class="Menu Menu--simple">
@@ -73,17 +70,17 @@ Use an Overlay as a wrapper for Menus. Add the `border-0` utility to remove the 
             <span class="Menu-text">Show comments</span>
           </a>
           <hr class="Menu-divider">
-          <a class="Menu-item">
+          <a class="Menu-item" href="#">
             <span class="Menu-text">View file</span>
           </a>
-          <a class="Menu-item">
+          <a class="Menu-item" href="#">
             <span class="Menu-text">Edit file</span>
           </a>
-          <a class="Menu-item text-red">
+          <a class="Menu-item text-red" href="#">
             <span class="Menu-text">Delete file</span>
           </a>
           <hr class="Menu-divider">
-          <a class="Menu-item">
+          <a class="Menu-item" href="#">
             <span class="Menu-text">Open in desktop</span>
           </a>
         </menu>
@@ -115,7 +112,7 @@ Select Menus are more advanced menus with extra functionality. Such as allowing 
   <summary class="btn" aria-haspopup="menu">
     Choose an item
   </summary>
-  <div class="Overlay Overlay--full Overlay-sm--compact">
+  <div class="Overlay Overlay-xs--selectMenu Overlay-sm--selectMenu">
     <div class="Overlay-box">
       <header class="Overlay-header">
         <h3 class="Overlay-title">Title</h3>
@@ -242,7 +239,7 @@ Popovers can be used to inform users about new product features. They stick arou
 
 <div class="p-5">
 
-<div class="Overlay Overlay--transparent Overlay-sm--compact">
+<div class="Overlay Overlay-xs--popover Overlay-sm--popover">
   <div class="Overlay-box mb-0">
     <main class="Overlay-content p-4">
       <h4 class="mb-2">Popover heading</h4>

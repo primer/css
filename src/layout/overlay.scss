@@ -85,31 +85,46 @@ $breakpoint: sm;
 
 // Overlay Modifiers
 
-// .Overlay--fullHeight -> Covers the entire height but leaves some space at the bottom
-.Overlay--full .Overlay-box {
-  height: 80%;
-  max-height: none;
-  margin-top: 0;
-}
-
 // .Overlay--blocking -> Blocks clicking on the content below
 .Overlay--blocking::before {
   pointer-events: auto;
 }
 
-// .Overlay--transparent -> Removes the backdrop
-.Overlay--transparent {
-  .Overlay-box {
-    border-color: $border-gray-dark;
-    box-shadow: $box-shadow-medium;
-  }
-  &::before {
-    display: none;
+// Responsive Overlays
+
+// Overlay Overlay-sm--dialog Overlay-sm--dropdown Overlay-sm--popover Overlay-sm--selectMenu Overlay-xs--popover Overlay-xs--selectMenu
+
+// XS Uses max-width (0px - sm) -----------------------------------
+
+.Overlay-xs--selectMenu {
+  @media ( max-width: ($width-sm - 1px) ) {
+    .Overlay-box {
+      height: 80%;
+      max-height: none;
+      margin-top: 0;
+    }
   }
 }
 
-// TODO: Find better name
-.Overlay-sm--compact {
+.Overlay-xs--popover {
+  @media ( max-width: ($width-sm - 1px) ) {
+    .Overlay-box {
+      border-color: $border-gray-dark;
+      box-shadow: $box-shadow-medium;
+    }
+    &::before {
+      display: none;
+    }
+  }
+}
+
+
+// SM from `sm` upwards -----------------------------------
+
+// Compact version for wider screens
+.Overlay-sm--dropdown,
+.Overlay-sm--selectMenu,
+.Overlay-sm--popover {
   @include breakpoint($breakpoint) {
     position: absolute;
     top: auto;
@@ -127,9 +142,6 @@ $breakpoint: sm;
       margin: $spacer-1 0 $spacer-3 0;
       border-color: $border-gray-dark;
       box-shadow: $box-shadow-medium;
-      width: 250px;
-      height: auto;
-      max-height: 350px;
     }
 
     .Overlay-header,
@@ -139,8 +151,7 @@ $breakpoint: sm;
   }
 }
 
-// TODO: Find better name
-.Overlay-sm--mini {
+.Overlay-sm--dropdown {
   @include breakpoint($breakpoint) {
     .Overlay-box {
       max-width: 250px;
@@ -150,7 +161,16 @@ $breakpoint: sm;
   }
 }
 
-// Dialogs keep backdrop and are centered
+.Overlay-sm--selectMenu {
+  @include breakpoint($breakpoint) {
+    .Overlay-box {
+      width: 250px;
+      height: auto;
+      max-height: 350px;
+    }
+  }
+}
+
 .Overlay-sm--dialog {
   @include breakpoint($breakpoint) {
     .Overlay-box {
