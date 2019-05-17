@@ -11,9 +11,9 @@ The Overlay object provides a responsive container that can be used in a various
 {:toc}
 
 
-## Basic Overlay
+## Default Overlay
 
-In most cases Overlays get wrapped by a `<details>` element. They come with an `.Overlay-header` and `.Overlay-footer`, but both are optional. `.Overlay-content` is a container, ready to be filled.
+A common way to show Overlays is by wrapping them in a `<details>` element. Overlays come with an `.Overlay-header` and `.Overlay-footer`, but both are optional. `.Overlay-content` is a container, ready to be filled. If the content overflows, for example on mobile phones, `.Overlay-content` starts to vertically scroll.
 
 ```html
 
@@ -33,8 +33,9 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
         <h3 class="Overlay-title">Title</h3>
         <button class="Overlay-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
-      <main class="Overlay-content text-center p-5">
-        Content goes here
+      <main class="Overlay-content text-center px-6 py-3">
+        <h4 class="mb-2">Content goes here</h4>
+        <p>Fill me with anything you like. ✨ 🙌 🎉 </p>
       </main>
       <footer class="Overlay-footer">
         Footer
@@ -62,7 +63,7 @@ Use an Overlay as a wrapper for Menus. Add the `border-0` utility to remove the 
   <summary class="btn" aria-haspopup="menu">
     File
   </summary>
-  <div class="Overlay Overlay-sm--dropdown">
+  <div class="Overlay Overlay--dropdown">
     <div class="Overlay-box">
       <main class="Overlay-content">
         <menu class="Menu Menu--simple">
@@ -112,7 +113,7 @@ Select Menus are more advanced menus with extra functionality. Such as allowing 
   <summary class="btn" aria-haspopup="menu">
     Choose an item
   </summary>
-  <div class="Overlay Overlay-xs--selectMenu Overlay-sm--selectMenu">
+  <div class="Overlay Overlay--selectMenu">
     <div class="Overlay-box">
       <header class="Overlay-header">
         <h3 class="Overlay-title">Title</h3>
@@ -183,7 +184,7 @@ Dialogs ususally ask the user to make a choice. You can use the `.Box` component
   <summary class="btn" aria-haspopup="menu">
     Choose an item
   </summary>
-  <div class="Overlay Overlay--blocking Overlay-sm--dialog">
+  <div class="Overlay Overlay--blocking">
     <div class="Overlay-box">
       <header class="Overlay-header">
         <h3 class="Overlay-title">Title</h3>
@@ -239,8 +240,11 @@ Popovers can be used to inform users about new product features. They stick arou
 
 <div class="p-5">
 
-<div class="Overlay Overlay-xs--popover Overlay-sm--popover">
+<div class="Overlay Overlay--popover">
   <div class="Overlay-box mb-0">
+    <button class="Overlay-closeButton" type="button">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    </button>
     <main class="Overlay-content p-4">
       <h4 class="mb-2">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>

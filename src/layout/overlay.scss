@@ -83,48 +83,33 @@ $breakpoint: sm;
   background-color: $bg-gray;
 }
 
-// Overlay Modifiers
+// Modifiers
 
-// .Overlay--blocking -> Blocks clicking on the content below
-.Overlay--blocking::before {
-  pointer-events: auto;
-}
-
-// Responsive Overlays
-
-// Overlay Overlay-sm--dialog Overlay-sm--dropdown Overlay-sm--popover Overlay-sm--selectMenu Overlay-xs--popover Overlay-xs--selectMenu
-
-// XS Uses max-width (0px - sm) -----------------------------------
-
-.Overlay-xs--selectMenu {
-  @media ( max-width: ($width-sm - 1px) ) {
-    .Overlay-box {
-      height: 80%;
-      max-height: none;
-      margin-top: 0;
-    }
+// .Overlay--blocking -> In case an action is needed before closing the .Overlay
+.Overlay--blocking {
+  &::before {
+    pointer-events: auto;
+  }
+  .Overlay-closeButton {
+    display: none;
   }
 }
 
-.Overlay-xs--popover {
-  @media ( max-width: ($width-sm - 1px) ) {
-    .Overlay-box {
-      border-color: $border-gray-dark;
-      box-shadow: $box-shadow-medium;
-    }
-    &::before {
-      display: none;
-    }
+// Responsive Modifiers
+
+// Default .Overlay
+@include breakpoint($breakpoint) {
+  .Overlay-box {
+    max-width: $width-sm;
+    max-height: none;
+    margin: auto;
   }
 }
-
-
-// SM from `sm` upwards -----------------------------------
 
 // Compact version for wider screens
-.Overlay-sm--dropdown,
-.Overlay-sm--selectMenu,
-.Overlay-sm--popover {
+.Overlay--dropdown,
+.Overlay--selectMenu,
+.Overlay--popover {
   @include breakpoint($breakpoint) {
     position: absolute;
     top: auto;
@@ -151,7 +136,7 @@ $breakpoint: sm;
   }
 }
 
-.Overlay-sm--dropdown {
+.Overlay--dropdown {
   @include breakpoint($breakpoint) {
     .Overlay-box {
       max-width: 250px;
@@ -161,7 +146,15 @@ $breakpoint: sm;
   }
 }
 
-.Overlay-sm--selectMenu {
+.Overlay--selectMenu {
+  @media ( max-width: ($width-sm - 1px) ) {
+    .Overlay-box {
+      height: 80%;
+      max-height: none;
+      margin-top: 0;
+    }
+  }
+
   @include breakpoint($breakpoint) {
     .Overlay-box {
       width: 250px;
@@ -171,12 +164,22 @@ $breakpoint: sm;
   }
 }
 
-.Overlay-sm--dialog {
-  @include breakpoint($breakpoint) {
+.Overlay--popover {
+  .Overlay-box {
+    margin-bottom: 0;
+  }
+  .Overlay-closeButton {
+    position: absolute;
+    top: $spacer-3;
+    right: $spacer-3;
+  }
+  @media ( max-width: ($width-sm - 1px) ) {
     .Overlay-box {
-      width: 500px;
-      max-height: none;
-      margin: auto;
+      border-color: $border-gray-dark;
+      box-shadow: $box-shadow-medium;
+    }
+    &::before {
+      display: none;
     }
   }
 }
