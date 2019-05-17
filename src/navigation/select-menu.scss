@@ -3,9 +3,9 @@
 $select-menu-boder-color: lighten($gray-200, 3%);
 
 .SelectMenu {
-  margin: 0;
-  padding: 0;
   position: relative;
+  padding: 0;
+  margin: 0;
 }
 
 // List item within the select-menu.
@@ -14,8 +14,8 @@ $select-menu-boder-color: lighten($gray-200, 3%);
   padding: $spacer-3 $spacer-5;
   overflow: hidden;
   color: inherit;
-  background-color: $white;
   cursor: pointer;
+  background-color: $white;
 
   & + & {
     // Add a border between items
@@ -35,18 +35,16 @@ $select-menu-boder-color: lighten($gray-200, 3%);
   &:active,
   &:focus {
     color: $text-white !important;
-    background-color: $bg-blue !important;
     text-decoration: none;
+    background-color: $bg-blue !important;
   }
 }
-
 
 // Divider
 .SelectMenu-divider {
   margin-top: $spacer-1;
   margin-bottom: $spacer-1;
 }
-
 
 // Modifiers
 
@@ -59,6 +57,6 @@ $select-menu-boder-color: lighten($gray-200, 3%);
   margin-bottom: $spacer-1;
 
   .SelectMenu-item {
-    border-top: none;
+    border-top: 0;
   }
 }

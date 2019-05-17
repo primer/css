@@ -7,51 +7,50 @@ $breakpoint: sm;
 .Overlay {
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   z-index: 99;
   display: flex;
   padding: $spacer-3;
-  flex-direction: column;
   pointer-events: none;
+  flex-direction: column;
 }
 
 // Backdrop
 .Overlay::before {
-  content: "";
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
-  background-color: $black-fade-50;
+  left: 0;
   pointer-events: none;
+  content: "";
+  background-color: $black-fade-50;
 }
-
 
 // The box of the overlay
 .Overlay-box {
-  display: flex;
-  flex-direction: column;
   position: relative;
+  display: flex;
   max-height: 60%;
   margin: auto 0;
+  pointer-events: auto;
+  flex-direction: column;
   background-color: $bg-white;
   border: $border-width $border-style $border-gray-darker;
   border-radius: $border-radius;
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
-  pointer-events: auto;
 }
 
 // Header
 .Overlay-header {
   display: flex;
   padding: $spacer-3;
+  background-color: $bg-gray;
   border-bottom: $border;
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
-  background-color: $bg-gray;
 }
 
 .Overlay-title {
@@ -63,8 +62,8 @@ $breakpoint: sm;
 .Overlay-closeButton {
   padding: 0;
   fill: $text-gray-light;
-  border: none;
   background-color: transparent;
+  border: 0;
 }
 
 .Overlay-content {
@@ -77,10 +76,10 @@ $breakpoint: sm;
 // Footer
 .Overlay-footer {
   padding: $spacer-3;
-  border-top: $border;
-  border-bottom-left-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
   background-color: $bg-gray;
+  border-top: $border;
+  border-bottom-right-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
 }
 
 // Modifiers
@@ -90,6 +89,7 @@ $breakpoint: sm;
   &::before {
     pointer-events: auto;
   }
+
   .Overlay-closeButton {
     display: none;
   }
@@ -139,9 +139,9 @@ $breakpoint: sm;
   @include breakpoint($breakpoint) {
     position: absolute;
     top: auto;
-    left: auto;
     right: auto;
     bottom: auto;
+    left: auto;
     padding: 0;
 
     // Backdrop
@@ -165,15 +165,15 @@ $breakpoint: sm;
 .Overlay--dropdown {
   @include breakpoint($breakpoint) {
     .Overlay-box {
-      max-width: 250px;
       width: auto;
+      max-width: 250px;
       max-height: none;
     }
   }
 }
 
 .Overlay--selectMenu {
-  @media ( max-width: ($width-sm - 1px) ) {
+  @media (max-width: ($width-sm - 1px)) {
     .Overlay-box {
       height: 80%;
       max-height: none;
@@ -194,16 +194,19 @@ $breakpoint: sm;
   .Overlay-box {
     margin-bottom: 0;
   }
+
   .Overlay-closeButton {
     position: absolute;
     top: $spacer-3;
     right: $spacer-3;
   }
-  @media ( max-width: ($width-sm - 1px) ) {
+
+  @media (max-width: ($width-sm - 1px)) {
     .Overlay-box {
       border-color: $border-gray-dark;
       box-shadow: $box-shadow-medium;
     }
+
     &::before {
       display: none;
     }
