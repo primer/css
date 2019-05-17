@@ -22,7 +22,7 @@ $select-menu-boder-color: lighten($gray-200, 3%);
     border-top: $border-width $border-style $select-menu-boder-color;
   }
 
-  @include breakpoint($breakpoint) {
+  @include breakpoint(sm) {
     padding-top: $spacer-2;
     padding-bottom: $spacer-2;
   }

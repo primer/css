@@ -2,8 +2,6 @@
 
 // Overlay component
 
-$breakpoint: sm;
-
 .Overlay {
   position: fixed;
   top: 0;
@@ -97,7 +95,7 @@ $breakpoint: sm;
 
 // Responsive Modifiers
 
-@include breakpoint($breakpoint) {
+@include breakpoint(sm) {
   .Overlay--caretTop .Overlay-box {
     &::before,
     &::after {
@@ -124,7 +122,7 @@ $breakpoint: sm;
 }
 
 // Default .Overlay
-@include breakpoint($breakpoint) {
+@include breakpoint(sm) {
   .Overlay-box {
     max-width: $width-sm;
     max-height: none;
@@ -136,7 +134,7 @@ $breakpoint: sm;
 .Overlay--dropdown,
 .Overlay--selectMenu,
 .Overlay--popover {
-  @include breakpoint($breakpoint) {
+  @include breakpoint(sm) {
     position: absolute;
     top: auto;
     right: auto;
@@ -163,7 +161,7 @@ $breakpoint: sm;
 }
 
 .Overlay--dropdown {
-  @include breakpoint($breakpoint) {
+  @include breakpoint(sm) {
     .Overlay-box {
       width: auto;
       max-width: 250px;
@@ -181,7 +179,7 @@ $breakpoint: sm;
     }
   }
 
-  @include breakpoint($breakpoint) {
+  @include breakpoint(sm) {
     .Overlay-box {
       width: 250px;
       height: auto;
