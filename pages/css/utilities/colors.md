@@ -75,9 +75,16 @@ Background colors are most commonly used for filling large blocks of content or 
   </div>
   <div class="col-9 float-left">
     <div class="container-lg clearfix">
-      <div class="h4">.bg-yellow-light</div>
-      <code>{colors.yellow[2]}, $bg-yellow-light</code>
-      <Swatch className="bg-yellow-light" />
+      <div class="col-6 float-left">
+        <div class="h4">.bg-yellow-dark</div>
+        <code>{colors.yellow[7]}, $bg-yellow-dark</code>
+        <Swatch className="bg-yellow-dark border-right-0" />
+      </div>
+      <div class="col-6 float-left">
+        <div class="h4">.bg-yellow-light</div>
+        <code>{colors.yellow[2]}, $bg-yellow-light</code>
+        <Swatch className="bg-yellow-light" />
+      </div>
     </div>
   </div>
 </div>
@@ -173,6 +180,10 @@ You can set the color inheritance on an element by using the `text-inherit` clas
   .text-orange-light on white
 </div>
 <span class="float-left text-red tooltipped tooltipped-n" aria-label="Does not meet accessibility standards"><%= octicon("alert") %></span>
+<div class="text-yellow mb-2">
+  .text-yellow on white
+</div>
+<span class="float-left text-red tooltipped tooltipped-n" aria-label="Does not meet accessibility standards"><%= octicon("alert") %></span>
 <div class="text-green mb-2 ml-4">
   .text-green on white
 </div>
@@ -198,6 +209,9 @@ You can set the color inheritance on an element by using the `text-inherit` clas
 </div>
 <div class="bg-green-light mb-2">
   .text-gray-dark on .bg-green-light
+</div>
+<div class="bg-yellow-dark mb-2">
+  .text-gray-dark on .bg-yellow-dark
 </div>
 <div class="bg-yellow mb-2">
   .text-gray-dark on .bg-yellow
