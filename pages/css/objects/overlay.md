@@ -65,23 +65,13 @@ Use an Overlay as a wrapper for Menus. Add the `border-0` utility to remove the 
     <div class="Overlay-box">
       <main class="Overlay-content">
         <menu class="Menu Menu--simple">
-          <a class="Menu-item selected">
-            <span class="Menu-text">Show comments</span>
-          </a>
+          <a class="Menu-item selected"> <span class="Menu-text">Show comments</span> </a>
           <hr class="Menu-divider">
-          <a class="Menu-item" href="#">
-            <span class="Menu-text">View file</span>
-          </a>
-          <a class="Menu-item" href="#">
-            <span class="Menu-text">Edit file</span>
-          </a>
-          <a class="Menu-item text-red" href="#">
-            <span class="Menu-text">Delete file</span>
-          </a>
+          <a class="Menu-item" href="#"> <span class="Menu-text">View file</span> </a>
+          <a class="Menu-item" href="#"> <span class="Menu-text">Edit file</span> </a>
+          <a class="Menu-item text-red" href="#"> <span class="Menu-text">Delete file</span> </a>
           <hr class="Menu-divider">
-          <a class="Menu-item" href="#">
-            <span class="Menu-text">Open in desktop</span>
-          </a>
+          <a class="Menu-item" href="#"> <span class="Menu-text">Open in desktop</span> </a>
         </menu>
       </main>
     </div>
@@ -121,33 +111,15 @@ Select Menus are more advanced menus with extra functionality. Such as allowing 
       </form>
       <main class="Overlay-content">
         <menu class="Menu">
-          <a class="Menu-item selected">
-            <span class="Menu-text">Item 1</span>
-          </a>
-          <a class="Menu-item">
-            <span class="Menu-text">Item 2</span>
-          </a>
-          <a class="Menu-item">
-            <span class="Menu-text">Item 3</span>
-          </a>
-          <a class="Menu-item selected">
-            <span class="Menu-text">Item 4</span>
-          </a>
-          <a class="Menu-item">
-            <span class="Menu-text">Item 5</span>
-          </a>
-          <a class="Menu-item">
-            <span class="Menu-text">Item 6</span>
-          </a>
-          <a class="Menu-item selected">
-            <span class="Menu-text">Item 7</span>
-          </a>
-          <a class="Menu-item">
-            <span class="Menu-text">Item 8</span>
-          </a>
-          <a class="Menu-item">
-            <span class="Menu-text">Item 9</span>
-          </a>
+          <a class="Menu-item selected" href="#"> <span class="Menu-text">Item 1</span> </a>
+          <a class="Menu-item" href="#"> <span class="Menu-text">Item 2</span> </a>
+          <a class="Menu-item" href="#"> <span class="Menu-text">Item 3</span> </a>
+          <a class="Menu-item" href="#"> <span class="Menu-text">Item 4</span> </a>
+          <a class="Menu-item" href="#"> <span class="Menu-text">Item 5</span> </a>
+          <a class="Menu-item" href="#"> <span class="Menu-text">Item 6</span> </a>
+          <a class="Menu-item" href="#"> <span class="Menu-text">Item 7</span> </a>
+          <a class="Menu-item" href="#"> <span class="Menu-text">Item 8</span> </a>
+          <a class="Menu-item" href="#"> <span class="Menu-text">Item 9</span> </a>
         </menu>
       </main>
       <footer class="Overlay-footer">
