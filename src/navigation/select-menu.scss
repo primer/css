@@ -1,0 +1,64 @@
+// SelectMenu
+
+$select-menu-boder-color: lighten($gray-200, 3%);
+
+.SelectMenu {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+// List item within the select-menu.
+.SelectMenu-item {
+  display: block;
+  padding: $spacer-3 $spacer-5;
+  overflow: hidden;
+  color: inherit;
+  background-color: $white;
+  cursor: pointer;
+
+  & + & {
+    // Add a border between items
+    border-top: $border-width $border-style $select-menu-boder-color;
+  }
+
+  @include breakpoint($breakpoint) {
+    padding-top: $spacer-2;
+    padding-bottom: $spacer-2;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $text-white !important;
+    background-color: $bg-blue !important;
+    text-decoration: none;
+  }
+}
+
+
+// Divider
+.SelectMenu-divider {
+  margin-top: $spacer-1;
+  margin-bottom: $spacer-1;
+}
+
+
+// Modifiers
+
+// Simple menus are similar to `<select>` elements
+// They don't have borders between items and are typically used without a header or footer
+
+// TODO: Find a better name?
+.SelectMenu--simple {
+  margin-top: $spacer-1;
+  margin-bottom: $spacer-1;
+
+  .SelectMenu-item {
+    border-top: none;
+  }
+}

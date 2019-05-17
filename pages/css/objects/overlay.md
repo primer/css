@@ -50,9 +50,9 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 </div>
 ```
 
-## Overlay as a Menu
+## Overlay as a Dropdown Menu
 
-Use an Overlay as a wrapper for Menus. Add the `border-0` utility to remove the Menu's default border.
+Use an Overlay as a wrapper for Dropdown Menus. Add the `border-0` utility to remove the Menu's default border.
 
 ```html
 <div class="p-5">
@@ -64,14 +64,14 @@ Use an Overlay as a wrapper for Menus. Add the `border-0` utility to remove the 
   <div class="Overlay Overlay--dropdown">
     <div class="Overlay-box">
       <main class="Overlay-content">
-        <menu class="Menu Menu--simple">
-          <a class="Menu-item selected"> <span class="Menu-text">Show comments</span> </a>
-          <hr class="Menu-divider">
-          <a class="Menu-item" href="#"> <span class="Menu-text">View file</span> </a>
-          <a class="Menu-item" href="#"> <span class="Menu-text">Edit file</span> </a>
-          <a class="Menu-item text-red" href="#"> <span class="Menu-text">Delete file</span> </a>
-          <hr class="Menu-divider">
-          <a class="Menu-item" href="#"> <span class="Menu-text">Open in desktop</span> </a>
+        <menu class="SelectMenu SelectMenu--simple">
+          <a class="SelectMenu-item selected"> <span class="SelectMenu-text">Show comments</span> </a>
+          <hr class="SelectMenu-divider">
+          <a class="SelectMenu-item" href="#"> <span class="SelectMenu-text">View file</span> </a>
+          <a class="SelectMenu-item" href="#"> <span class="SelectMenu-text">Edit file</span> </a>
+          <a class="SelectMenu-item text-red" href="#"> <span class="SelectMenu-text">Delete file</span> </a>
+          <hr class="SelectMenu-divider">
+          <a class="SelectMenu-item" href="#"> <span class="SelectMenu-text">Open in desktop</span> </a>
         </menu>
       </main>
     </div>
@@ -91,7 +91,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 ## Overlay as a Select Menu
 
-Select Menus are more advanced menus with extra functionality. Such as allowing multiple selections and filtering the list. To give SelectMenus a bit more space on mobile, use the `.Overlay--full` modifier. It's also recomended whenever a filter/search is present. That way, the Overlay box stays in place and doesn't jump in position.
+Select Menus are more advanced menus with extra functionality. Such as allowing multiple selections and filtering the list.
 
 ```html
 <div class="p-5" style="min-height: 450px;">
@@ -110,16 +110,16 @@ Select Menus are more advanced menus with extra functionality. Such as allowing 
         <input class="form-control input-block" type="text" placeholder="Filter" aria-label="Filter">
       </form>
       <main class="Overlay-content">
-        <menu class="Menu">
-          <a class="Menu-item selected" href="#"> <span class="Menu-text">Item 1</span> </a>
-          <a class="Menu-item" href="#"> <span class="Menu-text">Item 2</span> </a>
-          <a class="Menu-item" href="#"> <span class="Menu-text">Item 3</span> </a>
-          <a class="Menu-item" href="#"> <span class="Menu-text">Item 4</span> </a>
-          <a class="Menu-item" href="#"> <span class="Menu-text">Item 5</span> </a>
-          <a class="Menu-item" href="#"> <span class="Menu-text">Item 6</span> </a>
-          <a class="Menu-item" href="#"> <span class="Menu-text">Item 7</span> </a>
-          <a class="Menu-item" href="#"> <span class="Menu-text">Item 8</span> </a>
-          <a class="Menu-item" href="#"> <span class="Menu-text">Item 9</span> </a>
+        <menu class="SelectMenu">
+          <a class="SelectMenu-item selected" href="#"> <span class="SelectMenu-text">Item 1</span> </a>
+          <a class="SelectMenu-item" href="#"> <span class="SelectMenu-text">Item 2</span> </a>
+          <a class="SelectMenu-item" href="#"> <span class="SelectMenu-text">Item 3</span> </a>
+          <a class="SelectMenu-item" href="#"> <span class="SelectMenu-text">Item 4</span> </a>
+          <a class="SelectMenu-item" href="#"> <span class="SelectMenu-text">Item 5</span> </a>
+          <a class="SelectMenu-item" href="#"> <span class="SelectMenu-text">Item 6</span> </a>
+          <a class="SelectMenu-item" href="#"> <span class="SelectMenu-text">Item 7</span> </a>
+          <a class="SelectMenu-item" href="#"> <span class="SelectMenu-text">Item 8</span> </a>
+          <a class="SelectMenu-item" href="#"> <span class="SelectMenu-text">Item 9</span> </a>
         </menu>
       </main>
       <footer class="Overlay-footer">
