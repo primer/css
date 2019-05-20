@@ -6,6 +6,7 @@ const configure = require('./lib/config')
 module.exports = configure(
   withNextPages(
     withSass({
+      target: 'serverless',
       sassLoaderOptions: {
         includePaths: [
           resolve(__dirname, '../modules'),

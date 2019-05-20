@@ -1,0 +1,7 @@
+*.md
+.github
+.gitignore
+.storybook
+bin/
+script/
+prettier.config.js
