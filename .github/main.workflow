@@ -4,7 +4,7 @@ workflow "lint, test, deploy, publish" {
     "lint",
     "test",
     "publish",
-    "deploy",
+    "install",
   ]
 }
 
@@ -30,13 +30,4 @@ action "publish" {
   uses = "primer/publish@v1.0.0"
   args = ["--", "--unsafe-perm"]
   secrets = ["GITHUB_TOKEN", "NPM_AUTH_TOKEN"]
-}
-
-action "deploy" {
-  needs = "install"
-  uses = "primer/deploy@v3.0.0"
-  secrets = [
-    "GITHUB_TOKEN",
-    "NOW_TOKEN",
-  ]
 }
