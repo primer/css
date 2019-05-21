@@ -130,11 +130,14 @@
   }
 }
 
+
+// List Item
+
 .SelectMenu-item {
   display: block;
   padding: $spacer-3 $spacer-5;
   overflow: hidden;
-  color: inherit;
+  color: $text-gray;
   cursor: pointer;
   background-color: $bg-white;
 
@@ -164,6 +167,38 @@
 .SelectMenu-list:last-child .SelectMenu-item:last-child {
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
+}
+
+.SelectMenu-icon {
+  display: none;
+  position: absolute;
+  margin-left: -20px;
+}
+
+// Selected
+
+.SelectMenu-item[aria-checked="true"] {
+  color: $text-gray-dark;
+  background-color: $bg-gray;
+
+  .SelectMenu-icon {
+    display: block;
+  }
+}
+
+// Hover/focused
+// TODO: Separate hover and focus?
+@media (hover: hover) {
+  .SelectMenu-item {
+    &:hover,
+    &:active,
+    &:focus {
+      outline: none;
+      color: $text-white;
+      text-decoration: none;
+      background-color: $bg-blue;
+    }
+  }
 }
 
 // Divider
@@ -228,5 +263,14 @@
   // Show "border" when list isn't filled
   .SelectMenu-item:last-child {
     box-shadow: 0 $border-width 0 lighten($gray-200, 3%);
+  }
+}
+
+
+// Hacks
+
+.SelectMenu {
+  svg {
+    fill: currentColor; // Move to base/base.scss ?
   }
 }

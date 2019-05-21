@@ -43,7 +43,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 </p>
 ```
 
-## With a divider
+## Different options
 
 ```html
 <details class="details-reset details-overlay" open>
@@ -57,16 +57,32 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
         <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 1</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 2</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 3</span> </a>
+        <a class="SelectMenu-item" href="#url" aria-checked="true">
+          <svg height="16" class="SelectMenu-icon octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          <span class="SelectMenu-text">Selected state</span>
+        </a>
+        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Default state</span> </a>
         <div class="SelectMenu-divider">More options</div>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 4</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 5</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 6</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 7</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 8</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 9</span> </a>
+        <a class="SelectMenu-item" href="#url">
+          <img class="avatar avatar-small mr-2" src="https://avatars.githubusercontent.com/jonrohan?s=40" alt="jonrohan" height="20" width="20">
+          <span class="SelectMenu-text">With an avatar</span>
+        </a>
+        <a class="SelectMenu-item" href="#url">
+          <span class="SelectMenu-text">With a status icon</span>
+          <svg class="octicon octicon-primitive-dot color-green-5 ml-2" viewBox="0 0 8 16" version="1.1" width="8" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg>
+        </a>
+        <a class="SelectMenu-item" href="#url">
+          <span class="SelectMenu-text">With a </span> <span class="Label bg-blue" title="Label: label">label</span>
+        </a>
+        <a class="SelectMenu-item" href="#url">
+          <span class="SelectMenu-text">With a counter</span> <span class="Counter bg-gray-2">16</span>
+        </a>
+        <a class="SelectMenu-item" href="#url">
+          <span class="SelectMenu-text">
+            <h5>With a heading</h5>
+            <span>and some longer description</span>
+          </span>
+        </a>
       </menu>
     </div>
   </div>
@@ -85,7 +101,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 </p>
 ```
 
-## With filter
+## With a filter and footer
 
 ```html
 <details class="details-reset details-overlay" open>
@@ -123,10 +139,12 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
         <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 19</span> </a>
         <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 20</span> </a>
         <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 21</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">...</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 42</span> </a>
+        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 22</span> </a>
+        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 23</span> </a>
+        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 24</span> </a>
+        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 25</span> </a>
       </menu>
-      <footer class="SelectMenu-footer">Showing 42/42</footer>
+      <footer class="SelectMenu-footer">Showing 25 of 25</footer>
     </div>
   </div>
 </details>
@@ -160,12 +178,19 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
       </form>
       <menu class="SelectMenu-list">
         <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 1</span> </a>
+        <a class="SelectMenu-item" href="#url" aria-checked="true">
+          <svg height="16" class="SelectMenu-icon octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          <span class="SelectMenu-text">Item 2</span>
+        </a>
         <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 2</span> </a>
         <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 3</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 4</span> </a>
+        <a class="SelectMenu-item" href="#url" aria-checked="true">
+          <svg height="16" class="SelectMenu-icon octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          <span class="SelectMenu-text">Item 4</span>
+        </a>
         <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 5</span> </a>
       </menu>
-      <footer class="SelectMenu-footer">Showing 5/42</footer>
+      <footer class="SelectMenu-footer">Selected 3 ・ Showing 5 of 42</footer>
     </div>
   </div>
 </details>
