@@ -26,9 +26,9 @@ Select menus should use a `<details>` element and be trigged by a `<summary>` el
         <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
-        <a href="#url" class="SelectMenu-item"> <span class="SelectMenu-text">Item 1</span> </a>
-        <a href="#url" class="SelectMenu-item"> <span class="SelectMenu-text">Item 2</span> </a>
-        <a href="#url" class="SelectMenu-item"> <span class="SelectMenu-text">Item 3</span> </a>
+        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 1</span> </a>
+        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 2</span> </a>
+        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 3</span> </a>
       </menu>
     </div>
   </div>
