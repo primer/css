@@ -98,8 +98,8 @@
 // Filter
 
 .SelectMenu-filter {
-  margin: 0;
   padding: $spacer-3;
+  margin: 0;
   border-bottom: $border;
 
   @include breakpoint(sm) {
@@ -125,11 +125,10 @@
   -webkit-overflow-scrolling: touch; // Adds momentum + bouncy scrolling
 
   &:last-child {
-    border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
   }
 }
-
 
 // List Item
 
@@ -165,13 +164,13 @@
 }
 
 .SelectMenu-list:last-child .SelectMenu-item:last-child {
-  border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
 }
 
 .SelectMenu-icon {
-  display: none;
   position: absolute;
+  display: none;
   margin-left: -20px;
 }
 
@@ -193,10 +192,10 @@
     &:hover,
     &:active,
     &:focus {
-      outline: none;
       color: $text-white;
       text-decoration: none;
       background-color: $bg-blue;
+      outline: none;
     }
   }
 }
@@ -205,13 +204,13 @@
 
 .SelectMenu-divider {
   // Allows list items to be groupped
-  margin: 0;
-  border-top: $border;
-  border-bottom: $border;
   padding: $spacer-1 $spacer-3;
+  margin: 0;
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
   color: $text-gray-light;
+  border-top: $border;
+  border-bottom: $border;
 
   &:first-child {
     border-top: 0;
@@ -230,10 +229,10 @@
 
 .SelectMenu-footer {
   padding: $spacer-2 $spacer-3;
-  border-top: $border;
-  text-align: center;
   font-size: $font-size-small;
   color: $text-gray-light;
+  text-align: center;
+  border-top: $border;
 
   @include breakpoint(sm) {
     padding: $spacer-1 $spacer-2;
@@ -266,9 +265,9 @@
   }
 }
 
-
 // Hacks
 
+// stylelint-disable no-duplicate-selectors, selector-max-type
 .SelectMenu {
   svg {
     fill: currentColor; // Move to base/base.scss ?
