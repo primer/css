@@ -1,0 +1,231 @@
+// Select Menu component
+
+.SelectMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  padding: $spacer-3;
+  pointer-events: none;
+  flex-direction: column;
+
+  @include breakpoint(sm) {
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    padding: 0;
+  }
+}
+
+// Backdrop
+.SelectMenu::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  content: "";
+  background-color: $black-fade-50;
+
+  @include breakpoint(sm) {
+    display: none;
+  }
+}
+
+// The box of the overlay
+.SelectMenu-modal {
+  position: relative;
+  display: flex;
+  max-height: 66%;
+  margin: auto 0;
+  pointer-events: auto;
+  flex-direction: column;
+  background-color: $gray-100;
+  border: $border-width $border-style $border-gray-darker;
+  border-radius: $border-radius;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+
+  @include breakpoint(sm) {
+    width: 250px;
+    height: auto;
+    max-height: 350px;
+    margin: $spacer-1 0 $spacer-3 0;
+    font-size: $font-size-small;
+    border-color: $border-gray-dark;
+    box-shadow: $box-shadow-medium;
+  }
+}
+
+// Header
+
+.SelectMenu-header {
+  display: flex;
+  padding: $spacer-3;
+  border-bottom: $border;
+
+  @include breakpoint(sm) {
+    padding: $spacer-2;
+  }
+}
+
+.SelectMenu-title {
+  flex: auto;
+  font-size: $body-font-size;
+  font-weight: $font-weight-bold;
+
+  @include breakpoint(sm) {
+    font-size: inherit;
+  }
+}
+
+.SelectMenu-closeButton {
+  padding: 0;
+  fill: $text-gray-light;
+  background-color: transparent;
+  border: 0;
+
+  @include breakpoint(sm) {
+    display: none;
+  }
+}
+
+// Filter
+
+.SelectMenu-filter {
+  margin: 0;
+  padding: $spacer-3;
+  border-bottom: $border;
+
+  @include breakpoint(sm) {
+    padding: $spacer-2;
+  }
+}
+
+.SelectMenu-input {
+  display: block;
+  width: 100%;
+  font-size: inherit;
+}
+
+// List
+
+.SelectMenu-list {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  flex: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; // Adds momentum + bouncy scrolling
+
+  &:last-child {
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+}
+
+.SelectMenu-item {
+  display: block;
+  padding: $spacer-3 $spacer-5;
+  overflow: hidden;
+  color: inherit;
+  cursor: pointer;
+  background-color: $bg-white;
+
+  & + & {
+    // Add a border between items
+    border-top: $border-width $border-style lighten($gray-200, 3%);
+  }
+
+  @include breakpoint(sm) {
+    padding-top: $spacer-2;
+    padding-bottom: $spacer-2;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $text-white !important;
+    text-decoration: none;
+    background-color: $bg-blue !important;
+  }
+}
+
+.SelectMenu-list:last-child .SelectMenu-item:last-child {
+  // border-bottom: 0;
+  border-radius: inherit;
+}
+
+// Divider
+
+.SelectMenu-divider {
+  // Allows list items to be groupped
+  margin: 0;
+  border-top: $border;
+  border-bottom: $border;
+  padding: $spacer-1 $spacer-3;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  color: $text-gray-light;
+
+  &:first-child {
+    border-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @include breakpoint(sm) {
+    padding: $spacer-1 $spacer-2;
+  }
+}
+
+// Footer
+
+.SelectMenu-footer {
+  padding: $spacer-2 $spacer-3;
+  border-top: $border;
+  text-align: center;
+  font-size: $font-size-small;
+  color: $text-gray-light;
+
+  @include breakpoint(sm) {
+    padding: $spacer-1 $spacer-2;
+  }
+}
+
+// Has Filter
+
+.SelectMenu--hasFilter {
+  .SelectMenu-modal {
+    height: 80%;
+    max-height: none;
+    margin-top: 0;
+
+    @include breakpoint(sm) {
+      height: auto;
+      max-height: 350px;
+      margin-top: $spacer-1;
+    }
+  }
+
+  // Show "border" when list isn't filled
+  .SelectMenu-list {
+    background-color: $bg-white;
+  }
+
+  // Show "border" when list isn't filled
+  .SelectMenu-item:last-child {
+    box-shadow: 0 $border-width 0 lighten($gray-200, 3%);
+  }
+}
