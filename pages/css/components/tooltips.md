@@ -81,7 +81,7 @@ Align tooltips to the left or right of an element, combined with a directional c
   <span class="tooltipped tooltipped-sw tooltipped-align-right-1 m-2 p-2 border" aria-label="Tooltipped SE and aligned right.">
     .tooltipped-sw .tooltipped-align-right-1
   </span>
-  <span class="tooltipped tooltipped-se tooltipped-align-left-1 m-2 p-2 border" aria-label="Tooltipped SW and aigned left.">
+  <span class="tooltipped tooltipped-se tooltipped-align-left-1 m-2 p-2 border" aria-label="Tooltipped SW and aligned left.">
     .tooltipped-se .tooltipped-align-left-1
   </span>
 </div>
@@ -89,7 +89,7 @@ Align tooltips to the left or right of an element, combined with a directional c
   <span class="tooltipped tooltipped-sw tooltipped-align-right-2 m-2 p-2 border" aria-label="Tooltipped SE and aligned right.">
     .tooltipped-sw .tooltipped-align-right-2
   </span>
-  <span class="tooltipped tooltipped-se tooltipped-align-left-2 m-2 p-2 border" aria-label="Tooltipped SW and aigned left.">
+  <span class="tooltipped tooltipped-se tooltipped-align-left-2 m-2 p-2 border" aria-label="Tooltipped SW and aligned left.">
     .tooltipped-se .tooltipped-align-left-2
   </span>
 </div>
