@@ -1,10 +1,9 @@
-workflow "lint, test, deploy, publish" {
+workflow "lint, test, publish" {
   on = "push"
   resolves = [
     "lint",
     "test",
     "publish",
-    "install",
   ]
 }
 
