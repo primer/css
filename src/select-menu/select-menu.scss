@@ -138,11 +138,10 @@
   padding: $spacer-3 $spacer-5;
   overflow: hidden;
   color: $text-gray;
-  cursor: pointer;
   text-align: left;
+  cursor: pointer;
   background-color: $bg-white;
-  border: none;
-  -webkit-appearance: none;
+  border: 0;
 
   & + & {
     // Add a border between items
