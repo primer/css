@@ -38,6 +38,8 @@ Use a `<details>` element to toggle the Select Menu. The `<summary>` element can
 <div class="d-none d-sm-block" style="height: 180px"> <!-- min height for > sm --> </div>
 ```
 
+Also be sure to include the `.SelectMenu-title` and `.SelectMenu-closeButton`. Note that the close button is only shown for narrow screens (mobile).
+
 ## Selected state
 
 Use `aria-checked="true"` to mark a list item as selected. Including `.SelectMenu-icon .octicon-check` adds a check icon to the left.
@@ -173,7 +175,7 @@ If the list is expected to get long, consider adding a filter. Be sure to also i
 <div class="d-none d-sm-block" style="height: 380px"> <!-- min height for > sm --> </div>
 ```
 
-## List divider
+## Divider
 
 The list can be divided into multiple parts by adding a `.SelectMenu-divider`.
 
