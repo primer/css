@@ -134,11 +134,15 @@
 
 .SelectMenu-item {
   display: block;
+  width: 100%;
   padding: $spacer-3 $spacer-5;
   overflow: hidden;
   color: $text-gray;
   cursor: pointer;
+  text-align: left;
   background-color: $bg-white;
+  border: none;
+  -webkit-appearance: none;
 
   & + & {
     // Add a border between items
