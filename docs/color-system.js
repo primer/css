@@ -15,14 +15,14 @@ export function ColorPalette(props) {
       {gradientHues.map(hue => {
         const color = colors[hue][5]
         return (
-          <Box bg={color} p={3} width={200} mr={2} key={hue}>
+          <Box bg={color} p={3} width={200} mr={2} mb={2} key={hue}>
             <Text fontWeight="bold" color={overlayColor(color)}>
               {titleCase(hue)}
             </Text>
           </Box>
         )
       })}
-      <BorderBox bg="white" p={3} width={200} borderRadius={0}>
+      <BorderBox bg="white" p={3} width={200} mb={2} borderRadius={0}>
         <Text fontWeight="bold" color="black">
           White
         </Text>
@@ -64,7 +64,7 @@ export function ColorVariables(props) {
 export function ColorVariable({hue, ...rest}) {
   const values = colors[hue]
   return (
-    <Flex.Item as={Box} pr={4} mb={6} className="col-6 markdown-no-margin" {...rest}>
+    <Flex.Item as={Box} minWidth={240} pr={4} mb={6} className="col-12 col-md-6 markdown-no-margin" {...rest}>
       {/* <Heading as="div">{titleCase(hue)}</Heading> */}
       <Box bg={`${hue}.5`} my={2} p={3} color="white">
         <Heading as="div" pb={3} fontSize={56} fontWeight="light">
