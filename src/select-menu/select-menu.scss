@@ -204,11 +204,18 @@
   }
 }
 
-// Loading
+// Loading/blankslate
 
-.SelectMenu-loading {
-  padding: $spacer-3;
+.SelectMenu-loading,
+.SelectMenu-blankslate {
+  padding: $spacer-4 $spacer-3;
   text-align: center;
+  background-color: $bg-white;
+
+  &:last-child {
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+  }
 }
 
 // Divider
