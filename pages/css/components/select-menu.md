@@ -74,37 +74,6 @@ Use `aria-checked="true"` to mark a list item as selected. Including `.SelectMen
 <div class="d-none d-sm-block" style="height: 250px"> <!-- min height for > sm --> </div>
 ```
 
-## List divider
-
-The list can be divided into multiple parts by adding a `.SelectMenu-divider`.
-
-```html
-<details class="details-reset details-overlay" open>
-  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
-    Choose an item
-  </summary>
-  <div class="SelectMenu">
-    <div class="SelectMenu-modal">
-      <header class="SelectMenu-header">
-        <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
-      </header>
-      <menu class="SelectMenu-list">
-        <button class="SelectMenu-item">Item 1</button>
-        <button class="SelectMenu-item">Item 2</button>
-        <div class="SelectMenu-divider">More options</div>
-        <button class="SelectMenu-item">Item 3</button>
-        <button class="SelectMenu-item">Item 4</button>
-        <button class="SelectMenu-item">Item 5</button>
-      </menu>
-    </div>
-  </div>
-</details>
-
-<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
-<div class="d-none d-sm-block" style="height: 260px"> <!-- min height for > sm --> </div>
-```
-
 ## List item types
 
 The `.SelectMenu-item` can contain different kind of content. Use utility classes like `mr-2`, `d-flex` or `float-right` in case you need to position certain elements.
@@ -202,6 +171,37 @@ If the list is expected to get long, consider adding a filter. Be sure to also i
 
 <div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
 <div class="d-none d-sm-block" style="height: 380px"> <!-- min height for > sm --> </div>
+```
+
+## List divider
+
+The list can be divided into multiple parts by adding a `.SelectMenu-divider`.
+
+```html
+<details class="details-reset details-overlay" open>
+  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+    Choose an item
+  </summary>
+  <div class="SelectMenu">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+      </header>
+      <menu class="SelectMenu-list">
+        <button class="SelectMenu-item">Item 1</button>
+        <button class="SelectMenu-item">Item 2</button>
+        <div class="SelectMenu-divider">More options</div>
+        <button class="SelectMenu-item">Item 3</button>
+        <button class="SelectMenu-item">Item 4</button>
+        <button class="SelectMenu-item">Item 5</button>
+      </menu>
+    </div>
+  </div>
+</details>
+
+<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
+<div class="d-none d-sm-block" style="height: 260px"> <!-- min height for > sm --> </div>
 ```
 
 ## Right aligned
