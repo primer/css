@@ -26,9 +26,9 @@ Use a `<details>` element to toggle the Select Menu. The `<summary>` element can
         <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
-        <button class="SelectMenu-item"><span class="SelectMenu-text">Item 1</span></button>
-        <button class="SelectMenu-item"><span class="SelectMenu-text">Item 2</span></button>
-        <button class="SelectMenu-item"><span class="SelectMenu-text">Item 3</span></button>
+        <button class="SelectMenu-item">Item 1</button>
+        <button class="SelectMenu-item">Item 2</button>
+        <button class="SelectMenu-item">Item 3</button>
       </menu>
     </div>
   </div>
@@ -56,15 +56,15 @@ Use `aria-checked="true"` to mark a list item as selected. Including `.SelectMen
       <menu class="SelectMenu-list">
         <button class="SelectMenu-item" aria-checked="true">
           <svg height="16" class="SelectMenu-icon octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
-          <span class="SelectMenu-text">Selected state</span>
+          Selected state
         </button>
-        <button class="SelectMenu-item"><span class="SelectMenu-text">Default state</span></button>
+        <button class="SelectMenu-item">Default state</button>
         <button class="SelectMenu-item" aria-checked="true">
           <svg height="16" class="SelectMenu-icon octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
-          <span class="SelectMenu-text">Selected state</span>
+          Selected state
         </button>
-        <button class="SelectMenu-item"><span class="SelectMenu-text">Default state</span></button>
-        <button class="SelectMenu-item"><span class="SelectMenu-text">Default state</span></button>
+        <button class="SelectMenu-item">Default state</button>
+        <button class="SelectMenu-item">Default state</button>
       </menu>
     </div>
   </div>
@@ -90,12 +90,12 @@ The list can be divided into multiple parts by adding a `.SelectMenu-divider`.
         <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
-        <button class="SelectMenu-item"><span class="SelectMenu-text">Item 1</span></button>
-        <button class="SelectMenu-item"><span class="SelectMenu-text">Item 2</span></button>
+        <button class="SelectMenu-item">Item 1</button>
+        <button class="SelectMenu-item">Item 2</button>
         <div class="SelectMenu-divider">More options</div>
-        <button class="SelectMenu-item"><span class="SelectMenu-text">Item 3</span></button>
-        <button class="SelectMenu-item"><span class="SelectMenu-text">Item 4</span></button>
-        <button class="SelectMenu-item"><span class="SelectMenu-text">Item 5</span></button>
+        <button class="SelectMenu-item">Item 3</button>
+        <button class="SelectMenu-item">Item 4</button>
+        <button class="SelectMenu-item">Item 5</button>
       </menu>
     </div>
   </div>
@@ -122,29 +122,24 @@ The `.SelectMenu-item` can contain different kind of content. Use utility classe
       </header>
       <menu class="SelectMenu-list">
         <button class="SelectMenu-item">
-          <span class="SelectMenu-text">Text only</span>
+          Text only
         </button>
         <button class="SelectMenu-item">
           <img class="avatar avatar-small mr-2" src="https://avatars.githubusercontent.com/jonrohan?s=40" alt="jonrohan" height="20" width="20">
-          <span class="SelectMenu-text">With an avatar</span>
+          With an avatar
         </button>
         <button class="SelectMenu-item">
-          <span class="SelectMenu-text">With a status icon</span>
-          <svg class="octicon octicon-primitive-dot color-green-5 ml-2" viewBox="0 0 8 16" version="1.1" width="8" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg>
+          With a status icon <svg class="octicon octicon-primitive-dot color-green-5 ml-2" viewBox="0 0 8 16" version="1.1" width="8" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg>
         </button>
         <button class="SelectMenu-item">
-          <span class="SelectMenu-text">With a </span>
-          <span class="Label bg-blue" title="Label: label">label</span>
+          With a <span class="Label bg-blue" title="Label: label">label</span>
         </button>
         <button class="SelectMenu-item">
-          <span class="SelectMenu-text">With a counter</span>
-          <span class="Counter bg-gray-2 ml-1">16</span>
+          With a counter <span class="Counter bg-gray-2 ml-1">16</span>
         </button>
         <button class="SelectMenu-item">
-          <span class="SelectMenu-text">
-            <h5>With a heading</h5>
-            <span>and some longer description</span>
-          </span>
+          <h5>With a heading</h5>
+          <span>and some longer description</span>
         </button>
       </menu>
     </div>
@@ -174,31 +169,31 @@ If the list is expected to get long, consider adding a filter. Be sure to also i
         <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
       </form>
       <menu class="SelectMenu-list">
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 1</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 2</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 3</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 4</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 5</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 6</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 7</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 8</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 9</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 10</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 11</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 12</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 13</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 14</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 15</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 16</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 17</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 18</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 19</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 20</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 21</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 22</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 23</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 24</span> </a>
-        <a class="SelectMenu-item" href="#url"> <span class="SelectMenu-text">Item 25</span> </a>
+        <a class="SelectMenu-item" href="#url">Item 1</a>
+        <a class="SelectMenu-item" href="#url">Item 2</a>
+        <a class="SelectMenu-item" href="#url">Item 3</a>
+        <a class="SelectMenu-item" href="#url">Item 4</a>
+        <a class="SelectMenu-item" href="#url">Item 5</a>
+        <a class="SelectMenu-item" href="#url">Item 6</a>
+        <a class="SelectMenu-item" href="#url">Item 7</a>
+        <a class="SelectMenu-item" href="#url">Item 8</a>
+        <a class="SelectMenu-item" href="#url">Item 9</a>
+        <a class="SelectMenu-item" href="#url">Item 10</a>
+        <a class="SelectMenu-item" href="#url">Item 11</a>
+        <a class="SelectMenu-item" href="#url">Item 12</a>
+        <a class="SelectMenu-item" href="#url">Item 13</a>
+        <a class="SelectMenu-item" href="#url">Item 14</a>
+        <a class="SelectMenu-item" href="#url">Item 15</a>
+        <a class="SelectMenu-item" href="#url">Item 16</a>
+        <a class="SelectMenu-item" href="#url">Item 17</a>
+        <a class="SelectMenu-item" href="#url">Item 18</a>
+        <a class="SelectMenu-item" href="#url">Item 19</a>
+        <a class="SelectMenu-item" href="#url">Item 20</a>
+        <a class="SelectMenu-item" href="#url">Item 21</a>
+        <a class="SelectMenu-item" href="#url">Item 22</a>
+        <a class="SelectMenu-item" href="#url">Item 23</a>
+        <a class="SelectMenu-item" href="#url">Item 24</a>
+        <a class="SelectMenu-item" href="#url">Item 25</a>
       </menu>
       <footer class="SelectMenu-footer">Showing 25 of 25</footer>
     </div>
@@ -227,9 +222,9 @@ In case the Select Menu should be right aligned, add a `right-0` utility class.
           <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
         </header>
         <menu class="SelectMenu-list">
-          <button class="SelectMenu-item"><span class="SelectMenu-text">Item 1</span></button>
-          <button class="SelectMenu-item"><span class="SelectMenu-text">Item 2</span></button>
-          <button class="SelectMenu-item"><span class="SelectMenu-text">Item 3</span></button>
+          <button class="SelectMenu-item">Item 1</button>
+          <button class="SelectMenu-item">Item 2</button>
+          <button class="SelectMenu-item">Item 3</button>
         </menu>
       </div>
     </div>
