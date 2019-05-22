@@ -101,12 +101,12 @@ export default class MyApp extends App {
             >
               <SideNav>
                 <NavList currentPath={pathname} path="/css/getting-started" />
-                <NavList currentPath={pathname} path="/css/tools" />
-                <NavList currentPath={pathname} path="/css/principles" />
                 <NavList currentPath={pathname} path="/css/support" />
                 <NavList currentPath={pathname} path="/css/utilities" />
                 <NavList currentPath={pathname} path="/css/objects" />
                 <NavList currentPath={pathname} path="/css/components" />
+                <NavList currentPath={pathname} path="/css/tools" />
+                <NavList currentPath={pathname} path="/css/principles" />
               </SideNav>
             </BorderBox>
           </Flex>
