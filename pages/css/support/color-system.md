@@ -17,3 +17,7 @@ import {ColorPalette, ColorVariables} from '../../../docs/color-system'
 ## Color variables
 
 <ColorVariables />
+
+## Color utilities
+
+There are [utility classes](/css/utilities/colors) for every color in our system except fades.
