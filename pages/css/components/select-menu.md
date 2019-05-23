@@ -223,7 +223,7 @@ Sometimes you need two or more lists of items in your Select Menu, e.g. branches
 When fetching large lists, consider showing a `.SelectMenu-loading` animation.
 
 ```html
-<details class="details-reset details-overlay" open>
+<details class="details-reset details-overlay">
   <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
     Choose an item
   </summary>
@@ -238,7 +238,10 @@ When fetching large lists, consider showing a `.SelectMenu-loading` animation.
       </form>
       <menu class="SelectMenu-list">
         <div class="SelectMenu-loading">
-          <svg height="32" class="octicon octicon-octoface" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"></path></svg>
+          <svg class="SelectMenu-loadingIcon octicon octicon-octoface" width="32px" height="26px" viewBox="0 0 32 26" version="1.1">
+            <path class="SelectMenu-loadingFace" d="M29.4,6.68 C29.66,6.04 30.5,3.5 29.14,0.06 C29.14,0.06 27.04,-0.6 22.26,2.66 C20.26,2.1 18.12,2.02 16,2.02 C13.88,2.02 11.74,2.1 9.74,2.66 C4.96,-0.62 2.86,0.06 2.86,0.06 C1.5,3.5 2.34,6.04 2.6,6.68 C0.98,8.42 0,10.66 0,13.38 C0,23.68 6.66,26 15.96,26 C25.26,26 32,23.68 32,13.38 C32,10.66 31.02,8.42 29.4,6.68 Z M16,24.04 C9.4,24.04 4.04,23.74 4.04,17.34 C4.04,15.82 4.8,14.38 6.08,13.2 C8.22,11.24 11.88,12.28 16,12.28 C20.14,12.28 23.76,11.24 25.92,13.2 C27.22,14.38 27.96,15.8 27.96,17.34 C27.96,23.72 22.6,24.04 16,24.04 Z"></path>
+            <path class="SelectMenu-loadingEyes" d="M21.02,14.02 C22.36,14.02 23.42,15.6 23.42,17.58 C23.42,19.56 22.34,21.16 21.02,21.16 C19.7,21.16 18.62,19.56 18.62,17.58 C18.62,15.6 19.7,14.02 21.02,14.02 Z M10.98,14.02 C12.3,14.02 13.38,15.6 13.38,17.58 C13.38,19.56 12.3,21.16 10.98,21.16 C9.66,21.16 8.58,19.54 8.58,17.58 C8.58,15.62 9.66,14.02 10.98,14.02 Z"></path>
+          </svg>
         </div>
       </menu>
       <footer class="SelectMenu-footer">Loading...</footer>

@@ -239,6 +239,20 @@
   }
 }
 
+// Loading Octoface
+
+.SelectMenu-loadingEyes {
+  animation: SelectMenu-loadingEyes-animation 2s 1s linear infinite;
+
+  @keyframes SelectMenu-loadingEyes-animation {
+      0% { transform: translateX(-2px); }
+     48% { transform: translateX(-2px); }
+     50% { transform: translateX( 2px); }
+     98% { transform: translateX( 2px); }
+    100% { transform: translateX(-2px); }
+  }
+}
+
 // Tabs
 
 .SelectMenu-tabs {
