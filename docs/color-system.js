@@ -5,9 +5,9 @@ import colors from 'primer-colors'
 import titleCase from 'title-case'
 import {BorderBox, Box, Flex, Heading, Text} from '@primer/components'
 
-const gradientHues = ['gray', 'blue', 'green', 'purple', 'yellow', 'orange', 'red']
+const {black, white} = colors
 
-const {black: BLACK, white: WHITE} = colors
+export const gradientHues = ['gray', 'blue', 'green', 'purple', 'yellow', 'orange', 'red']
 
 export function ColorPalette(props) {
   return (
@@ -48,7 +48,7 @@ export function ColorVariables(props) {
             </Text>
           </BorderBox>
         </FadeVariables>
-        <FadeVariables id="white" hue="white" over={BLACK}>
+        <FadeVariables id="white" hue="white" over={black}>
           <BorderBox border={0} borderRadius={0} borderTop={1} mt={1}>
             <Text as="div" fontSize={2} pt={3} mb={0}>
               White fades apply alpha transparency to the <Var>$white</Var> variable, below these are shown overlaid on
@@ -171,10 +171,10 @@ function Var(props) {
 }
 
 export function overlayColor(bg) {
-  return chroma(bg).luminance() > 0.5 ? BLACK : WHITE
+  return chroma(bg).luminance() > 0.5 ? black : white
 }
 
-function fadeTextColor(fg, bg = WHITE) {
+function fadeTextColor(fg, bg = white) {
   const rgb = compositeRGB(fg, bg)
   return overlayColor(rgb)
 }
