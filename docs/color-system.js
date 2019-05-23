@@ -71,14 +71,17 @@ export function ColorVariable({hue, ...rest}) {
           {titleCase(hue)}
         </Heading>
         <Flex justifyContent="space-between">
-          <Flex.Item flex="1 1 auto" as={Var}>
-            ${hue}-500
+          <Flex.Item as={Var}>${hue}-500</Flex.Item>
+          <Flex.Item flex="1 1 auto" ml={3} as={Var}>
+            .bg-{hue}-5
           </Flex.Item>
-          <Text fontFamily="mono">{values[5]}</Text>
+          <Text justifySelf="end" fontFamily="mono">
+            {values[5]}
+          </Text>
         </Flex>
       </Box>
-      {values.map((value, i) => (
-        <Swatch name={`${hue}-${i}00`} value={value} key={value} />
+      {values.map((value, index) => (
+        <Swatch name={`${hue}-${index}00`} value={value} key={value} />
       ))}
     </Flex.Item>
   )
@@ -138,15 +141,18 @@ FadeVariables.propTypes = {
 }
 
 function Swatch(props) {
-  const {name, value, textColor = overlayColor(value), ...rest} = props
+  const {name, index, value, textColor = overlayColor(value), ...rest} = props
   return (
     <Box bg={value} color={textColor} {...rest}>
       <Text as={Flex} fontSize={1} justifyContent="space-between">
-        <Box p={3}>
-          <Var>${name}</Var>
+        <Box as={Var} p={3}>
+          ${name}
         </Box>
-        <Box p={3}>
-          <Text fontFamily="mono">{value}</Text>
+        <Box as={Text} fontFamily="mono" p={3}>
+          .bg-{name}-{index}
+        </Box>
+        <Box as={Text} fontFamily="mono" p={3}>
+          {value}
         </Box>
       </Text>
     </Box>
@@ -164,7 +170,7 @@ function Var(props) {
   return <Text as="var" fontWeight="bold" fontFamily="mono" style={{fontStyle: 'normal'}} {...props} />
 }
 
-function overlayColor(bg) {
+export function overlayColor(bg) {
   return chroma(bg).luminance() > 0.5 ? BLACK : WHITE
 }
 
