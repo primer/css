@@ -66,22 +66,19 @@ export function ColorVariable({hue, ...rest}) {
   return (
     <Flex.Item as={Box} minWidth={240} pr={4} mb={6} className="col-12 col-md-6 markdown-no-margin" {...rest}>
       {/* <Heading as="div">{titleCase(hue)}</Heading> */}
-      <Box bg={`${hue}.5`} my={2} p={3} color="white">
+      <Box bg={colors[hue][5]} my={2} p={3} color="white">
         <Heading as="div" pb={3} fontSize={56} fontWeight="light">
           {titleCase(hue)}
         </Heading>
         <Flex justifyContent="space-between">
           <Flex.Item as={Var}>${hue}-500</Flex.Item>
-          <Flex.Item flex="1 1 auto" ml={3} as={Var}>
-            .bg-{hue}-5
-          </Flex.Item>
           <Text justifySelf="end" fontFamily="mono">
             {values[5]}
           </Text>
         </Flex>
       </Box>
       {values.map((value, index) => (
-        <Swatch name={`${hue}-${index}00`} value={value} key={value} />
+        <Swatch name={hue} index={index} value={value} key={value} />
       ))}
     </Flex.Item>
   )
@@ -143,24 +140,27 @@ FadeVariables.propTypes = {
 function Swatch(props) {
   const {name, index, value, textColor = overlayColor(value), ...rest} = props
   return (
-    <Box bg={value} color={textColor} {...rest}>
-      <Text as={Flex} fontSize={1} justifyContent="space-between">
-        <Box as={Var} p={3}>
-          ${name}
-        </Box>
-        <Box as={Text} fontFamily="mono" p={3}>
-          .bg-{name}-{index}
-        </Box>
-        <Box as={Text} fontFamily="mono" p={3}>
-          {value}
-        </Box>
-      </Text>
-    </Box>
+    <Flex bg={value} color={textColor} {...rest}>
+      <Box as={Var} pr={4}>
+        ${name}-{index}00
+      </Box>
+      <Box as={Text} fontFamily="mono">
+        {value}
+      </Box>
+    </Flex>
   )
+}
+
+Swatch.defaultProps = {
+  flexWrap: 'wrap',
+  fontSize: 1,
+  justifyContent: 'space-between',
+  p: 3
 }
 
 Swatch.propTypes = {
   name: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
   textColor: PropTypes.string,
   value: PropTypes.string.isRequired
 }
