@@ -6,13 +6,13 @@ source: 'https://github.com/primer/css/tree/master/src/select-menu'
 bundle: select-menu
 ---
 
-The `SelectMenu` component provides advanced support for navigation, filtering, and more. Any popover within a select menu can make use of JavaScript-enabled live filtering, selected states, tabbed lists, and keyboard navigation with a bit of markup.
+The `SelectMenu` component provides advanced support for navigation, filtering, and more. Any popover within a Select Menu can make use of JavaScript-enabled live filtering, selected states, tabbed lists, and keyboard navigation with a bit of markup.
 
 {:toc}
 
 ## Basic example
 
-Use a `<details>` element to toggle the Select Menu. The `<summary>` element can be anything. In the example below it's a button.
+Use a `<details>` element to toggle the Select Menu. The `<summary>` element can be styled in many ways. In the example below it's a `.btn`.
 
 ```html
 <details class="details-reset details-overlay" open>
@@ -38,7 +38,39 @@ Use a `<details>` element to toggle the Select Menu. The `<summary>` element can
 <div class="d-none d-sm-block" style="height: 180px"> <!-- min height for > sm --> </div>
 ```
 
-Also be sure to include the `.SelectMenu-title` and `.SelectMenu-closeButton`. Note that the close button is only shown for narrow screens (mobile).
+Add a `.SelectMenu-header` to house a clear title and a close button. Note that the close button is only shown on narrow screens (mobile).
+
+## Right aligned
+
+In case the Select Menu should be aligned to the right, add a `right-0` utility class.
+
+```html
+<div class="d-flex flex-justify-end">
+
+  <details class="details-reset details-overlay" open>
+    <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+      Choose an item
+    </summary>
+    <div class="SelectMenu right-0">
+      <div class="SelectMenu-modal">
+        <header class="SelectMenu-header">
+          <h3 class="SelectMenu-title">Title</h3>
+          <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        </header>
+        <menu class="SelectMenu-list">
+          <button class="SelectMenu-item">Item 1</button>
+          <button class="SelectMenu-item">Item 2</button>
+          <button class="SelectMenu-item">Item 3</button>
+        </menu>
+      </div>
+    </div>
+  </details>
+
+</div>
+
+<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
+<div class="d-none d-sm-block" style="height: 180px"> <!-- min height for > sm --> </div>
+```
 
 ## Selected state
 
@@ -76,9 +108,9 @@ Use `aria-checked="true"` to mark a list item as selected. Including `.SelectMen
 <div class="d-none d-sm-block" style="height: 250px"> <!-- min height for > sm --> </div>
 ```
 
-## List item types
+## List items
 
-The `.SelectMenu-item` can contain different kind of content. Use utility classes like `mr-2`, `d-flex` or `float-right` in case you need to position certain elements.
+The list of items is arguably the most important subcomponent within the menu. Build them out of anchors, buttons, or just about any [interactive content](http://w3c.github.io/html/dom.html#interactive-content). List items are also customizable with options for avatars, additional icons, and multiple lines of text. Use utility classes like `mr-2`, `d-flex` or `float-right` in case more custom styling is needed.
 
 ```html
 <details class="details-reset details-overlay" open>
@@ -121,9 +153,42 @@ The `.SelectMenu-item` can contain different kind of content. Use utility classe
 <div class="d-none d-sm-block" style="height: 300px"> <!-- min height for > sm --> </div>
 ```
 
+## Divider
+
+The Select Menu's list can be divided into multiple parts by adding a `.SelectMenu-divider`.
+
+```html
+<details class="details-reset details-overlay" open>
+  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+    Choose an item
+  </summary>
+  <div class="SelectMenu">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+      </header>
+      <menu class="SelectMenu-list">
+        <button class="SelectMenu-item">Item 1</button>
+        <button class="SelectMenu-item">Item 2</button>
+        <div class="SelectMenu-divider">More options</div>
+        <button class="SelectMenu-item">Item 3</button>
+        <button class="SelectMenu-item">Item 4</button>
+        <button class="SelectMenu-item">Item 5</button>
+      </menu>
+    </div>
+  </div>
+</details>
+
+<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
+<div class="d-none d-sm-block" style="height: 260px"> <!-- min height for > sm --> </div>
+```
+
 ## Additional filter and footer
 
-If the list is expected to get long, consider adding a filter. Be sure to also include the `.SelectMenu--hasFilter` modifier class. On mobile devices it will add a fixed height and anchor the Select Menu to the top of the screen. This makes sure the filter input stays at the same position while typing. Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for additional information, but can also greatly improve the scrolling performance because the list doesn't need to be repainted due to the rounded corners.
+If the list is expected to get long, consider adding a `.SelectMenu-filter` input. Be sure to also include the `.SelectMenu--hasFilter` modifier class. On mobile devices it will add a fixed height and anchor the Select Menu to the top of the screen. This makes sure the filter input stays at the same position while typing.
+
+Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for additional information, but can also greatly improve the scrolling performance because the list doesn't need to be repainted due to the rounded corners.
 
 ```html
 <details class="details-reset details-overlay" open>
@@ -280,67 +345,4 @@ Sometimes a Select Menu needs to communicate a "blank slate" where there's no co
 
 <div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
 <div class="d-none d-sm-block" style="height: 260px"> <!-- min height for > sm --> </div>
-```
-
-## Divider
-
-The list can be divided into multiple parts by adding a `.SelectMenu-divider`.
-
-```html
-<details class="details-reset details-overlay" open>
-  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
-    Choose an item
-  </summary>
-  <div class="SelectMenu">
-    <div class="SelectMenu-modal">
-      <header class="SelectMenu-header">
-        <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
-      </header>
-      <menu class="SelectMenu-list">
-        <button class="SelectMenu-item">Item 1</button>
-        <button class="SelectMenu-item">Item 2</button>
-        <div class="SelectMenu-divider">More options</div>
-        <button class="SelectMenu-item">Item 3</button>
-        <button class="SelectMenu-item">Item 4</button>
-        <button class="SelectMenu-item">Item 5</button>
-      </menu>
-    </div>
-  </div>
-</details>
-
-<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
-<div class="d-none d-sm-block" style="height: 260px"> <!-- min height for > sm --> </div>
-```
-
-## Right aligned
-
-In case the Select Menu should be right aligned, add a `right-0` utility class.
-
-```html
-<div class="d-flex flex-justify-end">
-
-  <details class="details-reset details-overlay" open>
-    <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
-      Choose an item
-    </summary>
-    <div class="SelectMenu right-0">
-      <div class="SelectMenu-modal">
-        <header class="SelectMenu-header">
-          <h3 class="SelectMenu-title">Title</h3>
-          <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
-        </header>
-        <menu class="SelectMenu-list">
-          <button class="SelectMenu-item">Item 1</button>
-          <button class="SelectMenu-item">Item 2</button>
-          <button class="SelectMenu-item">Item 3</button>
-        </menu>
-      </div>
-    </div>
-  </details>
-
-</div>
-
-<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
-<div class="d-none d-sm-block" style="height: 180px"> <!-- min height for > sm --> </div>
 ```
