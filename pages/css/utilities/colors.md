@@ -22,16 +22,16 @@ Use color utilities to apply color to the background of elements, text, and bord
 
 Background colors are most commonly used for filling large blocks of content or areas with a color. When selecting a background color, make sure the foreground color contrast passes a minimum WCAG accessibility rating of [level AA](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html). Meeting these standards ensures that content is accessible by everyone, regardless of disability or user device. You can [check your color combination with this demo site](http://jxnblk.com/colorable/demos/text/). For more information, read our [accessibility standards](../principles/accessibility).
 
-### Background utilities
+## Foreground utilities
 
-There are background color utility classes for every color in our [color system](/css/support/color-system) (except fades). The class names follow the convention:
+There are utility classes to set the `color` CSS property (text color, and for octicons) to every color in our [color system](/css/support/color-system) (except fades). The class names follow the convention:
 
 ```
-bg-{name}-{index}
+color-{name}-{index}
 ```
 
-<details open>
-  <summary class="h3">See the full list of background utilities</summary>
+<details>
+  <summary class="h4">See the full list of foreground utilities</summary>
   <div class="d-flex flex-wrap mr-md-n3">
     {Object.entries(colors)
       .filter(([name, value]) => Array.isArray(value))
@@ -39,14 +39,51 @@ bg-{name}-{index}
         <div className="my-3 col-12 col-md-6 pr-md-3">
           {
             values.map((value, index) => ({
-              className: `bg-${name}-${index}`,
+              selector: `.color-${name}-${index}`,
               variable: `$${name}-${index}00`,
               value
             }))
-            .map(({className, variable, value}) => {
+            .map(({selector, variable, value}) => {
+              return (
+                <Flex flexJustify="space-between" bg={overlayColor(value)} color={value} mb={1} p={3}>
+                  <span className="text-mono flex-auto mr-3">{selector}</span>
+                  <span className="text-mono flex-auto mr-3">{variable}</span>
+                  <span className="text-mono">{value}</span>
+                </Flex>
+              )
+            })
+          }
+        </div>
+      ))
+    }
+  </div>
+</details>
+
+### Background utilities
+
+There are also utility classes to set the background color every color in our [color system](/css/support/color-system) (except fades). The class names follow the convention:
+
+```
+bg-{name}-{index}
+```
+
+<details>
+  <summary class="h4">See the full list of background utilities</summary>
+  <div class="d-flex flex-wrap mr-md-n3">
+    {Object.entries(colors)
+      .filter(([name, value]) => Array.isArray(value))
+      .map(([name, values]) => (
+        <div className="my-3 col-12 col-md-6 pr-md-3">
+          {
+            values.map((value, index) => ({
+              selector: `.bg-${name}-${index}`,
+              variable: `$${name}-${index}00`,
+              value
+            }))
+            .map(({selector, variable, value}) => {
               return (
                 <Flex flexJustify="space-between" bg={value} color={overlayColor(value)} mb={1} p={3}>
-                  <span className="text-mono flex-auto mr-3">{className}</span>
+                  <span className="text-mono flex-auto mr-3">{selector}</span>
                   <span className="text-mono flex-auto mr-3">{variable}</span>
                   <span className="text-mono">{value}</span>
                 </Flex>
@@ -175,6 +212,7 @@ bg-{name}-{index}
     </div>
   </div>
 </div>
+
 
 ## Text colors
 
