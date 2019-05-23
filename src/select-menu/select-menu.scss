@@ -217,6 +217,43 @@
   }
 }
 
+// Tabs
+
+.SelectMenu-tabs {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  // Hide scrollbar so it doesn't cover the text
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.SelectMenu-tab {
+  flex: 1;
+  padding: $spacer-2 $spacer-3;
+  font-size: $font-size-small;
+  font-weight: $font-weight-semibold;
+  color: $text-gray-light;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  outline: none; // TODO: Add hover/focus styles
+  box-shadow: inset 0 -1px 0 $border-color;
+
+  @include breakpoint(sm) {
+    padding: $spacer-1 $spacer-2;
+  }
+
+  &[aria-checked="true"] {
+    color: $text-gray-dark;
+    background-color: $bg-white;
+    box-shadow: 0 0 0 1px $border-color;
+  }
+}
+
 // Divider
 
 .SelectMenu-divider {

@@ -175,6 +175,49 @@ If the list is expected to get long, consider adding a filter. Be sure to also i
 <div class="d-none d-sm-block" style="height: 380px"> <!-- min height for > sm --> </div>
 ```
 
+## Tabs
+
+Sometimes you need two or more lists of items in your Select Menu, e.g. branches and tags. Select Menu lists can be tabbed with the addition of `.SelectMenu-tabs` above the menu.
+
+```html
+<details class="details-reset details-overlay" open>
+  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+    Choose an item
+  </summary>
+  <div class="SelectMenu SelectMenu--hasFilter">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+      </header>
+      <form class="SelectMenu-filter">
+        <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
+      </form>
+      <nav class="SelectMenu-tabs">
+        <button class="SelectMenu-tab" aria-checked="true">Branches</button>
+        <button class="SelectMenu-tab">Tags</button>
+      </nav>
+      <menu class="SelectMenu-list">
+        <button class="SelectMenu-item">Branch 1</button>
+        <button class="SelectMenu-item">Branch 2</button>
+        <button class="SelectMenu-item">Branch 3</button>
+        <button class="SelectMenu-item">Branch 4</button>
+        <button class="SelectMenu-item">Branch 5</button>
+      </menu>
+      <menu class="SelectMenu-list" hidden>
+        <button class="SelectMenu-item">Tag 1</button>
+        <button class="SelectMenu-item">Tag 2</button>
+        <button class="SelectMenu-item">Tag 3</button>
+      </menu>
+      <footer class="SelectMenu-footer">Showing 5 of 5</footer>
+    </div>
+  </div>
+</details>
+
+<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
+<div class="d-none d-sm-block" style="height: 380px"> <!-- min height for > sm --> </div>
+```
+
 ## Loading
 
 When fetching large lists, consider showing a `.SelectMenu-loading` animation.
