@@ -193,6 +193,7 @@
 
 .SelectMenu-icon {
   position: absolute;
+  height: 1.5em; // Mimics line-height to vertically center the icon
   margin-left: -20px;
 
   &.octicon-check {
