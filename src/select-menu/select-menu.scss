@@ -111,8 +111,9 @@
 }
 
 .SelectMenu-closeButton {
-  padding: 0;
-  fill: $text-gray-light;
+  padding: $spacer-3;
+  margin: -$spacer-3;
+  color: $text-gray-light;
   background-color: transparent;
   border: 0;
 
