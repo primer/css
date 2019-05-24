@@ -174,18 +174,6 @@
     padding-top: $spacer-2;
     padding-bottom: $spacer-2;
   }
-
-  &:focus {
-    outline: none;
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: $text-white !important;
-    text-decoration: none;
-    background-color: $bg-blue !important;
-  }
 }
 
 .SelectMenu-list:last-child .SelectMenu-item:last-child {
@@ -193,35 +181,68 @@
   border-bottom-left-radius: inherit;
 }
 
+// Icon
+
 .SelectMenu-icon {
   position: absolute;
-  display: none;
   margin-left: -20px;
-}
 
-// Selected
-
-.SelectMenu-item[aria-checked="true"] {
-  color: $text-gray-dark;
-  background-color: $bg-gray;
-
-  .SelectMenu-icon {
-    display: block;
+  &.octicon-check {
+    visibility: hidden;
+    transition: transform 0.12s cubic-bezier(0.5, 0.1, 1, 0.5), visibility 0s 0.12s linear;
+    transform: scale(0);
   }
 }
 
-// Hover/focused
-// TODO: Separate hover and focus?
+// States
+
+// Reset
+.SelectMenu-item:hover {
+  text-decoration: none;
+}
+
+// Selected
+.SelectMenu-item[aria-checked="true"] {
+  color: $text-gray-dark;
+  background-color: $gray-000;
+}
+
+.SelectMenu-item[aria-checked="true"] .SelectMenu-icon.octicon-check {
+  visibility: visible;
+  transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), visibility 0s linear;
+  transform: scale(1);
+}
+
+// Mouse input
+// TODO: Add focus styles only for keyboard -> :focus-visible.
 @media (hover: hover) {
   .SelectMenu-item {
     &:hover,
-    &:active,
     &:focus {
       color: $text-white;
-      text-decoration: none;
       background-color: $bg-blue;
       outline: none;
     }
+
+    &:active {
+      background-color: $blue-400;
+    }
+  }
+}
+
+// Touch input
+@media (hover: none) {
+  // Android
+  .SelectMenu-item:focus,
+  .SelectMenu-item:active {
+    background-color: $gray-000;
+    outline: none;
+  }
+
+  // iOS Safari
+  // :active only works if ontouchstart would be added to the button
+  .SelectMenu-item {
+    -webkit-tap-highlight-color: rgba($gray-300, 0.5);
   }
 }
 

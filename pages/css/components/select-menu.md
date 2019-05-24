@@ -92,7 +92,10 @@ Use `aria-checked="true"` to mark a list item as selected. Including `.SelectMen
           <svg height="16" class="SelectMenu-icon octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
           Selected state
         </button>
-        <button class="SelectMenu-item">Default state</button>
+        <button class="SelectMenu-item">
+          <svg height="16" class="SelectMenu-icon octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          Default state
+        </button>
         <button class="SelectMenu-item" aria-checked="true">
           <svg height="16" class="SelectMenu-icon octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
           Selected state
@@ -205,31 +208,31 @@ Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for ad
         <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
       </form>
       <menu class="SelectMenu-list">
-        <a class="SelectMenu-item" href="#url">Item 1</a>
-        <a class="SelectMenu-item" href="#url">Item 2</a>
-        <a class="SelectMenu-item" href="#url">Item 3</a>
-        <a class="SelectMenu-item" href="#url">Item 4</a>
-        <a class="SelectMenu-item" href="#url">Item 5</a>
-        <a class="SelectMenu-item" href="#url">Item 6</a>
-        <a class="SelectMenu-item" href="#url">Item 7</a>
-        <a class="SelectMenu-item" href="#url">Item 8</a>
-        <a class="SelectMenu-item" href="#url">Item 9</a>
-        <a class="SelectMenu-item" href="#url">Item 10</a>
-        <a class="SelectMenu-item" href="#url">Item 11</a>
-        <a class="SelectMenu-item" href="#url">Item 12</a>
-        <a class="SelectMenu-item" href="#url">Item 13</a>
-        <a class="SelectMenu-item" href="#url">Item 14</a>
-        <a class="SelectMenu-item" href="#url">Item 15</a>
-        <a class="SelectMenu-item" href="#url">Item 16</a>
-        <a class="SelectMenu-item" href="#url">Item 17</a>
-        <a class="SelectMenu-item" href="#url">Item 18</a>
-        <a class="SelectMenu-item" href="#url">Item 19</a>
-        <a class="SelectMenu-item" href="#url">Item 20</a>
-        <a class="SelectMenu-item" href="#url">Item 21</a>
-        <a class="SelectMenu-item" href="#url">Item 22</a>
-        <a class="SelectMenu-item" href="#url">Item 23</a>
-        <a class="SelectMenu-item" href="#url">Item 24</a>
-        <a class="SelectMenu-item" href="#url">Item 25</a>
+        <button class="SelectMenu-item">Item 1</a>
+        <button class="SelectMenu-item">Item 2</a>
+        <button class="SelectMenu-item">Item 3</a>
+        <button class="SelectMenu-item">Item 4</a>
+        <button class="SelectMenu-item">Item 5</a>
+        <button class="SelectMenu-item">Item 6</a>
+        <button class="SelectMenu-item">Item 7</a>
+        <button class="SelectMenu-item">Item 8</a>
+        <button class="SelectMenu-item">Item 9</a>
+        <button class="SelectMenu-item">Item 10</a>
+        <button class="SelectMenu-item">Item 11</a>
+        <button class="SelectMenu-item">Item 12</a>
+        <button class="SelectMenu-item">Item 13</a>
+        <button class="SelectMenu-item">Item 14</a>
+        <button class="SelectMenu-item">Item 15</a>
+        <button class="SelectMenu-item">Item 16</a>
+        <button class="SelectMenu-item">Item 17</a>
+        <button class="SelectMenu-item">Item 18</a>
+        <button class="SelectMenu-item">Item 19</a>
+        <button class="SelectMenu-item">Item 20</a>
+        <button class="SelectMenu-item">Item 21</a>
+        <button class="SelectMenu-item">Item 22</a>
+        <button class="SelectMenu-item">Item 23</a>
+        <button class="SelectMenu-item">Item 24</a>
+        <button class="SelectMenu-item">Item 25</a>
       </menu>
       <footer class="SelectMenu-footer">Showing 25 of 25</footer>
     </div>
