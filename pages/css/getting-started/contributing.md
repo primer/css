@@ -168,7 +168,7 @@ The source option will let you point the document to the source file. **This is 
 
 #### Tables of contents
 
-In the style guide you can add a `## Table of Contents` headeing to have a table of contents automatically generated.
+In pages published on [primer.style/css](https://primer.style/css), a table of contents is automatically inserted after the first `## Table of Contents` heading (if present).
 
 #### Code blocks
 
