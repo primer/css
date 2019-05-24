@@ -136,7 +136,10 @@
 .SelectMenu-input {
   display: block;
   width: 100%;
-  font-size: inherit;
+
+  @include breakpoint(sm) {
+    font-size: inherit;
+  }
 }
 
 // List
