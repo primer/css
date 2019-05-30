@@ -34,7 +34,7 @@ export default class MyApp extends App {
     const pathname = this.props.router.pathname.replace(/\/$/, '')
     const {Component, page} = this.props
     const node = rootPage.first(node => node.path === pathname) || {}
-    const {file, meta = {}} = node || {}
+    const {file = '', meta = {}} = node || {}
     const isIndex = file.includes('index')
     const Hero = file ? requirePage(file).Hero : null
 
