@@ -5,11 +5,12 @@ status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/97'
 ---
 
-import colors from 'primer-colors'
+import Octicon, {Alert} from '@githubprimer/octicons-react'
 import {Box, Flex, Text} from '@primer/components'
-import {overlayColor} from '../../../docs/color-system'
-const gradientColorKeys = Object.entries(colors).filter(([name, value]) => Array.isArray(value)).map(([name]) => name)
-const Swatch = props => <Box mt={2} height={60} {...props} />
+import {colors, variables} from '../../../docs/color-variables'
+import {Swatch, BackgroundHueSwatches, overlayColor, gradientPalettes} from '../../../docs/color-system'
+const gradientColorKeys = gradientPalettes.map(palette => palette.name)
+const Chip = props => <Box mt={2} height={60} {...props} />
 const QuotedWords = ({words, ...rest}) => <Text {...rest}>"{words.slice(0, -1).join('", "')}", or "{words[words.length - 1]}"</Text>
 
 Use color utilities to apply color to the background of elements, text, and borders.
@@ -101,24 +102,17 @@ You can set the color inheritance on an element by using the `text-inherit` clas
 There are additional utility classes to set the `color` CSS property (text color, and fill for octicons) to any individual color in our [palette](/css/support/color-system). The class names follow the pattern: `color-{name}-{index}` where `{name}` is one of <QuotedWords words={gradientColorKeys} />; and `{index}` is a number between 0 and 9.
 
 <details>
-  <summary class="h4">See the full list of foreground utilities</summary>
-  <div class="d-flex flex-wrap mr-md-n3">
-    {gradientColorKeys.map(name => (
-      <div className="my-3 col-12 col-md-6 pr-md-3">
-        {
-          colors[name].map((value, index) => ({
-            selector: `.color-${name}-${index}`,
-            variable: `$${name}-${index}00`,
-            value
-          }))
-          .map(({selector, variable, value}) => (
-            <Flex flexJustify="space-between" bg={overlayColor(value)} color={value} mb={1} p={3}>
-              <span className="text-mono flex-auto mr-3">{selector}</span>
-              <span className="text-mono flex-auto mr-3">{variable}</span>
-              <span className="text-mono">{value}</span>
-            </Flex>
-          ))
-        }
+  <summary className="h4">See the full list of foreground utilities</summary>
+  <div className="d-flex flex-wrap mr-md-n3">
+    {gradientPalettes.map(palette => (
+      <div className="my-3 col-12 col-md-6 pr-md-3" key={palette.name}>
+        {palette.values.map(({value, variable, slug}) => (
+          <Flex flexJustify="space-between" bg={overlayColor(value)} color={value} mb={1} p={3} key={slug}>
+            <span className="text-mono flex-auto mr-3">.{slug}</span>
+            <span className="text-mono flex-auto mr-3">{variable}</span>
+            <span className="text-mono">{value}</span>
+          </Flex>
+        ))}
       </div>
     ))}
   </div>

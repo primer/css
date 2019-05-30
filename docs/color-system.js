@@ -1,84 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import chroma from 'chroma-js'
-import colors from 'primer-colors'
 import titleCase from 'title-case'
-import {BorderBox, Box, Flex, Heading, Text} from '@primer/components'
+import styled from 'styled-components'
+import {Box, Flex, Heading, Text} from '@primer/components'
+import {colors, variables, getBackgroundPalette} from './color-variables'
+
+export {gradientPalettes} from './color-variables'
 
 const {black, white} = colors
-
-export const gradientHues = ['gray', 'blue', 'green', 'purple', 'yellow', 'orange', 'red']
-
-export function ColorPalette(props) {
-  return (
-    <Flex mb={6} className="markdown-no-margin" {...props}>
-      {gradientHues.map(hue => {
-        const color = colors[hue][5]
-        return (
-          <Box bg={color} p={3} width={200} mr={2} mb={2} key={hue}>
-            <Text fontWeight="bold" color={overlayColor(color)}>
-              {titleCase(hue)}
-            </Text>
-          </Box>
-        )
-      })}
-      <BorderBox bg="white" p={3} width={200} mb={2} borderRadius={0}>
-        <Text fontWeight="bold" color="black">
-          White
-        </Text>
-      </BorderBox>
-    </Flex>
-  )
-}
-
-export function ColorVariables(props) {
-  return (
-    <>
-      <Flex flexWrap="wrap" className="gutter" {...props}>
-        {gradientHues.map(hue => (
-          <ColorVariable id={hue} hue={hue} key={hue} />
-        ))}
-      </Flex>
-      <Flex flexWrap="wrap" {...props}>
-        <FadeVariables id="black" hue="black" bg="black" color="white">
-          <BorderBox border={0} borderRadius={0} borderTop={1} borderColor="gray.5" mt={1}>
-            <Text as="div" fontSize={2} pt={3} mb={0}>
-              Black fades apply alpha transparency to the <Var>$black</Var> variable. The black color value has a slight
-              blue hue to match our grays.
-            </Text>
-          </BorderBox>
-        </FadeVariables>
-        <FadeVariables id="white" hue="white" over={black}>
-          <BorderBox border={0} borderRadius={0} borderTop={1} mt={1}>
-            <Text as="div" fontSize={2} pt={3} mb={0}>
-              White fades apply alpha transparency to the <Var>$white</Var> variable, below these are shown overlaid on
-              a dark gray background.
-            </Text>
-          </BorderBox>
-        </FadeVariables>
-      </Flex>
-    </>
-  )
-}
+export {black, white}
 
 export function ColorVariable({hue, ...rest}) {
   const values = colors[hue]
   return (
     <Flex.Item as={Box} minWidth={240} pr={4} mb={6} className="col-12 col-md-6 markdown-no-margin" {...rest}>
-      {/* <Heading as="div">{titleCase(hue)}</Heading> */}
       <Box bg={colors[hue][5]} my={2} p={3} color="white">
         <Heading as="div" pb={3} fontSize={56} fontWeight="light">
           {titleCase(hue)}
         </Heading>
         <Flex justifyContent="space-between">
-          <Flex.Item as={Var}>${hue}-500</Flex.Item>
+          <Flex.Item as={Var} fontWeight="bold">
+            ${hue}-500
+          </Flex.Item>
           <Text justifySelf="end" fontFamily="mono">
             {values[5]}
           </Text>
         </Flex>
       </Box>
       {values.map((value, index) => (
-        <Swatch name={hue} index={index} value={value} key={value} />
+        <Swatch name={hue} index={index} key={value} />
       ))}
     </Flex.Item>
   )
@@ -96,7 +47,7 @@ export function FadeVariables({hue, color, bg, over, children, ...rest}) {
       .alpha(alpha / 100)
       .css()
     return {
-      name: `${hue}-fade-${alpha}`,
+      variable: `${hue}-fade-${alpha}`,
       textColor: fadeTextColor(value, over),
       value
     }
@@ -110,7 +61,7 @@ export function FadeVariables({hue, color, bg, over, children, ...rest}) {
           {titleCase(hue)}
         </Heading>
         <Flex justifyContent="space-between">
-          <Flex.Item flex="1 1 auto" as={Var}>
+          <Flex.Item flex="1 1 auto" as={Var} fontWeight="bold">
             ${hue}
           </Flex.Item>
           <Text fontFamily="mono">
@@ -137,13 +88,25 @@ FadeVariables.propTypes = {
   over: PropTypes.string
 }
 
-function Swatch(props) {
-  const {name, index, value, textColor = overlayColor(value), ...rest} = props
+export function Swatch(props) {
+  const {
+    name,
+    index,
+    value = colors[name][index],
+    textColor = overlayColor(value),
+    variable = `${name}-${index}00`,
+    children,
+    ...rest
+  } = props
+
   return (
     <Flex bg={value} color={textColor} {...rest}>
-      <Box as={Var} pr={4}>
-        ${name}-{index}00
-      </Box>
+      {children}
+      {variable ? (
+        <Box as={Var} pr={4}>
+          ${variable}
+        </Box>
+      ) : null}
       <Box as={Text} fontFamily="mono">
         {value}
       </Box>
@@ -152,6 +115,7 @@ function Swatch(props) {
 }
 
 Swatch.defaultProps = {
+  as: Text,
   flexWrap: 'wrap',
   fontSize: 1,
   justifyContent: 'space-between',
@@ -159,20 +123,99 @@ Swatch.defaultProps = {
 }
 
 Swatch.propTypes = {
-  name: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
   textColor: PropTypes.string,
   value: PropTypes.string.isRequired
 }
 
-function Var(props) {
-  // FIXME: fontStyle should be a prop, right?
-  return <Text as="var" fontWeight="bold" fontFamily="mono" style={{fontStyle: 'normal'}} {...props} />
+export function BackgroundHueSwatches({hue, ...rest}) {
+  const namedUtilities = Object.keys(variables).filter(name => name.startsWith(`bg-${hue}`))
+
+  const namedUtilitiesByValue = {}
+  for (const name of namedUtilities) {
+    const value = variables[name]
+    namedUtilitiesByValue[value] = name
+  }
+
+  const {values} = getBackgroundPalette(hue)
+  const rows = values.map(({value, ...rest}) => ({
+    value,
+    named: namedUtilitiesByValue[value],
+    ...rest
+  }))
+
+  return (
+    <ColorTable {...rest}>
+      <thead>
+        <tr>
+          <ColorCell as="th">Default class</ColorCell>
+          <th>Indexed?</th>
+          <th>Variable</th>
+          <th>CSS value</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map(({value, named, slug, variable}) => {
+          const overlay = overlayColor(value)
+          return (
+            <ColorRow key={slug}>
+              <ColorCell bg={named ? value : null} color={overlay}>
+                {named ? `.${named}` : null}
+              </ColorCell>
+              <ColorCell bg={value} color={overlay}>
+                .bg-{slug}
+              </ColorCell>
+              <ColorCell bg={value} color={overlay}>
+                <Var>${variable}</Var>
+              </ColorCell>
+              <ColorCell bg={value} color={overlay}>
+                <Text fontFamily="mono">{value}</Text>
+              </ColorCell>
+            </ColorRow>
+          )
+        })}
+      </tbody>
+    </ColorTable>
+  )
+}
+
+export function Var(props) {
+  return <Text as="var" fontFamily="mono" fontStyle="normal" {...props} />
 }
 
 export function overlayColor(bg) {
   return chroma(bg).luminance() > 0.5 ? black : white
 }
+
+const ColorTable = styled.table`
+  display: table !important;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0 4px;
+
+  tr,
+  td,
+  th {
+    border: 0 !important;
+  }
+
+  td,
+  th {
+    text-align: left;
+    width: 25%;
+  }
+
+  tr {
+    background-color: transparent !important;
+  }
+`
+
+const ColorRow = styled(Box).attrs({as: 'tr'})`
+  border-bottom: 1px solid ${colors.gray[2]} !important;
+`
+
+const ColorCell = styled(Box).attrs({as: 'td'})``
 
 function fadeTextColor(fg, bg = white) {
   const rgb = compositeRGB(fg, bg)
