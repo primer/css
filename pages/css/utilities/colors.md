@@ -157,6 +157,16 @@ There are additional utility classes to set the `color` CSS property (text color
 </div>
 ```
 
+## White background
+
+You can make a background explicitly white (`#fff`) with the `bg-white` utility:
+
+```html
+<div class="bg-gray-dark p-2">
+  <span class="bg-white">.bg-white over .bg-gray-dark</span>
+</div>
+```
+
 ## Link colors
 
 Base link styles turn links blue and apply an underline on hover. You can override the base link styles with text color utilities and the following link utilities. **Bear in mind that link styles are easier for more people to see and interact with when the changes in styles do not rely on color alone.**
