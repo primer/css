@@ -149,8 +149,8 @@ export function BackgroundHueSwatches({hue, ...rest}) {
     <ColorTable {...rest}>
       <thead>
         <tr>
-          <ColorCell as="th">Default class</ColorCell>
-          <th>Indexed?</th>
+          <th>Default classes</th>
+          <th>Extended classes</th>
           <th>Variable</th>
           <th>CSS value</th>
         </tr>
