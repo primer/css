@@ -5,7 +5,7 @@ status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/301'
 ---
 
-import {Box, BorderBox, Flex, Text} from '@primer/components'
+import {Box, BorderBox, Flex, Link, Text} from '@primer/components'
 import {backgroundPalettes, gradientHues, variables} from '../../../docs/color-variables'
 import {ColorVariable, FadeVariables, Var, overlayColor, black, white} from '../../../docs/color-system'
 
@@ -16,9 +16,9 @@ import {ColorVariable, FadeVariables, Var, overlayColor, black, white} from '../
 <Flex mb={6} className="markdown-no-margin">
   {backgroundPalettes.map(({name, title, value}) => (
     <Box bg={variables[`bg-${name}`]} p={3} width={200} mr={2} mb={2} key={name}>
-      <Text fontWeight="bold" color={overlayColor(value)}>
+      <Link href={`#${name}`} underline={false} fontWeight="bold" color={overlayColor(value)}>
         {title}
-      </Text>
+      </Link>
     </Box>
   ))}
   <BorderBox bg="white" p={3} width={200} mb={2} borderRadius={0}>
