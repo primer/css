@@ -148,10 +148,9 @@ export function BackgroundHueSwatches({hue, ...rest}) {
     <ColorTable {...rest}>
       <thead>
         <tr>
-          <th>Default classes</th>
-          <th>Extended classes</th>
-          <th>Variable</th>
-          <th>CSS value</th>
+          <th>Alias</th>
+          <th>Class</th>
+          <th>Hex value</th>
         </tr>
       </thead>
       <tbody>
@@ -164,9 +163,6 @@ export function BackgroundHueSwatches({hue, ...rest}) {
               </ColorCell>
               <ColorCell bg={value} color={overlay}>
                 .bg-{slug}
-              </ColorCell>
-              <ColorCell bg={value} color={overlay}>
-                <Var>${variable}</Var>
               </ColorCell>
               <ColorCell bg={value} color={overlay}>
                 <Text fontFamily="mono">{value}</Text>
