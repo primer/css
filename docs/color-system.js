@@ -74,7 +74,7 @@ export function FadeVariables({hue, color, bg, over, children, ...rest}) {
       </Box>
       <Box bg={over}>
         {values.map(swatchProps => (
-          <Swatch {...swatchProps} key={swatchProps.name} />
+          <Swatch {...swatchProps} key={swatchProps.value} />
         ))}
       </Box>
     </Flex.Item>
@@ -123,8 +123,7 @@ Swatch.defaultProps = {
 }
 
 Swatch.propTypes = {
-  index: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   textColor: PropTypes.string,
   value: PropTypes.string.isRequired
 }
