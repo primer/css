@@ -97,27 +97,6 @@ You can set the color inheritance on an element by using the `text-inherit` clas
 </div>
 ```
 
-### Indexed text color utilities
-
-There are additional utility classes to set the `color` CSS property (text color, and fill for octicons) to any individual color in our [palette](/css/support/color-system). The class names follow the pattern: `color-{name}-{index}` where `{name}` is one of <QuotedWords words={gradientColorKeys} />; and `{index}` is a number between 0 and 9.
-
-<details>
-  <summary className="h4">See the full list of foreground utilities</summary>
-  <div className="d-flex flex-wrap mr-md-n3">
-    {gradientPalettes.map(palette => (
-      <div className="my-3 col-12 col-md-6 pr-md-3" key={palette.name}>
-        {palette.values.map(({value, variable, slug}) => (
-          <Flex flexJustify="space-between" bg={overlayColor(value)} color={value} mb={1} p={3} key={slug}>
-            <span className="text-mono flex-auto mr-3">.{slug}</span>
-            <span className="text-mono flex-auto mr-3">{variable}</span>
-            <span className="text-mono">{value}</span>
-          </Flex>
-        ))}
-      </div>
-    ))}
-  </div>
-</details>
-
 
 ### Text on colored backgrounds
 
