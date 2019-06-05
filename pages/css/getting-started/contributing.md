@@ -53,7 +53,7 @@ It's usually better to open an issue before investing time in spiking out a new 
 
 ### Step 2: Design and build the new styles
 
-* You may want to explore the visual design for a new component before spiking it out in code. If so, continue in the issue and post your design mockups. Using the [Jekyll prototyping tool](https://github.com/github/design/blob/master/docs/resources/prototyping.md#jekyll) could also be a good option, it pulls in the production CSS so you can explore options in isolation before jumping into production code.
+* You may want to explore the visual design for a new component before spiking it out in code. If so, continue in the issue and post your design mockups. Using our [CodePen template](https://codepen.io/team/GitHub/pen/xYLdZd) could also be a good option, it pulls in Primer CSS so you can explore options in isolation before jumping into production code.
 * When you're ready, spike out a branch and build out your new component, object, or utilities according to the style guide principles, ensuring you follow our naming convention for each of the styles.
 * Refactor parts of the product where you think those new styles could be used to test they work for each use case. This does not mean for every instance, but enough of the key use cases to be sure the styles are flexible enough. To avoid blowing out your initial pull request we recommend you do larger amounts of refactoring in an additional branch.
 * When you're ready for review, add the `status: review needed` and the `design-systems` labels to your pull request. Follow the [ship checklist](#ship-checklist) for additional shipping steps.
@@ -93,9 +93,9 @@ bundle: alerts
 
 ```
 
-### Anatomy of a guide
+### Documentation Anatomy
 
-The anatomy of a style guide markdown file pretty straight forward, but has a few optional properties for making the page render special features.
+The anatomy of a Primer CSS markdown file is pretty straight forward, but has a few optional properties for making the page render special features.
 
 Typically the file will look something like this:
 
