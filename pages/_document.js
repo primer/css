@@ -1,7 +1,8 @@
 import React from 'react'
 import Document, {Head, Main, NextScript} from 'next/document'
 import {ServerStyleSheet} from 'styled-components'
-import {getAssetPath, CommonStyles, CommonScripts} from '../docs/utils'
+import favicon from '../static/favicon.png'
+import touchIcon from '../static/apple-touch-icon.png'
 
 export default class MyDocument extends Document {
   static getInitialProps({renderPage}) {
@@ -20,10 +21,9 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126681523-2" />
-          <script async href={getAssetPath('analytics.js')} />
           <meta charSet="utf8" />
-          <link rel="icon" href={getAssetPath('favicon.png')} />
-          <link rel="apple-touch-icon" href={getAssetPath('apple-touch-icon.png')} />
+          <link rel="icon" href={favicon} />
+          <link rel="apple-touch-icon" href={touchIcon} />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <meta property="og:title" content="Primer CSS" />
           <meta property="og:type" content="website" />
@@ -37,13 +37,11 @@ export default class MyDocument extends Document {
           <meta property="og:image:height" content="630" />
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:site" content="@githubprimer" />
-          <CommonStyles />
           {renderedStyles}
         </Head>
         <body data-files={JSON.stringify(files)}>
           <Main />
           <NextScript />
-          <CommonScripts />
         </body>
       </html>
     )

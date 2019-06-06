@@ -3,6 +3,7 @@ import {Link} from '@primer/components'
 import {MarkdownHeading} from '@primer/blueprints'
 import {CodeExample} from '@primer/blueprints/next-components'
 import Outline from './Outline'
+import styleguideCSS from '../static/github/styleguide.css!!raw-loader'
 
 export const H1 = props => <MarkdownHeading {...props} />
 export const H2 = props => <MarkdownHeading as="h2" {...props} />
@@ -22,7 +23,12 @@ export default function getComponents(page = {}) {
     // render links with our component
     a: Link,
     // render code blocks with our wrapper around react-live
-    code: CodeExample,
+    code: ({children, ...rest}) => (
+      <CodeExample {...rest}>
+        {children}
+        <style>{styleguideCSS}</style>
+      </CodeExample>
+    ),
     // render the outline for <p> tags with exactly the text "{:toc}"
     p: ({children, ...rest}) => {
       if (children === '{:toc}') {

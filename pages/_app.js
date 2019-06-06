@@ -12,13 +12,14 @@ import documents from '../searchIndex'
 import {config, requirePage, rootPage} from '../docs/utils'
 import {CONTENT_MAX_WIDTH} from '../docs/constants'
 import {repository} from '../package.json'
+import {withAnalytics} from '@primer/blueprints'
 
 import '../src/index.scss'
 
 const DocLink = props => <Link nounderline {...props} />
 const editLinkBase = `${repository}/edit/master/pages`
 
-export default class MyApp extends App {
+class MyApp extends App {
   static async getInitialProps({Component, ctx}) {
     let page = {}
 
@@ -115,3 +116,6 @@ export default class MyApp extends App {
     )
   }
 }
+
+
+export default withAnalytics(MyApp)
