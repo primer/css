@@ -262,7 +262,7 @@ Sometimes you need two or more lists of items in your Select Menu, e.g. branches
         <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
       </form>
       <nav class="SelectMenu-tabs">
-        <button class="SelectMenu-tab" aria-checked="true">Branches</button>
+        <button class="SelectMenu-tab" aria-selected="true">Branches</button>
         <button class="SelectMenu-tab">Tags</button>
       </nav>
       <menu class="SelectMenu-list">

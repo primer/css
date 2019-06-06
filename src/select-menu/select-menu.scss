@@ -1,6 +1,9 @@
-// stylelint-disable selector-max-type
+// stylelint-disable selector-max-type, selector-class-pattern
+
 // selector-max-type is needed for body:not(.intent-mouse) to target keyboard only styles.
 // TODO: Introduce an additional .intent-keyboard class
+
+// selector-class-pattern is disabled since the plan is to move this file to Primer CSS
 
 // Select Menu component
 
@@ -55,6 +58,7 @@
   margin: auto 0;
   pointer-events: auto;
   flex-direction: column;
+  z-index: 99; // Needs to be higher than .details-overlay's z-index: 80.
   background-color: $gray-100;
   border-radius: $border-radius * 2; // TODO: New variable?
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
@@ -75,7 +79,7 @@
   }
 
   @include breakpoint(sm) {
-    width: 250px;
+    width: 300px;
     height: auto;
     max-height: 350px;
     margin: $spacer-1 0 $spacer-3 0;
@@ -206,7 +210,7 @@
 // Selected
 .SelectMenu-item[aria-checked="true"] {
   color: $text-gray-dark;
-  background-color: $gray-000;
+  font-weight: $font-weight-semibold;
 }
 
 .SelectMenu-item[aria-checked="true"] .SelectMenu-icon.octicon-check {
@@ -229,24 +233,11 @@
   }
 }
 
-// Loading Octoface
-
-.SelectMenu-loadingEyes {
-  animation: SelectMenu-loadingEyes-animation 2s 1s linear infinite;
-
-  @keyframes SelectMenu-loadingEyes-animation {
-    0% { transform: translateX(-2px); }
-    48% { transform: translateX(-2px); }
-    50% { transform: translateX(2px); }
-    98% { transform: translateX(2px); }
-    100% { transform: translateX(-2px); }
-  }
-}
-
 // Tabs
 
 .SelectMenu-tabs {
   display: flex;
+  flex-shrink: 0;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
@@ -272,7 +263,7 @@
     padding: $spacer-1 $spacer-2;
   }
 
-  &[aria-checked="true"] {
+  &[aria-selected="true"] {
     z-index: 1; // Keeps box-shadow visible when hovering
     color: $text-gray-dark;
     background-color: $bg-white;
@@ -404,6 +395,12 @@
 }
 
 // Hacks
+
+// Removes the top border from the "create new item" when the list is empty
+
+.filterable-empty + form > .SelectMenu-item {
+  border-top: none !important;
+}
 
 // stylelint-disable no-duplicate-selectors
 .SelectMenu {
