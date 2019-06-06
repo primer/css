@@ -53,12 +53,12 @@
 // The box of the overlay
 .SelectMenu-modal {
   position: relative;
+  z-index: 99; // Needs to be higher than .details-overlay's z-index: 80.
   display: flex;
   max-height: 66%;
   margin: auto 0;
   pointer-events: auto;
   flex-direction: column;
-  z-index: 99; // Needs to be higher than .details-overlay's z-index: 80.
   background-color: $gray-100;
   border-radius: $border-radius * 2; // TODO: New variable?
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
@@ -152,10 +152,10 @@
   position: relative;
   padding: 0;
   margin: 0;
-  border-top: $border;
   flex: auto;
   overflow-x: hidden;
   overflow-y: auto;
+  border-top: $border;
   -webkit-overflow-scrolling: touch; // Adds momentum + bouncy scrolling
 
   &:last-child {
@@ -209,8 +209,8 @@
 
 // Selected
 .SelectMenu-item[aria-checked="true"] {
-  color: $text-gray-dark;
   font-weight: $font-weight-semibold;
+  color: $text-gray-dark;
 }
 
 .SelectMenu-item[aria-checked="true"] .SelectMenu-icon.octicon-check {
@@ -239,9 +239,9 @@
   display: flex;
   flex-shrink: 0;
   margin-bottom: -$border-width; // hide border of element below
-  border-top: $border;
   overflow-x: auto;
   overflow-y: hidden;
+  border-top: $border;
   -webkit-overflow-scrolling: touch;
 
   // Hide scrollbar so it doesn't cover the text
@@ -251,7 +251,7 @@
 
   @include breakpoint(sm) {
     padding: 0 $spacer-2;
-    border-top: none;
+    border-top: 0;
   }
 }
 
@@ -269,8 +269,8 @@
   @include breakpoint(sm) {
     flex: none;
     padding: $spacer-1 $spacer-3;
-    border-top-right-radius: $border-radius;
     border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
   }
 
   &[aria-selected="true"] {
@@ -415,7 +415,7 @@
 // Removes the top border from the "create new item" when the list is empty
 
 .filterable-empty + form > .SelectMenu-item {
-  border-top: none !important;
+  border-top: 0 !important;
 }
 
 // stylelint-disable no-duplicate-selectors
