@@ -97,7 +97,6 @@
 .SelectMenu-header {
   display: flex;
   padding: $spacer-3;
-  border-bottom: $border;
 
   @include breakpoint(sm) {
     padding: $spacer-2;
@@ -131,7 +130,7 @@
 .SelectMenu-filter {
   padding: $spacer-3;
   margin: 0;
-  border-bottom: $border;
+  border-top: $border;
 
   @include breakpoint(sm) {
     padding: $spacer-2;
@@ -143,7 +142,7 @@
   width: 100%;
 
   @include breakpoint(sm) {
-    font-size: inherit;
+    font-size: $h5-size;
   }
 }
 
@@ -153,6 +152,7 @@
   position: relative;
   padding: 0;
   margin: 0;
+  border-top: $border;
   flex: auto;
   overflow-x: hidden;
   overflow-y: auto;
@@ -238,6 +238,8 @@
 .SelectMenu-tabs {
   display: flex;
   flex-shrink: 0;
+  margin-bottom: -$border-width; // hide border of element below
+  border-top: $border;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
@@ -245,6 +247,11 @@
   // Hide scrollbar so it doesn't cover the text
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  @include breakpoint(sm) {
+    padding: 0 $spacer-2;
+    border-top: none;
   }
 }
 
@@ -260,7 +267,10 @@
   box-shadow: inset 0 -1px 0 $border-color;
 
   @include breakpoint(sm) {
-    padding: $spacer-1 $spacer-2;
+    flex: none;
+    padding: $spacer-1 $spacer-3;
+    border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
   }
 
   &[aria-selected="true"] {
@@ -268,6 +278,12 @@
     color: $text-gray-dark;
     background-color: $bg-white;
     box-shadow: 0 0 0 1px $border-color;
+
+    @include breakpoint(sm) {
+      border: $border;
+      border-bottom-width: 0;
+      box-shadow: none;
+    }
   }
 }
 
