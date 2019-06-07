@@ -3,12 +3,12 @@
   "name": "primer-css",
   "alias": "primer-css.now.sh",
   "builds": [
-    {"src": "static/*", "use": "@now/static"},
-    {"src": "next.config.js", "use": "@now/next"}
-  ],
-  "routes": [
-  ],
-  "github": {
-    "enabled": true
-  }
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "www"
+      }
+    }
+  ]
 }
