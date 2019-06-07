@@ -1,4 +1,4 @@
-import {rootPage} from '../../docs/utils'
+import {pageTree} from '@primer/next-pages'
 
 export default class {
   static getInitialProps({query: {name}, res}) {
@@ -13,6 +13,6 @@ export default class {
 }
 
 function getBundleURL(bundle) {
-  const node = rootPage.first(node => node.meta.bundle === bundle)
+  const node = pageTree ? pageTree.first(node => node.meta.bundle === bundle) : null
   return node ? node.path : `/_error`
 }
