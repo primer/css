@@ -9,12 +9,15 @@ import {Header, MarkdownHeading, JumpNav, SideNav} from '@primer/blueprints'
 import {NavList} from '@primer/blueprints/next-components'
 import getComponents from '../docs/markdown'
 import documents from '../searchIndex'
-import {config, requirePage, rootPage} from '../docs/utils'
+import Pages from '@primer/next-pages'
 import {CONTENT_MAX_WIDTH} from '../docs/constants'
 import {repository} from '../package.json'
 import {withAnalytics} from '@primer/blueprints'
 
 import '../src/index.scss'
+
+const {pageMap = new Map()} = Pages
+const requirePage = require.context('.', true, /\.(js|md)x?$/)
 
 const DocLink = props => <Link nounderline {...props} />
 const editLinkBase = `${repository}/edit/master/pages`
