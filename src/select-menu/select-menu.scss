@@ -39,11 +39,6 @@
   pointer-events: none;
   content: "";
   background-color: $black-fade-50;
-  animation: SelectMenu-backdrop-animation 0.12s cubic-bezier(0, 0, 0.2, 1) backwards;
-
-  @keyframes SelectMenu-backdrop-animation {
-    0% { opacity: 0; }
-  }
 
   @include breakpoint(sm) {
     display: none;
@@ -62,7 +57,7 @@
   background-color: $gray-100;
   border-radius: $border-radius * 2; // TODO: New variable?
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
-  animation: SelectMenu-modal-animation 0.12s 0.06s cubic-bezier(0, 0.1, 0.1, 1) backwards;
+  animation: SelectMenu-modal-animation 0.12s cubic-bezier(0, 0.1, 0.1, 1) backwards;
 
   @keyframes SelectMenu-modal-animation {
     0% {
@@ -88,7 +83,6 @@
     border-radius: $border-radius;
     box-shadow: $box-shadow-medium;
     animation-name: SelectMenu-modal-animation--sm;
-    animation-delay: 0;
   }
 }
 
