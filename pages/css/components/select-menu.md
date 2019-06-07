@@ -8,8 +8,6 @@ bundle: select-menu
 
 The `SelectMenu` component provides advanced support for navigation, filtering, and more. Any popover within a Select Menu can make use of JavaScript-enabled live filtering, selected states, tabbed lists, and keyboard navigation with a bit of markup.
 
-{:toc}
-
 ## Basic example
 
 Use a `<details>` element to toggle the Select Menu. The `<summary>` element can be styled in many ways. In the example below it's a `.btn`.
@@ -42,7 +40,7 @@ Add a `.SelectMenu-header` to house a clear title and a close button. Note that 
 
 ## Right aligned
 
-In case the Select Menu should be aligned to the right, add a `right-0` utility class.
+In case the Select Menu should be aligned to the right, use `SelectMenu right-0`.
 
 ```html
 <div class="d-flex flex-justify-end">
@@ -74,7 +72,7 @@ In case the Select Menu should be aligned to the right, add a `right-0` utility 
 
 ## Selected state
 
-Use `aria-checked="true"` to mark a list item as selected. Including `.SelectMenu-icon .octicon-check` adds a check icon to the left.
+Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-checked="true"` is set.
 
 ```html
 <details class="details-reset details-overlay" open>
@@ -131,7 +129,7 @@ The list of items is arguably the most important subcomponent within the menu. B
           Text only
         </button>
         <button class="SelectMenu-item">
-          <img class="avatar avatar-small mr-2" src="https://avatars.githubusercontent.com/jonrohan?s=40" alt="jonrohan" height="20" width="20">
+          <img class="avatar avatar-small mr-2" src="https://avatars.githubusercontent.com/hubot?s=40" alt="hubot" height="20" width="20">
           With an avatar
         </button>
         <button class="SelectMenu-item">
@@ -320,7 +318,7 @@ When fetching large lists, consider showing a `.SelectMenu-loading` animation.
 
 ## Blankslate
 
-Sometimes a Select Menu needs to communicate a "blank slate" where there's no content in the menu's list. Usually these include a clear call to action to add said content to the list. Swap out the contents of a `.SelectMenu-list` with the `.SelectMenu-blankslate` and customize its contents as needed.
+Sometimes a Select Menu needs to communicate a "blank slate" where there's no content in the menu's list. Usually these include a clear call to action to add said content to the list. Swap out the contents of a `.SelectMenu-list` with a `.SelectMenu-blankslate` and customize its contents as needed.
 
 ```html
 <details class="details-reset details-overlay" open>
@@ -348,3 +346,45 @@ Sometimes a Select Menu needs to communicate a "blank slate" where there's no co
 <div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
 <div class="d-none d-sm-block" style="height: 260px"> <!-- min height for > sm --> </div>
 ```
+
+## github.com usage
+
+When adding the `.SelectMenu` component on github.com, use the [`<details-menu>`](https://github.com/github/details-menu-element) element. It will :tophat: magically make the `.SelectMenu` work. Here a basic example:
+
+```html
+<details class="details-reset details-overlay" id="my-select-menu">
+  <summary class="btn" title="Pick an item">
+    <span>Choose</span>
+    <span class="dropdown-caret"></span>
+  </summary>
+  <details-menu class="SelectMenu" role="menu">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <span class="SelectMenu-title">My Select Menu</span>
+        <button class="SelectMenu-closeButton" type="button" data-toggle-for="my-select-menu">
+          <%= octicon("x", :"aria-label" => "Close menu") %>
+        </button>
+      </header>
+    </div>
+    <div class="SelectMenu-list">
+      <a class="SelectMenu-item" href="" role="menuitem">Item 1</a>
+      <a class="SelectMenu-item" href="" role="menuitem">Item 2</a>
+      <a class="SelectMenu-item" href="" role="menuitem">Item 3</a>
+    </div>
+  </details-menu>
+</details>
+```
+
+If loading content should be deferred, use the [`<include-fragment>`](https://github.com/github/details-menu-element) element:
+
+```erb
+<details-menu class="SelectMenu" src="/my-menu" preload>
+  <div class="SelectMenu-modal">
+    <include-fragment class="SelectMenu-loading" aria-label="Menu is loading">
+      <%= octicon('octoface', class: "anim-pulse", :height => 32) %>
+    </include-fragment>
+  </div>
+</details-menu>
+```
+
+It will add a pulsing :octoface: icon while the content is loading.
