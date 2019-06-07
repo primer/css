@@ -52,11 +52,11 @@
   display: flex;
   max-height: 66%;
   margin: auto 0;
+  overflow: hidden; // Enables border radius on scrollable child elements
   pointer-events: auto;
   flex-direction: column;
   background-color: $gray-100;
   border-radius: $border-radius * 2;
-  overflow: hidden; // Enables border radius on scrollable child elements
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
   animation: SelectMenu-modal-animation 0.12s cubic-bezier(0, 0.1, 0.1, 1) backwards;
 
