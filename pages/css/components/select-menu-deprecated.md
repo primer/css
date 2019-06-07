@@ -6,6 +6,47 @@ source: 'https://github.com/github/github/blob/master/app/assets/stylesheets/com
 symbols: [active, close-button, css-truncate-target, description, description-inline, description-warning, disabled, filterable-empty, has-error, hidden-select-button-text, icon-only, indeterminate, is-loading, is-showing-new-item-form, label-select-menu, last-visible, menu-active, modal-backdrop, navigation-focus, octicon, octicon-check, octicon-dash, octicon-octoface, octicon-x, opaque, primary, select-menu, select-menu-action, select-menu-blankslate, select-menu-button, select-menu-button-gravatar, select-menu-button-large, select-menu-clear-item, select-menu-divider, select-menu-error, select-menu-filters, select-menu-header, select-menu-item, select-menu-item-gravatar, select-menu-item-heading, select-menu-item-icon, select-menu-item-parent, select-menu-item-template, select-menu-item-text, select-menu-list, select-menu-loading-overlay, select-menu-modal, select-menu-modal-holder, select-menu-modal-narrow, select-menu-modal-right, select-menu-new-item-form, select-menu-no-results, select-menu-tab, select-menu-tab-bucket, select-menu-tab-nav, select-menu-tabs, select-menu-text-filter, select-menu-title, selected, spinner]
 ---
 
+> Note: The `.select-menu` component is **deprecated**. Use the [`.SelectMenu`](select-menu) instead.
+
+## Migration guide
+
+Here a few tips how to migrate an existing `.select-menu` to `.SelectMenu`.
+
+1. Use a `<details>` element to toggle the Select Menu.
+2. Use a [`<details-menu>`](https://github.com/github/details-menu-element) element to add JS behaviour. The older `.js-select-menu` is not compatible.
+3. In case custom styling is needed, use [utility classes](https://primer.style/css/utilities) if possible.
+
+Below a comparison between class names:
+
+`.select-menu` | `.SelectMenu`
+--- | ---
+`select-menu` | -
+`select-menu-button` | -
+`select-menu-modal-holder` | -
+`select-menu-modal` | `SelectMenu`
+`select-menu-modal-right` | `SelectMenu right-0`
+- | `SelectMenu-modal`
+`select-menu-loading-overlay` | `SelectMenu-loading`
+`select-menu-item-icon` | `SelectMenu-icon`
+`select-menu-header` | `SelectMenu-header`
+`select-menu-title` | `SelectMenu-title`
+`close-button` | `SelectMenu-closeButton`
+`select-menu-filters` | -
+`select-menu-text-filter` | `SelectMenu-filter`
+- | `SelectMenu-input`
+`select-menu-tabs` | `SelectMenu-tabs`
+`select-menu-tab` | `SelectMenu-tab`
+`select-menu-tab-nav` | -
+`select-menu-list` | `SelectMenu-list`
+`select-menu-item` | `SelectMenu-item`
+`select-menu-item-text` | -
+`select-menu-no-results` | `SelectMenu-message`
+`select-menu-blankslate` | `SelectMenu-blankslate`
+`selected` | `aria-checked="true"`
+
+
+---
+
 The select menu provides advanced support for navigation, filtering, and more. Any popover within a select menu can make use of JavaScript-enabled live filtering, selected states, tabbed lists, and keyboard navigation with a bit of markup.
 
 {:toc}
