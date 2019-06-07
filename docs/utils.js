@@ -9,6 +9,8 @@ export const CommonStyles = () => {
 }
 
 export const CommonScripts = () => {
-  const scripts = [/* styleguideJS */]
-  return scripts.map(href => <script src={href} />)
+  const scripts = [
+    /* styleguideJS */
+  ]
+  return scripts.map(href => <script src={href} async key={href} />)
 }
