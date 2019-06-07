@@ -6,7 +6,7 @@ source: 'https://github.com/primer/css/tree/master/src/select-menu'
 bundle: select-menu
 ---
 
-The `SelectMenu` component provides advanced support for navigation, filtering, and more. Any popover within a Select Menu can make use of JavaScript-enabled live filtering, selected states, tabbed lists, and keyboard navigation with a bit of markup.
+The `SelectMenu` component provides advanced support for navigation, filtering, and more. Any menu can make use of JavaScript-enabled live filtering, selected states, tabbed lists, and keyboard navigation with a bit of markup.
 
 ## Basic example
 
