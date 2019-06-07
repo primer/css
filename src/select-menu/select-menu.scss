@@ -1,11 +1,11 @@
-// stylelint-disable selector-max-type, selector-class-pattern
+// stylelint-disable selector-max-type
 
 // selector-max-type is needed for body:not(.intent-mouse) to target keyboard only styles.
 // TODO: Introduce an additional .intent-keyboard class
 
-// selector-class-pattern is disabled since the plan is to move this file to Primer CSS
-
-// Select Menu component
+// Select Menu
+//
+// A more advanced menu with support for navigation, filtering, and more.
 
 .SelectMenu {
   position: fixed;
@@ -30,6 +30,9 @@
 }
 
 // Backdrop
+//
+// Adds a dark, semi transparent "cover" underneat the modal. Only visible for xs.
+
 .SelectMenu::before {
   position: absolute;
   top: 0;
@@ -45,7 +48,10 @@
   }
 }
 
-// The box of the overlay
+// Modal
+//
+// The main "box" that contains the content
+
 .SelectMenu-modal {
   position: relative;
   z-index: 99; // Needs to be higher than .details-overlay's z-index: 80.
@@ -88,6 +94,8 @@
 }
 
 // Header
+//
+// Used for showing a title and the close button. Close button is only visible for xs.
 
 .SelectMenu-header {
   display: flex;
@@ -122,6 +130,8 @@
 }
 
 // Filter
+//
+// An input to filter a large list
 
 .SelectMenu-filter {
   padding: $spacer-3;
@@ -143,6 +153,8 @@
 }
 
 // List
+//
+// The container that holds all the list items. Starts scrolling when the list gets too long.
 
 .SelectMenu-list {
   position: relative;
@@ -151,11 +163,14 @@
   flex: auto;
   overflow-x: hidden;
   overflow-y: auto;
+  background-color: $bg-white;
   border-top: $border;
   -webkit-overflow-scrolling: touch; // Adds momentum + bouncy scrolling
 }
 
 // List Item
+//
+// The interactive element used to make a selection
 
 .SelectMenu-item {
   display: block;
@@ -169,7 +184,7 @@
   border: 0;
 
   & + & {
-    // Add a border between items
+    // Add a top border only if the above element also is a list item
     border-top: $border-width $border-style lighten($gray-200, 3%);
   }
 
@@ -180,6 +195,8 @@
 }
 
 // Icon
+//
+// The icon shown on the left of a list item. Typically a check icon.
 
 .SelectMenu-icon {
   position: absolute;
@@ -193,28 +210,9 @@
   }
 }
 
-// Selected
-.SelectMenu-item[aria-checked="true"] {
-  font-weight: $font-weight-semibold;
-  color: $text-gray-dark;
-}
-
-.SelectMenu-item[aria-checked="true"] .SelectMenu-icon.octicon-check {
-  visibility: visible;
-  transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), visibility 0s linear;
-  transform: scale(1);
-}
-
-// Loading/blankslate
-
-.SelectMenu-loading,
-.SelectMenu-blankslate {
-  padding: $spacer-4 $spacer-3;
-  text-align: center;
-  background-color: $bg-white;
-}
-
 // Tabs
+//
+// Allows switching between multiple lists
 
 .SelectMenu-tabs {
   display: flex;
@@ -268,15 +266,29 @@
   }
 }
 
+// Message, Blankslate and Loading
+//
+// A container used to show different kinds of content. Like a message, a blankslate or the loading animation.
+
+.SelectMenu-message,
+.SelectMenu-blankslate,
+.SelectMenu-loading {
+  padding: $spacer-4 $spacer-3;
+  text-align: center;
+  background-color: $bg-white;
+}
+
 // Divider
+//
+// Can be used to divide the list into multiple groups
 
 .SelectMenu-divider {
-  // Allows list items to be groupped
   padding: $spacer-1 $spacer-3;
   margin: 0;
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
   color: $text-gray-light;
+  background-color: $gray-100;
   border-top: $border;
   border-bottom: $border;
 
@@ -294,6 +306,8 @@
 }
 
 // Footer
+//
+// A container at the bottom.
 
 .SelectMenu-footer {
   padding: $spacer-2 $spacer-3;
@@ -307,7 +321,9 @@
   }
 }
 
-// Has Filter
+// Has Filter (modifier)
+//
+// Makes sure that the filter input keeps a fixed position at the top while typing. Only visible for xs.
 
 .SelectMenu--hasFilter {
   .SelectMenu-modal {
@@ -322,31 +338,45 @@
     }
   }
 
-  // Show "border" when list isn't filled
-  .SelectMenu-list {
-    background-color: $bg-white;
-  }
-
-  // Show "border" when list isn't filled
+  // Show bottom "border" for the last item when the list doesn't take up the whole height
   .SelectMenu-item:last-child {
     box-shadow: 0 $border-width 0 lighten($gray-200, 3%);
   }
 }
 
 // States
+//
+// Different states
 
-// Reset
-
+// Reset outlines
 .SelectMenu-tab:focus,
 .SelectMenu-item:focus {
   outline: none;
 }
 
+// Reset <a> elements
 .SelectMenu-item:hover {
   text-decoration: none;
 }
 
-// Mouse/keyboard input
+// Selected
+//
+// Visible when a used clicks/taps on a list item
+
+.SelectMenu-item[aria-checked="true"] {
+  font-weight: $font-weight-semibold;
+  color: $text-gray-dark;
+}
+
+.SelectMenu-item[aria-checked="true"] .SelectMenu-icon.octicon-check {
+  visibility: visible;
+  transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), visibility 0s linear;
+  transform: scale(1);
+}
+
+// Can hover states
+//
+// For mouse/keyboard input
 
 @media (hover: hover) {
   body:not(.intent-mouse) .SelectMenu-item:focus,
@@ -375,7 +405,9 @@
   }
 }
 
-// Touch input
+// Can not hover states
+//
+// For touch input
 
 @media (hover: none) {
   // Android
@@ -386,22 +418,17 @@
 
   // iOS Safari
   // :active would work if ontouchstart is added to the button
+  // Instead this tweaks the "native" highlight color
   .SelectMenu-item {
     -webkit-tap-highlight-color: rgba($gray-300, 0.5);
   }
 }
 
 // Hacks
+//
+// Things that shouldn't be in here
 
-// Removes the top border from the "create new item" when the list is empty
-
-.filterable-empty + form > .SelectMenu-item {
-  border-top: 0 !important;
-}
-
-// stylelint-disable no-duplicate-selectors
-.SelectMenu {
-  svg {
-    fill: currentColor; // Move to base/base.scss ?
-  }
+// Currently part of .com, move to base/base.scss ?
+.SelectMenu svg {
+  fill: currentColor;
 }
