@@ -2,7 +2,7 @@ import React from 'react'
 import {Heading} from '@primer/components'
 import {redirectTrailingSlash} from '@primer/blueprints/next-components'
 
-export default class extends React.Component {
+export default class ErrorPage extends React.Component {
   static getInitialProps(context) {
     // redirect trailing slash URLs to "clean" ones without
     return redirectTrailingSlash(context) || getErrorProps(context)
@@ -10,13 +10,19 @@ export default class extends React.Component {
 
   render() {
     const {url, statusCode = 500} = this.props
-    return <>
-      <Heading>Whoops! That’s a {statusCode}.</Heading>
-      <p>
-        We couldn’t find anything at <code>{url}</code>.
-        {null && <>Have you tried <a href={`/css/search?q=${encodeURIComponent(url)}`}>searching</a>?</>}
-      </p>
-    </>
+    return (
+      <>
+        <Heading>Whoops! That’s a {statusCode}.</Heading>
+        <p>
+          We couldn’t find anything at <code>{url}</code>.
+          {null && (
+            <>
+              Have you tried <a href={`/css/search?q=${encodeURIComponent(url)}`}>searching</a>?
+            </>
+          )}
+        </p>
+      </>
+    )
   }
 }
 

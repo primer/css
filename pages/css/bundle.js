@@ -1,6 +1,7 @@
+import React from 'react'
 import {pageTree} from '@primer/next-pages'
 
-export default class {
+export default class BundleRedirect extends React.Component {
   static getInitialProps({query: {name}, res}) {
     const url = getBundleURL(name)
     if (url) {

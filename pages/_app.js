@@ -16,7 +16,7 @@ import {repository} from '../package.json'
 import '../src/index.scss'
 
 const {pageMap = new Map()} = Pages
-const requirePage = require.context('.', true, /\.(js|md)x?$/)
+// const requirePage = require.context('.', true, /\.(js|md)x?$/)
 
 const DocLink = props => <Link nounderline {...props} />
 const editLinkBase = `${repository}/edit/master/pages`
