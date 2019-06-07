@@ -90,6 +90,7 @@
 
 .SelectMenu-header {
   display: flex;
+  flex: none; // fixes header from getting squeezed in Safari iOS
   padding: $spacer-3;
 
   @include breakpoint(sm) {
