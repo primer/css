@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "plugin:github/es6",
+    "plugin:github/react",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "env": {
+    "node": false,
+    "browser": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
