@@ -342,7 +342,7 @@ When fetching large lists, consider showing a `.SelectMenu-loading` animation.
 </details>
 
 <div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
-<div class="d-none d-sm-block" style="height: 200px"> <!-- min height for > sm --> </div>
+<div class="d-none d-sm-block" style="height: 220px"> <!-- min height for > sm --> </div>
 ```
 
 ## Blankslate
