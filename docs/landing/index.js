@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {BorderBox, Box, Flex, Heading, Link, Text} from '@primer/components'
-import {getAssetPath} from '../utils'
 import UtilitiesImage from './UtilitiesImage.svg'
 import ObjectsImage from './ObjectsImage.svg'
 import ComponentsImage from './ComponentsImage.svg'
 import SpacingImage from './SpacingImage.svg'
 import ColorImage from './ColorImage.svg'
+import typographyImage from '../../static/typography.png'
 
 export {default as PrimerCSSAnimation} from './PrimerCSSAnimation.js'
 
@@ -64,7 +64,7 @@ export function PrimitivesOverview(props) {
     {
       name: 'Customizable typography',
       desc: `Font size and line-height options work together to result in more sensible numbers. Font styles come in a range of weights and sizes so that we can style appropriately for content and readability. Type utilities allow us to change the visual styles while keeping markup semantic.`,
-      image: getAssetPath('typography.png')
+      image: typographyImage
     },
     {
       name: 'Meaningful color',
