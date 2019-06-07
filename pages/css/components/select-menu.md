@@ -351,7 +351,7 @@ Sometimes a Select Menu needs to communicate a "blank slate" where there's no co
 
 When adding the `.SelectMenu` component on github.com, use the [`<details-menu>`](https://github.com/github/details-menu-element) element. It will :tophat: magically make the `.SelectMenu` work. Here a basic example:
 
-```html
+```erb
 <details class="details-reset details-overlay" id="my-select-menu">
   <summary class="btn" title="Pick an item">
     <span>Choose</span>
