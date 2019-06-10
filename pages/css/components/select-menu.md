@@ -24,9 +24,9 @@ Use a `<details>` element to toggle the Select Menu. The `<summary>` element can
         <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
-        <button class="SelectMenu-item">Item 1</button>
-        <button class="SelectMenu-item">Item 2</button>
-        <button class="SelectMenu-item">Item 3</button>
+        <button class="SelectMenu-item" role="menuitem">Item 1</button>
+        <button class="SelectMenu-item" role="menuitem">Item 2</button>
+        <button class="SelectMenu-item" role="menuitem">Item 3</button>
       </menu>
     </div>
   </div>
@@ -56,9 +56,9 @@ In case the Select Menu should be aligned to the right, use `SelectMenu right-0`
           <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
         </header>
         <menu class="SelectMenu-list">
-          <button class="SelectMenu-item">Item 1</button>
-          <button class="SelectMenu-item">Item 2</button>
-          <button class="SelectMenu-item">Item 3</button>
+          <button class="SelectMenu-item" role="menuitem">Item 1</button>
+          <button class="SelectMenu-item" role="menuitem">Item 2</button>
+          <button class="SelectMenu-item" role="menuitem">Item 3</button>
         </menu>
       </div>
     </div>
@@ -86,20 +86,20 @@ Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-chec
         <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
-        <button class="SelectMenu-item" aria-checked="true">
+        <button class="SelectMenu-item" role="menuitemcheckbox" aria-checked="true">
           <svg height="16" class="SelectMenu-icon octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
           Selected state
         </button>
-        <button class="SelectMenu-item">
+        <button class="SelectMenu-item" role="menuitemcheckbox">
           <svg height="16" class="SelectMenu-icon octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
           Default state
         </button>
-        <button class="SelectMenu-item" aria-checked="true">
+        <button class="SelectMenu-item" role="menuitemcheckbox" aria-checked="true">
           <svg height="16" class="SelectMenu-icon octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
           Selected state
         </button>
-        <button class="SelectMenu-item">Default state</button>
-        <button class="SelectMenu-item">Default state</button>
+        <button class="SelectMenu-item" role="menuitemcheckbox">Default state</button>
+        <button class="SelectMenu-item" role="menuitemcheckbox">Default state</button>
       </menu>
     </div>
   </div>
@@ -125,23 +125,23 @@ The list of items is arguably the most important subcomponent within the menu. B
         <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
-        <button class="SelectMenu-item">
+        <button class="SelectMenu-item" role="menuitem">
           Text only
         </button>
-        <button class="SelectMenu-item">
+        <button class="SelectMenu-item" role="menuitem">
           <img class="avatar avatar-small mr-2" src="https://avatars.githubusercontent.com/hubot?s=40" alt="hubot" height="20" width="20">
           With an avatar
         </button>
-        <button class="SelectMenu-item">
+        <button class="SelectMenu-item" role="menuitem">
           With a status icon <svg class="octicon octicon-primitive-dot color-green-5 ml-2" viewBox="0 0 8 16" version="1.1" width="8" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg>
         </button>
-        <button class="SelectMenu-item">
+        <button class="SelectMenu-item" role="menuitem">
           With a <span class="Label bg-blue" title="Label: label">label</span>
         </button>
-        <button class="SelectMenu-item">
+        <button class="SelectMenu-item" role="menuitem">
           With a counter <span class="Counter bg-gray-2 ml-1">16</span>
         </button>
-        <button class="SelectMenu-item">
+        <button class="SelectMenu-item" role="menuitem">
           <h5>With a heading</h5>
           <span>and some longer description</span>
         </button>
@@ -170,12 +170,12 @@ The Select Menu's list can be divided into multiple parts by adding a `.SelectMe
         <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
-        <button class="SelectMenu-item">Item 1</button>
-        <button class="SelectMenu-item">Item 2</button>
+        <button class="SelectMenu-item" role="menuitem">Item 1</button>
+        <button class="SelectMenu-item" role="menuitem">Item 2</button>
         <div class="SelectMenu-divider">More options</div>
-        <button class="SelectMenu-item">Item 3</button>
-        <button class="SelectMenu-item">Item 4</button>
-        <button class="SelectMenu-item">Item 5</button>
+        <button class="SelectMenu-item" role="menuitem">Item 3</button>
+        <button class="SelectMenu-item" role="menuitem">Item 4</button>
+        <button class="SelectMenu-item" role="menuitem">Item 5</button>
       </menu>
     </div>
   </div>
@@ -206,31 +206,31 @@ Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for ad
         <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
       </form>
       <menu class="SelectMenu-list">
-        <button class="SelectMenu-item">Item 1</a>
-        <button class="SelectMenu-item">Item 2</a>
-        <button class="SelectMenu-item">Item 3</a>
-        <button class="SelectMenu-item">Item 4</a>
-        <button class="SelectMenu-item">Item 5</a>
-        <button class="SelectMenu-item">Item 6</a>
-        <button class="SelectMenu-item">Item 7</a>
-        <button class="SelectMenu-item">Item 8</a>
-        <button class="SelectMenu-item">Item 9</a>
-        <button class="SelectMenu-item">Item 10</a>
-        <button class="SelectMenu-item">Item 11</a>
-        <button class="SelectMenu-item">Item 12</a>
-        <button class="SelectMenu-item">Item 13</a>
-        <button class="SelectMenu-item">Item 14</a>
-        <button class="SelectMenu-item">Item 15</a>
-        <button class="SelectMenu-item">Item 16</a>
-        <button class="SelectMenu-item">Item 17</a>
-        <button class="SelectMenu-item">Item 18</a>
-        <button class="SelectMenu-item">Item 19</a>
-        <button class="SelectMenu-item">Item 20</a>
-        <button class="SelectMenu-item">Item 21</a>
-        <button class="SelectMenu-item">Item 22</a>
-        <button class="SelectMenu-item">Item 23</a>
-        <button class="SelectMenu-item">Item 24</a>
-        <button class="SelectMenu-item">Item 25</a>
+        <button class="SelectMenu-item" role="menuitem">Item 1</a>
+        <button class="SelectMenu-item" role="menuitem">Item 2</a>
+        <button class="SelectMenu-item" role="menuitem">Item 3</a>
+        <button class="SelectMenu-item" role="menuitem">Item 4</a>
+        <button class="SelectMenu-item" role="menuitem">Item 5</a>
+        <button class="SelectMenu-item" role="menuitem">Item 6</a>
+        <button class="SelectMenu-item" role="menuitem">Item 7</a>
+        <button class="SelectMenu-item" role="menuitem">Item 8</a>
+        <button class="SelectMenu-item" role="menuitem">Item 9</a>
+        <button class="SelectMenu-item" role="menuitem">Item 10</a>
+        <button class="SelectMenu-item" role="menuitem">Item 11</a>
+        <button class="SelectMenu-item" role="menuitem">Item 12</a>
+        <button class="SelectMenu-item" role="menuitem">Item 13</a>
+        <button class="SelectMenu-item" role="menuitem">Item 14</a>
+        <button class="SelectMenu-item" role="menuitem">Item 15</a>
+        <button class="SelectMenu-item" role="menuitem">Item 16</a>
+        <button class="SelectMenu-item" role="menuitem">Item 17</a>
+        <button class="SelectMenu-item" role="menuitem">Item 18</a>
+        <button class="SelectMenu-item" role="menuitem">Item 19</a>
+        <button class="SelectMenu-item" role="menuitem">Item 20</a>
+        <button class="SelectMenu-item" role="menuitem">Item 21</a>
+        <button class="SelectMenu-item" role="menuitem">Item 22</a>
+        <button class="SelectMenu-item" role="menuitem">Item 23</a>
+        <button class="SelectMenu-item" role="menuitem">Item 24</a>
+        <button class="SelectMenu-item" role="menuitem">Item 25</a>
       </menu>
       <footer class="SelectMenu-footer">Showing 25 of 25</footer>
     </div>
@@ -264,16 +264,16 @@ Sometimes you need two or more lists of items in your Select Menu, e.g. branches
         <button class="SelectMenu-tab">Tags</button>
       </nav>
       <menu class="SelectMenu-list">
-        <button class="SelectMenu-item">Branch 1</button>
-        <button class="SelectMenu-item">Branch 2</button>
-        <button class="SelectMenu-item">Branch 3</button>
-        <button class="SelectMenu-item">Branch 4</button>
-        <button class="SelectMenu-item">Branch 5</button>
+        <button class="SelectMenu-item" role="menuitem">Branch 1</button>
+        <button class="SelectMenu-item" role="menuitem">Branch 2</button>
+        <button class="SelectMenu-item" role="menuitem">Branch 3</button>
+        <button class="SelectMenu-item" role="menuitem">Branch 4</button>
+        <button class="SelectMenu-item" role="menuitem">Branch 5</button>
       </menu>
       <menu class="SelectMenu-list" hidden>
-        <button class="SelectMenu-item">Tag 1</button>
-        <button class="SelectMenu-item">Tag 2</button>
-        <button class="SelectMenu-item">Tag 3</button>
+        <button class="SelectMenu-item" role="menuitem">Tag 1</button>
+        <button class="SelectMenu-item" role="menuitem">Tag 2</button>
+        <button class="SelectMenu-item" role="menuitem">Tag 3</button>
       </menu>
       <footer class="SelectMenu-footer">Showing 5 of 5</footer>
     </div>
@@ -300,10 +300,10 @@ A `SelectMenu-message` can be used to show different kind of messages to a user.
         <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
-        <button class="SelectMenu-item">Item 1</button>
-        <button class="SelectMenu-item">Item 2</button>
+        <button class="SelectMenu-item" role="menuitem">Item 1</button>
+        <button class="SelectMenu-item" role="menuitem">Item 2</button>
         <div class="SelectMenu-message border-bottom border-top bg-red-0 text-red p-2">Message goes here</div>
-        <button class="SelectMenu-item">Item 3</button>
+        <button class="SelectMenu-item" role="menuitem">Item 3</button>
       </menu>
     </div>
   </div>
