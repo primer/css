@@ -2,13 +2,33 @@ import React from 'react'
 import {MDXProvider} from '@mdx-js/tag'
 import Octicon, {Pencil} from '@githubprimer/octicons-react'
 import {BaseStyles, Text, BorderBox, Box, Flex, theme} from '@primer/components'
-import {MarkdownHeading, JumpNav, SideNav} from '@primer/blueprints'
+import {MarkdownHeading, JumpNav} from '@primer/blueprints'
 import {Link} from 'gatsby'
 import Header from '../components/header'
+import SideNav from '../components/SideNav'
 import getComponents from '../../../docs/markdown'
 import documents from '../../../searchIndex'
 import {CONTENT_MAX_WIDTH} from '../../../docs/constants'
 import {repository} from '../../../package.json'
+import { graphql } from 'gatsby'
+
+export const query = graphql`
+  query {
+    allDirectory(filter: {relativeDirectory: {regex: "/(docs)/"}}) {
+      edges {
+        node {
+          name
+          children {
+            id
+            children {
+              id
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 const DocLink = props => <Link nounderline {...props} />
 const editLinkBase = `${repository}/edit/master/pages`
@@ -29,7 +49,7 @@ export default class MyApp extends React.Component {
           title="Primer"
           subtitle="CSS"
         >
-        
+
         </Header>
         <Flex
           flexDirection={['column', 'column', 'column', 'row-reverse']}
@@ -66,7 +86,7 @@ export default class MyApp extends React.Component {
             borderRight={1}
             borderTop={[1, 1, 0, 0]}
           >
-            <SideNav>
+            <SideNav data={this.props.data}>
               hi
             </SideNav>
           </BorderBox>
