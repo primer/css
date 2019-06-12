@@ -9,3 +9,5 @@ _site
 dist/
 node_modules/
 searchIndex.js
+.cache
+public
