@@ -1,13 +1,22 @@
 import React from 'react'
 import Link from './Link'
 import {Box} from '@primer/components'
+import {groupBy} from 'lodash'
+import sentenceCase from 'sentence-case'
 
 export default function SideNav({data}) {
+  const tree = groupBy(data.allFile.edges, 'node.relativeDirectory')
+  console.log(tree)
   return (
     <div>
-      {data.allDirectory.edges.map(category => (
-        <Box><Link>{category.node.name}</Link></Box>
-      ))}
+        {Object.entries(tree).map(([name, children]) => (
+          <>
+            <Box><Link>{name}</Link></Box>
+            {children.map(child => (
+              <Box><Link ml={4}>{child.node.name}</Link></Box>
+            ))}
+          </>
+        ))}
     </div>
   )
 }

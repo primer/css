@@ -17,10 +17,13 @@
     "gatsby-plugin-sitemap": "^2.1.0",
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-transformer-sharp": "^2.1.21",
+    "lodash": "^4.17.11",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "sentence-case": "^2.1.1",
+    "un-flatten-tree": "^2.0.12"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

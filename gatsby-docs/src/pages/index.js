@@ -14,16 +14,15 @@ import { graphql } from 'gatsby'
 
 export const query = graphql`
   query {
-    allDirectory(filter: {relativeDirectory: {regex: "/(docs)/"}}) {
+    allFile(filter: {relativePath: {regex: "/(docs)/"}}) {
       edges {
         node {
+          base
+          ext
+          dir
+          id
           name
-          children {
-            id
-            children {
-              id
-            }
-          }
+          relativeDirectory
         }
       }
     }
