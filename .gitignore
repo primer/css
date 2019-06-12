@@ -9,16 +9,3 @@ _site
 dist/
 node_modules/
 searchIndex.js
-gatsby-docs/.cache
-gatsby-docs/public
-.cache
-public
-gatsby-docs/.cache/caches/gatsby-mdx/diskstore-1332ed68851cd0b44b1b1bbf9584b51a.json
-gatsby-docs/.cache/caches/gatsby-mdx/diskstore-1ea0d48436f0cad5254e00d470e19590.json
-gatsby-docs/.cache/caches/gatsby-mdx/diskstore-21b29749fd19315d97a09bbb24c8574d.json
-gatsby-docs/.cache/caches/gatsby-mdx/diskstore-234d062623ec5f035c13015730f5579f.json
-gatsby-docs/.cache/caches/gatsby-mdx/diskstore-24f4ac47cd0b041fbc7675d2929dcb27.json
-gatsby-docs/.cache/caches/gatsby-mdx/diskstore-2bc76385b946aff8ad836725ec6c90a4.json
-gatsby-docs/.cache/caches/gatsby-mdx/diskstore-2cf046f9b70cdd97843de8db0b096ef6.json
-gatsby-docs/.cache/caches/gatsby-mdx/diskstore-3119f39004f0f68941eedc16706a967e.json
-gatsby-docs/.cache/caches/gatsby-mdx/diskstore-315212f4b4961bd0bfe0f64640028d1a.json
