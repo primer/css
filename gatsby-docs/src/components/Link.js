@@ -4,7 +4,7 @@ import {Link as PrimerLink} from '@primer/components'
 
 export default function Link({href, ...rest}) {
   return (
-    <GatsbyLink href={href}>
+    <GatsbyLink to={href}>
       <PrimerLink href={href} {...rest} />
     </GatsbyLink>
   )
