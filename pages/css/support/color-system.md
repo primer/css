@@ -34,12 +34,9 @@ const {black, white} = variables
 
 <div class="d-flex flex-wrap mr-n4">
   {gradientHues.map(hue => (
-    <ColorVariable minWidth={240} pr={4} mb={4} className="col-12 col-md-6" id={hue} hue={hue} key={hue} />
+    <ColorVariable minWidth={240} className="pr-4 mb-4 col-12 col-md-6" id={hue} hue={hue} key={hue} />
   ))}
-</div>
-
-<div class="d-flex flex-wrap mr-n4">
-  <FadeVariables id="black" hue="black" bg="black" color="white" pr={4} width={1/2}>
+  <FadeVariables id="black" hue="black" bg="black" color="white" className="pr-4 mb-4 col-12 col-md-6">
     <BorderBox border={0} borderRadius={0} borderTop={1} borderColor="gray.5" mt={1}>
       <Text as="div" fontSize={2} pt={3} mb={0}>
         Black fades apply alpha transparency to the <Var>$black</Var> variable. The black color value has a slight
@@ -47,7 +44,7 @@ const {black, white} = variables
       </Text>
     </BorderBox>
   </FadeVariables>
-  <FadeVariables id="white" hue="white" over={black} pr={4} width={1/2}>
+  <FadeVariables id="white" hue="white" over={black} className="pr-4 mb-4 col-12 col-md-6">
     <BorderBox border={0} borderRadius={0} borderTop={1} mt={1}>
       <Text as="div" fontSize={2} pt={3} mb={0}>
         White fades apply alpha transparency to the <Var>$white</Var> variable.
