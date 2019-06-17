@@ -9,40 +9,35 @@ import Octicon, {Alert} from '@githubprimer/octicons-react'
 import {Box, Flex, Text} from '@primer/components'
 import {colors, variables} from '../../../docs/color-variables'
 import {Swatch, BackgroundHueSwatches, overlayColor, gradientPalettes} from '../../../docs/color-system'
-const gradientColorKeys = gradientPalettes.map(palette => palette.name)
-const Chip = props => <Box mt={2} height={60} {...props} />
-const QuotedWords = ({words, ...rest}) => <Text {...rest}>"{words.slice(0, -1).join('", "')}", or "{words[words.length - 1]}"</Text>
+
 
 Use color utilities to apply color to the background of elements, text, and borders.
 
+
 # Table of contents
+
 
 ## Background colors
 
 Background colors are most commonly used for filling large blocks of content or areas with a color. When selecting a background color, make sure the foreground color contrast passes a minimum WCAG accessibility rating of [level AA](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html). Meeting these standards ensures that content is accessible by everyone, regardless of disability or user device. You can [check your color combination with this demo site](http://jxnblk.com/colorable/demos/text/). For more information, read our [accessibility standards](../principles/accessibility).
 
-### Gray
 
+### Gray
 <BackgroundHueSwatches hue="gray" />
 
 ### Blue
-
 <BackgroundHueSwatches hue="blue" />
 
 ### Yellow
-
 <BackgroundHueSwatches hue="yellow" />
 
 ### Red
-
 <BackgroundHueSwatches hue="red" />
 
 ### Green
-
 <BackgroundHueSwatches hue="green" />
 
 ### Purple
-
 <BackgroundHueSwatches hue="purple" />
 
 
