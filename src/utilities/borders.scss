@@ -2,9 +2,6 @@
 // stylelint-disable primer/selector-no-utility
 // stylelint-disable block-opening-brace-space-before, comment-empty-line-before
 
-/* Add a gray border on all edges */
-.border { border: $border !important; }
-
 /* Add a gray border to the left and right */
 .border-x {
   border-right: $border !important;
