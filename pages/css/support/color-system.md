@@ -7,7 +7,8 @@ status_issue: 'https://github.com/github/design-systems/issues/301'
 
 import {Box, BorderBox, Flex, Link, Heading, Text} from '@primer/components'
 import {gradientPalettes, gradientHues, variables} from '../../../docs/color-variables'
-import {ColorVariable, FadeVariables, Var, overlayColor, black, white} from '../../../docs/color-system'
+import {ColorVariable, FadeVariables, Var, overlayColor} from '../../../docs/color-system'
+const {black, white} = variables
 
 
 # Table of contents

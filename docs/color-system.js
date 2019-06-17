@@ -3,13 +3,10 @@ import PropTypes from 'prop-types'
 import chroma from 'chroma-js'
 import titleCase from 'title-case'
 import styled from 'styled-components'
-import {Box, Flex, Heading, Text} from '@primer/components'
+import {Box, BorderBox, Flex, Heading, Text} from '@primer/components'
 import {colors, variables, getBackgroundPalette} from './color-variables'
 
-export {gradientPalettes} from './color-variables'
-
 const {black, white} = colors
-export {black, white}
 
 export function ColorVariable({hue, ...rest}) {
   const values = colors[hue]
@@ -20,9 +17,7 @@ export function ColorVariable({hue, ...rest}) {
           {titleCase(hue)}
         </Heading>
         <Flex justifyContent="space-between">
-          <Var fontWeight="bold">
-            ${hue}-500
-          </Var>
+          <Var fontWeight="bold">${hue}-500</Var>
           <Text justifySelf="end" fontFamily="mono">
             {values[5]}
           </Text>
@@ -41,6 +36,9 @@ ColorVariable.propTypes = {
 
 export function FadeVariables({hue, color, bg, over, children, ...rest}) {
   const colorValue = colors[hue]
+  if (!colorValue) {
+    throw new Error(`colors["${hue}"] does not exist`)
+  }
   const alphas = [15, 30, 50, 70, 85]
   const values = alphas.map(alpha => {
     const value = chroma(colorValue)
@@ -183,6 +181,9 @@ export function Var(props) {
 }
 
 export function overlayColor(bg) {
+  if (!bg) {
+    throw new Error(`overlayColor() expects a color string, but got: ${JSON.stringify(bg)}`)
+  }
   return chroma(bg).luminance() > 0.5 ? black : white
 }
 
@@ -209,11 +210,11 @@ const ColorTable = styled.table`
   }
 `
 
-const ColorRow = styled(Box).attrs({as: 'tr'})`
+export const ColorRow = styled(Box).attrs({as: 'tr'})`
   border-bottom: 1px solid ${colors.gray[2]} !important;
 `
 
-const ColorCell = styled(Box).attrs({as: 'td'})``
+export const ColorCell = styled(Box).attrs({as: 'td'})``
 
 function fadeTextColor(fg, bg = white) {
   const rgb = compositeRGB(fg, bg)

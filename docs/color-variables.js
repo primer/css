@@ -1,10 +1,10 @@
 import titleCase from 'title-case'
 import primerColors from 'primer-colors'
 
-export const variables = {}
-
 import colorSystemSCSS from '!!raw-loader?module!../src/support/variables/color-system.scss'
 import colorVariablesSCSS from '!!raw-loader?module!../src/support/variables/colors.scss'
+
+export const variables = {}
 
 parseSCSSVariables(colorSystemSCSS, variables)
 parseSCSSVariables(colorVariablesSCSS, variables)

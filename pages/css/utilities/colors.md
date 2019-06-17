@@ -8,7 +8,8 @@ status_issue: 'https://github.com/github/design-systems/issues/97'
 import Octicon, {Alert} from '@githubprimer/octicons-react'
 import {Box, Flex, Text} from '@primer/components'
 import {colors, variables} from '../../../docs/color-variables'
-import {Swatch, BackgroundHueSwatches, overlayColor, gradientPalettes} from '../../../docs/color-system'
+import {Swatch, BackgroundHueSwatches, overlayColor} from '../../../docs/color-system'
+import {gradientPalettes} from '../../../docs/color-variables'
 
 
 Use color utilities to apply color to the background of elements, text, and borders.
