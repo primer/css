@@ -66,12 +66,12 @@ Each component or group of styles is distributed via npm as a separate CSS file,
 </Flex>
 
 
-<div class="bg-gray py-6">
-  <div class="d-flex flex-wrap flex-md-nowrap px-6 gutter-lg">
-    <div class="col-12 col-md-9 pr-0 pr-lg-2">
-      <h3 class="f3 text-normal m-0">Use Primer CSS in your project</h3>
-      <p class="my-3">Pick and choose what you need. Install the entire Primer CSS bundle or individual packages via npm.</p>
-      <a href="/css/getting-started" class="btn btn-outline">Installation instructions</a>
+<div className="bg-gray py-6">
+  <div className="d-flex flex-wrap flex-md-nowrap px-6 gutter-lg">
+    <div className="col-12 col-md-9 pr-0 pr-lg-2">
+      <h3 className="f3 text-normal m-0">Use Primer CSS in your project</h3>
+      <p className="my-3">Pick and choose what you need. Install the entire Primer CSS bundle or individual packages via npm.</p>
+      <a href="/css/getting-started" className="btn btn-outline">Installation instructions</a>
     </div>
   </div>
 </div>
