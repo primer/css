@@ -14,11 +14,6 @@
   border-bottom: $border !important;
 }
 
-/* Change the border style to dashed, in conjunction with another utility */
-.border-dashed {
-  border-style: dashed !important;
-}
-
 $edges: (
   top: (top-left, top-right),
   right: (top-right, bottom-right),
@@ -84,6 +79,11 @@ $edges: (
 
 /* Add a 50% border-radius to make something into a circle */
 .circle { border-radius: 50% !important; }
+
+/* Change the border style to dashed, in conjunction with another utility */
+.border-dashed {
+  border-style: dashed !important;
+}
 
 /* Use with .border to turn the border blue */
 .border-blue        { border-color: $border-blue !important; }
