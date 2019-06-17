@@ -13,32 +13,33 @@ const {black, white} = variables
 
 # Table of contents
 
+
 ## Color palette
 
-<Flex flexWrap="wrap" className="mr-n2">
-  {gradientPalettes.map(({name, title, bg, fg, ...palette}) => (
-    <Link href={`#${name}`} bg={bg.value} key={name} color={overlayColor(bg.value)} p={3} mr={2} mb={2} className="flex-auto">
+<div class="d-flex flex-wrap mr-n2">
+  {gradientPalettes.map(({name, title, value, ...palette}) => (
+    <Link href={`#${name}`} bg={value} key={name} color={overlayColor(value)} p={3} mr={2} mb={2} className="flex-auto">
       {title}
     </Link>
   ))}
-  <Box bg="black" p={3} mb={2} mr={2} className="flex-auto">
+  <div class="bg-gray-9 p-3 mb-2 mr-2 flex-auto">
     <Link href="#black" color="white">Black</Link>
-  </Box>
-  <BorderBox bg="white" p={3} mb={2} mr={2} borderRadius={0} className="flex-auto">
+  </div>
+  <div class="bg-white p-3 mb-2 mr-2 border flex-auto">
     <Link color="black" href="#white">White</Link>
-  </BorderBox>
-</Flex>
+  </div>
+</div>
 
 ## Color variables
 
-<Flex flexWrap="wrap">
+<div class="d-flex flex-wrap mr-n4">
   {gradientHues.map(hue => (
-    <ColorVariable minWidth={240} pr={4} mb={6} className="col-12 col-md-6" id={hue} hue={hue} key={hue} />
+    <ColorVariable minWidth={240} pr={4} mb={4} className="col-12 col-md-6" id={hue} hue={hue} key={hue} />
   ))}
-</Flex>
+</div>
 
-<Flex flexWrap="wrap">
-  <FadeVariables id="black" hue="black" bg="black" color="white" width={1/2}>
+<div class="d-flex flex-wrap mr-n4">
+  <FadeVariables id="black" hue="black" bg="black" color="white" pr={4} width={1/2}>
     <BorderBox border={0} borderRadius={0} borderTop={1} borderColor="gray.5" mt={1}>
       <Text as="div" fontSize={2} pt={3} mb={0}>
         Black fades apply alpha transparency to the <Var>$black</Var> variable. The black color value has a slight
@@ -46,7 +47,7 @@ const {black, white} = variables
       </Text>
     </BorderBox>
   </FadeVariables>
-  <FadeVariables id="white" hue="white" over={black} width={1/2}>
+  <FadeVariables id="white" hue="white" over={black} pr={4} width={1/2}>
     <BorderBox border={0} borderRadius={0} borderTop={1} mt={1}>
       <Text as="div" fontSize={2} pt={3} mb={0}>
         White fades apply alpha transparency to the <Var>$white</Var> variable.
@@ -54,7 +55,7 @@ const {black, white} = variables
       </Text>
     </BorderBox>
   </FadeVariables>
-</Flex>
+</div>
 
 ## Color utilities
 

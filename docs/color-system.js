@@ -55,7 +55,7 @@ export function FadeVariables({hue, color, bg, over, children, ...rest}) {
     boxProps.borderColor = 'transparent'
   }
   return (
-    <Box pr={4} mb={6} {...rest}>
+    <Box {...rest}>
       {/* <Heading as="div">{titleCase(hue)}</Heading> */}
       <BorderBox my={2} p={3} {...boxProps}>
         <Heading as="div" pb={3} fontSize={56} fontWeight="light">

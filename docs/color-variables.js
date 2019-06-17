@@ -27,6 +27,7 @@ export const gradientPalettes = gradientHues.map(name => {
   return {
     name,
     title: titleCase(name),
+    value: colors[name][5],
     bg: variables[bgClass] ? {className: bgClass, value: variables[bgClass]} : null,
     fg: variables[textClass] ? {className: textClass, value: variables[textClass]} : null,
     values: colors[name].map((value, index) => ({
