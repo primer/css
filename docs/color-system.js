@@ -154,7 +154,7 @@ export function BackgroundHueSwatches({hue, ...rest}) {
         </tr>
       </thead>
       <tbody>
-        {rows.map(({value, named, slug, variable}) => {
+        {rows.map(({value, named, slug}) => {
           const overlay = overlayColor(value)
           return (
             <ColorRow key={slug}>
