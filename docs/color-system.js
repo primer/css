@@ -14,15 +14,15 @@ export {black, white}
 export function ColorVariable({hue, ...rest}) {
   const values = colors[hue]
   return (
-    <Flex.Item as={Box} minWidth={240} pr={4} mb={6} className="col-12 col-md-6 markdown-no-margin" {...rest}>
-      <Box bg={colors[hue][5]} my={2} p={3} color="white">
+    <Box {...rest}>
+      <Box bg={colors[hue][5]} mb={2} p={3} color="white">
         <Heading as="div" pb={3} fontSize={56} fontWeight="light">
           {titleCase(hue)}
         </Heading>
         <Flex justifyContent="space-between">
-          <Flex.Item as={Var} fontWeight="bold">
+          <Var fontWeight="bold">
             ${hue}-500
-          </Flex.Item>
+          </Var>
           <Text justifySelf="end" fontFamily="mono">
             {values[5]}
           </Text>
@@ -31,7 +31,7 @@ export function ColorVariable({hue, ...rest}) {
       {values.map((value, index) => (
         <Swatch name={hue} index={index} key={value} />
       ))}
-    </Flex.Item>
+    </Box>
   )
 }
 
@@ -52,11 +52,14 @@ export function FadeVariables({hue, color, bg, over, children, ...rest}) {
       value
     }
   })
-  const boxProps = {color, bg}
+  const boxProps = {color, bg, borderRadius: 0}
+  if (hue !== 'white') {
+    boxProps.borderColor = 'transparent'
+  }
   return (
-    <Flex.Item as={Box} pr={4} mb={6} width={1 / 2} className="markdown-no-margin" {...rest}>
+    <Box pr={4} mb={6} {...rest}>
       {/* <Heading as="div">{titleCase(hue)}</Heading> */}
-      <Box my={2} p={3} {...boxProps}>
+      <BorderBox my={2} p={3} {...boxProps}>
         <Heading as="div" pb={3} fontSize={56} fontWeight="light">
           {titleCase(hue)}
         </Heading>
@@ -71,13 +74,13 @@ export function FadeVariables({hue, color, bg, over, children, ...rest}) {
           </Text>
         </Flex>
         {children}
-      </Box>
+      </BorderBox>
       <Box bg={over}>
         {values.map(swatchProps => (
           <Swatch {...swatchProps} key={swatchProps.value} />
         ))}
       </Box>
-    </Flex.Item>
+    </Box>
   )
 }
 
@@ -125,7 +128,7 @@ Swatch.defaultProps = {
 Swatch.propTypes = {
   name: PropTypes.string,
   textColor: PropTypes.string,
-  value: PropTypes.string.isRequired
+  value: PropTypes.string
 }
 
 export function BackgroundHueSwatches({hue, ...rest}) {
