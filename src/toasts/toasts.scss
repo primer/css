@@ -1,0 +1,107 @@
+// Toast
+
+.Toast {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: $black;
+  padding: $spacer-3;
+  margin: $spacer-3;
+  border-radius: 3px;
+  border: 1px solid $black-fade-15;
+  max-width: 400px;
+  min-width: 200px;
+  box-shadow: $box-shadow-large;
+}
+
+// Temporary placeholder for real octicons
+.Toast-octicon {
+  width:16px;
+  height:16px;
+  background-color: $gray-500;
+  margin-right: $spacer-2;
+  border-radius: 50%;
+}
+
+.Toast-action {
+  margin-left: auto;
+}
+
+
+// Temporarily splitting this out
+// to play with static styles.
+.Toast-animated {
+  position: fixed;
+  bottom: -100px;
+  left: 0;
+  animation-name: toast;
+  animation-duration: 10s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+// Pop up animation
+@keyframes toast {
+  0%   {bottom:-100px;}
+  5%  {bottom:0px;}
+  90%  {bottom:0px;}
+  100% {bottom:-100px;}
+}
+
+
+
+
+// Style options
+// -----
+
+// 1. Classic GitHub style
+
+.Toast-classic-default {
+  background-color: $blue-100;
+  color: $blue-900;
+  border: 1px solid $gray-300;
+}
+
+.Toast-classic-error {
+  background-color: $red-100;
+  color: $red-900;
+}
+
+.Toast-classic-warning {
+  background-color: $yellow-100;
+  color: $yellow-900;
+}
+
+.Toast-classic-success {
+  background-color: $green-100;
+  color: $green-900;
+}
+
+
+
+// 2. Light style
+
+.Toast-light-error {
+  border-top: 4px solid $red-500;
+
+  .Toast-octicon {
+    background-color: $red-500;
+  }
+}
+
+.Toast-light-warning {
+  border-top: 4px solid $yellow-600;
+
+  .Toast-octicon {
+    background-color: $yellow-600;
+  }
+}
+
+.Toast-light-success {
+  border-top: 4px solid $green-500;
+
+  .Toast-octicon {
+    background-color: $green-500;
+  }
+}
