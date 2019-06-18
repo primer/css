@@ -2,7 +2,6 @@
 
 .Toast {
   display: flex;
-  align-items: center;
   background-color: white;
   color: $black;
   padding: $spacer-3;
@@ -12,19 +11,25 @@
   max-width: 400px;
   min-width: 200px;
   box-shadow: $box-shadow-large;
+  width: max-content;
 }
 
-// Temporary placeholder for real octicons
 .Toast-octicon {
-  width:16px;
-  height:16px;
-  background-color: $gray-500;
   margin-right: $spacer-2;
-  border-radius: 50%;
 }
 
 .Toast-action {
-  margin-left: auto;
+  margin-top: $spacer-2;
+}
+
+.Toast-dismiss {
+  margin-left: $spacer-4;
+  color: $text-gray;
+
+  &:hover {
+    cursor: pointer;
+    color: $text-gray-dark;
+  }
 }
 
 
@@ -60,7 +65,6 @@
 .Toast-classic-default {
   background-color: $blue-100;
   color: $blue-900;
-  border: 1px solid $gray-300;
 }
 
 .Toast-classic-error {
@@ -86,7 +90,7 @@
   border-top: 4px solid $red-500;
 
   .Toast-octicon {
-    background-color: $red-500;
+    color: $red-500;
   }
 }
 
@@ -94,7 +98,7 @@
   border-top: 4px solid $yellow-600;
 
   .Toast-octicon {
-    background-color: $yellow-600;
+    color: $yellow-800;
   }
 }
 
@@ -102,6 +106,6 @@
   border-top: 4px solid $green-500;
 
   .Toast-octicon {
-    background-color: $green-500;
+    color: $green-500;
   }
 }
