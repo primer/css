@@ -23,7 +23,7 @@ const colors = {
 
 const aliases = {}
 
-const gradientPalettes = gradientHues.map(name => {
+const palettes = gradientHues.map(name => {
   const bgClass = `bg-${name}`
   const textClass = `text-${name}`
   return {
@@ -37,56 +37,25 @@ const gradientPalettes = gradientHues.map(name => {
       index,
       variable: `${name}-${index}00`,
       slug: `${name}-${index}`,
-      aliases: (aliases[value] = {}),
+      aliases: (aliases[value] = {})
     }))
   }
 })
 
-const backgroundPalettes = gradientPalettes
-  .filter(palette => palette.bg)
-  .map(({name, values, bg, ...paletteRest}) => ({
-    name,
-    ...paletteRest,
-    className: bg.className,
-    value: bg.value,
-    values: values.map(value => ({...value, className: `bg-${value.slug}`}))
-  }))
-
-const foregroundPalettes = gradientPalettes
-  .filter(palette => palette.fg)
-  .map(({name, values, fg, ...paletteRest}) => ({
-    name,
-    ...paletteRest,
-    className: fg.className,
-    value: fg.value,
-    values: values.map(value => ({...value, className: `color-${value.slug}`}))
-  }))
-
 for (const key of Object.keys(variables)) {
-  const match = key.match(/^(bg|text|border)-(\w+)(?!-(light|dark))?$/)
-  if (match) {
+  const match = key.match(/^(bg|text|border)-(\w+)(-(dark|light))?$/)
+  const value = variables[key]
+  if (match && aliases[value]) {
+    // eslint-disable-next-line no-unused-vars
     const [_, type, name, suffix] = match
-    aliases[value][type] = `.${key}`
+    aliases[value][type] = key
   }
 }
 
-export {
-  colors,
-  gradientHues,
-  gradientPalettes,
-  backgroundPalettes,
-  foregroundPalettes,
-  variables,
-  getForegroundPalette,
-  getBackgroundPalette
-}
+export {colors, gradientHues, palettes, getPaletteByName, variables}
 
-function getBackgroundPalette(name) {
-  return backgroundPalettes.find(palette => palette.name === name)
-}
-
-function getForegroundPalette(name) {
-  return foregroundPalettes.find(palette => palette.name === name)
+function getPaletteByName(name) {
+  return palettes.find(palette => palette.name === name)
 }
 
 function parseSCSSVariables(scssString, variables = {}) {
