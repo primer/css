@@ -4,16 +4,16 @@ import primerColors from 'primer-colors'
 import colorSystemSCSS from '!!raw-loader?module!../src/support/variables/color-system.scss'
 import colorVariablesSCSS from '!!raw-loader?module!../src/support/variables/colors.scss'
 
-export const variables = {}
+const variables = {}
 
 parseSCSSVariables(colorSystemSCSS, variables)
 parseSCSSVariables(colorVariablesSCSS, variables)
 
 // XXX we don't necessarily define them in this order in primer-colors,
 // so we define an array here just to be safe
-export const gradientHues = ['gray', 'blue', 'green', 'purple', 'yellow', 'orange', 'red', 'pink']
+const gradientHues = ['gray', 'blue', 'green', 'purple', 'yellow', 'orange', 'red', 'pink']
 
-export const colors = {
+const colors = {
   ...primerColors,
   pink: Object.keys(variables)
     .filter(key => key.startsWith('pink-'))
@@ -21,7 +21,9 @@ export const colors = {
     .map(key => variables[key])
 }
 
-export const gradientPalettes = gradientHues.map(name => {
+const aliases = {}
+
+const gradientPalettes = gradientHues.map(name => {
   const bgClass = `bg-${name}`
   const textClass = `text-${name}`
   return {
@@ -34,12 +36,13 @@ export const gradientPalettes = gradientHues.map(name => {
       value,
       index,
       variable: `${name}-${index}00`,
-      slug: `${name}-${index}`
+      slug: `${name}-${index}`,
+      aliases: (aliases[value] = {}),
     }))
   }
 })
 
-export const backgroundPalettes = gradientPalettes
+const backgroundPalettes = gradientPalettes
   .filter(palette => palette.bg)
   .map(({name, values, bg, ...paletteRest}) => ({
     name,
@@ -49,7 +52,7 @@ export const backgroundPalettes = gradientPalettes
     values: values.map(value => ({...value, className: `bg-${value.slug}`}))
   }))
 
-export const foregroundPalettes = gradientPalettes
+const foregroundPalettes = gradientPalettes
   .filter(palette => palette.fg)
   .map(({name, values, fg, ...paletteRest}) => ({
     name,
@@ -59,11 +62,30 @@ export const foregroundPalettes = gradientPalettes
     values: values.map(value => ({...value, className: `color-${value.slug}`}))
   }))
 
-export function getBackgroundPalette(name) {
+for (const key of Object.keys(variables)) {
+  const match = key.match(/^(bg|text|border)-(\w+)(?!-(light|dark))?$/)
+  if (match) {
+    const [_, type, name, suffix] = match
+    aliases[value][type] = `.${key}`
+  }
+}
+
+export {
+  colors,
+  gradientHues,
+  gradientPalettes,
+  backgroundPalettes,
+  foregroundPalettes,
+  variables,
+  getForegroundPalette,
+  getBackgroundPalette
+}
+
+function getBackgroundPalette(name) {
   return backgroundPalettes.find(palette => palette.name === name)
 }
 
-export function getForegroundPalette(name) {
+function getForegroundPalette(name) {
   return foregroundPalettes.find(palette => palette.name === name)
 }
 
