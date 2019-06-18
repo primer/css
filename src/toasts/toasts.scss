@@ -109,3 +109,58 @@
     color: $green-500;
   }
 }
+
+// 3. Bright style
+
+.Toast-bright-default {
+  background-color: $blue-500;
+  color: white;
+
+  .Toast-octicon {
+    color: white;
+  }
+
+  .Toast-dismiss {
+    color: white;
+  }
+}
+
+
+.Toast-bright-error {
+  background-color: $red-500;
+  color: white;
+
+  .Toast-octicon {
+    color: white;
+  }
+
+  .Toast-dismiss {
+    color: white;
+  }
+}
+
+.Toast-bright-warning {
+  background-color: $yellow-500;
+  color: black;
+
+  .Toast-octicon {
+    color: black;
+  }
+
+  .Toast-dismiss {
+    color: black;
+  }
+}
+
+.Toast-bright-success {
+  background-color: $green-500;
+  color: white;
+
+  .Toast-octicon {
+    color: white;
+  }
+
+  .Toast-dismiss {
+    color: white;
+  }
+}
