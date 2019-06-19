@@ -423,12 +423,3 @@
     -webkit-tap-highlight-color: rgba($gray-300, 0.5);
   }
 }
-
-// Hacks
-//
-// Things that shouldn't be in here
-
-// Currently part of .com, move to base/base.scss ?
-.SelectMenu svg {
-  fill: currentColor;
-}
