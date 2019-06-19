@@ -5,10 +5,12 @@ status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/301'
 ---
 
-import {Box, BorderBox, Flex, Link, Heading, Text} from '@primer/components'
-import {gradientPalettes, gradientHues, variables} from '../../../docs/color-variables'
-import {ColorVariable, FadeVariables, Var, overlayColor} from '../../../docs/color-system'
-const {black, white} = variables
+import {MarkdownHeading} from '@primer/blueprints'
+import {Box, Link} from '@primer/components'
+import Table from '../../../docs/Table'
+import {palettes} from '../../../docs/color-variables'
+import {Var, overlayColor} from '../../../docs/color-system'
+const {Cell, Row} = Table
 
 
 # Table of contents
@@ -17,7 +19,7 @@ const {black, white} = variables
 ## Color palette
 
 <div class="d-flex flex-wrap mr-n2">
-  {gradientPalettes.map(({name, title, value, ...palette}) => (
+  {palettes.map(({name, title, value, ...palette}) => (
     <Link href={`#${name}`} bg={value} key={name} color={overlayColor(value)} p={3} mr={2} mb={2} className="flex-auto">
       {title}
     </Link>
@@ -32,27 +34,55 @@ const {black, white} = variables
 
 ## Color variables
 
-<div class="d-flex flex-wrap mr-n4">
-  {gradientHues.map(hue => (
-    <ColorVariable minWidth={240} className="pr-4 mb-4 col-12 col-md-6" id={hue} hue={hue} key={hue} />
+<Table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Value</th>
+      <th>Background</th>
+      <th>Foreground</th>
+      <th>Border</th>
+    </tr>
+  </thead>
+  {palettes.map(({name, title, values}) => (
+    <tbody key={name}>
+      <tr>
+        <Box as="th" colSpan="6" pt={4}>
+          <Box bg={values[5]}>
+            <MarkdownHeading as="h3">{title}</MarkdownHeading>
+          </Box>
+        </Box>
+      </tr>
+      {values.map(({value, aliases, index, variable, slug}) => (
+        <tr>
+          <Cell bg={value} color={overlayColor(value)}>
+            <Var>${variable}</Var>
+          </Cell>
+          <Cell bg={value} color={overlayColor(value)}>
+            <Var>{value}</Var>
+          </Cell>
+          <Cell bg={value} color={overlayColor(value)}>
+            {aliases.bg ? (
+              <><Var fontWeight="bold">.{aliases.bg}</Var>, </>
+            ) : null}
+            <Var>.bg-{slug}</Var>
+          </Cell>
+          <Cell color={value} bg={overlayColor(value)}>
+            {aliases.text ? (
+              <><Var fontWeight="bold">.{aliases.text}</Var>, </>
+            ) : null}
+            <Var>.color-{slug}</Var>
+          </Cell>
+          {aliases.border ? (
+            <td style={{border: `1px solid ${value} !important`}}>
+              <Var>.{aliases.border}</Var>
+            </td>
+          ) : <td />}
+        </tr>
+      ))}
+    </tbody>
   ))}
-  <FadeVariables id="black" hue="black" bg="black" color="white" className="pr-4 mb-4 col-12 col-md-6">
-    <BorderBox border={0} borderRadius={0} borderTop={1} borderColor="gray.5" mt={1}>
-      <Text as="div" fontSize={2} pt={3} mb={0}>
-        Black fades apply alpha transparency to the <Var>$black</Var> variable. The black color value has a slight
-        blue hue to match our grays.
-      </Text>
-    </BorderBox>
-  </FadeVariables>
-  <FadeVariables id="white" hue="white" over={black} className="pr-4 mb-4 col-12 col-md-6">
-    <BorderBox border={0} borderRadius={0} borderTop={1} mt={1}>
-      <Text as="div" fontSize={2} pt={3} mb={0}>
-        White fades apply alpha transparency to the <Var>$white</Var> variable.
-        Below, these are shown overlaid on a <Var>$black</Var> background.
-      </Text>
-    </BorderBox>
-  </FadeVariables>
-</div>
+</Table>
 
 ## Color utilities
 
