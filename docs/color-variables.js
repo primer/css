@@ -24,14 +24,10 @@ const colors = {
 const aliases = {}
 
 const palettes = gradientHues.map(name => {
-  const bgClass = `bg-${name}`
-  const textClass = `text-${name}`
   return {
     name,
     title: titleCase(name),
-    value: colors[name][5],
-    bg: variables[bgClass] ? {className: bgClass, value: variables[bgClass]} : null,
-    fg: variables[textClass] ? {className: textClass, value: variables[textClass]} : null,
+    value: variables[name] || colors[name][5],
     values: colors[name].map((value, index) => ({
       value,
       index,
@@ -53,6 +49,16 @@ for (const key of Object.keys(variables)) {
 }
 
 export {colors, gradientHues, palettes, getPaletteByName, variables}
+
+export const borders = Object.keys(variables)
+  .filter(key => key.startsWith('border-') && !variables[key].includes('$'))
+  .sort()
+  .map(key => ({
+    variable: key,
+    value: variables[key],
+    slug: key,
+    aliases: {border: key}
+  }))
 
 function getPaletteByName(name) {
   return palettes.find(palette => palette.name === name)
