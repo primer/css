@@ -5,15 +5,12 @@ status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/97'
 ---
 
-import Octicon, {Alert} from '@githubprimer/octicons-react'
-import {Box, Flex, Text} from '@primer/components'
-import {colors, variables} from '../../../docs/color-variables'
-import {Swatch, BackgroundHueSwatches, overlayColor} from '../../../docs/color-system'
-import {gradientPalettes} from '../../../docs/color-variables'
+import {MarkdownHeading as Heading} from '@primer/blueprints'
+import {palettes} from '../../../docs/color-variables'
+import {PaletteTable} from '../../../docs/color-system'
 
 
 Use color utilities to apply color to the background of elements, text, and borders.
-
 
 # Table of contents
 
@@ -22,24 +19,15 @@ Use color utilities to apply color to the background of elements, text, and bord
 
 Background colors are most commonly used for filling large blocks of content or areas with a color. When selecting a background color, make sure the foreground color contrast passes a minimum WCAG accessibility rating of [level AA](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html). Meeting these standards ensures that content is accessible by everyone, regardless of disability or user device. You can [check your color combination with this demo site](http://jxnblk.com/colorable/demos/text/). For more information, read our [accessibility standards](../principles/accessibility).
 
+### Background utilities
 
-### Gray
-<BackgroundHueSwatches hue="gray" />
-
-### Blue
-<BackgroundHueSwatches hue="blue" />
-
-### Yellow
-<BackgroundHueSwatches hue="yellow" />
-
-### Red
-<BackgroundHueSwatches hue="red" />
-
-### Green
-<BackgroundHueSwatches hue="green" />
-
-### Purple
-<BackgroundHueSwatches hue="purple" />
+<div>{palettes.map(({name, title}) => (
+  <PaletteTable name={name}>
+    <caption>
+      <Heading as="h3">{title} background utilities</Heading>
+    </caption>
+  </PaletteTable>
+))}</div>
 
 
 ## Text colors
@@ -131,6 +119,15 @@ You can set the color inheritance on an element by using the `text-inherit` clas
   .text-gray-dark on .bg-gray
 </div>
 ```
+
+### Text color utilities
+<div>{palettes.map(({name, title}) => (
+  <PaletteTable name={name} type="text" prefix="color">
+    <caption>
+      <Heading as="h4">{title} text utilities</Heading>
+    </caption>
+  </PaletteTable>
+))}</div>
 
 ## White background
 
