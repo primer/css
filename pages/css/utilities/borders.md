@@ -8,8 +8,8 @@ bundle: utilities
 ---
 
 import {MarkdownHeading} from '@primer/blueprints'
-import {palettes} from '../../../docs/color-variables'
-import {PaletteTable} from '../../../docs/color-system'
+import {palettes, borders} from '../../../docs/color-variables'
+import {PaletteTable, PaletteCell, PaletteValue} from '../../../docs/color-system'
 
 
 Utilities for borders, border radius, and box shadows.
@@ -223,10 +223,13 @@ You can adjust border widths on all sides or each side individually with respons
 ```
 
 ## Border color utilities
-<div>{palettes.map(({name, title}) => (
-  <PaletteTable columns={['alias', 'variable', 'value']} name={name} type="border" sparse={true} borderSpacing="4px">
-    <caption>
-      <MarkdownHeading as="h3">{title} borders</MarkdownHeading>
-    </caption>
-  </PaletteTable>
-))}</div>
+<PaletteTable
+  values={borders}
+  type="border"
+  columns={[
+    {title: 'Class', Cell: PaletteCell.Border, Value: PaletteValue.PrefixedClass},
+    'variable',
+    'value'
+  ]}
+  sparse={true}
+  borderSpacing="4px" />

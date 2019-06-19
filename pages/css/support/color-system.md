@@ -5,12 +5,12 @@ status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/301'
 ---
 
-import {MarkdownHeading} from '@primer/blueprints'
-import {Box, Link} from '@primer/components'
+import colors from 'primer-colors'
+import {Box, Flex, Heading, Link, StyledOcticon} from '@primer/components'
+import {Link as LinkIcon} from '@githubprimer/octicons-react'
 import Table from '../../../docs/Table'
-import {palettes} from '../../../docs/color-variables'
-import {Var, overlayColor} from '../../../docs/color-system'
-const {Cell, Row} = Table
+import {palettes, variables} from '../../../docs/color-variables'
+import {PaletteTable, PaletteCell, overlayColor} from '../../../docs/color-system'
 
 
 # Table of contents
@@ -18,71 +18,39 @@ const {Cell, Row} = Table
 
 ## Color palette
 
-<div class="d-flex flex-wrap mr-n2">
-  {palettes.map(({name, title, value, ...palette}) => (
-    <Link href={`#${name}`} bg={value} key={name} color={overlayColor(value)} p={3} mr={2} mb={2} className="flex-auto">
+<Flex flexWrap="wrap" mr={-2}>
+  {palettes.concat(
+    {title: 'Black', name: 'black', value: colors.gray[9]},
+    {title: 'White', name: 'white', value: colors.white, props: {className: 'border'}}
+  ).map(({name, title, value, props = {}}) => (
+    <Flex.Item as={Link} href={`#${name}`} color={overlayColor(value)} flex="1 1 auto" bg={value} p={3} mr={2} mb={2} fontWeight="bold" key={name} {...props}>
       {title}
-    </Link>
+    </Flex.Item>
   ))}
-  <div class="bg-gray-9 p-3 mb-2 mr-2 flex-auto">
-    <Link href="#black" color="white">Black</Link>
-  </div>
-  <div class="bg-white p-3 mb-2 mr-2 border flex-auto">
-    <Link color="black" href="#white">White</Link>
-  </div>
-</div>
+</Flex>
 
 ## Color variables
 
-<Table>
-  <thead>
-    <tr>
-      <th>Variable</th>
-      <th>Value</th>
-      <th>Background</th>
-      <th>Foreground</th>
-      <th>Border</th>
-    </tr>
-  </thead>
-  {palettes.map(({name, title, values}) => (
-    <tbody key={name}>
-      <tr>
-        <Box as="th" colSpan="6" pt={4}>
-          <Box bg={values[5]}>
-            <MarkdownHeading as="h3">{title}</MarkdownHeading>
-          </Box>
-        </Box>
-      </tr>
-      {values.map(({value, aliases, index, variable, slug}) => (
-        <tr>
-          <Cell bg={value} color={overlayColor(value)}>
-            <Var>${variable}</Var>
-          </Cell>
-          <Cell bg={value} color={overlayColor(value)}>
-            <Var>{value}</Var>
-          </Cell>
-          <Cell bg={value} color={overlayColor(value)}>
-            {aliases.bg ? (
-              <><Var fontWeight="bold">.{aliases.bg}</Var>, </>
-            ) : null}
-            <Var>.bg-{slug}</Var>
-          </Cell>
-          <Cell color={value} bg={overlayColor(value)}>
-            {aliases.text ? (
-              <><Var fontWeight="bold">.{aliases.text}</Var>, </>
-            ) : null}
-            <Var>.color-{slug}</Var>
-          </Cell>
-          {aliases.border ? (
-            <td style={{border: `1px solid ${value} !important`}}>
-              <Var>.{aliases.border}</Var>
-            </td>
-          ) : <td />}
-        </tr>
-      ))}
-    </tbody>
-  ))}
-</Table>
+<Flex flexWrap="wrap" mr={[0, 0, -4]}>{
+  palettes.map(({name, title, value, values}) => (
+    <Box id={name} width={[1, 1, 1/2]} pr={[0, 0, 4]} mb={4}>
+      <Flex as={Link} href={`#${name}`} bg={value} color={overlayColor(value)} px={3} pt={4} style={{borderBottom: `1px solid ${overlayColor(value)}`}} alignItems="center">
+        <Flex.Item color="inherit !important" flex="1 1 auto">
+          <Heading as="div" fontSize={4} pb={1}>
+            {title}
+          </Heading>
+        </Flex.Item>
+        <StyledOcticon icon={LinkIcon} color="inherit !important" height={20} />
+      </Flex>
+      <PaletteTable
+        columns={['variable', 'value' /*, 'className' */]}
+        values={[{variable: name, value, slug: name}].concat(values)}
+        hasHeader={false}
+        borderSpacing={0}
+        cellPadding="8px 16px" />
+    </Box>
+  ))
+}</Flex>
 
 ## Color utilities
 

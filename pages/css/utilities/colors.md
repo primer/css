@@ -7,7 +7,7 @@ status_issue: 'https://github.com/github/design-systems/issues/97'
 
 import {MarkdownHeading as Heading} from '@primer/blueprints'
 import {palettes} from '../../../docs/color-variables'
-import {PaletteTable} from '../../../docs/color-system'
+import {PaletteTable, PaletteCell, PaletteValue} from '../../../docs/color-system'
 
 
 Use color utilities to apply color to the background of elements, text, and borders.
@@ -122,7 +122,11 @@ You can set the color inheritance on an element by using the `text-inherit` clas
 
 ### Text color utilities
 <div>{palettes.map(({name, title}) => (
-  <PaletteTable name={name} type="text" prefix="color">
+  <PaletteTable name={name} type="text" prefix="color" columns={[
+    {title: 'Alias', Cell: PaletteCell.Alias},
+    {title: 'Class', Cell: PaletteCell.Text,        Value: PaletteValue.PrefixedClass},
+    {title: 'Value', Cell: PaletteCell.Background,  Value: PaletteValue.Value},
+  ]} cellSpacing={0}>
     <caption>
       <Heading as="h4">{title} text utilities</Heading>
     </caption>
