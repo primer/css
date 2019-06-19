@@ -1,232 +1,152 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import chroma from 'chroma-js'
-import titleCase from 'title-case'
 import styled from 'styled-components'
-import {Box, BorderBox, Flex, Heading, Text} from '@primer/components'
-import {colors, variables, getBackgroundPalette} from './color-variables'
+import {Box, Text} from '@primer/components'
+import {colors, getPaletteByName} from './color-variables'
+import Table from './Table'
 
-const {black, white} = colors
-
-export function ColorVariable({hue, ...rest}) {
-  const values = colors[hue]
-  return (
-    <Box {...rest}>
-      <Box bg={colors[hue][5]} mb={2} p={3} color="white">
-        <Heading as="div" pb={3} fontSize={56} fontWeight="light">
-          {titleCase(hue)}
-        </Heading>
-        <Flex justifyContent="space-between">
-          <Var fontWeight="bold">${hue}-500</Var>
-          <Text justifySelf="end" fontFamily="mono">
-            {values[5]}
-          </Text>
-        </Flex>
-      </Box>
-      {values.map((value, index) => (
-        <Swatch name={hue} index={index} key={value} />
-      ))}
-    </Box>
-  )
-}
-
-ColorVariable.propTypes = {
-  hue: PropTypes.oneOf(Object.keys(colors)).isRequired
-}
-
-export function FadeVariables({hue, color, bg, over, children, ...rest}) {
-  const colorValue = colors[hue]
-  if (!colorValue) {
-    throw new Error(`colors["${hue}"] does not exist`)
+export function PaletteTable(props) {
+  const {children, columns, name, type, sparse, prefix = type, ...rest} = props
+  const cols = columns.map(name => PaletteTable.columns[name]).filter(d => d)
+  let {values} = getPaletteByName(name)
+  if (sparse && values) {
+    values = values.filter(v => v.aliases[type])
   }
-  const alphas = [15, 30, 50, 70, 85]
-  const values = alphas.map(alpha => {
-    const value = chroma(colorValue)
-      .alpha(alpha / 100)
-      .css()
-    return {
-      variable: `${hue}-fade-${alpha}`,
-      textColor: fadeTextColor(value, over),
-      value
-    }
-  })
-  const boxProps = {color, bg, borderRadius: 0}
-  if (hue !== 'white') {
-    boxProps.borderColor = 'transparent'
+  if (!values || values.length === 0) {
+    return null
   }
   return (
-    <Box {...rest}>
-      {/* <Heading as="div">{titleCase(hue)}</Heading> */}
-      <BorderBox my={2} p={3} {...boxProps}>
-        <Heading as="div" pb={3} fontSize={56} fontWeight="light">
-          {titleCase(hue)}
-        </Heading>
-        <Flex justifyContent="space-between">
-          <Flex.Item flex="1 1 auto" as={Var} fontWeight="bold">
-            ${hue}
-          </Flex.Item>
-          <Text fontFamily="mono">
-            {chroma(colorValue).css()}
-            {' / '}
-            {colorValue}
-          </Text>
-        </Flex>
-        {children}
-      </BorderBox>
-      <Box bg={over}>
-        {values.map(swatchProps => (
-          <Swatch {...swatchProps} key={swatchProps.value} />
-        ))}
-      </Box>
-    </Box>
-  )
-}
-
-FadeVariables.propTypes = {
-  bg: Box.propTypes.color,
-  color: Box.propTypes.color,
-  hue: PropTypes.oneOf(['black', 'white']),
-  over: PropTypes.string
-}
-
-export function Swatch(props) {
-  const {
-    name,
-    index,
-    value = colors[name][index],
-    textColor = overlayColor(value),
-    variable = `${name}-${index}00`,
-    children,
-    ...rest
-  } = props
-
-  return (
-    <Flex bg={value} color={textColor} {...rest}>
+    <Table {...rest}>
       {children}
-      {variable ? (
-        <Box as={Var} pr={4}>
-          ${variable}
-        </Box>
-      ) : null}
-      <Box as={Text} fontFamily="mono">
-        {value}
-      </Box>
-    </Flex>
-  )
-}
-
-Swatch.defaultProps = {
-  as: Text,
-  flexWrap: 'wrap',
-  fontSize: 1,
-  justifyContent: 'space-between',
-  p: 3
-}
-
-Swatch.propTypes = {
-  name: PropTypes.string,
-  textColor: PropTypes.string,
-  value: PropTypes.string
-}
-
-export function BackgroundHueSwatches({hue, ...rest}) {
-  const namedUtilities = Object.keys(variables).filter(name => name.startsWith(`bg-${hue}`))
-
-  const namedUtilitiesByValue = {}
-  for (const name of namedUtilities) {
-    const value = variables[name]
-    namedUtilitiesByValue[value] = name
-  }
-
-  const {values} = getBackgroundPalette(hue)
-  const rows = values.map(({value, ...rest}) => ({
-    value,
-    named: namedUtilitiesByValue[value],
-    ...rest
-  }))
-
-  return (
-    <ColorTable {...rest}>
       <thead>
         <tr>
-          <th>Alias</th>
-          <th>Class</th>
-          <th>Hex value</th>
+          {cols.map(col => (
+            <th key={col.title}>{col.title}</th>
+          ))}
         </tr>
       </thead>
       <tbody>
-        {rows.map(({value, named, slug}) => {
-          const overlay = overlayColor(value)
+        {values.map(value => {
+          const cellProps = {
+            type,
+            prefix,
+            width: 1 / columns.length,
+            ...value
+          }
           return (
-            <ColorRow key={slug}>
-              <ColorCell bg={named ? value : null} color={overlay}>
-                {named ? `.${named}` : null}
-              </ColorCell>
-              <ColorCell bg={value} color={overlay}>
-                .bg-{slug}
-              </ColorCell>
-              <ColorCell bg={value} color={overlay}>
-                <Text fontFamily="mono">{value}</Text>
-              </ColorCell>
-            </ColorRow>
+            <tr key={value.value}>
+              {cols.map(({Cell, title}) => (
+                <Cell key={title} {...cellProps} />
+              ))}
+            </tr>
           )
         })}
       </tbody>
-    </ColorTable>
+    </Table>
   )
 }
 
-export function Var(props) {
-  return <Text as="var" fontFamily="mono" fontStyle="normal" {...props} />
+PaletteTable.defaultProps = {
+  type: 'bg',
+  columns: ['alias', 'className', 'variable', 'value']
 }
 
+PaletteTable.columns = {
+  variable: {
+    title: 'Variable',
+    Cell: props => (
+      <PaletteCell {...props}>
+        <Var>${props.variable}</Var>
+      </PaletteCell>
+    )
+  },
+  value: {
+    title: 'Value',
+    Cell: props => (
+      <PaletteCell {...props}>
+        <Var>{props.value}</Var>
+      </PaletteCell>
+    )
+  },
+  className: {
+    title: 'Class',
+    Cell: props => (
+      <PaletteCell {...props}>
+        <Var>
+          .{props.prefix}-{props.slug}
+        </Var>
+      </PaletteCell>
+    )
+  },
+  alias: {
+    title: 'Alias',
+    Cell: ({aliases, ...props}) =>
+      aliases[props.type] ? (
+        <PaletteCell {...props}>
+          <Var>.{aliases[props.type]}</Var>
+        </PaletteCell>
+      ) : (
+        <td />
+      )
+  }
+}
+
+PaletteTable.propTypes = {
+  columns: PropTypes.arrayOf(PropTypes.oneOf(Object.keys(PaletteTable.columns))),
+  name: PropTypes.string.isRequired,
+  prefix: PropTypes.string,
+  type: PropTypes.string
+}
+
+export function PaletteCell({value, type, ...rest}) {
+  const props = {}
+  switch (type) {
+    case 'fg':
+    case 'text':
+      props.color = value
+      props.bg = overlayColor(value)
+      break
+    case 'border':
+      props.bg = 'white'
+      props.style = {border: `1px solid ${value} !important`}
+      break
+    case 'bg':
+    default:
+      props.bg = value
+      props.color = overlayColor(value)
+  }
+  return <Box {...props} {...rest} />
+}
+
+PaletteCell.defaultProps = {
+  as: 'td'
+}
+
+PaletteCell.propTypes = {
+  type: PropTypes.oneOf(['text', 'border', 'bg']),
+  value: PropTypes.string.isRequired
+}
+
+export const Var = styled(Text).attrs({
+  as: 'var',
+  fontFamily: 'mono',
+  fontSize: 1,
+  fontStyle: 'normal'
+})`
+  white-space: nowrap;
+`
+
+const overlayColorCache = new Map()
 export function overlayColor(bg) {
   if (!bg) {
     throw new Error(`overlayColor() expects a color string, but got: ${JSON.stringify(bg)}`)
   }
-  return chroma(bg).luminance() > 0.5 ? black : white
-}
-
-const ColorTable = styled.table`
-  display: table !important;
-  table-layout: fixed;
-  border-collapse: separate;
-  border-spacing: 0 4px;
-
-  tr,
-  td,
-  th {
-    border: 0 !important;
+  if (overlayColorCache.has(bg)) {
+    return overlayColorCache.get(bg)
+  } else {
+    const result = chroma(bg).luminance() > 0.5 ? colors.black : colors.white
+    overlayColorCache.set(bg, result)
+    return result
   }
-
-  td,
-  th {
-    text-align: left;
-    width: 25%;
-  }
-
-  tr {
-    background-color: transparent !important;
-  }
-`
-
-export const ColorRow = styled(Box).attrs({as: 'tr'})`
-  border-bottom: 1px solid ${colors.gray[2]} !important;
-`
-
-export const ColorCell = styled(Box).attrs({as: 'td'})``
-
-function fadeTextColor(fg, bg = white) {
-  const rgb = compositeRGB(fg, bg)
-  return overlayColor(rgb)
-}
-
-/**
- * Composite ("flatten") a foreground RGBA value with an RGB background into an
- * RGB color for the purposes of measuring contrast or luminance.
- */
-function compositeRGB(foreground, background) {
-  const [fr, fg, fb, fa] = chroma(foreground).rgba()
-  const [br, bg, bb] = chroma(background).rgb()
-  return chroma([(1 - fa) * br + fa * fr, (1 - fa) * bg + fa * fg, (1 - fa) * bb + fa * fb]).css()
 }
