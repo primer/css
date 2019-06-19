@@ -16,7 +16,7 @@ const Table = styled.table`
   caption,
   td,
   th {
-    padding: 4px 8px !important;
+    padding: ${props => props.cellPadding} !important;
     text-align: left;
   }
 
@@ -26,11 +26,13 @@ const Table = styled.table`
 `
 
 Table.propTypes = {
-  borderSpacing: PropTypes.string
+  borderSpacing: PropTypes.string,
+  cellPadding: PropTypes.string
 }
 
 Table.defaultProps = {
-  borderSpacing: '0 4px'
+  borderSpacing: '0 4px',
+  cellPadding: '4px 8px'
 }
 
 Table.Row = styled(Box).attrs({as: 'tr'})``
