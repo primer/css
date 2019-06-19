@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import {Box} from '@primer/components'
 
 const Table = styled.table`
   display: table !important;
   border-collapse: separate;
-  border-spacing: 0 4px;
+  border-spacing: ${props => props.borderSpacing};
 
   tr,
   td,
@@ -12,8 +13,10 @@ const Table = styled.table`
     border: 0 !important;
   }
 
+  caption,
   td,
   th {
+    padding: 4px 8px !important;
     text-align: left;
   }
 
@@ -21,6 +24,14 @@ const Table = styled.table`
     background-color: transparent !important;
   }
 `
+
+Table.propTypes = {
+  borderSpacing: PropTypes.string
+}
+
+Table.defaultProps = {
+  borderSpacing: '0 4px'
+}
 
 Table.Row = styled(Box).attrs({as: 'tr'})``
 Table.Cell = styled(Box).attrs({as: 'td'})``
