@@ -7,37 +7,42 @@ import {colors, getPaletteByName} from './color-variables'
 import Table from './Table'
 
 export function PaletteTable(props) {
-  const {children, columns, name, type, sparse, prefix = type, ...rest} = props
-  const cols = columns.map(name => PaletteTable.columns[name]).filter(d => d)
-  let {values} = getPaletteByName(name)
+  const {children, columns, hasHeader, name, type, sparse, prefix = type, ...rest} = props
+  const cols = columns.map(col => PaletteTable.columns[col] || col).filter(col => col)
+
+  let values = props.values
+  if (name) {
+    values = getPaletteByName(name).values
+  }
   if (sparse && values) {
     values = values.filter(v => v.aliases[type])
   }
   if (!values || values.length === 0) {
     return null
   }
+
   return (
     <Table {...rest}>
       {children}
-      <thead>
-        <tr>
-          {cols.map(col => (
-            <th key={col.title}>{col.title}</th>
-          ))}
-        </tr>
-      </thead>
+      {hasHeader ? (
+        <thead>
+          <tr>
+            {cols.map(col => (
+              <th key={col.title}>{col.title}</th>
+            ))}
+          </tr>
+        </thead>
+      ) : null}
       <tbody>
-        {values.map(value => {
-          const cellProps = {
-            type,
-            prefix,
-            width: 1 / columns.length,
-            ...value
-          }
+        {values.map(row => {
+          const cellProps = {type, width: 1 / columns.length, ...row}
+          const valueProps = {prefix, type, ...row}
           return (
-            <tr key={value.value}>
-              {cols.map(({Cell, title}) => (
-                <Cell key={title} {...cellProps} />
+            <tr key={row.value}>
+              {cols.map(({Cell = PaletteCell, Value = PaletteValue, title}) => (
+                <Cell key={title} {...cellProps}>
+                  <Value {...valueProps} />
+                </Cell>
               ))}
             </tr>
           )
@@ -49,74 +54,33 @@ export function PaletteTable(props) {
 
 PaletteTable.defaultProps = {
   type: 'bg',
-  columns: ['alias', 'className', 'variable', 'value']
-}
-
-PaletteTable.columns = {
-  variable: {
-    title: 'Variable',
-    Cell: props => (
-      <PaletteCell {...props}>
-        <Var>${props.variable}</Var>
-      </PaletteCell>
-    )
-  },
-  value: {
-    title: 'Value',
-    Cell: props => (
-      <PaletteCell {...props}>
-        <Var>{props.value}</Var>
-      </PaletteCell>
-    )
-  },
-  className: {
-    title: 'Class',
-    Cell: props => (
-      <PaletteCell {...props}>
-        <Var>
-          .{props.prefix}-{props.slug}
-        </Var>
-      </PaletteCell>
-    )
-  },
-  alias: {
-    title: 'Alias',
-    Cell: ({aliases, ...props}) =>
-      aliases[props.type] ? (
-        <PaletteCell {...props}>
-          <Var>.{aliases[props.type]}</Var>
-        </PaletteCell>
-      ) : (
-        <td />
-      )
-  }
+  columns: ['alias', 'className', 'variable', 'value'],
+  hasHeader: true
 }
 
 PaletteTable.propTypes = {
-  columns: PropTypes.arrayOf(PropTypes.oneOf(Object.keys(PaletteTable.columns))),
-  name: PropTypes.string.isRequired,
+  columns: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        title: PropTypes.string,
+        Cell: PropTypes.func
+      })
+    ])
+  ),
+  name: PropTypes.string,
   prefix: PropTypes.string,
-  type: PropTypes.string
+  type: PropTypes.string,
+  values: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string,
+      aliases: PropTypes.object
+    })
+  )
 }
 
-export function PaletteCell({value, type, ...rest}) {
-  const props = {}
-  switch (type) {
-    case 'fg':
-    case 'text':
-      props.color = value
-      props.bg = overlayColor(value)
-      break
-    case 'border':
-      props.bg = 'white'
-      props.style = {border: `1px solid ${value} !important`}
-      break
-    case 'bg':
-    default:
-      props.bg = value
-      props.color = overlayColor(value)
-  }
-  return <Box {...props} {...rest} />
+export function PaletteCell(props) {
+  return <Box {...props} />
 }
 
 PaletteCell.defaultProps = {
@@ -124,8 +88,92 @@ PaletteCell.defaultProps = {
 }
 
 PaletteCell.propTypes = {
-  type: PropTypes.oneOf(['text', 'border', 'bg']),
   value: PropTypes.string.isRequired
+}
+
+PaletteCell.Alias = ({aliases, type, ...rest}) =>
+  aliases && aliases[type] ? (
+    <PaletteCell.Generic type={type} {...rest}>
+      <Var>.{aliases[type]}</Var>
+    </PaletteCell.Generic>
+  ) : (
+    <td />
+  )
+PaletteCell.Alias.propTypes = {
+  aliases: PropTypes.object.isRequired,
+  type: PropTypes.string.isRequired
+}
+
+PaletteCell.Generic = ({type, ...rest}) => {
+  switch (type) {
+    case 'fg':
+    case 'text':
+      return <PaletteCell.Text {...rest} />
+    case 'border':
+      return <PaletteCell.Border {...rest} />
+    case 'bg':
+    default:
+      return <PaletteCell.Background {...rest} />
+  }
+}
+
+PaletteCell.Background = ({value, ...rest}) => <PaletteCell bg={value} color={overlayColor(value)} {...rest} />
+
+PaletteCell.Text = ({value, ...rest}) => <PaletteCell color={value} bg={overlayColor(value)} {...rest} />
+
+PaletteCell.Border = ({value, ...rest}) => (
+  <PaletteCell bg="white" style={{border: `1px solid ${value} !important`}} {...rest} />
+)
+
+export function PaletteValue({value, ...rest}) {
+  return <Var {...rest}>{value}</Var>
+}
+
+PaletteValue.Variable = ({variable}) => <Var>${variable}</Var>
+PaletteValue.Variable.propTypes = {
+  variable: PropTypes.string.isRequired
+}
+
+PaletteValue.PrefixedClass = ({prefix, slug}) => (
+  <Var>
+    .{prefix}-{slug}
+  </Var>
+)
+PaletteValue.PrefixedClass.propTypes = {
+  prefix: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired
+}
+
+PaletteTable.columns = {
+  variable: {
+    title: 'Variable',
+    Cell: PaletteCell.Background,
+    Value: PaletteValue.Variable
+  },
+  value: {
+    title: 'Value',
+    Cell: PaletteCell.Background,
+    Value: PaletteValue
+  },
+  background: {
+    title: 'Background',
+    Cell: PaletteCell.Background,
+    Value: PaletteCell.PrefixedClass
+  },
+  foreground: {
+    title: 'Foreground',
+    Cell: PaletteCell.Text,
+    Value: PaletteCell.PrefixedClass
+  },
+  className: {
+    title: 'Class',
+    Cell: PaletteCell.Background,
+    Value: PaletteValue.PrefixedClass
+  },
+  alias: {
+    title: 'Alias',
+    Cell: PaletteCell.Alias
+  }
 }
 
 export const Var = styled(Text).attrs({
