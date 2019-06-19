@@ -50,6 +50,8 @@ for (const key of Object.keys(variables)) {
 
 export {colors, gradientHues, palettes, getPaletteByName, variables}
 
+export const allColors = palettes.reduce((all, {values}) => all.concat(values), [])
+
 export const borders = Object.keys(variables)
   .filter(key => key.startsWith('border-') && !variables[key].includes('$'))
   .sort()
