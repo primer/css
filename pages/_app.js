@@ -61,7 +61,7 @@ export default class MyApp extends App {
             <Box width={['auto', 'auto', '100%']}>
               {Hero ? <Hero /> : null}
               <Box color="gray.9" maxWidth={['auto', 'auto', 'auto', CONTENT_MAX_WIDTH]} px={6} mx="auto" my={6}>
-                <div className="markdown-body">
+                <div className="markdown-body overflow-x-hidden">
                   {!meta.hero && meta.title ? <MarkdownHeading>{meta.title}</MarkdownHeading> : null}
                   <PackageHeader {...meta} />
                   <MDXProvider components={components}>
