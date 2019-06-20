@@ -6,7 +6,7 @@ source: 'https://github.com/primer/css/blob/master/src/support/variables/layout.
 bundle: support
 ---
 
-{:toc}
+## Table of Contents
 
 ## Spacing scale
 The spacing scale is a **base-8** scale. We chose a base-8 scale because eight is a highly composable number (it can be divided and multiplied many times and result in whole numbers), yet allows spacing dense enough for GitHub's UI. The scale's exception is that it begins at 4px to allow smaller padding and margin for denser parts of the site, from there on it steps up consistently in equal values of `8px`.

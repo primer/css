@@ -9,7 +9,7 @@ For teams working on `github/github` this configuration is all setup for you. Wh
 
 For everyone else we encourage you to adopt all or some of these tools in your workflow.
 
-{:toc}
+## Table of Contents
 
 ## CSS
 

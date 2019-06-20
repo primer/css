@@ -2,9 +2,6 @@
 // stylelint-disable primer/selector-no-utility
 // stylelint-disable block-opening-brace-space-before, comment-empty-line-before
 
-/* Add a gray border on all edges */
-.border { border: $border !important; }
-
 /* Add a gray border to the left and right */
 .border-x {
   border-right: $border !important;
@@ -15,11 +12,6 @@
 .border-y {
   border-top: $border !important;
   border-bottom: $border !important;
-}
-
-/* Change the border style to dashed, in conjunction with another utility */
-.border-dashed {
-  border-style: dashed !important;
 }
 
 $edges: (
@@ -87,6 +79,11 @@ $edges: (
 
 /* Add a 50% border-radius to make something into a circle */
 .circle { border-radius: 50% !important; }
+
+/* Change the border style to dashed, in conjunction with another utility */
+.border-dashed {
+  border-style: dashed !important;
+}
 
 /* Use with .border to turn the border blue */
 .border-blue        { border-color: $border-blue !important; }
