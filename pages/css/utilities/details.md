@@ -8,7 +8,7 @@ bundle: utilities
 
 Details classes are created to enhance the native behaviors of `<details>`.
 
-{:toc}
+## Table of Contents
 
 ## Fullscreen click area
 

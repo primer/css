@@ -9,7 +9,7 @@ bundle: utilities
 
 Animations are reusable animation classes that you can use to emphasize an element. All of these animations will animate if you toggle their visibility using the "Toggle" button.
 
-{:toc}
+## Table of Contents
 
 ## Fade In
 

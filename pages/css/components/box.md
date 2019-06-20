@@ -10,7 +10,7 @@ bundle: box
 
 The `.Box` component can be used for something as simple as a rounded corner box, or more complex lists and forms. It includes optional modifiers for padding density and color themes.
 
-{:toc}
+## Table of Contents
 
 ## Box
 

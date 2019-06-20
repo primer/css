@@ -8,7 +8,7 @@ bundle: utilities
 
 Padding utilities are based on a global [spacing scale](/css/support/spacing) which helps keep horizontal and vertical spacing consistent. These utilities help us reduce the amount of custom CSS that could share the same properties, and allows to achieve many different page layouts using the same styles.
 
-{:toc}
+## Table of Contents
 
 ## Shorthand
 

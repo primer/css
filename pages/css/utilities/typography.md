@@ -8,7 +8,7 @@ bundle: utilities
 
 Type utilities are designed to work in combination with line-height utilities so as to result in more sensible numbers wherever possible. These also exist as [variables](/css/support/typography#typography-variables) that you can use in components or custom CSS.
 
-{:toc}
+## Table of Contents
 
 Font sizes are smaller on mobile and scale up at the `md` [breakpoint](/css/support/breakpoints) to be larger on desktop.
 
