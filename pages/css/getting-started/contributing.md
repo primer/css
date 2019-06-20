@@ -90,7 +90,6 @@ status: Stable
 source: 'https://github.com/primer/css/tree/master/src/alerts'
 bundle: alerts
 ---
-
 ```
 
 ### Documentation Anatomy
