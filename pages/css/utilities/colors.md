@@ -5,10 +5,15 @@ status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/97'
 ---
 
+import {Box, BorderBox} from '@primer/components'
 import {MarkdownHeading as Heading} from '@primer/blueprints'
-import {palettes} from '../../../docs/color-variables'
-import {PaletteTable, PaletteCell, PaletteValue} from '../../../docs/color-system'
-
+import {palettes, allColors} from '../../../docs/color-variables'
+import {PaletteTable, PaletteTableFragment, PaletteHeading, PaletteCell, PaletteValue} from '../../../docs/color-system'
+const textColumns = [
+  {title: 'Alias', Cell: props => <PaletteCell.Alias {...props} style={{borderBottom: `1px solid ${props.value} !important`}} />},
+  {title: 'Class', Cell: props => <PaletteCell.Text {...props} style={{borderBottom: props.aliases.text ? `1px solid ${props.value} !important` : null}} />, Value: PaletteValue.PrefixedClass},
+  {title: 'Value', Cell: PaletteCell.Background,  Value: PaletteValue.Value},
+]
 
 Use color utilities to apply color to the background of elements, text, and borders.
 
@@ -21,14 +26,17 @@ Background colors are most commonly used for filling large blocks of content or 
 
 ### Background utilities
 
-<div>{palettes.map(({name, title}) => (
-  <PaletteTable name={name}>
-    <caption>
-      <Heading as="h3">{title} background utilities</Heading>
-    </caption>
-  </PaletteTable>
-))}</div>
-
+<PaletteTable hasHeader={false}>
+  {palettes.map(({name, title, value}) => (
+    <PaletteTableFragment name={name} type="bg" key={name}>
+      <tr>
+        <PaletteHeading indicatorColor={value} colSpan="4">
+          {title}
+        </PaletteHeading>
+      </tr>
+    </PaletteTableFragment>
+  ))}
+</PaletteTable>
 
 ## Text colors
 
@@ -121,17 +129,18 @@ You can set the color inheritance on an element by using the `text-inherit` clas
 ```
 
 ### Text color utilities
-<div>{palettes.map(({name, title}) => (
-  <PaletteTable name={name} type="text" prefix="color" columns={[
-    {title: 'Alias', Cell: PaletteCell.Alias},
-    {title: 'Class', Cell: PaletteCell.Text,        Value: PaletteValue.PrefixedClass},
-    {title: 'Value', Cell: PaletteCell.Background,  Value: PaletteValue.Value},
-  ]} cellSpacing={0}>
-    <caption>
-      <Heading as="h4">{title} text utilities</Heading>
-    </caption>
-  </PaletteTable>
-))}</div>
+
+<PaletteTable hasHeader={false}>
+  {palettes.map(({name, title, value}) => (
+    <PaletteTableFragment name={name} type="text" columns={textColumns}>
+      <tr>
+        <PaletteHeading indicatorColor={value} colSpan="4">
+          {title}
+        </PaletteHeading>
+      </tr>
+    </PaletteTableFragment>
+  ))}
+</PaletteTable>
 
 ## White background
 

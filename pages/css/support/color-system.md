@@ -8,7 +8,6 @@ status_issue: 'https://github.com/github/design-systems/issues/301'
 import colors from 'primer-colors'
 import {Box, Flex, Heading, Link, StyledOcticon} from '@primer/components'
 import {Link as LinkIcon} from '@githubprimer/octicons-react'
-import Table from '../../../docs/Table'
 import {palettes, variables} from '../../../docs/color-variables'
 import {PaletteTable, PaletteCell, overlayColor} from '../../../docs/color-system'
 

@@ -2,60 +2,71 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import chroma from 'chroma-js'
 import styled from 'styled-components'
-import {Box, Text} from '@primer/components'
+import {Box, StyledOcticon, Text} from '@primer/components'
+import {Zap} from '@githubprimer/octicons-react'
 import {colors, getPaletteByName} from './color-variables'
 import Table from './Table'
 
 export function PaletteTable(props) {
-  const {children, columns, hasHeader, name, type, sparse, prefix = type, ...rest} = props
-  const cols = columns.map(col => PaletteTable.columns[col] || col).filter(col => col)
-
-  let values = props.values
-  if (name) {
-    values = getPaletteByName(name).values
-  }
-  if (sparse && values) {
-    values = values.filter(v => v.aliases[type])
-  }
-  if (!values || values.length === 0) {
-    return null
-  }
-
+  const {columns = [], hasHeader, ...rest} = props
+  const {children = <PaletteTableFragment columns={columns} {...rest} />} = rest
   return (
     <Table {...rest}>
-      {children}
       {hasHeader ? (
         <thead>
           <tr>
-            {cols.map(col => (
+            {getColumns(columns).map(col => (
               <th key={col.title}>{col.title}</th>
             ))}
           </tr>
         </thead>
       ) : null}
-      <tbody>
-        {values.map(row => {
-          const cellProps = {type, width: 1 / columns.length, ...row}
-          const valueProps = {prefix, type, ...row}
-          return (
-            <tr key={row.value}>
-              {cols.map(({Cell = PaletteCell, Value = PaletteValue, title}) => (
-                <Cell key={title} {...cellProps}>
-                  <Value {...valueProps} />
-                </Cell>
-              ))}
-            </tr>
-          )
-        })}
-      </tbody>
+      {children}
     </Table>
   )
 }
 
+export function PaletteTableFragment(props) {
+  const {children, columns = [], name, type, sparse, prefix = type, ...rest} = props
+  let values = props.values
+  if (name) {
+    values = getPaletteByName(name).values
+  }
+  if (type && sparse) {
+    values = values.filter(v => v.aliases[type])
+  }
+  if (!values || values.length === 0) {
+    return null
+  }
+  const cols = getColumns(columns)
+  return (
+    <tbody {...rest}>
+      {children}
+      {values.map(row => {
+        const cellProps = {type, ...row}
+        const valueProps = {prefix, type, ...row}
+        return (
+          <tr key={row.value}>
+            {cols.map(({Cell = PaletteCell, Value = PaletteValue, title}) => (
+              <Cell key={title} {...cellProps}>
+                <Value {...valueProps} />
+              </Cell>
+            ))}
+          </tr>
+        )
+      })}
+    </tbody>
+  )
+}
+
 PaletteTable.defaultProps = {
-  type: 'bg',
   columns: ['alias', 'className', 'variable', 'value'],
   hasHeader: true
+}
+
+PaletteTableFragment.defaultProps = {
+  type: 'bg',
+  columns: PaletteTable.defaultProps.columns
 }
 
 PaletteTable.propTypes = {
@@ -93,9 +104,10 @@ PaletteCell.propTypes = {
 
 PaletteCell.Alias = ({aliases, type, ...rest}) =>
   aliases && aliases[type] ? (
-    <PaletteCell.Generic type={type} {...rest}>
+    <PaletteCell.Smart type={type} {...rest}>
+      <StyledOcticon icon={Zap} mr={2} />
       <Var>.{aliases[type]}</Var>
-    </PaletteCell.Generic>
+    </PaletteCell.Smart>
   ) : (
     <td />
   )
@@ -104,7 +116,7 @@ PaletteCell.Alias.propTypes = {
   type: PropTypes.string.isRequired
 }
 
-PaletteCell.Generic = ({type, ...rest}) => {
+PaletteCell.Smart = ({type, ...rest}) => {
   switch (type) {
     case 'fg':
     case 'text':
@@ -115,6 +127,9 @@ PaletteCell.Generic = ({type, ...rest}) => {
     default:
       return <PaletteCell.Background {...rest} />
   }
+}
+PaletteCell.Smart.propTypes = {
+  type: PropTypes.string.isRequired
 }
 
 PaletteCell.Background = ({value, ...rest}) => <PaletteCell bg={value} color={overlayColor(value)} {...rest} />
@@ -179,22 +194,31 @@ PaletteTable.columns = {
 export const Var = styled(Text).attrs({
   as: 'var',
   fontFamily: 'mono',
-  fontSize: 1,
   fontStyle: 'normal'
 })`
   white-space: nowrap;
 `
 
-const overlayColorCache = new Map()
+export const PaletteHeading = ({indicatorColor, children, ...rest}) => (
+  <Text as="th" fontWeight="bold" {...rest} style={{borderBottom: `4px solid ${indicatorColor} !important`}}>
+    <Box pt={4}>{children}</Box>
+  </Text>
+)
+
+const $overlayColorCache = new Map()
 export function overlayColor(bg) {
   if (!bg) {
     throw new Error(`overlayColor() expects a color string, but got: ${JSON.stringify(bg)}`)
   }
-  if (overlayColorCache.has(bg)) {
-    return overlayColorCache.get(bg)
+  if ($overlayColorCache.has(bg)) {
+    return $overlayColorCache.get(bg)
   } else {
     const result = chroma(bg).luminance() > 0.5 ? colors.black : colors.white
-    overlayColorCache.set(bg, result)
+    $overlayColorCache.set(bg, result)
     return result
   }
+}
+
+function getColumns(columns) {
+  return columns.map(col => PaletteTable.columns[col] || col).filter(col => col)
 }

@@ -225,11 +225,10 @@ You can adjust border widths on all sides or each side individually with respons
 ## Border color utilities
 <PaletteTable
   values={borders}
-  type="border"
+  prefix="bg"
   columns={[
-    {title: 'Class', Cell: PaletteCell.Border, Value: PaletteValue.PrefixedClass},
+    {title: 'Class', Cell: PaletteCell.Border, Value: props => `.${props.aliases.border}`},
     'variable',
     'value'
   ]}
-  sparse={true}
   borderSpacing="4px" />
