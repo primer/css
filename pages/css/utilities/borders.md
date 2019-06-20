@@ -231,4 +231,4 @@ You can adjust border widths on all sides or each side individually with respons
     'variable',
     'value'
   ]}
-  borderSpacing="4px" />
+  borderSpacing="0 4px" />

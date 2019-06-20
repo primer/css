@@ -34,7 +34,7 @@ Table.propTypes = {
 }
 
 Table.defaultProps = {
-  borderSpacing: '0 4px',
+  borderSpacing: 0,
   cellPadding: '4px 8px',
   fontSize: [1, 1, 2]
 }

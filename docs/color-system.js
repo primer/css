@@ -200,8 +200,8 @@ export const Var = styled(Text).attrs({
 `
 
 export const PaletteHeading = ({indicatorColor, children, ...rest}) => (
-  <Text as="th" fontWeight="bold" {...rest} style={{borderBottom: `4px solid ${indicatorColor} !important`}}>
-    <Box pt={4}>{children}</Box>
+  <Text as="th" fontWeight="bold" {...rest} style={{borderBottom: `2px solid ${colors.black} !important`}}>
+    <Box pt={3}>{children}</Box>
   </Text>
 )
 

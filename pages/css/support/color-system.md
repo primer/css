@@ -45,7 +45,6 @@ import {PaletteTable, PaletteCell, overlayColor} from '../../../docs/color-syste
         columns={['variable', 'value' /*, 'className' */]}
         values={[{variable: name, value, slug: name}].concat(values)}
         hasHeader={false}
-        borderSpacing={0}
         cellPadding="8px 16px" />
     </Box>
   ))
