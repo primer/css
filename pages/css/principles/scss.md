@@ -3,7 +3,7 @@ title: SCSS
 path: priniciples/scss
 ---
 
-{:toc}
+## Table of Contents
 
 ## Spacing
 
