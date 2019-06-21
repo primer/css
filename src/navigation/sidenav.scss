@@ -5,8 +5,12 @@
 .SideNav-item {
   position: relative;
   display: block;
+  width: 100%;
   padding: $spacer-2+$spacer-1 $spacer-3;
   color: $text-gray;
+  text-align: left;
+  background-color: transparent;
+  border: 0;
 
   & + & {
     border-top: $border;

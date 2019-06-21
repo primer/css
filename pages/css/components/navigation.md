@@ -172,7 +172,7 @@ Use `.UnderlineNav--full` in combination with container styles and `.UnderlineNa
 The Side Nav is a vertical list of navigational links, typically used on the left side of a page. **Width and placement must be set by you.** For example by using our grid columns or by applying an inline `width`.
 
 - You can use a **light gray background** and a **border** if the parent element doesn't have it already.
-- To add a "selected" state add `aria-current="page"`.
+- To add a "selected" state use `aria-current="page"`. If it should act more like a "tab menu" with button elements, use `aria-selected="true"` instead.
 
 ```html
 <nav class="SideNav bg-gray-light border" style="max-width: 360px">
