@@ -47,30 +47,18 @@ Primer CSS is built upon systems that form the foundation of our styles such as 
 
 <PrimitivesOverview />
 
-## Primer CSS bundles
+## Structure
+Primer CSS is published to npm as `@primer/css`. Each of Primer CSS's "modules" lives in a subfolder under `src/` with an `index.scss` in it. Generally speaking, the styles are divided into three primary themes:
 
-Each component or group of styles is distributed via npm as a separate CSS file, or "bundle". We also distribute "meta-packages" for core (shared) elements, product-specific (github.com) styles, and marketing.
-
-<PrimerPackageBox meta={bundles.primer} count={Object.keys(bundles).length - 1} mb={4} />
-
-<Flex justifyContent="space-around" mb={6}>
-  <MetaPackageBox title="Core" meta={bundles.core} width={1/3}>
-    The core bundle contains styles that are shared between GitHub product and marketing websites.
-  </MetaPackageBox>
-  <MetaPackageBox title="Product" meta={bundles.product} width={1/3}>
-    The product bundle contains styles that are used on GitHub product websites.
-  </MetaPackageBox>
-  <MetaPackageBox title="Marketing" meta={bundles.marketing} width={1/3}>
-    The marketing bundle contains styles that are used on GitHub marketing websites.
-  </MetaPackageBox>
-</Flex>
-
+* **Core** styles (in `core/`) are common dependencies, which include support variables, native element and typography styles, buttons, navigation, tooltips, etc.
+* **Product** styles (in `product/`) are specific to github.com, and include components such as avatars, labels, markdown styles, popovers, and progress indicators.
+* **Marketing** styles (in `marketing/`) are specific to GitHub marketing efforts, including international and event-focused sites as well as the more design-heavy feature pages on github.com. Marketing styles include new colors and button styles, and extend the core typography and whitespace scales.
 
 <div className="bg-gray py-6">
   <div className="d-flex flex-wrap flex-md-nowrap px-6 gutter-lg">
     <div className="col-12 col-md-9 pr-0 pr-lg-2">
       <h3 className="f3 text-normal m-0">Use Primer CSS in your project</h3>
-      <p className="my-3">Pick and choose what you need. Install the entire Primer CSS bundle or individual packages via npm.</p>
+      <p className="my-3">Pick and choose what you need. Install the entire Primer CSS bundle or import individual folders.</p>
       <a href="/css/getting-started" className="btn btn-outline">Installation instructions</a>
     </div>
   </div>

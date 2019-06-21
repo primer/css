@@ -34,16 +34,16 @@ Making a decision on whether new components should be added is done on a case by
 Many of the same questions can be applied to objects and utilities, however the purpose of these styles is different:
 * [Objects](/css/objects) aren't concerned with thematic styles. They are for common display and positioning styles we find in page layouts and common content types.
 * [Utilities](/css/utilities) do one thing well and one thing only. These styles are immutable and therefore often use the `!important` tag. For this reason we aim not to change the properties of utilities very often. They often form the building blocks of our pages and when we introduce new ones we need to do so with care as we'll likely need to live with these styles for a long time. When assessing whether there is a need to add a new utility, consider these additional questions:
-    - how does this new utility fit within our existing set of utilities? If it is an addition to an existing set then it should follow the same naming convention.
-    - is it for a property that would likely need to be changed at different breakpoints? If so it may need responsive options.
-    - if this style is part of a family of properties, do we need to consider adding the full set? Reasons for adding a full set could be that the other property values are often used, or that there would be a need to switch the property on and off (such as display or visibility).
-    - does introducing this new utility cause any clashes or potential confusion with the use of existing utilities? If so, what steps can we take to avoid those issues.
-    - does the utility have a connection with a set of variables? If so do the corresponding variables need to be updated?
+    - How does this new utility fit within our existing set of utilities? If it is an addition to an existing set then it should follow the same naming convention.
+    - Is it for a property that would likely need to be changed at different breakpoints? If so it may need responsive options.
+    - If this style is part of a family of properties, do we need to consider adding the full set? Reasons for adding a full set could be that the other property values are often used, or that there would be a need to switch the property on and off (such as display or visibility).
+    - Does introducing this new utility cause any clashes or potential confusion with the use of existing utilities? If so, what steps can we take to avoid those issues.
+    - Does the utility have a connection with a set of variables? If so do the corresponding variables need to be updated?
 
 ## Step-by-step instructions for adding new styles
 
 ### Step 1: Open an issue
-It's usually better to open an issue before investing time in spiking out a new pattern. This gives the design systems team a heads up and allows other designers to share thoughts. Here's and outline of what's helpful to include in a new style issue:
+It's usually better to open an issue before investing time in spiking out a new pattern. This gives the design systems team a heads up and allows other designers to share thoughts. Here's an outline of what's helpful to include in a new style issue:
 
 1. What the pattern is and how it's being used across the site - post screenshots and urls where possible. If you need help identifying where the pattern is being used, call that out here and cc the relevant team and/or cc `@product-design` to help.
 2. Why you think a new pattern is needed (this should answer the relevant questions above).
@@ -53,7 +53,7 @@ It's usually better to open an issue before investing time in spiking out a new 
 
 ### Step 2: Design and build the new styles
 
-* You may want to explore the visual design for a new component before spiking it out in code. If so, continue in the issue and post your design mockups. Using the [Jekyll prototyping tool](https://github.com/github/design/blob/master/docs/resources/prototyping.md#jekyll) could also be a good option, it pulls in the production CSS so you can explore options in isolation before jumping into production code.
+* You may want to explore the visual design for a new component before spiking it out in code. If so, continue in the issue and post your design mockups. Using our [CodePen template](https://codepen.io/team/GitHub/pen/xYLdZd) could also be a good option, it pulls in Primer CSS so you can explore options in isolation before jumping into production code.
 * When you're ready, spike out a branch and build out your new component, object, or utilities according to the style guide principles, ensuring you follow our naming convention for each of the styles.
 * Refactor parts of the product where you think those new styles could be used to test they work for each use case. This does not mean for every instance, but enough of the key use cases to be sure the styles are flexible enough. To avoid blowing out your initial pull request we recommend you do larger amounts of refactoring in an additional branch.
 * When you're ready for review, add the `status: review needed` and the `design-systems` labels to your pull request. Follow the [ship checklist](#ship-checklist) for additional shipping steps.
@@ -72,21 +72,29 @@ Let the [design systems team](https://github.com/github/design-systems) know if 
 
 ## Documentation structure
 
-_**Note:** Documentation for Primer CSS modules should live in the `README` of that module, see the [primer modules](#primer-modules) section below for more details. The [anatomy of a guide](#anatomy-of-a-guide) will work the same as part of a module README as well as regular markdown documentation._
+- Our documentation site for Primer CSS is built using Next.js and deployed with Now. Our site is built from the `pages` folder and uses MDX to render markdown.
 
-The style guide takes a content first approach. Everything you see on the site is built from markdown files found in this folder.
+- Documentation for Primer CSS modules should live in the corresponding `.md` file for that module in the `/pages/css` folder. 
 
-Currently there’s a few levels of hierarchy. The top level is `styleguide/` inside the only content rendered is the `README.md` file on the style guide homepage.
+-There are separate folders in `/pages/css` for component, object, support, and utilities docs, as well as separate folders for more general documentation such as principles and tooling.
 
-The folders immediately in `styleguide/` represent top level navigation. There’s a little bit of setup needed to create a new top level navigation item.
+- Each folder corresponds to a new url such as `primer.style/css/utilities`.
 
-* Create a new navigation tab in the navigation partial `github/github/app/views/navigation/_styleguide.html.erb`
+- To add new documentation, locate the appropriate folder and create a new `.md` file. Be sure to include the proper front matter (at minimum, title, path and status). For example:
 
-Everything inside these top level navigation items gets built into the guide for that section. `README.md` files will be returned for sections (ie. `primer`, `js`, `ruby`, `branding`) when the user is on a section landing page ie `/primer/`.
+```
+---
+title: Alerts
+path: components/alerts
+status: Stable
+source: 'https://github.com/primer/css/tree/master/src/alerts'
+bundle: alerts
+---
+```
 
-### Anatomy of a guide
+### Documentation Anatomy
 
-The anatomy of a style guide markdown file pretty straight forward, but has a few optional properties for making the page render special features.
+The anatomy of a Primer CSS markdown file is pretty straight forward, but has a few optional properties for making the page render special features.
 
 Typically the file will look something like this:
 
@@ -108,7 +116,7 @@ Typically the file will look something like this:
 
 Which consists of three parts:
 
-1. **YML frontmatter** _(optional)_, similar to jekyll’s frontmatter, this is a way to pass info to the controller
+1. **YML frontmatter** _(optional)_, similar to jekyll’s frontmatter, this is used to generate the sidebar and title components.
 2. **Docs section** _(required)_, This is the section between the YML and the first `````html`
 3. **The example section** _(optional)_, This section is denoted by ````html` and will render into an example used in the page. This can contain rails helpers also eg. `<%= octicons 'fire' %>`
 
@@ -159,7 +167,7 @@ The source option will let you point the document to the source file. **This is 
 
 #### Tables of contents
 
-In the style guide you can add a `## Table of Contents` heading to have a table of contents automatically generated.
+In pages published on [primer.style/css](https://primer.style/css), a table of contents is automatically inserted after the first `## Table of Contents` heading (if present).
 
 #### Code blocks
 
@@ -170,83 +178,6 @@ When using code blocks for demo purposes, you can choose to render each of the b
   <div class="p-5">Animation</div>
   ```
 ```
-
-## Primer CSS modules
-
-Modules are created for all the styles we include in the Primer framework. Modules are folders with a specific structure that include CSS, a `package.json`, and other files for publishing to repositories in our GitHub Primer organization and NPM.
-
-The source of truth for our CSS will be in the github/github codebase, but we publish updates to NPM whenever styles in github/github are changed. By publishing to NPM we are able to distribute our reusable modules to other GitHub properties.
-
-Modules are grouped into three packages:
-- **primer-core:** modules that are used for dotcom as well as marketing websites
-- **primer-product:** modules that are only used on dotcom
-- **primer-marketing:** modules that are only used on marketing websites and occasionally for promotional content on dotcom
-
-You can add module packages by including any or all of the following imports in your bundle:
-```
-@import "primer-core/index.scss"
-@import "primer-product/index.scss"
-@import "primer-marketing/index.scss"
-```
-
-### Creating a module
-
-1. Create a new repository on https://github.com/primer that will be the location for your module. Only the design systems team have write access to that repository. If you don't have access, ask in #design-systems and someone will create a folder for you.
-2. Create a new folder inside one of the primer directories (core, product, or marketing), and within the appropriate styles folder (components, objects, utilities etc.). This folder cannot be inside another module with a `package.json` file.
-3. Inside the folder you'll need at least a `package.json` file. Here is an example of what you'll need in the package file. The main thing it's looking for are `name, version, and repository`. The publish script uses this to push to the distribution repository.
-
-    ```js
-    {
-      "name": "module-name",
-      "version": "0.1.0",
-      "description": "",
-      "homepage": "https://github.com/styleguide",
-      "license": "MIT",
-      "repository": "https://github.com/primer/primer.git",
-      "main": "utilities.scss",
-      "bugs": {
-        "url": "https://github.com/primer/primer/issues"
-      },
-      "author": "GitHub, Inc.",
-      "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-      },
-      "keywords": [
-        "primer",
-        "css",
-        "github",
-        "primercss"
-      ]
-    }
-    ```
-
-5. The directory layout should typically be like this:
-
-    ```
-    a-module/
-      ├── lib/
-      │   ├── partial.scss
-      │   └── partial.scss
-      ├── index.scss
-      ├── README.md
-      └── package.json
-    ```
-
-    Create a stylesheet named `index.scss`. In this file include a list of relative imports for the partials required, like the example below:
-
-    ```scss
-    @import "primer-support/index.scss";
-    @import "./lib/button.scss";
-    @import "./lib/button-group.scss";
-    ```
-
-    Add a `README` to give some info on the module and how to install it, and a documentation section. Here's an example of the [buttons README](https://github.com/primer/primer/blob/master/README.md).
-
-### Publishing changes and new modules
-
-Once you have your directory setup, you will be ready to publish the module.
-
-To publish, there are two requirements. First, you must be on the `master` branch. Second, all changes should be committed and synced with the remote `master`. These requirements protect us from changes being overwritten. Once you're on `master` run `script/css-modules --help` to get a list of all the available commands. This script will help with versioning and publishing.
 
 #### Versioning
 
