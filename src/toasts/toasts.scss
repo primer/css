@@ -5,19 +5,22 @@
   background-color: white;
   color: $black;
   padding: $spacer-3;
-  margin: $spacer-3;
   border-radius: 3px;
   border: 1px solid $black-fade-15;
-  max-width: 500px;
-  min-width: 200px;
+  margin: $spacer-2;
   box-shadow: $box-shadow-medium;
-  width: max-content;
   transition: 0.2s ease;
 
   &:hover {
     transform: scale(1.01);
     transition: 0.2s ease;
     box-shadow: $box-shadow-large;
+  }
+
+  @include breakpoint(sm) {
+    max-width: 500px;
+    width: max-content;
+    margin: $spacer-3;
   }
 }
 
