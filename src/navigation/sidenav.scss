@@ -1,0 +1,75 @@
+// Side Nav
+//
+// A vertical list of navigational links, typically used on the left side of a page.
+
+.SideNav-item {
+  position: relative;
+  display: block;
+  padding: $spacer-2+$spacer-1 $spacer-3;
+  color: $text-gray;
+
+  & + & {
+    border-top: $border;
+  }
+
+  &:last-child {
+    // makes sure there is a "bottom border" in case the list is not long enough
+    box-shadow: 0 $border-width 0 $border-color;
+  }
+
+  // Bar on the left
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 3px;
+    pointer-events: none;
+    content: "";
+    background-color: $gray-300;
+    transition: transform 0.24s ease-in;
+    transform: scaleX(0);
+    transform-origin: center left;
+  }
+}
+
+// States
+
+.SideNav-item:hover {
+  text-decoration: none;
+}
+
+.SideNav-item:hover,
+.SideNav-item:focus {
+  &::before {
+    transition: transform 0.12s ease-out;
+    transform: scaleX(1);
+  }
+}
+
+.SideNav-item:focus {
+  outline: none;
+}
+
+.SideNav-item:active {
+  background-color: $bg-white;
+}
+
+// Selected
+//
+// Use aria-current="page" for links
+// Use aria-selected="true" for tabs (button)
+
+.SideNav-item[aria-current="page"],
+.SideNav-item[aria-selected="true"] {
+  font-weight: $font-weight-semibold;
+  color: $text-gray-dark;
+  background-color: $bg-white;
+
+  // Bar on the left
+  &::before {
+    background-color: $orange-600;
+    transform: scaleX(1);
+  }
+}

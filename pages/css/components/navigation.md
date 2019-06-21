@@ -167,6 +167,53 @@ Use `.UnderlineNav--full` in combination with container styles and `.UnderlineNa
 </nav>
 ```
 
+## Side Nav
+
+The Side Nav is a vertical list of navigational links, typically used on the left side of a page. **Width and placement must be set by you.** For example by using our grid columns or by applying an inline `width`.
+
+- You can use a **light gray background** and a **border** if the parent element doesn't have it already.
+- To add a "selected" state add `aria-current="page"`.
+
+```html
+<nav class="SideNav bg-gray-light border" style="max-width: 360px">
+  <a class="SideNav-item" href="#url">Account</a>
+  <a class="SideNav-item" href="#url" aria-current="page">Profile</a>
+  <a class="SideNav-item" href="#url">Emails</a>
+  <a class="SideNav-item" href="#url">Notifications</a>
+</nav>
+```
+
+Any kind of content can be added inside a Side Nav item. Use utility classes to further style them if needed.
+
+```html
+<nav class="SideNav bg-gray-light border" style="max-width: 360px">
+  <a class="SideNav-item" href="#url">
+    Text only
+  </a>
+  <a class="SideNav-item" href="#url">
+    <img class="avatar avatar-small mr-2" src="https://avatars.githubusercontent.com/hubot?s=40" alt="hubot" height="20" width="20">
+    With an avatar
+  </a>
+  <a class="SideNav-item" href="#url">
+    <svg class="octicon octicon-octoface mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"></path></svg>
+    With an icon
+  </a>
+  <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="#url">
+    With a status icon <svg class="octicon octicon-primitive-dot color-green-5 ml-2 float-right" viewBox="0 0 8 16" version="1.1" width="8" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg>
+  </a>
+  <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="#url">
+    With a label <span class="Label bg-blue" title="Label: label">label</span>
+  </a>
+  <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="#url">
+    With a counter <span class="Counter bg-gray-2 ml-1">16</span>
+  </a>
+  <a class="SideNav-item" href="#url">
+    <h5>With a heading</h5>
+    <span>and some longer description</span>
+  </a>
+</nav>
+```
+
 ## Tabnav
 
 When you need to toggle between different views, consider using a tabnav. It'll give you a left-aligned horizontal row of... tabs!
