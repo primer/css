@@ -50,16 +50,16 @@
   bottom: -100px;
   left: 0;
   animation-name: toast;
-  animation-duration: 10s;
+  animation-duration: 6s;
   animation-delay: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 // Pop up animation
 @keyframes toast {
   0%   {bottom:-100px;}
-  5%  {bottom:0px;}
+  10%  {bottom:0px;}
   90%  {bottom:0px;}
   100% {bottom:-100px;}
 }
