@@ -8,10 +8,17 @@
   margin: $spacer-3;
   border-radius: 3px;
   border: 1px solid $black-fade-15;
-  max-width: 400px;
+  max-width: 500px;
   min-width: 200px;
-  box-shadow: $box-shadow-large;
+  box-shadow: $box-shadow-medium;
   width: max-content;
+  transition: 0.2s ease;
+
+  &:hover {
+    transform: scale(1.01);
+    transition: 0.2s ease;
+    box-shadow: $box-shadow-large;
+  }
 }
 
 .Toast-octicon {
@@ -23,7 +30,7 @@
 }
 
 .Toast-dismiss {
-  margin-left: $spacer-4;
+  margin-left: $spacer-3;
   color: $text-gray;
 
   &:hover {
@@ -85,6 +92,14 @@
 
 
 // 2. Light style
+
+.Toast-light-default {
+  border-top: 4px solid $blue-500;
+
+  .Toast-octicon {
+    color: $blue-500;
+  }
+}
 
 .Toast-light-error {
   border-top: 4px solid $red-500;
@@ -162,5 +177,65 @@
 
   .Toast-dismiss {
     color: white;
+  }
+}
+
+// 4. Block style
+
+.Toast-block-default,
+.Toast-block-error,
+.Toast-block-warning,
+.Toast-block-success {
+  padding: 0;
+
+  .Toast-octicon {
+    color: white;
+    padding: $spacer-3;
+    margin-right: 0;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .Toast-content {
+    padding: $spacer-3;
+  }
+
+  .Toast-dismiss {
+    padding: $spacer-3 $spacer-3 $spacer-3 0;
+  }
+
+  .Toast-action {
+    margin: auto $spacer-3 auto $spacer-2;
+  }
+}
+
+.Toast-block-default {
+  .Toast-octicon {
+    background-color: $blue-500;
+  }
+}
+
+.Toast-block-error {
+
+  .Toast-octicon {
+    background-color: $red-500;
+  }
+}
+
+.Toast-block-warning {
+
+  .Toast-octicon {
+    background-color: $yellow-600;
+    color: black;
+  }
+}
+
+.Toast-block-success {
+
+  .Toast-octicon {
+    background-color: $green-500;
   }
 }
