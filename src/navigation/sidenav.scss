@@ -6,7 +6,7 @@
   position: relative;
   display: block;
   width: 100%;
-  padding: $spacer-2+$spacer-1 $spacer-3;
+  padding: $spacer-3;
   color: $text-gray;
   text-align: left;
   background-color: transparent;
@@ -40,30 +40,22 @@
 
 // States
 
-.SideNav-item:hover {
-  text-decoration: none;
-}
-
 .SideNav-item:hover,
 .SideNav-item:focus {
+  outline: none;
+  text-decoration: none;
+  color: $text-gray-dark;
+
+  // Bar on the left
   &::before {
     transition: transform 0.12s ease-out;
     transform: scaleX(1);
   }
 }
 
-.SideNav-item:focus {
-  outline: none;
-}
-
 .SideNav-item:active {
   background-color: $bg-white;
 }
-
-// Selected
-//
-// Use aria-current="page" for links
-// Use aria-selected="true" for tabs (button)
 
 .SideNav-item[aria-current="page"],
 .SideNav-item[aria-selected="true"] {
@@ -76,4 +68,44 @@
     background-color: $orange-600;
     transform: scaleX(1);
   }
+}
+
+// Square Icon
+//
+// Makes sure multiple icons are vertically aligned
+
+.SideNav-squareIcon {
+  width: 16px;
+}
+
+// Side Sub Nav
+//
+// A more lightweight version, suited as sub nav
+
+.SideSubNav {
+  padding: $spacer-3;
+}
+
+.SideSubNav-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: $spacer-1 0;
+  color: $text-gray;
+  text-align: left;
+  background-color: transparent;
+  border: 0;
+}
+
+.SideSubNav-item:hover,
+.SideSubNav-item:focus {
+  outline: none;
+  text-decoration: none;
+  color: $text-gray-dark;
+}
+
+.SideSubNav-item[aria-current="page"],
+.SideSubNav-item[aria-selected="true"] {
+  font-weight: $font-weight-semibold;
+  color: $text-gray-dark;
 }
