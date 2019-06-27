@@ -11,9 +11,10 @@
   text-align: left;
   background-color: transparent;
   border: 0;
+  border-top: $border;
 
-  & + & {
-    border-top: $border;
+  &:first-child {
+    border-top: 0;
   }
 
   &:last-child {
@@ -70,12 +71,13 @@
   }
 }
 
-// Square Icon
+// Icon
 //
 // Makes sure multiple icons are vertically aligned
 
-.SideNav-squareIcon {
+.SideNav-icon {
   width: 16px;
+  color: $text-gray-light;
 }
 
 // Side Sub Nav
