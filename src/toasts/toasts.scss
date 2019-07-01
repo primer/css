@@ -11,12 +11,6 @@
   box-shadow: $box-shadow-medium;
   transition: 0.2s ease;
 
-  &:hover {
-    transform: scale(1.01);
-    transition: 0.2s ease;
-    box-shadow: $box-shadow-large;
-  }
-
   @include breakpoint(sm) {
     max-width: 450px;
     width: max-content;
@@ -64,125 +58,6 @@
   100% {bottom:-100px;}
 }
 
-
-
-
-// Style options
-// -----
-
-// 1. Classic GitHub style
-
-.Toast-classic-default {
-  background-color: $blue-100;
-  color: $blue-900;
-}
-
-.Toast-classic-error {
-  background-color: $red-100;
-  color: $red-900;
-}
-
-.Toast-classic-warning {
-  background-color: $yellow-100;
-  color: $yellow-900;
-}
-
-.Toast-classic-success {
-  background-color: $green-100;
-  color: $green-900;
-}
-
-
-
-// 2. Light style
-
-.Toast-light-default {
-  border-top: 4px solid $blue-500;
-
-  .Toast-octicon {
-    color: $blue-500;
-  }
-}
-
-.Toast-light-error {
-  border-top: 4px solid $red-500;
-
-  .Toast-octicon {
-    color: $red-500;
-  }
-}
-
-.Toast-light-warning {
-  border-top: 4px solid $yellow-600;
-
-  .Toast-octicon {
-    color: $yellow-800;
-  }
-}
-
-.Toast-light-success {
-  border-top: 4px solid $green-500;
-
-  .Toast-octicon {
-    color: $green-500;
-  }
-}
-
-// 3. Bright style
-
-.Toast-bright-default {
-  background-color: $blue-500;
-  color: white;
-
-  .Toast-octicon {
-    color: white;
-  }
-
-  .Toast-dismiss {
-    color: white;
-  }
-}
-
-
-.Toast-bright-error {
-  background-color: $red-500;
-  color: white;
-
-  .Toast-octicon {
-    color: white;
-  }
-
-  .Toast-dismiss {
-    color: white;
-  }
-}
-
-.Toast-bright-warning {
-  background-color: $yellow-500;
-  color: black;
-
-  .Toast-octicon {
-    color: black;
-  }
-
-  .Toast-dismiss {
-    color: black;
-  }
-}
-
-.Toast-bright-success {
-  background-color: $green-500;
-  color: white;
-
-  .Toast-octicon {
-    color: white;
-  }
-
-  .Toast-dismiss {
-    color: white;
-  }
-}
-
 // 4. Block style
 
 .Toast-block-default,
@@ -195,10 +70,11 @@
     color: white;
     padding: $spacer-3;
     margin-right: 0;
+    fill: white;
 
     svg {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
     }
   }
 
@@ -233,7 +109,7 @@
 
   .Toast-octicon {
     background-color: $yellow-600;
-    color: black;
+    fill: $gray-900;
   }
 }
 
