@@ -80,15 +80,11 @@
   color: $text-gray-light;
 }
 
-// Side Sub Nav
+// Sub Nav
 //
-// A more lightweight version, suited as sub nav
+// A more lightweight version, suited as a sub nav
 
-.SideSubNav {
-  padding: $spacer-3;
-}
-
-.SideSubNav-item {
+.SideNav-subItem {
   position: relative;
   display: block;
   width: 100%;
@@ -99,15 +95,15 @@
   border: 0;
 }
 
-.SideSubNav-item:hover,
-.SideSubNav-item:focus {
+.SideNav-subItem:hover,
+.SideNav-subItem:focus {
   outline: none;
   text-decoration: none;
   color: $text-gray-dark;
 }
 
-.SideSubNav-item[aria-current="page"],
-.SideSubNav-item[aria-selected="true"] {
+.SideNav-subItem[aria-current="page"],
+.SideNav-subItem[aria-selected="true"] {
   font-weight: $font-weight-semibold;
   color: $text-gray-dark;
 }
