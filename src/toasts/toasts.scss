@@ -1,14 +1,18 @@
 // Toast
 
+// just for the documentation, remove before shipping
+.Toast-wrapper {
+  padding: 30px;
+}
+
 .Toast {
   display: flex;
   background-color: white;
   color: $black;
   padding: $spacer-3;
-  border-radius: 3px;
-  border: 1px solid $black-fade-15;
+  border-radius: $border-radius;
+  box-shadow: inset 0 0 0 1px $border-gray-dark, $box-shadow-medium;
   margin: $spacer-2;
-  box-shadow: $box-shadow-medium;
   transition: 0.2s ease;
 
   @include breakpoint(sm) {
@@ -20,20 +24,8 @@
 
 .Toast-octicon {
   margin-right: $spacer-2;
-}
-
-.Toast-action {
-  margin-top: $spacer-2;
-}
-
-.Toast-dismiss {
-  margin-left: $spacer-3;
-  color: $text-gray;
-
-  &:hover {
-    cursor: pointer;
-    color: $text-gray-dark;
-  }
+  display: flex;
+  align-items: center;
 }
 
 
@@ -58,8 +50,6 @@
   100% {bottom:-100px;}
 }
 
-// 4. Block style
-
 .Toast-block-default,
 .Toast-block-error,
 .Toast-block-warning,
@@ -71,11 +61,8 @@
     padding: $spacer-3;
     margin-right: 0;
     fill: white;
-
-    svg {
-      width: 18px;
-      height: 18px;
-    }
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
   }
 
   .Toast-content {
@@ -83,16 +70,18 @@
   }
 
   .Toast-dismiss {
-    padding: $spacer-3 $spacer-3 $spacer-3 0;
-    margin: 0;
-  }
+    padding: $spacer-3;
+    align-self: center;
 
-  .Toast-action {
-    margin: auto $spacer-3 auto $spacer-2;
+    &:hover {
+      cursor: pointer;
+      fill: $text-gray;
+    }
   }
 }
 
 .Toast-block-default {
+
   .Toast-octicon {
     background-color: $blue-500;
   }
