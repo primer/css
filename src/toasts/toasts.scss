@@ -24,6 +24,7 @@
   flex-shrink: 0;
   color: white;
   fill: white;
+  background-color: $blue-500;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
 }
@@ -65,31 +66,17 @@
   100% {bottom:-100px;}
 }
 
-.Toast-block-default {
+// Modifier
 
-  .Toast-icon {
-    background-color: $blue-500;
-  }
+.Toast--error .Toast-icon {
+  background-color: $red-500;
 }
 
-.Toast-block-error {
-
-  .Toast-icon {
-    background-color: $red-500;
-  }
+.Toast--warning .Toast-icon {
+  background-color: $yellow-600;
+  fill: $gray-900;
 }
 
-.Toast-block-warning {
-
-  .Toast-icon {
-    background-color: $yellow-600;
-    fill: $gray-900;
-  }
-}
-
-.Toast-block-success {
-
-  .Toast-icon {
-    background-color: $green-500;
-  }
+.Toast--success .Toast-icon {
+  background-color: $green-500;
 }
