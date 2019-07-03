@@ -17,7 +17,7 @@
   }
 }
 
-.Toast-octicon {
+.Toast-icon {
   margin-right: $spacer-2;
   display: flex;
   align-items: center;
@@ -51,7 +51,7 @@
 .Toast-block-success {
   padding: 0;
 
-  .Toast-octicon {
+  .Toast-icon {
     color: white;
     padding: $spacer-3;
     margin-right: 0;
@@ -77,21 +77,21 @@
 
 .Toast-block-default {
 
-  .Toast-octicon {
+  .Toast-icon {
     background-color: $blue-500;
   }
 }
 
 .Toast-block-error {
 
-  .Toast-octicon {
+  .Toast-icon {
     background-color: $red-500;
   }
 }
 
 .Toast-block-warning {
 
-  .Toast-octicon {
+  .Toast-icon {
     background-color: $yellow-600;
     fill: $gray-900;
   }
@@ -99,7 +99,7 @@
 
 .Toast-block-success {
 
-  .Toast-octicon {
+  .Toast-icon {
     background-color: $green-500;
   }
 }
