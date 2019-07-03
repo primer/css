@@ -38,9 +38,14 @@
   border: 0;
   background-color: transparent;
 
+  &:focus,
   &:hover {
-    cursor: pointer;
     fill: $text-gray;
+    outline: none;
+  }
+
+  &:active {
+    fill: $gray-400;
   }
 }
 
