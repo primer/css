@@ -32,9 +32,11 @@
   padding: $spacer-3;
 }
 
-.Toast-dismiss {
+.Toast-dismissButton {
   padding: $spacer-3;
-  align-self: center;
+  max-height: 54px; // keeps button aligned to the top
+  border: 0;
+  background-color: transparent;
 
   &:hover {
     cursor: pointer;
