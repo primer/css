@@ -4,7 +4,6 @@
   display: flex;
   background-color: white;
   color: $black;
-  padding: $spacer-3;
   border-radius: $border-radius;
   box-shadow: inset 0 0 0 1px $border-gray-dark, $box-shadow-medium;
   margin: $spacer-2;
@@ -18,11 +17,30 @@
 }
 
 .Toast-icon {
-  margin-right: $spacer-2;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: $spacer-3 * 3;
+  flex-shrink: 0;
+  color: white;
+  fill: white;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
 }
 
+.Toast-content {
+  padding: $spacer-3;
+}
+
+.Toast-dismiss {
+  padding: $spacer-3;
+  align-self: center;
+
+  &:hover {
+    cursor: pointer;
+    fill: $text-gray;
+  }
+}
 
 // Temporarily splitting this out
 // to play with static styles.
@@ -43,36 +61,6 @@
   10%  {bottom:0px;}
   90%  {bottom:0px;}
   100% {bottom:-100px;}
-}
-
-.Toast-block-default,
-.Toast-block-error,
-.Toast-block-warning,
-.Toast-block-success {
-  padding: 0;
-
-  .Toast-icon {
-    color: white;
-    padding: $spacer-3;
-    margin-right: 0;
-    fill: white;
-    border-top-left-radius: inherit;
-    border-bottom-left-radius: inherit;
-  }
-
-  .Toast-content {
-    padding: $spacer-3;
-  }
-
-  .Toast-dismiss {
-    padding: $spacer-3;
-    align-self: center;
-
-    &:hover {
-      cursor: pointer;
-      fill: $text-gray;
-    }
-  }
 }
 
 .Toast-block-default {
