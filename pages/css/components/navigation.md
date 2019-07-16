@@ -9,7 +9,7 @@ bundle: navigation
 
 Primer CSS comes with several navigation components. Some were designed with singular purposes, while others were design to be more flexible and appear quite frequently.
 
-{:toc}
+## Table of Contents
 
 ## Menu
 

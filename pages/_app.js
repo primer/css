@@ -7,7 +7,7 @@ import {BaseStyles, Link, Text, BorderBox, Box, Flex, theme} from '@primer/compo
 import {PackageHeader} from '../docs/components'
 import {Header, MarkdownHeading, JumpNav, SideNav} from '@primer/blueprints'
 import {NavList} from '@primer/blueprints/next-components'
-import getComponents from '../docs/markdown'
+import components from '../docs/markdown'
 import documents from '../searchIndex'
 import {config, requirePage, rootPage} from '../docs/utils'
 import {CONTENT_MAX_WIDTH} from '../docs/constants'
@@ -36,8 +36,6 @@ export default class MyApp extends App {
     const node = rootPage.first(node => node.path === pathname) || {}
     const {file, meta = {}} = node || {}
     const isIndex = file.includes('index')
-    const components = getComponents(node)
-
     const Hero = file ? requirePage(file).Hero : null
 
     return (
@@ -101,12 +99,12 @@ export default class MyApp extends App {
             >
               <SideNav>
                 <NavList currentPath={pathname} path="/css/getting-started" />
-                <NavList currentPath={pathname} path="/css/tools" />
-                <NavList currentPath={pathname} path="/css/principles" />
                 <NavList currentPath={pathname} path="/css/support" />
                 <NavList currentPath={pathname} path="/css/utilities" />
                 <NavList currentPath={pathname} path="/css/objects" />
                 <NavList currentPath={pathname} path="/css/components" />
+                <NavList currentPath={pathname} path="/css/tools" />
+                <NavList currentPath={pathname} path="/css/principles" />
               </SideNav>
             </BorderBox>
           </Flex>
