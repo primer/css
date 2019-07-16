@@ -1,7 +1,7 @@
 # Primer Alerts
 > Flash messages, or alerts, inform users of successful or pending actions. Use them sparingly. Don’t show more than one at a time.
 
-This repository is a module of the full [primer][primer] repository.
+This repository is a module of the full [Primer CSS][primer] repository.
 
 ## Usage
 

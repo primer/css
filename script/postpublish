@@ -13,3 +13,6 @@ if [[ "$GITHUB_REF" = "refs/heads/master" ]]; then
         echo "Whoops! Failed to publish Storybook. This is not a fatal error."
     )
 fi
+
+# TODO: remove this in v13
+rm -rf build/

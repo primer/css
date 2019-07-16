@@ -2,10 +2,10 @@
 set -e
 
 # generate the build directory
-npm run dist
+npm run --silent dist
 
-# run the selector diff report
-script/selector-diff-report
+# run the bundle size and selector diff reports
+script/run-reports
 
 # TODO: remove this in v13
 mkdir -p build

@@ -7,7 +7,7 @@ bundle: marketing-type
 ---
 
 
-The typography for our marketing pages differs slightly from what is in Primer's core--it is responsive, on a slightly different scale, and headlines are in a different font (Roboto).
+The typography for our marketing pages differs slightly from what is in Primer CSS's core--it is responsive, on a slightly different scale, and headlines are in a different font (Roboto).
 
 
 ## Heading Utilities
@@ -30,7 +30,7 @@ Use `.h000-mktg` – `.h6-mktg` to change an element's font, size, and weight on
 
 ## Typographic Utilities
 
-These utilities are meant to be used in addition to Primer's core utilities.
+These utilities are meant to be used in addition to Primer CSS's core utilities.
 
 ```html title="Typographic Utilities"
 
@@ -39,4 +39,3 @@ These utilities are meant to be used in addition to Primer's core utilities.
 <p class="pullquote">I'm a pullquote. Someone said these words in real life, and now they're on the internet</p>
 
 ```
-

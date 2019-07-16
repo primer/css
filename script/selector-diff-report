@@ -2,11 +2,11 @@
 set -e
 
 function log() {
-    echo "$@" 1>&2
+  echo "$@" 1>&2
 }
 
 function warn() {
-    echo "$@" 1>&2
+  echo "$@" 1>&2
 }
 
 pkg="@primer/css"
@@ -15,15 +15,12 @@ warn "Pulling the old $path from unpkg.com..."
 curl -sL "https://unpkg.com/$pkg/$path" > before.json
 
 warn "Building the stats locally..."
-npm run --silent dist
 cp $path after.json
 
 key=".selectors.values[]"
 jq -r $key before.json > before.txt
 jq -r $key after.json > after.txt
 
-warn "[selector report] diff:"
-(diff before.txt after.txt | tee selector-diff.log) || log "(no diff!)"
-warn "[selector report] end"
+diff {before,after}.txt && echo 'no diff!'
 
 rm {before,after}.{json,txt}

@@ -8,7 +8,7 @@ bundle: layout
 ---
 
 
-Primer's layout includes basic page containers and a single-tiered, fraction-based grid system. That sounds more complicated than it really is though—it's just containers, rows, and columns.
+Primer CSS's layout includes basic page containers and a single-tiered, fraction-based grid system. That sounds more complicated than it really is though—it's just containers, rows, and columns.
 
 You can find all the below styles in `_layout.scss`.
 

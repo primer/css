@@ -9,7 +9,7 @@ symbols: [account-switcher, active, admin, avatar, dropdown-menu-content, experi
 
 Give a page a clear, separated title and optional top nav by adding a `.pagehead`.
 
-{:toc}
+## Table of Contents
 
 ## Basic pagehead
 

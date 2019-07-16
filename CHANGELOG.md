@@ -1,3 +1,78 @@
+# 12.4.1
+
+### :bug: Bug fixes
+- Fix [#822](https://github.com/primer/css/issues/822) (`.border-dashed` issues) via [#824](https://github.com/primer/css/issues/824)
+
+### :memo: Documentation
+- Typos fixed in [#802](https://github.com/primer/css/issues/802) (thank you, [@The-Compiler](https://github.com/The-Compiler)!)
+- Nav updates [#803](https://github.com/primer/css/issues/803)
+- Fix tables of contents [#762](https://github.com/primer/css/issues/762)
+- Add deprecation warning for `.btn-purple`, due to disappear in 13.0.0 via [#736](https://github.com/primer/css/issues/736)
+- Lots more documentation updates in [#814](https://github.com/primer/css/issues/814)
+
+### :house: Internal
+- Decommission `primer/deploy` [#809](https://github.com/primer/css/issues/809)
+
+### Committers
+- [@emplums](https://github.com/emplums)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+- [@The-Compiler](https://github.com/The-Compiler)
+
+
+# 12.4.0
+
+### :rocket: Enhancement
+- More responsive border utilities [#775](https://github.com/primer/css/pull/775)
+- Add `overflow: visible` utilities [#798](https://github.com/primer/css/pull/798)
+- Add `yellow` color utilities that will replace `pending` [#737](https://github.com/primer/css/pull/737)
+
+### :bug: Bug Fix
+- Fix Ruby Sass compiler warnings by quoting keys in `$hue-maps` declaration [#794](https://github.com/primer/css/pull/794)
+
+### :house: Internal
+- Remove `test-all-modules` scripts and old monorepo test scripts [#795](https://github.com/primer/css/pull/795)
+- Resolve all but one ([#796](https://github.com/primer/css/pull/796)) vulnerability in npm dev dependencies [#797](https://github.com/primer/css/pull/797)
+
+### Committers
+- [@broccolini](https://github.com/broccolini)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+
+# 12.3.1
+
+### 🐛 Bug Fix
+- Add `aria-selected="true"` support to tabbed navigation styles to play nicely with [`<tab-container>`](https://github.com/github/tab-container-element)
+
+### 🏠 Internal
+- Resolve the vulnerability alert with `tar@<4.4.2` in [CVE-2018-20834](https://nvd.nist.gov/vuln/detail/CVE-2018-20834)
+
+### Committers
+- [@shawnbot](https://github.com/shawnbot)
+
+# 12.3.0
+
+### :rocket: Enhancement
+- More color utilities! [#760](https://github.com/primer/css/pull/760) ([@shawnbot](https://github.com/shawnbot))
+- Add pink to Primer! 💖🌸💕🌷💞🎀💗🌺💝 [#776](https://github.com/primer/css/pull/776), [#778](https://github.com/primer/css/pull/778) ([@emplums](https://github.com/emplums)))
+
+### :house: Internal
+- Update storybook [#777](https://github.com/primer/css/pull/777) ([@emplums](https://github.com/emplums))
+- Add bundle size report [#772](https://github.com/primer/css/pull/772) ([@shawnbot](https://github.com/shawnbot))
+
+### :memo: Documentation
+- Update Primer references to Primer CSS [#771](https://github.com/primer/css/pull/771) ([@emplums](https://github.com/emplums))
+- Add Edit on GitHub links to docs [#770](https://github.com/primer/css/pull/770) ([@emplums](https://github.com/emplums))
+- Anchor Link in Docs [#768](https://github.com/primer/css/pull/768) ([@emplums](https://github.com/emplums))
+
+### :house: Internal
+- Update RELEASING [#757](https://github.com/primer/css/pull/757) ([@simurai](https://github.com/simurai))
+
+### Committers
+- [@emplums](https://github.com/emplums)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+
 # 12.2.3
 
 ### :bug: Bug Fix

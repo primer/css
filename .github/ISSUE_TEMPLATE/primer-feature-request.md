@@ -1,5 +1,5 @@
 ---
-name: Primer feature request
+name: Primer CSS feature request
 about: Suggest an idea for this project
 
 ---

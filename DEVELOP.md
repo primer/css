@@ -1,4 +1,4 @@
-# Primer Development
+# Primer CSS Development
 
 If you've made it this far, **thank you**! We appreciate your contribution, and hope that this document helps you along the way. If you have any questions or problems, don't hesitate to [file an issue](https://github.com/primer/css/issues/new).
 
@@ -46,37 +46,9 @@ Then visit http://localhost:3000/css to view the site.
 
 :rotating_light: **Warning:** Next.js has a [long-running issue](https://github.com/zeit/next.js/issues/1189) with trailing slashes in URLs. Avoid visiting `http://localhost:3000/` if possible, as this may cause your development server to fail in less-than-graceful ways.
 
-
-### Syncing the docs
-Both before and while the Next dev server runs, all of the Markdown files within the `src/` directory are synced to Next's `pages/` directory and rewritten to include useful metadata.
-
-If, for whatever reason, the dev server isn't syncing files from `src/` to `pages/`, you have two choices:
-
-1. Stop the server (`ctrl-C`) and restart it (`npm start`), which will re-sync the files and clear Next's cache.
-2. Run [script/sync](./script/sync) manually:
-
-    ```sh
-    # in the docs directory
-    script/sync
-    ```
-
-    **If you find yourself needing to do this often, please [file an issue](/primer/primer/issues/new) and tag `@shawnbot`**. :bow:
-
 ### The pages directory
-The [pages directory](./pages/) contains all of the files that map to URLs on the site. Because we plan to host the site at `primer.style/css` (and because of the way that Now's path aliasing feature works), we nest all of our documentation under the [css subdirectory](./pages/css).
+The [pages directory](./pages/) contains all of the documentation files that map to URLs on the site. Because we host the site at `primer.style/css` (and because of the way that Now's path aliasing feature works), we nest all of our documentation under the [css subdirectory](./pages/css).
 
-The sync task maintains a list of files copied from `src/` in `pages/css/.gitignore`, which ensures that none of these generated files are checked into git.
-
-### Sync internals
-We use [Metalsmith] to sync the source docs to the `pages` directory and transform them in the following ways:
-
-1. We filter the list of files to only Markdown documents (`**/*.md`).
-1. Many bundle `README.md`s wrap the actual documentation content in `<!-- %docs -->` HTML comments that usually include YAML frontmatter. In these instances, we extract the content that portion and reformat the frontmatter.
-1. We filter out any Markdown files that _don't_ include a `path` frontmatter key, and rename the destination file to match the `path` (e.g. `path: foo/bar` writes to `pages/css/foo/bar.md`).
-1. We set the `source` frontmatter key to a fully-qualified `github.com` URL for the source file so that we can link directly to it.
-1. We read the list of files from `pages/css/.gitignore` and delete them from the filesystem, then write the new list of paths so that they aren't committed to git.
-
-All of the logic for syncing the source docs (and transforming them in transit) is controlled in [`lib/sync.js`](./lib/sync.js), and each "step" in the transformation (as well as the watching) is implemented as a Metalsmith plugin.
 
 ### URL tests
 We have a script that catches inadvertent URL changes caused by renaming or deleting Markdown docs:
@@ -111,7 +83,6 @@ Our [`package.json`](package.json) houses a collection of [run-scripts] that we 
 * `lint` lints all of our SCSS source files.
 * `lint-js` lints the docs site and supporting scripts.
 * `now-build` and `now-start` are run on [Now] to build and start the docs site server. `now-test` runs them both in order.
-* `sync` copies Markdown docs from `src/` to `pages/css/` and preps them for inclusion in the docs site.
 * `test-urls` compares a (pre-generated) list of paths from the [Primer Style Guide](https://styleguide.github.com/primer/) to files in `pages/css`, and lets us know if we've inadvertently deleted or renamed anything.
 * `test-migrate` tests the [`primer-migrate`](MIGRATING.md#primer-migrate) command line utility.
 * `watch` runs the sync script in watch mode, copying files as they're changed from `src/` to `pages/css/`.
@@ -124,7 +95,6 @@ npm run
 
 
 [@primer/css]: https://www.npmjs.com/package/@primer/css
-[metalsmith]: https://metalsmith.io/
 [run-scripts]: https://docs.npmjs.com/cli/run-script
 [storybook]: https://storybook.js.org/
 [npm]: https://www.npmjs.com/
