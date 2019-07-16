@@ -82,7 +82,7 @@ Use `.Toast-dismissButton` to allow a user to explicitly dismiss a Toast.
   </span>
   <span class="Toast-content">This toast is dismissable.</span>
   <button class="Toast-dismissButton">
-    <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    <svg class="octicon octicon-x" style="fill:currentcolor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
   </button>
 </div>
 ```

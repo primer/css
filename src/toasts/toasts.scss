@@ -22,7 +22,6 @@
   width: $spacer-3 * 3;
   flex-shrink: 0;
   color: $text-white;
-  fill: $text-white;
   background-color: $blue-500;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
@@ -40,12 +39,12 @@
 
   &:focus,
   &:hover {
-    fill: $text-gray;
+    color: $text-gray;
     outline: none;
   }
 
   &:active {
-    fill: $gray-400;
+    color: $gray-400;
   }
 }
 
