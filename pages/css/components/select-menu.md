@@ -1,6 +1,5 @@
 ---
 title: Select Menu
-path: components/select-menu
 status: New Release
 source: 'https://github.com/primer/css/tree/master/src/select-menu'
 bundle: select-menu
