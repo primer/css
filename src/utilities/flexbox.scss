@@ -50,8 +50,8 @@
       flex-basis: 0;
     }
 
-    .flex#{$variant}-order-none { order: inherit !important; }
     .flex#{$variant}-order-1 { order: 1 !important; }
     .flex#{$variant}-order-2 { order: 2 !important; }
+    .flex#{$variant}-order-none { order: inherit !important; }
   }
 }
