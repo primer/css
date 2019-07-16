@@ -481,8 +481,8 @@ Use this class to specify the ability of a flex item to alter its dimensions to 
 | Class | Description |
 | --- | --- |
 | `.flex-auto` | Sets default values for  `flex-grow` (1), `flex-shrink` (1) and `flex-basis` (auto)  |
-| `.flex-grow-0` | Reset `flex-grow` to 0  |
-| `.flex-shrink-0` | Reset `flex-shrink` to 0  |
+| `.flex-grow-0` | Prevents growing of a flex item  |
+| `.flex-shrink-0` | Prevents shrinking of a flex item  |
 
 #### flex-auto
 
@@ -507,7 +507,7 @@ Use this class to specify the ability of a flex item to alter its dimensions to 
 #### flex-shrink-0
 
 ```html
-<div class="border d-flex">
+<div class="border d-flex" style="width: 450px">
   <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
   <div class="p-5 border bg-gray-light flex-auto flex-shrink-0">.flex-auto .flex-shrink-0</div>
   <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
