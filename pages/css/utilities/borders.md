@@ -7,6 +7,11 @@ source: 'https://github.com/primer/css/tree/master/src/utilities/borders.scss'
 bundle: utilities
 ---
 
+import {MarkdownHeading} from '@primer/blueprints'
+import {palettes, borders} from '../../../docs/color-variables'
+import {PaletteTable, PaletteCell, PaletteValue} from '../../../docs/color-system'
+
+
 Utilities for borders, border radius, and box shadows.
 
 ## Table of Contents
@@ -216,3 +221,14 @@ You can adjust border widths on all sides or each side individually with respons
   <span class="d-none d-lg-inline">.border-md-top-0 </span>
 </div>
 ```
+
+## Border color utilities
+<PaletteTable
+  values={borders}
+  prefix="bg"
+  columns={[
+    {title: 'Class', Cell: PaletteCell.Border, Value: props => `.${props.aliases.border}`},
+    'variable',
+    'value'
+  ]}
+  borderSpacing="0 4px" />
