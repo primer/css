@@ -22,7 +22,7 @@ Use a `<details>` element to toggle the Select Menu. The `<summary>` element can
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">Item 1</button>
@@ -54,7 +54,7 @@ In case the Select Menu should be aligned to the right, use `SelectMenu right-0`
       <div class="SelectMenu-modal">
         <header class="SelectMenu-header">
           <h3 class="SelectMenu-title">Title</h3>
-          <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+          <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
         </header>
         <menu class="SelectMenu-list">
           <button class="SelectMenu-item" role="menuitem">Item 1</button>
@@ -84,19 +84,19 @@ Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-chec
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitemcheckbox" aria-checked="true">
-          <svg height="16" class="SelectMenu-icon octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          <svg class="SelectMenu-icon octicon octicon-check" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
           Selected state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox">
-          <svg height="16" class="SelectMenu-icon octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          <svg class="SelectMenu-icon octicon octicon-check" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
           Default state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox" aria-checked="true">
-          <svg height="16" class="SelectMenu-icon octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          <svg class="SelectMenu-icon octicon octicon-check" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
           Selected state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox">Default state</button>
@@ -123,7 +123,7 @@ The list of items is arguably the most important subcomponent within the menu. B
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">
@@ -134,7 +134,7 @@ The list of items is arguably the most important subcomponent within the menu. B
           With an avatar
         </button>
         <button class="SelectMenu-item" role="menuitem">
-          With a status icon <svg class="octicon octicon-primitive-dot color-green-5 ml-2" viewBox="0 0 8 16" version="1.1" width="8" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg>
+          With a status icon <svg class="octicon octicon-primitive-dot color-green-5 ml-2" style="fill:currentColor" viewBox="0 0 8 16" version="1.1" width="8" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg>
         </button>
         <button class="SelectMenu-item" role="menuitem">
           With a <span class="Label bg-blue" title="Label: label">label</span>
@@ -168,7 +168,7 @@ The Select Menu's list can be divided into multiple parts by adding a `.SelectMe
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">Item 1</button>
@@ -201,7 +201,7 @@ Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for ad
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <form class="SelectMenu-filter">
         <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
@@ -255,7 +255,7 @@ Sometimes you need two or more lists of items in your Select Menu, e.g. branches
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <form class="SelectMenu-filter">
         <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
@@ -298,7 +298,7 @@ A `SelectMenu-message` can be used to show different kind of messages to a user.
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">Item 1</button>
@@ -327,7 +327,7 @@ When fetching large lists, consider showing a `.SelectMenu-loading` animation.
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <form class="SelectMenu-filter">
         <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
@@ -359,7 +359,7 @@ Sometimes a Select Menu needs to communicate a "blank slate" where there's no co
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
       </header>
       <menu class="SelectMenu-list">
         <div class="SelectMenu-blankslate">
