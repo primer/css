@@ -25,6 +25,19 @@ Install the Primer CSS npm package modules by running `npm install @primer/css`.
 npm install @primer/css --save
 ```
 
+### Paths
+Here's what you need to know about how the files are structured in both git and in the published npm module:
+
+* In git, all of the SCSS source files live in the `src/` directory.
+* When published, all of the files in `src/` are "hoisted" to the package root so that you can import, say, utilities with:
+
+    ```scss
+    @import "@primer/css/utilities/index.scss";
+    ```
+
+* All bundle interdependencies within Primer CSS are defined as relative imports (e.g. with `../`), so everything should work fine as long as the `@primer/css` directory is in one of your Sass include paths (i.e. `node_modules`).
+
+
 ### For a Jekyll site
 
 Make sure you have [Jekyll](https://jekyllrb.com/) version `3.3.1` or greater with:

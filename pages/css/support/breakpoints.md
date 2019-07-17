@@ -6,7 +6,7 @@ source: 'https://github.com/primer/css/blob/master/src/support/variables/layout.
 bundle: support
 ---
 
-{:toc}
+## Table of Contents
 
 Our breakpoints are based on screen widths where our content starts to break. Since most of GitHub is currently a fixed-width with we use pixel widths to make it easy for us to match page widths for responsive and non-responsive pages. **Our breakpoints may change as we move more of the product into responsive layouts.**
 

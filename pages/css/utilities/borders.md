@@ -9,7 +9,7 @@ bundle: utilities
 
 Utilities for borders, border radius, and box shadows.
 
-{:toc}
+## Table of Contents
 
 ## Default border
 

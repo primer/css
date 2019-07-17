@@ -11,7 +11,7 @@ We keep a list of suggested packages in our [atom-packages repository](https://g
 apm install $(curl -L https://raw.githubusercontent.com/primer/atom-packages/master/packages)
 ```
 
-{:toc}
+## Table of Contents
 
 ## Autocomplete Primer
 

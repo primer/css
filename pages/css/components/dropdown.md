@@ -8,7 +8,7 @@ symbols: [active, anim-scale-in, btn-link, dropdown, dropdown-caret, dropdown-di
 
 Dropdowns are lightweight, JavaScript-powered context menus for housing navigation and actions. They're great for instances where you don't need the full power (and code) of the select menu.
 
-{:toc}
+## Table of Contents
 
 ## Basic examples
 

@@ -60,6 +60,7 @@
 
 .btn         { @include btn-solid($text-gray-dark, $gray-000, darken($gray-100, 2%)); }
 .btn-primary { @include btn-solid($text-white, $green-400, $green-500); }
+@warn ".btn-purple will be removed in 13.0.0. Please don't make buttons purple.";
 .btn-purple  { @include btn-solid($text-white, lighten($purple-500, 5%), darken($purple-500, 5%)); }
 .btn-blue    { @include btn-solid($text-white, lighten($blue-500, 8%), darken($blue-500, 2%)); }
 .btn-danger  { @include btn-inverse($red-600, $gray-000, darken($gray-100, 2%)); }

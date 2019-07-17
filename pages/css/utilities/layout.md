@@ -8,7 +8,7 @@ bundle: utilities
 
 Change the document layout with display, float, alignment, and other utilities.
 
-{:toc}
+## Table of Contents
 
 ## Display
 Adjust the display of an element with `.d-block`, `.d-none`, `.d-inline`, `.d-inline-block`, `.d-table`, `.d-table-cell` utilities.

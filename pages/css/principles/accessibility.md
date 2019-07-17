@@ -5,7 +5,7 @@ path: principles/accessibility
 
 Accessibility is everyone’s responsibility, and the purpose of this document is to provide general accessibility guidelines to developers and designers.
 
-{:toc}
+## Table of Contents
 
 ## Overview
 

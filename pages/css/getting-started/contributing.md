@@ -53,7 +53,7 @@ It's usually better to open an issue before investing time in spiking out a new 
 
 ### Step 2: Design and build the new styles
 
-* You may want to explore the visual design for a new component before spiking it out in code. If so, continue in the issue and post your design mockups. Using the [Jekyll prototyping tool](https://github.com/github/design/blob/master/docs/resources/prototyping.md#jekyll) could also be a good option, it pulls in the production CSS so you can explore options in isolation before jumping into production code.
+* You may want to explore the visual design for a new component before spiking it out in code. If so, continue in the issue and post your design mockups. Using our [CodePen template](https://codepen.io/team/GitHub/pen/xYLdZd) could also be a good option, it pulls in Primer CSS so you can explore options in isolation before jumping into production code.
 * When you're ready, spike out a branch and build out your new component, object, or utilities according to the style guide principles, ensuring you follow our naming convention for each of the styles.
 * Refactor parts of the product where you think those new styles could be used to test they work for each use case. This does not mean for every instance, but enough of the key use cases to be sure the styles are flexible enough. To avoid blowing out your initial pull request we recommend you do larger amounts of refactoring in an additional branch.
 * When you're ready for review, add the `status: review needed` and the `design-systems` labels to your pull request. Follow the [ship checklist](#ship-checklist) for additional shipping steps.
@@ -90,12 +90,11 @@ status: Stable
 source: 'https://github.com/primer/css/tree/master/src/alerts'
 bundle: alerts
 ---
-
 ```
 
-### Anatomy of a guide
+### Documentation Anatomy
 
-The anatomy of a style guide markdown file pretty straight forward, but has a few optional properties for making the page render special features.
+The anatomy of a Primer CSS markdown file is pretty straight forward, but has a few optional properties for making the page render special features.
 
 Typically the file will look something like this:
 
@@ -179,83 +178,6 @@ When using code blocks for demo purposes, you can choose to render each of the b
   <div class="p-5">Animation</div>
   ```
 ```
-
-## Primer CSS modules
-
-Modules are created for all the styles we include in the Primer framework. Modules are folders with a specific structure that include CSS, a `package.json`, and other files for publishing to repositories in our GitHub Primer organization and NPM.
-
-The source of truth for our CSS will be in the github/github codebase, but we publish updates to NPM whenever styles in github/github are changed. By publishing to NPM we are able to distribute our reusable modules to other GitHub properties.
-
-Modules are grouped into three packages:
-- **primer-core:** modules that are used for dotcom as well as marketing websites
-- **primer-product:** modules that are only used on dotcom
-- **primer-marketing:** modules that are only used on marketing websites and occasionally for promotional content on dotcom
-
-You can add module packages by including any or all of the following imports in your bundle:
-```
-@import "primer-core/index.scss"
-@import "primer-product/index.scss"
-@import "primer-marketing/index.scss"
-```
-
-### Creating a module
-
-1. Create a new repository on https://github.com/primer that will be the location for your module. Only the design systems team have write access to that repository. If you don't have access, ask in #design-systems and someone will create a folder for you.
-2. Create a new folder inside one of the primer directories (core, product, or marketing), and within the appropriate styles folder (components, objects, utilities etc.). This folder cannot be inside another module with a `package.json` file.
-3. Inside the folder you'll need at least a `package.json` file. Here is an example of what you'll need in the package file. The main thing it's looking for are `name, version, and repository`. The publish script uses this to push to the distribution repository.
-
-    ```js
-    {
-      "name": "module-name",
-      "version": "0.1.0",
-      "description": "",
-      "homepage": "https://github.com/styleguide",
-      "license": "MIT",
-      "repository": "https://github.com/primer/primer.git",
-      "main": "utilities.scss",
-      "bugs": {
-        "url": "https://github.com/primer/primer/issues"
-      },
-      "author": "GitHub, Inc.",
-      "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-      },
-      "keywords": [
-        "primer",
-        "css",
-        "github",
-        "primercss"
-      ]
-    }
-    ```
-
-5. The directory layout should typically be like this:
-
-    ```
-    a-module/
-      ├── lib/
-      │   ├── partial.scss
-      │   └── partial.scss
-      ├── index.scss
-      ├── README.md
-      └── package.json
-    ```
-
-    Create a stylesheet named `index.scss`. In this file include a list of relative imports for the partials required, like the example below:
-
-    ```scss
-    @import "primer-support/index.scss";
-    @import "./lib/button.scss";
-    @import "./lib/button-group.scss";
-    ```
-
-    Add a `README` to give some info on the module and how to install it, and a documentation section. Here's an example of the [buttons README](https://github.com/primer/primer/blob/master/README.md).
-
-### Publishing changes and new modules
-
-Once you have your directory setup, you will be ready to publish the module.
-
-To publish, there are two requirements. First, you must be on the `master` branch. Second, all changes should be committed and synced with the remote `master`. These requirements protect us from changes being overwritten. Once you're on `master` run `script/css-modules --help` to get a list of all the available commands. This script will help with versioning and publishing.
 
 #### Versioning
 
