@@ -123,7 +123,7 @@ Include a link to allow users to take actions within a Toast.
 
 ## Toast animation
 
-The toast will animate in and out from the bottom left of the viewport.
+The `Toast--animateIn` and `Toast--animateOut` modifier classes can be used to animate the toast in and out from the bottom.
 
 ```html title="Toast animating"
 <div class="p-1">
