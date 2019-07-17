@@ -1,110 +1,89 @@
 // Toast
 
-// just for the documentation, remove before shipping
-.Toast-wrapper {
-  padding: 30px;
-}
-
 .Toast {
   display: flex;
-  background-color: white;
+  margin: $spacer-2;
   color: $black;
-  padding: $spacer-3;
+  background-color: $bg-white;
   border-radius: $border-radius;
   box-shadow: inset 0 0 0 1px $border-gray-dark, $box-shadow-medium;
-  margin: $spacer-2;
-  transition: 0.2s ease;
 
   @include breakpoint(sm) {
-    max-width: 450px;
     width: max-content;
+    max-width: 450px;
     margin: $spacer-3;
   }
 }
 
-.Toast-octicon {
-  margin-right: $spacer-2;
+.Toast-icon {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: $spacer-3 * 3;
+  flex-shrink: 0;
+  color: $text-white;
+  background-color: $blue-500;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
 }
 
-
-// Temporarily splitting this out
-// to play with static styles.
-.Toast-animated {
-  position: fixed;
-  bottom: -100px;
-  left: 0;
-  animation-name: toast;
-  animation-duration: 6s;
-  animation-delay: 1s;
-  animation-iteration-count: 1;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+.Toast-content {
+  padding: $spacer-3;
 }
 
-// Pop up animation
-@keyframes toast {
-  0%   {bottom:-100px;}
-  10%  {bottom:0px;}
-  90%  {bottom:0px;}
-  100% {bottom:-100px;}
-}
+.Toast-dismissButton {
+  max-height: 54px; // keeps button aligned to the top
+  padding: $spacer-3;
+  background-color: transparent;
+  border: 0;
 
-.Toast-block-default,
-.Toast-block-error,
-.Toast-block-warning,
-.Toast-block-success {
-  padding: 0;
-
-  .Toast-octicon {
-    color: white;
-    padding: $spacer-3;
-    margin-right: 0;
-    fill: white;
-    border-top-left-radius: inherit;
-    border-bottom-left-radius: inherit;
+  &:focus,
+  &:hover {
+    color: $text-gray;
+    outline: none;
   }
 
-  .Toast-content {
-    padding: $spacer-3;
-  }
-
-  .Toast-dismiss {
-    padding: $spacer-3;
-    align-self: center;
-
-    &:hover {
-      cursor: pointer;
-      fill: $text-gray;
-    }
+  &:active {
+    color: $gray-400;
   }
 }
 
-.Toast-block-default {
+// Modifier
 
-  .Toast-octicon {
-    background-color: $blue-500;
+.Toast--error .Toast-icon {
+  background-color: $red-500;
+}
+
+.Toast--warning .Toast-icon {
+  color: $gray-900;
+  background-color: $yellow-600;
+}
+
+.Toast--success .Toast-icon {
+  background-color: $green-500;
+}
+
+// Animations
+
+.Toast--animateIn {
+  animation: Toast--animateIn 0.18s cubic-bezier(0.22, 0.61, 0.36, 1) backwards;
+}
+
+@keyframes Toast--animateIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
   }
 }
 
-.Toast-block-error {
-
-  .Toast-octicon {
-    background-color: $red-500;
-  }
+.Toast--animateOut {
+  animation: Toast--animateOut 0.18s cubic-bezier(0.55, 0.06, 0.68, 0.19) forwards;
 }
 
-.Toast-block-warning {
-
-  .Toast-octicon {
-    background-color: $yellow-600;
-    fill: $gray-900;
-  }
-}
-
-.Toast-block-success {
-
-  .Toast-octicon {
-    background-color: $green-500;
+@keyframes Toast--animateOut {
+  100% {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(100%);
   }
 }
