@@ -59,7 +59,7 @@ export function PaletteTableFragment(props) {
 }
 
 PaletteTable.defaultProps = {
-  columns: ['alias', 'className', 'variable', 'value'],
+  columns: ['alias', 'variable', 'value'],
   hasHeader: true
 }
 
@@ -127,6 +127,7 @@ PaletteCell.Smart = ({type, ...rest}) => {
       return <PaletteCell.Background {...rest} />
   }
 }
+
 PaletteCell.Smart.propTypes = {
   type: PropTypes.string.isRequired
 }
@@ -153,6 +154,7 @@ PaletteValue.PrefixedClass = ({prefix, slug}) => (
     .{prefix}-{slug}
   </Var>
 )
+
 PaletteValue.PrefixedClass.propTypes = {
   prefix: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired

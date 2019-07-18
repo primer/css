@@ -11,7 +11,7 @@ import {palettes, allColors} from '../../../docs/color-variables'
 import {PaletteTable, PaletteTableFragment, PaletteHeading, PaletteCell, PaletteValue} from '../../../docs/color-system'
 const textColumns = [
   {title: 'Alias', Cell: props => <PaletteCell.Alias {...props} style={{borderBottom: `1px solid ${props.value} !important`}} />},
-  {title: 'Class', Cell: props => <PaletteCell.Text {...props} style={{borderBottom: props.aliases.text ? `1px solid ${props.value} !important` : null}} />, Value: PaletteValue.PrefixedClass},
+  // {title: 'Class', Cell: props => <PaletteCell.Text {...props} style={{borderBottom: props.aliases.text ? `1px solid ${props.value} !important` : null}} />, Value: PaletteValue.PrefixedClass},
   'variable',
   {title: 'Value', Cell: PaletteCell.Background,  Value: PaletteValue.Value},
 ]
