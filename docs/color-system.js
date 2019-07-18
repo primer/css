@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import chroma from 'chroma-js'
 import styled from 'styled-components'
 import {Box, StyledOcticon, Text} from '@primer/components'
-import {Zap} from '@githubprimer/octicons-react'
 import {colors, getPaletteByName} from './color-variables'
 import Table from './Table'
 
@@ -105,12 +104,12 @@ PaletteCell.propTypes = {
 PaletteCell.Alias = ({aliases, type, ...rest}) =>
   aliases && aliases[type] ? (
     <PaletteCell.Smart type={type} {...rest}>
-      <StyledOcticon icon={Zap} mr={2} />
       <Var>.{aliases[type]}</Var>
     </PaletteCell.Smart>
   ) : (
     <td />
   )
+
 PaletteCell.Alias.propTypes = {
   aliases: PropTypes.object.isRequired,
   type: PropTypes.string.isRequired
