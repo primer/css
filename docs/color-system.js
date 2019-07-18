@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import chroma from 'chroma-js'
 import styled from 'styled-components'
-import {Box, StyledOcticon, Text} from '@primer/components'
+import {Box, Text} from '@primer/components'
 import {colors, getPaletteByName} from './color-variables'
 import Table from './Table'
 
