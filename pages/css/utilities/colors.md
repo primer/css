@@ -29,7 +29,7 @@ Background colors are most commonly used for filling large blocks of content or 
 
 <PaletteTable>
   {palettes.map(({name, title, value}) => (
-    <PaletteTableFragment name={name} type="bg" key={name}>
+    <PaletteTableFragment name={name} type="bg" sparse key={name}>
       <tr>
         <PaletteHeading indicatorColor={value} colSpan="4">
           {title}
@@ -133,7 +133,7 @@ You can set the color inheritance on an element by using the `text-inherit` clas
 
 <PaletteTable columns={textColumns}>
   {palettes.map(({name, title, value}) => (
-    <PaletteTableFragment name={name} type="text" prefix="color" columns={textColumns}>
+    <PaletteTableFragment name={name} type="text" sparse prefix="color" columns={textColumns}>
       <tr>
         <PaletteHeading indicatorColor={value} colSpan="4">
           {title}
