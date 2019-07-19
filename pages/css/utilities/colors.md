@@ -18,7 +18,7 @@ const textColumns = [
 
 Use color utilities to apply color to the background of elements, text, and borders.
 
-# Table of contents
+## Table of Contents
 
 
 ## Background colors
