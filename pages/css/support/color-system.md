@@ -42,7 +42,7 @@ import {PaletteTable, PaletteCell, overlayColor} from '../../../docs/color-syste
         <StyledOcticon icon={LinkIcon} color="inherit !important" height={20} />
       </Flex>
       <PaletteTable
-        columns={['variable', 'value' /*, 'className' */]}
+        columns={['variable', 'value']}
         values={[{variable: name, value, slug: name}].concat(values)}
         hasHeader={false}
         cellPadding="8px 16px" />

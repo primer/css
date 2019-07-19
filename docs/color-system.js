@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import chroma from 'chroma-js'
 import styled from 'styled-components'
-import {Box, StyledOcticon, Text} from '@primer/components'
-import {Zap} from '@githubprimer/octicons-react'
+import {Box, Text} from '@primer/components'
 import {colors, getPaletteByName} from './color-variables'
 import Table from './Table'
 
@@ -60,7 +59,7 @@ export function PaletteTableFragment(props) {
 }
 
 PaletteTable.defaultProps = {
-  columns: ['alias', 'className', 'variable', 'value'],
+  columns: ['alias', 'variable', 'value'],
   hasHeader: true
 }
 
@@ -105,12 +104,12 @@ PaletteCell.propTypes = {
 PaletteCell.Alias = ({aliases, type, ...rest}) =>
   aliases && aliases[type] ? (
     <PaletteCell.Smart type={type} {...rest}>
-      <StyledOcticon icon={Zap} mr={2} />
       <Var>.{aliases[type]}</Var>
     </PaletteCell.Smart>
   ) : (
     <td />
   )
+
 PaletteCell.Alias.propTypes = {
   aliases: PropTypes.object.isRequired,
   type: PropTypes.string.isRequired
@@ -128,6 +127,7 @@ PaletteCell.Smart = ({type, ...rest}) => {
       return <PaletteCell.Background {...rest} />
   }
 }
+
 PaletteCell.Smart.propTypes = {
   type: PropTypes.string.isRequired
 }
@@ -154,6 +154,7 @@ PaletteValue.PrefixedClass = ({prefix, slug}) => (
     .{prefix}-{slug}
   </Var>
 )
+
 PaletteValue.PrefixedClass.propTypes = {
   prefix: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired
@@ -200,7 +201,7 @@ export const Var = styled(Text).attrs({
 `
 
 export const PaletteHeading = ({indicatorColor, children, ...rest}) => (
-  <Text as="th" fontWeight="bold" {...rest} style={{borderBottom: `2px solid ${colors.black} !important`}}>
+  <Text as="th" fontWeight="bold" {...rest}>
     <Box pt={3}>{children}</Box>
   </Text>
 )

@@ -11,14 +11,14 @@ import {palettes, allColors} from '../../../docs/color-variables'
 import {PaletteTable, PaletteTableFragment, PaletteHeading, PaletteCell, PaletteValue} from '../../../docs/color-system'
 const textColumns = [
   {title: 'Alias', Cell: props => <PaletteCell.Alias {...props} style={{borderBottom: `1px solid ${props.value} !important`}} />},
-  {title: 'Class', Cell: props => <PaletteCell.Text {...props} style={{borderBottom: props.aliases.text ? `1px solid ${props.value} !important` : null}} />, Value: PaletteValue.PrefixedClass},
+  // {title: 'Class', Cell: props => <PaletteCell.Text {...props} style={{borderBottom: props.aliases.text ? `1px solid ${props.value} !important` : null}} />, Value: PaletteValue.PrefixedClass},
   'variable',
   {title: 'Value', Cell: PaletteCell.Background,  Value: PaletteValue.Value},
 ]
 
 Use color utilities to apply color to the background of elements, text, and borders.
 
-# Table of contents
+## Table of Contents
 
 
 ## Background colors
@@ -29,7 +29,7 @@ Background colors are most commonly used for filling large blocks of content or 
 
 <PaletteTable>
   {palettes.map(({name, title, value}) => (
-    <PaletteTableFragment name={name} type="bg" key={name}>
+    <PaletteTableFragment name={name} type="bg" sparse key={name}>
       <tr>
         <PaletteHeading indicatorColor={value} colSpan="4">
           {title}
@@ -133,7 +133,7 @@ You can set the color inheritance on an element by using the `text-inherit` clas
 
 <PaletteTable columns={textColumns}>
   {palettes.map(({name, title, value}) => (
-    <PaletteTableFragment name={name} type="text" prefix="color" columns={textColumns}>
+    <PaletteTableFragment name={name} type="text" sparse prefix="color" columns={textColumns}>
       <tr>
         <PaletteHeading indicatorColor={value} colSpan="4">
           {title}
