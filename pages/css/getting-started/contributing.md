@@ -76,7 +76,7 @@ Let the [design systems team](https://github.com/github/design-systems) know if 
 
 - Documentation for Primer CSS modules should live in the corresponding `.md` file for that module in the `/pages/css` folder. 
 
--There are separate folders in `/pages/css` for component, object, support, and utilities docs, as well as separate folders for more general documentation such as principles and tooling.
+- There are separate folders in `/pages/css` for component, object, support, and utilities docs, as well as separate folders for more general documentation such as principles and tooling.
 
 - Each folder corresponds to a new url such as `primer.style/css/utilities`.
 
