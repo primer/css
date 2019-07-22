@@ -24,4 +24,8 @@
   &.expandable:hover.css-truncate-target {
     max-width: 10000px !important;
   }
+
+  &.truncate-left {
+    direction: rtl;
+  }
 }
