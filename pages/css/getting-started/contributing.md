@@ -173,11 +173,11 @@ In pages published on [primer.style/css](https://primer.style/css), a table of c
 
 When using code blocks for demo purposes, you can choose to render each of the blocks differently by specifying the layout in the info string. For example if you want to use `toggle` as the layout for a code block:
 
-```markdown
-  ```html layout=toggle
-  <div class="p-5">Animation</div>
-  ```
+````markdown
+```html layout=toggle
+<div class="p-5">Animation</div>
 ```
+````
 
 #### Versioning
 
