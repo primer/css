@@ -411,7 +411,7 @@ If loading content should be deferred, use the [`<include-fragment>`](https://gi
 <details-menu class="SelectMenu" src="/my-menu" preload>
   <div class="SelectMenu-modal">
     <include-fragment class="SelectMenu-loading" aria-label="Menu is loading">
-      <%= octicon('octoface', class: "anim-pulse", :height => 32) %>
+      <%= octicon("octoface", class: "anim-pulse", :height => 32) %>
     </include-fragment>
   </div>
 </details-menu>
