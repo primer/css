@@ -99,8 +99,8 @@ Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-chec
           <svg class="SelectMenu-icon octicon octicon-check" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
           Selected state
         </button>
-        <button class="SelectMenu-item" role="menuitemcheckbox">Default state</button>
-        <button class="SelectMenu-item" role="menuitemcheckbox">Default state</button>
+        <button class="SelectMenu-item pl-6" role="menuitemcheckbox">Default state</button>
+        <button class="SelectMenu-item pl-6" role="menuitemcheckbox">Default state</button>
       </menu>
     </div>
   </div>
