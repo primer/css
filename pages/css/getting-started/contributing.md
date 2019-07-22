@@ -117,8 +117,8 @@ Typically the file will look something like this:
 Which consists of three parts:
 
 1. **YML frontmatter** _(optional)_, similar to jekyll’s frontmatter, this is used to generate the sidebar and title components.
-2. **Docs section** _(required)_, This is the section between the YML and the first `````html`
-3. **The example section** _(optional)_, This section is denoted by ````html` and will render into an example used in the page. This can contain rails helpers also eg. `<%= octicons 'fire' %>`
+2. **Docs section** _(required)_, This is the section between the YML and the first `​```html`
+3. **The example section** _(optional)_, This section is denoted by `​```html` and will render into an example used in the page. This can contain rails helpers also eg. `<%= octicons 'fire' %>`
 
 The options you have for the frontmatter are outlined below:
 
