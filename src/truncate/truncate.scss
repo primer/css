@@ -25,7 +25,8 @@
     max-width: 10000px !important;
   }
 
-  &.truncate-left {
+  &.truncate-left .css-truncate-target,
+  &.truncate-left.css-truncate-target {
     direction: rtl;
   }
 }
