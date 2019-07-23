@@ -13,7 +13,7 @@ The `SelectMenu` component provides advanced support for navigation, filtering, 
 
 Use a `<details>` element to toggle the Select Menu. The `<summary>` element can be styled in many ways. In the example below it's a `.btn`.
 
-```html
+```erb
 <details class="details-reset details-overlay" open>
   <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
     Choose an item
@@ -22,7 +22,9 @@ Use a `<details>` element to toggle the Select Menu. The `<summary>` element can
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button">
+          <%= octicon "x", height: 16 %>
+        </button>
       </header>
       <menu class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">Item 1</button>
@@ -43,7 +45,7 @@ Add a `.SelectMenu-header` to house a clear title and a close button. Note that 
 
 In case the Select Menu should be aligned to the right, use `SelectMenu right-0`.
 
-```html
+```erb
 <div class="d-flex flex-justify-end">
 
   <details class="details-reset details-overlay" open>
@@ -54,7 +56,9 @@ In case the Select Menu should be aligned to the right, use `SelectMenu right-0`
       <div class="SelectMenu-modal">
         <header class="SelectMenu-header">
           <h3 class="SelectMenu-title">Title</h3>
-          <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+          <button class="SelectMenu-closeButton" type="button">
+            <%= octicon "x", height: 16 %>
+          </button>
         </header>
         <menu class="SelectMenu-list">
           <button class="SelectMenu-item" role="menuitem">Item 1</button>
@@ -75,7 +79,7 @@ In case the Select Menu should be aligned to the right, use `SelectMenu right-0`
 
 Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-checked="true"` is set.
 
-```html
+```erb
 <details class="details-reset details-overlay" open>
   <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
     Choose an item
@@ -84,7 +88,9 @@ Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-chec
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button">
+          <%= octicon "x", height: 16 %>
+        </button>
       </header>
       <menu class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitemcheckbox" aria-checked="true">
@@ -114,7 +120,7 @@ Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-chec
 
 The list of items is arguably the most important subcomponent within the menu. Build them out of anchors, buttons, or just about any [interactive content](http://w3c.github.io/html/dom.html#interactive-content). List items are also customizable with options for avatars, additional icons, and multiple lines of text. Use utility classes like `mr-2`, `d-flex` or `float-right` in case more custom styling is needed.
 
-```html
+```erb
 <details class="details-reset details-overlay" open>
   <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
     Choose an item
@@ -123,7 +129,9 @@ The list of items is arguably the most important subcomponent within the menu. B
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button">
+          <%= octicon "x", height: 16 %>
+        </button>
       </header>
       <menu class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">
@@ -159,7 +167,7 @@ The list of items is arguably the most important subcomponent within the menu. B
 
 The Select Menu's list can be divided into multiple parts by adding a `.SelectMenu-divider`.
 
-```html
+```erb
 <details class="details-reset details-overlay" open>
   <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
     Choose an item
@@ -168,7 +176,9 @@ The Select Menu's list can be divided into multiple parts by adding a `.SelectMe
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button">
+          <%= octicon "x", height: 16 %>
+        </button>
       </header>
       <menu class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">Item 1</button>
@@ -192,7 +202,7 @@ If the list is expected to get long, consider adding a `.SelectMenu-filter` inpu
 
 Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for additional information, but can also greatly improve the scrolling performance because the list doesn't need to be repainted due to the rounded corners.
 
-```html
+```erb
 <details class="details-reset details-overlay" open>
   <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
     Choose an item
@@ -201,7 +211,9 @@ Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for ad
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button">
+          <%= octicon "x", height: 16 %>
+        </button>
       </header>
       <form class="SelectMenu-filter">
         <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
@@ -246,7 +258,7 @@ Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for ad
 
 Sometimes you need two or more lists of items in your Select Menu, e.g. branches and tags. Select Menu lists can be tabbed with the addition of `.SelectMenu-tabs` above the menu.
 
-```html
+```erb
 <details class="details-reset details-overlay" open>
   <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
     Choose an item
@@ -255,7 +267,9 @@ Sometimes you need two or more lists of items in your Select Menu, e.g. branches
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button">
+          <%= octicon "x", height: 16 %>
+        </button>
       </header>
       <form class="SelectMenu-filter">
         <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
@@ -289,7 +303,7 @@ Sometimes you need two or more lists of items in your Select Menu, e.g. branches
 
 A `SelectMenu-message` can be used to show different kind of messages to a user. Use utility classes to further style the message.
 
-```html
+```erb
 <details class="details-reset details-overlay" open>
   <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
     Choose an item
@@ -298,7 +312,9 @@ A `SelectMenu-message` can be used to show different kind of messages to a user.
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button">
+          <%= octicon "x", height: 16 %>
+        </button>
       </header>
       <menu class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">Item 1</button>
@@ -318,7 +334,7 @@ A `SelectMenu-message` can be used to show different kind of messages to a user.
 
 When fetching large lists, consider showing a `.SelectMenu-loading` animation.
 
-```html
+```erb
 <details class="details-reset details-overlay">
   <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
     Choose an item
@@ -327,7 +343,9 @@ When fetching large lists, consider showing a `.SelectMenu-loading` animation.
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button">
+          <%= octicon "x", height: 16 %>
+        </button>
       </header>
       <form class="SelectMenu-filter">
         <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
@@ -350,7 +368,7 @@ When fetching large lists, consider showing a `.SelectMenu-loading` animation.
 
 Sometimes a Select Menu needs to communicate a "blank slate" where there's no content in the menu's list. Usually these include a clear call to action to add said content to the list. Swap out the contents of a `.SelectMenu-list` with a `.SelectMenu-blankslate` and customize its contents as needed.
 
-```html
+```erb
 <details class="details-reset details-overlay" open>
   <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
     Choose an item
@@ -359,7 +377,9 @@ Sometimes a Select Menu needs to communicate a "blank slate" where there's no co
     <div class="SelectMenu-modal">
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
-        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        <button class="SelectMenu-closeButton" type="button">
+          <%= octicon "x", height: 16 %>
+        </button>
       </header>
       <menu class="SelectMenu-list">
         <div class="SelectMenu-blankslate">
@@ -392,7 +412,7 @@ When adding the `.SelectMenu` component on github.com, use the [`<details-menu>`
       <header class="SelectMenu-header">
         <span class="SelectMenu-title">My Select Menu</span>
         <button class="SelectMenu-closeButton" type="button" data-toggle-for="my-select-menu">
-          <%= octicon("x", :"aria-label" => "Close menu") %>
+          <%= octicon("x", "aria-label": "Close menu") %>
         </button>
       </header>
     </div>
