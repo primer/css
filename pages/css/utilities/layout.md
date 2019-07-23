@@ -190,6 +190,16 @@ Use `.width-full` to set width to 100%.
 </div>
 ```
 
+Use `.width-auto` to reset width to `auto` (initial value). Typically used with **responsive variants**. Resize the window to see the effect in the example below.
+
+```html
+<div class="d-table width-full width-md-auto">
+  <div class="d-table-cell">
+    <input class="form-control width-full" type="text" value="Responsive width form field" aria-label="Sample full responsive width form field">
+  </div>
+</div>
+```
+
 Use `.height-fit` to set max-height 100%.
 
 ```html

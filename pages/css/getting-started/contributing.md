@@ -76,7 +76,7 @@ Let the [design systems team](https://github.com/github/design-systems) know if 
 
 - Documentation for Primer CSS modules should live in the corresponding `.md` file for that module in the `/pages/css` folder. 
 
--There are separate folders in `/pages/css` for component, object, support, and utilities docs, as well as separate folders for more general documentation such as principles and tooling.
+- There are separate folders in `/pages/css` for component, object, support, and utilities docs, as well as separate folders for more general documentation such as principles and tooling.
 
 - Each folder corresponds to a new url such as `primer.style/css/utilities`.
 
@@ -117,8 +117,8 @@ Typically the file will look something like this:
 Which consists of three parts:
 
 1. **YML frontmatter** _(optional)_, similar to jekyll’s frontmatter, this is used to generate the sidebar and title components.
-2. **Docs section** _(required)_, This is the section between the YML and the first `````html`
-3. **The example section** _(optional)_, This section is denoted by ````html` and will render into an example used in the page. This can contain rails helpers also eg. `<%= octicons 'fire' %>`
+2. **Docs section** _(required)_, This is the section between the YML and the first `​```html`
+3. **The example section** _(optional)_, This section is denoted by `​```html` and will render into an example used in the page. This can contain rails helpers also eg. `<%= octicons 'fire' %>`
 
 The options you have for the frontmatter are outlined below:
 
@@ -173,11 +173,11 @@ In pages published on [primer.style/css](https://primer.style/css), a table of c
 
 When using code blocks for demo purposes, you can choose to render each of the blocks differently by specifying the layout in the info string. For example if you want to use `toggle` as the layout for a code block:
 
-```markdown
-  ```html layout=toggle
-  <div class="p-5">Animation</div>
-  ```
+````markdown
+```html layout=toggle
+<div class="p-5">Animation</div>
 ```
+````
 
 #### Versioning
 
