@@ -34,8 +34,8 @@
     "postpublish": "script/postpublish",
     "prepublishOnly": "script/prepublish",
     "publish-storybook": "script/publish-storybook",
-    "start": "next dev",
-    "dev": "next dev",
+    "start": "npm run dev",
+    "dev": "cd gatsby-docs && npm install && npm run develop",
     "start-storybook": "start-storybook -p 8001",
     "build-storybook": "build-storybook -o .storybuild",
     "test": "npm-run-all -s test-urls test-migrate",
@@ -92,7 +92,7 @@
     "primer-colors": "^1.0.1",
     "prism-github": "^1.1.0",
     "prop-types": "^15.6.2",
-    "raw-loader": "^0.5.1",
+    "raw-loader": "0.5.1",
     "react": "16.8.1",
     "react-bodymovin": "2.0.0",
     "react-dom": "16.8.1",
@@ -121,5 +121,10 @@
     "unist-util-stringify-position": "^2.0.0",
     "unist-util-visit": "^1.4.0",
     "webpack": "4.20.2"
+  },
+  "dependencies": {
+    "@compositor/kit": "1.0.47",
+    "html2react": "1.2.1",
+    "react-styled-frame": "1.1.0"
   }
 }

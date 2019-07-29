@@ -1,0 +1,29 @@
+- title: Getting started
+  url: /getting-started
+- title: Components
+  url: /components
+  items:
+    - title: Alerts
+      url: /components/alerts
+    - title: Avatars
+      url: /components/avatars
+    - title: Blankslate
+      url: /components/blankslate
+    - title: Box
+      url: /components/box
+    - title: Boxed groups
+      url: /components/boxed-groups
+    - title: Branch name
+      url: /components/branch-name
+    - title: Breadcrumb
+      url: /components/breadcrumb
+    - title: Buttons
+      url: /components/buttons
+    - title: Dropdown
+      url: /components/dropdown
+    - title: Flash banner
+      url: /components/flash-banner
+    - title: Forms
+      url: /components/forms
+    - title: Labels
+      url: /components/labels
