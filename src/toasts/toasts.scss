@@ -96,3 +96,13 @@
   from { transform:rotate(0deg); }
   to { transform:rotate(360deg); }
 }
+
+.Toast--spinner3 {
+  animation: Toast--spinner3 1000ms linear infinite; 
+}
+
+@keyframes Toast--spinner3 {
+  from { transform:rotate(0deg); }
+  to { transform:rotate(360deg); }
+}
+
