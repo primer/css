@@ -121,7 +121,7 @@ Include a link to allow users to take actions within a Toast.
 </div>
 ```
 
-## Toast animation
+## Toast animation in
 
 The `Toast--animateIn` and `Toast--animateOut` modifier classes can be used to animate the toast in and out from the bottom.
 
@@ -136,6 +136,30 @@ The `Toast--animateIn` and `Toast--animateOut` modifier classes can be used to a
   </div>
 </div>
 ```
+## Toast with loading animation
+The `Toast--spinner` modifier class on the Toast icon can be used to display a loading state
+
+```html title="Toast loading"
+<div class="p-1">
+  <div class="Toast Toast--warning">
+    <span class="Toast-icon">
+      <!-- <%= octicon "info" %> -->
+      <svg class="octicon Toast--spinner" width="16" height="16" viewBox="0 0 16 16" fill="#24292E">
+          <rect width="1.5" height="4" rx="0.5" transform="matrix(-1 0 0 1 8.84561 0)" />
+          <rect width="1.5" height="4" rx="0.5" transform="matrix(-1 0 0 1 8.84561 11.9966)"  />
+          <rect width="1.5" height="4" rx="0.5" transform="matrix(4.37126e-08 -1 -1 -4.37102e-08 16.0722 8.83279)"  />
+          <rect width="1.5" height="4" rx="0.5" transform="matrix(4.37126e-08 -1 -1 -4.37102e-08 4.07523 8.83279)"  />
+          <rect width="1.5" height="4" rx="0.5" transform="matrix(-0.707116 0.707097 0.707116 0.707097 2.93183 1.78406)"  />
+          <rect width="1.5" height="4" rx="0.5" transform="matrix(-0.707116 0.707097 0.707116 0.707097 11.4147 10.2667)"  />
+          <rect width="1.5" height="4" rx="0.5" transform="matrix(-0.707116 -0.707097 -0.707116 0.707097 14.2881 2.91956)"  />
+          <rect width="1.5" height="4" rx="0.5" transform="matrix(-0.707116 -0.707097 -0.707116 0.707097 5.80521 11.4026)"  />
+      </svg>
+    </span>
+    <span class="Toast-content">Toast message goes here.</span>
+  </div>
+</div>
+```
+
 
 ## Toast position
 
