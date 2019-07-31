@@ -136,79 +136,16 @@ The `Toast--animateIn` and `Toast--animateOut` modifier classes can be used to a
   </div>
 </div>
 ```
+
 ## Toast with loading animation
-Use the `Toast--spinner` modifier class on the Toast icon to communicate a loading state.
+Add the `Toast--spinner` modifier class on the `Toast-icon` `svg` to communicate a loading state.
 
 ```html title="Toast loading"
 <div class="p-1">
   <div class="Toast Toast--warning">
     <span class="Toast-icon">
       <!-- <%= octicon "info" %> -->
-      <svg class="octicon Toast--spinner" width="16" height="16" viewBox="0 0 16 16" fill="#24292E">
-          <rect width="1.5" height="4" rx="0.5" transform="matrix(-1 0 0 1 8.84561 0)" />
-          <rect width="1.5" height="4" rx="0.5" transform="matrix(-1 0 0 1 8.84561 11.9966)"  />
-          <rect width="1.5" height="4" rx="0.5" transform="matrix(4.37126e-08 -1 -1 -4.37102e-08 16.0722 8.83279)"  />
-          <rect width="1.5" height="4" rx="0.5" transform="matrix(4.37126e-08 -1 -1 -4.37102e-08 4.07523 8.83279)"  />
-          <rect width="1.5" height="4" rx="0.5" transform="matrix(-0.707116 0.707097 0.707116 0.707097 2.93183 1.78406)"  />
-          <rect width="1.5" height="4" rx="0.5" transform="matrix(-0.707116 0.707097 0.707116 0.707097 11.4147 10.2667)"  />
-          <rect width="1.5" height="4" rx="0.5" transform="matrix(-0.707116 -0.707097 -0.707116 0.707097 14.2881 2.91956)"  />
-          <rect width="1.5" height="4" rx="0.5" transform="matrix(-0.707116 -0.707097 -0.707116 0.707097 5.80521 11.4026)"  />
-      </svg>
-    </span>
-    <span class="Toast-content">Toast message goes here.</span>
-  </div>
-</div>
-```
-
-## Toast with loading animation V2
-Use the `Toast--spinner` modifier class on the Toast icon to communicate a loading state.
-
-```html title="Toast loading"
-<div class="p-1">
-  <div class="Toast Toast--warning">
-    <span class="Toast-icon">
-      <!-- <%= octicon "info" %> -->
-      <svg style="transform: scale(.5);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <path opacity=".1" d="M14 0 H18 V8 H14 z" transform="rotate(0 16 16)">
-    <animate attributeName="opacity" from="1" to=".1" dur="1s" repeatCount="indefinite" begin="0"/>
-  </path>
-  <path opacity=".1" d="M14 0 H18 V8 H14 z" transform="rotate(45 16 16)">
-    <animate attributeName="opacity" from="1" to=".1" dur="1s" repeatCount="indefinite" begin="0.125s"/>
-  </path>
-  <path opacity=".1" d="M14 0 H18 V8 H14 z" transform="rotate(90 16 16)">
-    <animate attributeName="opacity" from="1" to=".1" dur="1s" repeatCount="indefinite" begin="0.25s"/>
-  </path>
-  <path opacity=".1" d="M14 0 H18 V8 H14 z" transform="rotate(135 16 16)">
-    <animate attributeName="opacity" from="1" to=".1" dur="1s" repeatCount="indefinite" begin="0.375s"/>
-  </path>
-  <path opacity=".1" d="M14 0 H18 V8 H14 z" transform="rotate(180 16 16)">
-    <animate attributeName="opacity" from="1" to=".1" dur="1s" repeatCount="indefinite" begin="0.5s"/>
-  </path>
-  <path opacity=".1" d="M14 0 H18 V8 H14 z" transform="rotate(225 16 16)">
-    <animate attributeName="opacity" from="1" to=".1" dur="1s" repeatCount="indefinite" begin="0.625s"/>
-  </path>
-  <path opacity=".1" d="M14 0 H18 V8 H14 z" transform="rotate(270 16 16)">
-    <animate attributeName="opacity" from="1" to=".1" dur="1s" repeatCount="indefinite" begin="0.75s"/>
-  </path>
-  <path opacity=".1" d="M14 0 H18 V8 H14 z" transform="rotate(315 16 16)">
-    <animate attributeName="opacity" from="1" to=".1" dur="1s" repeatCount="indefinite" begin="0.875s"/>
-  </path>
-</svg>
-    </span>
-    <span class="Toast-content">Toast message goes here.</span>
-  </div>
-</div>
-```
-
-## Toast with loading animation V3
-Use the `Toast--spinner` modifier class on the Toast icon to communicate a loading state.
-
-```html title="Toast loading"
-<div class="p-1">
-  <div class="Toast Toast--warning">
-    <span class="Toast-icon">
-      <!-- <%= octicon "info" %> -->
-      <svg class="Toast--spinner3" viewBox="0 0 32 32" width="18" height="18" fill="#24292E">
+      <svg class="Toast--spinner" viewBox="0 0 32 32" width="18" height="18" fill="#24292E">
         <path opacity=".2" d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4"/>
         <path d="M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z"></path>
       </svg>
@@ -217,7 +154,6 @@ Use the `Toast--spinner` modifier class on the Toast icon to communicate a loadi
   </div>
 </div>
 ```
-
 
 ## Toast position
 
