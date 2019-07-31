@@ -142,9 +142,8 @@ Add the `Toast--spinner` modifier class on the `Toast-icon` `svg` to communicate
 
 ```html title="Toast loading"
 <div class="p-1">
-  <div class="Toast Toast--warning">
+  <div class="Toast Toast--loading">
     <span class="Toast-icon">
-      <!-- <%= octicon "info" %> -->
       <svg class="Toast--spinner" viewBox="0 0 32 32" width="18" height="18" fill="#24292E">
         <path opacity=".2" d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4"/>
         <path d="M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z"></path>
