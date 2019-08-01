@@ -54,15 +54,17 @@
   background-color: $red-500;
 }
 
-.Toast--warning, .Toast--loading {
-  .Toast-icon {
+.Toast--warning .Toast-icon {
     color: $gray-900;
     background-color: $yellow-600;
-  }
 }
 
 .Toast--success .Toast-icon {
   background-color: $green-500;
+}
+
+.Toast--loading .Toast-icon {
+  background-color: $gray-700;
 }
 
 // Animations
@@ -98,6 +100,3 @@
   from { transform:rotate(0deg); }
   to { transform:rotate(360deg); }
 }
-
-
-
