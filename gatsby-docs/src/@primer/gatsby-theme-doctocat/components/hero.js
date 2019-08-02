@@ -1,7 +1,7 @@
 import {Box, Heading, Text} from '@primer/components'
 import {Container} from '@primer/gatsby-theme-doctocat'
 import React from 'react'
-import {version} from '../../../package.json'
+import {version} from '../../../../../package.json'
 
 function Hero() {
   return (

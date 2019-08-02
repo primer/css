@@ -2,7 +2,7 @@
   url: /getting-started
 - title: Components
   url: /components
-  items:
+  children:
     - title: Alerts
       url: /components/alerts
     - title: Avatars

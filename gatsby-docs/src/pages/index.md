@@ -2,23 +2,8 @@
 title: Primer CSS
 ---
 
-import {Header, Sidebar, Container, Head} from '@primer/gatsby-theme-doctocat'
-import Hero from '../components/hero'
-import {Box, Flex} from '@primer/components'
-
-export default ({children}) => (
-  <Flex flexDirection="column" minHeight="100vh">
-    <Head title="Primer CSS" />
-    <Header />
-    <Flex flex="1 1 auto" flexDirection={['column', 'column', 'row']}>
-      <Sidebar />
-      <Box width="100%">
-        <Hero />
-        <Container>{children}</Container>
-      </Box>
-    </Flex>
-  </Flex>
-)
+import {HeroLayout} from '@primer/gatsby-theme-doctocat'
+export default HeroLayout
 
 # Introduction
 

@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
     "now-build": "npm run build"
   },
   "dependencies": {
     "@primer/components": "^13.2.0",
     "@primer/css": "^12.4.1",
-    "@primer/gatsby-theme-doctocat": "0.0.0-b1e53bd",
+    "@primer/gatsby-theme-doctocat": "0.0.0-9a37f51",
     "@primer/octicons-react": "^9.1.1",
     "css-loader": "^3.1.0",
     "gatsby": "^2.10.4",
