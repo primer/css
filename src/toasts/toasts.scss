@@ -55,8 +55,8 @@
 }
 
 .Toast--warning .Toast-icon {
-    color: $gray-900;
-    background-color: $yellow-600;
+  color: $gray-900;
+  background-color: $yellow-600;
 }
 
 .Toast--success .Toast-icon {
@@ -93,7 +93,7 @@
 }
 
 .Toast--spinner {
-  animation: Toast--spinner 1000ms linear infinite; 
+  animation: Toast--spinner 1000ms linear infinite;
 }
 
 @keyframes Toast--spinner {
