@@ -118,7 +118,7 @@ Make inputs smaller, larger, or full-width with an additional class.
 
 ```html
 <div class="bg-gray-dark p-4 mt-n4 ml-n4 mr-n4">
-  <input class="form-control input-dark" type="text" placeholder="Dark input" aria-label="Dark input">
+  <input class="form-control input-dark" type="text" placeholder="Dark input" aria-label="Dark input"> 
   <input class="form-control input-dark input-sm" type="text" placeholder="Dark input small" aria-label="Dark input">
 </div>
 ``` 
