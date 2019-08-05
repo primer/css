@@ -1,837 +1,420 @@
 ---
-title: Select menu
-path: components/select-menu
-status: Stable
-source: 'https://github.com/github/github/blob/master/docs/styleguide/css/styles/product/components/select-menu.md'
-symbols: [active, close-button, css-truncate-target, description, description-inline, description-warning, disabled, filterable-empty, has-error, hidden-select-button-text, icon-only, indeterminate, is-loading, is-showing-new-item-form, label-select-menu, last-visible, menu-active, modal-backdrop, navigation-focus, octicon, octicon-check, octicon-dash, octicon-octoface, octicon-x, opaque, primary, select-menu, select-menu-action, select-menu-blankslate, select-menu-button, select-menu-button-gravatar, select-menu-button-large, select-menu-clear-item, select-menu-divider, select-menu-error, select-menu-filters, select-menu-header, select-menu-item, select-menu-item-gravatar, select-menu-item-heading, select-menu-item-icon, select-menu-item-parent, select-menu-item-template, select-menu-item-text, select-menu-list, select-menu-loading-overlay, select-menu-modal, select-menu-modal-holder, select-menu-modal-narrow, select-menu-modal-right, select-menu-new-item-form, select-menu-no-results, select-menu-tab, select-menu-tab-bucket, select-menu-tab-nav, select-menu-tabs, select-menu-text-filter, select-menu-title, selected, spinner]
+title: Select Menu
+status: New Release
+source: 'https://github.com/primer/css/tree/master/src/select-menu'
+bundle: select-menu
 ---
 
-The select menu provides advanced support for navigation, filtering, and more. Any popover within a select menu can make use of JavaScript-enabled live filtering, selected states, tabbed lists, and keyboard navigation with a bit of markup.
+The `SelectMenu` component provides advanced support for navigation, filtering, and more. Any menu can make use of JavaScript-enabled live filtering, selected states, tabbed lists, and keyboard navigation with a bit of markup.
 
 ## Table of Contents
 
 ## Basic example
 
-Select menus should be trigged by a `<button>`. In the markup below, all classes prefixed with `select-menu` and `.js-` are required.
+Use a `<details>` element to toggle the Select Menu. The `<summary>` element can be styled in many ways. In the example below it's a `.btn`.
 
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
+```html
+<details class="details-reset details-overlay" open>
+  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
     Choose an item
-  </button>
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal js-menu-content">
-      <div class="select-menu-list js-navigation-container">
-        <a href="#url" class="select-menu-item selected js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 1</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 2</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 3</span>
-        </a>
-      </div>
+  </summary>
+  <div class="SelectMenu">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+      </header>
+      <menu class="SelectMenu-list">
+        <button class="SelectMenu-item" role="menuitem">Item 1</button>
+        <button class="SelectMenu-item" role="menuitem">Item 2</button>
+        <button class="SelectMenu-item" role="menuitem">Item 3</button>
+      </menu>
     </div>
   </div>
-</div>
+</details>
+
+<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
+<div class="d-none d-sm-block" style="height: 180px"> <!-- min height for > sm --> </div>
 ```
 
-## Menu contents
+Add a `.SelectMenu-header` to house a clear title and a close button. Note that the close button is only shown on narrow screens (mobile).
 
-The contents of a select menu are easily customized with support for headers, footers, tabbed lists, and live filtering.
+## Right aligned
 
-### Headers
+In case the Select Menu should be aligned to the right, use `SelectMenu right-0`.
 
-Add a header to any select menu's popover to house a clear title and a dismiss button.
+```html
+<div class="d-flex flex-justify-end">
 
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    Choose an item
-  </button>
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal js-menu-content">
-      <div class="select-menu-header js-navigation-enable" tabindex="-1">
-        <button class="btn-link close-button js-menu-close" type="button"><%= octicon("x", :"aria-label" => "Close menu") %></button>
-        <span class="select-menu-title">Options</span>
-      </div>
-      <div class="select-menu-list js-navigation-container">
-        <a href="#url" class="select-menu-item selected js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 1</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 2</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 3</span>
-        </a>
+  <details class="details-reset details-overlay" open>
+    <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+      Choose an item
+    </summary>
+    <div class="SelectMenu right-0">
+      <div class="SelectMenu-modal">
+        <header class="SelectMenu-header">
+          <h3 class="SelectMenu-title">Title</h3>
+          <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+        </header>
+        <menu class="SelectMenu-list">
+          <button class="SelectMenu-item" role="menuitem">Item 1</button>
+          <button class="SelectMenu-item" role="menuitem">Item 2</button>
+          <button class="SelectMenu-item" role="menuitem">Item 3</button>
+        </menu>
       </div>
     </div>
-  </div>
+  </details>
+
 </div>
+
+<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
+<div class="d-none d-sm-block" style="height: 180px"> <!-- min height for > sm --> </div>
 ```
 
-### List items
+## Selected state
 
-The list of items is arguably the most important subcomponent within the menu. Build them out of anchors, buttons, or just about any [interactive content](http://w3c.github.io/html/dom.html#interactive-content). [List items are also customizable](#menu-list-items) with options for avatars, additional icons, and multiple lines of text.
+Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-checked="true"` is set.
 
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
+```html
+<details class="details-reset details-overlay" open>
+  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
     Choose an item
-  </button>
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal js-menu-content">
-      <div class="select-menu-list js-navigation-container">
-        <button type="button" class="select-menu-item selected js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 1</span>
+  </summary>
+  <div class="SelectMenu">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+      </header>
+      <menu class="SelectMenu-list">
+        <button class="SelectMenu-item" role="menuitemcheckbox" aria-checked="true">
+          <svg class="SelectMenu-icon octicon octicon-check" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          Selected state
         </button>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 2</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item" href="#url">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 3</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-### Filter
-
-Enable live filtering of list items within a `.select-menu-list` with a search input. Only a handful of changes to your menu's markup are required:
-
-- Add the text input, housed in `.select-menu-filters`, before the `.select-menu-list`.
-- Add two attritubes, `data-filterable-for` and `data-filterable-type`, to the `.select-menu-list` to scope the filter to the list.
-
-There are no required changes for the `.select-menu-item`s.
-
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    <i>Label:</i>
-    <span class="js-select-button">Choose an item</span>
-  </button>
-  <div class="select-menu-modal-holder js-menu-content js-navigation-container">
-    <div class="select-menu-modal">
-      <div class="select-menu-header" tabindex="-1">
-        <button class="btn-link close-button js-menu-close" type="button"><%= octicon("x", :"aria-label" => "Close menu") %></button>
-        <span class="select-menu-title">Options</span>
-      </div>
-      <div class="js-select-menu-deferred-content">
-        <div class="select-menu-filters">
-          <div class="select-menu-text-filter">
-            <input type="text" id="example-filter-field" class="form-control js-filterable-field js-navigation-enable" placeholder="Filter this list" aria-label="Type to filter" autocomplete="off">
-          </div>
-        </div>
-        <div class="select-menu-list" data-filterable-for="example-filter-field" data-filterable-type="substring">
-          <input hidden="checkbox" name="example" value="">
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Test element
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Filter to this
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              More content
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Something else
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              One more thing
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-### Tabs
-
-Sometimes you need two or more lists of items in your select menu, e.g. branches and tags. Select menu lists can be tabbed with the addition of the tab toggles at the top of the menu and a few changes to the `.select-menu-list`.
-
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    <i>Label:</i>
-    <span class="js-select-button">Choose an item</span>
-  </button>
-  <div class="select-menu-modal-holder js-menu-content js-navigation-container">
-    <div class="select-menu-modal">
-      <div class="select-menu-header" tabindex="-1">
-        <button class="btn-link close-button js-menu-close" type="button"><%= octicon("x", :"aria-label" => "Close menu") %></button>
-        <span class="select-menu-title">Options</span>
-      </div>
-      <div class="js-select-menu-deferred-content">
-        <div class="select-menu-filters">
-          <div class="select-menu-tabs">
-            <ul>
-              <li class="select-menu-tab">
-                <a href="#url" data-tab-filter="branches" data-filter-placeholder="Filter for " class="js-select-menu-tab" aria-current="false">Branches</a>
-              </li>
-              <li class="select-menu-tab">
-                <a href="#url" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab selected" aria-current="true">Tags</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket selected" data-filterable-for="example-filter-field" data-filterable-type="substring" data-tab-filter="branches" role="menu">
-          <input hidden="checkbox" name="example" value="">
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Branch 1
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Branch 2
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Branch 3
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Branch 4
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Branch 5
-            </div>
-          </a>
-        </div>
-        <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-filterable-for="example-filter-field" data-filterable-type="substring" data-tab-filter="tags" role="menu">
-          <input hidden="checkbox" name="example" value="">
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Tag 1
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Tag 2
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Tag 3
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Tag 4
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Tag 5
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-### Filter and tabs
-
-Show a filter and tabs in a single select menu.
-
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    <i>Label:</i>
-    <span class="js-select-button">Choose an item</span>
-  </button>
-  <div class="select-menu-modal-holder js-menu-content js-navigation-container">
-    <div class="select-menu-modal">
-      <div class="select-menu-header" tabindex="-1">
-        <button class="btn-link close-button js-menu-close" type="button"><%= octicon("x", :"aria-label" => "Close menu") %></button>
-        <span class="select-menu-title">Options</span>
-      </div>
-      <div class="js-select-menu-deferred-content">
-        <div class="select-menu-filters">
-          <div class="select-menu-text-filter">
-            <input type="text" id="example-filter-field-2" class="form-control js-filterable-field js-navigation-enable" placeholder="Filter labels" aria-label="Type or choose a label" autocomplete="off">
-          </div>
-          <div class="select-menu-tabs">
-            <ul>
-              <li class="select-menu-tab">
-                <a href="#url" data-tab-filter="branches" data-filter-placeholder="Filter for " class="js-select-menu-tab" aria-current="false">Branches</a>
-              </li>
-              <li class="select-menu-tab">
-                <a href="#url" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab selected" aria-current="true">Tags</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket selected" data-filterable-for="example-filter-field" data-filterable-type="substring" data-tab-filter="branches" role="menu">
-          <input hidden="checkbox" name="example" value="">
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Branch 1
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Branch 2
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Branch 3
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Branch 4
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Branch 5
-            </div>
-          </a>
-        </div>
-        <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-filterable-for="example-filter-field" data-filterable-type="substring" data-tab-filter="tags" role="menu">
-          <input hidden="checkbox" name="example" value="">
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Tag 1
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Tag 2
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Tag 3
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Tag 4
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <%= octicon("check", :class => "select-menu-item-icon") %>
-            <div class="select-menu-item-text js-select-button-text">
-              Tag 5
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-### Blankslate
-
-Sometimes a select menu needs to communicate a "blank slate" where there's no content in the menu's list. Usually these include a clear call to action to add said content to the list. Swap out the contents of a `.select-menu-list` with the `.select-menu-blankslate` and customize it's contents as needed.
-
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    Choose an item
-  </button>
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal js-menu-content">
-      <div class="select-menu-header js-navigation-enable" tabindex="-1">
-        <button class="btn-link close-button js-menu-close" type="button"><%= octicon("x", :"aria-label" => "Close menu") %></button>
-        <span class="select-menu-title">Options</span>
-      </div>
-      <div class="select-menu-list js-navigation-container">
-        <div class="select-menu-blankslate">
-          <%= octicon("check", :height => 32) %>
-          <h3>Select menu blankslate</h3>
-          <p>Some text here to describe why you're seeing a blankslate and how to go about fixing that up.</p>
-          <button type="button" class="btn btn-sm btn-primary mt-3 mb-3">Deal with it</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-## Menu list items
-
-Select menu list items have a few options available to them for more complex information patterns.
-
-### Multi-line text
-
-Sometimes the contents of your select menu list require a heading and a description instead of just a string. Select menus come with some default styles for such situations with the addition of a few classes and wrapping `<span>`s.
-
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    <i>Multi line:</i>
-    <span class="js-select-button">Choose an item</span>
-  </button>
-
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal subscription-menu-modal js-menu-content" aria-hidden="false">
-      <div class="select-menu-header js-navigation-enable" tabindex="-1">
-        <button class="btn-link close-button js-menu-close" type="button"><%= octicon("x", :"aria-label" => "Close menu") %></button>
-        <span class="select-menu-title">Notifications</span>
-      </div>
-      <div class="select-menu-list js-navigation-container js-active-navigation-container" role="menu">
-        <a href="#url" class="select-menu-item js-navigation-item selected" role="menuitem">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <div class="select-menu-item-text">
-            <span class="select-menu-item-heading">Not watching</span>
-            <span class="description">Be notified when participating or @mentioned.</span>
-            <span class="js-select-button-text hidden-select-button-text">
-              Watch
-            </span>
-          </div>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item" role="menuitem">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <div class="select-menu-item-text">
-            <span class="select-menu-item-heading">Watching</span>
-            <span class="description">Be notified of all conversations.</span>
-            <span class="js-select-button-text hidden-select-button-text">
-              Stop watching
-            </span>
-          </div>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item" role="menuitem">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <div class="select-menu-item-text">
-            <span class="select-menu-item-heading">Ignoring</span>
-            <span class="description">Never be notified.</span>
-            <span class="js-select-button-text hidden-select-button-text">
-              Stop ignoring
-            </span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-### With avatars
-
-Add avatars to a select menu to help indicate when a menu list item represents a user.
-
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    Choose an item
-  </button>
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal js-menu-content">
-      <div class="select-menu-header js-navigation-enable" tabindex="-1">
-        <button class="btn-link close-button js-menu-close" type="button"><%= octicon("x", :"aria-label" => "Close menu") %></button>
-        <span class="select-menu-title">Options</span>
-      </div>
-      <div class="select-menu-list js-navigation-container">
-        <a href="#url" class="select-menu-item selected js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-gravatar">
-            <%= avatar_for(current_user, 20, :alt => "") %>
-          </span>
-          <span class="select-menu-item-text js-select-button-text">
-            probot
-          </span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-gravatar">
-            <%= avatar_for(current_user, 20, :alt => "") %>
-          </span>
-          <span class="select-menu-item-text js-select-button-text">
-            probot
-          </span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-gravatar">
-            <%= avatar_for(current_user, 20, :alt => "") %>
-          </span>
-          <span class="select-menu-item-text js-select-button-text">
-            probot
-          </span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-### With dismiss icon
-
-Indicate how to toggle the selected state on a select menu list item with the addition of a dismiss icon.
-
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    Choose an item
-  </button>
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal js-menu-content">
-      <div class="select-menu-header js-navigation-enable" tabindex="-1">
-        <button class="btn-link close-button js-menu-close" type="button"><%= octicon("x", :"aria-label" => "Close menu") %></button>
-        <span class="select-menu-title">Options</span>
-      </div>
-      <div class="select-menu-list js-navigation-container">
-        <button type="button" class="select-menu-item selected js-navigation-item width-full">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">
-            <%= octicon("x", :"aria-label" => "Click to remove") %>
-            Item 1
-          </span>
+        <button class="SelectMenu-item" role="menuitemcheckbox">
+          <svg class="SelectMenu-icon octicon octicon-check" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          Default state
         </button>
-        <button type="button" class="select-menu-item js-navigation-item width-full">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">
-            <%= octicon("x", :"aria-label" => "Click to remove") %>
-            Item 2
-          </span>
+        <button class="SelectMenu-item" role="menuitemcheckbox" aria-checked="true">
+          <svg class="SelectMenu-icon octicon octicon-check" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          Selected state
         </button>
-        <button type="button" class="select-menu-item js-navigation-item width-full">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">
-            <%= octicon("x", :"aria-label" => "Click to remove") %>
-            Item 3
-          </span>
-        </button>
-      </div>
+        <button class="SelectMenu-item" role="menuitemcheckbox">Default state</button>
+        <button class="SelectMenu-item" role="menuitemcheckbox">Default state</button>
+      </menu>
     </div>
   </div>
-</div>
+</details>
+
+<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
+<div class="d-none d-sm-block" style="height: 250px"> <!-- min height for > sm --> </div>
 ```
 
-## Menu alignment
+## List items
 
-By default select menus are automatically aligned to the top left corner of an element, but you can also customize that with a few utilities or custom display.
+The list of items is arguably the most important subcomponent within the menu. Build them out of anchors, buttons, or just about any [interactive content](http://w3c.github.io/html/dom.html#interactive-content). List items are also customizable with options for avatars, additional icons, and multiple lines of text. Use utility classes like `mr-2`, `d-flex` or `float-right` in case more custom styling is needed.
 
-### Right aligned menus
-
-When select menus are right aligned, you can also right-align the select menu's popover with `.select-menu-modal-right`.
-
-```erb
-<div class="select-menu float-right select-menu-modal-right js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
+```html
+<details class="details-reset details-overlay" open>
+  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
     Choose an item
-  </button>
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal js-menu-content">
-      <div class="select-menu-header js-navigation-enable" tabindex="-1">
-        <button class="btn-link close-button js-menu-close" type="button"><%= octicon("x", :"aria-label" => "Close menu") %></button>
-        <span class="select-menu-title">Options</span>
-      </div>
-      <div class="select-menu-list js-navigation-container">
-        <a href="#url" class="select-menu-item selected js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 1</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 2</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 3</span>
-        </a>
-      </div>
+  </summary>
+  <div class="SelectMenu">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+      </header>
+      <menu class="SelectMenu-list">
+        <button class="SelectMenu-item" role="menuitem">
+          Text only
+        </button>
+        <button class="SelectMenu-item" role="menuitem">
+          <img class="avatar avatar-small mr-2" src="https://avatars.githubusercontent.com/hubot?s=40" alt="hubot" height="20" width="20">
+          With an avatar
+        </button>
+        <button class="SelectMenu-item" role="menuitem">
+          With a status icon <svg class="octicon octicon-primitive-dot color-green-5 ml-2" style="fill:currentColor" viewBox="0 0 8 16" version="1.1" width="8" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg>
+        </button>
+        <button class="SelectMenu-item" role="menuitem">
+          With a <span class="Label bg-blue" title="Label: label">label</span>
+        </button>
+        <button class="SelectMenu-item" role="menuitem">
+          With a counter <span class="Counter bg-gray-2 ml-1">16</span>
+        </button>
+        <button class="SelectMenu-item" role="menuitem">
+          <h5>With a heading</h5>
+          <span>and some longer description</span>
+        </button>
+      </menu>
     </div>
   </div>
-</div>
+</details>
+
+<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
+<div class="d-none d-sm-block" style="height: 300px"> <!-- min height for > sm --> </div>
 ```
 
-## Button options
+## Divider
 
-Customize the select menu's trigger button by changing the button modifier class, enabling stateful text, and more.
+The Select Menu's list can be divided into multiple parts by adding a `.SelectMenu-divider`.
 
-### Style options
+```html
+<details class="details-reset details-overlay" open>
+  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+    Choose an item
+  </summary>
+  <div class="SelectMenu">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+      </header>
+      <menu class="SelectMenu-list">
+        <button class="SelectMenu-item" role="menuitem">Item 1</button>
+        <button class="SelectMenu-item" role="menuitem">Item 2</button>
+        <div class="SelectMenu-divider">More options</div>
+        <button class="SelectMenu-item" role="menuitem">Item 3</button>
+        <button class="SelectMenu-item" role="menuitem">Item 4</button>
+        <button class="SelectMenu-item" role="menuitem">Item 5</button>
+      </menu>
+    </div>
+  </div>
+</details>
 
-Since select menus are powered by JavaScript behaviors, the specific display of your select menu button is up to you and your use case.
+<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
+<div class="d-none d-sm-block" style="height: 260px"> <!-- min height for > sm --> </div>
+```
+
+## Additional filter and footer
+
+If the list is expected to get long, consider adding a `.SelectMenu-filter` input. Be sure to also include the `.SelectMenu--hasFilter` modifier class. On mobile devices it will add a fixed height and anchor the Select Menu to the top of the screen. This makes sure the filter input stays at the same position while typing.
+
+Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for additional information, but can also greatly improve the scrolling performance because the list doesn't need to be repainted due to the rounded corners.
+
+```html
+<details class="details-reset details-overlay" open>
+  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+    Choose an item
+  </summary>
+  <div class="SelectMenu SelectMenu--hasFilter">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+      </header>
+      <form class="SelectMenu-filter">
+        <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
+      </form>
+      <menu class="SelectMenu-list">
+        <button class="SelectMenu-item" role="menuitem">Item 1</a>
+        <button class="SelectMenu-item" role="menuitem">Item 2</a>
+        <button class="SelectMenu-item" role="menuitem">Item 3</a>
+        <button class="SelectMenu-item" role="menuitem">Item 4</a>
+        <button class="SelectMenu-item" role="menuitem">Item 5</a>
+        <button class="SelectMenu-item" role="menuitem">Item 6</a>
+        <button class="SelectMenu-item" role="menuitem">Item 7</a>
+        <button class="SelectMenu-item" role="menuitem">Item 8</a>
+        <button class="SelectMenu-item" role="menuitem">Item 9</a>
+        <button class="SelectMenu-item" role="menuitem">Item 10</a>
+        <button class="SelectMenu-item" role="menuitem">Item 11</a>
+        <button class="SelectMenu-item" role="menuitem">Item 12</a>
+        <button class="SelectMenu-item" role="menuitem">Item 13</a>
+        <button class="SelectMenu-item" role="menuitem">Item 14</a>
+        <button class="SelectMenu-item" role="menuitem">Item 15</a>
+        <button class="SelectMenu-item" role="menuitem">Item 16</a>
+        <button class="SelectMenu-item" role="menuitem">Item 17</a>
+        <button class="SelectMenu-item" role="menuitem">Item 18</a>
+        <button class="SelectMenu-item" role="menuitem">Item 19</a>
+        <button class="SelectMenu-item" role="menuitem">Item 20</a>
+        <button class="SelectMenu-item" role="menuitem">Item 21</a>
+        <button class="SelectMenu-item" role="menuitem">Item 22</a>
+        <button class="SelectMenu-item" role="menuitem">Item 23</a>
+        <button class="SelectMenu-item" role="menuitem">Item 24</a>
+        <button class="SelectMenu-item" role="menuitem">Item 25</a>
+      </menu>
+      <footer class="SelectMenu-footer">Showing 25 of 25</footer>
+    </div>
+  </div>
+</details>
+
+<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
+<div class="d-none d-sm-block" style="height: 380px"> <!-- min height for > sm --> </div>
+```
+
+## Tabs
+
+Sometimes you need two or more lists of items in your Select Menu, e.g. branches and tags. Select Menu lists can be tabbed with the addition of `.SelectMenu-tabs` above the menu.
+
+```html
+<details class="details-reset details-overlay" open>
+  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+    Choose an item
+  </summary>
+  <div class="SelectMenu SelectMenu--hasFilter">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+      </header>
+      <form class="SelectMenu-filter">
+        <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
+      </form>
+      <nav class="SelectMenu-tabs">
+        <button class="SelectMenu-tab" aria-selected="true">Branches</button>
+        <button class="SelectMenu-tab">Tags</button>
+      </nav>
+      <menu class="SelectMenu-list">
+        <button class="SelectMenu-item" role="menuitem">Branch 1</button>
+        <button class="SelectMenu-item" role="menuitem">Branch 2</button>
+        <button class="SelectMenu-item" role="menuitem">Branch 3</button>
+        <button class="SelectMenu-item" role="menuitem">Branch 4</button>
+        <button class="SelectMenu-item" role="menuitem">Branch 5</button>
+      </menu>
+      <menu class="SelectMenu-list" hidden>
+        <button class="SelectMenu-item" role="menuitem">Tag 1</button>
+        <button class="SelectMenu-item" role="menuitem">Tag 2</button>
+        <button class="SelectMenu-item" role="menuitem">Tag 3</button>
+      </menu>
+      <footer class="SelectMenu-footer">Showing 5 of 5</footer>
+    </div>
+  </div>
+</details>
+
+<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
+<div class="d-none d-sm-block" style="height: 380px"> <!-- min height for > sm --> </div>
+```
+
+## Message
+
+A `SelectMenu-message` can be used to show different kind of messages to a user. Use utility classes to further style the message.
+
+```html
+<details class="details-reset details-overlay" open>
+  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+    Choose an item
+  </summary>
+  <div class="SelectMenu">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+      </header>
+      <menu class="SelectMenu-list">
+        <button class="SelectMenu-item" role="menuitem">Item 1</button>
+        <button class="SelectMenu-item" role="menuitem">Item 2</button>
+        <div class="SelectMenu-message border-bottom border-top bg-red-0 text-red p-2">Message goes here</div>
+        <button class="SelectMenu-item" role="menuitem">Item 3</button>
+      </menu>
+    </div>
+  </div>
+</details>
+
+<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
+<div class="d-none d-sm-block" style="height: 200px"> <!-- min height for > sm --> </div>
+```
+
+## Loading
+
+When fetching large lists, consider showing a `.SelectMenu-loading` animation.
+
+```html
+<details class="details-reset details-overlay">
+  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+    Choose an item
+  </summary>
+  <div class="SelectMenu SelectMenu--hasFilter">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+      </header>
+      <form class="SelectMenu-filter">
+        <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
+      </form>
+      <menu class="SelectMenu-list">
+        <div class="SelectMenu-loading">
+          <svg height="32" class="octicon octicon-octoface anim-pulse" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"></path></svg>
+        </div>
+      </menu>
+      <footer class="SelectMenu-footer">Loading...</footer>
+    </div>
+  </div>
+</details>
+
+<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
+<div class="d-none d-sm-block" style="height: 220px"> <!-- min height for > sm --> </div>
+```
+
+## Blankslate
+
+Sometimes a Select Menu needs to communicate a "blank slate" where there's no content in the menu's list. Usually these include a clear call to action to add said content to the list. Swap out the contents of a `.SelectMenu-list` with a `.SelectMenu-blankslate` and customize its contents as needed.
+
+```html
+<details class="details-reset details-overlay" open>
+  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+    Choose an item
+  </summary>
+  <div class="SelectMenu">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button"><svg class="octicon octicon-x" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg></button>
+      </header>
+      <menu class="SelectMenu-list">
+        <div class="SelectMenu-blankslate">
+          <svg height="32" class="octicon octicon-repo color-gray-3" viewBox="0 0 12 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+          <h4 class="my-2">No repositories</h4>
+          <p class="mb-3 text-gray">We didn’t find any matching repositories that you can commit to.</p>
+          <button type="button" class="btn btn-sm btn-primary">Create a repository</button>
+        </div>
+      </menu>
+    </div>
+  </div>
+</details>
+
+<div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
+<div class="d-none d-sm-block" style="height: 260px"> <!-- min height for > sm --> </div>
+```
+
+## github.com usage
+
+When adding the `.SelectMenu` component on github.com, use the [`<details-menu>`](https://github.com/github/details-menu-element) element. It will :tophat: magically make the `.SelectMenu` work. Here a basic example:
 
 ```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    Default button
-  </button>
-
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal js-menu-content">
-      <div class="select-menu-list js-navigation-container">
-        <a href="#url" class="select-menu-item selected js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 1</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 2</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 3</span>
-        </a>
-      </div>
+<details class="details-reset details-overlay" id="my-select-menu">
+  <summary class="btn" title="Pick an item">
+    <span>Choose</span>
+    <span class="dropdown-caret"></span>
+  </summary>
+  <details-menu class="SelectMenu" role="menu">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <span class="SelectMenu-title">My Select Menu</span>
+        <button class="SelectMenu-closeButton" type="button" data-toggle-for="my-select-menu">
+          <%= octicon("x", :"aria-label" => "Close menu") %>
+        </button>
+      </header>
     </div>
-  </div>
-</div>
+    <div class="SelectMenu-list">
+      <a class="SelectMenu-item" href="" role="menuitem">Item 1</a>
+      <a class="SelectMenu-item" href="" role="menuitem">Item 2</a>
+      <a class="SelectMenu-item" href="" role="menuitem">Item 3</a>
+    </div>
+  </details-menu>
+</details>
 ```
+
+If loading content should be deferred, use the [`<include-fragment>`](https://github.com/github/details-menu-element) element:
 
 ```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn btn-primary select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    Primary button
-  </button>
-
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal js-menu-content">
-      <div class="select-menu-list js-navigation-container">
-        <a href="#url" class="select-menu-item selected js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 1</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 2</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 3</span>
-        </a>
-      </div>
-    </div>
+<details-menu class="SelectMenu" src="/my-menu" preload>
+  <div class="SelectMenu-modal">
+    <include-fragment class="SelectMenu-loading" aria-label="Menu is loading">
+      <%= octicon('octoface', class: "anim-pulse", :height => 32) %>
+    </include-fragment>
   </div>
-</div>
+</details-menu>
 ```
 
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn btn-outline select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    Outline button
-  </button>
-
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal js-menu-content">
-      <div class="select-menu-list js-navigation-container">
-        <a href="#url" class="select-menu-item selected js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 1</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 2</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 3</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn-link select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    Link button
-  </button>
-
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal js-menu-content">
-      <div class="select-menu-list js-navigation-container">
-        <a href="#url" class="select-menu-item selected js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 1</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 2</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">Item 3</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-### Stateful text
-
-Select menu buttons have the option of showing the current selection in the button itself. Wrap the string you intend to update with a `.js-select-button` and the select menu JavaScript will automatically update the contents of that element with the selected item's text.
-
-Open the select menu below and click different options to see it in action.
-
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    <span class="js-select-button">master</span>
-  </button>
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal js-menu-content">
-      <div class="select-menu-header js-navigation-enable" tabindex="-1">
-        <button class="btn-link close-button js-menu-close" type="button"><%= octicon("x", :"aria-label" => "Close menu") %></button>
-        <span class="select-menu-title">Options</span>
-      </div>
-      <div class="select-menu-list js-navigation-container">
-        <a href="#url" class="select-menu-item selected js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">master</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">feature-branch</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">refactor-component-name</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-### Emphasized text
-
-Sometimes you want to spice up your select menu with an emphasized label for the type of content within the menu. For example, you show `Branch:` in front of the current branch on our repository Code page. Within the button, wrap your string in an `<i>` element and you're good to go.
-
-As shown below, emphasized text works great with the stateful text functionality mentioned above.
-
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    <i>Branch:</i>
-    <span class="js-select-button">master</span>
-  </button>
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal js-menu-content">
-      <div class="select-menu-header js-navigation-enable" tabindex="-1">
-        <button class="btn-link close-button js-menu-close" type="button"><%= octicon("x", :"aria-label" => "Close menu") %></button>
-        <span class="select-menu-title">Options</span>
-      </div>
-      <div class="select-menu-list js-navigation-container">
-        <a href="#url" class="select-menu-item selected js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">master</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">feature-branch</span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">refactor-component-name</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-### Button avatars
-
-Add an avatar to the button, like we do in our context switcher on the logged in dashboard.
-
-```erb
-<div class="select-menu js-menu-container js-select-menu">
-  <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    <div class="select-menu-button-gravatar js-select-button-gravatar">
-      <%= avatar_for(current_user, 20, :"aria-label" => "") %>
-    </div>
-    <span class="js-select-button css-truncate css-truncate-target">probot</span>
-  </button>
-  <div class="select-menu-modal-holder">
-    <div class="select-menu-modal js-menu-content">
-      <div class="select-menu-header js-navigation-enable" tabindex="-1">
-        <button class="btn-link close-button js-menu-close" type="button"><%= octicon("x", :"aria-label" => "Close menu") %></button>
-        <span class="select-menu-title">Options</span>
-      </div>
-      <div class="select-menu-list js-navigation-container">
-        <a href="#url" class="select-menu-item selected js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-gravatar">
-            <%= avatar_for(current_user, 20, :"aria-label" => "") %>
-          </span>
-          <span class="select-menu-item-text js-select-button-text">
-            probot
-          </span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-gravatar">
-            <%= avatar_for(current_user, 20, :"aria-label" => "") %>
-          </span>
-          <span class="select-menu-item-text js-select-button-text">
-            probot
-          </span>
-        </a>
-        <a href="#url" class="select-menu-item js-navigation-item">
-          <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-gravatar">
-            <%= avatar_for(current_user, 20, :"aria-label" => "") %>
-          </span>
-          <span class="select-menu-item-text js-select-button-text">
-            probot
-          </span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-```
+It will add a pulsing :octoface: icon while the content is loading.
