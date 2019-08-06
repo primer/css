@@ -25,15 +25,15 @@ Whether you work on `github/github` or not, it's useful to see lint errors local
 bin/stylelint "app/assets/stylesheets/**/*.scss" --syntax scss
 ```
 
-For more advanced usage, we recommend reading the [stylelint user guide](http://stylelint.io/user-guide/) and checking out our [primer stylelint configuration](https://github.com/primer/primer/tree/master/tools/stylelint-config-primer).
+For more advanced usage, we recommend reading the [stylelint user guide](http://stylelint.io/user-guide/) and checking out our [primer stylelint configuration](https://github.com/primer/stylelint-config-primer).
 
 ### Configuration
 
 Stylelint is [configured by a JSON file](http://stylelint.io/user-guide/configuration/) that specifies which linter rules we enforce. If you are working on `github/github`, you don't need to do any setup because the configuration is included within the repository bundle.
 
-We have extracted out our configuration file into a separate repository [primer/stylelint-config-primer](https://github.com/primer/primer/tree/master/tools/stylelint-config-primer). This gives us a central source where we can keep the configuration up-to-date and distribute easily across all our projects.
+We have extracted out our configuration file into a separate repository [primer/stylelint-config-primer](https://github.com/primer/stylelint-config-primer). This gives us a central source where we can keep the configuration up-to-date and distribute easily across all our projects.
 
-To [use the configuration](https://github.com/primer/primer/tree/master/tools/stylelint-config-primer#usage) in your project, install the config `npm install --save stylelint-config-primer` via npm, and extend the config in your `.stylelintrc` file. Put the file in the root directory of your project.
+To [use the configuration](https://github.com/primer/stylelint-config-primer#usage) in your project, install the config `npm install --save stylelint-config-primer` via npm, and extend the config in your `.stylelintrc` file. Put the file in the root directory of your project.
 
 ```json
 {
@@ -41,7 +41,7 @@ To [use the configuration](https://github.com/primer/primer/tree/master/tools/st
 }
 ```
 
-A list of all the specific rules we have enabled are documented in [the package README](https://www.npmjs.com/package/stylelint-config-primer#documentation).
+A list of all the specific rules we have enabled are documented in [the package README](https://github.com/primer/stylelint-config-primer#documentation).
 
 ### Disabling
 
