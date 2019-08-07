@@ -39,7 +39,7 @@ The `.Header` class is the wrapping class that aligns all the items properly and
 
 All items directly under the `.Header` component should be a `.Header-item` component. Inside these components can be anything (text, forms, images...), and the `.Header-item` component will make sure these elements vertically align with each other.
 
-`.Header-items` have built in margin that will need to be overwritten with a utility class `mr-0` for the last element in the container. We relied on the utility classes here instead of `:last-child` because the last child isn't always the item visible. On responsive pages, there's a mobile menu that gets presented to the user at smaller breakpoints.
+`.Header-item` elements have a built-in margin that will need to be overridden with the `mr-0` utility class for the last element in the container. We relied on the utility classes here instead of `:last-child` because the last child isn't always the item visible. On responsive pages, there's a mobile menu that gets presented to the user at smaller breakpoints.
 
 ```html title="Header-item"
 <div class="Header">
@@ -65,7 +65,7 @@ All items directly under the `.Header` component should be a `.Header-item` comp
 
 ### Header-item--full
 
-The `.Header-item` component has a modifier that stretches it to fill the available space and push any remaining items to the right. Use `.Header-item--full` when you want to achieve the right aligned items.
+The `.Header-item` element has a modifier class, `.Header-item--full`, that stretches it to fill the available space and push any remaining items to the right.
 
 ```html title="Header-item--full"
 <div class="Header">
@@ -88,7 +88,7 @@ The `.Header-item` component has a modifier that stretches it to fill the availa
 
 ## Header-link
 
-Add the `.Header-link` class to any anchor tags in the header to give the consistent styling and hover opacity. This component makes the links white, bold and 70% fade on hover.
+Add the `.Header-link` class to any anchor tags in the header to give them consistent styling and hover opacity. This class makes the links white, bold and 70% fade on hover.
 
 ```html title="Header-link"
 <div class="Header">

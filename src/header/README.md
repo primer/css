@@ -6,7 +6,7 @@ This repository is a module of the full [primer][primer] repository.
 
 ## Usage
 
-The source files included are written in [Sass][sass] (SCSS) You can simply point your sass `include-path` at your `node_modules` directory and import it like this.
+The source files included are written in [SCSS]. Add the `node_modules` directory to your Sass include paths and import it with:
 
 ```scss
 @import "@primer/css/header/index.scss";
@@ -16,7 +16,7 @@ You can also import specific portions of the module by importing those partials 
 
 ## Build
 
-For a compiled **CSS** version of this module, an npm script is included that will output a css version to `build/build.css` The built css file is also included in the npm package:
+A CSS bundle of this module is distributed with the npm package in `dist/header.css`.
 
 ```
 $ npm run build
