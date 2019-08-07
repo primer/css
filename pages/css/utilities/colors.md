@@ -1,151 +1,49 @@
 ---
 title: Colors
-path: utilities/colors
 description: 'Immutable, atomic CSS classes to rapidly build product'
 status: Stable
-package:
-  name: primer-utilities
-source: 'https://github.com/primer/primer/tree/master/modules/primer-utilities/lib/colors.scss'
 status_issue: 'https://github.com/github/design-systems/issues/97'
 ---
 
-import colors from 'primer-colors'
-import {Box} from '@primer/components'
-const Swatch = props => <Box mt={2} height={60} {...props} />
+import {Box, BorderBox} from '@primer/components'
+import {MarkdownHeading as Heading} from '@primer/blueprints'
+import {palettes, allColors} from '../../../docs/color-variables'
+import {PaletteTable, PaletteTableFragment, PaletteHeading, PaletteCell, PaletteValue} from '../../../docs/color-system'
+const textColumns = [
+  {title: 'Alias', Cell: props => <PaletteCell.Alias {...props} style={{borderBottom: `1px solid ${props.value} !important`}} />},
+  // {title: 'Class', Cell: props => <PaletteCell.Text {...props} style={{borderBottom: props.aliases.text ? `1px solid ${props.value} !important` : null}} />, Value: PaletteValue.PrefixedClass},
+  'variable',
+  {title: 'Value', Cell: PaletteCell.Background,  Value: PaletteValue.Value},
+]
 
 Use color utilities to apply color to the background of elements, text, and borders.
 
-* [Background colors](#background-colors)
-* [Text colors](#text-colors)
-* [Link colors](#link-colors)
-* [Border colors](#border-colors)
+## Table of Contents
+
 
 ## Background colors
 
 Background colors are most commonly used for filling large blocks of content or areas with a color. When selecting a background color, make sure the foreground color contrast passes a minimum WCAG accessibility rating of [level AA](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html). Meeting these standards ensures that content is accessible by everyone, regardless of disability or user device. You can [check your color combination with this demo site](http://jxnblk.com/colorable/demos/text/). For more information, read our [accessibility standards](../principles/accessibility).
 
-### Gray
+### Background utilities
 
-<div class="container-lg clearfix mb-4">
-  <div class="col-3 float-left pr-4">
-    <div class="h4">.bg-gray</div>
-    <code>{colors.gray[1]}, $bg-gray</code>
-    <Swatch className="bg-gray" />
-  </div>
-  <div class="col-9 float-left">
-    <div class="container-lg clearfix">
-      <div class="col-6 float-left">
-        <div class="h4">.bg-gray-dark</div>
-        <code>{colors.gray[9]}, $bg-gray-dark</code>
-        <Swatch className="bg-gray-dark border-right-0" />
-      </div>
-      <div class="col-6 float-left">
-        <div class="h4">.bg-gray-light</div>
-        <code>{colors.gray[0]}, $bg-gray-light</code>
-        <Swatch className="bg-gray-light" />
-      </div>
-    </div>
-  </div>
-</div>
-
-### Blue
-
-<div class="container-lg clearfix mb-4">
-  <div class="col-3 float-left pr-4">
-    <div class="h4">.bg-blue</div>
-    <code>{colors.blue[5]}, $bg-blue</code>
-    <Swatch className="bg-blue" />
-  </div>
-  <div class="col-9 float-left">
-    <div class="container-lg clearfix">
-      <div class="h4">.bg-blue-light</div>
-      <code>{colors.blue[0]}, $bg-blue-light</code>
-      <Swatch className="bg-blue-light" />
-    </div>
-  </div>
-</div>
-
-### Yellow
-
-<div class="container-lg clearfix mb-4">
-  <div class="col-3 float-left pr-4">
-    <div class="h4">.bg-yellow</div>
-    <code>{colors.yellow[5]}, $bg-yellow</code>
-    <Swatch className="bg-yellow" />
-  </div>
-  <div class="col-9 float-left">
-    <div class="container-lg clearfix">
-      <div class="col-6 float-left">
-        <div class="h4">.bg-yellow-dark</div>
-        <code>{colors.yellow[7]}, $bg-yellow-dark</code>
-        <Swatch className="bg-yellow-dark border-right-0" />
-      </div>
-      <div class="col-6 float-left">
-        <div class="h4">.bg-yellow-light</div>
-        <code>{colors.yellow[2]}, $bg-yellow-light</code>
-        <Swatch className="bg-yellow-light" />
-      </div>
-    </div>
-  </div>
-</div>
-
-### Red
-
-<div class="container-lg clearfix mb-4">
-  <div class="col-3 float-left pr-4">
-    <div class="h4">.bg-red</div>
-    <code>{colors.red[5]}, $bg-red</code>
-    <Swatch className="bg-red" />
-  </div>
-  <div class="col-9 float-left">
-    <div class="container-lg clearfix">
-      <div class="h4">.bg-red-light</div>
-      <code>{colors.red[1]}, $bg-red-light</code>
-      <Swatch className="bg-red-light" />
-    </div>
-  </div>
-</div>
-
-### Green
-
-<div class="container-lg clearfix mb-4">
-  <div class="col-3 float-left pr-4">
-    <div class="h4">.bg-green</div>
-    <code>{colors.green[5]}, $bg-green</code>
-    <Swatch className="bg-green" />
-  </div>
-  <div class="col-9 float-left">
-    <div class="container-lg clearfix">
-      <div class="h4">.bg-green-light</div>
-      <code>{colors.green[1]}, $bg-green-light</code>
-      <Swatch className="bg-green-light" />
-    </div>
-  </div>
-</div>
-
-
-### Purple
-
-<div class="container-lg clearfix mb-4">
-  <div class="col-3 float-left pr-4">
-    <div class="h4">.bg-purple</div>
-    <code>{colors.purple[5]}, $bg-purple</code>
-    <Swatch className="bg-purple" />
-  </div>
-  <div class="col-9 float-left">
-    <div class="container-lg clearfix">
-      <div class="h4">.bg-purple-light</div>
-      <code>{colors.purple[0]}, $bg-purple-light</code>
-      <Swatch className="bg-purple-light" />
-    </div>
-  </div>
-</div>
+<PaletteTable>
+  {palettes.map(({name, title, value}) => (
+    <PaletteTableFragment name={name} type="bg" sparse key={name}>
+      <tr>
+        <PaletteHeading indicatorColor={value} colSpan="4">
+          {title}
+        </PaletteHeading>
+      </tr>
+    </PaletteTableFragment>
+  ))}
+</PaletteTable>
 
 ## Text colors
 
 Use text color utilities to set text or [Octicons](https://octicons.github.com) to a specific color. Color contrast must pass a minimum WCAG accessibility rating of [level AA](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html). This ensures that viewers who cannot see the full color spectrum are able to read the text. To customize outside of the suggested combinations below, we recommend using this [color contrast testing tool](http://jxnblk.com/colorable/demos/text/). For more information, read our [accessibility standards](../principles/accessibility).
 
-These are our most common text with background color combinations. They don't all pass accessibility standards currently, but will be updated in the future. **Any of the combinations with a warning icon must be used with caution**.
+These are our most common text with background color combinations. They don't all pass accessibility standards currently, but will be updated in the future. **⚠️ Any of the combinations with a warning icon must be used with caution**.
 
 ### Text color inheritance
 
@@ -175,22 +73,23 @@ You can set the color inheritance on an element by using the `text-inherit` clas
 <div class="text-orange mb-2">
   .text-orange on white
 </div>
-<span class="float-left text-red tooltipped tooltipped-n" aria-label="Does not meet accessibility standards"><%= octicon("alert") %></span>
 <div class="text-orange-light mb-2">
-  .text-orange-light on white
+   .text-orange-light on white
+  <span class="tooltipped tooltipped-n" aria-label="Does not meet accessibility standards">⚠️</span>
 </div>
-<span class="float-left text-red tooltipped tooltipped-n" aria-label="Does not meet accessibility standards"><%= octicon("alert") %></span>
 <div class="text-yellow mb-2">
   .text-yellow on white
+  <span class="tooltipped tooltipped-n" aria-label="Does not meet accessibility standards">⚠️</span>
 </div>
-<span class="float-left text-red tooltipped tooltipped-n" aria-label="Does not meet accessibility standards"><%= octicon("alert") %></span>
-<div class="text-green mb-2 ml-4">
+<div class="text-green mb-2">
   .text-green on white
+  <span class="tooltipped tooltipped-n" aria-label="Does not meet accessibility standards">⚠️</span>
 </div>
 <div class="text-purple mb-2">
   .text-purple on white
 </div>
 ```
+
 
 ### Text on colored backgrounds
 
@@ -227,6 +126,30 @@ You can set the color inheritance on an element by using the `text-inherit` clas
 </div>
 <div class="bg-gray">
   .text-gray-dark on .bg-gray
+</div>
+```
+
+### Text color utilities
+
+<PaletteTable columns={textColumns}>
+  {palettes.map(({name, title, value}) => (
+    <PaletteTableFragment name={name} type="text" sparse prefix="color" columns={textColumns}>
+      <tr>
+        <PaletteHeading indicatorColor={value} colSpan="4">
+          {title}
+        </PaletteHeading>
+      </tr>
+    </PaletteTableFragment>
+  ))}
+</PaletteTable>
+
+## White background
+
+You can make a background explicitly white (`#fff`) with the `bg-white` utility:
+
+```html
+<div class="bg-gray-dark p-2">
+  <span class="bg-white">.bg-white over .bg-gray-dark</span>
 </div>
 ```
 

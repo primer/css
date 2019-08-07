@@ -1,3 +1,32 @@
+# 12.5.0
+
+### :rocket: Enhancement
+- Add `.Toast` component [#831](https://github.com/primer/css/pull/831)
+- Add `.SideNav` component [#827](https://github.com/primer/css/pull/827)
+- Add `.SelectMenu` component [#808](https://github.com/primer/css/pull/808)
+- Add `font-display: swap` to `@font-face` declarations [#780](https://github.com/primer/css/pull/780)
+- Add `flex-grow-0`, `flex-order-[1,2,none]` and `width-auto` utilities [#763](https://github.com/primer/css/pull/763)
+- Change default for `$marketing-font-path` to `/fonts/` [#837](https://github.com/primer/css/pull/837)
+
+### :bug: Bug Fix
+- Improve monospaced font on Chrome Android [#812](https://github.com/primer/css/pull/812)
+
+### :memo: Documentation
+- Add multi-word naming conventions to BEM docs [#836](https://github.com/primer/css/pull/836)
+- Color system docs updates [#811](https://github.com/primer/css/pull/811)
+- Color utility table tweaks [#842](https://github.com/primer/css/pull/842)
+- Fix markdown typos in Contributing docs page [#846](https://github.com/primer/css/pull/846)
+
+### Committers
+- [@ampinsk](https://github.com/ampinsk)
+- [@emilybrick](https://github.com/emilybrick)
+- [@emplums](https://github.com/emplums)
+- [@jonrohan](https://github.com/jonrohan)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+- [@skullface](https://github.com/skullface)
+- [@vdepizzol](https://github.com/vdepizzol)
+
 # 12.4.1
 
 ### :bug: Bug fixes
@@ -87,7 +116,7 @@
 # 12.2.2
 
 ### :bug: Bug Fix
-- Fix hide utilities when toggling between breakpoints [#746](https://github.com/primer/css/pull/746) 
+- Fix hide utilities when toggling between breakpoints [#746](https://github.com/primer/css/pull/746)
 
 ### :house: Internal
 - Prevent Storybook publish failures from breaking builds on `master` [#728](https://github.com/primer/css/pull/728)

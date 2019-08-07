@@ -54,12 +54,12 @@ Primer CSS is published to npm as `@primer/css`. Each of Primer CSS's "modules" 
 * **Product** styles (in `product/`) are specific to github.com, and include components such as avatars, labels, markdown styles, popovers, and progress indicators.
 * **Marketing** styles (in `marketing/`) are specific to GitHub marketing efforts, including international and event-focused sites as well as the more design-heavy feature pages on github.com. Marketing styles include new colors and button styles, and extend the core typography and whitespace scales.
 
-<div class="bg-gray py-6">
-  <div class="d-flex flex-wrap flex-md-nowrap px-6 gutter-lg">
-    <div class="col-12 col-md-9 pr-0 pr-lg-2">
-      <h3 class="f3 text-normal m-0">Use Primer CSS in your project</h3>
-      <p class="my-3">Pick and choose what you need. Install the entire Primer CSS bundle or import individual folders.</p>
-      <a href="/css/getting-started" class="btn btn-outline">Installation instructions</a>
+<div className="bg-gray py-6">
+  <div className="d-flex flex-wrap flex-md-nowrap px-6 gutter-lg">
+    <div className="col-12 col-md-9 pr-0 pr-lg-2">
+      <h3 className="f3 text-normal m-0">Use Primer CSS in your project</h3>
+      <p className="my-3">Pick and choose what you need. Install the entire Primer CSS bundle or import individual folders.</p>
+      <a href="/css/getting-started" className="btn btn-outline">Installation instructions</a>
     </div>
   </div>
 </div>
