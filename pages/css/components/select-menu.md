@@ -23,7 +23,7 @@ Use a `<details>` element to toggle the Select Menu. The `<summary>` element can
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
         <button class="SelectMenu-closeButton" type="button">
-          <%= octicon "x", height: 16 %>
+          <%= octicon "x" %>
         </button>
       </header>
       <menu class="SelectMenu-list">
@@ -57,7 +57,7 @@ In case the Select Menu should be aligned to the right, use `SelectMenu right-0`
         <header class="SelectMenu-header">
           <h3 class="SelectMenu-title">Title</h3>
           <button class="SelectMenu-closeButton" type="button">
-            <%= octicon "x", height: 16 %>
+            <%= octicon "x" %>
           </button>
         </header>
         <menu class="SelectMenu-list">
@@ -89,20 +89,20 @@ Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-chec
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
         <button class="SelectMenu-closeButton" type="button">
-          <%= octicon "x", height: 16 %>
+          <%= octicon "x" %>
         </button>
       </header>
       <menu class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitemcheckbox" aria-checked="true">
-          <svg class="SelectMenu-icon octicon octicon-check" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          <%= octicon "check", class: "SelectMenu-icon" %>
           Selected state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox">
-          <svg class="SelectMenu-icon octicon octicon-check" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          <%= octicon "check", class: "SelectMenu-icon" %>
           Default state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox" aria-checked="true">
-          <svg class="SelectMenu-icon octicon octicon-check" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          <%= octicon "check", class: "SelectMenu-icon" %>
           Selected state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox">Default state</button>
@@ -130,7 +130,7 @@ The list of items is arguably the most important subcomponent within the menu. B
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
         <button class="SelectMenu-closeButton" type="button">
-          <%= octicon "x", height: 16 %>
+          <%= octicon "x" %>
         </button>
       </header>
       <menu class="SelectMenu-list">
@@ -142,7 +142,8 @@ The list of items is arguably the most important subcomponent within the menu. B
           With an avatar
         </button>
         <button class="SelectMenu-item" role="menuitem">
-          With a status icon <svg class="octicon octicon-primitive-dot color-green-5 ml-2" style="fill:currentColor" viewBox="0 0 8 16" version="1.1" width="8" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path></svg>
+          With a status icon
+          <%= octicon "primitive-dot", class: "color-green-5 ml-2" %>
         </button>
         <button class="SelectMenu-item" role="menuitem">
           With a <span class="Label bg-blue" title="Label: label">label</span>
@@ -177,7 +178,7 @@ The Select Menu's list can be divided into multiple parts by adding a `.SelectMe
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
         <button class="SelectMenu-closeButton" type="button">
-          <%= octicon "x", height: 16 %>
+          <%= octicon "x" %>
         </button>
       </header>
       <menu class="SelectMenu-list">
@@ -212,7 +213,7 @@ Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for ad
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
         <button class="SelectMenu-closeButton" type="button">
-          <%= octicon "x", height: 16 %>
+          <%= octicon "x" %>
         </button>
       </header>
       <form class="SelectMenu-filter">
@@ -268,7 +269,7 @@ Sometimes you need two or more lists of items in your Select Menu, e.g. branches
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
         <button class="SelectMenu-closeButton" type="button">
-          <%= octicon "x", height: 16 %>
+          <%= octicon "x" %>
         </button>
       </header>
       <form class="SelectMenu-filter">
@@ -313,7 +314,7 @@ A `SelectMenu-message` can be used to show different kind of messages to a user.
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
         <button class="SelectMenu-closeButton" type="button">
-          <%= octicon "x", height: 16 %>
+          <%= octicon "x" %>
         </button>
       </header>
       <menu class="SelectMenu-list">
@@ -344,7 +345,7 @@ When fetching large lists, consider showing a `.SelectMenu-loading` animation.
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
         <button class="SelectMenu-closeButton" type="button">
-          <%= octicon "x", height: 16 %>
+          <%= octicon "x" %>
         </button>
       </header>
       <form class="SelectMenu-filter">
@@ -352,7 +353,7 @@ When fetching large lists, consider showing a `.SelectMenu-loading` animation.
       </form>
       <menu class="SelectMenu-list">
         <div class="SelectMenu-loading">
-          <svg height="32" class="octicon octicon-octoface anim-pulse" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"></path></svg>
+          <%= octicon "octoface", class: "anim-pulse", width: 32 %>
         </div>
       </menu>
       <footer class="SelectMenu-footer">Loading...</footer>
@@ -378,12 +379,12 @@ Sometimes a Select Menu needs to communicate a "blank slate" where there's no co
       <header class="SelectMenu-header">
         <h3 class="SelectMenu-title">Title</h3>
         <button class="SelectMenu-closeButton" type="button">
-          <%= octicon "x", height: 16 %>
+          <%= octicon "x" %>
         </button>
       </header>
       <menu class="SelectMenu-list">
         <div class="SelectMenu-blankslate">
-          <svg height="32" class="octicon octicon-repo color-gray-3" viewBox="0 0 12 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+          <%= octicon "repo", class: "color-gray-3", width: 24 %>
           <h4 class="my-2">No repositories</h4>
           <p class="mb-3 text-gray">We didn’t find any matching repositories that you can commit to.</p>
           <button type="button" class="btn btn-sm btn-primary">Create a repository</button>
