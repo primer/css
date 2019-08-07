@@ -27,4 +27,4 @@ You can read more about primer in the [docs][docs].
 [docs]: https://primer.style/css
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
-[sass]: http://sass-lang.com/
+[scss]: https://sass-lang.com/documentation/syntax#scss
