@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+const {dirname, join} = require('path')
+const globby = require('globby')
+const {exists, readFile, writeFile} = require('fs-extra')
+
+Promise.all([
+  readFile('src/README.template.md', 'utf8'),
+  globby('src/*/index.scss')
+]).then(async ([template, indexes]) => {
+  for (const indexPath of indexes) {
+    const dir = dirname(indexPath)
+    const parts = dir.split('/')
+    const bundle = parts.pop()
+    const readmePath = join(dir, 'README.md')
+    await writeFile(readmePath, getReadmeContents(bundle), 'utf8')
+  }
+
+  function getReadmeContents(bundle) {
+    return template.replace(/{bundle}/g, bundle)
+  }
+})
