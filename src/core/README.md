@@ -6,10 +6,10 @@ This repository is a compilation of [several CSS packages](https://github.com/pr
 
 ## Usage
 
-The source files included are written in [Sass][sass] (`scss`) You can simply point your sass `include-path` at your `node_modules` directory and import it like this.
+The source files included are written in [SCSS][scss]. Point your Sass include path at your `node_modules` directory and import it like this:
 
 ```scss
-@import "primer-core/index.scss";
+@import "@primer/css/core/index.scss";
 ```
 
 You can also import specific portions of the module by importing those partials from the `/lib/` folder. _Make sure you import any requirements along with the modules._
@@ -34,4 +34,4 @@ You can read more about primer in the [docs][docs].
 [docs]: https://primer.style/css
 [npm]: https://www.npmjs.com/
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
-[sass]: http://sass-lang.com/
+[scss]: https://sass-lang.com/documentation/syntax#scss
