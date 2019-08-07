@@ -1,37 +1,25 @@
-# Primer Buttons
+---
+bundle: "buttons"
+generated: true
+---
 
-> Buttons are used for actions, like in forms, while textual hyperlinks are used for destinations, or moving from one page to another.
-
-This repository is a module of the full [primer][primer] repository.
+# Primer CSS: `buttons` bundle
 
 ## Usage
 
-The source files included are written in [Sass][sass] (`scss`) You can simply point your sass `include-path` at your `node_modules` directory and import it like this.
+Primer CSS source files are written in [SCSS]. To include this Primer CSS module in your own build, ensure that your `node_modules` directory is listed in your Sass include paths, then import it with:
 
 ```scss
-@import "primer-buttons/index.scss";
+@import "@primer/css/buttons/index.scss";
 ```
-
-You can also import specific portions of the module by importing those partials from the `/lib/` folder. _Make sure you import any requirements along with the modules._
 
 ## Build
 
-For a compiled **css** version of this module, a npm script is included that will output a css version to `build/build.css` The built css file is also included in the npm package.
-
-```
-$ npm run build
-```
-
-## Documentation
-
-Find further documentation at [primer.style/css/components/buttons](https://primer.style/css/components/buttons).
+The `@primer/css` npm package includes a standalone CSS build of this module in `dist/buttons.css`.
 
 ## License
 
-[MIT](./LICENSE) &copy; [GitHub](https://github.com/)
+[MIT](https://github.com/primer/css/blob/master/LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer]: https://github.com/primer/css
-[docs]: https://primer.style/css
-[npm]: https://www.npmjs.com/
-[install-npm]: https://docs.npmjs.com/getting-started/installing-node
-[sass]: http://sass-lang.com/
+
+[scss]: https://sass-lang.com/documentation/syntax#scss

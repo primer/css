@@ -1,31 +1,25 @@
-# Primer Support
+---
+bundle: "support"
+generated: true
+---
 
-> Support files are Sass variables, mixins, and functions that we import into different bases for use across components, objects, and utilities. Sharing these common properties across GitHub sites helps us to keep our styles more consistent.
->
-> Most of the time to include these you'll only need to add `@import "support/support";` to the top of your bundle. If you want only a specific partial you can import them separately.
-
-This repository is a module of the full [primer][primer] repository.
+# Primer CSS: `support` bundle
 
 ## Usage
 
-The source files included are written in [Sass][sass] (`scss`) You can simply point your sass `include-path` at your `node_modules` directory and import it like this.
+Primer CSS source files are written in [SCSS]. To include this Primer CSS module in your own build, ensure that your `node_modules` directory is listed in your Sass include paths, then import it with:
 
 ```scss
-@import "primer-support/index.scss";
+@import "@primer/css/support/index.scss";
 ```
 
-You can also import specific portions of the module by importing those partials from the `/lib/` folder. _Make sure you import any requirements along with the modules._
+## Build
 
-## Documentation
-
-Find further documentation at [primer.style/css/support](https://primer.style/css/support).
+The `@primer/css` npm package includes a standalone CSS build of this module in `dist/support.css`.
 
 ## License
 
-[MIT](./LICENSE) &copy; [GitHub](https://github.com/)
+[MIT](https://github.com/primer/css/blob/master/LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer]: https://github.com/primer/css
-[docs]: https://primer.style/css/support
-[npm]: https://www.npmjs.com/
-[install-npm]: https://docs.npmjs.com/getting-started/installing-node
-[sass]: http://sass-lang.com/
+
+[scss]: https://sass-lang.com/documentation/syntax#scss
