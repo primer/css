@@ -15,8 +15,11 @@ Wrap some content in the outer `.blankslate` wrapper to give it the blankslate a
 
 ```html
 <div class="blankslate">
-  <h3>This is a blank slate</h3>
-  <p>Use it to provide information when no dynamic content exists.</p>
+  <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="Pull requests" class="mb-3">
+  <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
+  <p>Pull requests help you discuss potential changes before your changes are merged into the base branch.</p>
+  <button class="btn btn-primary my-3" type="button">New pull request</button>
+  <p><button class="btn-link" type="button">Learn more</button></p>
 </div>
 ```
 
@@ -44,8 +47,11 @@ Narrows the blankslate container to not occupy the entire available width.
 
 ```html
 <div class="blankslate blankslate-narrow">
-  <h3>This is a blank slate</h3>
-  <p>Use it to provide information when no dynamic content exists.</p>
+  <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="Pull requests" class="mb-3">
+  <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
+  <p>Pull requests help you discuss potential changes before your changes are merged into the base branch.</p>
+  <button class="btn btn-primary my-3" type="button">New pull request</button>
+  <p><button class="btn-link" type="button">Learn more</button></p>
 </div>
 ```
 
@@ -55,8 +61,11 @@ Removes the `border-radius` on the top corners.
 
 ```html
 <div class="blankslate blankslate-capped">
-  <h3>This is a blank slate</h3>
-  <p>Use it to provide information when no dynamic content exists.</p>
+  <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="Pull requests" class="mb-3">
+  <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
+  <p>Pull requests help you discuss potential changes before your changes are merged into the base branch.</p>
+  <button class="btn btn-primary my-3" type="button">New pull request</button>
+  <p><button class="btn-link" type="button">Learn more</button></p>
 </div>
 ```
 
@@ -66,8 +75,11 @@ Significantly increases the vertical padding.
 
 ```html
 <div class="blankslate blankslate-spacious">
-  <h3>This is a blank slate</h3>
-  <p>Use it to provide information when no dynamic content exists.</p>
+  <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="Pull requests" class="mb-3">
+  <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
+  <p>Pull requests help you discuss potential changes before your changes are merged into the base branch.</p>
+  <button class="btn btn-primary my-3" type="button">New pull request</button>
+  <p><button class="btn-link" type="button">Learn more</button></p>
 </div>
 ```
 
@@ -77,18 +89,24 @@ Increases the size of the text in the blankslate
 
 ```html
 <div class="blankslate blankslate-large">
-  <h3>This is a blank slate</h3>
-  <p>Use it to provide information when no dynamic content exists.</p>
+  <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="Pull requests" class="mb-3">
+  <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
+  <p>Pull requests help you discuss potential changes before your changes are merged into the base branch.</p>
+  <button class="btn btn-primary my-3" type="button">New pull request</button>
+  <p><button class="btn-link" type="button">Learn more</button></p>
 </div>
 ```
 
-##### No background
+##### No border
 
-Removes the `background-color` and `border`.
+To remove the border, use the [border utliity](/css/utilities/borders) `.border-0`.
 
 ```html
-<div class="blankslate blankslate-clean-background">
-  <h3>This is a blank slate</h3>
-  <p>Use it to provide information when no dynamic content exists.</p>
+<div class="blankslate border-0">
+  <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="Pull requests" class="mb-3">
+  <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
+  <p>Pull requests help you discuss potential changes before your changes are merged into the base branch.</p>
+  <button class="btn btn-primary my-3" type="button">New pull request</button>
+  <p><button class="btn-link" type="button">Learn more</button></p>
 </div>
 ```
