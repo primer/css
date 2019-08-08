@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "plugin:github/react",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "rules": {
+    "import/no-namespace": 0,
+    "no-unused-vars": ["error", {
+      "ignoreRestSiblings": true
+    }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
