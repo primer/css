@@ -19,7 +19,7 @@ The `.Header` class is the wrapping class that aligns all the items properly and
   <div class="Header-item">
     <a href="#" class="Header-link f4 d-flex flex-items-center">
       <%= octicon "mark-github", class: "mr-2", height: 32 %>
-       GitHub
+      GitHub
     </a>
   </div>
   <div class="Header-item">
