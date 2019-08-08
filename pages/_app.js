@@ -14,6 +14,7 @@ import {CONTENT_MAX_WIDTH} from '../docs/constants'
 import {repository} from '../package.json'
 
 import '../src/index.scss'
+import '@primer/octicons/index.scss'
 
 const DocLink = props => <Link nounderline {...props} />
 const editLinkBase = `${repository}/edit/master/pages`
