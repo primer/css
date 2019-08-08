@@ -91,7 +91,7 @@ $blue: #0000ff;
 
 Don't forget to add the compiled CSS to the `<head>` section of your page.
 
-```html inert=true
+```html
 <link href="path/to/style.css" rel="stylesheet" />
 ```
 
@@ -99,6 +99,6 @@ Don't forget to add the compiled CSS to the `<head>` section of your page.
 
 You won't need to install any node modules or Sass compilers for a static site; you can use the built CSS. The best thing to do is to [download the built CSS](https://unpkg.com/@primer/css/dist/primer.css) from the [unpkg.com](https://unpkg.com) and host it yourself. If that's not an option, you can include a CDN link in your HTML:
 
-```html inert=true
+```html
 <link href="https://unpkg.com/primer/build/build.css" rel="stylesheet" />
 ```

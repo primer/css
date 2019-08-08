@@ -14,7 +14,7 @@ Toasts are used to show live, time-sensitive feedback to users.
 
 To create a default toast, use `.Toast`. Always use the `info` icon for default messages.
 
-```html title="Default toast"
+```html live title="Default toast"
 <div class="p-1">
   <div class="Toast">
     <span class="Toast-icon">
@@ -28,7 +28,7 @@ To create a default toast, use `.Toast`. Always use the `info` icon for default 
 
 The Toast content is formattable. We recommend keeping your message under 140 characters.
 
-```html title="Toast with long text"
+```html live title="Toast with long text"
 <div class="p-1">
   <div class="Toast">
     <span class="Toast-icon">
@@ -46,7 +46,7 @@ Use the success, warning, and error modifiers to communicate different states.
 
 Always use the `check` octicon for success states.
 
-```html title="Success toast"
+```html live title="Success toast"
 <div class="p-1">
   <div class="Toast Toast--success">
     <span class="Toast-icon">
@@ -60,7 +60,7 @@ Always use the `check` octicon for success states.
 
 Always use the `alert` octicon for warning states.
 
-```html title="Warning toast"
+```html live title="Warning toast"
 <div class="p-1">
   <div class="Toast Toast--warning">
     <span class="Toast-icon">
@@ -74,7 +74,7 @@ Always use the `alert` octicon for warning states.
 
 Always use the `stop` octicon for error states.
 
-```html title="Error toast"
+```html live title="Error toast"
 <div class="p-1">
   <div class="Toast Toast--error">
     <span class="Toast-icon">
@@ -90,7 +90,7 @@ Always use the `stop` octicon for error states.
 
 Use `.Toast-dismissButton` to allow a user to explicitly dismiss a Toast.
 
-```html title="Toast with dismiss"
+```html live title="Toast with dismiss"
 <div class="p-1">
   <div class="Toast">
     <span class="Toast-icon">
@@ -109,7 +109,7 @@ Use `.Toast-dismissButton` to allow a user to explicitly dismiss a Toast.
 
 Include a link to allow users to take actions within a Toast.
 
-```html title="Toast with link"
+```html live title="Toast with link"
 <div class="p-1">
   <div class="Toast">
     <span class="Toast-icon">
@@ -125,7 +125,7 @@ Include a link to allow users to take actions within a Toast.
 
 The `Toast--animateIn` and `Toast--animateOut` modifier classes can be used to animate the toast in and out from the bottom.
 
-```html title="Toast animating"
+```html live title="Toast animating"
 <div class="p-1">
   <div class="Toast Toast--animateIn">
     <span class="Toast-icon">
@@ -141,7 +141,7 @@ The `Toast--animateIn` and `Toast--animateOut` modifier classes can be used to a
 
 Use the `position-fixed bottom-0` utility classes on a wrapper element to position Toasts at the **bottom left** of the viewport.
 
-```html title="Toast animating"
+```html live title="Toast animating"
 <div class="border bg-gray-light" style="height:150px">
   <div class="position-fixed bottom-0">
     <div class="Toast">

@@ -9,7 +9,7 @@ bundle: tooltips
 
 Add tooltips built entirely in CSS to nearly any element.
 
-## Table of Contents
+
 
 ## Implementation and accessibility
 
@@ -24,7 +24,7 @@ Before adding a tooltip, please consider: Is this information essential and nece
 ## Tooltip direction
 Specify the direction of a tooltip with north, south, east, and west directions:
 
-```html
+```html live
 <div class="d-flex flex-justify-center pt-4">
   <span class="tooltipped tooltipped-nw m-2 p-2 border" aria-label="This is the tooltip on the North West side.">
     .tooltipped-nw
@@ -60,7 +60,7 @@ Specify the direction of a tooltip with north, south, east, and west directions:
 ## Tooltip alignment
 Align tooltips to the left or right of an element, combined with a directional class to specify north or south. Use a modifier of `1` or `2` to choose how much the tooltip's arrow is indented.
 
-```html
+```html live
 <div class="d-flex flex-justify-center pt-4">
   <span class="tooltipped tooltipped-nw tooltipped-align-right-1 m-2 p-2 border" aria-label="Tooltipped NW and aligned right.">
     .tooltipped-nw .tooltipped-align-right-1
@@ -99,7 +99,7 @@ Align tooltips to the left or right of an element, combined with a directional c
 Use `.tooltipped-multiline` when you have long content. This style has some limitations: you cannot pre-format the text with newlines, and tooltips are limited to a max-width of `250px`.
 
 
-```html
+```html live
 <div class="d-flex flex-justify-center pt-6">
   <span class="tooltipped tooltipped-n tooltipped-multiline m-2 p-2 border" aria-label="This is the tooltip with multiple lines. This is the tooltip with multiple lines.">
     .tooltipped-multiline
@@ -111,7 +111,7 @@ Use `.tooltipped-multiline` when you have long content. This style has some limi
 
 By default the tooltips have a slight delay before appearing. This is to keep multiple tooltips in the UI from being distracting. There is a `.tooltipped-no-delay` modifier class you can use to override this.
 
-```html
+```html live
 <div class="d-flex flex-justify-center pt-4">
   <span class="tooltipped tooltipped-n tooltipped-no-delay m-2 p-2 border" aria-label="This is the tooltip on the no delay side.">
     .tooltipped-no-delay

@@ -9,13 +9,13 @@ bundle: pagination
 
 Use the pagination component to apply button styles to a connected set of links that go to related pages (for example, previous, next, or page numbers).
 
-## Table of Contents
+
 
 ## Previous/next pagination
 
 You can make a very simple pagination container with just the Previous and Next buttons. Add the class `disabled` to the `Previous` button if there isn't a preceding page, or to the `Next` button if there isn't a succeeding page.
 
-```html
+```html live
 <nav class="paginate-container" aria-label="Pagination">
   <div class="pagination">
     <span class="previous_page disabled">Previous</span>
@@ -36,7 +36,7 @@ As always, make sure to include the appropriate `aria` attributes to make the el
 - Add `aria-current="true"` to the current page marker.
 - Add `aria-label="Page X"` to each anchor link.
 
-```html
+```html live
 <nav class="paginate-container" aria-label="Pagination">
   <div class="pagination">
     <span class="previous_page disabled">Previous</span>

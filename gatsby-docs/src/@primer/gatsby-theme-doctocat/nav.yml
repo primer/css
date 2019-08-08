@@ -1,5 +1,61 @@
 - title: Getting started
   url: /getting-started
+  children:
+    - title: Contributing
+      url: /getting-started/contributing
+- title: Support
+  url: /support
+  children:
+    - title: Breakpoints
+      url: /support/breakpoints
+    - title: Color system
+      url: /support/color-system
+    - title: Marketing variables
+      url: /support/marketing-variables
+    - title: Spacing
+      url: /support/spacing
+    - title: Typography
+      url: /support/typography
+- title: Utilities
+  url: /utilities
+  children:
+    - title: Animations
+      url: /utilities/animations
+    - title: Box shadow
+      url: /utilities/box-shadow
+    - title: Details
+      url: /utilities/details
+    - title: Flexbox
+      url: /utilities/flexbox
+    - title: Layout
+      url: /utilities/layout
+    - title: Margin
+      url: /utilities/margin
+    - title: Marketing borders
+      url: /utilities/marketing-borders
+    - title: Marketing filters
+      url: /utilities/marketing-filters
+    - title: Marketing layout
+      url: /utilities/marketing-layout
+    - title: Marketing margin
+      url: /utilities/marketing-margin
+    - title: Marketing padding
+      url: /utilities/marketing-padding
+    - title: Marketing type
+      url: /utilities/marketing-type
+    - title: Padding
+      url: /utilities/padding
+    - title: Typography
+      url: /utilities/typography
+- title: Objects
+  url: /objects
+  children:
+    - title: Grid
+      url: /objects/grid
+    - title: Layout
+      url: /objects/layout
+    - title: Table object
+      url: /objects/table-object
 - title: Components
   url: /components
   children:
@@ -27,3 +83,51 @@
       url: /components/forms
     - title: Labels
       url: /components/labels
+    - title: Markdown
+      url: /components/markdown
+    - title: Marketing buttons
+      url: /components/marketing-buttons
+    - title: Navigation
+      url: /components/navigation
+    - title: Pagehead
+      url: /components/pagehead
+    - title: Popover
+      url: /components/popover
+    - title: Progress
+      url: /components/progress
+    - title: Select menu
+      url: /components/select-menu
+    - title: Select menu (deprecated)
+      url: /components/select-menu-deprecated
+    - title: Subhead
+      url: /components/subhead
+    - title: Toasts
+      url: /components/toasts
+    - title: Tooltips
+      url: /components/tooltips
+    - title: Truncate
+      url: /components/truncate
+- title: Tools
+  url: /tools
+  children:
+    - title: Atom packages
+      url: /tools/atom-packages
+    - title: Docset
+      url: /tools/docset
+    - title: Linting
+      url: /tools/linting
+    - title: Local development
+      url: /tools/local-primer
+    - title: Prototyping
+      url: /tools/prototyping
+    - title: Testing
+      url: /tools/testing
+- title: Principles
+  url: /principles
+  children:
+    - title: Accessibility
+      url: /principles/accessibility
+    - title: HTML
+      url: /principles/html
+    - title: SCSS
+      url: /principles/scss

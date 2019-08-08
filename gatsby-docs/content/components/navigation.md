@@ -9,13 +9,13 @@ bundle: navigation
 
 Primer CSS comes with several navigation components. Some were designed with singular purposes, while others were design to be more flexible and appear quite frequently.
 
-## Table of Contents
+
 
 ## Menu
 
 The menu is a vertical list of navigational links. **A menu's width and placement must be set by you.** If you like, just use our grid columns as a parent. Otherwise, apply a custom `width`.
 
-```html title="Menu"
+```html live title="Menu"
 <nav class="menu" aria-label="Person settings">
   <a class="menu-item selected" href="#url" aria-current="page">Account</a>
   <a class="menu-item" href="#url">Profile</a>
@@ -50,7 +50,7 @@ There are a few subcomponents and add-ons that work well with the menu, includin
 
 You can also add optional headings to a menu. Feel free to use nearly any semantic element with the `.menu-heading` class, including inline elements, headings, and more.
 
-```html title="Menu with heading"
+```html live title="Menu with heading"
 <nav class="menu" aria-labelledby="menu-heading">
   <span class="menu-heading" id="menu-heading">Menu heading</span>
   <a class="menu-item selected" href="#url" aria-current="page">Account</a>
@@ -64,7 +64,7 @@ You can also add optional headings to a menu. Feel free to use nearly any semant
 
 Use `.UnderlineNav` to style navigation with a minimal underlined selected state, typically used for navigation placed at the top of the page. This component comes with variations to accommodate icons, containers and other content.
 
-```html title="UnderlineNav"
+```html live title="UnderlineNav"
 <nav class="UnderlineNav">
   <div class="UnderlineNav-body">
     <a href="#url" role="tab" title="Item 1" class="UnderlineNav-item selected">Item 1</a>
@@ -77,7 +77,7 @@ Use `.UnderlineNav` to style navigation with a minimal underlined selected state
 
 Use `.UnderlineNav-actions` to place another element, such as a button, to the opposite side of the navigation items.
 
-```html title="UnderlineNav-actions"
+```html live title="UnderlineNav-actions"
 <nav class="UnderlineNav" aria-label="Foo bar">
   <div class="UnderlineNav-body">
     <a href="#url" class="UnderlineNav-item selected">Item 1</a>
@@ -93,7 +93,7 @@ Use `.UnderlineNav-actions` to place another element, such as a button, to the o
 
 Use `.UnderlineNav--right` to right align the navigation.
 
-```html title="UnderlineNav--right"
+```html live title="UnderlineNav--right"
 <nav class="UnderlineNav UnderlineNav--right">
   <div class="UnderlineNav-body">
     <a href="#url" role="tab" title="Item 1" class="UnderlineNav-item selected">Item 1</a>
@@ -106,7 +106,7 @@ Use `.UnderlineNav--right` to right align the navigation.
 
 `.UnderlineNav--right` also works with when used with `.UnderlineNav-actions`.
 
-```html title="UnderlineNav--right with actions"
+```html live title="UnderlineNav--right with actions"
 <nav class="UnderlineNav UnderlineNav--right" aria-label="Foo bar">
   <div class="UnderlineNav-actions">
     <a class="btn">Button</a>
@@ -149,7 +149,7 @@ Use `.UnderlineNav--right` to right align the navigation.
 
 Use `.UnderlineNav--full` in combination with container styles and `.UnderlineNav-container` to make navigation fill the width of the container.
 
-```html title="UnderlineNav--full"
+```html live title="UnderlineNav--full"
 <nav class="UnderlineNav UnderlineNav--full" aria-label="Foo bar">
   <div class="container-lg UnderlineNav-container">
     <div class="UnderlineNav-body">
@@ -174,7 +174,7 @@ The Side Nav is a vertical list of navigational links, typically used on the lef
 - You can use a **light gray background** and a **border** if the parent element doesn't have it already.
 - Add `aria-current="page"` to show a link as selected. Selected button elements in tab-like UIs should instead have `aria-selected="true"`.
 
-```html
+```html live
 <nav class="SideNav bg-gray-light border" style="max-width: 360px">
   <a class="SideNav-item" href="#url">Account</a>
   <a class="SideNav-item" href="#url" aria-current="page">Profile</a>
@@ -185,7 +185,7 @@ The Side Nav is a vertical list of navigational links, typically used on the lef
 
 Different kind of content can be added inside a Side Nav item. Use utility classes to further style them if needed.
 
-```html
+```html live
 <nav class="SideNav bg-gray-light border" style="max-width: 360px">
   <a class="SideNav-item" href="#url">
     Text only
@@ -216,7 +216,7 @@ Different kind of content can be added inside a Side Nav item. Use utility class
 
 The `.SideNav-subItem` is an alternative, more lightweight version without borders and more condensed. It can be used stand-alone.
 
-```html
+```html live
 <aside class="bg-gray-light border p-3" style="max-width: 360px">
   <h5 class="text-gray mb-2 pb-1 border-bottom">Menu</h5>
   <nav class="SideNav">
@@ -230,7 +230,7 @@ The `.SideNav-subItem` is an alternative, more lightweight version without borde
 
 Or also appear nested, as a sub navigation. Use margin/padding utility classes to add indentation.
 
-```html
+```html live
 <nav class="SideNav bg-gray-light border" style="max-width: 360px">
   <a class="SideNav-item" href="#url">
     <svg class="SideNav-icon octicon octicon-person mr-2" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 14.002a.998.998 0 0 1-.998.998H1.001A1 1 0 0 1 0 13.999V13c0-2.633 4-4 4-4s.229-.409 0-1c-.841-.62-.944-1.59-1-4 .173-2.413 1.867-3 3-3s2.827.586 3 3c-.056 2.41-.159 3.38-1 4-.229.59 0 1 0 1s4 1.367 4 4v1.002z"></path></svg>
@@ -258,7 +258,7 @@ Or also appear nested, as a sub navigation. Use margin/padding utility classes t
 
 When you need to toggle between different views, consider using a tabnav. It'll give you a left-aligned horizontal row of... tabs!
 
-```html title="tabnav"
+```html live title="tabnav"
 <div class="tabnav">
   <nav class="tabnav-tabs" aria-label="Foo bar">
     <a href="#url" class="tabnav-tab selected" aria-current="page">Foo tab</a>
@@ -269,7 +269,7 @@ When you need to toggle between different views, consider using a tabnav. It'll 
 
 Use `.float-right` to align additional elements in the `.tabnav`:
 
-```html title="tabnav with buttons"
+```html live title="tabnav with buttons"
 <div class="tabnav">
   <a class="btn btn-sm float-right" href="#url" role="button">Button</a>
   <nav class="tabnav-tabs" aria-label="Foo bar">
@@ -281,7 +281,7 @@ Use `.float-right` to align additional elements in the `.tabnav`:
 
 Additional bits of text and links can be styled for optimal placement with `.tabnav-extra`:
 
-```html title="tabnav-extra"
+```html live title="tabnav-extra"
 <div class="tabnav">
   <div class="tabnav-extra float-right">
     Tabnav widget text here.
@@ -293,7 +293,7 @@ Additional bits of text and links can be styled for optimal placement with `.tab
 </div>
 ```
 
-```html title="tabnav with everything"
+```html live title="tabnav with everything"
 <div class="tabnav">
   <div class="float-right">
     <a class="tabnav-extra" href="#url">
@@ -314,7 +314,7 @@ Additional bits of text and links can be styled for optimal placement with `.tab
 
 A vertical list of filters. Grey text on white background. Selecting a filter from the list will fill its background with blue and make the text white.
 
-```html title="filter-list"
+```html live title="filter-list"
 <ul class="filter-list">
   <li>
     <a href="#url" class="filter-item selected" aria-current="page">
@@ -340,7 +340,7 @@ A vertical list of filters. Grey text on white background. Selecting a filter fr
 
 `.subnav` is navigation that is typically used when on a dashboard type interface with another set of navigation above it. This helps distinguish navigation hierarchy.
 
-```html title="subnav"
+```html live title="subnav"
 <nav class="subnav" aria-label="Respository">
   <a href="#url" class="subnav-item selected" aria-current="page">Item 1</a>
   <a href="#url" class="subnav-item">Item 2</a>

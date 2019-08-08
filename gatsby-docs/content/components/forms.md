@@ -8,8 +8,6 @@ bundle: forms
 
 Style individual form controls and utilize common layouts.
 
-## Table of Contents
-
 Overview:
 
 - We reset several elements' default styles for cross browser consistency and easier manipulation later. This includes `<fieldset>`s, WebKit validation bubbles, and most textual `<input>`s.
@@ -21,7 +19,7 @@ Overview:
 
 All our inputs and buttons side-by-side for easy testing of sizing and alignment with one another.
 
-```html
+```html live
 <p>
   <button class="btn" type="button">Button</button>
   <button class="btn select-menu-button" type="button" aria-expanded="false" aria-haspopup="true">

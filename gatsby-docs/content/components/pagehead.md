@@ -9,13 +9,13 @@ symbols: [account-switcher, active, admin, avatar, dropdown-menu-content, experi
 
 Give a page a clear, separated title and optional top nav by adding a `.pagehead`.
 
-## Table of Contents
+
 
 ## Basic pagehead
 
 In its simplest form, you can build a pagehead with a `pagehead` element with an `h1` child.
 
-```html
+```html live
 <div class="pagehead">
   <h1>Title</h1>
 </div>
@@ -40,7 +40,7 @@ Also be sure to add `aria-hidden="true"` to hide the avatar from screenreaders.
 
 For path or breadcrumb patterns, wrap the `/` with `path-divider` to add some nice horizontal spacing.
 
-```html
+```html live
 <div class="pagehead">
   <h1>
     <span class="author"><a href="#url" class="url fn" rel="author">jonrohan</a></span>
@@ -54,7 +54,7 @@ For path or breadcrumb patterns, wrap the `/` with `path-divider` to add some ni
 
 To add actions on the right side of the `pagehead`, use the `pagehead-actions` element. Place `pagehead-actions` before the `h1` to ensure proper placement.
 
-```html
+```html live
 <div class="pagehead">
   <ul class="pagehead-actions">
     <li><button class="btn btn-sm" href="#url">Action</button></li>
@@ -66,7 +66,7 @@ To add actions on the right side of the `pagehead`, use the `pagehead-actions` e
 
 ## Org nav
 
-```html
+```html live
 <div class="pagehead orghead px-3">
   <nav class="orgnav clearfix" role="navigation">
     <a class="pagehead-tabs-item selected" href="#url">
@@ -98,7 +98,7 @@ Use `pagehead` to construct a header and navigation for a repository.
 
 ### Base
 
-```html
+```html live
 <div class="pagehead repohead experiment-repo-nav">
   <div class="container-lg repohead-details-container px-3 clearfix">
     <ul class="pagehead-actions">
@@ -156,7 +156,7 @@ Use `pagehead` to construct a header and navigation for a repository.
 
 ### Private
 
-```html
+```html live
 <div class="pagehead repohead experiment-repo-nav">
   <div class="container-lg repohead-details-container px-3 clearfix">
     <ul class="pagehead-actions">

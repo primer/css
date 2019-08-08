@@ -9,7 +9,7 @@ bundle: popover
 
 Popovers are used to bring attention to specific user interface elements, typically to suggest an action or to guide users through a new experience.
 
-## Table of Contents
+
 
 A popover consist of:
 
@@ -48,7 +48,7 @@ The samples below include optional markup, like:
 ### Basic example
 Defaults to caret oriented top-center.
 
-```html title="Default (top-center)"
+```html live title="Default (top-center)"
 <div class="position-relative text-center">
   <button class="btn btn-primary">UI</button>
   <div class="Popover right-0 left-0 position-relative">
@@ -63,7 +63,7 @@ Defaults to caret oriented top-center.
 
 ### Large example
 
-```html title="Large"
+```html live title="Large"
 <div class="position-relative text-center">
   <button class="btn btn-primary">UI</button>
   <div class="Popover right-0 left-0 position-relative">
@@ -78,7 +78,7 @@ Defaults to caret oriented top-center.
 
 ### Bottom
 
-```html title="Bottom"
+```html live title="Bottom"
 <div class="position-relative text-center">
   <div class="Popover position-relative">
     <div class="Popover-message Popover-message--bottom p-4 mx-auto mb-2 text-left Box box-shadow-large">
@@ -93,7 +93,7 @@ Defaults to caret oriented top-center.
 
 ### Bottom-right
 
-```html title="Bottom-right"
+```html live title="Bottom-right"
 <div class="position-relative text-right pr-2">
   <div class="Popover position-relative">
     <div class="Popover-message Popover-message--bottom-right p-4 mb-2 text-left Box box-shadow-large">
@@ -108,7 +108,7 @@ Defaults to caret oriented top-center.
 
 ### Bottom-left
 
-```html title="Bottom-left"
+```html live title="Bottom-left"
 <div class="Popover position-relative pl-2">
   <div class="Popover-message Popover-message--bottom-left p-4 mb-2 Box box-shadow-large">
     <h4 class="mb-2">Popover heading</h4>
@@ -121,7 +121,7 @@ Defaults to caret oriented top-center.
 
 ### Left
 
-```html title="Left"
+```html live title="Left"
 <div class="d-flex flex-justify-center flex-items-center">
   <button class="btn btn-primary">UI</button>
   <div class="Popover position-relative">
@@ -136,7 +136,7 @@ Defaults to caret oriented top-center.
 
 ### Left-bottom
 
-```html title="Left-bottom"
+```html live title="Left-bottom"
 <div class="d-flex flex-justify-center flex-items-end">
   <button class="btn btn-primary">UI</button>
   <div class="Popover position-relative">
@@ -151,7 +151,7 @@ Defaults to caret oriented top-center.
 
 ### Left-top
 
-```html title="Left-top"
+```html live title="Left-top"
 <div class="d-flex flex-justify-center flex-items-start">
   <button class="btn btn-primary">UI</button>
   <div class="Popover position-relative">
@@ -166,7 +166,7 @@ Defaults to caret oriented top-center.
 
 ### Right
 
-```html title="Right"
+```html live title="Right"
 <div class="d-flex flex-justify-center flex-items-center">
   <div class="Popover position-relative">
     <div class="Popover-message Popover-message--right p-4 mr-2 Box box-shadow-large">
@@ -181,7 +181,7 @@ Defaults to caret oriented top-center.
 
 ### Right-bottom
 
-```html title="Right-bottom"
+```html live title="Right-bottom"
 <div class="d-flex flex-justify-center flex-items-end">
   <div class="Popover position-relative">
     <div class="Popover-message Popover-message--right-bottom p-4 mr-2 Box box-shadow-large">
@@ -196,7 +196,7 @@ Defaults to caret oriented top-center.
 
 ### Right-top
 
-```html title="Right-top"
+```html live title="Right-top"
 <div class="d-flex flex-justify-center flex-items-start">
   <div class="Popover position-relative">
     <div class="Popover-message Popover-message--right-top p-4 mr-2 Box box-shadow-large">
@@ -211,7 +211,7 @@ Defaults to caret oriented top-center.
 
 ### Top-left
 
-```html title="Top-left"
+```html live title="Top-left"
 <div class="position-relative pl-2">
   <button class="btn btn-primary">UI</button>
   <div class="Popover position-relative">
@@ -226,7 +226,7 @@ Defaults to caret oriented top-center.
 
 ### Top-right
 
-```html title="Top-right"
+```html live title="Top-right"
 <div class="position-relative text-right pr-2">
   <button class="btn btn-primary">UI</button>
   <div class="Popover right-0 position-relative">

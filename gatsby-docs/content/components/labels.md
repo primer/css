@@ -17,13 +17,13 @@ GitHub also programmatically generates and applies a background color for labels
 
 The base `Label` style does not apply a background color, here's an example using the `bg-blue` utility to apply a blue background:
 
-```html title="Label"
+```html live title="Label"
 <span title="Label: default label" class="Label bg-blue">default label</span>
 ```
 
 **Note:** Be sure to include a title attribute on labels, it's helpful for people using screen-readers to differentiate a label from other text. I.e. without the title attribute, the following example would read as _"New select component design"_, rather than identifying `design` as a label.
 
-```html title="Label without title"
+```html live title="Label without title"
 <!-- Don't do this -->
 <a href="#url">New select component</a><span class="Label bg-blue ml-1">design</span>
 ```
@@ -34,31 +34,31 @@ Labels come in a few different themes. Use a theme that helps communicate the co
 
 Use `Label--gray` to create a label with a light gray background and gray text. This label is neutral in color and can be used in contexts where all you need to communicate is metadata, or whe you want a label to feel less prominent compared with labels with stronger colors.
 
-```html title="Label theme gray"
+```html live title="Label theme gray"
 <span title="Label: gray label" class="Label Label--gray">gray label</span>
 ```
 
 Use `Label--gray-darker` to create a label with a dark-gray background color. This label is also neutral in color, however, since it's background is darker it can stand out more compared to `Label--gray`.
 
-```html title="Label theme dark gray"
+```html live title="Label theme dark gray"
 <span title="Label: dark gray label" class="Label Label--gray-darker">dark gray label</span>
 ```
 
 Use `Label--orange` to communicate "warning". The orange background color is very close to red, so avoid using next to labels with a red background color since most people will find it hard to tell the difference.
 
-```html title="Label theme orange"
+```html live title="Label theme orange"
 <span title="Label: orange label" class="Label Label--orange">orange label</span>
 ```
 
 Use `Label--outline` to create a label with gray text, a gray border, and a transparent background. The outline reduces the contrast of this label in combination with filled labels. Use this in contexts where you need it to stand out less than other labels and communicate a neutral message.
 
-```html title="Label outline"
+```html live title="Label outline"
 <span title="Label: outline label" class="Label Label--outline">outlined label</span>
 ```
 
 Use `Label--outline-green` in combination with `Label--outline` to communicate a positive message.
 
-```html title="Label outline green"
+```html live title="Label outline green"
 <span title="Label: green outline label" class="Label Label--outline Label--outline-green">green outlined label</span>
 ```
 
@@ -66,7 +66,7 @@ Use `Label--outline-green` in combination with `Label--outline` to communicate a
 
 Use state labels to inform users of an items status. States are large labels with bolded text. The default state has a gray background.
 
-```html title="State"
+```html live title="State"
 <span class="State">Default</span>
 ```
 
@@ -95,7 +95,7 @@ Use `State--small` for a state label with reduced padding a smaller font size. T
 
 Use the `Counter` component to add a count to navigational elements and buttons. Counters come in 3 variations: the default `Counter` with a light gray background, `Counter--gray` with a dark-gray background and inverse white text, and `Counter--gray-light` with a light-gray background and dark gray text. When a counter is empty, it's visibility will be hidden.
 
-```html title="Counter"
+```html live title="Counter"
 <span class="Counter">16</span>
 <span class="Counter Counter--gray">32</span>
 <span class="Counter Counter--gray-light">64</span>
@@ -103,7 +103,7 @@ Use the `Counter` component to add a count to navigational elements and buttons.
 
 Use the `Counter` in navigation to indicate the number of items without the user having to click through or count the items, such as open issues in a GitHub repo. See more options in [navigation](./navigation).
 
-```html title="Counter in tabs"
+```html live title="Counter in tabs"
 <div class="tabnav">
   <nav class="tabnav-tabs" aria-label="Foo bar">
     <a href="#url" class="tabnav-tab selected" aria-current="page">Foo tab <span class="Counter">23</a>
@@ -114,7 +114,7 @@ Use the `Counter` in navigation to indicate the number of items without the user
 
 Counters can also be used in `Box` headers to indicate the number of items in a list. See more on the [box component](./box).
 
-```html title="Counter in Box headers"
+```html live title="Counter in Box headers"
 <div class="Box">
   <div class="Box-header">
     <h3 class="Box-title">
