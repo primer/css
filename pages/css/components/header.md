@@ -17,13 +17,13 @@ The `.Header` class is the wrapping class that aligns all the items properly and
 ```html title="Header"
 <div class="Header">
   <div class="Header-item">
-    <a href="#" class="Header-link f4">
-      <%= octicon "mark-github", class: "v-align-middle mr-2", height: 32 %>
-      <span class="v-align-middle"> GitHub</span>
+    <a href="#" class="Header-link f4 d-flex flex-items-center">
+      <%= octicon "mark-github", class: "mr-2", height: 32 %>
+       GitHub
     </a>
   </div>
   <div class="Header-item">
-    <input type="search" class="form-control" />
+    <input type="search" class="form-control input-dark" />
   </div>
   <div class="Header-item Header-item--full">
     Menu
@@ -50,7 +50,7 @@ All items directly under the `.Header` component should be a `.Header-item` comp
 
   <!-- Form item  -->
   <div class="Header-item">
-    <input class="form-control" type="text"/>
+    <input class="form-control input-dark" type="text"/>
   </div>
 
   <!-- Image item  -->
