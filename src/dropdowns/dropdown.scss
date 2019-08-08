@@ -30,15 +30,15 @@
   left: 0;
   z-index: 100;
   width: 160px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: $spacer-1;
+  padding-bottom: $spacer-1;
   margin-top: 2px;
   list-style: none;
   background-color: $bg-white;
   background-clip: padding-box;
   border: $border-width $border-style $black-fade-15;
   border-radius: $spacer-1;
-  box-shadow: 0 3px 12px $black-fade-15;
+  box-shadow: $box-shadow-large;
 
   &::before,
   &::after {
@@ -76,7 +76,7 @@
 // Dropdown items (can be links or buttons)
 .dropdown-item {
   display: block;
-  padding: $spacer-1 10px $spacer-1 $spacer-3;
+  padding: $spacer-1 $spacer-2 $spacer-1 $spacer-3;
   overflow: hidden;
   color: $text-gray-dark;
   text-overflow: ellipsis;
@@ -148,7 +148,7 @@
   left: auto;
   width: auto;
   margin-top: 0;
-  margin-right: 10px;
+  margin-right: $spacer-2;
 
   &::before {
     top: 10px;
@@ -172,10 +172,10 @@
   left: 100%;
   width: auto;
   margin-top: 0;
-  margin-left: 10px;
+  margin-left: $spacer-2;
 
   &::before {
-    top: 10px;
+    top: $spacer-2;
     left: -$spacer-3;
     border-color: transparent;
     border-right-color: $black-fade-15;
@@ -272,7 +272,7 @@
   background: $gray-800;
   color: $white;
   border-color: $gray-700;
-  box-shadow: 0 3px 12px $black-fade-50;
+  box-shadow: $box-shadow-large;
 
   &::before {
     border-bottom-color: $gray-700;
