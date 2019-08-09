@@ -18,8 +18,8 @@ Wrap some content in the outer `.blankslate` wrapper to give it the blankslate a
   <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="" class="mb-3">
   <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
   <p>Pull requests help you discuss potential changes before your changes are merged into the base branch.</p>
-  <button class="btn btn-primary my-3">New pull request</button>
-  <p><button class="btn-link">Learn more</button></p>
+  <button class="btn btn-primary my-3" type="button">New pull request</button>
+  <p><button class="btn-link" type="button">Learn more</button></p>
 </div>
 ```
 
@@ -50,8 +50,8 @@ Narrows the blankslate container to not occupy the entire available width.
   <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="" class="mb-3">
   <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
   <p>Pull requests help you discuss potential changes before your changes are merged into the base branch.</p>
-  <button class="btn btn-primary my-3">New pull request</button>
-  <p><button class="btn-link">Learn more</button></p>
+  <button class="btn btn-primary my-3" type="button">New pull request</button>
+  <p><button class="btn-link" type="button">Learn more</button></p>
 </div>
 ```
 
@@ -64,8 +64,8 @@ Removes the `border-radius` on the top corners.
   <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="" class="mb-3">
   <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
   <p>Pull requests help you discuss potential changes before your changes are merged into the base branch.</p>
-  <button class="btn btn-primary my-3">New pull request</button>
-  <p><button class="btn-link">Learn more</button></p>
+  <button class="btn btn-primary my-3" type="button">New pull request</button>
+  <p><button class="btn-link" type="button">Learn more</button></p>
 </div>
 ```
 
@@ -78,8 +78,8 @@ Significantly increases the vertical padding.
   <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="" class="mb-3">
   <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
   <p>Pull requests help you discuss potential changes before your changes are merged into the base branch.</p>
-  <button class="btn btn-primary my-3">New pull request</button>
-  <p><button class="btn-link">Learn more</button></p>
+  <button class="btn btn-primary my-3" type="button">New pull request</button>
+  <p><button class="btn-link" type="button">Learn more</button></p>
 </div>
 ```
 
@@ -92,8 +92,8 @@ Increases the size of the text in the blankslate
   <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="" class="mb-3">
   <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
   <p>Pull requests help you discuss potential changes before your changes are merged into the base branch.</p>
-  <button class="btn btn-primary my-3">New pull request</button>
-  <p><button class="btn-link">Learn more</button></p>
+  <button class="btn btn-primary my-3" type="button">New pull request</button>
+  <p><button class="btn-link" type="button">Learn more</button></p>
 </div>
 ```
 
@@ -106,8 +106,8 @@ To remove the border, use the [border utliity](/css/utilities/borders) `.border-
   <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="" class="mb-3">
   <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
   <p>Pull requests help you discuss potential changes before your changes are merged into the base branch.</p>
-  <button class="btn btn-primary my-3">New pull request</button>
-  <p><button class="btn-link">Learn more</button></p>
+  <button class="btn btn-primary my-3" type="button">New pull request</button>
+  <p><button class="btn-link" type="button">Learn more</button></p>
 </div>
 ```
 
@@ -118,7 +118,7 @@ Due to a design refresh of the blank slate component, we will be deprecating the
   <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="" class="mb-3">
   <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
   <p>Pull requests help you discuss potential changes before your changes are merged into the base branch.</p>
-  <button class="btn btn-primary my-3">New pull request</button>
-  <p><button class="btn-link">Learn more</button></p>
+  <button class="btn btn-primary my-3" type="button">New pull request</button>
+  <p><button class="btn-link" type="button">Learn more</button></p>
 </div>
 ```
