@@ -111,7 +111,7 @@ To remove the border, use the [border utliity](/css/utilities/borders) `.border-
 </div>
 ```
 
-Due to a design refresh of the blank slate component, we will be deprecating the use of `.blankslate-clean-background` which removes the `background-color` and `border`.
+⚠️ Due to a design refresh of the blank slate component, we will be deprecating the use of `.blankslate-clean-background` soon.
 
 ```html
 <div class="blankslate blankslate-clean-background">
