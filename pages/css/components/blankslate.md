@@ -110,3 +110,15 @@ To remove the border, use the [border utliity](/css/utilities/borders) `.border-
   <p><button class="btn-link" type="button">Learn more</button></p>
 </div>
 ```
+
+Due to the update to the component, we will be deprecating the use of `.blankslate-clean-background` which removes the `background-color` and `border`.
+
+```html
+<div class="blankslate blankslate-clean-background">
+  <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="Pull requests" class="mb-3">
+  <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
+  <p>Pull requests help you discuss potential changes before your changes are merged into the base branch.</p>
+  <button class="btn btn-primary my-3" type="button">New pull request</button>
+  <p><button class="btn-link" type="button">Learn more</button></p>
+</div>
+```
