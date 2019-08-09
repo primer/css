@@ -55,20 +55,6 @@ Narrows the blankslate container to not occupy the entire available width.
 </div>
 ```
 
-##### Capped
-
-Removes the `border-radius` on the top corners.
-
-```html
-<div class="blankslate blankslate-capped">
-  <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="" class="mb-3">
-  <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
-  <p>Pull requests help you discuss potential changes before they are merged into the base branch.</p>
-  <button class="btn btn-primary my-3" type="button">New pull request</button>
-  <p><button class="btn-link" type="button">Learn more</button></p>
-</div>
-```
-
 ##### Spacious
 
 Significantly increases the vertical padding.
@@ -97,28 +83,34 @@ Increases the size of the text in the blankslate
 </div>
 ```
 
-##### No border
+##### Add border
 
-To remove the border, use the [border utliity](/css/utilities/borders) `.border-0`.
+To add a border, wrap the blankstate component with the [Box component](/css/components/box).
 
 ```html
-<div class="blankslate border-0">
-  <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="" class="mb-3">
-  <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
-  <p>Pull requests help you discuss potential changes before they are merged into the base branch.</p>
-  <button class="btn btn-primary my-3" type="button">New pull request</button>
-  <p><button class="btn-link" type="button">Learn more</button></p>
+<div class="Box">
+  <div class="blankslate">
+    <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="" class="mb-3">
+    <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
+    <p>Pull requests help you discuss potential changes before they are merged into the base branch.</p>
+    <button class="btn btn-primary my-3" type="button">New pull request</button>
+    <p><button class="btn-link" type="button">Learn more</button></p>
+  </div>
 </div>
 ```
 
-Due to a design refresh of the blank slate component, we will be deprecating the use of `.blankslate-clean-background` which removes the `background-color` and `border`.
+##### Capped
+
+Removes the `border-radius` on the top corners.
 
 ```html
-<div class="blankslate blankslate-clean-background">
-  <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="" class="mb-3">
-  <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
-  <p>Pull requests help you discuss potential changes before they are merged into the base branch.</p>
-  <button class="btn btn-primary my-3" type="button">New pull request</button>
-  <p><button class="btn-link" type="button">Learn more</button></p>
+<div class="Box rounded-top-0">
+  <div class="blankslate">
+    <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="" class="mb-3">
+    <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
+    <p>Pull requests help you discuss potential changes before they are merged into the base branch.</p>
+    <button class="btn btn-primary my-3" type="button">New pull request</button>
+    <p><button class="btn-link" type="button">Learn more</button></p>
+  </div>
 </div>
 ```
