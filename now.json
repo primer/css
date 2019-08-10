@@ -9,5 +9,12 @@
       "config": {"distDir": "public"}
     }
   ],
-  "routes": [{"src": "/(.*)", "dest": "/gatsby-docs/$1"}]
+  "routes": [
+    {"src": "/css(/.*)?", "dest": "/gatsby-docs$1"},
+    {
+      "src": "/",
+      "status": 301,
+      "headers": {"Location": "/css"}
+    }
+  ]
 }

@@ -6,6 +6,7 @@ module.exports = {
     shortName: 'CSS',
     description: "CSS for GitHub's Primer design system"
   },
+  pathPrefix: '/css',
   plugins: [
     {
       resolve: '@primer/gatsby-theme-doctocat',
