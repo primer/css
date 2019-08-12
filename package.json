@@ -35,7 +35,7 @@
     "prepublishOnly": "script/prepublish",
     "publish-storybook": "script/publish-storybook",
     "start": "npm run dev",
-    "dev": "cd gatsby-docs && npm install && npm run develop",
+    "dev": "cd docs && npm install && npm run develop",
     "start-storybook": "start-storybook -p 8001",
     "build-storybook": "build-storybook -o .storybuild",
     "test": "npm-run-all -s test-urls test-migrate",
