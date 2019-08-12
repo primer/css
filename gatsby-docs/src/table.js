@@ -6,6 +6,7 @@ import {fontSize} from 'styled-system'
 
 const Table = styled.table`
   display: table !important;
+  width: 100%;
   border-collapse: separate;
   border-spacing: ${props => props.borderSpacing};
   ${fontSize};

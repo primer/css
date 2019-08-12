@@ -21,32 +21,36 @@
   children:
     - title: Animations
       url: /utilities/animations
+    - title: Borders
+      url: /utilities/borders
+    - title: Marketing borders
+      url: /utilities/marketing-borders
     - title: Box shadow
       url: /utilities/box-shadow
+    - title: Colors
+      url: /utilities/colors
     - title: Details
       url: /utilities/details
     - title: Flexbox
       url: /utilities/flexbox
     - title: Layout
       url: /utilities/layout
-    - title: Margin
-      url: /utilities/margin
-    - title: Marketing borders
-      url: /utilities/marketing-borders
-    - title: Marketing filters
-      url: /utilities/marketing-filters
     - title: Marketing layout
       url: /utilities/marketing-layout
+    - title: Margin
+      url: /utilities/margin
     - title: Marketing margin
       url: /utilities/marketing-margin
+    - title: Marketing filters
+      url: /utilities/marketing-filters
     - title: Marketing padding
       url: /utilities/marketing-padding
-    - title: Marketing type
-      url: /utilities/marketing-type
     - title: Padding
       url: /utilities/padding
     - title: Typography
       url: /utilities/typography
+    - title: Marketing typography
+      url: /utilities/marketing-type
 - title: Objects
   url: /objects
   children:
