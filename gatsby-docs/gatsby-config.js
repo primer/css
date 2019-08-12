@@ -1,5 +1,3 @@
-const path = require('path')
-
 module.exports = {
   siteMetadata: {
     title: 'Primer CSS',
@@ -11,9 +9,15 @@ module.exports = {
     {
       resolve: '@primer/gatsby-theme-doctocat',
       options: {
-        repoRootPath: path.resolve(process.cwd(), '..')
+        repoRootPath: '..'
       }
     },
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        svgo: false
+      }
+    }
   ]
 }
