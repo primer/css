@@ -121,10 +121,5 @@
     "unist-util-stringify-position": "^2.0.0",
     "unist-util-visit": "^1.4.0",
     "webpack": "4.20.2"
-  },
-  "dependencies": {
-    "@compositor/kit": "1.0.47",
-    "html2react": "1.2.1",
-    "react-styled-frame": "1.1.0"
   }
 }
