@@ -1,5 +1,4 @@
 import React from 'react'
-// TODO: explain this
 import primerStyles from '!!raw-loader!sass-loader!../../../../../src/index.scss'
 
 function LivePreviewWrapper({children}) {
