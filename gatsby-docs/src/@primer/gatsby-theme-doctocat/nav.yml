@@ -69,6 +69,8 @@
       url: /components/avatars
     - title: Blankslate
       url: /components/blankslate
+    - title: Box overlay
+      url: /components/box-overlay
     - title: Box
       url: /components/box
     - title: Boxed groups
