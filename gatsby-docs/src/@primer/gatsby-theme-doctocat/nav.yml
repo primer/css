@@ -10,7 +10,7 @@
       url: /support/breakpoints
     - title: Color system
       url: /support/color-system
-    - title: Marketing variables
+    - title: Marketing support
       url: /support/marketing-variables
     - title: Spacing
       url: /support/spacing
@@ -43,10 +43,10 @@
       url: /utilities/marketing-margin
     - title: Marketing filters
       url: /utilities/marketing-filters
-    - title: Marketing padding
-      url: /utilities/marketing-padding
     - title: Padding
       url: /utilities/padding
+    - title: Marketing padding
+      url: /utilities/marketing-padding
     - title: Typography
       url: /utilities/typography
     - title: Marketing typography
@@ -75,7 +75,7 @@
       url: /components/boxed-groups
     - title: Branch name
       url: /components/branch-name
-    - title: Breadcrumb
+    - title: Breadcrumbs
       url: /components/breadcrumb
     - title: Buttons
       url: /components/buttons
@@ -124,7 +124,7 @@
       url: /tools/local-primer
     - title: Prototyping
       url: /tools/prototyping
-    - title: Testing
+    - title: Testing resources
       url: /tools/testing
 - title: Principles
   url: /principles
