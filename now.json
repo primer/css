@@ -4,13 +4,13 @@
   "alias": "primer-css.now.sh",
   "builds": [
     {
-      "src": "gatsby-docs/package.json",
+      "src": "docs/package.json",
       "use": "@now/static-build",
       "config": {"distDir": "public"}
     }
   ],
   "routes": [
-    {"src": "/css(/.*)?", "dest": "/gatsby-docs$1"},
+    {"src": "/css(/.*)?", "dest": "/docs$1"},
     {
       "src": "/",
       "status": 301,
