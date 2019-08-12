@@ -1,6 +1,7 @@
-import styled from 'styled-components'
-import PropTypes from 'prop-types'
 import {Box} from '@primer/components'
+import PropTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components'
 import {fontSize} from 'styled-system'
 
 const Table = styled.table`
@@ -39,7 +40,7 @@ Table.defaultProps = {
   fontSize: [1, 1, 2]
 }
 
-Table.Row = styled(Box).attrs({as: 'tr'})``
-Table.Cell = styled(Box).attrs({as: 'td'})``
+Table.Row = props => <Box as="tr" {...props} />
+Table.Cell = props => <Box as="td" {...props} />
 
 export default Table
