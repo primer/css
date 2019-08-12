@@ -13,6 +13,7 @@
     "@primer/css": "^12.4.1",
     "@primer/gatsby-theme-doctocat": "^0.9.0",
     "@primer/octicons-react": "^9.1.1",
+    "@svgr/webpack": "^4.3.2",
     "chroma-js": "^2.0.4",
     "css-loader": "^3.1.0",
     "gatsby": "^2.10.4",
