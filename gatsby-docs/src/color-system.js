@@ -4,7 +4,7 @@ import chroma from 'chroma-js'
 import styled from 'styled-components'
 import {Box, Text} from '@primer/components'
 import {colors, getPaletteByName} from './color-variables'
-import Table from './Table'
+import Table from './table'
 
 export function PaletteTable(props) {
   const {columns = [], hasHeader, ...rest} = props
