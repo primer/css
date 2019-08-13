@@ -1,21 +1,21 @@
 ---
-bundle: "toasts"
+bundle: "header"
 generated: true
 ---
 
-# Primer CSS: `toasts` bundle
+# Primer CSS: `header` bundle
 
 ## Usage
 
 Primer CSS source files are written in [SCSS]. To include this Primer CSS module in your own build, ensure that your `node_modules` directory is listed in your Sass include paths, then import it with:
 
 ```scss
-@import "@primer/css/toasts/index.scss";
+@import "@primer/css/header/index.scss";
 ```
 
 ## Build
 
-The `@primer/css` npm package includes a standalone CSS build of this module in `dist/toasts.css`.
+The `@primer/css` npm package includes a standalone CSS build of this module in `dist/header.css`.
 
 ## License
 

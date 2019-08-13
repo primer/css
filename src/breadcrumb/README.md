@@ -1,21 +1,25 @@
-# Primer Breadcrumb Navigation
+---
+bundle: "breadcrumb"
+generated: true
+---
 
-> Breadcrumb navigation for GitHub's pages with parents / grandparents.
+# Primer CSS: `breadcrumb` bundle
 
-This repository is a module of the full [primer][primer] repository.
+## Usage
 
-## Documentation
+Primer CSS source files are written in [SCSS]. To include this Primer CSS module in your own build, ensure that your `node_modules` directory is listed in your Sass include paths, then import it with:
 
-Find further documentation at [primer.style/css/components/breadcrumb](https://primer.style/css/components/breadcrumb).
+```scss
+@import "@primer/css/breadcrumb/index.scss";
+```
+
+## Build
+
+The `@primer/css` npm package includes a standalone CSS build of this module in `dist/breadcrumb.css`.
 
 ## License
 
-MIT &copy; [GitHub](https://github.com/)
+[MIT](https://github.com/primer/css/blob/master/LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer]: https://github.com/primer/css
-[primer-support]: https://github.com/primer/css-support
-[support]: https://github.com/primer/css-support
-[docs]: https://primer.style/css
-[npm]: https://www.npmjs.com/
-[install-npm]: https://docs.npmjs.com/getting-started/installing-node
-[sass]: http://sass-lang.com/
+
+[scss]: https://sass-lang.com/documentation/syntax#scss

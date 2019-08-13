@@ -3,7 +3,7 @@ title: Getting started
 path: getting-started/index
 ---
 
-Primer CSS is [open-sourced on GitHub](https://github.com/primer/primer) and [available on npm](https://www.npmjs.com/package/primer).
+Primer CSS is [open-sourced on GitHub](https://github.com/primer/css) and [available on npm](https://www.npmjs.com/package/@primer/css).
 
 ## Installing via npm
 
