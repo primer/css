@@ -1,37 +1,25 @@
-# Primer Core
+---
+bundle: "core"
+generated: true
+---
 
-> Primer core is one of 3 meta-packages that belong to the Primer framework. Primer core contains packages that are shared between GitHub product and marketing websites.
-
-This repository is a compilation of [several CSS packages](https://github.com/primer/css). You can break it down into smaller sections using npm.
+# Primer CSS: `core` bundle
 
 ## Usage
 
-The source files included are written in [Sass][sass] (`scss`) You can simply point your sass `include-path` at your `node_modules` directory and import it like this.
+Primer CSS source files are written in [SCSS]. To include this Primer CSS module in your own build, ensure that your `node_modules` directory is listed in your Sass include paths, then import it with:
 
 ```scss
-@import "primer-core/index.scss";
+@import "@primer/css/core/index.scss";
 ```
-
-You can also import specific portions of the module by importing those partials from the `/lib/` folder. _Make sure you import any requirements along with the modules._
 
 ## Build
 
-For a compiled **CSS** version of this module, an npm script is included that will output a CSS version to `build/build.css` The built CSS file is also included in the npm package.
-
-```
-$ npm run build
-```
-
-## Documentation
-
-You can read more about primer in the [docs][docs].
+The `@primer/css` npm package includes a standalone CSS build of this module in `dist/core.css`.
 
 ## License
 
-[MIT](./LICENSE) &copy; [GitHub](https://github.com/)
+[MIT](https://github.com/primer/css/blob/master/LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer]: https://github.com/primer/css
-[docs]: https://primer.style/css
-[npm]: https://www.npmjs.com/
-[install-npm]: https://docs.npmjs.com/getting-started/installing-node
-[sass]: http://sass-lang.com/
+
+[scss]: https://sass-lang.com/documentation/syntax#scss

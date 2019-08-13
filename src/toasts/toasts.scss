@@ -63,6 +63,10 @@
   background-color: $green-500;
 }
 
+.Toast--loading .Toast-icon {
+  background-color: $gray-600;
+}
+
 // Animations
 
 .Toast--animateIn {
@@ -86,4 +90,13 @@
     opacity: 0;
     transform: translateY(100%);
   }
+}
+
+.Toast--spinner {
+  animation: Toast--spinner 1000ms linear infinite;
+}
+
+@keyframes Toast--spinner {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
