@@ -12,6 +12,7 @@
     "@primer/components": "^13.2.0",
     "@primer/css": "^12.4.1",
     "@primer/gatsby-theme-doctocat": "0.0.0-518bfcd",
+    "@primer/octicons": "^9.1.1",
     "@primer/octicons-react": "^9.1.1",
     "@svgr/webpack": "^4.3.2",
     "autoprefixer": "^9.6.1",
