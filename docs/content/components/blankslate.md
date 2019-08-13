@@ -49,7 +49,6 @@ Narrows the blankslate container to not occupy the entire available width.
 
 ```html live
 <div class="blankslate blankslate-narrow">
-  <<<<<<< HEAD:docs/content/components/blankslate.md
   <h3>This is a blank slate</h3>
   <p>Use it to provide information when no dynamic content exists.</p>
 </div>
