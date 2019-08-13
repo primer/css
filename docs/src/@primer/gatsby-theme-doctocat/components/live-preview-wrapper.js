@@ -1,5 +1,5 @@
 import React from 'react'
-import primerStyles from '!!raw-loader!sass-loader!../../../../../src/index.scss'
+import primerStyles from '!!raw-loader!postcss-loader!../../../../../src/index.scss'
 
 function LivePreviewWrapper({children}) {
   return (
