@@ -66,7 +66,7 @@ Let the [design systems team](https://github.com/github/design-systems) know if 
 
 ## Documentation structure
 
-- Our documentation site for Primer CSS is built using [Doctocat](https://doctocat.now.sh) and deployed with [Now](https://zeit.co/now). Our site is built from the `docs` folder and uses [MDX](https://mdxjs.com) to render markdown.
+- Our documentation site for Primer CSS is built using [Doctocat](https://primer.style/doctocat) and deployed with [Now](https://zeit.co/now). Our site is built from the `docs` folder and uses [MDX](https://mdxjs.com) to render markdown.
 
 - Documentation for Primer CSS modules should live in the corresponding `.md` or `.mdx` file for that module in the `/docs/content` folder.
 
@@ -90,7 +90,7 @@ A table of contents is automatically inserted at the top of every page published
 
 ### Live code
 
-Check out Doctocat's [live code](https://doctocat.now.sh/usage/live-code) documentation for more information about creating live code examples.
+Check out Doctocat's [live code](https://primer.style/doctocat/usage/live-code) documentation for more information about creating live code examples.
 
 ### Versioning
 
