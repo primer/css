@@ -103,7 +103,7 @@ The resulting CSS would be:
 }
 ```
 
-#### Caution!
+**Caution!**
 
 1. Don't precede the `#{$variation}` interpolation with a hyphen because the first value of `$variant` will be an empty string.
 1. For consistency, please put the `@include breakpoint($breakpoint)` call directly inside the `$responsive-variants` loop. This will help keep file sizes small by "batching" selectors in shared `@media` queries.

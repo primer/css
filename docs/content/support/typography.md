@@ -28,7 +28,7 @@ The typography scale is used to create [typography utilities](/css/utilities/typ
 
 ## Typography variables
 
-#### Font size variables
+### Font size variables
 
 ```scss
 // Heading sizes - mobile
@@ -50,14 +50,14 @@ $h5-size: 14px;
 $h6-size: 12px;
 ```
 
-#### Font weight variables
+### Font weight variables
 
 ```scss
 $font-weight-bold: 600 !default;
 $font-weight-light: 300 !default;
 ```
 
-#### Line height variables
+### Line height variables
 
 ```scss
 $lh-condensed-ultra: 1 !default;
