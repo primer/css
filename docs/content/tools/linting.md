@@ -9,8 +9,6 @@ For teams working on `github/github` this configuration is all setup for you. Wh
 
 For everyone else we encourage you to adopt all or some of these tools in your workflow.
 
- 
-
 ## CSS
 
 We use [stylelint](http://stylelint.io/) to lint our CSS. If you are working on `github/github` you don't need to do any setup because stylelint comes bundled within the repository. If you are working on other properties, you may need to setup stylelint. You can install stylelint via npm:
@@ -56,11 +54,13 @@ To disable a linter, place a `// stylelint-disable` comment around the specific 
 ```scss
 // When a branch name is a link
 // stylelint-disable selector-no-qualifying-type
-a.branch-name { color: $brand-blue; }
+a.branch-name {
+  color: $brand-blue;
+}
 // stylelint-enable selector-no-qualifying-type
 ```
 
-#### If you choose to disable a linting rule...
+**If you choose to disable a linting rule...**
 
 1. You'll need to specify a reason for disabling the lint.
 2. Say what lint you're disabling, this example has `selector-no-qualifying-type`.
@@ -74,7 +74,7 @@ While linters shouldn't be disabled without consideration, essentially they act 
 
 Our linter runs on every commit, but finding you have a lint error after a push can be frustrating and waste time. To avoid this, a [collection of editor plugins](http://stylelint.io/user-guide/complementary-tools/) are available to help you lint while you code..
 
-The Design Systems team recommends using [Atom](https://atom.io/) with the  [linter-stylelint](https://github.com/AtomLinter/linter-stylelint) package installed.
+The Design Systems team recommends using [Atom](https://atom.io/) with the [linter-stylelint](https://github.com/AtomLinter/linter-stylelint) package installed.
 
 ![image](https://cloud.githubusercontent.com/assets/54012/21456489/6a10b370-c8f6-11e6-9199-bb3709e79794.png)
 
