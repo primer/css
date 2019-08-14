@@ -10,12 +10,12 @@
       url: /support/breakpoints
     - title: Color system
       url: /support/color-system
-    - title: Marketing support
-      url: /support/marketing-variables
     - title: Spacing
       url: /support/spacing
     - title: Typography
       url: /support/typography
+    - title: Marketing support
+      url: /support/marketing-variables
 - title: Utilities
   url: /utilities
   children:
