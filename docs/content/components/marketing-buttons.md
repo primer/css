@@ -1,11 +1,10 @@
 ---
 title: Marketing Buttons
 path: components/marketing-buttons
-status: New Release
+status: New
 source: 'https://github.com/primer/css/tree/master/src/marketing/buttons'
 bundle: marketing-buttons
 ---
-
 
 Marketing buttons come in different colors and sizes, and are also available in a blue outlined version.
 
@@ -36,4 +35,3 @@ Available in two sizes, marketing buttons have a default size and a large size.
 <button class="btn-mktg btn-outline-mktg btn-large-mktg mr-2" type="button">Learn more</button>
 <button class="btn-mktg btn-primary-mktg btn-large-mktg mr-2" type="button">Sign up</button>
 ```
-

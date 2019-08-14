@@ -1,15 +1,12 @@
 ---
 title: Pagination
 path: components/pagination
-status: New Release
+status: New
 source: 'https://github.com/primer/css/tree/master/src/pagination'
 bundle: pagination
 ---
 
-
 Use the pagination component to apply button styles to a connected set of links that go to related pages (for example, previous, next, or page numbers).
-
-
 
 ## Previous/next pagination
 
@@ -51,4 +48,3 @@ As always, make sure to include the appropriate `aria` attributes to make the el
   </div>
 </nav>
 ```
-
