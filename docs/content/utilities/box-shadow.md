@@ -9,8 +9,6 @@ bundle: utilities
 
 Box shadows are used to make content appear elevated. They are typically applied to containers of content that users need to pay attention to or content that appears on top of (overlapping) other elements on the page (like a pop-over or modal).
 
- 
-
 ## Default
 
 Default shadows are mainly used on things that need to appear slightly elevated, like pricing cards or UI elements containing important information.
@@ -24,18 +22,21 @@ Default shadows are mainly used on things that need to appear slightly elevated,
 These types of shadows are typically applied to elements with borders, such as the [Box component](/css/components/box).
 
 ```html live
-<div class="col-5">
+<div class="col-6">
   <div class="Box box-shadow">
     <div class="Box-row">
       <h3 class="m-0">Organization</h3>
     </div>
     <div class="Box-row">
       <p class="mb-0 text-gray">
-        Taxidermy live-edge mixtape, keytar tumeric locavore meh selvage deep v letterpress vexillologist lo-fi tousled church-key thundercats. Brooklyn bicycle rights tousled, marfa actually.
+        Taxidermy live-edge mixtape, keytar tumeric locavore meh selvage deep v letterpress vexillologist lo-fi tousled
+        church-key thundercats. Brooklyn bicycle rights tousled, marfa actually.
       </p>
     </div>
     <div class="Box-row">
-      <button type="button" name="Create an organization" class="btn btn-primary btn-block">Create an organization</button>
+      <button type="button" name="Create an organization" class="btn btn-primary btn-block">
+        Create an organization
+      </button>
     </div>
   </div>
 </div>
@@ -83,7 +84,7 @@ These shadows are used for marketing content, UI screenshots, and content that a
 
 ```html live
 <div class="box-shadow-large rounded-2 overflow-hidden">
-  <img src="https://github.com/nasa.png" class="img-responsive" alt="NASA is on GitHub">
+  <img src="https://github.com/nasa.png" class="img-responsive" alt="NASA is on GitHub" />
 </div>
 ```
 
