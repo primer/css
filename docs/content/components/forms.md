@@ -149,27 +149,25 @@ Primer CSS adds light `height` and `vertical-align` styles to `<select>`s for al
 Use the `.select-sm` class to resize both default and custom `<select>`s to match the size of [our small buttons](./buttons#default-buttons).
 
 ```html live
-<div>
-  <select class="form-select select-sm" aria-label="Preference">
-    <option>Choose an option</option>
-    <option>Git</option>
-    <option>Subversion</option>
-    <option>Social Coding</option>
-    <option>Beets</option>
-    <option>Bears</option>
-    <option>Battlestar Galactica</option>
-  </select>
+<select class="form-select select-sm" aria-label="Preference">
+  <option>Choose an option</option>
+  <option>Git</option>
+  <option>Subversion</option>
+  <option>Social Coding</option>
+  <option>Beets</option>
+  <option>Bears</option>
+  <option>Battlestar Galactica</option>
+</select>
 
-  <select class="form-select select-sm" aria-label="Preference">
-    <option>Choose an option</option>
-    <option>Git</option>
-    <option>Subversion</option>
-    <option>Social Coding</option>
-    <option>Beets</option>
-    <option>Bears</option>
-    <option>Battlestar Galactica</option>
-  </select>
-</div>
+<select class="form-select select-sm" aria-label="Preference">
+  <option>Choose an option</option>
+  <option>Git</option>
+  <option>Subversion</option>
+  <option>Social Coding</option>
+  <option>Beets</option>
+  <option>Bears</option>
+  <option>Battlestar Galactica</option>
+</select>
 ```
 
 #### Form groups
