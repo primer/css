@@ -66,10 +66,15 @@ Add `.flash-warn`, `.flash-error`, or `.flash-success` to the flash message to m
 
 Add an icon to the left of the flash message to give it some funky fresh attention.
 
-```jsx live
+```html live
 <div class="flash">
-  {/* <%= octicon "alert" %> */}
-  <StyledOcticon icon={getIconByName('alert')} mr={2} />
+  <!-- <%= octicon "alert" %> -->
+  <svg width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-alert mr-2" aria-hidden="true">
+    <path
+      fill-rule="evenodd"
+      d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"
+    />
+  </svg>
   Flash message with an icon goes here.
 </div>
 ```
@@ -78,11 +83,16 @@ Add an icon to the left of the flash message to give it some funky fresh attenti
 
 Add a JavaScript enabled (via Crema) dismiss (close) icon on the right of any flash message.
 
-```jsx live
+```html live
 <div class="flash">
   <button class="flash-close js-flash-close" type="button">
-    {/* <%= octicon "x", :"aria-label" => "Close" %> */}
-    <Octicon icon={getIconByName('x')} aria-label="Close" />
+    <!-- <%= octicon "x", :"aria-label" => "Close" %> -->
+    <svg width="12" height="16" viewBox="0 0 12 16" class="octicon octicon-x" aria-label="Close" role="img">
+      <path
+        fill-rule="evenodd"
+        d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"
+      />
+    </svg>
   </button>
   Dismissable flash message goes here.
 </div>
