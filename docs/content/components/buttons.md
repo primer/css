@@ -15,19 +15,13 @@ Use the standard—yet classy—`.btn` for form actions and primary page actions
 When using a `<button>` element, **always specify a `type`**. When using a `<a>` element, **always add `role="button"` for accessibility**.
 
 ```html live
-<div>
-  <button class="btn" type="button">Button button</button>
-  <a class="btn" href="#url" role="button">Link button</a>
-</div>
+<button class="btn" type="button">Button button</button> <a class="btn" href="#url" role="button">Link button</a>
 ```
 
 You can find them in two sizes: the default `.btn` and the smaller `.btn-sm`.
 
 ```html live
-<div>
-  <button class="btn" type="button">Button</button>
-  <button class="btn btn-sm" type="button">Small button</button>
-</div>
+<button class="btn" type="button">Button</button> <button class="btn btn-sm" type="button">Small button</button>
 ```
 
 ## Primary button
@@ -35,10 +29,8 @@ You can find them in two sizes: the default `.btn` and the smaller `.btn-sm`.
 Primary buttons are green and are used to indicate the _primary_ action on a page. When you need your buttons to stand out, use `.btn.btn-primary`. You can use it with both button sizes—just add `.btn-primary`.
 
 ```html live
-<div>
-  <button class="btn btn-primary" type="button">Primary button</button>
-  <button class="btn btn-sm btn-primary" type="button">Small primary button</button>
-</div>
+<button class="btn btn-primary" type="button">Primary button</button>
+<button class="btn btn-sm btn-primary" type="button">Small primary button</button>
 ```
 
 ## Danger button
@@ -46,10 +38,8 @@ Primary buttons are green and are used to indicate the _primary_ action on a pag
 Danger buttons are red. They help reiterate that the intended action is important or potentially dangerous (e.g., deleting a repo or transferring ownership). Similar to the primary buttons, just add `.btn-danger`.
 
 ```html live
-<div>
-  <button class="btn btn-danger" type="button">Danger button</button>
-  <button class="btn btn-sm btn-danger" type="button">Small danger button</button>
-</div>
+<button class="btn btn-danger" type="button">Danger button</button>
+<button class="btn btn-sm btn-danger" type="button">Small danger button</button>
 ```
 
 ## Outline button
@@ -57,10 +47,8 @@ Danger buttons are red. They help reiterate that the intended action is importan
 Outline buttons downplay an action as they appear like boxy links. Just add `.btn-outline` and go.
 
 ```html live
-<div>
-  <button class="btn btn-outline" type="button">Outline button</button>
-  <button class="btn btn-sm btn-outline" type="button">Outline button</button>
-</div>
+<button class="btn btn-outline" type="button">Outline button</button>
+<button class="btn btn-sm btn-outline" type="button">Outline button</button>
 ```
 
 ## Large button
@@ -90,44 +78,34 @@ Use `.btn-large` with a type scale utility to transform the text to a bigger siz
 Disable `<button>` elements with the boolean `disabled` attribute and `<a>` elements with the `.disabled` class.
 
 ```html live
-<div>
-  <button class="btn" type="button" disabled>Disabled button</button>
-  <a class="btn disabled" href="#url" role="button">Disabled button</a>
-</div>
+<button class="btn" type="button" disabled>Disabled button</button>
+<a class="btn disabled" href="#url" role="button">Disabled button</a>
 ```
 
 Similar styles are applied to primary, danger, and outline buttons:
 
 ```html live
-<div>
-  <button class="btn btn-primary" type="button" disabled>Disabled button</button>
-  <a class="btn btn-primary disabled" href="#url" role="button">Disabled button</a>
-</div>
+<button class="btn btn-primary" type="button" disabled>Disabled button</button>
+<a class="btn btn-primary disabled" href="#url" role="button">Disabled button</a>
 ```
 
 ```html live
-<div>
-  <button class="btn btn-danger" type="button" disabled>Disabled button</button>
-  <a class="btn btn-danger disabled" href="#url" role="button">Disabled button</a>
-</div>
+<button class="btn btn-danger" type="button" disabled>Disabled button</button>
+<a class="btn btn-danger disabled" href="#url" role="button">Disabled button</a>
 ```
 
 ```html live
-<div>
-  <button class="btn btn-outline" type="button" disabled>Disabled button</button>
-  <a class="btn btn-outline disabled" href="#url" role="button">Disabled button</a>
-</div>
+<button class="btn btn-outline" type="button" disabled>Disabled button</button>
+<a class="btn btn-outline disabled" href="#url" role="button">Disabled button</a>
 ```
 
 ## Block button
 
 Make any button full-width by adding `.btn-block`. It adds `width: 100%;`, changes the `display` from `inline-block` to `block`, and centers the button text.
 
-```html
-<div>
-  <p><button class="btn btn-block" type="button">Block button</button></p>
-  <p><button class="btn btn-sm btn-block" type="button">Small block button</button></p>
-</div>
+```html live
+<p><button class="btn btn-block" type="button">Block button</button></p>
+<p><button class="btn btn-sm btn-block" type="button">Small block button</button></p>
 ```
 
 ## Link button
@@ -159,27 +137,25 @@ You can easily append a count to a **small button**. Add the `.with-count` class
 You can also use the [counter](./labels#counters) component within buttons:
 
 ```html live
-<div>
-  <button class="btn" type="button">
-    Button
-    <span class="Counter">12</span>
-  </button>
+<button class="btn" type="button">
+  Button
+  <span class="Counter">12</span>
+</button>
 
-  <button class="btn btn-primary" type="button">
-    Button
-    <span class="Counter">12</span>
-  </button>
+<button class="btn btn-primary" type="button">
+  Button
+  <span class="Counter">12</span>
+</button>
 
-  <button class="btn btn-danger" type="button">
-    Button
-    <span class="Counter">12</span>
-  </button>
+<button class="btn btn-danger" type="button">
+  Button
+  <span class="Counter">12</span>
+</button>
 
-  <button class="btn btn-outline" type="button">
-    Button
-    <span class="Counter">12</span>
-  </button>
-</div>
+<button class="btn btn-outline" type="button">
+  Button
+  <span class="Counter">12</span>
+</button>
 ```
 
 ## Button groups
@@ -187,24 +163,22 @@ You can also use the [counter](./labels#counters) component within buttons:
 Have a hankering for a series of buttons that are attached to one another? Wrap them in a `.BtnGroup` and the buttons will be rounded and spaced automatically.
 
 ```html live
-<div>
-  <div class="BtnGroup mr-2">
-    <button class="btn BtnGroup-item" type="button">Button</button>
-    <button class="btn BtnGroup-item" type="button">Button</button>
-    <button class="btn BtnGroup-item" type="button">Button</button>
-  </div>
+<div class="BtnGroup mr-2">
+  <button class="btn BtnGroup-item" type="button">Button</button>
+  <button class="btn BtnGroup-item" type="button">Button</button>
+  <button class="btn BtnGroup-item" type="button">Button</button>
+</div>
 
-  <div class="BtnGroup mr-2">
-    <button class="btn BtnGroup-item btn-outline" type="button">Button</button>
-    <button class="btn BtnGroup-item btn-outline" type="button">Button</button>
-    <button class="btn BtnGroup-item btn-outline" type="button">Button</button>
-  </div>
+<div class="BtnGroup mr-2">
+  <button class="btn BtnGroup-item btn-outline" type="button">Button</button>
+  <button class="btn BtnGroup-item btn-outline" type="button">Button</button>
+  <button class="btn BtnGroup-item btn-outline" type="button">Button</button>
+</div>
 
-  <div class="BtnGroup">
-    <button class="btn BtnGroup-item btn-sm" type="button">Button</button>
-    <button class="btn BtnGroup-item btn-sm" type="button">Button</button>
-    <button class="btn BtnGroup-item btn-sm" type="button">Button</button>
-  </div>
+<div class="BtnGroup">
+  <button class="btn BtnGroup-item btn-sm" type="button">Button</button>
+  <button class="btn BtnGroup-item btn-sm" type="button">Button</button>
+  <button class="btn BtnGroup-item btn-sm" type="button">Button</button>
 </div>
 ```
 
