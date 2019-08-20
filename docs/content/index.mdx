@@ -1,0 +1,100 @@
+---
+title: Primer CSS
+---
+
+import {HeroLayout} from '@primer/gatsby-theme-doctocat'
+import {Grid, Box, Heading, Text, ButtonOutline, BorderBox} from '@primer/components'
+import {Link} from 'gatsby'
+import utilitiesImage from '../src/utilities-image.svg'
+import objectsImage from '../src/objects-image.svg'
+import componentsImage from '../src/components-image.svg'
+import typographyImage from '../src/typography-image.png'
+import colorImage from '../src/color-image.svg'
+import spacingImage from '../src/spacing-image.svg'
+
+export default HeroLayout
+
+# Introduction
+
+Our goal is to create a system that enables us to build consistent user experiences with ease, yet with enough flexibility to support the broad spectrum of GitHub websites. This goal is embedded in our design and code decisions. Our approach to CSS is influenced by Object Oriented CSS principles, functional CSS, and BEM architecture.
+
+## Highly reusable, flexible styles
+
+Styles can be mixed and matched to achieve many different layouts, independent of their location. These styles fall into three categories:
+
+<Grid gridTemplateColumns={['1fr', '1fr', 'repeat(3, 1fr)']} gridGap={5} my={5}>
+  {[
+    {
+      name: 'Utilities',
+      description: 'Single purpose, immutable styles, that do one thing well.',
+      image: utilitiesImage
+    },
+    {name: 'Objects', description: 'Scaffolding for common page and content layouts.', image: objectsImage},
+    {name: 'Components', description: 'Abstracted patterns for frequently used visual styles.', image: componentsImage}
+  ].map(({name, description, image}) => (
+    <Box>
+      <img src={image} alt={name} height="60" />
+      <Heading as="h3" pt={3} pb={2} fontSize={3}>
+        {name}
+      </Heading>
+      <p>{description}</p>
+    </Box>
+  ))}
+</Grid>
+
+## Systematically designed for GitHub
+
+Primer CSS is built upon systems that form the foundation of our styles such as spacing, typography, and color. This systematic approach helps ensure our styles are consistent and interoperable with each other.
+
+<Box my={5}>
+  {[
+    {
+      name: 'Highly composable spacing scale',
+      description:
+        'The base-8 spacing scale is highly composable and works with the density of GitHub’s content. Margin and padding spacers bring consistency to vertical and horizontal rhythm, while remaining flexible so you can tweak layouts to work for every context.',
+      image: spacingImage
+    },
+    {
+      name: 'Customizable typography',
+      description:
+        'Font size and line-height options work together to result in more sensible numbers. Font styles come in a range of weights and sizes so that we can style appropriately for content and readability. Type utilities allow us to change the visual styles while keeping markup semantic.',
+      image: typographyImage
+    },
+    {
+      name: 'Meaningful color',
+      description:
+        'The color system allows us to add meaningful signals to content and interactions. Color variables and utilities offer thematic styling options without being tied to structure. Text and background colors come in a range of accessible combinations to ensure we build inclusive interfaces.',
+      image: colorImage
+    }
+  ].map(({name, description, image}) => (
+    <Grid gridTemplateColumns={['1fr', '1fr', '70px 1fr']} gridGap={5} mb={4} style={{alignItems: 'center'}}>
+      <img src={image} width="70" alt={name} />
+      <Box>
+        <Heading as="h3" pb={2} fontSize={3}>
+          {name}
+        </Heading>
+        <p>{description}</p>
+      </Box>
+    </Grid>
+  ))}
+</Box>
+
+## Structure
+
+Primer CSS is published to npm as `@primer/css`. Each of Primer CSS's "modules" lives in a subfolder under `src/` with an `index.scss` in it. Generally speaking, the styles are divided into three primary themes:
+
+- **Core** styles (in `core/`) are common dependencies, which include support variables, native element and typography styles, buttons, navigation, tooltips, etc.
+- **Product** styles (in `product/`) are specific to github.com, and include components such as avatars, labels, markdown styles, popovers, and progress indicators.
+- **Marketing** styles (in `marketing/`) are specific to GitHub marketing efforts, including international and event-focused sites as well as the more design-heavy feature pages on github.com. Marketing styles include new colors and button styles, and extend the core typography and whitespace scales.
+
+<BorderBox bg="gray.1" p={5} mt={5}>
+  <Heading as="h2" fontSize={3} pb={2}>
+    Use Primer CSS in your project
+  </Heading>
+  <Text as="p" m={0}>
+    Pick and choose what you need. Install the entire Primer CSS bundle or import individual folders.
+  </Text>
+  <ButtonOutline as={Link} to="/getting-started" mt={4} style={{textDecoration: 'none'}}>
+    Installation instructions
+  </ButtonOutline>
+</BorderBox>

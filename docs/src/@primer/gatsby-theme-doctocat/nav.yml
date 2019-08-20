@@ -1,0 +1,139 @@
+- title: Getting started
+  url: /getting-started
+  children:
+    - title: Contributing
+      url: /getting-started/contributing
+- title: Support
+  url: /support
+  children:
+    - title: Breakpoints
+      url: /support/breakpoints
+    - title: Color system
+      url: /support/color-system
+    - title: Spacing
+      url: /support/spacing
+    - title: Typography
+      url: /support/typography
+    - title: Marketing support
+      url: /support/marketing-variables
+- title: Utilities
+  url: /utilities
+  children:
+    - title: Animations
+      url: /utilities/animations
+    - title: Borders
+      url: /utilities/borders
+    - title: Marketing borders
+      url: /utilities/marketing-borders
+    - title: Box shadow
+      url: /utilities/box-shadow
+    - title: Colors
+      url: /utilities/colors
+    - title: Details
+      url: /utilities/details
+    - title: Flexbox
+      url: /utilities/flexbox
+    - title: Layout
+      url: /utilities/layout
+    - title: Marketing layout
+      url: /utilities/marketing-layout
+    - title: Margin
+      url: /utilities/margin
+    - title: Marketing margin
+      url: /utilities/marketing-margin
+    - title: Marketing filters
+      url: /utilities/marketing-filters
+    - title: Padding
+      url: /utilities/padding
+    - title: Marketing padding
+      url: /utilities/marketing-padding
+    - title: Typography
+      url: /utilities/typography
+    - title: Marketing typography
+      url: /utilities/marketing-type
+- title: Objects
+  url: /objects
+  children:
+    - title: Grid
+      url: /objects/grid
+    - title: Layout
+      url: /objects/layout
+    - title: Table object
+      url: /objects/table-object
+- title: Components
+  url: /components
+  children:
+    - title: Alerts
+      url: /components/alerts
+    - title: Avatars
+      url: /components/avatars
+    - title: Blankslate
+      url: /components/blankslate
+    - title: Box overlay
+      url: /components/box-overlay
+    - title: Box
+      url: /components/box
+    - title: Boxed groups
+      url: /components/boxed-groups
+    - title: Branch name
+      url: /components/branch-name
+    - title: Breadcrumbs
+      url: /components/breadcrumb
+    - title: Buttons
+      url: /components/buttons
+    - title: Dropdown
+      url: /components/dropdown
+    - title: Flash banner
+      url: /components/flash-banner
+    - title: Forms
+      url: /components/forms
+    - title: Labels
+      url: /components/labels
+    - title: Markdown
+      url: /components/markdown
+    - title: Marketing buttons
+      url: /components/marketing-buttons
+    - title: Navigation
+      url: /components/navigation
+    - title: Pagehead
+      url: /components/pagehead
+    - title: Popover
+      url: /components/popover
+    - title: Progress
+      url: /components/progress
+    - title: Select menu
+      url: /components/select-menu
+    - title: Select menu (deprecated)
+      url: /components/select-menu-deprecated
+    - title: Subhead
+      url: /components/subhead
+    - title: Toasts
+      url: /components/toasts
+    - title: Tooltips
+      url: /components/tooltips
+    - title: Truncate
+      url: /components/truncate
+- title: Tools
+  url: /tools
+  children:
+    - title: Atom packages
+      url: /tools/atom-packages
+    - title: Docset
+      url: /tools/docset
+    - title: Linting
+      url: /tools/linting
+    - title: Local development
+      url: /tools/local-primer
+    - title: Prototyping
+      url: /tools/prototyping
+    - title: Testing resources
+      url: /tools/testing
+- title: Principles
+  url: /principles
+  children:
+    - title: Accessibility
+      url: /principles/accessibility
+    - title: HTML
+      url: /principles/html
+    - title: SCSS
+      url: /principles/scss
