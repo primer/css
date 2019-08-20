@@ -105,7 +105,7 @@ Using an unordered list is recommended in order to target the first and last row
   <div class="Box-header">
     Box header
   </div>
-  {/* This wrapping div ensures the first and last rows can be targeted for styling. */}
+  <!-- This wrapping div ensures the first and last rows can be targeted for styling. -->
   <div>
     <div class="Box-row">Box row using a div</div>
     <div class="Box-row">Box row using a div</div>
