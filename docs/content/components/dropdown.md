@@ -208,8 +208,8 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 
 ### Dark
 
-```html
-<div class="bg-gray-dark p-4 mt-n4 ml-n4 mr-n4" style="min-height: 400px;">
+```html live
+<div class="bg-gray-dark p-3 mt-n3 ml-n3 mr-n3" style="min-height: 240px;">
   <details class="dropdown details-reset details-overlay d-inline-block">
     <summary class="btn" aria-haspopup="true">
       Dropdown
