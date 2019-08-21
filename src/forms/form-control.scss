@@ -53,15 +53,15 @@ label {
 
 // Inputs to be used against dark backgrounds.
 .input-dark {
-  background-color: $white-fade-15;
   color: $text-white;
+  background-color: $white-fade-15;
   border-color: transparent;
 
   &::placeholder {
     color: inherit;
     opacity: 0.6; // inceases contrast ratio to 4.52
   }
-  
+
   &.focus,
   &:focus {
     border-color: $black-fade-30;

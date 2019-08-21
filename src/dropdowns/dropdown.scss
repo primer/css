@@ -269,8 +269,8 @@
 
 // Dark dropdowns
 .dropdown-menu-dark {
-  background: $gray-800;
   color: $white;
+  background: $gray-800;
   border-color: $gray-700;
   box-shadow: $box-shadow-large;
 
@@ -300,6 +300,7 @@
     &::before {
       border-color: transparent transparent transparent $gray-700;
     }
+
     &::after {
       border-color: transparent transparent transparent $gray-800;
     }
@@ -309,6 +310,7 @@
     &::before {
       border-color: transparent $gray-700 transparent transparent;
     }
+
     &::after {
       border-color: transparent $gray-800 transparent transparent;
     }
@@ -318,6 +320,7 @@
     &::before {
       border-color: $gray-700 transparent transparent transparent;
     }
+
     &::after {
       border-color: $gray-800 transparent transparent transparent;
     }
