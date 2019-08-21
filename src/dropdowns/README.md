@@ -1,19 +1,25 @@
-# Primer dropdown
+---
+bundle: "dropdowns"
+generated: true
+---
 
-> Dropdowns are lightweight, JavaScript-powered context menus for housing navigation and actions. They're great for instances where you don't need the full power (and code) of the select menu.
+# Primer CSS: `dropdowns` bundle
 
-This repository is a module of the full [primer][primer] repository.
+## Usage
 
-## Documentation
+Primer CSS source files are written in [SCSS]. To include this Primer CSS module in your own build, ensure that your `node_modules` directory is listed in your Sass include paths, then import it with:
 
-Find further documentation at [primer.style/css/components/dropdown](https://primer.style/css/components/dropdown).
+```scss
+@import "@primer/css/dropdowns/index.scss";
+```
+
+## Build
+
+The `@primer/css` npm package includes a standalone CSS build of this module in `dist/dropdowns.css`.
 
 ## License
 
-[MIT](./LICENSE) &copy; [GitHub](https://github.com/)
+[MIT](https://github.com/primer/css/blob/master/LICENSE) &copy; [GitHub](https://github.com/)
 
-[primer]: https://github.com/primer/css
-[docs]: https://primer.style/css
-[npm]: https://www.npmjs.com/
-[install-npm]: https://docs.npmjs.com/getting-started/installing-node
-[sass]: http://sass-lang.com/
+
+[scss]: https://sass-lang.com/documentation/syntax#scss
