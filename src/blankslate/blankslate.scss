@@ -3,10 +3,6 @@
   position: relative;
   padding: $spacer-5;
   text-align: center;
-  background-color: $gray-000;
-  border: 1px solid $gray-200;
-  border-radius: 3px;
-  box-shadow: inset 0 0 10px rgba($black, 0.05);
 
   code {
     padding: 2px 5px 3px;
@@ -14,6 +10,11 @@
     background: $bg-white;
     border: 1px solid $border-gray-light;
     border-radius: 3px;
+  }
+
+  img {
+    width: 56px;
+    height: 56px;
   }
 }
 
@@ -38,10 +39,17 @@
 }
 
 // was .large-format
+// QUESTION: should we deprecate this?
 .blankslate-large {
+  img {
+    width: 80px;
+    height: 80px;
+  }
+
   h3 {
     margin: $spacer-3 0;
-    font-size: $h3-size;
+    //font-size: $h3-size; // This doesn't actually make the text larger. Should this be $h2-size?
+    font-size: $h2-size;
   }
 
   p {
@@ -50,8 +58,7 @@
 }
 
 // was .clean-background
+// TO DO: deprecate this and use utility instead
 .blankslate-clean-background {
-  background: none;
   border: 0;
-  box-shadow: none;
 }
