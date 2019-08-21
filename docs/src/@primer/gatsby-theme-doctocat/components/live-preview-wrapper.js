@@ -4,8 +4,8 @@ import primerStyles from '!!raw-loader!postcss-loader!../../../../../src/index.s
 function LivePreviewWrapper({children}) {
   return (
     <>
-      <style>{primerStyles}</style>
       <link rel="stylesheet" href="https://github.com/site/assets/styleguide.css" />
+      <style>{primerStyles}</style>
       <div className="p-3">{children}</div>
     </>
   )
