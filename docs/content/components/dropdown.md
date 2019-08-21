@@ -28,7 +28,7 @@ symbols:
   ]
 ---
 
-Dropdowns are lightweight, JavaScript-powered context menus for housing navigation and actions. They're great for instances where you don't need the full power (and code) of the select menu.
+Dropdowns are lightweight context menus for housing navigation and actions. They're great for instances where you don't need the full power (and code) of the select menu.
 
 ## Basic examples
 
