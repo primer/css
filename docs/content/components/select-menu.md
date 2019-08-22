@@ -147,11 +147,29 @@ Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-chec
           Selected state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox">
-          <svg class="SelectMenu-icon octicon octicon-check" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          <!-- <%= octicon "check", class: "SelectMenu-icon" %> -->
+          <svg
+            width="12"
+            height="16"
+            viewBox="0 0 12 16"
+            class="octicon octicon-check SelectMenu-icon"
+            aria-hidden="true"
+          >
+            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
+          </svg>
           Default state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox">
-          <svg class="SelectMenu-icon octicon octicon-check" style="fill:currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+          <!-- <%= octicon "check", class: "SelectMenu-icon" %> -->
+          <svg
+            width="12"
+            height="16"
+            viewBox="0 0 12 16"
+            class="octicon octicon-check SelectMenu-icon"
+            aria-hidden="true"
+          >
+            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
+          </svg>
           Default state
         </button>
       </menu>
