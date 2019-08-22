@@ -200,7 +200,7 @@ The list of items is arguably the most important subcomponent within the menu. B
           />
           With an avatar
         </button>
-        <button class="SelectMenu-item" role="menuitem">
+        <button class="SelectMenu-item flex-justify-between" role="menuitem">
           With a status icon
           <!-- <%= octicon "primitive-dot", class: "color-green-5 ml-2" %> -->
           <svg
@@ -213,13 +213,13 @@ The list of items is arguably the most important subcomponent within the menu. B
             <path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" />
           </svg>
         </button>
-        <button class="SelectMenu-item" role="menuitem">
+        <button class="SelectMenu-item d-block" role="menuitem">
           With a <span class="Label bg-blue" title="Label: label">label</span>
         </button>
         <button class="SelectMenu-item" role="menuitem">
           With a counter <span class="Counter bg-gray-2 ml-1">16</span>
         </button>
-        <button class="SelectMenu-item" role="menuitem">
+        <button class="SelectMenu-item d-block" role="menuitem">
           <h5>With a heading</h5>
           <span>and some longer description</span>
         </button>
