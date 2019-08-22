@@ -36,7 +36,7 @@ The typical Primer workflow looks something like this:
 Run `npm install` to install the npm dependencies.
 
 ## Docs site
-The Primer CSS docs are built with React using [Primer Components](https://primer.style/components) and automatically deployed on every push to this repo using our [primer/deploy action](/primer/deploy). You can run the server locally with:
+The Primer CSS docs are built with React using [Primer Components](https://primer.style/components) and automatically deployed on every push to this repo with [Now]. You can run the server locally with:
 
 ```sh
 npm start
@@ -73,29 +73,27 @@ This should open up the site in your browser (if not, navigate to `http://localh
 ### Code blocks
 All `html` fenced code blocks in `src/**/*.md` will be rendered as stories and listed under the relevant module's name in the left-hand nav. File changes should trigger a live reload automatically (after a brief delay).
 
-Note: At this time, we do not load any stories from `src/**/stories.js`.
 
 ## Scripts
-Our [`package.json`](package.json) houses a collection of [run-scripts] that we use to maintain, test, build, and publish Primer CSS, notably:
+Our [`package.json`](package.json) houses a collection of [run-scripts] that we use to maintain, test, build, and publish Primer CSS. Run `npm run <script>` with any of the following values for `<script>`:
 
+* `fresh` does a "fresh" npm install (like `npm install -f`)
 * `dist` runs `script/dist`, which creates CSS bundles of all the `index.scss` files in `src/`.
 * `check-links` runs a link checker on your local development server (`localhost:3000`, started with `npm start`).
-* `lint` lints all of our SCSS source files.
-* `lint-js` lints the docs site and supporting scripts.
+* `lint` lints both our SCSS and JavaScript source files.
+* `lint-css` lints our SCSS source files.
+* `lint-js` lints the JavaScript source files.
 * `now-build` and `now-start` are run on [Now] to build and start the docs site server. `now-test` runs them both in order.
-* `test-urls` compares a (pre-generated) list of paths from the [Primer Style Guide](https://styleguide.github.com/primer/) to files in `pages/css`, and lets us know if we've inadvertently deleted or renamed anything.
+* `start` runs the documentation site locally (alias: `dev`).
+* `test-urls` compares a (pre-generated) list of paths from the **deprecated** [Primer Style Guide](https://styleguide.github.com/primer/) to files in `pages/css`, and lets us know if we've inadvertently deleted or renamed anything.
 * `test-migrate` tests the [`primer-migrate`](MIGRATING.md#primer-migrate) command line utility.
-* `watch` runs the sync script in watch mode, copying files as they're changed from `src/` to `pages/css/`.
 
-You can list all of the available scripts with:
-
-```sh
-npm run
-```
+The above list may not always be up-to-date. You can list all of the available scripts by calling `npm run` with no other arguments.
 
 
 [@primer/css]: https://www.npmjs.com/package/@primer/css
 [run-scripts]: https://docs.npmjs.com/cli/run-script
 [storybook]: https://storybook.js.org/
+[now]: https://zeit.co/now
 [npm]: https://www.npmjs.com/
 [npx]: https://www.npmjs.com/package/npx
