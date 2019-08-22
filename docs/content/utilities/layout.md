@@ -175,11 +175,29 @@ Use `v-align-text-top` or `v-align-text-bottom` to adjust the alignment of an el
 We have width and height utilities to match all of our [spacing variables](/css/support/spacing).
 
 ```html live
-<div class="d-flex">
-  <div>
-    <div class="width-1 height-1 bg-blue"></div>
-    width-1, height-1
-  </div>
+<div>
+  <div class="width-1 height-1 bg-blue d-inline-block mr-2"></div>
+  width-1, height-1
+</div>
+<div>
+  <div class="width-2 height-2 bg-blue d-inline-block mr-2"></div>
+  width-2, height-2
+</div>
+<div>
+  <div class="width-3 height-3 bg-blue d-inline-block mr-2"></div>
+  width-3, height-3
+</div>
+<div>
+  <div class="width-4 height-4 bg-blue d-inline-block mr-2"></div>
+  width-4, height-4
+</div>
+<div>
+  <div class="width-5 height-5 bg-blue d-inline-block mr-2"></div>
+  width-5, height-5
+</div>
+<div>
+  <div class="width-6 height-6 bg-blue d-inline-block mr-2"></div>
+  width-6, height-6
 </div>
 ```
 
