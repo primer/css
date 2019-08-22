@@ -74,11 +74,41 @@
 /* Remove min-width from element */
 .min-width-0 { min-width: 0 !important; }
 
+.width-1 { width: $spacer-1 !important; }
+.width-2 { width: $spacer-2 !important; }
+.width-3 { width: $spacer-3 !important; }
+.width-4 { width: $spacer-4 !important; }
+.width-5 { width: $spacer-5 !important; }
+.width-6 { width: $spacer-6 !important; }
+
+.height-1 { height: $spacer-1 !important; }
+.height-2 { height: $spacer-2 !important; }
+.height-3 { height: $spacer-3 !important; }
+.height-4 { height: $spacer-4 !important; }
+.height-5 { height: $spacer-5 !important; }
+.height-6 { height: $spacer-6 !important; }
+
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
 
     // Auto varients
     .width#{$variant}-auto { width: auto !important; }
+
+    .width#{$variant}-1 { width: $spacer-1 !important; }
+    .width#{$variant}-2 { width: $spacer-2 !important; }
+    .width#{$variant}-3 { width: $spacer-3 !important; }
+    .width#{$variant}-4 { width: $spacer-4 !important; }
+    .width#{$variant}-5 { width: $spacer-5 !important; }
+    .width#{$variant}-6 { width: $spacer-6 !important; }
+
+    .height#{$variant}-1 { height: $spacer-1 !important; }
+    .height#{$variant}-2 { height: $spacer-2 !important; }
+    .height#{$variant}-3 { height: $spacer-3 !important; }
+    .height#{$variant}-4 { height: $spacer-4 !important; }
+    .height#{$variant}-5 { height: $spacer-5 !important; }
+    .height#{$variant}-6 { height: $spacer-6 !important; }
+
+
 
     /* Set the direction to rtl */
     .direction#{$variant}-rtl { direction: rtl !important; }

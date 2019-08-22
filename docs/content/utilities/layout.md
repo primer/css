@@ -8,7 +8,7 @@ bundle: utilities
 
 Change the document layout with display, float, alignment, and other utilities.
 
- 
+
 
 ## Display
 Adjust the display of an element with `.d-block`, `.d-none`, `.d-inline`, `.d-inline-block`, `.d-table`, `.d-table-cell` utilities.
@@ -171,6 +171,17 @@ Use `v-align-text-top` or `v-align-text-bottom` to adjust the alignment of an el
 ```
 
 ## Width and height
+
+We have width and height utilities to match all of our [spacing variables](/css/support/spacing).
+
+```html live
+<div class="d-flex">
+  <div>
+    <div class="width-1 height-1 bg-blue"></div>
+    width-1, height-1
+  </div>
+</div>
+```
 
 Use `.width-fit` to set max-width 100%.
 
