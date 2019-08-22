@@ -32,10 +32,6 @@
     width: 3px;
     pointer-events: none;
     content: "";
-    background-color: $gray-300;
-    transition: transform 0.24s ease-in;
-    transform: scaleX(0);
-    transform-origin: center left;
   }
 }
 
@@ -50,8 +46,7 @@
 
   // Bar on the left
   &::before {
-    transition: transform 0.12s ease-out;
-    transform: scaleX(1);
+    background-color: $gray-300;
   }
 }
 
@@ -68,7 +63,6 @@
   // Bar on the left
   &::before {
     background-color: $orange-600;
-    transform: scaleX(1);
   }
 }
 
