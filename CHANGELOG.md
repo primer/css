@@ -1,3 +1,21 @@
+# 12.6.0
+
+### 🚀 Enhancements
+- Loading toast styles https://github.com/primer/css/pull/852
+- Header component https://github.com/primer/css/pull/845 
+- Import `.octicon` CSS in the core bundle https://github.com/primer/css/pull/857 
+- Design update for blankslates https://github.com/primer/css/pull/861 
+- Don't let State labels wrap https://github.com/primer/css/pull/863
+
+### 📝 Documentation
+- Fix some links in linting docs https://github.com/primer/css/pull/856
+- Updates to the development docs https://github.com/primer/css/pull/855
+- Generate bundle source READMEs from a template https://github.com/primer/css/pull/859 
+- Render Octicon Ruby helper in docs https://github.com/primer/css/pull/847 (fixes https://github.com/primer/css/issue/840)
+
+### 🏠 Internal
+- Add GitHub `styleguide.css` to Storybook https://github.com/primer/css/pull/849
+
 # 12.5.0
 
 ### :rocket: Enhancement
