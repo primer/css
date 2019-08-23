@@ -1,3 +1,25 @@
+# 12.6.1
+
+### :bug: Bug Fix
+- Remove non-ascii characters (en dashes?) from SCSS comments [#870](https://github.com/primer/css/pull/870)
+- Fix SideNav "jumping" in Safari [#868](https://github.com/primer/css/pull/868)
+
+### :nail_care: Polish
+- Improve Select Menu spacing [#844](https://github.com/primer/css/pull/844)
+
+### :memo: Documentation
+- Update colorable URL [#867](https://github.com/primer/css/pull/867)
+
+### :house: Internal
+- Update changelog for 12.6.0 [#866](https://github.com/primer/css/pull/866)
+
+### Committers
+- [@jonrohan](https://github.com/jonrohan)
+- [@kiendang](https://github.com/kiendang)
+- [@shawnbot](https://github.com/shawnbot)
+- [@shreve](https://github.com/shreve)
+- [@simurai](https://github.com/simurai)
+
 # 12.6.0
 
 ### 🚀 Enhancements
