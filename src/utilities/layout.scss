@@ -74,22 +74,6 @@
 /* Remove min-width from element */
 .min-width-0 { min-width: 0 !important; }
 
-.width-0 { width: 0 !important; }
-.width-1 { width: $spacer-1 !important; }
-.width-2 { width: $spacer-2 !important; }
-.width-3 { width: $spacer-3 !important; }
-.width-4 { width: $spacer-4 !important; }
-.width-5 { width: $spacer-5 !important; }
-.width-6 { width: $spacer-6 !important; }
-
-.height-0 { height: 0 !important; }
-.height-1 { height: $spacer-1 !important; }
-.height-2 { height: $spacer-2 !important; }
-.height-3 { height: $spacer-3 !important; }
-.height-4 { height: $spacer-4 !important; }
-.height-5 { height: $spacer-5 !important; }
-.height-6 { height: $spacer-6 !important; }
-
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
 
