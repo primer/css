@@ -23,20 +23,27 @@
 # 12.6.0
 
 ### 🚀 Enhancements
-- Loading toast styles https://github.com/primer/css/pull/852
-- Header component https://github.com/primer/css/pull/845 
-- Import `.octicon` CSS in the core bundle https://github.com/primer/css/pull/857 
-- Design update for blankslates https://github.com/primer/css/pull/861 
-- Don't let State labels wrap https://github.com/primer/css/pull/863
+- Loading toast styles [#852](https://github.com/primer/css/pull/852)
+- Header component [#845](https://github.com/primer/css/pull/845)
+- Import `.octicon` CSS in the core bundle [#857](https://github.com/primer/css/pull/857)
+- Design update for blankslates [#861](https://github.com/primer/css/pull/861)
+- Don't let State labels wrap [#863](https://github.com/primer/css/pull/863)
 
 ### 📝 Documentation
-- Fix some links in linting docs https://github.com/primer/css/pull/856
-- Updates to the development docs https://github.com/primer/css/pull/855
-- Generate bundle source READMEs from a template https://github.com/primer/css/pull/859 
-- Render Octicon Ruby helper in docs https://github.com/primer/css/pull/847 (fixes https://github.com/primer/css/issue/840)
+- Fix some links in linting docs [#856](https://github.com/primer/css/pull/856)
+- Updates to the development docs [#855](https://github.com/primer/css/pull/855)
+- Generate bundle source READMEs from a template [#859](https://github.com/primer/css/pull/859)
+- Render Octicon Ruby helper in docs [#847](https://github.com/primer/css/pull/847)
 
 ### 🏠 Internal
-- Add GitHub `styleguide.css` to Storybook https://github.com/primer/css/pull/849
+- Add GitHub `styleguide.css` to Storybook [#849](https://github.com/primer/css/pull/849)
+
+### Committers
+- [@ashygee](https://github.com/ashygee)
+- [@emilybrick](https://github.com/emilybrick)
+- [@jonrohan](https://github.com/jonrohan)
+- [@shawnbot](https://github.com/shawnbot)
+- [@vdepizzol](https://github.com/vdepizzol)
 
 # 12.5.0
 
