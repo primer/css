@@ -201,7 +201,7 @@
 // The icon shown on the left of a list item. Typically a check icon.
 
 .SelectMenu-icon {
-  width: 16px; // fixed width to make sure following content aligns
+  width: $spacer-3; // fixed width to make sure following content aligns
   margin-right: $spacer-2;
   visibility: hidden;
   transition: transform 0.12s cubic-bezier(0.5, 0.1, 1, 0.5), visibility 0s 0.12s linear;
