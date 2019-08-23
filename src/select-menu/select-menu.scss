@@ -103,7 +103,8 @@
   padding: $spacer-3;
 
   @include breakpoint(sm) {
-    padding: $spacer-2;
+    padding-top: $spacer-2;
+    padding-bottom: $spacer-2;
   }
 }
 
@@ -173,9 +174,10 @@
 // The interactive element used to make a selection
 
 .SelectMenu-item {
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100%;
-  padding: $spacer-3 $spacer-5;
+  padding: $spacer-3;
   overflow: hidden;
   color: $text-gray;
   text-align: left;
@@ -199,9 +201,8 @@
 // The icon shown on the left of a list item. Typically a check icon.
 
 .SelectMenu-icon {
-  position: absolute;
-  height: 1.5em; // Mimics line-height to vertically center the icon
-  margin-left: -20px;
+  width: $spacer-3; // fixed width to make sure following content aligns
+  margin-right: $spacer-2;
   visibility: hidden;
   transition: transform 0.12s cubic-bezier(0.5, 0.1, 1, 0.5), visibility 0s 0.12s linear;
   transform: scale(0);
@@ -295,10 +296,6 @@
 
   &:last-child {
     border-bottom: 0;
-  }
-
-  @include breakpoint(sm) {
-    padding: $spacer-1 $spacer-2;
   }
 }
 

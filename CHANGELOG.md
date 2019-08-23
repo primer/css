@@ -1,3 +1,50 @@
+# 12.6.1
+
+### :bug: Bug Fix
+- Remove non-ascii characters (en dashes?) from SCSS comments [#870](https://github.com/primer/css/pull/870)
+- Fix SideNav "jumping" in Safari [#868](https://github.com/primer/css/pull/868)
+
+### :nail_care: Polish
+- Improve Select Menu spacing [#844](https://github.com/primer/css/pull/844)
+
+### :memo: Documentation
+- Update colorable URL [#867](https://github.com/primer/css/pull/867)
+
+### :house: Internal
+- Update changelog for 12.6.0 [#866](https://github.com/primer/css/pull/866)
+
+### Committers
+- [@jonrohan](https://github.com/jonrohan)
+- [@kiendang](https://github.com/kiendang)
+- [@shawnbot](https://github.com/shawnbot)
+- [@shreve](https://github.com/shreve)
+- [@simurai](https://github.com/simurai)
+
+# 12.6.0
+
+### 🚀 Enhancements
+- Loading toast styles [#852](https://github.com/primer/css/pull/852)
+- Header component [#845](https://github.com/primer/css/pull/845)
+- Import `.octicon` CSS in the core bundle [#857](https://github.com/primer/css/pull/857)
+- Design update for blankslates [#861](https://github.com/primer/css/pull/861)
+- Don't let State labels wrap [#863](https://github.com/primer/css/pull/863)
+
+### 📝 Documentation
+- Fix some links in linting docs [#856](https://github.com/primer/css/pull/856)
+- Updates to the development docs [#855](https://github.com/primer/css/pull/855)
+- Generate bundle source READMEs from a template [#859](https://github.com/primer/css/pull/859)
+- Render Octicon Ruby helper in docs [#847](https://github.com/primer/css/pull/847)
+
+### 🏠 Internal
+- Add GitHub `styleguide.css` to Storybook [#849](https://github.com/primer/css/pull/849)
+
+### Committers
+- [@ashygee](https://github.com/ashygee)
+- [@emilybrick](https://github.com/emilybrick)
+- [@jonrohan](https://github.com/jonrohan)
+- [@shawnbot](https://github.com/shawnbot)
+- [@vdepizzol](https://github.com/vdepizzol)
+
 # 12.5.0
 
 ### :rocket: Enhancement
