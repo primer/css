@@ -43,7 +43,7 @@
     "test-migrate": "script/test-migrate"
   },
   "dependencies": {
-    "@primer/octicons": "^9.1.1"
+    "@primer/octicons": "9.1.1"
   },
   "devDependencies": {
     "@storybook/addon-viewport": "5.0.11",
@@ -93,8 +93,5 @@
     "unist-util-stringify-position": "^2.0.0",
     "unist-util-visit": "^1.4.0",
     "webpack": "4.20.2"
-  },
-  "dependencies": {
-    "@primer/octicons": "9.1.1"
   }
 }
