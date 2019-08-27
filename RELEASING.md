@@ -7,7 +7,7 @@
 
 1. Create a new release branch from `master` and name it `release-<version>`.
 
-1. Update the `version` field in `package.json` to match the release version. You may also run the `npm version v<version>` command.
+1. Run [`npm version <version>`](https://docs.npmjs.com/cli/version) to update the `version` field in both `package.json` and `package-lock.json`.
 
 1. Create a new PR for the `release-<version>` branch. Please use the following template for the PR description, linking to the relevant issues and/or pull requests for each change, removing irrelevant headings and checking off all of the boxes of the ship checklist:
 
