@@ -253,11 +253,11 @@ Use `.UnderlineNav--full` in combination with container styles and `.UnderlineNa
 
 The Side Nav is a vertical list of navigational links, typically used on the left side of a page. For maximum flexibility, **Side Nav elements have no default width or positioning**. We suggest using [column grid](../../objects/grid) classes or an inline `width` style for sizing, and [flexbox utilities](../../utilities/flexbox) for positioning alongside content.
 
-- You can use a **light gray background** and a **border** if the parent element doesn't have it already.
+- You can use a **border** if the parent element doesn't have it already.
 - Add `aria-current="page"` to show a link as selected. Selected button elements in tab-like UIs should instead have `aria-selected="true"`.
 
 ```html live
-<nav class="SideNav bg-gray-light border" style="max-width: 360px">
+<nav class="SideNav border" style="max-width: 360px">
   <a class="SideNav-item" href="#url">Account</a>
   <a class="SideNav-item" href="#url" aria-current="page">Profile</a>
   <a class="SideNav-item" href="#url">Emails</a>
@@ -268,7 +268,7 @@ The Side Nav is a vertical list of navigational links, typically used on the lef
 Different kind of content can be added inside a Side Nav item. Use utility classes to further style them if needed.
 
 ```html live
-<nav class="SideNav bg-gray-light border" style="max-width: 360px">
+<nav class="SideNav border" style="max-width: 360px">
   <a class="SideNav-item" href="#url">
     Text only
   </a>
@@ -337,14 +337,13 @@ The `.SideNav-subItem` is an alternative, more lightweight version without borde
     <a class="SideNav-subItem" href="#url">Emails</a>
     <a class="SideNav-subItem" href="#url">Notifications</a>
   </nav>
-  <aside></aside>
 </aside>
 ```
 
 Or also appear nested, as a sub navigation. Use margin/padding utility classes to add indentation.
 
 ```html live
-<nav class="SideNav bg-gray-light border" style="max-width: 360px">
+<nav class="SideNav border" style="max-width: 360px">
   <a class="SideNav-item" href="#url">
     <!-- <%= octicon "person", class: "mr-2" %> -->
     <svg width="12" height="16" viewBox="0 0 12 16" class="octicon octicon-person mr-2" aria-hidden="true">
