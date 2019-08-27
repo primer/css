@@ -1,3 +1,15 @@
+# 12.6.2
+
+### :nail_care: Polish
+- Add default background-color to SideNav https://github.com/primer/css/pull/873
+
+### :house: Internal
+- Change order in RELEASING.md https://github.com/primer/css/pull/875
+
+### Committers
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+
 # 12.6.1
 
 ### :bug: Bug Fix
