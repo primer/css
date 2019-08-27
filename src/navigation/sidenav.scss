@@ -2,6 +2,10 @@
 //
 // A vertical list of navigational links, typically used on the left side of a page.
 
+.SideNav {
+  background-color: $bg-gray-light;
+}
+
 .SideNav-item {
   position: relative;
   display: block;
