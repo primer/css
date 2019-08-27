@@ -87,6 +87,8 @@
       url: /components/flash-banner
     - title: Forms
       url: /components/forms
+    - title: Header
+      url: /components/header
     - title: Labels
       url: /components/labels
     - title: Markdown
@@ -97,6 +99,8 @@
       url: /components/navigation
     - title: Pagehead
       url: /components/pagehead
+    - title: Pagination
+      url: /components/pagination
     - title: Popover
       url: /components/popover
     - title: Progress
