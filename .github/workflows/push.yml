@@ -14,5 +14,4 @@ jobs:
         run: npm --unsafe-perm run lint
       - name: test
         run: npm --unsafe-perm test
-      - name: publish
-        run: npm --unsafe-perm publish
+      - uses: primer/publish
