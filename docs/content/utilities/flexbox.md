@@ -187,7 +187,7 @@ Use these classes to distribute space between and around flex items along the **
 
 #### flex-justify-start
 
-Use `.flex-justify-start` to align items to the start line. By default this will be on the left side of the container. If you are using `.flex-column`, the end line will be at the top of the container.
+Use `.flex-justify-start` to align items to the start line. By default this will be on the left side of the container. If you are using `.flex-column`, the start line will be at the top of the container.
 
 ```html live
 <div class="border d-flex flex-justify-start">
