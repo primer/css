@@ -184,8 +184,11 @@
 .no-wrap { white-space: nowrap !important; }
 /* Normal white space */
 .ws-normal { white-space: normal !important; }
+
 /* Allow long lines with no spaces to line break */
 .wb-break-all { word-break: break-all !important; }
+/* Force long "words" to wrap if they exceed the width of the container */
+.wb-break-word { word-break: break-word !important; }
 
 .text-emphasized {
   font-weight: $font-weight-bold;
