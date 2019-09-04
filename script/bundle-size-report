@@ -44,10 +44,15 @@ Promise.all(
     const entry = {
       name: bundle.name,
       path: bundle.css,
-      local: require(`../${bundle.stats}`)
+      local: require(`../${bundle.stats}`),
+      remote: {}
     }
     return fetch(unpkgBaseURL + bundle.stats)
       .then(res => res.json())
+      .catch(error => {
+        console.warn(`Unable to fetch old ${bundle.name} bundle from unpkg; assuming it's new!`)
+        return entry.local
+      })
       .then(stats => (entry.remote = stats))
       .then(() => entry)
   })
