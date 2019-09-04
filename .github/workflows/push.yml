@@ -1,0 +1,18 @@
+name: "lint, test, publish"
+on: [push]
+jobs:
+  all:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          version: 11
+      - name: install
+        run: npm --unsafe-perm install
+      - name: lint
+        run: npm --unsafe-perm run lint
+      - name: test
+        run: npm --unsafe-perm test
+      - name: publish
+        run: npm --unsafe-perm run publish
