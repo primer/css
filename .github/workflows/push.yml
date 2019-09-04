@@ -15,4 +15,4 @@ jobs:
       - name: test
         run: npm --unsafe-perm test
       - name: publish
-        run: npm --unsafe-perm run publish
+        run: npm --unsafe-perm publish
