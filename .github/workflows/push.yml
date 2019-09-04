@@ -15,3 +15,5 @@ jobs:
       - name: test
         run: npm --unsafe-perm test
       - uses: primer/publish@v1.1.0
+        with:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
