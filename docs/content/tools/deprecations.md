@@ -1,4 +1,6 @@
-## Deprecation data
+---
+title: Deprecation data
+---
 
 As of version 12.7.0, we publish CSS selector deprecation data with
 `@primer/css`. You can access the data via the [Node API](#node) or as
@@ -13,7 +15,7 @@ version of `@primer/css` you've installed via the [Node API](#node), or by
 comparing the version of a selector deprecation with the installed version in
 your own environment.
 
-### JSON
+## JSON
 
 The JSON data is available in the unpacked node module's `dist/deprecations.json`, and is an object with the following structure:
 
@@ -45,7 +47,7 @@ The JSON data is available in the unpacked node module's `dist/deprecations.json
     }
     ```
 
-### Node
+## Node
 
 The Node API for selector deprecations is available at
 `@primer/css/deprecations`.
@@ -57,7 +59,7 @@ The Node API for selector deprecations is available at
 npm install semver
 ```
 
-#### `versionDeprecations`
+### `versionDeprecations`
 This is the object literal form of the [JSON data's](#json) `versions` object.
 For instance, to list all of the deprecations:
 
@@ -68,7 +70,7 @@ for (const [version, deprecations] of Object.entries(versionDeprecations)) {
 }
 ```
 
-#### `selectorDeprecations`
+### `selectorDeprecations`
 This is a [Map] object with keys for each CSS selector mapped to the deprecation info:
 
 ```js
