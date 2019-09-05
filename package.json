@@ -79,7 +79,7 @@
     "prop-types": "^15.6.2",
     "raw-loader": "0.5.1",
     "refractor": "^2.6.2",
-    "semver": "^5.3.0",
+    "semver": "5.7.1",
     "style-loader": "^0.18.2",
     "styled-components": "4.1.2",
     "stylelint": "9.10.1",
