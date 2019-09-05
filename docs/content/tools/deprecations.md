@@ -19,7 +19,7 @@ your own environment.
 
 The JSON data is available in the unpacked node module's `dist/deprecations.json`, and is an object with the following structure:
 
-* `versions` is an object whos keys are version numbers (e.g. `13.0.0`) and values are deprecation messages: objects with a `selectors` array and a `message`:
+* `versions` is an object whose keys are version numbers (e.g. `13.0.0`) and values are deprecation messages: objects with a `selectors` array and a `message`:
 
     ```json
     {
