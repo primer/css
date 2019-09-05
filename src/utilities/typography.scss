@@ -187,9 +187,9 @@
 
 /* Force long "words" to wrap if they exceed the width of the container */
 .break-word {
+  word-break: break-word !important;
   // this is for backwards compatibility with browsers that don't respect overflow-wrap
   word-wrap: break-word !important;
-  word-break: break-word !important;
   overflow-wrap: break-word !important;
 }
 
