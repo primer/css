@@ -87,3 +87,5 @@ console.log(`Purple buttons are bad? ${isSelectorDeprecated('.btn-purple')}`)
 console.log(`Primary buttons are bad? ${isSelectorDeprecated('.btn-primary')}`)
 // "Primary buttons are bad? false"
 ```
+
+[semver]: https://npm.im/semver
