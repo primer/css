@@ -1,0 +1,22 @@
+name: "lint, test, publish"
+on: [push]
+jobs:
+  all:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          version: 11
+      - name: install
+        run: npm --unsafe-perm install
+      - name: lint
+        run: npm --unsafe-perm run lint
+      - name: test
+        run: npm --unsafe-perm test
+      - name: prepublish
+        run: script/prepublish
+      - uses: primer/publish@v1.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
