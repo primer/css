@@ -38,7 +38,7 @@ const versionDeprecations = {
   ]
 }
 
-const {version: CURRENT_VERSION} = require('../package.json')
+const {version: CURRENT_VERSION} = require('./package.json')
 const semver = require('semver')
 
 // map selectors to the version and message of their deprecation
