@@ -107,9 +107,8 @@ There are two utilities for adjusting how lines and words of text break when the
 
 1. `break-word` sets `word-break: break-word` and `overflow-wrap: break-word`, which will only break words if they would exceed the line length _after wrapping_.
 
-2. `wb-break-all` sets `word-break: break-all`, will force a word to break regardless of whether it's shorter than the line length, per [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/word-break#Values):
+2. `wb-break-all` sets `word-break: break-all`, which will force a word to break regardless of whether it's shorter than the line length. See [MDN's `word-break` docs](https://developer.mozilla.org/en-US/docs/Web/CSS/word-break#Values) for more info.
 
-    > **Note:** In contrast to `word-break: break-word` and `overflow-wrap: break-word` (see [`overflow-wrap`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap)), `word-break: break-all` will create a break at the exact place where text would otherwise overflow its container (even if putting an entire word on its own line would negate the need for a break).
 
 
 ```html live
