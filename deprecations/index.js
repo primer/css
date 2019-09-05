@@ -1,7 +1,9 @@
-const {version: CURRENT_VERSION} = require('../package.json')
-const semver = require('semver')
-
-const deprecationsByVersion = {
+/*
+ * This object's keys are (semver) version numbers, and the
+ * values are arrays of objects each with a "selectors"
+ * array and a "message" string.
+ */
+const versionDeprecations = {
   '13.0.0': [
     {
       selectors: ['.btn-purple'],
@@ -26,9 +28,12 @@ const deprecationsByVersion = {
   ]
 }
 
+const {version: CURRENT_VERSION} = require('../package.json')
+const semver = require('semver')
+
 // map selectors to the version and message of their deprecation
 const selectorDeprecations = new Map()
-for (const [version, deps] of Object.entries(deprecationsByVersion)) {
+for (const [version, deps] of Object.entries(versionDeprecations)) {
   for (const {selectors, message} of deps) {
     for (const selector of selectors) {
       selectorDeprecations.set(selector, {version, message})
@@ -41,4 +46,4 @@ function isSelectorDeprecated(selector, version = CURRENT_VERSION) {
   return dep ? semver.gte(dep.version, version) : false
 }
 
-module.exports = {deprecationsByVersion, selectorDeprecations, isSelectorDeprecated}
+module.exports = {versionDeprecations, selectorDeprecations, isSelectorDeprecated}
