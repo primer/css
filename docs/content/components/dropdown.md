@@ -12,7 +12,7 @@ Dropdowns should be trigged by a `<button>`. **[Each dropdown menu requires a di
 Using a GitHub button:
 
 ```html live
-<div style="min-height: 160px">
+<div style="margin-bottom: 100px">
   <details class="dropdown details-reset details-overlay d-inline-block">
     <summary class="btn" aria-haspopup="true">
       Dropdown
@@ -31,7 +31,7 @@ Using a GitHub button:
 Using a button customized with additional utilities:
 
 ```html live
-<div style="min-height: 160px">
+<div style="margin-bottom: 100px">
   <details class="dropdown details-reset details-overlay d-inline-block">
     <summary class="text-gray p-2 d-inline" aria-haspopup="true">
       Dropdown
@@ -54,8 +54,8 @@ Using a button customized with additional utilities:
 Align the direction of dropdown menus and their arrows with modifier classes.
 
 ```html live
-<div style="min-height: 160px">
-  <details class="dropdown details-reset details-overlay d-inline-block" style="margin-top: 120px">
+<div style="margin-top: 100px">
+  <details class="dropdown details-reset details-overlay d-inline-block">
     <summary class="btn" aria-haspopup="true">
       .dropdown-ne
       <div class="dropdown-caret"></div>
@@ -71,7 +71,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 ```
 
 ```html live
-<div style="min-height: 160px">
+<div style="margin-bottom: 100px">
   <details class="dropdown details-reset details-overlay d-inline-block">
     <summary class="btn" aria-haspopup="true">
       .dropdown-e
@@ -88,7 +88,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 ```
 
 ```html live
-<div style="min-height: 160px">
+<div style="margin-bottom: 100px">
   <details class="dropdown details-reset details-overlay d-inline-block">
     <summary class="btn" aria-haspopup="true">
       .dropdown-se
@@ -105,7 +105,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 ```
 
 ```html live
-<div style="min-height: 160px">
+<div style="margin-bottom: 100px" class="d-flex flex-justify-center">
   <details class="dropdown details-reset details-overlay d-inline-block">
     <summary class="btn" aria-haspopup="true">
       .dropdown-s
@@ -122,7 +122,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 ```
 
 ```html live
-<div style="min-height: 160px">
+<div style="margin-bottom: 100px" class="d-flex flex-justify-end">
   <details class="dropdown details-reset details-overlay d-inline-block">
     <summary class="btn" aria-haspopup="true">
       .dropdown-sw
@@ -139,7 +139,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 ```
 
 ```html live
-<div style="min-height: 160px">
+<div style="margin-bottom: 100px" class="d-flex flex-justify-end">
   <details class="dropdown details-reset details-overlay d-inline-block">
     <summary class="btn" aria-haspopup="true">
       .dropdown-w
@@ -158,7 +158,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 ### Dividers
 
 ```html live
-<div style="min-height: 210px">
+<div style="margin-bottom: 170px">
   <details class="dropdown details-reset details-overlay d-inline-block">
     <summary class="btn" aria-haspopup="true">
       Dropdown
@@ -180,7 +180,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 ### Headers
 
 ```html live
-<div style="min-height: 170px">
+<div style="margin-bottom: 126px">
   <details class="dropdown details-reset details-overlay d-inline-block">
     <summary class="btn" aria-haspopup="true">
       Dropdown
@@ -204,7 +204,7 @@ Align the direction of dropdown menus and their arrows with modifier classes.
 ### Dark
 
 ```html live
-<div class="bg-gray-dark p-3 mt-n3 ml-n3 mr-n3" style="min-height: 240px;">
+<div class="bg-gray-dark p-3 mt-n3 ml-n3 mr-n3 mb-n3" style="min-height: 240px;">
   <details class="dropdown details-reset details-overlay d-inline-block">
     <summary class="btn" aria-haspopup="true">
       Dropdown
