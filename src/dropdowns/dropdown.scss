@@ -83,7 +83,7 @@
   white-space: nowrap;
 
   &:focus,
-  &:hover,
+  &:hover {
   &.zeroclipboard-is-hover {
     color: $text-white;
     text-decoration: none;
