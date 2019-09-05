@@ -122,6 +122,8 @@
   children:
     - title: Atom packages
       url: /tools/atom-packages
+    - title: Deprecation data
+      url: /tools/deprecations
     - title: Docset
       url: /tools/docset
     - title: Linting
