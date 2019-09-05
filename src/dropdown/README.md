@@ -1,21 +1,21 @@
 ---
-bundle: "dropdowns"
+bundle: "dropdown"
 generated: true
 ---
 
-# Primer CSS: `dropdowns` bundle
+# Primer CSS: `dropdown` bundle
 
 ## Usage
 
 Primer CSS source files are written in [SCSS]. To include this Primer CSS module in your own build, ensure that your `node_modules` directory is listed in your Sass include paths, then import it with:
 
 ```scss
-@import "@primer/css/dropdowns/index.scss";
+@import "@primer/css/dropdown/index.scss";
 ```
 
 ## Build
 
-The `@primer/css` npm package includes a standalone CSS build of this module in `dist/dropdowns.css`.
+The `@primer/css` npm package includes a standalone CSS build of this module in `dist/dropdown.css`.
 
 ## License
 
