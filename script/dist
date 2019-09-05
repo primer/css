@@ -1,11 +1,11 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 const globby = require('globby')
 const cssstats = require('cssstats')
 const postcss = require('postcss')
 const loadConfig = require('postcss-load-config')
 const {remove, mkdirp, readFile, writeFile} = require('fs-extra')
-const {dirname, basename, join} = require('path')
-const {promisify} = require('util')
+const {dirname, join} = require('path')
 
 const inDir = 'src'
 const outDir = 'dist'
@@ -69,6 +69,7 @@ remove(outDir)
         const meta = {bundles}
         return writeFile(join(outDir, 'meta.json'), JSON.stringify(meta, null, 2), encoding)
       })
+      .then(writeDeprecationData)
   })
   .catch(error => {
     console.error(error)
@@ -90,6 +91,14 @@ function getPathName(path) {
   return path.replace(/\//g, '-')
 }
 
-function unique(d, i, list) {
-  return list.indexOf(d) === i
+function writeDeprecationData() {
+  const {versionDeprecations, selectorDeprecations} = require('../deprecations')
+  const data = {
+    versions: versionDeprecations,
+    selectors: Array.from(selectorDeprecations.entries()).reduce((obj, [selector, deprecation]) => {
+      obj[selector] = deprecation
+      return obj
+    }, {})
+  }
+  return writeFile(join(outDir, 'deprecations.json'), JSON.stringify(data, null, 2))
 }
