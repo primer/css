@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 const globby = require('globby')
 const cssstats = require('cssstats')
 const postcss = require('postcss')
@@ -88,10 +89,6 @@ function getExternalImports(scss, relativeTo) {
 
 function getPathName(path) {
   return path.replace(/\//g, '-')
-}
-
-function unique(d, i, list) {
-  return list.indexOf(d) === i
 }
 
 function writeDeprecationData() {
