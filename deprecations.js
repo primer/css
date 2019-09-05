@@ -18,7 +18,17 @@ const versionDeprecations = {
       message: `Please use the "bg-yellow-dark" class instead of "bg-pending".`
     },
     {
-      selectors: ['.columns', '.column', '.one-third', '.two-thirds', '.one-fourth', '.one-half', '.three-fourths', '.one-fifth', '.four-fifths'],
+      selectors: [
+        '.columns',
+        '.column',
+        '.one-third',
+        '.two-thirds',
+        '.one-fourth',
+        '.one-half',
+        '.three-fourths',
+        '.one-fifth',
+        '.four-fifths'
+      ],
       message: `Please use [grid classes](https://primer.style/css/objects/grid).`
     },
     {
@@ -42,8 +52,8 @@ for (const [version, deps] of Object.entries(versionDeprecations)) {
 }
 
 function isSelectorDeprecated(selector, version = CURRENT_VERSION) {
-  const dep = selectorDeprecations.get(selector)
-  return dep ? semver.gte(dep.version, version) : false
+  const deprecation = selectorDeprecations.get(selector)
+  return deprecation ? semver.gte(deprecation.version, version) : false
 }
 
 module.exports = {versionDeprecations, selectorDeprecations, isSelectorDeprecated}
