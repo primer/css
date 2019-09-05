@@ -14,6 +14,7 @@ jobs:
         run: npm --unsafe-perm run lint
       - name: test
         run: npm --unsafe-perm test
-      - uses: primer/publish@actions-v2
-        with:
-          npm-auth-token: ${{ secrets.NPM_AUTH_TOKEN }}
+      - uses: primer/publish@v1.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
