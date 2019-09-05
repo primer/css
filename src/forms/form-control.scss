@@ -51,6 +51,24 @@ label {
   &:focus { background-color: $bg-white; }
 }
 
+// Inputs to be used against dark backgrounds.
+.input-dark {
+  color: $text-white;
+  background-color: $white-fade-15;
+  border-color: transparent;
+
+  &::placeholder {
+    color: inherit;
+    opacity: 0.6; // inceases contrast ratio to 4.52
+  }
+
+  &.focus,
+  &:focus {
+    border-color: $black-fade-30;
+    box-shadow: 0 0 0 0.2em rgba($blue-300, 0.4);
+  }
+}
+
 // Custom styling for HTML5 validation bubbles (WebKit only)
 ::placeholder {
   color: $text-gray-light;

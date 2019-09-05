@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const fetch = require('node-fetch')
 const filesize = require('filesize')
+const cssstats = require('cssstats')
 const minimist = require('minimist')
 const {green, gray, yellow, red} = require('colorette')
 const {table, getBorderCharacters} = require('table')
@@ -44,10 +45,15 @@ Promise.all(
     const entry = {
       name: bundle.name,
       path: bundle.css,
-      local: require(`../${bundle.stats}`)
+      local: require(`../${bundle.stats}`),
+      remote: {}
     }
     return fetch(unpkgBaseURL + bundle.stats)
       .then(res => res.json())
+      .catch(error => {
+        console.warn(`Unable to fetch old "${bundle.name}" stats from unpkg; assuming it's new!`)
+        return cssstats('')
+      })
       .then(stats => (entry.remote = stats))
       .then(() => entry)
   })
