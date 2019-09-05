@@ -7,7 +7,7 @@ As of version 12.7.0, we publish CSS selector deprecation data with
 [JSON](#json).
 
 Deprecation messages strings may include Markdown so that they can be included
-in the [changelog](https://github.com/primer/css/tree/master/CHANGELOG.md).
+in the [changelog].
 
 **Keep in mind that this data includes both active and _planned_
 deprecations.** You can determine whether a CSS selector is deprecated for the
@@ -91,3 +91,5 @@ console.log(`Primary buttons are bad? ${isSelectorDeprecated('.btn-primary')}`)
 ```
 
 [semver]: https://npm.im/semver
+[changelog]: https://github.com/primer/css/tree/master/CHANGELOG.md
+[Map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
