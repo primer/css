@@ -184,7 +184,25 @@
 .no-wrap { white-space: nowrap !important; }
 /* Normal white space */
 .ws-normal { white-space: normal !important; }
-/* Allow long lines with no spaces to line break */
+
+/* Force long "words" to wrap if they exceed the width of the container */
+.break-word {
+  word-break: break-word !important;
+  // this is for backwards compatibility with browsers that don't respect overflow-wrap
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/*
+ * Specifically apply word-break: break-all; per MDN:
+ *
+ * > Note: In contrast to `word-break: break-word` and `overflow-wrap: break-word`,
+ * > `word-break: break-all` will create a break at the exact place where text would
+ * > otherwise overflow its container (even if putting an entire word on its own line
+ * > would negate the need for a break).
+ *
+ * see: https://developer.mozilla.org/en-US/docs/Web/CSS/word-break#Values
+ */
 .wb-break-all { word-break: break-all !important; }
 
 .text-emphasized {
