@@ -93,7 +93,6 @@ Change the font weight, styles, and alignment with these utilities.
 <p class="text-uppercase">Uppercase</p>
 <p class="no-wrap">No wrap</p>
 <p class="ws-normal">Normal whitespace</p>
-<p class="wb-break-all">Line break long lines</p>
 <p class="text-underline">Text underline</p>
 <p class="no-underline">No underline</p>
 <p class="text-emphasized">Emphasized</p>
@@ -102,6 +101,18 @@ Change the font weight, styles, and alignment with these utilities.
 <p class="text-mono">Monospace</p>
 <p class="user-select-none">User Select None</p>
 ```
+
+## Word-break
+There are two utilities for setting the CSS [word-break](https://developer.mozilla.org/en-US/docs/Web/CSS/word-break) property:
+
+1. `wb-break-all` sets `word-break: break-all`, and will force long lines to break (but _not words_).
+2. `wb-break-word` sets `word-break: break-word`, and will force long words to break.
+
+```html live
+<p class="wb-break-all p-2 bg-gray col-6">Break long lines with words like supercalifragilisticexpialidocious.</p>
+<p class="wb-break-word p-2 bg-gray col-1">Break long words like supercalifragilisticexpialidocious.</p>
+```
+
 
 ## Text alignment
 
