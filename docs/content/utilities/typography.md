@@ -103,14 +103,18 @@ Change the font weight, styles, and alignment with these utilities.
 ```
 
 ## Word-break
-There are two utilities for setting the CSS [word-break](https://developer.mozilla.org/en-US/docs/Web/CSS/word-break) property:
+There are two utilities for adjusting how lines and words of text break when they exceed the width of their containing element:
 
-1. `wb-break-all` sets `word-break: break-all`, and will force long lines to break (but _not words_).
-2. `wb-break-word` sets `word-break: break-word`, and will force long words to break.
+1. `break-word` sets `word-break: break-word` _and_ `overflow-wrap: break-word`. **This is more reliable way to ensure that content doesn't escape its container than `wb-break-all`.**
+
+2. `wb-break-all` sets `word-break: break-all`, which behaves in a subtly different way to `break-word`, [according to MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/word-break#Values):
+
+    > **Note:** In contrast to `word-break: break-word` and `overflow-wrap: break-word` (see [`overflow-wrap`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap)), `word-break: break-all` will create a break at the exact place where text would otherwise overflow its container (even if putting an entire word on its own line would negate the need for a break).
+
 
 ```html live
-<p class="wb-break-all p-2 bg-gray col-6">Break long lines with words like supercalifragilisticexpialidocious.</p>
-<p class="wb-break-word p-2 bg-gray col-1">Break long words like supercalifragilisticexpialidocious.</p>
+<p class="break-word p-2 bg-gray col-1">Break long words like supercalifragilisticexpialidocious.</p>
+<p class="wb-break-all p-2 bg-gray col-6">Break long words like supercalifragilisticexpialidocious and .</p>
 ```
 
 
