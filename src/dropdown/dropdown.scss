@@ -1,12 +1,5 @@
 .dropdown {
   position: relative;
-
-  &.active {
-    .dropdown-menu-content {
-      display: block;
-      pointer-events: all;
-    }
-  }
 }
 
 .dropdown-caret {
@@ -119,17 +112,6 @@
   padding: $spacer-1 $spacer-3;
   font-size: $h6-size;
   color: $text-gray;
-}
-
-.dropdown-menu-content {
-  display: none;
-
-  // stylelint-disable-next-line primer/no-override
-  &.anim-scale-in {
-    position: relative;
-    z-index: 100;
-    pointer-events: none;
-  }
 }
 
 .dropdown-item[aria-checked="false"] .octicon-check {
