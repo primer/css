@@ -1,3 +1,23 @@
+# 12.7.0
+
+### :rocket: Enhancement
+- Import Dropdown component; add dark variants for dropdown and text fields [#862](https://github.com/primer/css/pull/862)
+- Add `.break-word` utility and improve word-break docs [#880](https://github.com/primer/css/pull/880)
+- Publish deprecation data [#883](https://github.com/primer/css/pull/883)
+
+### :memo: Documentation
+- Fix mistake in flex-justify-start explanation [#877](https://github.com/primer/css/pull/877)
+
+### :house: Internal
+- Fix CSS bundle size report when adding bundles [#879](https://github.com/primer/css/pull/879)
+- Migrate to GitHub Actions v2 [#881](https://github.com/primer/css/pull/881)
+
+### Committers
+- [@dcastil](https://github.com/dcastil)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+- [@vdepizzol](https://github.com/vdepizzol)
+
 # 12.6.2
 
 ### :nail_care: Polish

@@ -111,6 +111,15 @@ Make inputs smaller, larger, or full-width with an additional class.
 </form>
 ```
 
+##### Dark
+
+```html live
+<div class="bg-gray-dark p-3 mt-n3 ml-n3 mr-n3">
+  <input class="form-control input-dark" type="text" placeholder="Dark input" aria-label="Dark input">
+  <input class="form-control input-dark input-sm" type="text" placeholder="Dark input small" aria-label="Dark input">
+</div>
+```
+
 ##### Hide webkit's contact info autofill icon
 
 Webkit sometimes gets confused and tries to add an icon/dropdown to autofill contact information on fields that may not be appropriate (such as input for number of users). Use this class to override the display of this icon.
