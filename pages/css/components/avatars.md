@@ -9,7 +9,7 @@ bundle: avatars
 
 Avatars are images that users can set as their profile picture. On GitHub, they're always going to be rounded squares. They can be custom photos, uploaded by users, or generated as Identicons as a placeholder.
 
-## Table of Contents
+{:toc}
 
 ## Basic example
 
@@ -154,3 +154,4 @@ For specific cases where two badges or more need to be shown as related or conne
   </ul>
 </div>
 ```
+

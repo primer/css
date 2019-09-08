@@ -3,7 +3,7 @@ title: HTML
 path: principles/html
 ---
 
-## Table of Contents
+{:toc}
 
 ## General formatting
 
