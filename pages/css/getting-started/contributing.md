@@ -159,7 +159,7 @@ The source option will let you point the document to the source file. **This is 
 
 #### Tables of contents
 
-In the style guide you can add a `{:toc}` tag to have a table of contents automatically generated.
+In the style guide you can add a `## Table of Contents` heading to have a table of contents automatically generated.
 
 #### Code blocks
 

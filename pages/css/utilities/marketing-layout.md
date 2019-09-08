@@ -9,7 +9,7 @@ bundle: marketing-utilities
 
 Marketing layout utilities build on top of [primer-core utilities](/css/utilities/layout#position), adding the option of responsive positioning.
 
-{:toc}
+## Table of Contents
 
 ## Position elements with spacing utilities
 

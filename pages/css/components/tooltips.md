@@ -9,7 +9,7 @@ bundle: tooltips
 
 Add tooltips built entirely in CSS to nearly any element.
 
-{:toc}
+## Table of Contents
 
 ## Implementation and accessibility
 

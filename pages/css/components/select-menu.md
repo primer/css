@@ -8,7 +8,7 @@ symbols: [active, close-button, css-truncate-target, description, description-in
 
 The select menu provides advanced support for navigation, filtering, and more. Any popover within a select menu can make use of JavaScript-enabled live filtering, selected states, tabbed lists, and keyboard navigation with a bit of markup.
 
-{:toc}
+## Table of Contents
 
 ## Basic example
 

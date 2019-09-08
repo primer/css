@@ -9,7 +9,7 @@ bundle: utilities
 
 Box shadows are used to make content appear elevated. They are typically applied to containers of content that users need to pay attention to or content that appears on top of (overlapping) other elements on the page (like a pop-over or modal).
 
-{:toc}
+## Table of Contents
 
 ## Default
 
