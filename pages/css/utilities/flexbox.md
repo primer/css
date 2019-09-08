@@ -9,7 +9,7 @@ bundle: utilities
 
 Flex utilities can be used to apply `flexbox` behaviors to elements by using utility classes.
 
-## Table of Contents
+{:toc}
 
 ## Required reading
 

@@ -9,7 +9,7 @@ bundle: layout
 
 The grid is 12 columns and percentage-based. The number of columns a container spans can be adjusted across breakpoints for responsive layouts. The grid system works with a variety of layout utilities to achieve different results.
 
-## Table of Contents
+{:toc}
 
 ## Float based grid
 

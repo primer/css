@@ -9,7 +9,7 @@ bundle: pagination
 
 Use the pagination component to apply button styles to a connected set of links that go to related pages (for example, previous, next, or page numbers).
 
-## Table of Contents
+{:toc}
 
 ## Previous/next pagination
 

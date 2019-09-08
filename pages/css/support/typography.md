@@ -7,7 +7,7 @@ source: 'https://github.com/primer/css/blob/master/src/support/variables/typogra
 bundle: support
 ---
 
-## Table of Contents
+{:toc}
 
 ## Type Scale
 
