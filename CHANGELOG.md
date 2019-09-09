@@ -1,3 +1,163 @@
+# 12.7.0
+
+### :rocket: Enhancement
+- Import Dropdown component; add dark variants for dropdown and text fields [#862](https://github.com/primer/css/pull/862)
+- Add `.break-word` utility and improve word-break docs [#880](https://github.com/primer/css/pull/880)
+- Publish deprecation data [#883](https://github.com/primer/css/pull/883)
+
+### :memo: Documentation
+- Fix mistake in flex-justify-start explanation [#877](https://github.com/primer/css/pull/877)
+
+### :house: Internal
+- Fix CSS bundle size report when adding bundles [#879](https://github.com/primer/css/pull/879)
+- Migrate to GitHub Actions v2 [#881](https://github.com/primer/css/pull/881)
+
+### Committers
+- [@dcastil](https://github.com/dcastil)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+- [@vdepizzol](https://github.com/vdepizzol)
+
+# 12.6.2
+
+### :nail_care: Polish
+- Add default background-color to SideNav https://github.com/primer/css/pull/873
+
+### :house: Internal
+- Change order in RELEASING.md https://github.com/primer/css/pull/875
+
+### Committers
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+
+# 12.6.1
+
+### :bug: Bug Fix
+- Remove non-ascii characters (en dashes?) from SCSS comments [#870](https://github.com/primer/css/pull/870)
+- Fix SideNav "jumping" in Safari [#868](https://github.com/primer/css/pull/868)
+
+### :nail_care: Polish
+- Improve Select Menu spacing [#844](https://github.com/primer/css/pull/844)
+
+### :memo: Documentation
+- Update colorable URL [#867](https://github.com/primer/css/pull/867)
+
+### :house: Internal
+- Update changelog for 12.6.0 [#866](https://github.com/primer/css/pull/866)
+
+### Committers
+- [@jonrohan](https://github.com/jonrohan)
+- [@kiendang](https://github.com/kiendang)
+- [@shawnbot](https://github.com/shawnbot)
+- [@shreve](https://github.com/shreve)
+- [@simurai](https://github.com/simurai)
+
+# 12.6.0
+
+### 🚀 Enhancements
+- Loading toast styles [#852](https://github.com/primer/css/pull/852)
+- Header component [#845](https://github.com/primer/css/pull/845)
+- Import `.octicon` CSS in the core bundle [#857](https://github.com/primer/css/pull/857)
+- Design update for blankslates [#861](https://github.com/primer/css/pull/861)
+- Don't let State labels wrap [#863](https://github.com/primer/css/pull/863)
+
+### 📝 Documentation
+- Fix some links in linting docs [#856](https://github.com/primer/css/pull/856)
+- Updates to the development docs [#855](https://github.com/primer/css/pull/855)
+- Generate bundle source READMEs from a template [#859](https://github.com/primer/css/pull/859)
+- Render Octicon Ruby helper in docs [#847](https://github.com/primer/css/pull/847)
+
+### 🏠 Internal
+- Add GitHub `styleguide.css` to Storybook [#849](https://github.com/primer/css/pull/849)
+
+### Committers
+- [@ashygee](https://github.com/ashygee)
+- [@emilybrick](https://github.com/emilybrick)
+- [@jonrohan](https://github.com/jonrohan)
+- [@shawnbot](https://github.com/shawnbot)
+- [@vdepizzol](https://github.com/vdepizzol)
+
+# 12.5.0
+
+### :rocket: Enhancement
+- Add `.Toast` component [#831](https://github.com/primer/css/pull/831)
+- Add `.SideNav` component [#827](https://github.com/primer/css/pull/827)
+- Add `.SelectMenu` component [#808](https://github.com/primer/css/pull/808)
+- Add `font-display: swap` to `@font-face` declarations [#780](https://github.com/primer/css/pull/780)
+- Add `flex-grow-0`, `flex-order-[1,2,none]` and `width-auto` utilities [#763](https://github.com/primer/css/pull/763)
+- Change default for `$marketing-font-path` to `/fonts/` [#837](https://github.com/primer/css/pull/837)
+
+### :bug: Bug Fix
+- Improve monospaced font on Chrome Android [#812](https://github.com/primer/css/pull/812)
+
+### :memo: Documentation
+- Add multi-word naming conventions to BEM docs [#836](https://github.com/primer/css/pull/836)
+- Color system docs updates [#811](https://github.com/primer/css/pull/811)
+- Color utility table tweaks [#842](https://github.com/primer/css/pull/842)
+- Fix markdown typos in Contributing docs page [#846](https://github.com/primer/css/pull/846)
+
+### Committers
+- [@ampinsk](https://github.com/ampinsk)
+- [@emilybrick](https://github.com/emilybrick)
+- [@emplums](https://github.com/emplums)
+- [@jonrohan](https://github.com/jonrohan)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+- [@skullface](https://github.com/skullface)
+- [@vdepizzol](https://github.com/vdepizzol)
+
+# 12.4.1
+
+### :bug: Bug fixes
+- Fix [#822](https://github.com/primer/css/issues/822) (`.border-dashed` issues) via [#824](https://github.com/primer/css/issues/824)
+
+### :memo: Documentation
+- Typos fixed in [#802](https://github.com/primer/css/issues/802) (thank you, [@The-Compiler](https://github.com/The-Compiler)!)
+- Nav updates [#803](https://github.com/primer/css/issues/803)
+- Fix tables of contents [#762](https://github.com/primer/css/issues/762)
+- Add deprecation warning for `.btn-purple`, due to disappear in 13.0.0 via [#736](https://github.com/primer/css/issues/736)
+- Lots more documentation updates in [#814](https://github.com/primer/css/issues/814)
+
+### :house: Internal
+- Decommission `primer/deploy` [#809](https://github.com/primer/css/issues/809)
+
+### Committers
+- [@emplums](https://github.com/emplums)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+- [@The-Compiler](https://github.com/The-Compiler)
+
+
+# 12.4.0
+
+### :rocket: Enhancement
+- More responsive border utilities [#775](https://github.com/primer/css/pull/775)
+- Add `overflow: visible` utilities [#798](https://github.com/primer/css/pull/798)
+- Add `yellow` color utilities that will replace `pending` [#737](https://github.com/primer/css/pull/737)
+
+### :bug: Bug Fix
+- Fix Ruby Sass compiler warnings by quoting keys in `$hue-maps` declaration [#794](https://github.com/primer/css/pull/794)
+
+### :house: Internal
+- Remove `test-all-modules` scripts and old monorepo test scripts [#795](https://github.com/primer/css/pull/795)
+- Resolve all but one ([#796](https://github.com/primer/css/pull/796)) vulnerability in npm dev dependencies [#797](https://github.com/primer/css/pull/797)
+
+### Committers
+- [@broccolini](https://github.com/broccolini)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+
+# 12.3.1
+
+### 🐛 Bug Fix
+- Add `aria-selected="true"` support to tabbed navigation styles to play nicely with [`<tab-container>`](https://github.com/github/tab-container-element)
+
+### 🏠 Internal
+- Resolve the vulnerability alert with `tar@<4.4.2` in [CVE-2018-20834](https://nvd.nist.gov/vuln/detail/CVE-2018-20834)
+
+### Committers
+- [@shawnbot](https://github.com/shawnbot)
+
 # 12.3.0
 
 ### :rocket: Enhancement
@@ -35,7 +195,7 @@
 # 12.2.2
 
 ### :bug: Bug Fix
-- Fix hide utilities when toggling between breakpoints [#746](https://github.com/primer/css/pull/746) 
+- Fix hide utilities when toggling between breakpoints [#746](https://github.com/primer/css/pull/746)
 
 ### :house: Internal
 - Prevent Storybook publish failures from breaking builds on `master` [#728](https://github.com/primer/css/pull/728)

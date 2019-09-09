@@ -29,8 +29,6 @@ $border-purple:      $purple !default;
 $border-red:         $red !default;
 $border-red-light:   desaturate($red-300, 60%) !default;
 
-$border-purple:      $purple !default;
-
 $border-yellow:      desaturate($yellow-300, 60%) !default;
 
 $border-gray-dark:   $gray-300 !default;
@@ -55,6 +53,7 @@ $bg-red-light:      $red-100 !default;
 $bg-white:          $white !default;
 $bg-yellow:         $yellow-500 !default;
 $bg-yellow-light:   $yellow-200 !default;
+$bg-yellow-dark:    $yellow-700 !default;
 
 // Text colors
 $text-blue:         $blue-500 !default;
@@ -68,3 +67,4 @@ $text-purple:       $purple !default;
 $text-pink:         $pink-500 !default;
 $text-red:          $red-600 !default;
 $text-white:        $white !default;
+$text-yellow:       $yellow-800 !default;

@@ -40,7 +40,7 @@
 }
 
 // Responsive heading mixins
-// There are no responsive mixins for h4—h6 because they are small
+// There are no responsive mixins for h4-h6 because they are small
 // and don't need to be smaller on mobile.
 @mixin f1-responsive {
   font-size: $h1-size-mobile;

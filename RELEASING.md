@@ -7,7 +7,7 @@
 
 1. Create a new release branch from `master` and name it `release-<version>`.
 
-1. Start merging existing PRs into the release branch. Note: You have to change the base branch from `master` to the `release-<version>` branch before merging.
+1. Run [`npm version <version>`](https://docs.npmjs.com/cli/version) to update the `version` field in both `package.json` and `package-lock.json`.
 
 1. Create a new PR for the `release-<version>` branch. Please use the following template for the PR description, linking to the relevant issues and/or pull requests for each change, removing irrelevant headings and checking off all of the boxes of the ship checklist:
 
@@ -39,8 +39,8 @@
 
     ### Ship checklist
 
-    - [ ] Update `CHANGELOG.md`
     - [ ] Update the `version` field in `package.json`
+    - [ ] Update `CHANGELOG.md`
     - [ ] Test the release candidate version with `github/github`
     - [ ] Merge this PR and [create a new release](https://github.com/primer/css/releases/new)
     - [ ] Update `github/github`
@@ -50,9 +50,9 @@
     /cc @primer/ds-core
     ```
 
-1. Update `CHANGELOG.md`
+1. Start merging existing PRs into the release branch. Note: You have to change the base branch from `master` to the `release-<version>` branch before merging.
 
-1. Update the `version` field in `package.json` to match the release version. You may also run the `npm version v<version>` command.
+1. Update `CHANGELOG.md`
 
 1. Wait for your checks to pass, and take note of the version that [primer/publish] lists in your status checks.
 
