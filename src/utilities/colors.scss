@@ -2,8 +2,6 @@
 // stylelint-disable primer/selector-no-utility
 // stylelint-disable block-opening-brace-space-before, comment-empty-line-before
 
-@warn ".text-pending and .bg-pending will be deprecated in 13.0.0. Use .text-yellow and .bg-yellow-dark instead";
-
 // background colors
 /* Set the background to $bg-white */
 .bg-white      { background-color: $bg-white !important; }
@@ -79,12 +77,6 @@
 .text-white         { color: $text-white !important; }
 /* Set the text color to inherit */
 .text-inherit       { color: inherit !important; }
-
-// Pending states
-// This will be deprecated in the future, use .text-yellow instead
-.text-pending { color: $yellow-800 !important; }
-// This will be deprecated in the future, use .bg-yellow-dark instead
-.bg-pending { color: $yellow-700 !important; }
 
 // Link colors
 // Sets the links color to $text-gray and $text-blue on hover
