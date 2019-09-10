@@ -19,7 +19,12 @@ const versionDeprecations = {
     },
     {
       selectors: [
+        '.container',
+        '.container::before',
+        '.container::after',
         '.columns',
+        '.columns::before',
+        '.columns::after',
         '.column',
         '.one-third',
         '.two-thirds',

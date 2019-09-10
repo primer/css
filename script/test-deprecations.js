@@ -63,7 +63,7 @@ async function checkDeprecations(options = {}) {
         errors.push(error)
         console.log(`${X} ${error}`)
       } else {
-        console.log(`${V} "${selector}" is deprecated!`)
+        console.log(`${V} "${selector}" is officially deprecated`)
       }
       deprecatedSelectors.push(selector)
     }
@@ -75,7 +75,7 @@ async function checkDeprecations(options = {}) {
       errors.push(error)
       console.log(`${X} ${error}`)
     } else {
-      console.log(`${V} "${removedSelector}" removed and deprecated!`)
+      // console.log(`${V} "${removedSelector}" removed and deprecated!`)
     }
   }
 
