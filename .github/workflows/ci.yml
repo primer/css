@@ -14,11 +14,11 @@ jobs:
         run: npm --unsafe-perm run lint
       - name: test
         run: npm --unsafe-perm test
+      - name: prepublish
+        run: script/prepublish
       - name: test deprecations
         if: startsWith(github.ref, 'refs/heads/release-')
         run: script/test-deprecations
-      - name: prepublish
-        run: script/prepublish
       - uses: primer/publish@v1.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
