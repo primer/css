@@ -59,7 +59,7 @@ Use `.btn-large` to increase the padding and border radius of a button. This is 
 
 ```html live
 <p>
-  <a class="btn btn-large btn-purple" href="#url" role="button">Large link button</a>
+  <a class="btn btn-large" href="#url" role="button">Large link button</a>
   <button class="btn btn-large" type="button">Large button button</button>
 </p>
 ```
@@ -68,7 +68,7 @@ Use `.btn-large` with a type scale utility to transform the text to a bigger siz
 
 ```html live
 <p class="f3">
-  <a class="btn btn-large btn-purple" href="#url" role="button">Large link button</a>
+  <a class="btn btn-large" href="#url" role="button">Large link button</a>
   <button class="btn btn-large btn-outline-blue" type="button">Large button button</button>
 </p>
 ```
