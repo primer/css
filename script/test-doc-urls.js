@@ -1,10 +1,18 @@
-const execa = require('execa')
+#!/usr/bin/env node
 const klaw = require('klaw')
-const {basename, dirname, join, resolve} = require('path')
-const {promisify} = require('util')
-const {readFile, writeFile} = require('fs-extra')
+const {join} = require('path')
 const {bold, yellow, green, red} = require('colorette')
-const {deprecated, moved, redirect, removed} = require('./exceptions')
+
+const deprecated = yellow('deprecated')
+const moved = path => paths => {
+  if (paths.includes(path)) {
+    return {pass: true, message: `→ ${green(path)}`}
+  } else {
+    return {pass: false, message: `→ ${red(path)} is missing`}
+  }
+}
+const redirect = url => `${green('redirect')} → ${url}`
+const removed = red('removed')
 
 /**
  * This is where we track "exceptions" to paths that don't have 1:1 matches
@@ -35,15 +43,10 @@ const exceptions = {
   '/whats_new': redirect('https://github.com/primer/primer/releases'),
   '/whats_new/changelog': removed,
   '/whats_new/changelog/archived_changelog': removed,
-  '/whats_new/status-key': moved('/status-key')
+  '/whats_new/status-key': redirect('https://primer.style/doctocat/usage/front-matter#status')
 }
 
 const log = console.warn
-
-const STYLEGUIDE_ROOT = join(__dirname, '../../../../github/styleguide')
-const CACHE_FILE = join(__dirname, 'fixtures/path-cache.txt')
-const {CI} = process.env
-const CLEAN = process.argv.slice(2).includes('--clean')
 
 Promise.all([getStyleguidePaths(), getLocalPaths()])
   .then(([before, after]) => {
@@ -93,51 +96,99 @@ Promise.all([getStyleguidePaths(), getLocalPaths()])
   })
 
 function getStyleguidePaths() {
-  if (CI) {
-    return readLines(CACHE_FILE)
-  }
-  return buildStyleguide()
-    .then(getPathsFromStyleguide)
-    .then(writeLines(CACHE_FILE))
-    .catch(error => {
-      /*
-       * If _anything_ goes wrong (on CI, no styleguide repo), just get the list
-       * of paths from the committed file.
-       */
-      log(`${yellow('!!!')} Unable to get styleguide paths:\n\n  ${error}\n`)
-      log(`Using the paths in ${CACHE_FILE} instead...\n`)
-      return readLines(CACHE_FILE)
-    })
-}
-
-function buildStyleguide() {
-  if (CLEAN) {
-    const cwd = STYLEGUIDE_ROOT
-    return pathExists(cwd).then(exists => {
-      if (exists) {
-        return execa('script/bootstrap', {cwd}).then(() => execa('npm', ['run', 'build-site'], {cwd}))
-      } else {
-        throw new Error(`The styleguide root (${cwd}) doesn't exist`)
-      }
-    })
-  }
-  return Promise.resolve(true)
-}
-
-function getPathsFromStyleguide() {
-  return getPaths(join(STYLEGUIDE_ROOT, '_site/primer'))
-    .then(paths => paths.filter(path => !path.includes('code_example.html')))
-    .then(normalizePaths)
+  return `
+/components
+/components/alerts
+/components/avatars
+/components/blankslate
+/components/box
+/components/box-overlay
+/components/boxed-groups
+/components/branch-name
+/components/breadcrumb
+/components/buttons
+/components/dropdown
+/components/flash-banner
+/components/forms
+/components/labels
+/components/markdown
+/components/marketing-buttons
+/components/navigation
+/components/octicons
+/components/page-headers
+/components/page-sections
+/components/pagehead
+/components/pagination
+/components/popover
+/components/progress
+/components/select-menu
+/components/subhead
+/components/tables
+/components/tooltips
+/components/truncate
+/getting_started
+/getting_started/contributing
+/objects
+/objects/grid
+/objects/layout
+/objects/table-object
+/packages
+/packages/primer
+/packages/primer-core
+/packages/primer-marketing
+/packages/primer-product
+/principles
+/principles/HTML
+/principles/SCSS
+/principles/accessibility
+/support
+/support/breakpoints
+/support/color-system
+/support/marketing-variables
+/support/spacing
+/support/typography
+/tools
+/tools/atom-packages
+/tools/docset
+/tools/linting
+/tools/local-primer
+/tools/prototyping
+/tools/sketch-templates
+/tools/testing
+/utilities
+/utilities/animations
+/utilities/borders
+/utilities/box-shadow
+/utilities/colors
+/utilities/details
+/utilities/flexbox
+/utilities/layout
+/utilities/margin
+/utilities/marketing-borders
+/utilities/marketing-filters
+/utilities/marketing-layout
+/utilities/marketing-margin
+/utilities/marketing-padding
+/utilities/marketing-type
+/utilities/padding
+/utilities/typography
+/whats_new
+/whats_new/changelog
+/whats_new/changelog/archived_changelog
+/whats_new/status-key
+    `
+    .trim()
+    .split('\n')
 }
 
 function getLocalPaths() {
-  return getPaths(join(__dirname, '../pages/css')).then(normalizePaths)
+  return getPaths(join(__dirname, '../docs/content')).then(normalizePaths)
 }
 
-function getPaths(dir, options) {
+function getPaths(dir) {
   const paths = []
   return new Promise((resolve, reject) => {
-    klaw(dir, options)
+    klaw(dir)
       .on('data', item => paths.push(item.path.substr(dir.length)))
       .on('error', reject)
       .on('end', () => {
@@ -145,14 +196,6 @@ function getPaths(dir, options) {
         resolve(paths)
       })
   })
-}
-
-function readLines(filename) {
-  return readFile(filename, 'utf8').then(str => str.trim().split(/[\r\n]+/))
-}
-
-function writeLines(filename) {
-  return lines => writeFile(filename, lines.join('\n'), 'utf8').then(() => lines)
 }
 
 function normalizePaths(paths) {
