@@ -1,7 +1,7 @@
 name: CI
 on: push
 jobs:
-  install:
+  all:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -10,28 +10,14 @@ jobs:
           version: 11
       - name: install
         run: npm --unsafe-perm install
-
-  lint:
-    runs-on: ubuntu-latest
-    needs: install
-    steps:
+      - uses: actions/checkout@master
       - name: lint
         run: npm --unsafe-perm run lint
-
-  test:
-    runs-on: ubuntu-latest
-    needs: install
-    steps:
       - name: test
         run: npm --unsafe-perm test
       - name: test deprecations
         if: startsWith(github.ref, 'refs/heads/release-')
         run: script/test-deprecations
-
-  publish:
-    runs-on: ubuntu-latest
-    needs: [lint, test]
-    steps:
       - name: prepublish
         run: script/prepublish
       - uses: primer/publish@v1.1.0
