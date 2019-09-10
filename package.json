@@ -23,11 +23,10 @@
   },
   "scripts": {
     "fresh": "rm -rf node_modules; npm install",
-    "dist": "script/dist",
-    "check-links": "script/check-links http://localhost:3000/css -v",
+    "dist": "script/dist.js",
     "lint": "npm-run-all -s lint-css lint-js",
     "lint-css": "stylelint --quiet --syntax scss src/**/*.scss",
-    "lint-js": "eslint script lib docs deprecations.js .storybook",
+    "lint-js": "eslint script docs deprecations.js lib .storybook",
     "postpublish": "script/postpublish",
     "prepublishOnly": "script/prepublish",
     "publish-storybook": "script/publish-storybook",
@@ -36,7 +35,7 @@
     "start-storybook": "start-storybook -p 8001",
     "build-storybook": "build-storybook -o .storybuild",
     "test": "npm-run-all -s test-urls test-migrate",
-    "test-urls": "node docs-test/urls.js",
+    "test-urls": "script/test-doc-urls.js",
     "test-migrate": "script/test-migrate"
   },
   "dependencies": {
