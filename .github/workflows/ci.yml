@@ -1,5 +1,5 @@
-name: "lint, test, publish"
-on: [push]
+name: CI
+on: push
 jobs:
   all:
     runs-on: ubuntu-latest
@@ -16,6 +16,9 @@ jobs:
         run: npm --unsafe-perm test
       - name: prepublish
         run: script/prepublish
+      - name: test deprecations
+        if: startsWith(github.ref, 'refs/heads/release-')
+        run: script/test-deprecations.js
       - uses: primer/publish@v1.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
