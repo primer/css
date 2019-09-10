@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 const fetch = require('node-fetch')
-const {green, red} = require('colorette')
+const {green, red, yellow} = require('colorette')
 const {versionDeprecations} = require('../deprecations')
 
 const X = red('𐄂')
+const I = yellow('i')
 const V = green('✓')
 
 checkDeprecations()
@@ -17,15 +18,19 @@ async function checkDeprecations(options = {}) {
   const local = require(`../${statsPath}`)
   const remote = await fetch(`https://unpkg.com/@primer/css@${version}/${statsPath}`).then(res => res.json())
 
-  const {changed, added, removed} = diffLists(local.selectors.values, remote.selectors.values)
+  const {changed, added, removed} = diffLists(remote.selectors.values, local.selectors.values)
   if (changed === 0) {
     console.log(`no selectors added or removed`)
     return
   }
+
   const deprecations = versionDeprecations[currentVersion] || []
   const deprecatedSelectors = deprecations.reduce((list, deprecation) => list.concat(deprecation.selectors), [])
-  console.log(`${removed.length} selectors removed locally (compared with ${version}).`)
-  console.log(`${deprecatedSelectors.length} selectors deprecated in v${currentVersion}`)
+  console.log(`${I} ${removed.length} selectors removed locally (compared with ${version})`)
+  console.log(`${I} ${deprecatedSelectors.length} selectors deprecated in v${currentVersion}`)
+  if (added.length) {
+    console.log(`${I} ${added.length} selectors added`)
+  }
 
   const errors = []
   for (const deprecation of deprecations) {
@@ -42,7 +47,6 @@ async function checkDeprecations(options = {}) {
   }
 
   for (const removedSelector of removed) {
-    console.log(`checking removed selector "${removedSelector}"...`)
     if (!deprecatedSelectors.includes(removedSelector)) {
       const error = `"${removedSelector}" has been removed, but was not listed in versionDeprecations['${currentVersion}']`
       errors.push(error)
@@ -57,11 +61,9 @@ async function checkDeprecations(options = {}) {
   }
 }
 
-function diffLists(listA, listB) {
-  const setA = new Set(listA)
-  const setB = new Set(listB)
-  const added = listB.filter(value => !setA.has(value))
-  const removed = listA.filter(value => !setB.has(value))
+function diffLists(before, after) {
+  const added = after.filter(value => !before.includes(value))
+  const removed = before.filter(value => !after.includes(value))
   return {
     changed: added.length + removed.length,
     added,
