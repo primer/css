@@ -22,11 +22,11 @@ async function checkDeprecations() {
   for (const deprecation of deprecations) {
     for (const selector of deprecation.selectors) {
       if (!removed.includes(selector)) {
-        const error = `"${deprecation.selector}" has *not* been removed`
+        const error = `"${selector}" has *not* been removed`
         errors.push(error)
         console.log(`${X} ${error}`)
       } else {
-        console.log(`${V} scheduled deprecation of "${deprecation.selector}" complete`)
+        console.log(`${V} "${selector}" is deprecated!`)
       }
       deprecatedSelectors.push(selector)
     }
@@ -40,7 +40,7 @@ async function checkDeprecations() {
       errors.push(error)
       console.log(`${X} ${error}`)
     } else {
-      console.log(`${V} removed deprecated selector "${removedSelector}"`)
+      console.log(`${V} "${removedSelector}" removed and deprecated!`)
     }
   }
 
