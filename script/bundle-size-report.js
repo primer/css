@@ -35,9 +35,7 @@ if (ONLY_BUNDLES) {
   const only = new Set(ONLY_BUNDLES.trim().split(/\s*,\s*/))
   bundles = bundles.filter(bundle => only.has(bundle.name))
 } else if (!ALL_BUNDLES) {
-  bundles = META_BUNDLES
-    ? bundles.filter(isMetaBundle)
-    : bundles.filter(bundle => !isMetaBundle(bundle))
+  bundles = META_BUNDLES ? bundles.filter(isMetaBundle) : bundles.filter(bundle => !isMetaBundle(bundle))
 }
 
 Promise.all(
@@ -50,7 +48,7 @@ Promise.all(
     }
     return fetch(unpkgBaseURL + bundle.stats)
       .then(res => res.json())
-      .catch(error => {
+      .catch(() => {
         console.warn(`Unable to fetch old "${bundle.name}" stats from unpkg; assuming it's new!`)
         return cssstats('')
       })
