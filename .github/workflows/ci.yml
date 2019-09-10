@@ -25,7 +25,7 @@ jobs:
       - name: test
         run: npm --unsafe-perm test
       - name: test deprecations
-        if: ${{ github.ref.startsWith('refs/heads/release-') }}
+        if: ${{ startsWith(github.ref, 'refs/heads/release-') }}
         run: script/test-deprecations
 
   publish:
