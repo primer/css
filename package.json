@@ -70,7 +70,7 @@
     "style-loader": "^0.18.2",
     "styled-components": "4.1.2",
     "stylelint": "9.10.1",
-    "stylelint-config-primer": "7.0.1",
+    "stylelint-config-primer": "^8.0.0",
     "table": "5.2.3",
     "typographic-base": "^1.0.4",
     "unified": "^7.1.0",
