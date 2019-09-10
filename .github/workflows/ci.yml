@@ -10,7 +10,6 @@ jobs:
           version: 11
       - name: install
         run: npm --unsafe-perm install
-      - uses: actions/checkout@master
       - name: lint
         run: npm --unsafe-perm run lint
       - name: test
