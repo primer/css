@@ -51,6 +51,14 @@ const versionDeprecations = {
     {
       selectors: ['.centered'],
       message: `You can use the "mx-auto" class to center any element.`
+    },
+    {
+      selectors: [
+        '.dropdown-menu-content',
+        '.dropdown.active .dropdown-menu-content',
+        '.dropdown-menu-content.anim-scale-in'
+      ],
+      message: `The "dropdown-menu-content" class is unnecessary.`
     }
   ]
 }
