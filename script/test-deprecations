@@ -1,0 +1,63 @@
+#!/usr/bin/env node
+const fetch = require('node-fetch')
+const {versionDeprecations} = require('../deprecations')
+const X = '𐄂'
+const V = '✓'
+
+checkDeprecations()
+
+async function checkDeprecations() {
+  const currentVersion = require('../package.json').version
+  const statsPath = 'dist/stats/primer.json'
+
+  const local = require(`../${statsPath}`)
+  const remote = await fetch(`https://unpkg.com/@primer/css/${statsPath}`).then(res => res.json())
+
+  const {added, removed} = diffLists(local.selectors.values, remote.selectors.values)
+  console.log(`${removed.length} selectors removed: ${removed.join(', ')}`)
+
+  const deprecatedSelectors = []
+  const deprecations = versionDeprecations[currentVersion] || []
+  const errors = []
+  for (const deprecation of deprecations) {
+    for (const selector of deprecation.selectors) {
+      if (!removed.includes(selector)) {
+        const error = `"${deprecation.selector}" has *not* been removed`
+        errors.push(error)
+        console.log(`${X} ${error}`)
+      } else {
+        console.log(`${V} scheduled deprecation of "${deprecation.selector}" complete`)
+      }
+      deprecatedSelectors.push(selector)
+    }
+  }
+
+  console.log(`${deprecatedSelectors.length} selectors deprecated: ${deprecatedSelectors.join(', ')}`)
+  for (const removedSelector of removed) {
+    console.log(`checking removed selector "${removedSelector}"...`)
+    if (!deprecatedSelectors.includes(removedSelector)) {
+      const error = `"${removedSelector}" has been removed, but was not listed in versionDeprecations['${currentVersion}']`
+      errors.push(error)
+      console.log(`${X} ${error}`)
+    } else {
+      console.log(`${V} removed deprecated selector "${removedSelector}"`)
+    }
+  }
+
+  if (errors.length) {
+    process.exitCode = 1
+  }
+}
+
+function diffLists(listA, listB) {
+  const setA = new Set(listA)
+  const setB = new Set(listB)
+  const added = listB.filter(value => !setA.has(value))
+  const removed = listA.filter(value => !setB.has(value))
+  console.warn(`${added.length} added, ${removed.length} removed`)
+  return {
+    changed: added.length + removed.length,
+    added,
+    removed
+  }
+}
