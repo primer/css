@@ -248,6 +248,8 @@
     padding: $spacer-1 $spacer-3;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
+    border: $border-width $border-style transparent;
+    border-bottom-width: 0;
   }
 
   &[aria-selected="true"] {
@@ -257,8 +259,7 @@
     box-shadow: 0 0 0 1px $border-color;
 
     @include breakpoint(sm) {
-      border: $border;
-      border-bottom-width: 0;
+      border-color: $border-color;
       box-shadow: none;
     }
   }
