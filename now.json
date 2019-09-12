@@ -10,7 +10,6 @@
     }
   ],
   "routes": [
-    {"src": "/css(/.*)?", "dest": "/docs$1"},
     {
       "src": "/",
       "status": 301,
@@ -20,6 +19,10 @@
       "src": "/css/objects/layout",
       "status": 301,
       "headers": {"Location": "/css/objects/grid"}
+    },
+    {
+      "src": "/css(/.*)?",
+      "dest": "/docs$1"
     }
   ]
 }
