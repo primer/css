@@ -1,21 +1,22 @@
 # 13.0.0
 
 ### :boom: Breaking Change
-- Remove `.container`, `.columns`, `.column`, and related classes #662 
-- Remove `.btn-purple` #736 :wave: 💜 
-- Remove `.text-pending` and `.bg-pending` #888
-- Remove `.dropdown-menu-content` #884 
+- Remove `.container`, `.columns`, `.column`, and related classes [#662](https://github.com/primer/css/pull/662)
+- Remove `.btn-purple` [#736](https://github.com/primer/css/pull/736) :wave: 💜 
+- Remove `.text-pending` and `.bg-pending` [#888](https://github.com/primer/css/pull/888)
+- Remove `.dropdown-menu-content` [#884](https://github.com/primer/css/pull/884)
 
 ### :nail_care: Polish
-- Select menu improvements #893 
+- Select menu improvements [#893](https://github.com/primer/css/pull/893)
 
 ### :memo: Documentation
-- The layout docs, formerly available at `/css/objects/layout`, are gone.
+- The layout docs, formerly available at `/css/objects/layout`, are gone and will redirect to `/css/objects/grid`.
 
 ### :house: Internal
-- Add deprecations test script #889
-- Clean up scripts and dev dependencies #890
-- Upgrade stylelint-config-primer to v8.0.0 #892
+- Add deprecations test script [#889](https://github.com/primer/css/pull/889)
+- Clean up scripts and dev dependencies [#890](https://github.com/primer/css/pull/890)
+- Upgrade stylelint-config-primer to v8.0.0 [#892](https://github.com/primer/css/pull/892)
+- Upgrade doctocat, live code wrappers [#895](https://github.com/primer/css/pull/895)
 
 ### Committers
 - [@jonrohan](https://github.com/jonrohan)
