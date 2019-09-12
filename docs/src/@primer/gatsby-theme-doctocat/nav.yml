@@ -33,6 +33,8 @@
       url: /utilities/details
     - title: Flexbox
       url: /utilities/flexbox
+    - title: Layout
+      url: /utilities/layout
     - title: Marketing layout
       url: /utilities/marketing-layout
     - title: Margin
@@ -54,8 +56,6 @@
   children:
     - title: Grid
       url: /objects/grid
-    - title: Layout
-      url: /objects/layout
     - title: Table object
       url: /objects/table-object
 - title: Components
