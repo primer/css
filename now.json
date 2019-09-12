@@ -16,7 +16,7 @@
       "headers": {"Location": "/css"}
     },
     {
-      "src": "/css/objects/layout",
+      "src": "/css/objects/layout/?",
       "status": 301,
       "headers": {"Location": "/css/objects/grid"}
     },
