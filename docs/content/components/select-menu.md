@@ -30,11 +30,11 @@ Use a `<details>` element to toggle the Select Menu. The `<summary>` element can
           </svg>
         </button>
       </header>
-      <menu class="SelectMenu-list">
+      <div class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">Item 1</button>
         <button class="SelectMenu-item" role="menuitem">Item 2</button>
         <button class="SelectMenu-item" role="menuitem">Item 3</button>
-      </menu>
+      </div>
     </div>
   </div>
 </details>
@@ -69,11 +69,11 @@ In case the Select Menu should be aligned to the right, use `SelectMenu right-0`
             </svg>
           </button>
         </header>
-        <menu class="SelectMenu-list">
+        <div class="SelectMenu-list">
           <button class="SelectMenu-item" role="menuitem">Item 1</button>
           <button class="SelectMenu-item" role="menuitem">Item 2</button>
           <button class="SelectMenu-item" role="menuitem">Item 3</button>
-        </menu>
+        </div>
       </div>
     </div>
   </details>
@@ -106,7 +106,7 @@ Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-chec
           </svg>
         </button>
       </header>
-      <menu class="SelectMenu-list">
+      <div class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitemcheckbox" aria-checked="true">
           <!-- <%= octicon "check", class: "SelectMenu-icon" %> -->
           <svg
@@ -172,7 +172,7 @@ Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-chec
           </svg>
           Default state
         </button>
-      </menu>
+      </div>
     </div>
   </div>
 </details>
@@ -204,7 +204,7 @@ The list of items is arguably the most important subcomponent within the menu. B
           </svg>
         </button>
       </header>
-      <menu class="SelectMenu-list">
+      <div class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">
           Text only
         </button>
@@ -241,7 +241,7 @@ The list of items is arguably the most important subcomponent within the menu. B
           <h5>With a heading</h5>
           <span>and some longer description</span>
         </button>
-      </menu>
+      </div>
     </div>
   </div>
 </details>
@@ -273,14 +273,14 @@ The Select Menu's list can be divided into multiple parts by adding a `.SelectMe
           </svg>
         </button>
       </header>
-      <menu class="SelectMenu-list">
+      <div class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">Item 1</button>
         <button class="SelectMenu-item" role="menuitem">Item 2</button>
         <div class="SelectMenu-divider">More options</div>
         <button class="SelectMenu-item" role="menuitem">Item 3</button>
         <button class="SelectMenu-item" role="menuitem">Item 4</button>
         <button class="SelectMenu-item" role="menuitem">Item 5</button>
-      </menu>
+      </div>
     </div>
   </div>
 </details>
@@ -317,7 +317,7 @@ Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for ad
       <form class="SelectMenu-filter">
         <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
       </form>
-      <menu class="SelectMenu-list">
+      <div class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">Item 1</a>
         <button class="SelectMenu-item" role="menuitem">Item 2</a>
         <button class="SelectMenu-item" role="menuitem">Item 3</a>
@@ -343,7 +343,7 @@ Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for ad
         <button class="SelectMenu-item" role="menuitem">Item 23</a>
         <button class="SelectMenu-item" role="menuitem">Item 24</a>
         <button class="SelectMenu-item" role="menuitem">Item 25</a>
-      </menu>
+      </div>
       <footer class="SelectMenu-footer">Showing 25 of 25</footer>
     </div>
   </div>
@@ -383,18 +383,18 @@ Sometimes you need two or more lists of items in your Select Menu, e.g. branches
         <button class="SelectMenu-tab" aria-selected="true">Branches</button>
         <button class="SelectMenu-tab">Tags</button>
       </nav>
-      <menu class="SelectMenu-list">
+      <div class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">Branch 1</button>
         <button class="SelectMenu-item" role="menuitem">Branch 2</button>
         <button class="SelectMenu-item" role="menuitem">Branch 3</button>
         <button class="SelectMenu-item" role="menuitem">Branch 4</button>
         <button class="SelectMenu-item" role="menuitem">Branch 5</button>
-      </menu>
-      <menu class="SelectMenu-list" hidden>
+      </div>
+      <div class="SelectMenu-list" hidden>
         <button class="SelectMenu-item" role="menuitem">Tag 1</button>
         <button class="SelectMenu-item" role="menuitem">Tag 2</button>
         <button class="SelectMenu-item" role="menuitem">Tag 3</button>
-      </menu>
+      </div>
       <footer class="SelectMenu-footer">Showing 5 of 5</footer>
     </div>
   </div>
@@ -427,12 +427,12 @@ A `SelectMenu-message` can be used to show different kind of messages to a user.
           </svg>
         </button>
       </header>
-      <menu class="SelectMenu-list">
+      <div class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">Item 1</button>
         <button class="SelectMenu-item" role="menuitem">Item 2</button>
         <div class="SelectMenu-message border-bottom border-top bg-red-0 text-red p-2">Message goes here</div>
         <button class="SelectMenu-item" role="menuitem">Item 3</button>
-      </menu>
+      </div>
     </div>
   </div>
 </details>
@@ -467,7 +467,7 @@ When fetching large lists, consider showing a `.SelectMenu-loading` animation.
       <form class="SelectMenu-filter">
         <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter" />
       </form>
-      <menu class="SelectMenu-list">
+      <div class="SelectMenu-list">
         <div class="SelectMenu-loading">
           <!-- <%= octicon "octoface", class: "anim-pulse", width: 32 %> -->
           <svg
@@ -483,7 +483,7 @@ When fetching large lists, consider showing a `.SelectMenu-loading` animation.
             />
           </svg>
         </div>
-      </menu>
+      </div>
       <footer class="SelectMenu-footer">Loading...</footer>
     </div>
   </div>
@@ -516,7 +516,7 @@ Sometimes a Select Menu needs to communicate a "blank slate" where there's no co
           </svg>
         </button>
       </header>
-      <menu class="SelectMenu-list">
+      <div class="SelectMenu-list">
         <div class="SelectMenu-blankslate">
           <!-- <%= octicon "repo", class: "color-gray-3", width: 24 %> -->
           <svg width="24 " height="32" viewBox="0 0 12 16" class="octicon octicon-repo color-gray-3" aria-hidden="true">
@@ -529,7 +529,7 @@ Sometimes a Select Menu needs to communicate a "blank slate" where there's no co
           <p class="mb-3 text-gray">We didn’t find any matching repositories that you can commit to.</p>
           <button type="button" class="btn btn-sm btn-primary">Create a repository</button>
         </div>
-      </menu>
+      </div>
     </div>
   </div>
 </details>
