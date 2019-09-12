@@ -9,38 +9,20 @@ bundle: layout
 
 The grid is 12 columns and percentage-based. The number of columns a container spans can be adjusted across breakpoints for responsive layouts. The grid system works with a variety of layout utilities to achieve different results.
 
-## Float based grid
+## Flex based grid
 
-Use `.clearfix` on the container and float utilities with columns for a floated grid layout.
+Use `.d-flex` on the container for a flex grid layout.
 
-```html live title="Float based grid"
-<div class="container-lg clearfix">
-  <div class="col-4 float-left border p-4">
+```html live title="Flex based grid"
+<div class="container-lg d-flex">
+  <div class="col-4 border p-4">
     My column
   </div>
-  <div class="col-4 float-left border p-4">
+  <div class="col-4 border p-4">
     Looks better
   </div>
-  <div class="col-4 float-left border p-4">
+  <div class="col-4 border p-4">
     Than your column
-  </div>
-</div>
-```
-
-### Reversed grid
-
-To reverse the order of columns, use `float-right` to float columns to the right.
-
-```html live title="Float grid reversed"
-<div class="container-lg clearfix">
-  <div class="col-4 float-right border p-4">
-    One
-  </div>
-  <div class="col-4 float-right border p-4">
-    Two
-  </div>
-  <div class="col-4 float-right border p-4">
-    Three
   </div>
 </div>
 ```
