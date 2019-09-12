@@ -1,3 +1,28 @@
+# 13.0.0
+
+### :boom: Breaking Change
+- Remove `.container`, `.columns`, `.column`, and related classes #662 
+- Remove `.btn-purple` #736 :wave: 💜 
+- Remove `.text-pending` and `.bg-pending` #888
+- Remove `.dropdown-menu-content` #884 
+
+### :nail_care: Polish
+- Select menu improvements #893 
+
+### :memo: Documentation
+- The layout docs, formerly available at `/css/objects/layout`, are gone.
+
+### :house: Internal
+- Add deprecations test script #889
+- Clean up scripts and dev dependencies #890
+- Upgrade stylelint-config-primer to v8.0.0 #892
+
+### Committers
+- [@jonrohan](https://github.com/jonrohan)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+- [@sophshep](https://github.com/sophshep)
+
 # 12.7.0
 
 ### :rocket: Enhancement
