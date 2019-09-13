@@ -56,8 +56,6 @@
   children:
     - title: Grid
       url: /objects/grid
-    - title: Layout
-      url: /objects/layout
     - title: Table object
       url: /objects/table-object
 - title: Components

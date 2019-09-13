@@ -6,7 +6,19 @@
 const versionDeprecations = {
   '13.0.0': [
     {
-      selectors: ['.btn-purple'],
+      selectors: [
+        '.btn-purple',
+        '.btn-purple:focus',
+        '.btn-purple.focus',
+        '.btn-purple:hover',
+        '.btn-purple.hover',
+        '.btn-purple:active',
+        '.btn-purple.selected',
+        '[open]>.btn-purple',
+        '.btn-purple:disabled',
+        '.btn-purple.disabled',
+        '.btn-purple .Counter'
+      ],
       message: `Please don't make purple buttons.`
     },
     {
@@ -19,7 +31,12 @@ const versionDeprecations = {
     },
     {
       selectors: [
+        '.container',
+        '.container::before',
+        '.container::after',
         '.columns',
+        '.columns::before',
+        '.columns::after',
         '.column',
         '.one-third',
         '.two-thirds',
@@ -34,6 +51,14 @@ const versionDeprecations = {
     {
       selectors: ['.centered'],
       message: `You can use the "mx-auto" class to center any element.`
+    },
+    {
+      selectors: [
+        '.dropdown-menu-content',
+        '.dropdown.active .dropdown-menu-content',
+        '.dropdown-menu-content.anim-scale-in'
+      ],
+      message: `The "dropdown-menu-content" class is unnecessary.`
     }
   ]
 }
