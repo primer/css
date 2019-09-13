@@ -36,18 +36,16 @@ The typical Primer workflow looks something like this:
 Run `npm install` to install the npm dependencies.
 
 ## Docs site
-The Primer CSS docs are built with React using [Primer Components](https://primer.style/components) and automatically deployed on every push to this repo with [Now]. You can run the server locally with:
+The Primer CSS docs are built with React using [Doctocat](https://primer.style/doctocat) and automatically deployed on every push to this repo with [Now]. You can run the server locally with:
 
 ```sh
 npm start
 ```
 
-Then visit http://localhost:3000/css to view the site.
+Then visit http://localhost:8000 to view the site.
 
-:rotating_light: **Warning:** Next.js has a [long-running issue](https://github.com/zeit/next.js/issues/1189) with trailing slashes in URLs. Avoid visiting `http://localhost:3000/` if possible, as this may cause your development server to fail in less-than-graceful ways.
-
-### The pages directory
-The [pages directory](./pages/) contains all of the documentation files that map to URLs on the site. Because we host the site at `primer.style/css` (and because of the way that Now's path aliasing feature works), we nest all of our documentation under the [css subdirectory](./pages/css).
+### The docs directory
+The [docs directory](./docs/) contains all of the documentation files in our docs site. Files are nested in the `/content` folder.
 
 
 ### URL tests
