@@ -350,7 +350,7 @@ Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for ad
 </details>
 
 <div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
-<div class="d-none d-sm-block" style="height: 380px"> <!-- min height for > sm --> </div>
+<div class="d-none d-sm-block" style="height: 500px"> <!-- min height for > sm --> </div>
 ```
 
 ## Tabs

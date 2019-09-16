@@ -85,7 +85,7 @@ $SelectMenu-border: $border-width $border-style lighten($gray-200, 3%);
   @include breakpoint(sm) {
     width: 300px;
     height: auto;
-    max-height: 350px;
+    max-height: 480px;
     margin: $spacer-1 0 $spacer-3 0;
     font-size: $font-size-small;
     border: $border-width $border-style $border-gray-dark;
@@ -323,7 +323,7 @@ $SelectMenu-border: $border-width $border-style lighten($gray-200, 3%);
 
     @include breakpoint(sm) {
       height: auto;
-      max-height: 350px;
+      max-height: 480px;
       margin-top: $spacer-1;
     }
   }
