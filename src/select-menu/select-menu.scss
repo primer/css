@@ -299,12 +299,12 @@ $SelectMenu-border: $border-width $border-style lighten($gray-200, 3%);
 // A container at the bottom.
 
 .SelectMenu-footer {
+  z-index: 0; // Avoid top border from getting covered by the negative margin of the list
   padding: $spacer-2 $spacer-3;
   font-size: $font-size-small;
   color: $text-gray-light;
   text-align: center;
   border-top: $border;
-  z-index: 0; // Avoid top border from getting covered by the negative margin of the list
 
   @include breakpoint(sm) {
     padding: $spacer-1 $spacer-2;
