@@ -3,6 +3,8 @@
 // selector-max-type is needed for body:not(.intent-mouse) to target keyboard only styles.
 // TODO: Introduce an additional .intent-keyboard class
 
+$SelectMenu-border: $border-width $border-style lighten($gray-200, 3%);
+
 // Select Menu
 //
 // A more advanced menu with support for navigation, filtering, and more.
@@ -161,6 +163,7 @@
   position: relative;
   padding: 0;
   margin: 0;
+  margin-bottom: -$border-width; // Hides the last border in the list
   flex: auto;
   overflow-x: hidden;
   overflow-y: auto;
@@ -184,11 +187,7 @@
   cursor: pointer;
   background-color: $bg-white;
   border: 0;
-
-  & + & {
-    // Add a top border only if the above element also is a list item
-    border-top: $border-width $border-style lighten($gray-200, 3%);
-  }
+  border-bottom: $SelectMenu-border;
 
   @include breakpoint(sm) {
     padding-top: $spacer-2;
@@ -269,6 +268,10 @@
 //
 // A container used to show different kinds of content. Like a message, a blankslate or the loading animation.
 
+.SelectMenu-message {
+  border-bottom: $SelectMenu-border;
+}
+
 .SelectMenu-message,
 .SelectMenu-blankslate,
 .SelectMenu-loading {
@@ -288,16 +291,7 @@
   font-weight: $font-weight-bold;
   color: $text-gray-light;
   background-color: $gray-100;
-  border-top: $border;
-  border-bottom: $border;
-
-  &:first-child {
-    border-top: 0;
-  }
-
-  &:last-child {
-    border-bottom: 0;
-  }
+  border-bottom: $SelectMenu-border;
 }
 
 // Footer
@@ -310,6 +304,7 @@
   color: $text-gray-light;
   text-align: center;
   border-top: $border;
+  z-index: 0; // Avoid top border from getting covered by the negative margin of the list
 
   @include breakpoint(sm) {
     padding: $spacer-1 $spacer-2;
@@ -331,11 +326,6 @@
       max-height: 350px;
       margin-top: $spacer-1;
     }
-  }
-
-  // Show bottom "border" for the last item when the list doesn't take up the whole height
-  .SelectMenu-item:last-child {
-    box-shadow: 0 $border-width 0 lighten($gray-200, 3%);
   }
 }
 
