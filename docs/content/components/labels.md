@@ -135,3 +135,23 @@ Counters can also be used in `Box` headers to indicate the number of items in a 
   </ul>
 </div>
 ```
+
+## Keyboard Shortcuts
+
+Wrap keybard shortcuts with `<kbd>` elements. No CSS classes are needed. It will make the shortcuts look like mini keybard keys. If multiple keys need to be pressed at the same time, wrap them in a single `<kbd>`. For example `<kbd>⌘ shift p</kbd>`. If multiple keys don't need to be pressed at the same time, use a `<kbd>` for each key. For example `<kbd>g</kbd> <kbd>d</kbd>`.
+
+
+```html live
+<p>
+  Focus search bar <kbd>s</kbd> or <kbd>/</kbd>
+</p>
+<p>
+  Preview comment <kbd>⌘ shift p</kbd>
+</p>
+<p>
+  Go to dashboard <kbd>g</kbd> <kbd>d</kbd>
+</p>
+<p>
+  Show keyboard shortcuts <kbd>?</kbd>
+</p>
+```
