@@ -1,0 +1,26 @@
+//
+// Keyboard Shortcuts
+//
+// stylelint-disable selector-max-type
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px $mono-font;
+  line-height: 10px;
+  color: $gray-700;
+  vertical-align: middle;
+  background-color: $bg-gray-light;
+  border: solid 1px $gray-300;
+  border-bottom-color: darken($gray-300, 4%);
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 darken($gray-300, 4%);
+}
+
+.badmono {
+  font-family: sans-serif;
+  font-weight: $font-weight-bold;
+}
+
+.kb-shortcut-dialog {
+  min-width: 800px;
+}
