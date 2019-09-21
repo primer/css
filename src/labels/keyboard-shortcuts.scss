@@ -1,8 +1,10 @@
 //
 // Keyboard Shortcuts
-// Note: .markdown-body overrides these styles.
+// Note: `kbd` gets overridden in markdown-body.scss
 //
+
 // stylelint-disable selector-max-type
+
 kbd {
   display: inline-block;
   padding: 3px 5px;
