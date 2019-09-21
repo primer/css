@@ -99,9 +99,9 @@
     color: $gray-700;
     vertical-align: middle;
     background-color: $gray-000;
-    border: solid 1px darken($gray-300, 4%);
+    border: $border-style $border-width darken($gray-300, 4%);
     border-bottom-color: $gray-400;
-    border-radius: 3px;
+    border-radius: $border-radius;
     box-shadow: inset 0 -1px 0 $gray-400;
   }
 }
