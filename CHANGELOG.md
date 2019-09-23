@@ -1,3 +1,11 @@
+# 13.0.1
+
+### :bug: Bug Fix
+- Remove "Segoe UI Symbol" from font stack [#906](https://github.com/primer/css/pull/906)
+
+### Committers
+- [@simurai](https://github.com/simurai)
+
 # 13.0.0
 
 ### :boom: Breaking Change
