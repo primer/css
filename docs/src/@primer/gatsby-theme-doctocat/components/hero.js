@@ -5,8 +5,6 @@ import React from 'react'
 import {version} from '../../../../../package.json'
 import {ReactComponent as HeroIllustration} from '../../../hero-illustration.svg'
 
-const HeroAnimation = loadable(() => import('../../../hero-animation'), {fallback: <HeroIllustration />})
-
 function Hero() {
   return (
     <Box bg="black" py={6}>
@@ -17,7 +15,7 @@ function Hero() {
         <Text as="p" fontFamily="mono" mt={0} mb={2} color="blue.3" fontSize={2}>
           v{version}
         </Text>
-        <HeroAnimation />
+        <HeroIllustration />
       </Container>
     </Box>
   )
