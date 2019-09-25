@@ -556,11 +556,11 @@ When adding the `.SelectMenu` component on github.com, use the [`<details-menu>`
           <%= octicon("x", "aria-label": "Close menu") %>
         </button>
       </header>
-    </div>
-    <div class="SelectMenu-list">
-      <a class="SelectMenu-item" href="" role="menuitem">Item 1</a>
-      <a class="SelectMenu-item" href="" role="menuitem">Item 2</a>
-      <a class="SelectMenu-item" href="" role="menuitem">Item 3</a>
+      <div class="SelectMenu-list">
+        <a class="SelectMenu-item" href="" role="menuitem">Item 1</a>
+        <a class="SelectMenu-item" href="" role="menuitem">Item 2</a>
+        <a class="SelectMenu-item" href="" role="menuitem">Item 3</a>
+      </div>
     </div>
   </details-menu>
 </details>
