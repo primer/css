@@ -1,4 +1,4 @@
-// stylelint-disable block-closing-brace-space-before, selector-list-comma-newline-after, comment-empty-line-before
+// stylelint-disable block-closing-brace-space-before, comment-empty-line-before
 
 // Type scale variables found in ../support/lib/variables.scss
 // $h00-size-mobile: 40px;
@@ -50,7 +50,12 @@
 .h6 { font-size: $h6-size !important; }
 
 // Heading utilities
-.h1, .h2, .h3, .h4, .h5, .h6 { font-weight: $font-weight-bold !important; }
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 { font-weight: $font-weight-bold !important; }
 
 // Type utilities that match type sale
 /* Set the font size to 26px */
@@ -189,6 +194,7 @@
   word-break: break-word !important;
   // this is for backwards compatibility with browsers that don't respect overflow-wrap
   word-wrap: break-word !important;
+  // stylelint-disable-next-line plugin/no-unsupported-browser-features
   overflow-wrap: break-word !important;
 }
 
