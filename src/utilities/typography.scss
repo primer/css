@@ -194,7 +194,6 @@
   word-break: break-word !important;
   // this is for backwards compatibility with browsers that don't respect overflow-wrap
   word-wrap: break-word !important;
-  // stylelint-disable-next-line plugin/no-unsupported-browser-features
   overflow-wrap: break-word !important;
 }
 
