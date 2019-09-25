@@ -1,8 +1,0 @@
-{
-  "extends": [
-    "stylelint-config-primer"
-  ],
-  "rules": {
-    "primer/no-override": false
-  }
-}

@@ -1,0 +1,5 @@
+#!/bin/bash -e
+npm run stylelint
+npm run stylelint -- --report-needless-disables
+npm run eslint
+npm run eslint-docs

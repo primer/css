@@ -1,0 +1,59 @@
+#!/usr/bin/env node
+const stylelint = require('stylelint')
+const {readFileSync, writeFileSync} = require('fs')
+
+const files = process.argv.slice(2)
+if (files.length === 0) {
+  files.push('src/**/*.scss')
+}
+
+// we use an empty "marker" to delineate removed lines
+const REMOVED = `===REMOVED@${Date.now()}===`
+
+stylelint.lint({files, reportNeedlessDisables: true}).then(({needlessDisables}) => {
+  for (const {source, ranges} of needlessDisables) {
+    const lines = readFileSync(source, 'utf8').split(/\n/)
+    let offset = 0
+    for (const {start, unusedRule} of ranges) {
+      let index = start - 1
+      let line = lines[index]
+      let disable = parseDisableComment(line)
+      if (!disable) {
+        console.warn(`unable to parse disable on line ${start}: ${lines[start - 1]}; trying previous line...`)
+        index--
+        line = lines[index]
+        disable = parseDisableComment(line)
+        if (!disable) {
+          console.warn(`unable to parse disable on line ${index + 1}: ${lines}`)
+          continue
+        }
+      }
+
+      const rules = new Set(disable.rules)
+      rules.delete(unusedRule)
+
+      if (rules.size === 0) {
+        console.log(`- ${line}`)
+        lines[index] = REMOVED
+      } else {
+        const replacement = line.replace(disable.content, `${disable.type} ${Array.from(rules).join(', ')}`)
+        lines[index] = replacement
+        console.log(`- ${line}`)
+        console.log(`+ ${replacement}`)
+      }
+    }
+    const output = lines.filter(line => line !== REMOVED).join('\n')
+    writeFileSync(source, output, 'utf8')
+  }
+})
+
+function parseDisableComment(str) {
+  const match = str.match(/(stylelint-disable((-next)?-line)?)\s+(.+)$/)
+  return match
+    ? {
+        content: match[0],
+        type: match[1],
+        rules: match[4].split(/,\s+/)
+      }
+    : false
+}
