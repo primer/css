@@ -1,5 +1,5 @@
 // Padding spacer utilities for marketing
-// stylelint-disable block-opening-brace-space-before, comment-empty-line-before
+// stylelint-disable block-opening-brace-space-before
 
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
