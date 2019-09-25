@@ -38,7 +38,8 @@
       box-shadow: none;
     }
 
-  } @else {
+  }
+  @else {
     &:focus,
     &.focus {
       box-shadow: 0 0 0 0.2em rgba($bg, 0.4);
