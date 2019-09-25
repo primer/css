@@ -9,11 +9,11 @@ jobs:
         with:
           version: 11
       - name: install
-        run: npm --unsafe-perm install
+        run: npm install
       - name: lint
-        run: npm --unsafe-perm run lint
+        run: script/lint-ci
       - name: test
-        run: npm --unsafe-perm test
+        run: npm test
       - name: prepublish
         run: script/prepublish
       - name: test deprecations

@@ -24,9 +24,10 @@
   "scripts": {
     "fresh": "rm -rf node_modules; npm install",
     "dist": "script/dist.js",
-    "lint": "npm-run-all -s lint-css lint-js",
-    "lint-css": "stylelint --quiet --syntax scss src/**/*.scss",
-    "lint-js": "eslint script docs deprecations.js lib .storybook",
+    "lint": "npm-run-all -s stylelint eslint eslint-docs",
+    "stylelint": "stylelint --quiet src",
+    "eslint": "eslint script deprecations.js lib .storybook",
+    "eslint-docs": "eslint docs/{content,src,*.js}",
     "postpublish": "script/postpublish",
     "prepublishOnly": "script/prepublish",
     "publish-storybook": "script/publish-storybook",
