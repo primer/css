@@ -4,6 +4,7 @@
 // TODO: Introduce an additional .intent-keyboard class
 
 $SelectMenu-border: $border-width $border-style lighten($gray-200, 3%);
+$SelectMenu-max-height: 480px;
 
 // Select Menu
 //
@@ -85,7 +86,7 @@ $SelectMenu-border: $border-width $border-style lighten($gray-200, 3%);
   @include breakpoint(sm) {
     width: 300px;
     height: auto;
-    max-height: 480px;
+    max-height: $SelectMenu-max-height;
     margin: $spacer-1 0 $spacer-3 0;
     font-size: $font-size-small;
     border: $border-width $border-style $border-gray-dark;
@@ -323,7 +324,7 @@ $SelectMenu-border: $border-width $border-style lighten($gray-200, 3%);
 
     @include breakpoint(sm) {
       height: auto;
-      max-height: 480px;
+      max-height: $SelectMenu-max-height;
       margin-top: $spacer-1;
     }
   }
