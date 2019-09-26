@@ -48,6 +48,22 @@ hr,
   @include clearfix();
 }
 
+// Keyboard shortcuts
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px $mono-font;
+  line-height: 10px;
+  color: $gray-700;
+  vertical-align: middle;
+  background-color: $bg-gray-light;
+  border: $border-style $border-width $gray-300;
+  border-bottom-color: darken($gray-300, 4%);
+  border-radius: $border-radius;
+  box-shadow: inset 0 -1px 0 darken($gray-300, 4%);
+}
+
 //
 // Remove most spacing between table cells.
 //
