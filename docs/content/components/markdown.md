@@ -7,168 +7,275 @@ bundle: markdown
 ---
 
 
-Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+```html live
+<div class="markdown-body">
+  <p>Text can be <b>bold</b>, <i>italic</i>, or <s>strikethrough</s>. <a href="https://github.com">Links</a> should be blue with no underlines (unless hovered over).</p>
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
+  <p>There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.</p>
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
+  <p>There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.</p>
 
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a gray border along the left side.
->
-> There should be no margin below this final sentence.
+  <blockquote>
+    <p>There should be no margin above this first sentence.</p>
+    <p>Blockquotes should be a lighter gray with a gray border along the left side.</p>
+    <p>There should be no margin below this final sentence.</p>
+  </blockquote>
 
-# Header 1
+  <h1>Header 1</h1>
 
-This is a normal paragraph following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+  <p>This is a normal paragraph following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.</p>
 
-## Header 2
+  <h2>Header 2</h2>
 
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+  <blockquote>This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.</blockquote>
 
-### Header 3
+  <h3>Header 3</h3>
 
-```
-This is a code block following a header.
-```
+  <pre><code>This is a code block following a header.</code></pre>
 
-#### Header 4
+  <h4>Header 4</h4>
 
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
+  <ul>
+    <li>This is an unordered list following a header.</li>
+    <li>This is an unordered list following a header.</li>
+    <li>This is an unordered list following a header.</li>
+  </ul>
 
-##### Header 5
+  <h5>Header 5</h5>
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
+  <ol>
+    <li>This is an ordered list following a header.</li>
+    <li>This is an ordered list following a header.</li>
+    <li>This is an ordered list following a header.</li>
+  </ol>
 
-###### Header 6
+  <h6>Header 6</h6>
 
-| What      | Follows         |
-|-----------|-----------------|
-| A table   | A header        |
-| A table   | A header        |
-| A table   | A header        |
+  <table>
+    <thead>
+      <tr>
+        <th>What</th>
+        <th>Follows</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>A table</td>
+        <td>A header</td>
+      </tr>
+      <tr>
+        <td>A table</td>
+        <td>A header</td>
+      </tr>
+      <tr>
+        <td>A table</td>
+        <td>A header</td>
+      </tr>
+    </tbody>
+  </table>
 
-----------------
+  <hr />
 
-There's a horizontal rule above and below this.
+  <p>There's a horizontal rule above and below this.</p>
 
-----------------
+  <hr />
 
-Here is an unordered list:
+  <p>Here is an unordered list:</p>
 
-* Salt-n-Pepa
-* Bel Biv DeVoe
-* Kid 'N Play
+  <ul>
+    <li>Salt-n-Pepa</li>
+    <li>Bel Biv DeVoe</li>
+    <li>Kid 'N Play</li>
+  </ul>
 
-And an ordered list:
+  <p>And an ordered list:</p>
 
-1. Michael Jackson
-2. Michael Bolton
-3. Michael Bublé
+  <ol>
+    <li>Michael Jackson</li>
+    <li>Michael Bolton</li>
+    <li>Michael Bublé</li>
+  </ol>
 
-And an unordered task list:
+  <p>And an unordered task list:</p>
 
-- [x] Create a sample markdown document
-- [x] Add task lists to it
-- [ ] Take a vacation
+  <ul>
+    <li><input type="checkbox" checked> Create a sample markdown document</li>
+    <li><input type="checkbox"> Add task lists to it</li>
+    <li><input type="checkbox"> Take a vacation</li>
+  </ul>
 
-And a "mixed" task list:
+  <p>And a "mixed" task list:</p>
 
-- [ ] Steal underpants
-- ?
-- [ ] Profit!
+  <ul>
+    <li><input type="checkbox"> Steal underpants</li>
+    <li>?</li>
+    <li><input type="checkbox"> Profit!</li>
+  </ul>
 
-And a nested list:
+  And a nested list:
 
-* Jackson 5
-  * Michael
-  * Tito
-  * Jackie
-  * Marlon
-  * Jermaine
-* TMNT
-  * Leonardo
-  * Michelangelo
-  * Donatello
-  * Raphael
+  <ul>
+    <li>Jackson 5
+      <ul>
+        <li>Michael</li>
+        <li>Tito</li>
+        <li>Jackie</li>
+        <li>Marlon</li>
+        <li>Jermaine</li>
+      </ul>
+    </li>
+    <li>TMNT
+      <ul>
+        <li>Leonardo</li>
+        <li>Michelangelo</li>
+        <li>Donatello</li>
+        <li>Raphael</li>
+      </ul>
+    </li>
+  </ul>
 
-Definition lists can be used with HTML syntax. Definition terms are bold and italic.
+  <p>Definition lists can be used with HTML syntax. Definition terms are bold and italic.</p>
 
-<dl>
-    <dt>Name</dt>
-    <dd>Godzilla</dd>
-    <dt>Born</dt>
-    <dd>1952</dd>
-    <dt>Birthplace</dt>
-    <dd>Japan</dd>
-    <dt>Color</dt>
-    <dd>Green</dd>
-</dl>
+  <dl>
+      <dt>Name</dt>
+      <dd>Godzilla</dd>
+      <dt>Born</dt>
+      <dd>1952</dd>
+      <dt>Birthplace</dt>
+      <dd>Japan</dd>
+      <dt>Color</dt>
+      <dd>Green</dd>
+  </dl>
 
-----------------
+  <hr />
 
-Tables should have bold headings and alternating shaded rows.
+  <p>Tables should have bold headings and alternating shaded rows.</p>
 
-| Artist            | Album           | Year |
-|-------------------|-----------------|------|
-| Michael Jackson   | Thriller        | 1982 |
-| Prince            | Purple Rain     | 1984 |
-| Beastie Boys      | License to Ill  | 1986 |
+  <table>
+    <thead>
+      <tr>
+        <th>Artist</th>
+        <th>Album</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>David Bowie</td>
+        <td>Scary Monsters</td>
+        <td>1980</td>
+      </tr>
+      <tr>
+        <td>Prince</td>
+        <td>Purple Rain</td>
+        <td>1982</td>
+      </tr>
+      <tr>
+        <td>Beastie Boys</td>
+        <td>License to Ill</td>
+        <td>1986</td>
+      </tr>
+      <tr>
+        <td>Janet Jackson</td>
+        <td>Rhythm Nation 1814</td>
+        <td>1989</td>
+      </tr>
+    </tbody>
+  </table>
 
-If a table is too wide, it should condense down and/or scroll horizontally.
+  <p>If a table is too wide, it should condense down and/or scroll horizontally.</p>
 
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
+  <table>
+    <thead>
+      <tr>
+        <th>Artist</th>
+        <th>Album</th>
+        <th>Year</th>
+        <th>Label</th>
+        <th>Songs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>David Bowie</td>
+        <td>Scary Monsters</td>
+        <td>1980</td>
+        <td>RCA Records</td>
+        <td>It's No Game (No. 1), Up the Hill Backwards, Scary Monsters (And Super Creeps), Ashes to Ashes, Fashion, Teenage Wildlife, Scream Like a Baby, Kingdom Come, Because You're Young, It's No Game (No. 2)</td>
+      </tr>
+      <tr>
+        <td>Prince</td>
+        <td>Purple Rain</td>
+        <td>1982</td>
+        <td>Warner Brothers Records</td>
+        <td>Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain</td>
+      </tr>
+      <tr>
+        <td>Beastie Boys</td>
+        <td>License to Ill</td>
+        <td>1986</td>
+        <td>Def Jam</td>
+        <td>Rhymin &amp; Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, Fight for Your Right, No Sleep till Brooklyn, Paul Revere, "Hold It Now, Hit It", Brass Monkey, Slow and Low, Time to Get Ill</td>
+      </tr>
+      <tr>
+        <td>Janet Jackson</td>
+        <td>Rhythm Nation 1814</td>
+        <td>1989</td>
+        <td>A&amp;M</td>
+        <td>Interlude: Pledge, Rhythm Nation, Interlude: T.V., State of the World, Interlude: Race, The Knowledge, Interlude: Let's Dance, Miss You Much, Interlude: Come Back, Love Will Never Do (Without You), Livin' in a World (They Didn't Make), Alright, Interlude: Hey Baby, Escapade, Interlude: No Acid, Black Cat, Lonely, Come Back to Me, Someday Is Tonight, Interlude: Livin'...In Complete Darkness</td>
+      </tr>
+    </tbody>
+  </table>
 
-----------------
+  <hr />
 
-Code snippets like `var foo = "bar";` can be shown inline.
+  <p>Code snippets like <code>var foo = "bar";</code> can be shown inline.</p>
 
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
+  <p>Also, <code>this should vertically align</code> <s><code>with this</code></s> <s>and this</s>.</p>
 
-Code can also be shown in a block element.
-```
-var foo = "bar";
-```
+  <p>Code can also be shown in a block element.</p>
 
-Code can also use syntax highlighting.
-```javascript
-var foo = "bar";
-```
+  <pre><code>var foo = "bar";</code></pre>
 
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
+  <p>Code can also use syntax highlighting.</p>
 
-```javascript
-var foo = "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";
-```
+  <pre><code class="prism-code language-javascript">var foo = "bar";</code></pre>
 
-Inline code inside table cells should still be distinguishable.
+  <pre><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.</code></pre>
 
-| Language    | Code               |
-|-------------|--------------------|
-| Javascript  | `var foo = "bar";` |
-| Ruby        | `foo = "bar"`      |
+  <pre><code class="prism-code language-javascript">var foo = "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";</code></pre>
 
-----------------
+  <p>Inline code inside table cells should still be distinguishable.</p>
 
-Small images should be shown at their actual size.
+  <table>
+    <thead>
+      <tr>
+        <th>Language</th>
+        <th>Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JavasScript</td>
+        <td><code>var foo = "bar";</code></td>
+      </tr>
+      <tr>
+        <td>Ruby</td>
+        <td><code>foo = "bar"</code></td>
+      </tr>
+    </tbody>
+  </table>
 
-![](http://placekitten.com/g/300/200/)
+  <hr />
 
-Large images should always scale down and fit in the content container.
+  <p>Small images should be shown at their actual size.</p>
 
-![](http://placekitten.com/g/1200/800/)
+  <p><img src="http://placekitten.com/g/300/200/"></p>
 
-```
-This is the final element on the page and there should be no margin below this.
+  <p>Large images should always scale down and fit in the content container.</p>
+
+  <p><img src="http://placekitten.com/g/1200/800/"></p>
+
+  <pre><code>This is the final element on the page and there should be no margin below this.</code></pre>
+</div>
 ```
