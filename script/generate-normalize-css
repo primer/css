@@ -1,0 +1,2 @@
+#!/bin/bash
+echo '@import "normalize.css";' | npx postcss -u postcss-normalize --no-map -o src/base/normalize.scss
