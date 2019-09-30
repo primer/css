@@ -11,13 +11,12 @@
 
     th,
     td {
-      padding: 6px 13px;
-      border: 1px solid lighten($gray-300, 5%);
+      padding: ($spacer-2 - 2) ($spacer-3 - 2);
+      border: $border-width $border-style $border-gray-dark;
     }
 
     tr {
       background-color: $bg-white;
-      border-top: 1px solid darken($gray-300, 4%);
 
       &:nth-child(2n) {
         background-color: $gray-100;
