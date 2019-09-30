@@ -4,6 +4,59 @@
  * array and a "message" string.
  */
 const versionDeprecations = {
+  '14.0.0': [
+    {
+      selectors: [
+        'a:active',
+        'article',
+        'aside',
+        'audio',
+        'audio:not([controls])',
+        'button:-moz-focusring',
+        'button::-moz-focus-inner',
+        'canvas',
+        'dfn',
+        'figcaption',
+        'figure',
+        'figure',
+        'footer',
+        'header',
+        'html [type="button"]',
+        'img',
+        'mark',
+        'menu',
+        'nav',
+        'optgroup',
+        'section',
+        'sub',
+        'sup',
+        'video',
+        '[hidden]',
+        '[type="button"]:-moz-focusring',
+        '[type="button"]::-moz-focus-inner',
+        '[type="checkbox"]',
+        '[type="number"]::-webkit-inner-spin-button',
+        '[type="number"]::-webkit-outer-spin-button',
+        '[type="radio"]',
+        '[type="reset"]:-moz-focusring',
+        '[type="reset"]::-moz-focus-inner',
+        '[type="search"]::-webkit-search-cancel-button',
+        '[type="search"]::-webkit-search-decoration',
+        '[type="submit"]:-moz-focusring',
+        '[type="submit"]::-moz-focus-inner'
+      ],
+      message: `normalize.css has been modernized! You shouldn't need to style built-in elements.`
+    },
+    {
+      selectors: [
+        '.SelectMenu-divider:first-child',
+        '.SelectMenu-divider:last-child',
+        '.SelectMenu-item+.SelectMenu-item',
+        '.SelectMenu--hasFilter .SelectMenu-item:last-child'
+      ],
+      message: `The SelectMenu component has been refactored. See [the docs](https://primer.style/css/components/select-menu) for more information.`
+    }
+  ],
   '13.0.0': [
     {
       selectors: [
