@@ -409,12 +409,3 @@ $SelectMenu-max-height: 480px;
     -webkit-tap-highlight-color: rgba($gray-300, 0.5);
   }
 }
-
-// Unused selectors
-//
-// TODO: Depreate in next major release
-
-.SelectMenu-item + .SelectMenu-item { /* Unused */ }
-.SelectMenu-divider:first-child { /* Unused */ }
-.SelectMenu-divider:last-child { /* Unused */ }
-.SelectMenu--hasFilter .SelectMenu-item:last-child { /* Unused */ }
