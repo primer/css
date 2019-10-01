@@ -3,9 +3,6 @@
 // selector-max-type is needed for body:not(.intent-mouse) to target keyboard only styles.
 // TODO: Introduce an additional .intent-keyboard class
 
-$SelectMenu-border: $border-width $border-style lighten($gray-200, 3%);
-$SelectMenu-max-height: 480px;
-
 // Select Menu
 //
 // A more advanced menu with support for navigation, filtering, and more.
@@ -86,7 +83,7 @@ $SelectMenu-max-height: 480px;
   @include breakpoint(sm) {
     width: 300px;
     height: auto;
-    max-height: $SelectMenu-max-height;
+    max-height: 350px;
     margin: $spacer-1 0 $spacer-3 0;
     font-size: $font-size-small;
     border: $border-width $border-style $border-gray-dark;
@@ -164,7 +161,6 @@ $SelectMenu-max-height: 480px;
   position: relative;
   padding: 0;
   margin: 0;
-  margin-bottom: -$border-width; // Hides the last border in the list
   flex: auto;
   overflow-x: hidden;
   overflow-y: auto;
@@ -188,7 +184,11 @@ $SelectMenu-max-height: 480px;
   cursor: pointer;
   background-color: $bg-white;
   border: 0;
-  border-bottom: $SelectMenu-border;
+
+  & + & {
+    // Add a top border only if the above element also is a list item
+    border-top: $border-width $border-style lighten($gray-200, 3%);
+  }
 
   @include breakpoint(sm) {
     padding-top: $spacer-2;
@@ -269,10 +269,6 @@ $SelectMenu-max-height: 480px;
 //
 // A container used to show different kinds of content. Like a message, a blankslate or the loading animation.
 
-.SelectMenu-message {
-  border-bottom: $SelectMenu-border;
-}
-
 .SelectMenu-message,
 .SelectMenu-blankslate,
 .SelectMenu-loading {
@@ -292,7 +288,16 @@ $SelectMenu-max-height: 480px;
   font-weight: $font-weight-bold;
   color: $text-gray-light;
   background-color: $gray-100;
-  border-bottom: $SelectMenu-border;
+  border-top: $border;
+  border-bottom: $border;
+
+  &:first-child {
+    border-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+  }
 }
 
 // Footer
@@ -300,7 +305,6 @@ $SelectMenu-max-height: 480px;
 // A container at the bottom.
 
 .SelectMenu-footer {
-  z-index: 0; // Avoid top border from getting covered by the negative margin of the list
   padding: $spacer-2 $spacer-3;
   font-size: $font-size-small;
   color: $text-gray-light;
@@ -324,9 +328,14 @@ $SelectMenu-max-height: 480px;
 
     @include breakpoint(sm) {
       height: auto;
-      max-height: $SelectMenu-max-height;
+      max-height: 350px;
       margin-top: $spacer-1;
     }
+  }
+
+  // Show bottom "border" for the last item when the list doesn't take up the whole height
+  .SelectMenu-item:last-child {
+    box-shadow: 0 $border-width 0 lighten($gray-200, 3%);
   }
 }
 
