@@ -91,7 +91,7 @@ Use these classes to define the orientation of the main axis (`row` or `column`)
 
 #### Example using `.flex-column-reverse`
 
-This example uses the responsive variant `.flex-md-column-reverse` to override `.flex-column` Learn more about responsive flexbox utilities **[here](#responsive-flex-utilities)**.
+This example uses the responsive variant `.flex-md-column-reverse` to override `.flex-column` Learn more about responsive flexbox utilities **[here](#responsive-flex-utilities)**. Keep in mind that it won't affect screen readers or navigating with the keyboard and it's advised to keep the markup in a logical source order.
 
 ```html live
 <div class="border d-flex flex-column flex-md-column-reverse">
@@ -115,7 +115,7 @@ This example uses the responsive variant `.flex-md-row` to override `.flex-colum
 
 #### Example using `.flex-row-reverse`
 
-This example uses the responsive variant `.flex-md-row-reverse` to override `.flex-column` Learn more about responsive flexbox utilities **[here](#responsive-flex-utilities)**.
+This example uses the responsive variant `.flex-md-row-reverse` to override `.flex-column` Learn more about responsive flexbox utilities **[here](#responsive-flex-utilities)**. Keep in mind that it won't affect screen readers or navigating with the keyboard and it's advised to keep the markup in a logical source order.
 
 ```html live
 <div class="border d-flex flex-column flex-md-row-reverse">
