@@ -6,9 +6,10 @@
   @include breakpoint($breakpoint) {
     // Flexbox classes
     // Container
-    .flex#{$variant}-row         { flex-direction: row !important; }
-    .flex#{$variant}-row-reverse { flex-direction: row-reverse !important; }
-    .flex#{$variant}-column      { flex-direction: column !important; }
+    .flex#{$variant}-row            { flex-direction: row !important; }
+    .flex#{$variant}-row-reverse    { flex-direction: row-reverse !important; }
+    .flex#{$variant}-column         { flex-direction: column !important; }
+    .flex#{$variant}-column-reverse { flex-direction: column-reverse !important; }
 
     .flex#{$variant}-wrap     { flex-wrap: wrap !important; }
     .flex#{$variant}-nowrap   { flex-wrap: nowrap !important; }
