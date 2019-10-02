@@ -10,6 +10,8 @@
   line-height: $body-line-height;
   word-wrap: break-word;
 
+  @import "../base/kbd.scss"; // adds support for keyboard shortcuts
+
   // Clearfix on the markdown body
   &::before {
     display: table;
@@ -89,19 +91,5 @@
     > :last-child {
       margin-bottom: 0;
     }
-  }
-
-  kbd {
-    display: inline-block;
-    padding: ($spacer-1 - 1) ($spacer-1 + 1);
-    font: 11px $mono-font;
-    line-height: 10px;
-    color: $gray-700;
-    vertical-align: middle;
-    background-color: $bg-gray-light;
-    border: $border-style $border-width $border-gray-dark;
-    border-bottom-color: $border-gray-dark;
-    border-radius: $border-radius;
-    box-shadow: inset 0 -1px 0 $border-gray-dark;
   }
 }
