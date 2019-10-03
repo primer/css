@@ -1,3 +1,20 @@
+# 13.0.2
+
+### :memo: Documentation
+- Use inline octicon in branch name example [#886](https://github.com/primer/css/pull/886)
+- Move select menu list into the modal div [#903](https://github.com/primer/css/pull/903)
+- Improve SelectMenu docs [#923](https://github.com/primer/css/pull/923)
+
+### :house: Internal
+- Update "Ship checklist" [#902](https://github.com/primer/css/pull/902)
+- Bump stylelint, et al; add CI tests and script for removing needless disables [#912](https://github.com/primer/css/pull/912)
+
+### Committers
+- [@colebemis](https://github.com/colebemis)
+- [@mxie](https://github.com/mxie)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+
 # 13.0.1
 
 ### :bug: Bug Fix
@@ -10,7 +27,7 @@
 
 ### :boom: Breaking Change
 - Remove `.container`, `.columns`, `.column`, and related classes [#662](https://github.com/primer/css/pull/662)
-- Remove `.btn-purple` [#736](https://github.com/primer/css/pull/736) :wave: 💜 
+- Remove `.btn-purple` [#736](https://github.com/primer/css/pull/736) :wave: 💜
 - Remove `.text-pending` and `.bg-pending` [#888](https://github.com/primer/css/pull/888)
 - Remove `.dropdown-menu-content` [#884](https://github.com/primer/css/pull/884)
 
