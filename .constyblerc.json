@@ -1,0 +1,60 @@
+{
+  // COMPLEXITY
+  // Don't allow more than X selectors in a single rule => a, b, c, d {}
+  "rules.selectors.maximum.count": 12,
+  // Selector complexity should stay low, making it easier to override
+  "selectors.complexity.max.value": 5,
+  // Don't allow js-selectors
+  "selectors.js.total": 0,
+
+  // BRANDING
+  "atrules.fontfaces.totalUnique": 2,
+  "atrules.mediaqueries.totalUnique": 11,
+  "values.boxshadows.totalUnique": 25,
+  "values.boxshadows.unique": [
+    "#c9ff00 0 0 3px",
+    "-2px -2px 0 rgba(255,255,255,0.8)",
+    "0 0 0 0.2em rgba(3,102,214,0.3)",
+    "0 0 0 0.2em rgba(3,102,214,0.4)",
+    "0 0 0 0.2em rgba(6,121,252,0.4)",
+    "0 0 0 0.2em rgba(40,167,69,0.3)",
+    "0 0 0 0.2em rgba(52,208,88,0.4)",
+    "0 0 0 0.2em rgba(121,184,255,0.4)",
+    "0 0 0 0.2em rgba(203,36,49,0.4)",
+    "0 0 0 1px #e1e4e8",
+    "0 0 18px rgba(0,0,0,0.4)",
+    "0 1px 0 #e1e4e8",
+    "0 1px 0 #eaecef",
+    "0 1px 1px rgba(27,31,35,0.1)",
+    "0 1px 5px rgba(27,31,35,0.15)",
+    "0 1px 15px rgba(27,31,35,0.15)",
+    "0 10px 50px rgba(27,31,35,0.07)",
+    "2px 0 0 #0366d6 inset",
+    "inset 0 -1px 0 #959da5",
+    "inset 0 -1px 0 #e1e4e8",
+    "inset 0 -1px 0 rgba(27,31,35,0.12)",
+    "inset 0 0 0 1px #d1d5da,0 1px 5px rgba(27,31,35,0.15)",
+    "inset 0 0.15em 0.3em rgba(27,31,35,0.15)",
+    "inset 0 1px 2px rgba(27,31,35,0.075)",
+    "inset 0 1px 2px rgba(27,31,35,0.075),0 0 0 0.2em rgba(3,102,214,0.3)"
+  ],
+  "values.colors.totalUnique": 154,
+  "values.fontfamilies.totalUnique": 7,
+  "values.fontfamilies.unique": [
+    "\"-apple-system\", \"BlinkMacSystemFont\", \"Segoe UI\", \"Helvetica\", \"Arial\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+    // It might be worth looking into why there's a 'duplicate' font-family here (unminified)
+    "\"SFMono-Regular\", \"Consolas\", \"Liberation Mono\", \"Menlo\", monospace",
+    "\"SFMono-Regular\",Consolas,\"Liberation Mono\",Menlo,monospace",
+    "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"",
+    "Inter,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\"",
+    "monospace, monospace",
+    "sans-serif"
+  ],
+  "values.textshadows.totalUnique": 2,
+  "values.textshadows.unique": [
+    "0 1px 0 rgba(255,255,255,0.5)",
+    "0 1px 1px rgba(27,31,35,0.25),0 1px 25px rgba(27,31,35,0.75)"
+  ],
+  "values.zindexes.totalUnique": 14,
+  "values.zindexes.unique": [1, -1, 1, 2, 3, 10, 15, 20, 30, 32, 80, 99, 100, 1000000, 1000001]
+}
