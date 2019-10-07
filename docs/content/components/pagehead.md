@@ -27,10 +27,11 @@ Place an avatar inside the `h1` to have margins applied to it. Don't forget the 
 
 Also be sure to add `aria-hidden="true"` to hide the avatar from screenreaders.
 
-```erb
+```html live
 <div class="pagehead">
   <h1>
-    <%= avatar_for("jonrohan", 32, "aria-hidden": "true") %>
+    <!-- <%= avatar_for("jonrohan", 32, "aria-hidden": "true") %> -->
+    <img class="avatar" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=64" width="32" height="32" aria-hidden="true" />
     jonrohan
   </h1>
 </div>
