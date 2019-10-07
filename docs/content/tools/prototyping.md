@@ -19,7 +19,7 @@ This method requires no dev environment set up and is useful for when you want t
   <head>
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://unpkg.com/primer/build/build.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@primer/css/dist/primer.css" />
   </head>
   <body></body>
 </html>
