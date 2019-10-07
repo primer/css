@@ -13,7 +13,7 @@ Use a `<details>` element to toggle the Select Menu. The `<summary>` element can
 
 ```html live
 <details class="details-reset details-overlay" open>
-  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+  <summary class="btn" aria-haspopup="true">
     Choose an item
   </summary>
   <div class="SelectMenu">
@@ -52,7 +52,7 @@ In case the Select Menu should be aligned to the right, use `SelectMenu right-0`
 ```html live
 <div class="d-flex flex-justify-end position-relative">
   <details class="details-reset details-overlay" open>
-    <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+    <summary class="btn" aria-haspopup="true">
       Choose an item
     </summary>
     <div class="SelectMenu right-0">
@@ -89,7 +89,7 @@ Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-chec
 
 ```html live
 <details class="details-reset details-overlay" open>
-  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+  <summary class="btn" aria-haspopup="true">
     Choose an item
   </summary>
   <div class="SelectMenu">
@@ -187,7 +187,7 @@ The list of items is arguably the most important subcomponent within the menu. B
 
 ```html live
 <details class="details-reset details-overlay" open>
-  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+  <summary class="btn" aria-haspopup="true">
     Choose an item
   </summary>
   <div class="SelectMenu">
@@ -256,7 +256,7 @@ The Select Menu's list can be divided into multiple parts by adding a `.SelectMe
 
 ```html live
 <details class="details-reset details-overlay" open>
-  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+  <summary class="btn" aria-haspopup="true">
     Choose an item
   </summary>
   <div class="SelectMenu">
@@ -297,7 +297,7 @@ Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for ad
 
 ```html live
 <details class="details-reset details-overlay" open>
-  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+  <summary class="btn" aria-haspopup="true">
     Choose an item
   </summary>
   <div class="SelectMenu SelectMenu--hasFilter">
@@ -359,7 +359,7 @@ Sometimes you need two or more lists of items in your Select Menu, e.g. branches
 
 ```html live
 <details class="details-reset details-overlay" open>
-  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+  <summary class="btn" aria-haspopup="true">
     Choose an item
   </summary>
   <div class="SelectMenu SelectMenu--hasFilter">
@@ -410,7 +410,7 @@ A `SelectMenu-message` can be used to show different kind of messages to a user.
 
 ```html live
 <details class="details-reset details-overlay" open>
-  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+  <summary class="btn" aria-haspopup="true">
     Choose an item
   </summary>
   <div class="SelectMenu">
@@ -447,7 +447,7 @@ When fetching large lists, consider showing a `.SelectMenu-loading` animation.
 
 ```html live
 <details class="details-reset details-overlay" open>
-  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+  <summary class="btn" aria-haspopup="true">
     Choose an item
   </summary>
   <div class="SelectMenu SelectMenu--hasFilter">
@@ -499,7 +499,7 @@ Sometimes a Select Menu needs to communicate a "blank slate" where there's no co
 
 ```html live
 <details class="details-reset details-overlay" open>
-  <summary class="btn" type="button" aria-haspopup="true" aria-expanded="true">
+  <summary class="btn" aria-haspopup="true">
     Choose an item
   </summary>
   <div class="SelectMenu">
@@ -556,11 +556,11 @@ When adding the `.SelectMenu` component on github.com, use the [`<details-menu>`
           <%= octicon("x", "aria-label": "Close menu") %>
         </button>
       </header>
-    </div>
-    <div class="SelectMenu-list">
-      <a class="SelectMenu-item" href="" role="menuitem">Item 1</a>
-      <a class="SelectMenu-item" href="" role="menuitem">Item 2</a>
-      <a class="SelectMenu-item" href="" role="menuitem">Item 3</a>
+      <div class="SelectMenu-list">
+        <a class="SelectMenu-item" href="" role="menuitem">Item 1</a>
+        <a class="SelectMenu-item" href="" role="menuitem">Item 2</a>
+        <a class="SelectMenu-item" href="" role="menuitem">Item 3</a>
+      </div>
     </div>
   </details-menu>
 </details>

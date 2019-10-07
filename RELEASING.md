@@ -44,6 +44,7 @@
     - [ ] Test the release candidate version with `github/github`
     - [ ] Merge this PR and [create a new release](https://github.com/primer/css/releases/new)
     - [ ] Update `github/github`
+    - [ ] Tell the world (Slack, Twitter, Team post)
 
     For more details, see [RELEASING.md](https://github.com/primer/css/blob/master/RELEASING.md).
 

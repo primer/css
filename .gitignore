@@ -4,6 +4,7 @@
 .changelog
 .next/
 .sass-cache
+.stylelintcache
 .storybuild/
 _site
 dist/
