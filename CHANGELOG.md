@@ -1,3 +1,18 @@
+# 13.1.0
+
+### :rocket: Enhancement
+- [#904](https://github.com/primer/css/pull/904) Add Keyboard Shortcuts `kbd`  from github/github
+- [#926](https://github.com/primer/css/pull/926) Add Flash Banner `.flash-banner` from github/github
+- [#927](https://github.com/primer/css/pull/927) Add `.flex-column-reverse` utilities
+
+### :memo: Documentation
+- [#932](https://github.com/primer/css/pull/932) Fix CDN links in documentation
+- [#933](https://github.com/primer/css/pull/933) Convert most ERB examples to HTML
+
+### Committers
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+
 # 13.0.2
 
 ### :memo: Documentation

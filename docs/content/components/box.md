@@ -331,20 +331,27 @@ Use `flash-full` for flash alert inside a box to remove the rounded corners. Pla
 
 Flash alerts come in three different colors and can be used with icons and buttons, see the [alert documentation](./alerts) for more information.
 
-```erb
+```html live
 <div class="Box">
   <div class="Box-header">
     Box header
   </div>
   <div class="flash flash-full">
-    <button class="flash-close js-flash-close"><%= octicon "x" %></button>
-    Flash message with close button.
+    <button class="flash-close js-flash-close">
+      <!-- <%= octicon "x" %> -->
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    </button>
+    <span>Flash message with close button.</span>
   </div>
   <div class="flash flash-full flash-success">
-    <%= octicon("check") %> Flash success with an icon.
+    <!-- <%= octicon("check") %> -->
+    <svg class="octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+    <span>Flash success with an icon.</span>
   </div>
   <div class="flash flash-full flash-warn">
-    <%= octicon("alert") %> Flash warning with an icon.
+    <!-- <%= octicon("alert") %> -->
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <span>Flash warning with an icon.</span>
   </div>
   <div class="flash flash-full flash-error">
     Flash error inside a Box.
@@ -359,21 +366,27 @@ Flash alerts come in three different colors and can be used with icons and butto
 
 Use `Box-btn-octicon` with `btn-octicon` when you want the icon to maintain the same padding as other box elements. This selector offsets margin to ensure it lines up on the left and right sides of the box so you may need to add padding neighboring elements.
 
-```erb
+```html live
 <div class="Box">
   <div class="Box-body">
     <span class="pr-2">Box body</span>
-    <button href="#" class="Box-btn-octicon btn-octicon"><%= octicon "pencil" %></button>
+    <button href="#" class="Box-btn-octicon btn-octicon">
+      <!-- <%= octicon "pencil" %> -->
+      <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"></path></svg>
+    </button>
   </div>
 </div>
 ```
 
 It's common to want to float icons to the far left or right and stop the `Box-title`from wrapping underneath. To do this you'll need to create a media object with utilities. Add `clearfix` to the surrounding div (this could be the header, body, or rows), add `overflow-hidden` to the title (or other text element), and float the icons as desired.
 
-```erb
+```html live
 <div class="Box">
   <div class="Box-header clearfix">
-    <button href="#" class="Box-btn-octicon btn-octicon float-right"><%= octicon "x" %></button>
+    <button href="#" class="Box-btn-octicon btn-octicon float-right">
+      <!-- <%= octicon "x" %> -->
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    </button>
     <h3 class="Box-title overflow-hidden pr-3">A very long title that wraps onto multiple lines without overlapping or wrapping underneath the icon to it's right</h3>
   </div>
   <div class="Box-body">
@@ -382,10 +395,13 @@ It's common to want to float icons to the far left or right and stop the `Box-ti
 </div>
 ```
 
-```erb
+```html live
 <div class="Box">
   <div class="Box-row clearfix">
-    <button href="#" class="Box-btn-octicon btn-octicon float-left"><%= octicon "check" %></button>
+    <button href="#" class="Box-btn-octicon btn-octicon float-left">
+      <!-- <%= octicon "check" %> -->
+      <svg class="octicon octicon-check" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+    </button>
     <p class="overflow-hidden pl-3">A very long paragraph that wraps onto multiple lines without overlapping or wrapping underneath the icon to it's left</p>
   </div>
 </div>

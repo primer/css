@@ -8,7 +8,7 @@ bundle: utilities
 
 Change the document layout with display, float, alignment, and other utilities.
 
- 
+
 
 ## Display
 Adjust the display of an element with `.d-block`, `.d-none`, `.d-inline`, `.d-inline-block`, `.d-table`, `.d-table-cell` utilities.
@@ -212,10 +212,11 @@ Use `.height-fit` to set max-height 100%.
 
 Use `.height-full` to set height to 100%.
 
-```erb
+```html live
 <div class="d-table border border-gray">
   <div class="d-table-cell height-full v-align-middle pl-3">
-    <%= octicon "three-bars" %>
+    <!-- <%= octicon "three-bars" %> -->
+    <svg class="octicon octicon-three-bars" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"></path></svg>
   </div>
   <div class="p-3">
     Bacon ipsum dolor amet meatball flank beef tail pig boudin ham hock chicken capicola. Shoulder ham spare ribs turducken pork tongue. Bresaola corned beef sausage jowl ribeye kielbasa tenderloin andouille leberkas tongue. Ribeye tri-tip tenderloin pig, chuck ground round chicken tongue corned beef biltong.

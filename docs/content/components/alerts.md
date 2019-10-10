@@ -120,3 +120,15 @@ A flash message that is full width and removes border and border radius.
   </div>
 </div>
 ```
+
+## Flash banner
+
+A flash message that is fixed positioned at the top of the page. Use for more global events where the content of the page is unknown.
+
+```html live
+<div class="ml-n3" style="min-height: 50px">
+  <div class="flash flash-banner">
+    Flash banner message.
+  </div>
+</div>
+```
