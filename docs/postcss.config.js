@@ -8,5 +8,6 @@ module.exports = {
       outputStyle: 'compressed'
     },
     autoprefixer: {}
+    annoymize : true
   }
 }
