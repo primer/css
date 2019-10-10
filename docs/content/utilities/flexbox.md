@@ -64,9 +64,10 @@ Use these classes to define the orientation of the main axis (`row` or `column`)
 #### CSS
 
 ```css
-.flex-row         { flex-direction: row; }
-.flex-row-reverse { flex-direction: row-reverse; }
-.flex-column      { flex-direction: column; }
+.flex-row            { flex-direction: row; }
+.flex-row-reverse    { flex-direction: row-reverse; }
+.flex-column         { flex-direction: column; }
+.flex-column-reverse { flex-direction: column-reverse; }
 ```
 
 #### Classes
@@ -76,11 +77,24 @@ Use these classes to define the orientation of the main axis (`row` or `column`)
 | `.flex-row` | The main axis runs left to right (default). |
 | `.flex-row-reverse` | The main axis runs right to left. |
 | `.flex-column` | The main axis runs top to bottom. |
+| `.flex-column-reverse` | The main axis runs bottom to top. |
 
 #### Example using `.flex-column`
 
 ```html live
 <div class="border d-flex flex-column">
+  <div class="p-5 border bg-gray-light">Item 1</div>
+  <div class="p-5 border bg-gray-light">Item 2</div>
+  <div class="p-5 border bg-gray-light">Item 3</div>
+</div>
+```
+
+#### Example using `.flex-column-reverse`
+
+This example uses the responsive variant `.flex-md-column-reverse` to override `.flex-column` Learn more about responsive flexbox utilities **[here](#responsive-flex-utilities)**. Keep in mind that it won't affect screen readers or navigating with the keyboard and it's advised to keep the markup in a logical source order.
+
+```html live
+<div class="border d-flex flex-column flex-md-column-reverse">
   <div class="p-5 border bg-gray-light">Item 1</div>
   <div class="p-5 border bg-gray-light">Item 2</div>
   <div class="p-5 border bg-gray-light">Item 3</div>
@@ -101,7 +115,7 @@ This example uses the responsive variant `.flex-md-row` to override `.flex-colum
 
 #### Example using `.flex-row-reverse`
 
-This example uses the responsive variant `.flex-md-row-reverse` to override `.flex-column` Learn more about responsive flexbox utilities **[here](#responsive-flex-utilities)**.
+This example uses the responsive variant `.flex-md-row-reverse` to override `.flex-column` Learn more about responsive flexbox utilities **[here](#responsive-flex-utilities)**. Keep in mind that it won't affect screen readers or navigating with the keyboard and it's advised to keep the markup in a logical source order.
 
 ```html live
 <div class="border d-flex flex-column flex-md-row-reverse">
