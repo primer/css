@@ -72,6 +72,18 @@
   border-radius: 0;
 }
 
+// A banner rendered at the top of the page.
+.flash-banner {
+  position: fixed;
+  top: 0;
+  z-index: 90;
+  width: 100%;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+
 // FIXME deprecate this
 .warning {
   padding: $em-spacer-5;
