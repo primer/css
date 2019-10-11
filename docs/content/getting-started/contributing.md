@@ -39,7 +39,7 @@ Many of the same questions can be applied to objects and utilities, however the 
 
 It's usually better to open an issue before investing time in spiking out a new pattern. This gives the design systems team a heads up and allows other designers to share thoughts. Here's an outline of what's helpful to include in a new style issue:
 
-1. What the pattern is and how it's being used across the site - post screenshots and urls where possible. If you need help identifying where the pattern is being used, call that out here and cc the relevant team and/or cc `@product-design` to help.
+1. What the pattern is and how it's being used across the site - post screenshots and urls where possible. If you need help identifying where the pattern is being used, call that out in the issue.
 2. Why you think a new pattern is needed (this should answer the relevant questions above).
 3. If you intend to work on these new styles yourself, let us know what your timeline and next steps are. If you need help and this is a dependency for shipping another project, please make that clear here and what the timeline is.
 4. Add the `type: new styles` label, or `type: refactor` where appropriate.
