@@ -12,8 +12,6 @@ Use the `Box--overlay` with the `<details>` and [`<details-dialog>`](https://git
 
 Box overlays come in three widths. The default `Box--overlay` is 440px wide, `Box-overlay--narrow` is 320px wide, and `Box-overlay--wide` is 640px wide.
 
-**Note:** `position: fixed` has been disabled in this example
-
 ```html live
 
 <details class="details-reset details-overlay details-overlay-dark">
