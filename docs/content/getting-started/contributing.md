@@ -9,7 +9,7 @@ description: Guidelines for contributing to GitHub's CSS
 
 [Components](/css/components) are frequently used visual patterns we've abstracted into a set of convenient styles, that would be otherwise difficult to achieve with utilities and layout objects.
 
-Making a decision on whether new components should be added is done on a case by case basis. It's not always easy to make that decision but here are some questions you should ask yourself before moving forward with a pull request. The design systems team will help you make this decision.
+Making a decision on whether new components should be added is done on a case by case basis. It's not always easy to make that decision but here are some questions you should ask yourself before moving forward with a pull request. 
 
 - How often is this pattern used across the site?
 - Could these styles be achieved with existing components, objects, and utilities?
@@ -62,7 +62,7 @@ New styles we add should be used in as many places as makes sense to in producti
 
 If you get to this step you've helped contribute to a style guide that many of your colleagues use on a daily basis, you've contributed to an open source project that's referenced and used by many others, and you've helped improve the usability and consistency of GitHub for our users. Thank you!
 
-Let the [design systems team](https://github.com/github/design-systems) know if we can improve these guidelines and make following this process any easier.
+[Please open an issue](#step-1-open-an-issue) if we can improve these guidelines and make following this process any easier.
 
 ## Documentation structure
 
