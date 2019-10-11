@@ -52,6 +52,10 @@ Box overlays come in three widths. The default `Box--overlay` is 440px wide, `Bo
     </div>
   </details-dialog>
 </details>
+
+<!-- Temporary overrides (don't use in production) -->
+<style> .frame-example { min-height: 500px; } </style>
+<link href="https://unpkg.com/@github/details-dialog-element/index.css" rel="stylesheet" />
 ```
 
 In github.com there is a shared dialog partial. You will only have to pass in the modal content:

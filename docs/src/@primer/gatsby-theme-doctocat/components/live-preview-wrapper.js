@@ -7,7 +7,7 @@ function LivePreviewWrapper({children}) {
     <Frame>
       <link rel="stylesheet" href="https://github.com/site/assets/styleguide.css" />
       <style>{primerStyles}</style>
-      <div className="p-3">{children}</div>
+      <div className="frame-example p-3">{children}</div>
     </Frame>
   )
 }
