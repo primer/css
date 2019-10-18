@@ -69,6 +69,7 @@ remove(outDir)
         const meta = {bundles}
         return writeFile(join(outDir, 'meta.json'), JSON.stringify(meta, null, 2), encoding)
       })
+      .then(writeVariableData)
       .then(writeDeprecationData)
   })
   .catch(error => {
@@ -101,4 +102,11 @@ function writeDeprecationData() {
     }, {})
   }
   return writeFile(join(outDir, 'deprecations.json'), JSON.stringify(data, null, 2))
+}
+
+function writeVariableData() {
+  const analyzeVariables = require('./analyze-variables')
+  return analyzeVariables('src/support/index.scss').then(data =>
+    writeFile(join(outDir, 'variables.json'), JSON.stringify(data, null, 2))
+  )
 }
