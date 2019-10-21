@@ -155,3 +155,26 @@ Counters can also be used in `Box` headers to indicate the number of items in a 
   </ul>
 </div>
 ```
+
+## Diffstat
+
+Diffstats show how many deletions or additions a diff has. It's typically a row of 5 blocks that get colored with green or red.
+
+```html live
+<span class="diffstat tooltipped tooltipped-e" aria-label="6 changes: 3 additions &amp; 3 deletions">
+  6
+  <span class="diffstat-block-added"></span><span class="diffstat-block-added"></span><span class="diffstat-block-deleted"></span><span class="diffstat-block-deleted"></span><span class="diffstat-block-neutral"></span>
+</span>
+```
+
+Use the `text-green` and `text-red` utilities to add addtitional information about the size of the diff.
+
+```html live
+<span class="diffstat">
+    <span class="text-green">+7</span>
+    <span class="text-red">−2</span>
+    <span class="tooltipped tooltipped-e" aria-label="9 lines changed">
+      <span class="diffstat-block-added"></span><span class="diffstat-block-added"></span><span class="diffstat-block-added"></span><span class="diffstat-block-deleted"></span><span class="diffstat-block-neutral"></span>
+    </span>
+</span>
+```
