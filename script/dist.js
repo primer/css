@@ -65,7 +65,7 @@ async function dist() {
     const meta = {bundles}
     await writeFile(join(outDir, 'meta.json'), JSON.stringify(meta, null, 2), encoding)
     await writeDeprecationData()
-  } catch (err) {
+  } catch (error) {
     console.error(error)
     process.exitCode = 1
   }
