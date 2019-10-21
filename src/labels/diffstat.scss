@@ -24,7 +24,7 @@
 }
 
 .diffstat-block-added {
-  background-color: $green-400;
+  background-color: darken($green-400, 5%);
 }
 
 .diffstat-block-neutral {
