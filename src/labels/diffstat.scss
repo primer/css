@@ -16,21 +16,17 @@
   display: inline-block;
   width: $spacer-2;
   height: $spacer-2;
-  // stylelint-disable-next-line primer/variables
   margin-left: 1px;
 }
 
 .diffstat-block-deleted {
-  // stylelint-disable-next-line primer/variables
   background-color: $red-600;
 }
 
 .diffstat-block-added {
-  // stylelint-disable-next-line primer/variables
-  background-color: darken($green-400, 5%);
+  background-color: $green-400;
 }
 
 .diffstat-block-neutral {
-  // stylelint-disable-next-line primer/variables
   background-color: $gray-300;
 }
