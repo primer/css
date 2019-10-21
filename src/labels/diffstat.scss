@@ -1,0 +1,36 @@
+// diffstat
+//
+// Green/red blocks showing additions and deletions
+
+.diffstat {
+  font-size: $h6-size;
+  font-weight: $font-weight-bold;
+  color: $text-gray;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.diffstat-block-deleted,
+.diffstat-block-added,
+.diffstat-block-neutral {
+  display: inline-block;
+  width: $spacer-2;
+  height: $spacer-2;
+  // stylelint-disable-next-line primer/variables
+  margin-left: 1px;
+}
+
+.diffstat-block-deleted {
+  // stylelint-disable-next-line primer/variables
+  background-color: $red-600;
+}
+
+.diffstat-block-added {
+  // stylelint-disable-next-line primer/variables
+  background-color: darken($green-400, 5%);
+}
+
+.diffstat-block-neutral {
+  // stylelint-disable-next-line primer/variables
+  background-color: $gray-300;
+}
