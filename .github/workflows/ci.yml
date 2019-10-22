@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          version: 11
+          node-version: 11
       - name: install
         run: npm install
       - name: lint
