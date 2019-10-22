@@ -31,8 +31,9 @@
     }
   }
 
+  &.selected, // TODO@14.0.0: remove &.selected
   &[role=tab][aria-selected=true],
-  &.selected { // TODO@14.0.0: remove &.selected
+  &[aria-current]:not([aria-current=false]) {
     font-weight: $font-weight-bold;
     color: $text-gray-dark;
     border-bottom-color: $orange-600;
