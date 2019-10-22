@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const globby = require('globby')
 const postcss = require('postcss')
 const atImport = require('postcss-import')
 const syntax = require('postcss-scss')
@@ -25,7 +24,7 @@ function analyzeVariables(file) {
 
   return readFile(file, 'utf8')
     .then(css => processor.process(css, {from: file, map: false, syntax}))
-    .then(({root, css}) => {
+    .then(({root}) => {
       root.walkRules(':root', container => {
         container.walkDecls(decl => {
           const {prop, value} = decl
@@ -53,20 +52,20 @@ function analyzeVariables(file) {
       }
 
       // sort it alphabetically by key
-      return sortObject(variables, ([ak, av], [bk, bv]) => av.refs.length || ak.localeCompare(bk))
+      return sortObject(variables, ([ak], [bk]) => ak.localeCompare(bk))
     })
 }
 
 function variablePlugin(variables) {
   return postcss.plugin('analyze-variables', (options = {}) => {
     const {cwd = process.cwd()} = options
-    return (root, result) => {
+    return root => {
       const decls = new Map()
 
       root.walkDecls(/^\$/, decl => {
         const {prop, value} = decl
-        if (decl.parent === root && !decl.value.startsWith('(')) {
-          decl.value = decl.value.replace(/ *\!default$/, '')
+        if (decl.parent === root && !value.startsWith('(')) {
+          decl.value = value.replace(/ *!default$/, '')
           decls.set(prop, decl)
         }
       })
@@ -76,9 +75,9 @@ function variablePlugin(variables) {
         const values = [valueParser.stringify(nodes)]
         while (nodes.some(node => decls.has(node.value))) {
           for (const node of nodes) {
-            let {value} = node
+            const {value} = node
             if (decls.has(value)) {
-              node.value = decls.get(node.value).value
+              node.value = decls.get(value).value
             }
           }
           values.push(valueParser.stringify(nodes))
