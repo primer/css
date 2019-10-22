@@ -62,6 +62,25 @@ Use `Label--outline-green` in combination with `Label--outline` to communicate a
 <span title="Label: green outline label" class="Label Label--outline Label--outline-green">green outlined label</span>
 ```
 
+## Issue Labels
+
+Issue Labels are used for adding labels to issues and pull requests. They also come with emoji support.
+
+```html live
+<span class="IssueLabel bg-blue text-white mr-1" title="Label: good first issue">good first issue</span>
+<span class="IssueLabel bg-red text-white mr-1" title="Label: bug">bug 🐛</span>
+<span class="IssueLabel bg-green text-white" title="Label: bug">help wanted</span>
+```
+
+If an Issue Label needs to be bigger, add the `.IssueLabel--big` modifier.
+
+```html live
+<span class="IssueLabel IssueLabel--big bg-blue text-white mr-1" title="Label: good first issue">good first issue</span>
+<span class="IssueLabel IssueLabel--big bg-red text-white mr-1" title="Label: bug">bug 🐛</span>
+<span class="IssueLabel IssueLabel--big bg-green text-white" title="Label: bug">help wanted</span>
+```
+
+
 ## States
 
 Use state labels to inform users of an items status. States are large labels with bolded text. The default state has a gray background.
