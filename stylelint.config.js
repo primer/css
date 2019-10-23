@@ -5,7 +5,20 @@ module.exports = {
   plugins: ['./lib/stylelint-todo'],
   syntax: 'scss',
   rules: {
+    'primer-css/TODO': [true, {currentVersion, severity: 'error'}],
     'primer/no-override': false,
-    'primer-css/TODO': [true, {currentVersion, severity: 'error'}]
+    'primer/colors': true,
+    'primer/spacing': true,
+    'primer/typography': [
+      true,
+      {
+        rules: ({rules}) => {
+          rules['font-size'].values.unshift('$h*-size-mobile')
+          return rules
+        }
+      }
+    ],
+    'primer/box-shadow': true,
+    'primer/borders': true
   }
 }
