@@ -234,7 +234,7 @@ samp {
  */
 
 figure {
-  margin: 1em 40px;
+  margin: 1em $spacer-6;
 }
 
 /**
@@ -269,7 +269,7 @@ textarea {
  */
 
 optgroup {
-  font-weight: bold;
+  font-weight: $font-weight-bold;
 }
 
 /**

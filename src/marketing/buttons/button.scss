@@ -3,21 +3,21 @@
   padding: $spacer-3 $spacer-4;
   font-size: $h5-size;
   font-weight: $font-weight-semibold;
-  color: $white;
+  color: $tooltip-text-color;
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
   background-color: $blue-mktg;
-  border: 1px solid $blue-mktg;
+  border: $border-width $border-style $blue-mktg;
   border-radius: $border-radius;
   transition: $transition-time / 2;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   &:hover {
     text-decoration: none;
-    background-color: $blue-500;
-    border-color: $blue-500;
+    background-color: $bg-blue;
+    border-color: $border-blue;
   }
 
   &:focus {
@@ -38,7 +38,7 @@
   border-color: $green-mktg;
 
   &:hover {
-    background-color: $green-500;
+    background-color: $bg-green;
     border-color: $green-500;
   }
 
@@ -58,7 +58,7 @@
   border-color: rgba($blue-mktg, 0.5);
 
   &:hover {
-    color: $blue-500;
+    color: $text-blue;
     text-decoration: none;
     background-color: rgba($white, 0);
     border-color: rgba($blue-mktg, 1);
@@ -67,13 +67,13 @@
 
 @mixin btn-transparent-active {
   color: $gray-800;
-  background-color: $white;
+  background-color: $bg-white;
   background-image: none;
   border-color: $white;
 }
 
 .btn-transparent {
-  color: $white;
+  color: $tooltip-text-color;
   background-color: transparent;
   background-image: none;
   border: $border-width $border-style $white-fade-50;

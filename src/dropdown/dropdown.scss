@@ -41,7 +41,7 @@
   }
 
   &::before {
-    border: $spacer-2 solid transparent;
+    border: $spacer-2 $border-style transparent;
     border-bottom-color: $border-black-fade;
   }
 
@@ -185,19 +185,19 @@
   &::before {
     bottom: -$spacer-2;
     left: 9px;
-    border-top: $spacer-2 solid $black-fade-15;
-    border-right: $spacer-2 solid transparent;
+    border-top: $spacer-2 $border-style $border-black-fade;
+    border-right: $spacer-2 $border-style transparent;
     border-bottom: 0;
-    border-left: $spacer-2 solid transparent;
+    border-left: $spacer-2 $border-style transparent;
   }
 
   &::after {
     bottom: -7px;
     left: 10px;
-    border-top: 7px solid $white;
-    border-right: 7px solid transparent;
+    border-top: 7px $border-style $white;
+    border-right: 7px $border-style transparent;
     border-bottom: 0;
-    border-left: 7px solid transparent;
+    border-left: 7px $border-style transparent;
   }
 }
 
