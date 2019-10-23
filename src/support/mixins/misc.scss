@@ -12,7 +12,7 @@
     pointer-events: none;
     content: " ";
     border-color: transparent;
-    border-style: solid solid outset;
+    border-style: $border-style $border-style outset;
   }
 
   &::after {

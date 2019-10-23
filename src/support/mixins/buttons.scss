@@ -73,7 +73,7 @@
 
     .Counter {
       color: darken($bg, 8%);
-      background-color: $white;
+      background-color: $bg-white;
     }
   }
 }
@@ -153,7 +153,7 @@
   &.disabled {
     color: $black-fade-30;
     background-color: $bg-white;
-    border-color: $black-fade-15;
+    border-color: $border-black-fade;
     box-shadow: none;
   }
 }

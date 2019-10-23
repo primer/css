@@ -26,8 +26,8 @@ label {
   background-color: $bg-white;
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
-  border: 1px solid $border-gray-dark;
-  border-radius: 3px;
+  border: $border-width $border-style $border-gray-dark;
+  border-radius: $border-radius;
   outline: none;
   box-shadow: $form-control-shadow;
 
@@ -126,7 +126,7 @@ label {
       padding: 2px $spacer-1;
       font-style: normal;
       background: $yellow-100;
-      border-radius: 3px;
+      border-radius: $border-radius;
     }
   }
 
@@ -142,7 +142,7 @@ label {
     margin: 0;
     font-size: $font-size-small;
     font-weight: $font-weight-normal;
-    color: $gray-600;
+    color: $text-gray;
   }
 }
 
@@ -176,7 +176,7 @@ label {
       label {
         display: inline-block;
         margin: 5px 0 0;
-        color: $gray-600;
+        color: $text-gray;
       }
 
       img {
@@ -223,8 +223,8 @@ input::-webkit-inner-spin-button {
   font-size: $h5-size;
   color: $yellow-900;
   background: $yellow-100;
-  border: 1px solid $border-yellow;
-  border-radius: 3px;
+  border: $border-width $border-style $border-yellow;
+  border-radius: $border-radius;
 
   p {
     margin: 0;

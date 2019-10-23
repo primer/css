@@ -6,7 +6,7 @@
   font: 12px $mono-font;
   color: rgba($black, 0.6);
   background-color: lighten($blue-100, 3%);
-  border-radius: 3px;
+  border-radius: $border-radius;
 
   .octicon {
     margin: 1px -2px 0 0;

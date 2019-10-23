@@ -3,7 +3,7 @@
   overflow: hidden; // Ensure page layout in Firefox should images fail to load
   line-height: $lh-condensed-ultra;
   vertical-align: middle;
-  border-radius: 3px;
+  border-radius: $border-radius;
 }
 
 .avatar-small { border-radius: 2px; }

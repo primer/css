@@ -119,11 +119,11 @@ dl.form-group > dd {
   font-size: 13px;
   line-height: 16px;
   color: $text-gray;
-  background-color: $gray-000;
-  border: 1px solid darken($gray-300, 5%);
+  background-color: $bg-gray-light;
+  border: $border-width $border-style darken($gray-300, 5%);
   border-top: 0;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
 
   .default,
   .loading,
@@ -216,13 +216,13 @@ dl.form-group > dd {
 .upload-enabled {
   textarea {
     display: block;
-    border-bottom: 1px dashed lighten($gray-300, 5%);
+    border-bottom: $border-width dashed lighten($gray-300, 5%);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   &.focused {
-    border-radius: 3px;
+    border-radius: $border-radius;
     box-shadow: $form-control-shadow, $btn-input-focus-shadow;
 
     .form-control {
@@ -255,7 +255,7 @@ dl.form-group > dd {
   }
 
   .comment {
-    border: 1px solid darken($gray-300, 5%);
+    border: $border-width $border-style darken($gray-300, 5%);
   }
 
   .comment-form-error { margin-bottom: $spacer-2; }
@@ -310,15 +310,15 @@ div.composer {
 
 h2.account {
   margin: 15px 0 0;
-  font-size: 18px;
+  font-size: $h3-size-mobile;
   font-weight: $font-weight-normal;
-  color: $gray-600;
+  color: $text-gray;
 }
 
 p.explain {
   position: relative;
   font-size: $font-size-small;
-  color: $gray-600;
+  color: $text-gray;
 
   strong {
     color: $text-gray-dark;

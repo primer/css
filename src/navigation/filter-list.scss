@@ -33,7 +33,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: $border-radius;
 
   &:hover {
     text-decoration: none;

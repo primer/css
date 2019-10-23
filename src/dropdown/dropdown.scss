@@ -8,7 +8,7 @@
   height: 0;
   vertical-align: middle;
   content: "";
-  border-style: solid;
+  border-style: $border-style;
   border-width: $spacer-1 $spacer-1 0;
   border-right-color: transparent;
   border-bottom-color: transparent;
@@ -29,7 +29,7 @@
   list-style: none;
   background-color: $bg-white;
   background-clip: padding-box;
-  border: $border-width $border-style $black-fade-15;
+  border: $border-width $border-style $border-black-fade;
   border-radius: $spacer-1;
   box-shadow: $box-shadow-large;
 
@@ -42,11 +42,11 @@
 
   &::before {
     border: $spacer-2 solid transparent;
-    border-bottom-color: $black-fade-15;
+    border-bottom-color: $border-black-fade;
   }
 
   &::after {
-    border: 7px solid transparent;
+    border: 7px $border-style transparent;
     border-bottom-color: $white;
   }
 
@@ -136,7 +136,7 @@
     right: -$spacer-3;
     left: auto;
     border-color: transparent;
-    border-left-color: $black-fade-15;
+    border-left-color: $border-black-fade;
   }
 
   &::after {
@@ -159,7 +159,7 @@
     top: $spacer-2;
     left: -$spacer-3;
     border-color: transparent;
-    border-right-color: $black-fade-15;
+    border-right-color: $border-black-fade;
   }
 
   &::after {
@@ -250,13 +250,13 @@
 
 // Dark dropdowns
 .dropdown-menu-dark {
-  color: $white;
+  color: $text-white;
   background: $gray-800;
-  border-color: $gray-700;
+  border-color: $border-gray-darker;
   box-shadow: $box-shadow-large;
 
   &::before {
-    border-bottom-color: $gray-700;
+    border-bottom-color: $border-gray-darker;
   }
 
   &::after {
@@ -279,7 +279,7 @@
 
   &.dropdown-menu-w {
     &::before {
-      border-color: transparent transparent transparent $gray-700;
+      border-color: transparent transparent transparent $border-gray-darker;
     }
 
     &::after {
@@ -289,7 +289,7 @@
 
   &.dropdown-menu-e {
     &::before {
-      border-color: transparent $gray-700 transparent transparent;
+      border-color: transparent $border-gray-darker transparent transparent;
     }
 
     &::after {
@@ -299,7 +299,7 @@
 
   &.dropdown-menu-ne {
     &::before {
-      border-color: $gray-700 transparent transparent transparent;
+      border-color: $border-gray-darker transparent transparent transparent;
     }
 
     &::after {

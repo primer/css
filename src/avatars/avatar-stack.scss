@@ -77,7 +77,7 @@
 .avatar.avatar-more {
   z-index: 1;
   margin-right: 0;
-  background: $gray-100;
+  background: $bg-gray;
 
   &::before,
   &::after {
@@ -122,7 +122,7 @@
 
     &::after {
       width: 2px;
-      background: $gray-100;
+      background: $bg-gray;
     }
   }
 

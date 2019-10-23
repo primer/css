@@ -17,7 +17,7 @@
   text-align: center;
   white-space: nowrap;
   background-color: $gray-500;
-  border-radius: 3px;
+  border-radius: $border-radius;
 }
 
 .State--green { background-color: darken($green-400, 5%); }

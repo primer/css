@@ -5,8 +5,8 @@
   padding: $spacer-3;
   color: $blue-800;
   background-color: $blue-100;
-  border: 1px solid $border-black-fade;
-  border-radius: 3px;
+  border: $border-width $border-style $border-black-fade;
+  border-radius: $border-radius;
 
   p:last-child {
     margin-bottom: 0;
@@ -51,24 +51,24 @@
 .flash-warn {
   color: $yellow-900;
   background-color: $yellow-100;
-  border-color: $black-fade-15;
+  border-color: $border-black-fade;
 }
 
 .flash-error {
   color: $red-900;
-  background-color: $red-100;
-  border-color: $black-fade-15;
+  background-color: $bg-red-light;
+  border-color: $border-black-fade;
 }
 
 .flash-success {
   color: $green-800;
-  background-color: $green-100;
-  border-color: $black-fade-15;
+  background-color: $bg-green-light;
+  border-color: $border-black-fade;
 }
 
 .flash-full {
   margin-top: -1px;
-  border-width: 1px 0;
+  border-width: $border-width 0;
   border-radius: 0;
 }
 
