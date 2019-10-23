@@ -42,14 +42,14 @@ function migrate(path) {
   return readFile(path, 'utf8').then(input => {
     if (!IMPORT_PATTERN.test(input)) {
       warn(`No SCSS imports found in ${path}`)
-      return false
+      return 0
     }
 
     const [output, reps] = replace(input)
     if (reps.length) {
       return writeFile(path, output, 'utf8').then(() => reps)
     } else {
-      return false
+      return 0
     }
   })
 }
