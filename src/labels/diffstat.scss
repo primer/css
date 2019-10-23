@@ -20,7 +20,7 @@
 }
 
 .diffstat-block-deleted {
-  background-color: $red-600;
+  background-color: $bg-diffstat-deleted;
 }
 
 .diffstat-block-added {
@@ -28,5 +28,5 @@
 }
 
 .diffstat-block-neutral {
-  background-color: $gray-300;
+  background-color: $bg-diffstat-neutral;
 }
