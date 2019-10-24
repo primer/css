@@ -1,6 +1,8 @@
 // stylelint-disable selector-max-type, block-opening-brace-space-before, no-duplicate-selectors
 
-// A button with an X to close stuff
+// Close button
+//
+// Typically used with an octicon-x
 .close-button {
   padding: 0;
   background: transparent;
