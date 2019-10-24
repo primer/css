@@ -155,3 +155,36 @@
     box-shadow: none;
   }
 }
+
+// Octicon button
+//
+// Icon-only buttons
+.btn-octicon {
+  display: inline-block;
+  // stylelint-disable-next-line primer/variables
+  padding: 5px;
+  // stylelint-disable-next-line primer/variables
+  margin-left: 5px;
+  line-height: $lh-condensed-ultra;
+  color: $text-gray;
+  vertical-align: middle;
+  // For `<button>` elements
+  background: transparent;
+  border: 0;
+
+  &:hover { color: $text-blue; }
+
+  // stylelint-disable-next-line primer/no-override
+  &.disabled {
+    // stylelint-disable-next-line primer/variables
+    color: $gray-400;
+    cursor: default;
+
+    // stylelint-disable-next-line primer/variables
+    &:hover { color: $gray-400; }
+  }
+}
+
+.btn-octicon-danger:hover {
+  color: $text-red;
+}
