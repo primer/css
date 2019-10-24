@@ -139,6 +139,7 @@
 
 /* Large leading paragraphs */
 .lead {
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 30px;
   font-size: $h3-size;
   font-weight: $font-weight-light;

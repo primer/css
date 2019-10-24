@@ -45,6 +45,7 @@
     left: 0;
     width: 100%;
     content: "";
+    // stylelint-disable-next-line primer/borders
     border-bottom: 2px dashed $border-gray;
   }
 

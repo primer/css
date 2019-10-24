@@ -17,6 +17,7 @@
   line-height: $lh-default;
   color: $text-gray;
   text-align: center;
+  // stylelint-disable-next-line primer/borders
   border-bottom: 2px $border-style transparent;
 
   &:hover,
@@ -34,6 +35,7 @@
   &.selected {
     font-weight: $font-weight-bold;
     color: $text-gray-dark;
+    // stylelint-disable-next-line primer/borders
     border-bottom-color: $orange-600;
 
     .UnderlineNav-octicon {
@@ -64,6 +66,7 @@
 }
 
 .UnderlineNav-octicon {
+  // stylelint-disable-next-line primer/colors
   color: $gray-400;
 }
 

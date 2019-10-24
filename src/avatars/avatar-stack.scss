@@ -30,9 +30,12 @@
     width: 20px;
     height: 20px;
     box-sizing: content-box;
+    // stylelint-disable-next-line primer/spacing
     margin-right: -11px;
     background-color: $bg-white;
+    // stylelint-disable-next-line primer/borders
     border-right: $border-width $border-style $white;
+    // stylelint-disable-next-line primer/borders
     border-radius: 2px;
     transition: margin 0.1s ease-in-out;
 
@@ -47,6 +50,7 @@
 
     // stylelint-disable selector-max-type
     img {
+      // stylelint-disable-next-line primer/borders
       border-radius: 2px;
     }
     // stylelint-enable selector-max-type
@@ -60,6 +64,7 @@
 
   &:hover {
     .avatar {
+      // stylelint-disable-next-line primer/spacing
       margin-right: 3px;
     }
 
@@ -85,17 +90,20 @@
     display: block;
     height: 20px;
     content: "";
+    // stylelint-disable-next-line primer/borders
     border-radius: 2px;
     outline: $border-width $border-style $white;
   }
 
   &::before {
     width: 17px;
+    // stylelint-disable-next-line primer/colors
     background: $gray-200;
   }
 
   &::after {
     width: 14px;
+    // stylelint-disable-next-line primer/colors
     background: $gray-300;
   }
 }
@@ -109,11 +117,13 @@
 
     &:hover .avatar {
       margin-right: 0;
+      // stylelint-disable-next-line primer/spacing
       margin-left: 3px;
     }
   }
 
   .avatar.avatar-more {
+    // stylelint-disable-next-line primer/colors
     background: $gray-300;
 
     &::before {
@@ -128,8 +138,10 @@
 
   .avatar {
     margin-right: 0;
+    // stylelint-disable-next-line primer/spacing
     margin-left: -11px;
     border-right: 0;
+    // stylelint-disable-next-line primer/borders
     border-left: $border-width $border-style $white;
   }
 }

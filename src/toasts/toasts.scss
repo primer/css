@@ -3,9 +3,11 @@
 .Toast {
   display: flex;
   margin: $spacer-2;
+  // stylelint-disable-next-line primer/colors
   color: $black;
   background-color: $bg-white;
   border-radius: $border-radius;
+  // stylelint-disable-next-line primer/box-shadow
   box-shadow: inset 0 0 0 1px $border-gray-dark, $box-shadow-medium;
 
   @include breakpoint(sm) {
@@ -44,6 +46,7 @@
   }
 
   &:active {
+    // stylelint-disable-next-line primer/colors
     color: $gray-400;
   }
 }
@@ -56,6 +59,7 @@
 
 .Toast--warning .Toast-icon {
   color: $text-gray-dark;
+  // stylelint-disable-next-line primer/colors
   background-color: $yellow-600;
 }
 
@@ -64,6 +68,7 @@
 }
 
 .Toast--loading .Toast-icon {
+  // stylelint-disable-next-line primer/colors
   background-color: $gray-600;
 }
 

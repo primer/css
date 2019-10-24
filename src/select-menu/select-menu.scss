@@ -41,6 +41,7 @@
   left: 0;
   pointer-events: none;
   content: "";
+  // stylelint-disable-next-line primer/colors
   background-color: $black-fade-50;
 
   @include breakpoint(sm) {
@@ -62,7 +63,9 @@
   pointer-events: auto;
   flex-direction: column;
   background-color: $bg-gray;
+  // stylelint-disable-next-line primer/borders
   border-radius: $border-radius * 2;
+  // stylelint-disable-next-line primer/box-shadow
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
   animation: SelectMenu-modal-animation 0.12s cubic-bezier(0, 0.1, 0.1, 1) backwards;
 
@@ -215,6 +218,7 @@
 .SelectMenu-tabs {
   display: flex;
   flex-shrink: 0;
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: -$border-width; // hide border of element below
   overflow-x: auto;
   overflow-y: hidden;
@@ -241,6 +245,7 @@
   text-align: center;
   background-color: transparent;
   border: 0;
+  // stylelint-disable-next-line primer/box-shadow
   box-shadow: inset 0 -1px 0 $border-color;
 
   @include breakpoint(sm) {
@@ -256,6 +261,7 @@
     z-index: 1; // Keeps box-shadow visible when hovering
     color: $text-gray-dark;
     background-color: $bg-white;
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0 1px $border-color;
 
     @include breakpoint(sm) {
@@ -335,6 +341,7 @@
 
   // Show bottom "border" for the last item when the list doesn't take up the whole height
   .SelectMenu-item:last-child {
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 $border-width 0 lighten($gray-200, 3%);
   }
 }
@@ -382,15 +389,18 @@
 
   .SelectMenu-item:active {
     color: $text-white;
+    // stylelint-disable-next-line primer/colors
     background-color: $blue-400;
   }
 
   body:not(.intent-mouse) .SelectMenu-tab:focus {
+    // stylelint-disable-next-line primer/colors
     background-color: $blue-100;
   }
 
   .SelectMenu-tab:not([aria-checked="true"]):hover {
     color: $text-gray-dark;
+    // stylelint-disable-next-line primer/colors
     background-color: $gray-200;
   }
 

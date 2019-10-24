@@ -5,6 +5,7 @@ dl.form-group > dd {
     &.is-autocheck-loading,
     &.is-autocheck-successful,
     &.is-autocheck-errored {
+      // stylelint-disable-next-line primer/spacing
       padding-right: 30px; // Leave some space for our validation icons
     }
 
@@ -53,6 +54,7 @@ dl.form-group > dd {
   display: inline-block;
   width: 16px;
   height: 16px;
+  // stylelint-disable-next-line primer/spacing
   margin-left: 5px;
 
   .octicon {
@@ -68,6 +70,7 @@ dl.form-group > dd {
 
   .octicon-check {
     display: inline-block;
+    // stylelint-disable-next-line primer/colors
     color: $green;
     fill: $green;
   }
@@ -96,6 +99,7 @@ dl.form-group > dd {
 
 .status-indicator-loading {
   width: 16px;
+  // stylelint-disable-next-line primer/colors
   background: url("/images/spinners/octocat-spinner-32-EAF2F5.gif") 0 0 no-repeat;
   background-size: 16px;
 }
@@ -114,12 +118,16 @@ dl.form-group > dd {
 // Previously part of `_forms.scss` in Primer. Needs accounting for.
 
 .drag-and-drop {
+  // stylelint-disable-next-line primer/spacing
   padding: 7px 10px;
   margin: 0;
+  // stylelint-disable-next-line primer/typography
   font-size: 13px;
+  // stylelint-disable-next-line primer/typography
   line-height: 16px;
   color: $text-gray;
   background-color: $bg-gray-light;
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style darken($gray-300, 5%);
   border-top: 0;
   border-bottom-right-radius: $border-radius;
@@ -193,7 +201,9 @@ dl.form-group > dd {
 .manual-file-chooser {
   position: absolute;
   width: 240px;
+  // stylelint-disable-next-line primer/spacing
   padding: 5px;
+  // stylelint-disable-next-line primer/spacing
   margin-left: -80px;
   cursor: pointer;
   opacity: 0.0001;
@@ -208,6 +218,7 @@ dl.form-group > dd {
   .manual-file-chooser {
     top: 0;
     padding: 0;
+    // stylelint-disable-next-line primer/typography
     line-height: 34px;
   }
 }
@@ -216,6 +227,7 @@ dl.form-group > dd {
 .upload-enabled {
   textarea {
     display: block;
+    // stylelint-disable-next-line primer/borders
     border-bottom: $border-width dashed lighten($gray-300, 5%);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -230,6 +242,7 @@ dl.form-group > dd {
     }
 
     .drag-and-drop {
+      // stylelint-disable-next-line primer/borders
       border-color: lighten($blue-400, 8%);
     }
   }
@@ -238,6 +251,7 @@ dl.form-group > dd {
 // Dropping a file on top
 .dragover textarea,
 .dragover .drag-and-drop {
+  // stylelint-disable-next-line primer/box-shadow
   box-shadow: rgba(#c9ff00, 1) 0 0 3px;
 }
 
@@ -255,6 +269,7 @@ dl.form-group > dd {
   }
 
   .comment {
+    // stylelint-disable-next-line primer/borders
     border: $border-width $border-style darken($gray-300, 5%);
   }
 
@@ -284,6 +299,7 @@ dl.form-group > dd {
 // Used in our boxed-group-less form styles. Give the sumbit button enough space
 // to breathe without the need for the extra hr.
 .form-action-spacious {
+  // stylelint-disable-next-line primer/spacing
   margin-top: 10px;
 }
 
@@ -302,6 +318,7 @@ div.composer {
   min-height: 200px;
 }
 
+// stylelint-disable-next-line primer/spacing
 .composer .tabnav { margin: 0 0 10px; }
 
 // Misc CSS
@@ -309,6 +326,7 @@ div.composer {
 // Previously part of `_forms.scss` in Primer. Needs accounting for.
 
 h2.account {
+  // stylelint-disable-next-line primer/spacing
   margin: 15px 0 0;
   font-size: $h3-size-mobile;
   font-weight: $font-weight-normal;
@@ -325,7 +343,9 @@ p.explain {
   }
 
   .octicon {
+    // stylelint-disable-next-line primer/spacing
     margin-right: 5px;
+    // stylelint-disable-next-line primer/colors
     color: $gray-400;
   }
 
