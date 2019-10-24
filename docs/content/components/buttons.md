@@ -15,13 +15,15 @@ Use the standard—yet classy—`.btn` for form actions and primary page actions
 When using a `<button>` element, **always specify a `type`**. When using a `<a>` element, **always add `role="button"` for accessibility**.
 
 ```html live
-<button class="btn" type="button">Button button</button> <a class="btn" href="#url" role="button">Link button</a>
+<button class="btn mr-2" type="button">Button button</button>
+<a class="btn" href="#url" role="button">Link button</a>
 ```
 
 You can find them in two sizes: the default `.btn` and the smaller `.btn-sm`.
 
 ```html live
-<button class="btn" type="button">Button</button> <button class="btn btn-sm" type="button">Small button</button>
+<button class="btn mr-2" type="button">Button</button>
+<button class="btn btn-sm" type="button">Small button</button>
 ```
 
 ## Primary button
@@ -29,7 +31,7 @@ You can find them in two sizes: the default `.btn` and the smaller `.btn-sm`.
 Primary buttons are green and are used to indicate the _primary_ action on a page. When you need your buttons to stand out, use `.btn.btn-primary`. You can use it with both button sizes—just add `.btn-primary`.
 
 ```html live
-<button class="btn btn-primary" type="button">Primary button</button>
+<button class="btn btn-primary mr-2" type="button">Primary button</button>
 <button class="btn btn-sm btn-primary" type="button">Small primary button</button>
 ```
 
@@ -38,7 +40,7 @@ Primary buttons are green and are used to indicate the _primary_ action on a pag
 Danger buttons are red. They help reiterate that the intended action is important or potentially dangerous (e.g., deleting a repo or transferring ownership). Similar to the primary buttons, just add `.btn-danger`.
 
 ```html live
-<button class="btn btn-danger" type="button">Danger button</button>
+<button class="btn btn-danger mr-2" type="button">Danger button</button>
 <button class="btn btn-sm btn-danger" type="button">Small danger button</button>
 ```
 
@@ -47,7 +49,7 @@ Danger buttons are red. They help reiterate that the intended action is importan
 Outline buttons downplay an action as they appear like boxy links. Just add `.btn-outline` and go.
 
 ```html live
-<button class="btn btn-outline" type="button">Outline button</button>
+<button class="btn btn-outline mr-2" type="button">Outline button</button>
 <button class="btn btn-sm btn-outline" type="button">Outline button</button>
 ```
 
@@ -58,19 +60,17 @@ Use `.btn-large` to increase the padding and border radius of a button. This is 
 [Type scale utilities](https://styleguide.github.com/primer/utilities/typography/#type-scale-utilities) can be used to alter the font-size if needed. Padding is applied in em's so that it scales proportionally with the font-size.
 
 ```html live
-<p>
-  <a class="btn btn-large" href="#url" role="button">Large link button</a>
-  <button class="btn btn-large" type="button">Large button button</button>
-</p>
+<button class="btn btn-large mr-2" type="button">Large button</button>
+<a class="btn btn-large" href="#url" role="button">Large link button</a>
 ```
 
 Use `.btn-large` with a type scale utility to transform the text to a bigger size.
 
 ```html live
-<p class="f3">
+<div class="f3">
+  <button class="btn btn-large btn-outline-blue mr-2" type="button">Large button button</button>
   <a class="btn btn-large" href="#url" role="button">Large link button</a>
-  <button class="btn btn-large btn-outline-blue" type="button">Large button button</button>
-</p>
+</div>
 ```
 
 ## Disabled state
@@ -78,24 +78,24 @@ Use `.btn-large` with a type scale utility to transform the text to a bigger siz
 Disable `<button>` elements with the boolean `disabled` attribute and `<a>` elements with the `.disabled` class.
 
 ```html live
-<button class="btn" type="button" disabled>Disabled button</button>
+<button class="btn mr-2" type="button" disabled>Disabled button</button>
 <a class="btn disabled" href="#url" role="button">Disabled button</a>
 ```
 
 Similar styles are applied to primary, danger, and outline buttons:
 
 ```html live
-<button class="btn btn-primary" type="button" disabled>Disabled button</button>
+<button class="btn btn-primary mr-2" type="button" disabled>Disabled button</button>
 <a class="btn btn-primary disabled" href="#url" role="button">Disabled button</a>
 ```
 
 ```html live
-<button class="btn btn-danger" type="button" disabled>Disabled button</button>
+<button class="btn btn-danger mr-2" type="button" disabled>Disabled button</button>
 <a class="btn btn-danger disabled" href="#url" role="button">Disabled button</a>
 ```
 
 ```html live
-<button class="btn btn-outline" type="button" disabled>Disabled button</button>
+<button class="btn btn-outline mr-2" type="button" disabled>Disabled button</button>
 <a class="btn btn-outline disabled" href="#url" role="button">Disabled button</a>
 ```
 
@@ -104,8 +104,8 @@ Similar styles are applied to primary, danger, and outline buttons:
 Make any button full-width by adding `.btn-block`. It adds `width: 100%;`, changes the `display` from `inline-block` to `block`, and centers the button text.
 
 ```html live
-<p><button class="btn btn-block" type="button">Block button</button></p>
-<p><button class="btn btn-sm btn-block" type="button">Small block button</button></p>
+<button class="btn btn-block mb-2" type="button">Block button</button>
+<button class="btn btn-sm btn-block" type="button">Small block button</button>
 ```
 
 ## Link button
@@ -138,24 +138,20 @@ You can easily append a count to a **small button**. Add the `.with-count` class
 You can also use the [counter](./labels#counters) component within buttons:
 
 ```html live
-<button class="btn" type="button">
-  Button
-  <span class="Counter">12</span>
+<button class="btn mr-2" type="button">
+  Button <span class="Counter">12</span>
 </button>
 
-<button class="btn btn-primary" type="button">
-  Button
-  <span class="Counter">12</span>
+<button class="btn btn-primary mr-2" type="button">
+  Button <span class="Counter">12</span>
 </button>
 
-<button class="btn btn-danger" type="button">
-  Button
-  <span class="Counter">12</span>
+<button class="btn btn-danger mr-2" type="button">
+  Button <span class="Counter">12</span>
 </button>
 
 <button class="btn btn-outline" type="button">
-  Button
-  <span class="Counter">12</span>
+  Button <span class="Counter">12</span>
 </button>
 ```
 
