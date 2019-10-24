@@ -131,3 +131,27 @@
     }
   }
 }
+
+// Invisible button
+//
+// Typically used as a "cancel" button next to a .btn
+.btn-invisible {
+  color: $text-blue;
+  background-color: $bg-white; // Reset default gradient backgrounds and colors
+  background-image: none;
+  border: 0;
+
+  // stylelint-disable-next-line primer/no-override
+  &:hover,
+  &:active,
+  &:focus,
+  &.selected,
+  &.zeroclipboard-is-hover,
+  &.zeroclipboard-is-active {
+    color: $text-blue;
+    background: none;
+    outline: none;
+    // stylelint-disable-next-line primer/variables
+    box-shadow: none;
+  }
+}
