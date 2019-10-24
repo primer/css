@@ -118,6 +118,17 @@ Create a button that looks like a link with `.btn-link`. Rather than using an `<
 <button class="btn-link" type="button">Link button</button>
 ```
 
+## Close button
+
+When using the `octicon-x` icon for a close button, add `.close-button` to remove the default button styles.
+
+```html live
+<button class="close-button" type="button">
+  <!-- <%= octicon "x" %> -->
+  <svg width="12" height="16" viewBox="0 0 12 16" class="octicon octicon-x" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z" /></svg>
+</button>
+```
+
 ## Button with counts
 
 You can easily append a count to a **small button**. Add the `.with-count` class to the `.btn-sm` and then add the `.social-count` after the button.

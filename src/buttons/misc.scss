@@ -1,5 +1,13 @@
 // stylelint-disable selector-max-type, block-opening-brace-space-before, no-duplicate-selectors
 
+// A button with an X to close stuff
+.close-button {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
 // Hidden text button
 //
 // Use `.hidden-text-expander` to indicate and expand hidden text.
