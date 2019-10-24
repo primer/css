@@ -115,7 +115,7 @@ Create a button that looks like a link with `.btn-link`. Rather than using an `<
 **The `.btn-link` class is not designed to be used with `.btn`; the overlapping styles are not compatible.**
 
 ```html live
-<p><button class="btn-link" type="button">Link button</button></p>
+<button class="btn-link" type="button">Link button</button>
 ```
 
 ## Button with counts
