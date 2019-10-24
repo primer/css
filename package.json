@@ -73,7 +73,7 @@
     "style-loader": "^0.18.2",
     "styled-components": "4.1.2",
     "stylelint": "^10.1.0",
-    "stylelint-config-primer": "0.0.0-345f1d0",
+    "stylelint-config-primer": "0.0.0-48a08b5",
     "stylelint-disable": "^0.1.4",
     "stylelint-only": "^1.0.0",
     "table": "5.2.3",
