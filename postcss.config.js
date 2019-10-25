@@ -1,7 +1,9 @@
+const sassPluginName = process.env.SASS_PLUGIN_NAME || '@csstools/postcss-sass'
+
 module.exports = {
   parser: 'postcss-scss',
   plugins: {
-    '@csstools/postcss-sass': {
+    [sassPluginName]: {
       includePaths: ['node_modules'],
       outputStyle: 'compressed'
     },
