@@ -65,6 +65,7 @@
     "postcss": "7.0.14",
     "postcss-load-config": "2.0.0",
     "postcss-loader": "^2.0.6",
+    "postcss-node-sass": "^2.1.8",
     "postcss-scss": "2.0.0",
     "prop-types": "^15.6.2",
     "semver": "5.7.1",
