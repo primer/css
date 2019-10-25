@@ -15,13 +15,15 @@ Use the standard—yet classy—`.btn` for form actions and primary page actions
 When using a `<button>` element, **always specify a `type`**. When using a `<a>` element, **always add `role="button"` for accessibility**.
 
 ```html live
-<button class="btn" type="button">Button button</button> <a class="btn" href="#url" role="button">Link button</a>
+<button class="btn mr-2" type="button">Button button</button>
+<a class="btn" href="#url" role="button">Link button</a>
 ```
 
 You can find them in two sizes: the default `.btn` and the smaller `.btn-sm`.
 
 ```html live
-<button class="btn" type="button">Button</button> <button class="btn btn-sm" type="button">Small button</button>
+<button class="btn mr-2" type="button">Button</button>
+<button class="btn btn-sm" type="button">Small button</button>
 ```
 
 ## Primary button
@@ -29,7 +31,7 @@ You can find them in two sizes: the default `.btn` and the smaller `.btn-sm`.
 Primary buttons are green and are used to indicate the _primary_ action on a page. When you need your buttons to stand out, use `.btn.btn-primary`. You can use it with both button sizes—just add `.btn-primary`.
 
 ```html live
-<button class="btn btn-primary" type="button">Primary button</button>
+<button class="btn btn-primary mr-2" type="button">Primary button</button>
 <button class="btn btn-sm btn-primary" type="button">Small primary button</button>
 ```
 
@@ -38,7 +40,7 @@ Primary buttons are green and are used to indicate the _primary_ action on a pag
 Danger buttons are red. They help reiterate that the intended action is important or potentially dangerous (e.g., deleting a repo or transferring ownership). Similar to the primary buttons, just add `.btn-danger`.
 
 ```html live
-<button class="btn btn-danger" type="button">Danger button</button>
+<button class="btn btn-danger mr-2" type="button">Danger button</button>
 <button class="btn btn-sm btn-danger" type="button">Small danger button</button>
 ```
 
@@ -47,7 +49,7 @@ Danger buttons are red. They help reiterate that the intended action is importan
 Outline buttons downplay an action as they appear like boxy links. Just add `.btn-outline` and go.
 
 ```html live
-<button class="btn btn-outline" type="button">Outline button</button>
+<button class="btn btn-outline mr-2" type="button">Outline button</button>
 <button class="btn btn-sm btn-outline" type="button">Outline button</button>
 ```
 
@@ -58,19 +60,17 @@ Use `.btn-large` to increase the padding and border radius of a button. This is 
 [Type scale utilities](https://styleguide.github.com/primer/utilities/typography/#type-scale-utilities) can be used to alter the font-size if needed. Padding is applied in em's so that it scales proportionally with the font-size.
 
 ```html live
-<p>
-  <a class="btn btn-large" href="#url" role="button">Large link button</a>
-  <button class="btn btn-large" type="button">Large button button</button>
-</p>
+<button class="btn btn-large mr-2" type="button">Large button</button>
+<a class="btn btn-large" href="#url" role="button">Large link button</a>
 ```
 
 Use `.btn-large` with a type scale utility to transform the text to a bigger size.
 
 ```html live
-<p class="f3">
+<div class="f3">
+  <button class="btn btn-large btn-outline-blue mr-2" type="button">Large button button</button>
   <a class="btn btn-large" href="#url" role="button">Large link button</a>
-  <button class="btn btn-large btn-outline-blue" type="button">Large button button</button>
-</p>
+</div>
 ```
 
 ## Disabled state
@@ -78,24 +78,24 @@ Use `.btn-large` with a type scale utility to transform the text to a bigger siz
 Disable `<button>` elements with the boolean `disabled` attribute and `<a>` elements with the `.disabled` class.
 
 ```html live
-<button class="btn" type="button" disabled>Disabled button</button>
+<button class="btn mr-2" type="button" disabled>Disabled button</button>
 <a class="btn disabled" href="#url" role="button">Disabled button</a>
 ```
 
 Similar styles are applied to primary, danger, and outline buttons:
 
 ```html live
-<button class="btn btn-primary" type="button" disabled>Disabled button</button>
+<button class="btn btn-primary mr-2" type="button" disabled>Disabled button</button>
 <a class="btn btn-primary disabled" href="#url" role="button">Disabled button</a>
 ```
 
 ```html live
-<button class="btn btn-danger" type="button" disabled>Disabled button</button>
+<button class="btn btn-danger mr-2" type="button" disabled>Disabled button</button>
 <a class="btn btn-danger disabled" href="#url" role="button">Disabled button</a>
 ```
 
 ```html live
-<button class="btn btn-outline" type="button" disabled>Disabled button</button>
+<button class="btn btn-outline mr-2" type="button" disabled>Disabled button</button>
 <a class="btn btn-outline disabled" href="#url" role="button">Disabled button</a>
 ```
 
@@ -104,8 +104,8 @@ Similar styles are applied to primary, danger, and outline buttons:
 Make any button full-width by adding `.btn-block`. It adds `width: 100%;`, changes the `display` from `inline-block` to `block`, and centers the button text.
 
 ```html live
-<p><button class="btn btn-block" type="button">Block button</button></p>
-<p><button class="btn btn-sm btn-block" type="button">Small block button</button></p>
+<button class="btn btn-block mb-2" type="button">Block button</button>
+<button class="btn btn-sm btn-block" type="button">Small block button</button>
 ```
 
 ## Link button
@@ -115,7 +115,55 @@ Create a button that looks like a link with `.btn-link`. Rather than using an `<
 **The `.btn-link` class is not designed to be used with `.btn`; the overlapping styles are not compatible.**
 
 ```html live
-<p><button class="btn-link" type="button">Link button</button></p>
+<button class="btn-link" type="button">Link button</button>
+```
+
+## Invisible button
+
+When you want a link, but you want it padded and line heighted like a button best for "cancel" actions on forms.
+
+```html live
+<button class="btn btn-invisible" type="button">Cancel</button>
+<button class="btn" type="button">Submit</button>
+```
+
+## Octicon button
+
+Icon-only buttons that turn blue on hover. Use `.btn-octicon-danger` to turn an icon red on hover.
+
+```html live
+<button class="btn-octicon" type="button" aria-label="Desktop icon">
+  <!-- <%= octicon "device-desktop" %> -->
+  <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"></path></svg>
+</button>
+
+<button class="btn-octicon" type="button" aria-label="Pencil icon">
+  <!-- <%= octicon "pencil" %> -->
+  <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 011.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"></path></svg>
+</button>
+
+<button class="btn-octicon btn-octicon-danger" type="button" aria-label="Trashcan icon">
+  <!-- <%= octicon "trashcan" %> -->
+  <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"></path></svg>
+</button>
+
+<button class="btn-octicon" type="button" aria-label="Trashcan icon">
+  <!-- <%= octicon "kebab-horizontal" %> -->
+  <svg class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM13 7.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path></svg>
+</button>
+```
+
+
+
+## Close button
+
+When using the `octicon-x` icon for a close button, add `.close-button` to remove the default button styles.
+
+```html live
+<button class="close-button" type="button">
+  <!-- <%= octicon "x" %> -->
+  <svg width="12" height="16" viewBox="0 0 12 16" class="octicon octicon-x" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z" /></svg>
+</button>
 ```
 
 ## Button with counts
@@ -138,24 +186,20 @@ You can easily append a count to a **small button**. Add the `.with-count` class
 You can also use the [counter](./labels#counters) component within buttons:
 
 ```html live
-<button class="btn" type="button">
-  Button
-  <span class="Counter">12</span>
+<button class="btn mr-2" type="button">
+  Button <span class="Counter">12</span>
 </button>
 
-<button class="btn btn-primary" type="button">
-  Button
-  <span class="Counter">12</span>
+<button class="btn btn-primary mr-2" type="button">
+  Button <span class="Counter">12</span>
 </button>
 
-<button class="btn btn-danger" type="button">
-  Button
-  <span class="Counter">12</span>
+<button class="btn btn-danger mr-2" type="button">
+  Button <span class="Counter">12</span>
 </button>
 
 <button class="btn btn-outline" type="button">
-  Button
-  <span class="Counter">12</span>
+  Button <span class="Counter">12</span>
 </button>
 ```
 
@@ -207,21 +251,3 @@ Use `.hidden-text-expander` to indicate and toggle hidden text.
 ```
 
 You can also make the expander appear inline by adding `.inline`.
-
-## Using button styles with the details summary element
-
-You can add `.btn` and `.btn-*` classes to any
-[`<summary>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary)
-element so that it gains the appearance of a button, and
-selected/active styles when the parent
-[`<details>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
-element is open.
-
-```html live
-<details>
-  <summary class="btn btn-block btn-primary">Toggle the content</summary>
-  <p class="mt-2">
-    This content will be toggled.
-  </p>
-</details>
-```

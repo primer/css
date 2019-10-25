@@ -1,0 +1,80 @@
+// stylelint-disable selector-max-type
+
+// Close button
+//
+// Typically used with an octicon-x
+.close-button {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
+// Hidden text button
+//
+// Use `.hidden-text-expander` to indicate and expand hidden text.
+.hidden-text-expander {
+  display: block;
+
+  &.inline {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    margin-left: 5px;
+    line-height: 0;
+  }
+}
+
+.hidden-text-expander a,
+.ellipsis-expander {
+  display: inline-block;
+  height: 12px;
+  padding: 0 5px 5px;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  line-height: 6px;
+  color: $gray-700;
+  text-decoration: none;
+  vertical-align: middle;
+  background: lighten($gray-300, 5%);
+  border: 0;
+  border-radius: 1px;
+
+  &:hover {
+    text-decoration: none;
+    background-color: darken($gray-300, 4%);
+  }
+
+  &:active {
+    color: $text-white;
+    background-color: $blue-400;
+  }
+}
+
+// Social count bubble
+//
+// A container that is used for social bubbles counts.
+.social-count {
+  float: left;
+  padding: 3px 10px;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  line-height: 20px;
+  color: $text-gray-dark;
+  vertical-align: middle;
+  background-color: $bg-white;
+  border: 1px solid transparentize($black, 0.8); // match with .btn
+  border-left: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: $text-blue;
+    cursor: pointer;
+  }
+}
