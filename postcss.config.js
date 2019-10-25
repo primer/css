@@ -1,14 +1,14 @@
 module.exports = {
   parser: 'postcss-scss',
-  map: {
-    sourcesContent: true,
-    annotation: true
-  },
   plugins: {
-    'postcss-node-sass': {
+    '@csstools/postcss-sass': {
       includePaths: ['node_modules'],
       outputStyle: 'compressed'
     },
     'autoprefixer': {}
+  },
+  map: {
+    sourcesContent: true,
+    annotation: true
   }
 }
