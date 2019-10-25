@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+const {execFileSync} = require('child_process')
+
+const pluginNames = ['postcss-node-sass', '@csstools/postcss-sass']
+const runTimes = 5
+
+for (const pluginName of pluginNames) {
+  console.warn(`Benchmarking ${pluginName}...`)
+  const times = []
+  const env = Object.assign({SASS_PLUGIN_NAME: pluginName}, process.env)
+  for (let i = 0; i < runTimes; i++) {
+    console.time(i + 1)
+    const start = Date.now()
+    execFileSync('script/dist.js', [], {env, stdio: 'ignore'})
+    const end = Date.now()
+    times.push(end - start)
+    console.timeEnd(i + 1)
+  }
+  const averageTime = times.reduce((total, t) => total + t) / runTimes
+  console.warn(`Average time: ${(averageTime / 1000).toFixed(1)} seconds\n`)
+}
