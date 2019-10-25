@@ -1,3 +1,27 @@
+# 13.2.0
+
+### :rocket: Enhancements
+- [#959](https://github.com/primer/css/959) More buttons
+- [#950](https://github.com/primer/css/950) Add Diffstat component
+- [#913](https://github.com/primer/css/913) Importing TimelineItem from .com and creating matching docs
+- [#953](https://github.com/primer/css/953) Add IssueLabel component
+
+### :bug: Bug fixes
+- [#945](https://github.com/primer/css/945) Add `[role=tab][aria-selected=true]` to `.UnderlineNav-item.selected`
+
+### :memo: Documentation
+- [#939](https://github.com/primer/css/939) Fix `Box--overlay` example
+- [#943](https://github.com/primer/css/943) Fix broken links to typography utilities
+
+### :house: Internal
+- [#946](https://github.com/primer/css/946) Add `TODO@version` stylelint rule (local)
+
+### Committers
+- [@MohamedElidrissi](https://github.com/MohamedElidrissi)
+- [@jonrohan](https://github.com/jonrohan)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+
 # 13.1.0
 
 ### :rocket: Enhancement
