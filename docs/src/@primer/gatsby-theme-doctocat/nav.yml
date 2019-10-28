@@ -109,6 +109,8 @@
       url: /components/select-menu-deprecated
     - title: Subhead
       url: /components/subhead
+    - title: Timeline
+      url: /components/timeline
     - title: Toasts
       url: /components/toasts
     - title: Tooltips

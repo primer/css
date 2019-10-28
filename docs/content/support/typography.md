@@ -24,7 +24,7 @@ Font sizes are smaller on mobile and scale up at the `md` [breakpoint](./breakpo
 | 5     | 14px              | 14px               | 17.5             | 21              |
 | 6     | 12px              | 12px               | 15               | 18              |
 
-The typography scale is used to create [typography utilities](/css/utilities/typography).
+The typography scale is used to create [typography utilities](/utilities/typography).
 
 ## Typography variables
 
@@ -67,7 +67,7 @@ $lh-default: 1.5 !default;
 
 ## Typography Mixins
 
-Typography mixins are available for heading styles and for our type scale. They can be used within components or custom CSS. The same styles are also available as [utilities](/css/utilities/typography#heading-utilities). which requires no additional CSS.
+Typography mixins are available for heading styles and for our type scale. They can be used within components or custom CSS. The same styles are also available as [utilities](/utilities/typography#heading-utilities). which requires no additional CSS.
 
 Heading mixins are available for `h1` through to `h6`, this includes the font-size and font-weight. Example:
 
