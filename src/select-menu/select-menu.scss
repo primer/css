@@ -204,6 +204,7 @@ $SelectMenu-max-height: 480px;
 .SelectMenu-icon {
   width: $spacer-3; // fixed width to make sure following content aligns
   margin-right: $spacer-2;
+  flex-shrink: 0;
 }
 
 // Check icon
