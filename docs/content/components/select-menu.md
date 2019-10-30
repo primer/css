@@ -85,7 +85,7 @@ In case the Select Menu should be aligned to the right, use `SelectMenu right-0`
 
 ## Selected state
 
-Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-checked="true"` is set.
+If the `SelectMenu` should show a check icon for selected items, use the `SelectMenu-icon SelectMenu-icon--check` classes. It will make the check icon show when `aria-checked="true"` is set.
 
 ```html live
 <details class="details-reset details-overlay" open>
@@ -108,68 +108,28 @@ Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-chec
       </header>
       <div class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitemcheckbox" aria-checked="true">
-          <!-- <%= octicon "check", class: "SelectMenu-icon" %> -->
-          <svg
-            width="12"
-            height="16"
-            viewBox="0 0 12 16"
-            class="octicon octicon-check SelectMenu-icon"
-            aria-hidden="true"
-          >
-            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
-          </svg>
+          <!-- <%= octicon "check", class: "SelectMenu-icon SelectMenu-icon--check" %> -->
+          <svg class="SelectMenu-icon SelectMenu-icon--check octicon octicon-check" width="12" height="16" viewBox="0 0 12 16" aria-hidden="true" ><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" /></svg>
           Selected state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox">
-          <!-- <%= octicon "check", class: "SelectMenu-icon" %> -->
-          <svg
-            width="12"
-            height="16"
-            viewBox="0 0 12 16"
-            class="octicon octicon-check SelectMenu-icon"
-            aria-hidden="true"
-          >
-            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
-          </svg>
+          <!-- <%= octicon "check", class: "SelectMenu-icon SelectMenu-icon--check" %> -->
+          <svg class="SelectMenu-icon SelectMenu-icon--check octicon octicon-check" width="12" height="16" viewBox="0 0 12 16" aria-hidden="true" ><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" /></svg>
           Default state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox" aria-checked="true">
-          <!-- <%= octicon "check", class: "SelectMenu-icon" %> -->
-          <svg
-            width="12"
-            height="16"
-            viewBox="0 0 12 16"
-            class="octicon octicon-check SelectMenu-icon"
-            aria-hidden="true"
-          >
-            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
-          </svg>
+          <!-- <%= octicon "check", class: "SelectMenu-icon SelectMenu-icon--check" %> -->
+          <svg class="SelectMenu-icon SelectMenu-icon--check octicon octicon-check" width="12" height="16" viewBox="0 0 12 16" aria-hidden="true" ><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" /></svg>
           Selected state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox">
-          <!-- <%= octicon "check", class: "SelectMenu-icon" %> -->
-          <svg
-            width="12"
-            height="16"
-            viewBox="0 0 12 16"
-            class="octicon octicon-check SelectMenu-icon"
-            aria-hidden="true"
-          >
-            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
-          </svg>
+          <!-- <%= octicon "check", class: "SelectMenu-icon SelectMenu-icon--check" %> -->
+          <svg class="SelectMenu-icon SelectMenu-icon--check octicon octicon-check" width="12" height="16" viewBox="0 0 12 16" aria-hidden="true" ><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" /></svg>
           Default state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox">
-          <!-- <%= octicon "check", class: "SelectMenu-icon" %> -->
-          <svg
-            width="12"
-            height="16"
-            viewBox="0 0 12 16"
-            class="octicon octicon-check SelectMenu-icon"
-            aria-hidden="true"
-          >
-            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
-          </svg>
+          <!-- <%= octicon "check", class: "SelectMenu-icon SelectMenu-icon--check" %> -->
+          <svg class="SelectMenu-icon SelectMenu-icon--check octicon octicon-check" width="12" height="16" viewBox="0 0 12 16" aria-hidden="true" ><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" /></svg>
           Default state
         </button>
       </div>
@@ -183,7 +143,7 @@ Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-chec
 
 ## List items
 
-The list of items is arguably the most important subcomponent within the menu. Build them out of anchors, buttons, or just about any [interactive content](http://w3c.github.io/html/dom.html#interactive-content). List items are also customizable with options for avatars, additional icons, and multiple lines of text. Use utility classes like `mr-2`, `d-flex` or `float-right` in case more custom styling is needed.
+The list of items is arguably the most important subcomponent within the menu. Build them out of anchors, buttons, or just about any [interactive content](http://w3c.github.io/html/dom.html#interactive-content). List items are also customizable with options for avatars, additional icons, and multiple lines of text. Use utility classes in case more custom styling is needed.
 
 ```html live
 <details class="details-reset details-overlay" open>
@@ -207,6 +167,11 @@ The list of items is arguably the most important subcomponent within the menu. B
       <div class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">
           Text only
+        </button>
+        <button class="SelectMenu-item" role="menuitem">
+          <!-- <%= octicon "pin", class: "SelectMenu-icon" %> -->
+          <svg class="SelectMenu-icon octicon octicon-pin" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 1.2V2l.5 1L6 6H2.2c-.44 0-.67.53-.34.86L5 10l-4 5 5-4 3.14 3.14a.5.5 0 00.86-.34V10l3-4.5 1 .5h.8c.44 0 .67-.53.34-.86L10.86.86a.5.5 0 00-.86.34z"></path></svg>
+          With an icon
         </button>
         <button class="SelectMenu-item" role="menuitem">
           <img
@@ -247,7 +212,7 @@ The list of items is arguably the most important subcomponent within the menu. B
 </details>
 
 <div class="d-sm-none" style="height: 600px"><!-- min height for < sm --></div>
-<div class="d-none d-sm-block" style="height: 300px"><!-- min height for > sm --></div>
+<div class="d-none d-sm-block" style="height: 320px"><!-- min height for > sm --></div>
 ```
 
 ## Divider
