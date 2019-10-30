@@ -199,11 +199,15 @@ $SelectMenu-max-height: 480px;
 
 // Icon
 //
-// The icon shown on the left of a list item. Typically a check icon.
+// Icon shown on the left of a list item.
 
 .SelectMenu-icon {
   width: $spacer-3; // fixed width to make sure following content aligns
   margin-right: $spacer-2;
+}
+
+// Check icon
+.SelectMenu-icon--check {
   visibility: hidden;
   transition: transform 0.12s cubic-bezier(0.5, 0.1, 1, 0.5), visibility 0s 0.12s linear;
   transform: scale(0);
@@ -357,7 +361,7 @@ $SelectMenu-max-height: 480px;
   font-weight: $font-weight-semibold;
   color: $text-gray-dark;
 
-  .SelectMenu-icon {
+  .SelectMenu-icon--check {
     visibility: visible;
     transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), visibility 0s linear;
     transform: scale(1);
