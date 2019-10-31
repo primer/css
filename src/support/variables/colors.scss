@@ -8,7 +8,7 @@ $status-pending:    desaturate($yellow-700, 15%) !default;
 // Should be able to deprecate these in future
 $repo-private-text: $black-fade-70 !default;
 $repo-private-bg:   $yellow-000 !default;
-$repo-private-icon: transparentize($yellow-900, 0.5) !default;
+$repo-private-icon: rgba($yellow-900, 0.5) !default;
 
 // Highlight used for things like search
 $highlight-yellow: rgba(255, 247, 140, 0.5);
