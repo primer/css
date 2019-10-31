@@ -14,6 +14,7 @@ $repo-private-icon: transparentize($yellow-900, 0.5) !default;
 $highlight-yellow: rgba(255, 247, 140, 0.5);
 
 // Border colors
+$border-white:       $white !default;
 $border-black-fade:  $black-fade-15 !default;
 $border-white-fade:  $white-fade-15 !default;
 
@@ -36,6 +37,9 @@ $border-gray-light:  lighten($gray-200, 3%) !default;
 $border-gray:        $gray-200 !default;
 
 // Background colors
+$bg-white:          $white !default;
+$bg-black:          $black !default;
+$bg-black-fade:     $black-fade-50 !default;
 $bg-blue-light:     $blue-000 !default;
 $bg-blue:           $blue-500 !default;
 $bg-gray-dark:      $gray-900 !default;
@@ -49,7 +53,6 @@ $bg-purple-light:   $purple-000 !default;
 $bg-pink:           $pink-500 !default;
 $bg-red:            $red-500 !default;
 $bg-red-light:      $red-100 !default;
-$bg-white:          $white !default;
 $bg-yellow:         $yellow-500 !default;
 $bg-yellow-light:   $yellow-200 !default;
 $bg-yellow-dark:    $yellow-700 !default;
@@ -60,6 +63,8 @@ $bg-diffstat-deleted: $red-600 !default;
 $bg-diffstat-neutral: $gray-300 !default;
 
 // Text colors
+$text-black:        $black !default;
+$text-white:        $white !default;
 $text-blue:         $blue-500 !default;
 $text-gray-dark:    $gray-900 !default;
 $text-gray-light:   $gray-500 !default;
@@ -70,5 +75,4 @@ $text-orange-light: $orange-600 !default;
 $text-purple:       $purple !default;
 $text-pink:         $pink-500 !default;
 $text-red:          $red-600 !default;
-$text-white:        $white !default;
 $text-yellow:       $yellow-800 !default;
