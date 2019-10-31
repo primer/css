@@ -2,15 +2,18 @@
 // stylelint-disable selector-max-type
 .tabnav {
   margin-top: 0;
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 15px;
   border-bottom: $border-width $border-style $border-gray-dark;
 
   .Counter {
+    // stylelint-disable-next-line primer/spacing
     margin-left: 5px;
   }
 }
 
 .tabnav-tabs {
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: -1px;
 }
 
@@ -47,12 +50,15 @@
 
 .tabnav-extra {
   display: inline-block;
+  // stylelint-disable-next-line primer/spacing
   padding-top: 10px;
+  // stylelint-disable-next-line primer/spacing
   margin-left: 10px;
   font-size: $font-size-small;
   color: $text-gray;
 
   > .octicon {
+    // stylelint-disable-next-line primer/spacing
     margin-right: 2px;
   }
 }
@@ -71,5 +77,6 @@ a.tabnav-extra:hover {
 // the buttons to be floated or inline-block.
 
 .tabnav-btn {
+  // stylelint-disable-next-line primer/spacing
   margin-left: 10px;
 }

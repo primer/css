@@ -65,6 +65,7 @@
   height: $spacer-4;
   margin: 0;
   margin-bottom: -$spacer-3;
+  // stylelint-disable-next-line primer/spacing
   margin-left: -($spacer-6 + $spacer-3);
   background-color: $bg-white;
   border: 0;

@@ -26,7 +26,9 @@
 .select-sm {
   height: 28px;
   min-height: 28px;
+  // stylelint-disable-next-line primer/spacing
   padding-top: 3px;
+  // stylelint-disable-next-line primer/spacing
   padding-bottom: 3px;
   font-size: $font-size-small;
 

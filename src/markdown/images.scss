@@ -11,10 +11,12 @@
     background-color: $bg-white;
 
     &[align=right] {
+      // stylelint-disable-next-line primer/spacing
       padding-left: 20px;
     }
 
     &[align=left] {
+      // stylelint-disable-next-line primer/spacing
       padding-right: 20px;
     }
   }
@@ -37,7 +39,9 @@
       display: block;
       float: left;
       width: auto;
+      // stylelint-disable-next-line primer/spacing
       padding: 7px;
+      // stylelint-disable-next-line primer/spacing
       margin: 13px 0 0;
       overflow: hidden;
       // stylelint-disable-next-line primer/borders
@@ -51,6 +55,7 @@
 
     span span {
       display: block;
+      // stylelint-disable-next-line primer/spacing
       padding: 5px 0 0;
       clear: both;
       color: $text-gray-dark;
@@ -64,6 +69,7 @@
 
     > span {
       display: block;
+      // stylelint-disable-next-line primer/spacing
       margin: 13px auto 0;
       overflow: hidden;
       text-align: center;
@@ -82,6 +88,7 @@
 
     > span {
       display: block;
+      // stylelint-disable-next-line primer/spacing
       margin: 13px 0 0;
       overflow: hidden;
       text-align: right;
@@ -96,10 +103,12 @@
   span.float-left {
     display: block;
     float: left;
+    // stylelint-disable-next-line primer/spacing
     margin-right: 13px;
     overflow: hidden;
 
     span {
+      // stylelint-disable-next-line primer/spacing
       margin: 13px 0 0;
     }
   }
@@ -107,11 +116,13 @@
   span.float-right {
     display: block;
     float: right;
+    // stylelint-disable-next-line primer/spacing
     margin-left: 13px;
     overflow: hidden;
 
     > span {
       display: block;
+      // stylelint-disable-next-line primer/spacing
       margin: 13px auto 0;
       overflow: hidden;
       text-align: right;

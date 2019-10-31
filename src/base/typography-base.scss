@@ -23,6 +23,7 @@ h6 { @include h6; }
 
 p {
   margin-top: 0;
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 10px;
 }
 

@@ -1,6 +1,7 @@
 // Counters are rounded-corner badges for numbers
 .Counter {
   display: inline-block;
+  // stylelint-disable-next-line primer/spacing
   padding: 2px 5px;
   font-size: $font-size-small;
   font-weight: $font-weight-bold;

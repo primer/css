@@ -26,6 +26,7 @@
   width: 160px;
   padding-top: $spacer-1;
   padding-bottom: $spacer-1;
+  // stylelint-disable-next-line primer/spacing
   margin-top: 2px;
   list-style: none;
   background-color: $bg-white;
@@ -178,6 +179,7 @@
   top: auto;
   bottom: 100%;
   left: 0;
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 3px;
 
   &::before,

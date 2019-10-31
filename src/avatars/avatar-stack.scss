@@ -30,6 +30,7 @@
     width: 20px;
     height: 20px;
     box-sizing: content-box;
+    // stylelint-disable-next-line primer/spacing
     margin-right: -11px;
     background-color: $bg-white;
     border-right: $border-width $border-style $border-white;
@@ -62,6 +63,7 @@
 
   &:hover {
     .avatar {
+      // stylelint-disable-next-line primer/spacing
       margin-right: 3px;
     }
 
@@ -114,6 +116,7 @@
 
     &:hover .avatar {
       margin-right: 0;
+      // stylelint-disable-next-line primer/spacing
       margin-left: 3px;
     }
   }
@@ -134,6 +137,7 @@
 
   .avatar {
     margin-right: 0;
+    // stylelint-disable-next-line primer/spacing
     margin-left: -11px;
     border-right: 0;
     border-left: $border-width $border-style $border-white;

@@ -8,7 +8,9 @@
   em {
     position: relative;
     float: left;
+    // stylelint-disable-next-line primer/spacing
     padding: 7px 12px;
+    // stylelint-disable-next-line primer/spacing
     margin-left: -1px;
     font-size: 13px;
     font-style: normal;
@@ -66,7 +68,9 @@
 
 // Unified centered pagination across the site
 .paginate-container {
+  // stylelint-disable-next-line primer/spacing
   margin-top: 20px;
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 15px;
   text-align: center;
 

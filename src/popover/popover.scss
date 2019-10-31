@@ -20,6 +20,7 @@
 
   &::before {
     top: -$spacer-3;
+    // stylelint-disable-next-line primer/spacing
     margin-left: -9px;
     // stylelint-disable-next-line primer/borders
     border: $spacer-2 $border-style transparent;
@@ -112,6 +113,7 @@
   }
 
   &::before {
+    // stylelint-disable-next-line primer/spacing
     margin-top: -($spacer-2 + 1);
   }
 

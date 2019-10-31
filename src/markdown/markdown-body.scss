@@ -51,6 +51,7 @@
   .anchor {
     float: left;
     padding-right: $spacer-1;
+    // stylelint-disable-next-line primer/spacing
     margin-left: -20px;
     line-height: $lh-condensed-ultra;
 
@@ -81,6 +82,7 @@
   }
 
   blockquote {
+    // stylelint-disable-next-line primer/spacing
     padding: 0 1em;
     color: $text-gray-light;
     // stylelint-disable-next-line primer/borders

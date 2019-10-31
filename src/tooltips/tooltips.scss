@@ -92,6 +92,7 @@
   &::after {
     top: 100%;
     right: 50%;
+    // stylelint-disable-next-line primer/spacing
     margin-top: 6px;
   }
 
@@ -99,6 +100,7 @@
     top: auto;
     right: 50%;
     bottom: -7px;
+    // stylelint-disable-next-line primer/spacing
     margin-right: -6px;
     // stylelint-disable-next-line primer/borders
     border-bottom-color: $tooltip-background-color;
@@ -124,6 +126,7 @@
   &::after {
     right: 50%;
     bottom: 100%;
+    // stylelint-disable-next-line primer/spacing
     margin-bottom: 6px;
   }
 
@@ -131,6 +134,7 @@
     top: -7px;
     right: 50%;
     bottom: auto;
+    // stylelint-disable-next-line primer/spacing
     margin-right: -6px;
     // stylelint-disable-next-line primer/borders
     border-top-color: $tooltip-background-color;
@@ -160,6 +164,7 @@
   &::after {
     right: 100%;
     bottom: 50%;
+    // stylelint-disable-next-line primer/spacing
     margin-right: 6px;
     transform: translateY(50%);
   }
@@ -168,6 +173,7 @@
     top: 50%;
     bottom: 50%;
     left: -7px;
+    // stylelint-disable-next-line primer/spacing
     margin-top: -6px;
     // stylelint-disable-next-line primer/borders
     border-left-color: $tooltip-background-color;
@@ -179,6 +185,7 @@
   &::after {
     bottom: 50%;
     left: 100%;
+    // stylelint-disable-next-line primer/spacing
     margin-left: 6px;
     transform: translateY(50%);
   }
@@ -187,6 +194,7 @@
     top: 50%;
     right: -7px;
     bottom: 50%;
+    // stylelint-disable-next-line primer/spacing
     margin-top: -6px;
     // stylelint-disable-next-line primer/borders
     border-right-color: $tooltip-background-color;

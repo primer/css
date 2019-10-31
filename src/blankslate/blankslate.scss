@@ -5,6 +5,7 @@
   text-align: center;
 
   code {
+    // stylelint-disable-next-line primer/spacing
     padding: 2px 5px 3px;
     font-size: $h5-size;
     background: $bg-white;
@@ -31,6 +32,7 @@
 }
 
 .blankslate-spacious {
+  // stylelint-disable-next-line primer/spacing
   padding: ($spacer-6 * 2) $spacer-6;
 }
 

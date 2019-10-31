@@ -3,6 +3,7 @@
 // A menu on the side of a page, defaults to left side. e.g. github.com/about
 
 .menu {
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 15px;
   list-style: none;
   background-color: $bg-white;
@@ -63,6 +64,7 @@
 
   .octicon {
     width: 16px;
+    // stylelint-disable-next-line primer/spacing
     margin-right: 5px;
     color: $text-gray-dark;
     text-align: center;
@@ -70,6 +72,7 @@
 
   .Counter {
     float: right;
+    // stylelint-disable-next-line primer/spacing
     margin-left: 5px;
   }
 
@@ -81,6 +84,7 @@
 
   .avatar {
     float: left;
+    // stylelint-disable-next-line primer/spacing
     margin-right: 5px;
   }
 

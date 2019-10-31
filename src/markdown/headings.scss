@@ -35,12 +35,14 @@
   }
 
   h1 {
+    // stylelint-disable-next-line primer/spacing
     padding-bottom: 0.3em;
     font-size: 2em;
     border-bottom: $border-width $border-style $border-gray-light;
   }
 
   h2 {
+    // stylelint-disable-next-line primer/spacing
     padding-bottom: 0.3em;
     font-size: 1.5em;
     border-bottom: $border-width $border-style $border-gray-light;

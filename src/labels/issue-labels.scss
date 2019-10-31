@@ -2,6 +2,7 @@
 
 .IssueLabel {
   height: 20px;
+  // stylelint-disable-next-line primer/spacing
   padding: 0.15em $spacer-1;
   font-size: $h6-size;
   font-weight: $font-weight-bold;
@@ -32,6 +33,7 @@
 
   .g-emoji {
     display: inline-block;
+    // stylelint-disable-next-line primer/spacing
     margin-top: -1px;
   }
 

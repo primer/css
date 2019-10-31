@@ -18,6 +18,7 @@ label {
 .form-control,
 .form-select {
   min-height: 34px;
+  // stylelint-disable-next-line primer/spacing
   padding: 6px $spacer-2;
   font-size: $h4-size;
   line-height: 20px;
@@ -80,7 +81,9 @@ label {
 // Mini inputs, to match .minibutton
 .input-sm {
   min-height: 28px;
+  // stylelint-disable-next-line primer/spacing
   padding-top: 3px;
+  // stylelint-disable-next-line primer/spacing
   padding-bottom: 3px;
   font-size: $font-size-small;
   line-height: 20px;
@@ -118,7 +121,9 @@ label {
 //
 // For checkboxes and radio button selections.
 .form-checkbox {
+  // stylelint-disable-next-line primer/spacing
   padding-left: 20px;
+  // stylelint-disable-next-line primer/spacing
   margin: 15px 0;
   vertical-align: middle;
 
@@ -126,6 +131,7 @@ label {
     em.highlight {
       position: relative;
       left: -$spacer-1;
+      // stylelint-disable-next-line primer/spacing
       padding: 2px $spacer-1;
       font-style: normal;
       // stylelint-disable-next-line primer/colors
@@ -137,6 +143,7 @@ label {
   input[type=checkbox],
   input[type=radio] {
     float: left;
+    // stylelint-disable-next-line primer/spacing
     margin: 5px 0 0 -20px;
     vertical-align: middle;
   }
@@ -169,16 +176,19 @@ label {
 // Wrap field groups in `<div.hfields>` to lay them out horizontally - great for
 // the top of pages with autosave.
 .hfields {
+  // stylelint-disable-next-line primer/spacing
   margin: 15px 0;
   @include clearfix;
 
   .form-group {
     float: left;
+    // stylelint-disable-next-line primer/spacing
     margin: 0 30px 0 0;
 
     dt {
       label {
         display: inline-block;
+        // stylelint-disable-next-line primer/spacing
         margin: 5px 0 0;
         color: $text-gray;
       }
@@ -192,8 +202,11 @@ label {
 
   .btn {
     float: left;
+    // stylelint-disable-next-line primer/spacing
     margin: 28px 25px 0 -20px;
   }
+
+  // stylelint-disable-next-line primer/spacing
 
   .form-select { margin-top: 5px; }
 }
@@ -216,6 +229,7 @@ input::-webkit-inner-spin-button {
     float: right;
 
     + .btn {
+      // stylelint-disable-next-line primer/spacing
       margin-right: 5px;
     }
   }
@@ -223,6 +237,7 @@ input::-webkit-inner-spin-button {
 
 .form-warning {
   padding: $spacer-2 10px;
+  // stylelint-disable-next-line primer/spacing
   margin: 10px 0;
   font-size: $h5-size;
   // stylelint-disable-next-line primer/colors

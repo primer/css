@@ -15,6 +15,7 @@
 .label,
 .Label {
   display: inline-block;
+  // stylelint-disable-next-line primer/spacing
   padding: 3px $spacer-1;
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
@@ -40,7 +41,9 @@
 }
 
 .Label--outline {
+  // stylelint-disable-next-line primer/spacing
   margin-top: -1px; // offsets the 1px border
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: -1px; // offsets the 1px border
   font-weight: $font-weight-normal;
   color: $text-gray;

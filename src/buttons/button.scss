@@ -4,6 +4,7 @@
 .btn {
   position: relative;
   display: inline-block;
+  // stylelint-disable-next-line primer/spacing
   padding: 6px 12px;
   font-size: $body-font-size;
   font-weight: $font-weight-bold;
@@ -85,6 +86,7 @@
 //
 // Tweak `line-height` to make them smaller.
 .btn-sm {
+  // stylelint-disable-next-line primer/spacing
   padding: 3px 10px;
   font-size: $font-size-small;
   line-height: 20px;
@@ -164,7 +166,9 @@
 // Icon-only buttons
 .btn-octicon {
   display: inline-block;
+  // stylelint-disable-next-line primer/spacing
   padding: 5px;
+  // stylelint-disable-next-line primer/spacing
   margin-left: 5px;
   line-height: $lh-condensed-ultra;
   color: $text-gray;

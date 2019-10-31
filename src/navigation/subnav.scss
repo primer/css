@@ -1,12 +1,14 @@
 // Needs refactoring
 // Sub nav
 .subnav {
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 20px;
 
   @include clearfix();
 }
 
 .subnav-bordered {
+  // stylelint-disable-next-line primer/spacing
   padding-bottom: 20px;
   border-bottom: $border-width $border-style $border-gray-light;
 }
@@ -18,6 +20,7 @@
 .subnav-item {
   position: relative;
   float: left;
+  // stylelint-disable-next-line primer/spacing
   padding: 6px 14px;
   font-weight: $font-weight-bold;
   line-height: 20px;
@@ -25,6 +28,7 @@
   border: $border;
 
   + .subnav-item {
+    // stylelint-disable-next-line primer/spacing
     margin-left: -1px;
   }
 
@@ -57,11 +61,13 @@
 
 .subnav-search {
   position: relative;
+  // stylelint-disable-next-line primer/spacing
   margin-left: 10px;
 }
 
 .subnav-search-input {
   width: 320px;
+  // stylelint-disable-next-line primer/spacing
   padding-left: 30px;
   color: $text-gray;
 }
@@ -97,6 +103,7 @@
   }
 
   + .subnav-search {
+    // stylelint-disable-next-line primer/spacing
     margin-left: -1px;
 
     .subnav-search-input {
@@ -119,5 +126,6 @@
 }
 
 .subnav-spacer-right {
+  // stylelint-disable-next-line primer/spacing
   padding-right: 10px;
 }

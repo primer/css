@@ -17,5 +17,6 @@
 // User for example on /stars and /user for grids of avatars
 .avatar-group-item {
   display: inline-block;
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 3px;
 }

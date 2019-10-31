@@ -13,6 +13,7 @@
 
     th,
     td {
+      // stylelint-disable-next-line primer/spacing
       padding: 6px 13px;
       // stylelint-disable-next-line primer/borders
       border: $border-width $border-style lighten($gray-300, 5%);

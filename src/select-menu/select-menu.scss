@@ -216,6 +216,7 @@
 .SelectMenu-tabs {
   display: flex;
   flex-shrink: 0;
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: -$border-width; // hide border of element below
   overflow-x: auto;
   overflow-y: hidden;
