@@ -50,6 +50,7 @@
 
   // Bar on the left
   &::before {
+    // stylelint-disable-next-line primer/colors
     background-color: $gray-300;
   }
 }
@@ -66,6 +67,7 @@
 
   // Bar on the left
   &::before {
+    // stylelint-disable-next-line primer/colors
     background-color: $orange-600;
   }
 }

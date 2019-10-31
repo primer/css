@@ -16,14 +16,17 @@
   color: $text-white;
   text-align: center;
   white-space: nowrap;
+  // stylelint-disable-next-line primer/colors
   background-color: $gray-500;
   border-radius: 3px;
 }
 
+// stylelint-disable-next-line primer/colors
 .State--green { background-color: darken($green-400, 5%); }
 
 .State--purple { background-color: $bg-purple; }
 
+// stylelint-disable-next-line primer/colors
 .State--red { background-color: $red-600; }
 
 .State--small {

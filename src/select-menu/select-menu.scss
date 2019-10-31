@@ -382,15 +382,18 @@
 
   .SelectMenu-item:active {
     color: $text-white;
+    // stylelint-disable-next-line primer/colors
     background-color: $blue-400;
   }
 
   body:not(.intent-mouse) .SelectMenu-tab:focus {
+    // stylelint-disable-next-line primer/colors
     background-color: $blue-100;
   }
 
   .SelectMenu-tab:not([aria-checked="true"]):hover {
     color: $text-gray-dark;
+    // stylelint-disable-next-line primer/colors
     background-color: $gray-200;
   }
 

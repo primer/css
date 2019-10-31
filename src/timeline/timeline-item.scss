@@ -13,6 +13,7 @@
     display: block;
     width: 2px;
     content: "";
+    // stylelint-disable-next-line primer/colors
     background-color: $gray-200;
   }
 
@@ -30,8 +31,10 @@
   height: $spacer-5;
   margin-right: $spacer-2;
   margin-left: -$spacer-3 + 1;
+  // stylelint-disable-next-line primer/colors
   color: $gray-700;
   align-items: center;
+  // stylelint-disable-next-line primer/colors
   background-color: $gray-200;
   border: 2px solid $white;
   border-radius: 50%;
@@ -43,6 +46,7 @@
   min-width: 0;
   max-width: 100%;
   margin-top: $spacer-1;
+  // stylelint-disable-next-line primer/colors
   color: $gray-700;
   flex: auto;
 }
@@ -78,6 +82,7 @@
     height: $spacer-3;
     margin-top: $spacer-2;
     margin-bottom: $spacer-2;
+    // stylelint-disable-next-line primer/colors
     color: $gray-400;
     background-color: $bg-white;
     border: 0;

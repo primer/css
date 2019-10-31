@@ -6,6 +6,7 @@ kbd {
   padding: ($spacer-1 - 1) ($spacer-1 + 1);
   font: 11px $mono-font;
   line-height: 10px;
+  // stylelint-disable-next-line primer/colors
   color: $gray-700;
   vertical-align: middle;
   background-color: $bg-gray-light;

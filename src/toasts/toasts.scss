@@ -44,6 +44,7 @@
   }
 
   &:active {
+    // stylelint-disable-next-line primer/colors
     color: $gray-400;
   }
 }
@@ -56,6 +57,7 @@
 
 .Toast--warning .Toast-icon {
   color: $text-gray-dark;
+  // stylelint-disable-next-line primer/colors
   background-color: $yellow-600;
 }
 
@@ -64,6 +66,7 @@
 }
 
 .Toast--loading .Toast-icon {
+  // stylelint-disable-next-line primer/colors
   background-color: $gray-600;
 }
 

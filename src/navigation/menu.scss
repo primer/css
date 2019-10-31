@@ -50,6 +50,7 @@
       left: 0;
       width: 2px;
       content: "";
+      // stylelint-disable-next-line primer/colors
       background-color: $orange-600;
     }
   }
@@ -68,6 +69,7 @@
 
   .menu-warning {
     float: right;
+    // stylelint-disable-next-line primer/colors
     color: $red-900;
   }
 
@@ -92,6 +94,7 @@
   font-weight: $font-weight-bold;
   line-height: 20px;
   color: $text-gray;
+  // stylelint-disable-next-line primer/colors
   background-color: darken($gray-100, 1%);
   border-bottom: 1px solid $gray-200;
 

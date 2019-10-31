@@ -33,6 +33,7 @@
   .Counter {
     color: $text-gray;
     text-shadow: none;
+    // stylelint-disable-next-line primer/colors
     background-color: rgba($black, 0.1);
   }
 
@@ -126,6 +127,7 @@
   &:disabled {
     &,
     &:hover {
+      // stylelint-disable-next-line primer/colors
       color: rgba($gray-600, 0.5);
       cursor: default;
     }
@@ -172,9 +174,11 @@
   &:hover { color: $text-blue; }
 
   &.disabled {
+    // stylelint-disable-next-line primer/colors
     color: $gray-400;
     cursor: default;
 
+    // stylelint-disable-next-line primer/colors
     &:hover { color: $gray-400; }
   }
 }

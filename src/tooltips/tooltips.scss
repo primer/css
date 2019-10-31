@@ -32,6 +32,7 @@
   display: none;
   width: 0;
   height: 0;
+  // stylelint-disable-next-line primer/colors
   color: $tooltip-background-color;
   pointer-events: none;
   content: "";

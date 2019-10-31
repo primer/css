@@ -167,7 +167,9 @@
 
   &.warn {
     .warning {
+      // stylelint-disable-next-line primer/colors
       color: $yellow-900;
+      // stylelint-disable-next-line primer/colors
       background-color: $yellow-100;
       border-color: $border-yellow;
 
@@ -187,6 +189,7 @@
     }
 
     .error {
+      // stylelint-disable-next-line primer/colors
       color: $red-900;
       background-color: $bg-red-light;
       border-color: $border-red-light;

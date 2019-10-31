@@ -54,6 +54,7 @@ label {
 // Inputs to be used against dark backgrounds.
 .input-dark {
   color: $text-white;
+  // stylelint-disable-next-line primer/colors
   background-color: $white-fade-15;
   border-color: transparent;
 
@@ -125,6 +126,7 @@ label {
       left: -$spacer-1;
       padding: 2px $spacer-1;
       font-style: normal;
+      // stylelint-disable-next-line primer/colors
       background: $yellow-100;
       border-radius: 3px;
     }
@@ -221,7 +223,9 @@ input::-webkit-inner-spin-button {
   padding: $spacer-2 10px;
   margin: 10px 0;
   font-size: $h5-size;
+  // stylelint-disable-next-line primer/colors
   color: $yellow-900;
+  // stylelint-disable-next-line primer/colors
   background: $yellow-100;
   border: 1px solid $border-yellow;
   border-radius: 3px;

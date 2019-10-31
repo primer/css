@@ -8,6 +8,7 @@
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
+  // stylelint-disable-next-line primer/colors
   background-color: $blue-mktg;
   border: 1px solid $blue-mktg;
   border-radius: $border-radius;
@@ -34,6 +35,7 @@
 }
 
 .btn-primary-mktg {
+  // stylelint-disable-next-line primer/colors
   background-color: $green-mktg;
   border-color: $green-mktg;
 
@@ -53,13 +55,16 @@
 }
 
 .btn-outline-mktg {
+  // stylelint-disable-next-line primer/colors
   color: $blue-mktg;
+  // stylelint-disable-next-line primer/colors
   background-color: rgba($white, 0);
   border-color: rgba($blue-mktg, 0.5);
 
   &:hover {
     color: $text-blue;
     text-decoration: none;
+    // stylelint-disable-next-line primer/colors
     background-color: rgba($white, 0);
     border-color: rgba($blue-mktg, 1);
   }

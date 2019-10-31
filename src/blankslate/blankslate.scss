@@ -22,6 +22,7 @@
   margin-right: $spacer-1;
   margin-bottom: $spacer-2;
   margin-left: $spacer-1;
+  // stylelint-disable-next-line primer/colors
   color: lighten($gray-400, 5%);
 }
 

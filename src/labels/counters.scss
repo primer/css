@@ -6,6 +6,7 @@
   font-weight: $font-weight-bold;
   line-height: $lh-condensed-ultra;
   color: $text-gray;
+  // stylelint-disable-next-line primer/colors
   background-color: rgba($black, 0.08);
   border-radius: 20px;
 
@@ -16,10 +17,12 @@
 
 .Counter--gray-light {
   color: $text-gray-dark;
+  // stylelint-disable-next-line primer/colors
   background-color: $black-fade-15;
 }
 
 .Counter--gray {
   color: $text-white;
+  // stylelint-disable-next-line primer/colors
   background-color: $gray;
 }

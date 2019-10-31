@@ -251,6 +251,7 @@
 // Dark dropdowns
 .dropdown-menu-dark {
   color: $text-white;
+  // stylelint-disable-next-line primer/colors
   background: $gray-800;
   border-color: $gray-700;
   box-shadow: $box-shadow-large;
@@ -264,6 +265,7 @@
   }
 
   .dropdown-header {
+    // stylelint-disable-next-line primer/colors
     color: $gray-300;
   }
 

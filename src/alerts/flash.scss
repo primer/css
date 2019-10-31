@@ -3,7 +3,9 @@
 .flash {
   position: relative;
   padding: $spacer-3;
+  // stylelint-disable-next-line primer/colors
   color: $blue-800;
+  // stylelint-disable-next-line primer/colors
   background-color: $blue-100;
   border: 1px solid $border-black-fade;
   border-radius: 3px;
@@ -49,18 +51,22 @@
 //
 
 .flash-warn {
+  // stylelint-disable-next-line primer/colors
   color: $yellow-900;
+  // stylelint-disable-next-line primer/colors
   background-color: $yellow-100;
   border-color: $black-fade-15;
 }
 
 .flash-error {
+  // stylelint-disable-next-line primer/colors
   color: $red-900;
   background-color: $bg-red-light;
   border-color: $black-fade-15;
 }
 
 .flash-success {
+  // stylelint-disable-next-line primer/colors
   color: $green-800;
   background-color: $bg-green-light;
   border-color: $black-fade-15;
@@ -89,5 +95,6 @@
   padding: $em-spacer-5;
   margin-bottom: 0.8em;
   font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/colors
   background-color: $yellow-100;
 }

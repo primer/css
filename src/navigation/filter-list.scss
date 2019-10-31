@@ -37,6 +37,7 @@
 
   &:hover {
     text-decoration: none;
+    // stylelint-disable-next-line primer/colors
     background-color: lighten($gray-200, 3%);
   }
 
@@ -57,6 +58,7 @@
     bottom: 2px;
     z-index: -1;
     display: inline-block;
+    // stylelint-disable-next-line primer/colors
     background-color: darken($gray-100, 2%);
   }
 }

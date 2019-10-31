@@ -33,20 +33,24 @@
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
   line-height: 6px;
+  // stylelint-disable-next-line primer/colors
   color: $gray-700;
   text-decoration: none;
   vertical-align: middle;
+  // stylelint-disable-next-line primer/colors
   background: lighten($gray-300, 5%);
   border: 0;
   border-radius: 1px;
 
   &:hover {
     text-decoration: none;
+    // stylelint-disable-next-line primer/colors
     background-color: darken($gray-300, 4%);
   }
 
   &:active {
     color: $text-white;
+    // stylelint-disable-next-line primer/colors
     background-color: $blue-400;
   }
 }

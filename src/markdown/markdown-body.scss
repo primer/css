@@ -75,6 +75,7 @@
     height: $em-spacer-3;
     padding: 0;
     margin: $spacer-4 0;
+    // stylelint-disable-next-line primer/colors
     background-color: $gray-200;
     border: 0;
   }

@@ -34,6 +34,7 @@
 // "repo owner" within code comments or role in organizations.
 .Label--gray {
   color: $text-gray;
+  // stylelint-disable-next-line primer/colors
   background-color: lighten($gray-200, 3%);
 }
 
@@ -53,6 +54,7 @@
 }
 
 .Label--gray-darker {
+  // stylelint-disable-next-line primer/colors
   background-color: $gray;
 }
 

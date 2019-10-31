@@ -91,11 +91,13 @@
 
   &::before {
     width: 17px;
+    // stylelint-disable-next-line primer/colors
     background: $gray-200;
   }
 
   &::after {
     width: 14px;
+    // stylelint-disable-next-line primer/colors
     background: $gray-300;
   }
 }
@@ -114,6 +116,7 @@
   }
 
   .avatar.avatar-more {
+    // stylelint-disable-next-line primer/colors
     background: $gray-300;
 
     &::before {

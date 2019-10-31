@@ -74,6 +74,7 @@
   top: 9px;
   left: 8px;
   display: block;
+  // stylelint-disable-next-line primer/colors
   color: darken($gray-300, 4%);
   text-align: center;
   pointer-events: none;
@@ -81,6 +82,7 @@
 
 .subnav-search-context {
   .btn {
+    // stylelint-disable-next-line primer/colors
     color: $gray-700;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
