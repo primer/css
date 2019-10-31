@@ -32,9 +32,9 @@
     .flex#{$variant}-content-stretch  { align-content: stretch !important; }
 
     // Item
-    .flex#{$variant}-1 { flex: 1 !important; }
-    .flex#{$variant}-auto { flex: auto !important; }
-    .flex#{$variant}-grow-0 { flex-grow: 0 !important; }
+    .flex#{$variant}-1        { flex: 1 !important; }
+    .flex#{$variant}-auto     { flex: auto !important; }
+    .flex#{$variant}-grow-0   { flex-grow: 0 !important; }
     .flex#{$variant}-shrink-0 { flex-shrink: 0 !important; }
 
     .flex#{$variant}-self-auto        { align-self: auto !important; }
