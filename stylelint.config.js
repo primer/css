@@ -7,6 +7,7 @@ module.exports = {
   rules: {
     'primer/no-override': false,
     'primer/colors': true,
+    'primer/borders': true,
     'primer-css/TODO': [true, {currentVersion, severity: 'error'}]
   }
 }
