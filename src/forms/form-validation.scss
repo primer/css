@@ -252,6 +252,7 @@ dl.form-group > dd {
 // Dropping a file on top
 .dragover textarea,
 .dragover .drag-and-drop {
+  // stylelint-disable-next-line primer/box-shadow
   box-shadow: rgba(#c9ff00, 1) 0 0 3px;
 }
 

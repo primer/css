@@ -24,6 +24,7 @@
 
   &:focus {
     outline: 0;
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0 0.2em rgba($blue-500, 0.3);
   }
 
@@ -48,6 +49,7 @@
   }
 
   &:focus {
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0 0.2em rgba($green-500, 0.3);
   }
 }

@@ -70,6 +70,7 @@ label {
   &:focus {
     // stylelint-disable-next-line primer/borders
     border-color: $black-fade-30;
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0 0.2em rgba($blue-300, 0.4);
   }
 }
