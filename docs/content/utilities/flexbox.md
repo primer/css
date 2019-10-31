@@ -693,7 +693,6 @@ All flexbox utilities can be adjusted per [breakpoint](/css/objects/grid#breakpo
 
 - `d-[breakpoint]-[property]` for `display`
 - `flex-[breakpoint]-[property]-[behavior]` for various flex properties
-- `flex-[breakpoint]-item-equal` for equal width and equal height flex items
 
 Each responsive style is applied to the specified breakpoint and up.
 
@@ -712,8 +711,6 @@ Each responsive style is applied to the specified breakpoint and up.
 .flex-lg-nowrap {}
 
 .flex-lg-self-start {}
-
-.flex-md-item-equal {}
 ```
 
 #### Example usage
@@ -725,16 +722,6 @@ Mixing flex properties:
   <div class="p-5 border bg-gray-light flex-md-self-stretch">.flex-self-stretch</div>
   <div class="p-5 border bg-gray-light">&nbsp;</div>
   <div class="p-5 border bg-gray-light">&nbsp;</div>
-</div>
-```
-
-Using the equal width, equal height utilities:
-
-```html live
-<div class="border d-flex">
-  <div class="flex-md-item-equal p-3 border bg-gray-light">Stuff and things</div>
-  <div class="flex-md-item-equal p-3 border bg-gray-light">More stuff<br> on multiple lines</div>
-  <div class="flex-md-item-equal p-3 border bg-gray-light">Hi mom</div>
 </div>
 ```
 
