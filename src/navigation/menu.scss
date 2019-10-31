@@ -18,17 +18,23 @@
 
   &:first-child {
     border-top: 0;
+    // stylelint-disable-next-line primer/borders
     border-top-left-radius: 2px;
+    // stylelint-disable-next-line primer/borders
     border-top-right-radius: 2px;
 
+    // stylelint-disable-next-line primer/borders
     &::before { border-top-left-radius: 2px; }
   }
 
   &:last-child {
     border-bottom: 0;
+    // stylelint-disable-next-line primer/borders
     border-bottom-right-radius: 2px;
+    // stylelint-disable-next-line primer/borders
     border-bottom-left-radius: 2px;
 
+    // stylelint-disable-next-line primer/borders
     &::before { border-bottom-left-radius: 2px; }
   }
 
@@ -103,13 +109,17 @@
   }
 
   &:first-child {
+    // stylelint-disable-next-line primer/borders
     border-top-left-radius: 2px;
+    // stylelint-disable-next-line primer/borders
     border-top-right-radius: 2px;
   }
 
   &:last-child {
     border-bottom: 0;
+    // stylelint-disable-next-line primer/borders
     border-bottom-right-radius: 2px;
+    // stylelint-disable-next-line primer/borders
     border-bottom-left-radius: 2px;
   }
 }

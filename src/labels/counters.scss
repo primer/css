@@ -8,6 +8,7 @@
   color: $text-gray;
   // stylelint-disable-next-line primer/colors
   background-color: rgba($black, 0.08);
+  // stylelint-disable-next-line primer/borders
   border-radius: 20px;
 
   &:empty {

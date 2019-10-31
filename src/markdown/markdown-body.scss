@@ -83,6 +83,7 @@
   blockquote {
     padding: 0 1em;
     color: $text-gray-light;
+    // stylelint-disable-next-line primer/borders
     border-left: 0.25em $border-style lighten($gray-300, 5%);
 
     > :first-child {

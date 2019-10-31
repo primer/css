@@ -33,6 +33,7 @@ label {
 
   &.focus,
   &:focus {
+    // stylelint-disable-next-line primer/borders
     border-color: $blue-400;
     outline: none;
     box-shadow: $form-control-shadow, $btn-input-focus-shadow;
@@ -65,6 +66,7 @@ label {
 
   &.focus,
   &:focus {
+    // stylelint-disable-next-line primer/borders
     border-color: $black-fade-30;
     box-shadow: 0 0 0 0.2em rgba($blue-300, 0.4);
   }

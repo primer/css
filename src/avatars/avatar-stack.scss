@@ -33,6 +33,7 @@
     margin-right: -11px;
     background-color: $bg-white;
     border-right: $border-width $border-style $border-white;
+    // stylelint-disable-next-line primer/borders
     border-radius: 2px;
     transition: margin 0.1s ease-in-out;
 
@@ -47,6 +48,7 @@
 
     // stylelint-disable selector-max-type
     img {
+      // stylelint-disable-next-line primer/borders
       border-radius: 2px;
     }
     // stylelint-enable selector-max-type
@@ -85,6 +87,7 @@
     display: block;
     height: 20px;
     content: "";
+    // stylelint-disable-next-line primer/borders
     border-radius: 2px;
     outline: $border-width $border-style $white;
   }

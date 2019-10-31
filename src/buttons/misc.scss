@@ -40,6 +40,7 @@
   // stylelint-disable-next-line primer/colors
   background: lighten($gray-300, 5%);
   border: 0;
+  // stylelint-disable-next-line primer/borders
   border-radius: 1px;
 
   &:hover {
@@ -67,6 +68,7 @@
   color: $text-gray-dark;
   vertical-align: middle;
   background-color: $bg-white;
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style transparentize($black, 0.8); // match with .btn
   border-left: 0;
   border-top-right-radius: $border-radius;

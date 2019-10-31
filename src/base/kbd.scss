@@ -10,6 +10,7 @@ kbd {
   color: $gray-700;
   vertical-align: middle;
   background-color: $bg-gray-light;
+  // stylelint-disable-next-line primer/borders
   border: $border-style $border-width $border-gray-dark;
   border-bottom-color: $border-gray-dark;
   border-radius: $border-radius;

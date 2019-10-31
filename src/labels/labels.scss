@@ -20,6 +20,7 @@
   font-weight: $font-weight-bold;
   line-height: $lh-condensed-ultra; // prevent inheritance from changing proportions
   color: $text-white;
+  // stylelint-disable-next-line primer/borders
   border-radius: 2px;
   box-shadow: inset 0 -1px 0 rgba($black, 0.12);
 

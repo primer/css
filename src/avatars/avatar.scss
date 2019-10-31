@@ -6,6 +6,7 @@
   border-radius: $border-radius;
 }
 
+// stylelint-disable-next-line primer/borders
 .avatar-small { border-radius: 2px; }
 
 .avatar-link {

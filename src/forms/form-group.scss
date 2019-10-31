@@ -151,15 +151,18 @@
         height: 0;
         pointer-events: none;
         content: " ";
+        // stylelint-disable-next-line primer/borders
         border: $border-style transparent;
       }
 
       &::after {
+        // stylelint-disable-next-line primer/borders
         border-width: 5px;
       }
 
       &::before {
         margin-left: -1px;
+        // stylelint-disable-next-line primer/borders
         border-width: 6px;
       }
     }
@@ -174,6 +177,7 @@
       border-color: $border-yellow;
 
       &::after {
+        // stylelint-disable-next-line primer/borders
         border-bottom-color: $yellow-100;
       }
 
@@ -195,6 +199,7 @@
       border-color: $border-red-light;
 
       &::after {
+        // stylelint-disable-next-line primer/borders
         border-bottom-color: $bg-red-light;
       }
 

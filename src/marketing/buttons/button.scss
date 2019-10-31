@@ -10,6 +10,7 @@
   user-select: none;
   // stylelint-disable-next-line primer/colors
   background-color: $blue-mktg;
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style $blue-mktg;
   border-radius: $border-radius;
   transition: $transition-time / 2;
@@ -37,10 +38,12 @@
 .btn-primary-mktg {
   // stylelint-disable-next-line primer/colors
   background-color: $green-mktg;
+  // stylelint-disable-next-line primer/borders
   border-color: $green-mktg;
 
   &:hover {
     background-color: $bg-green;
+    // stylelint-disable-next-line primer/borders
     border-color: $green-500;
   }
 
@@ -59,6 +62,7 @@
   color: $blue-mktg;
   // stylelint-disable-next-line primer/colors
   background-color: rgba($white, 0);
+  // stylelint-disable-next-line primer/borders
   border-color: rgba($blue-mktg, 0.5);
 
   &:hover {
@@ -66,6 +70,7 @@
     text-decoration: none;
     // stylelint-disable-next-line primer/colors
     background-color: rgba($white, 0);
+    // stylelint-disable-next-line primer/borders
     border-color: rgba($blue-mktg, 1);
   }
 }
@@ -81,6 +86,7 @@
   color: $text-white;
   background-color: transparent;
   background-image: none;
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style $white-fade-50;
 
   &:hover,

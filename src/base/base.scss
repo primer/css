@@ -44,6 +44,7 @@ hr,
   overflow: hidden;
   background: transparent;
   border: 0;
+  // stylelint-disable-next-line primer/borders
   border-bottom: $border-width $border-style lighten($gray-300, 5%);
   @include clearfix();
 }

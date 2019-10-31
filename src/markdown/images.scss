@@ -40,6 +40,7 @@
       padding: 7px;
       margin: 13px 0 0;
       overflow: hidden;
+      // stylelint-disable-next-line primer/borders
       border: $border-width $border-style lighten($gray-300, 5%);
     }
 

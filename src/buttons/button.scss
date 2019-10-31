@@ -15,7 +15,9 @@
   background-repeat: repeat-x;
   background-position: -1px -1px;
   background-size: 110% 110%;
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style transparentize($black, 0.8);
+  // stylelint-disable-next-line primer/borders
   border-radius: 0.25em;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
@@ -92,6 +94,7 @@
 .btn-large {
   padding: $em-spacer-6 1.25em;
   font-size: inherit;
+  // stylelint-disable-next-line primer/borders
   border-radius: 6px;
 }
 

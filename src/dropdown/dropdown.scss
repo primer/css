@@ -9,6 +9,7 @@
   vertical-align: middle;
   content: "";
   border-style: $border-style;
+  // stylelint-disable-next-line primer/borders
   border-width: $spacer-1 $spacer-1 0;
   border-right-color: transparent;
   border-bottom-color: transparent;
@@ -30,6 +31,7 @@
   background-color: $bg-white;
   background-clip: padding-box;
   border: $border-width $border-style $border-black-fade;
+  // stylelint-disable-next-line primer/borders
   border-radius: $spacer-1;
   box-shadow: $box-shadow-large;
 
@@ -41,11 +43,13 @@
   }
 
   &::before {
+    // stylelint-disable-next-line primer/borders
     border: $spacer-2 $border-style transparent;
     border-bottom-color: $border-black-fade;
   }
 
   &::after {
+    // stylelint-disable-next-line primer/borders
     border: 7px $border-style transparent;
     border-bottom-color: $border-white;
   }
@@ -185,18 +189,24 @@
   &::before {
     bottom: -$spacer-2;
     left: 9px;
+    // stylelint-disable-next-line primer/borders
     border-top: $spacer-2 $border-style $border-black-fade;
+    // stylelint-disable-next-line primer/borders
     border-right: $spacer-2 $border-style transparent;
     border-bottom: 0;
+    // stylelint-disable-next-line primer/borders
     border-left: $spacer-2 $border-style transparent;
   }
 
   &::after {
     bottom: -7px;
     left: 10px;
+    // stylelint-disable-next-line primer/borders
     border-top: 7px $border-style $border-white;
+    // stylelint-disable-next-line primer/borders
     border-right: 7px $border-style transparent;
     border-bottom: 0;
+    // stylelint-disable-next-line primer/borders
     border-left: 7px $border-style transparent;
   }
 }
@@ -261,6 +271,7 @@
   }
 
   &::after {
+    // stylelint-disable-next-line primer/borders
     border-bottom-color: $gray-800;
   }
 
@@ -285,6 +296,7 @@
     }
 
     &::after {
+      // stylelint-disable-next-line primer/borders
       border-color: transparent transparent transparent $gray-800;
     }
   }
@@ -295,6 +307,7 @@
     }
 
     &::after {
+      // stylelint-disable-next-line primer/borders
       border-color: transparent $gray-800 transparent transparent;
     }
   }
@@ -305,6 +318,7 @@
     }
 
     &::after {
+      // stylelint-disable-next-line primer/borders
       border-color: $gray-800 transparent transparent transparent;
     }
   }

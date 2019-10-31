@@ -123,6 +123,7 @@ dl.form-group > dd {
   line-height: 16px;
   color: $text-gray;
   background-color: $bg-gray-light;
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style darken($gray-300, 5%);
   border-top: 0;
   border-bottom-right-radius: $border-radius;
@@ -219,6 +220,7 @@ dl.form-group > dd {
 .upload-enabled {
   textarea {
     display: block;
+    // stylelint-disable-next-line primer/borders
     border-bottom: $border-width dashed lighten($gray-300, 5%);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -233,6 +235,7 @@ dl.form-group > dd {
     }
 
     .drag-and-drop {
+      // stylelint-disable-next-line primer/borders
       border-color: lighten($blue-400, 8%);
     }
   }
@@ -258,6 +261,7 @@ dl.form-group > dd {
   }
 
   .comment {
+    // stylelint-disable-next-line primer/borders
     border: $border-width $border-style darken($gray-300, 5%);
   }
 

@@ -18,6 +18,7 @@
   }
 
   &:target .TimelineItem-badge {
+    // stylelint-disable-next-line primer/borders
     border-color: $blue-400;
     box-shadow: 0 0 0.2em $blue-200;
   }
@@ -36,6 +37,7 @@
   align-items: center;
   // stylelint-disable-next-line primer/colors
   background-color: $gray-200;
+  // stylelint-disable-next-line primer/borders
   border: 2px $border-style $border-white;
   border-radius: 50%;
   justify-content: center;
@@ -66,6 +68,7 @@
   margin-left: -($spacer-6 + $spacer-3);
   background-color: $bg-white;
   border: 0;
+  // stylelint-disable-next-line primer/borders
   border-top: 4px $border-style $border-color;
 }
 

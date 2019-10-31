@@ -91,7 +91,9 @@
   // Ensures bottom-border doesn't poke out when .Box-body used without box-footer
   &:last-of-type {
     margin-bottom: -$border-width;
+    // stylelint-disable-next-line primer/borders
     border-bottom-right-radius: 2px;
+    // stylelint-disable-next-line primer/borders
     border-bottom-left-radius: 2px;
   }
 }
@@ -105,12 +107,16 @@
 
   &:first-of-type {
     border-top-color: transparent;
+    // stylelint-disable-next-line primer/borders
     border-top-left-radius: 2px;
+    // stylelint-disable-next-line primer/borders
     border-top-right-radius: 2px;
   }
 
   &:last-of-type {
+    // stylelint-disable-next-line primer/borders
     border-bottom-right-radius: 2px;
+    // stylelint-disable-next-line primer/borders
     border-bottom-left-radius: 2px;
   }
 
