@@ -10,7 +10,7 @@
   user-select: none;
   // stylelint-disable-next-line primer/colors
   background-color: $blue-mktg;
-  border: 1px solid $blue-mktg;
+  border: $border-width $border-style $blue-mktg;
   border-radius: $border-radius;
   transition: $transition-time / 2;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
@@ -18,7 +18,7 @@
   &:hover {
     text-decoration: none;
     background-color: $bg-blue;
-    border-color: $blue-500;
+    border-color: $border-blue;
   }
 
   &:focus {

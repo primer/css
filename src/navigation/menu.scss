@@ -6,15 +6,15 @@
   margin-bottom: 15px;
   list-style: none;
   background-color: $bg-white;
-  border: 1px solid $gray-300;
-  border-radius: 3px;
+  border: $border-width $border-style $border-gray-dark;
+  border-radius: $border-radius;
 }
 
 .menu-item {
   position: relative;
   display: block;
   padding: $spacer-2 10px;
-  border-bottom: 1px solid $gray-200;
+  border-bottom: $border;
 
   &:first-child {
     border-top: 0;
@@ -96,7 +96,7 @@
   color: $text-gray;
   // stylelint-disable-next-line primer/colors
   background-color: darken($gray-100, 1%);
-  border-bottom: 1px solid $gray-200;
+  border-bottom: $border;
 
   &:hover {
     text-decoration: none;

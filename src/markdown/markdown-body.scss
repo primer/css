@@ -83,7 +83,7 @@
   blockquote {
     padding: 0 1em;
     color: $text-gray-light;
-    border-left: 0.25em solid lighten($gray-300, 5%);
+    border-left: 0.25em $border-style lighten($gray-300, 5%);
 
     > :first-child {
       margin-top: 0;

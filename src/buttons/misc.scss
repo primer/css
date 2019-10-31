@@ -67,10 +67,10 @@
   color: $text-gray-dark;
   vertical-align: middle;
   background-color: $bg-white;
-  border: 1px solid transparentize($black, 0.8); // match with .btn
+  border: $border-width $border-style transparentize($black, 0.8); // match with .btn
   border-left: 0;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
 
   &:hover,
   &:active {

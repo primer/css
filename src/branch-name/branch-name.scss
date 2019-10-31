@@ -8,7 +8,7 @@
   color: rgba($black, 0.6);
   // stylelint-disable-next-line primer/colors
   background-color: lighten($blue-100, 3%);
-  border-radius: 3px;
+  border-radius: $border-radius;
 
   .octicon {
     margin: 1px -2px 0 0;

@@ -8,8 +8,8 @@
     padding: 2px 5px 3px;
     font-size: $h5-size;
     background: $bg-white;
-    border: 1px solid $border-gray-light;
-    border-radius: 3px;
+    border: $border-width $border-style $border-gray-light;
+    border-radius: $border-radius;
   }
 
   img {
@@ -27,7 +27,7 @@
 }
 
 .blankslate-capped {
-  border-radius: 0 0 3px 3px;
+  border-radius: 0 0 $border-radius $border-radius;
 }
 
 .blankslate-spacious {

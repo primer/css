@@ -23,7 +23,7 @@
   &:focus {
     color: $text-gray-dark;
     text-decoration: none;
-    border-bottom-color: $gray-300;
+    border-bottom-color: $border-gray-dark;
     transition: 0.2s ease;
 
     .UnderlineNav-octicon {

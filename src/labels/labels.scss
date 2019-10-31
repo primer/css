@@ -44,13 +44,13 @@
   font-weight: $font-weight-normal;
   color: $text-gray;
   background-color: transparent;
-  border: 1px solid $black-fade-15;
+  border: $border-width $border-style $border-black-fade;
   box-shadow: none;
 }
 
 .Label--outline-green {
   color: $text-green;
-  border: 1px solid $border-green;
+  border: $border-width $border-style $border-green;
 }
 
 .Label--gray-darker {

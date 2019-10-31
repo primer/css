@@ -26,8 +26,8 @@ label {
   background-color: $bg-white;
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
-  border: 1px solid $border-gray-dark;
-  border-radius: 3px;
+  border: $border-width $border-style $border-gray-dark;
+  border-radius: $border-radius;
   outline: none;
   box-shadow: $form-control-shadow;
 
@@ -128,7 +128,7 @@ label {
       font-style: normal;
       // stylelint-disable-next-line primer/colors
       background: $yellow-100;
-      border-radius: 3px;
+      border-radius: $border-radius;
     }
   }
 
@@ -227,8 +227,8 @@ input::-webkit-inner-spin-button {
   color: $yellow-900;
   // stylelint-disable-next-line primer/colors
   background: $yellow-100;
-  border: 1px solid $border-yellow;
-  border-radius: 3px;
+  border: $border-width $border-style $border-yellow;
+  border-radius: $border-radius;
 
   p {
     margin: 0;

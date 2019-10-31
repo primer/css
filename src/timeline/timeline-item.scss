@@ -36,7 +36,7 @@
   align-items: center;
   // stylelint-disable-next-line primer/colors
   background-color: $gray-200;
-  border: 2px solid $white;
+  border: 2px $border-style $border-white;
   border-radius: 50%;
   justify-content: center;
   flex-shrink: 0;
@@ -66,7 +66,7 @@
   margin-left: -($spacer-6 + $spacer-3);
   background-color: $bg-white;
   border: 0;
-  border-top: 4px solid $gray-200;
+  border-top: 4px $border-style $border-color;
 }
 
 .TimelineItem--condensed {

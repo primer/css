@@ -32,7 +32,7 @@
     box-sizing: content-box;
     margin-right: -11px;
     background-color: $bg-white;
-    border-right: $border-width $border-style $white;
+    border-right: $border-width $border-style $border-white;
     border-radius: 2px;
     transition: margin 0.1s ease-in-out;
 
@@ -133,6 +133,6 @@
     margin-right: 0;
     margin-left: -11px;
     border-right: 0;
-    border-left: $border-width $border-style $white;
+    border-left: $border-width $border-style $border-white;
   }
 }

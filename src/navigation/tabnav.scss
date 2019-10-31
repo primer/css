@@ -3,7 +3,7 @@
 .tabnav {
   margin-top: 0;
   margin-bottom: 15px;
-  border-bottom: 1px solid $gray-300;
+  border-bottom: $border-width $border-style $border-gray-dark;
 
   .Counter {
     margin-left: 5px;
@@ -22,15 +22,15 @@
   color: $text-gray;
   text-decoration: none;
   background-color: transparent;
-  border: 1px solid transparent;
+  border: $border-width $border-style transparent;
   border-bottom: 0;
 
   &[aria-selected=true],
   &.selected {
     color: $text-gray-dark;
     background-color: $bg-white;
-    border-color: $gray-300;
-    border-radius: 3px 3px 0 0;
+    border-color: $border-gray-dark;
+    border-radius: $border-radius $border-radius 0 0;
   }
 
   &:hover,

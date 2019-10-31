@@ -37,13 +37,13 @@
   h1 {
     padding-bottom: 0.3em;
     font-size: 2em;
-    border-bottom: 1px solid lighten($gray-200, 3%);
+    border-bottom: $border-width $border-style $border-gray-light;
   }
 
   h2 {
     padding-bottom: 0.3em;
     font-size: 1.5em;
-    border-bottom: 1px solid lighten($gray-200, 3%);
+    border-bottom: $border-width $border-style $border-gray-light;
   }
 
   h3 {
