@@ -64,6 +64,7 @@ async function dist() {
 
     const meta = {bundles}
     await writeFile(join(outDir, 'meta.json'), JSON.stringify(meta, null, 2), encoding)
+    await writeVariableData()
     await writeDeprecationData()
   } catch (error) {
     console.error(error)
@@ -100,4 +101,11 @@ function writeDeprecationData() {
 
 if (require.main === module) {
   dist()
+}
+
+function writeVariableData() {
+  const analyzeVariables = require('./analyze-variables')
+  return analyzeVariables('src/support/index.scss').then(data =>
+    writeFile(join(outDir, 'variables.json'), JSON.stringify(data, null, 2))
+  )
 }
