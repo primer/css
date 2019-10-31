@@ -7,14 +7,16 @@ $border-style: solid !default;
 $border: $border-width $border-color $border-style !default;
 $border-radius: 3px !default;
 
-// Custom explore grid border
-$exploregrid-item-border-radius: 4px;
-
 // Box shadow
 $box-shadow: 0 1px 1px rgba($black, 0.1) !default;
 $box-shadow-medium: 0 1px 5px $black-fade-15 !default;
 $box-shadow-large: 0 1px 15px $black-fade-15 !default;
 $box-shadow-extra-large: 0 10px 50px rgba($black, 0.07) !default;
+
+// Button and form variables
+$form-control-shadow: inset 0 1px 2px rgba($black, 0.075) !default;
+$btn-input-focus-shadow: 0 0 0 0.2em rgba($blue, 0.3) !default;
+$btn-active-shadow: inset 0 0.15em 0.3em $black-fade-15 !default;
 
 // Tooltips
 $tooltip-max-width: 250px !default;
@@ -23,17 +25,18 @@ $tooltip-text-color: $white !default;
 $tooltip-delay: 0.4s !default;
 $tooltip-duration: 0.1s !default;
 
-// Should be moved into custom github css
-$stats-switcher-py: 10px;
+// Custom explore grid border
+// TODO@14.0.0: move $exploregrid-item-border-radius to github/github
+$exploregrid-item-border-radius: 4px !default;
+
+// TODO@14.0.0: remove $stats-switcher-py (unused)
+$stats-switcher-py: 10px !default;
 // Future proof this `height` value by finding the computed line-height, then
 // adding the total value of the vertical padding. This var is used to toggle
 // between the stats bar and language breakdown.
-$stats-viewport-height: ($body-font-size * $body-line-height) + ($stats-switcher-py * 2);
+// TODO@14.0.0: remove $stats-viewport-height (unused)
+$stats-viewport-height: ($body-font-size * $body-line-height) + ($stats-switcher-py * 2) !default;
 
-$min_tab_size: 1;
-$max_tab_size: 12;
-
-// Button and form variables
-$form-control-shadow: inset 0 1px 2px rgba($black, 0.075);
-$btn-input-focus-shadow: 0 0 0 0.2em rgba($blue, 0.3);
-$btn-active-shadow: inset 0 0.15em 0.3em $black-fade-15;
+// TODO@14.0.0: move $min_tab_size, $max_tab_size to github/github
+$min_tab_size: 1 !default;
+$max_tab_size: 12 !default;
