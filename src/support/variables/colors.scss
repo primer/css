@@ -17,24 +17,21 @@ $highlight-yellow: rgba(255, 247, 140, 0.5);
 $border-white:       $white !default;
 $border-black-fade:  $black-fade-15 !default;
 $border-white-fade:  $white-fade-15 !default;
-
-$border-blue:        $blue-500 !default;
-$border-blue-light:  $blue-200 !default;
-
-$border-green:       $green-400 !default;
-$border-green-light: desaturate($green-300, 40%) !default;
-
-$border-purple:      $purple !default;
-
-$border-red:         $red !default;
-$border-red-light:   desaturate($red-300, 60%) !default;
-
-$border-yellow:      desaturate($yellow-300, 60%) !default;
-
 $border-gray-dark:   $gray-300 !default;
 $border-gray-darker: $gray-700 !default;
 $border-gray-light:  lighten($gray-200, 3%) !default;
 $border-gray:        $gray-200 !default;
+$border-blue:        $blue-500 !default;
+$border-blue-light:  $blue-200 !default;
+$border-green:       $green-400 !default;
+$border-green-light: desaturate($green-300, 40%) !default;
+$border-purple:      $purple !default;
+$border-red:         $red !default;
+$border-red-light:   desaturate($red-300, 60%) !default;
+$border-yellow:      desaturate($yellow-300, 60%) !default;
+
+// Buttons have a slightly more opaque border than $border-black-fade (15% alpha)
+$border-color-button: rgba($black, 0.2);
 
 // Background colors
 $bg-white:          $white !default;
