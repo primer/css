@@ -6,6 +6,10 @@
 const versionDeprecations = {
   '14.0.0': [
     {
+      selectors: ['.UnderlineNav-item.selected', '.UnderlineNav-item.selected .UnderlineNav-octicon'],
+      message: `Please use aria-selected="true" to indicate the selected state of an UnderlineNav item.`
+    },
+    {
       variables: ['$status-pending'],
       message: `This variable is deprecated.`
     },
