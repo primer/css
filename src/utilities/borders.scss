@@ -13,13 +13,6 @@
   border-bottom: $border !important;
 }
 
-$edges: (
-  top: (top-left, top-right),
-  right: (top-right, bottom-right),
-  bottom: (bottom-right, bottom-left),
-  left: (bottom-left, top-left)
-);
-
 /* Responsive gray borders */
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
