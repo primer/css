@@ -1,14 +1,4 @@
 // Visibility and display utilities
-$display-values: (
-  block,
-  flex,
-  inline,
-  inline-block,
-  inline-flex,
-  none,
-  table,
-  table-cell
-);
 
 // Responsive display utilities
 @each $breakpoint, $variant in $responsive-variants {

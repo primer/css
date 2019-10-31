@@ -1,5 +1,17 @@
 // Layout variables
 
+// these are values for the display CSS property
+$display-values: (
+  block,
+  flex,
+  inline,
+  inline-block,
+  inline-flex,
+  none,
+  table,
+  table-cell
+) !default;
+
 // These are our margin and padding utility spacers. The default step size we
 // use is 8px. This gives us a key of:
 //    0 => 0px
