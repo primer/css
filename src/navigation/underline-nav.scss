@@ -31,7 +31,8 @@
     }
   }
 
-  &.selected, // TODO@14.0.0: remove &.selected
+  // TODO@14.0.0: remove &.selected
+  &.selected,
   &[role=tab][aria-selected=true],
   &[aria-current] {
     font-weight: $font-weight-bold;
