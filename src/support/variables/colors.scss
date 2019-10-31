@@ -11,7 +11,7 @@ $repo-private-bg:   $yellow-000 !default;
 $repo-private-icon: rgba($yellow-900, 0.5) !default;
 
 // Highlight used for things like search
-$highlight-yellow: rgba(255, 247, 140, 0.5);
+$highlight-yellow: rgba(255, 247, 140, 0.5) !default;
 
 // Border colors
 $border-white:       $white !default;
