@@ -41,7 +41,7 @@
   left: 0;
   pointer-events: none;
   content: "";
-  background-color: $black-fade-50;
+  background-color: $bg-black-fade;
 
   @include breakpoint(sm) {
     display: none;
