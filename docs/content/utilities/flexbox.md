@@ -487,20 +487,32 @@ When the main axis wraps, this creates multiple main axis lines and adds extra s
 Use this class to specify the ability of a flex item to alter its dimensions to fill available space.
 
 ```css
-.flex-1          { flex: 1; }
-.flex-auto       { flex: 1 1 auto; }
-.flex-grow-0     { flex-grow: 0; }
-.flex-shrink-0   { flex-shrink: 0; }
+.flex-1        { flex: 1; }
+.flex-auto     { flex: auto; }
+.flex-grow-0   { flex-grow: 0; }
+.flex-shrink-0 { flex-shrink: 0; }
 ```
 
 | Class | Description |
 | --- | --- |
-| `.flex-1` | Sets default values for  `flex-grow` (1), `flex-shrink` (1) and `flex-basis` (0%)  |
-| `.flex-auto` | Sets default values for  `flex-grow` (1), `flex-shrink` (1) and `flex-basis` (auto)  |
-| `.flex-grow-0` | Prevents growing of a flex item  |
-| `.flex-shrink-0` | Prevents shrinking of a flex item  |
+| `.flex-1` | Fills available space |
+| `.flex-auto` | Fills available space and auto-sizes based on the content |
+| `.flex-grow-0` | Prevents growing of a flex item |
+| `.flex-shrink-0` | Prevents shrinking of a flex item |
 
 #### flex-1
+
+Adding `.flex-1` makes the item grow in size to take up all the space that is available.
+
+```html live
+<div class="border d-flex">
+  <div class="p-5 border bg-gray-light">flex item</div>
+  <div class="p-5 border bg-gray-light flex-1">.flex-1</div>
+  <div class="p-5 border bg-gray-light">flex item</div>
+</div>
+```
+
+Adding `.flex-1` to all flex items results in each item having the same size.
 
 ```html live
 <div class="border d-flex">
@@ -512,31 +524,37 @@ Use this class to specify the ability of a flex item to alter its dimensions to 
 
 #### flex-auto
 
+Using `.flex-auto` fills the available space but also takes the size of the content into account. Type in the editor below to see the effect.
+
 ```html live
 <div class="border d-flex">
-  <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
-  <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
-  <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
+  <div class="p-5 border bg-gray-light flex-1">.flex-1</div>
+  <div class="p-5 border bg-gray-light flex-auto">.flex-auto with a bit more text</div>
+  <div class="p-5 border bg-gray-light flex-1">.flex-1</div>
 </div>
 ```
 
 #### flex-grow-0
 
+Add `.flex-grow-0` to prevent an item from growing. This can be useful when used as a responsive variant. For example to stop growing when the viewport gets wider.
+
 ```html live
 <div class="border d-flex">
-  <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
-  <div class="p-5 border bg-gray-light flex-auto flex-grow-0">.flex-auto .flex-grow-0</div>
-  <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
+  <div class="p-5 border bg-gray-light">flex item</div>
+  <div class="p-5 border bg-gray-light flex-auto flex-md-grow-0">.flex-auto .flex-md-grow-0</div>
+  <div class="p-5 border bg-gray-light">flex item</div>
 </div>
 ```
 
 #### flex-shrink-0
 
+Add `.flex-shrink-0` to prevent an item from shrinking. Note that for example text will not wrap and the flex items start to overflow if there is not enough space.
+
 ```html live
-<div class="border d-flex" style="width: 450px">
-  <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
-  <div class="p-5 border bg-gray-light flex-auto flex-shrink-0">.flex-auto .flex-shrink-0</div>
-  <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
+<div class="p-2 border d-flex" style="max-width: 340px">
+  <div class="p-5 border bg-gray-light">flex item</div>
+  <div class="p-5 border bg-gray-light flex-shrink-0">.flex-shrink-0</div>
+  <div class="p-5 border bg-gray-light">flex item</div>
 </div>
 ```
 
