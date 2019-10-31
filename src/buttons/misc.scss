@@ -74,7 +74,7 @@
   vertical-align: middle;
   background-color: $bg-white;
   // stylelint-disable-next-line primer/borders
-  border: $border-width $border-style transparentize($black, 0.8); // match with .btn
+  border: $border-width $border-style $border-color-button; // match with .btn
   border-left: 0;
   border-top-right-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
