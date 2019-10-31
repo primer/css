@@ -10,6 +10,7 @@ module.exports = {
     'primer/borders': true,
     'primer/spacing': true,
     'primer/typography': true,
+    'primer/box-shadow': true,
     'primer-css/TODO': [true, {currentVersion, severity: 'error'}]
   }
 }
