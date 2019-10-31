@@ -40,7 +40,8 @@
     "test-migrate": "script/test-migrate"
   },
   "dependencies": {
-    "@primer/octicons": "^9.1.1"
+    "@primer/octicons": "^9.1.1",
+    "stylelint-disable": "^0.1.5"
   },
   "devDependencies": {
     "@storybook/addon-viewport": "5.0.11",
