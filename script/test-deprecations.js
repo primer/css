@@ -30,9 +30,16 @@ If either check fails, the process exits with an error status (1).
   process.exit(0)
 }
 
-checkDeprecations(args)
+Promise.all([checkSelectorDeprecations(args), checkVariableDeprecations(args)]).then(
+  (deprecationErrors, variableErrors) => {
+    const errors = deprecationErrors.concat(variableErrors)
+    if (errors.length) {
+      process.exit(1)
+    }
+  }
+)
 
-async function checkDeprecations(options = {}) {
+async function checkSelectorDeprecations(options = {}) {
   const {bundle = 'primer', version = 'latest'} = options
 
   const currentVersion = require('../package.json').version
@@ -79,9 +86,57 @@ async function checkDeprecations(options = {}) {
     }
   }
 
-  if (errors.length) {
-    process.exitCode = 1
+  return errors
+}
+
+async function checkVariableDeprecations(options = {}) {
+  const {version = 'latest'} = options
+
+  const currentVersion = require('../package.json').version
+  const varsPath = `dist/variables.json`
+
+  const local = require(`../${varsPath}`)
+  const remote = await fetch(`https://unpkg.com/@primer/css@${version}/${varsPath}`).then(res => res.json())
+
+  const {changed, added, removed} = diffLists(Object.keys(remote), Object.keys(local))
+  if (changed === 0) {
+    console.log(`no variables added or removed in version ${currentVersion}`)
+    return
   }
+
+  const deprecations = versionDeprecations[currentVersion] || []
+  const deprecatedVariables = deprecations.reduce((list, deprecation) => list.concat(deprecation.variables), [])
+  console.log(`${I} ${removed.length} variables removed locally (compared with ${version})`)
+  console.log(`${I} ${deprecatedVariables.length} variables deprecated in v${currentVersion}`)
+  if (added.length) {
+    console.log(`${I} ${added.length} variables added`)
+  }
+
+  const errors = []
+  for (const deprecation of deprecations) {
+    for (const variable of deprecation.variables) {
+      if (!removed.includes(variable)) {
+        const error = `variable "${variable}" deprecated, but not removed`
+        errors.push(error)
+        console.log(`${X} ${error}`)
+      } else {
+        console.log(`${V} "${variable}" is officially deprecated`)
+      }
+      deprecatedVariables.push(variable)
+    }
+  }
+
+  for (const removedVariable of removed) {
+    if (!deprecatedVariables.includes(removedVariable)) {
+      const error = `"${removedVariable}" has been removed, but was not listed in versionDeprecations['${currentVersion}']`
+      errors.push(error)
+      console.log(`${X} ${error}`)
+    } else {
+      // console.log(`${V} "${removedVariable}" removed and deprecated!`)
+    }
+  }
+
+  return errors
 }
 
 function diffLists(before, after) {

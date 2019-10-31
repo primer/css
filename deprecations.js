@@ -4,6 +4,32 @@
  * array and a "message" string.
  */
 const versionDeprecations = {
+  '14.0.0': [
+    {
+      variables: ['$status-pending'],
+      message: `This variable is deprecated.`
+    },
+    {
+      variables: ['$repo-private-text', '$repo-private-bg', '$repo-private-icon'],
+      message: `These variables are deprecated.`
+    },
+    {
+      variables: ['$marketingSpacers', '$allSpacers'],
+      message: `Please use the $marketing-spacers and $marketing-all-spacers variables.`
+    },
+    {
+      variables: ['$exploregrid-item-border-radius'],
+      message: `This variable is deprecated. Use "4px" instead.`
+    },
+    {
+      variables: ['$stats-switcher-py', '$stats-viewport-height'],
+      message: `These variables are deprecated.`
+    },
+    {
+      variables: ['$min_tab_size', '$max_tab_size'],
+      message: `These variables are deprecated.`
+    }
+  ],
   '13.0.0': [
     {
       selectors: [
@@ -68,10 +94,14 @@ const semver = require('semver')
 
 // map selectors to the version and message of their deprecation
 const selectorDeprecations = new Map()
+const variableDeprecations = new Map()
 for (const [version, deps] of Object.entries(versionDeprecations)) {
-  for (const {selectors, message} of deps) {
+  for (const {selectors = [], variables = [], message} of deps) {
     for (const selector of selectors) {
       selectorDeprecations.set(selector, {version, message})
+    }
+    for (const variable of variables) {
+      variableDeprecations.set(variable, {version, message})
     }
   }
 }
@@ -81,4 +111,15 @@ function isSelectorDeprecated(selector, version = CURRENT_VERSION) {
   return deprecation ? semver.gte(deprecation.version, version) : false
 }
 
-module.exports = {versionDeprecations, selectorDeprecations, isSelectorDeprecated}
+function isVariableDeprecated(variable, version = CURRENT_VERSION) {
+  const deprecation = variableDeprecations.get(variable)
+  return deprecation ? semver.gte(deprecation.version, version) : false
+}
+
+module.exports = {
+  versionDeprecations,
+  selectorDeprecations,
+  variableDeprecations,
+  isSelectorDeprecated,
+  isVariableDeprecated
+}
