@@ -487,6 +487,7 @@ When the main axis wraps, this creates multiple main axis lines and adds extra s
 Use this class to specify the ability of a flex item to alter its dimensions to fill available space.
 
 ```css
+.flex-1          { flex: 1; }
 .flex-auto       { flex: 1 1 auto; }
 .flex-grow-0     { flex-grow: 0; }
 .flex-shrink-0   { flex-shrink: 0; }
@@ -494,9 +495,20 @@ Use this class to specify the ability of a flex item to alter its dimensions to 
 
 | Class | Description |
 | --- | --- |
+| `.flex-1` | Sets default values for  `flex-grow` (1), `flex-shrink` (1) and `flex-basis` (0%)  |
 | `.flex-auto` | Sets default values for  `flex-grow` (1), `flex-shrink` (1) and `flex-basis` (auto)  |
 | `.flex-grow-0` | Prevents growing of a flex item  |
 | `.flex-shrink-0` | Prevents shrinking of a flex item  |
+
+#### flex-1
+
+```html live
+<div class="border d-flex">
+  <div class="p-5 border bg-gray-light flex-1">.flex-1</div>
+  <div class="p-5 border bg-gray-light flex-1">.flex-1</div>
+  <div class="p-5 border bg-gray-light flex-1">.flex-1</div>
+</div>
+```
 
 #### flex-auto
 
