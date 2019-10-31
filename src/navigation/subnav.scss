@@ -21,7 +21,7 @@
   padding: 6px 14px;
   font-weight: $font-weight-bold;
   line-height: 20px;
-  color: $gray-600;
+  color: $text-gray;
   border: 1px solid $gray-200;
 
   + .subnav-item {
@@ -31,7 +31,7 @@
   &:hover,
   &:focus {
     text-decoration: none;
-    background-color: $gray-100;
+    background-color: $bg-gray;
   }
 
   &.selected,

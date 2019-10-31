@@ -119,7 +119,7 @@ dl.form-group > dd {
   font-size: 13px;
   line-height: 16px;
   color: $text-gray;
-  background-color: $gray-000;
+  background-color: $bg-gray-light;
   border: 1px solid darken($gray-300, 5%);
   border-top: 0;
   border-bottom-right-radius: 3px;
@@ -312,13 +312,13 @@ h2.account {
   margin: 15px 0 0;
   font-size: 18px;
   font-weight: $font-weight-normal;
-  color: $gray-600;
+  color: $text-gray;
 }
 
 p.explain {
   position: relative;
   font-size: $font-size-small;
-  color: $gray-600;
+  color: $text-gray;
 
   strong {
     color: $text-gray-dark;

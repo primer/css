@@ -16,7 +16,7 @@
 
   &:hover {
     text-decoration: none;
-    background-color: $blue-500;
+    background-color: $bg-blue;
     border-color: $blue-500;
   }
 
@@ -38,7 +38,7 @@
   border-color: $green-mktg;
 
   &:hover {
-    background-color: $green-500;
+    background-color: $bg-green;
     border-color: $green-500;
   }
 
@@ -58,7 +58,7 @@
   border-color: rgba($blue-mktg, 0.5);
 
   &:hover {
-    color: $blue-500;
+    color: $text-blue;
     text-decoration: none;
     background-color: rgba($white, 0);
     border-color: rgba($blue-mktg, 1);

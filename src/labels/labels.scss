@@ -33,7 +33,7 @@
 // Commonly used across the site to indicate a particular role. For example,
 // "repo owner" within code comments or role in organizations.
 .Label--gray {
-  color: $gray-600;
+  color: $text-gray;
   background-color: lighten($gray-200, 3%);
 }
 

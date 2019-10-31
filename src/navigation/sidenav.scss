@@ -45,7 +45,7 @@
 .SideNav-item:focus {
   color: $text-gray-dark;
   text-decoration: none;
-  background-color: $gray-100;
+  background-color: $bg-gray;
   outline: none;
 
   // Bar on the left
@@ -88,7 +88,7 @@
   display: block;
   width: 100%;
   padding: $spacer-1 0;
-  color: $blue-500;
+  color: $text-blue;
   text-align: left;
   background-color: transparent;
   border: 0;

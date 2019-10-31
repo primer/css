@@ -142,7 +142,7 @@ label {
     margin: 0;
     font-size: $font-size-small;
     font-weight: $font-weight-normal;
-    color: $gray-600;
+    color: $text-gray;
   }
 }
 
@@ -176,7 +176,7 @@ label {
       label {
         display: inline-block;
         margin: 5px 0 0;
-        color: $gray-600;
+        color: $text-gray;
       }
 
       img {

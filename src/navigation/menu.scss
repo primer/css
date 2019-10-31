@@ -34,7 +34,7 @@
 
   &:hover {
     text-decoration: none;
-    background-color: $gray-100;
+    background-color: $bg-gray;
   }
 
   &.selected {
@@ -91,7 +91,7 @@
   font-size: 13px;
   font-weight: $font-weight-bold;
   line-height: 20px;
-  color: $gray-600;
+  color: $text-gray;
   background-color: darken($gray-100, 1%);
   border-bottom: 1px solid $gray-200;
 
