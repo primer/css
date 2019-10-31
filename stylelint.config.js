@@ -8,6 +8,8 @@ module.exports = {
     'primer/no-override': false,
     'primer/colors': true,
     'primer/borders': true,
+    'primer/spacing': true,
+    'primer/typography': true,
     'primer-css/TODO': [true, {currentVersion, severity: 'error'}]
   }
 }
