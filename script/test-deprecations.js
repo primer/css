@@ -31,10 +31,16 @@ If either check fails, the process exits with an error status (1).
 }
 
 Promise.all([checkSelectorDeprecations(args), checkVariableDeprecations(args)]).then(
-  (deprecationErrors, variableErrors) => {
-    const errors = deprecationErrors.concat(variableErrors)
+  ([deprecationErrors, variableErrors]) => {
+    const errors = [...deprecationErrors, ...variableErrors]
     if (errors.length) {
+      console.log(`\n${errors.length} error${errors.length === 1 ? '' : 's'}:`)
+      for (const error of errors) {
+        console.log(`${X} ${error}`)
+      }
       process.exit(1)
+    } else {
+      console.log(`${V} no errors!`)
     }
   }
 )
@@ -50,27 +56,30 @@ async function checkSelectorDeprecations(options = {}) {
 
   const {changed, added, removed} = diffLists(remote.selectors.values, local.selectors.values)
   if (changed === 0) {
-    console.log(`no selectors added or removed in bundle "${bundle}"`)
-    return
+    console.log(`${I} no selectors changed in bundle "${bundle}" (${version} -> ${currentVersion})`)
+    // return
   }
 
   const deprecations = versionDeprecations[currentVersion] || []
   const deprecatedSelectors = deprecations.reduce((list, deprecation) => list.concat(deprecation.selectors), [])
-  console.log(`${I} ${removed.length} selectors removed locally (compared with ${version})`)
-  console.log(`${I} ${deprecatedSelectors.length} selectors deprecated in v${currentVersion}`)
+  if (removed.length) {
+    console.log(`${I} ${removed.length} selectors removed locally (compared with ${version})`)
+  }
+  if (deprecatedSelectors.length) {
+    console.log(`${I} ${deprecatedSelectors.length} selectors to be deprecated in ${currentVersion}`)
+  }
   if (added.length) {
     console.log(`${I} ${added.length} selectors added`)
   }
 
   const errors = []
-  for (const deprecation of deprecations) {
-    for (const selector of deprecation.selectors) {
+  for (const {selectors = []} of deprecations) {
+    for (const selector of selectors) {
       if (!removed.includes(selector)) {
         const error = `"${selector}" deprecated, but not removed`
         errors.push(error)
-        console.log(`${X} ${error}`)
       } else {
-        console.log(`${V} "${selector}" is officially deprecated`)
+        console.log(`${V} selector "${selector}" is officially deprecated`)
       }
       deprecatedSelectors.push(selector)
     }
@@ -80,7 +89,6 @@ async function checkSelectorDeprecations(options = {}) {
     if (!deprecatedSelectors.includes(removedSelector)) {
       const error = `"${removedSelector}" has been removed, but was not listed in versionDeprecations['${currentVersion}']`
       errors.push(error)
-      console.log(`${X} ${error}`)
     } else {
       // console.log(`${V} "${removedSelector}" removed and deprecated!`)
     }
@@ -100,27 +108,30 @@ async function checkVariableDeprecations(options = {}) {
 
   const {changed, added, removed} = diffLists(Object.keys(remote), Object.keys(local))
   if (changed === 0) {
-    console.log(`no variables added or removed in version ${currentVersion}`)
-    return
+    console.log(`${I} no variables changed (${version} -> ${currentVersion})`)
+    // return
   }
 
   const deprecations = versionDeprecations[currentVersion] || []
   const deprecatedVariables = deprecations.reduce((list, deprecation) => list.concat(deprecation.variables), [])
-  console.log(`${I} ${removed.length} variables removed locally (compared with ${version})`)
-  console.log(`${I} ${deprecatedVariables.length} variables deprecated in v${currentVersion}`)
+  if (removed.length) {
+    console.log(`${I} ${removed.length} variables removed locally (compared with ${version})`)
+  }
+  if (deprecatedVariables.length) {
+    console.log(`${I} ${deprecatedVariables.length} variables to be deprecated in ${currentVersion}`)
+  }
   if (added.length) {
     console.log(`${I} ${added.length} variables added`)
   }
 
   const errors = []
-  for (const deprecation of deprecations) {
-    for (const variable of deprecation.variables) {
+  for (const {variables = []} of deprecations) {
+    for (const variable of variables) {
       if (!removed.includes(variable)) {
         const error = `variable "${variable}" deprecated, but not removed`
         errors.push(error)
-        console.log(`${X} ${error}`)
       } else {
-        console.log(`${V} "${variable}" is officially deprecated`)
+        console.log(`${V} variable "${variable}" is officially deprecated`)
       }
       deprecatedVariables.push(variable)
     }
@@ -130,7 +141,6 @@ async function checkVariableDeprecations(options = {}) {
     if (!deprecatedVariables.includes(removedVariable)) {
       const error = `"${removedVariable}" has been removed, but was not listed in versionDeprecations['${currentVersion}']`
       errors.push(error)
-      console.log(`${X} ${error}`)
     } else {
       // console.log(`${V} "${removedVariable}" removed and deprecated!`)
     }
