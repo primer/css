@@ -6,6 +6,7 @@ module.exports = {
   syntax: 'scss',
   rules: {
     'primer/no-override': false,
+    'primer/colors': true,
     'primer-css/TODO': [true, {currentVersion, severity: 'error'}]
   }
 }
