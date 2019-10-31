@@ -31,7 +31,7 @@ $border-red-light:   desaturate($red-300, 60%) !default;
 $border-yellow:      desaturate($yellow-300, 60%) !default;
 
 // Buttons have a slightly more opaque border than $border-black-fade (15% alpha)
-$border-color-button: rgba($black, 0.2);
+$border-color-button: rgba($black, 0.2) !default;
 
 // Background colors
 $bg-white:          $white !default;
