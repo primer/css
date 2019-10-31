@@ -68,6 +68,7 @@ dl.form-group > dd {
 
   .octicon-check {
     display: inline-block;
+    // stylelint-disable-next-line primer/colors
     color: $green;
     fill: $green;
   }
@@ -96,7 +97,9 @@ dl.form-group > dd {
 
 .status-indicator-loading {
   width: 16px;
-  background: url("/images/spinners/octocat-spinner-32-EAF2F5.gif") 0 0 no-repeat;
+  background-image: url("/images/spinners/octocat-spinner-32-EAF2F5.gif");
+  background-repeat: no-repeat;
+  background-position: 0 0;
   background-size: 16px;
 }
 
@@ -326,6 +329,7 @@ p.explain {
 
   .octicon {
     margin-right: 5px;
+    // stylelint-disable-next-line primer/colors
     color: $gray-400;
   }
 
