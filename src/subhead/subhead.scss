@@ -15,7 +15,7 @@
 // <h2> sized heading with normal font weight
 .Subhead-heading {
   font-size: $h2-size;
-  font-weight: normal;
+  font-weight: $font-weight-normal;
   flex: 1 1 auto;
 }
 
