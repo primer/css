@@ -10,7 +10,7 @@
   padding: $em-spacer-5 $em-spacer-6;
   font: normal normal 11px/1.5 $body-font;
   -webkit-font-smoothing: subpixel-antialiased;
-  color: $tooltip-text-color;
+  color: $text-white;
   text-align: center;
   text-decoration: none;
   text-shadow: none;
@@ -20,7 +20,7 @@
   white-space: pre;
   pointer-events: none;
   content: attr(aria-label);
-  background: $tooltip-background-color;
+  background: $bg-black;
   border-radius: $border-radius;
   opacity: 0;
 }
@@ -32,8 +32,7 @@
   display: none;
   width: 0;
   height: 0;
-  // stylelint-disable-next-line primer/colors
-  color: $tooltip-background-color;
+  color: $text-black;
   pointer-events: none;
   content: "";
   // stylelint-disable-next-line primer/borders
@@ -103,7 +102,7 @@
     // stylelint-disable-next-line primer/spacing
     margin-right: -6px;
     // stylelint-disable-next-line primer/borders
-    border-bottom-color: $tooltip-background-color;
+    border-bottom-color: $bg-black;
   }
 }
 
@@ -137,7 +136,7 @@
     // stylelint-disable-next-line primer/spacing
     margin-right: -6px;
     // stylelint-disable-next-line primer/borders
-    border-top-color: $tooltip-background-color;
+    border-top-color: $bg-black;
   }
 }
 
@@ -176,7 +175,7 @@
     // stylelint-disable-next-line primer/spacing
     margin-top: -6px;
     // stylelint-disable-next-line primer/borders
-    border-left-color: $tooltip-background-color;
+    border-left-color: $bg-black;
   }
 }
 
@@ -197,7 +196,7 @@
     // stylelint-disable-next-line primer/spacing
     margin-top: -6px;
     // stylelint-disable-next-line primer/borders
-    border-right-color: $tooltip-background-color;
+    border-right-color: $bg-black;
   }
 }
 
