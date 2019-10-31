@@ -21,6 +21,7 @@
   display: inline-block;
   padding: $spacer-2 12px;
   font-size: $h5-size;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
   color: $text-gray;
   text-decoration: none;

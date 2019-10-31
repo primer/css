@@ -122,7 +122,9 @@ dl.form-group > dd {
   // stylelint-disable-next-line primer/spacing
   padding: 7px 10px;
   margin: 0;
+  // stylelint-disable-next-line primer/typography
   font-size: 13px;
+  // stylelint-disable-next-line primer/typography
   line-height: 16px;
   color: $text-gray;
   background-color: $bg-gray-light;
@@ -217,6 +219,7 @@ dl.form-group > dd {
   .manual-file-chooser {
     top: 0;
     padding: 0;
+    // stylelint-disable-next-line primer/typography
     line-height: 34px;
   }
 }
@@ -325,6 +328,7 @@ div.composer {
 h2.account {
   // stylelint-disable-next-line primer/spacing
   margin: 15px 0 0;
+  // stylelint-disable-next-line primer/typography
   font-size: 18px;
   font-weight: $font-weight-normal;
   color: $text-gray;

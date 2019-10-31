@@ -12,6 +12,7 @@
   display: inline-block;
   padding: $spacer-1 $spacer-2;
   font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
   color: $text-white;
   text-align: center;

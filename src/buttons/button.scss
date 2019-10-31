@@ -8,6 +8,7 @@
   padding: 6px 12px;
   font-size: $body-font-size;
   font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px; // Specifically not inherit our `<body>` default
   white-space: nowrap;
   vertical-align: middle;
@@ -89,6 +90,7 @@
   // stylelint-disable-next-line primer/spacing
   padding: 3px 10px;
   font-size: $font-size-small;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
 }
 

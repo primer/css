@@ -37,6 +37,7 @@
   h1 {
     // stylelint-disable-next-line primer/spacing
     padding-bottom: 0.3em;
+    // stylelint-disable-next-line primer/typography
     font-size: 2em;
     border-bottom: $border-width $border-style $border-gray-light;
   }
@@ -44,11 +45,13 @@
   h2 {
     // stylelint-disable-next-line primer/spacing
     padding-bottom: 0.3em;
+    // stylelint-disable-next-line primer/typography
     font-size: 1.5em;
     border-bottom: $border-width $border-style $border-gray-light;
   }
 
   h3 {
+    // stylelint-disable-next-line primer/typography
     font-size: 1.25em;
   }
 
@@ -57,10 +60,12 @@
   }
 
   h5 {
+    // stylelint-disable-next-line primer/typography
     font-size: 0.875em;
   }
 
   h6 {
+    // stylelint-disable-next-line primer/typography
     font-size: 0.85em;
     color: $text-gray-light;
   }

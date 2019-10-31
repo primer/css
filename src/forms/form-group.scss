@@ -54,10 +54,12 @@
   &.flattened dt {
     float: left;
     margin: 0;
+    // stylelint-disable-next-line primer/typography
     line-height: 32px;
   }
 
   &.flattened dd {
+    // stylelint-disable-next-line primer/typography
     line-height: 32px;
   }
 
@@ -140,6 +142,7 @@
       // stylelint-disable-next-line primer/spacing
       padding: 5px $spacer-2;
       margin: $spacer-1 0 0;
+      // stylelint-disable-next-line primer/typography
       font-size: 13px;
       font-weight: $font-weight-normal;
       border-style: $border-style;

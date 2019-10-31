@@ -34,6 +34,7 @@
   padding: 0 5px 5px;
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
   line-height: 6px;
   // stylelint-disable-next-line primer/colors
   color: $gray-700;
@@ -67,6 +68,7 @@
   padding: 3px 10px;
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
   color: $text-gray-dark;
   vertical-align: middle;
