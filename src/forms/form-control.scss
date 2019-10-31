@@ -21,6 +21,7 @@ label {
   // stylelint-disable-next-line primer/spacing
   padding: 6px $spacer-2;
   font-size: $h4-size;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
   color: $text-gray-dark;
   vertical-align: middle;
@@ -86,6 +87,7 @@ label {
   // stylelint-disable-next-line primer/spacing
   padding-bottom: 3px;
   font-size: $font-size-small;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
 }
 
@@ -207,7 +209,6 @@ label {
   }
 
   // stylelint-disable-next-line primer/spacing
-
   .form-select { margin-top: 5px; }
 }
 
