@@ -5,14 +5,13 @@
   "scripts": {
     "clean": "gatsby clean",
     "develop": "gatsby develop -H 0.0.0.0",
-    "prebuild": "cd .. && npm run dist",
     "build": "gatsby build --prefix-paths",
     "now-build": "npm run build"
   },
   "dependencies": {
     "@loadable/component": "^5.10.2",
     "@primer/components": "^13.2.0",
-    "@primer/css": "^12.4.1",
+    "@primer/css": "0.0.0-beb5a8b",
     "@primer/gatsby-theme-doctocat": "^0.15.0",
     "@primer/octicons": "^9.1.1",
     "@primer/octicons-react": "^9.1.1",
