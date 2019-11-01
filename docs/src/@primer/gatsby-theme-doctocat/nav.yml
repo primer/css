@@ -16,6 +16,8 @@
       url: /support/typography
     - title: Marketing support
       url: /support/marketing-variables
+    - title: Variables
+      url: /support/variables
 - title: Utilities
   url: /utilities
   children:
