@@ -88,15 +88,20 @@ function getPathName(path) {
 }
 
 function writeDeprecationData() {
-  const {versionDeprecations, selectorDeprecations} = require('../deprecations')
+  const {versionDeprecations, selectorDeprecations, variableDeprecations} = require('../deprecations')
   const data = {
     versions: versionDeprecations,
-    selectors: Array.from(selectorDeprecations.entries()).reduce((obj, [selector, deprecation]) => {
-      obj[selector] = deprecation
+    selectors: mapToObject(selectorDeprecations),
+    variables: mapToObject(variableDeprecations)
+  }
+  return writeFile(join(outDir, 'deprecations.json'), JSON.stringify(data, null, 2))
+
+  function mapToObject(map) {
+    return Array.from(map.entries()).reduce((obj, [key, value]) => {
+      obj[key] = value
       return obj
     }, {})
   }
-  return writeFile(join(outDir, 'deprecations.json'), JSON.stringify(data, null, 2))
 }
 
 if (require.main === module) {
