@@ -213,12 +213,14 @@
       &::before {
         top: -$spacer-3;
         right: 50%;
+        left: auto;
         transform: translateX(50%);
       }
 
       &::after {
         top: -14px;
         right: 50%;
+        left: auto;
         transform: translateX(50%);
       }
     }
@@ -226,29 +228,40 @@
     .dropdown-menu#{$variant}-sw {
       right: 0;
       left: auto;
+      transform: none;
 
       &::before {
         top: -$spacer-3;
         right: 9px;
         left: auto;
+        transform: none;
       }
 
       &::after {
         top: -14px;
         right: 10px;
         left: auto;
+        transform: none;
       }
     }
 
     .dropdown-menu#{$variant}-se {
+      right: auto;
+      left: auto;
+      transform: none;
+
       &::before {
         top: -$spacer-3;
+        right: auto;
         left: 9px;
+        transform: none;
       }
 
       &::after {
         top: -14px;
+        right: auto;
         left: 10px;
+        transform: none;
       }
     }
 
