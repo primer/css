@@ -226,3 +226,32 @@ Align the direction of dropdown menus and their arrows with modifier classes.
   </details>
 </div>
 ```
+
+### Responsive variants
+
+The following directions have responsive variants:
+
+```
+.dropdown-menu-s
+.dropdown-menu-sw
+.dropdown-menu-se
+```
+
+Use them to make sure the `.dropdown-menu` doesn't get cut off when moving the dropdown close to an edge.
+
+```html live
+<div class="text-sm-center text-md-right" style="min-height: 140px;">
+  <details class="dropdown details-reset details-overlay d-inline-block text-left">
+    <summary class="btn" aria-haspopup="true">
+      Dropdown
+      <div class="dropdown-caret"></div>
+    </summary>
+
+    <ul class="dropdown-menu dropdown-menu-se dropdown-menu-sm-s dropdown-menu-md-sw">
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+      <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+    </ul>
+  </details>
+</div>
+```
