@@ -1,11 +1,11 @@
 {
-  "name": "docs",
   "private": true,
-  "version": "1.0.0",
-  "license": "MIT",
+  "name": "docs",
+  "repository": "primer/css",
   "scripts": {
     "clean": "gatsby clean",
     "develop": "gatsby develop -H 0.0.0.0",
+    "prebuild": "cd .. && npm run dist",
     "build": "gatsby build --prefix-paths",
     "now-build": "npm run build"
   },
@@ -35,6 +35,5 @@
     "react-frame-component": "^4.1.1",
     "styled-components": "^4.3.2",
     "title-case": "^2.1.1"
-  },
-  "repository": "primer/css"
+  }
 }
