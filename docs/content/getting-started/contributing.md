@@ -42,7 +42,11 @@ It's usually better to open an issue before investing time in spiking out a new 
 1. What the pattern is and how it's being used across the site - post screenshots and urls where possible. If you need help identifying where the pattern is being used, call that out here and cc the relevant team and/or cc `@product-design` to help.
 2. Why you think a new pattern is needed (this should answer the relevant questions above).
 3. If you intend to work on these new styles yourself, let us know what your timeline and next steps are. If you need help and this is a dependency for shipping another project, please make that clear here and what the timeline is.
-4. Add the `type: new styles` label, or `type: refactor` where appropriate.
+4. Add the appropriate label(s):
+    - `Type: Enhancement` for new styles
+    - `Type: Bug Fix` for—you guessed it!—bug fixes
+    - `Type: Polish` for refactors of existing styles
+    - `Type: Breaking Change` for any change that [removes CSS selectors or SCSS variables](#removing-styles-and-variables)
 
 ### Step 2: Design and build the new styles
 
