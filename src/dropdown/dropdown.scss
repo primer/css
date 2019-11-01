@@ -201,50 +201,57 @@
   }
 }
 
-.dropdown-menu-s {
-  right: 50%;
-  left: auto;
-  transform: translateX(50%);
+// South directions have responsive variants
 
-  &::before {
-    top: -$spacer-3;
-    right: 50%;
-    transform: translateX(50%);
-  }
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    .dropdown-menu#{$variant}-s {
+      right: 50%;
+      left: auto;
+      transform: translateX(50%);
 
-  &::after {
-    top: -14px;
-    right: 50%;
-    transform: translateX(50%);
-  }
-}
+      &::before {
+        top: -$spacer-3;
+        right: 50%;
+        transform: translateX(50%);
+      }
 
-.dropdown-menu-sw {
-  right: 0;
-  left: auto;
+      &::after {
+        top: -14px;
+        right: 50%;
+        transform: translateX(50%);
+      }
+    }
 
-  &::before {
-    top: -$spacer-3;
-    right: 9px;
-    left: auto;
-  }
+    .dropdown-menu#{$variant}-sw {
+      right: 0;
+      left: auto;
 
-  &::after {
-    top: -14px;
-    right: 10px;
-    left: auto;
-  }
-}
+      &::before {
+        top: -$spacer-3;
+        right: 9px;
+        left: auto;
+      }
 
-.dropdown-menu-se {
-  &::before {
-    top: -$spacer-3;
-    left: 9px;
-  }
+      &::after {
+        top: -14px;
+        right: 10px;
+        left: auto;
+      }
+    }
 
-  &::after {
-    top: -14px;
-    left: 10px;
+    .dropdown-menu#{$variant}-se {
+      &::before {
+        top: -$spacer-3;
+        left: 9px;
+      }
+
+      &::after {
+        top: -14px;
+        left: 10px;
+      }
+    }
+
   }
 }
 
