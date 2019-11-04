@@ -71,7 +71,7 @@ Let the [design systems team](https://github.com/github/design-systems) know if 
 
 ## Removing styles and variables
 
-Removing styles and SCSS variables can be a scary. How do you know if the thing you're deleting (or just planning to delete) isn't used in other projects? [Semantic versioning] provides us with an answer: We **don't** know, but we can use "major" version increments (from, say, `13.4.0` to `14.0.0`) to signal that the release includes potentially breaking changes. The rule is simple:
+Removing styles and SCSS variables can be scary. How do you know if the thing you're deleting (or just planning to delete) isn't used in other projects? [Semantic versioning] provides us with an answer: We **don't** know, but we can use "major" version increments (from, say, `13.4.0` to `14.0.0`) to signal that the release includes potentially breaking changes. The rule is simple:
 
 **Whenever we delete a CSS selector or SCSS variable, we will increment to the next major version.**
 
