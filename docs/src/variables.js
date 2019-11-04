@@ -4,8 +4,8 @@ import Octicon, {Alert} from '@primer/octicons-react'
 import themeGet from '@styled-system/theme-get'
 import DoctocatTable from '@primer/gatsby-theme-doctocat/src/components/table'
 import styled from 'styled-components'
-import variables from '../../dist/variables.json'
-import {variableDeprecations} from '../../deprecations'
+import variables from '../dist/variables.json'
+import deprecations from '../dist/deprecations.json'
 
 const Table = styled(DoctocatTable)`
   font-size: ${themeGet('fontSizes.1')}px;
@@ -36,7 +36,7 @@ const variablesByFile = Object.entries(variables).reduce((map, [name, variable])
   } = variable
 
   variable.name = name
-  variable.deprecated = variableDeprecations.has(name) ? 1 : 0
+  variable.deprecated = deprecations.variables.hasOwnProperty(name)
 
   if (map.has(path)) {
     map.get(path).push(variable)
@@ -133,7 +133,7 @@ function RefList({refs}) {
 }
 
 function DeprecationFlag({variable, ...rest}) {
-  const dep = variableDeprecations.get(variable)
+  const dep = deprecations.variables[variable]
   return dep ? (
     <Text {...rest}>
       <Tooltip aria-label={`Deprecation planned in version ${dep.version} (${dep.message})`}>
