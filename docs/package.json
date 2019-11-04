@@ -6,7 +6,7 @@
     "clean": "gatsby clean",
     "develop": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build --prefix-paths",
-    "now-build": "pushd ..; npm run dist; popd; npm run build"
+    "now-build": "./now-build.sh"
   },
   "dependencies": {
     "@loadable/component": "^5.10.2",
