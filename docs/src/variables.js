@@ -4,8 +4,8 @@ import Octicon, {Alert} from '@primer/octicons-react'
 import themeGet from '@styled-system/theme-get'
 import DoctocatTable from '@primer/gatsby-theme-doctocat/src/components/table'
 import styled from 'styled-components'
-import variables from '@primer/css/dist/variables.json'
-import {variableDeprecations} from '@primer/css/deprecations'
+import variables from '../../dist/variables.json'
+import {variableDeprecations} from '../../deprecations'
 
 const Table = styled(DoctocatTable)`
   font-size: ${themeGet('fontSizes.1')}px;
