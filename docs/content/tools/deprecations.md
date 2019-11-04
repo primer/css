@@ -2,28 +2,25 @@
 title: Deprecation data
 ---
 
-As of version 12.7.0, we publish CSS selector deprecation data with
-`@primer/css`. You can access the data via the [Node API](#node) or as
-[JSON](#json).
+As of version 12.7.0, we publish CSS selector and SCSS variable deprecation data (as of 14.0.0) with `@primer/css`. You can access the data via the [Node API](#node) or as [JSON](#json).
 
-Deprecation messages strings may include Markdown so that they can be included
-in the [changelog].
-
-**Keep in mind that this data includes both active and _planned_
-deprecations.** You can determine whether a CSS selector is deprecated for the
-version of `@primer/css` you've installed via the [Node API](#node), or by
-comparing the version of a selector deprecation with the installed version in
-your own environment.
+**Keep in mind that this data includes both active and _planned_ deprecations.** The [Node API](#node) is the best way to determine whether a selector or variable is deprecated for the version of `@primer/css` you've installed.
 
 ## JSON
 
 The JSON data is available in the unpacked node module's `dist/deprecations.json`, and is an object with the following structure:
 
-* `versions` is an object whose keys are version numbers (e.g. `13.0.0`) and values are deprecation messages: objects with a `selectors` array and a `message`:
+* `versions` is an object whose keys are version numbers (e.g. `13.0.0`) and values are deprecation messages, each of which has a `message` string and a `selectors` and/or `variables` array:
 
     ```json
     {
       "versions": {
+        "14.0.0": [
+          {
+            "variables": ["$min_tab_size", "$max_tab_size"],
+            "message": "These variables have been deprecated."
+          }
+        ],
         "13.0.0": [
           {
             "selectors": [".btn-purple"],
@@ -33,6 +30,8 @@ The JSON data is available in the unpacked node module's `dist/deprecations.json
       }
     }
     ```
+    
+    Deprecation messages strings may include Markdown so that they can be included in the [changelog].
 
 * `selectors` is an object mapping CSS selectors (e.g. `.btn-purple`) to the version in which they are _or will be_ deprecated:
 
@@ -46,6 +45,20 @@ The JSON data is available in the unpacked node module's `dist/deprecations.json
       }
     }
     ```
+    
+* `variables` is an object mapping SCSS variables (including the leading `$`, e.g. `$status-pending`) to the version in which they are or will be deprecated:
+
+    ```json
+    {
+      "variables": {
+        "$status-pending": {
+          "version": "14.0.0",
+          "message": "This variable is unused in Primer, and is deprecated."
+        }
+      }
+    }
+    ```
+    
 
 ## Node
 
@@ -89,6 +102,27 @@ console.log(`Purple buttons are bad? ${isSelectorDeprecated('.btn-purple')}`)
 console.log(`Primary buttons are bad? ${isSelectorDeprecated('.btn-primary')}`)
 // "Primary buttons are bad? false"
 ```
+
+### `variableDeprecations`
+This is a [Map] object with keys for each SCSS variable mapped to the deprecation info:
+
+```js
+const {selectorDeprecations} = require('@primer/css/deprecations')
+console.log(`Will $status-pending be deprecated? ${variableDeprecations.has('$status-pending')}`)
+// "Will $status-pending be deprecated? true"
+```
+
+### `isVariableDeprecated(variable[, version])`
+Returns `true` if the named SCSS variable (including the leading `$`) will have been deprecated (removed) _by_ the specified [semver] version.
+
+```js
+const {isVariableDeprecated} = require('@primer/css/deprecations')
+console.log(`$status-pending deprecated? ${isVariableDeprecated('$status-pending')}`)
+// "$status-pending deprecated? true"
+console.log(`$yellow-700 deprecated? ${isVariableDeprecated('$yellow-700')}`)
+// "$yellow-700 deprecated false"
+```
+
 
 [semver]: https://npm.im/semver
 [changelog]: https://github.com/primer/css/tree/master/CHANGELOG.md
