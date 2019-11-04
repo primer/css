@@ -10,7 +10,7 @@
   padding: $em-spacer-5 $em-spacer-6;
   font: normal normal 11px/1.5 $body-font;
   -webkit-font-smoothing: subpixel-antialiased;
-  color: $tooltip-text-color;
+  color: $text-white;
   text-align: center;
   text-decoration: none;
   text-shadow: none;
@@ -20,7 +20,7 @@
   white-space: pre;
   pointer-events: none;
   content: attr(aria-label);
-  background: $tooltip-background-color;
+  background: $bg-black;
   border-radius: $border-radius;
   opacity: 0;
 }
@@ -32,9 +32,10 @@
   display: none;
   width: 0;
   height: 0;
-  color: $tooltip-background-color;
+  color: $text-black;
   pointer-events: none;
   content: "";
+  // stylelint-disable-next-line primer/borders
   border: 6px $border-style transparent;
   opacity: 0;
 }
@@ -90,6 +91,7 @@
   &::after {
     top: 100%;
     right: 50%;
+    // stylelint-disable-next-line primer/spacing
     margin-top: 6px;
   }
 
@@ -97,8 +99,10 @@
     top: auto;
     right: 50%;
     bottom: -7px;
+    // stylelint-disable-next-line primer/spacing
     margin-right: -6px;
-    border-bottom-color: $tooltip-background-color;
+    // stylelint-disable-next-line primer/borders
+    border-bottom-color: $bg-black;
   }
 }
 
@@ -121,6 +125,7 @@
   &::after {
     right: 50%;
     bottom: 100%;
+    // stylelint-disable-next-line primer/spacing
     margin-bottom: 6px;
   }
 
@@ -128,8 +133,10 @@
     top: -7px;
     right: 50%;
     bottom: auto;
+    // stylelint-disable-next-line primer/spacing
     margin-right: -6px;
-    border-top-color: $tooltip-background-color;
+    // stylelint-disable-next-line primer/borders
+    border-top-color: $bg-black;
   }
 }
 
@@ -156,6 +163,7 @@
   &::after {
     right: 100%;
     bottom: 50%;
+    // stylelint-disable-next-line primer/spacing
     margin-right: 6px;
     transform: translateY(50%);
   }
@@ -164,8 +172,10 @@
     top: 50%;
     bottom: 50%;
     left: -7px;
+    // stylelint-disable-next-line primer/spacing
     margin-top: -6px;
-    border-left-color: $tooltip-background-color;
+    // stylelint-disable-next-line primer/borders
+    border-left-color: $bg-black;
   }
 }
 
@@ -174,6 +184,7 @@
   &::after {
     bottom: 50%;
     left: 100%;
+    // stylelint-disable-next-line primer/spacing
     margin-left: 6px;
     transform: translateY(50%);
   }
@@ -182,8 +193,10 @@
     top: 50%;
     right: -7px;
     bottom: 50%;
+    // stylelint-disable-next-line primer/spacing
     margin-top: -6px;
-    border-right-color: $tooltip-background-color;
+    // stylelint-disable-next-line primer/borders
+    border-right-color: $bg-black;
   }
 }
 

@@ -34,7 +34,7 @@
       color: rgba($color, 0.4);
       background-color: $bg2;
       background-image: none;
-      border-color: transparentize($black, 0.8); // back to default .btn
+      border-color: $border-color-button;
       box-shadow: none;
     }
 
@@ -67,7 +67,7 @@
       color: rgba($color, 0.75);
       background-color: mix($bg2, $white, 50%);
       background-image: none;
-      border-color: transparentize($black, 0.8); // repeat .btn default to avoid shift on click-drag off of button
+      border-color: $border-color-button;
       box-shadow: none;
     }
 
@@ -114,7 +114,7 @@
     color: rgba($color, 0.4);
     background-color: $bg2;
     background-image: none;
-    border-color: transparentize($black, 0.8); // back to default .btn
+    border-color: $border-color-button;
     box-shadow: none;
   }
 }

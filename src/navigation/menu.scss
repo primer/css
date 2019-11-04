@@ -3,38 +3,45 @@
 // A menu on the side of a page, defaults to left side. e.g. github.com/about
 
 .menu {
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 15px;
   list-style: none;
   background-color: $bg-white;
-  border: 1px solid $gray-300;
-  border-radius: 3px;
+  border: $border-width $border-style $border-gray-dark;
+  border-radius: $border-radius;
 }
 
 .menu-item {
   position: relative;
   display: block;
   padding: $spacer-2 10px;
-  border-bottom: 1px solid $gray-200;
+  border-bottom: $border;
 
   &:first-child {
     border-top: 0;
+    // stylelint-disable-next-line primer/borders
     border-top-left-radius: 2px;
+    // stylelint-disable-next-line primer/borders
     border-top-right-radius: 2px;
 
+    // stylelint-disable-next-line primer/borders
     &::before { border-top-left-radius: 2px; }
   }
 
   &:last-child {
     border-bottom: 0;
+    // stylelint-disable-next-line primer/borders
     border-bottom-right-radius: 2px;
+    // stylelint-disable-next-line primer/borders
     border-bottom-left-radius: 2px;
 
+    // stylelint-disable-next-line primer/borders
     &::before { border-bottom-left-radius: 2px; }
   }
 
   &:hover {
     text-decoration: none;
-    background-color: $gray-100;
+    background-color: $bg-gray;
   }
 
   &.selected {
@@ -50,12 +57,14 @@
       left: 0;
       width: 2px;
       content: "";
+      // stylelint-disable-next-line primer/colors
       background-color: $orange-600;
     }
   }
 
   .octicon {
     width: 16px;
+    // stylelint-disable-next-line primer/spacing
     margin-right: 5px;
     color: $text-gray-dark;
     text-align: center;
@@ -63,16 +72,19 @@
 
   .Counter {
     float: right;
+    // stylelint-disable-next-line primer/spacing
     margin-left: 5px;
   }
 
   .menu-warning {
     float: right;
+    // stylelint-disable-next-line primer/colors
     color: $red-900;
   }
 
   .avatar {
     float: left;
+    // stylelint-disable-next-line primer/spacing
     margin-right: 5px;
   }
 
@@ -88,25 +100,32 @@
   padding: $spacer-2 10px;
   margin-top: 0;
   margin-bottom: 0;
+  // stylelint-disable-next-line primer/typography
   font-size: 13px;
   font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: $gray-600;
+  color: $text-gray;
+  // stylelint-disable-next-line primer/colors
   background-color: darken($gray-100, 1%);
-  border-bottom: 1px solid $gray-200;
+  border-bottom: $border;
 
   &:hover {
     text-decoration: none;
   }
 
   &:first-child {
+    // stylelint-disable-next-line primer/borders
     border-top-left-radius: 2px;
+    // stylelint-disable-next-line primer/borders
     border-top-right-radius: 2px;
   }
 
   &:last-child {
     border-bottom: 0;
+    // stylelint-disable-next-line primer/borders
     border-bottom-right-radius: 2px;
+    // stylelint-disable-next-line primer/borders
     border-bottom-left-radius: 2px;
   }
 }
