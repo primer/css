@@ -86,7 +86,9 @@ async function checkSelectorDeprecations(options = {}) {
 
   for (const removedSelector of removed) {
     if (!deprecatedSelectors.includes(removedSelector)) {
-      errors.push(`"${removedSelector}" has been removed, but was not listed in versionDeprecations['${currentVersion}']`)
+      errors.push(
+        `"${removedSelector}" has been removed, but was not listed in versionDeprecations['${currentVersion}']`
+      )
     } else {
       // console.log(`${V} "${removedSelector}" removed and deprecated!`)
     }
@@ -140,7 +142,9 @@ async function checkVariableDeprecations(options = {}) {
 
   for (const removedVariable of removed) {
     if (!deprecatedVariables.includes(removedVariable)) {
-      errors.push(`"${removedVariable}" has been removed, but was not listed in versionDeprecations['${currentVersion}']`)
+      errors.push(
+        `"${removedVariable}" has been removed, but was not listed in versionDeprecations['${currentVersion}']`
+      )
     } else {
       // console.log(`${V} "${removedVariable}" removed and deprecated!`)
     }
