@@ -14,6 +14,10 @@ const versionDeprecations = {
       message: `This variable is deprecated.`
     },
     {
+      variables: ['$highlight-yellow'],
+      message: `This variable is deprecated.`
+    },
+    {
       variables: ['$repo-private-text', '$repo-private-bg', '$repo-private-icon'],
       message: `These variables are deprecated.`
     },
