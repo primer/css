@@ -4,9 +4,8 @@
   "repository": "primer/css",
   "scripts": {
     "clean": "gatsby clean",
-    "develop": "gatsby develop -H 0.0.0.0",
-    "build": "gatsby build --prefix-paths",
-    "now-build": "./now-build.sh"
+    "develop": "ln -sf ../dist . && gatsby develop -H 0.0.0.0",
+    "build": "gatsby build --prefix-paths"
   },
   "dependencies": {
     "@loadable/component": "^5.10.2",
