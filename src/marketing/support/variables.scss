@@ -39,11 +39,6 @@ $spacer-10: $spacer * 12 !default; // 96px
 $spacer-11: $spacer * 14 !default; // 112px
 $spacer-12: $spacer * 16 !default; // 128px
 
-// TODO@14.0.0: remove $marketingSpacers (unused)
-$marketingSpacers: $spacer-7, $spacer-8, $spacer-9, $spacer-10, $spacer-11, $spacer-12 !default;
-// TODO@14.0.0: remove $allSpacers (unused)
-$allSpacers: $spacer-1, $spacer-2, $spacer-3, $spacer-4, $spacer-5, $spacer-6, $spacer-7, $spacer-8, $spacer-9, $spacer-10, $spacer-11, $spacer-12 !default;
-
 $marketing-spacers: (
   7: $spacer-7,
   8: $spacer-8,
