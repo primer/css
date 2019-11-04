@@ -1,0 +1,30 @@
+// Loaders
+
+// Animated Ellipsis
+
+.animated-ellipsis-container {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  overflow: hidden;
+  transform: translateZ(0);
+
+  > .animated-ellipsis {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    animation: ellipsis 1s infinite;
+  }
+}
+
+@keyframes ellipsis {
+  from { width: 2px; }
+
+  to { width: 12px; }
+}
+
+.large-loading-area {
+  // stylelint-disable-next-line primer/variables
+  padding: 100px 0;
+  text-align: center;
+}
