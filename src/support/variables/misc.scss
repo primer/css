@@ -24,19 +24,3 @@ $tooltip-background-color: $black !default;
 $tooltip-text-color: $white !default;
 $tooltip-delay: 0.4s !default;
 $tooltip-duration: 0.1s !default;
-
-// Custom explore grid border
-// TODO@14.0.0: move $exploregrid-item-border-radius to github/github
-$exploregrid-item-border-radius: 4px !default;
-
-// TODO@14.0.0: remove $stats-switcher-py (unused)
-$stats-switcher-py: 10px !default;
-// Future proof this `height` value by finding the computed line-height, then
-// adding the total value of the vertical padding. This var is used to toggle
-// between the stats bar and language breakdown.
-// TODO@14.0.0: remove $stats-viewport-height (unused)
-$stats-viewport-height: ($body-font-size * $body-line-height) + ($stats-switcher-py * 2) !default;
-
-// TODO@14.0.0: move $min_tab_size, $max_tab_size to github/github
-$min_tab_size: 1 !default;
-$max_tab_size: 12 !default;
