@@ -4,9 +4,9 @@
   "alias": "primer-css.now.sh",
   "builds": [
     {
-      "src": "docs/package.json",
+      "src": "package.json",
       "use": "@now/static-build",
-      "config": {"distDir": "public"}
+      "config": {"distDir": "docs/public"}
     }
   ],
   "routes": [
