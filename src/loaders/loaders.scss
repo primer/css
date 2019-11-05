@@ -2,30 +2,18 @@
 
 // Animated Ellipsis
 
-.animated-ellipsis-container {
+.AnimatedEllipsis {
   display: inline-block;
-  width: 12px;
-  height: 12px;
-  // TODO@14.0.0: Remove `overflow: visible`. Used to override styleguide.css
-  overflow: visible;
-  transform: translateZ(0);
+  overflow: hidden;
+  vertical-align: bottom;
 
-  > .animated-ellipsis {
+  &::after {
+    content: "...";
     display: inline-block;
-    overflow: hidden;
-    vertical-align: bottom;
-    animation: ellipsis 1s infinite;
+    animation: AnimatedEllipsis-keyframes 1.2s steps(4,jump-none) infinite;
   }
-}
 
-@keyframes ellipsis {
-  from { width: 2px; }
-
-  to { width: 12px; }
-}
-
-.large-loading-area {
-  // stylelint-disable-next-line primer/variables
-  padding: 100px 0;
-  text-align: center;
+  @keyframes AnimatedEllipsis-keyframes {
+    0% { transform: translateX(-100%); }
+  }
 }
