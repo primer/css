@@ -1,21 +1,6 @@
 @import "color-system.scss";
 // Color variables
 
-// State indicators.
-// TODO@14.0.0: remove $status-pending (unused)
-$status-pending:    desaturate($yellow-700, 15%) !default;
-
-// Repository type colors
-// Should be able to deprecate these in future
-// TODO@14.0.0: remove $repo-private-text, $repo-private-bg, and $repo-private-icon
-$repo-private-text: $black-fade-70 !default;
-$repo-private-bg:   $yellow-000 !default;
-$repo-private-icon: rgba($yellow-900, 0.5) !default;
-
-// Highlight used for things like search
-// TODO@14.0.0: remove $highlight-yellow (unused)
-$highlight-yellow: rgba(255, 247, 140, 0.5) !default;
-
 // Border colors
 $border-white:       $white !default;
 $border-black-fade:  $black-fade-15 !default;

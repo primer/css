@@ -110,7 +110,11 @@ if (require.main === module) {
 
 function writeVariableData() {
   const analyzeVariables = require('./analyze-variables')
-  return analyzeVariables('src/support/index.scss').then(data =>
+  return Promise.all([
+    analyzeVariables('src/support/index.scss'),
+    analyzeVariables('src/marketing/support/index.scss')
+  ]).then(([support, marketing]) => {
+    const data = Object.assign({}, support, marketing)
     writeFile(join(outDir, 'variables.json'), JSON.stringify(data, null, 2))
-  )
+  })
 }
