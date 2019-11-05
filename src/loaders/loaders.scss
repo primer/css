@@ -8,9 +8,9 @@
   vertical-align: bottom;
 
   &::after {
-    content: "...";
     display: inline-block;
-    animation: AnimatedEllipsis-keyframes 1.2s steps(4,jump-none) infinite;
+    content: "...";
+    animation: AnimatedEllipsis-keyframes 1.2s steps(4, jump-none) infinite;
   }
 
   @keyframes AnimatedEllipsis-keyframes {
