@@ -6,7 +6,13 @@
 const versionDeprecations = {
   '14.0.0': [
     {
-      selectors: ['.flex-item-equal', '.flex-sm-item-equal', '.flex-md-item-equal', '.flex-lg-item-equal', '.flex-xl-item-equal'],
+      selectors: [
+        '.flex-item-equal',
+        '.flex-sm-item-equal',
+        '.flex-md-item-equal',
+        '.flex-lg-item-equal',
+        '.flex-xl-item-equal'
+      ],
       message: `This variable is deprecated. Use "flex-1" instead.`
     },
     {
