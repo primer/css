@@ -2,7 +2,7 @@
 // Intended to replace simple-box, boxed-group, and table-list
 
 .Box {
-  background-color: $white;
+  background-color: $bg-white;
   border: $border-width $border-style $border-gray-dark;
   border-radius: $border-radius;
 }
@@ -26,6 +26,7 @@
   .Box-btn-octicon {
     &.btn-octicon {
       padding: $spacer-2 $spacer-3;
+      // stylelint-disable-next-line primer/spacing
       margin: (-$spacer-2) (-$spacer-3);
       line-height: $lh-condensed;
     }
@@ -58,6 +59,7 @@
   .Box-btn-octicon {
     &.btn-octicon {
       padding: $spacer-4;
+      // stylelint-disable-next-line primer/spacing
       margin: (-$spacer-4) (-$spacer-4);
     }
   }
@@ -70,6 +72,7 @@
 
 .Box-header {
   padding: $spacer-3;
+  // stylelint-disable-next-line primer/spacing
   margin: (-$border-width) (-$border-width) 0;
   background-color: $bg-gray;
   border-color: $border-gray-dark;
@@ -90,8 +93,11 @@
 
   // Ensures bottom-border doesn't poke out when .Box-body used without box-footer
   &:last-of-type {
+    // stylelint-disable-next-line primer/spacing
     margin-bottom: -$border-width;
+    // stylelint-disable-next-line primer/borders
     border-bottom-right-radius: 2px;
+    // stylelint-disable-next-line primer/borders
     border-bottom-left-radius: 2px;
   }
 }
@@ -99,18 +105,23 @@
 // Box rows
 .Box-row {
   padding: $spacer-3;
+  // stylelint-disable-next-line primer/spacing
   margin-top: -1px;
   list-style-type: none; // To account for applying Box component to a list
   border-top: $border-width $border-style $border-gray;
 
   &:first-of-type {
     border-top-color: transparent;
+    // stylelint-disable-next-line primer/borders
     border-top-left-radius: 2px;
+    // stylelint-disable-next-line primer/borders
     border-top-right-radius: 2px;
   }
 
   &:last-of-type {
+    // stylelint-disable-next-line primer/borders
     border-bottom-right-radius: 2px;
+    // stylelint-disable-next-line primer/borders
     border-bottom-left-radius: 2px;
   }
 
@@ -119,6 +130,7 @@
   &.Box-row--unread,
   // .unread to be deprecated with .Box-row-unread
   &.unread {
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 2px 0 0 $blue inset;
   }
 
@@ -202,6 +214,7 @@
 
 .Box-footer {
   padding: $spacer-3;
+  // stylelint-disable-next-line primer/spacing
   margin-top: -1px; // prevents double border when used with .Box-body
   border-top: $border-width $border-style $border-gray;
 }
@@ -261,6 +274,7 @@
 // Box row highlight themes
 
 .Box-row--yellow {
+  // stylelint-disable-next-line primer/colors
   background-color: $yellow-100;
 }
 
@@ -278,6 +292,7 @@
   // Increase specificity when btn-octicon is used because comes after .Box in the cascade
   &.btn-octicon {
     padding: $spacer-3 $spacer-3;
+    // stylelint-disable-next-line primer/spacing
     margin: (-$spacer-3) (-$spacer-3);
     line-height: $lh-default; // override btn-octicon line-height
   }

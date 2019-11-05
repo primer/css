@@ -4,6 +4,7 @@
   display: flex;
   height: 8px;
   overflow: hidden;
+  // stylelint-disable-next-line primer/colors
   background-color: $gray-200;
   border-radius: $border-radius;
 }

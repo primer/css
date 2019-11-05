@@ -2,15 +2,18 @@
 // stylelint-disable selector-max-type
 .tabnav {
   margin-top: 0;
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 15px;
-  border-bottom: 1px solid $gray-300;
+  border-bottom: $border-width $border-style $border-gray-dark;
 
   .Counter {
+    // stylelint-disable-next-line primer/spacing
     margin-left: 5px;
   }
 }
 
 .tabnav-tabs {
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: -1px;
 }
 
@@ -18,19 +21,20 @@
   display: inline-block;
   padding: $spacer-2 12px;
   font-size: $h5-size;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: $gray-600;
+  color: $text-gray;
   text-decoration: none;
   background-color: transparent;
-  border: 1px solid transparent;
+  border: $border-width $border-style transparent;
   border-bottom: 0;
 
   &[aria-selected=true],
   &.selected {
     color: $text-gray-dark;
     background-color: $bg-white;
-    border-color: $gray-300;
-    border-radius: 3px 3px 0 0;
+    border-color: $border-gray-dark;
+    border-radius: $border-radius $border-radius 0 0;
   }
 
   &:hover,
@@ -47,12 +51,15 @@
 
 .tabnav-extra {
   display: inline-block;
+  // stylelint-disable-next-line primer/spacing
   padding-top: 10px;
+  // stylelint-disable-next-line primer/spacing
   margin-left: 10px;
   font-size: $font-size-small;
-  color: $gray-600;
+  color: $text-gray;
 
   > .octicon {
+    // stylelint-disable-next-line primer/spacing
     margin-right: 2px;
   }
 }
@@ -71,5 +78,6 @@ a.tabnav-extra:hover {
 // the buttons to be floated or inline-block.
 
 .tabnav-btn {
+  // stylelint-disable-next-line primer/spacing
   margin-left: 10px;
 }

@@ -21,61 +21,56 @@ const bundleNames = {
   'index.scss': 'primer'
 }
 
-remove(outDir)
-  .then(() => mkdirp(statsDir))
-  .then(() => globby([`${inDir}/**/index.scss`]))
-  .then(files => {
-    return loadConfig()
-      .then(({plugins, options}) => {
-        const processor = postcss(plugins)
-        const bundles = {}
+async function dist() {
+  try {
+    const bundles = {}
+    const {plugins, options} = await loadConfig()
+    const processor = postcss(plugins)
 
-        const inPattern = new RegExp(`^${inDir}/`)
-        const tasks = files.map(from => {
-          const path = from.replace(inPattern, '')
-          const name = bundleNames[path] || getPathName(dirname(path))
+    await remove(outDir)
+    await mkdirp(statsDir)
+    const files = await globby([`${inDir}/**/index.scss`])
 
-          const to = join(outDir, `${name}.css`)
-          const meta = {
-            name,
-            source: from,
-            sass: `@primer/css/${path}`,
-            css: to,
-            map: `${to}.map`,
-            js: join(outDir, `${name}.js`),
-            stats: join(statsDir, `${name}.json`),
-            legacy: `primer-${name}/index.scss`
-          }
+    const inPattern = new RegExp(`^${inDir}/`)
+    const tasks = files.map(async from => {
+      const path = from.replace(inPattern, '')
+      const name = bundleNames[path] || getPathName(dirname(path))
 
-          return readFile(from, encoding)
-            .then(scss => {
-              meta.imports = getExternalImports(scss, path).map(getPathName)
-              return processor.process(scss, Object.assign({from, to}, options))
-            })
-            .then(result =>
-              Promise.all([
-                writeFile(to, result.css, encoding),
-                writeFile(meta.stats, JSON.stringify(cssstats(result.css)), encoding),
-                writeFile(meta.js, `module.exports = {cssstats: require('./stats/${name}.json')}`, encoding),
-                result.map ? writeFile(meta.map, result.map, encoding) : null
-              ])
-            )
-            .then(() => (bundles[name] = meta))
-        })
+      const to = join(outDir, `${name}.css`)
+      const meta = {
+        name,
+        source: from,
+        sass: `@primer/css/${path}`,
+        css: to,
+        map: `${to}.map`,
+        js: join(outDir, `${name}.js`),
+        stats: join(statsDir, `${name}.json`),
+        legacy: `primer-${name}/index.scss`
+      }
 
-        return Promise.all(tasks).then(() => bundles)
-      })
-      .then(bundles => {
-        const meta = {bundles}
-        return writeFile(join(outDir, 'meta.json'), JSON.stringify(meta, null, 2), encoding)
-      })
-      .then(writeVariableData)
-      .then(writeDeprecationData)
-  })
-  .catch(error => {
+      const scss = await readFile(from, encoding)
+      meta.imports = getExternalImports(scss, path).map(getPathName)
+      const result = await processor.process(scss, Object.assign({from, to}, options))
+      await Promise.all([
+        writeFile(to, result.css, encoding),
+        writeFile(meta.stats, JSON.stringify(cssstats(result.css)), encoding),
+        writeFile(meta.js, `module.exports = {cssstats: require('./stats/${name}.json')}`, encoding),
+        result.map ? writeFile(meta.map, result.map, encoding) : null
+      ])
+      bundles[name] = meta
+    })
+
+    await Promise.all(tasks)
+
+    const meta = {bundles}
+    await writeFile(join(outDir, 'meta.json'), JSON.stringify(meta, null, 2), encoding)
+    await writeVariableData()
+    await writeDeprecationData()
+  } catch (error) {
     console.error(error)
     process.exitCode = 1
-  })
+  }
+}
 
 function getExternalImports(scss, relativeTo) {
   const imports = []
@@ -93,20 +88,33 @@ function getPathName(path) {
 }
 
 function writeDeprecationData() {
-  const {versionDeprecations, selectorDeprecations} = require('../deprecations')
+  const {versionDeprecations, selectorDeprecations, variableDeprecations} = require('../deprecations')
   const data = {
     versions: versionDeprecations,
-    selectors: Array.from(selectorDeprecations.entries()).reduce((obj, [selector, deprecation]) => {
-      obj[selector] = deprecation
+    selectors: mapToObject(selectorDeprecations),
+    variables: mapToObject(variableDeprecations)
+  }
+  return writeFile(join(outDir, 'deprecations.json'), JSON.stringify(data, null, 2))
+
+  function mapToObject(map) {
+    return Array.from(map.entries()).reduce((obj, [key, value]) => {
+      obj[key] = value
       return obj
     }, {})
   }
-  return writeFile(join(outDir, 'deprecations.json'), JSON.stringify(data, null, 2))
+}
+
+if (require.main === module) {
+  dist()
 }
 
 function writeVariableData() {
   const analyzeVariables = require('./analyze-variables')
-  return analyzeVariables('src/support/index.scss').then(data =>
+  return Promise.all([
+    analyzeVariables('src/support/index.scss'),
+    analyzeVariables('src/marketing/support/index.scss')
+  ]).then(([support, marketing]) => {
+    const data = Object.assign({}, support, marketing)
     writeFile(join(outDir, 'variables.json'), JSON.stringify(data, null, 2))
-  )
+  })
 }

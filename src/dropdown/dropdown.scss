@@ -8,7 +8,8 @@
   height: 0;
   vertical-align: middle;
   content: "";
-  border-style: solid;
+  border-style: $border-style;
+  // stylelint-disable-next-line primer/borders
   border-width: $spacer-1 $spacer-1 0;
   border-right-color: transparent;
   border-bottom-color: transparent;
@@ -25,11 +26,13 @@
   width: 160px;
   padding-top: $spacer-1;
   padding-bottom: $spacer-1;
+  // stylelint-disable-next-line primer/spacing
   margin-top: 2px;
   list-style: none;
   background-color: $bg-white;
   background-clip: padding-box;
-  border: $border-width $border-style $black-fade-15;
+  border: $border-width $border-style $border-black-fade;
+  // stylelint-disable-next-line primer/borders
   border-radius: $spacer-1;
   box-shadow: $box-shadow-large;
 
@@ -41,13 +44,15 @@
   }
 
   &::before {
-    border: $spacer-2 solid transparent;
-    border-bottom-color: $black-fade-15;
+    // stylelint-disable-next-line primer/borders
+    border: $spacer-2 $border-style transparent;
+    border-bottom-color: $border-black-fade;
   }
 
   &::after {
-    border: 7px solid transparent;
-    border-bottom-color: $white;
+    // stylelint-disable-next-line primer/borders
+    border: 7px $border-style transparent;
+    border-bottom-color: $border-white;
   }
 
   // stylelint-disable-next-line selector-max-type
@@ -136,7 +141,7 @@
     right: -$spacer-3;
     left: auto;
     border-color: transparent;
-    border-left-color: $black-fade-15;
+    border-left-color: $border-black-fade;
   }
 
   &::after {
@@ -144,7 +149,7 @@
     right: -14px;
     left: auto;
     border-color: transparent;
-    border-left-color: $white;
+    border-left-color: $border-white;
   }
 }
 
@@ -159,14 +164,14 @@
     top: $spacer-2;
     left: -$spacer-3;
     border-color: transparent;
-    border-right-color: $black-fade-15;
+    border-right-color: $border-black-fade;
   }
 
   &::after {
     top: 11px;
     left: -14px;
     border-color: transparent;
-    border-right-color: $white;
+    border-right-color: $border-white;
   }
 }
 
@@ -174,6 +179,7 @@
   top: auto;
   bottom: 100%;
   left: 0;
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 3px;
 
   &::before,
@@ -185,19 +191,25 @@
   &::before {
     bottom: -$spacer-2;
     left: 9px;
-    border-top: $spacer-2 solid $black-fade-15;
-    border-right: $spacer-2 solid transparent;
+    // stylelint-disable-next-line primer/borders
+    border-top: $spacer-2 $border-style $border-black-fade;
+    // stylelint-disable-next-line primer/borders
+    border-right: $spacer-2 $border-style transparent;
     border-bottom: 0;
-    border-left: $spacer-2 solid transparent;
+    // stylelint-disable-next-line primer/borders
+    border-left: $spacer-2 $border-style transparent;
   }
 
   &::after {
     bottom: -7px;
     left: 10px;
-    border-top: 7px solid $white;
-    border-right: 7px solid transparent;
+    // stylelint-disable-next-line primer/borders
+    border-top: 7px $border-style $border-white;
+    // stylelint-disable-next-line primer/borders
+    border-right: 7px $border-style transparent;
     border-bottom: 0;
-    border-left: 7px solid transparent;
+    // stylelint-disable-next-line primer/borders
+    border-left: 7px $border-style transparent;
   }
 }
 
@@ -250,20 +262,23 @@
 
 // Dark dropdowns
 .dropdown-menu-dark {
-  color: $white;
+  color: $text-white;
+  // stylelint-disable-next-line primer/colors
   background: $gray-800;
-  border-color: $gray-700;
+  border-color: $border-gray-darker;
   box-shadow: $box-shadow-large;
 
   &::before {
-    border-bottom-color: $gray-700;
+    border-bottom-color: $border-gray-darker;
   }
 
   &::after {
+    // stylelint-disable-next-line primer/borders
     border-bottom-color: $gray-800;
   }
 
   .dropdown-header {
+    // stylelint-disable-next-line primer/colors
     color: $gray-300;
   }
 
@@ -279,30 +294,33 @@
 
   &.dropdown-menu-w {
     &::before {
-      border-color: transparent transparent transparent $gray-700;
+      border-color: transparent transparent transparent $border-gray-darker;
     }
 
     &::after {
+      // stylelint-disable-next-line primer/borders
       border-color: transparent transparent transparent $gray-800;
     }
   }
 
   &.dropdown-menu-e {
     &::before {
-      border-color: transparent $gray-700 transparent transparent;
+      border-color: transparent $border-gray-darker transparent transparent;
     }
 
     &::after {
+      // stylelint-disable-next-line primer/borders
       border-color: transparent $gray-800 transparent transparent;
     }
   }
 
   &.dropdown-menu-ne {
     &::before {
-      border-color: $gray-700 transparent transparent transparent;
+      border-color: $border-gray-darker transparent transparent transparent;
     }
 
     &::after {
+      // stylelint-disable-next-line primer/borders
       border-color: $gray-800 transparent transparent transparent;
     }
   }

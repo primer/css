@@ -15,7 +15,7 @@
 
 .details-overlay-dark[open] > summary::before {
   z-index: 99;
-  background: $black-fade-50;
+  background: $bg-black-fade;
 }
 
 .details-reset {

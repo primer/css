@@ -6,6 +6,7 @@
   // Lists, Blockquotes & Such
   ul,
   ol {
+    // stylelint-disable-next-line primer/spacing
     padding-left: 2em;
 
     &.no-list {

@@ -20,7 +20,9 @@
 
   &::before {
     top: -$spacer-3;
+    // stylelint-disable-next-line primer/spacing
     margin-left: -9px;
+    // stylelint-disable-next-line primer/borders
     border: $spacer-2 $border-style transparent;
     border-bottom-color: $border-black-fade;
   }
@@ -28,7 +30,9 @@
   &::after {
     top: -14px;
     margin-left: -$spacer-2;
+    // stylelint-disable-next-line primer/borders
     border: 7px $border-style transparent;
+    // stylelint-disable-next-line primer/borders
     border-bottom-color: $bg-white;
   }
 }
@@ -50,6 +54,7 @@
 
   &::after {
     bottom: -14px;
+    // stylelint-disable-next-line primer/borders
     border-top-color: $bg-white;
   }
 }
@@ -108,6 +113,7 @@
   }
 
   &::before {
+    // stylelint-disable-next-line primer/spacing
     margin-top: -($spacer-2 + 1);
   }
 
@@ -127,6 +133,7 @@
 
   &::after {
     right: -14px;
+    // stylelint-disable-next-line primer/borders
     border-left-color: $bg-white;
   }
 }
@@ -142,6 +149,7 @@
 
   &::after {
     left: -14px;
+    // stylelint-disable-next-line primer/borders
     border-right-color: $bg-white;
   }
 }

@@ -8,8 +8,11 @@
   em {
     position: relative;
     float: left;
+    // stylelint-disable-next-line primer/spacing
     padding: 7px 12px;
+    // stylelint-disable-next-line primer/spacing
     margin-left: -1px;
+    // stylelint-disable-next-line primer/typography
     font-size: 13px;
     font-style: normal;
     font-weight: $font-weight-bold;
@@ -37,6 +40,7 @@
     &:focus {
       z-index: 2;
       text-decoration: none;
+      // stylelint-disable-next-line primer/colors
       background-color: darken($gray-100, 2%);
       border-color: $border-gray;
     }
@@ -56,6 +60,7 @@
   .disabled,
   .gap:hover,
   .disabled:hover {
+    // stylelint-disable-next-line primer/colors
     color: $gray-300;
     cursor: default;
     background-color: $bg-gray-light;
@@ -64,7 +69,9 @@
 
 // Unified centered pagination across the site
 .paginate-container {
+  // stylelint-disable-next-line primer/spacing
   margin-top: 20px;
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 15px;
   text-align: center;
 

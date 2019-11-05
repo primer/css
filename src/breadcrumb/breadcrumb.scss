@@ -1,5 +1,6 @@
 .breadcrumb-item {
   display: inline-block;
+  // stylelint-disable-next-line primer/spacing
   margin-left: -0.35em;
   white-space: nowrap;
   list-style: none;
@@ -7,6 +8,7 @@
   &::after {
     padding-right: $em-spacer-5;
     padding-left: $em-spacer-5;
+    // stylelint-disable-next-line primer/colors
     color: $border-gray;
     content: "/";
   }
