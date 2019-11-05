@@ -6,7 +6,8 @@
   display: inline-block;
   width: 12px;
   height: 12px;
-  overflow: hidden;
+  // TODO@14.0.0: Remove `overflow: visible`. Used to override styleguide.css
+  overflow: visible;
   transform: translateZ(0);
 
   > .animated-ellipsis {
