@@ -44,6 +44,12 @@
     .flex#{$variant}-self-baseline    { align-self: baseline !important; }
     .flex#{$variant}-self-stretch     { align-self: stretch !important; }
 
+    // TODO@14.0.0: delete .flex-item-equal
+    .flex#{$variant}-item-equal {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+
     .flex#{$variant}-order-1 { order: 1 !important; }
     .flex#{$variant}-order-2 { order: 2 !important; }
     .flex#{$variant}-order-none { order: inherit !important; }
