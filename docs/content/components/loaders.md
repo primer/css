@@ -22,5 +22,5 @@ It can also be used in combination with other components.
 <h2><span>Loading</span><span class="AnimatedEllipsis"></span></h2>
 <span class="branch-name mt-2"><span>Loading</span><span class="AnimatedEllipsis"></span></span><br>
 <span class="Label bg-blue mt-3"><span>Loading</span><span class="AnimatedEllipsis"></span></span><br>
-<button class="btn mt-3"><span>Loading</span><span class="AnimatedEllipsis"></span></button>
+<button class="btn mt-3" disabled><span>Loading</span><span class="AnimatedEllipsis"></span></button>
 ```
