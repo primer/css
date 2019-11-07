@@ -89,6 +89,8 @@
       url: /components/header
     - title: Labels
       url: /components/labels
+    - title: Loaders
+      url: /components/loaders
     - title: Markdown
       url: /components/markdown
     - title: Marketing buttons
