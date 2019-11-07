@@ -5,6 +5,8 @@ description: Guidelines for contributing to GitHub's CSS
 
 ## Decision process for adding new styles
 
+While this contributing guide is for GitHub employees, all contributions from the community are welcome.
+
 ### Components
 
 [Components](/css/components) are frequently used visual patterns we've abstracted into a set of convenient styles, that would be otherwise difficult to achieve with utilities and layout objects.
