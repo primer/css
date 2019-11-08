@@ -20,11 +20,6 @@
     border-color: $border-blue;
   }
 
-  .octicon {
-    // stylelint-disable-next-line primer/spacing
-    padding-right: 5px;
-  }
-
   &:first-of-type {
     margin-left: 0;
     border-top-left-radius: $border-radius;
