@@ -7,7 +7,7 @@ bundle: truncate
 ---
 
 
-`.css-truncate` will shorten text with an ellipsis. Unless the full text is so long that it affects performace, always add `title` to the truncated element so the full text can still be seen.
+The `css-truncate` class will shorten text with an ellipsis. Unless the full text is so long that it affects performance, always add a `title` attribute to the truncated element so the full text remains accessible.
 
 ## Truncate overflow
 
