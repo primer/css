@@ -307,7 +307,7 @@ Content that is hidden by default should only be done so if it is non-essential 
 
 #### Radio group
 
-Radio groups are tab-like inputs. Their blue border gives extra emphasis to what is selected.
+Radio groups are tab like controls. Their blue border gives extra emphasis to what is selected.
 
 ```html live
 <form>
