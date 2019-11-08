@@ -305,6 +305,23 @@ Content that is hidden by default should only be done so if it is non-essential 
 </form>
 ```
 
+#### Radio group
+
+Radio groups are tab-like inputs. Their blue border gives extra emphasis to what is selected.
+
+```html live
+<form>
+  <div class="radio-group">
+    <input class="radio-input" id="option-a" type="radio" name="options">
+    <label class="radio-label" for="option-a">Option A</label>
+    <input class="radio-input" id="option-b" type="radio" name="options">
+    <label class="radio-label" for="option-b">Option B</label>
+    <input class="radio-input" id="option-c" type="radio" name="options">
+    <label class="radio-label" for="option-c">Option C</label>
+  </div>
+</form>
+```
+
 #### Input group
 
 Attached an input and button to one another.
