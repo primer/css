@@ -1,0 +1,57 @@
+// Tab like radio group
+//
+// ``` html
+// <div class="radio-group">
+//   <input type="radio" class="radio-input" id="option-a">
+//   <label class="radio-label" for="option-a">Option A</label>
+//   <input type="radio" class="radio-input" id="option-b">
+//   <label class="radio-label" for="option-b">Option B</label>
+// </div>
+// ```
+// Needs refactoring
+
+.radio-group {
+  @include clearfix;
+}
+
+.radio-label {
+  float: left;
+  // stylelint-disable-next-line primer/variables
+  padding: $spacer-2 10px $spacer-2 35px;
+  // stylelint-disable-next-line primer/variables
+  margin-left: -1px;
+  color: $text-gray-dark;
+  cursor: pointer;
+  border: $border-width $border-style $border-gray-dark;
+
+  :checked + & {
+    position: relative;
+    z-index: 1;
+    // stylelint-disable-next-line primer/variables
+    border-color: $blue;
+  }
+
+  .octicon {
+    // stylelint-disable-next-line primer/variables
+    padding-right: 5px;
+  }
+
+  &:first-of-type {
+    margin-left: 0;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  &:last-of-type {
+    padding-right: $spacer-3;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+}
+
+.radio-input {
+  z-index: 3;
+  float: left;
+  // stylelint-disable-next-line primer/variables
+  margin: 14px -35px 0 14px;
+}
