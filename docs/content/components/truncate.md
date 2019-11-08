@@ -7,11 +7,11 @@ bundle: truncate
 ---
 
 
-The `css-truncate` class will shorten text with an ellipsis. Unless the full text is so long that it affects performance, always add a `title` attribute to the truncated element so the full text remains accessible.
+The `css-truncate` class will shorten text with an ellipsis. Always add a `title` attribute to the truncated element so the full text remains accessible.
 
 ## Truncate overflow
 
-Use `.css-truncate .css-truncate-overflow` to prevent text that overflows from wrapping.
+Combine the `css-truncate` and `css-truncate-overflow` classes to prevent text that overflows from wrapping.
 
 ```html live
 <div class="col-3">
@@ -27,7 +27,7 @@ Use `.css-truncate .css-truncate-overflow` to prevent text that overflows from w
 
 ## Truncate target
 
-Use `.css-truncate .css-truncate-target` for inline elements to add a maximum width.
+Combine the `css-truncate` and `css-truncate-target` classes for inline (or inline-block) elements with a fixed maximum width (default: `125px`).
 
 ```html live
 Some text with a
@@ -37,7 +37,7 @@ Some text with a
 </strong>
 ```
 
-The maximum width of the truncated text can be changed by overriding the `max-width` of `.css-truncate-target`.
+You can override the maximum width of the truncated text with an inline `style` attribute:
 
 ```html live
 Some text with a
