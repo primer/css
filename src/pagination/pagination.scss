@@ -53,9 +53,11 @@
   }
 
   .gap,
-  .disabled,
+  [disabled],
+  :disabled,
   .gap:hover,
-  .disabled:hover {
+  [disabled]:hover,
+  :disabled:hover {
     color: $gray-300;
     cursor: default;
     background-color: $bg-gray-light;

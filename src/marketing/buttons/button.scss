@@ -26,7 +26,7 @@
   }
 
   &:disabled,
-  &.disabled {
+  &[disabled] {
     pointer-events: none; // Disable hover styles
     cursor: default;
     opacity: 0.65;

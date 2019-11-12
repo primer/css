@@ -46,7 +46,7 @@
   }
 
   &:disabled,
-  &.disabled {
+  &[disabled] {
     cursor: default;
     // Repeat `background-position` because `:hover`
     background-position: 0 0;
@@ -171,7 +171,8 @@
 
   &:hover { color: $text-blue; }
 
-  &.disabled {
+  &[disabled],
+  &:disabled {
     color: $gray-400;
     cursor: default;
 
