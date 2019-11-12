@@ -37,7 +37,8 @@
     background-color: $gray-100;
   }
 
-  &.selected {
+  &.selected,
+  &[aria-selected=true] {
     font-weight: $font-weight-bold;
     color: $text-gray-dark;
     cursor: default;
