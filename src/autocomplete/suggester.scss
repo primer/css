@@ -1,0 +1,84 @@
+// Needs refactoring
+// stylelint-disable selector-max-type, selector-no-qualifying-type
+.suggester-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+
+  // resizers and scrollbars in textareas float above suggester in Chrome, this stops that
+  // https://cloud.githubusercontent.com/assets/1153134/2996237/dcfab1f6-dcea-11e3-8918-63bad19a617b.gif
+  // https://code.google.com/p/chromium/issues/detail?id=158426
+  transform: translateZ(0);
+}
+
+.page-responsive {
+  @media (max-width: $width-sm) {
+    .suggester-container {
+      right: $spacer-2 !important;
+      left: $spacer-2 !important;
+    }
+
+    .suggester li {
+      padding: $spacer-2 $spacer-3;
+    }
+  }
+}
+
+.suggester {
+  position: relative;
+  top: 0;
+  left: 0;
+  min-width: 180px;
+  margin-top: $spacer-4;
+  cursor: pointer;
+  background: $bg-white;
+  // stylelint-disable-next-line primer/variables
+  border: $border-width $border-style lighten($gray-300, 5%);
+  border-radius: $border-radius;
+  // stylelint-disable-next-line primer/variables
+  box-shadow: 0 0 5px rgba($black, 0.1);
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  li {
+    display: block;
+    padding: $spacer-1 $spacer-2;
+    font-weight: $font-weight-bold;
+    // stylelint-disable-next-line primer/variables
+    border-bottom: $border-width $border-style lighten($gray-300, 5%);
+
+    small {
+      font-weight: $font-weight-normal;
+      color: $text-gray;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+      border-bottom-right-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+
+    &:first-child a {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+
+    // stylelint-disable-next-line primer/no-override
+    &:hover,
+    &[aria-selected="true"],
+    &.navigation-focus {
+      color: $text-white;
+      text-decoration: none;
+      background: $bg-blue;
+
+      small {
+        color: $text-white;
+      }
+    }
+  }
+}

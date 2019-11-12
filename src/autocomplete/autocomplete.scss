@@ -1,0 +1,65 @@
+// A pop up list of items used to show autocompleted results
+.autocomplete-results {
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  max-height: 20em;
+  overflow-y: auto;
+  // stylelint-disable-next-line primer/variables
+  font-size: 13px;
+  list-style: none;
+  background: $bg-white;
+  border-radius: $border-radius;
+  // stylelint-disable-next-line primer/variables
+  box-shadow: 0 0 5px $black-fade-30;
+}
+
+// One of the items that appears within an autocomplete group
+// Bold black text on white background
+
+.autocomplete-item {
+  display: block;
+  // stylelint-disable-next-line primer/variables
+  padding: 5px;
+  overflow: hidden;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+
+  // stylelint-disable-next-line primer/no-override
+  &:hover,
+  &[aria-selected="true"],
+  &.selected,
+  &.navigation-focus {
+    color: $text-white;
+    text-decoration: none;
+    background-color: $bg-blue;
+
+    .organization-member,
+    .ldap-group-dn {
+      // stylelint-disable-next-line primer/variables
+      color: $gray-100;
+    }
+  }
+
+  .secondary-label {
+    font-weight: $font-weight-normal;
+  }
+
+  .organization-member {
+    float: right;
+    // stylelint-disable-next-line primer/variables
+    padding-top: 1px;
+    color: $text-gray-light;
+  }
+}
+
+// stylelint-disable-next-line primer/no-override
+.is-auto-complete-loading .form-control {
+  // stylelint-disable-next-line primer/variables
+  padding-right: 30px;
+  background-image: url("/images/spinners/octocat-spinner-32.gif");
+  background-size: 16px;
+}
