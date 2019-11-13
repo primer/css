@@ -28,7 +28,6 @@
   white-space: nowrap;
   cursor: pointer;
 
-  // stylelint-disable-next-line primer/no-override
   &:hover,
   &[aria-selected="true"],
   &.selected,
@@ -56,7 +55,6 @@
   }
 }
 
-// stylelint-disable-next-line primer/no-override
 .is-auto-complete-loading .form-control {
   // stylelint-disable-next-line primer/spacing
   padding-right: 30px;

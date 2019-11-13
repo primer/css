@@ -68,7 +68,6 @@
       border-top-right-radius: $border-radius;
     }
 
-    // stylelint-disable-next-line primer/no-override
     &:hover,
     &[aria-selected="true"],
     &.navigation-focus {
