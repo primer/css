@@ -33,10 +33,10 @@
   margin-top: $spacer-4;
   cursor: pointer;
   background: $bg-white;
-  // stylelint-disable-next-line primer/variables
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style lighten($gray-300, 5%);
   border-radius: $border-radius;
-  // stylelint-disable-next-line primer/variables
+  // stylelint-disable-next-line primer/box-shadow
   box-shadow: 0 0 5px rgba($black, 0.1);
 
   ul {
@@ -49,7 +49,7 @@
     display: block;
     padding: $spacer-1 $spacer-2;
     font-weight: $font-weight-bold;
-    // stylelint-disable-next-line primer/variables
+    // stylelint-disable-next-line primer/borders
     border-bottom: $border-width $border-style lighten($gray-300, 5%);
 
     small {
