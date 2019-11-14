@@ -36,18 +36,10 @@
     text-decoration: none;
     background-color: $bg-blue;
 
-    .organization-member,
-    .ldap-group-dn {
-      // stylelint-disable-next-line primer/colors
-      color: $gray-100;
+    // Inherit color on all child elements to ensure enough contrast
+    * {
+      color: inherit !important;
     }
-  }
-
-  .organization-member {
-    float: right;
-    // stylelint-disable-next-line primer/spacing
-    padding-top: 1px;
-    color: $text-gray-light;
   }
 }
 
