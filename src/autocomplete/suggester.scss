@@ -5,11 +5,11 @@
   position: relative;
   top: 0;
   left: 0;
+  min-width: 180px;
   padding: 0;
   margin: 0;
-  list-style: none;
-  min-width: 180px;
   margin-top: $spacer-4;
+  list-style: none;
   cursor: pointer;
   background: $bg-white;
   border: $border;
