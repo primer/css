@@ -6,6 +6,7 @@ const postcss = require('postcss')
 const loadConfig = require('postcss-load-config')
 const {remove, mkdirp, readFile, writeFile} = require('fs-extra')
 const {dirname, join} = require('path')
+const generateThemes = require('./generate-themes')
 
 const inDir = 'src'
 const outDir = 'dist'
@@ -29,6 +30,7 @@ async function dist() {
 
     await remove(outDir)
     await mkdirp(statsDir)
+    await generateThemes()
 
     const files = await globby([`${inDir}/**/index.scss`])
 
