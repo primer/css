@@ -2,6 +2,7 @@
 /* eslint-disable no-console */
 const globby = require('globby')
 const postcss = require('postcss')
+const stylelint = require('stylelint')
 const loadConfig = require('postcss-load-config')
 const {mkdirp, writeFile} = require('fs-extra')
 const {dirname, join} = require('path')
@@ -41,6 +42,8 @@ async function generateThemes(generateOptions = {}) {
     await Promise.all([writeFile(to, result.css, encoding), result.map ? writeFile(map, result.map, encoding) : null])
     themes[name] = {from, to, map}
   }
+
+  await stylelint.lint({files: `${inDir}/*.scss`, fix: true})
 
   return themes
 }

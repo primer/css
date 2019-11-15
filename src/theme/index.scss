@@ -1,0 +1,24 @@
+@import "../support/index.scss";
+
+:root {
+  @each $name, $colors in $hue-maps {
+    @each $index, $value in $colors {
+      --#{$name}-#{$index}: #{$value};
+    }
+  }
+
+  @each $index, $value in $spacer-map {
+    --spacer-#{$index}: #{$value};
+  }
+
+  @each $index, $value in $em-spacer-map {
+    --em-spacer-#{$index}: #{$value};
+  }
+
+  @each $name, $width in $breakpoints {
+    --breakpoint-#{$name}: #{$width};
+  }
+}
+
+// the default theme
+@import "./light.scss";
