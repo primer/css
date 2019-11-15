@@ -10,7 +10,22 @@ const promotions = [
   'border-red-light',
   'border-yellow',
   'border-color-button',
-  'bg-black-fade'
+  'bg-black-fade',
+
+  // fixed
+  'border-radius',
+
+  // functional
+  'border',
+  'border-color',
+
+  'box-shadow',
+  'box-shadow-medium',
+  'box-shadow-large',
+  'box-shadow-extra-large',
+  'form-control-shadow',
+  'btn-input-focus-shadow',
+  'btn-active-shadow'
 ]
 
 const variables = {
