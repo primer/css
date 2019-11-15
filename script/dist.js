@@ -67,7 +67,10 @@ async function dist() {
 
     const themeFiles = await globby(`${inDir}/themes/*.js`)
     for (const themeFile of themeFiles) {
-      const name = themeFile.split('/').pop().replace('.js', '')
+      const name = themeFile
+        .split('/')
+        .pop()
+        .replace('.js', '')
       const theme = require(`../${themeFile}`)
       const preamble = generateTheme(theme)
 
@@ -82,10 +85,7 @@ async function dist() {
       const to = join(themeDir, `${name}.css`)
       const map = `${to}.map`
       const result = await processor.process(scss, Object.assign({from, to}, options))
-      await Promise.all([
-        writeFile(to, result.css, encoding),
-        result.map ? writeFile(map, result.map, encoding) : null
-      ])
+      await Promise.all([writeFile(to, result.css, encoding), result.map ? writeFile(map, result.map, encoding) : null])
       themes[name] = {
         css: to,
         map
