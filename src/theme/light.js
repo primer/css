@@ -14,6 +14,11 @@ const promotions = [
 
   // fixed
   'border-radius',
+  'border-radius-2',
+
+  // typography
+  'body-font-size',
+  'body-line-height',
 
   // functional
   'border',

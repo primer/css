@@ -53,6 +53,9 @@
   --border-color-button: #{$border-color-button};
   --bg-black-fade: #{$bg-black-fade};
   --border-radius: #{$border-radius};
+  --border-radius-2: #{$border-radius-2};
+  --body-font-size: #{$body-font-size};
+  --body-line-height: #{$body-line-height};
   --border: #{$border};
   --border-color: #{$border-color};
   --box-shadow: #{$box-shadow};
@@ -113,6 +116,9 @@
   $border-color-button: var(--border-color-button) !global;
   $bg-black-fade: var(--bg-black-fade) !global;
   $border-radius: var(--border-radius) !global;
+  $border-radius-2: var(--border-radius-2) !global;
+  $body-font-size: var(--body-font-size) !global;
+  $body-line-height: var(--body-line-height) !global;
   $border: var(--border) !global;
   $border-color: var(--border-color) !global;
   $box-shadow: var(--box-shadow) !global;
