@@ -19,8 +19,7 @@
 
 .autocomplete-item {
   display: block;
-  // stylelint-disable-next-line primer/spacing
-  padding: 5px;
+  padding: $spacer-1 $spacer-2;
   overflow: hidden;
   font-weight: $font-weight-bold;
   text-decoration: none;
