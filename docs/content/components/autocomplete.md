@@ -56,8 +56,8 @@ The `.suggester` component is meant for showing suggestions while typing in a la
 
 ```html live
 <div class="form-group position-relative">
-  <textarea class="form-control width-full" placeholder="Leave a comment" aria-label="Comment body">#</textarea>
-  <ul class="suggester-container suggester suggestions list-style-none position-absolute" role="listbox" style="top: 4px; left: 18px;">
+  <textarea class="form-control width-full" placeholder="Leave a comment" aria-label="Comment body">This is on top of #</textarea>
+  <ul class="suggester suggester-container" role="listbox" style="top: 4px; left: 125px;">
     <li aria-selected="true"> <small>#924</small> <span>Markdown tables are inaccessible</span> </li>
     <li> <small>#980</small> <span>Use actual book emoji in Flexbox docs</span> </li>
     <li> <small>#979</small> <span>Add `.radio-group` component</span> </li>

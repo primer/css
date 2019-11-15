@@ -1,29 +1,13 @@
 // Needs refactoring
 // stylelint-disable selector-max-type, selector-no-qualifying-type
-.suggester-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 30;
-}
-
-.page-responsive {
-  @media (max-width: $width-sm) {
-    .suggester-container {
-      right: $spacer-2 !important;
-      left: $spacer-2 !important;
-    }
-
-    .suggester li {
-      padding: $spacer-2 $spacer-3;
-    }
-  }
-}
 
 .suggester {
   position: relative;
   top: 0;
   left: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
   min-width: 180px;
   margin-top: $spacer-4;
   cursor: pointer;
@@ -31,12 +15,6 @@
   border: $border;
   border-radius: $border-radius;
   box-shadow: $box-shadow-medium;
-
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
 
   li {
     display: block;
@@ -70,6 +48,28 @@
       small {
         color: $text-white;
       }
+    }
+  }
+}
+
+.suggester-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+}
+
+// Responsive
+
+.page-responsive {
+  @media (max-width: $width-sm) {
+    .suggester-container {
+      right: $spacer-2 !important;
+      left: $spacer-2 !important;
+    }
+
+    .suggester li {
+      padding: $spacer-2 $spacer-3;
     }
   }
 }
