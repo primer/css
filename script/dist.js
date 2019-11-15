@@ -6,10 +6,12 @@ const postcss = require('postcss')
 const loadConfig = require('postcss-load-config')
 const {remove, mkdirp, readFile, writeFile} = require('fs-extra')
 const {dirname, join} = require('path')
+const generateTheme = require('../lib/generate-theme')
 
 const inDir = 'src'
 const outDir = 'dist'
 const statsDir = join(outDir, 'stats')
+const themeDir = join(outDir, 'themes')
 const encoding = 'utf8'
 
 // Bundle paths are normalized in getPathName() using dirname() and then
@@ -24,11 +26,14 @@ const bundleNames = {
 async function dist() {
   try {
     const bundles = {}
+    const themes = {}
     const {plugins, options} = await loadConfig()
     const processor = postcss(plugins)
 
     await remove(outDir)
     await mkdirp(statsDir)
+    await mkdirp(themeDir)
+
     const files = await globby([`${inDir}/**/index.scss`])
 
     const inPattern = new RegExp(`^${inDir}/`)
@@ -60,9 +65,36 @@ async function dist() {
       bundles[name] = meta
     })
 
+    const themeFiles = await globby(`${inDir}/themes/*.js`)
+    for (const themeFile of themeFiles) {
+      const name = themeFile.split('/').pop().replace('.js', '')
+      const theme = require(`../${themeFile}`)
+      const preamble = generateTheme(theme)
+
+      const root = postcss.root()
+      root.append(preamble)
+      root.append(postcss.atRule({name: 'import', params: `"../index.scss"`}))
+
+      const scss = root.toString()
+      const from = join(inDir, 'themes', `${name}.scss`)
+      await writeFile(from, scss, encoding)
+
+      const to = join(themeDir, `${name}.css`)
+      const map = `${to}.map`
+      const result = await processor.process(scss, Object.assign({from, to}, options))
+      await Promise.all([
+        writeFile(to, result.css, encoding),
+        result.map ? writeFile(map, result.map, encoding) : null
+      ])
+      themes[name] = {
+        css: to,
+        map
+      }
+    }
+
     await Promise.all(tasks)
 
-    const meta = {bundles}
+    const meta = {bundles, themes}
     await writeFile(join(outDir, 'meta.json'), JSON.stringify(meta, null, 2), encoding)
     await writeVariableData()
     await writeDeprecationData()
