@@ -63,7 +63,6 @@ async function dist() {
       bundles[name] = meta
     })
 
-
     await Promise.all(tasks)
 
     const meta = {bundles}

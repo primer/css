@@ -5,7 +5,7 @@ const postcss = require('postcss')
 const stylelint = require('stylelint')
 const loadConfig = require('postcss-load-config')
 const {mkdirp, writeFile} = require('fs-extra')
-const {dirname, join} = require('path')
+const {join} = require('path')
 const generateTheme = require('../lib/generate-theme')
 
 const encoding = 'utf8'
