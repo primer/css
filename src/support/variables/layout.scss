@@ -71,6 +71,16 @@ $em-spacer-4: 0.375em !default;  // 3/8
 $em-spacer-5: 0.5em !default;    // 1/2
 $em-spacer-6: 0.75em !default;   // 3/4
 
+$em-spacer-map: (
+  0: 0,
+  1: $em-spacer-1,
+  2: $em-spacer-2,
+  3: $em-spacer-3,
+  4: $em-spacer-4,
+  5: $em-spacer-5,
+  6: $em-spacer-6,
+) !default;
+
 // Fixed-width container variables
 $container-width: 980px !default;
 $grid-gutter:     10px !default;
