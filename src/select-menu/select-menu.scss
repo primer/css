@@ -3,7 +3,7 @@
 // selector-max-type is needed for body:not(.intent-mouse) to target keyboard only styles.
 // TODO: Introduce an additional .intent-keyboard class
 
-$SelectMenu-max-height: 480px;
+$SelectMenu-max-height: 480px !default;
 
 // Select Menu
 //
@@ -165,6 +165,7 @@ $SelectMenu-max-height: 480px;
   position: relative;
   padding: 0;
   margin: 0;
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: -$border-width; // Hides the last border in the list
   flex: auto;
   overflow-x: hidden;
