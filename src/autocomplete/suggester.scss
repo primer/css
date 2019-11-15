@@ -5,11 +5,6 @@
   top: 0;
   left: 0;
   z-index: 30;
-
-  // resizers and scrollbars in textareas float above suggester in Chrome, this stops that
-  // https://cloud.githubusercontent.com/assets/1153134/2996237/dcfab1f6-dcea-11e3-8918-63bad19a617b.gif
-  // https://code.google.com/p/chromium/issues/detail?id=158426
-  transform: translateZ(0);
 }
 
 .page-responsive {
