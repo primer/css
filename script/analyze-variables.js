@@ -29,6 +29,9 @@ function analyzeVariables(file) {
         container.walkDecls(decl => {
           const {prop, value} = decl
           const actualProp = `$${prop.replace(/^--/, '')}`
+          if (!variables[actualProp]) {
+            return
+          }
           const entry = variables[actualProp]
           if (last(entry.values) !== value) {
             entry.values.push(value)
