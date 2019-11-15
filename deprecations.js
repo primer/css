@@ -7,6 +7,16 @@ const versionDeprecations = {
   '14.0.0': [
     {
       selectors: [
+        '.SelectMenu-item+.SelectMenu-item',
+        '.SelectMenu-divider:first-child',
+        '.SelectMenu-divider:last-child',
+        '.SelectMenu--hasFilter .SelectMenu-item:last-child',
+        '.SelectMenu-item[aria-checked="true"] .SelectMenu-icon'
+      ],
+      message: `These selectors are deprecated and not used anymore.`
+    },
+    {
+      selectors: [
         '.flex-item-equal',
         '.flex-sm-item-equal',
         '.flex-md-item-equal',
