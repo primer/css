@@ -6,9 +6,13 @@
 
 .radio-label {
   float: left;
-  padding: $spacer-2 10px $spacer-2 35px;
+  // stylelint-disable-next-line primer/spacing
+  padding: 6px $spacer-3 6px ($spacer-3 + 12px + $spacer-2); // 12px is the size of the radio-input
   // stylelint-disable-next-line primer/spacing
   margin-left: -1px;
+  font-size: $body-font-size;
+  // stylelint-disable-next-line primer/typography
+  line-height: 20px; // Specifically not inherit our `<body>` default
   color: $text-gray-dark;
   cursor: pointer;
   border: $border-width $border-style $border-gray-dark;
@@ -26,7 +30,6 @@
   }
 
   &:last-of-type {
-    padding-right: $spacer-3;
     border-top-right-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
   }
@@ -36,5 +39,5 @@
   z-index: 3;
   float: left;
   // stylelint-disable-next-line primer/spacing
-  margin: 14px -35px 0 14px;
+  margin: 10px (-$spacer-5) 0 $spacer-3;
 }
