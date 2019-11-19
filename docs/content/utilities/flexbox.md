@@ -15,7 +15,7 @@ Flex utilities can be used to apply `flexbox` behaviors to elements by using uti
 
 Before using these utilities, **you should be familiar with CSS3 Flexible Box spec**. If you are not, check out MDN's guide:
 
-:book: **[Using CSS Flexible Boxes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)**
+📖 **[Using CSS Flexible Boxes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)**
 
 ## Flex container
 
