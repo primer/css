@@ -303,6 +303,7 @@ _Note: fixed positioning has been disabled here for demonstration only._
 
 Use `.position-sticky` to keep an element stuck to an edge as long as its parent is visible. Things to keep in mind:
 
+- Using the `.position-sticky` class by itself doesn't have any effect. An additional `[top|bottom|left|right]-0` class is needed. See the examples below.
 - Add a background color to sticky elements so it covers the content underneath.
 - Use `style="z-index: 1;"` (or higher) in case there are other elements with `z-index`.
 
