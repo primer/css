@@ -4,7 +4,7 @@
  * array and a "message" string.
  */
 const versionDeprecations = {
-  '14.0.0': [
+  '14.0.1': [
     {
       selectors: [
         '.SelectMenu-item+.SelectMenu-item',
