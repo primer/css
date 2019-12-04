@@ -13,13 +13,6 @@
   border-bottom: $border !important;
 }
 
-$edges: (
-  top: (top-left, top-right),
-  right: (top-right, bottom-right),
-  bottom: (bottom-right, bottom-left),
-  left: (bottom-left, top-left)
-);
-
 /* Responsive gray borders */
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
@@ -81,6 +74,7 @@ $edges: (
 
 /* Change the border style to dashed, in conjunction with another utility */
 .border-dashed {
+  // stylelint-disable-next-line primer/borders
   border-style: dashed !important;
 }
 
@@ -111,8 +105,12 @@ $edges: (
 .border-white-fade  { border-color: $border-white-fade !important; }
 
 /* Use with .border to turn the border white w/varying transparency */
-.border-white-fade-15 { border-color: $white-fade-15 !important; }
+.border-white-fade-15 { border-color: $border-white-fade !important; }
+// stylelint-disable-next-line primer/borders
 .border-white-fade-30 { border-color: $white-fade-30 !important; }
+// stylelint-disable-next-line primer/borders
 .border-white-fade-50 { border-color: $white-fade-50 !important; }
+// stylelint-disable-next-line primer/borders
 .border-white-fade-70 { border-color: $white-fade-70 !important; }
+// stylelint-disable-next-line primer/borders
 .border-white-fade-85 { border-color: $white-fade-85 !important; }

@@ -4,9 +4,11 @@
 .btn {
   position: relative;
   display: inline-block;
+  // stylelint-disable-next-line primer/spacing
   padding: 6px 12px;
   font-size: $body-font-size;
   font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px; // Specifically not inherit our `<body>` default
   white-space: nowrap;
   vertical-align: middle;
@@ -15,7 +17,8 @@
   background-repeat: repeat-x;
   background-position: -1px -1px;
   background-size: 110% 110%;
-  border: 1px solid transparentize($black, 0.8);
+  border: $border-width $border-style $border-color-button;
+  // stylelint-disable-next-line primer/borders
   border-radius: 0.25em;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
@@ -31,8 +34,9 @@
 
   // Darken for just a tad more contrast against the button background
   .Counter {
-    color: $gray-600;
+    color: $text-gray;
     text-shadow: none;
+    // stylelint-disable-next-line primer/colors
     background-color: rgba($black, 0.1);
   }
 
@@ -82,8 +86,10 @@
 //
 // Tweak `line-height` to make them smaller.
 .btn-sm {
+  // stylelint-disable-next-line primer/spacing
   padding: 3px 10px;
   font-size: $font-size-small;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
 }
 
@@ -91,6 +97,7 @@
 .btn-large {
   padding: $em-spacer-6 1.25em;
   font-size: inherit;
+  // stylelint-disable-next-line primer/borders
   border-radius: 6px;
 }
 
@@ -126,6 +133,7 @@
   &:disabled {
     &,
     &:hover {
+      // stylelint-disable-next-line primer/colors
       color: rgba($gray-600, 0.5);
       cursor: default;
     }
@@ -159,7 +167,9 @@
 // Icon-only buttons
 .btn-octicon {
   display: inline-block;
+  // stylelint-disable-next-line primer/spacing
   padding: 5px;
+  // stylelint-disable-next-line primer/spacing
   margin-left: 5px;
   line-height: $lh-condensed-ultra;
   color: $text-gray;
@@ -172,9 +182,11 @@
   &:hover { color: $text-blue; }
 
   &.disabled {
+    // stylelint-disable-next-line primer/colors
     color: $gray-400;
     cursor: default;
 
+    // stylelint-disable-next-line primer/colors
     &:hover { color: $gray-400; }
   }
 }

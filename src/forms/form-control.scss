@@ -18,21 +18,24 @@ label {
 .form-control,
 .form-select {
   min-height: 34px;
+  // stylelint-disable-next-line primer/spacing
   padding: 6px $spacer-2;
   font-size: $h4-size;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
   color: $text-gray-dark;
   vertical-align: middle;
   background-color: $bg-white;
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
-  border: 1px solid $border-gray-dark;
-  border-radius: 3px;
+  border: $border-width $border-style $border-gray-dark;
+  border-radius: $border-radius;
   outline: none;
   box-shadow: $form-control-shadow;
 
   &.focus,
   &:focus {
+    // stylelint-disable-next-line primer/borders
     border-color: $blue-400;
     outline: none;
     box-shadow: $form-control-shadow, $btn-input-focus-shadow;
@@ -54,6 +57,7 @@ label {
 // Inputs to be used against dark backgrounds.
 .input-dark {
   color: $text-white;
+  // stylelint-disable-next-line primer/colors
   background-color: $white-fade-15;
   border-color: transparent;
 
@@ -64,7 +68,9 @@ label {
 
   &.focus,
   &:focus {
+    // stylelint-disable-next-line primer/borders
     border-color: $black-fade-30;
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0 0.2em rgba($blue-300, 0.4);
   }
 }
@@ -77,9 +83,12 @@ label {
 // Mini inputs, to match .minibutton
 .input-sm {
   min-height: 28px;
+  // stylelint-disable-next-line primer/spacing
   padding-top: 3px;
+  // stylelint-disable-next-line primer/spacing
   padding-bottom: 3px;
   font-size: $font-size-small;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
 }
 
@@ -115,7 +124,9 @@ label {
 //
 // For checkboxes and radio button selections.
 .form-checkbox {
+  // stylelint-disable-next-line primer/spacing
   padding-left: 20px;
+  // stylelint-disable-next-line primer/spacing
   margin: 15px 0;
   vertical-align: middle;
 
@@ -123,16 +134,19 @@ label {
     em.highlight {
       position: relative;
       left: -$spacer-1;
+      // stylelint-disable-next-line primer/spacing
       padding: 2px $spacer-1;
       font-style: normal;
+      // stylelint-disable-next-line primer/colors
       background: $yellow-100;
-      border-radius: 3px;
+      border-radius: $border-radius;
     }
   }
 
   input[type=checkbox],
   input[type=radio] {
     float: left;
+    // stylelint-disable-next-line primer/spacing
     margin: 5px 0 0 -20px;
     vertical-align: middle;
   }
@@ -142,7 +156,7 @@ label {
     margin: 0;
     font-size: $font-size-small;
     font-weight: $font-weight-normal;
-    color: $gray-600;
+    color: $text-gray;
   }
 }
 
@@ -165,18 +179,21 @@ label {
 // Wrap field groups in `<div.hfields>` to lay them out horizontally - great for
 // the top of pages with autosave.
 .hfields {
+  // stylelint-disable-next-line primer/spacing
   margin: 15px 0;
   @include clearfix;
 
   .form-group {
     float: left;
+    // stylelint-disable-next-line primer/spacing
     margin: 0 30px 0 0;
 
     dt {
       label {
         display: inline-block;
+        // stylelint-disable-next-line primer/spacing
         margin: 5px 0 0;
-        color: $gray-600;
+        color: $text-gray;
       }
 
       img {
@@ -188,9 +205,11 @@ label {
 
   .btn {
     float: left;
+    // stylelint-disable-next-line primer/spacing
     margin: 28px 25px 0 -20px;
   }
 
+  // stylelint-disable-next-line primer/spacing
   .form-select { margin-top: 5px; }
 }
 
@@ -212,6 +231,7 @@ input::-webkit-inner-spin-button {
     float: right;
 
     + .btn {
+      // stylelint-disable-next-line primer/spacing
       margin-right: 5px;
     }
   }
@@ -219,12 +239,15 @@ input::-webkit-inner-spin-button {
 
 .form-warning {
   padding: $spacer-2 10px;
+  // stylelint-disable-next-line primer/spacing
   margin: 10px 0;
   font-size: $h5-size;
+  // stylelint-disable-next-line primer/colors
   color: $yellow-900;
+  // stylelint-disable-next-line primer/colors
   background: $yellow-100;
-  border: 1px solid $border-yellow;
-  border-radius: 3px;
+  border: $border-width $border-style $border-yellow;
+  border-radius: $border-radius;
 
   p {
     margin: 0;

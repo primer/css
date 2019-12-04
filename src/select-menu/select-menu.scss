@@ -3,6 +3,8 @@
 // selector-max-type is needed for body:not(.intent-mouse) to target keyboard only styles.
 // TODO: Introduce an additional .intent-keyboard class
 
+$SelectMenu-max-height: 480px !default;
+
 // Select Menu
 //
 // A more advanced menu with support for navigation, filtering, and more.
@@ -41,7 +43,7 @@
   left: 0;
   pointer-events: none;
   content: "";
-  background-color: $black-fade-50;
+  background-color: $bg-black-fade;
 
   @include breakpoint(sm) {
     display: none;
@@ -61,8 +63,10 @@
   overflow: hidden; // Enables border radius on scrollable child elements
   pointer-events: auto;
   flex-direction: column;
-  background-color: $gray-100;
+  background-color: $bg-gray;
+  // stylelint-disable-next-line primer/borders
   border-radius: $border-radius * 2;
+  // stylelint-disable-next-line primer/box-shadow
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
   animation: SelectMenu-modal-animation 0.12s cubic-bezier(0, 0.1, 0.1, 1) backwards;
 
@@ -83,7 +87,7 @@
   @include breakpoint(sm) {
     width: 300px;
     height: auto;
-    max-height: 350px;
+    max-height: $SelectMenu-max-height;
     margin: $spacer-1 0 $spacer-3 0;
     font-size: $font-size-small;
     border: $border-width $border-style $border-gray-dark;
@@ -161,6 +165,8 @@
   position: relative;
   padding: 0;
   margin: 0;
+  // stylelint-disable-next-line primer/spacing
+  margin-bottom: -$border-width; // Hides the last border in the list
   flex: auto;
   overflow-x: hidden;
   overflow-y: auto;
@@ -184,11 +190,7 @@
   cursor: pointer;
   background-color: $bg-white;
   border: 0;
-
-  & + & {
-    // Add a top border only if the above element also is a list item
-    border-top: $border-width $border-style lighten($gray-200, 3%);
-  }
+  border-bottom: $border-width $border-style $border-gray-light;
 
   @include breakpoint(sm) {
     padding-top: $spacer-2;
@@ -198,11 +200,16 @@
 
 // Icon
 //
-// The icon shown on the left of a list item. Typically a check icon.
+// Icon shown on the left of a list item.
 
 .SelectMenu-icon {
   width: $spacer-3; // fixed width to make sure following content aligns
   margin-right: $spacer-2;
+  flex-shrink: 0;
+}
+
+// Check icon
+.SelectMenu-icon--check {
   visibility: hidden;
   transition: transform 0.12s cubic-bezier(0.5, 0.1, 1, 0.5), visibility 0s 0.12s linear;
   transform: scale(0);
@@ -215,6 +222,7 @@
 .SelectMenu-tabs {
   display: flex;
   flex-shrink: 0;
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: -$border-width; // hide border of element below
   overflow-x: auto;
   overflow-y: hidden;
@@ -241,6 +249,7 @@
   text-align: center;
   background-color: transparent;
   border: 0;
+  // stylelint-disable-next-line primer/box-shadow
   box-shadow: inset 0 -1px 0 $border-color;
 
   @include breakpoint(sm) {
@@ -256,6 +265,7 @@
     z-index: 1; // Keeps box-shadow visible when hovering
     color: $text-gray-dark;
     background-color: $bg-white;
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0 1px $border-color;
 
     @include breakpoint(sm) {
@@ -268,6 +278,10 @@
 // Message, Blankslate and Loading
 //
 // A container used to show different kinds of content. Like a message, a blankslate or the loading animation.
+
+.SelectMenu-message {
+  border-bottom: $border-width $border-style $border-gray-light;
+}
 
 .SelectMenu-message,
 .SelectMenu-blankslate,
@@ -287,17 +301,8 @@
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
   color: $text-gray-light;
-  background-color: $gray-100;
-  border-top: $border;
-  border-bottom: $border;
-
-  &:first-child {
-    border-top: 0;
-  }
-
-  &:last-child {
-    border-bottom: 0;
-  }
+  background-color: $bg-gray;
+  border-bottom: $border-width $border-style $border-gray-light;
 }
 
 // Footer
@@ -305,6 +310,7 @@
 // A container at the bottom.
 
 .SelectMenu-footer {
+  z-index: 0; // Avoid top border from getting covered by the negative margin of the list
   padding: $spacer-2 $spacer-3;
   font-size: $font-size-small;
   color: $text-gray-light;
@@ -328,14 +334,9 @@
 
     @include breakpoint(sm) {
       height: auto;
-      max-height: 350px;
+      max-height: $SelectMenu-max-height;
       margin-top: $spacer-1;
     }
-  }
-
-  // Show bottom "border" for the last item when the list doesn't take up the whole height
-  .SelectMenu-item:last-child {
-    box-shadow: 0 $border-width 0 lighten($gray-200, 3%);
   }
 }
 
@@ -362,7 +363,7 @@
   font-weight: $font-weight-semibold;
   color: $text-gray-dark;
 
-  .SelectMenu-icon {
+  .SelectMenu-icon--check {
     visibility: visible;
     transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), visibility 0s linear;
     transform: scale(1);
@@ -377,26 +378,29 @@
   body:not(.intent-mouse) .SelectMenu-item:focus,
   .SelectMenu-item:hover {
     color: $text-white;
-    background-color: $blue-500;
+    background-color: $bg-blue;
   }
 
   .SelectMenu-item:active {
     color: $text-white;
+    // stylelint-disable-next-line primer/colors
     background-color: $blue-400;
   }
 
   body:not(.intent-mouse) .SelectMenu-tab:focus {
+    // stylelint-disable-next-line primer/colors
     background-color: $blue-100;
   }
 
   .SelectMenu-tab:not([aria-checked="true"]):hover {
     color: $text-gray-dark;
+    // stylelint-disable-next-line primer/colors
     background-color: $gray-200;
   }
 
   .SelectMenu-tab:not([aria-checked="true"]):active {
     color: $text-gray-dark;
-    background-color: $gray-100;
+    background-color: $bg-gray;
   }
 }
 
@@ -408,7 +412,7 @@
   // Android
   .SelectMenu-item:focus,
   .SelectMenu-item:active {
-    background-color: $gray-000;
+    background-color: $bg-gray-light;
   }
 
   // iOS Safari

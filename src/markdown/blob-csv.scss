@@ -2,6 +2,7 @@
 .markdown-body .csv-data {
   td,
   th {
+    // stylelint-disable-next-line primer/spacing
     padding: 5px;
     overflow: hidden;
     font-size: $font-size-small;
@@ -11,6 +12,7 @@
   }
 
   .blob-num {
+    // stylelint-disable-next-line primer/spacing
     padding: 10px $spacer-2 9px;
     text-align: right;
     background: $bg-white;
@@ -21,7 +23,7 @@
 
   th {
     font-weight: $font-weight-bold;
-    background: $gray-100;
+    background: $bg-gray;
     border-top: 0;
   }
 }

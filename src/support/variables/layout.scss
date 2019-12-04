@@ -1,5 +1,25 @@
 // Layout variables
 
+// these are values for the display CSS property
+$display-values: (
+  block,
+  flex,
+  inline,
+  inline-block,
+  inline-flex,
+  none,
+  table,
+  table-cell
+) !default;
+
+// maps edges to respective corners for border-radius
+$edges: (
+  top: (top-left, top-right),
+  right: (top-right, bottom-right),
+  bottom: (bottom-right, bottom-left),
+  left: (bottom-left, top-left)
+) !default;
+
 // These are our margin and padding utility spacers. The default step size we
 // use is 8px. This gives us a key of:
 //    0 => 0px
@@ -104,5 +124,6 @@ $responsive-positions: (
   static,
   relative,
   absolute,
-  fixed
+  fixed,
+  sticky
 ) !default;

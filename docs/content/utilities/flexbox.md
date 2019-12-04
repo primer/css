@@ -487,44 +487,74 @@ When the main axis wraps, this creates multiple main axis lines and adds extra s
 Use this class to specify the ability of a flex item to alter its dimensions to fill available space.
 
 ```css
-.flex-auto       { flex: 1 1 auto; }
-.flex-grow-0     { flex-grow: 0; }
-.flex-shrink-0   { flex-shrink: 0; }
+.flex-1        { flex: 1; }
+.flex-auto     { flex: auto; }
+.flex-grow-0   { flex-grow: 0; }
+.flex-shrink-0 { flex-shrink: 0; }
 ```
 
 | Class | Description |
 | --- | --- |
-| `.flex-auto` | Sets default values for  `flex-grow` (1), `flex-shrink` (1) and `flex-basis` (auto)  |
-| `.flex-grow-0` | Prevents growing of a flex item  |
-| `.flex-shrink-0` | Prevents shrinking of a flex item  |
+| `.flex-1` | Fills available space |
+| `.flex-auto` | Fills available space and auto-sizes based on the content |
+| `.flex-grow-0` | Prevents growing of a flex item |
+| `.flex-shrink-0` | Prevents shrinking of a flex item |
 
-#### flex-auto
+#### flex-1
+
+Adding `.flex-1` makes the item grow in size to take up all the space that is available.
 
 ```html live
 <div class="border d-flex">
-  <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
-  <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
-  <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
+  <div class="p-5 border bg-gray-light">flex item</div>
+  <div class="p-5 border bg-gray-light flex-1">.flex-1</div>
+  <div class="p-5 border bg-gray-light">flex item</div>
+</div>
+```
+
+Adding `.flex-1` to all flex items results in each item having the same size.
+
+```html live
+<div class="border d-flex">
+  <div class="p-5 border bg-gray-light flex-1">.flex-1</div>
+  <div class="p-5 border bg-gray-light flex-1">.flex-1</div>
+  <div class="p-5 border bg-gray-light flex-1">.flex-1</div>
+</div>
+```
+
+#### flex-auto
+
+Using `.flex-auto` fills the available space but also takes the size of the content into account. Type in the editor below to see the effect.
+
+```html live
+<div class="border d-flex">
+  <div class="p-5 border bg-gray-light flex-1">.flex-1</div>
+  <div class="p-5 border bg-gray-light flex-auto">.flex-auto with a bit more text</div>
+  <div class="p-5 border bg-gray-light flex-1">.flex-1</div>
 </div>
 ```
 
 #### flex-grow-0
 
+Add `.flex-grow-0` to prevent an item from growing. This can be useful when used as a responsive variant. For example to stop growing when the viewport gets wider.
+
 ```html live
 <div class="border d-flex">
-  <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
-  <div class="p-5 border bg-gray-light flex-auto flex-grow-0">.flex-auto .flex-grow-0</div>
-  <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
+  <div class="p-5 border bg-gray-light">flex item</div>
+  <div class="p-5 border bg-gray-light flex-auto flex-md-grow-0">.flex-auto .flex-md-grow-0</div>
+  <div class="p-5 border bg-gray-light">flex item</div>
 </div>
 ```
 
 #### flex-shrink-0
 
+Add `.flex-shrink-0` to prevent an item from shrinking. Note that for example text will not wrap and the flex items start to overflow if there is not enough space.
+
 ```html live
-<div class="border d-flex" style="width: 450px">
-  <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
-  <div class="p-5 border bg-gray-light flex-auto flex-shrink-0">.flex-auto .flex-shrink-0</div>
-  <div class="p-5 border bg-gray-light flex-auto">.flex-auto</div>
+<div class="p-2 border d-flex" style="max-width: 340px">
+  <div class="p-5 border bg-gray-light">flex item</div>
+  <div class="p-5 border bg-gray-light flex-shrink-0">.flex-shrink-0</div>
+  <div class="p-5 border bg-gray-light">flex item</div>
 </div>
 ```
 
@@ -663,7 +693,6 @@ All flexbox utilities can be adjusted per [breakpoint](/css/objects/grid#breakpo
 
 - `d-[breakpoint]-[property]` for `display`
 - `flex-[breakpoint]-[property]-[behavior]` for various flex properties
-- `flex-[breakpoint]-item-equal` for equal width and equal height flex items
 
 Each responsive style is applied to the specified breakpoint and up.
 
@@ -682,8 +711,6 @@ Each responsive style is applied to the specified breakpoint and up.
 .flex-lg-nowrap {}
 
 .flex-lg-self-start {}
-
-.flex-md-item-equal {}
 ```
 
 #### Example usage
@@ -695,16 +722,6 @@ Mixing flex properties:
   <div class="p-5 border bg-gray-light flex-md-self-stretch">.flex-self-stretch</div>
   <div class="p-5 border bg-gray-light">&nbsp;</div>
   <div class="p-5 border bg-gray-light">&nbsp;</div>
-</div>
-```
-
-Using the equal width, equal height utilities:
-
-```html live
-<div class="border d-flex">
-  <div class="flex-md-item-equal p-3 border bg-gray-light">Stuff and things</div>
-  <div class="flex-md-item-equal p-3 border bg-gray-light">More stuff<br> on multiple lines</div>
-  <div class="flex-md-item-equal p-3 border bg-gray-light">Hi mom</div>
 </div>
 ```
 
@@ -744,6 +761,8 @@ Here is an example of a media object that is **vertically centered on large scre
 
 ## Flexbox bugs
 
-This section lists flexbox bugs that affect browsers we currently support (**citation needed**).
+This section lists flexbox bugs that affect [browsers we currently support](https://github.com/primer/css/blob/master/.browserslistrc).
 
-**1. Minimum content sizing of flex items not honored:** Some browsers don't respect flex item size. Instead of respecting the minimum content size, items shrink below their minimum size which can create some undesirable results, such as overflowing text. The workaround is to apply `flex-shrink: 0;` to the items using `d-flex`. This can be applied with the `flex-shrink-0` utility. For more information read [philipwalton/flexbugs](https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored).
+1. **Minimum content sizing of flex items not honored.** Some browsers don't respect flex item size. Instead of respecting the minimum content size, items shrink below their minimum size which can create some undesirable results, such as overflowing text. The workaround is to apply `flex-shrink: 0;` to the items using `d-flex`. This can be applied with the `flex-shrink-0` utility. For more information read [philipwalton/flexbugs](https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored).
+
+9. **Some elements can't be flex containers.** Specifically, `<button>`, `<fieldset>`, and `<summary>` elements cannot be styled with `display: flex` in Safari. Instead of using `class="d-flex"` on these elements, you should nest an element within them, e.g. `<summary><div class="d-flex">...</div></summary>`.

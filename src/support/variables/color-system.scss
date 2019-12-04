@@ -1,3 +1,7 @@
+// Black based on same hue as $gray-900
+$black: #1b1f23 !default;
+$white: #fff !default;
+
 //
 //
 // -------- Grays --------
@@ -97,10 +101,6 @@ $pink-800:      #99306f !default;
 $pink-900:      #6d224f !default;
 
 // -------- Fades --------
-// Black based on same hue as $gray-900
-$black: #1b1f23 !default;
-$white: #fff !default;
-
 $black-fade-15:      rgba($black, 0.15) !default;
 $black-fade-30:      rgba($black, 0.3) !default;
 $black-fade-50:      rgba($black, 0.5) !default;

@@ -1,0 +1,19 @@
+// Loaders
+
+// Animated Ellipsis
+
+.AnimatedEllipsis {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+
+  &::after {
+    display: inline-block;
+    content: "...";
+    animation: AnimatedEllipsis-keyframes 1.2s steps(4, jump-none) infinite;
+  }
+
+  @keyframes AnimatedEllipsis-keyframes {
+    0% { transform: translateX(-100%); }
+  }
+}

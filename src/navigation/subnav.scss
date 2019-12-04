@@ -1,14 +1,16 @@
 // Needs refactoring
 // Sub nav
 .subnav {
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 20px;
 
   @include clearfix();
 }
 
 .subnav-bordered {
+  // stylelint-disable-next-line primer/spacing
   padding-bottom: 20px;
-  border-bottom: 1px solid lighten($gray-200, 3%);
+  border-bottom: $border-width $border-style $border-gray-light;
 }
 
 .subnav-flush {
@@ -18,20 +20,23 @@
 .subnav-item {
   position: relative;
   float: left;
+  // stylelint-disable-next-line primer/spacing
   padding: 6px 14px;
   font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: $gray-600;
-  border: 1px solid $gray-200;
+  color: $text-gray;
+  border: $border;
 
   + .subnav-item {
+    // stylelint-disable-next-line primer/spacing
     margin-left: -1px;
   }
 
   &:hover,
   &:focus {
     text-decoration: none;
-    background-color: $gray-100;
+    background-color: $bg-gray;
   }
 
   &.selected,
@@ -40,27 +45,30 @@
     z-index: 2;
     color: $text-white;
     background-color: $bg-blue;
+    // stylelint-disable-next-line primer/borders
     border-color: $blue;
   }
 
   &:first-child {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
   }
 
   &:last-child {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
   }
 }
 
 .subnav-search {
   position: relative;
+  // stylelint-disable-next-line primer/spacing
   margin-left: 10px;
 }
 
 .subnav-search-input {
   width: 320px;
+  // stylelint-disable-next-line primer/spacing
   padding-left: 30px;
   color: $text-gray;
 }
@@ -74,6 +82,7 @@
   top: 9px;
   left: 8px;
   display: block;
+  // stylelint-disable-next-line primer/colors
   color: darken($gray-300, 4%);
   text-align: center;
   pointer-events: none;
@@ -81,6 +90,7 @@
 
 .subnav-search-context {
   .btn {
+    // stylelint-disable-next-line primer/colors
     color: $gray-700;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -94,6 +104,7 @@
   }
 
   + .subnav-search {
+    // stylelint-disable-next-line primer/spacing
     margin-left: -1px;
 
     .subnav-search-input {
@@ -116,5 +127,6 @@
 }
 
 .subnav-spacer-right {
+  // stylelint-disable-next-line primer/spacing
   padding-right: 10px;
 }

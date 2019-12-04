@@ -1,3 +1,33 @@
+## 14.0.0
+
+### :boom: Breaking changes
+- [#922](https://github.com/primer/css/922) More SelectMenu improvements
+- [#966](https://github.com/primer/css/966) Rename `.flex-item-equal` to `.flex-1`
+- [#973](https://github.com/primer/css/973) Deprecate variables in 14.0.0
+
+### :rocket: Enhancements
+- [#987](https://github.com/primer/css/987) Add .position-sticky utility
+- [#979](https://github.com/primer/css/979) Add `.radio-group` component
+- [#981](https://github.com/primer/css/981) Autocomplete + Suggester components
+- [#978](https://github.com/primer/css/978) Add `.css-truncate-overflow`
+- [#974](https://github.com/primer/css/974) Add Animated Ellipsis
+- [#971](https://github.com/primer/css/971) Add variable deprecation data and tests
+
+### :memo: Documentation
+- [#988](https://github.com/primer/css/988) Add docs for flexbug no. 9
+- [#977](https://github.com/primer/css/977) Update spacing.md
+
+### :house: Internal
+- [#952](https://github.com/primer/css/952) Async/awaitify script/dist.js
+- [#963](https://github.com/primer/css/963) Generate changelog with semantic-release
+- [#968](https://github.com/primer/css/968) Stylelint update
+
+### Committers
+- [@BinaryMuse](https://github.com/BinaryMuse)
+- [@danchristian](https://github.com/danchristian)
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+
 # 13.2.0
 
 ### :rocket: Enhancements

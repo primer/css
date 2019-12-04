@@ -42,7 +42,11 @@ It's usually better to open an issue before investing time in spiking out a new 
 1. What the pattern is and how it's being used across the site - post screenshots and urls where possible. If you need help identifying where the pattern is being used, call that out here and cc the relevant team and/or cc `@product-design` to help.
 2. Why you think a new pattern is needed (this should answer the relevant questions above).
 3. If you intend to work on these new styles yourself, let us know what your timeline and next steps are. If you need help and this is a dependency for shipping another project, please make that clear here and what the timeline is.
-4. Add the `type: new styles` label, or `type: refactor` where appropriate.
+4. Add the appropriate label(s):
+    - `Type: Enhancement` for new styles
+    - `Type: Bug Fix` for—you guessed it!—bug fixes
+    - `Type: Polish` for refactors of existing styles
+    - `Type: Breaking Change` for any change that [removes CSS selectors or SCSS variables](#removing-styles-and-variables)
 
 ### Step 2: Design and build the new styles
 
@@ -63,6 +67,67 @@ New styles we add should be used in as many places as makes sense to in producti
 If you get to this step you've helped contribute to a style guide that many of your colleagues use on a daily basis, you've contributed to an open source project that's referenced and used by many others, and you've helped improve the usability and consistency of GitHub for our users. Thank you!
 
 Let the [design systems team](https://github.com/github/design-systems) know if we can improve these guidelines and make following this process any easier.
+
+
+## Removing styles and variables
+
+Removing styles and SCSS variables can be scary. How do you know if the thing you're deleting (or just planning to delete) isn't used in other projects? [Semantic versioning] provides us with an answer: We **don't** know, but we can use "major" version increments (from, say, `13.4.0` to `14.0.0`) to signal that the release includes potentially breaking changes. The rule is simple:
+
+**Whenever we delete a CSS selector or SCSS variable, we will increment to the next major version.**
+
+When planning to delete a CSS selector or SCSS variable, you should:
+
+1. Add a [TODO@version comment](#primer-csstodo) above the line in question:
+
+    ```scss
+    // TODO@15.0.0: delete $some-unused-var
+    $some-unused-var: 15px !default;
+    ```
+
+1. Add it to [deprecations.js]:
+
+    ```js
+    const versionDeprecations = {
+      '15.0.0': [
+        {
+          variables: ['$some-unused-var'],
+          message: '$some-unused-var is unused, and has been deprecated.'
+        }
+      ]
+    }
+    ```
+
+We have several checks and tools in place to help us plan, track, and catch both expected and unexpected removals of both CSS selectors and SCSS variables:
+
+### `deprecations.js`
+[This file][deprecations.js] is where we document all of our current and _planned_ CSS selector and SCSS variable deprecations (removals), and is used to generate [deprecation data](../tools/deprecations) for other tools.
+
+### `script/test-deprecations.js`
+[This script][script/test-deprecations.js] compares the CSS stats and variable data between the latest release and the local code, and throws error messages if:
+
+- A CSS selector has been deleted but was not listed in [deprecations.js]
+- A CSS selector listed in [deprecations.js] was _not removed_ in the version it claims to have been deprecated
+- An SCSS variable has been deleted but was not listed in [deprecations.js]
+- An SCSS variable listed in [deprecations.js] was _not removed_ in the version it claims to have been deprecated
+
+Run `script/test-deprecation.js --help` for more info and available options.
+
+### `primer-css/TODO`
+[This stylelint rule][lib/stylelint-todo.js] looks for comments in the form:
+
+```scss
+// TODO@<version>: <message>
+```
+
+and generates an error for each one whose `<version>` is less than or equal to the current version (in `package.json`). You can test this rule for future releases with:
+
+```sh
+PRIMER_VERSION=<version> npx stylelint-only primer-css/TODO -- src
+```
+
+where `<version>` is the future version you'd like to compare against. Assuming that the correctly formatted comments exist already, violations of this stylelint rule can be used to generate a checklist of lines to remove in a future release.
+
+See [the deprecation data docs](../tools/deprecations) for more information.
 
 ## Documentation structure
 
@@ -97,3 +162,8 @@ Check out Doctocat's [live code](https://primer.style/doctocat/usage/live-code) 
 Primer CSS follows [semantic versioning](http://semver.org/) conventions. This helps others know when a change is a patch, minor, or breaking change.
 
 To understand what choice to make, you'll need to understand semver and know if one of the changes shown is a major, minor, or patch. Semver is confusing at first, so I recommend reviewing [semver](http://semver.org/) and/or ask in [#design-systems](https://github.slack.com/archives/design-systems) or and experienced open-source contributor.
+
+[semantic versioning]: https://semver.org
+[script/test-deprecations.js]: https://github.com/primer/css/tree/master/script/test-deprecations.js
+[deprecations.js]: https://github.com/primer/css/tree/master/deprecations.js
+[lib/stylelint-todo.js]: https://github.com/primer/css/tree/master/lib/stylelint-todo.js

@@ -40,11 +40,13 @@ strong {
 hr,
 .rule {
   height: 0;
+  // stylelint-disable-next-line primer/spacing
   margin: 15px 0;
   overflow: hidden;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid lighten($gray-300, 5%);
+  // stylelint-disable-next-line primer/borders
+  border-bottom: $border-width $border-style lighten($gray-300, 5%);
   @include clearfix();
 }
 
