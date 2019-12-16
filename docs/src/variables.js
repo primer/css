@@ -1,6 +1,5 @@
 import React from 'react'
-import mdx from '@mdx-js/mdx'
-import {Box, Flex, Link, Text, Tooltip} from '@primer/components'
+import {Flex, Link, Text, Tooltip} from '@primer/components'
 import Octicon, {Alert} from '@primer/octicons-react'
 import themeGet from '@styled-system/theme-get'
 import DoctocatTable from '@primer/gatsby-theme-doctocat/src/components/table'
