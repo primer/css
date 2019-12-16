@@ -378,14 +378,11 @@ $SelectMenu-max-height: 480px !default;
 @media (hover: hover) {
   body:not(.intent-mouse) .SelectMenu-item:focus,
   .SelectMenu-item:hover {
-    color: $text-white;
-    background-color: $bg-blue;
+    background-color: $bg-gray;
   }
 
   .SelectMenu-item:active {
-    color: $text-white;
-    // stylelint-disable-next-line primer/colors
-    background-color: $blue-400;
+    background-color: $bg-gray-light;
   }
 
   body:not(.intent-mouse) .SelectMenu-tab:focus {
