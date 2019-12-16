@@ -1,11 +1,10 @@
 import React from 'react'
+import mdx from '@mdx-js/mdx'
 import {Box, Flex, Link, Text, Tooltip} from '@primer/components'
 import Octicon, {Alert} from '@primer/octicons-react'
 import themeGet from '@styled-system/theme-get'
 import DoctocatTable from '@primer/gatsby-theme-doctocat/src/components/table'
 import styled from 'styled-components'
-import variables from '../dist/variables.json'
-import deprecations from '../dist/deprecations.json'
 
 const Table = styled(DoctocatTable)`
   font-size: ${themeGet('fontSizes.1')}px;
@@ -24,37 +23,82 @@ const Table = styled(DoctocatTable)`
   }
 `
 
-for (const name of Object.keys(variables)) {
-  if (name.endsWith('-font')) {
-    delete variables[name]
-  }
+function useVariables() {
+  return React.useMemo(() => {
+    let variablesByFile = new Map()
+
+    try {
+      const variables = require('../dist/variables.json')
+      const deprecations = useDeprecations()
+
+      for (const name of Object.keys(variables)) {
+        if (name.endsWith('-font')) {
+          delete variables[name]
+        }
+      }
+
+      variablesByFile = Object.entries(variables).reduce((map, [name, variable]) => {
+        const {
+          source: {path}
+        } = variable
+
+        variable.name = name
+        variable.deprecated = deprecations.variables.hasOwnProperty(name)
+
+        if (map.has(path)) {
+          map.get(path).push(variable)
+        } else {
+          map.set(path, [variable])
+        }
+
+        return map
+      }, variablesByFile)
+
+      for (const variables of variablesByFile.values()) {
+        variables.sort((a, b) => {
+          return a.deprecated - b.deprecated || a.source.line - b.source.line
+        })
+      }
+
+      return variablesByFile
+    } catch (err) {
+      return new Map()
+    }
+  }, [])
 }
 
-const variablesByFile = Object.entries(variables).reduce((map, [name, variable]) => {
-  const {
-    source: {path}
-  } = variable
-
-  variable.name = name
-  variable.deprecated = deprecations.variables.hasOwnProperty(name)
-
-  if (map.has(path)) {
-    map.get(path).push(variable)
-  } else {
-    map.set(path, [variable])
-  }
-  return map
-}, new Map())
-
-for (const [path, variables] of variablesByFile.entries()) {
-  variables.sort((a, b) => {
-    return a.deprecated - b.deprecated || a.source.line - b.source.line
-  })
+function useDeprecations() {
+  return React.useMemo(() => {
+    try {
+      const deprecations = require('../dist/deprecations.json')
+      return deprecations
+    } catch (err) {
+      return {}
+    }
+  }, [])
 }
 
-function Variables(props) {
+function Variables({children, ...props}) {
+  const variablesByFile = useVariables()
+  console.log(__DEV__)
+
+  if (variablesByFile.size === 0) {
+    return (
+      <div className="flash flash-error">
+        <h2>No data available</h2>
+        {__DEV__ && (
+          <p>
+            This probably means that the root project has not been built; run `npm run dist` and restart your
+            development server.
+          </p>
+        )}
+      </div>
+    )
+  }
+
   return Array.from(variablesByFile.entries()).map(([path, variables]) => (
     <>
+      {children}
       <h3>
         Defined in <Link href={`https://github.com/primer/css/tree/master/${path}`}>{path}</Link>
       </h3>
@@ -67,33 +111,32 @@ function Variables(props) {
           </tr>
         </thead>
         <tbody>
-          {variables
-            .map(({name, computed, values, source, refs}) => (
-              <tr id={name}>
-                <th scope="row">
-                  <Flex justifyContent="space-between">
-                    <Link href={`#${name}`} color="gray.4" mr={2}>
-                      #
+          {variables.map(({name, computed, values, source, refs}) => (
+            <tr id={name} key={name}>
+              <th scope="row">
+                <Flex justifyContent="space-between">
+                  <Link href={`#${name}`} color="gray.4" mr={2}>
+                    #
+                  </Link>
+                  <Flex.Item flex="1">
+                    <Link href={`https://github.com/primer/css/tree/master/${source.path}#L${source.line}`}>
+                      <Mono nowrap>{name}</Mono>
                     </Link>
-                    <Flex.Item flex="1">
-                      <Link href={`https://github.com/primer/css/tree/master/${source.path}#L${source.line}`}>
-                        <Mono nowrap>{name}</Mono>
-                      </Link>
-                    </Flex.Item>
-                    <Flex.Item justifySelf="end">
-                      <DeprecationFlag variable={name} ml={2} />
-                    </Flex.Item>
-                  </Flex>
-                </th>
-                <td>
-                  <Swatch value={computed} mr={2} />
-                  <Mono nowrap>{computed}</Mono>
-                </td>
-                <td>
-                  <RefList refs={refs} />
-                </td>
-              </tr>
-            ))}
+                  </Flex.Item>
+                  <Flex.Item justifySelf="end">
+                    <DeprecationFlag variable={name} ml={2} />
+                  </Flex.Item>
+                </Flex>
+              </th>
+              <td>
+                <Swatch value={computed} mr={2} />
+                <Mono nowrap>{computed}</Mono>
+              </td>
+              <td>
+                <RefList refs={refs} />
+              </td>
+            </tr>
+          ))}
         </tbody>
       </Table>
     </>
@@ -133,6 +176,8 @@ function RefList({refs}) {
 }
 
 function DeprecationFlag({variable, ...rest}) {
+  const deprecations = useDeprecations()
+
   const dep = deprecations.variables[variable]
   return dep ? (
     <Text {...rest}>
@@ -144,7 +189,11 @@ function DeprecationFlag({variable, ...rest}) {
 }
 
 function DeprecationIcon(props) {
-  return <Text color="red.5"><Octicon icon={Alert} /></Text>
+  return (
+    <Text color="red.5">
+      <Octicon icon={Alert} />
+    </Text>
+  )
 }
 
 export {Variables, DeprecationIcon}
