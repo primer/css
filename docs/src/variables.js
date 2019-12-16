@@ -1,5 +1,5 @@
 import React from 'react'
-import {Flex, Link, Text, Tooltip} from '@primer/components'
+import {Flex, Link, Text, Tooltip, Flash} from '@primer/components'
 import Octicon, {Alert} from '@primer/octicons-react'
 import themeGet from '@styled-system/theme-get'
 import DoctocatTable from '@primer/gatsby-theme-doctocat/src/components/table'
@@ -82,15 +82,15 @@ function Variables({children, ...props}) {
   const variablesByFile = useVariables()
   if (variablesByFile.size === 0) {
     return (
-      <div className="flash flash-error">
+      <>
         <h2>No data available</h2>
         {__DEV__ && (
-          <p>
+          <Flash scheme="red">
             This probably means that the root project has not been built; run `npm run dist` and restart your
             development server.
-          </p>
+          </Flash>
         )}
-      </div>
+      </>
     )
   }
 
