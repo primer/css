@@ -24,12 +24,13 @@ const Table = styled(DoctocatTable)`
 `
 
 function useVariables() {
+  const deprecations = useDeprecations()
+
   return React.useMemo(() => {
     let variablesByFile = new Map()
 
     try {
       const variables = require('../dist/variables.json')
-      const deprecations = useDeprecations()
 
       for (const name of Object.keys(variables)) {
         if (name.endsWith('-font')) {
@@ -80,8 +81,6 @@ function useDeprecations() {
 
 function Variables({children, ...props}) {
   const variablesByFile = useVariables()
-  console.log(__DEV__)
-
   if (variablesByFile.size === 0) {
     return (
       <div className="flash flash-error">
@@ -97,7 +96,7 @@ function Variables({children, ...props}) {
   }
 
   return Array.from(variablesByFile.entries()).map(([path, variables]) => (
-    <>
+    <React.Fragment key={path}>
       {children}
       <h3>
         Defined in <Link href={`https://github.com/primer/css/tree/master/${path}`}>{path}</Link>
@@ -111,7 +110,7 @@ function Variables({children, ...props}) {
           </tr>
         </thead>
         <tbody>
-          {variables.map(({name, computed, values, source, refs}) => (
+          {variables.map(({name, computed, source, refs}) => (
             <tr id={name} key={name}>
               <th scope="row">
                 <Flex justifyContent="space-between">
@@ -139,7 +138,7 @@ function Variables({children, ...props}) {
           ))}
         </tbody>
       </Table>
-    </>
+    </React.Fragment>
   ))
 }
 
@@ -168,7 +167,7 @@ Swatch.defaultProps = {
 function RefList({refs}) {
   const last = refs.length - 1
   return refs.map((ref, i) => [
-    <Link href={`#${ref}`}>
+    <Link href={`#${ref}`} key={ref}>
       <Mono nowrap>{ref}</Mono>
     </Link>,
     i < last ? ', ' : ''
