@@ -5,7 +5,8 @@
   "scripts": {
     "clean": "gatsby clean",
     "develop": "ln -sf ../dist . && gatsby develop -H 0.0.0.0",
-    "build": "gatsby build --prefix-paths"
+    "build-content": "gatsby build --prefix-paths",
+    "build": "./script/now-build.sh"
   },
   "dependencies": {
     "@loadable/component": "^5.10.2",
