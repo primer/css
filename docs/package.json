@@ -32,5 +32,8 @@
     "react-frame-component": "^4.1.1",
     "styled-components": "^4.3.2",
     "title-case": "^2.1.1"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
