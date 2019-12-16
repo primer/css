@@ -17,6 +17,7 @@
 
 /* Set the font size to 26px */
 .h1 {
+  // stylelint-disable-next-line primer/typography
   font-size: $h1-size-mobile !important;
 
   @include breakpoint(md) { font-size: $h1-size !important; }
@@ -24,6 +25,7 @@
 
 /* Set the font size to 22px */
 .h2 {
+  // stylelint-disable-next-line primer/typography
   font-size: $h2-size-mobile !important;
 
   @include breakpoint(md) { font-size: $h2-size !important; }
@@ -31,6 +33,7 @@
 
 /* Set the font size to 18px */
 .h3 {
+  // stylelint-disable-next-line primer/typography
   font-size: $h3-size-mobile !important;
 
   @include breakpoint(md) { font-size: $h3-size !important; }
@@ -60,6 +63,7 @@
 // Type utilities that match type sale
 /* Set the font size to 26px */
 .f1 {
+  // stylelint-disable-next-line primer/typography
   font-size: $h1-size-mobile !important;
 
   @include breakpoint(md) { font-size: $h1-size !important; }
@@ -67,6 +71,7 @@
 
 /* Set the font size to 22px */
 .f2 {
+  // stylelint-disable-next-line primer/typography
   font-size: $h2-size-mobile !important;
 
   @include breakpoint(md) { font-size: $h2-size !important; }
@@ -74,6 +79,7 @@
 
 /* Set the font size to 18px */
 .f3 {
+  // stylelint-disable-next-line primer/typography
   font-size: $h3-size-mobile !important;
 
   @include breakpoint(md) { font-size: $h3-size !important; }
@@ -94,6 +100,7 @@
 // Type utils with light weight that match type scale
 /* Set the font size to 40px and weight to light */
 .f00-light {
+  // stylelint-disable-next-line primer/typography
   font-size: $h00-size-mobile !important;
   font-weight: $font-weight-light !important;
 
@@ -102,6 +109,7 @@
 
 /* Set the font size to 32px and weight to light */
 .f0-light {
+  // stylelint-disable-next-line primer/typography
   font-size: $h0-size-mobile !important;
   font-weight: $font-weight-light !important;
 
@@ -110,6 +118,7 @@
 
 /* Set the font size to 26px and weight to light */
 .f1-light {
+  // stylelint-disable-next-line primer/typography
   font-size: $h1-size-mobile !important;
   font-weight: $font-weight-light !important;
 
@@ -118,6 +127,7 @@
 
 /* Set the font size to 22px and weight to light */
 .f2-light {
+  // stylelint-disable-next-line primer/typography
   font-size: $h2-size-mobile !important;
   font-weight: $font-weight-light !important;
 
@@ -127,6 +137,7 @@
 // Same size and weight as .lead but without color property
 /* Set the font size to 18px and weight to light */
 .f3-light {
+  // stylelint-disable-next-line primer/typography
   font-size: $h3-size-mobile !important;
   font-weight: $font-weight-light !important;
 
@@ -139,10 +150,11 @@
 
 /* Large leading paragraphs */
 .lead {
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 30px;
   font-size: $h3-size;
   font-weight: $font-weight-light;
-  color: $gray-600;
+  color: $text-gray;
 }
 
 // Line-height variations

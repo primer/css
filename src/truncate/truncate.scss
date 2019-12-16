@@ -3,18 +3,22 @@
 // css-truncate will shorten text with an ellipsis.
 
 .css-truncate {
-  // Truncate double target
-  //
-  // css-truncate will shorten text with an ellipsis. The maximum width
-  // of the truncated text can be changed by overriding the max-width
-  // of the .css-truncate-target
+
+  // css-truncate-auto will shorten text with an ellipsis when overflowing
+  &.css-truncate-overflow,
+  .css-truncate-overflow,
+  &.css-truncate-target,
+  .css-truncate-target {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  // css-truncate-target will shorten text with an ellipsis and a max width
   &.css-truncate-target,
   .css-truncate-target {
     display: inline-block;
     max-width: 125px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     vertical-align: top;
   }
 

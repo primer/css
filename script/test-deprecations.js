@@ -76,8 +76,7 @@ async function checkSelectorDeprecations(options = {}) {
   for (const {selectors = []} of deprecations) {
     for (const selector of selectors) {
       if (!removed.includes(selector)) {
-        const error = `"${selector}" deprecated, but not removed`
-        errors.push(error)
+        errors.push(`"${selector}" deprecated, but not removed`)
       } else {
         console.log(`${V} selector "${selector}" is officially deprecated`)
       }
@@ -87,8 +86,9 @@ async function checkSelectorDeprecations(options = {}) {
 
   for (const removedSelector of removed) {
     if (!deprecatedSelectors.includes(removedSelector)) {
-      const error = `"${removedSelector}" has been removed, but was not listed in versionDeprecations['${currentVersion}']`
-      errors.push(error)
+      errors.push(
+        `"${removedSelector}" has been removed, but was not listed in versionDeprecations['${currentVersion}']`
+      )
     } else {
       // console.log(`${V} "${removedSelector}" removed and deprecated!`)
     }
@@ -128,8 +128,11 @@ async function checkVariableDeprecations(options = {}) {
   for (const {variables = []} of deprecations) {
     for (const variable of variables) {
       if (!removed.includes(variable)) {
-        const error = `variable "${variable}" deprecated, but not removed`
-        errors.push(error)
+        if (remote[variable]) {
+          errors.push(`variable "${variable}" deprecated, but not removed`)
+        } else {
+          console.log(`${I} variable "${variable}" doesn't exist in data for version: ${version}`)
+        }
       } else {
         console.log(`${V} variable "${variable}" is officially deprecated`)
       }
@@ -139,8 +142,9 @@ async function checkVariableDeprecations(options = {}) {
 
   for (const removedVariable of removed) {
     if (!deprecatedVariables.includes(removedVariable)) {
-      const error = `"${removedVariable}" has been removed, but was not listed in versionDeprecations['${currentVersion}']`
-      errors.push(error)
+      errors.push(
+        `"${removedVariable}" has been removed, but was not listed in versionDeprecations['${currentVersion}']`
+      )
     } else {
       // console.log(`${V} "${removedVariable}" removed and deprecated!`)
     }

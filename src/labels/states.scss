@@ -12,18 +12,22 @@
   display: inline-block;
   padding: $spacer-1 $spacer-2;
   font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
   color: $text-white;
   text-align: center;
   white-space: nowrap;
+  // stylelint-disable-next-line primer/colors
   background-color: $gray-500;
-  border-radius: 3px;
+  border-radius: $border-radius;
 }
 
+// stylelint-disable-next-line primer/colors
 .State--green { background-color: darken($green-400, 5%); }
 
 .State--purple { background-color: $bg-purple; }
 
+// stylelint-disable-next-line primer/colors
 .State--red { background-color: $red-600; }
 
 .State--small {

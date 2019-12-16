@@ -6,11 +6,35 @@
 const versionDeprecations = {
   '14.0.0': [
     {
+      selectors: [
+        '.SelectMenu-item+.SelectMenu-item',
+        '.SelectMenu-divider:first-child',
+        '.SelectMenu-divider:last-child',
+        '.SelectMenu--hasFilter .SelectMenu-item:last-child',
+        '.SelectMenu-item[aria-checked="true"] .SelectMenu-icon'
+      ],
+      message: `These selectors are deprecated and not used anymore.`
+    },
+    {
+      selectors: [
+        '.flex-item-equal',
+        '.flex-sm-item-equal',
+        '.flex-md-item-equal',
+        '.flex-lg-item-equal',
+        '.flex-xl-item-equal'
+      ],
+      message: `This variable is deprecated. Use "flex-1" instead.`
+    },
+    {
       selectors: ['.UnderlineNav-item.selected', '.UnderlineNav-item.selected .UnderlineNav-octicon'],
       message: `Please use aria-selected="true" to indicate the selected state of an UnderlineNav item.`
     },
     {
       variables: ['$status-pending'],
+      message: `This variable is deprecated.`
+    },
+    {
+      variables: ['$highlight-yellow'],
       message: `This variable is deprecated.`
     },
     {

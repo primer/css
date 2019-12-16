@@ -3,25 +3,28 @@
   padding: $spacer-3 $spacer-4;
   font-size: $h5-size;
   font-weight: $font-weight-semibold;
-  color: $white;
+  color: $text-white;
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
+  // stylelint-disable-next-line primer/colors
   background-color: $blue-mktg;
-  border: 1px solid $blue-mktg;
+  // stylelint-disable-next-line primer/borders
+  border: $border-width $border-style $blue-mktg;
   border-radius: $border-radius;
   transition: $transition-time / 2;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   &:hover {
     text-decoration: none;
-    background-color: $blue-500;
-    border-color: $blue-500;
+    background-color: $bg-blue;
+    border-color: $border-blue;
   }
 
   &:focus {
     outline: 0;
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0 0.2em rgba($blue-500, 0.3);
   }
 
@@ -34,33 +37,43 @@
 }
 
 .btn-primary-mktg {
+  // stylelint-disable-next-line primer/colors
   background-color: $green-mktg;
+  // stylelint-disable-next-line primer/borders
   border-color: $green-mktg;
 
   &:hover {
-    background-color: $green-500;
+    background-color: $bg-green;
+    // stylelint-disable-next-line primer/borders
     border-color: $green-500;
   }
 
   &:focus {
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0 0.2em rgba($green-500, 0.3);
   }
 }
 
 .btn-large-mktg {
+  // stylelint-disable-next-line primer/spacing
   padding: 20px $spacer-5;
   font-size: $h4-size;
 }
 
 .btn-outline-mktg {
+  // stylelint-disable-next-line primer/colors
   color: $blue-mktg;
+  // stylelint-disable-next-line primer/colors
   background-color: rgba($white, 0);
+  // stylelint-disable-next-line primer/borders
   border-color: rgba($blue-mktg, 0.5);
 
   &:hover {
-    color: $blue-500;
+    color: $text-blue;
     text-decoration: none;
+    // stylelint-disable-next-line primer/colors
     background-color: rgba($white, 0);
+    // stylelint-disable-next-line primer/borders
     border-color: rgba($blue-mktg, 1);
   }
 }
@@ -73,9 +86,10 @@
 }
 
 .btn-transparent {
-  color: $white;
+  color: $text-white;
   background-color: transparent;
   background-image: none;
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style $white-fade-50;
 
   &:hover,

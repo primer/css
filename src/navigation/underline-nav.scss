@@ -17,17 +17,18 @@
   line-height: $lh-default;
   color: $text-gray;
   text-align: center;
+  // stylelint-disable-next-line primer/borders
   border-bottom: 2px $border-style transparent;
 
   &:hover,
   &:focus {
     color: $text-gray-dark;
     text-decoration: none;
-    border-bottom-color: $gray-300;
+    border-bottom-color: $border-gray-dark;
     transition: 0.2s ease;
 
     .UnderlineNav-octicon {
-      color: $gray-500;
+      color: $text-gray-light;
     }
   }
 
@@ -35,10 +36,11 @@
   &[aria-current] {
     font-weight: $font-weight-bold;
     color: $text-gray-dark;
+    // stylelint-disable-next-line primer/borders
     border-bottom-color: $orange-600;
 
     .UnderlineNav-octicon {
-      color: $gray-500;
+      color: $text-gray-light;
     }
   }
 }
@@ -65,6 +67,7 @@
 }
 
 .UnderlineNav-octicon {
+  // stylelint-disable-next-line primer/colors
   color: $gray-400;
 }
 

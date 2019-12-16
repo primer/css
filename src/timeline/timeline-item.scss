@@ -13,11 +13,14 @@
     display: block;
     width: 2px;
     content: "";
+    // stylelint-disable-next-line primer/colors
     background-color: $gray-200;
   }
 
   &:target .TimelineItem-badge {
+    // stylelint-disable-next-line primer/borders
     border-color: $blue-400;
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0.2em $blue-200;
   }
 }
@@ -30,10 +33,13 @@
   height: $spacer-5;
   margin-right: $spacer-2;
   margin-left: -$spacer-3 + 1;
+  // stylelint-disable-next-line primer/colors
   color: $gray-700;
   align-items: center;
+  // stylelint-disable-next-line primer/colors
   background-color: $gray-200;
-  border: 2px solid $white;
+  // stylelint-disable-next-line primer/borders
+  border: 2px $border-style $border-white;
   border-radius: 50%;
   justify-content: center;
   flex-shrink: 0;
@@ -43,6 +49,7 @@
   min-width: 0;
   max-width: 100%;
   margin-top: $spacer-1;
+  // stylelint-disable-next-line primer/colors
   color: $gray-700;
   flex: auto;
 }
@@ -59,10 +66,12 @@
   height: $spacer-4;
   margin: 0;
   margin-bottom: -$spacer-3;
+  // stylelint-disable-next-line primer/spacing
   margin-left: -($spacer-6 + $spacer-3);
-  background-color: $white;
+  background-color: $bg-white;
   border: 0;
-  border-top: 4px solid $gray-200;
+  // stylelint-disable-next-line primer/borders
+  border-top: 4px $border-style $border-color;
 }
 
 .TimelineItem--condensed {
@@ -78,8 +87,9 @@
     height: $spacer-3;
     margin-top: $spacer-2;
     margin-bottom: $spacer-2;
+    // stylelint-disable-next-line primer/colors
     color: $gray-400;
-    background-color: $white;
+    background-color: $bg-white;
     border: 0;
   }
 }

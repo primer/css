@@ -3,9 +3,10 @@
   overflow: hidden; // Ensure page layout in Firefox should images fail to load
   line-height: $lh-condensed-ultra;
   vertical-align: middle;
-  border-radius: 3px;
+  border-radius: $border-radius;
 }
 
+// stylelint-disable-next-line primer/borders
 .avatar-small { border-radius: 2px; }
 
 .avatar-link {
@@ -16,5 +17,6 @@
 // User for example on /stars and /user for grids of avatars
 .avatar-group-item {
   display: inline-block;
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 3px;
 }

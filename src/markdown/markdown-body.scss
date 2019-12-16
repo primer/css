@@ -45,12 +45,13 @@
 
   // Link Colors
   .absent {
-    color: $red-600;
+    color: $text-red;
   }
 
   .anchor {
     float: left;
     padding-right: $spacer-1;
+    // stylelint-disable-next-line primer/spacing
     margin-left: -20px;
     line-height: $lh-condensed-ultra;
 
@@ -75,14 +76,17 @@
     height: $em-spacer-3;
     padding: 0;
     margin: $spacer-4 0;
+    // stylelint-disable-next-line primer/colors
     background-color: $gray-200;
     border: 0;
   }
 
   blockquote {
+    // stylelint-disable-next-line primer/spacing
     padding: 0 1em;
-    color: $gray-500;
-    border-left: 0.25em solid lighten($gray-300, 5%);
+    color: $text-gray-light;
+    // stylelint-disable-next-line primer/borders
+    border-left: 0.25em $border-style lighten($gray-300, 5%);
 
     > :first-child {
       margin-top: 0;
