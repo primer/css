@@ -264,6 +264,7 @@ $SelectMenu-max-height: 480px !default;
   &[aria-selected="true"] {
     z-index: 1; // Keeps box-shadow visible when hovering
     color: $text-gray-dark;
+    cursor: default;
     background-color: $bg-white;
     // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0 1px $border-color;
@@ -392,13 +393,13 @@ $SelectMenu-max-height: 480px !default;
     background-color: $blue-100;
   }
 
-  .SelectMenu-tab:not([aria-checked="true"]):hover {
+  .SelectMenu-tab:not([aria-selected="true"]):hover {
     color: $text-gray-dark;
     // stylelint-disable-next-line primer/colors
     background-color: $gray-200;
   }
 
-  .SelectMenu-tab:not([aria-checked="true"]):active {
+  .SelectMenu-tab:not([aria-selected="true"]):active {
     color: $text-gray-dark;
     background-color: $bg-gray;
   }
