@@ -60,11 +60,11 @@ function useVariables() {
           return a.deprecated - b.deprecated || a.source.line - b.source.line
         })
       }
-
-      return variablesByFile
     } catch (err) {
-      return new Map()
+      // do nothing
     }
+
+    return variablesByFile
   }, [])
 }
 
