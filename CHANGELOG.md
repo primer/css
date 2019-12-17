@@ -1,3 +1,23 @@
+### :rocket: Enhancements
+- [#994](https://github.com/primer/css/pull/994) Responsive line-height utilities
+- [#995](https://github.com/primer/css/pull/995) Add bold weight to marketing font variables
+
+### :bug: Bug fixes
+- [#998](https://github.com/primer/css/pull/998) Use a gray background when hovering SelectMenu items
+
+### :memo: Documentation
+- [#989](https://github.com/primer/css/pull/989) Add link to the Stylelint guide
+- [#1000](https://github.com/primer/css/pull/1000) Update contributing guide for a general audience
+- [#972](https://github.com/primer/css/pull/972) Variables page
+
+### :house: Internal
+- [#997](https://github.com/primer/css/pull/997) Fix CHANGELOG links
+
+### Committers
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+- [@skullface](https://github.com/skullface)
+
 ## 14.0.0
 
 ### :boom: Breaking changes
