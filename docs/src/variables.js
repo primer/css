@@ -80,6 +80,7 @@ function useDeprecations() {
 
 function Variables({children, ...props}) {
   const variablesByFile = useVariables()
+
   if (variablesByFile.size === 0) {
     return (
       <>
@@ -94,9 +95,17 @@ function Variables({children, ...props}) {
     )
   }
 
+  return (
+    <>
+      {children}
+      <VariablesDetails variablesByFile={variablesByFile} {...props} />
+    </>
+  )
+}
+
+function VariablesDetails({variablesByFile, ...props}) {
   return Array.from(variablesByFile.entries()).map(([path, variables]) => (
     <React.Fragment key={path}>
-      {children}
       <h3>
         Defined in <Link href={`https://github.com/primer/css/tree/master/${path}`}>{path}</Link>
       </h3>
@@ -186,7 +195,7 @@ function DeprecationFlag({variable, ...rest}) {
   ) : null
 }
 
-function DeprecationIcon(props) {
+function DeprecationIcon() {
   return (
     <Text color="red.5">
       <Octicon icon={Alert} />
