@@ -1,7 +1,13 @@
 // stylelint-disable selector-max-type
-
 // selector-max-type is needed for body:not(.intent-mouse) to target keyboard only styles.
-// TODO: Introduce an additional .intent-keyboard class
+
+// TODO@15.0.0: remove styles below
+@media (hover: hover) {
+  .SelectMenu-tab:not([aria-checked="true"]):hover,
+  .SelectMenu-tab:not([aria-checked="true"]):active {
+    background-color: $bg-white;
+  }
+}
 
 $SelectMenu-max-height: 480px !default;
 
