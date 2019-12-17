@@ -3,13 +3,15 @@ title: Contributing
 description: Guidelines for contributing to GitHub's CSS
 ---
 
+While this contributing guide is for GitHub employees, all contributions from the community are welcome.
+
 ## Decision process for adding new styles
 
 ### Components
 
 [Components](/css/components) are frequently used visual patterns we've abstracted into a set of convenient styles, that would be otherwise difficult to achieve with utilities and layout objects.
 
-Making a decision on whether new components should be added is done on a case by case basis. It's not always easy to make that decision but here are some questions you should ask yourself before moving forward with a pull request. The design systems team will help you make this decision.
+Decisions to add new components are made on a case-by-case basis, with help from the GitHub Design Systems team. Some questions that we use to guide these decisions include:
 
 - How often is this pattern used across the site?
 - Could these styles be achieved with existing components, objects, and utilities?
@@ -39,7 +41,7 @@ Many of the same questions can be applied to objects and utilities, however the 
 
 It's usually better to open an issue before investing time in spiking out a new pattern. This gives the design systems team a heads up and allows other designers to share thoughts. Here's an outline of what's helpful to include in a new style issue:
 
-1. What the pattern is and how it's being used across the site - post screenshots and urls where possible. If you need help identifying where the pattern is being used, call that out here and cc the relevant team and/or cc `@product-design` to help.
+1. What the pattern is, and how it's being used on GitHub.com. Post screenshots and/or URLs whenever possible. If you need help identifying where the pattern is used, call that out in the issue.
 2. Why you think a new pattern is needed (this should answer the relevant questions above).
 3. If you intend to work on these new styles yourself, let us know what your timeline and next steps are. If you need help and this is a dependency for shipping another project, please make that clear here and what the timeline is.
 4. Add the appropriate label(s):
@@ -66,7 +68,7 @@ New styles we add should be used in as many places as makes sense to in producti
 
 If you get to this step you've helped contribute to a style guide that many of your colleagues use on a daily basis, you've contributed to an open source project that's referenced and used by many others, and you've helped improve the usability and consistency of GitHub for our users. Thank you!
 
-Let the [design systems team](https://github.com/github/design-systems) know if we can improve these guidelines and make following this process any easier.
+[Please open an issue](#step-1-open-an-issue) if we can improve these guidelines and make following this process any easier.
 
 
 ## Removing styles and variables
@@ -161,7 +163,7 @@ Check out Doctocat's [live code](https://primer.style/doctocat/usage/live-code) 
 
 Primer CSS follows [semantic versioning](http://semver.org/) conventions. This helps others know when a change is a patch, minor, or breaking change.
 
-To understand what choice to make, you'll need to understand semver and know if one of the changes shown is a major, minor, or patch. Semver is confusing at first, so I recommend reviewing [semver](http://semver.org/) and/or ask in [#design-systems](https://github.slack.com/archives/design-systems) or and experienced open-source contributor.
+To understand what choice to make, you'll need to understand semver and know if one of the changes shown is a major, minor, or patch. Semver is confusing at first, so we recommend reviewing [semver](http://semver.org/) and/or asking the team by [opening an issue](#step-1-open-an-issue).
 
 [semantic versioning]: https://semver.org
 [script/test-deprecations.js]: https://github.com/primer/css/tree/master/script/test-deprecations.js
