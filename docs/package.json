@@ -1,18 +1,16 @@
 {
-  "name": "docs",
   "private": true,
-  "version": "1.0.0",
-  "license": "MIT",
+  "name": "docs",
+  "repository": "primer/css",
   "scripts": {
     "clean": "gatsby clean",
-    "develop": "gatsby develop -H 0.0.0.0",
-    "build": "gatsby build --prefix-paths",
-    "now-build": "npm run build"
+    "develop": "ln -sf ../dist . && gatsby develop -H 0.0.0.0",
+    "build-content": "gatsby build --prefix-paths",
+    "build": "./script/now-build.sh"
   },
   "dependencies": {
     "@loadable/component": "^5.10.2",
     "@primer/components": "^13.2.0",
-    "@primer/css": "^12.4.1",
     "@primer/gatsby-theme-doctocat": "^0.15.0",
     "@primer/octicons": "^9.1.1",
     "@primer/octicons-react": "^9.1.1",
@@ -36,5 +34,7 @@
     "styled-components": "^4.3.2",
     "title-case": "^2.1.1"
   },
-  "repository": "primer/css"
+  "engines": {
+    "node": "12.x"
+  }
 }
