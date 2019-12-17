@@ -8,7 +8,7 @@ bundle: utilities
 
 Type utilities are designed to work in combination with line-height utilities so as to result in more sensible numbers wherever possible. These also exist as [variables](/css/support/typography#typography-variables) that you can use in components or custom CSS.
 
- 
+
 
 Font sizes are smaller on mobile and scale up at the `md` [breakpoint](/css/support/breakpoints) to be larger on desktop.
 
@@ -67,7 +67,8 @@ Lighter font-weight utilities are available in a limited range. Lighter font-wei
 ```
 
 ## Line height styles
-Change the line height density with these utilities.
+
+Change the line height density with these utilities. Responsive variants are also available (e.g. `.lh-sm-condensed`).
 
 ```html live
 <p class="lh-default">
