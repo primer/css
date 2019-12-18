@@ -1,7 +1,13 @@
 // stylelint-disable selector-max-type
-
 // selector-max-type is needed for body:not(.intent-mouse) to target keyboard only styles.
-// TODO: Introduce an additional .intent-keyboard class
+
+// TODO@15.0.0: remove styles below
+@media (hover: hover) {
+  .SelectMenu-tab:not([aria-checked="true"]):hover,
+  .SelectMenu-tab:not([aria-checked="true"]):active {
+    background-color: $bg-white;
+  }
+}
 
 $SelectMenu-max-height: 480px !default;
 
@@ -264,6 +270,7 @@ $SelectMenu-max-height: 480px !default;
   &[aria-selected="true"] {
     z-index: 1; // Keeps box-shadow visible when hovering
     color: $text-gray-dark;
+    cursor: default;
     background-color: $bg-white;
     // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0 1px $border-color;
@@ -377,14 +384,11 @@ $SelectMenu-max-height: 480px !default;
 @media (hover: hover) {
   body:not(.intent-mouse) .SelectMenu-item:focus,
   .SelectMenu-item:hover {
-    color: $text-white;
-    background-color: $bg-blue;
+    background-color: $bg-gray;
   }
 
   .SelectMenu-item:active {
-    color: $text-white;
-    // stylelint-disable-next-line primer/colors
-    background-color: $blue-400;
+    background-color: $bg-gray-light;
   }
 
   body:not(.intent-mouse) .SelectMenu-tab:focus {
@@ -392,13 +396,13 @@ $SelectMenu-max-height: 480px !default;
     background-color: $blue-100;
   }
 
-  .SelectMenu-tab:not([aria-checked="true"]):hover {
+  .SelectMenu-tab:not([aria-selected="true"]):hover {
     color: $text-gray-dark;
     // stylelint-disable-next-line primer/colors
     background-color: $gray-200;
   }
 
-  .SelectMenu-tab:not([aria-checked="true"]):active {
+  .SelectMenu-tab:not([aria-selected="true"]):active {
     color: $text-gray-dark;
     background-color: $bg-gray;
   }

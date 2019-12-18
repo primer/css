@@ -161,14 +161,19 @@
 // Close to commonly used line-heights. Most line-heights
 // combined with type size equate to whole pixels.
 // Will be improved with future typography scale updates.
-/* Set the line height to ultra condensed */
-.lh-condensed-ultra { line-height: $lh-condensed-ultra !important; }
-/* Set the line height to condensed */
-.lh-condensed { line-height: $lh-condensed !important; }
-/* Set the line height to default */
-.lh-default { line-height: $lh-default !important; }
-/* Set the line height to zero */
-.lh-0 { line-height: 0 !important; }
+// Responsive line-height
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    /* Set the line height to ultra condensed */
+    .lh#{$variant}-condensed-ultra { line-height: $lh-condensed-ultra !important; }
+    /* Set the line height to condensed */
+    .lh#{$variant}-condensed { line-height: $lh-condensed !important; }
+    /* Set the line height to default */
+    .lh#{$variant}-default { line-height: $lh-default !important; }
+    /* Set the line height to zero */
+    .lh#{$variant}-0 { line-height: 0 !important; }
+  }
+}
 
 // Text alignments
 // Responsive text alignment

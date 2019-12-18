@@ -1,26 +1,46 @@
+### :rocket: Enhancements
+- [#994](https://github.com/primer/css/pull/994) Responsive line-height utilities
+- [#995](https://github.com/primer/css/pull/995) Add bold weight to marketing font variables
+
+### :bug: Bug fixes
+- [#998](https://github.com/primer/css/pull/998) Use a gray background when hovering SelectMenu items
+
+### :memo: Documentation
+- [#989](https://github.com/primer/css/pull/989) Add link to the Stylelint guide
+- [#1000](https://github.com/primer/css/pull/1000) Update contributing guide for a general audience
+- [#972](https://github.com/primer/css/pull/972) Variables page
+
+### :house: Internal
+- [#997](https://github.com/primer/css/pull/997) Fix CHANGELOG links
+
+### Committers
+- [@shawnbot](https://github.com/shawnbot)
+- [@simurai](https://github.com/simurai)
+- [@skullface](https://github.com/skullface)
+
 ## 14.0.0
 
 ### :boom: Breaking changes
-- [#922](https://github.com/primer/css/922) More SelectMenu improvements
-- [#966](https://github.com/primer/css/966) Rename `.flex-item-equal` to `.flex-1`
-- [#973](https://github.com/primer/css/973) Deprecate variables in 14.0.0
+- [#922](https://github.com/primer/css/pull/922) More SelectMenu improvements
+- [#966](https://github.com/primer/css/pull/966) Rename `.flex-item-equal` to `.flex-1`
+- [#973](https://github.com/primer/css/pull/973) Deprecate variables in 14.0.0
 
 ### :rocket: Enhancements
-- [#987](https://github.com/primer/css/987) Add .position-sticky utility
-- [#979](https://github.com/primer/css/979) Add `.radio-group` component
-- [#981](https://github.com/primer/css/981) Autocomplete + Suggester components
-- [#978](https://github.com/primer/css/978) Add `.css-truncate-overflow`
-- [#974](https://github.com/primer/css/974) Add Animated Ellipsis
-- [#971](https://github.com/primer/css/971) Add variable deprecation data and tests
+- [#987](https://github.com/primer/css/pull/987) Add .position-sticky utility
+- [#979](https://github.com/primer/css/pull/979) Add `.radio-group` component
+- [#981](https://github.com/primer/css/pull/981) Autocomplete + Suggester components
+- [#978](https://github.com/primer/css/pull/978) Add `.css-truncate-overflow`
+- [#974](https://github.com/primer/css/pull/974) Add Animated Ellipsis
+- [#971](https://github.com/primer/css/pull/971) Add variable deprecation data and tests
 
 ### :memo: Documentation
-- [#988](https://github.com/primer/css/988) Add docs for flexbug no. 9
-- [#977](https://github.com/primer/css/977) Update spacing.md
+- [#988](https://github.com/primer/css/pull/988) Add docs for flexbug no. 9
+- [#977](https://github.com/primer/css/pull/977) Update spacing.md
 
 ### :house: Internal
-- [#952](https://github.com/primer/css/952) Async/awaitify script/dist.js
-- [#963](https://github.com/primer/css/963) Generate changelog with semantic-release
-- [#968](https://github.com/primer/css/968) Stylelint update
+- [#952](https://github.com/primer/css/pull/952) Async/awaitify script/dist.js
+- [#963](https://github.com/primer/css/pull/963) Generate changelog with semantic-release
+- [#968](https://github.com/primer/css/pull/968) Stylelint update
 
 ### Committers
 - [@BinaryMuse](https://github.com/BinaryMuse)
@@ -31,20 +51,20 @@
 # 13.2.0
 
 ### :rocket: Enhancements
-- [#959](https://github.com/primer/css/959) More buttons
-- [#950](https://github.com/primer/css/950) Add Diffstat component
-- [#913](https://github.com/primer/css/913) Importing TimelineItem from .com and creating matching docs
-- [#953](https://github.com/primer/css/953) Add IssueLabel component
+- [#959](https://github.com/primer/css/pull/959) More buttons
+- [#950](https://github.com/primer/css/pull/950) Add Diffstat component
+- [#913](https://github.com/primer/css/pull/913) Importing TimelineItem from .com and creating matching docs
+- [#953](https://github.com/primer/css/pull/953) Add IssueLabel component
 
 ### :bug: Bug fixes
-- [#945](https://github.com/primer/css/945) Add `[role=tab][aria-selected=true]` to `.UnderlineNav-item.selected`
+- [#945](https://github.com/primer/css/pull/945) Add `[role=tab][aria-selected=true]` to `.UnderlineNav-item.selected`
 
 ### :memo: Documentation
-- [#939](https://github.com/primer/css/939) Fix `Box--overlay` example
-- [#943](https://github.com/primer/css/943) Fix broken links to typography utilities
+- [#939](https://github.com/primer/css/pull/939) Fix `Box--overlay` example
+- [#943](https://github.com/primer/css/pull/943) Fix broken links to typography utilities
 
 ### :house: Internal
-- [#946](https://github.com/primer/css/946) Add `TODO@version` stylelint rule (local)
+- [#946](https://github.com/primer/css/pull/946) Add `TODO@version` stylelint rule (local)
 
 ### Committers
 - [@MohamedElidrissi](https://github.com/MohamedElidrissi)
