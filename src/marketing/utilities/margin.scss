@@ -3,7 +3,7 @@
 
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
-    @each $scale, $size in $marketing-spacers {
+    @each $scale, $size in $marketing-all-spacers {
 
       .mt#{$variant}-#{$scale} { margin-top: $size !important; }
       .mb#{$variant}-#{$scale} { margin-bottom: $size !important; }
