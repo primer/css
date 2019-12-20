@@ -40,6 +40,13 @@ $spacer-4: $spacer * 3 !default;        // 24px
 $spacer-5: $spacer * 4 !default;        // 32px
 $spacer-6: $spacer * 5 !default;        // 40px
 
+$spacer-7:  $spacer * 6 !default;  // 48px
+$spacer-8:  $spacer * 8 !default;  // 64px
+$spacer-9:  $spacer * 10 !default; // 80px
+$spacer-10: $spacer * 12 !default; // 96px
+$spacer-11: $spacer * 14 !default; // 112px
+$spacer-12: $spacer * 16 !default; // 128px
+
 // The list of spacer values
 $spacers: (
   $spacer-0,
@@ -49,6 +56,12 @@ $spacers: (
   $spacer-4,
   $spacer-5,
   $spacer-6,
+  $spacer-7,
+  $spacer-8,
+  $spacer-9,
+  $spacer-10,
+  $spacer-11,
+  $spacer-12
 ) !default;
 
 // And the map of spacers, for easier looping:
@@ -61,6 +74,12 @@ $spacer-map: (
   4: $spacer-4,
   5: $spacer-5,
   6: $spacer-6,
+  7: $spacer-7,
+  8: $spacer-8,
+  9: $spacer-9,
+  10: $spacer-10,
+  11: $spacer-11,
+  12: $spacer-12
 ) !default;
 
 // Em spacer variables
