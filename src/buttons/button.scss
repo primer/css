@@ -57,7 +57,8 @@
   }
 
   &:active,
-  &.selected {
+  &.selected,
+  &[aria-selected=true] {
     background-image: none;
   }
 }
@@ -153,6 +154,7 @@
   &:active,
   &:focus,
   &.selected,
+  &[aria-selected=true],
   &.zeroclipboard-is-hover,
   &.zeroclipboard-is-active {
     color: $text-blue;

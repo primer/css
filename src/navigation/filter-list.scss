@@ -43,7 +43,8 @@
     background-color: lighten($gray-200, 3%);
   }
 
-  &.selected {
+  &.selected,
+  &[aria-selected=true] {
     color: $text-white;
     background-color: $bg-blue;
   }
