@@ -418,9 +418,9 @@ A vertical list of filters. Grey text on white background. Selecting a filter fr
 
 ```html live title="subnav"
 <nav class="subnav" aria-label="Respository">
-  <a href="#url" class="subnav-item selected" aria-current="page">Item 1</a>
-  <a href="#url" class="subnav-item">Item 2</a>
-  <a href="#url" class="subnav-item">Item 3</a>
+  <a class="subnav-item" href="#url" aria-current="page">Item 1</a>
+  <a class="subnav-item" href="#url">Item 2</a>
+  <a class="subnav-item" href="#url">Item 3</a>
 </nav>
 ```
 
@@ -429,9 +429,9 @@ You can have `subnav-search` in the subnav bar.
 ```html live
 <div class="subnav">
   <nav class="subnav-links" aria-label="Repository">
-    <a href="#url" class="subnav-item selected" aria-current="page">Item 1</a>
-    <a href="#url" class="subnav-item">Item 2</a>
-    <a href="#url" class="subnav-item">Item 3</a>
+    <a class="subnav-item" href="#url" aria-current="page">Item 1</a>
+    <a class="subnav-item" href="#url">Item 2</a>
+    <a class="subnav-item" href="#url">Item 3</a>
   </nav>
   <div class="subnav-search float-left">
     <input type="search" name="name" class="form-control subnav-search-input" value="" aria-label="Search site" />
@@ -457,10 +457,11 @@ You can also use a `subnav-search-context` to display search help in a select me
 ```html live
 <div class="subnav">
   <nav class="subnav-links">
-    <a href="#url" class="subnav-item selected">Item 1</a>
-    <a href="#url" class="subnav-item">Item 2</a>
-    <a href="#url" class="subnav-item">Item 3</a>
+    <a class="subnav-item" href="#url" aria-current="page">Item 1</a>
+    <a class="subnav-item" href="#url">Item 2</a>
+    <a class="subnav-item" href="#url">Item 3</a>
   </nav>
+
   <div class="float-left ml-3 select-menu js-menu-container js-select-menu subnav-search-context">
     <button
       type="button"
