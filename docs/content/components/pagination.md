@@ -25,19 +25,18 @@ You can make a very simple pagination container with just the Previous and Next 
 
 For pagination across multiple pages, make sure it's clear to the user where they are in a set of pages.
 
-To do this, add anchor links to the `pagination` element. Previous and Next buttons should always be present. Add the class `disabled` to the Previous button if you're on the first page. Apply the class `current` to the current numbered page.
+To do this, add anchor links to the `pagination` element. Previous and Next buttons should always be present. Add the class `disabled` to the Previous button if you're on the first page. Apply the `aria-current="page"` attribute to the current numbered page.
 
 As always, make sure to include the appropriate `aria` attributes to make the element accessible.
 
 - Add `aria-label="Pagination"` to the the `paginate-container` element.
-- Add `aria-current="true"` to the current page marker.
 - Add `aria-label="Page X"` to each anchor link.
 
 ```html live
 <nav class="paginate-container" aria-label="Pagination">
   <div class="pagination">
     <span class="previous_page disabled">Previous</span>
-    <em class="current selected" aria-current="true">1</em>
+    <em aria-current="page">1</em>
     <a href="#url" aria-label="Page 2">2</a>
     <a href="#url" aria-label="Page 3">3</a>
     <span class="gap">…</span>
