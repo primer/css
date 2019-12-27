@@ -14,7 +14,7 @@ The menu is a vertical list of navigational links. **A menu's width and placemen
 
 ```html live title="Menu"
 <nav class="menu" aria-label="Person settings">
-  <a class="menu-item selected" href="#url" aria-current="page">Account</a>
+  <a class="menu-item" href="#url" aria-current="page">Account</a>
   <a class="menu-item" href="#url">Profile</a>
   <a class="menu-item" href="#url">Emails</a>
   <a class="menu-item" href="#url">Notifications</a>
@@ -25,7 +25,7 @@ There are a few subcomponents and add-ons that work well with the menu, includin
 
 ```html live
 <nav class="menu" aria-label="Person settings">
-  <a class="menu-item selected" href="#url" aria-current="page">
+  <a class="menu-item" href="#url" aria-current="page">
     <!-- <%= octicon "tools" %> -->
     <svg width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-tools" aria-hidden="true">
       <path
@@ -81,7 +81,7 @@ You can also add optional headings to a menu. Feel free to use nearly any semant
 ```html live title="Menu with heading"
 <nav class="menu" aria-labelledby="menu-heading">
   <span class="menu-heading" id="menu-heading">Menu heading</span>
-  <a class="menu-item selected" href="#url" aria-current="page">Account</a>
+  <a class="menu-item" href="#url" aria-current="page">Account</a>
   <a class="menu-item" href="#url">Profile</a>
   <a class="menu-item" href="#url">Emails</a>
   <a class="menu-item" href="#url">Notifications</a>
