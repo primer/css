@@ -44,7 +44,8 @@
   }
 
   &.selected,
-  &[aria-selected=true] {
+  &[aria-selected=true],
+  &[aria-current] {
     color: $text-white;
     background-color: $bg-blue;
   }

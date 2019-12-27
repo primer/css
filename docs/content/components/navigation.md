@@ -393,19 +393,19 @@ A vertical list of filters. Grey text on white background. Selecting a filter fr
 ```html live title="filter-list"
 <ul class="filter-list">
   <li>
-    <a href="#url" class="filter-item selected" aria-current="page">
-      <span class="count" title="results">21</span>
+    <a class="filter-item" href="#url" aria-current="page">
       First filter
+      <span class="count" title="results">21</span>
     </a>
   </li>
   <li>
-    <a href="#url" class="filter-item">
-      <span class="count" title="results">3</span>
+    <a class="filter-item" href="#url">
       Second filter
+      <span class="count" title="results">3</span>
     </a>
   </li>
   <li>
-    <a href="#url" class="filter-item">
+    <a class="filter-item" href="#url">
       Third filter
     </a>
   </li>
