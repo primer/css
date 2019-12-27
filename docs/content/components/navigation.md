@@ -343,8 +343,8 @@ When you need to toggle between different views, consider using a tabnav. It'll 
 ```html live title="tabnav"
 <div class="tabnav">
   <nav class="tabnav-tabs" aria-label="Foo bar">
-    <a href="#url" class="tabnav-tab selected" aria-current="page">Foo tab</a>
-    <a href="#url" class="tabnav-tab">Bar tab</a>
+    <a class="tabnav-tab" href="#url" aria-current="page">Foo tab</a>
+    <a class="tabnav-tab" href="#url">Bar tab</a>
   </nav>
 </div>
 ```
@@ -355,8 +355,8 @@ Use `.float-right` to align additional elements in the `.tabnav`:
 <div class="tabnav">
   <a class="btn btn-sm float-right" href="#url" role="button">Button</a>
   <nav class="tabnav-tabs" aria-label="Foo bar">
-    <a href="#url" class="tabnav-tab selected" aria-current="page">Foo Tab</a>
-    <a href="#url" class="tabnav-tab">Bar Tab</a>
+    <a class="tabnav-tab" href="#url" aria-current="page">Foo Tab</a>
+    <a class="tabnav-tab" href="#url">Bar Tab</a>
   </nav>
 </div>
 ```
@@ -365,12 +365,10 @@ Additional bits of text and links can be styled for optimal placement with `.tab
 
 ```html live title="tabnav-extra"
 <div class="tabnav">
-  <div class="tabnav-extra float-right">
-    Tabnav widget text here.
-  </div>
+  <div class="tabnav-extra float-right">Tabnav widget text here.</div>
   <nav class="tabnav-tabs" aria-label="Foo bar">
-    <a href="#url" class="tabnav-tab selected" aria-current="page">Foo Tab</a>
-    <a href="#url" class="tabnav-tab">Bar Tab</a>
+    <a class="tabnav-tab" href="#url" aria-current="page">Foo Tab</a>
+    <a class="tabnav-tab" href="#url">Bar Tab</a>
   </nav>
 </div>
 ```
@@ -378,16 +376,12 @@ Additional bits of text and links can be styled for optimal placement with `.tab
 ```html live title="tabnav with everything"
 <div class="tabnav">
   <div class="float-right">
-    <a class="tabnav-extra" href="#url">
-      Tabnav extra link
-    </a>
-    <a class="tabnav-extra" href="#url">
-      Tabnav extra link
-    </a>
+    <a class="tabnav-extra" href="#url">Tabnav extra link</a>
+    <a class="tabnav-extra" href="#url">Tabnav extra link</a>
   </div>
   <nav class="tabnav-tabs" aria-label="Foo bar">
-    <a href="#url" class="tabnav-tab selected" aria-current="page">Foo Tab</a>
-    <a href="#url" class="tabnav-tab">Bar Tab</a>
+    <a class="tabnav-tab" href="#url" aria-current="page">Foo Tab</a>
+    <a class="tabnav-tab" href="#url">Bar Tab</a>
   </nav>
 </div>
 ```
