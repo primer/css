@@ -85,7 +85,7 @@ In case the Select Menu should be aligned to the right, use `SelectMenu right-0`
 
 ## Selected state
 
-Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-checked="true"` is set.
+If the `SelectMenu` should show a check icon for selected items, use the `SelectMenu-icon SelectMenu-icon--check` classes. It will make the check icon show when `aria-checked="true"` is set.
 
 ```html live
 <details class="details-reset details-overlay" open>
@@ -108,68 +108,28 @@ Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-chec
       </header>
       <div class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitemcheckbox" aria-checked="true">
-          <!-- <%= octicon "check", class: "SelectMenu-icon" %> -->
-          <svg
-            width="12"
-            height="16"
-            viewBox="0 0 12 16"
-            class="octicon octicon-check SelectMenu-icon"
-            aria-hidden="true"
-          >
-            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
-          </svg>
+          <!-- <%= octicon "check", class: "SelectMenu-icon SelectMenu-icon--check" %> -->
+          <svg class="SelectMenu-icon SelectMenu-icon--check octicon octicon-check" width="12" height="16" viewBox="0 0 12 16" aria-hidden="true" ><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" /></svg>
           Selected state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox">
-          <!-- <%= octicon "check", class: "SelectMenu-icon" %> -->
-          <svg
-            width="12"
-            height="16"
-            viewBox="0 0 12 16"
-            class="octicon octicon-check SelectMenu-icon"
-            aria-hidden="true"
-          >
-            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
-          </svg>
+          <!-- <%= octicon "check", class: "SelectMenu-icon SelectMenu-icon--check" %> -->
+          <svg class="SelectMenu-icon SelectMenu-icon--check octicon octicon-check" width="12" height="16" viewBox="0 0 12 16" aria-hidden="true" ><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" /></svg>
           Default state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox" aria-checked="true">
-          <!-- <%= octicon "check", class: "SelectMenu-icon" %> -->
-          <svg
-            width="12"
-            height="16"
-            viewBox="0 0 12 16"
-            class="octicon octicon-check SelectMenu-icon"
-            aria-hidden="true"
-          >
-            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
-          </svg>
+          <!-- <%= octicon "check", class: "SelectMenu-icon SelectMenu-icon--check" %> -->
+          <svg class="SelectMenu-icon SelectMenu-icon--check octicon octicon-check" width="12" height="16" viewBox="0 0 12 16" aria-hidden="true" ><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" /></svg>
           Selected state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox">
-          <!-- <%= octicon "check", class: "SelectMenu-icon" %> -->
-          <svg
-            width="12"
-            height="16"
-            viewBox="0 0 12 16"
-            class="octicon octicon-check SelectMenu-icon"
-            aria-hidden="true"
-          >
-            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
-          </svg>
+          <!-- <%= octicon "check", class: "SelectMenu-icon SelectMenu-icon--check" %> -->
+          <svg class="SelectMenu-icon SelectMenu-icon--check octicon octicon-check" width="12" height="16" viewBox="0 0 12 16" aria-hidden="true" ><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" /></svg>
           Default state
         </button>
         <button class="SelectMenu-item" role="menuitemcheckbox">
-          <!-- <%= octicon "check", class: "SelectMenu-icon" %> -->
-          <svg
-            width="12"
-            height="16"
-            viewBox="0 0 12 16"
-            class="octicon octicon-check SelectMenu-icon"
-            aria-hidden="true"
-          >
-            <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" />
-          </svg>
+          <!-- <%= octicon "check", class: "SelectMenu-icon SelectMenu-icon--check" %> -->
+          <svg class="SelectMenu-icon SelectMenu-icon--check octicon octicon-check" width="12" height="16" viewBox="0 0 12 16" aria-hidden="true" ><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z" /></svg>
           Default state
         </button>
       </div>
@@ -183,7 +143,7 @@ Add a `.SelectMenu-icon .octicon-check` icon and it will show up when `aria-chec
 
 ## List items
 
-The list of items is arguably the most important subcomponent within the menu. Build them out of anchors, buttons, or just about any [interactive content](http://w3c.github.io/html/dom.html#interactive-content). List items are also customizable with options for avatars, additional icons, and multiple lines of text. Use utility classes like `mr-2`, `d-flex` or `float-right` in case more custom styling is needed.
+The list of items is arguably the most important subcomponent within the menu. Build them out of anchors, buttons, or just about any [interactive content](http://w3c.github.io/html/dom.html#interactive-content). List items are also customizable with options for avatars, additional icons, and multiple lines of text. Use utility classes in case more custom styling is needed.
 
 ```html live
 <details class="details-reset details-overlay" open>
@@ -207,6 +167,11 @@ The list of items is arguably the most important subcomponent within the menu. B
       <div class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">
           Text only
+        </button>
+        <button class="SelectMenu-item" role="menuitem">
+          <!-- <%= octicon "pin", class: "SelectMenu-icon" %> -->
+          <svg class="SelectMenu-icon octicon octicon-pin" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 1.2V2l.5 1L6 6H2.2c-.44 0-.67.53-.34.86L5 10l-4 5 5-4 3.14 3.14a.5.5 0 00.86-.34V10l3-4.5 1 .5h.8c.44 0 .67-.53.34-.86L10.86.86a.5.5 0 00-.86.34z"></path></svg>
+          With an icon
         </button>
         <button class="SelectMenu-item" role="menuitem">
           <img
@@ -247,7 +212,7 @@ The list of items is arguably the most important subcomponent within the menu. B
 </details>
 
 <div class="d-sm-none" style="height: 600px"><!-- min height for < sm --></div>
-<div class="d-none d-sm-block" style="height: 300px"><!-- min height for > sm --></div>
+<div class="d-none d-sm-block" style="height: 320px"><!-- min height for > sm --></div>
 ```
 
 ## Divider
@@ -289,11 +254,47 @@ The Select Menu's list can be divided into multiple parts by adding a `.SelectMe
 <div class="d-none d-sm-block" style="height: 260px"><!-- min height for > sm --></div>
 ```
 
-## Additional filter and footer
+## Footer
+
+Use a `.SelectMenu-footer` at the bottom for additional information. As a side effect it can greatly improve the scrolling performance because the list doesn't need to be repainted due to the rounded corners.
+
+```html live
+<details class="details-reset details-overlay" open>
+  <summary class="btn" aria-haspopup="true">
+    Choose an item
+  </summary>
+  <div class="SelectMenu">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button">
+          <!-- <%= octicon "x" %> -->
+          <svg width="12" height="16" viewBox="0 0 12 16" class="octicon octicon-x" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"
+            />
+          </svg>
+        </button>
+      </header>
+      <div class="SelectMenu-list">
+        <button class="SelectMenu-item" role="menuitem">Item 1</button>
+        <button class="SelectMenu-item" role="menuitem">Item 2</button>
+        <button class="SelectMenu-item" role="menuitem">Item 3</button>
+        <button class="SelectMenu-item" role="menuitem">Item 4</button>
+        <button class="SelectMenu-item" role="menuitem">Item 5</button>
+      </div>
+      <footer class="SelectMenu-footer">Footer</footer>
+    </div>
+  </div>
+</details>
+
+<div class="d-sm-none" style="height: 600px"><!-- min height for < sm --></div>
+<div class="d-none d-sm-block" style="height: 260px"><!-- min height for > sm --></div>
+```
+
+## Filter
 
 If the list is expected to get long, consider adding a `.SelectMenu-filter` input. Be sure to also include the `.SelectMenu--hasFilter` modifier class. On mobile devices it will add a fixed height and anchor the Select Menu to the top of the screen. This makes sure the filter input stays at the same position while typing.
-
-Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for additional information, but can also greatly improve the scrolling performance because the list doesn't need to be repainted due to the rounded corners.
 
 ```html live
 <details class="details-reset details-overlay" open>
@@ -350,7 +351,7 @@ Also consider adding a `.SelectMenu-footer` at the bottom. It can be used for ad
 </details>
 
 <div class="d-sm-none"         style="height: 600px"> <!-- min height for < sm --> </div>
-<div class="d-none d-sm-block" style="height: 380px"> <!-- min height for > sm --> </div>
+<div class="d-none d-sm-block" style="height: 500px"> <!-- min height for > sm --> </div>
 ```
 
 ## Tabs
@@ -430,7 +431,7 @@ A `SelectMenu-message` can be used to show different kind of messages to a user.
       <div class="SelectMenu-list">
         <button class="SelectMenu-item" role="menuitem">Item 1</button>
         <button class="SelectMenu-item" role="menuitem">Item 2</button>
-        <div class="SelectMenu-message border-bottom border-top bg-red-0 text-red p-2">Message goes here</div>
+        <div class="SelectMenu-message bg-red-0 text-red p-2">Message goes here</div>
         <button class="SelectMenu-item" role="menuitem">Item 3</button>
       </div>
     </div>

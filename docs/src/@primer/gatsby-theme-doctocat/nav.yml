@@ -16,6 +16,8 @@
       url: /support/typography
     - title: Marketing support
       url: /support/marketing-variables
+    - title: Variables
+      url: /support/variables
 - title: Utilities
   url: /utilities
   children:
@@ -63,6 +65,8 @@
   children:
     - title: Alerts
       url: /components/alerts
+    - title: Autocomplete
+      url: /components/autocomplete
     - title: Avatars
       url: /components/avatars
     - title: Blankslate

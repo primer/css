@@ -103,3 +103,7 @@ We test for the proper use of the [Octicons helper](https://github.com/primer/oc
 ## IE rule limit
 
 We check that our compiled CSS assets don't contain more selectors than the [IE CSS selector limits](https://blogs.msdn.microsoft.com/ieinternals/2011/05/14/stylesheet-limits-in-internet-explorer/).
+
+## Linting dotcom
+
+There are a few handy scripts to make your life easier when working with CSS on dotcom, especially when doing bigger refactors. Checkout the [Stylelint guide](https://github.com/github/design-systems/blob/master/tools/stylelint.md).

@@ -1,7 +1,15 @@
 // stylelint-disable selector-max-type
-
 // selector-max-type is needed for body:not(.intent-mouse) to target keyboard only styles.
-// TODO: Introduce an additional .intent-keyboard class
+
+// TODO@15.0.0: remove styles below
+@media (hover: hover) {
+  .SelectMenu-tab:not([aria-checked="true"]):hover,
+  .SelectMenu-tab:not([aria-checked="true"]):active {
+    background-color: $bg-white;
+  }
+}
+
+$SelectMenu-max-height: 480px !default;
 
 // Select Menu
 //
@@ -85,7 +93,7 @@
   @include breakpoint(sm) {
     width: 300px;
     height: auto;
-    max-height: 350px;
+    max-height: $SelectMenu-max-height;
     margin: $spacer-1 0 $spacer-3 0;
     font-size: $font-size-small;
     border: $border-width $border-style $border-gray-dark;
@@ -163,6 +171,8 @@
   position: relative;
   padding: 0;
   margin: 0;
+  // stylelint-disable-next-line primer/spacing
+  margin-bottom: -$border-width; // Hides the last border in the list
   flex: auto;
   overflow-x: hidden;
   overflow-y: auto;
@@ -186,11 +196,7 @@
   cursor: pointer;
   background-color: $bg-white;
   border: 0;
-
-  & + & {
-    // Add a top border only if the above element also is a list item
-    border-top: $border-width $border-style $border-gray-light;
-  }
+  border-bottom: $border-width $border-style $border-gray-light;
 
   @include breakpoint(sm) {
     padding-top: $spacer-2;
@@ -200,11 +206,16 @@
 
 // Icon
 //
-// The icon shown on the left of a list item. Typically a check icon.
+// Icon shown on the left of a list item.
 
 .SelectMenu-icon {
   width: $spacer-3; // fixed width to make sure following content aligns
   margin-right: $spacer-2;
+  flex-shrink: 0;
+}
+
+// Check icon
+.SelectMenu-icon--check {
   visibility: hidden;
   transition: transform 0.12s cubic-bezier(0.5, 0.1, 1, 0.5), visibility 0s 0.12s linear;
   transform: scale(0);
@@ -259,6 +270,7 @@
   &[aria-selected="true"] {
     z-index: 1; // Keeps box-shadow visible when hovering
     color: $text-gray-dark;
+    cursor: default;
     background-color: $bg-white;
     // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0 1px $border-color;
@@ -273,6 +285,10 @@
 // Message, Blankslate and Loading
 //
 // A container used to show different kinds of content. Like a message, a blankslate or the loading animation.
+
+.SelectMenu-message {
+  border-bottom: $border-width $border-style $border-gray-light;
+}
 
 .SelectMenu-message,
 .SelectMenu-blankslate,
@@ -293,16 +309,7 @@
   font-weight: $font-weight-bold;
   color: $text-gray-light;
   background-color: $bg-gray;
-  border-top: $border;
-  border-bottom: $border;
-
-  &:first-child {
-    border-top: 0;
-  }
-
-  &:last-child {
-    border-bottom: 0;
-  }
+  border-bottom: $border-width $border-style $border-gray-light;
 }
 
 // Footer
@@ -310,6 +317,7 @@
 // A container at the bottom.
 
 .SelectMenu-footer {
+  z-index: 0; // Avoid top border from getting covered by the negative margin of the list
   padding: $spacer-2 $spacer-3;
   font-size: $font-size-small;
   color: $text-gray-light;
@@ -333,15 +341,9 @@
 
     @include breakpoint(sm) {
       height: auto;
-      max-height: 350px;
+      max-height: $SelectMenu-max-height;
       margin-top: $spacer-1;
     }
-  }
-
-  // Show bottom "border" for the last item when the list doesn't take up the whole height
-  .SelectMenu-item:last-child {
-    // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 $border-width 0 lighten($gray-200, 3%);
   }
 }
 
@@ -368,7 +370,7 @@
   font-weight: $font-weight-semibold;
   color: $text-gray-dark;
 
-  .SelectMenu-icon {
+  .SelectMenu-icon--check {
     visibility: visible;
     transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), visibility 0s linear;
     transform: scale(1);
@@ -382,14 +384,11 @@
 @media (hover: hover) {
   body:not(.intent-mouse) .SelectMenu-item:focus,
   .SelectMenu-item:hover {
-    color: $text-white;
-    background-color: $bg-blue;
+    background-color: $bg-gray;
   }
 
   .SelectMenu-item:active {
-    color: $text-white;
-    // stylelint-disable-next-line primer/colors
-    background-color: $blue-400;
+    background-color: $bg-gray-light;
   }
 
   body:not(.intent-mouse) .SelectMenu-tab:focus {
@@ -397,13 +396,13 @@
     background-color: $blue-100;
   }
 
-  .SelectMenu-tab:not([aria-checked="true"]):hover {
+  .SelectMenu-tab:not([aria-selected="true"]):hover {
     color: $text-gray-dark;
     // stylelint-disable-next-line primer/colors
     background-color: $gray-200;
   }
 
-  .SelectMenu-tab:not([aria-checked="true"]):active {
+  .SelectMenu-tab:not([aria-selected="true"]):active {
     color: $text-gray-dark;
     background-color: $bg-gray;
   }

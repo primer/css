@@ -1,0 +1,75 @@
+// Needs refactoring
+// stylelint-disable selector-max-type, selector-no-qualifying-type
+
+.suggester {
+  position: relative;
+  top: 0;
+  left: 0;
+  min-width: 180px;
+  padding: 0;
+  margin: 0;
+  margin-top: $spacer-4;
+  list-style: none;
+  cursor: pointer;
+  background: $bg-white;
+  border: $border;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-medium;
+
+  li {
+    display: block;
+    padding: $spacer-1 $spacer-2;
+    font-weight: $font-weight-bold;
+    border-bottom: $border;
+
+    small {
+      font-weight: $font-weight-normal;
+      color: $text-gray;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+      border-bottom-right-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+
+    &:first-child {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+
+    &:hover,
+    &[aria-selected="true"],
+    &.navigation-focus {
+      color: $text-white;
+      text-decoration: none;
+      background: $bg-blue;
+
+      small {
+        color: $text-white;
+      }
+    }
+  }
+}
+
+.suggester-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+}
+
+// Responsive
+
+.page-responsive {
+  @media (max-width: $width-sm) {
+    .suggester-container {
+      right: $spacer-2 !important;
+      left: $spacer-2 !important;
+    }
+
+    .suggester li {
+      padding: $spacer-2 $spacer-3;
+    }
+  }
+}
