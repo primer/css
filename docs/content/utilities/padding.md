@@ -38,27 +38,13 @@ _**Note:** The blue in the examples below represents the element, and the green 
 Use uniform spacing utilities to apply equal padding to all sides of an element. These utilities can be used with a spacing scale from 0-6.
 
 ```html live
-<div class="padding-green d-inline-block p-0">
-  <div class="d-inline-block block-blue">.p-0</div>
-</div>
-<div class="padding-green d-inline-block p-1">
-  <div class="d-inline-block block-blue">.p-1</div>
-</div>
-<div class="padding-green d-inline-block p-2">
-  <div class="d-inline-block block-blue">.p-2</div>
-</div>
-<div class="padding-green d-inline-block p-3">
-  <div class="d-inline-block block-blue">.p-3</div>
-</div>
-<div class="padding-green d-inline-block p-4">
-  <div class="d-inline-block block-blue">.p-4</div>
-</div>
-<div class="padding-green d-inline-block p-5">
-  <div class="d-inline-block block-blue">.p-5</div>
-</div>
-<div class="padding-green d-inline-block p-6">
-  <div class="d-inline-block block-blue">.p-6</div>
-</div>
+<div class="p-0 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.p-0</div></div>
+<div class="p-1 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.p-1</div></div>
+<div class="p-2 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.p-2</div></div>
+<div class="p-3 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.p-3</div></div>
+<div class="p-4 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.p-4</div></div>
+<div class="p-5 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.p-5</div></div>
+<div class="p-6 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.p-6</div></div>
 ```
 
 ## Directional padding
@@ -66,24 +52,12 @@ Use uniform spacing utilities to apply equal padding to all sides of an element.
 Use directional utilities to apply padding to an individual side, or the X and Y axis of an element. Directional utilities can change or override default padding, and can be used with a spacing scale of 0-6.
 
 ```html live
-<div class="padding-green d-inline-block pt-3">
-  <div class="d-inline-block block-blue">.pt-3</div>
-</div>
-<div class="padding-green d-inline-block pr-3">
-  <div class="d-inline-block block-blue">.pr-3</div>
-</div>
-<div class="padding-green d-inline-block pb-3">
-  <div class="d-inline-block block-blue">.pb-3</div>
-</div>
-<div class="padding-green d-inline-block pl-3">
-  <div class="d-inline-block block-blue">.pl-3</div>
-</div>
-<div class="padding-green d-inline-block py-3">
-  <div class="d-inline-block block-blue">.py-3</div>
-</div>
-<div class="padding-green d-inline-block px-3">
-  <div class="d-inline-block block-blue">.px-3</div>
-</div>
+<div class="pt-3 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.pt-3</div></div>
+<div class="pr-3 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.pr-3</div></div>
+<div class="pb-3 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.pb-3</div></div>
+<div class="pl-3 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.pl-3</div></div>
+<div class="py-3 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.py-3</div></div>
+<div class="px-3 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.px-3</div></div>
 ```
 
 ## Responsive padding
@@ -91,23 +65,25 @@ Use directional utilities to apply padding to an individual side, or the X and Y
 All padding utilities can be adjusted per [breakpoint](/css/support/breakpoints) using the following formula: <br /> `p-[direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
 
 ```html live
-<div class="px-sm-2 px-lg-4 d-inline-block padding-green">
-  <div class="d-inline-block block-blue">
-    .px-sm-2 .px-lg-4
-  </div>
+<div class="px-sm-2 px-md-4 bg-yellow d-inline-block">
+  <div class="bg-gray p-1">.px-sm-2 .px-md-4</div>
 </div>
 ```
 
 ## Responsive container padding
 
-`.p-responsive` is a padding class that adds padding on the left and right sides of an element. On small screens, it gives the element padding of `$spacer-3`, on mid-sized screens it gives the element padding of `$spacer-6`, and on large screens, it gives the element padding of `$spacer-3`.
+`.p-responsive` is a padding class that adds padding on the left and right sides of an element. It is intended to be used with [container styles](/css/objects/grid#containers).
 
-It is intended to be used with [container styles](/css/objects/grid#containers)
+- On **0 to sm** screens, it gives the element padding of `$spacer-3`
+- On **sm to lg** screens it gives the element padding of `$spacer-6`
+- On **lg and wider** screens, it gives the element padding of `$spacer-3`
+
+It's the equvilent of adding the `.px-3 .px-sm-6 .px-lg-3` utility classes.
 
 ```html live
-<div class="container-lg p-responsive">
-  <div class="border">
-    .container-lg .p-responsive
-  </div>
+<div class="p-responsive bg-yellow">
+  <div class="bg-gray p-1">.p-responsive</div>
 </div>
 ```
+
+> Note: Since the example is shown in an `iframe` it won't show the change to `$spacer-3` for the `lg` breakpoint.
