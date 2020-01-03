@@ -58,8 +58,10 @@
 
   .gap,
   .disabled,
+  [aria-disabled=true],
   .gap:hover,
-  .disabled:hover {
+  .disabled:hover,
+  [aria-disabled=true]:hover {
     // stylelint-disable-next-line primer/colors
     color: $gray-300;
     cursor: default;
