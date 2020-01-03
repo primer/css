@@ -62,7 +62,7 @@ Use directional utilities to apply padding to an individual side, or the X and Y
 
 ## Responsive padding
 
-All padding utilities can be adjusted per [breakpoint](/css/support/breakpoints) using the following formula: <br /> `p-[direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
+All padding utilities can be adjusted per [breakpoint](/support/breakpoints) using the following formula: <br /> `p-[direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
 
 ```html live
 <div class="px-sm-2 px-md-4 bg-yellow d-inline-block">
@@ -72,7 +72,7 @@ All padding utilities can be adjusted per [breakpoint](/css/support/breakpoints)
 
 ## Responsive container padding
 
-`.p-responsive` is a padding class that adds padding on the left and right sides of an element. It is intended to be used with [container styles](/css/objects/grid#containers).
+`.p-responsive` is a padding class that adds padding on the left and right sides of an element. It is intended to be used with [container styles](/objects/grid#containers).
 
 - On **0 to sm** screens, it gives the element padding of `$spacer-3`
 - On **sm to lg** screens it gives the element padding of `$spacer-6`
