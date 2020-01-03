@@ -3,7 +3,7 @@ title: HTML
 path: principles/html
 ---
 
- 
+
 
 ## General formatting
 
@@ -24,11 +24,9 @@ path: principles/html
 
 ## Boolean attributes
 
-Many attributes don't require a value to be set, like `disabled` or `checked`, so don't set them.
+Many attributes don't require a value to be set, like `checked`, so don't set them.
 
 ```html inert=true
-<input type="text" disabled>
-
 <input type="checkbox" value="1" checked>
 
 <select>
