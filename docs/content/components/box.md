@@ -447,7 +447,7 @@ Use `Counter--gray-dark` for a counter with a dark gray background and white tex
 
 To achieve different layouts when adding buttons or form elements to boxes we suggest you use utilities to achieve the layout you want. Here's some common examples:
 
-Use [flexbox utilities](/css/utilities/flexbox) to center align items, and avoid using floats by using `flex-auto` to have the text fill the remaining space so that the button rests on the far right.
+Use [flexbox utilities](/utilities/flexbox) to center align items, and avoid using floats by using `flex-auto` to have the text fill the remaining space so that the button rests on the far right.
 
 ```html live
 <div class="Box Box--condensed">
@@ -554,7 +554,7 @@ You can put forms in boxes. Often form submission buttons are aligned to the bot
 </div>
 ```
 
-When a box is all by itself centered on a page you can use [column widths](/css/objects/grid) to control the width of the box. If needed, break the mold a little and use [typography utilities](/css/utilities/typography) instead of the built in box title styles.
+When a box is all by itself centered on a page you can use [column widths](/objects/grid) to control the width of the box. If needed, break the mold a little and use [typography utilities](/utilities/typography) instead of the built in box title styles.
 
 ```html live
 <div class="Box Box--spacious col-6 mx-auto text-center">
@@ -575,4 +575,4 @@ When a box is all by itself centered on a page you can use [column widths](/css/
 </div>
 ```
 
-Box patterns can also be made with, and modified with [border utilities](/css/utilities/borders).
+Box patterns can also be made with, and modified with [border utilities](/utilities/borders).

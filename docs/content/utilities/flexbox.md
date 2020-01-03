@@ -689,7 +689,7 @@ Resize window to see the effect.
 
 ## Responsive flex utilities
 
-All flexbox utilities can be adjusted per [breakpoint](/css/objects/grid#breakpoints) using the following formulas:
+All flexbox utilities can be adjusted per [breakpoint](/objects/grid#breakpoints) using the following formulas:
 
 - `d-[breakpoint]-[property]` for `display`
 - `flex-[breakpoint]-[property]-[behavior]` for various flex properties
