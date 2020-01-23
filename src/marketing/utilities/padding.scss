@@ -3,7 +3,7 @@
 
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
-    @each $scale, $size in $marketing-spacers {
+    @each $scale, $size in $marketing-all-spacers {
       // Set a #{$size} padding for all sides
       .p#{$variant}-#{$scale}   { padding: #{$size} !important; }
       // Set a #{$size} padding to the top
