@@ -109,7 +109,6 @@ function getStyleguidePaths() {
 /components/breadcrumb
 /components/buttons
 /components/dropdown
-/components/flash-banner
 /components/forms
 /components/labels
 /components/markdown
