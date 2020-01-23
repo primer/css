@@ -75,28 +75,28 @@ Use `.btn-large` with a type scale utility to transform the text to a bigger siz
 
 ## Disabled state
 
-Disable `<button>` elements with the boolean `disabled` attribute and `<a>` elements with the `.disabled` class.
+Disable `<button>` and `<a>` elements with the `aria-disabled="true"` attribute.
 
 ```html live
-<button class="btn mr-2" type="button" disabled>Disabled button</button>
-<a class="btn disabled" href="#url" role="button">Disabled button</a>
+<button class="btn mr-2" type="button" aria-disabled="true">Disabled button</button>
+<a class="btn" href="#url" role="button" aria-disabled="true">Disabled button</a>
 ```
 
 Similar styles are applied to primary, danger, and outline buttons:
 
 ```html live
-<button class="btn btn-primary mr-2" type="button" disabled>Disabled button</button>
-<a class="btn btn-primary disabled" href="#url" role="button">Disabled button</a>
+<button class="btn btn-primary mr-2" type="button" aria-disabled="true">Disabled button</button>
+<a class="btn btn-primary" href="#url" role="button" aria-disabled="true">Disabled button</a>
 ```
 
 ```html live
-<button class="btn btn-danger mr-2" type="button" disabled>Disabled button</button>
-<a class="btn btn-danger disabled" href="#url" role="button">Disabled button</a>
+<button class="btn btn-danger mr-2" type="button" aria-disabled="true">Disabled button</button>
+<a class="btn btn-danger" href="#url" role="button" aria-disabled="true">Disabled button</a>
 ```
 
 ```html live
-<button class="btn btn-outline mr-2" type="button" disabled>Disabled button</button>
-<a class="btn btn-outline disabled" href="#url" role="button">Disabled button</a>
+<button class="btn btn-outline mr-2" type="button" aria-disabled="true">Disabled button</button>
+<a class="btn btn-outline" href="#url" role="button" aria-disabled="true">Disabled button</a>
 ```
 
 ## Block button

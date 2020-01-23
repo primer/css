@@ -30,7 +30,8 @@
     }
 
     &:disabled,
-    &.disabled {
+    &.disabled,
+    &[aria-disabled=true] {
       color: rgba($color, 0.4);
       background-color: $bg2;
       background-image: none;
@@ -63,7 +64,8 @@
     }
 
     &:disabled,
-    &.disabled {
+    &.disabled,
+    &[aria-disabled=true] {
       color: rgba($color, 0.75);
       background-color: mix($bg2, $white, 50%);
       background-image: none;
@@ -110,7 +112,8 @@
   }
 
   &:disabled,
-  &.disabled {
+  &.disabled,
+  &[aria-disabled=true] {
     color: rgba($color, 0.4);
     background-color: $bg2;
     background-image: none;
@@ -150,7 +153,8 @@
   }
 
   &:disabled,
-  &.disabled {
+  &.disabled,
+  &[aria-disabled=true] {
     color: $black-fade-30;
     background-color: $bg-white;
     border-color: $black-fade-15;
