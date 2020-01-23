@@ -3,7 +3,7 @@ title: Linting
 path: tools/linting
 ---
 
-We use linters to enforce [coding principles and standards](/css/principles). On every pull request we run the linters on the code to make sure any changes meet our standards. When a commit contains code that doesn't meet the standards, the build fails which blocks merging into master and deploying to production.
+We use linters to enforce [coding principles and standards](/principles). On every pull request we run the linters on the code to make sure any changes meet our standards. When a commit contains code that doesn't meet the standards, the build fails which blocks merging into master and deploying to production.
 
 For teams working on `github/github` this configuration is all setup for you. While we do recommend you also [setup a plugin](#plugins) in your editor, this is not required.
 
@@ -78,7 +78,7 @@ The Design Systems team recommends using [Atom](https://atom.io/) with the [lint
 
 ![image](https://cloud.githubusercontent.com/assets/54012/21456489/6a10b370-c8f6-11e6-9199-bb3709e79794.png)
 
-We also have a [list of Atom packages](/css/tools/atom-packages) that we find useful for development.
+We also have a [list of Atom packages](/tools/atom-packages) that we find useful for development.
 
 ## HTML
 
