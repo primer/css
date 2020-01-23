@@ -28,8 +28,8 @@
   cursor: pointer;
 
   &:hover,
-  &[aria-selected="true"],
   &.selected,
+  &[aria-selected=true],
   &.navigation-focus {
     color: $text-white;
     text-decoration: none;

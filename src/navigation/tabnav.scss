@@ -29,8 +29,9 @@
   border: $border-width $border-style transparent;
   border-bottom: 0;
 
+  &.selected,
   &[aria-selected=true],
-  &.selected {
+  &[aria-current] {
     color: $text-gray-dark;
     background-color: $bg-white;
     border-color: $border-gray-dark;

@@ -44,7 +44,9 @@
     background-color: $bg-gray;
   }
 
-  &.selected {
+  &.selected,
+  &[aria-selected=true],
+  &[aria-current] {
     font-weight: $font-weight-bold;
     color: $text-gray-dark;
     cursor: default;
