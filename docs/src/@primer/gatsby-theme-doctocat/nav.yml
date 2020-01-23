@@ -85,8 +85,6 @@
       url: /components/buttons
     - title: Dropdown
       url: /components/dropdown
-    - title: Flash banner
-      url: /components/flash-banner
     - title: Forms
       url: /components/forms
     - title: Header

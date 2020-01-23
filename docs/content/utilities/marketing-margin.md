@@ -8,33 +8,15 @@ source: 'https://github.com/primer/css/blob/master/src/marketing/utilities/margi
 bundle: marketing-utilities
 ---
 
-Marketing margin utilities extend [core margin utilities](/css/support/spacing) across the y-axis only. The [marketing scale](/css/support/marketing-variables#extended-spacing-scale) starts from spacer 7 up to 12, and steps first by `8px` for spacer 7 and continues in increments of `16px` for spacer 8 to 12.
+Marketing margin utilities extend [core margin utilities](/utilities/margin). The [marketing scale](/support/marketing-variables#extended-spacing-scale) starts from spacer `7` up to `12`.
 
-
-## Y-axis margin utilities
-
-Use marketing margin utilities to apply margin to top, bottom, or both y-axis of an element. These utilities can change or override default margins, and can be used with a spacing scale of 7-12.
+**Note**: Only the y-axis (`mt`, `mb` and `my`) and its responsive variants are supported. 
 
 ```html live
-<div class="margin-orange d-inline-block">
-  <div class="d-inline-block block-blue mt-7">.mt-7</div>
-</div>
-<div class="margin-orange d-inline-block">
-  <div class="d-inline-block block-blue mb-7">.mb-7</div>
-</div>
-<div class="margin-orange d-inline-block">
-  <div class="d-inline-block block-blue my-7">.my-7</div>
-</div>
-```
-
-## Responsive y-axis margin utilities
-
-All marketing margin utilities can be adjusted per [breakpoint](/css/objects/grid#breakpoints) using the following formula: `m[y-direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
-
-```html live
-<div class="d-inline-block margin-orange">
-  <div class="my-sm-7 mb-lg-9 d-inline-block block-blue">
-    .my-sm-7 .mb-lg-9
-  </div>
-</div>
+  <div class="bg-yellow d-inline-block"><div class="mt-7  p-1 bg-gray">.mb-7</div></div>
+  <div class="bg-yellow d-inline-block"><div class="mt-8  p-1 bg-gray">.mb-8</div></div>
+  <div class="bg-yellow d-inline-block"><div class="mt-9  p-1 bg-gray">.mb-9</div></div>
+  <div class="bg-yellow d-inline-block"><div class="mt-10 p-1 bg-gray">.mb-10</div></div>
+  <div class="bg-yellow d-inline-block"><div class="mt-11 p-1 bg-gray">.mb-11</div></div>
+  <div class="bg-yellow d-inline-block"><div class="mt-12 p-1 bg-gray">.mb-12</div></div>
 ```

@@ -33,6 +33,7 @@
     }
   }
 
+  &.selected,
   &[role=tab][aria-selected=true],
   &[aria-current] {
     font-weight: $font-weight-bold;

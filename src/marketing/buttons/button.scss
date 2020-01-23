@@ -29,7 +29,8 @@
   }
 
   &:disabled,
-  &.disabled {
+  &.disabled,
+  &[aria-disabled=true] {
     pointer-events: none; // Disable hover styles
     cursor: default;
     opacity: 0.65;
