@@ -8,41 +8,13 @@ source: 'https://github.com/primer/css/tree/master/src/marketing/utilities/paddi
 bundle: marketing-utilities
 ---
 
-Marketing padding utilities extend [core margin utilities](/css/utilities/margin) across the x and y axis. The [marketing scale](/css/support/marketing-variables#extended-spacing-scale) starts from spacer 7 up to 12, and steps first by `8px` for spacer 7 and continues in increments of `16px` for spacer 8 to 12.
-
-## Padding utilities
-
-Use marketing padding utilities to apply padding to top, right, bottom, left, x-axis, or y axis of an element. These utilities can change or override default padding, and can be used with a spacing scale of 7-12.
+Marketing padding utilities extend [core padding utilities](/utilities/padding). The [marketing scale](/support/marketing-variables#extended-spacing-scale) starts from spacer `7` up to `12`. All directions and their responsive variants are supported, except for `px`.
 
 ```html live
-<div class="margin-orange d-inline-block">
-  <div class="d-inline-block block-blue pt-7">.pt-7</div>
-</div>
-<div class="margin-orange d-inline-block">
-  <div class="d-inline-block block-blue pr-7">.pr-7</div>
-</div>
-<div class="margin-orange d-inline-block">
-  <div class="d-inline-block block-blue pb-7">.pb-7</div>
-</div>
-<div class="margin-orange d-inline-block">
-  <div class="d-inline-block block-blue pl-7">.pl-7</div>
-</div>
-<div class="margin-orange d-inline-block">
-  <div class="d-inline-block block-blue px-7">.px-7</div>
-</div>
-<div class="margin-orange d-inline-block">
-  <div class="d-inline-block block-blue py-7">.py-7</div>
-</div>
-```
-
-## Responsive padding utilities
-
-All marketing padding utilities can be adjusted per [breakpoint](/css/objects/grid#breakpoints) using the following formula: `p[y-direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
-
-```html live
-<div class="d-inline-block margin-orange">
-  <div class="py-sm-7 pb-lg-9 d-inline-block block-blue">
-    .py-sm-7 .pb-lg-9
-  </div>
-</div>
+<div class="pt-7  mr-1 bg-yellow d-inline-block"><div class="bg-gray p-1">.pt-7</div></div>
+<div class="pt-8  mr-1 bg-yellow d-inline-block"><div class="bg-gray p-1">.pt-8</div></div>
+<div class="pt-9  mr-1 bg-yellow d-inline-block"><div class="bg-gray p-1">.pt-9</div></div>
+<div class="pt-10 mr-1 bg-yellow d-inline-block"><div class="bg-gray p-1">.pt-12</div></div>
+<div class="pt-11 mr-1 bg-yellow d-inline-block"><div class="bg-gray p-1">.pt-11</div></div>
+<div class="pt-12 mr-1 bg-yellow d-inline-block"><div class="bg-gray p-1">.pt-12</div></div>
 ```
