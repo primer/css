@@ -40,8 +40,8 @@
   }
 
   &.selected,
-  &.selected:hover,
-  &.selected:focus {
+  &[aria-selected=true],
+  &[aria-current] {
     z-index: 2;
     color: $text-white;
     background-color: $bg-blue;

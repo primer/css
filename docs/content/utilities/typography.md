@@ -6,11 +6,11 @@ source: 'https://github.com/primer/css/tree/master/src/utilities/typography.scss
 bundle: utilities
 ---
 
-Type utilities are designed to work in combination with line-height utilities so as to result in more sensible numbers wherever possible. These also exist as [variables](/css/support/typography#typography-variables) that you can use in components or custom CSS.
+Type utilities are designed to work in combination with line-height utilities so as to result in more sensible numbers wherever possible. These also exist as [variables](/support/typography#typography-variables) that you can use in components or custom CSS.
 
 
 
-Font sizes are smaller on mobile and scale up at the `md` [breakpoint](/css/support/breakpoints) to be larger on desktop.
+Font sizes are smaller on mobile and scale up at the `md` [breakpoint](/support/breakpoints) to be larger on desktop.
 
 | Scale | Font size: mobile | Font size: desktop | 1.25 line height | 1.5 line height |
 | --- | --- | --- | --- | --- |

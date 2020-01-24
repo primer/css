@@ -49,7 +49,9 @@
   .selected { z-index: 3; }
 
   .current,
-  .current:hover {
+  .current:hover,
+  [aria-current],
+  [aria-current]:hover {
     z-index: 3;
     color: $text-white;
     background-color: $bg-blue;
@@ -58,8 +60,10 @@
 
   .gap,
   .disabled,
+  [aria-disabled=true],
   .gap:hover,
-  .disabled:hover {
+  .disabled:hover,
+  [aria-disabled=true]:hover {
     // stylelint-disable-next-line primer/colors
     color: $gray-300;
     cursor: default;

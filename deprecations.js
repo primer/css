@@ -4,6 +4,17 @@
  * array and a "message" string.
  */
 const versionDeprecations = {
+  '14.2.0': [
+    {
+      selectors: [
+        '.subnav-item.selected:hover',
+        '.subnav-item.selected:focus',
+        '.autocomplete-item[aria-selected="true"]',
+        '.autocomplete-item[aria-selected="true"] *'
+      ],
+      message: `These selectors are not needed anymore.`
+    }
+  ],
   '14.0.0': [
     {
       selectors: [

@@ -22,6 +22,7 @@
 
     &:active,
     &.selected,
+    &[aria-selected=true],
     [open] > & {
       background-color: darken(desaturate($bg, 10%), 6%);
       background-image: none;
@@ -30,7 +31,8 @@
     }
 
     &:disabled,
-    &.disabled {
+    &.disabled,
+    &[aria-disabled=true] {
       color: rgba($color, 0.4);
       background-color: $bg2;
       background-image: none;
@@ -55,6 +57,7 @@
 
     &:active,
     &.selected,
+    &[aria-selected=true],
     [open] > & {
       background-color: darken(mix($bg, $bg2, 50%), 7%);
       background-image: none;
@@ -63,7 +66,8 @@
     }
 
     &:disabled,
-    &.disabled {
+    &.disabled,
+    &[aria-disabled=true] {
       color: rgba($color, 0.75);
       background-color: mix($bg2, $white, 50%);
       background-image: none;
@@ -101,6 +105,7 @@
 
   &:active,
   &.selected,
+  &[aria-selected=true],
   [open] > & {
     color: $text-white;
     background-color: darken($color, 5%);
@@ -110,7 +115,8 @@
   }
 
   &:disabled,
-  &.disabled {
+  &.disabled,
+  &[aria-disabled=true] {
     color: rgba($color, 0.4);
     background-color: $bg2;
     background-image: none;
@@ -132,6 +138,7 @@
   &:hover,
   &:active,
   &.selected,
+  &[aria-selected=true],
   [open] > & {
     color: $bg-color;
     background-color: $text-color;
@@ -150,7 +157,8 @@
   }
 
   &:disabled,
-  &.disabled {
+  &.disabled,
+  &[aria-disabled=true] {
     color: $black-fade-30;
     background-color: $bg-white;
     border-color: $black-fade-15;

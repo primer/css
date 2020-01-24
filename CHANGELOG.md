@@ -1,3 +1,27 @@
+## 14.2.0
+
+### :rocket: Enhancements
+- [#1006](https://github.com/primer/css/pull/1006) Use ARIA attributes for states
+- [#1014](https://github.com/primer/css/pull/1014) Add aria-disabled state
+- [#1001](https://github.com/primer/css/pull/1001) Add Inter bold font file
+- [#982](https://github.com/primer/css/pull/982) Applies .selected styles to [aria-selected=true]
+
+### :bug: Bug fixes
+- [#1002](https://github.com/primer/css/pull/1002) Fix marketing utilities
+- [#1005](https://github.com/primer/css/pull/1005) Add .selected back to the .UnderlineNav
+
+### :memo: Documentation
+- [#1012](https://github.com/primer/css/pull/1012) Improve margin/padding docs
+- [#1013](https://github.com/primer/css/pull/1013) Fix docs links
+- [#1004](https://github.com/primer/css/pull/1004) rm deprecated flash-banner component from docs
+
+### Committers
+- [@flavianunes](https://github.com/flavianunes)
+- [@ktravers](https://github.com/ktravers)
+- [@simurai](https://github.com/simurai)
+
+## 14.1.0
+
 ### :rocket: Enhancements
 - [#994](https://github.com/primer/css/pull/994) Responsive line-height utilities
 - [#995](https://github.com/primer/css/pull/995) Add bold weight to marketing font variables

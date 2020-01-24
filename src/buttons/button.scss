@@ -50,14 +50,16 @@
   }
 
   &:disabled,
-  &.disabled {
+  &.disabled,
+  &[aria-disabled=true] {
     cursor: default;
     // Repeat `background-position` because `:hover`
     background-position: 0 0;
   }
 
   &:active,
-  &.selected {
+  &.selected,
+  &[aria-selected=true] {
     background-image: none;
   }
 }
@@ -130,7 +132,8 @@
     text-decoration: underline;
   }
 
-  &:disabled {
+  &:disabled,
+  &[aria-disabled=true] {
     &,
     &:hover {
       // stylelint-disable-next-line primer/colors
@@ -153,6 +156,7 @@
   &:active,
   &:focus,
   &.selected,
+  &[aria-selected=true],
   &.zeroclipboard-is-hover,
   &.zeroclipboard-is-active {
     color: $text-blue;
@@ -181,7 +185,8 @@
 
   &:hover { color: $text-blue; }
 
-  &.disabled {
+  &.disabled,
+  &[aria-disabled=true] {
     // stylelint-disable-next-line primer/colors
     color: $gray-400;
     cursor: default;

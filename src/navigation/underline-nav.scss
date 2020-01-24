@@ -17,6 +17,7 @@
   line-height: $lh-default;
   color: $text-gray;
   text-align: center;
+  border: 0;
   // stylelint-disable-next-line primer/borders
   border-bottom: 2px $border-style transparent;
 
@@ -32,6 +33,7 @@
     }
   }
 
+  &.selected,
   &[role=tab][aria-selected=true],
   &[aria-current] {
     font-weight: $font-weight-bold;
