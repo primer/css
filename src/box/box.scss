@@ -72,12 +72,10 @@
 
 .Box-header {
   padding: $spacer-3;
-  // stylelint-disable-next-line primer/spacing
-  margin: (-$border-width) (-$border-width) 0;
   background-color: $bg-gray;
   border-color: $border-gray-dark;
   border-style: $border-style;
-  border-width: $border-width;
+  border-width: 0 0 $border-width;
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
 }
