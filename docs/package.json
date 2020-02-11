@@ -11,7 +11,7 @@
   "dependencies": {
     "@loadable/component": "^5.10.2",
     "@primer/components": "^13.2.0",
-    "@primer/gatsby-theme-doctocat": "^0.15.0",
+    "@primer/gatsby-theme-doctocat": "^0.16.8",
     "@primer/octicons": "^9.1.1",
     "@primer/octicons-react": "^9.1.1",
     "@svgr/webpack": "^4.3.2",
@@ -27,9 +27,9 @@
     "primer-colors": "^1.0.1",
     "prop-types": "^15.7.2",
     "raw-loader": "^3.1.0",
-    "react": "^16.8.6",
+    "react": "16.9.x",
     "react-bodymovin": "^2.0.0",
-    "react-dom": "^16.8.6",
+    "react-dom": "16.9.x",
     "react-frame-component": "^4.1.1",
     "styled-components": "^4.3.2",
     "title-case": "^2.1.1"
