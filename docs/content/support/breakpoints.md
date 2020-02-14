@@ -49,7 +49,7 @@ $breakpoints: (
 
 Use media query mixins when you want to change CSS properties at a particular breakpoint. The media query mixin works by passing in a breakpoint value, such as `breakpoint(md)`.
 
-Media queries are scoped from each breakpoint and upwards. In the example below, the font size is `28px` until the viewport size meets the `lg` breakpoint, from there upwards—including through the `xl` breakpoint—the font size will be `32px`.
+Media queries are scoped from each breakpoint and upwards. In the example below, the font size is `28px` until the viewport size meets the `md` breakpoint, from there upwards—including through the `xl` breakpoint—the font size will be `32px`.
 
 ```scss
 .styles {
