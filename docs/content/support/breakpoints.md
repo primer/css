@@ -8,7 +8,7 @@ bundle: support
 
 Our breakpoints are based on screen widths where our content starts to break. Since most of GitHub is currently a fixed-width with we use pixel widths to make it easy for us to match page widths for responsive and non-responsive pages. **Our breakpoints may change as we move more of the product into responsive layouts.**
 
-We use abbreviations for each breakpoint to keep the class names concise. This abbreviated syntax is used consistently across responsive styles. Responsive styles allow you to change the styles properties at each breakpoint. For example, when using column widths for grid layouts, you can change specify that the width is 12 columns wide at the small breakpoint, and 6 columns wide from the large breakpoint: `<div class="col-sm-12 col-lg-6">...</div>`
+We use abbreviations for each breakpoint to keep the class names concise. This abbreviated syntax is used consistently across responsive styles. Responsive styles allow you to change the styles properties at each breakpoint. For example, when using column widths for grid layouts, you can specify that the width is 12 columns wide at the small breakpoint, and 6 columns wide from the large breakpoint: `<div class="col-sm-12 col-lg-6">...</div>`
 
 | Breakpoint  | Syntax | Description       |
 | ----------- | ------ | ----------------- |
