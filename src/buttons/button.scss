@@ -19,7 +19,7 @@
   background-size: 110% 110%;
   border: $border-width $border-style $border-color-button;
   // stylelint-disable-next-line primer/borders
-  border-radius: 0.25em;
+  border-radius: $border-radius;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   i {
