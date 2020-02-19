@@ -531,10 +531,10 @@ You can put forms in boxes. Often form submission buttons are aligned to the bot
   </div>
   <form>
     <div class="Box-body">
-      <dl class="form-group">
-        <dt><label>Example label</label></dt>
-        <dd><input class="form-control" type="text" /></dd>
-      </dl>
+      <div class="form-group">
+        <div class="form-group-header"><label>Example label</label></div>
+        <div class="form-group-body"><input class="form-control" type="text" /></div>
+      </div>
       <div class="form-checkbox">
         <label>
           <input type="checkbox" checked="checked" />
@@ -563,10 +563,10 @@ When a box is all by itself centered on a page you can use [column widths](/obje
       <h3 class="f1-light">
         Example form
       </h3>
-      <dl class="form-group mb-4">
-        <dt><label>Example label</label></dt>
-        <dd><input class="form-control" type="text" /></dd>
-      </dl>
+      <div class="form-group mb-4">
+        <div class="form-group-header"><label>Example label</label></div>
+        <div class="form-group-body"><input class="form-control" type="text" /></div>
+      </div>
       <button class="btn btn-primary btn-block">
         Submit
       </button>
