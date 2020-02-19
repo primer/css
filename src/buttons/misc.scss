@@ -65,7 +65,7 @@
 .social-count {
   float: left;
   // stylelint-disable-next-line primer/spacing
-  padding: 3px 10px;
+  padding: 3px 12px;
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/typography
@@ -77,6 +77,8 @@
   border-left: 0;
   border-top-right-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
+  // stylelint-disable-next-line primer/box-shadow
+  box-shadow: 0 1px 0 rgba($gray-400, 0.1), inset 0 1px 0 rgba($white, 0.25);
 
   &:hover,
   &:active {
