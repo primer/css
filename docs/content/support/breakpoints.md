@@ -34,13 +34,17 @@ In most cases, breakpoints get used with the `min-width` media query. This means
 A responsive utility class stays enabled **unless** it gets overridden with another responsive utility class that has a higher breakpoint. Here the example from above `<div class="col-12 col-md-8 col-xl-4">...</div>` visualized: 
 
 ```
-| 0px ->                                                           
-         | sm 544px ->                                             
-                       | md 768px ->                               
-                                     | lg 1012px ->                
-                                                    | xl 1280px ->
+| 0px -> 
+         | 544px ->  
+         | sm
+                    | 768px ->  
+                    | md 
+                               | 1012px ->  
+                               | lg
+                                           | 1280px ->
+                                           | xl
 
-| col-12 ------------> | col-md-8 ----------------> | col-xl-4 ->
+| col-12 ---------> | col-md-8 ----------> | col-xl-4 ->
 ```
 
 Using breakpoints with the `min-width` media query works great for "mobile first". Design for mobile devices as a default, then if needed, tweak it for wider desktop screens using responsive utility classes.
