@@ -12,10 +12,10 @@ We use abbreviations for each breakpoint to keep the class names concise. This a
 
 | Breakpoint  | Syntax | Breaks at |
 | ----------- | ------ | ----------|
-| Small       | sm     | 544px     |
-| Medium      | md     | 768px     |
-| Large       | lg     | 1012px    |
-| Extra-large | xl     | 1280px    |
+| Small       | sm     | `544px`   |
+| Medium      | md     | `768px`   |
+| Large       | lg     | `1012px`  |
+| Extra-large | xl     | `1280px`  |
 
 Responsive styles are available for [margin](/utilities/margin#responsive-margins), [padding](/utilities/padding#responsive-padding), [layout](/utilities/layout), [flexbox](/utilities/flexbox#responsive-flex-utilities), the [grid](/objects/grid#responsive-grids) system and many more.
 
@@ -23,24 +23,24 @@ Responsive styles are available for [margin](/utilities/margin#responsive-margin
 
 In most cases, breakpoints get used with the `min-width` media query. This means that when using a responsive utility class, the class becomes "enabled" from the breakpoint on upwards. Or from the browser's perspective, when the browser's width **is** the breakpoint or **wider**.
 
-| Breakpoint  | Syntax | Is enabled... |
-| ----------- | ------ | --------------|
-| None        |        | from `0px`    |
-| Small       | sm     | from `544px`  |
-| Medium      | md     | from `768px`  |
-| Large       | lg     | from `1012px` |
-| Extra-large | xl     | from `1280px` |
+| Breakpoint  | Syntax | Is enabled...            |
+| ----------- | ------ | -------------------------|
+| None        |        | from `0px` upwards ->    |
+| Small       | sm     | from `544px` upwards ->  |
+| Medium      | md     | from `768px` upwards ->  |
+| Large       | lg     | from `1012px` upwards -> |
+| Extra-large | xl     | from `1280px` upwards -> |
 
-A responsive utility class stays enabled **unless** it gets overidden with another responsive utility class that has a wider breakpoint. Here the example from above `<div class="col-12 col-md-8 col-xl-4">...</div>` visualized: 
+A responsive utility class stays enabled **unless** it gets overridden with another responsive utility class that has a higher breakpoint. Here the example from above `<div class="col-12 col-md-8 col-xl-4">...</div>` visualized: 
 
 ```
-| None 0px ->                                                           
-              | sm 544px ->                                             
-                            | md 768px ->                               
-                                          | lg 1012px ->                
-                                                         | xl 1280px ->
+| 0px ->                                                           
+         | sm 544px ->                                             
+                       | md 768px ->                               
+                                     | lg 1012px ->                
+                                                    | xl 1280px ->
 
-| col-12 -----------------> | col-md-8 ----------------> | col-xl-4 -> unfinity
+| col-12 ------------> | col-md-8 ----------------> | col-xl-4 ->
 ```
 
 Using breakpoints with the `min-width` media query works great for "mobile first". Design for mobile devices as a default, then if needed, tweak it for wider desktop screens using responsive utility classes.
