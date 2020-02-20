@@ -34,7 +34,6 @@ label {
 
   &.focus,
   &:focus {
-    // stylelint-disable-next-line primer/borders
     border-color: $border-blue;
     outline: none;
     box-shadow: $focus-shadow;
