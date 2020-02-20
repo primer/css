@@ -75,7 +75,7 @@
   &:focus,
   &.focus {
     border-color: transparent;
-    box-shadow: $btn-input-focus-shadow;
+    box-shadow: $focus-shadow;
   }
 
   &:hover,

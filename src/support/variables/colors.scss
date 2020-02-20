@@ -15,8 +15,8 @@ $border-green:       $green-400 !default;
 $border-green-light: desaturate($green-300, 40%) !default;
 $border-purple:      $purple !default;
 $border-red:         $red !default;
-$border-red-light:   desaturate($red-300, 60%) !default;
-$border-yellow:      desaturate($yellow-300, 60%) !default;
+$border-red-light:   $red-300 !default;
+$border-yellow:      $yellow-600 !default;
 
 // Background colors
 $bg-white:          $white !default;
@@ -34,7 +34,7 @@ $bg-purple:         $purple-500 !default;
 $bg-purple-light:   $purple-000 !default;
 $bg-pink:           $pink-500 !default;
 $bg-red:            $red-500 !default;
-$bg-red-light:      $red-100 !default;
+$bg-red-light:      $red-000 !default;
 $bg-yellow:         $yellow-500 !default;
 $bg-yellow-light:   $yellow-200 !default;
 $bg-yellow-dark:    $yellow-700 !default;

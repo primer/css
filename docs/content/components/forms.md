@@ -22,8 +22,9 @@ All our inputs and buttons side-by-side for easy testing of sizing and alignment
 ```html live
 <p>
   <button class="btn" type="button">Button</button>
-  <button class="btn select-menu-button" type="button" aria-expanded="false" aria-haspopup="true">
+  <button class="btn" type="button" aria-expanded="false" aria-haspopup="true">
     Select menu
+    <span class="dropdown-caret">
   </button>
   <input class="form-control" type="text" placeholder="Standard input" aria-label="Repository description" />
   <input class="form-control input-monospace" type="text" placeholder="Monospace input" aria-label="SHA" />
@@ -35,8 +36,9 @@ All our inputs and buttons side-by-side for easy testing of sizing and alignment
 
 <p>
   <button class="btn btn-sm" type="button">Small button</button>
-  <button class="btn btn-sm select-menu-button" type="button" aria-expanded="false" aria-haspopup="true">
+  <button class="btn btn-sm" type="button" aria-expanded="false" aria-haspopup="true">
     Select menu
+    <span class="dropdown-caret">
   </button>
   <input class="form-control input-sm" type="text" placeholder="Small input" aria-label="Repository description" />
   <select class="form-select select-sm" aria-label="Important decision">
@@ -168,15 +170,7 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
   <option>Battlestar Galactica</option>
 </select>
 
-<select class="form-select select-sm" aria-label="Preference">
-  <option>Choose an option</option>
-  <option>Git</option>
-  <option>Subversion</option>
-  <option>Social Coding</option>
-  <option>Beets</option>
-  <option>Bears</option>
-  <option>Battlestar Galactica</option>
-</select>
+<button class="btn btn-sm ml-1"> Small button</button>
 ```
 
 #### Form groups
