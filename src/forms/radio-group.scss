@@ -15,7 +15,7 @@
   line-height: 20px; // Specifically not inherit our `<body>` default
   color: $text-gray-dark;
   cursor: pointer;
-  border: $border-width $border-style $border-gray-dark;
+  border: $border-width $border-style $border-color;
 
   :checked + & {
     position: relative;
