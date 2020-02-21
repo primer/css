@@ -11,20 +11,19 @@
 }
 
 // Each label gets common styles
-// .label will be deprecated for .Label
-.label,
+
+.label, // TODO: Deprecte
 .Label {
   display: inline-block;
   // stylelint-disable-next-line primer/spacing
-  padding: 3px $spacer-1;
+  padding: 3px 12px;
   font-size: $font-size-small;
-  font-weight: $font-weight-bold;
-  line-height: $lh-condensed-ultra; // prevent inheritance from changing proportions
-  color: $text-white;
+  font-weight: 500;
+  line-height: 16px;
   // stylelint-disable-next-line primer/borders
-  border-radius: 2px;
-  // stylelint-disable-next-line primer/box-shadow
-  box-shadow: inset 0 -1px 0 rgba($black, 0.12);
+  border-radius: 2em;
+  background-color: transparent !important; // TODO: Remove again
+  border: $border-width $border-style $border-color;
 
   &:hover {
     text-decoration: none;
@@ -35,34 +34,47 @@
 //
 // Commonly used across the site to indicate a particular role. For example,
 // "repo owner" within code comments or role in organizations.
+
 .Label--gray {
   color: $text-gray;
-  // stylelint-disable-next-line primer/colors
-  background-color: lighten($gray-200, 3%);
-}
-
-.Label--outline {
-  // stylelint-disable-next-line primer/spacing
-  margin-top: -1px; // offsets the 1px border
-  // stylelint-disable-next-line primer/spacing
-  margin-bottom: -1px; // offsets the 1px border
-  font-weight: $font-weight-normal;
-  color: $text-gray;
-  background-color: transparent;
-  border: $border-width $border-style $border-black-fade;
-  box-shadow: none;
-}
-
-.Label--outline-green {
-  color: $text-green;
-  border: $border-width $border-style $border-green;
+  border-color: $border-gray;
 }
 
 .Label--gray-darker {
-  // stylelint-disable-next-line primer/colors
-  background-color: $gray;
+  color: $text-gray-dark;
+  border-color: $border-gray-darker;
+}
+
+// Colors
+
+.Label--yellow {
+  color: $text-yellow;
+  border-color: $border-yellow;
 }
 
 .Label--orange {
-  background-color: $bg-orange;
+  color: $text-orange;
+  border-color: $border-red-light;
+}
+
+.Label--red {
+  color: $text-red;
+  border-color: $border-red;
+}
+
+.Label--outline-green, // TODO: Deprecate
+.Label--green {
+  color: $text-green;
+  border-color: $border-green;
+}
+
+.Label--blue {
+  color: $text-blue;
+  border-color: $border-blue;
+}
+
+// Outline modifier can by used with any `.text-` color utility
+
+.Label--outline {
+  border-color: currentColor;
 }

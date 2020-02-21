@@ -11,55 +11,63 @@ Labels add metatdata or indicate status of items and navigational elements. Thre
 
 ## Labels
 
-The base label component styles the text, adds padding and rounded corners, and an inset box shadow. Labels come in various themes which apply colors and different border styles.
+The base label component styles the text, adds padding and rounded corners, and a border. Labels come in various themes which apply different colors.
 
 GitHub also programmatically generates and applies a background color for labels on items such as issues and pull requests. Users are able to select any background color and the text color will adjust to work with light and dark background colors.
 
-The base `Label` style does not apply a background color, here's an example using the `bg-blue` utility to apply a blue background:
+The base `Label` style does not apply a background color and only uses the default border:
 
-```html live title="Label"
-<span title="Label: default label" class="Label bg-blue">default label</span>
+```html live
+<span class="Label" title="Label: design">design</span>
 ```
 
 **Note:** Be sure to include a title attribute on labels, it's helpful for people using screen-readers to differentiate a label from other text. I.e. without the title attribute, the following example would read as _"New select component design"_, rather than identifying `design` as a label.
 
-```html live title="Label without title"
+```html live
 <!-- Don't do this -->
-<a href="#url">New select component</a><span class="Label bg-blue ml-1">design</span>
+<a href="#url">New select component</a> <span class="Label">design</span>
 ```
 
-### Label themes
+### Label contrast
 
-Labels come in a few different themes. Use a theme that helps communicate the content of the label, and ensure it's used consistently.
+Use `Label--gray` to create a label with a lighter text color. This label is neutral in color and can be used in contexts where all you need to communicate is metadata, or where you want a label to feel less prominent compared with labels with stronger colors.
 
-Use `Label--gray` to create a label with a light gray background and gray text. This label is neutral in color and can be used in contexts where all you need to communicate is metadata, or whe you want a label to feel less prominent compared with labels with stronger colors.
+Use `Label--gray-darker` to create a label with a dark-gray color and border. This label is also neutral in color, however, since its color is darker it can stand out more compared to `Label--gray`.
 
-```html live title="Label theme gray"
-<span title="Label: gray label" class="Label Label--gray">gray label</span>
+```html live
+<span class="Label" title="Label: Default">Default</span>
+<span class="Label Label--gray  ml-1" title="Label: Gray">Gray</span>
+<span class="Label Label--gray-darker ml-1" title="Label: Dark gray">Dark gray</span>
 ```
 
-Use `Label--gray-darker` to create a label with a dark-gray background color. This label is also neutral in color, however, since it's background is darker it can stand out more compared to `Label--gray`.
+### Colored labels
 
-```html live title="Label theme dark gray"
-<span title="Label: dark gray label" class="Label Label--gray-darker">dark gray label</span>
+Labels come in a few different themes. Use a theme that helps communicate the content of the label, and ensure it's used consistently. A typical use of the themes are:
+
+- `Label--yellow` -> Pending/highlight
+- `Label--orange` -> Warning
+- `Label--red` -> Error
+- `Label--green` -> Success
+- `Label--blue` -> Info
+
+
+```html live
+<span class="Label mr-1 Label--yellow" title="Label: Pending">Pending</span>
+<span class="Label mr-1 Label--orange" title="Label: Warning">Warning</span>
+<span class="Label mr-1 Label--red" title="Label: Error">Error</span>
+<span class="Label mr-1 Label--green" title="Label: Success">Success</span>
+<span class="Label mr-1 Label--blue" title="Label: Info">Info</span>
 ```
 
-Use `Label--orange` to communicate "warning". The orange background color is very close to red, so avoid using next to labels with a red background color since most people will find it hard to tell the difference.
+Note: Avoid using `Label--orange` next to `Label--red` since most people will find it hard to tell the difference.
 
-```html live title="Label theme orange"
-<span title="Label: orange label" class="Label Label--orange">orange label</span>
-```
+### Custon labels
 
-Use `Label--outline` to create a label with gray text, a gray border, and a transparent background. The outline reduces the contrast of this label in combination with filled labels. Use this in contexts where you need it to stand out less than other labels and communicate a neutral message.
+Use `Label--outline` in combination with any of the `text-` color utilities to create a label with matching text and border color.
 
-```html live title="Label outline"
-<span title="Label: outline label" class="Label Label--outline">outlined label</span>
-```
-
-Use `Label--outline-green` in combination with `Label--outline` to communicate a positive message.
-
-```html live title="Label outline green"
-<span title="Label: green outline label" class="Label Label--outline Label--outline-green">green outlined label</span>
+```html live
+<span class="Label mr-1 Label--currentColor text-orange-light" title="Label: Orange light">Orange light</span>
+<span class="Label mr-1 Label--currentColor text-purple" title="Label: Purple">Purple</span>
 ```
 
 ## Issue Labels
