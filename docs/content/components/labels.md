@@ -75,17 +75,19 @@ Use `Label--outline` in combination with any of the `text-` color utilities to c
 Issue Labels are used for adding labels to issues and pull requests. They also come with emoji support.
 
 ```html live
-<span class="IssueLabel bg-blue text-white mr-1" title="Label: good first issue">good first issue</span>
+<span class="IssueLabel bg-blue text-white mr-1" title="Label: Primer">Primer</span>
 <span class="IssueLabel bg-red text-white mr-1" title="Label: bug">bug 🐛</span>
-<span class="IssueLabel bg-green text-white" title="Label: bug">help wanted</span>
+<span class="IssueLabel bg-pink text-white mr-1" title="Label: help wanted">help wanted</span>
+<span class="IssueLabel bg-yellow text-gray-dark mr-1" title="Label: deploy: train">🚂 deploy: train</span>
 ```
 
 If an Issue Label needs to be bigger, add the `.IssueLabel--big` modifier.
 
 ```html live
-<span class="IssueLabel IssueLabel--big bg-blue text-white mr-1" title="Label: good first issue">good first issue</span>
+<span class="IssueLabel IssueLabel--big bg-blue text-white mr-1" title="Label: Primer">Primer</span>
 <span class="IssueLabel IssueLabel--big bg-red text-white mr-1" title="Label: bug">bug 🐛</span>
-<span class="IssueLabel IssueLabel--big bg-green text-white" title="Label: bug">help wanted</span>
+<span class="IssueLabel IssueLabel--big bg-pink text-white mr-1" title="Label: help wanted">help wanted</span>
+<span class="IssueLabel IssueLabel--big bg-yellow text-gray-dark mr-1" title="Label: deploy: train">🚂 deploy: train</span>
 ```
 
 
