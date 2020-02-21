@@ -85,9 +85,3 @@
   // stylelint-disable-next-line primer/borders
   border-color: $border-blue;
 }
-
-// Used with any `.text-` color utility
-
-.Label--custom {
-  border-color: currentColor;
-}

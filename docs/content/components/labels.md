@@ -50,7 +50,6 @@ Labels come in a few different themes. Use a theme that helps communicate the co
 - `Label--green` -> Success
 - `Label--blue` -> Info
 
-
 ```html live
 <span class="Label mr-1 Label--yellow" title="Label: Pending">Pending</span>
 <span class="Label mr-1 Label--orange" title="Label: Warning">Warning</span>
@@ -60,15 +59,6 @@ Labels come in a few different themes. Use a theme that helps communicate the co
 ```
 
 Note: Avoid using `Label--orange` next to `Label--red` since most people will find it hard to tell the difference.
-
-### Custon labels
-
-Use `Label--custom` in combination with any of the `text-` color utilities to create a label with matching text and border color.
-
-```html live
-<span class="Label mr-1 Label--custom text-orange-light" title="Label: Orange light">Orange light</span>
-<span class="Label mr-1 Label--custom text-purple" title="Label: Purple">Purple</span>
-```
 
 ## Issue Labels
 
