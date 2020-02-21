@@ -60,6 +60,10 @@ If you've installed Primer CSS with npm, you very likely already have `node_modu
 
 If you've installed Primer CSS with something _other than_ npm, or you don't know how it was installed, consult the documentation for your setup first, then [let us know][help] if you still can't figure it out.
 
+## Compiled CSS files
+
+The compiled CSS files can be found under `/dist` in case you want to directly link to them.
+
 ## Fonts
 The marketing-specific font files published in the [`fonts` directory](https://unpkg.com/primer-marketing-support@2.0.0/fonts/) of `primer-marketing-support@2.0.0` are published in the `fonts` directory of `@primer/css`. If you use these fonts, you'll need to do the following:
 
