@@ -7,7 +7,7 @@ source: 'https://github.com/primer/css/tree/master/src/labels'
 bundle: labels
 ---
 
-Labels add metatdata or indicate status of items and navigational elements. Three different types of labels are available: [Labels](#default-label-styles) for adding metadata, [States](#states) for indicating status, and [Counters](#counters) for showing the count for a number of items.
+Labels add metadata or indicate status of items and navigational elements. Three different types of labels are available: [Labels](#default-label-styles) for adding metadata, [States](#states) for indicating status, and [Counters](#counters) for showing the count for a number of items.
 
 ## Labels
 
@@ -15,13 +15,13 @@ The base label component styles the text, adds padding and rounded corners, and 
 
 GitHub also programmatically generates and applies a background color for labels on items such as issues and pull requests. Users are able to select any background color and the text color will adjust to work with light and dark background colors.
 
-The base `Label` style does not apply a background color, here's an example using the `bg-blue` utility to apply a blue background:
+The base `Label` style does not apply a background color. Here's an example using the `bg-blue` utility to apply a blue background:
 
 ```html live title="Label"
 <span title="Label: default label" class="Label bg-blue">default label</span>
 ```
 
-**Note:** Be sure to include a title attribute on labels, it's helpful for people using screen-readers to differentiate a label from other text. I.e. without the title attribute, the following example would read as _"New select component design"_, rather than identifying `design` as a label.
+**Note:** Be sure to include a title attribute on labels, as it's helpful for people using screen-readers to differentiate a label from other text. For example, without the title attribute, the following case would read as _"New select component design"_, rather than identifying `design` as a label.
 
 ```html live title="Label without title"
 <!-- Don't do this -->
@@ -32,13 +32,13 @@ The base `Label` style does not apply a background color, here's an example usin
 
 Labels come in a few different themes. Use a theme that helps communicate the content of the label, and ensure it's used consistently.
 
-Use `Label--gray` to create a label with a light gray background and gray text. This label is neutral in color and can be used in contexts where all you need to communicate is metadata, or whe you want a label to feel less prominent compared with labels with stronger colors.
+Use `Label--gray` to create a label with a light gray background and gray text. This label is neutral in color and can be used in contexts where all you need to communicate is metadata, or when you want a label to feel less prominent compared with labels with stronger colors.
 
 ```html live title="Label theme gray"
 <span title="Label: gray label" class="Label Label--gray">gray label</span>
 ```
 
-Use `Label--gray-darker` to create a label with a dark-gray background color. This label is also neutral in color, however, since it's background is darker it can stand out more compared to `Label--gray`.
+Use `Label--gray-darker` to create a label with a dark-gray background color. This label is also neutral in color, however, since its background is darker, it can stand out more compared to `Label--gray`.
 
 ```html live title="Label theme dark gray"
 <span title="Label: dark gray label" class="Label Label--gray-darker">dark gray label</span>
@@ -62,9 +62,9 @@ Use `Label--outline-green` in combination with `Label--outline` to communicate a
 <span title="Label: green outline label" class="Label Label--outline Label--outline-green">green outlined label</span>
 ```
 
-## Issue Labels
+## Issue labels
 
-Issue Labels are used for adding labels to issues and pull requests. They also come with emoji support.
+Issue labels are used for adding labels to issues and pull requests. They also come with emoji support.
 
 ```html live
 <span class="IssueLabel bg-blue text-white mr-1" title="Label: good first issue">good first issue</span>
@@ -72,7 +72,7 @@ Issue Labels are used for adding labels to issues and pull requests. They also c
 <span class="IssueLabel bg-green text-white" title="Label: bug">help wanted</span>
 ```
 
-If an Issue Label needs to be bigger, add the `.IssueLabel--big` modifier.
+If an issue label needs to be bigger, add the `.IssueLabel--big` modifier.
 
 ```html live
 <span class="IssueLabel IssueLabel--big bg-blue text-white mr-1" title="Label: good first issue">good first issue</span>
@@ -132,7 +132,7 @@ Use `State--small` for a state label with reduced padding a smaller font size. T
 
 ## Counters
 
-Use the `Counter` component to add a count to navigational elements and buttons. Counters come in 3 variations: the default `Counter` with a light gray background, `Counter--gray` with a dark-gray background and inverse white text, and `Counter--gray-light` with a light-gray background and dark gray text. When a counter is empty, it's visibility will be hidden.
+Use the `Counter` component to add a count to navigational elements and buttons. Counters come in 3 variations: the default `Counter` with a light gray background, `Counter--gray` with a dark-gray background and inverse white text, and `Counter--gray-light` with a light-gray background and dark gray text. When a counter is empty, its visibility will be hidden.
 
 ```html live title="Counter"
 <span class="Counter">16</span>
@@ -186,7 +186,7 @@ Diffstats show how many deletions or additions a diff has. It's typically a row 
 </span>
 ```
 
-Use the `text-green` and `text-red` utilities to add addtitional information about the size of the diff.
+Use the `text-green` and `text-red` utilities to add additional information about the size of the diff.
 
 ```html live
 <span class="diffstat">
