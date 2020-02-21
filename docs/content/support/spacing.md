@@ -41,4 +41,4 @@ We aim for whole numbers, however, GitHub's body font-size is 14px which is diff
 | `$em-spacer-5` | 1/2      | .5             | 35                               | 40                   |
 | `$em-spacer-6` | 3/4      | .75            | 42                               | 48                   |
 
-The variables listed above are preferred for use within components and custom CSS. To calculate values with other font-sizes or em values, we suggest using [Formula](http://jxnblk.com/formula).
+The variables listed above are preferred for use within components and custom CSS. To calculate values with other font-sizes or em values, we suggest using [Formula](https://jxnblk.github.io/formula/).
