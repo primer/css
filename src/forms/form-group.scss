@@ -139,11 +139,9 @@
       z-index: 10;
       display: block; // Show up in errored/warn state
       max-width: 450px; // Keep our long errors readable
-      // stylelint-disable-next-line primer/spacing
-      padding: 5px $spacer-2;
-      margin: $spacer-1 0 0;
-      // stylelint-disable-next-line primer/typography
-      font-size: 13px;
+      padding: $spacer-1 $spacer-2;
+      margin: $spacer-2 0 0;
+      font-size: $font-size-small;
       font-weight: $font-weight-normal;
       border-style: $border-style;
       border-width: $border-width;
@@ -178,16 +176,19 @@
   }
 
   &.warn {
+    .form-control {
+      // stylelint-disable-next-line primer/borders
+      border-color: $yellow-600;
+    }
+
     .warning {
       // stylelint-disable-next-line primer/colors
-      color: $yellow-900;
-      // stylelint-disable-next-line primer/colors
-      background-color: $yellow-100;
+      background-color: $yellow-200;
       border-color: $border-yellow;
 
       &::after {
         // stylelint-disable-next-line primer/borders
-        border-bottom-color: $yellow-100;
+        border-bottom-color: $yellow-200;
       }
 
       &::before {
@@ -197,13 +198,16 @@
   }
 
   &.errored {
+    .form-control {
+      // stylelint-disable-next-line primer/borders
+      border-color: $red-600;
+    }
+
     label {
       color: $text-red;
     }
 
     .error {
-      // stylelint-disable-next-line primer/colors
-      color: $red-900;
       background-color: $bg-red-light;
       border-color: $border-red-light;
 

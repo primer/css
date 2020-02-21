@@ -19,8 +19,8 @@ label {
 .form-select {
   min-height: 34px;
   // stylelint-disable-next-line primer/spacing
-  padding: 6px $spacer-2;
-  font-size: $h4-size;
+  padding: 6px 12px;
+  font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
   color: $text-gray-dark;
@@ -28,23 +28,27 @@ label {
   background-color: $bg-white;
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
-  border: $border-width $border-style $border-gray-dark;
+  border: $border-width $border-style $border-color;
   border-radius: $border-radius;
   outline: none;
-  box-shadow: $form-control-shadow;
 
   &.focus,
   &:focus {
-    // stylelint-disable-next-line primer/borders
-    border-color: $blue-400;
+    border-color: $border-blue;
     outline: none;
-    box-shadow: $form-control-shadow, $btn-input-focus-shadow;
+    box-shadow: $focus-shadow;
   }
 
   // Ensures inputs don't zoom on mobile but are body-font size on desktop
   @include breakpoint(md) {
     font-size: $body-font-size;
   }
+}
+
+// Textarea
+textarea.form-control {
+  padding-top: $spacer-2;
+  padding-bottom: $spacer-2;
 }
 
 // Inputs with contrast for easy light gray backgrounds against white.
@@ -94,7 +98,7 @@ label {
 
 // Large inputs
 .input-lg {
-  padding: $spacer-1 10px;
+  padding: $spacer-1 $spacer-3;
   font-size: $h4-size;
 }
 
