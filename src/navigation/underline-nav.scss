@@ -20,6 +20,7 @@
   border: 0;
   // stylelint-disable-next-line primer/borders
   border-bottom: 2px $border-style transparent;
+  white-space: nowrap;
 
   &:hover,
   &:focus {
