@@ -143,17 +143,17 @@ Use `State--small` for a state label with reduced padding a smaller font size. T
 
 ## Counters
 
-Use the `Counter` component to add a count to navigational elements and buttons. Counters come in 3 variations: the default `Counter` with a light gray background, `Counter--gray` with a dark-gray background and inverse white text, and `Counter--gray-light` with a light-gray background and dark gray text. When a counter is empty, it's visibility will be hidden.
+Use the `Counter` component to add a count to navigational elements and buttons. Counters come in 3 variations: the default `Counter` with a light gray background, the `Counter--gray-light` with a lighter text color, and `Counter--gray` with a dark-gray background and inverse white text. When a counter is empty, it's visibility will be hidden.
 
-```html live title="Counter"
-<span class="Counter">16</span>
-<span class="Counter Counter--gray">32</span>
-<span class="Counter Counter--gray-light">64</span>
+```html live
+<span class="Counter mr-1">1</span>
+<span class="Counter mr-1 Counter--gray-light">23</span>
+<span class="Counter mr-1 Counter--gray">456</span>
 ```
 
 Use the `Counter` in navigation to indicate the number of items without the user having to click through or count the items, such as open issues in a GitHub repo. See more options in [navigation](./navigation).
 
-```html live title="Counter in tabs"
+```html live
 <div class="tabnav">
   <nav class="tabnav-tabs" aria-label="Foo bar">
     <a href="#url" class="tabnav-tab" aria-current="page">Foo tab <span class="Counter">23</a>
@@ -162,28 +162,35 @@ Use the `Counter` in navigation to indicate the number of items without the user
 </div>
 ```
 
-Counters can also be used in `Box` headers to indicate the number of items in a list. See more on the [box component](./box).
+You can also have icons and emoji in counters. Or use utilities for counters with different background colors.
 
-```html live title="Counter in Box headers"
-<div class="Box">
-  <div class="Box-header">
-    <h3 class="Box-title">
-      Box title
-      <span class="Counter Counter--gray">3</span>
-    </h3>
-  </div>
-  <ul>
-    <li class="Box-row">
-      Box row one
-    </li>
-    <li class="Box-row">
-      Box row two
-    </li>
-    <li class="Box-row">
-      Box row three
-    </li>
-  </ul>
-</div>
+```html live
+<span class="Counter mr-1">1.5K</span>
+<span class="Counter mr-1">
+  <!-- <%= octicon "comment" %> -->
+  <svg class="octicon octicon-comment" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 2.5C2.6837 2.5 2.62011 2.52634 2.57322 2.57322C2.52634 2.62011 2.5 2.6837 2.5 2.75V10.25C2.5 10.388 2.612 10.5 2.75 10.5H4.75C4.94891 10.5 5.13968 10.579 5.28033 10.7197C5.42098 10.8603 5.5 11.0511 5.5 11.25V13.44L8.22 10.72C8.36052 10.5793 8.55115 10.5002 8.75 10.5H13.25C13.3163 10.5 13.3799 10.4737 13.4268 10.4268C13.4737 10.3799 13.5 10.3163 13.5 10.25V2.75C13.5 2.6837 13.4737 2.62011 13.4268 2.57322C13.3799 2.52634 13.3163 2.5 13.25 2.5H2.75ZM1 2.75C1 1.784 1.784 1 2.75 1H13.25C14.216 1 15 1.784 15 2.75V10.25C15 10.7141 14.8156 11.1592 14.4874 11.4874C14.1592 11.8156 13.7141 12 13.25 12H9.06L6.487 14.573C6.28324 14.7767 6.02367 14.9153 5.74111 14.9715C5.45854 15.0277 5.16567 14.9988 4.8995 14.8886C4.63333 14.7784 4.40581 14.5917 4.24571 14.3522C4.08561 14.1127 4.0001 13.8311 4 13.543V12H2.75C2.28587 12 1.84075 11.8156 1.51256 11.4874C1.18437 11.1592 1 10.7141 1 10.25V2.75Z"></path></svg>
+  10
+</span>
+<span class="Counter mr-1">👍 2</span>
+<span class="Counter mr-1 bg-green text-white">22</span>
+<span class="Counter mr-1 bg-red text-white">22</span>
+<span class="Counter mr-1 bg-purple text-white">22</span>
+```
+
+## Small counters
+
+Use the `Counter--small` modifier class to reduce the size of a counter.
+
+```html live
+<span class="Counter mr-1 Counter--gray-light">1</span>
+<span class="Counter mr-1">23</span>
+<span class="Counter mr-1 Counter--gray">456</span>
+<span class="Counter mr-1">1.5K</span>
+<div class="my-2"></div>
+<span class="Counter Counter--small mr-1 Counter--gray-light">1</span>
+<span class="Counter Counter--small mr-1">23</span>
+<span class="Counter Counter--small mr-1 Counter--gray">456</span>
+<span class="Counter Counter--small mr-1">1.5K</span>
 ```
 
 ## Diffstat
