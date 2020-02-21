@@ -11,6 +11,7 @@
   display: inline-block;
   // stylelint-disable-next-line primer/spacing
   padding: $spacer-2 12px;
+  // stylelint-disable-next-line primer/typography
   font-weight: 500;
   // stylelint-disable-next-line primer/typography
   line-height: 16px;
@@ -19,6 +20,7 @@
   white-space: nowrap;
   // stylelint-disable-next-line primer/colors
   background-color: $gray-500;
+  // stylelint-disable-next-line primer/borders
   border-radius: 2em;
 }
 
