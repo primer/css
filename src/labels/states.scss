@@ -6,33 +6,40 @@
 // closed   - $red background
 // merged   - $purple background
 
-// .state to be deprecated in replace of .State
-.state,
+.state, // TODO: Deprecate
 .State {
   display: inline-block;
-  padding: $spacer-1 $spacer-2;
-  font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/spacing
+  padding: $spacer-2 12px;
+  font-weight: 500;
   // stylelint-disable-next-line primer/typography
-  line-height: 20px;
+  line-height: 16px;
   color: $text-white;
   text-align: center;
   white-space: nowrap;
   // stylelint-disable-next-line primer/colors
   background-color: $gray-500;
-  border-radius: $border-radius;
+  border-radius: 2em;
 }
 
-// stylelint-disable-next-line primer/colors
-.State--green { background-color: darken($green-400, 5%); }
+.State--green {
+  // stylelint-disable-next-line primer/colors
+  background-color: #159739; // custom green
+}
 
-.State--purple { background-color: $bg-purple; }
+.State--red {
+  background-color: $bg-red;
+}
 
-// stylelint-disable-next-line primer/colors
-.State--red { background-color: $red-600; }
+.State--purple {
+  background-color: $bg-purple;
+}
+
+// Small
 
 .State--small {
-  padding: $em-spacer-2 $spacer-1;
-  font-size: $h6-size;
+  padding: $spacer-1 $spacer-2;
+  font-size: $font-size-small;
 
   .octicon {
     width: 1em; // Ensures different icons don't change State indicator width
