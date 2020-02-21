@@ -42,34 +42,34 @@
 
 .Label--gray-darker {
   color: $text-gray-dark;
-  border-color: $border-gray-darker;
+  border-color: $gray-500;
 }
 
 // Colors
 
 .Label--yellow {
-  color: $text-yellow;
-  border-color: $border-yellow;
+  color: $yellow-900;
+  border-color: $yellow-600;
 }
 
 .Label--orange {
-  color: $text-orange;
-  border-color: $border-red-light;
+  color: $orange-800;
+  border-color: $orange-500;
 }
 
 .Label--red {
   color: $text-red;
-  border-color: $border-red;
+  border-color: $red-600;
 }
 
 .Label--outline-green, // TODO: Deprecate
 .Label--green {
-  color: $text-green;
-  border-color: $border-green;
+  color: $green-600;
+  border-color: $green-500;
 }
 
 .Label--blue {
-  color: $text-blue;
+  color: $blue-600;
   border-color: $border-blue;
 }
 
