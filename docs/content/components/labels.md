@@ -66,8 +66,8 @@ Note: Avoid using `Label--orange` next to `Label--red` since most people will fi
 Use `Label--outline` in combination with any of the `text-` color utilities to create a label with matching text and border color.
 
 ```html live
-<span class="Label mr-1 Label--currentColor text-orange-light" title="Label: Orange light">Orange light</span>
-<span class="Label mr-1 Label--currentColor text-purple" title="Label: Purple">Purple</span>
+<span class="Label mr-1 Label--outline text-orange-light" title="Label: Orange light">Orange light</span>
+<span class="Label mr-1 Label--outline text-purple" title="Label: Purple">Purple</span>
 ```
 
 ## Issue Labels
