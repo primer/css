@@ -6,20 +6,50 @@ source: 'https://github.com/primer/css/blob/master/src/support/variables/layout.
 bundle: support
 ---
 
-Our breakpoints are based on screen widths where our content starts to break. Since most of GitHub is currently a fixed-width with we use pixel widths to make it easy for us to match page widths for responsive and non-responsive pages. **Our breakpoints may change as we move more of the product into responsive layouts.**
+Our breakpoints are based on screen widths where our content starts to break. **Our breakpoints may change as we move more of the product into responsive layouts.**
 
-We use abbreviations for each breakpoint to keep the class names concise. This abbreviated syntax is used consistently across responsive styles. Responsive styles allow you to change the styles properties at each breakpoint. For example, when using column widths for grid layouts, you can change specify that the width is 12 columns wide at the small breakpoint, and 6 columns wide from the large breakpoint: `<div class="col-sm-12 col-lg-6">...</div>`
+We use abbreviations for each breakpoint to keep the class names concise. This abbreviated syntax is used consistently across responsive styles. Responsive styles allow you to change the styles properties at each breakpoint. For example, when using column widths for grid layouts, you can specify that the width is 12 columns wide by default, 8 columns from the medium breakpoint, and 4 columns wide from the extra large breakpoint: `<div class="col-12 col-md-8 col-xl-4">...</div>`.
 
-| Breakpoint  | Syntax | Description       |
-| ----------- | ------ | ----------------- |
-| Small       | sm     | min-width: 544px  |
-| Medium      | md     | min-width: 768px  |
-| Large       | lg     | min-width: 1012px |
-| Extra-large | xl     | min-width: 1280px |
+| Breakpoint  | Syntax | Breaks at |
+| ----------- | ------ | ----------|
+| Small       | sm     | `544px`   |
+| Medium      | md     | `768px`   |
+| Large       | lg     | `1012px`  |
+| Extra-large | xl     | `1280px`  |
 
-**Note:** The `lg` breakpoint matches our current page width of `980px` including left and right padding of `16px` (`$spacer-3`). This is so that content doesn't touch the edges of the window when resized.
+Responsive styles are available for [margin](/utilities/margin#responsive-margins), [padding](/utilities/padding#responsive-padding), [layout](/utilities/layout), [flexbox](/utilities/flexbox#responsive-flex-utilities), the [grid](/objects/grid#responsive-grids) system, and many more.
 
-Responsive styles are available for [margin](/utilities/margin#responsive-margins), [padding](/utilities/padding#responsive-padding), [layout](/utilities/layout), [flexbox](/utilities/flexbox#responsive-flex-utilities), and the [grid](/objects/grid#responsive-grids) system.
+## Breakpoint and up... 🛫
+
+In most cases, breakpoints get used with the `min-width` media query. This means that when using a responsive utility class, the class becomes "enabled" from the breakpoint on upwards. Or from the browser's perspective, when the browser's width **is** the breakpoint or **wider**.
+
+| Breakpoint  | Syntax | Is enabled...            |
+| ----------- | ------ | -------------------------|
+| None        |        | from `0px` upwards ->    |
+| Small       | sm     | from `544px` upwards ->  |
+| Medium      | md     | from `768px` upwards ->  |
+| Large       | lg     | from `1012px` upwards -> |
+| Extra-large | xl     | from `1280px` upwards -> |
+
+A responsive utility class stays enabled **unless** it gets overridden with another responsive utility class that has a higher breakpoint. Here the example from above `<div class="col-12 col-md-8 col-xl-4">...</div>` visualized: 
+
+```
+| 0px -> 
+         | 544px ->  
+         | sm
+                    | 768px ->  
+                    | md 
+                               | 1012px ->  
+                               | lg
+                                           | 1280px ->
+                                           | xl
+
+| col-12 ---------> | col-md-8 ----------> | col-xl-4 ->
+```
+
+Using breakpoints with the `min-width` media query works great for "mobile first". Design for mobile devices as a default, then if needed, tweak it for wider desktop screens using responsive utility classes.
+
+Note: The [responsive hide](/utilities/layout#responsive-hide) utilities are an exception and use a range between two breakpoints. They also go the other direction "breakpoint and down... 🛬". For example `.hide-md` hides an element if the browser's width is between `sm <-> md` (`544px - 767px`).
 
 ## Breakpoint variables
 
@@ -49,7 +79,7 @@ $breakpoints: (
 
 Use media query mixins when you want to change CSS properties at a particular breakpoint. The media query mixin works by passing in a breakpoint value, such as `breakpoint(md)`.
 
-Media queries are scoped from each breakpoint and upwards. In the example below, the font size is `28px` until the viewport size meets the `lg` breakpoint, from there upwards—including through the `xl` breakpoint—the font size will be `32px`.
+Media queries are scoped from each breakpoint and upwards. In the example below, the font size is `28px` until the viewport size meets the `md` breakpoint, from there upwards—including through the `xl` breakpoint—the font size will be `32px`.
 
 ```scss
 .styles {
