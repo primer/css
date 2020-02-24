@@ -3,54 +3,47 @@
 // A menu on the side of a page, defaults to left side. e.g. github.com/about
 
 .menu {
-  // stylelint-disable-next-line primer/spacing
-  margin-bottom: 15px;
+  margin-bottom: $spacer-3;
   list-style: none;
   background-color: $bg-white;
-  border: $border-width $border-style $border-gray-dark;
+  border: $border;
   border-radius: $border-radius;
 }
 
 .menu-item {
   position: relative;
   display: block;
-  padding: $spacer-2 10px;
-  border-bottom: $border;
+  padding: $spacer-1 $spacer-3;
+  line-height: 23px;
+  color: $text-black;
+  border-bottom: $border-width $border-style $border-gray-light;
 
   &:first-child {
     border-top: 0;
-    // stylelint-disable-next-line primer/borders
-    border-top-left-radius: 2px;
-    // stylelint-disable-next-line primer/borders
-    border-top-right-radius: 2px;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
 
-    // stylelint-disable-next-line primer/borders
-    &::before { border-top-left-radius: 2px; }
+    &::before { border-top-left-radius: $border-radius; }
   }
 
   &:last-child {
     border-bottom: 0;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-right-radius: 2px;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
 
-    // stylelint-disable-next-line primer/borders
-    &::before { border-bottom-left-radius: 2px; }
+    &::before { border-bottom-left-radius: $border-radius; }
   }
 
   &:hover {
     text-decoration: none;
-    background-color: $bg-gray;
+    background-color: $gray-100;
   }
 
   &.selected,
   &[aria-selected=true],
   &[aria-current] {
-    font-weight: $font-weight-bold;
-    color: $text-gray-dark;
     cursor: default;
-    background-color: $bg-white;
+    background-color: $orange-000;
 
     &::before {
       position: absolute;
@@ -60,22 +53,20 @@
       width: 2px;
       content: "";
       // stylelint-disable-next-line primer/colors
-      background-color: $orange-600;
+      background-color: $orange-500;
     }
   }
 
   .octicon {
     width: 16px;
-    // stylelint-disable-next-line primer/spacing
-    margin-right: 5px;
-    color: $text-gray-dark;
+    margin-right: $spacer-2;
+    color: $gray-400;
     text-align: center;
   }
 
   .Counter {
     float: right;
-    // stylelint-disable-next-line primer/spacing
-    margin-left: 5px;
+    margin-left: $spacer-1;
   }
 
   .menu-warning {
@@ -87,7 +78,7 @@
   .avatar {
     float: left;
     // stylelint-disable-next-line primer/spacing
-    margin-right: 5px;
+    margin-right: $spacer-1;
   }
 
   &.alert {
@@ -99,35 +90,28 @@
 
 .menu-heading {
   display: block;
-  padding: $spacer-2 10px;
   margin-top: 0;
   margin-bottom: 0;
+  padding: $spacer-1 $spacer-3;
+  line-height: 23px;
   // stylelint-disable-next-line primer/typography
-  font-size: 13px;
-  font-weight: $font-weight-bold;
+  font-weight: 500;
   // stylelint-disable-next-line primer/typography
-  line-height: 20px;
-  color: $text-gray;
-  // stylelint-disable-next-line primer/colors
-  background-color: darken($gray-100, 1%);
-  border-bottom: $border;
+  color: $text-black;
+  border-bottom: $border-width $border-style $border-gray-light;
 
   &:hover {
     text-decoration: none;
   }
 
   &:first-child {
-    // stylelint-disable-next-line primer/borders
-    border-top-left-radius: 2px;
-    // stylelint-disable-next-line primer/borders
-    border-top-right-radius: 2px;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
   }
 
   &:last-child {
     border-bottom: 0;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-right-radius: 2px;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
   }
 }
