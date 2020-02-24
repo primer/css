@@ -11,20 +11,21 @@
 }
 
 // Each label gets common styles
-// .label will be deprecated for .Label
-.label,
+
+.label, // TODO: Deprecte
 .Label {
   display: inline-block;
   // stylelint-disable-next-line primer/spacing
-  padding: 3px $spacer-1;
+  padding: 3px 12px;
   font-size: $font-size-small;
-  font-weight: $font-weight-bold;
-  line-height: $lh-condensed-ultra; // prevent inheritance from changing proportions
-  color: $text-white;
+  // stylelint-disable-next-line primer/typography
+  font-weight: 500;
+  // stylelint-disable-next-line primer/typography
+  line-height: 16px;
+  background-color: transparent !important; // TODO: Remove again
+  border: $border-width $border-style $border-color;
   // stylelint-disable-next-line primer/borders
-  border-radius: 2px;
-  // stylelint-disable-next-line primer/box-shadow
-  box-shadow: inset 0 -1px 0 rgba($black, 0.12);
+  border-radius: 2em;
 
   &:hover {
     text-decoration: none;
@@ -35,34 +36,51 @@
 //
 // Commonly used across the site to indicate a particular role. For example,
 // "repo owner" within code comments or role in organizations.
+
+.Label--outline, // TODO: Deprecate
 .Label--gray {
   color: $text-gray;
-  // stylelint-disable-next-line primer/colors
-  background-color: lighten($gray-200, 3%);
-}
-
-.Label--outline {
-  // stylelint-disable-next-line primer/spacing
-  margin-top: -1px; // offsets the 1px border
-  // stylelint-disable-next-line primer/spacing
-  margin-bottom: -1px; // offsets the 1px border
-  font-weight: $font-weight-normal;
-  color: $text-gray;
-  background-color: transparent;
-  border: $border-width $border-style $border-black-fade;
-  box-shadow: none;
-}
-
-.Label--outline-green {
-  color: $text-green;
-  border: $border-width $border-style $border-green;
+  border-color: $border-gray;
 }
 
 .Label--gray-darker {
+  color: $text-gray-dark;
+  // stylelint-disable-next-line primer/borders
+  border-color: $gray-500;
+}
+
+// Colors
+
+.Label--yellow {
   // stylelint-disable-next-line primer/colors
-  background-color: $gray;
+  color: $yellow-900;
+  // stylelint-disable-next-line primer/borders
+  border-color: $yellow-600;
 }
 
 .Label--orange {
-  background-color: $bg-orange;
+  // stylelint-disable-next-line primer/colors
+  color: $orange-800;
+  // stylelint-disable-next-line primer/borders
+  border-color: $orange-500;
+}
+
+.Label--red {
+  color: $text-red;
+  // stylelint-disable-next-line primer/borders
+  border-color: $red-600;
+}
+
+.Label--outline-green, // TODO: Deprecate
+.Label--green {
+  // stylelint-disable-next-line primer/colors
+  color: $green-600;
+  // stylelint-disable-next-line primer/borders
+  border-color: $green-500;
+}
+
+.Label--blue {
+  // stylelint-disable-next-line primer/colors
+  color: $blue-600;
+  border-color: $border-blue;
 }

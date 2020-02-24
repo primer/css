@@ -11,73 +11,73 @@ Labels add metatdata or indicate status of items and navigational elements. Thre
 
 ## Labels
 
-The base label component styles the text, adds padding and rounded corners, and an inset box shadow. Labels come in various themes which apply colors and different border styles.
+The base label component styles the text, adds padding and rounded corners, and a border. Labels come in various themes which apply different colors.
 
 GitHub also programmatically generates and applies a background color for labels on items such as issues and pull requests. Users are able to select any background color and the text color will adjust to work with light and dark background colors.
 
-The base `Label` style does not apply a background color, here's an example using the `bg-blue` utility to apply a blue background:
+The base `Label` style does not apply a background color and only uses the default border:
 
-```html live title="Label"
-<span title="Label: default label" class="Label bg-blue">default label</span>
+```html live
+<span class="Label" title="Label: design">design</span>
 ```
 
 **Note:** Be sure to include a title attribute on labels, it's helpful for people using screen-readers to differentiate a label from other text. I.e. without the title attribute, the following example would read as _"New select component design"_, rather than identifying `design` as a label.
 
-```html live title="Label without title"
+```html live
 <!-- Don't do this -->
-<a href="#url">New select component</a><span class="Label bg-blue ml-1">design</span>
+<a href="#url">New select component</a> <span class="Label">design</span>
 ```
 
-### Label themes
+### Label contrast
 
-Labels come in a few different themes. Use a theme that helps communicate the content of the label, and ensure it's used consistently.
+Use `Label--gray` to create a label with a lighter text color. This label is neutral in color and can be used in contexts where all you need to communicate is metadata, or where you want a label to feel less prominent compared with labels with stronger colors.
 
-Use `Label--gray` to create a label with a light gray background and gray text. This label is neutral in color and can be used in contexts where all you need to communicate is metadata, or whe you want a label to feel less prominent compared with labels with stronger colors.
+Use `Label--gray-darker` to create a label with a dark-gray color and border. This label is also neutral in color, however, since its color is darker it can stand out more compared to `Label--gray`.
 
-```html live title="Label theme gray"
-<span title="Label: gray label" class="Label Label--gray">gray label</span>
+```html live
+<span class="Label" title="Label: Default">Default</span>
+<span class="Label Label--gray  ml-1" title="Label: Gray">Gray</span>
+<span class="Label Label--gray-darker ml-1" title="Label: Dark gray">Dark gray</span>
 ```
 
-Use `Label--gray-darker` to create a label with a dark-gray background color. This label is also neutral in color, however, since it's background is darker it can stand out more compared to `Label--gray`.
+### Colored labels
 
-```html live title="Label theme dark gray"
-<span title="Label: dark gray label" class="Label Label--gray-darker">dark gray label</span>
+Labels come in a few different themes. Use a theme that helps communicate the content of the label, and ensure it's used consistently. A typical use of the themes are:
+
+- `Label--yellow` -> Pending/highlight
+- `Label--orange` -> Warning
+- `Label--red` -> Error
+- `Label--green` -> Success
+- `Label--blue` -> Info
+
+```html live
+<span class="Label mr-1 Label--yellow" title="Label: Pending">Pending</span>
+<span class="Label mr-1 Label--orange" title="Label: Warning">Warning</span>
+<span class="Label mr-1 Label--red" title="Label: Error">Error</span>
+<span class="Label mr-1 Label--green" title="Label: Success">Success</span>
+<span class="Label mr-1 Label--blue" title="Label: Info">Info</span>
 ```
 
-Use `Label--orange` to communicate "warning". The orange background color is very close to red, so avoid using next to labels with a red background color since most people will find it hard to tell the difference.
-
-```html live title="Label theme orange"
-<span title="Label: orange label" class="Label Label--orange">orange label</span>
-```
-
-Use `Label--outline` to create a label with gray text, a gray border, and a transparent background. The outline reduces the contrast of this label in combination with filled labels. Use this in contexts where you need it to stand out less than other labels and communicate a neutral message.
-
-```html live title="Label outline"
-<span title="Label: outline label" class="Label Label--outline">outlined label</span>
-```
-
-Use `Label--outline-green` in combination with `Label--outline` to communicate a positive message.
-
-```html live title="Label outline green"
-<span title="Label: green outline label" class="Label Label--outline Label--outline-green">green outlined label</span>
-```
+Note: Avoid using `Label--orange` next to `Label--red` since most people will find it hard to tell the difference.
 
 ## Issue Labels
 
 Issue Labels are used for adding labels to issues and pull requests. They also come with emoji support.
 
 ```html live
-<span class="IssueLabel bg-blue text-white mr-1" title="Label: good first issue">good first issue</span>
+<span class="IssueLabel bg-blue text-white mr-1" title="Label: Primer">Primer</span>
 <span class="IssueLabel bg-red text-white mr-1" title="Label: bug">bug 🐛</span>
-<span class="IssueLabel bg-green text-white" title="Label: bug">help wanted</span>
+<span class="IssueLabel bg-pink text-white mr-1" title="Label: help wanted">help wanted</span>
+<span class="IssueLabel bg-yellow text-gray-dark mr-1" title="Label: deploy: train">🚂 deploy: train</span>
 ```
 
 If an Issue Label needs to be bigger, add the `.IssueLabel--big` modifier.
 
 ```html live
-<span class="IssueLabel IssueLabel--big bg-blue text-white mr-1" title="Label: good first issue">good first issue</span>
+<span class="IssueLabel IssueLabel--big bg-blue text-white mr-1" title="Label: Primer">Primer</span>
 <span class="IssueLabel IssueLabel--big bg-red text-white mr-1" title="Label: bug">bug 🐛</span>
-<span class="IssueLabel IssueLabel--big bg-green text-white" title="Label: bug">help wanted</span>
+<span class="IssueLabel IssueLabel--big bg-pink text-white mr-1" title="Label: help wanted">help wanted</span>
+<span class="IssueLabel IssueLabel--big bg-yellow text-gray-dark mr-1" title="Label: deploy: train">🚂 deploy: train</span>
 ```
 
 
@@ -94,19 +94,19 @@ Use state labels to inform users of an items status. States are large labels wit
 States come in a few variations that apply different colors. Use the state that best communicates the status or function.
 
 ```html live
-<span title="Status: open" class="State State--green mr-2">
+<span class="State State--green mr-2" title="Status: open">
   <!-- <%= octicon "git-pull-request" %> -->
-  <svg class="octicon octicon-git-pull-request" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+  <svg class="octicon octicon-git-pull-request" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="css-5lyks0">  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.17674 3.07322L9.57318 0.676753C9.73068 0.51926 9.99996 0.630802 9.99996 0.853529V5.64642C9.99996 5.86915 9.73068 5.98069 9.57319 5.8232L7.17674 3.42677C7.07911 3.32914 7.07911 3.17085 7.17674 3.07322ZM3.75 2.5C3.33579 2.5 3 2.83579 3 3.25C3 3.66421 3.33579 4 3.75 4C4.16421 4 4.5 3.66421 4.5 3.25C4.5 2.83579 4.16421 2.5 3.75 2.5ZM1.5 3.25C1.5 2.00736 2.50736 1 3.75 1C4.99264 1 6 2.00736 6 3.25C6 4.22966 5.37389 5.06309 4.5 5.37197V10.628C5.37389 10.9369 6 11.7703 6 12.75C6 13.9926 4.99264 15 3.75 15C2.50736 15 1.5 13.9926 1.5 12.75C1.5 11.7703 2.12611 10.9369 3 10.628V5.37197C2.12611 5.06309 1.5 4.22966 1.5 3.25ZM11 2.5H10V4H11C11.5523 4 12 4.44772 12 5V10.628C11.1261 10.9369 10.5 11.7703 10.5 12.75C10.5 13.9926 11.5074 15 12.75 15C13.9926 15 15 13.9926 15 12.75C15 11.7703 14.3739 10.9369 13.5 10.628V5C13.5 3.61929 12.3807 2.5 11 2.5ZM12 12.75C12 12.3358 12.3358 12 12.75 12C13.1642 12 13.5 12.3358 13.5 12.75C13.5 13.1642 13.1642 13.5 12.75 13.5C12.3358 13.5 12 13.1642 12 12.75ZM3.75 12C3.33579 12 3 12.3358 3 12.75C3 13.1642 3.33579 13.5 3.75 13.5C4.16421 13.5 4.5 13.1642 4.5 12.75C4.5 12.3358 4.16421 12 3.75 12Z"></path></svg>
   Open
 </span>
-<span title="Status: closed" class="State State--red mr-2">
+<span class="State State--red mr-2" title="Status: closed">
   <!-- <%= octicon "git-pull-request" %> -->
-  <svg class="octicon octicon-git-pull-request" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+  <svg class="octicon octicon-git-pull-request" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="css-5lyks0">  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.17674 3.07322L9.57318 0.676753C9.73068 0.51926 9.99996 0.630802 9.99996 0.853529V5.64642C9.99996 5.86915 9.73068 5.98069 9.57319 5.8232L7.17674 3.42677C7.07911 3.32914 7.07911 3.17085 7.17674 3.07322ZM3.75 2.5C3.33579 2.5 3 2.83579 3 3.25C3 3.66421 3.33579 4 3.75 4C4.16421 4 4.5 3.66421 4.5 3.25C4.5 2.83579 4.16421 2.5 3.75 2.5ZM1.5 3.25C1.5 2.00736 2.50736 1 3.75 1C4.99264 1 6 2.00736 6 3.25C6 4.22966 5.37389 5.06309 4.5 5.37197V10.628C5.37389 10.9369 6 11.7703 6 12.75C6 13.9926 4.99264 15 3.75 15C2.50736 15 1.5 13.9926 1.5 12.75C1.5 11.7703 2.12611 10.9369 3 10.628V5.37197C2.12611 5.06309 1.5 4.22966 1.5 3.25ZM11 2.5H10V4H11C11.5523 4 12 4.44772 12 5V10.628C11.1261 10.9369 10.5 11.7703 10.5 12.75C10.5 13.9926 11.5074 15 12.75 15C13.9926 15 15 13.9926 15 12.75C15 11.7703 14.3739 10.9369 13.5 10.628V5C13.5 3.61929 12.3807 2.5 11 2.5ZM12 12.75C12 12.3358 12.3358 12 12.75 12C13.1642 12 13.5 12.3358 13.5 12.75C13.5 13.1642 13.1642 13.5 12.75 13.5C12.3358 13.5 12 13.1642 12 12.75ZM3.75 12C3.33579 12 3 12.3358 3 12.75C3 13.1642 3.33579 13.5 3.75 13.5C4.16421 13.5 4.5 13.1642 4.5 12.75C4.5 12.3358 4.16421 12 3.75 12Z"></path></svg>
   Closed
 </span>
-<span title="Status: merged" class="State State--purple">
+<span class="State State--purple mr-2" title="Status: merged">
   <!-- <%= octicon "git-merge" %> -->
-  <svg class="octicon octicon-git-merge" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 7c-.73 0-1.38.41-1.73 1.02V8C7.22 7.98 6 7.64 5.14 6.98c-.75-.58-1.5-1.61-1.89-2.44A1.993 1.993 0 0 0 2 .99C.89.99 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2a1.993 1.993 0 0 0 1-3.72V7.67c.67.7 1.44 1.27 2.3 1.69.86.42 2.03.63 2.97.64v-.02c.36.61 1 1.02 1.73 1.02 1.11 0 2-.89 2-2 0-1.11-.89-2-2-2zm-6.8 6c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm8 6c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+  <svg class="octicon octicon-git-merge" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="css-5lyks0">  <path fill-rule="evenodd" clip-rule="evenodd" d="M5 3.254V3.25V3.255C4.99934 3.45369 4.91985 3.64401 4.779 3.78415C4.63815 3.9243 4.44745 4.00283 4.24875 4.0025C4.05006 4.00217 3.85961 3.923 3.71923 3.78239C3.57885 3.64177 3.5 3.45119 3.5 3.2525C3.5 3.0538 3.57885 2.86323 3.71923 2.72261C3.85961 2.58199 4.05006 2.50283 4.24875 2.5025C4.44745 2.50217 4.63815 2.5807 4.779 2.72084C4.91985 2.86099 4.99934 3.0513 5 3.25V3.254ZM5.45 5.154C5.88079 4.8824 6.2067 4.47269 6.37445 3.99186C6.54221 3.51102 6.54188 2.9875 6.37353 2.50687C6.20517 2.02624 5.87875 1.61694 5.44762 1.34588C5.01649 1.07483 4.50616 0.95804 4.00005 1.01462C3.49394 1.0712 3.022 1.2978 2.66137 1.65737C2.30074 2.01695 2.07276 2.48822 2.0147 2.99416C1.95664 3.5001 2.07193 4.01077 2.34173 4.4427C2.61152 4.87462 3.01987 5.20224 3.5 5.372V10.628C2.99931 10.8049 2.57729 11.1532 2.30855 11.6112C2.0398 12.0692 1.94163 12.6075 2.03139 13.1309C2.12114 13.6542 2.39305 14.1291 2.79904 14.4713C3.20503 14.8136 3.71897 15.0014 4.25 15.0014C4.78103 15.0014 5.29496 14.8136 5.70095 14.4713C6.10695 14.1291 6.37885 13.6542 6.46861 13.1309C6.55837 12.6075 6.4602 12.0692 6.19145 11.6112C5.9227 11.1532 5.50069 10.8049 5 10.628V7.123C5.53827 7.71503 6.19447 8.18788 6.92641 8.51114C7.65836 8.8344 8.44985 9.00093 9.25 9H10.628C10.8049 9.50069 11.1532 9.9227 11.6112 10.1915C12.0692 10.4602 12.6075 10.5584 13.1309 10.4686C13.6542 10.3789 14.1291 10.1069 14.4713 9.70096C14.8136 9.29496 15.0014 8.78103 15.0014 8.25C15.0014 7.71897 14.8136 7.20503 14.4713 6.79904C14.1291 6.39305 13.6542 6.12114 13.1309 6.03139C12.6075 5.94163 12.0692 6.0398 11.6112 6.30855C11.1532 6.57729 10.8049 6.99931 10.628 7.5H9.25C8.4613 7.50006 7.68813 7.28066 7.01702 6.86634C6.34592 6.45202 5.80334 5.85912 5.45 5.154ZM12.75 9C12.9489 9 13.1397 8.92098 13.2803 8.78033C13.421 8.63968 13.5 8.44891 13.5 8.25C13.5 8.05109 13.421 7.86032 13.2803 7.71967C13.1397 7.57902 12.9489 7.5 12.75 7.5C12.5511 7.5 12.3603 7.57902 12.2197 7.71967C12.079 7.86032 12 8.05109 12 8.25C12 8.44891 12.079 8.63968 12.2197 8.78033C12.3603 8.92098 12.5511 9 12.75 9ZM4.25 13.5C4.44891 13.5 4.63968 13.421 4.78033 13.2803C4.92098 13.1397 5 12.9489 5 12.75C5 12.5511 4.92098 12.3603 4.78033 12.2197C4.63968 12.079 4.44891 12 4.25 12C4.05109 12 3.86032 12.079 3.71967 12.2197C3.57902 12.3603 3.5 12.5511 3.5 12.75C3.5 12.9489 3.57902 13.1397 3.71967 13.2803C3.86032 13.421 4.05109 13.5 4.25 13.5Z"></path></svg>
   Merged
 </span>
 ```
@@ -118,12 +118,13 @@ States come in a few variations that apply different colors. Use the state that 
 Use `State--small` for a state label with reduced padding a smaller font size. This is useful in denser areas of content.
 
 ```html live
-<span title="Status: open" class="State State--green State--small mr-2">
+<span class="State State--small mr-2" title="Status: Default">Default</span>
+<span class="State State--small State--green  mr-2" title="Status: open">
   <!-- <%= octicon "issue-opened" %> -->
   <svg class="octicon octicon-issue-opened" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg>
   Open
 </span>
-<span title="Status: closed" class="State State--red State--small">
+<span class="State State--small State--red mr-2" title="Status: closed">
   <!-- <%= octicon "issue-closed" %> -->
   <svg class="octicon octicon-issue-closed" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 10h2v2H7v-2zm2-6H7v5h2V4zm1.5 1.5l-1 1L12 9l4-4.5-1-1L12 7l-1.5-1.5zM8 13.7A5.71 5.71 0 0 1 2.3 8c0-3.14 2.56-5.7 5.7-5.7 1.83 0 3.45.88 4.5 2.2l.92-.92A6.947 6.947 0 0 0 8 1C4.14 1 1 4.14 1 8s3.14 7 7 7 7-3.14 7-7l-1.52 1.52c-.66 2.41-2.86 4.19-5.48 4.19v-.01z"></path></svg>
   Closed
@@ -132,17 +133,17 @@ Use `State--small` for a state label with reduced padding a smaller font size. T
 
 ## Counters
 
-Use the `Counter` component to add a count to navigational elements and buttons. Counters come in 3 variations: the default `Counter` with a light gray background, `Counter--gray` with a dark-gray background and inverse white text, and `Counter--gray-light` with a light-gray background and dark gray text. When a counter is empty, it's visibility will be hidden.
+Use the `Counter` component to add a count to navigational elements and buttons. Counters come in 3 variations: the default `Counter` with a light gray background, the `Counter--gray-light` with a lighter text color, and `Counter--gray` with a dark-gray background and inverse white text. When a counter is empty, it's visibility will be hidden.
 
-```html live title="Counter"
-<span class="Counter">16</span>
-<span class="Counter Counter--gray">32</span>
-<span class="Counter Counter--gray-light">64</span>
+```html live
+<span class="Counter mr-1">1</span>
+<span class="Counter mr-1 Counter--gray-light">23</span>
+<span class="Counter mr-1 Counter--gray">456</span>
 ```
 
 Use the `Counter` in navigation to indicate the number of items without the user having to click through or count the items, such as open issues in a GitHub repo. See more options in [navigation](./navigation).
 
-```html live title="Counter in tabs"
+```html live
 <div class="tabnav">
   <nav class="tabnav-tabs" aria-label="Foo bar">
     <a href="#url" class="tabnav-tab" aria-current="page">Foo tab <span class="Counter">23</a>
@@ -151,28 +152,35 @@ Use the `Counter` in navigation to indicate the number of items without the user
 </div>
 ```
 
-Counters can also be used in `Box` headers to indicate the number of items in a list. See more on the [box component](./box).
+You can also have icons and emoji in counters. Or use utilities for counters with different background colors.
 
-```html live title="Counter in Box headers"
-<div class="Box">
-  <div class="Box-header">
-    <h3 class="Box-title">
-      Box title
-      <span class="Counter Counter--gray">3</span>
-    </h3>
-  </div>
-  <ul>
-    <li class="Box-row">
-      Box row one
-    </li>
-    <li class="Box-row">
-      Box row two
-    </li>
-    <li class="Box-row">
-      Box row three
-    </li>
-  </ul>
-</div>
+```html live
+<span class="Counter mr-1">1.5K</span>
+<span class="Counter mr-1">
+  <!-- <%= octicon "comment" %> -->
+  <svg class="octicon octicon-comment" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 2.5C2.6837 2.5 2.62011 2.52634 2.57322 2.57322C2.52634 2.62011 2.5 2.6837 2.5 2.75V10.25C2.5 10.388 2.612 10.5 2.75 10.5H4.75C4.94891 10.5 5.13968 10.579 5.28033 10.7197C5.42098 10.8603 5.5 11.0511 5.5 11.25V13.44L8.22 10.72C8.36052 10.5793 8.55115 10.5002 8.75 10.5H13.25C13.3163 10.5 13.3799 10.4737 13.4268 10.4268C13.4737 10.3799 13.5 10.3163 13.5 10.25V2.75C13.5 2.6837 13.4737 2.62011 13.4268 2.57322C13.3799 2.52634 13.3163 2.5 13.25 2.5H2.75ZM1 2.75C1 1.784 1.784 1 2.75 1H13.25C14.216 1 15 1.784 15 2.75V10.25C15 10.7141 14.8156 11.1592 14.4874 11.4874C14.1592 11.8156 13.7141 12 13.25 12H9.06L6.487 14.573C6.28324 14.7767 6.02367 14.9153 5.74111 14.9715C5.45854 15.0277 5.16567 14.9988 4.8995 14.8886C4.63333 14.7784 4.40581 14.5917 4.24571 14.3522C4.08561 14.1127 4.0001 13.8311 4 13.543V12H2.75C2.28587 12 1.84075 11.8156 1.51256 11.4874C1.18437 11.1592 1 10.7141 1 10.25V2.75Z"></path></svg>
+  10
+</span>
+<span class="Counter mr-1">👍 2</span>
+<span class="Counter mr-1 bg-green text-white">22</span>
+<span class="Counter mr-1 bg-red text-white">22</span>
+<span class="Counter mr-1 bg-purple text-white">22</span>
+```
+
+## Small counters
+
+Use the `Counter--small` modifier class to reduce the size of a counter.
+
+```html live
+<span class="Counter mr-1 Counter--gray-light">1</span>
+<span class="Counter mr-1">23</span>
+<span class="Counter mr-1 Counter--gray">456</span>
+<span class="Counter mr-1">1.5K</span>
+<div class="my-2"></div>
+<span class="Counter Counter--small mr-1 Counter--gray-light">1</span>
+<span class="Counter Counter--small mr-1">23</span>
+<span class="Counter Counter--small mr-1 Counter--gray">456</span>
+<span class="Counter Counter--small mr-1">1.5K</span>
 ```
 
 ## Diffstat
