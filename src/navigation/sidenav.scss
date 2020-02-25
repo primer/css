@@ -10,6 +10,7 @@
   position: relative;
   display: block;
   width: 100%;
+  // stylelint-disable-next-line primer/spacing
   padding: 12px $spacer-3;
   color: $text-black;
   text-align: left;
@@ -45,6 +46,7 @@
 .SideNav-item:hover,
 .SideNav-item:focus {
   text-decoration: none;
+  // stylelint-disable-next-line primer/colors
   background-color: $gray-100;
   outline: none;
 }
@@ -55,6 +57,7 @@
 
 .SideNav-item[aria-current="page"],
 .SideNav-item[aria-selected="true"] {
+  // stylelint-disable-next-line primer/colors
   background-color: $orange-000;
 
   // Bar on the left

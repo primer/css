@@ -13,6 +13,7 @@
 .menu-item {
   position: relative;
   display: block;
+  // stylelint-disable-next-line primer/spacing
   padding: 12px $spacer-3;
   color: $text-black;
   border-bottom: $border-width $border-style $border-gray-light;
@@ -36,6 +37,7 @@
   &:focus,
   &:hover {
     text-decoration: none;
+    // stylelint-disable-next-line primer/colors
     background-color: $gray-100;
     outline: none;
   }
@@ -48,6 +50,7 @@
   &[aria-selected=true],
   &[aria-current] {
     cursor: default;
+    // stylelint-disable-next-line primer/colors
     background-color: $orange-000;
 
     &::before {
@@ -65,6 +68,7 @@
   .octicon {
     width: 16px;
     margin-right: $spacer-2;
+    // stylelint-disable-next-line primer/colors
     color: $gray-400;
     text-align: center;
   }
@@ -95,12 +99,13 @@
 
 .menu-heading {
   display: block;
+  padding: $spacer-1 $spacer-3;
   margin-top: 0;
   margin-bottom: 0;
-  padding: $spacer-1 $spacer-3;
-  line-height: 23px;
   // stylelint-disable-next-line primer/typography
   font-weight: 500;
+  // stylelint-disable-next-line primer/typography
+  line-height: 23px;
   // stylelint-disable-next-line primer/typography
   color: $text-black;
   border-bottom: $border-width $border-style $border-gray-light;

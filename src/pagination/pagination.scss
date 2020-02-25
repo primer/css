@@ -6,18 +6,19 @@
   em {
     display: inline-block;
     padding: $spacer-1 12px;
-    color: $text-black;
     font-style: normal;
+    color: $text-black;
     white-space: nowrap;
     vertical-align: middle;
     cursor: pointer;
     user-select: none;
+    // stylelint-disable-next-line primer/borders
     border-bottom: 2px $border-style transparent;
 
     &:hover,
     &:focus {
-      text-decoration: none;
       color: $text-gray-dark;
+      text-decoration: none;
       outline: 0;
     }
 
@@ -30,6 +31,7 @@
   .current:hover,
   [aria-current],
   [aria-current]:hover {
+    // stylelint-disable-next-line primer/borders
     border-color: $orange-500;
   }
 
@@ -39,8 +41,8 @@
   .gap:hover,
   .disabled:hover,
   [aria-disabled=true]:hover {
-    cursor: default;
     color: $text-gray-light;
+    cursor: default;
     border-color: transparent;
   }
 }
