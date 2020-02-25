@@ -2,14 +2,8 @@
 // stylelint-disable selector-max-type
 .tabnav {
   margin-top: 0;
-  // stylelint-disable-next-line primer/spacing
-  margin-bottom: 15px;
-  border-bottom: $border-width $border-style $border-gray-dark;
-
-  .Counter {
-    // stylelint-disable-next-line primer/spacing
-    margin-left: 5px;
-  }
+  margin-bottom: $spacer-3;
+  border-bottom: $border-width $border-style $border-gray;
 }
 
 .tabnav-tabs {
@@ -19,11 +13,11 @@
 
 .tabnav-tab {
   display: inline-block;
-  padding: $spacer-2 12px;
+  padding: $spacer-2 $spacer-3;
   font-size: $h5-size;
   // stylelint-disable-next-line primer/typography
-  line-height: 20px;
-  color: $text-gray;
+  line-height: 23px;
+  color: $text-gray-dark;
   text-decoration: none;
   background-color: transparent;
   border: $border-width $border-style transparent;
@@ -32,16 +26,29 @@
   &.selected,
   &[aria-selected=true],
   &[aria-current] {
-    color: $text-gray-dark;
     background-color: $bg-white;
-    border-color: $border-gray-dark;
+    border-color: $border-gray;
     border-radius: $border-radius $border-radius 0 0;
   }
 
   &:hover,
   &:focus {
-    color: $text-gray-dark;
     text-decoration: none;
+    color: $text-gray;
+  }
+
+  &:active {
+    color: $text-gray-light;
+  }
+
+  .octicon {
+    margin-right: $spacer-1;
+    // stylelint-disable-next-line primer/colors
+    color: $gray-400;
+  }
+
+  .Counter {
+    margin-left: $spacer-1;
   }
 }
 
@@ -66,12 +73,11 @@
 }
 
 // When tabnav-extra are anchors
-// stylelint-disable selector-no-qualifying-type
+// stylelint-disable-next-line selector-no-qualifying-type
 a.tabnav-extra:hover {
   color: $text-blue;
   text-decoration: none;
 }
-// stylelint-enable selector-no-qualifying-type
 
 // Tabnav buttons
 //
@@ -79,6 +85,5 @@ a.tabnav-extra:hover {
 // the buttons to be floated or inline-block.
 
 .tabnav-btn {
-  // stylelint-disable-next-line primer/spacing
-  margin-left: 10px;
+  margin-left: $spacer-2;
 }
