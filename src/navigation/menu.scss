@@ -86,7 +86,6 @@
 
   .avatar {
     float: left;
-    // stylelint-disable-next-line primer/spacing
     margin-right: $spacer-1;
   }
 
@@ -106,7 +105,6 @@
   font-weight: 500;
   // stylelint-disable-next-line primer/typography
   line-height: 23px;
-  // stylelint-disable-next-line primer/typography
   color: $text-black;
   border-bottom: $border-width $border-style $border-gray-light;
 
