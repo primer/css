@@ -10,12 +10,12 @@
   position: relative;
   display: block;
   width: 100%;
-  padding: $spacer-3;
-  color: $text-gray;
+  padding: 12px $spacer-3;
+  color: $text-black;
   text-align: left;
   background-color: transparent;
   border: 0;
-  border-top: $border;
+  border-top: $border-width $border-style $border-gray-light;
 
   &:first-child {
     border-top: 0;
@@ -34,7 +34,7 @@
     bottom: 0;
     left: 0;
     z-index: 1;
-    width: 3px;
+    width: 2px;
     pointer-events: none;
     content: "";
   }
@@ -44,32 +44,23 @@
 
 .SideNav-item:hover,
 .SideNav-item:focus {
-  color: $text-gray-dark;
   text-decoration: none;
-  background-color: $bg-gray;
+  background-color: $gray-100;
   outline: none;
-
-  // Bar on the left
-  &::before {
-    // stylelint-disable-next-line primer/colors
-    background-color: $gray-300;
-  }
 }
 
 .SideNav-item:active {
-  background-color: $bg-white;
+  background-color: $bg-gray-light;
 }
 
 .SideNav-item[aria-current="page"],
 .SideNav-item[aria-selected="true"] {
-  font-weight: $font-weight-semibold;
-  color: $text-gray-dark;
-  background-color: $bg-white;
+  background-color: $orange-000;
 
   // Bar on the left
   &::before {
     // stylelint-disable-next-line primer/colors
-    background-color: $orange-600;
+    background-color: $orange-500;
   }
 }
 
@@ -79,6 +70,7 @@
 
 .SideNav-icon {
   width: 16px;
+  margin-right: $spacer-2;
   color: $text-gray-light;
 }
 

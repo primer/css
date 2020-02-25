@@ -13,8 +13,7 @@
 .menu-item {
   position: relative;
   display: block;
-  padding: $spacer-1 $spacer-3;
-  line-height: 23px;
+  padding: 12px $spacer-3;
   color: $text-black;
   border-bottom: $border-width $border-style $border-gray-light;
 
@@ -34,9 +33,15 @@
     &::before { border-bottom-left-radius: $border-radius; }
   }
 
+  &:focus,
   &:hover {
     text-decoration: none;
     background-color: $gray-100;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $bg-gray-light;
   }
 
   &.selected,
