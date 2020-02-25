@@ -119,7 +119,7 @@ Use `.UnderlineNav-actions` to place another element, such as a button, to the o
     <a class="UnderlineNav-item" href="#url">Item 4</a>
   </div>
   <div class="UnderlineNav-actions">
-    <a class="btn">Button</a>
+    <a class="btn btn-sm">Button</a>
   </div>
 </nav>
 ```
@@ -142,7 +142,7 @@ Use `.UnderlineNav--right` to right align the navigation.
 ```html live title="UnderlineNav--right with actions"
 <nav class="UnderlineNav UnderlineNav--right" aria-label="Foo bar">
   <div class="UnderlineNav-actions">
-    <a class="btn">Button</a>
+    <a class="btn btn-sm">Button</a>
   </div>
   <div class="UnderlineNav-body">
     <a class="UnderlineNav-item" href="#url" aria-current="page">Item 1</a>
@@ -197,7 +197,7 @@ Use `.UnderlineNav--full` in combination with container styles and `.UnderlineNa
       <a class="UnderlineNav-item" href="#url">Item 4</a>
     </div>
     <div class="UnderlineNav-actions">
-      <a class="btn">Button</a>
+      <a class="btn btn-sm">Button</a>
     </div>
   </div>
 </nav>
