@@ -21,11 +21,12 @@
   position: relative;
   float: left;
   // stylelint-disable-next-line primer/spacing
-  padding: 6px 14px;
-  font-weight: $font-weight-bold;
+  padding: 6px $spacer-3;
+  // stylelint-disable-next-line primer/typography
+  font-weight: 500;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: $text-gray;
+  color: $text-gray-dark;
   border: $border;
 
   + .subnav-item {
@@ -46,7 +47,7 @@
     color: $text-white;
     background-color: $bg-blue;
     // stylelint-disable-next-line primer/borders
-    border-color: $blue;
+    border-color: $blue-600;
   }
 
   &:first-child {
@@ -63,13 +64,12 @@
 .subnav-search {
   position: relative;
   // stylelint-disable-next-line primer/spacing
-  margin-left: 10px;
+  margin-left: 12px;
 }
 
 .subnav-search-input {
   width: 320px;
-  // stylelint-disable-next-line primer/spacing
-  padding-left: 30px;
+  padding-left: $spacer-5;
   color: $text-gray;
 }
 
@@ -83,7 +83,7 @@
   left: 8px;
   display: block;
   // stylelint-disable-next-line primer/colors
-  color: darken($gray-300, 4%);
+  color: $gray-400;
   text-align: center;
   pointer-events: none;
 }
@@ -128,5 +128,5 @@
 
 .subnav-spacer-right {
   // stylelint-disable-next-line primer/spacing
-  padding-right: 10px;
+  padding-right: 12px;
 }
