@@ -69,8 +69,7 @@
   color: $text-gray-dark;
   background-color: $bg-gray-light;
   border-color: $border-color-button;
-  // stylelint-disable-next-line primer/box-shadow
-  box-shadow: 0 1px 0 rgba($gray-400, 0.1), inset 0 1px 0 rgba($white, 0.25);
+  box-shadow: $box-shadow, $box-shadow-highlight;
 
   &:focus,
   &.focus {
@@ -108,7 +107,7 @@
   $bg: #159739; // custom green
   $border-color: $green-600;
   $shadow: $green-900;
-  $box-shadow: 0 1px 0 rgba($shadow, 0.1), inset 0 1px 0 rgba($white, 0.03);
+  $box-shadow: $box-shadow, inset 0 1px 0 rgba($white, 0.03);
 
   $bg-hover: #138934; // custom green
   $border-hover: $green-700;
@@ -213,7 +212,7 @@
     color: rgba($color, 0.5);
     background-color: #f3f4f6;
     border-color: $border-color-button;
-    box-shadow: 0 1px 0 rgba($gray-400, 0.1), inset 0 1px 0 rgba($white, 0.25);
+    box-shadow: $box-shadow, $box-shadow-highlight;
   }
 
   .Counter {

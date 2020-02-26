@@ -31,9 +31,8 @@
   list-style: none;
   background-color: $bg-white;
   background-clip: padding-box;
-  border: $border-width $border-style $border-black-fade;
-  // stylelint-disable-next-line primer/borders
-  border-radius: $spacer-1;
+  border: $border;
+  border-radius: $border-radius;
   box-shadow: $box-shadow-large;
 
   &::before,
