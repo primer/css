@@ -57,8 +57,7 @@
 
 .SideNav-item[aria-current="page"],
 .SideNav-item[aria-selected="true"] {
-  // stylelint-disable-next-line primer/colors
-  background-color: $orange-000;
+  background-color: $bg-white;
 
   // Bar on the left
   &::before {
