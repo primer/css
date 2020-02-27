@@ -8,10 +8,12 @@ $border: $border-width $border-color $border-style !default;
 $border-radius: 6px !default;
 
 // Box shadow
-$box-shadow: 0 1px 1px rgba($black, 0.1) !default;
-$box-shadow-medium: 0 1px 5px $black-fade-15 !default;
-$box-shadow-large: 0 1px 15px $black-fade-15 !default;
-$box-shadow-extra-large: 0 10px 50px rgba($black, 0.07) !default;
+$box-shadow: 0 1px 0 rgba($gray-400, 0.1) !default;
+$box-shadow-medium: 0 3px 6px rgba($gray-400, 0.15) !default;
+$box-shadow-large: 0 8px 24px rgba($gray-400, 0.2) !default;
+$box-shadow-extra-large: 0 12px 48px rgba($gray-400, 0.3) !default;
+
+$box-shadow-highlight: inset 0 1px 0 rgba($white, 0.25) !default;
 
 // Focus shadow
 $focus-shadow: 0 0 0 3px rgba($border-blue, 0.3) !default;

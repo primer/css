@@ -3,7 +3,7 @@
 
 .Box {
   background-color: $bg-white;
-  border: $border-width $border-style $border-gray-dark;
+  border: $border;
   border-radius: $border-radius;
 }
 
@@ -75,7 +75,7 @@
   // stylelint-disable-next-line primer/spacing
   margin: (-$border-width) (-$border-width) 0;
   background-color: $bg-gray;
-  border-color: $border-gray-dark;
+  border-color: $border-color;
   border-style: $border-style;
   border-width: $border-width;
   border-top-left-radius: $border-radius;
@@ -95,10 +95,8 @@
   &:last-of-type {
     // stylelint-disable-next-line primer/spacing
     margin-bottom: -$border-width;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-right-radius: 2px;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
   }
 }
 
@@ -108,21 +106,17 @@
   // stylelint-disable-next-line primer/spacing
   margin-top: -1px;
   list-style-type: none; // To account for applying Box component to a list
-  border-top: $border-width $border-style $border-gray;
+  border-top: $border;
 
   &:first-of-type {
     border-top-color: transparent;
-    // stylelint-disable-next-line primer/borders
-    border-top-left-radius: 2px;
-    // stylelint-disable-next-line primer/borders
-    border-top-right-radius: 2px;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
   }
 
   &:last-of-type {
-    // stylelint-disable-next-line primer/borders
-    border-bottom-right-radius: 2px;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
   }
 
   // Adds a blue vertical line to the left of the row
@@ -216,7 +210,7 @@
   padding: $spacer-3;
   // stylelint-disable-next-line primer/spacing
   margin-top: -1px; // prevents double border when used with .Box-body
-  border-top: $border-width $border-style $border-gray;
+  border-top: $border;
 }
 
 // Option for a box with scrolling content

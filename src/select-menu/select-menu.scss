@@ -73,7 +73,7 @@ $SelectMenu-max-height: 480px !default;
   // stylelint-disable-next-line primer/borders
   border-radius: $border-radius * 2;
   // stylelint-disable-next-line primer/box-shadow
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 18px rgba($black, 0.4);
   animation: SelectMenu-modal-animation 0.12s cubic-bezier(0, 0.1, 0.1, 1) backwards;
 
   @keyframes SelectMenu-modal-animation {
@@ -96,9 +96,9 @@ $SelectMenu-max-height: 480px !default;
     max-height: $SelectMenu-max-height;
     margin: $spacer-1 0 $spacer-3 0;
     font-size: $font-size-small;
-    border: $border-width $border-style $border-gray-dark;
+    border: $border;
     border-radius: $border-radius;
-    box-shadow: $box-shadow-medium;
+    box-shadow: $box-shadow-large;
     animation-name: SelectMenu-modal-animation--sm;
   }
 }
