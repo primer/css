@@ -6,13 +6,11 @@ source: 'https://github.com/primer/css/tree/master/src/header'
 bundle: header
 ---
 
-Use the Header component to create a header that has all of it's items aligned vertically with consistent horizontal spacing.
-
-## Table of Contents
+Use the Header component to create a header that has all of its items aligned vertically with consistent horizontal spacing.
 
 ## Header
 
-The `.Header` class is the wrapping class that aligns all the items properly and gives the header it's dark background. Each direct child of the `.Header` component is expected to be a `.Header-item` component. The component utilizes flexbox CSS to align all these items properly and applies spacing scale margin.
+The `.Header` class is the wrapping class that aligns all the items properly and gives the header its dark background. Each direct child of the `.Header` component is expected to be a `.Header-item` component. The component utilizes flexbox CSS to align all these items properly and applies spacing scale margin.
 
 ```html live
 <div class="Header">

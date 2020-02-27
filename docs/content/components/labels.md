@@ -7,7 +7,7 @@ source: 'https://github.com/primer/css/tree/master/src/labels'
 bundle: labels
 ---
 
-Labels add metatdata or indicate status of items and navigational elements. Three different types of labels are available: [Labels](#default-label-styles) for adding metadata, [States](#states) for indicating status, and [Counters](#counters) for showing the count for a number of items.
+Labels add metadata or indicate status of items and navigational elements. Three different types of labels are available: [Labels](#default-label-styles) for adding metadata, [States](#states) for indicating status, and [Counters](#counters) for showing the count for a number of items.
 
 ## Labels
 
@@ -21,7 +21,7 @@ The base `Label` style does not apply a background color and only uses the defau
 <span class="Label" title="Label: design">design</span>
 ```
 
-**Note:** Be sure to include a title attribute on labels, it's helpful for people using screen-readers to differentiate a label from other text. I.e. without the title attribute, the following example would read as _"New select component design"_, rather than identifying `design` as a label.
+**Note:** Be sure to include a title attribute on labels, as it's helpful for people using screen-readers to differentiate a label from other text. For example, without the title attribute, the following case would read as _"New select component design"_, rather than identifying `design` as a label.
 
 ```html live
 <!-- Don't do this -->
@@ -60,9 +60,9 @@ Labels come in a few different themes. Use a theme that helps communicate the co
 
 Note: Avoid using `Label--orange` next to `Label--red` since most people will find it hard to tell the difference.
 
-## Issue Labels
+## Issue labels
 
-Issue Labels are used for adding labels to issues and pull requests. They also come with emoji support.
+Issue labels are used for adding labels to issues and pull requests. They also come with emoji support.
 
 ```html live
 <span class="IssueLabel bg-blue text-white mr-1" title="Label: Primer">Primer</span>
@@ -71,7 +71,7 @@ Issue Labels are used for adding labels to issues and pull requests. They also c
 <span class="IssueLabel bg-yellow text-gray-dark mr-1" title="Label: deploy: train">🚂 deploy: train</span>
 ```
 
-If an Issue Label needs to be bigger, add the `.IssueLabel--big` modifier.
+If an issue label needs to be bigger, add the `.IssueLabel--big` modifier.
 
 ```html live
 <span class="IssueLabel IssueLabel--big bg-blue text-white mr-1" title="Label: Primer">Primer</span>
@@ -133,7 +133,7 @@ Use `State--small` for a state label with reduced padding a smaller font size. T
 
 ## Counters
 
-Use the `Counter` component to add a count to navigational elements and buttons. Counters come in 3 variations: the default `Counter` with a light gray background, the `Counter--gray-light` with a lighter text color, and `Counter--gray` with a dark-gray background and inverse white text. When a counter is empty, it's visibility will be hidden.
+Use the `Counter` component to add a count to navigational elements and buttons. Counters come in 3 variations: the default `Counter` with a light gray background, the `Counter--gray-light` with a lighter text color, and `Counter--gray` with a dark-gray background and inverse white text. When a counter is empty, its visibility will be hidden.
 
 ```html live
 <span class="Counter mr-1">1</span>
@@ -194,7 +194,7 @@ Diffstats show how many deletions or additions a diff has. It's typically a row 
 </span>
 ```
 
-Use the `text-green` and `text-red` utilities to add addtitional information about the size of the diff.
+Use the `text-green` and `text-red` utilities to add additional information about the size of the diff.
 
 ```html live
 <span class="diffstat">

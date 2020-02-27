@@ -287,7 +287,7 @@ Use `Box-row--focus-gray` or `Box-row--focus-blue` when using along-side `naviga
 
 ### Box row unread
 
-Use `.Box-row-unread` to apply a blue vertical line highlight for indicating a row contains unread items.
+Use `.Box-row--unread` to apply a blue vertical line highlight for indicating a row contains unread items.
 
 ```html live
 <div class="Box">

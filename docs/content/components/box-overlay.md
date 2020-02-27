@@ -56,23 +56,4 @@ Box overlays come in three widths. The default `Box--overlay` is 440px wide, `Bo
 <link href="https://unpkg.com/@github/details-dialog-element/index.css" rel="stylesheet" />
 ```
 
-In github.com there is a shared dialog partial. You will only have to pass in the modal content:
-
-```erb
-<%= render layout: "shared/details_dialog", locals: {
-  button_text: "Delete account",
-  title: "Are you sure you want to delete this account?",
-  button_class: "btn btn-danger"
-} do %>
-  <div class="Box-body overflow-auto">
-    <p>
-      This action is irreversible.
-    </p>
-    <button type="button" class="btn btn-block btn-danger mt-2" data-close-dialog>
-      Delete
-    </button>
-  </div>
-<% end %>
-```
-
 [aria attributes]: https://www.w3.org/TR/html-aria/#allowed-aria-roles-states-and-properties
