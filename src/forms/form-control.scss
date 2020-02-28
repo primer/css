@@ -31,13 +31,13 @@ label {
   border: $border-width $border-style $border-color;
   border-radius: $border-radius;
   outline: none;
-  box-shadow: $form-control-shadow;
+  box-shadow: $box-shadow-inset;
 
   &.focus,
   &:focus {
     border-color: $border-blue;
     outline: none;
-    box-shadow: $focus-shadow;
+    box-shadow: $box-shadow-focus;
   }
 
   &[disabled] {

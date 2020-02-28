@@ -44,14 +44,13 @@
     vertical-align: text-bottom;
   }
 
-  // Darken for just a tad more contrast against the button background
   .Counter {
     // stylelint-disable-next-line primer/spacing
     margin-left: 2px;
     color: $text-gray;
     text-shadow: none;
     // stylelint-disable-next-line primer/colors
-    background-color: rgba($black, 0.1);
+    background-color: rgba($black, 0.1); // Darken for just a tad more contrast against the button background
   }
 
   .dropdown-caret {
@@ -63,31 +62,30 @@
 // Default button
 
 .btn {
+  $bg-default: $bg-gray-light;
   $bg-hover: #f3f4f6; // custom gray
+  $bg-active: darken($bg-hover, 2%);
+  $bg-disabled: $bg-default;
 
   color: $text-gray-dark;
-  background-color: $bg-gray-light;
+  background-color: $bg-default;
   border-color: $border-color-button;
   box-shadow: $box-shadow, $box-shadow-highlight;
-
-  &:focus,
-  &.focus {
-    border-color: transparent;
-    box-shadow: $focus-shadow;
-  }
+  transition: background-color 0.18s ease-out;
 
   &:hover,
-  &.hover {
+  &.hover,
+  [open] > & {
     background-color: $bg-hover;
+    transition: none;
   }
 
   &:active,
   &.selected,
-  &[aria-selected=true],
-  [open] > & {
-    background-color: $bg-hover;
-    border-color: $border-gray-dark;
-    box-shadow: none;
+  &[aria-selected=true] {
+    background-color: $bg-active;
+    box-shadow: $box-shadow-inset;
+    transition: none;
   }
 
   &:disabled,
@@ -95,50 +93,48 @@
   &[aria-disabled=true] {
     // stylelint-disable-next-line primer/colors
     color: $gray-400;
-    background-color: $bg-hover;
+    background-color: $bg-disabled;
     border-color: $border-color-button;
+  }
+
+  // Keep :focus after :disabled. Allows to see the focus ring even on disabled buttons
+  &:focus,
+  &.focus {
+    box-shadow: $box-shadow-focus;
   }
 }
 
 // Primary button
 
 .btn-primary {
-  $bg: #159739; // custom green
-  $border-color: $green-600;
+  $bg-default: #159739; // custom green
+  $bg-hover: #138934; // custom green
+  $bg-active: darken($bg-hover, 2%);
+  $bg-disabled: #94d3a2; // custom green
+
+  $border-default: $green-600;
+  $border-hover: $green-700;
+
   $shadow: $green-900;
   $box-shadow: $box-shadow, inset 0 1px 0 rgba($white, 0.03);
 
-  $bg-hover: #138934; // custom green
-  $border-hover: $green-700;
-  $bg-disabled: #94d3a2; // custom green
-
   color: $text-white;
   // stylelint-disable-next-line primer/colors
-  background-color: $bg;
-  border-color: $border-color;
+  background-color: $bg-default;
+  border-color: $border-default;
   box-shadow: $box-shadow;
 
-  &:focus,
-  &.focus {
-    // stylelint-disable-next-line primer/colors
-    background-color: $bg;
-    border-color: transparent;
-    // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 3px rgba($bg, 0.4);
-  }
-
   &:hover,
-  &.hover {
-    background-color: $bg-hover;
+  &.hover,
+  [open] > & {
     border-color: $border-hover;
+    background-color: $bg-hover;
   }
 
   &:active,
   &.selected,
-  &[aria-selected=true],
-  [open] > & {
-    background-color: $bg-hover;
-    border-color: $border-color;
+  &[aria-selected=true] {
+    background-color: $bg-active;
     // stylelint-disable-next-line primer/box-shadow
     box-shadow: inset 0 1px 0 rgba($shadow, 0.2);
   }
@@ -147,16 +143,22 @@
   &.disabled,
   &[aria-disabled=true] {
     // stylelint-disable-next-line primer/colors
-    color: rgba($text-white, 0.5);
+    color: rgba($text-white, 0.6);
     background-color: $bg-disabled;
     // stylelint-disable-next-line primer/borders
-    border-color: rgba($green-600, 0.1);
+    border-color: rgba($border-default, 0.1);
     box-shadow: $box-shadow;
+  }
+
+  &:focus,
+  &.focus {
+    // stylelint-disable-next-line primer/box-shadow
+    box-shadow: 0 0 0 3px rgba($bg-default, 0.4);
   }
 
   .Counter {
     // stylelint-disable-next-line primer/colors
-    color: darken($bg, 6%);
+    color: darken($bg-default, 6%);
     background-color: $bg-white;
   }
 
@@ -166,28 +168,20 @@
 }
 
 // Mixin: btn-inverse-on-hover
-//
-// Args: $color, $bg, $border
-@mixin btn-inverse-on-hover( $color, $bg, $border, $shadow ) {
+
+@mixin btn-inverse-on-hover( $color, $bg-hover, $bg-active, $border-hover, $border-active, $shadow ) {
   color: $color;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
 
-  &:focus {
-    border-color: transparent;
-    box-shadow: 0 0 0 3px rgba($bg, 0.4);
-  }
-
-  &:hover {
+  &:hover,
+  [open] > & {
     color: $text-white;
-    background-color: $bg;
-    border-color: $border;
+    background-color: $bg-hover;
+    border-color: $border-hover;
     box-shadow: 0 1px 0 rgba($shadow, 0.1), inset 0 1px 0 rgba($white, 0.03);
 
-    &:focus {
-      box-shadow: 0 0 0 3px rgba($bg, 0.4);
-    }
-
     .Counter {
-      background-color: darken($bg, 12%);
+      background-color: darken($bg-hover, 12%);
     }
 
     .octicon {
@@ -197,11 +191,10 @@
 
   &:active,
   &.selected,
-  &[aria-selected=true],
-  [open] > & {
+  &[aria-selected=true] {
     color: $text-white;
-    background-color: $bg;
-    border-color: $border;
+    background-color: $bg-active;
+    border-color: $border-active;
     box-shadow: inset 0 1px 0 rgba($shadow, 0.2);
   }
 
@@ -209,9 +202,13 @@
   &.disabled,
   &[aria-disabled=true] {
     color: rgba($color, 0.5);
-    background-color: #f3f4f6;
+    background-color: $bg-gray-light;
     border-color: $border-color-button;
     box-shadow: $box-shadow, $box-shadow-highlight;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($bg-hover, 0.4);
   }
 
   .Counter {
@@ -225,8 +222,10 @@
 .btn-danger {
   @include btn-inverse-on-hover(
     $color: $text-red,
-    $bg: $red-600,
-    $border: $red-700,
+    $bg-hover: $red-600,
+    $bg-active: darken($red-600, 3%),
+    $border-hover: $red-700,
+    $border-active: $red-800,
     $shadow: $red-900
   );
 }
@@ -236,8 +235,10 @@
 .btn-outline {
   @include btn-inverse-on-hover(
     $color: $blue-600,
-    $bg: $blue-500,
-    $border: $blue-600,
+    $bg-hover: $blue-500,
+    $bg-active: darken($blue-500, 3%),
+    $border-hover: $blue-600,
+    $border-active: rgba($blue-700, 0.5),
     $shadow: $blue-900
   );
 }
