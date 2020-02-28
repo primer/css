@@ -39,6 +39,13 @@ label {
     box-shadow: $focus-shadow;
   }
 
+  &[disabled] {
+    // stylelint-disable-next-line primer/colors
+    color: $gray-400;
+    // stylelint-disable-next-line primer/colors
+    background-color: #f3f4f6; // custom gray
+  }
+
   // Ensures inputs don't zoom on mobile but are body-font size on desktop
   @include breakpoint(md) {
     font-size: $body-font-size;
