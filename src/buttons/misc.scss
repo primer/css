@@ -59,10 +59,25 @@
   }
 }
 
+// Social button count
+// TODO: Deprecate? Use BtnGroup instead?
+
+.btn-with-count {
+  float: left;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  &:focus {
+    z-index: 1;
+  }
+}
+
 // Social count bubble
 //
 // A container that is used for social bubbles counts.
+
 .social-count {
+  position: relative;
   float: left;
   // stylelint-disable-next-line primer/spacing
   padding: 3px 12px;
@@ -87,5 +102,11 @@
   &:hover {
     color: $text-blue;
     cursor: pointer;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: $box-shadow-focus;
+    z-index: 1;
   }
 }
