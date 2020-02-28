@@ -30,6 +30,10 @@
   &.disabled,
   &[aria-disabled=true] {
     cursor: default;
+
+    .octicon {
+      color: inherit;
+    }
   }
 
   i {
@@ -47,10 +51,10 @@
   .Counter {
     // stylelint-disable-next-line primer/spacing
     margin-left: 2px;
-    color: $text-gray;
+    color: inherit;
     text-shadow: none;
     // stylelint-disable-next-line primer/colors
-    background-color: rgba($black, 0.1); // Darken for just a tad more contrast against the button background
+    background-color: rgba($black, 0.08); // Darken for just a tad more contrast against the button background
   }
 
   .dropdown-caret {
@@ -143,7 +147,7 @@
   &.disabled,
   &[aria-disabled=true] {
     // stylelint-disable-next-line primer/colors
-    color: rgba($text-white, 0.6);
+    color: rgba($text-white, 0.8);
     background-color: $bg-disabled;
     // stylelint-disable-next-line primer/borders
     border-color: rgba($border-default, 0.1);
@@ -157,9 +161,9 @@
   }
 
   .Counter {
+    color: inherit;
     // stylelint-disable-next-line primer/colors
-    color: darken($bg-default, 6%);
-    background-color: $bg-white;
+    background-color: rgba($bg-white, 0.2);
   }
 
   .octicon {
@@ -181,7 +185,7 @@
     box-shadow: 0 1px 0 rgba($shadow, 0.1), inset 0 1px 0 rgba($white, 0.03);
 
     .Counter {
-      background-color: darken($bg-hover, 12%);
+      background-color: rgba($bg-white, 0.2);
     }
 
     .octicon {
@@ -205,6 +209,10 @@
     background-color: $bg-gray-light;
     border-color: $border-color-button;
     box-shadow: $box-shadow, $box-shadow-highlight;
+
+    .Counter {
+      background-color: rgba($color, 0.05);
+    }
   }
 
   &:focus {
