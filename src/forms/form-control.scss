@@ -31,6 +31,7 @@ label {
   border: $border-width $border-style $border-color;
   border-radius: $border-radius;
   outline: none;
+  box-shadow: $form-control-shadow;
 
   &.focus,
   &:focus {
