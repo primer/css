@@ -18,8 +18,7 @@
   // stylelint-disable-next-line primer/spacing
   padding: 3px 12px;
   font-size: $font-size-small;
-  // stylelint-disable-next-line primer/typography
-  font-weight: 500;
+  font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 16px;
   background-color: transparent !important; // TODO: Remove again

@@ -10,8 +10,7 @@
 .State {
   display: inline-block;
   padding: $spacer-2 12px;
-  // stylelint-disable-next-line primer/typography
-  font-weight: 500;
+  font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 16px;
   color: $text-white;
