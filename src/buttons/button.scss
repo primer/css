@@ -127,7 +127,6 @@
   $box-shadow: $box-shadow, inset 0 1px 0 rgba($white, 0.03);
 
   color: $text-white;
-  // stylelint-disable-next-line primer/colors
   background-color: $bg-default;
   border-color: $border-default;
   box-shadow: $box-shadow;
@@ -135,8 +134,8 @@
   &:hover,
   &.hover,
   [open] > & {
-    border-color: $border-hover;
     background-color: $bg-hover;
+    border-color: $border-hover;
   }
 
   &:active,
@@ -265,7 +264,6 @@
     darken($blue-500, 2%)
   );
 }
-
 
 // Sizes
 //
