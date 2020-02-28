@@ -46,6 +46,10 @@
     margin-right: $spacer-1;
     color: $text-gray-light;
     vertical-align: text-bottom;
+
+    &:only-child {
+      margin-right: 0;
+    }
   }
 
   .Counter {
