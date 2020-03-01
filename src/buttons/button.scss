@@ -5,11 +5,11 @@
   position: relative;
   display: inline-block;
   // stylelint-disable-next-line primer/spacing
-  padding: 6px $spacer-3;
+  padding: 0 $spacer-3;
   font-size: $body-font-size;
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
-  line-height: 20px; // Specifically not inherit our `<body>` default
+  line-height: 32px; // + 2px from borders = 34px
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
@@ -270,16 +270,18 @@
 // Tweak `line-height` to make them smaller.
 .btn-sm {
   // stylelint-disable-next-line primer/spacing
-  padding: 3px 12px;
+  padding: 0 12px;
   font-size: $font-size-small;
   // stylelint-disable-next-line primer/typography
-  line-height: 20px;
+  line-height: 26px;
 }
 
 // Large button adds more padding around text. Use font-size utils to increase font-size.. e.g, <p class="text-gamma"><button class="btn btn-large btn-primary" type="button">Big green button</button></p>
 .btn-large {
   padding: $em-spacer-6 1.5em;
   font-size: inherit;
+  line-height: $lh-default;
+
   // stylelint-disable-next-line primer/borders
   border-radius: 0.5em;
 }
