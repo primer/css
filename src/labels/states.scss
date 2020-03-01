@@ -6,10 +6,14 @@
 // closed   - $red background
 // merged   - $purple background
 
+// Default 32px
+// Small 24px
+
 .state, // TODO: Deprecate
 .State {
   display: inline-block;
   padding: $spacer-2 12px;
+  font-size: $body-font-size;
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 16px;
