@@ -12,11 +12,11 @@
 .state, // TODO: Deprecate
 .State {
   display: inline-block;
-  padding: $spacer-2 12px;
+  padding: 0 12px;
   font-size: $body-font-size;
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
-  line-height: 16px;
+  line-height: 32px;
   color: $text-white;
   text-align: center;
   white-space: nowrap;
@@ -42,8 +42,10 @@
 // Small
 
 .State--small {
-  padding: $spacer-1 $spacer-2;
+  padding-left: $spacer-2;
+  padding-right: $spacer-2;
   font-size: $font-size-small;
+  line-height: 24px;
 
   .octicon {
     width: 1em; // Ensures different icons don't change State indicator width

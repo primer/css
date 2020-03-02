@@ -9,14 +9,16 @@
   padding: 0 7px;
   font-size: $font-size-small;
   font-weight: $font-weight-semibold;
-  line-height: $lh-default;
+  line-height: 18px;
   // stylelint-disable-next-line primer/borders
   border: $border-width $border-style transparent;
   border-radius: 2em;
 }
 
 @mixin labels-large {
-  padding: 2px 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 22px;
 }
 
 // Inline
