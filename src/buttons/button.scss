@@ -4,11 +4,11 @@
 .btn {
   position: relative;
   display: inline-block;
-  // stylelint-disable-next-line primer/spacing
   padding: 0 $spacer-3;
   font-size: $body-font-size;
   font-weight: $font-weight-semibold;
-  line-height: heightWithoutBorder($size-5);
+  // stylelint-disable-next-line primer/typography
+  line-height: height-without-border($size-5);
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
@@ -269,11 +269,12 @@
 // Tweak `line-height` to make them smaller.
 .btn-sm {
   // stylelint-disable-next-line primer/spacing
-  padding-left: 12px;
-  // stylelint-disable-next-line primer/spacing
   padding-right: 12px;
+  // stylelint-disable-next-line primer/spacing
+  padding-left: 12px;
   font-size: $font-size-small;
-  line-height: heightWithoutBorder($size-4);
+  // stylelint-disable-next-line primer/typography
+  line-height: height-without-border($size-4);
 }
 
 // Large button adds more padding around text. Use font-size utils to increase font-size.. e.g, <p class="text-gamma"><button class="btn btn-large btn-primary" type="button">Big green button</button></p>

@@ -20,7 +20,8 @@ label {
   // stylelint-disable-next-line primer/spacing
   padding: 0 12px;
   font-size: $body-font-size;
-  line-height: heightWithoutBorder($size-5);
+  // stylelint-disable-next-line primer/typography
+  line-height: height-without-border($size-5);
   color: $text-gray-dark;
   vertical-align: middle;
   background-color: $bg-white;
@@ -94,13 +95,14 @@ textarea.form-control {
 // Mini inputs, to match .minibutton
 .input-sm {
   font-size: $font-size-small;
-  line-height: heightWithoutBorder($size-4);
+  // stylelint-disable-next-line primer/typography
+  line-height: height-without-border($size-4);
 }
 
 // Large inputs
 .input-lg {
-  padding-left: $spacer-3;
   padding-right: $spacer-3;
+  padding-left: $spacer-3;
   font-size: $h4-size;
 }
 

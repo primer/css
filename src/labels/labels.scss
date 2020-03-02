@@ -10,8 +10,8 @@
 .label, // TODO: Deprecte
 .Label {
   @include labels-base;
-  border-color: $border-color;
   background-color: transparent !important; // TODO: Remove again
+  border-color: $border-color;
 
   &:hover {
     text-decoration: none;

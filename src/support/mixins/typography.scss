@@ -1,7 +1,7 @@
-// heightWithoutBorder
+// height-without-border
 //
 // Removes top/bottom border from the total height
-@function heightWithoutBorder($height) {
+@function height-without-border($height) {
   @return $height - ($border-width * 2);
 }
 

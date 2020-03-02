@@ -4,6 +4,7 @@
 .form-select {
   display: inline-block;
   max-width: 100%;
+  // stylelint-disable-next-line primer/typography
   height: $size-5;
   padding-right: $spacer-4;
   background-color: $bg-white;
@@ -27,7 +28,8 @@
   height: $size-4;
   min-height: $size-4;
   font-size: $font-size-small;
-  line-height: heightWithoutBorder($size-4);
+  // stylelint-disable-next-line primer/typography
+  line-height: height-without-border($size-4);
 
   &[multiple] {
     height: auto;
