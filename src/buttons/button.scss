@@ -177,7 +177,7 @@
 
 @mixin btn-inverse-on-hover( $color, $bg-hover, $bg-active, $border-hover, $border-active, $shadow ) {
   color: $color;
-  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+  transition: none;
 
   &:hover,
   [open] > & {
