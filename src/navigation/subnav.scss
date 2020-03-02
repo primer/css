@@ -21,10 +21,9 @@
   position: relative;
   float: left;
   // stylelint-disable-next-line primer/spacing
-  padding: 6px $spacer-3;
+  padding: 0 $spacer-3;
   font-weight: $font-weight-semibold;
-  // stylelint-disable-next-line primer/typography
-  line-height: 20px;
+  line-height: heightWithoutBorder($size-5);
   color: $text-gray-dark;
   border: $border;
 
