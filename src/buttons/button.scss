@@ -78,13 +78,13 @@
   background-color: $bg-default;
   border-color: $border-color-button;
   box-shadow: $box-shadow, $box-shadow-highlight;
-  transition: background-color 0.18s ease-out;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
 
   &:hover,
   &.hover,
   [open] > & {
     background-color: $bg-hover;
-    transition: none;
+    transition-duration: 0.1s;
   }
 
   &:active,
