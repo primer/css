@@ -76,12 +76,17 @@ Textual form controls have a white background by default. You can change this to
 ```html live
 <form>
   <input class="form-control" type="text" placeholder="Default input" aria-label="Default input" />
-  <input
-    class="form-control input-contrast"
-    type="text"
-    placeholder="Input with contrast"
-    aria-label="Input with contrast"
-  />
+  <input class="form-control input-contrast" type="text" placeholder="Input with contrast" aria-label="Input with contrast" />
+</form>
+```
+
+#### Disabled state
+
+Add the `disabled` attribute to make a `.form-control` appear disabled.
+
+```html live
+<form>
+  <input class="form-control" type="text" placeholder="Disabled input" aria-label="Disabled input" disabled />
 </form>
 ```
 

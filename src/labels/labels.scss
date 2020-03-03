@@ -1,43 +1,38 @@
-// Needs refactoring
 // Labels
-//
-// Use labels to add keyword tags or phrases to issues and pull requests. These
-// are used within a list of issues/PRs, on individual issues/PRs, and within
-// the select menus that manage them.
 
 // Provide a wrapper to ensure labels stick together
 .labels {
   position: relative;
 }
 
-// Each label gets common styles
+// Default label
 
 .label, // TODO: Deprecte
 .Label {
-  display: inline-block;
-  // stylelint-disable-next-line primer/spacing
-  padding: 3px 12px;
-  font-size: $font-size-small;
-  // stylelint-disable-next-line primer/typography
-  font-weight: 500;
-  // stylelint-disable-next-line primer/typography
-  line-height: 16px;
+  @include labels-base;
   background-color: transparent !important; // TODO: Remove again
-  border: $border-width $border-style $border-color;
-  // stylelint-disable-next-line primer/borders
-  border-radius: 2em;
+  border-color: $border-color;
 
   &:hover {
     text-decoration: none;
   }
 }
 
-// Custom GitHub labels (not for issues/PRs/etc)
-//
-// Commonly used across the site to indicate a particular role. For example,
-// "repo owner" within code comments or role in organizations.
+// Large
 
-.Label--outline, // TODO: Deprecate
+.Label--large {
+  @include labels-large;
+}
+
+// Inline
+
+.Label--inline {
+  @include labels--inline;
+}
+
+// Contrast
+
+.Label--outline, // TODO: Deprecate? It's now the default
 .Label--gray {
   color: $text-gray;
   border-color: $border-gray;

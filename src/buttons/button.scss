@@ -4,13 +4,11 @@
 .btn {
   position: relative;
   display: inline-block;
-  // stylelint-disable-next-line primer/spacing
-  padding: 6px $spacer-3;
+  padding: 0 $spacer-3;
   font-size: $body-font-size;
+  font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
-  font-weight: 500;
-  // stylelint-disable-next-line primer/typography
-  line-height: 20px; // Specifically not inherit our `<body>` default
+  line-height: height-without-border($size-5);
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
@@ -31,6 +29,10 @@
   &.disabled,
   &[aria-disabled=true] {
     cursor: default;
+
+    .octicon {
+      color: inherit;
+    }
   }
 
   i {
@@ -43,16 +45,19 @@
     margin-right: $spacer-1;
     color: $text-gray-light;
     vertical-align: text-bottom;
+
+    &:only-child {
+      margin-right: 0;
+    }
   }
 
-  // Darken for just a tad more contrast against the button background
   .Counter {
     // stylelint-disable-next-line primer/spacing
     margin-left: 2px;
-    color: $text-gray;
+    color: inherit;
     text-shadow: none;
     // stylelint-disable-next-line primer/colors
-    background-color: rgba($black, 0.1);
+    background-color: rgba($black, 0.08); // Darken for just a tad more contrast against the button background
   }
 
   .dropdown-caret {
@@ -64,31 +69,30 @@
 // Default button
 
 .btn {
+  $bg-default: $bg-gray-light;
   $bg-hover: #f3f4f6; // custom gray
+  $bg-active: darken($bg-hover, 2%);
+  $bg-disabled: $bg-default;
 
   color: $text-gray-dark;
-  background-color: $bg-gray-light;
+  background-color: $bg-default;
   border-color: $border-color-button;
   box-shadow: $box-shadow, $box-shadow-highlight;
-
-  &:focus,
-  &.focus {
-    border-color: transparent;
-    box-shadow: $focus-shadow;
-  }
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
 
   &:hover,
-  &.hover {
+  &.hover,
+  [open] > & {
     background-color: $bg-hover;
+    transition-duration: 0.1s;
   }
 
   &:active,
   &.selected,
-  &[aria-selected=true],
-  [open] > & {
-    background-color: $bg-hover;
-    border-color: $border-gray-dark;
-    box-shadow: none;
+  &[aria-selected=true] {
+    background-color: $bg-active;
+    box-shadow: $box-shadow-inset;
+    transition: none;
   }
 
   &:disabled,
@@ -96,50 +100,47 @@
   &[aria-disabled=true] {
     // stylelint-disable-next-line primer/colors
     color: $gray-400;
-    background-color: $bg-hover;
+    background-color: $bg-disabled;
     border-color: $border-color-button;
+  }
+
+  // Keep :focus after :disabled. Allows to see the focus ring even on disabled buttons
+  &:focus,
+  &.focus {
+    box-shadow: $box-shadow-focus;
   }
 }
 
 // Primary button
 
 .btn-primary {
-  $bg: #159739; // custom green
-  $border-color: $green-600;
+  $bg-default: #159739; // custom green
+  $bg-hover: #138934; // custom green
+  $bg-active: darken($bg-hover, 2%);
+  $bg-disabled: #94d3a2; // custom green
+
+  $border-default: $green-600;
+  $border-hover: $green-700;
+
   $shadow: $green-900;
   $box-shadow: $box-shadow, inset 0 1px 0 rgba($white, 0.03);
 
-  $bg-hover: #138934; // custom green
-  $border-hover: $green-700;
-  $bg-disabled: #94d3a2; // custom green
-
   color: $text-white;
-  // stylelint-disable-next-line primer/colors
-  background-color: $bg;
-  border-color: $border-color;
+  background-color: $bg-default;
+  border-color: $border-default;
   box-shadow: $box-shadow;
 
-  &:focus,
-  &.focus {
-    // stylelint-disable-next-line primer/colors
-    background-color: $bg;
-    border-color: transparent;
-    // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 3px rgba($bg, 0.4);
-  }
-
   &:hover,
-  &.hover {
+  &.hover,
+  [open] > & {
     background-color: $bg-hover;
     border-color: $border-hover;
   }
 
   &:active,
   &.selected,
-  &[aria-selected=true],
-  [open] > & {
-    background-color: $bg-hover;
-    border-color: $border-color;
+  &[aria-selected=true] {
+    background-color: $bg-active;
     // stylelint-disable-next-line primer/box-shadow
     box-shadow: inset 0 1px 0 rgba($shadow, 0.2);
   }
@@ -148,17 +149,23 @@
   &.disabled,
   &[aria-disabled=true] {
     // stylelint-disable-next-line primer/colors
-    color: rgba($text-white, 0.5);
+    color: rgba($text-white, 0.8);
     background-color: $bg-disabled;
     // stylelint-disable-next-line primer/borders
-    border-color: rgba($green-600, 0.1);
+    border-color: rgba($border-default, 0.1);
     box-shadow: $box-shadow;
   }
 
+  &:focus,
+  &.focus {
+    // stylelint-disable-next-line primer/box-shadow
+    box-shadow: 0 0 0 3px rgba($bg-default, 0.4);
+  }
+
   .Counter {
+    color: inherit;
     // stylelint-disable-next-line primer/colors
-    color: darken($bg, 6%);
-    background-color: $bg-white;
+    background-color: rgba($bg-white, 0.2);
   }
 
   .octicon {
@@ -167,28 +174,20 @@
 }
 
 // Mixin: btn-inverse-on-hover
-//
-// Args: $color, $bg, $border
-@mixin btn-inverse-on-hover( $color, $bg, $border, $shadow ) {
+
+@mixin btn-inverse-on-hover( $color, $bg-hover, $bg-active, $border-hover, $border-active, $shadow ) {
   color: $color;
+  transition: none;
 
-  &:focus {
-    border-color: transparent;
-    box-shadow: 0 0 0 3px rgba($bg, 0.4);
-  }
-
-  &:hover {
+  &:hover,
+  [open] > & {
     color: $text-white;
-    background-color: $bg;
-    border-color: $border;
+    background-color: $bg-hover;
+    border-color: $border-hover;
     box-shadow: 0 1px 0 rgba($shadow, 0.1), inset 0 1px 0 rgba($white, 0.03);
 
-    &:focus {
-      box-shadow: 0 0 0 3px rgba($bg, 0.4);
-    }
-
     .Counter {
-      background-color: darken($bg, 12%);
+      background-color: rgba($bg-white, 0.2);
     }
 
     .octicon {
@@ -198,11 +197,10 @@
 
   &:active,
   &.selected,
-  &[aria-selected=true],
-  [open] > & {
+  &[aria-selected=true] {
     color: $text-white;
-    background-color: $bg;
-    border-color: $border;
+    background-color: $bg-active;
+    border-color: $border-active;
     box-shadow: inset 0 1px 0 rgba($shadow, 0.2);
   }
 
@@ -210,9 +208,17 @@
   &.disabled,
   &[aria-disabled=true] {
     color: rgba($color, 0.5);
-    background-color: #f3f4f6;
+    background-color: $bg-gray-light;
     border-color: $border-color-button;
     box-shadow: $box-shadow, $box-shadow-highlight;
+
+    .Counter {
+      background-color: rgba($color, 0.05);
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($bg-hover, 0.4);
   }
 
   .Counter {
@@ -226,8 +232,10 @@
 .btn-danger {
   @include btn-inverse-on-hover(
     $color: $text-red,
-    $bg: $red-600,
-    $border: $red-700,
+    $bg-hover: $red-600,
+    $bg-active: darken($red-600, 3%),
+    $border-hover: $red-700,
+    $border-active: $red-800,
     $shadow: $red-900
   );
 }
@@ -237,8 +245,10 @@
 .btn-outline {
   @include btn-inverse-on-hover(
     $color: $blue-600,
-    $bg: $blue-500,
-    $border: $blue-600,
+    $bg-hover: $blue-500,
+    $bg-active: darken($blue-500, 3%),
+    $border-hover: $blue-600,
+    $border-active: rgba($blue-700, 0.5),
     $shadow: $blue-900
   );
 }
@@ -254,30 +264,25 @@
   );
 }
 
-// Social button count
-// TODO: Deprecate? Use BtnGroup instead?
-
-.btn-with-count {
-  float: left;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-// Minibutton overrides
+// Sizes
 //
 // Tweak `line-height` to make them smaller.
 .btn-sm {
   // stylelint-disable-next-line primer/spacing
-  padding: 3px 12px;
+  padding-right: 12px;
+  // stylelint-disable-next-line primer/spacing
+  padding-left: 12px;
   font-size: $font-size-small;
   // stylelint-disable-next-line primer/typography
-  line-height: 20px;
+  line-height: height-without-border($size-4);
 }
 
 // Large button adds more padding around text. Use font-size utils to increase font-size.. e.g, <p class="text-gamma"><button class="btn btn-large btn-primary" type="button">Big green button</button></p>
 .btn-large {
   padding: $em-spacer-6 1.5em;
   font-size: inherit;
+  line-height: $lh-default;
+
   // stylelint-disable-next-line primer/borders
   border-radius: 0.5em;
 }
@@ -289,93 +294,4 @@
   display: block;
   width: 100%;
   text-align: center;
-}
-
-// Link-like buttons
-//
-// This class is for styling <button> and <input> elements to look like links
-.btn-link {
-  display: inline-block;
-  padding: 0;
-  font-size: inherit;
-  color: $text-blue;
-  text-decoration: none;
-  white-space: nowrap;
-  cursor: pointer;
-  user-select: none;
-  background-color: transparent;
-  border: 0;
-  appearance: none; // Corrects inability to style clickable `input` types in iOS.
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:disabled,
-  &[aria-disabled=true] {
-    &,
-    &:hover {
-      // stylelint-disable-next-line primer/colors
-      color: rgba($gray-600, 0.5);
-      cursor: default;
-    }
-  }
-}
-
-// Invisible button
-//
-// Typically used as a "cancel" button next to a .btn
-.btn-invisible {
-  color: $text-blue;
-  background-color: transparent; // Reset default gradient backgrounds and colors
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-
-  &:hover,
-  &:active,
-  &:focus,
-  &.selected,
-  &[aria-selected=true],
-  &.zeroclipboard-is-hover,
-  &.zeroclipboard-is-active {
-    color: $text-blue;
-    background: none;
-    outline: none;
-    box-shadow: none;
-  }
-}
-
-// Octicon button
-//
-// Icon-only buttons
-.btn-octicon {
-  display: inline-block;
-  // stylelint-disable-next-line primer/spacing
-  padding: 5px;
-  // stylelint-disable-next-line primer/spacing
-  margin-left: 5px;
-  line-height: $lh-condensed-ultra;
-  color: $text-gray;
-  vertical-align: middle;
-
-  // For `<button>` elements
-  background: transparent;
-  border: 0;
-
-  &:hover { color: $text-blue; }
-
-  &.disabled,
-  &[aria-disabled=true] {
-    // stylelint-disable-next-line primer/colors
-    color: $gray-400;
-    cursor: default;
-
-    // stylelint-disable-next-line primer/colors
-    &:hover { color: $gray-400; }
-  }
-}
-
-.btn-octicon-danger:hover {
-  color: $text-red;
 }

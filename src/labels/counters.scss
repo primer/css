@@ -1,14 +1,13 @@
 // Counters are rounded-corner badges for numbers
 .Counter {
   display: inline-block;
-  min-width: 20px; // makes sure it's a circle with just one digit
+  min-width: $size-2; // makes sure it's a circle with just one digit
   // stylelint-disable-next-line primer/spacing
-  padding: 2px 6px;
+  padding: 0 6px;
   font-size: $font-size-small;
+  font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
-  font-weight: 500;
-  // stylelint-disable-next-line primer/typography
-  line-height: 16px;
+  line-height: $size-2;
   color: $text-gray-dark;
   text-align: center;
   // stylelint-disable-next-line primer/colors

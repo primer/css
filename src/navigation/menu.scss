@@ -13,8 +13,7 @@
 .menu-item {
   position: relative;
   display: block;
-  // stylelint-disable-next-line primer/spacing
-  padding: 12px $spacer-3;
+  padding: $spacer-2 $spacer-3;
   color: $text-black;
   border-bottom: $border-width $border-style $border-gray-light;
 
@@ -101,8 +100,7 @@
   padding: $spacer-1 $spacer-3;
   margin-top: 0;
   margin-bottom: 0;
-  // stylelint-disable-next-line primer/typography
-  font-weight: 500;
+  font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 23px;
   color: $text-black;

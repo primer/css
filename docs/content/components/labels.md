@@ -60,6 +60,27 @@ Labels come in a few different themes. Use a theme that helps communicate the co
 
 Note: Avoid using `Label--orange` next to `Label--red` since most people will find it hard to tell the difference.
 
+### Label sizes
+
+If space allows, add the `Label--large` modidfier to add a bit more padding to lables.
+
+```html live
+<span class="Label Label--gray-darker mr-1" title="Label: Default">Default</span>
+<span class="Label Label--large Label--gray-darker mr-1" title="Label: Large">Large</span>
+```
+
+### Inline labels
+
+Sometimes when adding a label the line-height can be incrased. Or the parent element increases in height. If that is not desired, use the `Label--inline` modifier change to the `display` property to `inline`. The font-size also adapts.
+
+```html live
+<p class="col-4">
+  Lorem Ipsum is simply <span class="Label Label--inline" title="Label: dummy">dummy text</span>
+  <span>of </span> the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
+</p>
+```
+
+
 ## Issue labels
 
 Issue labels are used for adding labels to issues and pull requests. They also come with emoji support.

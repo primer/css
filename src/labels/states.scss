@@ -6,14 +6,18 @@
 // closed   - $red background
 // merged   - $purple background
 
+// Default 32px
+// Small 24px
+
 .state, // TODO: Deprecate
 .State {
   display: inline-block;
-  padding: $spacer-2 12px;
+  // stylelint-disable-next-line primer/spacing
+  padding: 0 12px;
+  font-size: $body-font-size;
+  font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
-  font-weight: 500;
-  // stylelint-disable-next-line primer/typography
-  line-height: 16px;
+  line-height: $size-5;
   color: $text-white;
   text-align: center;
   white-space: nowrap;
@@ -39,8 +43,11 @@
 // Small
 
 .State--small {
-  padding: $spacer-1 $spacer-2;
+  padding-right: $spacer-2;
+  padding-left: $spacer-2;
   font-size: $font-size-small;
+  // stylelint-disable-next-line primer/typography
+  line-height: $size-3;
 
   .octicon {
     width: 1em; // Ensures different icons don't change State indicator width

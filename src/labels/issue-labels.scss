@@ -1,16 +1,9 @@
 // Issue Labels
 
+// TODO: Replace with .Label once solid backgrounds are supported
+
 .IssueLabel {
-  display: inline-block;
-  // stylelint-disable-next-line primer/spacing
-  padding: 2px $spacer-2;
-  font-size: $font-size-small;
-  // stylelint-disable-next-line primer/typography
-  font-weight: 500;
-  // stylelint-disable-next-line primer/typography
-  line-height: 16px;
-  // stylelint-disable-next-line primer/borders
-  border-radius: 2em;
+  @include labels-base;
 
   .g-emoji {
     position: relative;
@@ -26,5 +19,5 @@
 }
 
 .IssueLabel--big {
-  padding: $spacer-1 12px;
+  @include labels-large;
 }
