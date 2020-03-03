@@ -97,12 +97,11 @@
 
 .menu-heading {
   display: block;
-  padding: $spacer-1 $spacer-3;
+  padding: $spacer-2 $spacer-3;
   margin-top: 0;
   margin-bottom: 0;
-  font-weight: $font-weight-semibold;
-  // stylelint-disable-next-line primer/typography
-  line-height: 23px;
+  font-size: inherit;
+  font-weight: $font-weight-bold;
   color: $text-black;
   border-bottom: $border-width $border-style $border-gray-light;
 
