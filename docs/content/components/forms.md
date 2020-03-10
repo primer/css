@@ -222,40 +222,70 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
 
 #### Form group validation
 
-Convey errors and warnings for form groups. Add the appropriate class—either `.errored` or `.warn`—to the `<div class="form-group">` to start. Then, house your error messaging in an additional `<div>` with either `.error` or `.warning`.
+Convey success, errors and warnings for form groups.
+
+If the input is **valid**, add the `.successful` class to the `<div class="form-group">` element. Next add/update a success message to the `<div>` under the input, as well as the `.success` class.
 
 ```html live
-<form class="pb-2">
+<form>
+  <div class="form-group successful">
+    <div class="form-group-header">
+      <label for="unsername-input">Username</label>
+    </div>
+    <div class="form-group-body">
+      <input
+        class="form-control"
+        type="text"
+        value="monalisa"
+        id="unsername-input"
+        aria-describedby="unsername-input-validation"
+      />
+    </div>
+    <div class="success" id="unsername-input-validation">monalisa is available</div>
+  </div>
+</form>
+```
+
+If the input is **not valid**, add the `.errored` class to the `<div class="form-group">` element. Next add/update an error message to the `<div>` under the input, as well as the `.error` class.
+
+```html live
+<form class="pb-6">
   <div class="form-group errored">
     <div class="form-group-header">
-      <label for="example-text-errored">Example Text</label>
+      <label for="unsername-input">Username</label>
     </div>
     <div class="form-group-body">
       <input
         class="form-control"
         type="text"
-        value="Example Value"
-        id="example-text-errored"
-        aria-describedby="form-error-text"
+        value="monalisa"
+        id="unsername-input"
+        aria-describedby="unsername-input-validation"
       />
     </div>
-    <div class="error" id="form-error-text">This example input has an error.</div>
+    <div class="error" id="unsername-input-validation">monalisa is not available. monalisa-beep, monalisa-cyber, or monalisa87 are available.</div>
   </div>
-  <br />
+</form>
+  ```
+
+If the input should show a **warning**, add the `.warn` class to the `<div class="form-group">` element. Next add/update a warning message to the `<div>` under the input, as well as the `.warning` class.
+
+  ```html live
+<form class="pb-6">
   <div class="form-group warn">
     <div class="form-group-header">
-      <label for="example-text-warn">Example Text</label>
+      <label for="unsername-input">Username</label>
     </div>
     <div class="form-group-body">
       <input
         class="form-control"
         type="text"
-        value="Example Value"
-        id="example-text-warn"
-        aria-describedby="form-warning-text"
+        value="monalisa-monalisa-monalisa-monalisa-"
+        id="unsername-input"
+        aria-describedby="unsername-input-validation"
       />
     </div>
-    <div class="warning" id="form-warning-text">This example input has a warning.</div>
+    <div class="warning" id="unsername-input-validation">36 of maximum 39 characters entered.</div>
   </div>
 </form>
 ```
