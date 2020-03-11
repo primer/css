@@ -224,7 +224,7 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
 
 Convey success, errors and warnings for form groups. For github.com consider using the [`<auto-check>`](https://github.github.io/web-systems-documentation/demo/custom_elements/auto_check/) element to perform server-side validation on an input.
 
-If the input is **valid**, add the `.successed` class to the `<div class="form-group">` element. Next add/update a success message to the `<div>` under the input, as well as the `.success` class.
+If the input is **valid**, add the `.successed` class to the `<div class="form-group">` element. Next add/update a success message to the `.note` element, as well as the `.success` class.
 
 ```html live
 <form class="pb-6">
@@ -241,12 +241,12 @@ If the input is **valid**, add the `.successed` class to the `<div class="form-g
         aria-describedby="username-input-validation"
       />
     </div>
-    <div class="success" id="username-input-validation">monalisa is available</div>
+    <p class="note success" id="username-input-validation">monalisa is available</p>
   </div>
 </form>
 ```
 
-If the input is **not valid**, add the `.errored` class to the `<div class="form-group">` element. Next add/update an error message to the `<div>` under the input, as well as the `.error` class.
+If the input is **not valid**, add the `.errored` class to the `<div class="form-group">` element. Next add/update an error message to the `.note` element, as well as the `.error` class.
 
 ```html live
 <form class="pb-6">
@@ -263,12 +263,12 @@ If the input is **not valid**, add the `.errored` class to the `<div class="form
         aria-describedby="username-input-validation"
       />
     </div>
-    <div class="error" id="username-input-validation">monalisa is not available. monalisa-beep, monalisa-cyber, or monalisa87 are available.</div>
+    <p class="note error" id="username-input-validation">monalisa is not available. monalisa-beep, monalisa-cyber, or monalisa87 are available.</p>
   </div>
 </form>
   ```
 
-If the input should show a **warning**, add the `.warn` class to the `<div class="form-group">` element. Next add/update a warning message to the `<div>` under the input, as well as the `.warning` class.
+If the input should show a **warning**, add the `.warn` class to the `<div class="form-group">` element. Next add/update a warning message to the `.note` element, as well as the `.warning` class.
 
   ```html live
 <form class="pb-6">
@@ -285,7 +285,7 @@ If the input should show a **warning**, add the `.warn` class to the `<div class
         aria-describedby="username-input-validation"
       />
     </div>
-    <div class="warning" id="username-input-validation">36 of maximum 39 characters entered.</div>
+    <p class="note warning" id="username-input-validation">36 of maximum 39 characters entered.</p>
   </div>
 </form>
 ```
