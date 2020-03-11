@@ -50,7 +50,7 @@
   &[aria-current] {
     cursor: default;
     // stylelint-disable-next-line primer/colors
-    background-color: $orange-000;
+    background-color: #fff2f0; // custom coral
 
     &::before {
       position: absolute;
@@ -60,7 +60,7 @@
       width: 2px;
       content: "";
       // stylelint-disable-next-line primer/colors
-      background-color: $orange-500;
+      background-color: #f9826c; // custom coral
     }
   }
 

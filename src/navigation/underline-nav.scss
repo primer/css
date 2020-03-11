@@ -35,7 +35,7 @@
   &[role=tab][aria-selected=true],
   &[aria-current] {
     // stylelint-disable-next-line primer/borders
-    border-bottom-color: $orange-500;
+    border-bottom-color: #f9826c; // custom coral
   }
 }
 
