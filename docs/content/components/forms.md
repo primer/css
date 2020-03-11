@@ -224,11 +224,11 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
 
 Convey success, errors and warnings for form groups.
 
-If the input is **valid**, add the `.successful` class to the `<div class="form-group">` element. Next add/update a success message to the `<div>` under the input, as well as the `.success` class.
+If the input is **valid**, add the `.successed` class to the `<div class="form-group">` element. Next add/update a success message to the `<div>` under the input, as well as the `.success` class.
 
 ```html live
 <form class="pb-6">
-  <div class="form-group valid">
+  <div class="form-group successed">
     <div class="form-group-header">
       <label for="username-input">Username</label>
     </div>

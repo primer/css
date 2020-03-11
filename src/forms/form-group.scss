@@ -142,7 +142,7 @@
   //
   // Our inline errors
 
-  &.valid,
+  &.successed,
   &.warn,
   &.errored {
     .success,
@@ -190,7 +190,7 @@
     }
   }
 
-  &.valid {
+  &.successed {
     .success {
       // stylelint-disable-next-line primer/colors
       color: $green-900;
