@@ -230,18 +230,18 @@ If the input is **valid**, add the `.successful` class to the `<div class="form-
 <form class="pb-6">
   <div class="form-group valid">
     <div class="form-group-header">
-      <label for="unsername-input">Username</label>
+      <label for="username-input">Username</label>
     </div>
     <div class="form-group-body">
       <input
         class="form-control"
         type="text"
         value="monalisa"
-        id="unsername-input"
-        aria-describedby="unsername-input-validation"
+        id="username-input"
+        aria-describedby="username-input-validation"
       />
     </div>
-    <div class="success" id="unsername-input-validation">monalisa is available</div>
+    <div class="success" id="username-input-validation">monalisa is available</div>
   </div>
 </form>
 ```
@@ -252,18 +252,18 @@ If the input is **not valid**, add the `.errored` class to the `<div class="form
 <form class="pb-6">
   <div class="form-group errored">
     <div class="form-group-header">
-      <label for="unsername-input">Username</label>
+      <label for="username-input">Username</label>
     </div>
     <div class="form-group-body">
       <input
         class="form-control"
         type="text"
         value="monalisa"
-        id="unsername-input"
-        aria-describedby="unsername-input-validation"
+        id="username-input"
+        aria-describedby="username-input-validation"
       />
     </div>
-    <div class="error" id="unsername-input-validation">monalisa is not available. monalisa-beep, monalisa-cyber, or monalisa87 are available.</div>
+    <div class="error" id="username-input-validation">monalisa is not available. monalisa-beep, monalisa-cyber, or monalisa87 are available.</div>
   </div>
 </form>
   ```
@@ -274,18 +274,18 @@ If the input should show a **warning**, add the `.warn` class to the `<div class
 <form class="pb-6">
   <div class="form-group warn">
     <div class="form-group-header">
-      <label for="unsername-input">Username</label>
+      <label for="username-input">Username</label>
     </div>
     <div class="form-group-body">
       <input
         class="form-control"
         type="text"
         value="monalisa-monalisa-monalisa-monalisa-"
-        id="unsername-input"
-        aria-describedby="unsername-input-validation"
+        id="username-input"
+        aria-describedby="username-input-validation"
       />
     </div>
-    <div class="warning" id="unsername-input-validation">36 of maximum 39 characters entered.</div>
+    <div class="warning" id="username-input-validation">36 of maximum 39 characters entered.</div>
   </div>
 </form>
 ```
