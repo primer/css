@@ -21,21 +21,22 @@
   background-color: transparent;
   border: 0;
   // stylelint-disable-next-line primer/borders
-  border-bottom: 2px $border-style transparent;
+  border-bottom: 2px $border-style rgba($border-gray-dark, 0);
   transition: border-bottom-color 0.36s ease-in;
 
   &:hover,
   &:focus {
     text-decoration: none;
     border-bottom-color: $border-gray-dark;
-    transition: border-bottom-color 0.12s ease-out;
+    transition-timing-function: ease-out;
+    transition-duration: 0.12s;
   }
 
   &.selected,
   &[role=tab][aria-selected=true],
   &[aria-current] {
     // stylelint-disable-next-line primer/borders
-    border-bottom-color: $orange-500;
+    border-bottom-color: #f9826c; // custom coral
   }
 }
 
