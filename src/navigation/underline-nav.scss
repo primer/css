@@ -37,6 +37,10 @@
   &[aria-current] {
     // stylelint-disable-next-line primer/borders
     border-bottom-color: #f9826c; // custom coral
+
+    .UnderlineNav-octicon {
+      color: $text-gray;
+    }
   }
 }
 
