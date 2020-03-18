@@ -6,7 +6,7 @@ source: 'https://github.com/primer/css/tree/master/src/marketing/type'
 bundle: marketing-type
 ---
 
-The typography for our marketing pages differs slightly from what is in Primer CSS's core--it is responsive, on a slightly different scale, and headlines are in a different font (Roboto).
+The typography for our marketing pages differs slightly from what is in Primer CSS's core--it is responsive, on a slightly different scale, and headlines are set in the [defined marketing font](https://github.com/primer/css/blob/master/src/marketing/support/variables.scss).
 
 ## Heading Utilities
 
