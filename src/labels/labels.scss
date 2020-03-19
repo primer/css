@@ -79,3 +79,16 @@
   color: $blue-600;
   border-color: $border-blue;
 }
+
+.Label--purple {
+  color: $text-purple;
+  // stylelint-disable-next-line primer/borders
+  border-color: $purple-400;
+}
+
+.Label--pink {
+  // stylelint-disable-next-line primer/colors
+  color: $pink-600;
+  // stylelint-disable-next-line primer/borders
+  border-color: $pink-400;
+}
