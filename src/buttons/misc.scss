@@ -169,11 +169,11 @@
   position: relative;
   float: left;
   // stylelint-disable-next-line primer/spacing
-  padding: 3px 12px;
+  padding: 0 12px;
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/typography
-  line-height: 20px;
+  line-height: height-without-border($size-4);
   color: $text-gray-dark;
   vertical-align: middle;
   background-color: $bg-white;
