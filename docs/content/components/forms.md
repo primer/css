@@ -222,7 +222,7 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
 
 #### Form group validation
 
-Convey success, errors and warnings for form groups. For github.com consider using the `<auto-check>` element to perform server-side validation on an input.
+Convey success, errors and warnings for form groups. For github.com consider using the [`<auto-check>`](https://github.github.io/web-systems-documentation/#custom-elements-auto-check-md) element to perform server-side validation on an input.
 
 If the input is **valid**, add the `.successed` class to the `<div class="form-group">` element. Next add/update a success message to the `.note` element, as well as the `.success` class.
 
