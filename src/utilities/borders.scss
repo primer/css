@@ -40,14 +40,11 @@
     .border#{$variant}-left-0   { border-left: 0 !important; }
 
     // Rounded corners
-    /* Remove the border-radius */
+    .rounded#{$variant}   { border-radius: $border-radius !important; }
     .rounded#{$variant}-0 { border-radius: 0 !important; }
-    /* Add a half border-radius to all corners */
-    .rounded#{$variant}-1 { border-radius: $border-radius / 2 !important; }
-    /* Add a border-radius to all corners */
-    .rounded#{$variant}-2 { border-radius: $border-radius !important; }
-    /* Add a double border-radius to all corners */
-    .rounded#{$variant}-3 { border-radius: $border-radius * 2 !important; }
+    .rounded#{$variant}-1 { border-radius: $border-radius-1 !important; }
+    .rounded#{$variant}-2 { border-radius: $border-radius-2 !important; }
+    .rounded#{$variant}-3 { border-radius: $border-radius-3 !important; }
 
     @each $edge, $corners in $edges {
       .rounded#{$variant}-#{$edge}-0 {
