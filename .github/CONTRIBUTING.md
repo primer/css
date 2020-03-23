@@ -50,6 +50,16 @@ Good pull requests—patches, improvements, new features—are a fantastic help.
 
 **Please ask first** before embarking on any significant pull request (e.g. implementing features, refactoring code, porting to a different language), otherwise you risk spending a lot of time working on something that the project's developers might not want to merge into the project.
 
+### Online one-click setup for contributing
+
+You can use Gitpod(a free online VS Code like IDE) for contributing, With a single click it'll launch a workspace and automatically:
+
+- clone the Primer CSS repo.
+- install the dependencies.
+- run `npm start`.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
+
 ### Updating Primer CSS
 
 Anyone can open a pull request on Primer CSS. You do not need to work at GitHub or be a member of the org to open a pull request.
