@@ -142,8 +142,10 @@
   //
   // Our inline errors
 
+  &.successed,
   &.warn,
   &.errored {
+    .success,
     .warning,
     .error {
       position: absolute;
@@ -184,6 +186,25 @@
         margin-left: -1px;
         // stylelint-disable-next-line primer/borders
         border-width: 6px;
+      }
+    }
+  }
+
+  &.successed {
+    .success {
+      // stylelint-disable-next-line primer/colors
+      color: $green-900;
+      // stylelint-disable-next-line primer/colors
+      background-color: $green-100;
+      border-color: $border-green;
+
+      &::after {
+        // stylelint-disable-next-line primer/borders
+        border-bottom-color: $green-100;
+      }
+
+      &::before {
+        border-bottom-color: $border-green;
       }
     }
   }
