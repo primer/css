@@ -533,7 +533,7 @@ You can put forms in boxes. Often form submission buttons are aligned to the bot
     <div class="Box-body">
       <div class="form-group">
         <div class="form-group-header"><label>Example label</label></div>
-        <div class="form-group-body"><input class="form-control" type="text" /></div>
+        <div class="form-group-body"><input class="form-control" type="text"></div>
       </div>
       <div class="form-checkbox">
         <label>
