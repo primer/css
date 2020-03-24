@@ -1,6 +1,7 @@
 // Needs refactoring
 // stylelint-disable selector-no-qualifying-type, selector-max-type
-dl.form-group > dd {
+dl.form-group > dd, // TODO: Deprecate
+.form-group > .form-group-body {
   .form-control {
     &.is-autocheck-loading,
     &.is-autocheck-successful,
@@ -25,7 +26,8 @@ dl.form-group > dd {
 
 // Retinization of form validation icons that aren't octicons yet
 @include retina-media-query {
-  dl.form-group > dd {
+  dl.form-group > dd, // TODO: Deprecate
+  .form-group > .form-group-body {
     .form-control {
       &.is-autocheck-loading,
       &.is-autocheck-successful,

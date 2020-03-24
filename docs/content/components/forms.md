@@ -183,14 +183,20 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
 
 ```html live
 <form>
-  <dl class="form-group">
-    <dt><label for="example-text">Example Text</label></dt>
-    <dd><input class="form-control" type="text" value="Example Value" id="example-text" /></dd>
-  </dl>
+  <div class="form-group">
+    <div class="form-group-header">
+      <label for="example-text">Example Text</label>
+    </div>
+    <div class="form-group-body">
+      <input class="form-control" type="text" value="Example Value" id="example-text" />
+    </div>
+  </div>
 
-  <dl class="form-group">
-    <dt><label for="example-select">Example Select</label></dt>
-    <dd>
+  <div class="form-group">
+    <div class="form-group-header">
+      <label for="example-select">Example Select</label>
+    </div>
+    <div class="form-group-body">
       <select class="form-select" id="example-select">
         <option>Choose an option</option>
         <option>Git</option>
@@ -200,27 +206,31 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
         <option>Bears</option>
         <option>Battlestar Galactica</option>
       </select>
-    </dd>
-  </dl>
+    </div>
+  </div>
 
-  <dl class="form-group">
-    <dt><label for="example-textarea">Example Textarea</label></dt>
-    <dd>
+  <div class="form-group">
+    <div class="form-group-header">
+      <label for="example-textarea">Example Textarea</label>
+    </div>
+    <div class="form-group-body">
       <textarea class="form-control" id="example-textarea"></textarea>
-    </dd>
-  </dl>
+    </div>
+  </div>
 </form>
 ```
 
 #### Form group validation
 
-Convey errors and warnings for form groups. Add the appropriate class—either `.errored` or `.warn`—to the `<dl class="form-group">` to start. Then, house your error messaging in an additional `<dd>` with either `.error` or `.warning`.
+Convey errors and warnings for form groups. Add the appropriate class—either `.errored` or `.warn`—to the `<div class="form-group">` to start. Then, house your error messaging in an additional `<div>` with either `.error` or `.warning`.
 
 ```html live
 <form class="pb-2">
-  <dl class="form-group errored">
-    <dt><label for="example-text-errored">Example Text</label></dt>
-    <dd>
+  <div class="form-group errored">
+    <div class="form-group-header">
+      <label for="example-text-errored">Example Text</label>
+    </div>
+    <div class="form-group-body">
       <input
         class="form-control"
         type="text"
@@ -228,13 +238,15 @@ Convey errors and warnings for form groups. Add the appropriate class—either `
         id="example-text-errored"
         aria-describedby="form-error-text"
       />
-    </dd>
-    <dd class="error" id="form-error-text">This example input has an error.</dd>
-  </dl>
+    </div>
+    <div class="error" id="form-error-text">This example input has an error.</div>
+  </div>
   <br />
-  <dl class="form-group warn">
-    <dt><label for="example-text-warn">Example Text</label></dt>
-    <dd>
+  <div class="form-group warn">
+    <div class="form-group-header">
+      <label for="example-text-warn">Example Text</label>
+    </div>
+    <div class="form-group-body">
       <input
         class="form-control"
         type="text"
@@ -242,9 +254,9 @@ Convey errors and warnings for form groups. Add the appropriate class—either `
         id="example-text-warn"
         aria-describedby="form-warning-text"
       />
-    </dd>
-    <dd class="warning" id="form-warning-text">This example input has a warning.</dd>
-  </dl>
+    </div>
+    <div class="warning" id="form-warning-text">This example input has a warning.</div>
+  </div>
 </form>
 ```
 
