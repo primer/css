@@ -1,3 +1,23 @@
+## 14.3.0
+
+### :rocket: Enhancements
+
+- [#1044](https://github.com/primer/css/1044) Accessible form validation
+- [#1028](https://github.com/primer/css/1028) Improve .form-group accessibility
+
+### :bug: Bug fixes
+- [#670](https://github.com/primer/css/670) Fix Box row top border
+- [#1042](https://github.com/primer/css/1042) Fix UnderlineNav in Safari
+- [#1035](https://github.com/primer/css/1035) Update UnderlineNav-item to not wrap counter & icon
+
+### :memo: Documentation
+- [#1018](https://github.com/primer/css/1018) Update MIGRATING.md
+
+### Committers
+- [@emplums](https://github.com/emplums)
+- [@jonrohan](https://github.com/jonrohan)
+- [@simurai](https://github.com/simurai)
+
 ## 14.2.0
 
 ### :rocket: Enhancements
