@@ -35,7 +35,7 @@
     background-color: $bg-white;
     border-right: $border-width $border-style $border-white;
     // stylelint-disable-next-line primer/borders
-    border-radius: 2px;
+    border-radius: $border-radius-1;
     transition: margin 0.1s ease-in-out;
 
     &:first-child {
@@ -50,7 +50,7 @@
     // stylelint-disable selector-max-type
     img {
       // stylelint-disable-next-line primer/borders
-      border-radius: 2px;
+      border-radius: $border-radius-1;
     }
     // stylelint-enable selector-max-type
 
