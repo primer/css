@@ -49,8 +49,6 @@
   &[aria-selected=true],
   &[aria-current] {
     cursor: default;
-    // stylelint-disable-next-line primer/colors
-    background-color: #fff2f0; // custom coral
 
     &::before {
       position: absolute;
