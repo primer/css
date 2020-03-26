@@ -244,7 +244,7 @@
 
 .btn-outline {
   @include btn-inverse-on-hover(
-    $color: $blue-600,
+    $color: $blue-500,
     $bg-hover: $blue-500,
     $bg-active: darken($blue-500, 3%),
     $border-hover: $blue-600,

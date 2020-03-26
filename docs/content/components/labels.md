@@ -56,6 +56,8 @@ Labels come in a few different themes. Use a theme that helps communicate the co
 <span class="Label mr-1 Label--red" title="Label: Error">Error</span>
 <span class="Label mr-1 Label--green" title="Label: Success">Success</span>
 <span class="Label mr-1 Label--blue" title="Label: Info">Info</span>
+<span class="Label mr-1 Label--purple" title="Label: PRO">PRO</span>
+<span class="Label mr-1 Label--pink" title="Label: Sponsor">Sponsor</span>
 ```
 
 Note: Avoid using `Label--orange` next to `Label--red` since most people will find it hard to tell the difference.
