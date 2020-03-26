@@ -307,43 +307,38 @@ If the list is expected to get long, consider adding a `.SelectMenu-filter` inpu
         <h3 class="SelectMenu-title">Title</h3>
         <button class="SelectMenu-closeButton" type="button">
            <!-- <%= octicon "x" %> -->
-          <svg width="12" height="16" viewBox="0 0 12 16" class="octicon octicon-x" aria-hidden="true">
-            <path
-              fill-rule="evenodd"
-              d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"
-            />
-          </svg>
+          <svg width="12" height="16" viewBox="0 0 12 16" class="octicon octicon-x" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z" /></svg>
         </button>
       </header>
       <form class="SelectMenu-filter">
         <input class="SelectMenu-input form-control" type="text" placeholder="Filter" aria-label="Filter">
       </form>
       <div class="SelectMenu-list">
-        <button class="SelectMenu-item" role="menuitem">Item 1</a>
-        <button class="SelectMenu-item" role="menuitem">Item 2</a>
-        <button class="SelectMenu-item" role="menuitem">Item 3</a>
-        <button class="SelectMenu-item" role="menuitem">Item 4</a>
-        <button class="SelectMenu-item" role="menuitem">Item 5</a>
-        <button class="SelectMenu-item" role="menuitem">Item 6</a>
-        <button class="SelectMenu-item" role="menuitem">Item 7</a>
-        <button class="SelectMenu-item" role="menuitem">Item 8</a>
-        <button class="SelectMenu-item" role="menuitem">Item 9</a>
-        <button class="SelectMenu-item" role="menuitem">Item 10</a>
-        <button class="SelectMenu-item" role="menuitem">Item 11</a>
-        <button class="SelectMenu-item" role="menuitem">Item 12</a>
-        <button class="SelectMenu-item" role="menuitem">Item 13</a>
-        <button class="SelectMenu-item" role="menuitem">Item 14</a>
-        <button class="SelectMenu-item" role="menuitem">Item 15</a>
-        <button class="SelectMenu-item" role="menuitem">Item 16</a>
-        <button class="SelectMenu-item" role="menuitem">Item 17</a>
-        <button class="SelectMenu-item" role="menuitem">Item 18</a>
-        <button class="SelectMenu-item" role="menuitem">Item 19</a>
-        <button class="SelectMenu-item" role="menuitem">Item 20</a>
-        <button class="SelectMenu-item" role="menuitem">Item 21</a>
-        <button class="SelectMenu-item" role="menuitem">Item 22</a>
-        <button class="SelectMenu-item" role="menuitem">Item 23</a>
-        <button class="SelectMenu-item" role="menuitem">Item 24</a>
-        <button class="SelectMenu-item" role="menuitem">Item 25</a>
+        <button class="SelectMenu-item" role="menuitem">Item 1</button>
+        <button class="SelectMenu-item" role="menuitem">Item 2</button>
+        <button class="SelectMenu-item" role="menuitem">Item 3</button>
+        <button class="SelectMenu-item" role="menuitem">Item 4</button>
+        <button class="SelectMenu-item" role="menuitem">Item 5</button>
+        <button class="SelectMenu-item" role="menuitem">Item 6</button>
+        <button class="SelectMenu-item" role="menuitem">Item 7</button>
+        <button class="SelectMenu-item" role="menuitem">Item 8</button>
+        <button class="SelectMenu-item" role="menuitem">Item 9</button>
+        <button class="SelectMenu-item" role="menuitem">Item 10</button>
+        <button class="SelectMenu-item" role="menuitem">Item 11</button>
+        <button class="SelectMenu-item" role="menuitem">Item 12</button>
+        <button class="SelectMenu-item" role="menuitem">Item 13</button>
+        <button class="SelectMenu-item" role="menuitem">Item 14</button>
+        <button class="SelectMenu-item" role="menuitem">Item 15</button>
+        <button class="SelectMenu-item" role="menuitem">Item 16</button>
+        <button class="SelectMenu-item" role="menuitem">Item 17</button>
+        <button class="SelectMenu-item" role="menuitem">Item 18</button>
+        <button class="SelectMenu-item" role="menuitem">Item 19</button>
+        <button class="SelectMenu-item" role="menuitem">Item 20</button>
+        <button class="SelectMenu-item" role="menuitem">Item 21</button>
+        <button class="SelectMenu-item" role="menuitem">Item 22</button>
+        <button class="SelectMenu-item" role="menuitem">Item 23</button>
+        <button class="SelectMenu-item" role="menuitem">Item 24</button>
+        <button class="SelectMenu-item" role="menuitem">Item 25</button>
       </div>
       <footer class="SelectMenu-footer">Showing 25 of 25</footer>
     </div>

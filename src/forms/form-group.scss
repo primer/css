@@ -1,9 +1,15 @@
-// Form groups
-//
-// Typical form groups - `<dl.form-group>` with a `<dt>` containing the label and
-// `<dd> containing the form elements.
 // stylelint-disable selector-max-compound-selectors
 // stylelint-disable selector-max-type
+
+// Form groups
+//
+// Usage:
+//
+// <div class="form-group">
+//   <div class="form-group-header"> containing the label
+//   <div class="form-group-body"> containing the form elements
+// </div>
+
 .form-group {
   // stylelint-disable-next-line primer/spacing
   margin: 15px 0;
@@ -42,7 +48,8 @@
   // stylelint-enable selector-no-qualifying-type
 
   // The Label
-  dt {
+  dt, // TODO: Deprecate
+  .form-group-header {
     // stylelint-disable-next-line primer/spacing
     margin: 0 0 6px;
   }
@@ -51,14 +58,16 @@
     position: relative;
   }
 
-  &.flattened dt {
+  &.flattened dt, // TODO: Deprecate
+  &.flattened .form-group-header {
     float: left;
     margin: 0;
     // stylelint-disable-next-line primer/typography
     line-height: 32px;
   }
 
-  &.flattened dd {
+  &.flattened dd, // TODO: Deprecate
+  &.flattened .form-group-body {
     // stylelint-disable-next-line primer/typography
     line-height: 32px;
   }
@@ -67,7 +76,8 @@
   // Form Elements
   //
   // stylelint-disable selector-no-qualifying-type
-  dd {
+  dd, // TODO: Deprecate
+  .form-group-body {
     h4 {
       margin: $spacer-1 0 0;
 
@@ -87,7 +97,8 @@
   //
 
   &.required {
-    dt label::after {
+    dt label::after, // TODO: Deprecate
+    .form-group-header label::after {
       // stylelint-disable-next-line primer/spacing
       padding-left: 5px;
       color: $text-red;
@@ -131,8 +142,10 @@
   //
   // Our inline errors
 
+  &.successed,
   &.warn,
   &.errored {
+    .success,
     .warning,
     .error {
       position: absolute;
@@ -171,6 +184,25 @@
         margin-left: -1px;
         // stylelint-disable-next-line primer/borders
         border-width: 6px;
+      }
+    }
+  }
+
+  &.successed {
+    .success {
+      // stylelint-disable-next-line primer/colors
+      color: $green-900;
+      // stylelint-disable-next-line primer/colors
+      background-color: $green-100;
+      border-color: $border-green;
+
+      &::after {
+        // stylelint-disable-next-line primer/borders
+        border-bottom-color: $green-100;
+      }
+
+      &::before {
+        border-bottom-color: $border-green;
       }
     }
   }
