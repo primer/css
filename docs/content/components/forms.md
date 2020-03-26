@@ -183,14 +183,20 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
 
 ```html live
 <form>
-  <dl class="form-group">
-    <dt><label for="example-text">Example Text</label></dt>
-    <dd><input class="form-control" type="text" value="Example Value" id="example-text" /></dd>
-  </dl>
+  <div class="form-group">
+    <div class="form-group-header">
+      <label for="example-text">Example Text</label>
+    </div>
+    <div class="form-group-body">
+      <input class="form-control" type="text" value="Example Value" id="example-text" />
+    </div>
+  </div>
 
-  <dl class="form-group">
-    <dt><label for="example-select">Example Select</label></dt>
-    <dd>
+  <div class="form-group">
+    <div class="form-group-header">
+      <label for="example-select">Example Select</label>
+    </div>
+    <div class="form-group-body">
       <select class="form-select" id="example-select">
         <option>Choose an option</option>
         <option>Git</option>
@@ -200,51 +206,87 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
         <option>Bears</option>
         <option>Battlestar Galactica</option>
       </select>
-    </dd>
-  </dl>
+    </div>
+  </div>
 
-  <dl class="form-group">
-    <dt><label for="example-textarea">Example Textarea</label></dt>
-    <dd>
+  <div class="form-group">
+    <div class="form-group-header">
+      <label for="example-textarea">Example Textarea</label>
+    </div>
+    <div class="form-group-body">
       <textarea class="form-control" id="example-textarea"></textarea>
-    </dd>
-  </dl>
+    </div>
+  </div>
 </form>
 ```
 
 #### Form group validation
 
-Convey errors and warnings for form groups. Add the appropriate class—either `.errored` or `.warn`—to the `<dl class="form-group">` to start. Then, house your error messaging in an additional `<dd>` with either `.error` or `.warning`.
+Convey success, errors and warnings for form groups. For github.com consider using the [`<auto-check>`](https://github.github.io/web-systems-documentation/#custom-elements-auto-check-md) element to perform server-side validation on an input.
+
+If the input is **valid**, add the `.successed` class to the `<div class="form-group">` element. Next add/update a success message to the `.note` element, as well as the `.success` class.
 
 ```html live
-<form class="pb-2">
-  <dl class="form-group errored">
-    <dt><label for="example-text-errored">Example Text</label></dt>
-    <dd>
+<form class="pb-6">
+  <div class="form-group successed">
+    <div class="form-group-header">
+      <label for="username-input">Username</label>
+    </div>
+    <div class="form-group-body">
       <input
         class="form-control"
         type="text"
-        value="Example Value"
-        id="example-text-errored"
-        aria-describedby="form-error-text"
+        value="monalisa"
+        id="username-input"
+        aria-describedby="username-input-validation"
       />
-    </dd>
-    <dd class="error" id="form-error-text">This example input has an error.</dd>
-  </dl>
-  <br />
-  <dl class="form-group warn">
-    <dt><label for="example-text-warn">Example Text</label></dt>
-    <dd>
+    </div>
+    <p class="note success" id="username-input-validation">monalisa is available</p>
+  </div>
+</form>
+```
+
+If the input is **not valid**, add the `.errored` class to the `<div class="form-group">` element. Next add/update an error message to the `.note` element, as well as the `.error` class.
+
+```html live
+<form class="pb-6">
+  <div class="form-group errored">
+    <div class="form-group-header">
+      <label for="username-input">Username</label>
+    </div>
+    <div class="form-group-body">
       <input
         class="form-control"
         type="text"
-        value="Example Value"
-        id="example-text-warn"
-        aria-describedby="form-warning-text"
+        value="monalisa"
+        id="username-input"
+        aria-describedby="username-input-validation"
       />
-    </dd>
-    <dd class="warning" id="form-warning-text">This example input has a warning.</dd>
-  </dl>
+    </div>
+    <p class="note error" id="username-input-validation">monalisa is not available. monalisa-beep, monalisa-cyber, or monalisa87 are available.</p>
+  </div>
+</form>
+  ```
+
+If the input should show a **warning**, add the `.warn` class to the `<div class="form-group">` element. Next add/update a warning message to the `.note` element, as well as the `.warning` class.
+
+  ```html live
+<form class="pb-6">
+  <div class="form-group warn">
+    <div class="form-group-header">
+      <label for="username-input">Username</label>
+    </div>
+    <div class="form-group-body">
+      <input
+        class="form-control"
+        type="text"
+        value="monalisa-monalisa-monalisa-monalisa-"
+        id="username-input"
+        aria-describedby="username-input-validation"
+      />
+    </div>
+    <p class="note warning" id="username-input-validation">36 of maximum 39 characters entered.</p>
+  </div>
 </form>
 ```
 

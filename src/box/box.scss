@@ -111,7 +111,6 @@
   border-top: $border-width $border-style $border-gray;
 
   &:first-of-type {
-    border-top-color: transparent;
     // stylelint-disable-next-line primer/borders
     border-top-left-radius: 2px;
     // stylelint-disable-next-line primer/borders

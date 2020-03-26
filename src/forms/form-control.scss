@@ -188,7 +188,8 @@ label {
     // stylelint-disable-next-line primer/spacing
     margin: 0 30px 0 0;
 
-    dt {
+    dt, // TODO: Deprecate
+    .form-group-header {
       label {
         display: inline-block;
         // stylelint-disable-next-line primer/spacing
