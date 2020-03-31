@@ -119,22 +119,19 @@
   $bg-active: darken($bg-hover, 2%);
   $bg-disabled: #94d3a2; // custom green
 
-  $border-default: $green-600;
-  $border-hover: $green-700;
-
   $shadow: $green-900;
   $box-shadow: 0 1px 0 rgba($black, 0.1), inset 0 1px 0 rgba($white, 0.03);
 
   color: $text-white;
   background-color: $bg-default;
-  border-color: $border-default;
+  // stylelint-disable-next-line primer/borders
+  border-color: rgba($black, 0.15);
   box-shadow: $box-shadow;
 
   &:hover,
   &.hover,
   [open] > & {
     background-color: $bg-hover;
-    border-color: $border-hover;
   }
 
   &:active,
@@ -152,7 +149,7 @@
     color: rgba($text-white, 0.8);
     background-color: $bg-disabled;
     // stylelint-disable-next-line primer/borders
-    border-color: rgba($border-default, 0.1);
+    border-color: rgba($black, 0.1);
     box-shadow: $box-shadow;
   }
 
@@ -175,7 +172,7 @@
 
 // Mixin: btn-inverse-on-hover
 
-@mixin btn-inverse-on-hover( $color, $bg-hover, $bg-active, $border-hover, $border-active, $shadow ) {
+@mixin btn-inverse-on-hover( $color, $bg-hover, $bg-active, $shadow ) {
   color: $color;
   transition: none;
 
@@ -183,7 +180,7 @@
   [open] > & {
     color: $text-white;
     background-color: $bg-hover;
-    border-color: $border-hover;
+    border-color: rgba($black, 0.15);
     box-shadow: 0 1px 0 rgba($shadow, 0.1), inset 0 1px 0 rgba($white, 0.03);
 
     .Counter {
@@ -200,7 +197,7 @@
   &[aria-selected=true] {
     color: $text-white;
     background-color: $bg-active;
-    border-color: $border-active;
+    border-color: rgba($black, 0.15);
     box-shadow: inset 0 1px 0 rgba($shadow, 0.2);
   }
 
@@ -234,8 +231,6 @@
     $color: $text-red,
     $bg-hover: $red-600,
     $bg-active: darken($red-600, 3%),
-    $border-hover: $red-700,
-    $border-active: $red-800,
     $shadow: $red-900
   );
 }
@@ -247,8 +242,6 @@
     $color: $blue-500,
     $bg-hover: $blue-500,
     $bg-active: darken($blue-500, 3%),
-    $border-hover: $blue-600,
-    $border-active: rgba($blue-700, 0.5),
     $shadow: $blue-900
   );
 }
