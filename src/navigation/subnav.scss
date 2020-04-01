@@ -20,10 +20,11 @@
 .subnav-item {
   position: relative;
   float: left;
-  padding: 0 $spacer-3;
+  // stylelint-disable-next-line primer/spacing
+  padding: 5px $spacer-3;
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
-  line-height: height-without-border($size-5);
+  line-height: 20px;
   color: $text-gray-dark;
   border: $border;
 
