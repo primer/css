@@ -13,11 +13,11 @@
 .State {
   display: inline-block;
   // stylelint-disable-next-line primer/spacing
-  padding: 0 12px;
+  padding: 6px 12px;
   font-size: $body-font-size;
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
-  line-height: $size-5;
+  line-height: 20px;
   color: $text-white;
   text-align: center;
   white-space: nowrap;
@@ -43,8 +43,8 @@
 // Small
 
 .State--small {
-  padding-right: $spacer-2;
-  padding-left: $spacer-2;
+  // stylelint-disable-next-line primer/spacing
+  padding: 0 10px;
   font-size: $font-size-small;
   // stylelint-disable-next-line primer/typography
   line-height: $size-3;
