@@ -18,10 +18,10 @@ label {
 .form-control,
 .form-select {
   // stylelint-disable-next-line primer/spacing
-  padding: 0 12px;
+  padding: 5px 12px;
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
-  line-height: height-without-border($size-5);
+  line-height: 20px;
   color: $text-gray-dark;
   vertical-align: middle;
   background-color: $bg-white;
@@ -72,6 +72,7 @@ textarea.form-control {
   // stylelint-disable-next-line primer/colors
   background-color: $white-fade-15;
   border-color: transparent;
+  box-shadow: none;
 
   &::placeholder {
     color: inherit;
@@ -94,15 +95,17 @@ textarea.form-control {
 
 // Mini inputs, to match .minibutton
 .input-sm {
+  // stylelint-disable-next-line primer/spacing
+  padding-top: 3px;
+  // stylelint-disable-next-line primer/spacing
+  padding-bottom: 3px;
   font-size: $font-size-small;
   // stylelint-disable-next-line primer/typography
-  line-height: height-without-border($size-4);
+  line-height: 20px;
 }
 
 // Large inputs
 .input-lg {
-  padding-right: $spacer-3;
-  padding-left: $spacer-3;
   font-size: $h4-size;
 }
 
