@@ -190,22 +190,6 @@ You can also have icons and emoji in counters. Or use utilities for counters wit
 <span class="Counter mr-1 bg-purple text-white">22</span>
 ```
 
-## Small counters
-
-Use the `Counter--small` modifier class to reduce the size of a counter.
-
-```html live
-<span class="Counter mr-1 Counter--gray-light">1</span>
-<span class="Counter mr-1">23</span>
-<span class="Counter mr-1 Counter--gray">456</span>
-<span class="Counter mr-1">1.5K</span>
-<div class="my-2"></div>
-<span class="Counter Counter--small mr-1 Counter--gray-light">1</span>
-<span class="Counter Counter--small mr-1">23</span>
-<span class="Counter Counter--small mr-1 Counter--gray">456</span>
-<span class="Counter Counter--small mr-1">1.5K</span>
-```
-
 ## Diffstat
 
 Diffstats show how many deletions or additions a diff has. It's typically a row of 5 blocks that get colored with green or red.
