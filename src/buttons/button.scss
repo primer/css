@@ -4,6 +4,7 @@
 .btn {
   position: relative;
   display: inline-block;
+  // stylelint-disable-next-line primer/spacing
   padding: 5px $spacer-3;
   font-size: $body-font-size;
   font-weight: $font-weight-semibold;
