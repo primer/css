@@ -4,11 +4,12 @@
 .btn {
   position: relative;
   display: inline-block;
-  padding: 0 $spacer-3;
+  // stylelint-disable-next-line primer/spacing
+  padding: 5px $spacer-3;
   font-size: $body-font-size;
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
-  line-height: height-without-border($size-5);
+  line-height: 20px; // Specifically not inherit our `<body>` default
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
@@ -56,13 +57,14 @@
     margin-left: 2px;
     color: inherit;
     text-shadow: none;
+    vertical-align: top;
     // stylelint-disable-next-line primer/colors
     background-color: rgba($black, 0.08); // Darken for just a tad more contrast against the button background
   }
 
   .dropdown-caret {
     margin-left: $spacer-1;
-    opacity: 0.6;
+    opacity: 0.8;
   }
 }
 
@@ -114,27 +116,24 @@
 // Primary button
 
 .btn-primary {
-  $bg-default: #159739; // custom green
-  $bg-hover: #138934; // custom green
+  $bg-default: #2ea44f; // custom green
+  $bg-hover: #2c974b; // custom green
   $bg-active: darken($bg-hover, 2%);
   $bg-disabled: #94d3a2; // custom green
 
-  $border-default: $green-600;
-  $border-hover: $green-700;
-
   $shadow: $green-900;
-  $box-shadow: $box-shadow, inset 0 1px 0 rgba($white, 0.03);
+  $box-shadow: 0 1px 0 rgba($black, 0.1), inset 0 1px 0 rgba($white, 0.03);
 
   color: $text-white;
   background-color: $bg-default;
-  border-color: $border-default;
+  // stylelint-disable-next-line primer/borders
+  border-color: rgba($black, 0.15);
   box-shadow: $box-shadow;
 
   &:hover,
   &.hover,
   [open] > & {
     background-color: $bg-hover;
-    border-color: $border-hover;
   }
 
   &:active,
@@ -152,7 +151,7 @@
     color: rgba($text-white, 0.8);
     background-color: $bg-disabled;
     // stylelint-disable-next-line primer/borders
-    border-color: rgba($border-default, 0.1);
+    border-color: rgba($black, 0.1);
     box-shadow: $box-shadow;
   }
 
@@ -169,13 +168,14 @@
   }
 
   .octicon {
-    color: inherit;
+    // stylelint-disable-next-line primer/colors
+    color: rgba($text-white, 0.8);
   }
 }
 
 // Mixin: btn-inverse-on-hover
 
-@mixin btn-inverse-on-hover( $color, $bg-hover, $bg-active, $border-hover, $border-active, $shadow ) {
+@mixin btn-inverse-on-hover( $color, $bg-hover, $bg-active, $shadow ) {
   color: $color;
   transition: none;
 
@@ -183,8 +183,8 @@
   [open] > & {
     color: $text-white;
     background-color: $bg-hover;
-    border-color: $border-hover;
-    box-shadow: 0 1px 0 rgba($shadow, 0.1), inset 0 1px 0 rgba($white, 0.03);
+    border-color: rgba($black, 0.15);
+    box-shadow: 0 1px 0 rgba($black, 0.1), inset 0 1px 0 rgba($white, 0.03);
 
     .Counter {
       background-color: rgba($bg-white, 0.2);
@@ -200,7 +200,7 @@
   &[aria-selected=true] {
     color: $text-white;
     background-color: $bg-active;
-    border-color: $border-active;
+    border-color: rgba($black, 0.15);
     box-shadow: inset 0 1px 0 rgba($shadow, 0.2);
   }
 
@@ -234,8 +234,6 @@
     $color: $text-red,
     $bg-hover: $red-600,
     $bg-active: darken($red-600, 3%),
-    $border-hover: $red-700,
-    $border-active: $red-800,
     $shadow: $red-900
   );
 }
@@ -247,8 +245,6 @@
     $color: $blue-500,
     $bg-hover: $blue-500,
     $bg-active: darken($blue-500, 3%),
-    $border-hover: $blue-600,
-    $border-active: rgba($blue-700, 0.5),
     $shadow: $blue-900
   );
 }
@@ -269,12 +265,14 @@
 // Tweak `line-height` to make them smaller.
 .btn-sm {
   // stylelint-disable-next-line primer/spacing
-  padding-right: 12px;
-  // stylelint-disable-next-line primer/spacing
-  padding-left: 12px;
+  padding: 3px 12px;
   font-size: $font-size-small;
   // stylelint-disable-next-line primer/typography
-  line-height: height-without-border($size-4);
+  line-height: 20px;
+
+  .octicon {
+    vertical-align: text-top;
+  }
 }
 
 // Large button adds more padding around text. Use font-size utils to increase font-size.. e.g, <p class="text-gamma"><button class="btn btn-large btn-primary" type="button">Big green button</button></p>

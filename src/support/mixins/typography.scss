@@ -1,10 +1,3 @@
-// height-without-border
-//
-// Removes top/bottom border from the total height
-@function height-without-border($height) {
-  @return $height - ($border-width * 2);
-}
-
 // Text hiding for image based text replacement.
 // Higher performance than -9999px because it only renders
 // the size of the actual text, not a full 9999px box.

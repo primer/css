@@ -25,10 +25,11 @@
 
 .select-sm {
   height: $size-4;
-  min-height: $size-4;
+  // stylelint-disable-next-line primer/spacing
+  padding-top: 3px;
+  // stylelint-disable-next-line primer/spacing
+  padding-bottom: 3px;
   font-size: $font-size-small;
-  // stylelint-disable-next-line primer/typography
-  line-height: height-without-border($size-4);
 
   &[multiple] {
     height: auto;
