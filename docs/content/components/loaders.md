@@ -8,7 +8,7 @@ bundle: loaders
 
 Loaders inform users that an action is still in progress and might take a while to complete.
 
-## Animated Ellipsis
+## Animated ellipsis
 
 Add an animated ellipsis at the end of text with `<span class="AnimatedEllipsis"></span>`.
 

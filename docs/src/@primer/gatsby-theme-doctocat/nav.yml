@@ -25,7 +25,7 @@
       url: /utilities/animations
     - title: Borders
       url: /utilities/borders
-    - title: Marketing borders
+    - title: Marketing borders (deprecated)
       url: /utilities/marketing-borders
     - title: Box shadow
       url: /utilities/box-shadow
@@ -75,7 +75,7 @@
       url: /components/box-overlay
     - title: Box
       url: /components/box
-    - title: Boxed groups
+    - title: Boxed groups (deprecated)
       url: /components/boxed-groups
     - title: Branch name
       url: /components/branch-name

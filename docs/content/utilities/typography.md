@@ -145,7 +145,7 @@ Remove bullets from an unordered list or numbers from an ordered list by applyin
 </ul>
 ```
 
-## Text Shadows
+## Text shadows
 
 Text shadows can be used to help readability and to add some depth on colored backgrounds.
 

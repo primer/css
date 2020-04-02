@@ -11,7 +11,7 @@ Animations are reusable animation classes that you can use to emphasize an eleme
 
 
 
-## Fade In
+## Fade in
 
 The `.anim-fade-in` class is used to fade in an element on the page. This will run once when the element is revealed.
 
@@ -23,7 +23,7 @@ The `.anim-fade-in` class is used to fade in an element on the page. This will r
 </span>
 ```
 
-## Fade Out
+## Fade out
 
 The `.anim-fade-out` class is used to fade out an element on the page. This will run once when the element is revealed.
 
@@ -35,7 +35,7 @@ The `.anim-fade-out` class is used to fade out an element on the page. This will
 </span>
 ```
 
-## Fade Up
+## Fade up
 
 The `.anim-fade-up` class is used to reveal an element on the page by sliding it up from below the fold. You should use this in a container with `overflow: hidden;` or on the bottom of the page.
 
@@ -47,7 +47,7 @@ The `.anim-fade-up` class is used to reveal an element on the page by sliding it
 </div>
 ```
 
-## Fade Down
+## Fade down
 
 The `.anim-fade-down` class is used to slide an element down hiding it. You should use this in a container with `overflow: hidden;` or on the bottom of the page.
 
@@ -59,7 +59,7 @@ The `.anim-fade-down` class is used to slide an element down hiding it. You shou
 </div>
 ```
 
-## Scale In
+## Scale in
 
 The `.anim-scale-in` class will scale the element in. This is useful on menus when you want them to appear more friendly.
 
@@ -70,7 +70,7 @@ The `.anim-scale-in` class will scale the element in. This is useful on menus wh
 </div>
 ```
 
-## Grow X
+## Grow x
 
 The `.anim-grow-x` class will grow an element width from 0-:100: real quick.
 
