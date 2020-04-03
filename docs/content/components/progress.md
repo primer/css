@@ -6,7 +6,7 @@ source: 'https://github.com/primer/css/tree/master/src/progress'
 bundle: progress
 ---
 
-Use Progress components to visualize task completion. The `Progress` class adds a background color and aligns its children horizontally with flexbox. The children should be individually colored with [background utilities](/utilities/colors#background-colors) and sized with inline `width` styles in percentages. Overflow is hidden, so children that overflow will be clipped.
+Use progress components to visualize task completion. The `Progress` class adds a background color and aligns its children horizontally with flexbox. The children should be individually colored with [background utilities](/utilities/colors#background-colors) and sized with inline `width` styles in percentages. Overflow is hidden, so children that overflow will be clipped.
 
 ```html live
 <span class="Progress">
@@ -14,7 +14,7 @@ Use Progress components to visualize task completion. The `Progress` class adds 
 </span>
 ```
 
-## Large Progress
+## Large progress
 
 Large progress bars are slightly taller than the default.
 
@@ -24,7 +24,7 @@ Large progress bars are slightly taller than the default.
 </span>
 ```
 
-## Small Progress
+## Small progress
 
 Large progress bars are shorter than the default.
 
@@ -34,7 +34,7 @@ Large progress bars are shorter than the default.
 </span>
 ```
 
-## Inline Progress
+## Inline progress
 
 For inline progress indicators, use the `Progress` and `d-inline-flex` with an inline element such as `<span>` and add a custom `width` style:
 

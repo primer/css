@@ -1,5 +1,5 @@
 ---
-title: Marketing Borders
+title: Marketing borders (deprecated)
 sort_title: Borders Marketing
 path: utilities/marketing-borders
 status: Deprecated

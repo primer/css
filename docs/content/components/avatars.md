@@ -183,7 +183,7 @@ Use `AvatarStack--right` to right-align the avatar stack. Remember to switch the
 </div>
 ```
 
-## Circle Badge
+## Circle badge
 
 `.CircleBadge` allows for the display of badge-like icons or logos. They are used mostly with Octicons or partner integration icons.
 

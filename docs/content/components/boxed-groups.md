@@ -1,5 +1,5 @@
 ---
-title: Boxed groups
+title: Boxed groups (deprecated)
 path: components/boxed-group
 status: Deprecated
 source: 'https://github.com/github/github/blob/master/app/assets/stylesheets/components/boxed-groups.scss'

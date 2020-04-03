@@ -7,7 +7,7 @@ source: 'https://github.com/primer/css/blob/master/src/support/variables/typogra
 bundle: support
 ---
 
-## Type Scale
+## Type scale
 
 The typography scale is designed to work for GitHub's product UI and marketing sites. Font sizes are designed to work in combination with line-height values so as to result in more sensible numbers wherever possible.
 
@@ -65,7 +65,7 @@ $lh-condensed: 1.25 !default;
 $lh-default: 1.5 !default;
 ```
 
-## Typography Mixins
+## Typography mixins
 
 Typography mixins are available for heading styles and for our type scale. They can be used within components or custom CSS. The same styles are also available as [utilities](/utilities/typography#heading-utilities). which requires no additional CSS.
 
