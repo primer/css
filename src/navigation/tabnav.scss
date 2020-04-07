@@ -15,10 +15,14 @@
 .tabnav-tabs {
   // stylelint-disable-next-line primer/spacing
   margin-bottom: -1px;
+  display: flex;
+  overflow: auto;
 }
 
 .tabnav-tab {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
   padding: $spacer-2 12px;
   font-size: $h5-size;
   // stylelint-disable-next-line primer/typography
