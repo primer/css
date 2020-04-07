@@ -31,7 +31,7 @@
 
   &.selected,
   &[aria-selected=true],
-  &[aria-current] {
+  &[aria-current]:not([aria-current=false]) {
     color: $text-gray-dark;
     background-color: $bg-white;
     border-color: $border-gray-dark;

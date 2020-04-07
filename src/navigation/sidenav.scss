@@ -60,7 +60,7 @@
   background-color: $bg-white;
 }
 
-.SideNav-item[aria-current="page"],
+.SideNav-item[aria-current]:not([aria-current=false]),
 .SideNav-item[aria-selected="true"] {
   font-weight: $font-weight-semibold;
   color: $text-gray-dark;
@@ -104,7 +104,7 @@
   outline: none;
 }
 
-.SideNav-subItem[aria-current="page"],
+.SideNav-subItem[aria-current]:not([aria-current=false]),
 .SideNav-subItem[aria-selected="true"] {
   font-weight: $font-weight-semibold;
   color: $text-gray-dark;
