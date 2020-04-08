@@ -1,14 +1,6 @@
 // stylelint-disable selector-max-type
 // selector-max-type is needed for body:not(.intent-mouse) to target keyboard only styles.
 
-// TODO@15.0.0: remove styles below
-@media (hover: hover) {
-  .SelectMenu-tab:not([aria-checked="true"]):hover,
-  .SelectMenu-tab:not([aria-checked="true"]):active {
-    background-color: $bg-white;
-  }
-}
-
 $SelectMenu-max-height: 480px !default;
 
 // Select Menu
@@ -141,7 +133,8 @@ $SelectMenu-max-height: 480px !default;
 
   @include breakpoint(sm) {
     padding: $spacer-2;
-    margin: -$spacer-2;
+    // stylelint-disable-next-line primer/spacing
+    margin: (-$spacer-2) (-7px); // Using -7px fixes a :focus glitch
   }
 }
 
@@ -260,7 +253,7 @@ $SelectMenu-max-height: 480px !default;
   background-color: transparent;
   border: 0;
   // stylelint-disable-next-line primer/box-shadow
-  box-shadow: inset 0 -1px 0 $border-color;
+  box-shadow: inset 0 -1px 0 $border-gray-light;
 
   @include breakpoint(sm) {
     flex: none;
@@ -277,10 +270,10 @@ $SelectMenu-max-height: 480px !default;
     cursor: default;
     background-color: $bg-white;
     // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 1px $border-color;
+    box-shadow: 0 0 0 1px $border-gray-light;
 
     @include breakpoint(sm) {
-      border-color: $border-color;
+      border-color: $border-gray-light;
       box-shadow: none;
     }
   }
@@ -364,9 +357,10 @@ $SelectMenu-max-height: 480px !default;
 // Different states
 
 // Reset outlines
+.SelectMenu-closeButton:focus,
 .SelectMenu-tab:focus,
 .SelectMenu-item:focus {
-  outline: none;
+  outline: 0;
 }
 
 // Reset <a> elements
@@ -378,7 +372,7 @@ $SelectMenu-max-height: 480px !default;
 //
 // Visible when a used clicks/taps on a list item
 
-.SelectMenu-item[aria-checked="true"] {
+.SelectMenu-item[aria-checked=true] {
   font-weight: $font-weight-semibold;
   color: $text-gray-dark;
 
@@ -394,6 +388,15 @@ $SelectMenu-max-height: 480px !default;
 // For mouse/keyboard input
 
 @media (hover: hover) {
+  body:not(.intent-mouse) .SelectMenu-closeButton:focus,
+  .SelectMenu-closeButton:hover {
+    color: $text-gray-dark;
+  }
+
+  .SelectMenu-closeButton:active {
+    color: $text-gray;
+  }
+
   body:not(.intent-mouse) .SelectMenu-item:focus,
   .SelectMenu-item:hover {
     background-color: $bg-gray;
@@ -408,10 +411,8 @@ $SelectMenu-max-height: 480px !default;
     background-color: $blue-100;
   }
 
-  .SelectMenu-tab:not([aria-selected="true"]):hover {
+  .SelectMenu-tab:hover {
     color: $text-gray-dark;
-    // stylelint-disable-next-line primer/colors
-    background-color: $gray-200;
   }
 
   .SelectMenu-tab:not([aria-selected="true"]):active {
