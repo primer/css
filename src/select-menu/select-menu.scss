@@ -94,7 +94,7 @@ $SelectMenu-max-height: 480px !default;
     width: 300px;
     height: auto;
     max-height: $SelectMenu-max-height;
-    margin: $spacer-1 0 $spacer-3 0;
+    margin: $spacer-2 0 $spacer-3 0;
     font-size: $font-size-small;
     border: $border;
     border-radius: $border-radius;
@@ -109,17 +109,19 @@ $SelectMenu-max-height: 480px !default;
 
 .SelectMenu-header {
   display: flex;
-  flex: none; // fixes header from getting squeezed in Safari iOS
   padding: $spacer-3;
+  flex: none; // fixes header from getting squeezed in Safari iOS
+  align-items: center;
+  border-bottom: $border-width $border-style $border-gray-light;
 
   @include breakpoint(sm) {
-    padding-top: $spacer-2;
-    padding-bottom: $spacer-2;
+    // stylelint-disable-next-line primer/spacing
+    padding: 7px 7px 7px $spacer-3;
   }
 }
 
 .SelectMenu-title {
-  flex: auto;
+  flex: 1;
   font-size: $body-font-size;
   font-weight: $font-weight-bold;
 
@@ -131,12 +133,15 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-closeButton {
   padding: $spacer-3;
   margin: -$spacer-3;
-  color: $text-gray-light;
+  line-height: 1;
+  // stylelint-disable-next-line primer/colors
+  color: $gray-light;
   background-color: transparent;
   border: 0;
 
   @include breakpoint(sm) {
-    display: none;
+    padding: $spacer-2;
+    margin: -$spacer-2;
   }
 }
 
@@ -147,7 +152,7 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-filter {
   padding: $spacer-3;
   margin: 0;
-  border-top: $border;
+  border-bottom: $border-width $border-style $border-gray-light;
 
   @include breakpoint(sm) {
     padding: $spacer-2;
@@ -177,7 +182,6 @@ $SelectMenu-max-height: 480px !default;
   overflow-x: hidden;
   overflow-y: auto;
   background-color: $bg-white;
-  border-top: $border;
   -webkit-overflow-scrolling: touch; // Adds momentum + bouncy scrolling
 }
 
@@ -199,8 +203,10 @@ $SelectMenu-max-height: 480px !default;
   border-bottom: $border-width $border-style $border-gray-light;
 
   @include breakpoint(sm) {
-    padding-top: $spacer-2;
-    padding-bottom: $spacer-2;
+    // stylelint-disable-next-line primer/spacing
+    padding-top: 7px;
+    // stylelint-disable-next-line primer/spacing
+    padding-bottom: 7px;
   }
 }
 
@@ -228,11 +234,10 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-tabs {
   display: flex;
   flex-shrink: 0;
-  // stylelint-disable-next-line primer/spacing
-  margin-bottom: -$border-width; // hide border of element below
   overflow-x: auto;
   overflow-y: hidden;
-  border-top: $border;
+  // stylelint-disable-next-line primer/box-shadow
+  box-shadow: inset 0 -1px 0 $border-gray-light;
   -webkit-overflow-scrolling: touch;
 
   // Hide scrollbar so it doesn't cover the text
@@ -241,8 +246,7 @@ $SelectMenu-max-height: 480px !default;
   }
 
   @include breakpoint(sm) {
-    padding: 0 $spacer-2;
-    border-top: 0;
+    padding: $spacer-2 $spacer-2 0 $spacer-2;
   }
 }
 
@@ -282,15 +286,22 @@ $SelectMenu-max-height: 480px !default;
   }
 }
 
-// Message, Blankslate and Loading
+// Message
 //
-// A container used to show different kinds of content. Like a message, a blankslate or the loading animation.
+// A container used to show different kinds of text messages.
 
 .SelectMenu-message {
+  // stylelint-disable-next-line primer/spacing
+  padding: 7px $spacer-3;
+  text-align: center;
+  background-color: $bg-white;
   border-bottom: $border-width $border-style $border-gray-light;
 }
 
-.SelectMenu-message,
+// Blankslate and Loading
+//
+// A container used to show a blankslate or the loading animation.
+
 .SelectMenu-blankslate,
 .SelectMenu-loading {
   padding: $spacer-4 $spacer-3;
@@ -306,7 +317,7 @@ $SelectMenu-max-height: 480px !default;
   padding: $spacer-1 $spacer-3;
   margin: 0;
   font-size: $font-size-small;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
   color: $text-gray-light;
   background-color: $bg-gray;
   border-bottom: $border-width $border-style $border-gray-light;
@@ -322,10 +333,11 @@ $SelectMenu-max-height: 480px !default;
   font-size: $font-size-small;
   color: $text-gray-light;
   text-align: center;
-  border-top: $border;
+  border-top: $border-width $border-style $border-gray-light;
 
   @include breakpoint(sm) {
-    padding: $spacer-1 $spacer-2;
+    // stylelint-disable-next-line primer/spacing
+    padding: 7px $spacer-3;
   }
 }
 
@@ -342,7 +354,7 @@ $SelectMenu-max-height: 480px !default;
     @include breakpoint(sm) {
       height: auto;
       max-height: $SelectMenu-max-height;
-      margin-top: $spacer-1;
+      margin-top: $spacer-2;
     }
   }
 }
