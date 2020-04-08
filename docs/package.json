@@ -18,6 +18,7 @@
     "autoprefixer": "^9.6.1",
     "chroma-js": "^2.0.6",
     "gatsby": "^2.10.4",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-google-analytics": "^2.1.7",
     "gatsby-plugin-sass": "^2.1.0",
     "gatsby-plugin-svgr": "^2.0.2",

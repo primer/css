@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: 'Primer CSS',
@@ -25,6 +27,15 @@ module.exports = {
       options: {
         trackingId: 'UA-126681523-2',
         anonymize: true
+      }
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          'styled-components': path.resolve(__dirname, 'node_modules', 'styled-components'),
+          'react': path.resolve(__dirname, 'node_modules', 'react'),
+        }
       }
     }
   ]
