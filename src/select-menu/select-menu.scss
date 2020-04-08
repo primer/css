@@ -69,7 +69,7 @@ $SelectMenu-max-height: 480px !default;
   overflow: hidden; // Enables border radius on scrollable child elements
   pointer-events: auto;
   flex-direction: column;
-  background-color: $bg-gray;
+  background-color: $bg-white;
   // stylelint-disable-next-line primer/borders
   border-radius: $border-radius * 2;
   // stylelint-disable-next-line primer/box-shadow
