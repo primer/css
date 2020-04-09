@@ -44,8 +44,8 @@
   },
   "devDependencies": {
     "@octokit/rest": "^16.34.0",
-    "@storybook/addon-viewport": "5.0.11",
-    "@storybook/react": "5.0.11",
+    "@storybook/addon-viewport": "5.3.18",
+    "@storybook/react": "5.3.18",
     "autoprefixer": "9.4.7",
     "code-blocks": "^1.1.0",
     "colorette": "^1.1.0",
