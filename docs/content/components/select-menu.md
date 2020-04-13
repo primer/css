@@ -167,6 +167,28 @@ The list of items is arguably the most important subcomponent within the menu. B
 <div class="d-none d-sm-block" style="height: 320px"><!-- min height for > sm --></div>
 ```
 
+Use the `.SelectMenu-list--withoutBorders` modifier to remove the borders between list items. Note: It's better to keep the borders if a list contains items with multiple lines of text. It will make it easier to see where the items start and end.
+
+```html live
+<details class="details-reset details-overlay" open>
+  <summary class="btn" aria-haspopup="true">
+    Choose an item
+  </summary>
+  <div class="SelectMenu">
+    <div class="SelectMenu-modal">
+      <div class="SelectMenu-list SelectMenu-list--withoutBorders">
+        <button class="SelectMenu-item" role="menuitem">Item 1</button>
+        <button class="SelectMenu-item" role="menuitem">Item 2</button>
+        <button class="SelectMenu-item" role="menuitem">Item 3</button>
+      </div>
+    </div>
+  </div>
+</details>
+
+<div class="d-sm-none" style="height: 600px"><!-- min height for < sm --></div>
+<div class="d-none d-sm-block" style="height: 120px"><!-- min height for > sm --></div>
+```
+
 ## Header
 
 Add a `.SelectMenu-header` at the top to house a clear title and a close button.

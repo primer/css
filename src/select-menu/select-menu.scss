@@ -201,6 +201,11 @@ $SelectMenu-max-height: 480px !default;
     // stylelint-disable-next-line primer/spacing
     padding-bottom: 7px;
   }
+
+  // Borderless
+  .SelectMenu-list--withoutBorders & {
+    border-bottom: 0;
+  }
 }
 
 // Icon
@@ -314,6 +319,11 @@ $SelectMenu-max-height: 480px !default;
   color: $text-gray-light;
   background-color: $bg-gray;
   border-bottom: $border-width $border-style $border-gray-light;
+
+  // Borderless
+  .SelectMenu-list--withoutBorders & {
+    border-top: $border-width $border-style $border-gray-light;
+  }
 }
 
 // Footer
