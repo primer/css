@@ -102,70 +102,10 @@ If the `SelectMenu` should show a check icon for selected items, use the `Select
 </details>
 
 <div class="d-sm-none" style="height: 600px"><!-- min height for < sm --></div>
-<div class="d-none d-sm-block" style="height: 250px"><!-- min height for > sm --></div>
+<div class="d-none d-sm-block" style="height: 200px"><!-- min height for > sm --></div>
 ```
 
-## List items
-
-The list of items is arguably the most important subcomponent within the menu. Build them out of anchors, buttons, or just about any [interactive content](http://w3c.github.io/html/dom.html#interactive-content). List items are also customizable with options for avatars, additional icons, and multiple lines of text. Use utility classes in case more custom styling is needed.
-
-```html live
-<details class="details-reset details-overlay" open>
-  <summary class="btn" aria-haspopup="true">
-    Choose an item
-  </summary>
-  <div class="SelectMenu">
-    <div class="SelectMenu-modal">
-      <div class="SelectMenu-list">
-        <button class="SelectMenu-item" role="menuitem">
-          Text only
-        </button>
-        <button class="SelectMenu-item" role="menuitem">
-          <!-- <%= octicon "pin", class: "SelectMenu-icon" %> -->
-          <svg class="SelectMenu-icon octicon octicon-pin" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 1.2V2l.5 1L6 6H2.2c-.44 0-.67.53-.34.86L5 10l-4 5 5-4 3.14 3.14a.5.5 0 00.86-.34V10l3-4.5 1 .5h.8c.44 0 .67-.53.34-.86L10.86.86a.5.5 0 00-.86.34z"></path></svg>
-          With an icon
-        </button>
-        <button class="SelectMenu-item" role="menuitem">
-          <img
-            class="avatar avatar-small mr-2"
-            src="https://avatars.githubusercontent.com/hubot?s=40"
-            alt="hubot"
-            height="20"
-            width="20"
-          />
-          With an avatar
-        </button>
-        <button class="SelectMenu-item flex-justify-between" role="menuitem">
-          With a status icon
-          <!-- <%= octicon "primitive-dot", class: "color-green-5 ml-2" %> -->
-          <svg
-            width="8"
-            height="16"
-            viewBox="0 0 8 16"
-            class="octicon octicon-primitive-dot color-green-5 ml-2"
-            aria-hidden="true"
-          >
-            <path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" />
-          </svg>
-        </button>
-        <button class="SelectMenu-item d-block" role="menuitem">
-          With a <span class="Label bg-blue" title="Label: label">label</span>
-        </button>
-        <button class="SelectMenu-item" role="menuitem">
-          With a counter <span class="Counter bg-gray-2 ml-1">16</span>
-        </button>
-        <button class="SelectMenu-item d-block" role="menuitem">
-          <h5>With a heading</h5>
-          <span>and some longer description</span>
-        </button>
-      </div>
-    </div>
-  </div>
-</details>
-
-<div class="d-sm-none" style="height: 600px"><!-- min height for < sm --></div>
-<div class="d-none d-sm-block" style="height: 320px"><!-- min height for > sm --></div>
-```
+## Borderless
 
 Use the `.SelectMenu-list--withoutBorders` modifier to remove the borders between list items. Note: It's better to keep the borders if a list contains items with multiple lines of text. It will make it easier to see where the items start and end.
 
@@ -220,9 +160,78 @@ Add a `.SelectMenu-header` at the top to house a clear title and a close button.
 <div class="d-none d-sm-block" style="height: 180px"><!-- min height for > sm --></div>
 ```
 
+## List items
+
+The list of items is arguably the most important subcomponent within the menu. Build them out of anchors, buttons, or just about any [interactive content](http://w3c.github.io/html/dom.html#interactive-content). List items are also customizable with options for avatars, additional icons, and multiple lines of text. Use utility classes in case more custom styling is needed.
+
+```html live
+<details class="details-reset details-overlay" open>
+  <summary class="btn" aria-haspopup="true">
+    Choose an item
+  </summary>
+  <div class="SelectMenu">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button">
+          <!-- <%= octicon "x" %> -->
+          <svg class="octicon octicon-x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.72 3.72C3.86062 3.57955 4.05125 3.50066 4.25 3.50066C4.44875 3.50066 4.63937 3.57955 4.78 3.72L8 6.94L11.22 3.72C11.2887 3.64631 11.3715 3.58721 11.4635 3.54622C11.5555 3.50523 11.6548 3.48319 11.7555 3.48141C11.8562 3.47963 11.9562 3.49816 12.0496 3.53588C12.143 3.5736 12.2278 3.62974 12.299 3.70096C12.3703 3.77218 12.4264 3.85702 12.4641 3.9504C12.5018 4.04379 12.5204 4.14382 12.5186 4.24452C12.5168 4.34523 12.4948 4.44454 12.4538 4.53654C12.4128 4.62854 12.3537 4.71134 12.28 4.78L9.06 8L12.28 11.22C12.3537 11.2887 12.4128 11.3715 12.4538 11.4635C12.4948 11.5555 12.5168 11.6548 12.5186 11.7555C12.5204 11.8562 12.5018 11.9562 12.4641 12.0496C12.4264 12.143 12.3703 12.2278 12.299 12.299C12.2278 12.3703 12.143 12.4264 12.0496 12.4641C11.9562 12.5018 11.8562 12.5204 11.7555 12.5186C11.6548 12.5168 11.5555 12.4948 11.4635 12.4538C11.3715 12.4128 11.2887 12.3537 11.22 12.28L8 9.06L4.78 12.28C4.63782 12.4125 4.44977 12.4846 4.25547 12.4812C4.06117 12.4777 3.87579 12.399 3.73837 12.2616C3.60096 12.1242 3.52225 11.9388 3.51882 11.7445C3.51539 11.5502 3.58752 11.3622 3.72 11.22L6.94 8L3.72 4.78C3.57955 4.63938 3.50066 4.44875 3.50066 4.25C3.50066 4.05125 3.57955 3.86063 3.72 3.72Z"></path></svg>
+        </button>
+      </header>
+      <div class="SelectMenu-list">
+        <button class="SelectMenu-item" role="menuitem">
+          Text only
+        </button>
+        <button class="SelectMenu-item" role="menuitem">
+          <!-- <%= octicon "pin", class: "SelectMenu-icon" %> -->
+          <svg class="SelectMenu-icon octicon octicon-pin" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 1.2V2l.5 1L6 6H2.2c-.44 0-.67.53-.34.86L5 10l-4 5 5-4 3.14 3.14a.5.5 0 00.86-.34V10l3-4.5 1 .5h.8c.44 0 .67-.53.34-.86L10.86.86a.5.5 0 00-.86.34z"></path></svg>
+          With an icon
+        </button>
+        <button class="SelectMenu-item" role="menuitem">
+          <img
+            class="avatar avatar-small mr-2"
+            src="https://avatars.githubusercontent.com/hubot?s=40"
+            alt="hubot"
+            height="20"
+            width="20"
+          />
+          With an avatar
+        </button>
+        <button class="SelectMenu-item flex-justify-between" role="menuitem">
+          With a status icon
+          <!-- <%= octicon "primitive-dot", class: "color-green-5 ml-2" %> -->
+          <svg
+            width="8"
+            height="16"
+            viewBox="0 0 8 16"
+            class="octicon octicon-primitive-dot color-green-5 ml-2"
+            aria-hidden="true"
+          >
+            <path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" />
+          </svg>
+        </button>
+        <button class="SelectMenu-item d-block" role="menuitem">
+          With a <span class="Label bg-blue" title="Label: label">label</span>
+        </button>
+        <button class="SelectMenu-item" role="menuitem">
+          With a counter <span class="Counter bg-gray-2 ml-1">16</span>
+        </button>
+        <button class="SelectMenu-item d-block" role="menuitem">
+          <h5>With a heading</h5>
+          <span>and some longer description</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</details>
+
+<div class="d-sm-none" style="height: 600px"><!-- min height for < sm --></div>
+<div class="d-none d-sm-block" style="height: 320px"><!-- min height for > sm --></div>
+```
+
 ## Divider
 
-The Select Menu's list can be divided into multiple parts by adding a `.SelectMenu-divider`.
+The Select Menu's list can be divided into multiple parts by adding a `.SelectMenu-divider`. It can be a `<div>` with text/content. Or just an `<hr>` to add a visual separator.
 
 ```html live
 <details class="details-reset details-overlay" open>
@@ -244,14 +253,50 @@ The Select Menu's list can be divided into multiple parts by adding a `.SelectMe
         <div class="SelectMenu-divider">More options</div>
         <button class="SelectMenu-item" role="menuitem">Item 3</button>
         <button class="SelectMenu-item" role="menuitem">Item 4</button>
+        <hr class="SelectMenu-divider">
         <button class="SelectMenu-item" role="menuitem">Item 5</button>
+        <button class="SelectMenu-item" role="menuitem">Item 6</button>
       </div>
     </div>
   </div>
 </details>
 
 <div class="d-sm-none" style="height: 600px"><!-- min height for < sm --></div>
-<div class="d-none d-sm-block" style="height: 260px"><!-- min height for > sm --></div>
+<div class="d-none d-sm-block" style="height: 300px"><!-- min height for > sm --></div>
+```
+
+Dividers are also supported when using the `.SelectMenu-list--withoutBorders` modifier.
+
+```html live
+<details class="details-reset details-overlay" open>
+  <summary class="btn" aria-haspopup="true">
+    Choose an item
+  </summary>
+  <div class="SelectMenu">
+    <div class="SelectMenu-modal">
+      <header class="SelectMenu-header">
+        <h3 class="SelectMenu-title">Title</h3>
+        <button class="SelectMenu-closeButton" type="button">
+          <!-- <%= octicon "x" %> -->
+          <svg class="octicon octicon-x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.72 3.72C3.86062 3.57955 4.05125 3.50066 4.25 3.50066C4.44875 3.50066 4.63937 3.57955 4.78 3.72L8 6.94L11.22 3.72C11.2887 3.64631 11.3715 3.58721 11.4635 3.54622C11.5555 3.50523 11.6548 3.48319 11.7555 3.48141C11.8562 3.47963 11.9562 3.49816 12.0496 3.53588C12.143 3.5736 12.2278 3.62974 12.299 3.70096C12.3703 3.77218 12.4264 3.85702 12.4641 3.9504C12.5018 4.04379 12.5204 4.14382 12.5186 4.24452C12.5168 4.34523 12.4948 4.44454 12.4538 4.53654C12.4128 4.62854 12.3537 4.71134 12.28 4.78L9.06 8L12.28 11.22C12.3537 11.2887 12.4128 11.3715 12.4538 11.4635C12.4948 11.5555 12.5168 11.6548 12.5186 11.7555C12.5204 11.8562 12.5018 11.9562 12.4641 12.0496C12.4264 12.143 12.3703 12.2278 12.299 12.299C12.2278 12.3703 12.143 12.4264 12.0496 12.4641C11.9562 12.5018 11.8562 12.5204 11.7555 12.5186C11.6548 12.5168 11.5555 12.4948 11.4635 12.4538C11.3715 12.4128 11.2887 12.3537 11.22 12.28L8 9.06L4.78 12.28C4.63782 12.4125 4.44977 12.4846 4.25547 12.4812C4.06117 12.4777 3.87579 12.399 3.73837 12.2616C3.60096 12.1242 3.52225 11.9388 3.51882 11.7445C3.51539 11.5502 3.58752 11.3622 3.72 11.22L6.94 8L3.72 4.78C3.57955 4.63938 3.50066 4.44875 3.50066 4.25C3.50066 4.05125 3.57955 3.86063 3.72 3.72Z"></path></svg>
+        </button>
+      </header>
+      <div class="SelectMenu-list SelectMenu-list--withoutBorders">
+        <button class="SelectMenu-item" role="menuitem">Item 1</button>
+        <button class="SelectMenu-item" role="menuitem">Item 2</button>
+        <div class="SelectMenu-divider">More options</div>
+        <button class="SelectMenu-item" role="menuitem">Item 3</button>
+        <button class="SelectMenu-item" role="menuitem">Item 4</button>
+        <hr class="SelectMenu-divider">
+        <button class="SelectMenu-item" role="menuitem">Item 5</button>
+        <button class="SelectMenu-item" role="menuitem">Item 6</button>
+      </div>
+    </div>
+  </div>
+</details>
+
+<div class="d-sm-none" style="height: 600px"><!-- min height for < sm --></div>
+<div class="d-none d-sm-block" style="height: 300px"><!-- min height for > sm --></div>
 ```
 
 ## Footer

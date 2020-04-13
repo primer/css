@@ -323,6 +323,11 @@ $SelectMenu-max-height: 480px !default;
   // Borderless
   .SelectMenu-list--withoutBorders & {
     border-top: $border-width $border-style $border-gray-light;
+
+    &:empty {
+      padding: 0;
+      border-top: 0;
+    }
   }
 }
 
