@@ -203,7 +203,7 @@ $SelectMenu-max-height: 480px !default;
   }
 
   // Borderless
-  .SelectMenu-list--withoutBorders & {
+  .SelectMenu-list--borderless & {
     border-bottom: 0;
   }
 }
@@ -321,7 +321,7 @@ $SelectMenu-max-height: 480px !default;
   border-bottom: $border-width $border-style $border-gray-light;
 
   // Borderless
-  .SelectMenu-list--withoutBorders & {
+  .SelectMenu-list--borderless & {
     border-top: $border-width $border-style $border-gray-light;
 
     &:empty {
