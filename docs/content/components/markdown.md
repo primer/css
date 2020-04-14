@@ -9,7 +9,7 @@ bundle: markdown
 
 ```html live
 <div class="markdown-body">
-  <p>Text can be <b>bold</b>, <i>italic</i>, or <s>strikethrough</s>. <a href="https://github.com">Links </a>sould be blue with no underlines (unless hovered over).</p>
+  <p>Text can be <b>bold</b>, <i>italic</i>, or <s>strikethrough</s>. <a href="https://github.com">Links </a> should be blue with no underlines (unless hovered over).</p>
 
   <p>There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.</p>
 
