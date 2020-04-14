@@ -512,6 +512,31 @@ When fetching large lists, consider showing a `.SelectMenu-loading` animation.
 <div class="d-none d-sm-block" style="height: 220px"><!-- min height for > sm --></div>
 ```
 
+## Disabled
+
+To disable a list item, use the `disabled` attribute for `<button>`s. For `<a>`s replace the `href` with an `aria-disabled="true"` attribute. Note: If not obvious, try to communicate to the user why an item is disabled.
+
+```html live
+<details class="details-reset details-overlay" open>
+  <summary class="btn" aria-haspopup="true">
+    Choose an item
+  </summary>
+  <div class="SelectMenu">
+    <div class="SelectMenu-modal">
+      <div class="SelectMenu-list">
+        <button class="SelectMenu-item" role="menuitem">Item 1</button>
+        <button class="SelectMenu-item" role="menuitem" disabled>Item 2 (disabled)</button>
+        <a class="SelectMenu-item" role="menuitem" href="#">Item 3</a>
+        <a class="SelectMenu-item" role="menuitem" aria-disabled="true">Item 4 (disabled)</a>
+      </div>
+    </div>
+  </div>
+</details>
+
+<div class="d-sm-none" style="height: 600px"><!-- min height for < sm --></div>
+<div class="d-none d-sm-block" style="height: 160px"><!-- min height for > sm --></div>
+```
+
 ## Blankslate
 
 Sometimes a Select Menu needs to communicate a "blank slate" where there's no content in the menu's list. Usually these include a clear call to action to add said content to the list. Swap out the contents of a `.SelectMenu-list` with a `.SelectMenu-blankslate` and customize its contents as needed.

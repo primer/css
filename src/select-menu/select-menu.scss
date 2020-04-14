@@ -188,7 +188,7 @@ $SelectMenu-max-height: 480px !default;
   width: 100%;
   padding: $spacer-3;
   overflow: hidden;
-  color: $text-gray;
+  color: $text-gray-dark;
   text-align: left;
   cursor: pointer;
   background-color: $bg-white;
@@ -385,7 +385,7 @@ $SelectMenu-max-height: 480px !default;
 
 // Selected
 //
-// Visible when a used clicks/taps on a list item
+// Visible when a user clicks/taps on a list item
 
 .SelectMenu-item[aria-checked=true] {
   font-weight: $font-weight-semibold;
@@ -396,6 +396,16 @@ $SelectMenu-max-height: 480px !default;
     transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), visibility 0s linear;
     transform: scale(1);
   }
+}
+
+// Disabled
+//
+// Prevent list items to be selected
+
+.SelectMenu-item:disabled,
+.SelectMenu-item[aria-disabled=true] {
+  color: $text-gray-light;
+  pointer-events: none;
 }
 
 // Can hover states
