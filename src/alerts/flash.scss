@@ -29,17 +29,24 @@
   float: right;
   padding: $spacer-3;
   margin: -$spacer-3;
-  color: inherit;
   text-align: center;
   cursor: pointer;
+
   // Undo `<button>` styles
   background: none;
   border: 0;
   appearance: none;
-  opacity: 0.6;
 
   &:hover {
-    opacity: 1;
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  .octicon {
+    margin-right: 0;
   }
 }
 
