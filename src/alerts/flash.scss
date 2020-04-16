@@ -6,14 +6,17 @@
   // stylelint-disable-next-line primer/spacing
   padding: 12px $spacer-3;
   color: $text-gray-dark;
-  // stylelint-disable-next-line primer/colors
-  background-color: $blue-100;
-  // stylelint-disable-next-line primer/borders
-  border: $border-width $border-style rgba($blue-700, 0.2);
+  border-style: $border-style;
+  border-width: $border-width;
   border-radius: $border-radius;
 
   p:last-child {
     margin-bottom: 0;
+  }
+
+  .octicon {
+    // stylelint-disable-next-line primer/spacing
+    margin-right: 12px;
   }
 }
 
@@ -53,11 +56,28 @@
 // Color variations
 //
 
+.flash {
+  // stylelint-disable-next-line primer/colors
+  background-color: $blue-100;
+  // stylelint-disable-next-line primer/borders
+  border-color: rgba($blue-700, 0.2);
+
+  .octicon {
+    // stylelint-disable-next-line primer/colors
+    color: rgba($blue-700, 0.6);
+  }
+}
+
 .flash-warn {
   // stylelint-disable-next-line primer/colors
   background-color: $yellow-100;
   // stylelint-disable-next-line primer/borders
   border-color: rgba($yellow-800, 0.2);
+
+  .octicon {
+    // stylelint-disable-next-line primer/colors
+    color: rgba($yellow-800, 1);
+  }
 }
 
 .flash-error {
@@ -65,6 +85,11 @@
   background-color: #ffe3e6; // custom red
   // stylelint-disable-next-line primer/borders
   border-color: rgba($red-800, 0.2);
+
+  .octicon {
+    // stylelint-disable-next-line primer/colors
+    color: rgba($red-800, 0.6);
+  }
 }
 
 .flash-success {
@@ -72,6 +97,11 @@
   background-color: $bg-green-light;
   // stylelint-disable-next-line primer/borders
   border-color: rgba($green-700, 0.2);
+
+  .octicon {
+    // stylelint-disable-next-line primer/colors
+    color: rgba($green-700, 0.8);
+  }
 }
 
 //
