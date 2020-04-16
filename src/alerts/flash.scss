@@ -5,8 +5,7 @@
   min-height: $size-7;
   // stylelint-disable-next-line primer/spacing
   padding: 12px $spacer-3;
-  // stylelint-disable-next-line primer/colors
-  color: $blue-800;
+  color: $text-gray-dark;
   // stylelint-disable-next-line primer/colors
   background-color: $blue-100;
   border: $border-width $border-style $border-black-fade;
@@ -50,30 +49,28 @@
 }
 
 //
-// Variations
+// Color variations
 //
 
 .flash-warn {
-  // stylelint-disable-next-line primer/colors
-  color: $yellow-900;
   // stylelint-disable-next-line primer/colors
   background-color: $yellow-100;
   border-color: $border-black-fade;
 }
 
 .flash-error {
-  // stylelint-disable-next-line primer/colors
-  color: $red-900;
   background-color: $bg-red-light;
   border-color: $border-black-fade;
 }
 
 .flash-success {
-  // stylelint-disable-next-line primer/colors
-  color: $green-800;
   background-color: $bg-green-light;
   border-color: $border-black-fade;
 }
+
+//
+// Layout variations
+//
 
 .flash-full {
   // stylelint-disable-next-line primer/spacing
