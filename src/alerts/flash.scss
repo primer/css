@@ -55,7 +55,9 @@
   float: right;
   // stylelint-disable-next-line primer/spacing
   margin-top: -3px;
+  margin-right: -$spacer-2;
   margin-left: $spacer-4;
+  background-clip: padding-box;
 }
 
 //
