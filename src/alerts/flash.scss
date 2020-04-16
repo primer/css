@@ -8,7 +8,8 @@
   color: $text-gray-dark;
   // stylelint-disable-next-line primer/colors
   background-color: $blue-100;
-  border: $border-width $border-style $border-black-fade;
+  // stylelint-disable-next-line primer/borders
+  border: $border-width $border-style rgba($blue-700, 0.2);
   border-radius: $border-radius;
 
   p:last-child {
@@ -55,17 +56,22 @@
 .flash-warn {
   // stylelint-disable-next-line primer/colors
   background-color: $yellow-100;
-  border-color: $border-black-fade;
+  // stylelint-disable-next-line primer/borders
+  border-color: rgba($yellow-800, 0.2);
 }
 
 .flash-error {
-  background-color: $bg-red-light;
-  border-color: $border-black-fade;
+  // stylelint-disable-next-line primer/colors
+  background-color: #ffe3e6; // custom red
+  // stylelint-disable-next-line primer/borders
+  border-color: rgba($red-800, 0.2);
 }
 
 .flash-success {
+  // stylelint-disable-next-line primer/colors
   background-color: $bg-green-light;
-  border-color: $border-black-fade;
+  // stylelint-disable-next-line primer/borders
+  border-color: rgba($green-700, 0.2);
 }
 
 //
