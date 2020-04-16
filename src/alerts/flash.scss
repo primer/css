@@ -2,9 +2,8 @@
 // stylelint-disable selector-max-type
 .flash {
   position: relative;
-  min-height: $size-7;
   // stylelint-disable-next-line primer/spacing
-  padding: 12px $spacer-3;
+  padding: 20px $spacer-4;
   color: $text-gray-dark;
   border-style: $border-style;
   border-width: $border-width;
