@@ -1,19 +1,22 @@
+// stylelint-disable selector-max-type, no-duplicate-selectors
+
 // Default flash
-// stylelint-disable selector-max-type
 .flash {
   position: relative;
-  min-height: $size-7;
   // stylelint-disable-next-line primer/spacing
-  padding: 12px $spacer-3;
-  // stylelint-disable-next-line primer/colors
-  color: $blue-800;
-  // stylelint-disable-next-line primer/colors
-  background-color: $blue-100;
-  border: $border-width $border-style $border-black-fade;
+  padding: 20px $spacer-4;
+  color: $text-gray-dark;
+  border-style: $border-style;
+  border-width: $border-width;
   border-radius: $border-radius;
 
   p:last-child {
     margin-bottom: 0;
+  }
+
+  .octicon {
+    // stylelint-disable-next-line primer/spacing
+    margin-right: 12px;
   }
 }
 
@@ -27,17 +30,24 @@
   float: right;
   padding: $spacer-3;
   margin: -$spacer-3;
-  color: inherit;
   text-align: center;
   cursor: pointer;
+
   // Undo `<button>` styles
   background: none;
   border: 0;
   appearance: none;
-  opacity: 0.6;
 
   &:hover {
-    opacity: 1;
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  .octicon {
+    margin-right: 0;
   }
 }
 
@@ -46,34 +56,65 @@
   float: right;
   // stylelint-disable-next-line primer/spacing
   margin-top: -3px;
+  margin-right: -$spacer-2;
   margin-left: $spacer-4;
+  background-clip: padding-box;
 }
 
 //
-// Variations
+// Color variations
 //
+
+.flash {
+  // stylelint-disable-next-line primer/colors
+  background-color: $blue-100;
+  // stylelint-disable-next-line primer/borders
+  border-color: rgba($blue-700, 0.2);
+
+  .octicon {
+    // stylelint-disable-next-line primer/colors
+    color: rgba($blue-700, 0.6);
+  }
+}
 
 .flash-warn {
   // stylelint-disable-next-line primer/colors
-  color: $yellow-900;
-  // stylelint-disable-next-line primer/colors
   background-color: $yellow-100;
-  border-color: $border-black-fade;
+  // stylelint-disable-next-line primer/borders
+  border-color: rgba($yellow-800, 0.2);
+
+  .octicon {
+    // stylelint-disable-next-line primer/colors
+    color: rgba($yellow-800, 1);
+  }
 }
 
 .flash-error {
   // stylelint-disable-next-line primer/colors
-  color: $red-900;
-  background-color: $bg-red-light;
-  border-color: $border-black-fade;
+  background-color: #ffe3e6; // custom red
+  // stylelint-disable-next-line primer/borders
+  border-color: rgba($red-800, 0.2);
+
+  .octicon {
+    // stylelint-disable-next-line primer/colors
+    color: rgba($red-800, 0.6);
+  }
 }
 
 .flash-success {
-  // stylelint-disable-next-line primer/colors
-  color: $green-800;
   background-color: $bg-green-light;
-  border-color: $border-black-fade;
+  // stylelint-disable-next-line primer/borders
+  border-color: rgba($green-700, 0.2);
+
+  .octicon {
+    // stylelint-disable-next-line primer/colors
+    color: rgba($green-700, 0.8);
+  }
 }
+
+//
+// Layout variations
+//
 
 .flash-full {
   // stylelint-disable-next-line primer/spacing
