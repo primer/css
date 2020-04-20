@@ -20,16 +20,19 @@
     // stylelint-disable-next-line primer/borders
     border: $border-width $border-style transparent;
     border-radius: $border-radius;
+    transition: border-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
 
     &:hover,
     &:focus {
       text-decoration: none;
       border-color: $border-color;
       outline: 0;
+      transition-duration: 0.1s;
     }
 
     &:active {
       border-color: $border-gray-light;
+      transition: none;
     }
   }
 
