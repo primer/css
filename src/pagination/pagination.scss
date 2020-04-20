@@ -5,34 +5,46 @@
   span,
   em {
     display: inline-block;
-    padding: $spacer-1 12px;
+    min-width: 32px;
+    // stylelint-disable-next-line primer/spacing
+    padding: 5px 10px;
     font-style: normal;
-    color: $text-black;
+    // stylelint-disable-next-line primer/typography
+    line-height: 20px;
+    color: $text-gray-dark;
+    text-align: center;
     white-space: nowrap;
     vertical-align: middle;
     cursor: pointer;
     user-select: none;
     // stylelint-disable-next-line primer/borders
-    border-bottom: 2px $border-style transparent;
+    border: $border-width $border-style transparent;
+    border-radius: $border-radius;
 
     &:hover,
     &:focus {
-      color: $text-gray-dark;
       text-decoration: none;
+      border-color: $border-color;
       outline: 0;
     }
 
     &:active {
-      color: $text-gray-light;
+      border-color: $border-gray-light;
     }
+  }
+
+  .previous_page,
+  .next_page {
+    color: $text-blue;
   }
 
   .current,
   .current:hover,
   [aria-current],
   [aria-current]:hover {
-    // stylelint-disable-next-line primer/borders
-    border-color: #f9826c; // custom coral
+    color: $text-white;
+    background-color: $bg-blue;
+    border-color: transparent;
   }
 
   .gap,
