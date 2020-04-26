@@ -44,7 +44,7 @@ The default TimelineItem-badge color is dark text on a light grey background.
 
 ### Adding color to TimelineItem-badge
 
-To have color variants, use the [color utilities]() on the badge. Be cautious with color choices. We typically use them in the timeline to give meaning to the event in context of the timeline.
+To have color variants, use the [color utilities](/css/utilities/colors) on the badge. Be cautious with color choices. We typically use them in the timeline to give meaning to the event in context of the timeline.
 
 ```html live
 <!-- Colorful TimelineItem Badge -->
