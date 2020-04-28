@@ -2,144 +2,128 @@
 // there is limited space available.
 
 .AvatarStack {
+  display: flex;
   position: relative;
-  min-width: 26px;
+  min-width: 20px;
   height: 20px;
-
-  .AvatarStack-body {
-    position: absolute;
+  .avatar {
+    &:first-child {
+      margin-left: 0;
+    }
+    @for $i from 4 through 100 {
+      &:nth-child(#{$i}) {
+        display: none;
+      }
+    }
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        z-index: #{10 - $i};
+      }
+    }
   }
+}
 
-  &.AvatarStack--two {
-    min-width: 36px;
+.AvatarStack--two {
+  min-width: 30px;
+  .avatar {
+    @for $i from 3 through 100 {
+      &:nth-child(#{$i}) {
+        display: none;
+      }
+    }
   }
+}
 
-  &.AvatarStack--three-plus {
-    min-width: 46px;
+.AvatarStack--three-plus {
+  min-width: 38px;
+  .avatar {
+    @for $i from 3 through 5 {
+      &:nth-child(#{$i}) {
+        opacity: #{100% - $i*15};
+        margin-left: -17px;
+      }
+    }
+    @for $i from 4 through 100 {
+      &:nth-child(#{$i}) {
+        display: block;
+      }
+    }
+    @for $i from 6 to 100 {
+      &:nth-child(#{$i}) {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+  &.AvatarStack--right {
+    .avatar {
+      @for $i from 3 through 5 {
+        &:nth-child(#{$i}) {
+          // stylelint-disable-next-line primer/spacing
+          margin-right: -17px;
+        }
+      }
+    }
   }
 }
 
 .AvatarStack-body {
   display: flex;
-  background: $bg-white;
-
+  position: absolute;
+  width: 38px;
+  
   .avatar {
-    position: relative;
-    z-index: 2;
-    display: flex;
+    flex-shrink: 0;
+    height: 20px;
     width: 20px;
-    height: 20px;
-    box-sizing: content-box;
-    // stylelint-disable-next-line primer/spacing
-    margin-right: -11px;
-    background-color: $bg-white;
-    border-right: $border-width $border-style $border-white;
-    // stylelint-disable-next-line primer/borders
-    border-radius: 2px;
-    transition: margin 0.1s ease-in-out;
-
-    &:first-child {
-      z-index: 3;
-    }
-
-    &:last-child {
-      z-index: 1;
-      border-right: 0;
-    }
-
-    // stylelint-disable selector-max-type
-    img {
-      // stylelint-disable-next-line primer/borders
-      border-radius: 2px;
-    }
-    // stylelint-enable selector-max-type
-
-    // Account for 4+ avatars
-    &:nth-child(n+4) {
-      display: none;
-      opacity: 0;
-    }
-  }
-
-  &:hover {
-    .avatar {
-      // stylelint-disable-next-line primer/spacing
-      margin-right: 3px;
-    }
-
-    .avatar:nth-child(n+4) {
-      display: flex;
-      opacity: 1;
-    }
-
-    .avatar-more {
-      display: none !important;
-    }
-  }
-}
-
-.avatar.avatar-more {
-  z-index: 1;
-  margin-right: 0;
-  background: $bg-gray;
-
-  &::before,
-  &::after {
-    position: absolute;
-    display: block;
-    height: 20px;
-    content: "";
-    // stylelint-disable-next-line primer/borders
-    border-radius: 2px;
-    outline: $border-width $border-style $white;
-  }
-
-  &::before {
-    width: 17px;
-    // stylelint-disable-next-line primer/colors
-    background: $gray-200;
-  }
-
-  &::after {
-    width: 14px;
-    // stylelint-disable-next-line primer/colors
-    background: $gray-300;
-  }
-}
-
-// Right aligned variation
-
-.AvatarStack--right {
-  .AvatarStack-body {
-    right: 0;
-    flex-direction: row-reverse;
-
-    &:hover .avatar {
-      margin-right: 0;
-      // stylelint-disable-next-line primer/spacing
-      margin-left: 3px;
-    }
-  }
-
-  .avatar.avatar-more {
-    // stylelint-disable-next-line primer/colors
-    background: $gray-300;
-
-    &::before {
-      width: 5px;
-    }
-
-    &::after {
-      width: 2px;
-      background: $bg-gray;
-    }
-  }
-
-  .avatar {
-    margin-right: 0;
+    box-shadow: 0 0 0 1px $white;
     // stylelint-disable-next-line primer/spacing
     margin-left: -11px;
-    border-right: 0;
-    border-left: $border-width $border-style $border-white;
+    position: relative;
+    overflow: hidden;
+    transition: margin 0.2s ease-in-out, opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  }
+  
+  &:hover {
+    width: auto;
+    
+    .avatar {
+      margin-left: $spacer-1;
+      opacity: 100%;
+      visibility: visible;
+      box-shadow: 0 0 0 4px $white;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.AvatarStack--right {
+  justify-content: flex-end;
+  
+  .avatar {
+    margin-left: 0 !important;
+    // stylelint-disable-next-line primer/spacing
+    margin-right: -11px;
+    
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+  
+  .AvatarStack-body {
+    flex-direction: row-reverse;
+    
+    &:hover {
+      .avatar {
+        margin-right: $spacer-1;
+        margin-left: 0 !important;
+        
+        &:first-child {
+          margin-right: 0;
+        }
+      }
+    }
   }
 }
