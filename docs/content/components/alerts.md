@@ -172,9 +172,7 @@ A flash message that is full width and removes border and border radius.
 
 ```html live
 <div class="flash flash-full">
-  <div class="container">
-    Full width flash message.
-  </div>
+  Full width flash message.
 </div>
 ```
 
