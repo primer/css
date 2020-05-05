@@ -59,6 +59,33 @@
     cursor: default;
     border-color: transparent;
   }
+
+  .previous_page::before,
+  .next_page::after {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    // stylelint-disable-next-line primer/typography
+    vertical-align: 1px;
+    content: "";
+    // stylelint-disable-next-line primer/borders
+    border-color: currentColor;
+    border-style: $border-style;
+    // stylelint-disable-next-line primer/borders
+    border-width: 2px 2px 0 0;
+    // stylelint-disable-next-line primer/borders
+    border-radius: 1px;
+  }
+
+  .previous_page::before {
+    margin: 0 $spacer-2 0 $spacer-1;
+    transform: rotate(-135deg);
+  }
+
+  .next_page::after {
+    margin: 0 $spacer-1 0 $spacer-2;
+    transform: rotate(45deg);
+  }
 }
 
 // Unified centered pagination across the site
