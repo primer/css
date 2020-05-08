@@ -28,8 +28,7 @@
 }
 
 .State--green {
-  // stylelint-disable-next-line primer/colors
-  background-color: #159739; // custom green
+  background-color: $bg-green;
 }
 
 .State--red {

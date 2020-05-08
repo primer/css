@@ -59,6 +59,32 @@
     cursor: default;
     border-color: transparent;
   }
+
+  // chevron icons using clip-path
+  @supports (clip-path: polygon(50% 0, 100% 50%, 50% 100%)) {
+    .previous_page::before,
+    .next_page::after {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      vertical-align: text-bottom;
+      content: "";
+      // stylelint-disable-next-line primer/colors
+      background-color: currentColor;
+    }
+
+    // chevron-left
+    .previous_page::before {
+      margin-right: $spacer-1;
+      clip-path: polygon(9.8px 12.8px, 8.7px 12.8px, 4.5px 8.5px, 4.5px 7.5px, 8.7px 3.2px, 9.8px 4.3px, 6.1px 8px, 9.8px 11.7px, 9.8px 12.8px);
+    }
+
+    // chevron-right
+    .next_page::after {
+      margin-left: $spacer-1;
+      clip-path: polygon(6.2px 3.2px, 7.3px 3.2px, 11.5px 7.5px, 11.5px 8.5px, 7.3px 12.8px, 6.2px 11.7px, 9.9px 8px, 6.2px 4.3px, 6.2px 3.2px);
+    }
+  }
 }
 
 // Unified centered pagination across the site
