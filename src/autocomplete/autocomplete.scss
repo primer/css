@@ -1,0 +1,43 @@
+// A pop up list of items used to show autocompleted results
+.autocomplete-results {
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  max-height: 20em;
+  overflow-y: auto;
+  // stylelint-disable-next-line primer/typography
+  font-size: 13px;
+  list-style: none;
+  background: $bg-white;
+  border-radius: $border-radius;
+  // stylelint-disable-next-line primer/box-shadow
+  box-shadow: 0 0 5px $black-fade-30;
+}
+
+// One of the items that appears within an autocomplete group
+// Bold black text on white background
+
+.autocomplete-item {
+  display: block;
+  padding: $spacer-1 $spacer-2;
+  overflow: hidden;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover,
+  &.selected,
+  &[aria-selected=true],
+  &.navigation-focus {
+    color: $text-white;
+    text-decoration: none;
+    background-color: $bg-blue;
+
+    // Inherit color on all child elements to ensure enough contrast
+    * {
+      color: inherit !important;
+    }
+  }
+}

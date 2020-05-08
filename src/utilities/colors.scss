@@ -1,5 +1,4 @@
 // Color utilities
-// stylelint-disable primer/selector-no-utility
 // stylelint-disable block-opening-brace-space-before, comment-empty-line-before
 
 // background colors
@@ -27,6 +26,8 @@
 .bg-yellow     { background-color: $bg-yellow !important; }
 /* Set the background to $bg-yellow-light */
 .bg-yellow-light     { background-color: $bg-yellow-light !important; }
+/* Set the background to $bg-yellow-dark */
+.bg-yellow-dark      { background-color: $bg-yellow-dark !important; }
 /* Set the background to $bg-purple */
 .bg-purple     { background-color: $bg-purple !important; }
 /* Set the background to $bg-pink */
@@ -61,6 +62,8 @@
 .text-gray-dark     { color: $text-gray-dark !important; }
 /* Set the text color to $text-green */
 .text-green         { color: $text-green !important; }
+/* Set the text color to $text-yellow */
+.text-yellow        { color: $text-yellow !important; }
 /* Set the text color to $text-orange */
 .text-orange        { color: $text-orange !important; }
 /* Set the text color to $text-orange-light */
@@ -73,12 +76,6 @@
 .text-white         { color: $text-white !important; }
 /* Set the text color to inherit */
 .text-inherit       { color: inherit !important; }
-
-// Text states
-// These can probably all be regular utilities
-.text-pending { color: $yellow-800 !important; }
-// Separate text and background colors in future to improve a11y
-.bg-pending { color: $yellow-700 !important; }
 
 // Link colors
 // Sets the links color to $text-gray and $text-blue on hover

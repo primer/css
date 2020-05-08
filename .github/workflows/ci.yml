@@ -1,0 +1,25 @@
+name: CI
+on: push
+jobs:
+  all:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          node-version: 11
+      - name: install
+        run: npm install
+      - name: lint
+        run: script/lint-ci
+      - name: test
+        run: npm test
+      - name: prepublish
+        run: script/prepublish
+      - name: test deprecations
+        if: startsWith(github.ref, 'refs/heads/release-')
+        run: script/test-deprecations.js
+      - uses: primer/publish@v1.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

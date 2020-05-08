@@ -4,9 +4,11 @@
 .btn {
   position: relative;
   display: inline-block;
+  // stylelint-disable-next-line primer/spacing
   padding: 6px 12px;
   font-size: $body-font-size;
   font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px; // Specifically not inherit our `<body>` default
   white-space: nowrap;
   vertical-align: middle;
@@ -15,7 +17,8 @@
   background-repeat: repeat-x;
   background-position: -1px -1px;
   background-size: 110% 110%;
-  border: 1px solid transparentize($black, 0.8);
+  border: $border-width $border-style $border-color-button;
+  // stylelint-disable-next-line primer/borders
   border-radius: 0.25em;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
@@ -31,8 +34,9 @@
 
   // Darken for just a tad more contrast against the button background
   .Counter {
-    color: $gray-600;
+    color: $text-gray;
     text-shadow: none;
+    // stylelint-disable-next-line primer/colors
     background-color: rgba($black, 0.1);
   }
 
@@ -46,21 +50,22 @@
   }
 
   &:disabled,
-  &.disabled {
+  &.disabled,
+  &[aria-disabled=true] {
     cursor: default;
     // Repeat `background-position` because `:hover`
     background-position: 0 0;
   }
 
   &:active,
-  &.selected {
+  &.selected,
+  &[aria-selected=true] {
     background-image: none;
   }
 }
 
 .btn         { @include btn-solid($text-gray-dark, $gray-000, darken($gray-100, 2%)); }
 .btn-primary { @include btn-solid($text-white, $green-400, $green-500); }
-.btn-purple  { @include btn-solid($text-white, lighten($purple-500, 5%), darken($purple-500, 5%)); }
 .btn-blue    { @include btn-solid($text-white, lighten($blue-500, 8%), darken($blue-500, 2%)); }
 .btn-danger  { @include btn-inverse($red-600, $gray-000, darken($gray-100, 2%)); }
 
@@ -83,8 +88,10 @@
 //
 // Tweak `line-height` to make them smaller.
 .btn-sm {
+  // stylelint-disable-next-line primer/spacing
   padding: 3px 10px;
   font-size: $font-size-small;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
 }
 
@@ -92,76 +99,8 @@
 .btn-large {
   padding: $em-spacer-6 1.25em;
   font-size: inherit;
+  // stylelint-disable-next-line primer/borders
   border-radius: 6px;
-}
-
-// Hidden text button
-//
-// Use `.hidden-text-expander` to indicate and expand hidden text.
-.hidden-text-expander {
-  display: block;
-
-  &.inline {
-    position: relative;
-    top: -1px;
-    display: inline-block;
-    margin-left: 5px;
-    line-height: 0;
-  }
-}
-
-.hidden-text-expander a,
-.ellipsis-expander {
-  display: inline-block;
-  height: 12px;
-  padding: 0 5px 5px;
-  font-size: $font-size-small;
-  font-weight: $font-weight-bold;
-  line-height: 6px;
-  color: $gray-700;
-  text-decoration: none;
-  vertical-align: middle;
-  background: lighten($gray-300, 5%);
-  border: 0;
-  border-radius: 1px;
-
-  &:hover {
-    text-decoration: none;
-    background-color: darken($gray-300, 4%);
-  }
-
-  &:active {
-    color: $text-white;
-    background-color: $blue-400;
-  }
-}
-
-// Social count bubble
-//
-// A container that is used for social bubbles counts.
-.social-count {
-  float: left;
-  padding: 3px 10px;
-  font-size: $font-size-small;
-  font-weight: $font-weight-bold;
-  line-height: 20px;
-  color: $text-gray-dark;
-  vertical-align: middle;
-  background-color: $bg-white;
-  border: 1px solid transparentize($black, 0.8); // match with .btn
-  border-left: 0;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-
-  &:hover,
-  &:active {
-    text-decoration: none;
-  }
-
-  &:hover {
-    color: $text-blue;
-    cursor: pointer;
-  }
 }
 
 // Full-width button
@@ -193,20 +132,70 @@
     text-decoration: underline;
   }
 
-  &:disabled {
+  &:disabled,
+  &[aria-disabled=true] {
     &,
     &:hover {
+      // stylelint-disable-next-line primer/colors
       color: rgba($gray-600, 0.5);
       cursor: default;
     }
   }
 }
 
-.details-reset {
-  // Remove marker added by the display: list-item browser default
-  > summary { list-style: none; }
-  // Remove marker added by details polyfill
-  > summary::before { display: none; }
-  // Remove marker added by Chrome
-  > summary::-webkit-details-marker { display: none; }
+// Invisible button
+//
+// Typically used as a "cancel" button next to a .btn
+.btn-invisible {
+  color: $text-blue;
+  background-color: $bg-white; // Reset default gradient backgrounds and colors
+  background-image: none;
+  border: 0;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.selected,
+  &[aria-selected=true],
+  &.zeroclipboard-is-hover,
+  &.zeroclipboard-is-active {
+    color: $text-blue;
+    background: none;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+// Octicon button
+//
+// Icon-only buttons
+.btn-octicon {
+  display: inline-block;
+  // stylelint-disable-next-line primer/spacing
+  padding: 5px;
+  // stylelint-disable-next-line primer/spacing
+  margin-left: 5px;
+  line-height: $lh-condensed-ultra;
+  color: $text-gray;
+  vertical-align: middle;
+
+  // For `<button>` elements
+  background: transparent;
+  border: 0;
+
+  &:hover { color: $text-blue; }
+
+  &.disabled,
+  &[aria-disabled=true] {
+    // stylelint-disable-next-line primer/colors
+    color: $gray-400;
+    cursor: default;
+
+    // stylelint-disable-next-line primer/colors
+    &:hover { color: $gray-400; }
+  }
+}
+
+.btn-octicon-danger:hover {
+  color: $text-red;
 }

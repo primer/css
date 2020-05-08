@@ -1,0 +1,33 @@
+// diffstat
+//
+// Green/red blocks showing additions and deletions
+
+.diffstat {
+  font-size: $h6-size;
+  font-weight: $font-weight-bold;
+  color: $text-gray;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.diffstat-block-deleted,
+.diffstat-block-added,
+.diffstat-block-neutral {
+  display: inline-block;
+  width: $spacer-2;
+  height: $spacer-2;
+  // stylelint-disable-next-line primer/spacing
+  margin-left: 1px;
+}
+
+.diffstat-block-deleted {
+  background-color: $bg-diffstat-deleted;
+}
+
+.diffstat-block-added {
+  background-color: $bg-diffstat-added;
+}
+
+.diffstat-block-neutral {
+  background-color: $bg-diffstat-neutral;
+}

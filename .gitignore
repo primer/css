@@ -1,11 +1,15 @@
 *.log
 *.tgz
 .DS_Store
-.changelog
+.cache/
+.changelog/
 .next/
 .sass-cache
 .storybuild/
+.stylelintcache
 _site
 dist/
+docs/dist
 node_modules/
+public/
 searchIndex.js

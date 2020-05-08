@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $white;
+  background-color: $bg-white;
   border-radius: 50%;
   box-shadow: $box-shadow-medium;
 }
@@ -45,6 +45,7 @@
     left: 0;
     width: 100%;
     content: "";
+    // stylelint-disable-next-line primer/borders
     border-bottom: 2px dashed $border-gray;
   }
 

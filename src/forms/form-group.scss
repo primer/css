@@ -1,16 +1,24 @@
-// Form groups
-//
-// Typical form groups - `<dl.form-group>` with a `<dt>` containing the label and
-// `<dd> containing the form elements.
 // stylelint-disable selector-max-compound-selectors
 // stylelint-disable selector-max-type
+
+// Form groups
+//
+// Usage:
+//
+// <div class="form-group">
+//   <div class="form-group-header"> containing the label
+//   <div class="form-group-body"> containing the form elements
+// </div>
+
 .form-group {
+  // stylelint-disable-next-line primer/spacing
   margin: 15px 0;
 
   // Text fields
   .form-control {
     width: 440px;
     max-width: 100%;
+    // stylelint-disable-next-line primer/spacing
     margin-right: 5px;
     background-color: $bg-gray-light;
 
@@ -40,7 +48,9 @@
   // stylelint-enable selector-no-qualifying-type
 
   // The Label
-  dt {
+  dt, // TODO: Deprecate
+  .form-group-header {
+    // stylelint-disable-next-line primer/spacing
     margin: 0 0 6px;
   }
 
@@ -48,13 +58,17 @@
     position: relative;
   }
 
-  &.flattened dt {
+  &.flattened dt, // TODO: Deprecate
+  &.flattened .form-group-header {
     float: left;
     margin: 0;
+    // stylelint-disable-next-line primer/typography
     line-height: 32px;
   }
 
-  &.flattened dd {
+  &.flattened dd, // TODO: Deprecate
+  &.flattened .form-group-body {
+    // stylelint-disable-next-line primer/typography
     line-height: 32px;
   }
 
@@ -62,7 +76,8 @@
   // Form Elements
   //
   // stylelint-disable selector-no-qualifying-type
-  dd {
+  dd, // TODO: Deprecate
+  .form-group-body {
     h4 {
       margin: $spacer-1 0 0;
 
@@ -82,7 +97,9 @@
   //
 
   &.required {
-    dt label::after {
+    dt label::after, // TODO: Deprecate
+    .form-group-header label::after {
+      // stylelint-disable-next-line primer/spacing
       padding-left: 5px;
       color: $text-red;
       content: "*";
@@ -125,21 +142,25 @@
   //
   // Our inline errors
 
+  &.successed,
   &.warn,
   &.errored {
+    .success,
     .warning,
     .error {
       position: absolute;
       z-index: 10;
       display: block; // Show up in errored/warn state
       max-width: 450px; // Keep our long errors readable
+      // stylelint-disable-next-line primer/spacing
       padding: 5px $spacer-2;
       margin: $spacer-1 0 0;
+      // stylelint-disable-next-line primer/typography
       font-size: 13px;
       font-weight: $font-weight-normal;
-      border-style: solid;
-      border-width: 1px;
-      border-radius: 3px;
+      border-style: $border-style;
+      border-width: $border-width;
+      border-radius: $border-radius;
 
       &::after,
       &::before {
@@ -151,27 +172,53 @@
         height: 0;
         pointer-events: none;
         content: " ";
-        border: solid transparent;
+        // stylelint-disable-next-line primer/borders
+        border: $border-style transparent;
       }
 
       &::after {
+        // stylelint-disable-next-line primer/borders
         border-width: 5px;
       }
 
       &::before {
+        // stylelint-disable-next-line primer/spacing
         margin-left: -1px;
+        // stylelint-disable-next-line primer/borders
         border-width: 6px;
+      }
+    }
+  }
+
+  &.successed {
+    .success {
+      // stylelint-disable-next-line primer/colors
+      color: $green-900;
+      // stylelint-disable-next-line primer/colors
+      background-color: $green-100;
+      border-color: $border-green;
+
+      &::after {
+        // stylelint-disable-next-line primer/borders
+        border-bottom-color: $green-100;
+      }
+
+      &::before {
+        border-bottom-color: $border-green;
       }
     }
   }
 
   &.warn {
     .warning {
+      // stylelint-disable-next-line primer/colors
       color: $yellow-900;
+      // stylelint-disable-next-line primer/colors
       background-color: $yellow-100;
       border-color: $border-yellow;
 
       &::after {
+        // stylelint-disable-next-line primer/borders
         border-bottom-color: $yellow-100;
       }
 
@@ -187,11 +234,13 @@
     }
 
     .error {
+      // stylelint-disable-next-line primer/colors
       color: $red-900;
       background-color: $bg-red-light;
       border-color: $border-red-light;
 
       &::after {
+        // stylelint-disable-next-line primer/borders
         border-bottom-color: $bg-red-light;
       }
 
@@ -209,6 +258,7 @@
   color: $text-gray;
 
   .spinner {
+    // stylelint-disable-next-line primer/spacing
     margin-right: 3px;
     vertical-align: middle;
   }

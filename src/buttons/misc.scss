@@ -1,0 +1,90 @@
+// stylelint-disable selector-max-type
+
+// Close button
+//
+// Typically used with an octicon-x
+.close-button {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
+// Hidden text button
+//
+// Use `.hidden-text-expander` to indicate and expand hidden text.
+.hidden-text-expander {
+  display: block;
+
+  &.inline {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    // stylelint-disable-next-line primer/spacing
+    margin-left: 5px;
+    line-height: 0;
+  }
+}
+
+.hidden-text-expander a,
+.ellipsis-expander {
+  display: inline-block;
+  height: 12px;
+  // stylelint-disable-next-line primer/spacing
+  padding: 0 5px 5px;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
+  line-height: 6px;
+  // stylelint-disable-next-line primer/colors
+  color: $gray-700;
+  text-decoration: none;
+  vertical-align: middle;
+  // stylelint-disable-next-line primer/colors
+  background: lighten($gray-300, 5%);
+  border: 0;
+  // stylelint-disable-next-line primer/borders
+  border-radius: 1px;
+
+  &:hover {
+    text-decoration: none;
+    // stylelint-disable-next-line primer/colors
+    background-color: darken($gray-300, 4%);
+  }
+
+  &:active {
+    color: $text-white;
+    // stylelint-disable-next-line primer/colors
+    background-color: $blue-400;
+  }
+}
+
+// Social count bubble
+//
+// A container that is used for social bubbles counts.
+.social-count {
+  float: left;
+  // stylelint-disable-next-line primer/spacing
+  padding: 3px 10px;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
+  line-height: 20px;
+  color: $text-gray-dark;
+  vertical-align: middle;
+  background-color: $bg-white;
+  border: $border-width $border-style $border-color-button;
+  border-left: 0;
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: $text-blue;
+    cursor: pointer;
+  }
+}

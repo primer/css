@@ -13,16 +13,19 @@
 
     th,
     td {
+      // stylelint-disable-next-line primer/spacing
       padding: 6px 13px;
-      border: 1px solid lighten($gray-300, 5%);
+      // stylelint-disable-next-line primer/borders
+      border: $border-width $border-style lighten($gray-300, 5%);
     }
 
     tr {
       background-color: $bg-white;
-      border-top: 1px solid darken($gray-300, 4%);
+      // stylelint-disable-next-line primer/borders
+      border-top: $border-width $border-style darken($gray-300, 4%);
 
       &:nth-child(2n) {
-        background-color: $gray-100;
+        background-color: $bg-gray;
       }
     }
 

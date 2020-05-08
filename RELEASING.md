@@ -7,15 +7,18 @@
 
 1. Create a new release branch from `master` and name it `release-<version>`.
 
-1. Start merging existing PRs into the release branch. Note: You have to change the base branch from `master` to the `release-<version>` branch before merging.
+1. Run [`npm version <version>`](https://docs.npmjs.com/cli/version) to update the `version` field in both `package.json` and `package-lock.json`.
 
-1. Create a new PR for the `release-<version>` branch. Please use the following template for the PR description, linking to the relevant issues and/or pull requests for each change, removing irrelevant headings and checking off all of the boxes of the ship checklist:
+1. Create a new PR for the `release-<version>` branch. Please use the following template for the PR description, linking to the relevant issues and/or pull requests for each change. The changelog gets generated automatically :
 
     ```md
     # Primer CSS [Major|Minor|Patch] Release
 
-    Version: 📦 **0.0.0**
-    Approximate release date: 📆 DD/MM/YY
+    Version: 📦 **`0.0.0`**
+    Approximate release date: 📆 **DD/MM/YY**
+    Changes: 🎉 [All merged PRs](https://github.com/primer/css/pulls?q=is%3Apr+is%3Amerged+base%3Arelease-0.0.0)
+    
+    ---
 
     ### :boom: Breaking Change
     - [ ] Description #
@@ -35,28 +38,29 @@
     ### :house: Internal
     - [ ] Description #
 
-    ----
+    ---
 
     ### Ship checklist
 
+    - [x] Update the `version` field in `package.json`
     - [ ] Update `CHANGELOG.md`
-    - [ ] Update the `version` field in `package.json`
     - [ ] Test the release candidate version with `github/github`
     - [ ] Merge this PR and [create a new release](https://github.com/primer/css/releases/new)
     - [ ] Update `github/github`
+    - [ ] Tell the world (Slack, Twitter, Team post)
 
     For more details, see [RELEASING.md](https://github.com/primer/css/blob/master/RELEASING.md).
 
     /cc @primer/ds-core
     ```
 
-1. Update `CHANGELOG.md`
+1. Start merging existing PRs into the release branch. Note: You have to change the base branch from `master` to the `release-<version>` branch before merging.
 
-1. Update the `version` field in `package.json` to match the release version. You may also run the `npm version v<version>` command.
+1. Update `CHANGELOG.md` and the PR description. **Tip**: You can copy&paste the changelog from `Checks > changelog > all > changelog`. It gets generated based on adding the `Tag` labels to PRs.
 
 1. Wait for your checks to pass, and take note of the version that [primer/publish] lists in your status checks.
 
-    **ProTip:** The release candidate version will always be `<version>-rc.<sha>`, where `<version>` comes from the branch name and `<sha>` is the 7-character commit SHA.
+    **Tip**: The release candidate version will always be `<version>-rc.<sha>`, where `<version>` comes from the branch name and `<sha>` is the 7-character commit SHA.
 
 
 ## Test the release candidate (in `github/github`):

@@ -1,0 +1,45 @@
+// Issue Labels
+
+.IssueLabel {
+  height: 20px;
+  // stylelint-disable-next-line primer/spacing
+  padding: 0.15em $spacer-1;
+  font-size: $h6-size;
+  font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
+  line-height: 15px;
+  // stylelint-disable-next-line primer/borders
+  border-radius: 2px;
+  // stylelint-disable-next-line primer/box-shadow
+  box-shadow: inset 0 -1px 0 rgba($black, 0.12);
+
+  .g-emoji {
+    position: relative;
+    top: -0.05em;
+    display: inline-block;
+    font-size: 1em;
+    line-height: $lh-condensed-ultra;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.IssueLabel--big {
+  padding: $spacer-1 $spacer-2;
+  font-size: $h5-size;
+  font-weight: $font-weight-bold;
+  border-radius: $border-radius;
+  transition: opacity 0.2s linear;
+
+  .g-emoji {
+    display: inline-block;
+    // stylelint-disable-next-line primer/spacing
+    margin-top: -1px;
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
