@@ -26,6 +26,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
+  color: $text-gray-dark;
+  background-color: $bg-white;
+  border: 0;
 
   &:hover,
   &.selected,
