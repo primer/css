@@ -7,10 +7,6 @@ const versionDeprecations = {
   '14.4.0': [
     {
       selectors: [
-        '.subnav-item.selected:hover',
-        '.subnav-item.selected:focus',
-        '.autocomplete-item[aria-selected="true"]',
-        '.autocomplete-item[aria-selected="true"] *',
         '.breadcrumb-item[aria-current]',
         '.breadcrumb-item[aria-current]::after',
         '.menu-item[aria-current]',
