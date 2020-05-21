@@ -19,7 +19,7 @@
 }
 
 .breadcrumb-item-selected,
-.breadcrumb-item[aria-current] {
+.breadcrumb-item[aria-current]:not([aria-current=false]) {
   color: $text-gray;
 
   &::after {

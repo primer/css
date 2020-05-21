@@ -50,8 +50,7 @@
 
   .current,
   .current:hover,
-  [aria-current],
-  [aria-current]:hover {
+  [aria-current]:not([aria-current=false]) {
     z-index: 3;
     color: $text-white;
     background-color: $bg-blue;
