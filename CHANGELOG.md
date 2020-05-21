@@ -1,17 +1,36 @@
+## 14.4.0
+
+### :rocket: Enhancements
+- [#1089](https://github.com/primer/css/pull/1089) Accessible Progress
+
+### :bug: Bug fixes
+- [#1060](https://github.com/primer/css/pull/1060) Add support for aria-current=false
+
+### :memo: Documentation
+- [#1059](https://github.com/primer/css/pull/1059) Typo in scss.md
+- [#1065](https://github.com/primer/css/pull/1065) Convert markdown page to one big example
+- [#1075](https://github.com/primer/css/pull/1075) chore: add missing link to color utilities
+- [#1067](https://github.com/primer/css/pull/1067) Add .text-gray-light to docs
+
+### Committers
+- [@daniseguraf](https://github.com/daniseguraf)
+- [@metonym](https://github.com/metonym)
+- [@simurai](https://github.com/simurai)
+
 ## 14.3.0
 
 ### :rocket: Enhancements
 
-- [#1044](https://github.com/primer/css/1044) Accessible form validation
-- [#1028](https://github.com/primer/css/1028) Improve .form-group accessibility
+- [#1044](https://github.com/primer/css/pull/1044) Accessible form validation
+- [#1028](https://github.com/primer/css/pull/1028) Improve .form-group accessibility
 
 ### :bug: Bug fixes
-- [#670](https://github.com/primer/css/670) Fix Box row top border
-- [#1042](https://github.com/primer/css/1042) Fix UnderlineNav in Safari
-- [#1035](https://github.com/primer/css/1035) Update UnderlineNav-item to not wrap counter & icon
+- [#670](https://github.com/primer/css/pull/670) Fix Box row top border
+- [#1042](https://github.com/primer/css/pull/1042) Fix UnderlineNav in Safari
+- [#1035](https://github.com/primer/css/pull/1035) Update UnderlineNav-item to not wrap counter & icon
 
 ### :memo: Documentation
-- [#1018](https://github.com/primer/css/1018) Update MIGRATING.md
+- [#1018](https://github.com/primer/css/pull/1018) Update MIGRATING.md
 
 ### Committers
 - [@emplums](https://github.com/emplums)
