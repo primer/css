@@ -16,3 +16,8 @@
 .Progress--small {
   height: 5px;
 }
+
+.Progress-item + .Progress-item {
+  // stylelint-disable-next-line primer/spacing
+  margin-left: 2px;
+}
