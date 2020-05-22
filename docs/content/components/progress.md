@@ -59,14 +59,16 @@ In cases where it's not possible to describe the progress in text, provide an `a
 
 ## Progress with multiple values
 
-To show the progress of tasks in multiple states (such as "done", "in progress", and "open"), use distinct background color utilities and give each one a percentage width proportional to the total number. Children are stacked from left to right, so if your widths add up to 100%, your bars will too.
+To show the progress of tasks in multiple states (such as "done", "in progress", and "open"), add the `Progress-item` class and a distinct background color utility. Then give each one a percentage width proportional to the total number. Children are stacked from left to right, so if your widths add up to 100%, your bars will too. Note that items with very low percentage values might not be visible if they are smaller than `1px` in width.
 
 ```html live
 <div class="tooltipped tooltipped-n" aria-label="tasks: 80 done, 14 in progress, 6 open">
   <span class="Progress">
-    <span class="bg-green" style="width: 80%;"></span>
-    <span class="bg-purple" style="width: 14%;"></span>
-    <span class="bg-red" style="width: 6%;"></span>
+    <span class="Progress-item bg-green" style="width: 50%;"></span>
+    <span class="Progress-item bg-purple" style="width: 25%;"></span>
+    <span class="Progress-item bg-pink" style="width: 15%;"></span>
+    <span class="Progress-item bg-red" style="width: 8%;"></span>
+    <span class="Progress-item bg-blue" style="width: 2%;"></span>
   </span>
 </div>
 ```

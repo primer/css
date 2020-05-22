@@ -37,7 +37,7 @@
 
   &.selected,
   &[role=tab][aria-selected=true],
-  &[aria-current] {
+  &[aria-current]:not([aria-current=false]) {
     font-weight: $font-weight-bold;
     color: $text-gray-dark;
     // stylelint-disable-next-line primer/borders

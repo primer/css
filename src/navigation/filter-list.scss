@@ -45,7 +45,7 @@
 
   &.selected,
   &[aria-selected=true],
-  &[aria-current] {
+  &[aria-current]:not([aria-current=false]) {
     color: $text-white;
     background-color: $bg-blue;
   }

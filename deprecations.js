@@ -4,13 +4,23 @@
  * array and a "message" string.
  */
 const versionDeprecations = {
-  '14.2.0': [
+  '14.4.0': [
     {
       selectors: [
-        '.subnav-item.selected:hover',
-        '.subnav-item.selected:focus',
-        '.autocomplete-item[aria-selected="true"]',
-        '.autocomplete-item[aria-selected="true"] *'
+        '.breadcrumb-item[aria-current]',
+        '.breadcrumb-item[aria-current]::after',
+        '.menu-item[aria-current]',
+        '.menu-item[aria-current]::before',
+        '.tabnav-tab[aria-current]',
+        '.filter-item[aria-current]',
+        '.SideNav-item[aria-current="page"]',
+        '.SideNav-item[aria-current="page"]::before',
+        '.SideNav-subItem[aria-current="page"]',
+        '.subnav-item[aria-current]',
+        '.UnderlineNav-item[aria-current]',
+        '.UnderlineNav-item[aria-current] .UnderlineNav-octicon',
+        '.pagination [aria-current]',
+        '.pagination [aria-current]:hover'
       ],
       message: `These selectors are not needed anymore.`
     }
