@@ -14,7 +14,7 @@ Box overlays come in three widths. The default `Box--overlay` is 440px wide, `Bo
 
 ```html live
 
-<details class="details-reset details-overlay details-overlay-dark">
+<details class="details-reset details-overlay">
   <summary class="btn" aria-haspopup="dialog">Open dialog</summary>
   <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast">
     <div class="Box-header">
