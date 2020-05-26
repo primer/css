@@ -21,21 +21,21 @@ Before using these utilities, **you should be familiar with CSS3 Flexible Box sp
 
 Use these classes to make an element lay out its content using the flexbox model. Each **direct** child of the flex container will become a flex item.
 
-#### CSS
+### CSS
 
 ```css
 .d-flex { display: flex; }
 .d-inline-flex { display: inline-flex; }
 ```
 
-#### Classes
+### Classes
 
 | Class | Description |
 | --- | --- |
 | `.d-flex` | The element behaves like a block and lays out its content using the flexbox model. |
 | `.d-inline-flex` | The element behaves like an inline element and lays out its content using the flexbox model. |
 
-#### Example using `.d-flex`
+### Example using `.d-flex`
 
 ```html live
 <!-- flex container -->
@@ -46,7 +46,7 @@ Use these classes to make an element lay out its content using the flexbox model
 </div>
 ```
 
-#### Example using `.d-inline-flex`
+### Example using `.d-inline-flex`
 
 ```html live
 <!-- inline-flex container -->
@@ -61,7 +61,7 @@ Use these classes to make an element lay out its content using the flexbox model
 
 Use these classes to define the orientation of the main axis (`row` or `column`). By default, flex items will display in a row. Use `.flex-column` to change the direction of the main axis to vertical.
 
-#### CSS
+### CSS
 
 ```css
 .flex-row            { flex-direction: row; }
@@ -70,7 +70,7 @@ Use these classes to define the orientation of the main axis (`row` or `column`)
 .flex-column-reverse { flex-direction: column-reverse; }
 ```
 
-#### Classes
+### Classes
 
 | Class | Description |
 | --- | --- |
@@ -79,7 +79,7 @@ Use these classes to define the orientation of the main axis (`row` or `column`)
 | `.flex-column` | The main axis runs top to bottom. |
 | `.flex-column-reverse` | The main axis runs bottom to top. |
 
-#### Example using `.flex-column`
+### Example using `.flex-column`
 
 ```html live
 <div class="border d-flex flex-column">
@@ -89,7 +89,7 @@ Use these classes to define the orientation of the main axis (`row` or `column`)
 </div>
 ```
 
-#### Example using `.flex-column-reverse`
+### Example using `.flex-column-reverse`
 
 This example uses the responsive variant `.flex-md-column-reverse` to override `.flex-column` Learn more about responsive flexbox utilities **[here](#responsive-flex-utilities)**. Keep in mind that it won't affect screen readers or navigating with the keyboard and it's advised to keep the markup in a logical source order.
 
@@ -101,7 +101,7 @@ This example uses the responsive variant `.flex-md-column-reverse` to override `
 </div>
 ```
 
-#### Example using `.flex-row`
+### Example using `.flex-row`
 
 This example uses the responsive variant `.flex-md-row` to override `.flex-column` Learn more about responsive flexbox utilities **[here](#responsive-flex-utilities)**.
 
@@ -113,7 +113,7 @@ This example uses the responsive variant `.flex-md-row` to override `.flex-colum
 </div>
 ```
 
-#### Example using `.flex-row-reverse`
+### Example using `.flex-row-reverse`
 
 This example uses the responsive variant `.flex-md-row-reverse` to override `.flex-column` Learn more about responsive flexbox utilities **[here](#responsive-flex-utilities)**. Keep in mind that it won't affect screen readers or navigating with the keyboard and it's advised to keep the markup in a logical source order.
 
@@ -129,21 +129,21 @@ This example uses the responsive variant `.flex-md-row-reverse` to override `.fl
 
 You can choose whether flex items are forced into a single line or wrapped onto multiple lines.
 
-#### CSS
+### CSS
 
 ```css
 .flex-wrap     { flex-wrap: wrap; }
 .flex-nowrap   { flex-wrap: nowrap; }
 ```
 
-#### Classes
+### Classes
 
 | Class | Description |
 | --- | --- |
 | `.flex-wrap` | Flex items will break onto multiple lines (default) |
 | `.flex-nowrap` | Flex items are laid out in a single line, even if they overflow |
 
-#### `flex-wrap` example
+### `flex-wrap` example
 
 ```html live
 <div class="border d-flex flex-wrap">
@@ -159,7 +159,7 @@ You can choose whether flex items are forced into a single line or wrapped onto 
 </div>
 ```
 
-#### `flex-nowrap` example
+### `flex-nowrap` example
 
 ```html live
 <div class="border d-flex flex-nowrap">
@@ -179,7 +179,7 @@ You can choose whether flex items are forced into a single line or wrapped onto 
 
 Use these classes to distribute space between and around flex items along the **main axis** of the container.
 
-#### CSS
+### CSS
 
 ```CSS
 .flex-justify-start    { justify-content: flex-start; }
@@ -189,7 +189,7 @@ Use these classes to distribute space between and around flex items along the **
 .flex-justify-around   { justify-content: space-around; }
 ```
 
-#### Classes
+### Classes
 
 | Class | Default behavior |
 | --- | --- |
@@ -199,7 +199,7 @@ Use these classes to distribute space between and around flex items along the **
 | `.flex-justify-between` | Distribute items evenly. First item is on the start line, last item is on the end line. |
 | `.flex-justify-around` | Distribute items evenly with equal space around them |
 
-#### flex-justify-start
+### flex-justify-start
 
 Use `.flex-justify-start` to align items to the start line. By default this will be on the left side of the container. If you are using `.flex-column`, the start line will be at the top of the container.
 
@@ -211,7 +211,7 @@ Use `.flex-justify-start` to align items to the start line. By default this will
 </div>
 ```
 
-#### flex-justify-end
+### flex-justify-end
 
 Use `.flex-justify-end` to align items to the end line. By default this will be on the right side of the container. If you are using `.flex-column`, the end line will be at the bottom of the container.
 
@@ -223,7 +223,7 @@ Use `.flex-justify-end` to align items to the end line. By default this will be 
 </div>
 ```
 
-#### flex-justify-center
+### flex-justify-center
 
 Use `.flex-justify-center` to align items in the middle of the container.
 
@@ -235,7 +235,7 @@ Use `.flex-justify-center` to align items in the middle of the container.
 </div>
 ```
 
-#### flex-justify-between
+### flex-justify-between
 
 Use `.flex-justify-between` to distribute items evenly in the container. The first items will be on the start line and the last item will be on the end line.
 
@@ -247,7 +247,7 @@ Use `.flex-justify-between` to distribute items evenly in the container. The fir
 </div>
 ```
 
-#### flex-justify-around
+### flex-justify-around
 
 Use `.flex-justify-around` to distribute items evenly, with an equal amount of space around them. Visually the spaces won't look equal, since each item has the same unit of space around it. For example, the first item only has one unit of space between it and the start line, but it has two units of space between it and the next item.
 
@@ -265,7 +265,7 @@ Use these classes to align items on the **cross axis**.
 
 The cross axis runs perpendicular to the main axis. By default the main axis runs horizontally, so your items will align vertically on the cross axis. If you use [flex-column](#flex-direction) to make the main axis run vertically, your items will be aligned horizontally.
 
-#### CSS
+### CSS
 
 ```css
 .flex-items-start      { align-items: flex-start; }
@@ -275,7 +275,7 @@ The cross axis runs perpendicular to the main axis. By default the main axis run
 .flex-items-stretch    { align-items: stretch; }
 ```
 
-#### Classes
+### Classes
 
 | Class | Behavior |
 | --- | --- |
@@ -285,7 +285,7 @@ The cross axis runs perpendicular to the main axis. By default the main axis run
 | `.flex-items-baseline` | Align items along their baselines |
 | `.flex-items-stretch` | Stretch items from start of cross axis to end of cross axis |
 
-#### flex-items-start
+### flex-items-start
 
 ```html live
 <div  style="min-height: 150px;" class="border d-flex flex-items-start">
@@ -296,7 +296,7 @@ The cross axis runs perpendicular to the main axis. By default the main axis run
 </div>
 ```
 
-#### flex-items-end
+### flex-items-end
 
 ```html live
 <div  style="min-height: 150px;" class="border d-flex flex-items-end">
@@ -307,7 +307,7 @@ The cross axis runs perpendicular to the main axis. By default the main axis run
 </div>
 ```
 
-#### flex-items-center
+### flex-items-center
 
 ```html live
 <div  style="min-height: 150px;" class="border d-flex flex-items-center">
@@ -318,7 +318,7 @@ The cross axis runs perpendicular to the main axis. By default the main axis run
 </div>
 ```
 
-#### flex-items-baseline
+### flex-items-baseline
 
 With `.flex-items-baseline`, items will be aligned along their baselines even if they have different font sizes.
 
@@ -331,7 +331,7 @@ With `.flex-items-baseline`, items will be aligned along their baselines even if
 </div>
 ```
 
-#### flex-items-stretch
+### flex-items-stretch
 
 ```html live
 <div  style="min-height: 150px;" class="border d-flex flex-items-stretch">
@@ -346,7 +346,7 @@ With `.flex-items-baseline`, items will be aligned along their baselines even if
 
 When the main axis wraps, this creates multiple main axis lines and adds extra space in the cross axis. Use these classes to align the lines of the main axis on the cross axis.
 
-#### CSS
+### CSS
 
 ```css
 .flex-content-start    { align-content: flex-start; }
@@ -357,7 +357,7 @@ When the main axis wraps, this creates multiple main axis lines and adds extra s
 .flex-content-stretch  { align-content: stretch; }
 ```
 
-#### Classes
+### Classes
 
 | Class | Description |
 | --- | --- |
@@ -368,7 +368,7 @@ When the main axis wraps, this creates multiple main axis lines and adds extra s
 | `.flex-content-around` | Stretch items from the start of the cross axis to the end of the cross axis. |
 | `.flex-content-stretch` | Lines stretch to occupy available space.  |
 
-#### flex-content-start
+### flex-content-start
 
 ```html live
 <div style="min-height: 300px;" class="border d-flex flex-wrap flex-content-start">
@@ -387,7 +387,7 @@ When the main axis wraps, this creates multiple main axis lines and adds extra s
 </div>
 ```
 
-#### flex-content-end
+### flex-content-end
 
 ```html live
 <div style="min-height: 300px;" class="border d-flex flex-wrap flex-content-end">
@@ -406,7 +406,7 @@ When the main axis wraps, this creates multiple main axis lines and adds extra s
 </div>
 ```
 
-#### flex-content-center
+### flex-content-center
 
 ```html live
 <div style="min-height: 300px;" class="border d-flex flex-wrap flex-content-center">
@@ -425,7 +425,7 @@ When the main axis wraps, this creates multiple main axis lines and adds extra s
 </div>
 ```
 
-#### flex-content-between
+### flex-content-between
 
 ```html live
 <div style="min-height: 300px;" class="border d-flex flex-wrap flex-content-between">
@@ -444,7 +444,7 @@ When the main axis wraps, this creates multiple main axis lines and adds extra s
 </div>
 ```
 
-#### flex-content-around
+### flex-content-around
 
 ```html live
 <div style="min-height: 300px;" class="border d-flex flex-wrap flex-content-around">
@@ -463,7 +463,7 @@ When the main axis wraps, this creates multiple main axis lines and adds extra s
 </div>
 ```
 
-#### flex-content-stretch
+### flex-content-stretch
 
 ```html live
 <div style="min-height: 300px;" class="border d-flex flex-wrap flex-content-stretch">
@@ -500,7 +500,7 @@ Use this class to specify the ability of a flex item to alter its dimensions to 
 | `.flex-grow-0` | Prevents growing of a flex item |
 | `.flex-shrink-0` | Prevents shrinking of a flex item |
 
-#### flex-1
+### flex-1
 
 Adding `.flex-1` makes the item grow in size to take up all the space that is available.
 
@@ -522,7 +522,7 @@ Adding `.flex-1` to all flex items results in each item having the same size.
 </div>
 ```
 
-#### flex-auto
+### flex-auto
 
 Using `.flex-auto` fills the available space but also takes the size of the content into account. Type in the editor below to see the effect.
 
@@ -534,7 +534,7 @@ Using `.flex-auto` fills the available space but also takes the size of the cont
 </div>
 ```
 
-#### flex-grow-0
+### flex-grow-0
 
 Add `.flex-grow-0` to prevent an item from growing. This can be useful when used as a responsive variant. For example to stop growing when the viewport gets wider.
 
@@ -546,7 +546,7 @@ Add `.flex-grow-0` to prevent an item from growing. This can be useful when used
 </div>
 ```
 
-#### flex-shrink-0
+### flex-shrink-0
 
 Add `.flex-shrink-0` to prevent an item from shrinking. Note that for example text will not wrap and the flex items start to overflow if there is not enough space.
 
@@ -562,7 +562,7 @@ Add `.flex-shrink-0` to prevent an item from shrinking. Note that for example te
 
 Use these classes to adjust the alignment of an individual flex item on the cross axis. This overrides any `align-items` property applied to the flex container.
 
-#### CSS
+### CSS
 
 ```css
 .flex-self-auto        { align-self: auto; }
@@ -573,7 +573,7 @@ Use these classes to adjust the alignment of an individual flex item on the cros
 .flex-self-stretch     { align-self: stretch; }
 ```
 
-#### Classes
+### Classes
 
 | Class | Description |
 | --- | --- |
@@ -584,7 +584,7 @@ Use these classes to adjust the alignment of an individual flex item on the cros
 | `.flex-self-baseline` | Align baseline to the start of the cross axis |
 | `.flex-self-stretch` | Stretch item from start of cross axis to end of cross axis. |
 
-#### flex-self-auto
+### flex-self-auto
 
 ```html live
 <div style="min-height: 150px;" class="border d-flex">
@@ -594,7 +594,7 @@ Use these classes to adjust the alignment of an individual flex item on the cros
 </div>
 ```
 
-#### flex-self-start
+### flex-self-start
 
 ```html live
 <div style="min-height: 150px;" class="border d-flex">
@@ -604,7 +604,7 @@ Use these classes to adjust the alignment of an individual flex item on the cros
 </div>
 ```
 
-#### flex-self-end
+### flex-self-end
 
 ```html live
 <div style="min-height: 150px;" class="border d-flex">
@@ -614,7 +614,7 @@ Use these classes to adjust the alignment of an individual flex item on the cros
 </div>
 ```
 
-#### flex-self-center
+### flex-self-center
 
 ```html live
 <div style="min-height: 150px;" class="border d-flex">
@@ -624,7 +624,7 @@ Use these classes to adjust the alignment of an individual flex item on the cros
 </div>
 ```
 
-#### flex-self-baseline
+### flex-self-baseline
 
 ```html live
 <div style="min-height: 150px;" class="border d-flex flex-items-end">
@@ -634,7 +634,7 @@ Use these classes to adjust the alignment of an individual flex item on the cros
 </div>
 ```
 
-#### flex-self-stretch
+### flex-self-stretch
 
 ```html live
 <div style="min-height: 150px;" class="border d-flex flex-items-start">
@@ -648,7 +648,7 @@ Use these classes to adjust the alignment of an individual flex item on the cros
 
 Use these classes to change the order of flex items. Keep in mind that it won't affect screen readers or navigating with the keyboard and it's advised to keep the markup in a logical source order.
 
-#### CSS
+### CSS
 
 ```css
 .flex-order-1    { order: 1; }
@@ -657,7 +657,7 @@ Use these classes to change the order of flex items. Keep in mind that it won't 
 
 ```
 
-#### Classes
+### Classes
 
 | Class | Description |
 | --- | --- |
@@ -665,7 +665,7 @@ Use these classes to change the order of flex items. Keep in mind that it won't 
 | `.flex-order-2` | Set order to be 2  |
 | `.flex-order-none` | Remove order (typically used with responsive variants) |
 
-#### flex-order (1+2)
+### flex-order (1+2)
 
 ```html live
 <div class="border d-flex">
@@ -675,7 +675,7 @@ Use these classes to change the order of flex items. Keep in mind that it won't 
 </div>
 ```
 
-#### flex-order-none
+### flex-order-none
 
 Resize window to see the effect.
 
@@ -696,7 +696,7 @@ All flexbox utilities can be adjusted per [breakpoint](/objects/grid#breakpoints
 
 Each responsive style is applied to the specified breakpoint and up.
 
-#### Example classes
+### Example classes
 
 ```css
 /* Example classes */
@@ -713,7 +713,7 @@ Each responsive style is applied to the specified breakpoint and up.
 .flex-lg-self-start {}
 ```
 
-#### Example usage
+### Example usage
 
 Mixing flex properties:
 
