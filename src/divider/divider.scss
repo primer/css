@@ -1,0 +1,21 @@
+.Divider.Divider--horizontal {
+    .Divider-item {
+        border-bottom: 1px solid black;
+        width: 100%;
+    }
+    .Divider-item:last-of-type {
+        border-bottom: transparent;
+        width: 100%;
+    }
+}
+
+.Divider.Divider--vertical {
+    .Divider-item {
+        border-right: 1px solid black;
+        width: 100%;
+    }
+    .Divider-item:last-of-type {
+        border-right: transparent;
+        width: 100%;
+    }
+}
