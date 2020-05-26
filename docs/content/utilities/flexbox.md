@@ -106,7 +106,7 @@ This example uses the responsive variant `.flex-md-column-reverse` to override `
 This example uses the responsive variant `.flex-md-row` to override `.flex-column` Learn more about responsive flexbox utilities **[here](#responsive-flex-utilities)**.
 
 ```html live
-<div class="border d-flex flex-column flex-md-row">
+<div class="border d-flex flex-column flex-sm-row">
   <div class="p-5 border bg-gray-light">Item 1</div>
   <div class="p-5 border bg-gray-light">Item 2</div>
   <div class="p-5 border bg-gray-light">Item 3</div>
