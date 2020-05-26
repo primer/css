@@ -35,7 +35,7 @@
 
   &.selected,
   &[role=tab][aria-selected=true],
-  &[aria-current] {
+  &[aria-current]:not([aria-current=false]) {
     // stylelint-disable-next-line primer/borders
     border-bottom-color: #f9826c; // custom coral
 

@@ -1,5 +1,5 @@
 ---
-title: Select Menu
+title: Select menu
 status: New
 source: 'https://github.com/primer/css/tree/master/src/select-menu'
 bundle: select-menu
@@ -9,7 +9,7 @@ The `SelectMenu` component provides advanced support for navigation, filtering, 
 
 ## Basic example
 
-Use a `<details>` element to toggle the Select Menu. The `<summary>` element can be styled in many ways. In the example below it's a `.btn`.
+Use a `<details>` element to toggle the select menu. The `<summary>` element can be styled in many ways. In the example below it's a `.btn`.
 
 ```html live
 <details class="details-reset details-overlay" open>
@@ -35,7 +35,7 @@ Add a `.SelectMenu-header` to house a clear title and a close button. Note that 
 
 ## Right aligned
 
-In case the Select Menu should be aligned to the right, use `SelectMenu right-0`.
+In case the select menu should be aligned to the right, use `SelectMenu right-0`.
 
 ```html live
 <div class="d-flex flex-justify-end position-relative">
@@ -231,7 +231,7 @@ The list of items is arguably the most important subcomponent within the menu. B
 
 ## Divider
 
-The Select Menu's list can be divided into multiple parts by adding a `.SelectMenu-divider`. It can be a `<div>` with text/content. Or just an `<hr>` to add a visual separator.
+The select menu's list can be divided into multiple parts by adding a `.SelectMenu-divider`. It can be a `<div>` with text/content. Or just an `<hr>` to add a visual separator.
 
 ```html live
 <details class="details-reset details-overlay" open>
@@ -335,7 +335,7 @@ Use a `.SelectMenu-footer` at the bottom for additional information. As a side e
 
 ## Filter
 
-If the list is expected to get long, consider adding a `.SelectMenu-filter` input. Be sure to also include the `.SelectMenu--hasFilter` modifier class. On mobile devices it will add a fixed height and anchor the Select Menu to the top of the screen. This makes sure the filter input stays at the same position while typing.
+If the list is expected to get long, consider adding a `.SelectMenu-filter` input. Be sure to also include the `.SelectMenu--hasFilter` modifier class. On mobile devices it will add a fixed height and anchor the select menu to the top of the screen. This makes sure the filter input stays at the same position while typing.
 
 ```html live
 <details class="details-reset details-overlay" open>
@@ -392,7 +392,7 @@ If the list is expected to get long, consider adding a `.SelectMenu-filter` inpu
 
 ## Tabs
 
-Sometimes you need two or more lists of items in your Select Menu, e.g. branches and tags. Select Menu lists can be tabbed with the addition of `.SelectMenu-tabs` above the menu.
+Sometimes you need two or more lists of items in your select menu, e.g. branches and tags. Select menu lists can be tabbed with the addition of `.SelectMenu-tabs` above the menu.
 
 ```html live
 <details class="details-reset details-overlay" open>
@@ -539,7 +539,7 @@ To disable a list item, use the `disabled` attribute for `<button>`s. For `<a>`s
 
 ## Blankslate
 
-Sometimes a Select Menu needs to communicate a "blank slate" where there's no content in the menu's list. Usually these include a clear call to action to add said content to the list. Swap out the contents of a `.SelectMenu-list` with a `.SelectMenu-blankslate` and customize its contents as needed.
+Sometimes a select menu needs to communicate a "blank slate" where there's no content in the menu's list. Usually these include a clear call to action to add said content to the list. Swap out the contents of a `.SelectMenu-list` with a `.SelectMenu-blankslate` and customize its contents as needed.
 
 ```html live
 <details class="details-reset details-overlay" open>

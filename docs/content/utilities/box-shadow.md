@@ -96,7 +96,7 @@ These shadows are used for marketing content, UI screenshots, and content that a
 </div>
 ```
 
-## Extra Large
+## Extra large
 
 Extra large box shadows are even more diffused.
 

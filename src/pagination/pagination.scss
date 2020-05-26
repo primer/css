@@ -42,8 +42,7 @@
 
   .current,
   .current:hover,
-  [aria-current],
-  [aria-current]:hover {
+  [aria-current]:not([aria-current=false]) {
     color: $text-white;
     background-color: $bg-blue;
     border-color: transparent;

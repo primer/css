@@ -57,7 +57,7 @@ Outline buttons downplay an action as they appear like boxy links. Just add `.bt
 
 Use `.btn-large` to increase the padding and border radius of a button. This is useful for prominent calls to action in hero sections.
 
-[Type scale utilities](https://styleguide.github.com/primer/utilities/typography/#type-scale-utilities) can be used to alter the font-size if needed. Padding is applied in em's so that it scales proportionally with the font-size.
+[Type scale utilities](/support/typography#type-scale) can be used to alter the font-size if needed. Padding is applied in em's so that it scales proportionally with the font-size.
 
 ```html live
 <button class="btn btn-large mr-2" type="button">Large button</button>

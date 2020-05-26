@@ -25,7 +25,7 @@
 
   &.selected,
   &[aria-selected=true],
-  &[aria-current] {
+  &[aria-current]:not([aria-current=false]) {
     background-color: $bg-white;
     border-color: $border-gray;
     border-radius: $border-radius $border-radius 0 0;
