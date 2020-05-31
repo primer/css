@@ -26,7 +26,7 @@ Large progress bars are slightly taller than the default.
 
 ## Small progress
 
-Large progress bars are shorter than the default.
+Small progress bars are shorter than the default.
 
 ```html live
 <span class="Progress Progress--small">
