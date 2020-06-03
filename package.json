@@ -9,6 +9,7 @@
   "sass": "index.scss",
   "main": "dist/primer.js",
   "repository": "https://github.com/primer/css",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "bugs": {
     "url": "https://github.com/primer/css/issues"
   },
