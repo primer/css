@@ -20,7 +20,7 @@ In the examples below, `Popover-message`, in particular, uses a handful of utili
 
 The `Popover-message` element also supports several modifiers, most of which position the caret differently:
 
-- [`.Popover-message--top`](#default-top-center) (default): Places the caret on the top edge of the message, horizontally centered.
+- [`.Popover-message--top`](#basic-example) (default): Places the caret on the top edge of the message, horizontally centered.
 - [`.Popover-message--bottom`](#bottom) Places the caret on the bottom edge of the message, horizontally centered.
 - [`.Popover-message--right`](#right): Places the caret on the right edge of the message, vertically centered.
 - [`.Popover-message--left`](#left): Places the caret on the left edge of the message, vertically centered.
