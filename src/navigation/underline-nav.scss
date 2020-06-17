@@ -36,6 +36,7 @@
   &.selected,
   &[role=tab][aria-selected=true],
   &[aria-current]:not([aria-current=false]) {
+    font-weight: $font-weight-bold;
     // stylelint-disable-next-line primer/borders
     border-bottom-color: #f9826c; // custom coral
 
