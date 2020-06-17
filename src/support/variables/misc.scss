@@ -22,7 +22,7 @@ $box-shadow-inset: inset 0 1px 0 rgba($border-color, 0.2) !default; // top inner
 $box-shadow-focus: 0 0 0 3px rgba($border-blue, 0.3) !default; // blue focus ring
 
 // Button variables
-$border-color-button: rgba($black, 0.12) !default;
+$border-color-button: $black-fade-15 !default;
 $btn-active-shadow: inset 0 0.15em 0.3em $black-fade-15 !default; // TODO: Deprecate?
 
 // Form variables
