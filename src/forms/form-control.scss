@@ -91,6 +91,7 @@ textarea.form-control {
 // Custom styling for HTML5 validation bubbles (WebKit only)
 ::placeholder {
   color: $text-gray-light;
+  opacity: 1; // override opacity in normalize.css
 }
 
 // Mini inputs, to match .minibutton
