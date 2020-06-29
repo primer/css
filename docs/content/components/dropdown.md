@@ -7,7 +7,7 @@ Dropdowns are lightweight context menus for housing navigation and actions. They
 
 ## Basic examples
 
-Dropdowns should be trigged by a `<button>`. **[Each dropdown menu requires a directional class](#alignment)**, much like our tooltips.
+Dropdowns should be triggered by a `<button>`. **[Each dropdown menu requires a directional class](#alignment)**, much like our tooltips.
 
 Using a GitHub button:
 
