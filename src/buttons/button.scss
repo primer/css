@@ -22,10 +22,6 @@
     text-decoration: none;
   }
 
-  &:focus {
-    outline: 0;
-  }
-
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
