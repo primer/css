@@ -13,7 +13,7 @@
 .State {
   display: inline-block;
   // stylelint-disable-next-line primer/spacing
-  padding: 6px 12px;
+  padding: 5px 12px;
   font-size: $body-font-size;
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
@@ -23,6 +23,7 @@
   white-space: nowrap;
   // stylelint-disable-next-line primer/colors
   background-color: $gray-500;
+  border: $border-width $border-style transparent; // Support Firfox custom colors
   // stylelint-disable-next-line primer/borders
   border-radius: 2em;
 }

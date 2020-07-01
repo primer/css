@@ -29,6 +29,8 @@
   &:focus {
     text-decoration: none;
     border-bottom-color: $border-gray-dark;
+    outline: 1px dotted transparent; // Support Firfox custom colors
+    outline-offset: -1px;
     transition-timing-function: ease-out;
     transition-duration: 0.12s;
   }
@@ -39,6 +41,8 @@
     font-weight: $font-weight-bold;
     // stylelint-disable-next-line primer/borders
     border-bottom-color: #f9826c; // custom coral
+    outline: 1px dotted transparent; // Support Firfox custom colors
+    outline-offset: -1px;
 
     .UnderlineNav-octicon {
       color: $text-gray;
