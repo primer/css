@@ -119,7 +119,7 @@ Use `.UnderlineNav-actions` to place another element, such as a button, to the o
     <a class="UnderlineNav-item" href="#url">Item 4</a>
   </div>
   <div class="UnderlineNav-actions">
-    <a class="btn">Button</a>
+    <a class="btn btn-sm">Button</a>
   </div>
 </nav>
 ```
@@ -142,7 +142,7 @@ Use `.UnderlineNav--right` to right align the navigation.
 ```html live title="UnderlineNav--right with actions"
 <nav class="UnderlineNav UnderlineNav--right" aria-label="Foo bar">
   <div class="UnderlineNav-actions">
-    <a class="btn">Button</a>
+    <a class="btn btn-sm">Button</a>
   </div>
   <div class="UnderlineNav-body">
     <a class="UnderlineNav-item" href="#url" aria-current="page">Item 1</a>
@@ -197,7 +197,7 @@ Use `.UnderlineNav--full` in combination with container styles and `.UnderlineNa
       <a class="UnderlineNav-item" href="#url">Item 4</a>
     </div>
     <div class="UnderlineNav-actions">
-      <a class="btn">Button</a>
+      <a class="btn btn-sm">Button</a>
     </div>
   </div>
 </nav>
@@ -237,20 +237,8 @@ Different kind of content can be added inside a Side Nav item. Use utility class
     With an avatar
   </a>
   <a class="SideNav-item" href="#url">
-    <!-- <%= octicon "octoface", class: "mr-2" %> -->
-    <svg
-      version="1.1"
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      class="octicon octicon-octoface mr-2"
-      aria-hidden="true"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"
-      />
-    </svg>
+    <!-- <%= octicon "octoface", class: "SideNav-icon" %> -->
+    <svg class="SideNav-icon octicon octicon-octoface" version="1.1" width="16" height="16" viewBox="0 0 16 16"  aria-hidden="true"> <path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z" /> </svg>
     With an icon
   </a>
   <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="#url">
@@ -271,7 +259,7 @@ Different kind of content can be added inside a Side Nav item. Use utility class
     With a label <span class="Label bg-blue" title="Label: label">label</span>
   </a>
   <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="#url">
-    With a counter <span class="Counter bg-gray-2 ml-1">16</span>
+    With a counter <span class="Counter ml-1">16</span>
   </a>
   <a class="SideNav-item" href="#url">
     <h5>With a heading</h5>
@@ -299,38 +287,23 @@ Or also appear nested, as a sub navigation. Use margin/padding utility classes t
 ```html live
 <nav class="SideNav border" style="max-width: 360px">
   <a class="SideNav-item" href="#url">
-    <!-- <%= octicon "person", class: "mr-2" %> -->
-    <svg width="12" height="16" viewBox="0 0 12 16" class="octicon octicon-person mr-2" aria-hidden="true">
-      <path
-        fill-rule="evenodd"
-        d="M12 14.002a.998.998 0 0 1-.998.998H1.001A1 1 0 0 1 0 13.999V13c0-2.633 4-4 4-4s.229-.409 0-1c-.841-.62-.944-1.59-1-4 .173-2.413 1.867-3 3-3s2.827.586 3 3c-.056 2.41-.159 3.38-1 4-.229.59 0 1 0 1s4 1.367 4 4v1.002z"
-      />
-    </svg>
+    <!-- <%= octicon "person", class: "SideNav-icon" %> -->
+    <svg class="octicon octicon-person SideNav-icon" width="12" height="16" viewBox="0 0 12 16" aria-hidden="true"> <path fill-rule="evenodd" d="M12 14.002a.998.998 0 0 1-.998.998H1.001A1 1 0 0 1 0 13.999V13c0-2.633 4-4 4-4s.229-.409 0-1c-.841-.62-.944-1.59-1-4 .173-2.413 1.867-3 3-3s2.827.586 3 3c-.056 2.41-.159 3.38-1 4-.229.59 0 1 0 1s4 1.367 4 4v1.002z" /> </svg>
     <span>Account</span>
   </a>
   <a class="SideNav-item" href="#url" aria-current="page">
-    <!-- <%= octicon "octoface", class: "mr-2" %> -->
-    <svg width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-octoface mr-2" aria-hidden="true">
-      <path
-        fill-rule="evenodd"
-        d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"
-      />
-    </svg>
+    <!-- <%= octicon "octoface", class: "SideNav-icon" %> -->
+    <svg class="octicon octicon-octoface SideNav-icon" width="16" height="16" viewBox="0 0 16 16"  aria-hidden="true"> <path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z" /> </svg>
     <span>Profile</span>
   </a>
-  <nav class="SideNav bg-white border-top py-3 pl-6">
+  <nav class="SideNav bg-white border-top py-3" style="padding-left: 44px">
     <a class="SideNav-subItem" href="#url" aria-current="page">Sub item 1</a>
     <a class="SideNav-subItem" href="#url">Sub item 2</a>
     <a class="SideNav-subItem" href="#url">Sub item 3</a>
   </nav>
   <a class="SideNav-item" href="#url">
-    <!-- <%= octicon "mail", class: "mr-2" %> -->
-    <svg width="14" height="16" viewBox="0 0 14 16" class="octicon octicon-mail mr-2" aria-hidden="true">
-      <path
-        fill-rule="evenodd"
-        d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"
-      />
-    </svg>
+    <!-- <%= octicon "mail", class: "SideNav-icon" %> -->
+    <svg class="octicon octicon-mail SideNav-icon" width="14" height="16" viewBox="0 0 14 16"  aria-hidden="true"> <path fill-rule="evenodd" d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z" /> </svg>
     <span>Emails</span>
   </a>
 </nav>
@@ -345,6 +318,42 @@ When you need to toggle between different views, consider using a tabnav. It'll 
   <nav class="tabnav-tabs" aria-label="Foo bar">
     <a class="tabnav-tab" href="#url" aria-current="page">Foo tab</a>
     <a class="tabnav-tab" href="#url">Bar tab</a>
+  </nav>
+</div>
+```
+
+Tabs can also contain icons and counters.
+
+```html live
+<div class="tabnav">
+  <nav class="tabnav-tabs" aria-label="Foo bar">
+    <a class="tabnav-tab" href="#url" aria-current="page">
+      <!-- <%= octicon "comment-discussion" %> -->
+      <svg class="octicon octicon-comment-discussion" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 2.75C1.5 2.6837 1.52634 2.62011 1.57322 2.57322C1.62011 2.52634 1.6837 2.5 1.75 2.5H10.25C10.3163 2.5 10.3799 2.52634 10.4268 2.57322C10.4737 2.62011 10.5 2.6837 10.5 2.75V8.25C10.5 8.3163 10.4737 8.37989 10.4268 8.42678C10.3799 8.47366 10.3163 8.5 10.25 8.5H6.75C6.55115 8.50017 6.36052 8.57931 6.22 8.72L3.5 11.44V9.25C3.5 9.05109 3.42098 8.86032 3.28033 8.71967C3.13968 8.57902 2.94891 8.5 2.75 8.5H1.75C1.6837 8.5 1.62011 8.47366 1.57322 8.42678C1.52634 8.37989 1.5 8.3163 1.5 8.25V2.75ZM1.75 1C1.28587 1 0.840752 1.18437 0.512563 1.51256C0.184374 1.84075 0 2.28587 0 2.75L0 8.25C0 9.216 0.784 10 1.75 10H2V11.543C2.0001 11.8311 2.08561 12.1127 2.24571 12.3522C2.40581 12.5917 2.63333 12.7784 2.8995 12.8886C3.16567 12.9988 3.45854 13.0277 3.74111 12.9715C4.02367 12.9153 4.28324 12.7767 4.487 12.573L7.061 10H10.25C10.7141 10 11.1592 9.81563 11.4874 9.48744C11.8156 9.15925 12 8.71413 12 8.25V2.75C12 2.28587 11.8156 1.84075 11.4874 1.51256C11.1592 1.18437 10.7141 1 10.25 1H1.75ZM14.5 4.75C14.5 4.6837 14.4737 4.62011 14.4268 4.57322C14.3799 4.52634 14.3163 4.5 14.25 4.5H13.75C13.5511 4.5 13.3603 4.42098 13.2197 4.28033C13.079 4.13968 13 3.94891 13 3.75C13 3.55109 13.079 3.36032 13.2197 3.21967C13.3603 3.07902 13.5511 3 13.75 3H14.25C15.216 3 16 3.784 16 4.75V10.25C16 10.7141 15.8156 11.1592 15.4874 11.4874C15.1592 11.8156 14.7141 12 14.25 12H14V13.543C13.9999 13.8311 13.9144 14.1127 13.7543 14.3522C13.5942 14.5917 13.3667 14.7784 13.1005 14.8886C12.8343 14.9988 12.5415 15.0277 12.2589 14.9715C11.9763 14.9153 11.7168 14.7767 11.513 14.573L9.22 12.28C9.14631 12.2113 9.08721 12.1285 9.04622 12.0365C9.00523 11.9445 8.98318 11.8452 8.98141 11.7445C8.97963 11.6438 8.99816 11.5438 9.03588 11.4504C9.0736 11.357 9.12974 11.2722 9.20096 11.201C9.27218 11.1297 9.35701 11.0736 9.4504 11.0359C9.54379 10.9982 9.64382 10.9796 9.74452 10.9814C9.84523 10.9832 9.94454 11.0052 10.0365 11.0462C10.1285 11.0872 10.2113 11.1463 10.28 11.22L12.5 13.44V11.25C12.5 11.0511 12.579 10.8603 12.7197 10.7197C12.8603 10.579 13.0511 10.5 13.25 10.5H14.25C14.3163 10.5 14.3799 10.4737 14.4268 10.4268C14.4737 10.3799 14.5 10.3163 14.5 10.25V4.75Z"></path></svg>
+      <span>Conversation</span>
+      <span class="Counter">2</span>
+    </a>
+
+    <a class="tabnav-tab" href="#url">
+      <!-- <%= octicon "git-commit" %> -->
+      <svg class="octicon octicon-git-commit" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 7.75C10.5 8.41305 10.2366 9.04893 9.76777 9.51777C9.29893 9.98661 8.66304 10.25 8 10.25C7.33696 10.25 6.70107 9.98661 6.23223 9.51777C5.76339 9.04893 5.5 8.41305 5.5 7.75C5.5 7.08696 5.76339 6.45108 6.23223 5.98224C6.70107 5.5134 7.33696 5.25 8 5.25C8.66304 5.25 9.29893 5.5134 9.76777 5.98224C10.2366 6.45108 10.5 7.08696 10.5 7.75ZM11.93 8.5C11.7554 9.41441 11.2674 10.2393 10.5501 10.8327C9.83272 11.426 8.93093 11.7506 8 11.7506C7.06907 11.7506 6.16728 11.426 5.44994 10.8327C4.73259 10.2393 4.2446 9.41441 4.07 8.5H0.75C0.551088 8.5 0.360322 8.42099 0.21967 8.28033C0.0790176 8.13968 0 7.94892 0 7.75C0 7.55109 0.0790176 7.36033 0.21967 7.21967C0.360322 7.07902 0.551088 7 0.75 7H4.07C4.2446 6.0856 4.73259 5.26069 5.44994 4.66736C6.16728 4.07403 7.06907 3.7494 8 3.7494C8.93093 3.7494 9.83272 4.07403 10.5501 4.66736C11.2674 5.26069 11.7554 6.0856 11.93 7H15.25C15.4489 7 15.6397 7.07902 15.7803 7.21967C15.921 7.36033 16 7.55109 16 7.75C16 7.94892 15.921 8.13968 15.7803 8.28033C15.6397 8.42099 15.4489 8.5 15.25 8.5H11.93Z"></path></svg>
+      <span>Commits</span>
+      <span class="Counter">3</span>
+    </a>
+
+    <a class="tabnav-tab" href="#url">
+     <!-- <%= octicon "checklist" %> -->
+      <svg class="octicon octicon-checklist" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 1.75C2.5 1.61193 2.61193 1.5 2.75 1.5H11.25C11.3881 1.5 11.5 1.61193 11.5 1.75V9.48645C11.5 9.90067 11.8358 10.2365 12.25 10.2365C12.6642 10.2365 13 9.90067 13 9.48645V1.75C13 0.783502 12.2165 0 11.25 0H2.75C1.7835 0 1 0.783502 1 1.75V13.25C1 14.2165 1.7835 15 2.75 15H5.92083C6.33504 15 6.67083 14.6642 6.67083 14.25C6.67083 13.8358 6.33504 13.5 5.92083 13.5H2.75C2.61193 13.5 2.5 13.3881 2.5 13.25V1.75ZM4.75 4C4.33579 4 4 4.33579 4 4.75C4 5.16421 4.33579 5.5 4.75 5.5H9.25C9.66421 5.5 10 5.16421 10 4.75C10 4.33579 9.66421 4 9.25 4H4.75ZM4 7.75C4 7.33579 4.33579 7 4.75 7H6.75C7.16421 7 7.5 7.33579 7.5 7.75C7.5 8.16421 7.16421 8.5 6.75 8.5H4.75C4.33579 8.5 4 8.16421 4 7.75ZM15.774 11.2866C16.0703 10.9972 16.076 10.5223 15.7866 10.226C15.4972 9.92965 15.0223 9.92402 14.726 10.2134L10.7003 14.1447L9.28127 12.7206C8.98889 12.4272 8.51402 12.4264 8.22061 12.7187C7.9272 13.0111 7.92636 13.486 8.21873 13.7794L10.1618 15.7294C10.4521 16.0207 10.9229 16.0239 11.2171 15.7366L15.774 11.2866Z"></path></svg>
+      <span>Checks</span>
+      <span class="Counter">27</span>
+    </a>
+
+    <a class="tabnav-tab" href="#url">
+      <!-- <%= octicon "diff" %> -->
+      <svg class="octicon octicon-diff" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 1.5C2.61193 1.5 2.5 1.61193 2.5 1.75V14.25C2.5 14.3881 2.61193 14.5 2.75 14.5H13.25C13.3881 14.5 13.5 14.3881 13.5 14.25V4.66421C13.5 4.59791 13.4737 4.53432 13.4268 4.48744L10.5126 1.57322C10.4657 1.52634 10.4021 1.5 10.3358 1.5H2.75ZM1 1.75C1 0.783502 1.7835 0 2.75 0H10.3358C10.7999 0 11.245 0.184374 11.5732 0.512563L14.4874 3.42678C14.8156 3.75497 15 4.20008 15 4.66421V14.25C15 15.2165 14.2165 16 13.25 16H2.75C1.7835 16 1 15.2165 1 14.25V1.75ZM8 3.25C8.41421 3.25 8.75 3.58579 8.75 4V5.5H10.25C10.6642 5.5 11 5.83579 11 6.25C11 6.66421 10.6642 7 10.25 7H8.75V8.5C8.75 8.91421 8.41421 9.25 8 9.25C7.58579 9.25 7.25 8.91421 7.25 8.5V7H5.75C5.33579 7 5 6.66421 5 6.25C5 5.83579 5.33579 5.5 5.75 5.5H7.25V4C7.25 3.58579 7.58579 3.25 8 3.25ZM5 11.25C5 10.8358 5.33579 10.5 5.75 10.5H10.25C10.6642 10.5 11 10.8358 11 11.25C11 11.6642 10.6642 12 10.25 12H5.75C5.33579 12 5 11.6642 5 11.25Z"></path></svg>
+      <span>Files changed</span>
+      <span class="Counter">6</span>
+    </a>
   </nav>
 </div>
 ```
@@ -436,18 +445,7 @@ You can have `subnav-search` in the subnav bar.
   <div class="subnav-search float-left">
     <input type="search" name="name" class="form-control subnav-search-input" value="" aria-label="Search site" />
     <!-- <%= octicon "search", :class = "subnav-search-icon" %> -->
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      class="octicon octicon-search subnav-search-icon"
-      aria-hidden="true"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"
-      />
-    </svg>
+    <svg class="subnav-search-icon octicon octicon-search" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"> <path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z" /> </svg>
   </div>
 </div>
 ```
@@ -462,53 +460,16 @@ You can also use a `subnav-search-context` to display search help in a select me
     <a class="subnav-item" href="#url">Item 3</a>
   </nav>
 
-  <div class="float-left ml-3 select-menu js-menu-container js-select-menu subnav-search-context">
-    <button
-      type="button"
-      name="button"
-      class="btn select-menu-button js-menu-target"
-      aria-expanded="false"
-      aria-haspopup="true"
-    >
+  <div class="float-left ml-3 subnav-search-context">
+    <button class="btn" type="button" name="button" aria-expanded="false" aria-haspopup="true">
       Filters
+      <span class="dropdown-caret"></span>
     </button>
-    <div class="select-menu-modal-holder js-menu-content js-navigation-container" aria-hidden="true">
-      <div class="select-menu-modal">
-        <div class="select-menu-list">
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <div class="select-menu-item-text">
-              Search filter 1
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <div class="select-menu-item-text">
-              Search filter 2
-            </div>
-          </a>
-          <a href="#url" class="select-menu-item js-navigation-item">
-            <div class="select-menu-item-text">
-              Search filter 3
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
   <div class="subnav-search float-left">
     <input type="search" name="name" class="form-control subnav-search-input" value="" aria-label="Search site" />
     <!-- <%= octicon "search", :class = "subnav-search-icon" %> -->
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      class="octicon octicon-search subnav-search-icon"
-      aria-hidden="true"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"
-      />
-    </svg>
+    <svg class="subnav-search-icon octicon octicon-search" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"> <path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z" /> </svg>
   </div>
 </div>
 ```
