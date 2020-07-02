@@ -4,6 +4,15 @@
  * array and a "message" string.
  */
 const versionDeprecations = {
+  '15.0.0': [
+    {
+      selectors: [
+        '.SelectMenu-tab:not([aria-checked="true"]):hover',
+        '.SelectMenu-tab:not([aria-checked="true"]):active'
+      ],
+      message: `Please use aria-selected="true" to indicate the selected state of a SelectMenu-tab item.`
+    }
+  ],
   '14.4.0': [
     {
       selectors: [
