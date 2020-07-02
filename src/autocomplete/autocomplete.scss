@@ -19,13 +19,18 @@
 
 .autocomplete-item {
   display: block;
+  width: 100%;
   padding: $spacer-1 $spacer-2;
   overflow: hidden;
   font-weight: $font-weight-bold;
+  color: $text-gray-dark;
+  text-align: left;
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
+  background-color: $bg-white;
+  border: 0;
 
   &:hover,
   &.selected,
