@@ -5,9 +5,8 @@
   list-style-type: none;
 
   &.small .filter-item {
-    padding: $spacer-1 10px;
     // stylelint-disable-next-line primer/spacing
-    margin: 0 0 2px;
+    padding: 6px 12px;
     font-size: $font-size-small;
   }
 
@@ -25,9 +24,8 @@
 .filter-item {
   position: relative;
   display: block;
-  padding: $spacer-2 10px;
-  // stylelint-disable-next-line primer/spacing
-  margin-bottom: 5px;
+  padding: $spacer-2 $spacer-3;
+  margin-bottom: $spacer-1;
   overflow: hidden;
   font-size: $h5-size;
   color: $text-gray;
@@ -39,8 +37,7 @@
 
   &:hover {
     text-decoration: none;
-    // stylelint-disable-next-line primer/colors
-    background-color: lighten($gray-200, 3%);
+    background-color: $bg-gray;
   }
 
   &.selected,

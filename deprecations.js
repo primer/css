@@ -4,6 +4,38 @@
  * array and a "message" string.
  */
 const versionDeprecations = {
+  '15.0.0': [
+    {
+      selectors: [
+        '.btn-outline:active .Counter',
+        '.btn-outline.selected .Counter',
+        '.btn-outline[aria-selected=true] .Counter',
+        '.tabnav .Counter',
+        '.SideNav-item:hover::before',
+        '.SideNav-item:focus::before',
+        '.UnderlineNav-item:hover .UnderlineNav-octicon',
+        '.UnderlineNav-item:focus .UnderlineNav-octicon',
+        '.UnderlineNav--right .UnderlineNav-item',
+        '.pagination::before',
+        '.pagination::after',
+        '.pagination a:first-child',
+        '.pagination span:first-child',
+        '.pagination em:first-child',
+        '.pagination a:last-child',
+        '.pagination span:last-child',
+        '.pagination em:last-child',
+        '.pagination .selected',
+        '.IssueLabel--big .g-emoji',
+        '.IssueLabel--big:hover',
+        '.SelectMenu-item[aria-checked="true"]',
+        '.SelectMenu-item[aria-checked="true"] .SelectMenu-icon--check',
+        '.SelectMenu-tab:not([aria-checked="true"]):hover',
+        '.SelectMenu-tab:not([aria-checked="true"]):active',
+        '.SelectMenu-tab:not([aria-selected="true"]):hover'
+      ],
+      message: `This selector is not available in Primer CSS 15.0.0. Please refer to the documentation.`
+    }
+  ],
   '14.4.0': [
     {
       selectors: [

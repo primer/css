@@ -15,11 +15,8 @@ $border-green:       $green-400 !default;
 $border-green-light: desaturate($green-300, 40%) !default;
 $border-purple:      $purple !default;
 $border-red:         $red !default;
-$border-red-light:   desaturate($red-300, 60%) !default;
-$border-yellow:      desaturate($yellow-300, 60%) !default;
-
-// Buttons have a slightly more opaque border than $border-black-fade (15% alpha)
-$border-color-button: rgba($black, 0.2) !default;
+$border-red-light:   $red-300 !default;
+$border-yellow:      $yellow-600 !default;
 
 // Background colors
 $bg-white:          $white !default;
@@ -37,15 +34,10 @@ $bg-purple:         $purple-500 !default;
 $bg-purple-light:   $purple-000 !default;
 $bg-pink:           $pink-500 !default;
 $bg-red:            $red-500 !default;
-$bg-red-light:      $red-100 !default;
+$bg-red-light:      $red-000 !default;
 $bg-yellow:         $yellow-500 !default;
 $bg-yellow-light:   $yellow-200 !default;
 $bg-yellow-dark:    $yellow-700 !default;
-
-// diffstat background colors
-$bg-diffstat-added: darken($green-400, 5%) !default;
-$bg-diffstat-deleted: $red-600 !default;
-$bg-diffstat-neutral: $gray-300 !default;
 
 // Text colors
 $text-black:        $black !default;
@@ -54,7 +46,7 @@ $text-blue:         $blue-500 !default;
 $text-gray-dark:    $gray-900 !default;
 $text-gray-light:   $gray-500 !default;
 $text-gray:         $gray-600 !default;
-$text-green:        $green-500 !default;
+$text-green:        $green-600 !default;
 $text-orange:       $orange-900 !default;
 $text-orange-light: $orange-600 !default;
 $text-purple:       $purple !default;

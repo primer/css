@@ -6,12 +6,16 @@
 // closed   - $red background
 // merged   - $purple background
 
-// .state to be deprecated in replace of .State
-.state,
+// Default 32px
+// Small 24px
+
+.state, // TODO: Deprecate
 .State {
   display: inline-block;
-  padding: $spacer-1 $spacer-2;
-  font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/spacing
+  padding: 5px 12px;
+  font-size: $body-font-size;
+  font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
   color: $text-white;
@@ -19,20 +23,31 @@
   white-space: nowrap;
   // stylelint-disable-next-line primer/colors
   background-color: $gray-500;
-  border-radius: $border-radius;
+  border: $border-width $border-style transparent; // Support Firfox custom colors
+  // stylelint-disable-next-line primer/borders
+  border-radius: 2em;
 }
 
-// stylelint-disable-next-line primer/colors
-.State--green { background-color: darken($green-400, 5%); }
+.State--green {
+  background-color: $bg-green;
+}
 
-.State--purple { background-color: $bg-purple; }
+.State--red {
+  background-color: $bg-red;
+}
 
-// stylelint-disable-next-line primer/colors
-.State--red { background-color: $red-600; }
+.State--purple {
+  background-color: $bg-purple;
+}
+
+// Small
 
 .State--small {
-  padding: $em-spacer-2 $spacer-1;
-  font-size: $h6-size;
+  // stylelint-disable-next-line primer/spacing
+  padding: 0 10px;
+  font-size: $font-size-small;
+  // stylelint-disable-next-line primer/typography
+  line-height: $size-3;
 
   .octicon {
     width: 1em; // Ensures different icons don't change State indicator width

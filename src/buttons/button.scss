@@ -5,22 +5,32 @@
   position: relative;
   display: inline-block;
   // stylelint-disable-next-line primer/spacing
-  padding: 6px 12px;
+  padding: 5px $spacer-3;
   font-size: $body-font-size;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px; // Specifically not inherit our `<body>` default
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  background-repeat: repeat-x;
-  background-position: -1px -1px;
-  background-size: 110% 110%;
-  border: $border-width $border-style $border-color-button;
-  // stylelint-disable-next-line primer/borders
-  border-radius: 0.25em;
+  border: $border-width $border-style;
+  border-radius: $border-radius;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    cursor: default;
+
+    .octicon {
+      color: inherit;
+    }
+  }
 
   i {
     font-style: normal;
@@ -29,78 +39,248 @@
   }
 
   .octicon {
-    vertical-align: text-top;
+    margin-right: $spacer-1;
+    color: $text-gray-light;
+    vertical-align: text-bottom;
+
+    &:only-child {
+      margin-right: 0;
+    }
   }
 
-  // Darken for just a tad more contrast against the button background
   .Counter {
-    color: $text-gray;
+    // stylelint-disable-next-line primer/spacing
+    margin-left: 2px;
+    color: inherit;
     text-shadow: none;
+    vertical-align: top;
     // stylelint-disable-next-line primer/colors
-    background-color: rgba($black, 0.1);
+    background-color: rgba($black, 0.08); // Darken for just a tad more contrast against the button background
   }
 
-  &:hover {
-    text-decoration: none;
-    background-repeat: repeat-x;
+  .dropdown-caret {
+    margin-left: $spacer-1;
+    opacity: 0.8;
   }
+}
 
-  &:focus {
-    outline: 0;
-  }
+// Default button
 
-  &:disabled,
-  &.disabled,
-  &[aria-disabled=true] {
-    cursor: default;
-    // Repeat `background-position` because `:hover`
-    background-position: 0 0;
+.btn {
+  $bg-default: $bg-gray-light;
+  $bg-hover: #f3f4f6; // custom gray
+  $bg-active: darken($bg-hover, 2%);
+  $bg-disabled: $bg-default;
+
+  color: $text-gray-dark;
+  background-color: $bg-default;
+  border-color: $border-color-button;
+  box-shadow: $box-shadow, $box-shadow-highlight;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+
+  &:hover,
+  &.hover,
+  [open] > & {
+    background-color: $bg-hover;
+    transition-duration: 0.1s;
   }
 
   &:active,
   &.selected,
   &[aria-selected=true] {
-    background-image: none;
+    background-color: $bg-active;
+    box-shadow: $box-shadow-inset;
+    transition: none;
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    // stylelint-disable-next-line primer/colors
+    color: $gray-400;
+    background-color: $bg-disabled;
+    border-color: $border-color-button;
+  }
+
+  // Keep :focus after :disabled. Allows to see the focus ring even on disabled buttons
+  &:focus,
+  &.focus {
+    outline: 1px dotted transparent; // Support Firfox custom colors
+    outline-offset: 2px;
+    box-shadow: $box-shadow-focus;
   }
 }
 
-.btn         { @include btn-solid($text-gray-dark, $gray-000, darken($gray-100, 2%)); }
-.btn-primary { @include btn-solid($text-white, $green-400, $green-500); }
-.btn-blue    { @include btn-solid($text-white, lighten($blue-500, 8%), darken($blue-500, 2%)); }
-.btn-danger  { @include btn-inverse($red-600, $gray-000, darken($gray-100, 2%)); }
+// Primary button
+
+.btn-primary {
+  $bg-default: #2ea44f; // custom green
+  $bg-hover: #2c974b; // custom green
+  $bg-active: darken($bg-hover, 2%);
+  $bg-disabled: #94d3a2; // custom green
+
+  $shadow: $green-900;
+  $box-shadow: 0 1px 0 rgba($black, 0.1), inset 0 1px 0 rgba($white, 0.03);
+
+  color: $text-white;
+  background-color: $bg-default;
+  // stylelint-disable-next-line primer/borders
+  border-color: rgba($black, 0.15);
+  box-shadow: $box-shadow;
+
+  &:hover,
+  &.hover,
+  [open] > & {
+    background-color: $bg-hover;
+  }
+
+  &:active,
+  &.selected,
+  &[aria-selected=true] {
+    background-color: $bg-active;
+    // stylelint-disable-next-line primer/box-shadow
+    box-shadow: inset 0 1px 0 rgba($shadow, 0.2);
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    // stylelint-disable-next-line primer/colors
+    color: rgba($text-white, 0.8);
+    background-color: $bg-disabled;
+    // stylelint-disable-next-line primer/borders
+    border-color: rgba($black, 0.1);
+    box-shadow: $box-shadow;
+  }
+
+  &:focus,
+  &.focus {
+    // stylelint-disable-next-line primer/box-shadow
+    box-shadow: 0 0 0 3px rgba($bg-default, 0.4);
+  }
+
+  .Counter {
+    color: inherit;
+    // stylelint-disable-next-line primer/colors
+    background-color: rgba($bg-white, 0.2);
+  }
+
+  .octicon {
+    // stylelint-disable-next-line primer/colors
+    color: rgba($text-white, 0.8);
+  }
+}
+
+// Mixin: btn-inverse-on-hover
+
+@mixin btn-inverse-on-hover( $color, $bg-hover, $bg-active, $shadow ) {
+  color: $color;
+  transition: none;
+
+  &:hover,
+  [open] > & {
+    color: $text-white;
+    background-color: $bg-hover;
+    border-color: rgba($black, 0.15);
+    box-shadow: 0 1px 0 rgba($black, 0.1), inset 0 1px 0 rgba($white, 0.03);
+
+    .Counter {
+      background-color: rgba($bg-white, 0.2);
+    }
+
+    .octicon {
+      color: inherit;
+    }
+  }
+
+  &:active,
+  &.selected,
+  &[aria-selected=true] {
+    color: $text-white;
+    background-color: $bg-active;
+    border-color: rgba($black, 0.15);
+    box-shadow: inset 0 1px 0 rgba($shadow, 0.2);
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    color: rgba($color, 0.5);
+    background-color: $bg-gray-light;
+    border-color: $border-color-button;
+    box-shadow: $box-shadow, $box-shadow-highlight;
+
+    .Counter {
+      background-color: rgba($color, 0.05);
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($bg-hover, 0.4);
+  }
+
+  .Counter {
+    color: inherit;
+    background-color: rgba($color, 0.1);
+  }
+}
+
+// Danger button
+
+.btn-danger {
+  @include btn-inverse-on-hover(
+    $color: $text-red,
+    $bg-hover: $red-600,
+    $bg-active: darken($red-600, 3%),
+    $shadow: $red-900
+  );
+}
 
 // Outline button
-//
-// For when we need a linky-action that's not too heavy in busier
-// areas like conversation timelines.
+
 .btn-outline {
-  @include btn-outline($text-blue);
+  @include btn-inverse-on-hover(
+    $color: $blue-500,
+    $bg-hover: $blue-500,
+    $bg-active: darken($blue-500, 3%),
+    $shadow: $blue-900
+  );
 }
 
-// Social button count
-.btn-with-count {
-  float: left;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+// Solid buttons TODO: Deprecate?
+//
+//
+.btn-blue {
+  @include btn-solid(
+    $text-white,
+    lighten($blue-500, 8%),
+    darken($blue-500, 2%)
+  );
 }
 
-// Minibutton overrides
+// Sizes
 //
 // Tweak `line-height` to make them smaller.
 .btn-sm {
   // stylelint-disable-next-line primer/spacing
-  padding: 3px 10px;
+  padding: 3px 12px;
   font-size: $font-size-small;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
+
+  .octicon {
+    vertical-align: text-top;
+  }
 }
 
 // Large button adds more padding around text. Use font-size utils to increase font-size.. e.g, <p class="text-gamma"><button class="btn btn-large btn-primary" type="button">Big green button</button></p>
 .btn-large {
-  padding: $em-spacer-6 1.25em;
+  padding: $em-spacer-6 1.5em;
   font-size: inherit;
+  line-height: $lh-default;
+
   // stylelint-disable-next-line primer/borders
-  border-radius: 6px;
+  border-radius: 0.5em;
 }
 
 // Full-width button
@@ -110,92 +290,4 @@
   display: block;
   width: 100%;
   text-align: center;
-}
-
-// Link-like buttons
-//
-// This class is for styling <button> and <input> elements to look like links
-.btn-link {
-  display: inline-block;
-  padding: 0;
-  font-size: inherit;
-  color: $text-blue;
-  text-decoration: none;
-  white-space: nowrap;
-  cursor: pointer;
-  user-select: none;
-  background-color: transparent;
-  border: 0;
-  appearance: none; // Corrects inability to style clickable `input` types in iOS.
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:disabled,
-  &[aria-disabled=true] {
-    &,
-    &:hover {
-      // stylelint-disable-next-line primer/colors
-      color: rgba($gray-600, 0.5);
-      cursor: default;
-    }
-  }
-}
-
-// Invisible button
-//
-// Typically used as a "cancel" button next to a .btn
-.btn-invisible {
-  color: $text-blue;
-  background-color: $bg-white; // Reset default gradient backgrounds and colors
-  background-image: none;
-  border: 0;
-
-  &:hover,
-  &:active,
-  &:focus,
-  &.selected,
-  &[aria-selected=true],
-  &.zeroclipboard-is-hover,
-  &.zeroclipboard-is-active {
-    color: $text-blue;
-    background: none;
-    outline: none;
-    box-shadow: none;
-  }
-}
-
-// Octicon button
-//
-// Icon-only buttons
-.btn-octicon {
-  display: inline-block;
-  // stylelint-disable-next-line primer/spacing
-  padding: 5px;
-  // stylelint-disable-next-line primer/spacing
-  margin-left: 5px;
-  line-height: $lh-condensed-ultra;
-  color: $text-gray;
-  vertical-align: middle;
-
-  // For `<button>` elements
-  background: transparent;
-  border: 0;
-
-  &:hover { color: $text-blue; }
-
-  &.disabled,
-  &[aria-disabled=true] {
-    // stylelint-disable-next-line primer/colors
-    color: $gray-400;
-    cursor: default;
-
-    // stylelint-disable-next-line primer/colors
-    &:hover { color: $gray-400; }
-  }
-}
-
-.btn-octicon-danger:hover {
-  color: $text-red;
 }
