@@ -7,9 +7,9 @@
 }
 
 .tabnav-tabs {
+  display: flex;
   // stylelint-disable-next-line primer/spacing
   margin-bottom: -1px;
-  display: flex;
   overflow: auto;
 }
 
