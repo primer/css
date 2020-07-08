@@ -19,8 +19,8 @@
   li {
     display: block;
     padding: $spacer-1 $spacer-2;
-    font-weight: $font-weight-bold;
-    border-bottom: $border;
+    font-weight: $font-weight-semibold;
+    border-bottom: $border-width $border-style $border-gray-light;
 
     small {
       font-weight: $font-weight-normal;

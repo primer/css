@@ -11,7 +11,7 @@
   background: $bg-white;
   border-radius: $border-radius;
   // stylelint-disable-next-line primer/box-shadow
-  box-shadow: 0 0 5px $black-fade-30;
+  box-shadow: inset 0 0 0 1px $border-color, $box-shadow-medium;
 }
 
 // One of the items that appears within an autocomplete group
@@ -19,13 +19,18 @@
 
 .autocomplete-item {
   display: block;
+  width: 100%;
   padding: $spacer-1 $spacer-2;
   overflow: hidden;
   font-weight: $font-weight-bold;
+  color: $text-gray-dark;
+  text-align: left;
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
+  background-color: $bg-white;
+  border: 0;
 
   &:hover,
   &.selected,

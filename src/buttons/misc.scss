@@ -1,5 +1,94 @@
 // stylelint-disable selector-max-type
 
+// Link-like buttons
+//
+// This class is for styling <button> and <input> elements to look like links
+.btn-link {
+  display: inline-block;
+  padding: 0;
+  font-size: inherit;
+  color: $text-blue;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 0;
+  appearance: none; // Corrects inability to style clickable `input` types in iOS.
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:disabled,
+  &[aria-disabled=true] {
+    &,
+    &:hover {
+      // stylelint-disable-next-line primer/colors
+      color: rgba($gray-600, 0.5);
+      cursor: default;
+    }
+  }
+}
+
+// Invisible button
+//
+// Typically used as a "cancel" button next to a .btn
+.btn-invisible {
+  color: $text-blue;
+  background-color: transparent; // Reset default gradient backgrounds and colors
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.selected,
+  &[aria-selected=true],
+  &.zeroclipboard-is-hover,
+  &.zeroclipboard-is-active {
+    color: $text-blue;
+    background: none;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+// Octicon button
+//
+// Icon-only buttons
+.btn-octicon {
+  display: inline-block;
+  // stylelint-disable-next-line primer/spacing
+  padding: 5px;
+  // stylelint-disable-next-line primer/spacing
+  margin-left: 5px;
+  line-height: $lh-condensed-ultra;
+  color: $text-gray;
+  vertical-align: middle;
+
+  // For `<button>` elements
+  background: transparent;
+  border: 0;
+
+  &:hover { color: $text-blue; }
+
+  &.disabled,
+  &[aria-disabled=true] {
+    // stylelint-disable-next-line primer/colors
+    color: $gray-400;
+    cursor: default;
+
+    // stylelint-disable-next-line primer/colors
+    &:hover { color: $gray-400; }
+  }
+}
+
+.btn-octicon-danger:hover {
+  color: $text-red;
+}
+
 // Close button
 //
 // Typically used with an octicon-x
@@ -59,13 +148,28 @@
   }
 }
 
+// Social button count
+// TODO: Deprecate? Use BtnGroup instead?
+
+.btn-with-count {
+  float: left;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  &:focus {
+    z-index: 1;
+  }
+}
+
 // Social count bubble
 //
 // A container that is used for social bubbles counts.
+
 .social-count {
+  position: relative;
   float: left;
   // stylelint-disable-next-line primer/spacing
-  padding: 3px 10px;
+  padding: 3px 12px;
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/typography
@@ -77,6 +181,7 @@
   border-left: 0;
   border-top-right-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
+  box-shadow: $box-shadow, $box-shadow-highlight;
 
   &:hover,
   &:active {
@@ -86,5 +191,11 @@
   &:hover {
     color: $text-blue;
     cursor: pointer;
+  }
+
+  &:focus {
+    z-index: 1;
+    outline: 0;
+    box-shadow: $box-shadow-focus;
   }
 }

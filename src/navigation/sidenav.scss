@@ -10,12 +10,13 @@
   position: relative;
   display: block;
   width: 100%;
-  padding: $spacer-3;
-  color: $text-gray;
+  // stylelint-disable-next-line primer/spacing
+  padding: 12px $spacer-3;
+  color: $text-black;
   text-align: left;
   background-color: transparent;
   border: 0;
-  border-top: $border;
+  border-top: $border-width $border-style $border-gray-light;
 
   &:first-child {
     border-top: 0;
@@ -34,7 +35,7 @@
     bottom: 0;
     left: 0;
     z-index: 1;
-    width: 3px;
+    width: 2px;
     pointer-events: none;
     content: "";
   }
@@ -44,32 +45,24 @@
 
 .SideNav-item:hover,
 .SideNav-item:focus {
-  color: $text-gray-dark;
   text-decoration: none;
-  background-color: $bg-gray;
+  // stylelint-disable-next-line primer/colors
+  background-color: $gray-100;
   outline: none;
-
-  // Bar on the left
-  &::before {
-    // stylelint-disable-next-line primer/colors
-    background-color: $gray-300;
-  }
 }
 
 .SideNav-item:active {
-  background-color: $bg-white;
+  background-color: $bg-gray-light;
 }
 
-.SideNav-item[aria-current="page"],
+.SideNav-item[aria-current]:not([aria-current=false]),
 .SideNav-item[aria-selected="true"] {
-  font-weight: $font-weight-semibold;
-  color: $text-gray-dark;
   background-color: $bg-white;
 
   // Bar on the left
   &::before {
     // stylelint-disable-next-line primer/colors
-    background-color: $orange-600;
+    background-color: #f9826c; // custom coral
   }
 }
 
@@ -79,6 +72,7 @@
 
 .SideNav-icon {
   width: 16px;
+  margin-right: $spacer-2;
   color: $text-gray-light;
 }
 
@@ -104,7 +98,7 @@
   outline: none;
 }
 
-.SideNav-subItem[aria-current="page"],
+.SideNav-subItem[aria-current]:not([aria-current=false]),
 .SideNav-subItem[aria-selected="true"] {
   font-weight: $font-weight-semibold;
   color: $text-gray-dark;

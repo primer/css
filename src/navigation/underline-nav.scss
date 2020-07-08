@@ -2,7 +2,8 @@
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
-  border-bottom: $border;
+  // stylelint-disable-next-line primer/box-shadow
+  box-shadow: inset 0 -1px 0 $border-color;
   justify-content: space-between;
 }
 
@@ -11,51 +12,46 @@
 }
 
 .UnderlineNav-item {
-  padding: $spacer-3 $spacer-2;
-  margin-right: $spacer-3;
+  padding: $spacer-2 $spacer-3;
   font-size: $body-font-size;
-  line-height: $lh-default;
-  color: $text-gray;
+  // stylelint-disable-next-line primer/typography
+  line-height: 30px;
+  color: $text-black;
   text-align: center;
   white-space: nowrap;
   background-color: transparent;
   border: 0;
   // stylelint-disable-next-line primer/borders
-  border-bottom: 2px $border-style transparent;
+  border-bottom: 2px $border-style rgba($border-gray-dark, 0);
+  transition: border-bottom-color 0.36s ease-in;
 
   &:hover,
   &:focus {
-    color: $text-gray-dark;
     text-decoration: none;
     border-bottom-color: $border-gray-dark;
-    transition: 0.2s ease;
-
-    .UnderlineNav-octicon {
-      color: $text-gray-light;
-    }
+    outline: 1px dotted transparent; // Support Firfox custom colors
+    outline-offset: -1px;
+    transition-timing-function: ease-out;
+    transition-duration: 0.12s;
   }
 
   &.selected,
   &[role=tab][aria-selected=true],
-  &[aria-current] {
+  &[aria-current]:not([aria-current=false]) {
     font-weight: $font-weight-bold;
-    color: $text-gray-dark;
     // stylelint-disable-next-line primer/borders
-    border-bottom-color: $orange-600;
+    border-bottom-color: #f9826c; // custom coral
+    outline: 1px dotted transparent; // Support Firfox custom colors
+    outline-offset: -1px;
 
     .UnderlineNav-octicon {
-      color: $text-gray-light;
+      color: $text-gray;
     }
   }
 }
 
 .UnderlineNav--right {
   justify-content: flex-end;
-
-  .UnderlineNav-item {
-    margin-right: 0;
-    margin-left: $spacer-3;
-  }
 
   .UnderlineNav-actions {
     flex: 1 1 auto;
@@ -71,8 +67,13 @@
 }
 
 .UnderlineNav-octicon {
+  margin-right: $spacer-1;
   // stylelint-disable-next-line primer/colors
   color: $gray-400;
+}
+
+.UnderlineNav .Counter {
+  margin-left: $spacer-1;
 }
 
 .UnderlineNav-container {

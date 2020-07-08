@@ -53,7 +53,7 @@ Box overlays come in three widths. The default `Box--overlay` is 440px wide, `Bo
 
 <!-- Temporary overrides (don't use in production) -->
 <style> .frame-example { min-height: 500px; } </style>
-<link href="https://unpkg.com/@github/details-dialog-element/index.css" rel="stylesheet" />
+<link href="https://unpkg.com/@github/details-dialog-element/dist/index.css" rel="stylesheet" />
 ```
 
 [aria attributes]: https://www.w3.org/TR/html-aria/#allowed-aria-roles-states-and-properties

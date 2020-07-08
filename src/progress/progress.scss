@@ -7,6 +7,7 @@
   // stylelint-disable-next-line primer/colors
   background-color: $gray-200;
   border-radius: $border-radius;
+  outline: 1px solid transparent; // Support Firfox custom colors
 }
 
 .Progress--large {
@@ -15,4 +16,13 @@
 
 .Progress--small {
   height: 5px;
+}
+
+.Progress-item {
+  outline: 2px solid transparent; // Support Firfox custom colors
+}
+
+.Progress-item + .Progress-item {
+  // stylelint-disable-next-line primer/spacing
+  margin-left: 2px;
 }

@@ -18,9 +18,8 @@ A popover consist of:
 
 In the examples below, `Popover-message`, in particular, uses a handful of utility classes to style it appropriately. And these are intended to demonstrate the default, go-to presentation for the popover's message. By default, the message's caret is centered on the top edge of the message.
 
-The `Popover-message` element also supports several modifiers, most of which position the caret differently:
+The `Popover-message` element also supports several modifiers. By default, the caret is shown on the top edge of the message, horizontally centered. To change the caret's position, use one of the following modifiers.
 
-- [`.Popover-message--top`](#default-top-center) (default): Places the caret on the top edge of the message, horizontally centered.
 - [`.Popover-message--bottom`](#bottom) Places the caret on the bottom edge of the message, horizontally centered.
 - [`.Popover-message--right`](#right): Places the caret on the right edge of the message, vertically centered.
 - [`.Popover-message--left`](#left): Places the caret on the left edge of the message, vertically centered.
