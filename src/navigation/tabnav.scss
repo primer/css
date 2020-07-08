@@ -14,8 +14,7 @@
 }
 
 .tabnav-tab {
-  display: flex;
-  align-items: center;
+  display: inline-block;
   flex-shrink: 0;
   padding: $spacer-2 $spacer-3;
   font-size: $h5-size;
