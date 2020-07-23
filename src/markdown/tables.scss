@@ -4,7 +4,9 @@
   // Tables
   table {
     display: block;
-    width: 100%;
+    width: 100%; // keep for backwards compatibility
+    width: max-content;
+    max-width: 100%;
     overflow: auto;
 
     th {
