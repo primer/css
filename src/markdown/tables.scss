@@ -8,6 +8,8 @@
     width: max-content;
     max-width: 100%;
     overflow: auto;
+    border-color: $border-gray-darker;
+    border-style: $border-style;
 
     th {
       font-weight: $font-weight-bold;
