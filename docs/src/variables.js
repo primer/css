@@ -86,7 +86,7 @@ function Variables({children, ...props}) {
       <>
         <h2>No data available</h2>
         {__DEV__ && (
-          <Flash scheme="red">
+          <Flash variant="danger">
             This probably means that the root project has not been built; run `npm run dist` and restart your
             development server.
           </Flash>
