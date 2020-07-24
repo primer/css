@@ -25,6 +25,7 @@
 </p>
 
 ## Migrating
+
 :rotating_light: **If you currently use the `primer` or `primer-`-prefixed npm packages, please read [the migration guide](MIGRATING.md)!**
 
 ## Install
