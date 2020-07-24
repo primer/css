@@ -11,7 +11,7 @@ function Hero() {
   return (
     <Box bg="black" py={6}>
       <Container>
-        <Heading color="blue.4" fontSize={7} m={0}>
+        <Heading as="h1" color="blue.4" fontSize={7} m={0}>
           Primer CSS
         </Heading>
         <Text as="p" fontFamily="mono" mt={0} mb={2} color="blue.3" fontSize={2}>
