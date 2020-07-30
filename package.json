@@ -40,7 +40,8 @@
     "test-migrate": "script/test-migrate"
   },
   "dependencies": {
-    "@primer/octicons": "^9.1.1"
+    "@primer/octicons": "^9.1.1",
+    "@primer/primitives": "0.0.0-18b6150"
   },
   "devDependencies": {
     "@octokit/rest": "^16.34.0",

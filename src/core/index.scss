@@ -11,6 +11,9 @@
 // Global requirements
 @import "../support/index.scss";
 
+// Color modes
+@import "../../node_modules/@primer/primitives/dist/scss/modes/_light.scss";
+
 // Core modules
 @import "../base/index.scss";
 @import "../box/index.scss";
