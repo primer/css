@@ -16,7 +16,7 @@
 
     Version: 📦 **`0.0.0`**
     Approximate release date: 📆 **Mon DD, YYYY**
-    Changes: 🎉 [All merged PRs](https://github.com/primer/css/pulls?q=is%3Apr+is%3Amerged+base%3Arelease-0.0.0)
+    Changes: 🎉 [All merged PRs](https://github.com/primer/css/pulls?q=is%3Apr+is%3Amerged+base%3Arelease-0.0.0) <!-- Update version at the end of the link. E.g. ...release-0.0.0 -> ...release-15.1.0 -->
 
     ---
 
@@ -46,6 +46,7 @@
     - [ ] Merge all PRs
     - [ ] Update `CHANGELOG.md`
     - [ ] Test the release candidate version with `github/github` (optional)
+    - [ ] Get approval
     - [ ] Merge this PR and [create a new release](https://github.com/primer/css/releases/new)
     - [ ] Update `github/github`
     - [ ] Tell the world (Slack, Twitter, Team post)
