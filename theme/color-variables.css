@@ -100,14 +100,14 @@ html {
 --pink-900: #6d224f;
 
 /*-------- Color defaults --------*/
---red:  var(--red-500);
---purple: var(--purple-500);
---blue: var(--blue-500);
---green: var(--green-500);
---yellow: var(--yellow-500);
---orange: var(--orange-500);
+--red:  #d73a49;
+--purple:  #6f42c1;
+--blue: #0366d6;
+--green: #28a745;
+--yellow: #ffd33d;
+--orange: #f66a0a;
 
---gray-dark:   var(--gray-900);
---gray-light:  var(--gray-400);
---gray: var(--gray-500);
+--gray-dark:   #24292e;
+--gray-light: #959da5;
+--gray: #6a737d;
 }
