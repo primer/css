@@ -1,3 +1,25 @@
+## 15.1.0
+
+### :rocket: Enhancements
+- [#1062](https://github.com/primer/css/pull/1062) Make tabnav responsive
+- [#1128](https://github.com/primer/css/pull/1128) Add support for table border
+- [#1132](https://github.com/primer/css/pull/1132) Add .bg-orange to the list of colors
+
+### :memo: Documentation
+- [#1122](https://github.com/primer/css/pull/1122) fix comment typo
+
+### :nail_care: Polish
+- [#1121](https://github.com/primer/css/pull/1121) Update layout when the Counter is empty
+- [#1126](https://github.com/primer/css/pull/1126) Increase border contrast for Label--yellow
+
+### Committers
+- [@colinkeany](https://github.com/colinkeany)
+- [@garman](https://github.com/garman)
+- [@nikolasveneti](https://github.com/nikolasveneti)
+- [@nuthinking](https://github.com/nuthinking)
+- [@simurai](https://github.com/simurai)
+
+
 ## 15.0.0
 
 ### :rocket: Enhancements
