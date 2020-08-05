@@ -7,12 +7,15 @@
 }
 
 .tabnav-tabs {
+  display: flex;
   // stylelint-disable-next-line primer/spacing
   margin-bottom: -1px;
+  overflow: auto;
 }
 
 .tabnav-tab {
   display: inline-block;
+  flex-shrink: 0;
   padding: $spacer-2 $spacer-3;
   font-size: $h5-size;
   // stylelint-disable-next-line primer/typography

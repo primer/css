@@ -34,6 +34,8 @@
 .bg-pink { background-color: $bg-pink !important; }
 /* Set the background to $bg-purple-light */
 .bg-purple-light     { background-color: $bg-purple-light !important; }
+/* Set the background to $bg-orange */
+.bg-orange { background-color: $bg-orange !important; }
 
 // Generate a foreground and background utility for every shade of every hue
 @each $hue, $shades in $hue-maps {
