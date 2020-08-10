@@ -11,7 +11,7 @@
   margin-top: $spacer-4;
   list-style: none;
   cursor: pointer;
-  background: $bg-white;
+  background: var(--bg-canvas);
   border: $border;
   border-radius: $border-radius;
   box-shadow: $box-shadow-medium;
@@ -20,11 +20,11 @@
     display: block;
     padding: $spacer-1 $spacer-2;
     font-weight: $font-weight-semibold;
-    border-bottom: $border-width $border-style $border-gray-light;
+    border-bottom: $border-width $border-style var(--border-primary-light);
 
     small {
       font-weight: $font-weight-normal;
-      color: $text-gray;
+      color: var(--text-secondary);
     }
 
     &:last-child {
@@ -41,12 +41,12 @@
     &:hover,
     &[aria-selected="true"],
     &.navigation-focus {
-      color: $text-white;
+      color: var(--text-inverse);
       text-decoration: none;
-      background: $bg-blue;
+      background: var(--bg-selected);
 
       small {
-        color: $text-white;
+        color: var(--text-inverse);
       }
     }
   }
