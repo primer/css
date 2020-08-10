@@ -2,8 +2,10 @@
 // Intended to replace simple-box, boxed-group, and table-list
 
 .Box {
-  background-color: $bg-white;
-  border: $border;
+  background-color: var(--bg-canvas);
+  border-color: var(--border-primary);
+  border-width: $border-width;
+  border-style: $border-style;
   border-radius: $border-radius;
 }
 
@@ -74,8 +76,8 @@
   padding: $spacer-3;
   // stylelint-disable-next-line primer/spacing
   margin: (-$border-width) (-$border-width) 0;
-  background-color: $bg-gray;
-  border-color: $border-color;
+  background-color: var(--bg-secondary);
+  border-color: var(--border-primary);
   border-style: $border-style;
   border-width: $border-width;
   border-top-left-radius: $border-radius;
@@ -89,7 +91,7 @@
 
 .Box-body {
   padding: $spacer-3;
-  border-bottom: $border-width $border-style $border-gray;
+  border-bottom: $border-width $border-style var(--border-primary);
 
   // Ensures bottom-border doesn't poke out when .Box-body used without box-footer
   &:last-of-type {
@@ -106,7 +108,9 @@
   // stylelint-disable-next-line primer/spacing
   margin-top: -1px;
   list-style-type: none; // To account for applying Box component to a list
-  border-top: $border;
+  border-top-width: $border-width;
+  border-top-style: $border-style;
+  border-top-color: var(--border-primary);
 
   &:first-of-type {
     border-top-left-radius: $border-radius;
@@ -142,12 +146,12 @@
 
     // Row dragging styles
     &.sortable-chosen {
-      background-color: $bg-gray-light;
+      background-color: var(--bg-primary-light);
     }
 
     // Makes dragging row background gray
     &.sortable-ghost {
-      background-color: $bg-gray;
+      background-color: var(--bg-primary);
 
       // Hides contents of row while dragging so row looks solid gray
       .Box-row--drag-hide {
@@ -160,7 +164,7 @@
 
 .Box-row--focus-gray {
   &.navigation-focus {
-    background-color: $bg-gray;
+    background-color: var(--bg-primary);
   }
 }
 
@@ -172,7 +176,7 @@
 
 .Box-row--hover-gray {
   &:hover {
-    background-color: $bg-gray;
+    background-color: var(--bg-primary);
   }
 }
 
@@ -188,11 +192,11 @@
 .Box-row-link {
   @include breakpoint(md) {
 
-    color: $text-gray-dark;
+    color: var(--text-primary);
     text-decoration: none;
 
     &:hover {
-      color: $text-blue;
+      color: var(--text-link-primary);
       text-decoration: none;
     }
 
@@ -209,7 +213,9 @@
   padding: $spacer-3;
   // stylelint-disable-next-line primer/spacing
   margin-top: -1px; // prevents double border when used with .Box-body
-  border-top: $border;
+  border-top-style: $border-style;
+  border-top-width: $border-width;
+  border-top-color: var(--border-primary);
 }
 
 // Option for a box with scrolling content
@@ -276,7 +282,7 @@
 }
 
 .Box-row--gray {
-  background-color: $bg-gray;
+  background-color: var(--bg-secondary);
 }
 
 //Box with btn-octicon
