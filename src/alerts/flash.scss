@@ -5,7 +5,7 @@
   position: relative;
   // stylelint-disable-next-line primer/spacing
   padding: 20px $spacer-3;
-  color: $text-gray-dark;
+  color: var(--text-primary);
   border-style: $border-style;
   border-width: $border-width;
   border-radius: $border-radius;
@@ -66,48 +66,48 @@
 
 .flash {
   // stylelint-disable-next-line primer/colors
-  background-color: $blue-100;
+  background-color: var(--alert-bg);
   // stylelint-disable-next-line primer/borders
-  border-color: rgba($blue-700, 0.2);
+  border-color: var(--alert-border);
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: rgba($blue-700, 0.6);
+    color: var(--alert-icon);
   }
 }
 
 .flash-warn {
   // stylelint-disable-next-line primer/colors
-  background-color: $yellow-100;
+  background-color: var(--alert-warn-bg);
   // stylelint-disable-next-line primer/borders
-  border-color: rgba($yellow-800, 0.2);
+  border-color: var(--alert-warn-border);
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: rgba($yellow-800, 1);
+    color: var(--alert-warn-icon);
   }
 }
 
 .flash-error {
   // stylelint-disable-next-line primer/colors
-  background-color: #ffe3e6; // custom red
+  background-color: var(--alert-error-bg);
   // stylelint-disable-next-line primer/borders
-  border-color: rgba($red-800, 0.2);
+  border-color: var(--alert-error-border);
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: rgba($red-800, 0.6);
+    color: var(--alert-error-icon);
   }
 }
 
 .flash-success {
-  background-color: $bg-green-light;
+  background-color: var(--alert-success-bg);
   // stylelint-disable-next-line primer/borders
-  border-color: rgba($green-700, 0.2);
+  border-color: var(--alert-success-border);
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: rgba($green-700, 0.8);
+    color: var(--alert-success-icon);
   }
 }
 
@@ -141,5 +141,5 @@
   margin-bottom: 0.8em;
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/colors
-  background-color: $yellow-100;
+  background-color: var(--alert-warn-bg);
 }
