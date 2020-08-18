@@ -11,7 +11,7 @@
   "dependencies": {
     "@loadable/component": "^5.10.2",
     "@primer/components": "^17.1.0",
-    "@primer/gatsby-theme-doctocat": "^0.20.0",
+    "@primer/gatsby-theme-doctocat": "^0.23.1",
     "@primer/octicons": "^9.1.1",
     "@primer/octicons-react": "^9.1.1",
     "@svgr/webpack": "^4.3.2",
