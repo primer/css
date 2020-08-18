@@ -80,6 +80,8 @@ Change the line height density with these utilities. Responsive variants are als
 <p class="lh-condensed-ultra">
   Bacon ipsum dolor amet tri-tip chicken kielbasa, cow swine beef corned beef ground round prosciutto hamburger porchetta sausage alcatra tail. Jowl chuck biltong flank meatball, beef short ribs. Jowl tenderloin ground round, short loin tri-tip ribeye picanha filet mignon pig chicken kielbasa t-bone fatback. Beef ribs meatball chicken corned beef salami.
 </p>
+
+<style>.frame-example {height:350px;}</style>
 ```
 
 The `lh-0` utility class sets `line-height: 0 !important`, and can be used to remove vertical spacing from elements that inherit line-height but don't contain any text.
