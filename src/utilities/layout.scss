@@ -12,14 +12,15 @@
   }
 }
 
-/* Set top 0 */
-.top-0    { top: 0 !important; }
-/* Set right 0 */
-.right-0  { right: 0 !important; }
-/* Set bottom 0 */
-.bottom-0 { bottom: 0 !important; }
-/* Set left 0 */
-.left-0   { left: 0 !important; }
+/* Set final location to 0 */
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    .top#{$variant}-0 { top: 0 !important; }
+    .right#{$variant}-0 { right: 0 !important; }
+    .bottom#{$variant}-0 { bottom: 0 !important; }
+    .left#{$variant}-0 { left: 0 !important; }
+  }
+}
 
 /* Vertical align middle */
 .v-align-middle      { vertical-align: middle !important; }
