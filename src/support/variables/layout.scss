@@ -141,3 +141,9 @@ $responsive-positions: (
   fixed,
   sticky
 ) !default;
+
+// UI scales
+$ui-scales: (
+  normal: "pointer: fine",
+  large: "pointer: coarse"
+) !default;
