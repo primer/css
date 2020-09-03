@@ -9,8 +9,8 @@
   font-size: 13px;
   list-style: none;
   background: $bg-white;
+  border: $border;
   border-radius: $border-radius;
-  // stylelint-disable-next-line primer/box-shadow
   box-shadow: $box-shadow-medium;
 }
 
