@@ -55,19 +55,19 @@
 
       .rounded#{$variant}-#{$edge}-1 {
         @each $corner in $corners {
-          border-#{$corner}-radius: $border-radius / 2 !important;
+          border-#{$corner}-radius: $border-radius-1 !important;
         }
       }
 
       .rounded#{$variant}-#{$edge}-2 {
         @each $corner in $corners {
-          border-#{$corner}-radius: $border-radius !important;
+          border-#{$corner}-radius: $border-radius-2 !important;
         }
       }
 
       .rounded#{$variant}-#{$edge}-3 {
         @each $corner in $corners {
-          border-#{$corner}-radius: $border-radius * 2 !important;
+          border-#{$corner}-radius: $border-radius-3 !important;
         }
       }
     }
