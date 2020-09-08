@@ -46,6 +46,11 @@
     margin-bottom: 0;
   }
 
+  li {
+    // TODO@16.0.0: Remove this. See https://github.com/primer/css/pull/1137.
+    word-wrap: break-all;
+  }
+
   li > p {
     margin-top: $spacer-3;
   }
