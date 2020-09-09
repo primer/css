@@ -10,8 +10,8 @@ jobs:
           node-version: 11
       - name: install
         run: npm install
-      - name: lint
-        run: script/lint-ci
+      # - name: lint
+      #   run: script/lint-ci
       - name: test
         run: npm test
       - name: prepublish
