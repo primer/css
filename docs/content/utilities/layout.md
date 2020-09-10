@@ -229,6 +229,29 @@ Use `.height-full` to set height to 100%.
 ## Position
 Position utilities can be used to alter the default document flow. **Be careful when using positioning, it's often unnecessary and commonly misused.**
 
+The position of an element depends on the content. Use `top-0`, `right-0`, `bottom-0`, and `left-0` to further specify an elements final position.
+
+```html live
+<div style="height: 64px;">
+  <div class="border position-absolute top-0 left-0">
+    .top-0 .left-0
+  </div>
+  <div class="border position-absolute top-0 right-0">
+    .top-0 .right-0
+  </div>
+  <div class="border position-absolute bottom-0 right-0">
+    .bottom-0 .right-0
+  </div>
+  <div class="border position-absolute bottom-0 left-0">
+    .bottom-0 .left-0
+  </div>
+</div>
+```
+
+Using the **responsive variants** (e.g. `.right-md-0`) can be helpful for positioning select menus, dropdowns, popovers etc. when the content gets shuffled around for certain responsive breakpoints. You can also use `auto` to "reset" a final position for wider breakpoints (e.g. `right-0 right-md-auto`).
+
+### Relative
+
 Use `.position-relative` to create a new stacking context.
 
 _Note how the other elements are displayed as if "Two" were in its normal position and taking up space._
@@ -248,6 +271,8 @@ _Note how the other elements are displayed as if "Two" were in its normal positi
 </div>
 ```
 
+### Absolute
+
 Use `.position-absolute` to take elements out of the normal document flow.
 
 ```html live
@@ -260,6 +285,8 @@ Use `.position-absolute` to take elements out of the normal document flow.
 </div>
 ```
 
+### Fixed
+
 Use `.position-fixed` to position an element relative to the viewport. **Be careful when using fixed positioning. It is tricky to use and can lead to unwanted side effects.**
 
 _Note: This example is shown in an `<iframe>` and therefore will not be positioned to the viewport of this page._
@@ -268,25 +295,6 @@ _Note: This example is shown in an `<iframe>` and therefore will not be position
 <div style="height: 64px;">
   <div class="position-fixed right-0 bottom-0 bg-gray-light border p-2">
     .position-fixed
-  </div>
-</div>
-```
-
-Use `top-0`, `right-0`, `bottom-0`, and `left-0` with `position-absolute`, `position-fixed`, or `position-relative` to further specify an elements position.
-
-```html live
-<div style="height: 64px;">
-  <div class="border position-absolute top-0 left-0">
-    .top-0 .left-0
-  </div>
-  <div class="border position-absolute top-0 right-0">
-    .top-0 .right-0
-  </div>
-  <div class="border position-absolute bottom-0 right-0">
-    .bottom-0 .right-0
-  </div>
-  <div class="border position-absolute bottom-0 left-0">
-    .bottom-0 .left-0
   </div>
 </div>
 ```
