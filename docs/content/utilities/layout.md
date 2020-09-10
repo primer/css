@@ -246,7 +246,7 @@ The position of an element depends on the content. Use `top-0`, `right-0`, `bott
 </div>
 ```
 
-Using the **responsive variants** (e.g. `.right-md-0`) can be helpful for positioning select menus, dropdowns, popovers etc. when the content gets shuffled around for certain responsive breakpoints.
+Using the **responsive variants** (e.g. `.right-md-0`) can be helpful for positioning select menus, dropdowns, popovers etc. when the content gets shuffled around for certain responsive breakpoints. You can also use `auto` to "reset" a final position for wider breakpoints (e.g. `right-0 right-md-auto`).
 
 ### Relative
 
