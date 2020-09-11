@@ -21,7 +21,7 @@
 
 .AvatarStack-body {
   display: flex;
-  background: var(--bg-canvas);
+  background: var(--color-bg-canvas);
 
   .avatar {
     position: relative;
@@ -32,8 +32,8 @@
     box-sizing: content-box;
     // stylelint-disable-next-line primer/spacing
     margin-right: -11px;
-    background-color: var(--bg-canvas);
-    border-right: $border-width $border-style var(--border-white);
+    background-color: var(--color-bg-canvas);
+    border-right: $border-width $border-style var(--color-border-white);
     // stylelint-disable-next-line primer/borders
     border-radius: $border-radius-1;
     transition: margin 0.1s ease-in-out;
@@ -81,7 +81,7 @@
 .avatar.avatar-more {
   z-index: 1;
   margin-right: 0;
-  background: var(--bg-secondary);
+  background: var(--color-bg-secondary);
 
   &::before,
   &::after {
@@ -91,19 +91,19 @@
     content: "";
     // stylelint-disable-next-line primer/borders
     border-radius: 2px;
-    outline: $border-width $border-style var(--border-inverse);
+    outline: $border-width $border-style var(--color-border-inverse);
   }
 
   &::before {
     width: 17px;
     // stylelint-disable-next-line primer/colors
-    background: var(--avatar-stack-fade-more);
+    background: var(--color-avatar-stack-fade-more);
   }
 
   &::after {
     width: 14px;
     // stylelint-disable-next-line primer/colors
-    background: var(--avatar-stack-fade);
+    background: var(--color-avatar-stack-fade);
   }
 }
 
@@ -123,7 +123,7 @@
 
   .avatar.avatar-more {
     // stylelint-disable-next-line primer/colors
-    background: var(--avatar-stack-fade);
+    background: var(--color-avatar-stack-fade);
 
     &::before {
       width: 5px;
@@ -131,7 +131,7 @@
 
     &::after {
       width: 2px;
-      background: var(--bg-secondary);
+      background: var(--color-bg-secondary);
     }
   }
 
@@ -140,6 +140,6 @@
     // stylelint-disable-next-line primer/spacing
     margin-left: -11px;
     border-right: 0;
-    border-left: $border-width $border-style var(--border-inverse);
+    border-left: $border-width $border-style var(--color-border-inverse);
   }
 }

@@ -2,8 +2,8 @@
 // Intended to replace simple-box, boxed-group, and table-list
 
 .Box {
-  background-color: var(--bg-canvas);
-  border-color: var(--border-primary);
+  background-color: var(--color-bg-canvas);
+  border-color: var(--color-border-primary);
   border-width: $border-width;
   border-style: $border-style;
   border-radius: $border-radius;
@@ -76,8 +76,8 @@
   padding: $spacer-3;
   // stylelint-disable-next-line primer/spacing
   margin: (-$border-width) (-$border-width) 0;
-  background-color: var(--bg-secondary);
-  border-color: var(--border-primary);
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border-primary);
   border-style: $border-style;
   border-width: $border-width;
   border-top-left-radius: $border-radius;
@@ -91,7 +91,7 @@
 
 .Box-body {
   padding: $spacer-3;
-  border-bottom: $border-width $border-style var(--border-primary);
+  border-bottom: $border-width $border-style var(--color-border-primary);
 
   // Ensures bottom-border doesn't poke out when .Box-body used without box-footer
   &:last-of-type {
@@ -110,7 +110,7 @@
   list-style-type: none; // To account for applying Box component to a list
   border-top-width: $border-width;
   border-top-style: $border-style;
-  border-top-color: var(--border-primary);
+  border-top-color: var(--color-border-primary);
 
   &:first-of-type {
     border-top-left-radius: $border-radius;
@@ -146,12 +146,12 @@
 
     // Row dragging styles
     &.sortable-chosen {
-      background-color: var(--bg-primary-light);
+      background-color: var(--color-bg-primary-light);
     }
 
     // Makes dragging row background gray
     &.sortable-ghost {
-      background-color: var(--bg-primary);
+      background-color: var(--color-bg-primary);
 
       // Hides contents of row while dragging so row looks solid gray
       .Box-row--drag-hide {
@@ -164,7 +164,7 @@
 
 .Box-row--focus-gray {
   &.navigation-focus {
-    background-color: var(--bg-primary);
+    background-color: var(--color-bg-primary);
   }
 }
 
@@ -176,7 +176,7 @@
 
 .Box-row--hover-gray {
   &:hover {
-    background-color: var(--bg-primary);
+    background-color: var(--color-bg-primary);
   }
 }
 
@@ -192,11 +192,11 @@
 .Box-row-link {
   @include breakpoint(md) {
 
-    color: var(--text-primary);
+    color: var(--color-text-primary);
     text-decoration: none;
 
     &:hover {
-      color: var(--text-link-primary);
+      color: var(--color-text-link-primary);
       text-decoration: none;
     }
 
@@ -215,7 +215,7 @@
   margin-top: -1px; // prevents double border when used with .Box-body
   border-top-style: $border-style;
   border-top-width: $border-width;
-  border-top-color: var(--border-primary);
+  border-top-color: var(--color-border-primary);
 }
 
 // Option for a box with scrolling content
@@ -282,7 +282,7 @@
 }
 
 .Box-row--gray {
-  background-color: var(--bg-secondary);
+  background-color: var(--color-bg-secondary);
 }
 
 //Box with btn-octicon

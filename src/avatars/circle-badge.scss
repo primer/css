@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-canvas);
+  background-color: var(--color-bg-canvas);
   border-radius: 50%;
   box-shadow: $box-shadow-medium;
 }
@@ -46,7 +46,7 @@
     width: 100%;
     content: "";
     // stylelint-disable-next-line primer/borders
-    border-bottom: 2px dashed var(--border-primary);
+    border-bottom: 2px dashed var(--color-border-primary);
   }
 
   .CircleBadge {

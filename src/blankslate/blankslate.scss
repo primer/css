@@ -8,8 +8,8 @@
     // stylelint-disable-next-line primer/spacing
     padding: 2px 5px 3px;
     font-size: $h5-size;
-    background: var(--bg-canvas);
-    border: $border-width $border-style var(--border-tertiary);
+    background: var(--color-bg-canvas);
+    border: $border-width $border-style var(--color-border-tertiary);
     border-radius: $border-radius;
   }
 
@@ -24,7 +24,7 @@
   margin-bottom: $spacer-2;
   margin-left: $spacer-1;
   // stylelint-disable-next-line primer/colors
-  color: var(--blankslate-icon);
+  color: var(--color-blankslate-icon);
 }
 
 .blankslate-capped {

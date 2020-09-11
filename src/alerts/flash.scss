@@ -5,7 +5,7 @@
   position: relative;
   // stylelint-disable-next-line primer/spacing
   padding: 20px $spacer-3;
-  color: var(--text-primary);
+  color: var(--color-text-primary);
   border-style: $border-style;
   border-width: $border-width;
   border-radius: $border-radius;
@@ -66,48 +66,48 @@
 
 .flash {
   // stylelint-disable-next-line primer/colors
-  background-color: var(--alert-bg);
+  background-color: var(--color-alert-bg);
   // stylelint-disable-next-line primer/borders
-  border-color: var(--alert-border);
+  border-color: var(--color-alert-border);
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: var(--alert-icon);
+    color: var(--color-alert-icon);
   }
 }
 
 .flash-warn {
   // stylelint-disable-next-line primer/colors
-  background-color: var(--alert-warn-bg);
+  background-color: var(--color-alert-warn-bg);
   // stylelint-disable-next-line primer/borders
-  border-color: var(--alert-warn-border);
+  border-color: var(--color-alert-warn-border);
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: var(--alert-warn-icon);
+    color: var(--color-alert-warn-icon);
   }
 }
 
 .flash-error {
   // stylelint-disable-next-line primer/colors
-  background-color: var(--alert-error-bg);
+  background-color: var(--color-alert-error-bg);
   // stylelint-disable-next-line primer/borders
-  border-color: var(--alert-error-border);
+  border-color: var(--color-alert-error-border);
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: var(--alert-error-icon);
+    color: var(--color-alert-error-icon);
   }
 }
 
 .flash-success {
-  background-color: var(--alert-success-bg);
+  background-color: var(--color-alert-success-bg);
   // stylelint-disable-next-line primer/borders
-  border-color: var(--alert-success-border);
+  border-color: var(--color-alert-success-border);
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: var(--alert-success-icon);
+    color: var(--color-alert-success-icon);
   }
 }
 
@@ -141,5 +141,5 @@
   margin-bottom: 0.8em;
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/colors
-  background-color: var(--alert-warn-bg);
+  background-color: var(--color-alert-warn-bg);
 }
