@@ -14,7 +14,7 @@ Wrap some content in the outer `.blankslate` wrapper to give it the blankslate a
 
 ```html live
 <div class="blankslate">
-  <img src="https://ghicons.github.com/assets/images/light/Pull%20Request.png" alt="" class="mb-3" />
+  <img src="https://ghicons.github.com/assets/images/blue/png/Pull%20request.png" alt="" class="mb-3" />
   <h3 class="mb-1">You don’t seem to have any pull requests.</h3>
   <p>Pull requests help you discuss potential changes before they are merged into the base branch.</p>
   <button class="btn btn-primary my-3" type="button">New pull request</button>
