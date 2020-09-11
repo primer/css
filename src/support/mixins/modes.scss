@@ -4,4 +4,12 @@
 // @include primer-colors-light(":root");
 @include primer-colors-dark(":root");
 @include primer-colors-light("[data-color-mode='light']");
-// @include primer-colors-dark("[data-color-mode='dark']");
+@include primer-colors-dark("[data-color-mode='dark']");
+
+// Color mode boundaries
+// Enables nesting of different color modes
+
+[data-color-mode] {
+	color: var(--color-text-primary);
+	background-color: var(--color-bg-canvas);
+}
