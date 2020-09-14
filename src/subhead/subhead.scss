@@ -3,7 +3,7 @@
   display: flex;
   padding-bottom: $spacer-2;
   margin-bottom: $spacer-3;
-  border-bottom: $border;
+  border-bottom: $border-width $border-style var(--color-border-primary);
   flex-flow: row wrap;
 }
 
@@ -22,13 +22,13 @@
 // Make the text bold and red for dangerous content
 .Subhead-heading--danger {
   font-weight: $font-weight-bold;
-  color: $text-red;
+  color: var(--color-text-danger);
 }
 
 // One-liner of supporting text
 .Subhead-description {
   font-size: $body-font-size;
-  color: $text-gray;
+  color: var(--color-text-secondary);
   flex: 1 100%;
 }
 
