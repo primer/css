@@ -75,7 +75,7 @@
 }
 
 .Label--blue {
-  color: $text-blue;
+  color: var(--color-text-link-primary);
   border-color: $border-blue;
 }
 

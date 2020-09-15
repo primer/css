@@ -193,7 +193,7 @@ dl.form-group > dd, // TODO: Deprecate
   color: var(--color-text-secondary);
 
   a {
-    color: $text-blue;
+    color: var(--color-text-link-primary);
   }
 }
 

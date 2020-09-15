@@ -134,7 +134,7 @@
   &.navigation-focus {
     // Focus styles for when drag icon
     .Box-row--drag-button {
-      color: $text-blue;
+      color: var(--color-text-link-primary);
       cursor: grab;
       opacity: 100;
     }

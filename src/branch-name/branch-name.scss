@@ -21,5 +21,5 @@
 
 // When a branch name is a link
 // stylelint-disable selector-no-qualifying-type
-a.branch-name { color: $text-blue; }
+a.branch-name { color: var(--color-text-link-primary); }
 // stylelint-enable selector-no-qualifying-type

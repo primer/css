@@ -75,7 +75,7 @@
 // When tabnav-extra are anchors
 // stylelint-disable-next-line selector-no-qualifying-type
 a.tabnav-extra:hover {
-  color: $text-blue;
+  color: var(--color-text-link-primary);
   text-decoration: none;
 }
 

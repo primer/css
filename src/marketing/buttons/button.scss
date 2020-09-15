@@ -70,7 +70,7 @@
   border-color: rgba($blue-mktg, 0.5);
 
   &:hover {
-    color: $text-blue;
+    color: var(--color-text-link-primary);
     text-decoration: none;
     // stylelint-disable-next-line primer/colors
     background-color: rgba($white, 0);
