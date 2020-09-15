@@ -6,7 +6,7 @@
   margin-bottom: $spacer-3;
   list-style: none;
   background-color: $bg-white;
-  border: $border;
+  border: $border-width $border-style var(--color-border-primary);
   border-radius: $border-radius;
 }
 

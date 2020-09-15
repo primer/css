@@ -88,7 +88,7 @@ $SelectMenu-max-height: 480px !default;
     max-height: $SelectMenu-max-height;
     margin: $spacer-2 0 $spacer-3 0;
     font-size: $font-size-small;
-    border: $border;
+    border: $border-width $border-style var(--color-border-primary);
     border-radius: $border-radius;
     box-shadow: $box-shadow-large;
     animation-name: SelectMenu-modal-animation--sm;

@@ -12,7 +12,7 @@
   list-style: none;
   cursor: pointer;
   background: var(--color-bg-canvas);
-  border: $border;
+  border: $border-width $border-style var(--color-border-primary);
   border-radius: $border-radius;
   box-shadow: $box-shadow-medium;
 

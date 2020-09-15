@@ -31,7 +31,7 @@
   list-style: none;
   background-color: $bg-white;
   background-clip: padding-box;
-  border: $border;
+  border: $border-width $border-style var(--color-border-primary);
   border-radius: $border-radius;
   box-shadow: $box-shadow-large;
 
@@ -109,7 +109,7 @@
   display: block;
   height: 0;
   margin: $spacer-2 0;
-  border-top: $border;
+  border-top: $border-width $border-style var(--color-border-primary);
 }
 
 .dropdown-header {

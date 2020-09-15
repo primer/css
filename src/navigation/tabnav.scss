@@ -3,7 +3,7 @@
 .tabnav {
   margin-top: 0;
   margin-bottom: $spacer-3;
-  border-bottom: $border;
+  border-bottom: $border-width $border-style var(--color-border-primary);
 }
 
 .tabnav-tabs {
