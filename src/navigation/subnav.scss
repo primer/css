@@ -69,7 +69,7 @@
 .subnav-search-input {
   width: 320px;
   padding-left: $spacer-5;
-  color: $text-gray;
+  color: var(--color-text-secondary);
 }
 
 .subnav-search-input-wide {

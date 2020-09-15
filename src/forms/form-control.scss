@@ -168,7 +168,7 @@ textarea.form-control {
     margin: 0;
     font-size: $font-size-small;
     font-weight: $font-weight-normal;
-    color: $text-gray;
+    color: var(--color-text-secondary);
   }
 }
 
@@ -206,7 +206,7 @@ textarea.form-control {
         display: inline-block;
         // stylelint-disable-next-line primer/spacing
         margin: 5px 0 0;
-        color: $text-gray;
+        color: var(--color-text-secondary);
       }
 
       img {

@@ -65,7 +65,7 @@
   // stylelint-disable-next-line primer/spacing
   margin-left: 5px;
   line-height: $lh-condensed-ultra;
-  color: $text-gray;
+  color: var(--color-text-secondary);
   vertical-align: middle;
 
   // For `<button>` elements

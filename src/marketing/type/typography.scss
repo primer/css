@@ -86,7 +86,7 @@
   font-family: $mono-font;
   font-size: $h4-size;
   line-height: 1.4;
-  color: $text-gray;
+  color: var(--color-text-secondary);
   border-left: 3px solid var(--color-border-primary);
 
   @include breakpoint(md) {

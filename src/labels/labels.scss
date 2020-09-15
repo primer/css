@@ -34,7 +34,7 @@
 
 .Label--outline, // TODO: Deprecate? It's now the default
 .Label--gray {
-  color: $text-gray;
+  color: var(--color-text-secondary);
   border-color: $border-gray;
 }
 

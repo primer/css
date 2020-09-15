@@ -419,7 +419,7 @@ $SelectMenu-max-height: 480px !default;
   }
 
   .SelectMenu-closeButton:active {
-    color: $text-gray;
+    color: var(--color-text-secondary);
   }
 
   body:not(.intent-mouse) .SelectMenu-item:focus,

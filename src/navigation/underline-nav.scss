@@ -45,7 +45,7 @@
     outline-offset: -1px;
 
     .UnderlineNav-octicon {
-      color: $text-gray;
+      color: var(--color-text-secondary);
     }
   }
 }

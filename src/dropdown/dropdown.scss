@@ -115,7 +115,7 @@
 .dropdown-header {
   padding: $spacer-1 $spacer-3;
   font-size: $h6-size;
-  color: $text-gray;
+  color: var(--color-text-secondary);
 }
 
 .dropdown-item[aria-checked="false"] .octicon-check {

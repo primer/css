@@ -33,7 +33,7 @@
 
   &:hover,
   &:focus {
-    color: $text-gray;
+    color: var(--color-text-secondary);
     text-decoration: none;
   }
 
@@ -64,7 +64,7 @@
   // stylelint-disable-next-line primer/spacing
   margin-left: 10px;
   font-size: $font-size-small;
-  color: $text-gray;
+  color: var(--color-text-secondary);
 
   > .octicon {
     // stylelint-disable-next-line primer/spacing

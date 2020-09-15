@@ -5,7 +5,7 @@
 .diffstat {
   font-size: $h6-size;
   font-weight: $font-weight-bold;
-  color: $text-gray;
+  color: var(--color-text-secondary);
   white-space: nowrap;
   cursor: default;
 }

@@ -128,7 +128,7 @@ dl.form-group > dd, // TODO: Deprecate
   font-size: 13px;
   // stylelint-disable-next-line primer/typography
   line-height: 16px;
-  color: $text-gray;
+  color: var(--color-text-secondary);
   background-color: $bg-gray-light;
   // stylelint-disable-next-line primer/borders
   border: $border-width $border-style darken($gray-300, 5%);
@@ -190,7 +190,7 @@ dl.form-group > dd, // TODO: Deprecate
 
 .drag-and-drop-error-info {
   font-weight: $font-weight-normal;
-  color: $text-gray;
+  color: var(--color-text-secondary);
 
   a {
     color: $text-blue;
@@ -334,13 +334,13 @@ h2.account {
   // stylelint-disable-next-line primer/typography
   font-size: 18px;
   font-weight: $font-weight-normal;
-  color: $text-gray;
+  color: var(--color-text-secondary);
 }
 
 p.explain {
   position: relative;
   font-size: $font-size-small;
-  color: $text-gray;
+  color: var(--color-text-secondary);
 
   strong {
     color: var(--color-text-primary);

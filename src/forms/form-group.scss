@@ -259,7 +259,7 @@
   min-height: 17px;
   margin: $spacer-1 0 2px;
   font-size: $font-size-small;
-  color: $text-gray;
+  color: var(--color-text-secondary);
 
   .spinner {
     // stylelint-disable-next-line primer/spacing
