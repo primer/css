@@ -43,7 +43,7 @@
   .current,
   .current:hover,
   [aria-current]:not([aria-current=false]) {
-    color: $text-white;
+    color: var(--color-text-inverse);
     background-color: $bg-blue;
     border-color: transparent;
   }

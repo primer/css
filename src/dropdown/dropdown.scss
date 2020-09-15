@@ -81,7 +81,7 @@
 
   &:focus,
   &:hover {
-    color: $text-white;
+    color: var(--color-text-inverse);
     text-decoration: none;
     background-color: $bg-blue;
     outline: none;
@@ -261,7 +261,7 @@
 
 // Dark dropdowns
 .dropdown-menu-dark {
-  color: $text-white;
+  color: var(--color-text-inverse);
   // stylelint-disable-next-line primer/colors
   background: $gray-800;
   border-color: $border-gray-darker;

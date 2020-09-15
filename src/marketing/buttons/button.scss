@@ -3,7 +3,7 @@
   padding: $spacer-3 $spacer-4;
   font-size: $h5-size;
   font-weight: $font-weight-semibold;
-  color: $text-white;
+  color: var(--color-text-inverse);
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
@@ -87,7 +87,7 @@
 }
 
 .btn-transparent {
-  color: $text-white;
+  color: var(--color-text-inverse);
   background-color: transparent;
   background-image: none;
   // stylelint-disable-next-line primer/borders

@@ -142,7 +142,7 @@
   }
 
   &:active {
-    color: $text-white;
+    color: var(--color-text-inverse);
     // stylelint-disable-next-line primer/colors
     background-color: $blue-400;
   }

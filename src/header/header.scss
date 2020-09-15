@@ -25,7 +25,7 @@
 
 .Header-link {
   font-weight: $font-weight-bold;
-  color: $text-white;
+  color: var(--color-text-inverse);
   white-space: nowrap;
 
   &:hover,

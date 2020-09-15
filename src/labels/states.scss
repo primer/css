@@ -18,7 +18,7 @@
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: $text-white;
+  color: var(--color-text-inverse);
   text-align: center;
   white-space: nowrap;
   // stylelint-disable-next-line primer/colors

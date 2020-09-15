@@ -31,7 +31,7 @@
 }
 
 .Counter--gray {
-  color: $text-white;
+  color: var(--color-text-inverse);
   // stylelint-disable-next-line primer/colors
   background-color: $gray-500;
 }

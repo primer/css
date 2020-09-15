@@ -68,7 +68,7 @@ textarea.form-control {
 
 // Inputs to be used against dark backgrounds.
 .input-dark {
-  color: $text-white;
+  color: var(--color-text-inverse);
   // stylelint-disable-next-line primer/colors
   background-color: $white-fade-15;
   border-color: transparent;
