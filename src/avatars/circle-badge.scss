@@ -6,7 +6,7 @@
   justify-content: center;
   background-color: var(--color-bg-canvas);
   border-radius: 50%;
-  box-shadow: $box-shadow-medium;
+  box-shadow: var(--color-shadow-medium);
 }
 
 .CircleBadge-icon {

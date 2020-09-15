@@ -7,7 +7,7 @@
   background-color: var(--color-bg-canvas);
   border-radius: $border-radius;
   // stylelint-disable-next-line primer/box-shadow
-  box-shadow: inset 0 0 0 1px var(--color-border-primary), $box-shadow-large;
+  box-shadow: inset 0 0 0 1px var(--color-border-primary), var(--color-shadow-large);
 
   @include breakpoint(sm) {
     width: max-content;

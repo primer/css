@@ -14,7 +14,7 @@
   background: var(--color-bg-canvas);
   border: $border-width $border-style var(--color-border-primary);
   border-radius: $border-radius;
-  box-shadow: $box-shadow-medium;
+  box-shadow: var(--color-shadow-medium);
 
   li {
     display: block;

@@ -181,7 +181,7 @@
   border-left: 0;
   border-top-right-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
-  box-shadow: $box-shadow, $box-shadow-highlight;
+  box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
 
   &:hover,
   &:active {
@@ -196,6 +196,6 @@
   &:focus {
     z-index: 1;
     outline: 0;
-    box-shadow: $box-shadow-focus;
+    box-shadow: var(--color-shadow-focus);
   }
 }

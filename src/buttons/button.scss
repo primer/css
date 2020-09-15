@@ -75,7 +75,7 @@
   color: $text-gray-dark;
   background-color: $bg-default;
   border-color: $border-color-button;
-  box-shadow: $box-shadow, $box-shadow-highlight;
+  box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
 
   &:hover,
@@ -89,7 +89,7 @@
   &.selected,
   &[aria-selected=true] {
     background-color: $bg-active;
-    box-shadow: $box-shadow-inset;
+    box-shadow: var(--color-shadow-inset);
     transition: none;
   }
 
@@ -107,7 +107,7 @@
   &.focus {
     outline: 1px dotted transparent; // Support Firfox custom colors
     outline-offset: 2px;
-    box-shadow: $box-shadow-focus;
+    box-shadow: var(--color-shadow-focus);
   }
 }
 
@@ -119,14 +119,14 @@
   $bg-active: darken($bg-hover, 2%);
   $bg-disabled: #94d3a2; // custom green
 
-  $shadow: $green-900;
-  $box-shadow: 0 1px 0 rgba($black, 0.1), inset 0 1px 0 rgba($white, 0.03);
+  $shadow-btn-primary-color: $green-900;
+  $shadow-btn-primary: 0 1px 0 rgba($black, 0.1), inset 0 1px 0 rgba($white, 0.03);
 
   color: $text-white;
   background-color: $bg-default;
   // stylelint-disable-next-line primer/borders
   border-color: rgba($black, 0.15);
-  box-shadow: $box-shadow;
+  box-shadow: $shadow-btn-primary;
 
   &:hover,
   &.hover,
@@ -139,7 +139,7 @@
   &[aria-selected=true] {
     background-color: $bg-active;
     // stylelint-disable-next-line primer/box-shadow
-    box-shadow: inset 0 1px 0 rgba($shadow, 0.2);
+    box-shadow: inset 0 1px 0 rgba($shadow-btn-primary-color, 0.2);
   }
 
   &:disabled,
@@ -150,7 +150,7 @@
     background-color: $bg-disabled;
     // stylelint-disable-next-line primer/borders
     border-color: rgba($black, 0.1);
-    box-shadow: $box-shadow;
+    box-shadow: $shadow-btn-primary;
   }
 
   &:focus,
@@ -208,7 +208,7 @@
     color: rgba($color, 0.5);
     background-color: $bg-gray-light;
     border-color: $border-color-button;
-    box-shadow: $box-shadow, $box-shadow-highlight;
+    box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
 
     .Counter {
       background-color: rgba($color, 0.05);
