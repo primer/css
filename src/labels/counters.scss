@@ -27,7 +27,7 @@
 }
 
 .Counter--gray-light {
-  color: $text-gray-light;
+  color: var(--color-text-tertiary);
 }
 
 .Counter--gray {

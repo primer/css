@@ -67,6 +67,6 @@
   h6 {
     // stylelint-disable-next-line primer/typography
     font-size: 0.85em;
-    color: $text-gray-light;
+    color: var(--color-text-tertiary);
   }
 }

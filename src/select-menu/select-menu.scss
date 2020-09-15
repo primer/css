@@ -253,7 +253,7 @@ $SelectMenu-max-height: 480px !default;
   padding: $spacer-2 $spacer-3;
   font-size: $font-size-small;
   font-weight: $font-weight-semibold;
-  color: $text-gray-light;
+  color: var(--color-text-tertiary);
   text-align: center;
   background-color: transparent;
   border: 0;
@@ -316,7 +316,7 @@ $SelectMenu-max-height: 480px !default;
   margin: 0;
   font-size: $font-size-small;
   font-weight: $font-weight-semibold;
-  color: $text-gray-light;
+  color: var(--color-text-tertiary);
   background-color: $bg-gray;
   border-bottom: $border-width $border-style $border-gray-light;
 
@@ -339,7 +339,7 @@ $SelectMenu-max-height: 480px !default;
   z-index: 0; // Avoid top border from getting covered by the negative margin of the list
   padding: $spacer-2 $spacer-3;
   font-size: $font-size-small;
-  color: $text-gray-light;
+  color: var(--color-text-tertiary);
   text-align: center;
   border-top: $border-width $border-style $border-gray-light;
 
@@ -404,7 +404,7 @@ $SelectMenu-max-height: 480px !default;
 
 .SelectMenu-item:disabled,
 .SelectMenu-item[aria-disabled=true] {
-  color: $text-gray-light;
+  color: var(--color-text-tertiary);
   pointer-events: none;
 }
 

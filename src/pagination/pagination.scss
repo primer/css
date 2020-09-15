@@ -54,7 +54,7 @@
   .gap:hover,
   .disabled:hover,
   [aria-disabled=true]:hover {
-    color: $text-gray-light;
+    color: var(--color-text-tertiary);
     cursor: default;
     border-color: transparent;
   }

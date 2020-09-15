@@ -84,7 +84,7 @@
   blockquote {
     // stylelint-disable-next-line primer/spacing
     padding: 0 1em;
-    color: $text-gray-light;
+    color: var(--color-text-tertiary);
     // stylelint-disable-next-line primer/borders
     border-left: 0.25em $border-style lighten($gray-300, 5%);
 

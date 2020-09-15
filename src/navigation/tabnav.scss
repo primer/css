@@ -38,7 +38,7 @@
   }
 
   &:active {
-    color: $text-gray-light;
+    color: var(--color-text-tertiary);
   }
 
   .octicon {

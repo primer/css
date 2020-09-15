@@ -40,7 +40,7 @@
 
   .octicon {
     margin-right: $spacer-1;
-    color: $text-gray-light;
+    color: var(--color-text-tertiary);
     vertical-align: text-bottom;
 
     &:only-child {
