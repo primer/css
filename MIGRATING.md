@@ -1,3 +1,47 @@
+# 16.0.0
+In `v16` we're moving all colors to [primer/primitives](https://github.com/primer/primitives). This lets us use the same Primer colors across different libraries. Primer CSS also switches from using SASS variables for colors to CSS variables. Bellow a migration guide for all the variables:
+
+### Color scale
+
+`v15` | `v16`
+--- | ---
+`$black` | `var(--color-scale-black)`
+`$white` | `var(--color-scale-white)`
+`$gray-000` | `var(--color-scale-grey-0)`
+`$gray-100` | `var(--color-scale-grey-1)`
+... | ...
+`$pink-800` | `var(--color-scale-pink-8)`
+`$pink-900` | `var(--color-scale-pink-9)`
+
+### Functional colors
+
+`v15` | `v16`
+--- | ---
+**Border** |
+`$border-color` | `var(--color-border-primary)`
+`$border` | `$border-width $border-style var(--color-border-primary)`
+**Box Shadow** |
+`$box-shadow` | `var(--color-shadow-small)`
+`$box-shadow-medium` | `var(--color-shadow-medium)`
+`$box-shadow-large` | `var(--color-shadow-large)`
+`$box-shadow-extra-large` | `var(--color-shadow-extra-large)`
+`$box-shadow-highlight` | `var(--color-shadow-highlight)`
+`$box-shadow-inset` | `var(--color-shadow-inset)`
+`$box-shadow-focus` | `var(--color-shadow-focus)`
+**Buttons** |
+`$border-color-button` | `var(--color-btn-border)`
+`$btn-active-shadow` | n/a
+**Forms** |
+`$form-control-shadow` | `var(--color-input-shadow)`
+`$btn-input-focus-shadow` | `var(--color-input-shadow-focus)`
+**Tooltips** |
+`$tooltip-background-color` | n/a
+`$tooltip-text-color` | n/a
+**Diffstat** |
+`$bg-diffstat-added` | `var(--color-diff-addition-bg)`
+`$bg-diffstat-deleted` | `var(--color-diff-deletion-bg)`
+`$bg-diffstat-neutral` | `var(--color-diff-neutral-bg)`
+
 # 12.0.0
 The v12 release marks a major transition from small, single-purpose npm packages (`primer-core`, `primer-marketing`, `primer-utilities`, etc.) to a single package — `@primer/css` — which contains all of the SCSS source files in subdirectories. Here's what you need to do to migrate different parts of your app:
 
