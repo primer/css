@@ -177,7 +177,7 @@
   color: $text-gray-dark;
   vertical-align: middle;
   background-color: $bg-white;
-  border: $border-width $border-style $border-color-button;
+  border: $border-width $border-style var(--color-btn-border);
   border-left: 0;
   border-top-right-radius: $border-radius;
   border-bottom-right-radius: $border-radius;

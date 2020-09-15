@@ -74,7 +74,7 @@
 
   color: $text-gray-dark;
   background-color: $bg-default;
-  border-color: $border-color-button;
+  border-color: var(--color-btn-border);
   box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
 
@@ -99,7 +99,7 @@
     // stylelint-disable-next-line primer/colors
     color: $gray-400;
     background-color: $bg-disabled;
-    border-color: $border-color-button;
+    border-color: var(--color-btn-border);
   }
 
   // Keep :focus after :disabled. Allows to see the focus ring even on disabled buttons
@@ -207,7 +207,7 @@
   &[aria-disabled=true] {
     color: rgba($color, 0.5);
     background-color: $bg-gray-light;
-    border-color: $border-color-button;
+    border-color: var(--color-btn-border);
     box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
 
     .Counter {
