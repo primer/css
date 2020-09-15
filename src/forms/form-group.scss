@@ -83,7 +83,7 @@
 
       &.is-error { color: $text-red; }
 
-      &.is-success { color: $text-green; }
+      &.is-success { color: var(--color-text-success); }
 
       + .note {
         margin-top: 0;
@@ -134,7 +134,7 @@
   &.successful {
     .success {
       display: inline;
-      color: $text-green;
+      color: var(--color-text-success);
     }
   }
 
