@@ -88,7 +88,7 @@
 
   &.alert {
     .Counter {
-      color: $text-red;
+      color: var(--color-text-danger);
     }
   }
 }

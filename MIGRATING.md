@@ -23,6 +23,7 @@ In `v16` we're moving all colors to [primer/primitives](https://github.com/prime
 `$text-gray-light` | `var(--color-text-tertiary)`
 `$text-blue` | `var(--color-text-link-primary)`
 `$text-green` | `var(--color-text-success)`
+`$text-red` | `var(--color-text-danger)`
 **Border** |
 `$border-color` | `var(--color-border-primary)`
 `$border` | `$border-width $border-style var(--color-border-primary)`

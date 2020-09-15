@@ -81,7 +81,7 @@
     h4 {
       margin: $spacer-1 0 0;
 
-      &.is-error { color: $text-red; }
+      &.is-error { color: var(--color-text-danger); }
 
       &.is-success { color: var(--color-text-success); }
 
@@ -101,7 +101,7 @@
     .form-group-header label::after {
       // stylelint-disable-next-line primer/spacing
       padding-left: 5px;
-      color: $text-red;
+      color: var(--color-text-danger);
       content: "*";
     }
   }
@@ -236,7 +236,7 @@
     }
 
     label {
-      color: $text-red;
+      color: var(--color-text-danger);
     }
 
     .error {

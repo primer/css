@@ -94,7 +94,7 @@ dl.form-group > dd, // TODO: Deprecate
 
   .octicon-x {
     display: inline-block;
-    color: $text-red;
+    color: var(--color-text-danger);
     fill: $red;
   }
 }
@@ -143,7 +143,7 @@ dl.form-group > dd, // TODO: Deprecate
   }
 
   .error {
-    color: $text-red;
+    color: var(--color-text-danger);
   }
 
   // Spinner

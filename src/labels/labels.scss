@@ -61,7 +61,7 @@
 }
 
 .Label--red {
-  color: $text-red;
+  color: var(--color-text-danger);
   // stylelint-disable-next-line primer/borders
   border-color: $red-600;
 }

@@ -229,7 +229,7 @@
 
 .btn-danger {
   @include btn-inverse-on-hover(
-    $color: $text-red,
+    $color: var(--color-text-danger),
     $bg-hover: $red-600,
     $bg-active: darken($red-600, 3%),
     $shadow: $red-900
