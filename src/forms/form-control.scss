@@ -27,7 +27,7 @@ label {
   background-color: $bg-white;
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
-  border: $border-width $border-style $border-color;
+  border: $border-width $border-style var(--color-border-primary);
   border-radius: $border-radius;
   outline: none;
   box-shadow: $box-shadow-inset;

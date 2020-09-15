@@ -11,7 +11,7 @@
 .Label {
   @include labels-base;
   background-color: transparent !important; // TODO: Remove again
-  border-color: $border-color;
+  border-color: var(--color-border-primary);
 
   &:hover {
     text-decoration: none;

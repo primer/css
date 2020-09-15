@@ -24,7 +24,7 @@
     &:hover,
     &:focus {
       text-decoration: none;
-      border-color: $border-color;
+      border-color: var(--color-border-primary);
       outline: 0;
       transition-duration: 0.1s;
     }
