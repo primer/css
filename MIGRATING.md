@@ -17,6 +17,8 @@ In `v16` we're moving all colors to [primer/primitives](https://github.com/prime
 
 `v15` | `v16`
 --- | ---
+**Text** |
+`$text-gray-dark` | `var(--color-text-primary)`
 **Border** |
 `$border-color` | `var(--color-border-primary)`
 `$border` | `$border-width $border-style var(--color-border-primary)`

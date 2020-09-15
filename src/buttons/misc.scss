@@ -174,7 +174,7 @@
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   vertical-align: middle;
   background-color: $bg-white;
   border: $border-width $border-style var(--color-btn-border);

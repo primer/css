@@ -75,7 +75,7 @@
   display: block;
   padding: $spacer-1 $spacer-2 $spacer-1 $spacer-3;
   overflow: hidden;
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   text-overflow: ellipsis;
   white-space: nowrap;
 

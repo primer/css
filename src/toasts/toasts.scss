@@ -56,7 +56,7 @@
 }
 
 .Toast--warning .Toast-icon {
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   // stylelint-disable-next-line primer/colors
   background-color: var(--color-bg-warning-inverse);
 }

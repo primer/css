@@ -72,7 +72,7 @@
   $bg-active: darken($bg-hover, 2%);
   $bg-disabled: $bg-default;
 
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   background-color: $bg-default;
   border-color: var(--color-btn-border);
   box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);

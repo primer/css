@@ -43,7 +43,6 @@ $bg-yellow-dark:    $yellow-700 !default;
 $text-black:        $black !default;
 $text-white:        $white !default;
 $text-blue:         $blue-500 !default;
-$text-gray-dark:    $gray-900 !default;
 $text-gray-light:   $gray-500 !default;
 $text-gray:         $gray-600 !default;
 $text-green:        $green-600 !default;
@@ -59,4 +58,5 @@ $text-yellow:       $yellow-800 !default;
 // ------------- Replaced with primer/primitives --------------
 //
 
-// TBD
+// Text colors
+$text-gray-dark:    $gray-900 !default;

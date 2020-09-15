@@ -22,7 +22,7 @@ label {
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   vertical-align: middle;
   background-color: $bg-white;
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)

@@ -11,7 +11,7 @@
     font-style: normal;
     // stylelint-disable-next-line primer/typography
     line-height: 20px;
-    color: $text-gray-dark;
+    color: var(--color-text-primary);
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;

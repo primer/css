@@ -25,7 +25,7 @@
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   border: $border-width $border-style var(--color-border-primary);
 
   + .subnav-item {

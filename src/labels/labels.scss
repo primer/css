@@ -39,7 +39,7 @@
 }
 
 .Label--gray-darker {
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   // stylelint-disable-next-line primer/borders
   border-color: $gray-500;
 }

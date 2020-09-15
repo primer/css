@@ -13,7 +13,7 @@
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 20px; // Specifically not inherit our `<body>` default
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   cursor: pointer;
   border: $border-width $border-style var(--color-border-primary);
 

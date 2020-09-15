@@ -343,7 +343,7 @@ p.explain {
   color: $text-gray;
 
   strong {
-    color: $text-gray-dark;
+    color: var(--color-text-primary);
   }
 
   .octicon {

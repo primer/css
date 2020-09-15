@@ -58,7 +58,7 @@
       // stylelint-disable-next-line primer/spacing
       padding: 5px 0 0;
       clear: both;
-      color: $text-gray-dark;
+      color: var(--color-text-primary);
     }
   }
 

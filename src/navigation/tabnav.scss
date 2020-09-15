@@ -17,7 +17,7 @@
   font-size: $h5-size;
   // stylelint-disable-next-line primer/typography
   line-height: 23px;
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   text-decoration: none;
   background-color: transparent;
   border: $border-width $border-style transparent;

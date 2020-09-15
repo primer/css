@@ -188,7 +188,7 @@ $SelectMenu-max-height: 480px !default;
   width: 100%;
   padding: $spacer-3;
   overflow: hidden;
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   text-align: left;
   cursor: pointer;
   background-color: $bg-white;
@@ -271,7 +271,7 @@ $SelectMenu-max-height: 480px !default;
 
   &[aria-selected="true"] {
     z-index: 1; // Keeps box-shadow visible when hovering
-    color: $text-gray-dark;
+    color: var(--color-text-primary);
     cursor: default;
     background-color: $bg-white;
     // stylelint-disable-next-line primer/box-shadow
@@ -389,7 +389,7 @@ $SelectMenu-max-height: 480px !default;
 
 .SelectMenu-item[aria-checked=true] {
   font-weight: $font-weight-semibold;
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
 
   .SelectMenu-icon--check {
     visibility: visible;
@@ -415,7 +415,7 @@ $SelectMenu-max-height: 480px !default;
 @media (hover: hover) {
   body:not(.intent-mouse) .SelectMenu-closeButton:focus,
   .SelectMenu-closeButton:hover {
-    color: $text-gray-dark;
+    color: var(--color-text-primary);
   }
 
   .SelectMenu-closeButton:active {
@@ -437,11 +437,11 @@ $SelectMenu-max-height: 480px !default;
   }
 
   .SelectMenu-tab:hover {
-    color: $text-gray-dark;
+    color: var(--color-text-primary);
   }
 
   .SelectMenu-tab:not([aria-selected="true"]):active {
-    color: $text-gray-dark;
+    color: var(--color-text-primary);
     background-color: $bg-gray;
   }
 }
