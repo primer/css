@@ -29,15 +29,15 @@
 }
 
 .State--green {
-  background-color: $bg-green;
+  background-color: var(--color-scale-green-5);
 }
 
 .State--red {
-  background-color: var(--color-bg-danger-inverse);
+  background-color: var(--color-scale-red-5);
 }
 
 .State--purple {
-  background-color: $bg-purple;
+  background-color: var(--color-scale-purple-5);
 }
 
 // Small
