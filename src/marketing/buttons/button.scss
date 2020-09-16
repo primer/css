@@ -44,7 +44,7 @@
   border-color: $green-mktg;
 
   &:hover {
-    background-color: $bg-green;
+    background-color: var(--color-scale-green-5);
     // stylelint-disable-next-line primer/borders
     border-color: $green-500;
   }
