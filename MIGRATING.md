@@ -47,6 +47,13 @@ In `v16` we're moving all colors to [primer/primitives](https://github.com/prime
 `$bg-green` | `var(--color-bg-success-inverse)`
 `$bg-blue-light` | `var(--color-bg-info)`
 `$bg-blue` | `var(--color-bg-info-inverse)`
+`$bg-orange` | n/a
+`$bg-purple` | n/a
+`$bg-purple-light` | n/a
+`$bg-pink` | n/a
+`$bg-yellow` | n/a
+`$bg-yellow-light` | n/a
+`$bg-yellow-dark` | n/a
 **Box Shadow** |
 `$box-shadow` | `var(--color-shadow-small)`
 `$box-shadow-medium` | `var(--color-shadow-medium)`

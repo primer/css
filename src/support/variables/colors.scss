@@ -18,15 +18,6 @@ $border-red:         $red !default;
 $border-red-light:   $red-300 !default;
 $border-yellow:      $yellow-600 !default;
 
-// Background colors
-$bg-orange:         $orange-700 !default;
-$bg-purple:         $purple-500 !default;
-$bg-purple-light:   $purple-000 !default;
-$bg-pink:           $pink-500 !default;
-$bg-yellow:         $yellow-500 !default;
-$bg-yellow-light:   $yellow-200 !default;
-$bg-yellow-dark:    $yellow-700 !default;
-
 //
 // ------------------------ Deprecated ------------------------
 // ------------- Replaced with primer/primitives --------------
@@ -45,6 +36,13 @@ $bg-green:          $green-500 !default;
 $bg-green-light:    $green-100 !default;
 $bg-blue:           $blue-500 !default;
 $bg-blue-light:     $blue-000 !default;
+$bg-orange:         $orange-700 !default;
+$bg-purple:         $purple-500 !default;
+$bg-purple-light:   $purple-000 !default;
+$bg-pink:           $pink-500 !default;
+$bg-yellow:         $yellow-500 !default;
+$bg-yellow-light:   $yellow-200 !default;
+$bg-yellow-dark:    $yellow-700 !default;
 
 // Text colors
 $text-black:        $black !default;
