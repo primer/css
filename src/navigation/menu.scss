@@ -14,7 +14,7 @@
   position: relative;
   display: block;
   padding: $spacer-2 $spacer-3;
-  color: $text-black;
+  color: var(--color-text-primary);
   border-bottom: $border-width $border-style $border-gray-light;
 
   &:first-child {
@@ -100,7 +100,7 @@
   margin-bottom: 0;
   font-size: inherit;
   font-weight: $font-weight-bold;
-  color: $text-black;
+  color: var(--color-text-primary);
   border-bottom: $border-width $border-style $border-gray-light;
 
   &:hover {

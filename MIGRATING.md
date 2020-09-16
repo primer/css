@@ -18,6 +18,7 @@ In `v16` we're moving all colors to [primer/primitives](https://github.com/prime
 `v15` | `v16`
 --- | ---
 **Text** |
+`$text-black` | `var(--color-text-primary)`
 `$text-gray-dark` | `var(--color-text-primary)`
 `$text-gray` | `var(--color-text-secondary)`
 `$text-gray-light` | `var(--color-text-tertiary)`
