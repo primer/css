@@ -67,7 +67,7 @@
 // Default button
 
 .btn {
-  $bg-default: $bg-gray-light;
+  $bg-default: var(--color-bg-tertiary);
   $bg-hover: #f3f4f6; // custom gray
   $bg-active: darken($bg-hover, 2%);
   $bg-disabled: $bg-default;
@@ -162,7 +162,7 @@
   .Counter {
     color: inherit;
     // stylelint-disable-next-line primer/colors
-    background-color: rgba($bg-white, 0.2);
+    background-color: rgba(var(--color-bg-primary), 0.2);
   }
 
   .octicon {
@@ -185,7 +185,7 @@
     box-shadow: 0 1px 0 rgba($black, 0.1), inset 0 1px 0 rgba($white, 0.03);
 
     .Counter {
-      background-color: rgba($bg-white, 0.2);
+      background-color: rgba(var(--color-bg-primary), 0.2);
     }
 
     .octicon {
@@ -206,7 +206,7 @@
   &.disabled,
   &[aria-disabled=true] {
     color: rgba($color, 0.5);
-    background-color: $bg-gray-light;
+    background-color: var(--color-bg-tertiary);
     border-color: var(--color-btn-border);
     box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
 

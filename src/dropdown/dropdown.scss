@@ -29,7 +29,7 @@
   // stylelint-disable-next-line primer/spacing
   margin-top: 2px;
   list-style: none;
-  background-color: $bg-white;
+  background-color: var(--color-bg-primary);
   background-clip: padding-box;
   border: $border-width $border-style var(--color-border-primary);
   border-radius: $border-radius;

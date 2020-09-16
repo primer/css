@@ -11,7 +11,7 @@ kbd {
   // stylelint-disable-next-line primer/colors
   color: $gray-700;
   vertical-align: middle;
-  background-color: $bg-gray-light;
+  background-color: var(--color-bg-tertiary);
   // stylelint-disable-next-line primer/borders
   border: $border-style $border-width $border-gray-dark;
   border-bottom-color: $border-gray-dark;

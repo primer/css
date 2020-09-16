@@ -20,10 +20,10 @@
     max-width: 100%;
     // stylelint-disable-next-line primer/spacing
     margin-right: 5px;
-    background-color: $bg-gray-light;
+    background-color: var(--color-bg-tertiary);
 
     &:focus {
-      background-color: $bg-white;
+      background-color: var(--color-bg-primary);
     }
 
     &.shorter { width: 130px; }

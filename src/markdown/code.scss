@@ -50,7 +50,7 @@
     font-size: 85%;
     // stylelint-disable-next-line primer/typography
     line-height: 1.45;
-    background-color: $bg-gray;
+    background-color: var(--color-bg-secondary);
     border-radius: $border-radius;
   }
 

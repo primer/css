@@ -6,7 +6,7 @@
   max-width: 100%;
   height: $size-5;
   padding-right: $spacer-4;
-  background-color: $bg-white;
+  background-color: var(--color-bg-primary);
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC");
   background-repeat: no-repeat;
   background-position: right 8px center;

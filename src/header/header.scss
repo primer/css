@@ -6,7 +6,7 @@
   line-height: $lh-default;
   // stylelint-disable-next-line primer/colors
   color: $white-fade-70;
-  background-color: $bg-gray-dark;
+  background-color: var(--color-bg-canvas-inverse);
   align-items: center;
   flex-wrap: nowrap;
 }

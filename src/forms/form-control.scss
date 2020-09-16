@@ -24,7 +24,7 @@ label {
   line-height: 20px;
   color: var(--color-text-primary);
   vertical-align: middle;
-  background-color: $bg-white;
+  background-color: var(--color-bg-primary);
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
   border: $border-width $border-style var(--color-border-primary);
@@ -61,9 +61,9 @@ textarea.form-control {
 
 // Inputs with contrast for easy light gray backgrounds against white.
 .input-contrast {
-  background-color: $bg-gray-light;
+  background-color: var(--color-bg-tertiary);
 
-  &:focus { background-color: $bg-white; }
+  &:focus { background-color: var(--color-bg-primary); }
 }
 
 // Inputs to be used against dark backgrounds.

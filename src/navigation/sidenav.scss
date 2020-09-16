@@ -3,7 +3,7 @@
 // A vertical list of navigational links, typically used on the left side of a page.
 
 .SideNav {
-  background-color: $bg-gray-light;
+  background-color: var(--color-bg-tertiary);
 }
 
 .SideNav-item {
@@ -52,12 +52,12 @@
 }
 
 .SideNav-item:active {
-  background-color: $bg-gray-light;
+  background-color: var(--color-bg-tertiary);
 }
 
 .SideNav-item[aria-current]:not([aria-current=false]),
 .SideNav-item[aria-selected="true"] {
-  background-color: $bg-white;
+  background-color: var(--color-bg-primary);
 
   // Bar on the left
   &::before {

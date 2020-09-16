@@ -5,7 +5,7 @@
 .menu {
   margin-bottom: $spacer-3;
   list-style: none;
-  background-color: $bg-white;
+  background-color: var(--color-bg-primary);
   border: $border-width $border-style var(--color-border-primary);
   border-radius: $border-radius;
 }
@@ -42,7 +42,7 @@
   }
 
   &:active {
-    background-color: $bg-gray-light;
+    background-color: var(--color-bg-tertiary);
   }
 
   &.selected,

@@ -129,7 +129,7 @@ dl.form-group > dd, // TODO: Deprecate
   // stylelint-disable-next-line primer/typography
   line-height: 16px;
   color: var(--color-text-secondary);
-  background-color: $bg-gray-light;
+  background-color: var(--color-bg-tertiary);
   // stylelint-disable-next-line primer/borders
   border: $border-width $border-style darken($gray-300, 5%);
   border-top: 0;

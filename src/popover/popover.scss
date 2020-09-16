@@ -33,7 +33,7 @@
     // stylelint-disable-next-line primer/borders
     border: 7px $border-style transparent;
     // stylelint-disable-next-line primer/borders
-    border-bottom-color: $bg-white;
+    border-bottom-color: var(--color-bg-primary);
   }
 }
 
@@ -55,7 +55,7 @@
   &::after {
     bottom: -14px;
     // stylelint-disable-next-line primer/borders
-    border-top-color: $bg-white;
+    border-top-color: var(--color-bg-primary);
   }
 }
 
@@ -134,7 +134,7 @@
   &::after {
     right: -14px;
     // stylelint-disable-next-line primer/borders
-    border-left-color: $bg-white;
+    border-left-color: var(--color-bg-primary);
   }
 }
 
@@ -150,7 +150,7 @@
   &::after {
     left: -14px;
     // stylelint-disable-next-line primer/borders
-    border-right-color: $bg-white;
+    border-right-color: var(--color-bg-primary);
   }
 }
 
