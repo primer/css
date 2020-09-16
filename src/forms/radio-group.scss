@@ -20,7 +20,7 @@
   :checked + & {
     position: relative;
     z-index: 1;
-    border-color: $border-blue;
+    border-color: var(--color-border-info);
   }
 
   &:first-of-type {

@@ -34,7 +34,7 @@ label {
 
   &.focus,
   &:focus {
-    border-color: $border-blue;
+    border-color: var(--color-border-info);
     outline: none;
     box-shadow: var(--color-shadow-focus);
   }
@@ -259,7 +259,7 @@ input::-webkit-inner-spin-button {
   color: $yellow-900;
   // stylelint-disable-next-line primer/colors
   background: $yellow-100;
-  border: $border-width $border-style $border-yellow;
+  border: $border-width $border-style var(--color-border-warning);
   border-radius: $border-radius;
 
   p {

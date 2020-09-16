@@ -45,7 +45,7 @@
   &::before {
     // stylelint-disable-next-line primer/borders
     border: $spacer-2 $border-style transparent;
-    border-bottom-color: $border-black-fade;
+    border-bottom-color: var(--color-dropdown-border);
   }
 
   &::after {
@@ -140,7 +140,7 @@
     right: -$spacer-3;
     left: auto;
     border-color: transparent;
-    border-left-color: $border-black-fade;
+    border-left-color: var(--color-dropdown-border);
   }
 
   &::after {
@@ -163,7 +163,7 @@
     top: $spacer-2;
     left: -$spacer-3;
     border-color: transparent;
-    border-right-color: $border-black-fade;
+    border-right-color: var(--color-dropdown-border);
   }
 
   &::after {
@@ -191,7 +191,7 @@
     bottom: -$spacer-2;
     left: 9px;
     // stylelint-disable-next-line primer/borders
-    border-top: $spacer-2 $border-style $border-black-fade;
+    border-top: $spacer-2 $border-style var(--color-dropdown-border);
     // stylelint-disable-next-line primer/borders
     border-right: $spacer-2 $border-style transparent;
     border-bottom: 0;
@@ -264,11 +264,11 @@
   color: var(--color-text-inverse);
   // stylelint-disable-next-line primer/colors
   background: $gray-800;
-  border-color: $border-gray-darker;
+  border-color: var(--color-scale-grey-7);
   box-shadow: var(--color-shadow-large);
 
   &::before {
-    border-bottom-color: $border-gray-darker;
+    border-bottom-color: var(--color-scale-grey-7);
   }
 
   &::after {
@@ -282,7 +282,7 @@
   }
 
   .dropdown-divider {
-    border-top-color: $border-gray-darker;
+    border-top-color: var(--color-scale-grey-7);
   }
 
   .dropdown-item {
@@ -293,7 +293,7 @@
 
   &.dropdown-menu-w {
     &::before {
-      border-color: transparent transparent transparent $border-gray-darker;
+      border-color: transparent transparent transparent var(--color-scale-grey-7);
     }
 
     &::after {
@@ -304,7 +304,7 @@
 
   &.dropdown-menu-e {
     &::before {
-      border-color: transparent $border-gray-darker transparent transparent;
+      border-color: transparent var(--color-scale-grey-7) transparent transparent;
     }
 
     &::after {
@@ -315,7 +315,7 @@
 
   &.dropdown-menu-ne {
     &::before {
-      border-color: $border-gray-darker transparent transparent transparent;
+      border-color: var(--color-scale-grey-7) transparent transparent transparent;
     }
 
     &::after {

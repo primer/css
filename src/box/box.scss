@@ -227,47 +227,47 @@
 // Box themes
 
 .Box--blue {
-  border-color: $border-blue-light;
+  border-color: var(--color-box-blue-border);
 
   .Box-header {
     background-color: var(--color-bg-info);
-    border-color: $border-blue-light;
+    border-color: var(--color-box-blue-border);
   }
 
   .Box-body {
-    border-color: $border-blue-light;
+    border-color: var(--color-box-blue-border);
   }
 
   .Box-row {
-    border-color: $border-blue-light;
+    border-color: var(--color-box-blue-border);
   }
 
   .Box-footer {
-    border-color: $border-blue-light;
+    border-color: var(--color-box-blue-border);
   }
 }
 
 // Applies and red border to the outside of the box,
 // but not to the border separating rows.
 .Box--danger {
-  border-color: $border-red;
+  border-color: var(--color-border-danger);
 
   .Box-row {
     &:first-of-type {
-      border-color: $border-red;
+      border-color: var(--color-border-danger);
     }
   }
 
   .Box-body {
     &:last-of-type {
-      border-color: $border-red;
+      border-color: var(--color-border-danger);
     }
   }
 }
 
 .Box-header--blue {
   background-color: var(--color-bg-info);
-  border-color: $border-blue-light;
+  border-color: var(--color-box-blue-border);
 }
 
 // Box row highlight themes

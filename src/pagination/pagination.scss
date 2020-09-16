@@ -30,7 +30,7 @@
     }
 
     &:active {
-      border-color: $border-gray-light;
+      border-color: var(--color-border-primary-light);
       transition: none;
     }
   }

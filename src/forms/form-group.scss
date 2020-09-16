@@ -216,7 +216,7 @@
     .warning {
       // stylelint-disable-next-line primer/colors
       background-color: $yellow-200;
-      border-color: $border-yellow;
+      border-color: var(--color-border-warning);
 
       &::after {
         // stylelint-disable-next-line primer/borders
@@ -224,7 +224,7 @@
       }
 
       &::before {
-        border-bottom-color: $border-yellow;
+        border-bottom-color: var(--color-border-warning);
       }
     }
   }
@@ -241,7 +241,7 @@
 
     .error {
       background-color: var(--color-bg-danger);
-      border-color: $border-red-light;
+      border-color: var(--color-border-danger);
 
       &::after {
         // stylelint-disable-next-line primer/borders
@@ -249,7 +249,7 @@
       }
 
       &::before {
-        border-bottom-color: $border-red-light;
+        border-bottom-color: var(--color-border-danger);
       }
     }
   }

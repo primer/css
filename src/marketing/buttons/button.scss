@@ -19,7 +19,7 @@
   &:hover {
     text-decoration: none;
     background-color: var(--color-bg-info-inverse);
-    border-color: $border-blue;
+    border-color: var(--color-border-info);
   }
 
   &:focus {

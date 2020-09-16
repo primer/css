@@ -34,6 +34,21 @@ In `v16` we're moving all colors to [primer/primitives](https://github.com/prime
 **Border** |
 `$border-color` | `var(--color-border-primary)`
 `$border` | `$border-width $border-style var(--color-border-primary)`
+`$border-white` | `var(--color-border-inverse)`
+`$border-black-fade` | n/a
+`$border-white-fade` | n/a
+`$border-gray` | `var(--color-border-primary)`
+`$border-gray-dark` | `var(--color-border-secondary)`
+`$border-gray-darker` | n/a
+`$border-gray-light` | `var(--color-border-primary-light)`
+`$border-blue` | `var(--color-border-info)`
+`$border-blue-light` | n/a
+`$border-green` | `var(--color-border-success)`
+`$border-green-light` | n/a
+`$border-purple` | n/a
+`$border-red` | `var(--color-border-danger)`
+`$border-red-light` | `var(--color-border-danger)`
+`$border-yellow` | `var(--color-border-warning)`
 **Background** |
 `$bg-black` | n/a
 `$bg-black-fade` | n/a

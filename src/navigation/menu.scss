@@ -15,7 +15,7 @@
   display: block;
   padding: $spacer-2 $spacer-3;
   color: var(--color-text-primary);
-  border-bottom: $border-width $border-style $border-gray-light;
+  border-bottom: $border-width $border-style var(--color-border-primary-light);
 
   &:first-child {
     border-top: 0;
@@ -101,7 +101,7 @@
   font-size: inherit;
   font-weight: $font-weight-bold;
   color: var(--color-text-primary);
-  border-bottom: $border-width $border-style $border-gray-light;
+  border-bottom: $border-width $border-style var(--color-border-primary-light);
 
   &:hover {
     text-decoration: none;

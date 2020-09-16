@@ -13,9 +13,9 @@ kbd {
   vertical-align: middle;
   background-color: var(--color-bg-tertiary);
   // stylelint-disable-next-line primer/borders
-  border: $border-style $border-width $border-gray-dark;
-  border-bottom-color: $border-gray-dark;
+  border: $border-style $border-width var(--color-border-secondary);
+  border-bottom-color: var(--color-border-secondary);
   border-radius: $border-radius;
   // stylelint-disable-next-line primer/box-shadow
-  box-shadow: inset 0 -1px 0 $border-gray-dark;
+  box-shadow: inset 0 -1px 0 var(--color-border-secondary);
 }

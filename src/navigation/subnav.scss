@@ -10,7 +10,7 @@
 .subnav-bordered {
   // stylelint-disable-next-line primer/spacing
   padding-bottom: 20px;
-  border-bottom: $border-width $border-style $border-gray-light;
+  border-bottom: $border-width $border-style var(--color-border-primary-light);
 }
 
 .subnav-flush {

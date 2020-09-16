@@ -39,7 +39,7 @@
     padding-bottom: 0.3em;
     // stylelint-disable-next-line primer/typography
     font-size: 2em;
-    border-bottom: $border-width $border-style $border-gray-light;
+    border-bottom: $border-width $border-style var(--color-border-primary-light);
   }
 
   h2 {
@@ -47,7 +47,7 @@
     padding-bottom: 0.3em;
     // stylelint-disable-next-line primer/typography
     font-size: 1.5em;
-    border-bottom: $border-width $border-style $border-gray-light;
+    border-bottom: $border-width $border-style var(--color-border-primary-light);
   }
 
   h3 {

@@ -22,13 +22,13 @@
   background-color: transparent;
   border: 0;
   // stylelint-disable-next-line primer/borders
-  border-bottom: 2px $border-style rgba($border-gray-dark, 0);
+  border-bottom: 2px $border-style rgba(var(--color-border-secondary), 0);
   transition: border-bottom-color 0.36s ease-in;
 
   &:hover,
   &:focus {
     text-decoration: none;
-    border-bottom-color: $border-gray-dark;
+    border-bottom-color: var(--color-border-secondary);
     outline: 1px dotted transparent; // Support Firfox custom colors
     outline-offset: -1px;
     transition-timing-function: ease-out;
