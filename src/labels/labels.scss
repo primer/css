@@ -34,60 +34,60 @@
 
 .Label--outline, // TODO: Deprecate? It's now the default
 .Label--gray {
-  color: var(--color-text-secondary);
-  border-color: $border-gray;
+  color: var(--color-scale-gray-6);
+  border-color: var(--color-scale-gray-2);
 }
 
 .Label--gray-darker {
-  color: var(--color-text-primary);
+  color: var(--color-scale-gray-9);
   // stylelint-disable-next-line primer/borders
-  border-color: $gray-500;
+  border-color: var(--color-scale-gray-5);
 }
 
 // Colors
 
 .Label--yellow {
   // stylelint-disable-next-line primer/colors
-  color: $yellow-900;
+  color: var(--color-scale-yellow-9);
   // stylelint-disable-next-line primer/borders
-  border-color: $yellow-600;
+  border-color: var(--color-scale-yellow-6);
 }
 
 .Label--orange {
   // stylelint-disable-next-line primer/colors
-  color: $orange-800;
+  color: var(--color-scale-orange-8);
   // stylelint-disable-next-line primer/borders
-  border-color: $orange-500;
+  border-color: var(--color-scale-orange-5);
 }
 
 .Label--red {
-  color: var(--color-text-danger);
+  color: var(--color-scale-red-5);
   // stylelint-disable-next-line primer/borders
-  border-color: $red-600;
+  border-color: var(--color-scale-red-6);
 }
 
 .Label--outline-green, // TODO: Deprecate
 .Label--green {
   // stylelint-disable-next-line primer/colors
-  color: $green-600;
+  color: var(--color-scale-green-6);
   // stylelint-disable-next-line primer/borders
-  border-color: $green-500;
+  border-color: var(--color-scale-green-5);
 }
 
 .Label--blue {
-  color: var(--color-text-link-primary);
-  border-color: $border-blue;
+  color: var(--color-scale-blue-5);
+  border-color: var(--color-scale-blue-5);
 }
 
 .Label--purple {
-  color: $text-purple;
+  color: var(--color-scale-purple-5);
   // stylelint-disable-next-line primer/borders
-  border-color: $purple-400;
+  border-color: var(--color-scale-purple-4);
 }
 
 .Label--pink {
   // stylelint-disable-next-line primer/colors
-  color: $pink-600;
+  color: var(--color-scale-pink-6);
   // stylelint-disable-next-line primer/borders
-  border-color: $pink-400;
+  border-color: var(--color-scale-pink-4);
 }
