@@ -83,7 +83,7 @@
   &:hover {
     color: var(--color-text-inverse);
     text-decoration: none;
-    background-color: $bg-blue;
+    background-color: var(--color-bg-info-inverse);
     outline: none;
 
     > .octicon {

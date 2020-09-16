@@ -44,7 +44,7 @@
   &[aria-current]:not([aria-current=false]) {
     z-index: 2;
     color: var(--color-text-inverse);
-    background-color: $bg-blue;
+    background-color: var(--color-bg-info-inverse);
     // stylelint-disable-next-line primer/borders
     border-color: $blue-600;
   }

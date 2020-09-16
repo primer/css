@@ -170,7 +170,7 @@
 
 .Box-row--focus-blue {
   &.navigation-focus {
-    background-color: $bg-blue-light;
+    background-color: var(--color-bg-info);
   }
 }
 
@@ -182,7 +182,7 @@
 
 .Box-row--hover-blue {
   &:hover {
-    background-color: $bg-blue-light;
+    background-color: var(--color-bg-info);
   }
 }
 
@@ -230,7 +230,7 @@
   border-color: $border-blue-light;
 
   .Box-header {
-    background-color: $bg-blue-light;
+    background-color: var(--color-bg-info);
     border-color: $border-blue-light;
   }
 
@@ -266,7 +266,7 @@
 }
 
 .Box-header--blue {
-  background-color: $bg-blue-light;
+  background-color: var(--color-bg-info);
   border-color: $border-blue-light;
 }
 
@@ -278,7 +278,7 @@
 }
 
 .Box-row--blue {
-  background-color: $bg-blue-light;
+  background-color: var(--color-bg-info);
 }
 
 .Box-row--gray {

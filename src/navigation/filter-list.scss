@@ -16,7 +16,7 @@
 
     &.pjax-active {
       color: var(--color-text-inverse);
-      background-color: $bg-blue;
+      background-color: var(--color-bg-info-inverse);
     }
   }
 }
@@ -44,7 +44,7 @@
   &[aria-selected=true],
   &[aria-current]:not([aria-current=false]) {
     color: var(--color-text-inverse);
-    background-color: $bg-blue;
+    background-color: var(--color-bg-info-inverse);
   }
 
   .count {
