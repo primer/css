@@ -37,5 +37,9 @@
   },
   "engines": {
     "node": "12.x"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.10.4",
+    "babel-preset-gatsby": "^0.5.10"
   }
 }
