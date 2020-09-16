@@ -22,7 +22,7 @@
   background-color: transparent;
   border: 0;
   // stylelint-disable-next-line primer/borders
-  border-bottom: 2px $border-style rgba(var(--color-border-secondary), 0);
+  border-bottom: 2px $border-style transparent;
   transition: border-bottom-color 0.36s ease-in;
 
   &:hover,

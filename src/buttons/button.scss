@@ -146,7 +146,7 @@
   &.disabled,
   &[aria-disabled=true] {
     // stylelint-disable-next-line primer/colors
-    color: rgba(var(--color-text-inverse), 0.8);
+    color: rgba($white, 0.8);
     background-color: $bg-disabled;
     // stylelint-disable-next-line primer/borders
     border-color: rgba($black, 0.1);
@@ -162,12 +162,12 @@
   .Counter {
     color: inherit;
     // stylelint-disable-next-line primer/colors
-    background-color: rgba(var(--color-bg-primary), 0.2);
+    background-color: rgba($white, 0.2);
   }
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: rgba(var(--color-text-inverse), 0.8);
+    color: rgba($white, 0.8);
   }
 }
 
@@ -185,7 +185,7 @@
     box-shadow: 0 1px 0 rgba($black, 0.1), inset 0 1px 0 rgba($white, 0.03);
 
     .Counter {
-      background-color: rgba(var(--color-bg-primary), 0.2);
+      background-color: rgba($white, 0.2);
     }
 
     .octicon {
@@ -229,7 +229,7 @@
 
 .btn-danger {
   @include btn-inverse-on-hover(
-    $color: var(--color-text-danger),
+    $color: $red-500,
     $bg-hover: $red-600,
     $bg-active: darken($red-600, 3%),
     $shadow: $red-900
@@ -252,7 +252,7 @@
 //
 .btn-blue {
   @include btn-solid(
-    var(--color-text-inverse),
+    $white,
     lighten($blue-500, 8%),
     darken($blue-500, 2%)
   );
