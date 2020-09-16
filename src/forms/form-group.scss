@@ -240,12 +240,12 @@
     }
 
     .error {
-      background-color: $bg-red-light;
+      background-color: var(--color-bg-danger);
       border-color: $border-red-light;
 
       &::after {
         // stylelint-disable-next-line primer/borders
-        border-bottom-color: $bg-red-light;
+        border-bottom-color: var(--color-bg-danger);
       }
 
       &::before {

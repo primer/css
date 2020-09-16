@@ -34,6 +34,9 @@ In `v16` we're moving all colors to [primer/primitives](https://github.com/prime
 **Border** |
 `$border-color` | `var(--color-border-primary)`
 `$border` | `$border-width $border-style var(--color-border-primary)`
+**Background** |
+`$bg-red-light` | `var(--color-bg-danger)`
+`$bg-red` | `var(--color-bg-danger-inverse)`
 **Box Shadow** |
 `$box-shadow` | `var(--color-shadow-small)`
 `$box-shadow-medium` | `var(--color-shadow-medium)`

@@ -33,8 +33,7 @@ $bg-orange:         $orange-700 !default;
 $bg-purple:         $purple-500 !default;
 $bg-purple-light:   $purple-000 !default;
 $bg-pink:           $pink-500 !default;
-$bg-red:            $red-500 !default;
-$bg-red-light:      $red-000 !default;
+
 $bg-yellow:         $yellow-500 !default;
 $bg-yellow-light:   $yellow-200 !default;
 $bg-yellow-dark:    $yellow-700 !default;
@@ -43,6 +42,10 @@ $bg-yellow-dark:    $yellow-700 !default;
 // ------------------------ Deprecated ------------------------
 // ------------- Replaced with primer/primitives --------------
 //
+
+// Background colors
+$bg-red:            $red-500 !default;
+$bg-red-light:      $red-000 !default;
 
 // Text colors
 $text-black:        $black !default;

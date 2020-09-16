@@ -33,7 +33,7 @@
 }
 
 .State--red {
-  background-color: $bg-red;
+  background-color: var(--color-bg-danger-inverse);
 }
 
 .State--purple {
