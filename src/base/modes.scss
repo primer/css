@@ -2,10 +2,14 @@
 @import "@primer/primitives/dist/scss/colors/_light.scss";
 @import "@primer/primitives/dist/scss/colors/_dark.scss";
 
-// @include primer-colors-light(":root");
-@include primer-colors-dark(":root");
 @include primer-colors-light("[data-color-mode='light']");
 @include primer-colors-dark("[data-color-mode='dark']");
+
+// @import "../../primitives/dist/scss/colors/_light.scss";
+// @import "../../primitives/dist/scss/colors/_dark.scss";
+
+// @include primer-colors-light(":root");
+// @include primer-colors-dark(":root");
 
 // Color mode boundaries
 // Enables nesting of different color modes
