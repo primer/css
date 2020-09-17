@@ -127,7 +127,7 @@ $SelectMenu-max-height: 480px !default;
   margin: -$spacer-3;
   line-height: 1;
   // stylelint-disable-next-line primer/colors
-  color: $gray-light;
+  color: var(--color-ic-tertiary);
   background-color: transparent;
   border: 0;
 
