@@ -67,13 +67,8 @@
 // Default button
 
 .btn {
-  $bg-default: var(--color-bg-tertiary);
-  $bg-hover: #f3f4f6; // custom gray
-  $bg-active: darken($bg-hover, 2%);
-  $bg-disabled: $bg-default;
-
   color: var(--color-text-primary);
-  background-color: $bg-default;
+  background-color: var(--color-btn-bg);
   border-color: var(--color-btn-border);
   box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
@@ -81,14 +76,14 @@
   &:hover,
   &.hover,
   [open] > & {
-    background-color: $bg-hover;
+    background-color: var(--color-btn-bg-hover);
     transition-duration: 0.1s;
   }
 
   &:active,
   &.selected,
   &[aria-selected=true] {
-    background-color: $bg-active;
+    background-color: var(--color-btn-bg-active);
     box-shadow: var(--color-shadow-inset);
     transition: none;
   }
@@ -98,7 +93,7 @@
   &[aria-disabled=true] {
     // stylelint-disable-next-line primer/colors
     color: var(--color-text-disabled);
-    background-color: $bg-disabled;
+    background-color: var(--color-btn-bg);
     border-color: var(--color-btn-border);
   }
 
@@ -114,26 +109,21 @@
 // Primary button
 
 .btn-primary {
-  $bg-default: #2ea44f; // custom green
-  $bg-hover: #2c974b; // custom green
-  $bg-active: darken($bg-hover, 2%);
-  $bg-disabled: #94d3a2; // custom green
-
   color: var(--color-text-inverse);
-  background-color: $bg-default;
+  background-color: var(--color-btn-primary-bg);
   border-color: var(--color-btn-primary-border);
   box-shadow: var(--color-btn-primary-shadow), var(--color-btn-primary-shadow-highlight);
 
   &:hover,
   &.hover,
   [open] > & {
-    background-color: $bg-hover;
+    background-color: var(--color-btn-primary-bg-hover);
   }
 
   &:active,
   &.selected,
   &[aria-selected=true] {
-    background-color: $bg-active;
+    background-color: var(--color-btn-primary-bg-active);
     // stylelint-disable-next-line primer/box-shadow
     box-shadow: var(--color-btn-primary-shadow-selected);
   }
@@ -143,7 +133,7 @@
   &[aria-disabled=true] {
     // stylelint-disable-next-line primer/colors
     color: var(--color-btn-primary-disabled-text);
-    background-color: $bg-disabled;
+    background-color: var(--color-btn-primary-bg-disabled);
     border-color: var(--color-btn-primary-border-disabled);
     box-shadow: var(--color-btn-primary-shadow);
   }
@@ -151,7 +141,7 @@
   &:focus,
   &.focus {
     // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 3px rgba($bg-default, 0.4);
+    box-shadow: var(--color-btn-primary-disabled-shadow);
   }
 
   .Counter {
@@ -168,14 +158,14 @@
 
 // Mixin: btn-inverse-on-hover
 
-@mixin btn-inverse-on-hover( $color, $bg-hover, $bg-active, $shadow ) {
-  color: $color;
+@mixin btn-inverse-on-hover($type) {
+  color: var(--color-btn-#{$type}-text);
   transition: none;
 
   &:hover,
   [open] > & {
     color: var(--color-text-inverse);
-    background-color: $bg-hover;
+    background-color: var(--color-btn-#{$type}-bg-hover);
     border-color: var(--color-btn-inverse-on-hover-border);
     box-shadow: var(--color-btn-inverse-on-hover-shadow), var(--color-btn-inverse-on-hover-shadow-inset);
 
@@ -192,55 +182,45 @@
   &.selected,
   &[aria-selected=true] {
     color: var(--color-text-inverse);
-    background-color: $bg-active;
+    background-color: var(--color-btn-#{$type}-bg-active);
     border-color: var(--color-btn-inverse-on-hover-border);
-    box-shadow: inset 0 1px 0 rgba($shadow, 0.2);
+    box-shadow: var(--color-btn-#{$type}-shadow);
   }
 
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
-    color: rgba($color, 0.5);
+    color: var(--color-btn-#{$type}-text-disabled);
     background-color: var(--color-bg-tertiary);
     border-color: var(--color-btn-border);
     box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
 
     .Counter {
-      background-color: rgba($color, 0.05);
+      background-color: var(--color-btn-#{$type}-counter-bg-disabled);
     }
   }
 
   &:focus {
-    box-shadow: 0 0 0 3px rgba($bg-hover, 0.4);
+    box-shadow: var(--color-btn-#{$type}-shadow-focus);
   }
 
   .Counter {
     color: inherit;
-    background-color: rgba($color, 0.1);
+    background-color: var(--color-btn-#{$type}-counter-bg);
   }
 }
 
 // Danger button
 
 .btn-danger {
-  @include btn-inverse-on-hover(
-    $color:     var(--color-btn-danger-text),
-    $bg-hover:  var(--color-btn-danger-bg-hover),
-    $bg-active: var(--color-btn-danger-bg-active),
-    $shadow:    var(--color-btn-danger-shadow)
-  );
+  @include btn-inverse-on-hover("danger");
 }
 
 // Outline button
 
 .btn-blue, // TODO: deprecate
 .btn-outline {
-  @include btn-inverse-on-hover(
-    $color:     var(--color-btn-outline-text),
-    $bg-hover:  var(--color-btn-outline-bg-hover),
-    $bg-active: var(--color-btn-outline-bg-active),
-    $shadow:    var(--color-btn-outline-shadow)
-  );
+  @include btn-inverse-on-hover("outline");
 }
 
 // Sizes
