@@ -6,7 +6,7 @@
   padding: 2px 6px;
   font: 12px $mono-font;
   // stylelint-disable-next-line primer/colors
-  color: rgba($black, 0.6);
+  color: var(--color-branch-name-text);
   // stylelint-disable-next-line primer/colors
   background-color: lighten($blue-100, 3%);
   border-radius: $border-radius;

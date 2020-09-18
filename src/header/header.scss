@@ -5,7 +5,7 @@
   font-size: $h5-size;
   line-height: $lh-default;
   // stylelint-disable-next-line primer/colors
-  color: $white-fade-70;
+  color: var(--color-header-text);
   background-color: var(--color-bg-canvas-inverse);
   align-items: center;
   flex-wrap: nowrap;
@@ -31,7 +31,7 @@
   &:hover,
   &:focus {
     // stylelint-disable-next-line primer/colors
-    color: $white-fade-70;
+    color: var(--color-header-text);
     text-decoration: none;
   }
 }

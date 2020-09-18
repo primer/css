@@ -55,7 +55,7 @@
     text-shadow: none;
     vertical-align: top;
     // stylelint-disable-next-line primer/colors
-    background-color: rgba($black, 0.08); // Darken for just a tad more contrast against the button background
+    background-color: var(--color-btn-counter-bg);
   }
 
   .dropdown-caret {
@@ -120,13 +120,11 @@
   $bg-disabled: #94d3a2; // custom green
 
   $shadow-btn-primary-color: $green-900;
-  $shadow-btn-primary: 0 1px 0 rgba($black, 0.1), inset 0 1px 0 rgba($white, 0.03);
 
   color: var(--color-text-inverse);
   background-color: $bg-default;
-  // stylelint-disable-next-line primer/borders
-  border-color: rgba($black, 0.15);
-  box-shadow: $shadow-btn-primary;
+  border-color: var(--color-btn-primary-border);
+  box-shadow: var(--color-btn-primary-shadow), var(--color-btn-primary-shadow-inset);
 
   &:hover,
   &.hover,
@@ -146,11 +144,10 @@
   &.disabled,
   &[aria-disabled=true] {
     // stylelint-disable-next-line primer/colors
-    color: rgba($white, 0.8);
+    color: var(--color-btn-primary-disabled-text);
     background-color: $bg-disabled;
-    // stylelint-disable-next-line primer/borders
-    border-color: rgba($black, 0.1);
-    box-shadow: $shadow-btn-primary;
+    border-color: var(--color-btn-primary-border-disabled);
+    box-shadow: var(--color-btn-primary-shadow);
   }
 
   &:focus,
@@ -162,12 +159,12 @@
   .Counter {
     color: inherit;
     // stylelint-disable-next-line primer/colors
-    background-color: rgba($white, 0.2);
+    background-color: var(--color-btn-primary-counter-bg);
   }
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: rgba($white, 0.8);
+    color: var(--color-btn-primary-ic);
   }
 }
 
@@ -181,11 +178,11 @@
   [open] > & {
     color: var(--color-text-inverse);
     background-color: $bg-hover;
-    border-color: rgba($black, 0.15);
-    box-shadow: 0 1px 0 rgba($black, 0.1), inset 0 1px 0 rgba($white, 0.03);
+    border-color: var(--color-btn-inverse-on-hover-border);
+    box-shadow: var(--color-btn-inverse-on-hover-shadow), var(--color-btn-inverse-on-hover-shadow-inset);
 
     .Counter {
-      background-color: rgba($white, 0.2);
+      background-color: var(--color-btn-inverse-on-hover-counter-bg);
     }
 
     .octicon {
@@ -198,7 +195,7 @@
   &[aria-selected=true] {
     color: var(--color-text-inverse);
     background-color: $bg-active;
-    border-color: rgba($black, 0.15);
+    border-color: var(--color-btn-inverse-on-hover-border);
     box-shadow: inset 0 1px 0 rgba($shadow, 0.2);
   }
 
@@ -238,23 +235,13 @@
 
 // Outline button
 
+.btn-blue, // TODO: deprecate
 .btn-outline {
   @include btn-inverse-on-hover(
     $color: $blue-500,
     $bg-hover: $blue-500,
     $bg-active: darken($blue-500, 3%),
     $shadow: $blue-900
-  );
-}
-
-// Solid buttons TODO: Deprecate?
-//
-//
-.btn-blue {
-  @include btn-solid(
-    $white,
-    lighten($blue-500, 8%),
-    darken($blue-500, 2%)
   );
 }
 

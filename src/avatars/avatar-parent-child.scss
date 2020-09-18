@@ -14,5 +14,5 @@
   // stylelint-disable-next-line primer/borders
   border-radius: $border-radius-1;
   // stylelint-disable-next-line primer/box-shadow
-  box-shadow: -2px -2px 0 rgba($white, 0.8);
+  box-shadow: var(--color-avatar-child-shadow);
 }
