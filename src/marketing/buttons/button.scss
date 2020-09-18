@@ -3,7 +3,7 @@
   padding: $spacer-3 $spacer-4;
   font-size: $h5-size;
   font-weight: $font-weight-semibold;
-  color: var(--color-text-inverse);
+  color: $text-white;
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
@@ -18,8 +18,8 @@
 
   &:hover {
     text-decoration: none;
-    background-color: var(--color-bg-info-inverse);
-    border-color: var(--color-border-info);
+    background-color: $bg-blue;
+    border-color: $border-blue;
   }
 
   &:focus {
@@ -44,7 +44,7 @@
   border-color: $green-mktg;
 
   &:hover {
-    background-color: var(--color-scale-green-5);
+    background-color: $bg-green;
     // stylelint-disable-next-line primer/borders
     border-color: $green-500;
   }
@@ -70,7 +70,7 @@
   border-color: rgba($blue-mktg, 0.5);
 
   &:hover {
-    color: var(--color-text-link-primary);
+    color: $text-blue;
     text-decoration: none;
     // stylelint-disable-next-line primer/colors
     background-color: rgba($white, 0);
@@ -87,7 +87,7 @@
 }
 
 .btn-transparent {
-  color: var(--color-text-inverse);
+  color: $text-white;
   background-color: transparent;
   background-image: none;
   // stylelint-disable-next-line primer/borders
