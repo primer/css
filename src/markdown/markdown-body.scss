@@ -86,7 +86,7 @@
     padding: 0 1em;
     color: var(--color-text-tertiary);
     // stylelint-disable-next-line primer/borders
-    border-left: 0.25em $border-style var(--color-markdown-body-blockquote-border);
+    border-left: 0.25em $border-style var(--color-markdown-blockquote-border);
 
     > :first-child {
       margin-top: 0;

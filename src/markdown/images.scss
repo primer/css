@@ -45,7 +45,7 @@
       margin: 13px 0 0;
       overflow: hidden;
       // stylelint-disable-next-line primer/borders
-      border: $border-width $border-style var(--color-markdown-body-frame-border);
+      border: $border-width $border-style var(--color-markdown-frame-border);
     }
 
     span img {
