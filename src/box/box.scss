@@ -128,7 +128,7 @@
   // .unread to be deprecated with .Box-row-unread
   &.unread {
     // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 2px 0 0 $blue inset;
+    box-shadow: inset 2px 0 0 var(--color-border-info);
   }
 
   &.navigation-focus {

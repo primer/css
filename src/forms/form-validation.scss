@@ -73,8 +73,8 @@ dl.form-group > dd, // TODO: Deprecate
   .octicon-check {
     display: inline-block;
     // stylelint-disable-next-line primer/colors
-    color: $green;
-    fill: $green;
+    color: var(--color-text-success);
+    fill: var(--color-icon-success);
   }
 
   .octicon-x {
@@ -95,7 +95,7 @@ dl.form-group > dd, // TODO: Deprecate
   .octicon-x {
     display: inline-block;
     color: var(--color-text-danger);
-    fill: $red;
+    fill: var(--color-icon-danger);
   }
 }
 

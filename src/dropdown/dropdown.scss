@@ -53,7 +53,7 @@
   &::after {
     // stylelint-disable-next-line primer/borders
     border: 7px $border-style transparent;
-    border-bottom-color: $border-white;
+    border-bottom-color: var(--color-border-inverse);
   }
 
   // stylelint-disable-next-line selector-max-type
@@ -150,7 +150,7 @@
     right: -14px;
     left: auto;
     border-color: transparent;
-    border-left-color: $border-white;
+    border-left-color: var(--color-border-inverse);
   }
 }
 
@@ -172,7 +172,7 @@
     top: 11px;
     left: -14px;
     border-color: transparent;
-    border-right-color: $border-white;
+    border-right-color: var(--color-border-inverse);
   }
 }
 
@@ -205,7 +205,7 @@
     bottom: -7px;
     left: 10px;
     // stylelint-disable-next-line primer/borders
-    border-top: 7px $border-style $border-white;
+    border-top: 7px $border-style var(--color-border-inverse);
     // stylelint-disable-next-line primer/borders
     border-right: 7px $border-style transparent;
     border-bottom: 0;
