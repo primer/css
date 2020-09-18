@@ -60,6 +60,6 @@
     z-index: -1;
     display: inline-block;
     // stylelint-disable-next-line primer/colors
-    background-color: darken($gray-100, 2%);
+    background-color: var(--color-filter-item-bar-bg);
   }
 }

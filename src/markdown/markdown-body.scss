@@ -77,7 +77,7 @@
     padding: 0;
     margin: $spacer-4 0;
     // stylelint-disable-next-line primer/colors
-    background-color: $gray-200;
+    background-color: var(--color-border-primary);
     border: 0;
   }
 
@@ -86,7 +86,7 @@
     padding: 0 1em;
     color: var(--color-text-tertiary);
     // stylelint-disable-next-line primer/borders
-    border-left: 0.25em $border-style lighten($gray-300, 5%);
+    border-left: 0.25em $border-style var(--color-markdown-body-blockquote-border);
 
     > :first-child {
       margin-top: 0;

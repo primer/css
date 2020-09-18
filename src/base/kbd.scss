@@ -9,7 +9,7 @@ kbd {
   // stylelint-disable-next-line primer/typography
   line-height: 10px;
   // stylelint-disable-next-line primer/colors
-  color: $gray-700;
+  color: var(--color-scale-grey-7);
   vertical-align: middle;
   background-color: var(--color-bg-tertiary);
   // stylelint-disable-next-line primer/borders

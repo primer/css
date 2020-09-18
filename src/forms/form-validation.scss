@@ -131,7 +131,7 @@ dl.form-group > dd, // TODO: Deprecate
   color: var(--color-text-secondary);
   background-color: var(--color-bg-tertiary);
   // stylelint-disable-next-line primer/borders
-  border: $border-width $border-style darken($gray-300, 5%);
+  border: $border-width $border-style var(--color-drag-and-drop-border);
   border-top: 0;
   border-bottom-right-radius: $border-radius;
   border-bottom-left-radius: $border-radius;
@@ -231,7 +231,7 @@ dl.form-group > dd, // TODO: Deprecate
   textarea {
     display: block;
     // stylelint-disable-next-line primer/borders
-    border-bottom: $border-width dashed lighten($gray-300, 5%);
+    border-bottom: $border-width dashed var(--color-upload-enabled-border);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
@@ -273,7 +273,7 @@ dl.form-group > dd, // TODO: Deprecate
 
   .comment {
     // stylelint-disable-next-line primer/borders
-    border: $border-width $border-style darken($gray-300, 5%);
+    border: $border-width $border-style var(--color-previewable-comment-form-border);
   }
 
   .comment-form-error { margin-bottom: $spacer-2; }
@@ -350,7 +350,7 @@ p.explain {
     // stylelint-disable-next-line primer/spacing
     margin-right: 5px;
     // stylelint-disable-next-line primer/colors
-    color: $gray-400;
+    color: var(--color-ic-tertiary);
   }
 
   .minibutton {

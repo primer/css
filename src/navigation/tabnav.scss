@@ -44,7 +44,7 @@
   .octicon {
     margin-right: $spacer-1;
     // stylelint-disable-next-line primer/colors
-    color: $gray-400;
+    color: var(--color-ic-tertiary);
   }
 
   .Counter {

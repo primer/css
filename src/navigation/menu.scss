@@ -37,7 +37,7 @@
   &:hover {
     text-decoration: none;
     // stylelint-disable-next-line primer/colors
-    background-color: $gray-100;
+    background-color: var(--color-bg-secondary);
     outline: none;
   }
 
@@ -66,7 +66,7 @@
     width: 16px;
     margin-right: $spacer-2;
     // stylelint-disable-next-line primer/colors
-    color: $gray-400;
+    color: var(--color-ic-tertiary);
     text-align: center;
   }
 

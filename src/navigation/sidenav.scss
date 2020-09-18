@@ -47,7 +47,7 @@
 .SideNav-item:focus {
   text-decoration: none;
   // stylelint-disable-next-line primer/colors
-  background-color: $gray-100;
+  background-color: var(--color-bg-secondary);
   outline: none;
 }
 

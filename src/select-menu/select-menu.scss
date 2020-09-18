@@ -461,6 +461,6 @@ $SelectMenu-max-height: 480px !default;
   // :active would work if ontouchstart is added to the button
   // Instead this tweaks the "native" highlight color
   .SelectMenu-item {
-    -webkit-tap-highlight-color: rgba($gray-300, 0.5);
+    -webkit-tap-highlight-color: var(--color-select-menu-tap-highlight);
   }
 }

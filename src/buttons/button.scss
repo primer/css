@@ -97,7 +97,7 @@
   &.disabled,
   &[aria-disabled=true] {
     // stylelint-disable-next-line primer/colors
-    color: $gray-400;
+    color: var(--color-text-disabled);
     background-color: $bg-disabled;
     border-color: var(--color-btn-border);
   }

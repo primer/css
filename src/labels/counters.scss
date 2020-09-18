@@ -11,7 +11,7 @@
   color: var(--color-text-primary);
   text-align: center;
   // stylelint-disable-next-line primer/colors
-  background-color: rgba($gray-300, 0.5);
+  background-color: var(--color-counter-bg);
   border: $border-width $border-style transparent; // Support Firfox custom colors
   // stylelint-disable-next-line primer/borders
   border-radius: 2em;
@@ -33,5 +33,5 @@
 .Counter--gray {
   color: var(--color-text-inverse);
   // stylelint-disable-next-line primer/colors
-  background-color: $gray-500;
+  background-color: var(--color-scale-grey-5);
 }

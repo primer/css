@@ -42,7 +42,7 @@ label {
 
   &[disabled] {
     // stylelint-disable-next-line primer/colors
-    color: $gray-400;
+    color: var(--color-text-disabled);
     // stylelint-disable-next-line primer/colors
     background-color: #f3f4f6; // custom gray
   }

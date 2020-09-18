@@ -18,6 +18,8 @@
 
 // Requires a positioning class (e.g., `.dropdown-menu-w`) to determine which
 // way the menu should render from the element triggering it.
+
+.dropdown-menu-dark, // TODO: Deprecate
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -256,71 +258,5 @@
   &::after {
     top: -14px;
     left: 10px;
-  }
-}
-
-// Dark dropdowns
-.dropdown-menu-dark {
-  color: var(--color-text-inverse);
-  // stylelint-disable-next-line primer/colors
-  background: $gray-800;
-  border-color: var(--color-scale-grey-7);
-  box-shadow: var(--color-shadow-large);
-
-  &::before {
-    border-bottom-color: var(--color-scale-grey-7);
-  }
-
-  &::after {
-    // stylelint-disable-next-line primer/borders
-    border-bottom-color: $gray-800;
-  }
-
-  .dropdown-header {
-    // stylelint-disable-next-line primer/colors
-    color: $gray-300;
-  }
-
-  .dropdown-divider {
-    border-top-color: var(--color-scale-grey-7);
-  }
-
-  .dropdown-item {
-    color: inherit;
-  }
-
-  // Directional classes
-
-  &.dropdown-menu-w {
-    &::before {
-      border-color: transparent transparent transparent var(--color-scale-grey-7);
-    }
-
-    &::after {
-      // stylelint-disable-next-line primer/borders
-      border-color: transparent transparent transparent $gray-800;
-    }
-  }
-
-  &.dropdown-menu-e {
-    &::before {
-      border-color: transparent var(--color-scale-grey-7) transparent transparent;
-    }
-
-    &::after {
-      // stylelint-disable-next-line primer/borders
-      border-color: transparent $gray-800 transparent transparent;
-    }
-  }
-
-  &.dropdown-menu-ne {
-    &::before {
-      border-color: var(--color-scale-grey-7) transparent transparent transparent;
-    }
-
-    &::after {
-      // stylelint-disable-next-line primer/borders
-      border-color: $gray-800 transparent transparent transparent;
-    }
   }
 }

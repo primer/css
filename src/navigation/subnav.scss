@@ -82,7 +82,7 @@
   left: 8px;
   display: block;
   // stylelint-disable-next-line primer/colors
-  color: $gray-400;
+  color: var(--color-ic-tertiary);
   text-align: center;
   pointer-events: none;
 }
@@ -90,7 +90,7 @@
 .subnav-search-context {
   .btn {
     // stylelint-disable-next-line primer/colors
-    color: $gray-700;
+    color: var(--color-scale-grey-7);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 
