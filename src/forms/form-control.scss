@@ -129,7 +129,7 @@ textarea.form-control {
       padding: 2px $spacer-1;
       font-style: normal;
       // stylelint-disable-next-line primer/colors
-      background: $yellow-100;
+      background: var(--color-scale-yellow-1);
       border-radius: $border-radius;
     }
   }
@@ -235,9 +235,9 @@ input::-webkit-inner-spin-button {
   margin: 10px 0;
   font-size: $h5-size;
   // stylelint-disable-next-line primer/colors
-  color: $yellow-900;
+  color: var(--color-text-warning);
   // stylelint-disable-next-line primer/colors
-  background: $yellow-100;
+  background: var(--color-bg-warning);
   border: $border-width $border-style var(--color-border-warning);
   border-radius: $border-radius;
 

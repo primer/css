@@ -246,7 +246,7 @@ dl.form-group > dd, // TODO: Deprecate
 
     .drag-and-drop {
       // stylelint-disable-next-line primer/borders
-      border-color: lighten($blue-400, 8%);
+      border-color: var(--color-upload-enabled-border-focused);
     }
   }
 }

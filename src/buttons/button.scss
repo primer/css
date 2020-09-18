@@ -119,12 +119,10 @@
   $bg-active: darken($bg-hover, 2%);
   $bg-disabled: #94d3a2; // custom green
 
-  $shadow-btn-primary-color: $green-900;
-
   color: var(--color-text-inverse);
   background-color: $bg-default;
   border-color: var(--color-btn-primary-border);
-  box-shadow: var(--color-btn-primary-shadow), var(--color-btn-primary-shadow-inset);
+  box-shadow: var(--color-btn-primary-shadow), var(--color-btn-primary-shadow-highlight);
 
   &:hover,
   &.hover,
@@ -137,7 +135,7 @@
   &[aria-selected=true] {
     background-color: $bg-active;
     // stylelint-disable-next-line primer/box-shadow
-    box-shadow: inset 0 1px 0 rgba($shadow-btn-primary-color, 0.2);
+    box-shadow: var(--color-btn-primary-shadow-selected);
   }
 
   &:disabled,
@@ -226,10 +224,10 @@
 
 .btn-danger {
   @include btn-inverse-on-hover(
-    $color: $red-500,
-    $bg-hover: $red-600,
-    $bg-active: darken($red-600, 3%),
-    $shadow: $red-900
+    $color:     var(--color-btn-danger-text),
+    $bg-hover:  var(--color-btn-danger-bg-hover),
+    $bg-active: var(--color-btn-danger-bg-active),
+    $shadow:    var(--color-btn-danger-shadow)
   );
 }
 
@@ -238,10 +236,10 @@
 .btn-blue, // TODO: deprecate
 .btn-outline {
   @include btn-inverse-on-hover(
-    $color: $blue-500,
-    $bg-hover: $blue-500,
-    $bg-active: darken($blue-500, 3%),
-    $shadow: $blue-900
+    $color:     var(--color-btn-outline-text),
+    $bg-hover:  var(--color-btn-outline-bg-hover),
+    $bg-active: var(--color-btn-outline-bg-active),
+    $shadow:    var(--color-btn-outline-shadow)
   );
 }
 

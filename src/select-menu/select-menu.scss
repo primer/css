@@ -433,7 +433,7 @@ $SelectMenu-max-height: 480px !default;
 
   body:not(.intent-mouse) .SelectMenu-tab:focus {
     // stylelint-disable-next-line primer/colors
-    background-color: $blue-100;
+    background-color: var(--color-select-menu-tap-focus-bg);
   }
 
   .SelectMenu-tab:hover {

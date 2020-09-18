@@ -144,7 +144,7 @@
   &:active {
     color: var(--color-text-inverse);
     // stylelint-disable-next-line primer/colors
-    background-color: $blue-400;
+    background-color: var(--color-bg-info-inverse);
   }
 }
 

@@ -8,14 +8,14 @@
   // stylelint-disable-next-line primer/colors
   color: var(--color-branch-name-text);
   // stylelint-disable-next-line primer/colors
-  background-color: lighten($blue-100, 3%);
+  background-color: var(--color-branch-name-bg);
   border-radius: $border-radius;
 
   .octicon {
     // stylelint-disable-next-line primer/spacing
     margin: 1px -2px 0 0;
     // stylelint-disable-next-line primer/colors
-    color: desaturate($blue-300, 70%);
+    color: var(--color-branch-name-icon);
   }
 }
 

@@ -274,7 +274,7 @@
 
 .Box-row--yellow {
   // stylelint-disable-next-line primer/colors
-  background-color: $yellow-100;
+  background-color: var(--color-bg-warning);
 }
 
 .Box-row--blue {

@@ -191,18 +191,18 @@
   &.successed {
     .success {
       // stylelint-disable-next-line primer/colors
-      color: $green-900;
+      color: var(--color-scale-green-9);
       // stylelint-disable-next-line primer/colors
-      background-color: $green-100;
-      border-color: $border-green;
+      background-color: var(--color-bg-success);
+      border-color: var(--color-border-success);
 
       &::after {
         // stylelint-disable-next-line primer/borders
-        border-bottom-color: $green-100;
+        border-bottom-color: var(--color-bg-success);
       }
 
       &::before {
-        border-bottom-color: $border-green;
+        border-bottom-color: var(--color-border-success);
       }
     }
   }
@@ -210,17 +210,17 @@
   &.warn {
     .form-control {
       // stylelint-disable-next-line primer/borders
-      border-color: $yellow-600;
+      border-color: var(--color-scale-yellow-6);
     }
 
     .warning {
       // stylelint-disable-next-line primer/colors
-      background-color: $yellow-200;
+      background-color: var(--color-bg-warning);
       border-color: var(--color-border-warning);
 
       &::after {
         // stylelint-disable-next-line primer/borders
-        border-bottom-color: $yellow-200;
+        border-bottom-color: var(--color-bg-warning);
       }
 
       &::before {
@@ -232,7 +232,7 @@
   &.errored {
     .form-control {
       // stylelint-disable-next-line primer/borders
-      border-color: $red-600;
+      border-color: var(--color-scale-red-6);
     }
 
     label {

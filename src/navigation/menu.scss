@@ -78,7 +78,7 @@
   .menu-warning {
     float: right;
     // stylelint-disable-next-line primer/colors
-    color: $red-900;
+    color: var(--color-scale-red-9);
   }
 
   .avatar {
