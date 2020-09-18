@@ -18,50 +18,50 @@ In `v16` we're moving all colors to [primer/primitives](https://github.com/prime
 `v15` | `v16`
 --- | ---
 **Text** |
-`$text-black` | `var(--color-text-primary)`
-`$text-gray-dark` | `var(--color-text-primary)`
-`$text-gray` | `var(--color-text-secondary)`
-`$text-gray-light` | `var(--color-text-tertiary)`
-`$text-white` | `var(--color-text-inverse)`
-`$text-blue` | `var(--color-text-link-primary)`
-`$text-green` | `var(--color-text-success)`
-`$text-red` | `var(--color-text-danger)`
+`$text-black` | `var(--color-text-primary)` gray-900
+`$text-gray-dark` | `var(--color-text-primary)` gray-900
+`$text-gray` | `var(--color-text-secondary)` gray-600
+`$text-gray-light` | `var(--color-text-tertiary)` gray-500
+`$text-white` | `var(--color-text-inverse)` white
+`$text-blue` | `var(--color-text-link-primary)` blue-500
+`$text-green` | `var(--color-text-success)` green-600
+`$text-red` | `var(--color-text-danger)` red-500
 `$text-orange` | n/a
 `$text-orange-light` | n/a
 `$text-yellow` | n/a
 `$text-purple` | n/a
 `$text-pink` | n/a
 **Border** |
-`$border-color` | `var(--color-border-primary)`
-`$border` | `$border-width $border-style var(--color-border-primary)`
-`$border-white` | `var(--color-border-inverse)`
+`$border-color` | `var(--color-border-primary)` gray-200
+`$border` | `$border-width $border-style var(--color-border-primary)` gray-200
+`$border-white` | `var(--color-border-inverse)` white
 `$border-black-fade` | n/a
 `$border-white-fade` | n/a
-`$border-gray` | `var(--color-border-primary)`
-`$border-gray-dark` | `var(--color-border-secondary)`
+`$border-gray` | `var(--color-border-primary)` gray-200
+`$border-gray-dark` | `var(--color-border-secondary)` $gray-300
 `$border-gray-darker` | n/a
-`$border-gray-light` | `var(--color-border-primary-light)`
-`$border-blue` | `var(--color-border-info)`
+`$border-gray-light` | `var(--color-border-primary-light)` lighten($gray-200, 3%)
+`$border-blue` | `var(--color-border-info)` blue-500
 `$border-blue-light` | n/a
-`$border-green` | `var(--color-border-success)`
+`$border-green` | `var(--color-border-success)` green-500
 `$border-green-light` | n/a
 `$border-purple` | n/a
-`$border-red` | `var(--color-border-danger)`
-`$border-red-light` | `var(--color-border-danger)`
-`$border-yellow` | `var(--color-border-warning)`
+`$border-red` | `var(--color-border-danger)` red-500
+`$border-red-light` | `var(--color-border-danger)` red-500
+`$border-yellow` | `var(--color-border-warning)` yellow-700
 **Background** |
 `$bg-black` | n/a
 `$bg-black-fade` | n/a
-`$bg-white` | `var(--color-bg-primary)`
-`$bg-gray` | `var(--color-bg-secondary)`
-`$bg-gray-light` | `var(--color-bg-tertiary)`
-`$bg-gray-dark` | `var(--color-bg-canvas-inverse)`
-`$bg-red-light` | `var(--color-bg-danger)`
-`$bg-red` | `var(--color-bg-danger-inverse)`
-`$bg-green-light` | `var(--color-bg-success)`
-`$bg-green` | `var(--color-bg-success-inverse)`
-`$bg-blue-light` | `var(--color-bg-info)`
-`$bg-blue` | `var(--color-bg-info-inverse)`
+`$bg-white` | `var(--color-bg-primary)` white
+`$bg-gray` | `var(--color-bg-secondary)` gray-100
+`$bg-gray-light` | `var(--color-bg-tertiary)` gray-000
+`$bg-gray-dark` | `var(--color-bg-canvas-inverse)` gray-900
+`$bg-red-light` | `var(--color-bg-danger)` red-100
+`$bg-red` | `var(--color-bg-danger-inverse)` red-500
+`$bg-green-light` | `var(--color-bg-success)` green-100
+`$bg-green` | `var(--color-bg-success-inverse)` green-500
+`$bg-blue-light` | `var(--color-bg-info)` blue-100
+`$bg-blue` | `var(--color-bg-info-inverse)` blue-500
 `$bg-orange` | n/a
 `$bg-purple` | n/a
 `$bg-purple-light` | n/a
