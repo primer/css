@@ -32,8 +32,8 @@ $h000-size: 64px !default;
 $h000-size-mobile: 48px !default;
 
 // Colors
-$green-mktg: mix($green-500, $green-400, 50%) !default;
-$blue-mktg: mix($blue-400, $blue-500, 42%) !default;
+$green-mktg: mix(#28a745, #34d058, 50%) !default; // $green-500, $green-400
+$blue-mktg: mix(#2188ff, #0366d6, 42%) !default; // $blue-400, $blue-500
 
 // Animations
 $transition-time: 0.4s !default;
