@@ -1,93 +1,95 @@
 //
 // ------------------------ Deprecated ------------------------
-// ------------- Replaced with primer/primitives --------------
+// Some might get replaced at some point.
+// If possible, use functional CSS variables from primer/primitives
 //
 
 @import "color-system.scss";
 // Color variables
 
 // Border colors
-$border-white:       $white !default;
+$border-color: 			 var(--color-border-primary) !default;
+$border-gray:        var(--color-border-primary) !default;
+$border-gray-light:  var(--color-border-primary-light) !default;
+$border-gray-dark:   var(--color-border-secondary) !default;
+$border-white:       var(--color-border-inverse) !default;
+$border-blue:        var(--color-border-info) !default;
+$border-green:       var(--color-border-success) !default;
+$border-red:         var(--color-border-danger) !default;
+$border-yellow:      var(--color-border-warning) !default;
+
+$border-gray-darker: $gray-700 !default;
+$border-blue-light:  $blue-200 !default;
+$border-red-light:   $red-300 !default;
+$border-purple:      $purple-500 !default;
 $border-black-fade:  $black-fade-15 !default;
 $border-white-fade:  $white-fade-15 !default;
-$border-gray-dark:   $gray-300 !default;
-$border-gray-darker: $gray-700 !default;
-$border-gray-light:  lighten($gray-200, 3%) !default;
-$border-gray:        $gray-200 !default;
-$border-blue:        $blue-500 !default;
-$border-blue-light:  $blue-200 !default;
-$border-green:       $green-400 !default;
-$border-green-light: desaturate($green-300, 40%) !default;
-$border-purple:      $purple !default;
-$border-red:         $red !default;
-$border-red-light:   $red-300 !default;
-$border-yellow:      $yellow-600 !default;
+
+$border-green-light: var(--color-discussion-border) !default; // TODO: Move to dotcom
 
 // Background colors
-$bg-white:          $white !default;
+$bg-white:          var(--color-bg-primary) !default;
+$bg-gray:           var(--color-bg-secondary) !default;
+$bg-gray-light:     var(--color-bg-tertiary) !default;
+$bg-gray-dark:      var(--color-bg-canvas-inverse) !default;
+$bg-red:            var(--color-bg-danger-inverse) !default;
+$bg-red-light:      var(--color-bg-danger) !default;
+$bg-green:          var(--color-bg-success-inverse) !default;
+$bg-green-light:    var(--color-bg-success) !default;
+$bg-blue:           var(--color-bg-info-inverse) !default;
+$bg-blue-light:     var(--color-bg-info) !default;
+$bg-yellow:         var(--color-bg-warning-inverse) !default;
+$bg-yellow-light:   var(--color-bg-warning) !default;
+
 $bg-black:          $black !default;
 $bg-black-fade:     $black-fade-50 !default;
-$bg-gray:           $gray-100 !default;
-$bg-gray-dark:      $gray-900 !default;
-$bg-gray-light:     $gray-000 !default;
-$bg-red:            $red-500 !default;
-$bg-red-light:      $red-000 !default;
-$bg-green:          $green-500 !default;
-$bg-green-light:    $green-100 !default;
-$bg-blue:           $blue-500 !default;
-$bg-blue-light:     $blue-000 !default;
 $bg-orange:         $orange-700 !default;
 $bg-purple:         $purple-500 !default;
 $bg-purple-light:   $purple-000 !default;
 $bg-pink:           $pink-500 !default;
-$bg-yellow:         $yellow-500 !default;
-$bg-yellow-light:   $yellow-200 !default;
 $bg-yellow-dark:    $yellow-700 !default;
 
 // Text colors
+$text-gray-dark:    var(--color-text-primary) !default;
+$text-gray:         var(--color-text-secondary) !default;
+$text-gray-light:   var(--color-text-tertiary) !default;
+$text-white:        var(--color-text-inverse) !default;
+$text-blue:         var(--color-text-link-primary) !default;
+$text-green:        var(--color-text-success) !default;
+$text-red:          var(--color-text-danger) !default;
+$text-yellow:       var(--color-text-warning) !default;
+
 $text-black:        $black !default;
-$text-gray-dark:    $gray-900 !default;
-$text-gray:         $gray-600 !default;
-$text-gray-light:   $gray-500 !default;
-$text-white:        $white !default;
-$text-blue:         $blue-500 !default;
-$text-green:        $green-600 !default;
-$text-red:          $red-600 !default;
 $text-orange:       $orange-900 !default;
 $text-orange-light: $orange-600 !default;
-$text-yellow:       $yellow-800 !default;
 $text-purple:       $purple !default;
 $text-pink:         $pink-500 !default;
 
 // Misc ------------------------------------
 
-// Border
-$border-color: $border-gray !default;
-$border: 1px solid $border-color !default; // TODO: Deprecate
-
 // Box shadow
-$box-shadow: 0 1px 0 rgba($black, 0.04) !default;
-$box-shadow-medium: 0 3px 6px rgba($gray-400, 0.15) !default;
-$box-shadow-large: 0 8px 24px rgba($gray-400, 0.2) !default;
-$box-shadow-extra-large: 0 12px 48px rgba($gray-400, 0.3) !default;
+$box-shadow: var(--color-shadow-small) !default;
+$box-shadow-medium: var(--color-shadow-medium) !default;
+$box-shadow-large: var(--color-shadow-large) !default;
+$box-shadow-extra-large: var(--color-shadow-extra-large) !default;
 
-$box-shadow-highlight: inset 0 1px 0 rgba($white, 0.25) !default; // top highlight
-$box-shadow-inset: inset 0 1px 0 rgba($border-color, 0.2) !default; // top inner shadow
-$box-shadow-focus: 0 0 0 3px rgba($border-blue, 0.3) !default; // blue focus ring
+$box-shadow-highlight: var(--color-shadow-highlight) !default; // top highlight
+$box-shadow-inset: var(--color-shadow-inset) !default; // top inner shadow
+$box-shadow-focus: var(--color-shadow-focus) !default; // blue focus ring
 
 // Button variables
-$border-color-button: $black-fade-15 !default;
-$btn-active-shadow: inset 0 0.15em 0.3em $black-fade-15 !default; // TODO: Deprecate?
+$border-color-button: var(--color-btn-border) !default;
+$btn-active-shadow: var(--color-btn-shadow-active) !default; // TODO: Deprecate?
+$btn-input-focus-shadow: var(--color-btn-shadow-input-focus) !default; // TODO: Deprecate?
 
 // Form variables
-$form-control-shadow: inset 0 1px 2px rgba($black, 0.075) !default; // TODO: Deprecate?
-$btn-input-focus-shadow: 0 0 0 0.2em rgba($blue, 0.3) !default; // TODO: Deprecate? Replaced by $box-shadow-focus
+$form-control-shadow: var(--color-input-shadow) !default; // TODO: Deprecate?
 
 // Tooltips
-$tooltip-background-color: $black !default;
-$tooltip-text-color: $white !default;
+$tooltip-background-color: var(--color-bg-canvas-inverse) !default; // TODO: Deprecate?
+$tooltip-text-color: var(--color-text-inverse) !default; // TODO: Deprecate?
 
 // diffstat background colors
-$bg-diffstat-added: darken($green-400, 5%) !default;
-$bg-diffstat-deleted: $red-600 !default;
-$bg-diffstat-neutral: $gray-300 !default;
+$bg-diffstat-added: var(--color-diff-addition-bg) !default; // TODO: Deprecate?
+$bg-diffstat-deleted: var(--color-diff-deletion-bg) !default; // TODO: Deprecate?
+$bg-diffstat-neutral: var(--color-diff-neutral-bg) !default; // TODO: Deprecate?

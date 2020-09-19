@@ -15,81 +15,82 @@ In `v16` we're moving all colors to [primer/primitives](https://github.com/prime
 
 ### Functional colors
 
+For variables that don't have a replacement, for now you can use a CSS variable from the color scale. Eventually we would like to remove these though.
+
 `v15` | `v16`
 --- | ---
 **Text** |
-`$text-black` | `var(--color-text-primary)` gray-900
-`$text-gray-dark` | `var(--color-text-primary)` gray-900
-`$text-gray` | `var(--color-text-secondary)` gray-600
-`$text-gray-light` | `var(--color-text-tertiary)` gray-500
-`$text-white` | `var(--color-text-inverse)` white
-`$text-blue` | `var(--color-text-link-primary)` blue-500
-`$text-green` | `var(--color-text-success)` green-600
-`$text-red` | `var(--color-text-danger)` red-500
-`$text-orange` | n/a
-`$text-orange-light` | n/a
-`$text-yellow` | n/a
-`$text-purple` | n/a
-`$text-pink` | n/a
+`$text-gray-dark` (`$gray-900`)         | `var(--color-text-primary)`
+`$text-gray` (`$gray-600`)              | `var(--color-text-secondary)`
+`$text-gray-light` (`$gray-500`)        | `var(--color-text-tertiary)`
+`$text-white` (`$white`)                | `var(--color-text-inverse)`
+`$text-blue` (`$blue-500`)              | `var(--color-text-link-primary)`
+`$text-green` (`$green-600`)            | `var(--color-text-success)`
+`$text-red` (`$red-600`)                | `var(--color-text-danger)`
+`$text-yellow` (`$yellow-800`)          | `var(--color-text-warning)`
+n/a                                     | `var(--color-text-placeholder)` (`$gray-300`)
+n/a                                     | `var(--color-text-disabled)` (`$gray-300`)
+n/a                                     | `var(--color-text-link-secondary)` (`$gray-900`)
+n/a                                     | `var(--color-text-link-tertiary)` (`$gray-600`)
+`$text-black` (`$black`)                | n/a
+`$text-orange` (`$orange-900`)          | n/a
+`$text-orange-light` (`$orange-600`)    | n/a
+`$text-purple` (`$purple-500`)          | n/a
+`$text-pink` (`$pink-500`)              | n/a
+**Icon** |
+n/a                                     | `var(--color-icon-primary)` (`$gray-900`)
+n/a                                     | `var(--color-icon-secondary)` (`$gray-600`)
+n/a                                     | `var(--color-icon-tertiary)` (`$gray-400`)
+n/a                                     | `var(--color-icon-info)` (`$blue-500`)
+n/a                                     | `var(--color-icon-danger)` (`$red-500`)
+n/a                                     | `var(--color-icon-success)` (`$green-600`)
+n/a                                     | `var(--color-icon-warning)` (`$yellow-800`)
 **Border** |
-`$border-color` | `var(--color-border-primary)` gray-200
-`$border` | `$border-width $border-style var(--color-border-primary)` gray-200
-`$border-white` | `var(--color-border-inverse)` white
-`$border-black-fade` | n/a
-`$border-white-fade` | n/a
-`$border-gray` | `var(--color-border-primary)` gray-200
-`$border-gray-dark` | `var(--color-border-secondary)` $gray-300
-`$border-gray-darker` | n/a
-`$border-gray-light` | `var(--color-border-primary-light)` lighten($gray-200, 3%)
-`$border-blue` | `var(--color-border-info)` blue-500
-`$border-blue-light` | n/a
-`$border-green` | `var(--color-border-success)` green-500
-`$border-green-light` | n/a
-`$border-purple` | n/a
-`$border-red` | `var(--color-border-danger)` red-500
-`$border-red-light` | `var(--color-border-danger)` red-500
-`$border-yellow` | `var(--color-border-warning)` yellow-700
+`$border-color` (`$gray-200`)                   | `var(--color-border-primary)`
+`$border-gray` (`$gray-200`)                    | `var(--color-border-primary)`
+`$border-gray-light` (`lighten($gray-200, 3%)`) | `var(--color-border-primary-light)`
+`$border-gray-dark` (`$gray-300`)               | `var(--color-border-secondary)`
+`$border-white` (`$white`)                      | `var(--color-border-inverse)`
+`$border-blue` (`$blue-500`)                    | `var(--color-border-info)`
+`$border-green` (`$green-400`)                  | `var(--color-border-success)`
+`$border-red` (`$red-500`)                      | `var(--color-border-danger)`
+`$border-yellow` (`$yellow-600`)                | `var(--color-border-warning)`
+`$border-gray-darker` (`$gray-700`)     | n/a
+`$border-blue-light` (`$blue-200`)      | n/a
+`$border-red-light` (`$red-300`)        | n/a
+`$border-purple` (`$purple-500`)        | n/a
+`$border-black-fade` (`$black-fade-15`) | n/a
+`$border-white-fade` (`$white-fade-15`) | n/a
+`$border-green-light` (`desaturate($green-300, 40%)`) | n/a
 **Background** |
-`$bg-black` | n/a
-`$bg-black-fade` | n/a
-`$bg-white` | `var(--color-bg-primary)` white
-`$bg-gray` | `var(--color-bg-secondary)` gray-100
-`$bg-gray-light` | `var(--color-bg-tertiary)` gray-000
-`$bg-gray-dark` | `var(--color-bg-canvas-inverse)` gray-900
-`$bg-red-light` | `var(--color-bg-danger)` red-100
-`$bg-red` | `var(--color-bg-danger-inverse)` red-500
-`$bg-green-light` | `var(--color-bg-success)` green-100
-`$bg-green` | `var(--color-bg-success-inverse)` green-500
-`$bg-blue-light` | `var(--color-bg-info)` blue-100
-`$bg-blue` | `var(--color-bg-info-inverse)` blue-500
-`$bg-orange` | n/a
-`$bg-purple` | n/a
-`$bg-purple-light` | n/a
-`$bg-pink` | n/a
-`$bg-yellow` | n/a
-`$bg-yellow-light` | n/a
-`$bg-yellow-dark` | n/a
+`$bg-white`        (`$white`)       | `var(--color-bg-primary)` or `var(--color-bg-canvas-inverse)`
+`$bg-gray`         (`$gray-100`)    | `var(--color-bg-secondary)`
+`$bg-gray-light`   (`$gray-000`)    | `var(--color-bg-tertiary)`
+`$bg-gray-dark`    (`$gray-900`)    | `var(--color-bg-canvas-inverse)`
+`$bg-red`          (`$red-500`)     | `var(--color-bg-danger-inverse)`
+`$bg-red-light`    (`$red-000`)     | `var(--color-bg-danger)`
+`$bg-green`        (`$green-500`)   | `var(--color-bg-success-inverse)`
+`$bg-green-light`  (`$green-100`)   | `var(--color-bg-success)`
+`$bg-blue`         (`$blue-500`)    | `var(--color-bg-info-inverse)`
+`$bg-blue-light`   (`$blue-000`)    | `var(--color-bg-info)`
+`$bg-yellow`       (`$yellow-500`)  | `var(--color-bg-warning-inverse)`
+`$bg-yellow-light` (`$yellow-200`)  | `var(--color-bg-warning)`
+n/a                                 | `var(--color-bg-canvas)` (`$white`)
+`$bg-black` (`$black`)              | n/a
+`$bg-black-fade` (`$black-fade-50`) | n/a
+`$bg-orange` (`$orange-700`)        | n/a
+`$bg-purple` (`$purple-500`)        | n/a
+`$bg-purple-light` (`$purple-000`)  | n/a
+`$bg-pink` (`$pink-500`)            | n/a
+`$bg-yellow-dark` (`$yellow-700`)   | n/a
 **Box Shadow** |
-`$box-shadow` | `var(--color-shadow-small)`
-`$box-shadow-medium` | `var(--color-shadow-medium)`
-`$box-shadow-large` | `var(--color-shadow-large)`
-`$box-shadow-extra-large` | `var(--color-shadow-extra-large)`
-`$box-shadow-highlight` | `var(--color-shadow-highlight)`
-`$box-shadow-inset` | `var(--color-shadow-inset)`
-`$box-shadow-focus` | `var(--color-shadow-focus)`
-**Buttons** |
-`$border-color-button` | `var(--color-btn-border)`
-`$btn-active-shadow` | n/a
-**Forms** |
-`$form-control-shadow` | `var(--color-input-shadow)`
-`$btn-input-focus-shadow` | `var(--color-input-shadow-focus)`
-**Tooltips** |
-`$tooltip-background-color` | n/a
-`$tooltip-text-color` | n/a
-**Diffstat** |
-`$bg-diffstat-added` | `var(--color-diff-addition-bg)`
-`$bg-diffstat-deleted` | `var(--color-diff-deletion-bg)`
-`$bg-diffstat-neutral` | `var(--color-diff-neutral-bg)`
+`$box-shadow`               | `var(--color-shadow-small)`
+`$box-shadow-medium`        | `var(--color-shadow-medium)`
+`$box-shadow-large`         | `var(--color-shadow-large)`
+`$box-shadow-extra-large`   | `var(--color-shadow-extra-large)`
+`$box-shadow-highlight`     | `var(--color-shadow-highlight)`
+`$box-shadow-inset`         | `var(--color-shadow-inset)`
+`$box-shadow-focus`         | `var(--color-shadow-focus)`
 
 # 12.0.0
 The v12 release marks a major transition from small, single-purpose npm packages (`primer-core`, `primer-marketing`, `primer-utilities`, etc.) to a single package — `@primer/css` — which contains all of the SCSS source files in subdirectories. Here's what you need to do to migrate different parts of your app:
