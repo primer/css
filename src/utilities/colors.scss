@@ -1,39 +1,82 @@
-// Color utilities
 // stylelint-disable block-opening-brace-space-before, comment-empty-line-before
 
+// TODO: Should these utility classes get prefixed with `color-` to match the variables?
+
+// Text colors
+.text-primary         { color: var(--color-text-primary) !important; }
+.text-secondary       { color: var(--color-text-secondary) !important; }
+.text-tertiary        { color: var(--color-text-tertiary) !important; }
+.text-placeholder     { color: var(--color-text-placeholder) !important; }
+.text-disabled        { color: var(--color-text-disabled) !important; }
+.text-inverse         { color: var(--color-text-inverse) !important; }
+.text-link-primary    { color: var(--color-text-link-primary) !important; }
+.text-link-secondary  { color: var(--color-text-link-secondary) !important; }
+.text-link-tertiary   { color: var(--color-text-link-tertiary) !important; }
+.text-danger          { color: var(--color-text-danger) !important; }
+.text-success         { color: var(--color-text-success) !important; }
+.text-warning         { color: var(--color-text-warning) !important; }
+
+// Icon colors
+.icon-primary   { color: var(--color-icon-primary) !important; }
+.icon-secondary { color: var(--color-icon-secondary) !important; }
+.icon-tertiary  { color: var(--color-icon-tertiary) !important; }
+.icon-info      { color: var(--color-icon-info) !important; }
+.icon-danger    { color: var(--color-icon-danger) !important; }
+.icon-success   { color: var(--color-icon-success) !important; }
+.icon-warning   { color: var(--color-icon-warning) !important; }
+
+// Border colors
+.border-primary         { border-color: var(--color-border-primary) !important; }
+.border-primary-light   { border-color: var(--color-border-primary-light) !important; }
+.border-secondary       { border-color: var(--color-border-secondary) !important; }
+.border-tertiary        { border-color: var(--color-border-tertiary) !important; }
+.border-inverse         { border-color: var(--color-border-inverse) !important; }
+.border-info            { border-color: var(--color-border-info) !important; }
+.border-success         { border-color: var(--color-border-success) !important; }
+.border-danger          { border-color: var(--color-border-danger) !important; }
+.border-warning         { border-color: var(--color-border-warning) !important; }
+
+// Background colors
+.bg-canvas          { background-color: var(--color-bg-canvas) !important; }
+.bg-canvas-inverse  { background-color: var(--color-bg-canvas-inverse) !important; }
+.bg-primary         { background-color: var(--color-bg-primary) !important; }
+.bg-secondary       { background-color: var(--color-bg-secondary) !important; }
+.bg-tertiary        { background-color: var(--color-bg-tertiary) !important; }
+.bg-overlay         { background-color: var(--color-bg-overlay) !important; }
+.bg-selected        { background-color: var(--color-bg-selected) !important; }
+.bg-info            { background-color: var(--color-bg-info) !important; }
+.bg-info-inverse    { background-color: var(--color-bg-info-inverse) !important; }
+.bg-danger          { background-color: var(--color-bg-danger) !important; }
+.bg-danger-inverse  { background-color: var(--color-bg-danger-inverse) !important; }
+.bg-success         { background-color: var(--color-bg-success) !important; }
+.bg-success-inverse { background-color: var(--color-bg-success-inverse) !important; }
+.bg-warning         { background-color: var(--color-bg-warning) !important; }
+.bg-warning-inverse { background-color: var(--color-bg-warning-inverse) !important; }
+
+//
+// ------------------------ Deprecated ------------------------
+// Some might get replaced at some point. If possible, use functional classes.
+//
+
+// Color utilities
+
 // background colors
-/* Set the background to $bg-white */
-.bg-white      { background-color: $bg-white !important; }
-/* Set the background to $bg-blue */
-.bg-blue       { background-color: $bg-blue !important; }
-/* Set the background to $bg-blue-light */
-.bg-blue-light { background-color: $bg-blue-light !important; }
-/* Set the background to $bg-gray-dark */
-.bg-gray-dark  { background-color: $bg-gray-dark !important; }
-/* Set the background to $bg-gray */
-.bg-gray       { background-color: $bg-gray !important; }
-/* Set the background to $bg-gray-light */
-.bg-gray-light { background-color: $bg-gray-light !important; }
-/* Set the background to $bg-green */
-.bg-green      { background-color: $bg-green !important; }
-/* Set the background to $bg-green-light */
-.bg-green-light     { background-color: $bg-green-light !important; }
-/* Set the background to $bg-red */
-.bg-red        { background-color: $bg-red !important; }
-/* Set the background to $bg-red-light */
-.bg-red-light  { background-color: $bg-red-light !important; }
-/* Set the background to $bg-yellow */
-.bg-yellow     { background-color: $bg-yellow !important; }
-/* Set the background to $bg-yellow-light */
-.bg-yellow-light     { background-color: $bg-yellow-light !important; }
-/* Set the background to $bg-yellow-dark */
-.bg-yellow-dark      { background-color: $bg-yellow-dark !important; }
-/* Set the background to $bg-purple */
-.bg-purple     { background-color: $bg-purple !important; }
-/* Set the background to $bg-pink */
-.bg-pink { background-color: $bg-pink !important; }
-/* Set the background to $bg-purple-light */
-.bg-purple-light     { background-color: $bg-purple-light !important; }
+.bg-white         { background-color: $bg-white !important; }
+.bg-blue          { background-color: $bg-blue !important; }
+.bg-blue-light    { background-color: $bg-blue-light !important; }
+.bg-gray-dark     { background-color: $bg-gray-dark !important; }
+.bg-gray          { background-color: $bg-gray !important; }
+.bg-gray-light    { background-color: $bg-gray-light !important; }
+.bg-green         { background-color: $bg-green !important; }
+.bg-green-light   { background-color: $bg-green-light !important; }
+.bg-red           { background-color: $bg-red !important; }
+.bg-red-light     { background-color: $bg-red-light !important; }
+.bg-yellow        { background-color: $bg-yellow !important; }
+.bg-yellow-light  { background-color: $bg-yellow-light !important; }
+.bg-yellow-dark   { background-color: $bg-yellow-dark !important; }
+.bg-purple        { background-color: $bg-purple !important; }
+.bg-pink          { background-color: $bg-pink !important; }
+.bg-purple-light  { background-color: $bg-purple-light !important; }
 
 // Generate a foreground and background utility for every shade of every hue
 @each $hue, $shades in $hue-maps {
@@ -44,32 +87,41 @@
 }
 
 // text colors
-/* Set the text color to $text-blue */
 .text-blue          { color: $text-blue !important; }
-/* Set the text color to $text-red */
 .text-red           { color: $text-red !important; }
-/* Set the text color to $text-gray-light */
 .text-gray-light    { color: $text-gray-light !important; }
-/* Set the text color to $text-gray */
 .text-gray          { color: $text-gray !important; }
-/* Set the text color to $text-gray-dark */
 .text-gray-dark     { color: $text-gray-dark !important; }
-/* Set the text color to $text-green */
 .text-green         { color: $text-green !important; }
-/* Set the text color to $text-yellow */
 .text-yellow        { color: $text-yellow !important; }
-/* Set the text color to $text-orange */
 .text-orange        { color: $text-orange !important; }
-/* Set the text color to $text-orange-light */
-.text-orange-light        { color: $text-orange-light !important; }
-/* Set the text color to $text-purple */
+.text-orange-light  { color: $text-orange-light !important; }
 .text-purple        { color: $text-purple !important; }
-/* Set the text color to $text-pink */
-.text-pink { color: $text-pink !important; }
-/* Set the text color to $text-white */
+.text-pink          { color: $text-pink !important; }
 .text-white         { color: $text-white !important; }
-/* Set the text color to inherit */
-.text-inherit       { color: inherit !important; }
+
+.text-inherit       { color: inherit !important; } // TODO: Should this be moved to primer/primitives
+
+// Border colors
+.border-blue        { border-color: $border-blue !important; }
+.border-blue-light  { border-color: $border-blue-light !important; }
+.border-green       { border-color: $border-green !important; }
+.border-green-light { border-color: $border-green-light !important; }
+.border-red         { border-color: $border-red !important; }
+.border-red-light   { border-color: $border-red-light !important; }
+.border-purple      { border-color: $border-purple !important; }
+.border-yellow      { border-color: $border-yellow !important; }
+.border-gray-light  { border-color: $border-gray-light !important; }
+.border-gray-dark   { border-color: $border-gray-dark !important; }
+
+.border-black-fade  { border-color: $border-black-fade !important; }
+.border-white-fade  { border-color: $border-white-fade !important; }
+
+.border-white-fade-15 { border-color: $border-white-fade !important; }
+.border-white-fade-30 { border-color: $white-fade-30 !important; }
+.border-white-fade-50 { border-color: $white-fade-50 !important; }
+.border-white-fade-70 { border-color: $white-fade-70 !important; }
+.border-white-fade-85 { border-color: $white-fade-85 !important; }
 
 // Link colors
 // Sets the links color to $text-gray and $text-blue on hover
@@ -106,4 +158,22 @@
     color: $text-blue !important;
     text-decoration: none;
   }
+}
+
+/* Typography colors */
+
+.lead {
+  color: $text-gray;
+}
+
+.text-emphasized {
+  color: $text-gray-dark;
+}
+
+.text-shadow-dark {
+  text-shadow: 0 1px 1px rgba($black, 0.25), 0 1px 25px rgba($black, 0.75);
+}
+
+.text-shadow-light {
+  text-shadow: 0 1px 0 rgba($white, 0.5);
 }
