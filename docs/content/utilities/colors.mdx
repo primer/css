@@ -5,6 +5,7 @@ status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/97'
 ---
 
+```
 import {Box, BorderBox} from '@primer/components'
 import {palettes, allColors} from '../../src/color-variables'
 import {PaletteTable, PaletteTableFragment, PaletteHeading, PaletteCell, PaletteValue} from '../../src/color-system'
@@ -16,6 +17,7 @@ const textColumns = [
   'variable',
   {title: 'Value', Cell: PaletteCell.Background, Value: PaletteValue.Value}
 ]
+```
 
 Use color utilities to apply color to the background of elements, text, and borders.
 
@@ -25,6 +27,7 @@ Background colors are most commonly used for filling large blocks of content or 
 
 ### Background utilities
 
+```
 <PaletteTable>
   {palettes.map(({name, title, value}) => (
     <PaletteTableFragment name={name} type="bg" sparse key={name}>
@@ -36,6 +39,7 @@ Background colors are most commonly used for filling large blocks of content or 
     </PaletteTableFragment>
   ))}
 </PaletteTable>
+```
 
 ## Text colors
 
@@ -128,6 +132,7 @@ You can set the color inheritance on an element by using the `text-inherit` clas
 
 ### Text color utilities
 
+```
 <PaletteTable columns={textColumns}>
   {palettes.map(({name, title, value}) => (
     <PaletteTableFragment name={name} type="text" sparse prefix="color" columns={textColumns}>
@@ -139,6 +144,7 @@ You can set the color inheritance on an element by using the `text-inherit` clas
     </PaletteTableFragment>
   ))}
 </PaletteTable>
+```
 
 ## White background
 
