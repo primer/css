@@ -23,7 +23,8 @@
   flex: auto;
 }
 
-.Header-link {
+.Header-link,
+.Header-button {
   font-weight: $font-weight-bold;
   color: $text-white;
   white-space: nowrap;
@@ -34,4 +35,10 @@
     color: $white-fade-70;
     text-decoration: none;
   }
+}
+
+.Header-button {
+  // stylelint-disable-next-line primer/colors
+  background-color: $gray-800;
+  border-radius: $border-radius;
 }
