@@ -129,7 +129,6 @@ dl.form-group > dd, // TODO: Deprecate
   line-height: 16px;
   color: var(--color-text-secondary);
   background-color: var(--color-bg-tertiary);
-  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style var(--color-drag-and-drop-border);
   border-top: 0;
   border-bottom-right-radius: $border-radius;
@@ -244,7 +243,6 @@ dl.form-group > dd, // TODO: Deprecate
     }
 
     .drag-and-drop {
-      // stylelint-disable-next-line primer/borders
       border-color: var(--color-upload-enabled-border-focused);
     }
   }
@@ -271,7 +269,6 @@ dl.form-group > dd, // TODO: Deprecate
   }
 
   .comment {
-    // stylelint-disable-next-line primer/borders
     border: $border-width $border-style var(--color-previewable-comment-form-border);
   }
 

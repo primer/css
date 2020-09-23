@@ -15,13 +15,11 @@
     td {
       // stylelint-disable-next-line primer/spacing
       padding: 6px 13px;
-      // stylelint-disable-next-line primer/borders
       border: $border-width $border-style var(--color-markdown-table-border);
     }
 
     tr {
       background-color: var(--color-bg-primary);
-      // stylelint-disable-next-line primer/borders
       border-top: $border-width $border-style var(--color-markdown-table-tr-border);
 
       &:nth-child(2n) {

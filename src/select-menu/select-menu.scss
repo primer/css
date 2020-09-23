@@ -64,7 +64,6 @@ $SelectMenu-max-height: 480px !default;
   background-color: var(--color-bg-primary);
   // stylelint-disable-next-line primer/borders
   border-radius: $border-radius * 2;
-  // stylelint-disable-next-line primer/box-shadow
   box-shadow: var(--color-select-menu-shadow);
   animation: SelectMenu-modal-animation 0.12s cubic-bezier(0, 0.1, 0.1, 1) backwards;
 

@@ -18,9 +18,7 @@
   }
 
   &:target .TimelineItem-badge {
-    // stylelint-disable-next-line primer/borders
     border-color: var(--color-timeline-target-badge-border);
-    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0.2em var(--color-timeline-target-badge-shadow);
   }
 }

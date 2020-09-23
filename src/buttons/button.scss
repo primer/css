@@ -122,7 +122,6 @@
   &.selected,
   &[aria-selected=true] {
     background-color: var(--color-btn-primary-bg-active);
-    // stylelint-disable-next-line primer/box-shadow
     box-shadow: var(--color-btn-primary-shadow-selected);
   }
 
@@ -137,7 +136,6 @@
 
   &:focus,
   &.focus {
-    // stylelint-disable-next-line primer/box-shadow
     box-shadow: var(--color-btn-primary-disabled-shadow);
   }
 
