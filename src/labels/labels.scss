@@ -34,60 +34,49 @@
 
 .Label--outline, // TODO: Deprecate? It's now the default
 .Label--gray {
-  color: var(--color-scale-gray-6);
-  border-color: var(--color-scale-gray-2);
+  color: var(--color-scale-gray-6); // stylelint-disable-line primer/colors
+  border-color: var(--color-scale-gray-2); // stylelint-disable-line primer/borders
 }
 
 .Label--gray-darker {
-  color: var(--color-scale-gray-9);
-  // stylelint-disable-next-line primer/borders
-  border-color: var(--color-scale-gray-5);
+  color: var(--color-scale-gray-9); // stylelint-disable-line primer/colors
+  border-color: var(--color-scale-gray-5); // stylelint-disable-line primer/borders
 }
 
 // Colors
 
 .Label--yellow {
-  // stylelint-disable-next-line primer/colors
-  color: var(--color-scale-yellow-9);
-  // stylelint-disable-next-line primer/borders
-  border-color: var(--color-scale-yellow-6);
+  color: var(--color-scale-yellow-9); // stylelint-disable-line primer/colors
+  border-color: var(--color-scale-yellow-6); // stylelint-disable-line primer/borders
 }
 
 .Label--orange {
-  // stylelint-disable-next-line primer/colors
-  color: var(--color-scale-orange-8);
-  // stylelint-disable-next-line primer/borders
-  border-color: var(--color-scale-orange-5);
+  color: var(--color-scale-orange-8); // stylelint-disable-line primer/colors
+  border-color: var(--color-scale-orange-5); // stylelint-disable-line primer/borders
 }
 
 .Label--red {
-  color: var(--color-scale-red-5);
-  // stylelint-disable-next-line primer/borders
-  border-color: var(--color-scale-red-6);
+  color: var(--color-scale-red-5); // stylelint-disable-line primer/colors
+  border-color: var(--color-scale-red-6); // stylelint-disable-line primer/borders
 }
 
 .Label--outline-green, // TODO: Deprecate
 .Label--green {
-  // stylelint-disable-next-line primer/colors
-  color: var(--color-scale-green-6);
-  // stylelint-disable-next-line primer/borders
-  border-color: var(--color-scale-green-5);
+  color: var(--color-scale-green-6); // stylelint-disable-line primer/colors
+  border-color: var(--color-scale-green-5); // stylelint-disable-line primer/borders
 }
 
 .Label--blue {
-  color: var(--color-scale-blue-5);
-  border-color: var(--color-scale-blue-5);
+  color: var(--color-scale-blue-5); // stylelint-disable-line primer/colors
+  border-color: var(--color-scale-blue-5); // stylelint-disable-line primer/borders
 }
 
 .Label--purple {
-  color: var(--color-scale-purple-5);
-  // stylelint-disable-next-line primer/borders
-  border-color: var(--color-scale-purple-4);
+  color: var(--color-scale-purple-5); // stylelint-disable-line primer/colors
+  border-color: var(--color-scale-purple-4); // stylelint-disable-line primer/borders
 }
 
 .Label--pink {
-  // stylelint-disable-next-line primer/colors
-  color: var(--color-scale-pink-6);
-  // stylelint-disable-next-line primer/borders
-  border-color: var(--color-scale-pink-4);
+  color: var(--color-scale-pink-6); // stylelint-disable-line primer/colors
+  border-color: var(--color-scale-pink-4); // stylelint-disable-line primer/borders
 }

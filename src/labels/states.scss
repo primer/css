@@ -29,15 +29,15 @@
 }
 
 .State--green {
-  background-color: var(--color-scale-green-5);
+  background-color: var(--color-scale-green-5); // stylelint-disable-line primer/colors
 }
 
 .State--red {
-  background-color: var(--color-scale-red-5);
+  background-color: var(--color-scale-red-5); // stylelint-disable-line primer/colors
 }
 
 .State--purple {
-  background-color: var(--color-scale-purple-5);
+  background-color: var(--color-scale-purple-5); // stylelint-disable-line primer/colors
 }
 
 // Small

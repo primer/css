@@ -4,8 +4,8 @@
 .Box {
   background-color: var(--color-bg-canvas);
   border-color: var(--color-border-primary);
-  border-width: $border-width;
   border-style: $border-style;
+  border-width: $border-width;
   border-radius: $border-radius;
 }
 
@@ -37,7 +37,6 @@
   .Box-row {
     padding: $spacer-2 $spacer-3;
   }
-
 }
 
 .Box--spacious {
@@ -69,7 +68,6 @@
   .Box-row {
     padding: $spacer-4;
   }
-
 }
 
 .Box-header {
@@ -108,9 +106,9 @@
   // stylelint-disable-next-line primer/spacing
   margin-top: -1px;
   list-style-type: none; // To account for applying Box component to a list
-  border-top-width: $border-width;
-  border-top-style: $border-style;
   border-top-color: var(--color-border-primary);
+  border-top-style: $border-style;
+  border-top-width: $border-width;
 
   &:first-of-type {
     border-top-left-radius: $border-radius;
@@ -158,7 +156,6 @@
         opacity: 0;
       }
     }
-
   }
 }
 
@@ -191,7 +188,6 @@
 // and links are dark-gray with blue hover on desktop.
 .Box-row-link {
   @include breakpoint(md) {
-
     color: var(--color-text-primary);
     text-decoration: none;
 
@@ -199,7 +195,6 @@
       color: var(--color-text-link-primary);
       text-decoration: none;
     }
-
   }
 }
 
@@ -213,9 +208,9 @@
   padding: $spacer-3;
   // stylelint-disable-next-line primer/spacing
   margin-top: -1px; // prevents double border when used with .Box-body
+  border-top-color: var(--color-border-primary);
   border-top-style: $border-style;
   border-top-width: $border-width;
-  border-top-color: var(--color-border-primary);
 }
 
 // Option for a box with scrolling content
@@ -287,7 +282,6 @@
 
 //Box with btn-octicon
 .Box-btn-octicon {
-
   // Increase specificity when btn-octicon is used because comes after .Box in the cascade
   &.btn-octicon {
     padding: $spacer-3 $spacer-3;
