@@ -4,7 +4,6 @@
   padding: $spacer-3;
   font-size: $h5-size;
   line-height: $lh-default;
-  // stylelint-disable-next-line primer/colors
   color: var(--color-header-text);
   background-color: var(--color-bg-canvas-inverse);
   align-items: center;
@@ -30,7 +29,6 @@
 
   &:hover,
   &:focus {
-    // stylelint-disable-next-line primer/colors
     color: var(--color-header-text);
     text-decoration: none;
   }

@@ -24,7 +24,6 @@
   &[aria-disabled=true] {
     &,
     &:hover {
-      // stylelint-disable-next-line primer/colors
       color: var(--color-text-disabled);
       cursor: default;
     }
@@ -76,11 +75,9 @@
 
   &.disabled,
   &[aria-disabled=true] {
-    // stylelint-disable-next-line primer/colors
     color: var(--color-text-disabled);
     cursor: default;
 
-    // stylelint-disable-next-line primer/colors
     &:hover { color: var(--color-text-disabled); }
   }
 }
@@ -129,7 +126,6 @@
   color: var(--color-scale-grey-7);
   text-decoration: none;
   vertical-align: middle;
-  // stylelint-disable-next-line primer/colors
   background: var(--color-hidden-text-expander-bg);
   border: 0;
   // stylelint-disable-next-line primer/borders
@@ -137,13 +133,11 @@
 
   &:hover {
     text-decoration: none;
-    // stylelint-disable-next-line primer/colors
     background-color: var(--color-hidden-text-expander-bg-hover);
   }
 
   &:active {
     color: var(--color-text-inverse);
-    // stylelint-disable-next-line primer/colors
     background-color: var(--color-bg-info-inverse);
   }
 }

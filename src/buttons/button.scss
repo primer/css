@@ -54,7 +54,6 @@
     color: inherit;
     text-shadow: none;
     vertical-align: top;
-    // stylelint-disable-next-line primer/colors
     background-color: var(--color-btn-counter-bg);
   }
 
@@ -91,7 +90,6 @@
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
-    // stylelint-disable-next-line primer/colors
     color: var(--color-text-disabled);
     background-color: var(--color-btn-bg);
     border-color: var(--color-btn-border);
@@ -131,7 +129,6 @@
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
-    // stylelint-disable-next-line primer/colors
     color: var(--color-btn-primary-disabled-text);
     background-color: var(--color-btn-primary-bg-disabled);
     border-color: var(--color-btn-primary-border-disabled);
@@ -146,7 +143,6 @@
 
   .Counter {
     color: inherit;
-    // stylelint-disable-next-line primer/colors
     background-color: var(--color-btn-primary-counter-bg);
   }
 

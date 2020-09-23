@@ -41,7 +41,6 @@ label {
   }
 
   &[disabled] {
-    // stylelint-disable-next-line primer/colors
     color: var(--color-text-disabled);
     // stylelint-disable-next-line primer/colors
     background-color: #f3f4f6; // custom gray
@@ -234,9 +233,7 @@ input::-webkit-inner-spin-button {
   // stylelint-disable-next-line primer/spacing
   margin: 10px 0;
   font-size: $h5-size;
-  // stylelint-disable-next-line primer/colors
   color: var(--color-text-warning);
-  // stylelint-disable-next-line primer/colors
   background: var(--color-bg-warning);
   border: $border-width $border-style var(--color-border-warning);
   border-radius: $border-radius;

@@ -33,10 +33,8 @@
   height: $spacer-5;
   margin-right: $spacer-2;
   margin-left: -$spacer-3 + 1;
-  // stylelint-disable-next-line primer/colors
   color: var(--color-timeline-text);
   align-items: center;
-  // stylelint-disable-next-line primer/colors
   background-color: var(--color-timeline-badge-bg);
   // stylelint-disable-next-line primer/borders
   border: 2px $border-style var(--color-bg-canvas);
@@ -49,7 +47,6 @@
   min-width: 0;
   max-width: 100%;
   margin-top: $spacer-1;
-  // stylelint-disable-next-line primer/colors
   color: var(--color-timeline-text);
   flex: auto;
 }

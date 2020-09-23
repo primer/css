@@ -57,7 +57,6 @@
 
 .Toast--warning .Toast-icon {
   color: var(--color-text-primary);
-  // stylelint-disable-next-line primer/colors
   background-color: var(--color-bg-warning-inverse);
 }
 
@@ -66,7 +65,6 @@
 }
 
 .Toast--loading .Toast-icon {
-  // stylelint-disable-next-line primer/colors
   background-color: var(--color-toast-ic-bg-loading);
 }
 
