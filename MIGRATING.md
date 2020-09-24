@@ -7,8 +7,8 @@ In `v16` we're moving all colors to [primer/primitives](https://github.com/prime
 --- | ---
 `$black` | `var(--color-scale-black)`
 `$white` | `var(--color-scale-white)`
-`$gray-000` | `var(--color-scale-grey-0)`
-`$gray-100` | `var(--color-scale-grey-1)`
+`$gray-000` | `var(--color-scale-gray-0)`
+`$gray-100` | `var(--color-scale-gray-1)`
 ... | ...
 `$pink-800` | `var(--color-scale-pink-8)`
 `$pink-900` | `var(--color-scale-pink-9)`
