@@ -46,7 +46,6 @@
 .SideNav-item:hover,
 .SideNav-item:focus {
   text-decoration: none;
-  // stylelint-disable-next-line primer/colors
   background-color: var(--color-bg-secondary);
   outline: none;
 }

@@ -6,7 +6,6 @@
   color: var(--color-text-primary);
   background-color: var(--color-bg-canvas);
   border-radius: $border-radius;
-  // stylelint-disable-next-line primer/box-shadow
   box-shadow: inset 0 0 0 1px var(--color-border-primary), var(--color-shadow-large);
 
   @include breakpoint(sm) {
@@ -57,7 +56,6 @@
 
 .Toast--warning .Toast-icon {
   color: var(--color-text-primary);
-  // stylelint-disable-next-line primer/colors
   background-color: var(--color-bg-warning-inverse);
 }
 
@@ -66,7 +64,6 @@
 }
 
 .Toast--loading .Toast-icon {
-  // stylelint-disable-next-line primer/colors
   background-color: var(--color-toast-ic-bg-loading);
 }
 

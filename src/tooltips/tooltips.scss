@@ -32,7 +32,7 @@
   display: none;
   width: 0;
   height: 0;
-  color: var(--color-bg-canvas-inverse);
+  color: var(--color-bg-canvas-inverse); // stylelint-disable-line primer/colors
   pointer-events: none;
   content: "";
   // stylelint-disable-next-line primer/borders

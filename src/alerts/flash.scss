@@ -65,9 +65,7 @@
 //
 
 .flash {
-  // stylelint-disable-next-line primer/colors
   background-color: var(--color-alert-bg);
-  // stylelint-disable-next-line primer/borders
   border-color: var(--color-alert-border);
 
   .octicon {
@@ -77,9 +75,7 @@
 }
 
 .flash-warn {
-  // stylelint-disable-next-line primer/colors
   background-color: var(--color-alert-warn-bg);
-  // stylelint-disable-next-line primer/borders
   border-color: var(--color-alert-warn-border);
 
   .octicon {
@@ -89,9 +85,7 @@
 }
 
 .flash-error {
-  // stylelint-disable-next-line primer/colors
   background-color: var(--color-alert-error-bg);
-  // stylelint-disable-next-line primer/borders
   border-color: var(--color-alert-error-border);
 
   .octicon {
@@ -102,7 +96,6 @@
 
 .flash-success {
   background-color: var(--color-alert-success-bg);
-  // stylelint-disable-next-line primer/borders
   border-color: var(--color-alert-success-border);
 
   .octicon {
@@ -140,6 +133,5 @@
   // stylelint-disable-next-line primer/spacing
   margin-bottom: 0.8em;
   font-weight: $font-weight-bold;
-  // stylelint-disable-next-line primer/colors
   background-color: var(--color-alert-warn-bg);
 }

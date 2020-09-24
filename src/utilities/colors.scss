@@ -1,4 +1,4 @@
-// stylelint-disable block-opening-brace-space-before, comment-empty-line-before
+// stylelint-disable block-opening-brace-space-before
 
 // TODO: Should these utility classes get prefixed with `color-` to match the variables?
 
@@ -17,13 +17,13 @@
 .text-warning         { color: var(--color-text-warning) !important; }
 
 // Icon colors
-.icon-primary   { color: var(--color-icon-primary) !important; }
-.icon-secondary { color: var(--color-icon-secondary) !important; }
-.icon-tertiary  { color: var(--color-icon-tertiary) !important; }
-.icon-info      { color: var(--color-icon-info) !important; }
-.icon-danger    { color: var(--color-icon-danger) !important; }
-.icon-success   { color: var(--color-icon-success) !important; }
-.icon-warning   { color: var(--color-icon-warning) !important; }
+.icon-primary   { color: var(--color-icon-primary) !important; } // stylelint-disable-line primer/colors
+.icon-secondary { color: var(--color-icon-secondary) !important; } // stylelint-disable-line primer/colors
+.icon-tertiary  { color: var(--color-icon-tertiary) !important; } // stylelint-disable-line primer/colors
+.icon-info      { color: var(--color-icon-info) !important; } // stylelint-disable-line primer/colors
+.icon-danger    { color: var(--color-icon-danger) !important; } // stylelint-disable-line primer/colors
+.icon-success   { color: var(--color-icon-success) !important; } // stylelint-disable-line primer/colors
+.icon-warning   { color: var(--color-icon-warning) !important; } // stylelint-disable-line primer/colors
 
 // Border colors
 .border-primary         { border-color: var(--color-border-primary) !important; }
@@ -118,10 +118,10 @@
 .border-white-fade  { border-color: $border-white-fade !important; }
 
 .border-white-fade-15 { border-color: $border-white-fade !important; }
-.border-white-fade-30 { border-color: $white-fade-30 !important; }
-.border-white-fade-50 { border-color: $white-fade-50 !important; }
-.border-white-fade-70 { border-color: $white-fade-70 !important; }
-.border-white-fade-85 { border-color: $white-fade-85 !important; }
+.border-white-fade-30 { border-color: $white-fade-30 !important; } // stylelint-disable-line primer/borders
+.border-white-fade-50 { border-color: $white-fade-50 !important; } // stylelint-disable-line primer/borders
+.border-white-fade-70 { border-color: $white-fade-70 !important; } // stylelint-disable-line primer/borders
+.border-white-fade-85 { border-color: $white-fade-85 !important; } // stylelint-disable-line primer/borders
 
 // Link colors
 // Sets the links color to $text-gray and $text-blue on hover
