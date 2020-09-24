@@ -9,8 +9,9 @@
   font-size: 13px;
   list-style: none;
   background: var(--color-bg-canvas);
+  border: $border;
   border-radius: $border-radius;
-  box-shadow: inset 0 0 0 1px var(--color-border-primary), var(--color-shadow-medium);
+  box-shadow: var(--color-shadow-medium);
 }
 
 // One of the items that appears within an autocomplete group

@@ -9,15 +9,15 @@
 
 1. Run [`npm version <version>`](https://docs.npmjs.com/cli/version) to update the `version` field in both `package.json` and `package-lock.json`.
 
-1. Create a new PR for the `release-<version>` branch. Please use the following template for the PR description, linking to the relevant issues and/or pull requests for each change. The changelog gets generated automatically :
+1. Create a new PR for the `release-<version>` branch. Please use the following template for the PR description, linking to the relevant issues and/or pull requests for each change.
 
     ```md
     # Primer CSS [Major|Minor|Patch] Release
 
     Version: 📦 **`0.0.0`**
-    Approximate release date: 📆 **DD/MM/YY**
-    Changes: 🎉 [All merged PRs](https://github.com/primer/css/pulls?q=is%3Apr+is%3Amerged+base%3Arelease-0.0.0)
-    
+    Approximate release date: 📆 **Mon DD, YYYY**
+    Changes: 🎉 [All merged PRs](https://github.com/primer/css/pulls?q=is%3Apr+is%3Amerged+base%3Arelease-0.0.0) <!-- Update version at the end of the link. E.g. ...release-0.0.0 -> ...release-15.1.0 -->
+
     ---
 
     ### :boom: Breaking Change
@@ -43,8 +43,10 @@
     ### Ship checklist
 
     - [x] Update the `version` field in `package.json`
+    - [ ] Merge all PRs
     - [ ] Update `CHANGELOG.md`
-    - [ ] Test the release candidate version with `github/github`
+    - [ ] Test the release candidate version with `github/github` (optional)
+    - [ ] Get approval
     - [ ] Merge this PR and [create a new release](https://github.com/primer/css/releases/new)
     - [ ] Update `github/github`
     - [ ] Tell the world (Slack, Twitter, Team post)

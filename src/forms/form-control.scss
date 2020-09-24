@@ -46,9 +46,12 @@ label {
     background-color: #f3f4f6; // custom gray
   }
 
-  // Ensures inputs don't zoom on mobile but are body-font size on desktop
-  @include breakpoint(md) {
-    font-size: $body-font-size;
+  // Ensures inputs don't zoom on mobile iPhone but are body-font size on iPad
+  @supports (-webkit-touch-callout: none) {
+    font-size: $h4-size;
+    @include breakpoint(md) {
+      font-size: $body-font-size;
+    }
   }
 }
 

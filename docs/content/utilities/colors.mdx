@@ -9,15 +9,6 @@ status_issue: 'https://github.com/github/design-systems/issues/97'
 import {Box, BorderBox} from '@primer/components'
 import {palettes, allColors} from '../../src/color-variables'
 import {PaletteTable, PaletteTableFragment, PaletteHeading, PaletteCell, PaletteValue} from '../../src/color-system'
-const textColumns = [
-  {
-    title: 'Alias',
-    Cell: props => <PaletteCell.Alias {...props} style={{borderBottom: `1px solid ${props.value} !important`}} />
-  },
-  'variable',
-  {title: 'Value', Cell: PaletteCell.Background, Value: PaletteValue.Value}
-]
-```
 
 Use color utilities to apply color to the background of elements, text, and borders.
 
@@ -133,9 +124,23 @@ You can set the color inheritance on an element by using the `text-inherit` clas
 ### Text color utilities
 
 ```
-<PaletteTable columns={textColumns}>
+<PaletteTable columns={[
+  {
+    title: 'Alias',
+    Cell: props => <PaletteCell.Alias {...props} style={{borderBottom: `1px solid ${props.value} !important`}} />
+  },
+  'variable',
+  {title: 'Value', Cell: PaletteCell.Background, Value: PaletteValue.Value}
+]}>
   {palettes.map(({name, title, value}) => (
-    <PaletteTableFragment name={name} type="text" sparse prefix="color" columns={textColumns}>
+    <PaletteTableFragment name={name} type="text" sparse prefix="color" columns={[
+  {
+    title: 'Alias',
+    Cell: props => <PaletteCell.Alias {...props} style={{borderBottom: `1px solid ${props.value} !important`}} />
+  },
+  'variable',
+  {title: 'Value', Cell: PaletteCell.Background, Value: PaletteValue.Value}
+]}>
       <tr>
         <PaletteHeading indicatorColor={value} colSpan="4">
           {title}

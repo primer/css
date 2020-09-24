@@ -459,8 +459,9 @@ You can also use a `subnav-search-context` to display search help in a select me
     <a class="subnav-item" href="#url">Item 2</a>
     <a class="subnav-item" href="#url">Item 3</a>
   </nav>
-
-  <div class="float-left ml-3 subnav-search-context">
+</div>
+<div class="subnav">
+  <div class="float-left subnav-search-context">
     <button class="btn" type="button" name="button" aria-expanded="false" aria-haspopup="true">
       Filters
       <span class="dropdown-caret"></span>

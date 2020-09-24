@@ -104,7 +104,7 @@ When using a `24px` icon, add a `.v-align-bottom` class and increase the font-si
 
 ## With dismiss
 
-Add a JavaScript enabled (via Crema) dismiss (close) icon on the right of any flash message.
+Add a close icon on the right to allow users to dismiss a flash message.
 
 ```html live
 <div class="flash">

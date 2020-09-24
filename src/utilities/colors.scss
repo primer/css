@@ -77,6 +77,7 @@
 .bg-purple        { background-color: $bg-purple !important; }
 .bg-pink          { background-color: $bg-pink !important; }
 .bg-purple-light  { background-color: $bg-purple-light !important; }
+.bg-orange        { background-color: $bg-orange !important; }
 
 // Generate a foreground and background utility for every shade of every hue
 @each $hue, $shades in $hue-maps {

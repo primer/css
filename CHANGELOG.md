@@ -1,3 +1,53 @@
+## 15.2.0
+
+### :rocket: Enhancements
+- [#1145](https://github.com/primer/css/pull/1145) Make final position responsive
+- [#1148](https://github.com/primer/css/pull/1148) flex wrap reverse added
+- [#1157](https://github.com/primer/css/pull/1157) Overflow responsive variants
+- [#1156](https://github.com/primer/css/pull/1156) Add missing rounded-3 utility
+
+### :memo: Documentation
+- [#1160](https://github.com/primer/css/pull/1160) Remove custom emoji from SelectMenu docs
+- [#1165](https://github.com/primer/css/pull/1165) Replaced old octicons in examples
+- [#1146](https://github.com/primer/css/pull/1146) Corrected a few typos
+- [#1142](https://github.com/primer/css/pull/1142) Fix typo in Box documentation
+- [#1125](https://github.com/primer/css/pull/1125) Remove reference to Crema
+- [#1155](https://github.com/primer/css/pull/1155) Place search subnav example on new line
+
+### :nail_care: Polish
+- [#1147](https://github.com/primer/css/pull/1147) Increase input font-size on iOS
+- [#1152](https://github.com/primer/css/pull/1152) Remove .autocomplete-results inset border that is occluded by items
+
+### Committers
+- [@MauricioHernanCabrera](https://github.com/MauricioHernanCabrera)
+- [@ashygee](https://github.com/ashygee)
+- [@esdraspavon](https://github.com/esdraspavon)
+- [@neildaniels](https://github.com/neildaniels)
+- [@nicksloan](https://github.com/nicksloan)
+
+
+## 15.1.0
+
+### :rocket: Enhancements
+- [#1062](https://github.com/primer/css/pull/1062) Make tabnav responsive
+- [#1128](https://github.com/primer/css/pull/1128) Add support for table border
+- [#1132](https://github.com/primer/css/pull/1132) Add .bg-orange to the list of colors
+
+### :memo: Documentation
+- [#1122](https://github.com/primer/css/pull/1122) fix comment typo
+
+### :nail_care: Polish
+- [#1121](https://github.com/primer/css/pull/1121) Update layout when the Counter is empty
+- [#1126](https://github.com/primer/css/pull/1126) Increase border contrast for Label--yellow
+
+### Committers
+- [@colinkeany](https://github.com/colinkeany)
+- [@garman](https://github.com/garman)
+- [@nikolasveneti](https://github.com/nikolasveneti)
+- [@nuthinking](https://github.com/nuthinking)
+- [@simurai](https://github.com/simurai)
+
+
 ## 15.0.0
 
 ### :rocket: Enhancements

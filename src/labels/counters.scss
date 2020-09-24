@@ -16,7 +16,7 @@
   border-radius: 2em;
 
   &:empty {
-    visibility: hidden;
+    display: none;
   }
 
   .octicon {
