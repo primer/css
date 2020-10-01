@@ -106,6 +106,7 @@
 
 // Primary button
 
+.btn-blue, // TODO: deprecate
 .btn-primary {
   color: var(--color-text-inverse);
   background-color: var(--color-btn-primary-bg);
@@ -212,7 +213,6 @@
 
 // Outline button
 
-.btn-blue, // TODO: deprecate
 .btn-outline {
   @include btn-inverse-on-hover("outline");
 }
