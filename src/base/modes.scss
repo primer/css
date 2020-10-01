@@ -2,12 +2,11 @@
 
 @import "@primer/primitives/dist/scss/colors/_light.scss";
 @import "@primer/primitives/dist/scss/colors/_dark.scss";
-// @import "../../primitives/dist/scss/colors/_light.scss";
-// @import "../../primitives/dist/scss/colors/_dark.scss";
 
-// @include primer-colors-light(":root");
-@include primer-colors-dark(":root");
-@include primer-colors-light("[data-color-mode='light']");
+// Outputs the CSS variables
+// Use :root (html element) to define a default
+
+@include primer-colors-light(":root, [data-color-mode='light']");
 @include primer-colors-dark("[data-color-mode='dark']");
 
 // Color mode boundaries
