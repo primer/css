@@ -21,7 +21,7 @@ body {
 }
 
 a {
-  color: var(--color-text-link-primary); // stylelint-disable-line primer/colors
+  color: var(--color-text-link-primary);
   text-decoration: none;
 
   &:hover {
