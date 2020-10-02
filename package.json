@@ -77,7 +77,7 @@
     "style-loader": "^0.18.2",
     "styled-components": "4.1.2",
     "stylelint": "^10.1.0",
-    "stylelint-config-primer": "^9.1.0",
+    "stylelint-config-primer": "^9.2.1",
     "stylelint-disable": "^0.1.5",
     "stylelint-only": "^1.0.1",
     "stylelint-scss": "^3.12.0",
