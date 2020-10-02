@@ -154,7 +154,7 @@
 // Mixin: btn-inverse-on-hover
 
 @mixin btn-inverse-on-hover($type) {
-  color: var(--color-btn-#{$type}-text); // stylelint-disable-line primer/no-undefined-vars
+  color: var(--color-btn-#{$type}-text);
   transition: none;
 
   &:hover,
