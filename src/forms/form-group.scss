@@ -239,15 +239,14 @@
 
     .error {
       background-color: var(--color-bg-danger);
-      border-color: var(--color-border-danger);
+      border-color: var(--color-scale-red-3); // stylelint-disable-line primer/borders
 
       &::after {
-        // stylelint-disable-next-line primer/borders
-        border-bottom-color: var(--color-bg-danger);
+        border-bottom-color: var(--color-bg-danger); // stylelint-disable-line primer/borders
       }
 
       &::before {
-        border-bottom-color: var(--color-border-danger);
+        border-bottom-color: var(--color-scale-red-3); // stylelint-disable-line primer/borders
       }
     }
   }

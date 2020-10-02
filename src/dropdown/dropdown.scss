@@ -19,7 +19,6 @@
 // Requires a positioning class (e.g., `.dropdown-menu-w`) to determine which
 // way the menu should render from the element triggering it.
 
-.dropdown-menu-dark, // TODO: Deprecate
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -258,5 +257,73 @@
   &::after {
     top: -14px;
     left: 10px;
+  }
+}
+
+// Dark dropdowns
+// TODO: Deprecate
+
+.dropdown-menu-dark {
+  color: $text-white;
+  // stylelint-disable-next-line primer/colors
+  background: $gray-800;
+  border-color: $border-gray-darker;
+  box-shadow: $box-shadow-large;
+
+  &::before {
+    border-bottom-color: $border-gray-darker;
+  }
+
+  &::after {
+    // stylelint-disable-next-line primer/borders
+    border-bottom-color: $gray-800;
+  }
+
+  .dropdown-header {
+    // stylelint-disable-next-line primer/colors
+    color: $gray-300;
+  }
+
+  .dropdown-divider {
+    border-top-color: $border-gray-darker;
+  }
+
+  .dropdown-item {
+    color: inherit;
+  }
+
+  // Directional classes
+
+  &.dropdown-menu-w {
+    &::before {
+      border-color: transparent transparent transparent $border-gray-darker;
+    }
+
+    &::after {
+      // stylelint-disable-next-line primer/borders
+      border-color: transparent transparent transparent $gray-800;
+    }
+  }
+
+  &.dropdown-menu-e {
+    &::before {
+      border-color: transparent $border-gray-darker transparent transparent;
+    }
+
+    &::after {
+      // stylelint-disable-next-line primer/borders
+      border-color: transparent $gray-800 transparent transparent;
+    }
+  }
+
+  &.dropdown-menu-ne {
+    &::before {
+      border-color: $border-gray-darker transparent transparent transparent;
+    }
+
+    &::after {
+      // stylelint-disable-next-line primer/borders
+      border-color: $gray-800 transparent transparent transparent;
+    }
   }
 }

@@ -15,7 +15,6 @@ label {
   font-weight: $font-weight-bold;
 }
 
-.input-dark, // TODO: deprecate
 .form-control,
 .form-select {
   // stylelint-disable-next-line primer/spacing
@@ -69,9 +68,32 @@ textarea.form-control {
   &:focus { background-color: var(--color-bg-primary); }
 }
 
+// Inputs to be used against dark backgrounds.
+// TODO: Deprecate
+.input-dark {
+  color: $text-white;
+  // stylelint-disable-next-line primer/colors
+  background-color: $white-fade-15;
+  border-color: transparent;
+  box-shadow: none;
+
+  &::placeholder {
+    color: inherit;
+    opacity: 0.6; // inceases contrast ratio to 4.52
+  }
+
+  &.focus,
+  &:focus {
+    // stylelint-disable-next-line primer/borders
+    border-color: $black-fade-30;
+    // stylelint-disable-next-line primer/box-shadow
+    box-shadow: var(--color-input-shadow-focus);
+  }
+}
+
 // Custom styling for HTML5 validation bubbles (WebKit only)
 ::placeholder {
-  color: var(--color-text-tertiary);
+  color: var(--color-text-placeholder);
   opacity: 1; // override opacity in normalize.css
 }
 
