@@ -154,13 +154,13 @@
 // Mixin: btn-inverse-on-hover
 
 @mixin btn-inverse-on-hover($type) {
-  color: var(--color-btn-#{$type}-text);
+  color: var(--color-btn-#{$type}-text); // stylelint-disable-line primer/no-undefined-vars
   transition: none;
 
   &:hover,
   [open] > & {
     color: var(--color-text-inverse);
-    background-color: var(--color-btn-#{$type}-bg-hover);
+    background-color: var(--color-btn-#{$type}-bg-hover); // stylelint-disable-line primer/no-undefined-vars
     border-color: var(--color-btn-inverse-on-hover-border);
     box-shadow: var(--color-btn-inverse-on-hover-shadow), var(--color-btn-inverse-on-hover-shadow-inset);
 
@@ -177,31 +177,31 @@
   &.selected,
   &[aria-selected=true] {
     color: var(--color-text-inverse);
-    background-color: var(--color-btn-#{$type}-bg-active);
+    background-color: var(--color-btn-#{$type}-bg-active); // stylelint-disable-line primer/no-undefined-vars
     border-color: var(--color-btn-inverse-on-hover-border);
-    box-shadow: var(--color-btn-#{$type}-shadow);
+    box-shadow: var(--color-btn-#{$type}-shadow); // stylelint-disable-line primer/no-undefined-vars
   }
 
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
-    color: var(--color-btn-#{$type}-text-disabled);
+    color: var(--color-btn-#{$type}-text-disabled); // stylelint-disable-line primer/no-undefined-vars
     background-color: var(--color-bg-tertiary);
     border-color: var(--color-btn-border);
     box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
 
     .Counter {
-      background-color: var(--color-btn-#{$type}-counter-bg-disabled);
+      background-color: var(--color-btn-#{$type}-counter-bg-disabled); // stylelint-disable-line primer/no-undefined-vars
     }
   }
 
   &:focus {
-    box-shadow: var(--color-btn-#{$type}-shadow-focus);
+    box-shadow: var(--color-btn-#{$type}-shadow-focus); // stylelint-disable-line primer/no-undefined-vars
   }
 
   .Counter {
     color: inherit;
-    background-color: var(--color-btn-#{$type}-counter-bg);
+    background-color: var(--color-btn-#{$type}-counter-bg); // stylelint-disable-line primer/no-undefined-vars
   }
 }
 
