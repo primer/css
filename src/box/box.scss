@@ -268,7 +268,7 @@
 // Box row highlight themes
 
 .Box-row--yellow {
-  background-color: var(--color-scale-yellow-1);
+  background-color: var(--color-scale-yellow-1); // stylelint-disable-line primer/colors
 }
 
 .Box-row--blue {
