@@ -4,6 +4,7 @@
   line-height: $lh-condensed-ultra;
   vertical-align: middle;
   border-radius: $border-radius;
+  flex-shrink: 0;
 }
 
 .avatar-link {
