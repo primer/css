@@ -149,7 +149,7 @@
 
     // Makes dragging row background gray
     &.sortable-ghost {
-      background-color: var(--color-bg-primary);
+      background-color: var(--color-bg-secondary);
 
       // Hides contents of row while dragging so row looks solid gray
       .Box-row--drag-hide {
@@ -161,7 +161,7 @@
 
 .Box-row--focus-gray {
   &.navigation-focus {
-    background-color: var(--color-bg-primary);
+    background-color: var(--color-bg-secondary);
   }
 }
 
@@ -173,7 +173,7 @@
 
 .Box-row--hover-gray {
   &:hover {
-    background-color: var(--color-bg-primary);
+    background-color: var(--color-bg-secondary);
   }
 }
 
