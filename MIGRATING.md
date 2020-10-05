@@ -1,25 +1,114 @@
 # 16.0.0
-In `v16` we're moving all colors to [primer/primitives](https://github.com/primer/primitives). This lets us use the same Primer colors across different libraries. Primer CSS also switches from using SASS variables for colors to CSS variables. Bellow a migration guide for all the variables:
+In `v16` two major changes happend:
 
-### Color scale
+1. All colors got moved to [primer/primitives](https://github.com/primer/primitives). This lets us use the same Primer colors across different libraries.
+2. Primer CSS also switched from using SASS variables for colors to CSS variables.
+3. By using CSS variables, components, utilties can now switch between different color modes at runtime.
+
+Bellow a migration guide when updating Primer CSS to `16.0.0`:
+
+## Components
+
+No changes should be needed. Components get updated without automatically without making changes.
+
+## Utility classes
+
+### Text
+
+[`v15`](https://primer.style/css/utilities/colors#text-color-utilities) | `v16`
+--- | ---
+`.text-gray-dark`         | `.text-primary`
+`.text-gray`              | `.text-secondary`
+`.text-gray-light`        | `.text-tertiary`
+`.text-blue`              | `.text-link-primary`
+`.text-green`             | `.text-success`
+`.text-yellow`            | `.text-warning`
+`.text-red`               | `.text-danger`
+`.text-white`             | `.text-inverse`
+`.link-gray-dark`         | `.text-link-secondary`
+`.link-gray`              | `.text-link-tertiary`
+n/a                       | `.text-placeholder`
+n/a                       | `.text-disabled`
+`.text-black`             | n/a
+`.text-orange`            | n/a
+`.text-orange-light`      | n/a
+`.text-purple`            | n/a
+`.text-pink`              | n/a
+
+### Icon
 
 `v15` | `v16`
 --- | ---
-`$black` | `var(--color-scale-black)`
-`$white` | `var(--color-scale-white)`
-`$gray-000` | `var(--color-scale-gray-0)`
-`$gray-100` | `var(--color-scale-gray-1)`
-... | ...
-`$pink-800` | `var(--color-scale-pink-8)`
-`$pink-900` | `var(--color-scale-pink-9)`
+n/a | `.icon-primary`
+n/a | `.icon-secondary`
+n/a | `.icon-tertiary`
+n/a | `.icon-info`
+n/a | `.icon-success`
+n/a | `.icon-warning`
+n/a | `.icon-danger`
 
-### Functional colors
+### Border
 
-For variables that don't have a replacement, for now you can use a CSS variable from the color scale. Eventually we would like to remove these though.
+[`v15`](https://primer.style/css/utilities/borders#border-color-utilities) | `v16`
+--- | ---
+`.border-gray`          | `.border-primary`
+`.border-gray-light`    | `.border-secondary`
+`.border-gray-dark`     | `.border-tertiary`
+`.border-blue`          | `.border-info`
+`.border-green`         | `.border-success`
+`.border-yellow`        | `.border-warning`
+`.border-red`           | `.border-danger`
+`.border-white`         | `.border-inverse`
+`.border-gray-darker`   | n/a
+`.border-blue-light`    | n/a
+`.border-red-light`     | n/a
+`.border-purple`        | n/a
+`.border-black-fade`    | n/a
+`.border-white-fade`    | n/a
+`.border-white-fade-15` | n/a
+`.border-white-fade-30` | n/a
+`.border-white-fade-50` | n/a
+`.border-white-fade-70` | n/a
+`.border-white-fade-85` | n/a
+
+### Background
+
+[`v15`](https://primer.style/css/utilities/colors#background-utilities) | `v16`
+--- | ---
+`.bg-white`        | `.bg-primary`
+`.bg-gray-light`   | `.bg-tertiary`
+`.bg-gray`         | `.bg-secondary`
+`.bg-gray-dark`    | `.bg-canvas-inverse`
+`.bg-blue-light`   | `.bg-info`
+`.bg-blue`         | `.bg-info-inverse`
+`.bg-green-light`  | `.bg-success`
+`.bg-green`        | `.bg-success-inverse`
+`.bg-yellow-light` | `.bg-warning`
+`.bg-yellow`       | `.bg-warning-inverse`
+`.bg-red-light`    | `.bg-danger`
+`.bg-red`          | `.bg-danger-inverse`
+n/a                | `.bg-canvas`
+`.bg-purple-light` | n/a
+`.bg-purple`       | n/a
+`.bg-yellow-dark`  | n/a
+`.bg-orange`       | n/a
+`.bg-pink`         | n/a
+
+### Shadow
 
 `v15` | `v16`
 --- | ---
-**Text** |
+`.box-shadow`               | `.shadow-small`
+`.box-shadow-medium`        | `.shadow-medium`
+`.box-shadow-large`         | `.shadow-large`
+`.box-shadow-extra-large`   | `.shadow-extra-large`
+
+## Variables
+
+### Text
+
+`v15` | `v16`
+--- | ---
 `$text-gray-dark` (`$gray-900`)         | `var(--color-text-primary)`
 `$text-gray` (`$gray-600`)              | `var(--color-text-secondary)`
 `$text-gray-light` (`$gray-500`)        | `var(--color-text-tertiary)`
@@ -37,7 +126,11 @@ n/a                                     | `var(--color-text-link-tertiary)` (`$g
 `$text-orange-light` (`$orange-600`)    | n/a
 `$text-purple` (`$purple-500`)          | n/a
 `$text-pink` (`$pink-500`)              | n/a
-**Icon** |
+
+### Icon
+
+`v15` | `v16`
+--- | ---
 n/a                                     | `var(--color-icon-primary)` (`$gray-900`)
 n/a                                     | `var(--color-icon-secondary)` (`$gray-600`)
 n/a                                     | `var(--color-icon-tertiary)` (`$gray-400`)
@@ -45,7 +138,11 @@ n/a                                     | `var(--color-icon-info)` (`$blue-500`)
 n/a                                     | `var(--color-icon-danger)` (`$red-500`)
 n/a                                     | `var(--color-icon-success)` (`$green-600`)
 n/a                                     | `var(--color-icon-warning)` (`$yellow-800`)
-**Border** |
+
+### Border
+
+`v15` | `v16`
+--- | ---
 `$border-color` (`$gray-200`)                   | `var(--color-border-primary)`
 `$border-gray` (`$gray-200`)                    | `var(--color-border-primary)`
 `$border-gray-light` (`lighten($gray-200, 3%)`) | `var(--color-border-primary-light)`
@@ -62,8 +159,12 @@ n/a                                     | `var(--color-icon-warning)` (`$yellow-
 `$border-black-fade` (`$black-fade-15`) | n/a
 `$border-white-fade` (`$white-fade-15`) | n/a
 `$border-green-light` (`desaturate($green-300, 40%)`) | n/a
-**Background** |
-`$bg-white`        (`$white`)       | `var(--color-bg-primary)` or `var(--color-bg-canvas-inverse)`
+
+### Background
+
+`v15` | `v16`
+--- | ---
+`$bg-white`        (`$white`)       | `var(--color-bg-primary)`
 `$bg-gray`         (`$gray-100`)    | `var(--color-bg-secondary)`
 `$bg-gray-light`   (`$gray-000`)    | `var(--color-bg-tertiary)`
 `$bg-gray-dark`    (`$gray-900`)    | `var(--color-bg-canvas-inverse)`
@@ -83,7 +184,11 @@ n/a                                 | `var(--color-bg-canvas)` (`$white`)
 `$bg-purple-light` (`$purple-000`)  | n/a
 `$bg-pink` (`$pink-500`)            | n/a
 `$bg-yellow-dark` (`$yellow-700`)   | n/a
-**Box Shadow** |
+
+### Shadow
+
+`v15` | `v16`
+--- | ---
 `$box-shadow`               | `var(--color-shadow-small)`
 `$box-shadow-medium`        | `var(--color-shadow-medium)`
 `$box-shadow-large`         | `var(--color-shadow-large)`
@@ -91,6 +196,34 @@ n/a                                 | `var(--color-bg-canvas)` (`$white`)
 `$box-shadow-highlight`     | `var(--color-shadow-highlight)`
 `$box-shadow-inset`         | `var(--color-shadow-inset)`
 `$box-shadow-focus`         | `var(--color-shadow-focus)`
+
+## Color System
+
+`v15` | `v16`
+--- | ---
+`$black` | `var(--color-scale-black)`
+`$white` | `var(--color-scale-white)`
+`$gray-000` | `var(--color-scale-gray-0)`
+`$gray-100` | `var(--color-scale-gray-1)`
+`$gray-200` | `var(--color-scale-gray-2)`
+... | ...
+`$pink-700` | `var(--color-scale-pink-7)`
+`$pink-800` | `var(--color-scale-pink-8)`
+`$pink-900` | `var(--color-scale-pink-9)`
+
+## Not available
+
+If something is not available (n/a), there are a few options to consdier:
+
+- If it makes sense, try using what is available.
+- If not, you can create the following:
+  1. Create a new "app" variable by the color system
+  2. Use the new "app" variable with a custom class
+
+---
+
+Happy migrating!
+
 
 # 12.0.0
 The v12 release marks a major transition from small, single-purpose npm packages (`primer-core`, `primer-marketing`, `primer-utilities`, etc.) to a single package — `@primer/css` — which contains all of the SCSS source files in subdirectories. Here's what you need to do to migrate different parts of your app:
