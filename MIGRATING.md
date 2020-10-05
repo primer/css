@@ -27,8 +27,6 @@ No changes should be needed. Components get updated without automatically withou
 `.text-white`             | `.text-inverse`
 `.link-gray-dark`         | `.text-link-secondary`
 `.link-gray`              | `.text-link-tertiary`
-n/a                       | `.text-placeholder`
-n/a                       | `.text-disabled`
 `.text-black`             | n/a
 `.text-orange`            | n/a
 `.text-orange-light`      | n/a
@@ -117,8 +115,8 @@ n/a                | `.bg-canvas`
 `$text-green` (`$green-600`)            | `var(--color-text-success)`
 `$text-red` (`$red-600`)                | `var(--color-text-danger)`
 `$text-yellow` (`$yellow-800`)          | `var(--color-text-warning)`
-n/a                                     | `var(--color-text-placeholder)` (`$gray-300`)
-n/a                                     | `var(--color-text-disabled)` (`$gray-300`)
+n/a                                     | `var(--color-text-placeholder)` (`$gray-500`)
+n/a                                     | `var(--color-text-disabled)` (`$gray-500`)
 n/a                                     | `var(--color-text-link-secondary)` (`$gray-900`)
 n/a                                     | `var(--color-text-link-tertiary)` (`$gray-600`)
 `$text-black` (`$black`)                | n/a
