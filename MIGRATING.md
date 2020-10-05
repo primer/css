@@ -115,10 +115,10 @@ n/a                | `.bg-canvas`
 `$text-green` (`$green-600`)            | `var(--color-text-success)`
 `$text-red` (`$red-600`)                | `var(--color-text-danger)`
 `$text-yellow` (`$yellow-800`)          | `var(--color-text-warning)`
-n/a                                     | `var(--color-text-placeholder)` (`$gray-500`)
-n/a                                     | `var(--color-text-disabled)` (`$gray-500`)
-n/a                                     | `var(--color-text-link-secondary)` (`$gray-900`)
-n/a                                     | `var(--color-text-link-tertiary)` (`$gray-600`)
+n/a                                     | `var(--color-text-placeholder)`
+n/a                                     | `var(--color-text-disabled)`
+n/a                                     | `var(--color-text-link-secondary)`
+n/a                                     | `var(--color-text-link-tertiary)`
 `$text-black` (`$black`)                | n/a
 `$text-orange` (`$orange-900`)          | n/a
 `$text-orange-light` (`$orange-600`)    | n/a
@@ -129,13 +129,13 @@ n/a                                     | `var(--color-text-link-tertiary)` (`$g
 
 `v15` | `v16`
 --- | ---
-n/a                                     | `var(--color-icon-primary)` (`$gray-900`)
-n/a                                     | `var(--color-icon-secondary)` (`$gray-600`)
-n/a                                     | `var(--color-icon-tertiary)` (`$gray-400`)
-n/a                                     | `var(--color-icon-info)` (`$blue-500`)
-n/a                                     | `var(--color-icon-danger)` (`$red-500`)
-n/a                                     | `var(--color-icon-success)` (`$green-600`)
-n/a                                     | `var(--color-icon-warning)` (`$yellow-800`)
+n/a                                     | `var(--color-icon-primary)`
+n/a                                     | `var(--color-icon-secondary)`
+n/a                                     | `var(--color-icon-tertiary)`
+n/a                                     | `var(--color-icon-info)`
+n/a                                     | `var(--color-icon-danger)`
+n/a                                     | `var(--color-icon-success)`
+n/a                                     | `var(--color-icon-warning)`
 
 ### Border
 
@@ -174,7 +174,7 @@ n/a                                     | `var(--color-icon-warning)` (`$yellow-
 `$bg-blue-light`   (`$blue-000`)    | `var(--color-bg-info)`
 `$bg-yellow`       (`$yellow-500`)  | `var(--color-bg-warning-inverse)`
 `$bg-yellow-light` (`$yellow-200`)  | `var(--color-bg-warning)`
-n/a                                 | `var(--color-bg-canvas)` (`$white`)
+n/a                                 | `var(--color-bg-canvas)`
 `$bg-black` (`$black`)              | n/a
 `$bg-black-fade` (`$black-fade-50`) | n/a
 `$bg-orange` (`$orange-700`)        | n/a
