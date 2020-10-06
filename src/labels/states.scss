@@ -22,22 +22,22 @@
   text-align: center;
   white-space: nowrap;
   // stylelint-disable-next-line primer/colors
-  background-color: var(--color-scale-gray-5);
+  background-color: var(--color-auto-gray-5);
   border: $border-width $border-style transparent; // Support Firfox custom colors
   // stylelint-disable-next-line primer/borders
   border-radius: 2em;
 }
 
 .State--green {
-  background-color: var(--color-scale-green-5); // stylelint-disable-line primer/colors
+  background-color: var(--color-auto-green-5); // stylelint-disable-line primer/colors
 }
 
 .State--red {
-  background-color: var(--color-scale-red-5); // stylelint-disable-line primer/colors
+  background-color: var(--color-auto-red-5); // stylelint-disable-line primer/colors
 }
 
 .State--purple {
-  background-color: var(--color-scale-purple-5); // stylelint-disable-line primer/colors
+  background-color: var(--color-auto-purple-5); // stylelint-disable-line primer/colors
 }
 
 // Small

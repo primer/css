@@ -191,7 +191,7 @@
   &.successed {
     .success {
       // stylelint-disable-next-line primer/colors
-      color: var(--color-scale-green-9);
+      color: var(--color-auto-green-9);
       background-color: var(--color-bg-success);
       border-color: var(--color-border-success);
 
@@ -209,7 +209,7 @@
   &.warn {
     .form-control {
       // stylelint-disable-next-line primer/borders
-      border-color: var(--color-scale-yellow-6);
+      border-color: var(--color-auto-yellow-6);
     }
 
     .warning {
@@ -230,7 +230,7 @@
   &.errored {
     .form-control {
       // stylelint-disable-next-line primer/borders
-      border-color: var(--color-scale-red-6);
+      border-color: var(--color-auto-red-6);
     }
 
     label {
@@ -239,14 +239,14 @@
 
     .error {
       background-color: var(--color-bg-danger);
-      border-color: var(--color-scale-red-3); // stylelint-disable-line primer/borders
+      border-color: var(--color-auto-red-3); // stylelint-disable-line primer/borders
 
       &::after {
         border-bottom-color: var(--color-bg-danger); // stylelint-disable-line primer/borders
       }
 
       &::before {
-        border-bottom-color: var(--color-scale-red-3); // stylelint-disable-line primer/borders
+        border-bottom-color: var(--color-auto-red-3); // stylelint-disable-line primer/borders
       }
     }
   }

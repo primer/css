@@ -46,7 +46,7 @@
     color: var(--color-text-inverse);
     background-color: var(--color-bg-info-inverse);
     // stylelint-disable-next-line primer/borders
-    border-color: var(--color-scale-blue-6);
+    border-color: var(--color-auto-blue-6);
   }
 
   &:first-child {
@@ -90,7 +90,7 @@
 .subnav-search-context {
   .btn {
     // stylelint-disable-next-line primer/colors
-    color: var(--color-scale-gray-7);
+    color: var(--color-auto-gray-7);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 
