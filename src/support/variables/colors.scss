@@ -13,7 +13,7 @@ $border-black-fade:  $black-fade-15 !default;
 $border-white-fade:  $white-fade-15 !default;
 $border-gray-dark:   $gray-300 !default;
 $border-gray-darker: $gray-700 !default;
-$border-gray-light:  var(--color-border-primary-light) !default; // lighten($gray-200, 3%)
+$border-gray-light:  var(--color-border-secondary) !default; // lighten($gray-200, 3%)
 $border-gray:        $gray-200 !default;
 $border-blue:        $blue-500 !default;
 $border-blue-light:  $blue-200 !default;

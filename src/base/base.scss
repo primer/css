@@ -45,7 +45,7 @@ hr,
   overflow: hidden;
   background: transparent;
   border: 0;
-  border-bottom: $border-width $border-style var(--color-border-secondary);
+  border-bottom: $border-width $border-style var(--color-border-tertiary);
   @include clearfix();
 }
 

@@ -38,7 +38,7 @@
   &.navigation-focus {
     color: var(--color-text-inverse);
     text-decoration: none;
-    background-color: var(--color-bg-selected);
+    background-color: var(--color-state-selected-primary-bg);
 
     // Inherit color on all child elements to ensure enough contrast
     * {

@@ -20,7 +20,7 @@
     display: block;
     padding: $spacer-1 $spacer-2;
     font-weight: $font-weight-semibold;
-    border-bottom: $border-width $border-style var(--color-border-primary-light);
+    border-bottom: $border-width $border-style var(--color-border-secondary);
 
     small {
       font-weight: $font-weight-normal;
@@ -43,7 +43,7 @@
     &.navigation-focus {
       color: var(--color-text-inverse);
       text-decoration: none;
-      background: var(--color-bg-selected);
+      background: var(--color-state-selected-primary-bg);
 
       small {
         color: var(--color-text-inverse);

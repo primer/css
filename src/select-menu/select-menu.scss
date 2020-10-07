@@ -103,7 +103,7 @@ $SelectMenu-max-height: 480px !default;
   padding: $spacer-3;
   flex: none; // fixes header from getting squeezed in Safari iOS
   align-items: center;
-  border-bottom: $border-width $border-style var(--color-border-primary-light);
+  border-bottom: $border-width $border-style var(--color-border-secondary);
 
   @include breakpoint(sm) {
     // stylelint-disable-next-line primer/spacing
@@ -144,7 +144,7 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-filter {
   padding: $spacer-3;
   margin: 0;
-  border-bottom: $border-width $border-style var(--color-border-primary-light);
+  border-bottom: $border-width $border-style var(--color-border-secondary);
 
   @include breakpoint(sm) {
     padding: $spacer-2;
@@ -192,7 +192,7 @@ $SelectMenu-max-height: 480px !default;
   cursor: pointer;
   background-color: var(--color-bg-primary);
   border: 0;
-  border-bottom: $border-width $border-style var(--color-border-primary-light);
+  border-bottom: $border-width $border-style var(--color-border-secondary);
 
   @include breakpoint(sm) {
     // stylelint-disable-next-line primer/spacing
@@ -234,7 +234,7 @@ $SelectMenu-max-height: 480px !default;
   overflow-x: auto;
   overflow-y: hidden;
   // stylelint-disable-next-line primer/box-shadow
-  box-shadow: inset 0 -1px 0 var(--color-border-primary-light);
+  box-shadow: inset 0 -1px 0 var(--color-border-secondary);
   -webkit-overflow-scrolling: touch;
 
   // Hide scrollbar so it doesn't cover the text
@@ -257,7 +257,7 @@ $SelectMenu-max-height: 480px !default;
   background-color: transparent;
   border: 0;
   // stylelint-disable-next-line primer/box-shadow
-  box-shadow: inset 0 -1px 0 var(--color-border-primary-light);
+  box-shadow: inset 0 -1px 0 var(--color-border-secondary);
 
   @include breakpoint(sm) {
     flex: none;
@@ -274,10 +274,10 @@ $SelectMenu-max-height: 480px !default;
     cursor: default;
     background-color: var(--color-bg-primary);
     // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 1px var(--color-border-primary-light);
+    box-shadow: 0 0 0 1px var(--color-border-secondary);
 
     @include breakpoint(sm) {
-      border-color: var(--color-border-primary-light);
+      border-color: var(--color-border-secondary);
       box-shadow: none;
     }
   }
@@ -292,7 +292,7 @@ $SelectMenu-max-height: 480px !default;
   padding: 7px $spacer-3;
   text-align: center;
   background-color: var(--color-bg-primary);
-  border-bottom: $border-width $border-style var(--color-border-primary-light);
+  border-bottom: $border-width $border-style var(--color-border-secondary);
 }
 
 // Blankslate and Loading
@@ -317,11 +317,11 @@ $SelectMenu-max-height: 480px !default;
   font-weight: $font-weight-semibold;
   color: var(--color-text-tertiary);
   background-color: var(--color-bg-secondary);
-  border-bottom: $border-width $border-style var(--color-border-primary-light);
+  border-bottom: $border-width $border-style var(--color-border-secondary);
 
   // Borderless
   .SelectMenu-list--borderless & {
-    border-top: $border-width $border-style var(--color-border-primary-light);
+    border-top: $border-width $border-style var(--color-border-secondary);
 
     &:empty {
       padding: 0;
@@ -340,7 +340,7 @@ $SelectMenu-max-height: 480px !default;
   font-size: $font-size-small;
   color: var(--color-text-tertiary);
   text-align: center;
-  border-top: $border-width $border-style var(--color-border-primary-light);
+  border-top: $border-width $border-style var(--color-border-secondary);
 
   @include breakpoint(sm) {
     // stylelint-disable-next-line primer/spacing

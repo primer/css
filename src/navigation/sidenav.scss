@@ -16,7 +16,7 @@
   text-align: left;
   background-color: transparent;
   border: 0;
-  border-top: $border-width $border-style var(--color-border-primary-light);
+  border-top: $border-width $border-style var(--color-border-secondary);
 
   &:first-child {
     border-top: 0;
