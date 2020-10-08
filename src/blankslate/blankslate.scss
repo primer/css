@@ -9,7 +9,7 @@
     padding: 2px 5px 3px;
     font-size: $h5-size;
     background: var(--color-bg-canvas);
-    border: $border-width $border-style var(--color-auto-gray-0);
+    border: $border-width $border-style var(--color-auto-gray-0); // stylelint-disable-line primer/borders
     border-radius: $border-radius;
   }
 
