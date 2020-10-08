@@ -5,7 +5,6 @@
   position: relative;
   // stylelint-disable-next-line primer/spacing
   padding: 20px $spacer-3;
-  color: var(--color-text-primary);
   border-style: $border-style;
   border-width: $border-width;
   border-radius: $border-radius;
@@ -65,6 +64,7 @@
 //
 
 .flash {
+  color: var(--color-alert-text);
   background-color: var(--color-alert-bg);
   border-color: var(--color-alert-border);
 
@@ -75,6 +75,7 @@
 }
 
 .flash-warn {
+  color: var(--color-alert-warn-text);
   background-color: var(--color-alert-warn-bg);
   border-color: var(--color-alert-warn-border);
 
@@ -85,6 +86,7 @@
 }
 
 .flash-error {
+  color: var(--color-alert-error-text);
   background-color: var(--color-alert-error-bg);
   border-color: var(--color-alert-error-border);
 
@@ -95,6 +97,7 @@
 }
 
 .flash-success {
+  color: var(--color-alert-success-text);
   background-color: var(--color-alert-success-bg);
   border-color: var(--color-alert-success-border);
 
