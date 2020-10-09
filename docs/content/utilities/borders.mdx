@@ -59,38 +59,19 @@ Remove borders from all sides or a single side with `.border-0`, `.border-top-0`
 
 ## Border colors
 
-Override default border colors with blue, green, red, purple, yellow, and gray border color utilities.
+Override default border colors with the following utilities.
 
 ```html live
-<div class="border border-blue mb-2">
-  .border-blue
-</div>
-<div class="border border-blue-light mb-2">
-  .border-blue-light
-</div>
-<div class="border border-green mb-2">
-  .border-green
-</div>
-<div class="border border-green-light mb-2">
-  .border-green-light
-</div>
-<div class="border border-red mb-2">
-  .border-red
-</div>
-<div class="border border-red-light mb-2">
-  .border-red-light
-</div>
-<div class="border border-purple mb-2">
-  .border-purple
-</div>
-<div class="border border-yellow mb-2">
-  .border-yellow
-</div>
-<div class="border border-gray-light mb-2">
-  .border-gray-light
-</div>
-<div class="border border-gray-dark mb-2">
-  .border-gray-dark
+<div class="border border-primary mb-2">.border-primary</div>
+<div class="border border-secondary mb-2">.border-secondary</div>
+<div class="border border-tertiary mb-2">.border-tertiary</div>
+<div class="border border-info mb-2">.border-info</div>
+<div class="border border-success mb-2">.border-success</div>
+<div class="border border-warning mb-2">.border-warning</div>
+<div class="border border-danger mb-2">.border-danger</div>
+
+<div class="bg-canvas-inverse text-inverse p-3">
+  <div class="border border-inverse">.border-inverse</div>
 </div>
 ```
 
@@ -99,47 +80,16 @@ Override default border colors with blue, green, red, purple, yellow, and gray b
 Use `border-black-fade` to add an rgba black border with an alpha transparency of `0.15`. This is useful when you want a border that tints the background color. The shade of black we use matches the hue of the GitHub dark header and our gray color palette: `rgba(27,31,35, 0.15)`.
 
 ```html live
-<div class="border border-black-fade bg-blue-light p-2 mb-2">
-  .border-black-fade .bg-blue-light
-</div>
-<div class="border border-black-fade bg-red-light p-2 mb-2">
-  .border-black-fade .bg-red-light
-</div>
+<div class="border border-black-fade bg-info p-2 mb-2">.border-black-fade</div>
+<div class="border border-black-fade bg-danger p-2 mb-2">.border-black-fade</div>
 ```
 
-On dark backgrounds use `border-white-fade` instead. It adds an rgba white border with an alpha transparency of `0.15`.
+On dark backgrounds use `border-white-fade` instead. It adds an rgba white border with an alpha transparency of `0.15`. Or use `.border-white-fade-xx` to add a white border with various levels of alpha transparency.
 
 ```html live
-<div class="bg-gray-dark text-white p-3">
-  <div class="border border-white-fade p-2">
-    .border-white-fade
-  </div>
-</div>
-```
-
-Use `.border-white-fade-xx` to add a white border with various levels of alpha transparency.
-
-```html live
-<div class="bg-gray-dark text-white p-3 mb-3">
+<div class="bg-info-inverse text-inverse p-3">
   <div class="border-bottom border-white-fade-15 p-2 mb-2">
-    .border-white-fade-15
-  </div>
-  <div class="border-bottom border-white-fade-30 p-2 mb-2">
-    .border-white-fade-30
-  </div>
-  <div class="border-bottom border-white-fade-50 p-2 mb-2">
-    .border-white-fade-50
-  </div>
-  <div class="border-bottom border-white-fade-70 p-2 mb-2">
-    .border-white-fade-70
-  </div>
-  <div class="border-bottom border-white-fade-85 p-2 mb-2">
-    .border-white-fade-85
-  </div>
-</div>
-<div class="bg-blue text-white p-3">
-  <div class="border-bottom border-white-fade-15 p-2 mb-2">
-    .border-white-fade-15
+    .border-white-fade-15 or .border-white-fade
   </div>
   <div class="border-bottom border-white-fade-30 p-2 mb-2">
     .border-white-fade-30
@@ -223,9 +173,9 @@ You can adjust border widths on all sides or each side individually with respons
 </div>
 ```
 
+<!-- TODO: Remove?
 ## Border color utilities
 
-```
 <PaletteTable
   values={borders}
   prefix="bg"
@@ -236,4 +186,4 @@ You can adjust border widths on all sides or each side individually with respons
   ]}
   style={{borderSpacing: '0 4px'}}
 />
-```
+-->
