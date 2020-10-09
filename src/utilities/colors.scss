@@ -6,13 +6,10 @@
 .text-primary         { color: var(--color-text-primary) !important; }
 .text-secondary       { color: var(--color-text-secondary) !important; }
 .text-tertiary        { color: var(--color-text-tertiary) !important; }
-.text-inverse         { color: var(--color-text-inverse) !important; }
-.text-link-primary    { color: var(--color-text-link-primary) !important; }
-.text-link-secondary  { color: var(--color-text-link-secondary) !important; }
-.text-link-tertiary   { color: var(--color-text-link-tertiary) !important; }
-.text-danger          { color: var(--color-text-danger) !important; }
 .text-success         { color: var(--color-text-success) !important; }
 .text-warning         { color: var(--color-text-warning) !important; }
+.text-danger          { color: var(--color-text-danger) !important; }
+.text-inverse         { color: var(--color-text-inverse) !important; }
 
 // Icon colors
 .icon-primary   { color: var(--color-icon-primary) !important; } // stylelint-disable-line primer/colors
@@ -48,6 +45,54 @@
 .bg-success-inverse { background-color: var(--color-bg-success-inverse) !important; }
 .bg-warning         { background-color: var(--color-bg-warning) !important; }
 .bg-warning-inverse { background-color: var(--color-bg-warning-inverse) !important; }
+
+// Link colors
+
+.link-primary {
+  color: var(--color-text-link-primary) !important;
+
+  &:hover {
+    color: var(--color-text-link-primary) !important;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.link-gray-dark, // TODO: Deprecate
+.link-secondary {
+  color: var(--color-text-link-secondary) !important;
+
+  &:hover {
+    color: var(--color-text-link-primary) !important;
+  }
+}
+
+.link-gray, // TODO: Deprecate
+.link-tertiary {
+  color: var(--color-text-link-tertiary) !important;
+
+  &:hover {
+    color: var(--color-text-link-primary) !important;
+  }
+}
+
+// Set the link color to $text-blue on hover
+// Useful when you want only part of a link to turn blue on hover
+.link-hover-blue {
+  &:hover {
+    color: var(--color-text-link-primary) !important;
+  }
+}
+
+// Link without underline on hover
+.muted-link {
+  color: var(--color-text-link-tertiary) !important;
+
+  &:hover {
+    color: var(--color-text-link-primary) !important;
+    text-decoration: none;
+  }
+}
 
 //
 // ------------------------ Deprecated ------------------------
@@ -119,43 +164,6 @@
 .border-white-fade-50 { border-color: $white-fade-50 !important; } // stylelint-disable-line primer/borders
 .border-white-fade-70 { border-color: $white-fade-70 !important; } // stylelint-disable-line primer/borders
 .border-white-fade-85 { border-color: $white-fade-85 !important; } // stylelint-disable-line primer/borders
-
-// Link colors
-// Sets the links color to $text-gray and $text-blue on hover
-.link-gray {
-  color: $text-gray !important;
-
-  &:hover {
-    color: $text-blue !important;
-  }
-}
-
-// Sets the links color to $text-gray-dark and $text-blue on hover
-.link-gray-dark {
-  color: $text-gray-dark !important;
-
-  &:hover {
-    color: $text-blue !important;
-  }
-}
-
-/* Set the link color to $text-blue on hover
-  Useful when you want only part of a link to turn blue on hover */
-.link-hover-blue {
-  &:hover {
-    color: $text-blue !important;
-  }
-}
-
-/* Make a link $text-gray, then $text-blue on hover and removes the underline */
-.muted-link {
-  color: $text-gray !important;
-
-  &:hover {
-    color: $text-blue !important;
-    text-decoration: none;
-  }
-}
 
 /* Typography colors */
 

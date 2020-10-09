@@ -20,13 +20,13 @@ No changes should be needed. Components get updated without automatically withou
 `.text-gray-dark`         | `.text-primary`
 `.text-gray`              | `.text-secondary`
 `.text-gray-light`        | `.text-tertiary`
-`.text-blue`              | `.text-link-primary`
 `.text-green`             | `.text-success`
 `.text-yellow`            | `.text-warning`
 `.text-red`               | `.text-danger`
 `.text-white`             | `.text-inverse`
-`.link-gray-dark`         | `.text-link-secondary`
-`.link-gray`              | `.text-link-tertiary`
+`.text-blue`              | `.link-primary`
+`.link-gray-dark`         | `.link-secondary`
+`.link-gray`              | `.link-tertiary`
 `.text-black`             | n/a
 `.text-orange`            | n/a
 `.text-orange-light`      | n/a
