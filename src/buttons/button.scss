@@ -108,7 +108,7 @@
 
 .btn-blue, // TODO: deprecate
 .btn-primary {
-  color: var(--color-text-inverse);
+  color: var(--color-btn-primary-text);
   background-color: var(--color-btn-primary-bg);
   border-color: var(--color-btn-primary-border);
   box-shadow: var(--color-btn-primary-shadow), var(--color-btn-primary-shadow-highlight);
