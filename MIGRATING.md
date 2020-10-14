@@ -1,11 +1,11 @@
 # 16.0.0
-In `v16` two major changes happend:
+In `v16` two major changes happened:
 
 1. All colors got moved to [primer/primitives](https://github.com/primer/primitives). This lets us use the same Primer colors across different libraries.
 2. Primer CSS also switched from using SASS variables for colors to CSS variables.
-3. By using CSS variables, components, utilties can now switch between different color modes at runtime.
+3. By using CSS variables, components, utilities can now switch between different color modes at runtime.
 
-Bellow a migration guide when updating Primer CSS to `16.0.0`:
+Below a migration guide when updating Primer CSS to `16.0.0`:
 
 ## Components
 
@@ -211,7 +211,7 @@ n/a                                 | `var(--color-bg-canvas)`
 
 ## Not available
 
-If something is not available (n/a), there are a few options to consdier:
+If something is not available (n/a), there are a few options to consider:
 
 - If it makes sense, try using what is available.
 - If not, you can create the following:
