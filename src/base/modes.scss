@@ -7,7 +7,6 @@
 // Use :root (html element) to define a default
 
 @include primer-colors-light(':root, [data-color-mode="light"]');
-@include primer-colors-dark('[data-color-mode="dark"]');
 
 // Color mode boundaries
 // Enables nesting of different color modes

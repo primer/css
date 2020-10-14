@@ -1,4 +1,4 @@
-import primerStyles from '!!raw-loader!postcss-loader!../../../../../src/index.scss'
+import primerStyles from '!!raw-loader!postcss-loader!../../../../../src/docs.scss'
 import {Flex} from '@primer/components'
 import {Frame} from '@primer/gatsby-theme-doctocat'
 import {MoonIcon, SunIcon} from '@primer/octicons-react'
