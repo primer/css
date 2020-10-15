@@ -1,15 +1,15 @@
 # 16.0.0
-In `v16` two major changes happened:
+In `v16` three major changes happened:
 
 1. All colors got moved to [primer/primitives](https://github.com/primer/primitives). This lets us use the same Primer colors across different libraries.
-2. Primer CSS also switched from using SASS variables for colors to CSS variables.
-3. By using CSS variables, components, utilities can now switch between different color modes at runtime.
+2. The naming of the variables changed from presentational to functional names, like `text-gray-dark` became `text-primary` so that they still make sense in different color modes.
+3. Primer CSS switched from using SASS variables to CSS variables (for now only colors). By using CSS variables, components and utility classes can now switch between different color modes at runtime.
 
 Below a migration guide when updating Primer CSS to `16.0.0`:
 
 ## Components
 
-No changes should be needed. Components get updated without automatically without making changes.
+No changes should be needed. Components get updated automatically without making changes.
 
 ## Utility classes
 
@@ -143,8 +143,8 @@ n/a                                     | `var(--color-icon-warning)`
 --- | ---
 `$border-color` (`$gray-200`)                   | `var(--color-border-primary)`
 `$border-gray` (`$gray-200`)                    | `var(--color-border-primary)`
-`$border-gray-light` (`lighten($gray-200, 3%)`) | `var(--color-border-primary-light)`
-`$border-gray-dark` (`$gray-300`)               | `var(--color-border-secondary)`
+`$border-gray-light` (`lighten($gray-200, 3%)`) | `var(--color-border-secondary)`
+`$border-gray-dark` (`$gray-300`)               | `var(--color-border-tertiary)`
 `$border-white` (`$white`)                      | `var(--color-border-inverse)`
 `$border-blue` (`$blue-500`)                    | `var(--color-border-info)`
 `$border-green` (`$green-400`)                  | `var(--color-border-success)`
@@ -208,15 +208,6 @@ n/a                                 | `var(--color-bg-canvas)`
 `$pink-700` | `var(--color-scale-pink-7)`
 `$pink-800` | `var(--color-scale-pink-8)`
 `$pink-900` | `var(--color-scale-pink-9)`
-
-## Not available
-
-If something is not available (n/a), there are a few options to consider:
-
-- If it makes sense, try using what is available.
-- If not, you can create the following:
-  1. Create a new "app" variable by the color system
-  2. Use the new "app" variable with a custom class
 
 ---
 
