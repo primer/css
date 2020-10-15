@@ -5,7 +5,7 @@
   font-size: $h5-size;
   line-height: $lh-default;
   color: var(--color-header-text);
-  background-color: var(--color-bg-canvas-inverse);
+  background-color: var(--color-header-bg);
   align-items: center;
   flex-wrap: nowrap;
 }
@@ -24,7 +24,7 @@
 
 .Header-link {
   font-weight: $font-weight-bold;
-  color: var(--color-text-inverse);
+  color: var(--color-header-logo);
   white-space: nowrap;
 
   &:hover,
