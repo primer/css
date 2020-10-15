@@ -41,8 +41,8 @@
     font-weight: $font-weight-bold;
     // stylelint-disable-next-line primer/borders
     border-bottom-color: #f9826c; // custom coral
-    outline: 1px dotted transparent; // Support Firfox custom colors
     color: var(--color-underline-nav-text-active);
+    outline: 1px dotted transparent; // Support Firfox custom colors
     outline-offset: -1px;
 
     .UnderlineNav-octicon {
