@@ -24,6 +24,7 @@
 
 .Header-link {
   font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/colors
   color: var(--color-header-logo);
   white-space: nowrap;
 
