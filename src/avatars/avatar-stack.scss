@@ -81,7 +81,7 @@
 .avatar.avatar-more {
   z-index: 1;
   margin-right: 0;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-tertiary);
 
   &::before,
   &::after {
@@ -131,7 +131,7 @@
 
     &::after {
       width: 2px;
-      background: var(--color-bg-secondary);
+      background: var(--color-bg-tertiary);
     }
   }
 

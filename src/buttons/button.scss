@@ -186,7 +186,7 @@
   &.disabled,
   &[aria-disabled=true] {
     color: var(--color-btn-#{$type}-text-disabled); // stylelint-disable-line primer/no-undefined-vars
-    background-color: var(--color-bg-tertiary);
+    background-color: var(--color-bg-secondary);
     border-color: var(--color-btn-border);
     box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
 

@@ -3,7 +3,7 @@
 // A vertical list of navigational links, typically used on the left side of a page.
 
 .SideNav {
-  background-color: var(--color-bg-tertiary);
+  background-color: var(--color-bg-secondary);
 }
 
 .SideNav-item {
@@ -46,12 +46,12 @@
 .SideNav-item:hover,
 .SideNav-item:focus {
   text-decoration: none;
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-tertiary);
   outline: none;
 }
 
 .SideNav-item:active {
-  background-color: var(--color-bg-tertiary);
+  background-color: var(--color-bg-secondary);
 }
 
 .SideNav-item[aria-current]:not([aria-current=false]),

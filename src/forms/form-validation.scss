@@ -128,7 +128,7 @@ dl.form-group > dd, // TODO: Deprecate
   // stylelint-disable-next-line primer/typography
   line-height: 16px;
   color: var(--color-text-secondary);
-  background-color: var(--color-bg-tertiary);
+  background-color: var(--color-bg-secondary);
   border: $border-width $border-style var(--color-drag-and-drop-border);
   border-top: 0;
   border-bottom-right-radius: $border-radius;

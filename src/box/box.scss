@@ -74,7 +74,7 @@
   padding: $spacer-3;
   // stylelint-disable-next-line primer/spacing
   margin: (-$border-width) (-$border-width) 0;
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-tertiary);
   border-color: var(--color-border-primary);
   border-style: $border-style;
   border-width: $border-width;
@@ -144,12 +144,12 @@
 
     // Row dragging styles
     &.sortable-chosen {
-      background-color: var(--color-bg-tertiary);
+      background-color: var(--color-bg-secondary);
     }
 
     // Makes dragging row background gray
     &.sortable-ghost {
-      background-color: var(--color-bg-secondary);
+      background-color: var(--color-bg-tertiary);
 
       // Hides contents of row while dragging so row looks solid gray
       .Box-row--drag-hide {
@@ -161,7 +161,7 @@
 
 .Box-row--focus-gray {
   &.navigation-focus {
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-bg-tertiary);
   }
 }
 
@@ -173,7 +173,7 @@
 
 .Box-row--hover-gray {
   &:hover {
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-bg-tertiary);
   }
 }
 
@@ -276,7 +276,7 @@
 }
 
 .Box-row--gray {
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-tertiary);
 }
 
 //Box with btn-octicon

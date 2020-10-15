@@ -74,8 +74,8 @@ n/a | `.icon-danger`
 [`v15`](https://primer.style/css/utilities/colors#background-utilities) | `v16`
 --- | ---
 `.bg-white`        | `.bg-primary`
-`.bg-gray-light`   | `.bg-tertiary`
-`.bg-gray`         | `.bg-secondary`
+`.bg-gray-light`   | `.bg-secondary`
+`.bg-gray`         | `.bg-tertiary`
 `.bg-gray-dark`    | `.bg-canvas-inverse`
 `.bg-blue-light`   | `.bg-info`
 `.bg-blue`         | `.bg-info-inverse`
@@ -163,8 +163,8 @@ n/a                                     | `var(--color-icon-warning)`
 `v15` | `v16`
 --- | ---
 `$bg-white`        (`$white`)       | `var(--color-bg-primary)`
-`$bg-gray`         (`$gray-100`)    | `var(--color-bg-secondary)`
-`$bg-gray-light`   (`$gray-000`)    | `var(--color-bg-tertiary)`
+`$bg-gray-light`   (`$gray-000`)    | `var(--color-bg-secondary)`
+`$bg-gray`         (`$gray-100`)    | `var(--color-bg-tertiary)`
 `$bg-gray-dark`    (`$gray-900`)    | `var(--color-bg-canvas-inverse)`
 `$bg-red`          (`$red-500`)     | `var(--color-bg-danger-inverse)`
 `$bg-red-light`    (`$red-000`)     | `var(--color-bg-danger)`

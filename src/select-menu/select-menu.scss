@@ -316,7 +316,7 @@ $SelectMenu-max-height: 480px !default;
   font-size: $font-size-small;
   font-weight: $font-weight-semibold;
   color: var(--color-text-tertiary);
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-tertiary);
   border-bottom: $border-width $border-style var(--color-border-secondary);
 
   // Borderless
@@ -423,11 +423,11 @@ $SelectMenu-max-height: 480px !default;
 
   body:not(.intent-mouse) .SelectMenu-item:focus,
   .SelectMenu-item:hover {
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-bg-tertiary);
   }
 
   .SelectMenu-item:active {
-    background-color: var(--color-bg-tertiary);
+    background-color: var(--color-bg-secondary);
   }
 
   body:not(.intent-mouse) .SelectMenu-tab:focus {
@@ -440,7 +440,7 @@ $SelectMenu-max-height: 480px !default;
 
   .SelectMenu-tab:not([aria-selected="true"]):active {
     color: var(--color-text-primary);
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-bg-tertiary);
   }
 }
 
@@ -452,7 +452,7 @@ $SelectMenu-max-height: 480px !default;
   // Android
   .SelectMenu-item:focus,
   .SelectMenu-item:active {
-    background-color: var(--color-bg-tertiary);
+    background-color: var(--color-bg-secondary);
   }
 
   // iOS Safari

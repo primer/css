@@ -63,7 +63,7 @@ textarea.form-control {
 
 // Inputs with contrast for easy light gray backgrounds against white.
 .input-contrast {
-  background-color: var(--color-bg-tertiary);
+  background-color: var(--color-bg-secondary);
 
   &:focus { background-color: var(--color-bg-primary); }
 }

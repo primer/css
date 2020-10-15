@@ -36,12 +36,12 @@
   &:focus,
   &:hover {
     text-decoration: none;
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-bg-tertiary);
     outline: none;
   }
 
   &:active {
-    background-color: var(--color-bg-tertiary);
+    background-color: var(--color-bg-secondary);
   }
 
   &.selected,
