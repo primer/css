@@ -16,7 +16,7 @@
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 30px;
-  color: var(--color-text-primary);
+  color: var(--color-underline-nav-text);
   text-align: center;
   white-space: nowrap;
   background-color: transparent;
@@ -43,6 +43,7 @@
     border-bottom-color: #f9826c; // custom coral
     outline: 1px dotted transparent; // Support Firfox custom colors
     outline-offset: -1px;
+    color: var(--color-underline-nav-text-active);
 
     .UnderlineNav-octicon {
       color: var(--color-text-tertiary);
