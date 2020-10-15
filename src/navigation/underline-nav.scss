@@ -42,8 +42,8 @@
     // stylelint-disable-next-line primer/borders
     border-bottom-color: #f9826c; // custom coral
     outline: 1px dotted transparent; // Support Firfox custom colors
-    outline-offset: -1px;
     color: var(--color-underline-nav-text-active);
+    outline-offset: -1px;
 
     .UnderlineNav-octicon {
       color: var(--color-text-tertiary);
