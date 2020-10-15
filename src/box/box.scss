@@ -261,8 +261,10 @@
 }
 
 .Box-header--blue {
-  background-color: var(--color-bg-info);
-  border-color: var(--color-box-blue-border);
+  // stylelint-disable-next-line primer/colors
+  background-color: var(--color-box-header-blue-bg);
+  // stylelint-disable-next-line primer/colors
+  border-color: var(--color-box-header-blue-border);
 }
 
 // Box row highlight themes
