@@ -69,7 +69,7 @@
   color: var(--color-text-primary);
   background-color: var(--color-btn-bg);
   border-color: var(--color-btn-border);
-  box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
+  box-shadow: var(--color-btn-shadow), var(--color-btn-shadow-highlight);
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
 
   &:hover,
