@@ -219,7 +219,7 @@
 
 .btn-outline {
   @include btn-inverse-on-hover("outline");
-  
+
   &:hover {
     color: var(--color-btn-outline-text-hover);
   }
