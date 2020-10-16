@@ -8,8 +8,8 @@
   // stylelint-disable-next-line primer/typography
   font-size: 13px;
   list-style: none;
-  background: var(--color-bg-canvas);
-  border: $border;
+  background: var(--color-autocomplete-bg);
+  border: $border-width $border-style var(--color-autocomplete-border);
   border-radius: $border-radius;
   box-shadow: var(--color-shadow-medium);
 }
@@ -29,14 +29,14 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
-  background-color: var(--color-bg-canvas);
+  background-color: var(--color-autocomplete-bg);
   border: 0;
 
   &:hover,
   &.selected,
   &[aria-selected=true],
   &.navigation-focus {
-    color: var(--color-text-inverse);
+    color: var(--color-state-selected-primary-text);
     text-decoration: none;
     background-color: var(--color-state-selected-primary-bg);
 
