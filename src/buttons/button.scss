@@ -209,20 +209,12 @@
 
 .btn-danger {
   @include btn-inverse-on-hover("danger");
-
-  &:hover {
-    color: var(--color-btn-danger-text-hover);
-  }
 }
 
 // Outline button
 
 .btn-outline {
   @include btn-inverse-on-hover("outline");
-
-  &:hover {
-    color: var(--color-btn-outline-text-hover);
-  }
 }
 
 // Sizes
