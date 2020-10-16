@@ -4,6 +4,8 @@
   line-height: $lh-condensed-ultra;
   vertical-align: middle;
   border-radius: $border-radius;
+  // stylelint-disable-next-line primer/box-shadow
+  box-shadow: 0 0 0 1px var(--color-avatar-border);
 }
 
 .avatar-link {
