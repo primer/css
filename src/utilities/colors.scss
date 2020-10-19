@@ -1,50 +1,48 @@
 // stylelint-disable block-opening-brace-space-before
 
-// TODO: Should these utility classes get prefixed with `color-` to match the variables?
-
 // Text colors
-.text-primary         { color: var(--color-text-primary) !important; }
-.text-secondary       { color: var(--color-text-secondary) !important; }
-.text-tertiary        { color: var(--color-text-tertiary) !important; }
-.text-success         { color: var(--color-text-success) !important; }
-.text-warning         { color: var(--color-text-warning) !important; }
-.text-danger          { color: var(--color-text-danger) !important; }
-.text-inverse         { color: var(--color-text-inverse) !important; }
+.color-text-primary   { color: var(--color-text-primary) !important; }
+.color-text-secondary { color: var(--color-text-secondary) !important; }
+.color-text-tertiary  { color: var(--color-text-tertiary) !important; }
+.color-text-success   { color: var(--color-text-success) !important; }
+.color-text-warning   { color: var(--color-text-warning) !important; }
+.color-text-danger    { color: var(--color-text-danger) !important; }
+.color-text-inverse   { color: var(--color-text-inverse) !important; }
 
 // Icon colors
-.icon-primary   { color: var(--color-icon-primary) !important; } // stylelint-disable-line primer/colors
-.icon-secondary { color: var(--color-icon-secondary) !important; } // stylelint-disable-line primer/colors
-.icon-tertiary  { color: var(--color-icon-tertiary) !important; } // stylelint-disable-line primer/colors
-.icon-info      { color: var(--color-icon-info) !important; } // stylelint-disable-line primer/colors
-.icon-danger    { color: var(--color-icon-danger) !important; } // stylelint-disable-line primer/colors
-.icon-success   { color: var(--color-icon-success) !important; } // stylelint-disable-line primer/colors
-.icon-warning   { color: var(--color-icon-warning) !important; } // stylelint-disable-line primer/colors
+.color-icon-primary   { color: var(--color-icon-primary) !important; } // stylelint-disable-line primer/colors
+.color-icon-secondary { color: var(--color-icon-secondary) !important; } // stylelint-disable-line primer/colors
+.color-icon-tertiary  { color: var(--color-icon-tertiary) !important; } // stylelint-disable-line primer/colors
+.color-icon-info      { color: var(--color-icon-info) !important; } // stylelint-disable-line primer/colors
+.color-icon-danger    { color: var(--color-icon-danger) !important; } // stylelint-disable-line primer/colors
+.color-icon-success   { color: var(--color-icon-success) !important; } // stylelint-disable-line primer/colors
+.color-icon-warning   { color: var(--color-icon-warning) !important; } // stylelint-disable-line primer/colors
 
 // Border colors
-.border-primary         { border-color: var(--color-border-primary) !important; }
-.border-secondary       { border-color: var(--color-border-secondary) !important; }
-.border-tertiary        { border-color: var(--color-border-tertiary) !important; }
-.border-inverse         { border-color: var(--color-border-inverse) !important; }
-.border-info            { border-color: var(--color-border-info) !important; }
-.border-success         { border-color: var(--color-border-success) !important; }
-.border-danger          { border-color: var(--color-border-danger) !important; }
-.border-warning         { border-color: var(--color-border-warning) !important; }
+.color-border-primary   { border-color: var(--color-border-primary) !important; }
+.color-border-secondary { border-color: var(--color-border-secondary) !important; }
+.color-border-tertiary  { border-color: var(--color-border-tertiary) !important; }
+.color-border-inverse   { border-color: var(--color-border-inverse) !important; }
+.color-border-info      { border-color: var(--color-border-info) !important; }
+.color-border-success   { border-color: var(--color-border-success) !important; }
+.color-border-danger    { border-color: var(--color-border-danger) !important; }
+.color-border-warning   { border-color: var(--color-border-warning) !important; }
 
 // Background colors
-.bg-canvas          { background-color: var(--color-bg-canvas) !important; }
-.bg-canvas-inverse  { background-color: var(--color-bg-canvas-inverse) !important; }
-.bg-primary         { background-color: var(--color-bg-primary) !important; }
-.bg-secondary       { background-color: var(--color-bg-secondary) !important; }
-.bg-tertiary        { background-color: var(--color-bg-tertiary) !important; }
-.bg-overlay         { background-color: var(--color-bg-overlay) !important; }
-.bg-info            { background-color: var(--color-bg-info) !important; }
-.bg-info-inverse    { background-color: var(--color-bg-info-inverse) !important; }
-.bg-danger          { background-color: var(--color-bg-danger) !important; }
-.bg-danger-inverse  { background-color: var(--color-bg-danger-inverse) !important; }
-.bg-success         { background-color: var(--color-bg-success) !important; }
-.bg-success-inverse { background-color: var(--color-bg-success-inverse) !important; }
-.bg-warning         { background-color: var(--color-bg-warning) !important; }
-.bg-warning-inverse { background-color: var(--color-bg-warning-inverse) !important; }
+.color-bg-canvas          { background-color: var(--color-bg-canvas) !important; }
+.color-bg-canvas-inverse  { background-color: var(--color-bg-canvas-inverse) !important; }
+.color-bg-primary         { background-color: var(--color-bg-primary) !important; }
+.color-bg-secondary       { background-color: var(--color-bg-secondary) !important; }
+.color-bg-tertiary        { background-color: var(--color-bg-tertiary) !important; }
+.color-bg-overlay         { background-color: var(--color-bg-overlay) !important; }
+.color-bg-info            { background-color: var(--color-bg-info) !important; }
+.color-bg-info-inverse    { background-color: var(--color-bg-info-inverse) !important; }
+.color-bg-danger          { background-color: var(--color-bg-danger) !important; }
+.color-bg-danger-inverse  { background-color: var(--color-bg-danger-inverse) !important; }
+.color-bg-success         { background-color: var(--color-bg-success) !important; }
+.color-bg-success-inverse { background-color: var(--color-bg-success-inverse) !important; }
+.color-bg-warning         { background-color: var(--color-bg-warning) !important; }
+.color-bg-warning-inverse { background-color: var(--color-bg-warning-inverse) !important; }
 
 // Link colors
 
