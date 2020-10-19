@@ -82,7 +82,7 @@
 
   &:focus,
   &:hover {
-    color: var(--color-text-inverse);
+    color: var(--color-state-hover-primary-text);
     text-decoration: none;
     background-color: var(--color-bg-info-inverse);
     outline: none;
