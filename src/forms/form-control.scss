@@ -41,8 +41,7 @@ label {
 
   &[disabled] {
     color: var(--color-text-disabled);
-    // stylelint-disable-next-line primer/colors
-    background-color: var(--color-bg-primary); // custom gray
+    background-color: var(--color-bg-primary);
   }
 
   // Ensures inputs don't zoom on mobile iPhone but are body-font size on iPad
