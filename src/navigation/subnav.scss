@@ -43,7 +43,7 @@
   &[aria-selected=true],
   &[aria-current]:not([aria-current=false]) {
     z-index: 2;
-    color: var(--color-text-inverse);
+    color: var(--color-state-hover-primary-text);
     background-color: var(--color-bg-info-inverse);
     // stylelint-disable-next-line primer/borders
     border-color: var(--color-auto-blue-6);

@@ -43,7 +43,7 @@
   &.selected,
   &[aria-selected=true],
   &[aria-current]:not([aria-current=false]) {
-    color: var(--color-text-inverse);
+    color: var(--color-state-hover-primary-text);
     background-color: var(--color-bg-info-inverse);
   }
 
