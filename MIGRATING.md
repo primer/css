@@ -9,7 +9,21 @@ Below a migration guide when updating Primer CSS to `16.0.0`:
 
 ## Components
 
-No changes should be needed. Components get updated automatically without making changes.
+Most components don't need to be updated and should work without making changes. But some of the componets that use presentational class names now use functional class names.
+
+### Labels
+
+[`v15`](https://primer.style/css/components/labels) | `v16`
+--- | ---
+`.Label--gray-darker`  | `.Label--primary`
+`.Label--gray`         | `.Label--secondary`
+`.Label--blue`         | `.Label--info`
+`.Label--green`        | `.Label--success`
+`.Label--yellow`       | `.Label--warning`
+`.Label--red`          | `.Label--danger`
+`.Label--orange`       | n/a
+`.Label--purple`       | n/a
+`.Label--pink`         | n/a
 
 ## Utility classes
 

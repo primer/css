@@ -30,37 +30,31 @@ The base `Label` style does not apply a background color and only uses the defau
 
 ### Label contrast
 
-Use `Label--gray` to create a label with a lighter text color. This label is neutral in color and can be used in contexts where all you need to communicate is metadata, or where you want a label to feel less prominent compared with labels with stronger colors.
+Use `Label--primary` to create a label with a stronger border. This label is also neutral in color, however, since its border is stronger it can stand out more compared to the default `Label`.
 
-Use `Label--gray-darker` to create a label with a dark-gray color and border. This label is also neutral in color, however, since its color is darker it can stand out more compared to `Label--gray`.
+Use `Label--secondary` to create a label with a subtler text color. This label is neutral in color and can be used in contexts where all you need to communicate is metadata, or where you want a label to feel less prominent compared with labels with stronger colors.
 
 ```html live
 <span class="Label" title="Label: Default">Default</span>
-<span class="Label Label--gray  ml-1" title="Label: Gray">Gray</span>
-<span class="Label Label--gray-darker ml-1" title="Label: Dark gray">Dark gray</span>
+<span class="Label Label--primary ml-1" title="Label: Primary">Primary</span>
+<span class="Label Label--secondary ml-1" title="Label: Secondary">Secondary</span>
 ```
 
 ### Colored labels
 
-Labels come in a few different themes. Use a theme that helps communicate the content of the label, and ensure it's used consistently. A typical use of the themes are:
+Labels come in a few different functional classes. Use to communicate the content of the label, and ensure it's used consistently.
 
-- `Label--yellow` -> Pending/highlight
-- `Label--orange` -> Warning
-- `Label--red` -> Error
-- `Label--green` -> Success
-- `Label--blue` -> Info
+- `Label--info`
+- `Label--success`
+- `Label--warning`
+- `Label--danger`
 
 ```html live
-<span class="Label mr-1 Label--yellow" title="Label: Pending">Pending</span>
-<span class="Label mr-1 Label--orange" title="Label: Warning">Warning</span>
-<span class="Label mr-1 Label--red" title="Label: Error">Error</span>
-<span class="Label mr-1 Label--green" title="Label: Success">Success</span>
-<span class="Label mr-1 Label--blue" title="Label: Info">Info</span>
-<span class="Label mr-1 Label--purple" title="Label: PRO">PRO</span>
-<span class="Label mr-1 Label--pink" title="Label: Sponsor">Sponsor</span>
+<span class="Label mr-1 Label--info" title="Label: Info">Info</span>
+<span class="Label mr-1 Label--success" title="Label: Success">Success</span>
+<span class="Label mr-1 Label--warning" title="Label: Warning">Warning</span>
+<span class="Label mr-1 Label--danger" title="Label: Danger">Danger</span>
 ```
-
-Note: Avoid using `Label--orange` next to `Label--red` since most people will find it hard to tell the difference.
 
 ### Label sizes
 

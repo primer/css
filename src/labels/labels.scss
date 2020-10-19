@@ -11,7 +11,7 @@
 .Label {
   @include labels-base;
   background-color: transparent !important; // TODO: Remove again
-  border-color: var(--color-border-primary);
+  border-color: var(--color-label-border);
 
   &:hover {
     text-decoration: none;
@@ -29,6 +29,43 @@
 .Label--inline {
   @include labels--inline;
 }
+
+// Colors
+
+.Label--primary {
+  color: var(--color-label-primary-text);
+  border-color: var(--color-label-primary-border);
+}
+
+.Label--secondary {
+  color: var(--color-label-secondary-text);
+  border-color: var(--color-label-secondary-border);
+}
+
+.Label--info {
+  color: var(--color-label-info-text);
+  border-color: var(--color-label-info-border);
+}
+
+.Label--success {
+  color: var(--color-label-success-text);
+  border-color: var(--color-label-success-border);
+}
+
+.Label--warning {
+  color: var(--color-label-warning-text);
+  border-color: var(--color-label-warning-border);
+}
+
+.Label--danger {
+  color: var(--color-label-danger-text);
+  border-color: var(--color-label-danger-border);
+}
+
+//
+// ------------------------ Deprecated ------------------------
+// Some might get replaced at some point. If possible, use functional classes.
+//
 
 // Contrast
 
