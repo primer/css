@@ -25,6 +25,13 @@ Most components don't need to be updated and should work without making changes.
 `.Label--purple`       | n/a
 `.Label--pink`         | n/a
 
+### Counters
+
+[`v15`](https://primer.style/css/components/labels#counters) | `v16`
+--- | ---
+`.Counter--gray`        | `.Counter--primary`
+`.Counter--gray-light`  | `.Counter--secondary`
+
 ## Utility classes
 
 ### Text
