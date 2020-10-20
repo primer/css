@@ -3,8 +3,54 @@ import PropTypes from 'prop-types'
 import chroma from 'chroma-js'
 import styled from 'styled-components'
 import {Box, Text} from '@primer/components'
-import {colors, getPaletteByName} from './color-variables'
+import {colors, colorModes, getPaletteByName} from './color-variables'
 import Table from './table'
+
+function capitalize(word) {
+  return word[0].toUpperCase() + word.substr(1)
+}
+
+export function ColorModeTable({baseColor, values, ...rest}) {
+  const fgColor = overlayColor(baseColor)
+  const colorProps = {bg: baseColor, color: fgColor}
+
+  values.forEach(({variable, values, slug}) => {
+    if (!values.light || !values.dark) {
+      console.log(variable, values)
+    }
+  })
+
+  return (
+    <Table {...rest}>
+      <thead>
+        <tr>
+          <PaletteCell as="th" {...colorProps}>
+            Variable
+          </PaletteCell>
+          {colorModes.map(mode => (
+            <PaletteCell as="th" {...colorProps} key={mode}>
+              {capitalize(mode)} Mode
+            </PaletteCell>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {values.map(({variable, slug, values}) => (
+          <tr key={slug}>
+            <PaletteCell {...colorProps}>
+              <Var>{variable}</Var>
+            </PaletteCell>
+            {Object.keys(values).map(mode => (
+              <PaletteCell key={mode} bg={values[mode]} color={overlayColor(values[mode])}>
+                <Var>{values[mode]}</Var>
+              </PaletteCell>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </Table>
+  )
+}
 
 export function PaletteTable(props) {
   const {columns = [], hasHeader, ...rest} = props
@@ -212,9 +258,14 @@ export function overlayColor(bg) {
   if ($overlayColorCache.has(bg)) {
     return $overlayColorCache.get(bg)
   } else {
-    const result = chroma(bg).luminance() > 0.5 ? colors.black : colors.white
-    $overlayColorCache.set(bg, result)
-    return result
+    try {
+      const result = chroma(bg).luminance() > 0.5 ? colors.black : colors.white
+      $overlayColorCache.set(bg, result)
+      return result
+    } catch (err) {
+      console.log('error with value', bg)
+      return 'white'
+    }
   }
 }
 
