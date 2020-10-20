@@ -1,10 +1,4 @@
 // A rounded corner box containing a label "open" or "closed"
-// The default state is gray.
-//
-// open     - $green background
-// reopened - $green background
-// closed   - $red background
-// merged   - $purple background
 
 // Default 32px
 // Small 24px
@@ -18,26 +12,39 @@
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: var(--color-text-inverse);
   text-align: center;
   white-space: nowrap;
-  // stylelint-disable-next-line primer/colors
-  background-color: var(--color-auto-gray-5);
-  border: $border-width $border-style transparent; // Support Firfox custom colors
   // stylelint-disable-next-line primer/borders
   border-radius: 2em;
 }
 
-.State--green {
-  background-color: var(--color-auto-green-5); // stylelint-disable-line primer/colors
+.state, // TODO: Deprecate
+.State,
+.State--draft {
+  color: var(--color-pr-state-draft-text);
+  background-color: var(--color-pr-state-draft-bg);
+  border: $border-width $border-style var(--color-pr-state-draft-border);
 }
 
-.State--red {
-  background-color: var(--color-auto-red-5); // stylelint-disable-line primer/colors
+.State--green, // TODO: Deprecate
+.State--open {
+  color: var(--color-pr-state-open-text);
+  background-color: var(--color-pr-state-open-bg);
+  border-color: var(--color-pr-state-open-border);
 }
 
-.State--purple {
-  background-color: var(--color-auto-purple-5); // stylelint-disable-line primer/colors
+.State--purple, // TODO: Deprecate
+.State--merged {
+  color: var(--color-pr-state-merged-text);
+  background-color: var(--color-pr-state-merged-bg);
+  border-color: var(--color-pr-state-merged-border);
+}
+
+.State--red, // TODO: Deprecate
+.State--closed {
+  color: var(--color-pr-state-closed-text);
+  background-color: var(--color-pr-state-closed-bg);
+  border-color: var(--color-pr-state-closed-border);
 }
 
 // Small

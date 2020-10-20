@@ -32,6 +32,15 @@ Most components don't need to be updated and should work without making changes.
 `.Counter--gray`        | `.Counter--primary`
 `.Counter--gray-light`  | `.Counter--secondary`
 
+### States
+
+[`v15`](https://primer.style/css/components/labels#states) | `v16`
+--- | ---
+n/a              | `.State--draft`
+`.State--green`  | `.State--open`
+`.State--purple` | `.State--merged`
+`.State--red`    | `.State--closed`
+
 ## Utility classes
 
 ### Text
