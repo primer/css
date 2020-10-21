@@ -25,6 +25,7 @@
   background-color: transparent;
   border: $border-width $border-style transparent;
   border-bottom: 0;
+  transition: color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
 
   &.selected,
   &[aria-selected=true],
@@ -43,6 +44,7 @@
   &:focus {
     color: var(--color-text-primary);
     text-decoration: none;
+    transition-duration: 0.1s;
   }
 
   &:active {
