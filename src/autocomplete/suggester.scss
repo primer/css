@@ -14,7 +14,7 @@
   background: var(--color-autocomplete-bg);
   border: $border-width $border-style var(--color-autocomplete-border);
   border-radius: $border-radius;
-  box-shadow: var(--color-shadow-medium);
+  box-shadow: var(--color-autocomplete-shadow);
 
   li {
     display: block;
@@ -38,7 +38,16 @@
       border-top-right-radius: $border-radius;
     }
 
-    &:hover,
+    &:hover {
+      color: var(--color-state-hover-primary-text);
+      text-decoration: none;
+      background: var(--color-state-hover-primary-bg);
+
+      small {
+        color: var(--color-state-hover-primary-text);
+      }
+    }
+
     &[aria-selected="true"],
     &.navigation-focus {
       color: var(--color-state-selected-primary-text);
