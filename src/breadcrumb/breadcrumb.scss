@@ -8,7 +8,6 @@
   &::after {
     padding-right: $em-spacer-5;
     padding-left: $em-spacer-5;
-    // stylelint-disable-next-line primer/colors
     color: var(--color-text-disabled);
     content: "/";
   }
