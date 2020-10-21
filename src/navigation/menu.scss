@@ -36,7 +36,7 @@
   &:focus,
   &:hover {
     text-decoration: none;
-    background-color: var(--color-bg-tertiary);
+    background-color: var(--color-state-hover-secondary-bg);
     outline: none;
   }
 
@@ -57,7 +57,7 @@
       width: 2px;
       content: "";
       // stylelint-disable-next-line primer/colors
-      background-color: #f9826c; // custom coral
+      background-color: var(--color-menu-border-active);
     }
   }
 
@@ -99,7 +99,7 @@
   margin-bottom: 0;
   font-size: inherit;
   font-weight: $font-weight-bold;
-  color: var(--color-text-primary);
+  color: var(--color-menu-heading-text);
   border-bottom: $border-width $border-style var(--color-border-secondary);
 
   &:hover {

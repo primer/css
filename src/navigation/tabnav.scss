@@ -20,7 +20,7 @@
   font-size: $h5-size;
   // stylelint-disable-next-line primer/typography
   line-height: 23px;
-  color: var(--color-text-primary);
+  color: var(--color-text-secondary);
   text-decoration: none;
   background-color: transparent;
   border: $border-width $border-style transparent;
@@ -29,14 +29,19 @@
   &.selected,
   &[aria-selected=true],
   &[aria-current]:not([aria-current=false]) {
-    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    background-color: var(--color-tabnav-selected-bg);
     border-color: var(--color-border-primary);
     border-radius: $border-radius $border-radius 0 0;
+
+    .octicon {
+      color: inherit;
+    }
   }
 
   &:hover,
   &:focus {
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
     text-decoration: none;
   }
 
@@ -52,6 +57,7 @@
 
   .Counter {
     margin-left: $spacer-1;
+    color: inherit;
   }
 }
 
