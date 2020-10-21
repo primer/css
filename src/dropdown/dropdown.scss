@@ -30,11 +30,11 @@
   // stylelint-disable-next-line primer/spacing
   margin-top: 2px;
   list-style: none;
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-dropdown-bg);
   background-clip: padding-box;
-  border: $border-width $border-style var(--color-border-primary);
+  border: $border-width $border-style var(--color-dropdown-border);
   border-radius: $border-radius;
-  box-shadow: var(--color-shadow-large);
+  box-shadow: var(--color-dropdown-shadow);
 
   &::before,
   &::after {
@@ -43,16 +43,18 @@
     content: "";
   }
 
+  // caret border
   &::before {
     // stylelint-disable-next-line primer/borders
     border: $spacer-2 $border-style transparent;
-    border-bottom-color: var(--color-border-primary);
+    border-bottom-color: var(--color-dropdown-border);
   }
 
+  // caret background (should match dropdown background)
   &::after {
     // stylelint-disable-next-line primer/borders
     border: 7px $border-style transparent;
-    border-bottom-color: var(--color-dropdown-border);
+    border-bottom-color: var(--color-dropdown-bg);
   }
 
   // stylelint-disable-next-line selector-max-type
@@ -84,7 +86,7 @@
   &:hover {
     color: var(--color-state-hover-primary-text);
     text-decoration: none;
-    background-color: var(--color-bg-info-inverse);
+    background-color: var(--color-state-hover-primary-bg);
     outline: none;
 
     > .octicon {
@@ -110,7 +112,7 @@
   display: block;
   height: 0;
   margin: $spacer-2 0;
-  border-top: $border-width $border-style var(--color-border-primary);
+  border-top: $border-width $border-style var(--color-dropdown-border);
 }
 
 .dropdown-header {
@@ -149,7 +151,7 @@
     right: -14px;
     left: auto;
     border-color: transparent;
-    border-left-color: var(--color-border-inverse);
+    border-left-color: var(--color-dropdown-bg);
   }
 }
 
@@ -161,7 +163,7 @@
   margin-left: $spacer-2;
 
   &::before {
-    top: $spacer-2;
+    top: 10px;
     left: -$spacer-3;
     border-color: transparent;
     border-right-color: var(--color-dropdown-border);
@@ -171,7 +173,7 @@
     top: 11px;
     left: -14px;
     border-color: transparent;
-    border-right-color: var(--color-border-inverse);
+    border-right-color: var(--color-dropdown-bg);
   }
 }
 
@@ -204,7 +206,7 @@
     bottom: -7px;
     left: 10px;
     // stylelint-disable-next-line primer/borders
-    border-top: 7px $border-style var(--color-border-inverse);
+    border-top: 7px $border-style var(--color-dropdown-bg);
     // stylelint-disable-next-line primer/borders
     border-right: 7px $border-style transparent;
     border-bottom: 0;
