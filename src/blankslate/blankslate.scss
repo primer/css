@@ -4,6 +4,10 @@
   padding: $spacer-5;
   text-align: center;
 
+  p {
+    color: var(--color-text-secondary);
+  }
+
   code {
     // stylelint-disable-next-line primer/spacing
     padding: 2px 5px 3px;
