@@ -26,6 +26,7 @@ a.branch-name {
   background-color: var(--color-branch-name-link-bg);
 
   .octicon {
+    // stylelint-disable-next-line primer/colors
     color: var(--color-branch-name-link-icon);
   }
 }

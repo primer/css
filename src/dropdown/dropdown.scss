@@ -54,6 +54,7 @@
   &::after {
     // stylelint-disable-next-line primer/borders
     border: 7px $border-style transparent;
+    // stylelint-disable-next-line primer/borders
     border-bottom-color: var(--color-dropdown-bg);
   }
 
@@ -151,6 +152,7 @@
     right: -14px;
     left: auto;
     border-color: transparent;
+    // stylelint-disable-next-line primer/borders
     border-left-color: var(--color-dropdown-bg);
   }
 }
@@ -173,6 +175,7 @@
     top: 11px;
     left: -14px;
     border-color: transparent;
+    // stylelint-disable-next-line primer/borders
     border-right-color: var(--color-dropdown-bg);
   }
 }
