@@ -223,7 +223,7 @@ n/a                                 | `var(--color-bg-canvas)`
 `$box-shadow-extra-large`   | `var(--color-shadow-extra-large)`
 `$box-shadow-highlight`     | `var(--color-shadow-highlight)`
 `$box-shadow-inset`         | `var(--color-shadow-inset)`
-`$box-shadow-focus`         | `var(--color-shadow-focus)`
+`$box-shadow-focus`         | `var(--color-state-focus-shadow)`
 
 ## Color System
 

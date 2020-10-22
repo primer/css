@@ -190,6 +190,6 @@
   &:focus {
     z-index: 1;
     outline: 0;
-    box-shadow: var(--color-shadow-focus);
+    box-shadow: var(--color-state-focus-shadow);
   }
 }
