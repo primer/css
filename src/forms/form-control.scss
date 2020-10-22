@@ -86,7 +86,7 @@ textarea.form-control {
   &:focus {
     // stylelint-disable-next-line primer/borders
     border-color: $black-fade-30;
-    box-shadow: var(--color-input-shadow-focus);
+    box-shadow: var(--color-state-focus-shadow);
   }
 }
 

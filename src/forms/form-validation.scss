@@ -236,7 +236,7 @@ dl.form-group > dd, // TODO: Deprecate
 
   &.focused {
     border-radius: $border-radius;
-    box-shadow: var(--color-input-shadow), var(--color-input-shadow-focus);
+    box-shadow: var(--color-input-shadow), var(--color-state-focus-shadow);
 
     .form-control {
       box-shadow: none;
