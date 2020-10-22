@@ -41,7 +41,8 @@ label {
 
   &[disabled] {
     color: var(--color-text-disabled);
-    background-color: var(--color-bg-primary);
+    background-color: var(--color-input-disabled-bg);
+    border-color: var(--color-input-disabled-border);
   }
 
   // Ensures inputs don't zoom on mobile iPhone but are body-font size on iPad
