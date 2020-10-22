@@ -23,15 +23,15 @@
 
 .diffstat-block-deleted {
   background-color: var(--color-diff-deletion-bg);
-  outline: 1px dashed transparent; // Support Firfox custom colors
+  border: 1px dashed var(--color-diff-deletion-border);
 }
 
 .diffstat-block-added {
   background-color: var(--color-diff-addition-bg);
-  outline: 1px solid transparent; // Support Firfox custom colors
+  border: 1px solid var(--color-diff-addition-border);
 }
 
 .diffstat-block-neutral {
   background-color: var(--color-diff-neutral-bg);
-  outline: 1px dotted transparent; // Support Firfox custom colors
+  border: 1px dotted var(--color-fade-white-10);
 }
