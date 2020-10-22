@@ -14,7 +14,7 @@
     width: 2px;
     content: "";
     // stylelint-disable-next-line primer/colors
-    background-color: var(--color-border-primary);
+    background-color: var(--color-border-secondary);
   }
 
   &:target .TimelineItem-badge {
