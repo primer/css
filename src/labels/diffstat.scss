@@ -33,5 +33,5 @@
 
 .diffstat-block-neutral {
   background-color: var(--color-diff-neutral-bg);
-  outline: 1px solid var(--color-border-tertiary); // Support Firfox custom colors
+  outline: 1px solid var(--color-diff-neutral-border); // Support Firfox custom colors
 }
