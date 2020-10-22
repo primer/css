@@ -1,0 +1,12 @@
+// Allows CSS to be scoped to a specific color mode
+@mixin color-mode($mode) {
+  @if $mode == light {
+    :root, [data-color-mode="light"] {
+      @content;
+    }
+  } @else if $mode == dark {
+    [data-color-mode="dark"] {
+      @content;
+    }
+  }
+}
