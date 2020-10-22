@@ -1,12 +1,20 @@
 // Color modes
 
+@import "../support/mixins/color-modes.scss";
+
 @import "@primer/primitives/dist/scss/colors/_light.scss";
 @import "@primer/primitives/dist/scss/colors/_dark.scss";
 
 // Outputs the CSS variables
 // Use :root (html element) to define a default
 
-@include primer-colors-light(':root, [data-color-mode="light"]');
+@include color-mode(light) {
+  @include primer-colors-light;
+}
+
+// @include color-mode(dark) {
+//   @include primer-colors-dark;
+// }
 
 // Color mode boundaries
 // Enables nesting of different color modes

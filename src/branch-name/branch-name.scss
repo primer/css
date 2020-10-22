@@ -1,5 +1,7 @@
+// stylelint-disable selector-max-type, selector-no-qualifying-type
+
 // A nice way to display branch names inside the UI. Can be a link or not.
-// stylelint-disable selector-max-type
+
 .branch-name {
   display: inline-block;
   // stylelint-disable-next-line primer/spacing
@@ -18,6 +20,13 @@
 }
 
 // When a branch name is a link
-// stylelint-disable selector-no-qualifying-type
-a.branch-name { color: var(--color-text-link-primary); }
-// stylelint-enable selector-no-qualifying-type
+
+a.branch-name {
+  color: var(--color-text-link);
+  background-color: var(--color-branch-name-link-bg);
+
+  .octicon {
+    // stylelint-disable-next-line primer/colors
+    color: var(--color-branch-name-link-icon);
+  }
+}

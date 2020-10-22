@@ -46,7 +46,7 @@
 .SideNav-item:hover,
 .SideNav-item:focus {
   text-decoration: none;
-  background-color: var(--color-bg-tertiary);
+  background-color: var(--color-state-hover-secondary-bg);
   outline: none;
 }
 
@@ -56,12 +56,12 @@
 
 .SideNav-item[aria-current]:not([aria-current=false]),
 .SideNav-item[aria-selected="true"] {
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-sidenav-selected-bg);
 
   // Bar on the left
   &::before {
     // stylelint-disable-next-line primer/colors
-    background-color: #f9826c; // custom coral
+    background-color: var(--color-sidenav-border-active);
   }
 }
 
@@ -84,7 +84,7 @@
   display: block;
   width: 100%;
   padding: $spacer-1 0;
-  color: var(--color-text-link-primary);
+  color: var(--color-text-link);
   text-align: left;
   background-color: transparent;
   border: 0;

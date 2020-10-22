@@ -20,10 +20,10 @@
     max-width: 100%;
     // stylelint-disable-next-line primer/spacing
     margin-right: 5px;
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-input-contrast-bg);
 
     &:focus {
-      background-color: var(--color-bg-primary);
+      background-color: var(--color-input-bg);
     }
 
     &.shorter { width: 130px; }
@@ -190,47 +190,33 @@
 
   &.successed {
     .success {
-      // stylelint-disable-next-line primer/colors
-      color: var(--color-auto-green-9);
-      background-color: var(--color-bg-success);
-      border-color: var(--color-border-success);
+      color: var(--color-input-tooltip-success-text);
+      background-color: var(--color-input-tooltip-success-bg);
+      border-color: var(--color-input-tooltip-success-border);
 
-      &::after {
-        // stylelint-disable-next-line primer/borders
-        border-bottom-color: var(--color-bg-success);
-      }
-
-      &::before {
-        border-bottom-color: var(--color-border-success);
-      }
+      &::after { border-bottom-color: var(--color-input-tooltip-success-bg); } // stylelint-disable-line primer/borders
+      &::before { border-bottom-color: var(--color-input-tooltip-success-border); }
     }
   }
 
   &.warn {
     .form-control {
-      // stylelint-disable-next-line primer/borders
-      border-color: var(--color-auto-yellow-6);
+      border-color: var(--color-input-warning-border);
     }
 
     .warning {
-      background-color: var(--color-bg-warning);
-      border-color: var(--color-border-warning);
+      color: var(--color-input-tooltip-warning-text);
+      background-color: var(--color-input-tooltip-warning-bg);
+      border-color: var(--color-input-tooltip-warning-border);
 
-      &::after {
-        // stylelint-disable-next-line primer/borders
-        border-bottom-color: var(--color-bg-warning);
-      }
-
-      &::before {
-        border-bottom-color: var(--color-border-warning);
-      }
+      &::after { border-bottom-color: var(--color-input-tooltip-warning-bg); } // stylelint-disable-line primer/borders
+      &::before { border-bottom-color: var(--color-input-tooltip-warning-border); }
     }
   }
 
   &.errored {
     .form-control {
-      // stylelint-disable-next-line primer/borders
-      border-color: var(--color-auto-red-6);
+      border-color: var(--color-input-error-border);
     }
 
     label {
@@ -238,20 +224,17 @@
     }
 
     .error {
-      background-color: var(--color-bg-danger);
-      border-color: var(--color-auto-red-3); // stylelint-disable-line primer/borders
+      color: var(--color-input-tooltip-error-text);
+      background-color: var(--color-input-tooltip-error-bg);
+      border-color: var(--color-input-tooltip-error-border);
 
-      &::after {
-        border-bottom-color: var(--color-bg-danger); // stylelint-disable-line primer/borders
-      }
-
-      &::before {
-        border-bottom-color: var(--color-auto-red-3); // stylelint-disable-line primer/borders
-      }
+      &::after { border-bottom-color: var(--color-input-tooltip-error-bg); } // stylelint-disable-line primer/borders
+      &::before { border-bottom-color: var(--color-input-tooltip-error-border); }
     }
   }
 }
 
+// tooltip
 .note {
   min-height: 17px;
   margin: $spacer-1 0 2px;

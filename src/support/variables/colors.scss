@@ -48,7 +48,7 @@ $bg-yellow-dark:    $yellow-700 !default;
 // Text colors
 $text-black:        $black !default;
 $text-white:        var(--color-text-inverse) !default; // $white
-$text-blue:         var(--color-text-link-primary) !default; // $blue-500
+$text-blue:         var(--color-text-link) !default; // $blue-500
 $text-gray-dark:    var(--color-text-primary) !default; // $gray-900
 $text-gray-light:   var(--color-text-tertiary) !default; // $gray-500
 $text-gray:         var(--color-text-secondary) !default; // $gray-600
@@ -73,7 +73,7 @@ $box-shadow-extra-large: var(--color-shadow-extra-large) !default;
 
 $box-shadow-highlight: var(--color-shadow-highlight) !default; // top highlight
 $box-shadow-inset: var(--color-shadow-inset) !default; // top inner shadow
-$box-shadow-focus: var(--color-shadow-focus) !default; // blue focus ring
+$box-shadow-focus: var(--color-state-focus-shadow) !default; // blue focus ring
 
 // Button variables
 $border-color-button: var(--color-btn-border) !default;

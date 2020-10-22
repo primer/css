@@ -100,7 +100,7 @@
   &.focus {
     outline: 1px dotted transparent; // Support Firfox custom colors
     outline-offset: 2px;
-    box-shadow: var(--color-shadow-focus);
+    box-shadow: var(--color-state-focus-shadow);
   }
 }
 

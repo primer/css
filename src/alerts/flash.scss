@@ -64,13 +64,13 @@
 //
 
 .flash {
-  color: var(--color-alert-text);
-  background-color: var(--color-alert-bg);
-  border-color: var(--color-alert-border);
+  color: var(--color-alert-info-text);
+  background-color: var(--color-alert-info-bg);
+  border-color: var(--color-alert-info-border);
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: var(--color-alert-icon);
+    color: var(--color-alert-info-icon);
   }
 }
 

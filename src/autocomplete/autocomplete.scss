@@ -11,7 +11,7 @@
   background: var(--color-autocomplete-bg);
   border: $border-width $border-style var(--color-autocomplete-border);
   border-radius: $border-radius;
-  box-shadow: var(--color-shadow-medium);
+  box-shadow: var(--color-autocomplete-shadow);
 }
 
 // One of the items that appears within an autocomplete group
@@ -32,7 +32,17 @@
   background-color: var(--color-autocomplete-bg);
   border: 0;
 
-  &:hover,
+  &:hover {
+    color: var(--color-state-hover-primary-text);
+    text-decoration: none;
+    background-color: var(--color-state-hover-primary-bg);
+
+    // Inherit color on all child elements to ensure enough contrast
+    * {
+      color: inherit !important;
+    }
+  }
+
   &.selected,
   &[aria-selected=true],
   &.navigation-focus {

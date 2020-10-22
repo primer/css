@@ -12,4 +12,12 @@
 @import "./core/index.scss";
 @import "./product/index.scss";
 @import "./marketing/index.scss";
-@include primer-colors-dark('[data-color-mode="dark"]');
+@import "./support/mixins/color-modes.scss";
+
+@include color-mode(light) {
+  @include primer-colors-light;
+}
+
+@include color-mode(dark) {
+  @include primer-colors-dark;
+}

@@ -47,16 +47,14 @@ n/a              | `.State--draft`
 
 [`v15`](https://primer.style/css/utilities/colors#text-color-utilities) | `v16`
 --- | ---
-`.text-gray-dark`         | `.text-primary`
-`.text-gray`              | `.text-secondary`
-`.text-gray-light`        | `.text-tertiary`
-`.text-green`             | `.text-success`
-`.text-yellow`            | `.text-warning`
-`.text-red`               | `.text-danger`
-`.text-white`             | `.text-inverse`
-`.text-blue`              | `.link-primary`
-`.link-gray-dark`         | `.link-secondary`
-`.link-gray`              | `.link-tertiary`
+`.text-gray-dark`         | `.color-text-primary`
+`.text-gray`              | `.color-text-secondary`
+`.text-gray-light`        | `.color-text-tertiary`
+`.text-blue`              | `.color-text-link`
+`.text-green`             | `.color-text-success`
+`.text-yellow`            | `.color-text-warning`
+`.text-red`               | `.color-text-danger`
+`.text-white`             | `.color-text-inverse`
 `.text-black`             | n/a
 `.text-orange`            | n/a
 `.text-orange-light`      | n/a
@@ -67,26 +65,26 @@ n/a              | `.State--draft`
 
 `v15` | `v16`
 --- | ---
-n/a | `.icon-primary`
-n/a | `.icon-secondary`
-n/a | `.icon-tertiary`
-n/a | `.icon-info`
-n/a | `.icon-success`
-n/a | `.icon-warning`
-n/a | `.icon-danger`
+n/a | `.color-icon-primary`
+n/a | `.color-icon-secondary`
+n/a | `.color-icon-tertiary`
+n/a | `.color-icon-info`
+n/a | `.color-icon-success`
+n/a | `.color-icon-warning`
+n/a | `.color-icon-danger`
 
 ### Border
 
 [`v15`](https://primer.style/css/utilities/borders#border-color-utilities) | `v16`
 --- | ---
-`.border-gray`          | `.border-primary`
-`.border-gray-light`    | `.border-secondary`
-`.border-gray-dark`     | `.border-tertiary`
-`.border-blue`          | `.border-info`
-`.border-green`         | `.border-success`
-`.border-yellow`        | `.border-warning`
-`.border-red`           | `.border-danger`
-`.border-white`         | `.border-inverse`
+`.border-gray`          | `.color-border-primary`
+`.border-gray-light`    | `.color-border-secondary`
+`.border-gray-dark`     | `.color-border-tertiary`
+`.border-blue`          | `.color-border-info`
+`.border-green`         | `.color-border-success`
+`.border-yellow`        | `.color-border-warning`
+`.border-red`           | `.color-border-danger`
+`.border-white`         | `.color-border-inverse`
 `.border-gray-darker`   | n/a
 `.border-blue-light`    | n/a
 `.border-red-light`     | n/a
@@ -103,19 +101,19 @@ n/a | `.icon-danger`
 
 [`v15`](https://primer.style/css/utilities/colors#background-utilities) | `v16`
 --- | ---
-`.bg-white`        | `.bg-primary`
-`.bg-gray-light`   | `.bg-secondary`
-`.bg-gray`         | `.bg-tertiary`
-`.bg-gray-dark`    | `.bg-canvas-inverse`
-`.bg-blue-light`   | `.bg-info`
-`.bg-blue`         | `.bg-info-inverse`
-`.bg-green-light`  | `.bg-success`
-`.bg-green`        | `.bg-success-inverse`
-`.bg-yellow-light` | `.bg-warning`
-`.bg-yellow`       | `.bg-warning-inverse`
-`.bg-red-light`    | `.bg-danger`
-`.bg-red`          | `.bg-danger-inverse`
-n/a                | `.bg-canvas`
+`.bg-white`        | `.color-bg-primary`
+`.bg-gray-light`   | `.color-bg-secondary`
+`.bg-gray`         | `.color-bg-tertiary`
+`.bg-gray-dark`    | `.color-bg-canvas-inverse`
+`.bg-blue-light`   | `.color-bg-info`
+`.bg-blue`         | `.color-bg-info-inverse`
+`.bg-green-light`  | `.color-bg-success`
+`.bg-green`        | `.color-bg-success-inverse`
+`.bg-yellow-light` | `.color-bg-warning`
+`.bg-yellow`       | `.color-bg-warning-inverse`
+`.bg-red-light`    | `.color-bg-danger`
+`.bg-red`          | `.color-bg-danger-inverse`
+n/a                | `.color-bg-canvas`
 `.bg-purple-light` | n/a
 `.bg-purple`       | n/a
 `.bg-yellow-dark`  | n/a
@@ -126,10 +124,22 @@ n/a                | `.bg-canvas`
 
 `v15` | `v16`
 --- | ---
-`.box-shadow`               | `.shadow-small`
-`.box-shadow-medium`        | `.shadow-medium`
-`.box-shadow-large`         | `.shadow-large`
-`.box-shadow-extra-large`   | `.shadow-extra-large`
+`.box-shadow`               | `.color-shadow-small`
+`.box-shadow-medium`        | `.color-shadow-medium`
+`.box-shadow-large`         | `.color-shadow-large`
+`.box-shadow-extra-large`   | `.color-shadow-extra-large`
+
+### Link
+
+The `link` utilities are part of the `Link` component.
+
+[`v15`](https://primer.style/css/utilities/colors##link-colors) | `v16`
+--- | ---
+`.link-gray-dark`         | `.Link--primary`
+`.link-gray`              | `.Link--secondary`
+`.muted-link`             | `.Link--muted`
+`.link-hover-blue`        | `.Link--onHover`
+n/a                       | `.Link`
 
 ## Variables
 
@@ -141,14 +151,12 @@ n/a                | `.bg-canvas`
 `$text-gray` (`$gray-600`)              | `var(--color-text-secondary)`
 `$text-gray-light` (`$gray-500`)        | `var(--color-text-tertiary)`
 `$text-white` (`$white`)                | `var(--color-text-inverse)`
-`$text-blue` (`$blue-500`)              | `var(--color-text-link-primary)`
+`$text-blue` (`$blue-500`)              | `var(--color-text-link)`
 `$text-green` (`$green-600`)            | `var(--color-text-success)`
 `$text-red` (`$red-600`)                | `var(--color-text-danger)`
 `$text-yellow` (`$yellow-800`)          | `var(--color-text-warning)`
 n/a                                     | `var(--color-text-placeholder)`
 n/a                                     | `var(--color-text-disabled)`
-n/a                                     | `var(--color-text-link-secondary)`
-n/a                                     | `var(--color-text-link-tertiary)`
 `$text-black` (`$black`)                | n/a
 `$text-orange` (`$orange-900`)          | n/a
 `$text-orange-light` (`$orange-600`)    | n/a
@@ -223,7 +231,7 @@ n/a                                 | `var(--color-bg-canvas)`
 `$box-shadow-extra-large`   | `var(--color-shadow-extra-large)`
 `$box-shadow-highlight`     | `var(--color-shadow-highlight)`
 `$box-shadow-inset`         | `var(--color-shadow-inset)`
-`$box-shadow-focus`         | `var(--color-shadow-focus)`
+`$box-shadow-focus`         | `var(--color-state-focus-shadow)`
 
 ## Color System
 

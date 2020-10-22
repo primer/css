@@ -3,7 +3,7 @@
   overflow-x: auto;
   overflow-y: hidden;
   // stylelint-disable-next-line primer/box-shadow
-  box-shadow: inset 0 -1px 0 var(--color-border-primary);
+  box-shadow: inset 0 -1px 0 var(--color-border-secondary);
   justify-content: space-between;
 }
 
@@ -16,7 +16,7 @@
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 30px;
-  color: var(--color-underline-nav-text);
+  color: var(--color-underlinenav-text);
   text-align: center;
   white-space: nowrap;
   background-color: transparent;
@@ -39,7 +39,7 @@
   &[role=tab][aria-selected=true],
   &[aria-current]:not([aria-current=false]) {
     font-weight: $font-weight-bold;
-    color: var(--color-underline-nav-text-active);
+    color: var(--color-underlinenav-text-active);
     // stylelint-disable-next-line primer/borders
     border-bottom-color: #f9826c; // custom coral
     outline: 1px dotted transparent; // Support Firfox custom colors
@@ -70,11 +70,12 @@
 .UnderlineNav-octicon {
   margin-right: $spacer-1;
   // stylelint-disable-next-line primer/colors
-  color: var(--color-icon-tertiary);
+  color: var(--color-underlinenav-icon);
 }
 
 .UnderlineNav .Counter {
   margin-left: $spacer-1;
+  color: var(--color-underlinenav-counter-text);
 }
 
 .UnderlineNav-container {
