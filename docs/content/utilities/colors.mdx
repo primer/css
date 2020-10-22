@@ -1,7 +1,7 @@
 ---
 title: Colors
 description: 'Immutable, atomic CSS classes to rapidly build product'
-status: Stable
+status: New
 status_issue: 'https://github.com/github/design-systems/issues/97'
 ---
 
@@ -21,6 +21,7 @@ Use text color utilities to set text to a specific color. Color contrast must pa
 <div class="color-text-primary mb-2">.color-text-primary</div>
 <div class="color-text-secondary mb-2">.color-text-secondary</div>
 <div class="color-text-tertiary mb-2">.color-text-tertiary</div>
+<div class="color-text-link mb-2">.color-text-link</div>
 <div class="color-text-success mb-2">.color-text-success</div>
 <div class="color-text-warning mb-2">.color-text-warning <span class="tooltipped tooltipped-n" aria-label="Does not meet accessibility standards">⚠️</span></div>
 <div class="color-text-danger mb-2">.color-text-danger</div>
@@ -156,39 +157,7 @@ On dark backgrounds use `border-white-fade` instead. It adds an rgba white borde
 
 ## Link colors
 
-By default `<a>` elements already use a text color that is blue and apply an underline on hover. If you need to make other elements behave like a link and perhaps use JS to trigger navigating to another page, use the `.link-primary` class.
-
-```html live
-<span class="link-primary">link-primary</span>
-```
-
-If you like to override the default link styles you can do so with text color utilities and the following link utilities. **Bear in mind that link styles are easier for more people to see and interact with when the changes in styles do not rely on color alone.**
-
-Use `.link-secondary` to turn the link color to blue only on hover.
-
-```html live
-<a class="link-secondary" href="#url">link-secondary</a>
-```
-
-Use `.link-tertiary` for a more subtle link color that turns blue on hover.
-
-```html live
-<a class="link-tertiary" href="#url">link-tertiary</a>
-```
-
-Use `.muted-link` for a more subtle color, that turns blue on hover but with **no underline**.
-
-```html live
-<a class="muted-link" href="#url">muted-link</a>
-```
-
-Use `.link-hover-blue` to make any text color used with links to turn blue on hover. This is useful when you want only part of a link to turn blue on hover.
-
-```html live
-<a class="color-text-primary no-underline" href="#url">
-  A link with only part of it is <span class="link-hover-blue">blue on hover</span>.
-</a>
-```
+You can use the [Link](../components/links) component to change the link colors.
 
 
 <!-- TODO: Remove? -->

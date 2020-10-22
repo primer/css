@@ -1,0 +1,49 @@
+// Links
+
+.Link {
+  color: var(--color-text-link);
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.link-gray-dark, // TODO: Deprecate
+.Link--primary {
+  color: var(--color-text-primary) !important;
+
+  &:hover {
+    color: var(--color-text-link) !important;
+  }
+}
+
+.link-gray, // TODO: Deprecate
+.Link--secondary {
+  color: var(--color-text-secondary) !important;
+
+  &:hover {
+    color: var(--color-text-link) !important;
+  }
+}
+
+.muted-link, // TODO: Deprecate
+.Link--muted {
+  color: var(--color-text-secondary) !important;
+
+  &:hover {
+    color: var(--color-text-link) !important;
+    text-decoration: none;
+  }
+}
+
+// Set the link color only on hover
+// Useful when you want only part of a link to turn blue on hover
+.link-hover-blue, // TODO: Deprecate
+.Link--onHover {
+  &:hover {
+    color: var(--color-text-link) !important;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

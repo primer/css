@@ -7,7 +7,7 @@
   display: inline-block;
   padding: 0;
   font-size: inherit;
-  color: var(--color-text-link-primary);
+  color: var(--color-text-link);
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
@@ -34,7 +34,7 @@
 //
 // Typically used as a "cancel" button next to a .btn
 .btn-invisible {
-  color: var(--color-text-link-primary);
+  color: var(--color-text-link);
   background-color: transparent; // Reset default gradient backgrounds and colors
   border: 0;
   border-radius: 0;
@@ -47,7 +47,7 @@
   &[aria-selected=true],
   &.zeroclipboard-is-hover,
   &.zeroclipboard-is-active {
-    color: var(--color-text-link-primary);
+    color: var(--color-text-link);
     background: none;
     outline: none;
     box-shadow: none;
@@ -71,7 +71,7 @@
   background: transparent;
   border: 0;
 
-  &:hover { color: var(--color-text-link-primary); }
+  &:hover { color: var(--color-text-link); }
 
   &.disabled,
   &[aria-disabled=true] {
@@ -183,7 +183,7 @@
   }
 
   &:hover {
-    color: var(--color-text-link-primary);
+    color: var(--color-text-link);
     cursor: pointer;
   }
 

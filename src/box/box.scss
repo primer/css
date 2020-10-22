@@ -132,7 +132,7 @@
   &.navigation-focus {
     // Focus styles for when drag icon
     .Box-row--drag-button {
-      color: var(--color-text-link-primary);
+      color: var(--color-text-link);
       cursor: grab;
       opacity: 100;
     }
@@ -192,7 +192,7 @@
     text-decoration: none;
 
     &:hover {
-      color: var(--color-text-link-primary);
+      color: var(--color-text-link);
       text-decoration: none;
     }
   }
