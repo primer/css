@@ -1,24 +1,49 @@
+import primerStyles from '!!raw-loader!postcss-loader!../../src/docs.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
 import chroma from 'chroma-js'
 import styled from 'styled-components'
-import {Box, Text} from '@primer/components'
+import {Frame} from '@primer/gatsby-theme-doctocat'
+import {Box, Flex, Text} from '@primer/components'
 import {colors, colorModes, getPaletteByName} from './color-variables'
 import Table from './table'
+
+function LivePreviewWrapper({children}) {
+  return (
+    <Frame>
+      <link rel="stylesheet" href="https://github.com/site/assets/styleguide.css" />
+      <style>{primerStyles}</style>
+      <Flex direction="row">
+        <div data-color-mode="light" style={{flex: 1}}>
+          <div className="frame-example p-3">{children}</div>
+        </div>
+        <div data-color-mode="dark" style={{flex: 1}}>
+          <div className="frame-example p-3">{children}</div>
+        </div>
+      </Flex>
+    </Frame>
+  )
+}
 
 function capitalize(word) {
   return word[0].toUpperCase() + word.substr(1)
 }
 
+export function CSSModeVars({filter, vars, render}) {
+  const filteredVars = vars.filter(s => s.match(filter))
+
+  return (
+    <LivePreviewWrapper>
+      {filteredVars.map(variable => (
+        <div key={variable}>{render(variable)}</div>
+      ))}
+    </LivePreviewWrapper>
+  )
+}
+
 export function ColorModeTable({baseColor, values, ...rest}) {
   const fgColor = overlayColor(baseColor)
   const colorProps = {bg: baseColor, color: fgColor}
-
-  values.forEach(({variable, values, slug}) => {
-    if (!values.light || !values.dark) {
-      console.log(variable, values)
-    }
-  })
 
   return (
     <Table {...rest}>

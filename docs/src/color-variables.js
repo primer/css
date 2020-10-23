@@ -66,7 +66,7 @@ function flattenVars(tree, prefix = []) {
 
   for (const key of Object.keys(tree)) {
     const val = tree[key]
-    const varName = [...prefix, key].join('-')
+    const varName = [...prefix, key].map(dasherize).join('-')
     if (Array.isArray(val) && !varName.includes('shadow')) {
       for (const i in val) {
         const arrayVarName = `${varName}-${i}`
@@ -83,4 +83,8 @@ function flattenVars(tree, prefix = []) {
   }
 
   return output
+}
+
+function dasherize(str) {
+  return str.replace(/([A-Z])/g, (m, r) => `-${r.toLowerCase()}`).replace(/^-/, '')
 }

@@ -8,15 +8,45 @@ bundle: support
 
 import lightColors from '@primer/primitives/dist/js/colors/light'
 import {Flash, Box, Flex, Heading, Link, StyledOcticon} from '@primer/components'
-import {LinkIcon} from '@primer/octicons-react'
+import {LinkIcon, OctofaceIcon} from '@primer/octicons-react'
 import {colorModes, palettes, functionalVarNames, flattened} from '../../src/color-variables'
-import {PaletteTable, PaletteCell, ColorModeTable, overlayColor} from '../../src/color-system'
+import {PaletteTable, PaletteCell, ColorModeTable, CSSModeVars, overlayColor} from '../../src/color-system'
 
 ## Functional variables
 
 The Primer color system contains multiple color modes; currently, Primer ships with a light mode and a dark mode. Each color mode comes with a set of CSS variables that can be used to style elements based on the functionality of the element. These should be used instead of specifying colors directly so that the colors adapt correctly when switching between color modes.
 
-When at all possible, favor using [color utility classes](/utilities/colors) over using the CSS color variables.
+When at all possible, favor using [color utility classes](/utilities/colors) over using the CSS color variables in custom CSS.
+
+<Flash scheme="yellow">
+
+Note: because the new Primer CSS color system is based on *functional* colors, you should only use colors designed for the element you're applying them to. For example, text colors, which start with `--color-text-`, should not be used for icons, backgrounds, or any other non-text element. See [I don't see a color that works for me]() for instructions on what to do if none of the functional colors meet your needs.
+
+</Flash>
+
+### Text
+
+<CSSModeVars
+  modes={colorModes}
+  vars={functionalVarNames}
+  filter={/^text-/}
+  render={variable => {
+    return <span style={{color: `var(--color-${variable})`}}>--color-{variable}</span>
+  }}
+/>
+
+### Icons
+
+<CSSModeVars
+  modes={colorModes}
+  vars={functionalVarNames}
+  filter={/^icon-/}
+  render={variable => {
+    return <span style={{color: `var(--color-${variable})`}}><StyledOcticon icon={OctofaceIcon} /> --color-{variable}</span>
+  }}
+/>
+
+---
 
 <ColorModeTable
   baseColor="#ffffff"
