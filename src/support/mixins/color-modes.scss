@@ -5,10 +5,22 @@
     [data-color-mode="light"] {
       @content;
     }
+
+    [data-color-mode="auto"] {
+      @media (prefers-color-scheme: light) {
+        @content;
+      }
+    }
   }
   @else if $mode == dark {
     [data-color-mode="dark"] {
       @content;
+    }
+
+    [data-color-mode="auto"] {
+      @media (prefers-color-scheme: dark) {
+        @content;
+      }
     }
   }
 }
