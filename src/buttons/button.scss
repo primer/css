@@ -151,21 +151,21 @@
   }
 }
 
-// Mixin: btn-inverse-on-hover
+// Outline button
 
-@mixin btn-inverse-on-hover($type) {
-  color: var(--color-btn-#{$type}-text);
+.btn-outline {
+  color: var(--color-btn-outline-text);
   transition: none;
 
   &:hover,
   [open] > & {
-    color: var(--color-text-inverse);
-    background-color: var(--color-btn-#{$type}-bg-hover); // stylelint-disable-line primer/no-undefined-vars
-    border-color: var(--color-btn-inverse-on-hover-border);
-    box-shadow: var(--color-btn-inverse-on-hover-shadow), var(--color-btn-inverse-on-hover-shadow-inset);
+    color: var(--color-btn-outline-hover-text);
+    background-color: var(--color-btn-outline-hover-bg);
+    border-color: var(--color-btn-outline-hover-border);
+    box-shadow: var(--color-btn-outline-hover-shadow), var(--color-btn-outline-hover-inset-shadow);
 
     .Counter {
-      background-color: var(--color-btn-inverse-on-hover-counter-bg);
+      background-color: var(--color-btn-outline-hover-counter-bg);
     }
 
     .octicon {
@@ -176,45 +176,87 @@
   &:active,
   &.selected,
   &[aria-selected=true] {
-    color: var(--color-text-inverse);
-    background-color: var(--color-btn-#{$type}-bg-active); // stylelint-disable-line primer/no-undefined-vars
-    border-color: var(--color-btn-inverse-on-hover-border);
-    box-shadow: var(--color-btn-#{$type}-shadow); // stylelint-disable-line primer/no-undefined-vars
+    color: var(--color-btn-outline-selected-text);
+    background-color: var(--color-btn-outline-selected-bg);
+    border-color: var(--color-btn-outline-selected-border);
+    box-shadow: var(--color-btn-outline-selected-shadow);
   }
 
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
-    color: var(--color-btn-#{$type}-text-disabled); // stylelint-disable-line primer/no-undefined-vars
-    background-color: var(--color-bg-secondary);
+    color: var(--color-btn-outline-disabled-text);
+    background-color: var(--color-btn-bg);
     border-color: var(--color-btn-border);
-    box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
+    box-shadow: none;
 
     .Counter {
-      background-color: var(--color-btn-#{$type}-counter-bg-disabled); // stylelint-disable-line primer/no-undefined-vars
+      background-color: var(--color-btn-outline-disabled-counter-bg);
     }
   }
 
   &:focus {
-    box-shadow: var(--color-btn-#{$type}-shadow-focus); // stylelint-disable-line primer/no-undefined-vars
+    box-shadow: var(--color-btn-outline-focus-shadow);
   }
 
   .Counter {
     color: inherit;
-    background-color: var(--color-btn-#{$type}-counter-bg); // stylelint-disable-line primer/no-undefined-vars
+    background-color: var(--color-btn-outline-counter-bg);
   }
 }
 
 // Danger button
 
 .btn-danger {
-  @include btn-inverse-on-hover("danger");
-}
+  color: var(--color-btn-danger-text);
+  transition: none;
 
-// Outline button
+  &:hover,
+  [open] > & {
+    color: var(--color-btn-danger-hover-text);
+    background-color: var(--color-btn-danger-hover-bg);
+    border-color: var(--color-btn-danger-hover-border);
+    box-shadow: var(--color-btn-danger-hover-shadow), var(--color-btn-danger-hover-inset-shadow);
 
-.btn-outline {
-  @include btn-inverse-on-hover("outline");
+    .Counter {
+      background-color: var(--color-btn-danger-hover-counter-bg);
+    }
+
+    .octicon {
+      color: inherit;
+    }
+  }
+
+  &:active,
+  &.selected,
+  &[aria-selected=true] {
+    color: var(--color-btn-danger-selected-text);
+    background-color: var(--color-btn-danger-selected-bg);
+    border-color: var(--color-btn-danger-selected-border);
+    box-shadow: var(--color-btn-danger-selected-shadow);
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    color: var(--color-btn-danger-disabled-text);
+    background-color: var(--color-btn-bg);
+    border-color: var(--color-btn-border);
+    box-shadow: none;
+
+    .Counter {
+      background-color: var(--color-btn-danger-disabled-counter-bg);
+    }
+  }
+
+  &:focus {
+    box-shadow: var(--color-btn-danger-focus-shadow);
+  }
+
+  .Counter {
+    color: inherit;
+    background-color: var(--color-btn-danger-counter-bg);
+  }
 }
 
 // Sizes
