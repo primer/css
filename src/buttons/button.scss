@@ -186,7 +186,7 @@
   &.disabled,
   &[aria-disabled=true] {
     color: var(--color-btn-outline-disabled-text);
-    background-color: var(--color-btn-bg);
+    background-color: var(--color-btn-outline-disabled-bg);
     border-color: var(--color-btn-border);
     box-shadow: none;
 
@@ -196,6 +196,7 @@
   }
 
   &:focus {
+    border-color: var(--color-btn-outline-focus-border);
     box-shadow: var(--color-btn-outline-focus-shadow);
   }
 
@@ -240,7 +241,7 @@
   &.disabled,
   &[aria-disabled=true] {
     color: var(--color-btn-danger-disabled-text);
-    background-color: var(--color-btn-bg);
+    background-color: var(--color-btn-danger-disabled-bg);
     border-color: var(--color-btn-border);
     box-shadow: none;
 
@@ -250,6 +251,7 @@
   }
 
   &:focus {
+    border-color: var(--color-btn-danger-focus-border);
     box-shadow: var(--color-btn-danger-focus-shadow);
   }
 
