@@ -49,7 +49,9 @@ path: stickersheet/
 
 <button class="mr-2 btn" type="button">Button</button>
 <button class="mr-2 btn btn-primary" type="button">Primary</button>
+<div class="my-2"></div>
 <button class="mr-2 btn btn-outline" type="button">Outline</button>
+<button class="mr-2 btn btn-danger" type="button">Danger</button>
 
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
@@ -146,7 +148,9 @@ path: stickersheet/
 
 <button class="mr-2 btn" type="button">Button</button>
 <button class="mr-2 btn btn-primary" type="button">Primary</button>
+<div class="my-2"></div>
 <button class="mr-2 btn btn-outline" type="button">Outline</button>
+<button class="mr-2 btn btn-danger" type="button">Danger</button>
 
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
