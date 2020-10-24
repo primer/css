@@ -66,23 +66,25 @@
 // Default button
 
 .btn {
-  color: var(--color-text-primary);
+  color: var(--color-btn-text);
   background-color: var(--color-btn-bg);
   border-color: var(--color-btn-border);
-  box-shadow: var(--color-btn-shadow), var(--color-btn-shadow-highlight);
-  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
+  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  transition-property: color, background-color, border-color;
 
   &:hover,
   &.hover,
   [open] > & {
-    background-color: var(--color-btn-bg-hover);
+    background-color: var(--color-btn-hover-bg);
+    border-color: var(--color-btn-hover-border);
     transition-duration: 0.1s;
   }
 
   &:active,
   &.selected,
   &[aria-selected=true] {
-    background-color: var(--color-btn-bg-active);
+    background-color: var(--color-btn-selected-bg);
     box-shadow: var(--color-shadow-inset);
     transition: none;
   }
@@ -98,9 +100,9 @@
   // Keep :focus after :disabled. Allows to see the focus ring even on disabled buttons
   &:focus,
   &.focus {
-    outline: 1px dotted transparent; // Support Firfox custom colors
-    outline-offset: 2px;
-    box-shadow: var(--color-state-focus-shadow);
+    outline: none;
+    border-color: var(--color-btn-focus-border);
+    box-shadow: var(--color-btn-focus-shadow);
   }
 }
 
@@ -155,7 +157,6 @@
 
 .btn-outline {
   color: var(--color-btn-outline-text);
-  transition: none;
 
   &:hover,
   [open] > & {
@@ -210,7 +211,6 @@
 
 .btn-danger {
   color: var(--color-btn-danger-text);
-  transition: none;
 
   &:hover,
   [open] > & {
