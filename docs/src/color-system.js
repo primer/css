@@ -288,7 +288,6 @@ export function overlayColor(bg) {
       $overlayColorCache.set(bg, result)
       return result
     } catch (err) {
-      console.log('error with value', bg)
       return 'white'
     }
   }
