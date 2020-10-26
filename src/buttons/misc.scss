@@ -91,9 +91,18 @@
 // Typically used with an octicon-x
 .close-button {
   padding: 0;
+  color: var(--color-text-secondary);
   background: transparent;
   border: 0;
   outline: none;
+
+  &:hover {
+    color: var(--color-text-primary);
+  }
+
+  &:active {
+    color: var(--color-text-tertiary);
+  }
 }
 
 // Hidden text button
