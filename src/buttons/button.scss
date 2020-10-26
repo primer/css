@@ -100,8 +100,8 @@
   // Keep :focus after :disabled. Allows to see the focus ring even on disabled buttons
   &:focus,
   &.focus {
-    outline: none;
     border-color: var(--color-btn-focus-border);
+    outline: none;
     box-shadow: var(--color-btn-focus-shadow);
   }
 }
