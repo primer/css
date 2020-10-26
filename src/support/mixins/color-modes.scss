@@ -24,3 +24,13 @@
     }
   }
 }
+
+@mixin color-mode-var($name, $light, $dark) {
+  @include color-mode(light) {
+    --color-#{$name}: #{$light};
+  }
+
+  @include color-mode(dark) {
+    --color-#{$name}: #{$dark};
+  }
+}
