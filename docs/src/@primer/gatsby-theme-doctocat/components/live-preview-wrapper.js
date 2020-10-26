@@ -14,7 +14,6 @@ function LivePreviewWrapper({children}) {
   const [colorMode, setColorModeState] = React.useState('light')
 
   const setColorMode = mode => {
-    setColorModeState(mode)
     window.dispatchEvent(new ColorModeChangeEvent(mode))
   }
 
@@ -25,7 +24,7 @@ function LivePreviewWrapper({children}) {
     return () => {
       window.removeEventListener('color-mode-change', callback)
     }
-  }, [])
+  }, [setColorModeState])
 
   return (
     <Frame>
