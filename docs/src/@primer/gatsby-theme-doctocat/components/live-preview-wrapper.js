@@ -4,21 +4,15 @@ import {Frame} from '@primer/gatsby-theme-doctocat'
 import {MoonIcon, SunIcon} from '@primer/octicons-react'
 import React from 'react'
 
-class ColorModeChangeEvent extends CustomEvent {
-  constructor(mode) {
-    super('color-mode-change', {detail: mode})
-  }
-}
-
 function LivePreviewWrapper({children}) {
   const [colorMode, setColorModeState] = React.useState('light')
 
   const setColorMode = mode => {
-    window.dispatchEvent(new ColorModeChangeEvent(mode))
+    window.dispatchEvent(new CustomEvent('color-mode-change', {detail: {mode}}))
   }
 
   React.useEffect(() => {
-    const callback = e => setColorModeState(e.detail)
+    const callback = e => setColorModeState(e.detail.mode)
     window.addEventListener('color-mode-change', callback)
 
     return () => {
