@@ -88,6 +88,6 @@ $tooltip-background-color: $black !default; // TODO: Deprecate?
 $tooltip-text-color: $white !default; // TODO: Deprecate?
 
 // diffstat background colors
-$bg-diffstat-added: var(--color-diff-addition-bg) !default; // darken($green-400, 5%) TODO: Deprecate?
-$bg-diffstat-deleted: var(--color-diff-deletion-bg) !default; // $red-600 TODO: Deprecate?
-$bg-diffstat-neutral: var(--color-diff-neutral-bg) !default; // $gray-300 TODO: Deprecate?
+$bg-diffstat-added: var(--color-diffstat-addition-bg) !default; // darken($green-400, 5%) TODO: Deprecate?
+$bg-diffstat-deleted: var(--color-diffstat-deletion-bg) !default; // $red-600 TODO: Deprecate?
+$bg-diffstat-neutral: var(--color-diffstat-neutral-bg) !default; // $gray-300 TODO: Deprecate?
