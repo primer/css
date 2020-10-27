@@ -22,16 +22,16 @@
 }
 
 .diffstat-block-deleted {
-  background-color: var(--color-diff-deletion-bg);
-  outline: 1px solid var(--color-diff-deletion-border); // Support Firfox custom colors
+  background-color: var(--color-diffstat-deletion-bg);
+  outline: 1px solid var(--color-diffstat-deletion-border); // Support Firfox custom colors
 }
 
 .diffstat-block-added {
-  background-color: var(--color-diff-addition-bg);
-  outline: 1px solid var(--color-diff-addition-border); // Support Firfox custom colors
+  background-color: var(--color-diffstat-addition-bg);
+  outline: 1px solid var(--color-diffstat-addition-border); // Support Firfox custom colors
 }
 
 .diffstat-block-neutral {
-  background-color: var(--color-diff-neutral-bg);
-  outline: 1px solid var(--color-diff-neutral-border); // Support Firfox custom colors
+  background-color: var(--color-diffstat-neutral-bg);
+  outline: 1px solid var(--color-diffstat-neutral-border); // Support Firfox custom colors
 }
