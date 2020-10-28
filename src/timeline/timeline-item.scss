@@ -40,6 +40,12 @@
   border-radius: 50%;
   justify-content: center;
   flex-shrink: 0;
+
+  &--success {
+    background-color: var(--color-btn-primary-bg);
+    border: 1px solid var(--color-merge-box-success-indicator-border);
+    color: var(--color-text-white);
+  }
 }
 
 .TimelineItem-body {
