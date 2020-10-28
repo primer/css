@@ -18,6 +18,8 @@
       url: /support/marketing-variables
     - title: Variables
       url: /support/variables
+    - title: v16 Migration Guide
+      url: /support/v16-migration
 - title: Utilities
   url: /utilities
   children:
