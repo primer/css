@@ -43,8 +43,8 @@
 
   &--success {
     background-color: var(--color-btn-primary-bg);
-    border: 1px solid var(--color-merge-box-success-indicator-border);
     color: var(--color-text-white);
+    border: $border-width $border-style var(--color-merge-box-success-indicator-border);
   }
 }
 
