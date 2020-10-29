@@ -90,18 +90,23 @@ Background colors are most commonly used for filling large blocks of content or 
 <div class="color-bg-danger mb-2">.color-bg-danger</div>
 ```
 
-## Inversed colors
+## Inversed and permanent colors
 
 ⚠️ WIP: Don't use in produciton. They might still change.
 
-You can inverse some of the background colors to add more emphasis. Be sure to also inverse the text color (`.color-text-inverse`) to give enough contrast. An exception is the `.color-bg-warning-inverse` where the default text color should be used.
+You can inverse the canvas background color. Be sure to also inverse the text color (`.color-text-inverse`) to give enough contrast.
 
 ```html live
 <div class="color-bg-canvas-inverse color-text-inverse mb-2">.color-bg-canvas-inverse .color-text-inverse</div>
-<div class="color-bg-info-inverse color-text-inverse mb-2">.color-bg-info-inverse .color-text-inverse</div>
-<div class="color-bg-success-inverse color-text-inverse mb-2">.color-bg-success-inverse .color-text-inverse</div>
+```
+
+When using the functional inversed background colors the `.color-text-white` is the better choice as it keeps the text white in all color modes. An exception is the `.color-bg-warning-inverse`.
+
+```html live
+<div class="color-bg-info-inverse color-text-white mb-2">.color-bg-info-inverse .color-text-white</div>
+<div class="color-bg-success-inverse color-text-white mb-2">.color-bg-success-inverse .color-text-white</div>
 <div class="color-bg-warning-inverse mb-2">.color-bg-warning-inverse</div>
-<div class="color-bg-danger-inverse color-text-inverse mb-2">.color-bg-danger-inverse .color-text-inverse</div>
+<div class="color-bg-danger-inverse color-text-white mb-2">.color-bg-danger-inverse .color-text-white</div>
 ```
 
 ## Border colors

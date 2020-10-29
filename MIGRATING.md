@@ -54,7 +54,8 @@ n/a              | `.State--draft`
 `.text-green`             | `.color-text-success`
 `.text-yellow`            | `.color-text-warning`
 `.text-red`               | `.color-text-danger`
-`.text-white`             | `.color-text-inverse`
+`.text-white`             | `.color-text-white`
+n/a                       | `.color-text-inverse`
 `.text-black`             | n/a
 `.text-orange`            | n/a
 `.text-orange-light`      | n/a
@@ -150,11 +151,12 @@ n/a                       | `.Link`
 `$text-gray-dark` (`$gray-900`)         | `var(--color-text-primary)`
 `$text-gray` (`$gray-600`)              | `var(--color-text-secondary)`
 `$text-gray-light` (`$gray-500`)        | `var(--color-text-tertiary)`
-`$text-white` (`$white`)                | `var(--color-text-inverse)`
 `$text-blue` (`$blue-500`)              | `var(--color-text-link)`
 `$text-green` (`$green-600`)            | `var(--color-text-success)`
 `$text-red` (`$red-600`)                | `var(--color-text-danger)`
 `$text-yellow` (`$yellow-800`)          | `var(--color-text-warning)`
+`$text-white` (`$white`)                | `var(--color-text-white)`
+n/a                                     | `var(--color-text-inverse)`
 n/a                                     | `var(--color-text-placeholder)`
 n/a                                     | `var(--color-text-disabled)`
 `$text-black` (`$black`)                | n/a
