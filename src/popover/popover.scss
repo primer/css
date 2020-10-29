@@ -24,7 +24,7 @@
     margin-left: -9px;
     // stylelint-disable-next-line primer/borders
     border: $spacer-2 $border-style transparent;
-    border-bottom-color: var(--color-popover-border);
+    border-bottom-color: var(--color-border-overlay);
   }
 
   &::after {
@@ -33,7 +33,7 @@
     // stylelint-disable-next-line primer/borders
     border: 7px $border-style transparent;
     // stylelint-disable-next-line primer/borders
-    border-bottom-color: var(--color-bg-primary);
+    border-bottom-color: var(--color-bg-overlay);
   }
 }
 
@@ -49,13 +49,13 @@
 
   &::before {
     bottom: -$spacer-3;
-    border-top-color: var(--color-popover-border);
+    border-top-color: var(--color-border-overlay);
   }
 
   &::after {
     bottom: -14px;
     // stylelint-disable-next-line primer/borders
-    border-top-color: var(--color-bg-primary);
+    border-top-color: var(--color-bg-overlay);
   }
 }
 
@@ -128,13 +128,13 @@
 .Popover-message--right-bottom {
   &::before {
     right: -$spacer-3;
-    border-left-color: var(--color-popover-border);
+    border-left-color: var(--color-border-overlay);
   }
 
   &::after {
     right: -14px;
     // stylelint-disable-next-line primer/borders
-    border-left-color: var(--color-bg-primary);
+    border-left-color: var(--color-bg-overlay);
   }
 }
 
@@ -144,13 +144,13 @@
 .Popover-message--left-bottom {
   &::before {
     left: -$spacer-3;
-    border-right-color: var(--color-popover-border);
+    border-right-color: var(--color-border-overlay);
   }
 
   &::after {
     left: -14px;
     // stylelint-disable-next-line primer/borders
-    border-right-color: var(--color-bg-primary);
+    border-right-color: var(--color-bg-overlay);
   }
 }
 
