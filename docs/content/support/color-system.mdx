@@ -41,9 +41,9 @@ Note: because the new Primer CSS color system is based on *functional* colors, y
 <CSSModeVars
   modes={colorModes}
   vars={functionalVarNames}
-  filter={/^icon-/}
+  filter={/^icon-(?!folder)/}
   render={variable => {
-    return <span style={{color: `var(--color-${variable})`}}><StyledOcticon icon={OctofaceIcon} /> --color-{variable}</span>
+    return <><span style={{color: `var(--color-${variable})`}}><StyledOcticon icon={OctofaceIcon} /></span> --color-{variable}</>
   }}
 />
 
