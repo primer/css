@@ -431,9 +431,6 @@ $SelectMenu-max-height: 480px !default;
     background-color: var(--color-bg-secondary);
   }
 
-  // Needs to be replaced with a state background
-  //
-
   body:not(.intent-mouse) .SelectMenu-tab:focus {
     background-color: var(--color-select-menu-tap-focus-bg);
   }
