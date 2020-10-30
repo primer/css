@@ -20,7 +20,7 @@
     display: block;
     padding: $spacer-1 $spacer-2;
     font-weight: $font-weight-semibold;
-    border-bottom: $border-width $border-style var(--color-border-overlay);
+    border-bottom: $border-width $border-style var(--color-autocomplete-row-border);
 
     small {
       font-weight: $font-weight-normal;
