@@ -24,6 +24,7 @@
 .color-border-primary   { border-color: var(--color-border-primary) !important; }
 .color-border-secondary { border-color: var(--color-border-secondary) !important; }
 .color-border-tertiary  { border-color: var(--color-border-tertiary) !important; }
+.color-border-overlay   { background-color: var(--color-border-overlay) !important; }
 .color-border-inverse   { border-color: var(--color-border-inverse) !important; }
 .color-border-info      { border-color: var(--color-border-info) !important; }
 .color-border-success   { border-color: var(--color-border-success) !important; }
@@ -33,6 +34,7 @@
 // Background colors
 .color-bg-canvas          { background-color: var(--color-bg-canvas) !important; }
 .color-bg-canvas-inverse  { background-color: var(--color-bg-canvas-inverse) !important; }
+.color-bg-canvas-inset    { background-color: var(--color-bg-canvas-inset) !important; }
 .color-bg-primary         { background-color: var(--color-bg-primary) !important; }
 .color-bg-secondary       { background-color: var(--color-bg-secondary) !important; }
 .color-bg-tertiary        { background-color: var(--color-bg-tertiary) !important; }
