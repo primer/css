@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@primer/octicons": "^9.1.1",
-    "@primer/primitives": "0.0.0-773ac4d"
+    "@primer/primitives": "0.0.0-ae82158"
   },
   "devDependencies": {
     "@octokit/rest": "^16.34.0",
