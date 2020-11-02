@@ -35,6 +35,11 @@
     // stylelint-disable-next-line primer/borders
     border-bottom-color: var(--color-bg-overlay);
   }
+
+  // TODO: Refactor so that .Popover is not dependant on .Box
+  &.Box {
+    background-color: var(--color-bg-overlay);
+  }
 }
 
 // Bottom-oriented carets
