@@ -112,11 +112,11 @@ Always use the `stop` octicon for error states.
 
 ## Toast with dismiss
 
-Use `.Toast-dismissButton` to allow a user to explicitly dismiss a Toast.
+Use `.Toast-dismissButton` and add JavaScript to allow a user to explicitly dismiss a Toast.
 
 ```html live
 <div class="p-1">
-  <div class="Toast">
+  <div id="my-toast" class="Toast">
     <span class="Toast-icon">
       <!-- <%= octicon "info" %> -->
       <svg width="14" height="16" viewBox="0 0 14 16" class="octicon octicon-info" aria-hidden="true">
@@ -138,6 +138,11 @@ Use `.Toast-dismissButton` to allow a user to explicitly dismiss a Toast.
     </button>
   </div>
 </div>
+<script>
+  function dismissToast() {
+    document.getElementById("my-toast").classList.add("Toast--animateOut");
+  }
+</script>
 ```
 
 ## Toast with link
