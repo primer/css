@@ -48,6 +48,7 @@
   &[aria-selected=true],
   &[aria-current]:not([aria-current=false]) {
     cursor: default;
+    background-color: var(--color-menu-bg-active);
 
     &::before {
       position: absolute;
