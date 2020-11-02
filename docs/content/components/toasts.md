@@ -127,7 +127,7 @@ Use `.Toast-dismissButton` and add JavaScript to allow a user to explicitly dism
       </svg>
     </span>
     <span class="Toast-content">This toast is dismissable.</span>
-    <button class="Toast-dismissButton">
+    <button class="Toast-dismissButton" onclick="dismissToast()">
       <!-- <%= octicon "x" %> -->
       <svg width="12" height="16" viewBox="0 0 12 16" class="octicon octicon-x" aria-hidden="true">
         <path
