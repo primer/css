@@ -3,10 +3,10 @@
 .Toast {
   display: flex;
   margin: $spacer-2;
-  color: var(--color-text-primary);
-  background-color: var(--color-bg-canvas);
+  color: var(--color-toast-text);
+  background-color: var(--color-toast-bg);
   border-radius: $border-radius;
-  box-shadow: inset 0 0 0 1px var(--color-border-primary), var(--color-shadow-large);
+  box-shadow: inset 0 0 0 1px var(--color-toast-border), var(--color-toast-shadow);
 
   @include breakpoint(sm) {
     width: max-content;
@@ -21,8 +21,10 @@
   justify-content: center;
   width: $spacer-3 * 3;
   flex-shrink: 0;
-  color: var(--color-text-inverse);
-  background-color: var(--color-bg-info-inverse);
+  color: var(--color-toast-icon);
+  background-color: var(--color-toast-icon-bg);
+  border: $border-width $border-style var(--color-toast-icon-border);
+  border-right: none;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
 }
@@ -34,37 +36,65 @@
 .Toast-dismissButton {
   max-height: 54px; // keeps button aligned to the top
   padding: $spacer-3;
+  color: inherit;
   background-color: transparent;
   border: 0;
 
   &:focus,
   &:hover {
-    color: var(--color-text-secondary);
+    opacity: 0.7;
     outline: none;
   }
 
   &:active {
-    color: var(--color-text-tertiary);
+    opacity: 0.5;
   }
 }
 
 // Modifier
 
-.Toast--error .Toast-icon {
-  background-color: var(--color-bg-danger-inverse);
+.Toast--loading {
+  color: var(--color-toast-loading-text);
+  box-shadow: inset 0 0 0 1px var(--color-toast-loading-border), var(--color-toast-shadow);
+
+  .Toast-icon {
+    color: var(--color-toast-loading-icon);
+    background-color: var(--color-toast-loading-icon-bg);
+    border-color: var(--color-toast-loading-icon-border);
+  }
 }
 
-.Toast--warning .Toast-icon {
-  color: var(--color-text-primary);
-  background-color: var(--color-bg-warning-inverse);
+.Toast--error {
+  color: var(--color-toast-danger-text);
+  box-shadow: inset 0 0 0 1px var(--color-toast-danger-border), var(--color-toast-shadow);
+
+  .Toast-icon {
+    color: var(--color-toast-danger-icon);
+    background-color: var(--color-toast-danger-icon-bg);
+    border-color: var(--color-toast-danger-icon-border);
+  }
 }
 
-.Toast--success .Toast-icon {
-  background-color: var(--color-bg-success-inverse);
+.Toast--warning {
+  color: var(--color-toast-warning-text);
+  box-shadow: inset 0 0 0 1px var(--color-toast-warning-border), var(--color-toast-shadow);
+
+  .Toast-icon {
+    color: var(--color-toast-warning-icon);
+    background-color: var(--color-toast-warning-icon-bg);
+    border-color: var(--color-toast-warning-icon-border);
+  }
 }
 
-.Toast--loading .Toast-icon {
-  background-color: var(--color-toast-ic-bg-loading);
+.Toast--success {
+  color: var(--color-toast-success-text);
+  box-shadow: inset 0 0 0 1px var(--color-toast-success-border), var(--color-toast-shadow);
+
+  .Toast-icon {
+    color: var(--color-toast-success-icon);
+    background-color: var(--color-toast-success-icon-bg);
+    border-color: var(--color-toast-success-icon-border);
+  }
 }
 
 // Animations
