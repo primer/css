@@ -233,3 +233,9 @@ You can adjust border widths on all sides or each side individually with respons
   ]}
   style={{borderSpacing: '0 4px'}}
 />
+
+**Note**: The `.border-gray-darker` class is falsely shown in the list above but is not supported. If you still like to use that utility class, you can do so by adding the following to your styles:
+
+```scss
+.border-gray-darker { border-color: $border-gray-darker !important; }
+```
