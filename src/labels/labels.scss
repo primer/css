@@ -48,9 +48,9 @@
 
 .Label--yellow {
   // stylelint-disable-next-line primer/colors
-  color: $yellow-900;
+  color: var(--color-label-warning-text);
   // stylelint-disable-next-line primer/borders
-  border-color: $yellow-800;
+  border-color: var(--color-label-warning-border);
 }
 
 .Label--orange {
