@@ -1,3 +1,31 @@
+## 15.2.0
+
+### :rocket: Enhancements
+- [#1145](https://github.com/primer/css/pull/1145) Make final position responsive
+- [#1148](https://github.com/primer/css/pull/1148) flex wrap reverse added
+- [#1157](https://github.com/primer/css/pull/1157) Overflow responsive variants
+- [#1156](https://github.com/primer/css/pull/1156) Add missing rounded-3 utility
+
+### :memo: Documentation
+- [#1160](https://github.com/primer/css/pull/1160) Remove custom emoji from SelectMenu docs
+- [#1165](https://github.com/primer/css/pull/1165) Replaced old octicons in examples
+- [#1146](https://github.com/primer/css/pull/1146) Corrected a few typos
+- [#1142](https://github.com/primer/css/pull/1142) Fix typo in Box documentation
+- [#1125](https://github.com/primer/css/pull/1125) Remove reference to Crema
+- [#1155](https://github.com/primer/css/pull/1155) Place search subnav example on new line
+
+### :nail_care: Polish
+- [#1147](https://github.com/primer/css/pull/1147) Increase input font-size on iOS
+- [#1152](https://github.com/primer/css/pull/1152) Remove .autocomplete-results inset border that is occluded by items
+
+### Committers
+- [@MauricioHernanCabrera](https://github.com/MauricioHernanCabrera)
+- [@ashygee](https://github.com/ashygee)
+- [@esdraspavon](https://github.com/esdraspavon)
+- [@neildaniels](https://github.com/neildaniels)
+- [@nicksloan](https://github.com/nicksloan)
+
+
 ## 15.1.0
 
 ### :rocket: Enhancements
