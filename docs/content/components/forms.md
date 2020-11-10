@@ -62,8 +62,8 @@ Form controls in Primer CSS currently have no basic layout specified (this is by
 
   <label> <input type="checkbox" /> Remember me </label>
 
-  <label> <input type="radio" id="herp" name="herpderp" checked /> Herp </label>
-  <label> <input type="radio" id="derp" name="herpderp" /> Derp </label>
+  <label> <input type="radio" id="potato" name="radio-group-example" checked /> Potato </label>
+  <label> <input type="radio" id="tomato" name="radio-group-example" /> Tomato </label>
 
   <button class="btn" type="submit">Submit</button>
 </form>

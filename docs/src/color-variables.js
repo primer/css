@@ -45,17 +45,16 @@ export const functionalVarNames = Object.keys(flattened.light).filter(
 
 export const allColors = palettes.reduce((all, {values}) => all.concat(values), [])
 
-// TODO: fix the borders code
-//
-// export const borders = Object.keys(variables)
-//   .filter(key => key.startsWith('border-') && !variables[key].includes('$'))
-//   .sort()
-//   .map(key => ({
-//     variable: key,
-//     value: variables[key],
-//     slug: key,
-//     aliases: {border: key}
-//   }))
+export const borders = Object.keys(variables)
+  // Re: border-gray-darker, see https://github.com/primer/css/pull/1192
+  .filter(key => key.startsWith('border-') && !variables[key].includes('$') && key !== 'border-gray-darker')
+  .sort()
+  .map(key => ({
+    variable: key,
+    value: variables[key],
+    slug: key,
+    aliases: {border: key}
+  }))
 
 function getPaletteByName(name) {
   return palettes.find(palette => palette.name === name)
