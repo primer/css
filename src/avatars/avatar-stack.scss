@@ -140,6 +140,6 @@
     // stylelint-disable-next-line primer/spacing
     margin-left: -11px;
     border-right: 0;
-    border-left: $border-width $border-style var(--color-border-inverse);
+    border-left: $border-width $border-style var(--color-bg-canvas); // stylelint-disable-line primer/borders
   }
 }
