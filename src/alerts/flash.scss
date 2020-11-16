@@ -65,7 +65,7 @@
 
 .flash {
   color: var(--color-alert-info-text);
-  background-color: var(--color-alert-info-bg);
+  background-image: linear-gradient(var(--color-alert-info-bg), var(--color-alert-info-bg));
   border-color: var(--color-alert-info-border);
 
   .octicon {
@@ -76,7 +76,7 @@
 
 .flash-warn {
   color: var(--color-alert-warn-text);
-  background-color: var(--color-alert-warn-bg);
+  background-image: linear-gradient(var(--color-alert-warn-bg), var(--color-alert-warn-bg));
   border-color: var(--color-alert-warn-border);
 
   .octicon {
@@ -87,7 +87,7 @@
 
 .flash-error {
   color: var(--color-alert-error-text);
-  background-color: var(--color-alert-error-bg);
+  background-image: linear-gradient(var(--color-alert-error-bg), var(--color-alert-error-bg));
   border-color: var(--color-alert-error-border);
 
   .octicon {
@@ -98,7 +98,7 @@
 
 .flash-success {
   color: var(--color-alert-success-text);
-  background-color: var(--color-alert-success-bg);
+  background-image: linear-gradient(var(--color-alert-success-bg), var(--color-alert-success-bg));
   border-color: var(--color-alert-success-border);
 
   .octicon {
@@ -128,6 +128,12 @@
   border-right: 0;
   border-left: 0;
   border-radius: 0;
+}
+
+// Makes sure the background is opaque to cover any content underneath
+.flash-full,
+.flash-banner {
+  background-color: var(--color-bg-canvas);
 }
 
 // FIXME deprecate this

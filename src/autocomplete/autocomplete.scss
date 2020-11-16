@@ -8,8 +8,8 @@
   // stylelint-disable-next-line primer/typography
   font-size: 13px;
   list-style: none;
-  background: var(--color-autocomplete-bg);
-  border: $border-width $border-style var(--color-autocomplete-border);
+  background: var(--color-bg-overlay);
+  border: $border-width $border-style var(--color-border-overlay);
   border-radius: $border-radius;
   box-shadow: var(--color-autocomplete-shadow);
 }
@@ -29,7 +29,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
-  background-color: var(--color-autocomplete-bg);
+  background-color: var(--color-bg-overlay);
   border: 0;
 
   &:hover {

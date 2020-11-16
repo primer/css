@@ -30,9 +30,9 @@
   // stylelint-disable-next-line primer/spacing
   margin-top: 2px;
   list-style: none;
-  background-color: var(--color-dropdown-bg);
+  background-color: var(--color-bg-overlay);
   background-clip: padding-box;
-  border: $border-width $border-style var(--color-dropdown-border);
+  border: $border-width $border-style var(--color-border-overlay);
   border-radius: $border-radius;
   box-shadow: var(--color-dropdown-shadow);
 
@@ -47,7 +47,7 @@
   &::before {
     // stylelint-disable-next-line primer/borders
     border: $spacer-2 $border-style transparent;
-    border-bottom-color: var(--color-dropdown-border);
+    border-bottom-color: var(--color-border-overlay);
   }
 
   // caret background (should match dropdown background)
@@ -55,7 +55,7 @@
     // stylelint-disable-next-line primer/borders
     border: 7px $border-style transparent;
     // stylelint-disable-next-line primer/borders
-    border-bottom-color: var(--color-dropdown-bg);
+    border-bottom-color: var(--color-bg-overlay);
   }
 
   // stylelint-disable-next-line selector-max-type
@@ -113,7 +113,7 @@
   display: block;
   height: 0;
   margin: $spacer-2 0;
-  border-top: $border-width $border-style var(--color-dropdown-border);
+  border-top: $border-width $border-style var(--color-border-overlay);
 }
 
 .dropdown-header {
@@ -144,7 +144,7 @@
     right: -$spacer-3;
     left: auto;
     border-color: transparent;
-    border-left-color: var(--color-dropdown-border);
+    border-left-color: var(--color-border-overlay);
   }
 
   &::after {
@@ -153,7 +153,7 @@
     left: auto;
     border-color: transparent;
     // stylelint-disable-next-line primer/borders
-    border-left-color: var(--color-dropdown-bg);
+    border-left-color: var(--color-bg-overlay);
   }
 }
 
@@ -168,7 +168,7 @@
     top: 10px;
     left: -$spacer-3;
     border-color: transparent;
-    border-right-color: var(--color-dropdown-border);
+    border-right-color: var(--color-border-overlay);
   }
 
   &::after {
@@ -176,7 +176,7 @@
     left: -14px;
     border-color: transparent;
     // stylelint-disable-next-line primer/borders
-    border-right-color: var(--color-dropdown-bg);
+    border-right-color: var(--color-bg-overlay);
   }
 }
 
@@ -197,7 +197,7 @@
     bottom: -$spacer-2;
     left: 9px;
     // stylelint-disable-next-line primer/borders
-    border-top: $spacer-2 $border-style var(--color-dropdown-border);
+    border-top: $spacer-2 $border-style var(--color-border-overlay);
     // stylelint-disable-next-line primer/borders
     border-right: $spacer-2 $border-style transparent;
     border-bottom: 0;
@@ -209,7 +209,7 @@
     bottom: -7px;
     left: 10px;
     // stylelint-disable-next-line primer/borders
-    border-top: 7px $border-style var(--color-dropdown-bg);
+    border-top: 7px $border-style var(--color-bg-overlay);
     // stylelint-disable-next-line primer/borders
     border-right: 7px $border-style transparent;
     border-bottom: 0;

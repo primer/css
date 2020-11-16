@@ -86,6 +86,7 @@ n/a | `.color-icon-danger`
 `.border-yellow`        | `.color-border-warning`
 `.border-red`           | `.color-border-danger`
 `.border-white`         | `.color-border-inverse`
+n/a                     | `.color-border-overlay`
 `.border-gray-darker`   | n/a
 `.border-blue-light`    | n/a
 `.border-red-light`     | n/a
@@ -115,6 +116,8 @@ n/a | `.color-icon-danger`
 `.bg-red-light`    | `.color-bg-danger`
 `.bg-red`          | `.color-bg-danger-inverse`
 n/a                | `.color-bg-canvas`
+n/a                | `.color-bg-canvas-inset`
+n/a                | `.color-bg-overlay`
 `.bg-purple-light` | n/a
 `.bg-purple`       | n/a
 `.bg-yellow-dark`  | n/a
@@ -190,6 +193,7 @@ n/a                                     | `var(--color-icon-warning)`
 `$border-green` (`$green-400`)                  | `var(--color-border-success)`
 `$border-red` (`$red-500`)                      | `var(--color-border-danger)`
 `$border-yellow` (`$yellow-600`)                | `var(--color-border-warning)`
+n/a                                             | `var(--color-border-overlay)`
 `$border-gray-darker` (`$gray-700`)     | n/a
 `$border-blue-light` (`$blue-200`)      | n/a
 `$border-red-light` (`$red-300`)        | n/a
@@ -215,6 +219,8 @@ n/a                                     | `var(--color-icon-warning)`
 `$bg-yellow`       (`$yellow-500`)  | `var(--color-bg-warning-inverse)`
 `$bg-yellow-light` (`$yellow-200`)  | `var(--color-bg-warning)`
 n/a                                 | `var(--color-bg-canvas)`
+n/a                                 | `var(--color-bg-canvas-inset)`
+n/a                                 | `var(--color-bg-overlay)`
 `$bg-black` (`$black`)              | n/a
 `$bg-black-fade` (`$black-fade-50`) | n/a
 `$bg-orange` (`$orange-700`)        | n/a

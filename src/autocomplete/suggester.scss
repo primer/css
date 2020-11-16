@@ -11,8 +11,8 @@
   margin-top: $spacer-4;
   list-style: none;
   cursor: pointer;
-  background: var(--color-autocomplete-bg);
-  border: $border-width $border-style var(--color-autocomplete-border);
+  background: var(--color-bg-overlay);
+  border: $border-width $border-style var(--color-border-overlay);
   border-radius: $border-radius;
   box-shadow: var(--color-autocomplete-shadow);
 

@@ -83,8 +83,8 @@
 // Colors
 
 .Label--yellow {
-  color: var(--color-auto-yellow-9); // stylelint-disable-line primer/colors
-  border-color: var(--color-auto-yellow-8); // stylelint-disable-line primer/borders
+  color: var(--color-label-warning-text);
+  border-color: var(--color-label-warning-border);
 }
 
 .Label--orange {
