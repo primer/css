@@ -1,11 +1,16 @@
 import titleCase from 'title-case'
 import allModeColors from '@primer/primitives/dist/js/colors'
+import colorVariablesSCSS from '!!raw-loader!../../src/support/variables/colors.scss'
 
 // XXX we don't necessarily define them in this order in primer-colors,
 // so we define an array here just to be safe
 const gradientHues = ['gray', 'blue', 'green', 'purple', 'yellow', 'orange', 'red', 'pink']
 
 const colors = allModeColors.light.scale
+
+const variables = {}
+
+parseSCSSVariables(colorVariablesSCSS, variables)
 
 const colorModes = Object.keys(allModeColors).sort((a, b) => {
   if (a.startsWith('light') && !b.startsWith('light')) return -1
@@ -58,6 +63,20 @@ export const borders = Object.keys(variables)
 
 function getPaletteByName(name) {
   return palettes.find(palette => palette.name === name)
+}
+
+function parseSCSSVariables(scssString, variables = {}) {
+  const variablePattern = /\$([-\w]+):\s*(.+)( !default);/g
+  let match
+  do {
+    match = variablePattern.exec(scssString)
+    if (match) {
+      // eslint-disable-next-line no-unused-vars
+      const [_, name, value] = match
+      variables[name] = value.startsWith('$') ? variables[value.substr(1)] : value
+    }
+  } while (match)
+  return variables
 }
 
 function flattenVars(tree, prefix = []) {
