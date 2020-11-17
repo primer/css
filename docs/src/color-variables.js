@@ -73,7 +73,7 @@ function parseSCSSVariables(scssString, variables = {}) {
     if (match) {
       // eslint-disable-next-line no-unused-vars
       const [_, name, value] = match
-      variables[name] = value.startsWith('$') ? variables[value.substr(1)] : value
+      variables[name] = value.startsWith('$') ? variables[value.substr(1)] || value : value
     }
   } while (match)
   return variables
