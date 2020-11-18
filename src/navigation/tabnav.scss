@@ -31,7 +31,7 @@
   &[aria-selected=true],
   &[aria-current]:not([aria-current=false]) {
     color: var(--color-text-primary);
-    background-color: var(--color-tabnav-selected-bg);
+    background-color: var(--color-bg-canvas); // cover bottom border
     border-color: var(--color-border-primary);
     border-radius: $border-radius $border-radius 0 0;
 
