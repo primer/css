@@ -77,6 +77,9 @@
 .UnderlineNav .Counter {
   margin-left: $spacer-1;
   color: var(--color-underlinenav-counter-text);
+  &.--primary {
+    color: var(--color-counter-primary-text);
+  }
 }
 
 .UnderlineNav-container {
