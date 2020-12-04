@@ -27,5 +27,5 @@
 // color-scheme
 // Enables color modes for native elements
 
-[data-color-mode="light"] { color-scheme: light; }
-[data-color-mode="dark"] { color-scheme: dark; }
+@include color-mode(light) { color-scheme: light; }
+@include color-mode(dark) { color-scheme: dark; }
