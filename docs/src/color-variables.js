@@ -53,7 +53,8 @@ export {colors, gradientHues, palettes, getPaletteByName, variables}
 export const allColors = palettes.reduce((all, {values}) => all.concat(values), [])
 
 export const borders = Object.keys(variables)
-  .filter(key => key.startsWith('border-') && !variables[key].includes('$'))
+  // Re: border-gray-darker, see https://github.com/primer/css/pull/1192
+  .filter(key => key.startsWith('border-') && !variables[key].includes('$') && key !== 'border-gray-darker')
   .sort()
   .map(key => ({
     variable: key,

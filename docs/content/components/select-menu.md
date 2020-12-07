@@ -579,7 +579,7 @@ Sometimes a select menu needs to communicate a "blank slate" where there's no co
 
 ## github.com usage
 
-When adding the `.SelectMenu` component on github.com, use the [`<details-menu>`](https://github.com/github/details-menu-element) element. It will :tophat: magically make the `.SelectMenu` work. Here a basic example:
+When adding the `.SelectMenu` component on github.com, use the [`<details-menu>`](https://github.com/github/details-menu-element) element. It will magically make the `.SelectMenu` work. Here a basic example:
 
 ```erb
 <details class="details-reset details-overlay" id="my-select-menu">
@@ -617,4 +617,4 @@ If loading content should be deferred, use the [`<include-fragment>`](https://gi
 </details-menu>
 ```
 
-It will add a pulsing :octoface: icon while the content is loading.
+It will add a pulsing "octoface" icon while the content is loading.
