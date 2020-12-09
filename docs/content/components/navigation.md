@@ -256,7 +256,7 @@ Different kind of content can be added inside a Side Nav item. Use utility class
     </svg>
   </a>
   <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="#url">
-    With a label <span class="Label bg-blue" title="Label: label">label</span>
+    With a label <span class="Label bg-blue">label</span>
   </a>
   <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="#url">
     With a counter <span class="Counter ml-1">16</span>
@@ -404,13 +404,13 @@ A vertical list of filters. Grey text on white background. Selecting a filter fr
   <li>
     <a class="filter-item" href="#url" aria-current="page">
       First filter
-      <span class="count" title="results">21</span>
+      <span class="count">21</span>
     </a>
   </li>
   <li>
     <a class="filter-item" href="#url">
       Second filter
-      <span class="count" title="results">3</span>
+      <span class="count">3</span>
     </a>
   </li>
   <li>

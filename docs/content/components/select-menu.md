@@ -210,9 +210,7 @@ The list of items is arguably the most important subcomponent within the menu. B
             <path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" />
           </svg>
         </button>
-        <button class="SelectMenu-item d-block" role="menuitem">
-          With a <span class="Label bg-blue" title="Label: label">label</span>
-        </button>
+        <button class="SelectMenu-item d-block" role="menuitem">With a <span class="Label bg-blue">label</span></button>
         <button class="SelectMenu-item" role="menuitem">
           With a counter <span class="Counter bg-gray-2 ml-1">16</span>
         </button>
@@ -583,7 +581,7 @@ When adding the `.SelectMenu` component on github.com, use the [`<details-menu>`
 
 ```erb
 <details class="details-reset details-overlay" id="my-select-menu">
-  <summary class="btn" title="Pick an item">
+  <summary class="btn">
     <span>Choose</span>
     <span class="dropdown-caret"></span>
   </summary>

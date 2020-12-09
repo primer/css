@@ -6,8 +6,7 @@ source: 'https://github.com/primer/css/tree/master/src/truncate'
 bundle: truncate
 ---
 
-
-The `css-truncate` class will shorten text with an ellipsis. Always add a `title` attribute to the truncated element so the full text remains accessible.
+The `css-truncate` class will shorten text with an ellipsis.
 
 ## Truncate overflow
 
@@ -15,8 +14,7 @@ Combine the `css-truncate` and `css-truncate-overflow` classes to prevent text t
 
 ```html live
 <div class="col-3">
-  <div class="css-truncate css-truncate-overflow border p-3"
-    title="branch-name-that-is-really-long">
+  <div class="css-truncate css-truncate-overflow border p-3">
     branch-name-that-is-really-long
   </div>
   <div class="border p-3 mt-3">
@@ -31,8 +29,7 @@ Combine the `css-truncate` and `css-truncate-target` classes for inline (or inli
 
 ```html live
 Some text with a
-<strong class="css-truncate css-truncate-target"
-  title="branch-name-that-is-really-long">
+<strong class="css-truncate css-truncate-target">
   branch-name-that-is-really-long
 </strong>
 ```
@@ -41,8 +38,7 @@ You can override the maximum width of the truncated text with an inline `style` 
 
 ```html live
 Some text with a
-<strong class="css-truncate css-truncate-target" style="max-width: 180px"
-  title="branch-name-that-is-really-long">
+<strong class="css-truncate css-truncate-target" style="max-width: 180px">
   branch-name-that-is-really-long
 </strong>
 ```
@@ -51,8 +47,7 @@ You can reveal the entire string on hover with the addition of `.expandable`.
 
 ```html live
 Some text with a
-<strong class="css-truncate css-truncate-target expandable"
-  title="branch-name-that-is-really-long">
+<strong class="css-truncate css-truncate-target expandable">
   branch-name-that-is-really-long
 </strong>
 ```
