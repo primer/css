@@ -52,6 +52,12 @@
     outline: none;
     box-shadow: none;
   }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    background-color: transparent;
+  }
 }
 
 // Octicon button
