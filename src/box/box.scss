@@ -211,6 +211,7 @@
   border-top-color: var(--color-border-primary);
   border-top-style: $border-style;
   border-top-width: $border-width;
+  border-radius: 0 0 $border-radius $border-radius;
 }
 
 // Option for a box with scrolling content
