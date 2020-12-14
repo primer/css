@@ -10,7 +10,7 @@
   padding: $em-spacer-5 $em-spacer-6;
   font: normal normal 11px/1.5 $body-font;
   -webkit-font-smoothing: subpixel-antialiased;
-  color: var(--color-text-inverse);
+  color: var(--color-tooltip-text);
   text-align: center;
   text-decoration: none;
   text-shadow: none;
@@ -20,7 +20,7 @@
   white-space: pre;
   pointer-events: none;
   content: attr(aria-label);
-  background: var(--color-bg-canvas-inverse);
+  background: var(--color-tooltip-bg);
   border-radius: $border-radius;
   opacity: 0;
 }
@@ -32,7 +32,7 @@
   display: none;
   width: 0;
   height: 0;
-  color: var(--color-bg-canvas-inverse); // stylelint-disable-line primer/colors
+  color: var(--color-tooltip-bg); // stylelint-disable-line primer/colors
   pointer-events: none;
   content: "";
   // stylelint-disable-next-line primer/borders
@@ -102,7 +102,7 @@
     // stylelint-disable-next-line primer/spacing
     margin-right: -6px;
     // stylelint-disable-next-line primer/borders
-    border-bottom-color: var(--color-bg-canvas-inverse);
+    border-bottom-color: var(--color-tooltip-bg);
   }
 }
 
@@ -136,7 +136,7 @@
     // stylelint-disable-next-line primer/spacing
     margin-right: -6px;
     // stylelint-disable-next-line primer/borders
-    border-top-color: var(--color-bg-canvas-inverse);
+    border-top-color: var(--color-tooltip-bg);
   }
 }
 
@@ -175,7 +175,7 @@
     // stylelint-disable-next-line primer/spacing
     margin-top: -6px;
     // stylelint-disable-next-line primer/borders
-    border-left-color: var(--color-bg-canvas-inverse);
+    border-left-color: var(--color-tooltip-bg);
   }
 }
 
@@ -196,7 +196,7 @@
     // stylelint-disable-next-line primer/spacing
     margin-top: -6px;
     // stylelint-disable-next-line primer/borders
-    border-right-color: var(--color-bg-canvas-inverse);
+    border-right-color: var(--color-tooltip-bg);
   }
 }
 
