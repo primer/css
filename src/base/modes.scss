@@ -12,9 +12,9 @@
   @include primer-colors-light;
 }
 
-// @include color-mode(dark) {
-//   @include primer-colors-dark;
-// }
+@include color-mode(dark) {
+  @include primer-colors-dark;
+}
 
 // Color mode boundaries
 // Enables nesting of different color modes
