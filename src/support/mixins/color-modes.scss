@@ -21,38 +21,22 @@
 @mixin color-mode($mode) {
   @if $mode == light {
     :root,
-    [data-color-mode="light"]:not([data-light-theme]),
-    [data-color-mode="light"][data-light-theme="light"] {
+    [data-color-mode="light"] {
       @content;
     }
 
-    [data-color-mode="auto"]:not([data-light-theme]),
-    [data-color-mode="auto"][data-light-theme="light"] {
+    [data-color-mode="auto"] {
       @media (prefers-color-scheme: light) {
         @content;
       }
     }
   }
   @else if $mode == dark {
-    [data-color-mode="dark"]:not([data-dark-theme]),
-    [data-color-mode="dark"][data-dark-theme="dark"] {
+    [data-color-mode="dark"] {
       @content;
     }
 
-    [data-color-mode="auto"]:not([data-dark-theme]),
-    [data-color-mode="auto"][data-dark-theme="dark"] {
-      @media (prefers-color-scheme: dark) {
-        @content;
-      }
-    }
-  }
-  @else if $mode == dimmed {
-    [data-color-mode="dimmed"],
-    [data-color-mode="dark"][data-dark-theme="dimmed"] {
-      @content;
-    }
-
-    [data-color-mode="auto"][data-dark-theme="dimmed"] {
+    [data-color-mode="auto"] {
       @media (prefers-color-scheme: dark) {
         @content;
       }
