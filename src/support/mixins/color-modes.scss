@@ -1,3 +1,22 @@
+@mixin color-mode-theme($base-mode, $theme-name, $include-root: false) {
+  @if $include-root {
+    :root {
+      @content;
+    }
+  }
+
+  [data-color-mode="#{$theme-name}"],
+  [data-color-mode="#{$base-mode}"][data-#{$base-mode}-theme="#{$theme-name}"] {
+    @content;
+  }
+
+  [data-color-mode="auto"][data-#{$base-mode}-theme="#{$theme-name}"] {
+    @media (prefers-color-scheme: #{$base-mode}) {
+      @content;
+    }
+  }
+}
+
 // Allows CSS to be scoped to a specific color mode
 @mixin color-mode($mode) {
   @if $mode == light {
