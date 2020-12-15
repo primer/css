@@ -8,7 +8,8 @@
   }
 
   [data-color-mode="#{$theme-name}"],
-  [data-color-mode="#{$base-mode}"][data-#{$base-mode}-theme="#{$theme-name}"] {
+  [data-color-mode="#{$base-mode}"][data-#{$base-mode}-theme="#{$theme-name}"],
+  [data-color-mode="#{$opposite}"][data-#{$opposite}-theme="#{$theme-name}"] {
     @content;
   }
 
