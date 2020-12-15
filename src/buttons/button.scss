@@ -214,6 +214,10 @@
 .btn-danger {
   color: var(--color-btn-danger-text);
 
+  .octicon {
+    color: var(--color-btn-danger-icon);
+  }
+
   &:hover,
   [open] > & {
     color: var(--color-btn-danger-hover-text);
@@ -226,7 +230,7 @@
     }
 
     .octicon {
-      color: inherit;
+      color: var(--color-btn-danger-hover-icon);
     }
   }
 
