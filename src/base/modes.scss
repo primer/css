@@ -4,16 +4,21 @@
 
 @import "@primer/primitives/dist/scss/colors/_light.scss";
 @import "@primer/primitives/dist/scss/colors/_dark.scss";
+@import "@primer/primitives/dist/scss/colors/_dimmed.scss";
 
 // Outputs the CSS variables
 // Use :root (html element) to define a default
 
-@include color-mode(light) {
+@include color-mode-theme(light, light, true) {
   @include primer-colors-light;
 }
 
-@include color-mode(dark) {
+@include color-mode-theme(dark, dark) {
   @include primer-colors-dark;
+}
+
+@include color-mode-theme(dark, dimmed) {
+  @include primer-colors-dimmed;
 }
 
 // Color mode boundaries

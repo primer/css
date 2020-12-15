@@ -214,6 +214,11 @@
 .btn-danger {
   color: var(--color-btn-danger-text);
 
+  .octicon {
+    // stylelint-disable-next-line primer/colors
+    color: var(--color-btn-danger-icon);
+  }
+
   &:hover,
   [open] > & {
     color: var(--color-btn-danger-hover-text);
@@ -226,7 +231,8 @@
     }
 
     .octicon {
-      color: inherit;
+      // stylelint-disable-next-line primer/colors
+      color: var(--color-btn-danger-hover-icon);
     }
   }
 
