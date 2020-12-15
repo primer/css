@@ -15,6 +15,21 @@
       @content;
     }
   }
+
+  [data-color-mode="auto"][data-#{opposite-color-mode($base-mode)}-theme="#{$theme-name}"] {
+    @media (prefers-color-scheme: #{opposite-color-mode($base-mode)}) {
+      @content;
+    }
+  }
+}
+
+@function opposite-color-mode($mode) {
+  @if $mode == light {
+    @return dark;
+  }
+  @else {
+    @return light;
+  }
 }
 
 // Allows CSS to be scoped to a specific color mode
