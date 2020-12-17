@@ -12,7 +12,7 @@
     "@babel/preset-react": "^7.10.4",
     "@loadable/component": "^5.10.2",
     "@primer/components": "^17.1.0",
-    "@primer/gatsby-theme-doctocat": "^1.2.0",
+    "@primer/gatsby-theme-doctocat": "^1.3.0",
     "@primer/octicons": "^9.1.1",
     "@primer/octicons-react": "^9.1.1",
     "@svgr/webpack": "^4.3.2",
