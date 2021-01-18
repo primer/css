@@ -18,20 +18,20 @@
   height: $spacer-2;
   // stylelint-disable-next-line primer/spacing
   margin-left: 1px;
-  outline-offset: -1px; // Support Firfox custom colors
+  outline-offset: -1px; // Support Firefox custom colors
 }
 
 .diffstat-block-deleted {
   background-color: $bg-diffstat-deleted;
-  outline: 1px dashed transparent; // Support Firfox custom colors
+  outline: 1px dashed transparent; // Support Firefox custom colors
 }
 
 .diffstat-block-added {
   background-color: $bg-diffstat-added;
-  outline: 1px solid transparent; // Support Firfox custom colors
+  outline: 1px solid transparent; // Support Firefox custom colors
 }
 
 .diffstat-block-neutral {
   background-color: $bg-diffstat-neutral;
-  outline: 1px dotted transparent; // Support Firfox custom colors
+  outline: 1px dotted transparent; // Support Firefox custom colors
 }
