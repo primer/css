@@ -1,41 +1,78 @@
+// stylelint-disable block-opening-brace-space-before
+
+// Text colors
+.color-text-primary   { color: var(--color-text-primary) !important; }
+.color-text-secondary { color: var(--color-text-secondary) !important; }
+.color-text-tertiary  { color: var(--color-text-tertiary) !important; }
+.color-text-link      { color: var(--color-text-link) !important; }
+.color-text-success   { color: var(--color-text-success) !important; }
+.color-text-warning   { color: var(--color-text-warning) !important; }
+.color-text-danger    { color: var(--color-text-danger) !important; }
+.color-text-inverse   { color: var(--color-text-inverse) !important; }
+.color-text-white     { color: var(--color-text-white) !important; }
+
+// Icon colors
+.color-icon-primary   { color: var(--color-icon-primary) !important; } // stylelint-disable-line primer/colors
+.color-icon-secondary { color: var(--color-icon-secondary) !important; } // stylelint-disable-line primer/colors
+.color-icon-tertiary  { color: var(--color-icon-tertiary) !important; } // stylelint-disable-line primer/colors
+.color-icon-info      { color: var(--color-icon-info) !important; } // stylelint-disable-line primer/colors
+.color-icon-danger    { color: var(--color-icon-danger) !important; } // stylelint-disable-line primer/colors
+.color-icon-success   { color: var(--color-icon-success) !important; } // stylelint-disable-line primer/colors
+.color-icon-warning   { color: var(--color-icon-warning) !important; } // stylelint-disable-line primer/colors
+
+// Border colors
+.color-border-primary   { border-color: var(--color-border-primary) !important; }
+.color-border-secondary { border-color: var(--color-border-secondary) !important; }
+.color-border-tertiary  { border-color: var(--color-border-tertiary) !important; }
+.color-border-overlay   { border-color: var(--color-border-overlay) !important; }
+.color-border-inverse   { border-color: var(--color-border-inverse) !important; }
+.color-border-info      { border-color: var(--color-border-info) !important; }
+.color-border-success   { border-color: var(--color-border-success) !important; }
+.color-border-danger    { border-color: var(--color-border-danger) !important; }
+.color-border-warning   { border-color: var(--color-border-warning) !important; }
+
+// Background colors
+.color-bg-canvas          { background-color: var(--color-bg-canvas) !important; }
+.color-bg-canvas-inverse  { background-color: var(--color-bg-canvas-inverse) !important; }
+.color-bg-canvas-inset    { background-color: var(--color-bg-canvas-inset) !important; }
+.color-bg-primary         { background-color: var(--color-bg-primary) !important; }
+.color-bg-secondary       { background-color: var(--color-bg-secondary) !important; }
+.color-bg-tertiary        { background-color: var(--color-bg-tertiary) !important; }
+.color-bg-overlay         { background-color: var(--color-bg-overlay) !important; }
+.color-bg-info            { background-color: var(--color-bg-info) !important; }
+.color-bg-info-inverse    { background-color: var(--color-bg-info-inverse) !important; }
+.color-bg-danger          { background-color: var(--color-bg-danger) !important; }
+.color-bg-danger-inverse  { background-color: var(--color-bg-danger-inverse) !important; }
+.color-bg-success         { background-color: var(--color-bg-success) !important; }
+.color-bg-success-inverse { background-color: var(--color-bg-success-inverse) !important; }
+.color-bg-warning         { background-color: var(--color-bg-warning) !important; }
+.color-bg-warning-inverse { background-color: var(--color-bg-warning-inverse) !important; }
+
+//
+// ------------------------ Deprecated ------------------------
+// Some might get replaced at some point. If possible, use functional classes.
+//
+
 // Color utilities
-// stylelint-disable block-opening-brace-space-before, comment-empty-line-before
 
 // background colors
-/* Set the background to $bg-white */
-.bg-white      { background-color: $bg-white !important; }
-/* Set the background to $bg-blue */
-.bg-blue       { background-color: $bg-blue !important; }
-/* Set the background to $bg-blue-light */
-.bg-blue-light { background-color: $bg-blue-light !important; }
-/* Set the background to $bg-gray-dark */
-.bg-gray-dark  { background-color: $bg-gray-dark !important; }
-/* Set the background to $bg-gray */
-.bg-gray       { background-color: $bg-gray !important; }
-/* Set the background to $bg-gray-light */
-.bg-gray-light { background-color: $bg-gray-light !important; }
-/* Set the background to $bg-green */
-.bg-green      { background-color: $bg-green !important; }
-/* Set the background to $bg-green-light */
-.bg-green-light     { background-color: $bg-green-light !important; }
-/* Set the background to $bg-red */
-.bg-red        { background-color: $bg-red !important; }
-/* Set the background to $bg-red-light */
-.bg-red-light  { background-color: $bg-red-light !important; }
-/* Set the background to $bg-yellow */
-.bg-yellow     { background-color: $bg-yellow !important; }
-/* Set the background to $bg-yellow-light */
-.bg-yellow-light     { background-color: $bg-yellow-light !important; }
-/* Set the background to $bg-yellow-dark */
-.bg-yellow-dark      { background-color: $bg-yellow-dark !important; }
-/* Set the background to $bg-purple */
-.bg-purple     { background-color: $bg-purple !important; }
-/* Set the background to $bg-pink */
-.bg-pink { background-color: $bg-pink !important; }
-/* Set the background to $bg-purple-light */
-.bg-purple-light     { background-color: $bg-purple-light !important; }
-/* Set the background to $bg-orange */
-.bg-orange { background-color: $bg-orange !important; }
+.bg-white         { background-color: $bg-white !important; }
+.bg-blue          { background-color: $bg-blue !important; }
+.bg-blue-light    { background-color: $bg-blue-light !important; }
+.bg-gray-dark     { background-color: $bg-gray-dark !important; }
+.bg-gray          { background-color: $bg-gray !important; }
+.bg-gray-light    { background-color: $bg-gray-light !important; }
+.bg-green         { background-color: $bg-green !important; }
+.bg-green-light   { background-color: $bg-green-light !important; }
+.bg-red           { background-color: $bg-red !important; }
+.bg-red-light     { background-color: $bg-red-light !important; }
+.bg-yellow        { background-color: $bg-yellow !important; }
+.bg-yellow-light  { background-color: $bg-yellow-light !important; }
+.bg-yellow-dark   { background-color: $bg-yellow-dark !important; }
+.bg-purple        { background-color: $bg-purple !important; }
+.bg-pink          { background-color: $bg-pink !important; }
+.bg-purple-light  { background-color: $bg-purple-light !important; }
+.bg-orange        { background-color: $bg-orange !important; }
 
 // Generate a foreground and background utility for every shade of every hue
 @each $hue, $shades in $hue-maps {
@@ -45,73 +82,57 @@
   }
 }
 
-.bg-shade-gradient {
-  background-image: linear-gradient(180deg, rgba($black, 0.065), rgba($black, 0)) !important;
-  background-repeat: no-repeat !important;
-  background-size: 100% 200px !important;
-}
-
 // text colors
-/* Set the text color to $text-blue */
 .text-blue          { color: $text-blue !important; }
-/* Set the text color to $text-red */
 .text-red           { color: $text-red !important; }
-/* Set the text color to $text-gray-light */
 .text-gray-light    { color: $text-gray-light !important; }
-/* Set the text color to $text-gray */
 .text-gray          { color: $text-gray !important; }
-/* Set the text color to $text-gray-dark */
 .text-gray-dark     { color: $text-gray-dark !important; }
-/* Set the text color to $text-green */
 .text-green         { color: $text-green !important; }
-/* Set the text color to $text-yellow */
 .text-yellow        { color: $text-yellow !important; }
-/* Set the text color to $text-orange */
 .text-orange        { color: $text-orange !important; }
-/* Set the text color to $text-orange-light */
-.text-orange-light        { color: $text-orange-light !important; }
-/* Set the text color to $text-purple */
+.text-orange-light  { color: $text-orange-light !important; }
 .text-purple        { color: $text-purple !important; }
-/* Set the text color to $text-pink */
-.text-pink { color: $text-pink !important; }
-/* Set the text color to $text-white */
+.text-pink          { color: $text-pink !important; }
 .text-white         { color: $text-white !important; }
-/* Set the text color to inherit */
-.text-inherit       { color: inherit !important; }
 
-// Link colors
-// Sets the links color to $text-gray and $text-blue on hover
-.link-gray {
-  color: $text-gray !important;
+.text-inherit       { color: inherit !important; } // TODO: Should this be moved to primer/primitives
 
-  &:hover {
-    color: $text-blue !important;
-  }
+// Border colors
+.border-blue        { border-color: $border-blue !important; }
+.border-blue-light  { border-color: $border-blue-light !important; }
+.border-green       { border-color: $border-green !important; }
+.border-green-light { border-color: $border-green-light !important; }
+.border-red         { border-color: $border-red !important; }
+.border-red-light   { border-color: $border-red-light !important; }
+.border-purple      { border-color: $border-purple !important; }
+.border-yellow      { border-color: $border-yellow !important; }
+.border-gray-light  { border-color: $border-gray-light !important; }
+.border-gray-dark   { border-color: $border-gray-dark !important; }
+
+.border-black-fade  { border-color: $border-black-fade !important; }
+.border-white-fade  { border-color: $border-white-fade !important; }
+
+.border-white-fade-15 { border-color: $border-white-fade !important; }
+.border-white-fade-30 { border-color: $white-fade-30 !important; } // stylelint-disable-line primer/borders
+.border-white-fade-50 { border-color: $white-fade-50 !important; } // stylelint-disable-line primer/borders
+.border-white-fade-70 { border-color: $white-fade-70 !important; } // stylelint-disable-line primer/borders
+.border-white-fade-85 { border-color: $white-fade-85 !important; } // stylelint-disable-line primer/borders
+
+/* Typography colors */
+
+.lead {
+  color: $text-gray;
 }
 
-// Sets the links color to $text-gray-dark and $text-blue on hover
-.link-gray-dark {
-  color: $text-gray-dark !important;
-
-  &:hover {
-    color: $text-blue !important;
-  }
+.text-emphasized {
+  color: $text-gray-dark;
 }
 
-/* Set the link color to $text-blue on hover
-  Useful when you want only part of a link to turn blue on hover */
-.link-hover-blue {
-  &:hover {
-    color: $text-blue !important;
-  }
+.text-shadow-dark {
+  text-shadow: 0 1px 1px rgba($black, 0.25), 0 1px 25px rgba($black, 0.75);
 }
 
-/* Make a link $text-gray, then $text-blue on hover and removes the underline */
-.muted-link {
-  color: $text-gray !important;
-
-  &:hover {
-    color: $text-blue !important;
-    text-decoration: none;
-  }
+.text-shadow-light {
+  text-shadow: 0 1px 0 rgba($white, 0.5);
 }

@@ -3,7 +3,7 @@
 // A vertical list of navigational links, typically used on the left side of a page.
 
 .SideNav {
-  background-color: $bg-gray-light;
+  background-color: var(--color-bg-secondary);
 }
 
 .SideNav-item {
@@ -12,11 +12,11 @@
   width: 100%;
   // stylelint-disable-next-line primer/spacing
   padding: 12px $spacer-3;
-  color: $text-black;
+  color: var(--color-text-primary);
   text-align: left;
   background-color: transparent;
   border: 0;
-  border-top: $border-width $border-style $border-gray-light;
+  border-top: $border-width $border-style var(--color-border-secondary);
 
   &:first-child {
     border-top: 0;
@@ -25,7 +25,7 @@
   &:last-child {
     // makes sure there is a "bottom border" in case the list is not long enough
     // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 $border-width 0 $border-color;
+    box-shadow: 0 $border-width 0 var(--color-border-primary);
   }
 
   // Bar on the left
@@ -46,23 +46,22 @@
 .SideNav-item:hover,
 .SideNav-item:focus {
   text-decoration: none;
-  // stylelint-disable-next-line primer/colors
-  background-color: $gray-100;
+  background-color: var(--color-state-hover-secondary-bg);
   outline: none;
 }
 
 .SideNav-item:active {
-  background-color: $bg-gray-light;
+  background-color: var(--color-bg-secondary);
 }
 
 .SideNav-item[aria-current]:not([aria-current=false]),
 .SideNav-item[aria-selected="true"] {
-  background-color: $bg-white;
+  background-color: var(--color-sidenav-selected-bg);
 
   // Bar on the left
   &::before {
     // stylelint-disable-next-line primer/colors
-    background-color: #f9826c; // custom coral
+    background-color: var(--color-sidenav-border-active);
   }
 }
 
@@ -73,7 +72,7 @@
 .SideNav-icon {
   width: 16px;
   margin-right: $spacer-2;
-  color: $text-gray-light;
+  color: var(--color-text-tertiary);
 }
 
 // Sub Nav
@@ -85,7 +84,7 @@
   display: block;
   width: 100%;
   padding: $spacer-1 0;
-  color: $text-blue;
+  color: var(--color-text-link);
   text-align: left;
   background-color: transparent;
   border: 0;
@@ -93,7 +92,7 @@
 
 .SideNav-subItem:hover,
 .SideNav-subItem:focus {
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   text-decoration: none;
   outline: none;
 }
@@ -101,5 +100,5 @@
 .SideNav-subItem[aria-current]:not([aria-current=false]),
 .SideNav-subItem[aria-selected="true"] {
   font-weight: $font-weight-semibold;
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
 }

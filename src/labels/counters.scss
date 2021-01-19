@@ -8,11 +8,10 @@
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: $size-2 - 2px; // remove borders
-  color: $text-gray-dark;
+  color: var(--color-counter-text);
   text-align: center;
-  // stylelint-disable-next-line primer/colors
-  background-color: rgba($gray-300, 0.5);
-  border: $border-width $border-style transparent; // Support Firfox custom colors
+  background-color: var(--color-counter-bg);
+  border: $border-width $border-style transparent; // Support Firefox custom colors
   // stylelint-disable-next-line primer/borders
   border-radius: 2em;
 
@@ -26,12 +25,25 @@
   }
 }
 
+.Counter--primary {
+  color: var(--color-counter-primary-text);
+  background-color: var(--color-counter-primary-bg);
+}
+
+.Counter--secondary {
+  color: var(--color-counter-secondary-text);
+}
+
+//
+// ------------------------ Deprecated ------------------------
+// Some might get replaced at some point. If possible, use functional classes.
+//
+
 .Counter--gray-light {
-  color: $text-gray-light;
+  color: var(--color-counter-secondary-text);
 }
 
 .Counter--gray {
-  color: $text-white;
-  // stylelint-disable-next-line primer/colors
-  background-color: $gray-500;
+  color: var(--color-counter-primary-text);
+  background-color: var(--color-counter-primary-bg);
 }

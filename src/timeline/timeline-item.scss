@@ -14,14 +14,12 @@
     width: 2px;
     content: "";
     // stylelint-disable-next-line primer/colors
-    background-color: $gray-200;
+    background-color: var(--color-border-secondary);
   }
 
   &:target .TimelineItem-badge {
-    // stylelint-disable-next-line primer/borders
-    border-color: $blue-400;
-    // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0.2em $blue-200;
+    border-color: var(--color-timeline-target-badge-border);
+    box-shadow: 0 0 0.2em var(--color-timeline-target-badge-shadow);
   }
 }
 
@@ -34,23 +32,27 @@
   margin-right: $spacer-2;
   margin-left: -$spacer-3 + 1;
   // stylelint-disable-next-line primer/colors
-  color: $gray-700;
+  color: var(--color-icon-secondary);
   align-items: center;
-  // stylelint-disable-next-line primer/colors
-  background-color: $gray-200;
+  background-color: var(--color-timeline-badge-bg);
   // stylelint-disable-next-line primer/borders
-  border: 2px $border-style $border-white;
+  border: 2px $border-style var(--color-bg-canvas);
   border-radius: 50%;
   justify-content: center;
   flex-shrink: 0;
+
+  &--success {
+    color: var(--color-text-white);
+    background-color: var(--color-btn-primary-bg);
+    border: $border-width $border-style var(--color-merge-box-success-indicator-border);
+  }
 }
 
 .TimelineItem-body {
   min-width: 0;
   max-width: 100%;
   margin-top: $spacer-1;
-  // stylelint-disable-next-line primer/colors
-  color: $gray-700;
+  color: var(--color-timeline-text);
   flex: auto;
 }
 
@@ -68,10 +70,10 @@
   margin-bottom: -$spacer-3;
   // stylelint-disable-next-line primer/spacing
   margin-left: -($spacer-6 + $spacer-3);
-  background-color: $bg-white;
+  background-color: var(--color-bg-canvas);
   border: 0;
   // stylelint-disable-next-line primer/borders
-  border-top: 4px $border-style $border-color;
+  border-top: 4px $border-style var(--color-border-primary);
 }
 
 .TimelineItem--condensed {
@@ -88,8 +90,8 @@
     margin-top: $spacer-2;
     margin-bottom: $spacer-2;
     // stylelint-disable-next-line primer/colors
-    color: $gray-400;
-    background-color: $bg-white;
+    color: var(--color-icon-secondary);
+    background-color: var(--color-bg-canvas);
     border: 0;
   }
 }

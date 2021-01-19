@@ -6,19 +6,24 @@ source: 'https://github.com/primer/css/blob/master/src/support/variables/color-s
 bundle: support
 ---
 
-import colors from 'primer-colors'
-import {Box, Flex, Heading, Link, StyledOcticon} from '@primer/components'
-import {Link as LinkIcon} from '@primer/octicons-react'
-import {palettes, variables} from '../../src/color-variables'
+import lightColors from '@primer/primitives/dist/js/colors/light'
+import {Flash, Box, Flex, Heading, Link, StyledOcticon} from '@primer/components'
+import {LinkIcon} from '@primer/octicons-react'
+import {palettes} from '../../src/color-variables'
 import {PaletteTable, PaletteCell, overlayColor} from '../../src/color-system'
+
+<Flash scheme="yellow">
+  Note: the colors listed below are different per color mode, and should not be used directly.
+  Instead, use functional color names (TODO)
+</Flash>
 
 ## Color palette
 
 <Flex flexWrap="wrap" mr={-2}>
   {palettes
     .concat(
-      {title: 'Black', name: 'black', value: colors.gray[9]},
-      {title: 'White', name: 'white', value: colors.white, props: {className: 'border'}}
+      {title: 'Black', name: 'black', value: lightColors.scale.gray[9]},
+      {title: 'White', name: 'white', value: lightColors.scale.white, props: {className: 'border'}}
     )
     .map(({name, title, value, props = {}}) => (
       <Flex.Item
@@ -43,7 +48,7 @@ import {PaletteTable, PaletteCell, overlayColor} from '../../src/color-system'
 
 <Flex flexWrap="wrap" mr={[0, 0, -4]}>
   {palettes.map(({name, title, value, values}) => (
-    <Flex id={name} flexDirection="column" width={[1, 1, 1 / 2]} pr={[0, 0, 4]} mb={4}>
+    <Flex id={name} flexDirection="column" width={[1, 1, 1 / 2]} pr={[0, 0, 4]} mb={4} key={name}>
       <Flex
         as={Link}
         href={`#${name}`}
@@ -63,7 +68,7 @@ import {PaletteTable, PaletteCell, overlayColor} from '../../src/color-system'
       </Flex>
       <PaletteTable
         columns={['variable', 'value']}
-        values={[{variable: name, value, slug: name}].concat(values)}
+        values={values}
         hasHeader={false}
         cellPadding="8px 16px"
       />

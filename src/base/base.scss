@@ -16,12 +16,12 @@ body {
   font-family: $body-font;
   font-size: $body-font-size;
   line-height: $body-line-height;
-  color: $text-gray-dark;
-  background-color: $bg-white;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-canvas);
 }
 
 a {
-  color: $text-blue;
+  color: var(--color-text-link);
   text-decoration: none;
 
   &:hover {
@@ -45,8 +45,7 @@ hr,
   overflow: hidden;
   background: transparent;
   border: 0;
-  // stylelint-disable-next-line primer/borders
-  border-bottom: $border-width $border-style lighten($gray-300, 5%);
+  border-bottom: $border-width $border-style var(--color-border-secondary);
   @include clearfix();
 }
 

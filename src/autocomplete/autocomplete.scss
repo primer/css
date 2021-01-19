@@ -8,10 +8,10 @@
   // stylelint-disable-next-line primer/typography
   font-size: 13px;
   list-style: none;
-  background: $bg-white;
-  border: $border;
+  background: var(--color-bg-overlay);
+  border: $border-width $border-style var(--color-border-overlay);
   border-radius: $border-radius;
-  box-shadow: $box-shadow-medium;
+  box-shadow: var(--color-autocomplete-shadow);
 }
 
 // One of the items that appears within an autocomplete group
@@ -23,22 +23,32 @@
   padding: $spacer-1 $spacer-2;
   overflow: hidden;
   font-weight: $font-weight-bold;
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   text-align: left;
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
-  background-color: $bg-white;
+  background-color: var(--color-bg-overlay);
   border: 0;
 
-  &:hover,
+  &:hover {
+    color: var(--color-state-hover-primary-text);
+    text-decoration: none;
+    background-color: var(--color-state-hover-primary-bg);
+
+    // Inherit color on all child elements to ensure enough contrast
+    * {
+      color: inherit !important;
+    }
+  }
+
   &.selected,
   &[aria-selected=true],
   &.navigation-focus {
-    color: $text-white;
+    color: var(--color-state-selected-primary-text);
     text-decoration: none;
-    background-color: $bg-blue;
+    background-color: var(--color-state-selected-primary-bg);
 
     // Inherit color on all child elements to ensure enough contrast
     * {

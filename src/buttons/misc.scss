@@ -7,7 +7,7 @@
   display: inline-block;
   padding: 0;
   font-size: inherit;
-  color: $text-blue;
+  color: var(--color-text-link);
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
@@ -24,8 +24,7 @@
   &[aria-disabled=true] {
     &,
     &:hover {
-      // stylelint-disable-next-line primer/colors
-      color: rgba($gray-600, 0.5);
+      color: var(--color-text-disabled);
       cursor: default;
     }
   }
@@ -35,7 +34,7 @@
 //
 // Typically used as a "cancel" button next to a .btn
 .btn-invisible {
-  color: $text-blue;
+  color: var(--color-text-link);
   background-color: transparent; // Reset default gradient backgrounds and colors
   border: 0;
   border-radius: 0;
@@ -48,10 +47,16 @@
   &[aria-selected=true],
   &.zeroclipboard-is-hover,
   &.zeroclipboard-is-active {
-    color: $text-blue;
+    color: var(--color-text-link);
     background: none;
     outline: none;
     box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    background-color: transparent;
   }
 }
 
@@ -65,28 +70,26 @@
   // stylelint-disable-next-line primer/spacing
   margin-left: 5px;
   line-height: $lh-condensed-ultra;
-  color: $text-gray;
+  color: var(--color-text-secondary);
   vertical-align: middle;
 
   // For `<button>` elements
   background: transparent;
   border: 0;
 
-  &:hover { color: $text-blue; }
+  &:hover { color: var(--color-text-link); }
 
   &.disabled,
   &[aria-disabled=true] {
-    // stylelint-disable-next-line primer/colors
-    color: $gray-400;
+    color: var(--color-text-disabled);
     cursor: default;
 
-    // stylelint-disable-next-line primer/colors
-    &:hover { color: $gray-400; }
+    &:hover { color: var(--color-text-disabled); }
   }
 }
 
 .btn-octicon-danger:hover {
-  color: $text-red;
+  color: var(--color-text-danger);
 }
 
 // Close button
@@ -94,9 +97,18 @@
 // Typically used with an octicon-x
 .close-button {
   padding: 0;
+  color: var(--color-text-secondary);
   background: transparent;
   border: 0;
   outline: none;
+
+  &:hover {
+    color: var(--color-text-primary);
+  }
+
+  &:active {
+    color: var(--color-text-tertiary);
+  }
 }
 
 // Hidden text button
@@ -126,25 +138,22 @@
   // stylelint-disable-next-line primer/typography
   line-height: 6px;
   // stylelint-disable-next-line primer/colors
-  color: $gray-700;
+  color: var(--color-auto-gray-7);
   text-decoration: none;
   vertical-align: middle;
-  // stylelint-disable-next-line primer/colors
-  background: lighten($gray-300, 5%);
+  background: var(--color-hidden-text-expander-bg);
   border: 0;
   // stylelint-disable-next-line primer/borders
   border-radius: 1px;
 
   &:hover {
     text-decoration: none;
-    // stylelint-disable-next-line primer/colors
-    background-color: darken($gray-300, 4%);
+    background-color: var(--color-hidden-text-expander-bg-hover);
   }
 
   &:active {
-    color: $text-white;
-    // stylelint-disable-next-line primer/colors
-    background-color: $blue-400;
+    color: var(--color-text-inverse);
+    background-color: var(--color-bg-info-inverse);
   }
 }
 
@@ -174,14 +183,14 @@
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   vertical-align: middle;
-  background-color: $bg-white;
-  border: $border-width $border-style $border-color-button;
+  background-color: var(--color-social-count-bg);
+  border: $border-width $border-style var(--color-btn-border);
   border-left: 0;
   border-top-right-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
-  box-shadow: $box-shadow, $box-shadow-highlight;
+  box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
 
   &:hover,
   &:active {
@@ -189,13 +198,13 @@
   }
 
   &:hover {
-    color: $text-blue;
+    color: var(--color-text-link);
     cursor: pointer;
   }
 
   &:focus {
     z-index: 1;
     outline: 0;
-    box-shadow: $box-shadow-focus;
+    box-shadow: var(--color-state-focus-shadow);
   }
 }
