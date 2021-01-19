@@ -11,7 +11,7 @@
   color: var(--color-counter-text);
   text-align: center;
   background-color: var(--color-counter-bg);
-  border: $border-width $border-style transparent; // Support Firfox custom colors
+  border: $border-width $border-style transparent; // Support Firefox custom colors
   // stylelint-disable-next-line primer/borders
   border-radius: 2em;
 
