@@ -105,7 +105,7 @@
   // Keep :focus after :disabled. Allows to see the focus ring even on disabled buttons
   &:focus,
   &.focus {
-    outline: 1px dotted transparent; // Support Firfox custom colors
+    outline: 1px dotted transparent; // Support Firefox custom colors
     outline-offset: 2px;
     box-shadow: $box-shadow-focus;
   }
