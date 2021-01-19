@@ -30,7 +30,7 @@
     border-bottom-color: $border-gray-dark;
     outline: 1px dotted transparent; // Support Firfox custom colors
     outline-offset: -1px;
-    transition: border-bottom-color 0.36s ease-in;
+    transition: border-bottom-color 0.12s ease-out;
   }
 
   &.selected,
