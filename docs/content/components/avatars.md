@@ -207,10 +207,10 @@ Use `AvatarStack--right` to right-align the avatar stack. Remember to switch the
 ### Small
 
 ```html live
-<a class="CircleBadge CircleBadge--small float-left mr-2" href="#small" title="Travis CI">
+<a class="CircleBadge CircleBadge--small float-left mr-2" href="#small">
   <img src="https://github.com/travis-ci.png"  class="CircleBadge-icon" alt="">
 </a>
-<a class="CircleBadge CircleBadge--small bg-yellow" title="Zap this!" href="#small">
+<a class="CircleBadge CircleBadge--small bg-yellow" href="#small">
   <!-- <%= octicon "zap",  class: "CircleBadge-icon text-white" %> -->
   <svg class="CircleBadge-icon text-white octicon octicon-zap" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7 9-9z"></path></svg>
 </a>
