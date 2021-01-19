@@ -22,7 +22,7 @@
   background-color: transparent;
   border: 0;
   // stylelint-disable-next-line primer/borders
-  border-bottom: 2px $border-style rgba($border-gray-dark, 0);
+  border-bottom: 2px $border-style transparent;
 
   &:hover,
   &:focus {
