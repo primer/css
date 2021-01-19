@@ -40,7 +40,7 @@ label {
   }
 
   &[disabled] {
-    color: var(--color-text-disabled);
+    color: var(--color-text-secondary);
     background-color: var(--color-input-disabled-bg);
     border-color: var(--color-input-disabled-border);
   }
