@@ -330,7 +330,7 @@ Align buttons to the right—via `float: right` on the buttons—in forms with `
 
 ## Checkboxes and radios
 
-Utilities to spice up the alignment and styling of checkbox and radio controls.
+Utilities to control alignment and styling of checkbox and radio controls.
 
 ```html live
 <form>
