@@ -151,7 +151,7 @@ Add the `disabled` attribute to make a `.form-control` appear disabled.
 
 ### Hide WebKit's contact info autofill icon
 
-Webkit sometimes gets confused and tries to add an icon/dropdown to autofill contact information on fields that may not be appropriate (such as input for number of users). Use this class to override the display of this icon.
+WebKit sometimes gets confused and tries to add an icon/dropdown to autofill contact information on fields that may not be appropriate (such as input for number of users). Use this class to override the display of this icon.
 
 ```html live
 <form>
