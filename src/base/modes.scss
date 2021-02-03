@@ -17,8 +17,8 @@
   @include primer-colors-dark;
 }
 
-@include color-mode-theme(dimmed) {
-  @include primer-colors-dimmed;
+@include color-mode-theme(dark_dimmed) {
+  @include primer-colors-dark_dimmed;
 }
 
 // Color mode boundaries
