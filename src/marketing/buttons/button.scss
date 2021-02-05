@@ -25,7 +25,7 @@
   &:focus {
     outline: 0;
     // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 0.2em rgba($blue-500, 0.3);
+    box-shadow: 0 0 0 0.2em rgba($blue-mktg, 0.3);
   }
 
   &:disabled,
@@ -51,7 +51,7 @@
 
   &:focus {
     // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 0.2em rgba($green-500, 0.3);
+    box-shadow: 0 0 0 0.2em rgba($green-mktg, 0.3);
   }
 }
 
@@ -65,7 +65,7 @@
   // stylelint-disable-next-line primer/colors
   color: $blue-mktg;
   // stylelint-disable-next-line primer/colors
-  background-color: rgba($white, 0);
+  background-color: rgba($white-mktg, 0);
   // stylelint-disable-next-line primer/borders
   border-color: rgba($blue-mktg, 0.5);
 
@@ -73,7 +73,7 @@
     color: $text-blue;
     text-decoration: none;
     // stylelint-disable-next-line primer/colors
-    background-color: rgba($white, 0);
+    background-color: rgba($white-mktg, 0);
     // stylelint-disable-next-line primer/borders
     border-color: rgba($blue-mktg, 1);
   }

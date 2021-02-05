@@ -23,17 +23,15 @@
   border: 0;
   // stylelint-disable-next-line primer/borders
   border-bottom: 2px $border-style transparent;
-  transition: border-bottom-color 0.36s ease-in;
 
   &:hover,
   &:focus {
     color: var(--color-underlinenav-text-hover);
     text-decoration: none;
     border-bottom-color: var(--color-border-tertiary);
-    outline: 1px dotted transparent; // Support Firfox custom colors
+    outline: 1px dotted transparent; // Support Firefox custom colors
     outline-offset: -1px;
-    transition-timing-function: ease-out;
-    transition-duration: 0.12s;
+    transition: border-bottom-color 0.12s ease-out;
   }
 
   &.selected,
@@ -43,7 +41,7 @@
     color: var(--color-underlinenav-text-active);
     // stylelint-disable-next-line primer/borders
     border-bottom-color: #f9826c; // custom coral
-    outline: 1px dotted transparent; // Support Firfox custom colors
+    outline: 1px dotted transparent; // Support Firefox custom colors
     outline-offset: -1px;
 
     .UnderlineNav-octicon {
