@@ -28,6 +28,7 @@
     cursor: default;
 
     .octicon {
+      // stylelint-disable-next-line primer/colors
       color: var(--color-icon-tertiary);
     }
   }
