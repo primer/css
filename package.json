@@ -70,7 +70,7 @@
     "postcss-scss": "2.0.0",
     "postcss-value-parser": "^4.0.2",
     "prop-types": "^15.6.2",
-    "semantic-release": "^15.13.27",
+    "semantic-release": "^17.2.3",
     "semver": "5.7.1",
     "stream-buffers": "^3.0.2",
     "style-loader": "^0.18.2",
