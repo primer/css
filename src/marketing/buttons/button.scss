@@ -3,29 +3,26 @@
   padding: $spacer-3 $spacer-4;
   font-size: $h5-size;
   font-weight: $font-weight-semibold;
-  color: $text-white;
+  color: var(--color-mktg-btn-text);
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  // stylelint-disable-next-line primer/colors
-  background-color: $blue-mktg;
-  // stylelint-disable-next-line primer/borders
-  border: $border-width $border-style $blue-mktg;
+  background-color: var(--color-mktg-btn-bg);
+  border: $border-width $border-style var(--color-mktg-btn-border);
   border-radius: $border-radius;
   transition: $transition-time / 2;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   &:hover {
     text-decoration: none;
-    background-color: $bg-blue;
-    border-color: $border-blue;
+    background-color: var(--color-mktg-btn-hover-bg);
+    border-color: var(--color-mktg-btn-hover-border);
   }
 
   &:focus {
     outline: 0;
-    // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 0.2em rgba($blue-mktg, 0.3);
+    box-shadow: var(--color-mktg-btn-focus-shadow);
   }
 
   &:disabled,
@@ -33,68 +30,87 @@
   &[aria-disabled=true] {
     pointer-events: none; // Disable hover styles
     cursor: default;
-    opacity: 0.65;
+    color: var(--color-mktg-btn-disabled-text);
+    background-color: var(--color-mktg-btn-disabled-bg);
+    border-color: var(--color-mktg-btn-disabled-border);
   }
 }
 
 .btn-primary-mktg {
-  // stylelint-disable-next-line primer/colors
-  background-color: $green-mktg;
-  // stylelint-disable-next-line primer/borders
-  border-color: $green-mktg;
+  color: var(--color-mktg-btn-primary-text);
+  background-color: var(--color-mktg-btn-primary-bg);
+  border-color: var(--color-mktg-btn-primary-border);
 
   &:hover {
-    background-color: $bg-green;
-    // stylelint-disable-next-line primer/borders
-    border-color: $green-500;
+    background-color: var(--color-mktg-btn-primary-hover-bg);
+    border-color: var(--color-mktg-btn-primary-hover-border);
   }
 
   &:focus {
-    // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 0.2em rgba($green-mktg, 0.3);
+    box-shadow: var(--color-mktg-btn-primary-focus-shadow);
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    color: var(--color-mktg-btn-primary-disabled-text);
+    background-color: var(--color-mktg-btn-primary-disabled-bg);
+    border-color: var(--color-mktg-btn-primary-disabled-border);
   }
 }
+
+.btn-outline-mktg {
+  color: var(--color-mktg-btn-outline-text);
+  background-color: var(--color-mktg-btn-outline-bg);
+  border-color: var(--color-mktg-btn-outline-border);
+
+  &:hover {
+    color: var(--color-mktg-btn-outline-hover-text);
+    background-color: var(--color-mktg-btn-outline-hover-bg);
+    border-color: var(--color-mktg-btn-outline-hover-border);
+  }
+
+  &:focus {
+    box-shadow: var(--color-mktg-btn-outline-focus-shadow);
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    color: var(--color-mktg-btn-outline-disabled-text);
+    background-color: var(--color-mktg-btn-outline-disabled-bg);
+    border-color: var(--color-mktg-btn-outline-disabled-border);
+  }
+}
+
+.btn-transparent {
+  color: var(--color-mktg-btn-dark-text);
+  background-color: var(--color-mktg-btn-dark-bg);
+  border-color: var(--color-mktg-btn-dark-border);
+
+  &:hover {
+    color: var(--color-mktg-btn-dark-hover-text);
+    background-color: var(--color-mktg-btn-dark-hover-bg);
+    border-color: var(--color-mktg-btn-dark-hover-border);
+  }
+
+  &:focus {
+    box-shadow: var(--color-mktg-btn-dark-focus-shadow);
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    color: var(--color-mktg-btn-dark-disabled-text);
+    background-color: var(--color-mktg-btn-dark-disabled-bg);
+    border-color: var(--color-mktg-btn-dark-disabled-border);
+  }
+}
+
+// Large
 
 .btn-large-mktg {
   // stylelint-disable-next-line primer/spacing
   padding: 20px $spacer-5;
   font-size: $h4-size;
-}
-
-.btn-outline-mktg {
-  // stylelint-disable-next-line primer/colors
-  color: $blue-mktg;
-  // stylelint-disable-next-line primer/colors
-  background-color: rgba($white-mktg, 0);
-  // stylelint-disable-next-line primer/borders
-  border-color: rgba($blue-mktg, 0.5);
-
-  &:hover {
-    color: $text-blue;
-    text-decoration: none;
-    // stylelint-disable-next-line primer/colors
-    background-color: rgba($white-mktg, 0);
-    // stylelint-disable-next-line primer/borders
-    border-color: rgba($blue-mktg, 1);
-  }
-}
-
-@mixin btn-transparent-active {
-  color: $gray-800;
-  background-color: $white;
-  background-image: none;
-  border-color: $white;
-}
-
-.btn-transparent {
-  color: $text-white;
-  background-color: transparent;
-  background-image: none;
-  // stylelint-disable-next-line primer/borders
-  border: $border-width $border-style $white-fade-50;
-
-  &:hover,
-  &:active {
-    @include btn-transparent-active;
-  }
 }
