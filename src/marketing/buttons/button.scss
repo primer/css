@@ -28,9 +28,9 @@
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
+    color: var(--color-mktg-btn-disabled-text);
     pointer-events: none; // Disable hover styles
     cursor: default;
-    color: var(--color-mktg-btn-disabled-text);
     background-color: var(--color-mktg-btn-disabled-bg);
     border-color: var(--color-mktg-btn-disabled-border);
   }
