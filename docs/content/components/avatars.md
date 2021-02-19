@@ -28,7 +28,7 @@ We occasionally use smaller avatars. Anything less than `24px` wide should inclu
 
 ### Avatar sizes
 
-Instead of using the `width` and `height` attribute, you can also use a class like `.avatar-[1-8]`. The sizes go from `16px` up to `64px`. Note: Avatar stacks are only suppurted for the `20px` avatar size.
+Instead of using the `width` and `height` attribute, you can also use a class like `.avatar-[1-8]`. The sizes go from `16px` up to `64px`. Note: Avatar stacks are only supported for the `20px` avatar size.
 
 ```html live
 <img class="avatar avatar-1 mr-2" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=32" />
