@@ -18,7 +18,7 @@ Decisions to add new components are made on a case-by-case basis, with help from
 - If your design is difficult to compose with current styles, does this highlight problems with existing components (such as overly-specific components, or missing objects and utilities)?
 - Is this a totally new pattern or should it be an extension of an existing component?
 - How is this pattern being implemented currently - have you identified problems with it’s current implementation that can be improved with adding a new pattern?
-- Is the desire for this new pattern a side-effect of lacking documentation or mis-understandings of use with current styles?
+- Is the desire for this new pattern a side-effect of lacking documentation or misunderstanding of use with current styles?
 - Are there special factors that need to be considered as to why the this pattern needs it’s own styles? Such legal issues, usability issues, or branding and trademarks?
 - Is this something that would be better handled by other front-end code rather than CSS?
 - Every new addition of CSS means we ask our users to download a larger CSS file, and we increase the maintenance work of our CSS framework. Does the convenience of adding these new styles outweigh those costs?
