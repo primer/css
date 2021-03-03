@@ -9,15 +9,15 @@
 // Outputs the CSS variables
 // Use :root (html element) to define a default
 
-@include color-mode-theme(light, true) {
+@include color-mode-theme(light, light, true) {
   @include primer-colors-light;
 }
 
-@include color-mode-theme(dark) {
+@include color-mode-theme(dark, dark) {
   @include primer-colors-dark;
 }
 
-@include color-mode-theme(dark_dimmed) {
+@include color-mode-theme(dark_dimmed, dark) {
   @include primer-colors-dark_dimmed;
 }
 

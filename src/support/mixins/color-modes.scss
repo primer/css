@@ -1,52 +1,44 @@
-@mixin color-mode-theme($theme-name, $include-root: false) {
+@mixin color-mode-theme($theme-name, $type, $include-root: false) {
   @if $include-root {
-    :root {
+    :root,
+    [data-color-mode="#{$type}"][data-#{$type}-theme="#{$theme-name}"] {
       @content;
     }
   }
 
-  [data-color-mode="#{$theme-name}"],
-  [data-color-mode="light"][data-light-theme="#{$theme-name}"],
-  [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
-    @content;
-  }
-
-  [data-color-mode="auto"][data-light-theme="#{$theme-name}"] {
-    @media (prefers-color-scheme: light) {
+  @else {
+    [data-color-mode="#{$type}"][data-#{$type}-theme="#{$theme-name}"] {
       @content;
     }
   }
 
-  [data-color-mode="auto"][data-dark-theme="#{$theme-name}"] {
-    @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: light) {
+    [data-color-mode="auto"][data-light-theme="#{$theme-name}"] {
+      @content;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    [data-color-mode="auto"][data-dark-theme="#{$theme-name}"] {
       @content;
     }
   }
 }
 
-// Allows CSS to be scoped to a specific color mode
 @mixin color-mode($mode) {
-  @if $mode == light {
-    :root,
-    [data-color-mode="light"] {
-      @content;
-    }
+  [data-color-mode="#{$mode}"][data-#{$mode}-theme*="#{$mode}"] {
+    @content;
+  }
 
-    [data-color-mode="auto"] {
-      @media (prefers-color-scheme: light) {
-        @content;
-      }
+  @media (prefers-color-scheme: light) {
+    [data-color-mode="auto"][data-light-theme*="#{$mode}"] {
+      @content;
     }
   }
-  @else if $mode == dark {
-    [data-color-mode="dark"] {
-      @content;
-    }
 
-    [data-color-mode="auto"] {
-      @media (prefers-color-scheme: dark) {
-        @content;
-      }
+  @media (prefers-color-scheme: dark) {
+    [data-color-mode="auto"][data-dark-theme*="#{$mode}"] {
+      @content;
     }
   }
 }
