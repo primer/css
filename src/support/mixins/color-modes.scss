@@ -4,7 +4,8 @@
     [data-color-mode="#{$type}"][data-#{$type}-theme="#{$theme-name}"] {
       @content;
     }
-  } @else {
+  } 
+  @else {
     [data-color-mode="#{$type}"][data-#{$type}-theme="#{$theme-name}"] {
       @content;
     }
