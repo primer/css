@@ -4,7 +4,8 @@
     [data-color-mode="#{$type}"][data-#{$type}-theme="#{$theme-name}"] {
       @content;
     }
-  } 
+  }
+
   @else {
     [data-color-mode="#{$type}"][data-#{$type}-theme="#{$theme-name}"] {
       @content;
@@ -28,11 +29,13 @@
   [data-color-mode="#{$mode}"][data-#{$mode}-theme*="#{$mode}"] {
     @content;
   }
+
   @media (prefers-color-scheme: light) {
     [data-color-mode="auto"][data-light-theme*="#{$mode}"] {
       @content;
     }
   }
+
   @media (prefers-color-scheme: dark) {
     [data-color-mode="auto"][data-dark-theme*="#{$mode}"] {
       @content;
