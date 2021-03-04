@@ -18,28 +18,6 @@
   box-shadow: var(--color-shadow-extra-large) !important;
 }
 
-// Deprecated ---------------------------------------
-// TODO: Remove once not used anymore.
-
-.box-shadow {
-  box-shadow: $box-shadow !important;
-}
-
-.box-shadow-medium {
-  box-shadow: $box-shadow-medium !important;
-}
-
-.box-shadow-large {
-  box-shadow: $box-shadow-large !important;
-}
-
-.box-shadow-extra-large {
-  box-shadow: $box-shadow-extra-large !important;
-}
-
-// Keep .box-shadow-none
-// End of deprecation ---------------------------------------
-
 // Turn off box shadow
 
 .box-shadow-none {
