@@ -56,18 +56,6 @@
 // Color utilities
 
 // background colors
-// .bg-white         { background-color: $bg-white !important; }
-// .bg-blue          { background-color: $bg-blue !important; }
-// .bg-blue-light    { background-color: $bg-blue-light !important; }
-// .bg-gray-dark     { background-color: $bg-gray-dark !important; }
-// .bg-gray          { background-color: $bg-gray !important; }
-// .bg-gray-light    { background-color: $bg-gray-light !important; }
-// .bg-green         { background-color: $bg-green !important; }
-// .bg-green-light   { background-color: $bg-green-light !important; }
-// .bg-red           { background-color: $bg-red !important; }
-// .bg-red-light     { background-color: $bg-red-light !important; }
-// .bg-yellow        { background-color: $bg-yellow !important; }
-// .bg-yellow-light  { background-color: $bg-yellow-light !important; }
 .bg-yellow-dark   { background-color: $bg-yellow-dark !important; }
 .bg-purple        { background-color: $bg-purple !important; }
 .bg-pink          { background-color: $bg-pink !important; }
@@ -83,32 +71,17 @@
 }
 
 // text colors
-// .text-blue          { color: $text-blue !important; }
-// .text-red           { color: $text-red !important; }
-// .text-gray-light    { color: $text-gray-light !important; }
-// .text-gray          { color: $text-gray !important; }
-// .text-gray-dark     { color: $text-gray-dark !important; }
-// .text-green         { color: $text-green !important; }
-// .text-yellow        { color: $text-yellow !important; }
 .text-orange        { color: $text-orange !important; }
 .text-orange-light  { color: $text-orange-light !important; }
 .text-purple        { color: $text-purple !important; }
 .text-pink          { color: $text-pink !important; }
-// .text-white         { color: $text-white !important; }
 
 .text-inherit       { color: inherit !important; } // TODO: Should this be moved to primer/primitives
 
 // Border colors
-// .border-blue        { border-color: $border-blue !important; }
 .border-blue-light  { border-color: $border-blue-light !important; }
-// .border-green       { border-color: $border-green !important; }
-// .border-green-light { border-color: $border-green-light !important; }
-// .border-red         { border-color: $border-red !important; }
 .border-red-light   { border-color: $border-red-light !important; }
 .border-purple      { border-color: $border-purple !important; }
-// .border-yellow      { border-color: $border-yellow !important; }
-// .border-gray-light  { border-color: $border-gray-light !important; }
-// .border-gray-dark   { border-color: $border-gray-dark !important; }
 
 .border-black-fade  { border-color: $border-black-fade !important; }
 .border-white-fade  { border-color: $border-white-fade !important; }

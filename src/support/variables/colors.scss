@@ -8,57 +8,28 @@
 // Color variables
 
 // Border colors
-// $border-white:       var(--color-border-inverse) !default; // $white
 $border-black-fade:  $black-fade-15 !default;
 $border-white-fade:  $white-fade-15 !default;
-// $border-gray-dark:   var(--color-border-tertiary) !default; // $gray-300
 $border-gray-darker: $gray-700 !default;
-// $border-gray-light:  var(--color-border-secondary) !default; // lighten($gray-200, 3%)
-// $border-gray:        var(--color-border-primary) !default; // $gray-200
-// $border-blue:        var(--color-border-info) !default; // $blue-500
 $border-blue-light:  $blue-200 !default;
-// $border-green:       var(--color-border-success) !default; // $green-400
-// $border-green-light: var(--color-discussion-border) !default; // desaturate($green-300, 40%)
 $border-purple:      $purple !default;
-// $border-red:         var(--color-border-danger) !default; // $red/$red-500
 $border-red-light:   $red-300 !default;
-// $border-yellow:      var(--color-border-warning) !default; // $yellow-600
 
 // Background colors
-// $bg-white:          var(--color-bg-primary) !default; // $white
 $bg-black:          $black !default;
 $bg-black-fade:     $black-fade-50 !default;
-// $bg-blue-light:     var(--color-bg-info) !default; // $blue-000
-// $bg-blue:           var(--color-bg-info-inverse) !default; // $blue-500
-// $bg-gray-dark:      var(--color-bg-canvas-inverse) !default; // $gray-900
-// $bg-gray-light:     var(--color-bg-secondary) !default; // $gray-000
-// $bg-gray:           var(--color-bg-tertiary) !default; // $gray-100
-// $bg-green:          var(--color-bg-success-inverse) !default; // $green-500
-// $bg-green-light:    var(--color-bg-success) !default; // $green-100
 $bg-orange:         $orange-700 !default;
 $bg-purple:         $purple-500 !default;
 $bg-purple-light:   $purple-000 !default;
 $bg-pink:           $pink-500 !default;
-// $bg-red:            var(--color-bg-danger-inverse) !default; // $red-500
-// $bg-red-light:      var(--color-bg-danger) !default; // $red-000
-// $bg-yellow:         var(--color-bg-warning-inverse) !default; // $yellow-500
-// $bg-yellow-light:   var(--color-bg-warning) !default; // $yellow-200
 $bg-yellow-dark:    $yellow-700 !default;
 
 // Text colors
 $text-black:        $black !default;
-// $text-white:        var(--color-text-white) !default; // $white
-// $text-blue:         var(--color-text-link) !default; // $blue-500
-// $text-gray-dark:    var(--color-text-primary) !default; // $gray-900
-// $text-gray-light:   var(--color-text-tertiary) !default; // $gray-500
-// $text-gray:         var(--color-text-secondary) !default; // $gray-600
-// $text-green:        var(--color-text-success) !default; // $green-600
 $text-orange:       $orange-900 !default;
 $text-orange-light: $orange-600 !default;
 $text-purple:       $purple !default;
 $text-pink:         $pink-500 !default;
-// $text-red:          var(--color-text-danger) !default; // $red-600
-// $text-yellow:       var(--color-text-warning) !default; // $yellow-800
 
 // Misc ------------------------------------
 
@@ -66,11 +37,6 @@ $text-pink:         $pink-500 !default;
 $border-color: var(--color-border-primary) !default;
 
 // Box shadow
-// $box-shadow: var(--color-shadow-small) !default;
-// $box-shadow-medium: var(--color-shadow-medium) !default;
-// $box-shadow-large: var(--color-shadow-large) !default;
-// $box-shadow-extra-large: var(--color-shadow-extra-large) !default;
-
 $box-shadow-highlight: var(--color-shadow-highlight) !default; // top highlight
 $box-shadow-inset: var(--color-shadow-inset) !default; // top inner shadow
 $box-shadow-focus: var(--color-state-focus-shadow) !default; // blue focus ring

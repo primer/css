@@ -9,7 +9,6 @@
   }
 }
 
-// .link-gray-dark, // TODO: Deprecate
 .Link--primary {
   color: var(--color-text-primary) !important;
 
@@ -18,7 +17,6 @@
   }
 }
 
-// .link-gray, // TODO: Deprecate
 .Link--secondary {
   color: var(--color-text-secondary) !important;
 
@@ -27,7 +25,6 @@
   }
 }
 
-// .muted-link, // TODO: Deprecate
 .Link--muted {
   color: var(--color-text-secondary) !important;
 
@@ -39,7 +36,6 @@
 
 // Set the link color only on hover
 // Useful when you want only part of a link to turn blue on hover
-// .link-hover-blue, // TODO: Deprecate
 .Link--onHover {
   &:hover {
     color: var(--color-text-link) !important;
