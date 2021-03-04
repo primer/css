@@ -56,6 +56,18 @@
 // Color utilities
 
 // background colors
+.bg-white         { background-color: var(--color-bg-primary) !important; }
+.bg-blue          { background-color: var(--color-bg-info-inverse)  !important; }
+.bg-blue-light    { background-color: var(--color-bg-info) !important; }
+.bg-gray-dark     { background-color: var(--color-bg-canvas-inverse) !important; }
+.bg-gray          { background-color: var(--color-bg-tertiary) !important; }
+.bg-gray-light    { background-color: var(--color-bg-secondary) !important; }
+.bg-green         { background-color: var(--color-bg-success-inverse) !important; }
+.bg-green-light   { background-color: var(--color-bg-success) !important; }
+.bg-red           { background-color: var(--color-bg-danger-inverse) !important; }
+.bg-red-light     { background-color: var(--color-bg-danger) !important; }
+.bg-yellow        { background-color: var(--color-bg-warning-inverse) !important; }
+.bg-yellow-light  { background-color: var(--color-bg-warning) !important; }
 .bg-yellow-dark   { background-color: $bg-yellow-dark !important; }
 .bg-purple        { background-color: $bg-purple !important; }
 .bg-pink          { background-color: $bg-pink !important; }
@@ -71,17 +83,32 @@
 }
 
 // text colors
+.text-blue          { color: var(--color-text-link) !important; }
+.text-red           { color: var(--color-text-danger) !important; }
+.text-gray-light    { color: var(--color-text-tertiary) !important; }
+.text-gray          { color: var(--color-text-secondary) !important; }
+.text-gray-dark     { color: var(--color-text-primary) !important; }
+.text-green         { color: var(--color-text-success) !important; }
+.text-yellow        { color: var(--color-text-warning) !important; }
 .text-orange        { color: $text-orange !important; }
 .text-orange-light  { color: $text-orange-light !important; }
 .text-purple        { color: $text-purple !important; }
 .text-pink          { color: $text-pink !important; }
+.text-white         { color: var(--color-text-white) !important; }
 
 .text-inherit       { color: inherit !important; } // TODO: Should this be moved to primer/primitives
 
 // Border colors
+.border-blue        { border-color: var(--color-border-info) !important; }
 .border-blue-light  { border-color: $border-blue-light !important; }
+.border-green       { border-color: var(--color-border-success) !important; }
+.border-green-light { border-color: var(--color-discussion-border) !important; }
+.border-red         { border-color: var(--color-border-danger) !important; }
 .border-red-light   { border-color: $border-red-light !important; }
 .border-purple      { border-color: $border-purple !important; }
+.border-yellow      { border-color: var(--color-border-warning) !important; }
+.border-gray-light  { border-color: var(--color-border-secondary) !important; }
+.border-gray-dark   { border-color: var(--color-border-tertiary) !important; }
 
 .border-black-fade  { border-color: $border-black-fade !important; }
 .border-white-fade  { border-color: $border-white-fade !important; }
