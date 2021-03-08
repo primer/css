@@ -26,21 +26,18 @@
   border: $border-width $border-style var(--color-pr-state-draft-border);
 }
 
-.State--green, // TODO: Deprecate
 .State--open {
   color: var(--color-pr-state-open-text);
   background-color: var(--color-pr-state-open-bg);
   border-color: var(--color-pr-state-open-border);
 }
 
-.State--purple, // TODO: Deprecate
 .State--merged {
   color: var(--color-pr-state-merged-text);
   background-color: var(--color-pr-state-merged-bg);
   border-color: var(--color-pr-state-merged-border);
 }
 
-.State--red, // TODO: Deprecate
 .State--closed {
   color: var(--color-pr-state-closed-text);
   background-color: var(--color-pr-state-closed-bg);
