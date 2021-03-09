@@ -1,5 +1,29 @@
-// Headings
+// Type
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: $font-weight-normal;
+  src: local("Inter"), local("Inter-Regular"), url("#{$marketing-font-path}Inter-Regular.woff") format("woff");
+  font-display: swap;
+}
 
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: $font-weight-semibold;
+  src: local("Inter Medium"), local("Inter-Medium"), url("#{$marketing-font-path}Inter-Medium.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: $font-weight-bold;
+  src: local("Inter Bold"), local("Inter-Bold"), url("#{$marketing-font-path}Inter-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+// Headings
 .h000-mktg,
 .h00-mktg,
 .h0-mktg,
