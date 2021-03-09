@@ -161,23 +161,23 @@ Use `.UnderlineNav--right` to right align the navigation.
 <nav class="UnderlineNav" aria-label="Foo bar">
   <div class="UnderlineNav-body">
     <a class="UnderlineNav-item" href="#url" aria-current="page">
-      <!-- <%= octicon "tools", :class = "UnderlineNav-octicon" %> -->
+      <!-- <%= octicon "tools", class: "UnderlineNav-octicon" %> -->
       <svg class="UnderlineNav-octicon octicon octicon-tools" version="1.1" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M4.48 7.27c.26.26 1.28 1.33 1.28 1.33l.56-.58-.88-.91 1.69-1.8s-.76-.74-.43-.45c.32-1.19.03-2.51-.87-3.44C4.93.5 3.66.2 2.52.51l1.93 2-.51 1.96-1.89.52-1.93-2C-.19 4.17.1 5.48 1 6.4c.94.98 2.29 1.26 3.48.87zm6.44 1.94l-2.33 2.3 3.84 3.98c.31.33.73.49 1.14.49.41 0 .82-.16 1.14-.49.63-.65.63-1.7 0-2.35l-3.79-3.93zM16 2.53L13.55 0 6.33 7.46l.88.91-4.31 4.46-.99.53-1.39 2.27.35.37 2.2-1.44.51-1.02L7.9 9.08l.88.91L16 2.53z" /></svg>
       <span>Item 1</span>
     </a>
     <a class="UnderlineNav-item" href="#url">
-      <!-- <%= octicon "tools", :class = "UnderlineNav-octicon" %> -->
+      <!-- <%= octicon "tools", class: "UnderlineNav-octicon" %> -->
       <svg class="UnderlineNav-octicon octicon octicon-tools" version="1.1" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M4.48 7.27c.26.26 1.28 1.33 1.28 1.33l.56-.58-.88-.91 1.69-1.8s-.76-.74-.43-.45c.32-1.19.03-2.51-.87-3.44C4.93.5 3.66.2 2.52.51l1.93 2-.51 1.96-1.89.52-1.93-2C-.19 4.17.1 5.48 1 6.4c.94.98 2.29 1.26 3.48.87zm6.44 1.94l-2.33 2.3 3.84 3.98c.31.33.73.49 1.14.49.41 0 .82-.16 1.14-.49.63-.65.63-1.7 0-2.35l-3.79-3.93zM16 2.53L13.55 0 6.33 7.46l.88.91-4.31 4.46-.99.53-1.39 2.27.35.37 2.2-1.44.51-1.02L7.9 9.08l.88.91L16 2.53z" /></svg>
       <span>Item 2</span>
       <span class="Counter">10</span>
     </a>
     <a class="UnderlineNav-item" href="#url">
-      <!-- <%= octicon "tools", :class = "UnderlineNav-octicon" %> -->
+      <!-- <%= octicon "tools", class: "UnderlineNav-octicon" %> -->
       <svg class="UnderlineNav-octicon octicon octicon-tools" version="1.1" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M4.48 7.27c.26.26 1.28 1.33 1.28 1.33l.56-.58-.88-.91 1.69-1.8s-.76-.74-.43-.45c.32-1.19.03-2.51-.87-3.44C4.93.5 3.66.2 2.52.51l1.93 2-.51 1.96-1.89.52-1.93-2C-.19 4.17.1 5.48 1 6.4c.94.98 2.29 1.26 3.48.87zm6.44 1.94l-2.33 2.3 3.84 3.98c.31.33.73.49 1.14.49.41 0 .82-.16 1.14-.49.63-.65.63-1.7 0-2.35l-3.79-3.93zM16 2.53L13.55 0 6.33 7.46l.88.91-4.31 4.46-.99.53-1.39 2.27.35.37 2.2-1.44.51-1.02L7.9 9.08l.88.91L16 2.53z" /></svg>
       <span>Item 3</span>
     </a>
     <a class="UnderlineNav-item" href="#url">
-      <!-- <%= octicon "tools", :class = "UnderlineNav-octicon" %> -->
+      <!-- <%= octicon "tools", class: "UnderlineNav-octicon" %> -->
       <svg class="UnderlineNav-octicon octicon octicon-tools" version="1.1" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M4.48 7.27c.26.26 1.28 1.33 1.28 1.33l.56-.58-.88-.91 1.69-1.8s-.76-.74-.43-.45c.32-1.19.03-2.51-.87-3.44C4.93.5 3.66.2 2.52.51l1.93 2-.51 1.96-1.89.52-1.93-2C-.19 4.17.1 5.48 1 6.4c.94.98 2.29 1.26 3.48.87zm6.44 1.94l-2.33 2.3 3.84 3.98c.31.33.73.49 1.14.49.41 0 .82-.16 1.14-.49.63-.65.63-1.7 0-2.35l-3.79-3.93zM16 2.53L13.55 0 6.33 7.46l.88.91-4.31 4.46-.99.53-1.39 2.27.35.37 2.2-1.44.51-1.02L7.9 9.08l.88.91L16 2.53z" /></svg>
       <span>Item 4</span>
     </a>
@@ -444,7 +444,7 @@ You can have `subnav-search` in the subnav bar.
   </nav>
   <div class="subnav-search float-left">
     <input type="search" name="name" class="form-control subnav-search-input" value="" aria-label="Search site" />
-    <!-- <%= octicon "search", :class = "subnav-search-icon" %> -->
+    <!-- <%= octicon "search", class: "subnav-search-icon" %> -->
     <svg class="subnav-search-icon octicon octicon-search" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"> <path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z" /> </svg>
   </div>
 </div>
@@ -469,7 +469,7 @@ You can also use a `subnav-search-context` to display search help in a select me
   </div>
   <div class="subnav-search float-left">
     <input type="search" name="name" class="form-control subnav-search-input" value="" aria-label="Search site" />
-    <!-- <%= octicon "search", :class = "subnav-search-icon" %> -->
+    <!-- <%= octicon "search", class: "subnav-search-icon" %> -->
     <svg class="subnav-search-icon octicon octicon-search" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"> <path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z" /> </svg>
   </div>
 </div>

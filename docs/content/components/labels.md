@@ -160,7 +160,7 @@ Use the `Counter` in navigation to indicate the number of items without the user
 ```html live
 <div class="tabnav">
   <nav class="tabnav-tabs" aria-label="Foo bar">
-    <a href="#url" class="tabnav-tab" aria-current="page">Foo tab <span class="Counter">23</a>
+    <a href="#url" class="tabnav-tab" aria-current="page">Foo tab <span class="Counter">23</span></a>
     <a href="#url" class="tabnav-tab">Bar tab</a>
   </nav>
 </div>
