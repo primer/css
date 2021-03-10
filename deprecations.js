@@ -6,9 +6,7 @@
 const versionDeprecations = {
   '16.0.0': [
     {
-      selectors: [
-        '.markdown-body li'
-      ],
+      selectors: ['.markdown-body li'],
       message: `This selector is not available in Primer CSS 16.0.0. Please refer to the documentation.`
     }
   ],
