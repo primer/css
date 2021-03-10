@@ -1,0 +1,8 @@
+# Ignore eslint
+# For now, until we fix the prettier/prettier errors
+
+/deprecations.js
+/.storybook/
+/script/
+/lib/
+/docs/
