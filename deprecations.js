@@ -4,6 +4,12 @@
  * array and a "message" string.
  */
 const versionDeprecations = {
+  '16.0.0': [
+    {
+      selectors: ['.markdown-body li'],
+      message: `This selector is not available in Primer CSS 15.0.0. Please refer to the documentation.`
+    }
+  ],
   '15.0.0': [
     {
       selectors: [
