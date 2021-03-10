@@ -1,10 +1,4 @@
 // A rounded corner box containing a label "open" or "closed"
-// The default state is gray.
-//
-// open     - $green background
-// reopened - $green background
-// closed   - $red background
-// merged   - $purple background
 
 // Default 32px
 // Small 24px
@@ -18,26 +12,36 @@
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: $text-white;
   text-align: center;
   white-space: nowrap;
-  // stylelint-disable-next-line primer/colors
-  background-color: $gray-500;
-  border: $border-width $border-style transparent; // Support Firefox custom colors
   // stylelint-disable-next-line primer/borders
   border-radius: 2em;
 }
 
-.State--green {
-  background-color: $bg-green;
+.state, // TODO: Deprecate
+.State,
+.State--draft {
+  color: var(--color-pr-state-draft-text);
+  background-color: var(--color-pr-state-draft-bg);
+  border: $border-width $border-style var(--color-pr-state-draft-border);
 }
 
-.State--red {
-  background-color: $bg-red;
+.State--open {
+  color: var(--color-pr-state-open-text);
+  background-color: var(--color-pr-state-open-bg);
+  border-color: var(--color-pr-state-open-border);
 }
 
-.State--purple {
-  background-color: $bg-purple;
+.State--merged {
+  color: var(--color-pr-state-merged-text);
+  background-color: var(--color-pr-state-merged-bg);
+  border-color: var(--color-pr-state-merged-border);
+}
+
+.State--closed {
+  color: var(--color-pr-state-closed-text);
+  background-color: var(--color-pr-state-closed-bg);
+  border-color: var(--color-pr-state-closed-border);
 }
 
 // Small

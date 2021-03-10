@@ -10,9 +10,8 @@
   position: absolute;
   right: -15%;
   bottom: -9%;
-  background-color: $bg-white; // For transparent backgrounds
+  background-color: var(--color-bg-canvas); // For transparent backgrounds
   // stylelint-disable-next-line primer/borders
   border-radius: $border-radius-1;
-  // stylelint-disable-next-line primer/box-shadow
-  box-shadow: -2px -2px 0 rgba($white, 0.8);
+  box-shadow: var(--color-avatar-child-shadow);
 }

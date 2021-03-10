@@ -22,28 +22,27 @@ label {
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   vertical-align: middle;
-  background-color: $bg-white;
+  background-color: var(--color-input-bg);
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
-  border: $border-width $border-style $border-color;
+  border: $border-width $border-style var(--color-input-border);
   border-radius: $border-radius;
   outline: none;
-  box-shadow: $box-shadow-inset;
+  box-shadow: var(--color-shadow-inset);
 
   &.focus,
   &:focus {
-    border-color: $border-blue;
+    border-color: var(--color-state-focus-border);
     outline: none;
-    box-shadow: $box-shadow-focus;
+    box-shadow: var(--color-state-focus-shadow);
   }
 
   &[disabled] {
-    // stylelint-disable-next-line primer/colors
-    color: $gray-400;
-    // stylelint-disable-next-line primer/colors
-    background-color: #f3f4f6; // custom gray
+    color: var(--color-text-secondary);
+    background-color: var(--color-input-disabled-bg);
+    border-color: var(--color-input-disabled-border);
   }
 
   // Ensures inputs don't zoom on mobile iPhone but are body-font size on iPad
@@ -64,36 +63,14 @@ textarea.form-control {
 
 // Inputs with contrast for easy light gray backgrounds against white.
 .input-contrast {
-  background-color: $bg-gray-light;
+  background-color: var(--color-input-contrast-bg);
 
-  &:focus { background-color: $bg-white; }
-}
-
-// Inputs to be used against dark backgrounds.
-.input-dark {
-  color: $text-white;
-  // stylelint-disable-next-line primer/colors
-  background-color: $white-fade-15;
-  border-color: transparent;
-  box-shadow: none;
-
-  &::placeholder {
-    color: inherit;
-    opacity: 0.6; // inceases contrast ratio to 4.52
-  }
-
-  &.focus,
-  &:focus {
-    // stylelint-disable-next-line primer/borders
-    border-color: $black-fade-30;
-    // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 0.2em rgba($blue-300, 0.4);
-  }
+  &:focus { background-color: var(--color-input-bg); }
 }
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
 ::placeholder {
-  color: $text-gray-light;
+  color: var(--color-text-placeholder);
   opacity: 1; // override opacity in normalize.css
 }
 
@@ -153,7 +130,7 @@ textarea.form-control {
       padding: 2px $spacer-1;
       font-style: normal;
       // stylelint-disable-next-line primer/colors
-      background: $yellow-100;
+      background: var(--color-auto-yellow-1);
       border-radius: $border-radius;
     }
   }
@@ -171,7 +148,7 @@ textarea.form-control {
     margin: 0;
     font-size: $font-size-small;
     font-weight: $font-weight-normal;
-    color: $text-gray;
+    color: var(--color-text-secondary);
   }
 }
 
@@ -209,7 +186,7 @@ textarea.form-control {
         display: inline-block;
         // stylelint-disable-next-line primer/spacing
         margin: 5px 0 0;
-        color: $text-gray;
+        color: var(--color-text-secondary);
       }
 
       img {
@@ -258,11 +235,9 @@ input::-webkit-inner-spin-button {
   // stylelint-disable-next-line primer/spacing
   margin: 10px 0;
   font-size: $h5-size;
-  // stylelint-disable-next-line primer/colors
-  color: $yellow-900;
-  // stylelint-disable-next-line primer/colors
-  background: $yellow-100;
-  border: $border-width $border-style $border-yellow;
+  color: var(--color-text-warning);
+  background: var(--color-bg-warning);
+  border: $border-width $border-style var(--color-border-warning);
   border-radius: $border-radius;
 
   p {

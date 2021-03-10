@@ -5,7 +5,6 @@
   position: relative;
   // stylelint-disable-next-line primer/spacing
   padding: 20px $spacer-3;
-  color: $text-gray-dark;
   border-style: $border-style;
   border-width: $border-width;
   border-radius: $border-radius;
@@ -65,49 +64,46 @@
 //
 
 .flash {
-  // stylelint-disable-next-line primer/colors
-  background-color: $blue-100;
-  // stylelint-disable-next-line primer/borders
-  border-color: rgba($blue-700, 0.2);
+  color: var(--color-alert-info-text);
+  background-image: linear-gradient(var(--color-alert-info-bg), var(--color-alert-info-bg));
+  border-color: var(--color-alert-info-border);
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: rgba($blue-700, 0.6);
+    color: var(--color-alert-info-icon);
   }
 }
 
 .flash-warn {
-  // stylelint-disable-next-line primer/colors
-  background-color: $yellow-100;
-  // stylelint-disable-next-line primer/borders
-  border-color: rgba($yellow-800, 0.2);
+  color: var(--color-alert-warn-text);
+  background-image: linear-gradient(var(--color-alert-warn-bg), var(--color-alert-warn-bg));
+  border-color: var(--color-alert-warn-border);
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: rgba($yellow-800, 1);
+    color: var(--color-alert-warn-icon);
   }
 }
 
 .flash-error {
-  // stylelint-disable-next-line primer/colors
-  background-color: #ffe3e6; // custom red
-  // stylelint-disable-next-line primer/borders
-  border-color: rgba($red-800, 0.2);
+  color: var(--color-alert-error-text);
+  background-image: linear-gradient(var(--color-alert-error-bg), var(--color-alert-error-bg));
+  border-color: var(--color-alert-error-border);
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: rgba($red-800, 0.6);
+    color: var(--color-alert-error-icon);
   }
 }
 
 .flash-success {
-  background-color: $bg-green-light;
-  // stylelint-disable-next-line primer/borders
-  border-color: rgba($green-700, 0.2);
+  color: var(--color-alert-success-text);
+  background-image: linear-gradient(var(--color-alert-success-bg), var(--color-alert-success-bg));
+  border-color: var(--color-alert-success-border);
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: rgba($green-700, 0.8);
+    color: var(--color-alert-success-icon);
   }
 }
 
@@ -134,12 +130,17 @@
   border-radius: 0;
 }
 
+// Makes sure the background is opaque to cover any content underneath
+.flash-full,
+.flash-banner {
+  background-color: var(--color-bg-canvas);
+}
+
 // FIXME deprecate this
 .warning {
   padding: $em-spacer-5;
   // stylelint-disable-next-line primer/spacing
   margin-bottom: 0.8em;
   font-weight: $font-weight-bold;
-  // stylelint-disable-next-line primer/colors
-  background-color: $yellow-100;
+  background-color: var(--color-alert-warn-bg);
 }

@@ -9,13 +9,13 @@ bundle: utilities
 
 Box shadows are used to make content appear elevated. They are typically applied to containers of content that users need to pay attention to or content that appears on top of (overlapping) other elements on the page (like a pop-over or modal).
 
-## Default
+## Small
 
-Default shadows are mainly used on things that need to appear slightly elevated, like pricing cards or UI elements containing important information.
+Small shadows are mainly used on things that need to appear slightly elevated, like pricing cards or UI elements containing important information.
 
 ```html live
-<div class="box-shadow p-3">
-  .box-shadow
+<div class="color-shadow-small p-3">
+  .color-shadow-small
 </div>
 ```
 
@@ -23,7 +23,7 @@ These types of shadows are typically applied to elements with borders, such as t
 
 ```html live
 <div class="col-6">
-  <div class="Box box-shadow">
+  <div class="Box color-shadow-small">
     <div class="Box-row">
       <h3 class="m-0">Organization</h3>
     </div>
@@ -47,8 +47,8 @@ These types of shadows are typically applied to elements with borders, such as t
 Medium box shadows are more diffused and slightly larger than small box shadows.
 
 ```html live
-<div class="box-shadow-medium p-3">
-  .box-shadow-medium
+<div class="color-shadow-medium p-3">
+  .color-shadow-medium
 </div>
 ```
 
@@ -56,7 +56,7 @@ Medium box shadows are typically used on editorialized content that needs to app
 
 ```html live
 <div class="col-6">
-  <a class="d-block box-shadow-medium px-3 pt-4 pb-6 position-relative rounded-1 overflow-hidden no-underline" href="#">
+  <a class="d-block color-shadow-medium px-3 pt-4 pb-6 position-relative rounded-1 overflow-hidden no-underline" href="#">
     <div class="bg-blue position-absolute top-0 left-0 py-1 width-full"></div>
     <h3 class="text-gray-dark">Serverless architecture</h3>
     <p class="text-gray">
@@ -83,15 +83,15 @@ Medium box shadows are typically used on editorialized content that needs to app
 Large box shadows are very diffused and used sparingly in the product UI.
 
 ```html live
-<div class="box-shadow-large p-3">
-  .box-shadow-large
+<div class="color-shadow-large p-3">
+  .color-shadow-large
 </div>
 ```
 
 These shadows are used for marketing content, UI screenshots, and content that appears on top of other page elements.
 
 ```html live
-<div class="box-shadow-large rounded-2 overflow-hidden">
+<div class="color-shadow-large rounded-2 overflow-hidden">
   <img src="https://github.com/nasa.png" class="img-responsive" alt="NASA is on GitHub" />
 </div>
 ```
@@ -101,8 +101,8 @@ These shadows are used for marketing content, UI screenshots, and content that a
 Extra large box shadows are even more diffused.
 
 ```html live
-<div class="box-shadow-extra-large p-3">
-  .box-shadow-extra-large
+<div class="color-shadow-extra-large p-3">
+  .color-shadow-extra-large
 </div>
 ```
 
@@ -113,7 +113,7 @@ These shadows are used for marketing content and content that appears on top of 
 Additionally there is a `box-shadow-none` class that removes `box-shadow`:
 
 ```html live
-<div class="box-shadow-large box-shadow-none p-3">
+<div class="color-shadow-large box-shadow-none p-3">
   .box-shadow-none
 </div>
 ```

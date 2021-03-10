@@ -28,7 +28,8 @@
     cursor: default;
 
     .octicon {
-      color: inherit;
+      // stylelint-disable-next-line primer/colors
+      color: var(--color-icon-tertiary);
     }
   }
 
@@ -40,7 +41,7 @@
 
   .octicon {
     margin-right: $spacer-1;
-    color: $text-gray-light;
+    color: var(--color-text-tertiary);
     vertical-align: text-bottom;
 
     &:only-child {
@@ -54,8 +55,7 @@
     color: inherit;
     text-shadow: none;
     vertical-align: top;
-    // stylelint-disable-next-line primer/colors
-    background-color: rgba($black, 0.08); // Darken for just a tad more contrast against the button background
+    background-color: var(--color-btn-counter-bg);
   }
 
   .dropdown-caret {
@@ -67,125 +67,109 @@
 // Default button
 
 .btn {
-  $bg-default: $bg-gray-light;
-  $bg-hover: #f3f4f6; // custom gray
-  $bg-active: darken($bg-hover, 2%);
-  $bg-disabled: $bg-default;
-
-  color: $text-gray-dark;
-  background-color: $bg-default;
-  border-color: $border-color-button;
-  box-shadow: $box-shadow, $box-shadow-highlight;
-  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  color: var(--color-btn-text);
+  background-color: var(--color-btn-bg);
+  border-color: var(--color-btn-border);
+  box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
+  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  transition-property: color, background-color, border-color;
 
   &:hover,
   &.hover,
   [open] > & {
-    background-color: $bg-hover;
+    background-color: var(--color-btn-hover-bg);
+    border-color: var(--color-btn-hover-border);
     transition-duration: 0.1s;
   }
 
   &:active,
   &.selected,
   &[aria-selected=true] {
-    background-color: $bg-active;
-    box-shadow: $box-shadow-inset;
+    background-color: var(--color-btn-selected-bg);
+    box-shadow: var(--color-shadow-inset);
     transition: none;
   }
 
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
-    // stylelint-disable-next-line primer/colors
-    color: $gray-400;
-    background-color: $bg-disabled;
-    border-color: $border-color-button;
+    color: var(--color-text-disabled);
+    background-color: var(--color-btn-bg);
+    border-color: var(--color-btn-border);
   }
 
   // Keep :focus after :disabled. Allows to see the focus ring even on disabled buttons
   &:focus,
   &.focus {
-    outline: 1px dotted transparent; // Support Firefox custom colors
-    outline-offset: 2px;
-    box-shadow: $box-shadow-focus;
+    border-color: var(--color-btn-focus-border);
+    outline: none;
+    box-shadow: var(--color-btn-focus-shadow);
   }
 }
 
 // Primary button
 
+.btn-blue, // TODO: deprecate
 .btn-primary {
-  $bg-default: #2ea44f; // custom green
-  $bg-hover: #2c974b; // custom green
-  $bg-active: darken($bg-hover, 2%);
-  $bg-disabled: #94d3a2; // custom green
-
-  $shadow: $green-900;
-  $box-shadow: 0 1px 0 rgba($black, 0.1), inset 0 1px 0 rgba($white, 0.03);
-
-  color: $text-white;
-  background-color: $bg-default;
-  // stylelint-disable-next-line primer/borders
-  border-color: rgba($black, 0.15);
-  box-shadow: $box-shadow;
+  color: var(--color-btn-primary-text);
+  background-color: var(--color-btn-primary-bg);
+  border-color: var(--color-btn-primary-border);
+  box-shadow: var(--color-btn-primary-shadow), var(--color-btn-primary-inset-shadow);
 
   &:hover,
   &.hover,
   [open] > & {
-    background-color: $bg-hover;
+    background-color: var(--color-btn-primary-hover-bg);
+    border-color: var(--color-btn-primary-hover-border);
   }
 
   &:active,
   &.selected,
   &[aria-selected=true] {
-    background-color: $bg-active;
-    // stylelint-disable-next-line primer/box-shadow
-    box-shadow: inset 0 1px 0 rgba($shadow, 0.2);
+    background-color: var(--color-btn-primary-selected-bg);
+    box-shadow: var(--color-btn-primary-selected-shadow);
   }
 
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
-    // stylelint-disable-next-line primer/colors
-    color: rgba($text-white, 0.8);
-    background-color: $bg-disabled;
-    // stylelint-disable-next-line primer/borders
-    border-color: rgba($black, 0.1);
-    box-shadow: $box-shadow;
+    color: var(--color-btn-primary-disabled-text);
+    background-color: var(--color-btn-primary-disabled-bg);
+    border-color: var(--color-btn-primary-disabled-border);
   }
 
   &:focus,
   &.focus {
-    // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 3px rgba($bg-default, 0.4);
+    background-color: var(--color-btn-primary-focus-bg);
+    border-color: var(--color-btn-primary-focus-border);
+    box-shadow: var(--color-btn-primary-focus-shadow);
   }
 
   .Counter {
     color: inherit;
-    // stylelint-disable-next-line primer/colors
-    background-color: rgba($bg-white, 0.2);
+    background-color: var(--color-btn-primary-counter-bg);
   }
 
   .octicon {
     // stylelint-disable-next-line primer/colors
-    color: rgba($text-white, 0.8);
+    color: var(--color-btn-primary-icon);
   }
 }
 
-// Mixin: btn-inverse-on-hover
+// Outline button
 
-@mixin btn-inverse-on-hover( $color, $bg-hover, $bg-active, $shadow ) {
-  color: $color;
-  transition: none;
+.btn-outline {
+  color: var(--color-btn-outline-text);
 
   &:hover,
   [open] > & {
-    color: $text-white;
-    background-color: $bg-hover;
-    border-color: rgba($black, 0.15);
-    box-shadow: 0 1px 0 rgba($black, 0.1), inset 0 1px 0 rgba($white, 0.03);
+    color: var(--color-btn-outline-hover-text);
+    background-color: var(--color-btn-outline-hover-bg);
+    border-color: var(--color-btn-outline-hover-border);
+    box-shadow: var(--color-btn-outline-hover-shadow), var(--color-btn-outline-hover-inset-shadow);
 
     .Counter {
-      background-color: rgba($bg-white, 0.2);
+      background-color: var(--color-btn-outline-hover-counter-bg);
     }
 
     .octicon {
@@ -196,66 +180,94 @@
   &:active,
   &.selected,
   &[aria-selected=true] {
-    color: $text-white;
-    background-color: $bg-active;
-    border-color: rgba($black, 0.15);
-    box-shadow: inset 0 1px 0 rgba($shadow, 0.2);
+    color: var(--color-btn-outline-selected-text);
+    background-color: var(--color-btn-outline-selected-bg);
+    border-color: var(--color-btn-outline-selected-border);
+    box-shadow: var(--color-btn-outline-selected-shadow);
   }
 
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
-    color: rgba($color, 0.5);
-    background-color: $bg-gray-light;
-    border-color: $border-color-button;
-    box-shadow: $box-shadow, $box-shadow-highlight;
+    color: var(--color-btn-outline-disabled-text);
+    background-color: var(--color-btn-outline-disabled-bg);
+    border-color: var(--color-btn-border);
+    box-shadow: none;
 
     .Counter {
-      background-color: rgba($color, 0.05);
+      background-color: var(--color-btn-outline-disabled-counter-bg);
     }
   }
 
   &:focus {
-    box-shadow: 0 0 0 3px rgba($bg-hover, 0.4);
+    border-color: var(--color-btn-outline-focus-border);
+    box-shadow: var(--color-btn-outline-focus-shadow);
   }
 
   .Counter {
     color: inherit;
-    background-color: rgba($color, 0.1);
+    background-color: var(--color-btn-outline-counter-bg);
   }
 }
 
 // Danger button
 
 .btn-danger {
-  @include btn-inverse-on-hover(
-    $color: $text-red,
-    $bg-hover: $red-600,
-    $bg-active: darken($red-600, 3%),
-    $shadow: $red-900
-  );
-}
+  color: var(--color-btn-danger-text);
 
-// Outline button
+  .octicon {
+    // stylelint-disable-next-line primer/colors
+    color: var(--color-btn-danger-icon);
+  }
 
-.btn-outline {
-  @include btn-inverse-on-hover(
-    $color: $blue-500,
-    $bg-hover: $blue-500,
-    $bg-active: darken($blue-500, 3%),
-    $shadow: $blue-900
-  );
-}
+  &:hover,
+  [open] > & {
+    color: var(--color-btn-danger-hover-text);
+    background-color: var(--color-btn-danger-hover-bg);
+    border-color: var(--color-btn-danger-hover-border);
+    box-shadow: var(--color-btn-danger-hover-shadow), var(--color-btn-danger-hover-inset-shadow);
 
-// Solid buttons TODO: Deprecate?
-//
-//
-.btn-blue {
-  @include btn-solid(
-    $text-white,
-    lighten($blue-500, 8%),
-    darken($blue-500, 2%)
-  );
+    .Counter {
+      background-color: var(--color-btn-danger-hover-counter-bg);
+    }
+
+    .octicon {
+      // stylelint-disable-next-line primer/colors
+      color: var(--color-btn-danger-hover-icon);
+    }
+  }
+
+  &:active,
+  &.selected,
+  &[aria-selected=true] {
+    color: var(--color-btn-danger-selected-text);
+    background-color: var(--color-btn-danger-selected-bg);
+    border-color: var(--color-btn-danger-selected-border);
+    box-shadow: var(--color-btn-danger-selected-shadow);
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    color: var(--color-btn-danger-disabled-text);
+    background-color: var(--color-btn-danger-disabled-bg);
+    border-color: var(--color-btn-border);
+    box-shadow: none;
+
+    .Counter {
+      background-color: var(--color-btn-danger-disabled-counter-bg);
+    }
+  }
+
+  &:focus {
+    border-color: var(--color-btn-danger-focus-border);
+    box-shadow: var(--color-btn-danger-focus-shadow);
+  }
+
+  .Counter {
+    color: inherit;
+    background-color: var(--color-btn-danger-counter-bg);
+  }
 }
 
 // Sizes

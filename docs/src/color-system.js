@@ -45,7 +45,7 @@ export function PaletteTableFragment(props) {
         const cellProps = {type, ...row}
         const valueProps = {prefix, type, ...row}
         return (
-          <tr key={row.value}>
+          <tr key={row.slug}>
             {cols.map(({Cell = PaletteCell, Value = PaletteValue, title}) => (
               <Cell key={title} {...cellProps}>
                 <Value {...valueProps} />
@@ -97,9 +97,7 @@ PaletteCell.defaultProps = {
   as: 'td'
 }
 
-PaletteCell.propTypes = {
-  value: PropTypes.string.isRequired
-}
+PaletteCell.propTypes = {}
 
 PaletteCell.Alias = ({aliases, type, ...rest}) =>
   aliases && aliases[type] ? (
@@ -144,7 +142,7 @@ export function PaletteValue({value, ...rest}) {
   return <Var {...rest}>{value}</Var>
 }
 
-PaletteValue.Variable = ({variable}) => <Var>${variable}</Var>
+PaletteValue.Variable = ({variable}) => <Var>var({variable})</Var>
 PaletteValue.Variable.propTypes = {
   variable: PropTypes.string.isRequired
 }

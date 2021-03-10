@@ -25,6 +25,12 @@ This method requires no dev environment set up and is useful for when you want t
 </html>
 ```
 
+**Warning**: Only use the "latest" version for short lived experiments. To be safe it's recommended to use the [latest version](https://github.com/primer/css/releases/latest) spelled out (for example `@15.2.0`). This ensures that the constant changes to Primer CSS won't break anything.
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/@primer/css@15.2.0/dist/primer.css" />
+```
+
 ## Jekyll prototyping with GitHub CSS and JavaScript
 
 The [Jekyll](http://jekyllrb.com) based prototyping tool pulls in all of GitHub's CSS, which includes all the Primer CSS modules as well as custom CSS modules. It includes GitHub JavaScript and octicons too.
