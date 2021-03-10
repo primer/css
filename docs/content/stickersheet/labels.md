@@ -1,6 +1,6 @@
 ---
 title: Labels
-path: components/labels
+path: stickersheet/labels
 status: Stable
 source: 'https://github.com/primer/css/tree/master/src/labels'
 bundle: labels

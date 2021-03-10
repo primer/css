@@ -86,8 +86,8 @@
   font-family: $mono-font;
   font-size: $h4-size;
   line-height: 1.4;
-  color: $text-gray;
-  border-left: 3px solid $border-color;
+  color: var(--color-color-text-secondary);
+  border-left: 3px solid var(--color-border-primary);
 
   @include breakpoint(md) {
     padding-left: $spacer * 1.5;

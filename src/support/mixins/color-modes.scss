@@ -1,0 +1,54 @@
+@mixin color-mode-theme($theme-name, $type, $include-root: false) {
+  @if $include-root {
+    :root,
+    [data-color-mode="#{$type}"][data-#{$type}-theme="#{$theme-name}"] {
+      @content;
+    }
+  }
+
+  @else {
+    [data-color-mode="#{$type}"][data-#{$type}-theme="#{$theme-name}"] {
+      @content;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    [data-color-mode="auto"][data-light-theme="#{$theme-name}"] {
+      @content;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    [data-color-mode="auto"][data-dark-theme="#{$theme-name}"] {
+      @content;
+    }
+  }
+}
+
+@mixin color-mode($mode) {
+  [data-color-mode="#{$mode}"][data-#{$mode}-theme*="#{$mode}"] {
+    @content;
+  }
+
+  @media (prefers-color-scheme: light) {
+    [data-color-mode="auto"][data-light-theme*="#{$mode}"] {
+      @content;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    [data-color-mode="auto"][data-dark-theme*="#{$mode}"] {
+      @content;
+    }
+  }
+}
+
+@mixin color-mode-var($name, $light, $dark) {
+  @include color-mode(light) {
+    --color-#{$name}: #{$light};
+  }
+
+  @include color-mode(dark) {
+    --color-#{$name}: #{$dark};
+  }
+}
