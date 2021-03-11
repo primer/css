@@ -1,25 +1,91 @@
 ---
 title: Color system
 description: 'Sass variables, mixins, and functions for use in our components.'
-status: Stable
+status: New
 source: 'https://github.com/primer/css/blob/master/src/support/variables/color-system.scss'
 bundle: support
 ---
 
-import colors from 'primer-colors'
-import {Box, Flex, Heading, Link, StyledOcticon} from '@primer/components'
-import {Link as LinkIcon} from '@primer/octicons-react'
-import {palettes, variables} from '../../src/color-variables'
-import {PaletteTable, PaletteCell, overlayColor} from '../../src/color-system'
+import lightColors from '@primer/primitives/dist/js/colors/light'
+import {Flash, Box, Flex, Heading, Link, StyledOcticon} from '@primer/components'
+import {LinkIcon, OctofaceIcon} from '@primer/octicons-react'
+import {colorModes, palettes, functionalVarNames, flattened} from '../../src/color-variables'
+import {PaletteTable, PaletteCell, ColorModeTable, CSSModeVars, overlayColor} from '../../src/color-system'
+
+
+## Functional variables
+
+The Primer color system contains multiple color modes; currently, Primer ships with a light mode and a dark mode. Each color mode comes with a set of CSS variables that can be used to style elements based on the functionality of the element. These should be used instead of specifying colors directly so that the colors adapt correctly when switching between color modes.
+
+When at all possible, favor using [color utility classes](/utilities/colors) over using custom CSS to set colors.
+
+<Flash scheme="yellow">
+
+Note: because the new Primer CSS color system is based on *functional* colors, you should only use colors designed for the element you're applying them to. For example, text colors, which start with `--color-text-`, should not be used for icons, backgrounds, or any other non-text element.
+
+</Flash>
+
+### Text
+
+<CSSModeVars
+  modes={colorModes}
+  vars={functionalVarNames}
+  filter={/^text-/}
+  render={variable => {
+    return <span style={{color: `var(--color-${variable})`}}>--color-{variable}</span>
+  }}
+/>
+
+### Icons
+
+<CSSModeVars
+  modes={colorModes}
+  vars={functionalVarNames}
+  filter={/^icon-(?!folder)/}
+  render={variable => {
+    return <><span style={{color: `var(--color-${variable})`}}><StyledOcticon icon={OctofaceIcon} /></span> --color-{variable}</>
+  }}
+/>
+
+### Borders
+
+<CSSModeVars
+  modes={colorModes}
+  vars={functionalVarNames}
+  filter={/^border-/}
+  render={variable => {
+    return <div style={{border: `2px solid var(--color-${variable})`, marginBottom: 10, padding: 4}}>--color-{variable}</div>
+  }}
+/>
+
+### Backgrounds
+
+<CSSModeVars
+  modes={colorModes}
+  vars={functionalVarNames}
+  filter={/^bg-/}
+  render={variable => {
+    return <Flex mb={1}><div style={{
+      background: `var(--color-${variable})`,
+      height: 20,
+      width: 20,
+      display: 'inline-block',
+      border: '1px solid var(--color-border-primary)',
+      marginRight: 10
+    }} />--color-{variable}</Flex>
+  }}
+/>
+
+### Other variables
+
+For a list of *all* functional variables, including app- and component-specific variables, see [this reference page](https://primer.style/primitives/).
 
 ## Color palette
 
+In rare ocassions, it may be necessary to use one of the variables from the base color scale, though since the colors differ in the various color modes, the functional variables listed above should be used in almost all normal cases.
+
 <Flex flexWrap="wrap" mr={-2}>
   {palettes
-    .concat(
-      {title: 'Black', name: 'black', value: colors.gray[9]},
-      {title: 'White', name: 'white', value: colors.white, props: {className: 'border'}}
-    )
     .map(({name, title, value, props = {}}) => (
       <Flex.Item
         as={Link}
@@ -39,11 +105,11 @@ import {PaletteTable, PaletteCell, overlayColor} from '../../src/color-system'
     ))}
 </Flex>
 
-## Color variables
+### Color variables
 
 <Flex flexWrap="wrap" mr={[0, 0, -4]}>
   {palettes.map(({name, title, value, values}) => (
-    <Flex id={name} flexDirection="column" width={[1, 1, 1 / 2]} pr={[0, 0, 4]} mb={4}>
+    <Flex id={name} flexDirection="column" width={1} pr={0} mb={4} key={name}>
       <Flex
         as={Link}
         href={`#${name}`}
@@ -61,10 +127,9 @@ import {PaletteTable, PaletteCell, overlayColor} from '../../src/color-system'
         </Flex.Item>
         <StyledOcticon icon={LinkIcon} color="inherit !important" height={20} />
       </Flex>
-      <PaletteTable
-        columns={['variable', 'value']}
-        values={[{variable: name, value, slug: name}].concat(values)}
-        hasHeader={false}
+      <ColorModeTable
+        baseColor={value}
+        values={values}
         cellPadding="8px 16px"
       />
     </Flex>

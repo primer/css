@@ -3,8 +3,11 @@
   overflow: hidden; // Ensure page layout in Firefox should images fail to load
   line-height: $lh-condensed-ultra;
   vertical-align: middle;
+  background-color: var(--color-avatar-bg); // adds opaque bg to transparent avatars
   border-radius: $border-radius;
   flex-shrink: 0;
+  // stylelint-disable-next-line primer/box-shadow
+  box-shadow: 0 0 0 1px var(--color-avatar-border);
 }
 
 .avatar-link {

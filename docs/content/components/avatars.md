@@ -28,7 +28,7 @@ We occasionally use smaller avatars. Anything less than `24px` wide should inclu
 
 ### Avatar sizes
 
-Instead of using the `width` and `height` attribute, you can also use a class like `.avatar-[1-8]`. The sizes go from `16px` up to `64px`. Note: Avatar stacks are only suppurted for the `20px` avatar size.
+Instead of using the `width` and `height` attribute, you can also use a class like `.avatar-[1-8]`. The sizes go from `16px` up to `64px`. Note: Avatar stacks are only supported for the `20px` avatar size.
 
 ```html live
 <img class="avatar avatar-1 mr-2" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=32" />
@@ -207,10 +207,10 @@ Use `AvatarStack--right` to right-align the avatar stack. Remember to switch the
 ### Small
 
 ```html live
-<a class="CircleBadge CircleBadge--small float-left mr-2" href="#small" title="Travis CI">
+<a class="CircleBadge CircleBadge--small float-left mr-2" href="#small">
   <img src="https://github.com/travis-ci.png"  class="CircleBadge-icon" alt="">
 </a>
-<a class="CircleBadge CircleBadge--small bg-yellow" title="Zap this!" href="#small">
+<a class="CircleBadge CircleBadge--small bg-yellow" href="#small">
   <!-- <%= octicon "zap",  class: "CircleBadge-icon text-white" %> -->
   <svg class="CircleBadge-icon text-white octicon octicon-zap" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7 9-9z"></path></svg>
 </a>

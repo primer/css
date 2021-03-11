@@ -200,29 +200,3 @@ Align the direction of dropdown menus and their arrows with modifier classes.
   </details>
 </div>
 ```
-
-### Dark
-
-```html live
-<div class="bg-gray-dark p-3 mt-n3 ml-n3 mr-n3 mb-n3" style="min-height: 240px;">
-  <details class="dropdown details-reset details-overlay d-inline-block">
-    <summary class="btn" aria-haspopup="true">
-      Dropdown
-      <div class="dropdown-caret"></div>
-    </summary>
-
-    <div class="dropdown-menu dropdown-menu-se dropdown-menu-dark">
-      <div class="dropdown-header">
-        Dropdown header
-      </div>
-      <ul>
-        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-        <li class="dropdown-divider" role="none"></li>
-        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      </ul>
-    </div>
-  </details>
-</div>
-```

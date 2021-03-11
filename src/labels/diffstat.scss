@@ -5,7 +5,7 @@
 .diffstat {
   font-size: $h6-size;
   font-weight: $font-weight-bold;
-  color: $text-gray;
+  color: var(--color-text-secondary);
   white-space: nowrap;
   cursor: default;
 }
@@ -18,20 +18,20 @@
   height: $spacer-2;
   // stylelint-disable-next-line primer/spacing
   margin-left: 1px;
-  outline-offset: -1px; // Support Firfox custom colors
+  outline-offset: -1px; // Support Firefox custom colors
 }
 
 .diffstat-block-deleted {
-  background-color: $bg-diffstat-deleted;
-  outline: 1px dashed transparent; // Support Firfox custom colors
+  background-color: var(--color-diffstat-deletion-bg);
+  outline: 1px solid var(--color-diffstat-deletion-border); // Support Firefox custom colors
 }
 
 .diffstat-block-added {
-  background-color: $bg-diffstat-added;
-  outline: 1px solid transparent; // Support Firfox custom colors
+  background-color: var(--color-diffstat-addition-bg);
+  outline: 1px solid var(--color-diffstat-addition-border); // Support Firefox custom colors
 }
 
 .diffstat-block-neutral {
-  background-color: $bg-diffstat-neutral;
-  outline: 1px dotted transparent; // Support Firfox custom colors
+  background-color: var(--color-diffstat-neutral-bg);
+  outline: 1px solid var(--color-diffstat-neutral-border); // Support Firefox custom colors
 }
