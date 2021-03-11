@@ -5,7 +5,20 @@ import {MoonIcon, SunIcon} from '@primer/octicons-react'
 import React from 'react'
 
 function LivePreviewWrapper({children}) {
-  const [colorMode, setColorMode] = React.useState('light')
+  const [colorMode, setColorModeState] = React.useState('light')
+
+  const setColorMode = mode => {
+    window.dispatchEvent(new CustomEvent('color-mode-change', {detail: {mode}}))
+  }
+
+  React.useEffect(() => {
+    const callback = e => setColorModeState(e.detail.mode)
+    window.addEventListener('color-mode-change', callback)
+
+    return () => {
+      window.removeEventListener('color-mode-change', callback)
+    }
+  }, [setColorModeState])
 
   return (
     <Frame>

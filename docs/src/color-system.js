@@ -1,10 +1,81 @@
+import primerStyles from '!!raw-loader!postcss-loader!../../src/docs.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
 import chroma from 'chroma-js'
 import styled from 'styled-components'
-import {Box, Text} from '@primer/components'
-import {colors, getPaletteByName} from './color-variables'
+import {Frame} from '@primer/gatsby-theme-doctocat'
+import {Box, Flex, Text} from '@primer/components'
+import {colors, colorModes, getPaletteByName} from './color-variables'
 import Table from './table'
+
+function LivePreviewWrapper({children}) {
+  return (
+    <Frame>
+      <link rel="stylesheet" href="https://github.com/site/assets/styleguide.css" />
+      <style>{primerStyles}</style>
+      <Flex direction="row">
+        <div data-color-mode="light" style={{flex: 1}}>
+          <div className="frame-example p-3">{children}</div>
+        </div>
+        <div data-color-mode="dark" style={{flex: 1}}>
+          <div className="frame-example p-3">{children}</div>
+        </div>
+      </Flex>
+    </Frame>
+  )
+}
+
+function capitalize(word) {
+  return word[0].toUpperCase() + word.substr(1)
+}
+
+export function CSSModeVars({filter, vars, render}) {
+  const filteredVars = vars.filter(s => s.match(filter))
+
+  return (
+    <LivePreviewWrapper>
+      {filteredVars.map(variable => (
+        <div key={variable}>{render(variable)}</div>
+      ))}
+    </LivePreviewWrapper>
+  )
+}
+
+export function ColorModeTable({baseColor, values, ...rest}) {
+  const fgColor = overlayColor(baseColor)
+  const colorProps = {bg: baseColor, color: fgColor}
+
+  return (
+    <Table {...rest}>
+      <thead>
+        <tr>
+          <PaletteCell as="th" {...colorProps}>
+            Variable
+          </PaletteCell>
+          {colorModes.map(mode => (
+            <PaletteCell as="th" {...colorProps} key={mode}>
+              {capitalize(mode)} Mode
+            </PaletteCell>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {values.map(({variable, slug, values}) => (
+          <tr key={slug}>
+            <PaletteCell {...colorProps}>
+              <Var>{variable}</Var>
+            </PaletteCell>
+            {Object.keys(values).map(mode => (
+              <PaletteCell key={mode} bg={values[mode]} color={overlayColor(values[mode])}>
+                <Var>{values[mode]}</Var>
+              </PaletteCell>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </Table>
+  )
+}
 
 export function PaletteTable(props) {
   const {columns = [], hasHeader, ...rest} = props
@@ -212,9 +283,13 @@ export function overlayColor(bg) {
   if ($overlayColorCache.has(bg)) {
     return $overlayColorCache.get(bg)
   } else {
-    const result = chroma(bg).luminance() > 0.5 ? colors.black : colors.white
-    $overlayColorCache.set(bg, result)
-    return result
+    try {
+      const result = chroma(bg).luminance() > 0.5 ? colors.black : colors.white
+      $overlayColorCache.set(bg, result)
+      return result
+    } catch (err) {
+      return 'white'
+    }
   }
 }
 
