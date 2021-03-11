@@ -260,3 +260,26 @@ See [the color system page](/support/color-system) for a list of all the functio
 | `$pink-700` | `var(--color-scale-pink-7)` |
 | `$pink-800` | `var(--color-scale-pink-8)` |
 | `$pink-900` | `var(--color-scale-pink-9)` |
+
+### Auto colors
+
+| `v15` | `v16`                      |
+| ----- | -------------------------- |
+| n/a   | `var(--color-auto-black)`  |
+| n/a   | `var(--color-auto-white)`  |
+| n/a   | `var(--color-auto-gray-0)` |
+| n/a   | `var(--color-auto-gray-1)` |
+| n/a   | `var(--color-auto-gray-2)` |
+| ...   | ...                        |
+| n/a   | `var(--color-auto-pink-7)` |
+| n/a   | `var(--color-auto-pink-8)` |
+| n/a   | `var(--color-auto-pink-9)` |
+
+Note: The `auto` colors automatically inverse based on the color mode. Example:
+
+| Variable                   | In `light` mode | In `dark` mode |
+| -------------------------- | --------------- | -------------- |
+| `var(--color-auto-gray-0)` | light gray      | dark gray      |
+| `var(--color-auto-gray-9)` | dark gray       | light gray     |
+
+It doesn't always work perfectly, therefore functional variables should be used as much as possible. But in some cases auto colors can still be handy.
