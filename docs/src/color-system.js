@@ -14,10 +14,10 @@ function LivePreviewWrapper({children}) {
       <link rel="stylesheet" href="https://github.com/site/assets/styleguide.css" />
       <style>{primerStyles}</style>
       <Flex direction="row">
-        <div data-color-mode="light" style={{flex: 1}}>
+        <div data-color-mode="light" data-light-theme="light" style={{flex: 1}}>
           <div className="frame-example p-3">{children}</div>
         </div>
-        <div data-color-mode="dark" style={{flex: 1}}>
+        <div data-color-mode="dark" data-dark-theme="dark" style={{flex: 1}}>
           <div className="frame-example p-3">{children}</div>
         </div>
       </Flex>
