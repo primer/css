@@ -1,6 +1,9 @@
 import titleCase from 'title-case'
 import allModeColors from '@primer/primitives/dist/js/colors'
-import colorVariablesSCSS from '!!raw-loader!../../src/support/variables/colors.scss'
+
+// TODO: Remove? Not sure if still needed?
+// The `../../src/support/variables/colors.scss` file got removed since all color variables are now in primer/primitives.
+// import colorVariablesSCSS from '!!raw-loader!../../src/support/variables/colors.scss'
 
 // XXX we don't necessarily define them in this order in primer-colors,
 // so we define an array here just to be safe
@@ -10,7 +13,8 @@ const colors = allModeColors.light.scale
 
 const variables = {}
 
-parseSCSSVariables(colorVariablesSCSS, variables)
+// TODO: Remove? Not sure if still needed?
+// parseSCSSVariables(colorVariablesSCSS, variables)
 
 const colorModes = Object.keys(allModeColors).sort((a, b) => {
   if (a.startsWith('light') && !b.startsWith('light')) return -1
