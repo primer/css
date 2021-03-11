@@ -7,6 +7,7 @@ const versionDeprecations = {
   '16.0.0': [
     {
       selectors: [
+        '.btn-blue',
         '.markdown-body li',
         '.input-dark',
         '.input-dark:-ms-input-placeholder',
