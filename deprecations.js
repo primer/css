@@ -8,6 +8,18 @@ const versionDeprecations = {
     {
       selectors: [
         '.btn-blue',
+        '.btn-blue:focus',
+        '.btn-blue.focus',
+        '.btn-blue:hover',
+        '.btn-blue.hover',
+        '.btn-blue:active',
+        '.btn-blue.selected',
+        '.btn-blue[aria-selected=true]',
+        '[open]>.btn-blue',
+        '.btn-blue:disabled',
+        '.btn-blue.disabled',
+        '.btn-blue[aria-disabled=true]',
+        '.btn-blue .Counter',
         '.markdown-body li',
         '.input-dark',
         '.input-dark:-ms-input-placeholder',
