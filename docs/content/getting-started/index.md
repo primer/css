@@ -100,11 +100,5 @@ Don't forget to add the compiled CSS to the `<head>` section of your page.
 You won't need to install any node modules or Sass compilers for a static site; you can use the built CSS. The best thing to do is to [download the built CSS](https://unpkg.com/@primer/css/dist/primer.css) from the [unpkg.com](https://unpkg.com) and host it yourself. If that's not an option, you can include a CDN link in your HTML:
 
 ```html
-<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
-```
-
-**Warning**: Only use the "latest" version for short lived experiments. To be safe it's recommended to use the [latest version](https://github.com/primer/css/releases/latest) spelled out (for example `@15.2.0`). This ensures that the constant changes to Primer CSS won't break anything.
-
-```html
-<link rel="stylesheet" href="https://unpkg.com/@primer/css@15.2.0/dist/primer.css" />
+<link href="https://unpkg.com/@primer/css@^16.0.0/dist/primer.css" rel="stylesheet" />
 ```
