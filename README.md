@@ -65,5 +65,5 @@ The [Primer CSS docs site](https://primer.style/css) is deployed from this repo 
 
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [npm]: https://www.npmjs.com/
-[primer]: https://primer.style
+[primer]: https://primer.style/
 [sass]: http://sass-lang.com/
