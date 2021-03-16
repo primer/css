@@ -65,10 +65,9 @@ To show the progress of tasks in multiple states (such as "done", "in progress",
 <div class="tooltipped tooltipped-n" aria-label="tasks: 80 done, 14 in progress, 6 open">
   <span class="Progress">
     <span class="Progress-item color-bg-success-inverse" style="width: 50%;"></span>
-    <span class="Progress-item bg-purple" style="width: 25%;"></span>
-    <span class="Progress-item bg-pink" style="width: 15%;"></span>
-    <span class="Progress-item bg-red" style="width: 8%;"></span>
-    <span class="Progress-item bg-blue" style="width: 2%;"></span>
+    <span class="Progress-item color-bg-warning-inverse" style="width: 25%;"></span>
+    <span class="Progress-item color-bg-danger-inverse" style="width: 15%;"></span>
+    <span class="Progress-item color-bg-info-inverse" style="width: 10%;"></span>
   </span>
 </div>
 ```
