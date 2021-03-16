@@ -10,7 +10,7 @@ Use progress components to visualize task completion. The `Progress` class adds 
 
 ```html live
 <span class="Progress">
-  <span class="Progress-item bg-green" style="width: 50%;"></span>
+  <span class="Progress-item color-bg-success-inverse" style="width: 50%;"></span>
 </span>
 ```
 
@@ -20,7 +20,7 @@ Large progress bars are slightly taller than the default.
 
 ```html live
 <span class="Progress Progress--large">
-  <span class="Progress-item bg-green" style="width: 50%;"></span>
+  <span class="Progress-item color-bg-success-inverse" style="width: 50%;"></span>
 </span>
 ```
 
@@ -30,7 +30,7 @@ Small progress bars are shorter than the default.
 
 ```html live
 <span class="Progress Progress--small">
-  <span class="Progress-item bg-green" style="width: 50%;"></span>
+  <span class="Progress-item color-bg-success-inverse" style="width: 50%;"></span>
 </span>
 ```
 
@@ -41,7 +41,7 @@ For inline progress indicators, use the `Progress` and `d-inline-flex` with an i
 ```html live
 <span class="text-small text-gray mr-2">4 of 16</span>
 <span class="Progress d-inline-flex" style="width: 160px">
-  <div class="Progress-item bg-green" style="width: 25%"></div>
+  <div class="Progress-item color-bg-success-inverse" style="width: 25%"></div>
 </span>
 ```
 
@@ -52,7 +52,7 @@ In cases where it's not possible to describe the progress in text, provide an `a
 ```html live
 <div aria-label="tasks: 8 of 10 complete">
   <span class="Progress">
-    <span class="Progress-item bg-green" style="width: 80%;"></span>
+    <span class="Progress-item color-bg-success-inverse" style="width: 80%;"></span>
   </span>
 </div>
 ```
@@ -64,7 +64,7 @@ To show the progress of tasks in multiple states (such as "done", "in progress",
 ```html live
 <div class="tooltipped tooltipped-n" aria-label="tasks: 80 done, 14 in progress, 6 open">
   <span class="Progress">
-    <span class="Progress-item bg-green" style="width: 50%;"></span>
+    <span class="Progress-item color-bg-success-inverse" style="width: 50%;"></span>
     <span class="Progress-item bg-purple" style="width: 25%;"></span>
     <span class="Progress-item bg-pink" style="width: 15%;"></span>
     <span class="Progress-item bg-red" style="width: 8%;"></span>
