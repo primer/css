@@ -44,7 +44,7 @@
   &--success {
     color: var(--color-text-white);
     background-color: var(--color-btn-primary-bg);
-    border: $border-width $border-style var(--color-merge-box-success-indicator-border);
+    border: $border-width $border-style var(--color-timeline-badge-success-border);
   }
 }
 
