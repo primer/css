@@ -47,7 +47,7 @@
 //
 // Example input for $color-map
 //
-// @include color-mode-vars(("custom-css-variable-1": (
+// @include color-variables(("custom-css-variable-1": (
 //     light: var(--color-scale-gray-3),
 //     dark: var(--color-scale-gray-5)
 //   ),
@@ -60,7 +60,7 @@
 //     dark: var(--color-scale-gray-6)
 //   )
 // ));
-@mixin color-mode-vars($color-map) {
+@mixin color-variables($color-map) {
   // Create map to store incoming variables
   $dark-colors: ();
   $light-colors: ();
