@@ -5,7 +5,6 @@
       @content;
     }
   }
-
   @else {
     [data-color-mode="#{$type}"][data-#{$type}-theme="#{$theme-name}"] {
       @content;
@@ -43,12 +42,48 @@
   }
 }
 
-@mixin color-mode-var($name, $light, $dark) {
-  @include color-mode(light) {
-    --color-#{$name}: #{$light};
+// This mixin takes a map of color mode vars and splits them into dark and light mode
+// The goal is to reduce the amount of dark/light mode selectors compiled
+//
+// Example input for $color-map
+//
+// @include color-mode-vars(("custom-css-variable-1": (
+//     light: var(--color-scale-gray-3),
+//     dark: var(--color-scale-gray-5)
+//   ),
+//   "custom-css-variable-2": (
+//     light: var(--color-scale-gray-2),
+//     dark: var(--color-scale-gray-6)
+//   ),
+//   "custom-css-variable-3": (
+//     light: var(--color-scale-gray-2),
+//     dark: var(--color-scale-gray-6)
+//   )
+// ));
+@mixin color-mode-vars($color-map) {
+  // Create map to store incoming variables
+  $mode-colors: (
+    dark: (),
+    light: ()
+  );
+
+  @each $name, $value in $color-map {
+    @each $type, $color in $value {
+      // Get the current dark or light map
+      $current: get($mode-colors, $type);
+      // Append the value to the list
+      $new-list: append($current, (--color-#{$name}, #{$color}));
+      // Merge new list back into mode colors map
+      $mode-colors: merge($mode-colors, ($type: $new-list));
+    }
   }
 
-  @include color-mode(dark) {
-    --color-#{$name}: #{$dark};
+  // Loop through sorted list
+  @each $mode, $variables in $mode-colors {
+    @include color-mode($mode) {
+      @each $prop, $val in $variables {
+        #{$prop}: $val;
+      }
+    }
   }
 }
