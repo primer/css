@@ -62,21 +62,24 @@
 // ));
 @mixin color-mode-vars($color-map) {
   // Create map to store incoming variables
-  $mode-colors: (
-    dark: (),
-    light: ()
-  );
+  $dark-colors: ();
+  $light-colors: ();
 
   @each $name, $value in $color-map {
     @each $type, $color in $value {
-      // Get the current dark or light map
-      $current: get($mode-colors, $type);
-      // Append the value to the list
-      $new-list: append($current, (--color-#{$name}, #{$color}));
-      // Merge new list back into mode colors map
-      $mode-colors: merge($mode-colors, ($type: $new-list));
+      @if $type == dark {
+        $dark-colors: append($dark-colors, (--color-#{$name}, #{$color}));
+      }
+      @else {
+        $light-colors: append($light-colors, (--color-#{$name}, #{$color}));
+      }
     }
   }
+
+  $mode-colors: (
+    dark: $dark-colors,
+    light: $light-colors
+  );
 
   // Loop through sorted list
   @each $mode, $variables in $mode-colors {
