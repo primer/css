@@ -27,3 +27,12 @@
     }
   }
 }
+
+// Handling z-index
+.z-1 { z-index: 1 !important; }
+.z-2 { z-index: 2 !important; }
+.z-3 { z-index: 3 !important; }
+
+// Negative z-index
+.z-n1 { z-index: -1 !important; }
+.z-n2 { z-index: -2 !important; }
