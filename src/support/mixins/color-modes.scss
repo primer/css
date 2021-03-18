@@ -25,8 +25,16 @@
 }
 
 @mixin color-mode($mode) {
-  [data-color-mode="#{$mode}"][data-#{$mode}-theme*="#{$mode}"] {
-    @content;
+  @if $mode == light {
+    :root,
+    [data-color-mode="#{$mode}"][data-#{$mode}-theme*="#{$mode}"] {
+      @content;
+    }
+  }
+  @else {
+    [data-color-mode="#{$mode}"][data-#{$mode}-theme*="#{$mode}"] {
+      @content;
+    }
   }
 
   @media (prefers-color-scheme: light) {
