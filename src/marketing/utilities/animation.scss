@@ -1,0 +1,9 @@
+// Animation utilities for marketing
+
+.hover-grow-mktg {
+  transition: transform 0.25s cubic-bezier(0.76, 0, 0.24, 1);
+
+  &:hover {
+    transform: scale3d(1.025, 1.025, 1.025);
+  }
+}
