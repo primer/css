@@ -8,6 +8,9 @@
       .mt#{$variant}-#{$scale} { margin-top: $size !important; }
       .mb#{$variant}-#{$scale} { margin-bottom: $size !important; }
 
+      .mt#{$variant}-n#{$scale} { margin-top: -$size !important; }
+      .mb#{$variant}-n#{$scale} { margin-bottom: -$size !important; }
+
       .my#{$variant}-#{$scale} {
         margin-top: $size !important;
         margin-bottom: $size !important;
