@@ -28,6 +28,14 @@
   }
 }
 
+// Width and height utilities, especially needed when the
+// dimensions of an image are set in HTML
+.width-auto { width: auto !important; }
+.height-auto { height: auto !important; }
+
+// Make an object fill its parent
+.object-fit-cover { object-fit: cover !important; }
+
 // Handling z-index
 .z-1 { z-index: 1 !important; }
 .z-2 { z-index: 2 !important; }
