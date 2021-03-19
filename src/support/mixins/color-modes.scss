@@ -5,7 +5,6 @@
       @content;
     }
   }
-
   @else {
     [data-color-mode="#{$type}"][data-#{$type}-theme="#{$theme-name}"] {
       @content;
@@ -26,8 +25,16 @@
 }
 
 @mixin color-mode($mode) {
-  [data-color-mode="#{$mode}"][data-#{$mode}-theme*="#{$mode}"] {
-    @content;
+  @if $mode == light {
+    :root,
+    [data-color-mode="#{$mode}"][data-#{$mode}-theme*="#{$mode}"] {
+      @content;
+    }
+  }
+  @else {
+    [data-color-mode="#{$mode}"][data-#{$mode}-theme*="#{$mode}"] {
+      @content;
+    }
   }
 
   @media (prefers-color-scheme: light) {
@@ -43,12 +50,51 @@
   }
 }
 
-@mixin color-mode-var($name, $light, $dark) {
-  @include color-mode(light) {
-    --color-#{$name}: #{$light};
+// This mixin takes a map of color mode vars and splits them into dark and light mode
+// The goal is to reduce the amount of dark/light mode selectors compiled
+//
+// Example input for $color-map
+//
+// @include color-variables(("custom-css-variable-1": (
+//     light: var(--color-scale-gray-3),
+//     dark: var(--color-scale-gray-5)
+//   ),
+//   "custom-css-variable-2": (
+//     light: var(--color-scale-gray-2),
+//     dark: var(--color-scale-gray-6)
+//   ),
+//   "custom-css-variable-3": (
+//     light: var(--color-scale-gray-2),
+//     dark: var(--color-scale-gray-6)
+//   )
+// ));
+@mixin color-variables($color-map) {
+  // Create map to store incoming variables
+  $dark-colors: ();
+  $light-colors: ();
+
+  @each $name, $value in $color-map {
+    @each $type, $color in $value {
+      @if $type == dark {
+        $dark-colors: append($dark-colors, (--color-#{$name}, #{$color}));
+      }
+      @else {
+        $light-colors: append($light-colors, (--color-#{$name}, #{$color}));
+      }
+    }
   }
 
-  @include color-mode(dark) {
-    --color-#{$name}: #{$dark};
+  $mode-colors: (
+    dark: $dark-colors,
+    light: $light-colors
+  );
+
+  // Loop through sorted list
+  @each $mode, $variables in $mode-colors {
+    @include color-mode($mode) {
+      @each $prop, $val in $variables {
+        #{$prop}: $val;
+      }
+    }
   }
 }
