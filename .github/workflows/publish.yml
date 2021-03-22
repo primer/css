@@ -1,4 +1,4 @@
-name: Primer Primitives
+name: Primer CSS
 on: [push]
 jobs:
   ci:
