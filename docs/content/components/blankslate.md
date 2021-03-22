@@ -2,7 +2,7 @@
 title: Blankslate
 path: components/blankslate
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/blankslate'
+source: 'https://github.com/primer/css/tree/main/src/blankslate'
 bundle: blankslate
 ---
 
@@ -92,7 +92,7 @@ Add an additional optional class to the `.blankslate` to change its appearance.
 </div>
 ```
 
-**Note**: It's possible to combine variations. Large and spacious (`blankslate blankslate-large blankslate-spacious`) is often used toghether. 
+**Note**: It's possible to combine variations. Large and spacious (`blankslate blankslate-large blankslate-spacious`) is often used toghether.
 
 ### Add border
 

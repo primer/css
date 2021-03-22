@@ -2,7 +2,7 @@
 title: Header
 path: components/header
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/header'
+source: 'https://github.com/primer/css/tree/main/src/header'
 bundle: header
 ---
 

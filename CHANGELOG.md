@@ -479,7 +479,7 @@
 - Fix hide utilities when toggling between breakpoints [#746](https://github.com/primer/css/pull/746)
 
 ### :house: Internal
-- Prevent Storybook publish failures from breaking builds on `master` [#728](https://github.com/primer/css/pull/728)
+- Prevent Storybook publish failures from breaking builds on `main` [#728](https://github.com/primer/css/pull/728)
 - Upgrade to [cssstats v3.3.0](https://github.com/cssstats/cssstats/releases/tag/v3.3.0), which fixes our selector stats JSON files
 
 #### Committers: 2
@@ -570,7 +570,7 @@
 - Shiny new social and README header by @ashygee [#689](https://github.com/primer/css/pull/689)
 
 ### :house: Internal
-- Remove `postversion` script from `package.json` and update the [PR template](https://github.com/primer/css/blob/master/RELEASING.md#in-this-repo)
+- Remove `postversion` script from `package.json` and update the [PR template](https://github.com/primer/css/blob/main/RELEASING.md#in-this-repo)
 - Rename InterUI font to "Inter", per [inter v3.3](https://github.com/rsms/inter/releases/tag/v3.3) [#696](https://github.com/primer/css/pull/696)
 
 #### Committers: 4
@@ -595,7 +595,7 @@
 
 # 12.0.0
 
-:rotating_light: **Starting with version 12.0.0, the `primer` package is now known as `@primer/css`**. See [MIGRATING.md](https://github.com/primer/css/tree/master/MIGRATING.md) for more info.
+:rotating_light: **Starting with version 12.0.0, the `primer` package is now known as `@primer/css`**. See [MIGRATING.md](https://github.com/primer/css/tree/main/MIGRATING.md) for more info.
 
 #### :boom: Breaking Change
 * [#666](https://github.com/primer/css/pull/666) Reorganize into a single `@primer/css` package ([@shawnbot](https://github.com/shawnbot))
@@ -645,7 +645,7 @@
 
 #### :house: Internal
 - Only check links on Travis if `[check-links]` is included in the commit message
-- a5658d3 Run `now alias` without the branch name on merge to `master`
+- a5658d3 Run `now alias` without the branch name on merge to `main`
 
 #### Committers: 1
 - Shawn Allen ([shawnbot](https://github.com/shawnbot))
@@ -958,7 +958,7 @@
 * [#396](https://github.com/primer/primer/pull/396) Use lerna-changelog to generate a changelog. ([@jonrohan](https://github.com/jonrohan))
 * [#382](https://github.com/primer/primer/pull/382) Update Button docs. ([@JasonEtco](https://github.com/JasonEtco))
 * [#390](https://github.com/primer/primer/pull/390) Updating `storiesFromMarkdown` to read in rails Octicons helper and replace with react component. ([@jonrohan](https://github.com/jonrohan))
-* [#389](https://github.com/primer/primer/pull/389) Publish alpha release any time we're not on a release branch or master. ([@jonrohan](https://github.com/jonrohan))
+* [#389](https://github.com/primer/primer/pull/389) Publish alpha release any time we're not on a release branch or main. ([@jonrohan](https://github.com/jonrohan))
 * [#384](https://github.com/primer/primer/pull/384) Add test to check for the current year in the license and source. ([@jonrohan](https://github.com/jonrohan))
 * [#374](https://github.com/primer/primer/pull/374) Improve Pull Request template. ([@agisilaos](https://github.com/agisilaos))
 

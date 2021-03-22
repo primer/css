@@ -13,13 +13,13 @@
   <a aria-label="contributors graph" href="https://github.com/primer/css/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/primer/css.svg">
   </a>
-  <a aria-label="last commit" href="https://github.com/primer/css/commits/master">
+  <a aria-label="last commit" href="https://github.com/primer/css/commits/main">
     <img alt="" src="https://img.shields.io/github/last-commit/primer/css.svg">
   </a>
   <a aria-label="join us in spectrum" href="https://spectrum.chat/primer">
     <img alt="" src="https://withspectrum.github.io/badge/badge.svg">
   </a>
-  <a aria-label="license" href="https://github.com/primer/css/blob/master/LICENSE">
+  <a aria-label="license" href="https://github.com/primer/css/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/primer/css.svg" alt="">
   </a>
 </p>

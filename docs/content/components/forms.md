@@ -2,7 +2,7 @@
 title: Forms
 path: components/forms
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/forms'
+source: 'https://github.com/primer/css/tree/main/src/forms'
 bundle: forms
 ---
 
@@ -292,7 +292,7 @@ If the input is **not valid**, add the `.errored` class to the `<div class="form
   </div>
 </form>
   ```
-  
+
 ### Warning
 
 If the input should show a **warning**, add the `.warn` class to the `<div class="form-group">` element. Next add/update a warning message to the `.note` element, as well as the `.warning` class.

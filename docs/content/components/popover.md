@@ -2,7 +2,7 @@
 title: Popover
 path: components/popover
 status: Experimental
-source: 'https://github.com/primer/css/tree/master/src/popover'
+source: 'https://github.com/primer/css/tree/main/src/popover'
 bundle: popover
 ---
 

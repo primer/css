@@ -2,7 +2,7 @@
 title: Progress
 path: components/progress
 status: New
-source: 'https://github.com/primer/css/tree/master/src/progress'
+source: 'https://github.com/primer/css/tree/main/src/progress'
 bundle: progress
 ---
 

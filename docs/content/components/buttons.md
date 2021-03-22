@@ -2,7 +2,7 @@
 title: Buttons
 path: components/buttons
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/buttons'
+source: 'https://github.com/primer/css/tree/main/src/buttons'
 bundle: buttons
 ---
 

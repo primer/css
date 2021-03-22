@@ -2,7 +2,7 @@
 title: Navigation
 path: components/navigation
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/navigation'
+source: 'https://github.com/primer/css/tree/main/src/navigation'
 bundle: navigation
 ---
 

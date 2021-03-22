@@ -107,7 +107,7 @@ function VariablesDetails({variablesByFile, ...props}) {
   return Array.from(variablesByFile.entries()).map(([path, variables]) => (
     <React.Fragment key={path}>
       <h3>
-        Defined in <Link href={`https://github.com/primer/css/tree/master/${path}`}>{path}</Link>
+        Defined in <Link href={`https://github.com/primer/css/tree/main/${path}`}>{path}</Link>
       </h3>
       <Table {...props}>
         <thead>
@@ -126,7 +126,7 @@ function VariablesDetails({variablesByFile, ...props}) {
                     #
                   </Link>
                   <Flex.Item flex="1">
-                    <Link href={`https://github.com/primer/css/tree/master/${source.path}#L${source.line}`}>
+                    <Link href={`https://github.com/primer/css/tree/main/${source.path}#L${source.line}`}>
                       <Mono nowrap>{name}</Mono>
                     </Link>
                   </Flex.Item>
