@@ -23,6 +23,4 @@
   > summary { list-style: none; }
   // Remove marker added by details polyfill
   > summary::before { display: none; }
-  // Remove marker added by Chrome
-  > summary::-webkit-details-marker { display: none; }
 }
