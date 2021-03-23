@@ -183,15 +183,12 @@
 }
 
 /* Rotate an element 360 degrees over and over, used for spinners */
-.anim-rotate-360 {
-  animation: rotate-360-keyframes 1s linear infinite;
+.anim-rotate {
+  animation: rotate-keyframes 1s linear infinite;
 }
 
-@keyframes rotate-360-keyframes {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
+@keyframes rotate-keyframes {
+  100% {
+    transform: rotate(360deg);
   }
 }
