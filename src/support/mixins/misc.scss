@@ -5,25 +5,22 @@
     position: absolute;
     top: 11px;
     right: 100%;
-    left: -16px;
+    left: -8px;
     display: block;
-    width: 0;
-    height: 0;
+    width: 8px;
+    height: 16px;
     pointer-events: none;
     content: " ";
-    border-color: transparent;
-    border-style: solid solid outset;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
   }
 
   &::after {
-    margin-top: 1px;
-    margin-left: 2px;
-    border-width: 7px;
-    border-right-color: $background;
+    margin-left: 1px;
+    background-color: var(--color-bg-primary);
+    background-image: linear-gradient($background, $background);
   }
 
   &::before {
-    border-width: 8px;
-    border-right-color: $border;
+    background-color: $border;
   }
 }
