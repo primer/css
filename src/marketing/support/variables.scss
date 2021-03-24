@@ -37,6 +37,7 @@ $blue-mktg: mix($blue-400, $blue-500, 42%) !default;
 
 // Animations
 $transition-time: 0.4s !default;
+$ease-mktg: cubic-bezier(0.16, 1, 0.3, 1);
 
 // Increases the core spacing scale first by 8px for $spacer-7, then by 16px
 // increments from $spacer-8 to $spacer-12, i.e. after 40px, we have 48, 64,
