@@ -15,8 +15,6 @@
   }
 
   &::after {
-    height: 14px;
-    margin-top: 1px;
     margin-left: 1px;
     background-color: var(--color-bg-primary);
     background-image: linear-gradient($background, $background);
