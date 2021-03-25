@@ -3,6 +3,8 @@
   children:
     - title: Contributing
       url: /getting-started/contributing
+    - title: Theming
+      url: /getting-started/theming
 - title: Support
   url: /support
   children:
@@ -12,16 +14,12 @@
       url: /support/color-system
     - title: Spacing
       url: /support/spacing
-    - title: Theming
-      url: /support/theming
     - title: Typography
       url: /support/typography
     - title: Marketing support
       url: /support/marketing-variables
     - title: Variables
       url: /support/variables
-    - title: v16 Migration Guide
-      url: /support/v16-migration
 - title: Utilities
   url: /utilities
   children:
