@@ -5,33 +5,52 @@ status: New
 bundle: support
 ---
 
-Primer CSS offers multiple color themes for components and utilities. The colors change based on the active theme and color mode. Currently there are 3 themes to choose from:
+Primer CSS offers multiple color themes for components and utilities. The colors change based on the active theme and color mode.
 
-1. `light`
-2. `dark`
-3. `dark_dimmed`
-
-## Default theme
-
-When nothing is specified, Primer CSS uses the `light` theme.
+Currently there are 3 themes (`light`, `dark`, `dark_dimmed`) to choose from. When nothing is specified, Primer CSS uses the `light` theme.
 
 ## Set a theme
 
-To set a theme add a `data-color-mode` and `data-[light/dark]-theme` attribute. It can be any element but when used in an app, typically the data attributes are added to the document root (`<html>`):
+Configure Primer CSS to use a certain theme by adding the following attributes:
+
+- `data-color-mode` with a value of either `light` or `dark`
+- either `data-light-theme` or `data-dark-theme` with a value of either `light`, `dark`, `dark_dimmed`
+
+The attributes can be added to any element, but ideally it should be added to the document root (`<html>`). Below an example to use the `dark_dimmed` theme:
 
 ```html
 <html data-color-mode="dark" data-dark-theme="dark_dimmed">
 ```
 
+More examples:
+
 ```html live
 <div data-color-mode="light" data-light-theme="light" class="p-3">
-  <button class="btn">Button</button> in the light theme.
+  <h4>Light</h4>
+  <code class="d-block mt-1 mb-3 color-text-secondary">
+    data-color-mode="light" data-light-theme="light"
+  </code>
+  <button class="btn">Button</button>
+  <span class="Label ml-2">Label</span>
+  <span class="Counter ml-2">123</span>
 </div>
 <div data-color-mode="dark" data-dark-theme="dark" class="p-3">
-  <button class="btn">Button</button> in the dark theme.
+  <h4>Dark</h4>
+  <code class="d-block mt-1 mb-3 color-text-secondary">
+    data-color-mode="dark" data-dark-theme="dark"
+  </code>
+  <button class="btn">Button</button>
+  <span class="Label ml-2">Label</span>
+  <span class="Counter ml-2">123</span>
 </div>
 <div data-color-mode="dark" data-dark-theme="dark_dimmed" class="p-3">
-  <button class="btn">Button</button> in the dark dimmed theme.
+  <h4>Dark Dimmed</h4>
+  <code class="d-block mt-1 mb-3 color-text-secondary">
+    data-color-mode="dark" data-dark-theme="dark_dimmed"
+  </code>
+  <button class="btn">Button</button>
+  <span class="Label ml-2">Label</span>
+  <span class="Counter ml-2">123</span>
 </div>
 ```
 
@@ -39,21 +58,25 @@ To set a theme add a `data-color-mode` and `data-[light/dark]-theme` attribute. 
 
 ## Sync to the system
 
-If the theme should be synced to the OS's color mode, use `data-color-mode="auto"` and set a `data-light-theme` as well as a `data-dark-theme`. It will then switch between the `data-light-theme` and `data-dark-theme` whenever the OS changes color modes.
+If the theme should be synced to the OS's color mode, use `data-color-mode="auto"` and set a `data-light-theme` as well as a `data-dark-theme`.
 
 ```html live
-<div class="p-3"
-  data-color-mode="auto"
-  data-light-theme="light"
-  data-dark-theme="dark"
->
-  <button class="btn">Button</button> synced to the OS's color mode.
+<div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark_dimmed" class="p-3">
+  <h4>Synced to system</h4>
+  <code class="d-block mt-1 mb-3 color-text-secondary">
+    data-color-mode="auto" data-light-theme="light" data-dark-theme="dark_dimmed"
+  </code>
+  <button class="btn">Button</button>
+  <span class="Label ml-2">Label</span>
+  <span class="Counter ml-2">123</span>
 </div>
 ```
 
+Change the color mode of your OS to see the switch between the `data-light-theme="light"` and `data-dark-theme="dark_dimmed"`.
+
 ## Custom color variables
 
-It's best to use the [functional variables](/support/color-system#functional-variables) as much as possible. But somtimes you might need a custom variable that changes based on the color mode. You can create a custom variable with the `color-variables` mixin.
+It's recommended to use the [functional variables](/support/color-system#functional-variables) as much as possible. It will guarantee that the variables will work as expected with any new theme that might get added in the future. Somtimes you might still need a custom variable that changes based on the color mode. You can create a custom variable with the `color-variables` mixin.
 
 ```css
 @include color-variables(
@@ -84,7 +107,7 @@ The custom variables will be prefixed with `--color-` and can be used in the sam
 
 ## Auto variables
 
-Sometimes `auto` variables might come in handy. Since the [`scale` color variables](/support/color-system#color-variables) stay light or dark in any color mode, you might find yourself creating lots of custom variables that invert the scale like so:
+If you tried using the [`scale` color variables](/support/color-system#color-variables) you might have noticed that they are not that useful with multiple color modes. That's because they stay light or dark in any color mode. As seen above, you could create custom variables that invert the scale like so:
 
 ```css
 @include color-variables(
@@ -99,7 +122,7 @@ Sometimes `auto` variables might come in handy. Since the [`scale` color variabl
 }
 ```
 
-For this case, an `auto` variable can be used:
+In this case, the `auto` variables might come in handy.
 
 ```css
 .my-class {
@@ -107,8 +130,7 @@ For this case, an `auto` variable can be used:
 }
 ```
 
-
-The color is automatically inverted in dark mode. 
+The benefit of `auto` over the `scale` variables is that `auto` variables automatically get inverted in dark mode.
 
 ```html live
 <div data-color-mode="light" data-light-theme="light" class="p-3">
