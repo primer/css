@@ -1,0 +1,26 @@
+name: CI
+on: [push]
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+
+      - name: Set up Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: 12
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: CSS Lint
+        run: yarn stylelint && yarn stylelint -- --report-needless-disables
+
+      - name: Build
+        run: yarn dist
+
+      - name: Reporting bundle sizes
+        run: script/bundle-size-report.js --all

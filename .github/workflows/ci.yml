@@ -25,9 +25,6 @@ jobs:
       - name: Test
         run: yarn test
 
-      - name: Prepublish
-        run: script/prepublish
-
       - name: Create .npmrc
         run: |
           cat << EOF > "$HOME/.npmrc"

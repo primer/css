@@ -29,7 +29,6 @@
     "eslint": "eslint script deprecations.js lib .storybook",
     "eslint-docs": "eslint docs/{content,src,*.js}",
     "postpublish": "script/postpublish",
-    "prepublishOnly": "script/prepublish",
     "publish-storybook": "script/publish-storybook",
     "start": "npm run dev",
     "dev": "cd docs && npm install && npm run develop",
