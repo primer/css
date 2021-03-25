@@ -1258,6 +1258,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@github/prettier-config@^0.0.4":
+  version "0.0.4"
+  resolved "https://npm.pkg.github.com/download/@github/prettier-config/0.0.4/69d843b9d8cba082ce7977ef0fe3367716462384a6857e7e9ef6b40d5868d98b#cbfddb36a7f29a81c5af155dc5827e95b23b9ccd"
+  integrity sha512-ZOJ+U771Mw68qp2GPbcqPt2Xg0LEl0YwiIFHXwVLAFm2TgDnsgcCHhXO8PIxOWPqSFO4S7xIMD9CBobfaWGASA==
+
 "@hypnosphi/create-react-context@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@hypnosphi/create-react-context/-/create-react-context-0.3.1.tgz#f8bfebdc7665f5d426cba3753e0e9c7d3154d7c6"
