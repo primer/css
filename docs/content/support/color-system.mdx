@@ -12,16 +12,15 @@ import {LinkIcon, OctofaceIcon} from '@primer/octicons-react'
 import {colorModes, palettes, functionalVarNames, flattened} from '../../src/color-variables'
 import {PaletteTable, PaletteCell, ColorModeTable, CSSModeVars, overlayColor} from '../../src/color-system'
 
+<Note>
+  Please note Primer v16 has changed the naming of these color classes to *functional*. Check the [migration guide](https://github.com/primer/css/blob/c2a613c833555caa47588729d0b9a0b5a8383b15/MIGRATING.md#1600) to make sure your app is up to date.
+</Note>
 
 ## Functional variables
 
 The Primer color system contains multiple color modes; currently, Primer ships with a light mode and a dark mode. Each color mode comes with a set of CSS variables that can be used to style elements based on the functionality of the element. These should be used instead of specifying colors directly so that the colors adapt correctly when switching between color modes.
 
 When at all possible, favor using [color utility classes](/utilities/colors) over using custom CSS to set colors. Because the new Primer CSS color system is based on *functional* colors, you should only use colors designed for the element you're applying them to. For example, text colors, which start with `--color-text-`, should not be used for icons, backgrounds, or any other non-text element.
-
-<Note>
-  Please note Primer v16 has changed the naming of these color classes to *functional*. Check the migration guide to make sure your app is up to date.
-</Note>
 
 ### Text
 

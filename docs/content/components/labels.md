@@ -7,6 +7,10 @@ source: 'https://github.com/primer/css/tree/master/src/labels'
 bundle: labels
 ---
 
+<Note>
+  Please note Primer v16 has changed the naming of these color classes to *functional*. Check the [migration guide](https://github.com/primer/css/blob/c2a613c833555caa47588729d0b9a0b5a8383b15/MIGRATING.md#1600) to make sure your app is up to date.
+</Note>
+
 Labels add metadata or indicate status of items and navigational elements. Three different types of labels are available: [Labels](#default-label-styles) for adding metadata, [States](#states) for indicating status, and [Counters](#counters) for showing the count for a number of items.
 
 ## Labels
