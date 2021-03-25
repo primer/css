@@ -1,8 +1,8 @@
-name: CI
+name: Bundle report
 on: [push]
 jobs:
-  ci:
-    name: CI
+  bundle:
+    name: Bundle report
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
