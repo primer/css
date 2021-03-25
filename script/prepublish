@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+# generate the build directory
+npm run --silent dist
+
+files=$(git ls-files src | sed -e 's#^src/##' | sed -e 's#/.*$##' | sort -u)
+echo $files > publish-files.log
+cd src
+cp -rv $files ..
+cd -
