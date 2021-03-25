@@ -16,8 +16,8 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Lint
-        run: script/lint-ci
+      - name: CSS Lint
+        run: yarn stylelint && yarn stylelint -- --report-needless-disables
 
       - name: Build
         run: yarn dist

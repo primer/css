@@ -1,6 +1,5 @@
 {
   "extends": [
-    "plugin:github/react",
     "plugin:jsx-a11y/recommended"
   ],
   "rules": {

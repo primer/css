@@ -46,7 +46,6 @@
   "devDependencies": {
     "@changesets/changelog-github": "^0.3.0",
     "@changesets/cli": "^2.14.1",
-    "@github/prettier-config": "^0.0.4",
     "@octokit/rest": "^16.34.0",
     "@storybook/addon-viewport": "5.3.18",
     "@storybook/react": "5.3.18",
@@ -58,6 +57,7 @@
     "details-dialog-element": "^1.4.0",
     "eslint": "^7.22.0",
     "eslint-plugin-github": "^4.1.2",
+    "eslint-plugin-prettier": "^3.3.1",
     "filesize": "4.1.2",
     "fs-extra": "^4.0.2",
     "gh-pages": "^1.0.0",
