@@ -4,7 +4,7 @@ status: New
 ---
 
 <Note>
-  Please note Primer v16 has changed the naming of these color classes to *functional*. Check the [migration guide](https://github.com/primer/css/blob/c2a613c833555caa47588729d0b9a0b5a8383b15/MIGRATING.md#1600) to make sure your app is up to date.
+  Please note Primer v16 has changed the naming of these color classes to *functional*. Check the <Link href="https://github.com/primer/css/blob/c2a613c833555caa47588729d0b9a0b5a8383b15/MIGRATING.md#1600">migration guide</Link> to make sure your app is up to date.
 </Note>
 
 Dropdowns are lightweight context menus for housing navigation and actions. They're great for instances where you don't need the full power (and code) of the select menu.
