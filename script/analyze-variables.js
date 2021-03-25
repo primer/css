@@ -33,13 +33,17 @@ function analyzeVariables(file) {
           if (last(entry.values) !== value) {
             entry.values.push(value)
           }
-          variables[actualProp] = Object.assign(
-            {
-              computed: value
-            },
-            entry,
-            {refs: []}
-          )
+          if (value.match(/^var\(--.*\)/)) {
+            delete variables[actualProp]
+          } else {
+            variables[actualProp] = Object.assign(
+              {
+                computed: value
+              },
+              entry,
+              {refs: []}
+            )
+          }
         })
       })
 
