@@ -7,7 +7,7 @@ bundle: links
 ---
 
 <Note>
-  Please note Primer v16 has changed the naming of these color classes to *functional*. Check the <Link href="https://github.com/primer/css/blob/c2a613c833555caa47588729d0b9a0b5a8383b15/MIGRATING.md#1600">migration guide</Link> to make sure your app is up to date.
+  Please note Primer v16 has changed the naming of these color classes to *functional*. Check the <a href="https://github.com/primer/css/blob/c2a613c833555caa47588729d0b9a0b5a8383b15/MIGRATING.md#1600">migration guide</a> to make sure your app is up to date.
 </Note>
 
 By default `<a>` elements already use the right link color and apply an underline on hover.

@@ -8,7 +8,7 @@ bundle: utilities
 ---
 
 <Note>
-  Please note Primer v16 has changed the naming of these color classes to *functional*. Check the <Link href="https://github.com/primer/css/blob/c2a613c833555caa47588729d0b9a0b5a8383b15/MIGRATING.md#1600">migration guide</Link> to make sure your app is up to date.
+  Please note Primer v16 has changed the naming of these color classes to *functional*. Check the <a href="https://github.com/primer/css/blob/c2a613c833555caa47588729d0b9a0b5a8383b15/MIGRATING.md#1600">migration guide</a> to make sure your app is up to date.
 </Note>
 
 Box shadows are used to make content appear elevated. They are typically applied to containers of content that users need to pay attention to or content that appears on top of (overlapping) other elements on the page (like a pop-over or modal).
