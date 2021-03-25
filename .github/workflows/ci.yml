@@ -17,7 +17,7 @@ jobs:
         run: yarn
 
       - name: Lint
-        run: yarn lint
+        run: script/lint-ci
 
       - name: Build
         run: yarn dist
