@@ -1,5 +1,8 @@
 name: Bundle report
-on: [push]
+on:
+  push:
+    paths:
+    - 'src'
 jobs:
   bundle:
     runs-on: ubuntu-latest
