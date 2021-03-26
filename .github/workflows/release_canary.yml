@@ -47,7 +47,7 @@ jobs:
         uses: actions/github-script@v3
         with:
           script: |
-            const package = require('./package.json')
+            const package = require(`${process.env.GITHUB_WORKSPACE}/package.json`)
             github.repos.createCommitStatus({
               owner: context.repo.owner,
               repo: context.repo.repo,
