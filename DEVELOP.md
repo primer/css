@@ -84,7 +84,6 @@ Our [`package.json`](package.json) houses a collection of [run-scripts] that we 
 * `now-build` and `now-start` are run on [Now] to build and start the docs site server. `now-test` runs them both in order.
 * `start` runs the documentation site locally (alias: `dev`).
 * `test-urls` compares a (pre-generated) list of paths from the **deprecated** [Primer Style Guide](https://styleguide.github.com/primer/) to files in `pages/css`, and lets us know if we've inadvertently deleted or renamed anything.
-* `test-migrate` tests the [`primer-migrate`](MIGRATING.md#primer-migrate) command line utility.
 
 The above list may not always be up-to-date. You can list all of the available scripts by calling `npm run` with no other arguments.
 

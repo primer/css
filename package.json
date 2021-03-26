@@ -18,9 +18,6 @@
     "github",
     "design-system"
   ],
-  "bin": {
-    "primer-migrate": "bin/primer-migrate"
-  },
   "scripts": {
     "fresh": "rm -rf node_modules; npm install",
     "dist": "script/dist.js",
@@ -34,9 +31,8 @@
     "dev": "cd docs && npm install && npm run develop",
     "start-storybook": "start-storybook -p 8001",
     "build-storybook": "build-storybook -o .storybuild",
-    "test": "npm-run-all -s test-urls test-migrate",
+    "test": "npm-run-all -s test-urls",
     "test-urls": "script/test-doc-urls.js",
-    "test-migrate": "script/test-migrate",
     "release": "changeset publish"
   },
   "dependencies": {
@@ -46,7 +42,6 @@
   "devDependencies": {
     "@changesets/changelog-github": "^0.3.0",
     "@changesets/cli": "^2.14.1",
-    "@octokit/rest": "^16.34.0",
     "@storybook/addon-viewport": "5.3.18",
     "@storybook/react": "5.3.18",
     "autoprefixer": "9.8.6",
@@ -85,7 +80,6 @@
     "typographic-base": "^1.0.4",
     "unified": "^7.1.0",
     "unist-util-select": "^2.0.2",
-    "unist-util-stringify-position": "^2.0.1",
-    "unist-util-visit": "^1.4.1"
+    "unist-util-stringify-position": "^2.0.1"
   }
 }
