@@ -4,6 +4,9 @@ on:
     branches-ignore:
       - 'main'
       - 'changeset-release/main'
+    paths-ignore:
+      - '.github/'
+      - '.storybook/'
 
 jobs:
   release-canary:
