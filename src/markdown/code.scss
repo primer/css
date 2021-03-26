@@ -8,8 +8,7 @@
     margin: 0;
     // stylelint-disable-next-line primer/typography
     font-size: 85%;
-    // stylelint-disable-next-line primer/colors
-    background-color: rgba($black, 0.05);
+    background-color: var(--color-markdown-code-bg);
     border-radius: $border-radius;
 
     br { display: none; }
@@ -50,7 +49,7 @@
     font-size: 85%;
     // stylelint-disable-next-line primer/typography
     line-height: 1.45;
-    background-color: $bg-gray;
+    background-color: var(--color-bg-tertiary);
     border-radius: $border-radius;
   }
 

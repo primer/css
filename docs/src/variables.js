@@ -1,6 +1,6 @@
 import React from 'react'
 import {Flex, Link, Text, Tooltip, Flash} from '@primer/components'
-import Octicon, {Alert} from '@primer/octicons-react'
+import Octicon, {AlertIcon} from '@primer/octicons-react'
 import themeGet from '@styled-system/theme-get'
 import DoctocatTable from '@primer/gatsby-theme-doctocat/src/components/table'
 import styled from 'styled-components'
@@ -198,7 +198,7 @@ function DeprecationFlag({variable, ...rest}) {
 function DeprecationIcon() {
   return (
     <Text color="red.5">
-      <Octicon icon={Alert} />
+      <Octicon icon={AlertIcon} />
     </Text>
   )
 }

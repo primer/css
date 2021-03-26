@@ -11,7 +11,7 @@
     font-style: normal;
     // stylelint-disable-next-line primer/typography
     line-height: 20px;
-    color: $text-gray-dark;
+    color: var(--color-text-primary);
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -24,27 +24,27 @@
     &:hover,
     &:focus {
       text-decoration: none;
-      border-color: $border-color;
+      border-color: var(--color-border-primary);
       outline: 0;
       transition-duration: 0.1s;
     }
 
     &:active {
-      border-color: $border-gray-light;
+      border-color: var(--color-border-secondary);
       transition: none;
     }
   }
 
   .previous_page,
   .next_page {
-    color: $text-blue;
+    color: var(--color-text-link);
   }
 
   .current,
   .current:hover,
   [aria-current]:not([aria-current=false]) {
-    color: $text-white;
-    background-color: $bg-blue;
+    color: var(--color-state-selected-primary-text);
+    background-color: var(--color-state-selected-primary-bg);
     border-color: transparent;
   }
 
@@ -54,7 +54,7 @@
   .gap:hover,
   .disabled:hover,
   [aria-disabled=true]:hover {
-    color: $text-gray-light;
+    color: var(--color-text-disabled);
     cursor: default;
     border-color: transparent;
   }
