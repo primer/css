@@ -4,11 +4,16 @@ on:
     branches-ignore:
       - 'main'
       - 'changeset-release/main'
-    # Don't release when these paths change
+    # Don't release canary when these paths change
+    # It's not necessary because we don't ship them and it creates noise
     paths-ignore:
       - '.changeset/**'
       - '.github/**'
       - '.storybook/**'
+      - 'docs/**'
+      - 'lib/**'
+      - 'script/**'
+      - 'static/**'
 
 jobs:
   release-canary:
