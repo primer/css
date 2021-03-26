@@ -55,6 +55,6 @@ jobs:
             github.checks.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              check_run_id: context.runId,
+              check_run_id: process.env.GITHUB_RUN_ID,
               title: "HI"
             })
