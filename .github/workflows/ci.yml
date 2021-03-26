@@ -24,28 +24,3 @@ jobs:
 
       - name: Test
         run: yarn test
-
-      - name: Create .npmrc
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
-
-      - name: Publish canary version
-        run: |
-          echo "$( jq '.version = "0.0.0"' package.json )" > package.json
-          echo -e "---\n'@primer/css': patch\n---\n\nFake entry to force publishing" > .changeset/force-snapshot-release.md
-          yarn changeset version --snapshot
-          yarn changeset publish --tag canary
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Output canary version number
-        run: |
-          name=$(jq -r .name package.json)
-          version=$(jq -r .version package.json)
-          npx action-status --context="Published $name" --state=success --description=$version --url "https://unpkg.com/$name@$version/"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
