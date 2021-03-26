@@ -6,8 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-          with:
-            node-version: 12
+        with:
+          node-version: 12
       - run: yarn
       - name: Lint CSS with Stylelint
         run: yarn stylelint
@@ -19,8 +19,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-          with:
-            node-version: 12
+        with:
+          node-version: 12
       - run: yarn
       - run: yarn dist
       - name: Testing code
