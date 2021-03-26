@@ -52,7 +52,7 @@ jobs:
       - uses: actions/github-script@v3
         with:
           script: |
-            const check_run_id = checks.listForRef({
+            const check_run_id = github.checks.listForRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: context.ref,
