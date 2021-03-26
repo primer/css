@@ -52,19 +52,12 @@ jobs:
       - uses: actions/github-script@v3
         with:
           script: |
-            const check_runs = await github.checks.listForRef({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: context.ref,
-              check_name: "Canary"
-            });
-
-            console.log(check_runs.data.check_runs[0].id)
-            github.checks.update({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              check_run_id: check_runs.data.check_runs[0].id,
-              title: "HELO",
-              summary: "HI",
-              text: "EBB"
-            })
+          github.createCommitStatus({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            sha: context.sha,
+            state: 'success',
+            context: 'Release / foo',
+            description: 'my description',
+            target_url: 'http://twitter.com/'
+          })
