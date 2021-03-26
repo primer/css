@@ -4,9 +4,11 @@ on:
     branches-ignore:
       - 'main'
       - 'changeset-release/main'
+    # Don't release when these paths change
     paths-ignore:
-      - '.github/'
-      - '.storybook/'
+      - '.changeset/**'
+      - '.github/**'
+      - '.storybook/**'
 
 jobs:
   release-canary:
