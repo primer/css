@@ -1,3 +1,21 @@
+## 16.0.0
+
+### :boom: Breaking Change
+- Update to Primer Primitives `4.0.0` [primer/primitives#43](https://github.com/primer/primitives/pull/43)
+- Add color modes [#1131](https://github.com/primer/css/pull/1131)
+
+### :rocket: Enhancement
+- Add `flex-shrink: 0` to `.avatar` [#1183](https://github.com/primer/css/pull/1183)
+- Adding timeline-badge success border [#1246](https://github.com/primer/css/pull/1246)
+- Add `.anim-rotate` utility class [#1251](https://github.com/primer/css/pull/1251)
+
+### :nail_care: Polish
+- Move marketing `@font-face` declarations from vars to type [#1238](https://github.com/primer/css/pull/1238)
+
+### :memo: Documentation
+- Update documentation with color modes  [#1186](https://github.com/primer/css/pull/1186)
+
+
 ## 15.2.0
 
 ### :rocket: Enhancements
