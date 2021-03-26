@@ -181,3 +181,14 @@
     transform: scale(1.025);
   }
 }
+
+/* Rotate an element 360 degrees over and over, used for spinners */
+.anim-rotate {
+  animation: rotate-keyframes 1s linear infinite;
+}
+
+@keyframes rotate-keyframes {
+  100% {
+    transform: rotate(360deg);
+  }
+}

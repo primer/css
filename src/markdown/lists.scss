@@ -2,7 +2,6 @@
 // stylelint-disable selector-no-qualifying-type
 // stylelint-disable selector-max-type
 .markdown-body {
-
   // Lists, Blockquotes & Such
   ul,
   ol {
@@ -44,11 +43,6 @@
   ol ul {
     margin-top: 0;
     margin-bottom: 0;
-  }
-
-  li {
-    // TODO@16.0.0: Remove this. See https://github.com/primer/css/pull/1137.
-    word-wrap: break-all;
   }
 
   li > p {

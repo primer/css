@@ -2,7 +2,7 @@
 title: Details
 path: utilities/details
 status: Stable
-source: 'https://github.com/primer/css/blob/master/src/utilities/details.scss'
+source: 'https://github.com/primer/css/blob/main/src/utilities/details.scss'
 bundle: utilities
 ---
 

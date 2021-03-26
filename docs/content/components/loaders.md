@@ -2,7 +2,7 @@
 title: Loaders
 path: components/loaders
 status: New
-source: 'https://github.com/primer/css/tree/master/src/loaders'
+source: 'https://github.com/primer/css/tree/main/src/loaders'
 bundle: loaders
 ---
 

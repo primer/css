@@ -2,7 +2,7 @@
 title: Typography
 path: utilities/typography
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/utilities/typography.scss'
+source: 'https://github.com/primer/css/tree/main/src/utilities/typography.scss'
 bundle: utilities
 ---
 

@@ -2,7 +2,7 @@
 title: Table object (deprecated)
 path: objects/table-object
 status: Deprecated
-source: 'https://github.com/primer/css/tree/master/src/table-object'
+source: 'https://github.com/primer/css/tree/main/src/table-object'
 bundle: table-object
 ---
 

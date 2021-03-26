@@ -13,14 +13,14 @@
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 20px; // Specifically not inherit our `<body>` default
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   cursor: pointer;
-  border: $border-width $border-style $border-color;
+  border: $border-width $border-style var(--color-border-primary);
 
   :checked + & {
     position: relative;
     z-index: 1;
-    border-color: $border-blue;
+    border-color: var(--color-border-info);
   }
 
   &:first-of-type {

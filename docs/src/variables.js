@@ -1,6 +1,6 @@
 import React from 'react'
 import {Flex, Link, Text, Tooltip, Flash} from '@primer/components'
-import Octicon, {Alert} from '@primer/octicons-react'
+import Octicon, {AlertIcon} from '@primer/octicons-react'
 import themeGet from '@styled-system/theme-get'
 import DoctocatTable from '@primer/gatsby-theme-doctocat/src/components/table'
 import styled from 'styled-components'
@@ -107,7 +107,7 @@ function VariablesDetails({variablesByFile, ...props}) {
   return Array.from(variablesByFile.entries()).map(([path, variables]) => (
     <React.Fragment key={path}>
       <h3>
-        Defined in <Link href={`https://github.com/primer/css/tree/master/${path}`}>{path}</Link>
+        Defined in <Link href={`https://github.com/primer/css/tree/main/${path}`}>{path}</Link>
       </h3>
       <Table {...props}>
         <thead>
@@ -126,7 +126,7 @@ function VariablesDetails({variablesByFile, ...props}) {
                     #
                   </Link>
                   <Flex.Item flex="1">
-                    <Link href={`https://github.com/primer/css/tree/master/${source.path}#L${source.line}`}>
+                    <Link href={`https://github.com/primer/css/tree/main/${source.path}#L${source.line}`}>
                       <Mono nowrap>{name}</Mono>
                     </Link>
                   </Flex.Item>
@@ -198,7 +198,7 @@ function DeprecationFlag({variable, ...rest}) {
 function DeprecationIcon() {
   return (
     <Text color="red.5">
-      <Octicon icon={Alert} />
+      <Octicon icon={AlertIcon} />
     </Text>
   )
 }
