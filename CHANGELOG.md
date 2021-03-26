@@ -1,5 +1,11 @@
 # @primer/css
 
+## 16.0.2
+
+### Patch Changes
+
+- [#1258](https://github.com/primer/css/pull/1258) [`c6945cd5`](https://github.com/primer/css/commit/c6945cd50c297b621a69aecb619440bfb2bf4c32) Thanks [@jonrohan](https://github.com/jonrohan)! - Removing post publish storybook hook
+
 ## 16.0.1
 
 ### Patch Changes
