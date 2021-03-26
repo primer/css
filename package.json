@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@primer/octicons": "^9.1.1",
-    "@primer/primitives": "^4.0.1"
+    "@primer/primitives": "^4.0.2"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.3.0",
