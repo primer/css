@@ -52,7 +52,7 @@ jobs:
       - uses: actions/github-script@v3
         with:
           script: |
-            github.createCommitStatus({
+            github.repos.createCommitStatus({
               owner: context.repo.owner,
               repo: context.repo.repo,
               sha: context.sha,
