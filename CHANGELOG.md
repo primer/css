@@ -1,10 +1,12 @@
-## 16.0.0
+# @primer/css
 
 ## 16.0.1
 
 ### Patch Changes
 
 - [#1247](https://github.com/primer/css/pull/1247) [`1b6ba39c`](https://github.com/primer/css/commit/1b6ba39c733433fc5488d60b0b8b384b6d2b4d7d) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding changesets to release workflow
+
+## 16.0.0
 
 ### :boom: Breaking Change
 
