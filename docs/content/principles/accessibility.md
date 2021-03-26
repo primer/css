@@ -104,12 +104,6 @@ Make sure text-based alternative is always available when using icons, images, a
 <p>To find out more about GitHub Enterprise pricing, <a href="#url">click here</a>.</p>
 ```
 
-Use `title` to add information on top of existing content.
-
-```html
-<a title="@octocat's repositories" href="https://github.com/octocat?tab=repositories">octocat</a>
-```
-
 Use `aria-label` when there is no text.
 
 ```html

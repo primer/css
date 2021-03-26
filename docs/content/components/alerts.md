@@ -2,7 +2,7 @@
 title: Alerts
 path: components/alerts
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/alerts'
+source: 'https://github.com/primer/css/tree/main/src/alerts'
 bundle: alerts
 ---
 

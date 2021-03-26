@@ -3,6 +3,10 @@ title: Dropdown
 status: New
 ---
 
+<Note>
+  Please note Primer v16 has changed the naming of these color classes. Check the <a href="/css/support/v16-migration">migration guide</a> to make sure your app is up to date.
+</Note>
+
 Dropdowns are lightweight context menus for housing navigation and actions. They're great for instances where you don't need the full power (and code) of the select menu.
 
 ## Basic examples
@@ -193,32 +197,6 @@ Align the direction of dropdown menus and their arrows with modifier classes.
       </div>
       <ul>
         <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-      </ul>
-    </div>
-  </details>
-</div>
-```
-
-### Dark
-
-```html live
-<div class="bg-gray-dark p-3 mt-n3 ml-n3 mr-n3 mb-n3" style="min-height: 240px;">
-  <details class="dropdown details-reset details-overlay d-inline-block">
-    <summary class="btn" aria-haspopup="true">
-      Dropdown
-      <div class="dropdown-caret"></div>
-    </summary>
-
-    <div class="dropdown-menu dropdown-menu-se dropdown-menu-dark">
-      <div class="dropdown-header">
-        Dropdown header
-      </div>
-      <ul>
-        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-        <li class="dropdown-divider" role="none"></li>
         <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
         <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
       </ul>

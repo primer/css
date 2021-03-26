@@ -3,7 +3,7 @@ title: Subhead
 path: components/subhead
 status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/101'
-source: 'https://github.com/primer/css/tree/master/src/subhead'
+source: 'https://github.com/primer/css/tree/main/src/subhead'
 bundle: subhead
 ---
 
@@ -77,4 +77,3 @@ Use the `.Subhead-heading--danger` modifier to make the text bold and red. This 
   <div class="Subhead-heading Subhead-heading--danger">Danger zone</div>
 </div>
 ```
-

@@ -156,7 +156,7 @@ Include a link to allow users to take actions within a Toast.
         />
       </svg>
     </span>
-    <span class="Toast-content">Toast message goes here </strong><a href="#">Action.</a></span>
+    <span class="Toast-content">Toast message goes here<a href="#">Action.</a></span>
   </div>
 </div>
 ```

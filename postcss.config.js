@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   parser: 'postcss-scss',
   map: {
@@ -6,7 +8,7 @@ module.exports = {
   },
   plugins: {
     'postcss-node-sass': {
-      includePaths: ['node_modules'],
+      includePaths: [path.join(__dirname, 'node_modules')],
       outputStyle: 'compressed'
     },
     'autoprefixer': {}

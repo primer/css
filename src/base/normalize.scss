@@ -162,7 +162,7 @@ h1 {
 
 mark {
   background-color: #ff0;
-  color: $text-black;
+  color: var(--color-text-primary);
 }
 
 /**

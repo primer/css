@@ -18,7 +18,7 @@ Decisions to add new components are made on a case-by-case basis, with help from
 - If your design is difficult to compose with current styles, does this highlight problems with existing components (such as overly-specific components, or missing objects and utilities)?
 - Is this a totally new pattern or should it be an extension of an existing component?
 - How is this pattern being implemented currently - have you identified problems with it’s current implementation that can be improved with adding a new pattern?
-- Is the desire for this new pattern a side-effect of lacking documentation or mis-understandings of use with current styles?
+- Is the desire for this new pattern a side-effect of lacking documentation or misunderstanding of use with current styles?
 - Are there special factors that need to be considered as to why the this pattern needs it’s own styles? Such legal issues, usability issues, or branding and trademarks?
 - Is this something that would be better handled by other front-end code rather than CSS?
 - Every new addition of CSS means we ask our users to download a larger CSS file, and we increase the maintenance work of our CSS framework. Does the convenience of adding these new styles outweigh those costs?
@@ -147,7 +147,7 @@ See [the deprecation data docs](../tools/deprecations) for more information.
 ---
 title: Alerts
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/alerts'
+source: 'https://github.com/primer/css/tree/main/src/alerts'
 ---
 ```
 
@@ -166,6 +166,6 @@ Primer CSS follows [semantic versioning](http://semver.org/) conventions. This h
 To understand what choice to make, you'll need to understand semver and know if one of the changes shown is a major, minor, or patch. Semver is confusing at first, so we recommend reviewing [semver](http://semver.org/) and/or asking the team by [opening an issue](#step-1-open-an-issue).
 
 [semantic versioning]: https://semver.org
-[script/test-deprecations.js]: https://github.com/primer/css/tree/master/script/test-deprecations.js
-[deprecations.js]: https://github.com/primer/css/tree/master/deprecations.js
-[lib/stylelint-todo.js]: https://github.com/primer/css/tree/master/lib/stylelint-todo.js
+[script/test-deprecations.js]: https://github.com/primer/css/tree/main/script/test-deprecations.js
+[deprecations.js]: https://github.com/primer/css/tree/main/deprecations.js
+[lib/stylelint-todo.js]: https://github.com/primer/css/tree/main/lib/stylelint-todo.js

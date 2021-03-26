@@ -3,7 +3,7 @@ title: Flexbox
 path: utilities/flexbox
 status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/157'
-source: 'https://github.com/primer/css/blob/master/src/utilities/flexbox.scss'
+source: 'https://github.com/primer/css/blob/main/src/utilities/flexbox.scss'
 bundle: utilities
 ---
 
@@ -779,7 +779,7 @@ Here is an example of a media object that is **vertically centered on large scre
 
 ## Flexbox bugs
 
-This section lists flexbox bugs that affect [browsers we currently support](https://github.com/primer/css/blob/master/.browserslistrc).
+This section lists flexbox bugs that affect [browsers we currently support](https://github.com/primer/css/blob/main/.browserslistrc).
 
 1. **Minimum content sizing of flex items not honored.** Some browsers don't respect flex item size. Instead of respecting the minimum content size, items shrink below their minimum size which can create some undesirable results, such as overflowing text. The workaround is to apply `flex-shrink: 0;` to the items using `d-flex`. This can be applied with the `flex-shrink-0` utility. For more information read [philipwalton/flexbugs](https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored).
 

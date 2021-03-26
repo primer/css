@@ -1,25 +1,51 @@
 name: CI
-on: push
+on: [push]
 jobs:
-  all:
+  ci:
+    name: CI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - name: Checkout repository
+        uses: actions/checkout@master
+
+      - name: Set up Node.js
+        uses: actions/setup-node@master
         with:
-          node-version: 11
-      - name: install
-        run: npm install
-      - name: lint
-        run: script/lint-ci
-      - name: test
-        run: npm test
-      - name: prepublish
-        run: script/prepublish
-      - name: test deprecations
-        if: startsWith(github.ref, 'refs/heads/release-')
-        run: script/test-deprecations.js
-      - uses: primer/publish@v1.1.0
+          node-version: 12
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: CSS Lint
+        run: yarn stylelint && yarn stylelint -- --report-needless-disables
+
+      - name: Build
+        run: yarn dist
+
+      - name: Test
+        run: yarn test
+
+      - name: Create .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
+
+      - name: Publish canary version
+        run: |
+          echo "$( jq '.version = "0.0.0"' package.json )" > package.json
+          echo -e "---\n'@primer/css': patch\n---\n\nFake entry to force publishing" > .changeset/force-snapshot-release.md
+          yarn changeset version --snapshot
+          yarn changeset publish --tag canary
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: Output canary version number
+        run: |
+          name=$(jq -r .name package.json)
+          version=$(jq -r .version package.json)
+          npx action-status --context="Published $name" --state=success --description=$version --url "https://unpkg.com/$name@$version/"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

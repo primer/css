@@ -1,4 +1,5 @@
 *.log
+.changeset/
 .github/
 .next/
 .storybook/
