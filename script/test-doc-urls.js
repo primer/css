@@ -117,7 +117,6 @@ function getStyleguidePaths() {
 /components/octicons
 /components/page-headers
 /components/page-sections
-/components/pagehead
 /components/pagination
 /components/popover
 /components/progress
