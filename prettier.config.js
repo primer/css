@@ -1,1 +1,1 @@
-module.exports = require('eslint-plugin-github/prettier.config')
+module.exports = require('@github/prettier-config')

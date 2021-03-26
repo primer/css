@@ -1,7 +1,7 @@
 name: CI
 on: [push]
 jobs:
-  lint_css:
+  stylelint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -9,10 +9,21 @@ jobs:
         with:
           node-version: 12
       - run: yarn
-      - name: Lint CSS with Stylelint
+      - name: Lint source files
         run: yarn stylelint
       - name: Look for unused stylelint:disable lines
         run: yarn stylelint -- --report-needless-disables
+
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          node-version: 12
+      - run: yarn
+      - name: Lint workflow files
+        run: eslint script deprecations.js lib .storybook docs
 
   test:
     runs-on: ubuntu-latest

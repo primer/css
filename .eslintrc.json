@@ -1,6 +1,6 @@
 {
   "extends": [
-    "plugin:github/es6",
+    "plugin:github/internal",
     "plugin:github/recommended"
   ],
   "env": {
