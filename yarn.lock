@@ -1571,11 +1571,6 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@github/details-dialog-element@^3.1.2":
-  version "3.1.2"
-  resolved "https://npm.pkg.github.com/download/@github/details-dialog-element/3.1.2/a83d35e40381caf672d64f01ffcec93590190ca5e778340a6926e50fa11d7452#61f6595c71d786b1a77fbbe79db4c0b9a224fc80"
-  integrity sha512-kUz7VYKmgOtlAo96TVeXSq5bKDS/3Wm0SZt4UetJK2CcG0/wsx/Eif/fHx1HYEwVsa7FnrB/kCzby0JE8R88zQ==
-
 "@icons/material@^0.2.4":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
