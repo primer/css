@@ -52,12 +52,12 @@ jobs:
       - uses: actions/github-script@v3
         with:
           script: |
-          github.createCommitStatus({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            sha: context.sha,
-            state: 'success',
-            context: 'Release / foo',
-            description: 'my description',
-            target_url: 'http://twitter.com/'
-          })
+            github.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.sha,
+              state: 'success',
+              context: 'Release / foo',
+              description: 'my description',
+              target_url: 'http://twitter.com/'
+            })
