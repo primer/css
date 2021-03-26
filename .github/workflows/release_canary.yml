@@ -50,3 +50,8 @@ jobs:
           npx action-status --context="Published $name" --state=success --description=$version --url "https://unpkg.com/$name@$version/"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/github-script@v3
+        with:
+          script: |
+            console.log(context)
