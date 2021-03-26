@@ -3,7 +3,7 @@ title: Marketing borders (deprecated)
 sort_title: Borders Marketing
 path: utilities/marketing-borders
 status: Deprecated
-source: 'https://github.com/primer/css/blob/master/src/marketing/utilities/borders.scss'
+source: 'https://github.com/primer/css/blob/main/src/marketing/utilities/borders.scss'
 bundle: marketing-utilities
 ---
 

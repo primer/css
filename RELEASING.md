@@ -5,7 +5,7 @@
 1. Decide which [PRs](https://github.com/primer/css/pulls) should be part of the next release and if it will be a major, minor or patch `<version>`. You may also check the [release tracking project
 ](https://github.com/primer/css/projects/2#column-4482699) or ask your team members in Slack.
 
-1. Create a new release branch from `master` and name it `release-<version>`.
+1. Create a new release branch from `main` and name it `release-<version>`.
 
 1. Run [`npm version <version>`](https://docs.npmjs.com/cli/version) to update the `version` field in both `package.json` and `package-lock.json`.
 
@@ -51,12 +51,12 @@
     - [ ] Update `github/github`
     - [ ] Tell the world (Slack, Twitter, Team post)
 
-    For more details, see [RELEASING.md](https://github.com/primer/css/blob/master/RELEASING.md).
+    For more details, see [RELEASING.md](https://github.com/primer/css/blob/main/RELEASING.md).
 
     /cc @primer/ds-core
     ```
 
-1. Start merging existing PRs into the release branch. Note: You have to change the base branch from `master` to the `release-<version>` branch before merging.
+1. Start merging existing PRs into the release branch. Note: You have to change the base branch from `main` to the `release-<version>` branch before merging.
 
 1. Update `CHANGELOG.md` and the PR description. **Tip**: You can copy&paste the changelog from `Checks > changelog > all > changelog`. It gets generated based on adding the `Tag` labels to PRs.
 

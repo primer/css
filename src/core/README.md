@@ -19,7 +19,7 @@ The `@primer/css` npm package includes a standalone CSS build of this module in 
 
 ## License
 
-[MIT](https://github.com/primer/css/blob/master/LICENSE) &copy; [GitHub](https://github.com/)
+[MIT](https://github.com/primer/css/blob/main/LICENSE) &copy; [GitHub](https://github.com/)
 
 
 [scss]: https://sass-lang.com/documentation/syntax#scss

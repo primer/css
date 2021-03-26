@@ -2,7 +2,7 @@
 title: Links
 path: components/links
 status: New
-source: 'https://github.com/primer/css/tree/master/src/links'
+source: 'https://github.com/primer/css/tree/main/src/links'
 bundle: links
 ---
 

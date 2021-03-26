@@ -8,7 +8,7 @@ if [[ -f $file ]]; then
     rm $file
 fi
 
-if [[ "$GITHUB_REF" = "refs/heads/master" ]]; then
+if [[ "$GITHUB_REF" = "refs/heads/main" ]]; then
     npm run --silent publish-storybook || (
         echo "Whoops! Failed to publish Storybook. This is not a fatal error."
     )

@@ -2,7 +2,7 @@
 title: Select menu (deprecated)
 path: components/select-menu
 status: Deprecated
-source: 'https://github.com/github/github/blob/master/app/assets/stylesheets/components/select-menu.scss'
+source: 'https://github.com/github/github/blob/main/app/assets/stylesheets/components/select-menu.scss'
 symbols: [active, close-button, css-truncate-target, description, description-inline, description-warning, disabled, filterable-empty, has-error, hidden-select-button-text, icon-only, indeterminate, is-loading, is-showing-new-item-form, label-select-menu, last-visible, menu-active, modal-backdrop, navigation-focus, octicon, octicon-check, octicon-dash, octicon-octoface, octicon-x, opaque, primary, select-menu, select-menu-action, select-menu-blankslate, select-menu-button, select-menu-button-gravatar, select-menu-button-large, select-menu-clear-item, select-menu-divider, select-menu-error, select-menu-filters, select-menu-header, select-menu-item, select-menu-item-gravatar, select-menu-item-heading, select-menu-item-icon, select-menu-item-parent, select-menu-item-template, select-menu-item-text, select-menu-list, select-menu-loading-overlay, select-menu-modal, select-menu-modal-holder, select-menu-modal-narrow, select-menu-modal-right, select-menu-new-item-form, select-menu-no-results, select-menu-tab, select-menu-tab-bucket, select-menu-tab-nav, select-menu-tabs, select-menu-text-filter, select-menu-title, selected, spinner]
 ---
 
@@ -761,7 +761,7 @@ Open the select menu below and click different options to see it in action.
 ```erb
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-    <span class="js-select-button">master</span>
+    <span class="js-select-button">main</span>
   </button>
   <div class="select-menu-modal-holder">
     <div class="select-menu-modal js-menu-content">
@@ -772,7 +772,7 @@ Open the select menu below and click different options to see it in action.
       <div class="select-menu-list js-navigation-container">
         <a href="#url" class="select-menu-item selected js-navigation-item">
           <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">master</span>
+          <span class="select-menu-item-text js-select-button-text">main</span>
         </a>
         <a href="#url" class="select-menu-item js-navigation-item">
           <%= octicon("check", :class => "select-menu-item-icon") %>
@@ -798,7 +798,7 @@ As shown below, emphasized text works great with the stateful text functionality
 <div class="select-menu js-menu-container js-select-menu">
   <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
     <i>Branch:</i>
-    <span class="js-select-button">master</span>
+    <span class="js-select-button">main</span>
   </button>
   <div class="select-menu-modal-holder">
     <div class="select-menu-modal js-menu-content">
@@ -809,7 +809,7 @@ As shown below, emphasized text works great with the stateful text functionality
       <div class="select-menu-list js-navigation-container">
         <a href="#url" class="select-menu-item selected js-navigation-item">
           <%= octicon("check", :class => "select-menu-item-icon") %>
-          <span class="select-menu-item-text js-select-button-text">master</span>
+          <span class="select-menu-item-text js-select-button-text">main</span>
         </a>
         <a href="#url" class="select-menu-item js-navigation-item">
           <%= octicon("check", :class => "select-menu-item-icon") %>

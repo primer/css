@@ -2,7 +2,7 @@
 title: Labels
 path: stickersheet/labels
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/labels'
+source: 'https://github.com/primer/css/tree/main/src/labels'
 bundle: labels
 ---
 
