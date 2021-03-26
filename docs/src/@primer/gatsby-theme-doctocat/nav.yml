@@ -3,6 +3,8 @@
   children:
     - title: Contributing
       url: /getting-started/contributing
+    - title: Theming
+      url: /getting-started/theming
 - title: Support
   url: /support
   children:
@@ -91,6 +93,8 @@
       url: /components/header
     - title: Labels
       url: /components/labels
+    - title: Links
+      url: /components/links
     - title: Loaders
       url: /components/loaders
     - title: Markdown

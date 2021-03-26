@@ -2,15 +2,15 @@
 title: Progress
 path: components/progress
 status: New
-source: 'https://github.com/primer/css/tree/master/src/progress'
+source: 'https://github.com/primer/css/tree/main/src/progress'
 bundle: progress
 ---
 
-Use progress components to visualize task completion. The `Progress` class adds a background color and aligns its children horizontally with flexbox. The children should be individually colored with [background utilities](/utilities/colors#background-colors) and sized with inline `width` styles in percentages. Overflow is hidden, so children that overflow will be clipped.
+Use progress components to visualize task completion. The `Progress` class adds a background color and aligns its children horizontally with flexbox. The children (`Progress-item`) should be individually colored with [background utilities](/utilities/colors#background-colors) and sized with inline `width` styles in percentages. Overflow is hidden, so children that overflow will be clipped.
 
 ```html live
 <span class="Progress">
-  <span class="bg-green" style="width: 50%;"></span>
+  <span class="Progress-item color-bg-success-inverse" style="width: 50%;"></span>
 </span>
 ```
 
@@ -20,7 +20,7 @@ Large progress bars are slightly taller than the default.
 
 ```html live
 <span class="Progress Progress--large">
-  <span class="bg-green" style="width: 50%;"></span>
+  <span class="Progress-item color-bg-success-inverse" style="width: 50%;"></span>
 </span>
 ```
 
@@ -30,7 +30,7 @@ Small progress bars are shorter than the default.
 
 ```html live
 <span class="Progress Progress--small">
-  <span class="bg-green" style="width: 50%;"></span>
+  <span class="Progress-item color-bg-success-inverse" style="width: 50%;"></span>
 </span>
 ```
 
@@ -41,7 +41,7 @@ For inline progress indicators, use the `Progress` and `d-inline-flex` with an i
 ```html live
 <span class="text-small text-gray mr-2">4 of 16</span>
 <span class="Progress d-inline-flex" style="width: 160px">
-  <div class="bg-green" style="width: 25%"></div>
+  <div class="Progress-item color-bg-success-inverse" style="width: 25%"></div>
 </span>
 ```
 
@@ -52,7 +52,7 @@ In cases where it's not possible to describe the progress in text, provide an `a
 ```html live
 <div aria-label="tasks: 8 of 10 complete">
   <span class="Progress">
-    <span class="bg-green" style="width: 80%;"></span>
+    <span class="Progress-item color-bg-success-inverse" style="width: 80%;"></span>
   </span>
 </div>
 ```
@@ -64,11 +64,10 @@ To show the progress of tasks in multiple states (such as "done", "in progress",
 ```html live
 <div class="tooltipped tooltipped-n" aria-label="tasks: 80 done, 14 in progress, 6 open">
   <span class="Progress">
-    <span class="Progress-item bg-green" style="width: 50%;"></span>
-    <span class="Progress-item bg-purple" style="width: 25%;"></span>
-    <span class="Progress-item bg-pink" style="width: 15%;"></span>
-    <span class="Progress-item bg-red" style="width: 8%;"></span>
-    <span class="Progress-item bg-blue" style="width: 2%;"></span>
+    <span class="Progress-item color-bg-success-inverse" style="width: 50%;"></span>
+    <span class="Progress-item color-bg-warning-inverse" style="width: 25%;"></span>
+    <span class="Progress-item color-bg-danger-inverse" style="width: 15%;"></span>
+    <span class="Progress-item color-bg-info-inverse" style="width: 10%;"></span>
   </span>
 </div>
 ```

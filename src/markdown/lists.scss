@@ -2,7 +2,6 @@
 // stylelint-disable selector-no-qualifying-type
 // stylelint-disable selector-max-type
 .markdown-body {
-
   // Lists, Blockquotes & Such
   ul,
   ol {
@@ -44,10 +43,6 @@
   ol ul {
     margin-top: 0;
     margin-bottom: 0;
-  }
-
-  li {
-    word-wrap: break-all;
   }
 
   li > p {
