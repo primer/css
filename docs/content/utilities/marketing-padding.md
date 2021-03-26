@@ -4,7 +4,7 @@ sort_title: Padding Marketing
 path: utilities/marketing-padding
 status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/378'
-source: 'https://github.com/primer/css/tree/master/src/marketing/utilities/padding.scss'
+source: 'https://github.com/primer/css/tree/main/src/marketing/utilities/padding.scss'
 bundle: marketing-utilities
 ---
 

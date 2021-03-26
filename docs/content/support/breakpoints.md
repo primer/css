@@ -2,7 +2,7 @@
 title: Breakpoints
 path: support/breakpoints
 status: Stable
-source: 'https://github.com/primer/css/blob/master/src/support/variables/layout.scss'
+source: 'https://github.com/primer/css/blob/main/src/support/variables/layout.scss'
 bundle: support
 ---
 
@@ -31,15 +31,15 @@ In most cases, breakpoints get used with the `min-width` media query. This means
 | Large       | lg     | from `1012px` upwards -> |
 | Extra-large | xl     | from `1280px` upwards -> |
 
-A responsive utility class stays enabled **unless** it gets overridden with another responsive utility class that has a higher breakpoint. Here the example from above `<div class="col-12 col-md-8 col-xl-4">...</div>` visualized: 
+A responsive utility class stays enabled **unless** it gets overridden with another responsive utility class that has a higher breakpoint. Here the example from above `<div class="col-12 col-md-8 col-xl-4">...</div>` visualized:
 
 ```
-| 0px -> 
-         | 544px ->  
+| 0px ->
+         | 544px ->
          | sm
-                    | 768px ->  
-                    | md 
-                               | 1012px ->  
+                    | 768px ->
+                    | md
+                               | 1012px ->
                                | lg
                                            | 1280px ->
                                            | xl

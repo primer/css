@@ -147,7 +147,7 @@ See [the deprecation data docs](../tools/deprecations) for more information.
 ---
 title: Alerts
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/alerts'
+source: 'https://github.com/primer/css/tree/main/src/alerts'
 ---
 ```
 
@@ -166,6 +166,6 @@ Primer CSS follows [semantic versioning](http://semver.org/) conventions. This h
 To understand what choice to make, you'll need to understand semver and know if one of the changes shown is a major, minor, or patch. Semver is confusing at first, so we recommend reviewing [semver](http://semver.org/) and/or asking the team by [opening an issue](#step-1-open-an-issue).
 
 [semantic versioning]: https://semver.org
-[script/test-deprecations.js]: https://github.com/primer/css/tree/master/script/test-deprecations.js
-[deprecations.js]: https://github.com/primer/css/tree/master/deprecations.js
-[lib/stylelint-todo.js]: https://github.com/primer/css/tree/master/lib/stylelint-todo.js
+[script/test-deprecations.js]: https://github.com/primer/css/tree/main/script/test-deprecations.js
+[deprecations.js]: https://github.com/primer/css/tree/main/deprecations.js
+[lib/stylelint-todo.js]: https://github.com/primer/css/tree/main/lib/stylelint-todo.js

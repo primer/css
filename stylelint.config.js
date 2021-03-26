@@ -12,6 +12,7 @@ module.exports = {
     'primer/spacing': true,
     'primer/typography': true,
     'primer/box-shadow': true,
-    'primer-css/TODO': [true, {currentVersion, severity: 'error'}]
+    'primer-css/TODO': [true, {currentVersion, severity: 'error'}],
+    'primer/no-undefined-vars': [true, {files: 'node_modules/@primer/primitives/dist/scss/colors/*.scss'}]
   }
 }

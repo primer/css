@@ -72,9 +72,8 @@ dl.form-group > dd, // TODO: Deprecate
 
   .octicon-check {
     display: inline-block;
-    // stylelint-disable-next-line primer/colors
-    color: $green;
-    fill: $green;
+    color: var(--color-text-success);
+    fill: var(--color-icon-success);
   }
 
   .octicon-x {
@@ -94,8 +93,8 @@ dl.form-group > dd, // TODO: Deprecate
 
   .octicon-x {
     display: inline-block;
-    color: $text-red;
-    fill: $red;
+    color: var(--color-text-danger);
+    fill: var(--color-icon-danger);
   }
 }
 
@@ -128,10 +127,9 @@ dl.form-group > dd, // TODO: Deprecate
   font-size: 13px;
   // stylelint-disable-next-line primer/typography
   line-height: 16px;
-  color: $text-gray;
-  background-color: $bg-gray-light;
-  // stylelint-disable-next-line primer/borders
-  border: $border-width $border-style darken($gray-300, 5%);
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-secondary);
+  border: $border-width $border-style var(--color-drag-and-drop-border);
   border-top: 0;
   border-bottom-right-radius: $border-radius;
   border-bottom-left-radius: $border-radius;
@@ -143,7 +141,7 @@ dl.form-group > dd, // TODO: Deprecate
   }
 
   .error {
-    color: $text-red;
+    color: var(--color-text-danger);
   }
 
   // Spinner
@@ -190,10 +188,10 @@ dl.form-group > dd, // TODO: Deprecate
 
 .drag-and-drop-error-info {
   font-weight: $font-weight-normal;
-  color: $text-gray;
+  color: var(--color-text-secondary);
 
   a {
-    color: $text-blue;
+    color: var(--color-text-link);
   }
 }
 
@@ -231,22 +229,21 @@ dl.form-group > dd, // TODO: Deprecate
   textarea {
     display: block;
     // stylelint-disable-next-line primer/borders
-    border-bottom: $border-width dashed lighten($gray-300, 5%);
+    border-bottom: $border-width dashed var(--color-upload-enabled-border);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   &.focused {
     border-radius: $border-radius;
-    box-shadow: $form-control-shadow, $btn-input-focus-shadow;
+    box-shadow: var(--color-input-shadow), var(--color-state-focus-shadow);
 
     .form-control {
       box-shadow: none;
     }
 
     .drag-and-drop {
-      // stylelint-disable-next-line primer/borders
-      border-color: lighten($blue-400, 8%);
+      border-color: var(--color-upload-enabled-border-focused);
     }
   }
 }
@@ -272,8 +269,7 @@ dl.form-group > dd, // TODO: Deprecate
   }
 
   .comment {
-    // stylelint-disable-next-line primer/borders
-    border: $border-width $border-style darken($gray-300, 5%);
+    border: $border-width $border-style var(--color-previewable-comment-form-border);
   }
 
   .comment-form-error { margin-bottom: $spacer-2; }
@@ -334,23 +330,23 @@ h2.account {
   // stylelint-disable-next-line primer/typography
   font-size: 18px;
   font-weight: $font-weight-normal;
-  color: $text-gray;
+  color: var(--color-text-secondary);
 }
 
 p.explain {
   position: relative;
   font-size: $font-size-small;
-  color: $text-gray;
+  color: var(--color-text-secondary);
 
   strong {
-    color: $text-gray-dark;
+    color: var(--color-text-primary);
   }
 
   .octicon {
     // stylelint-disable-next-line primer/spacing
     margin-right: 5px;
     // stylelint-disable-next-line primer/colors
-    color: $gray-400;
+    color: var(--color-icon-tertiary);
   }
 
   .minibutton {
