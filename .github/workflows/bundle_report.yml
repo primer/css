@@ -21,3 +21,6 @@ jobs:
 
       - name: Reporting bundle sizes
         run: script/bundle-size-report.js --all
+
+      - name: Reporting selector diffs
+        run: script/selector-diff-report

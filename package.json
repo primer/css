@@ -31,7 +31,8 @@
     "dev": "cd docs && npm install && npm run develop",
     "start-storybook": "start-storybook -p 8001",
     "build-storybook": "build-storybook -o .storybuild",
-    "test": "npm-run-all -s test-urls",
+    "test": "npm-run-all -s test-urls test-deprecations",
+    "test-deprecations": "script/test-deprecations.js",
     "test-urls": "script/test-doc-urls.js",
     "release": "changeset publish"
   },
