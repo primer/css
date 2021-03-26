@@ -37,13 +37,16 @@
     "build-storybook": "build-storybook -o .storybuild",
     "test": "npm-run-all -s test-urls test-migrate",
     "test-urls": "script/test-doc-urls.js",
-    "test-migrate": "script/test-migrate"
+    "test-migrate": "script/test-migrate",
+    "release": "changeset publish"
   },
   "dependencies": {
     "@primer/octicons": "^9.1.1",
     "@primer/primitives": "^4.0.1"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.3.0",
+    "@changesets/cli": "^2.14.1",
     "@octokit/rest": "^16.34.0",
     "@storybook/addon-viewport": "5.3.18",
     "@storybook/react": "5.3.18",
@@ -71,9 +74,7 @@
     "postcss-scss": "2.1.1",
     "postcss-value-parser": "^4.1.0",
     "prop-types": "^15.6.2",
-    "semantic-release": "^15.13.27",
     "semver": "5.7.1",
-    "stream-buffers": "^3.0.2",
     "style-loader": "^0.18.2",
     "styled-components": "4.1.2",
     "stylelint": "^10.1.0",
