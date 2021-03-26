@@ -23,41 +23,37 @@ jobs:
         with:
           node-version: 12.x
 
-      # - name: Install dependencies
-      #   run: yarn
+      - name: Install dependencies
+        run: yarn
 
-      # - name: Create .npmrc
-      #   run: |
-      #     cat << EOF > "$HOME/.npmrc"
-      #       //registry.npmjs.org/:_authToken=$NPM_TOKEN
-      #     EOF
-      #   env:
-      #     NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
+      - name: Create .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
 
-      # - name: Publish canary version
-      #   run: |
-      #     echo "$( jq '.version = "0.0.0"' package.json )" > package.json
-      #     echo -e "---\n'@primer/css': patch\n---\n\nFake entry to force publishing" > .changeset/force-snapshot-release.md
-      #     yarn changeset version --snapshot
-      #     yarn changeset publish --tag canary
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish canary version
+        run: |
+          echo "$( jq '.version = "0.0.0"' package.json )" > package.json
+          echo -e "---\n'@primer/css': patch\n---\n\nFake entry to force publishing" > .changeset/force-snapshot-release.md
+          yarn changeset version --snapshot
+          yarn changeset publish --tag canary
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # - name: Output canary version number
-      #   run: |
-      #     name=$(jq -r .name package.json)
-      #     version=$(jq -r .version package.json)
-
-
-      - uses: actions/github-script@v3
+      - name: Output canary version number
+        uses: actions/github-script@v3
         with:
           script: |
+            const package = require('./package.json')
             github.repos.createCommitStatus({
               owner: context.repo.owner,
               repo: context.repo.repo,
               sha: context.sha,
               state: 'success',
-              context: 'Release / foo',
-              description: 'my description',
-              target_url: 'http://twitter.com/'
+              context: `Published ${package.name}`,
+              description: package.version,
+              target_url: `https://unpkg.com/${package.name}@${package.version}/`
             })
