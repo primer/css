@@ -224,7 +224,7 @@ When using the `octicon-x` icon for a close button, add `.close-button` to remov
 
 ## Button with counts
 
-You can easily append a count to a **small button**. Add the `.with-count` class to the `.btn-sm` and then add the `.social-count` after the button.
+You can easily append a count to a **small button**. Add the `.btn-with-count` class to the `.btn-sm` and then add the `.social-count` after the button.
 
 **Be sure to clear the float added by the additional class.**
 
