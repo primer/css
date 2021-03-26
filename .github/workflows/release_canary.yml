@@ -59,11 +59,11 @@ jobs:
               check_name: "Canary"
             });
 
-            console.log(check_runs.data.check_runs)
+            console.log(check_runs.data.check_runs.first.id)
             github.checks.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              check_run_id: check_run_id,
+              check_run_id: check_runs.data.check_runs.first.id,
               name: "HI",
               title: "HELO"
             })
