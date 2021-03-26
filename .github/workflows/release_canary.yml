@@ -64,6 +64,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               check_run_id: check_runs.data.check_runs[0].id,
-              name: "HI",
-              title: "HELO"
+              title: "HELO",
+              summary: "HI",
+              text: "EBB"
             })
