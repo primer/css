@@ -55,8 +55,8 @@ jobs:
         with:
           script: |
             github.checks.update({
-              owner: context.repository.owner,
-              repo: context.repository.name,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               check_run_id: context.runId,
               summary: "HI"
             })
