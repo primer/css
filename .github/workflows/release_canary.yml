@@ -54,4 +54,9 @@ jobs:
       - uses: actions/github-script@v3
         with:
           script: |
-            console.log(context)
+            github.checks.update({
+              owner: context.repository.owner,
+              repo: context.repository.name,
+              check_run_id: context.runId,
+              summary: "HI"
+            })
