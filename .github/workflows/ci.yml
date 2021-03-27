@@ -23,7 +23,7 @@ jobs:
           node-version: 12
       - run: yarn
       - name: Lint workflow files
-        run: eslint script deprecations.js lib .storybook docs
+        run: yarn eslint
 
   test:
     runs-on: ubuntu-latest
