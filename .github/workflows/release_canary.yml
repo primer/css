@@ -1,0 +1,69 @@
+name: Release
+on:
+  push:
+    branches-ignore:
+      - 'main'
+      - 'changeset-release/main'
+    # Don't release canary when these paths change
+    # It's not necessary because we don't ship them and it creates noise
+    paths-ignore:
+      - '.changeset/**'
+      - '.github/**'
+      - '.storybook/**'
+      - 'docs/**'
+      - 'lib/**'
+      - 'script/**'
+      - 'static/**'
+
+jobs:
+  release-canary:
+    if: ${{ github.repository == 'primer/css' }}
+
+    name: Canary
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+        with:
+          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: 12.x
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Create .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
+
+      - name: Publish canary version
+        run: |
+          echo "$( jq '.version = "0.0.0"' package.json )" > package.json
+          echo -e "---\n'@primer/css': patch\n---\n\nFake entry to force publishing" > .changeset/force-snapshot-release.md
+          yarn changeset version --snapshot
+          yarn changeset publish --tag canary
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Output canary version number
+        uses: actions/github-script@v3
+        with:
+          script: |
+            const package = require(`${process.env.GITHUB_WORKSPACE}/package.json`)
+            github.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.sha,
+              state: 'success',
+              context: `Published ${package.name}`,
+              description: package.version,
+              target_url: `https://unpkg.com/${package.name}@${package.version}/`
+            })

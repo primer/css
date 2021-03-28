@@ -5,7 +5,9 @@ on:
       - main
 jobs:
   release:
-    name: Release
+    if: ${{ github.repository == 'primer/css' }}
+
+    name: Final
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
