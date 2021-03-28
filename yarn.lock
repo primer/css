@@ -1459,7 +1459,7 @@
 
 "@github/prettier-config@0.0.4":
   version "0.0.4"
-  resolved "https://npm.pkg.github.com/download/@github/prettier-config/0.0.4/69d843b9d8cba082ce7977ef0fe3367716462384a6857e7e9ef6b40d5868d98b#cbfddb36a7f29a81c5af155dc5827e95b23b9ccd"
+  resolved "https://registry.yarnpkg.com/@github/prettier-config/-/prettier-config-0.0.4.tgz#cbfddb36a7f29a81c5af155dc5827e95b23b9ccd"
   integrity sha512-ZOJ+U771Mw68qp2GPbcqPt2Xg0LEl0YwiIFHXwVLAFm2TgDnsgcCHhXO8PIxOWPqSFO4S7xIMD9CBobfaWGASA==
 
 "@manypkg/find-root@^1.1.0":
