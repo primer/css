@@ -9,7 +9,6 @@
   "sass": "index.scss",
   "main": "dist/primer.js",
   "repository": "https://github.com/primer/css",
-  "prettier": "@github/prettier-config",
   "bugs": {
     "url": "https://github.com/primer/css/issues"
   },
