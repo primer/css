@@ -29,7 +29,7 @@
     "dev": "cd docs && npm install && npm run develop",
     "start-storybook": "start-storybook -p 8001",
     "build-storybook": "build-storybook -o .storybuild",
-    "test": "npm-run-all -s test-urls test-deprecations",
+    "test": "jest",
     "test-deprecations": "script/test-deprecations.js",
     "test-urls": "script/test-doc-urls.js",
     "release": "changeset publish"
@@ -59,6 +59,7 @@
     "fs-extra": "^4.0.2",
     "gh-pages": "^1.0.0",
     "globby": "^6.1.0",
+    "jest": "26.6.3",
     "klaw": "3.0.0",
     "minimist": "1.2.3",
     "node-fetch": "2.4.0",
