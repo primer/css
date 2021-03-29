@@ -7,8 +7,6 @@ on:
     # Don't release when these paths change
     # It's not necessary because we don't ship them and it creates noise
     paths-ignore:
-      - '.changeset/**'
-      - '.github/**'
       - '.storybook/**'
       - 'docs/**'
       - 'lib/**'
