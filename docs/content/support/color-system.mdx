@@ -16,6 +16,14 @@ import {PaletteTable, PaletteCell, ColorModeTable, CSSModeVars, overlayColor} fr
   Please note Primer v16 has changed the naming of these color classes. Check the <a href="/css/support/v16-migration">migration guide</a> to make sure your app is up to date.
 </Note>
 
+Sarting in v16, Primer CSS uses CSS variables for all colors. When using CSS variables like `--color-text-secondary` make sure to wrap them with [`var()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties):
+
+```css
+.my-class {
+  color: var(--color-text-secondary);
+}
+```
+
 ## Functional variables
 
 The Primer color system contains multiple color modes; currently, Primer ships with a light mode and a dark mode. Each color mode comes with a set of CSS variables that can be used to style elements based on the functionality of the element. These should be used instead of specifying colors directly so that the colors adapt correctly when switching between color modes.
