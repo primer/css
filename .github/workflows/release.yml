@@ -48,6 +48,7 @@ jobs:
       - name: Publish release candidate
         if: steps.changesets.outputs.published != 'true'
         run: |
+          version=$(jq -r .version package.json)
           echo "$( jq ".version = \"$(echo $version)-rc.$(echo $GITHUB_SHA)\"" package.json )" > package.json
           yarn publish -tag next
         env:
