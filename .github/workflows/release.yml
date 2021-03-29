@@ -2,7 +2,8 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - 'main'
+      - '!dependabot/**'
 jobs:
   release:
     if: ${{ github.repository == 'primer/css' }}
@@ -32,5 +33,5 @@ jobs:
           # This expects you to have a script called release which does a build for your packages and calls changeset publish
           publish: yarn release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GPR_AUTH_TOKEN_SHARED }}
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}

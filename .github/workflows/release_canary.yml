@@ -4,6 +4,7 @@ on:
     branches-ignore:
       - 'main'
       - 'changeset-release/main'
+      - 'dependabot/**'
     # Don't release canary when these paths change
     # It's not necessary because we don't ship them and it creates noise
     paths-ignore:
@@ -14,6 +15,8 @@ on:
       - 'lib/**'
       - 'script/**'
       - 'static/**'
+      - 'next.config.js'
+      - 'now.json'
 
 jobs:
   release-canary:
