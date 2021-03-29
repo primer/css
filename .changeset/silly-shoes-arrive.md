@@ -2,4 +2,4 @@
 '@primer/css': patch
 ---
 
-Fixing workflow for rc publishing
+revert Fixing workflow for rc publishing

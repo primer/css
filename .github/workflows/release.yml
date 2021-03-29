@@ -4,17 +4,6 @@ on:
     branches:
       - 'main'
       - '!dependabot/**'
-    # Don't release when these paths change
-    # It's not necessary because we don't ship them and it creates noise
-    paths-ignore:
-      - '.storybook/**'
-      - 'docs/**'
-      - 'lib/**'
-      - 'script/**'
-      - 'static/**'
-      - 'next.config.js'
-      - 'now.json'
-
 jobs:
   release:
     if: ${{ github.repository == 'primer/css' }}
@@ -46,37 +35,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
-
-      - name: Create .npmrc
-        if: steps.changesets.outputs.published == 'false'
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
-
-      - name: Publish release candidate
-        if: steps.changesets.outputs.published == 'false'
-        run: |
-          version=$(jq -r .version package.json)
-          echo "$( jq ".version = \"$(echo $version)-rc.$(echo $GITHUB_SHA)\"" package.json )" > package.json
-          yarn publish --tag next
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Output release candidate number
-        if: steps.changesets.outputs.published == 'false'
-        uses: actions/github-script@v3
-        with:
-          script: |
-            const package = require(`${process.env.GITHUB_WORKSPACE}/package.json`)
-            github.repos.createCommitStatus({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              sha: context.sha,
-              state: 'success',
-              context: `Published ${package.name}`,
-              description: package.version,
-              target_url: `https://unpkg.com/${package.name}@${package.version}/`
-            })
