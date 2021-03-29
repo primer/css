@@ -11,7 +11,8 @@
   background-color: var(--color-mktg-btn-bg);
   border: $border-width $border-style var(--color-mktg-btn-border);
   border-radius: $border-radius;
-  transition: $transition-time / 2;
+  transition-duration: $transition-time / 2;
+  transition-property: background-color, border-color, box-shadow;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   &:hover {
