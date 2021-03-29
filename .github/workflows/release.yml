@@ -2,7 +2,9 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - 'main'
+    branches-ignore:
+      - 'dependabot/**'
 jobs:
   release:
     if: ${{ github.repository == 'primer/css' }}
