@@ -1,5 +1,23 @@
 # @primer/css
 
+## 16.1.0
+
+### Minor Changes
+
+- [#1254](https://github.com/primer/css/pull/1254) [`5d2f0beb`](https://github.com/primer/css/commit/5d2f0beb58b6fab795d5b720e9a14da2f649265c) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Add common marketing utilities to primer/marketing
+
+* [#1201](https://github.com/primer/css/pull/1201) [`29a83bdc`](https://github.com/primer/css/commit/29a83bdcfdc3d647932bfe97c9b3f24f91688280) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Change TableObject status to deprecated
+
+### Patch Changes
+
+- [#1197](https://github.com/primer/css/pull/1197) [`a355160a`](https://github.com/primer/css/commit/a355160a30654327f9e51bf677f9b069a46e95a1) Thanks [@neildaniels](https://github.com/neildaniels)! - Fix .btn-with-count documentation
+
+* [#1274](https://github.com/primer/css/pull/1274) [`322379fe`](https://github.com/primer/css/commit/322379fe273c53c94190177b62dd5deed10beb32) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing buttons: don't animate everything
+
+- [#1272](https://github.com/primer/css/pull/1272) [`88bcd1bf`](https://github.com/primer/css/commit/88bcd1bfd0258c416addf4c943dfbde593a11b7f) Thanks [@simurai](https://github.com/simurai)! - Update `Counter--secondary` bg
+
+* [#1261](https://github.com/primer/css/pull/1261) [`b1346678`](https://github.com/primer/css/commit/b1346678f4119f384ac49b0c63c355f56968071a) Thanks [@jonrohan](https://github.com/jonrohan)! - Fixing the `color-mode-theme` mixin. Currently the mixin doesn't take into account when `mode="light"` and `light-theme="dark"`. This fix allows dark themes to be set as light themes and to toggle into single light mode.
+
 ## 16.0.2
 
 ### Patch Changes
