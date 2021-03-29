@@ -1,5 +1,5 @@
 ---
-title: Primer v16 Migration Guide
+title: Primer v16 migration guide
 description: 'Guide for migrating to version 16.0.0 of Primer'
 ---
 
@@ -7,32 +7,30 @@ Primer v16.0.0 introduces the idea of _color modes_ and _functional variables_. 
 
 Because colors differ in each color mode, it doesn't make sense to try to make an element a specific color; instead, Primer now applies colors based on the function of an element using functional variables. As a result, the Sass color variables that existed in Primer prior to version 16.0.0 have been replaced with functional CSS variables. These variables have different values depending on the current color mode. For a list of the new functional CSS color variables, see [the color system page](/support/color-system). The color utility classes have also been updated to match; see [the color utilities page](/utilities/colors) for more information.
 
-## Migration guide
+## Components
 
-### Components
+Most components don't need to be updated and should work without making changes. However some components that use presentational class names now use functional class names.
 
-Most components don't need to be updated and should work without making changes. But some of the componets that use presentational class names now use functional class names.
-
-#### Buttons
+### Buttons
 
 | `v15`       | `v16` |
 | ----------- | ----- |
 | `.btn-blue` | n/a   |
 
-#### Counters
+### Counters
 
 | [`v15`](https://primer.style/css/components/labels#counters) | `v16`                 |
 | ------------------------------------------------------------ | --------------------- |
 | `.Counter--gray`                                             | `.Counter--primary`   |
 | `.Counter--gray-light`                                       | `.Counter--secondary` |
 
-#### Dropdwon
+### Dropdwon
 
 | [`v15`](https://primer.style/css/components/dropdown#dark) | `v16` |
 | ---------------------------------------------------------- | ----- |
 | `.dropdown-menu-dark`                                      | n/a   |
 
-#### Labels
+### Labels
 
 | [`v15`](https://primer.style/css/components/labels) | `v16`               |
 | --------------------------------------------------- | ------------------- |
@@ -46,7 +44,7 @@ Most components don't need to be updated and should work without making changes.
 | `.Label--purple`                                    | n/a                 |
 | `.Label--pink`                                      | n/a                 |
 
-#### States
+### States
 
 | [`v15`](https://primer.style/css/components/labels#states) | `v16`            |
 | ---------------------------------------------------------- | ---------------- |
@@ -55,11 +53,11 @@ Most components don't need to be updated and should work without making changes.
 | `.State--purple`                                           | `.State--merged` |
 | `.State--red`                                              | `.State--closed` |
 
-### Utility classes
+## Utility classes
 
-See [the color utility classes page](/utilities/colors) for a list of all the functional color utility classes.
+See [color utility classes](/utilities/colors) for a list of all the functional color utility classes.
 
-#### Text
+### Text
 
 | [`v15`](https://primer.style/css/utilities/colors#text-color-utilities) | `v16`                   |
 | ----------------------------------------------------------------------- | ----------------------- |
@@ -78,7 +76,7 @@ See [the color utility classes page](/utilities/colors) for a list of all the fu
 | `.text-purple`                                                          | n/a                     |
 | `.text-pink`                                                            | n/a                     |
 
-#### Icon
+### Icon
 
 | `v15` | `v16`                   |
 | ----- | ----------------------- |
@@ -90,7 +88,7 @@ See [the color utility classes page](/utilities/colors) for a list of all the fu
 | n/a   | `.color-icon-warning`   |
 | n/a   | `.color-icon-danger`    |
 
-#### Border
+### Border
 
 | [`v15`](https://primer.style/css/utilities/borders#border-color-utilities) | `v16`                     |
 | -------------------------------------------------------------------------- | ------------------------- |
@@ -115,7 +113,7 @@ See [the color utility classes page](/utilities/colors) for a list of all the fu
 | `.border-white-fade-70`                                                    | n/a                       |
 | `.border-white-fade-85`                                                    | n/a                       |
 
-#### Background
+### Background
 
 | [`v15`](https://primer.style/css/utilities/colors#background-utilities) | `v16`                       |
 | ----------------------------------------------------------------------- | --------------------------- |
@@ -140,7 +138,7 @@ See [the color utility classes page](/utilities/colors) for a list of all the fu
 | `.bg-orange`                                                            | n/a                         |
 | `.bg-pink`                                                              | n/a                         |
 
-#### Shadow
+### Shadow
 
 | `v15`                     | `v16`                       |
 | ------------------------- | --------------------------- |
@@ -149,7 +147,7 @@ See [the color utility classes page](/utilities/colors) for a list of all the fu
 | `.box-shadow-large`       | `.color-shadow-large`       |
 | `.box-shadow-extra-large` | `.color-shadow-extra-large` |
 
-#### Link
+### Link
 
 The `link` utilities are part of the `Link` component.
 
@@ -161,7 +159,7 @@ The `link` utilities are part of the `Link` component.
 | `.link-hover-blue`                                              | `.Link--onHover`   |
 | n/a                                                             | `.Link`            |
 
-### Mixins
+## Mixins
 
 | `v15`           | `v16` |
 | --------------- | ----- |
@@ -169,11 +167,11 @@ The `link` utilities are part of the `Link` component.
 | `btn-inverse()` | n/a   |
 | `btn-outline()` | n/a   |
 
-### Variables
+## Variables
 
-See [the color system page](/support/color-system) for a list of all the functional CSS variables.
+See [color system](/support/color-system) for a list of all the functional CSS variables.
 
-#### Text
+### Text
 
 | `v15`                                | `v16`                           |
 | ------------------------------------ | ------------------------------- |
@@ -194,7 +192,7 @@ See [the color system page](/support/color-system) for a list of all the functio
 | `$text-purple` (`$purple-500`)       | n/a                             |
 | `$text-pink` (`$pink-500`)           | n/a                             |
 
-#### Icon
+### Icon
 
 | `v15` | `v16`                         |
 | ----- | ----------------------------- |
@@ -206,7 +204,7 @@ See [the color system page](/support/color-system) for a list of all the functio
 | n/a   | `var(--color-icon-success)`   |
 | n/a   | `var(--color-icon-warning)`   |
 
-#### Border
+### Border
 
 | `v15`                                                 | `v16`                           |
 | ----------------------------------------------------- | ------------------------------- |
@@ -228,7 +226,7 @@ See [the color system page](/support/color-system) for a list of all the functio
 | `$border-white-fade` (`$white-fade-15`)               | n/a                             |
 | `$border-green-light` (`desaturate($green-300, 40%)`) | n/a                             |
 
-#### Background
+### Background
 
 | `v15`                               | `v16`                             |
 | ----------------------------------- | --------------------------------- |
@@ -255,7 +253,7 @@ See [the color system page](/support/color-system) for a list of all the functio
 | `$bg-pink` (`$pink-500`)            | n/a                               |
 | `$bg-yellow-dark` (`$yellow-700`)   | n/a                               |
 
-#### Shadow
+### Shadow
 
 | `v15`                     | `v16`                             |
 | ------------------------- | --------------------------------- |
@@ -267,7 +265,7 @@ See [the color system page](/support/color-system) for a list of all the functio
 | `$box-shadow-inset`       | `var(--color-shadow-inset)`       |
 | `$box-shadow-focus`       | `var(--color-state-focus-shadow)` |
 
-### Color System
+## Color system
 
 | `v15`       | `v16`                       |
 | ----------- | --------------------------- |
@@ -281,7 +279,7 @@ See [the color system page](/support/color-system) for a list of all the functio
 | `$pink-800` | `var(--color-scale-pink-8)` |
 | `$pink-900` | `var(--color-scale-pink-9)` |
 
-### Auto colors
+## Auto colors
 
 | `v15` | `v16`                      |
 | ----- | -------------------------- |
@@ -295,15 +293,15 @@ See [the color system page](/support/color-system) for a list of all the functio
 | n/a   | `var(--color-auto-pink-8)` |
 | n/a   | `var(--color-auto-pink-9)` |
 
-Note: The `auto` colors automatically inverse based on the color mode. Example:
+Note: The `auto` colors automatically invert based on the color mode. Example:
 
 | Variable                   | In `light` mode | In `dark` mode |
 | -------------------------- | --------------- | -------------- |
 | `var(--color-auto-gray-0)` | light gray      | dark gray      |
 | `var(--color-auto-gray-9)` | dark gray       | light gray     |
 
-It doesn't always work perfectly, therefore functional variables should be used as much as possible. But in some cases auto colors can still be handy.
+This doesn't work perfectly all the time, so you should use functional variables as much as possible. But in some cases auto colors can still be handy.
 
-### Misc
+## Misc
 
-There are a few more selectors and variables that got removed. Please refer to [deprecations.js](https://github.com/primer/css/blob/master/deprecations.js) for a complete list.
+A few more selectors and variables were removed. Please refer to [deprecations.js](https://github.com/primer/css/blob/master/deprecations.js) for a complete list.

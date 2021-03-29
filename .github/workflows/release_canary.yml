@@ -4,6 +4,7 @@ on:
     branches-ignore:
       - 'main'
       - 'changeset-release/main'
+      - 'dependabot/**'
     # Don't release canary when these paths change
     # It's not necessary because we don't ship them and it creates noise
     paths-ignore:
