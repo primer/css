@@ -1,5 +1,11 @@
 # @primer/css
 
+## 16.1.1
+
+### Patch Changes
+
+- [#1278](https://github.com/primer/css/pull/1278) [`fa4a7c71`](https://github.com/primer/css/commit/fa4a7c714c2666cd339dbf4c77b684e67030af60) Thanks [@jonrohan](https://github.com/jonrohan)! - revert Fixing workflow for rc publishing
+
 ## 16.1.0
 
 ### Minor Changes
