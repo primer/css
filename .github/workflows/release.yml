@@ -54,7 +54,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Output canary version number
+      - name: Output release candidate number
         if: steps.changesets.outputs.published != 'true'
         uses: actions/github-script@v3
         with:
