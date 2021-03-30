@@ -31,7 +31,6 @@
     "build-storybook": "build-storybook -o .storybuild",
     "test": "jest",
     "test-deprecations": "script/test-deprecations.js",
-    "test-urls": "script/test-doc-urls.js",
     "release": "changeset publish"
   },
   "dependencies": {
