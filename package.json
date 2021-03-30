@@ -55,6 +55,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.1",
     "filesize": "4.1.2",
+    "front-matter": "4.0.2",
     "fs-extra": "^4.0.2",
     "gh-pages": "^1.0.0",
     "globby": "^6.1.0",
@@ -84,6 +85,10 @@
     "unist-util-stringify-position": "^2.0.1"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/utils/"
+    ]
   }
 }

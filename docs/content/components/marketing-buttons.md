@@ -1,5 +1,5 @@
 ---
-title: Marketing Buttons
+title: Marketing buttons
 path: components/marketing-buttons
 status: New
 source: 'https://github.com/primer/css/tree/main/src/marketing/buttons'

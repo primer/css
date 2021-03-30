@@ -1,5 +1,5 @@
 ---
-title: Table object (deprecated)
+title: Table object
 path: objects/table-object
 status: Deprecated
 source: 'https://github.com/primer/css/tree/main/src/table-object'

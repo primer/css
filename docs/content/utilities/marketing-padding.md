@@ -1,5 +1,5 @@
 ---
-title: Marketing Padding
+title: Marketing padding
 sort_title: Padding Marketing
 path: utilities/marketing-padding
 status: Stable

@@ -1,5 +1,5 @@
 ---
-title: Marketing Typography
+title: Marketing typography
 path: utilities/marketing-type
 status: New
 source: 'https://github.com/primer/css/tree/main/src/marketing/type'
