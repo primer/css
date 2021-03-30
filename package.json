@@ -59,6 +59,7 @@
     "gh-pages": "^1.0.0",
     "globby": "^6.1.0",
     "jest": "26.6.3",
+    "js-yaml": "4.0.0",
     "minimist": "1.2.3",
     "node-fetch": "2.6.1",
     "postcss": "7.0.32",
