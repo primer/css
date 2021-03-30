@@ -6,17 +6,19 @@ source: 'https://github.com/github/github/blob/main/app/assets/stylesheets/compo
 symbols: [active, close-button, css-truncate-target, description, description-inline, description-warning, disabled, filterable-empty, has-error, hidden-select-button-text, icon-only, indeterminate, is-loading, is-showing-new-item-form, label-select-menu, last-visible, menu-active, modal-backdrop, navigation-focus, octicon, octicon-check, octicon-dash, octicon-octoface, octicon-x, opaque, primary, select-menu, select-menu-action, select-menu-blankslate, select-menu-button, select-menu-button-gravatar, select-menu-button-large, select-menu-clear-item, select-menu-divider, select-menu-error, select-menu-filters, select-menu-header, select-menu-item, select-menu-item-gravatar, select-menu-item-heading, select-menu-item-icon, select-menu-item-parent, select-menu-item-template, select-menu-item-text, select-menu-list, select-menu-loading-overlay, select-menu-modal, select-menu-modal-holder, select-menu-modal-narrow, select-menu-modal-right, select-menu-new-item-form, select-menu-no-results, select-menu-tab, select-menu-tab-bucket, select-menu-tab-nav, select-menu-tabs, select-menu-text-filter, select-menu-title, selected, spinner]
 ---
 
-> Note: The `.select-menu` component is **deprecated**. Use the [`.SelectMenu`](select-menu) instead.
+<Note>
+  Please note that the `.select-menu` component is **deprecated**. Use the [`.SelectMenu`](select-menu) instead.
+</Note>
 
 ## Migration guide
 
-Here a few tips how to migrate an existing `.select-menu` to `.SelectMenu`.
+Here are a few tips on how to migrate an existing `.select-menu` to `.SelectMenu`.
 
 1. Use a `<details>` element to toggle the Select Menu.
 2. Use a [`<details-menu>`](https://github.com/github/details-menu-element) element to add JS behaviour. The older `.js-select-menu` is not compatible.
 3. In case custom styling is needed, use [utility classes](https://primer.style/css/utilities) if possible.
 
-Below a comparison between class names:
+Below is a comparison between class names:
 
 `.select-menu` | `.SelectMenu`
 --- | ---
@@ -422,7 +424,7 @@ Show a filter and tabs in a single select menu.
 
 ### Blankslate
 
-Sometimes a select menu needs to communicate a "blank slate" where there's no content in the menu's list. Usually these include a clear call to action to add said content to the list. Swap out the contents of a `.select-menu-list` with the `.select-menu-blankslate` and customize it's contents as needed.
+Sometimes a select menu needs to communicate a "blank slate" where there's no content in the menu's list. Usually these include a clear call to action to add said content to the list. Swap out the contents of a `.select-menu-list` with the `.select-menu-blankslate` and customize its contents as needed.
 
 ```erb
 <div class="select-menu js-menu-container js-select-menu">
@@ -790,9 +792,9 @@ Open the select menu below and click different options to see it in action.
 
 ### Emphasized text
 
-Sometimes you want to spice up your select menu with an emphasized label for the type of content within the menu. For example, you show `Branch:` in front of the current branch on our repository Code page. Within the button, wrap your string in an `<i>` element and you're good to go.
+You may want to include an emphasized label in the select menu. For example, you may want to include the word `Branch:` in front of the current branch on a repository **Code** page. To do this, within the button, wrap the string in an `<i>` element.
 
-As shown below, emphasized text works great with the stateful text functionality mentioned above.
+As shown below, emphasized text works well with the stateful text functionality mentioned above.
 
 ```erb
 <div class="select-menu js-menu-container js-select-menu">
@@ -827,7 +829,7 @@ As shown below, emphasized text works great with the stateful text functionality
 
 ### Button avatars
 
-Add an avatar to the button, like we do in our context switcher on the logged in dashboard.
+Add an avatar to the button, like, for example, in the context switcher in the signed in dashboard.
 
 ```erb
 <div class="select-menu js-menu-container js-select-menu">
