@@ -85,5 +85,8 @@
     "unified": "^7.1.0",
     "unist-util-select": "^2.0.2",
     "unist-util-stringify-position": "^2.0.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
