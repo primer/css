@@ -29,12 +29,14 @@
 @mixin color-mode($mode) {
   @if $mode == light {
     :root,
-    [data-color-mode="#{$mode}"][data-#{$mode}-theme*="#{$mode}"] {
+    [data-color-mode="dark"][data-dark-theme*="#{$mode}"],
+    [data-color-mode="light"][data-light-theme*="#{$mode}"] {
       @content;
     }
   }
   @else {
-    [data-color-mode="#{$mode}"][data-#{$mode}-theme*="#{$mode}"] {
+    [data-color-mode="dark"][data-dark-theme*="#{$mode}"],
+    [data-color-mode="light"][data-light-theme*="#{$mode}"] {
       @content;
     }
   }
