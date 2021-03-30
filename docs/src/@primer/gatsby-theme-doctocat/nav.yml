@@ -111,8 +111,6 @@
       url: /components/progress
     - title: Select menu
       url: /components/select-menu
-    - title: Select menu (deprecated)
-      url: /components/select-menu-deprecated
     - title: Subhead
       url: /components/subhead
     - title: Timeline
