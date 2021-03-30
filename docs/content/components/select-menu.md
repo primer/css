@@ -5,6 +5,10 @@ source: 'https://github.com/primer/css/tree/main/src/select-menu'
 bundle: select-menu
 ---
 
+<Note>
+  Please note that the `.select-menu` component is deprecated and `.SelectMenu` should be used instead. Check the <a href="/css/components/select-menu-deprecated">migration guide</a> to make sure your app is up to date.
+</Note>
+
 The `SelectMenu` component provides advanced support for navigation, filtering, and more. Any menu can make use of JavaScript-enabled live filtering, selected states, tabbed lists, and keyboard navigation with a bit of markup.
 
 ## Basic example

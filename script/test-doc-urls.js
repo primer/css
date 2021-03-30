@@ -26,6 +26,7 @@ const removed = red('removed')
  * to understand how this works.)
  */
 const exceptions = {
+  '/components/boxed-groups': moved('/components/box'),
   '/components/octicons': redirect('https://octicons.github.com'),
   '/components/page-headers': deprecated,
   '/components/page-sections': deprecated,
@@ -40,6 +41,7 @@ const exceptions = {
   '/packages/primer-product': removed,
   '/principles/HTML': moved('/principles/html'),
   '/principles/SCSS': moved('/principles/scss'),
+  '/utilities/marketing-borders': moved('/utilities/borders'),
   '/tools/sketch-templates': removed,
   '/whats_new': redirect('https://github.com/primer/primer/releases'),
   '/whats_new/changelog': removed,
