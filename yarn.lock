@@ -3267,11 +3267,6 @@ array-differ@^1.0.0:
   resolved "https://registry.npmjs.org/array-differ/-/array-differ-1.0.0.tgz"
   integrity sha1-7/UuN1gknTO+QCuLuOVkuytdQDE=
 
-array-filter@~0.0.0:
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/array-filter/-/array-filter-0.0.1.tgz"
-  integrity sha1-fajPLiZijtcygDWB/SH2fKzS7uw=
-
 array-find-index@^1.0.1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/array-find-index/-/array-find-index-1.0.2.tgz"
@@ -3300,16 +3295,6 @@ array-includes@^3.1.1, array-includes@^3.1.2, array-includes@^3.1.3:
     es-abstract "^1.18.0-next.2"
     get-intrinsic "^1.1.1"
     is-string "^1.0.5"
-
-array-map@~0.0.0:
-  version "0.0.0"
-  resolved "https://registry.npmjs.org/array-map/-/array-map-0.0.0.tgz"
-  integrity sha1-iKK6tz0c97zVwbEYoAP2b2ZfpmI=
-
-array-reduce@~0.0.0:
-  version "0.0.0"
-  resolved "https://registry.npmjs.org/array-reduce/-/array-reduce-0.0.0.tgz"
-  integrity sha1-FziZ0//Rx9k4PkR5Ul2+J4yrXys=
 
 array-union@^1.0.1, array-union@^1.0.2:
   version "1.0.2"
@@ -4942,7 +4927,7 @@ create-react-context@0.3.0, create-react-context@^0.3.0:
     gud "^1.0.0"
     warning "^4.0.3"
 
-cross-spawn@6.0.5, cross-spawn@^6.0.0, cross-spawn@^6.0.5:
+cross-spawn@6.0.5, cross-spawn@^6.0.0:
   version "6.0.5"
   resolved "https://registry.npmjs.org/cross-spawn/-/cross-spawn-6.0.5.tgz"
   integrity sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==
@@ -8979,11 +8964,6 @@ jsonfilter@^1.1.2:
     stream-combiner "^0.2.1"
     through2 "^0.6.3"
 
-jsonify@~0.0.0:
-  version "0.0.0"
-  resolved "https://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz"
-  integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
-
 jsonparse@0.0.5:
   version "0.0.5"
   resolved "https://registry.npmjs.org/jsonparse/-/jsonparse-0.0.5.tgz"
@@ -9037,13 +9017,6 @@ kind-of@^6.0.0, kind-of@^6.0.2, kind-of@^6.0.3:
   version "6.0.3"
   resolved "https://registry.npmjs.org/kind-of/-/kind-of-6.0.3.tgz"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
-
-klaw@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/klaw/-/klaw-3.0.0.tgz"
-  integrity sha512-0Fo5oir+O9jnXu5EefYbVK+mHMBeEVEy2cmctR1O1NECcCkPRreJKrS6Qt/j3KC2C148Dfo9i3pCmCMsdqGr0g==
-  dependencies:
-    graceful-fs "^4.1.9"
 
 klaw@^1.0.0:
   version "1.3.1"
@@ -9492,11 +9465,6 @@ memory-fs@^0.5.0:
   dependencies:
     errno "^0.1.3"
     readable-stream "^2.0.1"
-
-memorystream@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.npmjs.org/memorystream/-/memorystream-0.3.1.tgz"
-  integrity sha1-htcJCzDORV1j+64S3aUaR93K+bI=
 
 meow@^3.7.0:
   version "3.7.0"
@@ -10093,21 +10061,6 @@ not@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/not/-/not-0.1.0.tgz"
   integrity sha1-yWkcF0bFXc++VMvYvU/wQbwrUZ0=
-
-npm-run-all@4.1.5:
-  version "4.1.5"
-  resolved "https://registry.npmjs.org/npm-run-all/-/npm-run-all-4.1.5.tgz"
-  integrity sha512-Oo82gJDAVcaMdi3nuoKFavkIHBRVqQ1qvMb+9LHk/cF4P6B2m8aP04hGf7oL6wZ9BuGwX1onlLhpuoofSyoQDQ==
-  dependencies:
-    ansi-styles "^3.2.1"
-    chalk "^2.4.1"
-    cross-spawn "^6.0.5"
-    memorystream "^0.3.1"
-    minimatch "^3.0.4"
-    pidtree "^0.3.0"
-    read-pkg "^3.0.0"
-    shell-quote "^1.6.1"
-    string.prototype.padend "^3.0.0"
 
 npm-run-path@^2.0.0:
   version "2.0.2"
@@ -10728,11 +10681,6 @@ picomatch@^2.2.1:
   version "2.2.2"
   resolved "https://registry.npmjs.org/picomatch/-/picomatch-2.2.2.tgz"
   integrity sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg==
-
-pidtree@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.npmjs.org/pidtree/-/pidtree-0.3.0.tgz"
-  integrity sha512-9CT4NFlDcosssyg8KVFltgokyKZIFjoBxw8CTGy+5F38Y1eQWrt8tRayiUOXE+zVKQnYu5BR8JjCtvK3BcnBhg==
 
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
@@ -12534,16 +12482,6 @@ shell-quote@1.7.2:
   resolved "https://registry.npmjs.org/shell-quote/-/shell-quote-1.7.2.tgz"
   integrity sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
 
-shell-quote@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.npmjs.org/shell-quote/-/shell-quote-1.6.1.tgz"
-  integrity sha1-9HgZSczkAmlxJ0MOo7PFR29IF2c=
-  dependencies:
-    array-filter "~0.0.0"
-    array-map "~0.0.0"
-    array-reduce "~0.0.0"
-    jsonify "~0.0.0"
-
 shelljs@^0.8.3:
   version "0.8.3"
   resolved "https://registry.npmjs.org/shelljs/-/shelljs-0.8.3.tgz"
@@ -13607,11 +13545,6 @@ text-table@0.2.0, text-table@^0.2.0:
   resolved "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-textr@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.npmjs.org/textr/-/textr-0.3.0.tgz"
-  integrity sha1-cXNhKGlirI3za3omGft3OhW5t/c=
-
 throat@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/throat/-/throat-5.0.0.tgz#c5199235803aad18754a667d659b5e72ce16764b"
@@ -13921,105 +13854,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typographic-apostrophes-for-possessive-plurals@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/typographic-apostrophes-for-possessive-plurals/-/typographic-apostrophes-for-possessive-plurals-1.0.5.tgz"
-  integrity sha1-yjG289J7qADWkC1i+6KbVI9jm5k=
-
-typographic-apostrophes@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/typographic-apostrophes/-/typographic-apostrophes-1.1.1.tgz"
-  integrity sha1-vGkF65SQSKc2+oOZ+LkKr6iJR4c=
-
-typographic-arrows@^1.0.0:
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/typographic-arrows/-/typographic-arrows-1.0.3.tgz"
-  integrity sha1-/dRpLOZgAktC/RYFEAw0M3OAySU=
-
-typographic-base@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/typographic-base/-/typographic-base-1.0.4.tgz"
-  integrity sha1-i7dOjjJiQBkVxb0ta11SC9LRVpc=
-  dependencies:
-    textr "^0.3.0"
-    typographic-apostrophes "^1.1.1"
-    typographic-apostrophes-for-possessive-plurals "^1.0.5"
-    typographic-arrows "^1.0.0"
-    typographic-copyright "^1.0.1"
-    typographic-currency "^1.1.0"
-    typographic-ellipses "^1.0.11"
-    typographic-em-dashes "^1.0.2"
-    typographic-en-dashes "^1.0.1"
-    typographic-math-symbols "^1.1.5"
-    typographic-quotes "^1.2.1"
-    typographic-registered-trademark "^1.0.1"
-    typographic-single-spaces "^1.0.2"
-    typographic-trademark "^1.0.1"
-
-typographic-copyright@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/typographic-copyright/-/typographic-copyright-1.0.1.tgz"
-  integrity sha1-TEoLbX26Jxwpt0HyBAAvTG1LAMA=
-
-typographic-currency-db@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/typographic-currency-db/-/typographic-currency-db-1.0.0.tgz"
-  integrity sha1-Mvim2vDJEgmmQTYP2qac5U/tDGc=
-
-typographic-currency@^1.1.0:
-  version "1.1.2"
-  resolved "https://registry.npmjs.org/typographic-currency/-/typographic-currency-1.1.2.tgz"
-  integrity sha1-zsX0djwTxgiwSU2F9w9C1pAm2kA=
-  dependencies:
-    typographic-currency-db "1.0.0"
-
-typographic-ellipses@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.npmjs.org/typographic-ellipses/-/typographic-ellipses-1.0.11.tgz"
-  integrity sha1-ppFDtLjFYR3Tpmm3wwUmA+imlIc=
-
-typographic-em-dashes@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/typographic-em-dashes/-/typographic-em-dashes-1.0.2.tgz"
-  integrity sha1-dUyvsbC+ZHE+0vDT8y19mmT+saU=
-
-typographic-en-dashes@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/typographic-en-dashes/-/typographic-en-dashes-1.0.1.tgz"
-  integrity sha1-o3c5/cQ+04w1G79wqAwlA8ywIuA=
-
-typographic-math-symbols@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.npmjs.org/typographic-math-symbols/-/typographic-math-symbols-1.1.5.tgz"
-  integrity sha1-VvdWxuXLPW06shcuSdkegjAo3k4=
-
-typographic-quotes-l10n-db@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/typographic-quotes-l10n-db/-/typographic-quotes-l10n-db-1.0.0.tgz"
-  integrity sha1-EwTS+pWscf7D79gyeDTuSbATslQ=
-
-typographic-quotes@^1.2.1:
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/typographic-quotes/-/typographic-quotes-1.2.2.tgz"
-  integrity sha1-kG4o26KxMGLSm1fxCskxRyCA4GI=
-  dependencies:
-    typographic-quotes-l10n-db "^1.0.0"
-
-typographic-registered-trademark@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/typographic-registered-trademark/-/typographic-registered-trademark-1.0.1.tgz"
-  integrity sha1-GDC2k794LPwjVg7IDWGiZyqYyN0=
-
-typographic-single-spaces@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/typographic-single-spaces/-/typographic-single-spaces-1.0.2.tgz"
-  integrity sha1-gsMRVDfbbdsuF671VJTdkH6UH38=
-
-typographic-trademark@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/typographic-trademark/-/typographic-trademark-1.0.1.tgz"
-  integrity sha1-VzFlvG9QMH5ux1iDJndIM3eERYA=
 
 unbox-primitive@^1.0.0:
   version "1.0.1"
