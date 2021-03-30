@@ -75,8 +75,6 @@
       url: /components/box-overlay
     - title: Box
       url: /components/box
-    - title: Boxed groups (deprecated)
-      url: /components/boxed-groups
     - title: Branch name
       url: /components/branch-name
     - title: Breadcrumbs
