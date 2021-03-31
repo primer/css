@@ -22,7 +22,6 @@
     "core-js": "^3.6.5",
     "gatsby": "^2.24.62",
     "gatsby-plugin-alias-imports": "^1.0.5",
-    "gatsby-plugin-google-analytics": "^2.3.14",
     "gatsby-plugin-sass": "^2.3.13",
     "gatsby-plugin-svgr": "^2.0.2",
     "postcss-loader": "^3.0.0",

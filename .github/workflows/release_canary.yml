@@ -15,7 +15,6 @@ on:
       - 'lib/**'
       - '__tests__/**'
       - 'script/**'
-      - 'static/**'
       - 'next.config.js'
       - 'now.json'
 

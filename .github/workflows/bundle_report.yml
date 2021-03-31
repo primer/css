@@ -2,7 +2,7 @@ name: Bundle report
 on:
   push:
     paths:
-      - 'src'
+      - 'src/**'
 jobs:
   bundle:
     runs-on: ubuntu-latest

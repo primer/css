@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="300px" src="./static/readme.png">
+  <img width="300px" src="./docs/src/readme.png">
 </p>
 
 <h1 align="center">Primer CSS</h1>

@@ -29,12 +29,14 @@
 @mixin color-mode($mode) {
   @if $mode == light {
     :root,
-    [data-color-mode="#{$mode}"][data-#{$mode}-theme*="#{$mode}"] {
+    [data-color-mode="light"][data-light-theme*="#{$mode}"],
+    [data-color-mode="dark"][data-dark-theme*="#{$mode}"] {
       @content;
     }
   }
   @else {
-    [data-color-mode="#{$mode}"][data-#{$mode}-theme*="#{$mode}"] {
+    [data-color-mode="light"][data-light-theme*="#{$mode}"],
+    [data-color-mode="dark"][data-dark-theme*="#{$mode}"] {
       @content;
     }
   }
@@ -53,7 +55,7 @@
 }
 
 // This mixin takes a map of color mode vars and splits them into dark and light mode
-// The goal is to reduce the amount of dark/light mode selectors compiled
+// The goal is to reduce the amount of dark/light mode selectors compiled.
 //
 // Example input for $color-map
 //
