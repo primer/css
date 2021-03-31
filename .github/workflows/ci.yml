@@ -35,7 +35,6 @@ jobs:
         with:
           node-version: 12
       - run: yarn
-      - run: yarn dist
       - name: Jest
         run: yarn test
       - run: yarn test-deprecations
