@@ -1,5 +1,13 @@
 # @primer/css
 
+## 16.1.2
+
+### Patch Changes
+
+- [#1282](https://github.com/primer/css/pull/1282) [`5ee52dfe`](https://github.com/primer/css/commit/5ee52dfe59f1b209ca6c1f2489db0e32660388e9) Thanks [@simurai](https://github.com/simurai)! - Add bg to UnderlineNav Counter
+
+* [#1286](https://github.com/primer/css/pull/1286) [`9044eecf`](https://github.com/primer/css/commit/9044eecf4ef7a1c6ad9ccf0b51def53c52d0def4) Thanks [@jonrohan](https://github.com/jonrohan)! - color-mode mixin fix for keyboard toggle
+
 ## 16.1.1
 
 ### Patch Changes
