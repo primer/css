@@ -1,4 +1,4 @@
-const fs   = require('fs')
+const fs = require('fs')
 const frontMatter = require('front-matter')
 const yaml = require('js-yaml')
 const globby = require('globby')
@@ -8,15 +8,15 @@ const docsPath = join(__dirname, '../../docs')
 
 function collectNavLinks(links) {
   let foundLinks = []
-  links.forEach(link => {
+  for (const link of links) {
     foundLinks.push({
       title: link['title'],
       url: link['url']
     })
-    if(link['children']) {
+    if (link['children']) {
       foundLinks = foundLinks.concat(collectNavLinks(link['children']))
     }
-  })
+  }
   return foundLinks
 }
 
@@ -26,14 +26,14 @@ function getNavigationLinks() {
 }
 
 async function getContentFrontmatter() {
-  let fm = {}
+  const fm = {}
 
   const paths = await globby(join(docsPath, './content/**/*.md*'))
-  paths.forEach(path => {
+  for (const path of paths) {
     const contents = fs.readFileSync(path, 'utf8')
     const fmContents = frontMatter(contents)
-    fm[path.replace(join(docsPath, './content'), '').replace(/(\/index)?\.mdx?/,'')] = fmContents['attributes']
-  })
+    fm[path.replace(join(docsPath, './content'), '').replace(/(\/index)?\.mdx?/, '')] = fmContents['attributes']
+  }
   return fm
 }
 

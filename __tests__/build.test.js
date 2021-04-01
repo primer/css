@@ -10,9 +10,9 @@ describe('./dist/ folder', () => {
   let distCSS, distMap, distJS
 
   beforeAll(() => {
-    distCSS = distDir.filter( i => i.match(/\.css$/) )
-    distMap = distDir.filter( i => i.match(/\.map$/) )
-    distJS = distDir.filter( i => i.match(/\.js$/) )
+    distCSS = distDir.filter(i => i.match(/\.css$/))
+    distMap = distDir.filter(i => i.match(/\.map$/))
+    distJS = distDir.filter(i => i.match(/\.js$/))
   })
 
   it('is not empty', () => {
@@ -21,15 +21,15 @@ describe('./dist/ folder', () => {
   })
 
   it('contains source maps', () => {
-    distCSS.forEach( file => {
+    for (const file of distCSS) {
       expect(distMap).toContain(`${file}.map`)
-    })
+    }
   })
 
   it('contains stats export files', () => {
-    distCSS.forEach( file => {
-      expect(distJS).toContain(file.replace('.css','.js'))
-    })
+    for (const file of distCSS) {
+      expect(distJS).toContain(file.replace('.css', '.js'))
+    }
   })
 
   it('contains stats/ folder', () => {
@@ -50,8 +50,8 @@ describe('./dist/stats/ folder', () => {
   })
 
   it('contains a css file for each stat file', () => {
-    statsDir.forEach( file => {
-      expect(distDir).toContain(file.replace('.json','.css'))
-    })
+    for (const file of statsDir) {
+      expect(distDir).toContain(file.replace('.json', '.css'))
+    }
   })
 })

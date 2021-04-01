@@ -22,7 +22,7 @@ describe('deprecations', () => {
     if (deprecations.length) {
       // Selectors were marked to be deprecated in this version,
       // but were not removed from the codebase. Please remove these selectors.
-      expect(deprecations.sort()).toEqual(removed.sort())
+      expect(deprecations.sort()).toEqual(removed.sort()) // eslint-disable-line jest/no-conditional-expect
     }
   })
 
@@ -41,7 +41,7 @@ describe('deprecations', () => {
     if (deprecations.length) {
       // Variables were marked to be deprecated in this version,
       // but were not removed from the codebase. Please remove these variables.
-      expect(deprecations.sort()).toEqual(removed.sort())
+      expect(deprecations.sort()).toEqual(removed.sort()) // eslint-disable-line jest/no-conditional-expect
     }
   })
 

@@ -2,7 +2,7 @@ const currentVersion = process.env.PRIMER_VERSION || require('./package.json').v
 
 module.exports = {
   extends: ['stylelint-config-primer'],
-  plugins: ['stylelint-scss', './lib/stylelint-todo'],
+  plugins: ['stylelint-scss', './script/stylelint-todo'],
   syntax: 'scss',
   rules: {
     'scss/dollar-variable-default': [true, {ignore: 'local'}],

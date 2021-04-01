@@ -72,7 +72,7 @@ Here are a few things you can do that will increase the likelihood of your pull 
 - Write a [good commit message](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
 
 ## Releasing a new Primer CSS version
-See [RELEASING.md](../RELEASING.md) for our release process.
+See [RELEASING.md](./RELEASING.md) for our release process.
 
 ## Resources
 

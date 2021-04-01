@@ -4,6 +4,12 @@
  * array and a "message" string.
  */
 const versionDeprecations = {
+  '17.0.0': [
+    {
+      selectors: [':-ms-input-placeholder'],
+      message: 'Browserslist update to match github has removed the need for this pseudoselector'
+    }
+  ],
   '16.0.0': [
     {
       selectors: [

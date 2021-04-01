@@ -1,16 +1,14 @@
-*.log
+__tests__/
 .changeset/
 .github/
-.next/
 .storybook/
-next.config.js
-now.json
 docs/
-docs-test/
-lib/
-__tests__/
-pages/
 script/
 # we ignore this because everything in src/ is copied out in script/prepublish
 src/
 tmp/
+docs.scss
+.*
+*.log
+now.json
+*.config.js
