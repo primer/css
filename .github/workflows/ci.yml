@@ -35,6 +35,5 @@ jobs:
         with:
           node-version: 12
       - run: yarn
-      - run: yarn dist
-      - name: Testing code
+      - name: Jest
         run: yarn test

@@ -1,5 +1,5 @@
 ---
-title: Marketing Margin
+title: Marketing margin
 sort_title: Margin Marketing
 path: utilities/marketing-margin
 status: Stable
