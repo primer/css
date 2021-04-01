@@ -31,7 +31,6 @@
     "build-storybook": "build-storybook -o .storybuild",
     "pretest": "yarn dist && script/pretest",
     "test": "jest",
-    "test-deprecations": "script/test-deprecations.js",
     "release": "changeset publish"
   },
   "dependencies": {

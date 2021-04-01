@@ -37,4 +37,3 @@ jobs:
       - run: yarn
       - name: Jest
         run: yarn test
-      - run: yarn test-deprecations

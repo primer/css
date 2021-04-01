@@ -104,16 +104,6 @@ We have several checks and tools in place to help us plan, track, and catch both
 ### `deprecations.js`
 [This file][deprecations.js] is where we document all of our current and _planned_ CSS selector and SCSS variable deprecations (removals), and is used to generate [deprecation data](../tools/deprecations) for other tools.
 
-### `script/test-deprecations.js`
-[This script][script/test-deprecations.js] compares the CSS stats and variable data between the latest release and the local code, and throws error messages if:
-
-- A CSS selector has been deleted but was not listed in [deprecations.js]
-- A CSS selector listed in [deprecations.js] was _not removed_ in the version it claims to have been deprecated
-- An SCSS variable has been deleted but was not listed in [deprecations.js]
-- An SCSS variable listed in [deprecations.js] was _not removed_ in the version it claims to have been deprecated
-
-Run `script/test-deprecation.js --help` for more info and available options.
-
 ### `primer-css/TODO`
 [This stylelint rule][lib/stylelint-todo.js] looks for comments in the form:
 
