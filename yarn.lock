@@ -1731,9 +1731,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@primer/octicons@^9.1.1":
-  version "9.1.1"
-  resolved "https://registry.npmjs.org/@primer/octicons/-/octicons-9.1.1.tgz"
+"@primer/octicons@12.1.0":
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-12.1.0.tgz#770c8395dc54604637c56ccb261707f9e9d59ddb"
+  integrity sha512-jayKLMTCx/0zh4fjYmkxdlEgQ8STwevn5S48fkvi/03asITmBkaYAMPrUgO8VNSQkSPHIEuc3oTLXgh+JwH0UQ==
   dependencies:
     object-assign "^4.1.1"
 

@@ -34,7 +34,7 @@
     "release": "changeset publish"
   },
   "dependencies": {
-    "@primer/octicons": "^9.1.1",
+    "@primer/octicons": "12.1.0",
     "@primer/primitives": "4.1.0"
   },
   "devDependencies": {
