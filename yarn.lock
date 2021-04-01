@@ -4765,10 +4765,6 @@ destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/destroy/-/destroy-1.0.4.tgz"
 
-details-dialog-element@^1.4.0:
-  version "1.4.1"
-  resolved "https://registry.npmjs.org/details-dialog-element/-/details-dialog-element-1.4.1.tgz"
-
 detect-indent@^6.0.0:
   version "6.0.0"
   resolved "https://registry.npmjs.org/detect-indent/-/detect-indent-6.0.0.tgz"
