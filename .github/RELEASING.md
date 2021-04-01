@@ -51,7 +51,7 @@
     - [ ] Update `github/github`
     - [ ] Tell the world (Slack, Twitter, Team post)
 
-    For more details, see [RELEASING.md](https://github.com/primer/css/blob/main/RELEASING.md).
+    For more details, see [RELEASING.md](https://github.com/primer/css/blob/main/.github/RELEASING.md).
 
     /cc @primer/ds-core
     ```

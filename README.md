@@ -50,13 +50,13 @@ You can import individual Primer modules directly from the `@primer/css` package
 ```
 
 ## Development
-See [DEVELOP.md](./DEVELOP.md) for development docs.
+See [DEVELOP.md](./.github/DEVELOP.md) for development docs.
 
 ## Releasing (for GitHub staff)
-You can find docs about our release process in [RELEASING.md](./RELEASING.md).
+You can find docs about our release process in [RELEASING.md](./.github/RELEASING.md).
 
 ## Documentation
-The [Primer CSS docs site](https://primer.style/css) is deployed from this repo with [primer/deploy](https://github.com/primer/deploy). See [the development docs](DEVELOP.md#docs-site) for more info.
+The [Primer CSS docs site](https://primer.style/css) is deployed from this repo with [primer/deploy](https://github.com/primer/deploy). See [the development docs](./.github/DEVELOP.md#docs-site) for more info.
 
 ## License
 
