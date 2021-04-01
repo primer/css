@@ -29,7 +29,7 @@
     "dev": "cd docs && npm install && npm run develop",
     "start-storybook": "start-storybook -p 8001",
     "build-storybook": "build-storybook -o .storybuild",
-    "pretest": "yarn dist && npm i --no-save @primer/css",
+    "pretest": "yarn dist && script/pretest",
     "test": "jest",
     "test-deprecations": "script/test-deprecations.js",
     "release": "changeset publish"
