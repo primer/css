@@ -7,6 +7,7 @@ script/
 # we ignore this because everything in src/ is copied out in script/prepublish
 src/
 tmp/
+docs.scss
 .*
 *.log
 now.json
