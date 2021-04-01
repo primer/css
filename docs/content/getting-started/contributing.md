@@ -105,7 +105,7 @@ We have several checks and tools in place to help us plan, track, and catch both
 [This file][deprecations.js] is where we document all of our current and _planned_ CSS selector and SCSS variable deprecations (removals), and is used to generate [deprecation data](../tools/deprecations) for other tools.
 
 ### `primer-css/TODO`
-[This stylelint rule][lib/stylelint-todo.js] looks for comments in the form:
+[This stylelint rule][script/stylelint-todo.js] looks for comments in the form:
 
 ```scss
 // TODO@<version>: <message>
@@ -158,4 +158,4 @@ To understand what choice to make, you'll need to understand semver and know if 
 [semantic versioning]: https://semver.org
 [script/test-deprecations.js]: https://github.com/primer/css/tree/main/script/test-deprecations.js
 [deprecations.js]: https://github.com/primer/css/tree/main/deprecations.js
-[lib/stylelint-todo.js]: https://github.com/primer/css/tree/main/lib/stylelint-todo.js
+[script/stylelint-todo.js]: https://github.com/primer/css/tree/main/script/stylelint-todo.js
