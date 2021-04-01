@@ -9,25 +9,25 @@ beforeAll(async () => {
 
 describe('frontmatter', () => {
   it('page title matches link title', () => {
-    navLinks.forEach(link => {
+    for (const link of navLinks) {
       const content = contentFM[link['url']]
       expect(content).not.toBeNull()
       expect(content['title']).toBe(link['title'])
-    })
+    }
   })
 
   it('contains path attribute', () => {
-    Object.values(contentFM).forEach( v => {
+    for (const v of Object.values(contentFM)) {
       expect(v['path']).not.toBeNull()
-    })
+    }
   })
 })
 
 describe('navigation', () => {
   it('has a file for each nav item', () => {
-    navLinks.forEach(link => {
+    for (const link of navLinks) {
       const content = contentFM[link['url']]
       expect(content).not.toBeNull()
-    })
+    }
   })
 })
