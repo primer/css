@@ -1,7 +1,9 @@
 name: CI
 on:
-  pull_request:
-    types: [opened, synchronize, edited]
+  push:
+    branches:
+      - main
+  pull_request_target:
 jobs:
   stylelint:
     runs-on: ubuntu-latest

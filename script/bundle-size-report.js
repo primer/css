@@ -152,9 +152,9 @@ function isMetaBundle(bundle) {
   return !bundle.imports.every(isSupportBundleName)
 }
 
-function isSupportBundleName(name) {
+function isSupportBundleName(bundleName) {
   // "support", "marketing-support", and any future ones?
-  return name.endsWith('support')
+  return bundleName.endsWith('support')
 }
 
 function compareAscending(a, b) {
