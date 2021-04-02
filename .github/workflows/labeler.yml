@@ -28,7 +28,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            if (!process.env.RELEASE) { return }
+            if (process.env.RELEASE == 'undefined') { return }
             const issue = await github.issues.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
