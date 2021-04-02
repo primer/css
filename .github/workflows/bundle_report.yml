@@ -1,6 +1,6 @@
 name: Bundle report
 on:
-  push:
+  pull_request_target:
     paths:
       - 'src/**'
 jobs:
