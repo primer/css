@@ -1,5 +1,5 @@
 ---
-'@primer/css': patch
+'@primer/css': minor
 ---
 
 Label workflow
