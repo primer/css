@@ -1,0 +1,130 @@
+// Layout component
+
+.Layout {
+
+  display: grid;
+  grid-gap: $spacer-3;
+
+  grid-template-columns: 1fr;
+
+  .Layout-main {
+    grid-area: main;
+  }
+
+  .Layout-sidebar {
+    grid-area: sidebar;
+  }
+
+  grid-template-areas:
+    "main"
+    "sidebar";
+
+  @media (min-width: $width-sm) {
+    grid-template-areas: "main sidebar";
+  }
+
+  @each $breakpoint in map-keys($sidebar-width) {
+    @include breakpoint($breakpoint) {
+      grid-template-columns: 1fr map-get($sidebar-width, $breakpoint);
+      column-gap: map-get($gutter, $breakpoint);
+    }
+  }
+}
+
+.Layout--sidebar-narrow {
+  @each $breakpoint in map-keys($sidebar-narrow-width) {
+    @include breakpoint($breakpoint) {
+      grid-template-columns: 1fr map-get($sidebar-narrow-width, $breakpoint);
+    }
+  }
+}
+
+.Layout--sidebar-wide {
+  @each $breakpoint in map-keys($sidebar-wide-width) {
+    @include breakpoint($breakpoint) {
+      grid-template-columns: 1fr map-get($sidebar-wide-width, $breakpoint);
+    }
+  }
+}
+
+.Layout--gutter-condensed {
+  @each $breakpoint in map-keys($gutter-condensed) {
+    @include breakpoint($breakpoint) {
+      column-gap: map-get($gutter-condensed, $breakpoint);
+    }
+  }
+}
+
+.Layout--gutter-spacious {
+  @each $breakpoint in map-keys($gutter-spacious) {
+    @include breakpoint($breakpoint) {
+      column-gap: map-get($gutter-spacious, $breakpoint);
+    }
+  }
+}
+
+.Layout--sidebar-priority {
+  grid-template-areas:
+    "sidebar"
+    "main";
+}
+
+.Layout--left-sidebar {
+  @media (min-width: $width-sm) {
+    grid-template-columns: map-get($sidebar-width, "sm") 1fr;
+
+    grid-template-areas: "sidebar main";
+  }
+
+  @each $breakpoint in map-keys($sidebar-width) {
+    @include breakpoint($breakpoint) {
+      grid-template-columns: map-get($sidebar-width, $breakpoint) 1fr;
+    }
+  }
+
+  &.Layout--sidebar-narrow {
+    @each $breakpoint in map-keys($sidebar-width) {
+      @include breakpoint($breakpoint) {
+        grid-template-columns: map-get($sidebar-narrow-width, $breakpoint) 1fr;
+      }
+    }
+  }
+
+  &.Layout--sidebar-wide {
+    @each $breakpoint in map-keys($sidebar-width) {
+      @include breakpoint($breakpoint) {
+        grid-template-columns: map-get($sidebar-wide-width, $breakpoint) 1fr;
+      }
+    }
+  }
+}
+
+.Layout-center-container-md {
+  max-width: $container-md + map-get($sidebar-width, xl) + map-get($gutter, xl);
+  margin-right: auto;
+  margin-left: auto;
+
+  > .container-md {
+    margin-left: 0;
+  }
+}
+
+.Layout-center-container-lg {
+  max-width: $container-lg + map-get($sidebar-width, xl) + map-get($gutter, xl);
+  margin-right: auto;
+  margin-left: auto;
+
+  > .container-lg {
+    margin-left: 0;
+  }
+}
+
+.Layout-center-container-xl {
+  max-width: $container-xl + map-get($sidebar-width, xl) + map-get($gutter, xl);
+  margin-right: auto;
+  margin-left: auto;
+
+  > .container-xl {
+    margin-left: 0;
+  }
+}

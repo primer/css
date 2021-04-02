@@ -89,6 +89,8 @@
       url: /components/header
     - title: Labels
       url: /components/labels
+    - title: Layout
+      url: /components/layout
     - title: Links
       url: /components/links
     - title: Loaders
