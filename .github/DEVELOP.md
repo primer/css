@@ -22,16 +22,6 @@ Here's what you need to know about how the files are structured in both git and 
 * All bundle interdependencies within Primer CSS are defined as relative imports (e.g. with `../`), so everything should work fine as long as the `@primer/css` directory is in one of your Sass include paths (i.e. `node_modules`).
 
 
-## Workflow
-The typical Primer workflow looks something like this:
-
-1. `npm install` to install the development dependencies.
-1. [Start Storybook](#storybook)
-1. Navigate to the module you're working on and modify the SCSS and/or markdown files.
-1. Test your changes in Storybook.
-1. Push your work to a new branch.
-1. Request a review from one of the Primer "core" team members.
-
 ## Install
 Run `npm install` to install the npm dependencies.
 
@@ -45,23 +35,11 @@ npm start
 Then visit http://localhost:8000 to view the site.
 
 ### The docs directory
-The [docs directory](./docs/) contains all of the documentation files in our docs site. Files are nested in the `/content` folder.
+The [docs directory](../docs/) contains all of the documentation files in our docs site. Files are nested in the `/content` folder.
 
-
-## Storybook
-To borrow a [metaphor from Brad Frost](http://bradfrost.com/blog/post/the-workshop-and-the-storefront/), the [docs site](#docs-site) is Primer CSS's storefront, and [Storybook] is its workshop.
-
-Our Storybook setup allows you to view every HTML code block in Primer CSS's Markdown docs in isolation. To get started, run the Storybook server with:
-
-```sh
-npm run start-storybook
-```
-
-This should open up the site in your browser (if not, navigate to `http://localhost:8001`).
 
 ### Code blocks
 All `html` fenced code blocks in `src/**/*.md` will be rendered as stories and listed under the relevant module's name in the left-hand nav. File changes should trigger a live reload automatically (after a brief delay).
-
 
 ## Scripts
 Our [`package.json`](package.json) houses a collection of [run-scripts] that we use to maintain, test, build, and publish Primer CSS. Run `npm run <script>` with any of the following values for `<script>`:
@@ -79,7 +57,6 @@ The above list may not always be up-to-date. You can list all of the available s
 
 [@primer/css]: https://www.npmjs.com/package/@primer/css
 [run-scripts]: https://docs.npmjs.com/cli/run-script
-[storybook]: https://storybook.js.org/
 [now]: https://zeit.co/now
 [npm]: https://www.npmjs.com/
 [npx]: https://www.npmjs.com/package/npx
