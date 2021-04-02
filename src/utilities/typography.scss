@@ -191,7 +191,9 @@
 /* Set the font weight to normal */
 .text-normal { font-weight: $font-weight-normal !important; }
 /* Set the font weight to bold */
-.text-bold { font-weight: $font-weight-bold !important;}
+.text-bold { font-weight: $font-weight-bold !important; }
+.text-semibold { font-weight: $font-weight-semibold !important; }
+.text-light { font-weight: $font-weight-light !important; }
 /* Set the font to italic */
 .text-italic { font-style: italic !important; }
 /* Make text uppercase */
