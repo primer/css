@@ -35,8 +35,7 @@ jobs:
             })
             const currentLabels = issue.data.labels.map( l => l.name)
             const newLabel = `${process.env.RELEASE} release`
-            console.log(currentLabels, newLabel)
-            if (false && !currentLabels.includes(newLabel) && newLabel != 'undefined release') {
+            if (!currentLabels.includes(newLabel)) {
               const otherReleaseLabels = currentLabels.filter( l => l.endsWith(' release'))
               if (otherReleaseLabels.length) {
                 github.issues.removeLabel({
