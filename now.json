@@ -24,5 +24,8 @@
       "src": "/css(/.*)?",
       "dest": "/docs$1"
     }
-  ]
+  ],
+  "github": {
+    "silent": true
+  }
 }
