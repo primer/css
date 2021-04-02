@@ -16,7 +16,8 @@ jobs:
           script: |
             const diff_url = context.payload.pull_request.diff_url
             const result = await github.request(diff_url)
-            const match = [...result.data.matchAll(/^\+'@primer\/css':\s(patch|minor|major)/m)].pop()
+            const match = [...result.data.matchAll(/^\+'@primer\/css':\s(patch|minor|major)/m)][0]
+            console.log(match)
             if (match) {
               return match[1]
             }
