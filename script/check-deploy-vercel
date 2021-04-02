@@ -1,5 +1,12 @@
 #!/bin/bash
 
-vercel_files="docs/ src/ .nowignore now.json script/check-deploy-vercel"
+# Deploy vercel if any of these files change
+vercel_files=(
+  docs/
+  src/
+  .nowignore
+  now.json
+  script/check-deploy-vercel
+)
 
-git diff HEAD^ HEAD $vercel_files
+git diff HEAD^ HEAD --quiet -- ${vercel_files[*]}
