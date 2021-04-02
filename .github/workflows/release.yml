@@ -24,6 +24,12 @@ jobs:
 
       - name: Install dependencies
         run: yarn
+      - run: |
+          git config --global user.name 'GitHub Design Systems Bot'
+          git config --global user.email 'primer-css@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+        env:
+          GITHUB_TOKEN: ${{ secrets.GPR_AUTH_TOKEN_SHARED }}
 
       - name: Create release pull request or publish to npm
         id: changesets
