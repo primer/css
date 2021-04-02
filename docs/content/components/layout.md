@@ -6,192 +6,158 @@ source: 'https://github.com/primer/css/tree/main/src/layout/layout.scss'
 bundle: layout
 ---
 
-<!--
 
-  Layout
-  ======
+Build responsive-friendly page layouts with 2 columns.
 
-  Build responsive-friendly page layouts with 2 columns.
+Use with .container-xx classes to limit the overall layout structure size.
 
-  Use with .container-xx classes to limit the overall layout structure size.
+## Elements:
 
-  ## Elements:
+- `Layout-main`
+- `Layout-sidebar`
 
-  - `Layout-main`
-  - `Layout-sidebar`
+## Default
 
-  - `Layout-center-container-md`
-  - `Layout-center-container-lg`
-  - `Layout-center-container-xl`
-
-  Use `Layout-center-container-xx` to wrap `container-xx` elements inside
-  `Layout-main` so the content remains centered on the screen regardless
-  of the sidebar position.
-
-
-  ## Modifiers:
-
-  ### Sidebar position on desktop/large screens
-
-  - `Layout--right-sidebar` (default)
-  - `Layout--left-sidebar`
-
-
-  ### Sidebar position on mobile/small screens
-
-  - `Layout--main-priority` (default)
-  - `Layout--sidebar-priority`
-
-
-  ### Sidebar sizing
-
-  - Default: [md: 256px, lg: 296px, xl: 320px]
-  - `Layout--sidebar-narrow` [md: 240px, lg: 256px, xl: 296px]
-  - `Layout--sidebar-wide` [md: 296px, lg: 320px, xl: 344px]
-
-
-  ### Column gutter
-
-  - Default: [md: 16px, lg: 24px, xl: 32px]
-  - `Layout--gutter-condensed` [md: 16px, lg: 16px, xl: 24px]
-  - `Layout--gutter-spacious` [md: 24px, lg: 32px, xl: 40px]
-
-  ## Accessibility and keyboard navigation
-
-  Keyboard navigation follows the markup order. Decide carefully how the
-  focus order should be be by deciding whether `Layout-main` or `Layout-sidebar`
-  comes first in code. The code order won’t affect the visual position.
-
--->
-
-<h4>Default</h4>
-
+```html live
 <div class="Layout">
-  <div class="Layout-main">
-    main
+  <div class="Layout-main border">
+    .Layout-main
   </div>
 
-  <div class="Layout-sidebar">
-    sidebar
-  </div>
-</div>
-
-<hr>
-
-<h4>Condensed gutter</h4>
-
-<div class="Layout Layout--gutter-condensed">
-  <div class="Layout-main">
-    main
-  </div>
-
-  <div class="Layout-sidebar">
-    sidebar
+  <div class="Layout-sidebar border">
+    .Layout-sidebar
   </div>
 </div>
+```
 
-<hr>
+- `Layout-center-container-md`
+- `Layout-center-container-lg`
+- `Layout-center-container-xl`
 
-<h4>Spacious gutter</h4>
+Use `Layout-center-container-xx` to wrap `container-xx` elements inside
+`Layout-main` so the content remains centered on the screen regardless
+of the sidebar position.
 
-<div class="Layout Layout--gutter-spacious">
-  <div class="Layout-main">
-    main
-  </div>
 
-  <div class="Layout-sidebar">
-    sidebar
-  </div>
-</div>
+## Modifiers:
 
-<hr>
+### Sidebar position on desktop/large screens
 
-<h4>Narrow sidebar</h4>
+- `Layout--right-sidebar` (default)
+- `Layout--left-sidebar`
 
+
+### Sidebar position on mobile/small screens
+
+- `Layout--main-priority` (default)
+- `Layout--sidebar-priority`
+
+
+### Sidebar sizing
+
+- Default: [md: 256px, lg: 296px, xl: 320px]
+- `Layout--sidebar-narrow` [md: 240px, lg: 256px, xl: 296px]
+- `Layout--sidebar-wide` [md: 296px, lg: 320px, xl: 344px]
+
+```html live
 <div class="Layout Layout--sidebar-narrow">
-  <div class="Layout-main">
-    main
+  <div class="Layout-main border">
+    Layout--sidebar-narrow
   </div>
 
-  <div class="Layout-sidebar">
+  <div class="Layout-sidebar border">
     sidebar
   </div>
 </div>
-
-<hr>
-
-<h4>Wide sidebar</h4>
-
 <div class="Layout Layout--sidebar-wide">
-  <div class="Layout-main">
-    main
+  <div class="Layout-main border">
+    Layout--sidebar-wide
   </div>
 
-  <div class="Layout-sidebar">
+  <div class="Layout-sidebar border">
     sidebar
   </div>
 </div>
+```
 
-<hr>
+### Column gutter
 
-<h4>Layout within container</h4>
+- Default: [md: 16px, lg: 24px, xl: 32px]
+- `Layout--gutter-condensed` [md: 16px, lg: 16px, xl: 24px]
+- `Layout--gutter-spacious` [md: 24px, lg: 32px, xl: 40px]
 
+```html live
+<div class="Layout Layout--gutter-condensed">
+  <div class="Layout-main border">
+    Layout--gutter-condensed
+  </div>
+
+  <div class="Layout-sidebar border">
+    sidebar
+  </div>
+</div>
+<div class="Layout Layout--gutter-spacious">
+  <div class="Layout-main border">
+    Layout--gutter-spacious
+  </div>
+
+  <div class="Layout-sidebar border">
+    sidebar
+  </div>
+</div>
 <div class="Layout container-xl">
-  <div class="Layout-main">
+  <div class="Layout-main border">
     main
   </div>
 
-  <div class="Layout-sidebar">
+  <div class="Layout-sidebar border">
     sidebar
   </div>
 </div>
-
-<hr>
-
-<h4>Left-sidebar</h4>
-
 <div class="Layout Layout--left-sidebar">
-  <div class="Layout-main">
+  <div class="Layout-main border">
     main
   </div>
 
-  <div class="Layout-sidebar">
+  <div class="Layout-sidebar border">
     sidebar
   </div>
 </div>
+```
 
-<hr>
+### Centered content
 
-<h4>Container-md centered on viewport</h4>
-
+```html live
 <div class="Layout Layout--left-sidebar">
   <div class="Layout-main">
     <div class="Layout-center-container-md">
-      <div class="container-md">
+      <div class="container-md border">
         main
       </div>
     </div>
   </div>
 
-  <div class="Layout-sidebar">
+  <div class="Layout-sidebar border">
     sidebar
   </div>
 </div>
-
-<hr>
-
-<h4>Container-lg centered on viewport</h4>
-
 <div class="Layout Layout--left-sidebar">
   <div class="Layout-main">
     <div class="Layout-center-container-lg">
-      <div class="container-lg">
+      <div class="container-lg border">
         main
       </div>
     </div>
   </div>
 
-  <div class="Layout-sidebar">
+  <div class="Layout-sidebar border">
     sidebar
   </div>
 </div>
+```
+
+## Accessibility and keyboard navigation
+
+Keyboard navigation follows the markup order. Decide carefully how the
+focus order should be be by deciding whether `Layout-main` or `Layout-sidebar`
+comes first in code. The code order won’t affect the visual position.
