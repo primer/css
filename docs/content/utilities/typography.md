@@ -93,6 +93,8 @@ Change the font weight, styles, and alignment with these utilities.
 <p class="text-normal">Normal</p>
 <p class="text-italic">Italic</p>
 <p class="text-bold">Bold</p>
+<p class="text-semibold">Semi-bold</p>
+<p class="text-light">Light</p>
 <p class="text-uppercase">Uppercase</p>
 <p class="no-wrap">No wrap</p>
 <p class="ws-normal">Normal whitespace</p>
