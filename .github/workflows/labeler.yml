@@ -1,0 +1,21 @@
+name: Labeler
+on:
+  pull_request:
+    types: [opened, synchronize, edited]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v3
+        id: version-result
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          result-encoding: string
+          script: |
+            const diff_url = context.payload.pull_request.diff_url
+            const result = await github.request(diff_url)
+            const match = [...result.data.matchAll(/^\+'@primer\/css':\s(patch|minor|major)/m)]
+            if (match) {
+              return match[0][1]
+            }
