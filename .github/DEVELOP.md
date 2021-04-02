@@ -35,17 +35,8 @@ npm start
 Then visit http://localhost:8000 to view the site.
 
 ### The docs directory
-The [docs directory](./docs/) contains all of the documentation files in our docs site. Files are nested in the `/content` folder.
+The [docs directory](../docs/) contains all of the documentation files in our docs site. Files are nested in the `/content` folder.
 
-
-### URL tests
-We have a script that catches inadvertent URL changes caused by renaming or deleting Markdown docs:
-
-```sh
-npm run test-urls
-```
-
-This script includes some exceptions for URLs that have been intentionally moved or removed in the process of moving away from the [GitHub Style Guide](https://styleguide.github.com/primer/), and which you will need to modify if you rename or remove either Markdown docs or their `path` frontmatter. See [#641](https://github.com/primer/css/pull/641) for more information.
 
 ### Code blocks
 All `html` fenced code blocks in `src/**/*.md` will be rendered as stories and listed under the relevant module's name in the left-hand nav. File changes should trigger a live reload automatically (after a brief delay).
@@ -53,15 +44,13 @@ All `html` fenced code blocks in `src/**/*.md` will be rendered as stories and l
 ## Scripts
 Our [`package.json`](package.json) houses a collection of [run-scripts] that we use to maintain, test, build, and publish Primer CSS. Run `npm run <script>` with any of the following values for `<script>`:
 
-* `fresh` does a "fresh" npm install (like `npm install -f`)
 * `dist` runs `script/dist`, which creates CSS bundles of all the `index.scss` files in `src/`.
 * `check-links` runs a link checker on your local development server (`localhost:3000`, started with `npm start`).
-* `lint` lints both our SCSS and JavaScript source files.
-* `lint-css` lints our SCSS source files.
-* `lint-js` lints the JavaScript source files.
+* `stylelint` lints the CSS source files.
+* `eslint` lints the JavaScript source files.
 * `now-build` and `now-start` are run on [Now] to build and start the docs site server. `now-test` runs them both in order.
 * `start` runs the documentation site locally (alias: `dev`).
-* `test-urls` compares a (pre-generated) list of paths from the **deprecated** [Primer Style Guide](https://styleguide.github.com/primer/) to files in `pages/css`, and lets us know if we've inadvertently deleted or renamed anything.
+* `test` runs our test suite.
 
 The above list may not always be up-to-date. You can list all of the available scripts by calling `npm run` with no other arguments.
 

@@ -1,7 +1,7 @@
 {
   "name": "@primer/css",
   "version": "16.1.2",
-  "description": "Primer is the CSS framework that powers GitHub's front-end design. primer includes 23 packages that are grouped into 3 core meta-packages for easy install. Each package and meta-package is independently versioned and distributed via npm, so it's easy to include all or part of Primer within your own project.",
+  "description": "The CSS implementation of GitHub's Primer Design System",
   "homepage": "https://primer.style/css",
   "author": "GitHub, Inc.",
   "license": "MIT",
@@ -19,7 +19,6 @@
     "design-system"
   ],
   "scripts": {
-    "fresh": "rm -rf node_modules; npm install",
     "dist": "script/dist.js",
     "stylelint": "stylelint --quiet src",
     "eslint": "eslint deprecations.js __tests__",
