@@ -1,1 +1,5 @@
 #!/bin/bash
+
+vercel_files="docs/ src/ .nowignore now.json script/check-deploy-vercel"
+
+git diff HEAD^ HEAD $vercel_files
