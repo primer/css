@@ -9,4 +9,5 @@ vercel_files=(
   script/check-deploy-vercel
 )
 
+
 git diff HEAD^ HEAD --quiet -- ${vercel_files[*]}
