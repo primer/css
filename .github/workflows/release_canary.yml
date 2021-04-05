@@ -1,4 +1,4 @@
-name: Release
+name: Release Canary
 on:
   push:
     branches-ignore:
@@ -21,7 +21,6 @@ jobs:
   release-canary:
     if: ${{ github.repository == 'primer/css' }}
 
-    name: Canary
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

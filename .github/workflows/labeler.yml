@@ -1,7 +1,5 @@
 name: Label
-on:
-  pull_request:
-    types: [opened, synchronize, edited]
+on: pull_request_target
 
 jobs:
   label-release:

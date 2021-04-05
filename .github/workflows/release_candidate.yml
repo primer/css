@@ -1,4 +1,4 @@
-name: Release
+name: Release Candidate
 on:
   pull_request_target:
     branches:
@@ -8,7 +8,6 @@ jobs:
   release-candidate:
     if: ${{ github.repository == 'primer/css' }}
 
-    name: Candidate
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
