@@ -32,7 +32,7 @@ jobs:
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          target_url: ${{ steps.vercel-action.outputs.preview-url }}
+          environment_url: ${{ steps.vercel-action.outputs.preview-url }}
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
 
@@ -41,6 +41,5 @@ jobs:
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          target_url: ${{ steps.vercel-action.outputs.preview-url }}
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
