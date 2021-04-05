@@ -3,7 +3,7 @@ on: pull_request_target
 
 jobs:
   label-release:
-    name: Release
+    name: Semantic Version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v3

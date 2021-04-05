@@ -1,4 +1,4 @@
-name: Release Candidate
+name: Release
 on:
   push:
     branches:
@@ -6,6 +6,7 @@ on:
 
 jobs:
   release-candidate:
+    name: Candidate
     if: ${{ github.repository == 'primer/css' }}
 
     runs-on: ubuntu-latest

@@ -1,10 +1,11 @@
-name: Publish Release
+name: Release
 on:
   push:
     branches:
       - 'main'
 jobs:
   release:
+    name: Final
     if: ${{ github.repository == 'primer/css' }}
 
     runs-on: ubuntu-latest
