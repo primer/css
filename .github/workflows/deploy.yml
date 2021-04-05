@@ -1,0 +1,21 @@
+name: Deploy
+on: push
+
+jobs:
+  deploy:
+    name: Preview
+    runs-on:
+    steps:
+      - uses: actions/checkout@master
+      - name: Vercel Action
+        uses: amondnet/vercel-action@v20.0.0
+        id: vercel-action
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN_SHARED }}
+          github-comment: false
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID_SHARED }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+      - name: preview-url
+        run: |
+          echo ${{ steps.vercel-action.outputs.preview-url }}
