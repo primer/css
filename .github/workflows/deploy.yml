@@ -4,7 +4,7 @@ on: push
 jobs:
   deploy:
     name: Preview
-    runs-on:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: Vercel Action
