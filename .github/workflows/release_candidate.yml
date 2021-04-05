@@ -1,6 +1,6 @@
 name: Release Candidate
 on:
-  pull_request_target:
+  push:
     branches:
       - 'changeset-release/main'
 
