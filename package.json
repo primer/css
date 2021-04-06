@@ -86,5 +86,20 @@
     "last 2 safari versions",
     "last 2 edge versions",
     "ie 11"
-  ]
+  ],
+  "eslintConfig": {
+    "extends": [
+      "plugin:github/internal",
+      "plugin:github/recommended"
+    ],
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "requireConfigFile": false
+    },
+    "parser": "@babel/eslint-parser"
+  }
 }
