@@ -24,7 +24,6 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: context.sha,
-              transient_environment: true,
               environment: 'preview-docs',
               description: 'Deploying preview docs site.'
             })
