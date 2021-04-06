@@ -76,6 +76,7 @@ textarea.form-control {
 
 // Mini inputs, to match .minibutton
 .input-sm {
+  min-height: $size-4;
   // stylelint-disable-next-line primer/spacing
   padding-top: 3px;
   // stylelint-disable-next-line primer/spacing
