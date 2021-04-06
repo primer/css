@@ -20,10 +20,13 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const deployments = await github.actions.getPendingDeploymentsForRun({
+            const deployments = await github.repos.createDeployment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              run_id: context.runId,
+              ref: context.ref,
+              transient_environment: true,
+              environment: 'preview',
+              description: 'Deploying preview docs site.'
             })
             console.log(deployments)
       # - uses: actions/github-script@v3
