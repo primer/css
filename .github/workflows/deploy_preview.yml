@@ -1,6 +1,6 @@
 name: Deploy
 on:
-  push:
+  pull_request_target:
     branches-ignore:
       - main
     paths:
