@@ -20,7 +20,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const deployments = await actions.getPendingDeploymentsForRun({
+            const deployments = await github.actions.getPendingDeploymentsForRun({
               owner: context.repo.owner,
               repo: context.repo.repo,
               run_id: context.runId,
