@@ -1,39 +1,16 @@
 name: Deploy
 on:
   push:
+    branches-ignore:
+      - main
     paths:
       - 'src/**'
       - 'docs/**'
-      - '.github/workflows/deploy.yml'
+      - '.github/workflows/deploy*.yml'
       - 'package.json'
 jobs:
-  deploy:
-    # Run on main
-    if: ${{ github.ref == 'refs/heads/main' }}
-    name: Production
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-
-      # Check the number of changeset files, if it's 0 we deploy
-      - id: changeset-count
-        run: echo "::set-output name=CHANGE_COUNT::$(ls .changeset/*.md | grep -v README | wc -l | xargs)"
-
-      - if: ${{ steps.changeset-count.outputs.CHANGE_COUNT == 0 }}
-        name: Vercel Action
-        uses: amondnet/vercel-action@v20.0.0
-        id: vercel-action
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-token: ${{ secrets.VERCEL_TOKEN_SHARED }}
-          vercel-args: '--prod'
-          github-comment: false
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID_SHARED }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-
   deploy-preview:
-    # Don't run on main
-    if: ${{ github.ref != 'refs/heads/main' }}
+    if: ${{ github.repository == 'primer/css' }}
     name: Preview
     runs-on: ubuntu-latest
     steps:
