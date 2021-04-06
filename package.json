@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@primer/octicons": "12.1.0",
-    "@primer/primitives": "4.1.0"
+    "@primer/primitives": "4.2.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.10",
