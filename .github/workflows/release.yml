@@ -3,12 +3,11 @@ on:
   push:
     branches:
       - 'main'
-      - '!dependabot/**'
 jobs:
   release:
+    name: Final
     if: ${{ github.repository == 'primer/css' }}
 
-    name: Final
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -16,6 +15,7 @@ jobs:
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Set up Node.js
         uses: actions/setup-node@master
