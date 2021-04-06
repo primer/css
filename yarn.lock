@@ -1087,9 +1087,10 @@
   dependencies:
     object-assign "^4.1.1"
 
-"@primer/primitives@4.1.0":
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/@primer/primitives/-/primitives-4.1.0.tgz"
+"@primer/primitives@4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-4.2.0.tgz#a54d052bd8b8fcc0a2f5029f44a192939f87f09f"
+  integrity sha512-/2/9ueCWWzqaLRSJ3TNGthMVX8DBn/oa+ZY9eB/TmxUPglXd8AQMxV2wz+pAoy8SpXXwe84JuEgHTAghzAOh0w==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.2"
