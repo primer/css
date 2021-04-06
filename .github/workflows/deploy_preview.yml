@@ -15,49 +15,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/github-script@v3
-        name: Cancel existing deployments
+      - uses: chrnorm/deployment-action@releases/v1
+        name: Create GitHub deployment
+        id: deployment
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            const deployments = await github.repos.createDeployment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: context.sha,
-              environment: 'preview-docs',
-              description: 'Deploying preview docs site.'
-            })
-            console.log(deployments)
-      # - uses: actions/github-script@v3
-      #   name: Create GitHub deployment
-      #   id: deployment
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     environment: Preview
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: Preview
 
-      # - name: Vercel Action
-      #   uses: amondnet/vercel-action@v20.0.0
-      #   id: vercel-action
-      #   with:
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
-      #     vercel-token: ${{ secrets.VERCEL_TOKEN_SHARED }}
-      #     github-comment: false
-      #     vercel-org-id: ${{ secrets.VERCEL_ORG_ID_SHARED }}
-      #     vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+      - name: Vercel Action
+        uses: amondnet/vercel-action@v20.0.0
+        id: vercel-action
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN_SHARED }}
+          github-comment: false
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID_SHARED }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
 
-      # - name: Update deployment status (success)
-      #   if: success()
-      #   uses: chrnorm/deployment-status@releases/v1
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     environment_url: ${{ steps.vercel-action.outputs.preview-url }}
-      #     state: "success"
-      #     deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment_url: ${{ steps.vercel-action.outputs.preview-url }}
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
 
-      # - name: Update deployment status (failure)
-      #   if: failure()
-      #   uses: chrnorm/deployment-status@releases/v1
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     state: "failure"
-      #     deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
