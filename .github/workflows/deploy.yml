@@ -1,45 +1,75 @@
 name: Deploy
-on: push
-
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'docs/**'
+      - '.github/workflows/deploy.yml'
+      - 'package.json'
 jobs:
-  deploy-preview:
-    name: Preview
+  test:
+    name: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: chrnorm/deployment-action@releases/v1
-        name: Create GitHub deployment
-        id: deployment
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          environment: Preview
+      - id: changeset-count
+        run: echo "::set-output name=CHANGE_COUNT::$(ls .changeset/*.md | grep -v README | wc -l | xargs)"
+      - run: echo "We have ${{ steps.changeset-count.outputs.CHANGE_COUNT}} files"
+  # deploy:
+  #   # Run on main
+  #   if: ${{ github.ref == 'refs/heads/main' }}
+  #   name: Production
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@master
+  #     -
+  #     - name: Vercel Action
+  #       uses: amondnet/vercel-action@v20.0.0
+  #       id: vercel-action
+  #       with:
+  #         github-token: ${{ secrets.GITHUB_TOKEN }}
+  #         vercel-token: ${{ secrets.VERCEL_TOKEN_SHARED }}
+  #         github-comment: false
+  #         vercel-org-id: ${{ secrets.VERCEL_ORG_ID_SHARED }}
+  #         vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
 
-      - name: Vercel Action
-        uses: amondnet/vercel-action@v20.0.0
-        id: vercel-action
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-token: ${{ secrets.VERCEL_TOKEN_SHARED }}
-          github-comment: false
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID_SHARED }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-      - name: preview-url
-        run: |
-          echo ${{ steps.vercel-action.outputs.preview-url }}
+  # deploy-preview:
+  #   # Don't run on main
+  #   if: ${{ github.ref != 'refs/heads/main' }}
+  #   name: Preview
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@master
+  #     - uses: chrnorm/deployment-action@releases/v1
+  #       name: Create GitHub deployment
+  #       id: deployment
+  #       with:
+  #         token: ${{ secrets.GITHUB_TOKEN }}
+  #         environment: Preview
 
-      - name: Update deployment status (success)
-        if: success()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          environment_url: ${{ steps.vercel-action.outputs.preview-url }}
-          state: "success"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+  #     - name: Vercel Action
+  #       uses: amondnet/vercel-action@v20.0.0
+  #       id: vercel-action
+  #       with:
+  #         github-token: ${{ secrets.GITHUB_TOKEN }}
+  #         vercel-token: ${{ secrets.VERCEL_TOKEN_SHARED }}
+  #         github-comment: false
+  #         vercel-org-id: ${{ secrets.VERCEL_ORG_ID_SHARED }}
+  #         vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
 
-      - name: Update deployment status (failure)
-        if: failure()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          state: "failure"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+  #     - name: Update deployment status (success)
+  #       if: success()
+  #       uses: chrnorm/deployment-status@releases/v1
+  #       with:
+  #         token: ${{ secrets.GITHUB_TOKEN }}
+  #         environment_url: ${{ steps.vercel-action.outputs.preview-url }}
+  #         state: "success"
+  #         deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+
+  #     - name: Update deployment status (failure)
+  #       if: failure()
+  #       uses: chrnorm/deployment-status@releases/v1
+  #       with:
+  #         token: ${{ secrets.GITHUB_TOKEN }}
+  #         state: "failure"
+  #         deployment_id: ${{ steps.deployment.outputs.deployment_id }}
