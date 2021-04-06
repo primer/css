@@ -72,11 +72,11 @@
   line-height: $lh-condensed-ultra;
   color: var(--color-text-secondary);
   vertical-align: middle;
-  box-shadow: none;
 
   // For `<button>` elements
   background: transparent;
   border: 0;
+  box-shadow: none;
 
   &:hover { color: var(--color-text-link); }
 
