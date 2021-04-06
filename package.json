@@ -101,6 +101,5 @@
       "requireConfigFile": false
     },
     "parser": "@babel/eslint-parser"
-  },
-  "prettier": "@github/prettier-config"
+  }
 }
