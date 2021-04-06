@@ -21,14 +21,6 @@ jobs:
         run: echo "::set-output name=CHANGE_COUNT::$(ls .changeset/*.md | grep -v README | wc -l | xargs)"
 
       - if: ${{ steps.changeset-count.outputs.CHANGE_COUNT == 0 }}
-        uses: chrnorm/deployment-action@releases/v1
-        name: Create GitHub deployment
-        id: deployment
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          environment: Production
-
-      - if: ${{ steps.changeset-count.outputs.CHANGE_COUNT == 0 }}
         name: Vercel Action
         uses: amondnet/vercel-action@v20.0.0
         id: vercel-action
@@ -39,20 +31,3 @@ jobs:
           github-comment: false
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID_SHARED }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-
-      - name: Update deployment status (success)
-        if: success()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          environment_url: ${{ steps.vercel-action.outputs.preview-url }}
-          state: "success"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-
-      - name: Update deployment status (failure)
-        if: failure()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          state: "failure"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
