@@ -1,5 +1,17 @@
 # @primer/css
 
+## 16.2.0
+
+### Minor Changes
+
+- [#1294](https://github.com/primer/css/pull/1294) [`7609a074`](https://github.com/primer/css/commit/7609a0742cbb69b2c48af5a2d583c94a14a2d0c6) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding a color text link on hover that will change a color utility class
+
+* [#1295](https://github.com/primer/css/pull/1295) [`fea6ea69`](https://github.com/primer/css/commit/fea6ea692013cbf13b4d93dff1601bb0805beb73) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding text-semibold and text-light utility classes
+
+### Patch Changes
+
+- [#1297](https://github.com/primer/css/pull/1297) [`7a374784`](https://github.com/primer/css/commit/7a37478499c6dbdd30082442abec9dccdfc9efa4) Thanks [@simurai](https://github.com/simurai)! - Separate active and selected states for `.btn`
+
 ## 16.1.2
 
 ### Patch Changes
