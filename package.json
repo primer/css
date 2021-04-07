@@ -55,7 +55,7 @@
     "js-yaml": "4.0.0",
     "minimist": "1.2.3",
     "node-fetch": "2.6.1",
-    "postcss": "7.0.32",
+    "postcss": "8.2.9",
     "postcss-import": "^12.0.1",
     "postcss-load-config": "3.0.1",
     "postcss-loader": "^3.0.0",
