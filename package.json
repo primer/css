@@ -88,18 +88,13 @@
     "ie 11"
   ],
   "eslintConfig": {
-    "extends": [
-      "plugin:github/internal",
-      "plugin:github/recommended"
-    ],
     "env": {
-      "es6": true,
-      "node": true
+      "browser": true,
+      "commonjs": true,
+      "es2021": true
     },
     "parserOptions": {
-      "ecmaVersion": 2017,
-      "requireConfigFile": false
-    },
-    "parser": "@babel/eslint-parser"
+      "ecmaVersion": 12
+    }
   }
 }
