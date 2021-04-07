@@ -11,7 +11,6 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
 module.exports = stylelint.createPlugin(ruleName, (enabled, options = {}) => {
   const {currentVersion} = options
   if (!currentVersion) {
-    // eslint-disable-next-line no-console
     console.warn(`No "currentVersion" supplied to ${ruleName}; bailing`)
     return () => null
   }

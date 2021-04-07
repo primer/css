@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+/* eslint eslint-comments/no-use: off */
+/* eslint-disable github/no-then */
 const postcss = require('postcss')
 const atImport = require('postcss-import')
 const syntax = require('postcss-scss')
