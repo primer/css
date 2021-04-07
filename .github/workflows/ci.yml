@@ -13,6 +13,7 @@ jobs:
         with:
           node-version: 12
       - run: yarn
+      - run: yarn dist
       - name: Lint source files
         run: yarn stylelint
       - name: Look for unused stylelint:disable lines
