@@ -12,6 +12,15 @@ updates:
     allow:
       - dependency-name: "@primer/gatsby-theme-doctocat"
 
+  # Keep primer dependencies up to date daily
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-name: "@primer/primitives"
+      - dependency-name: "@primer/octicons"
+
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
