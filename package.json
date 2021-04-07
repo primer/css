@@ -48,7 +48,7 @@
     "eslint-plugin-react": "^7.23.1",
     "filesize": "4.1.2",
     "front-matter": "4.0.2",
-    "fs-extra": "^4.0.2",
+    "fs-extra": "^9.1.0",
     "globby": "^6.1.0",
     "jest": "26.6.3",
     "js-yaml": "4.0.0",
