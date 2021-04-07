@@ -3,6 +3,7 @@ on:
   pull_request_target:
     paths:
       - 'src/**'
+      - '.github/workflows/bundle_report.yml'
 jobs:
   bundle:
     runs-on: ubuntu-latest
