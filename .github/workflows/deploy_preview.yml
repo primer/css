@@ -14,8 +14,8 @@ jobs:
     name: Preview
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: chrnorm/deployment-action@releases/v1
+      - uses: actions/checkout@v2
+      - uses: chrnorm/deployment-action@v1
         name: Create GitHub deployment
         id: deployment
         with:
@@ -23,7 +23,7 @@ jobs:
           environment: Preview
 
       - name: Vercel Action
-        uses: amondnet/vercel-action@v20.0.0
+        uses: amondnet/vercel-action@v20
         id: vercel-action
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -34,7 +34,7 @@ jobs:
 
       - name: Update deployment status (success)
         if: success()
-        uses: chrnorm/deployment-status@releases/v1
+        uses: chrnorm/deployment-status@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment_url: ${{ steps.vercel-action.outputs.preview-url }}
@@ -43,7 +43,7 @@ jobs:
 
       - name: Update deployment status (failure)
         if: failure()
-        uses: chrnorm/deployment-status@releases/v1
+        uses: chrnorm/deployment-status@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           state: "failure"
