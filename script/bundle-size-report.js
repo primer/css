@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+/* eslint eslint-comments/no-use: off */
+/* eslint-disable github/no-then */
 const fetch = require('node-fetch')
 const filesize = require('filesize')
 const cssstats = require('cssstats')
@@ -124,7 +126,7 @@ function get(getter, format = String) {
   }
 }
 
-function delta(getter, format = String, options = {}) {
+function delta(getter, format = String) {
   const {moreIsGood = false, badThreshold = 1000} = options
   return entry => {
     const local = getter(entry.local)

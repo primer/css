@@ -980,7 +980,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@>=2.25.0":
+"@typescript-eslint/eslint-plugin@^4.20.0":
   version "4.21.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.21.0.tgz#3fce2bfa76d95c00ac4f33dff369cb593aab8878"
   integrity sha512-FPUyCPKZbVGexmbCFI3EQHzCZdy2/5f+jv6k2EDljGdXSRc0cKvbndd2nHZkSLqCNOPk0jB6lGzwIkglXcYVsQ==
@@ -1006,7 +1006,7 @@
     eslint-scope "^5.0.0"
     eslint-utils "^2.0.0"
 
-"@typescript-eslint/parser@>=2.25.0":
+"@typescript-eslint/parser@^4.20.0":
   version "4.21.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-4.21.0.tgz#a227fc2af4001668c3e3f7415d4feee5093894c1"
   integrity sha512-eyNf7QmE5O/l1smaQgN0Lj2M/1jOuNg2NrBm1dqqQN0sVngTLyw8tdCbih96ixlhbF1oINoN8fDCyEH9SjLeIA==
@@ -2531,7 +2531,7 @@ eslint-module-utils@^2.6.0:
     debug "^2.6.9"
     pkg-dir "^2.0.0"
 
-eslint-plugin-eslint-comments@>=3.0.1:
+eslint-plugin-eslint-comments@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-eslint-comments/-/eslint-plugin-eslint-comments-3.2.0.tgz#9e1cd7b4413526abb313933071d7aba05ca12ffa"
   integrity sha512-0jkOl0hfojIHHmEHgmNdqv4fmh7300NdpA9FFpF7zaoLvB/QeXOGNLIo86oAveJFrfB1p05kC8hpEMHM8DwWVQ==
@@ -2539,22 +2539,22 @@ eslint-plugin-eslint-comments@>=3.0.1:
     escape-string-regexp "^1.0.5"
     ignore "^5.0.5"
 
-eslint-plugin-github@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-github/-/eslint-plugin-github-4.1.2.tgz#b2897af1398f8efaf9bc351a9f4dee98dc04fe04"
-  integrity sha512-ng738ugjNNF0BY4HQ9qo51xxQZZYtdYC//dhis+j8FL9BEsQ6x5BPmMbaKNP7PZ9wBUBTA7U8p4xFxUJlMi/PA==
+eslint-plugin-github@^4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-github/-/eslint-plugin-github-4.1.3.tgz#f84d2f7e848d38ba82eeadcb898328bd3d02e175"
+  integrity sha512-90MZbFt61jO+hCprPAPH1VSLylQPsynmMId79z/fCGQEhm3qzbAkUG3NqhNK8ltWZfFbXFYuXB4S5BnNttYGhQ==
   dependencies:
-    "@typescript-eslint/eslint-plugin" ">=2.25.0"
-    "@typescript-eslint/parser" ">=2.25.0"
+    "@typescript-eslint/eslint-plugin" "^4.20.0"
+    "@typescript-eslint/parser" "^4.20.0"
     eslint-config-prettier ">=8.0.0"
-    eslint-plugin-eslint-comments ">=3.0.1"
-    eslint-plugin-import ">=2.20.1"
-    eslint-plugin-prettier ">=3.1.2"
+    eslint-plugin-eslint-comments "^3.2.0"
+    eslint-plugin-import "^2.22.1"
+    eslint-plugin-prettier "^3.3.1"
     eslint-rule-documentation ">=1.0.0"
-    prettier ">=1.12.0"
-    svg-element-attributes ">=1.3.1"
+    prettier "^2.2.1"
+    svg-element-attributes "^1.3.1"
 
-eslint-plugin-import@>=2.20.1:
+eslint-plugin-import@^2.22.1:
   version "2.22.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.22.1.tgz#0896c7e6a0cf44109a2d97b95903c2bb689d7702"
   integrity sha512-8K7JjINHOpH64ozkAhpT3sd+FswIZTfMZTjdx052pnWrgRCVfp8op9tbjpAk3DdUeI/Ba4C8OjdC0r90erHEOw==
@@ -2597,7 +2597,7 @@ eslint-plugin-jsx-a11y@^6.4.1:
     jsx-ast-utils "^3.1.0"
     language-tags "^1.0.5"
 
-eslint-plugin-prettier@>=3.1.2:
+eslint-plugin-prettier@3.3.1, eslint-plugin-prettier@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-3.3.1.tgz#7079cfa2497078905011e6f82e8dd8453d1371b7"
   integrity sha512-Rq3jkcFY8RYeQLgk2cCwuc0P7SEFwDravPhsJZOQ5N4YI4DSg50NyqJ/9gdZHzQlHf8MvafSesbNJCcP/FF6pQ==
@@ -5860,15 +5860,15 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@>=1.12.0:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
-  integrity sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
-
 prettier@^1.18.2, prettier@^1.19.1:
   version "1.19.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
   integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
+
+prettier@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
+  integrity sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
 
 pretty-format@^26.6.2:
   version "26.6.2"
@@ -7054,10 +7054,10 @@ supports-hyperlinks@^2.0.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
-svg-element-attributes@>=1.3.1:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/svg-element-attributes/-/svg-element-attributes-2.0.0.tgz#c954d179325f1aa41ed53fc6ac56237bf7d49645"
-  integrity sha512-l5hz33fMaTWOlNIgxtL1Wo36Hj8p8qcl2zBzqvcgfZNUdmkf6ebWTMNClLTKHrekytt4CdY8V0k30ab16b4rqQ==
+svg-element-attributes@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/svg-element-attributes/-/svg-element-attributes-1.3.1.tgz#0c55afac6284291ab563d0913c062cf78a8c0ddb"
+  integrity sha512-Bh05dSOnJBf3miNMqpsormfNtfidA/GxQVakhtn0T4DECWKeXQRQUceYjJ+OxYiiLdGe4Jo9iFV8wICFapFeIA==
 
 svg-tags@^1.0.0:
   version "1.0.0"
