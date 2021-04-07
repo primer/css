@@ -56,7 +56,7 @@
     "node-fetch": "2.6.1",
     "postcss": "7.0.32",
     "postcss-import": "^12.0.1",
-    "postcss-load-config": "2.1.0",
+    "postcss-load-config": "3.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-node-sass": "2.1.8",
     "postcss-scss": "2.1.1",
