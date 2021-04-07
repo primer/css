@@ -11,5 +11,6 @@ jobs:
       - uses: actions/stale@v3
         with:
           debug-only: true
+          skip-stale-issue-message: true
           stale-issue-message: 'Message to comment on stale issues. If none provided, will not mark issues stale'
           stale-pr-message: 'Message to comment on stale PRs. If none provided, will not mark PRs stale'
