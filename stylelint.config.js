@@ -4,6 +4,7 @@ module.exports = {
   extends: ['stylelint-config-primer'],
   plugins: ['stylelint-scss', './script/stylelint-todo'],
   syntax: 'scss',
+  ignoreFiles: ['src/fonts/**/*'],
   rules: {
     'scss/dollar-variable-default': [true, {ignore: 'local'}],
     'primer/no-override': false,
