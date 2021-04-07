@@ -26,7 +26,7 @@ describe('deprecations', () => {
     }
   })
 
-  it('A selector was removed from the codebase and added to upcoming major release deprecations file.', () => {
+  it('A selector was removed from the codebase but not added to upcoming major release deprecations file.', () => {
     const removedSelectors = selectorsDiff['removed']
     const nextMajor = semver.inc(version, 'major')
     const deprecations = getDeprecatedSelectors(nextMajor)

@@ -4,6 +4,8 @@
     [data-color-mode="light"][data-light-theme="#{$theme-name}"],
     [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
       @content;
+
+      /*! */ // This is a fix for a cssstats bug see https://github.com/cssstats/cssstats/issues/331
     }
   }
   @else {
