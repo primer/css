@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: chrnorm/deployment-action@v1
+      - uses: chrnorm/deployment-action@v1.2.0
         name: Create GitHub deployment
         id: deployment
         with:
