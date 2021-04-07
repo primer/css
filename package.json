@@ -64,7 +64,6 @@
     "postcss-value-parser": "^4.1.0",
     "prop-types": "^15.6.2",
     "semver": "5.7.1",
-    "style-loader": "^0.18.2",
     "styled-components": "4.1.2",
     "stylelint": "^13.12.0",
     "stylelint-config-primer": "^11.0.1",
