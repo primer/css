@@ -9,5 +9,5 @@ tmp/
 docs.scss
 .*
 *.log
-now.json
+vercel.json
 *.config.js

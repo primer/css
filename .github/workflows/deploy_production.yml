@@ -14,7 +14,7 @@ jobs:
     name: Production
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
 
       # Check the number of changeset files, if it's 0 we deploy
       - id: changeset-count
@@ -22,7 +22,7 @@ jobs:
 
       - if: ${{ steps.changeset-count.outputs.CHANGE_COUNT == 0 }}
         name: Vercel Action
-        uses: amondnet/vercel-action@v20.0.0
+        uses: amondnet/vercel-action@v20
         id: vercel-action
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

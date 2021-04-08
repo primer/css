@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
 const globby = require('globby')
 const cssstats = require('cssstats')
 const postcss = require('postcss')
@@ -113,6 +112,7 @@ function writeVariableData() {
   return Promise.all([
     analyzeVariables('src/support/index.scss'),
     analyzeVariables('src/marketing/support/index.scss')
+    /* eslint-disable-next-line github/no-then */
   ]).then(([support, marketing]) => {
     const data = Object.assign({}, support, marketing)
     writeFile(join(outDir, 'variables.json'), JSON.stringify(data, null, 2))
