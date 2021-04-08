@@ -6,11 +6,11 @@ module.exports = {
     sourcesContent: true,
     annotation: true
   },
-  plugins: {
-    'postcss-node-sass': {
+  plugins: [
+    require('postcss-node-sass')({
       includePaths: [path.join(__dirname, 'node_modules')],
       outputStyle: 'compressed'
-    },
-    'autoprefixer': {}
-  }
+    }),
+    require('autoprefixer')
+  ]
 }

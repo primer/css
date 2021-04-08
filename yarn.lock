@@ -4955,7 +4955,7 @@ node-releases@^1.1.70:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.71.tgz#cb1334b179896b1c89ecfdd4b725fb7bbdfc7dbb"
   integrity sha512-zR6HoT6LrLCRBwukmrVbHv0EpEQjksO6GmFcZQQuCAy139BEsoVKPYnf3jongYW83fAa1torLGYwxxky/p28sg==
 
-node-sass@^4.10.0:
+node-sass@^4.14.1:
   version "4.14.1"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.14.1.tgz#99c87ec2efb7047ed638fb4c9db7f3a42e2217b5"
   integrity sha512-sjCuOlvGyCJS40R8BscF5vhVlQjNN069NtQ1gSxyK1u9iqvn6tf7O1R4GNowVZfiZUCRt5MmMs1xd+4V/7Yr0g==
@@ -5504,14 +5504,13 @@ postcss-media-query-parser@^0.2.3:
   resolved "https://registry.yarnpkg.com/postcss-media-query-parser/-/postcss-media-query-parser-0.2.3.tgz#27b39c6f4d94f81b1a73b8f76351c609e5cef244"
   integrity sha1-J7Ocb02U+Bsac7j3Y1HGCeXO8kQ=
 
-postcss-node-sass@^2.1.8:
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/postcss-node-sass/-/postcss-node-sass-2.1.8.tgz#474e831f869e999df4f4a84cecd09f0225caf98e"
-  integrity sha512-CvulKg+z+fTwzLPsTk+d+YtiU5KWpcJki8U4WU017CnT5D6T38y+peWhS8X4aTI68ln0lIzRX7/ltGPgU6ha8g==
+postcss-node-sass@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/postcss-node-sass/-/postcss-node-sass-3.1.0.tgz#7212c52959d762820bae530a6503993711ad1f41"
+  integrity sha512-jB+g5FuWamwOClP3yhfTVg0cTMCfb/2/cc7JAbE0w5HWdS0CMLDlWJ1WqfhxGMbUeFSD1xUPFwgC4Zrm6aTNhw==
   dependencies:
     merge-source-map "^1.1.0"
-    node-sass "^4.10.0"
-    postcss "^7.0.6"
+    node-sass "^4.14.1"
 
 postcss-resolve-nested-selector@^0.1.1:
   version "0.1.1"

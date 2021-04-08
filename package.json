@@ -56,7 +56,7 @@
     "postcss-import": "^12.0.1",
     "postcss-load-config": "^3.0.1",
     "postcss-loader": "^3.0.0",
-    "postcss-node-sass": "^2.1.8",
+    "postcss-node-sass": "3.1.0",
     "postcss-scss": "^3.0.5",
     "postcss-value-parser": "^4.1.0",
     "prettier": "2.2.1",
