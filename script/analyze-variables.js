@@ -63,54 +63,57 @@ function analyzeVariables(file) {
 }
 
 function variablePlugin(variables) {
-  return postcss.plugin('analyze-variables', (options = {}) => {
+  return (options = {}) => {
     const {cwd = process.cwd()} = options
-    return root => {
-      const decls = new Map()
+    return {
+      postcssPlugin: 'analyze-variables',
+      Once(root) {
+        const decls = new Map()
 
-      root.walkDecls(/^\$/, decl => {
-        const {prop, value} = decl
-        if (decl.parent === root && !value.startsWith('(')) {
-          decl.value = value.replace(/ *!default$/, '')
-          decls.set(prop, decl)
-        }
-      })
+        root.walkDecls(/^\$/, decl => {
+          const {prop, value} = decl
+          if (decl.parent === root && !value.startsWith('(')) {
+            decl.value = value.replace(/ *!default$/, '')
+            decls.set(prop, decl)
+          }
+        })
 
-      for (const [prop, decl] of decls.entries()) {
-        const {nodes} = valueParser(decl.value)
-        const values = [valueParser.stringify(nodes)]
-        while (nodes.some(node => decls.has(node.value))) {
-          for (const node of nodes) {
-            const {value} = node
-            if (decls.has(value)) {
-              node.value = decls.get(value).value
+        for (const [prop, decl] of decls.entries()) {
+          const {nodes} = valueParser(decl.value)
+          const values = [valueParser.stringify(nodes)]
+          while (nodes.some(node => decls.has(node.value))) {
+            for (const node of nodes) {
+              const {value} = node
+              if (decls.has(value)) {
+                node.value = decls.get(value).value
+              }
+            }
+            values.push(valueParser.stringify(nodes))
+          }
+
+          const {source} = decl
+          variables[prop] = {
+            values,
+            source: {
+              path: source.input.file.replace(`${cwd}/`, ''),
+              line: source.start.line
             }
           }
-          values.push(valueParser.stringify(nodes))
         }
 
-        const {source} = decl
-        variables[prop] = {
-          values,
-          source: {
-            path: source.input.file.replace(`${cwd}/`, ''),
-            line: source.start.line
-          }
+        const container = postcss.rule({selector: ':root'})
+        for (const [prop, decl] of decls.entries()) {
+          container.append(
+            postcss.decl({
+              prop: `--${prop.substr(1)}`,
+              value: `#{${decl.value}}`
+            })
+          )
         }
+        root.append(container)
       }
-
-      const container = postcss.rule({selector: ':root'})
-      for (const [prop, decl] of decls.entries()) {
-        container.append(
-          postcss.decl({
-            prop: `--${prop.substr(1)}`,
-            value: `#{${decl.value}}`
-          })
-        )
-      }
-      root.append(container)
     }
-  })
+  }
 }
 
 function sortObject(obj, cmp) {
