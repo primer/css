@@ -20,7 +20,7 @@ jobs:
       - id: changeset-count
         run: echo "::set-output name=CHANGE_COUNT::$(ls .changeset/*.md | grep -v README | wc -l | xargs)"
 
-      - if: ${{ steps.changeset-count.outputs.CHANGE_COUNT != 0 }}
+      - if: ${{ steps.changeset-count.outputs.CHANGE_COUNT == 0 }}
         name: Vercel Action
         uses: amondnet/vercel-action@v20
         id: vercel-action
