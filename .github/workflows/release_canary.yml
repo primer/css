@@ -69,3 +69,14 @@ jobs:
               description: package.version,
               target_url: `https://unpkg.com/${package.name}@${package.version}/`
             })
+
+      - name: Reporting bundle sizes
+        uses: primer/comment-token-update@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          comment-token: 'canary_version'
+          script: |
+            version=$(jq -r ".version" package.json)
+            name=$(jq -r ".name" package.json)
+            echo "<kbd><a href=\"https://unpkg.com/browse/$name@$version/\">$name@$version</a></kbd>"

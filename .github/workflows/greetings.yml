@@ -1,9 +1,5 @@
 name: Welcome
-on:
-  pull_request_target:
-    branches-ignore:
-      - 'dependabot/**'
-      - 'changeset/**'
+on: [pull_request]
 
 jobs:
   greetings:
@@ -17,17 +13,27 @@ jobs:
         with:
           node-version: 14.x
 
-      - name: Install dependencies
-        run: yarn
+      # - name: Install dependencies
+      #   run: yarn
 
       - name: Get or Create Comment
         uses: actions/github-script@v3
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{ secrets.GPR_AUTH_TOKEN_SHARED }}
           script: |
-            const currentComments = github.issues.listComments({
+            const fs = require('fs')
+            const body = await fs.readFileSync('.github/greetings_template.md', 'utf8')
+            const result = await github.issues.listComments({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo
             });
-            console.log(currentComments)
+            const primerComments = result.data.filter(c => c.user.login == 'primer-css')
+            if (!primerComments.length) {
+              await github.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: body
+              })
+            }
