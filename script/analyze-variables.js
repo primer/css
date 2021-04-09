@@ -1,129 +1,85 @@
 #!/usr/bin/env node
-/* eslint eslint-comments/no-use: off */
-/* eslint-disable github/no-then */
 const postcss = require('postcss')
+const {join} = require('path')
+const fs = require('fs')
 const atImport = require('postcss-import')
 const syntax = require('postcss-scss')
-const valueParser = require('postcss-value-parser')
-const {readFile} = require('fs-extra')
 
-if (module.parent) {
-  module.exports = analyzeVariables
-} else {
-  const args = process.argv.slice(2)
-  const file = args.length ? args.shift() : 'src/support/index.scss'
-  analyzeVariables(file).then(data => console.log(JSON.stringify(data, null, 2)))
-}
+const processor = postcss([
+  atImport({path: ['src']}),
+  collectVariables(),
+  require('postcss-simple-vars')({includePaths: [join(__dirname, '../src/support/variables')]})
+])
 
-function analyzeVariables(file) {
-  const variables = {}
+async function analyzeVariables(fileName) {
+  const contents = await fs.readFileSync(fileName, 'utf8')
 
-  const processor = postcss([
-    atImport({path: 'src'}),
-    variablePlugin(variables),
-    require('postcss-node-sass')({includePaths: ['src/support/variables']})
-  ])
-
-  return readFile(file, 'utf8')
-    .then(css => processor.process(css, {from: file, map: false, syntax}))
-    .then(({root}) => {
-      root.walkRules(':root', container => {
-        container.walkDecls(decl => {
-          const {prop, value} = decl
-          const actualProp = `$${prop.replace(/^--/, '')}`
-          const entry = variables[actualProp]
-          if (last(entry.values) !== value) {
-            entry.values.push(value)
-          }
-          if (value.match(/^var\(--.*\)/)) {
-            delete variables[actualProp]
-          } else {
-            variables[actualProp] = Object.assign(
-              {
-                computed: value
-              },
-              entry,
-              {refs: []}
-            )
-          }
-        })
-      })
-
-      for (const [prop, entry] of Object.entries(variables)) {
-        for (const value of entry.values) {
-          if (variables[value]) {
-            variables[value].refs.push(prop)
-          }
-        }
+  const result = await processor.process(contents, {from: fileName, map: false, syntax})
+  for (const message of result.messages) {
+    if (message.plugin === 'postcss-simple-vars' && message.type === 'variable') {
+      if (!result.variables[`$${message.name}`].values.includes(message.value)) {
+        result.variables[`$${message.name}`].values.push(message.value)
       }
-
-      // sort it alphabetically by key
-      return sortObject(variables, ([ak], [bk]) => ak.localeCompare(bk))
-    })
+      const computed = message.value
+      result.variables[`$${message.name}`].computed = computed
+    }
+  }
+  return result.variables
 }
 
-function variablePlugin(variables) {
-  return (options = {}) => {
-    const {cwd = process.cwd()} = options
-    return {
-      postcssPlugin: 'analyze-variables',
-      Once(root) {
-        const decls = new Map()
+function checkNode(node) {
+  const allowedFuncts = ['var', 'round', 'cubic-bezier']
+  const functMatch = node.value.match(/([^\s]*)\(/)
+  let approvedMatch = true
+  if (functMatch && !allowedFuncts.includes(functMatch[1])) {
+    approvedMatch = false
+  }
+  return node.variable && approvedMatch
+}
 
-        root.walkDecls(/^\$/, decl => {
-          const {prop, value} = decl
-          if (decl.parent === root && !value.startsWith('(')) {
-            decl.value = value.replace(/ *!default$/, '')
-            decls.set(prop, decl)
-          }
-        })
-
-        for (const [prop, decl] of decls.entries()) {
-          const {nodes} = valueParser(decl.value)
-          const values = [valueParser.stringify(nodes)]
-          while (nodes.some(node => decls.has(node.value))) {
-            for (const node of nodes) {
-              const {value} = node
-              if (decls.has(value)) {
-                node.value = decls.get(value).value
+function collectVariables() {
+  return {
+    postcssPlugin: 'prepare-contents',
+    prepare(result) {
+      const variables = {}
+      return {
+        AtRule(atRule) {
+          atRule.remove()
+        },
+        Comment(comment) {
+          comment.remove()
+        },
+        Declaration(node) {
+          if (checkNode(node)) {
+            node.value = node.value.replace(' !default', '')
+            const fileName = node.source.input.file.replace(`${process.cwd()}/`, '')
+            variables[node.prop] = {
+              // computed: value,
+              values: [node.value],
+              source: {
+                path: fileName,
+                line: node.source.start.line
               }
             }
-            values.push(valueParser.stringify(nodes))
+          } else {
+            node.remove()
           }
-
-          const {source} = decl
-          variables[prop] = {
-            values,
-            source: {
-              path: source.input.file.replace(`${cwd}/`, ''),
-              line: source.start.line
-            }
-          }
+        },
+        OnceExit() {
+          result.variables = variables
         }
-
-        const container = postcss.rule({selector: ':root'})
-        for (const [prop, decl] of decls.entries()) {
-          container.append(
-            postcss.decl({
-              prop: `--${prop.substr(1)}`,
-              value: `#{${decl.value}}`
-            })
-          )
-        }
-        root.append(container)
       }
     }
   }
 }
 
-function sortObject(obj, cmp) {
-  const out = {}
-  for (const [key, value] of Object.entries(obj).sort(cmp)) {
-    out[key] = value
-  }
-  return out
-}
-
-function last(list) {
-  return list[list.length - 1]
+if (module.parent) {
+  module.exports = analyzeVariables
+} else {
+  ;(async () => {
+    const args = process.argv.slice(2)
+    const file = args.length ? args.shift() : 'src/support/index.scss'
+    const variables = await analyzeVariables(file)
+    console.log(JSON.stringify(variables, null, 2))
+  })()
 }
