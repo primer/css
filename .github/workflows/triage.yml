@@ -3,6 +3,7 @@ on:
   pull_request_target:
     branches-ignore:
       - 'dependabot/**'
+      - 'changeset/**'
 
 jobs:
   label-release:
