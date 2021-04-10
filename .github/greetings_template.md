@@ -1,4 +1,4 @@
-Hello @jonrohan!
+Hello @{{PR_AUTHOR}}!
 
 Thanks for the pull request! Someone on the team will take a look at this soon.
 
