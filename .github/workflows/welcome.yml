@@ -56,7 +56,7 @@ jobs:
         with:
           comment-token: 'bundle_table'
           script: |
-            echo "### Bundle size changes since latest release\n\n\`\`\`\n$(script/bundle-size-report.js)\`\`\`"
+            echo "### Bundle size changes since latest release\n\n$(script/bundle-size-report.js)"
 
       - name: Reporting selector diffs
         uses: primer/comment-token-update@main
