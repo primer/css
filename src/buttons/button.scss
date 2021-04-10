@@ -231,17 +231,12 @@
     box-shadow: var(--color-btn-danger-hover-shadow), var(--color-btn-danger-hover-inset-shadow);
 
     .Counter {
-      color: var(--color-btn-danger-hover-text);
-      background-color: var(--color-btn-danger-hover-bg);
-      border-color: var(--color-btn-danger-hover-border);
-      box-shadow: var(--color-btn-danger-hover-shadow), var(--color-btn-danger-hover-inset-shadow);
+      background-color: var(--color-btn-danger-hover-counter-bg);
     }
 
     .octicon {
-      color: var(--color-btn-danger-hover-text);
-      background-color: var(--color-btn-danger-hover-bg);
-      border-color: var(--color-btn-danger-hover-border);
-      box-shadow: var(--color-btn-danger-hover-shadow), var(--color-btn-danger-hover-inset-shadow);
+      // stylelint-disable-next-line primer/colors
+      color: var(--color-btn-danger-hover-icon);
     }
   }
 
