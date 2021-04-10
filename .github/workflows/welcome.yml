@@ -68,9 +68,9 @@ jobs:
             diff=$(script/selector-diff-report)
             if [[ $diff ]]; then
               echo "### Selectors added/removed"
-              echo "```diff"
+              echo "\`\`\`diff"
               echo $diff
-              echo "```"
+              echo "\`\`\`"
             fi
 
   label-release:
