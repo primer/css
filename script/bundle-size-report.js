@@ -65,16 +65,24 @@ const posNeg = v => (v > 0 ? '+ ' : v < 0 ? '- ' : '')
   for (const name of Object.keys(currentBundles)) {
     const current = currentBundles[name]
     const latest = latestBundles[name]
-    data.push([
-      current.name,
-      current.stats.selectors.total,
+
+    const delta = [
       current.stats.selectors.total - latest.stats.selectors.total,
-      current.stats.gzipSize,
       current.stats.gzipSize - latest.stats.gzipSize,
-      current.stats.size,
-      current.stats.size - latest.stats.size,
-      current.path
-    ])
+      current.stats.size - latest.stats.size
+    ].reduce((a, b) => a + b, 0)
+
+    if (delta !== 0) {
+      data.push([
+        current.name,
+        current.stats.selectors.total,
+        current.stats.selectors.total - latest.stats.selectors.total,
+        current.stats.gzipSize,
+        current.stats.gzipSize - latest.stats.gzipSize,
+        current.stats.size,
+        current.stats.size - latest.stats.size
+      ])
+    }
   }
 
   // Sort the data
@@ -92,8 +100,8 @@ const posNeg = v => (v > 0 ? '+ ' : v < 0 ? '- ' : '')
 
   // Adding header
   data = [
-    ['name', 'selectors', '±', 'gzip size', '±', 'raw size', '±', 'path'],
-    [':-', '-:', '-:', '-:', '-:', '-:', '-:', ':-']
+    ['name', 'selectors', '±', 'gzip size', '±', 'raw size', '±'],
+    [':-', '-:', '-:', '-:', '-:', '-:', '-:']
   ].concat(data)
 
   console.log(table(data, tableOptions))
