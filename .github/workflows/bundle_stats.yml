@@ -17,9 +17,10 @@ jobs:
         with:
           comment-token: 'bundle_table'
           script: |
-            echo "<pre>"
+            echo "### Bundle size changes since latest release"
+            echo "```"
             script/bundle-size-report.js
-            echo "</pre>"
+            echo "```"
 
       - name: Reporting selector diffs
         uses: primer/comment-token-update@main
