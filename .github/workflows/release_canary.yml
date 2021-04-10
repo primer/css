@@ -1,6 +1,6 @@
 name: Release
 on:
-  push:
+  pull_request:
     branches-ignore:
       - 'main'
       - 'changeset-release/main'
