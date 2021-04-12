@@ -23,8 +23,8 @@
     "stylelint": "stylelint --quiet src",
     "eslint": "eslint deprecations.js __tests__ script",
     "prepublishOnly": "script/prepublish",
-    "start": "npm run dev",
-    "dev": "cd docs && npm install && npm run develop",
+    "start": "yarn dev",
+    "dev": "cd docs && yarn && yarn develop",
     "pretest": "yarn dist && script/pretest",
     "test": "jest",
     "release": "changeset publish"
