@@ -21,7 +21,7 @@
     "babel-preset-gatsby": "^1.2.0",
     "chroma-js": "^2.0.6",
     "core-js": "^3.6.5",
-    "gatsby": "2.x",
+    "gatsby": "2.32.12",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-sass": "3.x",
     "gatsby-plugin-svgr": "2.1.0",
