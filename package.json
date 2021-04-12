@@ -70,12 +70,13 @@
     ]
   },
   "browserslist": [
-    "> 5%",
-    "last 2 firefox versions",
-    "last 2 chrome versions",
-    "last 2 safari versions",
-    "last 2 edge versions",
-    "ie 11"
+    "last 10 Chrome versions",
+    "last 4 Firefox versions",
+    "last 3 Safari versions",
+    "not Safari 12",
+    "last 4 Edge versions",
+    "not Edge <= 18",
+    "Firefox ESR"
   ],
   "eslintConfig": {
     "extends": [
