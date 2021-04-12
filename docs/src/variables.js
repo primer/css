@@ -114,7 +114,6 @@ function VariablesDetails({variablesByFile, ...props}) {
           <tr>
             <th>Name</th>
             <th>Value</th>
-            <th>Aliases</th>
           </tr>
         </thead>
         <tbody>
