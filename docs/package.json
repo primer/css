@@ -23,7 +23,7 @@
     "core-js": "^3.6.5",
     "gatsby": "2.32.12",
     "gatsby-plugin-alias-imports": "^1.0.5",
-    "gatsby-plugin-sass": "3.x",
+    "gatsby-plugin-sass": "3.2.0",
     "gatsby-plugin-svgr": "2.1.0",
     "path": "0.12.7",
     "postcss": "8.2.10",

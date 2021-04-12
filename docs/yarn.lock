@@ -7102,7 +7102,7 @@ gatsby-plugin-remove-trailing-slashes@^2.1.2:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-gatsby-plugin-sass@3.x:
+gatsby-plugin-sass@3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-3.2.0.tgz#1fe8f6c28fef964994681a509833eb731f1bf763"
   integrity sha512-YlQX1Kn1wGcKCgyS8OfD0/W16XIRKvE/5wg6HRnUhJV03MNTB/41eRDsgGe0zLb3jb/aw1bH7leWcBVy0RoClA==
