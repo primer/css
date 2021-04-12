@@ -1,4 +1,4 @@
-// stylelint-disable selector-max-type, block-opening-brace-space-before, no-duplicate-selectors
+// stylelint-disable selector-max-type, no-duplicate-selectors
 
 // Base button styles
 .btn {
@@ -82,12 +82,16 @@
     transition-duration: 0.1s;
   }
 
-  &:active,
+  &:active {
+    background-color: var(--color-btn-active-bg);
+    border-color: var(--color-btn-active-border);
+    transition: none;
+  }
+
   &.selected,
   &[aria-selected=true] {
     background-color: var(--color-btn-selected-bg);
     box-shadow: var(--color-shadow-inset);
-    transition: none;
   }
 
   &:disabled,

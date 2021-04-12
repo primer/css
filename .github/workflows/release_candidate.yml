@@ -1,25 +1,12 @@
 name: Release
 on:
   push:
-    branches-ignore:
-      - 'main'
+    branches:
       - 'changeset-release/main'
-      - 'dependabot/**'
-    # Don't release canary when these paths change
-    # It's not necessary because we don't ship them and it creates noise
-    paths-ignore:
-      - '.changeset/**'
-      - '.github/**'
-      - 'docs/**'
-      - 'lib/**'
-      - '__tests__/**'
-      - 'script/**'
-      - 'next.config.js'
-      - 'now.json'
 
 jobs:
-  release-canary:
-    name: Canary
+  release-candidate:
+    name: Candidate
     if: ${{ github.repository == 'primer/css' }}
 
     runs-on: ubuntu-latest
@@ -46,16 +33,15 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
 
-      - name: Publish canary version
+      - name: Publish release candidate
         run: |
-          echo "$( jq '.version = "0.0.0"' package.json )" > package.json
-          echo -e "---\n'@primer/css': patch\n---\n\nFake entry to force publishing" > .changeset/force-snapshot-release.md
-          yarn changeset version --snapshot
-          yarn changeset publish --tag canary
+          version=$(jq -r .version package.json)
+          echo "$( jq ".version = \"$(echo $version)-rc.$(git rev-parse --short HEAD)\"" package.json )" > package.json
+          yarn publish --tag next
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Output canary version number
+      - name: Output candidate version number
         uses: actions/github-script@v3
         with:
           script: |

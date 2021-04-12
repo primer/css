@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "primer-css",
-  "alias": "primer-css.now.sh",
+  "alias": "primer-css.vercel.app",
   "builds": [
     {
       "src": "docs/package.json",
@@ -26,6 +26,6 @@
     }
   ],
   "github": {
-    "silent": true
+    "enabled": false
   }
 }

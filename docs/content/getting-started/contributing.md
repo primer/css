@@ -111,13 +111,9 @@ We have several checks and tools in place to help us plan, track, and catch both
 // TODO@<version>: <message>
 ```
 
-and generates an error for each one whose `<version>` is less than or equal to the current version (in `package.json`). You can test this rule for future releases with:
+and generates an error for each one whose `<version>` is less than or equal to the current version (in `package.json`).
 
-```sh
-PRIMER_VERSION=<version> npx stylelint-only primer-css/TODO -- src
-```
-
-where `<version>` is the future version you'd like to compare against. Assuming that the correctly formatted comments exist already, violations of this stylelint rule can be used to generate a checklist of lines to remove in a future release.
+Where `<version>` is the future version you'd like to compare against. Assuming that the correctly formatted comments exist already, violations of this stylelint rule can be used to generate a checklist of lines to remove in a future release.
 
 See [the deprecation data docs](../tools/deprecations) for more information.
 

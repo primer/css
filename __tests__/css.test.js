@@ -9,6 +9,9 @@ const semver = require('semver')
 
 let selectorsDiff, variablesDiff, version
 
+// Because of a change in analyzer this was incorrectly in the list
+const variableAllowList = ['$marketing-all-spacers']
+
 beforeAll(async () => {
   selectorsDiff = getSelectorDiff()
   variablesDiff = getVariableDiff()
@@ -26,7 +29,7 @@ describe('deprecations', () => {
     }
   })
 
-  it('A selector was removed from the codebase and added to upcoming major release deprecations file.', () => {
+  it('A selector was removed from the codebase but not added to upcoming major release deprecations file.', () => {
     const removedSelectors = selectorsDiff['removed']
     const nextMajor = semver.inc(version, 'major')
     const deprecations = getDeprecatedSelectors(nextMajor)
@@ -46,7 +49,7 @@ describe('deprecations', () => {
   })
 
   it('A variable was removed from the codebase and added to upcoming major release deprecations file.', () => {
-    const removed = variablesDiff.removed
+    const removed = variablesDiff.removed.filter(v => !variableAllowList.includes(v))
     const nextMajor = semver.inc(version, 'major')
     const deprecations = getDeprecatedVariables(nextMajor)
     // Some variables were removed from the codebase, but not found

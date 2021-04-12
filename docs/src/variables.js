@@ -114,7 +114,6 @@ function VariablesDetails({variablesByFile, ...props}) {
           <tr>
             <th>Name</th>
             <th>Value</th>
-            <th>Aliases</th>
           </tr>
         </thead>
         <tbody>
@@ -138,9 +137,6 @@ function VariablesDetails({variablesByFile, ...props}) {
               <td>
                 <Swatch value={computed} mr={2} />
                 <Mono nowrap>{computed}</Mono>
-              </td>
-              <td>
-                <RefList refs={refs} />
               </td>
             </tr>
           ))}
@@ -170,16 +166,6 @@ const SwatchBox = styled(Text)`
 
 Swatch.defaultProps = {
   size: '1em'
-}
-
-function RefList({refs}) {
-  const last = refs.length - 1
-  return refs.map((ref, i) => [
-    <Link href={`#${ref}`} key={ref}>
-      <Mono nowrap>{ref}</Mono>
-    </Link>,
-    i < last ? ', ' : ''
-  ])
 }
 
 function DeprecationFlag({variable, ...rest}) {

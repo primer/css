@@ -76,6 +76,7 @@
   // For `<button>` elements
   background: transparent;
   border: 0;
+  box-shadow: none;
 
   &:hover { color: var(--color-text-link); }
 

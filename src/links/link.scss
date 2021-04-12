@@ -43,3 +43,13 @@
     cursor: pointer;
   }
 }
+
+// When using a color utility class inside of a link class,
+// color should change with link on hover.
+.Link--secondary,
+.Link--primary,
+.Link--muted {
+  &:hover [class*="color-text"] {
+    color: inherit !important;
+  }
+}

@@ -1,11 +1,12 @@
-name: Label
+name: Triage
 on:
   pull_request:
-    types: [opened, synchronize, edited]
+    branches-ignore:
+      - 'dependabot/**'
 
 jobs:
   label-release:
-    name: Release
+    name: Semantic Version Label
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v3
