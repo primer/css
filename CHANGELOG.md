@@ -1,5 +1,17 @@
 # @primer/css
 
+## 16.3.0
+
+### Minor Changes
+
+- [#1306](https://github.com/primer/css/pull/1306) [`5d42f1c5`](https://github.com/primer/css/commit/5d42f1c5c36d9732fd69541585a8d8ba4221b978) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding a min-height to input-sm
+
+### Patch Changes
+
+- [#1340](https://github.com/primer/css/pull/1340) [`8506c374`](https://github.com/primer/css/commit/8506c3747fc3d4bfa216e0fbb1d2835db4a9baf4) Thanks [@simurai](https://github.com/simurai)! - Bump @primer/primitives
+
+* [#1302](https://github.com/primer/css/pull/1302) [`90902e1a`](https://github.com/primer/css/commit/90902e1a6044f4b9fde049105f5aec7e09d52777) Thanks [@jonrohan](https://github.com/jonrohan)! - Moving the /fonts/ folder to /src/fonts/
+
 ## 16.2.0
 
 ### Minor Changes
