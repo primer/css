@@ -767,10 +767,10 @@
   dependencies:
     object-assign "^4.1.1"
 
-"@primer/primitives@4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-4.2.1.tgz#e8fac9b4b78eb81d81384ce5fcfe32bbb4115861"
-  integrity sha512-sI0Bw/PMCZ1kfPX1MRwoNYD6RWdvU0sGk9YYD8euYASwrr4E6aNH9dutMmHTRVe/N3/coBN7QUkV79GMt0UKyQ==
+"@primer/primitives@4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-4.2.2.tgz#3d4400c125bad85e9a4de35832dbe2af98ba1c45"
+  integrity sha512-PHuDnaaYI5+SjK5RaLGXxYxgDkSqx3DJJCOxwVvrcA8pPUdfJ4ifFrZxly+NA/5DyHNVTzkjnaRa9V35ff9Lgg==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.2"
