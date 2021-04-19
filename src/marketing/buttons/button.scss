@@ -1,117 +1,73 @@
 .btn-mktg {
+  position: relative;
+  z-index: 1;
   display: inline-block;
-  padding: $spacer-3 $spacer-4;
-  font-size: $h5-size;
-  font-weight: $font-weight-semibold;
-  color: var(--color-mktg-btn-text);
+  appearance: none !important;
+  padding: rem(($spacer-3) * 0.9) rem($spacer-4) rem(($spacer-3) * 1.1);
+  font-size: 1rem;
+  font-weight: $font-weight-bold;
+  line-height: 1;
   white-space: nowrap;
   vertical-align: middle;
-  cursor: pointer;
   user-select: none;
-  background-color: var(--color-mktg-btn-bg);
-  border: $border-width $border-style var(--color-mktg-btn-border);
-  border-radius: $border-radius;
-  transition-duration: $transition-time / 2;
-  transition-property: background-color, border-color, box-shadow;
-  appearance: none; // Corrects inability to style clickable `input` types in iOS.
+  border: 0;
+  border-radius: rem(6px);
+
+  @include btn-solid-mktg(
+    var(--color-text-white),
+    lighten($primary-blue-mktg, 5%),
+    $primary-blue-mktg,
+    lighten($secondary-blue-mktg, 5%),
+    $secondary-blue-mktg
+  );
+
+  &::before {
+    background-blend-mode: overlay, normal;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    content: "";
+    border-radius: rem(6px);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
 
   &:hover {
     text-decoration: none;
-    background-color: var(--color-mktg-btn-hover-bg);
-    border-color: var(--color-mktg-btn-hover-border);
-  }
 
-  &:focus {
-    outline: 0;
-    box-shadow: var(--color-mktg-btn-focus-shadow);
-  }
-
-  &:disabled,
-  &.disabled,
-  &[aria-disabled=true] {
-    color: var(--color-mktg-btn-disabled-text);
-    pointer-events: none; // Disable hover styles
-    cursor: default;
-    background-color: var(--color-mktg-btn-disabled-bg);
-    border-color: var(--color-mktg-btn-disabled-border);
+    &::before {
+      opacity: 1;
+      transition: opacity 0.4s;
+    }
   }
 }
 
 .btn-primary-mktg {
-  color: var(--color-mktg-btn-primary-text);
-  background-color: var(--color-mktg-btn-primary-bg);
-  border-color: var(--color-mktg-btn-primary-border);
-
-  &:hover {
-    background-color: var(--color-mktg-btn-primary-hover-bg);
-    border-color: var(--color-mktg-btn-primary-hover-border);
-  }
-
-  &:focus {
-    box-shadow: var(--color-mktg-btn-primary-focus-shadow);
-  }
-
-  &:disabled,
-  &.disabled,
-  &[aria-disabled=true] {
-    color: var(--color-mktg-btn-primary-disabled-text);
-    background-color: var(--color-mktg-btn-primary-disabled-bg);
-    border-color: var(--color-mktg-btn-primary-disabled-border);
-  }
+  @include btn-solid-mktg(
+    var(--color-text-white),
+    lighten($primary-green-mktg, 5%),
+    $primary-green-mktg,
+    lighten($secondary-green-mktg, 5%),
+    $secondary-green-mktg
+  );
 }
 
 .btn-outline-mktg {
-  color: var(--color-mktg-btn-outline-text);
-  background-color: var(--color-mktg-btn-outline-bg);
-  border-color: var(--color-mktg-btn-outline-border);
-
-  &:hover {
-    color: var(--color-mktg-btn-outline-hover-text);
-    background-color: var(--color-mktg-btn-outline-hover-bg);
-    border-color: var(--color-mktg-btn-outline-hover-border);
-  }
-
-  &:focus {
-    box-shadow: var(--color-mktg-btn-outline-focus-shadow);
-  }
-
-  &:disabled,
-  &.disabled,
-  &[aria-disabled=true] {
-    color: var(--color-mktg-btn-outline-disabled-text);
-    background-color: var(--color-mktg-btn-outline-disabled-bg);
-    border-color: var(--color-mktg-btn-outline-disabled-border);
-  }
+  @include btn-outline-mktg($primary-blue-mktg, $secondary-blue-mktg, $primary-blue-mktg);
+  transition: box-shadow 0.4s, color 0.4s;
 }
 
 .btn-transparent {
-  color: var(--color-mktg-btn-dark-text);
-  background-color: var(--color-mktg-btn-dark-bg);
-  border-color: var(--color-mktg-btn-dark-border);
-
-  &:hover {
-    color: var(--color-mktg-btn-dark-hover-text);
-    background-color: var(--color-mktg-btn-dark-hover-bg);
-    border-color: var(--color-mktg-btn-dark-hover-border);
-  }
-
-  &:focus {
-    box-shadow: var(--color-mktg-btn-dark-focus-shadow);
-  }
-
-  &:disabled,
-  &.disabled,
-  &[aria-disabled=true] {
-    color: var(--color-mktg-btn-dark-disabled-text);
-    background-color: var(--color-mktg-btn-dark-disabled-bg);
-    border-color: var(--color-mktg-btn-dark-disabled-border);
-  }
+  @include btn-outline-mktg($static-color-white, $static-color-white, $static-color-white);
+  transition: box-shadow 0.4s, color 0.4s;
 }
 
 // Large
 
 .btn-large-mktg {
   // stylelint-disable-next-line primer/spacing
-  padding: 20px $spacer-5;
-  font-size: $h4-size;
+  padding: 20px 30px 22px !important;
 }
