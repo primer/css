@@ -69,9 +69,14 @@
   transition: box-shadow 0.4s, color 0.4s;
 }
 
-// Large
+// Size modifiers
 
-.btn-large-mktg {
+.btn-sm-mktg {
+  // stylelint-disable-next-line primer/spacing
+  padding: rem(10px) rem($spacer-4) rem(12px);
+}
+
+.btn-lg-mktg {
   // stylelint-disable-next-line primer/spacing
   padding: 20px 30px 22px !important;
 }
