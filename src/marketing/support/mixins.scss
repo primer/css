@@ -26,9 +26,9 @@
   &:disabled,
   &.disabled,
   &[aria-disabled="true"] {
-    opacity: 0.5;
-    cursor: default;
     pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
   }
 }
 
@@ -65,7 +65,7 @@
   }
 }
 
-$browser-context: 16;
+$browser-context: 16 !default;
 
 @function rem($pixels, $context: $browser-context) {
   @if (unitless($pixels)) {

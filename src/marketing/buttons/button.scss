@@ -3,7 +3,9 @@
   z-index: 1;
   display: inline-block;
   appearance: none !important;
+  // stylelint-disable-next-line primer/spacing
   padding: rem(($spacer-3) * 0.9) rem($spacer-4) rem(($spacer-3) * 1.1);
+  // stylelint-disable-next-line primer/typography
   font-size: 1rem;
   font-weight: $font-weight-bold;
   line-height: 1;
@@ -11,6 +13,7 @@
   vertical-align: middle;
   user-select: none;
   border: 0;
+  // stylelint-disable-next-line primer/borders
   border-radius: rem(6px);
 
   @include btn-solid-mktg(
@@ -30,6 +33,7 @@
     left: 0;
     z-index: -1;
     content: "";
+    // stylelint-disable-next-line primer/borders
     border-radius: rem(6px);
     opacity: 0;
     transition: opacity 0.4s;

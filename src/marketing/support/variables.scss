@@ -7,13 +7,13 @@ $h000-size: 64px !default;
 $h000-size-mobile: 48px !default;
 
 // Colors
-$primary-blue-mktg: #4969ed;
-$secondary-blue-mktg: #3355e0;
-$primary-green-mktg: #2ea44f;
-$secondary-green-mktg: #22863a;
-$primary-purple-mktg: #6f57ff;
-$secondary-purple-mktg: #614eda;
-$static-color-white: #fff;
+$primary-blue-mktg: #4969ed !default;
+$secondary-blue-mktg: #3355e0 !default;
+$primary-green-mktg: #2ea44f !default;
+$secondary-green-mktg: #22863a !default;
+$primary-purple-mktg: #6f57ff !default;
+$secondary-purple-mktg: #614eda !default;
+$static-color-white: #fff !default;
 
 // Animations
 $transition-time: 0.4s !default;
