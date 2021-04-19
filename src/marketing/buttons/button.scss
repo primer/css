@@ -59,6 +59,16 @@
   );
 }
 
+.btn-purple-mktg {
+  @include btn-solid-mktg(
+    var(--color-text-white),
+    lighten($primary-purple-mktg, 5%),
+    $primary-purple-mktg,
+    lighten($secondary-purple-mktg, 5%),
+    $secondary-purple-mktg
+  );
+}
+
 .btn-outline-mktg {
   @include btn-outline-mktg($primary-blue-mktg, $secondary-blue-mktg, $primary-blue-mktg);
   transition: box-shadow 0.4s, color 0.4s;
