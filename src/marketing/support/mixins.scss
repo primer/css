@@ -32,10 +32,10 @@
   }
 }
 
-@mixin btn-outline-mktg($color, $color2, $bg) {
+@mixin btn-outline-mktg($color, $color2, $border, $borderHover, $borderFocus, $borderFocusInset) {
   color: $color;
   background: none;
-  box-shadow: 0 0 0 1px rgba($bg, 0.3) inset;
+  box-shadow: 0 0 0 1px $border inset;
 
   &::before {
     display: none;
@@ -49,13 +49,13 @@
   [open] > & {
     color: $color2;
     background: none;
-    box-shadow: 0 0 0 2px rgba($bg, 0.5) inset;
+    box-shadow: 0 0 0 2px $borderHover inset;
   }
 
   &:focus,
   &.focus {
     outline: 0;
-    box-shadow: 0 0 0 2px rgba($bg, 1) inset, 0 0 0 4px rgba($bg, 0.5);
+    box-shadow: 0 0 0 2px $borderFocus inset, 0 0 0 4px $borderFocusInset;
   }
 
   &:disabled,

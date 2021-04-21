@@ -51,11 +51,11 @@
 
 .btn-primary-mktg {
   @include btn-solid-mktg(
-    var(--color-text-white),
-    lighten($primary-green-mktg, 5%),
-    $primary-green-mktg,
-    lighten($secondary-green-mktg, 5%),
-    $secondary-green-mktg
+    var(--color-mktg-btn-primary-text),
+    var(--color-mktg-btn-primary-bg-top),
+    var(--color-mktg-btn-primary-bg-bottom),
+    var(--color-mktg-btn-primary-bg-overlay-top),
+    var(--color-mktg-btn-primary-bg-overlay-bottom),
   );
 }
 
@@ -70,12 +70,26 @@
 }
 
 .btn-outline-mktg {
-  @include btn-outline-mktg($primary-blue-mktg, $secondary-blue-mktg, $primary-blue-mktg);
+  @include btn-outline-mktg(
+    var(--color-mktg-btn-outline-text),
+    var(--color-mktg-btn-outline-hover-text),
+    var(--color-mktg-btn-outline-border),
+    var(--color-mktg-btn-outline-hover-border),
+    var(--color-mktg-btn-outline-focus-border),
+    var(--color-mktg-btn-outline-focus-border-inset)
+  );
   transition: box-shadow 0.4s, color 0.4s;
 }
 
 .btn-transparent {
-  @include btn-outline-mktg($static-color-white, $static-color-white, $static-color-white);
+  @include btn-outline-mktg(
+    var(--color-mktg-btn-dark-text),
+    var(--color-mktg-btn-dark-hover-text),
+    var(--color-mktg-btn-dark-border),
+    var(--color-mktg-btn-dark-hover-border),
+    var(--color-mktg-btn-dark-focus-border),
+    var(--color-mktg-btn-dark-focus-border-inset)
+  );
   transition: box-shadow 0.4s, color 0.4s;
 }
 
