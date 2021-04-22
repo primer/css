@@ -17,6 +17,7 @@ The solid blue and solid green buttons have more visual emphasis than the blue o
 ```html live
 <button class="btn-mktg mr-3" type="button">Learn more</button>
 <button class="btn-mktg btn-primary-mktg mr-3" type="button">Sign up</button>
+<button class="btn-mktg btn-enterprise-mktg mr-3" type="button">Contact sales</button>
 <button class="btn-mktg btn-outline-mktg mr-3" type="button">Learn more</button>
 <div class="mt-3 p-3" style="background-color: var(--color-scale-gray-9);">
   <button class="btn-mktg btn-transparent" type="button">Learn more</button>
@@ -25,14 +26,21 @@ The solid blue and solid green buttons have more visual emphasis than the blue o
 
 ## Sizes
 
-Available in two sizes, marketing buttons have a default size and a large size.
+Available in three sizes, marketing buttons have a default size and a large size.
 
 ```html live
+<button class="btn-mktg btn-sm-mktg mr-2" type="button">Learn more</button>
+<button class="btn-mktg btn-primary-mktg btn-sm-mktg mr-2" type="button">Sign up</button>
+<button class="btn-mktg btn-enterprise-mktg btn-sm-mktg mr-3" type="button">Contact sales</button>
+<button class="btn-mktg btn-outline-mktg btn-sm-mktg mr-2" type="button">Learn more</button>
+<hr>
 <button class="btn-mktg mr-2" type="button">Learn more</button>
 <button class="btn-mktg btn-primary-mktg mr-2" type="button">Sign up</button>
+<button class="btn-mktg btn-enterprise-mktg mr-3" type="button">Contact sales</button>
 <button class="btn-mktg btn-outline-mktg mr-2" type="button">Learn more</button>
 <hr>
-<button class="btn-mktg btn-large-mktg mr-2" type="button">Learn more</button>
-<button class="btn-mktg btn-primary-mktg btn-large-mktg mr-2" type="button">Sign up</button>
-<button class="btn-mktg btn-outline-mktg btn-large-mktg mr-2" type="button">Learn more</button>
+<button class="btn-mktg btn-lg-mktg mr-2" type="button">Learn more</button>
+<button class="btn-mktg btn-primary-mktg btn-lg-mktg mr-2" type="button">Sign up</button>
+<button class="btn-mktg btn-enterprise-mktg btn-lg-mktg mr-3" type="button">Contact sales</button>
+<button class="btn-mktg btn-outline-mktg btn-lg-mktg mr-2" type="button">Learn more</button>
 ```
