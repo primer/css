@@ -767,10 +767,10 @@
   dependencies:
     object-assign "^4.1.1"
 
-"@primer/primitives@4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-4.3.0.tgz#446e868cd1c48437cbc3340c52b159ec2e015b78"
-  integrity sha512-djXxll2yVTufmhnHA1H9bMT8I3S0ID6GlSewAJvKHlv80I+5AoZASVBF+WedtH/SyloLM5wyk+Tqj1ZNmy2+RQ==
+"@primer/primitives@4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-4.2.2.tgz#3d4400c125bad85e9a4de35832dbe2af98ba1c45"
+  integrity sha512-PHuDnaaYI5+SjK5RaLGXxYxgDkSqx3DJJCOxwVvrcA8pPUdfJ4ifFrZxly+NA/5DyHNVTzkjnaRa9V35ff9Lgg==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.2"
@@ -2726,10 +2726,10 @@ file-entry-cache@^6.0.1:
   dependencies:
     flat-cache "^3.0.4"
 
-filesize@6.2.2:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/filesize/-/filesize-6.2.2.tgz#6f94af6661606d7bc55e9a125e944fb52dbf0be7"
-  integrity sha512-yMYcRU6K9yNRSYZWfrXOuNiQQx0aJiXJsJYAR2R2andmIFo5IJrfqoXw+2h1W8zLRxy612LwwY1sH0zuxUsz0g==
+filesize@6.2.5:
+  version "6.2.5"
+  resolved "https://registry.yarnpkg.com/filesize/-/filesize-6.2.5.tgz#ee4de0e71ba03f1d6814a40085249343ccfc7ac3"
+  integrity sha512-JkM1y2+IpnEwp3pbXOUXR+9ytuZE07ZnWb/OR0H/WOSkjWASpmXgC0ZBIs4/SAYq9wHqExeQxcYNoJKf6s0RCg==
 
 fill-range@^4.0.0:
   version "4.0.0"
@@ -6619,10 +6619,10 @@ symbol-tree@^3.2.4:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
 
-table@6.1.0, table@^6.0.4, table@^6.0.7:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/table/-/table-6.1.0.tgz#676a0cfb206008b59e783fcd94ef8ba7d67d966c"
-  integrity sha512-T4G5KMmqIk6X87gLKWyU5exPpTjLjY5KyrFWaIjv3SvgaIUGXV7UEzGEnZJdTA38/yUS6f9PlKezQ0bYXG3iIQ==
+table@6.3.0, table@^6.0.4, table@^6.0.7:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/table/-/table-6.3.0.tgz#b88c2be1ae7d318638cc064b2c0604baffec79f1"
+  integrity sha512-gM9kB7aNIuSagW89Fh+SdL49uhKnVSORxMcV72u/dfptFdqExInNn5M21wgq/Uf5UdJpsboFhNe/0SoNKjaxzg==
   dependencies:
     ajv "^8.0.1"
     is-boolean-object "^1.1.0"

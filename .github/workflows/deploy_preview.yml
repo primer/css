@@ -2,7 +2,8 @@ name: Deploy
 on:
   push:
     branches-ignore:
-      - main
+      - 'main'
+      - 'dependabot/**'
     paths:
       - 'src/**'
       - 'docs/**'
