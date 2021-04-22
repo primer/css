@@ -8,6 +8,10 @@ const versionDeprecations = {
     {
       selectors: [':-ms-input-placeholder'],
       message: 'Browserslist update to match github has removed the need for this pseudoselector'
+    },
+    {
+      selectors: ['.btn-outline-blue'],
+      message: `This selector is not available in Primer CSS 16.0.0. Please refer to the documentation.`
     }
   ],
   '16.0.0': [
