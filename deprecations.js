@@ -6,7 +6,13 @@
 const versionDeprecations = {
   '17.0.0': [
     {
-      selectors: ['.btn-mktg[aria-disabled=true]', '.btn-primary-mktg[aria-disabled=true]', '.btn-outline-mktg[aria-disabled=true]', '.btn-transparent[aria-disabled=true]', '.btn-large-mktg'],
+      selectors: [
+        '.btn-mktg[aria-disabled=true]',
+        '.btn-primary-mktg[aria-disabled=true]',
+        '.btn-outline-mktg[aria-disabled=true]',
+        '.btn-transparent[aria-disabled=true]',
+        '.btn-large-mktg'
+      ],
       message: 'Removing marketing buttons'
     },
     {
