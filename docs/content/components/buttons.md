@@ -105,7 +105,7 @@ Use `.btn-large` with a type scale utility to transform the text to a bigger siz
 
 ```html live
 <div class="f3">
-  <button class="btn btn-large btn-outline-blue mr-2" type="button">Large button button</button>
+  <button class="btn btn-large btn-outline mr-2" type="button">Large button button</button>
   <a class="btn btn-large" href="#url" role="button">Large link button</a>
 </div>
 ```
