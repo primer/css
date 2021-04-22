@@ -11,7 +11,7 @@ const versionDeprecations = {
     },
     {
       selectors: ['.btn-outline-blue'],
-      message: `This selector is not available in Primer CSS 16.0.0. Please refer to the documentation.`
+      message: `This selector is not available in Primer CSS 17.0.0. Please refer to the documentation.`
     }
   ],
   '16.0.0': [
