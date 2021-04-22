@@ -17,11 +17,11 @@
   border-radius: rem(6px);
 
   @include btn-solid-mktg(
-    var(--color-text-white),
-    lighten($primary-blue-mktg, 5%),
-    $primary-blue-mktg,
-    lighten($secondary-blue-mktg, 5%),
-    $secondary-blue-mktg
+    var(--color-mktg-btn-text),
+    var(--color-mktg-btn-bg-top),
+    var(--color-mktg-btn-bg-bottom),
+    var(--color-mktg-btn-bg-overlay-top),
+    var(--color-mktg-btn-bg-overlay-bottom),
   );
 
   &::before {
