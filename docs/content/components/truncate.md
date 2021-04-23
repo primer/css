@@ -1,53 +1,63 @@
 ---
 title: Truncate
 path: components/truncate
-status: Stable
+status: Experimental
 source: 'https://github.com/primer/css/tree/main/src/truncate'
 bundle: truncate
 ---
 
-The `css-truncate` class will shorten text with an ellipsis.
+When text reaches lengths larger than existing container, shorten with ellipses.
 
-## Truncate overflow
+## Truncate
 
-Combine the `css-truncate` and `css-truncate-overflow` classes to prevent text that overflows from wrapping.
+Adding the `.Truncate` class and wrapping the inner text with `.Truncate-text` will truncate the text.
 
 ```html live
-<div class="col-3">
-  <div class="css-truncate css-truncate-overflow border p-3">
-    branch-name-that-is-really-long
-  </div>
-  <div class="border p-3 mt-3">
-    branch-name-that-is-really-long
-  </div>
+<div class="Box p-2" style="resize: horizontal;overflow: scroll;">
+  <span class="Truncate">
+    <span class="Truncate-text">branch-name-that-is-really-long</span>
+  </span>
 </div>
 ```
 
-## Truncate target
+## Truncate beginning
 
-Combine the `css-truncate` and `css-truncate-target` classes for inline (or inline-block) elements with a fixed maximum width (default: `125px`).
+Adding `.Truncate-text--beginning` to the `.Truncate-text` element will add the ellipses to the beginning of the line of text.
 
 ```html live
-Some text with a
-<strong class="css-truncate css-truncate-target">
-  branch-name-that-is-really-long
-</strong>
+<div class="Box p-2" style="resize: horizontal;overflow: scroll;">
+  <span class="Truncate">
+    <span class="Truncate-text Truncate-text--beginning">branch-name-that-is-really-long</span>
+  </span>
+</div>
 ```
 
-You can override the maximum width of the truncated text with an inline `style` attribute:
+## Truncate multiple items
+
+You can add multiple `.Truncate-text` items in the same row and they will truncate evenly. If you want to make one of the items the primary text that doesn't truncate first, add the class `.Truncate-text--primary` class.
 
 ```html live
-Some text with a
-<strong class="css-truncate css-truncate-target" style="max-width: 180px">
-  branch-name-that-is-really-long
-</strong>
+<div class="Box p-2" style="resize: horizontal;overflow: scroll;">
+  <span class="Truncate">
+    <span class="Truncate-text">really-long-repository-owner-name</span>
+    <span class="Truncate-text Truncate-text--primary text-bold">
+      <span class="text-normal">/</span> really-long-repository-name
+    </span>
+  </span>
+</div>
 ```
 
-You can reveal the entire string on hover with the addition of `.expandable`.
+## Expand on hover or focus
+
+When there are multiple items in a list, you can add the `.Truncate-text--expandable` class to the `.Truncate-text` items and they will grow when `:hover` or `:focus` state is applied to them.
 
 ```html live
-Some text with a
-<strong class="css-truncate css-truncate-target expandable">
-  branch-name-that-is-really-long
-</strong>
+<div class="Box p-2" style="resize: horizontal;overflow: scroll;">
+  <span class="Truncate">
+    <a href="#" class="Truncate-text Truncate-text--expandable">really-long-repository-owner-name</a>
+    <a href="#" class="Truncate-text Truncate-text--expandable">really-long-repository-owner-name</a>
+    <a href="#" class="Truncate-text Truncate-text--expandable">really-long-repository-owner-name</a>
+    <a href="#" class="Truncate-text Truncate-text--expandable">really-long-repository-owner-name</a>
+  </span>
+</div>
 ```

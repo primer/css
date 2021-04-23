@@ -4,6 +4,12 @@
  * array and a "message" string.
  */
 const versionDeprecations = {
+  '18.0.0': [
+    {
+      selectors: ['.css-truncate', '.css-truncate-target', '.css-truncate-overflow', '.expandable'],
+      message: '.css-truncate has been deprecated in favor of .Truncate'
+    }
+  ],
   '17.0.0': [
     {
       selectors: [

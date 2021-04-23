@@ -29,3 +29,38 @@
     max-width: 10000px !important;
   }
 }
+
+.Truncate {
+  display: inline-flex;
+  min-width: 0;
+  max-width: 100%;
+
+  .Truncate-text {
+    min-width: 3em;
+    max-width: 100%;
+    max-width: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    + .Truncate-text {
+      margin-right: $spacer-1;
+      margin-left: $spacer-1;
+    }
+
+    &.Truncate-text--beginning {
+      direction: rtl;
+    }
+
+    &.Truncate-text--primary {
+      flex-shrink: 0;
+    }
+
+    &.Truncate-text--expandable:hover,
+    &.Truncate-text--expandable:focus,
+    &.Truncate-text--expandable:active {
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+  }
+}
