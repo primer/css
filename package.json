@@ -30,7 +30,6 @@
     "release": "changeset publish"
   },
   "dependencies": {
-    "@primer/octicons": "13.0.0",
     "@primer/primitives": "4.3.0"
   },
   "devDependencies": {
