@@ -41,7 +41,7 @@ For inline progress indicators, use the `Progress` and `d-inline-flex` with an i
 ```html live
 <span class="text-small text-gray mr-2">4 of 16</span>
 <span class="Progress d-inline-flex" style="width: 160px">
-  <div class="Progress-item color-bg-success-inverse" style="width: 25%"></div>
+  <span class="Progress-item color-bg-success-inverse" style="width: 25%"></span>
 </span>
 ```
 
