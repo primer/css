@@ -58,6 +58,18 @@ ol ol ol {
   list-style-type: lower-alpha;
 }
 
+ol[type="1"] {
+  list-style-type: decimal;
+}
+
+ol[type="a"] {
+  list-style-type: lower-alpha;
+}
+
+ol[type="i"] {
+  list-style-type: lower-roman;
+}
+
 dd {
   margin-left: 0;
 }
