@@ -10,16 +10,11 @@ bundle: links
   Please note Primer v16 has changed the naming of these color classes. Check the <a href="/css/support/v16-migration">migration guide</a> to make sure your app is up to date.
 </Note>
 
-By default `<a>` elements already use the right link color and apply an underline on hover.
+By default `<a>` elements already use the right link color and apply an underline on hover. So in most cases the `.Link` class is not really needed.
 
 ```html live
-Some text with a default <a href="#url">link</a>
-```
-
-If you need to make other elements behave like a link and perhaps use JS to trigger navigating to another page, use the `.Link` class.
-
-```html live
-Some text with a <span class="Link">span that behaves like a link</span>
+Some text with a <a href="#url">link</a>
+Some text with a <a href="#url" class="Link">link</a>
 ```
 
 If you like to override the default link styles you can do so with the following link utilities. **Bear in mind that link styles are easier for more people to see and interact with when the changes in styles do not rely on color alone.**
