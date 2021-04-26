@@ -6,6 +6,10 @@
 const versionDeprecations = {
   '17.0.0': [
     {
+      selectors: ['.btn-large-mktg'],
+      message: `Please use the ".btn-lg-mktg" class instead of "btn-large-mktg".`
+    },
+    {
       selectors: [':-ms-input-placeholder'],
       message: 'Browserslist update to match github has removed the need for this pseudoselector'
     }
