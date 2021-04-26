@@ -54,6 +54,16 @@ Use `.Link--onHover` to make any text color used with links to turn blue on hove
 </a>
 ```
 
+## Nested link
+
+The `.Link` class can be nested inside an `<a>` element if only part of it should be styled like a link.
+
+```html live
+<a class="color-text-primary no-underline" href="#url">
+  A nested <span class="Link">Link</span>
+</a>
+```
+
 ## Link and color utilities
 
 Link classes in combination with [color utilities](../utilities/colors) lets you colorize information separately inside of a link but have all of the link turn into one color on hover.
