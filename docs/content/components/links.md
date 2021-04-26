@@ -19,17 +19,23 @@ Some text with a <a href="#url" class="Link">link</a>
 
 If you like to override the default link styles you can do so with the following link utilities. **Bear in mind that link styles are easier for more people to see and interact with when the changes in styles do not rely on color alone.**
 
+## Primary link
+
 Use `.Link--primary` to turn the link color to blue only on hover.
 
 ```html live
 <p class="color-text-secondary">Some text with a <a class="Link--primary" href="#url">Link--primary</a></p>
 ```
 
+## Secondary link
+
 Use `.Link--secondary` for a more subtle link color that turns blue on hover.
 
 ```html live
 Some text with a <a class="Link--secondary" href="#url">Link--secondary</a>
 ```
+
+## Muted link
 
 Use `.Link--muted` also removes the underline on hover. Tip: You can also use the `.no-underline` utility to do the same for `.Link--primary`.
 
@@ -38,6 +44,8 @@ Use `.Link--muted` also removes the underline on hover. Tip: You can also use th
 <p>Some text with a <a class="Link--primary no-underline" href="#url">Link--primary no-underline</a></p>
 ```
 
+## On hover link
+
 Use `.Link--onHover` to make any text color used with links to turn blue on hover. This is useful when you want only part of a link to turn blue on hover.
 
 ```html live
@@ -45,6 +53,8 @@ Use `.Link--onHover` to make any text color used with links to turn blue on hove
   A link with a partial <span class="Link--onHover">Link--onHover</span>
 </a>
 ```
+
+## Link and color utilities
 
 Link classes in combination with [color utilities](../utilities/colors) lets you colorize information separately inside of a link but have all of the link turn into one color on hover.
 
