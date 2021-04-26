@@ -35,6 +35,22 @@ You can add multiple `.Truncate-text` items in the same row and they will trunca
 </div>
 ```
 
+`.Truncate-text--primary` doesn't need to be the last item in the list or only have one instance. Consider this breadcrumb example where we want to highlight the Repository name and the Issue title. The rest of the breadcrumb will truncate and leave the name and title untruncated until we run out of space.
+
+```html live
+<div class="Box p-2" style="resize: horizontal;overflow: scroll;">
+  <span class="Truncate">
+    <span class="Truncate-text">primer</span>
+    <span class="Truncate-text Truncate-text--primary">/ css</span>
+    <span class="Truncate-text">/ Issues</span>
+    <span class="Truncate-text">/ #123 —</span>
+    <span class="Truncate-text Truncate-text--primary">
+      Visual bug on primer.style found in lists
+    </span>
+  </span>
+</div>
+```
+
 ## Expand on hover or focus
 
 When there are multiple items in a list, you can add the `.Truncate-text--expandable` class to the `.Truncate-text` items and they will grow when `:hover` or `:focus` state is applied to them.
