@@ -20,18 +20,6 @@ Adding the `.Truncate` class and wrapping the inner text with `.Truncate-text` w
 </div>
 ```
 
-## Truncate beginning
-
-Adding `.Truncate-text--beginning` to the `.Truncate-text` element will add the ellipses to the beginning of the line of text.
-
-```html live
-<div class="Box p-2" style="resize: horizontal;overflow: scroll;">
-  <span class="Truncate">
-    <span class="Truncate-text Truncate-text--beginning">branch-name-that-is-really-long</span>
-  </span>
-</div>
-```
-
 ## Truncate multiple items
 
 You can add multiple `.Truncate-text` items in the same row and they will truncate evenly. If you want to make one of the items the primary text that doesn't truncate first, add the class `.Truncate-text--primary` class.
