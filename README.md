@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="300px" src="./static/readme.png">
+  <img width="300px" src="./docs/src/readme.png">
 </p>
 
 <h1 align="center">Primer CSS</h1>
@@ -10,28 +10,29 @@
   <a aria-label="npm package" href="https://www.npmjs.com/package/@primer/css">
     <img alt="" src="https://img.shields.io/npm/v/@primer/css.svg">
   </a>
+  <a aria-label="build status" href="https://github.com/primer/css/actions/workflows/ci.yml">
+    <img alt="" src="https://github.com/primer/css/actions/workflows/ci.yml/badge.svg">
+  </a>
   <a aria-label="contributors graph" href="https://github.com/primer/css/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/primer/css.svg">
   </a>
-  <a aria-label="last commit" href="https://github.com/primer/css/commits/master">
+  <a aria-label="last commit" href="https://github.com/primer/css/commits/main">
     <img alt="" src="https://img.shields.io/github/last-commit/primer/css.svg">
   </a>
-  <a aria-label="join us in spectrum" href="https://spectrum.chat/primer">
-    <img alt="" src="https://withspectrum.github.io/badge/badge.svg">
-  </a>
-  <a aria-label="license" href="https://github.com/primer/css/blob/master/LICENSE">
+  <a aria-label="license" href="https://github.com/primer/css/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/primer/css.svg" alt="">
   </a>
 </p>
 
-## Migrating
-:rotating_light: **If you currently use the `primer` or `primer-`-prefixed npm packages, please read [the migration guide](MIGRATING.md)!**
+## Documentation
+
+Our documentation site lives at [primer.style/css](https://primer.style/css). You'll be able to find detailed documentation on getting started, all of the components, our theme, our principles, and more.
 
 ## Install
 This repository is distributed with [npm]. After [installing npm][install-npm], you can install `@primer/css` with this command:
 
 ```sh
-$ npm install --save @primer/css
+npm install --save @primer/css
 ```
 
 ## Usage
@@ -50,13 +51,10 @@ You can import individual Primer modules directly from the `@primer/css` package
 ```
 
 ## Development
-See [DEVELOP.md](./DEVELOP.md) for development docs.
+See [DEVELOP.md](./.github/DEVELOP.md) for development docs.
 
 ## Releasing (for GitHub staff)
-You can find docs about our release process in [RELEASING.md](./RELEASING.md).
-
-## Documentation
-The [Primer CSS docs site](https://primer.style/css) is deployed from this repo with [primer/deploy](https://github.com/primer/deploy). See [the development docs](DEVELOP.md#docs-site) for more info.
+You can find docs about our release process in [RELEASING.md](./.github/RELEASING.md).
 
 ## License
 
@@ -65,5 +63,5 @@ The [Primer CSS docs site](https://primer.style/css) is deployed from this repo 
 
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [npm]: https://www.npmjs.com/
-[primer]: https://primer.style
+[primer]: https://primer.style/
 [sass]: http://sass-lang.com/

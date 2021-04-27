@@ -5,7 +5,7 @@
   height: 8px;
   overflow: hidden;
   // stylelint-disable-next-line primer/colors
-  background-color: $gray-200;
+  background-color: var(--color-auto-gray-2);
   border-radius: $border-radius;
   outline: 1px solid transparent; // Support Firefox custom colors
 }

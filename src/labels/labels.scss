@@ -11,7 +11,7 @@
 .Label {
   @include labels-base;
   background-color: transparent !important; // TODO: Remove again
-  border-color: $border-color;
+  border-color: var(--color-label-border);
 
   &:hover {
     text-decoration: none;
@@ -30,64 +30,34 @@
   @include labels--inline;
 }
 
-// Contrast
-
-.Label--outline, // TODO: Deprecate? It's now the default
-.Label--gray {
-  color: $text-gray;
-  border-color: $border-gray;
-}
-
-.Label--gray-darker {
-  color: $text-gray-dark;
-  // stylelint-disable-next-line primer/borders
-  border-color: $gray-500;
-}
-
 // Colors
 
-.Label--yellow {
-  // stylelint-disable-next-line primer/colors
-  color: $yellow-900;
-  // stylelint-disable-next-line primer/borders
-  border-color: $yellow-800;
+.Label--primary {
+  color: var(--color-label-primary-text);
+  border-color: var(--color-label-primary-border);
 }
 
-.Label--orange {
-  // stylelint-disable-next-line primer/colors
-  color: $orange-800;
-  // stylelint-disable-next-line primer/borders
-  border-color: $orange-500;
+.Label--secondary {
+  color: var(--color-label-secondary-text);
+  border-color: var(--color-label-secondary-border);
 }
 
-.Label--red {
-  color: $text-red;
-  // stylelint-disable-next-line primer/borders
-  border-color: $red-600;
+.Label--info {
+  color: var(--color-label-info-text);
+  border-color: var(--color-label-info-border);
 }
 
-.Label--outline-green, // TODO: Deprecate
-.Label--green {
-  // stylelint-disable-next-line primer/colors
-  color: $green-600;
-  // stylelint-disable-next-line primer/borders
-  border-color: $green-500;
+.Label--success {
+  color: var(--color-label-success-text);
+  border-color: var(--color-label-success-border);
 }
 
-.Label--blue {
-  color: $text-blue;
-  border-color: $border-blue;
+.Label--warning {
+  color: var(--color-label-warning-text);
+  border-color: var(--color-label-warning-border);
 }
 
-.Label--purple {
-  color: $text-purple;
-  // stylelint-disable-next-line primer/borders
-  border-color: $purple-400;
-}
-
-.Label--pink {
-  // stylelint-disable-next-line primer/colors
-  color: $pink-600;
-  // stylelint-disable-next-line primer/borders
-  border-color: $pink-400;
+.Label--danger {
+  color: var(--color-label-danger-text);
+  border-color: var(--color-label-danger-border);
 }

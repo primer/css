@@ -11,16 +11,14 @@ function warn() {
 
 pkg="@primer/css"
 path="dist/stats/primer.json"
-warn "Pulling the old $path from unpkg.com..."
-curl -sL "https://unpkg.com/$pkg/$path" > before.json
+cp "tmp/node_modules/@primer/css/dist/stats/primer.json" before.json
 
-warn "Building the stats locally..."
 cp $path after.json
 
 key=".selectors.values[]"
 jq -r $key before.json > before.txt
 jq -r $key after.json > after.txt
 
-diff {before,after}.txt && echo 'no diff!'
+diff -u {before,after}.txt
 
 rm {before,after}.{json,txt}

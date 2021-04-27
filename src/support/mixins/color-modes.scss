@@ -1,0 +1,106 @@
+@mixin color-mode-theme($theme-name, $include-root: false) {
+  @if $include-root {
+    :root,
+    [data-color-mode="light"][data-light-theme="#{$theme-name}"],
+    [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
+      @content;
+
+      /*! */ // This is a fix for a cssstats bug see https://github.com/cssstats/cssstats/issues/331
+    }
+  }
+  @else {
+    [data-color-mode="light"][data-light-theme="#{$theme-name}"],
+    [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
+      @content;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    [data-color-mode="auto"][data-light-theme="#{$theme-name}"] {
+      @content;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    [data-color-mode="auto"][data-dark-theme="#{$theme-name}"] {
+      @content;
+    }
+  }
+}
+
+@mixin color-mode($mode) {
+  @if $mode == light {
+    :root,
+    [data-color-mode="light"][data-light-theme*="#{$mode}"],
+    [data-color-mode="dark"][data-dark-theme*="#{$mode}"] {
+      @content;
+    }
+  }
+  @else {
+    [data-color-mode="light"][data-light-theme*="#{$mode}"],
+    [data-color-mode="dark"][data-dark-theme*="#{$mode}"] {
+      @content;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    [data-color-mode="auto"][data-light-theme*="#{$mode}"] {
+      @content;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    [data-color-mode="auto"][data-dark-theme*="#{$mode}"] {
+      @content;
+    }
+  }
+}
+
+// This mixin takes a map of color mode vars and splits them into dark and light mode
+// The goal is to reduce the amount of dark/light mode selectors compiled.
+//
+// Example input for $color-map
+//
+// @include color-variables(("custom-css-variable-1": (
+//     light: var(--color-scale-gray-3),
+//     dark: var(--color-scale-gray-5)
+//   ),
+//   "custom-css-variable-2": (
+//     light: var(--color-scale-gray-2),
+//     dark: var(--color-scale-gray-6)
+//   ),
+//   "custom-css-variable-3": (
+//     light: var(--color-scale-gray-2),
+//     dark: var(--color-scale-gray-6)
+//   )
+// ));
+@mixin color-variables($color-map) {
+  // Create map to store incoming variables
+  $dark-colors: ();
+  $light-colors: ();
+
+  @each $name, $value in $color-map {
+    @each $type, $color in $value {
+      @if $type == dark {
+        $dark-colors: append($dark-colors, (--color-#{$name}, #{$color}));
+      }
+      @else {
+        $light-colors: append($light-colors, (--color-#{$name}, #{$color}));
+      }
+    }
+  }
+
+  $mode-colors: (
+    dark: $dark-colors,
+    light: $light-colors
+  );
+
+  // Loop through sorted list
+  @each $mode, $variables in $mode-colors {
+    @include color-mode($mode) {
+      @each $prop, $val in $variables {
+        #{$prop}: $val;
+      }
+    }
+  }
+}

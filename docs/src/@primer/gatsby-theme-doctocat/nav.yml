@@ -3,6 +3,8 @@
   children:
     - title: Contributing
       url: /getting-started/contributing
+    - title: Theming
+      url: /getting-started/theming
 - title: Support
   url: /support
   children:
@@ -25,8 +27,6 @@
       url: /utilities/animations
     - title: Borders
       url: /utilities/borders
-    - title: Marketing borders (deprecated)
-      url: /utilities/marketing-borders
     - title: Box shadow
       url: /utilities/box-shadow
     - title: Colors
@@ -75,8 +75,6 @@
       url: /components/box-overlay
     - title: Box
       url: /components/box
-    - title: Boxed groups (deprecated)
-      url: /components/boxed-groups
     - title: Branch name
       url: /components/branch-name
     - title: Breadcrumbs
@@ -91,6 +89,8 @@
       url: /components/header
     - title: Labels
       url: /components/labels
+    - title: Links
+      url: /components/links
     - title: Loaders
       url: /components/loaders
     - title: Markdown
@@ -99,8 +99,6 @@
       url: /components/marketing-buttons
     - title: Navigation
       url: /components/navigation
-    - title: Pagehead
-      url: /components/pagehead
     - title: Pagination
       url: /components/pagination
     - title: Popover
@@ -109,8 +107,6 @@
       url: /components/progress
     - title: Select menu
       url: /components/select-menu
-    - title: Select menu (deprecated)
-      url: /components/select-menu-deprecated
     - title: Subhead
       url: /components/subhead
     - title: Timeline

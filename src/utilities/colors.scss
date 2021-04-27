@@ -1,117 +1,52 @@
-// Color utilities
-// stylelint-disable block-opening-brace-space-before, comment-empty-line-before
+// stylelint-disable block-opening-brace-space-before
 
-// background colors
-/* Set the background to $bg-white */
-.bg-white      { background-color: $bg-white !important; }
-/* Set the background to $bg-blue */
-.bg-blue       { background-color: $bg-blue !important; }
-/* Set the background to $bg-blue-light */
-.bg-blue-light { background-color: $bg-blue-light !important; }
-/* Set the background to $bg-gray-dark */
-.bg-gray-dark  { background-color: $bg-gray-dark !important; }
-/* Set the background to $bg-gray */
-.bg-gray       { background-color: $bg-gray !important; }
-/* Set the background to $bg-gray-light */
-.bg-gray-light { background-color: $bg-gray-light !important; }
-/* Set the background to $bg-green */
-.bg-green      { background-color: $bg-green !important; }
-/* Set the background to $bg-green-light */
-.bg-green-light     { background-color: $bg-green-light !important; }
-/* Set the background to $bg-red */
-.bg-red        { background-color: $bg-red !important; }
-/* Set the background to $bg-red-light */
-.bg-red-light  { background-color: $bg-red-light !important; }
-/* Set the background to $bg-yellow */
-.bg-yellow     { background-color: $bg-yellow !important; }
-/* Set the background to $bg-yellow-light */
-.bg-yellow-light     { background-color: $bg-yellow-light !important; }
-/* Set the background to $bg-yellow-dark */
-.bg-yellow-dark      { background-color: $bg-yellow-dark !important; }
-/* Set the background to $bg-purple */
-.bg-purple     { background-color: $bg-purple !important; }
-/* Set the background to $bg-pink */
-.bg-pink { background-color: $bg-pink !important; }
-/* Set the background to $bg-purple-light */
-.bg-purple-light     { background-color: $bg-purple-light !important; }
-/* Set the background to $bg-orange */
-.bg-orange { background-color: $bg-orange !important; }
+// Text colors
+.color-text-primary   { color: var(--color-text-primary) !important; }
+.color-text-secondary { color: var(--color-text-secondary) !important; }
+.color-text-tertiary  { color: var(--color-text-tertiary) !important; }
+.color-text-link      { color: var(--color-text-link) !important; }
+.color-text-success   { color: var(--color-text-success) !important; }
+.color-text-warning   { color: var(--color-text-warning) !important; }
+.color-text-danger    { color: var(--color-text-danger) !important; }
+.color-text-inverse   { color: var(--color-text-inverse) !important; }
+.color-text-white     { color: var(--color-text-white) !important; }
 
-// Generate a foreground and background utility for every shade of every hue
-@each $hue, $shades in $hue-maps {
-  @each $index, $color in $shades {
-    .color-#{$hue}-#{$index} { color: $color !important; }
-    .bg-#{$hue}-#{$index} { background-color: $color !important; }
-  }
-}
+// Icon colors
+.color-icon-primary   { color: var(--color-icon-primary) !important; } // stylelint-disable-line primer/colors
+.color-icon-secondary { color: var(--color-icon-secondary) !important; } // stylelint-disable-line primer/colors
+.color-icon-tertiary  { color: var(--color-icon-tertiary) !important; } // stylelint-disable-line primer/colors
+.color-icon-info      { color: var(--color-icon-info) !important; } // stylelint-disable-line primer/colors
+.color-icon-danger    { color: var(--color-icon-danger) !important; } // stylelint-disable-line primer/colors
+.color-icon-success   { color: var(--color-icon-success) !important; } // stylelint-disable-line primer/colors
+.color-icon-warning   { color: var(--color-icon-warning) !important; } // stylelint-disable-line primer/colors
 
-.bg-shade-gradient {
-  background-image: linear-gradient(180deg, rgba($black, 0.065), rgba($black, 0)) !important;
-  background-repeat: no-repeat !important;
-  background-size: 100% 200px !important;
-}
+// Border colors
+.color-border-primary   { border-color: var(--color-border-primary) !important; }
+.color-border-secondary { border-color: var(--color-border-secondary) !important; }
+.color-border-tertiary  { border-color: var(--color-border-tertiary) !important; }
+.color-border-overlay   { border-color: var(--color-border-overlay) !important; }
+.color-border-inverse   { border-color: var(--color-border-inverse) !important; }
+.color-border-info      { border-color: var(--color-border-info) !important; }
+.color-border-success   { border-color: var(--color-border-success) !important; }
+.color-border-danger    { border-color: var(--color-border-danger) !important; }
+.color-border-warning   { border-color: var(--color-border-warning) !important; }
 
-// text colors
-/* Set the text color to $text-blue */
-.text-blue          { color: $text-blue !important; }
-/* Set the text color to $text-red */
-.text-red           { color: $text-red !important; }
-/* Set the text color to $text-gray-light */
-.text-gray-light    { color: $text-gray-light !important; }
-/* Set the text color to $text-gray */
-.text-gray          { color: $text-gray !important; }
-/* Set the text color to $text-gray-dark */
-.text-gray-dark     { color: $text-gray-dark !important; }
-/* Set the text color to $text-green */
-.text-green         { color: $text-green !important; }
-/* Set the text color to $text-yellow */
-.text-yellow        { color: $text-yellow !important; }
-/* Set the text color to $text-orange */
-.text-orange        { color: $text-orange !important; }
-/* Set the text color to $text-orange-light */
-.text-orange-light        { color: $text-orange-light !important; }
-/* Set the text color to $text-purple */
-.text-purple        { color: $text-purple !important; }
-/* Set the text color to $text-pink */
-.text-pink { color: $text-pink !important; }
-/* Set the text color to $text-white */
-.text-white         { color: $text-white !important; }
-/* Set the text color to inherit */
-.text-inherit       { color: inherit !important; }
+// Background colors
+.color-bg-canvas          { background-color: var(--color-bg-canvas) !important; }
+.color-bg-canvas-inverse  { background-color: var(--color-bg-canvas-inverse) !important; }
+.color-bg-canvas-inset    { background-color: var(--color-bg-canvas-inset) !important; }
+.color-bg-primary         { background-color: var(--color-bg-primary) !important; }
+.color-bg-secondary       { background-color: var(--color-bg-secondary) !important; }
+.color-bg-tertiary        { background-color: var(--color-bg-tertiary) !important; }
+.color-bg-overlay         { background-color: var(--color-bg-overlay) !important; }
+.color-bg-info            { background-color: var(--color-bg-info) !important; }
+.color-bg-info-inverse    { background-color: var(--color-bg-info-inverse) !important; }
+.color-bg-danger          { background-color: var(--color-bg-danger) !important; }
+.color-bg-danger-inverse  { background-color: var(--color-bg-danger-inverse) !important; }
+.color-bg-success         { background-color: var(--color-bg-success) !important; }
+.color-bg-success-inverse { background-color: var(--color-bg-success-inverse) !important; }
+.color-bg-warning         { background-color: var(--color-bg-warning) !important; }
+.color-bg-warning-inverse { background-color: var(--color-bg-warning-inverse) !important; }
 
-// Link colors
-// Sets the links color to $text-gray and $text-blue on hover
-.link-gray {
-  color: $text-gray !important;
-
-  &:hover {
-    color: $text-blue !important;
-  }
-}
-
-// Sets the links color to $text-gray-dark and $text-blue on hover
-.link-gray-dark {
-  color: $text-gray-dark !important;
-
-  &:hover {
-    color: $text-blue !important;
-  }
-}
-
-/* Set the link color to $text-blue on hover
-  Useful when you want only part of a link to turn blue on hover */
-.link-hover-blue {
-  &:hover {
-    color: $text-blue !important;
-  }
-}
-
-/* Make a link $text-gray, then $text-blue on hover and removes the underline */
-.muted-link {
-  color: $text-gray !important;
-
-  &:hover {
-    color: $text-blue !important;
-    text-decoration: none;
-  }
-}
+// Inherit
+.text-inherit { color: inherit !important; }

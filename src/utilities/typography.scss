@@ -1,4 +1,4 @@
-// stylelint-disable block-closing-brace-space-before, comment-empty-line-before
+// stylelint-disable comment-empty-line-before
 
 // Type scale variables found in ../support/lib/variables.scss
 // $h00-size-mobile: 40px;
@@ -154,7 +154,6 @@
   margin-bottom: 30px;
   font-size: $h3-size;
   font-weight: $font-weight-light;
-  color: $text-gray;
 }
 
 // Line-height variations
@@ -192,7 +191,9 @@
 /* Set the font weight to normal */
 .text-normal { font-weight: $font-weight-normal !important; }
 /* Set the font weight to bold */
-.text-bold { font-weight: $font-weight-bold !important;}
+.text-bold { font-weight: $font-weight-bold !important; }
+.text-semibold { font-weight: $font-weight-semibold !important; }
+.text-light { font-weight: $font-weight-light !important; }
 /* Set the font to italic */
 .text-italic { font-style: italic !important; }
 /* Make text uppercase */
@@ -228,21 +229,10 @@
 
 .text-emphasized {
   font-weight: $font-weight-bold;
-  color: $text-gray-dark;
 }
 
 // List styles
 .list-style-none { list-style: none !important; }
-
-// Text Shadows
-/* Add a dark text shadow */
-.text-shadow-dark {
-  text-shadow: 0 1px 1px rgba($black, 0.25), 0 1px 25px rgba($black, 0.75);
-}
-/* Add a light text shadow */
-.text-shadow-light {
-  text-shadow: 0 1px 0 rgba($white, 0.5);
-}
 
 /* Set to monospace font */
 .text-mono {
