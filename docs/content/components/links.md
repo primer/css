@@ -10,19 +10,16 @@ bundle: links
   Please note Primer v16 has changed the naming of these color classes. Check the <a href="/css/support/v16-migration">migration guide</a> to make sure your app is up to date.
 </Note>
 
-By default `<a>` elements already use the right link color and apply an underline on hover.
+By default `<a>` elements already use the right link color and apply an underline on hover. So in most cases the `.Link` class is not really needed.
 
 ```html live
-Some text with a default <a href="#url">link</a>
-```
-
-If you need to make other elements behave like a link and perhaps use JS to trigger navigating to another page, use the `.Link` class.
-
-```html live
-Some text with a <span class="Link">span that behaves like a link</span>
+Some text with a <a href="#url">link</a>
+Some text with a <a href="#url" class="Link">link</a>
 ```
 
 If you like to override the default link styles you can do so with the following link utilities. **Bear in mind that link styles are easier for more people to see and interact with when the changes in styles do not rely on color alone.**
+
+## Primary link
 
 Use `.Link--primary` to turn the link color to blue only on hover.
 
@@ -30,11 +27,15 @@ Use `.Link--primary` to turn the link color to blue only on hover.
 <p class="color-text-secondary">Some text with a <a class="Link--primary" href="#url">Link--primary</a></p>
 ```
 
+## Secondary link
+
 Use `.Link--secondary` for a more subtle link color that turns blue on hover.
 
 ```html live
 Some text with a <a class="Link--secondary" href="#url">Link--secondary</a>
 ```
+
+## Muted link
 
 Use `.Link--muted` also removes the underline on hover. Tip: You can also use the `.no-underline` utility to do the same for `.Link--primary`.
 
@@ -43,6 +44,8 @@ Use `.Link--muted` also removes the underline on hover. Tip: You can also use th
 <p>Some text with a <a class="Link--primary no-underline" href="#url">Link--primary no-underline</a></p>
 ```
 
+## On hover link
+
 Use `.Link--onHover` to make any text color used with links to turn blue on hover. This is useful when you want only part of a link to turn blue on hover.
 
 ```html live
@@ -50,6 +53,18 @@ Use `.Link--onHover` to make any text color used with links to turn blue on hove
   A link with a partial <span class="Link--onHover">Link--onHover</span>
 </a>
 ```
+
+## Nested link
+
+The `.Link` class can be nested inside an `<a>` element if only part of it should be styled like a link.
+
+```html live
+<a class="color-text-primary no-underline" href="#url">
+  A nested <span class="Link">Link</span>
+</a>
+```
+
+## Link and color utilities
 
 Link classes in combination with [color utilities](../utilities/colors) lets you colorize information separately inside of a link but have all of the link turn into one color on hover.
 
