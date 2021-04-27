@@ -4,8 +4,10 @@
   display: flex;
   height: 8px;
   overflow: hidden;
-  background-color: $gray-200;
+  // stylelint-disable-next-line primer/colors
+  background-color: var(--color-auto-gray-2);
   border-radius: $border-radius;
+  outline: 1px solid transparent; // Support Firefox custom colors
 }
 
 .Progress--large {
@@ -14,4 +16,13 @@
 
 .Progress--small {
   height: 5px;
+}
+
+.Progress-item {
+  outline: 2px solid transparent; // Support Firefox custom colors
+}
+
+.Progress-item + .Progress-item {
+  // stylelint-disable-next-line primer/spacing
+  margin-left: 2px;
 }

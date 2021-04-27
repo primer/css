@@ -4,12 +4,17 @@
   padding: $spacer-5;
   text-align: center;
 
+  p {
+    color: var(--color-text-secondary);
+  }
+
   code {
+    // stylelint-disable-next-line primer/spacing
     padding: 2px 5px 3px;
     font-size: $h5-size;
-    background: $bg-white;
-    border: 1px solid $border-gray-light;
-    border-radius: 3px;
+    background: var(--color-bg-canvas);
+    border: $border-width $border-style var(--color-auto-gray-0); // stylelint-disable-line primer/borders
+    border-radius: $border-radius;
   }
 
   img {
@@ -22,14 +27,16 @@
   margin-right: $spacer-1;
   margin-bottom: $spacer-2;
   margin-left: $spacer-1;
-  color: lighten($gray-400, 5%);
+  // stylelint-disable-next-line primer/colors
+  color: var(--color-blankslate-icon);
 }
 
 .blankslate-capped {
-  border-radius: 0 0 3px 3px;
+  border-radius: 0 0 $border-radius $border-radius;
 }
 
 .blankslate-spacious {
+  // stylelint-disable-next-line primer/spacing
   padding: ($spacer-6 * 2) $spacer-6;
 }
 

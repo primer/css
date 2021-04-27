@@ -22,7 +22,7 @@ path: priniciples/scss
 * Avoid specifying units for zero values, e.g., `margin: 0;` instead of `margin: 0px;`.
 * Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values.
 
-## Guidelines for using Sass feaures (WIP)
+## Guidelines for using Sass features (WIP)
 _When and when not to create:_
 
 * Variables

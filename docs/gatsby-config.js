@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: 'Primer CSS',
@@ -10,6 +12,7 @@ module.exports = {
     {
       resolve: '@primer/gatsby-theme-doctocat',
       options: {
+        defaultBranch: 'main',
         repoRootPath: '..'
       }
     },
@@ -21,10 +24,12 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-alias-imports`,
       options: {
-        trackingId: 'UA-126681523-2',
-        anonymize: true
+        alias: {
+          'styled-components': path.resolve(__dirname, 'node_modules', 'styled-components'),
+          react: path.resolve(__dirname, 'node_modules', 'react')
+        }
       }
     }
   ]

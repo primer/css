@@ -1,0 +1,32 @@
+// Label mixins
+
+// Default: 20px
+// Large: 24px
+// Inline: em based
+
+@mixin labels-base {
+  display: inline-block;
+  padding: 0 7px;
+  font-size: $font-size-small;
+  font-weight: $font-weight-semibold;
+  line-height: 18px;
+  border: $border-width $border-style transparent;
+  border-radius: 2em;
+}
+
+@mixin labels-large {
+  padding-right: 10px;
+  padding-left: 10px;
+  line-height: 22px;
+}
+
+// Inline
+//
+// Doesn't increase height of parent element
+// Can be used with different font-sizes
+
+@mixin labels--inline {
+  display: inline;
+  padding: 0.1667em 0.5em;
+  font-size: 0.9em;
+}

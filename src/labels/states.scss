@@ -1,34 +1,57 @@
 // A rounded corner box containing a label "open" or "closed"
-// The default state is gray.
-//
-// open     - $green background
-// reopened - $green background
-// closed   - $red background
-// merged   - $purple background
 
-// .state to be deprecated in replace of .State
-.state,
+// Default 32px
+// Small 24px
+
+.state, // TODO: Deprecate
 .State {
   display: inline-block;
-  padding: $spacer-1 $spacer-2;
-  font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/spacing
+  padding: 5px 12px;
+  font-size: $body-font-size;
+  font-weight: $font-weight-semibold;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: $text-white;
   text-align: center;
   white-space: nowrap;
-  background-color: $gray-500;
-  border-radius: 3px;
+  // stylelint-disable-next-line primer/borders
+  border-radius: 2em;
 }
 
-.State--green { background-color: darken($green-400, 5%); }
+.state, // TODO: Deprecate
+.State,
+.State--draft {
+  color: var(--color-pr-state-draft-text);
+  background-color: var(--color-pr-state-draft-bg);
+  border: $border-width $border-style var(--color-pr-state-draft-border);
+}
 
-.State--purple { background-color: $bg-purple; }
+.State--open {
+  color: var(--color-pr-state-open-text);
+  background-color: var(--color-pr-state-open-bg);
+  border-color: var(--color-pr-state-open-border);
+}
 
-.State--red { background-color: $red-600; }
+.State--merged {
+  color: var(--color-pr-state-merged-text);
+  background-color: var(--color-pr-state-merged-bg);
+  border-color: var(--color-pr-state-merged-border);
+}
+
+.State--closed {
+  color: var(--color-pr-state-closed-text);
+  background-color: var(--color-pr-state-closed-bg);
+  border-color: var(--color-pr-state-closed-border);
+}
+
+// Small
 
 .State--small {
-  padding: $em-spacer-2 $spacer-1;
-  font-size: $h6-size;
+  // stylelint-disable-next-line primer/spacing
+  padding: 0 10px;
+  font-size: $font-size-small;
+  // stylelint-disable-next-line primer/typography
+  line-height: $size-3;
 
   .octicon {
     width: 1em; // Ensures different icons don't change State indicator width

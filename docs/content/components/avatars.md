@@ -2,7 +2,7 @@
 title: Avatars
 path: components/avatars
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/avatars'
+source: 'https://github.com/primer/css/tree/main/src/avatars'
 bundle: avatars
 ---
 
@@ -15,15 +15,30 @@ Add `.avatar` to any `<img>` element to make it an avatar. This resets some key 
 Be sure to set `width` and `height` attributes for maximum browser performance.
 
 ```html live
-<img class="avatar" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=144" width="72" height="72" />
+<img class="avatar" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=96" width="48" height="48" />
 ```
 
 ### Small avatars
 
-We occasionally use smaller avatars. Anything less than `48px` wide should include the `.avatar-small` modifier class to reset the `border-radius` to a more appropriate level.
+We occasionally use smaller avatars. Anything less than `24px` wide should include the `.avatar-small` modifier class to reset the `border-radius` to a more appropriate level.
 
 ```html live
-<img class="avatar avatar-small" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=64" width="32" height="32" />
+<img class="avatar avatar-small" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=40" width="20" height="20" />
+```
+
+### Avatar sizes
+
+Instead of using the `width` and `height` attribute, you can also use a class like `.avatar-[1-8]`. The sizes go from `16px` up to `64px`. Note: Avatar stacks are only supported for the `20px` avatar size.
+
+```html live
+<img class="avatar avatar-1 mr-2" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=32" />
+<img class="avatar avatar-2 mr-2" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=40" />
+<img class="avatar avatar-3 mr-2" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=48" />
+<img class="avatar avatar-4 mr-2" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=56" />
+<img class="avatar avatar-5 mr-2" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=64" />
+<img class="avatar avatar-6 mr-2" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=80" />
+<img class="avatar avatar-7 mr-2" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=96" />
+<img class="avatar avatar-8 mr-2" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=128" />
 ```
 
 ### Parent-child avatars
@@ -183,7 +198,7 @@ Use `AvatarStack--right` to right-align the avatar stack. Remember to switch the
 </div>
 ```
 
-## Circle Badge
+## Circle badge
 
 `.CircleBadge` allows for the display of badge-like icons or logos. They are used mostly with Octicons or partner integration icons.
 
@@ -191,12 +206,13 @@ Use `AvatarStack--right` to right-align the avatar stack. Remember to switch the
 
 ### Small
 
-```erb
-<a class="CircleBadge CircleBadge--small float-left mr-2" href="#small" title="Travis CI">
+```html live
+<a class="CircleBadge CircleBadge--small float-left mr-2" href="#small">
   <img src="https://github.com/travis-ci.png"  class="CircleBadge-icon" alt="">
 </a>
-<a class="CircleBadge CircleBadge--small bg-yellow" title="Zap this!" href="#small">
-  <%= octicon "zap",  :class => "CircleBadge-icon text-white" %>
+<a class="CircleBadge CircleBadge--small bg-yellow" href="#small">
+  <!-- <%= octicon "zap",  class: "CircleBadge-icon text-white" %> -->
+  <svg class="CircleBadge-icon text-white octicon octicon-zap" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7 9-9z"></path></svg>
 </a>
 ```
 
@@ -220,11 +236,12 @@ Use `AvatarStack--right` to right-align the avatar stack. Remember to switch the
 
 For specific cases where two badges or more need to be shown as related or connected (such as integrations or specific product workflows), a `DashedConnection` class was created. Use utility classes to ensure badges are spaced correctly.
 
-```erb
+```html live
 <div class="DashedConnection">
   <ul class="d-flex list-style-none flex-justify-between" aria-label="A sample GitHub workflow">
     <li class="CircleBadge CircleBadge--small" aria-label="GitHub">
-      <%= octicon "mark-github", :class => "width-full height-full" %>
+      <!-- <%= octicon "mark-github", class: "width-full height-full" %> -->
+      <svg class="octicon octicon-mark-github width-full height-full" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
     </li>
 
     <li class="CircleBadge CircleBadge--small" aria-label="Slack">

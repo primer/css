@@ -1,0 +1,23 @@
+// Issue Labels
+
+// TODO: Replace with .Label once solid backgrounds are supported
+
+.IssueLabel {
+  @include labels-base;
+
+  .g-emoji {
+    position: relative;
+    top: -0.05em;
+    display: inline-block;
+    font-size: 1em;
+    line-height: $lh-condensed-ultra;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.IssueLabel--big {
+  @include labels-large;
+}

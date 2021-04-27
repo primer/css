@@ -3,20 +3,22 @@ title: Contributing
 description: Guidelines for contributing to GitHub's CSS
 ---
 
+While this contributing guide is for GitHub employees, all contributions from the community are welcome.
+
 ## Decision process for adding new styles
 
 ### Components
 
-[Components](/css/components) are frequently used visual patterns we've abstracted into a set of convenient styles, that would be otherwise difficult to achieve with utilities and layout objects.
+[Components](/components) are frequently used visual patterns we've abstracted into a set of convenient styles, that would be otherwise difficult to achieve with utilities and layout objects.
 
-Making a decision on whether new components should be added is done on a case by case basis. It's not always easy to make that decision but here are some questions you should ask yourself before moving forward with a pull request. The design systems team will help you make this decision.
+Decisions to add new components are made on a case-by-case basis, with help from the GitHub Design Systems team. Some questions that we use to guide these decisions include:
 
 - How often is this pattern used across the site?
 - Could these styles be achieved with existing components, objects, and utilities?
 - If your design is difficult to compose with current styles, does this highlight problems with existing components (such as overly-specific components, or missing objects and utilities)?
 - Is this a totally new pattern or should it be an extension of an existing component?
 - How is this pattern being implemented currently - have you identified problems with it’s current implementation that can be improved with adding a new pattern?
-- Is the desire for this new pattern a side-effect of lacking documentation or mis-understandings of use with current styles?
+- Is the desire for this new pattern a side-effect of lacking documentation or misunderstanding of use with current styles?
 - Are there special factors that need to be considered as to why the this pattern needs it’s own styles? Such legal issues, usability issues, or branding and trademarks?
 - Is this something that would be better handled by other front-end code rather than CSS?
 - Every new addition of CSS means we ask our users to download a larger CSS file, and we increase the maintenance work of our CSS framework. Does the convenience of adding these new styles outweigh those costs?
@@ -25,8 +27,8 @@ Making a decision on whether new components should be added is done on a case by
 
 Many of the same questions can be applied to objects and utilities, however the purpose of these styles is different:
 
-- [Objects](/css/objects) aren't concerned with thematic styles. They are for common display and positioning styles we find in page layouts and common content types.
-- [Utilities](/css/utilities) do one thing well and one thing only. These styles are immutable and therefore often use the `!important` tag. For this reason we aim not to change the properties of utilities very often. They often form the building blocks of our pages and when we introduce new ones we need to do so with care as we'll likely need to live with these styles for a long time. When assessing whether there is a need to add a new utility, consider these additional questions:
+- [Objects](/objects) aren't concerned with thematic styles. They are for common display and positioning styles we find in page layouts and common content types.
+- [Utilities](/utilities) do one thing well and one thing only. These styles are immutable and therefore often use the `!important` tag. For this reason we aim not to change the properties of utilities very often. They often form the building blocks of our pages and when we introduce new ones we need to do so with care as we'll likely need to live with these styles for a long time. When assessing whether there is a need to add a new utility, consider these additional questions:
   - How does this new utility fit within our existing set of utilities? If it is an addition to an existing set then it should follow the same naming convention.
   - Is it for a property that would likely need to be changed at different breakpoints? If so it may need responsive options.
   - If this style is part of a family of properties, do we need to consider adding the full set? Reasons for adding a full set could be that the other property values are often used, or that there would be a need to switch the property on and off (such as display or visibility).
@@ -39,10 +41,14 @@ Many of the same questions can be applied to objects and utilities, however the 
 
 It's usually better to open an issue before investing time in spiking out a new pattern. This gives the design systems team a heads up and allows other designers to share thoughts. Here's an outline of what's helpful to include in a new style issue:
 
-1. What the pattern is and how it's being used across the site - post screenshots and urls where possible. If you need help identifying where the pattern is being used, call that out here and cc the relevant team and/or cc `@product-design` to help.
+1. What the pattern is, and how it's being used on GitHub.com. Post screenshots and/or URLs whenever possible. If you need help identifying where the pattern is used, call that out in the issue.
 2. Why you think a new pattern is needed (this should answer the relevant questions above).
 3. If you intend to work on these new styles yourself, let us know what your timeline and next steps are. If you need help and this is a dependency for shipping another project, please make that clear here and what the timeline is.
-4. Add the `type: new styles` label, or `type: refactor` where appropriate.
+4. Add the appropriate label(s):
+    - `Type: Enhancement` for new styles
+    - `Type: Bug Fix` for—you guessed it!—bug fixes
+    - `Type: Polish` for refactors of existing styles
+    - `Type: Breaking Change` for any change that [removes CSS selectors or SCSS variables](#removing-styles-and-variables)
 
 ### Step 2: Design and build the new styles
 
@@ -62,7 +68,54 @@ New styles we add should be used in as many places as makes sense to in producti
 
 If you get to this step you've helped contribute to a style guide that many of your colleagues use on a daily basis, you've contributed to an open source project that's referenced and used by many others, and you've helped improve the usability and consistency of GitHub for our users. Thank you!
 
-Let the [design systems team](https://github.com/github/design-systems) know if we can improve these guidelines and make following this process any easier.
+[Please open an issue](#step-1-open-an-issue) if we can improve these guidelines and make following this process any easier.
+
+
+## Removing styles and variables
+
+Removing styles and SCSS variables can be scary. How do you know if the thing you're deleting (or just planning to delete) isn't used in other projects? [Semantic versioning] provides us with an answer: We **don't** know, but we can use "major" version increments (from, say, `13.4.0` to `14.0.0`) to signal that the release includes potentially breaking changes. The rule is simple:
+
+**Whenever we delete a CSS selector or SCSS variable, we will increment to the next major version.**
+
+When planning to delete a CSS selector or SCSS variable, you should:
+
+1. Add a [TODO@version comment](#primer-csstodo) above the line in question:
+
+    ```scss
+    // TODO@15.0.0: delete $some-unused-var
+    $some-unused-var: 15px !default;
+    ```
+
+1. Add it to [deprecations.js]:
+
+    ```js
+    const versionDeprecations = {
+      '15.0.0': [
+        {
+          variables: ['$some-unused-var'],
+          message: '$some-unused-var is unused, and has been deprecated.'
+        }
+      ]
+    }
+    ```
+
+We have several checks and tools in place to help us plan, track, and catch both expected and unexpected removals of both CSS selectors and SCSS variables:
+
+### `deprecations.js`
+[This file][deprecations.js] is where we document all of our current and _planned_ CSS selector and SCSS variable deprecations (removals), and is used to generate [deprecation data](../tools/deprecations) for other tools.
+
+### `primer-css/TODO`
+[This stylelint rule][script/stylelint-todo.js] looks for comments in the form:
+
+```scss
+// TODO@<version>: <message>
+```
+
+and generates an error for each one whose `<version>` is less than or equal to the current version (in `package.json`).
+
+Where `<version>` is the future version you'd like to compare against. Assuming that the correctly formatted comments exist already, violations of this stylelint rule can be used to generate a checklist of lines to remove in a future release.
+
+See [the deprecation data docs](../tools/deprecations) for more information.
 
 ## Documentation structure
 
@@ -80,7 +133,7 @@ Let the [design systems team](https://github.com/github/design-systems) know if 
 ---
 title: Alerts
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/alerts'
+source: 'https://github.com/primer/css/tree/main/src/alerts'
 ---
 ```
 
@@ -96,4 +149,9 @@ Check out Doctocat's [live code](https://primer.style/doctocat/usage/live-code) 
 
 Primer CSS follows [semantic versioning](http://semver.org/) conventions. This helps others know when a change is a patch, minor, or breaking change.
 
-To understand what choice to make, you'll need to understand semver and know if one of the changes shown is a major, minor, or patch. Semver is confusing at first, so I recommend reviewing [semver](http://semver.org/) and/or ask in [#design-systems](https://github.slack.com/archives/design-systems) or and experienced open-source contributor.
+To understand what choice to make, you'll need to understand semver and know if one of the changes shown is a major, minor, or patch. Semver is confusing at first, so we recommend reviewing [semver](http://semver.org/) and/or asking the team by [opening an issue](#step-1-open-an-issue).
+
+[semantic versioning]: https://semver.org
+[script/test-deprecations.js]: https://github.com/primer/css/tree/main/script/test-deprecations.js
+[deprecations.js]: https://github.com/primer/css/tree/main/deprecations.js
+[script/stylelint-todo.js]: https://github.com/primer/css/tree/main/script/stylelint-todo.js

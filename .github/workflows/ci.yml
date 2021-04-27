@@ -1,0 +1,42 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request_target:
+jobs:
+  stylelint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - run: yarn
+      - run: yarn dist
+      - name: Lint source files
+        run: yarn stylelint
+      - name: Look for unused stylelint:disable lines
+        run: yarn stylelint -- --report-needless-disables
+
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - run: yarn
+      - name: Lint workflow files
+        run: yarn eslint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - run: yarn
+      - name: Jest
+        run: yarn test

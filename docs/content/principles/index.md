@@ -56,7 +56,7 @@ Many designers and developers will edit and add to our CSS. Write CSS in a way t
 
 * Choose verbose over clever. A little duplication is worthwhile if it adds clarity.
 * Don't prioritize being DRY if  it means it's hard to read and understand, creates dependencies, or hides what the code is really doing.
-*  Avoid overusing pre-processor features that make the code less approachable. Keep it CSS'y and limit the use of Sass features like nesting, variables, functions. For more detail on this check out our [Sass guidelines and lint rules](/css/principles/scss).
+*  Avoid overusing pre-processor features that make the code less approachable. Keep it CSS'y and limit the use of Sass features like nesting, variables, functions. For more detail on this check out our [Sass guidelines and lint rules](/principles/scss).
 
 
 ## Components
@@ -93,7 +93,7 @@ Example:
 
 ## BEM-style naming and structure
 
-Components and objects should follow the [Block Element Modifier](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) (BEM) model in terms of structure. We've chosen to use a modified form of BEM syntax using [Uppercase](https://en.wikipedia.org/wiki/Uppercase) for the block name, hyphens and lowercase or elements, and double-hyphens and lowercase for modifiers. When a Block class requires two words use [PascalCase](https://en.wikipedia.org/wiki/PascalCase), for example `ProgressBar`. When an Element or Modifier class requires two words use [camelCase](https://en.wikipedia.org/wiki/camelCase), for example `[Component]-closeButton` or `[Component]--extraLarge`.
+Components and objects should follow the [Block Element Modifier](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) (BEM) model in terms of structure. We've chosen to use a modified form of BEM syntax using [uppercase](https://en.wikipedia.org/wiki/Uppercase) for the block name, hyphens and lowercase for elements, and double-hyphens and lowercase for modifiers. When a block class requires two words use [Pascal case](https://en.wikipedia.org/wiki/PascalCase), for example `ProgressBar`. When an element or modifier class requires two words use [camel case](https://en.wikipedia.org/wiki/camelCase), for example `[Component]-closeButton` or `[Component]--extraLarge`.
 
 * **Block**: A block includes all of the base styles you want shared across every variation of a component. Minimal thematic styling should be applied to blocks, particularly when variations of a component include visual variations. Apply additional styles with modifers rather than overriding base styles.
 * **Element**: An element is part of a component. Elements should work together with other elements and can have modifiers. Element styles should not override block styles - this often results in applying more styles directly to elements rather than having styles flow down from the parent level.
