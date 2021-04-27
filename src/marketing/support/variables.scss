@@ -1,6 +1,6 @@
 $marketing-font-path: "/fonts/" !default;
 
-$font-mktg: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-mktg: $body-font !default;
 
 // Builds upon @primer/css/support/variables/typography.scss
 $h000-size: 64px !default;
