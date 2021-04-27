@@ -1,0 +1,55 @@
+name: Triage
+on:
+  pull_request:
+    branches-ignore:
+      - 'dependabot/**'
+
+jobs:
+  label-release:
+    name: Semantic Version Label
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v4.0.2
+        id: version-result
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          result-encoding: string
+          script: |
+            const diff_url = context.payload.pull_request.diff_url
+            const result = await github.request(diff_url)
+            const match = [...result.data.matchAll(/^\+['"]@primer\/css['"]:\s(patch|minor|major)/m)]
+            if (match && match[0]) {
+              return match[0][1]
+            }
+
+      - uses: actions/github-script@v4.0.2
+        env:
+          RELEASE: ${{ steps.version-result.outputs.result }}
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            if (process.env.RELEASE == 'undefined') { return }
+            const issue = await github.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number
+            })
+            const currentLabels = issue.data.labels.map( l => l.name)
+            const newLabel = `${process.env.RELEASE} release`
+            if (!currentLabels.includes(newLabel)) {
+              const otherReleaseLabels = currentLabels.filter( l => l.endsWith(' release'))
+              if (otherReleaseLabels.length) {
+                github.issues.removeLabel({
+                  issue_number: context.issue.number,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: [otherReleaseLabels]
+                })
+              }
+              github.issues.addLabels({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: [newLabel]
+              })
+            }

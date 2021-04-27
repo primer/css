@@ -3,7 +3,7 @@ title: Box
 path: components/box
 status_issue: 'https://github.com/github/design-systems/issues/198'
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/box'
+source: 'https://github.com/primer/css/tree/main/src/box'
 bundle: box
 ---
 
@@ -11,7 +11,7 @@ The `.Box` component can be used for something as simple as a rounded corner box
 
 ## Box
 
-A `.Box` is a container with a a white background, a light gray border, and rounded corners. By default there are no additional styles such as padding, these can be added as needed with utility classes. Other styles and layouts can be achieved with box elements and modifiers shown in the documentation below.
+A `.Box` is a container with a white background, a light gray border, and rounded corners. By default there are no additional styles such as padding, these can be added as needed with utility classes. Other styles and layouts can be achieved with box elements and modifiers shown in the documentation below.
 
 ```html live
 <div class="Box">

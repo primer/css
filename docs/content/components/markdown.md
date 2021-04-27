@@ -2,7 +2,7 @@
 title: Markdown
 path: components/markdown
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/markdown'
+source: 'https://github.com/primer/css/tree/main/src/markdown'
 bundle: markdown
 ---
 

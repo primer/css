@@ -2,41 +2,16 @@
 
 // Border
 $border-width: 1px !default;
-$border-color: $border-gray !default;
 $border-style: solid !default;
-$border: $border-width $border-color $border-style !default;
+$border: $border-width $border-style var(--color-border-primary) !default;
 
 // Border Radius
 $border-radius-1:  4px !default;
 $border-radius-2:  6px !default;
+$border-radius-3:  8px !default;
 $border-radius: $border-radius-2 !default;
-
-// Box shadow
-$box-shadow: 0 1px 0 rgba($black, 0.04) !default;
-$box-shadow-medium: 0 3px 6px rgba($gray-400, 0.15) !default;
-$box-shadow-large: 0 8px 24px rgba($gray-400, 0.2) !default;
-$box-shadow-extra-large: 0 12px 48px rgba($gray-400, 0.3) !default;
-
-$box-shadow-highlight: inset 0 1px 0 rgba($white, 0.25) !default; // top highlight
-$box-shadow-inset: inset 0 1px 0 rgba($border-color, 0.2) !default; // top inner shadow
-$box-shadow-focus: 0 0 0 3px rgba($border-blue, 0.3) !default; // blue focus ring
-
-// Button variables
-$border-color-button: $black-fade-15 !default;
-$btn-active-shadow: inset 0 0.15em 0.3em $black-fade-15 !default; // TODO: Deprecate?
-
-// Form variables
-$form-control-shadow: inset 0 1px 2px rgba($black, 0.075) !default; // TODO: Deprecate?
-$btn-input-focus-shadow: 0 0 0 0.2em rgba($blue, 0.3) !default; // TODO: Deprecate? Replaced by $box-shadow-focus
 
 // Tooltips
 $tooltip-max-width: 250px !default;
-$tooltip-background-color: $black !default;
-$tooltip-text-color: $white !default;
 $tooltip-delay: 0.4s !default;
 $tooltip-duration: 0.1s !default;
-
-// diffstat background colors
-$bg-diffstat-added: darken($green-400, 5%) !default;
-$bg-diffstat-deleted: $red-600 !default;
-$bg-diffstat-neutral: $gray-300 !default;

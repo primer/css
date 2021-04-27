@@ -2,7 +2,7 @@
 title: Autocomplete
 path: components/autocomplete
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/autocomplete'
+source: 'https://github.com/primer/css/tree/main/src/autocomplete'
 bundle: autocomplete
 ---
 
@@ -23,7 +23,7 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
 <style>.frame-example {width:300px;height:160px;}</style>
 ```
 
-Autocomplete items can contain attional content, like an `.avatar`. Or use utility classes to cusotmize the text style.
+Autocomplete items can contain additional content, like an `.avatar`. Or use utility classes to customize the text style.
 
 ```html live
 <div class="position-relative">

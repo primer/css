@@ -1,7 +1,7 @@
 // Layout
-// stylelint-disable block-opening-brace-space-after, block-opening-brace-space-before, comment-empty-line-before
+// stylelint-disable block-opening-brace-space-before, comment-empty-line-before
 
-// Loop through the breakpoint values
+/* Position */
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
     @each $position in $responsive-positions {
@@ -12,14 +12,19 @@
   }
 }
 
-/* Set top 0 */
-.top-0    { top: 0 !important; }
-/* Set right 0 */
-.right-0  { right: 0 !important; }
-/* Set bottom 0 */
-.bottom-0 { bottom: 0 !important; }
-/* Set left 0 */
-.left-0   { left: 0 !important; }
+/* Final position */
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    .top#{$variant}-0 { top: 0 !important; }
+    .right#{$variant}-0 { right: 0 !important; }
+    .bottom#{$variant}-0 { bottom: 0 !important; }
+    .left#{$variant}-0 { left: 0 !important; }
+    .top#{$variant}-auto { top: auto !important; }
+    .right#{$variant}-auto { right: auto !important; }
+    .bottom#{$variant}-auto { bottom: auto !important; }
+    .left#{$variant}-auto { left: auto !important; }
+  }
+}
 
 /* Vertical align middle */
 .v-align-middle      { vertical-align: middle !important; }
@@ -35,10 +40,14 @@
 .v-align-baseline    { vertical-align: baseline !important; }
 
 // Overflow utilities
-@each $overflow in (visible, hidden, auto, scroll) {
-  .overflow-#{$overflow} { overflow: $overflow !important; }
-  .overflow-x-#{$overflow} { overflow-x: $overflow !important; }
-  .overflow-y-#{$overflow} { overflow-y: $overflow !important; }
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    @each $overflow in (visible, hidden, auto, scroll) {
+      .overflow#{$variant}-#{$overflow}   { overflow: $overflow !important; }
+      .overflow#{$variant}-x-#{$overflow} { overflow-x: $overflow !important; }
+      .overflow#{$variant}-y-#{$overflow} { overflow-y: $overflow !important; }
+    }
+  }
 }
 
 // Clear floats

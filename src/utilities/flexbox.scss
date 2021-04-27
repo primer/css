@@ -1,5 +1,5 @@
 // Flex utility classes
-// stylelint-disable block-opening-brace-space-after, block-opening-brace-space-before
+// stylelint-disable block-opening-brace-space-before
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
     // Flexbox classes
@@ -9,8 +9,9 @@
     .flex#{$variant}-column         { flex-direction: column !important; }
     .flex#{$variant}-column-reverse { flex-direction: column-reverse !important; }
 
-    .flex#{$variant}-wrap     { flex-wrap: wrap !important; }
-    .flex#{$variant}-nowrap   { flex-wrap: nowrap !important; }
+    .flex#{$variant}-wrap             { flex-wrap: wrap !important; }
+    .flex#{$variant}-nowrap           { flex-wrap: nowrap !important; }
+    .flex#{$variant}-wrap-reverse     { flex-wrap: wrap-reverse !important; }
 
     .flex#{$variant}-justify-start    { justify-content: flex-start !important; }
     .flex#{$variant}-justify-end      { justify-content: flex-end !important; }

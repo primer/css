@@ -1,9 +1,13 @@
 ---
 title: Select menu
 status: New
-source: 'https://github.com/primer/css/tree/master/src/select-menu'
+source: 'https://github.com/primer/css/tree/main/src/select-menu'
 bundle: select-menu
 ---
+
+<Note>
+  Please note that the `.select-menu` component is deprecated and `.SelectMenu` should be used instead. Check the <a href="/css/components/select-menu-deprecated">migration guide</a> to make sure your app is up to date.
+</Note>
 
 The `SelectMenu` component provides advanced support for navigation, filtering, and more. Any menu can make use of JavaScript-enabled live filtering, selected states, tabbed lists, and keyboard navigation with a bit of markup.
 
@@ -210,9 +214,7 @@ The list of items is arguably the most important subcomponent within the menu. B
             <path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" />
           </svg>
         </button>
-        <button class="SelectMenu-item d-block" role="menuitem">
-          With a <span class="Label bg-blue" title="Label: label">label</span>
-        </button>
+        <button class="SelectMenu-item d-block" role="menuitem">With a <span class="Label bg-blue">label</span></button>
         <button class="SelectMenu-item" role="menuitem">
           With a counter <span class="Counter bg-gray-2 ml-1">16</span>
         </button>
@@ -579,11 +581,11 @@ Sometimes a select menu needs to communicate a "blank slate" where there's no co
 
 ## github.com usage
 
-When adding the `.SelectMenu` component on github.com, use the [`<details-menu>`](https://github.com/github/details-menu-element) element. It will :tophat: magically make the `.SelectMenu` work. Here a basic example:
+When adding the `.SelectMenu` component on github.com, use the [`<details-menu>`](https://github.com/github/details-menu-element) element. It will magically make the `.SelectMenu` work. Here a basic example:
 
 ```erb
 <details class="details-reset details-overlay" id="my-select-menu">
-  <summary class="btn" title="Pick an item">
+  <summary class="btn">
     <span>Choose</span>
     <span class="dropdown-caret"></span>
   </summary>
@@ -617,4 +619,4 @@ If loading content should be deferred, use the [`<include-fragment>`](https://gi
 </details-menu>
 ```
 
-It will add a pulsing :octoface: icon while the content is loading.
+It will add a pulsing "octoface" icon while the content is loading.

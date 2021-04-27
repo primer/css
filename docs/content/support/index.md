@@ -1,7 +1,7 @@
 ---
 title: Support
 path: support/index
-source: 'https://github.com/primer/css/tree/master/src/support'
+source: 'https://github.com/primer/css/tree/main/src/support'
 bundle: support
 ---
 

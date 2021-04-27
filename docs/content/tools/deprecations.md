@@ -30,7 +30,7 @@ The JSON data is available in the unpacked node module's `dist/deprecations.json
       }
     }
     ```
-    
+
     Deprecation messages strings may include Markdown so that they can be included in the [changelog].
 
 * `selectors` is an object mapping CSS selectors (e.g. `.btn-purple`) to the version in which they are _or will be_ deprecated:
@@ -45,7 +45,7 @@ The JSON data is available in the unpacked node module's `dist/deprecations.json
       }
     }
     ```
-    
+
 * `variables` is an object mapping SCSS variables (including the leading `$`, e.g. `$status-pending`) to the version in which they are or will be deprecated:
 
     ```json
@@ -58,7 +58,7 @@ The JSON data is available in the unpacked node module's `dist/deprecations.json
       }
     }
     ```
-    
+
 
 ## Node
 
@@ -125,5 +125,5 @@ console.log(`$yellow-700 deprecated? ${isVariableDeprecated('$yellow-700')}`)
 
 
 [semver]: https://npm.im/semver
-[changelog]: https://github.com/primer/css/tree/master/CHANGELOG.md
+[changelog]: https://github.com/primer/css/tree/main/CHANGELOG.md
 [Map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map

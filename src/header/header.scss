@@ -4,9 +4,8 @@
   padding: $spacer-3;
   font-size: $h5-size;
   line-height: $lh-default;
-  // stylelint-disable-next-line primer/colors
-  color: $white-fade-70;
-  background-color: $bg-gray-dark;
+  color: var(--color-header-text);
+  background-color: var(--color-header-bg);
   align-items: center;
   flex-wrap: nowrap;
 }
@@ -25,13 +24,13 @@
 
 .Header-link {
   font-weight: $font-weight-bold;
-  color: $text-white;
+  // stylelint-disable-next-line primer/colors
+  color: var(--color-header-logo);
   white-space: nowrap;
 
   &:hover,
   &:focus {
-    // stylelint-disable-next-line primer/colors
-    color: $white-fade-70;
+    color: var(--color-header-text);
     text-decoration: none;
   }
 }

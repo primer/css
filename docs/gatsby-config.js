@@ -12,6 +12,7 @@ module.exports = {
     {
       resolve: '@primer/gatsby-theme-doctocat',
       options: {
+        defaultBranch: 'main',
         repoRootPath: '..'
       }
     },
@@ -20,13 +21,6 @@ module.exports = {
       resolve: 'gatsby-plugin-svgr',
       options: {
         svgo: false
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-126681523-2',
-        anonymize: true
       }
     },
     {

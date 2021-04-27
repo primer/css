@@ -3,7 +3,7 @@ title: Flexbox
 path: utilities/flexbox
 status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/157'
-source: 'https://github.com/primer/css/blob/master/src/utilities/flexbox.scss'
+source: 'https://github.com/primer/css/blob/main/src/utilities/flexbox.scss'
 bundle: utilities
 ---
 
@@ -132,8 +132,9 @@ You can choose whether flex items are forced into a single line or wrapped onto 
 ### CSS
 
 ```css
-.flex-wrap     { flex-wrap: wrap; }
-.flex-nowrap   { flex-wrap: nowrap; }
+.flex-wrap           { flex-wrap: wrap; }
+.flex-nowrap         { flex-wrap: nowrap; }
+.flex-wrap-reverse   { flex-wrap: wrap-reverse; }
 ```
 
 ### Classes
@@ -142,6 +143,7 @@ You can choose whether flex items are forced into a single line or wrapped onto 
 | --- | --- |
 | `.flex-wrap` | Flex items will break onto multiple lines (default) |
 | `.flex-nowrap` | Flex items are laid out in a single line, even if they overflow |
+| `.flex-wrap-reverse` | Behaves the same as wrap but cross-start and cross-end are permuted. |
 
 ### `flex-wrap` example
 
@@ -163,6 +165,22 @@ You can choose whether flex items are forced into a single line or wrapped onto 
 
 ```html live
 <div class="border d-flex flex-nowrap">
+  <div class="p-5 px-6 border bg-gray-light">1</div>
+  <div class="p-5 px-6 border bg-gray-light">2</div>
+  <div class="p-5 px-6 border bg-gray-light">3</div>
+  <div class="p-5 px-6 border bg-gray-light">4</div>
+  <div class="p-5 px-6 border bg-gray-light">5</div>
+  <div class="p-5 px-6 border bg-gray-light">6</div>
+  <div class="p-5 px-6 border bg-gray-light">7</div>
+  <div class="p-5 px-6 border bg-gray-light">8</div>
+  <div class="p-5 px-6 border bg-gray-light">9</div>
+</div>
+```
+
+### `flex-wrap-reverse` example
+
+```html live
+<div class="border d-flex flex-wrap-reverse">
   <div class="p-5 px-6 border bg-gray-light">1</div>
   <div class="p-5 px-6 border bg-gray-light">2</div>
   <div class="p-5 px-6 border bg-gray-light">3</div>
@@ -761,7 +779,7 @@ Here is an example of a media object that is **vertically centered on large scre
 
 ## Flexbox bugs
 
-This section lists flexbox bugs that affect [browsers we currently support](https://github.com/primer/css/blob/master/.browserslistrc).
+This section lists flexbox bugs that affect [browsers we currently support](https://github.com/primer/css/blob/main/.browserslistrc).
 
 1. **Minimum content sizing of flex items not honored.** Some browsers don't respect flex item size. Instead of respecting the minimum content size, items shrink below their minimum size which can create some undesirable results, such as overflowing text. The workaround is to apply `flex-shrink: 0;` to the items using `d-flex`. This can be applied with the `flex-shrink-0` utility. For more information read [philipwalton/flexbugs](https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored).
 

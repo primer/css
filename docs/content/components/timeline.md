@@ -26,7 +26,7 @@ The `TimelineItem` component is used to display items on a vertical timeline, co
 
 ## TimelineItem-badge
 
-The default TimelineItem-badge color is dark text on a light grey background.
+The default TimelineItem-badge color is dark text on a light gray background.
 
 ```html live
 <!-- Default TimelineItem Badge -->

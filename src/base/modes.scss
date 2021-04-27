@@ -1,0 +1,36 @@
+// Color modes
+
+@import "../support/mixins/color-modes.scss";
+
+@import "@primer/primitives/dist/scss/colors/_light.scss";
+@import "@primer/primitives/dist/scss/colors/_dark.scss";
+@import "@primer/primitives/dist/scss/colors/_dark_dimmed.scss";
+
+// Outputs the CSS variables
+// Use :root (html element) to define a default
+
+@include color-mode-theme(light, true) {
+  @include primer-colors-light;
+}
+
+@include color-mode-theme(dark) {
+  @include primer-colors-dark;
+}
+
+@include color-mode-theme(dark_dimmed) {
+  @include primer-colors-dark_dimmed;
+}
+
+// Color mode boundaries
+// Enables nesting of different color modes
+
+[data-color-mode] {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-canvas);
+}
+
+// color-scheme
+// Enables color modes for native elements
+
+@include color-mode(light) { color-scheme: light; }
+@include color-mode(dark) { color-scheme: dark; }
