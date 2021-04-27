@@ -1,17 +1,17 @@
 // Flex utility classes
-// stylelint-disable primer/selector-no-utility
-// stylelint-disable block-opening-brace-space-after, block-opening-brace-space-before, comment-empty-line-before
-
+// stylelint-disable block-opening-brace-space-before
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
     // Flexbox classes
     // Container
-    .flex#{$variant}-row         { flex-direction: row !important; }
-    .flex#{$variant}-row-reverse { flex-direction: row-reverse !important; }
-    .flex#{$variant}-column      { flex-direction: column !important; }
+    .flex#{$variant}-row            { flex-direction: row !important; }
+    .flex#{$variant}-row-reverse    { flex-direction: row-reverse !important; }
+    .flex#{$variant}-column         { flex-direction: column !important; }
+    .flex#{$variant}-column-reverse { flex-direction: column-reverse !important; }
 
-    .flex#{$variant}-wrap     { flex-wrap: wrap !important; }
-    .flex#{$variant}-nowrap   { flex-wrap: nowrap !important; }
+    .flex#{$variant}-wrap             { flex-wrap: wrap !important; }
+    .flex#{$variant}-nowrap           { flex-wrap: nowrap !important; }
+    .flex#{$variant}-wrap-reverse     { flex-wrap: wrap-reverse !important; }
 
     .flex#{$variant}-justify-start    { justify-content: flex-start !important; }
     .flex#{$variant}-justify-end      { justify-content: flex-end !important; }
@@ -33,8 +33,9 @@
     .flex#{$variant}-content-stretch  { align-content: stretch !important; }
 
     // Item
-    .flex#{$variant}-auto { flex: 1 1 auto !important; }
-    .flex#{$variant}-grow-0 { flex-grow: 0 !important; }
+    .flex#{$variant}-1        { flex: 1 !important; }
+    .flex#{$variant}-auto     { flex: auto !important; }
+    .flex#{$variant}-grow-0   { flex-grow: 0 !important; }
     .flex#{$variant}-shrink-0 { flex-shrink: 0 !important; }
 
     .flex#{$variant}-self-auto        { align-self: auto !important; }
@@ -43,12 +44,6 @@
     .flex#{$variant}-self-center      { align-self: center !important; }
     .flex#{$variant}-self-baseline    { align-self: baseline !important; }
     .flex#{$variant}-self-stretch     { align-self: stretch !important; }
-
-    // Shorthand for equal width and height cols
-    .flex#{$variant}-item-equal {
-      flex-grow: 1;
-      flex-basis: 0;
-    }
 
     .flex#{$variant}-order-1 { order: 1 !important; }
     .flex#{$variant}-order-2 { order: 2 !important; }

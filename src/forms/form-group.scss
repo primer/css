@@ -1,21 +1,29 @@
-// Form groups
-//
-// Typical form groups - `<dl.form-group>` with a `<dt>` containing the label and
-// `<dd> containing the form elements.
 // stylelint-disable selector-max-compound-selectors
 // stylelint-disable selector-max-type
+
+// Form groups
+//
+// Usage:
+//
+// <div class="form-group">
+//   <div class="form-group-header"> containing the label
+//   <div class="form-group-body"> containing the form elements
+// </div>
+
 .form-group {
+  // stylelint-disable-next-line primer/spacing
   margin: 15px 0;
 
   // Text fields
   .form-control {
     width: 440px;
     max-width: 100%;
+    // stylelint-disable-next-line primer/spacing
     margin-right: 5px;
-    background-color: $bg-gray-light;
+    background-color: var(--color-input-contrast-bg);
 
     &:focus {
-      background-color: $bg-white;
+      background-color: var(--color-input-bg);
     }
 
     &.shorter { width: 130px; }
@@ -40,7 +48,9 @@
   // stylelint-enable selector-no-qualifying-type
 
   // The Label
-  dt {
+  dt, // TODO: Deprecate
+  .form-group-header {
+    // stylelint-disable-next-line primer/spacing
     margin: 0 0 6px;
   }
 
@@ -48,13 +58,17 @@
     position: relative;
   }
 
-  &.flattened dt {
+  &.flattened dt, // TODO: Deprecate
+  &.flattened .form-group-header {
     float: left;
     margin: 0;
+    // stylelint-disable-next-line primer/typography
     line-height: 32px;
   }
 
-  &.flattened dd {
+  &.flattened dd, // TODO: Deprecate
+  &.flattened .form-group-body {
+    // stylelint-disable-next-line primer/typography
     line-height: 32px;
   }
 
@@ -62,13 +76,14 @@
   // Form Elements
   //
   // stylelint-disable selector-no-qualifying-type
-  dd {
+  dd, // TODO: Deprecate
+  .form-group-body {
     h4 {
       margin: $spacer-1 0 0;
 
-      &.is-error { color: $text-red; }
+      &.is-error { color: var(--color-text-danger); }
 
-      &.is-success { color: $text-green; }
+      &.is-success { color: var(--color-text-success); }
 
       + .note {
         margin-top: 0;
@@ -82,9 +97,11 @@
   //
 
   &.required {
-    dt label::after {
+    dt label::after, // TODO: Deprecate
+    .form-group-header label::after {
+      // stylelint-disable-next-line primer/spacing
       padding-left: 5px;
-      color: $text-red;
+      color: var(--color-text-danger);
       content: "*";
     }
   }
@@ -117,7 +134,7 @@
   &.successful {
     .success {
       display: inline;
-      color: $text-green;
+      color: var(--color-text-success);
     }
   }
 
@@ -125,21 +142,23 @@
   //
   // Our inline errors
 
+  &.successed,
   &.warn,
   &.errored {
+    .success,
     .warning,
     .error {
       position: absolute;
       z-index: 10;
       display: block; // Show up in errored/warn state
       max-width: 450px; // Keep our long errors readable
-      padding: 5px $spacer-2;
-      margin: $spacer-1 0 0;
-      font-size: 13px;
+      padding: $spacer-1 $spacer-2;
+      margin: $spacer-2 0 0;
+      font-size: $font-size-small;
       font-weight: $font-weight-normal;
-      border-style: solid;
-      border-width: 1px;
-      border-radius: 3px;
+      border-style: $border-style;
+      border-width: $border-width;
+      border-radius: $border-radius;
 
       &::after,
       &::before {
@@ -151,64 +170,79 @@
         height: 0;
         pointer-events: none;
         content: " ";
-        border: solid transparent;
+        // stylelint-disable-next-line primer/borders
+        border: $border-style transparent;
       }
 
       &::after {
+        // stylelint-disable-next-line primer/borders
         border-width: 5px;
       }
 
       &::before {
+        // stylelint-disable-next-line primer/spacing
         margin-left: -1px;
+        // stylelint-disable-next-line primer/borders
         border-width: 6px;
       }
     }
   }
 
+  &.successed {
+    .success {
+      color: var(--color-input-tooltip-success-text);
+      background-color: var(--color-input-tooltip-success-bg);
+      border-color: var(--color-input-tooltip-success-border);
+
+      &::after { border-bottom-color: var(--color-input-tooltip-success-bg); } // stylelint-disable-line primer/borders
+      &::before { border-bottom-color: var(--color-input-tooltip-success-border); }
+    }
+  }
+
   &.warn {
+    .form-control {
+      border-color: var(--color-input-warning-border);
+    }
+
     .warning {
-      color: $yellow-900;
-      background-color: $yellow-100;
-      border-color: $border-yellow;
+      color: var(--color-input-tooltip-warning-text);
+      background-color: var(--color-input-tooltip-warning-bg);
+      border-color: var(--color-input-tooltip-warning-border);
 
-      &::after {
-        border-bottom-color: $yellow-100;
-      }
-
-      &::before {
-        border-bottom-color: $border-yellow;
-      }
+      &::after { border-bottom-color: var(--color-input-tooltip-warning-bg); } // stylelint-disable-line primer/borders
+      &::before { border-bottom-color: var(--color-input-tooltip-warning-border); }
     }
   }
 
   &.errored {
+    .form-control {
+      border-color: var(--color-input-error-border);
+    }
+
     label {
-      color: $text-red;
+      color: var(--color-text-danger);
     }
 
     .error {
-      color: $red-900;
-      background-color: $bg-red-light;
-      border-color: $border-red-light;
+      color: var(--color-input-tooltip-error-text);
+      background-color: var(--color-input-tooltip-error-bg);
+      border-color: var(--color-input-tooltip-error-border);
 
-      &::after {
-        border-bottom-color: $bg-red-light;
-      }
-
-      &::before {
-        border-bottom-color: $border-red-light;
-      }
+      &::after { border-bottom-color: var(--color-input-tooltip-error-bg); } // stylelint-disable-line primer/borders
+      &::before { border-bottom-color: var(--color-input-tooltip-error-border); }
     }
   }
 }
 
+// tooltip
 .note {
   min-height: 17px;
   margin: $spacer-1 0 2px;
   font-size: $font-size-small;
-  color: $text-gray;
+  color: var(--color-text-secondary);
 
   .spinner {
+    // stylelint-disable-next-line primer/spacing
     margin-right: 3px;
     vertical-align: middle;
   }

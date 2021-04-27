@@ -1,4 +1,3 @@
-// stylelint-disable primer/selector-no-utility
 // stylelint-disable selector-max-type
 
 .details-overlay[open] > summary::before {
@@ -16,5 +15,15 @@
 
 .details-overlay-dark[open] > summary::before {
   z-index: 99;
-  background: $black-fade-50;
+  // stylelint-disable-next-line primer/colors
+  background: var(--color-fade-black-50);
+}
+
+.details-reset {
+  // Remove marker added by the display: list-item browser default
+  > summary { list-style: none; }
+  // Remove marker added by details polyfill
+  > summary::before { display: none; }
+  // Remove marker added by Chrome
+  > summary::-webkit-details-marker { display: none; }
 }

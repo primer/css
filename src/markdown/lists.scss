@@ -2,16 +2,28 @@
 // stylelint-disable selector-no-qualifying-type
 // stylelint-disable selector-max-type
 .markdown-body {
-
   // Lists, Blockquotes & Such
   ul,
   ol {
+    // stylelint-disable-next-line primer/spacing
     padding-left: 2em;
 
     &.no-list {
       padding: 0;
       list-style-type: none;
     }
+  }
+
+  ol[type="1"] {
+    list-style-type: decimal;
+  }
+
+  ol[type="a"] {
+    list-style-type: lower-alpha;
+  }
+
+  ol[type="i"] {
+    list-style-type: lower-roman;
   }
 
   // Did someone complain about list spacing? Encourage them
@@ -43,10 +55,6 @@
   ol ul {
     margin-top: 0;
     margin-bottom: 0;
-  }
-
-  li {
-    word-wrap: break-all;
   }
 
   li > p {

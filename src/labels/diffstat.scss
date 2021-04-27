@@ -1,0 +1,37 @@
+// diffstat
+//
+// Green/red blocks showing additions and deletions
+
+.diffstat {
+  font-size: $h6-size;
+  font-weight: $font-weight-bold;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  cursor: default;
+}
+
+.diffstat-block-deleted,
+.diffstat-block-added,
+.diffstat-block-neutral {
+  display: inline-block;
+  width: $spacer-2;
+  height: $spacer-2;
+  // stylelint-disable-next-line primer/spacing
+  margin-left: 1px;
+  outline-offset: -1px; // Support Firefox custom colors
+}
+
+.diffstat-block-deleted {
+  background-color: var(--color-diffstat-deletion-bg);
+  outline: 1px solid var(--color-diffstat-deletion-border); // Support Firefox custom colors
+}
+
+.diffstat-block-added {
+  background-color: var(--color-diffstat-addition-bg);
+  outline: 1px solid var(--color-diffstat-addition-border); // Support Firefox custom colors
+}
+
+.diffstat-block-neutral {
+  background-color: var(--color-diffstat-neutral-bg);
+  outline: 1px solid var(--color-diffstat-neutral-border); // Support Firefox custom colors
+}

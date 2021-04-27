@@ -1,5 +1,4 @@
-// stylelint-disable primer/selector-no-utility
-// stylelint-disable block-closing-brace-space-before, selector-list-comma-newline-after, comment-empty-line-before
+// stylelint-disable comment-empty-line-before
 
 // Type scale variables found in ../support/lib/variables.scss
 // $h00-size-mobile: 40px;
@@ -18,6 +17,7 @@
 
 /* Set the font size to 26px */
 .h1 {
+  // stylelint-disable-next-line primer/typography
   font-size: $h1-size-mobile !important;
 
   @include breakpoint(md) { font-size: $h1-size !important; }
@@ -25,6 +25,7 @@
 
 /* Set the font size to 22px */
 .h2 {
+  // stylelint-disable-next-line primer/typography
   font-size: $h2-size-mobile !important;
 
   @include breakpoint(md) { font-size: $h2-size !important; }
@@ -32,6 +33,7 @@
 
 /* Set the font size to 18px */
 .h3 {
+  // stylelint-disable-next-line primer/typography
   font-size: $h3-size-mobile !important;
 
   @include breakpoint(md) { font-size: $h3-size !important; }
@@ -51,11 +53,17 @@
 .h6 { font-size: $h6-size !important; }
 
 // Heading utilities
-.h1, .h2, .h3, .h4, .h5, .h6 { font-weight: $font-weight-bold !important; }
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 { font-weight: $font-weight-bold !important; }
 
 // Type utilities that match type sale
 /* Set the font size to 26px */
 .f1 {
+  // stylelint-disable-next-line primer/typography
   font-size: $h1-size-mobile !important;
 
   @include breakpoint(md) { font-size: $h1-size !important; }
@@ -63,6 +71,7 @@
 
 /* Set the font size to 22px */
 .f2 {
+  // stylelint-disable-next-line primer/typography
   font-size: $h2-size-mobile !important;
 
   @include breakpoint(md) { font-size: $h2-size !important; }
@@ -70,6 +79,7 @@
 
 /* Set the font size to 18px */
 .f3 {
+  // stylelint-disable-next-line primer/typography
   font-size: $h3-size-mobile !important;
 
   @include breakpoint(md) { font-size: $h3-size !important; }
@@ -90,6 +100,7 @@
 // Type utils with light weight that match type scale
 /* Set the font size to 40px and weight to light */
 .f00-light {
+  // stylelint-disable-next-line primer/typography
   font-size: $h00-size-mobile !important;
   font-weight: $font-weight-light !important;
 
@@ -98,6 +109,7 @@
 
 /* Set the font size to 32px and weight to light */
 .f0-light {
+  // stylelint-disable-next-line primer/typography
   font-size: $h0-size-mobile !important;
   font-weight: $font-weight-light !important;
 
@@ -106,6 +118,7 @@
 
 /* Set the font size to 26px and weight to light */
 .f1-light {
+  // stylelint-disable-next-line primer/typography
   font-size: $h1-size-mobile !important;
   font-weight: $font-weight-light !important;
 
@@ -114,6 +127,7 @@
 
 /* Set the font size to 22px and weight to light */
 .f2-light {
+  // stylelint-disable-next-line primer/typography
   font-size: $h2-size-mobile !important;
   font-weight: $font-weight-light !important;
 
@@ -123,6 +137,7 @@
 // Same size and weight as .lead but without color property
 /* Set the font size to 18px and weight to light */
 .f3-light {
+  // stylelint-disable-next-line primer/typography
   font-size: $h3-size-mobile !important;
   font-weight: $font-weight-light !important;
 
@@ -135,24 +150,29 @@
 
 /* Large leading paragraphs */
 .lead {
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 30px;
   font-size: $h3-size;
   font-weight: $font-weight-light;
-  color: $gray-600;
 }
 
 // Line-height variations
 // Close to commonly used line-heights. Most line-heights
 // combined with type size equate to whole pixels.
 // Will be improved with future typography scale updates.
-/* Set the line height to ultra condensed */
-.lh-condensed-ultra { line-height: $lh-condensed-ultra !important; }
-/* Set the line height to condensed */
-.lh-condensed { line-height: $lh-condensed !important; }
-/* Set the line height to default */
-.lh-default { line-height: $lh-default !important; }
-/* Set the line height to zero */
-.lh-0 { line-height: 0 !important; }
+// Responsive line-height
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    /* Set the line height to ultra condensed */
+    .lh#{$variant}-condensed-ultra { line-height: $lh-condensed-ultra !important; }
+    /* Set the line height to condensed */
+    .lh#{$variant}-condensed { line-height: $lh-condensed !important; }
+    /* Set the line height to default */
+    .lh#{$variant}-default { line-height: $lh-default !important; }
+    /* Set the line height to zero */
+    .lh#{$variant}-0 { line-height: 0 !important; }
+  }
+}
 
 // Text alignments
 // Responsive text alignment
@@ -171,7 +191,9 @@
 /* Set the font weight to normal */
 .text-normal { font-weight: $font-weight-normal !important; }
 /* Set the font weight to bold */
-.text-bold { font-weight: $font-weight-bold !important;}
+.text-bold { font-weight: $font-weight-bold !important; }
+.text-semibold { font-weight: $font-weight-semibold !important; }
+.text-light { font-weight: $font-weight-light !important; }
 /* Set the font to italic */
 .text-italic { font-style: italic !important; }
 /* Make text uppercase */
@@ -207,21 +229,10 @@
 
 .text-emphasized {
   font-weight: $font-weight-bold;
-  color: $text-gray-dark;
 }
 
 // List styles
 .list-style-none { list-style: none !important; }
-
-// Text Shadows
-/* Add a dark text shadow */
-.text-shadow-dark {
-  text-shadow: 0 1px 1px rgba($black, 0.25), 0 1px 25px rgba($black, 0.75);
-}
-/* Add a light text shadow */
-.text-shadow-light {
-  text-shadow: 0 1px 0 rgba($white, 0.5);
-}
 
 /* Set to monospace font */
 .text-mono {

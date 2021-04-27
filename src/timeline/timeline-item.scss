@@ -1,0 +1,97 @@
+.TimelineItem {
+  position: relative;
+  display: flex;
+  padding: $spacer-3 0;
+  margin-left: $spacer-3;
+
+  // The Timeline
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 2px;
+    content: "";
+    // stylelint-disable-next-line primer/colors
+    background-color: var(--color-border-secondary);
+  }
+
+  &:target .TimelineItem-badge {
+    border-color: var(--color-timeline-target-badge-border);
+    box-shadow: 0 0 0.2em var(--color-timeline-target-badge-shadow);
+  }
+}
+
+.TimelineItem-badge {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: $spacer-5;
+  height: $spacer-5;
+  margin-right: $spacer-2;
+  margin-left: -$spacer-3 + 1;
+  // stylelint-disable-next-line primer/colors
+  color: var(--color-icon-secondary);
+  align-items: center;
+  background-color: var(--color-timeline-badge-bg);
+  // stylelint-disable-next-line primer/borders
+  border: 2px $border-style var(--color-bg-canvas);
+  border-radius: 50%;
+  justify-content: center;
+  flex-shrink: 0;
+
+  &--success {
+    color: var(--color-text-white);
+    background-color: var(--color-btn-primary-bg);
+    border: $border-width $border-style var(--color-timeline-badge-success-border);
+  }
+}
+
+.TimelineItem-body {
+  min-width: 0;
+  max-width: 100%;
+  margin-top: $spacer-1;
+  color: var(--color-timeline-text);
+  flex: auto;
+}
+
+.TimelineItem-avatar {
+  position: absolute;
+  left: -($spacer-6 + $spacer-5);
+  z-index: 1;
+}
+
+.TimelineItem-break {
+  position: relative;
+  z-index: 1;
+  height: $spacer-4;
+  margin: 0;
+  margin-bottom: -$spacer-3;
+  // stylelint-disable-next-line primer/spacing
+  margin-left: -($spacer-6 + $spacer-3);
+  background-color: var(--color-bg-canvas);
+  border: 0;
+  // stylelint-disable-next-line primer/borders
+  border-top: 4px $border-style var(--color-border-primary);
+}
+
+.TimelineItem--condensed {
+  padding-top: $spacer-1;
+  padding-bottom: 0;
+
+  // TimelineItem--condensed is often grouped. (commits)
+  &:last-child {
+    padding-bottom: $spacer-3;
+  }
+
+  .TimelineItem-badge {
+    height: $spacer-3;
+    margin-top: $spacer-2;
+    margin-bottom: $spacer-2;
+    // stylelint-disable-next-line primer/colors
+    color: var(--color-icon-secondary);
+    background-color: var(--color-bg-canvas);
+    border: 0;
+  }
+}

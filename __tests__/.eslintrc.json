@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "plugin:jest/recommended"
+  ],
+  "rules": {
+    "eslint-comments/no-use": 0
+  }
+}

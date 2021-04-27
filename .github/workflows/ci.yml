@@ -1,25 +1,42 @@
 name: CI
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request_target:
 jobs:
-  all:
+  stylelint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          version: 11
-      - name: install
-        run: npm --unsafe-perm install
-      - name: lint
-        run: npm --unsafe-perm run lint
-      - name: test
-        run: npm --unsafe-perm test
-      - name: prepublish
-        run: script/prepublish
-      - name: test deprecations
-        if: startsWith(github.ref, 'refs/heads/release-')
-        run: script/test-deprecations.js
-      - uses: primer/publish@v1.1.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          node-version: 14
+      - run: yarn
+      - run: yarn dist
+      - name: Lint source files
+        run: yarn stylelint
+      - name: Look for unused stylelint:disable lines
+        run: yarn stylelint -- --report-needless-disables
+
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - run: yarn
+      - name: Lint workflow files
+        run: yarn eslint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - run: yarn
+      - name: Jest
+        run: yarn test

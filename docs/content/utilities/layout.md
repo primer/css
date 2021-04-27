@@ -2,13 +2,13 @@
 title: Layout
 path: utilities/layout
 status: Stable
-source: 'https://github.com/primer/css/blob/master/src/utilities/layout.scss'
+source: 'https://github.com/primer/css/blob/main/src/utilities/layout.scss'
 bundle: utilities
 ---
 
 Change the document layout with display, float, alignment, and other utilities.
 
- 
+
 
 ## Display
 Adjust the display of an element with `.d-block`, `.d-none`, `.d-inline`, `.d-inline-block`, `.d-table`, `.d-table-cell` utilities.
@@ -54,7 +54,7 @@ element.classList.toggle('d-inline', visible)
 
 ### `display:table` wrapping issues
 
-There are known issues with using `display:table` and wrapping long strings, particularly in Firefox. You may need to use `table-fixed` on elements with `d-table` and apply column widths to table cells, which you can do with our [column width styles](/css/objects/grid#column-widths).
+There are known issues with using `display:table` and wrapping long strings, particularly in Firefox. You may need to use `table-fixed` on elements with `d-table` and apply column widths to table cells, which you can do with our [column width styles](/objects/grid#column-widths).
 
 ```html live
 <div class="d-table table-fixed width-full">
@@ -68,7 +68,7 @@ There are known issues with using `display:table` and wrapping long strings, par
 ```
 
 ### Responsive display
-A selection of display utilities are able to be applied or changed per [breakpoint](/css/objects/grid#breakpoints). `.d-block`, `.d-none`, `.d-inline`, and `.d-inline-block` are available as responsive utilities using the following formula: `d-[breakpoint]-[property]`. For example: `d-md-inline-block`. Each responsive display utility is applied to the specified breakpoint and up.
+A selection of display utilities are able to be applied or changed per [breakpoint](/objects/grid#breakpoints). `.d-block`, `.d-none`, `.d-inline`, and `.d-inline-block` are available as responsive utilities using the following formula: `d-[breakpoint]-[property]`. For example: `d-md-inline-block`. Each responsive display utility is applied to the specified breakpoint and up.
 
 In the following example, the `ul` element switches from `display: block` on mobile to  `display: inline-block` at the `md` breakpoint, while the list items remain inline.
 
@@ -118,6 +118,8 @@ Overflow utilities can also target x- and y-axes independently via:
 * `.overflow-y-scroll`
 * `.overflow-y-visible`
 
+Overflow utilities can be applied or changed per [breakpoint](/objects/grid#breakpoints). Each **responsive** overflow utility is applied to the specified breakpoint and up, using the following formula:  `overflow-[breakpoint]-[axis]-[property]`. For example: `overflow-x-scroll` or `overflow-md-x-visible`.
+
 ## Floats
 Use `.float-left` and `.float-right` to set floats, and `.clearfix` to clear.
 ```html live
@@ -131,7 +133,7 @@ Use `.float-left` and `.float-right` to set floats, and `.clearfix` to clear.
 </div>
 ```
 ### Responsive floats
-Float utilities can be applied or changed per [breakpoint](/css/objects/grid#breakpoints). This can be useful for responsive layouts when you want an element to be full width on mobile but floated at a larger breakpoint.
+Float utilities can be applied or changed per [breakpoint](/objects/grid#breakpoints). This can be useful for responsive layouts when you want an element to be full width on mobile but floated at a larger breakpoint.
 
 Each responsive float utility is applied to the specified breakpoint and up, using the following formula:  `float-[breakpoint]-[property]`. For example: `float-md-left`. Remember to use `.clearfix` to clear.
 
@@ -212,10 +214,11 @@ Use `.height-fit` to set max-height 100%.
 
 Use `.height-full` to set height to 100%.
 
-```erb
+```html live
 <div class="d-table border border-gray">
   <div class="d-table-cell height-full v-align-middle pl-3">
-    <%= octicon "three-bars" %>
+    <!-- <%= octicon "three-bars" %> -->
+    <svg class="octicon octicon-three-bars" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"></path></svg>
   </div>
   <div class="p-3">
     Bacon ipsum dolor amet meatball flank beef tail pig boudin ham hock chicken capicola. Shoulder ham spare ribs turducken pork tongue. Bresaola corned beef sausage jowl ribeye kielbasa tenderloin andouille leberkas tongue. Ribeye tri-tip tenderloin pig, chuck ground round chicken tongue corned beef biltong.
@@ -225,6 +228,29 @@ Use `.height-full` to set height to 100%.
 
 ## Position
 Position utilities can be used to alter the default document flow. **Be careful when using positioning, it's often unnecessary and commonly misused.**
+
+The position of an element depends on the content. Use `top-0`, `right-0`, `bottom-0`, and `left-0` to further specify an elements final position.
+
+```html live
+<div style="height: 64px;">
+  <div class="border position-absolute top-0 left-0">
+    .top-0 .left-0
+  </div>
+  <div class="border position-absolute top-0 right-0">
+    .top-0 .right-0
+  </div>
+  <div class="border position-absolute bottom-0 right-0">
+    .bottom-0 .right-0
+  </div>
+  <div class="border position-absolute bottom-0 left-0">
+    .bottom-0 .left-0
+  </div>
+</div>
+```
+
+Using the **responsive variants** (e.g. `.right-md-0`) can be helpful for positioning select menus, dropdowns, popovers etc. when the content gets shuffled around for certain responsive breakpoints. You can also use `auto` to "reset" a final position for wider breakpoints (e.g. `right-0 right-md-auto`).
+
+### Relative
 
 Use `.position-relative` to create a new stacking context.
 
@@ -245,6 +271,8 @@ _Note how the other elements are displayed as if "Two" were in its normal positi
 </div>
 ```
 
+### Absolute
+
 Use `.position-absolute` to take elements out of the normal document flow.
 
 ```html live
@@ -256,6 +284,8 @@ Use `.position-absolute` to take elements out of the normal document flow.
   </div>
 </div>
 ```
+
+### Fixed
 
 Use `.position-fixed` to position an element relative to the viewport. **Be careful when using fixed positioning. It is tricky to use and can lead to unwanted side effects.**
 
@@ -269,25 +299,6 @@ _Note: This example is shown in an `<iframe>` and therefore will not be position
 </div>
 ```
 
-Use `top-0`, `right-0`, `bottom-0`, and `left-0` with `position-absolute`, `position-fixed`, or `position-relative` to further specify an elements position.
-
-```html live
-<div style="height: 64px;">
-  <div class="border position-absolute top-0 left-0">
-    .top-0 .left-0
-  </div>
-  <div class="border position-absolute top-0 right-0">
-    .top-0 .right-0
-  </div>
-  <div class="border position-absolute bottom-0 right-0">
-    .bottom-0 .right-0
-  </div>
-  <div class="border position-absolute bottom-0 left-0">
-    .bottom-0 .left-0
-  </div>
-</div>
-```
-
 To fill an entire width or height, use opposing directions.
 
 _Note: fixed positioning has been disabled here for demonstration only._
@@ -295,6 +306,99 @@ _Note: fixed positioning has been disabled here for demonstration only._
 ```html live
 <div class="position-fixed left-0 right-0 p-3 bg-gray-dark text-white">
   .position-fixed .left-0 .right-0
+</div>
+```
+
+### Sticky
+
+Use `.position-sticky` to keep an element stuck to an edge as long as its parent is visible. Things to keep in mind:
+
+- Using the `.position-sticky` class by itself doesn't have any effect. An additional `[top|bottom|left|right]-0` class is needed. See the examples below.
+- Add a background color to sticky elements so it covers the content underneath.
+- Use `style="z-index: 1;"` (or higher) in case there are other elements with `z-index`.
+
+#### Top
+
+Combine `.position-sticky` with `.top-0` to keep an element stuck to the top.
+
+```html live
+<section class="mb-3">
+  <header class="border position-sticky top-0 bg-gray p-3" style="z-index: 1;">Sticky header 1</header>
+  <main class="border border-top-0 p-3">
+    <p>Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.”</p>
+  </main>
+</section>
+
+<section class="mb-3">
+  <header class="border position-sticky top-0 bg-gray p-3">Sticky header 2</header>
+  <main class="border border-top-0 p-3">
+    <p>As Cicero would put it, “Um, not so fast.”</p>
+
+    <p>The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin.</p>
+  </main>
+</section>
+
+<section class="mb-3">
+  <header class="border position-sticky top-0 bg-gray p-3">Sticky header 3</header>
+  <main class="border border-top-0 p-3">
+    <p>Richard McClintock, a Latin scholar from Hampden-Sydney College, is credited with discovering the source behind the ubiquitous filler text. In seeing a sample of lorem ipsum, his interest was piqued by consectetur—a genuine, albeit rare, Latin word. Consulting a Latin dictionary led McClintock to a passage from De Finibus Bonorum et Malorum (“On the Extremes of Good and Evil”), a first-century B.C. text from the Roman philosopher Cicero.</p>
+  </main>
+</section>
+
+<style>.frame-example { max-width: 300px; height: 300px; }</style>
+```
+
+#### Bottom
+
+Combine `.position-sticky` with `.bottom-0` to keep an element stuck to the bottom. Can be used as a footer or toolbar.
+
+```html live
+<section class="mb-3">
+  <main class="border border-bottom-0 p-3">
+    <h3>Title</h3>
+    <p>Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.”</p>
+  </main>
+  <footer class="border position-sticky bottom-0 bg-gray p-3">Sticky footer 1</footer>
+</section>
+
+<section class="mb-3">
+  <main class="border border-bottom-0 p-3">
+    <h3>Title</h3>
+    <p>Richard McClintock, a Latin scholar from Hampden-Sydney College, is credited with discovering the source behind the ubiquitous filler text. In seeing a sample of lorem ipsum, his interest was piqued by consectetur—a genuine, albeit rare, Latin word. Consulting a Latin dictionary led McClintock to a passage from De Finibus Bonorum et Malorum (“On the Extremes of Good and Evil”), a first-century B.C. text from the Roman philosopher Cicero.</p>
+  </main>
+  <footer class="border position-sticky bottom-0 bg-gray p-3">Sticky footer 2</footer>
+</section>
+
+<style>.frame-example { max-width: 300px; height: 300px; }</style>
+```
+
+#### Left and right
+
+Combine `.position-sticky` with `.left-0` or `.right-0` to keep elements stuck to the left or right when scrolling horizontally.
+
+```html live
+<div class="d-flex border overflow-x-auto">
+  <section class="d-flex">
+    <span class="border position-sticky left-0 bg-gray p-4">A</span>
+    <span class="border p-4">1</span><span class="border p-4">2</span><span class="border p-4">3</span><span class="border p-4">4</span><span class="border p-4">5</span><span class="border p-4">6</span><span class="border p-4">7</span><span class="border p-4">8</span><span class="border p-4">9</span>
+  </section>
+  <section class="d-flex">
+    <span class="border position-sticky left-0 bg-gray p-4">B</span>
+    <span class="border p-4">1</span><span class="border p-4">2</span><span class="border p-4">3</span><span class="border p-4">4</span><span class="border p-4">5</span><span class="border p-4">6</span><span class="border p-4">7</span><span class="border p-4">8</span><span class="border p-4">9</span>
+  </section>
+  <section class="d-flex">
+    <span class="border position-sticky left-0 bg-gray p-4">C</span>
+    <span class="border p-4">1</span><span class="border p-4">2</span><span class="border p-4">3</span><span class="border p-4">4</span><span class="border p-4">5</span><span class="border p-4">6</span><span class="border p-4">7</span><span class="border p-4">8</span><span class="border p-4">9</span>
+  </section>
+  <section class="d-flex">
+    <span class="border position-sticky left-0 bg-gray p-4">D</span>
+    <span class="border p-4">1</span><span class="border p-4">2</span><span class="border p-4">3</span><span class="border p-4">4</span><span class="border p-4">5</span><span class="border p-4">6</span><span class="border p-4">7</span><span class="border p-4">8</span><span class="border p-4">9</span>
+  </section>
+  <section class="d-flex">
+    <span class="border position-sticky left-0 bg-gray p-4">E</span>
+    <span class="border p-4">1</span><span class="border p-4">2</span><span class="border p-4">3</span><span class="border p-4">4</span><span class="border p-4">5</span><span class="border p-4">6</span><span class="border p-4">7</span><span class="border p-4">8</span><span class="border p-4">9</span>
+    <span class="border position-sticky right-0 bg-gray p-4">...</span>
+  </section>
 </div>
 ```
 

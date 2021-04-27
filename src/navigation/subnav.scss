@@ -1,14 +1,16 @@
 // Needs refactoring
 // Sub nav
 .subnav {
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 20px;
 
   @include clearfix();
 }
 
 .subnav-bordered {
+  // stylelint-disable-next-line primer/spacing
   padding-bottom: 20px;
-  border-bottom: 1px solid lighten($gray-200, 3%);
+  border-bottom: $border-width $border-style var(--color-border-secondary);
 }
 
 .subnav-flush {
@@ -18,51 +20,55 @@
 .subnav-item {
   position: relative;
   float: left;
-  padding: 6px 14px;
-  font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/spacing
+  padding: 5px $spacer-3;
+  font-weight: $font-weight-semibold;
+  // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: $gray-600;
-  border: 1px solid $gray-200;
+  color: var(--color-text-primary);
+  border: $border-width $border-style var(--color-border-primary);
 
   + .subnav-item {
+    // stylelint-disable-next-line primer/spacing
     margin-left: -1px;
   }
 
   &:hover,
   &:focus {
     text-decoration: none;
-    background-color: $gray-100;
+    background-color: var(--color-bg-tertiary);
   }
 
   &.selected,
-  &.selected:hover,
-  &.selected:focus {
+  &[aria-selected=true],
+  &[aria-current]:not([aria-current=false]) {
     z-index: 2;
-    color: $text-white;
-    background-color: $bg-blue;
-    border-color: $blue;
+    color: var(--color-state-selected-primary-text);
+    background-color: var(--color-state-selected-primary-bg);
+    border-color: var(--color-state-selected-primary-border);
   }
 
   &:first-child {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
   }
 
   &:last-child {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
   }
 }
 
 .subnav-search {
   position: relative;
-  margin-left: 10px;
+  // stylelint-disable-next-line primer/spacing
+  margin-left: 12px;
 }
 
 .subnav-search-input {
   width: 320px;
-  padding-left: 30px;
-  color: $text-gray;
+  padding-left: $spacer-5;
+  color: var(--color-text-secondary);
 }
 
 .subnav-search-input-wide {
@@ -74,14 +80,14 @@
   top: 9px;
   left: 8px;
   display: block;
-  color: darken($gray-300, 4%);
+  // stylelint-disable-next-line primer/colors
+  color: var(--color-icon-tertiary);
   text-align: center;
   pointer-events: none;
 }
 
 .subnav-search-context {
   .btn {
-    color: $gray-700;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 
@@ -94,6 +100,7 @@
   }
 
   + .subnav-search {
+    // stylelint-disable-next-line primer/spacing
     margin-left: -1px;
 
     .subnav-search-input {
@@ -116,5 +123,6 @@
 }
 
 .subnav-spacer-right {
-  padding-right: 10px;
+  // stylelint-disable-next-line primer/spacing
+  padding-right: 12px;
 }

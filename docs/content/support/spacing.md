@@ -2,7 +2,7 @@
 title: Spacing
 path: support/spacing
 status: Stable
-source: 'https://github.com/primer/css/blob/master/src/support/variables/layout.scss'
+source: 'https://github.com/primer/css/blob/main/src/support/variables/layout.scss'
 bundle: support
 ---
 
@@ -22,9 +22,9 @@ The spacing scale is a **base-8** scale. We chose a base-8 scale because eight i
 | `$spacer-5` | 5     | 32px  |
 | `$spacer-6` | 6     | 40px  |
 
-These variables are encouraged to be used within components and custom CSS. The spacing scale is also used for [margin](/css/utilities/margin) and [padding](/css/utilities/padding) utilities.
+These variables are encouraged to be used within components and custom CSS. The spacing scale is also used for [margin](/utilities/margin) and [padding](/utilities/padding) utilities.
 
-See [primer-marketing-support](/css/support/marketing-variables) for the extended spacing scale used for marketing needs and the related y-axis spacing utilities for [margin](/css/utilities/marketing-margin) and [padding](/css/utilities/marketing-padding).
+See [primer-marketing-support](/support/marketing-variables) for the extended spacing scale used for marketing needs and the related y-axis spacing utilities for [margin](/utilities/marketing-margin) and [padding](/utilities/marketing-padding).
 
 ## Em-based spacing
 
@@ -41,4 +41,4 @@ We aim for whole numbers, however, GitHub's body font-size is 14px which is diff
 | `$em-spacer-5` | 1/2      | .5             | 35                               | 40                   |
 | `$em-spacer-6` | 3/4      | .75            | 42                               | 48                   |
 
-The variables listed above are preferred for use within components and custom CSS. To calculate values with other font-sizes or em values, we suggest using [Formula](http://jxnblk.com/formula/).
+The variables listed above are preferred for use within components and custom CSS. To calculate values with other font-sizes or em values, we suggest using [Formula](https://jxnblk.github.io/formula/).

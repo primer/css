@@ -4,7 +4,9 @@
   // Tables
   table {
     display: block;
-    width: 100%;
+    width: 100%; // keep for backwards compatibility
+    width: max-content;
+    max-width: 100%;
     overflow: auto;
 
     th {
@@ -13,16 +15,17 @@
 
     th,
     td {
+      // stylelint-disable-next-line primer/spacing
       padding: 6px 13px;
-      border: 1px solid lighten($gray-300, 5%);
+      border: $border-width $border-style var(--color-markdown-table-border);
     }
 
     tr {
-      background-color: $bg-white;
-      border-top: 1px solid darken($gray-300, 4%);
+      background-color: var(--color-bg-primary);
+      border-top: $border-width $border-style var(--color-markdown-table-tr-border);
 
       &:nth-child(2n) {
-        background-color: $gray-100;
+        background-color: var(--color-bg-tertiary);
       }
     }
 

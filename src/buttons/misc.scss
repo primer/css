@@ -1,0 +1,211 @@
+// stylelint-disable selector-max-type
+
+// Link-like buttons
+//
+// This class is for styling <button> and <input> elements to look like links
+.btn-link {
+  display: inline-block;
+  padding: 0;
+  font-size: inherit;
+  color: var(--color-text-link);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 0;
+  appearance: none; // Corrects inability to style clickable `input` types in iOS.
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:disabled,
+  &[aria-disabled=true] {
+    &,
+    &:hover {
+      color: var(--color-text-disabled);
+      cursor: default;
+    }
+  }
+}
+
+// Invisible button
+//
+// Typically used as a "cancel" button next to a .btn
+.btn-invisible {
+  color: var(--color-text-link);
+  background-color: transparent; // Reset default gradient backgrounds and colors
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.selected,
+  &[aria-selected=true],
+  &.zeroclipboard-is-hover,
+  &.zeroclipboard-is-active {
+    color: var(--color-text-link);
+    background: none;
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    background-color: transparent;
+  }
+}
+
+// Octicon button
+//
+// Icon-only buttons
+.btn-octicon {
+  display: inline-block;
+  // stylelint-disable-next-line primer/spacing
+  padding: 5px;
+  // stylelint-disable-next-line primer/spacing
+  margin-left: 5px;
+  line-height: $lh-condensed-ultra;
+  color: var(--color-text-secondary);
+  vertical-align: middle;
+
+  // For `<button>` elements
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+
+  &:hover { color: var(--color-text-link); }
+
+  &.disabled,
+  &[aria-disabled=true] {
+    color: var(--color-text-disabled);
+    cursor: default;
+
+    &:hover { color: var(--color-text-disabled); }
+  }
+}
+
+.btn-octicon-danger:hover {
+  color: var(--color-text-danger);
+}
+
+// Close button
+//
+// Typically used with an octicon-x
+.close-button {
+  padding: 0;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 0;
+  outline: none;
+
+  &:hover {
+    color: var(--color-text-primary);
+  }
+
+  &:active {
+    color: var(--color-text-tertiary);
+  }
+}
+
+// Hidden text button
+//
+// Use `.hidden-text-expander` to indicate and expand hidden text.
+.hidden-text-expander {
+  display: block;
+
+  &.inline {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    // stylelint-disable-next-line primer/spacing
+    margin-left: 5px;
+    line-height: 0;
+  }
+}
+
+.hidden-text-expander a,
+.ellipsis-expander {
+  display: inline-block;
+  height: 12px;
+  // stylelint-disable-next-line primer/spacing
+  padding: 0 5px 5px;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
+  line-height: 6px;
+  // stylelint-disable-next-line primer/colors
+  color: var(--color-auto-gray-7);
+  text-decoration: none;
+  vertical-align: middle;
+  background: var(--color-hidden-text-expander-bg);
+  border: 0;
+  // stylelint-disable-next-line primer/borders
+  border-radius: 1px;
+
+  &:hover {
+    text-decoration: none;
+    background-color: var(--color-hidden-text-expander-bg-hover);
+  }
+
+  &:active {
+    color: var(--color-text-inverse);
+    background-color: var(--color-bg-info-inverse);
+  }
+}
+
+// Social button count
+// TODO: Deprecate? Use BtnGroup instead?
+
+.btn-with-count {
+  float: left;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  &:focus {
+    z-index: 1;
+  }
+}
+
+// Social count bubble
+//
+// A container that is used for social bubbles counts.
+
+.social-count {
+  position: relative;
+  float: left;
+  // stylelint-disable-next-line primer/spacing
+  padding: 3px 12px;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
+  line-height: 20px;
+  color: var(--color-text-primary);
+  vertical-align: middle;
+  background-color: var(--color-social-count-bg);
+  border: $border-width $border-style var(--color-btn-border);
+  border-left: 0;
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: var(--color-text-link);
+    cursor: pointer;
+  }
+
+  &:focus {
+    z-index: 1;
+    outline: 0;
+    box-shadow: var(--color-state-focus-shadow);
+  }
+}

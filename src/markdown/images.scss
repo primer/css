@@ -1,5 +1,5 @@
 // Need to target base styles
-// stylelint-disable selector-max-compound-selectors, selector-no-qualifying-type, primer/selector-no-utility
+// stylelint-disable selector-max-compound-selectors, selector-no-qualifying-type
 // stylelint-disable selector-max-type
 .markdown-body {
   // Images & Stuff
@@ -8,13 +8,15 @@
     // because we put padding on the images to hide header lines, and some people
     // specify the width of their images in their markdown.
     box-sizing: content-box;
-    background-color: $bg-white;
+    background-color: var(--color-bg-primary);
 
     &[align=right] {
+      // stylelint-disable-next-line primer/spacing
       padding-left: 20px;
     }
 
     &[align=left] {
+      // stylelint-disable-next-line primer/spacing
       padding-right: 20px;
     }
   }
@@ -37,10 +39,12 @@
       display: block;
       float: left;
       width: auto;
+      // stylelint-disable-next-line primer/spacing
       padding: 7px;
+      // stylelint-disable-next-line primer/spacing
       margin: 13px 0 0;
       overflow: hidden;
-      border: 1px solid lighten($gray-300, 5%);
+      border: $border-width $border-style var(--color-markdown-frame-border);
     }
 
     span img {
@@ -50,9 +54,10 @@
 
     span span {
       display: block;
+      // stylelint-disable-next-line primer/spacing
       padding: 5px 0 0;
       clear: both;
-      color: $text-gray-dark;
+      color: var(--color-text-primary);
     }
   }
 
@@ -63,6 +68,7 @@
 
     > span {
       display: block;
+      // stylelint-disable-next-line primer/spacing
       margin: 13px auto 0;
       overflow: hidden;
       text-align: center;
@@ -81,6 +87,7 @@
 
     > span {
       display: block;
+      // stylelint-disable-next-line primer/spacing
       margin: 13px 0 0;
       overflow: hidden;
       text-align: right;
@@ -95,10 +102,12 @@
   span.float-left {
     display: block;
     float: left;
+    // stylelint-disable-next-line primer/spacing
     margin-right: 13px;
     overflow: hidden;
 
     span {
+      // stylelint-disable-next-line primer/spacing
       margin: 13px 0 0;
     }
   }
@@ -106,11 +115,13 @@
   span.float-right {
     display: block;
     float: right;
+    // stylelint-disable-next-line primer/spacing
     margin-left: 13px;
     overflow: hidden;
 
     > span {
       display: block;
+      // stylelint-disable-next-line primer/spacing
       margin: 13px auto 0;
       overflow: hidden;
       text-align: right;

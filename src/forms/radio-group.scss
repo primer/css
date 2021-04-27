@@ -1,0 +1,43 @@
+// Tab like radio group
+
+.radio-group {
+  @include clearfix;
+}
+
+.radio-label {
+  float: left;
+  // stylelint-disable-next-line primer/spacing
+  padding: 6px $spacer-3 6px ($spacer-3 + 12px + $spacer-2); // 12px is the size of the radio-input
+  // stylelint-disable-next-line primer/spacing
+  margin-left: -1px;
+  font-size: $body-font-size;
+  // stylelint-disable-next-line primer/typography
+  line-height: 20px; // Specifically not inherit our `<body>` default
+  color: var(--color-text-primary);
+  cursor: pointer;
+  border: $border-width $border-style var(--color-border-primary);
+
+  :checked + & {
+    position: relative;
+    z-index: 1;
+    border-color: var(--color-border-info);
+  }
+
+  &:first-of-type {
+    margin-left: 0;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  &:last-of-type {
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+}
+
+.radio-input {
+  z-index: 3;
+  float: left;
+  // stylelint-disable-next-line primer/spacing
+  margin: 10px (-$spacer-5) 0 $spacer-3;
+}

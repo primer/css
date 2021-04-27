@@ -1,5 +1,24 @@
 // Layout variables
-// stylelint-disable declaration-bang-space-before
+
+// these are values for the display CSS property
+$display-values: (
+  block,
+  flex,
+  inline,
+  inline-block,
+  inline-flex,
+  none,
+  table,
+  table-cell
+) !default;
+
+// maps edges to respective corners for border-radius
+$edges: (
+  top: (top-left, top-right),
+  right: (top-right, bottom-right),
+  bottom: (bottom-right, bottom-left),
+  left: (bottom-left, top-left)
+) !default;
 
 // These are our margin and padding utility spacers. The default step size we
 // use is 8px. This gives us a key of:
@@ -51,6 +70,20 @@ $em-spacer-3: 0.25em !default;   // 1/4
 $em-spacer-4: 0.375em !default;  // 3/8
 $em-spacer-5: 0.5em !default;    // 1/2
 $em-spacer-6: 0.75em !default;   // 3/4
+
+// Size scale
+// Used for buttons, inputs, labels, avatars etc.
+$size: 16px !default;
+
+$size-0: 0 !default;
+$size-1: $size !default;           // 16px
+$size-2: $size-1 +  4px !default;  // 20px
+$size-3: $size-2 +  4px !default;  // 24px
+$size-4: $size-3 +  4px !default;  // 28px
+$size-5: $size-4 +  4px !default;  // 32px
+$size-6: $size-5 +  8px !default;  // 40px
+$size-7: $size-6 +  8px !default;  // 48px
+$size-8: $size-7 + 16px !default;  // 64px
 
 // Fixed-width container variables
 $container-width: 980px !default;
@@ -105,5 +138,6 @@ $responsive-positions: (
   static,
   relative,
   absolute,
-  fixed
+  fixed,
+  sticky
 ) !default;

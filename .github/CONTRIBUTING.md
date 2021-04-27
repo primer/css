@@ -19,7 +19,7 @@ Guidelines for bug reports:
 
 2. **Use the GitHub issue search** &mdash; check if the issue has already been reported.
 
-3. **Check if the issue has been fixed** &mdash; try to reproduce it using the latest `master` branch in the repository.
+3. **Check if the issue has been fixed** &mdash; try to reproduce it using the latest `main` branch in the repository.
 
 4. **Isolate the problem** &mdash; ideally create a [reduced test case](https://css-tricks.com/reduced-test-cases/) and a live example.
 
@@ -56,7 +56,7 @@ Anyone can open a pull request on Primer CSS. You do not need to work at GitHub 
 
 1. Fork and clone [this repository](https://github.com/primer/css).
 2. Configure and install the dependencies: `npm install`
-3. Create a new branch from master `git checkout -b my-branch-name`
+3. Create a new branch from main `git checkout -b my-branch-name`
 4. Make your changes and commit them.
 5. Push your branch and open a pull request. Add a comment describing your proposed changes and request a review from `@primer/ds-core`.
 6. Wait for CI tests to finish.
@@ -72,7 +72,7 @@ Here are a few things you can do that will increase the likelihood of your pull 
 - Write a [good commit message](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
 
 ## Releasing a new Primer CSS version
-See [RELEASING.md](../RELEASING.md) for our release process.
+See [RELEASING.md](./RELEASING.md) for our release process.
 
 ## Resources
 

@@ -2,15 +2,15 @@
 title: Typography
 path: utilities/typography
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/utilities/typography.scss'
+source: 'https://github.com/primer/css/tree/main/src/utilities/typography.scss'
 bundle: utilities
 ---
 
-Type utilities are designed to work in combination with line-height utilities so as to result in more sensible numbers wherever possible. These also exist as [variables](/css/support/typography#typography-variables) that you can use in components or custom CSS.
+Type utilities are designed to work in combination with line-height utilities so as to result in more sensible numbers wherever possible. These also exist as [variables](/support/typography#typography-variables) that you can use in components or custom CSS.
 
- 
 
-Font sizes are smaller on mobile and scale up at the `md` [breakpoint](/css/support/breakpoints) to be larger on desktop.
+
+Font sizes are smaller on mobile and scale up at the `md` [breakpoint](/support/breakpoints) to be larger on desktop.
 
 | Scale | Font size: mobile | Font size: desktop | 1.25 line height | 1.5 line height |
 | --- | --- | --- | --- | --- |
@@ -67,7 +67,8 @@ Lighter font-weight utilities are available in a limited range. Lighter font-wei
 ```
 
 ## Line height styles
-Change the line height density with these utilities.
+
+Change the line height density with these utilities. Responsive variants are also available (e.g. `.lh-sm-condensed`).
 
 ```html live
 <p class="lh-default">
@@ -79,6 +80,8 @@ Change the line height density with these utilities.
 <p class="lh-condensed-ultra">
   Bacon ipsum dolor amet tri-tip chicken kielbasa, cow swine beef corned beef ground round prosciutto hamburger porchetta sausage alcatra tail. Jowl chuck biltong flank meatball, beef short ribs. Jowl tenderloin ground round, short loin tri-tip ribeye picanha filet mignon pig chicken kielbasa t-bone fatback. Beef ribs meatball chicken corned beef salami.
 </p>
+
+<style>.frame-example {height:350px;}</style>
 ```
 
 The `lh-0` utility class sets `line-height: 0 !important`, and can be used to remove vertical spacing from elements that inherit line-height but don't contain any text.
@@ -90,6 +93,8 @@ Change the font weight, styles, and alignment with these utilities.
 <p class="text-normal">Normal</p>
 <p class="text-italic">Italic</p>
 <p class="text-bold">Bold</p>
+<p class="text-semibold">Semi-bold</p>
+<p class="text-light">Light</p>
 <p class="text-uppercase">Uppercase</p>
 <p class="no-wrap">No wrap</p>
 <p class="ws-normal">Normal whitespace</p>
@@ -144,7 +149,7 @@ Remove bullets from an unordered list or numbers from an ordered list by applyin
 </ul>
 ```
 
-## Text Shadows
+## Text shadows
 
 Text shadows can be used to help readability and to add some depth on colored backgrounds.
 

@@ -1,7 +1,7 @@
 // stylelint-disable selector-max-type
-
 // selector-max-type is needed for body:not(.intent-mouse) to target keyboard only styles.
-// TODO: Introduce an additional .intent-keyboard class
+
+$SelectMenu-max-height: 480px !default;
 
 // Select Menu
 //
@@ -41,7 +41,7 @@
   left: 0;
   pointer-events: none;
   content: "";
-  background-color: $black-fade-50;
+  background-color: var(--color-select-menu-backdrop-bg);
 
   @include breakpoint(sm) {
     display: none;
@@ -61,9 +61,11 @@
   overflow: hidden; // Enables border radius on scrollable child elements
   pointer-events: auto;
   flex-direction: column;
-  background-color: $gray-100;
+  background-color: var(--color-bg-overlay);
+  border: $border-width $border-style var(--color-select-menu-backdrop-border);
+  // stylelint-disable-next-line primer/borders
   border-radius: $border-radius * 2;
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--color-select-menu-shadow);
   animation: SelectMenu-modal-animation 0.12s cubic-bezier(0, 0.1, 0.1, 1) backwards;
 
   @keyframes SelectMenu-modal-animation {
@@ -83,12 +85,12 @@
   @include breakpoint(sm) {
     width: 300px;
     height: auto;
-    max-height: 350px;
-    margin: $spacer-1 0 $spacer-3 0;
+    max-height: $SelectMenu-max-height;
+    margin: $spacer-2 0 $spacer-3 0;
     font-size: $font-size-small;
-    border: $border-width $border-style $border-gray-dark;
+    border-color: var(--color-border-overlay);
     border-radius: $border-radius;
-    box-shadow: $box-shadow-medium;
+    box-shadow: var(--color-shadow-large);
     animation-name: SelectMenu-modal-animation--sm;
   }
 }
@@ -99,17 +101,19 @@
 
 .SelectMenu-header {
   display: flex;
-  flex: none; // fixes header from getting squeezed in Safari iOS
   padding: $spacer-3;
+  flex: none; // fixes header from getting squeezed in Safari iOS
+  align-items: center;
+  border-bottom: $border-width $border-style var(--color-select-menu-border-secondary);
 
   @include breakpoint(sm) {
-    padding-top: $spacer-2;
-    padding-bottom: $spacer-2;
+    // stylelint-disable-next-line primer/spacing
+    padding: 7px 7px 7px $spacer-3;
   }
 }
 
 .SelectMenu-title {
-  flex: auto;
+  flex: 1;
   font-size: $body-font-size;
   font-weight: $font-weight-bold;
 
@@ -121,12 +125,16 @@
 .SelectMenu-closeButton {
   padding: $spacer-3;
   margin: -$spacer-3;
-  color: $text-gray-light;
+  line-height: 1;
+  // stylelint-disable-next-line primer/colors
+  color: var(--color-icon-tertiary);
   background-color: transparent;
   border: 0;
 
   @include breakpoint(sm) {
-    display: none;
+    padding: $spacer-2;
+    // stylelint-disable-next-line primer/spacing
+    margin: (-$spacer-2) (-7px); // Using -7px fixes a :focus glitch
   }
 }
 
@@ -137,7 +145,7 @@
 .SelectMenu-filter {
   padding: $spacer-3;
   margin: 0;
-  border-top: $border;
+  border-bottom: $border-width $border-style var(--color-select-menu-border-secondary);
 
   @include breakpoint(sm) {
     padding: $spacer-2;
@@ -161,11 +169,12 @@
   position: relative;
   padding: 0;
   margin: 0;
+  // stylelint-disable-next-line primer/spacing
+  margin-bottom: -$border-width; // Hides the last border in the list
   flex: auto;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: $bg-white;
-  border-top: $border;
+  background-color: var(--color-bg-overlay);
   -webkit-overflow-scrolling: touch; // Adds momentum + bouncy scrolling
 }
 
@@ -179,30 +188,38 @@
   width: 100%;
   padding: $spacer-3;
   overflow: hidden;
-  color: $text-gray;
+  color: var(--color-text-primary);
   text-align: left;
   cursor: pointer;
-  background-color: $bg-white;
+  background-color: var(--color-bg-overlay);
   border: 0;
-
-  & + & {
-    // Add a top border only if the above element also is a list item
-    border-top: $border-width $border-style lighten($gray-200, 3%);
-  }
+  border-bottom: $border-width $border-style var(--color-select-menu-border-secondary);
 
   @include breakpoint(sm) {
-    padding-top: $spacer-2;
-    padding-bottom: $spacer-2;
+    // stylelint-disable-next-line primer/spacing
+    padding-top: 7px;
+    // stylelint-disable-next-line primer/spacing
+    padding-bottom: 7px;
+  }
+
+  // Borderless
+  .SelectMenu-list--borderless & {
+    border-bottom: 0;
   }
 }
 
 // Icon
 //
-// The icon shown on the left of a list item. Typically a check icon.
+// Icon shown on the left of a list item.
 
 .SelectMenu-icon {
   width: $spacer-3; // fixed width to make sure following content aligns
   margin-right: $spacer-2;
+  flex-shrink: 0;
+}
+
+// Check icon
+.SelectMenu-icon--check {
   visibility: hidden;
   transition: transform 0.12s cubic-bezier(0.5, 0.1, 1, 0.5), visibility 0s 0.12s linear;
   transform: scale(0);
@@ -215,10 +232,10 @@
 .SelectMenu-tabs {
   display: flex;
   flex-shrink: 0;
-  margin-bottom: -$border-width; // hide border of element below
   overflow-x: auto;
   overflow-y: hidden;
-  border-top: $border;
+  // stylelint-disable-next-line primer/box-shadow
+  box-shadow: inset 0 -1px 0 var(--color-select-menu-border-secondary);
   -webkit-overflow-scrolling: touch;
 
   // Hide scrollbar so it doesn't cover the text
@@ -227,8 +244,7 @@
   }
 
   @include breakpoint(sm) {
-    padding: 0 $spacer-2;
-    border-top: 0;
+    padding: $spacer-2 $spacer-2 0 $spacer-2;
   }
 }
 
@@ -237,11 +253,12 @@
   padding: $spacer-2 $spacer-3;
   font-size: $font-size-small;
   font-weight: $font-weight-semibold;
-  color: $text-gray-light;
+  color: var(--color-text-tertiary);
   text-align: center;
   background-color: transparent;
   border: 0;
-  box-shadow: inset 0 -1px 0 $border-color;
+  // stylelint-disable-next-line primer/box-shadow
+  box-shadow: inset 0 -1px 0 var(--color-select-menu-border-secondary);
 
   @include breakpoint(sm) {
     flex: none;
@@ -254,27 +271,40 @@
 
   &[aria-selected="true"] {
     z-index: 1; // Keeps box-shadow visible when hovering
-    color: $text-gray-dark;
-    background-color: $bg-white;
-    box-shadow: 0 0 0 1px $border-color;
+    color: var(--color-text-primary);
+    cursor: default;
+    background-color: var(--color-bg-overlay);
+    // stylelint-disable-next-line primer/box-shadow
+    box-shadow: 0 0 0 1px var(--color-select-menu-border-secondary);
 
     @include breakpoint(sm) {
-      border-color: $border-color;
+      border-color: var(--color-select-menu-border-secondary);
       box-shadow: none;
     }
   }
 }
 
-// Message, Blankslate and Loading
+// Message
 //
-// A container used to show different kinds of content. Like a message, a blankslate or the loading animation.
+// A container used to show different kinds of text messages.
 
-.SelectMenu-message,
+.SelectMenu-message {
+  // stylelint-disable-next-line primer/spacing
+  padding: 7px $spacer-3;
+  text-align: center;
+  background-color: var(--color-bg-overlay);
+  border-bottom: $border-width $border-style var(--color-select-menu-border-secondary);
+}
+
+// Blankslate and Loading
+//
+// A container used to show a blankslate or the loading animation.
+
 .SelectMenu-blankslate,
 .SelectMenu-loading {
   padding: $spacer-4 $spacer-3;
   text-align: center;
-  background-color: $bg-white;
+  background-color: var(--color-bg-overlay);
 }
 
 // Divider
@@ -285,18 +315,19 @@
   padding: $spacer-1 $spacer-3;
   margin: 0;
   font-size: $font-size-small;
-  font-weight: $font-weight-bold;
-  color: $text-gray-light;
-  background-color: $gray-100;
-  border-top: $border;
-  border-bottom: $border;
+  font-weight: $font-weight-semibold;
+  color: var(--color-text-tertiary);
+  background-color: var(--color-bg-tertiary);
+  border-bottom: $border-width $border-style var(--color-select-menu-border-secondary);
 
-  &:first-child {
-    border-top: 0;
-  }
+  // Borderless
+  .SelectMenu-list--borderless & {
+    border-top: $border-width $border-style var(--color-select-menu-border-secondary);
 
-  &:last-child {
-    border-bottom: 0;
+    &:empty {
+      padding: 0;
+      border-top: 0;
+    }
   }
 }
 
@@ -305,14 +336,16 @@
 // A container at the bottom.
 
 .SelectMenu-footer {
+  z-index: 0; // Avoid top border from getting covered by the negative margin of the list
   padding: $spacer-2 $spacer-3;
   font-size: $font-size-small;
-  color: $text-gray-light;
+  color: var(--color-text-tertiary);
   text-align: center;
-  border-top: $border;
+  border-top: $border-width $border-style var(--color-select-menu-border-secondary);
 
   @include breakpoint(sm) {
-    padding: $spacer-1 $spacer-2;
+    // stylelint-disable-next-line primer/spacing
+    padding: 7px $spacer-3;
   }
 }
 
@@ -328,14 +361,9 @@
 
     @include breakpoint(sm) {
       height: auto;
-      max-height: 350px;
-      margin-top: $spacer-1;
+      max-height: $SelectMenu-max-height;
+      margin-top: $spacer-2;
     }
-  }
-
-  // Show bottom "border" for the last item when the list doesn't take up the whole height
-  .SelectMenu-item:last-child {
-    box-shadow: 0 $border-width 0 lighten($gray-200, 3%);
   }
 }
 
@@ -344,9 +372,10 @@
 // Different states
 
 // Reset outlines
+.SelectMenu-closeButton:focus,
 .SelectMenu-tab:focus,
 .SelectMenu-item:focus {
-  outline: none;
+  outline: 0;
 }
 
 // Reset <a> elements
@@ -356,17 +385,27 @@
 
 // Selected
 //
-// Visible when a used clicks/taps on a list item
+// Visible when a user clicks/taps on a list item
 
-.SelectMenu-item[aria-checked="true"] {
+.SelectMenu-item[aria-checked=true] {
   font-weight: $font-weight-semibold;
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
 
-  .SelectMenu-icon {
+  .SelectMenu-icon--check {
     visibility: visible;
     transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), visibility 0s linear;
     transform: scale(1);
   }
+}
+
+// Disabled
+//
+// Prevent list items to be selected
+
+.SelectMenu-item:disabled,
+.SelectMenu-item[aria-disabled=true] {
+  color: var(--color-text-disabled);
+  pointer-events: none;
 }
 
 // Can hover states
@@ -374,29 +413,35 @@
 // For mouse/keyboard input
 
 @media (hover: hover) {
+  body:not(.intent-mouse) .SelectMenu-closeButton:focus,
+  .SelectMenu-closeButton:hover {
+    color: var(--color-text-primary);
+  }
+
+  .SelectMenu-closeButton:active {
+    color: var(--color-text-secondary);
+  }
+
   body:not(.intent-mouse) .SelectMenu-item:focus,
   .SelectMenu-item:hover {
-    color: $text-white;
-    background-color: $blue-500;
+    background-color: var(--color-state-hover-secondary-bg);
   }
 
   .SelectMenu-item:active {
-    color: $text-white;
-    background-color: $blue-400;
+    background-color: var(--color-bg-secondary);
   }
 
   body:not(.intent-mouse) .SelectMenu-tab:focus {
-    background-color: $blue-100;
+    background-color: var(--color-select-menu-tap-focus-bg);
   }
 
-  .SelectMenu-tab:not([aria-checked="true"]):hover {
-    color: $text-gray-dark;
-    background-color: $gray-200;
+  .SelectMenu-tab:hover {
+    color: var(--color-text-primary);
   }
 
-  .SelectMenu-tab:not([aria-checked="true"]):active {
-    color: $text-gray-dark;
-    background-color: $gray-100;
+  .SelectMenu-tab:not([aria-selected="true"]):active {
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-tertiary);
   }
 }
 
@@ -408,13 +453,13 @@
   // Android
   .SelectMenu-item:focus,
   .SelectMenu-item:active {
-    background-color: $gray-000;
+    background-color: var(--color-bg-secondary);
   }
 
   // iOS Safari
   // :active would work if ontouchstart is added to the button
   // Instead this tweaks the "native" highlight color
   .SelectMenu-item {
-    -webkit-tap-highlight-color: rgba($gray-300, 0.5);
+    -webkit-tap-highlight-color: var(--color-select-menu-tap-highlight);
   }
 }
