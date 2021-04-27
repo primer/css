@@ -15,7 +15,7 @@
     // stylelint-disable-next-line primer/spacing
     padding: 10px $spacer-2 9px;
     text-align: right;
-    background: $bg-white;
+    background: var(--color-bg-primary);
     border: 0;
   }
 
@@ -23,7 +23,7 @@
 
   th {
     font-weight: $font-weight-bold;
-    background: $bg-gray;
+    background: var(--color-bg-tertiary);
     border-top: 0;
   }
 }

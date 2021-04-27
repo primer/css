@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
 const globby = require('globby')
 const cssstats = require('cssstats')
 const postcss = require('postcss')
@@ -55,7 +54,7 @@ async function dist() {
         writeFile(to, result.css, encoding),
         writeFile(meta.stats, JSON.stringify(cssstats(result.css)), encoding),
         writeFile(meta.js, `module.exports = {cssstats: require('./stats/${name}.json')}`, encoding),
-        result.map ? writeFile(meta.map, result.map, encoding) : null
+        result.map ? writeFile(meta.map, result.map.toString(), encoding) : null
       ])
       bundles[name] = meta
     })
@@ -108,13 +107,10 @@ if (require.main === module) {
   dist()
 }
 
-function writeVariableData() {
+async function writeVariableData() {
   const analyzeVariables = require('./analyze-variables')
-  return Promise.all([
-    analyzeVariables('src/support/index.scss'),
-    analyzeVariables('src/marketing/support/index.scss')
-  ]).then(([support, marketing]) => {
-    const data = Object.assign({}, support, marketing)
-    writeFile(join(outDir, 'variables.json'), JSON.stringify(data, null, 2))
-  })
+  const support = await analyzeVariables('src/support/index.scss')
+  const marketing = await analyzeVariables('src/marketing/support/index.scss')
+  const data = Object.assign({}, support, marketing)
+  writeFile(join(outDir, 'variables.json'), JSON.stringify(data, null, 2))
 }

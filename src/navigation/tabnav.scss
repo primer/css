@@ -3,7 +3,7 @@
 .tabnav {
   margin-top: 0;
   margin-bottom: $spacer-3;
-  border-bottom: $border;
+  border-bottom: $border-width $border-style var(--color-border-primary);
 }
 
 .tabnav-tabs {
@@ -20,38 +20,46 @@
   font-size: $h5-size;
   // stylelint-disable-next-line primer/typography
   line-height: 23px;
-  color: $text-gray-dark;
+  color: var(--color-text-secondary);
   text-decoration: none;
   background-color: transparent;
   border: $border-width $border-style transparent;
   border-bottom: 0;
+  transition: color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
 
   &.selected,
   &[aria-selected=true],
   &[aria-current]:not([aria-current=false]) {
-    background-color: $bg-white;
-    border-color: $border-gray;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-canvas); // cover bottom border
+    border-color: var(--color-border-primary);
     border-radius: $border-radius $border-radius 0 0;
+
+    .octicon {
+      color: inherit;
+    }
   }
 
   &:hover,
   &:focus {
-    color: $text-gray;
+    color: var(--color-text-primary);
     text-decoration: none;
+    transition-duration: 0.1s;
   }
 
   &:active {
-    color: $text-gray-light;
+    color: var(--color-text-tertiary);
   }
 
   .octicon {
     margin-right: $spacer-1;
     // stylelint-disable-next-line primer/colors
-    color: $gray-400;
+    color: var(--color-icon-tertiary);
   }
 
   .Counter {
     margin-left: $spacer-1;
+    color: inherit;
   }
 }
 
@@ -67,7 +75,7 @@
   // stylelint-disable-next-line primer/spacing
   margin-left: 10px;
   font-size: $font-size-small;
-  color: $text-gray;
+  color: var(--color-text-secondary);
 
   > .octicon {
     // stylelint-disable-next-line primer/spacing
@@ -78,7 +86,7 @@
 // When tabnav-extra are anchors
 // stylelint-disable-next-line selector-no-qualifying-type
 a.tabnav-extra:hover {
-  color: $text-blue;
+  color: var(--color-text-link);
   text-decoration: none;
 }
 

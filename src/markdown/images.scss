@@ -8,7 +8,7 @@
     // because we put padding on the images to hide header lines, and some people
     // specify the width of their images in their markdown.
     box-sizing: content-box;
-    background-color: $bg-white;
+    background-color: var(--color-bg-primary);
 
     &[align=right] {
       // stylelint-disable-next-line primer/spacing
@@ -44,8 +44,7 @@
       // stylelint-disable-next-line primer/spacing
       margin: 13px 0 0;
       overflow: hidden;
-      // stylelint-disable-next-line primer/borders
-      border: $border-width $border-style lighten($gray-300, 5%);
+      border: $border-width $border-style var(--color-markdown-frame-border);
     }
 
     span img {
@@ -58,7 +57,7 @@
       // stylelint-disable-next-line primer/spacing
       padding: 5px 0 0;
       clear: both;
-      color: $text-gray-dark;
+      color: var(--color-text-primary);
     }
   }
 

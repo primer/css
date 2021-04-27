@@ -2,7 +2,7 @@
 title: Autocomplete
 path: components/autocomplete
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/autocomplete'
+source: 'https://github.com/primer/css/tree/main/src/autocomplete'
 bundle: autocomplete
 ---
 

@@ -2,7 +2,6 @@
 // stylelint-disable selector-no-qualifying-type
 // stylelint-disable selector-max-type
 .markdown-body {
-
   // Lists, Blockquotes & Such
   ul,
   ol {
@@ -13,6 +12,18 @@
       padding: 0;
       list-style-type: none;
     }
+  }
+
+  ol[type="1"] {
+    list-style-type: decimal;
+  }
+
+  ol[type="a"] {
+    list-style-type: lower-alpha;
+  }
+
+  ol[type="i"] {
+    list-style-type: lower-roman;
   }
 
   // Did someone complain about list spacing? Encourage them
@@ -44,11 +55,6 @@
   ol ul {
     margin-top: 0;
     margin-bottom: 0;
-  }
-
-  li {
-    // TODO@16.0.0: Remove this. See https://github.com/primer/css/pull/1137.
-    word-wrap: break-all;
   }
 
   li > p {
