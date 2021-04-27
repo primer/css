@@ -17,72 +17,66 @@ label {
 
 .form-control,
 .form-select {
-  min-height: 34px;
   // stylelint-disable-next-line primer/spacing
-  padding: 6px $spacer-2;
-  font-size: $h4-size;
+  padding: 5px 12px;
+  font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: $text-gray-dark;
+  color: var(--color-text-primary);
   vertical-align: middle;
-  background-color: $bg-white;
+  background-color: var(--color-input-bg);
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
-  border: $border-width $border-style $border-gray-dark;
+  border: $border-width $border-style var(--color-input-border);
   border-radius: $border-radius;
   outline: none;
-  box-shadow: $form-control-shadow;
+  box-shadow: var(--color-shadow-inset);
 
   &.focus,
   &:focus {
-    // stylelint-disable-next-line primer/borders
-    border-color: $blue-400;
+    border-color: var(--color-state-focus-border);
     outline: none;
-    box-shadow: $form-control-shadow, $btn-input-focus-shadow;
+    box-shadow: var(--color-state-focus-shadow);
   }
 
-  // Ensures inputs don't zoom on mobile but are body-font size on desktop
-  @include breakpoint(md) {
-    font-size: $body-font-size;
+  &[disabled] {
+    color: var(--color-text-disabled);
+    background-color: var(--color-input-disabled-bg);
+    border-color: var(--color-input-disabled-border);
   }
+
+  // Ensures inputs don't zoom on mobile iPhone but are body-font size on iPad
+  @supports (-webkit-touch-callout: none) {
+    font-size: $h4-size;
+    @include breakpoint(md) {
+      font-size: $body-font-size;
+    }
+  }
+}
+
+// Textarea
+textarea.form-control {
+  padding-top: $spacer-2;
+  padding-bottom: $spacer-2;
+  line-height: $lh-default;
 }
 
 // Inputs with contrast for easy light gray backgrounds against white.
 .input-contrast {
-  background-color: $bg-gray-light;
+  background-color: var(--color-input-contrast-bg);
 
-  &:focus { background-color: $bg-white; }
-}
-
-// Inputs to be used against dark backgrounds.
-.input-dark {
-  color: $text-white;
-  // stylelint-disable-next-line primer/colors
-  background-color: $white-fade-15;
-  border-color: transparent;
-
-  &::placeholder {
-    color: inherit;
-    opacity: 0.6; // inceases contrast ratio to 4.52
-  }
-
-  &.focus,
-  &:focus {
-    // stylelint-disable-next-line primer/borders
-    border-color: $black-fade-30;
-    // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 0.2em rgba($blue-300, 0.4);
-  }
+  &:focus { background-color: var(--color-input-bg); }
 }
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
 ::placeholder {
-  color: $text-gray-light;
+  color: var(--color-text-placeholder);
+  opacity: 1; // override opacity in normalize.css
 }
 
 // Mini inputs, to match .minibutton
 .input-sm {
-  min-height: 28px;
+  min-height: $size-4;
   // stylelint-disable-next-line primer/spacing
   padding-top: 3px;
   // stylelint-disable-next-line primer/spacing
@@ -94,7 +88,6 @@ label {
 
 // Large inputs
 .input-lg {
-  padding: $spacer-1 10px;
   font-size: $h4-size;
 }
 
@@ -138,7 +131,7 @@ label {
       padding: 2px $spacer-1;
       font-style: normal;
       // stylelint-disable-next-line primer/colors
-      background: $yellow-100;
+      background: var(--color-auto-yellow-1);
       border-radius: $border-radius;
     }
   }
@@ -156,7 +149,7 @@ label {
     margin: 0;
     font-size: $font-size-small;
     font-weight: $font-weight-normal;
-    color: $text-gray;
+    color: var(--color-text-secondary);
   }
 }
 
@@ -188,12 +181,13 @@ label {
     // stylelint-disable-next-line primer/spacing
     margin: 0 30px 0 0;
 
-    dt {
+    dt, // TODO: Deprecate
+    .form-group-header {
       label {
         display: inline-block;
         // stylelint-disable-next-line primer/spacing
         margin: 5px 0 0;
-        color: $text-gray;
+        color: var(--color-text-secondary);
       }
 
       img {
@@ -242,11 +236,9 @@ input::-webkit-inner-spin-button {
   // stylelint-disable-next-line primer/spacing
   margin: 10px 0;
   font-size: $h5-size;
-  // stylelint-disable-next-line primer/colors
-  color: $yellow-900;
-  // stylelint-disable-next-line primer/colors
-  background: $yellow-100;
-  border: $border-width $border-style $border-yellow;
+  color: var(--color-text-warning);
+  background: var(--color-bg-warning);
+  border: $border-width $border-style var(--color-border-warning);
   border-radius: $border-radius;
 
   p {

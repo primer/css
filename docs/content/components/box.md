@@ -3,7 +3,7 @@ title: Box
 path: components/box
 status_issue: 'https://github.com/github/design-systems/issues/198'
 status: Stable
-source: 'https://github.com/primer/css/tree/master/src/box'
+source: 'https://github.com/primer/css/tree/main/src/box'
 bundle: box
 ---
 
@@ -11,7 +11,7 @@ The `.Box` component can be used for something as simple as a rounded corner box
 
 ## Box
 
-A `.Box` is a container with a a white background, a light gray border, and rounded corners. By default there are no additional styles such as padding, these can be added as needed with utility classes. Other styles and layouts can be achieved with box elements and modifiers shown in the documentation below.
+A `.Box` is a container with a white background, a light gray border, and rounded corners. By default there are no additional styles such as padding, these can be added as needed with utility classes. Other styles and layouts can be achieved with box elements and modifiers shown in the documentation below.
 
 ```html live
 <div class="Box">
@@ -287,7 +287,7 @@ Use `Box-row--focus-gray` or `Box-row--focus-blue` when using along-side `naviga
 
 ### Box row unread
 
-Use `.Box-row-unread` to apply a blue vertical line highlight for indicating a row contains unread items.
+Use `.Box-row--unread` to apply a blue vertical line highlight for indicating a row contains unread items.
 
 ```html live
 <div class="Box">
@@ -447,7 +447,7 @@ Use `Counter--gray-dark` for a counter with a dark gray background and white tex
 
 To achieve different layouts when adding buttons or form elements to boxes we suggest you use utilities to achieve the layout you want. Here's some common examples:
 
-Use [flexbox utilities](/css/utilities/flexbox) to center align items, and avoid using floats by using `flex-auto` to have the text fill the remaining space so that the button rests on the far right.
+Use [flexbox utilities](/utilities/flexbox) to center align items, and avoid using floats by using `flex-auto` to have the text fill the remaining space so that the button rests on the far right.
 
 ```html live
 <div class="Box Box--condensed">
@@ -531,10 +531,10 @@ You can put forms in boxes. Often form submission buttons are aligned to the bot
   </div>
   <form>
     <div class="Box-body">
-      <dl class="form-group">
-        <dt><label>Example label</label></dt>
-        <dd><input class="form-control" type="text" /></dd>
-      </dl>
+      <div class="form-group">
+        <div class="form-group-header"><label>Example label</label></div>
+        <div class="form-group-body"><input class="form-control" type="text"></div>
+      </div>
       <div class="form-checkbox">
         <label>
           <input type="checkbox" checked="checked" />
@@ -554,7 +554,7 @@ You can put forms in boxes. Often form submission buttons are aligned to the bot
 </div>
 ```
 
-When a box is all by itself centered on a page you can use [column widths](/css/objects/grid) to control the width of the box. If needed, break the mold a little and use [typography utilities](/css/utilities/typography) instead of the built in box title styles.
+When a box is all by itself centered on a page you can use [column widths](/objects/grid) to control the width of the box. If needed, break the mold a little and use [typography utilities](/utilities/typography) instead of the built in box title styles.
 
 ```html live
 <div class="Box Box--spacious col-6 mx-auto text-center">
@@ -563,10 +563,10 @@ When a box is all by itself centered on a page you can use [column widths](/css/
       <h3 class="f1-light">
         Example form
       </h3>
-      <dl class="form-group mb-4">
-        <dt><label>Example label</label></dt>
-        <dd><input class="form-control" type="text" /></dd>
-      </dl>
+      <div class="form-group mb-4">
+        <div class="form-group-header"><label>Example label</label></div>
+        <div class="form-group-body"><input class="form-control" type="text" /></div>
+      </div>
       <button class="btn btn-primary btn-block">
         Submit
       </button>
@@ -575,4 +575,4 @@ When a box is all by itself centered on a page you can use [column widths](/css/
 </div>
 ```
 
-Box patterns can also be made with, and modified with [border utilities](/css/utilities/borders).
+Box patterns can also be made with, and modified with [border utilities](/utilities/borders).

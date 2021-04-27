@@ -1,0 +1,80 @@
+@mixin btn-solid-mktg($color, $bg, $bg2, $bg3, $bg4) {
+  color: $color;
+  background-color: $bg2;
+  background-image: linear-gradient(-180deg, $bg 0%, $bg2 100%);
+
+  &::before {
+    background-image: linear-gradient(-180deg, $bg3 0%, $bg4 100%);
+  }
+
+  &:hover,
+  &.hover,
+  &:active,
+  &.selected,
+  &[aria-selected=true],
+  [open] > & {
+    background-color: $bg2;
+    background-image: linear-gradient(-180deg, $bg 0%, $bg2 100%);
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2em rgba($bg2, 0.4);
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+@mixin btn-outline-mktg($color, $color2, $border, $borderHover, $borderFocus, $borderFocusInset) {
+  color: $color;
+  background: none;
+  box-shadow: 0 0 0 1px $border inset;
+
+  &::before {
+    display: none;
+  }
+
+  &:hover,
+  &.hover,
+  &:active,
+  &.selected,
+  &[aria-selected=true],
+  [open] > & {
+    color: $color2;
+    background: none;
+    box-shadow: 0 0 0 2px $borderHover inset;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px $borderFocus inset, 0 0 0 4px $borderFocusInset;
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true] {
+    opacity: 0.5;
+  }
+}
+
+$browser-context: 16 !default;
+
+@function rem($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}

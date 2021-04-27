@@ -2,45 +2,64 @@
 // stylelint-disable selector-max-type
 .tabnav {
   margin-top: 0;
-  // stylelint-disable-next-line primer/spacing
-  margin-bottom: 15px;
-  border-bottom: $border-width $border-style $border-gray-dark;
-
-  .Counter {
-    // stylelint-disable-next-line primer/spacing
-    margin-left: 5px;
-  }
+  margin-bottom: $spacer-3;
+  border-bottom: $border-width $border-style var(--color-border-primary);
 }
 
 .tabnav-tabs {
+  display: flex;
   // stylelint-disable-next-line primer/spacing
   margin-bottom: -1px;
+  overflow: auto;
 }
 
 .tabnav-tab {
   display: inline-block;
-  padding: $spacer-2 12px;
+  flex-shrink: 0;
+  padding: $spacer-2 $spacer-3;
   font-size: $h5-size;
   // stylelint-disable-next-line primer/typography
-  line-height: 20px;
-  color: $text-gray;
+  line-height: 23px;
+  color: var(--color-text-secondary);
   text-decoration: none;
   background-color: transparent;
   border: $border-width $border-style transparent;
   border-bottom: 0;
+  transition: color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
 
+  &.selected,
   &[aria-selected=true],
-  &.selected {
-    color: $text-gray-dark;
-    background-color: $bg-white;
-    border-color: $border-gray-dark;
+  &[aria-current]:not([aria-current=false]) {
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-canvas); // cover bottom border
+    border-color: var(--color-border-primary);
     border-radius: $border-radius $border-radius 0 0;
+
+    .octicon {
+      color: inherit;
+    }
   }
 
   &:hover,
   &:focus {
-    color: $text-gray-dark;
+    color: var(--color-text-primary);
     text-decoration: none;
+    transition-duration: 0.1s;
+  }
+
+  &:active {
+    color: var(--color-text-tertiary);
+  }
+
+  .octicon {
+    margin-right: $spacer-1;
+    // stylelint-disable-next-line primer/colors
+    color: var(--color-icon-tertiary);
+  }
+
+  .Counter {
+    margin-left: $spacer-1;
+    color: inherit;
   }
 }
 
@@ -56,7 +75,7 @@
   // stylelint-disable-next-line primer/spacing
   margin-left: 10px;
   font-size: $font-size-small;
-  color: $text-gray;
+  color: var(--color-text-secondary);
 
   > .octicon {
     // stylelint-disable-next-line primer/spacing
@@ -65,12 +84,11 @@
 }
 
 // When tabnav-extra are anchors
-// stylelint-disable selector-no-qualifying-type
+// stylelint-disable-next-line selector-no-qualifying-type
 a.tabnav-extra:hover {
-  color: $text-blue;
+  color: var(--color-text-link);
   text-decoration: none;
 }
-// stylelint-enable selector-no-qualifying-type
 
 // Tabnav buttons
 //
@@ -78,6 +96,5 @@ a.tabnav-extra:hover {
 // the buttons to be floated or inline-block.
 
 .tabnav-btn {
-  // stylelint-disable-next-line primer/spacing
-  margin-left: 10px;
+  margin-left: $spacer-2;
 }

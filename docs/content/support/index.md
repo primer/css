@@ -1,7 +1,7 @@
 ---
 title: Support
 path: support/index
-source: 'https://github.com/primer/css/tree/master/src/support'
+source: 'https://github.com/primer/css/tree/main/src/support'
 bundle: support
 ---
 
@@ -12,7 +12,7 @@ We use Sass variables to keep color, typography, spacing, and other foundations 
 
 We've documented variables, mixins, and the systems they are built on for the following:
 
-- [Breakpoints](/css/support/breakpoints)
-- [Colors](/css/support/color-system)
-- [Spacing](/css/support/spacing)
-- [Typography](/css/support/typography)
+- [Breakpoints](/support/breakpoints)
+- [Colors](/support/color-system)
+- [Spacing](/support/spacing)
+- [Typography](/support/typography)

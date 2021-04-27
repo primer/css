@@ -1,68 +1,63 @@
-// Needs refactoring
 // Labels
-//
-// Use labels to add keyword tags or phrases to issues and pull requests. These
-// are used within a list of issues/PRs, on individual issues/PRs, and within
-// the select menus that manage them.
 
 // Provide a wrapper to ensure labels stick together
 .labels {
   position: relative;
 }
 
-// Each label gets common styles
-// .label will be deprecated for .Label
-.label,
+// Default label
+
+.label, // TODO: Deprecte
 .Label {
-  display: inline-block;
-  // stylelint-disable-next-line primer/spacing
-  padding: 3px $spacer-1;
-  font-size: $font-size-small;
-  font-weight: $font-weight-bold;
-  line-height: $lh-condensed-ultra; // prevent inheritance from changing proportions
-  color: $text-white;
-  // stylelint-disable-next-line primer/borders
-  border-radius: 2px;
-  // stylelint-disable-next-line primer/box-shadow
-  box-shadow: inset 0 -1px 0 rgba($black, 0.12);
+  @include labels-base;
+  background-color: transparent !important; // TODO: Remove again
+  border-color: var(--color-label-border);
 
   &:hover {
     text-decoration: none;
   }
 }
 
-// Custom GitHub labels (not for issues/PRs/etc)
-//
-// Commonly used across the site to indicate a particular role. For example,
-// "repo owner" within code comments or role in organizations.
-.Label--gray {
-  color: $text-gray;
-  // stylelint-disable-next-line primer/colors
-  background-color: lighten($gray-200, 3%);
+// Large
+
+.Label--large {
+  @include labels-large;
 }
 
-.Label--outline {
-  // stylelint-disable-next-line primer/spacing
-  margin-top: -1px; // offsets the 1px border
-  // stylelint-disable-next-line primer/spacing
-  margin-bottom: -1px; // offsets the 1px border
-  font-weight: $font-weight-normal;
-  color: $text-gray;
-  background-color: transparent;
-  border: $border-width $border-style $border-black-fade;
-  box-shadow: none;
+// Inline
+
+.Label--inline {
+  @include labels--inline;
 }
 
-.Label--outline-green {
-  color: $text-green;
-  border: $border-width $border-style $border-green;
+// Colors
+
+.Label--primary {
+  color: var(--color-label-primary-text);
+  border-color: var(--color-label-primary-border);
 }
 
-.Label--gray-darker {
-  // stylelint-disable-next-line primer/colors
-  background-color: $gray;
+.Label--secondary {
+  color: var(--color-label-secondary-text);
+  border-color: var(--color-label-secondary-border);
 }
 
-.Label--orange {
-  background-color: $bg-orange;
+.Label--info {
+  color: var(--color-label-info-text);
+  border-color: var(--color-label-info-border);
+}
+
+.Label--success {
+  color: var(--color-label-success-text);
+  border-color: var(--color-label-success-border);
+}
+
+.Label--warning {
+  color: var(--color-label-warning-text);
+  border-color: var(--color-label-warning-border);
+}
+
+.Label--danger {
+  color: var(--color-label-danger-text);
+  border-color: var(--color-label-danger-border);
 }
