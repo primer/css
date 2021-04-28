@@ -14,6 +14,10 @@ const versionDeprecations = {
       message: `Please use the ".btn-lg-mktg" class instead of "btn-large-mktg".`
     },
     {
+      selectors: ['.color-border-overlay'],
+      message: `Please use the ".color-border-primary" class instead of ".color-border-overlay".`
+    },
+    {
       selectors: [':-ms-input-placeholder'],
       message: 'Browserslist update to match github has removed the need for this pseudoselector'
     }
