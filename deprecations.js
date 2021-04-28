@@ -5,6 +5,10 @@
  */
 const versionDeprecations = {
   '17.0.0': [
+      {
+      selectors: ['.bg-shade-gradient'],
+      message: `This selector is deprecated, please use "color-bg-secondary" instead of "bg-shade-gradient".`
+    },
     {
       selectors: ['.btn-large-mktg'],
       message: `Please use the ".btn-lg-mktg" class instead of "btn-large-mktg".`
