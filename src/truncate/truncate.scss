@@ -37,8 +37,6 @@
 
   .Truncate-text {
     min-width: 1ch;
-    max-width: 100%;
-    max-width: fit-content;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
