@@ -37,7 +37,6 @@
 
   .Truncate-text {
     min-width: 1ch;
-    max-width: 100%;
     max-width: fit-content;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -48,12 +47,13 @@
     }
 
     &.Truncate-text--primary {
-      flex-basis: 1000%;
+      flex-basis: 200%;
     }
 
     &.Truncate-text--expandable:hover,
     &.Truncate-text--expandable:focus,
     &.Truncate-text--expandable:active {
+      max-width: 100% !important;
       flex-shrink: 0;
       cursor: pointer;
     }
