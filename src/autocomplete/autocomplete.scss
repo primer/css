@@ -9,7 +9,7 @@
   font-size: 13px;
   list-style: none;
   background: var(--color-bg-overlay);
-  border: $border-width $border-style var(--color-border-overlay);
+  border: $border-width $border-style var(--color-border-primary);
   border-radius: $border-radius;
   box-shadow: var(--color-autocomplete-shadow);
 }
