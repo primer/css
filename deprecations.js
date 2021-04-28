@@ -5,7 +5,7 @@
  */
 const versionDeprecations = {
   '17.0.0': [
-      {
+    {
       selectors: ['.bg-shade-gradient'],
       message: `This selector is deprecated, please use "color-bg-secondary" instead of "bg-shade-gradient".`
     },
