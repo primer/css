@@ -12,14 +12,16 @@ const versionDeprecations = {
   ],
   '17.0.0': [
     {
-      selectors: [
-        '.btn-mktg[aria-disabled=true]',
-        '.btn-primary-mktg[aria-disabled=true]',
-        '.btn-outline-mktg[aria-disabled=true]',
-        '.btn-transparent[aria-disabled=true]',
-        '.btn-large-mktg'
-      ],
-      message: 'Removing marketing buttons'
+      selectors: ['.bg-shade-gradient'],
+      message: `This selector is deprecated, please use "color-bg-secondary" instead of "bg-shade-gradient".`
+    },
+    {
+      selectors: ['.btn-large-mktg'],
+      message: `Please use the ".btn-lg-mktg" class instead of "btn-large-mktg".`
+    },
+    {
+      selectors: ['.color-border-overlay'],
+      message: `Please use the ".color-border-primary" class instead of ".color-border-overlay".`
     },
     {
       selectors: [':-ms-input-placeholder'],

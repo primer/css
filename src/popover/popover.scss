@@ -24,7 +24,7 @@
     margin-left: -9px;
     // stylelint-disable-next-line primer/borders
     border: $spacer-2 $border-style transparent;
-    border-bottom-color: var(--color-border-overlay);
+    border-bottom-color: var(--color-border-primary);
   }
 
   &::after {
@@ -54,7 +54,7 @@
 
   &::before {
     bottom: -$spacer-3;
-    border-top-color: var(--color-border-overlay);
+    border-top-color: var(--color-border-primary);
   }
 
   &::after {
@@ -133,7 +133,7 @@
 .Popover-message--right-bottom {
   &::before {
     right: -$spacer-3;
-    border-left-color: var(--color-border-overlay);
+    border-left-color: var(--color-border-primary);
   }
 
   &::after {
@@ -149,7 +149,7 @@
 .Popover-message--left-bottom {
   &::before {
     left: -$spacer-3;
-    border-right-color: var(--color-border-overlay);
+    border-right-color: var(--color-border-primary);
   }
 
   &::after {
