@@ -20,7 +20,8 @@ $spacer-10: $spacer * 12 !default; // 96px
 $spacer-11: $spacer * 14 !default; // 112px
 $spacer-12: $spacer * 16 !default; // 128px
 
-$marketing-spacers: (
+// $spacers-large: (
+$spacers-large: (
   7: $spacer-7,
   8: $spacer-8,
   9: $spacer-9,
@@ -29,7 +30,8 @@ $marketing-spacers: (
   12: $spacer-12,
 ) !default;
 
-$marketing-all-spacers: map-merge(
+// $marketing-all-spacers: map-merge(
+$spacers-extended: map-merge(
   (
     0: 0,
     1: $spacer-1,
@@ -39,7 +41,7 @@ $marketing-all-spacers: map-merge(
     5: $spacer-5,
     6: $spacer-6,
   ),
-  $marketing-spacers,
+  $spacers-large,
 ) !default;
 
 $marketing-position-variants: (
