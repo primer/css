@@ -5,7 +5,7 @@
 // No utilities for sm and xl breakpoints
 @each $breakpoint, $variant in $marketing-position-variants {
   @include breakpoint($breakpoint) {
-    @each $scale, $size in $spacers-extended {
+    @each $scale, $size in $spacer-map-extended {
       .top#{$variant}-#{$scale}     { top: $size !important; }
       .right#{$variant}-#{$scale}   { right: $size !important; }
       .bottom#{$variant}-#{$scale}  { bottom: $size !important; }
