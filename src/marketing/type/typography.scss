@@ -11,6 +11,7 @@
 .lead-mktg {
   font-family: $font-mktg;
   font-weight: $font-weight-semibold;
+  font-feature-settings: "salt" 2;
 }
 
 @mixin h000-mktg {

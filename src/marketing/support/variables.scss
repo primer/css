@@ -3,8 +3,41 @@ $marketing-font-path: "/fonts/" !default;
 $font-mktg: $body-font !default;
 
 // Builds upon @primer/css/support/variables/typography.scss
-$h000-size: 64px !default;
-$h000-size-mobile: 48px !default;
+$h000-size-mktg: 96px !default;
+$h000-size-md-mktg: 72px !default;
+$h000-size-sm-mktg: 48px !default;
+
+$h00-size-mktg: 96px !default;
+$h00-size-md-mktg: 48px !default;
+$h00-size-sm-mktg: 48px !default;
+
+$h0-size-mktg: 96px !default;
+$h0-size-md-mktg: 48px !default;
+$h0-size-sm-mktg: 48px !default;
+
+$h1-size-mktg: 96px !default;
+$h1-size-md-mktg: 48px !default;
+$h1-size-sm-mktg: 48px !default;
+
+$h2-size-mktg: 96px !default;
+$h2-size-md-mktg: 48px !default;
+$h2-size-sm-mktg: 48px !default;
+
+$h3-size-mktg: 96px !default;
+$h3-size-md-mktg: 48px !default;
+$h3-size-sm-mktg: 48px !default;
+
+$h4-size-mktg: 96px !default;
+$h4-size-md-mktg: 48px !default;
+$h4-size-sm-mktg: 48px !default;
+
+$h5-size-mktg: 96px !default;
+$h5-size-md-mktg: 48px !default;
+$h5-size-sm-mktg: 48px !default;
+
+$h6-size-mktg: 96px !default;
+$h6-size-md-mktg: 48px !default;
+$h6-size-sm-mktg: 48px !default;
 
 // Animations
 $transition-time: 0.4s !default;
