@@ -6,6 +6,23 @@
 const versionDeprecations = {
   '17.0.0': [
     {
+      selectors: [
+        '.top-n0',
+        '.right-n0',
+        '.bottom-n0',
+        '.left-n0',
+        '.top-md-n0',
+        '.right-md-n0',
+        '.bottom-md-n0',
+        '.left-md-n0',
+        '.top-lg-n0',
+        '.right-lg-n0',
+        '.bottom-lg-n0',
+        '.left-lg-n0'
+      ],
+      message: `This selector is deprecated, please use a non-negative selector to set the value to 0 (e.g. top-md-0)".`
+    },
+    {
       selectors: ['.bg-shade-gradient'],
       message: `This selector is deprecated, please use "color-bg-secondary" instead of "bg-shade-gradient".`
     },
