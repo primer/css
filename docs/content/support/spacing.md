@@ -24,7 +24,20 @@ The spacing scale is a **base-8** scale. We chose a base-8 scale because eight i
 
 These variables are encouraged to be used within components and custom CSS. The spacing scale is also used for [margin](/utilities/margin) and [padding](/utilities/padding) utilities.
 
-See [primer-marketing-support](/support/marketing-variables) for the extended spacing scale used for marketing needs and the related y-axis spacing utilities for [margin](/utilities/marketing-margin) and [padding](/utilities/marketing-padding).
+### Extended spacing scale
+
+These are primarily useful for achieving bigger vertical spacing between sections. This scale first steps up with `8px` for spacer 7, then steps in increments of `16px` from spacer 8 up to 12.
+
+| Variable     | Scale | Value |
+| ------------ |-------|-------|
+| `$spacer-7`  | 7     | 48px  |
+| `$spacer-8`  | 8     | 64px  |
+| `$spacer-9`  | 9     | 80px  |
+| `$spacer-10` | 10    | 96px  |
+| `$spacer-11` | 11    | 112px |
+| `$spacer-12` | 12    | 128px |
+
+The extended spacing scale is used for [margin](/utilities/margin) and [padding](/utilities/padding) utilities along the Y-axis, as well as for single side spacing utilities (top, right, bottom, left).
 
 ## Em-based spacing
 
