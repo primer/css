@@ -25,7 +25,7 @@
 
       @if ($size != 0) {
         /* Set a negative $size margin on top at $breakpoint */
-        .mt#{$variant}-n#{$scale} { margin-top   : -$size !important; }
+        .mt#{$variant}-n#{$scale} { margin-top: -$size !important; }
         /* Set a negative $size margin on the bottom at $breakpoint */
         .mb#{$variant}-n#{$scale} { margin-bottom: -$size !important; }
 
