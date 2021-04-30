@@ -68,7 +68,7 @@ Use directional utilities to apply margin to an individual side, or the X and Y 
 </div>
 ```
 
-## Extended directional margins
+## Extended vertical margins
 
 The extended scale starts from spacer `7` up to `12`. **Note**: Only the y-axis (`mt`, `mb` and `my`) and its responsive variants are supported.
 
