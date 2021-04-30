@@ -6,8 +6,11 @@
   @include breakpoint($breakpoint) {
     // Loop through the spacer values
     @each $scale, $size in $spacer-map-extended {
-      /* Set a $size padding to all sides at $breakpoint */
-      .p#{$variant}-#{$scale}  { padding: $size !important; }
+      @if ($scale < length($spacer-map)) {
+        /* Set a $size padding to all sides at $breakpoint */
+        .p#{$variant}-#{$scale}  { padding: $size !important; }
+      }
+      
       /* Set a $size padding to the top at $breakpoint */
       .pt#{$variant}-#{$scale} { padding-top: $size !important; }
       /* Set a $size padding to the right at $breakpoint */
