@@ -9,7 +9,6 @@ bundle: utilities
 Margin utilities are based on a global [spacing scale](/support/spacing) which helps keep horizontal and vertical spacing consistent. These utilities help us reduce the amount of custom CSS that share the same properties, and allows to achieve many different page layouts using the same styles.
 
 
-
 ## Naming convention
 
 Since margin utilities have many variations and will be used in many places, we use a shorthand naming convention to help keep class names succinct.
@@ -17,21 +16,26 @@ Since margin utilities have many variations and will be used in many places, we 
 
 | Shorthand | Description |
 | --- | --- |
-| m | margin |
-| t | top |
-| r | right |
-| b | bottom |
-| l | left |
-| x | horizontal, left & right |
-| y | vertical, top & bottom |
-| 0 | 0 |
-| 1 | 4px |
-| 2 | 8px |
-| 3 | 16px |
-| 4 | 24px |
-| 5 | 32px |
-| 6 | 40px |
-
+| m   | margin |
+| t   | top |
+| r   | right |
+| b   | bottom |
+| l   | left |
+| x   | horizontal, left & right |
+| y   | vertical, top & bottom |
+| 0   | 0     |
+| 1   | 4px   |
+| 2   | 8px   |
+| 3   | 16px  |
+| 4   | 24px  |
+| 5   | 32px  |
+| 6   | 40px  |
+| 7   | 48px  |
+| 8   | 64px  |
+| 9   | 80px  |
+| 10  | 96px  |
+| 11  | 112px |
+| 12  | 128px |
 
 ## Uniform margins
 
@@ -62,6 +66,19 @@ Use directional utilities to apply margin to an individual side, or the X and Y 
   <div class="bg-yellow"><div class="mx-3 p-1 bg-gray">.mx-3</div></div>
   <div class="bg-yellow"><div class="my-3 p-1 bg-gray">.my-3</div></div>
 </div>
+```
+
+## Extended directional margins
+
+The extended scale starts from spacer `7` up to `12`. **Note**: Only the y-axis (`mt`, `mb` and `my`) and its responsive variants are supported.
+
+```html live
+  <div class="bg-yellow d-inline-block"><div class="mt-7  p-1 bg-gray">.mb-7</div></div>
+  <div class="bg-yellow d-inline-block"><div class="mt-8  p-1 bg-gray">.mb-8</div></div>
+  <div class="bg-yellow d-inline-block"><div class="mt-9  p-1 bg-gray">.mb-9</div></div>
+  <div class="bg-yellow d-inline-block"><div class="mt-10 p-1 bg-gray">.mb-10</div></div>
+  <div class="bg-yellow d-inline-block"><div class="mt-11 p-1 bg-gray">.mb-11</div></div>
+  <div class="bg-yellow d-inline-block"><div class="mt-12 p-1 bg-gray">.mb-12</div></div>
 ```
 
 ## Center elements
