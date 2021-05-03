@@ -13,21 +13,27 @@
 
 @each $header, $sizes in $mktg-headers {
   .h#{$header}-mktg {
-    $pairing-sm: map-get($mktg-header-pairings, nth($sizes, 3));
-    font-size: map-get($pairing-sm, "size") !important;
-    line-height: map-get($pairing-sm, "lh") !important;
-    /* Todo: Add letter-spacing here with variables */
+    $pairing: map-get($mktg-header-pairings, nth($sizes, 3));
+    font-size: map-get($pairing, "size") !important;
+    line-height: map-get($pairing, "lh") !important;
+    letter-spacing: $mktg-header-spacing-default;
 
     @include breakpoint(md) {
-      $pairing-md: map-get($mktg-header-pairings, nth($sizes, 2));
-      font-size: map-get($pairing-md, "size") !important;
-      line-height: map-get($pairing-md, "lh") !important;
+      $pairing: map-get($mktg-header-pairings, nth($sizes, 2));
+      font-size: map-get($pairing, "size") !important;
+      line-height: map-get($pairing, "lh") !important;
+      @if (map-get($pairing, "size") >= 48px) {
+        letter-spacing: $mktg-header-spacing-large;
+      }
     }
 
     @include breakpoint(lg) {
-      $pairing-lg: map-get($mktg-header-pairings, nth($sizes, 1));
-      font-size: map-get($pairing-lg, "size") !important;
-      line-height: map-get($pairing-lg, "lh") !important;
+      $pairing: map-get($mktg-header-pairings, nth($sizes, 1));
+      font-size: map-get($pairing, "size") !important;
+      line-height: map-get($pairing, "lh") !important;
+      @if (map-get($pairing, "size") >= 48px) {
+        letter-spacing: $mktg-header-spacing-large;
+      }
     }
   }
 }
