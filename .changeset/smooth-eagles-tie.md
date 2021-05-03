@@ -1,5 +1,5 @@
 ---
-"@primer/css": minor
+"@primer/css": major
 ---
 
 Remove redundant marketing layout selectors
