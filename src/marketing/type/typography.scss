@@ -38,6 +38,35 @@
   }
 }
 
+@each $body, $sizes in $mktg-bodies {
+  .f#{$body}-mktg {
+    $pairing: map-get($mktg-body-pairings, nth($sizes, 3));
+    font-size: map-get($pairing, "size") !important;
+    line-height: map-get($pairing, "lh") !important;
+    @if (map-get($pairing, "size") >= 28px) {
+      letter-spacing: $mktg-body-spacing-large;
+    }
+
+    @include breakpoint(md) {
+      $pairing: map-get($mktg-body-pairings, nth($sizes, 2));
+      font-size: map-get($pairing, "size") !important;
+      line-height: map-get($pairing, "lh") !important;
+      @if (map-get($pairing, "size") >= 28px) {
+        letter-spacing: $mktg-body-spacing-large;
+      }
+    }
+
+    @include breakpoint(lg) {
+      $pairing: map-get($mktg-body-pairings, nth($sizes, 1));
+      font-size: map-get($pairing, "size") !important;
+      line-height: map-get($pairing, "lh") !important;
+      @if (map-get($pairing, "size") >= 28px) {
+        letter-spacing: $mktg-body-spacing-large;
+      }
+    }
+  }
+}
+
 // Pullquote
 
 @mixin pullquote {
