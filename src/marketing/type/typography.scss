@@ -11,26 +11,12 @@
   font-feature-settings: "salt" 2;
 }
 
-.h0-mktg {
-  font-size:   $mktg-h0-size-sm !important;
-  line-height: $mktg-h0-lh-sm   !important;
-  
-  @include breakpoint(md) {
-    font-size:   $mktg-h0-size-md !important;
-    line-height: $mktg-h0-lh-md   !important;
-  }
-
-  @include breakpoint(lg) {
-    font-size:   $mktg-h0-size !important;
-    line-height: $mktg-h0-lh   !important;
-  }
-}
-
 @each $header, $sizes in $mktg-headers {
   .h#{$header}-mktg {
     $pairing-sm: map-get($mktg-header-pairings, nth($sizes, 3));
     font-size: map-get($pairing-sm, "size") !important;
     line-height: map-get($pairing-sm, "lh") !important;
+    /* Todo: Add letter-spacing here with variables */
 
     @include breakpoint(md) {
       $pairing-md: map-get($mktg-header-pairings, nth($sizes, 2));
@@ -44,40 +30,6 @@
       line-height: map-get($pairing-lg, "lh") !important;
     }
   }
-}
-
-.h1-mktg {
-  font-size: $h1-size-mobile !important;
-  
-  @include breakpoint(md) {
-    font-size: $h1-size !important;
-  }
-}
-
-@mixin h2-mktg {
-  font-size: $h2-size-mobile !important;
-  @include breakpoint(md) { font-size: $h2-size !important; }
-}
-
-.h2-mktg { @include h2-mktg; }
-
-@mixin h3-mktg {
-  font-size: $h3-size-mobile !important;
-  @include breakpoint(md) { font-size: $h3-size !important; }
-}
-
-.h3-mktg { @include h3-mktg; }
-
-.h4-mktg {
-  font-size: $h4-size !important;
-}
-
-.h5-mktg {
-  font-size: $h5-size !important;
-}
-
-.h6-mktg {
-  font-size: $h6-size !important;
 }
 
 // Pullquote
