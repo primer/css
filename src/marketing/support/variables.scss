@@ -5,7 +5,7 @@ $font-mktg: $body-font !default;
 $mktg-header-spacing-large: -3% !default;
 $mktg-header-spacing-default: -1% !default;
 
-// Size steps
+// Header size steps
 $mktg-h-size-0:  96px !default;
 $mktg-h-size-1:  72px !default;
 $mktg-h-size-2:  64px !default;
@@ -18,7 +18,7 @@ $mktg-h-size-8:  24px !default;
 $mktg-h-size-9:  20px !default;
 $mktg-h-size-10: 16px !default;
 
-// Line-height steps
+// Header Line-height steps
 $mktg-h-lh-0:  100px !default;
 $mktg-h-lh-1:  76px !default;
 $mktg-h-lh-2:  64px !default;
@@ -55,6 +55,8 @@ $mktg-headers: (
   5: [8, 8, 9],
   6: [9, 9, 10]
 );
+
+
 
 // Animations
 $transition-time: 0.4s !default;
