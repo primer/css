@@ -1,46 +1,38 @@
 // Headings
-.h000-mktg,
-.h00-mktg,
 .h0-mktg,
 .h1-mktg,
 .h2-mktg,
 .h3-mktg,
 .h4-mktg,
 .h5-mktg,
-.h6-mktg,
-.lead-mktg {
+.h6-mktg {
   font-family: $font-mktg;
   font-weight: $font-weight-semibold;
   font-feature-settings: "salt" 2;
 }
 
-@mixin h000-mktg {
-  font-size: $h000-size-mobile !important;
-  @include breakpoint(md) { font-size: $h000-size !important; }
+.h0-mktg {
+  font-size:   $mktg-h0-size-sm !important;
+  line-height: $mktg-h0-lh-sm   !important;
+  
+  @include breakpoint(md) {
+    font-size:   $mktg-h0-size-md !important;
+    line-height: $mktg-h0-lh-md   !important;
+  }
+
+  @include breakpoint(lg) {
+    font-size:   $mktg-h0-size !important;
+    line-height: $mktg-h0-lh   !important;
+  }
 }
 
-.h000-mktg { @include h000-mktg; }
-
-@mixin h00-mktg {
-  font-size: $h00-size-mobile !important;
-  @include breakpoint(md) { font-size: $h00-size !important; }
-}
-
-.h00-mktg { @include h00-mktg; }
-
-@mixin h0-mktg {
-  font-size: $h0-size-mobile !important;
-  @include breakpoint(md) { font-size: $h0-size !important; }
-}
-
-.h0-mktg { @include h0-mktg; }
-
-@mixin h1-mktg {
+.h1-mktg {
   font-size: $h1-size-mobile !important;
-  @include breakpoint(md) { font-size: $h1-size !important; }
+  
+  @include breakpoint(md) {
+    font-size: $h1-size !important;
+  }
 }
-
-.h1-mktg { @include h1-mktg; }
 
 @mixin h2-mktg {
   font-size: $h2-size-mobile !important;
@@ -67,14 +59,6 @@
 .h6-mktg {
   font-size: $h6-size !important;
 }
-
-// Big opening paragraphs
-@mixin lead-mktg {
-  font-size: $h3-size;
-  font-weight: $font-weight-normal;
-}
-
-.lead-mktg { @include lead-mktg; }
 
 // Pullquote
 
