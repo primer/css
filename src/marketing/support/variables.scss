@@ -31,55 +31,30 @@ $mktg-h-lh-8:  28px !default;
 $mktg-h-lh-9:  24px !default;
 $mktg-h-lh-10: 20px !default;
 
-// Variables for responsive utility classes
-$mktg-h0-size:    $mktg-h-size-0  !default;
-$mktg-h0-lh:      $mktg-h-lh-0    !default;
-$mktg-h0-size-md: $mktg-h-size-1  !default;
-$mktg-h0-lh-md:   $mktg-h-lh-1    !default;
-$mktg-h0-size-sm: $mktg-h-size-4  !default;
-$mktg-h0-lh-sm:   $mktg-h-lh-4    !default;
+$mktg-header-pairings: (
+  0:  (size: $mktg-h-size-0,  lh: $mktg-h-lh-0),
+  1:  (size: $mktg-h-size-1,  lh: $mktg-h-lh-1),
+  2:  (size: $mktg-h-size-2,  lh: $mktg-h-lh-2),
+  3:  (size: $mktg-h-size-3,  lh: $mktg-h-lh-3),
+  4:  (size: $mktg-h-size-4,  lh: $mktg-h-lh-4),
+  5:  (size: $mktg-h-size-5,  lh: $mktg-h-lh-5),
+  6:  (size: $mktg-h-size-6,  lh: $mktg-h-lh-6),
+  7:  (size: $mktg-h-size-7,  lh: $mktg-h-lh-7),
+  8:  (size: $mktg-h-size-8,  lh: $mktg-h-lh-8),
+  9:  (size: $mktg-h-size-9,  lh: $mktg-h-lh-9),
+  10: (size: $mktg-h-size-10, lh: $mktg-h-lh-10)
+);
 
-$mktg-h1-size:    $mktg-h-size-1  !default;
-$mktg-h1-lh:      $mktg-h-lh-1    !default;
-$mktg-h1-size-md: $mktg-h-size-3  !default;
-$mktg-h1-lh-md:   $mktg-h-lh-3    !default;
-$mktg-h1-size-sm: $mktg-h-size-5  !default;
-$mktg-h1-lh-sm:   $mktg-h-lh-5    !default;
-
-$mktg-h2-size:    $mktg-h-size-2  !default;
-$mktg-h2-lh:      $mktg-h-lh-2    !default;
-$mktg-h2-size-md: $mktg-h-size-4  !default;
-$mktg-h2-lh-md:   $mktg-h-lh-4    !default;
-$mktg-h2-size-sm: $mktg-h-size-6  !default;
-$mktg-h2-lh-sm:   $mktg-h-lh-6    !default;
-
-$mktg-h3-size:    $mktg-h-size-4  !default;
-$mktg-h3-lh:      $mktg-h-lh-4    !default;
-$mktg-h3-size-md: $mktg-h-size-5  !default;
-$mktg-h3-lh-md:   $mktg-h-lh-5    !default;
-$mktg-h3-size-sm: $mktg-h-size-7  !default;
-$mktg-h3-lh-sm:   $mktg-h-lh-7    !default;
-
-$mktg-h4-size:    $mktg-h-size-6  !default;
-$mktg-h4-lh:      $mktg-h-lh-6    !default;
-$mktg-h4-size-md: $mktg-h-size-7  !default;
-$mktg-h4-lh-md:   $mktg-h-lh-7    !default;
-$mktg-h4-size-sm: $mktg-h-size-8  !default;
-$mktg-h4-lh-sm:   $mktg-h-lh-8    !default;
-
-$mktg-h5-size:    $mktg-h-size-8  !default;
-$mktg-h5-lh:      $mktg-h-lh-8    !default;
-$mktg-h5-size-md: $mktg-h-size-8  !default;
-$mktg-h5-lh-md:   $mktg-h-lh-8    !default;
-$mktg-h5-size-sm: $mktg-h-size-9  !default;
-$mktg-h5-lh-sm:   $mktg-h-lh-9    !default;
-
-$mktg-h6-size:    $mktg-h-size-9  !default;
-$mktg-h6-lh:      $mktg-h-lh-9    !default;
-$mktg-h6-size-md: $mktg-h-size-9  !default;
-$mktg-h6-lh-md:   $mktg-h-lh-9    !default;
-$mktg-h6-size-sm: $mktg-h-size-10 !default;
-$mktg-h6-lh-sm:   $mktg-h-lh-10   !default;
+// Responsive headers, where first number is desktop, second is tablet, and third is mobile
+$mktg-headers: (
+  0: [0, 1, 4],
+  1: [1, 3, 5],
+  2: [2, 4, 6],
+  3: [4, 5, 7],
+  4: [6, 7, 8],
+  5: [8, 8, 9],
+  6: [9, 9, 10]
+);
 
 // Animations
 $transition-time: 0.4s !default;
