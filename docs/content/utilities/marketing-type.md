@@ -13,13 +13,13 @@ The typography for our marketing pages differs from Primer CSS's core—it is re
 Use `.h0-mktg` – `.h6-mktg` to change an element's font, size, and weight on marketing pages.
 
 ```html live title="Heading Utilities"
-<p class="h0-mktg">Heading 0</p>
-<p class="h1-mktg">Heading 1</p>
-<p class="h2-mktg">Heading 2</p>
-<p class="h3-mktg">Heading 3</p>
-<p class="h4-mktg">Heading 4</p>
-<p class="h5-mktg">Heading 5</p>
-<p class="h6-mktg">Heading 6</p>
+<p class="h0-mktg">This is a heading 0</p>
+<p class="h1-mktg">This is a heading 1</p>
+<p class="h2-mktg">This is a heading 2</p>
+<p class="h3-mktg">This is a heading 3</p>
+<p class="h4-mktg">This is a heading 4</p>
+<p class="h5-mktg">This is a heading 5</p>
+<p class="h6-mktg">This is a heading 6</p>
 ```
 
 ## Body content utilities
