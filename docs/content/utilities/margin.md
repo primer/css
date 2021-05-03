@@ -125,3 +125,17 @@ You can add negative margins to the top, right, bottom, or left of an item by ad
   </div>
 </div>
 ```
+
+## Extended negative margins
+
+You can use the extended spacing scale for `top` and `bottom` margins, ranging from `1` to `12`.
+
+```html live
+<div class="d-flex flex-justify-center">
+  <div class="py-6 px-3 color-bg-warning">
+    <div class="mt-n8 border-left border-red color-bg-tertiary p-2">
+      .mt-n8
+    </div>
+  </div>
+</div>
+```
