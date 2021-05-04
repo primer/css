@@ -6,14 +6,7 @@
 const versionDeprecations = {
   '17.0.0': [
     {
-      selectors: [
-        '.p-7',
-        '.p-8',
-        '.p-9',
-        '.p-10',
-        '.p-11',
-        '.p-12'
-      ],
+      selectors: ['.p-7', '.p-8', '.p-9', '.p-10', '.p-11', '.p-12'],
       message: `This selector is deprecated, please use pt-X, pr-X, pb-X, and pl-X to set paddings on all sides above spacing level 6.`
     },
     {
