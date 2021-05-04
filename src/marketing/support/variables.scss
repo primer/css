@@ -43,7 +43,7 @@ $mktg-header-pairings: (
   8:  (size: $mktg-h-size-8,  lh: $mktg-h-lh-8),
   9:  (size: $mktg-h-size-9,  lh: $mktg-h-lh-9),
   10: (size: $mktg-h-size-10, lh: $mktg-h-lh-10)
-);
+) !default;
 
 // Responsive headers, where first number is mobile (default), second is tablet/md, and third is desktop/lg
 $mktg-headers: (
@@ -54,7 +54,7 @@ $mktg-headers: (
   4: [8, 7, 6],
   5: [9, 8, 8],
   6: [10, 9, 9]
-);
+) !default;
 
 // Body size steps
 $mktg-body-size-0:  48px !default;
@@ -88,7 +88,7 @@ $mktg-body-pairings: (
   6:  (size: $mktg-body-size-6,  lh: $mktg-body-lh-6),
   7:  (size: $mktg-body-size-7,  lh: $mktg-body-lh-7),
   8:  (size: $mktg-body-size-8,  lh: $mktg-body-lh-8)
-);
+) !default;
 
 // Responsive body content, where first number is mobile (default), second is tablet/md, and third is desktop/lg
 $mktg-body-spacing-large: -0.01em !default;
@@ -101,7 +101,7 @@ $mktg-bodies: (
   4: [6, 6, 6],
   5: [7, 7, 7],
   6: [8, 8, 8]
-);
+) !default;
 
 // Animations
 $transition-time: 0.4s !default;
