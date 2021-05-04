@@ -10,7 +10,7 @@
         /* Set a $size padding to all sides at $breakpoint */
         .p#{$variant}-#{$scale}  { padding: $size !important; }
       }
-      
+
       /* Set a $size padding to the top at $breakpoint */
       .pt#{$variant}-#{$scale} { padding-top: $size !important; }
       /* Set a $size padding to the right at $breakpoint */
