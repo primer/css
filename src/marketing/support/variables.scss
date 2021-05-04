@@ -1,10 +1,112 @@
+// Typography
 $marketing-font-path: "/fonts/" !default;
 
 $font-mktg: $body-font !default;
+$mktg-font-feature-settings: 'ss02' on, 'ss01' on !default;
+$mktg-header-spacing-large: -0.03em !default;
+$mktg-header-spacing-default: -0.01em !default;
+$mktg-header-spacing-threshold: 48px !default;
+$mktg-header-weight-large: 800 !default;
+$mktg-header-weight-default: $font-weight-bold !default;
+$mktg-header-weight-threshold: 24px !default;
 
-// Builds upon @primer/css/support/variables/typography.scss
-$h000-size: 64px !default;
-$h000-size-mobile: 48px !default;
+// Header size steps
+$mktg-h-size-0:  96px !default;
+$mktg-h-size-1:  72px !default;
+$mktg-h-size-2:  64px !default;
+$mktg-h-size-3:  56px !default;
+$mktg-h-size-4:  48px !default;
+$mktg-h-size-5:  40px !default;
+$mktg-h-size-6:  32px !default;
+$mktg-h-size-7:  28px !default;
+$mktg-h-size-8:  24px !default;
+$mktg-h-size-9:  20px !default;
+$mktg-h-size-10: 16px !default;
+
+// Header Line-height steps
+$mktg-h-lh-0:  100px !default;
+$mktg-h-lh-1:  76px !default;
+$mktg-h-lh-2:  64px !default;
+$mktg-h-lh-3:  60px !default;
+$mktg-h-lh-4:  52px !default;
+$mktg-h-lh-5:  44px !default;
+$mktg-h-lh-6:  36px !default;
+$mktg-h-lh-7:  32px !default;
+$mktg-h-lh-8:  28px !default;
+$mktg-h-lh-9:  24px !default;
+$mktg-h-lh-10: 20px !default;
+
+$mktg-header-pairings: (
+  0:  (size: $mktg-h-size-0,  lh: $mktg-h-lh-0),
+  1:  (size: $mktg-h-size-1,  lh: $mktg-h-lh-1),
+  2:  (size: $mktg-h-size-2,  lh: $mktg-h-lh-2),
+  3:  (size: $mktg-h-size-3,  lh: $mktg-h-lh-3),
+  4:  (size: $mktg-h-size-4,  lh: $mktg-h-lh-4),
+  5:  (size: $mktg-h-size-5,  lh: $mktg-h-lh-5),
+  6:  (size: $mktg-h-size-6,  lh: $mktg-h-lh-6),
+  7:  (size: $mktg-h-size-7,  lh: $mktg-h-lh-7),
+  8:  (size: $mktg-h-size-8,  lh: $mktg-h-lh-8),
+  9:  (size: $mktg-h-size-9,  lh: $mktg-h-lh-9),
+  10: (size: $mktg-h-size-10, lh: $mktg-h-lh-10)
+) !default;
+
+// Responsive headers, where first number is mobile (default), second is tablet/md, and third is desktop/lg
+$mktg-headers: (
+  0: [4, 1, 0],
+  1: [5, 3, 1],
+  2: [6, 4, 2],
+  3: [7, 5, 4],
+  4: [8, 7, 6],
+  5: [9, 8, 8],
+  6: [10, 9, 9]
+) !default;
+
+// Body size steps
+$mktg-body-size-0:  48px !default;
+$mktg-body-size-1:  40px !default;
+$mktg-body-size-2:  32px !default;
+$mktg-body-size-3:  28px !default;
+$mktg-body-size-4:  24px !default;
+$mktg-body-size-5:  20px !default;
+$mktg-body-size-6:  16px !default;
+$mktg-body-size-7:  14px !default;
+$mktg-body-size-8:  12px !default;
+
+// Body line-height steps
+$mktg-body-lh-0:  64px !default;
+$mktg-body-lh-1:  52px !default;
+$mktg-body-lh-2:  44px !default;
+$mktg-body-lh-3:  40px !default;
+$mktg-body-lh-4:  32px !default;
+$mktg-body-lh-5:  28px !default;
+$mktg-body-lh-6:  24px !default;
+$mktg-body-lh-7:  20px !default;
+$mktg-body-lh-8:  20px !default;
+
+$mktg-body-pairings: (
+  0:  (size: $mktg-body-size-0,  lh: $mktg-body-lh-0),
+  1:  (size: $mktg-body-size-1,  lh: $mktg-body-lh-1),
+  2:  (size: $mktg-body-size-2,  lh: $mktg-body-lh-2),
+  3:  (size: $mktg-body-size-3,  lh: $mktg-body-lh-3),
+  4:  (size: $mktg-body-size-4,  lh: $mktg-body-lh-4),
+  5:  (size: $mktg-body-size-5,  lh: $mktg-body-lh-5),
+  6:  (size: $mktg-body-size-6,  lh: $mktg-body-lh-6),
+  7:  (size: $mktg-body-size-7,  lh: $mktg-body-lh-7),
+  8:  (size: $mktg-body-size-8,  lh: $mktg-body-lh-8)
+) !default;
+
+// Responsive body content, where first number is mobile (default), second is tablet/md, and third is desktop/lg
+$mktg-body-spacing-large: -0.01em !default;
+
+$mktg-bodies: (
+  0: [3, 1, 0],
+  1: [4, 3, 2],
+  2: [5, 5, 4],
+  3: [6, 5, 5],
+  4: [6, 6, 6],
+  5: [7, 7, 7],
+  6: [8, 8, 8]
+) !default;
 
 // Animations
 $transition-time: 0.4s !default;

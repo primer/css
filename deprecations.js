@@ -7,6 +7,14 @@ const versionDeprecations = {
   '17.0.0': [
     {
       selectors: [
+          '.h000-mktg',
+          '.h00-mktg',
+          '.lead-mktg'
+      ],
+      message: `This selector is deprecated, please refer to the Marketing Typography documentation.`
+    },
+    {
+      selectors: [
         '.p-7',
         '.p-8',
         '.p-9',
