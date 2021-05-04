@@ -13,12 +13,12 @@
 
 @each $header, $sizes in $mktg-headers {
   .h#{$header}-mktg {
-    $pairing: map-get($mktg-header-pairings, nth($sizes, 3));
+    $pairing: map-get($mktg-header-pairings, nth($sizes, 1));
     font-size: map-get($pairing, "size") !important;
     line-height: map-get($pairing, "lh") !important;
     letter-spacing: $mktg-header-spacing-default;
 
-    @if (nth($sizes, 3) != nth($sizes, 2)) {
+    @if (nth($sizes, 1) != nth($sizes, 2)) {
       @include breakpoint(md) {
         $pairing: map-get($mktg-header-pairings, nth($sizes, 2));
         font-size: map-get($pairing, "size") !important;
@@ -29,9 +29,9 @@
       }
     }
 
-    @if (nth($sizes, 2) != nth($sizes, 1)) {
+    @if (nth($sizes, 2) != nth($sizes, 3)) {
       @include breakpoint(lg) {
-        $pairing: map-get($mktg-header-pairings, nth($sizes, 1));
+        $pairing: map-get($mktg-header-pairings, nth($sizes, 3));
         font-size: map-get($pairing, "size") !important;
         line-height: map-get($pairing, "lh") !important;
         @if (map-get($pairing, "size") >= 48px) {
@@ -44,14 +44,14 @@
 
 @each $body, $sizes in $mktg-bodies {
   .f#{$body}-mktg {
-    $pairing: map-get($mktg-body-pairings, nth($sizes, 3));
+    $pairing: map-get($mktg-body-pairings, nth($sizes, 1));
     font-size: map-get($pairing, "size") !important;
     line-height: map-get($pairing, "lh") !important;
     @if (map-get($pairing, "size") >= 28px) {
       letter-spacing: $mktg-body-spacing-large;
     }
 
-    @if (nth($sizes, 3) != nth($sizes, 2)) {
+    @if (nth($sizes, 1) != nth($sizes, 2)) {
       @include breakpoint(md) {
         $pairing: map-get($mktg-body-pairings, nth($sizes, 2));
         font-size: map-get($pairing, "size") !important;
@@ -62,9 +62,9 @@
       }
     }
 
-    @if (nth($sizes, 2) != nth($sizes, 1)) {
+    @if (nth($sizes, 2) != nth($sizes, 3)) {
       @include breakpoint(lg) {
-        $pairing: map-get($mktg-body-pairings, nth($sizes, 1));
+        $pairing: map-get($mktg-body-pairings, nth($sizes, 3));
         font-size: map-get($pairing, "size") !important;
         line-height: map-get($pairing, "lh") !important;
         @if (map-get($pairing, "size") >= 28px) {
