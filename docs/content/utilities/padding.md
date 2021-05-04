@@ -30,6 +30,12 @@ Since padding utilities have many variations and will be used in many places, we
 | 4 | 24px |
 | 5 | 32px |
 | 6 | 40px |
+| 7   | 48px  |
+| 8   | 64px  |
+| 9   | 80px  |
+| 10  | 96px  |
+| 11  | 112px |
+| 12  | 128px |
 
 _**Note:** The blue in the examples below represents the element, and the green represents the padding._
 
@@ -59,6 +65,20 @@ Use directional utilities to apply padding to an individual side, or the X and Y
 <div class="py-3 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.py-3</div></div>
 <div class="px-3 mr-3 bg-yellow d-inline-block"><div class="bg-gray p-1">.px-3</div></div>
 ```
+
+## Extended directional padding
+
+The extended directional padding scale starts from spacer `7` and goes up to `12`. All directions and their responsive variants are supported, except for `px`.
+
+```html live
+<div class="pt-7  mr-1 bg-yellow d-inline-block"><div class="bg-gray p-1">.pt-7</div></div>
+<div class="pt-8  mr-1 bg-yellow d-inline-block"><div class="bg-gray p-1">.pt-8</div></div>
+<div class="pt-9  mr-1 bg-yellow d-inline-block"><div class="bg-gray p-1">.pt-9</div></div>
+<div class="pt-10 mr-1 bg-yellow d-inline-block"><div class="bg-gray p-1">.pt-10</div></div>
+<div class="pt-11 mr-1 bg-yellow d-inline-block"><div class="bg-gray p-1">.pt-11</div></div>
+<div class="pt-12 mr-1 bg-yellow d-inline-block"><div class="bg-gray p-1">.pt-12</div></div>
+```
+
 
 ## Responsive padding
 
