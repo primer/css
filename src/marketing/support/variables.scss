@@ -7,7 +7,7 @@ $mktg-header-spacing-large: -0.03em !default;
 $mktg-header-spacing-default: -0.01em !default;
 $mktg-header-spacing-threshold: 48px !default;
 $mktg-header-weight-large: 800 !default;
-$mktg-header-weight-default: 600 !default;
+$mktg-header-weight-default: $font-weight-bold !default;
 $mktg-header-weight-threshold: 24px !default;
 
 // Header size steps

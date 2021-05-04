@@ -8,8 +8,8 @@
 .h6-mktg {
   font-family: $font-mktg;
   font-feature-settings: $mktg-font-feature-settings;
-  font-weight: $font-weight-bold !important;
-  letter-spacing: $mktg-header-spacing-default;
+  font-weight: $mktg-header-weight-default !important;
+  letter-spacing: $mktg-header-spacing-default !important;
 }
 
 @each $header, $sizes in $mktg-headers {
