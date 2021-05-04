@@ -5,9 +5,12 @@
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
     // Loop through the spacer values
-    @each $scale, $size in $spacer-map {
-      /* Set a $size padding to all sides at $breakpoint */
-      .p#{$variant}-#{$scale}  { padding: $size !important; }
+    @each $scale, $size in $spacer-map-extended {
+      @if ($scale < length($spacer-map)) {
+        /* Set a $size padding to all sides at $breakpoint */
+        .p#{$variant}-#{$scale}  { padding: $size !important; }
+      }
+      
       /* Set a $size padding to the top at $breakpoint */
       .pt#{$variant}-#{$scale} { padding-top: $size !important; }
       /* Set a $size padding to the right at $breakpoint */
@@ -17,10 +20,12 @@
       /* Set a $size padding to the left at $breakpoint */
       .pl#{$variant}-#{$scale} { padding-left: $size !important; }
 
-      /* Set a $size padding to the left & right at $breakpoint */
-      .px#{$variant}-#{$scale} {
-        padding-right: $size !important;
-        padding-left: $size !important;
+      @if ($scale < length($spacer-map)) {
+        /* Set a $size padding to the left & right at $breakpoint */
+        .px#{$variant}-#{$scale} {
+          padding-right: $size !important;
+          padding-left: $size !important;
+        }
       }
 
       /* Set a $size padding to the top & bottom at $breakpoint */

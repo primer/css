@@ -7,6 +7,17 @@ const versionDeprecations = {
   '17.0.0': [
     {
       selectors: [
+        '.p-7',
+        '.p-8',
+        '.p-9',
+        '.p-10',
+        '.p-11',
+        '.p-12'
+      ],
+      message: `This selector is deprecated, please use pt-X, pr-X, pb-X, and pl-X to set paddings on all sides above spacing level 6.`
+    },
+    {
+      selectors: [
         '.top-n0',
         '.right-n0',
         '.bottom-n0',
@@ -20,7 +31,7 @@ const versionDeprecations = {
         '.bottom-lg-n0',
         '.left-lg-n0'
       ],
-      message: `This selector is deprecated, please use a non-negative selector to set the value to 0 (e.g. top-md-0)".`
+      message: `This selector is deprecated, please use a non-negative selector to set the value to 0 (e.g. top-md-0).`
     },
     {
       selectors: ['.bg-shade-gradient'],
