@@ -41,23 +41,33 @@
   }
 }
 
+.f0-mktg,
+.f1-mktg,
+.f2-mktg,
+.f3-mktg,
+.f4-mktg,
+.f5-mktg,
+.f6-mktg {
+  font-family: $font-mktg;
+  font-feature-settings: $mktg-font-feature-settings;
+  font-weight: $font-weight-normal !important;
+}
+
 @each $body, $sizes in $mktg-bodies {
   .f#{$body}-mktg {
     $pairing: map-get($mktg-body-pairings, nth($sizes, 1));
     font-size: map-get($pairing, "size") !important;
     line-height: map-get($pairing, "lh") !important;
-    @if (map-get($pairing, "size") >= 28px) {
-      letter-spacing: $mktg-body-spacing-large;
-    }
+    @if (map-get($pairing, "size") >= 28px) { letter-spacing: $mktg-header-spacing-default !important; }
+    @if (map-get($pairing, "size") >= 24px) { font-weight: $font-weight-semibold !important; }
 
     @if (nth($sizes, 1) != nth($sizes, 2)) {
       @include breakpoint(md) {
         $pairing: map-get($mktg-body-pairings, nth($sizes, 2));
         font-size: map-get($pairing, "size") !important;
         line-height: map-get($pairing, "lh") !important;
-        @if (map-get($pairing, "size") >= 28px) {
-          letter-spacing: $mktg-body-spacing-large;
-        }
+        @if (map-get($pairing, "size") >= 28px) { letter-spacing: $mktg-header-spacing-default !important; }
+        @if (map-get($pairing, "size") >= 24px) { font-weight: $font-weight-semibold !important; }
       }
     }
 
@@ -66,9 +76,8 @@
         $pairing: map-get($mktg-body-pairings, nth($sizes, 3));
         font-size: map-get($pairing, "size") !important;
         line-height: map-get($pairing, "lh") !important;
-        @if (map-get($pairing, "size") >= 28px) {
-          letter-spacing: $mktg-body-spacing-large;
-        }
+        @if (map-get($pairing, "size") >= 28px) { letter-spacing: $mktg-header-spacing-default !important; }
+        @if (map-get($pairing, "size") >= 24px) { font-weight: $font-weight-semibold !important; }
       }
     }
   }
