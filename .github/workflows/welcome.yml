@@ -4,7 +4,7 @@ on:
 
 jobs:
   release-template:
-    if: ${{ github.ref == 'refs/heads/changeset-release/main' }}
+    if: ${{ github.head_ref == 'refs/heads/changeset-release/main' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -38,7 +38,6 @@ jobs:
             }
 
   bundle-stats:
-    if: ${{ github.ref == 'refs/heads/changeset-release/main' }}
     needs: release-template
     runs-on: ubuntu-latest
     steps:
