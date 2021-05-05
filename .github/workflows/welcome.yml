@@ -1,8 +1,8 @@
 name: Welcome
 on:
   pull_request:
-    branches-ignore:
-      - 'dependabot/**'
+    branches:
+      - 'changeset-release/main'
 
 jobs:
   greetings:
@@ -22,7 +22,7 @@ jobs:
           github-token: ${{ secrets.GPR_AUTH_TOKEN_SHARED }}
           script: |
             const fs = require('fs')
-            const body = await fs.readFileSync('.github/greetings_template.md', 'utf8')
+            const body = await fs.readFileSync('.github/release_template.md', 'utf8')
             const result = await github.issues.listComments({
               issue_number: context.issue.number,
               owner: context.repo.owner,
