@@ -58,8 +58,9 @@ jobs:
           script: |
             bundles=$(script/bundle-size-report.js)
             if [[ $bundles ]]; then
-              echo "### Bundles with a size change since [latest release](https://github.com/primer/css/releases/latest)\n"
-              echo $bundles
+              echo "### Bundles with a size change since [latest release](https://github.com/primer/css/releases/latest)"
+              echo ""
+              echo "$bundles"
             fi
 
       - name: Reporting selector diffs
@@ -71,9 +72,10 @@ jobs:
           script: |
             diff=$(script/selector-diff-report)
             if [[ $diff ]]; then
-              echo "### Selectors added/removed since [latest release](https://github.com/primer/css/releases/latest)\n"
+              echo "### Selectors added/removed since [latest release](https://github.com/primer/css/releases/latest)"
+              echo ""
               echo "\`\`\`diff"
-              echo $diff
+              echo "$diff"
               echo "\`\`\`"
             fi
 
