@@ -6,11 +6,11 @@
 const versionDeprecations = {
   '17.0.0': [
     {
-      selectors: [
-          '.h000-mktg',
-          '.h00-mktg',
-          '.lead-mktg'
-      ],
+      variables: ['$h000-size', '$h000-size-mobile'],
+      message: `This variable is deprecated, please refer to the Marketing Typography documentation.`
+    },
+    {
+      selectors: ['.h000-mktg', '.h00-mktg', '.lead-mktg'],
       message: `This selector is deprecated, please refer to the Marketing Typography documentation.`
     },
     {
