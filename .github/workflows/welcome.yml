@@ -4,7 +4,7 @@ on:
 
 jobs:
   release-template:
-    if: ${{ github.head_ref == 'refs/heads/changeset-release/main' }}
+    if: github.ref == 'refs/heads/changeset-release/main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
