@@ -4,7 +4,9 @@ Thanks for the pull request! Someone on the team will take a look at this soon. 
 
 ### Checklist
 
-- [ ] Preview canary npm release. <!-- canary_version --><!-- /canary_version -->
+- [ ] Does your change require a version bump? Add a changeset.
+- [ ] Preview the docs change.
+- [ ] Preview canary npm release.
 
 <!-- diff_report --><!-- /diff_report -->
 
