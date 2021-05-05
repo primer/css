@@ -4,6 +4,7 @@ on:
 
 jobs:
   release-template:
+    name: ${{ github.ref }}
     if: github.ref == 'refs/heads/changeset-release/main'
     runs-on: ubuntu-latest
     steps:
