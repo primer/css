@@ -61,6 +61,11 @@ $mktg-headers: (
   6: [10, 9, 9]
 ) !default;
 
+// Body content
+$mktg-body-spacing-threshold: 28px !default;
+$mktg-body-weight-threshold: 24px !default;
+$mktg-body-spacing-large: -0.01em !default;
+
 // Body size steps
 $mktg-body-size-0:  48px !default;
 $mktg-body-size-1:  40px !default;
