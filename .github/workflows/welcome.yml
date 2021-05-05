@@ -56,7 +56,11 @@ jobs:
         with:
           comment-token: 'bundle_table'
           script: |
-            echo "### Bundles with a size change since [latest release](https://github.com/primer/css/releases/latest)\n\n$(script/bundle-size-report.js)"
+            bundles=$(script/bundle-size-report.js)
+            if [[ $bundles ]]; then
+              echo "### Bundles with a size change since [latest release](https://github.com/primer/css/releases/latest)\n"
+              echo $bundles
+            fi
 
       - name: Reporting selector diffs
         uses: primer/comment-token-update@main
@@ -67,7 +71,7 @@ jobs:
           script: |
             diff=$(script/selector-diff-report)
             if [[ $diff ]]; then
-              echo "### Selectors added/removed since [latest release](https://github.com/primer/css/releases/latest)"
+              echo "### Selectors added/removed since [latest release](https://github.com/primer/css/releases/latest)\n"
               echo "\`\`\`diff"
               echo $diff
               echo "\`\`\`"
