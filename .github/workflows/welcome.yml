@@ -18,7 +18,7 @@ jobs:
       - name: Get or Create Comment
         uses: actions/github-script@v4.0.2
         with:
-          github-token: ${{ secrets.GPR_AUTH_TOKEN_SHARED }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs')
             const body = await fs.readFileSync('.github/release_template.md', 'utf8')
@@ -27,7 +27,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo
             });
-            const primerComments = result.data.filter(c => c.user.login == 'primer-css')
+            const primerComments = result.data.filter(c => c.user.login == 'github-actions')
             if (!primerComments.length) {
               await github.issues.createComment({
                 issue_number: context.issue.number,
@@ -52,6 +52,7 @@ jobs:
         uses: primer/comment-token-update@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: github-actions
         with:
           comment-token: 'bundle_table'
           script: |
@@ -66,6 +67,7 @@ jobs:
         uses: primer/comment-token-update@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: github-actions
         with:
           comment-token: 'diff_report'
           script: |
