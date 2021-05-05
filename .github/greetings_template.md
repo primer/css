@@ -1,5 +1,3 @@
-Hello @{{PR_AUTHOR}}!
-
 Thanks for the pull request! Someone on the team will take a look at this soon. In the meantime you can make sure your code is ready to merge by following these steps.
 
 ### Checklist
