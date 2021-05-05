@@ -80,10 +80,6 @@ const versionDeprecations = {
       message: `This selector is deprecated, please use "color-bg-secondary" instead of "bg-shade-gradient".`
     },
     {
-      selectors: ['.btn-large-mktg'],
-      message: `Please use the ".btn-lg-mktg" class instead of "btn-large-mktg".`
-    },
-    {
       selectors: ['.color-border-overlay'],
       message: `Please use the ".color-border-primary" class instead of ".color-border-overlay".`
     },
