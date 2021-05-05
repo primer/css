@@ -18,7 +18,7 @@ jobs:
           node-version: 14.x
 
       - name: Get or Create Comment
-        uses: actions/github-script@v3
+        uses: actions/github-script@v4.0.2
         with:
           github-token: ${{ secrets.GPR_AUTH_TOKEN_SHARED }}
           script: |
@@ -77,7 +77,7 @@ jobs:
     name: Semantic Version Label
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v3
+      - uses: actions/github-script@v4.0.2
         id: version-result
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
@@ -90,7 +90,7 @@ jobs:
               return match[0][1]
             }
 
-      - uses: actions/github-script@v3
+      - uses: actions/github-script@v4.0.2
         env:
           RELEASE: ${{ steps.version-result.outputs.result }}
         with:

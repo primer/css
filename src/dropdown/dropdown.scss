@@ -32,7 +32,7 @@
   list-style: none;
   background-color: var(--color-bg-overlay);
   background-clip: padding-box;
-  border: $border-width $border-style var(--color-border-overlay);
+  border: $border-width $border-style var(--color-border-primary);
   border-radius: $border-radius;
   box-shadow: var(--color-dropdown-shadow);
 
@@ -47,7 +47,7 @@
   &::before {
     // stylelint-disable-next-line primer/borders
     border: $spacer-2 $border-style transparent;
-    border-bottom-color: var(--color-border-overlay);
+    border-bottom-color: var(--color-border-primary);
   }
 
   // caret background (should match dropdown background)
@@ -113,7 +113,7 @@
   display: block;
   height: 0;
   margin: $spacer-2 0;
-  border-top: $border-width $border-style var(--color-border-overlay);
+  border-top: $border-width $border-style var(--color-border-primary);
 }
 
 .dropdown-header {
@@ -144,7 +144,7 @@
     right: -$spacer-3;
     left: auto;
     border-color: transparent;
-    border-left-color: var(--color-border-overlay);
+    border-left-color: var(--color-border-primary);
   }
 
   &::after {
@@ -168,7 +168,7 @@
     top: 10px;
     left: -$spacer-3;
     border-color: transparent;
-    border-right-color: var(--color-border-overlay);
+    border-right-color: var(--color-border-primary);
   }
 
   &::after {
@@ -197,7 +197,7 @@
     bottom: -$spacer-2;
     left: 9px;
     // stylelint-disable-next-line primer/borders
-    border-top: $spacer-2 $border-style var(--color-border-overlay);
+    border-top: $spacer-2 $border-style var(--color-border-primary);
     // stylelint-disable-next-line primer/borders
     border-right: $spacer-2 $border-style transparent;
     border-bottom: 0;
