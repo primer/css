@@ -28,7 +28,7 @@ jobs:
               repo: context.repo.repo
             });
             console.log(result.data)
-            const primerComments = result.data.filter(c => c.user.login == 'github-actions')
+            const primerComments = result.data.filter(c => c.user.login == 'github-actions[bot]')
             if (!primerComments.length) {
               await github.issues.createComment({
                 issue_number: context.issue.number,
@@ -52,7 +52,7 @@ jobs:
         uses: primer/comment-token-update@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_USER: github-actions
+          GITHUB_USER: github-actions[bot]
         with:
           comment-token: 'bundle_table'
           script: |
@@ -67,7 +67,7 @@ jobs:
         uses: primer/comment-token-update@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_USER: github-actions
+          GITHUB_USER: github-actions[bot]
         with:
           comment-token: 'diff_report'
           script: |
