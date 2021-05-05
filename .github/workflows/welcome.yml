@@ -1,11 +1,10 @@
 name: Welcome
 on:
   pull_request:
-    branches:
-      - 'changeset-release/main'
 
 jobs:
-  greetings:
+  release-template:
+    if: ${{ github.ref == 'refs/heads/changeset-release/main' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -39,7 +38,8 @@ jobs:
             }
 
   bundle-stats:
-    needs: greetings
+    if: ${{ github.ref == 'refs/heads/changeset-release/main' }}
+    needs: release-template
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
