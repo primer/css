@@ -4,7 +4,7 @@ on:
 
 jobs:
   release-template:
-    name: ${{ github.head_ref }}
+    if: ${{ github.head_ref == 'changeset-release/main' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -27,6 +27,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo
             });
+            console.log(result.data)
             const primerComments = result.data.filter(c => c.user.login == 'github-actions')
             if (!primerComments.length) {
               await github.issues.createComment({
