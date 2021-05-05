@@ -4,7 +4,7 @@ on:
 
 jobs:
   release-template:
-    name: ${{ github.ref }}
+    name: ${{ github.head_ref }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
