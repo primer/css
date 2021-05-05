@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const {join} = require('path')
 const filesize = require('filesize')
-const {table, getBorderCharacters} = require('table')
+const {table} = require('table')
 
 // ensure that K and B values line up vertically
 const filesizeConfig = {symbols: {KB: 'K'}}
@@ -27,20 +27,26 @@ function getBundles(path) {
 }
 
 const tableOptions = {
-  columns: {
-    0: {
-      alignment: 'left'
-    },
-    7: {
-      alignment: 'left'
-    }
-  },
-  columnDefault: {
-    alignment: 'right'
-  },
-  border: getBorderCharacters('norc'),
-  drawHorizontalLine(index, size) {
-    return index <= 1 || index === size
+  singleLine: true,
+  border: {
+    topBody: '',
+    topJoin: '',
+    topLeft: '',
+    topRight: '',
+
+    bottomBody: '',
+    bottomJoin: '',
+    bottomLeft: '',
+    bottomRight: '',
+
+    bodyLeft: '|',
+    bodyRight: '|',
+    bodyJoin: '|',
+
+    joinBody: '',
+    joinLeft: '',
+    joinRight: '',
+    joinJoin: ''
   }
 }
 
@@ -59,16 +65,24 @@ const posNeg = v => (v > 0 ? '+ ' : v < 0 ? '- ' : '')
   for (const name of Object.keys(currentBundles)) {
     const current = currentBundles[name]
     const latest = latestBundles[name]
-    data.push([
-      current.name,
-      current.stats.selectors.total,
+
+    const delta = [
       current.stats.selectors.total - latest.stats.selectors.total,
-      current.stats.gzipSize,
       current.stats.gzipSize - latest.stats.gzipSize,
-      current.stats.size,
-      current.stats.size - latest.stats.size,
-      current.path
-    ])
+      current.stats.size - latest.stats.size
+    ].reduce((a, b) => a + b, 0)
+
+    if (delta !== 0) {
+      data.push([
+        current.name,
+        current.stats.selectors.total,
+        current.stats.selectors.total - latest.stats.selectors.total,
+        current.stats.gzipSize,
+        current.stats.gzipSize - latest.stats.gzipSize,
+        current.stats.size,
+        current.stats.size - latest.stats.size
+      ])
+    }
   }
 
   // Sort the data
@@ -85,7 +99,10 @@ const posNeg = v => (v > 0 ? '+ ' : v < 0 ? '- ' : '')
   })
 
   // Adding header
-  data = [['name', 'selectors', '±', 'gzip size', '±', 'raw size', '±', 'path']].concat(data)
+  data = [
+    ['name', 'selectors', '±', 'gzip size', '±', 'raw size', '±'],
+    [':-', '-:', '-:', '-:', '-:', '-:', '-:']
+  ].concat(data)
 
   console.log(table(data, tableOptions))
 })()
