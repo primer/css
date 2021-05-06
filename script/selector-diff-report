@@ -16,9 +16,9 @@ cp "tmp/node_modules/@primer/css/dist/stats/primer.json" before.json
 cp $path after.json
 
 key=".selectors.values[]"
-jq -r $key before.json > before.txt
-jq -r $key after.json > after.txt
+jq -r $key before.json | sort | uniq > before.txt
+jq -r $key after.json | sort | uniq > after.txt
 
-diff -u {before,after}.txt
+diff -U 1 {before,after}.txt
 
 rm {before,after}.{json,txt}
