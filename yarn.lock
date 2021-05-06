@@ -4734,9 +4734,9 @@ mixin-deep@^1.2.0:
     is-extendable "^1.0.1"
 
 mixme@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/mixme/-/mixme-0.5.0.tgz#7a7ebbb51251724b18054c63c91f5487c0b030ab"
-  integrity sha512-YyyBIzqe6EEi5xcnN66LXVVvwijMF51liPT9ZqsrHim9s2MgEg4jxI8gsSF6R7pzAotjvBiERC90bbnwAqiDHg==
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/mixme/-/mixme-0.5.1.tgz#b3da79a563b2da46efba9519830059e4c2a9e40f"
+  integrity sha512-NaeZIckeBFT7i0XBEpGyFcAE0/bLcQ9MHErTpnU3bLWVE5WZbxG5Y3fDsMxYGifTo5khDA42OquXCC2ngKJB+g==
 
 "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1:
   version "0.5.5"
