@@ -39,9 +39,6 @@
     "test-urls": "script/test-doc-urls.js",
     "test-migrate": "script/test-migrate"
   },
-  "dependencies": {
-    "@primer/octicons": "^9.1.1"
-  },
   "devDependencies": {
     "@octokit/rest": "^16.34.0",
     "@storybook/addon-viewport": "5.3.18",

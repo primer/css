@@ -6,7 +6,11 @@
  */
 
 // Include .octicon base styles
-@import "@primer/octicons/index.scss";
+.octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+}
 
 // Global requirements
 @import "../support/index.scss";
