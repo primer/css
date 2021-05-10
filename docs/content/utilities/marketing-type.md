@@ -8,7 +8,7 @@ bundle: marketing-type
 
 The typography for our marketing pages differs from Primer CSS's core—it is responsive, on a slightly different scale, and headlines are set in the [defined marketing font](https://github.com/primer/css/blob/main/src/marketing/support/variables.scss).
 
-## Heading Utilities
+## Heading utilities
 
 Use `.h0-mktg` – `.h6-mktg` to change an element's font, size, and weight on marketing pages.
 
@@ -43,7 +43,7 @@ Use `.f0-mktg` – `.f6-mktg` to change an element's body font, size, and weight
 ```
 
 
-## Typographic Utilities
+## Typographic utilities
 
 These utilities are meant to be used in addition to Primer CSS's core utilities.
 
