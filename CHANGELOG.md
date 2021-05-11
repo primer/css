@@ -1,5 +1,45 @@
 # @primer/css
 
+## 17.0.0
+
+### Major Changes
+
+- [#1370](https://github.com/primer/css/pull/1370) [`cc0049c2`](https://github.com/primer/css/commit/cc0049c2ad1ad609dc672e12f751245fbecc5d65) Thanks [@simurai](https://github.com/simurai)! - Replace border-overlay with border-primary
+
+* [#1371](https://github.com/primer/css/pull/1371) [`0c6bfc22`](https://github.com/primer/css/commit/0c6bfc22b523545120bea39dc201760d8a9e8b01) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Deprecate bg-shade-gradient
+
+- [#1379](https://github.com/primer/css/pull/1379) [`22a98b5c`](https://github.com/primer/css/commit/22a98b5c87031584c5349f49835e013e8a7e460b) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Add new marketing type scale
+
+* [#1369](https://github.com/primer/css/pull/1369) [`2ae2ae57`](https://github.com/primer/css/commit/2ae2ae5795f68a6004fb4a14eb56bba41828173d) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Removing Inter font files and folder
+
+- [#1339](https://github.com/primer/css/pull/1339) [`0ca2648e`](https://github.com/primer/css/commit/0ca2648e5982f0d21137a556e083d77af33eee36) Thanks [@jonrohan](https://github.com/jonrohan)! - Changeset change supported browsers.
+
+* [#1373](https://github.com/primer/css/pull/1373) [`aeae963d`](https://github.com/primer/css/commit/aeae963d93e273f08fbf47d582316811bbd8eac5) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Remove redundant marketing layout selectors
+
+- [#1380](https://github.com/primer/css/pull/1380) [`4ac39740`](https://github.com/primer/css/commit/4ac39740f27842c625da084f1d03b8e2ec6084f8) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: use size modifiers that don't look like breakpoints modifiers
+
+* [#1352](https://github.com/primer/css/pull/1352) [`b4950e39`](https://github.com/primer/css/commit/b4950e395867b558e63b5bb4d46d93f75f35e38e) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Update marketing button styles
+
+- [#1356](https://github.com/primer/css/pull/1356) [`3b7e5d8c`](https://github.com/primer/css/commit/3b7e5d8c0def7975cc6714abe4b60d8efc746f8f) Thanks [@jonrohan](https://github.com/jonrohan)! - Remove dependency on primer/octicons and force overflow visible
+
+* [#1372](https://github.com/primer/css/pull/1372) [`e24b7cb0`](https://github.com/primer/css/commit/e24b7cb024ca2c6bb06cda92ccefa1aff3208131) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Merge overlapping marketing spacing utilities into primer core
+
+### Minor Changes
+
+- [#1357](https://github.com/primer/css/pull/1357) [`3dfb910f`](https://github.com/primer/css/commit/3dfb910fc39ae889fb4c2c3c783aead6ac768d0d) Thanks [@hpalacio](https://github.com/hpalacio)! - typography-base: process 'type' attribute of HTML <ol> tag
+
+### Patch Changes
+
+- [#1368](https://github.com/primer/css/pull/1368) [`95b9f0f0`](https://github.com/primer/css/commit/95b9f0f051bf34be5bcc60e2f2d29a262059c420) Thanks [@simurai](https://github.com/simurai)! - Use `--color-icon-secondary` for `.blankslate-icon`
+
+* [#1350](https://github.com/primer/css/pull/1350) [`2dbc6143`](https://github.com/primer/css/commit/2dbc6143a66b56b29e12d5ae3e7afeaed95373ab) Thanks [@simurai](https://github.com/simurai)! - Bump @primer/primitives
+
+- [#1385](https://github.com/primer/css/pull/1385) [`1cfff7a4`](https://github.com/primer/css/commit/1cfff7a4a39e5612c3f98357bfa2edc1460f2e04) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing typography: 64px → 68px for third size step
+
+* [#1382](https://github.com/primer/css/pull/1382) [`18bb377b`](https://github.com/primer/css/commit/18bb377bef8f65cc75cd1faea9b2264a4061cfd0) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: optimize body typography inheritance
+
+- [#1392](https://github.com/primer/css/pull/1392) [`0fea11a7`](https://github.com/primer/css/commit/0fea11a74b05196c17e2e300b66c93c24d6c9844) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Enable body content utilities to have their font-weight overwritten
+
 ## 16.3.0
 
 ### Minor Changes
