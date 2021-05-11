@@ -60,7 +60,7 @@
 .f6-mktg {
   font-family: $font-mktg;
   font-feature-settings: $mktg-font-feature-settings;
-  font-weight: $font-weight-normal !important;
+  font-weight: $font-weight-normal;
 }
 
 @each $body, $sizes in $mktg-bodies {
@@ -82,7 +82,7 @@
           letter-spacing: $mktg-body-spacing-large !important;
         }
         @if (map-get($pairing-md, "size") >= $mktg-body-weight-threshold and map-get($pairing, "size") < $mktg-body-weight-threshold) {
-          font-weight: $font-weight-semibold !important;
+          font-weight: $font-weight-semibold;
         }
       }
     }
@@ -95,7 +95,7 @@
           letter-spacing: $mktg-body-spacing-large !important;
         }
         @if (map-get($pairing-lg, "size") >= $mktg-body-weight-threshold and map-get($pairing-md, "size") < $mktg-body-weight-threshold) {
-          font-weight: $font-weight-semibold !important;
+          font-weight: $font-weight-semibold;
         }
       }
     }
