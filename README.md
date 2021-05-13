@@ -51,9 +51,11 @@ You can import individual Primer modules directly from the `@primer/css` package
 ```
 
 ## Development
+
 See [DEVELOP.md](./.github/DEVELOP.md) for development docs.
 
 ## Releasing (for GitHub staff)
+
 You can find docs about our release process in [RELEASING.md](./.github/RELEASING.md).
 
 ## License
