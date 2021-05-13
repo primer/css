@@ -1,6 +1,6 @@
 {
   "name": "@primer/css",
-  "version": "17.0.0",
+  "version": "17.0.1",
   "description": "The CSS implementation of GitHub's Primer Design System",
   "homepage": "https://primer.style/css",
   "author": "GitHub, Inc.",
@@ -30,7 +30,7 @@
     "release": "changeset publish"
   },
   "dependencies": {
-    "@primer/primitives": "4.3.0"
+    "@primer/primitives": "4.3.2"
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.4.0",

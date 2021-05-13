@@ -1,5 +1,15 @@
 # @primer/css
 
+## 17.0.1
+
+### Patch Changes
+
+- [#1391](https://github.com/primer/css/pull/1391) [`534c8f66`](https://github.com/primer/css/commit/534c8f66f5a433aaf6daa308e0354d8eeca25f3a) Thanks [@simurai](https://github.com/simurai)! - Improve focus state for .SideNav and .menu
+
+* [#1398](https://github.com/primer/css/pull/1398) [`5ef7bd6e`](https://github.com/primer/css/commit/5ef7bd6ef0eb43f2bb5765c0f3cfd30db3924ec4) Thanks [@colebemis](https://github.com/colebemis)! - Add experimental color variables. **Warning: Do not use these color variables**
+
+- [#1394](https://github.com/primer/css/pull/1394) [`42223f0b`](https://github.com/primer/css/commit/42223f0b219b6213e2d11f99988acdfd47ab9591) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Fix letter spacing for headers not being correctly overridden at break points
+
 ## 17.0.0
 
 ### Major Changes

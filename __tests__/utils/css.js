@@ -29,12 +29,14 @@ function getCurrentVersion() {
 }
 
 function getDeprecatedSelectors(version) {
+  if (getCurrentVersion().raw === version) return []
   let deprecations = require(join(currentPath, './dist/deprecations.json'))
   deprecations = deprecations.versions[version] || []
   return deprecations.reduce((list, deprecation) => list.concat(deprecation.selectors), []).filter(v => v)
 }
 
 function getDeprecatedVariables(version) {
+  if (getCurrentVersion().raw === version) return []
   let deprecations = require(join(currentPath, './dist/deprecations.json'))
   deprecations = deprecations.versions[version] || []
   return deprecations.reduce((list, deprecation) => list.concat(deprecation.variables), []).filter(v => v)
