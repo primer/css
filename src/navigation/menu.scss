@@ -33,11 +33,15 @@
     &::before { border-bottom-left-radius: $border-radius; }
   }
 
-  &:focus,
+  &:focus {
+    z-index: 1;
+    outline: none;
+    box-shadow: var(--color-state-focus-shadow);
+  }
+
   &:hover {
     text-decoration: none;
     background-color: var(--color-state-hover-secondary-bg);
-    outline: none;
   }
 
   &:active {
