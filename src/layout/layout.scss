@@ -1,130 +1,208 @@
 // Layout component
 
 .Layout {
-
   display: grid;
-  grid-gap: $spacer-3;
+  // stylelint-disable-next-line primer/no-undefined-vars
+  --Layout-sidebar-width: #{map-get($sidebar-width, "sm")};
+  // stylelint-disable-next-line primer/no-undefined-vars
+  --Layout-gutter: 16px;
 
-  grid-template-columns: 1fr;
+  @media (max-width: calc(#{$width-sm} - 1px)) {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr !important;
 
-  .Layout-main {
-    grid-area: main;
+    .Layout-sidebar,
+    .Layout-divider,
+    .Layout-main {
+        width: 100% !important;
+        grid-column: 1 !important;
+      }
   }
+
+  &.Layout--flowRow-until-md {
+    @media (max-width: calc(#{$width-md} - 1px)) {
+      grid-auto-flow: row;
+      grid-template-columns: 1fr !important;
+
+      .Layout-sidebar,
+      .Layout-divider,
+      .Layout-main {
+        width: 100% !important;
+        grid-column: 1 !important;
+      }
+    }
+  }
+
+  &.Layout--flowRow-until-lg {
+    @media (max-width: calc(#{$width-lg} - 1px)) {
+      grid-auto-flow: row;
+      grid-template-columns: 1fr !important;
+
+      .Layout-sidebar,
+      .Layout-divider,
+      .Layout-main {
+        width: 100% !important;
+        grid-column: 1 !important;
+      }
+    }
+  }
+
+  // Flow as column
+
+  grid-auto-flow: column;
+  grid-template-columns: auto 0 1fr; // sidebar column, separator, main column
+  // stylelint-disable-next-line primer/no-undefined-vars
+  grid-gap: var(--Layout-gutter);
 
   .Layout-sidebar {
-    grid-area: sidebar;
+    grid-column: 1;
   }
 
-  grid-template-areas:
-    "main"
-    "sidebar";
-
-  @media (min-width: $width-sm) {
-    grid-template-areas: "main sidebar";
+  .Layout-divider {
+    display: none;
   }
+
+  .Layout-main {
+    grid-column: 2 / span 2;
+  }
+
+  // Gutter spacing
+
+  @include breakpoint(lg) {
+    // stylelint-disable-next-line primer/no-undefined-vars
+    --Layout-gutter: 24px;
+  }
+
+  &.Layout--gutter-none {
+    // stylelint-disable-next-line primer/no-undefined-vars
+    --Layout-gutter: 0;
+  }
+
+  &.Layout--gutter-condensed {
+    // stylelint-disable-next-line primer/no-undefined-vars
+    --Layout-gutter: 16px;
+  }
+
+  &.Layout--gutter-spacious {
+    @include breakpoint(lg) {
+      // stylelint-disable-next-line primer/no-undefined-vars
+      --Layout-gutter: 32px;
+    }
+
+    @include breakpoint(xl) {
+      // stylelint-disable-next-line primer/no-undefined-vars
+      --Layout-gutter: 40px;
+    }
+  }
+
+  // Sidebar width
 
   @each $breakpoint in map-keys($sidebar-width) {
     @include breakpoint($breakpoint) {
-      grid-template-columns: 1fr map-get($sidebar-width, $breakpoint);
-      column-gap: map-get($gutter, $breakpoint);
-    }
-  }
-}
-
-.Layout--sidebar-narrow {
-  @each $breakpoint in map-keys($sidebar-narrow-width) {
-    @include breakpoint($breakpoint) {
-      grid-template-columns: 1fr map-get($sidebar-narrow-width, $breakpoint);
-    }
-  }
-}
-
-.Layout--sidebar-wide {
-  @each $breakpoint in map-keys($sidebar-wide-width) {
-    @include breakpoint($breakpoint) {
-      grid-template-columns: 1fr map-get($sidebar-wide-width, $breakpoint);
-    }
-  }
-}
-
-.Layout--gutter-condensed {
-  @each $breakpoint in map-keys($gutter-condensed) {
-    @include breakpoint($breakpoint) {
-      column-gap: map-get($gutter-condensed, $breakpoint);
-    }
-  }
-}
-
-.Layout--gutter-spacious {
-  @each $breakpoint in map-keys($gutter-spacious) {
-    @include breakpoint($breakpoint) {
-      column-gap: map-get($gutter-spacious, $breakpoint);
-    }
-  }
-}
-
-.Layout--sidebar-priority {
-  grid-template-areas:
-    "sidebar"
-    "main";
-}
-
-.Layout--left-sidebar {
-  @media (min-width: $width-sm) {
-    grid-template-columns: map-get($sidebar-width, "sm") 1fr;
-
-    grid-template-areas: "sidebar main";
-  }
-
-  @each $breakpoint in map-keys($sidebar-width) {
-    @include breakpoint($breakpoint) {
-      grid-template-columns: map-get($sidebar-width, $breakpoint) 1fr;
+      // stylelint-disable-next-line primer/no-undefined-vars
+      --Layout-sidebar-width: #{map-get($sidebar-width, $breakpoint)};
     }
   }
 
   &.Layout--sidebar-narrow {
-    @each $breakpoint in map-keys($sidebar-width) {
+    @each $breakpoint in map-keys($sidebar-narrow-width) {
       @include breakpoint($breakpoint) {
-        grid-template-columns: map-get($sidebar-narrow-width, $breakpoint) 1fr;
+        // stylelint-disable-next-line primer/no-undefined-vars
+        --Layout-sidebar-width: #{map-get($sidebar-narrow-width, $breakpoint)};
       }
     }
   }
 
   &.Layout--sidebar-wide {
-    @each $breakpoint in map-keys($sidebar-width) {
+    @each $breakpoint in map-keys($sidebar-wide-width) {
       @include breakpoint($breakpoint) {
-        grid-template-columns: map-get($sidebar-wide-width, $breakpoint) 1fr;
+        // stylelint-disable-next-line primer/no-undefined-vars
+        --Layout-sidebar-width: #{map-get($sidebar-wide-width, $breakpoint)};
       }
+    }
+  }
+
+  // Sidebar position
+
+  &.Layout--sidebarPosition-start {
+    .Layout-sidebar {
+      grid-column: 1;
+    }
+
+    .Layout-main {
+      grid-column: 2 / span 2;
+    }
+  }
+
+  &.Layout--sidebarPosition-end {
+    grid-template-columns: 1fr 0 auto;
+
+    .Layout-main {
+      grid-column: 1;
+    }
+
+    .Layout-sidebar {
+      grid-column: 2 / span 2;
+    }
+  }
+
+  // Sidebar divider
+
+  &.Layout--divided {
+    .Layout-divider {
+      display: block;
+      grid-column: 2;
+      width: 1px;
+      // stylelint-disable-next-line primer/spacing
+      margin-right: -1px;
+      background: var(--color-border-primary);
+    }
+
+    .Layout-main {
+      grid-column: 3 / span 1;
     }
   }
 }
 
-.Layout-center-container-md {
-  max-width: $container-md + map-get($sidebar-width, xl) + map-get($gutter, xl);
-  margin-right: auto;
-  margin-left: auto;
-
-  > .container-md {
-    margin-left: 0;
-  }
+.Layout-divider {
+  display: none;
+  width: 1px;
 }
 
-.Layout-center-container-lg {
-  max-width: $container-lg + map-get($sidebar-width, xl) + map-get($gutter, xl);
-  margin-right: auto;
-  margin-left: auto;
-
-  > .container-lg {
-    margin-left: 0;
-  }
+.Layout-sidebar {
+  // stylelint-disable-next-line primer/no-undefined-vars
+  width: var(--Layout-sidebar-width);
 }
 
-.Layout-center-container-xl {
-  max-width: $container-xl + map-get($sidebar-width, xl) + map-get($gutter, xl);
-  margin-right: auto;
-  margin-left: auto;
+.Layout-main {
 
-  > .container-xl {
-    margin-left: 0;
+  // Centered main column
+  // FIXME: right-aligned sidebar
+  .Layout-main-centered-md,
+  .Layout-main-centered-lg,
+  .Layout-main-centered-xl {
+    margin-right: auto;
+    margin-left: auto;
+
+    > .container-md,
+    > .container-lg,
+    > .container-xl {
+      margin-left: 0;
+    }
+  }
+
+  .Layout-main-centered-md {
+    // stylelint-disable-next-line primer/no-undefined-vars
+    max-width: calc(#{$container-md} + var(--Layout-sidebar-width) + var(--Layout-gutter));
+  }
+
+  .Layout-main-centered-lg {
+    // stylelint-disable-next-line primer/no-undefined-vars
+    max-width: calc(#{$container-lg} + var(--Layout-sidebar-width) + var(--Layout-gutter));
+  }
+
+  .Layout-main-centered-xl {
+    // stylelint-disable-next-line primer/no-undefined-vars
+    max-width: calc(#{$container-xl} + var(--Layout-sidebar-width) + var(--Layout-gutter));
   }
 }

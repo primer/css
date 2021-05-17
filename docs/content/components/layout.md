@@ -11,10 +11,18 @@ Build responsive-friendly page layouts with 2 columns.
 
 Use with .container-xx classes to limit the overall layout structure size.
 
-## Elements:
+## Elements
 
 - `Layout-main`
 - `Layout-sidebar`
+- `Layout-divider`
+- `Layout-main-centered-md`
+- `Layout-main-centered-lg`
+- `Layout-main-centered-xl`
+
+Use `Layout-main-centered-xx` to wrap `container-xx` elements inside
+`Layout-main` so the content remains centered on the screen regardless
+of the sidebar position.
 
 ## Default
 
@@ -30,28 +38,59 @@ Use with .container-xx classes to limit the overall layout structure size.
 </div>
 ```
 
-- `Layout-center-container-md`
-- `Layout-center-container-lg`
-- `Layout-center-container-xl`
+### Dividers
 
-Use `Layout-center-container-xx` to wrap `container-xx` elements inside
-`Layout-main` so the content remains centered on the screen regardless
-of the sidebar position.
+Add `Layout--divided` to the `Layout` to show the dividers.
 
+```html live
+<div class="Layout Layout--divided">
+  <div class="Layout-main border">main content</div>
+  <div class="Layout-divider"></div>
+  <div class="Layout-sidebar border">divider shown</div>
+</div>
+<div class="Layout">
+  <div class="Layout-main border">main content</div>
+  <div class="Layout-divider"></div>
+  <div class="Layout-sidebar border">divider hidden</div>
+</div>
+```
 
-## Modifiers:
+### Centered content
 
-### Sidebar position on desktop/large screens
+```html live
+<div class="Layout">
+  <div class="Layout-main border">
+    <div class="Layout-main-centered-md">
+      <div class="container-md border color-border-info">
+        centered md
+      </div>
+    </div>
+  </div>
+  <div class="Layout-sidebar border">sidebar</div>
+</div>
+<div class="Layout">
+  <div class="Layout-main border">
+    <div class="Layout-main-centered-lg">
+      <div class="container-lg border color-border-info">
+        centered lg
+      </div>
+    </div>
+  </div>
+  <div class="Layout-sidebar border">sidebar</div>
+</div>
+<div class="Layout">
+  <div class="Layout-main border">
+    <div class="Layout-main-centered-xl">
+      <div class="container-xl border color-border-info">
+        centered xl
+      </div>
+    </div>
+  </div>
+  <div class="Layout-sidebar border">sidebar</div>
+</div>
+```
 
-- `Layout--right-sidebar` (default)
-- `Layout--left-sidebar`
-
-
-### Sidebar position on mobile/small screens
-
-- `Layout--main-priority` (default)
-- `Layout--sidebar-priority`
-
+## Modifiers
 
 ### Sidebar sizing
 
@@ -82,14 +121,33 @@ of the sidebar position.
 
 ### Column gutter
 
-- Default: [md: 16px, lg: 24px, xl: 32px]
-- `Layout--gutter-condensed` [md: 16px, lg: 16px, xl: 24px]
-- `Layout--gutter-spacious` [md: 24px, lg: 32px, xl: 40px]
+- Default: [md: 16px, lg: 24px]
+- `Layout--gutter-none`: 0px
+- `Layout--gutter-condensed` 16px
+- `Layout--gutter-spacious` [md: 16px, lg: 32px, xl: 40px]
 
 ```html live
+<div class="Layout Layout--gutter-none">
+  <div class="Layout-main border">
+    Layout--gutter-none
+  </div>
+
+  <div class="Layout-sidebar border">
+    sidebar
+  </div>
+</div>
 <div class="Layout Layout--gutter-condensed">
   <div class="Layout-main border">
     Layout--gutter-condensed
+  </div>
+
+  <div class="Layout-sidebar border">
+    sidebar
+  </div>
+</div>
+<div class="Layout">
+  <div class="Layout-main border">
+    Default
   </div>
 
   <div class="Layout-sidebar border">
@@ -105,54 +163,63 @@ of the sidebar position.
     sidebar
   </div>
 </div>
-<div class="Layout container-xl">
-  <div class="Layout-main border">
-    main
-  </div>
+```
 
-  <div class="Layout-sidebar border">
-    sidebar
-  </div>
+### Sidebar positioning
+
+- `Layout--sidebarPosition-start` (default): sidebar to the left
+- `Layout--sidebarPosition-end`: sidebar to the right
+
+```html live
+<div class="Layout Layout--sidebarPosition-start">
+  <div class="Layout-main border">main</div>
+  <div class="Layout-sidebar border">sidebar</div>
 </div>
-<div class="Layout Layout--left-sidebar">
-  <div class="Layout-main border">
-    main
-  </div>
-
-  <div class="Layout-sidebar border">
-    sidebar
-  </div>
+<div class="Layout Layout--sidebarPosition-end">
+  <div class="Layout-main border">main</div>
+  <div class="Layout-sidebar border">sidebar</div>
 </div>
 ```
 
-### Centered content
+### Layout stacking
+
+- Default: stacks when container is `sm`.
+- `Layout--flowRow-until-md`: stacks when container is `md`.
+- `Layout--flowRow-until-lg`: stacks when container is `lg`.
 
 ```html live
-<div class="Layout Layout--left-sidebar">
-  <div class="Layout-main">
-    <div class="Layout-center-container-md">
-      <div class="container-md border">
-        main
-      </div>
-    </div>
-  </div>
-
-  <div class="Layout-sidebar border">
-    sidebar
-  </div>
+<div class="Layout Layout--flowRow-until-md">
+  <div class="Layout-main border">main</div>
+  <div class="Layout-sidebar border">sidebar</div>
 </div>
-<div class="Layout Layout--left-sidebar">
-  <div class="Layout-main">
-    <div class="Layout-center-container-lg">
-      <div class="container-lg border">
-        main
-      </div>
+<div class="Layout Layout--flowRow-until-lg">
+  <div class="Layout-main border">main</div>
+  <div class="Layout-sidebar border">sidebar</div>
+</div>
+```
+
+### Nesting Layouts
+
+It is possible to nest `Layout` components to generate 3-column layouts.
+
+```html live
+<div class="Layout">
+  <div class="Layout-main ">
+    <div class="Layout Layout--sidebarPosition-end Layout--sidebar-narrow">
+      <div class="Layout-main border">main content</div>
+      <div class="Layout-sidebar border">metadata sidebar</div>
     </div>
   </div>
-
-  <div class="Layout-sidebar border">
-    sidebar
+  <div class="Layout-sidebar border">default sidebar</div>
+</div>
+<div class="Layout">
+  <div class="Layout-main ">
+    <div class="Layout Layout--sidebarPosition-end Layout--flowRow-until-lg Layout--sidebar-narrow">
+      <div class="Layout-main border">main content</div>
+      <div class="Layout-sidebar border">metadata sidebar</div>
+    </div>
   </div>
+  <div class="Layout-sidebar border">default sidebar</div>
 </div>
 ```
 
