@@ -20,3 +20,7 @@
 @include color-mode-theme(dark_dimmed) {
   @include primer-colors_v2-dark_dimmed;
 }
+
+@include color-mode-theme(dark_high_contrast) {
+  @include primer-colors_v2-dark_high_contrast;
+}
