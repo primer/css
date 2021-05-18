@@ -2,9 +2,7 @@
 
 .Layout {
   display: grid;
-  // stylelint-disable-next-line primer/no-undefined-vars
   --Layout-sidebar-width: #{map-get($sidebar-width, "sm")};
-  // stylelint-disable-next-line primer/no-undefined-vars
   --Layout-gutter: 16px;
 
   @media (max-width: calc(#{$width-sm} - 1px)) {
@@ -69,28 +67,23 @@
   // Gutter spacing
 
   @include breakpoint(lg) {
-    // stylelint-disable-next-line primer/no-undefined-vars
     --Layout-gutter: 24px;
   }
 
   &.Layout--gutter-none {
-    // stylelint-disable-next-line primer/no-undefined-vars
     --Layout-gutter: 0;
   }
 
   &.Layout--gutter-condensed {
-    // stylelint-disable-next-line primer/no-undefined-vars
     --Layout-gutter: 16px;
   }
 
   &.Layout--gutter-spacious {
     @include breakpoint(lg) {
-      // stylelint-disable-next-line primer/no-undefined-vars
       --Layout-gutter: 32px;
     }
 
     @include breakpoint(xl) {
-      // stylelint-disable-next-line primer/no-undefined-vars
       --Layout-gutter: 40px;
     }
   }
@@ -99,7 +92,6 @@
 
   @each $breakpoint in map-keys($sidebar-width) {
     @include breakpoint($breakpoint) {
-      // stylelint-disable-next-line primer/no-undefined-vars
       --Layout-sidebar-width: #{map-get($sidebar-width, $breakpoint)};
     }
   }
@@ -107,7 +99,6 @@
   &.Layout--sidebar-narrow {
     @each $breakpoint in map-keys($sidebar-narrow-width) {
       @include breakpoint($breakpoint) {
-        // stylelint-disable-next-line primer/no-undefined-vars
         --Layout-sidebar-width: #{map-get($sidebar-narrow-width, $breakpoint)};
       }
     }
@@ -116,7 +107,6 @@
   &.Layout--sidebar-wide {
     @each $breakpoint in map-keys($sidebar-wide-width) {
       @include breakpoint($breakpoint) {
-        // stylelint-disable-next-line primer/no-undefined-vars
         --Layout-sidebar-width: #{map-get($sidebar-wide-width, $breakpoint)};
       }
     }
