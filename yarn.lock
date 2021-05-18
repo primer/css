@@ -760,10 +760,10 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@primer/primitives@0.0.0-202141723511":
-  version "0.0.0-202141723511"
-  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-0.0.0-202141723511.tgz#8a7c916a3ea311793fd0386ac4d98e8f77c66378"
-  integrity sha512-pYfY/OLy7GRoeDg8++Y8VA2JsEImq7VeYX2clan3ksFyyMhZ9oWxZsGoC1qHeWMIxq3taycHYjr3EKZxGIU0PA==
+"@primer/primitives@4.3.3":
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-4.3.3.tgz#9cbeffd76f27c98e2dda33eb9a5a9b1a1d674dbe"
+  integrity sha512-S2VvxGQBnKhggTqY6hQSNf/nyH4KR0mJp3H2/bWTKR/RM7ptCo+ajxgxmW16WaDTIQ2cvrHeqTD/qnuZ8yf6bg==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.2"
