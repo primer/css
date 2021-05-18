@@ -49,7 +49,7 @@
     "jest": "26.6.3",
     "js-yaml": "4.1.0",
     "postcss": "8.2.14",
-    "postcss-import": "14.0.1",
+    "postcss-import": "14.0.2",
     "postcss-load-config": "3.0.1",
     "postcss-node-sass": "3.1.0",
     "postcss-scss": "3.0.5",
@@ -59,7 +59,7 @@
     "stylelint": "13.13.1",
     "stylelint-config-primer": "11.0.1",
     "stylelint-scss": "3.19.0",
-    "table": "6.7.0"
+    "table": "6.7.1"
   },
   "jest": {
     "testEnvironment": "node",
