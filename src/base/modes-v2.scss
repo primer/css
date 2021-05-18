@@ -1,0 +1,22 @@
+// EXPERIMENTAL. DO NOT USE.
+
+@import '../support/mixins/color-modes.scss';
+
+@import '@primer/primitives/dist/scss/colors_v2/_light.scss';
+@import '@primer/primitives/dist/scss/colors_v2/_dark.scss';
+@import '@primer/primitives/dist/scss/colors_v2/_dark_dimmed.scss';
+
+// Outputs the CSS variables
+// Use :root (html element) to define a default
+
+@include color-mode-theme(light, true) {
+  @include primer-colors_v2-light;
+}
+
+@include color-mode-theme(dark) {
+  @include primer-colors_v2-dark;
+}
+
+@include color-mode-theme(dark_dimmed) {
+  @include primer-colors_v2-dark_dimmed;
+}

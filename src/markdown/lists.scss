@@ -14,6 +14,18 @@
     }
   }
 
+  ol[type="1"] {
+    list-style-type: decimal;
+  }
+
+  ol[type="a"] {
+    list-style-type: lower-alpha;
+  }
+
+  ol[type="i"] {
+    list-style-type: lower-roman;
+  }
+
   // Did someone complain about list spacing? Encourage them
   // to create the spacing with their markdown formatting.
   // List behavior should be controled by the markup, not the css.

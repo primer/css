@@ -43,8 +43,13 @@
 
 // States
 
-.SideNav-item:hover,
 .SideNav-item:focus {
+  z-index: 1;
+  outline: none;
+  box-shadow: var(--color-state-focus-shadow);
+}
+
+.SideNav-item:hover {
   text-decoration: none;
   background-color: var(--color-state-hover-secondary-bg);
   outline: none;
