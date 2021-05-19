@@ -1,5 +1,11 @@
 # @primer/css
 
+## 17.0.3
+
+### Patch Changes
+
+- [#1410](https://github.com/primer/css/pull/1410) [`d5e425e4`](https://github.com/primer/css/commit/d5e425e40900102b5b728a516de71e4094b7e138) Thanks [@simurai](https://github.com/simurai)! - Bump @primer/primitives@4.3.4
+
 ## 17.0.2
 
 ### Patch Changes
