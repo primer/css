@@ -1,5 +1,19 @@
 # @primer/css
 
+## 17.0.3
+
+### Patch Changes
+
+- [#1410](https://github.com/primer/css/pull/1410) [`d5e425e4`](https://github.com/primer/css/commit/d5e425e40900102b5b728a516de71e4094b7e138) Thanks [@simurai](https://github.com/simurai)! - Bump @primer/primitives@4.3.4
+
+## 17.0.2
+
+### Patch Changes
+
+- [#1408](https://github.com/primer/css/pull/1408) [`1eea5575`](https://github.com/primer/css/commit/1eea557506241412de068c0f2570a0e9606fd6c2) Thanks [@colebemis](https://github.com/colebemis)! - Bump @primer/primitives version
+
+* [#1403](https://github.com/primer/css/pull/1403) [`5ef399cf`](https://github.com/primer/css/commit/5ef399cff004fc30d0b98750af889ffdc4bf8f3b) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Remove !important for base styles for body utilities
+
 ## 17.0.1
 
 ### Patch Changes
