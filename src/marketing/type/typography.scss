@@ -28,7 +28,7 @@
         font-size: map-get($pairing-md, "size") !important;
         line-height: map-get($pairing-md, "lh") !important;
         @if (map-get($pairing-md, "size") >= $mktg-header-spacing-threshold and map-get($pairing, "size") < $mktg-header-spacing-threshold) {
-          letter-spacing: $mktg-header-spacing-large;
+          letter-spacing: $mktg-header-spacing-large !important;
         }
         @if (map-get($pairing-md, "size") >= $mktg-header-weight-threshold and map-get($pairing, "size") < $mktg-header-weight-threshold) {
           font-weight: $mktg-header-weight-large !important;
@@ -41,7 +41,7 @@
         font-size: map-get($pairing-lg, "size") !important;
         line-height: map-get($pairing-lg, "lh") !important;
         @if (map-get($pairing-lg, "size") >= $mktg-header-spacing-threshold and map-get($pairing-md, "size") < $mktg-header-spacing-threshold) {
-          letter-spacing: $mktg-header-spacing-large;
+          letter-spacing: $mktg-header-spacing-large !important;
         }
         @if (map-get($pairing-lg, "size") >= $mktg-header-weight-threshold and map-get($pairing-md, "size") < $mktg-header-weight-threshold) {
           font-weight: $mktg-header-weight-large !important;
@@ -60,34 +60,43 @@
 .f6-mktg {
   font-family: $font-mktg;
   font-feature-settings: $mktg-font-feature-settings;
-  font-weight: $font-weight-normal !important;
+  font-weight: $font-weight-normal;
 }
 
 @each $body, $sizes in $mktg-bodies {
   .f#{$body}-mktg {
     $pairing: map-get($mktg-body-pairings, nth($sizes, 1));
+    $pairing-md: map-get($mktg-body-pairings, nth($sizes, 2));
+    $pairing-lg: map-get($mktg-body-pairings, nth($sizes, 3));
+
     font-size: map-get($pairing, "size") !important;
     line-height: map-get($pairing, "lh") !important;
-    @if (map-get($pairing, "size") >= 28px) { letter-spacing: $mktg-header-spacing-default !important; }
-    @if (map-get($pairing, "size") >= 24px) { font-weight: $font-weight-semibold !important; }
+    @if (map-get($pairing, "size") >= $mktg-body-spacing-threshold) { letter-spacing: $mktg-body-spacing-large !important; }
+    @if (map-get($pairing, "size") >= $mktg-body-weight-threshold) { font-weight: $font-weight-semibold; }
 
     @if (nth($sizes, 1) != nth($sizes, 2)) {
       @include breakpoint(md) {
-        $pairing: map-get($mktg-body-pairings, nth($sizes, 2));
-        font-size: map-get($pairing, "size") !important;
-        line-height: map-get($pairing, "lh") !important;
-        @if (map-get($pairing, "size") >= 28px) { letter-spacing: $mktg-header-spacing-default !important; }
-        @if (map-get($pairing, "size") >= 24px) { font-weight: $font-weight-semibold !important; }
+        font-size: map-get($pairing-md, "size") !important;
+        line-height: map-get($pairing-md, "lh") !important;
+        @if (map-get($pairing-md, "size") >= $mktg-body-spacing-threshold and map-get($pairing, "size") < $mktg-body-spacing-threshold) {
+          letter-spacing: $mktg-body-spacing-large !important;
+        }
+        @if (map-get($pairing-md, "size") >= $mktg-body-weight-threshold and map-get($pairing, "size") < $mktg-body-weight-threshold) {
+          font-weight: $font-weight-semibold;
+        }
       }
     }
 
     @if (nth($sizes, 2) != nth($sizes, 3)) {
       @include breakpoint(lg) {
-        $pairing: map-get($mktg-body-pairings, nth($sizes, 3));
-        font-size: map-get($pairing, "size") !important;
-        line-height: map-get($pairing, "lh") !important;
-        @if (map-get($pairing, "size") >= 28px) { letter-spacing: $mktg-header-spacing-default !important; }
-        @if (map-get($pairing, "size") >= 24px) { font-weight: $font-weight-semibold !important; }
+        font-size: map-get($pairing-lg, "size") !important;
+        line-height: map-get($pairing-lg, "lh") !important;
+        @if (map-get($pairing-lg, "size") >= $mktg-body-spacing-threshold and map-get($pairing-md, "size") < $mktg-body-spacing-threshold) {
+          letter-spacing: $mktg-body-spacing-large !important;
+        }
+        @if (map-get($pairing-lg, "size") >= $mktg-body-weight-threshold and map-get($pairing-md, "size") < $mktg-body-weight-threshold) {
+          font-weight: $font-weight-semibold;
+        }
       }
     }
   }

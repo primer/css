@@ -27,7 +27,7 @@ $mktg-h-size-10: 16px !default;
 // Header Line-height steps
 $mktg-h-lh-0:  100px !default;
 $mktg-h-lh-1:  76px !default;
-$mktg-h-lh-2:  64px !default;
+$mktg-h-lh-2:  68px !default;
 $mktg-h-lh-3:  60px !default;
 $mktg-h-lh-4:  52px !default;
 $mktg-h-lh-5:  44px !default;
@@ -61,6 +61,11 @@ $mktg-headers: (
   5: [9, 8, 8],
   6: [10, 9, 9]
 ) !default;
+
+// Body content
+$mktg-body-spacing-threshold: 28px !default;
+$mktg-body-weight-threshold: 24px !default;
+$mktg-body-spacing-large: -0.01em !default;
 
 // Body size steps
 $mktg-body-size-0:  48px !default;
