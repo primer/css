@@ -2,4 +2,4 @@
 '@primer/css': patch
 ---
 
-Improve dividers in `Layout` when flowing as row.
+Improve dividers and allow sidebar positioning when `Layout` is flowing as row.
