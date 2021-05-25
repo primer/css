@@ -107,14 +107,10 @@ if (require.main === module) {
   dist()
 }
 
-function writeVariableData() {
+async function writeVariableData() {
   const analyzeVariables = require('./analyze-variables')
-  return Promise.all([
-    analyzeVariables('src/support/index.scss'),
-    analyzeVariables('src/marketing/support/index.scss')
-    /* eslint-disable-next-line github/no-then */
-  ]).then(([support, marketing]) => {
-    const data = Object.assign({}, support, marketing)
-    writeFile(join(outDir, 'variables.json'), JSON.stringify(data, null, 2))
-  })
+  const support = await analyzeVariables('src/support/index.scss')
+  const marketing = await analyzeVariables('src/marketing/support/index.scss')
+  const data = Object.assign({}, support, marketing)
+  writeFile(join(outDir, 'variables.json'), JSON.stringify(data, null, 2))
 }

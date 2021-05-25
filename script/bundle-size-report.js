@@ -1,168 +1,113 @@
 #!/usr/bin/env node
-/* eslint eslint-comments/no-use: off */
-/* eslint-disable github/no-then */
-const fetch = require('node-fetch')
+const {join} = require('path')
 const filesize = require('filesize')
-const cssstats = require('cssstats')
-const minimist = require('minimist')
-const {green, gray, yellow, red} = require('colorette')
-const {table, getBorderCharacters} = require('table')
-
-const options = minimist(process.argv.slice(2))
-
-const DELTA = '±'
-const VERSION = options.version || 'latest'
-const QUIET = options.quiet || options.q || 0
-const SORT = options.sort || options.s || 'gzip'
-// the default is descending
-const ASCENDING = options.asc || options.a
-const ONLY_BUNDLES = options.only
-const ALL_BUNDLES = !ONLY_BUNDLES && options.all
-const META_BUNDLES = options.all || options.meta || false
-
-const {name} = require('../package.json')
-const unpkgBaseURL = `https://unpkg.com/${name}@${VERSION}/`
+const {table} = require('table')
 
 // ensure that K and B values line up vertically
 const filesizeConfig = {symbols: {KB: 'K'}}
 const prettySize = bytes => filesize(bytes, filesizeConfig)
-const meta = require('../dist/meta.json')
 
-let bundles = Object.values(meta.bundles)
+function getBundles(path) {
+  const meta = require(join(path, './dist/meta.json'))
+  let metaBundles = Object.values(meta.bundles)
 
-// fitler out support bundles, since they don't generate CSS
-bundles = bundles.filter(bundle => !isSupportBundleName(bundle.name))
-
-if (ONLY_BUNDLES) {
-  const only = new Set(ONLY_BUNDLES.trim().split(/\s*,\s*/))
-  bundles = bundles.filter(bundle => only.has(bundle.name))
-} else if (!ALL_BUNDLES) {
-  bundles = META_BUNDLES ? bundles.filter(isMetaBundle) : bundles.filter(bundle => !isMetaBundle(bundle))
-}
-
-Promise.all(
-  bundles.map(bundle => {
+  // fitler out support bundles, since they don't generate CSS
+  metaBundles = metaBundles.filter(bundle => !isSupportBundleName(bundle.name))
+  const bundles = {}
+  for (const bundle of metaBundles) {
     const entry = {
       name: bundle.name,
       path: bundle.css,
-      local: require(`../${bundle.stats}`),
-      remote: {}
+      stats: require(join(path, `./${bundle.stats}`))
     }
-    return fetch(unpkgBaseURL + bundle.stats)
-      .then(res => res.json())
-      .catch(() => {
-        console.warn(`Unable to fetch old "${bundle.name}" stats from unpkg; assuming it's new!`)
-        return cssstats('')
-      })
-      .then(stats => (entry.remote = stats))
-      .then(() => entry)
+    bundles[bundle.name] = entry
+  }
+
+  return bundles
+}
+
+const tableOptions = {
+  singleLine: true,
+  border: {
+    topBody: '',
+    topJoin: '',
+    topLeft: '',
+    topRight: '',
+
+    bottomBody: '',
+    bottomJoin: '',
+    bottomLeft: '',
+    bottomRight: '',
+
+    bodyLeft: '|',
+    bodyRight: '|',
+    bodyJoin: '|',
+
+    joinBody: '',
+    joinLeft: '',
+    joinRight: '',
+    joinJoin: ''
+  }
+}
+
+// const sortByName = (a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0)
+const sortByGZipSize = (a, b) => b[3] - a[3]
+// const sortByRawSize = (a, b) => b[5] - a[5]
+const posNeg = v => (v > 0 ? '+ ' : v < 0 ? '- ' : '')
+
+;(async () => {
+  const currentBundles = getBundles(join(__dirname, '../'))
+  const latestBundles = getBundles(join(__dirname, '../tmp/node_modules/@primer/css/'))
+
+  let data = []
+
+  // Build the rows
+  for (const name of Object.keys(currentBundles)) {
+    const current = currentBundles[name]
+    const latest = latestBundles[name]
+
+    const delta = [
+      current.stats.selectors.total - latest.stats.selectors.total,
+      current.stats.gzipSize - latest.stats.gzipSize,
+      current.stats.size - latest.stats.size
+    ].reduce((a, b) => a + b, 0)
+
+    if (delta !== 0) {
+      data.push([
+        current.name,
+        current.stats.selectors.total,
+        current.stats.selectors.total - latest.stats.selectors.total,
+        current.stats.gzipSize,
+        current.stats.gzipSize - latest.stats.gzipSize,
+        current.stats.size,
+        current.stats.size - latest.stats.size
+      ])
+    }
+  }
+
+  // Sort the data
+  data = data.sort(sortByGZipSize)
+
+  // Beautify the data
+  data = data.map(row => {
+    row[2] = posNeg(row[2]) + `${row[2]}`.replace('-', '')
+    row[3] = prettySize(row[3])
+    row[4] = posNeg(row[4]) + `${prettySize(row[4])}`.replace('-', '')
+    row[5] = prettySize(row[5])
+    row[6] = posNeg(row[6]) + `${prettySize(row[6])}`.replace('-', '')
+    return row
   })
-).then(entries => {
-  const columns = [
-    {title: 'name', value: get(d => d.name), alignment: 'left'},
 
-    // CSS selector count
-    {title: 'selectors', value: get(d => d.local.selectors.total)},
-    {title: DELTA, value: delta(d => d.selectors.total), id: 'selector-delta'},
+  // Adding header
+  data = [
+    ['name', 'selectors', '±', 'gzip size', '±', 'raw size', '±'],
+    [':-', '-:', '-:', '-:', '-:', '-:', '-:']
+  ].concat(data)
 
-    // gzipped size (bytes)
-    {title: 'gzip size', value: get(d => d.local.gzipSize, prettySize), id: 'gzip'},
-    {title: DELTA, value: delta(d => d.gzipSize, prettySize), id: 'gzip-delta'},
-
-    // raw size (bytes)
-    {title: 'raw size', value: get(d => d.local.size, prettySize), id: 'size'},
-    {title: DELTA, value: delta(d => d.size, prettySize), id: 'size-delta'},
-
-    // path goes last
-    {title: 'path', value: get(d => d.path), alignment: 'left'}
-  ]
-
-  for (const [index, column] of Object.entries(columns)) {
-    column.index = index
-  }
-
-  const header = columns.map(c => c.title)
-  let data = entries.map(entry => columns.map(c => c.value(entry)))
-
-  if (SORT) {
-    const index = columns.findIndex(c => c.id === SORT || c.title === SORT)
-    if (index > -1) {
-      const compare = ASCENDING ? compareAscending : compareDescending
-      data.sort((a, b) => compare(a[index].value, b[index].value))
-    } else {
-      console.warn(`No such sort column: "${SORT}"! Output will not be sorted.`)
-    }
-  }
-
-  if (QUIET) {
-    data = data.filter(cells => {
-      return cells.filter((cell, i) => columns[i].title === DELTA).every(cell => cell.value !== 0)
-    })
-  }
-
-  const rows = data.map(cells => cells.map(String))
-
-  console.log(
-    table([header].concat(rows), {
-      columns,
-      columnDefault: {
-        alignment: 'right'
-      },
-      border: getBorderCharacters('norc'),
-      drawHorizontalLine(index, size) {
-        return index <= 1 || index === size
-      }
-    })
-  )
-})
-
-function get(getter, format = String) {
-  return entry => {
-    const value = getter(entry)
-    return {
-      value,
-      toString: () => format(value)
-    }
-  }
-}
-
-function delta(getter, format = String) {
-  const {moreIsGood = false, badThreshold = 1000} = options
-  return entry => {
-    const local = getter(entry.local)
-    const remote = getter(entry.remote)
-    const value = local - remote
-    if (value === 0) {
-      return {
-        value,
-        toString: () => `  ${gray(0)}`
-      }
-    } else {
-      const sign = value > 0 ? '+' : '-'
-      const num = Math.abs(value)
-      const good = moreIsGood ? value > 0 : value < 0
-      const color = good ? green : value >= badThreshold ? red : yellow
-      return {
-        value,
-        toString: () => color(`${sign} ${format(num)}`)
-      }
-    }
-  }
-}
-
-function isMetaBundle(bundle) {
-  return !bundle.imports.every(isSupportBundleName)
-}
+  console.log(table(data, tableOptions))
+})()
 
 function isSupportBundleName(bundleName) {
   // "support", "marketing-support", and any future ones?
   return bundleName.endsWith('support')
-}
-
-function compareAscending(a, b) {
-  return a - b
-}
-
-function compareDescending(a, b) {
-  return b - a
 }

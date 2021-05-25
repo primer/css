@@ -63,6 +63,38 @@ $spacer-map: (
   6: $spacer-6,
 ) !default;
 
+// Increases the core spacing scale first by 8px for $spacer-7, then by 16px
+// increments from $spacer-8 to $spacer-12, i.e. after 40px, we have 48, 64,
+// 80, 96, etc.
+$spacer-7:  $spacer * 6 !default;  // 48px
+$spacer-8:  $spacer * 8 !default;  // 64px
+$spacer-9:  $spacer * 10 !default; // 80px
+$spacer-10: $spacer * 12 !default; // 96px
+$spacer-11: $spacer * 14 !default; // 112px
+$spacer-12: $spacer * 16 !default; // 128px
+
+$spacers-large: (
+  7: $spacer-7,
+  8: $spacer-8,
+  9: $spacer-9,
+  10: $spacer-10,
+  11: $spacer-11,
+  12: $spacer-12,
+) !default;
+
+$spacer-map-extended: map-merge(
+  (
+    0: 0,
+    1: $spacer-1,
+    2: $spacer-2,
+    3: $spacer-3,
+    4: $spacer-4,
+    5: $spacer-5,
+    6: $spacer-6,
+  ),
+  $spacers-large,
+) !default;
+
 // Em spacer variables
 $em-spacer-1: 0.0625em !default; // 1/16
 $em-spacer-2: 0.125em !default;  // 1/8
@@ -140,4 +172,41 @@ $responsive-positions: (
   absolute,
   fixed,
   sticky
+) !default;
+
+$sidebar-width: (
+  sm: 220px,
+  md: 256px,
+  lg: 296px,
+  xl: 320px
+) !default;
+
+$sidebar-narrow-width: (
+  md: 240px,
+  lg: 256px,
+  xl: 296px
+) !default;
+
+$sidebar-wide-width: (
+  md: 296px,
+  lg: 320px,
+  xl: 344px
+) !default;
+
+$gutter: (
+  md: $spacer-3,
+  lg: $spacer-4,
+  xl: $spacer-5
+) !default;
+
+$gutter-condensed: (
+  md: $spacer-3,
+  lg: $spacer-3,
+  xl: $spacer-4
+) !default;
+
+$gutter-spacious: (
+  md: $spacer-4,
+  lg: $spacer-5,
+  xl: $spacer-6
 ) !default;
