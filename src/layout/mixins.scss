@@ -14,6 +14,32 @@
   &.Layout--divided {
     @include flow-as-row-divider;
   }
+
+  &.Layout--sidebarPosition-flowRow-start {
+    .Layout-sidebar {
+      grid-row: 1;
+    }
+
+    .Layout-main {
+      grid-row: 2 / span 2;
+    }
+  }
+
+  &.Layout--sidebarPosition-flowRow-end {
+    .Layout-sidebar {
+      grid-row: 2 / span 2;
+    }
+
+    .Layout-main {
+      grid-row: 1;
+    }
+  }
+
+  &.Layout--sidebarPosition-flowRow-none {
+    .Layout-sidebar {
+      display: none;
+    }
+  }
 }
 
 @mixin flow-as-row-divider {

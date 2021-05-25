@@ -188,6 +188,27 @@ Add `Layout-divider--shallow` to change the divider on `sm` to be filled and 8px
 </div>
 ```
 
+### Sidebar positioning as rows
+
+- `Layout--sidebarPosition-flowRow-start` (default): when stacked, render the sidebar first
+- `Layout--sidebarPosition-flowRow-end`: when stacked, render the sidebar last
+- `Layout--sidebarPosition-flowRow-none`: when stacked, hide the sidebar
+
+```html live
+<div class="Layout Layout--sidebarPosition-flowRow-start">
+  <div class="Layout-main border">main</div>
+  <div class="Layout-sidebar border">sidebar</div>
+</div>
+<div class="Layout Layout--sidebarPosition-flowRow-end">
+  <div class="Layout-main border">main</div>
+  <div class="Layout-sidebar border">sidebar</div>
+</div>
+<div class="Layout Layout--sidebarPosition-flowRow-none">
+  <div class="Layout-main border">main</div>
+  <div class="Layout-sidebar border">sidebar</div>
+</div>
+```
+
 ### Layout stacking
 
 - Default: stacks when container is `sm`.
