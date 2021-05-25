@@ -6,12 +6,13 @@
   list-style: none;
 
   &::after {
-    margin: 0 $em-spacer-5;
     display: inline-block;
-    transform: rotate(15deg);
-    border-right: 0.1em solid var(--color-text-disabled);;
     height: 0.8em;
+    margin: 0 $em-spacer-5;
     content: '';
+    // stylelint-disable-next-line primer/borders
+    border-right: 0.1em $border-style var(--color-text-disabled);
+    transform: rotate(15deg);
   }
 
   &:first-child {
