@@ -1,5 +1,11 @@
 # @primer/css
 
+## 17.1.1
+
+### Patch Changes
+
+- [#1418](https://github.com/primer/css/pull/1418) [`a9a61ee6`](https://github.com/primer/css/commit/a9a61ee690f4fff3a7e2e932dc8da5e9cd6cf702) Thanks [@simurai](https://github.com/simurai)! - Undeprecate .css-truncate
+
 ## 17.1.0
 
 ### Minor Changes
