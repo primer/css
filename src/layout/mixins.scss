@@ -12,7 +12,7 @@
     }
 
   &.Layout--divided {
-    @include flow-as-row-divider
+    @include flow-as-row-divider;
   }
 }
 
@@ -23,12 +23,12 @@
     height: 1px;
 
     &.Layout-divider--shallow {
-      margin-right: 0;
       height: 8px;
+      margin-right: 0;
       background: var(--color-bg-canvas-inset);
-      border-width: $border-width 0;
       border-color: var(--color-border-primary);
       border-style: solid;
+      border-width: $border-width 0;
     }
   }
 }
