@@ -1,0 +1,34 @@
+// Layout mixins
+
+@mixin flow-as-row {
+  grid-auto-flow: row;
+  grid-template-columns: 1fr !important;
+
+  .Layout-sidebar,
+  .Layout-divider,
+  .Layout-main {
+      width: 100% !important;
+      grid-column: 1 !important;
+    }
+
+  &.Layout--divided {
+    @include flow-as-row-divider
+  }
+}
+
+@mixin flow-as-row-divider {
+  --Layout-gutter: 0;
+
+  .Layout-divider {
+    height: 1px;
+
+    &.Layout-divider--shallow {
+      margin-right: 0;
+      height: 8px;
+      background: var(--color-bg-canvas-inset);
+      border-width: $border-width 0;
+      border-color: var(--color-border-primary);
+      border-style: solid;
+    }
+  }
+}

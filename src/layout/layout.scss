@@ -6,42 +6,18 @@
   --Layout-gutter: 16px;
 
   @media (max-width: calc(#{$width-sm} - 1px)) {
-    grid-auto-flow: row;
-    grid-template-columns: 1fr !important;
-
-    .Layout-sidebar,
-    .Layout-divider,
-    .Layout-main {
-        width: 100% !important;
-        grid-column: 1 !important;
-      }
+    @include flow-as-row;
   }
 
   &.Layout--flowRow-until-md {
     @media (max-width: calc(#{$width-md} - 1px)) {
-      grid-auto-flow: row;
-      grid-template-columns: 1fr !important;
-
-      .Layout-sidebar,
-      .Layout-divider,
-      .Layout-main {
-        width: 100% !important;
-        grid-column: 1 !important;
-      }
+      @include flow-as-row;
     }
   }
 
   &.Layout--flowRow-until-lg {
     @media (max-width: calc(#{$width-lg} - 1px)) {
-      grid-auto-flow: row;
-      grid-template-columns: 1fr !important;
-
-      .Layout-sidebar,
-      .Layout-divider,
-      .Layout-main {
-        width: 100% !important;
-        grid-column: 1 !important;
-      }
+      @include flow-as-row;
     }
   }
 
@@ -139,23 +115,6 @@
   // Sidebar divider
 
   &.Layout--divided {
-    @media (max-width: calc(#{$width-sm} - 1px)) {
-      --Layout-gutter: 0;
-
-      .Layout-divider {
-        height: 1px;
-
-        &.Layout-divider--shallow {
-          margin-right: 0;
-          height: 8px;
-          background: var(--color-bg-canvas-inset);
-          border-width: $border-width 0;
-          border-color: var(--color-border-primary);
-          border-style: solid;
-        }
-      }
-    }
-
     .Layout-divider {
       display: block;
       grid-column: 2;
