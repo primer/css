@@ -4,6 +4,7 @@ const {join} = require('path')
 const fs = require('fs')
 const atImport = require('postcss-import')
 const syntax = require('postcss-scss')
+const calc = require('postcss-calc')
 
 const processor = postcss([
   atImport({path: ['src']}),
@@ -20,7 +21,14 @@ async function analyzeVariables(fileName) {
       if (!result.variables[`$${message.name}`].values.includes(message.value)) {
         result.variables[`$${message.name}`].values.push(message.value)
       }
-      const computed = message.value
+      let computed = message.value
+      try {
+        const c = `--temp-property: calc(${message.value})`.replace('round(', '(')
+        computed = postcss().use(calc()).process(c).css
+        computed = computed.replace('--temp-property: ', '')
+      } catch (e) {
+        // Couldn't calculate because value might not be a number
+      }
       result.variables[`$${message.name}`].computed = computed
     }
   }

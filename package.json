@@ -49,6 +49,7 @@
     "jest": "26.6.3",
     "js-yaml": "4.1.0",
     "postcss": "8.3.0",
+    "postcss-calc": "8.0.0",
     "postcss-import": "14.0.2",
     "postcss-load-config": "3.0.1",
     "postcss-node-sass": "3.1.0",
