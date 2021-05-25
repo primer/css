@@ -40,8 +40,8 @@ of the sidebar position.
 
 ### Dividers
 
-Add `Layout--divided` to the `Layout` to show the dividers.
-Add `Layout--divided-shallow` to change the divider on `sm` to be filled and 8px tall.
+Use `Layout--divided` in conjuction with a `Layout-divider` to show a divider between the main content and the sidebar.
+Add `Layout-divider--shallow` to change the divider on `sm` to be filled and 8px tall.
 
 
 ```html live
@@ -55,7 +55,7 @@ Add `Layout--divided-shallow` to change the divider on `sm` to be filled and 8px
   <div class="Layout-divider"></div>
   <div class="Layout-sidebar border">divider hidden</div>
 </div>
-<div class="Layout Layout--divided Layout--divided-shallow ">
+<div class="Layout Layout--divided">
   <div class="Layout-main border">main content</div>
   <div class="Layout-divider Layout-divider--shallow"></div>
   <div class="Layout-sidebar border">shallow divider</div>

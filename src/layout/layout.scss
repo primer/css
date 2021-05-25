@@ -139,13 +139,13 @@
   // Sidebar divider
 
   &.Layout--divided {
-    &.Layout--divided-shallow {
-      @media (max-width: calc(#{$width-sm} - 1px)) {
-        --Layout-gutter: 0;
-      }
+    @media (max-width: calc(#{$width-sm} - 1px)) {
+      --Layout-gutter: 0;
 
       .Layout-divider {
-        @media (max-width: calc(#{$width-sm} - 1px)) {
+        height: 1px;
+
+        &.Layout-divider--shallow {
           margin-right: 0;
           height: 8px;
           background: var(--color-bg-canvas-inset);
