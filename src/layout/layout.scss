@@ -139,6 +139,23 @@
   // Sidebar divider
 
   &.Layout--divided {
+    &.Layout--divided-shallow {
+      @media (max-width: calc(#{$width-sm} - 1px)) {
+        --Layout-gutter: 0;
+      }
+
+      .Layout-divider {
+        @media (max-width: calc(#{$width-sm} - 1px)) {
+          margin-right: 0;
+          height: 8px;
+          background: var(--color-bg-canvas-inset);
+          border-width: $border-width 0;
+          border-color: var(--color-border-primary);
+          border-style: solid;
+        }
+      }
+    }
+
     .Layout-divider {
       display: block;
       grid-column: 2;
