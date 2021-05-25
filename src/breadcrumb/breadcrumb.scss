@@ -6,10 +6,12 @@
   list-style: none;
 
   &::after {
-    padding-right: $em-spacer-5;
-    padding-left: $em-spacer-5;
-    color: var(--color-text-disabled);
-    content: "/";
+    margin: 0 $em-spacer-5;
+    display: inline-block;
+    transform: rotate(15deg);
+    border-right: 0.1em solid var(--color-text-disabled);;
+    height: 0.8em;
+    content: '';
   }
 
   &:first-child {
