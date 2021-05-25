@@ -1,6 +1,5 @@
 name: 'Close stale PRs'
 on:
-  push:
   schedule:
     - cron: '30 1 * * *'
 
