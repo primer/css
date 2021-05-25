@@ -1,5 +1,17 @@
 # @primer/css
 
+## 17.1.0
+
+### Minor Changes
+
+- [#1409](https://github.com/primer/css/pull/1409) [`49981dfc`](https://github.com/primer/css/commit/49981dfc29131e6ad25cef6538abd9308700b48a) Thanks [@manuelpuyol](https://github.com/manuelpuyol)! - Adding new Layout component
+
+* [#1358](https://github.com/primer/css/pull/1358) [`6b51e877`](https://github.com/primer/css/commit/6b51e877bc3b1a1ae4925edc4fcb5d45907b110e) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding new .Truncate class and deprecating css-truncate
+
+### Patch Changes
+
+- [#1415](https://github.com/primer/css/pull/1415) [`fb6a7e3d`](https://github.com/primer/css/commit/fb6a7e3dc112fc637003ca13dca978e7d8a54d4c) Thanks [@simurai](https://github.com/simurai)! - Bump primer/primitives@4.3.5
+
 ## 17.0.3
 
 ### Patch Changes
