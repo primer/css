@@ -1,4 +1,3 @@
-import loadable from '@loadable/component'
 import {Box, Heading, Text} from '@primer/components'
 import {Container} from '@primer/gatsby-theme-doctocat'
 import React from 'react'

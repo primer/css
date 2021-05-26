@@ -1006,7 +1006,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.2.0", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.7.7", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.2.0", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
   version "7.13.10"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.13.10.tgz"
   integrity sha512-4QPkjJq6Ns3V/RgpEahRk+AGfL0eO6RHHtTWoNNr5mO49G6B5+X6d6THgWEAvTrznU5xYpbAlVKRYcsCgh/Akw==
@@ -1467,15 +1467,6 @@
     "@types/node" "*"
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
-
-"@loadable/component@^5.10.2":
-  version "5.14.1"
-  resolved "https://registry.npmjs.org/@loadable/component/-/component-5.14.1.tgz"
-  integrity sha512-UQBZfZrp1FLTf8RNhljXNHFNY4QhAA1L2+GOEeABBFre9TD0aFyQh3Sai5QxcOfy+FTbjIfti5iHaNRR7yUzEQ==
-  dependencies:
-    "@babel/runtime" "^7.7.7"
-    hoist-non-react-statics "^3.3.1"
-    react-is "^16.12.0"
 
 "@mdx-js/mdx@^1.0.21":
   version "1.6.22"
@@ -3610,11 +3601,6 @@ body-parser@1.19.0, body-parser@^1.19.0:
     qs "6.7.0"
     raw-body "2.4.0"
     type-is "~1.6.17"
-
-bodymovin@^4.13.0:
-  version "4.13.0"
-  resolved "https://registry.npmjs.org/bodymovin/-/bodymovin-4.13.0.tgz"
-  integrity sha1-Btl8ATDiM03MszvqY4E2+Ip0VAs=
 
 bonjour@^3.5.0:
   version "3.5.0"
@@ -8061,7 +8047,7 @@ hmac-drbg@^1.0.1:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.1:
+hoist-non-react-statics@^3.3.0:
   version "3.3.2"
   resolved "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -12763,13 +12749,6 @@ react-addons-text-content@^0.0.4:
   version "0.0.4"
   resolved "https://registry.npmjs.org/react-addons-text-content/-/react-addons-text-content-0.0.4.tgz"
   integrity sha1-0uJZ/clR0diQbAiQIAIQjc6HkuU=
-
-react-bodymovin@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/react-bodymovin/-/react-bodymovin-2.0.0.tgz"
-  integrity sha512-72MWWvPyF2Ah329+z0dVEvyNce+aiY2xOw7I9FzO8Xc15BWYvOQOnqzLTxSWjaZAdenk7e9vSanBCtB8Fqi7Cg==
-  dependencies:
-    bodymovin "^4.13.0"
 
 react-clientside-effect@^1.2.2:
   version "1.2.5"
