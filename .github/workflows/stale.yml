@@ -1,4 +1,4 @@
-name: 'Close stale PRs'
+name: Stale
 on:
   push:
   schedule:
