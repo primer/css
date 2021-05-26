@@ -1,5 +1,6 @@
 name: 'Close stale PRs'
 on:
+  push:
   schedule:
     - cron: '30 1 * * *'
 
@@ -9,18 +10,19 @@ jobs:
     steps:
       - uses: actions/stale@v3
         with:
+          
+          # General settings
           debug-only: true
-          skip-stale-issue-message: true
-          stale-pr-message: 'Message to comment on stale PRs. If none provided, will not mark PRs stale'
-          days-before-stale: 60
+          days-before-stale: 90
           days-before-close: 7
-          days-before-issue-stale: -1
-          stale-pr-label: false
-          exempt-all-milestones: false
+          enable-statistics: true
           operations-per-run: 30
           remove-stale-when-updated: true
-          ascending: false
-          skip-stale-pr-message: false
+          
+          # PR specific settings
           delete-branch: true
-          exempt-all-assignees: false
-          enable-statistics: true
+          skip-stale-pr-message: false
+          
+          # Issue specific settings
+          days-before-issue-stale: 180
+
