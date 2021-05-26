@@ -29,3 +29,33 @@
     max-width: 10000px !important;
   }
 }
+
+.Truncate {
+  display: inline-flex;
+  min-width: 0;
+  max-width: 100%;
+
+  .Truncate-text {
+    min-width: 1ch;
+    max-width: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    + .Truncate-text {
+      margin-left: $spacer-1;
+    }
+
+    &.Truncate-text--primary {
+      flex-basis: 200%;
+    }
+
+    &.Truncate-text--expandable:hover,
+    &.Truncate-text--expandable:focus,
+    &.Truncate-text--expandable:active {
+      max-width: 100% !important;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+  }
+}

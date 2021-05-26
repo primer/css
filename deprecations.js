@@ -6,8 +6,82 @@
 const versionDeprecations = {
   '17.0.0': [
     {
-      selectors: ['.btn-large-mktg'],
-      message: `Please use the ".btn-lg-mktg" class instead of "btn-large-mktg".`
+      variables: ['$h000-size', '$h000-size-mobile'],
+      message: `This variable is deprecated, please refer to the Marketing Typography documentation.`
+    },
+    {
+      selectors: ['.h000-mktg', '.h00-mktg', '.lead-mktg'],
+      message: `This selector is deprecated, please refer to the Marketing Typography documentation.`
+    },
+    {
+      selectors: [
+        '.p-7',
+        '.p-8',
+        '.p-9',
+        '.p-10',
+        '.p-11',
+        '.p-12',
+        '.p-sm-7',
+        '.p-sm-8',
+        '.p-sm-9',
+        '.p-sm-10',
+        '.p-sm-11',
+        '.p-sm-12',
+        '.p-md-7',
+        '.p-md-8',
+        '.p-md-9',
+        '.p-md-10',
+        '.p-md-11',
+        '.p-md-12',
+        '.p-lg-7',
+        '.p-lg-8',
+        '.p-lg-9',
+        '.p-lg-10',
+        '.p-lg-11',
+        '.p-lg-12',
+        '.p-xl-7',
+        '.p-xl-8',
+        '.p-xl-9',
+        '.p-xl-10',
+        '.p-xl-11',
+        '.p-xl-12'
+      ],
+      message: `This selector is deprecated, please use pt-X, pr-X, pb-X, and pl-X to set paddings on all sides above spacing level 6.`
+    },
+    {
+      selectors: [
+        '.top-n0',
+        '.right-n0',
+        '.bottom-n0',
+        '.left-n0',
+        '.top-md-n0',
+        '.right-md-n0',
+        '.bottom-md-n0',
+        '.left-md-n0',
+        '.top-lg-n0',
+        '.right-lg-n0',
+        '.bottom-lg-n0',
+        '.left-lg-n0',
+        '.mt-n0',
+        '.mb-n0',
+        '.mt-sm-n0',
+        '.mb-sm-n0',
+        '.mt-md-n0',
+        '.mb-md-n0',
+        '.mt-lg-n0',
+        '.mb-lg-n0',
+        '.mt-xl-n0',
+        '.mb-xl-n0'
+      ],
+      message: `This selector is deprecated, please use a non-negative selector to set the value to 0 (e.g. top-md-0).`
+    },
+    {
+      selectors: ['.bg-shade-gradient'],
+      message: `This selector is deprecated, please use "color-bg-secondary" instead of "bg-shade-gradient".`
+    },
+    {
+      selectors: ['.color-border-overlay'],
+      message: `Please use the ".color-border-primary" class instead of ".color-border-overlay".`
     },
     {
       selectors: [':-ms-input-placeholder'],

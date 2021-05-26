@@ -1,10 +1,11 @@
 const {join} = require('path')
 const currentPath = join(__dirname, '../../')
 const lastPath = join(__dirname, '../../tmp/node_modules/@primer/css')
+const semver = require('semver')
 
 function diffLists(before, after) {
-  const added = after.filter(value => !before.includes(value))
-  const removed = before.filter(value => !after.includes(value))
+  const added = [...new Set(after.filter(value => !before.includes(value)))]
+  const removed = [...new Set(before.filter(value => !after.includes(value)))]
   return {
     changed: added.length + removed.length,
     added,
@@ -24,16 +25,18 @@ function getVariables(versionPath) {
 
 function getCurrentVersion() {
   const pkg = require(join(currentPath, './package.json'))
-  return pkg.version
+  return semver.parse(pkg.version)
 }
 
 function getDeprecatedSelectors(version) {
+  if (getCurrentVersion().raw === version) return []
   let deprecations = require(join(currentPath, './dist/deprecations.json'))
   deprecations = deprecations.versions[version] || []
   return deprecations.reduce((list, deprecation) => list.concat(deprecation.selectors), []).filter(v => v)
 }
 
 function getDeprecatedVariables(version) {
+  if (getCurrentVersion().raw === version) return []
   let deprecations = require(join(currentPath, './dist/deprecations.json'))
   deprecations = deprecations.versions[version] || []
   return deprecations.reduce((list, deprecation) => list.concat(deprecation.variables), []).filter(v => v)
