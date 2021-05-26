@@ -48,7 +48,11 @@
   .Layout-divider {
     height: 1px;
 
-    &.Layout-divider--shallow {
+    &.Layout-divider--flowRow-hidden {
+      display: none;
+    }
+
+    &.Layout-divider--flowRow-shallow {
       height: 8px;
       margin-right: 0;
       background: var(--color-bg-canvas-inset);

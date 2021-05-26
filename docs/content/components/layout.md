@@ -41,7 +41,10 @@ of the sidebar position.
 ### Dividers
 
 Use `Layout--divided` in conjuction with a `Layout-divider` to show a divider between the main content and the sidebar.
-Add `Layout-divider--shallow` to change the divider on `sm` to be filled and 8px tall.
+Flowing as row:
+- default: shows a `1px` line between main and sidebar
+- `Layout-divider--flowRow-shallow`: shows a filled `8px` divider.
+- `Layout-divider--flowRow-hidden`: hides the divider
 
 
 ```html live
@@ -57,8 +60,13 @@ Add `Layout-divider--shallow` to change the divider on `sm` to be filled and 8px
 </div>
 <div class="Layout Layout--divided">
   <div class="Layout-main border">main content</div>
-  <div class="Layout-divider Layout-divider--shallow"></div>
-  <div class="Layout-sidebar border">shallow divider</div>
+  <div class="Layout-divider Layout-divider--flowRow-shallow"></div>
+  <div class="Layout-sidebar border">flowRow shallow divider</div>
+</div>
+<div class="Layout Layout--divided">
+  <div class="Layout-main border">main content</div>
+  <div class="Layout-divider Layout-divider--flowRow-hidden"></div>
+  <div class="Layout-sidebar border">flowRow hidden divider</div>
 </div>
 ```
 
