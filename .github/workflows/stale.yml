@@ -16,13 +16,14 @@ jobs:
           days-before-stale: 90
           days-before-close: 7
           enable-statistics: true
-          operations-per-run: 30
+          operations-per-run: 100
           remove-stale-when-updated: true
           
           # PR specific settings
           delete-branch: true
-          skip-stale-pr-message: false
+          stale-issue-message: ""
           
           # Issue specific settings
           days-before-issue-stale: 180
+          stale-pr-message: ""
 
