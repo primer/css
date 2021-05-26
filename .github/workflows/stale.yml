@@ -21,9 +21,9 @@ jobs:
           
           # PR specific settings
           delete-branch: true
-          stale-issue-message: ""
+          stale-pr-message: "Hello, This pull request has been marked as stale because it has been open 90 days with no activity. Remove the stale label or comment or this will be closed in 7 days."
           
           # Issue specific settings
           days-before-issue-stale: 180
-          stale-pr-message: ""
+          stale-issue-message: "Hello, This issue has been marked as stale because it has been open 180 days with no activity. Remove the stale label or comment or this will be closed in 7 days."
 
