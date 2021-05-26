@@ -13,7 +13,7 @@ jobs:
           
           # General settings
           debug-only: true
-          days-before-stale: 90
+          days-before-stale: 60
           days-before-close: 7
           enable-statistics: true
           operations-per-run: 100
@@ -21,9 +21,9 @@ jobs:
           
           # PR specific settings
           delete-branch: true
-          stale-pr-message: "Hello, This pull request has been marked as stale because it has been open 90 days with no activity. Remove the stale label or comment or this will be closed in 7 days."
+          stale-pr-message: "Hi! This pull request has been marked as stale because it has been open with no activity for 60 days. You can comment on the pull request or remove the stale label to keep it open. If you do nothing, this pull request will be closed in 7 days."
           
           # Issue specific settings
           days-before-issue-stale: 180
-          stale-issue-message: "Hello, This issue has been marked as stale because it has been open 180 days with no activity. Remove the stale label or comment or this will be closed in 7 days."
+          stale-issue-message: "Hi! This issue has been marked as stale because it has been open with no activity for 180 days. You can comment on the issue or remove the stale label to keep it open. If you do nothing, this issue will be closed in 7 days."
 
