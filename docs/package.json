@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@babel/preset-react": "^7.10.4",
-    "@loadable/component": "^5.10.2",
     "@primer/components": "^17.1.0",
     "@primer/gatsby-theme-doctocat": "^1.6.0",
     "@primer/octicons": "^11.0.0",
@@ -36,7 +35,6 @@
     "prop-types": "^15.7.2",
     "raw-loader": "^4.0.2",
     "react": "^16.13.1",
-    "react-bodymovin": "^2.0.0",
     "react-dom": "^16.13.1",
     "react-frame-component": "^4.1.1",
     "sass-loader": "10.1.1",
