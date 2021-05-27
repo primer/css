@@ -1,5 +1,23 @@
 # @primer/css
 
+## 17.2.0
+
+### Minor Changes
+
+- [#992](https://github.com/primer/css/pull/992) [`90f95693`](https://github.com/primer/css/commit/90f95693f5cbfb9f6b7b84735bf5dce2e382601b) Thanks [@simurai](https://github.com/simurai)! - Support SF Mono font in Firefox & Safari
+
+### Patch Changes
+
+- [#1423](https://github.com/primer/css/pull/1423) [`6f79bfaa`](https://github.com/primer/css/commit/6f79bfaa7a6fab551fe3e795eda24908c2bf0d2e) Thanks [@jonrohan](https://github.com/jonrohan)! - Properly calculating the variables computed value for dist folder
+
+* [#1427](https://github.com/primer/css/pull/1427) [`6dad1784`](https://github.com/primer/css/commit/6dad17845f1ea345c692f56ecbf8edd60187f80d) Thanks [@jonrohan](https://github.com/jonrohan)! - Don't require direct version of primitives
+
+- [#1422](https://github.com/primer/css/pull/1422) [`882c570f`](https://github.com/primer/css/commit/882c570f9ac38dc213e213b2e98ef4686eb693e2) Thanks [@manuelpuyol](https://github.com/manuelpuyol)! - Improve dividers and allow sidebar positioning when `Layout` is flowing as row.
+
+* [#1420](https://github.com/primer/css/pull/1420) [`55302dc2`](https://github.com/primer/css/commit/55302dc232cb5cd28c52047a0776549f298a90ce) Thanks [@hpalacio](https://github.com/hpalacio)! - lists.scss: reset `<ol>` without 'type' attr to "decimal"
+
+- [#1424](https://github.com/primer/css/pull/1424) [`30597af9`](https://github.com/primer/css/commit/30597af94da40875a2741f9f4ecc786f8916167c) Thanks [@khiga8](https://github.com/khiga8)! - Ensures that the visual slash separator for breadcrumbs is not announced by screenreaders.
+
 ## 17.1.1
 
 ### Patch Changes
