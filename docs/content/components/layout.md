@@ -40,7 +40,12 @@ of the sidebar position.
 
 ### Dividers
 
-Add `Layout--divided` to the `Layout` to show the dividers.
+Use `Layout--divided` in conjuction with a `Layout-divider` to show a divider between the main content and the sidebar.
+Flowing as row:
+- default: shows a `1px` line between main and sidebar
+- `Layout-divider--flowRow-shallow`: shows a filled `8px` divider.
+- `Layout-divider--flowRow-hidden`: hides the divider
+
 
 ```html live
 <div class="Layout Layout--divided">
@@ -52,6 +57,16 @@ Add `Layout--divided` to the `Layout` to show the dividers.
   <div class="Layout-main border">main content</div>
   <div class="Layout-divider"></div>
   <div class="Layout-sidebar border">divider hidden</div>
+</div>
+<div class="Layout Layout--divided">
+  <div class="Layout-main border">main content</div>
+  <div class="Layout-divider Layout-divider--flowRow-shallow"></div>
+  <div class="Layout-sidebar border">flowRow shallow divider</div>
+</div>
+<div class="Layout Layout--divided">
+  <div class="Layout-main border">main content</div>
+  <div class="Layout-divider Layout-divider--flowRow-hidden"></div>
+  <div class="Layout-sidebar border">flowRow hidden divider</div>
 </div>
 ```
 
@@ -176,6 +191,27 @@ Add `Layout--divided` to the `Layout` to show the dividers.
   <div class="Layout-sidebar border">sidebar</div>
 </div>
 <div class="Layout Layout--sidebarPosition-end">
+  <div class="Layout-main border">main</div>
+  <div class="Layout-sidebar border">sidebar</div>
+</div>
+```
+
+### Sidebar positioning as rows
+
+- `Layout--sidebarPosition-flowRow-start` (default): when stacked, render the sidebar first
+- `Layout--sidebarPosition-flowRow-end`: when stacked, render the sidebar last
+- `Layout--sidebarPosition-flowRow-none`: when stacked, hide the sidebar
+
+```html live
+<div class="Layout Layout--sidebarPosition-flowRow-start">
+  <div class="Layout-main border">main</div>
+  <div class="Layout-sidebar border">sidebar</div>
+</div>
+<div class="Layout Layout--sidebarPosition-flowRow-end">
+  <div class="Layout-main border">main</div>
+  <div class="Layout-sidebar border">sidebar</div>
+</div>
+<div class="Layout Layout--sidebarPosition-flowRow-none">
   <div class="Layout-main border">main</div>
   <div class="Layout-sidebar border">sidebar</div>
 </div>
