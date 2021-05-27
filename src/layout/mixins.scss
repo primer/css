@@ -11,10 +11,6 @@
       grid-column: 1 !important;
     }
 
-  &.Layout--divided {
-    @include flow-as-row-divider;
-  }
-
   &.Layout--sidebarPosition-flowRow-start {
     .Layout-sidebar {
       grid-row: 1;
@@ -40,6 +36,24 @@
       display: none;
     }
   }
+
+  &.Layout--divided {
+    @include flow-as-row-divider;
+
+    .Layout-main {
+      grid-row: 3 / span 1;
+    }
+
+    &.Layout--sidebarPosition-flowRow-end {
+      .Layout-sidebar {
+        grid-row: 3 / span 1;
+      }
+
+      .Layout-main {
+        grid-row: 1;
+      }
+    }
+  }
 }
 
 @mixin flow-as-row-divider {
@@ -47,6 +61,7 @@
 
   .Layout-divider {
     height: 1px;
+    grid-row: 2;
 
     &.Layout-divider--flowRow-hidden {
       display: none;

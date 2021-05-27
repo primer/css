@@ -128,6 +128,16 @@
     .Layout-main {
       grid-column: 3 / span 1;
     }
+
+    &.Layout--sidebarPosition-end {
+      .Layout-sidebar {
+        grid-column: 3 / span 1;
+      }
+
+      .Layout-main {
+        grid-column: 1;
+      }
+    }
   }
 }
 
