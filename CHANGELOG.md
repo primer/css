@@ -1,5 +1,11 @@
 # @primer/css
 
+## 17.2.1
+
+### Patch Changes
+
+- [#1430](https://github.com/primer/css/pull/1430) [`5bc54f9e`](https://github.com/primer/css/commit/5bc54f9e3b5e764e44f34072a00208870c518f11) Thanks [@jonrohan](https://github.com/jonrohan)! - Revert "Support SF Mono font in Firefox and Safari"
+
 ## 17.2.0
 
 ### Minor Changes
