@@ -46,7 +46,7 @@
     "front-matter": "4.0.2",
     "fs-extra": "10.0.0",
     "globby": "11.0.3",
-    "jest": "26.6.3",
+    "jest": "27.0.3",
     "js-yaml": "4.1.0",
     "postcss": "8.3.0",
     "postcss-calc": "8.0.0",
