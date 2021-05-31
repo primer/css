@@ -761,9 +761,9 @@
     fastq "^1.6.0"
 
 "@primer/primitives@^4.3.5":
-  version "4.3.5"
-  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-4.3.5.tgz#9fff5a55b3a201bd7eb92dd1f17818f132dca939"
-  integrity sha512-SL9YSLjUy7qRmoFjUtHO2t0vcyv+9x/7LwFweIzL8IUTzm43DuYXzBQ3LH8HbbUjSBWVyjAm9zGz6jIaU9HadQ==
+  version "4.3.6"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-4.3.6.tgz#ffb10cab775fc368290c35f38eff53ce6189e0ac"
+  integrity sha512-kdbpENgaC1loyH6q9hjsG12dqgBNoZkBXDevjOdeRG+cIE6IDdYrqSEbS7eFH2yJexjPBbFilndcKmE2NW7SGA==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.2"
@@ -7220,9 +7220,9 @@ write-file-atomic@^3.0.0, write-file-atomic@^3.0.3:
     typedarray-to-buffer "^3.1.5"
 
 ws@^7.4.4:
-  version "7.4.4"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.4.tgz#383bc9742cb202292c9077ceab6f6047b17f2d59"
-  integrity sha512-Qm8k8ojNQIMx7S+Zp8u/uHOx7Qazv3Yv4q68MiWWWOJhiwG5W3x7iqmRtJo8xxrciZUY4vRxUTJCKuRnF28ZZw==
+  version "7.4.6"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.6.tgz#5654ca8ecdeee47c33a9a4bf6d28e2be2980377c"
+  integrity sha512-YmhHDO4MzaDLB+M9ym/mDA5z0naX8j7SIlT8f8z+I0VtzsRbekxEutHSme7NPS2qE8StCYQNUnfWdXta/Yu85A==
 
 xml-name-validator@^3.0.0:
   version "3.0.0"
