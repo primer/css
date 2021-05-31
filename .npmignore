@@ -11,3 +11,6 @@ docs.scss
 *.log
 vercel.json
 *.config.js
+dist/stats/
+dist/*.js
+dist/*.json
