@@ -87,10 +87,10 @@ Issue labels are used for adding labels to issues and pull requests. They also c
 If an issue label needs to be bigger, add the `.IssueLabel--big` modifier.
 
 ```html live
-<span class="IssueLabel IssueLabel--big bg-blue text-white mr-1">Primer</span>
-<span class="IssueLabel IssueLabel--big bg-red text-white mr-1">bug 🐛</span>
-<span class="IssueLabel IssueLabel--big bg-pink text-white mr-1">help wanted</span>
-<span class="IssueLabel IssueLabel--big bg-yellow text-gray-dark mr-1">🚂 deploy: train</span>
+<span class="IssueLabel IssueLabel--big color-bg-info-inverse color-text-white mr-1">Primer</span>
+<span class="IssueLabel IssueLabel--big color-bg-danger-inverse color-text-white mr-1">bug 🐛</span>
+<span class="IssueLabel IssueLabel--big color-bg-success-inverse color-text-white mr-1">help wanted</span>
+<span class="IssueLabel IssueLabel--big color-bg-warning-inverse color-text-gray-dark mr-1">🚂 deploy: train</span>
 ```
 
 ## States
