@@ -78,19 +78,19 @@ Sometimes when adding a label the line-height can be incrased. Or the parent ele
 Issue labels are used for adding labels to issues and pull requests. They also come with emoji support.
 
 ```html live
-<span class="IssueLabel bg-blue text-white mr-1">Primer</span>
-<span class="IssueLabel bg-red text-white mr-1">bug 🐛</span>
-<span class="IssueLabel bg-pink text-white mr-1">help wanted</span>
-<span class="IssueLabel bg-yellow text-gray-dark mr-1">🚂 deploy: train</span>
+<span class="IssueLabel color-bg-info-inverse color-text-white mr-1">Primer</span>
+<span class="IssueLabel color-bg-danger-inverse color-text-white mr-1">bug 🐛</span>
+<span class="IssueLabel color-bg-success-inverse color-text-white mr-1">help wanted</span>
+<span class="IssueLabel color-bg-warning-inverse color-text-gray-dark mr-1">🚂 deploy: train</span>
 ```
 
 If an issue label needs to be bigger, add the `.IssueLabel--big` modifier.
 
 ```html live
-<span class="IssueLabel IssueLabel--big bg-blue text-white mr-1">Primer</span>
-<span class="IssueLabel IssueLabel--big bg-red text-white mr-1">bug 🐛</span>
-<span class="IssueLabel IssueLabel--big bg-pink text-white mr-1">help wanted</span>
-<span class="IssueLabel IssueLabel--big bg-yellow text-gray-dark mr-1">🚂 deploy: train</span>
+<span class="IssueLabel IssueLabel--big color-bg-info-inverse color-text-white mr-1">Primer</span>
+<span class="IssueLabel IssueLabel--big color-bg-danger-inverse color-text-white mr-1">bug 🐛</span>
+<span class="IssueLabel IssueLabel--big color-bg-success-inverse color-text-white mr-1">help wanted</span>
+<span class="IssueLabel IssueLabel--big color-bg-warning-inverse color-text-gray-dark mr-1">🚂 deploy: train</span>
 ```
 
 ## States
