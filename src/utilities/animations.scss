@@ -173,7 +173,8 @@
 }
 
 /* Increase scale of an element on hover */
-.hover-grow {
+.hover-grow,
+.anim-hover-grow {
   transition: transform 0.3s;
   backface-visibility: hidden;
 
