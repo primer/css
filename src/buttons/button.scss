@@ -139,6 +139,10 @@
     color: var(--color-btn-primary-disabled-text);
     background-color: var(--color-btn-primary-disabled-bg);
     border-color: var(--color-btn-primary-disabled-border);
+
+    .octicon {
+      color: var(--color-btn-primary-disabled-text);
+    }
   }
 
   &:focus,
