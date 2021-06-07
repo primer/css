@@ -866,7 +866,7 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@primer/primitives@^4.3.5":
+"@primer/primitives@^4.3.10":
   version "4.3.10"
   resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-4.3.10.tgz#afc3c42f9d7865045d3f28f65eacca71d189630b"
   integrity sha512-sSC79GWhkNDz5BL8gR4eC8nmvAHT83MRKPbURmI7mO3z9EjAbhn2Qt+9XbeH/GFG68dwRTUhB3KeXzso6DF7Lw==
