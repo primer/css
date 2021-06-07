@@ -138,8 +138,7 @@
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/typography
   line-height: 6px;
-  // stylelint-disable-next-line primer/colors
-  color: var(--color-auto-gray-7);
+  color: var(--color-text-primary);
   text-decoration: none;
   vertical-align: middle;
   background: var(--color-hidden-text-expander-bg);
