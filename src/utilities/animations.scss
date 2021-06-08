@@ -25,6 +25,7 @@
 .anim-fade-out {
   animation-name: fade-out;
   animation-duration: 1s;
+  animation-fill-mode: forwards;
   animation-timing-function: ease-out;
 
   &.fast {
