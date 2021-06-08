@@ -8,8 +8,7 @@ kbd {
   font: 11px $mono-font;
   // stylelint-disable-next-line primer/typography
   line-height: 10px;
-  // stylelint-disable-next-line primer/colors
-  color: var(--color-auto-gray-7);
+  color: var(--color-text-primary);
   vertical-align: middle;
   background-color: var(--color-bg-secondary);
   // stylelint-disable-next-line primer/borders
