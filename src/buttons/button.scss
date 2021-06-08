@@ -264,6 +264,10 @@
     .Counter {
       background-color: var(--color-btn-danger-disabled-counter-bg);
     }
+
+    .octicon {
+      color: var(--color-btn-danger-disabled-text);
+    }
   }
 
   &:focus {
