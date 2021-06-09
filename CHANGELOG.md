@@ -1,5 +1,25 @@
 # @primer/css
 
+## 17.3.0
+
+### Minor Changes
+
+- [#1451](https://github.com/primer/css/pull/1451) [`9181b479`](https://github.com/primer/css/commit/9181b479a812bf0b4cbf89d838abf53ffba7932d) Thanks [@simurai](https://github.com/simurai)! - Support SF Mono font in Firefox and Safari
+
+* [#1441](https://github.com/primer/css/pull/1441) [`3b552c77`](https://github.com/primer/css/commit/3b552c77af931ba67920a97dbea59acf5d800335) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding anim-hover-grow to replace hover-grow
+
+### Patch Changes
+
+- [#1450](https://github.com/primer/css/pull/1450) [`1d366c4b`](https://github.com/primer/css/commit/1d366c4b2c11f9541063bb62e7a8ad389b3d6567) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding fill mode forwards to anim-fade-out
+
+* [#1448](https://github.com/primer/css/pull/1448) [`8175f884`](https://github.com/primer/css/commit/8175f884474b5e5139cb1647df71200a69c48535) Thanks [@simurai](https://github.com/simurai)! - Replace auto and fade variables
+
+- [#1432](https://github.com/primer/css/pull/1432) [`55ca5f2f`](https://github.com/primer/css/commit/55ca5f2f7300e016516f9457248b055b2c56f7fd) Thanks [@manuelpuyol](https://github.com/manuelpuyol)! - Fix Layout ordering when using dividers with custom sidebar placement
+
+* [#1443](https://github.com/primer/css/pull/1443) [`c65b5f9c`](https://github.com/primer/css/commit/c65b5f9cf01f024f5f7120a5e80c2acd1d2584f6) Thanks [@jdanyow](https://github.com/jdanyow)! - Fix octicon color for disabled .btn-danger
+
+- [#1442](https://github.com/primer/css/pull/1442) [`6c22133a`](https://github.com/primer/css/commit/6c22133ae1652bafb16ba443169c179b95bf4330) Thanks [@jdanyow](https://github.com/jdanyow)! - Fix octicon color for disabled .btn-primary
+
 ## 17.2.1
 
 ### Patch Changes
