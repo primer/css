@@ -1,7 +1,7 @@
 ---
 title: Labels
 path: stickersheet/labels
-status: Stable
+status: Deprecated
 source: 'https://github.com/primer/css/tree/main/src/labels'
 bundle: labels
 ---
