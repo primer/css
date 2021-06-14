@@ -42,6 +42,11 @@ function getDeprecatedVariables(version) {
   return deprecations.reduce((list, deprecation) => list.concat(deprecation.variables), []).filter(v => v)
 }
 
+function getPackageStats(packageName) {
+  const stats = require(join(currentPath, './dist', `./stats/${packageName}.json`))
+  return stats
+}
+
 function currentVersionSelectors() {
   return getSelectors(join(currentPath, './dist'))
 }
@@ -70,6 +75,7 @@ module.exports = {
   getCurrentVersion,
   getDeprecatedSelectors,
   getDeprecatedVariables,
+  getPackageStats,
   getSelectorDiff,
   getVariableDiff
 }
