@@ -1,5 +1,81 @@
 # @primer/css
 
+## 17.3.0
+
+### Minor Changes
+
+- [#1451](https://github.com/primer/css/pull/1451) [`9181b479`](https://github.com/primer/css/commit/9181b479a812bf0b4cbf89d838abf53ffba7932d) Thanks [@simurai](https://github.com/simurai)! - Support SF Mono font in Firefox and Safari
+
+* [#1441](https://github.com/primer/css/pull/1441) [`3b552c77`](https://github.com/primer/css/commit/3b552c77af931ba67920a97dbea59acf5d800335) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding anim-hover-grow to replace hover-grow
+
+### Patch Changes
+
+- [#1450](https://github.com/primer/css/pull/1450) [`1d366c4b`](https://github.com/primer/css/commit/1d366c4b2c11f9541063bb62e7a8ad389b3d6567) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding fill mode forwards to anim-fade-out
+
+* [#1448](https://github.com/primer/css/pull/1448) [`8175f884`](https://github.com/primer/css/commit/8175f884474b5e5139cb1647df71200a69c48535) Thanks [@simurai](https://github.com/simurai)! - Replace auto and fade variables
+
+- [#1432](https://github.com/primer/css/pull/1432) [`55ca5f2f`](https://github.com/primer/css/commit/55ca5f2f7300e016516f9457248b055b2c56f7fd) Thanks [@manuelpuyol](https://github.com/manuelpuyol)! - Fix Layout ordering when using dividers with custom sidebar placement
+
+* [#1443](https://github.com/primer/css/pull/1443) [`c65b5f9c`](https://github.com/primer/css/commit/c65b5f9cf01f024f5f7120a5e80c2acd1d2584f6) Thanks [@jdanyow](https://github.com/jdanyow)! - Fix octicon color for disabled .btn-danger
+
+- [#1442](https://github.com/primer/css/pull/1442) [`6c22133a`](https://github.com/primer/css/commit/6c22133ae1652bafb16ba443169c179b95bf4330) Thanks [@jdanyow](https://github.com/jdanyow)! - Fix octicon color for disabled .btn-primary
+
+## 17.2.1
+
+### Patch Changes
+
+- [#1430](https://github.com/primer/css/pull/1430) [`5bc54f9e`](https://github.com/primer/css/commit/5bc54f9e3b5e764e44f34072a00208870c518f11) Thanks [@jonrohan](https://github.com/jonrohan)! - Revert "Support SF Mono font in Firefox and Safari"
+
+## 17.2.0
+
+### Minor Changes
+
+- [#992](https://github.com/primer/css/pull/992) [`90f95693`](https://github.com/primer/css/commit/90f95693f5cbfb9f6b7b84735bf5dce2e382601b) Thanks [@simurai](https://github.com/simurai)! - Support SF Mono font in Firefox & Safari
+
+### Patch Changes
+
+- [#1423](https://github.com/primer/css/pull/1423) [`6f79bfaa`](https://github.com/primer/css/commit/6f79bfaa7a6fab551fe3e795eda24908c2bf0d2e) Thanks [@jonrohan](https://github.com/jonrohan)! - Properly calculating the variables computed value for dist folder
+
+* [#1427](https://github.com/primer/css/pull/1427) [`6dad1784`](https://github.com/primer/css/commit/6dad17845f1ea345c692f56ecbf8edd60187f80d) Thanks [@jonrohan](https://github.com/jonrohan)! - Don't require direct version of primitives
+
+- [#1422](https://github.com/primer/css/pull/1422) [`882c570f`](https://github.com/primer/css/commit/882c570f9ac38dc213e213b2e98ef4686eb693e2) Thanks [@manuelpuyol](https://github.com/manuelpuyol)! - Improve dividers and allow sidebar positioning when `Layout` is flowing as row.
+
+* [#1420](https://github.com/primer/css/pull/1420) [`55302dc2`](https://github.com/primer/css/commit/55302dc232cb5cd28c52047a0776549f298a90ce) Thanks [@hpalacio](https://github.com/hpalacio)! - lists.scss: reset `<ol>` without 'type' attr to "decimal"
+
+- [#1424](https://github.com/primer/css/pull/1424) [`30597af9`](https://github.com/primer/css/commit/30597af94da40875a2741f9f4ecc786f8916167c) Thanks [@khiga8](https://github.com/khiga8)! - Ensures that the visual slash separator for breadcrumbs is not announced by screenreaders.
+
+## 17.1.1
+
+### Patch Changes
+
+- [#1418](https://github.com/primer/css/pull/1418) [`a9a61ee6`](https://github.com/primer/css/commit/a9a61ee690f4fff3a7e2e932dc8da5e9cd6cf702) Thanks [@simurai](https://github.com/simurai)! - Undeprecate .css-truncate
+
+## 17.1.0
+
+### Minor Changes
+
+- [#1409](https://github.com/primer/css/pull/1409) [`49981dfc`](https://github.com/primer/css/commit/49981dfc29131e6ad25cef6538abd9308700b48a) Thanks [@manuelpuyol](https://github.com/manuelpuyol)! - Adding new Layout component
+
+* [#1358](https://github.com/primer/css/pull/1358) [`6b51e877`](https://github.com/primer/css/commit/6b51e877bc3b1a1ae4925edc4fcb5d45907b110e) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding new .Truncate class and deprecating css-truncate
+
+### Patch Changes
+
+- [#1415](https://github.com/primer/css/pull/1415) [`fb6a7e3d`](https://github.com/primer/css/commit/fb6a7e3dc112fc637003ca13dca978e7d8a54d4c) Thanks [@simurai](https://github.com/simurai)! - Bump primer/primitives@4.3.5
+
+## 17.0.3
+
+### Patch Changes
+
+- [#1410](https://github.com/primer/css/pull/1410) [`d5e425e4`](https://github.com/primer/css/commit/d5e425e40900102b5b728a516de71e4094b7e138) Thanks [@simurai](https://github.com/simurai)! - Bump @primer/primitives@4.3.4
+
+## 17.0.2
+
+### Patch Changes
+
+- [#1408](https://github.com/primer/css/pull/1408) [`1eea5575`](https://github.com/primer/css/commit/1eea557506241412de068c0f2570a0e9606fd6c2) Thanks [@colebemis](https://github.com/colebemis)! - Bump @primer/primitives version
+
+* [#1403](https://github.com/primer/css/pull/1403) [`5ef399cf`](https://github.com/primer/css/commit/5ef399cff004fc30d0b98750af889ffdc4bf8f3b) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Remove !important for base styles for body utilities
+
 ## 17.0.1
 
 ### Patch Changes

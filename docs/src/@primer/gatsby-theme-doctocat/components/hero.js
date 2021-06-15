@@ -1,11 +1,8 @@
-import loadable from '@loadable/component'
 import {Box, Heading, Text} from '@primer/components'
 import {Container} from '@primer/gatsby-theme-doctocat'
 import React from 'react'
 import {version} from '../../../../../package.json'
 import {ReactComponent as HeroIllustration} from '../../../hero-illustration.svg'
-
-const HeroAnimation = loadable(() => import('../../../hero-animation'), {fallback: <HeroIllustration />})
 
 function Hero() {
   return (
@@ -17,7 +14,7 @@ function Hero() {
         <Text as="p" fontFamily="mono" mt={0} mb={2} color="blue.3" fontSize={2}>
           v{version}
         </Text>
-        <HeroAnimation />
+        <HeroIllustration />
       </Container>
     </Box>
   )

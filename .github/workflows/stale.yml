@@ -1,0 +1,27 @@
+name: Stale
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v3
+        with:
+          
+          # General settings
+          days-before-stale: 60
+          days-before-close: 7
+          enable-statistics: true
+          operations-per-run: 100
+          remove-stale-when-updated: true
+          
+          # PR specific settings
+          delete-branch: true
+          stale-pr-message: "Hi! This pull request has been marked as stale because it has been open with no activity for 60 days. You can comment on the pull request or remove the stale label to keep it open. If you do nothing, this pull request will be closed in 7 days."
+          
+          # Issue specific settings
+          days-before-issue-stale: 180
+          stale-issue-message: "Hi! This issue has been marked as stale because it has been open with no activity for 180 days. You can comment on the issue or remove the stale label to keep it open. If you do nothing, this issue will be closed in 7 days."
+

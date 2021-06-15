@@ -1,53 +1,87 @@
 ---
 title: Truncate
 path: components/truncate
-status: Stable
+status: Experimental
 source: 'https://github.com/primer/css/tree/main/src/truncate'
 bundle: truncate
 ---
 
-The `css-truncate` class will shorten text with an ellipsis.
+When text reaches lengths larger than existing container, shorten with ellipses.
 
-## Truncate overflow
+## Truncate
 
-Combine the `css-truncate` and `css-truncate-overflow` classes to prevent text that overflows from wrapping.
+Adding the `.Truncate` class and wrapping the inner text with `.Truncate-text` will truncate the text.
 
 ```html live
-<div class="col-3">
-  <div class="css-truncate css-truncate-overflow border p-3">
-    branch-name-that-is-really-long
-  </div>
-  <div class="border p-3 mt-3">
-    branch-name-that-is-really-long
-  </div>
+<div class="Box p-2" style="resize: horizontal;overflow: scroll;">
+  <span class="Truncate">
+    <span class="Truncate-text">branch-name-that-is-really-long</span>
+  </span>
 </div>
 ```
 
-## Truncate target
+## Truncate multiple items
 
-Combine the `css-truncate` and `css-truncate-target` classes for inline (or inline-block) elements with a fixed maximum width (default: `125px`).
+You can add multiple `.Truncate-text` items in the same row and they will truncate evenly. If you want to make one of the items the primary text that doesn't truncate first, add the class `.Truncate-text--primary` class.
 
 ```html live
-Some text with a
-<strong class="css-truncate css-truncate-target">
-  branch-name-that-is-really-long
-</strong>
+<div class="Box p-2" style="resize: horizontal;overflow: scroll;">
+  <span class="Truncate">
+    <span class="Truncate-text">really-long-repository-owner-name</span>
+    <span class="Truncate-text Truncate-text--primary text-bold">
+      <span class="text-normal">/</span> really-long-repository-name
+    </span>
+  </span>
+</div>
 ```
 
-You can override the maximum width of the truncated text with an inline `style` attribute:
+`.Truncate-text--primary` doesn't need to be the last item in the list or only have one instance. Consider this breadcrumb example where we want to highlight the Repository name and the Issue title. The rest of the breadcrumb will truncate and leave the name and title untruncated until we run out of space.
 
 ```html live
-Some text with a
-<strong class="css-truncate css-truncate-target" style="max-width: 180px">
-  branch-name-that-is-really-long
-</strong>
+<div class="Box p-2" style="resize: horizontal;overflow: scroll;">
+  <span class="Truncate">
+    <span class="Truncate-text">primer</span>
+    <span class="Truncate-text Truncate-text--primary">/ css</span>
+    <span class="Truncate-text">/ Issues</span>
+    <span class="Truncate-text">/ #123 —</span>
+    <span class="Truncate-text Truncate-text--primary">
+      Visual bug on primer.style found in lists
+    </span>
+  </span>
+</div>
 ```
 
-You can reveal the entire string on hover with the addition of `.expandable`.
+## Expand on hover or focus
+
+When there are multiple items in a list, you can add the `.Truncate-text--expandable` class to the `.Truncate-text` items and they will grow when `:hover` or `:focus` state is applied to them.
 
 ```html live
-Some text with a
-<strong class="css-truncate css-truncate-target expandable">
-  branch-name-that-is-really-long
-</strong>
+<div class="Box p-2" style="resize: horizontal;overflow: scroll;">
+  <span class="Truncate">
+    <a href="#" class="Truncate-text Truncate-text--expandable">really-long-repository-owner-name</a>
+    <a href="#" class="Truncate-text Truncate-text--expandable">really-long-repository-owner-name</a>
+    <a href="#" class="Truncate-text Truncate-text--expandable">really-long-repository-owner-name</a>
+    <a href="#" class="Truncate-text Truncate-text--expandable">really-long-repository-owner-name</a>
+  </span>
+</div>
+```
+
+## Custom max widths
+
+It is recommended to use `max-width` as an inline style when you would like to have control over how far something can grow, even when there's enough space available.
+
+```html live
+<div class="Box p-2" style="resize: horizontal;overflow: scroll;">
+  <div class="Truncate">
+    <span class="Truncate-text Truncate-text--expandable" style="max-width: 300px;">branch-name-that-is-really-long-branch-name-that-is-really-long-branch-name-that-is-really-long</span>
+  </div>
+  <br>
+  <div class="Truncate">
+    <span class="Truncate-text Truncate-text--expandable" style="max-width: 200px;">branch-name-that-is-really-long-branch-name-that-is-really-long-branch-name-that-is-really-long</span>
+  </div>
+  <br>
+  <div class="Truncate">
+    <span class="Truncate-text Truncate-text--expandable" style="max-width: 100px;">branch-name-that-is-really-long-branch-name-that-is-really-long-branch-name-that-is-really-long</span>
+  </div>
+</div>
 ```

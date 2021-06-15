@@ -15,8 +15,7 @@
 
 .details-overlay-dark[open] > summary::before {
   z-index: 99;
-  // stylelint-disable-next-line primer/colors
-  background: var(--color-fade-black-50);
+  background: var(--color-bg-backdrop);
 }
 
 .details-reset {
