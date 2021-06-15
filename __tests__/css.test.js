@@ -2,6 +2,7 @@ const {
   getCurrentVersion,
   getDeprecatedSelectors,
   getDeprecatedVariables,
+  getPackageStats,
   getSelectorDiff,
   getVariableDiff
 } = require('./utils/css')
@@ -16,6 +17,13 @@ beforeAll(async () => {
   selectorsDiff = getSelectorDiff()
   variablesDiff = getVariableDiff()
   version = getCurrentVersion()
+})
+
+describe('css', () => {
+  it('The support.css file contains no compiled css', () => {
+    const supportStats = getPackageStats('support')
+    expect(supportStats.size).toEqual(0)
+  })
 })
 
 describe('deprecations', () => {
