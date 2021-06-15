@@ -27,7 +27,7 @@
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
     @for $offset from 1 through 7 {
-      .offset#{$variant}-n#{$offset} { margin-left: -($offset / 12 * 100%); }
+      .offset#{$variant}-n#{$offset} { margin-left: -($offset * 0.0833333333 * 100%); }
     }
   }
 }
