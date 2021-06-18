@@ -11,7 +11,7 @@
 // Should you need specific files, you can easily use separate `@import`s.
 
 // CSS color variables
-@import "./support/variables/color-modes.scss";
+@import "./color-modes/index.scss";
 
 // Global requirements
 @import "./core/index.scss";
