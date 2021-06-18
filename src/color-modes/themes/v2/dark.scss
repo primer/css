@@ -1,0 +1,8 @@
+@import "../../../support/index.scss";
+
+@import "@primer/primitives/dist/scss/colors_v2/_dark.scss";
+
+@include color-mode-theme(dark) {
+  @include primer-colors_v2-dark;
+  color-scheme: dark;
+}
