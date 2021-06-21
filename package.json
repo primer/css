@@ -53,7 +53,7 @@
     "postcss-import": "14.0.2",
     "postcss-load-config": "3.1.0",
     "postcss-node-sass": "3.1.0",
-    "postcss-scss": "3.0.5",
+    "postcss-scss": "4.0.0",
     "postcss-simple-vars": "6.0.3",
     "prettier": "2.3.1",
     "semver": "7.3.5",
