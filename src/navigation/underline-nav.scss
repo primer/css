@@ -39,8 +39,7 @@
   &[aria-current]:not([aria-current=false]) {
     font-weight: $font-weight-bold;
     color: var(--color-underlinenav-text-active);
-    // stylelint-disable-next-line primer/borders
-    border-bottom-color: #f9826c; // custom coral
+    border-bottom-color: var(--color-underlinenav-border-active);
     outline: 1px dotted transparent; // Support Firefox custom colors
     outline-offset: -1px;
 
