@@ -42,7 +42,7 @@
   flex-shrink: 0;
 
   &--success {
-    color: var(--color-text-white);
+    color: var(--color-btn-primary-text);
     background-color: var(--color-btn-primary-bg);
     border: $border-width $border-style var(--color-timeline-badge-success-border);
   }
