@@ -35,7 +35,7 @@
   min-width: 0;
   max-width: 100%;
 
-  .Truncate-text {
+  > .Truncate-text {
     min-width: 1ch;
     max-width: fit-content;
     overflow: hidden;

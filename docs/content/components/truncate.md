@@ -10,7 +10,7 @@ When text reaches lengths larger than existing container, shorten with ellipses.
 
 ## Truncate
 
-Adding the `.Truncate` class and wrapping the inner text with `.Truncate-text` will truncate the text.
+Adding the `.Truncate` class and wrapping the inner text with `.Truncate-text` will truncate the text. `.Truncate-text` must be a direct decendent of `.Truncate`.
 
 ```html live
 <div class="Box p-2" style="resize: horizontal;overflow: scroll;">
@@ -39,15 +39,15 @@ You can add multiple `.Truncate-text` items in the same row and they will trunca
 
 ```html live
 <div class="Box p-2" style="resize: horizontal;overflow: scroll;">
-  <span class="Truncate">
-    <span class="Truncate-text">primer</span>
-    <span class="Truncate-text Truncate-text--primary">/ css</span>
-    <span class="Truncate-text">/ Issues</span>
-    <span class="Truncate-text">/ #123 —</span>
-    <span class="Truncate-text Truncate-text--primary">
+  <ol class="Truncate">
+    <li class="Truncate-text">primer</li>
+    <li class="Truncate-text Truncate-text--primary">/ css</li>
+    <li class="Truncate-text">/ Issues</li>
+    <li class="Truncate-text">/ #123 —</li>
+    <li class="Truncate-text Truncate-text--primary">
       Visual bug on primer.style found in lists
-    </span>
-  </span>
+    </li>
+  </ol>
 </div>
 ```
 
