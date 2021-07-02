@@ -94,6 +94,10 @@
       color: inherit;
       opacity: 1;
     }
+
+    [class*="color-text-"] {
+      color: inherit !important;
+    }
   }
 
   &.btn-link {
