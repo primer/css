@@ -12,6 +12,14 @@ let selectorsDiff, variablesDiff, version
 
 // Because of a change in analyzer this was incorrectly in the list
 const variableAllowList = ['$marketing-all-spacers']
+const selectorAllowList = [
+  '.Truncate .Truncate-text',
+  '.Truncate .Truncate-text+.Truncate-text',
+  '.Truncate .Truncate-text.Truncate-text--expandable:active',
+  '.Truncate .Truncate-text.Truncate-text--expandable:focus',
+  '.Truncate .Truncate-text.Truncate-text--expandable:hover',
+  '.Truncate .Truncate-text.Truncate-text--primary'
+]
 
 beforeAll(async () => {
   selectorsDiff = getSelectorDiff()
@@ -38,7 +46,7 @@ describe('deprecations', () => {
   })
 
   it('A selector was removed from the codebase but not added to upcoming major release deprecations file.', () => {
-    const removedSelectors = selectorsDiff['removed']
+    const removedSelectors = selectorsDiff['removed'].filter(v => !selectorAllowList.includes(v))
 
     if (version.minor !== 0 && version.patch !== 0) {
       const nextMajor = semver.inc(version.raw, 'major')
