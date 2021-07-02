@@ -94,6 +94,11 @@
       color: inherit;
       opacity: 1;
     }
+    
+    .color-text-secondary,
+    .color-text-secondary {
+      color: var(--color-state-hover-primary-text) !important;
+    }
   }
 
   &.btn-link {
