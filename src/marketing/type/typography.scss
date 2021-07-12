@@ -82,7 +82,7 @@
           letter-spacing: $mktg-body-spacing-large !important;
         }
         @if (map-get($pairing-md, "size") >= $mktg-body-weight-threshold and map-get($pairing, "size") < $mktg-body-weight-threshold) {
-          font-weight: $font-weight-semibold;
+          font-weight: $font-weight-medium;
         }
       }
     }
@@ -95,7 +95,7 @@
           letter-spacing: $mktg-body-spacing-large !important;
         }
         @if (map-get($pairing-lg, "size") >= $mktg-body-weight-threshold and map-get($pairing-md, "size") < $mktg-body-weight-threshold) {
-          font-weight: $font-weight-semibold;
+          font-weight: $font-weight-medium;
         }
       }
     }
