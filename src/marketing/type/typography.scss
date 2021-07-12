@@ -110,6 +110,10 @@
   }
 }
 
+.text-medium {
+  font-weight: $font-weight-medium !important;
+}
+
 // Pullquote
 
 @mixin pullquote {
