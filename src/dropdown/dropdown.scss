@@ -98,6 +98,11 @@
     [class*="color-text-"] {
       color: inherit !important;
     }
+
+    [class*="Label--"] {
+      color: inherit !important;
+      border-color: var(--color-state-hover-primary-text);
+    }
   }
 
   &.btn-link {
