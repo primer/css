@@ -119,7 +119,7 @@ You can add negative margins to the top, right, bottom, or left of an item by ad
 ```html live
 <div class="d-flex flex-justify-center">
   <div class="color-bg-warning">
-    <div class="m-3 ml-n4 ml-md-n6 border-left border-red color-bg-secondary p-2">
+    <div class="m-3 ml-n4 ml-md-n6 border-left color-border-danger color-bg-secondary p-2">
       .m-3 .ml-n4 .ml-md-n6
     </div>
   </div>
@@ -133,7 +133,7 @@ You can use the extended spacing scale for `top` and `bottom` margins, ranging f
 ```html live
 <div class="d-flex flex-justify-center">
   <div class="py-6 px-3 color-bg-warning">
-    <div class="mt-n8 border-left border-red color-bg-tertiary p-2">
+    <div class="mt-n8 border-left color-border-danger color-bg-tertiary p-2">
       .mt-n8
     </div>
   </div>

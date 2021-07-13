@@ -123,11 +123,11 @@ Overflow utilities can be applied or changed per [breakpoint](/objects/grid#brea
 ## Floats
 Use `.float-left` and `.float-right` to set floats, and `.clearfix` to clear.
 ```html live
-<div class="clearfix border border-gray">
-  <div class="float-left border border-gray">
+<div class="clearfix border">
+  <div class="float-left border">
     .float-left
   </div>
-  <div class="float-right border border-gray">
+  <div class="float-right border">
     .float-right
   </div>
 </div>
@@ -138,11 +138,11 @@ Float utilities can be applied or changed per [breakpoint](/objects/grid#breakpo
 Each responsive float utility is applied to the specified breakpoint and up, using the following formula:  `float-[breakpoint]-[property]`. For example: `float-md-left`. Remember to use `.clearfix` to clear.
 
 ```html live
-<div class="clearfix border border-gray">
-  <div class="float-md-left border border-gray">
+<div class="clearfix border">
+  <div class="float-md-left border">
     .float-md-left
   </div>
-  <div class="float-md-right border border-gray">
+  <div class="float-md-right border">
     .float-md-right
   </div>
 </div>
@@ -152,7 +152,7 @@ Each responsive float utility is applied to the specified breakpoint and up, usi
 Adjust the alignment of an element with `.v-align-baseline`, `.v-align-top`, `.v-align-middle` or `.v-align-bottom`. The vertical-align property only applies to inline or table-cell boxes.
 
 ```html live
-<div class="d-table border border-gray">
+<div class="d-table border">
   <div class="d-table-cell"><h1>Potatoes</h1></div>
   <div class="d-table-cell v-align-baseline">.v-align-baseline</div>
   <div class="d-table-cell v-align-top">.v-align-top</div>
@@ -164,7 +164,7 @@ Adjust the alignment of an element with `.v-align-baseline`, `.v-align-top`, `.v
 Use `v-align-text-top` or `v-align-text-bottom` to adjust the alignment of an element with the top or bottom of the parent element's font.
 
 ```html live
-<div class="border border-gray">
+<div class="border">
   <h1 class="mr-1">Potatoes
     <span class="f4 v-align-text-top mr-1">.v-align-text-top</span>
     <span class="f4 v-align-text-bottom mr-1">.v-align-text-bottom</span>
@@ -215,7 +215,7 @@ Use `.height-fit` to set max-height 100%.
 Use `.height-full` to set height to 100%.
 
 ```html live
-<div class="d-table border border-gray">
+<div class="d-table border">
   <div class="d-table-cell height-full v-align-middle pl-3">
     <!-- <%= octicon "three-bars" %> -->
     <svg class="octicon octicon-three-bars" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"></path></svg>
@@ -278,7 +278,7 @@ Use `.position-absolute` to take elements out of the normal document flow.
 ```html live
 <div class="position-relative" style="height:116px;">
   <button type="button" class="btn mb-1">Button</button>
-  <div class="position-absolute border border-gray p-2">
+  <div class="position-absolute border p-2">
     <a href="#url" class="d-block p-1">Mashed potatoes</a>
     <a href="#url" class="d-block p-1">Fries</a>
   </div>
@@ -447,7 +447,7 @@ Create a media object with utilities.
 Create a double-sided media object for a container with a flexible center.
 
 ```html live
-<div class="clearfix p-3 border border-gray">
+<div class="clearfix p-3 border">
   <div class="float-left p-3 mr-3 color-bg-secondary">
     Image
   </div>

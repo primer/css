@@ -369,7 +369,7 @@ Content that is hidden by default should only be done so if it is non-essential 
       <span class="form-checkbox-details text-normal">
         <span class="d-block mb-1">Available hours per week</span>
         <input type="text" name="" class="form-control input-contrast" size="3" />
-        <span class="text-small text-gray pl-2">hours per week</span>
+        <span class="text-small color-text-secondary pl-2">hours per week</span>
       </span>
     </label>
   </div>

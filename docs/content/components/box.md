@@ -472,7 +472,7 @@ A similar approach can be used for buttons with multiple lines of text within a 
   <div class="Box-row d-flex flex-items-center">
     <div class="flex-auto">
       <strong>Row title</strong>
-      <div class="text-small text-gray-light">
+      <div class="text-small color-text-tertiary">
         Description
       </div>
     </div>
@@ -481,7 +481,7 @@ A similar approach can be used for buttons with multiple lines of text within a 
   <div class="Box-row d-flex flex-items-center">
     <div class="flex-auto">
       <strong>Row title</strong>
-      <div class="text-small text-gray-light">
+      <div class="text-small color-text-tertiary">
         Description
       </div>
     </div>
@@ -490,7 +490,7 @@ A similar approach can be used for buttons with multiple lines of text within a 
   <div class="Box-row d-flex flex-items-center">
     <div class="flex-auto">
       <strong>Row title</strong>
-      <div class="text-small text-gray-light">
+      <div class="text-small color-text-tertiary">
         Description
       </div>
     </div>
@@ -510,7 +510,7 @@ Using flexbox along with form, button, and link styles, you can create more comp
         Check it
       </label>
     </form>
-    <button class="btn-link select-menu-button muted-link">
+    <button class="btn-link select-menu-button Link--muted">
       Select menu
     </button>
   </div>

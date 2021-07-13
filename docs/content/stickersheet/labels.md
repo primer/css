@@ -140,8 +140,8 @@ The base <span class="Label Label--inline"> label </span> component styles the t
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
 <span class="diffstat">
-    <span class="text-green">+7</span>
-    <span class="text-red">−2</span>
+    <span class="color-text-success">+7</span>
+    <span class="color-text-danger">−2</span>
     <span class="tooltipped tooltipped-e" aria-label="9 lines changed">
       <span class="diffstat-block-added"></span><span class="diffstat-block-added"></span><span class="diffstat-block-added"></span><span class="diffstat-block-deleted"></span><span class="diffstat-block-neutral"></span>
     </span>

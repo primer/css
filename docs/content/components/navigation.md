@@ -272,7 +272,7 @@ The `.SideNav-subItem` is an alternative, more lightweight version without borde
 
 ```html live
 <aside class="color-bg-secondary border p-3" style="max-width: 360px">
-  <h5 class="text-gray mb-2 pb-1 border-bottom">Menu</h5>
+  <h5 class="color-text-secondary mb-2 pb-1 border-bottom">Menu</h5>
   <nav class="SideNav">
     <a class="SideNav-subItem" href="#url">Account</a>
     <a class="SideNav-subItem" href="#url" aria-current="page">Profile</a>

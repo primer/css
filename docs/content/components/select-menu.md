@@ -567,7 +567,7 @@ Sometimes a select menu needs to communicate a "blank slate" where there's no co
             />
           </svg>
           <h4 class="my-2">No repositories</h4>
-          <p class="mb-3 text-gray">We didn’t find any matching repositories that you can commit to.</p>
+          <p class="mb-3 color-text-secondary">We didn’t find any matching repositories that you can commit to.</p>
           <button type="button" class="btn btn-sm btn-primary">Create a repository</button>
         </div>
       </div>

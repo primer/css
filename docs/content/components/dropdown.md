@@ -37,7 +37,7 @@ Using a button customized with additional utilities:
 ```html live
 <div style="margin-bottom: 100px">
   <details class="dropdown details-reset details-overlay d-inline-block">
-    <summary class="text-gray p-2 d-inline" aria-haspopup="true">
+    <summary class="color-text-secondary p-2 d-inline" aria-haspopup="true">
       Dropdown
       <div class="dropdown-caret"></div>
     </summary>
