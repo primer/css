@@ -161,7 +161,7 @@ The benefit of `auto` over the `scale` variables is that `auto` variables automa
 
 **Note**: If you use `stylelint`, the [`primer/no-scale-colors`](https://github.com/primer/stylelint-config-primer/tree/main/plugins#primerno-scale-colors) will fail with "[variable] is a non-functional scale color and cannot be used without being wrapped in the color-variables mixin". You can disable stylelint for this case by adding `// stylelint-disable-line`:
 
-```scss
+```css
 .my-class {
   color: var(--color-auto-gray-7); // stylelint-disable-line
 }
