@@ -99,9 +99,9 @@
       color: inherit !important;
     }
 
-    [class*="Label--"] {
+    > .Label {
       color: inherit !important;
-      border-color: var(--color-state-hover-primary-text);
+      border-color: currentColor;
     }
   }
 
