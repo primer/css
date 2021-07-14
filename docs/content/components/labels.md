@@ -81,7 +81,7 @@ Issue labels are used for adding labels to issues and pull requests. They also c
 <span class="IssueLabel color-bg-info-inverse color-text-white mr-1">Primer</span>
 <span class="IssueLabel color-bg-danger-inverse color-text-white mr-1">bug 🐛</span>
 <span class="IssueLabel color-bg-success-inverse color-text-white mr-1">help wanted</span>
-<span class="IssueLabel color-bg-warning-inverse color-text-gray-dark mr-1">🚂 deploy: train</span>
+<span class="IssueLabel color-bg-warning-inverse color-text-primary mr-1">🚂 deploy: train</span>
 ```
 
 If an issue label needs to be bigger, add the `.IssueLabel--big` modifier.
@@ -90,7 +90,7 @@ If an issue label needs to be bigger, add the `.IssueLabel--big` modifier.
 <span class="IssueLabel IssueLabel--big color-bg-info-inverse color-text-white mr-1">Primer</span>
 <span class="IssueLabel IssueLabel--big color-bg-danger-inverse color-text-white mr-1">bug 🐛</span>
 <span class="IssueLabel IssueLabel--big color-bg-success-inverse color-text-white mr-1">help wanted</span>
-<span class="IssueLabel IssueLabel--big color-bg-warning-inverse color-text-gray-dark mr-1">🚂 deploy: train</span>
+<span class="IssueLabel IssueLabel--big color-bg-warning-inverse color-text-primary mr-1">🚂 deploy: train</span>
 ```
 
 ## States
@@ -180,9 +180,9 @@ You can also have icons and emoji in counters. Or use utilities for counters wit
   10
 </span>
 <span class="Counter mr-1">👍 2</span>
-<span class="Counter mr-1 bg-green text-white">22</span>
-<span class="Counter mr-1 bg-red text-white">22</span>
-<span class="Counter mr-1 bg-purple text-white">22</span>
+<span class="Counter mr-1 color-bg-success-inverse color-text-white">22</span>
+<span class="Counter mr-1 color-bg-danger-inverse color-text-white">22</span>
+<span class="Counter mr-1 color-bg-info-inverse color-text-white">22</span>
 ```
 
 ## Diffstat
@@ -196,12 +196,12 @@ Diffstats show how many deletions or additions a diff has. It's typically a row 
 </span>
 ```
 
-Use the `text-green` and `text-red` utilities to add additional information about the size of the diff.
+Use the `color-text-success` and `color-text-danger` utilities to add additional information about the size of the diff.
 
 ```html live
 <span class="diffstat">
-    <span class="text-green">+7</span>
-    <span class="text-red">−2</span>
+    <span class="color-text-success">+7</span>
+    <span class="color-text-danger">−2</span>
     <span class="tooltipped tooltipped-e" aria-label="9 lines changed">
       <span class="diffstat-block-added"></span><span class="diffstat-block-added"></span><span class="diffstat-block-added"></span><span class="diffstat-block-deleted"></span><span class="diffstat-block-neutral"></span>
     </span>

@@ -131,39 +131,6 @@ Override default border colors with the following utilities.
 </div>
 ```
 
-### Borders with alpha transparency
-
-> TODO: Deprecate?
-
-Use `border-black-fade` to add an rgba black border with an alpha transparency of `0.15`. This is useful when you want a border that tints the background color. The shade of black we use matches the hue of the GitHub dark header and our gray color palette: `rgba(27,31,35, 0.15)`.
-
-```html live
-<div class="border border-black-fade color-bg-info p-2 mb-2">.border-black-fade</div>
-<div class="border border-black-fade color-bg-danger p-2 mb-2">.border-black-fade</div>
-```
-
-On dark backgrounds use `border-white-fade` instead. It adds an rgba white border with an alpha transparency of `0.15`. Or use `.border-white-fade-xx` to add a white border with various levels of alpha transparency.
-
-```html live
-<div class="color-bg-info-inverse color-text-inverse p-3">
-  <div class="border-bottom border-white-fade-15 p-2 mb-2">
-    .border-white-fade-15 or .border-white-fade
-  </div>
-  <div class="border-bottom border-white-fade-30 p-2 mb-2">
-    .border-white-fade-30
-  </div>
-  <div class="border-bottom border-white-fade-50 p-2 mb-2">
-    .border-white-fade-50
-  </div>
-  <div class="border-bottom border-white-fade-70 p-2 mb-2">
-    .border-white-fade-70
-  </div>
-  <div class="border-bottom border-white-fade-85 p-2 mb-2">
-    .border-white-fade-85
-  </div>
-</div>
-```
-
 ## Link colors
 
 You can use the [Link](../components/links) component to change the link colors.
