@@ -173,4 +173,4 @@ In general,
 
 1. use [functional variables](/support/color-system) as much as possible.
 2. create new [custom color variables](/getting-started/theming#custom-color-variables) if there is no functional variable that fits the use case.
-3. as an alternaitve to custom color variables, use [`auto` variables](/getting-started/theming#auto-variables) if the results give enough constrast.
+3. as an alternative to custom color variables, use [`auto` variables](/getting-started/theming#auto-variables) if the results give enough contrast.
