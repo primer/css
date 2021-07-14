@@ -161,7 +161,7 @@ The benefit of `auto` over the `scale` variables is that `auto` variables automa
 
 **Note**: If you use `stylelint`, the [`primer/no-scale-colors`](https://github.com/primer/stylelint-config-primer/tree/main/plugins#primerno-scale-colors) will fail with "[variable] is a non-functional scale color and cannot be used without being wrapped in the color-variables mixin". You can disable stylelint for this case by adding `// stylelint-disable-line`:
 
-```scss
+```css
 .my-class {
   color: var(--color-auto-gray-7); // stylelint-disable-line
 }
@@ -173,4 +173,4 @@ In general,
 
 1. use [functional variables](/support/color-system) as much as possible.
 2. create new [custom color variables](/getting-started/theming#custom-color-variables) if there is no functional variable that fits the use case.
-3. as an alternaitve to custom color variables, use [`auto` variables](/getting-started/theming#auto-variables) if the results give enough constrast.
+3. as an alternative to custom color variables, use [`auto` variables](/getting-started/theming#auto-variables) if the results give enough contrast.
