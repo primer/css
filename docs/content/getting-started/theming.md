@@ -9,18 +9,19 @@ Currently there are 3 themes (`light`, `dark`, `dark_dimmed`) to choose from. Wh
 
 ## Set a theme
 
-Configure Primer CSS to use a certain theme by adding the following attributes:
+Configure Primer CSS to use a certain theme by setting HTML attributes.
 
-- `data-color-mode` with a value of either `light` or `dark`
-- either `data-light-theme` or `data-dark-theme` with a value of either `light`, `dark`, `dark_dimmed`
+- **Light** theme: `data-color-mode="light" data-dark-theme="light"`
+- **Dark** theme: `data-color-mode="dark" data-dark-theme="dark"`
+- **Dark Dimmed** theme: `data-color-mode="dark" data-dark-theme="dark_dimmed"`
 
-The attributes can be added to any element, but ideally it should be added to the document root (`<html>`). Below an example to use the `dark_dimmed` theme:
+Typically these attributes are added to the document root (`<html>`) to use on the entire page:
 
 ```html
 <html data-color-mode="dark" data-dark-theme="dark_dimmed">
 ```
 
-More examples:
+Below an example of all themes to compare:
 
 ```html live
 <div data-color-mode="light" data-light-theme="light" class="p-3">
