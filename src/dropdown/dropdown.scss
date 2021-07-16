@@ -98,6 +98,11 @@
     [class*="color-text-"] {
       color: inherit !important;
     }
+
+    > .Label {
+      color: inherit !important;
+      border-color: currentColor;
+    }
   }
 
   &.btn-link {
