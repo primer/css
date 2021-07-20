@@ -191,7 +191,7 @@
   &.successed {
     .success {
       color: var(--color-input-tooltip-success-text);
-      background-color: var(--color-input-tooltip-success-bg);
+      background-image: linear-gradient(var(--color-input-tooltip-success-bg), var(--color-input-tooltip-success-bg));
       border-color: var(--color-input-tooltip-success-border);
 
       &::after { border-bottom-color: var(--color-input-tooltip-success-bg); } // stylelint-disable-line primer/borders
@@ -206,7 +206,7 @@
 
     .warning {
       color: var(--color-input-tooltip-warning-text);
-      background-color: var(--color-input-tooltip-warning-bg);
+      background-image: linear-gradient(var(--color-input-tooltip-warning-bg), var(--color-input-tooltip-warning-bg));
       border-color: var(--color-input-tooltip-warning-border);
 
       &::after { border-bottom-color: var(--color-input-tooltip-warning-bg); } // stylelint-disable-line primer/borders
@@ -225,7 +225,7 @@
 
     .error {
       color: var(--color-input-tooltip-error-text);
-      background-color: var(--color-input-tooltip-error-bg);
+      background-image: linear-gradient(var(--color-input-tooltip-error-bg), var(--color-input-tooltip-error-bg));
       border-color: var(--color-input-tooltip-error-border);
 
       &::after { border-bottom-color: var(--color-input-tooltip-error-bg); } // stylelint-disable-line primer/borders
@@ -240,6 +240,7 @@
   margin: $spacer-1 0 2px;
   font-size: $font-size-small;
   color: var(--color-text-secondary);
+  background-color: var(--color-bg-canvas); // Makes sure the background is opaque to cover any content underneath
 
   .spinner {
     // stylelint-disable-next-line primer/spacing
