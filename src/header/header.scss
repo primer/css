@@ -40,4 +40,9 @@
   background-color: var(--color-header-search-bg);
   border: $border-width $border-style var(--color-header-search-border);
   box-shadow: none;
+
+  &::placeholder {
+    // stylelint-disable-next-line primer/colors
+    color: rgba(255, 255, 255, 0.75);
+  }
 }
