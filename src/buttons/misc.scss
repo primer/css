@@ -49,8 +49,9 @@
   &.zeroclipboard-is-active {
     color: var(--color-text-link);
     background: none;
+    border-color: var(--color-btn-active-border);
     outline: none;
-    box-shadow: none;
+    box-shadow: var(--color-btn-focus-shadow);
   }
 
   &:disabled,
@@ -107,8 +108,12 @@
     color: var(--color-text-primary);
   }
 
-  &:active {
+  &:active,
+  &:focus {
     color: var(--color-text-tertiary);
+    border-color: var(--color-btn-active-border);
+    outline: none;
+    box-shadow: var(--color-btn-focus-shadow);
   }
 }
 
