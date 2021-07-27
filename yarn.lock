@@ -5079,10 +5079,10 @@ postcss-media-query-parser@^0.2.3:
   resolved "https://registry.yarnpkg.com/postcss-media-query-parser/-/postcss-media-query-parser-0.2.3.tgz#27b39c6f4d94f81b1a73b8f76351c609e5cef244"
   integrity sha1-J7Ocb02U+Bsac7j3Y1HGCeXO8kQ=
 
-postcss-node-sass@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/postcss-node-sass/-/postcss-node-sass-3.1.0.tgz#7212c52959d762820bae530a6503993711ad1f41"
-  integrity sha512-jB+g5FuWamwOClP3yhfTVg0cTMCfb/2/cc7JAbE0w5HWdS0CMLDlWJ1WqfhxGMbUeFSD1xUPFwgC4Zrm6aTNhw==
+postcss-node-sass@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/postcss-node-sass/-/postcss-node-sass-3.1.1.tgz#c43fdfdf1f5908810f8102a9930f9af97524f983"
+  integrity sha512-4XYSO9G7tPrFbooH8TKk5Ke8wc0I5Vd7ua+x8f3oJpD9+oMV23kVvZMZkvuNljLPqUHFQyB3WnEVYe2xFpp03w==
   dependencies:
     merge-source-map "^1.1.0"
     node-sass "^4.14.1"
