@@ -1,5 +1,17 @@
 # @primer/css
 
+## 17.5.0
+
+### Minor Changes
+
+- [#1506](https://github.com/primer/css/pull/1506) [`13cda226`](https://github.com/primer/css/commit/13cda22638cefe6847b1d718ba87a3f62a8ec3bb) Thanks [@jonrohan](https://github.com/jonrohan)! - Creating `.Header-input` class for dark header inputs. This `Header-input` will be used with a `form-control` class.
+
+### Patch Changes
+
+- [#1507](https://github.com/primer/css/pull/1507) [`30523d64`](https://github.com/primer/css/commit/30523d6436e7ea06fa511fa9ba8407429e667b42) Thanks [@simurai](https://github.com/simurai)! - Fix form tooltip transparency
+
+* [#1510](https://github.com/primer/css/pull/1510) [`d1ea5c2c`](https://github.com/primer/css/commit/d1ea5c2c738ae4763dadf7994a9e78c196842bc3) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding focus outline to the invisible buttons `.btn-invisible` and `.close-button`.
+
 ## 17.4.0
 
 ### Minor Changes
