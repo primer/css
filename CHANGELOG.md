@@ -1,5 +1,11 @@
 # @primer/css
 
+## 17.5.1
+
+### Patch Changes
+
+- [#1517](https://github.com/primer/css/pull/1517) [`7011d046`](https://github.com/primer/css/commit/7011d0469ee012b93a29eff5c4f0f45357aa02fc) Thanks [@simurai](https://github.com/simurai)! - Remove background from .note
+
 ## 17.5.0
 
 ### Minor Changes
