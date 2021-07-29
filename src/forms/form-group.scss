@@ -191,6 +191,7 @@
   &.successed {
     .success {
       color: var(--color-input-tooltip-success-text);
+      background-color: var(--color-bg-canvas); // Makes sure the background is opaque to cover any content underneath
       background-image: linear-gradient(var(--color-input-tooltip-success-bg), var(--color-input-tooltip-success-bg));
       border-color: var(--color-input-tooltip-success-border);
 
@@ -206,6 +207,7 @@
 
     .warning {
       color: var(--color-input-tooltip-warning-text);
+      background-color: var(--color-bg-canvas); // Makes sure the background is opaque to cover any content underneath
       background-image: linear-gradient(var(--color-input-tooltip-warning-bg), var(--color-input-tooltip-warning-bg));
       border-color: var(--color-input-tooltip-warning-border);
 
@@ -225,6 +227,7 @@
 
     .error {
       color: var(--color-input-tooltip-error-text);
+      background-color: var(--color-bg-canvas); // Makes sure the background is opaque to cover any content underneath
       background-image: linear-gradient(var(--color-input-tooltip-error-bg), var(--color-input-tooltip-error-bg));
       border-color: var(--color-input-tooltip-error-border);
 
@@ -240,7 +243,6 @@
   margin: $spacer-1 0 2px;
   font-size: $font-size-small;
   color: var(--color-text-secondary);
-  background-color: var(--color-bg-canvas); // Makes sure the background is opaque to cover any content underneath
 
   .spinner {
     // stylelint-disable-next-line primer/spacing
