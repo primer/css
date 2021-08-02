@@ -41,11 +41,17 @@
   box-shadow: none;
 
   &:hover,
+  &.zeroclipboard-is-hover {
+    color: var(--color-text-link);
+    background: none;
+    outline: none;
+    box-shadow: none;
+  }
+
   &:active,
   &:focus,
   &.selected,
   &[aria-selected=true],
-  &.zeroclipboard-is-hover,
   &.zeroclipboard-is-active {
     color: var(--color-text-link);
     background: none;
