@@ -33,6 +33,7 @@
     "@primer/primitives": "4.x"
   },
   "devDependencies": {
+    "@primer/primitives": "^4.3.5",
     "@changesets/changelog-github": "0.4.0",
     "@changesets/cli": "2.16.0",
     "@github/prettier-config": "0.0.4",
