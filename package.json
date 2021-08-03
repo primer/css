@@ -29,8 +29,8 @@
     "test": "jest",
     "release": "changeset publish"
   },
-  "dependencies": {
-    "@primer/primitives": "^4.3.5"
+  "peerDependencies": {
+    "@primer/primitives": "4.x"
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.4.0",
