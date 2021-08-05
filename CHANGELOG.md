@@ -1,5 +1,13 @@
 # @primer/css
 
+## 17.5.2
+
+### Patch Changes
+
+- [#1519](https://github.com/primer/css/pull/1519) [`8bfe2b7e`](https://github.com/primer/css/commit/8bfe2b7e410bb2a9e5f5d480b36ef885be1d98da) Thanks [@jonrohan](https://github.com/jonrohan)! - Fix bug where outline was showing up on hover
+
+* [#1525](https://github.com/primer/css/pull/1525) [`06f83622`](https://github.com/primer/css/commit/06f8362209ccb9d0bf8cc47f9ef76a1237a2dfd0) Thanks [@joelhawksley](https://github.com/joelhawksley)! - Render `code` at 100% font size irregardless of direct descension from `pre`.
+
 ## 17.5.1
 
 ### Patch Changes
