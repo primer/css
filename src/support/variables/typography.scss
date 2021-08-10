@@ -1,5 +1,11 @@
 // Typography variables
 
+@function font-size-to-rem($px, $baseFontSize) {
+  @return ($px / $baseFontSize) * 1rem;
+}
+
+$baseFontSize: 16;
+
 // Heading sizes - mobile
 // h4-h6 remain the same size on both mobile & desktop
 $h00-size-mobile: 40px !default;
