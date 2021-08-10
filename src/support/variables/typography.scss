@@ -4,7 +4,7 @@
   @return ($px / $baseFontSize) * 1rem;
 }
 
-$baseFontSize: 16;
+$baseFontSize: 16 !default;
 
 // Heading sizes - mobile
 // h4-h6 remain the same size on both mobile & desktop
