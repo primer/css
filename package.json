@@ -4,7 +4,9 @@
   "description": "The CSS implementation of GitHub's Primer Design System",
   "homepage": "https://primer.style/css",
   "author": "GitHub, Inc.",
-  "engines": {"node": "^12.20.0 || ^14.13.1 || >=16.0.0"},
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
   "license": "MIT",
   "style": "dist/primer.css",
   "sass": "index.scss",
@@ -28,7 +30,7 @@
     "start": "yarn dev",
     "dev": "cd docs && yarn && yarn develop",
     "pretest": "yarn dist && script/pretest",
-    "test": "jest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules yarn jest",
     "release": "changeset publish"
   },
   "dependencies": {
@@ -69,7 +71,8 @@
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/__tests__/utils/"
-    ]
+    ],
+    "transform": {}
   },
   "browserslist": [
     "last 10 Chrome versions",
