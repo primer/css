@@ -7,7 +7,7 @@ module.exports = {
     annotation: true
   },
   plugins: [
-    require('postcss-node-sass')({
+    require('@csstools/postcss-sass')({
       includePaths: [path.join(__dirname, 'node_modules')],
       outputStyle: 'compressed'
     }),
