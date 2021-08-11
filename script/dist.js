@@ -58,7 +58,7 @@ async function dist() {
       await Promise.all([
         writeFile(to, result.css, encoding),
         writeFile(meta.stats, JSON.stringify(cssstats(result.css)), encoding),
-        writeFile(meta.js, `module.exports = {cssstats: require('./stats/${name}.json')}`, encoding),
+        writeFile(meta.js, `export {cssstats: require('./stats/${name}.json')}`, encoding),
         result.map ? writeFile(meta.map, result.map.toString(), encoding) : null
       ])
       bundles[name] = meta
