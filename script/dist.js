@@ -1,10 +1,15 @@
 #!/usr/bin/env node
-const globby = require('globby')
-const cssstats = require('cssstats')
-const postcss = require('postcss')
-const loadConfig = require('postcss-load-config')
-const {remove, mkdirp, readFile, writeFile} = require('fs-extra')
-const {dirname, join} = require('path')
+import {globby} from 'globby'
+import cssstats from 'cssstats'
+import postcss from 'postcss'
+import loadConfig from 'postcss-load-config'
+import {dirname, join} from 'path'
+
+import {versionDeprecations, selectorDeprecations, variableDeprecations} from '../deprecations.js'
+import analyzeVariables from './analyze-variables.js'
+
+import fsExtra from 'fs-extra'
+const {remove, mkdirp, readFile, writeFile} = fsExtra
 
 const inDir = 'src'
 const outDir = 'dist'
@@ -87,7 +92,6 @@ function getPathName(path) {
 }
 
 function writeDeprecationData() {
-  const {versionDeprecations, selectorDeprecations, variableDeprecations} = require('../deprecations')
   const data = {
     versions: versionDeprecations,
     selectors: mapToObject(selectorDeprecations),
@@ -103,12 +107,9 @@ function writeDeprecationData() {
   }
 }
 
-if (require.main === module) {
-  dist()
-}
+dist()
 
 async function writeVariableData() {
-  const analyzeVariables = require('./analyze-variables')
   const support = await analyzeVariables('src/support/index.scss')
   const marketing = await analyzeVariables('src/marketing/support/index.scss')
   const data = Object.assign({}, support, marketing)
