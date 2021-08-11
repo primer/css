@@ -1,24 +1,30 @@
 #!/usr/bin/env node
-const {join} = require('path')
-const filesize = require('filesize')
-const {table} = require('table')
+import { join } from 'path'
+import { table } from 'table'
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+import filesize  from 'filesize'
+import fs from 'fs'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 // ensure that K and B values line up vertically
 const filesizeConfig = {symbols: {KB: 'K'}}
 const prettySize = bytes => filesize(bytes, filesizeConfig)
 
 function getBundles(path) {
-  const meta = require(join(path, './dist/meta.json'))
+  const meta = JSON.parse(fs.readFileSync(join(path, './dist/meta.json')))
   let metaBundles = Object.values(meta.bundles)
 
   // fitler out support bundles, since they don't generate CSS
   metaBundles = metaBundles.filter(bundle => !isSupportBundleName(bundle.name))
   const bundles = {}
   for (const bundle of metaBundles) {
+    const stats = JSON.parse(fs.readFileSync(join(path, `./${bundle.stats}`)))
     const entry = {
       name: bundle.name,
       path: bundle.css,
-      stats: require(join(path, `./${bundle.stats}`))
+      stats: stats
     }
     bundles[bundle.name] = entry
   }
