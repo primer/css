@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import globby from 'globby'
+import {globby} from 'globby'
 import cssstats from 'cssstats'
 import postcss from 'postcss'
 import loadConfig from 'postcss-load-config'
