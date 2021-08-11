@@ -4,6 +4,7 @@
   "description": "The CSS implementation of GitHub's Primer Design System",
   "homepage": "https://primer.style/css",
   "author": "GitHub, Inc.",
+  "engines": {"node": "^12.20.0 || ^14.13.1 || >=16.0.0"},
   "license": "MIT",
   "style": "dist/primer.css",
   "sass": "index.scss",
