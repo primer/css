@@ -7,6 +7,7 @@
   "license": "MIT",
   "style": "dist/primer.css",
   "sass": "index.scss",
+  "type": "module",
   "main": "dist/primer.js",
   "repository": "https://github.com/primer/css",
   "bugs": {
