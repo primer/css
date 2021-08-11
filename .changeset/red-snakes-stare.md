@@ -1,5 +1,5 @@
 ---
-'@primer/css': patch
+'@primer/css': minor
 ---
 
 Output headings & body font-size as rem units
