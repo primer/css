@@ -1,12 +1,12 @@
-const {
+import {
   getCurrentVersion,
   getDeprecatedSelectors,
   getDeprecatedVariables,
   getPackageStats,
   getSelectorDiff,
   getVariableDiff
-} = require('./utils/css')
-const semver = require('semver')
+} from './utils/css'
+import semver from 'semver'
 
 let selectorsDiff, variablesDiff, version
 

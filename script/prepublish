@@ -2,7 +2,7 @@
 set -e
 
 # generate the build directory
-yarn dist
+yarn dist > /dev/null
 
 files=$(git ls-files src | sed -e 's#^src/##' | sed -e 's#/.*$##' | sort -u)
 echo $files > publish-files.log

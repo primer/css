@@ -1,7 +1,12 @@
-const {join} = require('path')
+import {join, dirname} from 'path'
+import semver from 'semver'
+import { fileURLToPath } from 'url'
+import fs from 'fs'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
 const currentPath = join(__dirname, '../../')
 const lastPath = join(__dirname, '../../tmp/node_modules/@primer/css')
-const semver = require('semver')
 
 function diffLists(before, after) {
   const added = [...new Set(after.filter(value => !before.includes(value)))]
@@ -14,36 +19,36 @@ function diffLists(before, after) {
 }
 
 function getSelectors(versionPath) {
-  const stats = require(join(versionPath, './stats/primer.json'))
+  const stats = JSON.parse(fs.readFileSync(join(versionPath, './stats/primer.json')))
   return stats.selectors.values
 }
 
 function getVariables(versionPath) {
-  const variables = require(join(versionPath, './variables.json'))
+  const variables = JSON.parse(fs.readFileSync(join(versionPath, './variables.json')))
   return Object.keys(variables)
 }
 
-function getCurrentVersion() {
-  const pkg = require(join(currentPath, './package.json'))
+export function getCurrentVersion() {
+  const pkg = JSON.parse(fs.readFileSync(join(currentPath, './package.json')))
   return semver.parse(pkg.version)
 }
 
-function getDeprecatedSelectors(version) {
+export function getDeprecatedSelectors(version) {
   if (getCurrentVersion().raw === version) return []
-  let deprecations = require(join(currentPath, './dist/deprecations.json'))
+  let deprecations = JSON.parse(fs.readFileSync(join(currentPath, './dist/deprecations.json')))
   deprecations = deprecations.versions[version] || []
   return deprecations.reduce((list, deprecation) => list.concat(deprecation.selectors), []).filter(v => v)
 }
 
-function getDeprecatedVariables(version) {
+export function getDeprecatedVariables(version) {
   if (getCurrentVersion().raw === version) return []
-  let deprecations = require(join(currentPath, './dist/deprecations.json'))
+  let deprecations = JSON.parse(fs.readFileSync(join(currentPath, './dist/deprecations.json')))
   deprecations = deprecations.versions[version] || []
   return deprecations.reduce((list, deprecation) => list.concat(deprecation.variables), []).filter(v => v)
 }
 
-function getPackageStats(packageName) {
-  const stats = require(join(currentPath, './dist', `./stats/${packageName}.json`))
+export function getPackageStats(packageName) {
+  const stats = JSON.parse(fs.readFileSync(join(currentPath, './dist', `./stats/${packageName}.json`)))
   return stats
 }
 
@@ -63,19 +68,10 @@ function lastVersionVariables() {
   return getVariables(join(lastPath, './dist'))
 }
 
-function getSelectorDiff() {
+export function getSelectorDiff() {
   return diffLists(lastVersionSelectors(), currentVersionSelectors())
 }
 
-function getVariableDiff() {
+export function getVariableDiff() {
   return diffLists(lastVersionVariables(), currentVersionVariables())
-}
-
-module.exports = {
-  getCurrentVersion,
-  getDeprecatedSelectors,
-  getDeprecatedVariables,
-  getPackageStats,
-  getSelectorDiff,
-  getVariableDiff
 }

@@ -1,19 +1,25 @@
 #!/usr/bin/env node
-const postcss = require('postcss')
-const {join} = require('path')
-const fs = require('fs')
-const atImport = require('postcss-import')
-const syntax = require('postcss-scss')
-const calc = require('postcss-calc')
+import postcss from 'postcss'
+import {join} from 'path'
+import fs from 'fs'
+import atImport from 'postcss-import'
+import syntax from 'postcss-scss'
+import calc from 'postcss-calc'
+import simpleVars from 'postcss-simple-vars'
+
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const processor = postcss([
   atImport({path: ['src']}),
   collectVariables(),
-  require('postcss-simple-vars')({includePaths: [join(__dirname, '../src/support/variables')]})
+  simpleVars({includePaths: [join(__dirname, '../src/support/variables')]})
 ])
 
 async function analyzeVariables(fileName) {
-  const contents = await fs.readFileSync(fileName, 'utf8')
+  const contents = fs.readFileSync(fileName, 'utf8')
 
   const result = await processor.process(contents, {from: fileName, map: false, syntax})
   for (const message of result.messages) {
@@ -81,13 +87,11 @@ function collectVariables() {
   }
 }
 
-if (module.parent) {
-  module.exports = analyzeVariables
-} else {
-  ;(async () => {
-    const args = process.argv.slice(2)
-    const file = args.length ? args.shift() : 'src/support/index.scss'
-    const variables = await analyzeVariables(file)
-    console.log(JSON.stringify(variables, null, 2))
-  })()
-}
+export default analyzeVariables
+
+;(async () => {
+  const args = process.argv.slice(2)
+  const file = args.length ? args.shift() : 'src/support/index.scss'
+  const variables = await analyzeVariables(file)
+  console.log(JSON.stringify(variables, null, 2))
+})()
