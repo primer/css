@@ -1,8 +1,11 @@
-const fs = require('fs')
-const frontMatter = require('front-matter')
-const yaml = require('js-yaml')
-const globby = require('globby')
-const {join} = require('path')
+import fs from 'fs'
+import frontMatter from 'front-matter'
+import yaml from 'js-yaml'
+import {globby} from 'globby'
+import { fileURLToPath } from 'url'
+import {join, dirname} from 'path'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const docsPath = join(__dirname, '../../docs')
 
@@ -20,12 +23,12 @@ function collectNavLinks(links) {
   return foundLinks
 }
 
-function getNavigationLinks() {
+export function getNavigationLinks() {
   const nav = yaml.load(fs.readFileSync(join(docsPath, './src/@primer/gatsby-theme-doctocat/nav.yml'), 'utf8'))
   return collectNavLinks(nav)
 }
 
-async function getContentFrontmatter() {
+export async function getContentFrontmatter() {
   const fm = {}
 
   const paths = await globby(join(docsPath, './content/**/*.md*'))
@@ -35,9 +38,4 @@ async function getContentFrontmatter() {
     fm[path.replace(join(docsPath, './content'), '').replace(/(\/index)?\.mdx?/, '')] = fmContents['attributes']
   }
   return fm
-}
-
-module.exports = {
-  getContentFrontmatter,
-  getNavigationLinks
 }
