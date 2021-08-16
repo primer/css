@@ -1,6 +1,8 @@
 name: Release
 on:
   push:
+    branches:
+      - 'snapshot'
     branches-ignore:
       - 'main'
       - 'changeset-release/main'
