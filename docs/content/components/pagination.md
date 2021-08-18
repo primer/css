@@ -1,7 +1,7 @@
 ---
 title: Pagination
 path: components/pagination
-status: New
+status: Beta
 source: 'https://github.com/primer/css/tree/main/src/pagination'
 bundle: pagination
 ---
