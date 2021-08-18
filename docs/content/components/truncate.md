@@ -1,7 +1,7 @@
 ---
 title: Truncate
 path: components/truncate
-status: Experimental
+status: Alpha
 source: 'https://github.com/primer/css/tree/main/src/truncate'
 bundle: truncate
 ---

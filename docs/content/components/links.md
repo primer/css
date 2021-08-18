@@ -1,7 +1,7 @@
 ---
 title: Links
 path: components/links
-status: New
+status: Beta
 source: 'https://github.com/primer/css/tree/main/src/links'
 bundle: links
 ---

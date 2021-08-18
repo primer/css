@@ -1,6 +1,6 @@
 ---
 title: Select menu
-status: New
+status: Beta
 source: 'https://github.com/primer/css/tree/main/src/select-menu'
 bundle: select-menu
 ---

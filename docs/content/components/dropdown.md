@@ -1,6 +1,6 @@
 ---
 title: Dropdown
-status: New
+status: Beta
 ---
 
 <Note>
