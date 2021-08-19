@@ -19,12 +19,15 @@
   pre {
     word-wrap: normal;
 
+    code {
+      // stylelint-disable-next-line primer/typography
+      font-size: 100%;
+    }
+
     // Code tags within code blocks (<pre>s)
     > code {
       padding: 0;
       margin: 0;
-      // stylelint-disable-next-line primer/typography
-      font-size: 100%;
       word-break: normal;
       white-space: pre;
       background: transparent;

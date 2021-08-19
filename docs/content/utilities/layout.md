@@ -123,11 +123,11 @@ Overflow utilities can be applied or changed per [breakpoint](/objects/grid#brea
 ## Floats
 Use `.float-left` and `.float-right` to set floats, and `.clearfix` to clear.
 ```html live
-<div class="clearfix border border-gray">
-  <div class="float-left border border-gray">
+<div class="clearfix border">
+  <div class="float-left border">
     .float-left
   </div>
-  <div class="float-right border border-gray">
+  <div class="float-right border">
     .float-right
   </div>
 </div>
@@ -138,11 +138,11 @@ Float utilities can be applied or changed per [breakpoint](/objects/grid#breakpo
 Each responsive float utility is applied to the specified breakpoint and up, using the following formula:  `float-[breakpoint]-[property]`. For example: `float-md-left`. Remember to use `.clearfix` to clear.
 
 ```html live
-<div class="clearfix border border-gray">
-  <div class="float-md-left border border-gray">
+<div class="clearfix border">
+  <div class="float-md-left border">
     .float-md-left
   </div>
-  <div class="float-md-right border border-gray">
+  <div class="float-md-right border">
     .float-md-right
   </div>
 </div>
@@ -152,7 +152,7 @@ Each responsive float utility is applied to the specified breakpoint and up, usi
 Adjust the alignment of an element with `.v-align-baseline`, `.v-align-top`, `.v-align-middle` or `.v-align-bottom`. The vertical-align property only applies to inline or table-cell boxes.
 
 ```html live
-<div class="d-table border border-gray">
+<div class="d-table border">
   <div class="d-table-cell"><h1>Potatoes</h1></div>
   <div class="d-table-cell v-align-baseline">.v-align-baseline</div>
   <div class="d-table-cell v-align-top">.v-align-top</div>
@@ -164,7 +164,7 @@ Adjust the alignment of an element with `.v-align-baseline`, `.v-align-top`, `.v
 Use `v-align-text-top` or `v-align-text-bottom` to adjust the alignment of an element with the top or bottom of the parent element's font.
 
 ```html live
-<div class="border border-gray">
+<div class="border">
   <h1 class="mr-1">Potatoes
     <span class="f4 v-align-text-top mr-1">.v-align-text-top</span>
     <span class="f4 v-align-text-bottom mr-1">.v-align-text-bottom</span>
@@ -178,7 +178,7 @@ Use `.width-fit` to set max-width 100%.
 
 ```html live
 <div class="one-fourth column">
-  <img class="width-fit bg-gray" src="https://github.com/github.png" alt="width fitted octocat" />
+  <img class="width-fit color-bg-secondary" src="https://github.com/github.png" alt="width fitted octocat" />
 </div>
 ```
 
@@ -215,7 +215,7 @@ Use `.height-fit` to set max-height 100%.
 Use `.height-full` to set height to 100%.
 
 ```html live
-<div class="d-table border border-gray">
+<div class="d-table border">
   <div class="d-table-cell height-full v-align-middle pl-3">
     <!-- <%= octicon "three-bars" %> -->
     <svg class="octicon octicon-three-bars" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"></path></svg>
@@ -257,16 +257,16 @@ Use `.position-relative` to create a new stacking context.
 _Note how the other elements are displayed as if "Two" were in its normal position and taking up space._
 
 ```html live
-<div class="d-inline-block float-left bg-blue text-white m-3" style="width:100px; height:100px;">
+<div class="d-inline-block float-left color-bg-info-inverse color-text-white m-3" style="width:100px; height:100px;">
   One
 </div>
-<div class="d-inline-block float-left position-relative bg-blue text-white m-3" style="width:100px; height:100px; top:12px; left:12px;">
+<div class="d-inline-block float-left position-relative color-bg-info-inverse color-text-white m-3" style="width:100px; height:100px; top:12px; left:12px;">
   Two
 </div>
-<div class="d-inline-block float-left bg-blue text-white m-3" style="width:100px; height:100px;">
+<div class="d-inline-block float-left color-bg-info-inverse color-text-white m-3" style="width:100px; height:100px;">
   Three
 </div>
-<div class="d-inline-block float-left bg-blue text-white m-3" style="width:100px; height:100px;">
+<div class="d-inline-block float-left color-bg-info-inverse color-text-white m-3" style="width:100px; height:100px;">
   Four
 </div>
 ```
@@ -278,7 +278,7 @@ Use `.position-absolute` to take elements out of the normal document flow.
 ```html live
 <div class="position-relative" style="height:116px;">
   <button type="button" class="btn mb-1">Button</button>
-  <div class="position-absolute border border-gray p-2">
+  <div class="position-absolute border p-2">
     <a href="#url" class="d-block p-1">Mashed potatoes</a>
     <a href="#url" class="d-block p-1">Fries</a>
   </div>
@@ -293,7 +293,7 @@ _Note: This example is shown in an `<iframe>` and therefore will not be position
 
 ```html live
 <div style="height: 64px;">
-  <div class="position-fixed right-0 bottom-0 bg-gray-light border p-2">
+  <div class="position-fixed right-0 bottom-0 color-bg-secondary border p-2">
     .position-fixed
   </div>
 </div>
@@ -304,7 +304,7 @@ To fill an entire width or height, use opposing directions.
 _Note: fixed positioning has been disabled here for demonstration only._
 
 ```html live
-<div class="position-fixed left-0 right-0 p-3 bg-gray-dark text-white">
+<div class="position-fixed left-0 right-0 p-3 color-bg-info-inverse color-text-white">
   .position-fixed .left-0 .right-0
 </div>
 ```
@@ -323,14 +323,14 @@ Combine `.position-sticky` with `.top-0` to keep an element stuck to the top.
 
 ```html live
 <section class="mb-3">
-  <header class="border position-sticky top-0 bg-gray p-3" style="z-index: 1;">Sticky header 1</header>
+  <header class="border position-sticky top-0 color-bg-secondary p-3" style="z-index: 1;">Sticky header 1</header>
   <main class="border border-top-0 p-3">
     <p>Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.”</p>
   </main>
 </section>
 
 <section class="mb-3">
-  <header class="border position-sticky top-0 bg-gray p-3">Sticky header 2</header>
+  <header class="border position-sticky top-0 color-bg-secondary p-3">Sticky header 2</header>
   <main class="border border-top-0 p-3">
     <p>As Cicero would put it, “Um, not so fast.”</p>
 
@@ -339,7 +339,7 @@ Combine `.position-sticky` with `.top-0` to keep an element stuck to the top.
 </section>
 
 <section class="mb-3">
-  <header class="border position-sticky top-0 bg-gray p-3">Sticky header 3</header>
+  <header class="border position-sticky top-0 color-bg-secondary p-3">Sticky header 3</header>
   <main class="border border-top-0 p-3">
     <p>Richard McClintock, a Latin scholar from Hampden-Sydney College, is credited with discovering the source behind the ubiquitous filler text. In seeing a sample of lorem ipsum, his interest was piqued by consectetur—a genuine, albeit rare, Latin word. Consulting a Latin dictionary led McClintock to a passage from De Finibus Bonorum et Malorum (“On the Extremes of Good and Evil”), a first-century B.C. text from the Roman philosopher Cicero.</p>
   </main>
@@ -358,7 +358,7 @@ Combine `.position-sticky` with `.bottom-0` to keep an element stuck to the bott
     <h3>Title</h3>
     <p>Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.”</p>
   </main>
-  <footer class="border position-sticky bottom-0 bg-gray p-3">Sticky footer 1</footer>
+  <footer class="border position-sticky bottom-0 color-bg-secondary p-3">Sticky footer 1</footer>
 </section>
 
 <section class="mb-3">
@@ -366,7 +366,7 @@ Combine `.position-sticky` with `.bottom-0` to keep an element stuck to the bott
     <h3>Title</h3>
     <p>Richard McClintock, a Latin scholar from Hampden-Sydney College, is credited with discovering the source behind the ubiquitous filler text. In seeing a sample of lorem ipsum, his interest was piqued by consectetur—a genuine, albeit rare, Latin word. Consulting a Latin dictionary led McClintock to a passage from De Finibus Bonorum et Malorum (“On the Extremes of Good and Evil”), a first-century B.C. text from the Roman philosopher Cicero.</p>
   </main>
-  <footer class="border position-sticky bottom-0 bg-gray p-3">Sticky footer 2</footer>
+  <footer class="border position-sticky bottom-0 color-bg-secondary p-3">Sticky footer 2</footer>
 </section>
 
 <style>.frame-example { max-width: 300px; height: 300px; }</style>
@@ -379,25 +379,25 @@ Combine `.position-sticky` with `.left-0` or `.right-0` to keep elements stuck t
 ```html live
 <div class="d-flex border overflow-x-auto">
   <section class="d-flex">
-    <span class="border position-sticky left-0 bg-gray p-4">A</span>
+    <span class="border position-sticky left-0 color-bg-secondary p-4">A</span>
     <span class="border p-4">1</span><span class="border p-4">2</span><span class="border p-4">3</span><span class="border p-4">4</span><span class="border p-4">5</span><span class="border p-4">6</span><span class="border p-4">7</span><span class="border p-4">8</span><span class="border p-4">9</span>
   </section>
   <section class="d-flex">
-    <span class="border position-sticky left-0 bg-gray p-4">B</span>
+    <span class="border position-sticky left-0 color-bg-secondary p-4">B</span>
     <span class="border p-4">1</span><span class="border p-4">2</span><span class="border p-4">3</span><span class="border p-4">4</span><span class="border p-4">5</span><span class="border p-4">6</span><span class="border p-4">7</span><span class="border p-4">8</span><span class="border p-4">9</span>
   </section>
   <section class="d-flex">
-    <span class="border position-sticky left-0 bg-gray p-4">C</span>
+    <span class="border position-sticky left-0 color-bg-secondary p-4">C</span>
     <span class="border p-4">1</span><span class="border p-4">2</span><span class="border p-4">3</span><span class="border p-4">4</span><span class="border p-4">5</span><span class="border p-4">6</span><span class="border p-4">7</span><span class="border p-4">8</span><span class="border p-4">9</span>
   </section>
   <section class="d-flex">
-    <span class="border position-sticky left-0 bg-gray p-4">D</span>
+    <span class="border position-sticky left-0 color-bg-secondary p-4">D</span>
     <span class="border p-4">1</span><span class="border p-4">2</span><span class="border p-4">3</span><span class="border p-4">4</span><span class="border p-4">5</span><span class="border p-4">6</span><span class="border p-4">7</span><span class="border p-4">8</span><span class="border p-4">9</span>
   </section>
   <section class="d-flex">
-    <span class="border position-sticky left-0 bg-gray p-4">E</span>
+    <span class="border position-sticky left-0 color-bg-secondary p-4">E</span>
     <span class="border p-4">1</span><span class="border p-4">2</span><span class="border p-4">3</span><span class="border p-4">4</span><span class="border p-4">5</span><span class="border p-4">6</span><span class="border p-4">7</span><span class="border p-4">8</span><span class="border p-4">9</span>
-    <span class="border position-sticky right-0 bg-gray p-4">...</span>
+    <span class="border position-sticky right-0 color-bg-secondary p-4">...</span>
   </section>
 </div>
 ```
@@ -436,7 +436,7 @@ Create a media object with utilities.
 
 ```html live
 <div class="clearfix p-3 border">
-  <div class="float-left p-3 mr-3 bg-gray">
+  <div class="float-left p-3 mr-3 color-bg-secondary">
     Image
   </div>
   <div class="overflow-hidden">
@@ -447,11 +447,11 @@ Create a media object with utilities.
 Create a double-sided media object for a container with a flexible center.
 
 ```html live
-<div class="clearfix p-3 border border-gray">
-  <div class="float-left p-3 mr-3 bg-gray">
+<div class="clearfix p-3 border">
+  <div class="float-left p-3 mr-3 color-bg-secondary">
     Image
   </div>
-  <div class="float-right p-3 ml-3 bg-gray">
+  <div class="float-right p-3 ml-3 color-bg-secondary">
     Image
   </div>
   <div class="overflow-hidden">

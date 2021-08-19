@@ -41,16 +41,23 @@
   box-shadow: none;
 
   &:hover,
-  &:active,
-  &:focus,
-  &.selected,
-  &[aria-selected=true],
-  &.zeroclipboard-is-hover,
-  &.zeroclipboard-is-active {
+  &.zeroclipboard-is-hover {
     color: var(--color-text-link);
     background: none;
     outline: none;
     box-shadow: none;
+  }
+
+  &:active,
+  &:focus,
+  &.selected,
+  &[aria-selected=true],
+  &.zeroclipboard-is-active {
+    color: var(--color-text-link);
+    background: none;
+    border-color: var(--color-btn-active-border);
+    outline: none;
+    box-shadow: var(--color-btn-focus-shadow);
   }
 
   &:disabled,
@@ -107,8 +114,12 @@
     color: var(--color-text-primary);
   }
 
-  &:active {
+  &:active,
+  &:focus {
     color: var(--color-text-tertiary);
+    border-color: var(--color-btn-active-border);
+    outline: none;
+    box-shadow: var(--color-btn-focus-shadow);
   }
 }
 

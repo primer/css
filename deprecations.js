@@ -1,3 +1,5 @@
+import fs from 'fs'
+
 /*
  * This object's keys are (semver) version numbers, and the
  * values are arrays of objects each with a "selectors"
@@ -702,8 +704,9 @@ const versionDeprecations = {
   ]
 }
 
-const {version: CURRENT_VERSION} = require('./package.json')
-const semver = require('semver')
+import semver from 'semver'
+const pkg = JSON.parse(fs.readFileSync('./package.json'))
+const {version: CURRENT_VERSION} = pkg
 
 // map selectors to the version and message of their deprecation
 const selectorDeprecations = new Map()
@@ -729,7 +732,7 @@ function isVariableDeprecated(variable, version = CURRENT_VERSION) {
   return deprecation ? semver.gte(deprecation.version, version) : false
 }
 
-module.exports = {
+export {
   versionDeprecations,
   selectorDeprecations,
   variableDeprecations,

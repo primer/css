@@ -42,8 +42,8 @@
   flex-shrink: 0;
 
   &--success {
-    color: var(--color-text-white);
-    background-color: var(--color-btn-primary-bg);
+    color: var(--color-fg-on-emphasis, var(--color-btn-primary-text)); // TODO remove V1 fallback
+    background-color: var(--color-success-emphasis, var(--color-btn-primary-bg)); // TODO remove V1 fallback
     border: $border-width $border-style var(--color-timeline-badge-success-border);
   }
 }

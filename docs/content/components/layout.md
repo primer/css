@@ -1,7 +1,7 @@
 ---
 title: Layout
 path: components/layout
-status: Experimental
+status: Alpha
 source: 'https://github.com/primer/css/tree/main/src/layout/layout.scss'
 bundle: layout
 ---

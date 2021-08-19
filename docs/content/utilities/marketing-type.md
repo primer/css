@@ -1,7 +1,7 @@
 ---
 title: Marketing typography
 path: utilities/marketing-type
-status: New
+status: Beta
 source: 'https://github.com/primer/css/tree/main/src/marketing/type'
 bundle: marketing-type
 ---

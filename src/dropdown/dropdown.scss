@@ -94,6 +94,15 @@
       color: inherit;
       opacity: 1;
     }
+
+    [class*="color-text-"] {
+      color: inherit !important;
+    }
+
+    > .Label {
+      color: inherit !important;
+      border-color: currentColor;
+    }
   }
 
   &.btn-link {

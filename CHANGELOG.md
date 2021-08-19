@@ -1,5 +1,57 @@
 # @primer/css
 
+## 17.5.2
+
+### Patch Changes
+
+- [#1519](https://github.com/primer/css/pull/1519) [`8bfe2b7e`](https://github.com/primer/css/commit/8bfe2b7e410bb2a9e5f5d480b36ef885be1d98da) Thanks [@jonrohan](https://github.com/jonrohan)! - Fix bug where outline was showing up on hover
+
+* [#1525](https://github.com/primer/css/pull/1525) [`06f83622`](https://github.com/primer/css/commit/06f8362209ccb9d0bf8cc47f9ef76a1237a2dfd0) Thanks [@joelhawksley](https://github.com/joelhawksley)! - Render `code` at 100% font size irregardless of direct descension from `pre`.
+
+## 17.5.1
+
+### Patch Changes
+
+- [#1517](https://github.com/primer/css/pull/1517) [`7011d046`](https://github.com/primer/css/commit/7011d0469ee012b93a29eff5c4f0f45357aa02fc) Thanks [@simurai](https://github.com/simurai)! - Remove background from .note
+
+## 17.5.0
+
+### Minor Changes
+
+- [#1506](https://github.com/primer/css/pull/1506) [`13cda226`](https://github.com/primer/css/commit/13cda22638cefe6847b1d718ba87a3f62a8ec3bb) Thanks [@jonrohan](https://github.com/jonrohan)! - Creating `.Header-input` class for dark header inputs. This `Header-input` will be used with a `form-control` class.
+
+### Patch Changes
+
+- [#1507](https://github.com/primer/css/pull/1507) [`30523d64`](https://github.com/primer/css/commit/30523d6436e7ea06fa511fa9ba8407429e667b42) Thanks [@simurai](https://github.com/simurai)! - Fix form tooltip transparency
+
+* [#1510](https://github.com/primer/css/pull/1510) [`d1ea5c2c`](https://github.com/primer/css/commit/d1ea5c2c738ae4763dadf7994a9e78c196842bc3) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding focus outline to the invisible buttons `.btn-invisible` and `.close-button`.
+
+## 17.4.0
+
+### Minor Changes
+
+- [#1497](https://github.com/primer/css/pull/1497) [`84bbd501`](https://github.com/primer/css/commit/84bbd501a41c455031d4a1b4d25df6fc6db6e1d8) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Add font-weight-medium to marketing styles, and use it in the type scale.
+
+* [#1487](https://github.com/primer/css/pull/1487) [`0298b69b`](https://github.com/primer/css/commit/0298b69bda4c25ed252fbeb6ba2e3fcf4ff096d2) Thanks [@arzg](https://github.com/arzg)! - Move Menlo before Consolas in monospace font stack
+
+### Patch Changes
+
+- [#1483](https://github.com/primer/css/pull/1483) [`84488397`](https://github.com/primer/css/commit/84488397f4a7bce115e2c81b388de959fff20296) Thanks [@jonrohan](https://github.com/jonrohan)! - Make sure truncate is a direct child
+
+* [#1486](https://github.com/primer/css/pull/1486) [`f52d40cc`](https://github.com/primer/css/commit/f52d40cce57bca5a713d0b9d1136f144577cf66d) Thanks [@manuelpuyol](https://github.com/manuelpuyol)! - Prevents main content to blowout and cause an horizontal scroll
+
+- [#1488](https://github.com/primer/css/pull/1488) [`c345bd38`](https://github.com/primer/css/commit/c345bd3819cf8d42552409baf3ec4ccb59c50107) Thanks [@cheshire137](https://github.com/cheshire137)! - Fix unreadable text when utility is used in dropdown item.
+
+* [#1501](https://github.com/primer/css/pull/1501) [`e072734a`](https://github.com/primer/css/commit/e072734aa18813622ea22e8f9c3e602ec7309105) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Documentation: Remove deprecated faded borders documentation
+
+- [#1472](https://github.com/primer/css/pull/1472) [`8541ed1d`](https://github.com/primer/css/commit/8541ed1db1e0d9c4551ea76ba400d6d0cf682897) Thanks [@simurai](https://github.com/simurai)! - Use variable for the active border of the UnderlineNav
+
+* [#1475](https://github.com/primer/css/pull/1475) [`105296c6`](https://github.com/primer/css/commit/105296c6b4b33d9e84038173bf9af09889a99dcd) Thanks [@simurai](https://github.com/simurai)! - Make `TimelineItem-badge--success` ready for Color Modes V2
+
+- [#1452](https://github.com/primer/css/pull/1452) [`8838a3ac`](https://github.com/primer/css/commit/8838a3ac48ec1589594291313349f49737317b5d) Thanks [@mktcode](https://github.com/mktcode)! - Division using / is deprecated. Replaced it with multiplications.
+
+* [#1499](https://github.com/primer/css/pull/1499) [`2e580a7e`](https://github.com/primer/css/commit/2e580a7ed46fb06786b84f5b1900c8e0cd7450f5) Thanks [@mjacobus](https://github.com/mjacobus)! - Fix label contrast when inside a dropdown
+
 ## 17.3.0
 
 ### Minor Changes

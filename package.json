@@ -1,12 +1,16 @@
 {
   "name": "@primer/css",
-  "version": "17.3.0",
+  "version": "17.5.2",
   "description": "The CSS implementation of GitHub's Primer Design System",
   "homepage": "https://primer.style/css",
   "author": "GitHub, Inc.",
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
   "license": "MIT",
   "style": "dist/primer.css",
   "sass": "index.scss",
+  "type": "module",
   "main": "dist/primer.js",
   "repository": "https://github.com/primer/css",
   "bugs": {
@@ -26,7 +30,7 @@
     "start": "yarn dev",
     "dev": "cd docs && yarn && yarn develop",
     "pretest": "yarn dist && script/pretest",
-    "test": "jest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules yarn jest",
     "release": "changeset publish"
   },
   "dependencies": {
@@ -36,38 +40,40 @@
     "@changesets/changelog-github": "0.4.0",
     "@changesets/cli": "2.16.0",
     "@github/prettier-config": "0.0.4",
-    "autoprefixer": "10.2.6",
+    "autoprefixer": "10.3.1",
     "cssstats": "4.0.2",
-    "eslint": "7.28.0",
-    "eslint-plugin-github": "4.1.3",
-    "eslint-plugin-jest": "24.3.6",
+    "eslint": "7.32.0",
+    "eslint-plugin-github": "4.2.0",
+    "eslint-plugin-jest": "24.4.0",
     "eslint-plugin-prettier": "3.4.0",
-    "filesize": "6.3.0",
+    "filesize": "7.0.0",
     "front-matter": "4.0.2",
     "fs-extra": "10.0.0",
-    "globby": "11.0.3",
-    "jest": "27.0.4",
+    "globby": "12.0.0",
+    "jest": "27.0.6",
     "js-yaml": "4.1.0",
-    "postcss": "8.3.3",
+    "postcss": "8.3.6",
     "postcss-calc": "8.0.0",
     "postcss-import": "14.0.2",
-    "postcss-load-config": "3.0.1",
-    "postcss-node-sass": "3.1.0",
-    "postcss-scss": "3.0.5",
+    "postcss-load-config": "3.1.0",
+    "postcss-node-sass": "3.1.1",
+    "postcss-scss": "4.0.0",
     "postcss-simple-vars": "6.0.3",
-    "prettier": "2.3.1",
+    "prettier": "2.3.2",
     "semver": "7.3.5",
     "stylelint": "13.13.1",
     "stylelint-config-primer": "11.0.1",
-    "stylelint-scss": "3.19.0",
+    "stylelint-scss": "3.20.1",
     "table": "6.7.1"
   },
   "jest": {
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "/__tests__/utils/"
-    ]
+      "/__tests__/utils/",
+      "/__tests__/docs.test.js"
+    ],
+    "transform": {}
   },
   "browserslist": [
     "last 10 Chrome versions",
