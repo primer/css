@@ -1572,6 +1572,11 @@
     style-value-types "^3.1.7"
     tslib "^1.10.0"
 
+"@primer/component-metadata@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@primer/component-metadata/-/component-metadata-0.4.0.tgz#44b7d7b1285bea41c2a88621fd17f2c777a4c5e9"
+  integrity sha512-yppmDSSDrN2CHwjq3h+RWhfpjehFQAx21JcEipYyNTp0f/kC+iazFVNCKZE6DOavAxv003ti7QIrp+QkPT9tpg==
+
 "@primer/components@^17.1.0":
   version "17.1.1"
   resolved "https://registry.npmjs.org/@primer/components/-/components-17.1.1.tgz"
@@ -1624,15 +1629,16 @@
     react-is "16.10.2"
     styled-system "5.1.2"
 
-"@primer/gatsby-theme-doctocat@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.npmjs.org/@primer/gatsby-theme-doctocat/-/gatsby-theme-doctocat-1.6.0.tgz"
-  integrity sha512-E/GXYk07VhWt0l18v30xCu+NlDszvSdTs56dKFuH+L8JlV2V2efvl88kKm2INqlM9PTP/bFQ9jeyKSC1YDHNiQ==
+"@primer/gatsby-theme-doctocat@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@primer/gatsby-theme-doctocat/-/gatsby-theme-doctocat-1.7.0.tgz#57a8617a77807a87154137225095d9216585c5aa"
+  integrity sha512-c+HqWXniGTl738Lxc8qJYbQEnqJihpQZwYhBmW+jdiNLf5bOYJugXYHr5HpeCsqeKczvt/tUlPJBHhTN/B2PIA==
   dependencies:
     "@babel/preset-env" "^7.5.5"
     "@babel/preset-react" "^7.0.0"
     "@mdx-js/mdx" "^1.0.21"
     "@mdx-js/react" "^1.0.21"
+    "@primer/component-metadata" "^0.4.0"
     "@primer/components" "^20.0.0"
     "@primer/octicons-react" "^11.0.0"
     "@styled-system/theme-get" "^5.0.12"
