@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/preset-react": "^7.10.4",
     "@primer/components": "^17.1.0",
-    "@primer/gatsby-theme-doctocat": "^1.6.0",
+    "@primer/gatsby-theme-doctocat": "^1.7.0",
     "@primer/octicons": "^11.0.0",
     "@primer/octicons-react": "^11.0.0",
     "@primer/primitives": "4.2.0",
