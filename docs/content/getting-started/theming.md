@@ -75,7 +75,7 @@ Change the color mode of your OS to see the switch between the `data-light-theme
 
 ## Custom color variables
 
-It's recommended to use the [functional variables](/support/color-system#functional-variables) as much as possible. It will guarantee that the variables will work as expected with any new theme that might get added in the future. Somtimes you might still need a custom variable that changes based on the color mode. You can create a custom variable with the `color-variables` mixin.
+It's recommended to use the [functional variables](/support/color-system#functional-variables) as much as possible. It will guarantee that the variables will work as expected with any new theme that might get added in the future. Sometimes you might still need a custom variable that changes based on the color mode. You can create a custom variable with the `color-variables` mixin.
 
 ```css
 @include color-variables(
