@@ -2961,10 +2961,10 @@ globals@^13.6.0, globals@^13.9.0:
   dependencies:
     type-fest "^0.20.2"
 
-globby@12.0.0:
-  version "12.0.0"
-  resolved "https://registry.yarnpkg.com/globby/-/globby-12.0.0.tgz#b8bbb8e9d48f8a3c9abf5624030f1f9e1cfbe3ed"
-  integrity sha512-3mOIUduqSMHm6gNjIw9E641TZ93NB8lFVt+6MKIw6vUaIS5aSsw/6cl0gT86z1IoKlaL90BiOQlA593GUMlzEA==
+globby@12.0.1:
+  version "12.0.1"
+  resolved "https://registry.yarnpkg.com/globby/-/globby-12.0.1.tgz#2c4dd20cc1e6647946afa26078b16c352422a931"
+  integrity sha512-AofdCGi+crQ1uN9+nMbTnvC4XGNPJN9hRiPf+A76lUZIZoWoj4Z9iyUQGge7xCGKgR/7ejB36qoIlLoDBc7fYw==
   dependencies:
     array-union "^3.0.1"
     dir-glob "^3.0.1"
