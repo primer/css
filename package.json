@@ -45,7 +45,7 @@
     "eslint": "7.32.0",
     "eslint-plugin-github": "4.2.0",
     "eslint-plugin-jest": "24.4.0",
-    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-prettier": "3.4.1",
     "filesize": "8.0.0",
     "front-matter": "4.0.2",
     "fs-extra": "10.0.0",
