@@ -94,6 +94,7 @@
     color: var(--color-text-disabled);
     background-color: var(--color-btn-bg);
     border-color: var(--color-btn-border);
+    box-shadow: none;
   }
 
   // Keep :focus after :disabled. Allows to see the border focus color even on disabled buttons
@@ -139,6 +140,7 @@
     color: var(--color-btn-primary-disabled-text);
     background-color: var(--color-btn-primary-disabled-bg);
     border-color: var(--color-btn-primary-disabled-border);
+    box-shadow: none;
 
     .octicon {
       color: var(--color-btn-primary-disabled-text);
