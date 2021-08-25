@@ -82,12 +82,6 @@
     transition-duration: 0.1s;
   }
 
-  &:active {
-    background-color: var(--color-btn-active-bg);
-    border-color: var(--color-btn-active-border);
-    transition: none;
-  }
-
   &.selected,
   &[aria-selected=true] {
     background-color: var(--color-btn-selected-bg);
@@ -108,6 +102,14 @@
     border-color: var(--color-btn-focus-border);
     outline: none;
     box-shadow: var(--color-btn-focus-shadow);
+  }
+
+  // Keep :active after :focus. Allows to see the inset shadow when the button is pressed
+  &:active {
+    background-color: var(--color-btn-active-bg);
+    border-color: var(--color-btn-active-border);
+    box-shadow: var(--color-btn-shadow-active);
+    transition: none;
   }
 }
 
@@ -166,14 +168,11 @@
 // Outline button
 
 .btn-outline {
-  color: var(--color-btn-outline-text);
+  background-color: transparent;
 
   &:hover,
   [open] > & {
-    color: var(--color-btn-outline-hover-text);
-    background-color: var(--color-btn-outline-hover-bg);
     border-color: var(--color-btn-outline-hover-border);
-    box-shadow: var(--color-btn-outline-hover-shadow), var(--color-btn-outline-hover-inset-shadow);
 
     .Counter {
       background-color: var(--color-btn-outline-hover-counter-bg);
@@ -187,28 +186,20 @@
   &:active,
   &.selected,
   &[aria-selected=true] {
-    color: var(--color-btn-outline-selected-text);
-    background-color: var(--color-btn-outline-selected-bg);
     border-color: var(--color-btn-outline-selected-border);
-    box-shadow: var(--color-btn-outline-selected-shadow);
+    box-shadow: none;
   }
 
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
-    color: var(--color-btn-outline-disabled-text);
-    background-color: var(--color-btn-outline-disabled-bg);
+    color: var(--color-text-disabled);
     border-color: var(--color-btn-border);
     box-shadow: none;
 
     .Counter {
       background-color: var(--color-btn-outline-disabled-counter-bg);
     }
-  }
-
-  &:focus {
-    border-color: var(--color-btn-outline-focus-border);
-    box-shadow: var(--color-btn-outline-focus-shadow);
   }
 
   .Counter {
