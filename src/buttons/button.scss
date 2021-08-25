@@ -96,12 +96,10 @@
     border-color: var(--color-btn-border);
   }
 
-  // Keep :focus after :disabled. Allows to see the focus ring even on disabled buttons
+  // Keep :focus after :disabled. Allows to see the border focus color even on disabled buttons
   &:focus,
   &.focus {
     border-color: var(--color-btn-focus-border);
-    outline: none;
-    box-shadow: var(--color-btn-focus-shadow);
   }
 
   // Keep :active after :focus. Allows to see the inset shadow when the button is pressed
@@ -151,7 +149,6 @@
   &.focus {
     background-color: var(--color-btn-primary-focus-bg);
     border-color: var(--color-btn-primary-focus-border);
-    box-shadow: var(--color-btn-primary-focus-shadow);
   }
 
   .Counter {
@@ -263,7 +260,6 @@
 
   &:focus {
     border-color: var(--color-btn-danger-focus-border);
-    box-shadow: var(--color-btn-danger-focus-shadow);
   }
 
   .Counter {
