@@ -132,6 +132,7 @@
   &[aria-selected=true] {
     background-color: var(--color-btn-primary-selected-bg);
     box-shadow: var(--color-btn-primary-selected-shadow);
+    border-color: var(--color-btn-primary-border);
   }
 
   &:disabled,
