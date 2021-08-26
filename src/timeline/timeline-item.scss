@@ -34,7 +34,8 @@
   // stylelint-disable-next-line primer/colors
   color: var(--color-icon-secondary);
   align-items: center;
-  background-color: var(--color-timeline-badge-bg);
+  background-color: var(--color-bg-canvas); // covers the "line"
+  background-image: linear-gradient(0deg, var(--color-timeline-badge-bg), var(--color-timeline-badge-bg));
   // stylelint-disable-next-line primer/borders
   border: 2px $border-style var(--color-bg-canvas);
   border-radius: 50%;
