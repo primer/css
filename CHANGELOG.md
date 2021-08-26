@@ -1,5 +1,11 @@
 # @primer/css
 
+## 17.6.1
+
+### Patch Changes
+
+- [#1550](https://github.com/primer/css/pull/1550) [`8a684ee4`](https://github.com/primer/css/commit/8a684ee4d1572de543aef2f11d4756f6fdfda638) Thanks [@simurai](https://github.com/simurai)! - Add gradient hack to TimelineItem-badge
+
 ## 17.6.0
 
 ### Minor Changes
