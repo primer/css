@@ -43,7 +43,6 @@
   &:focus,
   &.zeroclipboard-is-hover {
     background-color: var(--color-btn-hover-bg);
-    outline: none;
     box-shadow: none;
   }
 
@@ -104,7 +103,6 @@
   color: var(--color-text-secondary);
   background: transparent;
   border: 0;
-  outline: none;
 
   &:hover {
     color: var(--color-text-primary);
@@ -114,8 +112,6 @@
   &:focus {
     color: var(--color-text-tertiary);
     border-color: var(--color-btn-active-border);
-    outline: none;
-    box-shadow: var(--color-btn-focus-shadow);
   }
 }
 
@@ -198,6 +194,7 @@
   border-top-right-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
   box-shadow: var(--color-shadow-small), var(--color-shadow-highlight);
+  outline-offset: 1 + $border-width * 2;
 
   &:hover,
   &:active {
@@ -211,7 +208,5 @@
 
   &:focus {
     z-index: 1;
-    outline: 0;
-    box-shadow: var(--color-state-focus-shadow);
   }
 }

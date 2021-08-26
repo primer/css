@@ -17,6 +17,7 @@
   border: $border-width $border-style;
   border-radius: $border-radius;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
+  outline-offset: 1 + $border-width * 2;
 
   &:hover {
     text-decoration: none;
@@ -169,6 +170,7 @@
 
 .btn-outline {
   background-color: transparent;
+  box-shadow: none;
 
   &:hover,
   [open] > & {
