@@ -6,13 +6,15 @@ import fs from 'fs'
  * array and a "message" string.
  */
 const versionDeprecations = {
-  '17.0.0': [
+  '17.6.1': [
     {
       selectors: [
         '.break-word'
       ],
       message: 'The .break-word class has been deprecated, use .wb-break-word instead.'
-    },
+    }
+  ],
+  '17.0.0': [
     {
       variables: ['$h000-size', '$h000-size-mobile'],
       message: `This variable is deprecated, please refer to the Marketing Typography documentation.`
