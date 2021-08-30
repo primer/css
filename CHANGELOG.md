@@ -1,5 +1,13 @@
 # @primer/css
 
+## 17.6.2
+
+### Patch Changes
+
+- [#1556](https://github.com/primer/css/pull/1556) [`3ad13aba`](https://github.com/primer/css/commit/3ad13abac3deccc768af0ba5eb90f1365eb977f3) Thanks [@simurai](https://github.com/simurai)! - Fix TimelineItem--condensed background
+
+* [#1552](https://github.com/primer/css/pull/1552) [`966de4ee`](https://github.com/primer/css/commit/966de4ee0f1cfcd5f5a9f75560460adaafd47f06) Thanks [@simurai](https://github.com/simurai)! - Fix `code` in headers
+
 ## 17.6.1
 
 ### Patch Changes
