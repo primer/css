@@ -30,11 +30,11 @@
   // stylelint-disable-next-line primer/spacing
   margin-top: 2px;
   list-style: none;
-  background-color: var(--color-bg-overlay);
+  background-color: var(--color-primer-canvas-backdrop);
   background-clip: padding-box;
-  border: $border-width $border-style var(--color-border-primary);
+  border: $border-width $border-style var(--color-border-default);
   border-radius: $border-radius;
-  box-shadow: var(--color-dropdown-shadow);
+  box-shadow: var(--color-shadow-large);
 
   &::before,
   &::after {
@@ -47,7 +47,7 @@
   &::before {
     // stylelint-disable-next-line primer/borders
     border: $spacer-2 $border-style transparent;
-    border-bottom-color: var(--color-border-primary);
+    border-bottom-color: var(--color-border-default);
   }
 
   // caret background (should match dropdown background)
@@ -55,7 +55,7 @@
     // stylelint-disable-next-line primer/borders
     border: 7px $border-style transparent;
     // stylelint-disable-next-line primer/borders
-    border-bottom-color: var(--color-bg-overlay);
+    border-bottom-color: var(--color-primer-canvas-backdrop);
   }
 
   // stylelint-disable-next-line selector-max-type
@@ -79,15 +79,15 @@
   display: block;
   padding: $spacer-1 $spacer-2 $spacer-1 $spacer-3;
   overflow: hidden;
-  color: var(--color-text-primary);
+  color: var(--color-fg-default);
   text-overflow: ellipsis;
   white-space: nowrap;
 
   &:focus,
   &:hover {
-    color: var(--color-state-hover-primary-text);
+    color: var(--color-fg-on-emphasis);
     text-decoration: none;
-    background-color: var(--color-state-hover-primary-bg);
+    background-color: var(--color-accent-emphasis);
     outline: none;
 
     > .octicon {
@@ -122,13 +122,13 @@
   display: block;
   height: 0;
   margin: $spacer-2 0;
-  border-top: $border-width $border-style var(--color-border-primary);
+  border-top: $border-width $border-style var(--color-border-default);
 }
 
 .dropdown-header {
   padding: $spacer-1 $spacer-3;
   font-size: $h6-size;
-  color: var(--color-text-secondary);
+  color: var(--color-fg-muted);
 }
 
 .dropdown-item[aria-checked="false"] .octicon-check {
@@ -153,7 +153,7 @@
     right: -$spacer-3;
     left: auto;
     border-color: transparent;
-    border-left-color: var(--color-border-primary);
+    border-left-color: var(--color-border-default);
   }
 
   &::after {
@@ -162,7 +162,7 @@
     left: auto;
     border-color: transparent;
     // stylelint-disable-next-line primer/borders
-    border-left-color: var(--color-bg-overlay);
+    border-left-color: var(--color-primer-canvas-backdrop);
   }
 }
 
@@ -177,7 +177,7 @@
     top: 10px;
     left: -$spacer-3;
     border-color: transparent;
-    border-right-color: var(--color-border-primary);
+    border-right-color: var(--color-border-default);
   }
 
   &::after {
@@ -185,7 +185,7 @@
     left: -14px;
     border-color: transparent;
     // stylelint-disable-next-line primer/borders
-    border-right-color: var(--color-bg-overlay);
+    border-right-color: var(--color-primer-canvas-backdrop);
   }
 }
 
@@ -206,7 +206,7 @@
     bottom: -$spacer-2;
     left: 9px;
     // stylelint-disable-next-line primer/borders
-    border-top: $spacer-2 $border-style var(--color-border-primary);
+    border-top: $spacer-2 $border-style var(--color-border-default);
     // stylelint-disable-next-line primer/borders
     border-right: $spacer-2 $border-style transparent;
     border-bottom: 0;
@@ -218,7 +218,7 @@
     bottom: -7px;
     left: 10px;
     // stylelint-disable-next-line primer/borders
-    border-top: 7px $border-style var(--color-bg-overlay);
+    border-top: 7px $border-style var(--color-primer-canvas-backdrop);
     // stylelint-disable-next-line primer/borders
     border-right: 7px $border-style transparent;
     border-bottom: 0;

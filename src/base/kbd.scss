@@ -8,9 +8,9 @@ kbd {
   font: 11px $mono-font;
   // stylelint-disable-next-line primer/typography
   line-height: 10px;
-  color: var(--color-text-primary);
+  color: var(--color-fg-default);
   vertical-align: middle;
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-canvas-subtle);
   // stylelint-disable-next-line primer/borders
   border: $border-style $border-width var(--color-border-tertiary);
   border-bottom-color: var(--color-border-tertiary);

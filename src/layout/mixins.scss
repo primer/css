@@ -70,8 +70,8 @@
     &.Layout-divider--flowRow-shallow {
       height: 8px;
       margin-right: 0;
-      background: var(--color-bg-canvas-inset);
-      border-color: var(--color-border-primary);
+      background: var(--color-canvas-inset);
+      border-color: var(--color-border-default);
       border-style: solid;
       border-width: $border-width 0;
     }

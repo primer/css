@@ -24,7 +24,7 @@
     margin-left: -9px;
     // stylelint-disable-next-line primer/borders
     border: $spacer-2 $border-style transparent;
-    border-bottom-color: var(--color-border-primary);
+    border-bottom-color: var(--color-border-default);
   }
 
   &::after {
@@ -33,12 +33,12 @@
     // stylelint-disable-next-line primer/borders
     border: 7px $border-style transparent;
     // stylelint-disable-next-line primer/borders
-    border-bottom-color: var(--color-bg-overlay);
+    border-bottom-color: var(--color-primer-canvas-backdrop);
   }
 
   // TODO: Refactor so that .Popover is not dependant on .Box
   &.Box {
-    background-color: var(--color-bg-overlay);
+    background-color: var(--color-primer-canvas-backdrop);
   }
 }
 
@@ -54,13 +54,13 @@
 
   &::before {
     bottom: -$spacer-3;
-    border-top-color: var(--color-border-primary);
+    border-top-color: var(--color-border-default);
   }
 
   &::after {
     bottom: -14px;
     // stylelint-disable-next-line primer/borders
-    border-top-color: var(--color-bg-overlay);
+    border-top-color: var(--color-primer-canvas-backdrop);
   }
 }
 
@@ -133,13 +133,13 @@
 .Popover-message--right-bottom {
   &::before {
     right: -$spacer-3;
-    border-left-color: var(--color-border-primary);
+    border-left-color: var(--color-border-default);
   }
 
   &::after {
     right: -14px;
     // stylelint-disable-next-line primer/borders
-    border-left-color: var(--color-bg-overlay);
+    border-left-color: var(--color-primer-canvas-backdrop);
   }
 }
 
@@ -149,13 +149,13 @@
 .Popover-message--left-bottom {
   &::before {
     left: -$spacer-3;
-    border-right-color: var(--color-border-primary);
+    border-right-color: var(--color-border-default);
   }
 
   &::after {
     left: -14px;
     // stylelint-disable-next-line primer/borders
-    border-right-color: var(--color-bg-overlay);
+    border-right-color: var(--color-primer-canvas-backdrop);
   }
 }
 
