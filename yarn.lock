@@ -4303,7 +4303,7 @@ lodash.clonedeep@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
-lodash.kebabcase@4.1.1:
+lodash.kebabcase@4.1.1, lodash.kebabcase@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
   integrity sha1-hImxyw0p/4gZXM7KRI/21swpXDY=
@@ -6075,13 +6075,14 @@ style-search@^0.1.0:
   resolved "https://registry.yarnpkg.com/style-search/-/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
   integrity sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=
 
-stylelint-config-primer@11.0.1:
-  version "11.0.1"
-  resolved "https://registry.yarnpkg.com/stylelint-config-primer/-/stylelint-config-primer-11.0.1.tgz#f96a37395be39bc624c2cccc31ea069d06d79a75"
-  integrity sha512-e0PmXqdL1pWWzbi0SVgqp8Dhd8NYssOt+FVjJl8sEftcocWED/x1CNhZlUk3zxpzIJU4UkPw28PsyI/c5uffiQ==
+stylelint-config-primer@11.1.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-primer/-/stylelint-config-primer-11.1.0.tgz#c8a7f35e271122d452b6c0ce8396d02e48a2448e"
+  integrity sha512-K4sqmzjgHTbhhpXjWQ3R8wzvKJZsVH6eSU5CbRB3pXWLkUIs07n6HEwRu2B4yPdPoa6gkoJwsUdHQV8gDxW8cg==
   dependencies:
     anymatch "^3.1.1"
     globby "^11.0.1"
+    lodash.kebabcase "^4.1.1"
     postcss-value-parser "^4.0.2"
     string.prototype.matchall "^4.0.2"
     stylelint-no-unsupported-browser-features "^4.1.4"
