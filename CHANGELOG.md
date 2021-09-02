@@ -1,5 +1,15 @@
 # @primer/css
 
+## 17.7.0
+
+### Minor Changes
+
+- [#1555](https://github.com/primer/css/pull/1555) [`4ae2174e`](https://github.com/primer/css/commit/4ae2174e33d3bd9be418176af4de75dd97b761c5) Thanks [@jonrohan](https://github.com/jonrohan)! - Add `.wb-break-word` class to existing `.break-word`
+
+### Patch Changes
+
+- [#1563](https://github.com/primer/css/pull/1563) [`679d70b5`](https://github.com/primer/css/commit/679d70b579c5203079e6a0559fe9dccbfcf0acae) Thanks [@simurai](https://github.com/simurai)! - Revert `TimelineItem-badge` fix
+
 ## 17.6.2
 
 ### Patch Changes
