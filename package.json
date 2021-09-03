@@ -34,7 +34,7 @@
     "release": "changeset publish"
   },
   "dependencies": {
-    "@primer/primitives": "0.0.0-202183195617"
+    "@primer/primitives": "0.0.0-20218320450"
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.4.0",
