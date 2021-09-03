@@ -1,5 +1,15 @@
 # @primer/css
 
+## 17.8.0
+
+### Minor Changes
+
+- [#1567](https://github.com/primer/css/pull/1567) [`ab72486f`](https://github.com/primer/css/commit/ab72486f62d0f7e2397e3f0953fbcc4c46f5ef25) Thanks [@colebemis](https://github.com/colebemis)! - Remove `base/modes-v2.scss` file
+
+* [#1567](https://github.com/primer/css/pull/1567) [`ab72486f`](https://github.com/primer/css/commit/ab72486f62d0f7e2397e3f0953fbcc4c46f5ef25) Thanks [@colebemis](https://github.com/colebemis)! - Bumps `@primer/primitives` to [v4.7.0](https://github.com/primer/primitives/releases/tag/v4.7.0) which includes new [functional color system variables]
+
+- [#1567](https://github.com/primer/css/pull/1567) [`ab72486f`](https://github.com/primer/css/commit/ab72486f62d0f7e2397e3f0953fbcc4c46f5ef25) Thanks [@colebemis](https://github.com/colebemis)! - Output `dark_high_contrast` theme variables from `base/modes.scss`
+
 ## 17.7.0
 
 ### Minor Changes
