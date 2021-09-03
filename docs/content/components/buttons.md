@@ -135,7 +135,7 @@ When you want a link, but you want it padded and line heightened like a button b
 
 ```html live
 <button class="btn btn-invisible" type="button">Cancel</button>
-<button class="btn" type="button">Submit</button>
+<button class="btn ml-2" type="button">Submit</button>
 ```
 
 ### Hidden text button

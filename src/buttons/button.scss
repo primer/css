@@ -169,12 +169,16 @@
 // Outline button
 
 .btn-outline {
-  background-color: transparent;
+  background-color: var(--color-btn-outline-bg);
   box-shadow: none;
+  color: var(--color-btn-outline-text);
 
   &:hover,
   [open] > & {
+    color: var(--color-btn-outline-hover-text);
+    background-color: var(--color-btn-outline-hover-bg);
     border-color: var(--color-btn-outline-hover-border);
+    box-shadow: var(--color-btn-outline-hover-shadow), var(--color-btn-outline-hover-inset-shadow);
 
     .Counter {
       background-color: var(--color-btn-outline-hover-counter-bg);
@@ -188,20 +192,28 @@
   &:active,
   &.selected,
   &[aria-selected=true] {
+    color: var(--color-btn-outline-selected-text);
+    background-color: var(--color-btn-outline-selected-bg);
     border-color: var(--color-btn-outline-selected-border);
-    box-shadow: none;
+    box-shadow: var(--color-btn-outline-selected-shadow);
   }
 
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
-    color: var(--color-text-disabled);
+    color: var(--color-btn-outline-disabled-text);
+    background-color: var(--color-btn-outline-disabled-bg);
     border-color: var(--color-btn-border);
     box-shadow: none;
 
     .Counter {
       background-color: var(--color-btn-outline-disabled-counter-bg);
     }
+  }
+
+  &:focus {
+    border-color: var(--color-btn-outline-focus-border);
+    box-shadow: var(--color-btn-outline-focus-shadow);
   }
 
   .Counter {
