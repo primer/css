@@ -6,6 +6,14 @@ import fs from 'fs'
  * array and a "message" string.
  */
 const versionDeprecations = {
+  '17.6.1': [
+    {
+      selectors: [
+        '.break-word'
+      ],
+      message: 'The .break-word class has been deprecated, use .wb-break-word instead.'
+    }
+  ],
   '17.0.0': [
     {
       variables: ['$h000-size', '$h000-size-mobile'],

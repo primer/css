@@ -40,7 +40,7 @@ of the sidebar position.
 
 ### Dividers
 
-Use `Layout--divided` in conjuction with a `Layout-divider` to show a divider between the main content and the sidebar.
+Use `Layout--divided` in conjunction with a `Layout-divider` to show a divider between the main content and the sidebar.
 Flowing as row:
 - default: shows a `1px` line between main and sidebar
 - `Layout-divider--flowRow-shallow`: shows a filled `8px` divider.

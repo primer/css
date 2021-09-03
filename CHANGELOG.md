@@ -1,5 +1,29 @@
 # @primer/css
 
+## 17.7.0
+
+### Minor Changes
+
+- [#1555](https://github.com/primer/css/pull/1555) [`4ae2174e`](https://github.com/primer/css/commit/4ae2174e33d3bd9be418176af4de75dd97b761c5) Thanks [@jonrohan](https://github.com/jonrohan)! - Add `.wb-break-word` class to existing `.break-word`
+
+### Patch Changes
+
+- [#1563](https://github.com/primer/css/pull/1563) [`679d70b5`](https://github.com/primer/css/commit/679d70b579c5203079e6a0559fe9dccbfcf0acae) Thanks [@simurai](https://github.com/simurai)! - Revert `TimelineItem-badge` fix
+
+## 17.6.2
+
+### Patch Changes
+
+- [#1556](https://github.com/primer/css/pull/1556) [`3ad13aba`](https://github.com/primer/css/commit/3ad13abac3deccc768af0ba5eb90f1365eb977f3) Thanks [@simurai](https://github.com/simurai)! - Fix TimelineItem--condensed background
+
+* [#1552](https://github.com/primer/css/pull/1552) [`966de4ee`](https://github.com/primer/css/commit/966de4ee0f1cfcd5f5a9f75560460adaafd47f06) Thanks [@simurai](https://github.com/simurai)! - Fix `code` in headers
+
+## 17.6.1
+
+### Patch Changes
+
+- [#1550](https://github.com/primer/css/pull/1550) [`8a684ee4`](https://github.com/primer/css/commit/8a684ee4d1572de543aef2f11d4756f6fdfda638) Thanks [@simurai](https://github.com/simurai)! - Add gradient hack to TimelineItem-badge
+
 ## 17.6.0
 
 ### Minor Changes

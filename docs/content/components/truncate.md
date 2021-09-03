@@ -10,7 +10,7 @@ When text reaches lengths larger than existing container, shorten with ellipses.
 
 ## Truncate
 
-Adding the `.Truncate` class and wrapping the inner text with `.Truncate-text` will truncate the text. `.Truncate-text` must be a direct decendent of `.Truncate`.
+Adding the `.Truncate` class and wrapping the inner text with `.Truncate-text` will truncate the text. `.Truncate-text` must be a direct descendant of `.Truncate`.
 
 ```html live
 <div class="Box p-2" style="resize: horizontal;overflow: scroll;">

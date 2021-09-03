@@ -156,7 +156,7 @@ The list of items is arguably the most important subcomponent within the menu. B
 Enable live filtering of list items within a `.select-menu-list` with a search input. Only a handful of changes to your menu's markup are required:
 
 - Add the text input, housed in `.select-menu-filters`, before the `.select-menu-list`.
-- Add two attritubes, `data-filterable-for` and `data-filterable-type`, to the `.select-menu-list` to scope the filter to the list.
+- Add two attributes, `data-filterable-for` and `data-filterable-type`, to the `.select-menu-list` to scope the filter to the list.
 
 There are no required changes for the `.select-menu-item`s.
 
