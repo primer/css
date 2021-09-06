@@ -40,7 +40,7 @@
     "@changesets/changelog-github": "0.4.0",
     "@changesets/cli": "2.16.0",
     "@github/prettier-config": "0.0.4",
-    "autoprefixer": "10.3.3",
+    "autoprefixer": "10.3.4",
     "cssstats": "4.0.2",
     "eslint": "7.32.0",
     "eslint-plugin-github": "4.2.0",
