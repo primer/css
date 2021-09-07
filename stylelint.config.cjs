@@ -8,7 +8,7 @@ module.exports = {
   rules: {
     'scss/dollar-variable-default': [true, {ignore: 'local'}],
     'primer/no-override': false,
-    'primer/colors': true,
+    'primer/colors': false,
     'primer/borders': true,
     'primer/spacing': true,
     'primer/typography': true,
