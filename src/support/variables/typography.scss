@@ -32,29 +32,28 @@ $lh-condensed: 1.25 !default;
 $lh-default: 1.5 !default;
 
 // Font stacks
-// stylelint-disable no-eol-whitespace
 $body-font:
   // Apple OSs
   -apple-system,
   BlinkMacSystemFont,
-  
+
   // Windows
   // Note this should be prioritized over `system-ui` to avoid legacy fonts.
   // See https://infinnie.github.io/blog/2017/systemui.html
-  "Segoe UI Variable",
+  "Segoe UI Variable Text",
   "Segoe UI",
-  
+  "Meiryo", // Improves font rendering for Japanese, see https://github.com/primer/css/pull/1573.
+
   // Linux-friendly system-level fonts + fallbacks
   system-ui,
   ui-sans-serif,
   Helvetica,
   Arial,
   sans-serif,
-  
+
   // Emojis
   "Apple Color Emoji",
   "Segoe UI Emoji" !default;
-// stylelint-enable no-eol-whitespace
 
 // Monospace font stack
 // Note: SFMono-Regular needs to come before SF Mono to fix an older version of the font in Chrome
