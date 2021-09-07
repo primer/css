@@ -2,7 +2,6 @@
 title: Colors
 description: 'Immutable, atomic CSS classes to rapidly build product'
 status: Beta
-status_issue: 'https://github.com/github/design-systems/issues/97'
 ---
 
 import {Box, BorderBox} from '@primer/components'
@@ -15,120 +14,130 @@ import {PaletteTable, PaletteTableFragment, PaletteHeading, PaletteCell, Palette
 
 Use color utilities to apply color to the background of elements, text, and borders.
 
-## Text colors
+## Text
 
 Use text color utilities to set text to a specific color. Color contrast must pass a minimum WCAG accessibility rating of [level AA](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html). This ensures that viewers who cannot see the full color spectrum are able to read the text. To customize outside of the suggested combinations below, we recommend using this [color contrast testing tool](https://colorable.jxnblk.com/). For more information, read our [accessibility standards](../principles/accessibility).
 
-> ⚠️ The `.color-text-warning` currently doesn't pass accessibility standards, but will be updated in the future. **Use with caution**.
-
 ```html live
-<div class="color-text-primary mb-2">.color-text-primary</div>
-<div class="color-text-secondary mb-2">.color-text-secondary</div>
-<div class="color-text-tertiary mb-2">.color-text-tertiary</div>
-<div class="color-text-link mb-2">.color-text-link</div>
-<div class="color-text-success mb-2">.color-text-success</div>
-<div class="color-text-warning mb-2">.color-text-warning <span class="tooltipped tooltipped-n" aria-label="Does not meet accessibility standards">⚠️</span></div>
-<div class="color-text-danger mb-2">.color-text-danger</div>
+<div class="color-fg-default mb-2">.color-fg-default</div>
+<div class="color-fg-muted mb-2">.color-fg-muted</div>
+<div class="color-fg-subtle mb-2">.color-fg-subtle</div>
+<div class="color-fg-on-emphasis color-accent-emphasis mb-2">.color-fg-on-emphasis</div>
 ```
 
 You can set the color inheritance on an element by using the `text-inherit` class.
 
 ```html live
-<div class="color-text-success">This text is green, <a href="#" class="text-inherit">including the link</a></div>
+<div class="color-success-fg">This text is green, <a href="#" class="text-inherit">including the link</a></div>
 ```
 
-## Icon colors
-
-Use icon color utilities to set [Octicons](https://primer.style/octicons) to a specific color.
-
-```html live
-<div class="mb-2">
-  <!-- <%= octicon "octoface", :height => 16, :class => "icon-primary mr-1" %> -->
-  <svg class="color-icon-primary mr-1 octicon octicon-octoface" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.326 1.973a1.2 1.2 0 011.49-.832c.387.112.977.307 1.575.602.586.291 1.243.71 1.7 1.296.022.027.042.056.061.084A13.22 13.22 0 018 3c.67 0 1.289.037 1.861.108l.051-.07c.457-.586 1.114-1.004 1.7-1.295a9.654 9.654 0 011.576-.602 1.2 1.2 0 011.49.832c.14.493.356 1.347.479 2.29.079.604.123 1.28.07 1.936.541.977.773 2.11.773 3.301C16 13 14.5 15 8 15s-8-2-8-5.5c0-1.034.238-2.128.795-3.117-.08-.712-.034-1.46.052-2.12.122-.943.34-1.797.479-2.29zM8 13.065c6 0 6.5-2 6-4.27C13.363 5.905 11.25 5 8 5s-5.363.904-6 3.796c-.5 2.27 0 4.27 6 4.27z"></path><path d="M4 8a1 1 0 012 0v1a1 1 0 01-2 0V8zm2.078 2.492c-.083-.264.146-.492.422-.492h3c.276 0 .505.228.422.492C9.67 11.304 8.834 12 8 12c-.834 0-1.669-.696-1.922-1.508zM10 8a1 1 0 112 0v1a1 1 0 11-2 0V8z"></path></svg>
-  .color-icon-primary
-</div>
-<div class="mb-2">
-  <!-- <%= octicon "octoface", :height => 16, :class => "color-icon-secondary mr-1" %> -->
-  <svg class="color-icon-secondary mr-1 octicon octicon-octoface" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.326 1.973a1.2 1.2 0 011.49-.832c.387.112.977.307 1.575.602.586.291 1.243.71 1.7 1.296.022.027.042.056.061.084A13.22 13.22 0 018 3c.67 0 1.289.037 1.861.108l.051-.07c.457-.586 1.114-1.004 1.7-1.295a9.654 9.654 0 011.576-.602 1.2 1.2 0 011.49.832c.14.493.356 1.347.479 2.29.079.604.123 1.28.07 1.936.541.977.773 2.11.773 3.301C16 13 14.5 15 8 15s-8-2-8-5.5c0-1.034.238-2.128.795-3.117-.08-.712-.034-1.46.052-2.12.122-.943.34-1.797.479-2.29zM8 13.065c6 0 6.5-2 6-4.27C13.363 5.905 11.25 5 8 5s-5.363.904-6 3.796c-.5 2.27 0 4.27 6 4.27z"></path><path d="M4 8a1 1 0 012 0v1a1 1 0 01-2 0V8zm2.078 2.492c-.083-.264.146-.492.422-.492h3c.276 0 .505.228.422.492C9.67 11.304 8.834 12 8 12c-.834 0-1.669-.696-1.922-1.508zM10 8a1 1 0 112 0v1a1 1 0 11-2 0V8z"></path></svg>
-  .color-icon-secondary
-</div>
-<div class="mb-2">
-  <!-- <%= octicon "octoface", :height => 16, :class => "color-icon-tertiary mr-1" %> -->
-  <svg class="color-icon-tertiary mr-1 octicon octicon-octoface" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.326 1.973a1.2 1.2 0 011.49-.832c.387.112.977.307 1.575.602.586.291 1.243.71 1.7 1.296.022.027.042.056.061.084A13.22 13.22 0 018 3c.67 0 1.289.037 1.861.108l.051-.07c.457-.586 1.114-1.004 1.7-1.295a9.654 9.654 0 011.576-.602 1.2 1.2 0 011.49.832c.14.493.356 1.347.479 2.29.079.604.123 1.28.07 1.936.541.977.773 2.11.773 3.301C16 13 14.5 15 8 15s-8-2-8-5.5c0-1.034.238-2.128.795-3.117-.08-.712-.034-1.46.052-2.12.122-.943.34-1.797.479-2.29zM8 13.065c6 0 6.5-2 6-4.27C13.363 5.905 11.25 5 8 5s-5.363.904-6 3.796c-.5 2.27 0 4.27 6 4.27z"></path><path d="M4 8a1 1 0 012 0v1a1 1 0 01-2 0V8zm2.078 2.492c-.083-.264.146-.492.422-.492h3c.276 0 .505.228.422.492C9.67 11.304 8.834 12 8 12c-.834 0-1.669-.696-1.922-1.508zM10 8a1 1 0 112 0v1a1 1 0 11-2 0V8z"></path></svg>
-  .color-icon-tertiary
-</div>
-<div class="mb-2">
-  <!-- <%= octicon "octoface", :height => 16, :class => "color-icon-info mr-1" %> -->
-  <svg class="color-icon-info mr-1 octicon octicon-octoface" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.326 1.973a1.2 1.2 0 011.49-.832c.387.112.977.307 1.575.602.586.291 1.243.71 1.7 1.296.022.027.042.056.061.084A13.22 13.22 0 018 3c.67 0 1.289.037 1.861.108l.051-.07c.457-.586 1.114-1.004 1.7-1.295a9.654 9.654 0 011.576-.602 1.2 1.2 0 011.49.832c.14.493.356 1.347.479 2.29.079.604.123 1.28.07 1.936.541.977.773 2.11.773 3.301C16 13 14.5 15 8 15s-8-2-8-5.5c0-1.034.238-2.128.795-3.117-.08-.712-.034-1.46.052-2.12.122-.943.34-1.797.479-2.29zM8 13.065c6 0 6.5-2 6-4.27C13.363 5.905 11.25 5 8 5s-5.363.904-6 3.796c-.5 2.27 0 4.27 6 4.27z"></path><path d="M4 8a1 1 0 012 0v1a1 1 0 01-2 0V8zm2.078 2.492c-.083-.264.146-.492.422-.492h3c.276 0 .505.228.422.492C9.67 11.304 8.834 12 8 12c-.834 0-1.669-.696-1.922-1.508zM10 8a1 1 0 112 0v1a1 1 0 11-2 0V8z"></path></svg>
-  .color-icon-info
-</div>
-<div class="mb-2">
-  <!-- <%= octicon "octoface", :height => 16, :class => "color-icon-success mr-1" %> -->
-  <svg class="color-icon-success mr-1 octicon octicon-octoface" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.326 1.973a1.2 1.2 0 011.49-.832c.387.112.977.307 1.575.602.586.291 1.243.71 1.7 1.296.022.027.042.056.061.084A13.22 13.22 0 018 3c.67 0 1.289.037 1.861.108l.051-.07c.457-.586 1.114-1.004 1.7-1.295a9.654 9.654 0 011.576-.602 1.2 1.2 0 011.49.832c.14.493.356 1.347.479 2.29.079.604.123 1.28.07 1.936.541.977.773 2.11.773 3.301C16 13 14.5 15 8 15s-8-2-8-5.5c0-1.034.238-2.128.795-3.117-.08-.712-.034-1.46.052-2.12.122-.943.34-1.797.479-2.29zM8 13.065c6 0 6.5-2 6-4.27C13.363 5.905 11.25 5 8 5s-5.363.904-6 3.796c-.5 2.27 0 4.27 6 4.27z"></path><path d="M4 8a1 1 0 012 0v1a1 1 0 01-2 0V8zm2.078 2.492c-.083-.264.146-.492.422-.492h3c.276 0 .505.228.422.492C9.67 11.304 8.834 12 8 12c-.834 0-1.669-.696-1.922-1.508zM10 8a1 1 0 112 0v1a1 1 0 11-2 0V8z"></path></svg>
-  .color-icon-success
-</div>
-<div class="mb-2">
-  <!-- <%= octicon "octoface", :height => 16, :class => "color-icon-warning mr-1" %> -->
-  <svg class="color-icon-warning mr-1 octicon octicon-octoface" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.326 1.973a1.2 1.2 0 011.49-.832c.387.112.977.307 1.575.602.586.291 1.243.71 1.7 1.296.022.027.042.056.061.084A13.22 13.22 0 018 3c.67 0 1.289.037 1.861.108l.051-.07c.457-.586 1.114-1.004 1.7-1.295a9.654 9.654 0 011.576-.602 1.2 1.2 0 011.49.832c.14.493.356 1.347.479 2.29.079.604.123 1.28.07 1.936.541.977.773 2.11.773 3.301C16 13 14.5 15 8 15s-8-2-8-5.5c0-1.034.238-2.128.795-3.117-.08-.712-.034-1.46.052-2.12.122-.943.34-1.797.479-2.29zM8 13.065c6 0 6.5-2 6-4.27C13.363 5.905 11.25 5 8 5s-5.363.904-6 3.796c-.5 2.27 0 4.27 6 4.27z"></path><path d="M4 8a1 1 0 012 0v1a1 1 0 01-2 0V8zm2.078 2.492c-.083-.264.146-.492.422-.492h3c.276 0 .505.228.422.492C9.67 11.304 8.834 12 8 12c-.834 0-1.669-.696-1.922-1.508zM10 8a1 1 0 112 0v1a1 1 0 11-2 0V8z"></path></svg>
-  .color-icon-warning
-</div>
-<div class="mb-2">
-  <!-- <%= octicon "octoface", :height => 16, :class => "color-icon-danger mr-1" %> -->
-  <svg class="color-icon-danger mr-1 octicon octicon-octoface" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.326 1.973a1.2 1.2 0 011.49-.832c.387.112.977.307 1.575.602.586.291 1.243.71 1.7 1.296.022.027.042.056.061.084A13.22 13.22 0 018 3c.67 0 1.289.037 1.861.108l.051-.07c.457-.586 1.114-1.004 1.7-1.295a9.654 9.654 0 011.576-.602 1.2 1.2 0 011.49.832c.14.493.356 1.347.479 2.29.079.604.123 1.28.07 1.936.541.977.773 2.11.773 3.301C16 13 14.5 15 8 15s-8-2-8-5.5c0-1.034.238-2.128.795-3.117-.08-.712-.034-1.46.052-2.12.122-.943.34-1.797.479-2.29zM8 13.065c6 0 6.5-2 6-4.27C13.363 5.905 11.25 5 8 5s-5.363.904-6 3.796c-.5 2.27 0 4.27 6 4.27z"></path><path d="M4 8a1 1 0 012 0v1a1 1 0 01-2 0V8zm2.078 2.492c-.083-.264.146-.492.422-.492h3c.276 0 .505.228.422.492C9.67 11.304 8.834 12 8 12c-.834 0-1.669-.696-1.922-1.508zM10 8a1 1 0 112 0v1a1 1 0 11-2 0V8z"></path></svg>
-  .color-icon-danger
-</div>
-```
-
-## Background colors
+## Canvas
 
 Background colors are most commonly used for filling large blocks of content or areas with a color. When selecting a background color, make sure the foreground color contrast passes a minimum WCAG accessibility rating of [level AA](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html). Meeting these standards ensures that content is accessible by everyone, regardless of disability or user device. You can [check your color combination with this demo site](https://colorable.jxnblk.com/). For more information, read our [accessibility standards](../principles/accessibility).
 
 ```html live
-<div class="color-bg-canvas mb-2">.color-bg-canvas</div>
-<div class="color-bg-primary mb-2">.color-bg-primary</div>
-<div class="color-bg-secondary mb-2">.color-bg-secondary</div>
-<div class="color-bg-tertiary mb-2">.color-bg-tertiary</div>
-<div class="color-bg-info mb-2">.color-bg-info</div>
-<div class="color-bg-success mb-2">.color-bg-success</div>
-<div class="color-bg-warning mb-2">.color-bg-warning</div>
-<div class="color-bg-danger mb-2">.color-bg-danger</div>
+<div class="color-canvas-default mb-2">.color-canvas-default</div>
+<div class="color-canvas-overlay mb-2">.color-canvas-overlay</div>
+<div class="color-canvas-inset mb-2">.color-canvas-inset</div>
+<div class="color-canvas-subtle mb-2">.color-canvas-subtle</div>
 ```
 
-## Inversed and permanent colors
-
-⚠️ WIP: Don't use in produciton. They might still change.
-
-You can inverse the canvas background color. Be sure to also inverse the text color (`.color-text-inverse`) to give enough contrast.
-
-```html live
-<div class="color-bg-canvas-inverse color-text-inverse mb-2">.color-bg-canvas-inverse .color-text-inverse</div>
-```
-
-When using the functional inversed background colors the `.color-text-white` is the better choice as it keeps the text white in all color modes. An exception is the `.color-bg-warning-inverse`.
-
-```html live
-<div class="color-bg-info-inverse color-text-white mb-2">.color-bg-info-inverse .color-text-white</div>
-<div class="color-bg-success-inverse color-text-white mb-2">.color-bg-success-inverse .color-text-white</div>
-<div class="color-bg-warning-inverse mb-2">.color-bg-warning-inverse</div>
-<div class="color-bg-danger-inverse color-text-white mb-2">.color-bg-danger-inverse .color-text-white</div>
-```
-
-## Border colors
+## Border
 
 Override default border colors with the following utilities.
 
 ```html live
-<div class="border color-border-primary mb-2">.color-border-primary</div>
-<div class="border color-border-secondary mb-2">.color-border-secondary</div>
-<div class="border color-border-tertiary mb-2">.color-border-tertiary</div>
-<div class="border color-border-info mb-2">.color-border-info</div>
-<div class="border color-border-success mb-2">.color-border-success</div>
-<div class="border color-border-warning mb-2">.color-border-warning</div>
-<div class="border color-border-danger mb-2">.color-border-danger</div>
+<div class="border color-border-default mb-2">.color-border-default</div>
+<div class="border color-border-muted mb-2">.color-border-muted</div>
+<div class="border color-border-subtle mb-2">.color-border-subtle</div>
+```
 
-<div class="color-bg-canvas-inverse color-text-inverse p-3">
-  <div class="border color-border-inverse">.color-border-inverse</div>
-</div>
+## Neutral
+
+Use to highlight content without any added meaning.
+
+```html live
+<div class="color-neutral-emphasis-plus color-fg-on-emphasis mb-2">.color-neutral-emphasis-plus</div>
+<div class="color-neutral-emphasis color-fg-on-emphasis mb-2">.color-neutral-emphasis</div>
+<div class="color-neutral-muted mb-2">.color-neutral-muted</div>
+<div class="color-neutral-subtle mb-2">.color-neutral-subtle</div>
+```
+
+## Accent
+
+Use to draw attention to interactive elements.
+
+```html live
+<div class="color-accent-fg mb-2">.color-accent-fg</div>
+<div class="color-accent-emphasis color-fg-on-emphasis mb-2">.color-accent-emphasis</div>
+<div class="color-accent-muted mb-2">.color-accent-muted</div>
+<div class="color-accent-subtle mb-2">.color-accent-subtle</div>
+```
+
+## Success
+
+Use to expresses the completion or positive outcome of a task.
+
+```html live
+<div class="color-success-fg mb-2">.color-success-fg</div>
+<div class="color-success-emphasis color-fg-on-emphasis mb-2">.color-success-emphasis</div>
+<div class="color-success-muted mb-2">.color-success-muted</div>
+<div class="color-success-subtle mb-2">.color-success-subtle</div>
+```
+
+## Attention
+
+Use to warn of pending tasks or highlight active content.
+
+```html live
+<div class="color-attention-fg mb-2">.color-attention-fg</div>
+<div class="color-attention-emphasis color-fg-on-emphasis mb-2">.color-attention-emphasis</div>
+<div class="color-attention-muted mb-2">.color-attention-muted</div>
+<div class="color-attention-subtle mb-2">.color-attention-subtle</div>
+```
+
+## Severe
+
+Use when there are more than 3 levels of states, for example in heatmaps.
+
+```html live
+<div class="color-severe-fg mb-2">.color-severe-fg</div>
+<div class="color-severe-emphasis color-fg-on-emphasis mb-2">.color-severe-emphasis</div>
+<div class="color-severe-muted mb-2">.color-severe-muted</div>
+<div class="color-severe-subtle mb-2">.color-severe-subtle</div>
+```
+
+## Danger
+
+Use to inform of error or another negative message.
+
+```html live
+<div class="color-danger-fg mb-2">.color-danger-fg</div>
+<div class="color-danger-emphasis color-fg-on-emphasis mb-2">.color-danger-emphasis</div>
+<div class="color-danger-muted mb-2">.color-danger-muted</div>
+<div class="color-danger-subtle mb-2">.color-danger-subtle</div>
+```
+
+## Done
+
+Completion color for productivity and code review workflows.
+
+```html live
+<div class="color-done-fg mb-2">.color-done-fg</div>
+<div class="color-done-emphasis color-fg-on-emphasis mb-2">.color-done-emphasis</div>
+<div class="color-done-muted mb-2">.color-done-muted</div>
+<div class="color-done-subtle mb-2">.color-done-subtle</div>
+```
+
+## Sponsors
+
+Use for Sponsors-related interfaces.
+
+```html live
+<div class="color-sponsors-fg mb-2">.color-sponsors-fg</div>
+<div class="color-sponsors-emphasis color-fg-on-emphasis mb-2">.color-sponsors-emphasis</div>
+<div class="color-sponsors-muted mb-2">.color-sponsors-muted</div>
+<div class="color-sponsors-subtle mb-2">.color-sponsors-subtle</div>
 ```
 
 ## Link colors
