@@ -4,5 +4,4 @@
 
 @include color-mode-theme(light, true) {
   @include primer-colors-light;
-  color-scheme: light;
 }

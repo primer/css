@@ -4,8 +4,4 @@
 @import "./themes/dark.scss";
 @import "./themes/dark_dimmed.scss";
 @import "./themes/dark_high_contrast.scss";
-
-[data-color-mode] {
-  color: var(--color-text-primary);
-  background-color: var(--color-bg-canvas);
-}
+@import "./native.scss";
