@@ -29,7 +29,7 @@
   &::after {
     top: -14px;
     margin-left: -$spacer-2;
-    // stylelint-disable-next-line primer/borders
+    border: 7px $border-style transparent;
     border-bottom-color: var(--color-bg-overlay);
   }
 

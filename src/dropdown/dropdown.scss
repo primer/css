@@ -50,7 +50,7 @@
 
   // caret background (should match dropdown background)
   &::after {
-    // stylelint-disable-next-line primer/borders
+    border: 7px $border-style transparent;
     border-bottom-color: var(--color-bg-overlay);
   }
 
@@ -198,8 +198,8 @@
 
   &::before {
     bottom: -$spacer-2;
-    left: 9px;or-border-primary);
-    // stylelint-disable-next-line primer/borders
+    left: 9px;
+    border-top: $spacer-2 $border-style var(--color-border-primary);
     border-right: $spacer-2 $border-style transparent;
     border-bottom: 0;
     border-left: $spacer-2 $border-style transparent;
@@ -207,8 +207,8 @@
 
   &::after {
     bottom: -7px;
-    left: 10px;overlay);
-    // stylelint-disable-next-line primer/borders
+    left: 10px;
+    border-top: 7px $border-style var(--color-bg-overlay);
     border-right: 7px $border-style transparent;
     border-bottom: 0;
     border-left: 7px $border-style transparent;
