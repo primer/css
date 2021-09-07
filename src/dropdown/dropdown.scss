@@ -9,7 +9,6 @@
   vertical-align: middle;
   content: "";
   border-style: $border-style;
-  // stylelint-disable-next-line primer/borders
   border-width: $spacer-1 $spacer-1 0;
   border-right-color: transparent;
   border-bottom-color: transparent;
@@ -45,15 +44,12 @@
 
   // caret border
   &::before {
-    // stylelint-disable-next-line primer/borders
     border: $spacer-2 $border-style transparent;
     border-bottom-color: var(--color-border-primary);
   }
 
   // caret background (should match dropdown background)
   &::after {
-    // stylelint-disable-next-line primer/borders
-    border: 7px $border-style transparent;
     // stylelint-disable-next-line primer/borders
     border-bottom-color: var(--color-bg-overlay);
   }
@@ -161,7 +157,6 @@
     right: -14px;
     left: auto;
     border-color: transparent;
-    // stylelint-disable-next-line primer/borders
     border-left-color: var(--color-bg-overlay);
   }
 }
@@ -184,7 +179,6 @@
     top: 11px;
     left: -14px;
     border-color: transparent;
-    // stylelint-disable-next-line primer/borders
     border-right-color: var(--color-bg-overlay);
   }
 }
@@ -204,25 +198,19 @@
 
   &::before {
     bottom: -$spacer-2;
-    left: 9px;
-    // stylelint-disable-next-line primer/borders
-    border-top: $spacer-2 $border-style var(--color-border-primary);
+    left: 9px;or-border-primary);
     // stylelint-disable-next-line primer/borders
     border-right: $spacer-2 $border-style transparent;
     border-bottom: 0;
-    // stylelint-disable-next-line primer/borders
     border-left: $spacer-2 $border-style transparent;
   }
 
   &::after {
     bottom: -7px;
-    left: 10px;
-    // stylelint-disable-next-line primer/borders
-    border-top: 7px $border-style var(--color-bg-overlay);
+    left: 10px;overlay);
     // stylelint-disable-next-line primer/borders
     border-right: 7px $border-style transparent;
     border-bottom: 0;
-    // stylelint-disable-next-line primer/borders
     border-left: 7px $border-style transparent;
   }
 }

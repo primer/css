@@ -63,7 +63,6 @@ $SelectMenu-max-height: 480px !default;
   flex-direction: column;
   background-color: var(--color-bg-overlay);
   border: $border-width $border-style var(--color-select-menu-backdrop-border);
-  // stylelint-disable-next-line primer/borders
   border-radius: $border-radius * 2;
   box-shadow: var(--color-select-menu-shadow);
   animation: SelectMenu-modal-animation 0.12s cubic-bezier(0, 0.1, 0.1, 1) backwards;
@@ -126,7 +125,6 @@ $SelectMenu-max-height: 480px !default;
   padding: $spacer-3;
   margin: -$spacer-3;
   line-height: 1;
-  // stylelint-disable-next-line primer/colors
   color: var(--color-icon-tertiary);
   background-color: transparent;
   border: 0;

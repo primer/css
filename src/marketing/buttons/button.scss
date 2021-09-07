@@ -13,7 +13,6 @@
   vertical-align: middle;
   user-select: none;
   border: 0;
-  // stylelint-disable-next-line primer/borders
   border-radius: rem(6px);
 
   @include btn-solid-mktg(
@@ -33,7 +32,6 @@
     left: 0;
     z-index: -1;
     content: "";
-    // stylelint-disable-next-line primer/borders
     border-radius: rem(6px);
     opacity: 0;
     transition: opacity 0.4s;

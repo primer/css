@@ -21,7 +21,6 @@
   white-space: nowrap;
   background-color: transparent;
   border: 0;
-  // stylelint-disable-next-line primer/borders
   border-bottom: 2px $border-style transparent;
 
   &:hover,
@@ -67,7 +66,6 @@
 
 .UnderlineNav-octicon {
   margin-right: $spacer-1;
-  // stylelint-disable-next-line primer/colors
   color: var(--color-underlinenav-icon);
 }
 

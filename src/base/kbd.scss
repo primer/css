@@ -11,7 +11,6 @@ kbd {
   color: var(--color-text-primary);
   vertical-align: middle;
   background-color: var(--color-bg-secondary);
-  // stylelint-disable-next-line primer/borders
   border: $border-style $border-width var(--color-border-tertiary);
   border-bottom-color: var(--color-border-tertiary);
   border-radius: $border-radius;

@@ -228,7 +228,6 @@ dl.form-group > dd, // TODO: Deprecate
 .upload-enabled {
   textarea {
     display: block;
-    // stylelint-disable-next-line primer/borders
     border-bottom: $border-width dashed var(--color-upload-enabled-border);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -345,7 +344,6 @@ p.explain {
   .octicon {
     // stylelint-disable-next-line primer/spacing
     margin-right: 5px;
-    // stylelint-disable-next-line primer/colors
     color: var(--color-icon-tertiary);
   }
 

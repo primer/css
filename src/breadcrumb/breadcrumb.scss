@@ -10,7 +10,6 @@
     height: 0.8em;
     margin: 0 $em-spacer-5;
     content: '';
-    // stylelint-disable-next-line primer/borders
     border-right: 0.1em $border-style var(--color-text-disabled);
     transform: rotate(15deg);
   }
