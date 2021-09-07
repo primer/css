@@ -1,8 +1,0 @@
-@import "../../../support/index.scss";
-
-@import "@primer/primitives/dist/scss/colors_v2/_light.scss";
-
-@include color-mode-theme(light, true) {
-  @include primer-colors_v2-light;
-  color-scheme: light;
-}
