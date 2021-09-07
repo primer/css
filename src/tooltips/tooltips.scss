@@ -32,7 +32,7 @@
   display: none;
   width: 0;
   height: 0;
-  color: var(--color-tooltip-bg); // stylelint-disable-line primer/colors
+  color: var(--color-tooltip-bg);
   pointer-events: none;
   content: "";
   border: 6px $border-style transparent;
