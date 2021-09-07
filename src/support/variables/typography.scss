@@ -42,7 +42,7 @@ $body-font:
   // See https://infinnie.github.io/blog/2017/systemui.html
   "Segoe UI Variable Text",
   "Segoe UI",
-  "Meiryo",
+  "Meiryo", // Improves font rendering for Japanese, see https://github.com/primer/css/pull/1573.
 
   // Linux-friendly system-level fonts + fallbacks
   system-ui,
