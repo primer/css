@@ -1,6 +1,6 @@
 ---
 title: Theming
-path: getting-started/theming
+path: support/theming
 ---
 
 Primer CSS offers multiple color themes for components and utilities. The colors change based on the active theme and color mode.
@@ -170,7 +170,7 @@ The benefit of `auto` over the `scale` variables is that `auto` variables automa
 
 ---
 
-In general, 
+In general,
 
 1. use [functional variables](/support/color-system) as much as possible.
 2. create new [custom color variables](/getting-started/theming#custom-color-variables) if there is no functional variable that fits the use case.
