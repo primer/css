@@ -37,20 +37,20 @@ $body-font:
   // Apple OSs
   -apple-system,
   BlinkMacSystemFont,
-  
+
   // Windows
   // Note this should be prioritized over `system-ui` to avoid legacy fonts.
   // See https://infinnie.github.io/blog/2017/systemui.html
-  "Segoe UI Variable",
+  "Segoe UI Variable Text",
   "Segoe UI",
-  
+
   // Linux-friendly system-level fonts + fallbacks
   system-ui,
   ui-sans-serif,
   Helvetica,
   Arial,
   sans-serif,
-  
+
   // Emojis
   "Apple Color Emoji",
   "Segoe UI Emoji" !default;
