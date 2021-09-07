@@ -9,7 +9,7 @@ module.exports = {
     'scss/dollar-variable-default': [true, {ignore: 'local'}],
     'primer/no-override': false,
     'primer/colors': false,
-    'primer/borders': true,
+    'primer/borders': false,
     'primer/spacing': true,
     'primer/typography': true,
     'primer/box-shadow': true,
