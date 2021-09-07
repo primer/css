@@ -10,8 +10,6 @@
   children:
     - title: Breakpoints
       url: /support/breakpoints
-    - title: Color system
-      url: /support/color-system
     - title: Spacing
       url: /support/spacing
     - title: Typography
