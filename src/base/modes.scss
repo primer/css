@@ -30,8 +30,8 @@
 // Enables nesting of different color modes
 
 [data-color-mode] {
-  color: var(--color-text-primary);
-  background-color: var(--color-bg-canvas);
+  color: var(--color-fg-default);
+  background-color: var(--color-canvas-default);
 }
 
 // color-scheme

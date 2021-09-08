@@ -5,15 +5,15 @@
   text-align: center;
 
   p {
-    color: var(--color-text-secondary);
+    color: var(--color-fg-muted);
   }
 
   code {
     // stylelint-disable-next-line primer/spacing
     padding: 2px 5px 3px;
     font-size: $h5-size;
-    background: var(--color-bg-canvas);
-    border: $border-width $border-style var(--color-border-secondary);
+    background: var(--color-canvas-default);
+    border: $border-width $border-style var(--color-border-muted);
     border-radius: $border-radius;
   }
 
@@ -27,7 +27,7 @@
   margin-right: $spacer-1;
   margin-bottom: $spacer-2;
   margin-left: $spacer-1;
-  color: var(--color-icon-secondary);
+  color: var(--color-fg-muted);
 }
 
 .blankslate-capped {

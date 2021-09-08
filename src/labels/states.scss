@@ -21,27 +21,24 @@
 .state, // TODO: Deprecate
 .State,
 .State--draft {
-  color: var(--color-pr-state-draft-text);
-  background-color: var(--color-pr-state-draft-bg);
-  border: $border-width $border-style var(--color-pr-state-draft-border);
+  color: var(--color-fg-on-emphasis);
+  background-color: var(--color-neutral-emphasis);
+  border: $border-width $border-style transparent;
 }
 
 .State--open {
-  color: var(--color-pr-state-open-text);
-  background-color: var(--color-pr-state-open-bg);
-  border-color: var(--color-pr-state-open-border);
+  color: var(--color-fg-on-emphasis);
+  background-color: var(--color-success-emphasis);
 }
 
 .State--merged {
-  color: var(--color-pr-state-merged-text);
-  background-color: var(--color-pr-state-merged-bg);
-  border-color: var(--color-pr-state-merged-border);
+  color: var(--color-fg-on-emphasis);
+  background-color: var(--color-done-emphasis);
 }
 
 .State--closed {
-  color: var(--color-pr-state-closed-text);
-  background-color: var(--color-pr-state-closed-bg);
-  border-color: var(--color-pr-state-closed-border);
+  color: var(--color-fg-on-emphasis);
+  background-color: var(--color-danger-emphasis);
 }
 
 // Small

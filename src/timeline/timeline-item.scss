@@ -13,12 +13,13 @@
     display: block;
     width: 2px;
     content: "";
-    background-color: var(--color-border-secondary);
+    background-color: var(--color-border-muted);
   }
 
   &:target .TimelineItem-badge {
-    border-color: var(--color-timeline-target-badge-border);
-    box-shadow: 0 0 0.2em var(--color-timeline-target-badge-shadow);
+    border-color: var(--color-accent-emphasis);
+    // stylelint-disable-next-line primer/box-shadow
+    box-shadow: 0 0 0.2em var(--color-accent-muted);
   }
 }
 
@@ -30,11 +31,11 @@
   height: $spacer-5;
   margin-right: $spacer-2;
   margin-left: -$spacer-3 + 1;
-  color: var(--color-icon-secondary);
+  color: var(--color-fg-muted);
   align-items: center;
   background-color: var(--color-timeline-badge-bg);
   // stylelint-disable-next-line primer/borders
-  border: 2px $border-style var(--color-bg-canvas);
+  border: 2px $border-style var(--color-canvas-default);
   border-radius: 50%;
   justify-content: center;
   flex-shrink: 0;
@@ -42,7 +43,7 @@
   &--success {
     color: var(--color-fg-on-emphasis, var(--color-btn-primary-text)); // TODO remove V1 fallback
     background-color: var(--color-success-emphasis, var(--color-btn-primary-bg)); // TODO remove V1 fallback
-    border: $border-width $border-style var(--color-timeline-badge-success-border);
+    border: $border-width $border-style transparent;
   }
 }
 
@@ -50,7 +51,7 @@
   min-width: 0;
   max-width: 100%;
   margin-top: $spacer-1;
-  color: var(--color-timeline-text);
+  color: var(--color-fg-muted);
   flex: auto;
 }
 
@@ -68,10 +69,10 @@
   margin-bottom: -$spacer-3;
   // stylelint-disable-next-line primer/spacing
   margin-left: -($spacer-6 + $spacer-3);
-  background-color: var(--color-bg-canvas);
+  background-color: var(--color-canvas-default);
   border: 0;
   // stylelint-disable-next-line primer/borders
-  border-top: 4px $border-style var(--color-border-primary);
+  border-top: 4px $border-style var(--color-border-default);
 }
 
 .TimelineItem--condensed {
@@ -87,8 +88,8 @@
     height: $spacer-3;
     margin-top: $spacer-2;
     margin-bottom: $spacer-2;
-    color: var(--color-icon-secondary);
-    background-color: var(--color-bg-canvas);
+    color: var(--color-fg-muted);
+    background-color: var(--color-canvas-default);
     border: 0;
   }
 }

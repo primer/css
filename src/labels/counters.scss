@@ -8,9 +8,9 @@
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: $size-2 - 2px; // remove borders
-  color: var(--color-counter-text);
+  color: var(--color-fg-default);
   text-align: center;
-  background-color: var(--color-counter-bg);
+  background-color: var(--color-neutral-muted);
   border: $border-width $border-style transparent; // Support Firefox custom colors
   // stylelint-disable-next-line primer/borders
   border-radius: 2em;
@@ -26,11 +26,11 @@
 }
 
 .Counter--primary {
-  color: var(--color-counter-primary-text);
-  background-color: var(--color-counter-primary-bg);
+  color: var(--color-fg-on-emphasis);
+  background-color: var(--color-neutral-emphasis);
 }
 
 .Counter--secondary {
-  color: var(--color-counter-secondary-text);
-  background-color: var(--color-counter-secondary-bg);
+  color: var(--color-fg-muted);
+  background-color: var(--color-neutral-subtle);
 }

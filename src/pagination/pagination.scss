@@ -11,7 +11,7 @@
     font-style: normal;
     // stylelint-disable-next-line primer/typography
     line-height: 20px;
-    color: var(--color-text-primary);
+    color: var(--color-fg-default);
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -24,27 +24,27 @@
     &:hover,
     &:focus {
       text-decoration: none;
-      border-color: var(--color-border-primary);
+      border-color: var(--color-border-default);
       outline: 0;
       transition-duration: 0.1s;
     }
 
     &:active {
-      border-color: var(--color-border-secondary);
+      border-color: var(--color-border-muted);
       transition: none;
     }
   }
 
   .previous_page,
   .next_page {
-    color: var(--color-text-link);
+    color: var(--color-accent-fg);
   }
 
   .current,
   .current:hover,
   [aria-current]:not([aria-current=false]) {
-    color: var(--color-state-selected-primary-text);
-    background-color: var(--color-state-selected-primary-bg);
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-accent-emphasis);
     border-color: transparent;
   }
 
@@ -54,7 +54,7 @@
   .gap:hover,
   .disabled:hover,
   [aria-disabled=true]:hover {
-    color: var(--color-text-disabled);
+    color: var(--color-fg-muted);
     cursor: default;
     border-color: transparent;
   }

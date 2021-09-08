@@ -3,7 +3,7 @@
 .tabnav {
   margin-top: 0;
   margin-bottom: $spacer-3;
-  border-bottom: $border-width $border-style var(--color-border-primary);
+  border-bottom: $border-width $border-style var(--color-border-default);
 }
 
 .tabnav-tabs {
@@ -20,7 +20,7 @@
   font-size: $h5-size;
   // stylelint-disable-next-line primer/typography
   line-height: 23px;
-  color: var(--color-text-secondary);
+  color: var(--color-fg-muted);
   text-decoration: none;
   background-color: transparent;
   border: $border-width $border-style transparent;
@@ -30,9 +30,9 @@
   &.selected,
   &[aria-selected=true],
   &[aria-current]:not([aria-current=false]) {
-    color: var(--color-text-primary);
-    background-color: var(--color-bg-canvas); // cover bottom border
-    border-color: var(--color-border-primary);
+    color: var(--color-fg-default);
+    background-color: var(--color-canvas-default); // cover bottom border
+    border-color: var(--color-border-default);
     border-radius: $border-radius $border-radius 0 0;
 
     .octicon {
@@ -42,18 +42,18 @@
 
   &:hover,
   &:focus {
-    color: var(--color-text-primary);
+    color: var(--color-fg-default);
     text-decoration: none;
     transition-duration: 0.1s;
   }
 
   &:active {
-    color: var(--color-text-tertiary);
+    color: var(--color-fg-muted);
   }
 
   .octicon {
     margin-right: $spacer-1;
-    color: var(--color-icon-tertiary);
+    color: var(--color-fg-muted);
   }
 
   .Counter {
@@ -74,7 +74,7 @@
   // stylelint-disable-next-line primer/spacing
   margin-left: 10px;
   font-size: $font-size-small;
-  color: var(--color-text-secondary);
+  color: var(--color-fg-muted);
 
   > .octicon {
     // stylelint-disable-next-line primer/spacing
@@ -85,7 +85,7 @@
 // When tabnav-extra are anchors
 // stylelint-disable-next-line selector-no-qualifying-type
 a.tabnav-extra:hover {
-  color: var(--color-text-link);
+  color: var(--color-accent-fg);
   text-decoration: none;
 }
 

@@ -15,7 +15,7 @@
     line-height: $lh-condensed;
 
     .octicon-link {
-      color: var(--color-text-primary);
+      color: var(--color-fg-default);
       vertical-align: middle;
       visibility: hidden;
     }
@@ -41,7 +41,7 @@
     padding-bottom: 0.3em;
     // stylelint-disable-next-line primer/typography
     font-size: 2em;
-    border-bottom: $border-width $border-style var(--color-border-secondary);
+    border-bottom: $border-width $border-style var(--color-border-muted);
   }
 
   h2 {
@@ -49,7 +49,7 @@
     padding-bottom: 0.3em;
     // stylelint-disable-next-line primer/typography
     font-size: 1.5em;
-    border-bottom: $border-width $border-style var(--color-border-secondary);
+    border-bottom: $border-width $border-style var(--color-border-muted);
   }
 
   h3 {
@@ -69,6 +69,6 @@
   h6 {
     // stylelint-disable-next-line primer/typography
     font-size: 0.85em;
-    color: var(--color-text-tertiary);
+    color: var(--color-fg-muted);
   }
 }

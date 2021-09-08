@@ -22,27 +22,27 @@ label {
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: var(--color-text-primary);
+  color: var(--color-fg-default);
   vertical-align: middle;
-  background-color: var(--color-input-bg);
+  background-color: var(--color-canvas-default);
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
-  border: $border-width $border-style var(--color-input-border);
+  border: $border-width $border-style var(--color-border-default);
   border-radius: $border-radius;
   outline: none;
-  box-shadow: var(--color-shadow-inset);
+  box-shadow: var(--color-primer-shadow-inset);
 
   &.focus,
   &:focus {
-    border-color: var(--color-state-focus-border);
+    border-color: var(--color-accent-emphasis);
     outline: none;
-    box-shadow: var(--color-state-focus-shadow);
+    box-shadow: var(--color-primer-shadow-focus);
   }
 
   &[disabled] {
-    color: var(--color-text-disabled);
+    color: var(--color-fg-muted);
     background-color: var(--color-input-disabled-bg);
-    border-color: var(--color-input-disabled-border);
+    border-color: var(--color-border-default);
   }
 
   // Ensures inputs don't zoom on mobile iPhone but are body-font size on iPad
@@ -63,14 +63,14 @@ textarea.form-control {
 
 // Inputs with contrast for easy light gray backgrounds against white.
 .input-contrast {
-  background-color: var(--color-input-contrast-bg);
+  background-color: var(--color-canvas-inset);
 
-  &:focus { background-color: var(--color-input-bg); }
+  &:focus { background-color: var(--color-canvas-default); }
 }
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
 ::placeholder {
-  color: var(--color-text-placeholder);
+  color: var(--color-fg-subtle);
   opacity: 1; // override opacity in normalize.css
 }
 
@@ -148,7 +148,7 @@ textarea.form-control {
     margin: 0;
     font-size: $font-size-small;
     font-weight: $font-weight-normal;
-    color: var(--color-text-secondary);
+    color: var(--color-fg-muted);
   }
 }
 
@@ -186,7 +186,7 @@ textarea.form-control {
         display: inline-block;
         // stylelint-disable-next-line primer/spacing
         margin: 5px 0 0;
-        color: var(--color-text-secondary);
+        color: var(--color-fg-muted);
       }
 
       img {
@@ -235,9 +235,9 @@ input::-webkit-inner-spin-button {
   // stylelint-disable-next-line primer/spacing
   margin: 10px 0;
   font-size: $h5-size;
-  color: var(--color-text-warning);
-  background: var(--color-bg-warning);
-  border: $border-width $border-style var(--color-border-warning);
+  color: var(--color-attention-fg);
+  background: var(--color-attention-subtle);
+  border: $border-width $border-style var(--color-attention-emphasis);
   border-radius: $border-radius;
 
   p {
