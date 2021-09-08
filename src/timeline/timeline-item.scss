@@ -18,6 +18,7 @@
 
   &:target .TimelineItem-badge {
     border-color: var(--color-accent-emphasis);
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0.2em var(--color-accent-muted);
   }
 }
@@ -42,7 +43,7 @@
   &--success {
     color: var(--color-fg-on-emphasis, var(--color-btn-primary-text)); // TODO remove V1 fallback
     background-color: var(--color-success-emphasis, var(--color-btn-primary-bg)); // TODO remove V1 fallback
-    border: $border-width $border-style var(--color-timeline-badge-success-border);
+    border: $border-width $border-style transparent;
   }
 }
 

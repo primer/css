@@ -23,25 +23,22 @@
 .State--draft {
   color: var(--color-fg-on-emphasis);
   background-color: var(--color-neutral-emphasis);
-  border: $border-width $border-style var(--color-pr-state-draft-border);
+  border: $border-width $border-style transparent;
 }
 
 .State--open {
   color: var(--color-fg-on-emphasis);
   background-color: var(--color-success-emphasis);
-  border-color: var(--color-pr-state-open-border);
 }
 
 .State--merged {
   color: var(--color-fg-on-emphasis);
   background-color: var(--color-done-emphasis);
-  border-color: var(--color-pr-state-merged-border);
 }
 
 .State--closed {
   color: var(--color-fg-on-emphasis);
   background-color: var(--color-danger-emphasis);
-  border-color: var(--color-pr-state-closed-border);
 }
 
 // Small

@@ -23,7 +23,7 @@
   flex-shrink: 0;
   color: var(--color-fg-on-emphasis);
   background-color: var(--color-accent-emphasis);
-  border: $border-width $border-style var(--color-toast-icon-border);
+  border: $border-width $border-style transparent;
   border-right: 0;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
@@ -60,7 +60,6 @@
   .Toast-icon {
     color: var(--color-fg-on-emphasis);
     background-color: var(--color-neutral-emphasis);
-    border-color: var(--color-toast-loading-icon-border);
   }
 }
 
@@ -71,7 +70,6 @@
   .Toast-icon {
     color: var(--color-fg-on-emphasis);
     background-color: var(--color-danger-emphasis);
-    border-color: var(--color-toast-danger-icon-border);
   }
 }
 
@@ -82,7 +80,6 @@
   .Toast-icon {
     color: var(--color-fg-default);
     background-color: var(--color-attention-emphasis);
-    border-color: var(--color-toast-warning-icon-border);
   }
 }
 
@@ -93,7 +90,6 @@
   .Toast-icon {
     color: var(--color-fg-on-emphasis);
     background-color: var(--color-success-emphasis);
-    border-color: var(--color-toast-success-icon-border);
   }
 }
 
