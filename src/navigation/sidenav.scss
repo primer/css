@@ -65,7 +65,6 @@
 
   // Bar on the left
   &::before {
-    // stylelint-disable-next-line primer/colors
     background-color: var(--color-sidenav-border-active);
   }
 }

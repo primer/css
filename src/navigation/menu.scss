@@ -61,7 +61,6 @@
       left: 0;
       width: 2px;
       content: "";
-      // stylelint-disable-next-line primer/colors
       background-color: var(--color-menu-border-active);
     }
   }
@@ -69,7 +68,6 @@
   .octicon {
     width: 16px;
     margin-right: $spacer-2;
-    // stylelint-disable-next-line primer/colors
     color: var(--color-icon-tertiary);
     text-align: center;
   }
@@ -81,7 +79,6 @@
 
   .menu-warning {
     float: right;
-    // stylelint-disable-next-line primer/colors
     color: var(--color-icon-warning);
   }
 

@@ -12,13 +12,13 @@
 .color-text-white     { color: var(--color-text-white) !important; }
 
 // Icon colors
-.color-icon-primary   { color: var(--color-icon-primary) !important; } // stylelint-disable-line primer/colors
-.color-icon-secondary { color: var(--color-icon-secondary) !important; } // stylelint-disable-line primer/colors
-.color-icon-tertiary  { color: var(--color-icon-tertiary) !important; } // stylelint-disable-line primer/colors
-.color-icon-info      { color: var(--color-icon-info) !important; } // stylelint-disable-line primer/colors
-.color-icon-danger    { color: var(--color-icon-danger) !important; } // stylelint-disable-line primer/colors
-.color-icon-success   { color: var(--color-icon-success) !important; } // stylelint-disable-line primer/colors
-.color-icon-warning   { color: var(--color-icon-warning) !important; } // stylelint-disable-line primer/colors
+.color-icon-primary   { color: var(--color-icon-primary) !important; }
+.color-icon-secondary { color: var(--color-icon-secondary) !important; }
+.color-icon-tertiary  { color: var(--color-icon-tertiary) !important; }
+.color-icon-info      { color: var(--color-icon-info) !important; }
+.color-icon-danger    { color: var(--color-icon-danger) !important; }
+.color-icon-success   { color: var(--color-icon-success) !important; }
+.color-icon-warning   { color: var(--color-icon-warning) !important; }
 
 // Border colors
 .color-border-primary   { border-color: var(--color-border-primary) !important; }
