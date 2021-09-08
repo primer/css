@@ -8,10 +8,10 @@
   // stylelint-disable-next-line primer/typography
   font-size: 13px;
   list-style: none;
-  background: var(--color-bg-overlay);
-  border: $border-width $border-style var(--color-border-primary);
+  background: var(--color-canvas-overlay);
+  border: $border-width $border-style var(--color-border-default);
   border-radius: $border-radius;
-  box-shadow: var(--color-autocomplete-shadow);
+  box-shadow: var(--color-shadow-medium);
 }
 
 // One of the items that appears within an autocomplete group
@@ -23,19 +23,19 @@
   padding: $spacer-1 $spacer-2;
   overflow: hidden;
   font-weight: $font-weight-bold;
-  color: var(--color-text-primary);
+  color: var(--color-fg-default);
   text-align: left;
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
-  background-color: var(--color-bg-overlay);
+  background-color: var(--color-canvas-overlay);
   border: 0;
 
   &:hover {
-    color: var(--color-state-hover-primary-text);
+    color: var(--color-fg-on-emphasis);
     text-decoration: none;
-    background-color: var(--color-state-hover-primary-bg);
+    background-color: var(--color-accent-emphasis);
 
     // Inherit color on all child elements to ensure enough contrast
     * {
@@ -46,9 +46,9 @@
   &.selected,
   &[aria-selected=true],
   &.navigation-focus {
-    color: var(--color-state-selected-primary-text);
+    color: var(--color-fg-on-emphasis);
     text-decoration: none;
-    background-color: var(--color-state-selected-primary-bg);
+    background-color: var(--color-accent-emphasis);
 
     // Inherit color on all child elements to ensure enough contrast
     * {
