@@ -14,7 +14,6 @@
   .octicon {
     // stylelint-disable-next-line primer/spacing
     margin: 1px -2px 0 0;
-    // stylelint-disable-next-line primer/colors
     color: var(--color-branch-name-icon);
   }
 }
@@ -26,7 +25,6 @@ a.branch-name {
   background-color: var(--color-branch-name-link-bg);
 
   .octicon {
-    // stylelint-disable-next-line primer/colors
     color: var(--color-branch-name-link-icon);
   }
 }
