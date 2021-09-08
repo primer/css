@@ -32,7 +32,7 @@
   display: none;
   width: 0;
   height: 0;
-  color: var(--color-tooltip-bg); // stylelint-disable-line primer/colors
+  color: var(--color-tooltip-bg);
   pointer-events: none;
   content: "";
   // stylelint-disable-next-line primer/borders
@@ -101,7 +101,6 @@
     bottom: -7px;
     // stylelint-disable-next-line primer/spacing
     margin-right: -6px;
-    // stylelint-disable-next-line primer/borders
     border-bottom-color: var(--color-tooltip-bg);
   }
 }
@@ -135,7 +134,6 @@
     bottom: auto;
     // stylelint-disable-next-line primer/spacing
     margin-right: -6px;
-    // stylelint-disable-next-line primer/borders
     border-top-color: var(--color-tooltip-bg);
   }
 }
@@ -174,7 +172,6 @@
     left: -7px;
     // stylelint-disable-next-line primer/spacing
     margin-top: -6px;
-    // stylelint-disable-next-line primer/borders
     border-left-color: var(--color-tooltip-bg);
   }
 }
@@ -195,7 +192,6 @@
     bottom: 50%;
     // stylelint-disable-next-line primer/spacing
     margin-top: -6px;
-    // stylelint-disable-next-line primer/borders
     border-right-color: var(--color-tooltip-bg);
   }
 }

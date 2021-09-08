@@ -13,7 +13,6 @@
     display: block;
     width: 2px;
     content: "";
-    // stylelint-disable-next-line primer/colors
     background-color: var(--color-border-secondary);
   }
 
@@ -31,7 +30,6 @@
   height: $spacer-5;
   margin-right: $spacer-2;
   margin-left: -$spacer-3 + 1;
-  // stylelint-disable-next-line primer/colors
   color: var(--color-icon-secondary);
   align-items: center;
   background-color: var(--color-timeline-badge-bg);
@@ -89,7 +87,6 @@
     height: $spacer-3;
     margin-top: $spacer-2;
     margin-bottom: $spacer-2;
-    // stylelint-disable-next-line primer/colors
     color: var(--color-icon-secondary);
     background-color: var(--color-bg-canvas);
     border: 0;

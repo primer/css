@@ -33,7 +33,7 @@
     // stylelint-disable-next-line primer/spacing
     margin-right: -11px;
     background-color: var(--color-bg-canvas);
-    border-right: $border-width $border-style var(--color-bg-canvas); // stylelint-disable-line primer/borders
+    border-right: $border-width $border-style var(--color-bg-canvas);
     // stylelint-disable-next-line primer/borders
     border-radius: $border-radius-1;
     transition: margin 0.1s ease-in-out;
@@ -97,13 +97,11 @@
 
   &::before {
     width: 17px;
-    // stylelint-disable-next-line primer/colors
     background: var(--color-avatar-stack-fade-more);
   }
 
   &::after {
     width: 14px;
-    // stylelint-disable-next-line primer/colors
     background: var(--color-avatar-stack-fade);
   }
 }
@@ -123,7 +121,6 @@
   }
 
   .avatar.avatar-more {
-    // stylelint-disable-next-line primer/colors
     background: var(--color-avatar-stack-fade);
 
     &::before {
@@ -141,6 +138,6 @@
     // stylelint-disable-next-line primer/spacing
     margin-left: -11px;
     border-right: 0;
-    border-left: $border-width $border-style var(--color-bg-canvas); // stylelint-disable-line primer/borders
+    border-left: $border-width $border-style var(--color-bg-canvas);
   }
 }
