@@ -45,7 +45,7 @@
     "eslint": "7.32.0",
     "eslint-plugin-github": "4.2.0",
     "eslint-plugin-jest": "24.4.0",
-    "eslint-plugin-prettier": "3.4.1",
+    "eslint-plugin-prettier": "4.0.0",
     "filesize": "8.0.0",
     "front-matter": "4.0.2",
     "fs-extra": "10.0.0",
@@ -62,7 +62,7 @@
     "prettier": "2.3.2",
     "semver": "7.3.5",
     "stylelint": "13.13.1",
-    "stylelint-config-primer": "11.1.0",
+    "stylelint-config-primer": "11.1.1",
     "stylelint-scss": "3.20.1",
     "table": "6.7.1"
   },

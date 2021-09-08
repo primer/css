@@ -28,7 +28,6 @@
     cursor: default;
 
     .octicon {
-      // stylelint-disable-next-line primer/colors
       color: var(--color-icon-tertiary);
     }
   }
@@ -158,7 +157,6 @@
   }
 
   .octicon {
-    // stylelint-disable-next-line primer/colors
     color: var(--color-btn-primary-icon);
   }
 }
@@ -223,7 +221,6 @@
   color: var(--color-btn-danger-text);
 
   .octicon {
-    // stylelint-disable-next-line primer/colors
     color: var(--color-btn-danger-icon);
   }
 
@@ -239,7 +236,6 @@
     }
 
     .octicon {
-      // stylelint-disable-next-line primer/colors
       color: var(--color-btn-danger-hover-icon);
     }
   }
