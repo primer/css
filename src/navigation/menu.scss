@@ -5,8 +5,8 @@
 .menu {
   margin-bottom: $spacer-3;
   list-style: none;
-  background-color: var(--color-bg-primary);
-  border: $border-width $border-style var(--color-border-primary);
+  background-color: var(--color-canvas-default);
+  border: $border-width $border-style var(--color-border-default);
   border-radius: $border-radius;
 }
 
@@ -14,8 +14,8 @@
   position: relative;
   display: block;
   padding: $spacer-2 $spacer-3;
-  color: var(--color-text-primary);
-  border-bottom: $border-width $border-style var(--color-border-secondary);
+  color: var(--color-fg-default);
+  border-bottom: $border-width $border-style var(--color-border-muted);
 
   &:first-child {
     border-top: 0;
@@ -36,16 +36,16 @@
   &:focus {
     z-index: 1;
     outline: none;
-    box-shadow: var(--color-state-focus-shadow);
+    box-shadow: var(--color-primer-shadow-focus);
   }
 
   &:hover {
     text-decoration: none;
-    background-color: var(--color-state-hover-secondary-bg);
+    background-color: var(--color-neutral-subtle);
   }
 
   &:active {
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-canvas-subtle);
   }
 
   &.selected,
@@ -61,14 +61,14 @@
       left: 0;
       width: 2px;
       content: "";
-      background-color: var(--color-menu-border-active);
+      background-color: var(--color-primer-border-active);
     }
   }
 
   .octicon {
     width: 16px;
     margin-right: $spacer-2;
-    color: var(--color-icon-tertiary);
+    color: var(--color-fg-muted);
     text-align: center;
   }
 
@@ -79,7 +79,7 @@
 
   .menu-warning {
     float: right;
-    color: var(--color-icon-warning);
+    color: var(--color-attention-fg);
   }
 
   .avatar {
@@ -89,7 +89,7 @@
 
   &.alert {
     .Counter {
-      color: var(--color-text-danger);
+      color: var(--color-danger-fg);
     }
   }
 }
@@ -101,8 +101,8 @@
   margin-bottom: 0;
   font-size: inherit;
   font-weight: $font-weight-bold;
-  color: var(--color-menu-heading-text);
-  border-bottom: $border-width $border-style var(--color-border-secondary);
+  color: var(--color-fg-default);
+  border-bottom: $border-width $border-style var(--color-border-muted);
 
   &:hover {
     text-decoration: none;

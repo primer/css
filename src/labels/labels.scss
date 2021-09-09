@@ -11,7 +11,7 @@
 .Label {
   @include labels-base;
   background-color: transparent !important; // TODO: Remove again
-  border-color: var(--color-label-border);
+  border-color: var(--color-border-default);
 
   &:hover {
     text-decoration: none;
@@ -33,31 +33,31 @@
 // Colors
 
 .Label--primary {
-  color: var(--color-label-primary-text);
-  border-color: var(--color-label-primary-border);
+  color: var(--color-fg-default);
+  border-color: var(--color-neutral-emphasis);
 }
 
 .Label--secondary {
-  color: var(--color-label-secondary-text);
-  border-color: var(--color-label-secondary-border);
+  color: var(--color-fg-muted);
+  border-color: var(--color-border-default);
 }
 
 .Label--info {
-  color: var(--color-label-info-text);
-  border-color: var(--color-label-info-border);
+  color: var(--color-accent-fg);
+  border-color: var(--color-accent-emphasis);
 }
 
 .Label--success {
-  color: var(--color-label-success-text);
-  border-color: var(--color-label-success-border);
+  color: var(--color-success-fg);
+  border-color: var(--color-success-emphasis);
 }
 
 .Label--warning {
-  color: var(--color-label-warning-text);
-  border-color: var(--color-label-warning-border);
+  color: var(--color-attention-fg);
+  border-color: var(--color-attention-emphasis);
 }
 
 .Label--danger {
-  color: var(--color-label-danger-text);
-  border-color: var(--color-label-danger-border);
+  color: var(--color-danger-fg);
+  border-color: var(--color-danger-emphasis);
 }

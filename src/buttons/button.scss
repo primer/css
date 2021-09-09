@@ -28,7 +28,7 @@
     cursor: default;
 
     .octicon {
-      color: var(--color-icon-tertiary);
+      color: var(--color-fg-muted);
     }
   }
 
@@ -40,7 +40,7 @@
 
   .octicon {
     margin-right: $spacer-1;
-    color: var(--color-text-tertiary);
+    color: var(--color-fg-muted);
     vertical-align: text-bottom;
 
     &:only-child {
@@ -90,13 +90,13 @@
   &.selected,
   &[aria-selected=true] {
     background-color: var(--color-btn-selected-bg);
-    box-shadow: var(--color-shadow-inset);
+    box-shadow: var(--color-primer-shadow-inset);
   }
 
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
-    color: var(--color-text-disabled);
+    color: var(--color-fg-muted);
     background-color: var(--color-btn-bg);
     border-color: var(--color-btn-border);
   }
