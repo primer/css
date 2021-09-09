@@ -5,7 +5,6 @@
 .color-fg-default     { color: var(--color-fg-default) !important; }
 .color-fg-muted       { color: var(--color-fg-muted) !important; }
 .color-fg-subtle      { color: var(--color-fg-subtle) !important; }
-.color-fg-on-emphasis { color: var(--color-fg-on-emphasis) !important; }
 
 .color-fg-accent    { color: var(--color-accent-fg) !important; }
 .color-fg-success   { color: var(--color-success-fg) !important; }
@@ -14,6 +13,8 @@
 .color-fg-danger    { color: var(--color-danger-fg) !important; }
 .color-fg-done      { color: var(--color-done-fg) !important; }
 .color-fg-sponsors  { color: var(--color-sponsors-fg) !important; }
+
+.color-fg-on-emphasis { color: var(--color-fg-on-emphasis) !important; }
 
 // Background
 

@@ -4,10 +4,6 @@ description: 'Immutable, atomic CSS classes to rapidly build product'
 status: Beta
 ---
 
-import {Box, BorderBox} from '@primer/components'
-import {palettes, allColors} from '../../src/color-variables'
-import {PaletteTable, PaletteTableFragment, PaletteHeading, PaletteCell, PaletteValue} from '../../src/color-system'
-
 <Note>
   Please note Primer v16 has changed the naming of these color classes. Check the <a href="/css/support/v16-migration">migration guide</a> to make sure your app is up to date.
 </Note>
@@ -19,27 +15,69 @@ Use color utilities to apply color to the background of elements, text, and bord
 Use text color utilities to set text to a specific color. Color contrast must pass a minimum WCAG accessibility rating of [level AA](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html). This ensures that viewers who cannot see the full color spectrum are able to read the text. To customize outside of the suggested combinations below, we recommend using this [color contrast testing tool](https://colorable.jxnblk.com/). For more information, read our [accessibility standards](../principles/accessibility).
 
 ```html live
-<div class="color-fg-default mb-2">.color-fg-default</div>
-<div class="color-fg-muted mb-2">.color-fg-muted</div>
-<div class="color-fg-subtle mb-2">.color-fg-subtle</div>
-<div class="color-fg-on-emphasis color-accent-emphasis mb-2">.color-fg-on-emphasis</div>
+<div class="color-fg-default mb-1">.color-fg-default</div>
+<div class="color-fg-muted mb-1">.color-fg-muted</div>
+<div class="color-fg-subtle mb-4">.color-fg-subtle</div>
+
+<div class="color-fg-accent mb-1">.color-fg-accent</div>
+<div class="color-fg-success mb-1">.color-fg-success</div>
+<div class="color-fg-attention mb-1">.color-fg-attention</div>
+<div class="color-fg-severe mb-1">.color-fg-severe</div>
+<div class="color-fg-danger mb-1">.color-fg-danger</div>
+<div class="color-fg-done mb-1">.color-fg-done</div>
+<div class="color-fg-sponsors mb-4">.color-fg-sponsors</div>
+
+<div class="color-fg-on-emphasis color-bg-accent-emphasis p-2 rounded">.color-fg-on-emphasis</div>
 ```
 
 You can set the color inheritance on an element by using the `text-inherit` class.
 
 ```html live
-<div class="color-success-fg">This text is green, <a href="#" class="text-inherit">including the link</a></div>
+<div class="color-fg-success">This text is green, <a href="#" class="text-inherit">including the link</a></div>
 ```
 
-## Canvas
+## Background
 
 Background colors are most commonly used for filling large blocks of content or areas with a color. When selecting a background color, make sure the foreground color contrast passes a minimum WCAG accessibility rating of [level AA](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html). Meeting these standards ensures that content is accessible by everyone, regardless of disability or user device. You can [check your color combination with this demo site](https://colorable.jxnblk.com/). For more information, read our [accessibility standards](../principles/accessibility).
 
 ```html live
-<div class="color-canvas-default mb-2">.color-canvas-default</div>
-<div class="color-canvas-overlay mb-2">.color-canvas-overlay</div>
-<div class="color-canvas-inset mb-2">.color-canvas-inset</div>
-<div class="color-canvas-subtle mb-2">.color-canvas-subtle</div>
+<div class="color-bg-default p-2 rounded mb-2">.color-bg-default</div>
+<div class="color-bg-overlay p-2 rounded mb-2">.color-bg-overlay</div>
+<div class="color-bg-inset p-2 rounded mb-2">.color-bg-inset</div>
+<div class="color-bg-subtle p-2 rounded mb-4">.color-bg-subtle</div>
+
+<div class="color-bg-neutral-emphasis-plus color-fg-on-emphasis p-2 rounded mb-2">.color-bg-neutral-emphasis-plus</div>
+<div class="color-bg-neutral-emphasis color-fg-on-emphasis p-2 rounded mb-2">.color-bg-neutral-emphasis</div>
+<div class="color-bg-neutral-muted p-2 rounded mb-2">.color-bg-neutral-muted</div>
+<div class="color-bg-neutral-subtle p-2 rounded mb-4">.color-bg-neutral-subtle</div>
+
+<div class="color-bg-accent-emphasis color-fg-on-emphasis p-2 rounded mb-2">.color-bg-accent-emphasis</div>
+<div class="color-bg-accent-muted p-2 rounded mb-2">.color-bg-accent-muted</div>
+<div class="color-bg-accent-subtle p-2 rounded mb-4">.color-bg-accent-subtle</div>
+
+<div class="color-bg-success-emphasis color-fg-on-emphasis p-2 rounded mb-2">.color-bg-success-emphasis</div>
+<div class="color-bg-success-muted p-2 rounded mb-2">.color-bg-success-muted</div>
+<div class="color-bg-success-subtle p-2 rounded mb-4">.color-bg-success-subtle</div>
+
+<div class="color-bg-attention-emphasis color-fg-on-emphasis p-2 rounded mb-2">.color-bg-attention-emphasis</div>
+<div class="color-bg-attention-muted p-2 rounded mb-2">.color-bg-attention-muted</div>
+<div class="color-bg-attention-subtle p-2 rounded mb-4">.color-bg-attention-subtle</div>
+
+<div class="color-bg-severe-emphasis color-fg-on-emphasis p-2 rounded mb-2">.color-bg-severe-emphasis</div>
+<div class="color-bg-severe-muted p-2 rounded mb-2">.color-bg-severe-muted</div>
+<div class="color-bg-severe-subtle p-2 rounded mb-4">.color-bg-severe-subtle</div>
+
+<div class="color-bg-danger-emphasis color-fg-on-emphasis p-2 rounded mb-2">.color-bg-danger-emphasis</div>
+<div class="color-bg-danger-muted p-2 rounded mb-2">.color-bg-danger-muted</div>
+<div class="color-bg-danger-subtle p-2 rounded mb-4">.color-bg-danger-subtle</div>
+
+<div class="color-bg-done-emphasis color-fg-on-emphasis p-2 rounded mb-2">.color-bg-done-emphasis</div>
+<div class="color-bg-done-muted p-2 rounded mb-2">.color-bg-done-muted</div>
+<div class="color-bg-done-subtle p-2 rounded mb-4">.color-bg-done-subtle</div>
+
+<div class="color-bg-sponsors-emphasis color-fg-on-emphasis p-2 rounded mb-2">.color-bg-sponsors-emphasis</div>
+<div class="color-bg-sponsors-muted p-2 rounded mb-2">.color-bg-sponsors-muted</div>
+<div class="color-bg-sponsors-subtle p-2 rounded">.color-bg-sponsors-subtle</div>
 ```
 
 ## Border
@@ -47,97 +85,17 @@ Background colors are most commonly used for filling large blocks of content or 
 Override default border colors with the following utilities.
 
 ```html live
-<div class="border color-border-default mb-2">.color-border-default</div>
-<div class="border color-border-muted mb-2">.color-border-muted</div>
-<div class="border color-border-subtle mb-2">.color-border-subtle</div>
-```
+<div class="border color-border-default p-2 rounded mb-2">.color-border-default</div>
+<div class="border color-border-muted p-2 rounded mb-2">.color-border-muted</div>
+<div class="border color-border-subtle p-2 rounded mb-4">.color-border-subtle</div>
 
-## Neutral
-
-Use to highlight content without any added meaning.
-
-```html live
-<div class="color-neutral-emphasis-plus color-fg-on-emphasis mb-2">.color-neutral-emphasis-plus</div>
-<div class="color-neutral-emphasis color-fg-on-emphasis mb-2">.color-neutral-emphasis</div>
-<div class="color-neutral-muted mb-2">.color-neutral-muted</div>
-<div class="color-neutral-subtle mb-2">.color-neutral-subtle</div>
-```
-
-## Accent
-
-Use to draw attention to interactive elements.
-
-```html live
-<div class="color-accent-fg mb-2">.color-accent-fg</div>
-<div class="color-accent-emphasis color-fg-on-emphasis mb-2">.color-accent-emphasis</div>
-<div class="color-accent-muted mb-2">.color-accent-muted</div>
-<div class="color-accent-subtle mb-2">.color-accent-subtle</div>
-```
-
-## Success
-
-Use to expresses the completion or positive outcome of a task.
-
-```html live
-<div class="color-success-fg mb-2">.color-success-fg</div>
-<div class="color-success-emphasis color-fg-on-emphasis mb-2">.color-success-emphasis</div>
-<div class="color-success-muted mb-2">.color-success-muted</div>
-<div class="color-success-subtle mb-2">.color-success-subtle</div>
-```
-
-## Attention
-
-Use to warn of pending tasks or highlight active content.
-
-```html live
-<div class="color-attention-fg mb-2">.color-attention-fg</div>
-<div class="color-attention-emphasis color-fg-on-emphasis mb-2">.color-attention-emphasis</div>
-<div class="color-attention-muted mb-2">.color-attention-muted</div>
-<div class="color-attention-subtle mb-2">.color-attention-subtle</div>
-```
-
-## Severe
-
-Use when there are more than 3 levels of states, for example in heatmaps.
-
-```html live
-<div class="color-severe-fg mb-2">.color-severe-fg</div>
-<div class="color-severe-emphasis color-fg-on-emphasis mb-2">.color-severe-emphasis</div>
-<div class="color-severe-muted mb-2">.color-severe-muted</div>
-<div class="color-severe-subtle mb-2">.color-severe-subtle</div>
-```
-
-## Danger
-
-Use to inform of error or another negative message.
-
-```html live
-<div class="color-danger-fg mb-2">.color-danger-fg</div>
-<div class="color-danger-emphasis color-fg-on-emphasis mb-2">.color-danger-emphasis</div>
-<div class="color-danger-muted mb-2">.color-danger-muted</div>
-<div class="color-danger-subtle mb-2">.color-danger-subtle</div>
-```
-
-## Done
-
-Completion color for productivity and code review workflows.
-
-```html live
-<div class="color-done-fg mb-2">.color-done-fg</div>
-<div class="color-done-emphasis color-fg-on-emphasis mb-2">.color-done-emphasis</div>
-<div class="color-done-muted mb-2">.color-done-muted</div>
-<div class="color-done-subtle mb-2">.color-done-subtle</div>
-```
-
-## Sponsors
-
-Use for Sponsors-related interfaces.
-
-```html live
-<div class="color-sponsors-fg mb-2">.color-sponsors-fg</div>
-<div class="color-sponsors-emphasis color-fg-on-emphasis mb-2">.color-sponsors-emphasis</div>
-<div class="color-sponsors-muted mb-2">.color-sponsors-muted</div>
-<div class="color-sponsors-subtle mb-2">.color-sponsors-subtle</div>
+<div class="border color-border-accent p-2 rounded mb-2">.color-border-accent</div>
+<div class="border color-border-success p-2 rounded mb-2">.color-border-success</div>
+<div class="border color-border-attention p-2 rounded mb-2">.color-border-attention</div>
+<div class="border color-border-severe p-2 rounded mb-2">.color-border-severe</div>
+<div class="border color-border-danger p-2 rounded mb-2">.color-border-danger</div>
+<div class="border color-border-done p-2 rounded mb-2">.color-border-done</div>
+<div class="border color-border-sponsors p-2 rounded">.color-border-sponsors</div>
 ```
 
 ## Link colors
