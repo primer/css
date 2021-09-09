@@ -47,7 +47,7 @@ const versionDeprecations = {
         '.color-bg-warning',
         '.color-bg-warning-inverse'
       ],
-      message: 'This color class has been deprecated, please refer to the color utilies documentation.'
+      message: 'This color class has been deprecated, please refer to the color utilities documentation.'
     }
   ],
   '17.6.1': [
