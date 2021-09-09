@@ -1,51 +1,51 @@
 // stylelint-disable block-opening-brace-space-before
 
 // Text colors
-.color-text-primary   { color: var(--color-text-primary) !important; }
-.color-text-secondary { color: var(--color-text-secondary) !important; }
-.color-text-tertiary  { color: var(--color-text-tertiary) !important; }
-.color-text-link      { color: var(--color-text-link) !important; }
-.color-text-success   { color: var(--color-text-success) !important; }
-.color-text-warning   { color: var(--color-text-warning) !important; }
-.color-text-danger    { color: var(--color-text-danger) !important; }
-.color-text-inverse   { color: var(--color-text-inverse) !important; }
-.color-text-white     { color: var(--color-text-white) !important; }
+.color-text-primary   { color: var(--color-fg-default) !important; }
+.color-text-secondary { color: var(--color-fg-muted) !important; }
+.color-text-tertiary  { color: var(--color-fg-muted) !important; }
+.color-text-link      { color: var(--color-accent-fg) !important; }
+.color-text-success   { color: var(--color-success-fg) !important; }
+.color-text-warning   { color: var(--color-attention-fg) !important; }
+.color-text-danger    { color: var(--color-danger-fg) !important; }
+.color-text-inverse   { color: var(--color-fg-on-emphasis) !important; }
+.color-text-white     { color: var(--color-scale-white) !important; }
 
 // Icon colors
-.color-icon-primary   { color: var(--color-icon-primary) !important; }
-.color-icon-secondary { color: var(--color-icon-secondary) !important; }
-.color-icon-tertiary  { color: var(--color-icon-tertiary) !important; }
-.color-icon-info      { color: var(--color-icon-info) !important; }
-.color-icon-danger    { color: var(--color-icon-danger) !important; }
-.color-icon-success   { color: var(--color-icon-success) !important; }
-.color-icon-warning   { color: var(--color-icon-warning) !important; }
+.color-icon-primary   { color: var(--color-fg-default) !important; }
+.color-icon-secondary { color: var(--color-fg-muted) !important; }
+.color-icon-tertiary  { color: var(--color-fg-muted) !important; }
+.color-icon-info      { color: var(--color-accent-fg) !important; }
+.color-icon-danger    { color: var(--color-danger-fg) !important; }
+.color-icon-success   { color: var(--color-success-fg) !important; }
+.color-icon-warning   { color: var(--color-attention-fg) !important; }
 
 // Border colors
-.color-border-primary   { border-color: var(--color-border-primary) !important; }
-.color-border-secondary { border-color: var(--color-border-secondary) !important; }
-.color-border-tertiary  { border-color: var(--color-border-tertiary) !important; }
-.color-border-inverse   { border-color: var(--color-border-inverse) !important; }
-.color-border-info      { border-color: var(--color-border-info) !important; }
-.color-border-success   { border-color: var(--color-border-success) !important; }
-.color-border-danger    { border-color: var(--color-border-danger) !important; }
-.color-border-warning   { border-color: var(--color-border-warning) !important; }
+.color-border-primary   { border-color: var(--color-border-default) !important; }
+.color-border-secondary { border-color: var(--color-border-muted) !important; }
+.color-border-tertiary  { border-color: var(--color-neutral-muted) !important; }
+.color-border-inverse   { border-color: var(--color-fg-on-emphasis) !important; }
+.color-border-info      { border-color: var(--color-accent-emphasis) !important; }
+.color-border-success   { border-color: var(--color-success-emphasis) !important; }
+.color-border-danger    { border-color: var(--color-danger-emphasis) !important; }
+.color-border-warning   { border-color: var(--color-attention-emphasis) !important; }
 
 // Background colors
-.color-bg-canvas          { background-color: var(--color-bg-canvas) !important; }
-.color-bg-canvas-inverse  { background-color: var(--color-bg-canvas-inverse) !important; }
-.color-bg-canvas-inset    { background-color: var(--color-bg-canvas-inset) !important; }
-.color-bg-primary         { background-color: var(--color-bg-primary) !important; }
-.color-bg-secondary       { background-color: var(--color-bg-secondary) !important; }
-.color-bg-tertiary        { background-color: var(--color-bg-tertiary) !important; }
-.color-bg-overlay         { background-color: var(--color-bg-overlay) !important; }
-.color-bg-info            { background-color: var(--color-bg-info) !important; }
-.color-bg-info-inverse    { background-color: var(--color-bg-info-inverse) !important; }
-.color-bg-danger          { background-color: var(--color-bg-danger) !important; }
-.color-bg-danger-inverse  { background-color: var(--color-bg-danger-inverse) !important; }
-.color-bg-success         { background-color: var(--color-bg-success) !important; }
-.color-bg-success-inverse { background-color: var(--color-bg-success-inverse) !important; }
-.color-bg-warning         { background-color: var(--color-bg-warning) !important; }
-.color-bg-warning-inverse { background-color: var(--color-bg-warning-inverse) !important; }
+.color-bg-canvas          { background-color: var(--color-canvas-default) !important; }
+.color-bg-canvas-inverse  { background-color: var(--color-neutral-emphasis) !important; }
+.color-bg-canvas-inset    { background-color: var(--color-canvas-inset) !important; }
+.color-bg-primary         { background-color: var(--color-canvas-default) !important; }
+.color-bg-secondary       { background-color: var(--color-canvas-subtle) !important; }
+.color-bg-tertiary        { background-color: var(--color-canvas-subtle) !important; }
+.color-bg-overlay         { background-color: var(--color-canvas-overlay) !important; }
+.color-bg-info            { background-color: var(--color-accent-subtle) !important; }
+.color-bg-info-inverse    { background-color: var(--color-accent-emphasis) !important; }
+.color-bg-danger          { background-color: var(--color-danger-subtle) !important; }
+.color-bg-danger-inverse  { background-color: var(--color-danger-emphasis) !important; }
+.color-bg-success         { background-color: var(--color-success-subtle) !important; }
+.color-bg-success-inverse { background-color: var(--color-success-emphasis) !important; }
+.color-bg-warning         { background-color: var(--color-attention-subtle) !important; }
+.color-bg-warning-inverse { background-color: var(--color-attention-emphasis) !important; }
 
 // Inherit
 .text-inherit { color: inherit !important; }

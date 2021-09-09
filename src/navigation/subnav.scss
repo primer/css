@@ -10,7 +10,7 @@
 .subnav-bordered {
   // stylelint-disable-next-line primer/spacing
   padding-bottom: 20px;
-  border-bottom: $border-width $border-style var(--color-border-secondary);
+  border-bottom: $border-width $border-style var(--color-border-muted);
 }
 
 .subnav-flush {
@@ -25,8 +25,8 @@
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: var(--color-text-primary);
-  border: $border-width $border-style var(--color-border-primary);
+  color: var(--color-fg-default);
+  border: $border-width $border-style var(--color-border-default);
 
   + .subnav-item {
     // stylelint-disable-next-line primer/spacing
@@ -36,16 +36,16 @@
   &:hover,
   &:focus {
     text-decoration: none;
-    background-color: var(--color-bg-tertiary);
+    background-color: var(--color-canvas-subtle);
   }
 
   &.selected,
   &[aria-selected=true],
   &[aria-current]:not([aria-current=false]) {
     z-index: 2;
-    color: var(--color-state-selected-primary-text);
-    background-color: var(--color-state-selected-primary-bg);
-    border-color: var(--color-state-selected-primary-border);
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-accent-emphasis);
+    border-color: var(--color-accent-emphasis);
   }
 
   &:first-child {
@@ -68,7 +68,7 @@
 .subnav-search-input {
   width: 320px;
   padding-left: $spacer-5;
-  color: var(--color-text-secondary);
+  color: var(--color-fg-muted);
 }
 
 .subnav-search-input-wide {
@@ -80,7 +80,7 @@
   top: 9px;
   left: 8px;
   display: block;
-  color: var(--color-icon-tertiary);
+  color: var(--color-fg-muted);
   text-align: center;
   pointer-events: none;
 }

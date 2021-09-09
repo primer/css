@@ -21,7 +21,7 @@
 
 .AvatarStack-body {
   display: flex;
-  background: var(--color-bg-canvas);
+  background: var(--color-canvas-default);
 
   .avatar {
     position: relative;
@@ -32,8 +32,8 @@
     box-sizing: content-box;
     // stylelint-disable-next-line primer/spacing
     margin-right: -11px;
-    background-color: var(--color-bg-canvas);
-    border-right: $border-width $border-style var(--color-bg-canvas);
+    background-color: var(--color-canvas-default);
+    border-right: $border-width $border-style var(--color-canvas-default);
     // stylelint-disable-next-line primer/borders
     border-radius: $border-radius-1;
     transition: margin 0.1s ease-in-out;
@@ -82,7 +82,7 @@
 .avatar.avatar-more {
   z-index: 1;
   margin-right: 0;
-  background: var(--color-bg-tertiary);
+  background: var(--color-canvas-subtle);
 
   &::before,
   &::after {
@@ -92,7 +92,7 @@
     content: "";
     // stylelint-disable-next-line primer/borders
     border-radius: 2px;
-    outline: $border-width $border-style var(--color-bg-canvas);
+    outline: $border-width $border-style var(--color-canvas-default);
   }
 
   &::before {
@@ -129,7 +129,7 @@
 
     &::after {
       width: 2px;
-      background: var(--color-bg-tertiary);
+      background: var(--color-canvas-subtle);
     }
   }
 
@@ -138,6 +138,6 @@
     // stylelint-disable-next-line primer/spacing
     margin-left: -11px;
     border-right: 0;
-    border-left: $border-width $border-style var(--color-bg-canvas);
+    border-left: $border-width $border-style var(--color-canvas-default);
   }
 }
