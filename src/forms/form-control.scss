@@ -130,7 +130,7 @@ textarea.form-control {
       // stylelint-disable-next-line primer/spacing
       padding: 2px $spacer-1;
       font-style: normal;
-      background: var(--color-attention-subtle, var(--color-auto-yellow-1));
+      background: var(--color-attention-subtle);
       border-radius: $border-radius;
     }
   }
