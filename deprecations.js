@@ -6,6 +6,50 @@ import fs from 'fs'
  * array and a "message" string.
  */
 const versionDeprecations = {
+  '18.0.0': [
+    {
+      selectors: [
+        '.color-text-primary',
+        '.color-text-secondary',
+        '.color-text-tertiary',
+        '.color-text-link',
+        '.color-text-success',
+        '.color-text-warning',
+        '.color-text-danger',
+        '.color-text-inverse',
+        '.color-text-white',
+        '.color-icon-primary',
+        '.color-icon-secondary',
+        '.color-icon-tertiary',
+        '.color-icon-info',
+        '.color-icon-danger',
+        '.color-icon-success',
+        '.color-icon-warning',
+        '.color-border-primary',
+        '.color-border-secondary',
+        '.color-border-tertiary',
+        '.color-border-inverse',
+        '.color-border-info',
+        '.color-border-warning',
+        '.color-bg-canvas',
+        '.color-bg-canvas-inverse',
+        '.color-bg-canvas-inset',
+        '.color-bg-primary',
+        '.color-bg-secondary',
+        '.color-bg-tertiary',
+        '.color-bg-overlay',
+        '.color-bg-info',
+        '.color-bg-info-inverse',
+        '.color-bg-danger',
+        '.color-bg-danger-inverse',
+        '.color-bg-success',
+        '.color-bg-success-inverse',
+        '.color-bg-warning',
+        '.color-bg-warning-inverse'
+      ],
+      message: 'This color class has been deprecated, please refer to the color utilies documentation.'
+    }
+  ],
   '17.6.1': [
     {
       selectors: [
