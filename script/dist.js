@@ -5,7 +5,7 @@ import postcss from 'postcss'
 import loadConfig from 'postcss-load-config'
 import {dirname, join} from 'path'
 
-import {versionDeprecations, selectorDeprecations, variableDeprecations} from '../deprecations.js'
+import {deprecatedSelectors, deprecatedSassVariables, deprecatedSassMixins} from '../deprecations.js'
 import analyzeVariables from './analyze-variables.js'
 
 import fsExtra from 'fs-extra'
@@ -93,18 +93,11 @@ function getPathName(path) {
 
 function writeDeprecationData() {
   const data = {
-    versions: versionDeprecations,
-    selectors: mapToObject(selectorDeprecations),
-    variables: mapToObject(variableDeprecations)
+    selectors: deprecatedSelectors,
+    variables: deprecatedSassVariables,
+    mixins: deprecatedSassMixins
   }
   return writeFile(join(outDir, 'deprecations.json'), JSON.stringify(data, null, 2))
-
-  function mapToObject(map) {
-    return Array.from(map.entries()).reduce((obj, [key, value]) => {
-      obj[key] = value
-      return obj
-    }, {})
-  }
 }
 
 dist()
