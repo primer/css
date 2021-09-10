@@ -1,5 +1,23 @@
 # @primer/css
 
+## 17.9.0
+
+### Minor Changes
+
+- [#1575](https://github.com/primer/css/pull/1575) [`c7ea6448`](https://github.com/primer/css/commit/c7ea6448c114065627299db7ba65418799d4a59b) Thanks [@jonrohan](https://github.com/jonrohan)! - Replacing deprecated variables with color v2 variables
+
+* [#1573](https://github.com/primer/css/pull/1573) [`386dfa01`](https://github.com/primer/css/commit/386dfa0145a64e2c6edbdf8ab09d9fc3f7151f6a) Thanks [@simurai](https://github.com/simurai)! - Improve the font stack on Windows
+
+  - `Segoe UI Variable` -> `Segoe UI Variable Text`.
+    - "Segoe UI Variable Text" seems to be the better option for a lot of text (markdown). In the future we might can consider having a UI and a "text" font stack.
+  - Add `Meiryo` before `system-ui`.
+    - This should have the effect that the browser will use `Meiryo` instead of `Yu Gothic UI` and should improve font rendering, especially for Japanese.
+    - Note: In an earlier version, `Yu Gothic` was used. But with great [feedback](https://twitter.com/448jp/status/1435087523185758212) from @448jp and @hiloki https://github.com/primer/css/pull/1573#issuecomment-913973890 it seems `Meiryo` is the better default.
+
+- [#1581](https://github.com/primer/css/pull/1581) [`be518b80`](https://github.com/primer/css/commit/be518b8023b56802b1fc67ccc8a5b8398d1b279c) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating deprecations.js file to be more straightforward
+
+* [#1579](https://github.com/primer/css/pull/1579) [`c3b4a0c3`](https://github.com/primer/css/commit/c3b4a0c36302af7bb06ca996f37a63470ab99c62) Thanks [@jonrohan](https://github.com/jonrohan)! - Removing v2 color mode css var fallbacks. `var(--color-v2, var(--color-v1))` becomes `var(--color-v2)`
+
 ## 17.8.0
 
 ### Minor Changes
