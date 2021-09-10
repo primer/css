@@ -4,7 +4,23 @@ title: Deprecation data
 
 As of version 12.7.0, we publish CSS selector and SCSS variable deprecation data (as of 14.0.0) with `@primer/css`. You can access the data via the [Node API](#node) or as [JSON](#json).
 
-**Keep in mind that this data includes both active and _planned_ deprecations.** The [Node API](#node) is the best way to determine whether a selector or variable is deprecated for the version of `@primer/css` you've installed.
+To deprecate a class, variable, or mixin, add the element to the [deprecations.js](https://github.com/primer/css/blob/main/deprecations.js) file with it's replacement value.
+
+The replacement can be:
+
+* A `String` for a direct replacement.
+* An `Array` for multiple replacement options.
+* `null` to indicate there is no replacement.
+
+This could look something like this:
+
+```js
+const deprecations = {
+  "deprecated-1": "replacement",
+  "deprecated-2": ["replacement-1", "replacement-2"],
+  "deprecated-3": null
+}
+```
 
 ## JSON
 
