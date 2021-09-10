@@ -5,11 +5,10 @@ import postcss from 'postcss'
 import loadConfig from 'postcss-load-config'
 import {dirname, join} from 'path'
 
-import {deprecatedSelectors, deprecatedSassVariables, deprecatedSassMixins} from '../deprecations.js'
 import analyzeVariables from './analyze-variables.js'
 
 import fsExtra from 'fs-extra'
-const {remove, mkdirp, readFile, writeFile} = fsExtra
+const {copy, remove, mkdirp, readFile, writeFile} = fsExtra
 
 const inDir = 'src'
 const outDir = 'dist'
@@ -69,7 +68,7 @@ async function dist() {
     const meta = {bundles}
     await writeFile(join(outDir, 'meta.json'), JSON.stringify(meta, null, 2), encoding)
     await writeVariableData()
-    await writeDeprecationData()
+    await copy(join(inDir, 'deprecations.json'), join(outDir, 'deprecations.json'))
   } catch (error) {
     console.error(error)
     process.exitCode = 1
@@ -89,15 +88,6 @@ function getExternalImports(scss, relativeTo) {
 
 function getPathName(path) {
   return path.replace(/\//g, '-')
-}
-
-function writeDeprecationData() {
-  const data = {
-    selectors: deprecatedSelectors,
-    variables: deprecatedSassVariables,
-    mixins: deprecatedSassMixins
-  }
-  return writeFile(join(outDir, 'deprecations.json'), JSON.stringify(data, null, 2))
 }
 
 dist()
