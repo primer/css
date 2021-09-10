@@ -70,9 +70,7 @@ The JSON data is available in the unpacked node module's `dist/deprecations.json
 The Node API for selector deprecations is available at
 `@primer/css/deprecations`.
 
-### `versionDeprecations`
-This is the object literal form of the [JSON data's](#json) `versions` object.
-For instance, to list all of the deprecations:
+### Example:
 
 ```js
 const {
@@ -80,4 +78,5 @@ const {
   deprecatedSassVariables,
   deprecatedSassMixins
 } = require('@primer/css/deprecations')
+
 ```
