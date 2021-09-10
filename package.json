@@ -24,7 +24,7 @@
   ],
   "scripts": {
     "dist": "script/dist.js",
-    "stylelint": "stylelint --quiet src",
+    "stylelint": "stylelint --quiet src/**/*.scss",
     "eslint": "eslint deprecations.js __tests__ script",
     "prepublishOnly": "script/prepublish",
     "start": "yarn dev",
