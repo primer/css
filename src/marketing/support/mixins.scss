@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @mixin btn-solid-mktg($color, $bg, $bg2, $bg3, $bg4) {
   color: $color;
   background-color: $bg2;
@@ -76,5 +78,5 @@ $browser-context: 16 !default;
     $context: $context * 1px;
   }
 
-  @return $pixels / $context * 1rem;
+  @return math.div($pixels, $context) * 1rem;
 }
