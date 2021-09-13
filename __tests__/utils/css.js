@@ -33,20 +33,6 @@ export function getCurrentVersion() {
   return semver.parse(pkg.version)
 }
 
-export function getDeprecatedSelectors(version) {
-  if (getCurrentVersion().raw === version) return []
-  let deprecations = JSON.parse(fs.readFileSync(join(currentPath, './dist/deprecations.json')))
-  deprecations = deprecations.versions[version] || []
-  return deprecations.reduce((list, deprecation) => list.concat(deprecation.selectors), []).filter(v => v)
-}
-
-export function getDeprecatedVariables(version) {
-  if (getCurrentVersion().raw === version) return []
-  let deprecations = JSON.parse(fs.readFileSync(join(currentPath, './dist/deprecations.json')))
-  deprecations = deprecations.versions[version] || []
-  return deprecations.reduce((list, deprecation) => list.concat(deprecation.variables), []).filter(v => v)
-}
-
 export function getPackageStats(packageName) {
   const stats = JSON.parse(fs.readFileSync(join(currentPath, './dist', `./stats/${packageName}.json`)))
   return stats
