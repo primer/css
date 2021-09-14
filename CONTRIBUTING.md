@@ -58,7 +58,7 @@ Anyone can open a pull request on Primer CSS. You do not need to work at GitHub 
 2. Configure and install the dependencies: `npm install`
 3. Create a new branch from main `git checkout -b my-branch-name`
 4. Make your changes and commit them.
-5. Push your branch and open a pull request. Add a comment describing your proposed changes and request a review from `@primer/ds-core`.
+5. Push your branch and open a pull request. Add a comment describing your proposed changes and request a review from `@primer/css-reviewers`.
 6. Wait for CI tests to finish.
    - If the tests pass, you should see a status check telling you which alpha version of `@primer/css` you can install with npm to test your work in other projects.
    - If the tests fail, review the logs and address any issues.

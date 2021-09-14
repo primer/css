@@ -22,9 +22,12 @@
 
 .breadcrumb-item-selected,
 .breadcrumb-item[aria-current]:not([aria-current=false]) {
-  color: var(--color-fg-default);
-
   &::after {
     content: none;
   }
+}
+
+// stylelint-disable selector-max-type
+.breadcrumb-item-selected a {
+  color: var(--color-fg-default);
 }
