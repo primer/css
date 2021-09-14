@@ -1,5 +1,15 @@
 # @primer/css
 
+## 17.10.0
+
+### Minor Changes
+
+- [#1592](https://github.com/primer/css/pull/1592) [`39c9c928`](https://github.com/primer/css/commit/39c9c92874eb32b346256cbcc713b87767b319ef) Thanks [@simurai](https://github.com/simurai)! - Revert font stack changes
+
+### Patch Changes
+
+- [#1590](https://github.com/primer/css/pull/1590) [`e3c8f90e`](https://github.com/primer/css/commit/e3c8f90e7f61e76d20650061da2dd93111814a8a) Thanks [@joelhawksley](https://github.com/joelhawksley)! - Update Breadcrumbs markup to match w3 aria example.
+
 ## 17.9.0
 
 ### Minor Changes
