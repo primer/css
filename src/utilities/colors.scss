@@ -73,7 +73,9 @@
 // Misc
 
 .text-inherit, // deprecated
-.color-fg-inherit { color: inherit !important; }
+.color-fg-inherit {
+  color: inherit !important;
+}
 
 // ----------------------- Deprecated --------------------------------------
 // The following V1 utilities will be removed in the next major release
