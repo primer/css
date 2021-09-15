@@ -97,7 +97,7 @@ We also provide directional margin auto. `mt-auto, mr-auto, mb-auto, ml-auto`
 <div class="d-flex border mb-4">
   <div style="height:100px;"></div>
   <div class="border mt-auto">`mt-auto` will push this box to the bottom.</div>
-  <div class="border mb-auto">`mb-auto` will push this box to the bottom.</div>
+  <div class="border mb-auto">`mb-auto` will push this box to the top.</div>
 </div>
 <div class="d-flex flex-column border">
   <div class="border ml-auto">`ml-auto` will push this box to the right.</div>
