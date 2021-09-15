@@ -1,5 +1,86 @@
 // stylelint-disable block-opening-brace-space-before
 
+// Foreground
+
+.color-fg-default     { color: var(--color-fg-default) !important; }
+.color-fg-muted       { color: var(--color-fg-muted) !important; }
+.color-fg-subtle      { color: var(--color-fg-subtle) !important; }
+
+.color-fg-accent    { color: var(--color-accent-fg) !important; }
+.color-fg-success   { color: var(--color-success-fg) !important; }
+.color-fg-attention { color: var(--color-attention-fg) !important; }
+.color-fg-severe    { color: var(--color-severe-fg) !important; }
+.color-fg-danger    { color: var(--color-danger-fg) !important; }
+.color-fg-done      { color: var(--color-done-fg) !important; }
+.color-fg-sponsors  { color: var(--color-sponsors-fg) !important; }
+
+.color-fg-on-emphasis { color: var(--color-fg-on-emphasis) !important; }
+
+// Background
+
+.color-bg-default { background-color: var(--color-canvas-default) !important; }
+.color-bg-overlay { background-color: var(--color-canvas-overlay) !important; }
+.color-bg-inset   { background-color: var(--color-canvas-inset) !important; }
+.color-bg-subtle  { background-color: var(--color-canvas-subtle) !important; }
+
+.color-bg-neutral-emphasis-plus { background-color: var(--color-neutral-emphasis-plus) !important; }
+.color-bg-neutral-emphasis      { background-color: var(--color-neutral-emphasis) !important; }
+.color-bg-neutral-muted         { background-color: var(--color-neutral-muted) !important; }
+.color-bg-neutral-subtle        { background-color: var(--color-neutral-subtle) !important; }
+
+.color-bg-accent-emphasis { background-color: var(--color-accent-emphasis) !important; }
+.color-bg-accent-muted    { background-color: var(--color-accent-muted) !important; }
+.color-bg-accent-subtle   { background-color: var(--color-accent-subtle) !important; }
+
+.color-bg-success-emphasis { background-color: var(--color-success-emphasis) !important; }
+.color-bg-success-muted    { background-color: var(--color-success-muted) !important; }
+.color-bg-success-subtle   { background-color: var(--color-success-subtle) !important; }
+
+.color-bg-attention-emphasis { background-color: var(--color-attention-emphasis) !important; }
+.color-bg-attention-muted    { background-color: var(--color-attention-muted) !important; }
+.color-bg-attention-subtle   { background-color: var(--color-attention-subtle) !important; }
+
+.color-bg-severe-emphasis { background-color: var(--color-severe-emphasis) !important; }
+.color-bg-severe-muted    { background-color: var(--color-severe-muted) !important; }
+.color-bg-severe-subtle   { background-color: var(--color-severe-subtle) !important; }
+
+.color-bg-danger-emphasis { background-color: var(--color-danger-emphasis) !important; }
+.color-bg-danger-muted    { background-color: var(--color-danger-muted) !important; }
+.color-bg-danger-subtle   { background-color: var(--color-danger-subtle) !important; }
+
+.color-bg-done-emphasis { background-color: var(--color-done-emphasis) !important; }
+.color-bg-done-muted    { background-color: var(--color-done-muted) !important; }
+.color-bg-done-subtle   { background-color: var(--color-done-subtle) !important; }
+
+.color-bg-sponsors-emphasis { background-color: var(--color-sponsors-emphasis) !important; }
+.color-bg-sponsors-muted    { background-color: var(--color-sponsors-muted) !important; }
+.color-bg-sponsors-subtle   { background-color: var(--color-sponsors-subtle) !important; }
+
+// Border
+
+.color-border-default { border-color: var(--color-border-default) !important; }
+.color-border-muted   { border-color: var(--color-border-muted) !important; }
+.color-border-subtle  { border-color: var(--color-border-subtle) !important; }
+
+.color-border-accent    { border-color: var(--color-accent-emphasis) !important; }
+.color-border-success   { border-color: var(--color-success-emphasis) !important; }
+.color-border-attention { border-color: var(--color-attention-emphasis) !important; }
+.color-border-severe    { border-color: var(--color-severe-emphasis) !important; }
+.color-border-danger    { border-color: var(--color-danger-emphasis) !important; }
+.color-border-done      { border-color: var(--color-done-emphasis) !important; }
+.color-border-sponsors  { border-color: var(--color-sponsors-emphasis) !important; }
+
+// Misc
+
+.text-inherit, // deprecated
+.color-fg-inherit {
+  color: inherit !important;
+}
+
+// ----------------------- Deprecated --------------------------------------
+// The following V1 utilities will be removed in the next major release
+// -------------------------------------------------------------------------
+
 // Text colors
 .color-text-primary   { color: var(--color-fg-default) !important; }
 .color-text-secondary { color: var(--color-fg-muted) !important; }
@@ -26,8 +107,8 @@
 .color-border-tertiary  { border-color: var(--color-neutral-muted) !important; }
 .color-border-inverse   { border-color: var(--color-fg-on-emphasis) !important; }
 .color-border-info      { border-color: var(--color-accent-emphasis) !important; }
-.color-border-success   { border-color: var(--color-success-emphasis) !important; }
-.color-border-danger    { border-color: var(--color-danger-emphasis) !important; }
+// .color-border-success   { border-color: var(--color-success-emphasis) !important; }
+// .color-border-danger    { border-color: var(--color-danger-emphasis) !important; }
 .color-border-warning   { border-color: var(--color-attention-emphasis) !important; }
 
 // Background colors
@@ -37,7 +118,7 @@
 .color-bg-primary         { background-color: var(--color-canvas-default) !important; }
 .color-bg-secondary       { background-color: var(--color-canvas-subtle) !important; }
 .color-bg-tertiary        { background-color: var(--color-canvas-subtle) !important; }
-.color-bg-overlay         { background-color: var(--color-canvas-overlay) !important; }
+// .color-bg-overlay         { background-color: var(--color-canvas-overlay) !important; }
 .color-bg-info            { background-color: var(--color-accent-subtle) !important; }
 .color-bg-info-inverse    { background-color: var(--color-accent-emphasis) !important; }
 .color-bg-danger          { background-color: var(--color-danger-subtle) !important; }
@@ -46,6 +127,3 @@
 .color-bg-success-inverse { background-color: var(--color-success-emphasis) !important; }
 .color-bg-warning         { background-color: var(--color-attention-subtle) !important; }
 .color-bg-warning-inverse { background-color: var(--color-attention-emphasis) !important; }
-
-// Inherit
-.text-inherit { color: inherit !important; }
