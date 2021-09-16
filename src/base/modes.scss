@@ -3,15 +3,21 @@
 @import "../support/mixins/color-modes.scss";
 
 @import "@primer/primitives/dist/scss/colors/_light.scss";
+@import "@primer/primitives/dist/scss/colors/_light_protanopia.scss";
 @import "@primer/primitives/dist/scss/colors/_dark.scss";
 @import "@primer/primitives/dist/scss/colors/_dark_dimmed.scss";
 @import "@primer/primitives/dist/scss/colors/_dark_high_contrast.scss";
+@import "@primer/primitives/dist/scss/colors/_dark_protanopia.scss";
 
 // Outputs the CSS variables
 // Use :root (html element) to define a default
 
 @include color-mode-theme(light, true) {
   @include primer-colors-light;
+}
+
+@include color-mode-theme(light_protanopia) {
+  @include primer-colors-light-protanopia;
 }
 
 @include color-mode-theme(dark) {
@@ -24,6 +30,10 @@
 
 @include color-mode-theme(dark_high_contrast) {
   @include primer-colors-dark_high_contrast;
+}
+
+@include color-mode-theme(dark_protanopia) {
+  @include primer-colors-dark_protanopia;
 }
 
 // Color mode boundaries
