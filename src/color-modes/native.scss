@@ -1,0 +1,10 @@
+// color-scheme
+// Enables color modes for native elements
+
+@include color-mode(light) { color-scheme: light; }
+@include color-mode(dark) { color-scheme: dark; }
+
+[data-color-mode] {
+  color: var(--color-fg-default);
+  background-color: var(--color-canvas-default);
+}

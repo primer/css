@@ -3,7 +3,7 @@ on:
   push:
     branches-ignore:
       - 'main'
-      - 'changeset-release/main'
+      - 'changeset-release/**'
       - 'dependabot/**'
     # Don't release canary when these paths change
     # It's not necessary because we don't ship them and it creates noise
@@ -50,6 +50,7 @@ jobs:
         run: |
           echo "$( jq '.version = "0.0.0"' package.json )" > package.json
           echo -e "---\n'@primer/css': patch\n---\n\nFake entry to force publishing" > .changeset/force-snapshot-release.md
+          rm -f .changeset/pre.json
           yarn changeset version --snapshot
           yarn changeset publish --tag canary
         env:
