@@ -1,5 +1,17 @@
 # @primer/css
 
+## 18.0.0-next.0
+
+### Major Changes
+
+- [#1541](https://github.com/primer/css/pull/1541) [`d24d3822`](https://github.com/primer/css/commit/d24d3822aee5c9b855d0b62ff960a87545221868) Thanks [@jonrohan](https://github.com/jonrohan)! - Removing the rem() mixin and usages. Placing the computed values in place.
+
+* [#1462](https://github.com/primer/css/pull/1462) [`32040ff9`](https://github.com/primer/css/commit/32040ff9ca7df9cd6f9cca8124fb95bde0fa4834) Thanks [@jonrohan](https://github.com/jonrohan)! - Rename `modes.scss` file to `color-modes.scss` and move from the `base/` folder to the `support/variables` folder.
+
+- [#1465](https://github.com/primer/css/pull/1465) [`53685d83`](https://github.com/primer/css/commit/53685d8321bfa5eb07d2feacd51ad27239cbcaba) Thanks [@jonrohan](https://github.com/jonrohan)! - Moving color modes to their own bundle, `./color-modes/` and separates color mode themes into their own scss file.
+
+* [#1566](https://github.com/primer/css/pull/1566) [`816a5d50`](https://github.com/primer/css/commit/816a5d5083dcd590f4bbac12e052815c0d1a9755) Thanks [@jonrohan](https://github.com/jonrohan)! - Remove break-word from utilities
+
 ## 17.11.0
 
 ### Minor Changes
