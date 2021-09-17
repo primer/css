@@ -170,7 +170,7 @@ The benefit of `auto` over the `scale` variables is that `auto` variables automa
 
 ---
 
-In general, 
+In general,
 
 1. use [functional variables](/support/color-system) as much as possible.
 2. create new [custom color variables](/getting-started/theming#custom-color-variables) if there is no functional variable that fits the use case.
