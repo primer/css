@@ -7,7 +7,7 @@ path: stickersheet/sizes
 
 ```html live
 
-<span class="d-inline-block col-1 color-text-tertiary">16px</span>
+<span class="d-inline-block col-1 color-fg-subtle">16px</span>
 <img class="mr-3 avatar avatar-1" src="https://avatars.githubusercontent.com/jonrohan?s=64" />
 <!-- <%= octicon "comment" %> -->
 <svg class="octicon octicon-comment" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 2.5C2.6837 2.5 2.62011 2.52634 2.57322 2.57322C2.52634 2.62011 2.5 2.6837 2.5 2.75V10.25C2.5 10.388 2.612 10.5 2.75 10.5H4.75C4.94891 10.5 5.13968 10.579 5.28033 10.7197C5.42098 10.8603 5.5 11.0511 5.5 11.25V13.44L8.22 10.72C8.36052 10.5793 8.55115 10.5002 8.75 10.5H13.25C13.3163 10.5 13.3799 10.4737 13.4268 10.4268C13.4737 10.3799 13.5 10.3163 13.5 10.25V2.75C13.5 2.6837 13.4737 2.62011 13.4268 2.57322C13.3799 2.52634 13.3163 2.5 13.25 2.5H2.75ZM1 2.75C1 1.784 1.784 1 2.75 1H13.25C14.216 1 15 1.784 15 2.75V10.25C15 10.7141 14.8156 11.1592 14.4874 11.4874C14.1592 11.8156 13.7141 12 13.25 12H9.06L6.487 14.573C6.28324 14.7767 6.02367 14.9153 5.74111 14.9715C5.45854 15.0277 5.16567 14.9988 4.8995 14.8886C4.63333 14.7784 4.40581 14.5917 4.24571 14.3522C4.08561 14.1127 4.0001 13.8311 4 13.543V12H2.75C2.28587 12 1.84075 11.8156 1.51256 11.4874C1.18437 11.1592 1 10.7141 1 10.25V2.75Z"></path></svg>
@@ -15,25 +15,25 @@ path: stickersheet/sizes
 
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
-<span class="d-inline-block col-1 color-text-tertiary">20px</span>
+<span class="d-inline-block col-1 color-fg-subtle">20px</span>
 <img class="mr-3 avatar avatar-2" src="https://avatars.githubusercontent.com/jonrohan?s=64" />
 <span class="mr-3 Label">Label</span>
-<span class="mr-3 IssueLabel color-bg-info-inverse color-text-white">IssueLabel</span>
+<span class="mr-3 IssueLabel color-bg-accent-emphasis color-fg-on-emphasis">IssueLabel</span>
 <span class="mr-3 Counter">1.5K</span>
 
 
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
-<span class="d-inline-block col-1 color-text-tertiary">24px</span>
+<span class="d-inline-block col-1 color-fg-subtle">24px</span>
 <img class="mr-3 avatar avatar-3" src="https://avatars.githubusercontent.com/jonrohan?s=64" />
 <span class="mr-3 Label Label--large">Label</span>
-<span class="mr-3 IssueLabel IssueLabel--big color-bg-info-inverse color-text-white">IssueLabel</span>
+<span class="mr-3 IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis">IssueLabel</span>
 <span class="mr-3 State State--small">State</span>
 
 
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
-<span class="d-inline-block col-1 color-text-tertiary">28px</span>
+<span class="d-inline-block col-1 color-fg-subtle">28px</span>
 <img class="mr-3 avatar avatar-4" src="https://avatars.githubusercontent.com/jonrohan?s=64" />
 <button class="mr-3 btn btn-sm" type="button">Button</button>
 <input class="mr-3 form-control input-sm" type="text" placeholder="Input" />
@@ -41,7 +41,7 @@ path: stickersheet/sizes
 
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
-<span class="d-inline-block col-1 color-text-tertiary">32px</span>
+<span class="d-inline-block col-1 color-fg-subtle">32px</span>
 <img class="mr-3 avatar avatar-5" src="https://avatars.githubusercontent.com/jonrohan?s=64" />
 <button class="mr-3 btn" type="button">Button</button>
 <input class="mr-3 form-control" type="text" placeholder="Input" />
@@ -54,7 +54,7 @@ path: stickersheet/sizes
 
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
-<span class="d-inline-block col-1 color-text-tertiary">40px</span>
+<span class="d-inline-block col-1 color-fg-subtle">40px</span>
 <img class="mr-3 avatar avatar-6" src="https://avatars.githubusercontent.com/jonrohan?s=80" />
 <div class="mr-3 tabnav d-inline-block v-align-middle mb-0">
   <nav class="tabnav-tabs">
@@ -67,7 +67,7 @@ path: stickersheet/sizes
 
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
-<span class="d-inline-block col-1 color-text-tertiary">48px</span>
+<span class="d-inline-block col-1 color-fg-subtle">48px</span>
 <img class="mr-3 avatar avatar-7" src="https://avatars.githubusercontent.com/jonrohan?s=96" />
 <nav class="mr-3 UnderlineNav d-inline-block v-align-middle">
   <div class="UnderlineNav-body">
@@ -80,7 +80,7 @@ path: stickersheet/sizes
 
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
-<span class="d-inline-block col-1 color-text-tertiary">64px</span>
+<span class="d-inline-block col-1 color-fg-subtle">64px</span>
 <img class="mr-3 avatar avatar-8" src="https://avatars.githubusercontent.com/jonrohan?s=128" />
 <div class="mr-3 Header d-inline-block v-align-middle">
   <div class="Header-item">

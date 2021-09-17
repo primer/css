@@ -76,7 +76,7 @@ Flowing as row:
 <div class="Layout">
   <div class="Layout-main border">
     <div class="Layout-main-centered-md">
-      <div class="container-md border color-border-info">
+      <div class="container-md border color-border-accent">
         centered md
       </div>
     </div>
@@ -86,7 +86,7 @@ Flowing as row:
 <div class="Layout">
   <div class="Layout-main border">
     <div class="Layout-main-centered-lg">
-      <div class="container-lg border color-border-info">
+      <div class="container-lg border color-border-accent">
         centered lg
       </div>
     </div>
@@ -96,7 +96,7 @@ Flowing as row:
 <div class="Layout">
   <div class="Layout-main border">
     <div class="Layout-main-centered-xl">
-      <div class="container-xl border color-border-info">
+      <div class="container-xl border color-border-accent">
         centered xl
       </div>
     </div>

@@ -27,7 +27,7 @@ Below an example of all themes to compare:
 ```html live
 <div data-color-mode="light" data-light-theme="light" class="p-3">
   <h4>Light</h4>
-  <code class="d-block mt-1 mb-3 color-text-secondary">
+  <code class="d-block mt-1 mb-3 color-fg-muted">
     data-color-mode="light" data-light-theme="light"
   </code>
   <button class="btn">Button</button>
@@ -36,7 +36,7 @@ Below an example of all themes to compare:
 </div>
 <div data-color-mode="dark" data-dark-theme="dark" class="p-3">
   <h4>Dark</h4>
-  <code class="d-block mt-1 mb-3 color-text-secondary">
+  <code class="d-block mt-1 mb-3 color-fg-muted">
     data-color-mode="dark" data-dark-theme="dark"
   </code>
   <button class="btn">Button</button>
@@ -45,7 +45,7 @@ Below an example of all themes to compare:
 </div>
 <div data-color-mode="dark" data-dark-theme="dark_dimmed" class="p-3">
   <h4>Dark Dimmed</h4>
-  <code class="d-block mt-1 mb-3 color-text-secondary">
+  <code class="d-block mt-1 mb-3 color-fg-muted">
     data-color-mode="dark" data-dark-theme="dark_dimmed"
   </code>
   <button class="btn">Button</button>
@@ -54,7 +54,7 @@ Below an example of all themes to compare:
 </div>
 <div data-color-mode="dark" data-dark-theme="dark_high_contrast" class="p-3">
   <h4>Dark High Contrast</h4>
-  <code class="d-block mt-1 mb-3 color-text-secondary">
+  <code class="d-block mt-1 mb-3 color-fg-muted">
     data-color-mode="dark" data-dark-theme="dark_high_contrast"
   </code>
   <button class="btn">Button</button>
@@ -72,7 +72,7 @@ If the theme should be synced to the OS's color mode, use `data-color-mode="auto
 ```html live
 <div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark_dimmed" class="p-3">
   <h4>Synced to system</h4>
-  <code class="d-block mt-1 mb-3 color-text-secondary">
+  <code class="d-block mt-1 mb-3 color-fg-muted">
     data-color-mode="auto" data-light-theme="light" data-dark-theme="dark_dimmed"
   </code>
   <button class="btn">Button</button>
