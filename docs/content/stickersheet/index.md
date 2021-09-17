@@ -27,8 +27,8 @@ path: stickersheet/
 
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
-<span class="mr-2 IssueLabel color-bg-info-inverse color-text-white">IssueLabel</span>
-<span class="mr-2 IssueLabel IssueLabel--big color-bg-info-inverse color-text-white">IssueLabel</span>
+<span class="mr-2 IssueLabel color-bg-accent-emphasis color-fg-on-emphasis">IssueLabel</span>
+<span class="mr-2 IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis">IssueLabel</span>
 
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
@@ -126,8 +126,8 @@ path: stickersheet/
 
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
-<span class="mr-2 IssueLabel color-bg-info-inverse color-text-white">IssueLabel</span>
-<span class="mr-2 IssueLabel IssueLabel--big color-bg-info-inverse color-text-white">IssueLabel</span>
+<span class="mr-2 IssueLabel color-bg-accent-emphasis color-fg-on-emphasis">IssueLabel</span>
+<span class="mr-2 IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis">IssueLabel</span>
 
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 

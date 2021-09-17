@@ -457,7 +457,7 @@ A `SelectMenu-message` can be used to show different kind of messages to a user.
         </button>
       </header>
       <div class="SelectMenu-list">
-        <div class="SelectMenu-message color-bg-danger color-text-danger">Message goes here</div>
+        <div class="SelectMenu-message color-bg-danger-subtle color-fg-danger">Message goes here</div>
         <button class="SelectMenu-item" role="menuitem">Item 1</button>
         <button class="SelectMenu-item" role="menuitem">Item 2</button>
         <button class="SelectMenu-item" role="menuitem">Item 3</button>
@@ -567,7 +567,7 @@ Sometimes a select menu needs to communicate a "blank slate" where there's no co
             />
           </svg>
           <h4 class="my-2">No repositories</h4>
-          <p class="mb-3 color-text-secondary">We didn’t find any matching repositories that you can commit to.</p>
+          <p class="mb-3 color-fg-muted">We didn’t find any matching repositories that you can commit to.</p>
           <button type="button" class="btn btn-sm btn-primary">Create a repository</button>
         </div>
       </div>

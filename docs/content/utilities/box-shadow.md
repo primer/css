@@ -7,10 +7,6 @@ source: 'https://github.com/primer/css/tree/main/src/utilities/box-shadow.scss'
 bundle: utilities
 ---
 
-<Note>
-  Please note Primer v16 has changed the naming of these color classes. Check the <a href="/css/support/v16-migration">migration guide</a> to make sure your app is up to date.
-</Note>
-
 Box shadows are used to make content appear elevated. They are typically applied to containers of content that users need to pay attention to or content that appears on top of (overlapping) other elements on the page (like a pop-over or modal).
 
 ## Small
@@ -32,7 +28,7 @@ These types of shadows are typically applied to elements with borders, such as t
       <h3 class="m-0">Organization</h3>
     </div>
     <div class="Box-row">
-      <p class="mb-0 color-text-secondary">
+      <p class="mb-0 color-fg-muted">
         Taxidermy live-edge mixtape, keytar tumeric locavore meh selvage deep v letterpress vexillologist lo-fi tousled
         church-key thundercats. Brooklyn bicycle rights tousled, marfa actually.
       </p>
@@ -62,11 +58,11 @@ Medium box shadows are typically used on editorialized content that needs to app
 <div class="col-6">
   <a class="d-block color-shadow-medium px-3 pt-4 pb-6 position-relative rounded-1 overflow-hidden no-underline" href="#">
     <div class="position-absolute top-0 left-0 py-1 width-full"></div>
-    <h3 class="color-text-primary">Serverless architecture</h3>
-    <p class="color-text-secondary">
+    <h3 class="color-fg-default">Serverless architecture</h3>
+    <p class="color-fg-muted">
       Build powerful, event-driven, serverless architectures with these open-source libraries and frameworks.
     </p>
-    <ul class="position-absolute bottom-0 pb-3 text-small color-text-secondary list-style-none ">
+    <ul class="position-absolute bottom-0 pb-3 text-small color-fg-muted list-style-none ">
       <li class="d-inline-block mr-1">
         <!-- <%= octicon "repo", :class => "mr-1" %> -->
         <svg class="octicon octicon-repo mr-1" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
