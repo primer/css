@@ -7,10 +7,6 @@ source: 'https://github.com/primer/css/tree/main/src/labels'
 bundle: labels
 ---
 
-<Note>
-  Please note Primer v16 has changed the naming of these color classes. Check the <a href="/css/support/v16-migration">migration guide</a> to make sure your app is up to date.
-</Note>
-
 Labels add metadata or indicate status of items and navigational elements. Three different types of labels are available: [Labels](#default-label-styles) for adding metadata, [States](#states) for indicating status, and [Counters](#counters) for showing the count for a number of items.
 
 ## Labels
@@ -81,7 +77,7 @@ Issue labels are used for adding labels to issues and pull requests. They also c
 <span class="IssueLabel color-bg-accent-emphasis color-fg-on-emphasis mr-1">Primer</span>
 <span class="IssueLabel color-bg-danger-emphasis color-fg-on-emphasis mr-1">bug 🐛</span>
 <span class="IssueLabel color-bg-success-emphasis color-fg-on-emphasis mr-1">help wanted</span>
-<span class="IssueLabel color-bg-attention-emphasis color-fg-default mr-1">🚂 deploy: train</span>
+<span class="IssueLabel color-bg-attention-emphasis color-fg-on-emphasis mr-1">🚂 deploy: train</span>
 ```
 
 If an issue label needs to be bigger, add the `.IssueLabel--big` modifier.
@@ -90,7 +86,7 @@ If an issue label needs to be bigger, add the `.IssueLabel--big` modifier.
 <span class="IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis mr-1">Primer</span>
 <span class="IssueLabel IssueLabel--big color-bg-danger-emphasis color-fg-on-emphasis mr-1">bug 🐛</span>
 <span class="IssueLabel IssueLabel--big color-bg-success-emphasis color-fg-on-emphasis mr-1">help wanted</span>
-<span class="IssueLabel IssueLabel--big color-bg-attention-emphasis color-fg-default mr-1">🚂 deploy: train</span>
+<span class="IssueLabel IssueLabel--big color-bg-attention-emphasis color-fg-on-emphasis mr-1">🚂 deploy: train</span>
 ```
 
 ## States

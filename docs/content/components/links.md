@@ -6,10 +6,6 @@ source: 'https://github.com/primer/css/tree/main/src/links'
 bundle: links
 ---
 
-<Note>
-  Please note Primer v16 has changed the naming of these color classes. Check the <a href="/css/support/v16-migration">migration guide</a> to make sure your app is up to date.
-</Note>
-
 By default `<a>` elements already use the right link color and apply an underline on hover. So in most cases the `.Link` class is not really needed.
 
 ```html live
