@@ -91,6 +91,20 @@ Use `mx-auto`to center block elements with a set width.
 </div>
 ```
 
+We also provide directional margin auto. `mt-auto, mr-auto, mb-auto, ml-auto`
+
+```html live
+<div class="d-flex border mb-4">
+  <div style="height:100px;"></div>
+  <div class="border mt-auto">`mt-auto` will push this box to the bottom.</div>
+  <div class="border mb-auto">`mb-auto` will push this box to the top.</div>
+</div>
+<div class="d-flex flex-column border">
+  <div class="border ml-auto">`ml-auto` will push this box to the right.</div>
+  <div class="border mr-auto">`mr-auto` will push this box to the left.</div>
+</div>
+```
+
 ## Reset margins
 Reset margins built into typography elements or other components with `m-0`, `mt-0`, `mr-0`, `mb-0`, `ml-0`, `mx-0`, and `my-0`.
 
