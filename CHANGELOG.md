@@ -1,5 +1,19 @@
 # @primer/css
 
+## 17.11.0
+
+### Minor Changes
+
+- [#1580](https://github.com/primer/css/pull/1580) [`4a1f09a7`](https://github.com/primer/css/commit/4a1f09a75e7666b46e68e96e6f485d9ff467fd01) Thanks [@simurai](https://github.com/simurai)! - Add V2 utilities
+
+* [#1595](https://github.com/primer/css/pull/1595) [`5fb831cf`](https://github.com/primer/css/commit/5fb831cf5062baa4ffde4322a0035c144db1e70c) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding directional margin classes to the margin utilities.
+
+  Adding: `ml-auto, mb-auto, mr-auto`
+
+### Patch Changes
+
+- [#1594](https://github.com/primer/css/pull/1594) [`2cf661c4`](https://github.com/primer/css/commit/2cf661c4d95285d09d0f26ea6109d5aa9bbed552) Thanks [@jonrohan](https://github.com/jonrohan)! - Loosening the primer/primitives dependency to any minor.patch version
+
 ## 17.10.0
 
 ### Minor Changes
