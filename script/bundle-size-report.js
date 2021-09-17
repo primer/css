@@ -69,24 +69,41 @@ const posNeg = v => (v > 0 ? '+ ' : v < 0 ? '- ' : '')
 
   // Build the rows
   for (const name of Object.keys(currentBundles)) {
-    const current = currentBundles[name]
-    const latest = latestBundles[name]
+    const {
+      stats: {
+        selectors: {
+          total: current_selectors_total
+        },
+        gzipSize: current_gzip_size,
+        size: current_size
+      }
+    } = currentBundles[name] || { stats: { selectors: { total: 0 }, gzipSize: 0, size: 0 } }
+
+    const {
+      stats: {
+        selectors: {
+          total: latest_selectors_total
+        },
+        gzipSize: latest_gzip_size,
+        size: latest_size
+      }
+    } = latestBundles[name] || { stats: { selectors: { total: 0 }, gzipSize: 0, size: 0 } }
 
     const delta = [
-      current.stats.selectors.total - latest.stats.selectors.total,
-      current.stats.gzipSize - latest.stats.gzipSize,
-      current.stats.size - latest.stats.size
+      current_selectors_total - latest_selectors_total,
+      current_gzip_size - latest_gzip_size,
+      current_size - latest_size
     ].reduce((a, b) => a + b, 0)
 
     if (delta !== 0) {
       data.push([
-        current.name,
-        current.stats.selectors.total,
-        current.stats.selectors.total - latest.stats.selectors.total,
-        current.stats.gzipSize,
-        current.stats.gzipSize - latest.stats.gzipSize,
-        current.stats.size,
-        current.stats.size - latest.stats.size
+        name,
+        current_selectors_total,
+        current_selectors_total - latest_selectors_total,
+        current_gzip_size,
+        current_gzip_size - latest_gzip_size,
+        current_size,
+        current_size - latest_size
       ])
     }
   }
