@@ -18,7 +18,7 @@
     "color-icon-warning": "color-fg-attention",
     "color-border-primary": "color-border-default",
     "color-border-secondary": "color-border-muted",
-    "color-border-tertiary": null,
+    "color-border-tertiary": "color-border-default",
     "color-border-inverse": null,
     "color-border-info": "color-border-accent",
     "color-border-warning": "color-border-attention",
