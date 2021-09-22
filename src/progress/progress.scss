@@ -4,8 +4,7 @@
   display: flex;
   height: 8px;
   overflow: hidden;
-  // stylelint-disable-next-line primer/colors
-  background-color: var(--color-neutral-muted, var(--color-auto-gray-2));
+  background-color: var(--color-neutral-muted);
   border-radius: $border-radius;
   outline: 1px solid transparent; // Support Firefox custom colors
 }

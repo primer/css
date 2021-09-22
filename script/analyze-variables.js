@@ -93,5 +93,5 @@ export default analyzeVariables
   const args = process.argv.slice(2)
   const file = args.length ? args.shift() : 'src/support/index.scss'
   const variables = await analyzeVariables(file)
-  console.log(JSON.stringify(variables, null, 2))
+  JSON.stringify(variables, null, 2)
 })()

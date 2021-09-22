@@ -1,4 +1,4 @@
-const {getNavigationLinks, getContentFrontmatter} = require('./utils/docs')
+import {getNavigationLinks, getContentFrontmatter} from './utils/docs'
 
 let navLinks, contentFM
 

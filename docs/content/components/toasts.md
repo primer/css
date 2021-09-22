@@ -1,7 +1,7 @@
 ---
 title: Toasts
 path: components/toasts
-status: Experimental
+status: Alpha
 status_issue: 'https://github.com/github/design-systems/issues/101'
 source: ''
 bundle: toasts

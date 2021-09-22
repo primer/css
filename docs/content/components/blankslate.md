@@ -92,7 +92,7 @@ Add an additional optional class to the `.blankslate` to change its appearance.
 </div>
 ```
 
-**Note**: It's possible to combine variations. Large and spacious (`blankslate blankslate-large blankslate-spacious`) is often used toghether.
+**Note**: It's possible to combine variations. Large and spacious (`blankslate blankslate-large blankslate-spacious`) is often used together.
 
 ### Add border
 

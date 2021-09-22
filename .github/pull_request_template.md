@@ -6,4 +6,4 @@ If your proposal fixes any issues, please list them below, then delete this line
 
 Finally, tell us more about the change here, in the description.
 
-/cc @primer/ds-core
+/cc @primer/css-reviewers

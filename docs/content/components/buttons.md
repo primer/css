@@ -131,7 +131,7 @@ Create a button that looks like a link with `.btn-link`. Rather than using an `<
 
 ### Invisible button
 
-When you want a link, but you want it padded and line heighted like a button best for "cancel" actions on forms.
+When you want a link, but you want it padded and line heightened like a button best for "cancel" actions on forms.
 
 ```html live
 <button class="btn btn-invisible" type="button">Cancel</button>

@@ -1,5 +1,93 @@
 # @primer/css
 
+## 17.11.0
+
+### Minor Changes
+
+- [#1580](https://github.com/primer/css/pull/1580) [`4a1f09a7`](https://github.com/primer/css/commit/4a1f09a75e7666b46e68e96e6f485d9ff467fd01) Thanks [@simurai](https://github.com/simurai)! - Add V2 utilities
+
+* [#1595](https://github.com/primer/css/pull/1595) [`5fb831cf`](https://github.com/primer/css/commit/5fb831cf5062baa4ffde4322a0035c144db1e70c) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding directional margin classes to the margin utilities.
+
+  Adding: `ml-auto, mb-auto, mr-auto`
+
+### Patch Changes
+
+- [#1594](https://github.com/primer/css/pull/1594) [`2cf661c4`](https://github.com/primer/css/commit/2cf661c4d95285d09d0f26ea6109d5aa9bbed552) Thanks [@jonrohan](https://github.com/jonrohan)! - Loosening the primer/primitives dependency to any minor.patch version
+
+## 17.10.0
+
+### Minor Changes
+
+- [#1592](https://github.com/primer/css/pull/1592) [`39c9c928`](https://github.com/primer/css/commit/39c9c92874eb32b346256cbcc713b87767b319ef) Thanks [@simurai](https://github.com/simurai)! - Revert font stack changes
+
+### Patch Changes
+
+- [#1590](https://github.com/primer/css/pull/1590) [`e3c8f90e`](https://github.com/primer/css/commit/e3c8f90e7f61e76d20650061da2dd93111814a8a) Thanks [@joelhawksley](https://github.com/joelhawksley)! - Update Breadcrumbs markup to match w3 aria example.
+
+## 17.9.0
+
+### Minor Changes
+
+- [#1575](https://github.com/primer/css/pull/1575) [`c7ea6448`](https://github.com/primer/css/commit/c7ea6448c114065627299db7ba65418799d4a59b) Thanks [@jonrohan](https://github.com/jonrohan)! - Replacing deprecated variables with color v2 variables
+
+* [#1573](https://github.com/primer/css/pull/1573) [`386dfa01`](https://github.com/primer/css/commit/386dfa0145a64e2c6edbdf8ab09d9fc3f7151f6a) Thanks [@simurai](https://github.com/simurai)! - Improve the font stack on Windows
+
+  - `Segoe UI Variable` -> `Segoe UI Variable Text`.
+    - "Segoe UI Variable Text" seems to be the better option for a lot of text (markdown). In the future we might can consider having a UI and a "text" font stack.
+  - Add `Meiryo` before `system-ui`.
+    - This should have the effect that the browser will use `Meiryo` instead of `Yu Gothic UI` and should improve font rendering, especially for Japanese.
+    - Note: In an earlier version, `Yu Gothic` was used. But with great [feedback](https://twitter.com/448jp/status/1435087523185758212) from @448jp and @hiloki https://github.com/primer/css/pull/1573#issuecomment-913973890 it seems `Meiryo` is the better default.
+
+- [#1581](https://github.com/primer/css/pull/1581) [`be518b80`](https://github.com/primer/css/commit/be518b8023b56802b1fc67ccc8a5b8398d1b279c) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating deprecations.js file to be more straightforward
+
+* [#1579](https://github.com/primer/css/pull/1579) [`c3b4a0c3`](https://github.com/primer/css/commit/c3b4a0c36302af7bb06ca996f37a63470ab99c62) Thanks [@jonrohan](https://github.com/jonrohan)! - Removing v2 color mode css var fallbacks. `var(--color-v2, var(--color-v1))` becomes `var(--color-v2)`
+
+## 17.8.0
+
+### Minor Changes
+
+- [#1567](https://github.com/primer/css/pull/1567) [`ab72486f`](https://github.com/primer/css/commit/ab72486f62d0f7e2397e3f0953fbcc4c46f5ef25) Thanks [@colebemis](https://github.com/colebemis)! - Remove `base/modes-v2.scss` file
+
+* [#1567](https://github.com/primer/css/pull/1567) [`ab72486f`](https://github.com/primer/css/commit/ab72486f62d0f7e2397e3f0953fbcc4c46f5ef25) Thanks [@colebemis](https://github.com/colebemis)! - Bumps `@primer/primitives` to [v4.7.0](https://github.com/primer/primitives/releases/tag/v4.7.0) which includes new [functional color system variables]
+
+- [#1567](https://github.com/primer/css/pull/1567) [`ab72486f`](https://github.com/primer/css/commit/ab72486f62d0f7e2397e3f0953fbcc4c46f5ef25) Thanks [@colebemis](https://github.com/colebemis)! - Output `dark_high_contrast` theme variables from `base/modes.scss`
+
+## 17.7.0
+
+### Minor Changes
+
+- [#1555](https://github.com/primer/css/pull/1555) [`4ae2174e`](https://github.com/primer/css/commit/4ae2174e33d3bd9be418176af4de75dd97b761c5) Thanks [@jonrohan](https://github.com/jonrohan)! - Add `.wb-break-word` class to existing `.break-word`
+
+### Patch Changes
+
+- [#1563](https://github.com/primer/css/pull/1563) [`679d70b5`](https://github.com/primer/css/commit/679d70b579c5203079e6a0559fe9dccbfcf0acae) Thanks [@simurai](https://github.com/simurai)! - Revert `TimelineItem-badge` fix
+
+## 17.6.2
+
+### Patch Changes
+
+- [#1556](https://github.com/primer/css/pull/1556) [`3ad13aba`](https://github.com/primer/css/commit/3ad13abac3deccc768af0ba5eb90f1365eb977f3) Thanks [@simurai](https://github.com/simurai)! - Fix TimelineItem--condensed background
+
+* [#1552](https://github.com/primer/css/pull/1552) [`966de4ee`](https://github.com/primer/css/commit/966de4ee0f1cfcd5f5a9f75560460adaafd47f06) Thanks [@simurai](https://github.com/simurai)! - Fix `code` in headers
+
+## 17.6.1
+
+### Patch Changes
+
+- [#1550](https://github.com/primer/css/pull/1550) [`8a684ee4`](https://github.com/primer/css/commit/8a684ee4d1572de543aef2f11d4756f6fdfda638) Thanks [@simurai](https://github.com/simurai)! - Add gradient hack to TimelineItem-badge
+
+## 17.6.0
+
+### Minor Changes
+
+- [#1529](https://github.com/primer/css/pull/1529) [`dca8e0ae`](https://github.com/primer/css/commit/dca8e0aeccb326c2bafff1ec86a912987b224f32) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Improve font rendering on Linux
+
+### Patch Changes
+
+- [#1540](https://github.com/primer/css/pull/1540) [`6b6e89a8`](https://github.com/primer/css/commit/6b6e89a8bff2319ef75d25217dafc272a5e597f0) Thanks [@joelhawksley](https://github.com/joelhawksley)! - Use standard lifecyle milestones for statuses.
+
+* [#1528](https://github.com/primer/css/pull/1528) [`303cacae`](https://github.com/primer/css/commit/303cacae77244a9e0de02b4caee2a8c01097aced) Thanks [@koddsson](https://github.com/koddsson)! - Convert package to a ES module
+
 ## 17.5.2
 
 ### Patch Changes
