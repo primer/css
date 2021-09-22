@@ -1,0 +1,23 @@
+.footnotes {
+  font-size: $h6-size;
+  color: var(--color-fg-muted);
+  border-top: $border;
+
+  ol {
+    padding-left: $spacer-3;
+    margin-bottom: $spacer-3;
+  }
+
+  p {
+    margin-top: $spacer-3;
+  }
+
+  a.data-footnote-backref g-emoji {
+    font-family: monospace;
+  }
+
+  :target {
+    border: $border-width $border-style var(--color-accent-emphasis);
+    box-shadow: 0 0 0.2em var(--color-accent-muted);
+  }
+}
