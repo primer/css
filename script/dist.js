@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 import {globby} from 'globby'
+import compiler from './primer-css-compiler.js'
 import cssstats from 'cssstats'
-import postcss from 'postcss'
-import loadConfig from 'postcss-load-config'
 import {dirname, join} from 'path'
 
 import analyzeVariables from './analyze-variables.js'
@@ -27,8 +26,6 @@ const bundleNames = {
 async function dist() {
   try {
     const bundles = {}
-    const {plugins, options} = await loadConfig()
-    const processor = postcss(plugins)
 
     await remove(outDir)
     await mkdirp(statsDir)
@@ -53,7 +50,8 @@ async function dist() {
 
       const scss = await readFile(from, encoding)
       meta.imports = getExternalImports(scss, path).map(getPathName)
-      const result = await processor.process(scss, Object.assign({from, to}, options))
+      const result = await compiler(scss, {from, to})
+
       await Promise.all([
         writeFile(to, result.css, encoding),
         writeFile(meta.stats, JSON.stringify(cssstats(result.css)), encoding),

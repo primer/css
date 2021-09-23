@@ -10,8 +10,6 @@
   line-height: $body-line-height;
   word-wrap: break-word;
 
-  @import "../base/kbd.scss"; // adds support for keyboard shortcuts
-
   // Clearfix on the markdown body
   &::before {
     display: table;
