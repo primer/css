@@ -22,6 +22,7 @@ describe('./dist/ folder', () => {
 
   it('contains source maps', () => {
     for (const file of distCSS) {
+      if (file.includes('support')) { continue }
       expect(distMap).toContain(`${file}.map`)
     }
   })
