@@ -1,6 +1,10 @@
 import titleCase from 'title-case'
 import allModeColors from '@primer/primitives/dist/js/colors'
 
+// TODO: Remove? Not sure if still needed?
+// The `../../src/support/variables/colors.scss` file got removed since all color variables are now in primer/primitives.
+// import colorVariablesSCSS from '!!raw-loader!../../src/support/variables/colors.scss'
+
 // XXX we don't necessarily define them in this order in primer-colors,
 // so we define an array here just to be safe
 const gradientHues = ['gray', 'blue', 'green', 'purple', 'yellow', 'orange', 'red', 'pink']
@@ -8,6 +12,9 @@ const gradientHues = ['gray', 'blue', 'green', 'purple', 'yellow', 'orange', 're
 const colors = allModeColors.light.scale
 
 const variables = {}
+
+// TODO: Remove? Not sure if still needed?
+// parseSCSSVariables(colorVariablesSCSS, variables)
 
 const colorModes = Object.keys(allModeColors).sort((a, b) => {
   if (a.startsWith('light') && !b.startsWith('light')) return -1
@@ -46,6 +53,19 @@ export const functionalVarNames = Object.keys(flattened.light).filter(
 )
 
 export const allColors = palettes.reduce((all, {values}) => all.concat(values), [])
+
+// TODO: fix the borders code
+//
+// export const borders = Object.keys(variables)
+//   // Re: border-gray-darker, see https://github.com/primer/css/pull/1192
+//   .filter(key => key.startsWith('border-') && !variables[key].includes('$') && key !== 'border-gray-darker')
+//   .sort()
+//   .map(key => ({
+//     variable: key,
+//     value: variables[key],
+//     slug: key,
+//     aliases: {border: key}
+//   }))
 
 function getPaletteByName(name) {
   return palettes.find(palette => palette.name === name)
