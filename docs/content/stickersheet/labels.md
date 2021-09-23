@@ -44,14 +44,14 @@ The base <span class="Label Label--inline"> label </span> component styles the t
 
 <hr class="my-4"><!-- Divider ------------------------ -->
 
-<span class="IssueLabel color-bg-info-inverse color-text-white mr-2">Primer</span>
+<span class="IssueLabel color-bg-accent-emphasis color-fg-on-emphasis mr-2">Primer</span>
 <span class="IssueLabel mr-2" style="background-color: #e5bffc;">
 <a class="" href="/primer/css/labels/%F0%9F%90%BB%20Next" style="color: #000000;"><g-emoji class="g-emoji" alias="bear" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f43b.png">🐻</g-emoji> Next</a>
 </span>
 
 <div class="my-3"></div><!-- Spacer ------------------------ -->
 
-<span class="IssueLabel IssueLabel--big color-bg-info-inverse color-text-white mr-2">Primer</span>
+<span class="IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis mr-2">Primer</span>
 <span class="IssueLabel IssueLabel--big mr-2" style="background-color: #e5bffc;">
 <a class="" href="/primer/css/labels/%F0%9F%90%BB%20Next" style="color: #000000;"><g-emoji class="g-emoji" alias="bear" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f43b.png">🐻</g-emoji> Next</a>
 </span>
@@ -112,9 +112,9 @@ The base <span class="Label Label--inline"> label </span> component styles the t
   10
 </span>
 <span class="Counter mr-1">👍 2</span>
-<span class="Counter mr-1 color-bg-danger-inverse color-text-white">22</span>
-<span class="Counter mr-1 color-bg-success-inverse color-text-white">22</span>
-<span class="Counter mr-1 color-bg-info-inverse color-text-white">22</span>
+<span class="Counter mr-1 color-bg-danger-emphasis color-fg-on-emphasis">22</span>
+<span class="Counter mr-1 color-bg-success-emphasis color-fg-on-emphasis">22</span>
+<span class="Counter mr-1 color-bg-accent-emphasis color-fg-on-emphasis">22</span>
 
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
@@ -140,8 +140,8 @@ The base <span class="Label Label--inline"> label </span> component styles the t
 <div class="my-4"></div><!-- Spacer ------------------------ -->
 
 <span class="diffstat">
-    <span class="color-text-success">+7</span>
-    <span class="color-text-danger">−2</span>
+    <span class="color-fg-success">+7</span>
+    <span class="color-fg-danger">−2</span>
     <span class="tooltipped tooltipped-e" aria-label="9 lines changed">
       <span class="diffstat-block-added"></span><span class="diffstat-block-added"></span><span class="diffstat-block-added"></span><span class="diffstat-block-deleted"></span><span class="diffstat-block-neutral"></span>
     </span>

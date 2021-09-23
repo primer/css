@@ -3,10 +3,6 @@ title: Dropdown
 status: Beta
 ---
 
-<Note>
-  Please note Primer v16 has changed the naming of these color classes. Check the <a href="/css/support/v16-migration">migration guide</a> to make sure your app is up to date.
-</Note>
-
 Dropdowns are lightweight context menus for housing navigation and actions. They're great for instances where you don't need the full power (and code) of the select menu.
 
 ## Basic examples
@@ -37,7 +33,7 @@ Using a button customized with additional utilities:
 ```html live
 <div style="margin-bottom: 100px">
   <details class="dropdown details-reset details-overlay d-inline-block">
-    <summary class="color-text-secondary p-2 d-inline" aria-haspopup="true">
+    <summary class="color-fg-muted p-2 d-inline" aria-haspopup="true">
       Dropdown
       <div class="dropdown-caret"></div>
     </summary>

@@ -1,0 +1,81 @@
+---
+title: Primer CSS v18 migration guide
+description: 'Guide for migrating to version 18.0.0 of Primer CSS'
+---
+
+Primer CSS `v18.0.0` replaces color modes V1 with V2. To help with the migration, please refer to the guide below.
+
+<Note>
+  The functional CSS color variables changed as well. Please refer to the <a href="https://primer.style/primitives/colors#deprecated-variables">deprecated variables section</a>.
+</Note>
+
+## Utility classes
+
+See [color utility classes](/utilities/colors) for a list of all the functional color utility classes.
+
+### Text
+
+| `v16`                   | `v18`                   |
+| ----------------------- | ------------------------|
+| `.color-text-primary`   | `.color-fg-default`     |
+| `.color-text-secondary` | `.color-fg-muted`       |
+| `.color-text-tertiary`  | `.color-fg-subtle`      |
+| `.color-text-link`      | `.color-fg-accent`      |
+| `.color-text-success`   | `.color-fg-success`     |
+| `.color-text-warning`   | `.color-fg-attention`   |
+| `.color-text-danger`    | `.color-fg-danger`      |
+| `.color-text-inverse`   | `.color-fg-on-emphasis` |
+| `.color-text-white`     | n/a*                    |
+
+* Often `.color-text-white` can be replaced with `.color-fg-on-emphasis`, but there are some cases where that's not ideal. If in doubt, plase reach out the the `#primer` team.
+
+### Icon
+
+| `v16`                   | `v18`                 |
+| ----------------------- | --------------------- |
+| `.color-icon-primary`   | `.color-fg-default`   |
+| `.color-icon-secondary` | `.color-fg-muted`     |
+| `.color-icon-tertiary`  | `.color-fg-muted`     |
+| `.color-icon-info`      | `.color-fg-accent`    |
+| `.color-icon-danger`    | `.color-fg-danger`    |
+| `.color-icon-success`   | `.color-fg-success`   |
+| `.color-icon-warning`   | `.color-fg-attention` |
+
+### Border
+
+| `v16`                     | `v18`                     |
+| ------------------------- | ------------------------- |
+| `.color-border-primary`   | `.color-border-default`   |
+| `.color-border-secondary` | `.color-border-muted`     |
+| `.color-border-tertiary`  | `.color-border-muted`     |
+| `.color-border-inverse`   | n/a                       |
+| `.color-border-info`      | `.color-border-accent`    |
+| `.color-border-warning`   | `.color-border-attention` |
+
+### Background
+
+| `v16`                       | `v18`                          |
+| --------------------------- | ------------------------------ |
+| `.color-bg-canvas`          | `.color-bg-default`            |
+| `.color-bg-canvas-inverse`  | `.color-bg-neutral-emphasis`   |
+| `.color-bg-canvas-inset`    | `.color-bg-inset`              |
+| `.color-bg-primary`         | `.color-bg-default`            |
+| `.color-bg-secondary`       | `.color-bg-subtle`             |
+| `.color-bg-tertiary`        | `.color-bg-subtle`             |
+| `.color-bg-overlay`         | `.color-bg-overlay`            |
+| `.color-bg-info`            | `.color-bg-accent-subtle`      |
+| `.color-bg-info-inverse`    | `.color-bg-accent-emphasis`    |
+| `.color-bg-danger`          | `.color-bg-danger-subtle`      |
+| `.color-bg-danger-inverse`  | `.color-bg-danger-emphasis`    |
+| `.color-bg-success`         | `.color-bg-success-subtle`     |
+| `.color-bg-success-inverse` | `.color-bg-success-emphasis`   |
+| `.color-bg-warning`         | `.color-bg-attention-subtle`   |
+| `.color-bg-warning-inverse` | `.color-bg-attention-emphasis` |
+
+## Misc
+
+| `v16`                       | `v18`                          |
+| --------------------------- | ------------------------------ |
+| `.text-inherit`             | `.color-fg-inherit`            |
+
+A few more selectors and variables were removed. Please refer to [deprecations.json](https://github.com/primer/css/blob/main/src/deprecations.json) for a complete list.

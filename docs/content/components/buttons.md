@@ -5,9 +5,6 @@ status: Stable
 source: 'https://github.com/primer/css/tree/main/src/buttons'
 bundle: buttons
 ---
-<Note>
-  Please note Primer v16 has changed the naming of these color classes. Check the <a href="/css/support/v16-migration">migration guide</a> to make sure your app is up to date.
-</Note>
 
 Buttons are used for **actions**, like in forms, while textual hyperlinks are used for **destinations**, or moving from one page to another.
 

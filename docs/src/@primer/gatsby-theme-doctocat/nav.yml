@@ -3,17 +3,15 @@
   children:
     - title: Contributing
       url: /getting-started/contributing
-    - title: Theming
-      url: /getting-started/theming
 - title: Support
   url: /support
   children:
     - title: Breakpoints
       url: /support/breakpoints
-    - title: Color system
-      url: /support/color-system
     - title: Spacing
       url: /support/spacing
+    - title: Theming
+      url: /support/theming
     - title: Typography
       url: /support/typography
     - title: Variables

@@ -472,7 +472,7 @@ A similar approach can be used for buttons with multiple lines of text within a 
   <div class="Box-row d-flex flex-items-center">
     <div class="flex-auto">
       <strong>Row title</strong>
-      <div class="text-small color-text-tertiary">
+      <div class="text-small color-fg-subtle">
         Description
       </div>
     </div>
@@ -481,7 +481,7 @@ A similar approach can be used for buttons with multiple lines of text within a 
   <div class="Box-row d-flex flex-items-center">
     <div class="flex-auto">
       <strong>Row title</strong>
-      <div class="text-small color-text-tertiary">
+      <div class="text-small color-fg-subtle">
         Description
       </div>
     </div>
@@ -490,7 +490,7 @@ A similar approach can be used for buttons with multiple lines of text within a 
   <div class="Box-row d-flex flex-items-center">
     <div class="flex-auto">
       <strong>Row title</strong>
-      <div class="text-small color-text-tertiary">
+      <div class="text-small color-fg-subtle">
         Description
       </div>
     </div>
