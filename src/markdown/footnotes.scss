@@ -1,3 +1,5 @@
+// stylelint-disable selector-max-type
+// stylelint-disable selector-no-qualifying-type
 .footnotes {
   font-size: $h6-size;
   color: var(--color-fg-muted);
@@ -18,6 +20,7 @@
 
   :target {
     border: $border-width $border-style var(--color-accent-emphasis);
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0.2em var(--color-accent-muted);
   }
 }
