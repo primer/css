@@ -13,7 +13,7 @@
   // stylelint-disable-next-line primer/borders
   border: $border-width $border-style $blue-mktg;
   border-radius: $border-radius;
-  transition: $transition-time / 2;
+  transition: $transition-time * 0.5;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   &:hover {
