@@ -32,7 +32,7 @@ async function dist() {
     const files = await globby([`${inDir}/**/index.scss`])
 
     const inPattern = new RegExp(`^${inDir}/`)
-    const tasks = files.map(async from => {
+    const tasks = files.filter(file => !file.includes('support')).map(async from => {
       const path = from.replace(inPattern, '')
       const name = bundleNames[path] || getPathName(dirname(path))
 
