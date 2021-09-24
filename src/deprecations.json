@@ -2,7 +2,7 @@
   "selectors": {
     "color-text-primary": "color-fg-default",
     "color-text-secondary": "color-fg-muted",
-    "color-text-tertiary": "color-fg-subtle",
+    "color-text-tertiary": "color-fg-muted",
     "color-text-link": "color-fg-accent",
     "color-text-success": "color-fg-success",
     "color-text-warning": "color-fg-attention",
@@ -18,7 +18,7 @@
     "color-icon-warning": "color-fg-attention",
     "color-border-primary": "color-border-default",
     "color-border-secondary": "color-border-muted",
-    "color-border-tertiary": "color-border-muted",
+    "color-border-tertiary": "color-border-default",
     "color-border-inverse": null,
     "color-border-info": "color-border-accent",
     "color-border-warning": "color-border-attention",
