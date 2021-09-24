@@ -78,3 +78,10 @@ See [color utility classes](/utilities/colors) for a list of all the functional 
 | `.text-inherit`             | `.color-fg-inherit`            |
 
 A few more selectors and variables were removed. Please refer to [deprecations.json](https://github.com/primer/css/blob/main/src/deprecations.json) for a complete list.
+
+Note: The `<kbd>` styles also got removed from the markdown bundle. In case you import the `markdown` bundle **without** the `base` bundle, make sure to import the `<kbd>` styles as well:
+
+```diff
+@import "@primer/css/markdown/index.scss";
++ @import "@primer/css/base/kbd.scss";
+```
