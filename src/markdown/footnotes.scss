@@ -17,7 +17,7 @@
   li:target::before {
     position: absolute;
     top: -$spacer-2;
-    right: 0;
+    right: -$spacer-2;
     bottom: -$spacer-2;
     left: -$spacer-4;
     pointer-events: none;
