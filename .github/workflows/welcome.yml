@@ -22,7 +22,7 @@ jobs:
           script: |
             const fs = require('fs')
             const body = await fs.readFileSync('.github/release_template.md', 'utf8')
-            const result = await github.issues.listComments({
+            const result = await github.rest.issues.listComments({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo
@@ -30,7 +30,7 @@ jobs:
             console.log(result.data)
             const primerComments = result.data.filter(c => c.user.login == 'github-actions[bot]')
             if (!primerComments.length) {
-              await github.issues.createComment({
+              await github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
@@ -91,7 +91,7 @@ jobs:
           result-encoding: string
           script: |
             const diff_url = context.payload.pull_request.diff_url
-            const result = await github.request(diff_url)
+            const result = await github.rest.request(diff_url)
             const match = [...result.data.matchAll(/^\+['"]@primer\/css['"]:\s(patch|minor|major)/m)]
             if (match && match[0]) {
               return match[0][1]
@@ -104,7 +104,7 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             if (process.env.RELEASE == 'undefined') { return }
-            const issue = await github.issues.get({
+            const issue = await github.rest.issues.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number
