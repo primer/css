@@ -27,6 +27,10 @@
     border-radius: $border-radius;
   }
 
+  li:target {
+    color: var(--color-fg-default);
+  }
+
   .data-footnote-backref g-emoji {
     font-family: monospace;
   }
