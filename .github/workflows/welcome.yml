@@ -91,7 +91,7 @@ jobs:
           result-encoding: string
           script: |
             const diff_url = context.payload.pull_request.diff_url
-            const result = await github.rest.request(diff_url)
+            const result = await github.request(diff_url)
             const match = [...result.data.matchAll(/^\+['"]@primer\/css['"]:\s(patch|minor|major)/m)]
             if (match && match[0]) {
               return match[0][1]
