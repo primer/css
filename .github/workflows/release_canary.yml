@@ -57,7 +57,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Output canary version number
-        uses: actions/github-script@v4.1
+        uses: actions/github-script@v5
         with:
           script: |
             const package = require(`${process.env.GITHUB_WORKSPACE}/package.json`)
