@@ -1527,7 +1527,7 @@
 
 - Storybook. We've added a storybook prototyping environment for testing components in seclusion. To start the server run `npm start`
 - Adding yeoman generator for creating a primer module. `generator-primer-module`
-- Importing `stylelint-config-primer` from https://github.com/primer/stylelint-config-primer/ into monorepo.
+- Importing `stylelint-config-primer` from https://github.com/primer/stylelint-config/ into monorepo.
 - Importing `stylelint-selector-no-utility` from https://github.com/primer/stylelint-selector-no-utility into monorepo.
 
 ### Changes
@@ -1617,7 +1617,7 @@ This release updates primer modules to use variables for spacing units instead o
 
 # 9.1.0
 
-This release updates our [stylelint config](/primer/stylelint-config-primer) to [v2.0.0](https://github.com/primer/stylelint-config-primer/releases/tag/v2.0.0), and to stylelint v7.13.0. Each module also now has a `lint` npm script, and there are top-level `test` and `lint` scripts that you can use to lint and test all modules in one go.
+This release updates our [stylelint config](/primer/stylelint-config-primer) to [v2.0.0](https://github.com/primer/stylelint-config/releases/tag/v2.0.0), and to stylelint v7.13.0. Each module also now has a `lint` npm script, and there are top-level `test` and `lint` scripts that you can use to lint and test all modules in one go.
 
 This release also includes major improvements to our Travis build scripts to automatically publish PR builds, release candidates, and the "final" versions to npm.
 
