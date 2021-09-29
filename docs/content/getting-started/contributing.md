@@ -71,52 +71,6 @@ If you get to this step you've helped contribute to a style guide that many of y
 [Please open an issue](#step-1-open-an-issue) if we can improve these guidelines and make following this process any easier.
 
 
-## Removing styles and variables
-
-Removing styles and SCSS variables can be scary. How do you know if the thing you're deleting (or just planning to delete) isn't used in other projects? [Semantic versioning] provides us with an answer: We **don't** know, but we can use "major" version increments (from, say, `13.4.0` to `14.0.0`) to signal that the release includes potentially breaking changes. The rule is simple:
-
-**Whenever we delete a CSS selector or SCSS variable, we will increment to the next major version.**
-
-When planning to delete a CSS selector or SCSS variable, you should:
-
-1. Add a [TODO@version comment](#primer-csstodo) above the line in question:
-
-    ```scss
-    // TODO@15.0.0: delete $some-unused-var
-    $some-unused-var: 15px !default;
-    ```
-
-1. Add it to [deprecations.js]:
-
-    ```js
-    const versionDeprecations = {
-      '15.0.0': [
-        {
-          variables: ['$some-unused-var'],
-          message: '$some-unused-var is unused, and has been deprecated.'
-        }
-      ]
-    }
-    ```
-
-We have several checks and tools in place to help us plan, track, and catch both expected and unexpected removals of both CSS selectors and SCSS variables:
-
-### `deprecations.js`
-[This file][deprecations.js] is where we document all of our current and _planned_ CSS selector and SCSS variable deprecations (removals), and is used to generate [deprecation data](../tools/deprecations) for other tools.
-
-### `primer-css/TODO`
-[This stylelint rule][script/stylelint-todo.js] looks for comments in the form:
-
-```scss
-// TODO@<version>: <message>
-```
-
-and generates an error for each one whose `<version>` is less than or equal to the current version (in `package.json`).
-
-Where `<version>` is the future version you'd like to compare against. Assuming that the correctly formatted comments exist already, violations of this stylelint rule can be used to generate a checklist of lines to remove in a future release.
-
-See [the deprecation data docs](../tools/deprecations) for more information.
-
 ## Documentation structure
 
 - Our documentation site for Primer CSS is built using [Doctocat](https://primer.style/doctocat) and deployed with [Now](https://zeit.co/now). Our site is built from the `docs` folder and uses [MDX](https://mdxjs.com) to render markdown.
@@ -154,4 +108,3 @@ To understand what choice to make, you'll need to understand semver and know if 
 [semantic versioning]: https://semver.org
 [script/test-deprecations.js]: https://github.com/primer/css/tree/main/script/test-deprecations.js
 [deprecations.js]: https://github.com/primer/css/tree/main/deprecations.js
-[script/stylelint-todo.js]: https://github.com/primer/css/tree/main/script/stylelint-todo.js
