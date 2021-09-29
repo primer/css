@@ -121,7 +121,7 @@ jobs:
                   name: [otherReleaseLabels]
                 })
               }
-              github.issues.addLabels({
+              github.rest.issues.addLabels({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
