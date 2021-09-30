@@ -3,7 +3,7 @@ on:
   push:
     branches-ignore:
       - 'main'
-      - 'changeset-release/main'
+      - 'changeset-release/**'
       - 'dependabot/**'
     # Don't release canary when these paths change
     # It's not necessary because we don't ship them and it creates noise
@@ -50,17 +50,18 @@ jobs:
         run: |
           echo "$( jq '.version = "0.0.0"' package.json )" > package.json
           echo -e "---\n'@primer/css': patch\n---\n\nFake entry to force publishing" > .changeset/force-snapshot-release.md
+          rm -f .changeset/pre.json
           yarn changeset version --snapshot
           yarn changeset publish --tag canary
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Output canary version number
-        uses: actions/github-script@v3
+        uses: actions/github-script@v5
         with:
           script: |
             const package = require(`${process.env.GITHUB_WORKSPACE}/package.json`)
-            github.repos.createCommitStatus({
+            github.rest.repos.createCommitStatus({
               owner: context.repo.owner,
               repo: context.repo.repo,
               sha: context.sha,

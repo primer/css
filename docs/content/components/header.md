@@ -22,7 +22,7 @@ The `.Header` class is the wrapping class that aligns all the items properly and
     </a>
   </div>
   <div class="Header-item">
-    <input type="search" class="form-control input-dark" />
+    <input type="search" class="form-control Header-input" />
   </div>
   <div class="Header-item Header-item--full">
     Menu
@@ -49,7 +49,7 @@ All items directly under the `.Header` component should be a `.Header-item` comp
 
   <!-- Form item  -->
   <div class="Header-item">
-    <input class="form-control input-dark" type="text"/>
+    <input class="form-control Header-input" type="text"/>
   </div>
 
   <!-- Image item  -->

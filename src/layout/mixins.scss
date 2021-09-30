@@ -1,0 +1,79 @@
+// Layout mixins
+
+@mixin flow-as-row {
+  grid-auto-flow: row;
+  grid-template-columns: 1fr !important;
+
+  .Layout-sidebar,
+  .Layout-divider,
+  .Layout-main {
+      width: 100% !important;
+      grid-column: 1 !important;
+    }
+
+  &.Layout--sidebarPosition-flowRow-start {
+    .Layout-sidebar {
+      grid-row: 1;
+    }
+
+    .Layout-main {
+      grid-row: 2 / span 2;
+    }
+  }
+
+  &.Layout--sidebarPosition-flowRow-end {
+    .Layout-sidebar {
+      grid-row: 2 / span 2;
+    }
+
+    .Layout-main {
+      grid-row: 1;
+    }
+  }
+
+  &.Layout--sidebarPosition-flowRow-none {
+    .Layout-sidebar {
+      display: none;
+    }
+  }
+
+  &.Layout--divided {
+    @include flow-as-row-divider;
+
+    .Layout-main {
+      grid-row: 3 / span 1;
+    }
+
+    &.Layout--sidebarPosition-flowRow-end {
+      .Layout-sidebar {
+        grid-row: 3 / span 1;
+      }
+
+      .Layout-main {
+        grid-row: 1;
+      }
+    }
+  }
+}
+
+@mixin flow-as-row-divider {
+  --Layout-gutter: 0;
+
+  .Layout-divider {
+    height: 1px;
+    grid-row: 2;
+
+    &.Layout-divider--flowRow-hidden {
+      display: none;
+    }
+
+    &.Layout-divider--flowRow-shallow {
+      height: 8px;
+      margin-right: 0;
+      background: var(--color-canvas-inset);
+      border-color: var(--color-border-default);
+      border-style: solid;
+      border-width: $border-width 0;
+    }
+  }
+}

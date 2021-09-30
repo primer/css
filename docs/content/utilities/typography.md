@@ -110,13 +110,13 @@ Change the font weight, styles, and alignment with these utilities.
 ## Word-break
 There are two utilities for adjusting how lines and words of text break when they exceed the width of their containing element:
 
-1. `break-word` sets `word-break: break-word` and `overflow-wrap: break-word`, which will only break words if they would exceed the line length _after wrapping_.
+1. `wb-break-word` sets `word-break: break-word` and `overflow-wrap: break-word`, which will only break words if they would exceed the line length _after wrapping_.
 
 2. `wb-break-all` sets `word-break: break-all`, which will force a word to break regardless of whether it's shorter than the line length. See [MDN's `word-break` docs](https://developer.mozilla.org/en-US/docs/Web/CSS/word-break#Values) for more info.
 
 ```html live
-<p class="break-word p-2 bg-gray col-3 border-right">.break-word will only break long words that exceed the line length, such as supercalifragilisticexpialidocious. Long words like "exceedingly" will simply break to the next line.</p>
-<p class="wb-break-all p-2 bg-gray col-3 border-right">.wb-break-all will break any word that meets the end its line, and should be used sparingly. As you can see here, it's not particularly nice to read text that breaks in weird places.</p>
+<p class="wb-break-word p-2 color-bg-subtle col-3 border-right">.wb-break-word will only break long words that exceed the line length, such as supercalifragilisticexpialidocious. Long words like "exceedingly" will simply break to the next line.</p>
+<p class="wb-break-all p-2 color-bg-subtle col-3 border-right">.wb-break-all will break any word that meets the end its line, and should be used sparingly. As you can see here, it's not particularly nice to read text that breaks in weird places.</p>
 ```
 
 
@@ -147,17 +147,4 @@ Remove bullets from an unordered list or numbers from an ordered list by applyin
   <li>Second list item</li>
   <li>Third list item</li>
 </ul>
-```
-
-## Text shadows
-
-Text shadows can be used to help readability and to add some depth on colored backgrounds.
-
-```html live
-<div class="bg-gray-dark p-5">
-  <h3 class="text-white text-shadow-dark">.text-shadow-dark helps white text stand out on dark or photographic backgrounds</h3>
-</div>
-<div class="bg-gray p-5">
-  <h3 class="text-shadow-light">.text-shadow-light creates an embossed effect for dark text</h3>
-</div>
 ```

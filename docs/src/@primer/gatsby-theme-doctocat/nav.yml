@@ -3,21 +3,17 @@
   children:
     - title: Contributing
       url: /getting-started/contributing
-    - title: Theming
-      url: /getting-started/theming
 - title: Support
   url: /support
   children:
     - title: Breakpoints
       url: /support/breakpoints
-    - title: Color system
-      url: /support/color-system
     - title: Spacing
       url: /support/spacing
+    - title: Theming
+      url: /support/theming
     - title: Typography
       url: /support/typography
-    - title: Marketing support
-      url: /support/marketing-variables
     - title: Variables
       url: /support/variables
 - title: Utilities
@@ -41,14 +37,10 @@
       url: /utilities/marketing-layout
     - title: Margin
       url: /utilities/margin
-    - title: Marketing margin
-      url: /utilities/marketing-margin
     - title: Marketing filters
       url: /utilities/marketing-filters
     - title: Padding
       url: /utilities/padding
-    - title: Marketing padding
-      url: /utilities/marketing-padding
     - title: Typography
       url: /utilities/typography
     - title: Marketing typography
@@ -89,6 +81,8 @@
       url: /components/header
     - title: Labels
       url: /components/labels
+    - title: Layout
+      url: /components/layout
     - title: Links
       url: /components/links
     - title: Loaders

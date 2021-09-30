@@ -1,0 +1,7 @@
+@import "../../support/index.scss";
+
+@import "@primer/primitives/dist/scss/colors/_light_protanopia.scss";
+
+@include color-mode-theme(light_protanopia) {
+  @include primer-colors-light_protanopia;
+}

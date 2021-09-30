@@ -1,16 +1,27 @@
-const path = require('path')
+import autoprefixer from 'autoprefixer'
+import sass from '@koddsson/postcss-sass'
+import scss from 'postcss-scss'
+import scssImport from 'postcss-import'
+import {fileURLToPath} from 'url'
+import {join, dirname} from 'path'
 
-module.exports = {
-  parser: 'postcss-scss',
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+const plugins = [
+  scssImport,
+  sass({
+    includePaths: [join(__dirname, 'node_modules')],
+    outputStyle: process.env.CSS_MINIFY === '0' ? 'expanded' : 'compressed'
+  }),
+  autoprefixer,
+];
+
+export default {
   map: {
-    sourcesContent: true,
+    sourcesContent: false,
     annotation: true
   },
-  plugins: [
-    require('postcss-node-sass')({
-      includePaths: [path.join(__dirname, 'node_modules')],
-      outputStyle: 'compressed'
-    }),
-    require('autoprefixer')
-  ]
+  syntax: scss,
+  parser: scss,
+  plugins: plugins
 }

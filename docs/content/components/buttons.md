@@ -5,9 +5,6 @@ status: Stable
 source: 'https://github.com/primer/css/tree/main/src/buttons'
 bundle: buttons
 ---
-<Note>
-  Please note Primer v16 has changed the naming of these color classes. Check the <a href="/css/support/v16-migration">migration guide</a> to make sure your app is up to date.
-</Note>
 
 Buttons are used for **actions**, like in forms, while textual hyperlinks are used for **destinations**, or moving from one page to another.
 
@@ -105,7 +102,7 @@ Use `.btn-large` with a type scale utility to transform the text to a bigger siz
 
 ```html live
 <div class="f3">
-  <button class="btn btn-large btn-outline-blue mr-2" type="button">Large button button</button>
+  <button class="btn btn-large btn-outline mr-2" type="button">Large button button</button>
   <a class="btn btn-large" href="#url" role="button">Large link button</a>
 </div>
 ```
@@ -131,7 +128,7 @@ Create a button that looks like a link with `.btn-link`. Rather than using an `<
 
 ### Invisible button
 
-When you want a link, but you want it padded and line heighted like a button best for "cancel" actions on forms.
+When you want a link, but you want it padded and line heightened like a button best for "cancel" actions on forms.
 
 ```html live
 <button class="btn btn-invisible" type="button">Cancel</button>

@@ -8,7 +8,7 @@
     margin: 0;
     // stylelint-disable-next-line primer/typography
     font-size: 85%;
-    background-color: var(--color-markdown-code-bg);
+    background-color: var(--color-neutral-muted);
     border-radius: $border-radius;
 
     br { display: none; }
@@ -19,12 +19,15 @@
   pre {
     word-wrap: normal;
 
+    code {
+      // stylelint-disable-next-line primer/typography
+      font-size: 100%;
+    }
+
     // Code tags within code blocks (<pre>s)
     > code {
       padding: 0;
       margin: 0;
-      // stylelint-disable-next-line primer/typography
-      font-size: 100%;
       word-break: normal;
       white-space: pre;
       background: transparent;
@@ -49,7 +52,7 @@
     font-size: 85%;
     // stylelint-disable-next-line primer/typography
     line-height: 1.45;
-    background-color: var(--color-bg-tertiary);
+    background-color: var(--color-canvas-subtle);
     border-radius: $border-radius;
   }
 

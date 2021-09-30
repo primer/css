@@ -140,15 +140,6 @@ Add the `disabled` attribute to make a `.form-control` appear disabled.
 </form>
 ```
 
-### Dark
-
-```html live
-<div class="bg-gray-dark p-3 mt-n3 ml-n3 mr-n3">
-  <input class="form-control input-dark" type="text" placeholder="Dark input" aria-label="Dark input">
-  <input class="form-control input-dark input-sm" type="text" placeholder="Dark input small" aria-label="Dark input">
-</div>
-```
-
 ### Hide WebKit's contact info autofill icon
 
 WebKit sometimes gets confused and tries to add an icon/dropdown to autofill contact information on fields that may not be appropriate (such as input for number of users). Use this class to override the display of this icon.
@@ -378,7 +369,7 @@ Content that is hidden by default should only be done so if it is non-essential 
       <span class="form-checkbox-details text-normal">
         <span class="d-block mb-1">Available hours per week</span>
         <input type="text" name="" class="form-control input-contrast" size="3" />
-        <span class="text-small text-gray pl-2">hours per week</span>
+        <span class="text-small color-fg-muted pl-2">hours per week</span>
       </span>
     </label>
   </div>

@@ -1,7 +1,7 @@
 ---
 title: Popover
 path: components/popover
-status: Experimental
+status: Alpha
 source: 'https://github.com/primer/css/tree/main/src/popover'
 bundle: popover
 ---

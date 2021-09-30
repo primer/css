@@ -1,5 +1,283 @@
 # @primer/css
 
+## 17.11.0
+
+### Minor Changes
+
+- [#1580](https://github.com/primer/css/pull/1580) [`4a1f09a7`](https://github.com/primer/css/commit/4a1f09a75e7666b46e68e96e6f485d9ff467fd01) Thanks [@simurai](https://github.com/simurai)! - Add V2 utilities
+
+* [#1595](https://github.com/primer/css/pull/1595) [`5fb831cf`](https://github.com/primer/css/commit/5fb831cf5062baa4ffde4322a0035c144db1e70c) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding directional margin classes to the margin utilities.
+
+  Adding: `ml-auto, mb-auto, mr-auto`
+
+### Patch Changes
+
+- [#1594](https://github.com/primer/css/pull/1594) [`2cf661c4`](https://github.com/primer/css/commit/2cf661c4d95285d09d0f26ea6109d5aa9bbed552) Thanks [@jonrohan](https://github.com/jonrohan)! - Loosening the primer/primitives dependency to any minor.patch version
+
+## 17.10.0
+
+### Minor Changes
+
+- [#1592](https://github.com/primer/css/pull/1592) [`39c9c928`](https://github.com/primer/css/commit/39c9c92874eb32b346256cbcc713b87767b319ef) Thanks [@simurai](https://github.com/simurai)! - Revert font stack changes
+
+### Patch Changes
+
+- [#1590](https://github.com/primer/css/pull/1590) [`e3c8f90e`](https://github.com/primer/css/commit/e3c8f90e7f61e76d20650061da2dd93111814a8a) Thanks [@joelhawksley](https://github.com/joelhawksley)! - Update Breadcrumbs markup to match w3 aria example.
+
+## 17.9.0
+
+### Minor Changes
+
+- [#1575](https://github.com/primer/css/pull/1575) [`c7ea6448`](https://github.com/primer/css/commit/c7ea6448c114065627299db7ba65418799d4a59b) Thanks [@jonrohan](https://github.com/jonrohan)! - Replacing deprecated variables with color v2 variables
+
+* [#1573](https://github.com/primer/css/pull/1573) [`386dfa01`](https://github.com/primer/css/commit/386dfa0145a64e2c6edbdf8ab09d9fc3f7151f6a) Thanks [@simurai](https://github.com/simurai)! - Improve the font stack on Windows
+
+  - `Segoe UI Variable` -> `Segoe UI Variable Text`.
+    - "Segoe UI Variable Text" seems to be the better option for a lot of text (markdown). In the future we might can consider having a UI and a "text" font stack.
+  - Add `Meiryo` before `system-ui`.
+    - This should have the effect that the browser will use `Meiryo` instead of `Yu Gothic UI` and should improve font rendering, especially for Japanese.
+    - Note: In an earlier version, `Yu Gothic` was used. But with great [feedback](https://twitter.com/448jp/status/1435087523185758212) from @448jp and @hiloki https://github.com/primer/css/pull/1573#issuecomment-913973890 it seems `Meiryo` is the better default.
+
+- [#1581](https://github.com/primer/css/pull/1581) [`be518b80`](https://github.com/primer/css/commit/be518b8023b56802b1fc67ccc8a5b8398d1b279c) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating deprecations.js file to be more straightforward
+
+* [#1579](https://github.com/primer/css/pull/1579) [`c3b4a0c3`](https://github.com/primer/css/commit/c3b4a0c36302af7bb06ca996f37a63470ab99c62) Thanks [@jonrohan](https://github.com/jonrohan)! - Removing v2 color mode css var fallbacks. `var(--color-v2, var(--color-v1))` becomes `var(--color-v2)`
+
+## 17.8.0
+
+### Minor Changes
+
+- [#1567](https://github.com/primer/css/pull/1567) [`ab72486f`](https://github.com/primer/css/commit/ab72486f62d0f7e2397e3f0953fbcc4c46f5ef25) Thanks [@colebemis](https://github.com/colebemis)! - Remove `base/modes-v2.scss` file
+
+* [#1567](https://github.com/primer/css/pull/1567) [`ab72486f`](https://github.com/primer/css/commit/ab72486f62d0f7e2397e3f0953fbcc4c46f5ef25) Thanks [@colebemis](https://github.com/colebemis)! - Bumps `@primer/primitives` to [v4.7.0](https://github.com/primer/primitives/releases/tag/v4.7.0) which includes new [functional color system variables]
+
+- [#1567](https://github.com/primer/css/pull/1567) [`ab72486f`](https://github.com/primer/css/commit/ab72486f62d0f7e2397e3f0953fbcc4c46f5ef25) Thanks [@colebemis](https://github.com/colebemis)! - Output `dark_high_contrast` theme variables from `base/modes.scss`
+
+## 17.7.0
+
+### Minor Changes
+
+- [#1555](https://github.com/primer/css/pull/1555) [`4ae2174e`](https://github.com/primer/css/commit/4ae2174e33d3bd9be418176af4de75dd97b761c5) Thanks [@jonrohan](https://github.com/jonrohan)! - Add `.wb-break-word` class to existing `.break-word`
+
+### Patch Changes
+
+- [#1563](https://github.com/primer/css/pull/1563) [`679d70b5`](https://github.com/primer/css/commit/679d70b579c5203079e6a0559fe9dccbfcf0acae) Thanks [@simurai](https://github.com/simurai)! - Revert `TimelineItem-badge` fix
+
+## 17.6.2
+
+### Patch Changes
+
+- [#1556](https://github.com/primer/css/pull/1556) [`3ad13aba`](https://github.com/primer/css/commit/3ad13abac3deccc768af0ba5eb90f1365eb977f3) Thanks [@simurai](https://github.com/simurai)! - Fix TimelineItem--condensed background
+
+* [#1552](https://github.com/primer/css/pull/1552) [`966de4ee`](https://github.com/primer/css/commit/966de4ee0f1cfcd5f5a9f75560460adaafd47f06) Thanks [@simurai](https://github.com/simurai)! - Fix `code` in headers
+
+## 17.6.1
+
+### Patch Changes
+
+- [#1550](https://github.com/primer/css/pull/1550) [`8a684ee4`](https://github.com/primer/css/commit/8a684ee4d1572de543aef2f11d4756f6fdfda638) Thanks [@simurai](https://github.com/simurai)! - Add gradient hack to TimelineItem-badge
+
+## 17.6.0
+
+### Minor Changes
+
+- [#1529](https://github.com/primer/css/pull/1529) [`dca8e0ae`](https://github.com/primer/css/commit/dca8e0aeccb326c2bafff1ec86a912987b224f32) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Improve font rendering on Linux
+
+### Patch Changes
+
+- [#1540](https://github.com/primer/css/pull/1540) [`6b6e89a8`](https://github.com/primer/css/commit/6b6e89a8bff2319ef75d25217dafc272a5e597f0) Thanks [@joelhawksley](https://github.com/joelhawksley)! - Use standard lifecyle milestones for statuses.
+
+* [#1528](https://github.com/primer/css/pull/1528) [`303cacae`](https://github.com/primer/css/commit/303cacae77244a9e0de02b4caee2a8c01097aced) Thanks [@koddsson](https://github.com/koddsson)! - Convert package to a ES module
+
+## 17.5.2
+
+### Patch Changes
+
+- [#1519](https://github.com/primer/css/pull/1519) [`8bfe2b7e`](https://github.com/primer/css/commit/8bfe2b7e410bb2a9e5f5d480b36ef885be1d98da) Thanks [@jonrohan](https://github.com/jonrohan)! - Fix bug where outline was showing up on hover
+
+* [#1525](https://github.com/primer/css/pull/1525) [`06f83622`](https://github.com/primer/css/commit/06f8362209ccb9d0bf8cc47f9ef76a1237a2dfd0) Thanks [@joelhawksley](https://github.com/joelhawksley)! - Render `code` at 100% font size irregardless of direct descension from `pre`.
+
+## 17.5.1
+
+### Patch Changes
+
+- [#1517](https://github.com/primer/css/pull/1517) [`7011d046`](https://github.com/primer/css/commit/7011d0469ee012b93a29eff5c4f0f45357aa02fc) Thanks [@simurai](https://github.com/simurai)! - Remove background from .note
+
+## 17.5.0
+
+### Minor Changes
+
+- [#1506](https://github.com/primer/css/pull/1506) [`13cda226`](https://github.com/primer/css/commit/13cda22638cefe6847b1d718ba87a3f62a8ec3bb) Thanks [@jonrohan](https://github.com/jonrohan)! - Creating `.Header-input` class for dark header inputs. This `Header-input` will be used with a `form-control` class.
+
+### Patch Changes
+
+- [#1507](https://github.com/primer/css/pull/1507) [`30523d64`](https://github.com/primer/css/commit/30523d6436e7ea06fa511fa9ba8407429e667b42) Thanks [@simurai](https://github.com/simurai)! - Fix form tooltip transparency
+
+* [#1510](https://github.com/primer/css/pull/1510) [`d1ea5c2c`](https://github.com/primer/css/commit/d1ea5c2c738ae4763dadf7994a9e78c196842bc3) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding focus outline to the invisible buttons `.btn-invisible` and `.close-button`.
+
+## 17.4.0
+
+### Minor Changes
+
+- [#1497](https://github.com/primer/css/pull/1497) [`84bbd501`](https://github.com/primer/css/commit/84bbd501a41c455031d4a1b4d25df6fc6db6e1d8) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Add font-weight-medium to marketing styles, and use it in the type scale.
+
+* [#1487](https://github.com/primer/css/pull/1487) [`0298b69b`](https://github.com/primer/css/commit/0298b69bda4c25ed252fbeb6ba2e3fcf4ff096d2) Thanks [@arzg](https://github.com/arzg)! - Move Menlo before Consolas in monospace font stack
+
+### Patch Changes
+
+- [#1483](https://github.com/primer/css/pull/1483) [`84488397`](https://github.com/primer/css/commit/84488397f4a7bce115e2c81b388de959fff20296) Thanks [@jonrohan](https://github.com/jonrohan)! - Make sure truncate is a direct child
+
+* [#1486](https://github.com/primer/css/pull/1486) [`f52d40cc`](https://github.com/primer/css/commit/f52d40cce57bca5a713d0b9d1136f144577cf66d) Thanks [@manuelpuyol](https://github.com/manuelpuyol)! - Prevents main content to blowout and cause an horizontal scroll
+
+- [#1488](https://github.com/primer/css/pull/1488) [`c345bd38`](https://github.com/primer/css/commit/c345bd3819cf8d42552409baf3ec4ccb59c50107) Thanks [@cheshire137](https://github.com/cheshire137)! - Fix unreadable text when utility is used in dropdown item.
+
+* [#1501](https://github.com/primer/css/pull/1501) [`e072734a`](https://github.com/primer/css/commit/e072734aa18813622ea22e8f9c3e602ec7309105) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Documentation: Remove deprecated faded borders documentation
+
+- [#1472](https://github.com/primer/css/pull/1472) [`8541ed1d`](https://github.com/primer/css/commit/8541ed1db1e0d9c4551ea76ba400d6d0cf682897) Thanks [@simurai](https://github.com/simurai)! - Use variable for the active border of the UnderlineNav
+
+* [#1475](https://github.com/primer/css/pull/1475) [`105296c6`](https://github.com/primer/css/commit/105296c6b4b33d9e84038173bf9af09889a99dcd) Thanks [@simurai](https://github.com/simurai)! - Make `TimelineItem-badge--success` ready for Color Modes V2
+
+- [#1452](https://github.com/primer/css/pull/1452) [`8838a3ac`](https://github.com/primer/css/commit/8838a3ac48ec1589594291313349f49737317b5d) Thanks [@mktcode](https://github.com/mktcode)! - Division using / is deprecated. Replaced it with multiplications.
+
+* [#1499](https://github.com/primer/css/pull/1499) [`2e580a7e`](https://github.com/primer/css/commit/2e580a7ed46fb06786b84f5b1900c8e0cd7450f5) Thanks [@mjacobus](https://github.com/mjacobus)! - Fix label contrast when inside a dropdown
+
+## 17.3.0
+
+### Minor Changes
+
+- [#1451](https://github.com/primer/css/pull/1451) [`9181b479`](https://github.com/primer/css/commit/9181b479a812bf0b4cbf89d838abf53ffba7932d) Thanks [@simurai](https://github.com/simurai)! - Support SF Mono font in Firefox and Safari
+
+* [#1441](https://github.com/primer/css/pull/1441) [`3b552c77`](https://github.com/primer/css/commit/3b552c77af931ba67920a97dbea59acf5d800335) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding anim-hover-grow to replace hover-grow
+
+### Patch Changes
+
+- [#1450](https://github.com/primer/css/pull/1450) [`1d366c4b`](https://github.com/primer/css/commit/1d366c4b2c11f9541063bb62e7a8ad389b3d6567) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding fill mode forwards to anim-fade-out
+
+* [#1448](https://github.com/primer/css/pull/1448) [`8175f884`](https://github.com/primer/css/commit/8175f884474b5e5139cb1647df71200a69c48535) Thanks [@simurai](https://github.com/simurai)! - Replace auto and fade variables
+
+- [#1432](https://github.com/primer/css/pull/1432) [`55ca5f2f`](https://github.com/primer/css/commit/55ca5f2f7300e016516f9457248b055b2c56f7fd) Thanks [@manuelpuyol](https://github.com/manuelpuyol)! - Fix Layout ordering when using dividers with custom sidebar placement
+
+* [#1443](https://github.com/primer/css/pull/1443) [`c65b5f9c`](https://github.com/primer/css/commit/c65b5f9cf01f024f5f7120a5e80c2acd1d2584f6) Thanks [@jdanyow](https://github.com/jdanyow)! - Fix octicon color for disabled .btn-danger
+
+- [#1442](https://github.com/primer/css/pull/1442) [`6c22133a`](https://github.com/primer/css/commit/6c22133ae1652bafb16ba443169c179b95bf4330) Thanks [@jdanyow](https://github.com/jdanyow)! - Fix octicon color for disabled .btn-primary
+
+## 17.2.1
+
+### Patch Changes
+
+- [#1430](https://github.com/primer/css/pull/1430) [`5bc54f9e`](https://github.com/primer/css/commit/5bc54f9e3b5e764e44f34072a00208870c518f11) Thanks [@jonrohan](https://github.com/jonrohan)! - Revert "Support SF Mono font in Firefox and Safari"
+
+## 17.2.0
+
+### Minor Changes
+
+- [#992](https://github.com/primer/css/pull/992) [`90f95693`](https://github.com/primer/css/commit/90f95693f5cbfb9f6b7b84735bf5dce2e382601b) Thanks [@simurai](https://github.com/simurai)! - Support SF Mono font in Firefox & Safari
+
+### Patch Changes
+
+- [#1423](https://github.com/primer/css/pull/1423) [`6f79bfaa`](https://github.com/primer/css/commit/6f79bfaa7a6fab551fe3e795eda24908c2bf0d2e) Thanks [@jonrohan](https://github.com/jonrohan)! - Properly calculating the variables computed value for dist folder
+
+* [#1427](https://github.com/primer/css/pull/1427) [`6dad1784`](https://github.com/primer/css/commit/6dad17845f1ea345c692f56ecbf8edd60187f80d) Thanks [@jonrohan](https://github.com/jonrohan)! - Don't require direct version of primitives
+
+- [#1422](https://github.com/primer/css/pull/1422) [`882c570f`](https://github.com/primer/css/commit/882c570f9ac38dc213e213b2e98ef4686eb693e2) Thanks [@manuelpuyol](https://github.com/manuelpuyol)! - Improve dividers and allow sidebar positioning when `Layout` is flowing as row.
+
+* [#1420](https://github.com/primer/css/pull/1420) [`55302dc2`](https://github.com/primer/css/commit/55302dc232cb5cd28c52047a0776549f298a90ce) Thanks [@hpalacio](https://github.com/hpalacio)! - lists.scss: reset `<ol>` without 'type' attr to "decimal"
+
+- [#1424](https://github.com/primer/css/pull/1424) [`30597af9`](https://github.com/primer/css/commit/30597af94da40875a2741f9f4ecc786f8916167c) Thanks [@khiga8](https://github.com/khiga8)! - Ensures that the visual slash separator for breadcrumbs is not announced by screenreaders.
+
+## 17.1.1
+
+### Patch Changes
+
+- [#1418](https://github.com/primer/css/pull/1418) [`a9a61ee6`](https://github.com/primer/css/commit/a9a61ee690f4fff3a7e2e932dc8da5e9cd6cf702) Thanks [@simurai](https://github.com/simurai)! - Undeprecate .css-truncate
+
+## 17.1.0
+
+### Minor Changes
+
+- [#1409](https://github.com/primer/css/pull/1409) [`49981dfc`](https://github.com/primer/css/commit/49981dfc29131e6ad25cef6538abd9308700b48a) Thanks [@manuelpuyol](https://github.com/manuelpuyol)! - Adding new Layout component
+
+* [#1358](https://github.com/primer/css/pull/1358) [`6b51e877`](https://github.com/primer/css/commit/6b51e877bc3b1a1ae4925edc4fcb5d45907b110e) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding new .Truncate class and deprecating css-truncate
+
+### Patch Changes
+
+- [#1415](https://github.com/primer/css/pull/1415) [`fb6a7e3d`](https://github.com/primer/css/commit/fb6a7e3dc112fc637003ca13dca978e7d8a54d4c) Thanks [@simurai](https://github.com/simurai)! - Bump primer/primitives@4.3.5
+
+## 17.0.3
+
+### Patch Changes
+
+- [#1410](https://github.com/primer/css/pull/1410) [`d5e425e4`](https://github.com/primer/css/commit/d5e425e40900102b5b728a516de71e4094b7e138) Thanks [@simurai](https://github.com/simurai)! - Bump @primer/primitives@4.3.4
+
+## 17.0.2
+
+### Patch Changes
+
+- [#1408](https://github.com/primer/css/pull/1408) [`1eea5575`](https://github.com/primer/css/commit/1eea557506241412de068c0f2570a0e9606fd6c2) Thanks [@colebemis](https://github.com/colebemis)! - Bump @primer/primitives version
+
+* [#1403](https://github.com/primer/css/pull/1403) [`5ef399cf`](https://github.com/primer/css/commit/5ef399cff004fc30d0b98750af889ffdc4bf8f3b) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Remove !important for base styles for body utilities
+
+## 17.0.1
+
+### Patch Changes
+
+- [#1391](https://github.com/primer/css/pull/1391) [`534c8f66`](https://github.com/primer/css/commit/534c8f66f5a433aaf6daa308e0354d8eeca25f3a) Thanks [@simurai](https://github.com/simurai)! - Improve focus state for .SideNav and .menu
+
+* [#1398](https://github.com/primer/css/pull/1398) [`5ef7bd6e`](https://github.com/primer/css/commit/5ef7bd6ef0eb43f2bb5765c0f3cfd30db3924ec4) Thanks [@colebemis](https://github.com/colebemis)! - Add experimental color variables. **Warning: Do not use these color variables**
+
+- [#1394](https://github.com/primer/css/pull/1394) [`42223f0b`](https://github.com/primer/css/commit/42223f0b219b6213e2d11f99988acdfd47ab9591) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Fix letter spacing for headers not being correctly overridden at break points
+
+## 17.0.0
+
+### Major Changes
+
+- [#1370](https://github.com/primer/css/pull/1370) [`cc0049c2`](https://github.com/primer/css/commit/cc0049c2ad1ad609dc672e12f751245fbecc5d65) Thanks [@simurai](https://github.com/simurai)! - Replace border-overlay with border-primary
+
+* [#1371](https://github.com/primer/css/pull/1371) [`0c6bfc22`](https://github.com/primer/css/commit/0c6bfc22b523545120bea39dc201760d8a9e8b01) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Deprecate bg-shade-gradient
+
+- [#1379](https://github.com/primer/css/pull/1379) [`22a98b5c`](https://github.com/primer/css/commit/22a98b5c87031584c5349f49835e013e8a7e460b) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Add new marketing type scale
+
+* [#1369](https://github.com/primer/css/pull/1369) [`2ae2ae57`](https://github.com/primer/css/commit/2ae2ae5795f68a6004fb4a14eb56bba41828173d) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Removing Inter font files and folder
+
+- [#1339](https://github.com/primer/css/pull/1339) [`0ca2648e`](https://github.com/primer/css/commit/0ca2648e5982f0d21137a556e083d77af33eee36) Thanks [@jonrohan](https://github.com/jonrohan)! - Changeset change supported browsers.
+
+* [#1373](https://github.com/primer/css/pull/1373) [`aeae963d`](https://github.com/primer/css/commit/aeae963d93e273f08fbf47d582316811bbd8eac5) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Remove redundant marketing layout selectors
+
+- [#1380](https://github.com/primer/css/pull/1380) [`4ac39740`](https://github.com/primer/css/commit/4ac39740f27842c625da084f1d03b8e2ec6084f8) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: use size modifiers that don't look like breakpoints modifiers
+
+* [#1352](https://github.com/primer/css/pull/1352) [`b4950e39`](https://github.com/primer/css/commit/b4950e395867b558e63b5bb4d46d93f75f35e38e) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Update marketing button styles
+
+- [#1356](https://github.com/primer/css/pull/1356) [`3b7e5d8c`](https://github.com/primer/css/commit/3b7e5d8c0def7975cc6714abe4b60d8efc746f8f) Thanks [@jonrohan](https://github.com/jonrohan)! - Remove dependency on primer/octicons and force overflow visible
+
+* [#1372](https://github.com/primer/css/pull/1372) [`e24b7cb0`](https://github.com/primer/css/commit/e24b7cb024ca2c6bb06cda92ccefa1aff3208131) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Merge overlapping marketing spacing utilities into primer core
+
+### Minor Changes
+
+- [#1357](https://github.com/primer/css/pull/1357) [`3dfb910f`](https://github.com/primer/css/commit/3dfb910fc39ae889fb4c2c3c783aead6ac768d0d) Thanks [@hpalacio](https://github.com/hpalacio)! - typography-base: process 'type' attribute of HTML <ol> tag
+
+### Patch Changes
+
+- [#1368](https://github.com/primer/css/pull/1368) [`95b9f0f0`](https://github.com/primer/css/commit/95b9f0f051bf34be5bcc60e2f2d29a262059c420) Thanks [@simurai](https://github.com/simurai)! - Use `--color-icon-secondary` for `.blankslate-icon`
+
+* [#1350](https://github.com/primer/css/pull/1350) [`2dbc6143`](https://github.com/primer/css/commit/2dbc6143a66b56b29e12d5ae3e7afeaed95373ab) Thanks [@simurai](https://github.com/simurai)! - Bump @primer/primitives
+
+- [#1385](https://github.com/primer/css/pull/1385) [`1cfff7a4`](https://github.com/primer/css/commit/1cfff7a4a39e5612c3f98357bfa2edc1460f2e04) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing typography: 64px → 68px for third size step
+
+* [#1382](https://github.com/primer/css/pull/1382) [`18bb377b`](https://github.com/primer/css/commit/18bb377bef8f65cc75cd1faea9b2264a4061cfd0) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: optimize body typography inheritance
+
+- [#1392](https://github.com/primer/css/pull/1392) [`0fea11a7`](https://github.com/primer/css/commit/0fea11a74b05196c17e2e300b66c93c24d6c9844) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Enable body content utilities to have their font-weight overwritten
+
+## 16.3.0
+
+### Minor Changes
+
+- [#1306](https://github.com/primer/css/pull/1306) [`5d42f1c5`](https://github.com/primer/css/commit/5d42f1c5c36d9732fd69541585a8d8ba4221b978) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding a min-height to input-sm
+
+### Patch Changes
+
+- [#1340](https://github.com/primer/css/pull/1340) [`8506c374`](https://github.com/primer/css/commit/8506c3747fc3d4bfa216e0fbb1d2835db4a9baf4) Thanks [@simurai](https://github.com/simurai)! - Bump @primer/primitives
+
+* [#1302](https://github.com/primer/css/pull/1302) [`90902e1a`](https://github.com/primer/css/commit/90902e1a6044f4b9fde049105f5aec7e09d52777) Thanks [@jonrohan](https://github.com/jonrohan)! - Moving the /fonts/ folder to /src/fonts/
+
 ## 16.2.0
 
 ### Minor Changes
@@ -1249,7 +1527,7 @@
 
 - Storybook. We've added a storybook prototyping environment for testing components in seclusion. To start the server run `npm start`
 - Adding yeoman generator for creating a primer module. `generator-primer-module`
-- Importing `stylelint-config-primer` from https://github.com/primer/stylelint-config-primer/ into monorepo.
+- Importing `stylelint-config-primer` from https://github.com/primer/stylelint-config/ into monorepo.
 - Importing `stylelint-selector-no-utility` from https://github.com/primer/stylelint-selector-no-utility into monorepo.
 
 ### Changes
@@ -1339,7 +1617,7 @@ This release updates primer modules to use variables for spacing units instead o
 
 # 9.1.0
 
-This release updates our [stylelint config](/primer/stylelint-config-primer) to [v2.0.0](https://github.com/primer/stylelint-config-primer/releases/tag/v2.0.0), and to stylelint v7.13.0. Each module also now has a `lint` npm script, and there are top-level `test` and `lint` scripts that you can use to lint and test all modules in one go.
+This release updates our [stylelint config](/primer/stylelint-config-primer) to [v2.0.0](https://github.com/primer/stylelint-config/releases/tag/v2.0.0), and to stylelint v7.13.0. Each module also now has a `lint` npm script, and there are top-level `test` and `lint` scripts that you can use to lint and test all modules in one go.
 
 This release also includes major improvements to our Travis build scripts to automatically publish PR builds, release candidates, and the "final" versions to npm.
 

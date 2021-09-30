@@ -20,16 +20,16 @@ Use these with `.position-absolute` to position decorative assets and shapes on 
 In an effort to reduce the size of our CSS, responsive breakpoints are only supported for `md` and `lg` breakpoints. **There is no support for `sm` and `xl` breakpoints.**
 
 ```html live
-<div class="position-relative p-6 bg-gray">
-  <div class="border bg-white position-absolute top-2">.top-2</div>
-  <div class="border bg-white position-absolute position-lg-static right-md-4">.right-md-4</div>
-  <div class="border bg-white position-lg-absolute left-lg-1">.left-lg-1</div>
+<div class="position-relative p-6 color-bg-subtle">
+  <div class="border color-bg-default position-absolute top-2">.top-2</div>
+  <div class="border color-bg-default position-absolute position-lg-static right-md-4">.right-md-4</div>
+  <div class="border color-bg-default position-lg-absolute left-lg-1">.left-lg-1</div>
 </div>
 ```
 
 ## Negative offset columns
 
-Using column offset classes can pull a div over X number of columns to the left. Negative offsets are available in [spacings from 1](../support/spacing/#spacing-scale) [to 7](../support/marketing-variables/).
+Using column offset classes can pull a div over X number of columns to the left. Negative offsets are available in [spacings from 1](../support/spacing/#spacing-scale) [to 7](../support/spacing/#extended-spacing-scale).
 
 ```html live
 <div class="mx-auto border" style="width: 300px">

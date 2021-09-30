@@ -1,10 +1,13 @@
 #!/usr/bin/env node
-const globby = require('globby')
-const cssstats = require('cssstats')
-const postcss = require('postcss')
-const loadConfig = require('postcss-load-config')
-const {remove, mkdirp, readFile, writeFile} = require('fs-extra')
-const {dirname, join} = require('path')
+import {globby} from 'globby'
+import compiler from './primer-css-compiler.js'
+import cssstats from 'cssstats'
+import {dirname, join} from 'path'
+
+import analyzeVariables from './analyze-variables.js'
+
+import fsExtra from 'fs-extra'
+const {copy, remove, mkdirp, readFile, writeFile} = fsExtra
 
 const inDir = 'src'
 const outDir = 'dist'
@@ -23,8 +26,6 @@ const bundleNames = {
 async function dist() {
   try {
     const bundles = {}
-    const {plugins, options} = await loadConfig()
-    const processor = postcss(plugins)
 
     await remove(outDir)
     await mkdirp(statsDir)
@@ -49,11 +50,12 @@ async function dist() {
 
       const scss = await readFile(from, encoding)
       meta.imports = getExternalImports(scss, path).map(getPathName)
-      const result = await processor.process(scss, Object.assign({from, to}, options))
+      const result = await compiler(scss, {from, to})
+
       await Promise.all([
         writeFile(to, result.css, encoding),
         writeFile(meta.stats, JSON.stringify(cssstats(result.css)), encoding),
-        writeFile(meta.js, `module.exports = {cssstats: require('./stats/${name}.json')}`, encoding),
+        writeFile(meta.js, `export {cssstats: require('./stats/${name}.json')}`, encoding),
         result.map ? writeFile(meta.map, result.map.toString(), encoding) : null
       ])
       bundles[name] = meta
@@ -64,7 +66,7 @@ async function dist() {
     const meta = {bundles}
     await writeFile(join(outDir, 'meta.json'), JSON.stringify(meta, null, 2), encoding)
     await writeVariableData()
-    await writeDeprecationData()
+    await copy(join(inDir, 'deprecations.json'), join(outDir, 'deprecations.json'))
   } catch (error) {
     console.error(error)
     process.exitCode = 1
@@ -86,35 +88,11 @@ function getPathName(path) {
   return path.replace(/\//g, '-')
 }
 
-function writeDeprecationData() {
-  const {versionDeprecations, selectorDeprecations, variableDeprecations} = require('../deprecations')
-  const data = {
-    versions: versionDeprecations,
-    selectors: mapToObject(selectorDeprecations),
-    variables: mapToObject(variableDeprecations)
-  }
-  return writeFile(join(outDir, 'deprecations.json'), JSON.stringify(data, null, 2))
+dist()
 
-  function mapToObject(map) {
-    return Array.from(map.entries()).reduce((obj, [key, value]) => {
-      obj[key] = value
-      return obj
-    }, {})
-  }
-}
-
-if (require.main === module) {
-  dist()
-}
-
-function writeVariableData() {
-  const analyzeVariables = require('./analyze-variables')
-  return Promise.all([
-    analyzeVariables('src/support/index.scss'),
-    analyzeVariables('src/marketing/support/index.scss')
-    /* eslint-disable-next-line github/no-then */
-  ]).then(([support, marketing]) => {
-    const data = Object.assign({}, support, marketing)
-    writeFile(join(outDir, 'variables.json'), JSON.stringify(data, null, 2))
-  })
+async function writeVariableData() {
+  const support = await analyzeVariables('src/support/index.scss')
+  const marketing = await analyzeVariables('src/marketing/support/index.scss')
+  const data = Object.assign({}, support, marketing)
+  writeFile(join(outDir, 'variables.json'), JSON.stringify(data, null, 2))
 }
