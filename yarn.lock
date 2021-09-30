@@ -968,10 +968,25 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@primer/primitives@^4.8.0":
-  version "4.8.1"
-  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-4.8.1.tgz#05f76e47f67018514fd54b35ca615b9d27ef2a46"
-  integrity sha512-mgr6+EKpn4DixuhLt3drk7QmNQO8M7RYONWovg1nkV7p56jklhDLfZmp1luLUee37eQGAxx3ToStL6gqINFjnQ==
+"@primer/primitives@^5.0.0-rc.8de08c0":
+  version "5.0.0-rc.8de08c0"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-5.0.0-rc.8de08c0.tgz#b85825eb55d8b364ca31cb573e66e2caae63137a"
+  integrity sha512-4qjGx4ec3FuAU/7sKjsVzDXMM8ZbFW/VstxmCwaraN6hXfgruZrGY0HlEuhzor0xenhdbxMZllsPoz6FxFIxNQ==
+
+"@primer/stylelint-config@12.0.0":
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-12.0.0.tgz#33648ca2d630e9f93744fb3a311e245cd4d5b666"
+  integrity sha512-BnuyuE3kkJYQhCUUFF3iotODB6l2/79zdTjLhkypYN2ctbTCnpdZs2JJiyLo2WGt/VPj6tQy+n8db+wcvq+w8w==
+  dependencies:
+    anymatch "^3.1.1"
+    globby "^11.0.1"
+    lodash.kebabcase "^4.1.1"
+    postcss-value-parser "^4.0.2"
+    string.prototype.matchall "^4.0.2"
+    stylelint-no-unsupported-browser-features "^5.0.1"
+    stylelint-order "^4.1.0"
+    stylelint-scss "^3.19.0"
+    tap-map "^1.0.0"
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.2"
@@ -5511,21 +5526,6 @@ style-search@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/style-search/-/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
   integrity sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=
-
-stylelint-config-primer@11.1.1:
-  version "11.1.1"
-  resolved "https://registry.yarnpkg.com/stylelint-config-primer/-/stylelint-config-primer-11.1.1.tgz#5a5bdafb679547b0089eac9c5c9a11b520707d0e"
-  integrity sha512-tmwi1DVuXg0G52v9vDiN7Vhyz3wVQ86FjARuozhO8lXJd8aIfyA5hLRLxxuelZMEqGyMGGKaMLU6OZSVoVwEIw==
-  dependencies:
-    anymatch "^3.1.1"
-    globby "^11.0.1"
-    lodash.kebabcase "^4.1.1"
-    postcss-value-parser "^4.0.2"
-    string.prototype.matchall "^4.0.2"
-    stylelint-no-unsupported-browser-features "^5.0.1"
-    stylelint-order "^4.1.0"
-    stylelint-scss "^3.19.0"
-    tap-map "^1.0.0"
 
 stylelint-no-unsupported-browser-features@^5.0.1:
   version "5.0.1"

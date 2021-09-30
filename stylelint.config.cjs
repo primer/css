@@ -1,7 +1,5 @@
-const currentVersion = process.env.PRIMER_VERSION || require('./package.json').version
-
 module.exports = {
-  extends: ['stylelint-config-primer'],
+  extends: ['@primer/stylelint-config'],
   plugins: ['stylelint-scss'],
   syntax: 'scss',
   ignoreFiles: ['src/fonts/**/*'],
