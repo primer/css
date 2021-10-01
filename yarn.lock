@@ -968,15 +968,15 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@primer/primitives@^5.0.0-rc.8de08c0":
-  version "5.0.0-rc.8de08c0"
-  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-5.0.0-rc.8de08c0.tgz#b85825eb55d8b364ca31cb573e66e2caae63137a"
-  integrity sha512-4qjGx4ec3FuAU/7sKjsVzDXMM8ZbFW/VstxmCwaraN6hXfgruZrGY0HlEuhzor0xenhdbxMZllsPoz6FxFIxNQ==
+"@primer/primitives@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-5.0.0.tgz#20e5e7aae0464093f4742f5947c332cbcbc68edd"
+  integrity sha512-g2omeDBgfE5Q6+BQxPaflz5/shCFNjPvfpzphQMpeqIeSrV9boFyicLq7/Rd3WdsDvIMIsMCC1lWZE9JyEhR3w==
 
-"@primer/stylelint-config@12.0.0":
-  version "12.0.0"
-  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-12.0.0.tgz#33648ca2d630e9f93744fb3a311e245cd4d5b666"
-  integrity sha512-BnuyuE3kkJYQhCUUFF3iotODB6l2/79zdTjLhkypYN2ctbTCnpdZs2JJiyLo2WGt/VPj6tQy+n8db+wcvq+w8w==
+"@primer/stylelint-config@12.0.1":
+  version "12.0.1"
+  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-12.0.1.tgz#da3dfd3a302e50b393bc23521a36525af6fbc743"
+  integrity sha512-HJDkSCGk83MujAu1IxB7/aXcxYqdMahgRWRLwC57vCfpR1zrTKuGC1F0ZsdSp4iigZ9yiR0BGo+xkby8lHfYOg==
   dependencies:
     anymatch "^3.1.1"
     globby "^11.0.1"
