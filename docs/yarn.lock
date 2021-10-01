@@ -1729,10 +1729,10 @@
   resolved "https://registry.npmjs.org/@primer/primitives/-/primitives-3.0.0.tgz"
   integrity sha512-ISXB43vcA+kg5pmGtGo3lPlHmY5Mg9nLhliePJu3Y5aP7g28TO+9cC99gL240pZHYsO0aVyU26WZwUXn6UIqJQ==
 
-"@primer/primitives@4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-4.2.0.tgz#a54d052bd8b8fcc0a2f5029f44a192939f87f09f"
-  integrity sha512-/2/9ueCWWzqaLRSJ3TNGthMVX8DBn/oa+ZY9eB/TmxUPglXd8AQMxV2wz+pAoy8SpXXwe84JuEgHTAghzAOh0w==
+"@primer/primitives@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-5.0.0.tgz#20e5e7aae0464093f4742f5947c332cbcbc68edd"
+  integrity sha512-g2omeDBgfE5Q6+BQxPaflz5/shCFNjPvfpzphQMpeqIeSrV9boFyicLq7/Rd3WdsDvIMIsMCC1lWZE9JyEhR3w==
 
 "@reach/component-component@^0.3.0":
   version "0.3.0"
