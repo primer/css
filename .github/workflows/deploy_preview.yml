@@ -23,6 +23,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment: Preview
 
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
       - name: Vercel Action
         uses: amondnet/vercel-action@v20
         id: vercel-action
