@@ -58,7 +58,7 @@
     "postcss-calc": "8.0.0",
     "postcss-import": "14.0.2",
     "postcss-load-config": "3.1.0",
-    "postcss-scss": "4.0.0",
+    "postcss-scss": "4.0.1",
     "postcss-simple-vars": "6.0.3",
     "prettier": "2.4.1",
     "semver": "7.3.5",
