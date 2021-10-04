@@ -15333,13 +15333,20 @@ timsort@^0.3.0:
   resolved "https://registry.npmjs.org/timsort/-/timsort-0.3.0.tgz"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-title-case@^2.1.0, title-case@^2.1.1:
+title-case@^2.1.0:
   version "2.1.1"
   resolved "https://registry.npmjs.org/title-case/-/title-case-2.1.1.tgz"
   integrity sha1-PhJyFtpY0rxb7PE3q5Ha46fNj6o=
   dependencies:
     no-case "^2.2.0"
     upper-case "^1.0.3"
+
+title-case@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/title-case/-/title-case-3.0.3.tgz#bc689b46f02e411f1d1e1d081f7c3deca0489982"
+  integrity sha512-e1zGYRvbffpcHIrnuqT0Dh+gEJtDaxDSoG4JAIpq4oDFyooziLBIiYQv0GBT4FUAnUop5uZ1hiIAj7oAF6sOCA==
+  dependencies:
+    tslib "^2.0.3"
 
 tmp@^0.0.33:
   version "0.0.33"
