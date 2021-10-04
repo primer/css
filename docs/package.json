@@ -18,7 +18,7 @@
     "@primer/primitives": "4.2.0",
     "@svgr/webpack": "5.5.0",
     "autoprefixer": "10.2.5",
-    "babel-preset-gatsby": "^1.2.0",
+    "babel-preset-gatsby": "^1.14.0",
     "chroma-js": "^2.0.6",
     "core-js": "^3.6.5",
     "gatsby": "2.32.12",
