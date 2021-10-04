@@ -1264,7 +1264,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.15.4", "@babel/runtime@^7.2.0", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.15.4", "@babel/runtime@^7.2.0", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
   version "7.15.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.15.4.tgz#fd17d16bfdf878e6dd02d19753a39fa8a8d9c84a"
   integrity sha512-99catp6bHCaxr4sJ/DbTGgHS4+Rs2RVd2g7iOap6SLGPDknRK9ztKNsE/Fg6QhSeh1FGE5f6gHGQmvvn3I3xhw==
@@ -1881,31 +1881,6 @@
   resolved "https://registry.yarnpkg.com/@primer/component-metadata/-/component-metadata-0.4.0.tgz#44b7d7b1285bea41c2a88621fd17f2c777a4c5e9"
   integrity sha512-yppmDSSDrN2CHwjq3h+RWhfpjehFQAx21JcEipYyNTp0f/kC+iazFVNCKZE6DOavAxv003ti7QIrp+QkPT9tpg==
 
-"@primer/components@^17.1.0":
-  version "17.1.1"
-  resolved "https://registry.npmjs.org/@primer/components/-/components-17.1.1.tgz"
-  integrity sha512-wle6PoQqZicftRMbHviLNw9fCzeIvq0U5edgUcCyG2l/4a7fwdEocPc6CqXNR9w764jCYEfZ4FWXb8IIkWl+XQ==
-  dependencies:
-    "@primer/octicons-react" "^9.2.0"
-    "@reach/dialog" "0.3.0"
-    "@styled-system/prop-types" "5.1.2"
-    "@styled-system/props" "5.1.4"
-    "@styled-system/theme-get" "5.1.2"
-    "@testing-library/react" "9.4.0"
-    "@types/styled-components" "^4.4.0"
-    "@types/styled-system" "5.1.2"
-    babel-plugin-macros "2.6.1"
-    babel-polyfill "6.26.0"
-    classnames "^2.2.5"
-    details-element-polyfill "2.4.0"
-    jest-axe "3.2.0"
-    nanoid "2.1.4"
-    primer-colors "1.0.1"
-    primer-typography "1.0.1"
-    react "^16.10.2"
-    react-is "16.10.2"
-    styled-system "5.1.2"
-
 "@primer/components@^20.0.0":
   version "20.3.0"
   resolved "https://registry.npmjs.org/@primer/components/-/components-20.3.0.tgz"
@@ -1928,6 +1903,27 @@
     classnames "^2.2.5"
     details-element-polyfill "2.4.0"
     jest-axe "3.2.0"
+    polished "3.5.2"
+    react "^16.10.2"
+    react-is "16.10.2"
+    styled-system "5.1.2"
+
+"@primer/components@^22.0.3":
+  version "22.0.3"
+  resolved "https://registry.yarnpkg.com/@primer/components/-/components-22.0.3.tgz#33891c1c99963f3387302199aaaee104e6346bd8"
+  integrity sha512-XcNwqf66sFPT0V0mWKbAmmjcONBxXbPZabbG6mELzinX0QC+ps1xvafvi121WppILif7TB+DQaJb/M8qP+Tv1A==
+  dependencies:
+    "@primer/octicons-react" "^10.0.0"
+    "@primer/primitives" "3.0.0"
+    "@reach/dialog" "0.3.0"
+    "@styled-system/css" "5.1.5"
+    "@styled-system/prop-types" "5.1.2"
+    "@styled-system/props" "5.1.4"
+    "@styled-system/theme-get" "5.1.2"
+    "@testing-library/react" "9.4.0"
+    "@types/styled-components" "^4.4.0"
+    "@types/styled-system" "5.1.2"
+    classnames "^2.2.5"
     polished "3.5.2"
     react "^16.10.2"
     react-is "16.10.2"
@@ -1999,13 +1995,6 @@
   version "11.3.0"
   resolved "https://registry.npmjs.org/@primer/octicons-react/-/octicons-react-11.3.0.tgz"
   integrity sha512-4sVhkrBKuj3h+PFw69yOyO/l3nQB/mm95V+Kz7LRSlIrbZr6hZarZD5Ft4ewdONPROkIHQM/6KSK90+OAimxsQ==
-
-"@primer/octicons-react@^9.2.0":
-  version "9.6.0"
-  resolved "https://registry.npmjs.org/@primer/octicons-react/-/octicons-react-9.6.0.tgz"
-  integrity sha512-FR0fiU1UY1ds5ZMCUY+iVkkm1Eh4yDHf2ui+cxB3VvYX23DAdUAohPGit+qaMFy2caDd7uWYGRZduKS7dW1FZQ==
-  dependencies:
-    prop-types "^15.6.1"
 
 "@primer/octicons@^11.0.0":
   version "11.3.0"
@@ -3659,15 +3648,6 @@ babel-plugin-lodash@^3.3.4:
     lodash "^4.17.10"
     require-package-name "^2.0.1"
 
-babel-plugin-macros@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.npmjs.org/babel-plugin-macros/-/babel-plugin-macros-2.6.1.tgz"
-  integrity sha512-6W2nwiXme6j1n2erPOnmRiWfObUhWH7Qw1LMi9XZy8cj+KtESu3T6asZvtk5bMQQjX8te35o7CFueiSdL/2NmQ==
-  dependencies:
-    "@babel/runtime" "^7.4.2"
-    cosmiconfig "^5.2.0"
-    resolve "^1.10.0"
-
 babel-plugin-macros@2.8.0, babel-plugin-macros@^2.2.2, babel-plugin-macros@^2.8.0:
   version "2.8.0"
   resolved "https://registry.npmjs.org/babel-plugin-macros/-/babel-plugin-macros-2.8.0.tgz"
@@ -4589,10 +4569,10 @@ chownr@^1.1.1, chownr@^1.1.2:
   resolved "https://registry.npmjs.org/chownr/-/chownr-1.1.4.tgz"
   integrity sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==
 
-chroma-js@^2.0.6:
-  version "2.1.1"
-  resolved "https://registry.npmjs.org/chroma-js/-/chroma-js-2.1.1.tgz"
-  integrity sha512-gYc5/Dooshun2OikK7oY/hYnoEiZ0dxqRpXosEdYRYm505vU5mRsHFqIW062C9nMtr32DVErP6mlxuepo2kNkw==
+chroma-js@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-2.1.2.tgz#1075cb9ae25bcb2017c109394168b5cf3aa500ec"
+  integrity sha512-ri/ouYDWuxfus3UcaMxC1Tfp3IE9K5iQzxc2hSxbBRVNQFut1UuGAsZmiAf2mOUubzGJwgMSv9lHg+XqLaz1QQ==
   dependencies:
     cross-env "^6.0.3"
 
@@ -5087,7 +5067,7 @@ cosmiconfig@6.0.0, cosmiconfig@^6.0.0:
     path-type "^4.0.0"
     yaml "^1.7.2"
 
-cosmiconfig@^5.0.0, cosmiconfig@^5.2.0:
+cosmiconfig@^5.0.0:
   version "5.2.1"
   resolved "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.2.1.tgz"
   integrity sha512-H65gsXo1SKjf8zmrJ67eJk8aIRKV5ff2D4uKZIBZShbhGSpEmsQOPW/SKMKYhSTrqR7ufy6RP69rPogdaPh/kA==
@@ -11119,11 +11099,6 @@ nanocolors@^0.2.12:
   resolved "https://registry.yarnpkg.com/nanocolors/-/nanocolors-0.2.12.tgz#4d05932e70116078673ea4cc6699a1c56cc77777"
   integrity sha512-SFNdALvzW+rVlzqexid6epYdt8H9Zol7xDoQarioEFcFN0JHo4CYNztAxmtfgGTVRCmFlEOqqhBpoFGKqSAMug==
 
-nanoid@2.1.4:
-  version "2.1.4"
-  resolved "https://registry.npmjs.org/nanoid/-/nanoid-2.1.4.tgz"
-  integrity sha512-PijW88Ry+swMFfArOrm7uRAdVmJilLbej7WwVY6L5QwLDckqxSOinGGMV596yp5C8+MH3VvCXCSZ6AodGtKrYQ==
-
 nanoid@^3.1.22:
   version "3.1.22"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.22.tgz#b35f8fb7d151990a8aebd5aa5015c03cf726f844"
@@ -12720,16 +12695,6 @@ preval.macro@^3.0.0:
   integrity sha512-vGSGpDb4V+fGrh5em63YsyzlgQhWCZling7WbkPzgAhT7/88O1lk6dS51+2cfnjzoj00X2Q4Um+WX5Eshk/ulg==
   dependencies:
     babel-plugin-preval "^3.0.0"
-
-primer-colors@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/primer-colors/-/primer-colors-1.0.1.tgz"
-  integrity sha512-bxo3OPoIO1F/C07RpKbLjPzuSsTkOMzo9Yl9OJFHGD7/UxA+JvNdZK0GbJzWtz5Y8H6KabbHadxwVWRp1xl08A==
-
-primer-typography@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/primer-typography/-/primer-typography-1.0.1.tgz"
-  integrity sha512-9f1MNOMYOWemosmJIG8FToqZoL7YKQW3KHNsMS3DddTUzJefnVzeqmiiTBPc2ok0yE7fE2PgobG9iRY+itgdVg==
 
 prism-react-renderer@^1.0.1, prism-react-renderer@^1.2.0:
   version "1.2.0"
