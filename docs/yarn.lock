@@ -2000,6 +2000,11 @@
   resolved "https://registry.npmjs.org/@primer/octicons-react/-/octicons-react-11.3.0.tgz"
   integrity sha512-4sVhkrBKuj3h+PFw69yOyO/l3nQB/mm95V+Kz7LRSlIrbZr6hZarZD5Ft4ewdONPROkIHQM/6KSK90+OAimxsQ==
 
+"@primer/octicons-react@^16.0.0":
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-16.0.0.tgz#964cf7eac896cf2afdc79dcdd900e6f7471424be"
+  integrity sha512-1/DszHbG39lJO5w5el/Eej3Qu2TW0ecDDeYGq5T1cwNsgCWgJmtk2bmyPYJRQyRtGzRQQ8db03E8OeM7ATPSbQ==
+
 "@primer/octicons-react@^9.2.0":
   version "9.6.0"
   resolved "https://registry.npmjs.org/@primer/octicons-react/-/octicons-react-9.6.0.tgz"
@@ -4589,10 +4594,10 @@ chownr@^1.1.1, chownr@^1.1.2:
   resolved "https://registry.npmjs.org/chownr/-/chownr-1.1.4.tgz"
   integrity sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==
 
-chroma-js@^2.0.6:
-  version "2.1.1"
-  resolved "https://registry.npmjs.org/chroma-js/-/chroma-js-2.1.1.tgz"
-  integrity sha512-gYc5/Dooshun2OikK7oY/hYnoEiZ0dxqRpXosEdYRYm505vU5mRsHFqIW062C9nMtr32DVErP6mlxuepo2kNkw==
+chroma-js@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-2.1.2.tgz#1075cb9ae25bcb2017c109394168b5cf3aa500ec"
+  integrity sha512-ri/ouYDWuxfus3UcaMxC1Tfp3IE9K5iQzxc2hSxbBRVNQFut1UuGAsZmiAf2mOUubzGJwgMSv9lHg+XqLaz1QQ==
   dependencies:
     cross-env "^6.0.3"
 
