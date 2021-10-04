@@ -1,5 +1,5 @@
 import React from 'react'
-import {TextOnly} from './ActionListItem.stories'
+import {TextOnly, ActiveNavItem, ActiveSubNavItem} from './ActionListItem.stories'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -25,6 +25,30 @@ export const Default = args => (
       <TextOnly />
       <TextOnly />
     </ul>
+  </>
+)
+
+export const Navigation = args => (
+  <>
+    <nav>
+      <ul class="actionList">
+        <ActiveNavItem />
+        <TextOnly />
+        <TextOnly />
+      </ul>
+    </nav>
+  </>
+)
+
+export const SubNavigation = args => (
+  <>
+    <nav>
+      <ul class="actionList">
+        <ActiveSubNavItem />
+        <TextOnly />
+        <TextOnly />
+      </ul>
+    </nav>
   </>
 )
 

@@ -154,6 +154,40 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
   position: relative;
 
+  // katie edit
+  // we could also use [aria-current] selector, and/or just conditionally add this class
+  &.actionList-item--active {
+    &:before,
+    + .actionList-item:before {
+      visibility: hidden;
+    }
+
+    .actionList-item-content {
+      background: $actionList-item-selected-bg;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background: $actionList-item-active-bg;
+        }
+      }
+    }
+
+    // Blue accent for selected item.
+
+    &:after {
+      content: '';
+      width: $s-4;
+      height: $s-24;
+      border-radius: 4px;
+      position: absolute;
+      left: -8px;
+      top: calc(50% - (24px / 2));
+
+      // I think this translates as fg-accent in color modes
+      background: $blue-500;
+    }
+  }
+
   &.actionList-item--selected {
     // Hide the inline divider for the current item and the sibling's
 
