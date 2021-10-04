@@ -39,7 +39,7 @@
     "react-frame-component": "^4.1.1",
     "sass-loader": "10.1.1",
     "styled-components": "^4.3.2",
-    "title-case": "^2.1.1"
+    "title-case": "^3.0.3"
   },
   "engines": {
     "node": ">= 10.x"
