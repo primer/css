@@ -2,6 +2,6 @@
 
 @import "@primer/primitives/dist/scss/colors/_dark_protanopia.scss";
 
-@include color-mode-theme(dark_protanopia) {
+@include color-mode-theme(dark_colorblind) {
   @include primer-colors-dark_protanopia;
 }
