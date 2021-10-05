@@ -72,7 +72,6 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 .actionList {
   padding: $s-8;
   list-style: none;
-  //   display: grid;
 
   ul,
   li {
@@ -132,17 +131,12 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .actionList-item-content {
-  //   grid-template-areas: 'label';
   display: grid;
   // 32px total height considering 20px line-height
+  // allow height to expand
   padding: (($s-32 - $s-20) / 2) $s-8;
-  grid-template-rows: 20px;
-  grid-template-columns: max-content;
-  // auto-fill columns with children
-  //   grid-auto-flow: column;
-  //   justify-content: start;
-  // auto columns allows us to use gap conditionally (only gap when items exist)
-  // plan for 3 children max
+  grid-template-rows: minmax(20px, max-content);
+  // default one column
   grid-template-columns: minmax(min-content, 100%);
   column-gap: $s-8;
   align-items: center;
@@ -153,9 +147,9 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   text-decoration: none;
   border: none;
   background: none;
-  text-align: start;
+  //   text-align: start;
   margin: 0;
-  width: 100%;
+  //   width: 100%;
 
   svg {
     fill: var(--color-text-secondary);
@@ -170,41 +164,26 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   // 2 frames on a 60hz monitor
   transition: background 33.333ms linear;
 
+  // reset grid for children
+
+  // has leading visual
   &.actionList-item--leadingVisual {
-    //   grid-template-areas: 'leadingVisual label';
     grid-template-columns: min-content minmax(min-content, auto);
   }
 
+  // has trailing visual
   &.actionList-item--trailingVisual {
-    //   grid-template-areas: 'label trailingVisual';
     grid-template-columns: minmax(min-content, auto) min-content;
   }
 
+  // has leading + trailing visuals
   &.actionList-item--leadingVisual.actionList-item--trailingVisual {
-    //   grid-template-areas: 'leadingVisual label trailingVisual';
     grid-template-columns: min-content minmax(min-content, auto) min-content;
   }
 
-  //   &:where(img) {
-  //     // grid-template-areas: 'leadingVisual label';
-  //     // grid-template-columns: min-content minmax(min-content, auto);
-  //     // border: solid 1px pink;
-  //     grid-column: '1 / -1';
-  //   }
-
-  .leadingVisual {
-    // grid-area: leadingVisual;
-    grid-column: 1 / 2;
-  }
-
-  .trailingVisual {
-    // grid-area: trailingVisual;
-    grid-column: 3 / 4;
-  }
-
+  // handle font color and size here
   .actionList-item-label {
     flex: 1;
-    //   grid-area: label;
   }
 
   &:hover {
@@ -253,21 +232,20 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 // Medium-sized items
 .actionList-item--sizeMedium {
   // 40px total height considering 20px line-height
-  grid-template-rows: 28px;
+  grid-template-rows: minmax(28px, max-content);
 }
 
 // Large-sized items
 .actionList-item--sizeLarge {
   // 48px total height considering 20px line-height
-  grid-template-rows: 36px;
+  grid-template-rows: minmax(36px, max-content);
 }
 
 // On pointer:coarse (mobile), all list items are large
-
 @media (pointer: coarse) {
   .actionList-item {
     // 48px total height considering 20px line-height
-    grid-template-rows: 36px;
+    grid-template-rows: minmax(36px, max-content);
   }
 }
 

@@ -284,10 +284,17 @@ LeadingAndTrailingVisual.decorators = [
 
 export const BlockDescription = args => (
   <li className="actionList-item">
-    <div className="actionList-item-content">
+    <div className="actionList-item-content actionList-item--leadingVisual">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+        <path
+          fill-rule="evenodd"
+          d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
+        ></path>
+      </svg>
+
       <span className="actionList-item-label">
-        <span>Item</span>
-        <span className="actionList-item-blockDescription">Block item description</span>
+        Item with leading visual
+        <span className="actionList-item-blockDescription">Item with leading visual</span>
       </span>
     </div>
   </li>
