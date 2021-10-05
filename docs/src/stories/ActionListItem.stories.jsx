@@ -19,9 +19,85 @@ export default {
   //   ]
 }
 
+export const Playground = args => (
+  <>
+    <li className="actionList-item actionList-item--active">
+      <div className="actionList-item-content">
+        {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path d="M12.75 7.75a.75.75 0 00-1.5 0v3.5h-3.5a.75.75 0 000 1.5h3.5v3.5a.75.75 0 001.5 0v-3.5h3.5a.75.75 0 000-1.5h-3.5v-3.5z"></path>
+          <path
+            fill-rule="evenodd"
+            d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zM2.5 12a9.5 9.5 0 1119 0 9.5 9.5 0 01-19 0z"
+          ></path>
+        </svg> */}
+        <img
+          class="avatar avatar-small"
+          alt="jonrohan"
+          src="https://github.com/jonrohan.png?v=3&s=40"
+          width="20"
+          height="20"
+          style={{borderRadius: '100% '}}
+        />
+        <span className="actionList-item-label">Item with leading visual</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+          <path
+            fill-rule="evenodd"
+            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
+          ></path>
+        </svg>
+      </div>
+    </li>
+    <li className="actionList-item">
+      <div className="actionList-item-content actionList-item--sizeMedium">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+          <path
+            fill-rule="evenodd"
+            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
+          ></path>
+        </svg>
+        <span className="actionList-item-label">Item with leading visual</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+          <path
+            fill-rule="evenodd"
+            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
+          ></path>
+        </svg>
+      </div>
+    </li>
+    <li className="actionList-item">
+      <div className="actionList-item-content actionList-item--sizeLarge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+          <path
+            fill-rule="evenodd"
+            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
+          ></path>
+        </svg>
+        <span className="actionList-item-label">Item with leading visual</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+          <path
+            fill-rule="evenodd"
+            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
+          ></path>
+        </svg>
+      </div>
+    </li>
+  </>
+)
+Playground.decorators = [
+  Story => (
+    <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
+      <ul className="actionList">
+        <Story />
+      </ul>
+    </div>
+  )
+]
+
 export const TextOnly = args => (
   <li className="actionList-item">
-    <span className="actionList-item-content">Action list item</span>
+    <span className="actionList-item-content">
+      <span className="actionList-item-label">Item with leading visual</span>
+    </span>
   </li>
 )
 TextOnly.decorators = [
