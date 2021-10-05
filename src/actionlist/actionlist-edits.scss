@@ -83,6 +83,23 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   // :before pseudo-element is used for the inline divider
   // :after pseudo-element is used for selected accent line on the left
 
+  // single select
+
+  // maintain space on grid while check is hidden
+  .actionList-item-content-singleSelect {
+    .actionList-item-check {
+      visibility: hidden;
+    }
+  }
+
+  &[aria-checked='true'] {
+    .actionList-item-content-singleSelect {
+      .actionList-item-check {
+        visibility: visible;
+      }
+    }
+  }
+
   position: relative;
 
   // katie edit
@@ -183,6 +200,38 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   // has leading + trailing visuals
   &.actionList-item--leadingVisual.actionList-item--trailingVisual {
     grid-template-columns: min-content minmax(min-content, auto) min-content;
+  }
+
+  &.actionList-item-content-singleSelect {
+    grid-template-columns: min-content minmax(min-content, auto);
+
+    &.actionList-item--leadingVisual {
+      grid-template-columns: min-content min-content minmax(min-content, auto);
+    }
+
+    &.actionList-item--trailingVisual {
+      grid-template-columns: min-content minmax(min-content, auto) min-content;
+    }
+
+    &.actionList-item--leadingVisual.actionList-item--trailingVisual {
+      grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
+    }
+  }
+
+  &.actionList-item-content-multiSelect {
+    grid-template-columns: min-content minmax(min-content, auto);
+
+    &.actionList-item--leadingVisual {
+      grid-template-columns: min-content min-content minmax(min-content, auto);
+    }
+
+    &.actionList-item--trailingVisual {
+      grid-template-columns: min-content minmax(min-content, auto) min-content;
+    }
+
+    &.actionList-item--leadingVisual.actionList-item--trailingVisual {
+      grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
+    }
   }
 
   // handle font color and size here
@@ -375,22 +424,22 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   padding-left: ($s-16 + $s-16);
 }
 
-.actionList-item .actionList-item-check {
-  width: $s-16;
-  height: $s-20;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: ($s-24 * -1);
-  align-items: center;
+// .actionList-item .actionList-item-check {
+//   width: $s-16;
+//   height: $s-20;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   margin-left: ($s-24 * -1);
+//   align-items: center;
 
-  svg {
-    fill: var(--color-text-secondary);
-  }
-  input {
-    cursor: pointer;
-  }
-}
+//   svg {
+//     fill: var(--color-text-secondary);
+//   }
+//   input {
+//     cursor: pointer;
+//   }
+// }
 
 // Dividers
 
