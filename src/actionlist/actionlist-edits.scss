@@ -151,7 +151,11 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   margin: 0;
   //   width: 100%;
 
-  svg {
+  // helper for grid alignment with multi-line content
+  .actionList-item-visual {
+    min-height: 20px;
+    display: flex;
+    align-items: center;
     fill: var(--color-text-secondary);
   }
 
@@ -183,7 +187,37 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
   // handle font color and size here
   .actionList-item-label {
-    flex: 1;
+    font-weight: normal;
+    color: inherit;
+  }
+
+  .actionList-item-label-primary {
+    font-weight: bold;
+  }
+
+  .actionList-item-label--blockDescription {
+    display: flex;
+    flex-direction: column;
+
+    .actionList-item-label-description {
+      margin-top: $s-4;
+    }
+  }
+
+  .actionList-item-label--inlineDescription {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+    .actionList-item-label-description {
+      margin-left: $s-8;
+    }
+  }
+
+  .actionList-item-label-description {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--color-text-secondary);
   }
 
   &:hover {
@@ -249,6 +283,13 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   }
 }
 
+.actionList-item-content-blockDescription {
+  // if leading/trailing visual, align with first line of content
+  .actionList-item-visual {
+    place-self: start;
+  }
+}
+
 // Danger listItem
 
 // TODO: conflict with selected state
@@ -270,23 +311,23 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
 // listItem elements
 // TODO: safegaurd against incorrect SVG sizes
-.actionList-item-leadingVisual,
-.actionList-item-leadingVisual-16,
-.actionList-item-leadingVisual-20 {
-  width: $s-16;
-  height: $s-20;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+// .actionList-item-leadingVisual,
+// .actionList-item-leadingVisual-16,
+// .actionList-item-leadingVisual-20 {
+//   width: $s-16;
+//   height: $s-20;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
 
-  svg {
-    fill: $text-secondary;
-  }
-}
+//   svg {
+//     fill: $text-secondary;
+//   }
+// }
 
-.actionList-item-leadingVisual-20 {
-  width: $s-20;
-}
+// .actionList-item-leadingVisual-20 {
+//   width: $s-20;
+// }
 
 .actionList-item-inlineDescription {
   align-self: baseline;
@@ -298,9 +339,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
 // TODO: should label always be bold above a block description?
 .actionList-item-blockDescription {
-  align-self: baseline;
   display: block;
-
   // text-small
   font-size: 12px;
   line-height: 18px;
@@ -309,23 +348,23 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 // child of .actionList-item-label, placed above everything
-.actionList-item-trailingText {
-  margin-left: $s-16;
-  float: right;
-  color: var(--color-text-secondary);
-}
+// .actionList-item-trailingText {
+//   margin-left: $s-16;
+//   float: right;
+//   color: var(--color-text-secondary);
+// }
 
 // sibling of .actionList-item-label
-.actionList-item-trailingVisual {
-  height: $s-20;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+// .actionList-item-trailingVisual {
+//   height: $s-20;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
 
-  svg {
-    fill: var(--color-text-secondary);
-  }
-}
+//   svg {
+//     fill: var(--color-text-secondary);
+//   }
+// }
 
 // Single-selection & Multi selection
 // TODO: can this be simplified?
