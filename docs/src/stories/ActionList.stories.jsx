@@ -1,4 +1,5 @@
 import React from 'react'
+import clsx from 'clsx'
 import {
   TextOnly,
   SizeMedium,
@@ -28,7 +29,8 @@ import {
   SingleSelectItem,
   SingleSelectItemWithLeadingVisual,
   SingleSelectItemWithTrailingVisual,
-  SingleSelectItemWithLeadingAndTrailingVisual
+  SingleSelectItemWithLeadingAndTrailingVisual,
+  Playground
 } from './ActionListItem.stories'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -37,7 +39,10 @@ export default {
   //   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    // backgroundColor: {control: 'color'}
+    showDividers: {
+      defaultValue: false,
+      control: {type: 'boolean'}
+    }
   },
   decorators: [
     Story => (
@@ -47,6 +52,29 @@ export default {
     )
   ]
 }
+
+const Template = ({
+  itemLabel,
+  size,
+  leadingVisual,
+  trailingVisual,
+  blockDescription,
+  description,
+  descriptionPosition,
+  danger,
+  showDividers
+}) => (
+  <ul className={clsx('actionList', showDividers && 'actionList--divided')}>
+    <LeadingVisual />
+    <LeadingVisual />
+    <LeadingVisual />
+    <SectionDivider />
+    <MultiSelectItemWithLeadingVisual />
+  </ul>
+)
+
+export const ListPlayground = Template.bind({})
+ListPlayground.args = {}
 
 export const KitchenSink = args => (
   <>

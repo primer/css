@@ -12,14 +12,14 @@ export default {
   argTypes: {
     size: {
       defaultValue: '',
-      options: ['actionList-item--sizeMedium', 'actionList-item--sizeLarge'],
+      options: ['actionList-item-content--sizeMedium', 'actionList-item-content--sizeLarge'],
       control: {type: 'select'},
       description: 'small (default), medium, large'
     },
-    // hasLeadingVisual: {
-    //   defaultValue: false,
-    //   control: {type: 'boolean'}
-    // },
+    danger: {
+      defaultValue: false,
+      control: {type: 'boolean'}
+    },
     leadingVisual: {
       defaultValue: '',
       name: 'leadingVisual',
@@ -38,14 +38,20 @@ export default {
       name: 'itemLabel',
       description: 'string'
     },
-    blockDescription: {
-      defaultValue: 'Item block description',
+    href: {
+      defaultValue: '',
       type: 'string',
-      name: 'blockDescription',
-      description: 'string'
+      name: 'href',
+      description: 'Item link (href)'
     },
+    // blockDescription: {
+    //   defaultValue: 'Item block description',
+    //   type: 'string',
+    //   name: 'blockDescription',
+    //   description: 'string'
+    // },
     description: {
-      defaultValue: 'Item description',
+      defaultValue: '',
       type: 'string',
       name: 'description',
       description: 'string'
@@ -60,7 +66,7 @@ export default {
   //   decorators: [
   //     Story => (
   //       <div style={{margin: '3em', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-  //         <ul className="actionList">
+  //         <ul className="actionList" role="menu">
   //           <Story />
   //         </ul>
   //       </div>
@@ -75,16 +81,19 @@ const Template = ({
   trailingVisual,
   blockDescription,
   description,
-  descriptionPosition
+  descriptionPosition,
+  danger,
+  href
 }) => (
-  <li className="actionList-item">
+  <li className="actionList-item" role="menuitem">
     <span
       className={clsx(
         'actionList-item-content',
         `${size}`,
         leadingVisual && 'actionList-item-content--leadingVisual',
         trailingVisual && 'actionList-item-content--trailingVisual',
-        blockDescription && 'actionList-item-content--blockDescription'
+        blockDescription && 'actionList-item-content--blockDescription',
+        danger && 'actionList-item-content--danger'
       )}
     >
       {leadingVisual && <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
@@ -96,7 +105,6 @@ const Template = ({
       ) : (
         <span className="actionList-item-label">{itemLabel}</span>
       )}
-      {/* <span className="actionList-item-label">{itemLabel}</span> */}
       {trailingVisual && <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />}
     </span>
   </li>
@@ -107,7 +115,7 @@ Playground.args = {}
 Playground.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -117,14 +125,14 @@ Playground.decorators = [
 export const TextOnly = args => (
   <li className="actionList-item">
     <span className="actionList-item-content">
-      <span className="actionList-item-label">{args.labelText}</span>
+      <span className="actionList-item-label">Label text</span>
     </span>
   </li>
 )
 TextOnly.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -141,9 +149,9 @@ TextOnly.args = {
 
 export const SizeMedium = args => (
   <>
-    <ul className="actionList">
+    <ul className="actionList" role="menu">
       <li className="actionList-item">
-        <span className="actionList-item-content actionList-item--sizeMedium">
+        <span className="actionList-item-content actionList-item-content--sizeMedium">
           <span className="actionList-item-label">Medium item</span>
         </span>
       </li>
@@ -153,7 +161,7 @@ export const SizeMedium = args => (
 SizeMedium.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -162,9 +170,9 @@ SizeMedium.decorators = [
 
 export const SizeLarge = args => (
   <>
-    <ul className="actionList">
+    <ul className="actionList" role="menu">
       <li className="actionList-item">
-        <span className="actionList-item-content actionList-item--sizeLarge">
+        <span className="actionList-item-content actionList-item-content--sizeLarge">
           <span className="actionList-item-label">Large item</span>
         </span>
       </li>
@@ -174,7 +182,7 @@ export const SizeLarge = args => (
 SizeLarge.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -183,13 +191,13 @@ SizeLarge.decorators = [
 
 export const SectionDivider = args => (
   <>
-    <li className="actionList-sectionDivider"></li>
+    <li className="actionList-sectionDivider" role="separator"></li>
   </>
 )
 SectionDivider.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -204,7 +212,7 @@ export const SectionDividerFilled = args => (
 SectionDividerFilled.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -219,7 +227,7 @@ export const SectionDividerSimple = args => (
 SectionDividerSimple.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -246,7 +254,7 @@ export const LeadingVisual = args => (
 LeadingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -273,7 +281,7 @@ export const TrailingVisual = args => (
 TrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -293,7 +301,7 @@ export const TrailingText = args => (
 TrailingText.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -328,7 +336,7 @@ export const LeadingAndTrailingVisual = args => (
 LeadingAndTrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -348,7 +356,7 @@ export const BlockDescription = args => (
 BlockDescription.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -376,7 +384,7 @@ export const BlockDescriptionWithLeadingVisual = args => (
 BlockDescriptionWithLeadingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -404,7 +412,7 @@ export const BlockDescriptionWithTrailingVisual = args => (
 BlockDescriptionWithTrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -440,7 +448,7 @@ export const BlockDescriptionWithLeadingAndTrailingVisual = args => (
 BlockDescriptionWithLeadingAndTrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -460,7 +468,7 @@ export const InlineDescription = args => (
 InlineDescription.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -488,7 +496,7 @@ export const InlineDescriptionWithLeadingVisual = args => (
 InlineDescriptionWithLeadingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -516,7 +524,7 @@ export const InlineDescriptionWithTrailingVisual = args => (
 InlineDescriptionWithTrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -552,7 +560,7 @@ export const InlineDescriptionWithLeadingAndTrailingVisual = args => (
 InlineDescriptionWithLeadingAndTrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -560,8 +568,8 @@ InlineDescriptionWithLeadingAndTrailingVisual.decorators = [
 ]
 
 export const ActiveNavItem = args => (
-  <li className="actionList-item actionList-item--active">
-    <a href="/placeholder" aria-current="page" className="actionList-item-content">
+  <li className="actionList-item actionList-item--active" role="none">
+    <a href="/placeholder" aria-current="page" className="actionList-item-content" role="menuitem">
       Active nav item (page level)
     </a>
   </li>
@@ -569,7 +577,7 @@ export const ActiveNavItem = args => (
 ActiveNavItem.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -577,8 +585,8 @@ ActiveNavItem.decorators = [
 ]
 
 export const ActiveSubNavItem = args => (
-  <li className="actionList-item actionList-item--active">
-    <a href="#" aria-current="location" className="actionList-item-content">
+  <li className="actionList-item actionList-item--active" role="none">
+    <a href="#" aria-current="location" className="actionList-item-content" role="menuitem">
       Active subnav item (anchor link)
     </a>
   </li>
@@ -586,7 +594,7 @@ export const ActiveSubNavItem = args => (
 ActiveSubNavItem.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -595,8 +603,8 @@ ActiveSubNavItem.decorators = [
 
 export const DangerItem = args => (
   <>
-    <li className="actionList-item actionList-item--danger">
-      <div className="actionList-item-content">
+    <li className="actionList-item">
+      <div className="actionList-item-content actionList-item-content--danger">
         <span className="actionList-item-label">Danger item</span>
       </div>
     </li>
@@ -605,7 +613,7 @@ export const DangerItem = args => (
 DangerItem.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList">
+      <ul className="actionList" role="menu">
         <Story />
       </ul>
     </div>

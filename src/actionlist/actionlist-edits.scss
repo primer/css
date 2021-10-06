@@ -109,6 +109,44 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
     // 2 frames on a 60hz monitor
     transition: background 33.333ms linear;
 
+    // size (default: small)
+    // small | medium | large
+
+    // Medium-sized items
+    &.actionList-item-content--sizeMedium {
+      // 40px total height considering 20px line-height
+      grid-template-rows: minmax(28px, max-content);
+    }
+
+    // Large-sized items
+    &.actionList-item-content--sizeLarge {
+      // 48px total height considering 20px line-height
+      grid-template-rows: minmax(36px, max-content);
+    }
+
+    // On pointer:coarse (mobile), all list items are large
+    @media (pointer: coarse) {
+      // 48px total height considering 20px line-height
+      grid-template-rows: minmax(36px, max-content);
+    }
+
+    // Danger listItem
+
+    // TODO: conflict with selected state
+    &.actionList-item-content--danger {
+      color: var(--color-danger-fg);
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background: $actionList-item-danger-hover-bg;
+        }
+      }
+
+      &:active {
+        background: $actionList-item-danger-active-bg;
+      }
+    }
+
     &.actionList-item-content--blockDescription {
       // if leading/trailing visual, align with first line of content
       .actionList-item-visual {
@@ -185,7 +223,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
       flex-direction: column;
 
       .actionList-item-label {
-        font-weight: bold;
+        font-weight: 600;
       }
 
       .actionList-item-description {
@@ -199,7 +237,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
       align-items: baseline;
 
       .actionList-item-label {
-        font-weight: bold;
+        font-weight: 600;
       }
 
       .actionList-item-description {
@@ -317,48 +355,6 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   }
 }
 
-// size (default: small)
-// small | medium | large
-
-// Medium-sized items
-.actionList-item--sizeMedium {
-  // 40px total height considering 20px line-height
-  grid-template-rows: minmax(28px, max-content);
-}
-
-// Large-sized items
-.actionList-item--sizeLarge {
-  // 48px total height considering 20px line-height
-  grid-template-rows: minmax(36px, max-content);
-}
-
-// On pointer:coarse (mobile), all list items are large
-@media (pointer: coarse) {
-  .actionList-item {
-    // 48px total height considering 20px line-height
-    grid-template-rows: minmax(36px, max-content);
-  }
-}
-
-// Danger listItem
-
-// TODO: conflict with selected state
-.actionList-item--danger {
-  .actionList-item-content {
-    color: var(--color-danger-fg);
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        background: $actionList-item-danger-hover-bg;
-      }
-    }
-
-    &:active {
-      background: $actionList-item-danger-active-bg;
-    }
-  }
-}
-
 // listItem elements
 // TODO: safegaurd against incorrect SVG sizes
 // .actionList-item-leadingVisual,
@@ -387,7 +383,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   color: var(--color-fg-muted);
 }
 
-// TODO: should label always be bold above a block description?
+// TODO: should label always be 600 above a block description?
 .actionList-item-blockDescription {
   display: block;
   // text-small
@@ -399,12 +395,12 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
 // Single-selection & Multi selection
 // TODO: can this be simplified?
-.actionList--single-selection .actionList-item > .actionList-item-content,
-.actionList--multi-selection .actionList-item > .actionList-item-content,
-.actionList-item--single-selection > .actionList-item-content,
-.actionList-item--multi-selection > .actionList-item-content {
-  padding-left: ($s-16 + $s-16);
-}
+// .actionList--single-selection .actionList-item > .actionList-item-content,
+// .actionList--multi-selection .actionList-item > .actionList-item-content,
+// .actionList-item--single-selection > .actionList-item-content,
+// .actionList-item--multi-selection > .actionList-item-content {
+//   padding-left: ($s-16 + $s-16);
+// }
 
 // .actionList-item .actionList-item-check {
 //   width: $s-16;
