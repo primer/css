@@ -12,13 +12,14 @@ export const parameters = {
   }
 }
 
+import '../../src/docs.scss'
 import '../../src/index.scss'
 import '../../src/base/index.scss'
 // import '../../src/color-modes/native.scss'
 // import '../../src/color-modes/index.scss'
-// import '../../src/core/index.scss'
-// import '../../src/product/index.scss'
-// import '../../src/marketing/index.scss'
+import '../../src/core/index.scss'
+import '../../src/product/index.scss'
+import '../../src/marketing/index.scss'
 
 export const globalTypes = {
   theme: {

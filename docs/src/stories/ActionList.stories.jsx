@@ -84,9 +84,20 @@ export const SubNavigation = args => (
   </>
 )
 
-export const SimpleDividers = args => (
+export const Dividers = args => (
   <>
     <ul class="actionList actionList--divided">
+      <TextOnly />
+      <TextOnly />
+      <TextOnly />
+    </ul>
+  </>
+)
+
+export const DividersWithSectionDividerFilled = args => (
+  <>
+    <ul class="actionList actionList--divided">
+      <SectionDividerFilled />
       <TextOnly />
       <TextOnly />
       <TextOnly />

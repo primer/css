@@ -173,7 +173,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
     min-height: 20px;
     display: flex;
     align-items: center;
-    fill: var(--color-text-secondary);
+    fill: var(--color-fg-muted);
   }
 
   // do we want this?
@@ -266,7 +266,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   .actionList-item-label-description {
     font-size: 12px;
     line-height: 18px;
-    color: var(--color-text-secondary);
+    color: var(--color-fg-muted);
   }
 
   &:hover {
@@ -344,7 +344,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 // TODO: conflict with selected state
 .actionList-item--danger {
   .actionList-item-content {
-    color: var(--color-text-danger);
+    color: var(--color-danger-fg);
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
@@ -383,7 +383,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   // text-small
   font-size: 12px;
   line-height: 18px;
-  color: var(--color-text-secondary);
+  color: var(--color-fg-muted);
 }
 
 // TODO: should label always be bold above a block description?
@@ -392,7 +392,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   // text-small
   font-size: 12px;
   line-height: 18px;
-  color: var(--color-text-secondary);
+  color: var(--color-fg-muted);
   margin-top: $s-4;
 }
 
@@ -400,7 +400,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 // .actionList-item-trailingText {
 //   margin-left: $s-16;
 //   float: right;
-//   color: var(--color-text-secondary);
+//   color: var(--color-fg-muted);
 // }
 
 // sibling of .actionList-item-label
@@ -411,7 +411,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 //   justify-content: center;
 
 //   svg {
-//     fill: var(--color-text-secondary);
+//     fill: var(--color-fg-muted);
 //   }
 // }
 
@@ -434,7 +434,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 //   align-items: center;
 
 //   svg {
-//     fill: var(--color-text-secondary);
+//     fill: var(--color-fg-muted);
 //   }
 //   input {
 //     cursor: pointer;
@@ -530,7 +530,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   // is this a variable in primer css?
   font-weight: 600;
 
-  color: var(--color-text-secondary);
+  color: var(--color-fg-muted);
 }
 
 .actionList-sectionHeader--filled {

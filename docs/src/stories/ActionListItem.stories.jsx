@@ -1,4 +1,5 @@
 import React from 'react'
+import clsx from 'clsx'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -7,6 +8,11 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     // backgroundColor: {control: 'color'}
+    size: {
+      options: ['actionList-item--sizeMedium', 'actionList-item--sizeLarge'],
+      control: {type: 'select'}
+    },
+    label: {type: {name: 'string'}}
   }
   //   decorators: [
   //     Story => (
@@ -19,10 +25,54 @@ export default {
   //   ]
 }
 
+const Template = ({label, size}) => (
+  <li className="actionList-item">
+    <span className={clsx('actionList-item-content', `${size}`)}>
+      <span className="actionList-item-label">{label}</span>
+    </span>
+  </li>
+)
+
+export const Playground = Template.bind({})
+Playground.args = {label: 'Hello!', size: 'actionList-item--sizeMedium'}
+Playground.decorators = [
+  Story => (
+    <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
+      <ul className="actionList">
+        <Story />
+      </ul>
+    </div>
+  )
+]
+
+// export const Playground = args => (
+//   <li className="actionList-item">
+//     <span className="actionList-item-content">
+//       <span className="actionList-item-label">{args.labelText}</span>
+//     </span>
+//   </li>
+// )
+// Playground.decorators = [
+//   Story => (
+//     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
+//       <ul className="actionList">
+//         <Story />
+//       </ul>
+//     </div>
+//   )
+// ]
+// Playground.args = {
+//   labelText: 'Default text'
+//   //   size: {
+//   //     options: ['medium', 'large'],
+//   //     control: {type: 'select'}
+//   //   }
+// }
+
 export const TextOnly = args => (
   <li className="actionList-item">
     <span className="actionList-item-content">
-      <span className="actionList-item-label">Default text only item</span>
+      <span className="actionList-item-label">{args.labelText}</span>
     </span>
   </li>
 )
@@ -35,6 +85,14 @@ TextOnly.decorators = [
     </div>
   )
 ]
+TextOnly.args = {
+  labelText: 'Default text'
+}
+// export const Primary = Playground.bind({})
+// Primary.args = {
+//   primary: true,
+//   label: 'Button'
+// }
 
 export const SizeMedium = args => (
   <>
@@ -752,9 +810,3 @@ SingleSelectItemWithLeadingAndTrailingVisual.decorators = [
     </div>
   )
 ]
-
-// export const Primary = Playground.bind({})
-// Primary.args = {
-//   primary: true,
-//   label: 'Button'
-// }
