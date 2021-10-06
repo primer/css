@@ -22,6 +22,7 @@
     "autoprefixer": "10.3.6",
     "babel-preset-gatsby": "^1.14.0",
     "chroma-js": "^2.1.2",
+    "clsx": "^1.1.1",
     "core-js": "^3.18.1",
     "gatsby": "2.32.13",
     "gatsby-plugin-alias-imports": "^1.0.5",
@@ -56,6 +57,7 @@
     "@storybook/react": "^6.3.9",
     "@whitespace/storybook-addon-html": "^5.0.0",
     "babel-loader": "^8.2.2",
+    "storybook-addon-designs": "6.2.0",
     "storybook-addon-pseudo-states": "^1.0.0"
   }
 }
