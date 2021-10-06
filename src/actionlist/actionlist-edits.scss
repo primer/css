@@ -69,6 +69,7 @@ $ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 $ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
 $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
+// ul
 .actionList {
   padding: $s-8;
   list-style: none;
@@ -79,21 +80,190 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   }
 }
 
+// li
 .actionList-item {
-  // :before pseudo-element is used for the inline divider
-  // :after pseudo-element is used for selected accent line on the left
+  .actionList-item-content {
+    display: grid;
+    // 32px total height considering 20px line-height
+    // allow height to expand
+    padding: (($s-32 - $s-20) / 2) $s-8;
+    grid-template-rows: minmax(20px, max-content);
+    // default one column
+    grid-template-columns: minmax(min-content, 100%);
+    column-gap: $s-8;
+    align-items: center;
+    position: relative;
+    border-radius: $border-radius-2;
+    font-weight: normal;
+    color: inherit;
+    text-decoration: none;
+    border: none;
+    background: none;
+    //   text-align: start;
+    margin: 0;
+    //   width: 100%;
+    // do we want this?
+    user-select: none;
+    // since we're already using an :active bg
+    -webkit-tap-highlight-color: transparent;
+    // 2 frames on a 60hz monitor
+    transition: background 33.333ms linear;
+
+    &.actionList-item-content--blockDescription {
+      // if leading/trailing visual, align with first line of content
+      .actionList-item-visual {
+        place-self: start;
+      }
+    }
+
+    // reset grid for children
+
+    // has leading visual
+    &.actionList-item-content--leadingVisual {
+      grid-template-columns: min-content minmax(min-content, auto);
+    }
+
+    // has trailing visual
+    &.actionList-item-content--trailingVisual {
+      grid-template-columns: minmax(min-content, auto) min-content;
+    }
+
+    // has leading + trailing visuals
+    &.actionList-item-content--leadingVisual.actionList-item-content--trailingVisual {
+      grid-template-columns: min-content minmax(min-content, auto) min-content;
+    }
+
+    &.actionList-item-content--singleSelect {
+      grid-template-columns: min-content minmax(min-content, auto);
+
+      &.actionList-item-content--leadingVisual {
+        grid-template-columns: min-content min-content minmax(min-content, auto);
+      }
+
+      &.actionList-item-content--trailingVisual {
+        grid-template-columns: min-content minmax(min-content, auto) min-content;
+      }
+
+      &.actionList-item-content--leadingVisual.actionList-item-content--trailingVisual {
+        grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
+      }
+    }
+
+    &.actionList-item-content--multiSelect {
+      grid-template-columns: min-content minmax(min-content, auto);
+
+      &.actionList-item-content--leadingVisual {
+        grid-template-columns: min-content min-content minmax(min-content, auto);
+      }
+
+      &.actionList-item-content--trailingVisual {
+        grid-template-columns: min-content minmax(min-content, auto) min-content;
+      }
+
+      &.actionList-item-content--leadingVisual.actionList-item-content--trailingVisual {
+        grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
+      }
+    }
+
+    // helper for grid alignment with multi-line content
+    // span
+    .actionList-item-visual {
+      min-height: 20px;
+      display: flex;
+      align-items: center;
+      fill: var(--color-fg-muted);
+    }
+
+    // handle font color and size here
+    .actionList-item-label {
+      font-weight: normal;
+      color: inherit;
+    }
+
+    .actionList-item-label--blockDescription {
+      display: flex;
+      flex-direction: column;
+
+      .actionList-item-label {
+        font-weight: bold;
+      }
+
+      .actionList-item-description {
+        margin-top: $s-4;
+      }
+    }
+
+    .actionList-item-label--inlineDescription {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+
+      .actionList-item-label {
+        font-weight: bold;
+      }
+
+      .actionList-item-description {
+        margin-left: $s-8;
+      }
+    }
+
+    .actionList-item-description {
+      font-size: 12px;
+      line-height: 18px;
+      color: var(--color-fg-muted);
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--color-accent-fg); // var(--color-btn-focus-shadow)
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background: $actionList-item-hover-bg;
+        cursor: pointer;
+      }
+    }
+
+    &:active {
+      background: $actionList-item-active-bg;
+
+      @media screen and (prefers-reduced-motion: no-preference) {
+        animation: actionList-item-active-bg 4s forwards $ease-out-cubic;
+      }
+
+      @keyframes actionList-item-active-bg {
+        0% {
+        }
+        50% {
+          transform: scale(1);
+          box-shadow: inset 0 0 0 rgba(#000, 0.04);
+        }
+        100% {
+          transform: scale(0.97);
+          box-shadow: inset 0 3px 9px rgba(#000, 0.04);
+        }
+      }
+    }
+  }
 
   // single select
 
   // maintain space on grid while check is hidden
-  .actionList-item-content-singleSelect {
+  .actionList-item-content--singleSelect {
     .actionList-item-check {
       visibility: hidden;
     }
   }
 
   &[aria-checked='true'] {
-    .actionList-item-content-singleSelect {
+    .actionList-item-content--singleSelect {
       .actionList-item-check {
         visibility: visible;
       }
@@ -147,168 +317,6 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   }
 }
 
-.actionList-item-content {
-  display: grid;
-  // 32px total height considering 20px line-height
-  // allow height to expand
-  padding: (($s-32 - $s-20) / 2) $s-8;
-  grid-template-rows: minmax(20px, max-content);
-  // default one column
-  grid-template-columns: minmax(min-content, 100%);
-  column-gap: $s-8;
-  align-items: center;
-  position: relative;
-  border-radius: $border-radius-2;
-  font-weight: normal;
-  color: inherit;
-  text-decoration: none;
-  border: none;
-  background: none;
-  //   text-align: start;
-  margin: 0;
-  //   width: 100%;
-
-  // helper for grid alignment with multi-line content
-  .actionList-item-visual {
-    min-height: 20px;
-    display: flex;
-    align-items: center;
-    fill: var(--color-fg-muted);
-  }
-
-  // do we want this?
-  user-select: none;
-
-  // since we're already using an :active bg
-  -webkit-tap-highlight-color: transparent;
-
-  // 2 frames on a 60hz monitor
-  transition: background 33.333ms linear;
-
-  // reset grid for children
-
-  // has leading visual
-  &.actionList-item--leadingVisual {
-    grid-template-columns: min-content minmax(min-content, auto);
-  }
-
-  // has trailing visual
-  &.actionList-item--trailingVisual {
-    grid-template-columns: minmax(min-content, auto) min-content;
-  }
-
-  // has leading + trailing visuals
-  &.actionList-item--leadingVisual.actionList-item--trailingVisual {
-    grid-template-columns: min-content minmax(min-content, auto) min-content;
-  }
-
-  &.actionList-item-content-singleSelect {
-    grid-template-columns: min-content minmax(min-content, auto);
-
-    &.actionList-item--leadingVisual {
-      grid-template-columns: min-content min-content minmax(min-content, auto);
-    }
-
-    &.actionList-item--trailingVisual {
-      grid-template-columns: min-content minmax(min-content, auto) min-content;
-    }
-
-    &.actionList-item--leadingVisual.actionList-item--trailingVisual {
-      grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
-    }
-  }
-
-  &.actionList-item-content-multiSelect {
-    grid-template-columns: min-content minmax(min-content, auto);
-
-    &.actionList-item--leadingVisual {
-      grid-template-columns: min-content min-content minmax(min-content, auto);
-    }
-
-    &.actionList-item--trailingVisual {
-      grid-template-columns: min-content minmax(min-content, auto) min-content;
-    }
-
-    &.actionList-item--leadingVisual.actionList-item--trailingVisual {
-      grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
-    }
-  }
-
-  // handle font color and size here
-  .actionList-item-label {
-    font-weight: normal;
-    color: inherit;
-  }
-
-  .actionList-item-label-primary {
-    font-weight: bold;
-  }
-
-  .actionList-item-label--blockDescription {
-    display: flex;
-    flex-direction: column;
-
-    .actionList-item-label-description {
-      margin-top: $s-4;
-    }
-  }
-
-  .actionList-item-label--inlineDescription {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-
-    .actionList-item-label-description {
-      margin-left: $s-8;
-    }
-  }
-
-  .actionList-item-label-description {
-    font-size: 12px;
-    line-height: 18px;
-    color: var(--color-fg-muted);
-  }
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  &:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--color-accent-fg); // var(--color-btn-focus-shadow)
-    position: relative;
-    z-index: 1;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      background: $actionList-item-hover-bg;
-      cursor: pointer;
-    }
-  }
-
-  &:active {
-    background: $actionList-item-active-bg;
-
-    @media screen and (prefers-reduced-motion: no-preference) {
-      animation: actionList-item-active-bg 4s forwards $ease-out-cubic;
-    }
-
-    @keyframes actionList-item-active-bg {
-      0% {
-      }
-      50% {
-        transform: scale(1);
-        box-shadow: inset 0 0 0 rgba(#000, 0.04);
-      }
-      100% {
-        transform: scale(0.97);
-        box-shadow: inset 0 3px 9px rgba(#000, 0.04);
-      }
-    }
-  }
-}
-
 // size (default: small)
 // small | medium | large
 
@@ -329,13 +337,6 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   .actionList-item {
     // 48px total height considering 20px line-height
     grid-template-rows: minmax(36px, max-content);
-  }
-}
-
-.actionList-item-content-blockDescription {
-  // if leading/trailing visual, align with first line of content
-  .actionList-item-visual {
-    place-self: start;
   }
 }
 
@@ -395,25 +396,6 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   color: var(--color-fg-muted);
   margin-top: $s-4;
 }
-
-// child of .actionList-item-label, placed above everything
-// .actionList-item-trailingText {
-//   margin-left: $s-16;
-//   float: right;
-//   color: var(--color-fg-muted);
-// }
-
-// sibling of .actionList-item-label
-// .actionList-item-trailingVisual {
-//   height: $s-20;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-
-//   svg {
-//     fill: var(--color-fg-muted);
-//   }
-// }
 
 // Single-selection & Multi selection
 // TODO: can this be simplified?

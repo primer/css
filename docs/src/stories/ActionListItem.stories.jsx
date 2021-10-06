@@ -1,18 +1,61 @@
 import React from 'react'
 import clsx from 'clsx'
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Components/ActionList/Item',
-  //   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/GCvY3Qv8czRgZgvl1dG6lp/Primer-Web?node-id=9677%3A44019'
+    }
+  },
   argTypes: {
-    // backgroundColor: {control: 'color'}
     size: {
+      defaultValue: '',
       options: ['actionList-item--sizeMedium', 'actionList-item--sizeLarge'],
-      control: {type: 'select'}
+      control: {type: 'select'},
+      description: 'small (default), medium, large'
     },
-    label: {type: {name: 'string'}}
+    // hasLeadingVisual: {
+    //   defaultValue: false,
+    //   control: {type: 'boolean'}
+    // },
+    leadingVisual: {
+      defaultValue: '',
+      name: 'leadingVisual',
+      type: 'string',
+      description: 'Paste [Octicon](https://primer.style/octicons/) in control field'
+    },
+    trailingVisual: {
+      defaultValue: '',
+      name: 'trailingVisual',
+      type: 'string',
+      description: 'Paste [Octicon](https://primer.style/octicons/) in control field'
+    },
+    itemLabel: {
+      defaultValue: 'Item label',
+      type: 'string',
+      name: 'itemLabel',
+      description: 'string'
+    },
+    blockDescription: {
+      defaultValue: 'Item block description',
+      type: 'string',
+      name: 'blockDescription',
+      description: 'string'
+    },
+    description: {
+      defaultValue: 'Item description',
+      type: 'string',
+      name: 'description',
+      description: 'string'
+    },
+    descriptionPosition: {
+      defaultValue: 'actionList-item-label--blockDescription',
+      options: ['actionList-item-label--blockDescription', 'actionList-item-label--inlineDescription'],
+      control: {type: 'select'},
+      description: 'block (default), inline'
+    }
   }
   //   decorators: [
   //     Story => (
@@ -25,16 +68,42 @@ export default {
   //   ]
 }
 
-const Template = ({label, size}) => (
+const Template = ({
+  itemLabel,
+  size,
+  leadingVisual,
+  trailingVisual,
+  blockDescription,
+  description,
+  descriptionPosition
+}) => (
   <li className="actionList-item">
-    <span className={clsx('actionList-item-content', `${size}`)}>
-      <span className="actionList-item-label">{label}</span>
+    <span
+      className={clsx(
+        'actionList-item-content',
+        `${size}`,
+        leadingVisual && 'actionList-item-content--leadingVisual',
+        trailingVisual && 'actionList-item-content--trailingVisual',
+        blockDescription && 'actionList-item-content--blockDescription'
+      )}
+    >
+      {leadingVisual && <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
+      {description ? (
+        <span className={`${descriptionPosition}`}>
+          <span className="actionList-item-label">{itemLabel}</span>
+          <span className="actionList-item-description">{description}</span>
+        </span>
+      ) : (
+        <span className="actionList-item-label">{itemLabel}</span>
+      )}
+      {/* <span className="actionList-item-label">{itemLabel}</span> */}
+      {trailingVisual && <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />}
     </span>
   </li>
 )
 
 export const Playground = Template.bind({})
-Playground.args = {label: 'Hello!', size: 'actionList-item--sizeMedium'}
+Playground.args = {}
 Playground.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
@@ -44,30 +113,6 @@ Playground.decorators = [
     </div>
   )
 ]
-
-// export const Playground = args => (
-//   <li className="actionList-item">
-//     <span className="actionList-item-content">
-//       <span className="actionList-item-label">{args.labelText}</span>
-//     </span>
-//   </li>
-// )
-// Playground.decorators = [
-//   Story => (
-//     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-//       <ul className="actionList">
-//         <Story />
-//       </ul>
-//     </div>
-//   )
-// ]
-// Playground.args = {
-//   labelText: 'Default text'
-//   //   size: {
-//   //     options: ['medium', 'large'],
-//   //     control: {type: 'select'}
-//   //   }
-// }
 
 export const TextOnly = args => (
   <li className="actionList-item">
@@ -184,7 +229,7 @@ SectionDividerSimple.decorators = [
 export const LeadingVisual = args => (
   <>
     <li className="actionList-item">
-      <div className="actionList-item-content actionList-item--leadingVisual">
+      <div className="actionList-item-content actionList-item-content--leadingVisual">
         <span className="actionList-item-visual">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
             <path
@@ -211,7 +256,7 @@ LeadingVisual.decorators = [
 export const TrailingVisual = args => (
   <>
     <li className="actionList-item">
-      <div className="actionList-item-content actionList-item--trailingVisual">
+      <div className="actionList-item-content actionList-item-content--trailingVisual">
         <span className="actionList-item-label">Item with trailing visual</span>
         <span className="actionList-item-visual">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -238,7 +283,7 @@ TrailingVisual.decorators = [
 export const TrailingText = args => (
   <>
     <li className="actionList-item">
-      <div className="actionList-item-content actionList-item--trailingVisual">
+      <div className="actionList-item-content actionList-item-content--trailingVisual">
         <span className="actionList-item-label">Item with trailing visual</span>
         <span className="actionList-item-visual">⌘N</span>
       </div>
@@ -258,7 +303,7 @@ TrailingText.decorators = [
 export const LeadingAndTrailingVisual = args => (
   <>
     <li className="actionList-item">
-      <div className="actionList-item-content actionList-item--leadingVisual actionList-item--trailingVisual">
+      <div className="actionList-item-content actionList-item-content--leadingVisual actionList-item-content--trailingVisual">
         <span className="actionList-item-visual">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
             <path
@@ -292,10 +337,10 @@ LeadingAndTrailingVisual.decorators = [
 
 export const BlockDescription = args => (
   <li className="actionList-item">
-    <div className="actionList-item-content actionList-item-content-blockDescription">
-      <span className="actionList-item-label actionList-item-label--blockDescription">
-        <span className="actionList-item-label-primary">Item with leading visual</span>
-        <span className="actionList-item-label-description">Item with leading visual</span>
+    <div className="actionList-item-content actionList-item-content--blockDescription">
+      <span className="actionList-item-label--blockDescription">
+        <span className="actionList-item-label">Item with leading visual</span>
+        <span className="actionList-item-description">Item with leading visual</span>
       </span>
     </div>
   </li>
@@ -312,7 +357,7 @@ BlockDescription.decorators = [
 
 export const BlockDescriptionWithLeadingVisual = args => (
   <li className="actionList-item">
-    <div className="actionList-item-content actionList-item--leadingVisual actionList-item-content-blockDescription">
+    <div className="actionList-item-content actionList-item-content--leadingVisual actionList-item-content--blockDescription">
       <span className="actionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
@@ -321,9 +366,9 @@ export const BlockDescriptionWithLeadingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-label actionList-item-label--blockDescription">
-        <span className="actionList-item-label-primary">Item with leading visual</span>
-        <span className="actionList-item-label-description">Item with leading visual</span>
+      <span className="actionList-item-label--blockDescription">
+        <span className="actionList-item-label">Item with leading visual</span>
+        <span className="actionList-item-description">Item with leading visual</span>
       </span>
     </div>
   </li>
@@ -340,10 +385,10 @@ BlockDescriptionWithLeadingVisual.decorators = [
 
 export const BlockDescriptionWithTrailingVisual = args => (
   <li className="actionList-item">
-    <div className="actionList-item-content actionList-item--trailingVisual actionList-item-content-blockDescription">
-      <span className="actionList-item-label actionList-item-label--blockDescription">
-        <span className="actionList-item-label-primary">Item with leading visual</span>
-        <span className="actionList-item-label-description">Item with leading visual</span>
+    <div className="actionList-item-content actionList-item-content--trailingVisual actionList-item-content--blockDescription">
+      <span className="actionList-item-label--blockDescription">
+        <span className="actionList-item-label">Item with leading visual</span>
+        <span className="actionList-item-description">Item with leading visual</span>
       </span>
       <span className="actionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -368,7 +413,7 @@ BlockDescriptionWithTrailingVisual.decorators = [
 
 export const BlockDescriptionWithLeadingAndTrailingVisual = args => (
   <li className="actionList-item">
-    <div className="actionList-item-content actionList-item--leadingVisual actionList-item--trailingVisual actionList-item-content-blockDescription">
+    <div className="actionList-item-content actionList-item-content--leadingVisual actionList-item-content--trailingVisual actionList-item-content--blockDescription">
       <span className="actionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
@@ -377,9 +422,9 @@ export const BlockDescriptionWithLeadingAndTrailingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-label actionList-item-label--blockDescription">
-        <span className="actionList-item-label-primary">Item with leading visual</span>
-        <span className="actionList-item-label-description">Item with leading visual</span>
+      <span className="actionList-item-label--blockDescription">
+        <span className="actionList-item-label">Item with leading visual</span>
+        <span className="actionList-item-description">Item with leading visual</span>
       </span>
       <span className="actionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -405,9 +450,9 @@ BlockDescriptionWithLeadingAndTrailingVisual.decorators = [
 export const InlineDescription = args => (
   <li className="actionList-item">
     <span className="actionList-item-content">
-      <span className="actionList-item-label actionList-item-label--inlineDescription">
-        <span className="actionList-item-label-primary">Default text only item</span>
-        <span className="actionList-item-label-description">Inline description</span>
+      <span className="actionList-item-label--inlineDescription">
+        <span className="actionList-item-label">Default text only item</span>
+        <span className="actionList-item-description">Inline description</span>
       </span>
     </span>
   </li>
@@ -424,7 +469,7 @@ InlineDescription.decorators = [
 
 export const InlineDescriptionWithLeadingVisual = args => (
   <li className="actionList-item">
-    <span className="actionList-item-content actionList-item--leadingVisual">
+    <span className="actionList-item-content actionList-item-content--leadingVisual">
       <span className="actionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
@@ -433,9 +478,9 @@ export const InlineDescriptionWithLeadingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-label actionList-item-label--inlineDescription">
-        <span className="actionList-item-label-primary">Default text only item</span>
-        <span className="actionList-item-label-description">Inline description</span>
+      <span className="actionList-item-label--inlineDescription">
+        <span className="actionList-item-label">Default text only item</span>
+        <span className="actionList-item-description">Inline description</span>
       </span>
     </span>
   </li>
@@ -452,10 +497,10 @@ InlineDescriptionWithLeadingVisual.decorators = [
 
 export const InlineDescriptionWithTrailingVisual = args => (
   <li className="actionList-item">
-    <span className="actionList-item-content actionList-item--trailingVisual">
-      <span className="actionList-item-label actionList-item-label--inlineDescription">
-        <span className="actionList-item-label-primary">Default text only item</span>
-        <span className="actionList-item-label-description">Inline description</span>
+    <span className="actionList-item-content actionList-item-content--trailingVisual">
+      <span className="actionList-item-label--inlineDescription">
+        <span className="actionList-item-label">Default text only item</span>
+        <span className="actionList-item-description">Inline description</span>
       </span>
       <span className="actionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -480,7 +525,7 @@ InlineDescriptionWithTrailingVisual.decorators = [
 
 export const InlineDescriptionWithLeadingAndTrailingVisual = args => (
   <li className="actionList-item">
-    <span className="actionList-item-content actionList-item--leadingVisual actionList-item--trailingVisual">
+    <span className="actionList-item-content actionList-item-content--leadingVisual actionList-item-content--trailingVisual">
       <span className="actionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
@@ -489,9 +534,9 @@ export const InlineDescriptionWithLeadingAndTrailingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-label actionList-item-label--inlineDescription">
-        <span className="actionList-item-label-primary">Default text only item</span>
-        <span className="actionList-item-label-description">Inline description</span>
+      <span className="actionList-item-label--inlineDescription">
+        <span className="actionList-item-label">Default text only item</span>
+        <span className="actionList-item-description">Inline description</span>
       </span>
       <span className="actionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -569,7 +614,7 @@ DangerItem.decorators = [
 
 export const MultiSelectItem = args => (
   <li className="actionList-item" role="menuitemcheckbox" aria-checked="true">
-    <label className="actionList-item-content actionList-item-content-multiSelect">
+    <label className="actionList-item-content actionList-item-content--multiSelect">
       <span className="actionList-item-visual actionList-item-check">
         <input className="form-checkbox" type="checkbox" checked="" />
       </span>
@@ -589,7 +634,7 @@ MultiSelectItem.decorators = [
 
 export const MultiSelectItemWithLeadingVisual = args => (
   <li className="actionList-item" role="menuitemcheckbox" aria-checked="true">
-    <label className="actionList-item-content actionList-item-content-multiSelect actionList-item--leadingVisual">
+    <label className="actionList-item-content actionList-item-content--multiSelect actionList-item-content--leadingVisual">
       <span className="actionList-item-visual actionList-item-check">
         <input className="form-checkbox" type="checkbox" checked="" />
       </span>
@@ -617,7 +662,7 @@ MultiSelectItemWithLeadingVisual.decorators = [
 
 export const MultiSelectItemWithTrailingVisual = args => (
   <li className="actionList-item" role="menuitemcheckbox" aria-checked="true">
-    <label className="actionList-item-content actionList-item-content-multiSelect actionList-item--trailingVisual">
+    <label className="actionList-item-content actionList-item-content--multiSelect actionList-item-content--trailingVisual">
       <span className="actionList-item-visual actionList-item-check">
         <input className="form-checkbox" type="checkbox" checked="" />
       </span>
@@ -645,7 +690,7 @@ MultiSelectItemWithTrailingVisual.decorators = [
 
 export const MultiSelectItemWithLeadingAndTrailingVisual = args => (
   <li className="actionList-item" role="menuitemcheckbox" aria-checked="true">
-    <label className="actionList-item-content actionList-item-content-multiSelect actionList-item--leadingVisual actionList-item--trailingVisual">
+    <label className="actionList-item-content actionList-item-content--multiSelect actionList-item-content--leadingVisual actionList-item-content--trailingVisual">
       <span className="actionList-item-visual actionList-item-check">
         <input className="form-checkbox" type="checkbox" checked="" />
       </span>
@@ -681,7 +726,7 @@ MultiSelectItemWithLeadingAndTrailingVisual.decorators = [
 
 export const SingleSelectItem = args => (
   <li className="actionList-item" role="menuitemradio" aria-checked="true">
-    <span className="actionList-item-content actionList-item-content-singleSelect">
+    <span className="actionList-item-content actionList-item-content--singleSelect">
       <span className="actionList-item-visual actionList-item-check">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
@@ -706,7 +751,7 @@ SingleSelectItem.decorators = [
 
 export const SingleSelectItemWithLeadingVisual = args => (
   <li className="actionList-item" role="menuitemradio" aria-checked="true">
-    <span className="actionList-item-content actionList-item-content-singleSelect actionList-item--leadingVisual">
+    <span className="actionList-item-content actionList-item-content--singleSelect actionList-item-content--leadingVisual">
       <span className="actionList-item-visual actionList-item-check">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
@@ -739,7 +784,7 @@ SingleSelectItemWithLeadingVisual.decorators = [
 
 export const SingleSelectItemWithTrailingVisual = args => (
   <li className="actionList-item" role="menuitemradio" aria-checked="true">
-    <span className="actionList-item-content actionList-item-content-singleSelect actionList-item--trailingVisual">
+    <span className="actionList-item-content actionList-item-content--singleSelect actionList-item-content--trailingVisual">
       <span className="actionList-item-visual actionList-item-check">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
@@ -772,7 +817,7 @@ SingleSelectItemWithTrailingVisual.decorators = [
 
 export const SingleSelectItemWithLeadingAndTrailingVisual = args => (
   <li className="actionList-item" role="menuitemradio" aria-checked="true">
-    <span className="actionList-item-content actionList-item-content-singleSelect actionList-item--leadingVisual actionList-item--trailingVisual">
+    <span className="actionList-item-content actionList-item-content--singleSelect actionList-item-content--leadingVisual actionList-item-content--trailingVisual">
       <span className="actionList-item-visual actionList-item-check">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path

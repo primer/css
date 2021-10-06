@@ -18,7 +18,6 @@
     "@primer/octicons": "^11.0.0",
     "@primer/octicons-react": "^11.0.0",
     "@primer/primitives": "4.2.0",
-    "@storybook/addon-storysource": "^6.3.9",
     "@svgr/webpack": "5.5.0",
     "autoprefixer": "10.3.6",
     "babel-preset-gatsby": "^1.14.0",

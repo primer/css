@@ -5,7 +5,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/preset-scss',
     // 'storybook-addon-pseudo-states',
-    '@storybook/addon-storysource',
-    '@whitespace/storybook-addon-html'
+    '@whitespace/storybook-addon-html',
+    'storybook-addon-designs'
   ]
 }

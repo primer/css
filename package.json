@@ -63,6 +63,7 @@
     "postcss-simple-vars": "6.0.3",
     "prettier": "2.4.1",
     "semver": "7.3.5",
+    "storybook-addon-designs": "6.2.0",
     "stylelint": "13.13.1",
     "stylelint-scss": "3.21.0",
     "table": "6.7.2"
