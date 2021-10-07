@@ -1,5 +1,4 @@
-// Most of this file should be provided by primer/src/support already
-
+// waiting on https://github.com/primer/primitives/pull/256 for these primitives
 $actionList-item-hover-bg: #f0f3f5;
 $actionList-item-active-bg: #e8ebed;
 $actionList-item-selected-bg: #f0f3f5;
@@ -10,68 +9,29 @@ $actionList-item-danger-hover-bg: #fff0f2;
 $actionList-item-danger-active-bg: #ffebed;
 $actionList-item-danger-focus-bg: #ffdbe0;
 
-// expanded from src/support/variables/misc.scss
-
-$border-radius-1: 4px !default;
-$border-radius-2: 6px !default;
-$border-radius-3: 8px !default;
-$border-radius-4: 12px !default;
-
-$box-shadow-medium: 0 3px 6px rgba(#000, 0.12) !default;
-$box-shadow-large: 0 6px 18px rgba(#000, 0.16) !default;
-$box-shadow-extra-large: 0 12px 48px rgba(#000, 0.2) !default;
-
-$overlay-shadow-popover: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 8px 24px rgba(149, 157, 165, 0.2);
-
 // expanded from src/support/variables/layout.scss
 // adds 12px to the scale as of https://github.com/github/design-systems/issues/992
 //
 // https://github.com/github/design-systems/issues/1272
 
-$s-0: 0;
-$s-4: 4px;
-$s-8: 8px;
-$s-12: 12px;
-$s-16: 16px;
 $s-20: 20px;
-$s-24: 24px;
 $s-28: 28px;
-$s-32: 32px;
-$s-40: 40px;
-$s-48: 48px;
-
-// pulled from src/support/variables/color-system.scss
-
-// -------- Grays --------
-$gray-000: #fafbfc !default;
-$gray-100: #f6f8fa !default;
-$gray-200: #e1e4e8 !default;
-$gray-300: #d1d5da !default;
-$gray-400: #959da5 !default;
-$gray-500: #6a737d !default;
-$gray-600: #586069 !default;
-$gray-700: #444d56 !default;
-$gray-800: #2f363d !default;
-$gray-900: #24292e !default; // body font color
-
-// -------- Accent -------
-$blue-500: #0366d6;
-
-// Typographic colors, from some color mode file
-
-$text-primary: $gray-900;
-$text-secondary: $gray-500;
-$text-danger: #cb2431;
 
 // CSS Easing
 
 $ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 $ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
 $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+// $actionList-item-padding-vertical: (($spacer-5 - $s-20) / 2); hmmmmm
+$actionList-item-padding-vertical: 6px;
+$actionList-item-padding-horizontal: $spacer-2;
+$actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60hz monitor
+
+$actionList-padding: $spacer-2;
 
 // ul
 .actionList {
-  padding: $s-8;
+  padding: $actionList-padding;
   list-style: none;
 
   ul,
@@ -101,30 +61,19 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   // span or a href
   .actionList-item-content {
     display: grid;
-    // 32px total height considering 20px line-height
-    // allow height to expand
-    padding: (($s-32 - $s-20) / 2) $s-8;
-    grid-template-rows: minmax(20px, max-content);
-    // default one column
-    grid-template-columns: minmax(min-content, 100%);
-    column-gap: $s-8;
+    padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
+    grid-template-rows: minmax(20px, max-content); // 20px + 12px padding [32]
+    grid-template-columns: minmax(min-content, 100%); // default one column
+    column-gap: $spacer-2;
     align-items: center;
     position: relative;
     border-radius: $border-radius-2;
-    font-weight: normal;
-    color: inherit;
-    text-decoration: none;
-    border: none;
-    background: none;
-    //   text-align: start;
-    margin: 0;
-    //   width: 100%;
-    // do we want this?
+    font-weight: $font-weight-normal;
+    color: var(--color-fg-default);
     user-select: none;
-    // since we're already using an :active bg
-    -webkit-tap-highlight-color: transparent;
-    // 2 frames on a 60hz monitor
-    transition: background 33.333ms linear;
+    transition: $actionList-item-bg-transition;
+    // vini: https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-tap-highlight-color
+    // -webkit-tap-highlight-color: transparent;
 
     &:hover {
       text-decoration: none;
@@ -132,11 +81,12 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
     &:focus-visible {
       outline: none;
-      box-shadow: 0 0 0 2px var(--color-accent-fg); // var(--color-btn-focus-shadow)
+      box-shadow: 0 0 0 2px var(--color-accent-fg); // this color breaks convention
       position: relative;
       z-index: 1;
     }
 
+    // desktop
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         background: $actionList-item-hover-bg;
@@ -167,42 +117,38 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
     // sizes
 
-    // medium
     &.actionList-item-content--sizeMedium {
-      // 40px total height considering 20px line-height
-      grid-template-rows: minmax(28px, max-content);
+      grid-template-rows: minmax(28px, max-content); // 28px + 12px padding [40]
     }
 
-    // large
     &.actionList-item-content--sizeLarge {
-      // 48px total height considering 20px line-height
-      grid-template-rows: minmax(36px, max-content);
+      grid-template-rows: minmax(36px, max-content); // 36px + 12px padding [48]
     }
 
     // On pointer:coarse (mobile), all list items are large
     @media (pointer: coarse) {
-      // 48px total height considering 20px line-height
       grid-template-rows: minmax(36px, max-content);
     }
 
-    // danger
+    // variants
 
-    // TODO: conflict with selected state
     &.actionList-item-content--danger {
-      color: var(--color-danger-fg);
+      .actionList-item-label {
+        color: var(--color-danger-fg);
+      }
 
       @media (hover: hover) and (pointer: fine) {
         &:hover {
-          background: $actionList-item-danger-hover-bg;
+          background: var(--color-danger-subtle);
         }
       }
 
       &:active {
-        background: $actionList-item-danger-active-bg;
+        background: var(--color-danger-subtle);
       }
     }
 
-    // children
+    // children grid definitions
 
     &.actionList-item-content--blockDescription {
       // if leading/trailing visual, align with first line of content
@@ -211,99 +157,92 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
       }
     }
 
-    // has leading visual
+    // leading visual
     &.actionList-item-content--leadingVisual {
       grid-template-columns: min-content minmax(min-content, auto);
     }
 
-    // has trailing visual
+    // trailing visual
     &.actionList-item-content--trailingVisual {
       grid-template-columns: minmax(min-content, auto) min-content;
     }
 
-    // has leading + trailing visuals
+    // leading + trailing visuals
     &.actionList-item-content--leadingVisual.actionList-item-content--trailingVisual {
       grid-template-columns: min-content minmax(min-content, auto) min-content;
     }
 
-    &.actionList-item-content--singleSelect {
-      grid-template-columns: min-content minmax(min-content, auto);
-
-      &.actionList-item-content--leadingVisual {
-        grid-template-columns: min-content min-content minmax(min-content, auto);
-      }
-
-      &.actionList-item-content--trailingVisual {
-        grid-template-columns: min-content minmax(min-content, auto) min-content;
-      }
-
-      &.actionList-item-content--leadingVisual.actionList-item-content--trailingVisual {
-        grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
-      }
-    }
-
+    // checkmark
+    &.actionList-item-content--singleSelect,
     &.actionList-item-content--multiSelect {
       grid-template-columns: min-content minmax(min-content, auto);
 
+      // checkmark + leading visual
       &.actionList-item-content--leadingVisual {
         grid-template-columns: min-content min-content minmax(min-content, auto);
       }
 
+      // checkmark + trailing visual
       &.actionList-item-content--trailingVisual {
         grid-template-columns: min-content minmax(min-content, auto) min-content;
       }
 
+      // checkmark + leading * trailing visuals
       &.actionList-item-content--leadingVisual.actionList-item-content--trailingVisual {
         grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
       }
     }
 
     // helper for grid alignment with multi-line content
-    // span
+    // span wrapping svg or text
     .actionList-item-visual {
       min-height: 20px;
       display: flex;
       align-items: center;
       fill: var(--color-fg-muted);
+      color: var(--color-fg-muted); // if visual is text
     }
 
-    // handle font color and size here
+    // text
     .actionList-item-label {
-      font-weight: normal;
-      color: inherit;
-      position: relative;
+      font-weight: $font-weight-normal;
+      color: var(--color-fg-default);
+      position: relative; // for pseudo dividers
     }
 
-    .actionList-item-label--blockDescription {
-      display: flex;
-      flex-direction: column;
-
-      .actionList-item-label {
-        font-weight: 600;
-      }
-
-      .actionList-item-description {
-        margin-top: $s-4;
-      }
-    }
-
+    // wrapper span
+    .actionList-item-label--blockDescription,
     .actionList-item-label--inlineDescription {
       display: flex;
+
+      .actionList-item-label {
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    // block
+    .actionList-item-label--blockDescription {
+      flex-direction: column;
+
+      .actionList-item-description {
+        margin-top: $spacer-1;
+      }
+    }
+
+    // inline
+    .actionList-item-label--inlineDescription {
       flex-direction: row;
       align-items: baseline;
 
-      .actionList-item-label {
-        font-weight: 600;
-      }
-
       .actionList-item-description {
-        margin-left: $s-8;
+        margin-left: $spacer-2;
       }
     }
 
+    // description
     .actionList-item-description {
-      font-size: 12px;
-      line-height: 18px;
+      font-size: $font-size-small;
+      line-height: $lh-default;
       color: var(--color-fg-muted);
     }
   }
@@ -334,7 +273,20 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
       visibility: hidden;
     }
 
-    .actionList-item-content {
+    // not: safegaurd that danger items aren't nav active
+    // blue accent line
+    > :not(.actionList-item-content--danger):after {
+      content: '';
+      width: $spacer-1;
+      height: $spacer-4;
+      border-radius: $border-radius-1;
+      position: absolute;
+      left: -8px;
+      top: calc(50% - (24px / 2));
+      background: var(--color-accent-fg);
+    }
+
+    .actionList-item-content:not(.actionList-item-content--danger) {
       background: $actionList-item-selected-bg;
 
       @media (hover: hover) and (pointer: fine) {
@@ -343,62 +295,10 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
         }
       }
     }
-
-    // Blue accent for selected item.
-
-    &:after {
-      content: '';
-      width: $s-4;
-      height: $s-24;
-      border-radius: 4px;
-      position: absolute;
-      left: -8px;
-      top: calc(50% - (24px / 2));
-      background: var(--color-accent-fg);
-    }
   }
 }
 
-// Single-selection & Multi selection
-// TODO: can this be simplified?
-// .actionList--single-selection .actionList-item > .actionList-item-content,
-// .actionList--multi-selection .actionList-item > .actionList-item-content,
-// .actionList-item--single-selection > .actionList-item-content,
-// .actionList-item--multi-selection > .actionList-item-content {
-//   padding-left: ($s-16 + $s-16);
-// }
-
-// .actionList-item .actionList-item-check {
-//   width: $s-16;
-//   height: $s-20;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   margin-left: ($s-24 * -1);
-//   align-items: center;
-
-//   svg {
-//     fill: var(--color-fg-muted);
-//   }
-//   input {
-//     cursor: pointer;
-//   }
-// }
-
-// Dividers
-
-// .actionList--divided .actionList-item:before,
-// .actionList-item--divided:before {
-//   content: '';
-//   display: block;
-//   position: absolute;
-//   width: calc(100% - #{$s-16});
-//   height: 1px;
-//   //   background: $actionList-item-divider;
-//   background: deeppink;
-//   top: 0;
-//   left: $s-8;
-// }
+// dividers
 
 .actionList--divided .actionList-item-label:before {
   content: '';
@@ -407,7 +307,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   width: 100%;
   height: 1px;
   background: $actionList-item-divider;
-  top: -$s-8;
+  top: -$spacer-2;
 }
 
 .actionList-item:first-of-type .actionList-item-label:before,
@@ -416,82 +316,30 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   visibility: hidden;
 }
 
-// .actionList-item-label:first-child:before,
-// .actionList-sectionDivider + .actionList-item:before,
-// .actionList-sectionHeader + .actionList-item:before {
-//   visibility: hidden;
-// }
-
-// .actionList-item:first-child:before,
-// .actionList-sectionDivider + .actionList-item:before,
-// .actionList-sectionHeader + .actionList-item:before {
-//   visibility: hidden;
-// }
-
-.actionList--divided-indent-16 .actionList-item:before,
-.actionList-item--divided-indent-16:before {
-  left: $s-16 + $s-16;
-  width: calc(100% - 40px) !important;
-}
-
-.actionList--divided-indent-20 .actionList-item:before,
-.actionList-item--divided-indent-20:before {
-  left: $s-20 + $s-16;
-  width: calc(100% - 44px) !important;
-}
-
-.actionList--divided-indent-24 .actionList-item:before,
-.actionList-item--divided-indent-24:before {
-  left: $s-24 + $s-16;
-  width: calc(100% - 48px) !important;
-}
-
-.actionList--divided-indent-32 .actionList-item:before,
-.actionList-item--divided-indent-32:before {
-  left: $s-32 + $s-16;
-  width: calc(100% - 56px) !important;
-}
-
-.actionList--single-selection.actionList--divided .actionList-item:before,
-.actionList--multi-selection.actionList--divided .actionList-item:before,
-.actionList-item--single-selection.actionList-item--divided:before,
-.actionList-item--multi-selection.actionList-item--divided:before {
-  left: $s-16 + $s-16;
-  width: calc(100% - 40px) !important;
-}
-
-.actionList--single-selection.actionList--divided-indent-20 .actionList-item:before,
-.actionList--multi-selection.actionList--divided-indent-20 .actionList-item:before,
-.actionList--single-selection .actionList-item--divided-indent-20:before,
-.actionList--multi-selection .actionList-item--divided-indent-20:before {
-  left: $s-20 + $s-16;
-  width: calc(100% - 44px) !important;
-}
-
 // Section divider
 
 .actionList-sectionDivider {
   height: 1px;
   background: $actionList-item-divider;
   border: 0;
-  margin: ($s-8 - 1px) ($s-8 * -1) $s-8;
+  margin: ($spacer-2 - 1px) ($spacer-2 * -1) $spacer-2;
   padding: 0;
 }
 
 .actionList-sectionDivider--filled {
-  height: $s-8;
-  border-top: 1px solid $gray-200;
-  border-bottom: 1px solid $gray-200;
-  background: $gray-100;
+  height: $spacer-2;
+  border-top: 1px solid var(--color-scale-gray-2);
+  border-bottom: 1px solid var(--color-scale-gray-2);
+  background: var(--color-scale-gray-1);
   box-sizing: border-box;
-  margin: $s-8 ($s-8 * -1);
+  margin: $spacer-2 ($spacer-2 * -1);
 }
 
 // Section header
 
 .actionList-sectionHeader {
   // 32px total height considering 20px line-height
-  padding: (($s-32 - $s-20) / 2) $s-8;
+  padding: (($spacer-5 - $s-20) / 2) $spacer-2;
   font-size: 12px; // text-small
 
   // is this a variable in primer css?
@@ -501,10 +349,10 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .actionList-sectionHeader--filled {
-  background: $gray-100;
-  margin: $s-8 ($s-8 * -1);
-  border-top: 1px solid $gray-200;
-  border-bottom: 1px solid $gray-200;
+  background: var(--color-canvas-subtle);
+  margin: $spacer-2 ($spacer-2 * -1);
+  border-top: 1px solid var(--color-scale-gray-2);
+  border-bottom: 1px solid var(--color-scale-gray-2);
 
   &:first-child {
     margin-top: 0;
@@ -515,6 +363,6 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 // Doesn't work with dividers
 
 .actionList-item-nestedContent {
-  padding-left: $s-16;
-  padding-bottom: $s-8;
+  padding-left: $spacer-3;
+  padding-bottom: $spacer-2;
 }

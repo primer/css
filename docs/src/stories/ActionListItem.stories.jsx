@@ -11,14 +11,23 @@ export default {
   },
   argTypes: {
     size: {
-      defaultValue: '',
-      options: ['actionList-item-content--sizeMedium', 'actionList-item-content--sizeLarge'],
-      control: {type: 'select'},
-      description: 'small (default), medium, large'
+      options: [0, 1, 2], // iterator
+      mapping: ['', 'actionList-item-content--sizeMedium', 'actionList-item-content--sizeLarge'], // values
+      control: {
+        type: 'select',
+        labels: ['default', 'medium', 'large']
+      },
+      description: 'small (default), medium, large',
+      defaultValue: ''
     },
-    danger: {
-      defaultValue: false,
-      control: {type: 'boolean'}
+    variant: {
+      options: [0, 1], // iterator
+      mapping: ['', 'actionList-item-content--danger'], // values
+      control: {
+        type: 'select',
+        labels: ['default', 'danger']
+      },
+      defaultValue: ''
     },
     active: {
       defaultValue: false,
@@ -36,10 +45,10 @@ export default {
       type: 'string',
       description: 'Paste [Octicon](https://primer.style/octicons/) in control field'
     },
-    itemLabel: {
+    text: {
       defaultValue: 'Item label',
       type: 'string',
-      name: 'itemLabel',
+      name: 'text',
       description: 'string'
     },
     href: {
@@ -54,23 +63,21 @@ export default {
       control: {type: 'select'},
       description: 'location for anchor links, page for global page navigation'
     },
-    // blockDescription: {
-    //   defaultValue: 'Item block description',
-    //   type: 'string',
-    //   name: 'blockDescription',
-    //   description: 'string'
-    // },
     description: {
       defaultValue: '',
       type: 'string',
       name: 'description',
       description: 'string'
     },
-    descriptionPosition: {
-      defaultValue: 'actionList-item-label--blockDescription',
-      options: ['actionList-item-label--blockDescription', 'actionList-item-label--inlineDescription'],
-      control: {type: 'select'},
-      description: 'block (default), inline'
+    descriptionVariant: {
+      options: [0, 1], // iterator
+      mapping: ['actionList-item-label--blockDescription', 'actionList-item-label--inlineDescription'], // values
+      control: {
+        type: 'select',
+        labels: ['block', 'inline']
+      },
+      description: 'block (default), inline',
+      defaultValue: 'actionList-item-label--blockDescription'
     }
   }
   //   decorators: [
@@ -85,14 +92,13 @@ export default {
 }
 
 const Template = ({
-  itemLabel,
+  text,
   size,
   leadingVisual,
   trailingVisual,
-  blockDescription,
   description,
-  descriptionPosition,
-  danger,
+  descriptionVariant,
+  variant,
   href,
   ariaCurrent,
   active
@@ -107,18 +113,18 @@ const Template = ({
           `${size}`,
           leadingVisual && 'actionList-item-content--leadingVisual',
           trailingVisual && 'actionList-item-content--trailingVisual',
-          blockDescription && 'actionList-item-content--blockDescription',
-          danger && 'actionList-item-content--danger'
+          (leadingVisual || trailingVisual) && description && 'actionList-item-content--blockDescription',
+          variant && `${variant}`
         )}
       >
         {leadingVisual && <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
         {description ? (
-          <span className={`${descriptionPosition}`}>
-            <span className="actionList-item-label">{itemLabel}</span>
+          <span className={`${descriptionVariant}`}>
+            <span className="actionList-item-label">{text}</span>
             <span className="actionList-item-description">{description}</span>
           </span>
         ) : (
-          <span className="actionList-item-label">{itemLabel}</span>
+          <span className="actionList-item-label">{text}</span>
         )}
         {trailingVisual && (
           <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
@@ -131,18 +137,18 @@ const Template = ({
           `${size}`,
           leadingVisual && 'actionList-item-content--leadingVisual',
           trailingVisual && 'actionList-item-content--trailingVisual',
-          blockDescription && 'actionList-item-content--blockDescription',
-          danger && 'actionList-item-content--danger'
+          (leadingVisual || trailingVisual) && description && 'actionList-item-content--blockDescription',
+          variant && `${variant}`
         )}
       >
         {leadingVisual && <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
         {description ? (
-          <span className={`${descriptionPosition}`}>
-            <span className="actionList-item-label">{itemLabel}</span>
+          <span className={`${descriptionVariant}`}>
+            <span className="actionList-item-label">{text}</span>
             <span className="actionList-item-description">{description}</span>
           </span>
         ) : (
-          <span className="actionList-item-label">{itemLabel}</span>
+          <span className="actionList-item-label">{text}</span>
         )}
         {trailingVisual && (
           <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
