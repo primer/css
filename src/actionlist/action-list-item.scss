@@ -27,19 +27,6 @@ $actionList-item-padding-vertical: 6px;
 $actionList-item-padding-horizontal: $spacer-2;
 $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60hz monitor
 
-$actionList-padding: $spacer-2;
-
-// ul
-.actionList {
-  padding: $actionList-padding;
-  list-style: none;
-
-  ul,
-  li {
-    list-style: none;
-  }
-}
-
 // li
 .actionList-item {
   position: relative;
@@ -235,7 +222,7 @@ $actionList-padding: $spacer-2;
       align-items: baseline;
 
       .actionList-item-description {
-        margin-left: $spacer-2;
+        margin-left: $actionList-item-padding-horizontal;
       }
     }
 
@@ -281,7 +268,7 @@ $actionList-padding: $spacer-2;
       height: $spacer-4;
       border-radius: $border-radius-1;
       position: absolute;
-      left: -8px;
+      left: -$actionList-item-padding-horizontal;
       top: calc(50% - (24px / 2));
       background: var(--color-accent-fg);
     }
@@ -296,73 +283,4 @@ $actionList-padding: $spacer-2;
       }
     }
   }
-}
-
-// dividers
-
-.actionList--divided .actionList-item-label:before {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background: $actionList-item-divider;
-  top: -$spacer-2;
-}
-
-.actionList-item:first-of-type .actionList-item-label:before,
-.actionList-sectionDivider + .actionList-item .actionList-item-label:before,
-.actionList-sectionHeader + .actionList-item .actionList-item-label:before {
-  visibility: hidden;
-}
-
-// Section divider
-
-.actionList-sectionDivider {
-  height: 1px;
-  background: $actionList-item-divider;
-  border: 0;
-  margin: ($spacer-2 - 1px) ($spacer-2 * -1) $spacer-2;
-  padding: 0;
-}
-
-.actionList-sectionDivider--filled {
-  height: $spacer-2;
-  border-top: 1px solid var(--color-scale-gray-2);
-  border-bottom: 1px solid var(--color-scale-gray-2);
-  background: var(--color-scale-gray-1);
-  box-sizing: border-box;
-  margin: $spacer-2 ($spacer-2 * -1);
-}
-
-// Section header
-
-.actionList-sectionHeader {
-  // 32px total height considering 20px line-height
-  padding: (($spacer-5 - $s-20) / 2) $spacer-2;
-  font-size: 12px; // text-small
-
-  // is this a variable in primer css?
-  font-weight: 600;
-
-  color: var(--color-fg-muted);
-}
-
-.actionList-sectionHeader--filled {
-  background: var(--color-canvas-subtle);
-  margin: $spacer-2 ($spacer-2 * -1);
-  border-top: 1px solid var(--color-scale-gray-2);
-  border-bottom: 1px solid var(--color-scale-gray-2);
-
-  &:first-child {
-    margin-top: 0;
-  }
-}
-
-// Nested content
-// Doesn't work with dividers
-
-.actionList-item-nestedContent {
-  padding-left: $spacer-3;
-  padding-bottom: $spacer-2;
 }

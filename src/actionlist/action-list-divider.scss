@@ -1,0 +1,72 @@
+// waiting on https://github.com/primer/primitives/pull/256 for these primitives
+$actionList-item-hover-bg: #f0f3f5;
+$actionList-item-active-bg: #e8ebed;
+$actionList-item-selected-bg: #f0f3f5;
+$actionList-item-focus-bg: #e0e4e7;
+$actionList-item-divider: #e9e9ed;
+
+$actionList-item-danger-hover-bg: #fff0f2;
+$actionList-item-danger-active-bg: #ffebed;
+$actionList-item-danger-focus-bg: #ffdbe0;
+
+// expanded from src/support/variables/layout.scss
+// adds 12px to the scale as of https://github.com/github/design-systems/issues/992
+//
+// https://github.com/github/design-systems/issues/1272
+
+$s-20: 20px;
+$s-28: 28px;
+
+// CSS Easing
+
+$ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+$ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+$ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+// $actionList-item-padding-vertical: (($spacer-5 - $s-20) / 2); hmmmmm
+$actionList-item-padding-vertical: 6px;
+$actionList-item-padding-horizontal: $spacer-2;
+$actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60hz monitor
+
+// emtpy divider
+
+.actionList-sectionDivider {
+  height: 1px;
+  background: $actionList-item-divider;
+  border: 0;
+  margin: ($spacer-2 - 1px) ($spacer-2 * -1) $spacer-2;
+  padding: 0;
+}
+
+.actionList-sectionDivider--filled {
+  margin: $spacer-2 ($spacer-2 * -1);
+  background: var(--color-canvas-subtle);
+  border-top: 1px solid var(--color-scale-gray-2);
+  border-bottom: 1px solid var(--color-scale-gray-2);
+
+  // if no children, treat as divider
+  &:empty {
+    height: $spacer-2;
+    box-sizing: border-box;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+// section header
+
+.actionList-sectionHeader {
+  // 32px total height considering 20px line-height
+  padding: (($spacer-5 - $s-20) / 2) $spacer-2;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  color: var(--color-fg-muted);
+  display: flex;
+  flex-direction: column;
+
+  .actionList-sectionHeader--description {
+    font-size: $font-size-small;
+    font-weight: $font-weight-normal;
+  }
+}
