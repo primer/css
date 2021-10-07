@@ -40,7 +40,7 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     showDividers: {
-      defaultValue: false,
+      defaultValue: true,
       control: {type: 'boolean'}
     }
   },
@@ -65,11 +65,11 @@ const Template = ({
   showDividers
 }) => (
   <ul className={clsx('actionList', showDividers && 'actionList--divided')}>
-    <LeadingVisual />
-    <LeadingVisual />
-    <LeadingVisual />
+    <TextOnly />
+    <TextOnly />
     <SectionDivider />
-    <MultiSelectItemWithLeadingVisual />
+    <SingleSelectItem />
+    <SingleSelectItem />
   </ul>
 )
 

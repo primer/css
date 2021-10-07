@@ -82,6 +82,22 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
 // li
 .actionList-item {
+  // hide divider of item and next item on hover & active
+  &:hover {
+    .actionList-item-label:before,
+    + .actionList-item .actionList-item-label:before {
+      visibility: hidden;
+    }
+  }
+
+  &:active {
+    .actionList-item-label:before,
+    + .actionList-item .actionList-item-label:before {
+      visibility: hidden;
+    }
+  }
+
+  // span or a href
   .actionList-item-content {
     display: grid;
     // 32px total height considering 20px line-height
@@ -109,16 +125,54 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
     // 2 frames on a 60hz monitor
     transition: background 33.333ms linear;
 
-    // size (default: small)
-    // small | medium | large
+    &:hover {
+      text-decoration: none;
+    }
 
-    // Medium-sized items
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--color-accent-fg); // var(--color-btn-focus-shadow)
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background: $actionList-item-hover-bg;
+        cursor: pointer;
+      }
+    }
+
+    &:active {
+      background: $actionList-item-active-bg;
+
+      @media screen and (prefers-reduced-motion: no-preference) {
+        animation: actionList-item-active-bg 4s forwards $ease-out-cubic;
+      }
+
+      @keyframes actionList-item-active-bg {
+        0% {
+        }
+        50% {
+          transform: scale(1);
+          box-shadow: inset 0 0 0 rgba(#000, 0.04);
+        }
+        100% {
+          transform: scale(0.97);
+          box-shadow: inset 0 3px 9px rgba(#000, 0.04);
+        }
+      }
+    }
+
+    // sizes
+
+    // medium
     &.actionList-item-content--sizeMedium {
       // 40px total height considering 20px line-height
       grid-template-rows: minmax(28px, max-content);
     }
 
-    // Large-sized items
+    // large
     &.actionList-item-content--sizeLarge {
       // 48px total height considering 20px line-height
       grid-template-rows: minmax(36px, max-content);
@@ -130,7 +184,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
       grid-template-rows: minmax(36px, max-content);
     }
 
-    // Danger listItem
+    // danger
 
     // TODO: conflict with selected state
     &.actionList-item-content--danger {
@@ -147,14 +201,14 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
       }
     }
 
+    // children
+
     &.actionList-item-content--blockDescription {
       // if leading/trailing visual, align with first line of content
       .actionList-item-visual {
         place-self: start;
       }
     }
-
-    // reset grid for children
 
     // has leading visual
     &.actionList-item-content--leadingVisual {
@@ -216,6 +270,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
     .actionList-item-label {
       font-weight: normal;
       color: inherit;
+      position: relative;
     }
 
     .actionList-item-label--blockDescription {
@@ -250,45 +305,6 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
       line-height: 18px;
       color: var(--color-fg-muted);
     }
-
-    &:hover {
-      text-decoration: none;
-    }
-
-    &:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 2px var(--color-accent-fg); // var(--color-btn-focus-shadow)
-      position: relative;
-      z-index: 1;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        background: $actionList-item-hover-bg;
-        cursor: pointer;
-      }
-    }
-
-    &:active {
-      background: $actionList-item-active-bg;
-
-      @media screen and (prefers-reduced-motion: no-preference) {
-        animation: actionList-item-active-bg 4s forwards $ease-out-cubic;
-      }
-
-      @keyframes actionList-item-active-bg {
-        0% {
-        }
-        50% {
-          transform: scale(1);
-          box-shadow: inset 0 0 0 rgba(#000, 0.04);
-        }
-        100% {
-          transform: scale(0.97);
-          box-shadow: inset 0 3px 9px rgba(#000, 0.04);
-        }
-      }
-    }
   }
 
   // single select
@@ -307,8 +323,6 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
       }
     }
   }
-
-  position: relative;
 
   // katie edit
   // we could also use [aria-current] selector, and/or just conditionally add this class
@@ -341,56 +355,6 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
       background: var(--color-accent-fg);
     }
   }
-
-  // Hides sibling's divider if item is :hover or :active
-
-  &:hover:before,
-  &:hover + .actionList-item:before {
-    visibility: hidden;
-  }
-
-  &:active:before,
-  &:active + .actionList-item:before {
-    visibility: hidden;
-  }
-}
-
-// listItem elements
-// TODO: safegaurd against incorrect SVG sizes
-// .actionList-item-leadingVisual,
-// .actionList-item-leadingVisual-16,
-// .actionList-item-leadingVisual-20 {
-//   width: $s-16;
-//   height: $s-20;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-
-//   svg {
-//     fill: $text-secondary;
-//   }
-// }
-
-// .actionList-item-leadingVisual-20 {
-//   width: $s-20;
-// }
-
-.actionList-item-inlineDescription {
-  align-self: baseline;
-  // text-small
-  font-size: 12px;
-  line-height: 18px;
-  color: var(--color-fg-muted);
-}
-
-// TODO: should label always be 600 above a block description?
-.actionList-item-blockDescription {
-  display: block;
-  // text-small
-  font-size: 12px;
-  line-height: 18px;
-  color: var(--color-fg-muted);
-  margin-top: $s-4;
 }
 
 // Single-selection & Multi selection
@@ -421,23 +385,46 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
 // Dividers
 
-.actionList--divided .actionList-item:before,
-.actionList-item--divided:before {
+// .actionList--divided .actionList-item:before,
+// .actionList-item--divided:before {
+//   content: '';
+//   display: block;
+//   position: absolute;
+//   width: calc(100% - #{$s-16});
+//   height: 1px;
+//   //   background: $actionList-item-divider;
+//   background: deeppink;
+//   top: 0;
+//   left: $s-8;
+// }
+
+.actionList--divided .actionList-item-label:before {
   content: '';
   display: block;
   position: absolute;
-  width: calc(100% - #{$s-16});
+  width: 100%;
   height: 1px;
   background: $actionList-item-divider;
-  top: 0;
-  left: $s-8;
+  top: -$s-8;
 }
 
-.actionList-item:first-child:before,
-.actionList-sectionDivider + .actionList-item:before,
-.actionList-sectionHeader + .actionList-item:before {
+.actionList-item:first-of-type .actionList-item-label:before,
+.actionList-sectionDivider + .actionList-item .actionList-item-label:before,
+.actionList-sectionHeader + .actionList-item .actionList-item-label:before {
   visibility: hidden;
 }
+
+// .actionList-item-label:first-child:before,
+// .actionList-sectionDivider + .actionList-item:before,
+// .actionList-sectionHeader + .actionList-item:before {
+//   visibility: hidden;
+// }
+
+// .actionList-item:first-child:before,
+// .actionList-sectionDivider + .actionList-item:before,
+// .actionList-sectionHeader + .actionList-item:before {
+//   visibility: hidden;
+// }
 
 .actionList--divided-indent-16 .actionList-item:before,
 .actionList-item--divided-indent-16:before {

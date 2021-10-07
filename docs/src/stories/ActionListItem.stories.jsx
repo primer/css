@@ -86,32 +86,63 @@ const Template = ({
   href
 }) => (
   <li className="actionList-item" role="menuitem">
-    <span
-      className={clsx(
-        'actionList-item-content',
-        `${size}`,
-        leadingVisual && 'actionList-item-content--leadingVisual',
-        trailingVisual && 'actionList-item-content--trailingVisual',
-        blockDescription && 'actionList-item-content--blockDescription',
-        danger && 'actionList-item-content--danger'
-      )}
-    >
-      {leadingVisual && <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
-      {description ? (
-        <span className={`${descriptionPosition}`}>
+    {href ? (
+      <a
+        href={href}
+        className={clsx(
+          'actionList-item-content',
+          `${size}`,
+          leadingVisual && 'actionList-item-content--leadingVisual',
+          trailingVisual && 'actionList-item-content--trailingVisual',
+          blockDescription && 'actionList-item-content--blockDescription',
+          danger && 'actionList-item-content--danger'
+        )}
+      >
+        {leadingVisual && <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
+        {description ? (
+          <span className={`${descriptionPosition}`}>
+            <span className="actionList-item-label">{itemLabel}</span>
+            <span className="actionList-item-description">{description}</span>
+          </span>
+        ) : (
           <span className="actionList-item-label">{itemLabel}</span>
-          <span className="actionList-item-description">{description}</span>
-        </span>
-      ) : (
-        <span className="actionList-item-label">{itemLabel}</span>
-      )}
-      {trailingVisual && <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />}
-    </span>
+        )}
+        {trailingVisual && (
+          <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
+        )}
+      </a>
+    ) : (
+      <span
+        className={clsx(
+          'actionList-item-content',
+          `${size}`,
+          leadingVisual && 'actionList-item-content--leadingVisual',
+          trailingVisual && 'actionList-item-content--trailingVisual',
+          blockDescription && 'actionList-item-content--blockDescription',
+          danger && 'actionList-item-content--danger'
+        )}
+      >
+        {leadingVisual && <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
+        {description ? (
+          <span className={`${descriptionPosition}`}>
+            <span className="actionList-item-label">{itemLabel}</span>
+            <span className="actionList-item-description">{description}</span>
+          </span>
+        ) : (
+          <span className="actionList-item-label">{itemLabel}</span>
+        )}
+        {trailingVisual && (
+          <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
+        )}
+      </span>
+    )}
   </li>
 )
 
 export const Playground = Template.bind({})
-Playground.args = {}
+// Playground.args = {
+//   children: {itemContent}
+// }
 Playground.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
