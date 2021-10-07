@@ -6,7 +6,7 @@ export default {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/GCvY3Qv8czRgZgvl1dG6lp/Primer-Web?node-id=9677%3A44019'
+      url: 'https://www.figma.com/file/oMiRuexZW6gqVbMhQd6lwP/Storybook?node-id=2%3A2'
     }
   },
   argTypes: {
@@ -17,6 +17,10 @@ export default {
       description: 'small (default), medium, large'
     },
     danger: {
+      defaultValue: false,
+      control: {type: 'boolean'}
+    },
+    active: {
       defaultValue: false,
       control: {type: 'boolean'}
     },
@@ -43,6 +47,12 @@ export default {
       type: 'string',
       name: 'href',
       description: 'Item link (href)'
+    },
+    ariaCurrent: {
+      defaultValue: 'location',
+      options: ['location', 'page'],
+      control: {type: 'select'},
+      description: 'location for anchor links, page for global page navigation'
     },
     // blockDescription: {
     //   defaultValue: 'Item block description',
@@ -83,12 +93,15 @@ const Template = ({
   description,
   descriptionPosition,
   danger,
-  href
+  href,
+  ariaCurrent,
+  active
 }) => (
-  <li className="actionList-item" role="menuitem">
+  <li className={clsx('actionList-item', active && 'actionList-item--active')} role={href ? 'none' : 'menuitem'}>
     {href ? (
       <a
         href={href}
+        aria-current={ariaCurrent}
         className={clsx(
           'actionList-item-content',
           `${size}`,

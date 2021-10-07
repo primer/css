@@ -82,6 +82,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
 // li
 .actionList-item {
+  position: relative;
   // hide divider of item and next item on hover & active
   &:hover {
     .actionList-item-label:before,
@@ -324,7 +325,8 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
     }
   }
 
-  // katie edit
+  // navigational
+
   // we could also use [aria-current] selector, and/or just conditionally add this class
   &.actionList-item--active {
     &:before,
