@@ -175,10 +175,10 @@ Playground.decorators = [
   )
 ]
 
-export const TextOnly = args => (
+export const TextOnly = ({text}) => (
   <li className="actionList-item">
     <span className="actionList-item-content">
-      <span className="actionList-item-label">Label text</span>
+      <span className="actionList-item-label">{text}</span>
     </span>
   </li>
 )
@@ -192,13 +192,8 @@ TextOnly.decorators = [
   )
 ]
 TextOnly.args = {
-  labelText: 'Default text'
+  text: 'Default text'
 }
-// export const Primary = Playground.bind({})
-// Primary.args = {
-//   primary: true,
-//   label: 'Button'
-// }
 
 export const SizeMedium = args => (
   <>
@@ -233,51 +228,6 @@ export const SizeLarge = args => (
   </>
 )
 SizeLarge.decorators = [
-  Story => (
-    <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
-        <Story />
-      </ul>
-    </div>
-  )
-]
-
-export const SectionDivider = args => (
-  <>
-    <li className="actionList-sectionDivider" role="separator"></li>
-  </>
-)
-SectionDivider.decorators = [
-  Story => (
-    <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
-        <Story />
-      </ul>
-    </div>
-  )
-]
-
-export const SectionDividerFilled = args => (
-  <>
-    <li className="actionList-sectionHeader actionList-sectionHeader--filled">Section title</li>
-  </>
-)
-SectionDividerFilled.decorators = [
-  Story => (
-    <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
-        <Story />
-      </ul>
-    </div>
-  )
-]
-
-export const SectionDividerSimple = args => (
-  <>
-    <li className="actionList-sectionHeader">Section title (subtle)</li>
-  </>
-)
-SectionDividerSimple.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
       <ul className="actionList" role="menu">

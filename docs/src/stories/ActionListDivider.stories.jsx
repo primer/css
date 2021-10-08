@@ -2,7 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 
 export default {
-  title: 'Components/ActionList/Divider',
+  title: 'Components/ActionList/Divider/Divider',
   parameters: {
     design: {
       type: 'figma',
