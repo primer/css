@@ -1,5 +1,11 @@
 # @primer/css
 
+## 18.0.1
+
+### Patch Changes
+
+- [#1663](https://github.com/primer/css/pull/1663) [`87b0b1d4`](https://github.com/primer/css/commit/87b0b1d4c91959c284bd53a2009a182dc9ef9b6e) Thanks [@jonrohan](https://github.com/jonrohan)! - Removing the duplicate deprecation backgrounds
+
 ## 18.0.0
 
 ### Major Changes
