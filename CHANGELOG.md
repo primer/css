@@ -1,5 +1,51 @@
 # @primer/css
 
+## 18.0.0
+
+### Major Changes
+
+- [#1599](https://github.com/primer/css/pull/1599) [`13de16c7`](https://github.com/primer/css/commit/13de16c7d6787d221216d8ff21afccf6f73f4221) Thanks [@jonrohan](https://github.com/jonrohan)! - Removing the rem() mixin and usages. Placing the computed values in place.
+
+* [#1615](https://github.com/primer/css/pull/1615) [`612841f1`](https://github.com/primer/css/commit/612841f1bdd695aad2368a9f6817e6e0ee2c7a17) Thanks [@simurai](https://github.com/simurai)! - Update v1 deprecations
+
+- [#1599](https://github.com/primer/css/pull/1599) [`13de16c7`](https://github.com/primer/css/commit/13de16c7d6787d221216d8ff21afccf6f73f4221) Thanks [@jonrohan](https://github.com/jonrohan)! - Rename `modes.scss` file to `color-modes.scss` and move from the `base/` folder to the `support/variables` folder.
+
+* [#1599](https://github.com/primer/css/pull/1599) [`13de16c7`](https://github.com/primer/css/commit/13de16c7d6787d221216d8ff21afccf6f73f4221) Thanks [@jonrohan](https://github.com/jonrohan)! - Moving color modes to their own bundle, `./color-modes/` and separates color mode themes into their own scss file.
+
+- [#1602](https://github.com/primer/css/pull/1602) [`852da9d5`](https://github.com/primer/css/commit/852da9d5e34a0ac622f089f34d314913282bda67) Thanks [@simurai](https://github.com/simurai)! - Remove V1 color utilities
+
+* [#1617](https://github.com/primer/css/pull/1617) [`e47324fa`](https://github.com/primer/css/commit/e47324faa436e892b8621a6dac1fcb2cbad3cdf1) Thanks [@jonrohan](https://github.com/jonrohan)! - Removing `<kbd>` import from markdown package. Going forward you'll need to include `@primer/css/base/kbd.scss` directly.
+
+- [#1630](https://github.com/primer/css/pull/1630) [`5f7bb45c`](https://github.com/primer/css/commit/5f7bb45c2172393b2f014442067d95b3145c7136) Thanks [@simurai](https://github.com/simurai)! - Update utilities
+
+* [#1599](https://github.com/primer/css/pull/1599) [`13de16c7`](https://github.com/primer/css/commit/13de16c7d6787d221216d8ff21afccf6f73f4221) Thanks [@jonrohan](https://github.com/jonrohan)! - Remove break-word from utilities
+
+### Minor Changes
+
+- [#1601](https://github.com/primer/css/pull/1601) [`410c1d63`](https://github.com/primer/css/commit/410c1d638b7bec92798268dcf815f94b1dca7cff) Thanks [@jonrohan](https://github.com/jonrohan)! - Add light & dark colorblind themes
+
+* [#1626](https://github.com/primer/css/pull/1626) [`4d00d51d`](https://github.com/primer/css/commit/4d00d51d00fd2c1d3efdd50b36e261c5cc15cb10) Thanks [@jonrohan](https://github.com/jonrohan)! - Changing to @primer/stylelint-config and upgrading @primer/primitives to 5.0 rc
+
+- [#1616](https://github.com/primer/css/pull/1616) [`afac04bc`](https://github.com/primer/css/commit/afac04bcdf9c59e2768548069c8d6f7fd6f1e58c) Thanks [@talum](https://github.com/talum)! - Adding footnote styles to markdown-body.
+
+* [#1617](https://github.com/primer/css/pull/1617) [`e47324fa`](https://github.com/primer/css/commit/e47324faa436e892b8621a6dac1fcb2cbad3cdf1) Thanks [@jonrohan](https://github.com/jonrohan)! - Convert postcss build tool, from node-sass to dart-sass.
+
+- [#1603](https://github.com/primer/css/pull/1603) [`21c5ebc0`](https://github.com/primer/css/commit/21c5ebc01be58454735eb671e3adace0228ef548) Thanks [@simurai](https://github.com/simurai)! - Update docs with V2 colors
+
+### Patch Changes
+
+- [#1628](https://github.com/primer/css/pull/1628) [`ce197c9f`](https://github.com/primer/css/commit/ce197c9ff18cedd842893186953b68805eed637d) Thanks [@edokoa](https://github.com/edokoa)! - Update flash alert icons
+
+* [#1629](https://github.com/primer/css/pull/1629) [`54d3068b`](https://github.com/primer/css/commit/54d3068bd628f771aacae6b1ce269a5a2cc2d8a1) Thanks [@jdanyow](https://github.com/jdanyow)! - remove remaining color-border-primary refs
+
+- [#1631](https://github.com/primer/css/pull/1631) [`5f3689b9`](https://github.com/primer/css/commit/5f3689b907163f7be9e78abb9fc762978beda06d) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating @primer/stylelint-config and @primer/primitives to 5.0
+
+* [#1659](https://github.com/primer/css/pull/1659) [`d32e42f9`](https://github.com/primer/css/commit/d32e42f9ca0ca4eef546d190171cd9e5b4ec8f3d) Thanks [@jonrohan](https://github.com/jonrohan)! - Rename protanopia themes to colorblind.
+
+- [#1658](https://github.com/primer/css/pull/1658) [`0ed0307b`](https://github.com/primer/css/commit/0ed0307b7b79ae59a898c3e8b5e1c9bd2dcd4a7d) Thanks [@koddsson](https://github.com/koddsson)! - Increase the z-index value for the details dialog overlay.
+
+* [#1661](https://github.com/primer/css/pull/1661) [`ebb573ff`](https://github.com/primer/css/commit/ebb573ff09a5ea4eef01e0ccbb7213defaa95321) Thanks [@simurai](https://github.com/simurai)! - Update bg deprecations
+
 ## 17.11.0
 
 ### Minor Changes
