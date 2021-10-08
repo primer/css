@@ -782,8 +782,8 @@ MultiSelectItemWithLeadingAndTrailingVisual.decorators = [
   )
 ]
 
-export const SingleSelectItem = args => (
-  <li className="actionList-item" role="menuitemradio" aria-checked="true">
+export const SingleSelectItem = ({checked}) => (
+  <li className="actionList-item" role="menuitemradio" aria-checked={checked ? 'true' : 'false'}>
     <span className="actionList-item-content actionList-item-content--singleSelect">
       <span className="actionList-item-visual actionList-item-check">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -806,6 +806,12 @@ SingleSelectItem.decorators = [
     </div>
   )
 ]
+SingleSelectItem.argTypes = {
+  checked: {
+    defaultValue: false,
+    control: {type: 'boolean'}
+  }
+}
 
 export const SingleSelectItemWithLeadingVisual = args => (
   <li className="actionList-item" role="menuitemradio" aria-checked="true">

@@ -32,6 +32,7 @@ import {
   SingleSelectItemWithLeadingAndTrailingVisual,
   Playground
 } from './ActionListItem.stories'
+import {Divider} from './ActionListDivider.stories'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -40,10 +41,11 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     showDividers: {
-      defaultValue: true,
+      defaultValue: false,
       control: {type: 'boolean'}
     }
   },
+  subcomponents: {TextOnly},
   decorators: [
     Story => (
       <div style={{margin: '3em', border: 'dashed 1px var(--color-scale-gray-3)'}}>
@@ -62,25 +64,80 @@ const Template = ({
   description,
   descriptionPosition,
   danger,
-  showDividers
+  showDividers,
+  children,
+  args
 }) => (
   <ul className={clsx('actionList', showDividers && 'actionList--divided')}>
-    <TextOnly />
-    <TextOnly />
-    <SectionDivider />
-    <SingleSelectItem />
-    <SingleSelectItem />
+    <>{children}</>
   </ul>
 )
 
-export const ListPlayground = Template.bind({})
-ListPlayground.args = {}
+export const DividedSection = Template.bind({})
+DividedSection.args = {
+  children: (
+    <>
+      <TextOnly {...TextOnly.args} />
+      <TextOnly {...TextOnly.args} />
+      <TextOnly {...TextOnly.args} />
+      <Divider />
+      <TextOnly {...TextOnly.args} />
+      <TextOnly {...TextOnly.args} />
+      <DangerItem {...DangerItem.args} />
+    </>
+  )
+}
+
+export const DividedItems = Template.bind({})
+DividedItems.args = {
+  children: (
+    <>
+      <TextOnly {...TextOnly.args} />
+      <TextOnly {...TextOnly.args} />
+      <TextOnly {...TextOnly.args} />
+      <Divider title="Section title" />
+      <TextOnly {...TextOnly.args} />
+      <TextOnly {...TextOnly.args} />
+      <DangerItem {...DangerItem.args} />
+    </>
+  ),
+  showDividers: true
+}
+
+export const SingleSelect = Template.bind({})
+SingleSelect.args = {
+  children: (
+    <>
+      <SingleSelectItem {...SingleSelectItem.args} checked />
+      <SingleSelectItem {...SingleSelectItem.args} />
+      <SingleSelectItem {...SingleSelectItem.args} />
+    </>
+  )
+}
+
+export const Navigational = Template.bind({})
+Navigational.args = {
+  children: (
+    <>
+      <Playground href="#" text="I'm an anchor link" ariaCurrent="location" />
+      <Playground href="#" text="I'm an anchor link" ariaCurrent="location" active />
+      <Playground href="#" text="I'm an anchor link" ariaCurrent="location" />
+    </>
+  )
+}
+Navigational.decorators = [
+  Story => (
+    <nav>
+      <Story />
+    </nav>
+  )
+]
 
 export const KitchenSink = args => (
   <>
     <ul class="actionList">
       <TextOnly />
-      <SectionDivider />
+      <Divider />
       <TextOnly />
       <TextOnly />
       <SectionDividerFilled />

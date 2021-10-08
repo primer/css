@@ -59,8 +59,8 @@ const Template = ({title, description, variant}) => (
   </>
 )
 
-export const Playground = Template.bind({})
-Playground.decorators = [
+export const Divider = Template.bind({})
+Divider.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
       <ul className="actionList" role="menu">

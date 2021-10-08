@@ -29,14 +29,24 @@ $actionList-padding: $spacer-2;
 
 // dividers
 
-.actionList--divided .actionList-item-label:before {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background: $actionList-item-divider;
-  top: -$actionList-item-padding-horizontal;
+.actionList--divided {
+  .actionList-item-label:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: $actionList-item-divider;
+    top: -$actionList-item-padding-horizontal;
+  }
+
+  // hide divider if item is active
+  .actionList-item--active {
+    .actionList-item-label:before,
+    + .actionList-item .actionList-item-label:before {
+      visibility: hidden;
+    }
+  }
 }
 
 .actionList-item:first-of-type .actionList-item-label:before,
