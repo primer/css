@@ -38,12 +38,21 @@ export function getPackageStats(packageName) {
   return stats
 }
 
+function getDeprecations(versionPath) {
+  const deprecations = JSON.parse(fs.readFileSync(join(versionPath, './deprecations.json')))
+  return deprecations
+}
+
 function currentVersionSelectors() {
   return getSelectors(join(currentPath, './dist'))
 }
 
 function currentVersionVariables() {
   return getVariables(join(currentPath, './dist'))
+}
+
+export function currentVersionDeprecations() {
+  return getDeprecations(join(currentPath, './dist'))
 }
 
 function lastVersionSelectors() {
