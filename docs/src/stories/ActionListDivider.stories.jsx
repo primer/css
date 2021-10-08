@@ -51,7 +51,7 @@ const Template = ({title, description, variant}) => (
         !title && 'actionList-sectionDivider',
         variant && `${variant}`
       )}
-      role={title ? 'heading' : 'separator'}
+      role={title ? null : 'separator'}
     >
       {title}
       {description && <span className="actionList-sectionHeader--description">{description}</span>}
