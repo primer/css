@@ -30,7 +30,7 @@ export const globalTypes = {
     defaultValue: 'light',
     toolbar: {
       icon: 'circlehollow',
-      items: ['light', 'light_protanopia', 'dark', 'dark_dimmed', 'dark_high_contrast', 'dark_protanopia'],
+      items: ['light', 'light_protanopia', 'dark', 'dark_dimmed', 'dark_high_contrast', 'dark_protanopia', 'all'],
       showName: true
     }
   }
@@ -41,11 +41,27 @@ export const decorators = [
     if (context.globals.theme === 'all') {
       return (
         <div class="theme-wrap">
-          <div className="dark-theme">
+          <div data-color-mode="light" data-light-theme="light" className="story-wrap" id="story">
             <Story {...context} />
           </div>
 
-          <div className="light-theme">
+          <div data-color-mode="light" data-light-theme="light_protanopia" className="story-wrap" id="story">
+            <Story {...context} />
+          </div>
+
+          <div data-color-mode="dark" data-dark-theme="dark" className="story-wrap" id="story">
+            <Story {...context} />
+          </div>
+
+          <div data-color-mode="dark" data-dark-theme="dark_dimmed" className="story-wrap" id="story">
+            <Story {...context} />
+          </div>
+
+          <div data-color-mode="dark" data-dark-theme="dark_high_contrast" className="story-wrap" id="story">
+            <Story {...context} />
+          </div>
+
+          <div data-color-mode="dark" data-dark-theme="dark_protanopia" className="story-wrap" id="story">
             <Story {...context} />
           </div>
         </div>

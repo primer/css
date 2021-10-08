@@ -29,7 +29,7 @@ export default {
       },
       defaultValue: ''
     },
-    active: {
+    activeNavItem: {
       defaultValue: false,
       control: {type: 'boolean'}
     },
@@ -101,9 +101,12 @@ const Template = ({
   variant,
   href,
   ariaCurrent,
-  active
+  activeNavItem
 }) => (
-  <li className={clsx('actionList-item', active && 'actionList-item--active')} role={href ? 'none' : 'menuitem'}>
+  <li
+    className={clsx('actionList-item', activeNavItem && 'actionList-item--nav-active')}
+    role={href ? 'none' : 'menuitem'}
+  >
     {href ? (
       <a
         href={href}
@@ -618,7 +621,7 @@ InlineDescriptionWithLeadingAndTrailingVisual.decorators = [
 ]
 
 export const ActiveNavItem = args => (
-  <li className="actionList-item actionList-item--active" role="none">
+  <li className="actionList-item actionList-item--nav-active" role="none">
     <a href="/placeholder" aria-current="page" className="actionList-item-content" role="menuitem">
       Active nav item (page level)
     </a>
@@ -635,7 +638,7 @@ ActiveNavItem.decorators = [
 ]
 
 export const ActiveSubNavItem = args => (
-  <li className="actionList-item actionList-item--active" role="none">
+  <li className="actionList-item actionList-item--nav-active" role="none">
     <a href="#" aria-current="location" className="actionList-item-content" role="menuitem">
       Active subnav item (anchor link)
     </a>

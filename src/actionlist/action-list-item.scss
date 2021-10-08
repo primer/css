@@ -26,6 +26,7 @@ $ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 $actionList-item-padding-vertical: 6px;
 $actionList-item-padding-horizontal: $spacer-2;
 $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60hz monitor
+$actionList-item-checkmark-transition-timing: 50ms;
 
 // li
 .actionList-item {
@@ -39,6 +40,10 @@ $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60h
   }
 
   &:active {
+    .actionList-item-content {
+      background: $actionList-item-active-bg;
+    }
+
     .actionList-item-label:before,
     + .actionList-item .actionList-item-label:before {
       visibility: hidden;
@@ -240,6 +245,9 @@ $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60h
   .actionList-item-content--singleSelect {
     .actionList-item-check {
       visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s linear $actionList-item-checkmark-transition-timing,
+        opacity $actionList-item-checkmark-transition-timing;
     }
   }
 
@@ -247,14 +255,16 @@ $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60h
     .actionList-item-content--singleSelect {
       .actionList-item-check {
         visibility: visible;
+        opacity: 1;
+        transition: visibility 0s linear 0s, opacity $actionList-item-checkmark-transition-timing;
       }
     }
   }
 
-  // navigational
+  // active state
 
   // we could also use [aria-current] selector, and/or just conditionally add this class
-  &.actionList-item--active {
+  &.actionList-item--nav-active {
     &:before,
     + .actionList-item:before {
       visibility: hidden;

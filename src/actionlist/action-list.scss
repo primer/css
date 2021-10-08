@@ -37,11 +37,11 @@ $actionList-padding: $spacer-2;
     width: 100%;
     height: 1px;
     background: $actionList-item-divider;
-    top: -$actionList-item-padding-horizontal;
+    top: -$actionList-item-padding-vertical;
   }
 
   // hide divider if item is active
-  .actionList-item--active {
+  .actionList-item--nav-active {
     .actionList-item-label:before,
     + .actionList-item .actionList-item-label:before {
       visibility: hidden;
