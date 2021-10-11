@@ -45,7 +45,7 @@
     "autoprefixer": "10.3.6",
     "cssstats": "4.0.2",
     "eslint": "7.32.0",
-    "eslint-plugin-github": "4.3.0",
+    "eslint-plugin-github": "4.3.2",
     "eslint-plugin-jest": "24.5.2",
     "eslint-plugin-prettier": "4.0.0",
     "filesize": "8.0.3",
