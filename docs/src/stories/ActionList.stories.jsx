@@ -33,11 +33,8 @@ import {
 } from './ActionListItemFeatures.stories'
 import {Divider} from './ActionListDivider.stories'
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Components/ActionList',
-  //   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     showDividers: {
       defaultValue: false,
@@ -132,10 +129,6 @@ Navigational.args = {
   role: 'menu',
   children: (
     <>
-      {/* <Playground href="#" text="I'm an anchor link" ariaCurrent="location" />
-      <Playground href="#" text="I'm an anchor link" ariaCurrent="location" activeNavItem />
-      <Playground href="#" text="I'm an anchor link" ariaCurrent="location" />
-      <Playground href="#" text="I'm an anchor link" ariaCurrent="location" /> */}
       <TextOnly href="#" text="I'm an anchor link" ariaCurrent="location" />
       <TextOnly href="#" text="I'm an anchor link" ariaCurrent="location" activeNavItem />
       <TextOnly href="#" text="I'm an anchor link" ariaCurrent="location" />
