@@ -20,7 +20,7 @@
     "autoprefixer": "10.3.7",
     "babel-preset-gatsby": "^1.14.0",
     "chroma-js": "^2.1.2",
-    "core-js": "^3.18.1",
+    "core-js": "^3.18.2",
     "gatsby": "2.32.13",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-sass": "3.2.0",
