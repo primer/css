@@ -29,7 +29,7 @@
     "postcss": "8.3.8",
     "postcss-import": "14.0.2",
     "postcss-load-config": "3.1.0",
-    "postcss-loader": "4.2.0",
+    "postcss-loader": "5.3.0",
     "postcss-scss": "4.0.1",
     "postcss-simple-vars": "6.0.3",
     "prop-types": "^15.7.2",
