@@ -12,7 +12,7 @@ export default {
   argTypes: {
     variant: {
       options: [0, 1], // iterator
-      mapping: ['', 'actionList-sectionDivider--filled'], // values
+      mapping: ['', 'ActionList-sectionDivider--filled'], // values
       control: {
         type: 'select',
         labels: ['subtle', 'filled']
@@ -35,7 +35,7 @@ export default {
   //   decorators: [
   //     Story => (
   //       <div style={{margin: '3em', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-  //         <ul className="actionList" role="menu">
+  //         <ul className="ActionList" role="menu">
   //           <Story />
   //         </ul>
   //       </div>
@@ -47,14 +47,14 @@ const Template = ({title, description, variant}) => (
   <>
     <li
       className={clsx(
-        !!title && 'actionList-sectionHeader',
-        !title && 'actionList-sectionDivider',
+        !!title && 'ActionList-sectionHeader',
+        !title && 'ActionList-sectionDivider',
         variant && `${variant}`
       )}
       role={title ? null : 'separator'}
     >
       {title}
-      {description && <span className="actionList-sectionHeader--description">{description}</span>}
+      {description && <span className="ActionList-sectionHeader--description">{description}</span>}
     </li>
   </>
 )
@@ -63,7 +63,7 @@ export const Divider = Template.bind({})
 Divider.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>

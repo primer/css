@@ -12,7 +12,7 @@ export default {
   argTypes: {
     size: {
       options: [0, 1, 2], // iterator
-      mapping: ['', 'actionList-item-content--sizeMedium', 'actionList-item-content--sizeLarge'], // values
+      mapping: ['', 'ActionList-item-content--sizeMedium', 'ActionList-item-content--sizeLarge'], // values
       control: {
         type: 'select',
         labels: ['default', 'medium', 'large']
@@ -22,7 +22,7 @@ export default {
     },
     variant: {
       options: [0, 1], // iterator
-      mapping: ['', 'actionList-item-content--danger'], // values
+      mapping: ['', 'ActionList-item-content--danger'], // values
       control: {
         type: 'select',
         labels: ['default', 'danger']
@@ -71,19 +71,19 @@ export default {
     },
     descriptionVariant: {
       options: [0, 1], // iterator
-      mapping: ['actionList-item-label--blockDescription', 'actionList-item-label--inlineDescription'], // values
+      mapping: ['ActionList-item-label--blockDescription', 'ActionList-item-label--inlineDescription'], // values
       control: {
         type: 'select',
         labels: ['block', 'inline']
       },
       description: 'block (default), inline',
-      defaultValue: 'actionList-item-label--blockDescription'
+      defaultValue: 'ActionList-item-label--blockDescription'
     }
   }
   //   decorators: [
   //     Story => (
   //       <div style={{margin: '3em', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-  //         <ul className="actionList" role="menu">
+  //         <ul className="ActionList" role="menu">
   //           <Story />
   //         </ul>
   //       </div>
@@ -104,7 +104,7 @@ const Template = ({
   activeNavItem
 }) => (
   <li
-    className={clsx('actionList-item', activeNavItem && 'actionList-item--nav-active')}
+    className={clsx('ActionList-item', activeNavItem && 'ActionList-item--nav-active')}
     role={href ? 'none' : 'menuitem'}
   >
     {href ? (
@@ -112,49 +112,49 @@ const Template = ({
         href={href}
         aria-current={ariaCurrent}
         className={clsx(
-          'actionList-item-content',
+          'ActionList-item-content',
           `${size}`,
-          leadingVisual && 'actionList-item-content--leadingVisual',
-          trailingVisual && 'actionList-item-content--trailingVisual',
-          (leadingVisual || trailingVisual) && description && 'actionList-item-content--blockDescription',
+          leadingVisual && 'ActionList-item-content--leadingVisual',
+          trailingVisual && 'ActionList-item-content--trailingVisual',
+          (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription',
           variant && `${variant}`
         )}
       >
-        {leadingVisual && <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
+        {leadingVisual && <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
         {description ? (
           <span className={`${descriptionVariant}`}>
-            <span className="actionList-item-label">{text}</span>
-            <span className="actionList-item-description">{description}</span>
+            <span className="ActionList-item-label">{text}</span>
+            <span className="ActionList-item-description">{description}</span>
           </span>
         ) : (
-          <span className="actionList-item-label">{text}</span>
+          <span className="ActionList-item-label">{text}</span>
         )}
         {trailingVisual && (
-          <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
+          <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
         )}
       </a>
     ) : (
       <span
         className={clsx(
-          'actionList-item-content',
+          'ActionList-item-content',
           `${size}`,
-          leadingVisual && 'actionList-item-content--leadingVisual',
-          trailingVisual && 'actionList-item-content--trailingVisual',
-          (leadingVisual || trailingVisual) && description && 'actionList-item-content--blockDescription',
+          leadingVisual && 'ActionList-item-content--leadingVisual',
+          trailingVisual && 'ActionList-item-content--trailingVisual',
+          (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription',
           variant && `${variant}`
         )}
       >
-        {leadingVisual && <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
+        {leadingVisual && <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
         {description ? (
           <span className={`${descriptionVariant}`}>
-            <span className="actionList-item-label">{text}</span>
-            <span className="actionList-item-description">{description}</span>
+            <span className="ActionList-item-label">{text}</span>
+            <span className="ActionList-item-description">{description}</span>
           </span>
         ) : (
-          <span className="actionList-item-label">{text}</span>
+          <span className="ActionList-item-label">{text}</span>
         )}
         {trailingVisual && (
-          <span className="actionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
+          <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
         )}
       </span>
     )}
@@ -168,7 +168,7 @@ export const Playground = Template.bind({})
 Playground.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -176,16 +176,16 @@ Playground.decorators = [
 ]
 
 export const TextOnly = ({text}) => (
-  <li className="actionList-item">
-    <span className="actionList-item-content">
-      <span className="actionList-item-label">{text}</span>
+  <li className="ActionList-item">
+    <span className="ActionList-item-content">
+      <span className="ActionList-item-label">{text}</span>
     </span>
   </li>
 )
 TextOnly.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -197,10 +197,10 @@ TextOnly.args = {
 
 export const SizeMedium = args => (
   <>
-    <ul className="actionList" role="menu">
-      <li className="actionList-item">
-        <span className="actionList-item-content actionList-item-content--sizeMedium">
-          <span className="actionList-item-label">Medium item</span>
+    <ul className="ActionList" role="menu">
+      <li className="ActionList-item">
+        <span className="ActionList-item-content ActionList-item-content--sizeMedium">
+          <span className="ActionList-item-label">Medium item</span>
         </span>
       </li>
     </ul>
@@ -209,7 +209,7 @@ export const SizeMedium = args => (
 SizeMedium.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -218,10 +218,10 @@ SizeMedium.decorators = [
 
 export const SizeLarge = args => (
   <>
-    <ul className="actionList" role="menu">
-      <li className="actionList-item">
-        <span className="actionList-item-content actionList-item-content--sizeLarge">
-          <span className="actionList-item-label">Large item</span>
+    <ul className="ActionList" role="menu">
+      <li className="ActionList-item">
+        <span className="ActionList-item-content ActionList-item-content--sizeLarge">
+          <span className="ActionList-item-label">Large item</span>
         </span>
       </li>
     </ul>
@@ -230,7 +230,7 @@ export const SizeLarge = args => (
 SizeLarge.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -239,9 +239,9 @@ SizeLarge.decorators = [
 
 export const LeadingVisual = args => (
   <>
-    <li className="actionList-item">
-      <div className="actionList-item-content actionList-item-content--leadingVisual">
-        <span className="actionList-item-visual">
+    <li className="ActionList-item">
+      <div className="ActionList-item-content ActionList-item-content--leadingVisual">
+        <span className="ActionList-item-visual">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
             <path
               fill-rule="evenodd"
@@ -249,7 +249,7 @@ export const LeadingVisual = args => (
             ></path>
           </svg>
         </span>
-        <span className="actionList-item-label">Item with leading visual</span>
+        <span className="ActionList-item-label">Item with leading visual</span>
       </div>
     </li>
   </>
@@ -257,7 +257,7 @@ export const LeadingVisual = args => (
 LeadingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -266,10 +266,10 @@ LeadingVisual.decorators = [
 
 export const TrailingVisual = args => (
   <>
-    <li className="actionList-item">
-      <div className="actionList-item-content actionList-item-content--trailingVisual">
-        <span className="actionList-item-label">Item with trailing visual</span>
-        <span className="actionList-item-visual">
+    <li className="ActionList-item">
+      <div className="ActionList-item-content ActionList-item-content--trailingVisual">
+        <span className="ActionList-item-label">Item with trailing visual</span>
+        <span className="ActionList-item-visual">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
             <path
               fill-rule="evenodd"
@@ -284,7 +284,7 @@ export const TrailingVisual = args => (
 TrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -293,10 +293,10 @@ TrailingVisual.decorators = [
 
 export const TrailingText = args => (
   <>
-    <li className="actionList-item">
-      <div className="actionList-item-content actionList-item-content--trailingVisual">
-        <span className="actionList-item-label">Item with trailing visual</span>
-        <span className="actionList-item-visual">⌘N</span>
+    <li className="ActionList-item">
+      <div className="ActionList-item-content ActionList-item-content--trailingVisual">
+        <span className="ActionList-item-label">Item with trailing visual</span>
+        <span className="ActionList-item-visual">⌘N</span>
       </div>
     </li>
   </>
@@ -304,7 +304,7 @@ export const TrailingText = args => (
 TrailingText.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -313,9 +313,9 @@ TrailingText.decorators = [
 
 export const LeadingAndTrailingVisual = args => (
   <>
-    <li className="actionList-item">
-      <div className="actionList-item-content actionList-item-content--leadingVisual actionList-item-content--trailingVisual">
-        <span className="actionList-item-visual">
+    <li className="ActionList-item">
+      <div className="ActionList-item-content ActionList-item-content--leadingVisual ActionList-item-content--trailingVisual">
+        <span className="ActionList-item-visual">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
             <path
               fill-rule="evenodd"
@@ -323,8 +323,8 @@ export const LeadingAndTrailingVisual = args => (
             ></path>
           </svg>
         </span>
-        <span className="actionList-item-label">Item with leading + trailing visual</span>
-        <span className="actionList-item-visual">
+        <span className="ActionList-item-label">Item with leading + trailing visual</span>
+        <span className="ActionList-item-visual">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
             <path
               fill-rule="evenodd"
@@ -339,7 +339,7 @@ export const LeadingAndTrailingVisual = args => (
 LeadingAndTrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -347,11 +347,11 @@ LeadingAndTrailingVisual.decorators = [
 ]
 
 export const BlockDescription = args => (
-  <li className="actionList-item">
-    <div className="actionList-item-content actionList-item-content--blockDescription">
-      <span className="actionList-item-label--blockDescription">
-        <span className="actionList-item-label">Item with leading visual</span>
-        <span className="actionList-item-description">Item with leading visual</span>
+  <li className="ActionList-item">
+    <div className="ActionList-item-content ActionList-item-content--blockDescription">
+      <span className="ActionList-item-label--blockDescription">
+        <span className="ActionList-item-label">Item with leading visual</span>
+        <span className="ActionList-item-description">Item with leading visual</span>
       </span>
     </div>
   </li>
@@ -359,7 +359,7 @@ export const BlockDescription = args => (
 BlockDescription.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -367,9 +367,9 @@ BlockDescription.decorators = [
 ]
 
 export const BlockDescriptionWithLeadingVisual = args => (
-  <li className="actionList-item">
-    <div className="actionList-item-content actionList-item-content--leadingVisual actionList-item-content--blockDescription">
-      <span className="actionList-item-visual">
+  <li className="ActionList-item">
+    <div className="ActionList-item-content ActionList-item-content--leadingVisual ActionList-item-content--blockDescription">
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -377,9 +377,9 @@ export const BlockDescriptionWithLeadingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-label--blockDescription">
-        <span className="actionList-item-label">Item with leading visual</span>
-        <span className="actionList-item-description">Item with leading visual</span>
+      <span className="ActionList-item-label--blockDescription">
+        <span className="ActionList-item-label">Item with leading visual</span>
+        <span className="ActionList-item-description">Item with leading visual</span>
       </span>
     </div>
   </li>
@@ -387,7 +387,7 @@ export const BlockDescriptionWithLeadingVisual = args => (
 BlockDescriptionWithLeadingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -395,13 +395,13 @@ BlockDescriptionWithLeadingVisual.decorators = [
 ]
 
 export const BlockDescriptionWithTrailingVisual = args => (
-  <li className="actionList-item">
-    <div className="actionList-item-content actionList-item-content--trailingVisual actionList-item-content--blockDescription">
-      <span className="actionList-item-label--blockDescription">
-        <span className="actionList-item-label">Item with leading visual</span>
-        <span className="actionList-item-description">Item with leading visual</span>
+  <li className="ActionList-item">
+    <div className="ActionList-item-content ActionList-item-content--trailingVisual ActionList-item-content--blockDescription">
+      <span className="ActionList-item-label--blockDescription">
+        <span className="ActionList-item-label">Item with leading visual</span>
+        <span className="ActionList-item-description">Item with leading visual</span>
       </span>
-      <span className="actionList-item-visual">
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -415,7 +415,7 @@ export const BlockDescriptionWithTrailingVisual = args => (
 BlockDescriptionWithTrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -423,9 +423,9 @@ BlockDescriptionWithTrailingVisual.decorators = [
 ]
 
 export const BlockDescriptionWithLeadingAndTrailingVisual = args => (
-  <li className="actionList-item">
-    <div className="actionList-item-content actionList-item-content--leadingVisual actionList-item-content--trailingVisual actionList-item-content--blockDescription">
-      <span className="actionList-item-visual">
+  <li className="ActionList-item">
+    <div className="ActionList-item-content ActionList-item-content--leadingVisual ActionList-item-content--trailingVisual ActionList-item-content--blockDescription">
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -433,11 +433,11 @@ export const BlockDescriptionWithLeadingAndTrailingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-label--blockDescription">
-        <span className="actionList-item-label">Item with leading visual</span>
-        <span className="actionList-item-description">Item with leading visual</span>
+      <span className="ActionList-item-label--blockDescription">
+        <span className="ActionList-item-label">Item with leading visual</span>
+        <span className="ActionList-item-description">Item with leading visual</span>
       </span>
-      <span className="actionList-item-visual">
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -451,7 +451,7 @@ export const BlockDescriptionWithLeadingAndTrailingVisual = args => (
 BlockDescriptionWithLeadingAndTrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -459,11 +459,11 @@ BlockDescriptionWithLeadingAndTrailingVisual.decorators = [
 ]
 
 export const InlineDescription = args => (
-  <li className="actionList-item">
-    <span className="actionList-item-content">
-      <span className="actionList-item-label--inlineDescription">
-        <span className="actionList-item-label">Default text only item</span>
-        <span className="actionList-item-description">Inline description</span>
+  <li className="ActionList-item">
+    <span className="ActionList-item-content">
+      <span className="ActionList-item-label--inlineDescription">
+        <span className="ActionList-item-label">Default text only item</span>
+        <span className="ActionList-item-description">Inline description</span>
       </span>
     </span>
   </li>
@@ -471,7 +471,7 @@ export const InlineDescription = args => (
 InlineDescription.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -479,9 +479,9 @@ InlineDescription.decorators = [
 ]
 
 export const InlineDescriptionWithLeadingVisual = args => (
-  <li className="actionList-item">
-    <span className="actionList-item-content actionList-item-content--leadingVisual">
-      <span className="actionList-item-visual">
+  <li className="ActionList-item">
+    <span className="ActionList-item-content ActionList-item-content--leadingVisual">
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -489,9 +489,9 @@ export const InlineDescriptionWithLeadingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-label--inlineDescription">
-        <span className="actionList-item-label">Default text only item</span>
-        <span className="actionList-item-description">Inline description</span>
+      <span className="ActionList-item-label--inlineDescription">
+        <span className="ActionList-item-label">Default text only item</span>
+        <span className="ActionList-item-description">Inline description</span>
       </span>
     </span>
   </li>
@@ -499,7 +499,7 @@ export const InlineDescriptionWithLeadingVisual = args => (
 InlineDescriptionWithLeadingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -507,13 +507,13 @@ InlineDescriptionWithLeadingVisual.decorators = [
 ]
 
 export const InlineDescriptionWithTrailingVisual = args => (
-  <li className="actionList-item">
-    <span className="actionList-item-content actionList-item-content--trailingVisual">
-      <span className="actionList-item-label--inlineDescription">
-        <span className="actionList-item-label">Default text only item</span>
-        <span className="actionList-item-description">Inline description</span>
+  <li className="ActionList-item">
+    <span className="ActionList-item-content ActionList-item-content--trailingVisual">
+      <span className="ActionList-item-label--inlineDescription">
+        <span className="ActionList-item-label">Default text only item</span>
+        <span className="ActionList-item-description">Inline description</span>
       </span>
-      <span className="actionList-item-visual">
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -527,7 +527,7 @@ export const InlineDescriptionWithTrailingVisual = args => (
 InlineDescriptionWithTrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -535,9 +535,9 @@ InlineDescriptionWithTrailingVisual.decorators = [
 ]
 
 export const InlineDescriptionWithLeadingAndTrailingVisual = args => (
-  <li className="actionList-item">
-    <span className="actionList-item-content actionList-item-content--leadingVisual actionList-item-content--trailingVisual">
-      <span className="actionList-item-visual">
+  <li className="ActionList-item">
+    <span className="ActionList-item-content ActionList-item-content--leadingVisual ActionList-item-content--trailingVisual">
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -545,11 +545,11 @@ export const InlineDescriptionWithLeadingAndTrailingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-label--inlineDescription">
-        <span className="actionList-item-label">Default text only item</span>
-        <span className="actionList-item-description">Inline description</span>
+      <span className="ActionList-item-label--inlineDescription">
+        <span className="ActionList-item-label">Default text only item</span>
+        <span className="ActionList-item-description">Inline description</span>
       </span>
-      <span className="actionList-item-visual">
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -563,7 +563,7 @@ export const InlineDescriptionWithLeadingAndTrailingVisual = args => (
 InlineDescriptionWithLeadingAndTrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -571,8 +571,8 @@ InlineDescriptionWithLeadingAndTrailingVisual.decorators = [
 ]
 
 export const ActiveNavItem = args => (
-  <li className="actionList-item actionList-item--nav-active" role="none">
-    <a href="/placeholder" aria-current="page" className="actionList-item-content" role="menuitem">
+  <li className="ActionList-item ActionList-item--nav-active" role="none">
+    <a href="/placeholder" aria-current="page" className="ActionList-item-content" role="menuitem">
       Active nav item (page level)
     </a>
   </li>
@@ -580,7 +580,7 @@ export const ActiveNavItem = args => (
 ActiveNavItem.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -588,8 +588,8 @@ ActiveNavItem.decorators = [
 ]
 
 export const ActiveSubNavItem = args => (
-  <li className="actionList-item actionList-item--nav-active" role="none">
-    <a href="#" aria-current="location" className="actionList-item-content" role="menuitem">
+  <li className="ActionList-item ActionList-item--nav-active" role="none">
+    <a href="#" aria-current="location" className="ActionList-item-content" role="menuitem">
       Active subnav item (anchor link)
     </a>
   </li>
@@ -597,7 +597,7 @@ export const ActiveSubNavItem = args => (
 ActiveSubNavItem.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -606,9 +606,9 @@ ActiveSubNavItem.decorators = [
 
 export const DangerItem = args => (
   <>
-    <li className="actionList-item">
-      <div className="actionList-item-content actionList-item-content--danger">
-        <span className="actionList-item-label">Danger item</span>
+    <li className="ActionList-item">
+      <div className="ActionList-item-content ActionList-item-content--danger">
+        <span className="ActionList-item-label">Danger item</span>
       </div>
     </li>
   </>
@@ -616,7 +616,7 @@ export const DangerItem = args => (
 DangerItem.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -624,19 +624,19 @@ DangerItem.decorators = [
 ]
 
 export const MultiSelectItem = args => (
-  <li className="actionList-item" role="menuitemcheckbox" aria-checked="true">
-    <label className="actionList-item-content actionList-item-content--multiSelect">
-      <span className="actionList-item-visual actionList-item-check">
+  <li className="ActionList-item" role="menuitemcheckbox" aria-checked="true">
+    <label className="ActionList-item-content ActionList-item-content--multiSelect">
+      <span className="ActionList-item-visual ActionList-item-check">
         <input className="form-checkbox" type="checkbox" checked="" />
       </span>
-      <span className="actionList-item-label">Checkbox item</span>
+      <span className="ActionList-item-label">Checkbox item</span>
     </label>
   </li>
 )
 MultiSelectItem.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -644,12 +644,12 @@ MultiSelectItem.decorators = [
 ]
 
 export const MultiSelectItemWithLeadingVisual = args => (
-  <li className="actionList-item" role="menuitemcheckbox" aria-checked="true">
-    <label className="actionList-item-content actionList-item-content--multiSelect actionList-item-content--leadingVisual">
-      <span className="actionList-item-visual actionList-item-check">
+  <li className="ActionList-item" role="menuitemcheckbox" aria-checked="true">
+    <label className="ActionList-item-content ActionList-item-content--multiSelect ActionList-item-content--leadingVisual">
+      <span className="ActionList-item-visual ActionList-item-check">
         <input className="form-checkbox" type="checkbox" checked="" />
       </span>
-      <span className="actionList-item-visual">
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -657,14 +657,14 @@ export const MultiSelectItemWithLeadingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-label">Checkbox item</span>
+      <span className="ActionList-item-label">Checkbox item</span>
     </label>
   </li>
 )
 MultiSelectItemWithLeadingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -672,13 +672,13 @@ MultiSelectItemWithLeadingVisual.decorators = [
 ]
 
 export const MultiSelectItemWithTrailingVisual = args => (
-  <li className="actionList-item" role="menuitemcheckbox" aria-checked="true">
-    <label className="actionList-item-content actionList-item-content--multiSelect actionList-item-content--trailingVisual">
-      <span className="actionList-item-visual actionList-item-check">
+  <li className="ActionList-item" role="menuitemcheckbox" aria-checked="true">
+    <label className="ActionList-item-content ActionList-item-content--multiSelect ActionList-item-content--trailingVisual">
+      <span className="ActionList-item-visual ActionList-item-check">
         <input className="form-checkbox" type="checkbox" checked="" />
       </span>
-      <span className="actionList-item-label">Checkbox item</span>
-      <span className="actionList-item-visual">
+      <span className="ActionList-item-label">Checkbox item</span>
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -692,7 +692,7 @@ export const MultiSelectItemWithTrailingVisual = args => (
 MultiSelectItemWithTrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -700,12 +700,12 @@ MultiSelectItemWithTrailingVisual.decorators = [
 ]
 
 export const MultiSelectItemWithLeadingAndTrailingVisual = args => (
-  <li className="actionList-item" role="menuitemcheckbox" aria-checked="true">
-    <label className="actionList-item-content actionList-item-content--multiSelect actionList-item-content--leadingVisual actionList-item-content--trailingVisual">
-      <span className="actionList-item-visual actionList-item-check">
+  <li className="ActionList-item" role="menuitemcheckbox" aria-checked="true">
+    <label className="ActionList-item-content ActionList-item-content--multiSelect ActionList-item-content--leadingVisual ActionList-item-content--trailingVisual">
+      <span className="ActionList-item-visual ActionList-item-check">
         <input className="form-checkbox" type="checkbox" checked="" />
       </span>
-      <span className="actionList-item-visual">
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -713,8 +713,8 @@ export const MultiSelectItemWithLeadingAndTrailingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-label">Checkbox item</span>
-      <span className="actionList-item-visual">
+      <span className="ActionList-item-label">Checkbox item</span>
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -728,7 +728,7 @@ export const MultiSelectItemWithLeadingAndTrailingVisual = args => (
 MultiSelectItemWithLeadingAndTrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -736,9 +736,9 @@ MultiSelectItemWithLeadingAndTrailingVisual.decorators = [
 ]
 
 export const SingleSelectItem = ({checked}) => (
-  <li className="actionList-item" role="menuitemradio" aria-checked={checked ? 'true' : 'false'}>
-    <span className="actionList-item-content actionList-item-content--singleSelect">
-      <span className="actionList-item-visual actionList-item-check">
+  <li className="ActionList-item" role="menuitemradio" aria-checked={checked ? 'true' : 'false'}>
+    <span className="ActionList-item-content ActionList-item-content--singleSelect">
+      <span className="ActionList-item-visual ActionList-item-check">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -746,14 +746,14 @@ export const SingleSelectItem = ({checked}) => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-label">Simple selected item</span>
+      <span className="ActionList-item-label">Simple selected item</span>
     </span>
   </li>
 )
 SingleSelectItem.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -767,9 +767,9 @@ SingleSelectItem.argTypes = {
 }
 
 export const SingleSelectItemWithLeadingVisual = args => (
-  <li className="actionList-item" role="menuitemradio" aria-checked="true">
-    <span className="actionList-item-content actionList-item-content--singleSelect actionList-item-content--leadingVisual">
-      <span className="actionList-item-visual actionList-item-check">
+  <li className="ActionList-item" role="menuitemradio" aria-checked="true">
+    <span className="ActionList-item-content ActionList-item-content--singleSelect ActionList-item-content--leadingVisual">
+      <span className="ActionList-item-visual ActionList-item-check">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -777,7 +777,7 @@ export const SingleSelectItemWithLeadingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-visual">
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -785,14 +785,14 @@ export const SingleSelectItemWithLeadingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-label">Simple selected item</span>
+      <span className="ActionList-item-label">Simple selected item</span>
     </span>
   </li>
 )
 SingleSelectItemWithLeadingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -800,9 +800,9 @@ SingleSelectItemWithLeadingVisual.decorators = [
 ]
 
 export const SingleSelectItemWithTrailingVisual = args => (
-  <li className="actionList-item" role="menuitemradio" aria-checked="true">
-    <span className="actionList-item-content actionList-item-content--singleSelect actionList-item-content--trailingVisual">
-      <span className="actionList-item-visual actionList-item-check">
+  <li className="ActionList-item" role="menuitemradio" aria-checked="true">
+    <span className="ActionList-item-content ActionList-item-content--singleSelect ActionList-item-content--trailingVisual">
+      <span className="ActionList-item-visual ActionList-item-check">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -810,8 +810,8 @@ export const SingleSelectItemWithTrailingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-label">Simple selected item</span>
-      <span className="actionList-item-visual">
+      <span className="ActionList-item-label">Simple selected item</span>
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -825,7 +825,7 @@ export const SingleSelectItemWithTrailingVisual = args => (
 SingleSelectItemWithTrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>
@@ -833,9 +833,9 @@ SingleSelectItemWithTrailingVisual.decorators = [
 ]
 
 export const SingleSelectItemWithLeadingAndTrailingVisual = args => (
-  <li className="actionList-item" role="menuitemradio" aria-checked="true">
-    <span className="actionList-item-content actionList-item-content--singleSelect actionList-item-content--leadingVisual actionList-item-content--trailingVisual">
-      <span className="actionList-item-visual actionList-item-check">
+  <li className="ActionList-item" role="menuitemradio" aria-checked="true">
+    <span className="ActionList-item-content ActionList-item-content--singleSelect ActionList-item-content--leadingVisual ActionList-item-content--trailingVisual">
+      <span className="ActionList-item-visual ActionList-item-check">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -843,7 +843,7 @@ export const SingleSelectItemWithLeadingAndTrailingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-visual">
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -851,8 +851,8 @@ export const SingleSelectItemWithLeadingAndTrailingVisual = args => (
           ></path>
         </svg>
       </span>
-      <span className="actionList-item-label">Simple selected item</span>
-      <span className="actionList-item-visual">
+      <span className="ActionList-item-label">Simple selected item</span>
+      <span className="ActionList-item-visual">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
@@ -866,7 +866,7 @@ export const SingleSelectItemWithLeadingAndTrailingVisual = args => (
 SingleSelectItemWithLeadingAndTrailingVisual.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="actionList" role="menu">
+      <ul className="ActionList" role="menu">
         <Story />
       </ul>
     </div>

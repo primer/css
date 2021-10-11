@@ -68,7 +68,7 @@ const Template = ({
   children,
   args
 }) => (
-  <ul className={clsx('actionList', showDividers && 'actionList--divided')}>
+  <ul className={clsx('ActionList', showDividers && 'ActionList--divided')}>
     <>{children}</>
   </ul>
 )

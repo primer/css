@@ -29,7 +29,7 @@ $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60h
 
 // emtpy divider
 
-.actionList-sectionDivider {
+.ActionList-sectionDivider {
   height: 1px;
   background: $actionList-item-divider;
   border: 0;
@@ -37,7 +37,7 @@ $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60h
   padding: 0;
 }
 
-.actionList-sectionDivider--filled {
+.ActionList-sectionDivider--filled {
   margin: $spacer-2 ($spacer-2 * -1);
   background: var(--color-canvas-subtle);
   border-top: 1px solid var(--color-scale-gray-2);
@@ -56,7 +56,7 @@ $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60h
 
 // section header
 
-.actionList-sectionHeader {
+.ActionList-sectionHeader {
   // 32px total height considering 20px line-height
   padding: (($spacer-5 - $s-20) / 2) $spacer-2;
   font-size: $font-size-small;
@@ -65,7 +65,7 @@ $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60h
   display: flex;
   flex-direction: column;
 
-  .actionList-sectionHeader--description {
+  .ActionList-sectionHeader--description {
     font-size: $font-size-small;
     font-weight: $font-weight-normal;
   }

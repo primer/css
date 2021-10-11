@@ -29,29 +29,29 @@ $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60h
 $actionList-item-checkmark-transition-timing: 50ms;
 
 // li
-.actionList-item {
+.ActionList-item {
   position: relative;
   // hide divider of item and next item on hover & active
   &:hover {
-    .actionList-item-label:before,
-    + .actionList-item .actionList-item-label:before {
+    .ActionList-item-label:before,
+    + .ActionList-item .ActionList-item-label:before {
       visibility: hidden;
     }
   }
 
   &:active {
-    .actionList-item-content {
+    .ActionList-item-content {
       background: $actionList-item-active-bg;
     }
 
-    .actionList-item-label:before,
-    + .actionList-item .actionList-item-label:before {
+    .ActionList-item-label:before,
+    + .ActionList-item .ActionList-item-label:before {
       visibility: hidden;
     }
   }
 
   // span or a href
-  .actionList-item-content {
+  .ActionList-item-content {
     display: grid;
     padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
     grid-template-rows: minmax(20px, max-content); // 20px + 12px padding [32]
@@ -90,10 +90,10 @@ $actionList-item-checkmark-transition-timing: 50ms;
       background: $actionList-item-active-bg;
 
       @media screen and (prefers-reduced-motion: no-preference) {
-        animation: actionList-item-active-bg 4s forwards $ease-out-cubic;
+        animation: ActionList-item-active-bg 4s forwards $ease-out-cubic;
       }
 
-      @keyframes actionList-item-active-bg {
+      @keyframes ActionList-item-active-bg {
         0% {
         }
         50% {
@@ -109,11 +109,11 @@ $actionList-item-checkmark-transition-timing: 50ms;
 
     // sizes
 
-    &.actionList-item-content--sizeMedium {
+    &.ActionList-item-content--sizeMedium {
       grid-template-rows: minmax(28px, max-content); // 28px + 12px padding [40]
     }
 
-    &.actionList-item-content--sizeLarge {
+    &.ActionList-item-content--sizeLarge {
       grid-template-rows: minmax(36px, max-content); // 36px + 12px padding [48]
     }
 
@@ -124,8 +124,8 @@ $actionList-item-checkmark-transition-timing: 50ms;
 
     // variants
 
-    &.actionList-item-content--danger {
-      .actionList-item-label {
+    &.ActionList-item-content--danger {
+      .ActionList-item-label {
         color: var(--color-danger-fg);
       }
 
@@ -142,52 +142,52 @@ $actionList-item-checkmark-transition-timing: 50ms;
 
     // children grid definitions
 
-    &.actionList-item-content--blockDescription {
+    &.ActionList-item-content--blockDescription {
       // if leading/trailing visual, align with first line of content
-      .actionList-item-visual {
+      .ActionList-item-visual {
         place-self: start;
       }
     }
 
     // leading visual
-    &.actionList-item-content--leadingVisual {
+    &.ActionList-item-content--leadingVisual {
       grid-template-columns: min-content minmax(min-content, auto);
     }
 
     // trailing visual
-    &.actionList-item-content--trailingVisual {
+    &.ActionList-item-content--trailingVisual {
       grid-template-columns: minmax(min-content, auto) min-content;
     }
 
     // leading + trailing visuals
-    &.actionList-item-content--leadingVisual.actionList-item-content--trailingVisual {
+    &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
       grid-template-columns: min-content minmax(min-content, auto) min-content;
     }
 
     // checkmark
-    &.actionList-item-content--singleSelect,
-    &.actionList-item-content--multiSelect {
+    &.ActionList-item-content--singleSelect,
+    &.ActionList-item-content--multiSelect {
       grid-template-columns: min-content minmax(min-content, auto);
 
       // checkmark + leading visual
-      &.actionList-item-content--leadingVisual {
+      &.ActionList-item-content--leadingVisual {
         grid-template-columns: min-content min-content minmax(min-content, auto);
       }
 
       // checkmark + trailing visual
-      &.actionList-item-content--trailingVisual {
+      &.ActionList-item-content--trailingVisual {
         grid-template-columns: min-content minmax(min-content, auto) min-content;
       }
 
       // checkmark + leading * trailing visuals
-      &.actionList-item-content--leadingVisual.actionList-item-content--trailingVisual {
+      &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
         grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
       }
     }
 
     // helper for grid alignment with multi-line content
     // span wrapping svg or text
-    .actionList-item-visual {
+    .ActionList-item-visual {
       min-height: 20px;
       display: flex;
       align-items: center;
@@ -196,43 +196,43 @@ $actionList-item-checkmark-transition-timing: 50ms;
     }
 
     // text
-    .actionList-item-label {
+    .ActionList-item-label {
       font-weight: $font-weight-normal;
       color: var(--color-fg-default);
       position: relative; // for pseudo dividers
     }
 
     // wrapper span
-    .actionList-item-label--blockDescription,
-    .actionList-item-label--inlineDescription {
+    .ActionList-item-label--blockDescription,
+    .ActionList-item-label--inlineDescription {
       display: flex;
 
-      .actionList-item-label {
+      .ActionList-item-label {
         font-weight: $font-weight-bold;
       }
     }
 
     // block
-    .actionList-item-label--blockDescription {
+    .ActionList-item-label--blockDescription {
       flex-direction: column;
 
-      .actionList-item-description {
+      .ActionList-item-description {
         margin-top: $spacer-1;
       }
     }
 
     // inline
-    .actionList-item-label--inlineDescription {
+    .ActionList-item-label--inlineDescription {
       flex-direction: row;
       align-items: baseline;
 
-      .actionList-item-description {
+      .ActionList-item-description {
         margin-left: $actionList-item-padding-horizontal;
       }
     }
 
     // description
-    .actionList-item-description {
+    .ActionList-item-description {
       font-size: $font-size-small;
       line-height: $lh-default;
       color: var(--color-fg-muted);
@@ -242,8 +242,8 @@ $actionList-item-checkmark-transition-timing: 50ms;
   // single select
 
   // maintain space on grid while check is hidden
-  .actionList-item-content--singleSelect {
-    .actionList-item-check {
+  .ActionList-item-content--singleSelect {
+    .ActionList-item-check {
       visibility: hidden;
       opacity: 0;
       transition: visibility 0s linear $actionList-item-checkmark-transition-timing,
@@ -252,8 +252,8 @@ $actionList-item-checkmark-transition-timing: 50ms;
   }
 
   &[aria-checked='true'] {
-    .actionList-item-content--singleSelect {
-      .actionList-item-check {
+    .ActionList-item-content--singleSelect {
+      .ActionList-item-check {
         visibility: visible;
         opacity: 1;
         transition: visibility 0s linear 0s, opacity $actionList-item-checkmark-transition-timing;
@@ -264,15 +264,15 @@ $actionList-item-checkmark-transition-timing: 50ms;
   // active state
 
   // we could also use [aria-current] selector, and/or just conditionally add this class
-  &.actionList-item--nav-active {
+  &.ActionList-item--nav-active {
     &:before,
-    + .actionList-item:before {
+    + .ActionList-item:before {
       visibility: hidden;
     }
 
     // not: safegaurd that danger items aren't nav active
     // blue accent line
-    > :not(.actionList-item-content--danger):after {
+    > :not(.ActionList-item-content--danger):after {
       content: '';
       width: $spacer-1;
       height: $spacer-4;
@@ -283,7 +283,7 @@ $actionList-item-checkmark-transition-timing: 50ms;
       background: var(--color-accent-fg);
     }
 
-    .actionList-item-content:not(.actionList-item-content--danger) {
+    .ActionList-item-content:not(.ActionList-item-content--danger) {
       background: $actionList-item-selected-bg;
 
       @media (hover: hover) and (pointer: fine) {

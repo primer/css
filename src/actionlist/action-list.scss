@@ -17,7 +17,7 @@ $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60h
 $actionList-padding: $spacer-2;
 
 // ul
-.actionList {
+.ActionList {
   padding: $actionList-padding;
   list-style: none;
 
@@ -29,8 +29,8 @@ $actionList-padding: $spacer-2;
 
 // dividers
 
-.actionList--divided {
-  .actionList-item-label:before {
+.ActionList--divided {
+  .ActionList-item-label:before {
     content: '';
     display: block;
     position: absolute;
@@ -41,16 +41,16 @@ $actionList-padding: $spacer-2;
   }
 
   // hide divider if item is active
-  .actionList-item--nav-active {
-    .actionList-item-label:before,
-    + .actionList-item .actionList-item-label:before {
+  .ActionList-item--nav-active {
+    .ActionList-item-label:before,
+    + .ActionList-item .ActionList-item-label:before {
       visibility: hidden;
     }
   }
 }
 
-.actionList-item:first-of-type .actionList-item-label:before,
-.actionList-sectionDivider + .actionList-item .actionList-item-label:before,
-.actionList-sectionHeader + .actionList-item .actionList-item-label:before {
+.ActionList-item:first-of-type .ActionList-item-label:before,
+.ActionList-sectionDivider + .ActionList-item .ActionList-item-label:before,
+.ActionList-sectionHeader + .ActionList-item .ActionList-item-label:before {
   visibility: hidden;
 }
