@@ -2,7 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 
 export default {
-  title: 'Components/ActionList/Divider/Divider',
+  title: 'Components/ActionList/ActionListDivider/Divider',
   parameters: {
     design: {
       type: 'figma',
@@ -30,6 +30,12 @@ export default {
       type: 'string',
       name: 'description',
       description: 'string'
+    },
+    id: {
+      defaultValue: '',
+      type: 'string',
+      name: 'id',
+      description: 'Used for aria-labelledby'
     }
   }
   //   decorators: [
@@ -43,7 +49,7 @@ export default {
   //   ]
 }
 
-const Template = ({title, description, variant}) => (
+const Template = ({title, description, variant, id}) => (
   <>
     <li
       className={clsx(
@@ -51,7 +57,9 @@ const Template = ({title, description, variant}) => (
         !title && 'ActionList-sectionDivider',
         variant && `${variant}`
       )}
-      role={title ? null : 'separator'}
+      role={title ? 'presentation' : 'separator'}
+      id={id}
+      aria-hidden={title ? true : undefined}
     >
       {title}
       {description && <span className="ActionList-sectionHeader--description">{description}</span>}

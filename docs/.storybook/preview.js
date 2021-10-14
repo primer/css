@@ -123,3 +123,21 @@ export const decorators = [
     )
   }
 ]
+
+// var iframe = document.getElementById('iframeId')
+// var innerDoc = iframe.contentDocument || iframe.contentWindow.document
+
+// var x = document.getElementsByTagName("iframe")[0].contentWindow;
+//x = window.frames[0];
+
+// x.document.getElementsByTagName("body")[0].style.backgroundColor = "blue";
+// this would turn the 1st iframe in document blue.
+
+// function getWidth() {
+//   let iframe = document.getElementsByTagName('iframe')[0].contentWindow
+//   let elem = iframe.document.getElementsByClassName('ActionList-item-visual')
+//   let rect = elem.getBoundingClientRect()
+//   console.log(rect)
+// }
+
+// document.addEventListener('DOMContentLoaded', getWidth)

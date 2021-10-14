@@ -16,15 +16,9 @@ $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60h
 
 $actionList-padding: $spacer-2;
 
-// ul
+// <ul>
 .ActionList {
   padding: $actionList-padding;
-  list-style: none;
-
-  ul,
-  li {
-    list-style: none;
-  }
 }
 
 // dividers

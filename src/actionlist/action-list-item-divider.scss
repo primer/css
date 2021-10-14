@@ -35,6 +35,7 @@ $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60h
   border: 0;
   margin: ($spacer-2 - 1px) ($spacer-2 * -1) $spacer-2;
   padding: 0;
+  list-style: none;
 }
 
 .ActionList-sectionDivider--filled {

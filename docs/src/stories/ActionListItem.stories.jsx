@@ -30,7 +30,7 @@ export default {
       },
       defaultValue: ''
     },
-    activeNavItem: {
+    subItem: {
       defaultValue: false,
       control: {type: 'boolean'}
     },
@@ -39,6 +39,16 @@ export default {
       name: 'leadingVisual',
       type: 'string',
       description: 'Paste [Octicon](https://primer.style/octicons/) in control field'
+    },
+    leadingVisualSize: {
+      options: [0, 1, 2], // iterator
+      mapping: ['ActionList-item-visual--16', 'ActionList-item-visual--20', 'ActionList-item-visual--24'], // values
+      control: {
+        type: 'select',
+        labels: ['16px', '20px', '24px']
+      },
+      description: 'leading visual width',
+      defaultValue: 'ActionList-item-visual--16'
     },
     trailingVisual: {
       defaultValue: '',
@@ -59,7 +69,6 @@ export default {
       description: 'Item link (href)'
     },
     ariaCurrent: {
-      defaultValue: 'location',
       options: ['location', 'page'],
       control: {type: 'select'},
       description: 'location for anchor links, page for global page navigation'
@@ -96,45 +105,57 @@ export const Template = ({
   text,
   size,
   leadingVisual,
+  leadingVisualSize,
   trailingVisual,
   description,
   descriptionVariant,
   variant,
   href,
   ariaCurrent,
-  activeNavItem
+  children,
+  subItem
 }) => (
   <li
-    className={clsx('ActionList-item', activeNavItem && 'ActionList-item--nav-active')}
+    className={clsx(
+      'ActionList-item',
+      ariaCurrent && 'ActionList-item--nav-active',
+      subItem && `ActionList-item--sub-item`
+    )}
     role={href ? 'none' : 'menuitem'}
   >
     {href ? (
-      <a
-        href={href}
-        role={href ? 'menuitem' : undefined}
-        aria-current={ariaCurrent}
-        className={clsx(
-          'ActionList-item-content',
-          `${size}`,
-          leadingVisual && 'ActionList-item-content--leadingVisual',
-          trailingVisual && 'ActionList-item-content--trailingVisual',
-          (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription',
-          variant && `${variant}`
-        )}
-      >
-        {leadingVisual && <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
-        {description ? (
-          <span className={`${descriptionVariant}`}>
+      <>
+        <a
+          href={href}
+          role={href ? 'menuitem' : undefined}
+          aria-current={ariaCurrent}
+          className={clsx(
+            'ActionList-item-content',
+            `${size}`,
+            leadingVisual && 'ActionList-item-content--leadingVisual',
+            trailingVisual && 'ActionList-item-content--trailingVisual',
+            (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription',
+            variant && `${variant}`,
+            leadingVisual && leadingVisualSize && `${leadingVisualSize}`
+          )}
+        >
+          {leadingVisual && (
+            <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />
+          )}
+          {description ? (
+            <span className={`${descriptionVariant}`}>
+              <span className="ActionList-item-label">{text}</span>
+              <span className="ActionList-item-description">{description}</span>
+            </span>
+          ) : (
             <span className="ActionList-item-label">{text}</span>
-            <span className="ActionList-item-description">{description}</span>
-          </span>
-        ) : (
-          <span className="ActionList-item-label">{text}</span>
-        )}
-        {trailingVisual && (
-          <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
-        )}
-      </a>
+          )}
+          {trailingVisual && (
+            <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
+          )}
+        </a>
+        {children}
+      </>
     ) : (
       <span
         className={clsx(
