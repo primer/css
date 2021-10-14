@@ -28,16 +28,23 @@ $actionList-item-padding-horizontal: $spacer-2;
 $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60hz monitor
 $actionList-item-checkmark-transition-timing: 50ms;
 
-// .ActionList-item:before {
-//   content: '\00a0';
-//   position: absolute;
-//   height: 32px;
-//   left: -$actionList-item-padding-horizontal;
-// }
+.ActionList-item-content:before {
+  content: '\00a0';
+  position: absolute;
+  height: 32px;
+  //   left: -$actionList-item-padding-horizontal;
+  content: ' ';
+  position: absolute;
+  height: 32px;
+  //   left: -8px;
+  width: 100%;
+  //   transform: translateX(-32px);
+  border-radius: 6px;
+}
 
-// .ActionList-item:hover:before {
-//   background-color: deeppink;
-// }
+.ActionList-item-content:hover:before {
+  background-color: $actionList-item-hover-bg;
+}
 // span or a href
 .ActionList-item-content {
   display: grid;
@@ -68,10 +75,10 @@ $actionList-item-checkmark-transition-timing: 50ms;
 
   // desktop
   @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      background: $actionList-item-hover-bg;
-      cursor: pointer;
-    }
+    // &:hover {
+    //   background: $actionList-item-hover-bg;
+    //   cursor: pointer;
+    // }
   }
 
   &:active {
@@ -241,9 +248,25 @@ $actionList-item-checkmark-transition-timing: 50ms;
   }
 }
 
-.ActionList-item--sub-group:last-of-type {
+// .ActionList-item--sub-group .ActionList-item:last-of-type .ActionList-item--sub-group {
+.ActionList-item-visual--16 + .ActionList-item--sub-group .ActionList-item:last-of-type .ActionList-item--sub-group {
+  .ActionList-item--sub-item > .ActionList-item-content {
+    &:before {
+      width: calc(100% + 48px);
+      transform: translateX(-48px);
+    }
+
+    &:after {
+      transform: translateX(-48px);
+    }
+  }
+}
+// }
+
+.ActionList-item--sub-group {
+  padding-left: 24px;
   li {
-    padding-left: 32px;
+    // padding-left: 16px;
   }
 }
 
@@ -255,9 +278,25 @@ $actionList-item-checkmark-transition-timing: 50ms;
   //   }
 }
 
+.ActionList-item-visual--16 + .ActionList-item--sub-group .ActionList-item:last-of-type {
+  > a:before {
+    width: calc(100% + 24px);
+    transform: translateX(-24px);
+  }
+}
+
 .ActionList-item-visual--16 + .ActionList-item--sub-group {
   .ActionList-item--sub-item > .ActionList-item-content {
-    padding-left: 16px;
+    // padding-left: 16px;
+
+    &:before {
+      width: calc(100% + 24px);
+      transform: translateX(-24px);
+    }
+
+    &:after {
+      transform: translateX(-24px);
+    }
   }
 }
 
