@@ -1873,25 +1873,20 @@
     styled-system "^5.0.18"
     worker-loader "^3.0.2"
 
-"@primer/octicons-react@^11.0.0":
-  version "11.3.0"
-  resolved "https://registry.npmjs.org/@primer/octicons-react/-/octicons-react-11.3.0.tgz"
-  integrity sha512-4sVhkrBKuj3h+PFw69yOyO/l3nQB/mm95V+Kz7LRSlIrbZr6hZarZD5Ft4ewdONPROkIHQM/6KSK90+OAimxsQ==
+"@primer/octicons-react@16.0.0", "@primer/octicons-react@^16.0.0":
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-16.0.0.tgz#964cf7eac896cf2afdc79dcdd900e6f7471424be"
+  integrity sha512-1/DszHbG39lJO5w5el/Eej3Qu2TW0ecDDeYGq5T1cwNsgCWgJmtk2bmyPYJRQyRtGzRQQ8db03E8OeM7ATPSbQ==
 
 "@primer/octicons-react@^13.0.0":
   version "13.0.0"
   resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-13.0.0.tgz#a7f2288fd9cf9cabc1e75553a0dd9f00d74b68c1"
   integrity sha512-j5XppNRCvgaMZLPsVvvmp6GSh7P5pq6PUbsfLNBWi2Kz3KYDeoGDWbPr5MjoxFOGUn6Hjnt6qjHPRxahd11vLQ==
 
-"@primer/octicons-react@^16.0.0":
+"@primer/octicons@16.0.0":
   version "16.0.0"
-  resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-16.0.0.tgz#964cf7eac896cf2afdc79dcdd900e6f7471424be"
-  integrity sha512-1/DszHbG39lJO5w5el/Eej3Qu2TW0ecDDeYGq5T1cwNsgCWgJmtk2bmyPYJRQyRtGzRQQ8db03E8OeM7ATPSbQ==
-
-"@primer/octicons@^11.0.0":
-  version "11.3.0"
-  resolved "https://registry.npmjs.org/@primer/octicons/-/octicons-11.3.0.tgz"
-  integrity sha512-LWBxJXFywoSSQRHB/HKTC9cNWmQEa/7H5uSmLLzzY1sA1YpWT7WVZ7DXf11PKuRZroKM9gEDgVWLwmWbcAmvKw==
+  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-16.0.0.tgz#5f7b3c92f9286b5fb4d70d6c6343c9570a8b6c1a"
+  integrity sha512-FRsFnJIU3YMrWXHnFQku4npNbMTz4wd+qIwXPkA/iA6cnvC1xmcSanT8AzN/pAEg8SLkXFS8nEP56xWUq92tfA==
   dependencies:
     object-assign "^4.1.1"
 
