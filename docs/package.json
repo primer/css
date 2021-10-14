@@ -6,7 +6,9 @@
     "clean": "gatsby clean",
     "develop": "ln -sf ../dist . && gatsby develop -H 0.0.0.0",
     "build-content": "gatsby build --prefix-paths",
-    "build": "./script/now-build.sh"
+    "build": "./script/now-build.sh",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@babel/preset-react": "^7.10.4",
@@ -20,6 +22,7 @@
     "autoprefixer": "10.3.7",
     "babel-preset-gatsby": "^1.14.0",
     "chroma-js": "^2.1.2",
+    "clsx": "^1.1.1",
     "core-js": "^3.18.2",
     "gatsby": "2.32.13",
     "gatsby-plugin-alias-imports": "^1.0.5",
@@ -43,5 +46,18 @@
   },
   "engines": {
     "node": ">= 10.x"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@storybook/addon-a11y": "6.3.10",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/addon-postcss": "2.0.0",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "6.3.12",
+    "@whitespace/storybook-addon-html": "^5.0.0",
+    "babel-loader": "^8.2.2",
+    "storybook-addon-designs": "6.2.0"
   }
 }
