@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import {Template} from './ActionListItem.stories'
+import {ListItemTemplate} from './ActionListItem.stories'
 
 export default {
   title: 'Components/ActionList/ActionListItem/Features',
@@ -21,7 +21,7 @@ export default {
   //   ]
 }
 
-export const TextOnly = Template.bind({})
+export const TextOnly = ListItemTemplate.bind({})
 TextOnly.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
@@ -40,9 +40,9 @@ TextOnly.argTypes = {
   }
 }
 
-export const SizeMedium = Template.bind({})
+export const SizeMedium = ListItemTemplate.bind({})
 SizeMedium.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Medium item',
   size: 'ActionList-item-content--sizeMedium'
 }
@@ -61,9 +61,9 @@ SizeMedium.decorators = [
   )
 ]
 
-export const SizeLarge = Template.bind({})
+export const SizeLarge = ListItemTemplate.bind({})
 SizeLarge.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Large item',
   size: 'ActionList-item-content--sizeLarge'
 }
@@ -82,9 +82,9 @@ SizeLarge.decorators = [
   )
 ]
 
-export const LeadingVisual = Template.bind({})
+export const LeadingVisual = ListItemTemplate.bind({})
 LeadingVisual.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Item with leading visual',
   leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
       <path
@@ -108,9 +108,9 @@ LeadingVisual.decorators = [
   )
 ]
 
-export const TrailingVisual = Template.bind({})
+export const TrailingVisual = ListItemTemplate.bind({})
 TrailingVisual.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Item with trailing visual',
   trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
       <path
@@ -134,9 +134,9 @@ TrailingVisual.decorators = [
   )
 ]
 
-export const TrailingText = Template.bind({})
+export const TrailingText = ListItemTemplate.bind({})
 TrailingText.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Item with trailing text',
   trailingVisual: `⌘N`
 }
@@ -155,9 +155,9 @@ TrailingText.decorators = [
   )
 ]
 
-export const LeadingAndTrailingVisual = Template.bind({})
+export const LeadingAndTrailingVisual = ListItemTemplate.bind({})
 LeadingAndTrailingVisual.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Item with trailing visual',
   trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
             <path
@@ -187,9 +187,9 @@ LeadingAndTrailingVisual.decorators = [
   )
 ]
 
-export const BlockDescription = Template.bind({})
+export const BlockDescription = ListItemTemplate.bind({})
 BlockDescription.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Item label',
   description: 'This is a description',
   descriptionVariant: 'ActionList-item-label--blockDescription'
@@ -209,9 +209,9 @@ BlockDescription.decorators = [
   )
 ]
 
-export const BlockDescriptionWithLeadingVisual = Template.bind({})
+export const BlockDescriptionWithLeadingVisual = ListItemTemplate.bind({})
 BlockDescriptionWithLeadingVisual.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Item label',
   description: 'This is a description',
   descriptionVariant: 'ActionList-item-label--blockDescription',
@@ -237,9 +237,9 @@ BlockDescriptionWithLeadingVisual.decorators = [
   )
 ]
 
-export const BlockDescriptionWithTrailingVisual = Template.bind({})
+export const BlockDescriptionWithTrailingVisual = ListItemTemplate.bind({})
 BlockDescriptionWithTrailingVisual.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Item label',
   description: 'This is a description',
   descriptionVariant: 'ActionList-item-label--blockDescription',
@@ -265,9 +265,9 @@ BlockDescriptionWithTrailingVisual.decorators = [
   )
 ]
 
-export const BlockDescriptionWithLeadingAndTrailingVisual = Template.bind({})
+export const BlockDescriptionWithLeadingAndTrailingVisual = ListItemTemplate.bind({})
 BlockDescriptionWithLeadingAndTrailingVisual.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Item label',
   description: 'This is a description',
   descriptionVariant: 'ActionList-item-label--blockDescription',
@@ -299,9 +299,9 @@ BlockDescriptionWithLeadingAndTrailingVisual.decorators = [
   )
 ]
 
-export const InlineDescription = Template.bind({})
+export const InlineDescription = ListItemTemplate.bind({})
 InlineDescription.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Item label',
   description: 'This is a description',
   descriptionVariant: 'ActionList-item-label--inlineDescription'
@@ -321,9 +321,9 @@ InlineDescription.decorators = [
   )
 ]
 
-export const InlineDescriptionWithLeadingVisual = Template.bind({})
+export const InlineDescriptionWithLeadingVisual = ListItemTemplate.bind({})
 InlineDescriptionWithLeadingVisual.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Item label',
   description: 'This is a description',
   descriptionVariant: 'ActionList-item-label--inlineDescription',
@@ -349,9 +349,9 @@ InlineDescriptionWithLeadingVisual.decorators = [
   )
 ]
 
-export const InlineDescriptionWithTrailingVisual = Template.bind({})
+export const InlineDescriptionWithTrailingVisual = ListItemTemplate.bind({})
 InlineDescriptionWithTrailingVisual.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Item label',
   description: 'This is a description',
   descriptionVariant: 'ActionList-item-label--inlineDescription',
@@ -377,9 +377,9 @@ InlineDescriptionWithTrailingVisual.decorators = [
   )
 ]
 
-export const InlineDescriptionWithLeadingAndTrailingVisual = Template.bind({})
+export const InlineDescriptionWithLeadingAndTrailingVisual = ListItemTemplate.bind({})
 InlineDescriptionWithLeadingAndTrailingVisual.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Item label',
   description: 'This is a description',
   descriptionVariant: 'ActionList-item-label--inlineDescription',
@@ -411,9 +411,9 @@ InlineDescriptionWithLeadingAndTrailingVisual.decorators = [
   )
 ]
 
-export const ActiveNavItem = Template.bind({})
+export const ActiveNavItem = ListItemTemplate.bind({})
 ActiveNavItem.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Im an anchor link',
   href: '#someid',
   ariaCurrent: 'page',
@@ -434,9 +434,9 @@ ActiveNavItem.decorators = [
   )
 ]
 
-export const ActiveSubNavItem = Template.bind({})
+export const ActiveSubNavItem = ListItemTemplate.bind({})
 ActiveSubNavItem.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Im a page level link',
   href: '#someid',
   ariaCurrent: 'location',
@@ -457,9 +457,9 @@ ActiveSubNavItem.decorators = [
   )
 ]
 
-export const DangerItem = Template.bind({})
+export const DangerItem = ListItemTemplate.bind({})
 DangerItem.args = {
-  ...Template.args,
+  ...ListItemTemplate.args,
   text: 'Danger danger',
   variant: 'ActionList-item-content--danger'
 }

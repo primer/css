@@ -9,7 +9,7 @@ export default {
       url: 'https://www.figma.com/file/oMiRuexZW6gqVbMhQd6lwP/Storybook?node-id=2%3A2'
     }
   },
-  excludeStories: ['Template'],
+  excludeStories: ['ListItemTemplate'],
   argTypes: {
     size: {
       options: [0, 1, 2], // iterator
@@ -31,6 +31,10 @@ export default {
       defaultValue: ''
     },
     subItem: {
+      defaultValue: false,
+      control: {type: 'boolean'}
+    },
+    containsSubItem: {
       defaultValue: false,
       control: {type: 'boolean'}
     },
@@ -88,6 +92,12 @@ export default {
       },
       description: 'block (default), inline',
       defaultValue: 'ActionList-item-label--blockDescription'
+    },
+    id: {
+      defaultValue: '',
+      type: 'string',
+      name: 'id',
+      description: 'Used for aria-labelledby if nested group within item'
     }
   }
   //   decorators: [
@@ -101,7 +111,7 @@ export default {
   //   ]
 }
 
-export const Template = ({
+export const ListItemTemplate = ({
   text,
   size,
   leadingVisual,
@@ -113,15 +123,19 @@ export const Template = ({
   href,
   ariaCurrent,
   children,
-  subItem
+  subItem,
+  containsSubItem,
+  id
 }) => (
   <li
     className={clsx(
       'ActionList-item',
       ariaCurrent && 'ActionList-item--nav-active',
-      subItem && `ActionList-item--sub-item`
+      subItem && `ActionList-item--sub-item`,
+      containsSubItem && `ActionList-item--has-sub-item`
     )}
     role={href ? 'none' : 'menuitem'}
+    id={id}
   >
     {href ? (
       <>
@@ -131,8 +145,8 @@ export const Template = ({
           tabindex="-1"
           aria-current={ariaCurrent}
           className={clsx(
-            'ActionList-item-content',
-            `${size}`,
+            text && 'ActionList-item-content',
+            size && `${size}`,
             leadingVisual && 'ActionList-item-content--leadingVisual',
             trailingVisual && 'ActionList-item-content--trailingVisual',
             (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription',
@@ -143,14 +157,13 @@ export const Template = ({
           {leadingVisual && (
             <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />
           )}
-          {description ? (
+          {description && (
             <span className={`${descriptionVariant}`}>
               <span className="ActionList-item-label">{text}</span>
               <span className="ActionList-item-description">{description}</span>
             </span>
-          ) : (
-            <span className="ActionList-item-label">{text}</span>
           )}
+          {!description && text && <span className="ActionList-item-label">{text}</span>}
           {trailingVisual && (
             <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
           )}
@@ -158,34 +171,39 @@ export const Template = ({
         {children}
       </>
     ) : (
-      <span
-        className={clsx(
-          'ActionList-item-content',
-          `${size}`,
-          leadingVisual && 'ActionList-item-content--leadingVisual',
-          trailingVisual && 'ActionList-item-content--trailingVisual',
-          (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription',
-          variant && `${variant}`
-        )}
-      >
-        {leadingVisual && <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
-        {description ? (
-          <span className={`${descriptionVariant}`}>
-            <span className="ActionList-item-label">{text}</span>
-            <span className="ActionList-item-description">{description}</span>
-          </span>
-        ) : (
-          <span className="ActionList-item-label">{text}</span>
-        )}
-        {trailingVisual && (
-          <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
-        )}
-      </span>
+      <>
+        <span
+          className={clsx(
+            text && 'ActionList-item-content',
+            size && `${size}`,
+            leadingVisual && 'ActionList-item-content--leadingVisual',
+            trailingVisual && 'ActionList-item-content--trailingVisual',
+            (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription',
+            variant && `${variant}`
+          )}
+        >
+          {leadingVisual && (
+            <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />
+          )}
+          {description && (
+            <span className={`${descriptionVariant}`}>
+              <span className="ActionList-item-label">{text}</span>
+              <span className="ActionList-item-description">{description}</span>
+            </span>
+          )}
+          {!description && text && <span className="ActionList-item-label">{text}</span>}
+
+          {trailingVisual && (
+            <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
+          )}
+        </span>
+        {children}
+      </>
     )}
   </li>
 )
 
-export const Playground = Template.bind({})
+export const Playground = ListItemTemplate.bind({})
 Playground.decorators = [
   Story => (
     <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>

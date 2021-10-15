@@ -38,277 +38,277 @@ $actionList-item-checkmark-transition-timing: 50ms;
   z-index: -1;
 }
 
-// span or a href
-.ActionList-item-content {
-  display: grid;
-  padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
-  grid-template-rows: minmax(20px, max-content); // 20px + 12px padding [32]
-  grid-template-columns: minmax(min-content, 100%); // default one column
-  column-gap: $spacer-2;
-  align-items: center;
-  position: relative;
-  border-radius: $border-radius-2;
-  font-weight: $font-weight-normal;
-  color: var(--color-fg-default);
-  user-select: none;
-  transition: $actionList-item-bg-transition;
+// // span or a href
+// .ActionList-item-content {
+//   display: grid;
+//   padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
+//   grid-template-rows: minmax(20px, max-content); // 20px + 12px padding [32]
+//   grid-template-columns: minmax(min-content, 100%); // default one column
+//   column-gap: $spacer-2;
+//   align-items: center;
+//   position: relative;
+//   border-radius: $border-radius-2;
+//   font-weight: $font-weight-normal;
+//   color: var(--color-fg-default);
+//   user-select: none;
+//   transition: $actionList-item-bg-transition;
 
-  &:before {
-    @include pseudoBackground;
-  }
+//   &:before {
+//     @include pseudoBackground;
+//   }
 
-  &:hover {
-    text-decoration: none;
-  }
+//   &:hover {
+//     text-decoration: none;
+//   }
 
-  &:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--color-accent-fg); // this color breaks convention
-    position: relative;
-    z-index: 1;
-  }
+//   &:focus-visible {
+//     outline: none;
+//     box-shadow: 0 0 0 2px var(--color-accent-fg); // this color breaks convention
+//     position: relative;
+//     z-index: 1;
+//   }
 
-  // desktop
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      cursor: pointer;
-      &:before {
-        background-color: $actionList-item-hover-bg;
-      }
-    }
-  }
+//   // desktop
+//   @media (hover: hover) and (pointer: fine) {
+//     &:hover {
+//       cursor: pointer;
+//       &:before {
+//         background-color: $actionList-item-hover-bg;
+//       }
+//     }
+//   }
 
-  &:active {
-    background: $actionList-item-active-bg;
+//   &:active {
+//     background: $actionList-item-active-bg;
 
-    @media screen and (prefers-reduced-motion: no-preference) {
-      animation: ActionList-item-active-bg 4s forwards $ease-out-cubic;
-    }
+//     @media screen and (prefers-reduced-motion: no-preference) {
+//       animation: ActionList-item-active-bg 4s forwards $ease-out-cubic;
+//     }
 
-    @keyframes ActionList-item-active-bg {
-      0% {
-      }
-      50% {
-        transform: scale(1);
-        box-shadow: inset 0 0 0 rgba(#000, 0.04);
-      }
-      100% {
-        transform: scale(0.97);
-        box-shadow: inset 0 3px 9px rgba(#000, 0.04);
-      }
-    }
-  }
+//     @keyframes ActionList-item-active-bg {
+//       0% {
+//       }
+//       50% {
+//         transform: scale(1);
+//         box-shadow: inset 0 0 0 rgba(#000, 0.04);
+//       }
+//       100% {
+//         transform: scale(0.97);
+//         box-shadow: inset 0 3px 9px rgba(#000, 0.04);
+//       }
+//     }
+//   }
 
-  // sizes
+//   // sizes
 
-  &.ActionList-item-content--sizeMedium {
-    grid-template-rows: minmax(28px, max-content); // 28px + 12px padding [40]
-  }
+//   &.ActionList-item-content--sizeMedium {
+//     grid-template-rows: minmax(28px, max-content); // 28px + 12px padding [40]
+//   }
 
-  &.ActionList-item-content--sizeLarge {
-    grid-template-rows: minmax(36px, max-content); // 36px + 12px padding [48]
-  }
+//   &.ActionList-item-content--sizeLarge {
+//     grid-template-rows: minmax(36px, max-content); // 36px + 12px padding [48]
+//   }
 
-  // On pointer:coarse (mobile), all list items are large
-  @media (pointer: coarse) {
-    grid-template-rows: minmax(36px, max-content);
-  }
+//   // On pointer:coarse (mobile), all list items are large
+//   @media (pointer: coarse) {
+//     grid-template-rows: minmax(36px, max-content);
+//   }
 
-  // variants
+//   // variants
 
-  &.ActionList-item-content--danger {
-    .ActionList-item-label {
-      color: var(--color-danger-fg);
-    }
+//   &.ActionList-item-content--danger {
+//     .ActionList-item-label {
+//       color: var(--color-danger-fg);
+//     }
 
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        background: var(--color-danger-subtle);
-      }
-    }
+//     @media (hover: hover) and (pointer: fine) {
+//       &:hover {
+//         background: var(--color-danger-subtle);
+//       }
+//     }
 
-    &:active {
-      background: var(--color-danger-subtle);
-    }
-  }
+//     &:active {
+//       background: var(--color-danger-subtle);
+//     }
+//   }
 
-  // children grid definitions
+//   // children grid definitions
 
-  &.ActionList-item-content--blockDescription {
-    // if leading/trailing visual, align with first line of content
-    .ActionList-item-visual {
-      place-self: start;
-    }
-  }
+//   &.ActionList-item-content--blockDescription {
+//     // if leading/trailing visual, align with first line of content
+//     .ActionList-item-visual {
+//       place-self: start;
+//     }
+//   }
 
-  // leading visual
-  &.ActionList-item-content--leadingVisual {
-    grid-template-columns: min-content minmax(min-content, auto);
-  }
+//   // leading visual
+//   &.ActionList-item-content--leadingVisual {
+//     grid-template-columns: min-content minmax(min-content, auto);
+//   }
 
-  // trailing visual
-  &.ActionList-item-content--trailingVisual {
-    grid-template-columns: minmax(min-content, auto) min-content;
-  }
+//   // trailing visual
+//   &.ActionList-item-content--trailingVisual {
+//     grid-template-columns: minmax(min-content, auto) min-content;
+//   }
 
-  // leading + trailing visuals
-  &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
-    grid-template-columns: min-content minmax(min-content, auto) min-content;
-  }
+//   // leading + trailing visuals
+//   &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
+//     grid-template-columns: min-content minmax(min-content, auto) min-content;
+//   }
 
-  // checkmark
-  &.ActionList-item-content--singleSelect,
-  &.ActionList-item-content--multiSelect {
-    grid-template-columns: min-content minmax(min-content, auto);
+//   // checkmark
+//   &.ActionList-item-content--singleSelect,
+//   &.ActionList-item-content--multiSelect {
+//     grid-template-columns: min-content minmax(min-content, auto);
 
-    // checkmark + leading visual
-    &.ActionList-item-content--leadingVisual {
-      grid-template-columns: min-content min-content minmax(min-content, auto);
-    }
+//     // checkmark + leading visual
+//     &.ActionList-item-content--leadingVisual {
+//       grid-template-columns: min-content min-content minmax(min-content, auto);
+//     }
 
-    // checkmark + trailing visual
-    &.ActionList-item-content--trailingVisual {
-      grid-template-columns: min-content minmax(min-content, auto) min-content;
-    }
+//     // checkmark + trailing visual
+//     &.ActionList-item-content--trailingVisual {
+//       grid-template-columns: min-content minmax(min-content, auto) min-content;
+//     }
 
-    // checkmark + leading * trailing visuals
-    &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
-      grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
-    }
-  }
+//     // checkmark + leading * trailing visuals
+//     &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
+//       grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
+//     }
+//   }
 
-  // helper for grid alignment with multi-line content
-  // span wrapping svg or text
-  .ActionList-item-visual {
-    min-height: 20px;
-    display: flex;
-    align-items: center;
-    fill: var(--color-fg-muted);
-    color: var(--color-fg-muted); // if visual is text
-  }
+//   // helper for grid alignment with multi-line content
+//   // span wrapping svg or text
+//   .ActionList-item-visual {
+//     min-height: 20px;
+//     display: flex;
+//     align-items: center;
+//     fill: var(--color-fg-muted);
+//     color: var(--color-fg-muted); // if visual is text
+//   }
 
-  // text
-  .ActionList-item-label {
-    font-weight: $font-weight-normal;
-    color: var(--color-fg-default);
-    position: relative; // for pseudo dividers
-  }
+//   // text
+//   .ActionList-item-label {
+//     font-weight: $font-weight-normal;
+//     color: var(--color-fg-default);
+//     position: relative; // for pseudo dividers
+//   }
 
-  // wrapper span
-  .ActionList-item-label--blockDescription,
-  .ActionList-item-label--inlineDescription {
-    display: flex;
+//   // wrapper span
+//   .ActionList-item-label--blockDescription,
+//   .ActionList-item-label--inlineDescription {
+//     display: flex;
 
-    .ActionList-item-label {
-      font-weight: $font-weight-bold;
-    }
-  }
+//     .ActionList-item-label {
+//       font-weight: $font-weight-bold;
+//     }
+//   }
 
-  // block
-  .ActionList-item-label--blockDescription {
-    flex-direction: column;
+//   // block
+//   .ActionList-item-label--blockDescription {
+//     flex-direction: column;
 
-    .ActionList-item-description {
-      margin-top: $spacer-1;
-    }
-  }
+//     .ActionList-item-description {
+//       margin-top: $spacer-1;
+//     }
+//   }
 
-  // inline
-  .ActionList-item-label--inlineDescription {
-    flex-direction: row;
-    align-items: baseline;
+//   // inline
+//   .ActionList-item-label--inlineDescription {
+//     flex-direction: row;
+//     align-items: baseline;
 
-    .ActionList-item-description {
-      margin-left: $actionList-item-padding-horizontal;
-    }
-  }
+//     .ActionList-item-description {
+//       margin-left: $actionList-item-padding-horizontal;
+//     }
+//   }
 
-  // description
-  .ActionList-item-description {
-    font-size: $font-size-small;
-    line-height: $lh-default;
-    color: var(--color-fg-muted);
-  }
-}
-
-// .ActionList-item--sub-group .ActionList-item:last-of-type .ActionList-item--sub-group {
-.ActionList-item-visual--16 + .ActionList-item--sub-group .ActionList-item:last-of-type .ActionList-item--sub-group {
-  .ActionList-item--sub-item > .ActionList-item-content {
-    &:before {
-      width: calc(100% + 48px);
-      transform: translateX(-48px);
-    }
-
-    &:after {
-      transform: translateX(-48px);
-    }
-  }
-}
-// }
-
-.ActionList-item--sub-group {
-  padding-left: 24px;
-}
-
-.ActionList-item--sub-item > .ActionList-item-content {
-  font-size: $font-size-small;
-
-  //   .ActionList-item-label {
-  //     grid-column: 2/3;
-  //   }
-}
-
-.ActionList-item-visual--16 + .ActionList-item--sub-group .ActionList-item:last-of-type {
-  > a:before {
-    width: calc(100% + 24px);
-    transform: translateX(-24px);
-  }
-}
-
-.ActionList-item-visual--16 + .ActionList-item--sub-group {
-  .ActionList-item--sub-item > .ActionList-item-content {
-    // padding-left: 16px;
-
-    &:before {
-      width: calc(100% + 24px);
-      transform: translateX(-24px);
-    }
-
-    &:after {
-      transform: translateX(-24px);
-    }
-  }
-}
-
-.ActionList-item-visual--20 + .ActionList-item--sub-group {
-  .ActionList-item--sub-item > .ActionList-item-content {
-    padding-left: 20px;
-  }
-}
-
-.ActionList-item-visual--24 + .ActionList-item--sub-group {
-  .ActionList-item--sub-item > .ActionList-item-content {
-    padding-left: 24px;
-  }
-}
-// single select
-
-// maintain space on grid while check is hidden
-// .ActionList-item-content--singleSelect {
-//   .ActionList-item-check {
-//     visibility: hidden;
-//     opacity: 0;
-//     transition: visibility 0s linear $actionList-item-checkmark-transition-timing,
-//       opacity $actionList-item-checkmark-transition-timing;
+//   // description
+//   .ActionList-item-description {
+//     font-size: $font-size-small;
+//     line-height: $lh-default;
+//     color: var(--color-fg-muted);
 //   }
 // }
 
-// &[aria-checked='true'] {
-//   .ActionList-item-content--singleSelect {
-//     .ActionList-item-check {
-//       visibility: visible;
-//       opacity: 1;
-//       transition: visibility 0s linear 0s, opacity $actionList-item-checkmark-transition-timing;
+// // .ActionList-item--sub-group .ActionList-item:last-of-type .ActionList-item--sub-group {
+// .ActionList-item-visual--16 + .ActionList-item--sub-group .ActionList-item:last-of-type .ActionList-item--sub-group {
+//   .ActionList-item--sub-item > .ActionList-item-content {
+//     &:before {
+//       width: calc(100% + 48px);
+//       transform: translateX(-48px);
+//     }
+
+//     &:after {
+//       transform: translateX(-48px);
 //     }
 //   }
 // }
+// // }
+
+// .ActionList-item--sub-group {
+//   padding-left: 24px;
+// }
+
+// .ActionList-item--sub-item > .ActionList-item-content {
+//   font-size: $font-size-small;
+
+//   //   .ActionList-item-label {
+//   //     grid-column: 2/3;
+//   //   }
+// }
+
+// .ActionList-item-visual--16 + .ActionList-item--sub-group .ActionList-item:last-of-type {
+//   > a:before {
+//     width: calc(100% + 24px);
+//     transform: translateX(-24px);
+//   }
+// }
+
+// .ActionList-item-visual--16 + .ActionList-item--sub-group {
+//   .ActionList-item--sub-item > .ActionList-item-content {
+//     // padding-left: 16px;
+
+//     &:before {
+//       width: calc(100% + 24px);
+//       transform: translateX(-24px);
+//     }
+
+//     &:after {
+//       transform: translateX(-24px);
+//     }
+//   }
+// }
+
+// .ActionList-item-visual--20 + .ActionList-item--sub-group {
+//   .ActionList-item--sub-item > .ActionList-item-content {
+//     padding-left: 20px;
+//   }
+// }
+
+// .ActionList-item-visual--24 + .ActionList-item--sub-group {
+//   .ActionList-item--sub-item > .ActionList-item-content {
+//     padding-left: 24px;
+//   }
+// }
+// // single select
+
+// // maintain space on grid while check is hidden
+// // .ActionList-item-content--singleSelect {
+// //   .ActionList-item-check {
+// //     visibility: hidden;
+// //     opacity: 0;
+// //     transition: visibility 0s linear $actionList-item-checkmark-transition-timing,
+// //       opacity $actionList-item-checkmark-transition-timing;
+// //   }
+// // }
+
+// // &[aria-checked='true'] {
+// //   .ActionList-item-content--singleSelect {
+// //     .ActionList-item-check {
+// //       visibility: visible;
+// //       opacity: 1;
+// //       transition: visibility 0s linear 0s, opacity $actionList-item-checkmark-transition-timing;
+// //     }
+// //   }
+// // }

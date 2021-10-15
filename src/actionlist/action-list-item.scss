@@ -28,6 +28,16 @@ $actionList-item-padding-horizontal: $spacer-2;
 $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60hz monitor
 $actionList-item-checkmark-transition-timing: 50ms;
 
+@mixin pseudoBackground {
+  content: '';
+  position: absolute;
+  height: 32px;
+  position: absolute;
+  width: 100%;
+  border-radius: $border-radius-2;
+  z-index: -1;
+}
+
 // <li>
 .ActionList-item {
   list-style: none;
@@ -99,13 +109,396 @@ $actionList-item-checkmark-transition-timing: 50ms;
     }
   }
 
-  //   &.ActionList-item--sub-item {
-  //     .ActionList-item-content {
-  //       font-size: $font-size-small;
-  //       grid-template-columns: 16px minmax(min-content, auto) min-content;
-  //     }
-  //     .ActionList-item-label {
-  //       grid-column: 2/3;
-  //     }
-  //   }
+  // if nested list exists, remove default padding
+  .ActionList {
+    padding: unset;
+  }
 }
+
+// span or a href
+.ActionList-item-content {
+  display: grid;
+  padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
+  grid-template-rows: minmax(20px, max-content); // 20px + 12px padding [32]
+  grid-template-columns: minmax(min-content, 100%); // default one column
+  column-gap: $spacer-2;
+  align-items: center;
+  position: relative;
+  border-radius: $border-radius-2;
+  font-weight: $font-weight-normal;
+  color: var(--color-fg-default);
+  user-select: none;
+  transition: $actionList-item-bg-transition;
+
+  &:before {
+    @include pseudoBackground;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-accent-fg); // this color breaks convention
+    position: relative;
+    z-index: 1;
+  }
+
+  // desktop
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      cursor: pointer;
+      &:before {
+        background-color: $actionList-item-hover-bg;
+      }
+    }
+  }
+
+  &:active {
+    background: $actionList-item-active-bg;
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+      animation: ActionList-item-active-bg 4s forwards $ease-out-cubic;
+    }
+
+    @keyframes ActionList-item-active-bg {
+      0% {
+      }
+      50% {
+        transform: scale(1);
+        box-shadow: inset 0 0 0 rgba(#000, 0.04);
+      }
+      100% {
+        transform: scale(0.97);
+        box-shadow: inset 0 3px 9px rgba(#000, 0.04);
+      }
+    }
+  }
+
+  // sizes
+
+  &.ActionList-item-content--sizeMedium {
+    grid-template-rows: minmax(28px, max-content); // 28px + 12px padding [40]
+  }
+
+  &.ActionList-item-content--sizeLarge {
+    grid-template-rows: minmax(36px, max-content); // 36px + 12px padding [48]
+  }
+
+  // On pointer:coarse (mobile), all list items are large
+  @media (pointer: coarse) {
+    grid-template-rows: minmax(36px, max-content);
+  }
+
+  // variants
+
+  &.ActionList-item-content--danger {
+    .ActionList-item-label {
+      color: var(--color-danger-fg);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background: var(--color-danger-subtle);
+      }
+    }
+
+    &:active {
+      background: var(--color-danger-subtle);
+    }
+  }
+
+  // children grid definitions
+
+  &.ActionList-item-content--blockDescription {
+    // if leading/trailing visual, align with first line of content
+    .ActionList-item-visual {
+      place-self: start;
+    }
+  }
+
+  // leading visual
+  &.ActionList-item-content--leadingVisual {
+    grid-template-columns: min-content minmax(min-content, auto);
+  }
+
+  // trailing visual
+  &.ActionList-item-content--trailingVisual {
+    grid-template-columns: minmax(min-content, auto) min-content;
+  }
+
+  // leading + trailing visuals
+  &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
+    grid-template-columns: min-content minmax(min-content, auto) min-content;
+  }
+
+  // checkmark
+  &.ActionList-item-content--singleSelect,
+  &.ActionList-item-content--multiSelect {
+    grid-template-columns: min-content minmax(min-content, auto);
+
+    // checkmark + leading visual
+    &.ActionList-item-content--leadingVisual {
+      grid-template-columns: min-content min-content minmax(min-content, auto);
+    }
+
+    // checkmark + trailing visual
+    &.ActionList-item-content--trailingVisual {
+      grid-template-columns: min-content minmax(min-content, auto) min-content;
+    }
+
+    // checkmark + leading * trailing visuals
+    &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
+      grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
+    }
+  }
+
+  // helper for grid alignment with multi-line content
+  // span wrapping svg or text
+  .ActionList-item-visual {
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    fill: var(--color-fg-muted);
+    color: var(--color-fg-muted); // if visual is text
+  }
+
+  // text
+  .ActionList-item-label {
+    font-weight: $font-weight-normal;
+    color: var(--color-fg-default);
+    position: relative; // for pseudo dividers
+  }
+
+  // wrapper span
+  .ActionList-item-label--blockDescription,
+  .ActionList-item-label--inlineDescription {
+    display: flex;
+
+    .ActionList-item-label {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  // block
+  .ActionList-item-label--blockDescription {
+    flex-direction: column;
+
+    .ActionList-item-description {
+      margin-top: $spacer-1;
+    }
+  }
+
+  // inline
+  .ActionList-item-label--inlineDescription {
+    flex-direction: row;
+    align-items: baseline;
+
+    .ActionList-item-description {
+      margin-left: $actionList-item-padding-horizontal;
+    }
+  }
+
+  // description
+  .ActionList-item-description {
+    font-size: $font-size-small;
+    line-height: $lh-default;
+    color: var(--color-fg-muted);
+  }
+}
+
+// nested groups
+
+.ActionList-item--has-sub-item {
+  > .ActionList-item-content > .ActionList-item-label {
+    font-weight: $font-weight-bold;
+  }
+}
+
+.ActionList-item--sub-item > .ActionList-item-content {
+  font-size: $font-size-small;
+}
+
+// no leading visual
+
+// 1 level nested
+.ActionList-item--sub-group {
+  padding-left: 16px;
+
+  .ActionList-item--sub-item > .ActionList-item-content {
+    &:before {
+      width: calc(100% + 16px);
+      transform: translateX(-16px);
+    }
+
+    &:after {
+      transform: translateX(-16px);
+    }
+  }
+
+  // last item in subgroup where item contains another subgroup
+  .ActionList-item:last-of-type {
+    > .ActionList-item-content {
+      &:before {
+        width: calc(100% + 16px);
+        transform: translateX(-16px);
+      }
+    }
+  }
+
+  // 2 levels nested li > ul > li
+  .ActionList-item:last-of-type .ActionList-item--sub-group {
+    .ActionList-item--sub-item > .ActionList-item-content {
+      &:before {
+        width: calc(100% + 32px);
+        transform: translateX(-32px);
+      }
+
+      &:after {
+        transform: translateX(-32px);
+      }
+    }
+  }
+}
+
+// has 16px leading visual
+
+// 1 level nested
+.ActionList-item-visual--16 + .ActionList-item--sub-group {
+  padding-left: 24px;
+
+  .ActionList-item--sub-item > .ActionList-item-content {
+    &:before {
+      width: calc(100% + 24px);
+      transform: translateX(-24px);
+    }
+
+    &:after {
+      transform: translateX(-24px);
+    }
+  }
+
+  // last item in subgroup where item contains another subgroup
+  .ActionList-item:last-of-type {
+    > .ActionList-item-content {
+      &:before {
+        width: calc(100% + 24px);
+        transform: translateX(-24px);
+      }
+    }
+  }
+
+  // 2 levels nested
+  .ActionList-item:last-of-type .ActionList-item--sub-group {
+    .ActionList-item--sub-item > .ActionList-item-content {
+      &:before {
+        width: calc(100% + 48px);
+        transform: translateX(-48px);
+      }
+
+      &:after {
+        transform: translateX(-48px);
+      }
+    }
+  }
+}
+
+.ActionList-item-visual--20 + .ActionList-item--sub-group {
+  padding-left: 28px;
+
+  .ActionList-item--sub-item > .ActionList-item-content {
+    &:before {
+      width: calc(100% + 28px);
+      transform: translateX(-28px);
+    }
+
+    &:after {
+      transform: translateX(-28px);
+    }
+  }
+
+  // last item in subgroup where item contains another subgroup
+  .ActionList-item:last-of-type {
+    > .ActionList-item-content {
+      &:before {
+        width: calc(100% + 28px);
+        transform: translateX(-28px);
+      }
+    }
+  }
+
+  // 2 levels nested
+  .ActionList-item:last-of-type .ActionList-item--sub-group {
+    .ActionList-item--sub-item > .ActionList-item-content {
+      &:before {
+        width: calc(100% + 56px);
+        transform: translateX(-56px);
+      }
+
+      &:after {
+        transform: translateX(-56px);
+      }
+    }
+  }
+}
+
+.ActionList-item-visual--24 + .ActionList-item--sub-group {
+  padding-left: 32px;
+
+  .ActionList-item--sub-item > .ActionList-item-content {
+    &:before {
+      width: calc(100% + 32px);
+      transform: translateX(-32px);
+    }
+
+    &:after {
+      transform: translateX(-32px);
+    }
+  }
+
+  // last item in subgroup where item contains another subgroup
+  .ActionList-item:last-of-type {
+    > .ActionList-item-content {
+      &:before {
+        width: calc(100% + 32px);
+        transform: translateX(-32px);
+      }
+    }
+  }
+
+  // 2 levels nested
+  .ActionList-item:last-of-type .ActionList-item--sub-group {
+    .ActionList-item--sub-item > .ActionList-item-content {
+      &:before {
+        width: calc(100% + 64px);
+        transform: translateX(-64px);
+      }
+
+      &:after {
+        transform: translateX(-64px);
+      }
+    }
+  }
+}
+// single select
+
+// maintain space on grid while check is hidden
+// .ActionList-item-content--singleSelect {
+//   .ActionList-item-check {
+//     visibility: hidden;
+//     opacity: 0;
+//     transition: visibility 0s linear $actionList-item-checkmark-transition-timing,
+//       opacity $actionList-item-checkmark-transition-timing;
+//   }
+// }
+
+// &[aria-checked='true'] {
+//   .ActionList-item-content--singleSelect {
+//     .ActionList-item-check {
+//       visibility: visible;
+//       opacity: 1;
+//       transition: visibility 0s linear 0s, opacity $actionList-item-checkmark-transition-timing;
+//     }
+//   }
+// }
