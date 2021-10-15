@@ -1,3 +1,7 @@
+import '../../src/docs.scss'
+import '../../src/index.scss'
+import '../../src/base/index.scss'
+
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
   controls: {
@@ -13,15 +17,6 @@ export const parameters = {
     root: '#story' // target id for html tab (should be direct parent of <Story /> for easy copy/paste)
   }
 }
-
-import '../../src/docs.scss'
-import '../../src/index.scss'
-import '../../src/base/index.scss'
-// import '../../src/color-modes/native.scss'
-// import '../../src/color-modes/index.scss'
-// import '../../src/core/index.scss'
-// import '../../src/product/index.scss'
-// import '../../src/marketing/index.scss'
 
 export const globalTypes = {
   theme: {
@@ -123,21 +118,3 @@ export const decorators = [
     )
   }
 ]
-
-// var iframe = document.getElementById('iframeId')
-// var innerDoc = iframe.contentDocument || iframe.contentWindow.document
-
-// var x = document.getElementsByTagName("iframe")[0].contentWindow;
-//x = window.frames[0];
-
-// x.document.getElementsByTagName("body")[0].style.backgroundColor = "blue";
-// this would turn the 1st iframe in document blue.
-
-// function getWidth() {
-//   let iframe = document.getElementsByTagName('iframe')[0].contentWindow
-//   let elem = iframe.document.getElementsByClassName('ActionList-item-visual')
-//   let rect = elem.getBoundingClientRect()
-//   console.log(rect)
-// }
-
-// document.addEventListener('DOMContentLoaded', getWidth)

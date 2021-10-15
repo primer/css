@@ -1,6 +1,6 @@
 import React from 'react'
 import {Flex, Link, Text, Tooltip, Flash} from '@primer/components'
-import Octicon, {AlertIcon} from '@primer/octicons-react'
+import {AlertIcon} from '@primer/octicons-react'
 import themeGet from '@styled-system/theme-get'
 import DoctocatTable from '@primer/gatsby-theme-doctocat/src/components/table'
 import styled from 'styled-components'
@@ -86,7 +86,7 @@ function Variables({children, ...props}) {
       <>
         <h2>No data available</h2>
         {__DEV__ && (
-          <Flash scheme="red">
+          <Flash variant="danger">
             This probably means that the root project has not been built; run `npm run dist` and restart your
             development server.
           </Flash>
@@ -121,17 +121,17 @@ function VariablesDetails({variablesByFile, ...props}) {
             <tr id={name} key={name}>
               <th scope="row">
                 <Flex justifyContent="space-between">
-                  <Link href={`#${name}`} color="gray.4" mr={2}>
+                  <Link href={`#${name}`} color="fg.muted" mr={2}>
                     #
                   </Link>
-                  <Flex.Item flex="1">
+                  <Flex flex="1">
                     <Link href={`https://github.com/primer/css/tree/main/${source.path}#L${source.line}`}>
                       <Mono nowrap>{name}</Mono>
                     </Link>
-                  </Flex.Item>
-                  <Flex.Item justifySelf="end">
+                  </Flex>
+                  <Flex justifySelf="end">
                     <DeprecationFlag variable={name} ml={2} />
-                  </Flex.Item>
+                  </Flex>
                 </Flex>
               </th>
               <td>
@@ -159,7 +159,7 @@ const SwatchBox = styled(Text)`
   vertical-align: baseline;
   width: ${p => p.size};
   height: ${p => p.size};
-  border: 1px solid ${themeGet('colors.gray.3')};
+  border: 1px solid ${themeGet('colors.border.default')};
   border-radius: ${themeGet('radii.1')}px;
   margin-bottom: -2px;
 `
@@ -183,8 +183,8 @@ function DeprecationFlag({variable, ...rest}) {
 
 function DeprecationIcon() {
   return (
-    <Text color="red.5">
-      <Octicon icon={AlertIcon} />
+    <Text color="danger.fg">
+      <AlertIcon />
     </Text>
   )
 }
