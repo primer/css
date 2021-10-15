@@ -28,23 +28,16 @@ $actionList-item-padding-horizontal: $spacer-2;
 $actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60hz monitor
 $actionList-item-checkmark-transition-timing: 50ms;
 
-.ActionList-item-content:before {
-  content: '\00a0';
+@mixin pseudoBackground {
+  content: '';
   position: absolute;
   height: 32px;
-  //   left: -$actionList-item-padding-horizontal;
-  content: ' ';
   position: absolute;
-  height: 32px;
-  //   left: -8px;
   width: 100%;
-  //   transform: translateX(-32px);
-  border-radius: 6px;
+  border-radius: $border-radius-2;
+  z-index: -1;
 }
 
-.ActionList-item-content:hover:before {
-  background-color: $actionList-item-hover-bg;
-}
 // span or a href
 .ActionList-item-content {
   display: grid;
@@ -59,8 +52,10 @@ $actionList-item-checkmark-transition-timing: 50ms;
   color: var(--color-fg-default);
   user-select: none;
   transition: $actionList-item-bg-transition;
-  // vini: https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-tap-highlight-color
-  // -webkit-tap-highlight-color: transparent;
+
+  &:before {
+    @include pseudoBackground;
+  }
 
   &:hover {
     text-decoration: none;
@@ -75,10 +70,12 @@ $actionList-item-checkmark-transition-timing: 50ms;
 
   // desktop
   @media (hover: hover) and (pointer: fine) {
-    // &:hover {
-    //   background: $actionList-item-hover-bg;
-    //   cursor: pointer;
-    // }
+    &:hover {
+      cursor: pointer;
+      &:before {
+        background-color: $actionList-item-hover-bg;
+      }
+    }
   }
 
   &:active {
@@ -183,25 +180,11 @@ $actionList-item-checkmark-transition-timing: 50ms;
   // helper for grid alignment with multi-line content
   // span wrapping svg or text
   .ActionList-item-visual {
-    // --leading-visual-width: 16px;
     min-height: 20px;
-    // width: var(--leading-visual-width);
     display: flex;
     align-items: center;
     fill: var(--color-fg-muted);
     color: var(--color-fg-muted); // if visual is text
-
-    // &:where(svg[width='24']) {
-
-    // svg[width='16'] {
-    //   --leading-visual-width: 16px;
-    //   background: deeppink;
-    // }
-
-    // svg[width='24'] {
-    //   --leading-visual-width: 24px;
-    //   background: deeppink;
-    // }
   }
 
   // text
@@ -265,9 +248,6 @@ $actionList-item-checkmark-transition-timing: 50ms;
 
 .ActionList-item--sub-group {
   padding-left: 24px;
-  li {
-    // padding-left: 16px;
-  }
 }
 
 .ActionList-item--sub-item > .ActionList-item-content {
@@ -331,44 +311,4 @@ $actionList-item-checkmark-transition-timing: 50ms;
 //       transition: visibility 0s linear 0s, opacity $actionList-item-checkmark-transition-timing;
 //     }
 //   }
-// }
-
-$visual-width: 8px;
-
-// :root {
-//   --visual-width: #{$visual-width};
-// }
-
-// detect SVG size
-// .ActionList-item {
-//   .ActionList-item-visual > :where(svg[viewBox='0 0 16 16']) {
-//     background: blueviolet !important;
-//     $visual-width: 16px !default;
-//   }
-
-//   .ActionList-item-visual > :where(svg[viewBox='0 0 24 24']) {
-//     background: deeppink !important;
-//     $visual-width: 24px !default;
-//   }
-
-//   .ActionList-item--sub-item > .ActionList-item-content {
-//     padding-left: $visual-width;
-//   }
-// }
-
-// .ActionList-item > :where(.ActionList-item-content ~ svg) {
-//   background: blueviolet !important;
-//   --visual-width: 16px;
-// }
-
-// .ActionList-item-content * :where(svg[viewBox='0 0 16 16']) & .subgroup {
-//   background: deeppink !important;
-//   --visual-width: 16px;
-// }
-
-// .ActionList-item:where(li > a) {
-//   background: blueviolet !important;
-//   //   + .subgroup {
-//   //       background: deeppink !important;
-//   //   }
 // }

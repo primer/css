@@ -128,6 +128,7 @@ export const Template = ({
         <a
           href={href}
           role={href ? 'menuitem' : undefined}
+          tabindex="-1"
           aria-current={ariaCurrent}
           className={clsx(
             'ActionList-item-content',

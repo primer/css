@@ -210,6 +210,11 @@ Navigational.args = {
       <TextOnly href="#" text="I'm an anchor link" ariaCurrent="location" />
       <TextOnly href="#" text="I'm an anchor link" />
       <TextOnly href="#" text="I'm an anchor link" />
+      <Divider title="Section title" id="some-id" />
+      <ul role="group" aria-labelledby="some-id">
+        <TextOnly href="#" {...TextOnly.args} />
+        <TextOnly href="#" {...TextOnly.args} />
+      </ul>
     </>
   )
 }
