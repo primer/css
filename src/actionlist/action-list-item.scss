@@ -42,8 +42,46 @@ $actionList-item-checkmark-transition-timing: 50ms;
 .ActionList-item {
   list-style: none;
   position: relative;
+  border-radius: $border-radius-2;
   z-index: 1; // pseudo background
   // hide divider of item and next item on hover & active
+
+  // only hover li without list as children
+  &:not(.ActionList-item--has-sub-item) {
+    &:hover {
+      background-color: $actionList-item-hover-bg;
+      cursor: pointer;
+      .ActionList-item-content {
+        text-decoration: none;
+      }
+    }
+
+    &:active {
+      background: $actionList-item-active-bg;
+    }
+  }
+
+  // hover contents of li with list as children
+  &.ActionList-item--has-sub-item {
+    .ActionList-item-content {
+      &:hover {
+        text-decoration: none;
+        background-color: $actionList-item-hover-bg;
+        cursor: pointer;
+      }
+
+      &:active {
+        background: $actionList-item-active-bg;
+      }
+    }
+
+    &:active {
+      > .ActionList-item-content {
+        background: $actionList-item-active-bg;
+      }
+    }
+  }
+
   &:hover {
     .ActionList-item-label:before,
     + .ActionList-item .ActionList-item-label:before {
@@ -52,9 +90,9 @@ $actionList-item-checkmark-transition-timing: 50ms;
   }
 
   &:active {
-    .ActionList-item-content {
-      background: $actionList-item-active-bg;
-    }
+    // .ActionList-item-content {
+    //   background: $actionList-item-active-bg;
+    // }
 
     .ActionList-item-label:before,
     + .ActionList-item .ActionList-item-label:before {
@@ -130,13 +168,14 @@ $actionList-item-checkmark-transition-timing: 50ms;
   user-select: none;
   transition: $actionList-item-bg-transition;
 
-  &:before {
-    @include pseudoBackground;
-  }
+  //   &:before {
+  //     @include pseudoBackground;
+  //   }
 
-  &:hover {
-    text-decoration: none;
-  }
+  //   &:hover {
+  //     text-decoration: none;
+  //     background-color: $actionList-item-hover-bg;
+  //   }
 
   &:focus-visible {
     outline: none;
@@ -147,12 +186,12 @@ $actionList-item-checkmark-transition-timing: 50ms;
 
   // desktop
   @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      cursor: pointer;
-      &:before {
-        background-color: $actionList-item-hover-bg;
-      }
-    }
+    // &:hover {
+    //   cursor: pointer;
+    //   &:before {
+    //     background-color: $actionList-item-hover-bg;
+    //   }
+    // }
   }
 
   &:active {
@@ -324,42 +363,46 @@ $actionList-item-checkmark-transition-timing: 50ms;
 
 // 1 level nested
 .ActionList-item--sub-group {
-  padding-left: 16px;
+  //   padding-left: 16px;
 
-  .ActionList-item--sub-item > .ActionList-item-content {
-    &:before {
-      width: calc(100% + 16px);
-      transform: translateX(-16px);
-    }
-
-    &:after {
-      transform: translateX(-16px);
-    }
+  .ActionList-item--sub-item {
+    padding-left: 16px;
   }
 
-  // last item in subgroup where item contains another subgroup
-  .ActionList-item:last-of-type {
-    > .ActionList-item-content {
-      &:before {
-        width: calc(100% + 16px);
-        transform: translateX(-16px);
-      }
-    }
-  }
+  //   .ActionList-item--sub-item > .ActionList-item-content {
+  //     &:before {
+  //       width: calc(100% + 16px);
+  //       transform: translateX(-16px);
+  //     }
 
-  // 2 levels nested li > ul > li
-  .ActionList-item:last-of-type .ActionList-item--sub-group {
-    .ActionList-item--sub-item > .ActionList-item-content {
-      &:before {
-        width: calc(100% + 32px);
-        transform: translateX(-32px);
-      }
+  //     &:after {
+  //       transform: translateX(-16px);
+  //     }
+  //   }
 
-      &:after {
-        transform: translateX(-32px);
-      }
-    }
-  }
+  //   // last item in subgroup where item contains another subgroup
+  //   .ActionList-item:last-of-type {
+  //     > .ActionList-item-content {
+  //       &:before {
+  //         width: calc(100% + 16px);
+  //         transform: translateX(-16px);
+  //       }
+  //     }
+  //   }
+
+  //   // 2 levels nested li > ul > li
+  //   .ActionList-item:last-of-type .ActionList-item--sub-group {
+  //     .ActionList-item--sub-item > .ActionList-item-content {
+  //       &:before {
+  //         width: calc(100% + 32px);
+  //         transform: translateX(-32px);
+  //       }
+
+  //       &:after {
+  //         transform: translateX(-32px);
+  //       }
+  //     }
+  //   }
 }
 
 // has 16px leading visual

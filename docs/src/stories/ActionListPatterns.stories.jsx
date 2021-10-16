@@ -30,7 +30,6 @@ NavWithSubItems.args = {
       <ListItemTemplate
         containsSubItem
         text="Nav Item"
-        href="/"
         children={
           <ListTemplate
             subGroup

@@ -11,6 +11,16 @@ export default {
   },
   excludeStories: ['ListItemTemplate'],
   argTypes: {
+    type: {
+      options: [0, 1], // iterator
+      mapping: ['ActionList-item--default', 'ActionList-item--has-sub-item'], // values
+      control: {
+        type: 'select',
+        labels: ['direct-child', 'contains-children']
+      },
+      description: 'conditional for CSS specific to li position in ul',
+      defaultValue: 'ActionList-item--default'
+    },
     size: {
       options: [0, 1, 2], // iterator
       mapping: ['', 'ActionList-item-content--sizeMedium', 'ActionList-item-content--sizeLarge'], // values
@@ -125,11 +135,13 @@ export const ListItemTemplate = ({
   children,
   subItem,
   containsSubItem,
-  id
+  id,
+  type
 }) => (
   <li
     className={clsx(
       'ActionList-item',
+      type && `${type}`,
       ariaCurrent && 'ActionList-item--nav-active',
       subItem && `ActionList-item--sub-item`,
       containsSubItem && `ActionList-item--has-sub-item`

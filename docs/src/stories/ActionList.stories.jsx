@@ -118,7 +118,7 @@ export const ListTemplate = ({
 }) => (
   <ul
     className={clsx(
-      !group && !subGroup && 'ActionList',
+      !group && 'ActionList',
       showDividers && 'ActionList--divided',
       subGroup && 'ActionList-item--sub-group'
     )}
