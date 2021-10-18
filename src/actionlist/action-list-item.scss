@@ -43,74 +43,81 @@ $actionList-item-checkmark-transition-timing: 50ms;
   list-style: none;
   position: relative;
   border-radius: $border-radius-2;
-  z-index: 1; // pseudo background
-  // hide divider of item and next item on hover & active
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+
+    // a href
+    .ActionList-item-content {
+      text-decoration: none;
+    }
+  }
 
   // only hover li without list as children
   &:not(.ActionList-item--has-sub-item) {
     &:hover {
       background-color: $actionList-item-hover-bg;
       cursor: pointer;
-      .ActionList-item-content {
-        text-decoration: none;
-      }
     }
 
     &:active {
       background: $actionList-item-active-bg;
-    }
-  }
 
-  // hover contents of li with list as children
-  &.ActionList-item--has-sub-item {
-    .ActionList-item-content {
-      &:hover {
-        text-decoration: none;
-        background-color: $actionList-item-hover-bg;
-        cursor: pointer;
+      @media screen and (prefers-reduced-motion: no-preference) {
+        animation: ActionList-item-active-bg 4s forwards $ease-out-cubic;
       }
 
-      &:active {
-        background: $actionList-item-active-bg;
+      @keyframes ActionList-item-active-bg {
+        0% {
+        }
+        50% {
+          transform: scale(1);
+          box-shadow: inset 0 0 0 rgba(#000, 0.04);
+        }
+        100% {
+          transform: scale(0.97);
+          box-shadow: inset 0 3px 9px rgba(#000, 0.04);
+        }
       }
     }
 
+    &:hover,
     &:active {
-      > .ActionList-item-content {
-        background: $actionList-item-active-bg;
+      // hide dividers
+      .ActionList-item-label:before,
+      + .ActionList-item .ActionList-item-label:before {
+        visibility: hidden;
       }
     }
   }
 
-  &:hover {
-    .ActionList-item-label:before,
-    + .ActionList-item .ActionList-item-label:before {
-      visibility: hidden;
+  // target contents of li if sub-item
+  // has-sub-item will never be :active
+  // collapse styles here
+  &.ActionList-item--has-sub-item {
+    // first child
+    > .ActionList-item-content {
+      &:hover {
+        background-color: $actionList-item-hover-bg;
+      }
     }
   }
 
-  &:active {
-    // .ActionList-item-content {
-    //   background: $actionList-item-active-bg;
-    // }
-
-    .ActionList-item-label:before,
-    + .ActionList-item .ActionList-item-label:before {
-      visibility: hidden;
-    }
+  .ActionList-item--sub-group {
   }
 
   // active state [aria-current]
 
-  &.ActionList-item--nav-active {
+  &.ActionList-item--nav-active:not(.ActionList-item--danger) {
+    background: $actionList-item-selected-bg;
     &:before,
     + .ActionList-item:before {
       visibility: hidden;
     }
 
-    // not: safegaurd that danger items aren't nav active
     // blue accent line
-    > :not(.ActionList-item-content--danger):after {
+    &:after {
       content: '';
       width: $spacer-1;
       height: $spacer-4;
@@ -122,28 +129,46 @@ $actionList-item-checkmark-transition-timing: 50ms;
     }
 
     // note: nested class
-    .ActionList-item-content:not(.ActionList-item-content--danger) {
-      &:before {
-        content: '';
-        position: absolute;
-        height: 32px;
-        //   left: -$actionList-item-padding-horizontal;
-        content: ' ';
-        position: absolute;
-        height: 32px;
-        //   left: -8px;
-        width: 100%;
-        //   transform: translateX(-32px);
-        border-radius: 6px;
-        z-index: -1;
-        background: $actionList-item-selected-bg;
-      }
+    // .ActionList-item-content:not(.ActionList-item-content--danger) {
+    //   &:before {
+    //     content: '';
+    //     position: absolute;
+    //     height: 32px;
+    //     //   left: -$actionList-item-padding-horizontal;
+    //     content: ' ';
+    //     position: absolute;
+    //     height: 32px;
+    //     //   left: -8px;
+    //     width: 100%;
+    //     //   transform: translateX(-32px);
+    //     border-radius: 6px;
+    //     z-index: -1;
+    //     background: $actionList-item-selected-bg;
+    //   }
 
-      @media (hover: hover) and (pointer: fine) {
-        &:hover {
-          background: $actionList-item-active-bg;
-        }
+    //   @media (hover: hover) and (pointer: fine) {
+    //     &:hover {
+    //       background: $actionList-item-active-bg;
+    //     }
+    //   }
+    // }
+  }
+
+  // variants
+
+  &.ActionList-item--danger {
+    .ActionList-item-label {
+      color: var(--color-danger-fg);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background: var(--color-danger-subtle);
       }
+    }
+
+    &:active {
+      background: var(--color-danger-subtle);
     }
   }
 
@@ -168,51 +193,11 @@ $actionList-item-checkmark-transition-timing: 50ms;
   user-select: none;
   transition: $actionList-item-bg-transition;
 
-  //   &:before {
-  //     @include pseudoBackground;
-  //   }
-
-  //   &:hover {
-  //     text-decoration: none;
-  //     background-color: $actionList-item-hover-bg;
-  //   }
-
   &:focus-visible {
     outline: none;
     box-shadow: 0 0 0 2px var(--color-accent-fg); // this color breaks convention
     position: relative;
     z-index: 1;
-  }
-
-  // desktop
-  @media (hover: hover) and (pointer: fine) {
-    // &:hover {
-    //   cursor: pointer;
-    //   &:before {
-    //     background-color: $actionList-item-hover-bg;
-    //   }
-    // }
-  }
-
-  &:active {
-    background: $actionList-item-active-bg;
-
-    @media screen and (prefers-reduced-motion: no-preference) {
-      animation: ActionList-item-active-bg 4s forwards $ease-out-cubic;
-    }
-
-    @keyframes ActionList-item-active-bg {
-      0% {
-      }
-      50% {
-        transform: scale(1);
-        box-shadow: inset 0 0 0 rgba(#000, 0.04);
-      }
-      100% {
-        transform: scale(0.97);
-        box-shadow: inset 0 3px 9px rgba(#000, 0.04);
-      }
-    }
   }
 
   // sizes
@@ -228,24 +213,6 @@ $actionList-item-checkmark-transition-timing: 50ms;
   // On pointer:coarse (mobile), all list items are large
   @media (pointer: coarse) {
     grid-template-rows: minmax(36px, max-content);
-  }
-
-  // variants
-
-  &.ActionList-item-content--danger {
-    .ActionList-item-label {
-      color: var(--color-danger-fg);
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        background: var(--color-danger-subtle);
-      }
-    }
-
-    &:active {
-      background: var(--color-danger-subtle);
-    }
   }
 
   // children grid definitions
@@ -293,23 +260,6 @@ $actionList-item-checkmark-transition-timing: 50ms;
     }
   }
 
-  // helper for grid alignment with multi-line content
-  // span wrapping svg or text
-  .ActionList-item-visual {
-    min-height: 20px;
-    display: flex;
-    align-items: center;
-    fill: var(--color-fg-muted);
-    color: var(--color-fg-muted); // if visual is text
-  }
-
-  // text
-  .ActionList-item-label {
-    font-weight: $font-weight-normal;
-    color: var(--color-fg-default);
-    position: relative; // for pseudo dividers
-  }
-
   // wrapper span
   .ActionList-item-label--blockDescription,
   .ActionList-item-label--inlineDescription {
@@ -345,6 +295,23 @@ $actionList-item-checkmark-transition-timing: 50ms;
     line-height: $lh-default;
     color: var(--color-fg-muted);
   }
+}
+
+// helper for grid alignment with multi-line content
+// span wrapping svg or text
+.ActionList-item-visual {
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  fill: var(--color-fg-muted);
+  color: var(--color-fg-muted); // if visual is text
+}
+
+// text
+.ActionList-item-label {
+  font-weight: $font-weight-normal;
+  color: var(--color-fg-default);
+  position: relative; // for pseudo dividers
 }
 
 // nested groups

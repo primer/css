@@ -33,7 +33,7 @@ export default {
     },
     variant: {
       options: [0, 1], // iterator
-      mapping: ['', 'ActionList-item-content--danger'], // values
+      mapping: ['', 'ActionList-item--danger'], // values
       control: {
         type: 'select',
         labels: ['default', 'danger']
@@ -144,7 +144,8 @@ export const ListItemTemplate = ({
       type && `${type}`,
       ariaCurrent && 'ActionList-item--nav-active',
       subItem && `ActionList-item--sub-item`,
-      containsSubItem && `ActionList-item--has-sub-item`
+      containsSubItem && `ActionList-item--has-sub-item`,
+      variant && `${variant}`
     )}
     role={href ? 'none' : 'menuitem'}
     id={id}
@@ -162,7 +163,7 @@ export const ListItemTemplate = ({
             leadingVisual && 'ActionList-item-content--leadingVisual',
             trailingVisual && 'ActionList-item-content--trailingVisual',
             (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription',
-            variant && `${variant}`,
+
             leadingVisual && leadingVisualSize && `${leadingVisualSize}`
           )}
         >
@@ -190,8 +191,7 @@ export const ListItemTemplate = ({
             size && `${size}`,
             leadingVisual && 'ActionList-item-content--leadingVisual',
             trailingVisual && 'ActionList-item-content--trailingVisual',
-            (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription',
-            variant && `${variant}`
+            (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription'
           )}
         >
           {leadingVisual && (

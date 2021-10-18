@@ -461,7 +461,7 @@ export const DangerItem = ListItemTemplate.bind({})
 DangerItem.args = {
   ...ListItemTemplate.args,
   text: 'Danger danger',
-  variant: 'ActionList-item-content--danger'
+  variant: 'ActionList-item--danger'
 }
 DangerItem.argTypes = {
   size: {

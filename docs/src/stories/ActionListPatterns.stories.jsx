@@ -25,7 +25,7 @@ NavWithSubItems.args = {
   children: (
     <>
       <ListItemTemplate text="Nav Item" href="/" />
-      <ListItemTemplate text="Nav Item" href="/" />
+      <ListItemTemplate text="Nav Item" href="/" ariaCurrent="page" variant="ActionList-item--danger" />
       <ListItemTemplate text="Nav Item" href="/" />
       <ListItemTemplate
         containsSubItem
