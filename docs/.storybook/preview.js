@@ -2,6 +2,37 @@ import '../../src/docs.scss'
 import '../../src/index.scss'
 import '../../src/base/index.scss'
 
+const customViewports = {
+  widthsm: {
+    name: 'width-sm [544px]',
+    styles: {
+      width: '544px',
+      height: '100vh'
+    }
+  },
+  widthmd: {
+    name: 'width-md [768px]',
+    styles: {
+      width: '768px',
+      height: '100vh'
+    }
+  },
+  widthlg: {
+    name: 'width-lg [1012px]',
+    styles: {
+      width: '1012px',
+      height: '100vh'
+    }
+  },
+  widthxl: {
+    name: 'width-xl [1280px]',
+    styles: {
+      width: '1280px',
+      height: '100vh'
+    }
+  }
+}
+
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
   controls: {
@@ -15,7 +46,8 @@ export const parameters = {
   layout: 'fullscreen',
   html: {
     root: '#story' // target id for html tab (should be direct parent of <Story /> for easy copy/paste)
-  }
+  },
+  viewport: {viewports: customViewports}
 }
 
 export const globalTypes = {
@@ -25,7 +57,7 @@ export const globalTypes = {
     defaultValue: 'light',
     toolbar: {
       icon: 'circlehollow',
-      items: ['light', 'light_protanopia', 'dark', 'dark_dimmed', 'dark_high_contrast', 'dark_protanopia', 'all'],
+      items: ['light', 'light_colorblind', 'dark', 'dark_dimmed', 'dark_high_contrast', 'dark_colorblind', 'all'],
       showName: true
     }
   }
@@ -40,7 +72,7 @@ export const decorators = [
             <Story {...context} />
           </div>
 
-          <div data-color-mode="light" data-light-theme="light_protanopia" className="story-wrap" id="story">
+          <div data-color-mode="light" data-light-theme="light_colorblind" className="story-wrap" id="story">
             <Story {...context} />
           </div>
 
@@ -56,7 +88,7 @@ export const decorators = [
             <Story {...context} />
           </div>
 
-          <div data-color-mode="dark" data-dark-theme="dark_protanopia" className="story-wrap" id="story">
+          <div data-color-mode="dark" data-dark-theme="dark_colorblind" className="story-wrap" id="story">
             <Story {...context} />
           </div>
         </div>
@@ -71,9 +103,9 @@ export const decorators = [
       )
     }
 
-    if (context.globals.theme === 'light_protanopia') {
+    if (context.globals.theme === 'light_colorblind') {
       return (
-        <div data-color-mode="light" data-light-theme="light_protanopia" className="story-wrap" id="story">
+        <div data-color-mode="light" data-light-theme="light_colorblind" className="story-wrap" id="story">
           <Story {...context} />
         </div>
       )
@@ -103,9 +135,9 @@ export const decorators = [
       )
     }
 
-    if (context.globals.theme === 'dark_protanopia') {
+    if (context.globals.theme === 'dark_colorblind') {
       return (
-        <div data-color-mode="dark" data-dark-theme="dark_protanopia" className="story-wrap" id="story">
+        <div data-color-mode="dark" data-dark-theme="dark_colorblind" className="story-wrap" id="story">
           <Story {...context} />
         </div>
       )
