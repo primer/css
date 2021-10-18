@@ -28,6 +28,7 @@ NavWithSubItems.args = {
       <ListItemTemplate text="Nav Item" href="/" ariaCurrent="page" />
       <ListItemTemplate text="Nav Item" href="/" />
       <ListItemTemplate
+        collapsible
         containsSubItem
         text="Nav Item"
         children={

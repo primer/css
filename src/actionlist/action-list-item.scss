@@ -226,6 +226,11 @@ $actionList-item-checkmark-transition-timing: 50ms;
     &.ActionList-item-content--trailingVisual {
       grid-template-columns: min-content minmax(min-content, auto) min-content;
     }
+
+    // leading + trailing visuals
+    &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
+      grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
+    }
   }
 
   // leading visual
