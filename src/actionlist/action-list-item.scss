@@ -127,31 +127,6 @@ $actionList-item-checkmark-transition-timing: 50ms;
       top: calc(50% - (24px / 2));
       background: var(--color-accent-fg);
     }
-
-    // note: nested class
-    // .ActionList-item-content:not(.ActionList-item-content--danger) {
-    //   &:before {
-    //     content: '';
-    //     position: absolute;
-    //     height: 32px;
-    //     //   left: -$actionList-item-padding-horizontal;
-    //     content: ' ';
-    //     position: absolute;
-    //     height: 32px;
-    //     //   left: -8px;
-    //     width: 100%;
-    //     //   transform: translateX(-32px);
-    //     border-radius: 6px;
-    //     z-index: -1;
-    //     background: $actionList-item-selected-bg;
-    //   }
-
-    //   @media (hover: hover) and (pointer: fine) {
-    //     &:hover {
-    //       background: $actionList-item-active-bg;
-    //     }
-    //   }
-    // }
   }
 
   // variants
@@ -260,6 +235,7 @@ $actionList-item-checkmark-transition-timing: 50ms;
     }
   }
 
+  // TODO: better organize these for nesting
   // wrapper span
   .ActionList-item-label--blockDescription,
   .ActionList-item-label--inlineDescription {
@@ -326,169 +302,39 @@ $actionList-item-checkmark-transition-timing: 50ms;
   font-size: $font-size-small;
 }
 
+// target ActionList-item--sub-item for padding-left to maintain :active :after state
+
 // no leading visual
 
 // 1 level nested
 .ActionList-item--sub-group {
-  //   padding-left: 16px;
-
   .ActionList-item--sub-item {
     padding-left: 16px;
   }
-
-  //   .ActionList-item--sub-item > .ActionList-item-content {
-  //     &:before {
-  //       width: calc(100% + 16px);
-  //       transform: translateX(-16px);
-  //     }
-
-  //     &:after {
-  //       transform: translateX(-16px);
-  //     }
-  //   }
-
-  //   // last item in subgroup where item contains another subgroup
-  //   .ActionList-item:last-of-type {
-  //     > .ActionList-item-content {
-  //       &:before {
-  //         width: calc(100% + 16px);
-  //         transform: translateX(-16px);
-  //       }
-  //     }
-  //   }
-
-  //   // 2 levels nested li > ul > li
-  //   .ActionList-item:last-of-type .ActionList-item--sub-group {
-  //     .ActionList-item--sub-item > .ActionList-item-content {
-  //       &:before {
-  //         width: calc(100% + 32px);
-  //         transform: translateX(-32px);
-  //       }
-
-  //       &:after {
-  //         transform: translateX(-32px);
-  //       }
-  //     }
-  //   }
 }
 
 // has 16px leading visual
 
 // 1 level nested
 .ActionList-item-visual--16 + .ActionList-item--sub-group {
-  padding-left: 24px;
-
-  .ActionList-item--sub-item > .ActionList-item-content {
-    &:before {
-      width: calc(100% + 24px);
-      transform: translateX(-24px);
-    }
-
-    &:after {
-      transform: translateX(-24px);
-    }
-  }
-
-  // last item in subgroup where item contains another subgroup
-  .ActionList-item:last-of-type {
-    > .ActionList-item-content {
-      &:before {
-        width: calc(100% + 24px);
-        transform: translateX(-24px);
-      }
-    }
-  }
-
-  // 2 levels nested
-  .ActionList-item:last-of-type .ActionList-item--sub-group {
-    .ActionList-item--sub-item > .ActionList-item-content {
-      &:before {
-        width: calc(100% + 48px);
-        transform: translateX(-48px);
-      }
-
-      &:after {
-        transform: translateX(-48px);
-      }
-    }
+  .ActionList-item--sub-item {
+    padding-left: 24px;
   }
 }
+
+// has 20px leading visual
 
 .ActionList-item-visual--20 + .ActionList-item--sub-group {
-  padding-left: 28px;
-
-  .ActionList-item--sub-item > .ActionList-item-content {
-    &:before {
-      width: calc(100% + 28px);
-      transform: translateX(-28px);
-    }
-
-    &:after {
-      transform: translateX(-28px);
-    }
-  }
-
-  // last item in subgroup where item contains another subgroup
-  .ActionList-item:last-of-type {
-    > .ActionList-item-content {
-      &:before {
-        width: calc(100% + 28px);
-        transform: translateX(-28px);
-      }
-    }
-  }
-
-  // 2 levels nested
-  .ActionList-item:last-of-type .ActionList-item--sub-group {
-    .ActionList-item--sub-item > .ActionList-item-content {
-      &:before {
-        width: calc(100% + 56px);
-        transform: translateX(-56px);
-      }
-
-      &:after {
-        transform: translateX(-56px);
-      }
-    }
+  .ActionList-item--sub-item {
+    padding-left: 28px;
   }
 }
 
+// has 24px leading visual
+
 .ActionList-item-visual--24 + .ActionList-item--sub-group {
-  padding-left: 32px;
-
-  .ActionList-item--sub-item > .ActionList-item-content {
-    &:before {
-      width: calc(100% + 32px);
-      transform: translateX(-32px);
-    }
-
-    &:after {
-      transform: translateX(-32px);
-    }
-  }
-
-  // last item in subgroup where item contains another subgroup
-  .ActionList-item:last-of-type {
-    > .ActionList-item-content {
-      &:before {
-        width: calc(100% + 32px);
-        transform: translateX(-32px);
-      }
-    }
-  }
-
-  // 2 levels nested
-  .ActionList-item:last-of-type .ActionList-item--sub-group {
-    .ActionList-item--sub-item > .ActionList-item-content {
-      &:before {
-        width: calc(100% + 64px);
-        transform: translateX(-64px);
-      }
-
-      &:after {
-        transform: translateX(-64px);
-      }
-    }
+  .ActionList-item--sub-item {
+    padding-left: 32px;
   }
 }
 // single select
