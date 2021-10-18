@@ -129,6 +129,20 @@ $actionList-item-checkmark-transition-timing: 50ms;
     }
   }
 
+  &[aria-expanded='true'] {
+    .ActionList-item-content--collapseIcon {
+      transform: rotate(90deg);
+      transition: transform linear $actionList-item-checkmark-transition-timing;
+    }
+  }
+
+  &[aria-expanded='false'] {
+    .ActionList-item-content--collapseIcon {
+      transform: rotate(0deg);
+      transition: transform linear $actionList-item-checkmark-transition-timing;
+    }
+  }
+
   // variants
 
   &.ActionList-item--danger {
@@ -196,6 +210,21 @@ $actionList-item-checkmark-transition-timing: 50ms;
     // if leading/trailing visual, align with first line of content
     .ActionList-item-visual {
       place-self: start;
+    }
+  }
+
+  // collapsible no visual
+  &.ActionList-item-content--collapsible {
+    grid-template-columns: min-content minmax(min-content, auto);
+
+    // leading visual
+    &.ActionList-item-content--leadingVisual {
+      grid-template-columns: min-content min-content minmax(min-content, auto);
+    }
+
+    // trailing visual
+    &.ActionList-item-content--trailingVisual {
+      grid-template-columns: min-content minmax(min-content, auto) min-content;
     }
   }
 

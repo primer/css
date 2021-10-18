@@ -108,6 +108,14 @@ export default {
       type: 'string',
       name: 'id',
       description: 'Used for aria-labelledby if nested group within item'
+    },
+    collapsible: {
+      defaultValue: false,
+      control: {type: 'boolean'}
+    },
+    collapsed: {
+      defaultValue: false,
+      control: {type: 'boolean'}
     }
   }
   //   decorators: [
@@ -136,7 +144,9 @@ export const ListItemTemplate = ({
   subItem,
   containsSubItem,
   id,
-  type
+  type,
+  collapsible,
+  collapsed
 }) => (
   <li
     className={clsx(
@@ -149,6 +159,8 @@ export const ListItemTemplate = ({
     )}
     role={href ? 'none' : 'menuitem'}
     id={id}
+    aria-haspopup={collapsible ? 'true' : undefined}
+    aria-expanded={collapsed ? 'false' : 'true'}
   >
     {href ? (
       <>
@@ -163,7 +175,6 @@ export const ListItemTemplate = ({
             leadingVisual && 'ActionList-item-content--leadingVisual',
             trailingVisual && 'ActionList-item-content--trailingVisual',
             (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription',
-
             leadingVisual && leadingVisualSize && `${leadingVisualSize}`
           )}
         >
@@ -191,9 +202,21 @@ export const ListItemTemplate = ({
             size && `${size}`,
             leadingVisual && 'ActionList-item-content--leadingVisual',
             trailingVisual && 'ActionList-item-content--trailingVisual',
-            (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription'
+            (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription',
+            collapsible && 'ActionList-item-content--collapsible'
           )}
         >
+          {collapsible && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              width="16"
+              height="16"
+              className="ActionList-item-content--collapseIcon"
+            >
+              <path d="M6.427 4.427l3.396 3.396a.25.25 0 010 .354l-3.396 3.396A.25.25 0 016 11.396V4.604a.25.25 0 01.427-.177z"></path>
+            </svg>
+          )}
           {leadingVisual && (
             <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />
           )}
