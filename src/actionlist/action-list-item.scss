@@ -136,12 +136,20 @@ $actionList-item-checkmark-transition-timing: 50ms;
       transform: rotate(0deg);
       transition: transform linear $actionList-item-checkmark-transition-timing;
     }
+
+    .ActionList-item--sub-group {
+      display: block;
+    }
   }
 
   &[aria-expanded='false'] {
     .ActionList-item-content--collapseIcon {
       transform: rotate(180deg);
       transition: transform linear $actionList-item-checkmark-transition-timing;
+    }
+
+    .ActionList-item--sub-group {
+      display: none;
     }
   }
 
