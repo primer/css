@@ -117,16 +117,6 @@ export default {
     collapsible: {
       defaultValue: false,
       control: {type: 'boolean'}
-    },
-    collapsed: {
-      defaultValue: false,
-      control: {type: 'boolean'}
-    },
-    itemOnClick: {
-      action: 'clicked'
-    },
-    expanded: {
-      control: {type: 'boolean'}
     }
   }
   //   decorators: [
@@ -157,12 +147,8 @@ export const ListItemTemplate = ({
   id,
   type,
   collapsible,
-  collapsed,
-  trailingAction,
-  itemOnClick,
-  expanded
+  trailingAction
 }) => {
-  //   const [args, updateArgs] = useArgs()
   const [isCollapsed, itemisCollapsed] = useToggle()
   return (
     <li
@@ -174,12 +160,11 @@ export const ListItemTemplate = ({
         containsSubItem && `ActionList-item--has-sub-item`,
         variant && `${variant}`
       )}
-      //   onClick={() => updateArgs({collapsed: true})}
       onClick={itemisCollapsed}
       role={href ? 'none' : 'menuitem'}
       id={id}
       aria-haspopup={collapsible ? 'true' : undefined}
-      aria-expanded={isCollapsed ? 'false' : 'true'}
+      aria-expanded={collapsible ? (isCollapsed ? 'false' : 'true') : undefined}
     >
       {href ? (
         <>
@@ -247,8 +232,7 @@ export const ListItemTemplate = ({
               size && `${size}`,
               leadingVisual && 'ActionList-item-content--leadingVisual',
               trailingVisual && 'ActionList-item-content--trailingVisual',
-              (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription',
-              collapsible && 'ActionList-item-content--collapsible'
+              (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription'
             )}
           >
             {leadingVisual && (
@@ -297,9 +281,6 @@ export const ListItemTemplate = ({
       )}
     </li>
   )
-}
-ListItemTemplate.args = {
-  expanded: false
 }
 
 export const Playground = ListItemTemplate.bind({})

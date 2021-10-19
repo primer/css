@@ -1,30 +1,8 @@
-// waiting on https://github.com/primer/primitives/pull/256 for these primitives
-$actionList-item-hover-bg: #f0f3f5;
-$actionList-item-active-bg: #e8ebed;
-$actionList-item-selected-bg: #f0f3f5;
-$actionList-item-focus-bg: #e0e4e7;
-$actionList-item-divider: #e9e9ed;
-
-$actionList-item-danger-hover-bg: #fff0f2;
-$actionList-item-danger-active-bg: #ffebed;
-$actionList-item-danger-focus-bg: #ffdbe0;
-
-// $actionList-item-padding-vertical: (($spacer-5 - $s-20) / 2); hmmmmm
-$actionList-item-padding-vertical: 6px;
-$actionList-item-padding-horizontal: $spacer-2;
-$actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60hz monitor
-
-$actionList-padding: $spacer-2;
+@import './action-list-helpers-temporary.scss';
 
 // <ul>
 .ActionList {
   padding: $actionList-padding;
-
-  // if leading slot exists at least once
-  //   :where(.ActionList-item-action--leading) {
-  //     background-color: deeppink;
-  //     width: 16px;
-  //   }
 }
 
 // dividers

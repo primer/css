@@ -9,9 +9,9 @@ export default {
   title: 'Components/ActionList/Patterns',
   decorators: [
     Story => (
-      <div style={{margin: '3em', border: 'dashed 1px var(--color-scale-gray-3)'}}>
+      <nav>
         <Story />
-      </div>
+      </nav>
     )
   ]
 }
@@ -26,7 +26,7 @@ NavWithSubItems.args = {
   children: (
     <>
       <ListItemTemplate text="Nav Item" href="/" />
-      <ListItemTemplate text="Nav Item" href="/" ariaCurrent="page" />
+      <ListItemTemplate text="Nav Item" href="/" />
       <ListItemTemplate text="Nav Item" href="/" />
       <ListItemTemplate
         collapsible
@@ -34,23 +34,14 @@ NavWithSubItems.args = {
         text="Nav Item"
         children={
           <ListTemplate
+            role="menu"
             subGroup
             ariaLabel="Sub nav descrioption"
             children={
               <>
                 <ListItemTemplate subItem text="Sub Nav Item" href="/" />
                 <ListItemTemplate subItem text="Sub Nav Item" href="/" ariaCurrent="page" />
-                <ListTemplate
-                  subGroup
-                  text="Sub Nav Item"
-                  children={
-                    <>
-                      <ListItemTemplate subItem text="Sub Nav Item" href="/" />
-                      <ListItemTemplate subItem text="Sub Nav Item" href="/" ariaCurrent="page" />
-                      <ListItemTemplate subItem text="Sub Nav Item" href="/" />
-                    </>
-                  }
-                />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" />
               </>
             }
           />
@@ -60,67 +51,6 @@ NavWithSubItems.args = {
   )
 }
 NavWithSubItems.argTypes = {
-  children: {
-    control: false
-  },
-  role: {
-    control: false
-  }
-}
-
-export const NavWithSubItemsMultiLevel = ListTemplate.bind({})
-NavWithSubItemsMultiLevel.args = {
-  ...ListTemplate.args,
-  ...ListItemTemplate.args,
-  ariaLabel: 'Main menu description',
-  role: 'menu',
-  showDividers: false,
-  children: (
-    <>
-      <ListItemTemplate text="Nav Item" href="/" />
-      <ListItemTemplate text="Nav Item" href="/" />
-      <ListItemTemplate text="Nav Item" href="/" />
-      <ListItemTemplate
-        containsSubItem
-        text="Nav Item"
-        children={
-          <ListTemplate
-            subGroup
-            ariaLabel="Sub nav descrioption"
-            children={
-              <>
-                <ListItemTemplate subItem text="Sub Nav Item" href="/" />
-                <ListItemTemplate subItem text="Sub Nav Item" href="/" ariaCurrent="page" />
-                <ListItemTemplate
-                  subItem
-                  containsSubItem
-                  text="Nav Item"
-                  href="/"
-                  children={
-                    <ListTemplate
-                      subGroup
-                      ariaLabel="Sub nav descrioption"
-                      children={
-                        <>
-                          <ListItemTemplate subItem text="Sub Nav Item" href="/" />
-                          <ListItemTemplate subItem text="Sub Nav Item" href="/" ariaCurrent="page" />
-                          <ListItemTemplate subItem text="Sub Nav Item" href="/" />
-                        </>
-                      }
-                    />
-                  }
-                />
-              </>
-            }
-          />
-        }
-      />
-      <ListItemTemplate text="Nav Item" href="/" />
-      <ListItemTemplate text="Nav Item" href="/" />
-    </>
-  )
-}
-NavWithSubItemsMultiLevel.argTypes = {
   children: {
     control: false
   },

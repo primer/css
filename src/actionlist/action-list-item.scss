@@ -1,41 +1,10 @@
-// waiting on https://github.com/primer/primitives/pull/256 for these primitives
-$actionList-item-hover-bg: #f0f3f5;
-$actionList-item-active-bg: #e8ebed;
-$actionList-item-selected-bg: #f0f3f5;
-$actionList-item-focus-bg: #e0e4e7;
-$actionList-item-divider: #e9e9ed;
+@import './action-list-helpers-temporary.scss';
 
-$actionList-item-danger-hover-bg: #fff0f2;
-$actionList-item-danger-active-bg: #ffebed;
-$actionList-item-danger-focus-bg: #ffdbe0;
-
-// expanded from src/support/variables/layout.scss
-// adds 12px to the scale as of https://github.com/github/design-systems/issues/992
-//
-// https://github.com/github/design-systems/issues/1272
-
-$s-20: 20px;
-$s-28: 28px;
-
-// CSS Easing
-
-$ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-$ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
-$ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
-// $actionList-item-padding-vertical: (($spacer-5 - $s-20) / 2); hmmmmm
-$actionList-item-padding-vertical: 6px;
-$actionList-item-padding-horizontal: $spacer-2;
-$actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60hz monitor
-$actionList-item-checkmark-transition-timing: 50ms;
-
-@mixin pseudoBackground {
-  content: '';
-  position: absolute;
-  height: 32px;
-  position: absolute;
-  width: 100%;
-  border-radius: $border-radius-2;
-  z-index: -1;
+@mixin focusOutline {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent-fg); // this color breaks convention
+  position: relative;
+  z-index: 1;
 }
 
 // <li>
@@ -140,6 +109,12 @@ $actionList-item-checkmark-transition-timing: 50ms;
     .ActionList-item--sub-group {
       display: block;
     }
+
+    &.ActionList-item--has-sub-item {
+      > .ActionList-item-content > .ActionList-item-label {
+        font-weight: $font-weight-bold;
+      }
+    }
   }
 
   &[aria-expanded='false'] {
@@ -182,10 +157,8 @@ $actionList-item-checkmark-transition-timing: 50ms;
   display: grid;
   padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
   grid-template-rows: minmax(20px, max-content); // 20px + 12px padding [32]
-  //   grid-template-columns: minmax(min-content, 100%); // default one column
   grid-template-areas: 'leadingAction leadingVisual label trailingVisual trailingAction';
   grid-template-columns: min-content min-content minmax(min-content, auto) min-content min-content;
-  //   column-gap: $spacer-2;
   align-items: center;
   position: relative;
   border-radius: $border-radius-2;
@@ -199,41 +172,8 @@ $actionList-item-checkmark-transition-timing: 50ms;
     margin-right: $spacer-2;
   }
 
-  //   & > :not(.ActionList-item-action--leading):before {
-  //     grid-area: leadingAction;
-  //     content: '';
-  //     position: absolute;
-  //     width: 16px;
-  //     height: 16px;
-
-  //     background-color: deeppink;
-  //   }
-
-  //   :where(.ActionList-item-action--leading) {
-  //     background-color: deeppink;
-  //     width: 16px;
-  //   }
-
-  //   .ActionList-item-action--leading:empty() {
-  //       width: 26px
-  //   }
-
-  //   & > a:before {
-  //     grid-area: leadingAction;
-  //     content: '';
-  //     position: absolute;
-  //     height: 32px;
-  //     position: absolute;
-  //     width: 16px;
-  //     border-radius: $border-radius-2;
-  //     z-index: -1;
-  //   }
-
   &:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--color-accent-fg); // this color breaks convention
-    position: relative;
-    z-index: 1;
+    @include focusOutline;
   }
 
   // sizes
@@ -251,68 +191,32 @@ $actionList-item-checkmark-transition-timing: 50ms;
     grid-template-rows: minmax(36px, max-content);
   }
 
-  // children grid definitions
+  // place children on grid
+
+  .ActionList-item-action--leading {
+    grid-area: leadingAction;
+  }
+
+  .ActionList-item-visual--leading {
+    grid-area: leadingVisual;
+  }
+
+  .ActionList-item-label {
+    grid-area: label;
+  }
+
+  .ActionList-item-visual--trailing {
+    grid-area: trailingVisual;
+  }
+
+  .ActionList-item-action--trailing {
+    grid-area: trailingAction;
+  }
 
   &.ActionList-item-content--blockDescription {
     // if leading/trailing visual, align with first line of content
     .ActionList-item-visual {
       place-self: start;
-    }
-  }
-
-  // collapsible no visual
-  &.ActionList-item-content--collapsible {
-    // grid-template-columns: min-content minmax(min-content, auto);
-
-    // leading visual
-    &.ActionList-item-content--leadingVisual {
-      //   grid-template-columns: min-content min-content minmax(min-content, auto);
-    }
-
-    // trailing visual
-    &.ActionList-item-content--trailingVisual {
-      //   grid-template-columns: min-content minmax(min-content, auto) min-content;
-    }
-
-    // leading + trailing visuals
-    &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
-      //   grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
-    }
-  }
-
-  // leading visual
-  &.ActionList-item-content--leadingVisual {
-    // grid-template-columns: min-content minmax(min-content, auto);
-  }
-
-  // trailing visual
-  &.ActionList-item-content--trailingVisual {
-    // grid-template-columns: minmax(min-content, auto) min-content;
-  }
-
-  // leading + trailing visuals
-  &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
-    // grid-template-columns: min-content minmax(min-content, auto) min-content;
-  }
-
-  // checkmark
-  &.ActionList-item-content--singleSelect,
-  &.ActionList-item-content--multiSelect {
-    // grid-template-columns: min-content minmax(min-content, auto);
-
-    // checkmark + leading visual
-    &.ActionList-item-content--leadingVisual {
-      //   grid-template-columns: min-content min-content minmax(min-content, auto);
-    }
-
-    // checkmark + trailing visual
-    &.ActionList-item-content--trailingVisual {
-      //   grid-template-columns: min-content minmax(min-content, auto) min-content;
-    }
-
-    // checkmark + leading * trailing visuals
-    &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
-      //   grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
     }
   }
 
@@ -366,33 +270,14 @@ $actionList-item-checkmark-transition-timing: 50ms;
   color: var(--color-fg-muted); // if visual is text
 }
 
-.ActionList-item-action--trailing {
-  grid-area: trailingAction;
-}
-
-.ActionList-item-visual--leading {
-  grid-area: leadingVisual;
-}
-
-.ActionList-item-visual--trailing {
-  grid-area: trailingVisual;
-}
-
 // text
 .ActionList-item-label {
-  grid-area: label;
   font-weight: $font-weight-normal;
   color: var(--color-fg-default);
   position: relative; // for pseudo dividers
 }
 
 // nested groups
-
-.ActionList-item--has-sub-item {
-  > .ActionList-item-content > .ActionList-item-label {
-    font-weight: $font-weight-bold;
-  }
-}
 
 .ActionList-item--sub-item > .ActionList-item-content {
   font-size: $font-size-small;
