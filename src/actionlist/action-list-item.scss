@@ -129,16 +129,18 @@ $actionList-item-checkmark-transition-timing: 50ms;
     }
   }
 
+  // collapsible item [aria-expanded]
+
   &[aria-expanded='true'] {
     .ActionList-item-content--collapseIcon {
-      transform: rotate(90deg);
+      transform: rotate(0deg);
       transition: transform linear $actionList-item-checkmark-transition-timing;
     }
   }
 
   &[aria-expanded='false'] {
     .ActionList-item-content--collapseIcon {
-      transform: rotate(0deg);
+      transform: rotate(180deg);
       transition: transform linear $actionList-item-checkmark-transition-timing;
     }
   }
@@ -172,8 +174,10 @@ $actionList-item-checkmark-transition-timing: 50ms;
   display: grid;
   padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
   grid-template-rows: minmax(20px, max-content); // 20px + 12px padding [32]
-  grid-template-columns: minmax(min-content, 100%); // default one column
-  column-gap: $spacer-2;
+  //   grid-template-columns: minmax(min-content, 100%); // default one column
+  grid-template-areas: 'leadingAction leadingVisual label trailingVisual trailingAction';
+  grid-template-columns: min-content min-content minmax(min-content, auto) min-content min-content;
+  //   column-gap: $spacer-2;
   align-items: center;
   position: relative;
   border-radius: $border-radius-2;
@@ -181,6 +185,41 @@ $actionList-item-checkmark-transition-timing: 50ms;
   color: var(--color-fg-default);
   user-select: none;
   transition: $actionList-item-bg-transition;
+
+  // column-gap persists with empty grid-areas, margin applies when children exist
+  & > :not(:last-child) {
+    margin-right: $spacer-2;
+  }
+
+  //   & > :not(.ActionList-item-action--leading):before {
+  //     grid-area: leadingAction;
+  //     content: '';
+  //     position: absolute;
+  //     width: 16px;
+  //     height: 16px;
+
+  //     background-color: deeppink;
+  //   }
+
+  //   :where(.ActionList-item-action--leading) {
+  //     background-color: deeppink;
+  //     width: 16px;
+  //   }
+
+  //   .ActionList-item-action--leading:empty() {
+  //       width: 26px
+  //   }
+
+  //   & > a:before {
+  //     grid-area: leadingAction;
+  //     content: '';
+  //     position: absolute;
+  //     height: 32px;
+  //     position: absolute;
+  //     width: 16px;
+  //     border-radius: $border-radius-2;
+  //     z-index: -1;
+  //   }
 
   &:focus-visible {
     outline: none;
@@ -215,57 +254,57 @@ $actionList-item-checkmark-transition-timing: 50ms;
 
   // collapsible no visual
   &.ActionList-item-content--collapsible {
-    grid-template-columns: min-content minmax(min-content, auto);
+    // grid-template-columns: min-content minmax(min-content, auto);
 
     // leading visual
     &.ActionList-item-content--leadingVisual {
-      grid-template-columns: min-content min-content minmax(min-content, auto);
+      //   grid-template-columns: min-content min-content minmax(min-content, auto);
     }
 
     // trailing visual
     &.ActionList-item-content--trailingVisual {
-      grid-template-columns: min-content minmax(min-content, auto) min-content;
+      //   grid-template-columns: min-content minmax(min-content, auto) min-content;
     }
 
     // leading + trailing visuals
     &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
-      grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
+      //   grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
     }
   }
 
   // leading visual
   &.ActionList-item-content--leadingVisual {
-    grid-template-columns: min-content minmax(min-content, auto);
+    // grid-template-columns: min-content minmax(min-content, auto);
   }
 
   // trailing visual
   &.ActionList-item-content--trailingVisual {
-    grid-template-columns: minmax(min-content, auto) min-content;
+    // grid-template-columns: minmax(min-content, auto) min-content;
   }
 
   // leading + trailing visuals
   &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
-    grid-template-columns: min-content minmax(min-content, auto) min-content;
+    // grid-template-columns: min-content minmax(min-content, auto) min-content;
   }
 
   // checkmark
   &.ActionList-item-content--singleSelect,
   &.ActionList-item-content--multiSelect {
-    grid-template-columns: min-content minmax(min-content, auto);
+    // grid-template-columns: min-content minmax(min-content, auto);
 
     // checkmark + leading visual
     &.ActionList-item-content--leadingVisual {
-      grid-template-columns: min-content min-content minmax(min-content, auto);
+      //   grid-template-columns: min-content min-content minmax(min-content, auto);
     }
 
     // checkmark + trailing visual
     &.ActionList-item-content--trailingVisual {
-      grid-template-columns: min-content minmax(min-content, auto) min-content;
+      //   grid-template-columns: min-content minmax(min-content, auto) min-content;
     }
 
     // checkmark + leading * trailing visuals
     &.ActionList-item-content--leadingVisual.ActionList-item-content--trailingVisual {
-      grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
+      //   grid-template-columns: min-content min-content minmax(min-content, auto) min-content;
     }
   }
 
@@ -273,6 +312,7 @@ $actionList-item-checkmark-transition-timing: 50ms;
   // wrapper span
   .ActionList-item-label--blockDescription,
   .ActionList-item-label--inlineDescription {
+    grid-area: label;
     display: flex;
 
     .ActionList-item-label {
@@ -309,7 +349,8 @@ $actionList-item-checkmark-transition-timing: 50ms;
 
 // helper for grid alignment with multi-line content
 // span wrapping svg or text
-.ActionList-item-visual {
+.ActionList-item-visual,
+.ActionList-item-action {
   min-height: 20px;
   display: flex;
   align-items: center;
@@ -317,8 +358,21 @@ $actionList-item-checkmark-transition-timing: 50ms;
   color: var(--color-fg-muted); // if visual is text
 }
 
+.ActionList-item-action--trailing {
+  grid-area: trailingAction;
+}
+
+.ActionList-item-visual--leading {
+  grid-area: leadingVisual;
+}
+
+.ActionList-item-visual--trailing {
+  grid-area: trailingVisual;
+}
+
 // text
 .ActionList-item-label {
+  grid-area: label;
   font-weight: $font-weight-normal;
   color: var(--color-fg-default);
   position: relative; // for pseudo dividers

@@ -146,7 +146,8 @@ export const ListItemTemplate = ({
   id,
   type,
   collapsible,
-  collapsed
+  collapsed,
+  trailingAction
 }) => (
   <li
     className={clsx(
@@ -179,7 +180,10 @@ export const ListItemTemplate = ({
           )}
         >
           {leadingVisual && (
-            <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />
+            <span
+              className="ActionList-item-visual ActionList-item-visual--leading"
+              dangerouslySetInnerHTML={{__html: leadingVisual}}
+            />
           )}
           {description && (
             <span className={`${descriptionVariant}`}>
@@ -189,8 +193,31 @@ export const ListItemTemplate = ({
           )}
           {!description && text && <span className="ActionList-item-label">{text}</span>}
           {trailingVisual && (
-            <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
+            <span
+              className="ActionList-item-visual ActionList-item-visual--trailing"
+              dangerouslySetInnerHTML={{__html: trailingVisual}}
+            />
           )}
+          {trailingAction ||
+            (collapsible && (
+              <span className="ActionList-item-action ActionList-item-action--trailing">
+                {collapsible && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    height="16"
+                    className="ActionList-item-content--collapseIcon"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    ></path>
+                  </svg>
+                )}
+                {trailingAction}
+              </span>
+            ))}
         </a>
         {children}
       </>
@@ -206,19 +233,11 @@ export const ListItemTemplate = ({
             collapsible && 'ActionList-item-content--collapsible'
           )}
         >
-          {collapsible && (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              width="16"
-              height="16"
-              className="ActionList-item-content--collapseIcon"
-            >
-              <path d="M6.427 4.427l3.396 3.396a.25.25 0 010 .354l-3.396 3.396A.25.25 0 016 11.396V4.604a.25.25 0 01.427-.177z"></path>
-            </svg>
-          )}
           {leadingVisual && (
-            <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: leadingVisual}} />
+            <span
+              className="ActionList-item-visual ActionList-item-visual--leading"
+              dangerouslySetInnerHTML={{__html: leadingVisual}}
+            />
           )}
           {description && (
             <span className={`${descriptionVariant}`}>
@@ -229,8 +248,31 @@ export const ListItemTemplate = ({
           {!description && text && <span className="ActionList-item-label">{text}</span>}
 
           {trailingVisual && (
-            <span className="ActionList-item-visual" dangerouslySetInnerHTML={{__html: trailingVisual}} />
+            <span
+              className="ActionList-item-visual ActionList-item-visual--trailing"
+              dangerouslySetInnerHTML={{__html: trailingVisual}}
+            />
           )}
+          {trailingAction ||
+            (collapsible && (
+              <span className="ActionList-item-action ActionList-item-action--trailing">
+                {collapsible && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    height="16"
+                    className="ActionList-item-content--collapseIcon"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                    ></path>
+                  </svg>
+                )}
+                {trailingAction}
+              </span>
+            ))}
         </span>
         {children}
       </>

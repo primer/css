@@ -19,6 +19,12 @@ $actionList-padding: $spacer-2;
 // <ul>
 .ActionList {
   padding: $actionList-padding;
+
+  // if leading slot exists at least once
+  //   :where(.ActionList-item-action--leading) {
+  //     background-color: deeppink;
+  //     width: 16px;
+  //   }
 }
 
 // dividers
