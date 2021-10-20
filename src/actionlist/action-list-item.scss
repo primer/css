@@ -54,15 +54,14 @@
     &:hover,
     &:active {
       // hide dividers
-      .ActionList-item-label:before,
-      + .ActionList-item .ActionList-item-label:before {
+      .ActionList-item-content--label:before,
+      + .ActionList-item .ActionList-item-content--label:before {
         visibility: hidden;
       }
     }
   }
 
-  // target contents of li if sub-item
-  // has-sub-item will never be :active
+  // target contents of li if sub-item (li wraps item label + nested ul)
   // collapse styles here
   &.ActionList-item--has-sub-item {
     // first child
@@ -71,9 +70,6 @@
         background-color: $actionList-item-hover-bg;
       }
     }
-  }
-
-  .ActionList-item--sub-group {
   }
 
   // active state [aria-current]
@@ -111,7 +107,7 @@
     }
 
     &.ActionList-item--has-sub-item {
-      > .ActionList-item-content > .ActionList-item-label {
+      > .ActionList-item-content > .ActionList-item-content--label {
         font-weight: $font-weight-bold;
       }
     }
@@ -128,10 +124,29 @@
     }
   }
 
+  // checkbox item [aria-checked]
+
+  &[aria-checked='true'] {
+    .ActionList-item-content--singleSelect {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility 0s linear 0s, opacity $actionList-item-checkmark-transition-timing;
+    }
+  }
+
+  &[aria-checked='false'] {
+    .ActionList-item-content--singleSelect {
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s linear $actionList-item-checkmark-transition-timing,
+        opacity $actionList-item-checkmark-transition-timing;
+    }
+  }
+
   // variants
 
   &.ActionList-item--danger {
-    .ActionList-item-label {
+    .ActionList-item-content--label {
       color: var(--color-danger-fg);
     }
 
@@ -155,11 +170,11 @@
 // span or a href
 .ActionList-item-content {
   display: grid;
-  padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
   grid-template-rows: minmax(20px, max-content); // 20px + 12px padding [32]
   grid-template-areas: 'leadingAction leadingVisual label trailingVisual trailingAction';
   grid-template-columns: min-content min-content minmax(min-content, auto) min-content min-content;
   align-items: center;
+  padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
   position: relative;
   border-radius: $border-radius-2;
   font-weight: $font-weight-normal;
@@ -167,7 +182,7 @@
   user-select: none;
   transition: $actionList-item-bg-transition;
 
-  // column-gap persists with empty grid-areas, margin applies when children exist
+  // column-gap persists with empty grid-areas, margin applies only when children exist
   & > :not(:last-child) {
     margin-right: $spacer-2;
   }
@@ -191,78 +206,77 @@
     grid-template-rows: minmax(36px, max-content);
   }
 
-  // place children on grid
-
-  .ActionList-item-action--leading {
-    grid-area: leadingAction;
-  }
-
-  .ActionList-item-visual--leading {
-    grid-area: leadingVisual;
-  }
-
-  .ActionList-item-label {
-    grid-area: label;
-  }
-
-  .ActionList-item-visual--trailing {
-    grid-area: trailingVisual;
-  }
-
-  .ActionList-item-action--trailing {
-    grid-area: trailingAction;
-  }
-
   &.ActionList-item-content--blockDescription {
     // if leading/trailing visual, align with first line of content
-    .ActionList-item-visual {
+    .ActionList-item-content--visual {
       place-self: start;
     }
   }
+}
 
-  // TODO: better organize these for nesting
-  // wrapper span
-  .ActionList-item-label--blockDescription,
-  .ActionList-item-label--inlineDescription {
-    grid-area: label;
-    display: flex;
+// place children on grid
 
-    .ActionList-item-label {
-      font-weight: $font-weight-bold;
-    }
+.ActionList-item-content--action-leading {
+  grid-area: leadingAction;
+}
+
+.ActionList-item-content--visual-leading {
+  grid-area: leadingVisual;
+}
+
+.ActionList-item-content--label {
+  grid-area: label;
+}
+
+.ActionList-item-content--visual-trailing {
+  grid-area: trailingVisual;
+}
+
+.ActionList-item-content--action-trailing {
+  grid-area: trailingAction;
+}
+
+// wrapper span
+.ActionList-item-content--label-blockDescription,
+.ActionList-item-content--label-inlineDescription {
+  grid-area: label;
+  display: flex;
+
+  .ActionList-item-content--label {
+    font-weight: $font-weight-bold;
   }
+}
 
-  // block
-  .ActionList-item-label--blockDescription {
-    flex-direction: column;
+// block
+.ActionList-item-content--label-blockDescription {
+  flex-direction: column;
 
-    .ActionList-item-description {
-      margin-top: $spacer-1;
-    }
+  .ActionList-item-content--description {
+    margin-top: $spacer-1;
   }
+}
 
-  // inline
-  .ActionList-item-label--inlineDescription {
-    flex-direction: row;
-    align-items: baseline;
+// inline
+.ActionList-item-content--label-inlineDescription {
+  flex-direction: row;
+  align-items: baseline;
 
-    .ActionList-item-description {
-      margin-left: $actionList-item-padding-horizontal;
-    }
+  .ActionList-item-content--description {
+    margin-left: $actionList-item-padding-horizontal;
   }
+}
 
-  // description
-  .ActionList-item-description {
-    font-size: $font-size-small;
-    line-height: $lh-default;
-    color: var(--color-fg-muted);
-  }
+// description
+.ActionList-item-content--description {
+  font-size: $font-size-small;
+  line-height: $lh-default;
+  color: var(--color-fg-muted);
 }
 
 // helper for grid alignment with multi-line content
 // span wrapping svg or text
-.ActionList-item-visual,
-.ActionList-item-action {
+.ActionList-item-content--visual,
+.ActionList-item-content--action {
   min-height: 20px;
   display: flex;
   align-items: center;
@@ -271,23 +285,20 @@
 }
 
 // text
-.ActionList-item-label {
+.ActionList-item-content--label {
   font-weight: $font-weight-normal;
   color: var(--color-fg-default);
   position: relative; // for pseudo dividers
 }
 
-// nested groups
+// nested lists (only supports 1 level currently)
+// target ActionList-item--sub-item for padding-left to maintain :active :after state
 
 .ActionList-item--sub-item > .ActionList-item-content {
   font-size: $font-size-small;
 }
 
-// target ActionList-item--sub-item for padding-left to maintain :active :after state
-
 // no leading visual
-
-// 1 level nested
 .ActionList-item--sub-group {
   .ActionList-item--sub-item {
     padding-left: 16px;
@@ -295,47 +306,22 @@
 }
 
 // has 16px leading visual
-
-// 1 level nested
-.ActionList-item-visual--16 + .ActionList-item--sub-group {
+.ActionList-item-content--visual--16 + .ActionList-item--sub-group {
   .ActionList-item--sub-item {
     padding-left: 24px;
   }
 }
 
 // has 20px leading visual
-
-.ActionList-item-visual--20 + .ActionList-item--sub-group {
+.ActionList-item-content--visual--20 + .ActionList-item--sub-group {
   .ActionList-item--sub-item {
     padding-left: 28px;
   }
 }
 
 // has 24px leading visual
-
-.ActionList-item-visual--24 + .ActionList-item--sub-group {
+.ActionList-item-content--visual--24 + .ActionList-item--sub-group {
   .ActionList-item--sub-item {
     padding-left: 32px;
   }
 }
-// single select
-
-// maintain space on grid while check is hidden
-// .ActionList-item-content--singleSelect {
-//   .ActionList-item-check {
-//     visibility: hidden;
-//     opacity: 0;
-//     transition: visibility 0s linear $actionList-item-checkmark-transition-timing,
-//       opacity $actionList-item-checkmark-transition-timing;
-//   }
-// }
-
-// &[aria-checked='true'] {
-//   .ActionList-item-content--singleSelect {
-//     .ActionList-item-check {
-//       visibility: visible;
-//       opacity: 1;
-//       transition: visibility 0s linear 0s, opacity $actionList-item-checkmark-transition-timing;
-//     }
-//   }
-// }

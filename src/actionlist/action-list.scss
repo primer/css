@@ -8,7 +8,7 @@
 // dividers
 
 .ActionList--divided {
-  .ActionList-item-label:before {
+  .ActionList-item-content--label:before {
     content: '';
     display: block;
     position: absolute;
@@ -20,15 +20,15 @@
 
   // hide divider if item is active
   .ActionList-item--nav-active {
-    .ActionList-item-label:before,
-    + .ActionList-item .ActionList-item-label:before {
+    .ActionList-item-content--label:before,
+    + .ActionList-item .ActionList-item-content--label:before {
       visibility: hidden;
     }
   }
 }
 
-.ActionList-item:first-of-type .ActionList-item-label:before,
-.ActionList-sectionDivider + .ActionList-item .ActionList-item-label:before,
-.ActionList-sectionHeader + .ActionList-item .ActionList-item-label:before {
+.ActionList-item:first-of-type .ActionList-item-content--label:before,
+.ActionList-sectionDivider + .ActionList-item .ActionList-item-content--label:before,
+.ActionList-sectionHeader + .ActionList-item .ActionList-item-content--label:before {
   visibility: hidden;
 }

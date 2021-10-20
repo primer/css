@@ -1,7 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import {useArgs} from '@storybook/client-api'
-import useToggle from './helpers/useToggle.jsx'
+import useToggle from '../../helpers/useToggle.jsx'
 
 export default {
   title: 'Components/ActionList/ActionListItem',
@@ -10,9 +9,6 @@ export default {
       type: 'figma',
       url: 'https://www.figma.com/file/oMiRuexZW6gqVbMhQd6lwP/Storybook?node-id=2%3A2'
     }
-    // actions: {
-    //   handles: []
-    // }
   },
   excludeStories: ['ListItemTemplate'],
   argTypes: {
@@ -61,13 +57,17 @@ export default {
     },
     leadingVisualSize: {
       options: [0, 1, 2], // iterator
-      mapping: ['ActionList-item-visual--16', 'ActionList-item-visual--20', 'ActionList-item-visual--24'], // values
+      mapping: [
+        'ActionList-item-content--visual--16',
+        'ActionList-item-content--visual--20',
+        'ActionList-item-content--visual--24'
+      ], // values
       control: {
         type: 'select',
         labels: ['16px', '20px', '24px']
       },
       description: 'leading visual width',
-      defaultValue: 'ActionList-item-visual--16'
+      defaultValue: 'ActionList-item-content--visual--16'
     },
     trailingVisual: {
       defaultValue: '',
@@ -100,13 +100,13 @@ export default {
     },
     descriptionVariant: {
       options: [0, 1], // iterator
-      mapping: ['ActionList-item-label--blockDescription', 'ActionList-item-label--inlineDescription'], // values
+      mapping: ['ActionList-item-content--label-blockDescription', 'ActionList-item-content--label-inlineDescription'], // values
       control: {
         type: 'select',
         labels: ['block', 'inline']
       },
       description: 'block (default), inline',
-      defaultValue: 'ActionList-item-label--blockDescription'
+      defaultValue: 'ActionList-item-content--label-blockDescription'
     },
     id: {
       defaultValue: '',
@@ -117,17 +117,16 @@ export default {
     collapsible: {
       defaultValue: false,
       control: {type: 'boolean'}
+    },
+    singleSelect: {
+      defaultValue: false,
+      control: {type: 'boolean'}
+    },
+    multiSelect: {
+      defaultValue: false,
+      control: {type: 'boolean'}
     }
   }
-  //   decorators: [
-  //     Story => (
-  //       <div style={{margin: '3em', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-  //         <ul className="ActionList" role="menu">
-  //           <Story />
-  //         </ul>
-  //       </div>
-  //     )
-  //   ]
 }
 
 export const ListItemTemplate = ({
@@ -147,9 +146,13 @@ export const ListItemTemplate = ({
   id,
   type,
   collapsible,
-  trailingAction
+  trailingAction,
+  leadingAction,
+  singleSelect,
+  multiSelect
 }) => {
-  const [isCollapsed, itemisCollapsed] = useToggle()
+  const [isCollapsed, itemIsCollapsed] = useToggle()
+  const [isChecked, itemIsChecked] = useToggle()
   return (
     <li
       className={clsx(
@@ -160,50 +163,68 @@ export const ListItemTemplate = ({
         containsSubItem && `ActionList-item--has-sub-item`,
         variant && `${variant}`
       )}
-      onClick={itemisCollapsed}
-      role={href ? 'none' : 'menuitem'}
+      onClick={collapsible ? itemIsCollapsed : itemIsChecked}
+      role={singleSelect ? 'menuitemradio' : multiSelect ? 'menuitemcheckbox' : href ? 'none' : 'menuitem'}
       id={id}
       aria-haspopup={collapsible ? 'true' : undefined}
       aria-expanded={collapsible ? (isCollapsed ? 'false' : 'true') : undefined}
+      aria-checked={singleSelect ? (isChecked ? 'true' : 'false') : undefined}
     >
       {href ? (
         <>
           <a
             href={href}
             role={href ? 'menuitem' : undefined}
-            tabindex="-1"
             aria-current={ariaCurrent}
             className={clsx(
               text && 'ActionList-item-content',
               size && `${size}`,
-              leadingVisual && 'ActionList-item-content--leadingVisual',
-              trailingVisual && 'ActionList-item-content--trailingVisual',
               (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription',
               leadingVisual && leadingVisualSize && `${leadingVisualSize}`
             )}
           >
+            {leadingAction ||
+              (singleSelect && (
+                <span className="ActionList-item-content--action ActionList-item-content--action-leading">
+                  {singleSelect && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      height="16"
+                      className="ActionList-item-content--singleSelect"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"
+                      ></path>
+                    </svg>
+                  )}
+                  {leadingAction}
+                </span>
+              ))}
             {leadingVisual && (
               <span
-                className="ActionList-item-visual ActionList-item-visual--leading"
+                className="ActionList-item-content--visual ActionList-item-content--visual-leading"
                 dangerouslySetInnerHTML={{__html: leadingVisual}}
               />
             )}
             {description && (
               <span className={`${descriptionVariant}`}>
-                <span className="ActionList-item-label">{text}</span>
-                <span className="ActionList-item-description">{description}</span>
+                <span className="ActionList-item-content--label">{text}</span>
+                <span className="ActionList-item-content--description">{description}</span>
               </span>
             )}
-            {!description && text && <span className="ActionList-item-label">{text}</span>}
+            {!description && text && <span className="ActionList-item-content--label">{text}</span>}
             {trailingVisual && (
               <span
-                className="ActionList-item-visual ActionList-item-visual--trailing"
+                className="ActionList-item-content--visual ActionList-item-content--visual-trailing"
                 dangerouslySetInnerHTML={{__html: trailingVisual}}
               />
             )}
             {trailingAction ||
               (collapsible && (
-                <span className="ActionList-item-action ActionList-item-action--trailing">
+                <span className="ActionList-item-content--action ActionList-item-content--action-trailing">
                   {collapsible && (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -230,34 +251,52 @@ export const ListItemTemplate = ({
             className={clsx(
               text && 'ActionList-item-content',
               size && `${size}`,
-              leadingVisual && 'ActionList-item-content--leadingVisual',
-              trailingVisual && 'ActionList-item-content--trailingVisual',
               (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription'
             )}
           >
+            {leadingAction ||
+              (singleSelect && (
+                <span className="ActionList-item-content--action ActionList-item-content--action-leading">
+                  {singleSelect && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      height="16"
+                      className="ActionList-item-content--singleSelect"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"
+                      ></path>
+                    </svg>
+                  )}
+                  {leadingAction}
+                </span>
+              ))}
             {leadingVisual && (
               <span
-                className="ActionList-item-visual ActionList-item-visual--leading"
+                className="ActionList-item-content--visual ActionList-item-content--visual-leading"
                 dangerouslySetInnerHTML={{__html: leadingVisual}}
               />
             )}
             {description && (
               <span className={`${descriptionVariant}`}>
-                <span className="ActionList-item-label">{text}</span>
-                <span className="ActionList-item-description">{description}</span>
+                <span className="ActionList-item-content--label">{text}</span>
+                <span className="ActionList-item-content--description">{description}</span>
               </span>
             )}
-            {!description && text && <span className="ActionList-item-label">{text}</span>}
+            {!description && text && <span className="ActionList-item-content--label">{text}</span>}
 
             {trailingVisual && (
               <span
-                className="ActionList-item-visual ActionList-item-visual--trailing"
+                className="ActionList-item-content--visual ActionList-item-content--visual-trailing"
                 dangerouslySetInnerHTML={{__html: trailingVisual}}
               />
             )}
             {trailingAction ||
               (collapsible && (
-                <span className="ActionList-item-action ActionList-item-action--trailing">
+                <span className="ActionList-item-content--action ActionList-item-content--action-trailing">
                   {collapsible && (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -286,10 +325,8 @@ export const ListItemTemplate = ({
 export const Playground = ListItemTemplate.bind({})
 Playground.decorators = [
   Story => (
-    <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="ActionList" role="menu">
-        <Story />
-      </ul>
-    </div>
+    <ul className="ActionList" role="menu">
+      <Story />
+    </ul>
   )
 ]
