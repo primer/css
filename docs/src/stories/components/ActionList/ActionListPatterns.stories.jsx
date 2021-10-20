@@ -5,14 +5,14 @@ import {ListItemTemplate} from './ActionListItem.stories'
 import {ListTemplate} from './ActionList.stories'
 
 export default {
-  title: 'Components/ActionList/Patterns',
-  decorators: [
-    Story => (
-      <nav>
-        <Story />
-      </nav>
-    )
-  ]
+  title: 'Components/ActionList/Patterns'
+  //   decorators: [
+  //     Story => (
+  //       <nav>
+  //         <Story />
+  //       </nav>
+  //     )
+  //   ]
 }
 
 export const NavWithSubItems = ListTemplate.bind({})
@@ -57,6 +57,13 @@ NavWithSubItems.argTypes = {
     control: false
   }
 }
+NavWithSubItems.decorators = [
+  Story => (
+    <nav>
+      <Story />
+    </nav>
+  )
+]
 
 export const NavWithSubItemsLeadingVisual16px = ListTemplate.bind({})
 NavWithSubItemsLeadingVisual16px.args = {
@@ -134,6 +141,13 @@ NavWithSubItemsLeadingVisual16px.argTypes = {
     control: false
   }
 }
+NavWithSubItemsLeadingVisual16px.decorators = [
+  Story => (
+    <nav>
+      <Story />
+    </nav>
+  )
+]
 
 export const NavWithSubItemsLeadingVisual20px = ListTemplate.bind({})
 NavWithSubItemsLeadingVisual20px.args = {
@@ -211,6 +225,13 @@ NavWithSubItemsLeadingVisual20px.argTypes = {
     control: false
   }
 }
+NavWithSubItemsLeadingVisual20px.decorators = [
+  Story => (
+    <nav>
+      <Story />
+    </nav>
+  )
+]
 
 export const NavWithSubItemsLeadingVisual24px = ListTemplate.bind({})
 NavWithSubItemsLeadingVisual24px.args = {
@@ -288,6 +309,13 @@ NavWithSubItemsLeadingVisual24px.argTypes = {
     control: false
   }
 }
+NavWithSubItemsLeadingVisual24px.decorators = [
+  Story => (
+    <nav>
+      <Story />
+    </nav>
+  )
+]
 
 export const NavWithDivider = ListTemplate.bind({})
 NavWithDivider.args = {
@@ -341,6 +369,13 @@ NavWithDivider.argTypes = {
     control: false
   }
 }
+NavWithDivider.decorators = [
+  Story => (
+    <nav>
+      <Story />
+    </nav>
+  )
+]
 
 export const NavWithSectionDivider = ListTemplate.bind({})
 NavWithSectionDivider.args = {
@@ -381,4 +416,49 @@ NavWithSectionDivider.argTypes = {
   role: {
     control: false
   }
+}
+NavWithSectionDivider.decorators = [
+  Story => (
+    <nav>
+      <Story />
+    </nav>
+  )
+]
+
+export const MenuSingleSelect = ListTemplate.bind({})
+MenuSingleSelect.args = {
+  ...ListTemplate.args,
+  ...ListItemTemplate.args,
+  ...Divider.args,
+  ariaLabel: 'Main menu description',
+  role: 'menu',
+  showDividers: false,
+  children: (
+    <>
+      <ListItemTemplate text="Option label" singleSelect />
+      <ListItemTemplate text="Option label" singleSelect />
+      <ListItemTemplate text="Option label" singleSelect />
+      <ListItemTemplate text="Option label" singleSelect />
+      <ListItemTemplate text="Option label" singleSelect />
+    </>
+  )
+}
+
+export const MenuMultiSelect = ListTemplate.bind({})
+MenuMultiSelect.args = {
+  ...ListTemplate.args,
+  ...ListItemTemplate.args,
+  ...Divider.args,
+  ariaLabel: 'Main menu description',
+  role: 'menu',
+  showDividers: false,
+  children: (
+    <>
+      <ListItemTemplate text="Option label" multiSelect />
+      <ListItemTemplate text="Option label" multiSelect />
+      <ListItemTemplate text="Option label" multiSelect />
+      <ListItemTemplate text="Option label" multiSelect />
+      <ListItemTemplate text="Option label" multiSelect />
+    </>
+  )
 }

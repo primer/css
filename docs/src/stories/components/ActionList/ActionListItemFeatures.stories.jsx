@@ -362,117 +362,53 @@ SingleSelectItemWithLeadingAndTrailingVisual.args = {
           </svg>`
 }
 
-export const MultiSelectItem = args => (
-  <li className="ActionList-item" role="menuitemcheckbox" aria-checked="true">
-    <label className="ActionList-item-content ActionList-item-content--multiSelect">
-      <span className="ActionList-item-content--visual ActionList-item-check">
-        <input className="form-checkbox" type="checkbox" checked="" />
-      </span>
-      <span className="ActionList-item-content--label">Checkbox item</span>
-    </label>
-  </li>
-)
-MultiSelectItem.decorators = [
-  Story => (
-    <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="ActionList" role="menu">
-        <Story />
-      </ul>
-    </div>
-  )
-]
+export const MultiSelectItem = ListItemTemplate.bind({})
+MultiSelectItem.args = {
+  text: 'Multi select item',
+  multiSelect: true
+}
 
-export const MultiSelectItemWithLeadingVisual = args => (
-  <li className="ActionList-item" role="menuitemcheckbox" aria-checked="true">
-    <label className="ActionList-item-content ActionList-item-content--multiSelect ActionList-item-content--leadingVisual">
-      <span className="ActionList-item-content--visual ActionList-item-check">
-        <input className="form-checkbox" type="checkbox" checked="" />
-      </span>
-      <span className="ActionList-item-content--visual">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+export const MultiSelectItemWithLeadingVisual = ListItemTemplate.bind({})
+MultiSelectItemWithLeadingVisual.args = {
+  text: 'Multi select item',
+  multiSelect: true,
+  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
             d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
           ></path>
-        </svg>
-      </span>
-      <span className="ActionList-item-content--label">Checkbox item</span>
-    </label>
-  </li>
-)
-MultiSelectItemWithLeadingVisual.decorators = [
-  Story => (
-    <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="ActionList" role="menu">
-        <Story />
-      </ul>
-    </div>
-  )
-]
+        </svg>`
+}
 
-export const MultiSelectItemWithTrailingVisual = args => (
-  <li className="ActionList-item" role="menuitemcheckbox" aria-checked="true">
-    <label className="ActionList-item-content ActionList-item-content--multiSelect ActionList-item-content--trailingVisual">
-      <span className="ActionList-item-content--visual ActionList-item-check">
-        <input className="form-checkbox" type="checkbox" checked="" />
-      </span>
-      <span className="ActionList-item-content--label">Checkbox item</span>
-      <span className="ActionList-item-content--visual">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-          <path
-            fill-rule="evenodd"
-            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-          ></path>
-        </svg>
-      </span>
-    </label>
-  </li>
-)
-MultiSelectItemWithTrailingVisual.decorators = [
-  Story => (
-    <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="ActionList" role="menu">
-        <Story />
-      </ul>
-    </div>
-  )
-]
+export const MultiSelectItemWithTrailingVisual = ListItemTemplate.bind({})
+MultiSelectItemWithTrailingVisual.args = {
+  text: 'Multi select item',
+  multiSelect: true,
+  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+            <path
+              fill-rule="evenodd"
+              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
+            ></path>
+          </svg>`
+}
 
-export const MultiSelectItemWithLeadingAndTrailingVisual = args => (
-  <li className="ActionList-item" role="menuitemcheckbox" aria-checked="true">
-    <label className="ActionList-item-content ActionList-item-content--multiSelect ActionList-item-content--leadingVisual ActionList-item-content--trailingVisual">
-      <span className="ActionList-item-content--visual ActionList-item-check">
-        <input className="form-checkbox" type="checkbox" checked="" />
-      </span>
-      <span className="ActionList-item-content--visual">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+export const MultiSelectItemWithLeadingAndTrailingVisual = ListItemTemplate.bind({})
+MultiSelectItemWithLeadingAndTrailingVisual.args = {
+  text: 'Multi select item',
+  multiSelect: true,
+  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+            <path
+              fill-rule="evenodd"
+              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
+            ></path>
+          </svg>`,
+  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
             fill-rule="evenodd"
             d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
           ></path>
-        </svg>
-      </span>
-      <span className="ActionList-item-content--label">Checkbox item</span>
-      <span className="ActionList-item-content--visual">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-          <path
-            fill-rule="evenodd"
-            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-          ></path>
-        </svg>
-      </span>
-    </label>
-  </li>
-)
-MultiSelectItemWithLeadingAndTrailingVisual.decorators = [
-  Story => (
-    <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="ActionList" role="menu">
-        <Story />
-      </ul>
-    </div>
-  )
-]
+        </svg>`
+}
 
 export const Collapsible = ListItemTemplate.bind({})
 Collapsible.args = {
