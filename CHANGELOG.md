@@ -1,5 +1,13 @@
 # @primer/css
 
+## 18.0.2
+
+### Patch Changes
+
+- [#1680](https://github.com/primer/css/pull/1680) [`f013be66`](https://github.com/primer/css/commit/f013be66db59d21d7e2315303b5582169c59c479) Thanks [@privatenumber](https://github.com/privatenumber)! - Fixing broken close span tag in the docs.
+
+* [#1677](https://github.com/primer/css/pull/1677) [`cdb0faa6`](https://github.com/primer/css/commit/cdb0faa606e6fb35ea4a85dd3866bbb33131b76c) Thanks [@simurai](https://github.com/simurai)! - Lower contrast for disabled text
+
 ## 18.0.1
 
 ### Patch Changes
