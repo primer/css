@@ -40,9 +40,13 @@ label {
   }
 
   &[disabled] {
-    color: var(--color-fg-muted);
+    color: var(--color-primer-fg-disabled);
     background-color: var(--color-input-disabled-bg);
     border-color: var(--color-border-default);
+
+    &::placeholder {
+      color: var(--color-primer-fg-disabled);
+    }
   }
 
   // Ensures inputs don't zoom on mobile iPhone but are body-font size on iPad

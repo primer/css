@@ -26,10 +26,6 @@
   &.disabled,
   &[aria-disabled=true] {
     cursor: default;
-
-    .octicon {
-      color: var(--color-fg-muted);
-    }
   }
 
   i {
@@ -96,9 +92,13 @@
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
-    color: var(--color-fg-muted);
+    color: var(--color-primer-fg-disabled);
     background-color: var(--color-btn-bg);
     border-color: var(--color-btn-border);
+
+    .octicon {
+      color: var(--color-primer-fg-disabled);
+    }
   }
 
   // Keep :focus after :disabled. Allows to see the focus ring even on disabled buttons

@@ -1,6 +1,6 @@
 {
   "name": "@primer/css",
-  "version": "18.0.1",
+  "version": "18.0.2",
   "description": "The CSS implementation of GitHub's Primer Design System",
   "homepage": "https://primer.style/css",
   "author": "GitHub, Inc.",
@@ -35,7 +35,7 @@
     "storybook": "cd docs && yarn && yarn storybook"
   },
   "dependencies": {
-    "@primer/primitives": "^5.0.0"
+    "@primer/primitives": "^5.1.0"
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.4.1",
@@ -47,13 +47,13 @@
     "cssstats": "4.0.2",
     "eslint": "7.32.0",
     "eslint-plugin-github": "4.3.2",
-    "eslint-plugin-jest": "25.0.1",
+    "eslint-plugin-jest": "25.2.2",
     "eslint-plugin-prettier": "4.0.0",
     "filesize": "8.0.3",
     "front-matter": "4.0.2",
     "fs-extra": "10.0.0",
     "globby": "12.0.2",
-    "jest": "27.2.5",
+    "jest": "27.3.0",
     "js-yaml": "4.1.0",
     "postcss": "8.3.9",
     "postcss-calc": "8.0.0",

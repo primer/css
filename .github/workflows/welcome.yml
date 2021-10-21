@@ -81,6 +81,7 @@ jobs:
             fi
 
   label-release:
+    if: ${{ github.repository == 'primer/css' }}
     name: Semantic Version Label
     runs-on: ubuntu-latest
     steps:

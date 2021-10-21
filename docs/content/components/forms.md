@@ -24,7 +24,7 @@ All our inputs and buttons side-by-side for easy testing of sizing and alignment
   <button class="btn" type="button">Button</button>
   <button class="btn" type="button" aria-expanded="false" aria-haspopup="true">
     Select menu
-    <span class="dropdown-caret">
+    <span class="dropdown-caret"></span>
   </button>
   <input class="form-control" type="text" placeholder="Standard input" aria-label="Repository description" />
   <input class="form-control input-monospace" type="text" placeholder="Monospace input" aria-label="SHA" />
