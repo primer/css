@@ -19,14 +19,94 @@ Action List is a `ul` list designed to contain Action List Items.
 
 | Class | Description |
 | :- | :- |
-| `ActionList--divided ` | Show dividers between items |
+| `ActionList--divided` | Show dividers between items |
+| `ActionList--sub-group` | If Action List is nested as a sub-list |
 
+#### Default
 
 ```html live
-<div class="flash">
-  Flash message goes here.
-</div>
+<ul
+  class="ActionList"
+  role="menu"
+  aria-label="Menu description"
+>
+  <li class="ActionList-item" role="menuitem">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--label">Action list item</span>
+    </span>
+  </li>
+  <li class="ActionList-item" role="menuitem">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--label">Action list item</span>
+    </span>
+  </li>
+</ul>
 ```
+
+#### Item dividers
+
+```html live
+<ul
+  class="ActionList ActionList--divided"
+  role="menu"
+  aria-label="Menu description"
+>
+  <li class="ActionList-item" role="menuitem">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--label">Action list item</span>
+    </span>
+  </li>
+  <li class="ActionList-item" role="menuitem">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--label">Action list item</span>
+    </span>
+  </li>
+  <li class="ActionList-item" role="menuitem">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--label">Action list item</span>
+    </span>
+  </li>
+</ul>
+```
+
+#### Nested sub list
+
+```html live
+<ul
+  class="ActionList"
+  role="menu"
+  aria-label="Menu description"
+>
+  <li class="ActionList-item" role="menuitem">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--label">Action list item</span>
+    </span>
+  </li>
+  <li class="ActionList-item ActionList-item--has-sub-item" role="menuitem">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--label">Sub menu label</span>
+    </span>
+    <ul
+        class="ActionList ActionList--sub-group"
+        role="menu"
+        aria-label="Menu description"
+        >
+        <li class="ActionList-item ActionList-item--sub-item" role="menuitem">
+            <span class="ActionList-item-content">
+            <span class="ActionList-item-content--label">Sub menu item</span>
+            </span>
+        </li>
+        <li class="ActionList-item ActionList-item--sub-item" role="menuitem">
+            <span class="ActionList-item-content">
+            <span class="ActionList-item-content--label">Sub menu item</span>
+            </span>
+        </li>
+    </ul>
+  </li>
+</ul>
+```
+
+
 
 ## Action List Item
 
@@ -79,3 +159,5 @@ Add an icon to the left of the flash message to give it some funky fresh attenti
   Flash message with an icon
 </div>
 ```
+
+## Patterns

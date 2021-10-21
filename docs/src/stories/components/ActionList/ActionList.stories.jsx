@@ -58,13 +58,21 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    subGroup: {
+      defaultValue: false,
+      control: {type: 'boolean'},
+      description: 'If ActionList is nested within an ActionList',
+      table: {
+        category: 'CSS'
+      }
     }
   }
 }
 
-export const ListTemplate = ({showDividers, children, role, ariaLabel, ariaLabelledBy}) => (
+export const ListTemplate = ({showDividers, children, role, ariaLabel, ariaLabelledBy, subGroup}) => (
   <ul
-    className={clsx('ActionList', showDividers && 'ActionList--divided')}
+    className={clsx('ActionList', showDividers && 'ActionList--divided', subGroup && 'ActionList--sub-group')}
     role={role}
     aria-label={ariaLabel && ariaLabel}
     aria-labelledby={ariaLabelledBy && ariaLabelledBy}

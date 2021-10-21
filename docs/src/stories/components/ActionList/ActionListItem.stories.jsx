@@ -20,7 +20,10 @@ export default {
         labels: ['direct-child', 'contains-children']
       },
       description: 'conditional for CSS specific to li position in ul',
-      defaultValue: 'ActionList-item--default'
+      defaultValue: 'ActionList-item--default',
+      table: {
+        category: 'HTML'
+      }
     },
     size: {
       options: [0, 1, 2], // iterator
@@ -30,7 +33,10 @@ export default {
         labels: ['default', 'medium', 'large']
       },
       description: 'small (default), medium, large',
-      defaultValue: ''
+      defaultValue: '',
+      table: {
+        category: 'CSS'
+      }
     },
     variant: {
       options: [0, 1], // iterator
@@ -39,21 +45,33 @@ export default {
         type: 'select',
         labels: ['default', 'danger']
       },
-      defaultValue: ''
+      defaultValue: '',
+      table: {
+        category: 'CSS'
+      }
     },
     subItem: {
       defaultValue: false,
-      control: {type: 'boolean'}
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
     },
     containsSubItem: {
       defaultValue: false,
-      control: {type: 'boolean'}
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
     },
     leadingVisual: {
       defaultValue: '',
       name: 'leadingVisual',
       type: 'string',
-      description: 'Paste [Octicon](https://primer.style/octicons/) in control field'
+      description: 'Paste [Octicon](https://primer.style/octicons/) in control field',
+      table: {
+        category: 'HTML'
+      }
     },
     leadingVisualSize: {
       options: [0, 1, 2], // iterator
@@ -67,36 +85,54 @@ export default {
         labels: ['16px', '20px', '24px']
       },
       description: 'leading visual width',
-      defaultValue: 'ActionList-item-content--visual--16'
+      defaultValue: 'ActionList-item-content--visual--16',
+      table: {
+        category: 'CSS'
+      }
     },
     trailingVisual: {
       defaultValue: '',
       name: 'trailingVisual',
       type: 'string',
-      description: 'Paste [Octicon](https://primer.style/octicons/) in control field'
+      description: 'Paste [Octicon](https://primer.style/octicons/) in control field',
+      table: {
+        category: 'HTML'
+      }
     },
     text: {
       defaultValue: 'Item label',
       type: 'string',
       name: 'text',
-      description: 'string'
+      description: 'string',
+      table: {
+        category: 'HTML'
+      }
     },
     href: {
       defaultValue: '',
       type: 'string',
       name: 'href',
-      description: 'Item link (href)'
+      description: 'Item link (href)',
+      table: {
+        category: 'HTML'
+      }
     },
     ariaCurrent: {
       options: ['location', 'page'],
       control: {type: 'select'},
-      description: 'location for anchor links, page for global page navigation'
+      description: 'location for anchor links, page for global page navigation',
+      table: {
+        category: 'HTML'
+      }
     },
     description: {
       defaultValue: '',
       type: 'string',
       name: 'description',
-      description: 'string'
+      description: 'string',
+      table: {
+        category: 'HTML'
+      }
     },
     descriptionVariant: {
       options: [0, 1], // iterator
@@ -106,25 +142,40 @@ export default {
         labels: ['block', 'inline']
       },
       description: 'block (default), inline',
-      defaultValue: 'ActionList-item-content--label-blockDescription'
+      defaultValue: 'ActionList-item-content--label-blockDescription',
+      table: {
+        category: 'CSS'
+      }
     },
     id: {
       defaultValue: '',
       type: 'string',
       name: 'id',
-      description: 'Used for aria-labelledby if nested group within item'
+      description: 'Used for aria-labelledby if nested group within item',
+      table: {
+        category: 'HTML'
+      }
     },
     collapsible: {
       defaultValue: false,
-      control: {type: 'boolean'}
+      control: {type: 'boolean'},
+      table: {
+        category: 'Interactive'
+      }
     },
     singleSelect: {
       defaultValue: false,
-      control: {type: 'boolean'}
+      control: {type: 'boolean'},
+      table: {
+        category: 'Interactive'
+      }
     },
     multiSelect: {
       defaultValue: false,
-      control: {type: 'boolean'}
+      control: {type: 'boolean'},
+      table: {
+        category: 'Interactive'
+      }
     }
   }
 }
