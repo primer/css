@@ -17,7 +17,7 @@
     "@primer/gatsby-theme-doctocat": "2.0.0",
     "@primer/octicons": "16.0.0",
     "@primer/octicons-react": "16.0.0",
-    "@primer/primitives": "4.2.0",
+    "@primer/primitives": "5.1.0",
     "@svgr/webpack": "5.5.0",
     "autoprefixer": "10.3.7",
     "babel-preset-gatsby": "^1.14.0",
