@@ -58,7 +58,6 @@
   box-shadow: inset 0 0 0 1px var(--color-border-default), var(--color-shadow-large);
 
   .Toast-icon {
-    color: var(--color-fg-on-emphasis);
     background-color: var(--color-neutral-emphasis);
   }
 }
@@ -68,7 +67,6 @@
   box-shadow: inset 0 0 0 1px var(--color-border-default), var(--color-shadow-large);
 
   .Toast-icon {
-    color: var(--color-fg-on-emphasis);
     background-color: var(--color-danger-emphasis);
   }
 }
@@ -78,7 +76,6 @@
   box-shadow: inset 0 0 0 1px var(--color-border-default), var(--color-shadow-large);
 
   .Toast-icon {
-    color: var(--color-fg-default);
     background-color: var(--color-attention-emphasis);
   }
 }
@@ -88,7 +85,6 @@
   box-shadow: inset 0 0 0 1px var(--color-border-default), var(--color-shadow-large);
 
   .Toast-icon {
-    color: var(--color-fg-on-emphasis);
     background-color: var(--color-success-emphasis);
   }
 }
