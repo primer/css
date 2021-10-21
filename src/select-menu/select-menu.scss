@@ -403,7 +403,7 @@ $SelectMenu-max-height: 480px !default;
 
 .SelectMenu-item:disabled,
 .SelectMenu-item[aria-disabled=true] {
-  color: var(--color-fg-muted);
+  color: var(--color-primer-fg-disabled);
   pointer-events: none;
 }
 
