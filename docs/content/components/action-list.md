@@ -108,29 +108,61 @@ Action List is a `ul` list designed to contain Action List Items.
 
 
 
-## Action List Item
+## Action List Divider
 
-Add `.flash-warn`, `.flash-error`, or `.flash-success` to the flash message to make it yellow, red, or green, respectively.
+List item `li` for separating groups of content
+
+### Arguments
+
+| Class | Description |
+| :- | :- |
+| `ActionList-sectionDivider` | Show dividers between items |
+| `ActionList-sectionDivider--filled` | If Action List is nested as a sub-list |
+| `ActionList-sectionDivider--description` | If Action List is nested as a sub-list |
+
+#### Default
 
 ```html live
-<div class="flash">
-  Flash message goes here.
-</div>
-
-<div class="flash mt-3 flash-warn">
-  Flash message goes here.
-</div>
-
-<div class="flash mt-3 flash-error">
-  Flash message goes here.
-</div>
-
-<div class="flash mt-3 flash-success">
-  Flash message goes here.
-</div>
+<ul class="ActionList" role="menu">
+  <li class="ActionList-sectionDivider" role="separator" ></li>
+</ul>
 ```
 
-## Action List Divider
+#### Filled
+
+```html live
+<ul class="ActionList" role="menu">
+  <li class="ActionList-sectionDivider ActionList-sectionDivider--filled" role="separator" ></li>
+</ul>
+```
+
+#### Default with section label
+
+When using a section label for a group, give the `li` an id to be referenced by the group `ul`
+
+```html live
+<ul class="ActionList" role="menu">
+  <li
+    class="ActionList-sectionDivider"
+    role="presentation"
+    id="nested-group-id"
+    aria-hidden="true"
+  >
+    Section label
+  </li>
+  <li class="ActionList-item" role="menuitem">
+      <ul class="ActionList" role="menu" aria-labelledby="nested-group-id">
+        <li class="ActionList-item" role="none">
+          <a href="/" role="menuitem" class="ActionList-item-content">
+            <span class="ActionList-item-content--label">Group Item</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+</ul>
+```
+
+## Action List Item
 
 Add an icon to the left of the flash message to give it some funky fresh attention.
 

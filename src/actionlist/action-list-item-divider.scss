@@ -3,12 +3,31 @@
 // emtpy divider
 
 .ActionList-sectionDivider {
-  height: 1px;
-  background: $actionList-item-divider;
-  border: 0;
-  margin: ($spacer-2 - 1px) ($spacer-2 * -1) $spacer-2;
-  padding: 0;
-  list-style: none;
+  // has children
+  &:not(:empty) {
+    padding: (($spacer-5 - $s-20) / 2) $spacer-2;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    color: var(--color-fg-muted);
+    display: flex;
+    flex-direction: column;
+  }
+
+  // no children
+  &:empty {
+    height: 1px;
+    background: $actionList-item-divider;
+    border: 0;
+    margin: ($spacer-2 - 1px) ($spacer-2 * -1) $spacer-2;
+    padding: 0;
+    list-style: none;
+  }
+
+  // secondary description text
+  .ActionList-sectionDivider--description {
+    font-size: $font-size-small;
+    font-weight: $font-weight-normal;
+  }
 }
 
 .ActionList-sectionDivider--filled {
@@ -25,22 +44,5 @@
 
   &:first-child {
     margin-top: 0;
-  }
-}
-
-// section header
-
-.ActionList-sectionHeader {
-  // 32px total height considering 20px line-height
-  padding: (($spacer-5 - $s-20) / 2) $spacer-2;
-  font-size: $font-size-small;
-  font-weight: $font-weight-bold;
-  color: var(--color-fg-muted);
-  display: flex;
-  flex-direction: column;
-
-  .ActionList-sectionHeader--description {
-    font-size: $font-size-small;
-    font-weight: $font-weight-normal;
   }
 }

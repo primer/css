@@ -2,7 +2,8 @@ import React from 'react'
 import clsx from 'clsx'
 
 export default {
-  title: 'Components/ActionList/ActionListDivider/Divider',
+  title: 'Components/ActionList/ActionListDivider',
+  excludeStories: ['DividerTemplate'],
   parameters: {
     design: {
       type: 'figma',
@@ -37,43 +38,32 @@ export default {
       name: 'id',
       description: 'Used for aria-labelledby'
     }
-  }
-  //   decorators: [
-  //     Story => (
-  //       <div style={{margin: '3em', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-  //         <ul className="ActionList" role="menu">
-  //           <Story />
-  //         </ul>
-  //       </div>
-  //     )
-  //   ]
+  },
+  decorators: [
+    Story => (
+      <ul className="ActionList" role="menu">
+        <Story />
+      </ul>
+    )
+  ]
 }
 
-const Template = ({title, description, variant, id}) => (
+export const DividerTemplate = ({title, description, variant, id}) => (
   <>
     <li
-      className={clsx(
-        !!title && 'ActionList-sectionHeader',
-        !title && 'ActionList-sectionDivider',
-        variant && `${variant}`
-      )}
+      className={clsx('ActionList-sectionDivider', variant && `${variant}`)}
       role={title ? 'presentation' : 'separator'}
       id={id}
       aria-hidden={title ? true : undefined}
     >
       {title}
-      {description && <span className="ActionList-sectionHeader--description">{description}</span>}
+      {description && <span className="ActionList-sectionDivider--description">{description}</span>}
     </li>
   </>
 )
 
-export const Divider = Template.bind({})
-Divider.decorators = [
-  Story => (
-    <div style={{margin: '3rem', border: 'dashed 1px var(--color-scale-gray-3)'}}>
-      <ul className="ActionList" role="menu">
-        <Story />
-      </ul>
-    </div>
-  )
-]
+export const Playground = DividerTemplate.bind({})
+Playground.args = {
+  title: 'Section title',
+  description: 'Section description'
+}

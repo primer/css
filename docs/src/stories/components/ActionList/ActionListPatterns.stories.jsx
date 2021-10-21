@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import {Divider} from './ActionListDivider.stories'
+import {DividerTemplate} from './ActionListDivider.stories'
 import {ListItemTemplate} from './ActionListItem.stories'
 import {ListTemplate} from './ActionList.stories'
 
@@ -322,7 +322,6 @@ export const NavWithDivider = ListTemplate.bind({})
 NavWithDivider.args = {
   ...ListTemplate.args,
   ...ListItemTemplate.args,
-  ...Divider.args,
   ariaLabel: 'Main menu description',
   role: 'menu',
   showDividers: false,
@@ -346,7 +345,7 @@ NavWithDivider.args = {
         leadingVisualSize="ActionList-item-content--visual--16"
         leadingVisual={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M8.5.75a.75.75 0 00-1.5 0v5.19L4.391 3.33a.75.75 0 10-1.06 1.061L5.939 7H.75a.75.75 0 000 1.5h5.19l-2.61 2.609a.75.75 0 101.061 1.06L7 9.561v5.189a.75.75 0 001.5 0V9.56l2.609 2.61a.75.75 0 101.06-1.061L9.561 8.5h5.189a.75.75 0 000-1.5H9.56l2.61-2.609a.75.75 0 00-1.061-1.06L8.5 5.939V.75z"></path></svg>`}
       />
-      <Divider />
+      <DividerTemplate />
       <ListItemTemplate
         text="Nav Item"
         href="/"
@@ -382,7 +381,6 @@ export const NavWithSectionDivider = ListTemplate.bind({})
 NavWithSectionDivider.args = {
   ...ListTemplate.args,
   ...ListItemTemplate.args,
-  ...Divider.args,
   ariaLabel: 'Main menu description',
   role: 'menu',
   showDividers: false,
@@ -391,7 +389,7 @@ NavWithSectionDivider.args = {
       <ListItemTemplate text="Nav Item" href="/" />
       <ListItemTemplate text="Nav Item" href="/" />
       <ListItemTemplate text="Nav Item" href="/" />
-      <Divider title="Section divider (subtle)" id="some-unique-id" />
+      <DividerTemplate title="Section DividerTemplate (subtle)" id="some-unique-id" />
       <ListItemTemplate
         // text="Nav Item"
         children={
@@ -430,7 +428,6 @@ export const MenuSingleSelect = ListTemplate.bind({})
 MenuSingleSelect.args = {
   ...ListTemplate.args,
   ...ListItemTemplate.args,
-  ...Divider.args,
   ariaLabel: 'Main menu description',
   role: 'menu',
   showDividers: false,
@@ -449,7 +446,6 @@ export const MenuMultiSelect = ListTemplate.bind({})
 MenuMultiSelect.args = {
   ...ListTemplate.args,
   ...ListItemTemplate.args,
-  ...Divider.args,
   ariaLabel: 'Main menu description',
   role: 'menu',
   showDividers: false,
