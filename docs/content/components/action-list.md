@@ -25,11 +25,7 @@ Action List is a `ul` list designed to contain Action List Items.
 #### Default
 
 ```html live
-<ul
-  class="ActionList"
-  role="menu"
-  aria-label="Menu description"
->
+<ul class="ActionList" role="menu" aria-label="Menu description">
   <li class="ActionList-item" role="menuitem">
     <span class="ActionList-item-content">
       <span class="ActionList-item-content--label">Action list item</span>
@@ -46,11 +42,7 @@ Action List is a `ul` list designed to contain Action List Items.
 #### Item dividers
 
 ```html live
-<ul
-  class="ActionList ActionList--divided"
-  role="menu"
-  aria-label="Menu description"
->
+<ul class="ActionList" role="menu" aria-label="Menu description">
   <li class="ActionList-item" role="menuitem">
     <span class="ActionList-item-content">
       <span class="ActionList-item-content--label">Action list item</span>
@@ -72,11 +64,7 @@ Action List is a `ul` list designed to contain Action List Items.
 #### Nested sub list
 
 ```html live
-<ul
-  class="ActionList"
-  role="menu"
-  aria-label="Menu description"
->
+<ul class="ActionList" role="menu" aria-label="Menu description">
   <li class="ActionList-item" role="menuitem">
     <span class="ActionList-item-content">
       <span class="ActionList-item-content--label">Action list item</span>
@@ -86,11 +74,7 @@ Action List is a `ul` list designed to contain Action List Items.
     <span class="ActionList-item-content">
       <span class="ActionList-item-content--label">Sub menu label</span>
     </span>
-    <ul
-        class="ActionList ActionList--sub-group"
-        role="menu"
-        aria-label="Menu description"
-        >
+    <ul class="ActionList ActionList--sub-group" role="menu" aria-label="Menu description">
         <li class="ActionList-item ActionList-item--sub-item" role="menuitem">
             <span class="ActionList-item-content">
             <span class="ActionList-item-content--label">Sub menu item</span>
@@ -141,14 +125,7 @@ When using a section label for a group, give the `li` an id to be referenced by 
 
 ```html live
 <ul class="ActionList" role="menu">
-  <li
-    class="ActionList-sectionDivider ActionList-sectionDivider--filled"
-    role="presentation"
-    id="nested-group-id"
-    aria-hidden="true"
-  >
-    Section label
-  </li>
+  <li class="ActionList-sectionDivider ActionList-sectionDivider--filled" role="presentation" id="nested-group-id" aria-hidden="true">Section label</li>
   <li class="ActionList-item" role="menuitem">
       <ul class="ActionList" role="menu" aria-labelledby="nested-group-id">
         <li class="ActionList-item" role="none">
@@ -165,14 +142,7 @@ When using a section label for a group, give the `li` an id to be referenced by 
 
 ```html live
 <ul class="ActionList" role="menu">
-  <li
-    class="ActionList-sectionDivider"
-    role="presentation"
-    id="nested-group-id"
-    aria-hidden="true"
-  >
-    Section label
-  </li>
+  <li class="ActionList-sectionDivider" role="presentation" id="nested-group-id" aria-hidden="true">Section label</li>
   <li class="ActionList-item" role="menuitem">
       <ul class="ActionList" role="menu" aria-labelledby="nested-group-id">
         <li class="ActionList-item" role="none">
@@ -189,13 +159,8 @@ When using a section label for a group, give the `li` an id to be referenced by 
 
 ```html live
 <ul class="ActionList" role="menu">
-  <li
-    class="ActionList-sectionDivider subtle"
-    role="presentation"
-    id="nested-group-id"
-    aria-hidden="true"
-  >
-    Section title
+  <li class="ActionList-sectionDivider" role="presentation" id="nested-group-id" aria-hidden="true">
+    Section label
     <span class="ActionList-sectionDivider--description">
       Section description
     </span>
@@ -246,8 +211,7 @@ Kitchen sink
         <span class="ActionList-item-content--label">Nav Item</span>
       </a>
     </li>
-    <li class="ActionList-sectionDivider" role="presentation" id="some-unique-id" aria-hidden="true"
-    >Section Divider</li>
+    <li class="ActionList-sectionDivider" role="presentation" id="some-unique-id" aria-hidden="true">Section Divider</li>
     <li class="ActionList-item ActionList-item--has-sub-item" role="menuitem">
       <ul class="ActionList" role="menu" aria-labelledby="some-unique-id">
         <li class="ActionList-item" role="none">
@@ -267,8 +231,7 @@ Kitchen sink
         </li>
       </ul>
     </li>
-    <li class="ActionList-sectionDivider" role="presentation" id="some-unique-id" aria-hidden="true"
-    >Section Divider</li>
+    <li class="ActionList-sectionDivider" role="presentation" id="some-unique-id" aria-hidden="true">Section Divider</li>
     <li class="ActionList-item ActionList-item--has-sub-item" role="menuitem">
       <ul class="ActionList ActionList--sub-group" role="menu" aria-labelledby="some-unique-id">
         <li class="ActionList-item ActionList-item--sub-item" role="none">
@@ -317,3 +280,170 @@ Contains and places all child content within Action List Item. Can be either an 
 | `ActionList-item-content--visual--16` | Creates left padding for sub list if leading visual exists |
 | `ActionList-item-content--visual--20` | Creates left padding for sub list if leading visual exists |
 | `ActionList-item-content--visual--24` | Creates left padding for sub list if leading visual exists |
+
+Basic text only item
+
+```html live
+<ul class="ActionList" role="menu">
+  <li class="ActionList-item" role="menuitem">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--label">Basic item label</span>
+    </span>
+  </li>
+</ul>
+```
+
+Size (all options)
+
+```html live
+<ul class="ActionList" role="menu">
+  <li class="ActionList-item" role="menuitem">
+    <span class="ActionList-item-content ActionList-item-content--sizeMedium">
+      <span class="ActionList-item-content--label">Medium item</span>
+    </span>
+  </li>
+</ul>
+<ul class="ActionList" role="menu">
+  <li class="ActionList-item" role="menuitem">
+    <span class="ActionList-item-content ActionList-item-content--sizeLarge">
+      <span class="ActionList-item-content--label">Large item</span>
+    </span>
+  </li>
+</ul>
+```
+
+Visuals (all options- leading & trailing)
+
+```html live
+<ul class="ActionList" role="menu">
+  <li class="ActionList-item" role="menuitem">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--visual ActionList-item-content--visual-leading">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+          <path fill-rule="evenodd" d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"></path>
+        </svg>
+      </span>
+      <span class="ActionList-item-content--label">Item with trailing visual</span>
+      <span class="ActionList-item-content--visual ActionList-item-content--visual-trailing">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+          <path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
+          ></path>
+        </svg>
+      </span>
+    </span>
+  </li>
+</ul>
+```
+
+Trailing visual as text
+
+```html live
+<ul class="ActionList" role="menu">
+  <li class="ActionList-item" role="menuitem">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--label">Item with trailing visual</span>
+      <span class="ActionList-item-content--visual ActionList-item-content--visual-trailing">
+        ⌘N
+      </span>
+    </span>
+  </li>
+</ul>
+```
+
+Inline description
+
+```html live
+<ul class="ActionList" role="menu">
+  <li class="ActionList-item" role="menuitem">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--label-inlineDescription">
+        <span class="ActionList-item-content--label">Item label</span>
+        <span class="ActionList-item-content--description">This is a description</span>
+      </span>
+    </span>
+  </li>
+</ul>
+```
+
+Active navigational item
+
+```html live
+<ul class="ActionList" role="menu">
+  <li class="ActionList-item ActionList-item--nav-active" role="none">
+    <a href="#someid" role="menuitem" aria-current="location" class="ActionList-item-content"
+    >
+      <span class="ActionList-item-content--label">Im an anchor link</span>
+    </a>
+  </li>
+</ul>
+```
+
+Danger item
+
+```html live
+<ul class="ActionList" role="menu">
+  <li class="ActionList-item ActionList-item--danger" role="menuitem">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--label">Danger danger</span>
+    </span>
+  </li>
+</ul>
+```
+
+### Actions
+
+Leading action: single select
+
+```html live
+<ul class="ActionList" role="menu">
+  <li class="ActionList-item" role="menuitemradio" aria-checked="true">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--action ActionList-item-content--action-leading">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" class="ActionList-item-content--singleSelect">
+          <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"
+          ></path>
+        </svg>
+      </span>
+      <span class="ActionList-item-content--label">Single select item</span>
+    </span>
+  </li>
+</ul>
+```
+
+Leading action: multi select
+
+```html live
+<ul class="ActionList" role="menu">
+  <li class="ActionList-item" role="menuitemcheckbox" aria-checked="true">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--action ActionList-item-content--action-leading">
+        <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="ActionList-item-content--multiSelect">
+          <rect x="2" y="2" width="12" height="12" rx="4" class="ActionList-item-content--multiSelect-rectangle"
+          ></rect>
+          <path fill-rule="evenodd" d="M4.03231 8.69862C3.84775 8.20646 4.49385 7.77554 4.95539 7.77554C5.41693 7.77554 6.80154 9.85246 6.80154 9.85246C6.80154 9.85246 10.2631 4.314 10.4938 4.08323C10.7246 3.85246 11.8785 4.08323 11.4169 5.00631C11.0081 5.82388 7.26308 11.4678 7.26308 11.4678C7.26308 11.4678 6.80154 12.1602 6.34 11.4678C5.87846 10.7755 4.21687 9.19077 4.03231 8.69862Z" class="ActionList-item-content--multiSelect-checkmark"
+          ></path>
+        </svg>
+      </span>
+      <span class="ActionList-item-content--label">Multi select item</span>
+    </span>
+  </li>
+</ul>
+```
+
+Trailing action: collapse
+
+```html live
+<ul class="ActionList" role="menu">
+  <li class="ActionList-item" role="menuitem" aria-haspopup="true" aria-expanded="true">
+    <span class="ActionList-item-content">
+      <span class="ActionList-item-content--label">Collapsible</span>
+      <span class="ActionList-item-content--action ActionList-item-content--action-trailing">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" class="ActionList-item-content--collapseIcon">
+          <path fill-rule="evenodd" d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+          ></path>
+        </svg>
+      </span>
+    </span>
+  </li>
+</ul>
+```
