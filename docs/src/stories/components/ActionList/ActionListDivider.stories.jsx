@@ -18,25 +18,36 @@ export default {
         type: 'select',
         labels: ['subtle', 'filled']
       },
-      defaultValue: ''
+      table: {
+        category: 'CSS'
+      }
     },
     title: {
       defaultValue: '',
       type: 'string',
       name: 'title',
-      description: 'string'
+      description: 'string',
+      table: {
+        category: 'HTML'
+      }
     },
     description: {
       defaultValue: '',
       type: 'string',
       name: 'description',
-      description: 'string'
+      description: 'string',
+      table: {
+        category: 'HTML'
+      }
     },
     id: {
       defaultValue: '',
       type: 'string',
       name: 'id',
-      description: 'Used for aria-labelledby'
+      description: 'Used for aria-labelledby',
+      table: {
+        category: 'HTML'
+      }
     }
   },
   decorators: [
@@ -65,5 +76,6 @@ export const DividerTemplate = ({title, description, variant, id}) => (
 export const Playground = DividerTemplate.bind({})
 Playground.args = {
   title: 'Section title',
-  description: 'Section description'
+  description: 'Section description',
+  variant: 'subtle'
 }

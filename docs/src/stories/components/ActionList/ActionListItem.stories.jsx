@@ -14,13 +14,12 @@ export default {
   argTypes: {
     type: {
       options: [0, 1], // iterator
-      mapping: ['ActionList-item--default', 'ActionList-item--has-sub-item'], // values
+      mapping: ['', 'ActionList-item--has-sub-item'], // values
       control: {
         type: 'select',
         labels: ['direct-child', 'contains-children']
       },
       description: 'conditional for CSS specific to li position in ul',
-      defaultValue: 'ActionList-item--default',
       table: {
         category: 'HTML'
       }

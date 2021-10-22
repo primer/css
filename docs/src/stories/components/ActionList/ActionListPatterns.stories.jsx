@@ -391,7 +391,7 @@ NavWithSectionDivider.args = {
       <ListItemTemplate text="Nav Item" href="/" />
       <DividerTemplate title="Section DividerTemplate (subtle)" id="some-unique-id" />
       <ListItemTemplate
-        // text="Nav Item"
+        containsSubItem
         children={
           <ListTemplate
             ariaLabelledBy="some-unique-id"
@@ -400,6 +400,7 @@ NavWithSectionDivider.args = {
               <>
                 <ListItemTemplate text="Nav Item" href="/" />
                 <ListItemTemplate text="Nav Item" href="/" ariaCurrent="page" />
+                <ListItemTemplate text="Nav Item" href="/" variant="ActionList-item--danger" />
               </>
             }
           />

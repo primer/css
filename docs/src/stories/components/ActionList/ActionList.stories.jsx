@@ -7,7 +7,6 @@ export default {
   excludeStories: ['ListTemplate'],
   argTypes: {
     showDividers: {
-      defaultValue: false,
       control: {type: 'boolean'},
       description: 'Show dividers between items',
       table: {
@@ -19,8 +18,7 @@ export default {
       mapping: ['menu', 'group', 'listbox', 'menubar', 'none', 'radiogroup', 'list'], // values
       control: {
         type: 'select',
-        labels: ['menu', 'group', 'listbox', 'menubar', 'none', 'radiogroup', 'list'],
-        defaultValue: 'list'
+        labels: ['menu', 'group', 'listbox', 'menubar', 'none', 'radiogroup', 'list']
       },
       description: 'Semantic list role',
       table: {
@@ -28,7 +26,6 @@ export default {
       }
     },
     ariaLabel: {
-      defaultValue: '',
       name: 'ariaLabel',
       type: 'string',
       description: 'Descriptive label for menu contents',
@@ -37,7 +34,6 @@ export default {
       }
     },
     ariaLabelledBy: {
-      defaultValue: '',
       name: 'ariaLabelledBy',
       type: 'string',
       description: 'Reference ID of section divider',
@@ -46,7 +42,6 @@ export default {
       }
     },
     groupId: {
-      defaultValue: '',
       name: 'groupId',
       type: 'string',
       description: 'Menu group id',
@@ -60,7 +55,6 @@ export default {
       }
     },
     subGroup: {
-      defaultValue: false,
       control: {type: 'boolean'},
       description: 'If ActionList is nested within an ActionList',
       table: {
