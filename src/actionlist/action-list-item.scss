@@ -125,8 +125,10 @@
   }
 
   // checkbox item [aria-checked]
+  // listbox [aria-selected]
 
-  &[aria-checked='true'] {
+  &[aria-checked='true'],
+  &[aria-selected='true'] {
     // multiselect checkmark
     .ActionList-item-content--multiSelect-checkmark {
       visibility: visible;
@@ -157,7 +159,8 @@
     }
   }
 
-  &[aria-checked='false'] {
+  &[aria-checked='false'],
+  &[aria-selected='false'] {
     // multiselect checkmark
     .ActionList-item-content--multiSelect-checkmark {
       visibility: hidden;

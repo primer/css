@@ -1,6 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import { ListItemTemplate } from './ActionListItem.stories'
+import { DividerTemplate } from './ActionListDivider.stories'
 
 export default {
     title: 'Components/ActionList/ActionListItem/Features',
@@ -402,4 +403,30 @@ ActionCollapsibleWithLeadingAndTrailingVisual.args = {
               d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
             ></path>
           </svg>`
+}
+
+export const DividerEmpty = DividerTemplate.bind({})
+DividerEmpty.storyName = '[Divider] Empty default'
+DividerEmpty.args = {
+}
+
+export const DividerFilled = DividerTemplate.bind({})
+DividerFilled.storyName = '[Divider] Empty filled'
+DividerFilled.args = {
+    variant: 'ActionList-sectionDivider--filled'
+}
+
+export const DividerText = DividerTemplate.bind({})
+DividerText.storyName = '[Divider] Title'
+DividerText.args = {
+    title: 'Title',
+    id: 'some-id'
+}
+
+export const DividerTextFilled = DividerTemplate.bind({})
+DividerTextFilled.storyName = '[Divider] Title filled'
+DividerTextFilled.args = {
+    title: 'Title',
+    id: 'some-id',
+    variant: 'ActionList-sectionDivider--filled'
 }
