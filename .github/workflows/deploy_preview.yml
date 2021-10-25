@@ -63,3 +63,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          
+      - name: Update storybook deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@v1.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          state: "failure"
+          deployment_id: ${{ steps.storybook.outputs.deployment_id }}
+
