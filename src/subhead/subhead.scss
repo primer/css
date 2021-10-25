@@ -38,4 +38,8 @@
   margin: $spacer-1 0 $spacer-1 $spacer-1;
   align-self: center;
   justify-content: flex-end;
+
+  + .Subhead-description {
+    margin-top: $spacer-1;
+  }
 }
