@@ -46,6 +46,10 @@
       small {
         color: var(--color-fg-on-emphasis);
       }
+
+      .octicon {
+        color: inherit !important;
+      }
     }
 
     &[aria-selected="true"],
@@ -56,6 +60,10 @@
 
       small {
         color: var(--color-fg-on-emphasis);
+      }
+
+      .octicon {
+        color: inherit !important;
       }
     }
   }
