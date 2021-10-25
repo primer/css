@@ -13,9 +13,9 @@
   "dependencies": {
     "@babel/preset-react": "^7.10.4",
     "@koddsson/postcss-sass": "5.0.0",
-    "@primer/components": "30.3.0",
+    "@primer/components": "31.0.0",
     "@primer/gatsby-theme-doctocat": "2.0.0",
-    "@primer/octicons": "16.0.0",
+    "@primer/octicons": "16.1.0",
     "@primer/octicons-react": "16.0.0",
     "@primer/primitives": "5.1.0",
     "@svgr/webpack": "5.5.0",
@@ -40,7 +40,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-frame-component": "^5.1.0",
-    "sass-loader": "10.1.1",
+    "sass-loader": "11.1.1",
     "styled-components": "^4.3.2",
     "title-case": "^3.0.3"
   },
@@ -57,7 +57,7 @@
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "6.3.12",
     "@whitespace/storybook-addon-html": "^5.0.0",
-    "babel-loader": "^8.2.2",
+    "babel-loader": "^8.2.3",
     "storybook-addon-designs": "6.2.0"
   }
 }
