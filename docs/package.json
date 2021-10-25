@@ -13,7 +13,7 @@
   "dependencies": {
     "@babel/preset-react": "^7.10.4",
     "@koddsson/postcss-sass": "5.0.0",
-    "@primer/components": "30.3.0",
+    "@primer/components": "31.0.0",
     "@primer/gatsby-theme-doctocat": "2.0.0",
     "@primer/octicons": "16.1.0",
     "@primer/octicons-react": "16.0.0",
