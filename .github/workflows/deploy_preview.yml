@@ -3,7 +3,6 @@ on:
   push:
     branches-ignore:
       - 'main'
-      - 'dependabot/**'
     paths:
       - 'src/**'
       - 'docs/**'
