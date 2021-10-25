@@ -1,9 +1,13 @@
 import '../../src/docs.scss'
 import '../../src/index.scss'
 import '../../src/base/index.scss'
+import renderToHTML from '../src/stories/helpers/code-snippet-html-helper'
 
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
+  docs: {
+    transformSource: (src, storyContext) => renderToHTML(storyContext.storyFn)
+  },
   controls: {
     matchers: {
       color: /(background|color)$/i,
