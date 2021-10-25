@@ -11,7 +11,7 @@ Configure Primer CSS to use a certain theme by setting HTML attributes.
 
 Theme | data attributes
 --- | ---
-Light | `data-color-mode="light" data-dark-theme="light"`
+Light | `data-color-mode="light" data-light-theme="light"`
 Dark | `data-color-mode="dark" data-dark-theme="dark"`
 Dark Dimmed | `data-color-mode="dark" data-dark-theme="dark_dimmed"`
 Dark High Contrast | `data-color-mode="dark" data-dark-theme="dark_high_contrast"`
