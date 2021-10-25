@@ -46,7 +46,7 @@ jobs:
         uses: chrnorm/deployment-status@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          environment_url: '${{ steps.vercel-action.outputs.preview-url }}/storybook'
+          environment_url: '${{ steps.vercel-action.outputs.preview-url }}/css/storybook'
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
 
