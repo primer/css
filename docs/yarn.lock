@@ -1918,7 +1918,30 @@
   resolved "https://registry.yarnpkg.com/@primer/component-metadata/-/component-metadata-0.4.0.tgz#44b7d7b1285bea41c2a88621fd17f2c777a4c5e9"
   integrity sha512-yppmDSSDrN2CHwjq3h+RWhfpjehFQAx21JcEipYyNTp0f/kC+iazFVNCKZE6DOavAxv003ti7QIrp+QkPT9tpg==
 
-"@primer/components@30.3.0", "@primer/components@^30.0.0":
+"@primer/components@31.0.0":
+  version "31.0.0"
+  resolved "https://registry.yarnpkg.com/@primer/components/-/components-31.0.0.tgz#86b87c086d58560e240584a79db4508ecf63a624"
+  integrity sha512-X2oodUGY8d0sqr6e6WjN937TxK2RaQsCHln3pzCKEiyX5HQRvH2yvSs9zsV0B74f/Fa4ZDVTjC8cnHD34C9kNw==
+  dependencies:
+    "@primer/octicons-react" "^13.0.0"
+    "@primer/primitives" "5.1.0"
+    "@radix-ui/react-polymorphic" "0.0.14"
+    "@react-aria/ssr" "3.1.0"
+    "@styled-system/css" "5.1.5"
+    "@styled-system/props" "5.1.5"
+    "@styled-system/theme-get" "5.1.2"
+    "@types/history" "4.7.8"
+    "@types/styled-components" "5.1.11"
+    "@types/styled-system" "5.1.12"
+    "@types/styled-system__css" "5.0.16"
+    "@types/styled-system__theme-get" "5.0.1"
+    classnames "2.3.1"
+    color2k "1.2.4"
+    deepmerge "4.2.2"
+    focus-visible "5.2.0"
+    styled-system "5.1.5"
+
+"@primer/components@^30.0.0":
   version "30.3.0"
   resolved "https://registry.yarnpkg.com/@primer/components/-/components-30.3.0.tgz#e62d10bd891699f8455b297f4577ed9c58de4334"
   integrity sha512-5W2WQtTzBsGE12+SIcc49RlosgkoamFDMkwNh5kKuQq1Ni9fXjxfWQaykh8CaWydcywMfnZbPcESKnuu+KfLZQ==
