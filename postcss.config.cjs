@@ -9,8 +9,7 @@ module.exports = {
     sourcesContent: false,
     annotation: true
   },
-  customSyntax: "postcss-scss",
-  syntax: scss,
+  customSyntax: scss,
   parser: scss,
   plugins: [
     scssImport,
