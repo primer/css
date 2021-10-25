@@ -21,6 +21,12 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment: Preview
+      - uses: chrnorm/deployment-action@v1.2.0
+        name: Create GitHub deployment for storybook
+        id: storybook
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: Preview
 
       - name: Vercel Action
         uses: amondnet/vercel-action@v20
@@ -48,7 +54,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment_url: '${{ steps.vercel-action.outputs.preview-url }}/css/storybook'
           state: "success"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          deployment_id: ${{ steps.storybook.outputs.deployment_id }}
 
       - name: Update deployment status (failure)
         if: failure()
