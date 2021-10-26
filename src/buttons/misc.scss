@@ -24,7 +24,7 @@
   &[aria-disabled=true] {
     &,
     &:hover {
-      color: var(--color-fg-muted);
+      color: var(--color-primer-fg-disabled);
       cursor: default;
     }
   }
@@ -63,6 +63,7 @@
   &:disabled,
   &.disabled,
   &[aria-disabled=true] {
+    color: var(--color-primer-fg-disabled);
     background-color: transparent;
   }
 }
@@ -89,10 +90,10 @@
 
   &.disabled,
   &[aria-disabled=true] {
-    color: var(--color-fg-muted);
+    color: var(--color-primer-fg-disabled);
     cursor: default;
 
-    &:hover { color: var(--color-fg-muted); }
+    &:hover { color: var(--color-primer-fg-disabled); }
   }
 }
 

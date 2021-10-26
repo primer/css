@@ -57,6 +57,15 @@
   margin-top: -3px;
   margin-left: $spacer-4;
   background-clip: padding-box;
+
+  &.btn .octicon {
+    margin-right: $spacer-1;
+    color: var(--color-fg-muted);
+  }
+
+  &.btn-primary .octicon {
+    color: inherit;
+  }
 }
 
 //
