@@ -1,17 +1,18 @@
-// @import './action-list-variables.scss';
+// stylelint-disable selector-max-specificity, box-shadow
+@import './action-list-variables.scss';
 
 @mixin focusOutline {
-  position: relative;
-  z-index: 1;
   outline: none;
   box-shadow: 0 0 0 2px var(--color-accent-fg); // this color breaks convention
+  position: relative;
+  z-index: 1;
 }
 
 // <li>
 .ActionList-item {
-  position: relative;
   list-style: none;
-  border-radius: $border-radius;
+  position: relative;
+  border-radius: $border-radius-2;
 
   &:hover,
   &:active {
@@ -26,8 +27,8 @@
   // only hover li without list as children
   &:not(.ActionList-item--has-sub-item) {
     &:hover {
-      cursor: pointer;
       background-color: var(--color-action-list-item-default-hover-bg);
+      cursor: pointer;
     }
 
     &:active {
@@ -38,17 +39,14 @@
       }
 
       @keyframes ActionList-item-active-bg {
-        0% {
-        }
 
         50% {
-          box-shadow: inset 0 0 0 rgba(#000, 0.04);
           transform: scale(1);
+          box-shadow: inset 0 0 0 rgba(#000, 0.04);
         }
-
         100% {
-          box-shadow: inset 0 3px 9px rgba(#000, 0.04);
           transform: scale(0.97);
+          box-shadow: inset 0 3px 9px rgba(#000, 0.04);
         }
       }
     }
@@ -56,8 +54,8 @@
     &:hover,
     &:active {
       // hide dividers
-      .ActionList-item-content--label::before,
-      + .ActionList-item .ActionList-item-content--label::before {
+      .ActionList-item-content--label:before,
+      + .ActionList-item .ActionList-item-content--label:before {
         visibility: hidden;
       }
     }
@@ -78,22 +76,21 @@
 
   &.ActionList-item--nav-active:not(.ActionList-item--danger) {
     background: var(--color-action-list-item-default-selected-bg);
-
-    &::before,
-    + .ActionList-item::before {
+    &:before,
+    + .ActionList-item:before {
       visibility: hidden;
     }
 
     // blue accent line
-    &::after {
-      position: absolute;
-      top: calc(50% - #{$spacer-4} * 0.5);
-      left: -$actionList-item-padding-horizontal;
+    &:after {
+      content: '';
       width: $spacer-1;
       height: $spacer-4;
-      content: '';
+      border-radius: $border-radius-2;
+      position: absolute;
+      left: -$actionList-item-padding-horizontal;
+      top: calc(50% - ($spacer-4 * 0.5));
       background: var(--color-accent-fg);
-      border-radius: $border-radius-1;
     }
   }
 
@@ -101,8 +98,8 @@
 
   &[aria-expanded='true'] {
     .ActionList-item-content--collapseIcon {
-      transition: transform 120ms linear;
       transform: scaleY(-1);
+      transition: transform 120ms linear;
     }
 
     .ActionList--sub-group {
@@ -118,8 +115,8 @@
 
   &[aria-expanded='false'] {
     .ActionList-item-content--collapseIcon {
-      transition: transform 120ms linear;
       transform: scaleY(1);
+      transition: transform 120ms linear;
     }
 
     .ActionList--sub-group {
@@ -136,7 +133,7 @@
     .ActionList-item-content--multiSelect-checkmark {
       visibility: visible;
       opacity: 1;
-      transition: visibility 0s linear 0s, opacity $actionList-item-checkmark-transition-timing;
+      transition: visibility 0 linear 0, opacity $actionList-item-checkmark-transition-timing;
     }
 
     // singleselect checkmark
@@ -168,16 +165,15 @@
     .ActionList-item-content--multiSelect-checkmark {
       visibility: hidden;
       opacity: 0;
-      transition:
- visibility 0s linear $actionList-item-checkmark-transition-timing,
+      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 
     // singleselect checkmark
     .ActionList-item-content--singleSelect {
       visibility: hidden;
-      transition: visibility 0s linear 200ms;
       clip-path: inset(16px 0 0 0);
+      transition: visibility 0s linear 200ms;
 
       @media screen and (prefers-reduced-motion: no-preference) {
         animation: checkmarkOut 200ms cubic-bezier(0.11, 0, 0.5, 0) forwards;
@@ -203,7 +199,6 @@
     from {
       clip-path: inset(16px 0 0 0);
     }
-
     to {
       clip-path: inset(0 0 0 0);
     }
@@ -213,7 +208,6 @@
     from {
       clip-path: inset(0 0 0 0);
     }
-
     to {
       clip-path: inset(16px 0 0 0);
     }
@@ -249,18 +243,18 @@
 
 // span or a href
 .ActionList-item-content {
-  position: relative;
   display: grid;
-  padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
-  font-weight: $font-weight-normal;
-  color: var(--color-fg-default);
-  user-select: none;
-  border-radius: $border-radius;
-  transition: $actionList-item-bg-transition;
-  grid-template-rows: minmax(20px, max-content); // 20px + 12px padding [32]
+  grid-template-rows: minmax($actionList-item-height-sm, max-content); // 20px with 12px padding = [32px total]
   grid-template-areas: 'leadingAction leadingVisual label trailingVisual trailingAction';
   grid-template-columns: min-content min-content minmax(min-content, auto) min-content min-content;
   align-items: center;
+  padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
+  position: relative;
+  border-radius: $border-radius-2;
+  font-weight: $font-weight-normal;
+  color: var(--color-fg-default);
+  user-select: none;
+  transition: $actionList-item-bg-transition;
 
   // column-gap persists with empty grid-areas, margin applies only when children exist
   & > :not(:last-child) {
@@ -274,16 +268,16 @@
   // sizes
 
   &.ActionList-item-content--sizeMedium {
-    grid-template-rows: minmax(28px, max-content); // 28px + 12px padding [40]
+    grid-template-rows: minmax($actionList-item-height-md, max-content); // 28px with 12px padding = [40px total]
   }
 
   &.ActionList-item-content--sizeLarge {
-    grid-template-rows: minmax(36px, max-content); // 36px + 12px padding [48]
+    grid-template-rows: minmax($actionList-item-height-lg, max-content); // 36px with 12px padding = [48px total]
   }
 
   // On pointer:coarse (mobile), all list items are large
   @media (pointer: coarse) {
-    grid-template-rows: minmax(36px, max-content);
+    grid-template-rows: minmax($actionList-item-height-lg, max-content);
   }
 
   &.ActionList-item-content--blockDescription {
@@ -357,18 +351,18 @@
 // span wrapping svg or text
 .ActionList-item-content--visual,
 .ActionList-item-content--action {
+  min-height: $actionList-item-height-sm;
   display: flex;
-  min-height: 20px;
-  color: var(--color-fg-muted); // if visual is text
-  fill: var(--color-fg-muted);
   align-items: center;
+  fill: var(--color-fg-muted);
+  color: var(--color-fg-muted); // if visual is text
 }
 
 // text
 .ActionList-item-content--label {
-  position: relative; // for pseudo dividers
   font-weight: $font-weight-normal;
   color: var(--color-fg-default);
+  position: relative; // for pseudo dividers
 }
 
 // nested lists (only supports 1 level currently)
@@ -381,27 +375,27 @@
 // no leading visual
 .ActionList--sub-group {
   .ActionList-item--sub-item {
-    padding-left: 16px;
+    padding-left: $spacer-3;
   }
 }
 
 // has 16px leading visual
 .ActionList-item-content--visual--16 + .ActionList--sub-group {
   .ActionList-item--sub-item {
-    padding-left: 24px;
+    padding-left: $spacer-4;
   }
 }
 
 // has 20px leading visual
 .ActionList-item-content--visual--20 + .ActionList--sub-group {
   .ActionList-item--sub-item {
-    padding-left: 28px;
+    padding-left: $spacer-3 * 1.75;
   }
 }
 
 // has 24px leading visual
 .ActionList-item-content--visual--24 + .ActionList--sub-group {
   .ActionList-item--sub-item {
-    padding-left: 32px;
+    padding-left: $spacer-5;
   }
 }

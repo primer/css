@@ -33,8 +33,8 @@
 .ActionList-sectionDivider--filled {
   margin: $spacer-2 ($spacer-2 * -1);
   background: var(--color-canvas-subtle);
-  border-top: $border-width $border-style var(--color-scale-gray-2);
-  border-bottom: $border-width $border-style var(--color-scale-gray-2);
+  border-top: $border-width $border-style var(--color-action-list-item-inline-divider);
+  border-bottom: $border-width $border-style var(--color-action-list-item-inline-divider);
 
   // if no children, treat as divider
   &:empty {
