@@ -4,16 +4,10 @@ import prettier from 'prettier'
 import HTMLParser from 'prettier/parser-html'
 const entities = new AllHtmlEntities()
 
-const prettierConfig = {
-  htmlWhitespaceSensitivity: 'ignore',
-  ...prettier,
-  // Ensure we always pick the html parser
-  parser: 'html',
-  plugins: [prettierHtml]
-}
-
 export default story =>
   prettier.format(entities.decode(renderToStaticMarkup(story())), {
     parser: 'html',
-    plugins: [HTMLParser]
+    plugins: [HTMLParser],
+    htmlWhitespaceSensitivity: 'ignore',
+    bracketSameLine: 'false'
   })
