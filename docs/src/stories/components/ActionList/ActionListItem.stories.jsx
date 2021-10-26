@@ -14,7 +14,7 @@ export default {
     argTypes: {
         type: {
             options: [0, 1], // iterator
-            mapping: ['', 'ActionList-item--has-sub-item'], // values
+            mapping: ['', 'ActionList-item--hasSubItem'], // values
             control: {
                 type: 'select',
                 labels: ['direct-child', 'contains-children']
@@ -26,7 +26,7 @@ export default {
         },
         size: {
             options: [0, 1, 2], // iterator
-            mapping: ['', 'ActionList-item-content--sizeMedium', 'ActionList-item-content--sizeLarge'], // values
+            mapping: ['', 'ActionList-content--sizeMedium', 'ActionList-content--sizeLarge'], // values
             control: {
                 type: 'select',
                 labels: ['default', 'medium', 'large']
@@ -75,16 +75,16 @@ export default {
         leadingVisualSize: {
             options: [0, 1, 2], // iterator
             mapping: [
-                'ActionList-item-content--visual--16',
-                'ActionList-item-content--visual--20',
-                'ActionList-item-content--visual--24'
+                'ActionList-content--visual16',
+                'ActionList-content--visual20',
+                'ActionList-content--visual24'
             ], // values
             control: {
                 type: 'select',
                 labels: ['16px', '20px', '24px']
             },
             description: 'leading visual width',
-            defaultValue: 'ActionList-item-content--visual--16',
+            defaultValue: 'ActionList-content--visual16',
             table: {
                 category: 'CSS'
             }
@@ -135,13 +135,13 @@ export default {
         },
         descriptionVariant: {
             options: [0, 1], // iterator
-            mapping: ['ActionList-item-content--label-blockDescription', 'ActionList-item-content--label-inlineDescription'], // values
+            mapping: ['ActionList-item-blockDescription', 'ActionList-item-inlineDescription'], // values
             control: {
                 type: 'select',
                 labels: ['block', 'inline']
             },
             description: 'block (default), inline',
-            defaultValue: 'ActionList-item-content--label-blockDescription',
+            defaultValue: 'ActionList-item-blockDescription',
             table: {
                 category: 'CSS'
             }
@@ -225,9 +225,9 @@ export const ListItemTemplate = ({
             className={clsx(
                 'ActionList-item',
                 type && `${type}`,
-                ariaCurrent && 'ActionList-item--nav-active',
-                subItem && `ActionList-item--sub-item`,
-                containsSubItem && `ActionList-item--has-sub-item`,
+                ariaCurrent && 'ActionList-item--navActive',
+                subItem && `ActionList-item--subItem`,
+                containsSubItem && `ActionList-item--hasSubItem`,
                 variant && `${variant}`
             )}
             onClick={collapsible ? itemIsCollapsed : itemIsChecked}
@@ -245,21 +245,21 @@ export const ListItemTemplate = ({
                         role={href && !listSemantic ? 'menuitem' : undefined}
                         aria-current={ariaCurrent}
                         className={clsx(
-                            text && 'ActionList-item-content',
+                            text && 'ActionList-content',
                             size && `${size}`,
-                            (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription',
+                            (leadingVisual || trailingVisual) && description && 'ActionList-content--blockDescription',
                             leadingVisual && leadingVisualSize && `${leadingVisualSize}`
                         )}
                     >
                         {(leadingAction || singleSelect || multiSelect || listSingleSelect || listMultiSelect) && (
-                            <span className="ActionList-item-content--action ActionList-item-content--action-leading">
+                            <span className="ActionList-item-action ActionList-item-action--leading">
                                 {singleSelect || listSingleSelect && (
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 16 16"
                                         width="16"
                                         height="16"
-                                        className="ActionList-item-content--singleSelect"
+                                        className="ActionList-item-singleSelectCheckmark"
                                     >
                                         <path
                                             fill-rule="evenodd"
@@ -275,7 +275,7 @@ export const ListItemTemplate = ({
                                         xmlns="http://www.w3.org/2000/svg"
                                         aria-hidden="true"
                                         focusable="false"
-                                        className="ActionList-item-content--multiSelect"
+                                        className="ActionList-item-multiSelectIcon"
                                     >
                                         <rect
                                             x="2"
@@ -283,12 +283,12 @@ export const ListItemTemplate = ({
                                             width="12"
                                             height="12"
                                             rx="4"
-                                            className="ActionList-item-content--multiSelect-rectangle"
+                                            className="ActionList-item-multiSelectIconRect"
                                         />
                                         <path
                                             fill-rule="evenodd"
                                             d="M4.03231 8.69862C3.84775 8.20646 4.49385 7.77554 4.95539 7.77554C5.41693 7.77554 6.80154 9.85246 6.80154 9.85246C6.80154 9.85246 10.2631 4.314 10.4938 4.08323C10.7246 3.85246 11.8785 4.08323 11.4169 5.00631C11.0081 5.82388 7.26308 11.4678 7.26308 11.4678C7.26308 11.4678 6.80154 12.1602 6.34 11.4678C5.87846 10.7755 4.21687 9.19077 4.03231 8.69862Z"
-                                            className="ActionList-item-content--multiSelect-checkmark"
+                                            className="ActionList-item-multiSelectCheckmark"
                                         />
                                     </svg>
                                 )}
@@ -297,33 +297,33 @@ export const ListItemTemplate = ({
                         )}
                         {leadingVisual && (
                             <span
-                                className="ActionList-item-content--visual ActionList-item-content--visual-leading"
+                                className="ActionList-item-visual ActionList-item-visual--leading"
                                 dangerouslySetInnerHTML={{ __html: leadingVisual }}
                             />
                         )}
                         {description && (
                             <span className={`${descriptionVariant}`}>
-                                <span className="ActionList-item-content--label">{text}</span>
-                                <span className="ActionList-item-content--description">{description}</span>
+                                <span className="ActionList-item-label">{text}</span>
+                                <span className="ActionList-item-description">{description}</span>
                             </span>
                         )}
-                        {!description && text && <span className="ActionList-item-content--label">{text}</span>}
+                        {!description && text && <span className="ActionList-item-label">{text}</span>}
                         {trailingVisual && (
                             <span
-                                className="ActionList-item-content--visual ActionList-item-content--visual-trailing"
+                                className="ActionList-item-visual ActionList-item-visual--trailing"
                                 dangerouslySetInnerHTML={{ __html: trailingVisual }}
                             />
                         )}
                         {trailingAction ||
                             (collapsible && (
-                                <span className="ActionList-item-content--action ActionList-item-content--action-trailing">
+                                <span className="ActionList-item-action ActionList-item-action--trailing">
                                     {collapsible && (
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 16 16"
                                             width="16"
                                             height="16"
-                                            className="ActionList-item-content--collapseIcon"
+                                            className="ActionList-item-collapseIcon"
                                         >
                                             <path
                                                 fill-rule="evenodd"
@@ -341,20 +341,20 @@ export const ListItemTemplate = ({
                 <>
                     <span
                         className={clsx(
-                            text && 'ActionList-item-content',
+                            text && 'ActionList-content',
                             size && `${size}`,
-                            (leadingVisual || trailingVisual) && description && 'ActionList-item-content--blockDescription'
+                            (leadingVisual || trailingVisual) && description && 'ActionList-content--blockDescription'
                         )}
                     >
                         {(leadingAction || singleSelect || multiSelect || listSingleSelect || listMultiSelect) && (
-                            <span className="ActionList-item-content--action ActionList-item-content--action-leading">
+                            <span className="ActionList-item-action ActionList-item-action--leading">
                                 {singleSelect || listSingleSelect && (
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 16 16"
                                         width="16"
                                         height="16"
-                                        className="ActionList-item-content--singleSelect"
+                                        className="ActionList-item-singleSelectCheckmark"
                                     >
                                         <path
                                             fill-rule="evenodd"
@@ -370,7 +370,7 @@ export const ListItemTemplate = ({
                                         xmlns="http://www.w3.org/2000/svg"
                                         aria-hidden="true"
                                         focusable="false"
-                                        className="ActionList-item-content--multiSelect"
+                                        className="ActionList-item-multiSelectIcon"
                                     >
                                         <rect
                                             x="2"
@@ -378,12 +378,12 @@ export const ListItemTemplate = ({
                                             width="12"
                                             height="12"
                                             rx="4"
-                                            className="ActionList-item-content--multiSelect-rectangle"
+                                            className="ActionList-item-multiSelectIconRect"
                                         />
                                         <path
                                             fill-rule="evenodd"
                                             d="M4.03231 8.69862C3.84775 8.20646 4.49385 7.77554 4.95539 7.77554C5.41693 7.77554 6.80154 9.85246 6.80154 9.85246C6.80154 9.85246 10.2631 4.314 10.4938 4.08323C10.7246 3.85246 11.8785 4.08323 11.4169 5.00631C11.0081 5.82388 7.26308 11.4678 7.26308 11.4678C7.26308 11.4678 6.80154 12.1602 6.34 11.4678C5.87846 10.7755 4.21687 9.19077 4.03231 8.69862Z"
-                                            className="ActionList-item-content--multiSelect-checkmark"
+                                            className="ActionList-item-multiSelectCheckmark"
                                         />
                                     </svg>
                                 )}
@@ -392,34 +392,34 @@ export const ListItemTemplate = ({
                         )}
                         {leadingVisual && (
                             <span
-                                className="ActionList-item-content--visual ActionList-item-content--visual-leading"
+                                className="ActionList-item-visual ActionList-item-visual--leading"
                                 dangerouslySetInnerHTML={{ __html: leadingVisual }}
                             />
                         )}
                         {description && (
                             <span className={`${descriptionVariant}`}>
-                                <span className="ActionList-item-content--label">{text}</span>
-                                <span className="ActionList-item-content--description">{description}</span>
+                                <span className="ActionList-item-label">{text}</span>
+                                <span className="ActionList-item-description">{description}</span>
                             </span>
                         )}
-                        {!description && text && <span className="ActionList-item-content--label">{text}</span>}
+                        {!description && text && <span className="ActionList-item-label">{text}</span>}
 
                         {trailingVisual && (
                             <span
-                                className="ActionList-item-content--visual ActionList-item-content--visual-trailing"
+                                className="ActionList-item-visual ActionList-item-visual--trailing"
                                 dangerouslySetInnerHTML={{ __html: trailingVisual }}
                             />
                         )}
                         {trailingAction ||
                             (collapsible && (
-                                <span className="ActionList-item-content--action ActionList-item-content--action-trailing">
+                                <span className="ActionList-item-action ActionList-item-action--trailing">
                                     {collapsible && (
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 16 16"
                                             width="16"
                                             height="16"
-                                            className="ActionList-item-content--collapseIcon"
+                                            className="ActionList-item-collapseIcon"
                                         >
                                             <path
                                                 fill-rule="evenodd"

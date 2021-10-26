@@ -19,13 +19,13 @@
     cursor: pointer;
 
     // a href
-    .ActionList-item-content {
+    .ActionList-content {
       text-decoration: none;
     }
   }
 
   // only hover li without list as children
-  &:not(.ActionList-item--has-sub-item) {
+  &:not(.ActionList-item--hasSubItem) {
     &:hover {
       cursor: pointer;
       background-color: var(--color-action-list-item-default-hover-bg);
@@ -56,8 +56,8 @@
     &:hover,
     &:active {
       // hide dividers
-      .ActionList-item-content--label::before,
-      + .ActionList-item .ActionList-item-content--label::before {
+      .ActionList-item-label::before,
+      + .ActionList-item .ActionList-item-label::before {
         visibility: hidden;
       }
     }
@@ -65,9 +65,9 @@
 
   // target contents of li if sub-item (li wraps item label + nested ul)
   // collapse styles here
-  &.ActionList-item--has-sub-item {
+  &.ActionList-item--hasSubItem {
     // first child
-    > .ActionList-item-content {
+    > .ActionList-content {
       &:hover {
         background-color: var(--color-action-list-item-default-hover-bg);
       }
@@ -76,7 +76,7 @@
 
   // active state [aria-current]
 
-  &.ActionList-item--nav-active:not(.ActionList-item--danger) {
+  &.ActionList-item--navActive:not(.ActionList-item--danger) {
     background: var(--color-action-list-item-default-selected-bg);
 
     &::before,
@@ -100,29 +100,29 @@
   // collapsible item [aria-expanded]
 
   &[aria-expanded='true'] {
-    .ActionList-item-content--collapseIcon {
+    .ActionList-item-collapseIcon {
       transition: transform 120ms linear;
       transform: scaleY(-1);
     }
 
-    .ActionList--sub-group {
+    .ActionList--subGroup {
       display: block;
     }
 
-    &.ActionList-item--has-sub-item {
-      > .ActionList-item-content > .ActionList-item-content--label {
+    &.ActionList-item--hasSubItem {
+      > .ActionList-content > .ActionList-item-label {
         font-weight: $font-weight-bold;
       }
     }
   }
 
   &[aria-expanded='false'] {
-    .ActionList-item-content--collapseIcon {
+    .ActionList-item-collapseIcon {
       transition: transform 120ms linear;
       transform: scaleY(1);
     }
 
-    .ActionList--sub-group {
+    .ActionList--subGroup {
       display: none;
     }
   }
@@ -133,14 +133,14 @@
   &[aria-checked='true'],
   &[aria-selected='true'] {
     // multiselect checkmark
-    .ActionList-item-content--multiSelect-checkmark {
+    .ActionList-item-multiSelectCheckmark {
       visibility: visible;
       opacity: 1;
       transition: visibility 0 linear 0, opacity $actionList-item-checkmark-transition-timing;
     }
 
     // singleselect checkmark
-    .ActionList-item-content--singleSelect {
+    .ActionList-item-singleSelectCheckmark {
       visibility: visible;
 
       @media screen and (prefers-reduced-motion: no-preference) {
@@ -149,14 +149,14 @@
     }
 
     // checkbox
-    .ActionList-item-content--multiSelect {
-      .ActionList-item-content--multiSelect-rectangle {
+    .ActionList-item-multiSelectIcon {
+      .ActionList-item-multiSelectIconRect {
         fill: var(--color-accent-fg);
         stroke: var(--color-accent-fg);
         stroke-width: $border-width;
       }
 
-      .ActionList-item-content--multiSelect-checkmark {
+      .ActionList-item-multiSelectCheckmark {
         fill: var(--color-fg-on-emphasis);
       }
     }
@@ -165,16 +165,14 @@
   &[aria-checked='false'],
   &[aria-selected='false'] {
     // multiselect checkmark
-    .ActionList-item-content--multiSelect-checkmark {
+    .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition:
- visibility 0 linear $actionList-item-checkmark-transition-timing,
-        opacity $actionList-item-checkmark-transition-timing;
+      transition: visibility 0 linear $actionList-item-checkmark-transition-timing, opacity $actionList-item-checkmark-transition-timing;
     }
 
     // singleselect checkmark
-    .ActionList-item-content--singleSelect {
+    .ActionList-item-singleSelectCheckmark {
       visibility: hidden;
       transition: visibility 0s linear 200ms;
       clip-path: inset(16px 0 0 0);
@@ -185,15 +183,15 @@
     }
 
     // checkbox
-    .ActionList-item-content--multiSelect {
-      .ActionList-item-content--multiSelect-rectangle {
+    .ActionList-item-multiSelectIcon {
+      .ActionList-item-multiSelectIconRect {
         fill: var(--color-canvas-default);
         stroke: var(--color-border-default);
         stroke-width: $border-width;
       }
     }
 
-    .ActionList-item-content--multiSelect-rectangle {
+    .ActionList-item-multiSelectIconRect {
       fill: var(--color-canvas-default);
       border: $border-width $border-style var(--color-border-default);
     }
@@ -222,7 +220,7 @@
   // variants
 
   &.ActionList-item--danger {
-    .ActionList-item-content--label {
+    .ActionList-item-label {
       color: var(--color-danger-fg);
     }
 
@@ -230,7 +228,7 @@
       &:hover {
         background: var(--color-action-list-item-danger-hover-bg);
 
-        .ActionList-item-content--label {
+        .ActionList-item-label {
           color: var(--color-action-list-item-danger-hover-text);
         }
       }
@@ -248,7 +246,7 @@
 }
 
 // span or a href
-.ActionList-item-content {
+.ActionList-content {
   position: relative;
   display: grid;
   padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
@@ -273,11 +271,11 @@
 
   // sizes
 
-  &.ActionList-item-content--sizeMedium {
+  &.ActionList-content--sizeMedium {
     grid-template-rows: minmax($actionList-item-height-md, max-content); // 28px with 12px padding = [40px total]
   }
 
-  &.ActionList-item-content--sizeLarge {
+  &.ActionList-content--sizeLarge {
     grid-template-rows: minmax($actionList-item-height-lg, max-content); // 36px with 12px padding = [48px total]
   }
 
@@ -286,9 +284,9 @@
     grid-template-rows: minmax($actionList-item-height-lg, max-content);
   }
 
-  &.ActionList-item-content--blockDescription {
+  &.ActionList-content--blockDescription {
     // if leading/trailing visual, align with first line of content
-    .ActionList-item-content--visual {
+    .ActionList-item-visual {
       place-self: start;
     }
   }
@@ -296,58 +294,58 @@
 
 // place children on grid
 
-.ActionList-item-content--action-leading {
+.ActionList-item-action--leading {
   grid-area: leadingAction;
 }
 
-.ActionList-item-content--visual-leading {
+.ActionList-item-visual--leading {
   grid-area: leadingVisual;
 }
 
-.ActionList-item-content--label {
+.ActionList-item-label {
   grid-area: label;
 }
 
-.ActionList-item-content--visual-trailing {
+.ActionList-item-visual--trailing {
   grid-area: trailingVisual;
 }
 
-.ActionList-item-content--action-trailing {
+.ActionList-item-action--trailing {
   grid-area: trailingAction;
 }
 
 // wrapper span
-.ActionList-item-content--label-blockDescription,
-.ActionList-item-content--label-inlineDescription {
+.ActionList-item-blockDescription,
+.ActionList-item-inlineDescription {
   grid-area: label;
   display: flex;
 
-  .ActionList-item-content--label {
+  .ActionList-item-label {
     font-weight: $font-weight-bold;
   }
 }
 
 // block
-.ActionList-item-content--label-blockDescription {
+.ActionList-item-blockDescription {
   flex-direction: column;
 
-  .ActionList-item-content--description {
+  .ActionList-item-description {
     margin-top: $spacer-1;
   }
 }
 
 // inline
-.ActionList-item-content--label-inlineDescription {
+.ActionList-item-inlineDescription {
   flex-direction: row;
   align-items: baseline;
 
-  .ActionList-item-content--description {
+  .ActionList-item-description {
     margin-left: $actionList-item-padding-horizontal;
   }
 }
 
 // description
-.ActionList-item-content--description {
+.ActionList-item-description {
   font-size: $font-size-small;
   line-height: $lh-default;
   color: var(--color-fg-muted);
@@ -355,8 +353,8 @@
 
 // helper for grid alignment with multi-line content
 // span wrapping svg or text
-.ActionList-item-content--visual,
-.ActionList-item-content--action {
+.ActionList-item-visual,
+.ActionList-item-action {
   display: flex;
   min-height: $actionList-item-height-sm;
   color: var(--color-fg-muted); // if visual is text
@@ -365,43 +363,43 @@
 }
 
 // text
-.ActionList-item-content--label {
+.ActionList-item-label {
   position: relative; // for pseudo dividers
   font-weight: $font-weight-normal;
   color: var(--color-fg-default);
 }
 
 // nested lists (only supports 1 level currently)
-// target ActionList-item--sub-item for padding-left to maintain :active :after state
+// target ActionList-item--subItem for padding-left to maintain :active :after state
 
-.ActionList-item--sub-item > .ActionList-item-content {
+.ActionList-item--subItem > .ActionList-content {
   font-size: $font-size-small;
 }
 
 // no leading visual
-.ActionList--sub-group {
-  .ActionList-item--sub-item {
+.ActionList--subGroup {
+  .ActionList-item--subItem {
     padding-left: $spacer-3;
   }
 }
 
 // has 16px leading visual
-.ActionList-item-content--visual--16 + .ActionList--sub-group {
-  .ActionList-item--sub-item {
+.ActionList-content--visual16 + .ActionList--subGroup {
+  .ActionList-item--subItem {
     padding-left: $spacer-4;
   }
 }
 
 // has 20px leading visual
-.ActionList-item-content--visual--20 + .ActionList--sub-group {
-  .ActionList-item--sub-item {
+.ActionList-content--visual20 + .ActionList--subGroup {
+  .ActionList-item--subItem {
     padding-left: $spacer-3 * 1.75;
   }
 }
 
 // has 24px leading visual
-.ActionList-item-content--visual--24 + .ActionList--sub-group {
-  .ActionList-item--sub-item {
+.ActionList-content--visual24 + .ActionList--subGroup {
+  .ActionList-item--subItem {
     padding-left: $spacer-5;
   }
 }

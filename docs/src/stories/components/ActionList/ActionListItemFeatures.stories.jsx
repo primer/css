@@ -29,14 +29,14 @@ export const SizeMedium = ListItemTemplate.bind({})
 SizeMedium.args = {
     ...ListItemTemplate.args,
     text: 'Medium item',
-    size: 'ActionList-item-content--sizeMedium'
+    size: 'ActionList-content--sizeMedium'
 }
 
 export const SizeLarge = ListItemTemplate.bind({})
 SizeLarge.args = {
     ...ListItemTemplate.args,
     text: 'Large item',
-    size: 'ActionList-item-content--sizeLarge'
+    size: 'ActionList-content--sizeLarge'
 }
 
 export const VisualLeading = ListItemTemplate.bind({})
@@ -99,7 +99,7 @@ DescriptionBlock.args = {
     ...ListItemTemplate.args,
     text: 'Item label',
     description: 'This is a description',
-    descriptionVariant: 'ActionList-item-content--label-blockDescription'
+    descriptionVariant: 'ActionList-item-blockDescription'
 }
 
 export const DescriptionBlockWithLeadingVisual = ListItemTemplate.bind({})
@@ -108,7 +108,7 @@ DescriptionBlockWithLeadingVisual.args = {
     ...ListItemTemplate.args,
     text: 'Item label',
     description: 'This is a description',
-    descriptionVariant: 'ActionList-item-content--label-blockDescription',
+    descriptionVariant: 'ActionList-item-blockDescription',
     leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
             <path
               fill-rule="evenodd"
@@ -123,7 +123,7 @@ DescriptionBlockWithTrailingVisual.args = {
     ...ListItemTemplate.args,
     text: 'Item label',
     description: 'This is a description',
-    descriptionVariant: 'ActionList-item-content--label-blockDescription',
+    descriptionVariant: 'ActionList-item-blockDescription',
     trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
             <path
               fill-rule="evenodd"
@@ -138,7 +138,7 @@ DescriptionBlockWithLeadingAndTrailingVisual.args = {
     ...ListItemTemplate.args,
     text: 'Item label',
     description: 'This is a description',
-    descriptionVariant: 'ActionList-item-content--label-blockDescription',
+    descriptionVariant: 'ActionList-item-blockDescription',
     leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
             <path
               fill-rule="evenodd"
@@ -159,7 +159,7 @@ DescriptionInline.args = {
     ...ListItemTemplate.args,
     text: 'Item label',
     description: 'This is a description',
-    descriptionVariant: 'ActionList-item-content--label-inlineDescription'
+    descriptionVariant: 'ActionList-item-inlineDescription'
 }
 
 export const DescriptionInlineWithLeadingVisual = ListItemTemplate.bind({})
@@ -168,7 +168,7 @@ DescriptionInlineWithLeadingVisual.args = {
     ...ListItemTemplate.args,
     text: 'Item label',
     description: 'This is a description',
-    descriptionVariant: 'ActionList-item-content--label-inlineDescription',
+    descriptionVariant: 'ActionList-item-inlineDescription',
     leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
             <path
               fill-rule="evenodd"
@@ -183,7 +183,7 @@ DescriptionInlineWithTrailingVisual.args = {
     ...ListItemTemplate.args,
     text: 'Item label',
     description: 'This is a description',
-    descriptionVariant: 'ActionList-item-content--label-inlineDescription',
+    descriptionVariant: 'ActionList-item-inlineDescription',
     trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
             <path
               fill-rule="evenodd"
@@ -198,7 +198,7 @@ DescriptionInlineWithLeadingAndTrailingVisual.args = {
     ...ListItemTemplate.args,
     text: 'Item label',
     description: 'This is a description',
-    descriptionVariant: 'ActionList-item-content--label-inlineDescription',
+    descriptionVariant: 'ActionList-item-inlineDescription',
     trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
             <path
               fill-rule="evenodd"
