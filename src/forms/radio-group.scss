@@ -33,6 +33,11 @@
     border-top-right-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
   }
+
+  .octicon {
+    margin-left: $spacer-1;
+    color: var(--color-fg-subtle);
+  }
 }
 
 .radio-input {
@@ -40,4 +45,18 @@
   float: left;
   // stylelint-disable-next-line primer/spacing
   margin: 10px (-$spacer-5) 0 $spacer-3;
+
+  &:disabled {
+    position: relative; // enables z-index
+
+    + .radio-label {
+      color: var(--color-primer-fg-disabled);
+      cursor: default;
+      background-color: var(--color-neutral-subtle);
+
+      .octicon {
+        color: inherit;
+      }
+    }
+  }
 }
