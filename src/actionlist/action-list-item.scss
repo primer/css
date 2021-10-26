@@ -26,12 +26,12 @@
   // only hover li without list as children
   &:not(.ActionList-item--has-sub-item) {
     &:hover {
-      background-color: $actionList-item-hover-bg;
+      background-color: var(--color-action-list-item-default-hover-bg);
       cursor: pointer;
     }
 
     &:active {
-      background: $actionList-item-active-bg;
+      background: var(--color-action-list-item-default-active-bg);
 
       @media screen and (prefers-reduced-motion: no-preference) {
         animation: ActionList-item-active-bg 4s forwards $ease-out-cubic;
@@ -67,7 +67,7 @@
     // first child
     > .ActionList-item-content {
       &:hover {
-        background-color: $actionList-item-hover-bg;
+        background-color: var(--color-action-list-item-default-hover-bg);
       }
     }
   }
@@ -75,7 +75,7 @@
   // active state [aria-current]
 
   &.ActionList-item--nav-active:not(.ActionList-item--danger) {
-    background: $actionList-item-selected-bg;
+    background: var(--color-action-list-item-default-selected-bg);
     &:before,
     + .ActionList-item:before {
       visibility: hidden;
@@ -222,12 +222,12 @@
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        background: var(--color-danger-subtle);
+        background: var(--color-action-list-item-danger-hover-bg);
       }
     }
 
     &:active {
-      background: var(--color-danger-subtle);
+      background: var(--color-action-list-item-danger-active-bg);
     }
   }
 

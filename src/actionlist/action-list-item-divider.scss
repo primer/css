@@ -16,7 +16,7 @@
   // no children
   &:empty {
     height: 1px;
-    background: $actionList-item-divider;
+    background: var(--color-action-list-item-inline-divider);
     border: 0;
     margin: ($spacer-2 - 1px) ($spacer-2 * -1) $spacer-2;
     padding: 0;
