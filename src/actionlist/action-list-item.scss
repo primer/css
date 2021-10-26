@@ -223,6 +223,10 @@
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         background: var(--color-action-list-item-danger-hover-bg);
+
+        .ActionList-item-content--label {
+          color: var(--color-action-list-item-danger-hover-text);
+        }
       }
     }
 
