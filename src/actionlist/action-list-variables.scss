@@ -1,0 +1,5 @@
+$actionList-padding: $spacer-2;
+$actionList-item-padding-vertical: $spacer-1 * 1.5;
+$actionList-item-padding-horizontal: $spacer-2;
+$actionList-item-bg-transition: background 33.333ms linear; // 2 frames on a 60hz monitor
+$actionList-item-checkmark-transition-timing: 50ms;

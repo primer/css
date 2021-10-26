@@ -1,4 +1,4 @@
-@import './action-list-helpers-temporary.scss';
+// @import './action-list-variables.scss';
 
 // <ul>
 .ActionList {
@@ -8,27 +8,27 @@
 // dividers
 
 .ActionList--divided {
-  .ActionList-item-content--label:before {
-    content: '';
-    display: block;
+  .ActionList-item-content--label::before {
     position: absolute;
+    top: -$actionList-item-padding-vertical;
+    display: block;
     width: 100%;
     height: 1px;
+    content: '';
     background: var(--color-action-list-item-inline-divider);
-    top: -$actionList-item-padding-vertical;
   }
 
   // hide divider if item is active
   .ActionList-item--nav-active {
-    .ActionList-item-content--label:before,
-    + .ActionList-item .ActionList-item-content--label:before {
+    .ActionList-item-content--label::before,
+    + .ActionList-item .ActionList-item-content--label::before {
       visibility: hidden;
     }
   }
 }
 
-.ActionList-item:first-of-type .ActionList-item-content--label:before,
-.ActionList-sectionDivider + .ActionList-item .ActionList-item-content--label:before,
-.ActionList-sectionHeader + .ActionList-item .ActionList-item-content--label:before {
+.ActionList-item:first-of-type .ActionList-item-content--label::before,
+.ActionList-sectionDivider + .ActionList-item .ActionList-item-content--label::before,
+.ActionList-sectionHeader + .ActionList-item .ActionList-item-content--label::before {
   visibility: hidden;
 }

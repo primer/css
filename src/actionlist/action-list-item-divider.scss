@@ -1,26 +1,26 @@
-@import './action-list-helpers-temporary.scss';
+// @import './action-list-variables.scss';
 
 // emtpy divider
 
 .ActionList-sectionDivider {
   // has children
   &:not(:empty) {
-    padding: (($spacer-5 - $s-20) / 2) $spacer-2;
+    display: flex;
+    padding: ($spacer-1 * 1.5) $spacer-2;
     font-size: $font-size-small;
     font-weight: $font-weight-bold;
     color: var(--color-fg-muted);
-    display: flex;
     flex-direction: column;
   }
 
   // no children
   &:empty {
     height: 1px;
+    padding: 0;
+    margin: ($spacer-2 - 1px) ($spacer-2 * -1) $spacer-2;
+    list-style: none;
     background: var(--color-action-list-item-inline-divider);
     border: 0;
-    margin: ($spacer-2 - 1px) ($spacer-2 * -1) $spacer-2;
-    padding: 0;
-    list-style: none;
   }
 
   // secondary description text
@@ -33,8 +33,8 @@
 .ActionList-sectionDivider--filled {
   margin: $spacer-2 ($spacer-2 * -1);
   background: var(--color-canvas-subtle);
-  border-top: 1px solid var(--color-scale-gray-2);
-  border-bottom: 1px solid var(--color-scale-gray-2);
+  border-top: $border-width $border-style var(--color-scale-gray-2);
+  border-bottom: $border-width $border-style var(--color-scale-gray-2);
 
   // if no children, treat as divider
   &:empty {
