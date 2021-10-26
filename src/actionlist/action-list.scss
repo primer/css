@@ -1,4 +1,5 @@
-// @import './action-list-variables.scss';
+// stylelint-disable selector-max-specificity, selector-max-compound-selectors
+@import './action-list-variables.scss';
 
 // <ul>
 .ActionList {
