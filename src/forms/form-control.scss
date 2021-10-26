@@ -169,7 +169,6 @@ textarea.form-control {
     // child of sibling or sibling
     ~ * .form-checkbox-details,
     ~ .form-checkbox-details {
-      // eslint-disable selector-combinator-space-before
       display: block;
     }
   }
@@ -211,8 +210,8 @@ textarea.form-control {
     margin: 28px 25px 0 -20px;
   }
 
-  // stylelint-disable-next-line primer/spacing
   .form-select {
+    // stylelint-disable-next-line primer/spacing
     margin-top: 5px;
   }
 }
