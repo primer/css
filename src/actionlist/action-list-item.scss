@@ -225,6 +225,10 @@
       color: var(--color-danger-fg);
     }
 
+    .ActionList-item-visual {
+        color: var(--color-danger-fg);
+    }
+
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         background: var(--color-action-list-item-danger-hover-bg);
