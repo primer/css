@@ -9,7 +9,33 @@ storybook: https://primer.style/css/stories/?path=/story/components-actionlist-a
 
 Description
 
-[Action list interface guidelines](https://primer.style/design/components/action-list)
+Reference the [Action list interface guidelines](https://primer.style/design/components/action-list) for details on where and how to use Action List.
+
+## Accessibility
+### Semantic markup
+
+The markup for Action List changes depending on the intended use case.
+
+In all cases, the basic structure is as follows:
+
+```html
+<ul>
+    <li><span>Content with action (onclick)</span></li>
+    <li><a href="/">Content as link</a></li>
+    <li>
+        <ul>
+            <li>Nested list</li>
+        </ul>
+    </li>
+</ul>
+```
+
+Pay close attention to `role` attributes throughout the documentation. The `role` attribute may change depending on the context in which Action List is used. Some common use case specs:
+[Menu](https://www.w3.org/TR/wai-aria-practices-1.1/#menu)
+[Multi/Single Select Menu](https://www.w3.org/TR/wai-aria-practices-1.1/examples/menubar/menubar-2/menubar-2.html)
+[Multi/Single Select List](https://www.w3.org/TR/wai-aria-practices-1.1/#Listbox)
+
+Note: JS is required to make Action List accessible in most cases
 
 ## Action List
 
@@ -190,6 +216,7 @@ List item `li` handling semantics, state and interactions
 | `ActionList-item--subItem` | Indent + small font size for sub item `li` (optional) |
 | `ActionList-item--navActive` | Nav item and `aria-current` |
 | `ActionList-item--danger` | Item is destructive |
+| `ActionList-item--disabled` | Item is disabled |
 
 Kitchen sink
 
@@ -267,19 +294,19 @@ Contains and places all child content within Action List Item. Can be either an 
 | `ActionList-content` | Defines the overall layout grid |
 | `ActionList-content--sizeMedium` | 40px row height |
 | `ActionList-content--sizeLarge` | 48px row height, default for touch devices |
-| `ActionList-item-action--leading` | Slot: multi/single select |
-| `ActionList-item-visual--leading` | Slot: SVG or graphic like Avatar |
-| `ActionList-item-label` | Item text |
-| `ActionList-item-description` | Item description (optional) |
-| `ActionList-item-blockDescription` | Display description as block |
-| `ActionList-item-descriptionWrap--inline` | Display description inline with label |
-| `ActionList-item-visual--trailing` | Slot: SVG or text |
-| `ActionList-item-action--trailing` | Slot: Button, collapse icon |
-| `ActionList-item-visual` | min-height + default styles for visual slot |
-| `ActionList-item-action` | min-height + default styles for visual slot |
 | `ActionList-content--visual16` | Creates left padding for sub list if leading visual exists |
 | `ActionList-content--visual20` | Creates left padding for sub list if leading visual exists |
 | `ActionList-content--visual24` | Creates left padding for sub list if leading visual exists |
+| `ActionList-item-action` | min-height + default styles for visual slot |
+| `ActionList-item-action--leading` | Slot: multi/single select |
+| `ActionList-item-action--trailing` | Slot: Button, collapse icon |
+| `ActionList-item-visual` | min-height + default styles for visual slot |
+| `ActionList-item-visual--leading` | Slot: SVG or graphic like Avatar |
+| `ActionList-item-visual--trailing` | Slot: SVG or text |
+| `ActionList-item-label` | Item text |
+| `ActionList-item-descriptionWrap` | Wraps label/description |
+| `ActionList-item-descriptionWrap--inline` | Display description inline with label |
+| `ActionList-item-description` | Item description (block by default) |
 
 Basic text only item
 
