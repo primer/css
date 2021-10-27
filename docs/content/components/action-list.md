@@ -74,7 +74,7 @@ Action List is a `ul` list designed to contain Action List Items.
     <span class="ActionList-content">
       <span class="ActionList-item-label">Sub menu label</span>
     </span>
-    <ul class="ActionList ActionList--sub-group" role="menu" aria-label="Menu description">
+    <ul class="ActionList ActionList--subGroup" role="menu" aria-label="Menu description">
         <li class="ActionList-item ActionList-item--subItem" role="menuitem">
             <span class="ActionList-content">
             <span class="ActionList-item-label">Sub menu item</span>
@@ -233,7 +233,7 @@ Kitchen sink
     </li>
     <li class="ActionList-sectionDivider" role="presentation" id="some-unique-id" aria-hidden="true">Section Divider</li>
     <li class="ActionList-item ActionList-item--hasSubItem" role="menuitem">
-      <ul class="ActionList ActionList--sub-group" role="menu" aria-labelledby="some-unique-id">
+      <ul class="ActionList ActionList--subGroup" role="menu" aria-labelledby="some-unique-id">
         <li class="ActionList-item ActionList-item--subItem" role="none">
           <a href="/" role="menuitem" class="ActionList-content">
             <span class="ActionList-item-label">Nav Item</span>
