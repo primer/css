@@ -19,6 +19,7 @@ jobs:
       - name: Look for unused stylelint:disable lines
         run: yarn stylelint -- --report-needless-disables
       - name: Push up any fixes
+        if: ${{ github.event_name == 'pull_request' }}
         run: |
           git remote update
           git fetch
