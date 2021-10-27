@@ -3,29 +3,17 @@ import clsx from 'clsx'
 // import { StoryTemplateName } from './OtherStoryFile.stories' // import stories for component compositions
 
 export default {
-  title: 'Components/Label/LabelStates',
-  excludeStories: ['LabelStatesTemplate'],
+  title: 'Components/Label/Counter',
+  excludeStories: ['LabelCounterTemplate'],
   argTypes: {
-    state: {
-      options: [0, 1, 2, 3, 4], // iterator
-      mapping: ['', 'State--draft', 'State--open', 'State--merged', 'State--closed'], // values
+    variant: {
+      options: [0, 1, 2], // iterator
+      mapping: ['', 'Counter--primary', 'Counter--secondary'], // values
       control: {
         type: 'select',
-        labels: ['default', 'draft', 'open', 'merged', 'closed'] // public labels
+        labels: ['default', 'primary', 'secondary'] // public labels
       },
       // description: 'Colors & icons',
-      table: {
-        category: 'CSS'
-      }
-    },
-    size: {
-      options: [0, 1], // iterator
-      mapping: ['', 'State--small'], // values
-      control: {
-        type: 'select',
-        labels: ['default', 'small'] // public labels
-      },
-      description: 'Size',
       table: {
         category: 'CSS'
       }
@@ -51,8 +39,8 @@ export default {
 }
 
 // build every component case here in the template (private api)
-export const LabelStatesTemplate = ({state, size, text, icon}) => (
-  <span className={clsx('State', state && `${state}`, size && `${size}`)}>
+export const LabelCounterTemplate = ({variant, text, icon}) => (
+  <span className={clsx('Counter', variant && `${variant}`)}>
     <>
       {icon && icon}
       {text}
@@ -61,8 +49,8 @@ export const LabelStatesTemplate = ({state, size, text, icon}) => (
 )
 
 // create a "playground" demo page that may set some defaults and allow story to access component controls
-export const Playground = LabelStatesTemplate.bind({})
+export const Playground = LabelCounterTemplate.bind({})
 Playground.args = {
-  text: 'Draft',
-  state: 'State--draft'
+  text: '23',
+  variant: 'Counter--primary'
 }
