@@ -219,6 +219,7 @@
 
   // variants
 
+  // danger
   &.ActionList-item--danger {
     .ActionList-item-label {
       color: var(--color-danger-fg);
@@ -239,19 +240,20 @@
     }
   }
 
-  &.ActionList-item--disabled {
+  // disabled
+&.ActionList-item--disabled {
+    .ActionList-item-label {
+        color: pink;
+    }
 
     .ActionList-item-visual {
         fill: pink;
     }
-    .ActionList-item-label {
-        color: pink;
-      }
 
-      @media (hover: hover) and (pointer: fine) {
+    @media (hover: hover) and (pointer: fine) {
         &:hover {
             background-color: unset;
-          cursor: not-allowed;
+            cursor: not-allowed;
         }
     }
   }
