@@ -1,6 +1,5 @@
 import React from 'react'
 import clsx from 'clsx'
-// import { StoryTemplateName } from './OtherStoryFile.stories' // import stories for component compositions
 
 export default {
   title: 'Components/Label/Label',
@@ -14,7 +13,7 @@ export default {
       }
     },
     variant: {
-      options: [0, 1, 2, 3, 4, 5, 6], // iterator
+      options: [0, 1, 2, 3, 4, 5], // iterator
       mapping: [
         '',
         'Label--primary',

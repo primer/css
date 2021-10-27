@@ -1,6 +1,5 @@
 import React from 'react'
 import clsx from 'clsx'
-// import { StoryTemplateName } from './OtherStoryFile.stories' // import stories for component compositions
 
 export default {
   title: 'Components/Label/IssueLabel',

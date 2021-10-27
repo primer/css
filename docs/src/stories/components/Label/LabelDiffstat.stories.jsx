@@ -1,6 +1,4 @@
 import React from 'react'
-import clsx from 'clsx'
-// import { StoryTemplateName } from './OtherStoryFile.stories' // import stories for component compositions
 
 export default {
   title: 'Components/Label/Diffstat',
@@ -13,7 +11,6 @@ export default {
         type: 'select',
         labels: ['default', 'success', 'danger'] // public labels
       },
-      // description: 'Colors & icons',
       table: {
         category: 'CSS'
       }

@@ -1,9 +1,8 @@
 import React from 'react'
 import clsx from 'clsx'
-// import { StoryTemplateName } from './OtherStoryFile.stories' // import stories for component compositions
 
 export default {
-  title: 'Components/Label/LabelStates',
+  title: 'Components/Label/States',
   excludeStories: ['LabelStatesTemplate'],
   argTypes: {
     state: {
@@ -54,8 +53,7 @@ export default {
 export const LabelStatesTemplate = ({state, size, text, icon}) => (
   <span className={clsx('State', state && `${state}`, size && `${size}`)}>
     <>
-      {icon && icon}
-      {text}
+      {icon && <span dangerouslySetInnerHTML={{__html: icon}} />} {text}
     </>
   </span>
 )
