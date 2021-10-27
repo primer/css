@@ -43,8 +43,8 @@ label {
     color: var(--color-primer-fg-disabled);
     background-color: var(--color-input-disabled-bg);
     border-color: var(--color-border-default);
-    -webkit-text-fill-color: var(--color-primer-fg-disabled);
-    opacity: 1;
+    -webkit-text-fill-color: var(--color-primer-fg-disabled); // Fix for Safari
+    opacity: 1; // Fix for Safari iOS
 
     &::placeholder {
       color: var(--color-primer-fg-disabled);
