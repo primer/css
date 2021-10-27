@@ -38,11 +38,11 @@ export default {
             }
         },
         variant: {
-            options: [0, 1], // iterator
-            mapping: ['', 'ActionList-item--danger'], // values
+            options: [0, 1, 2], // iterator
+            mapping: ['', 'ActionList-item--danger', 'ActionList-item--disabled'], // values
             control: {
                 type: 'select',
-                labels: ['default', 'danger']
+                labels: ['default', 'danger', 'disabled']
             },
             defaultValue: '',
             table: {
@@ -135,7 +135,7 @@ export default {
         },
         descriptionVariant: {
             options: [0, 1], // iterator
-            mapping: ['ActionList-item-blockDescription', 'ActionList-item-inlineDescription'], // values
+            mapping: ['', 'ActionList-item-descriptionWrap--inline'], // values
             control: {
                 type: 'select',
                 labels: ['block', 'inline']
@@ -189,6 +189,13 @@ export default {
             table: {
                 category: 'Interactive'
             }
+        },
+        ariaDisabled: {
+            defaultValue: false,
+            control: { type: 'boolean' },
+            table: {
+                category: 'Interactive'
+            }
         }
     }
 }
@@ -216,7 +223,8 @@ export const ListItemTemplate = ({
     multiSelect,
     listSingleSelect,
     listMultiSelect,
-    listSemantic
+    listSemantic,
+    ariaDisabled
 }) => {
     const [isCollapsed, itemIsCollapsed] = useToggle()
     const [isChecked, itemIsChecked] = useToggle()
@@ -237,6 +245,7 @@ export const ListItemTemplate = ({
             aria-expanded={collapsible ? (isCollapsed ? 'false' : 'true') : undefined}
             aria-checked={singleSelect || multiSelect ? (isChecked ? 'true' : 'false') : undefined}
             aria-selected={listSingleSelect || listMultiSelect ? (isChecked ? 'true' : 'false') : undefined}
+            aria-disabled={ariaDisabled}
         >
             {href ? (
                 <>
@@ -302,7 +311,7 @@ export const ListItemTemplate = ({
                             />
                         )}
                         {description && (
-                            <span className={`${descriptionVariant}`}>
+                            <span className={clsx('ActionList-item-descriptionWrap', `${descriptionVariant}`)}>
                                 <span className="ActionList-item-label">{text}</span>
                                 <span className="ActionList-item-description">{description}</span>
                             </span>
@@ -397,7 +406,7 @@ export const ListItemTemplate = ({
                             />
                         )}
                         {description && (
-                            <span className={`${descriptionVariant}`}>
+                            <span className={clsx('ActionList-item-descriptionWrap', `${descriptionVariant}`)}>
                                 <span className="ActionList-item-label">{text}</span>
                                 <span className="ActionList-item-description">{description}</span>
                             </span>

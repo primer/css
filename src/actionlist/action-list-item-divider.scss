@@ -22,12 +22,6 @@
     background: var(--color-action-list-item-inline-divider);
     border: 0;
   }
-
-  // secondary description text
-  .ActionList-sectionDivider--description {
-    font-size: $font-size-small;
-    font-weight: $font-weight-normal;
-  }
 }
 
 .ActionList-sectionDivider--filled {

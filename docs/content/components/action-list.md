@@ -101,7 +101,7 @@ List item `li` for separating groups of content
 | :- | :- |
 | `ActionList-sectionDivider` | Default subtle divider line |
 | `ActionList-sectionDivider--filled` | Thicker divider line |
-| `ActionList-sectionDivider--description` | Optional section header secondary text |
+| `ActionList-item-description` | Optional section header secondary text |
 
 #### Default
 
@@ -161,7 +161,7 @@ When using a section label for a group, give the `li` an id to be referenced by 
 <ul class="ActionList" role="menu">
   <li class="ActionList-sectionDivider" role="presentation" id="nested-group-id" aria-hidden="true">
     Section label
-    <span class="ActionList-sectionDivider--description">
+    <span class="ActionList-item-description">
       Section description
     </span>
   </li>
@@ -272,7 +272,7 @@ Contains and places all child content within Action List Item. Can be either an 
 | `ActionList-item-label` | Item text |
 | `ActionList-item-description` | Item description (optional) |
 | `ActionList-item-blockDescription` | Display description as block |
-| `ActionList-item-inlineDescription` | Display description inline with label |
+| `ActionList-item-descriptionWrap--inline` | Display description inline with label |
 | `ActionList-item-visual--trailing` | Slot: SVG or text |
 | `ActionList-item-action--trailing` | Slot: Button, collapse icon |
 | `ActionList-item-visual` | min-height + default styles for visual slot |
@@ -356,7 +356,7 @@ Inline description
 <ul class="ActionList" role="menu">
   <li class="ActionList-item" role="menuitem">
     <span class="ActionList-content">
-      <span class="ActionList-item-inlineDescription">
+      <span class="ActionList-item-descriptionWrap--inline">
         <span class="ActionList-item-label">Item label</span>
         <span class="ActionList-item-description">This is a description</span>
       </span>

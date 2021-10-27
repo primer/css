@@ -68,7 +68,7 @@ export const DividerTemplate = ({title, description, variant, id}) => (
       aria-hidden={title ? true : undefined}
     >
       {title}
-      {description && <span className="ActionList-sectionDivider--description">{description}</span>}
+      {description && <span className="ActionList-item-description">{description}</span>}
     </li>
   </>
 )

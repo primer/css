@@ -239,6 +239,23 @@
     }
   }
 
+  &.ActionList-item--disabled {
+
+    .ActionList-item-visual {
+        fill: pink;
+    }
+    .ActionList-item-label {
+        color: pink;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background-color: unset;
+          cursor: not-allowed;
+        }
+    }
+  }
+
   // if nested list exists, remove default padding
   .ActionList {
     padding: unset;
@@ -315,27 +332,23 @@
 }
 
 // wrapper span
-.ActionList-item-blockDescription,
-.ActionList-item-inlineDescription {
+// default block
+.ActionList-item-descriptionWrap {
   grid-area: label;
   display: flex;
+  flex-direction: column;
+
+  .ActionList-item-description {
+    margin-top: $spacer-1;
+  }
 
   .ActionList-item-label {
     font-weight: $font-weight-bold;
   }
 }
 
-// block
-.ActionList-item-blockDescription {
-  flex-direction: column;
-
-  .ActionList-item-description {
-    margin-top: $spacer-1;
-  }
-}
-
 // inline
-.ActionList-item-inlineDescription {
+.ActionList-item-descriptionWrap--inline {
   flex-direction: row;
   align-items: baseline;
 
@@ -347,6 +360,7 @@
 // description
 .ActionList-item-description {
   font-size: $font-size-small;
+  font-weight: $font-weight-normal;
   line-height: $lh-default;
   color: var(--color-fg-muted);
 }
