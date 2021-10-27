@@ -20,12 +20,14 @@ jobs:
         run: yarn stylelint -- --report-needless-disables
       - name: Push up any fixes
         run: |
+          git remote update
           git fetch
+          git checkout --track origin/$GITHUB_HEAD_REF
           git config --local user.email "actions@github.com"
           git config --local user.name "Actions Auto Build"
           git add .
           git commit -m "Stylelint auto-fixes" || true
-          git push origin $GITHUB_HEAD_REF
+          git push
 
   eslint:
     runs-on: ubuntu-latest
