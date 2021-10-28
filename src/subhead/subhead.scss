@@ -5,6 +5,7 @@
   margin-bottom: $spacer-3;
   border-bottom: $border-width $border-style var(--color-border-muted);
   flex-flow: row wrap;
+  justify-content: flex-end; // Keep actions right aligned.
 }
 
 // Modifier class to give a lot of breathing room between sections of content.
@@ -34,6 +35,11 @@
 
 // Add 1 or 2 buttons to the right of the heading
 .Subhead-actions {
+  margin: $spacer-1 0 $spacer-1 $spacer-1;
   align-self: center;
   justify-content: flex-end;
+
+  + .Subhead-description {
+    margin-top: $spacer-1;
+  }
 }
