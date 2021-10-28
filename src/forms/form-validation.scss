@@ -11,15 +11,15 @@ dl.form-group > dd, // TODO: Deprecate
     }
 
     &.is-autocheck-loading {
-      background-image: url("/images/spinners/octocat-spinner-16px.gif");
+      background-image: url('/images/spinners/octocat-spinner-16px.gif');
     }
 
     &.is-autocheck-successful {
-      background-image: url("/images/modules/ajax/success.png");
+      background-image: url('/images/modules/ajax/success.png');
     }
 
     &.is-autocheck-errored {
-      background-image: url("/images/modules/ajax/error.png");
+      background-image: url('/images/modules/ajax/error.png');
     }
   }
 }
@@ -36,15 +36,15 @@ dl.form-group > dd, // TODO: Deprecate
       }
 
       &.is-autocheck-loading {
-        background-image: url("/images/spinners/octocat-spinner-32.gif");
+        background-image: url('/images/spinners/octocat-spinner-32.gif');
       }
 
       &.is-autocheck-successful {
-        background-image: url("/images/modules/ajax/success@2x.png");
+        background-image: url('/images/modules/ajax/success@2x.png');
       }
 
       &.is-autocheck-errored {
-        background-image: url("/images/modules/ajax/error@2x.png");
+        background-image: url('/images/modules/ajax/error@2x.png');
       }
     }
   }
@@ -67,7 +67,7 @@ dl.form-group > dd, // TODO: Deprecate
 .status-indicator-success {
   // Override primer
   &::before {
-    content: "";
+    content: '';
   }
 
   .octicon-check {
@@ -84,7 +84,7 @@ dl.form-group > dd, // TODO: Deprecate
 .status-indicator-failed {
   // Override primer
   &::before {
-    content: "";
+    content: '';
   }
 
   .octicon-check {
@@ -100,7 +100,7 @@ dl.form-group > dd, // TODO: Deprecate
 
 .status-indicator-loading {
   width: 16px;
-  background-image: url("/images/spinners/octocat-spinner-32-EAF2F5.gif");
+  background-image: url('/images/spinners/octocat-spinner-32-EAF2F5.gif');
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 16px;

@@ -9,7 +9,7 @@
 
   &::after {
     display: inline-block;
-    content: "...";
+    content: '...';
     animation: AnimatedEllipsis-keyframes 1.2s steps(4, jump-none) infinite;
   }
 

@@ -1,7 +1,7 @@
 @import "../../support/index.scss";
 
-@import "@primer/primitives/dist/scss/colors/_dark_protanopia.scss";
+@import "@primer/primitives/dist/scss/colors/_dark_colorblind.scss";
 
 @include color-mode-theme(dark_colorblind) {
-  @include primer-colors-dark_protanopia;
+  @include primer-colors-dark_colorblind;
 }

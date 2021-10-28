@@ -15,9 +15,20 @@ jobs:
       - run: yarn
       - run: yarn dist
       - name: Lint source files
-        run: yarn stylelint
+        run: yarn stylelint --fix
       - name: Look for unused stylelint:disable lines
         run: yarn stylelint -- --report-needless-disables
+      - name: Push up any fixes
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          git remote update
+          git fetch
+          git checkout --track origin/$GITHUB_HEAD_REF
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Actions Auto Build"
+          git add .
+          git commit -m "Stylelint auto-fixes" || true
+          git push
 
   eslint:
     runs-on: ubuntu-latest

@@ -6,9 +6,9 @@
     "clean": "gatsby clean",
     "develop": "ln -sf ../dist . && gatsby develop -H 0.0.0.0",
     "build-content": "gatsby build --prefix-paths",
-    "build": "./script/now-build.sh",
+    "build": "./script/now-build.sh && ./script/build-storybook.sh",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "./script/build-storybook.sh"
   },
   "dependencies": {
     "@babel/preset-react": "^7.10.4",
@@ -17,7 +17,7 @@
     "@primer/gatsby-theme-doctocat": "2.0.0",
     "@primer/octicons": "16.1.0",
     "@primer/octicons-react": "16.0.0",
-    "@primer/primitives": "5.1.0",
+    "@primer/primitives": "6.0.0",
     "@svgr/webpack": "5.5.0",
     "autoprefixer": "10.3.7",
     "babel-preset-gatsby": "^2.0.0",
@@ -40,7 +40,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-frame-component": "^5.1.0",
-    "sass-loader": "11.1.1",
+    "sass-loader": "10.1.1",
     "styled-components": "^4.3.2",
     "title-case": "^3.0.3"
   },
