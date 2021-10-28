@@ -168,7 +168,8 @@
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition: visibility 0 linear $actionList-item-checkmark-transition-timing, opacity $actionList-item-checkmark-transition-timing;
+      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
+        opacity $actionList-item-checkmark-transition-timing;
     }
 
     // singleselect checkmark
@@ -226,7 +227,7 @@
     }
 
     .ActionList-item-visual {
-        color: var(--color-danger-fg);
+      color: var(--color-danger-fg);
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -245,20 +246,20 @@
   }
 
   // disabled
-&.ActionList-item--disabled {
+  &.ActionList-item--disabled {
     .ActionList-item-label {
-        color: pink;
+      color: pink;
     }
 
     .ActionList-item-visual {
-        fill: pink;
+      fill: pink;
     }
 
     @media (hover: hover) and (pointer: fine) {
-        &:hover {
-            background-color: unset;
-            cursor: not-allowed;
-        }
+      &:hover {
+        background-color: unset;
+        cursor: not-allowed;
+      }
     }
   }
 
