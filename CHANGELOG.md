@@ -1,5 +1,31 @@
 # @primer/css
 
+## 18.1.0
+
+### Minor Changes
+
+- [#1694](https://github.com/primer/css/pull/1694) [`b0e1687a`](https://github.com/primer/css/commit/b0e1687a562a194ed178fd2dd35588ff5da40847) Thanks [@simurai](https://github.com/simurai)! - Add more Octicon icon support to components
+
+* [#1711](https://github.com/primer/css/pull/1711) [`bc3b94d2`](https://github.com/primer/css/commit/bc3b94d26f08f65d3a4938bafa1b988585f35764) Thanks [@simurai](https://github.com/simurai)! - Add new color `Label`s
+
+### Patch Changes
+
+- [#1710](https://github.com/primer/css/pull/1710) [`6a058ecb`](https://github.com/primer/css/commit/6a058ecbaf7edac6fce4a0d56b4aca46ac6cd4fa) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating [@primer/primitives@6.0.0](https://github.com/primer/primitives/releases/tag/v6.0.0)
+
+* [#1712](https://github.com/primer/css/pull/1712) [`bc502033`](https://github.com/primer/css/commit/bc50203324ba03d4ece7ec6182c185a695626ffb) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating @primer/stylelint-config to 12.1.0
+
+- [#1708](https://github.com/primer/css/pull/1708) [`f7c44c35`](https://github.com/primer/css/commit/f7c44c35f8085f2b793581a901ecb22c5174ef6a) Thanks [@langermank](https://github.com/langermank)! - Storybook: add Label stories
+
+* [#1690](https://github.com/primer/css/pull/1690) [`af5a3ae8`](https://github.com/primer/css/commit/af5a3ae82668d6d04af8c3465302980dcf062cc4) Thanks [@simurai](https://github.com/simurai)! - Update `Subhead` actions
+
+- [#1707](https://github.com/primer/css/pull/1707) [`a997790b`](https://github.com/primer/css/commit/a997790b69f0f3bb5c7a2dfc97c5d5c743bb6a38) Thanks [@maximedegreve](https://github.com/maximedegreve)! - Fix for disabled Safari inputs
+
+* [#1693](https://github.com/primer/css/pull/1693) [`c1ca19d4`](https://github.com/primer/css/commit/c1ca19d4f071a9b12172e4a13bdb96c52a200d47) Thanks [@jasonmacgowan](https://github.com/jasonmacgowan)! - Fix light-theme attr reference in theme docs
+
+- [#1689](https://github.com/primer/css/pull/1689) [`257f68f6`](https://github.com/primer/css/commit/257f68f6539539ab809fbdb4351aefa57173e044) Thanks [@adityatheoctocatdev](https://github.com/adityatheoctocatdev)! - Update all Toast variant icons to use `var(--color-fg-on-emphasis)`
+
+  The only visible change is in the `warning` variant, previously using `var(--color-fg-default)`
+
 ## 18.0.2
 
 ### Patch Changes
