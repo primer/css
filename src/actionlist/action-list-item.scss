@@ -87,7 +87,7 @@
     // blue accent line
     &::after {
       position: absolute;
-      top: calc(50% - ($spacer-4 * 0.5));
+      top: calc(50% - 12px);
       left: -$actionList-item-padding-horizontal;
       width: $spacer-1;
       height: $spacer-4;
