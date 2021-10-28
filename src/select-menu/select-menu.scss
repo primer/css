@@ -40,7 +40,7 @@ $SelectMenu-max-height: 480px !default;
   bottom: 0;
   left: 0;
   pointer-events: none;
-  content: "";
+  content: '';
   background-color: var(--color-primer-canvas-backdrop);
 
   @include breakpoint(sm) {
@@ -268,7 +268,7 @@ $SelectMenu-max-height: 480px !default;
     border-top-right-radius: $border-radius;
   }
 
-  &[aria-selected="true"] {
+  &[aria-selected='true'] {
     z-index: 1; // Keeps box-shadow visible when hovering
     color: var(--color-fg-default);
     cursor: default;
@@ -438,7 +438,7 @@ $SelectMenu-max-height: 480px !default;
     color: var(--color-fg-default);
   }
 
-  .SelectMenu-tab:not([aria-selected="true"]):active {
+  .SelectMenu-tab:not([aria-selected='true']):active {
     color: var(--color-fg-default);
     background-color: var(--color-canvas-subtle);
   }

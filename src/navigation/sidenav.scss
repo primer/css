@@ -37,7 +37,7 @@
     z-index: 1;
     width: 2px;
     pointer-events: none;
-    content: "";
+    content: '';
   }
 }
 
@@ -60,7 +60,7 @@
 }
 
 .SideNav-item[aria-current]:not([aria-current=false]),
-.SideNav-item[aria-selected="true"] {
+.SideNav-item[aria-selected='true'] {
   background-color: var(--color-sidenav-selected-bg);
 
   // Bar on the left
@@ -102,7 +102,7 @@
 }
 
 .SideNav-subItem[aria-current]:not([aria-current=false]),
-.SideNav-subItem[aria-selected="true"] {
+.SideNav-subItem[aria-selected='true'] {
   font-weight: $font-weight-semibold;
   color: var(--color-fg-default);
 }
