@@ -37,16 +37,22 @@ Use `Label--secondary` to create a label with a subtler text color. This label i
 
 Labels come in a few different functional classes. Use to communicate the content of the label, and ensure it's used consistently.
 
-- `Label--info`
+- `Label--accent`
 - `Label--success`
-- `Label--warning`
+- `Label--attention`
+- `Label--severe`
 - `Label--danger`
+- `Label--done`
+- `Label--sponsors`
 
 ```html live
-<span class="Label mr-1 Label--info">Info</span>
+<span class="Label mr-1 Label--accent">Accent</span>
 <span class="Label mr-1 Label--success">Success</span>
-<span class="Label mr-1 Label--warning">Warning</span>
+<span class="Label mr-1 Label--attention">Attention</span>
+<span class="Label mr-1 Label--severe">Severe</span>
 <span class="Label mr-1 Label--danger">Danger</span>
+<span class="Label mr-1 Label--done">Done</span>
+<span class="Label mr-1 Label--sponsors">Sponsors</span>
 ```
 
 ### Label sizes
