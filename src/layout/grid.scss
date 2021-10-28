@@ -37,7 +37,7 @@
   margin-right: -$gutter-width;
   margin-left: -$gutter-width;
 
-  > [class*="col-"] {
+  > [class*='col-'] {
     padding-right: $gutter-width !important;
     padding-left: $gutter-width !important;
   }

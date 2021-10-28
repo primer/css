@@ -7,7 +7,7 @@
   width: 0;
   height: 0;
   vertical-align: middle;
-  content: "";
+  content: '';
   border-style: $border-style;
   // stylelint-disable-next-line primer/borders
   border-width: $spacer-1 $spacer-1 0;
@@ -40,7 +40,7 @@
   &::after {
     position: absolute;
     display: inline-block;
-    content: "";
+    content: '';
   }
 
   // caret border
@@ -94,7 +94,7 @@
       opacity: 1;
     }
 
-    [class*="color-text-"] {
+    [class*='color-text-'] {
       color: inherit !important;
     }
 
@@ -130,7 +130,7 @@
   color: var(--color-fg-muted);
 }
 
-.dropdown-item[aria-checked="false"] .octicon-check {
+.dropdown-item[aria-checked='false'] .octicon-check {
   display: none;
 }
 
