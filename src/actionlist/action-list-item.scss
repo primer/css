@@ -12,6 +12,7 @@
 .ActionList-item {
   position: relative;
   list-style: none;
+  background-color: var(--color-canvas-default);
   border-radius: $border-radius;
 
   &:hover,
@@ -168,7 +169,8 @@
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
+      transition:
+ visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 
@@ -248,17 +250,17 @@
   // disabled
   &.ActionList-item--disabled {
     .ActionList-item-label {
-      color: pink;
+      color: var(--color-primer-fg-disabled);
     }
 
     .ActionList-item-visual {
-      fill: pink;
+      fill: var(--color-primer-fg-disabled);
     }
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        background-color: unset;
         cursor: not-allowed;
+        background-color: var(--color-canvas-default);
       }
     }
   }

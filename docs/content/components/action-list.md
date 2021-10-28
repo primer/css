@@ -7,8 +7,6 @@ bundle: action-list
 storybook: https://primer.style/css/stories/?path=/story/components-actionlist-actionlistitem--playground
 ---
 
-Description
-
 Reference the [Action list interface guidelines](https://primer.style/design/components/action-list) for details on where and how to use Action List.
 
 ## Accessibility
@@ -31,8 +29,11 @@ In all cases, the basic structure is as follows:
 ```
 
 Pay close attention to `role` attributes throughout the documentation. The `role` attribute may change depending on the context in which Action List is used. Some common use case specs:
+
 [Menu](https://www.w3.org/TR/wai-aria-practices-1.1/#menu)
+
 [Multi/Single Select Menu](https://www.w3.org/TR/wai-aria-practices-1.1/examples/menubar/menubar-2/menubar-2.html)
+
 [Multi/Single Select List](https://www.w3.org/TR/wai-aria-practices-1.1/#Listbox)
 
 Note: JS is required to make Action List accessible in most cases
@@ -45,6 +46,7 @@ Action List is a `ul` list designed to contain Action List Items.
 
 | Class | Description |
 | :- | :- |
+| `ActionList` | Default styles |
 | `ActionList--divided` | Show dividers between items |
 | `ActionList--subGroup` | If Action List is nested as a sub-list |
 
@@ -68,7 +70,7 @@ Action List is a `ul` list designed to contain Action List Items.
 #### Item dividers
 
 ```html live
-<ul class="ActionList" role="menu" aria-label="Menu description">
+<ul class="ActionList ActionList--divided" role="menu" aria-label="Menu description">
   <li class="ActionList-item" role="menuitem">
     <span class="ActionList-content">
       <span class="ActionList-item-label">Action list item</span>
@@ -246,6 +248,11 @@ Kitchen sink
             <span class="ActionList-item-label">Nav Item</span>
           </a>
         </li>
+        <li class="ActionList-item ActionList-item--disabled" role="none">
+          <a href="/" role="menuitem" class="ActionList-content">
+            <span class="ActionList-item-label">Disabled Item</span>
+          </a>
+        </li>
         <li class="ActionList-item ActionList-item--navActive" role="none">
             <a href="#" role="menuitem" aria-current="location" class="ActionList-content">
             <span class="ActionList-item-label">Nav Item</span>
@@ -253,7 +260,7 @@ Kitchen sink
         </li>
         <li class="ActionList-item ActionList-item--danger" role="none">
           <a href="/" role="menuitem" class="ActionList-content">
-            <span class="ActionList-item-label">Nav Item</span>
+            <span class="ActionList-item-label">Danger Item</span>
           </a>
         </li>
       </ul>
@@ -308,7 +315,7 @@ Contains and places all child content within Action List Item. Can be either an 
 | `ActionList-item-descriptionWrap--inline` | Display description inline with label |
 | `ActionList-item-description` | Item description (block by default) |
 
-Basic text only item
+### Basic text only item
 
 ```html live
 <ul class="ActionList" role="menu">
@@ -320,7 +327,7 @@ Basic text only item
 </ul>
 ```
 
-Size (all options)
+### Size (all options)
 
 ```html live
 <ul class="ActionList" role="menu">
@@ -339,7 +346,7 @@ Size (all options)
 </ul>
 ```
 
-Visuals (all options- leading & trailing)
+### Visuals (all options- leading & trailing)
 
 ```html live
 <ul class="ActionList" role="menu">
@@ -362,7 +369,7 @@ Visuals (all options- leading & trailing)
 </ul>
 ```
 
-Trailing visual as text
+### Trailing visual as text
 
 ```html live
 <ul class="ActionList" role="menu">
@@ -377,13 +384,13 @@ Trailing visual as text
 </ul>
 ```
 
-Inline description
+### Inline description
 
 ```html live
 <ul class="ActionList" role="menu">
   <li class="ActionList-item" role="menuitem">
     <span class="ActionList-content">
-      <span class="ActionList-item-descriptionWrap--inline">
+      <span class="ActionList-item-descriptionWrap ActionList-item-descriptionWrap--inline">
         <span class="ActionList-item-label">Item label</span>
         <span class="ActionList-item-description">This is a description</span>
       </span>
@@ -392,7 +399,7 @@ Inline description
 </ul>
 ```
 
-Active navigational item
+### Active navigational item
 
 ```html live
 <ul class="ActionList" role="menu">
@@ -405,7 +412,7 @@ Active navigational item
 </ul>
 ```
 
-Danger item
+### Danger item
 
 ```html live
 <ul class="ActionList" role="menu">
@@ -419,7 +426,7 @@ Danger item
 
 ### Actions
 
-Leading action: single select
+### Leading action: single select
 
 ```html live
 <ul class="ActionList" role="menu">
@@ -437,7 +444,7 @@ Leading action: single select
 </ul>
 ```
 
-Leading action: multi select
+### Leading action: multi select
 
 ```html live
 <ul class="ActionList" role="menu">
@@ -457,7 +464,7 @@ Leading action: multi select
 </ul>
 ```
 
-Trailing action: collapse
+### Trailing action: collapse
 
 ```html live
 <ul class="ActionList" role="menu">
