@@ -4,7 +4,7 @@ path: components/action-list
 status: alpha
 source: 'https://github.com/primer/css/tree/main/src/actionlist'
 bundle: action-list
-storybook: https://primer.style/css/stories/?path=/story/components-actionlist-actionlistitem--playground
+storybook: https://primer.style/css/storybook/?path=/story/components-actionlist-actionlistitem--playground
 ---
 
 Reference the [Action list interface guidelines](https://primer.style/design/components/action-list) for details on where and how to use Action List.
