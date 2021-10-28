@@ -1,9 +1,44 @@
 import '../../src/docs.scss'
 import '../../src/index.scss'
 import '../../src/base/index.scss'
+import renderToHTML from '../src/stories/helpers/code-snippet-html-helper'
+
+const customViewports = {
+  widthSM: {
+    name: 'width-sm',
+    styles: {
+      width: '544px',
+      height: '100%'
+    }
+  },
+  widthMD: {
+    name: 'width-md',
+    styles: {
+      width: '768px',
+      height: '100%'
+    }
+  },
+  widthLG: {
+    name: 'width-lg',
+    styles: {
+      width: '1012px',
+      height: '100%'
+    }
+  },
+  widthXL: {
+    name: 'width-xl',
+    styles: {
+      width: '1280px',
+      height: '100%'
+    }
+  }
+}
 
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
+  docs: {
+    transformSource: (src, storyContext) => renderToHTML(storyContext.storyFn)
+  },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -15,7 +50,8 @@ export const parameters = {
   layout: 'fullscreen',
   html: {
     root: '#story' // target id for html tab (should be direct parent of <Story /> for easy copy/paste)
-  }
+  },
+  viewport: {viewports: customViewports}
 }
 
 export const globalTypes = {
