@@ -36,7 +36,7 @@
     "storybook": "cd docs && yarn && yarn storybook"
   },
   "dependencies": {
-    "@primer/primitives": "6.1.0-rc.9f1f534"
+    "@primer/primitives": "0.0.0-2021921114448"
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.4.1",
