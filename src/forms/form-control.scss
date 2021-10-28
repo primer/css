@@ -43,6 +43,8 @@ label {
     color: var(--color-primer-fg-disabled);
     background-color: var(--color-input-disabled-bg);
     border-color: var(--color-border-default);
+    -webkit-text-fill-color: var(--color-primer-fg-disabled); // Fix for Safari
+    opacity: 1; // Fix for Safari iOS
 
     &::placeholder {
       color: var(--color-primer-fg-disabled);
@@ -69,7 +71,9 @@ textarea.form-control {
 .input-contrast {
   background-color: var(--color-canvas-inset);
 
-  &:focus { background-color: var(--color-canvas-default); }
+  &:focus {
+    background-color: var(--color-canvas-default);
+  }
 }
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
@@ -139,8 +143,8 @@ textarea.form-control {
     }
   }
 
-  input[type=checkbox],
-  input[type=radio] {
+  input[type='checkbox'],
+  input[type='radio'] {
     float: left;
     // stylelint-disable-next-line primer/spacing
     margin: 5px 0 0 -20px;
@@ -164,7 +168,7 @@ textarea.form-control {
   &:checked {
     // child of sibling or sibling
     ~ * .form-checkbox-details,
-    ~ .form-checkbox-details { // eslint-disable selector-combinator-space-before
+    ~ .form-checkbox-details {
       display: block;
     }
   }
@@ -206,8 +210,10 @@ textarea.form-control {
     margin: 28px 25px 0 -20px;
   }
 
-  // stylelint-disable-next-line primer/spacing
-  .form-select { margin-top: 5px; }
+  .form-select {
+    // stylelint-disable-next-line primer/spacing
+    margin-top: 5px;
+  }
 }
 
 // Hide the up/down buttons in <input type="number"> in the login form, the
@@ -249,5 +255,7 @@ input::-webkit-inner-spin-button {
     line-height: $lh-default;
   }
 
-  a { font-weight: $font-weight-bold; }
+  a {
+    font-weight: $font-weight-bold;
+  }
 }
