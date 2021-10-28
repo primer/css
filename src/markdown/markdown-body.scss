@@ -13,13 +13,13 @@
   // Clearfix on the markdown body
   &::before {
     display: table;
-    content: "";
+    content: '';
   }
 
   &::after {
     display: table;
     clear: both;
-    content: "";
+    content: '';
   }
 
   > *:first-child {
@@ -95,10 +95,10 @@
   }
 
   sup > a::before {
-    content: "[";
+    content: '[';
   }
 
   sup > a::after {
-    content: "]";
+    content: ']';
   }
 }

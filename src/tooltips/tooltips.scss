@@ -34,7 +34,7 @@
   height: 0;
   color: var(--color-neutral-emphasis-plus);
   pointer-events: none;
-  content: "";
+  content: '';
   // stylelint-disable-next-line primer/borders
   border: 6px $border-style transparent;
   opacity: 0;
