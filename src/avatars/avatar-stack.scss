@@ -89,7 +89,7 @@
     position: absolute;
     display: block;
     height: 20px;
-    content: "";
+    content: '';
     // stylelint-disable-next-line primer/borders
     border-radius: 2px;
     outline: $border-width $border-style var(--color-canvas-default);
