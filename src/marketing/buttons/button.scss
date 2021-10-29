@@ -131,11 +131,13 @@
     background: none !important;
   }
 
+  &:hover {
+    box-shadow: var(--shadow-button-hover-muted-mktg) !important;
+  }
+
   &:focus,
-  &:hover,
-  &:disabled,
-  &:active {
-    box-shadow: none !important;
+  .focus {
+    box-shadow: var(--shadow-button-hover-muted-mktg), var(--shadow-button-focus-mktg) !important;
   }
 }
 
