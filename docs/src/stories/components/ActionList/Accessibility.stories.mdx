@@ -6,9 +6,9 @@ import {Meta, Story, Canvas} from '@storybook/addon-docs'
 
 An action list is a vertical list of interactive <strong>actions</strong> or <strong>options</strong>.
 
-|  |  |
-| :- | :- |
-| Actions | links `a href` or events `onclick` |
+|         |                                       |
+| :------ | :------------------------------------ |
+| Actions | links `a href` or events `onclick`    |
 | Options | checkbox role `checked` or `selected` |
 
 ### Semantic markup
@@ -19,17 +19,17 @@ In all cases, the basic structure is as follows:
 
 ```html
 <ul>
-    <li><span>Content with action</span></li>
-    <li><a href="/">Content as link</a></li>
-    <li>
-        <ul>
-            <li>Nested list</li>
-        </ul>
-    </li>
+  <li><span>Content with action</span></li>
+  <li><a href="/">Content as link</a></li>
+  <li>
+    <ul>
+      <li>Nested list</li>
+    </ul>
+  </li>
 </ul>
 ```
 
-Pay close attention to `role` attributes throughout the documentation, and find the use case that best suits your needs
+Pay close attention to `role` attributes throughout the documentation, and find the use case that best suits your needs.
 
 ### Menu
 
@@ -37,17 +37,17 @@ Pay close attention to `role` attributes throughout the documentation, and find 
 
 Note: JS is required for to provide keyboard handling along with [tab-index](https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_roving_tabindex)
 
-| Element | Role |
-| :- | :- |
-| `ul` | `role="menu"` |
-| `li` | no child link `role="menuitem"` |
-| `li` | has child link `role="none"` |
-| `a` | `role="menuitem"` |
+| Element | Role                            |
+| :------ | :------------------------------ |
+| `ul`    | `role="menu"`                   |
+| `li`    | no child link `role="menuitem"` |
+| `li`    | has child link `role="none"`    |
+| `a`     | `role="menuitem"`               |
 
 #### Example
 
 <Canvas>
-    <Story id="components-actionlist-patterns--menu-with-section-divider" />
+  <Story id="components-actionlist-patterns--menu-with-section-divider" />
 </Canvas>
 
 ### Navigational menu
@@ -56,20 +56,20 @@ Note: JS is required for to provide keyboard handling along with [tab-index](htt
 
 Note: JS is required for to provide keyboard handling along with [tab-index](https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_roving_tabindex)
 
-| Element | Role |
-| :- | :- |
-| `nav` | no role needed |
-| `ul` | `role="menu"` |
-| `li` | no child link `role="menuitem"` |
-| `li` | has child link `role="none"` |
-| `li` | nested menu `aria-haspopup="true"` |
-| `li` | nested menu `aria-expanded="true/false"` |
-| `a` | `role="menuitem"` |
+| Element | Role                                     |
+| :------ | :--------------------------------------- |
+| `nav`   | no role needed                           |
+| `ul`    | `role="menu"`                            |
+| `li`    | no child link `role="menuitem"`          |
+| `li`    | has child link `role="none"`             |
+| `li`    | nested menu `aria-haspopup="true"`       |
+| `li`    | nested menu `aria-expanded="true/false"` |
+| `a`     | `role="menuitem"`                        |
 
 #### Example
 
 <Canvas>
-    <Story id="components-actionlist-patterns--nav-with-sub-items" />
+  <Story id="components-actionlist-patterns--nav-with-sub-items" />
 </Canvas>
 
 ### Multi select menu
@@ -78,16 +78,16 @@ Note: JS is required for to provide keyboard handling along with [tab-index](htt
 
 Note: JS is required for to provide keyboard handling along with [tab-index](https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_roving_tabindex)
 
-| Element | Role |
-| :- | :- |
-| `ul` | `role="menu"` |
-| `li` | no child link `role="menuitemcheckbox"` |
-| `li` | `aria-checked="true/false"` |
+| Element | Role                                    |
+| :------ | :-------------------------------------- |
+| `ul`    | `role="menu"`                           |
+| `li`    | no child link `role="menuitemcheckbox"` |
+| `li`    | `aria-checked="true/false"`             |
 
 #### Example
 
 <Canvas>
-    <Story id="components-actionlist-patterns--menu-multi-select" />
+  <Story id="components-actionlist-patterns--menu-multi-select" />
 </Canvas>
 
 ### Single select menu
@@ -96,16 +96,16 @@ Note: JS is required for to provide keyboard handling along with [tab-index](htt
 
 Note: JS is required for to provide keyboard handling along with [tab-index](https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_roving_tabindex)
 
-| Element | Role |
-| :- | :- |
-| `ul` | `role="menu"` |
-| `li` | no child link `role="menuitemradio"` |
-| `li` | `aria-checked="true/false"` |
+| Element | Role                                 |
+| :------ | :----------------------------------- |
+| `ul`    | `role="menu"`                        |
+| `li`    | no child link `role="menuitemradio"` |
+| `li`    | `aria-checked="true/false"`          |
 
 #### Example
 
 <Canvas>
-    <Story id="components-actionlist-patterns--menu-single-select" />
+  <Story id="components-actionlist-patterns--menu-single-select" />
 </Canvas>
 
 ### Multi select listbox
@@ -114,17 +114,17 @@ Note: JS is required for to provide keyboard handling along with [tab-index](htt
 
 Note: JS is required for to provide [keyboard handling](https://www.w3.org/TR/wai-aria-practices-1.1/#listbox_kbd_interaction)
 
-| Element | Role |
-| :- | :- |
-| `ul` | `role="listbox"` |
-| `ul` | `aria-multiselectable="true"` |
-| `li` | `role="option"` |
-| `li` | `aria-selected="true/false"` |
+| Element | Role                          |
+| :------ | :---------------------------- |
+| `ul`    | `role="listbox"`              |
+| `ul`    | `aria-multiselectable="true"` |
+| `li`    | `role="option"`               |
+| `li`    | `aria-selected="true/false"`  |
 
 #### Example
 
 <Canvas>
-    <Story id="components-actionlist-patterns--list-multi-select" />
+  <Story id="components-actionlist-patterns--list-multi-select" />
 </Canvas>
 
 ### Single select listbox
@@ -133,16 +133,16 @@ Note: JS is required for to provide [keyboard handling](https://www.w3.org/TR/wa
 
 Note: JS is required for to provide [keyboard handling](https://www.w3.org/TR/wai-aria-practices-1.1/#listbox_kbd_interaction)
 
-| Element | Role |
-| :- | :- |
-| `ul` | `role="listbox"` |
-| `li` | `role="option"` |
-| `li` | `aria-selected="true/false"` |
+| Element | Role                         |
+| :------ | :--------------------------- |
+| `ul`    | `role="listbox"`             |
+| `li`    | `role="option"`              |
+| `li`    | `aria-selected="true/false"` |
 
 #### Example
 
 <Canvas>
-    <Story id="components-actionlist-patterns--list-single-select" />
+  <Story id="components-actionlist-patterns--list-single-select" />
 </Canvas>
 
 ### List of links
@@ -152,29 +152,29 @@ No roles needed
 #### Example
 
 <Canvas>
-    <Story id="components-actionlist-patterns--list" />
+  <Story id="components-actionlist-patterns--list" />
 </Canvas>
 
 ### Dividers
 
-| Element | Role |
-| :- | :- |
-| `li` | `role="separator"` |
+| Element | Role               |
+| :------ | :----------------- |
+| `li`    | `role="separator"` |
 
 #### Empty example
 
 <Canvas>
-    <Story id="components-actionlist-actionlistitem-features--divider-empty" />
+  <Story id="components-actionlist-actionlistitem-features--divider-empty" />
 </Canvas>
 
-| Element | Role |
-| :- | :- |
-| `li` | `role="presentation"` |
-| `li` | id for nested group `id="group-id"` |
-| `li` | if it has id for group `aria-hidden="true"` |
+| Element | Role                                        |
+| :------ | :------------------------------------------ |
+| `li`    | `role="presentation"`                       |
+| `li`    | id for nested group `id="group-id"`         |
+| `li`    | if it has id for group `aria-hidden="true"` |
 
 #### With title example
 
 <Canvas>
-    <Story id="components-actionlist-actionlistitem-features--divider-text" />
+  <Story id="components-actionlist-actionlistitem-features--divider-text" />
 </Canvas>

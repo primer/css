@@ -9,7 +9,7 @@
 .ActionList-item {
   position: relative;
   list-style: none;
-  background-color: var(--color-canvas-default);
+  background-color: transparent;
   border-radius: $border-radius;
 
   &:hover,
@@ -266,7 +266,7 @@
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         cursor: not-allowed;
-        background-color: var(--color-canvas-default);
+        background-color: transparent;
       }
     }
   }
