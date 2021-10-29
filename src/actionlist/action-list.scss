@@ -1,5 +1,5 @@
 // stylelint-disable selector-max-specificity, selector-max-compound-selectors
-@import './action-list-variables.scss';
+// @import './action-list-variables.scss';
 
 // <ul>
 .ActionList {
@@ -28,8 +28,8 @@
   }
 }
 
+// hide if item is first of type with label::before, or is the first item after a sectionDivider
 .ActionList-item:first-of-type .ActionList-item-label::before,
-.ActionList-sectionDivider + .ActionList-item .ActionList-item-label::before,
-.ActionList-sectionHeader + .ActionList-item .ActionList-item-label::before {
+.ActionList-sectionDivider + .ActionList-item .ActionList-item-label::before {
   visibility: hidden;
 }

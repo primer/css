@@ -1,5 +1,5 @@
 // stylelint-disable selector-max-specificity, max-nesting-depth, primer/spacing, no-duplicate-selectors
-@import './action-list-variables.scss';
+// @import './action-list-variables.scss';
 
 @mixin focusOutline {
   position: relative;
@@ -169,8 +169,7 @@
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition:
- visibility 0 linear $actionList-item-checkmark-transition-timing,
+      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 

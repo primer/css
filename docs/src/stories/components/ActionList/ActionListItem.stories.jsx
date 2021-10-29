@@ -347,40 +347,38 @@ export const ListItemTemplate = ({
           >
             {(leadingAction || singleSelect || multiSelect || listSingleSelect || listMultiSelect) && (
               <span className="ActionList-item-action ActionList-item-action--leading">
-                {singleSelect ||
-                  (listSingleSelect && (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 16 16"
-                      width="16"
-                      height="16"
-                      className="ActionList-item-singleSelectCheckmark"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"
-                      ></path>
-                    </svg>
-                  ))}
-                {multiSelect ||
-                  (listMultiSelect && (
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      focusable="false"
-                      className="ActionList-item-multiSelectIcon"
-                    >
-                      <rect x="2" y="2" width="12" height="12" rx="4" className="ActionList-item-multiSelectIconRect" />
-                      <path
-                        fill-rule="evenodd"
-                        d="M4.03231 8.69862C3.84775 8.20646 4.49385 7.77554 4.95539 7.77554C5.41693 7.77554 6.80154 9.85246 6.80154 9.85246C6.80154 9.85246 10.2631 4.314 10.4938 4.08323C10.7246 3.85246 11.8785 4.08323 11.4169 5.00631C11.0081 5.82388 7.26308 11.4678 7.26308 11.4678C7.26308 11.4678 6.80154 12.1602 6.34 11.4678C5.87846 10.7755 4.21687 9.19077 4.03231 8.69862Z"
-                        className="ActionList-item-multiSelectCheckmark"
-                      />
-                    </svg>
-                  ))}
+                {(singleSelect || listSingleSelect) && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    height="16"
+                    className="ActionList-item-singleSelectCheckmark"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"
+                    ></path>
+                  </svg>
+                )}
+                {(multiSelect || listMultiSelect) && (
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                    className="ActionList-item-multiSelectIcon"
+                  >
+                    <rect x="2" y="2" width="12" height="12" rx="4" className="ActionList-item-multiSelectIconRect" />
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.03231 8.69862C3.84775 8.20646 4.49385 7.77554 4.95539 7.77554C5.41693 7.77554 6.80154 9.85246 6.80154 9.85246C6.80154 9.85246 10.2631 4.314 10.4938 4.08323C10.7246 3.85246 11.8785 4.08323 11.4169 5.00631C11.0081 5.82388 7.26308 11.4678 7.26308 11.4678C7.26308 11.4678 6.80154 12.1602 6.34 11.4678C5.87846 10.7755 4.21687 9.19077 4.03231 8.69862Z"
+                      className="ActionList-item-multiSelectCheckmark"
+                    />
+                  </svg>
+                )}
                 {leadingAction}
               </span>
             )}
