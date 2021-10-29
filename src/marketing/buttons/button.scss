@@ -1,4 +1,4 @@
-// Temp overrides
+// Temp variables (awaiting primitives update)
 :root {
   --color-fg-button-default: #1b1f23;
   --shadow-button-border-mktg: rgb(0 0 0 / 15%) 0 0 0 1px inset;
@@ -20,6 +20,7 @@
     --shadow-button-hover-muted-mktg: var(--color-fg-default) 0 0 0 2px inset;
   }
 }
+// End of temp variables
 
 .btn-mktg {
   color: var(--color-canvas-default);
