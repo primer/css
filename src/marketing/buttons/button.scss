@@ -97,7 +97,6 @@
   color: var(--color-fg-default) !important;
   background: none !important;
   box-shadow: var(--shadow-button-border-mktg);
-  transition: box-shadow 0.2s;
 
   &::before {
     display: none;
@@ -124,7 +123,6 @@
 .btn-subtle-mktg {
   color: var(--color-fg-default) !important;
   background: none !important;
-  border: 0 !important;
   box-shadow: none !important;
 
   &::before {
