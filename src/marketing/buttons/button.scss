@@ -1,6 +1,6 @@
 // Temp variables (awaiting primitives update)
 :root {
-  --color-fg-button-default: #1b1f23;
+  --color-bg-button-default: #1b1f23;
   --shadow-button-border-mktg: rgb(0 0 0 / 15%) 0 0 0 1px inset;
   --shadow-button-focus-mktg: rgb(0 0 0 / 15%) 0 0 0 4px;
   // stylelint-disable-next-line declaration-colon-newline-after
@@ -10,7 +10,7 @@
   --shadow-button-hover-muted-mktg: rgb(0 0 0 / 70%) 0 0 0 2px inset;
 
   [data-color-mode="dark"] {
-    --color-fg-button-default: #f6f8fa;
+    --color-bg-button-default: #f6f8fa;
     --shadow-button-border-mktg: rgb(255 255 255 / 25%) 0 0 0 1px inset;
     --shadow-button-focus-mktg: rgb(255 255 255 / 25%) 0 0 0 4px;
     // stylelint-disable-next-line declaration-colon-newline-after
@@ -42,7 +42,7 @@
   // stylelint-disable-next-line primer/borders
   border-radius: 0.375rem;
   background: linear-gradient(180deg, rgba(255 255 255 / 0.15) 0%, rgba(255 255 255 / 0) 100%),
-    var(--color-fg-button-default) !important;
+    var(--color-bg-button-default) !important;
   transition: box-shadow 0.2s;
 
   &::before {
