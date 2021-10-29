@@ -1,6 +1,3 @@
-// stylelint-disable selector-max-specificity, selector-max-compound-selectors
-// @import './action-list-variables.scss';
-
 // <ul>
 .ActionList {
   padding: $spacer-2;
@@ -21,7 +18,9 @@
 
   // hide divider if item is active
   .ActionList-item--navActive {
+    // stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors
     .ActionList-item-label::before,
+    // stylelint-disable-next-line selector-max-specificity
     + .ActionList-item .ActionList-item-label::before {
       visibility: hidden;
     }

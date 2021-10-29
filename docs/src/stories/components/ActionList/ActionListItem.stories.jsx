@@ -27,10 +27,10 @@ export default {
     },
     variant: {
       options: [0, 1, 2], // iterator
-      mapping: ['', 'ActionList-item--danger', 'ActionList-item--disabled'], // values
+      mapping: ['', 'ActionList-item--danger'], // values
       control: {
         type: 'select',
-        labels: ['default', 'danger', 'disabled']
+        labels: ['default', 'danger']
       },
       defaultValue: '',
       table: {

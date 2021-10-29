@@ -218,7 +218,6 @@ List item `li` handling semantics, state and interactions
 | `ActionList-item--subItem` | Indent + small font size for sub item `li` (optional) |
 | `ActionList-item--navActive` | Nav item and `aria-current` |
 | `ActionList-item--danger` | Item is destructive |
-| `ActionList-item--disabled` | Item is disabled |
 
 Kitchen sink
 
@@ -248,7 +247,7 @@ Kitchen sink
             <span class="ActionList-item-label">Nav Item</span>
           </a>
         </li>
-        <li class="ActionList-item ActionList-item--disabled" role="none">
+        <li aria-disabled="true" class="ActionList-item" role="none">
           <a href="/" role="menuitem" class="ActionList-content">
             <span class="ActionList-item-label">Disabled Item</span>
           </a>
