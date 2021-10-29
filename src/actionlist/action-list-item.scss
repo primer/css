@@ -286,12 +286,10 @@
   user-select: none;
   border-radius: $border-radius;
   transition: $actionList-item-bg-transition;
-  //   grid-template-rows: minmax($actionList-item-height-sm, max-content); // 20px with 12px padding = [32px total]
   grid-template-rows: min-content;
   grid-template-areas: 'leadingAction leadingVisual label trailingVisual trailingAction';
   grid-template-columns: min-content min-content minmax(min-content, auto) min-content min-content;
   align-items: center;
-  //   line-height: normal;
 
   // column-gap persists with empty grid-areas, margin applies only when children exist
   > :not(:last-child) {
