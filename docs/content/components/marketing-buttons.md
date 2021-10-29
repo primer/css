@@ -16,7 +16,7 @@ The solid blue and solid green buttons have more visual emphasis than the blue o
 
 ```html live
 <button class="btn-mktg mr-3" type="button">Get started</button>
-<button class="btn-mktg btn-outline-mktg mr-3" type="button">Learn more</button>
+<button class="btn-mktg btn-muted-mktg mr-3" type="button">Learn more</button>
 <button class="btn-mktg btn-subtle-mktg mr-3" type="button">Contact us</button>
 <button class="btn-mktg btn-signup-mktg" type="button">Sign up</button>
 ```
@@ -27,17 +27,17 @@ Available in three sizes, marketing buttons have a default size and a large size
 
 ```html live
 <button class="btn-mktg btn-small-mktg mr-3" type="button">Get started</button>
-<button class="btn-mktg btn-outline-mktg btn-small-mktg mr-3" type="button">Learn more</button>
+<button class="btn-mktg btn-muted-mktg btn-small-mktg mr-3" type="button">Learn more</button>
 <button class="btn-mktg btn-subtle-mktg btn-small-mktg mr-3" type="button">Contact us</button>
 <button class="btn-mktg btn-signup-mktg btn-small-mktg" type="button">Sign up</button>
 <hr>
 <button class="btn-mktg mr-3" type="button">Get started</button>
-<button class="btn-mktg btn-outline-mktg mr-3" type="button">Learn more</button>
+<button class="btn-mktg btn-muted-mktg mr-3" type="button">Learn more</button>
 <button class="btn-mktg btn-subtle-mktg mr-3" type="button">Contact us</button>
 <button class="btn-mktg btn-signup-mktg" type="button">Sign up</button>
 <hr>
 <button class="btn-mktg btn-large-mktg mr-3" type="button">Get started</button>
-<button class="btn-mktg btn-outline-mktg btn-large-mktg mr-3" type="button">Learn more</button>
+<button class="btn-mktg btn-muted-mktg btn-large-mktg mr-3" type="button">Learn more</button>
 <button class="btn-mktg btn-subtle-mktg btn-large-mktg mr-3" type="button">Contact us</button>
 <button class="btn-mktg btn-signup-mktg btn-large-mktg" type="button">Sign up</button>
 ```
