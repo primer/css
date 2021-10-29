@@ -1,4 +1,28 @@
+// Temp overrides
+:root {
+  --color-fg-button-default: #1b1f23;
+  --shadow-button-border-mktg: rgb(0 0 0 / 15%) 0 0 0 1px inset;
+  --shadow-button-focus-mktg: rgb(0 0 0 / 15%) 0 0 0 4px;
+  // stylelint-disable-next-line declaration-colon-newline-after
+  --shadow-button-hover-mktg: 0 3px 2px rgba(0, 0, 0, 0.07), 0 7px 5px rgba(0, 0, 0, 0.04),
+    0 12px 10px rgba(0, 0, 0, 0.03), 0 22px 18px rgba(0, 0, 0, 0.03), 0 42px 33px rgba(0, 0, 0, 0.02),
+    0 100px 80px rgba(0, 0, 0, 0.02);
+  --shadow-button-hover-muted-mktg: rgb(0 0 0 / 70%) 0 0 0 2px inset;
+
+  [data-color-mode="dark"] {
+    --color-fg-button-default: #f6f8fa;
+    --shadow-button-border-mktg: rgb(255 255 255 / 25%) 0 0 0 1px inset;
+    --shadow-button-focus-mktg: rgb(255 255 255 / 25%) 0 0 0 4px;
+    // stylelint-disable-next-line declaration-colon-newline-after
+    --shadow-button-hover-mktg: 0 4px 7px rgba(0, 0, 0, 0.15), 0 100px 80px rgba(255, 255, 255, 0.02),
+      0 42px 33px rgba(255, 255, 255, 0.024), 0 22px 18px rgba(255, 255, 255, 0.028),
+      0 12px 10px rgba(255, 255, 255, 0.034), 0 7px 5px rgba(255, 255, 255, 0.04), 0 3px 2px rgba(255, 255, 255, 0.07);
+    --shadow-button-hover-muted-mktg: var(--color-fg-default) 0 0 0 2px inset;
+  }
+}
+
 .btn-mktg {
+  color: var(--color-canvas-default);
   position: relative;
   z-index: 1;
   display: inline-block;
@@ -9,23 +33,18 @@
   font-size: 1rem;
   font-weight: $font-weight-bold;
   line-height: 1;
+  text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
   border: 0;
   // stylelint-disable-next-line primer/borders
   border-radius: 0.375rem;
-
-  @include btn-solid-mktg(
-    var(--color-mktg-btn-text),
-    var(--color-mktg-btn-bg-top),
-    var(--color-mktg-btn-bg-bottom),
-    var(--color-mktg-btn-bg-overlay-top),
-    var(--color-mktg-btn-bg-overlay-bottom),
-  );
+  background: linear-gradient(180deg, rgba(255 255 255 / 0.15) 0%, rgba(255 255 255 / 0) 100%),
+    var(--color-fg-button-default) !important;
+  transition: box-shadow 0.2s;
 
   &::before {
-    background-blend-mode: overlay, normal;
     position: absolute;
     top: 0;
     right: 0;
@@ -34,63 +53,102 @@
     z-index: -1;
     content: "";
     // stylelint-disable-next-line primer/borders
-    border-radius: 0.375rem;
+    border-radius: inherit;
     opacity: 0;
-    transition: opacity 0.4s;
+    background: linear-gradient(180deg, rgba(255 255 255 / 0.15) 0%, rgba(255 255 255 / 0) 100%) !important;
+    opacity: 0;
+    transition: opacity 0.2s;
+    background-blend-mode: normal;
   }
 
   &:hover {
-    text-decoration: none;
+    box-shadow: var(--shadow-button-hover-mktg) !important;
+  }
 
+  &:focus,
+  &.focus {
+    box-shadow: var(--shadow-button-focus-mktg), var(--shadow-button-hover-mktg) !important;
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
     &::before {
       opacity: 1;
-      transition: opacity 0.4s;
+    }
+
+    &:disabled {
+      box-shadow: none !important;
+    }
+  }
+
+  &:active {
+    outline: none;
+    box-shadow: 0 0 0 transparent;
+
+    &::before {
+      opacity: 0.5 !important;
     }
   }
 }
 
-.btn-primary-mktg {
-  @include btn-solid-mktg(
-    var(--color-mktg-btn-primary-text),
-    var(--color-mktg-btn-primary-bg-top),
-    var(--color-mktg-btn-primary-bg-bottom),
-    var(--color-mktg-btn-primary-bg-overlay-top),
-    var(--color-mktg-btn-primary-bg-overlay-bottom),
-  );
-}
-
-.btn-enterprise-mktg {
-  @include btn-solid-mktg(
-    var(--color-mktg-btn-enterprise-text),
-    var(--color-mktg-btn-enterprise-bg-top),
-    var(--color-mktg-btn-enterprise-bg-bottom),
-    var(--color-mktg-btn-enterprise-bg-overlay-top),
-    var(--color-mktg-btn-enterprise-bg-overlay-bottom),
-  );
-}
-
 .btn-outline-mktg {
-  @include btn-outline-mktg(
-    var(--color-mktg-btn-outline-text),
-    var(--color-mktg-btn-outline-hover-text),
-    var(--color-mktg-btn-outline-border),
-    var(--color-mktg-btn-outline-hover-border),
-    var(--color-mktg-btn-outline-focus-border),
-    var(--color-mktg-btn-outline-focus-border-inset)
-  );
-  transition: box-shadow 0.4s, color 0.4s;
+  color: var(--color-fg-default) !important;
+  background: none !important;
+  box-shadow: var(--shadow-button-border-mktg);
+  transition: box-shadow 0.2s;
+
+  &::before {
+    display: none;
+  }
+
+  &:hover {
+    box-shadow: var(--shadow-button-hover-muted-mktg) !important;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: var(--shadow-button-hover-muted-mktg), var(--shadow-button-focus-mktg) !important;
+  }
+
+  &:active {
+    box-shadow: var(--color-fg-default) 0 0 0 3px inset !important;
+  }
+
+  &:disabled {
+    box-shadow: var(--color-fg-subtle) 0 0 0 1px inset !important;
+  }
 }
 
-.btn-transparent {
-  @include btn-outline-mktg(
-    var(--color-mktg-btn-dark-text),
-    var(--color-mktg-btn-dark-hover-text),
-    var(--color-mktg-btn-dark-border),
-    var(--color-mktg-btn-dark-hover-border),
-    var(--color-mktg-btn-dark-focus-border),
-    var(--color-mktg-btn-dark-focus-border-inset)
-  );
-  transition: box-shadow 0.4s, color 0.4s;
+.btn-subtle-mktg {
+  color: var(--color-fg-default) !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+
+  &::before {
+    background: none !important;
+  }
+
+  &:focus,
+  &:hover,
+  &:disabled,
+  &:active {
+    box-shadow: none !important;
+  }
+}
+
+.btn-signup-mktg {
+  color: #fff;
+  background: linear-gradient(180deg, rgba(52, 183, 89, 0.15) 0%, rgba(46, 164, 79, 0) 100%), rgb(46, 164, 79) !important;
+
+  &::before {
+    background: linear-gradient(180deg, rgba(52, 183, 89, 0.15) 0%, rgba(46, 164, 79, 0) 100%) !important;
+  }
+
+  &:focus {
+    box-shadow: rgba(46, 164, 79, 0.45) 0 0 0 4px !important;
+  }
 }
 
 // Size modifiers
