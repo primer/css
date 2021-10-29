@@ -111,7 +111,6 @@
       display: block;
     }
 
-    // stylelint-disable-next-line selector-max-specificity
     &.ActionList-item--hasSubItem {
       // stylelint-disable-next-line selector-max-specificity
       > .ActionList-content > .ActionList-item-label {
@@ -169,12 +168,10 @@
   &[aria-checked='false'],
   &[aria-selected='false'] {
     // multiselect checkmark
-    // stylelint-disable-next-line selector-max-specificity
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition:
- visibility 0 linear $actionList-item-checkmark-transition-timing,
+      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 
@@ -289,10 +286,12 @@
   user-select: none;
   border-radius: $border-radius;
   transition: $actionList-item-bg-transition;
-  grid-template-rows: minmax($actionList-item-height-sm, max-content); // 20px with 12px padding = [32px total]
+  //   grid-template-rows: minmax($actionList-item-height-sm, max-content); // 20px with 12px padding = [32px total]
+  grid-template-rows: min-content;
   grid-template-areas: 'leadingAction leadingVisual label trailingVisual trailingAction';
   grid-template-columns: min-content min-content minmax(min-content, auto) min-content min-content;
   align-items: center;
+  //   line-height: normal;
 
   // column-gap persists with empty grid-areas, margin applies only when children exist
   > :not(:last-child) {
@@ -306,16 +305,21 @@
   // sizes
 
   &.ActionList-content--sizeMedium {
-    grid-template-rows: minmax($actionList-item-height-md, max-content); // 28px with 12px padding = [40px total]
+    // 44px total height
+    // stylelint-disable-next-line primer/spacing
+    padding: $actionList-item-padding-vertical-md $actionList-item-padding-horizontal;
   }
 
   &.ActionList-content--sizeLarge {
-    grid-template-rows: minmax($actionList-item-height-lg, max-content); // 36px with 12px padding = [48px total]
+    // 48px total height
+    // stylelint-disable-next-line primer/spacing
+    padding: $actionList-item-padding-vertical-lg $actionList-item-padding-horizontal;
   }
 
   // On pointer:coarse (mobile), all list items are large
   @media (pointer: coarse) {
-    grid-template-rows: minmax($actionList-item-height-lg, max-content);
+    // stylelint-disable-next-line primer/spacing
+    padding: $actionList-item-padding-vertical-lg $actionList-item-padding-horizontal;
   }
 
   &.ActionList-content--blockDescription {
@@ -399,6 +403,9 @@
 .ActionList-item-label {
   position: relative; // for pseudo dividers
   font-weight: $font-weight-normal;
+  // we need a strict value here for grid alignment
+  // stylelint-disable-next-line primer/typography
+  line-height: $actionList-item-label-line-height;
   color: var(--color-fg-default);
 }
 
@@ -426,7 +433,6 @@
 // has 20px leading visual
 .ActionList-content--visual20 + .ActionList--subGroup {
   .ActionList-item--subItem {
-    // stylelint-disable-next-line primer/spacing
     padding-left: $spacer-3 * 1.75;
   }
 }

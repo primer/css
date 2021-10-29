@@ -32,10 +32,26 @@ SizeMedium.args = {
   size: 'ActionList-content--sizeMedium'
 }
 
+export const SizeMediumWithDescription = ListItemTemplate.bind({})
+SizeMediumWithDescription.args = {
+  ...ListItemTemplate.args,
+  text: 'Medium item',
+  description: 'Some descriptive text',
+  size: 'ActionList-content--sizeMedium'
+}
+
 export const SizeLarge = ListItemTemplate.bind({})
 SizeLarge.args = {
   ...ListItemTemplate.args,
   text: 'Large item',
+  size: 'ActionList-content--sizeLarge'
+}
+
+export const SizeLargeWithDescription = ListItemTemplate.bind({})
+SizeLargeWithDescription.args = {
+  ...ListItemTemplate.args,
+  text: 'Large item',
+  description: 'Some descriptive text',
   size: 'ActionList-content--sizeLarge'
 }
 

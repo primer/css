@@ -20,7 +20,6 @@
   .ActionList-item--navActive {
     // stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors
     .ActionList-item-label::before,
-    // stylelint-disable-next-line selector-max-specificity
     + .ActionList-item .ActionList-item-label::before {
       visibility: hidden;
     }
