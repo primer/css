@@ -68,6 +68,7 @@
   &:focus,
   &.focus {
     box-shadow: var(--shadow-button-focus-mktg), var(--shadow-button-hover-mktg) !important;
+    outline: 0;
   }
 
   &:hover,
