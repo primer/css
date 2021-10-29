@@ -26,7 +26,7 @@ jobs:
           git checkout --track origin/$GITHUB_HEAD_REF
           git config --local user.email "actions@github.com"
           git config --local user.name "Actions Auto Build"
-          git add .
+          git add src
           git commit -m "Stylelint auto-fixes" || true
           git push
 
