@@ -1918,10 +1918,10 @@
   resolved "https://registry.yarnpkg.com/@primer/component-metadata/-/component-metadata-0.4.0.tgz#44b7d7b1285bea41c2a88621fd17f2c777a4c5e9"
   integrity sha512-yppmDSSDrN2CHwjq3h+RWhfpjehFQAx21JcEipYyNTp0f/kC+iazFVNCKZE6DOavAxv003ti7QIrp+QkPT9tpg==
 
-"@primer/components@31.0.0":
-  version "31.0.0"
-  resolved "https://registry.yarnpkg.com/@primer/components/-/components-31.0.0.tgz#86b87c086d58560e240584a79db4508ecf63a624"
-  integrity sha512-X2oodUGY8d0sqr6e6WjN937TxK2RaQsCHln3pzCKEiyX5HQRvH2yvSs9zsV0B74f/Fa4ZDVTjC8cnHD34C9kNw==
+"@primer/components@31.1.0":
+  version "31.1.0"
+  resolved "https://registry.yarnpkg.com/@primer/components/-/components-31.1.0.tgz#743094a564dbd16d7d9055985fa122e2a6e9627c"
+  integrity sha512-7Be9x8xoDG5emKWbJ4Y6QOSxOozsipYTnbZPZsEpXq40X7IgIaS1sKaLAlyLfs7w399VFLfw5iCB80G2WkxfmA==
   dependencies:
     "@primer/octicons-react" "^13.0.0"
     "@primer/primitives" "5.1.0"
