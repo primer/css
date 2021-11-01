@@ -11,7 +11,7 @@
     "build-storybook": "./script/build-storybook.sh"
   },
   "dependencies": {
-    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-react": "^7.16.0",
     "@koddsson/postcss-sass": "5.0.0",
     "@primer/components": "31.1.0",
     "@primer/gatsby-theme-doctocat": "2.0.0",
