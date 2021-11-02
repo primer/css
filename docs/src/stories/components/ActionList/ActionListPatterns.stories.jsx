@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import {DividerTemplate} from './ActionListDivider.stories'
 import {ListItemTemplate} from './ActionListItem.stories'
 import {ListTemplate} from './ActionList.stories'
+import './RovingTabindex'
 
 export default {
   title: 'Components/ActionList/Patterns'

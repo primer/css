@@ -93,6 +93,8 @@ export const ListTemplate = ({
     aria-label={ariaLabel && ariaLabel}
     aria-labelledby={ariaLabelledBy && ariaLabelledBy}
     aria-multiselectable={listboxMultiSelect ? 'true' : undefined}
+    // tabIndex="0"
+    data-primer-js
   >
     <>{children}</>
   </ul>
