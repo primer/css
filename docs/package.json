@@ -11,13 +11,13 @@
     "build-storybook": "./script/build-storybook.sh"
   },
   "dependencies": {
-    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-react": "^7.16.0",
     "@koddsson/postcss-sass": "5.0.0",
-    "@primer/components": "31.0.0",
+    "@primer/components": "31.1.0",
     "@primer/gatsby-theme-doctocat": "2.0.0",
-    "@primer/octicons": "16.1.0",
+    "@primer/octicons": "16.1.1",
     "@primer/octicons-react": "16.0.0",
-    "@primer/primitives": "6.1.0-rc.9f1f534",
+    "@primer/primitives": "6.1.0",
     "@svgr/webpack": "5.5.0",
     "autoprefixer": "10.4.0",
     "babel-preset-gatsby": "^2.0.0",
@@ -29,7 +29,7 @@
     "gatsby-plugin-sass": "3.2.0",
     "gatsby-plugin-svgr": "2.1.0",
     "path": "0.12.7",
-    "postcss": "8.3.9",
+    "postcss": "8.3.11",
     "postcss-import": "14.0.2",
     "postcss-load-config": "3.1.0",
     "postcss-loader": "4.3.0",
@@ -48,7 +48,7 @@
     "node": ">= 10.x"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
+    "@babel/core": "^7.16.0",
     "@storybook/addon-a11y": "6.3.12",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
