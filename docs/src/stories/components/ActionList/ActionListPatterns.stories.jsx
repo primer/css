@@ -4,6 +4,7 @@ import {DividerTemplate} from './ActionListDivider.stories'
 import {ListItemTemplate} from './ActionListItem.stories'
 import {ListTemplate} from './ActionList.stories'
 import './RovingTabindex'
+import './ActionListKeyboardHandling.ts'
 
 export default {
   title: 'Components/ActionList/Patterns'

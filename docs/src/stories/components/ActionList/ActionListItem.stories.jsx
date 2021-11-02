@@ -240,6 +240,7 @@ export const ListItemTemplate = ({
       aria-checked={singleSelect || multiSelect ? (isChecked ? 'true' : 'false') : undefined}
       aria-selected={listSingleSelect || listMultiSelect ? (isChecked ? 'true' : 'false') : undefined}
       aria-disabled={ariaDisabled}
+      tabIndex={href ? undefined : '-1'}
     >
       {href ? (
         <>
@@ -253,6 +254,7 @@ export const ListItemTemplate = ({
               (leadingVisual || trailingVisual) && description && 'ActionList-content--blockDescription',
               leadingVisual && leadingVisualSize && `${leadingVisualSize}`
             )}
+            tabIndex="-1"
           >
             {(leadingAction || singleSelect || multiSelect || listSingleSelect || listMultiSelect) && (
               <span className="ActionList-item-action ActionList-item-action--leading">
