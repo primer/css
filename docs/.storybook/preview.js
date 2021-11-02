@@ -4,31 +4,73 @@ import '../../src/base/index.scss'
 import renderToHTML from '../src/stories/helpers/code-snippet-html-helper'
 
 const customViewports = {
-  widthSM: {
-    name: 'width-sm',
+  minXS: {
+    name: 'XS (min)',
+    styles: {
+      width: '375px',
+      height: '100%'
+    }
+  },
+  maxXS: {
+    name: 'XS (max)',
+    styles: {
+      width: '543px',
+      height: '100%'
+    }
+  },
+  minSM: {
+    name: 'SM (min)',
     styles: {
       width: '544px',
       height: '100%'
     }
   },
-  widthMD: {
-    name: 'width-md',
+  maxSM: {
+    name: 'SM (max)',
+    styles: {
+      width: '767px',
+      height: '100%'
+    }
+  },
+  minMD: {
+    name: 'MD (min)',
     styles: {
       width: '768px',
       height: '100%'
     }
   },
-  widthLG: {
-    name: 'width-lg',
+  maxMD: {
+    name: 'MD (max)',
+    styles: {
+      width: '1011px',
+      height: '100%'
+    }
+  },
+  minLG: {
+    name: 'LG (min)',
     styles: {
       width: '1012px',
       height: '100%'
     }
   },
-  widthXL: {
-    name: 'width-xl',
+  maxLG: {
+    name: 'LG (max)',
+    styles: {
+      width: '1279px',
+      height: '100%'
+    }
+  },
+  minXL: {
+    name: 'XL (min)',
     styles: {
       width: '1280px',
+      height: '100%'
+    }
+  },
+  medXL: {
+    name: 'XL (med)',
+    styles: {
+      width: '1440px',
       height: '100%'
     }
   }
