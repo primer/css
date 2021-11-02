@@ -10,7 +10,7 @@
     width: 8px;
     height: 16px;
     pointer-events: none;
-    content: " ";
+    content: ' ';
     clip-path: polygon(0 50%, 100% 0, 100% 100%);
   }
 
@@ -23,4 +23,11 @@
   &::before {
     background-color: $border;
   }
+}
+
+@mixin focusOutline {
+  position: relative;
+  z-index: 1;
+  outline: 2px solid var(--color-accent-fg);
+  outline-offset: 2px;
 }

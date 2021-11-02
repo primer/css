@@ -76,10 +76,31 @@ button {
 }
 
 details {
-  summary { cursor: pointer; }
+  summary {
+    cursor: pointer;
+  }
 
   &:not([open]) {
     // Set details content hidden by default for browsers that don't do this
-    > *:not(summary) { display: none !important; }
+    > *:not(summary) {
+      display: none !important;
+    }
   }
+}
+
+// global focus styles
+
+// fallback :focus state
+:focus:is(a, button, input, textarea) {
+  @include focusOutline;
+}
+
+// remove fallback :focus if :focus-visible is supported
+:focus:is(a, button, input, textarea):not(:focus-visible) {
+  outline: solid 1px transparent;
+}
+
+// default :focus-visibile state
+:focus-visible:is(a, button, input, textarea) {
+  @include focusOutline;
 }
