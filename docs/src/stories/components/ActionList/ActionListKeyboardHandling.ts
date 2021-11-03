@@ -9,13 +9,23 @@ const Enter = 13
 const Escape = 27
 
 /**
- * keyboard handling for <ul> and children- this should be compatible with other keyboard handling a step above if ActionList is used inside a dropdown menu or modal
+ * role="menu" specific keyboard + focus handling
 
  * things we need:
  * roving tabindex
  * toggle collapse/expand
  * toggle checked
  * toggle selected
+ */
+
+/**
+ * find first ul ActionList with tab-index="0"
+ * Focus first ul
+ * ArrowDown key: change tab-index on ul to "-1", change tab-index on focused item to "0", focus item (li)
+ * ArrowUp key: change tab-index on focused item to "0", focus item (li)
+ * Escape key: move focus back to parent ul + tab-index="0"
+ * Enter key: opens submenu if aria-expanded exists + move focus to first item, triggers event on li (action) or navigates if link is present
+ * Space key: menuitemcheckbox or menuitemradio: set checked state
  */
 
 class ActionListElement extends HTMLElement {
@@ -107,8 +117,8 @@ function fromEvent(
 }
 
 function loadFragment(list: Element, menu: ActionListElement) {
-//   const src = menu.getAttribute('src')
-//   if (!src) return
+  const src = menu.getAttribute('src')
+  if (!src) return
 
   const state = states.get(menu)
   if (!state) return
