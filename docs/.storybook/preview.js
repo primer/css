@@ -89,7 +89,7 @@ export const parameters = {
     expanded: true
   },
 
-  layout: 'fullscreen',
+  layout: 'padded',
   html: {
     root: '#story' // target id for html tab (should be direct parent of <Story /> for easy copy/paste)
   },
