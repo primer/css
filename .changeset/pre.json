@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@primer/css": "18.0.0"
+  },
+  "changesets": []
+}
