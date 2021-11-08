@@ -45,9 +45,9 @@
     "@primer/stylelint-config": "12.1.0",
     "autoprefixer": "10.4.0",
     "cssstats": "4.0.2",
-    "eslint": "8.1.0",
+    "eslint": "8.2.0",
     "eslint-plugin-github": "4.3.3",
-    "eslint-plugin-jest": "25.2.2",
+    "eslint-plugin-jest": "25.2.3",
     "eslint-plugin-prettier": "4.0.0",
     "filesize": "8.0.6",
     "front-matter": "4.0.2",
@@ -65,7 +65,7 @@
     "semver": "7.3.5",
     "stylelint": "14.0.1",
     "stylelint-scss": "4.0.0",
-    "table": "6.7.2"
+    "table": "6.7.3"
   },
   "jest": {
     "testEnvironment": "node",
