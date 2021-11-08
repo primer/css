@@ -38,7 +38,7 @@ Pay close attention to `role` attributes throughout the documentation. The `role
 
 Note: JS is required to make Action List accessible in most cases
 
-## Action List
+## Action list
 
 Action List is a `ul` list designed to contain Action List Items.
 
@@ -119,7 +119,7 @@ Action List is a `ul` list designed to contain Action List Items.
 ```
 
 
-## Action List Divider
+## Action list divider
 
 List item `li` for separating groups of content
 
@@ -205,7 +205,7 @@ When using a section label for a group, give the `li` an id to be referenced by 
 </ul>
 ```
 
-## Action List Item
+## Action list item
 
 List item `li` handling semantics, state and interactions
 
@@ -289,7 +289,7 @@ Kitchen sink
 
 ```
 
-## Action List Item Content
+## Action list item content
 
 Contains and places all child content within Action List Item. Can be either an `a href` tag for list link items, or a `span` for items that provide an event on Action List Item `li`.
 
