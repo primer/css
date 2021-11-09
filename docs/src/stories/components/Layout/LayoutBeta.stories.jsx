@@ -24,30 +24,42 @@ export default {
 
     // break it into `outerSpacing` + `innerSpacing`?
 
-    spacingBehavior: {
+    outerSpacing: {
       options: [0, 1, 2],
-      mapping: ['', 'wrapper', 'regions'],
+      mapping: ['', 'normal', 'condensed'],
       control: {
         type: 'select',
-        labels: ['None', 'Around wrapper', 'Around regions']
+        labels: ['none', 'normal', 'condensed']
       },
-      description: 'Sets how the `Layout` component will handle its spacing. `aroundWrapper` applies margins around the entire component, while `aroundRegions` uses `padding` inside each region.',
+      description: 'Defines the wrapper margins surrounding the component and the viewport edges.',
       table: {
         category: 'Wrapper'
       }
     },
-    spacingDensity: {
+    innerSpacing: {
       options: [0, 1, 2],
-      mapping: ['', 'condensed', 'spacious'],
+      mapping: ['', 'normal', 'condensed'],
       control: {
         type: 'select',
-        labels: ['Default', 'Condensed', 'Spacious']
+        labels: ['none', 'normal', 'condensed']
       },
-      description: '',
+      description: 'Adds padding to regions individually.',
       table: {
         category: 'Wrapper'
       }
     },
+    columnGap: {
+      options: [0, 1, 2],
+      mapping: ['normal', 'none', 'condensed'],
+      control: {
+        type: 'select',
+        labels: ['normal', 'none', 'condensed']
+      },
+      table: {
+        category: 'Wrapper'
+      }
+    },
+
     hasDivider: {
       control: { type: 'boolean' },
       description: 'true/false toggle to show divider',
@@ -232,6 +244,11 @@ export const ComponentTemplateName = ({
   spacingDensity,
   hasDivider,
 
+  outerSpacing,
+  innerSpacing,
+  columnGap,
+
+  // Region
   panePosition,
   paneWidth,
   contentWidth,
@@ -260,25 +277,20 @@ export const ComponentTemplateName = ({
   // use clsx for multiple classnames
   className={clsx(
     layoutClassName,
-    flowHorizontal && layoutClassName + '--flowHorizontal',
-    spacingBehavior && layoutClassName + '--spacing-' + `${spacingBehavior}`,
-    spacingDensity && layoutClassName + '--density-' + `${spacingDensity}`,
-    responsiveBehavior && layoutClassName + '--responsive-' + `${responsiveBehavior}`,
-    panePosition && layoutClassName + '--panePos-' + `${panePosition}`,
-    paneWidth && layoutClassName + '--paneWidth-' + `${paneWidth}`,
-    hasDivider && layoutClassName + '--hasDivider'
-  )}
-  data-spacing-behavior={spacingBehavior ? spacingBehavior : undefined}
-  data-spacing-density={spacingDensity ? spacingDensity : undefined}
-  data-pane-position={panePosition ? panePosition : 'end'}
-  data-pane-width={paneWidth ? paneWidth : undefined}
-  data-content-width={contentWidth ? contentWidth : undefined}
+    flowHorizontal && layoutClassName + '--flow-horizontal',
+    outerSpacing && layoutClassName + '--outer-spacing-' + `${outerSpacing}`,
+    innerSpacing && layoutClassName + '--inner-spacing-' + `${innerSpacing}`,
+    columnGap && layoutClassName + '--column-gap-' + `${columnGap}`,
 
-  data-responsive-behavior={responsiveBehavior ? responsiveBehavior : 'flowVertical'}
-  data-responsive-behavior-at={responsiveBehaviorAt ? responsiveBehaviorAt : undefined}
+    responsiveBehavior && layoutClassName + '--responsive-' + `${responsiveBehavior}`,
+    panePosition && layoutClassName + '--pane-position-' + `${panePosition}`,
+    paneWidth && layoutClassName + '--pane-width-' + `${paneWidth}`,
+    hasDivider && layoutClassName + '--has-divider',
+
+  )}
 
   // use undefined for values that shouldn't be set if false
-  aria-hidden={hasDivider ? 'true' : undefined}
+  // aria-hidden={hasDivider ? 'true' : undefined}
   >
   {/* use {children} for wrapper component templates */}
   <>
@@ -316,7 +328,7 @@ export const ComponentTemplateName = ({
       {/* pane */}
       <div className={layoutClassName + '-pane'}>{paneChildren}</div>
 
-      {/* footer TODO */}
+      {/* footer */}
       {hasFooter ? (
         <>
           <div className={layoutClassName + '-footer'}>
@@ -362,15 +374,20 @@ const contentPlaceholder =
   </>;
 
 // create a "playground" demo page that may set some defaults and allow story to access component controls
-export const Playground = ComponentTemplateName.bind({})
+export const Playground = ComponentTemplateName.bind({});
+Playground.parameters = {
+  layout:'fullscreen',
+};
 Playground.args = {
   flowHorizontal: true,
 
   // Wrapper
   wrapperSizing: 0, // fluid
-  spacingBehavior: 1, // wrapper
-  spacingDensity: 0, // default
   hasDivider: false,
+
+  outerSpacing: 0, // none
+  innerSpacing: 0, // none
+  columnGap: 0, // normal
 
   // Responsive
   responsiveBehavior: 0, // flowVertical
@@ -385,6 +402,34 @@ Playground.args = {
   footerChildren: 'footer'
 }
 
-Playground.parameters = {
+// create a "playground" demo page that may set some defaults and allow story to access component controls
+export const SplitView = ComponentTemplateName.bind({});
+SplitView.parameters = {
   layout:'fullscreen',
 };
+SplitView.args = {
+  flowHorizontal: true,
+
+  // Wrapper
+  wrapperSizing: 0, // fluid
+  hasDivider: true,
+
+  outerSpacing: 0, // none
+  innerSpacing: 1, // normal
+  columnGap: 1, // none
+
+  panePosition: 0, // start
+  paneWidth: 2, // wide
+
+  // Responsive
+  responsiveBehavior: 0, // flowVertical
+  responsiveBehaviorAt: 0, // md
+
+  // Children
+  hasHeader: false,
+  hasFooter: false,
+  contentChildren: 'content',
+  paneChildren: 'pane',
+  headerChildren: 'header',
+  footerChildren: 'footer'
+}

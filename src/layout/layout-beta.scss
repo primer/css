@@ -1,5 +1,25 @@
 // Component className
+
 $Layout: "LayoutBeta";
+
+// Property modifier names
+
+// -- Wrapper
+$Layout-prop-wrapperSizing:      "wrapper-sizing";        // size?
+
+$Layout-prop-outerSpacing:       "outer-spacing";         // outer-m?
+$Layout-prop-innerSpacing:       "inner-spacing";         // inner-p?
+$Layout-prop-columnGap:          "column-gap";            // gutter?
+$Layout-prop-hasDivider:         "has-divider";           // divider?
+
+$Layout-prop-panePosition:       "pane-position";         // pane-pos?
+$Layout-prop-paneWidth:          "pane-width";            // pane-w?
+$Layout-prop-contentWidth:       "content-width";         // content-w?
+
+$Layout-prop-flowHorizontal:     "flow-horizontal";       // flow-h?
+$Layout-prop-responsiveBehavior: "responsive-behavior";   // r?
+$Layout-prop-responsiveAt:       "responsive-at";         // r-at?
+
 
 .#{$Layout} {
   --Layout-pane-width: #{map-get($sidebar-width, 'sm')};
@@ -10,6 +30,14 @@ $Layout: "LayoutBeta";
 
   --Layout-column-gap: #{$spacer-3};
   --Layout-row-gap: #{$spacer-3};
+
+  --Layout-outer-spacing-x: 0; // wrapper margin x
+  --Layout-outer-spacing-y: 0; // wrapper margin y
+
+  --Layout-inner-spacing-min: 0;
+  --Layout-inner-spacing-max: 0;
+
+  // spacing: none, 
 
   // `flowHorizontal` determines whether `Layout` can render desktop-friendly
   // two-column layouts. It should appear by default for compatibility
@@ -23,7 +51,9 @@ $Layout: "LayoutBeta";
   // use CSS variables to determine the breakpoint dinamically. (And the other
   // option would be to duplicate too much code.)
 
-  &.#{$Layout}--flowHorizontal {
+  &.#{$Layout}--#{$Layout-prop-flowHorizontal} {
+
+    margin: var(--Layout-outer-spacing-x);
     
     > .#{$Layout}-regions {
       display: grid;
@@ -34,19 +64,110 @@ $Layout: "LayoutBeta";
 
     // panePosition
 
-    &.#{$Layout}[data-pane-position="start"] {
+    &.#{$Layout}--#{$Layout-prop-panePosition}-start {
       --Layout-template-columns: var(--Layout-pane-width) 1fr;
       --Layout-template-areas: "header header"
                                "pane content"
                                "footer footer";
     }
 
-    &.#{$Layout}[data-pane-position="end"] {
+    &.#{$Layout}--#{$Layout-prop-panePosition}-end {
       --Layout-template-columns: 1fr var(--Layout-pane-width);
       --Layout-template-areas: "header header"
                                "content pane"
                                "footer footer";
     }
+
+    // Outer spacing
+
+    &.#{$Layout}--#{$Layout-prop-outerSpacing}-normal {
+      --Layout-outer-spacing-x: #{$spacer-3}; // 16px
+      --Layout-outer-spacing-y: #{$spacer-3}; // 16px
+
+      @include breakpoint(lg) {
+        --Layout-outer-spacing-x: #{$spacer-4}; // 24px
+        --Layout-outer-spacing-y: #{$spacer-4}; // 24px
+      }
+    }
+
+    &.#{$Layout}--#{$Layout-prop-outerSpacing}-condensed {
+      --Layout-outer-spacing-x: #{$spacer-3}; // 16px
+      --Layout-outer-spacing-y: #{$spacer-3}; // 16px
+    }
+
+    // Inner spacing
+
+    &.#{$Layout}--#{$Layout-prop-innerSpacing}-normal {
+      --Layout-inner-spacing-min: #{$spacer-3}; // 16px
+      --Layout-inner-spacing-max: #{$spacer-3}; // 16px
+
+      @include breakpoint(lg) {
+        --Layout-inner-spacing-max: #{$spacer-4}; // 24px
+      }
+    }
+
+    &.#{$Layout}--#{$Layout-prop-innerSpacing}-condensed {
+      --Layout-inner-spacing-min: #{$spacer-3}; // 16px
+      --Layout-inner-spacing-max: #{$spacer-3}; // 16px
+    }
+
+    // Divider
+
+    &.#{$Layout}--#{$Layout-prop-hasDivider} {
+      &.#{$Layout}--#{$Layout-prop-panePosition}-start {
+        .#{$Layout}-pane {
+          border-right: 1px solid var(--color-border-default);
+          border-color: red;
+        }
+
+        &:not(.#{$Layout}--#{$Layout-prop-columnGap}-none) {
+          .#{$Layout}-pane {
+            margin-right: calc(var(--Layout-column-gap) * -1);
+            padding-right: calc(var(--Layout-column-gap) - 1px);
+          }
+          .#{$Layout}-content {
+            margin-left: var(--Layout-column-gap);
+          }
+        }
+      }
+
+      &.#{$Layout}--#{$Layout-prop-panePosition}-end {
+        .#{$Layout}-pane {
+          border-left: 1px solid var(--color-border-default);
+          border-color: red;
+        }
+
+        &:not(.#{$Layout}--#{$Layout-prop-columnGap}-none) {
+          .#{$Layout}-pane {
+            margin-left: calc(var(--Layout-column-gap) * -1);
+            padding-left: calc(var(--Layout-column-gap) - 1px);
+          }
+          .#{$Layout}-content {
+            margin-right: var(--Layout-column-gap);
+          }
+        }
+      }
+    }
+
+    // Column gap
+
+    &.#{$Layout}--#{$Layout-prop-columnGap}-normal {
+      --Layout-column-gap: #{$spacer-3}; // 16px
+
+      @include breakpoint(lg) {
+        --Layout-column-gap: #{$spacer-4}; // 24px
+      }
+    }
+
+    &.#{$Layout}--#{$Layout-prop-columnGap}-condensed {
+      --Layout-column-gap: #{$spacer-3}; // 16px
+    }
+
+    &.#{$Layout}--#{$Layout-prop-columnGap}-none {
+      --Layout-column-gap: 0;
+    }
+
+    // Regions
 
     .#{$Layout}-header {
       margin-bottom: var(--Layout-row-gap);
@@ -54,94 +175,6 @@ $Layout: "LayoutBeta";
 
     .#{$Layout}-footer {
       margin-top: var(--Layout-row-gap);
-    }
-  }
-
-  // wrapperSizing
-
-  // spacingBehavior
-
-  &.#{$Layout}[data-spacing-behavior="wrapper"] {
-    margin: $spacer-3; // 16px
-    --Layout-column-gap: #{$spacer-4}; // 24px
-
-    @include breakpoint(lg) {
-      &.#{$Layout}:not([data-spacing-density="condensed"]) {
-        margin: $spacer-4; // 24px
-      }
-    }
-    
-    @include breakpoint(xl) {
-      &.#{$Layout}[data-spacing-density="spacious"] {
-        margin: $spacer-5; // 32px
-      }
-    }
-
-    // Divider
-
-    // FIXME
-    // needs to check if `flowHorizontal` is set
-
-    &.#{$Layout}--hasDivider[data-pane-position="start"] .#{$Layout}-pane {
-      border-right: 1px solid var(--color-border-default);
-      border-color: red;
-      margin-right: calc(var(--Layout-column-gap) * -1);
-      padding-right: calc(var(--Layout-column-gap) - 1px);
-    }
-
-    &.#{$Layout}--hasDivider[data-pane-position="start"] .#{$Layout}-content {
-      margin-left: var(--Layout-column-gap);
-    }
-
-    &.#{$Layout}--hasDivider[data-pane-position="end"] .#{$Layout}-pane {
-      border-left: 1px solid var(--color-border-default);
-      border-color: red;
-      margin-left: calc(var(--Layout-column-gap) * -1);
-      padding-left: calc(var(--Layout-column-gap) - 1px);
-    }
-
-    &.#{$Layout}--hasDivider[data-pane-position="end"] .#{$Layout}-content {
-      margin-right: var(--Layout-column-gap);
-    }
-  }
-
-  &.#{$Layout}[data-spacing-behavior="regions"] {
-    --Layout-column-gap: 0;
-    --Layout-row-gap: 0;
-
-    .#{$Layout}-header, .#{$Layout}-content, .#{$Layout}-pane, .#{$Layout}-footer {
-      padding: $spacer-3; 
-    }
-
-    @include breakpoint(xl) {
-      &.#{$Layout}[data-spacing-density="spacious"] .#{$Layout}-content {
-        padding-left: $spacer-5; // 32px
-        padding-right: $spacer-5; // 32px
-      }
-    }
-
-    // Divider
-
-    &.#{$Layout}--hasDivider[data-pane-position="start"] .#{$Layout}-pane {
-      border-right: 1px solid var(--color-border-default);
-      border-color: red;
-    }
-
-    &.#{$Layout}--hasDivider[data-pane-position="end"] .#{$Layout}-pane {
-      border-left: 1px solid var(--color-border-default);
-      border-color: red;
-    }
-  }
-
-  // spacingDensity
-
-  &.#{$Layout}[data-spacing-density="condensed"] {
-    border-color: red;
-  }
-
-  &.#{$Layout}[data-spacing-density="spacious"] {
-    .#{$Layout}-header, .#{$Layout}-content, .#{$Layout}-pane, .#{$Layout}-footer {
-      border-color: blue;
     }
   }
 
@@ -153,7 +186,7 @@ $Layout: "LayoutBeta";
     }
   }
 
-  &.#{$Layout}[data-pane-width="narrow"] {
+  &.#{$Layout}--#{$Layout-prop-paneWidth}-narrow {
     @each $breakpoint in map-keys($sidebar-narrow-width) {
       @include breakpoint($breakpoint) {
         --Layout-pane-width: #{map-get($sidebar-narrow-width, $breakpoint)};
@@ -161,7 +194,7 @@ $Layout: "LayoutBeta";
     }
   }
 
-  &.#{$Layout}[data-pane-width="wide"] {
+  &.#{$Layout}--#{$Layout-prop-paneWidth}-wide {
     @each $breakpoint in map-keys($sidebar-wide-width) {
       @include breakpoint($breakpoint) {
         --Layout-pane-width: #{map-get($sidebar-wide-width, $breakpoint)};
@@ -171,7 +204,16 @@ $Layout: "LayoutBeta";
 
   // responsiveBehavior
 
-  &.#{$Layout}[data-responsive-behavior="flowVertical"]:not(.#{$Layout}--flowHorizontal) {
+  &.#{$Layout}--#{$Layout-prop-responsiveBehavior}-flowVertical:not(.#{$Layout}--#{$Layout-prop-flowHorizontal}) {
+    > .#{$Layout}-regions {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas: var(--Layout-template-areas);
+    }
+  }
+
+  /*
+  &.#{$Layout}--#{$Layout-prop-responsiveBehavior}-flowVertical:not(.#{$Layout}--#{$Layout-prop-flowHorizontal}) {
     // flow vertically on mobile
 
     > .#{$Layout}-regions {
@@ -183,12 +225,17 @@ $Layout: "LayoutBeta";
     }
   }
 
-  &.#{$Layout}--responsive-splitAsPages:not(.#{$Layout}--flowHorizontal) {
+  &.#{$Layout}--#{$Layout-prop-responsiveBehavior}-splitAsPages:not(.#{$Layout}--#{$Layout-prop-flowHorizontal}) {
     // split as pages on mobile
     //background: yellow;
   }
+  */
 
   // Regions
+
+  .#{$Layout}-header, .#{$Layout}-content, .#{$Layout}-pane, .#{$Layout}-footer {
+    padding: var(--Layout-inner-spacing-min);
+  }
 
   .#{$Layout}-header {
     grid-area: header;
@@ -196,8 +243,10 @@ $Layout: "LayoutBeta";
   }
 
   .#{$Layout}-content {
+    padding-left: var(--Layout-inner-spacing-max);
+    padding-right: var(--Layout-inner-spacing-max);
     grid-area: content;
-    background: rgb(197, 233, 255);
+    background: rgb(255, 197, 253);
   }
 
   .#{$Layout}-pane {
