@@ -336,7 +336,7 @@
     "flex-xl-item-equal": "flex-xl-1",
     "btn-purple": null,
     "btn-primary-mktg": "btn-signup-mktg",
-    "btn-enterprise-mktg": null,
+    "btn-enterprise-mktg": "btn-mktg",
     "btn-outline-mktg": "btn-muted-mktg",
     "btn-transparent": "btn-subtle-mktg",
     "text-pending": "text-yellow",
