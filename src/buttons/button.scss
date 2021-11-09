@@ -136,13 +136,6 @@
     }
   }
 
-  //   &:focus,
-  //   &.focus {
-  //     background-color: var(--color-btn-primary-focus-bg);
-  //     border-color: var(--color-btn-primary-focus-border);
-  //     box-shadow: var(--color-btn-primary-focus-shadow);
-  //   }
-
   .Counter {
     color: inherit;
     background-color: var(--color-btn-primary-counter-bg);
@@ -195,11 +188,6 @@
       background-color: var(--color-btn-outline-disabled-counter-bg);
     }
   }
-
-  //   &:focus {
-  //     border-color: var(--color-btn-outline-focus-border);
-  //     box-shadow: var(--color-btn-outline-focus-shadow);
-  //   }
 
   .Counter {
     color: inherit;
@@ -257,11 +245,6 @@
       color: var(--color-btn-danger-disabled-text);
     }
   }
-
-  //   &:focus {
-  //     border-color: var(--color-btn-danger-focus-border);
-  //     box-shadow: var(--color-btn-danger-focus-shadow);
-  //   }
 
   .Counter {
     color: inherit;

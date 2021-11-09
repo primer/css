@@ -106,10 +106,10 @@ details {
   @include focusOutline;
 }
 
-// remove outline offset for form fields
+// remove offset for form fields
 :focus,
 :focus-visible {
   &:is(input, textarea) {
-    outline-offset: 0;
+    box-shadow: 0 0 0 2px var(--color-accent-fg);
   }
 }

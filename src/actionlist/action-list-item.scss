@@ -15,6 +15,12 @@
     }
   }
 
+  // li only: focus-visible, a href: focus-within on li
+  &:focus-visible,
+  &:focus-within {
+    @include focusOutline;
+  }
+
   // only hover li without list as children
   &:not(.ActionList-item--hasSubItem) {
     &:hover {
@@ -287,10 +293,6 @@
   // column-gap persists with empty grid-areas, margin applies only when children exist
   > :not(:last-child) {
     margin-right: $spacer-2;
-  }
-
-  &:focus-visible {
-    @include focusOutline;
   }
 
   // sizes
