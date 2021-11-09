@@ -112,6 +112,7 @@ details {
 :focus,
 :focus-visible {
   &:is(input, textarea) {
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0 2px var(--color-accent-fg);
   }
 }
