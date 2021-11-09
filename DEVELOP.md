@@ -18,7 +18,11 @@ Here's what you need to know about how the files are structured in both git and 
 * In git, all of the SCSS source files live in the `src/` directory.
 * When published, all of the files in `src/` are "hoisted" to the package root so that you can import, say, utilities with:
 
-    ```css
+    ```scss
+    // scss
+    @import "@primer/css/utilities/index.scss";
+
+    // css
     @import "@primer/css/utilities.css";
     ```
 
