@@ -338,7 +338,7 @@
     "btn-primary-mktg": "btn-signup-mktg",
     "btn-enterprise-mktg": null,
     "btn-outline-mktg": "btn-muted-mktg",
-    "btn-transparent": "btn-muted-mktg",
+    "btn-transparent": "btn-subtle-mktg",
     "text-pending": "text-yellow",
     "bg-pending": "bg-yellow-dark",
     "container": null,
