@@ -90,10 +90,12 @@ details {
 
 // global focus styles
 
-// add .focus
 // fallback :focus state
-:focus:is(a, button, input, textarea) {
-  @include focusOutline;
+:focus,
+.focus {
+  &:is(a, button, input, textarea) {
+    @include focusOutline;
+  }
 }
 
 // remove fallback :focus if :focus-visible is supported
