@@ -1,5 +1,17 @@
 # @primer/css
 
+## 18.2.0
+
+### Minor Changes
+
+- [#1738](https://github.com/primer/css/pull/1738) [`dfe73db1`](https://github.com/primer/css/commit/dfe73db19556c4de8f57c9e610705af0a4d9f0f5) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Update `Layout`'s sidebar width values.
+
+* [#1657](https://github.com/primer/css/pull/1657) [`e7543009`](https://github.com/primer/css/commit/e754300989a4e762091a957edd324b26682b104a) Thanks [@langermank](https://github.com/langermank)! - ActionList Component: Primer CSS Implementation. Adding a new component `ActionList` to learn more checkout the docs [https://primer.style/css/components/action-list](https://primer.style/css/components/action-list).
+
+### Patch Changes
+
+- [#1731](https://github.com/primer/css/pull/1731) [`832e9988`](https://github.com/primer/css/commit/832e99886df66ea5860d725517aeb9d5f178dd58) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating @primer/primitives@6.1.0
+
 ## 18.1.0
 
 ### Minor Changes
