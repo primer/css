@@ -109,8 +109,8 @@ Flowing as row:
 
 ### Sidebar sizing
 
-- Default: [md: 256px, lg: 296px, xl: 320px]
-- `Layout--sidebar-narrow` [md: 240px, lg: 256px, xl: 296px]
+- Default: [md: 256px, lg: 296px]
+- `Layout--sidebar-narrow` [md: 240px, lg: 256px]
 - `Layout--sidebar-wide` [md: 296px, lg: 320px, xl: 344px]
 
 ```html live

@@ -1,0 +1,42 @@
+// emtpy divider
+
+.ActionList-sectionDivider {
+  // has children
+  &:not(:empty) {
+    display: flex;
+    // stylelint-disable-next-line primer/spacing
+    padding: ($spacer-1 * 1.5) $spacer-2;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    color: var(--color-fg-muted);
+    flex-direction: column;
+  }
+
+  // no children
+  &:empty {
+    height: 1px;
+    padding: 0;
+    // stylelint-disable-next-line primer/spacing
+    margin: ($spacer-2 - 1px) ($spacer-2 * -1) $spacer-2;
+    list-style: none;
+    background: var(--color-action-list-item-inline-divider);
+    border: 0;
+  }
+}
+
+.ActionList-sectionDivider--filled {
+  margin: $spacer-2 ($spacer-2 * -1);
+  background: var(--color-canvas-subtle);
+  border-top: $border-width $border-style var(--color-action-list-item-inline-divider);
+  border-bottom: $border-width $border-style var(--color-action-list-item-inline-divider);
+
+  // if no children, treat as divider
+  &:empty {
+    height: $spacer-2;
+    box-sizing: border-box;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
