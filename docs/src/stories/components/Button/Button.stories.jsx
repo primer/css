@@ -8,7 +8,7 @@ export default {
       type: 'figma',
       url: 'https://www.figma.com/file/GCvY3Qv8czRgZgvl1dG6lp/Primer-Web?node-id=4371%3A7128'
     },
-    layout: 'fullscreen'
+    layout: 'padded'
   },
 
   excludeStories: ['ButtonTemplate'],
@@ -22,12 +22,12 @@ export default {
         'btn-danger',
         'btn-link',
         'btn-invisible',
-        'close-button',
-        'btn-with-count'
+        'btn-with-count',
+        'btn-octicon'
       ], // values
       control: {
         type: 'select',
-        labels: ['default', 'primary', 'outline', 'danger', 'link', 'invisible', 'close', 'with-count']
+        labels: ['default', 'primary', 'outline', 'danger', 'link', 'invisible', 'close', 'with-count', 'icon-only']
       },
       table: {
         category: 'CSS'
@@ -62,6 +62,12 @@ export default {
     },
     fullWidth: {
       defaultValue: false,
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
+    },
+    closeBtn: {
       control: {type: 'boolean'},
       table: {
         category: 'CSS'
@@ -109,20 +115,38 @@ export const ButtonTemplate = ({
   leadingVisual,
   trailingVisual,
   trailingAction,
-  selected
+  selected,
+  closeBtn
 }) => (
   <>
     <button
       disabled={disabled}
-      className={clsx('btn', variant && `${variant}`, size && `${size}`, fullWidth && 'btn-block')}
+      className={clsx(
+        'btn',
+        variant && `${variant}`,
+        size && `${size}`,
+        fullWidth && 'btn-block',
+        closeBtn && 'close-button'
+      )}
       aria-selected={selected}
     >
       {leadingVisual && <span className="" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
       <span>{label}</span>
       {trailingVisual && <span className="" dangerouslySetInnerHTML={{__html: trailingVisual}} />}
       {trailingAction && <span class="dropdown-caret"></span>}
+      {closeBtn && (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+          <path
+            fill-rule="evenodd"
+            d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"
+          ></path>
+        </svg>
+      )}
     </button>
   </>
 )
 
 export const Playground = ButtonTemplate.bind({})
+Playground.args = {
+  closeBtn: false
+}

@@ -90,6 +90,7 @@ details {
 
 // global focus styles
 
+// add .focus
 // fallback :focus state
 :focus:is(a, button, input, textarea) {
   @include focusOutline;
@@ -103,4 +104,12 @@ details {
 // default :focus-visibile state
 :focus-visible:is(a, button, input, textarea) {
   @include focusOutline;
+}
+
+// remove outline offset for form fields
+:focus,
+:focus-visible {
+  &:is(input, textarea) {
+    outline-offset: 0;
+  }
 }

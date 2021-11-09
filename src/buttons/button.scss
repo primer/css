@@ -100,14 +100,6 @@
       color: var(--color-primer-fg-disabled);
     }
   }
-
-  // Keep :focus after :disabled. Allows to see the focus ring even on disabled buttons
-  //   &:focus,
-  //   &.focus {
-  //     border-color: var(--color-btn-focus-border);
-  //     outline: none;
-  //     box-shadow: var(--color-btn-focus-shadow);
-  //   }
 }
 
 // Primary button

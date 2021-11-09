@@ -49,15 +49,12 @@
   }
 
   &:active,
-  &:focus,
   &.selected,
   &[aria-selected='true'],
   &.zeroclipboard-is-active {
     color: var(--color-accent-fg);
     background: none;
-    border-color: var(--color-btn-active-border);
-    outline: none;
-    box-shadow: var(--color-btn-focus-shadow);
+    @include focusOutline;
   }
 
   &:disabled,
@@ -113,18 +110,13 @@
   color: var(--color-fg-muted);
   background: transparent;
   border: 0;
-  outline: none;
 
   &:hover {
     color: var(--color-fg-default);
   }
 
-  &:active,
-  &:focus {
-    color: var(--color-fg-muted);
-    border-color: var(--color-btn-active-border);
-    outline: none;
-    box-shadow: var(--color-btn-focus-shadow);
+  &:active {
+    @include focusOutline;
   }
 }
 
@@ -216,11 +208,5 @@
   &:hover {
     color: var(--color-accent-fg);
     cursor: pointer;
-  }
-
-  &:focus {
-    z-index: 1;
-    outline: 0;
-    box-shadow: var(--color-primer-shadow-focus);
   }
 }

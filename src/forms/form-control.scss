@@ -29,15 +29,7 @@ label {
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
   border: $border-width $border-style var(--color-border-default);
   border-radius: $border-radius;
-  outline: none;
   box-shadow: var(--color-primer-shadow-inset);
-
-  &.focus,
-  &:focus {
-    border-color: var(--color-accent-emphasis);
-    outline: none;
-    box-shadow: var(--color-primer-shadow-focus);
-  }
 
   &[disabled] {
     color: var(--color-primer-fg-disabled);

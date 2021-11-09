@@ -82,12 +82,10 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 
-  &:focus,
   &:hover {
     color: var(--color-fg-on-emphasis);
     text-decoration: none;
     background-color: var(--color-accent-emphasis);
-    outline: none;
 
     > .octicon {
       color: inherit;
