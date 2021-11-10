@@ -1,6 +1,7 @@
 // Component className
 
 $Layout: "LayoutBeta";
+$Layout-divider-color: red; // var(--color-border-default)
 
 // Property modifier names
 
@@ -9,8 +10,12 @@ $Layout-prop-wrapperSizing:      "wrapper-sizing";        // size?
 
 $Layout-prop-outerSpacing:       "outer-spacing";         // outer-m?
 $Layout-prop-innerSpacing:       "inner-spacing";         // inner-p?
-$Layout-prop-columnGap:          "column-gap";            // gutter?
-$Layout-prop-hasDivider:         "has-divider";           // divider?
+$Layout-prop-columnGap:          "column-gap";
+$Layout-prop-rowGap:             "row-gap";
+
+$Layout-prop-paneDivider:        "pane-divider";
+$Layout-prop-headerDivider:      "header-divider";
+$Layout-prop-footerDivider:      "footer-divider";
 
 $Layout-prop-panePosition:       "pane-position";         // pane-pos?
 $Layout-prop-paneWidth:          "pane-width";            // pane-w?
@@ -20,13 +25,15 @@ $Layout-prop-flowHorizontal:     "flow-horizontal";       // flow-h?
 $Layout-prop-responsiveBehavior: "responsive-behavior";   // r?
 $Layout-prop-responsiveAt:       "responsive-at";         // r-at?
 
+$Layout-prop-hasHeader:          "has-header";
+$Layout-prop-hasFooter:          "has-footer";
+
 
 .#{$Layout} {
   --Layout-pane-width: #{map-get($sidebar-width, 'sm')};
   --Layout-template-columns: 1fr var(--Layout-pane-width);
-  --Layout-template-areas: "header header"
-                           "content pane"
-                           "footer footer";
+  --Layout-template-rows: min-content;
+  --Layout-template-areas: "content pane";
 
   --Layout-column-gap: #{$spacer-3};
   --Layout-row-gap: #{$spacer-3};
@@ -58,7 +65,9 @@ $Layout-prop-responsiveAt:       "responsive-at";         // r-at?
     > .#{$Layout}-regions {
       display: grid;
       column-gap: var(--Layout-column-gap);
+      row-gap: var(--Layout-row-gap);
       grid-template-columns: var(--Layout-template-columns);
+      grid-template-rows: var(--Layout-template-rows);
       grid-template-areas: var(--Layout-template-areas);
     }
 
@@ -66,16 +75,58 @@ $Layout-prop-responsiveAt:       "responsive-at";         // r-at?
 
     &.#{$Layout}--#{$Layout-prop-panePosition}-start {
       --Layout-template-columns: var(--Layout-pane-width) 1fr;
-      --Layout-template-areas: "header header"
-                               "pane content"
-                               "footer footer";
+      --Layout-template-areas: "pane content";
+
+      &.#{$Layout}--#{$Layout-prop-hasHeader} {
+        --Layout-template-areas: "header header"
+                                 "pane content";
+      }
+
+      &.#{$Layout}--#{$Layout-prop-hasFooter} {
+        --Layout-template-areas: "pane content"
+                                 "footer footer";
+      }
+
+      &.#{$Layout}--#{$Layout-prop-hasHeader}.#{$Layout}--#{$Layout-prop-hasFooter} {
+        --Layout-template-areas: "header header"
+                                 "pane content"
+                                 "footer footer";
+      }
     }
 
     &.#{$Layout}--#{$Layout-prop-panePosition}-end {
       --Layout-template-columns: 1fr var(--Layout-pane-width);
-      --Layout-template-areas: "header header"
-                               "content pane"
-                               "footer footer";
+      --Layout-template-areas: "content pane";
+
+      &.#{$Layout}--#{$Layout-prop-hasHeader} {
+        --Layout-template-areas: "header header"
+                                 "content pane";
+      }
+
+      &.#{$Layout}--#{$Layout-prop-hasFooter} {
+        --Layout-template-areas: "content pane"
+                                 "footer footer";
+      }
+
+      &.#{$Layout}--#{$Layout-prop-hasHeader}.#{$Layout}--#{$Layout-prop-hasFooter} {
+        --Layout-template-areas: "header header"
+                                 "content pane"
+                                 "footer footer";
+      }
+    }
+
+    // Template rows
+
+    &.#{$Layout}--#{$Layout-prop-hasHeader} {
+      --Layout-template-rows: min-content 1fr;
+    }
+
+    &.#{$Layout}--#{$Layout-prop-hasFooter} {
+      --Layout-template-rows: 1fr min-content;
+    }
+
+    &.#{$Layout}--#{$Layout-prop-hasHeader}.#{$Layout}--#{$Layout-prop-hasFooter} {
+      --Layout-template-rows: min-content 1fr min-content;
     }
 
     // Outer spacing
@@ -111,13 +162,12 @@ $Layout-prop-responsiveAt:       "responsive-at";         // r-at?
       --Layout-inner-spacing-max: #{$spacer-3}; // 16px
     }
 
-    // Divider
+    // Pane divider
 
-    &.#{$Layout}--#{$Layout-prop-hasDivider} {
+    &.#{$Layout}--#{$Layout-prop-paneDivider} {
       &.#{$Layout}--#{$Layout-prop-panePosition}-start {
         .#{$Layout}-pane {
-          border-right: 1px solid var(--color-border-default);
-          border-color: red;
+          border-right: 1px solid $Layout-divider-color;
         }
 
         &:not(.#{$Layout}--#{$Layout-prop-columnGap}-none) {
@@ -133,8 +183,7 @@ $Layout-prop-responsiveAt:       "responsive-at";         // r-at?
 
       &.#{$Layout}--#{$Layout-prop-panePosition}-end {
         .#{$Layout}-pane {
-          border-left: 1px solid var(--color-border-default);
-          border-color: red;
+          border-left: 1px solid $Layout-divider-color;
         }
 
         &:not(.#{$Layout}--#{$Layout-prop-columnGap}-none) {
@@ -146,6 +195,22 @@ $Layout-prop-responsiveAt:       "responsive-at";         // r-at?
             margin-right: var(--Layout-column-gap);
           }
         }
+      }
+    }
+
+    // Header divider
+
+    &.#{$Layout}--#{$Layout-prop-headerDivider} {
+      .#{$Layout}-header {
+        border-bottom: 1px solid $Layout-divider-color;
+      }
+    }
+
+    // Footer divider
+
+    &.#{$Layout}--#{$Layout-prop-footerDivider} {
+      .#{$Layout}-footer {
+        border-top: 1px solid $Layout-divider-color;
       }
     }
 
@@ -167,14 +232,22 @@ $Layout-prop-responsiveAt:       "responsive-at";         // r-at?
       --Layout-column-gap: 0;
     }
 
-    // Regions
+    // Row gap
 
-    .#{$Layout}-header {
-      margin-bottom: var(--Layout-row-gap);
+    &.#{$Layout}--#{$Layout-prop-rowGap}-normal {
+      --Layout-row-gap: #{$spacer-3}; // 16px
+
+      @include breakpoint(lg) {
+        --Layout-row-gap: #{$spacer-4}; // 24px
+      }
     }
 
-    .#{$Layout}-footer {
-      margin-top: var(--Layout-row-gap);
+    &.#{$Layout}--#{$Layout-prop-rowGap}-none {
+      --Layout-row-gap: 0;
+    }
+
+    &.#{$Layout}--#{$Layout-prop-rowGap}-condensed {
+      --Layout-row-gap: #{$spacer-3}; // 16px
     }
   }
 

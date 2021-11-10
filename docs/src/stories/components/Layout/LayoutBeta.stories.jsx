@@ -21,9 +21,6 @@ export default {
       },
       default: 1
     },
-
-    // break it into `outerSpacing` + `innerSpacing`?
-
     outerSpacing: {
       options: [0, 1, 2],
       mapping: ['', 'normal', 'condensed'],
@@ -59,29 +56,42 @@ export default {
         category: 'Wrapper'
       }
     },
-
-    hasDivider: {
-      control: { type: 'boolean' },
-      description: 'true/false toggle to show divider',
-      table: {
-        category: 'Wrapper'
-      }
-    },
-
-    /*
-    gutterHorizontal: {
+    rowGap: {
       options: [0, 1, 2],
-      mapping: ['', 'none', 'condensed', 'spacious'],
+      mapping: ['normal', 'none', 'condensed'],
       control: {
         type: 'select',
-        labels: ['Default', 'None', 'Condensed', 'Spacious']
+        labels: ['normal', 'none', 'condensed']
       },
-      description: '',
       table: {
         category: 'Wrapper'
       }
     },
-    */
+
+
+    paneDivider: {
+      control: { type: 'boolean' },
+      description: 'true/false toggle to show a pane divider',
+      table: {
+        category: 'Wrapper'
+      }
+    },
+
+    headerDivider: {
+      control: { type: 'boolean' },
+      description: 'true/false toggle to show a header divider',
+      table: {
+        category: 'Wrapper'
+      }
+    },
+
+    footerDivider: {
+      control: { type: 'boolean' },
+      description: 'true/false toggle to show a footer divider',
+      table: {
+        category: 'Wrapper'
+      }
+    },
 
     // Responsive
 
@@ -240,13 +250,16 @@ export const ComponentTemplateName = ({
 
   // Wrapper
   wrapperSizing,
-  spacingBehavior,
-  spacingDensity,
-  hasDivider,
 
+
+  // Spacing and borders
   outerSpacing,
   innerSpacing,
   columnGap,
+  rowGap,
+  paneDivider,
+  headerDivider,
+  footerDivider,
 
   // Region
   panePosition,
@@ -278,15 +291,22 @@ export const ComponentTemplateName = ({
   className={clsx(
     layoutClassName,
     flowHorizontal && layoutClassName + '--flow-horizontal',
+
     outerSpacing && layoutClassName + '--outer-spacing-' + `${outerSpacing}`,
     innerSpacing && layoutClassName + '--inner-spacing-' + `${innerSpacing}`,
     columnGap && layoutClassName + '--column-gap-' + `${columnGap}`,
+    rowGap && layoutClassName + '--row-gap-' + `${rowGap}`,
+
+    paneDivider && layoutClassName + '--pane-divider',
+    headerDivider && layoutClassName + '--header-divider',
+    footerDivider && layoutClassName + '--footer-divider',
 
     responsiveBehavior && layoutClassName + '--responsive-' + `${responsiveBehavior}`,
     panePosition && layoutClassName + '--pane-position-' + `${panePosition}`,
     paneWidth && layoutClassName + '--pane-width-' + `${paneWidth}`,
-    hasDivider && layoutClassName + '--has-divider',
 
+    hasHeader && layoutClassName + '--has-header',
+    hasFooter && layoutClassName + '--has-footer'
   )}
 
   // use undefined for values that shouldn't be set if false
@@ -374,6 +394,7 @@ const contentPlaceholder =
   </>;
 
 // create a "playground" demo page that may set some defaults and allow story to access component controls
+
 export const Playground = ComponentTemplateName.bind({});
 Playground.parameters = {
   layout:'fullscreen',
@@ -383,11 +404,40 @@ Playground.args = {
 
   // Wrapper
   wrapperSizing: 0, // fluid
-  hasDivider: false,
 
   outerSpacing: 0, // none
   innerSpacing: 0, // none
   columnGap: 0, // normal
+
+  // Responsive
+  responsiveBehavior: 1, // splitAsPages
+  responsiveBehaviorAt: 0, // md
+
+  // Children
+  hasHeader: false,
+  hasFooter: false,
+  contentChildren: 'content',
+  paneChildren: 'pane',
+  headerChildren: 'header',
+  footerChildren: 'footer'
+}
+
+export const Default = ComponentTemplateName.bind({});
+Default.parameters = {
+  layout:'fullscreen',
+};
+Default.args = {
+  flowHorizontal: true,
+
+  // Wrapper
+  wrapperSizing: 3, // xl
+
+  outerSpacing: 1, // normal
+  innerSpacing: 0, // none
+  columnGap: 0, // normal
+
+  panePosition: 1, // end
+  paneWidth: 0, // default
 
   // Responsive
   responsiveBehavior: 0, // flowVertical
@@ -402,7 +452,6 @@ Playground.args = {
   footerChildren: 'footer'
 }
 
-// create a "playground" demo page that may set some defaults and allow story to access component controls
 export const SplitView = ComponentTemplateName.bind({});
 SplitView.parameters = {
   layout:'fullscreen',
@@ -412,7 +461,6 @@ SplitView.args = {
 
   // Wrapper
   wrapperSizing: 0, // fluid
-  hasDivider: true,
 
   outerSpacing: 0, // none
   innerSpacing: 1, // normal
