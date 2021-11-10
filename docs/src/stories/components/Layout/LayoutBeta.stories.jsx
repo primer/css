@@ -1,12 +1,14 @@
 import React from 'react'
 import clsx from 'clsx'
+import {NavWithSubItems} from '../ActionList/ActionListPatterns.stories'
+import {Button} from '../Button/Button.stories'
 
 export default {
   title: 'Components/Layout/Beta',
   excludeStories: ['ComponentTemplateName'],
   argTypes: {
 
-    // Wrapper
+    // Structure
 
     wrapperSizing: {
       options: [0, 1, 2, 3],
@@ -15,7 +17,7 @@ export default {
         type: 'select',
         labels: ['fluid', 'md', 'lg', 'xl']
       },
-      description: 'Define the maximum width of the component. `fluid` sets it to full-width. Refer to [container utilities](https://primer.style/css/objects/grid#containers) for reference.',
+      description: 'Define the maximum width of the component. `fluid` sets it to full-width. Other values center `Layout` horizontally. Refer to [container utilities](https://primer.style/css/objects/grid#containers) for reference.',
       table: {
         category: 'Wrapper'
       },
@@ -28,7 +30,7 @@ export default {
         type: 'select',
         labels: ['none', 'normal', 'condensed']
       },
-      description: 'Defines the wrapper margins surrounding the component and the viewport edges.',
+      description: 'Sets wrapper margins surrounding the component to distance itself from the viewport edges. `normal` sets the margin to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the margin at 16px. `none` sets the margin to 0.',
       table: {
         category: 'Wrapper'
       }
@@ -40,7 +42,7 @@ export default {
         type: 'select',
         labels: ['none', 'normal', 'condensed']
       },
-      description: 'Adds padding to regions individually.',
+      description: 'Sets padding to regions individually. `normal` sets padding to 16px, with the `content` region getting 24px horizontal padding on `lg` breakpoints and above. `condensed` keeps the padding always at `16px`. `none` sets the padding to 0.',
       table: {
         category: 'Wrapper'
       }
@@ -52,6 +54,7 @@ export default {
         type: 'select',
         labels: ['normal', 'none', 'condensed']
       },
+      description: 'Sets the gap between columns to distance them from each other. `normal` sets the gap to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the gap always at 16px. `none` sets the gap to 0.',
       table: {
         category: 'Wrapper'
       }
@@ -63,31 +66,7 @@ export default {
         type: 'select',
         labels: ['normal', 'none', 'condensed']
       },
-      table: {
-        category: 'Wrapper'
-      }
-    },
-
-
-    paneDivider: {
-      control: { type: 'boolean' },
-      description: 'true/false toggle to show a pane divider',
-      table: {
-        category: 'Wrapper'
-      }
-    },
-
-    headerDivider: {
-      control: { type: 'boolean' },
-      description: 'true/false toggle to show a header divider',
-      table: {
-        category: 'Wrapper'
-      }
-    },
-
-    footerDivider: {
-      control: { type: 'boolean' },
-      description: 'true/false toggle to show a footer divider',
+      description: 'Sets the gap below the header and above the footer. `normal` sets the gap to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the gap always at 16px. `none` sets the gap to 0.',
       table: {
         category: 'Wrapper'
       }
@@ -145,27 +124,36 @@ export default {
       options: [0, 1],
       mapping: ['start', 'end'],
       control: {
-      type: 'radio',
-      labels: ['start', 'end']
+      type: 'select',
+        labels: ['start', 'end']
       },
+      description: 'Defines the position of the pane. `start` puts the pane on the left, and `end` puts it on the right.',
       table: {
-      category: 'Pane'
+        category: 'Pane'
       }
     },
     paneWidth: {
       options: [0, 1, 2],
       mapping: ['', 'narrow', 'wide'],
       control: {
-      type: 'radio',
-      labels: ['default', 'narrow', 'wide']
+      type: 'select',
+        labels: ['default', 'narrow', 'wide']
       },
+      description: 'Defines the width of the pane',
+      table: {
+        category: 'Pane'
+      }
+    },
+    paneDivider: {
+      control: { type: 'boolean' },
+      description: 'Whether to show a pane divider.',
       table: {
         category: 'Pane'
       }
     },
     paneIsSticky: {
       control: { type: 'boolean' },
-      description: 'true/false toggle to make the pane sticky',
+      description: 'Whether to make the pane sticky. Don’t use it in the presence of footer regions.',
       table: {
         category: 'Pane'
       }
@@ -178,28 +166,51 @@ export default {
       mapping: ['', 'sm', 'md', 'lg', 'xl'],
       control: {
       type: 'select',
-      labels: ['Fluid', 'md', 'lg', 'xl']
+        labels: ['Fluid', 'md', 'lg', 'xl']
       },
+      description: 'Defines the maximum width of the content region. `fluid` sets it to full-width. Other values follow container widths from `sm` to `xl`. With smaller widths, the content region will try to stay centered to the viewport area.',
       table: {
-      category: 'Content'
+        category: 'Content'
       }
     },
 
-    // Children
+
+    // Header
 
     hasHeader: {
       control: { type: 'boolean' },
       table: {
-        category: 'Children'
+        category: 'Header'
       }
     },
+
+    headerDivider: {
+      control: { type: 'boolean' },
+      description: 'Whether to show a header divider',
+      table: {
+        category: 'Header'
+      }
+    },
+
+    
+    // Footer
 
     hasFooter: {
       control: { type: 'boolean' },
       table: {
-        category: 'Children'
+        category: 'Footer'
       }
     },
+
+    footerDivider: {
+      control: { type: 'boolean' },
+      description: 'Whether to show a footer divider',
+      table: {
+        category: 'Footer'
+      }
+    },
+
+    // HTML
 
     headerChildren: {
       description: 'creates a slot for header children',
@@ -490,6 +501,45 @@ SplitView.args = {
   hasFooter: false,
   contentChildren: 'content',
   paneChildren: 'pane',
+  headerChildren: 'header',
+  footerChildren: 'footer'
+}
+
+export const Settings = ComponentTemplateName.bind({});
+Settings.parameters = {
+  layout:'fullscreen',
+};
+Settings.args = {
+  flowHorizontal: true,
+
+  // Wrapper
+  wrapperSizing: 0, // fluid
+
+  outerSpacing: 0, // none
+  innerSpacing: 1, // normal
+  columnGap: 1, // none
+  rowGap: 1, // none
+
+  paneDivider: true,
+  panePosition: 0, // start
+  paneWidth: 2, // wide
+  paneIsSticky: false,
+
+  contentWidth: 2, // md
+
+  // Responsive
+  responsiveBehavior: 0, // flowVertical
+  responsiveBehaviorAt: 0, // md
+
+  // Children
+  hasHeader: false,
+  hasFooter: false,
+  contentChildren: 'content',
+  paneChildren: (
+    <>
+      <NavWithSubItems {...NavWithSubItems.args} />
+    </>
+  ),
   headerChildren: 'header',
   footerChildren: 'footer'
 }
