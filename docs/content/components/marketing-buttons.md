@@ -6,41 +6,40 @@ source: 'https://github.com/primer/css/tree/main/src/marketing/buttons'
 bundle: marketing-buttons
 ---
 
-Marketing buttons come in different colors and sizes, and are also available in a blue outlined version.
+Marketing buttons come in a few different colors and sizes that can be produced by combining the base class `btn-mktg` with a set of modifier classes.
 
-## Colors, outlined and transparent
+## Button types
 
-Marketing buttons can be solid blue, outlined blue, solid green, or transparent.
-
-The solid blue and solid green buttons have more visual emphasis than the blue outlined button, therefore they should be used sparingly and only for call to actions that need emphasis.
+Marketing buttons can be solid (default), outlined (`muted`), borderless (`subtle`), or green (`signup`, only used for signing up).
 
 ```html live
-<button class="btn-mktg mr-3" type="button">Learn more</button>
-<button class="btn-mktg btn-primary-mktg mr-3" type="button">Sign up</button>
-<button class="btn-mktg btn-enterprise-mktg mr-3" type="button">Contact sales</button>
-<button class="btn-mktg btn-outline-mktg mr-3" type="button">Learn more</button>
-<div class="mt-3 p-3" style="background-color: var(--color-scale-gray-9);">
-  <button class="btn-mktg btn-transparent" type="button">Learn more</button>
-</div>
+<button class="btn-mktg mr-3" type="button">Get started</button>
+<button class="btn-mktg btn-muted-mktg mr-3" type="button">Learn more</button>
+<button class="btn-mktg btn-subtle-mktg mr-3" type="button">Contact us</button>
+<button class="btn-mktg btn-signup-mktg" type="button">Sign up</button>
 ```
 
 ## Sizes
 
-Available in three sizes, marketing buttons have a default size and a large size.
+Marketing buttons can be set to three different sizes:
+
+- Small: `btn-small-mktg`
+- Medium (default)
+- Large: `btn-large-mktg`
 
 ```html live
-<button class="btn-mktg btn-sm-mktg mr-2" type="button">Learn more</button>
-<button class="btn-mktg btn-primary-mktg btn-sm-mktg mr-2" type="button">Sign up</button>
-<button class="btn-mktg btn-enterprise-mktg btn-sm-mktg mr-3" type="button">Contact sales</button>
-<button class="btn-mktg btn-outline-mktg btn-sm-mktg mr-2" type="button">Learn more</button>
+<button class="btn-mktg btn-small-mktg mr-3" type="button">Get started</button>
+<button class="btn-mktg btn-muted-mktg btn-small-mktg mr-3" type="button">Learn more</button>
+<button class="btn-mktg btn-subtle-mktg btn-small-mktg mr-3" type="button">Contact us</button>
+<button class="btn-mktg btn-signup-mktg btn-small-mktg" type="button">Sign up</button>
 <hr>
-<button class="btn-mktg mr-2" type="button">Learn more</button>
-<button class="btn-mktg btn-primary-mktg mr-2" type="button">Sign up</button>
-<button class="btn-mktg btn-enterprise-mktg mr-3" type="button">Contact sales</button>
-<button class="btn-mktg btn-outline-mktg mr-2" type="button">Learn more</button>
+<button class="btn-mktg mr-3" type="button">Get started</button>
+<button class="btn-mktg btn-muted-mktg mr-3" type="button">Learn more</button>
+<button class="btn-mktg btn-subtle-mktg mr-3" type="button">Contact us</button>
+<button class="btn-mktg btn-signup-mktg" type="button">Sign up</button>
 <hr>
-<button class="btn-mktg btn-lg-mktg mr-2" type="button">Learn more</button>
-<button class="btn-mktg btn-primary-mktg btn-lg-mktg mr-2" type="button">Sign up</button>
-<button class="btn-mktg btn-enterprise-mktg btn-lg-mktg mr-3" type="button">Contact sales</button>
-<button class="btn-mktg btn-outline-mktg btn-lg-mktg mr-2" type="button">Learn more</button>
+<button class="btn-mktg btn-large-mktg mr-3" type="button">Get started</button>
+<button class="btn-mktg btn-muted-mktg btn-large-mktg mr-3" type="button">Learn more</button>
+<button class="btn-mktg btn-subtle-mktg btn-large-mktg mr-3" type="button">Contact us</button>
+<button class="btn-mktg btn-signup-mktg btn-large-mktg" type="button">Sign up</button>
 ```
