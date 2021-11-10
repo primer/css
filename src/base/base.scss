@@ -93,26 +93,26 @@ details {
 // fallback :focus state
 :focus,
 .focus {
-  &:is(a, button, input, textarea) {
+  &:is(a, button, input, textarea, select) {
     @include focusOutline;
   }
 }
 
 // remove fallback :focus if :focus-visible is supported
-:focus:is(a, button, input, textarea):not(:focus-visible) {
+:focus:is(a, button, input, textarea, select):not(:focus-visible) {
   outline: solid 1px transparent;
 }
 
 // default :focus-visibile state
-:focus-visible:is(a, button, input, textarea) {
+:focus-visible:is(a, button, input, textarea, select) {
   @include focusOutline;
 }
 
 // remove offset for form fields
 :focus,
 :focus-visible {
-  &:is(input, textarea) {
-    // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 2px var(--color-accent-fg);
+  &:is(input, textarea, select) {
+    outline-offset: 0;
+    border-color: transparent;
   }
 }

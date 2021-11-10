@@ -37,7 +37,7 @@
   color: var(--color-accent-fg);
   background-color: transparent; // Reset default gradient backgrounds and colors
   border: 0;
-  border-radius: 0;
+  border-radius: $border-radius;
   box-shadow: none;
 
   &:hover,

@@ -26,12 +26,10 @@
 }
 
 // global focus styles
-// change to outline when Safari has better support
-// outline: 2px solid var(--color-accent-fg);
-// outline-offset: 2px;
+
 @mixin focusOutline {
   position: relative;
   z-index: 1;
-  outline: solid 1px transparent;
-  box-shadow: 0 0 0 2px var(--color-canvas-default), 0 0 0 4px var(--color-accent-fg);
+  outline: 2px solid var(--color-accent-fg);
+  outline-offset: 2px;
 }

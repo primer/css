@@ -18,6 +18,13 @@
   &.inline {
     display: inline-table;
   }
+
+  // within input group, if button exists change focus styles to match input (no offset)
+  &:focus-within {
+    button {
+      outline-offset: 0;
+    }
+  }
 }
 
 .input-group .form-control,

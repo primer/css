@@ -20,9 +20,21 @@
 
 .details-reset {
   // Remove marker added by the display: list-item browser default
-  > summary { list-style: none; }
+  > summary {
+    list-style: none;
+  }
   // Remove marker added by details polyfill
-  > summary::before { display: none; }
+  > summary::before {
+    display: none;
+  }
   // Remove marker added by Chrome
-  > summary::-webkit-details-marker { display: none; }
+  > summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.details-overlay > summary {
+  &:focus {
+    @include focusOutline;
+  }
 }
