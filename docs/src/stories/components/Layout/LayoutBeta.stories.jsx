@@ -160,15 +160,22 @@ export default {
       labels: ['default', 'narrow', 'wide']
       },
       table: {
-      category: 'Pane'
+        category: 'Pane'
+      }
+    },
+    paneIsSticky: {
+      control: { type: 'boolean' },
+      description: 'true/false toggle to make the pane sticky',
+      table: {
+        category: 'Pane'
       }
     },
 
     // Content
 
     contentWidth: {
-      options: [0, 1, 2, 3],
-      mapping: ['', 'md', 'lg', 'xl'],
+      options: [0, 1, 2, 3, 4],
+      mapping: ['', 'sm', 'md', 'lg', 'xl'],
       control: {
       type: 'select',
       labels: ['Fluid', 'md', 'lg', 'xl']
@@ -264,6 +271,7 @@ export const ComponentTemplateName = ({
   // Region
   panePosition,
   paneWidth,
+  paneIsSticky,
   contentWidth,
 
   // Responsive
@@ -304,6 +312,7 @@ export const ComponentTemplateName = ({
     responsiveBehavior && layoutClassName + '--responsive-' + `${responsiveBehavior}`,
     panePosition && layoutClassName + '--pane-position-' + `${panePosition}`,
     paneWidth && layoutClassName + '--pane-width-' + `${paneWidth}`,
+    paneIsSticky && layoutClassName + '--pane-is-sticky',
 
     hasHeader && layoutClassName + '--has-header',
     hasFooter && layoutClassName + '--has-footer'
@@ -435,6 +444,7 @@ Default.args = {
   outerSpacing: 1, // normal
   innerSpacing: 0, // none
   columnGap: 0, // normal
+  rowGap: 0, // normal
 
   panePosition: 1, // end
   paneWidth: 0, // default
@@ -465,9 +475,11 @@ SplitView.args = {
   outerSpacing: 0, // none
   innerSpacing: 1, // normal
   columnGap: 1, // none
+  rowGap: 1, // none
 
   panePosition: 0, // start
   paneWidth: 2, // wide
+  paneIsSticky: false,
 
   // Responsive
   responsiveBehavior: 0, // flowVertical
