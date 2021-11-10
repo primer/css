@@ -21,6 +21,7 @@
 
   // within input group, if button exists change focus styles to match input (no offset)
   &:focus-within {
+    // stylelint-disable-next-line selector-max-type
     button {
       outline-offset: 0;
     }

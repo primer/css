@@ -112,7 +112,7 @@ details {
 :focus,
 :focus-visible {
   &:is(input, textarea, select) {
-    outline-offset: 0;
     border-color: transparent;
+    outline-offset: 0;
   }
 }
