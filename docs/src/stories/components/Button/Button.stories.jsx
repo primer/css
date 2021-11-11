@@ -73,10 +73,32 @@ export default {
         category: 'CSS'
       }
     },
+    dropdownBtn: {
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
+    },
     leadingVisual: {
       name: 'leadingVisual',
       type: 'string',
       description: 'Paste [Octicon](https://primer.style/octicons/) in control field',
+      table: {
+        category: 'HTML'
+      }
+    },
+    icon: {
+      name: 'icon',
+      type: 'string',
+      description: 'Paste [Octicon](https://primer.style/octicons/) in control field',
+      table: {
+        category: 'HTML'
+      }
+    },
+    id: {
+      name: 'id',
+      type: 'string',
+      description: 'label id for icon only buttons',
       table: {
         category: 'HTML'
       }
@@ -87,13 +109,6 @@ export default {
       description: 'Paste [Octicon](https://primer.style/octicons/) in control field',
       table: {
         category: 'HTML'
-      }
-    },
-    trailingAction: {
-      defaultValue: false,
-      control: {type: 'boolean'},
-      table: {
-        category: 'CSS'
       }
     },
     selected: {
@@ -114,9 +129,11 @@ export const ButtonTemplate = ({
   fullWidth,
   leadingVisual,
   trailingVisual,
-  trailingAction,
   selected,
-  closeBtn
+  closeBtn,
+  dropdownBtn,
+  icon,
+  id
 }) => (
   <>
     <button
@@ -128,12 +145,21 @@ export const ButtonTemplate = ({
         fullWidth && 'btn-block',
         closeBtn && 'close-button'
       )}
-      aria-selected={selected}
+      aria-selected={selected && selected}
+      aria-labelledby={id}
     >
       {leadingVisual && <span className="" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
-      <span>{label}</span>
-      {trailingVisual && <span className="" dangerouslySetInnerHTML={{__html: trailingVisual}} />}
-      {trailingAction && <span class="dropdown-caret"></span>}
+      <span hidden={icon} id={id}>
+        {label}
+      </span>
+      {icon && <span className="" dangerouslySetInnerHTML={{__html: icon}} />}
+      {trailingVisual && (
+        <>
+          <span className="" dangerouslySetInnerHTML={{__html: trailingVisual}} />{' '}
+          {dropdownBtn && <span class="dropdown-caret"></span>}
+        </>
+      )}
+
       {closeBtn && (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
