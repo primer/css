@@ -1,0 +1,132 @@
+import {Meta} from '@storybook/addon-docs'
+
+<Meta title="Prototypes/Prototyping guide" />
+
+### CSS class syntax
+
+```jsx
+// Ways to combine multiple CSS classes
+// simple Primer classes
+<div class="btn btn-primary"></div>
+
+// React/jsx syntax
+<div className={clsx('btn', 'btn-primary')}></div>
+
+// conditionally add arg string as css class
+<div className={clsx('btn', selectExample && `${selectExample}`)}></div>
+
+// conditionally set css class if arg is true/false (use !booleanExample for false)
+<div className={clsx('btn', booleanExample && 'someClass')}></div>
+```
+
+### Importing other stories
+
+```jsx
+import {StoryTemplateName} from './OtherStoryFile.stories'
+
+// import existing args from story
+<StoryTemplateName {...StoryTemplateName.args} />
+
+// optional: set new args
+<StoryTemplateName someProp='My override' />
+```
+
+### Conditional logic using Storybook controls
+
+Storybook controls can be used to mock interaction, state, and variants in a prototype. These are optional for prototyping, but can come in handy if you need a way to toggle state without writing custom javascript.
+
+The following examples show each Storybook argType available and a few ways to use them.
+
+#### Boolean (true/false)
+
+```jsx
+// YourStory.stories.jsx
+export default {
+  title: 'Prototypes/Playground',
+  argTypes: {
+    booleanExample: {
+      control: {type: 'boolean'},
+      description: 'true/false toggle to controls'
+    }
+  }
+}
+
+export const PlaygroundTemplate = ({booleanExample}) => {
+  return (
+    // render markup if true or !false
+    {booleanExample && <div></div>}
+    {!booleanExample && <div></div>}
+
+    // render css class 'true-class' if true else 'false-class'
+    // can also be undefined if false
+    <div className={booleanExample ? 'true-class' : 'false-class'}></div>
+    <div className={booleanExample ? 'true-class' : undefined}></div>
+
+    // set html attribute
+    <div hidden={booleanExample ? true : undefined}></div>
+    <div aria-expanded={booleanExample ? true : false}></div>
+  )
+}
+```
+
+#### Select (select option)
+
+```jsx
+// YourStory.stories.jsx
+export default {
+  title: 'Prototypes/Playground',
+  argTypes: {
+    selectExample: {
+      options: [0, 1, 2, 3], // iterator
+      mapping: ['string1', 'string2', 'string3', 'string4'], // values
+      control: {
+        type: 'select',
+        labels: ['string1-label', 'string2-label', 'string3-label', 'string4-label'] // public labels
+      },
+      description: 'select menu mapping to strings (example: use for variant class names)'
+    },
+  }
+}
+
+export const PlaygroundTemplate = ({selectExample}) => {
+  return (
+    // render css class from options
+    <div className={clsx(selectExample && `${selectExample}`)}></div>
+  )
+}
+```
+
+#### String
+
+```jsx
+// YourStory.stories.jsx
+export default {
+  title: 'Prototypes/Playground',
+  argTypes: {
+    stringExample: {
+      name: 'stringExample',
+      type: 'string',
+      description: 'text box control'
+    },
+  }
+}
+
+export const PlaygroundTemplate = ({stringExample}) => {
+  return (
+    // text
+    <p>{stringExample}</p>
+
+    // id
+    <div id={stringExample}></div>
+
+    // octicon container
+    <span dangerouslySetInnerHTML={{__html: stringExample}} />
+  )
+}
+```
+
+### Conditional logic using toggle (interactive prototyping)
+
+```jsx
+
+```
