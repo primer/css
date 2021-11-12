@@ -71,6 +71,8 @@ export const PlaygroundTemplate = ({booleanExample}) => {
 
 #### Select (select option)
 
+`select` type control is great for setting CSS class variants on a component when multiple class options exist.
+
 ```jsx
 // YourStory.stories.jsx
 export default {
@@ -125,8 +127,109 @@ export const PlaygroundTemplate = ({stringExample}) => {
 }
 ```
 
-### Conditional logic using toggle (interactive prototyping)
+#### Slots
 
 ```jsx
+// YourStory.stories.jsx
+export default {
+  title: 'Prototypes/Playground',
+  argTypes: {
+    slot: {
+      description: 'creates a slot for children'
+    }
+  }
+}
+
+export const PlaygroundTemplate = ({slot}) => {
+  return (
+    // creates a slot for markup or other components
+    <p>{slot}</p>
+  )
+}
+```
+
+### Interactive prototyping
+
+Sometimes you may want to prototype interations without relying on Storybook controls. One example of this is rendering a `button` that toggles an overlay to open. You can achieve this with a `boolean` control, but in this case you want to be able to click the button in the prototype (just like an interactive prototype in Figma)
+
+#### Collapse/expand
+
+```jsx
+// import the useToggle React hook
+import useToggle from '../helpers/useToggle.jsx'
+
+export const PlaygroundTemplate = ({}) => {
+  const [isCollapsed, itemIsCollapsed] = useToggle()
+  return (
+    <>
+      <button onClick={itemIsCollapsed} class="btn d-block mb-2">
+        Toggle collapse
+      </button>
+      <div aria-expanded={isCollapsed ? 'true' : 'false'} class={isCollapsed ? 'p-4 color-bg-accent' : undefined}></div>
+    </>
+  )
+}
 
 ```
+
+#### Open/close
+
+```jsx
+// import the useToggle React hook
+import useToggle from '../helpers/useToggle.jsx'
+
+export const PlaygroundTemplate = ({}) => {
+  const [isOpen, itemisOpen] = useToggle()
+  return (
+    <>
+        <details class="details-overlay" onClick={isOpen} open={itemisOpen}>
+            <summary class="btn">More</summary>
+            <div class="border p-3 mt-2">Hidden text</div>
+        </details>
+    </>
+  )
+}
+
+```
+
+#### HTML selector
+
+Toggle any HTML selector, like `aria-etc`, `checked`, `hidden`, etc.
+
+```jsx
+// import the useToggle React hook
+import useToggle from '../helpers/useToggle.jsx'
+
+export const PlaygroundTemplate = ({}) => {
+  const [isDisabled, itemisDisabled] = useToggle()
+  return (
+    <>
+        <button onClick={itemisDisabled} class="btn d-block mb-2">Toggle</button>
+        <button disabled={isDisabled}>{isDisabled ? 'disabled' : 'button'}</button>
+    </>
+  )
+}
+
+```
+
+#### CSS class
+
+Toggle any CSS class to show interaction and/or animation
+
+```jsx
+// import the useToggle React hook
+import useToggle from '../helpers/useToggle.jsx'
+
+export const PlaygroundTemplate = ({}) => {
+  const [isRotating, itemisRotating] = useToggle()
+  return (
+    <>
+        <button onClick={itemisRotating} class="btn d-block mb-2">Toggle</button>
+        <svg className={isRotating ? 'anim-rotate' : undefined} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zM5 8a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zM5.32 9.636a.75.75 0 011.038.175l.007.009c.103.118.22.222.35.31.264.178.683.37 1.285.37.602 0 1.02-.192 1.285-.371.13-.088.247-.192.35-.31l.007-.008a.75.75 0 111.222.87l-.614-.431c.614.43.614.431.613.431v.001l-.001.002-.002.003-.005.007-.014.019a1.984 1.984 0 01-.184.213c-.16.166-.338.316-.53.445-.63.418-1.37.638-2.127.629-.946 0-1.652-.308-2.126-.63a3.32 3.32 0 01-.715-.657l-.014-.02-.005-.006-.002-.003v-.002h-.001l.613-.432-.614.43a.75.75 0 01.183-1.044h.001z"></path></svg>
+    </>
+  )
+}
+
+```
+
+### Color mode testing

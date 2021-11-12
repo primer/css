@@ -1,16 +1,15 @@
 import React from 'react'
 import clsx from 'clsx'
+import ColorBlock from '../helpers/ColorBlock'
 // import useToggle from '../helpers/useToggle.jsx'
 // import { StoryTemplateName } from './OtherStoryFile.stories' // import stories for component compositions
 
 /*
 * Welcome to the Primer CSS Playground!
 
-* Use the code snippets from [prototyping guide](./Prototyping.stories.mdx)
+* Use the code snippets from [prototyping guide](./Prototyping.stories.mdx) for setting up controls and conditional logic
 
-* This file includes helper code for configuring controls, setting default values, importing other story files and toggling state.
-
-* Uncomment the code that you need, and feel free to delete whatever gets in your way
+* Uncomment any code that you need, and feel free to delete whatever gets in your way
 
 * argTypes are optional for prototyping
 */
@@ -40,33 +39,38 @@ export default {
       type: 'string',
       description: 'text box control'
     },
-    children: {
+    slot: {
       description: 'creates a slot for children'
+    },
+    backgroundColor: {
+      name: 'color',
+      control: 'color',
+      description: 'text box control',
+      controls: {
+        presetColors: [{color: '#ff4785', title: 'Coral'}, 'rgba(0, 159, 183, 1)', '#fe4a49']
+      }
     }
   }
 }
 
+// Prototype within PlaygroundTemplate
 // delete argTypes between ({ here }) if not using
-export const PlaygroundTemplate = ({booleanExample, selectExample, stringExample, slot}) => {
-  /* How to toggle state with a button or checkbox
-   * import useToggle from '../helpers/useToggle.jsx'
-   * const [isCollapsed, itemIsCollapsed] = useToggle()
-   * <button onClick={itemIsCollapsed}>Toggle state</button>
-   * <div className={isCollapsed ? 'someClass' : 'someOtherClass'or null} />
-   */
-  //   const [isCollapsed, itemIsCollapsed] = useToggle()
+export const PlaygroundTemplate = ({booleanExample, selectExample, stringExample, slot, backgroundColor}) => {
   return (
-    <>
-      <div className="example"></div>
-    </>
+    <div className="colorBlockWrap">
+      {/* <div className="example">Your prototype here!</div> */}
+      <ColorBlock backgroundColor={backgroundColor} showValueLabel />
+      <ColorBlock backgroundColor="var(--color-marketing-icon-primary)" />
+    </div>
   )
 }
 
 export const Playground = PlaygroundTemplate.bind({})
 // Set default values for Playground story here
 Playground.args = {
-  stringExample: 'Default text',
-  booleanExample: false
+  backgroundColor: '#000000'
+  //   stringExample: 'Default text',
+  //   booleanExample: false
   // example: how to use args to set slot content
   //   slot: (
   //     <>
