@@ -34,7 +34,7 @@ $Layout-prop-has-footer:          "has-footer";
   --Layout-content-width: 100%;
 
   --Layout-template-columns: 1fr var(--Layout-pane-width);
-  --Layout-template-rows: min-content;
+  --Layout-template-rows: 1fr;
   --Layout-template-areas: "content pane";
 
   --Layout-column-gap: #{$spacer-3};
@@ -259,12 +259,10 @@ $Layout-prop-has-footer:          "has-footer";
     [class^="#{$Layout}-content-centered-"] {
       margin-left: auto;
       margin-right: auto;
-      background: palevioletred;
       max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + var(--Layout-column-gap));
 
       > [class^="container-"] {
         margin-left: 0;
-        background: blue;
       }
     }
 

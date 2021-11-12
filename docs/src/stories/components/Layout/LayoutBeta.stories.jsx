@@ -8,13 +8,28 @@ export default {
   excludeStories: ['ComponentTemplateName'],
   argTypes: {
 
+    // Preset
+
+    preset: {
+      options: [0, 1, 2],
+      mapping: ['default', 'splitView', 'nested'],
+      control: {
+        type: 'inline-radio',
+        options: ['default', 'splitView', 'nested']
+      },
+      description: 'Preset',
+      table: {
+        category: 'Preset'
+      }
+    },
+
     // Structure
 
     wrapperSizing: {
       options: [0, 1, 2, 3],
       mapping: ['', 'container-md', 'container-lg', 'container-xl'],
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['fluid', 'md', 'lg', 'xl']
       },
       description: 'Define the maximum width of the component. `fluid` sets it to full-width. Other values center `Layout` horizontally. Refer to [container utilities](https://primer.style/css/objects/grid#containers) for reference.',
@@ -27,7 +42,7 @@ export default {
       options: [0, 1, 2],
       mapping: ['', 'normal', 'condensed'],
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['none', 'normal', 'condensed']
       },
       description: 'Sets wrapper margins surrounding the component to distance itself from the viewport edges. `normal` sets the margin to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the margin at 16px. `none` sets the margin to 0.',
@@ -39,7 +54,7 @@ export default {
       options: [0, 1, 2],
       mapping: ['', 'normal', 'condensed'],
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['none', 'normal', 'condensed']
       },
       description: 'Sets padding to regions individually. `normal` sets padding to 16px, with the `content` region getting 24px horizontal padding on `lg` breakpoints and above. `condensed` keeps the padding always at `16px`. `none` sets the padding to 0.',
@@ -51,7 +66,7 @@ export default {
       options: [0, 1, 2],
       mapping: ['normal', 'none', 'condensed'],
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['normal', 'none', 'condensed']
       },
       description: 'Sets the gap between columns to distance them from each other. `normal` sets the gap to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the gap always at 16px. `none` sets the gap to 0.',
@@ -63,7 +78,7 @@ export default {
       options: [0, 1, 2],
       mapping: ['normal', 'none', 'condensed'],
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['normal', 'none', 'condensed']
       },
       description: 'Sets the gap below the header and above the footer. `normal` sets the gap to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the gap always at 16px. `none` sets the gap to 0.',
@@ -90,7 +105,7 @@ export default {
       options: [0, 1],
       mapping: ['flowVertical', 'splitAsPages'],
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['flowVertical', 'splitAsPages']
       },
       description: '`responsiveBehavior` defines how the layout component adapts to smaller viewports. `flowVertical` presents the content in a vertical flow, with `pane` and `content` vertically arranged. `splitAsPages` presents `pane` and `content` as different pages on smaller viewports.',
@@ -102,7 +117,7 @@ export default {
       options: [0, 1, 2, 3],
       mapping: ['xs', 'sm', 'md', 'lg'],
       control: {
-          type: 'select',
+          type: 'inline-radio',
           labels: ['xs', 'sm', 'md', 'lg']
       },
       description: 'Defines in which breakpoint the responsive behavior will kick in',
@@ -124,7 +139,7 @@ export default {
       options: [0, 1],
       mapping: ['start', 'end'],
       control: {
-      type: 'select',
+      type: 'inline-radio',
         labels: ['start', 'end']
       },
       description: 'Defines the position of the pane. `start` puts the pane on the left, and `end` puts it on the right.',
@@ -136,7 +151,7 @@ export default {
       options: [0, 1, 2],
       mapping: ['', 'narrow', 'wide'],
       control: {
-      type: 'select',
+      type: 'inline-radio',
         labels: ['default', 'narrow', 'wide']
       },
       description: 'Defines the width of the pane',
@@ -165,8 +180,8 @@ export default {
       options: [0, 1, 2, 3, 4],
       mapping: ['', 'sm', 'md', 'lg', 'xl'],
       control: {
-      type: 'select',
-        labels: ['Fluid', 'md', 'lg', 'xl']
+      type: 'inline-radio',
+        labels: ['fluid', 'sm', 'md', 'lg', 'xl']
       },
       description: 'Defines the maximum width of the content region. `fluid` sets it to full-width. Other values follow container widths from `sm` to `xl`. With smaller widths, the content region will try to stay centered to the viewport area.',
       table: {
@@ -192,7 +207,7 @@ export default {
       }
     },
 
-    
+
     // Footer
 
     hasFooter: {
@@ -241,31 +256,12 @@ export default {
 
 const layoutClassName = 'LayoutBeta';
 
-// Component output sample
-
-/*
-
-<div class="Layout"
-     data-spacing-behavior="wrapper"
-     data-spacing-density="condensed"
-
-     data-pane-position="end"
-
-     data-flow-horizontal="true"
-     data-responsive-behavior="splitAsPages"
-     data-responsive-behavior-at="md"
-     data-responsive-show-pane-first="true"
->
-
-</div>
-
-
-
-*/
-
 // build every component case here in the template (private api)
 export const ComponentTemplateName = ({
 
+  // Preset
+  preset,
+  
   // Wrapper
   wrapperSizing,
 
@@ -304,7 +300,29 @@ export const ComponentTemplateName = ({
   contentChildren,
   paneChildren,
   footerChildren
-}) => (
+}) => {
+
+  flowHorizontal = flowHorizontal ?? true;
+
+  if (preset === 'default') {
+    wrapperSizing = wrapperSizing ?? 'container-xl';
+    outerSpacing = outerSpacing ?? 'normal';
+    columnGap = columnGap ?? 'normal';
+    panePosition = panePosition ?? 'end';
+    responsiveBehavior = responsiveBehavior ?? 'flowVertical';
+  } else if (preset === 'splitView') {
+    wrapperSizing = wrapperSizing ?? '';
+    innerSpacing = outerSpacing ?? 'normal';
+    columnGap = columnGap ?? 'none';
+    rowGap = columnGap ?? 'none';
+    panePosition = panePosition ?? 'start';
+    paneWidth = paneWidth ?? 'wide';
+    paneDivider = paneDivider ?? true;
+    responsiveBehavior = responsiveBehavior ?? 'splitAsPages';
+  }
+
+
+  return (
   <div
   // use clsx for multiple classnames
   className={clsx(
@@ -379,63 +397,22 @@ export const ComponentTemplateName = ({
     </div>
     </>
   </div>
-)
-
-const panePlaceholder =
-  <>
-  <div style={
-    {
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#DDF4FF',
-    border: '1px solid #80CCFF',
-    padding: '16px',
-    borderRadius: '6px'
-    }
-  }>
-    pane
-  </div>
-  </>;
-
-const contentPlaceholder =
-  <>
-  <div style={
-    {
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#FFEFF7',
-    border: '1px solid #FFADDA',
-    padding: '16px',
-    borderRadius: '6px'
-    }
-  }>
-    content
-  </div>
-  </>;
+  );
+};
 
 // create a "playground" demo page that may set some defaults and allow story to access component controls
 
 export const Playground = ComponentTemplateName.bind({});
+Playground.storyName = 'Playground';
 Playground.parameters = {
   layout:'fullscreen',
 };
 Playground.args = {
-  flowHorizontal: true,
+  preset: 'default',
 
-  // Wrapper
-  wrapperSizing: 0, // fluid
+  hasHeader: true,
+  hasFooter: true,
 
-  outerSpacing: 0, // none
-  innerSpacing: 0, // none
-  columnGap: 0, // normal
-
-  // Responsive
-  responsiveBehavior: 1, // splitAsPages
-  responsiveBehaviorAt: 0, // md
-
-  // Children
-  hasHeader: false,
-  hasFooter: false,
   contentChildren: 'content',
   paneChildren: 'pane',
   headerChildren: 'header',
@@ -443,30 +420,14 @@ Playground.args = {
 }
 
 export const Default = ComponentTemplateName.bind({});
+Default.storyName = '[Preset] Default';
 Default.parameters = {
   layout:'fullscreen',
 };
 Default.args = {
-  flowHorizontal: true,
-
-  // Wrapper
-  wrapperSizing: 3, // xl
-
-  outerSpacing: 1, // normal
-  innerSpacing: 0, // none
-  columnGap: 0, // normal
-  rowGap: 0, // normal
-
-  panePosition: 1, // end
-  paneWidth: 0, // default
-
-  // Responsive
-  responsiveBehavior: 0, // flowVertical
-  responsiveBehaviorAt: 0, // md
+  preset: 'default',
 
   // Children
-  hasHeader: false,
-  hasFooter: false,
   contentChildren: 'content',
   paneChildren: 'pane',
   headerChildren: 'header',
@@ -474,31 +435,14 @@ Default.args = {
 }
 
 export const SplitView = ComponentTemplateName.bind({});
+SplitView.storyName = '[Preset] Split view';
 SplitView.parameters = {
   layout:'fullscreen',
 };
 SplitView.args = {
-  flowHorizontal: true,
-
-  // Wrapper
-  wrapperSizing: 0, // fluid
-
-  outerSpacing: 0, // none
-  innerSpacing: 1, // normal
-  columnGap: 1, // none
-  rowGap: 1, // none
-
-  panePosition: 0, // start
-  paneWidth: 2, // wide
-  paneIsSticky: false,
-
-  // Responsive
-  responsiveBehavior: 0, // flowVertical
-  responsiveBehaviorAt: 0, // md
+  preset: 'splitView',
 
   // Children
-  hasHeader: false,
-  hasFooter: false,
   contentChildren: 'content',
   paneChildren: 'pane',
   headerChildren: 'header',
@@ -510,31 +454,17 @@ Settings.parameters = {
   layout:'fullscreen',
 };
 Settings.args = {
-  flowHorizontal: true,
-
-  // Wrapper
-  wrapperSizing: 0, // fluid
-
-  outerSpacing: 0, // none
-  innerSpacing: 1, // normal
-  columnGap: 1, // none
-  rowGap: 1, // none
-
-  paneDivider: true,
-  panePosition: 0, // start
-  paneWidth: 2, // wide
-  paneIsSticky: false,
-
+  preset: 'splitView',
   contentWidth: 2, // md
 
-  // Responsive
-  responsiveBehavior: 0, // flowVertical
-  responsiveBehaviorAt: 0, // md
-
   // Children
-  hasHeader: false,
-  hasFooter: false,
-  contentChildren: 'content',
+  contentChildren: (
+    <>
+      <h2 className="f3">General</h2>
+      <div className="Box mt-3 p-3">&nbsp;</div>
+      <div className="Box mt-3 p-3">&nbsp;</div>
+    </>
+  ),
   paneChildren: (
     <>
       <NavWithSubItems {...NavWithSubItems.args} />
