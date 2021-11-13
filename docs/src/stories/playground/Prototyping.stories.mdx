@@ -2,6 +2,12 @@ import {Meta} from '@storybook/addon-docs'
 
 <Meta title="Prototypes/Prototyping guide" />
 
+# Primer CSS Playground
+
+The Playground file contains an empty story configured to promote quick design prototyping with Primer CSS. It can be used with or without controls/args, and there are no rules! Work directly in the Playground file for temporary drafting and collaborating. If what you're building is more permanant, create a folder under Components or Patterns and move your work there.
+
+Use this guide as a reference for code snippets, Storybook controls, and configuring conditional logic for interactive prototypes
+
 ### CSS class syntax
 
 ```jsx
@@ -13,7 +19,7 @@ import {Meta} from '@storybook/addon-docs'
 <div className={clsx('btn', 'btn-primary')}></div>
 
 // conditionally add arg string as css class
-<div className={clsx('btn', selectExample && `${selectExample}`)}></div>
+<div className={clsx('btn', radioExample && `${radioExample}`)}></div>
 
 // conditionally set css class if arg is true/false (use !booleanExample for false)
 <div className={clsx('btn', booleanExample && 'someClass')}></div>
@@ -78,7 +84,7 @@ export const PlaygroundTemplate = ({booleanExample}) => {
 export default {
   title: 'Prototypes/Playground',
   argTypes: {
-    selectExample: {
+    radioExample: {
       options: [0, 1, 2, 3], // iterator
       mapping: ['string1', 'string2', 'string3', 'string4'], // values
       control: {
@@ -90,10 +96,10 @@ export default {
   }
 }
 
-export const PlaygroundTemplate = ({selectExample}) => {
+export const PlaygroundTemplate = ({radioExample}) => {
   return (
     // render css class from options
-    <div className={clsx(selectExample && `${selectExample}`)}></div>
+    <div className={clsx(radioExample && `${radioExample}`)}></div>
   )
 }
 ```
@@ -232,4 +238,72 @@ export const PlaygroundTemplate = ({}) => {
 
 ```
 
-### Color mode testing
+### Working with color
+
+Stories have access to all distributed colors from Primer Primitives. Here are some ways you might like to utilize Storybook for testing and prototyping.
+
+#### View all themes
+
+In the Theme toolbar menu, selecting "all" will render the story in every theme. This gives you a quick overview of how color primitives interact in each theme, and is especially helpful for checking contrast ratios.
+
+#### Access the Storybook colorpicker
+
+Storybook includes a colorpicker control that may be useful for tweaking existing colors or prototyping something totally new.
+
+By setting the `backgroundColor`, the component also has access to the Primer Primitives color picker. Open the toolbar menu by clicking the paintbrush, and an option to replace `backgroundColor` should show up. From there, select a primitive from a given theme.
+
+```jsx
+// YourStory.stories.jsx
+export default {
+  title: 'Prototypes/Playground',
+  argTypes: {
+    backgroundColor: {
+      name: 'color',
+      control: 'color',
+      description: 'use with an inline style tag to access a colorpicker control'
+    }
+  }
+}
+
+export const PlaygroundTemplate = ({backgroundColor}) => {
+  return (
+    <div className="colorBlockItem" style={{backgroundColor: backgroundColor}}></div>
+  )
+}
+```
+
+#### ColorBlock component
+
+`ColorBlock` is a simple helper component that renders a square, intended to be used for quickly showing a block of color.
+
+```jsx
+// YourStory.stories.jsx
+import ColorBlock from '../helpers/ColorBlock'
+
+export default {
+  title: 'Prototypes/Playground',
+  argTypes: {
+    // optional arg
+    backgroundColor: {
+      name: 'color',
+      control: 'color',
+      description: 'use with an inline style tag to access a colorpicker control'
+    }
+  }
+}
+
+export const PlaygroundTemplate = ({backgroundColor}) => {
+  return (
+    <div className="colorBlockWrap">
+      // access the color picker + display the hex value as a label
+      <ColorBlock backgroundColor={backgroundColor} showValueLabel />
+      // pass in a primitive, hex value, etc.
+      <ColorBlock backgroundColor="var(--color-marketing-icon-primary)" />
+    </div>
+  )
+}
+```
+
+#### Color Playground
+
+If you'e just working with color, Color Playground is a quick start template for manipulating `ColorBlock`. Repeat `<ColorBlock />` as many times as you need to test combinations.

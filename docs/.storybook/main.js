@@ -6,6 +6,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/preset-scss',
     '@whitespace/storybook-addon-html',
-    'storybook-addon-designs'
+    'storybook-addon-designs',
+    'storybook-color-picker'
   ]
 }

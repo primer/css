@@ -1,7 +1,13 @@
 import React from 'react'
 import clsx from 'clsx'
-import ColorBlock from '../helpers/ColorBlock'
+import DarkColorblind from '@primer/primitives/dist/json/colors/dark_colorblind.json'
+import DarkDimmed from '@primer/primitives/dist/json/colors/dark_dimmed.json'
+import DarkHighContrast from '@primer/primitives/dist/json/colors/dark_high_contrast.json'
+import Dark from '@primer/primitives/dist/json/colors/dark.json'
+import Light from '@primer/primitives/dist/json/colors/light.json'
+import LightColorblind from '@primer/primitives/dist/json/colors/light_colorblind.json'
 // import useToggle from '../helpers/useToggle.jsx'
+// import ColorBlock from '../helpers/ColorBlock'
 // import { StoryTemplateName } from './OtherStoryFile.stories' // import stories for component compositions
 
 /*
@@ -19,20 +25,21 @@ export default {
   //   layout: 'padded', // add padding around frame
   layout: 'fullwidth',
   excludeStories: ['PlaygroundTemplate'],
+
   // optional argType examples below
   argTypes: {
     booleanExample: {
       control: {type: 'boolean'},
       description: 'true/false toggle to controls'
     },
-    selectExample: {
+    radioExample: {
       options: [0, 1, 2, 3], // iterator
       mapping: ['string1', 'string2', 'string3', 'string4'], // values
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['string1-label', 'string2-label', 'string3-label', 'string4-label'] // public labels
       },
-      description: 'select menu mapping to strings (example: use for variant class names)'
+      description: 'radio buttons mapping to strings (example: use for variant class names)'
     },
     stringExample: {
       name: 'stringExample',
@@ -45,30 +52,25 @@ export default {
     backgroundColor: {
       name: 'color',
       control: 'color',
-      description: 'text box control',
-      controls: {
-        presetColors: [{color: '#ff4785', title: 'Coral'}, 'rgba(0, 159, 183, 1)', '#fe4a49']
-      }
+      description: 'use with an inline style tag to access a colorpicker control'
     }
   }
 }
 
 // Prototype within PlaygroundTemplate
 // delete argTypes between ({ here }) if not using
-export const PlaygroundTemplate = ({booleanExample, selectExample, stringExample, slot, backgroundColor}) => {
+export const PlaygroundTemplate = ({booleanExample, radioExample, stringExample, slot, backgroundColor}) => {
   return (
-    <div className="colorBlockWrap">
-      {/* <div className="example">Your prototype here!</div> */}
-      <ColorBlock backgroundColor={backgroundColor} showValueLabel />
-      <ColorBlock backgroundColor="var(--color-marketing-icon-primary)" />
-    </div>
+    <>
+      <div className="example">Your prototype here!</div>
+    </>
   )
 }
 
 export const Playground = PlaygroundTemplate.bind({})
 // Set default values for Playground story here
 Playground.args = {
-  backgroundColor: '#000000'
+  //   backgroundColor: ''
   //   stringExample: 'Default text',
   //   booleanExample: false
   // example: how to use args to set slot content
@@ -77,4 +79,35 @@ Playground.args = {
   //       <StoryTemplateName {...StoryTemplateName.args} />
   //     </>
   //   )
+}
+// access color primitives from the paintbrush icon in the toolbar
+Playground.parameters = {
+  colorPalettes: {
+    palettes: [
+      {
+        name: 'dark_colorblind',
+        palette: DarkColorblind
+      },
+      {
+        name: 'dark_dimmed',
+        palette: DarkDimmed
+      },
+      {
+        name: 'dark_high_contrast',
+        palette: DarkHighContrast
+      },
+      {
+        name: 'dark',
+        palette: Dark
+      },
+      {
+        name: 'light',
+        palette: Light
+      },
+      {
+        name: 'light_colorblind',
+        palette: LightColorblind
+      }
+    ]
+  }
 }
