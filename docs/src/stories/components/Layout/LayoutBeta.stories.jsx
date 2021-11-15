@@ -11,11 +11,9 @@ export default {
     // Preset
 
     preset: {
-      options: [0, 1, 2],
-      mapping: ['default', 'splitView', 'nested'],
+      options: ['default', 'splitView', 'nested'],
       control: {
-        type: 'inline-radio',
-        options: ['default', 'splitView', 'nested']
+        type: 'inline-radio'
       },
       description: 'Preset',
       table: {
@@ -393,7 +391,7 @@ export const LayoutTemplate = ({
 export const Playground = LayoutTemplate.bind({});
 Playground.storyName = 'Playground';
 Playground.parameters = {
-  layout:'fullscreen',
+  layout: 'fullscreen',
 };
 Playground.args = {
   preset: 'default',
@@ -410,10 +408,10 @@ Playground.args = {
 export const Default = LayoutTemplate.bind({});
 Default.storyName = '[Preset] Default';
 Default.parameters = {
-  layout:'fullscreen',
+  layout: 'fullscreen',
 };
 Default.args = {
-  preset: 0, // default
+  preset: 'default',
 
   // Children
   contentChildren: 'content',
@@ -425,10 +423,10 @@ Default.args = {
 export const SplitView = LayoutTemplate.bind({});
 SplitView.storyName = '[Preset] Split view';
 SplitView.parameters = {
-  layout:'fullscreen',
+  layout: 'fullscreen',
 };
 SplitView.args = {
-  preset: 1, // splitView
+  preset: 'splitView', // splitView
 
   // Children
   contentChildren: 'content',
@@ -442,7 +440,7 @@ Settings.parameters = {
   layout: 'fullscreen',
 };
 Settings.args = {
-  preset: 1, // splitView
+  preset: 'splitView',
   contentWidth: 2, // md
 
   // Children
