@@ -1,7 +1,7 @@
 // Component className
 
-$Layout: "LayoutBeta";
-$Layout-divider-color: red; // var(--color-border-default)
+$Layout: "LayoutBeta" !default;
+$Layout-divider-color: red !default; // var(--color-border-default)
 
 // Property modifier names
 
@@ -383,7 +383,3 @@ $Layout-prop-has-footer:          "has-footer" !default;
   }
 
 }
-
-// content-width
-// FIXME
-// content-centered

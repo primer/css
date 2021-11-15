@@ -5,7 +5,7 @@ import {Button} from '../Button/Button.stories'
 
 export default {
   title: 'Components/Layout/Beta',
-  excludeStories: ['ComponentTemplateName'],
+  excludeStories: ['LayoutTemplate'],
   argTypes: {
 
     // Preset
@@ -257,7 +257,7 @@ export default {
 const layoutClassName = 'LayoutBeta';
 
 // build every component case here in the template (private api)
-export const ComponentTemplateName = ({
+export const LayoutTemplate = ({
 
   // Preset
   preset,
@@ -402,7 +402,7 @@ export const ComponentTemplateName = ({
 
 // create a "playground" demo page that may set some defaults and allow story to access component controls
 
-export const Playground = ComponentTemplateName.bind({});
+export const Playground = LayoutTemplate.bind({});
 Playground.storyName = 'Playground';
 Playground.parameters = {
   layout:'fullscreen',
@@ -419,7 +419,7 @@ Playground.args = {
   footerChildren: 'footer'
 }
 
-export const Default = ComponentTemplateName.bind({});
+export const Default = LayoutTemplate.bind({});
 Default.storyName = '[Preset] Default';
 Default.parameters = {
   layout:'fullscreen',
@@ -434,7 +434,7 @@ Default.args = {
   footerChildren: 'footer'
 }
 
-export const SplitView = ComponentTemplateName.bind({});
+export const SplitView = LayoutTemplate.bind({});
 SplitView.storyName = '[Preset] Split view';
 SplitView.parameters = {
   layout:'fullscreen',
@@ -449,7 +449,7 @@ SplitView.args = {
   footerChildren: 'footer'
 }
 
-export const Settings = ComponentTemplateName.bind({});
+export const Settings = LayoutTemplate.bind({});
 Settings.parameters = {
   layout:'fullscreen',
 };
@@ -460,14 +460,17 @@ Settings.args = {
   // Children
   contentChildren: (
     <>
-      <h2 className="f3">General</h2>
+      <h2 className="f3 text-normal">General</h2>
       <div className="Box mt-3 p-3">&nbsp;</div>
       <div className="Box mt-3 p-3">&nbsp;</div>
     </>
   ),
   paneChildren: (
     <>
-      <NavWithSubItems {...NavWithSubItems.args} />
+      <h2 className="f3 ml-2 mr-2">Repository settings</h2>
+      <div className="ml-n2 mr-n2">
+        <NavWithSubItems {...NavWithSubItems.args} />
+      </div>
     </>
   ),
   headerChildren: 'header',
