@@ -358,13 +358,7 @@ export const LayoutTemplate = ({
     )}>
 
       {/* Header */}
-      {hasHeader ? (
-        <>
-          <div className={layoutClassName + '-header'}>
-            {headerChildren}
-          </div>
-        </>
-      ) : ''}
+      {hasHeader && <div className={layoutClassName + '-header'}>{headerChildren}</div>}
 
       {/* content */}
       <div className={layoutClassName + '-content'}>
@@ -387,13 +381,7 @@ export const LayoutTemplate = ({
       <div className={layoutClassName + '-pane'}>{paneChildren}</div>
 
       {/* footer */}
-      {hasFooter ? (
-        <>
-          <div className={layoutClassName + '-footer'}>
-            {footerChildren}
-          </div>
-        </>
-      ) : ''}
+      {hasFooter && <div className={layoutClassName + '-footer'}>{footerChildren}</div>}
     </div>
     </>
   </div>
@@ -425,7 +413,7 @@ Default.parameters = {
   layout:'fullscreen',
 };
 Default.args = {
-  preset: 'default',
+  preset: 0, // default
 
   // Children
   contentChildren: 'content',
@@ -440,7 +428,7 @@ SplitView.parameters = {
   layout:'fullscreen',
 };
 SplitView.args = {
-  preset: 'splitView',
+  preset: 1, // splitView
 
   // Children
   contentChildren: 'content',
@@ -451,10 +439,10 @@ SplitView.args = {
 
 export const Settings = LayoutTemplate.bind({});
 Settings.parameters = {
-  layout:'fullscreen',
+  layout: 'fullscreen',
 };
 Settings.args = {
-  preset: 'splitView',
+  preset: 1, // splitView
   contentWidth: 2, // md
 
   // Children
