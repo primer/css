@@ -84,7 +84,10 @@ export default {
   argTypes: {
     focusElement: {
       control: {type: 'boolean'},
-      description: 'set focus on element'
+      description: 'set focus on element',
+      table: {
+        category: 'Interactive'
+      }
     }
   }
 }
@@ -92,7 +95,7 @@ export default {
 // only one element can be focused at a time
 const focusMethod = function getFocus() {
   // find the focusable element
-  var button = document.getElementsByTagName('button')
+  var button = document.getElementsByTagName('button')[0]
   // set focus on element
   button.focus()
 }
