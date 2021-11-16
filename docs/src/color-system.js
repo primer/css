@@ -11,7 +11,6 @@ import Table from './table'
 function LivePreviewWrapper({children}) {
   return (
     <Frame>
-      <link rel="stylesheet" href="https://github.com/site/assets/styleguide.css" />
       <style>{primerStyles}</style>
       <Flex direction="row">
         <div data-color-mode="light" data-light-theme="light" style={{flex: 1}}>
