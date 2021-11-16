@@ -11,3 +11,11 @@
   aspect-ratio: 1/1;
   width: 100px;
 }
+
+.toc {
+  list-style: none !important;
+  padding: 0 !important;
+  li {
+    margin-left: 0 !important;
+  }
+}

@@ -8,6 +8,47 @@ The Playground file contains an empty story configured to promote quick design p
 
 Use this guide as a reference for code snippets, Storybook controls, and configuring conditional logic for interactive prototypes
 
+### On this page
+
+<ul class="toc">
+<li>
+  <a href="#css-class-syntax">CSS class syntax</a>
+</li>
+<li><a href="#importing-other-stories">Importing other stories</a></li>
+<li><a href="#boolean-truefalse">argType: boolean (true/false)</a></li>
+
+<li>
+  <a href="#execute-function-if-boolean-is-true">argType: boolean with JS function</a>
+</li>
+
+<li>
+  <a href="#radio-options">argType: radio options (variants)</a>
+</li>
+
+<li>
+  <a href="#string">argType: string (labels, ids)</a>
+</li>
+
+<li>
+  <a href="#slots">argType: slot (child component)</a>
+</li>
+
+<li>
+  <a href="#collapseexpand">interactive: collapse/expand</a>
+</li>
+
+<li>
+  <a href="#openclose">interactive: open/close</a>
+</li>
+
+<li>
+  <a href="#html-attribute">interactive: HTML attribute (disabled, checked)</a>
+</li>
+
+<li><a href="#css-class">interactive: CSS class (animation)</a></li>
+<li><a href="#working-with-color">Working with color</a></li>
+</ul>
+
 ### CSS class syntax
 
 ```jsx
@@ -75,7 +116,7 @@ export const PlaygroundTemplate = ({booleanExample}) => {
 }
 ```
 
-Call a function if arg is true
+### Execute function if boolean is true
 
 ```jsx
 // YourStory.stories.jsx
@@ -120,11 +161,9 @@ export default {
   title: 'Prototypes/Playground',
   argTypes: {
     radioExample: {
-      options: [0, 1, 2, 3], // iterator
-      mapping: ['string1', 'string2', 'string3', 'string4'], // values
+      options: ['string1', 'string2', 'string3', 'string4'],
       control: {
-        type: 'inline-radio',
-        labels: ['string1-label', 'string2-label', 'string3-label', 'string4-label'] // public labels
+        type: 'inline-radio'
       },
       description: 'radio buttons mapping to strings (example: use for variant class names)'
     }
@@ -231,9 +270,9 @@ export const PlaygroundTemplate = ({}) => {
 }
 ```
 
-#### HTML selector
+#### HTML attribute
 
-Toggle any HTML selector, like `aria-etc`, `checked`, `hidden`, etc.
+Toggle any HTML attribute, like `aria-etc`, `checked`, `hidden`, etc.
 
 ```jsx
 // import the useToggle React hook
