@@ -22,7 +22,8 @@ $Layout-prop-pane-is-sticky:      "pane-is-sticky" !default;        // pane-stic
 $Layout-prop-content-width:       "content-width" !default;         // content-w?
 
 $Layout-prop-flow-horizontal:     "flow-horizontal" !default;       // flow-h?
-$Layout-prop-responsive-behavior: "responsive-behavior" !default;   // r?
+$Layout-prop-responsive-behavior: "responsive" !default;            // r?
+$Layout-prop-responsive-show-pane-first: "responsive-pane-first" !default; // r-show-pane-first?
 $Layout-prop-responsive-at:       "responsive-at" !default;         // r-at?
 
 $Layout-prop-has-header:          "has-header" !default;
@@ -40,11 +41,95 @@ $Layout-prop-has-footer:          "has-footer" !default;
   --Layout-column-gap: #{$spacer-3};
   --Layout-row-gap: #{$spacer-3};
 
-  --Layout-outer-spacing-x: 0; // wrapper margin x
-  --Layout-outer-spacing-y: 0; // wrapper margin y
+  --Layout-outer-spacing-x: 0px; // wrapper margin x
+  --Layout-outer-spacing-y: 0px; // wrapper margin y
 
-  --Layout-inner-spacing-min: 0; // default region padding
-  --Layout-inner-spacing-max: 0; // relaxed content horizontal padding
+  --Layout-inner-spacing-min: 0px; // default region padding
+  --Layout-inner-spacing-max: 0px; // relaxed content horizontal padding
+
+  // Outer spacing
+
+  margin: var(--Layout-outer-spacing-y) var(--Layout-outer-spacing-x);
+
+  > .#{$Layout}-regions {
+    display: grid;
+    column-gap: var(--Layout-column-gap);
+    row-gap: var(--Layout-row-gap);
+    grid-template-columns: var(--Layout-template-columns);
+    grid-template-rows: var(--Layout-template-rows);
+    grid-template-areas: var(--Layout-template-areas);
+  }
+
+  &.#{$Layout}--#{$Layout-prop-outer-spacing}-normal {
+    --Layout-outer-spacing-x: #{$spacer-3}; // 16px
+    --Layout-outer-spacing-y: #{$spacer-3}; // 16px
+
+    @include breakpoint(lg) {
+      --Layout-outer-spacing-x: #{$spacer-4}; // 24px
+      --Layout-outer-spacing-y: #{$spacer-4}; // 24px
+    }
+  }
+
+  &.#{$Layout}--#{$Layout-prop-outer-spacing}-condensed {
+    --Layout-outer-spacing-x: #{$spacer-3}; // 16px
+    --Layout-outer-spacing-y: #{$spacer-3}; // 16px
+  }
+
+  // Inner spacing
+
+  &.#{$Layout}--#{$Layout-prop-inner-spacing}-normal {
+    --Layout-inner-spacing-min: #{$spacer-3}; // 16px
+    --Layout-inner-spacing-max: #{$spacer-3}; // 16px
+
+    @include breakpoint(lg) {
+      --Layout-inner-spacing-max: #{$spacer-4}; // 24px
+    }
+  }
+
+  &.#{$Layout}--#{$Layout-prop-inner-spacing}-condensed {
+    --Layout-inner-spacing-min: #{$spacer-3}; // 16px
+    --Layout-inner-spacing-max: #{$spacer-3}; // 16px
+  }
+
+  // Column gap
+
+  &.#{$Layout}--#{$Layout-prop-column-gap}-normal {
+    --Layout-column-gap: #{$spacer-3}; // 16px
+
+    @include breakpoint(lg) {
+      --Layout-column-gap: #{$spacer-4}; // 24px
+    }
+  }
+
+  &.#{$Layout}--#{$Layout-prop-column-gap}-condensed {
+    --Layout-column-gap: #{$spacer-3}; // 16px
+  }
+
+  &.#{$Layout}--#{$Layout-prop-column-gap}-none {
+    // A `px` unit is needed in here to define it as a length type
+    // See https://stackoverflow.com/a/32518348
+    --Layout-column-gap: 0px;
+  }
+
+  // Row gap
+
+  &.#{$Layout}--#{$Layout-prop-row-gap}-normal {
+    --Layout-row-gap: #{$spacer-3}; // 16px
+
+    @include breakpoint(lg) {
+      --Layout-row-gap: #{$spacer-4}; // 24px
+    }
+  }
+
+  &.#{$Layout}--#{$Layout-prop-row-gap}-none {
+    // A `px` unit is needed in here to define it as a length type
+    // See https://stackoverflow.com/a/32518348
+    --Layout-row-gap: 0px;
+  }
+
+  &.#{$Layout}--#{$Layout-prop-row-gap}-condensed {
+    --Layout-row-gap: #{$spacer-3}; // 16px
+  }
 
   // `flow-horizontal` determines whether `Layout` can render desktop-friendly
   // two-column layouts. It should appear by default for compatibility
@@ -60,37 +145,22 @@ $Layout-prop-has-footer:          "has-footer" !default;
 
   &.#{$Layout}--#{$Layout-prop-flow-horizontal} {
 
-    margin: var(--Layout-outer-spacing-x);
-    
-    > .#{$Layout}-regions {
-      display: grid;
-      column-gap: var(--Layout-column-gap);
-      row-gap: var(--Layout-row-gap);
-      grid-template-columns: var(--Layout-template-columns);
-      grid-template-rows: var(--Layout-template-rows);
-      grid-template-areas: var(--Layout-template-areas);
-    }
-
-    // pane-position
+    // Region position
 
     &.#{$Layout}--#{$Layout-prop-pane-position}-start {
       --Layout-template-columns: var(--Layout-pane-width) 1fr;
       --Layout-template-areas: "pane content";
 
       &.#{$Layout}--#{$Layout-prop-has-header} {
-        --Layout-template-areas: "header header"
-                                 "pane content";
+        --Layout-template-areas: "header header" "pane content";
       }
 
       &.#{$Layout}--#{$Layout-prop-has-footer} {
-        --Layout-template-areas: "pane content"
-                                 "footer footer";
+        --Layout-template-areas: "pane content" "footer footer";
       }
 
       &.#{$Layout}--#{$Layout-prop-has-header}.#{$Layout}--#{$Layout-prop-has-footer} {
-        --Layout-template-areas: "header header"
-                                 "pane content"
-                                 "footer footer";
+        --Layout-template-areas: "header header" "pane content" "footer footer";
       }
     }
 
@@ -99,19 +169,15 @@ $Layout-prop-has-footer:          "has-footer" !default;
       --Layout-template-areas: "content pane";
 
       &.#{$Layout}--#{$Layout-prop-has-header} {
-        --Layout-template-areas: "header header"
-                                 "content pane";
+        --Layout-template-areas: "header header" "content pane";
       }
 
       &.#{$Layout}--#{$Layout-prop-has-footer} {
-        --Layout-template-areas: "content pane"
-                                 "footer footer";
+        --Layout-template-areas: "content pane" "footer footer";
       }
 
       &.#{$Layout}--#{$Layout-prop-has-header}.#{$Layout}--#{$Layout-prop-has-footer} {
-        --Layout-template-areas: "header header"
-                                 "content pane"
-                                 "footer footer";
+        --Layout-template-areas: "header header" "content pane" "footer footer";
       }
     }
 
@@ -127,39 +193,6 @@ $Layout-prop-has-footer:          "has-footer" !default;
 
     &.#{$Layout}--#{$Layout-prop-has-header}.#{$Layout}--#{$Layout-prop-has-footer} {
       --Layout-template-rows: min-content 1fr min-content;
-    }
-
-    // Outer spacing
-
-    &.#{$Layout}--#{$Layout-prop-outer-spacing}-normal {
-      --Layout-outer-spacing-x: #{$spacer-3}; // 16px
-      --Layout-outer-spacing-y: #{$spacer-3}; // 16px
-
-      @include breakpoint(lg) {
-        --Layout-outer-spacing-x: #{$spacer-4}; // 24px
-        --Layout-outer-spacing-y: #{$spacer-4}; // 24px
-      }
-    }
-
-    &.#{$Layout}--#{$Layout-prop-outer-spacing}-condensed {
-      --Layout-outer-spacing-x: #{$spacer-3}; // 16px
-      --Layout-outer-spacing-y: #{$spacer-3}; // 16px
-    }
-
-    // Inner spacing
-
-    &.#{$Layout}--#{$Layout-prop-inner-spacing}-normal {
-      --Layout-inner-spacing-min: #{$spacer-3}; // 16px
-      --Layout-inner-spacing-max: #{$spacer-3}; // 16px
-
-      @include breakpoint(lg) {
-        --Layout-inner-spacing-max: #{$spacer-4}; // 24px
-      }
-    }
-
-    &.#{$Layout}--#{$Layout-prop-inner-spacing}-condensed {
-      --Layout-inner-spacing-min: #{$spacer-3}; // 16px
-      --Layout-inner-spacing-max: #{$spacer-3}; // 16px
     }
 
     // Pane divider
@@ -212,46 +245,6 @@ $Layout-prop-has-footer:          "has-footer" !default;
       .#{$Layout}-footer {
         border-top: 1px solid $Layout-divider-color;
       }
-    }
-
-    // Column gap
-
-    &.#{$Layout}--#{$Layout-prop-column-gap}-normal {
-      --Layout-column-gap: #{$spacer-3}; // 16px
-
-      @include breakpoint(lg) {
-        --Layout-column-gap: #{$spacer-4}; // 24px
-      }
-    }
-
-    &.#{$Layout}--#{$Layout-prop-column-gap}-condensed {
-      --Layout-column-gap: #{$spacer-3}; // 16px
-    }
-
-    &.#{$Layout}--#{$Layout-prop-column-gap}-none {
-      // A `px` unit is needed in here to define it as a length type
-      // See https://stackoverflow.com/a/32518348
-      --Layout-column-gap: 0px;
-    }
-
-    // Row gap
-
-    &.#{$Layout}--#{$Layout-prop-row-gap}-normal {
-      --Layout-row-gap: #{$spacer-3}; // 16px
-
-      @include breakpoint(lg) {
-        --Layout-row-gap: #{$spacer-4}; // 24px
-      }
-    }
-
-    &.#{$Layout}--#{$Layout-prop-row-gap}-none {
-      // A `px` unit is needed in here to define it as a length type
-      // See https://stackoverflow.com/a/32518348
-      --Layout-row-gap: 0px;
-    }
-
-    &.#{$Layout}--#{$Layout-prop-row-gap}-condensed {
-      --Layout-row-gap: #{$spacer-3}; // 16px
     }
 
     // Content width
@@ -325,15 +318,91 @@ $Layout-prop-has-footer:          "has-footer" !default;
     }
   }
 
-  // responsive-behavior
+  // Responsive behavior
 
   &.#{$Layout}--#{$Layout-prop-responsive-behavior}-flowVertical:not(.#{$Layout}--#{$Layout-prop-flow-horizontal}) {
+
+    // Region position
+
+    --Layout-template-areas: "content" "pane";
+
     > .#{$Layout}-regions {
       display: grid;
       grid-template-columns: 1fr;
       grid-template-areas: var(--Layout-template-areas);
+      //row-gap: 16px;
+      //border: 2px solid red;
+    }
+
+    &.#{$Layout}--#{$Layout-prop-has-header} {
+      --Layout-template-areas: "header" "content" "pane";
+    }
+
+    &.#{$Layout}--#{$Layout-prop-has-footer} {
+      --Layout-template-areas: "content" "pane" "footer";
+    }
+
+    &.#{$Layout}--#{$Layout-prop-has-header}.#{$Layout}--#{$Layout-prop-has-footer} {
+      --Layout-template-areas: "header" "content" "pane" "footer";
+    }
+
+    &.#{$Layout}--#{$Layout-prop-responsive-show-pane-first} {
+      --Layout-template-areas: "pane" "content";
+
+      &.#{$Layout}--#{$Layout-prop-has-header} {
+        --Layout-template-areas: "header" "pane" "content";
+      }
+  
+      &.#{$Layout}--#{$Layout-prop-has-footer} {
+        --Layout-template-areas: "pane" "content" "footer";
+      }
+  
+      &.#{$Layout}--#{$Layout-prop-has-header}.#{$Layout}--#{$Layout-prop-has-footer} {
+        --Layout-template-areas: "header" "pane" "content" "footer";
+      }
+    }
+
+    // Responsive divider
+
+    .#{$Layout}-region--line-divider {
+      position: relative;
+      padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
+      border-bottom: 1px solid transparent;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: var(--color-canvas-inset);
+        background-color: red;
+        width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
+        height: 1px;
+        left: calc(var(--Layout-outer-spacing-x) * -1);
+        bottom: -1px;
+      }
+    }
+
+    .#{$Layout}-region--shallow-divider {
+      position: relative;
+      padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
+      margin-bottom: #{$spacer-2}; // 8px
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: calc(var(--Layout-outer-spacing-x) * -1);
+        bottom: calc(#{$spacer-2} * -1); // -8px
+        width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
+        height: #{$spacer-2}; // 8px
+        background-color: var(--color-canvas-inset);
+        box-shadow: inset 0 1px $Layout-divider-color, inset 0 -1px $Layout-divider-color;
+      }
     }
   }
+
+  // TODO
+  // Remember to remove dividers if `splitAsPages` on `Pane`
 
   /*
   &.#{$Layout}--#{$Layout-prop-responsive-behavior}-flowVertical:not(.#{$Layout}--#{$Layout-prop-flow-horizontal}) {

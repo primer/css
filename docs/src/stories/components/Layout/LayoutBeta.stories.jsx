@@ -157,9 +157,33 @@ export default {
         category: 'Pane'
       }
     },
+    paneResponsivePosition: {
+      options: [0, 1, 2],
+      mapping: ['', 'start', 'end'],
+      control: {
+        type: 'inline-radio',
+        labels: ['inherit', 'start', 'end']
+      },
+      description: 'Defines the position of the pane in the responsive layout. `start` puts the pane above `content`, and `end` puts it below `content`. `inherit` uses the same value from `panePosition`.',
+      table: {
+        category: 'Pane'
+      }
+    },
     paneDivider: {
       control: { type: 'boolean' },
-      description: 'Whether to show a pane divider.',
+      description: 'Whether to show a pane line divider.',
+      table: {
+        category: 'Pane'
+      }
+    },
+    paneResponsiveDivider: {
+      options: [0, 1, 2],
+      mapping: ['', 'line', 'shallow'],
+      control: {
+        type: 'inline-radio',
+        labels: ['none', 'line', 'shallow']
+      },
+      description: 'Whether to show a divider between `pane` and `content` regions if `responsiveBehavior` is set to `flowVertical`. If `pane` appears above `content`, a `(...)-divider` class will be placed in the `pane` region. Otherwise it will be placed in the `content` region.',
       table: {
         category: 'Pane'
       }
@@ -205,6 +229,19 @@ export default {
       }
     },
 
+    headerResponsiveDivider: {
+      options: [0, 1, 2],
+      mapping: ['', 'line', 'shallow'],
+      control: {
+        type: 'inline-radio',
+        labels: ['none', 'line', 'shallow']
+      },
+      description: 'Whether to show a divider below the `header` region if in responsive mode.',
+      table: {
+        category: 'Header'
+      }
+    },
+
 
     // Footer
 
@@ -218,6 +255,19 @@ export default {
     footerDivider: {
       control: { type: 'boolean' },
       description: 'Whether to show a footer divider',
+      table: {
+        category: 'Footer'
+      }
+    },
+
+    footerResponsiveDivider: {
+      options: [0, 1, 2],
+      mapping: ['', 'line', 'shallow'],
+      control: {
+        type: 'inline-radio',
+        labels: ['none', 'line', 'shallow']
+      },
+      description: 'Whether to show a divider above the `footer` region if in responsive mode.',
       table: {
         category: 'Footer'
       }
@@ -269,13 +319,18 @@ export const LayoutTemplate = ({
   innerSpacing,
   columnGap,
   rowGap,
+  
   paneDivider,
   headerDivider,
   footerDivider,
+  paneResponsiveDivider,
+  headerResponsiveDivider,
+  footerResponsiveDivider,
 
   // Region
   panePosition,
   paneWidth,
+  
   paneIsSticky,
   contentWidth,
 
@@ -283,6 +338,7 @@ export const LayoutTemplate = ({
   flowHorizontal,
   responsiveBehavior,
   responsiveBehaviorAt,
+  responsiveShowPaneFirst,
 
   // Pending options
   // - divider styles on mobile (including shallow)
@@ -337,6 +393,7 @@ export const LayoutTemplate = ({
     footerDivider && layoutClassName + '--footer-divider',
 
     responsiveBehavior && layoutClassName + '--responsive-' + `${responsiveBehavior}`,
+    responsiveShowPaneFirst && layoutClassName + '--responsive-pane-first',
     panePosition && layoutClassName + '--pane-position-' + `${panePosition}`,
     paneWidth && layoutClassName + '--pane-width-' + `${paneWidth}`,
     paneIsSticky && layoutClassName + '--pane-is-sticky',
@@ -356,10 +413,33 @@ export const LayoutTemplate = ({
     )}>
 
       {/* Header */}
-      {hasHeader && <div className={layoutClassName + '-header'}>{headerChildren}</div>}
+      {hasHeader &&
+        <div className={clsx(
+          layoutClassName + '-region',
+          layoutClassName + '-header',
+          headerResponsiveDivider && layoutClassName + '-region--' + headerResponsiveDivider + '-divider'
+        )}>
+          {headerChildren}
+        </div>
+      }
+
+      {/* Pane if rendered first */}
+      {panePosition === 'start' &&
+        <div className={clsx(
+          layoutClassName + '-region',
+          layoutClassName + '-pane',
+          (panePosition === 'end' && paneResponsiveDivider) && layoutClassName + '-region--' + paneResponsiveDivider + '-divider'
+        )}>
+          {paneChildren}
+        </div>
+      }
 
       {/* content */}
-      <div className={layoutClassName + '-content'}>
+      <div className={clsx(
+        layoutClassName + '-region',
+        layoutClassName + '-content',
+        paneResponsiveDivider && layoutClassName + '-region--' + paneResponsiveDivider + '-divider'
+      )}>
         {contentWidth ? (
         <>
           <div className={layoutClassName + '-content-centered-' + contentWidth}>
@@ -375,11 +455,11 @@ export const LayoutTemplate = ({
         )}
       </div>
 
-      {/* pane */}
-      <div className={layoutClassName + '-pane'}>{paneChildren}</div>
+      {/* Pane if rendered last */}
+      {panePosition === 'end' && <div className={clsx(layoutClassName + '-region', layoutClassName + '-pane')}>{paneChildren}</div>}
 
       {/* footer */}
-      {hasFooter && <div className={layoutClassName + '-footer'}>{footerChildren}</div>}
+      {hasFooter && <div className={clsx(layoutClassName + '-region', layoutClassName + '-footer')}>{footerChildren}</div>}
     </div>
     </>
   </div>
