@@ -57,7 +57,7 @@ Labels come in a few different functional classes. Use to communicate the conten
 
 ### Label sizes
 
-If space allows, add the `Label--large` modidfier to add a bit more padding to lables.
+If space allows, add the `Label--large` modifier to add a bit more padding to labels.
 
 ```html live
 <span class="Label Label--gray-darker mr-1">Default</span>
@@ -66,7 +66,7 @@ If space allows, add the `Label--large` modidfier to add a bit more padding to l
 
 ### Inline labels
 
-Sometimes when adding a label the line-height can be incrased. Or the parent element increases in height. If that is not desired, use the `Label--inline` modifier change to the `display` property to `inline`. The font-size also adapts.
+Sometimes when adding a label the line-height can be increased. Or the parent element increases in height. If that is not desired, use the `Label--inline` modifier change to the `display` property to `inline`. The font-size also adapts.
 
 ```html live
 <p class="col-4">
@@ -97,7 +97,7 @@ If an issue label needs to be bigger, add the `.IssueLabel--big` modifier.
 
 ## States
 
-Use state labels to inform users of an items status. States are large labels with bolded text. The default state has a gray background. States come in a few variations that apply different colors. Use the state that best communicates the status or function.
+Use state labels to inform users of an item's status. States are large labels with bolded text. The default state has a gray background. States come in a few variations that apply different colors. Use the state that best communicates the status or function.
 
 - `State`
 - `State State--draft`
@@ -151,7 +151,7 @@ Use the `Counter` component to add a count to navigational elements and buttons.
 
 1. the default `Counter`,
 2. the `Counter--primary` with a stronger background color
-3. and `Counter--secondary` with a more subtler text color.
+3. and `Counter--secondary` with a more subtle text color.
 
 Note: When a counter is empty, its visibility will be hidden.
 
@@ -172,7 +172,7 @@ Use the `Counter` in navigation to indicate the number of items without the user
 </div>
 ```
 
-You can also have icons and emoji in counters. Or use utilities for counters with different background colors.
+You can also have icons and emojis in counters. Or use utilities for counters with different background colors.
 
 ```html live
 <span class="Counter mr-1">1.5K</span>
