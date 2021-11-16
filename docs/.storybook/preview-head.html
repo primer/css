@@ -4,12 +4,26 @@
       Helvetica Neue, sans-serif;
     color: var(--color-fg-default);
     background-color: var(--color-canvas-default);
-    padding: 0;
+    height: 100vh;
   }
 
   .theme-wrap {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     height: 100vh;
+  }
+
+  .theme-wrap .story-wrap {
+    padding: 1rem;
+    height: unset;
+  }
+
+  .sb-main-padded .theme-wrap {
+    margin: -1rem;
+  }
+
+  .sb-main-padded div:not(.theme-wrap) > [data-dark-theme] {
+    margin: -1rem;
+    padding: 1rem;
   }
 </style>
