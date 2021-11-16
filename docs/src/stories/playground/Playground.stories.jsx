@@ -33,11 +33,9 @@ export default {
       description: 'true/false toggle to controls'
     },
     radioExample: {
-      options: [0, 1, 2, 3], // iterator
-      mapping: ['string1', 'string2', 'string3', 'string4'], // values
+      options: ['string1', 'string2', 'string3', 'string4'],
       control: {
-        type: 'inline-radio',
-        labels: ['string1-label', 'string2-label', 'string3-label', 'string4-label'] // public labels
+        type: 'inline-radio'
       },
       description: 'radio buttons mapping to strings (example: use for variant class names)'
     },
