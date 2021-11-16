@@ -313,25 +313,31 @@ export const LayoutTemplate = ({
   // Wrapper
   wrapperSizing,
 
-
   // Spacing and borders
   outerSpacing,
   innerSpacing,
   columnGap,
   rowGap,
   
+  // Pane
+  paneWidth,
+  panePosition,
+  paneResponsivePosition,
   paneDivider,
-  headerDivider,
-  footerDivider,
   paneResponsiveDivider,
+  paneIsSticky,
+
+  // Header
+  hasHeader,
+  headerDivider,
   headerResponsiveDivider,
+
+  // Footer
+  hasFooter,
+  footerDivider,
   footerResponsiveDivider,
 
-  // Region
-  panePosition,
-  paneWidth,
-  
-  paneIsSticky,
+  // Content
   contentWidth,
 
   // Responsive
@@ -345,9 +351,6 @@ export const LayoutTemplate = ({
   // - optional header/footer dividers
   // - content/pane light gray backgrounds
 
-  // Children
-  hasHeader,
-  hasFooter,
 
   // Children
   headerChildren,
@@ -428,7 +431,7 @@ export const LayoutTemplate = ({
         <div className={clsx(
           layoutClassName + '-region',
           layoutClassName + '-pane',
-          (panePosition === 'end' && paneResponsiveDivider) && layoutClassName + '-region--' + paneResponsiveDivider + '-divider'
+          paneResponsiveDivider && layoutClassName + '-region--' + paneResponsiveDivider + '-divider'
         )}>
           {paneChildren}
         </div>
@@ -438,7 +441,9 @@ export const LayoutTemplate = ({
       <div className={clsx(
         layoutClassName + '-region',
         layoutClassName + '-content',
-        paneResponsiveDivider && layoutClassName + '-region--' + paneResponsiveDivider + '-divider'
+        (panePosition === 'end' && paneResponsiveDivider)
+          ? layoutClassName + '-region--' + paneResponsiveDivider + '-divider'
+          : (panePosition === 'start' && footerResponsiveDivider) && layoutClassName + '-region--' + footerResponsiveDivider + '-divider'
       )}>
         {contentWidth ? (
         <>
@@ -456,7 +461,14 @@ export const LayoutTemplate = ({
       </div>
 
       {/* Pane if rendered last */}
-      {panePosition === 'end' && <div className={clsx(layoutClassName + '-region', layoutClassName + '-pane')}>{paneChildren}</div>}
+      {panePosition === 'end' &&
+      <div className={clsx(
+        layoutClassName + '-region',
+        layoutClassName + '-pane',
+        footerResponsiveDivider && layoutClassName + '-region--' + footerResponsiveDivider + '-divider'
+      )}>
+        {paneChildren}
+      </div>}
 
       {/* footer */}
       {hasFooter && <div className={clsx(layoutClassName + '-region', layoutClassName + '-footer')}>{footerChildren}</div>}
