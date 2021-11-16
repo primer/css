@@ -63,6 +63,13 @@ export default {
       table: {
         category: 'Interactive'
       }
+    },
+    focusAllElements: {
+      control: {type: 'boolean'},
+      description: 'set focus on all elements for viewing in all themes',
+      table: {
+        category: 'Interactive'
+      }
     }
   }
 }
@@ -74,10 +81,15 @@ const focusMethod = function getFocus() {
   select.focus()
 }
 
-export const SelectTemplate = ({label, id, size, placeholder, disabled, focusElement}) => (
+export const SelectTemplate = ({label, id, size, placeholder, disabled, focusElement, focusAllElements}) => (
   <>
     <label for={id}>{label}</label>
-    <select className={clsx('form-select', size && `${size}`)} id={id} placeholder={placeholder} disabled={disabled}>
+    <select
+      className={clsx('form-select', size && `${size}`, focusAllElements && 'focus')}
+      id={id}
+      placeholder={placeholder}
+      disabled={disabled}
+    >
       <option>Choose an option</option>
       <option>Git</option>
       <option>Subversion</option>
@@ -95,5 +107,6 @@ Playground.args = {
   id: 'some-id',
   placeholder: 'Select',
   label: 'Select one',
-  focusElement: false
+  focusElement: false,
+  focusAllElements: false
 }

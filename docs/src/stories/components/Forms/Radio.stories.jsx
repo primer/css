@@ -24,5 +24,6 @@ Playground.args = {
   checked: false,
   highlight: false,
   note: '',
-  type: 'radio'
+  type: 'radio',
+  focusAllElements: false
 }

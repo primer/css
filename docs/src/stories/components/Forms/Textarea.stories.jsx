@@ -92,6 +92,13 @@ export default {
       table: {
         category: 'Interactive'
       }
+    },
+    focusAllElements: {
+      control: {type: 'boolean'},
+      description: 'set focus on all elements for viewing in all themes',
+      table: {
+        category: 'Interactive'
+      }
     }
   }
 }
@@ -113,7 +120,8 @@ export const TextareaTemplate = ({
   contrast,
   disabled,
   hideWebKit,
-  focusElement
+  focusElement,
+  focusAllElements
 }) => (
   <>
     <label for={id}>{label}</label>
@@ -123,7 +131,8 @@ export const TextareaTemplate = ({
         size && `${size}`,
         block && 'input-block',
         contrast && 'input-contrast',
-        hideWebKit && 'input-hide-webkit-autofill'
+        hideWebKit && 'input-hide-webkit-autofill',
+        focusAllElements && 'focus'
       )}
       type={type}
       id={id}
@@ -140,5 +149,6 @@ Playground.args = {
   id: 'some-id',
   placeholder: 'Email address',
   label: 'Enter email address',
-  focusElement: false
+  focusElement: false,
+  focusAllElements: false
 }

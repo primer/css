@@ -59,6 +59,13 @@ export default {
         category: 'Interactive'
       }
     },
+    focusAllElements: {
+      control: {type: 'boolean'},
+      description: 'set focus on all elements for viewing in all themes',
+      table: {
+        category: 'Interactive'
+      }
+    },
     type: {
       options: [0, 1], // iterator
       mapping: ['checkbox', 'radio'], // values
@@ -78,11 +85,17 @@ const focusMethod = function getFocus() {
   checkbox.focus()
 }
 
-export const CheckboxTemplate = ({label, note, highlight, disabled, checked, focusElement, type}) => (
+export const CheckboxTemplate = ({label, note, highlight, disabled, checked, focusElement, focusAllElements, type}) => (
   <>
     <div class="form-checkbox">
       <label>
-        <input type={type} checked={checked} aria-describedby="help-text-for-checkbox" disabled={disabled} />
+        <input
+          type={type}
+          checked={checked}
+          aria-describedby="help-text-for-checkbox"
+          disabled={disabled}
+          className={focusAllElements && 'focus'}
+        />
         {label && highlight ? <em class="highlight">{label}</em> : label}
       </label>
       {note && (
@@ -103,5 +116,6 @@ Playground.args = {
   checked: false,
   highlight: false,
   note: '',
-  type: 'checkbox'
+  type: 'checkbox',
+  focusAllElements: false
 }

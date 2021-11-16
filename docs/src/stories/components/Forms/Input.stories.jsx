@@ -99,6 +99,13 @@ export default {
       table: {
         category: 'Interactive'
       }
+    },
+    focusAllElements: {
+      control: {type: 'boolean'},
+      description: 'set focus on all elements for viewing in all themes',
+      table: {
+        category: 'Interactive'
+      }
     }
   }
 }
@@ -121,7 +128,8 @@ export const InputTemplate = ({
   disabled,
   hideWebKit,
   monospace,
-  focusElement
+  focusElement,
+  focusAllElements
 }) => (
   <>
     <label for={id}>{label}</label>
@@ -132,7 +140,8 @@ export const InputTemplate = ({
         block && 'input-block',
         contrast && 'input-contrast',
         hideWebKit && 'input-hide-webkit-autofill',
-        monospace && 'input-monospace'
+        monospace && 'input-monospace',
+        focusAllElements && 'focus'
       )}
       type={type}
       id={id}
@@ -154,5 +163,6 @@ Playground.args = {
   monospace: false,
   contrast: false,
   disabled: false,
-  focusElement: false
+  focusElement: false,
+  focusAllElements: false
 }

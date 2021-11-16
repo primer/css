@@ -105,7 +105,14 @@ export default {
     },
     focusElement: {
       control: {type: 'boolean'},
-      description: 'set focus on element',
+      description: 'set focus on one element',
+      table: {
+        category: 'Interactive'
+      }
+    },
+    focusAllElements: {
+      control: {type: 'boolean'},
+      description: 'set focus on all elements for viewing in all themes',
       table: {
         category: 'Interactive'
       }
@@ -131,7 +138,8 @@ export const ButtonTemplate = ({
   trailingAction,
   selected,
   closeBtn,
-  focusElement
+  focusElement,
+  focusAllElements
 }) => (
   <>
     <button
@@ -141,7 +149,8 @@ export const ButtonTemplate = ({
         variant && `${variant}`,
         size && `${size}`,
         fullWidth && 'btn-block',
-        closeBtn && 'close-button'
+        closeBtn && 'close-button',
+        focusAllElements && 'focus'
       )}
       aria-selected={selected}
     >
@@ -165,5 +174,6 @@ export const ButtonTemplate = ({
 export const Playground = ButtonTemplate.bind({})
 Playground.args = {
   closeBtn: false,
-  focusElement: false
+  focusElement: false,
+  focusAllElements: false
 }

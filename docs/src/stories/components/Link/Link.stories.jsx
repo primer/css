@@ -49,6 +49,13 @@ export default {
       table: {
         category: 'Interactive'
       }
+    },
+    focusAllElements: {
+      control: {type: 'boolean'},
+      description: 'set focus on all elements for viewing in all themes',
+      table: {
+        category: 'Interactive'
+      }
     }
   }
 }
@@ -60,9 +67,12 @@ const focusMethod = function getFocus() {
   link.focus()
 }
 
-export const LinkTemplate = ({label, variant, href, noUnderline, focusElement}) => (
+export const LinkTemplate = ({label, variant, href, noUnderline, focusElement, focusAllElements}) => (
   <>
-    <a href={href} className={clsx(variant && `${variant}`, noUnderline && 'no-underline')}>
+    <a
+      href={href}
+      className={clsx(variant && `${variant}`, noUnderline && 'no-underline', focusAllElements && 'focus')}
+    >
       {label}
     </a>
     {focusElement && focusMethod()}
@@ -73,5 +83,6 @@ export const Playground = LinkTemplate.bind({})
 Playground.args = {
   label: 'Link label',
   href: '/',
-  focusElement: false
+  focusElement: false,
+  focusAllElements: false
 }
