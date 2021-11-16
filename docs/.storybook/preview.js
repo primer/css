@@ -1,6 +1,7 @@
 import '../../src/docs.scss'
 import '../../src/index.scss'
 import '../../src/base/index.scss'
+import '../src/stories/helpers/storybook-styles.scss'
 import renderToHTML from '../src/stories/helpers/code-snippet-html-helper'
 
 const customViewports = {

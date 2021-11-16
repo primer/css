@@ -42,20 +42,47 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    focusElement: {
+      control: {type: 'boolean'},
+      description: 'set focus on element',
+      table: {
+        category: 'Interactive'
+      }
+    },
+    focusAllElements: {
+      control: {type: 'boolean'},
+      description: 'set focus on all elements for viewing in all themes',
+      table: {
+        category: 'Interactive'
+      }
     }
   }
 }
 
-export const LinkTemplate = ({label, variant, href, noUnderline}) => (
+const focusMethod = function getFocus() {
+  // find the focusable element
+  var link = document.getElementsByTagName('a')[0]
+  // set focus on element
+  link.focus()
+}
+
+export const LinkTemplate = ({label, variant, href, noUnderline, focusElement, focusAllElements}) => (
   <>
-    <a href={href} className={clsx(variant && `${variant}`, noUnderline && 'no-underline')}>
+    <a
+      href={href}
+      className={clsx(variant && `${variant}`, noUnderline && 'no-underline', focusAllElements && 'focus')}
+    >
       {label}
     </a>
+    {focusElement && focusMethod()}
   </>
 )
 
 export const Playground = LinkTemplate.bind({})
 Playground.args = {
   label: 'Link label',
-  href: '/'
+  href: '/',
+  focusElement: false,
+  focusAllElements: false
 }

@@ -73,32 +73,10 @@ export default {
         category: 'CSS'
       }
     },
-    dropdownBtn: {
-      control: {type: 'boolean'},
-      table: {
-        category: 'CSS'
-      }
-    },
     leadingVisual: {
       name: 'leadingVisual',
       type: 'string',
       description: 'Paste [Octicon](https://primer.style/octicons/) in control field',
-      table: {
-        category: 'HTML'
-      }
-    },
-    icon: {
-      name: 'icon',
-      type: 'string',
-      description: 'Paste [Octicon](https://primer.style/octicons/) in control field',
-      table: {
-        category: 'HTML'
-      }
-    },
-    id: {
-      name: 'id',
-      type: 'string',
-      description: 'label id for icon only buttons',
       table: {
         category: 'HTML'
       }
@@ -111,14 +89,42 @@ export default {
         category: 'HTML'
       }
     },
+    trailingAction: {
+      defaultValue: false,
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
+    },
     selected: {
       defaultValue: false,
       control: {type: 'boolean'},
       table: {
         category: 'CSS'
       }
+    },
+    focusElement: {
+      control: {type: 'boolean'},
+      description: 'set focus on one element',
+      table: {
+        category: 'Interactive'
+      }
+    },
+    focusAllElements: {
+      control: {type: 'boolean'},
+      description: 'set focus on all elements for viewing in all themes',
+      table: {
+        category: 'Interactive'
+      }
     }
   }
+}
+
+const focusMethod = function getFocus() {
+  // find the focusable element
+  var button = document.getElementsByTagName('button')[0]
+  // set focus on element
+  button.focus()
 }
 
 export const ButtonTemplate = ({
@@ -129,11 +135,11 @@ export const ButtonTemplate = ({
   fullWidth,
   leadingVisual,
   trailingVisual,
+  trailingAction,
   selected,
   closeBtn,
-  dropdownBtn,
-  icon,
-  id
+  focusElement,
+  focusAllElements
 }) => (
   <>
     <button
@@ -143,23 +149,15 @@ export const ButtonTemplate = ({
         variant && `${variant}`,
         size && `${size}`,
         fullWidth && 'btn-block',
-        closeBtn && 'close-button'
+        closeBtn && 'close-button',
+        focusAllElements && 'focus'
       )}
-      aria-selected={selected && selected}
-      aria-labelledby={id}
+      aria-selected={selected}
     >
       {leadingVisual && <span className="" dangerouslySetInnerHTML={{__html: leadingVisual}} />}
-      <span hidden={icon} id={id}>
-        {label}
-      </span>
-      {icon && <span className="" dangerouslySetInnerHTML={{__html: icon}} />}
-      {trailingVisual && (
-        <>
-          <span className="" dangerouslySetInnerHTML={{__html: trailingVisual}} />{' '}
-          {dropdownBtn && <span class="dropdown-caret"></span>}
-        </>
-      )}
-
+      <span>{label}</span>
+      {trailingVisual && <span className="" dangerouslySetInnerHTML={{__html: trailingVisual}} />}
+      {trailingAction && <span class="dropdown-caret"></span>}
       {closeBtn && (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
           <path
@@ -169,10 +167,13 @@ export const ButtonTemplate = ({
         </svg>
       )}
     </button>
+    {focusElement && focusMethod()}
   </>
 )
 
 export const Playground = ButtonTemplate.bind({})
 Playground.args = {
-  closeBtn: false
+  closeBtn: false,
+  focusElement: false,
+  focusAllElements: false
 }

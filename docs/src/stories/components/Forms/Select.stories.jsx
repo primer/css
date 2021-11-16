@@ -56,14 +56,40 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    focusElement: {
+      control: {type: 'boolean'},
+      description: 'set focus on element',
+      table: {
+        category: 'Interactive'
+      }
+    },
+    focusAllElements: {
+      control: {type: 'boolean'},
+      description: 'set focus on all elements for viewing in all themes',
+      table: {
+        category: 'Interactive'
+      }
     }
   }
 }
 
-export const SelectTemplate = ({label, id, size, placeholder, disabled}) => (
+const focusMethod = function getFocus() {
+  // find the focusable element
+  var select = document.getElementsByTagName('select')[0]
+  // set focus on element
+  select.focus()
+}
+
+export const SelectTemplate = ({label, id, size, placeholder, disabled, focusElement, focusAllElements}) => (
   <>
     <label for={id}>{label}</label>
-    <select className={clsx('form-select', size && `${size}`)} id={id} placeholder={placeholder} disabled={disabled}>
+    <select
+      className={clsx('form-select', size && `${size}`, focusAllElements && 'focus')}
+      id={id}
+      placeholder={placeholder}
+      disabled={disabled}
+    >
       <option>Choose an option</option>
       <option>Git</option>
       <option>Subversion</option>
@@ -72,6 +98,7 @@ export const SelectTemplate = ({label, id, size, placeholder, disabled}) => (
       <option>Bears</option>
       <option>Battlestar Galactica</option>
     </select>
+    {focusElement && focusMethod()}
   </>
 )
 
@@ -79,5 +106,7 @@ export const Playground = SelectTemplate.bind({})
 Playground.args = {
   id: 'some-id',
   placeholder: 'Select',
-  label: 'Select one'
+  label: 'Select one',
+  focusElement: false,
+  focusAllElements: false
 }

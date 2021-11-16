@@ -85,11 +85,44 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    focusElement: {
+      control: {type: 'boolean'},
+      description: 'set focus on element',
+      table: {
+        category: 'Interactive'
+      }
+    },
+    focusAllElements: {
+      control: {type: 'boolean'},
+      description: 'set focus on all elements for viewing in all themes',
+      table: {
+        category: 'Interactive'
+      }
     }
   }
 }
 
-export const TextareaTemplate = ({label, type, id, size, block, placeholder, contrast, disabled, hideWebKit}) => (
+const focusMethod = function getFocus() {
+  // find the focusable element
+  var textarea = document.getElementsByTagName('textarea')[0]
+  // set focus on element
+  textarea.focus()
+}
+
+export const TextareaTemplate = ({
+  label,
+  type,
+  id,
+  size,
+  block,
+  placeholder,
+  contrast,
+  disabled,
+  hideWebKit,
+  focusElement,
+  focusAllElements
+}) => (
   <>
     <label for={id}>{label}</label>
     <textarea
@@ -98,13 +131,15 @@ export const TextareaTemplate = ({label, type, id, size, block, placeholder, con
         size && `${size}`,
         block && 'input-block',
         contrast && 'input-contrast',
-        hideWebKit && 'input-hide-webkit-autofill'
+        hideWebKit && 'input-hide-webkit-autofill',
+        focusAllElements && 'focus'
       )}
       type={type}
       id={id}
       placeholder={placeholder}
       disabled={disabled}
     />
+    {focusElement && focusMethod()}
   </>
 )
 
@@ -113,5 +148,7 @@ Playground.args = {
   type: 'email',
   id: 'some-id',
   placeholder: 'Email address',
-  label: 'Enter email address'
+  label: 'Enter email address',
+  focusElement: false,
+  focusAllElements: false
 }

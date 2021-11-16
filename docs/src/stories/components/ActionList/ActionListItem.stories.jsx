@@ -16,7 +16,7 @@ export default {
       options: [0, 1, 2], // iterator
       mapping: ['', 'ActionList-content--sizeMedium', 'ActionList-content--sizeLarge'], // values
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['default', 'medium', 'large']
       },
       description: 'small (default), medium, large',

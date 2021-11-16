@@ -92,8 +92,29 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    focusElement: {
+      control: {type: 'boolean'},
+      description: 'set focus on element',
+      table: {
+        category: 'Interactive'
+      }
+    },
+    focusAllElements: {
+      control: {type: 'boolean'},
+      description: 'set focus on all elements for viewing in all themes',
+      table: {
+        category: 'Interactive'
+      }
     }
   }
+}
+
+const focusMethod = function getFocus() {
+  // find the focusable element
+  var input = document.getElementsByTagName('input')[0]
+  // set focus on element
+  input.focus()
 }
 
 export const InputTemplate = ({
@@ -106,7 +127,9 @@ export const InputTemplate = ({
   contrast,
   disabled,
   hideWebKit,
-  monospace
+  monospace,
+  focusElement,
+  focusAllElements
 }) => (
   <>
     <label for={id}>{label}</label>
@@ -117,13 +140,15 @@ export const InputTemplate = ({
         block && 'input-block',
         contrast && 'input-contrast',
         hideWebKit && 'input-hide-webkit-autofill',
-        monospace && 'input-monospace'
+        monospace && 'input-monospace',
+        focusAllElements && 'focus'
       )}
       type={type}
       id={id}
       placeholder={placeholder}
       disabled={disabled}
     />
+    {focusElement && focusMethod()}
   </>
 )
 
@@ -137,5 +162,7 @@ Playground.args = {
   hideWebKit: false,
   monospace: false,
   contrast: false,
-  disabled: false
+  disabled: false,
+  focusElement: false,
+  focusAllElements: false
 }
