@@ -1,4 +1,5 @@
 .btn-mktg {
+  color: var(--color-canvas-default);
   position: relative;
   z-index: 1;
   display: inline-block;
@@ -9,23 +10,18 @@
   font-size: 1rem;
   font-weight: $font-weight-bold;
   line-height: 1;
+  text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
   border: 0;
   // stylelint-disable-next-line primer/borders
   border-radius: 0.375rem;
-
-  @include btn-solid-mktg(
-    var(--color-mktg-btn-text),
-    var(--color-mktg-btn-bg-top),
-    var(--color-mktg-btn-bg-bottom),
-    var(--color-mktg-btn-bg-overlay-top),
-    var(--color-mktg-btn-bg-overlay-bottom),
-  );
+  background: linear-gradient(180deg, rgba(255 255 255 / 0.15) 0%, rgba(255 255 255 / 0) 100%),
+    var(--color-mktg-btn-bg) !important;
+  transition: box-shadow 0.2s;
 
   &::before {
-    background-blend-mode: overlay, normal;
     position: absolute;
     top: 0;
     right: 0;
@@ -34,63 +30,103 @@
     z-index: -1;
     content: "";
     // stylelint-disable-next-line primer/borders
-    border-radius: 0.375rem;
+    border-radius: inherit;
     opacity: 0;
-    transition: opacity 0.4s;
+    background: linear-gradient(180deg, rgba(255 255 255 / 0.15) 0%, rgba(255 255 255 / 0) 100%) !important;
+    opacity: 0;
+    transition: opacity 0.2s;
+    background-blend-mode: normal;
   }
 
   &:hover {
-    text-decoration: none;
+    box-shadow: var(--color-mktg-btn-shadow-hover) !important;
+  }
 
+  &:focus,
+  &.focus {
+    box-shadow: var(--color-mktg-btn-shadow-focus), var(--color-mktg-btn-shadow-hover) !important;
+    outline: 0;
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
     &::before {
       opacity: 1;
-      transition: opacity 0.4s;
+    }
+
+    &:disabled {
+      box-shadow: none !important;
+    }
+  }
+
+  &:active {
+    outline: none;
+    box-shadow: 0 0 0 transparent;
+
+    &::before {
+      opacity: 0.5 !important;
     }
   }
 }
 
-.btn-primary-mktg {
-  @include btn-solid-mktg(
-    var(--color-mktg-btn-primary-text),
-    var(--color-mktg-btn-primary-bg-top),
-    var(--color-mktg-btn-primary-bg-bottom),
-    var(--color-mktg-btn-primary-bg-overlay-top),
-    var(--color-mktg-btn-primary-bg-overlay-bottom),
-  );
+.btn-muted-mktg {
+  color: var(--color-fg-default) !important;
+  background: none !important;
+  box-shadow: var(--color-mktg-btn-shadow-outline);
+
+  &::before {
+    display: none;
+  }
+
+  &:hover {
+    box-shadow: var(--color-mktg-btn-shadow-hover-muted) !important;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: var(--color-mktg-btn-shadow-hover-muted), var(--color-mktg-btn-shadow-focus) !important;
+  }
+
+  &:active {
+    box-shadow: var(--color-fg-default) 0 0 0 3px inset !important;
+  }
+
+  &:disabled {
+    box-shadow: var(--color-fg-subtle) 0 0 0 1px inset !important;
+  }
 }
 
-.btn-enterprise-mktg {
-  @include btn-solid-mktg(
-    var(--color-mktg-btn-enterprise-text),
-    var(--color-mktg-btn-enterprise-bg-top),
-    var(--color-mktg-btn-enterprise-bg-bottom),
-    var(--color-mktg-btn-enterprise-bg-overlay-top),
-    var(--color-mktg-btn-enterprise-bg-overlay-bottom),
-  );
+.btn-subtle-mktg {
+  color: var(--color-fg-default) !important;
+  background: none !important;
+  box-shadow: none !important;
+
+  &::before {
+    background: none !important;
+  }
+
+  &:hover {
+    box-shadow: var(--color-mktg-btn-shadow-hover-muted) !important;
+  }
+
+  &:focus,
+  .focus {
+    box-shadow: var(--color-mktg-btn-shadow-hover-muted), var(--color-mktg-btn-shadow-focus) !important;
+  }
 }
 
-.btn-outline-mktg {
-  @include btn-outline-mktg(
-    var(--color-mktg-btn-outline-text),
-    var(--color-mktg-btn-outline-hover-text),
-    var(--color-mktg-btn-outline-border),
-    var(--color-mktg-btn-outline-hover-border),
-    var(--color-mktg-btn-outline-focus-border),
-    var(--color-mktg-btn-outline-focus-border-inset)
-  );
-  transition: box-shadow 0.4s, color 0.4s;
-}
+.btn-signup-mktg {
+  color: #fff;
+  background: linear-gradient(180deg, rgba(52, 183, 89, 0.15) 0%, rgba(46, 164, 79, 0) 100%), rgb(46, 164, 79) !important;
 
-.btn-transparent {
-  @include btn-outline-mktg(
-    var(--color-mktg-btn-dark-text),
-    var(--color-mktg-btn-dark-hover-text),
-    var(--color-mktg-btn-dark-border),
-    var(--color-mktg-btn-dark-hover-border),
-    var(--color-mktg-btn-dark-focus-border),
-    var(--color-mktg-btn-dark-focus-border-inset)
-  );
-  transition: box-shadow 0.4s, color 0.4s;
+  &::before {
+    background: linear-gradient(180deg, rgba(52, 183, 89, 0.15) 0%, rgba(46, 164, 79, 0) 100%) !important;
+  }
+
+  &:focus {
+    box-shadow: rgba(46, 164, 79, 0.45) 0 0 0 4px !important;
+  }
 }
 
 // Size modifiers
