@@ -90,27 +90,42 @@ details {
 
 // global focus styles
 
-// fallback :focus state
-:focus,
-.focus {
-  &:is(a, button, input, textarea, select) {
+a,
+button,
+input,
+textarea,
+select {
+  // fallback :focus state
+  &:focus {
+    @include focusOutline;
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      outline: solid 1px transparent;
+    }
+  }
+
+  // default focus state
+  &:focus-visible {
     @include focusOutline;
   }
 }
 
-// remove fallback :focus if :focus-visible is supported
-:focus:is(a, button, input, textarea, select):not(:focus-visible) {
-  outline: solid 1px transparent;
+input,
+textarea,
+select {
+  &:focus,
+  :focus-visible {
+    // transparent border to not conflict with focus outline
+    border-color: transparent;
+    outline-offset: 0;
+  }
 }
 
-// default :focus-visibile state
-:focus-visible:is(a, button, input, textarea, select) {
+// for handling focus conditionally
+.focus {
   @include focusOutline;
-}
 
-// remove offset for form fields
-:focus,
-:focus-visible {
   &:is(input, textarea, select) {
     border-color: transparent;
     outline-offset: 0;
