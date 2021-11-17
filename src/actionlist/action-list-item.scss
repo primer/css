@@ -15,8 +15,8 @@
     }
   }
 
-  // li only: focus-visible, a href: focus-within on li
-  &:focus-visible,
+  // li only: focus, a href: focus-within on li
+  &:focus,
   &:focus-within {
     @include focusOutline;
   }
