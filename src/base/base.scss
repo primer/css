@@ -111,7 +111,7 @@ select {
   }
 }
 
-input,
+input:not([type='radio'], [type='checkbox']),
 textarea,
 select {
   &:focus,
