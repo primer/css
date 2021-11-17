@@ -115,9 +115,7 @@ input,
 textarea,
 select {
   &:focus,
-  :focus-visible {
-    // transparent border to not conflict with focus outline
-    border-color: transparent;
+  &:focus-visible {
     outline-offset: 0;
   }
 }
@@ -127,7 +125,6 @@ select {
   @include focusOutline;
 
   &:is(input, textarea, select) {
-    border-color: transparent;
     outline-offset: 0;
   }
 }
