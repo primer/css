@@ -16,32 +16,32 @@ export default {
 }
 
 export const NavWithSubItems = ListTemplate.bind({})
-NavWithSubItems.storyName = '[Nav] Nested collapsible menu'
+NavWithSubItems.storyName = '[Nav] Links + nested collapsible group'
 NavWithSubItems.args = {
   ...ListTemplate.args,
   ...ListItemTemplate.args,
-  role: 'menu',
+  role: undefined,
   ariaLabel: 'Main menu description',
   showDividers: false,
   children: (
     <>
-      <ListItemTemplate text="Nav Item" href="/" />
-      <ListItemTemplate text="Nav Item" href="/" />
-      <ListItemTemplate text="Nav Item" href="/" />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
       <ListItemTemplate
+        listSemantic
         collapsible
         containsSubItem
         text="Nav Item"
         children={
           <ListTemplate
-            role="menu"
             subGroup
-            ariaLabel="Sub nav descrioption"
+            ariaLabel="Sub nav description"
             children={
               <>
-                <ListItemTemplate subItem text="Sub Nav Item" href="/" />
-                <ListItemTemplate subItem text="Sub Nav Item" href="/" ariaCurrent="page" />
-                <ListItemTemplate subItem text="Sub Nav Item" href="/" />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" ariaCurrent="page" listSemantic />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic />
               </>
             }
           />
@@ -59,34 +59,38 @@ NavWithSubItems.decorators = [
 ]
 
 export const NavWithSubItemsLeadingVisual16px = ListTemplate.bind({})
-NavWithSubItemsLeadingVisual16px.storyName = '[Nav] Nested collapsible menu leadingVisual 16px'
+NavWithSubItemsLeadingVisual16px.storyName = '[Nav] Links + nested collapsible group leadingVisual 16px'
 NavWithSubItemsLeadingVisual16px.args = {
   ...ListTemplate.args,
   ...ListItemTemplate.args,
   ariaLabel: 'Main menu description',
-  role: 'menu',
+  role: undefined,
   showDividers: false,
   children: (
     <>
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual16"
         leadingVisual={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M8.5.75a.75.75 0 00-1.5 0v5.19L4.391 3.33a.75.75 0 10-1.06 1.061L5.939 7H.75a.75.75 0 000 1.5h5.19l-2.61 2.609a.75.75 0 101.061 1.06L7 9.561v5.189a.75.75 0 001.5 0V9.56l2.609 2.61a.75.75 0 101.06-1.061L9.561 8.5h5.189a.75.75 0 000-1.5H9.56l2.61-2.609a.75.75 0 00-1.061-1.06L8.5 5.939V.75z"></path></svg>`}
       />
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual16"
         leadingVisual={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M8.5.75a.75.75 0 00-1.5 0v5.19L4.391 3.33a.75.75 0 10-1.06 1.061L5.939 7H.75a.75.75 0 000 1.5h5.19l-2.61 2.609a.75.75 0 101.061 1.06L7 9.561v5.189a.75.75 0 001.5 0V9.56l2.609 2.61a.75.75 0 101.06-1.061L9.561 8.5h5.189a.75.75 0 000-1.5H9.56l2.61-2.609a.75.75 0 00-1.061-1.06L8.5 5.939V.75z"></path></svg>`}
       />
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual16"
         leadingVisual={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M8.5.75a.75.75 0 00-1.5 0v5.19L4.391 3.33a.75.75 0 10-1.06 1.061L5.939 7H.75a.75.75 0 000 1.5h5.19l-2.61 2.609a.75.75 0 101.061 1.06L7 9.561v5.189a.75.75 0 001.5 0V9.56l2.609 2.61a.75.75 0 101.06-1.061L9.561 8.5h5.189a.75.75 0 000-1.5H9.56l2.61-2.609a.75.75 0 00-1.061-1.06L8.5 5.939V.75z"></path></svg>`}
       />
       <ListItemTemplate
+        listSemantic
         containsSubItem
         collapsible
         text="Nav Item"
@@ -99,9 +103,10 @@ NavWithSubItemsLeadingVisual16px.args = {
             ariaLabel="Sub nav descrioption"
             children={
               <>
-                <ListItemTemplate subItem text="Sub Nav Item" href="/" />
-                <ListItemTemplate subItem text="Sub Nav Item" href="/" ariaCurrent="page" />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" ariaCurrent="page" listSemantic />
                 <ListItemTemplate
+                  listSemantic
                   subItem
                   text="Sub Nav Item"
                   href="/"
@@ -114,12 +119,14 @@ NavWithSubItemsLeadingVisual16px.args = {
         }
       />
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual16"
         leadingVisual={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M8.5.75a.75.75 0 00-1.5 0v5.19L4.391 3.33a.75.75 0 10-1.06 1.061L5.939 7H.75a.75.75 0 000 1.5h5.19l-2.61 2.609a.75.75 0 101.061 1.06L7 9.561v5.189a.75.75 0 001.5 0V9.56l2.609 2.61a.75.75 0 101.06-1.061L9.561 8.5h5.189a.75.75 0 000-1.5H9.56l2.61-2.609a.75.75 0 00-1.061-1.06L8.5 5.939V.75z"></path></svg>`}
       />
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual16"
@@ -137,34 +144,38 @@ NavWithSubItemsLeadingVisual16px.decorators = [
 ]
 
 export const NavWithSubItemsLeadingVisual20px = ListTemplate.bind({})
-NavWithSubItemsLeadingVisual20px.storyName = '[Nav] Nested collapsible menu leadingVisual 20px'
+NavWithSubItemsLeadingVisual20px.storyName = '[Nav] Links + nested collapsible group leadingVisual 20px'
 NavWithSubItemsLeadingVisual20px.args = {
   ...ListTemplate.args,
   ...ListItemTemplate.args,
   ariaLabel: 'Main menu description',
-  role: 'menu',
+  role: undefined,
   showDividers: false,
   children: (
     <>
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual20"
         leadingVisual={`<img class="avatar avatar-small" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=40" width="20" height="20" style="border-radius: 50%" />`}
       />
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual20"
         leadingVisual={`<img class="avatar avatar-small" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=40" width="20" height="20" style="border-radius: 50%" />`}
       />
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual20"
         leadingVisual={`<img class="avatar avatar-small" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=40" width="20" height="20" style="border-radius: 50%" />`}
       />
       <ListItemTemplate
+        listSemantic
         containsSubItem
         text="Nav Item"
         href="/"
@@ -176,9 +187,10 @@ NavWithSubItemsLeadingVisual20px.args = {
             ariaLabel="Sub nav descrioption"
             children={
               <>
-                <ListItemTemplate subItem text="Sub Nav Item" href="/" />
-                <ListItemTemplate subItem text="Sub Nav Item" href="/" ariaCurrent="page" />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" ariaCurrent="page" listSemantic />
                 <ListItemTemplate
+                  listSemantic
                   subItem
                   text="Nav Item"
                   href="/"
@@ -191,12 +203,14 @@ NavWithSubItemsLeadingVisual20px.args = {
         }
       />
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual20"
         leadingVisual={`<img class="avatar avatar-small" alt="jonrohan" src="https://github.com/jonrohan.png?v=3&s=40" width="20" height="20" style="border-radius: 50%" />`}
       />
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual20"
@@ -214,34 +228,38 @@ NavWithSubItemsLeadingVisual20px.decorators = [
 ]
 
 export const NavWithSubItemsLeadingVisual24px = ListTemplate.bind({})
-NavWithSubItemsLeadingVisual24px.storyName = '[Nav] Nested collapsible menu leadingVisual 24px'
+NavWithSubItemsLeadingVisual24px.storyName = '[Nav] Links + nested collapsible group leadingVisual 24px'
 NavWithSubItemsLeadingVisual24px.args = {
   ...ListTemplate.args,
   ...ListItemTemplate.args,
   ariaLabel: 'Main menu description',
-  role: 'menu',
+  role: undefined,
   showDividers: false,
   children: (
     <>
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual24"
         leadingVisual={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12.5 1.25a.75.75 0 00-1.5 0v8.69L6.447 5.385a.75.75 0 10-1.061 1.06L9.94 11H1.25a.75.75 0 000 1.5h8.69l-4.554 4.553a.75.75 0 001.06 1.061L11 13.561v8.689a.75.75 0 001.5 0v-8.69l4.553 4.554a.75.75 0 001.061-1.06L13.561 12.5h8.689a.75.75 0 000-1.5h-8.69l4.554-4.553a.75.75 0 10-1.06-1.061L12.5 9.939V1.25z"></path></svg>`}
       />
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual24"
         leadingVisual={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12.5 1.25a.75.75 0 00-1.5 0v8.69L6.447 5.385a.75.75 0 10-1.061 1.06L9.94 11H1.25a.75.75 0 000 1.5h8.69l-4.554 4.553a.75.75 0 001.06 1.061L11 13.561v8.689a.75.75 0 001.5 0v-8.69l4.553 4.554a.75.75 0 001.061-1.06L13.561 12.5h8.689a.75.75 0 000-1.5h-8.69l4.554-4.553a.75.75 0 10-1.06-1.061L12.5 9.939V1.25z"></path></svg>`}
       />
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual24"
         leadingVisual={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12.5 1.25a.75.75 0 00-1.5 0v8.69L6.447 5.385a.75.75 0 10-1.061 1.06L9.94 11H1.25a.75.75 0 000 1.5h8.69l-4.554 4.553a.75.75 0 001.06 1.061L11 13.561v8.689a.75.75 0 001.5 0v-8.69l4.553 4.554a.75.75 0 001.061-1.06L13.561 12.5h8.689a.75.75 0 000-1.5h-8.69l4.554-4.553a.75.75 0 10-1.06-1.061L12.5 9.939V1.25z"></path></svg>`}
       />
       <ListItemTemplate
+        listSemantic
         containsSubItem
         text="Nav Item"
         href="/"
@@ -253,9 +271,10 @@ NavWithSubItemsLeadingVisual24px.args = {
             ariaLabel="Sub nav descrioption"
             children={
               <>
-                <ListItemTemplate subItem text="Sub Nav Item" href="/" />
-                <ListItemTemplate subItem text="Sub Nav Item" href="/" ariaCurrent="page" />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" ariaCurrent="page" listSemantic />
                 <ListItemTemplate
+                  listSemantic
                   subItem
                   text="Nav Item"
                   href="/"
@@ -268,12 +287,14 @@ NavWithSubItemsLeadingVisual24px.args = {
         }
       />
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual24"
         leadingVisual={`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12.5 1.25a.75.75 0 00-1.5 0v8.69L6.447 5.385a.75.75 0 10-1.061 1.06L9.94 11H1.25a.75.75 0 000 1.5h8.69l-4.554 4.553a.75.75 0 001.06 1.061L11 13.561v8.689a.75.75 0 001.5 0v-8.69l4.553 4.554a.75.75 0 001.061-1.06L13.561 12.5h8.689a.75.75 0 000-1.5h-8.69l4.554-4.553a.75.75 0 10-1.06-1.061L12.5 9.939V1.25z"></path></svg>`}
       />
       <ListItemTemplate
+        listSemantic
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual24"
@@ -291,7 +312,7 @@ NavWithSubItemsLeadingVisual24px.decorators = [
 ]
 
 export const MenuWithDivider = ListTemplate.bind({})
-MenuWithDivider.storyName = '[Menu] Divider'
+MenuWithDivider.storyName = '[DropdownMenu] Divider'
 MenuWithDivider.args = {
   ...ListTemplate.args,
   ...ListItemTemplate.args,
@@ -334,9 +355,26 @@ MenuWithDivider.args = {
     </>
   )
 }
+MenuWithDivider.decorators = [
+  Story => (
+    <div>
+      <details class="dropdown details-reset details-overlay d-inline-block" open="true">
+        <summary class="btn" aria-haspopup="true">
+          Dropdown
+          <div class="dropdown-caret"></div>
+        </summary>
+        <div class="SelectMenu">
+          <div class="SelectMenu-modal">
+            <Story />
+          </div>
+        </div>
+      </details>
+    </div>
+  )
+]
 
 export const MenuWithSectionDivider = ListTemplate.bind({})
-MenuWithSectionDivider.storyName = '[Menu] Section divider'
+MenuWithSectionDivider.storyName = '[DropdownMenu] Section divider'
 MenuWithSectionDivider.args = {
   ...ListTemplate.args,
   ...ListItemTemplate.args,
@@ -358,7 +396,7 @@ MenuWithSectionDivider.args = {
             children={
               <>
                 <ListItemTemplate text="Nav Item" href="/" />
-                <ListItemTemplate text="Nav Item" href="/" ariaCurrent="page" />
+                <ListItemTemplate text="Nav Item" href="/" />
                 <ListItemTemplate text="Nav Item" href="/" variant="ActionList-item--danger" />
               </>
             }
@@ -368,9 +406,26 @@ MenuWithSectionDivider.args = {
     </>
   )
 }
+MenuWithSectionDivider.decorators = [
+  Story => (
+    <div>
+      <details class="dropdown details-reset details-overlay d-inline-block" open="true">
+        <summary class="btn" aria-haspopup="true">
+          Dropdown
+          <div class="dropdown-caret"></div>
+        </summary>
+        <div class="SelectMenu">
+          <div class="SelectMenu-modal">
+            <Story />
+          </div>
+        </div>
+      </details>
+    </div>
+  )
+]
 
 export const MenuSingleSelect = ListTemplate.bind({})
-MenuSingleSelect.storyName = '[Menu] Single select'
+MenuSingleSelect.storyName = '[DropdownMenu] Single select'
 MenuSingleSelect.args = {
   ...ListTemplate.args,
   ...ListItemTemplate.args,
@@ -387,9 +442,26 @@ MenuSingleSelect.args = {
     </>
   )
 }
+MenuSingleSelect.decorators = [
+  Story => (
+    <div>
+      <details class="dropdown details-reset details-overlay d-inline-block" open="true">
+        <summary class="btn" aria-haspopup="true">
+          Dropdown
+          <div class="dropdown-caret"></div>
+        </summary>
+        <div class="SelectMenu">
+          <div class="SelectMenu-modal">
+            <Story />
+          </div>
+        </div>
+      </details>
+    </div>
+  )
+]
 
 export const MenuMultiSelect = ListTemplate.bind({})
-MenuMultiSelect.storyName = '[Menu] Multi select'
+MenuMultiSelect.storyName = '[DropdownMenu] Multi select'
 MenuMultiSelect.args = {
   ...ListTemplate.args,
   ...ListItemTemplate.args,
@@ -406,6 +478,23 @@ MenuMultiSelect.args = {
     </>
   )
 }
+MenuMultiSelect.decorators = [
+  Story => (
+    <div>
+      <details class="dropdown details-reset details-overlay d-inline-block" open="true">
+        <summary class="btn" aria-haspopup="true">
+          Dropdown
+          <div class="dropdown-caret"></div>
+        </summary>
+        <div class="SelectMenu">
+          <div class="SelectMenu-modal">
+            <Story />
+          </div>
+        </div>
+      </details>
+    </div>
+  )
+]
 
 export const ListSingleSelect = ListTemplate.bind({})
 ListSingleSelect.storyName = '[Listbox] Single select'
@@ -488,16 +577,17 @@ List.args = {
 
 export const NavWithSubItemsLeadingVisual16pxSubSections = ListTemplate.bind({})
 NavWithSubItemsLeadingVisual16pxSubSections.storyName =
-  '[Nav] Nested collapsible menu leadingVisual 16px + sub sections'
+  '[Nav] Links + nested collapsible group leadingVisual 16px + sub sections'
 NavWithSubItemsLeadingVisual16pxSubSections.args = {
   ...ListTemplate.args,
   ...ListItemTemplate.args,
   ariaLabel: 'Main menu description',
-  role: 'menu',
+  role: undefined,
   showDividers: false,
   children: (
     <>
       <ListItemTemplate
+        listSemantic
         text="General"
         href="/"
         leadingVisualSize="ActionList-content--visual16"
@@ -505,16 +595,17 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
       />
       <DividerTemplate title="Access" id="group-id-1" />
       <ListItemTemplate
+        listSemantic
         containsSubItem
         children={
           <ListTemplate
             subGroup
-            role="menu"
             ariaLabelledBy="group-id-1"
             ariaLabel="Sub nav descrioption"
             children={
               <>
                 <ListItemTemplate
+                  listSemantic
                   text="Collaborators"
                   href="/"
                   leadingVisualSize="ActionList-content--visual16"
@@ -523,6 +614,7 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
                         </svg>`}
                 />
                 <ListItemTemplate
+                  listSemantic
                   containsSubItem
                   text="Moderation options"
                   //   href="/"
@@ -534,12 +626,12 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
                   children={
                     <ListTemplate
                       containsSubItem
-                      role="menu"
                       subGroup
                       ariaLabel="Sub nav descrioption"
                       children={
                         <>
                           <ListItemTemplate
+                            listSemantic
                             subItem
                             text="Interaction limits"
                             href="/"
@@ -556,6 +648,7 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
                 />
                 <ListItemTemplate
                   text="Repository roles"
+                  listSemantic
                   href="/"
                   leadingVisualSize="ActionList-content--visual16"
                   leadingVisual={`<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-person">
@@ -569,16 +662,17 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
       />
       <DividerTemplate title="Code & operations" id="group-id-2" />
       <ListItemTemplate
+        listSemantic
         containsSubItem
         children={
           <ListTemplate
             subGroup
-            role="menu"
             ariaLabel="Sub nav descrioption"
             ariaLabelledBy="group-id-2"
             children={
               <>
                 <ListItemTemplate
+                  listSemantic
                   text="Webhooks"
                   href="/"
                   leadingVisualSize="ActionList-content--visual16"
@@ -587,6 +681,7 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
                </svg>`}
                 />
                 <ListItemTemplate
+                  listSemantic
                   text="Environments"
                   href="/"
                   leadingVisualSize="ActionList-content--visual16"
@@ -595,6 +690,7 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
                </svg>`}
                 />
                 <ListItemTemplate
+                  listSemantic
                   text="Pages"
                   href="/"
                   leadingVisualSize="ActionList-content--visual16"
@@ -603,6 +699,7 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
                </svg>`}
                 />
                 <ListItemTemplate
+                  listSemantic
                   text="Unpublish GitHub Pages"
                   href="/"
                   leadingVisualSize="ActionList-content--visual16"
