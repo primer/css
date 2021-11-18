@@ -26,10 +26,10 @@ export default {
       }
     },
     variant: {
-      options: [0, 1, 2], // iterator
+      options: [0, 1], // iterator
       mapping: ['', 'ActionList-item--danger'], // values
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['default', 'danger']
       },
       defaultValue: '',
@@ -64,7 +64,7 @@ export default {
       options: [0, 1, 2], // iterator
       mapping: ['ActionList-content--visual16', 'ActionList-content--visual20', 'ActionList-content--visual24'], // values
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['16px', '20px', '24px']
       },
       description: 'leading visual width',
@@ -102,7 +102,7 @@ export default {
     },
     ariaCurrent: {
       options: ['location', 'page'],
-      control: {type: 'select'},
+      control: {type: 'inline-radio'},
       description: 'location for anchor links, page for global page navigation',
       table: {
         category: 'HTML'
@@ -121,7 +121,7 @@ export default {
       options: [0, 1], // iterator
       mapping: ['', 'ActionList-item-descriptionWrap--inline'], // values
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['block', 'inline']
       },
       description: 'block (default), inline',

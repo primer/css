@@ -67,7 +67,7 @@ export default {
     },
     listboxMultiSelect: {
       name: 'listboxMultiSelect',
-      type: 'string',
+      type: 'boolean',
       description: 'If ActionList has listbox role + multiselect children',
       table: {
         category: 'HTML'
@@ -101,6 +101,9 @@ Playground.args = {
   ariaLabel: 'Menu description',
   subGroup: false,
   showDividers: false,
+  listboxMultiSelect: false,
+  ariaLabelledBy: '',
+  groupId: '',
   children: (
     <>
       <ListItemTemplate text="Action list item" />
