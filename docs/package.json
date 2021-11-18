@@ -7,7 +7,7 @@
     "develop": "ln -sf ../dist . && gatsby develop -H 0.0.0.0",
     "build-content": "gatsby build --prefix-paths",
     "build": "./script/now-build.sh && ./script/build-storybook.sh",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "NODE_ENV=test start-storybook -p 6006",
     "build-storybook": "./script/build-storybook.sh"
   },
   "dependencies": {
@@ -58,6 +58,7 @@
     "@storybook/react": "6.3.12",
     "@whitespace/storybook-addon-html": "^5.0.0",
     "babel-loader": "^8.2.3",
-    "storybook-addon-designs": "6.2.0"
+    "storybook-addon-designs": "6.2.0",
+    "storybook-color-picker": "2.1.4"
   }
 }

@@ -1,6 +1,7 @@
 import '../../src/docs.scss'
 import '../../src/index.scss'
 import '../../src/base/index.scss'
+import '../src/stories/helpers/storybook-styles.scss'
 import renderToHTML from '../src/stories/helpers/code-snippet-html-helper'
 
 const customViewports = {
@@ -103,7 +104,16 @@ export const globalTypes = {
     defaultValue: 'light',
     toolbar: {
       icon: 'circlehollow',
-      items: ['light', 'light_protanopia', 'dark', 'dark_dimmed', 'dark_high_contrast', 'dark_protanopia', 'all'],
+      items: [
+        'light',
+        'light_colorblind',
+        'light_high_contrast',
+        'dark',
+        'dark_dimmed',
+        'dark_high_contrast',
+        'dark_colorblind',
+        'all'
+      ],
       showName: true
     }
   }
@@ -118,7 +128,11 @@ export const decorators = [
             <Story {...context} />
           </div>
 
-          <div data-color-mode="light" data-light-theme="light_protanopia" className="story-wrap" id="story">
+          <div data-color-mode="light" data-light-theme="light_colorblind" className="story-wrap" id="story">
+            <Story {...context} />
+          </div>
+
+          <div data-color-mode="light" data-light-theme="light_high_contrast" className="story-wrap" id="story">
             <Story {...context} />
           </div>
 
@@ -134,7 +148,7 @@ export const decorators = [
             <Story {...context} />
           </div>
 
-          <div data-color-mode="dark" data-dark-theme="dark_protanopia" className="story-wrap" id="story">
+          <div data-color-mode="dark" data-dark-theme="dark_colorblind" className="story-wrap" id="story">
             <Story {...context} />
           </div>
         </div>
@@ -149,9 +163,17 @@ export const decorators = [
       )
     }
 
-    if (context.globals.theme === 'light_protanopia') {
+    if (context.globals.theme === 'light_colorblind') {
       return (
-        <div data-color-mode="light" data-light-theme="light_protanopia" className="story-wrap" id="story">
+        <div data-color-mode="light" data-light-theme="light_colorblind" className="story-wrap" id="story">
+          <Story {...context} />
+        </div>
+      )
+    }
+
+    if (context.globals.theme === 'light_high_contrast') {
+      return (
+        <div data-color-mode="light" data-light-theme="light_high_contrast" className="story-wrap" id="story">
           <Story {...context} />
         </div>
       )
@@ -181,9 +203,9 @@ export const decorators = [
       )
     }
 
-    if (context.globals.theme === 'dark_protanopia') {
+    if (context.globals.theme === 'dark_colorblind') {
       return (
-        <div data-color-mode="dark" data-dark-theme="dark_protanopia" className="story-wrap" id="story">
+        <div data-color-mode="dark" data-dark-theme="dark_colorblind" className="story-wrap" id="story">
           <Story {...context} />
         </div>
       )
