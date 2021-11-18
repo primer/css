@@ -3,14 +3,11 @@
 If you've made it this far, **thank you**! We appreciate your contribution, and hope that this document helps you along the way. If you have any questions or problems, don't hesitate to [file an issue](https://github.com/primer/css/issues/new).
 
 ## Structure
-Primer CSS is published to [npm] as [@primer/css]. Each of Primer CSS's components lives in a subfolder under `src/` with an `index.scss` in it. Generally speaking, the styles are divided into three primary themes:
+Primer CSS is published to [npm] as [@primer/css]. Each of Primer CSS's "modules" lives in a subfolder under `src/` with an `index.scss` in it. Generally speaking, the styles are divided into three primary themes:
 
-* **Base** (`base/`) includes CSS reset, global styles, and typography
-* **Themes** (`color-modes/`) includes color-mode themes from primer-primitives
-* **Core** (`core/`) index file for all components, along with global CSS and utility imports
-* **Support** (`support/`) SCSS variables and mixins for writing Primer CSS (example: spacer vars, breakpoints, font-size and weight)
-* **Utilities** (`utilities/`) SCSS variables, mixins and utility classes (example: `margin` and `padding`)
-
+* **Core** styles (in `core/`) are common dependencies, which include support variables, native element and typography styles, buttons, navigation, tooltips, etc.
+* **Product** styles (in `product/`) are specific to github.com, and include components such as avatars, labels, markdown styles, popovers, and progress indicators.
+* **Marketing** styles (in `marketing/`) are specific to GitHub marketing efforts, including international and event-focused sites as well as the more design-heavy feature pages on github.com. Marketing styles include new colors and button styles, and extend the core typography and whitespace scales.
 
 ### Paths
 Here's what you need to know about how the files are structured in both git and in the published npm module:
@@ -19,11 +16,7 @@ Here's what you need to know about how the files are structured in both git and 
 * When published, all of the files in `src/` are "hoisted" to the package root so that you can import, say, utilities with:
 
     ```scss
-    // scss
     @import "@primer/css/utilities/index.scss";
-
-    // css
-    @import "@primer/css/utilities.css";
     ```
 
 * All bundle interdependencies within Primer CSS are defined as relative imports (e.g. with `../`), so everything should work fine as long as the `@primer/css` directory is in one of your Sass include paths (i.e. `node_modules`).
@@ -61,6 +54,7 @@ Storybook configuration files live in [.storybook](../docs/.storybook). Addons a
 
 ### Stories
 Stories are individual `.jsx` or `.mdx` files that contain component HTML for prototyping, typically showcasing all possible variations of a component. Stories can be found in the [stories directory](../docs/src/stories/components) and are organized by component. Storybook will build and deploy a preview on any open Pull Request.
+
 ## Scripts
 Our [`package.json`](package.json) houses a collection of [run-scripts] that we use to maintain, test, build, and publish Primer CSS. Run `npm run <script>` with any of the following values for `<script>`:
 

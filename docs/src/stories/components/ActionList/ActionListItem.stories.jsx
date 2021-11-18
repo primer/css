@@ -232,14 +232,14 @@ export const ListItemTemplate = ({
           ? undefined
           : href
           ? 'none'
-          : 'menuitem'
+          : undefined
       }
       id={id}
       aria-haspopup={collapsible ? 'true' : undefined}
       aria-expanded={collapsible ? (isCollapsed ? 'false' : 'true') : undefined}
       aria-checked={singleSelect || multiSelect ? (isChecked ? 'true' : 'false') : undefined}
       aria-selected={listSingleSelect || listMultiSelect ? (isChecked ? 'true' : 'false') : undefined}
-      aria-disabled={ariaDisabled}
+      aria-disabled={ariaDisabled ? 'true' : undefined}
     >
       {href ? (
         <>
@@ -435,8 +435,11 @@ export const ListItemTemplate = ({
 export const Playground = ListItemTemplate.bind({})
 Playground.decorators = [
   Story => (
-    <ul className="ActionList" role="menu">
+    <ul className="ActionList">
       <Story />
     </ul>
   )
 ]
+Playground.args = {
+  id: null
+}
