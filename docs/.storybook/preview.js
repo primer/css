@@ -77,37 +77,6 @@ const customViewports = {
   }
 }
 
-const customViewports = {
-  widthsm: {
-    name: 'width-sm [544px]',
-    styles: {
-      width: '544px',
-      height: '100vh'
-    }
-  },
-  widthmd: {
-    name: 'width-md [768px]',
-    styles: {
-      width: '768px',
-      height: '100vh'
-    }
-  },
-  widthlg: {
-    name: 'width-lg [1012px]',
-    styles: {
-      width: '1012px',
-      height: '100vh'
-    }
-  },
-  widthxl: {
-    name: 'width-xl [1280px]',
-    styles: {
-      width: '1280px',
-      height: '100vh'
-    }
-  }
-}
-
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
   docs: {

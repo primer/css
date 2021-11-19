@@ -1,14 +1,11 @@
 import React from 'react'
 import clsx from 'clsx'
+// import { StoryTemplateName } from './OtherStoryFile.stories' // import stories for component compositions
 
 export default {
   title: 'Components/Popover',
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/GCvY3Qv8czRgZgvl1dG6lp/Primer-Web?node-id=410%3A3890'
-    }
-  },
+  excludeStories: ['PopoverTemplateName'],
+  layout: 'padded',
   argTypes: {
     size: {
       options: [0, 1], // iterator
@@ -16,6 +13,9 @@ export default {
       control: {
         type: 'select',
         labels: ['default', 'large']
+      },
+      table: {
+        category: 'CSS'
       }
     },
     caretPosition: {
@@ -36,7 +36,7 @@ export default {
         'Popover-message--no-caret'
       ], // values
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: [
           'default (top)',
           'bottom',
@@ -52,45 +52,64 @@ export default {
           'top_right',
           'none'
         ]
+      },
+      table: {
+        category: 'CSS'
       }
     },
     messagePosition: {
-      options: [0, 1], // iterator
-      mapping: ['position-relative', 'position-absolute'], // values
+      options: ['position-relative', 'position-absolute'],
       control: {
-        type: 'select',
-        labels: ['relative', 'absolute']
+        type: 'inline-radio'
+      },
+      description: '',
+      table: {
+        category: 'CSS'
       }
     },
     headingText: {
-      type: 'string',
       name: 'headingText',
-      description: 'string'
+      type: 'string',
+      description: 'string',
+      table: {
+        category: 'HTML'
+      }
+    },
+    primerUtilities: {
+      name: 'headingText',
+      type: 'string',
+      description: 'Primer utility classes',
+      table: {
+        category: 'HTML'
+      }
     },
     tag: {
       options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-      control: {type: 'radio'},
-      description: 'h4 default'
+      control: {type: 'inline-radio'},
+      description: 'h4 default',
+      table: {
+        category: 'HTML'
+      }
     }
   }
 }
 
-const PopoverTemplate = ({size, caretPosition, messagePosition, headingText, tag, children, trigger}) => (
+export const PopoverTemplateName = ({
+  size,
+  caretPosition,
+  messagePosition,
+  headingText,
+  tag,
+  children,
+  trigger,
+  triggerBottom,
+  primerUtilities
+}) => (
   <>
     {trigger}
     <div className={clsx('Popover', 'right-0', 'left-0', `${messagePosition}`)}>
       <div
-        className={clsx(
-          'Popover-message',
-          'text-left',
-          'p-4',
-          'mt-2',
-          'mx-auto',
-          'Box',
-          'color-shadow-large',
-          `${size}`,
-          `${caretPosition}`
-        )}
+        className={clsx('Popover-message', 'color-shadow-large', `${primerUtilities}`, `${size}`, `${caretPosition}`)}
       >
         {tag === 'h1' && <h1 className="mb-2">{headingText}</h1>}
         {tag === 'h2' && <h2 className="mb-2">{headingText}</h2>}
@@ -101,14 +120,16 @@ const PopoverTemplate = ({size, caretPosition, messagePosition, headingText, tag
         {children}
       </div>
     </div>
+    {triggerBottom}
   </>
 )
 
-export const Popover = PopoverTemplate.bind({})
-Popover.args = {
+export const Playground = PopoverTemplateName.bind({})
+Playground.args = {
   tag: 'h4',
   headingText: 'Popover heading',
   size: '',
   caretPosition: '',
-  messagePosition: 'position-relative'
+  messagePosition: 'position-relative',
+  primerUtilities: 'text-left p-4 mt-2 mx-aut'
 }
