@@ -1,25 +1,24 @@
 .btn-mktg {
-  color: var(--color-canvas-default);
   position: relative;
   z-index: 1;
   display: inline-block;
-  appearance: none !important;
   // stylelint-disable-next-line primer/spacing
   padding: 0.9rem 1.5rem 1.1rem;
   // stylelint-disable-next-line primer/typography
   font-size: 1rem;
   font-weight: $font-weight-bold;
   line-height: 1;
+  color: var(--color-canvas-default);
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
+  background: linear-gradient(180deg, rgba(255 255 255 / 0.15) 0%, rgba(255 255 255 / 0) 100%), var(--color-mktg-btn-bg) !important;
   border: 0;
   // stylelint-disable-next-line primer/borders
   border-radius: 0.375rem;
-  background: linear-gradient(180deg, rgba(255 255 255 / 0.15) 0%, rgba(255 255 255 / 0) 100%),
-    var(--color-mktg-btn-bg) !important;
   transition: box-shadow 0.2s;
+  appearance: none !important;
 
   &::before {
     position: absolute;
@@ -28,11 +27,11 @@
     bottom: 0;
     left: 0;
     z-index: -1;
-    content: "";
-    // stylelint-disable-next-line primer/borders
+    content: '';
+    // stylelint-disable-next-line primer/colors
+    background: linear-gradient(180deg, rgba(255 255 255 / 0.15) 0%, rgba(255 255 255 / 0) 100%) !important;
     border-radius: inherit;
     opacity: 0;
-    background: linear-gradient(180deg, rgba(255 255 255 / 0.15) 0%, rgba(255 255 255 / 0) 100%) !important;
     opacity: 0;
     transition: opacity 0.2s;
     background-blend-mode: normal;
@@ -44,8 +43,8 @@
 
   &:focus,
   &.focus {
-    box-shadow: var(--color-mktg-btn-shadow-focus), var(--color-mktg-btn-shadow-hover) !important;
     outline: 0;
+    box-shadow: var(--color-mktg-btn-shadow-focus), var(--color-mktg-btn-shadow-hover) !important;
   }
 
   &:hover,
@@ -62,6 +61,7 @@
 
   &:active {
     outline: none;
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 0 0 transparent;
 
     &::before {
@@ -89,10 +89,12 @@
   }
 
   &:active {
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: var(--color-fg-default) 0 0 0 3px inset !important;
   }
 
   &:disabled {
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: var(--color-fg-subtle) 0 0 0 1px inset !important;
   }
 }
@@ -117,14 +119,18 @@
 }
 
 .btn-signup-mktg {
+  // stylelint-disable-next-line primer/colors
   color: #fff;
+  // stylelint-disable-next-line primer/colors
   background: linear-gradient(180deg, rgba(52, 183, 89, 0.15) 0%, rgba(46, 164, 79, 0) 100%), rgb(46, 164, 79) !important;
 
   &::before {
+    // stylelint-disable-next-line primer/colors
     background: linear-gradient(180deg, rgba(52, 183, 89, 0.15) 0%, rgba(46, 164, 79, 0) 100%) !important;
   }
 
   &:focus {
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: rgba(46, 164, 79, 0.45) 0 0 0 4px !important;
   }
 }
