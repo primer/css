@@ -54,7 +54,7 @@
   .gap:hover,
   .disabled:hover,
   [aria-disabled=true]:hover {
-    color: var(--color-fg-muted);
+    color: var(--color-primer-fg-disabled);
     cursor: default;
     border-color: transparent;
   }
@@ -67,7 +67,7 @@
       width: 16px;
       height: 16px;
       vertical-align: text-bottom;
-      content: "";
+      content: '';
       // stylelint-disable-next-line primer/colors
       background-color: currentColor;
     }

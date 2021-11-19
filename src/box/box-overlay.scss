@@ -1,0 +1,40 @@
+.Box--overlay {
+  width: 448px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: var(--color-canvas-default);
+  background-clip: padding-box;
+  border-color: var(--color-border-default);
+  // stylelint-disable-next-line primer/box-shadow
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+
+  .Box-header {
+    margin: 0;
+    border-width: 0;
+    border-bottom-width: $border-width;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+}
+
+.Box-overlay--narrow {
+  width: 320px;
+}
+
+.Box-overlay--wide {
+  width: 640px;
+}
+
+.Box-body {
+  &.scrollable-overlay {
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+
+  .help {
+    padding-top: $spacer-2;
+    margin: 0;
+    color: var(--color-fg-muted);
+    text-align: center;
+  }
+}

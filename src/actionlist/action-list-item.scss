@@ -1,0 +1,444 @@
+@mixin focusOutline {
+  position: relative;
+  z-index: 1;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent-fg); // this color breaks convention
+}
+
+// <li>
+.ActionList-item {
+  position: relative;
+  list-style: none;
+  background-color: transparent;
+  border-radius: $border-radius;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+
+    // a href
+    .ActionList-content {
+      text-decoration: none;
+    }
+  }
+
+  // only hover li without list as children
+  &:not(.ActionList-item--hasSubItem) {
+    &:hover {
+      cursor: pointer;
+      background-color: var(--color-action-list-item-default-hover-bg);
+    }
+
+    &:active {
+      background: var(--color-action-list-item-default-active-bg);
+
+      @media screen and (prefers-reduced-motion: no-preference) {
+        animation: ActionList-item-active-bg 4s forwards cubic-bezier(0.33, 1, 0.68, 1);
+      }
+
+      // stylelint-disable primer/box-shadow
+      @keyframes ActionList-item-active-bg {
+        // stylelint-disable-next-line max-nesting-depth
+        50% {
+          box-shadow: inset 0 0 0 rgba(#000, 0.04);
+          transform: scale(1);
+        }
+
+        // stylelint-disable-next-line max-nesting-depth
+        100% {
+          box-shadow: inset 0 3px 9px rgba(#000, 0.04);
+          transform: scale(0.97);
+        }
+      }
+      // stylelint-enable primer/box-shadow
+    }
+
+    &:hover,
+    &:active {
+      // hide dividers
+      // stylelint-disable-next-line selector-max-specificity
+      .ActionList-item-label::before,
+      + .ActionList-item .ActionList-item-label::before {
+        visibility: hidden;
+      }
+    }
+  }
+
+  // target contents of li if sub-item (li wraps item label + nested ul)
+  // collapse styles here
+  &.ActionList-item--hasSubItem {
+    // first child
+    > .ActionList-content {
+      &:hover {
+        background-color: var(--color-action-list-item-default-hover-bg);
+      }
+    }
+  }
+
+  // active state [aria-current]
+
+  &.ActionList-item--navActive:not(.ActionList-item--danger) {
+    background: var(--color-action-list-item-default-selected-bg);
+
+    // stylelint-disable-next-line selector-max-specificity
+    &::before,
+    + .ActionList-item::before {
+      visibility: hidden;
+    }
+
+    // blue accent line
+    &::after {
+      position: absolute;
+      top: calc(50% - 12px);
+      left: -$actionList-item-padding-horizontal;
+      width: $spacer-1;
+      height: $spacer-4;
+      content: '';
+      background: var(--color-accent-fg);
+      border-radius: $border-radius;
+    }
+  }
+
+  // collapsible item [aria-expanded]
+
+  &[aria-expanded='true'] {
+    .ActionList-item-collapseIcon {
+      transition: transform 120ms linear;
+      transform: scaleY(-1);
+    }
+
+    .ActionList--subGroup {
+      display: block;
+    }
+
+    &.ActionList-item--hasSubItem {
+      // stylelint-disable-next-line selector-max-specificity
+      > .ActionList-content > .ActionList-item-label {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  &[aria-expanded='false'] {
+    .ActionList-item-collapseIcon {
+      transition: transform 120ms linear;
+      transform: scaleY(1);
+    }
+
+    .ActionList--subGroup {
+      display: none;
+    }
+  }
+
+  // checkbox item [aria-checked]
+  // listbox [aria-selected]
+
+  &[aria-checked='true'],
+  &[aria-selected='true'] {
+    // multiselect checkmark
+    .ActionList-item-multiSelectCheckmark {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility 0 linear 0, opacity $actionList-item-checkmark-transition-timing;
+    }
+
+    // singleselect checkmark
+    .ActionList-item-singleSelectCheckmark {
+      visibility: visible;
+
+      @media screen and (prefers-reduced-motion: no-preference) {
+        animation: checkmarkIn 200ms cubic-bezier(0.11, 0, 0.5, 0) forwards;
+      }
+    }
+
+    // checkbox
+    .ActionList-item-multiSelectIcon {
+      .ActionList-item-multiSelectIconRect {
+        fill: var(--color-accent-fg);
+        stroke: var(--color-accent-fg);
+        stroke-width: $border-width;
+      }
+
+      .ActionList-item-multiSelectCheckmark {
+        fill: var(--color-fg-on-emphasis);
+      }
+    }
+  }
+
+  &[aria-checked='false'],
+  &[aria-selected='false'] {
+    // multiselect checkmark
+    .ActionList-item-multiSelectCheckmark {
+      visibility: hidden;
+      opacity: 0;
+      transition:
+ visibility 0 linear $actionList-item-checkmark-transition-timing,
+        opacity $actionList-item-checkmark-transition-timing;
+    }
+
+    // singleselect checkmark
+    .ActionList-item-singleSelectCheckmark {
+      visibility: hidden;
+      transition: visibility 0s linear 200ms;
+      clip-path: inset(16px 0 0 0);
+
+      @media screen and (prefers-reduced-motion: no-preference) {
+        animation: checkmarkOut 200ms cubic-bezier(0.11, 0, 0.5, 0) forwards;
+      }
+    }
+
+    // checkbox
+    .ActionList-item-multiSelectIcon {
+      .ActionList-item-multiSelectIconRect {
+        fill: var(--color-canvas-default);
+        stroke: var(--color-border-default);
+        stroke-width: $border-width;
+      }
+    }
+
+    .ActionList-item-multiSelectIconRect {
+      fill: var(--color-canvas-default);
+      border: $border-width $border-style var(--color-border-default);
+    }
+  }
+
+  @keyframes checkmarkIn {
+    from {
+      clip-path: inset(16px 0 0 0);
+    }
+
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes checkmarkOut {
+    from {
+      clip-path: inset(0 0 0 0);
+    }
+
+    to {
+      clip-path: inset(16px 0 0 0);
+    }
+  }
+
+  // variants
+
+  // danger
+  &.ActionList-item--danger {
+    .ActionList-item-label {
+      color: var(--color-danger-fg);
+    }
+
+    .ActionList-item-visual {
+      color: var(--color-danger-fg);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background: var(--color-action-list-item-danger-hover-bg);
+
+        // stylelint-disable-next-line max-nesting-depth
+        .ActionList-item-label {
+          color: var(--color-action-list-item-danger-hover-text);
+        }
+      }
+    }
+
+    &:active {
+      background: var(--color-action-list-item-danger-active-bg);
+    }
+  }
+
+  // disabled
+  &[aria-disabled='true'] {
+    .ActionList-item-label,
+    .ActionList-item-description {
+      color: var(--color-primer-fg-disabled);
+    }
+
+    .ActionList-item-visual {
+      fill: var(--color-primer-fg-disabled);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        cursor: not-allowed;
+        background-color: transparent;
+      }
+    }
+  }
+
+  // if nested list exists, remove default padding
+  .ActionList {
+    // stylelint-disable-next-line primer/spacing
+    padding: unset;
+  }
+}
+
+// span or a href
+.ActionList-content {
+  position: relative;
+  display: grid;
+  // stylelint-disable-next-line primer/spacing
+  padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
+  font-weight: $font-weight-normal;
+  color: var(--color-fg-default);
+  user-select: none;
+  border-radius: $border-radius;
+  transition: $actionList-item-bg-transition;
+  grid-template-rows: min-content;
+  grid-template-areas: 'leadingAction leadingVisual label trailingVisual trailingAction';
+  grid-template-columns: min-content min-content minmax(min-content, auto) min-content min-content;
+  align-items: center;
+
+  // column-gap persists with empty grid-areas, margin applies only when children exist
+  > :not(:last-child) {
+    margin-right: $spacer-2;
+  }
+
+  &:focus-visible {
+    @include focusOutline;
+  }
+
+  // sizes
+
+  &.ActionList-content--sizeMedium {
+    // 44px total height
+    // stylelint-disable-next-line primer/spacing
+    padding: $actionList-item-padding-vertical-md $actionList-item-padding-horizontal;
+  }
+
+  &.ActionList-content--sizeLarge {
+    // 48px total height
+    // stylelint-disable-next-line primer/spacing
+    padding: $actionList-item-padding-vertical-lg $actionList-item-padding-horizontal;
+  }
+
+  // On pointer:coarse (mobile), all list items are large
+  @media (pointer: coarse) {
+    // stylelint-disable-next-line primer/spacing
+    padding: $actionList-item-padding-vertical-lg $actionList-item-padding-horizontal;
+  }
+
+  &.ActionList-content--blockDescription {
+    // if leading/trailing visual, align with first line of content
+    .ActionList-item-visual {
+      place-self: start;
+    }
+  }
+}
+
+// place children on grid
+
+.ActionList-item-action--leading {
+  grid-area: leadingAction;
+}
+
+.ActionList-item-visual--leading {
+  grid-area: leadingVisual;
+}
+
+.ActionList-item-label {
+  grid-area: label;
+}
+
+.ActionList-item-visual--trailing {
+  grid-area: trailingVisual;
+}
+
+.ActionList-item-action--trailing {
+  grid-area: trailingAction;
+}
+
+// wrapper span
+// default block
+.ActionList-item-descriptionWrap {
+  grid-area: label;
+  display: flex;
+  flex-direction: column;
+
+  .ActionList-item-description {
+    margin-top: $spacer-1;
+  }
+
+  .ActionList-item-label {
+    font-weight: $font-weight-bold;
+  }
+}
+
+// inline
+.ActionList-item-descriptionWrap--inline {
+  flex-direction: row;
+  align-items: baseline;
+
+  .ActionList-item-description {
+    // stylelint-disable-next-line primer/spacing
+    margin-left: $actionList-item-padding-horizontal;
+  }
+}
+
+// description
+.ActionList-item-description {
+  font-size: $font-size-small;
+  font-weight: $font-weight-normal;
+  line-height: $lh-default;
+  color: var(--color-fg-muted);
+}
+
+// helper for grid alignment with multi-line content
+// span wrapping svg or text
+.ActionList-item-visual,
+.ActionList-item-action {
+  display: flex;
+  min-height: $actionList-item-height-sm;
+  color: var(--color-fg-muted); // if visual is text
+  fill: var(--color-fg-muted);
+  align-items: center;
+}
+
+// text
+// stylelint-disable-next-line no-duplicate-selectors
+.ActionList-item-label {
+  position: relative; // for pseudo dividers
+  font-weight: $font-weight-normal;
+  // we need a strict value here for grid alignment
+  // stylelint-disable-next-line primer/typography
+  line-height: $actionList-item-label-line-height;
+  color: var(--color-fg-default);
+}
+
+// nested lists (only supports 1 level currently)
+// target ActionList-item--subItem for padding-left to maintain :active :after state
+
+.ActionList-item--subItem > .ActionList-content {
+  font-size: $font-size-small;
+}
+
+// no leading visual
+.ActionList--subGroup {
+  .ActionList-item--subItem {
+    padding-left: $spacer-3;
+  }
+}
+
+// has 16px leading visual
+.ActionList-content--visual16 + .ActionList--subGroup {
+  .ActionList-item--subItem {
+    padding-left: $spacer-4;
+  }
+}
+
+// has 20px leading visual
+.ActionList-content--visual20 + .ActionList--subGroup {
+  .ActionList-item--subItem {
+    padding-left: $spacer-3 * 1.75;
+  }
+}
+
+// has 24px leading visual
+.ActionList-content--visual24 + .ActionList--subGroup {
+  .ActionList-item--subItem {
+    padding-left: $spacer-5;
+  }
+}

@@ -102,7 +102,7 @@
       // stylelint-disable-next-line primer/spacing
       padding-left: 5px;
       color: var(--color-danger-fg);
-      content: "*";
+      content: '*';
     }
   }
 
@@ -169,7 +169,7 @@
         width: 0;
         height: 0;
         pointer-events: none;
-        content: " ";
+        content: ' ';
         // stylelint-disable-next-line primer/borders
         border: $border-style transparent;
       }

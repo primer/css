@@ -1,5 +1,69 @@
 # @primer/css
 
+## 19.0.0
+
+### Major Changes
+
+- [#1716](https://github.com/primer/css/pull/1716) [`9b97dc8f`](https://github.com/primer/css/commit/9b97dc8fec28e44d8619aff6da636ecd8e48daf9) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Update marketing buttons (including color mode support)
+
+### Minor Changes
+
+- [#1756](https://github.com/primer/css/pull/1756) [`ece7a3e6`](https://github.com/primer/css/commit/ece7a3e68c65252960b41d6df1b8ff64cb33c93f) Thanks [@heiskr](https://github.com/heiskr)! - Update mark tag to use background-color: var(--color-attention-subtle);
+
+* [#1754](https://github.com/primer/css/pull/1754) [`3838e174`](https://github.com/primer/css/commit/3838e1743aa63bacf0ca241c2a3c4983ba92c5e6) Thanks [@simurai](https://github.com/simurai)! - Add `Box--overlay` styles
+
+- [#1755](https://github.com/primer/css/pull/1755) [`1714778a`](https://github.com/primer/css/commit/1714778af72f5647894fca9561c56dfbccac62df) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating primer/primitives@7.1.0 and adding Light High Contrast theme
+
+### Patch Changes
+
+- [#1746](https://github.com/primer/css/pull/1746) [`9e6b5f56`](https://github.com/primer/css/commit/9e6b5f5671ab60e3a9d452f516fb7b38173f0135) Thanks [@simurai](https://github.com/simurai)! - Remove `Label` bg hack
+
+## 18.2.0
+
+### Minor Changes
+
+- [#1738](https://github.com/primer/css/pull/1738) [`dfe73db1`](https://github.com/primer/css/commit/dfe73db19556c4de8f57c9e610705af0a4d9f0f5) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Update `Layout`'s sidebar width values.
+
+* [#1657](https://github.com/primer/css/pull/1657) [`e7543009`](https://github.com/primer/css/commit/e754300989a4e762091a957edd324b26682b104a) Thanks [@langermank](https://github.com/langermank)! - ActionList Component: Primer CSS Implementation. Adding a new component `ActionList` to learn more checkout the docs [https://primer.style/css/components/action-list](https://primer.style/css/components/action-list).
+
+### Patch Changes
+
+- [#1731](https://github.com/primer/css/pull/1731) [`832e9988`](https://github.com/primer/css/commit/832e99886df66ea5860d725517aeb9d5f178dd58) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating @primer/primitives@6.1.0
+
+## 18.1.0
+
+### Minor Changes
+
+- [#1694](https://github.com/primer/css/pull/1694) [`b0e1687a`](https://github.com/primer/css/commit/b0e1687a562a194ed178fd2dd35588ff5da40847) Thanks [@simurai](https://github.com/simurai)! - Add more Octicon icon support to components
+
+* [#1711](https://github.com/primer/css/pull/1711) [`bc3b94d2`](https://github.com/primer/css/commit/bc3b94d26f08f65d3a4938bafa1b988585f35764) Thanks [@simurai](https://github.com/simurai)! - Add new color `Label`s
+
+### Patch Changes
+
+- [#1710](https://github.com/primer/css/pull/1710) [`6a058ecb`](https://github.com/primer/css/commit/6a058ecbaf7edac6fce4a0d56b4aca46ac6cd4fa) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating [@primer/primitives@6.0.0](https://github.com/primer/primitives/releases/tag/v6.0.0)
+
+* [#1712](https://github.com/primer/css/pull/1712) [`bc502033`](https://github.com/primer/css/commit/bc50203324ba03d4ece7ec6182c185a695626ffb) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating @primer/stylelint-config to 12.1.0
+
+- [#1708](https://github.com/primer/css/pull/1708) [`f7c44c35`](https://github.com/primer/css/commit/f7c44c35f8085f2b793581a901ecb22c5174ef6a) Thanks [@langermank](https://github.com/langermank)! - Storybook: add Label stories
+
+* [#1690](https://github.com/primer/css/pull/1690) [`af5a3ae8`](https://github.com/primer/css/commit/af5a3ae82668d6d04af8c3465302980dcf062cc4) Thanks [@simurai](https://github.com/simurai)! - Update `Subhead` actions
+
+- [#1707](https://github.com/primer/css/pull/1707) [`a997790b`](https://github.com/primer/css/commit/a997790b69f0f3bb5c7a2dfc97c5d5c743bb6a38) Thanks [@maximedegreve](https://github.com/maximedegreve)! - Fix for disabled Safari inputs
+
+* [#1693](https://github.com/primer/css/pull/1693) [`c1ca19d4`](https://github.com/primer/css/commit/c1ca19d4f071a9b12172e4a13bdb96c52a200d47) Thanks [@jasonmacgowan](https://github.com/jasonmacgowan)! - Fix light-theme attr reference in theme docs
+
+- [#1689](https://github.com/primer/css/pull/1689) [`257f68f6`](https://github.com/primer/css/commit/257f68f6539539ab809fbdb4351aefa57173e044) Thanks [@adityatheoctocatdev](https://github.com/adityatheoctocatdev)! - Update all Toast variant icons to use `var(--color-fg-on-emphasis)`
+
+  The only visible change is in the `warning` variant, previously using `var(--color-fg-default)`
+
+## 18.0.2
+
+### Patch Changes
+
+- [#1680](https://github.com/primer/css/pull/1680) [`f013be66`](https://github.com/primer/css/commit/f013be66db59d21d7e2315303b5582169c59c479) Thanks [@privatenumber](https://github.com/privatenumber)! - Fixing broken close span tag in the docs.
+
+* [#1677](https://github.com/primer/css/pull/1677) [`cdb0faa6`](https://github.com/primer/css/commit/cdb0faa606e6fb35ea4a85dd3866bbb33131b76c) Thanks [@simurai](https://github.com/simurai)! - Lower contrast for disabled text
+
 ## 18.0.1
 
 ### Patch Changes

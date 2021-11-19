@@ -1,0 +1,33 @@
+// <ul>
+.ActionList {
+  padding: $spacer-2;
+}
+
+// dividers
+
+.ActionList--divided {
+  .ActionList-item-label::before {
+    position: absolute;
+    top: -$actionList-item-padding-vertical;
+    display: block;
+    width: 100%;
+    height: 1px;
+    content: '';
+    background: var(--color-action-list-item-inline-divider);
+  }
+
+  // hide divider if item is active
+  .ActionList-item--navActive {
+    // stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors
+    .ActionList-item-label::before,
+    + .ActionList-item .ActionList-item-label::before {
+      visibility: hidden;
+    }
+  }
+}
+
+// hide if item is first of type with label::before, or is the first item after a sectionDivider
+.ActionList-item:first-of-type .ActionList-item-label::before,
+.ActionList-sectionDivider + .ActionList-item .ActionList-item-label::before {
+  visibility: hidden;
+}

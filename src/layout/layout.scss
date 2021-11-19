@@ -2,7 +2,7 @@
 
 .Layout {
   display: grid;
-  --Layout-sidebar-width: #{map-get($sidebar-width, "sm")};
+  --Layout-sidebar-width: #{map-get($sidebar-width, 'sm')};
   --Layout-gutter: 16px;
 
   @media (max-width: calc(#{$width-sm} - 1px)) {

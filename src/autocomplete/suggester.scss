@@ -46,9 +46,13 @@
       small {
         color: var(--color-fg-on-emphasis);
       }
+
+      .octicon {
+        color: inherit !important;
+      }
     }
 
-    &[aria-selected="true"],
+    &[aria-selected='true'],
     &.navigation-focus {
       color: var(--color-fg-on-emphasis);
       text-decoration: none;
@@ -56,6 +60,10 @@
 
       small {
         color: var(--color-fg-on-emphasis);
+      }
+
+      .octicon {
+        color: inherit !important;
       }
     }
   }
