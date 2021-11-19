@@ -209,3 +209,21 @@ TopRight.decorators = [
     </div>
   )
 ]
+
+export const Large = PopoverTemplateName.bind({})
+Large.args = {
+  tag: 'h4',
+  headingText: 'Popover heading',
+  size: 'Popover-message--large',
+  caretPosition: 'Popover-message--bottom',
+  messagePosition: 'position-relative',
+  triggerBottom: [<button class="btn btn-primary">Trigger button</button>],
+  primerUtilities: 'p-4 mx-auto mb-2 text-left'
+}
+Large.decorators = [
+  Story => (
+    <div className="position-relative text-center">
+      <Story />
+    </div>
+  )
+]

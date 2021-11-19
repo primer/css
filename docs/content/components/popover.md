@@ -3,39 +3,38 @@ title: Popover
 path: components/popover
 status: Alpha
 source: 'https://github.com/primer/css/tree/main/src/popover'
+storybook: 'https://primer.style/css/storybook/?path=/story/components-popover--playground'
 bundle: popover
 ---
 
 
 Popovers are used to bring attention to specific user interface elements, typically to suggest an action or to guide users through a new experience.
 
-
-
-A popover consist of:
-
-- The block element, `.Popover`, which simply positions its content absolutely atop other body content.
-- The child element, `.Popover-message`, which contains the markup for the intended messaging and the visual "caret."
+| Class | Description |
+| :- | :- |
+| `Popover` | Block element, position absolute |
+| `Popover-message` | Child element, content and caret |
 
 In the examples below, `Popover-message`, in particular, uses a handful of utility classes to style it appropriately. And these are intended to demonstrate the default, go-to presentation for the popover's message. By default, the message's caret is centered on the top edge of the message.
 
 The `Popover-message` element also supports several modifiers. By default, the caret is shown on the top edge of the message, horizontally centered. To change the caret's position, use one of the following modifiers.
 
-- [`.Popover-message--bottom`](#bottom) Places the caret on the bottom edge of the message, horizontally centered.
-- [`.Popover-message--right`](#right): Places the caret on the right edge of the message, vertically centered.
-- [`.Popover-message--left`](#left): Places the caret on the left edge of the message, vertically centered.
+### Variants
 
-Each of these modifiers also support a syntax for adjusting the positioning the caret to the right, left, top, or bottom of its respective edge. That syntax looks like:
-
-- [`.Popover-message--bottom-left`](#bottom-left)
-- [`.Popover-message--bottom-right`](#bottom-right)
-- [`.Popover-message--left-bottom`](#left-bottom)
-- [`.Popover-message--left-top`](#left-top)
-- [`.Popover-message--right-bottom`](#right-bottom)
-- [`.Popover-message--right-top`](#right-top)
-- [`.Popover-message--top-left`](#top-left)
-- [`.Popover-message--top-right`](#top-right)
-
-Lastly, there is an added [`.Popover-message--large`](#large) modifier, which assumes a slightly wider popover message on screens wider than 544px.
+| Class | Description |
+| :- | :- |
+| `Popover-message--bottom` | Caret bottom |
+| `Popover-message--right` | Caret right |
+| `Popover-message--left` | Caret left |
+| `Popover-message--bottom-left` | Caret bottom left |
+| `Popover-message--bottom-right` | Caret bottom right |
+| `Popover-message--left-bottom` | Caret left bottom |
+| `Popover-message--left-top` | Caret left top |
+| `Popover-message--right-bottom` | Caret right bottom |
+| `Popover-message--right-top` | Caret right top |
+| `Popover-message--top-left` | Caret top left |
+| `Popover-message--top-right` | Caret top right |
+| `Popover-message--large` | Larger width on screens wider than 544px |
 
 ### Notes
 
@@ -43,6 +42,8 @@ The samples below include optional markup, like:
 - An outermost container that establishes stacking context (e.g. `position-relative`).
 - A choice piece of user interface (a button, in this case) to relate the popover to.
 - Use of the `Details` and `js-details` family of class names, which interact with JavaScript to demonstrate dismissal of the popover by clicking the nested "Got it!" button.
+
+
 
 ### Basic example
 Defaults to caret oriented top-center.
@@ -67,6 +68,21 @@ Defaults to caret oriented top-center.
   <button class="btn btn-primary">UI</button>
   <div class="Popover right-0 left-0 position-relative">
     <div class="Popover-message Popover-message--large text-left p-4 mt-2 Box color-shadow-large">
+      <h4 class="mb-2">Popover heading</h4>
+      <p>Message about this particular piece of UI.</p>
+      <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
+    </div>
+  </div>
+</div>
+```
+
+### Small screens
+
+```html live title="Small screens"
+<div class="position-relative text-center" style="max-width: 767px;">
+  <button class="btn btn-primary">UI</button>
+  <div class="Popover right-0 left-0 position-relative">
+    <div class="Popover-message text-left p-4 mt-2 Box color-shadow-large">
       <h4 class="mb-2">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
