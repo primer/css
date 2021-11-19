@@ -6,7 +6,7 @@
 @each $breakpoint, $variant in $marketing-position-variants {
   @include breakpoint($breakpoint) {
     @each $scale, $size in $spacer-map-extended {
-      @if ($size != 0 or $variant != "") {
+      @if ($size != 0 or $variant != '') {
         .top#{$variant}-#{$scale}     { top: $size !important; }
         .right#{$variant}-#{$scale}   { right: $size !important; }
         .bottom#{$variant}-#{$scale}  { bottom: $size !important; }
