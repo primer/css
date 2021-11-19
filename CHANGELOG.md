@@ -1,5 +1,23 @@
 # @primer/css
 
+## 19.0.0
+
+### Major Changes
+
+- [#1716](https://github.com/primer/css/pull/1716) [`9b97dc8f`](https://github.com/primer/css/commit/9b97dc8fec28e44d8619aff6da636ecd8e48daf9) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Update marketing buttons (including color mode support)
+
+### Minor Changes
+
+- [#1756](https://github.com/primer/css/pull/1756) [`ece7a3e6`](https://github.com/primer/css/commit/ece7a3e68c65252960b41d6df1b8ff64cb33c93f) Thanks [@heiskr](https://github.com/heiskr)! - Update mark tag to use background-color: var(--color-attention-subtle);
+
+* [#1754](https://github.com/primer/css/pull/1754) [`3838e174`](https://github.com/primer/css/commit/3838e1743aa63bacf0ca241c2a3c4983ba92c5e6) Thanks [@simurai](https://github.com/simurai)! - Add `Box--overlay` styles
+
+- [#1755](https://github.com/primer/css/pull/1755) [`1714778a`](https://github.com/primer/css/commit/1714778af72f5647894fca9561c56dfbccac62df) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating primer/primitives@7.1.0 and adding Light High Contrast theme
+
+### Patch Changes
+
+- [#1746](https://github.com/primer/css/pull/1746) [`9e6b5f56`](https://github.com/primer/css/commit/9e6b5f5671ab60e3a9d452f516fb7b38173f0135) Thanks [@simurai](https://github.com/simurai)! - Remove `Label` bg hack
+
 ## 18.2.0
 
 ### Minor Changes
