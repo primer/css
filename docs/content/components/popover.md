@@ -43,9 +43,9 @@ The samples below include optional markup, like:
 - A choice piece of user interface (a button, in this case) to relate the popover to.
 - Use of the `Details` and `js-details` family of class names, which interact with JavaScript to demonstrate dismissal of the popover by clicking the nested "Got it!" button.
 
+For screen sizes smaller than 767px, `Popover` will appear full-width and without a caret.
 
-
-### Basic example
+## Basic example
 Defaults to caret oriented top-center.
 
 ```html live title="Default (top-center)"
@@ -61,7 +61,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Large example
+## Large example
 
 ```html live title="Large"
 <div class="position-relative text-center">
@@ -76,22 +76,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Small screens
-
-```html live title="Small screens"
-<div class="position-relative text-center" style="max-width: 767px;">
-  <button class="btn btn-primary">UI</button>
-  <div class="Popover right-0 left-0 position-relative">
-    <div class="Popover-message text-left p-4 mt-2 Box color-shadow-large">
-      <h4 class="mb-2">Popover heading</h4>
-      <p>Message about this particular piece of UI.</p>
-      <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
-    </div>
-  </div>
-</div>
-```
-
-### Bottom
+## Bottom
 
 ```html live title="Bottom"
 <div class="position-relative text-center">
@@ -106,7 +91,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Bottom-right
+## Bottom-right
 
 ```html live title="Bottom-right"
 <div class="position-relative text-right pr-2">
@@ -121,7 +106,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Bottom-left
+## Bottom-left
 
 ```html live title="Bottom-left"
 <div class="Popover position-relative pl-2">
@@ -134,7 +119,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Left
+## Left
 
 ```html live title="Left"
 <div class="d-flex flex-justify-center flex-items-center">
@@ -149,7 +134,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Left-bottom
+## Left-bottom
 
 ```html live title="Left-bottom"
 <div class="d-flex flex-justify-center flex-items-end">
@@ -164,7 +149,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Left-top
+## Left-top
 
 ```html live title="Left-top"
 <div class="d-flex flex-justify-center flex-items-start">
@@ -179,7 +164,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Right
+## Right
 
 ```html live title="Right"
 <div class="d-flex flex-justify-center flex-items-center">
@@ -194,7 +179,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Right-bottom
+## Right-bottom
 
 ```html live title="Right-bottom"
 <div class="d-flex flex-justify-center flex-items-end">
@@ -209,7 +194,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Right-top
+## Right-top
 
 ```html live title="Right-top"
 <div class="d-flex flex-justify-center flex-items-start">
@@ -224,7 +209,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Top-left
+## Top-left
 
 ```html live title="Top-left"
 <div class="position-relative pl-2">
@@ -239,7 +224,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Top-right
+## Top-right
 
 ```html live title="Top-right"
 <div class="position-relative text-right pr-2">
