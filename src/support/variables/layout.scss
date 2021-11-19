@@ -150,11 +150,11 @@ $breakpoints: (
 // breakpoints and create both responsive and non-responsive classes in one
 // loop:
 $responsive-variants: (
-  "": "",
-  sm: "-sm",
-  md: "-md",
-  lg: "-lg",
-  xl: "-xl",
+  '': '',
+  sm: '-sm',
+  md: '-md',
+  lg: '-lg',
+  xl: '-xl',
 ) !default;
 
 // responive utility position values

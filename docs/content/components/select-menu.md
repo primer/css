@@ -457,7 +457,7 @@ A `SelectMenu-message` can be used to show different kind of messages to a user.
         </button>
       </header>
       <div class="SelectMenu-list">
-        <div class="SelectMenu-message color-bg-danger-subtle color-fg-danger">Message goes here</div>
+        <div class="SelectMenu-message color-bg-danger color-fg-danger">Message goes here</div>
         <button class="SelectMenu-item" role="menuitem">Item 1</button>
         <button class="SelectMenu-item" role="menuitem">Item 2</button>
         <button class="SelectMenu-item" role="menuitem">Item 3</button>
