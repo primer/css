@@ -3,39 +3,38 @@ title: Popover
 path: components/popover
 status: Alpha
 source: 'https://github.com/primer/css/tree/main/src/popover'
+storybook: 'https://primer.style/css/storybook/?path=/story/components-popover--playground'
 bundle: popover
 ---
 
 
 Popovers are used to bring attention to specific user interface elements, typically to suggest an action or to guide users through a new experience.
 
-
-
-A popover consist of:
-
-- The block element, `.Popover`, which simply positions its content absolutely atop other body content.
-- The child element, `.Popover-message`, which contains the markup for the intended messaging and the visual "caret."
+| Class | Description |
+| :- | :- |
+| `Popover` | Block element, position absolute |
+| `Popover-message` | Child element, content and caret |
 
 In the examples below, `Popover-message`, in particular, uses a handful of utility classes to style it appropriately. And these are intended to demonstrate the default, go-to presentation for the popover's message. By default, the message's caret is centered on the top edge of the message.
 
 The `Popover-message` element also supports several modifiers. By default, the caret is shown on the top edge of the message, horizontally centered. To change the caret's position, use one of the following modifiers.
 
-- [`.Popover-message--bottom`](#bottom) Places the caret on the bottom edge of the message, horizontally centered.
-- [`.Popover-message--right`](#right): Places the caret on the right edge of the message, vertically centered.
-- [`.Popover-message--left`](#left): Places the caret on the left edge of the message, vertically centered.
+### Variants
 
-Each of these modifiers also support a syntax for adjusting the positioning the caret to the right, left, top, or bottom of its respective edge. That syntax looks like:
-
-- [`.Popover-message--bottom-left`](#bottom-left)
-- [`.Popover-message--bottom-right`](#bottom-right)
-- [`.Popover-message--left-bottom`](#left-bottom)
-- [`.Popover-message--left-top`](#left-top)
-- [`.Popover-message--right-bottom`](#right-bottom)
-- [`.Popover-message--right-top`](#right-top)
-- [`.Popover-message--top-left`](#top-left)
-- [`.Popover-message--top-right`](#top-right)
-
-Lastly, there is an added [`.Popover-message--large`](#large) modifier, which assumes a slightly wider popover message on screens wider than 544px.
+| Class | Description |
+| :- | :- |
+| `Popover-message--bottom` | Caret bottom |
+| `Popover-message--right` | Caret right |
+| `Popover-message--left` | Caret left |
+| `Popover-message--bottom-left` | Caret bottom left |
+| `Popover-message--bottom-right` | Caret bottom right |
+| `Popover-message--left-bottom` | Caret left bottom |
+| `Popover-message--left-top` | Caret left top |
+| `Popover-message--right-bottom` | Caret right bottom |
+| `Popover-message--right-top` | Caret right top |
+| `Popover-message--top-left` | Caret top left |
+| `Popover-message--top-right` | Caret top right |
+| `Popover-message--large` | Larger width on screens wider than 544px |
 
 ### Notes
 
@@ -44,7 +43,9 @@ The samples below include optional markup, like:
 - A choice piece of user interface (a button, in this case) to relate the popover to.
 - Use of the `Details` and `js-details` family of class names, which interact with JavaScript to demonstrate dismissal of the popover by clicking the nested "Got it!" button.
 
-### Basic example
+For screen sizes smaller than 767px, `Popover` will appear full-width and without a caret.
+
+## Basic example
 Defaults to caret oriented top-center.
 
 ```html live title="Default (top-center)"
@@ -60,7 +61,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Large example
+## Large example
 
 ```html live title="Large"
 <div class="position-relative text-center">
@@ -75,7 +76,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Bottom
+## Bottom
 
 ```html live title="Bottom"
 <div class="position-relative text-center">
@@ -90,7 +91,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Bottom-right
+## Bottom-right
 
 ```html live title="Bottom-right"
 <div class="position-relative text-right pr-2">
@@ -105,7 +106,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Bottom-left
+## Bottom-left
 
 ```html live title="Bottom-left"
 <div class="Popover position-relative pl-2">
@@ -118,7 +119,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Left
+## Left
 
 ```html live title="Left"
 <div class="d-flex flex-justify-center flex-items-center">
@@ -133,7 +134,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Left-bottom
+## Left-bottom
 
 ```html live title="Left-bottom"
 <div class="d-flex flex-justify-center flex-items-end">
@@ -148,7 +149,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Left-top
+## Left-top
 
 ```html live title="Left-top"
 <div class="d-flex flex-justify-center flex-items-start">
@@ -163,7 +164,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Right
+## Right
 
 ```html live title="Right"
 <div class="d-flex flex-justify-center flex-items-center">
@@ -178,7 +179,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Right-bottom
+## Right-bottom
 
 ```html live title="Right-bottom"
 <div class="d-flex flex-justify-center flex-items-end">
@@ -193,7 +194,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Right-top
+## Right-top
 
 ```html live title="Right-top"
 <div class="d-flex flex-justify-center flex-items-start">
@@ -208,7 +209,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Top-left
+## Top-left
 
 ```html live title="Top-left"
 <div class="position-relative pl-2">
@@ -223,7 +224,7 @@ Defaults to caret oriented top-center.
 </div>
 ```
 
-### Top-right
+## Top-right
 
 ```html live title="Top-right"
 <div class="position-relative text-right pr-2">

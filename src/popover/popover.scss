@@ -8,6 +8,9 @@
   width: 232px;
   margin-right: auto;
   margin-left: auto;
+  background-color: var(--color-canvas-overlay);
+  border: $border-width $border-style var(--color-border-default);
+  border-radius: $border-radius;
 
   // Carets
   &::before,
@@ -34,10 +37,13 @@
     border: 7px $border-style transparent;
     border-bottom-color: var(--color-canvas-overlay);
   }
+}
 
-  // TODO: Refactor so that .Popover is not dependant on .Box
-  &.Box {
-    background-color: var(--color-canvas-overlay);
+// No caret
+.Popover-message--no-caret {
+  &::before,
+  &::after {
+    display: none;
   }
 }
 
@@ -182,8 +188,40 @@
 }
 
 .Popover-message--large {
-
   @include breakpoint(sm) {
     min-width: 320px;
+  }
+}
+
+// Responsive Popover
+// For < md it will show full-width anchored to the bottom
+
+@media (max-width: ($width-md - 1px)) {
+  .Popover {
+    position: fixed;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .Popover-message {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    margin: $spacer-2;
+  }
+
+  // Increase tap area for touch input
+  .Popover-message > .btn-octicon {
+    padding: $spacer-2 + $spacer-1 !important;
+  }
+
+  // Remove caret
+  .Popover-message::after,
+  .Popover-message::before {
+    display: none;
   }
 }
