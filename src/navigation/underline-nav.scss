@@ -1,18 +1,18 @@
 .UnderlineNav {
   display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
   // stylelint-disable-next-line primer/box-shadow
   box-shadow: inset 0 -1px 0 var(--color-border-muted);
   justify-content: space-between;
+  min-height: 48px;
 }
 
 .UnderlineNav-body {
   display: flex;
+  align-items: center;
 }
 
 .UnderlineNav-item {
-  padding: $spacer-2 $spacer-3;
+  padding: 0 $spacer-3;
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 30px;
@@ -21,31 +21,54 @@
   white-space: nowrap;
   background-color: transparent;
   border: 0;
-  // stylelint-disable-next-line primer/borders
-  border-bottom: 2px $border-style transparent;
+  border-radius: $border-radius;
+  position: relative;
 
-  &:hover,
-  &:focus {
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 48px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &:hover {
     color: var(--color-fg-default);
     text-decoration: none;
-    border-bottom-color: var(--color-neutral-muted);
-    outline: 1px dotted transparent; // Support Firefox custom colors
-    outline-offset: -1px;
-    transition: border-bottom-color 0.12s ease-out;
+    background: var(--color-neutral-muted);
+    transition: background 0.12s ease-out;
   }
 
   &.selected,
-  &[role=tab][aria-selected=true],
-  &[aria-current]:not([aria-current=false]) {
+  &[role='tab'][aria-selected='true'],
+  &[aria-current]:not([aria-current='false']) {
     font-weight: $font-weight-bold;
     color: var(--color-fg-default);
-    border-bottom-color: var(--color-primer-border-active);
-    outline: 1px dotted transparent; // Support Firefox custom colors
-    outline-offset: -1px;
+
+    &:after {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      content: '';
+      background: var(--color-primer-border-active);
+      border-radius: $border-radius;
+      right: 50%;
+      // 48px total height / 2 (24px) + 1px
+      bottom: calc(50% - 25px);
+      transform: translate(50%, -50%);
+    }
 
     .UnderlineNav-octicon {
       color: var(--color-fg-muted);
     }
+  }
+
+  // remove global offset
+  &:focus-visible {
+    outline-offset: 0;
   }
 }
 

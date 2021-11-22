@@ -24,3 +24,11 @@
     background-color: $border;
   }
 }
+
+// global focus styles
+
+@mixin focusOutline {
+  z-index: 1;
+  outline: 2px solid var(--color-accent-fg);
+  outline-offset: 2px;
+}
