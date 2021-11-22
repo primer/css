@@ -39,6 +39,7 @@
 
   &:hover {
     box-shadow: var(--color-mktg-btn-shadow-hover) !important;
+    text-decoration: none;
   }
 
   &:focus,
@@ -67,6 +68,13 @@
     &::before {
       opacity: 0.5 !important;
     }
+  }
+
+  &.disabled,
+  &[disabled] {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
   }
 }
 
