@@ -5,29 +5,29 @@ $Layout-divider-color: red !default; // var(--color-border-default)
 
 // Property modifier names
 
-$Layout-prop-wrapper-sizing:      "wrapper-sizing" !default;        // size?
+$Layout-prop-wrapper-sizing:           "wrapper-sizing" !default;           // size?
 
-$Layout-prop-outer-spacing:       "outer-spacing" !default;         // outer-m?
-$Layout-prop-inner-spacing:       "inner-spacing" !default;         // inner-p?
-$Layout-prop-column-gap:          "column-gap" !default;
-$Layout-prop-row-gap:             "row-gap" !default;
+$Layout-prop-outer-spacing:            "outer-spacing" !default;            // outer-m?
+$Layout-prop-inner-spacing:            "inner-spacing" !default;            // inner-p?
+$Layout-prop-column-gap:               "column-gap" !default;
+$Layout-prop-row-gap:                  "row-gap" !default;
 
-$Layout-prop-pane-divider:        "pane-divider" !default;
-$Layout-prop-header-divider:      "header-divider" !default;
-$Layout-prop-footer-divider:      "footer-divider" !default;
+$Layout-prop-pane-divider:             "pane-divider" !default;
+$Layout-prop-header-divider:           "header-divider" !default;
+$Layout-prop-footer-divider:           "footer-divider" !default;
 
-$Layout-prop-pane-position:       "pane-position" !default;         // pane-pos?
-$Layout-prop-pane-width:          "pane-width" !default;            // pane-w?
-$Layout-prop-pane-is-sticky:      "pane-is-sticky" !default;        // pane-sticky?
-$Layout-prop-content-width:       "content-width" !default;         // content-w?
+$Layout-prop-pane-position:            "pane-position" !default;            // pane-pos?
+$Layout-prop-pane-width:               "pane-width" !default;               // pane-w?
+$Layout-prop-pane-is-sticky:           "pane-is-sticky" !default;           // pane-sticky?
+$Layout-prop-content-width:            "content-width" !default;            // content-w?
 
-$Layout-prop-flow-horizontal:     "flow-horizontal" !default;       // flow-h?
-$Layout-prop-responsive-behavior: "responsive" !default;            // r?
-$Layout-prop-responsive-show-pane-first: "responsive-pane-first" !default; // r-show-pane-first?
-$Layout-prop-responsive-at:       "responsive-at" !default;         // r-at?
+$Layout-prop-flow-horizontal:          "flow-horizontal" !default;          // flow-h?
+$Layout-prop-responsive-behavior:      "responsive" !default;               // r?
+$Layout-prop-responsive-pane-position: "responsive-pane-position" !default; // r-pane-pos?
+$Layout-prop-responsive-at:            "responsive-at" !default;            // r-at?
 
-$Layout-prop-has-header:          "has-header" !default;
-$Layout-prop-has-footer:          "has-footer" !default;
+$Layout-prop-has-header:               "has-header" !default;
+$Layout-prop-has-footer:               "has-footer" !default;
 
 
 .#{$Layout} {
@@ -324,29 +324,13 @@ $Layout-prop-has-footer:          "has-footer" !default;
 
     // Region position
 
-    --Layout-template-areas: "content" "pane";
-
     > .#{$Layout}-regions {
       display: grid;
       grid-template-columns: 1fr;
       grid-template-areas: var(--Layout-template-areas);
-      //row-gap: 16px;
-      //border: 2px solid red;
     }
 
-    &.#{$Layout}--#{$Layout-prop-has-header} {
-      --Layout-template-areas: "header" "content" "pane";
-    }
-
-    &.#{$Layout}--#{$Layout-prop-has-footer} {
-      --Layout-template-areas: "content" "pane" "footer";
-    }
-
-    &.#{$Layout}--#{$Layout-prop-has-header}.#{$Layout}--#{$Layout-prop-has-footer} {
-      --Layout-template-areas: "header" "content" "pane" "footer";
-    }
-
-    &.#{$Layout}--#{$Layout-prop-responsive-show-pane-first} {
+    &.#{$Layout}--#{$Layout-prop-responsive-pane-position}-start {
       --Layout-template-areas: "pane" "content";
 
       &.#{$Layout}--#{$Layout-prop-has-header} {
@@ -359,6 +343,22 @@ $Layout-prop-has-footer:          "has-footer" !default;
   
       &.#{$Layout}--#{$Layout-prop-has-header}.#{$Layout}--#{$Layout-prop-has-footer} {
         --Layout-template-areas: "header" "pane" "content" "footer";
+      }
+    }
+
+    &.#{$Layout}--#{$Layout-prop-responsive-pane-position}-end {
+      --Layout-template-areas: "content" "pane";
+
+      &.#{$Layout}--#{$Layout-prop-has-header} {
+        --Layout-template-areas: "header" "content" "pane";
+      }
+  
+      &.#{$Layout}--#{$Layout-prop-has-footer} {
+        --Layout-template-areas: "content" "pane" "footer";
+      }
+  
+      &.#{$Layout}--#{$Layout-prop-has-header}.#{$Layout}--#{$Layout-prop-has-footer} {
+        --Layout-template-areas: "header" "content" "pane" "footer";
       }
     }
 

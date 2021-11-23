@@ -33,8 +33,7 @@ export default {
       description: 'Define the maximum width of the component. `fluid` sets it to full-width. Other values center `Layout` horizontally. Refer to [container utilities](https://primer.style/css/objects/grid#containers) for reference.',
       table: {
         category: 'Wrapper'
-      },
-      default: 1
+      }
     },
     outerSpacing: {
       options: [0, 1, 2],
@@ -115,17 +114,10 @@ export default {
       options: [0, 1, 2, 3],
       mapping: ['xs', 'sm', 'md', 'lg'],
       control: {
-          type: 'inline-radio',
-          labels: ['xs', 'sm', 'md', 'lg']
+        type: 'inline-radio',
+        labels: ['xs', 'sm', 'md', 'lg']
       },
       description: 'Defines in which breakpoint the responsive behavior will kick in',
-      table: {
-        category: 'Responsive'
-      }
-    },
-    responsiveShowPaneFirst: {
-      control: { type: 'boolean' },
-      description: 'Defines if the pane should be shown first in the responsive layout. If `responsiveBehavior` is set to `flowVertical`, `pane` appears above `content`. If set to `splitAsPages`, `pane` will appear as a landing page. Use only in the first page of the section.',
       table: {
         category: 'Responsive'
       }
@@ -137,12 +129,12 @@ export default {
       options: [0, 1],
       mapping: ['start', 'end'],
       control: {
-      type: 'inline-radio',
+        type: 'inline-radio',
         labels: ['start', 'end']
       },
       description: 'Defines the position of the pane. `start` puts the pane on the left, and `end` puts it on the right.',
       table: {
-        category: 'Pane'
+        category: 'Pane',
       }
     },
     paneWidth: {
@@ -164,7 +156,7 @@ export default {
         type: 'inline-radio',
         labels: ['inherit', 'start', 'end']
       },
-      description: 'Defines the position of the pane in the responsive layout. `start` puts the pane above `content`, and `end` puts it below `content`. `inherit` uses the same value from `panePosition`.',
+      description: 'Defines the position of the pane in the responsive variant. `start` puts the pane above `content`, and `end` puts it below `content`. `inherit` uses the same value from `panePosition`.',
       table: {
         category: 'Pane'
       }
@@ -359,7 +351,6 @@ export const LayoutTemplate = ({
   footerChildren
 }) => {
 
-  flowHorizontal = flowHorizontal ?? true;
 
   if (preset === 'default') {
     wrapperSizing = wrapperSizing ?? 'container-xl';
@@ -371,12 +362,16 @@ export const LayoutTemplate = ({
     wrapperSizing = wrapperSizing ?? '';
     innerSpacing = outerSpacing ?? 'normal';
     columnGap = columnGap ?? 'none';
-    rowGap = columnGap ?? 'none';
+    rowGap = rowGap ?? 'none';
     panePosition = panePosition ?? 'start';
     paneWidth = paneWidth ?? 'wide';
     paneDivider = paneDivider ?? true;
     responsiveBehavior = responsiveBehavior ?? 'splitAsPages';
   }
+
+  flowHorizontal = flowHorizontal ?? true;
+
+  paneResponsivePosition = (paneResponsivePosition === 'start' || paneResponsivePosition === 'end') ? paneResponsivePosition : panePosition;
 
 
   return (
@@ -390,15 +385,16 @@ export const LayoutTemplate = ({
     innerSpacing && layoutClassName + '--inner-spacing-' + `${innerSpacing}`,
     columnGap && layoutClassName + '--column-gap-' + `${columnGap}`,
     rowGap && layoutClassName + '--row-gap-' + `${rowGap}`,
-
+    
+    paneWidth && layoutClassName + '--pane-width-' + `${paneWidth}`,
+    panePosition && layoutClassName + '--pane-position-' + `${panePosition}`,
     paneDivider && layoutClassName + '--pane-divider',
+
     headerDivider && layoutClassName + '--header-divider',
     footerDivider && layoutClassName + '--footer-divider',
 
     responsiveBehavior && layoutClassName + '--responsive-' + `${responsiveBehavior}`,
-    responsiveShowPaneFirst && layoutClassName + '--responsive-pane-first',
-    panePosition && layoutClassName + '--pane-position-' + `${panePosition}`,
-    paneWidth && layoutClassName + '--pane-width-' + `${paneWidth}`,
+    paneResponsivePosition && layoutClassName + '--responsive-pane-position-' + `${paneResponsivePosition}`,
     paneIsSticky && layoutClassName + '--pane-is-sticky',
 
     hasHeader && layoutClassName + '--has-header',
@@ -431,7 +427,7 @@ export const LayoutTemplate = ({
         <div className={clsx(
           layoutClassName + '-region',
           layoutClassName + '-pane',
-          paneResponsiveDivider && layoutClassName + '-region--' + paneResponsiveDivider + '-divider'
+          (paneResponsivePosition === 'start' && paneResponsiveDivider) ? layoutClassName + '-region--' + paneResponsiveDivider + '-divider' : null
         )}>
           {paneChildren}
         </div>
@@ -441,9 +437,9 @@ export const LayoutTemplate = ({
       <div className={clsx(
         layoutClassName + '-region',
         layoutClassName + '-content',
-        (panePosition === 'end' && paneResponsiveDivider)
+        (paneResponsivePosition === 'end' && paneResponsiveDivider)
           ? layoutClassName + '-region--' + paneResponsiveDivider + '-divider'
-          : (panePosition === 'start' && footerResponsiveDivider) && layoutClassName + '-region--' + footerResponsiveDivider + '-divider'
+          : (paneResponsivePosition === 'start' && footerResponsiveDivider) && layoutClassName + '-region--' + footerResponsiveDivider + '-divider'
       )}>
         {contentWidth ? (
         <>
@@ -465,7 +461,10 @@ export const LayoutTemplate = ({
       <div className={clsx(
         layoutClassName + '-region',
         layoutClassName + '-pane',
-        footerResponsiveDivider && layoutClassName + '-region--' + footerResponsiveDivider + '-divider'
+        (paneResponsivePosition === 'end' && footerResponsiveDivider)
+          ? layoutClassName + '-region--' + footerResponsiveDivider + '-divider'
+          : (paneResponsivePosition === 'start' && paneResponsiveDivider) ? layoutClassName + '-region--' + paneResponsiveDivider + '-divider' : null
+
       )}>
         {paneChildren}
       </div>}
@@ -497,12 +496,12 @@ Playground.args = {
   footerChildren: 'footer'
 }
 
-export const Default = LayoutTemplate.bind({});
-Default.storyName = '[Preset] Default';
-Default.parameters = {
+export const PresetDefault = LayoutTemplate.bind({});
+PresetDefault.storyName = 'Presets/Default';
+PresetDefault.parameters = {
   layout: 'fullscreen',
 };
-Default.args = {
+PresetDefault.args = {
   preset: 'default',
 
   // Children
@@ -512,12 +511,12 @@ Default.args = {
   footerChildren: 'footer'
 }
 
-export const SplitView = LayoutTemplate.bind({});
-SplitView.storyName = '[Preset] Split view';
-SplitView.parameters = {
+export const PresetSplitView = LayoutTemplate.bind({});
+PresetSplitView.storyName = 'Presets/Split view';
+PresetSplitView.parameters = {
   layout: 'fullscreen',
 };
-SplitView.args = {
+PresetSplitView.args = {
   preset: 'splitView', // splitView
 
   // Children
