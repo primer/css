@@ -61,10 +61,10 @@ export default {
     },
     columnGap: {
       options: [0, 1, 2],
-      mapping: ['normal', 'none', 'condensed'],
+      mapping: ['none', 'normal', 'condensed'],
       control: {
         type: 'inline-radio',
-        labels: ['normal', 'none', 'condensed']
+        labels: ['none', 'normal', 'condensed']
       },
       description: 'Sets the gap between columns to distance them from each other. `normal` sets the gap to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the gap always at 16px. `none` sets the gap to 0.',
       table: {
@@ -73,10 +73,10 @@ export default {
     },
     rowGap: {
       options: [0, 1, 2],
-      mapping: ['normal', 'none', 'condensed'],
+      mapping: ['none', 'normal', 'condensed'],
       control: {
         type: 'inline-radio',
-        labels: ['normal', 'none', 'condensed']
+        labels: ['none', 'normal', 'condensed']
       },
       description: 'Sets the gap below the header and above the footer. `normal` sets the gap to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the gap always at 16px. `none` sets the gap to 0.',
       table: {
@@ -122,6 +122,18 @@ export default {
         category: 'Responsive'
       }
     },
+    responsivePrimaryRegion: {
+      options: [0, 1],
+      mapping: ['content', 'pane'],
+      control: {
+        type: 'inline-radio',
+        labels: ['content', 'pane']
+      },
+      description: 'When `responsiveBehavior` is set to `splitAsPages`, defines which region appears first on small viewports. `content` is default.',
+      table: {
+        category: 'Responsive'
+      }
+    },
 
     // Pane
 
@@ -137,6 +149,18 @@ export default {
         category: 'Pane',
       }
     },
+    paneResponsivePosition: {
+      options: [0, 1, 2],
+      mapping: ['', 'start', 'end'],
+      control: {
+        type: 'inline-radio',
+        labels: ['inherit', 'start', 'end']
+      },
+      description: 'If `responsiveBehavior` is set to `flowVertical`, defines the position of the pane in the responsive variant. `start` puts the pane above `content`, and `end` puts it below `content`. `inherit` uses the same value from `panePosition`.',
+      table: {
+        category: 'Pane'
+      }
+    },
     paneWidth: {
       options: [0, 1, 2],
       mapping: ['', 'narrow', 'wide'],
@@ -145,18 +169,6 @@ export default {
         labels: ['default', 'narrow', 'wide']
       },
       description: 'Defines the width of the pane',
-      table: {
-        category: 'Pane'
-      }
-    },
-    paneResponsivePosition: {
-      options: [0, 1, 2],
-      mapping: ['', 'start', 'end'],
-      control: {
-        type: 'inline-radio',
-        labels: ['inherit', 'start', 'end']
-      },
-      description: 'Defines the position of the pane in the responsive variant. `start` puts the pane above `content`, and `end` puts it below `content`. `inherit` uses the same value from `panePosition`.',
       table: {
         category: 'Pane'
       }
@@ -335,12 +347,10 @@ export const LayoutTemplate = ({
   // Responsive
   flowHorizontal,
   responsiveBehavior,
+  responsivePrimaryRegion,
   responsiveBehaviorAt,
-  responsiveShowPaneFirst,
 
   // Pending options
-  // - divider styles on mobile (including shallow)
-  // - optional header/footer dividers
   // - content/pane light gray backgrounds
 
 
@@ -352,15 +362,16 @@ export const LayoutTemplate = ({
 }) => {
 
 
-  if (preset === 'default') {
+  if (preset === 'default' || !preset) {
     wrapperSizing = wrapperSizing ?? 'container-xl';
     outerSpacing = outerSpacing ?? 'normal';
     columnGap = columnGap ?? 'normal';
+    rowGap = rowGap ?? 'normal';
     panePosition = panePosition ?? 'end';
     responsiveBehavior = responsiveBehavior ?? 'flowVertical';
   } else if (preset === 'splitView') {
     wrapperSizing = wrapperSizing ?? '';
-    innerSpacing = outerSpacing ?? 'normal';
+    innerSpacing = innerSpacing ?? 'normal';
     columnGap = columnGap ?? 'none';
     rowGap = rowGap ?? 'none';
     panePosition = panePosition ?? 'start';
@@ -380,6 +391,8 @@ export const LayoutTemplate = ({
   className={clsx(
     layoutClassName,
     flowHorizontal && layoutClassName + '--flow-horizontal',
+    responsiveBehavior && layoutClassName + '--responsive-' + `${responsiveBehavior}`,
+    responsivePrimaryRegion && layoutClassName + '--responsive-primary-' + `${responsivePrimaryRegion}`,
 
     outerSpacing && layoutClassName + '--outer-spacing-' + `${outerSpacing}`,
     innerSpacing && layoutClassName + '--inner-spacing-' + `${innerSpacing}`,
@@ -388,17 +401,16 @@ export const LayoutTemplate = ({
     
     paneWidth && layoutClassName + '--pane-width-' + `${paneWidth}`,
     panePosition && layoutClassName + '--pane-position-' + `${panePosition}`,
-    paneDivider && layoutClassName + '--pane-divider',
-
-    headerDivider && layoutClassName + '--header-divider',
-    footerDivider && layoutClassName + '--footer-divider',
-
-    responsiveBehavior && layoutClassName + '--responsive-' + `${responsiveBehavior}`,
     paneResponsivePosition && layoutClassName + '--responsive-pane-position-' + `${paneResponsivePosition}`,
+    paneDivider && layoutClassName + '--pane-divider',
     paneIsSticky && layoutClassName + '--pane-is-sticky',
 
+    
     hasHeader && layoutClassName + '--has-header',
-    hasFooter && layoutClassName + '--has-footer'
+    headerDivider && layoutClassName + '--header-divider',
+
+    hasFooter && layoutClassName + '--has-footer',
+    footerDivider && layoutClassName + '--footer-divider'
   )}
 
   // use undefined for values that shouldn't be set if false
@@ -427,7 +439,7 @@ export const LayoutTemplate = ({
         <div className={clsx(
           layoutClassName + '-region',
           layoutClassName + '-pane',
-          (paneResponsivePosition === 'end' && footerResponsiveDivider)
+          ((paneResponsivePosition === 'end' || responsiveBehavior === 'splitAsPages') && footerResponsiveDivider)
             ? layoutClassName + '-region--' + footerResponsiveDivider + '-divider'
             : (paneResponsivePosition === 'start' && paneResponsiveDivider) ? layoutClassName + '-region--' + paneResponsiveDivider + '-divider' : null
         )}>
@@ -441,7 +453,7 @@ export const LayoutTemplate = ({
         layoutClassName + '-content',
         (paneResponsivePosition === 'end' && paneResponsiveDivider)
           ? layoutClassName + '-region--' + paneResponsiveDivider + '-divider'
-          : (paneResponsivePosition === 'start' && footerResponsiveDivider) && layoutClassName + '-region--' + footerResponsiveDivider + '-divider'
+          : ((paneResponsivePosition === 'start' || responsiveBehavior === 'splitAsPages') && footerResponsiveDivider) && layoutClassName + '-region--' + footerResponsiveDivider + '-divider'
       )}>
         {contentWidth ? (
         <>
@@ -463,7 +475,7 @@ export const LayoutTemplate = ({
       <div className={clsx(
         layoutClassName + '-region',
         layoutClassName + '-pane',
-        (paneResponsivePosition === 'end' && footerResponsiveDivider)
+        ((paneResponsivePosition === 'end' || responsiveBehavior === 'splitAsPages') && footerResponsiveDivider)
           ? layoutClassName + '-region--' + footerResponsiveDivider + '-divider'
           : (paneResponsivePosition === 'start' && paneResponsiveDivider) ? layoutClassName + '-region--' + paneResponsiveDivider + '-divider' : null
 
@@ -506,6 +518,32 @@ PresetDefault.parameters = {
 PresetDefault.args = {
   preset: 'default',
 
+  wrapperSizing: 3, // xl
+  outerSpacing: 1, // normal
+  innerSpacing: 0, // none
+  columnGap: 1, // normal
+  rowGap: 1, // normal
+
+  responsiveBehavior: 0, // flowVertical
+  responsiveBehaviorAt: 2, // md
+
+  panePosition: 1, // end
+  paneResponsivePosition: 0, // inherit
+  paneWidth: 0, // default
+  paneDivider: false,
+  paneResponsiveDivider: 0, // none
+  paneIsSticky: false,
+
+  contentWidth: 0, // full
+
+  hasHeader: false,
+  headerDivider: false,
+  headerResponsiveDivider: 0, // none
+
+  hasFooter: false,
+  footerDivider: false,
+  footerResponsiveDivider: 0, // none
+
   // Children
   contentChildren: 'content',
   paneChildren: 'pane',
@@ -519,7 +557,34 @@ PresetSplitView.parameters = {
   layout: 'fullscreen',
 };
 PresetSplitView.args = {
-  preset: 'splitView', // splitView
+  //preset: 'splitView', // splitView
+
+  wrapperSizing: 0, // full
+  outerSpacing: 0, // none
+  innerSpacing: 1, // normal
+  columnGap: 0, // none
+  rowGap: 0, // none
+
+  responsiveBehavior: 1, // splitAsPages
+  responsiveBehaviorAt: 2, // md
+  responsivePrimaryRegion: 0, // content
+
+  panePosition: 0, // start
+  paneResponsivePosition: 0, // inherit
+  paneWidth: 2, // wide
+  paneDivider: true,
+  paneResponsiveDivider: 0, // none
+  paneIsSticky: false,
+
+  contentWidth: 0, // full
+
+  hasHeader: false,
+  headerDivider: true,
+  headerResponsiveDivider: 0, // none
+
+  hasFooter: false,
+  footerDivider: true,
+  footerResponsiveDivider: 0, // none
 
   // Children
   contentChildren: 'content',

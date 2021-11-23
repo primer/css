@@ -5,29 +5,30 @@ $Layout-divider-color: red !default; // var(--color-border-default)
 
 // Property modifier names
 
-$Layout-prop-wrapper-sizing:           "wrapper-sizing" !default;           // size?
+$Layout-prop-wrapper-sizing:            "wrapper-sizing" !default;           // size?
 
-$Layout-prop-outer-spacing:            "outer-spacing" !default;            // outer-m?
-$Layout-prop-inner-spacing:            "inner-spacing" !default;            // inner-p?
-$Layout-prop-column-gap:               "column-gap" !default;
-$Layout-prop-row-gap:                  "row-gap" !default;
+$Layout-prop-outer-spacing:             "outer-spacing" !default;            // outer-m?
+$Layout-prop-inner-spacing:             "inner-spacing" !default;            // inner-p?
+$Layout-prop-column-gap:                "column-gap" !default;
+$Layout-prop-row-gap:                   "row-gap" !default;
 
-$Layout-prop-pane-divider:             "pane-divider" !default;
-$Layout-prop-header-divider:           "header-divider" !default;
-$Layout-prop-footer-divider:           "footer-divider" !default;
+$Layout-prop-pane-divider:              "pane-divider" !default;
+$Layout-prop-header-divider:            "header-divider" !default;
+$Layout-prop-footer-divider:            "footer-divider" !default;
 
-$Layout-prop-pane-position:            "pane-position" !default;            // pane-pos?
-$Layout-prop-pane-width:               "pane-width" !default;               // pane-w?
-$Layout-prop-pane-is-sticky:           "pane-is-sticky" !default;           // pane-sticky?
-$Layout-prop-content-width:            "content-width" !default;            // content-w?
+$Layout-prop-pane-position:             "pane-position" !default;            // pane-pos?
+$Layout-prop-pane-width:                "pane-width" !default;               // pane-w?
+$Layout-prop-pane-is-sticky:            "pane-is-sticky" !default;           // pane-sticky?
+$Layout-prop-content-width:             "content-width" !default;            // content-w?
 
-$Layout-prop-flow-horizontal:          "flow-horizontal" !default;          // flow-h?
-$Layout-prop-responsive-behavior:      "responsive" !default;               // r?
-$Layout-prop-responsive-pane-position: "responsive-pane-position" !default; // r-pane-pos?
-$Layout-prop-responsive-at:            "responsive-at" !default;            // r-at?
+$Layout-prop-flow-horizontal:           "flow-horizontal" !default;          // flow-h?
+$Layout-prop-responsive-behavior:       "responsive" !default;               // r?
+$Layout-prop-responsive-primary-region: "responsive-primary" !default;       // r-primary-region?
+$Layout-prop-responsive-pane-position:  "responsive-pane-position" !default; // r-pane-pos?
+$Layout-prop-responsive-at:             "responsive-at" !default;            // r-at?
 
-$Layout-prop-has-header:               "has-header" !default;
-$Layout-prop-has-footer:               "has-footer" !default;
+$Layout-prop-has-header:                "has-header" !default;
+$Layout-prop-has-footer:                "has-footer" !default;
 
 
 .#{$Layout} {
@@ -320,6 +321,8 @@ $Layout-prop-has-footer:               "has-footer" !default;
 
   // Responsive behavior
 
+  // -- Flow horizontal
+
   &.#{$Layout}--#{$Layout-prop-responsive-behavior}-flowVertical:not(.#{$Layout}--#{$Layout-prop-flow-horizontal}) {
 
     // Region position
@@ -329,6 +332,26 @@ $Layout-prop-has-footer:               "has-footer" !default;
       grid-template-columns: 1fr;
       grid-template-areas: var(--Layout-template-areas);
     }
+
+    // responsive-pane-position: end (default)
+    
+    &:not(.#{$Layout}--#{$Layout-prop-responsive-pane-position}-start) {
+      --Layout-template-areas: "content" "pane";
+
+      &.#{$Layout}--#{$Layout-prop-has-header} {
+        --Layout-template-areas: "header" "content" "pane";
+      }
+  
+      &.#{$Layout}--#{$Layout-prop-has-footer} {
+        --Layout-template-areas: "content" "pane" "footer";
+      }
+  
+      &.#{$Layout}--#{$Layout-prop-has-header}.#{$Layout}--#{$Layout-prop-has-footer} {
+        --Layout-template-areas: "header" "content" "pane" "footer";
+      }
+    }
+
+    // responsive-pane-position: start
 
     &.#{$Layout}--#{$Layout-prop-responsive-pane-position}-start {
       --Layout-template-areas: "pane" "content";
@@ -345,25 +368,66 @@ $Layout-prop-has-footer:               "has-footer" !default;
         --Layout-template-areas: "header" "pane" "content" "footer";
       }
     }
+  }
 
-    &.#{$Layout}--#{$Layout-prop-responsive-pane-position}-end {
-      --Layout-template-areas: "content" "pane";
+  // -- Split as pages
 
-      &.#{$Layout}--#{$Layout-prop-has-header} {
-        --Layout-template-areas: "header" "content" "pane";
+  &.#{$Layout}--#{$Layout-prop-responsive-behavior}-splitAsPages:not(.#{$Layout}--#{$Layout-prop-flow-horizontal}) {
+
+       // Region position
+
+       > .#{$Layout}-regions {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: var(--Layout-template-areas);
       }
-  
-      &.#{$Layout}--#{$Layout-prop-has-footer} {
-        --Layout-template-areas: "content" "pane" "footer";
-      }
-  
-      &.#{$Layout}--#{$Layout-prop-has-header}.#{$Layout}--#{$Layout-prop-has-footer} {
-        --Layout-template-areas: "header" "content" "pane" "footer";
-      }
-    }
 
-    // Responsive divider
+      &.#{$Layout}--#{$Layout-prop-responsive-primary-region}-content {
 
+        --Layout-template-areas: "content";
+
+        .#{$Layout}-pane {
+          display: none;
+        }
+
+        &.#{$Layout}--#{$Layout-prop-has-header} {
+          --Layout-template-areas: "header" "content";
+        }
+    
+        &.#{$Layout}--#{$Layout-prop-has-footer} {
+          --Layout-template-areas: "content" "footer";
+        }
+    
+        &.#{$Layout}--#{$Layout-prop-has-header}.#{$Layout}--#{$Layout-prop-has-footer} {
+          --Layout-template-areas: "header" "content" "footer";
+        }
+      }
+
+      &.#{$Layout}--#{$Layout-prop-responsive-primary-region}-pane {
+
+        --Layout-template-areas: "pane";
+
+        .#{$Layout}-content {
+          display: none;
+        }
+
+        &.#{$Layout}--#{$Layout-prop-has-header} {
+          --Layout-template-areas: "header" "pane";
+        }
+    
+        &.#{$Layout}--#{$Layout-prop-has-footer} {
+          --Layout-template-areas: "content" "pane";
+        }
+    
+        &.#{$Layout}--#{$Layout-prop-has-header}.#{$Layout}--#{$Layout-prop-has-footer} {
+          --Layout-template-areas: "header" "pane" "footer";
+        }
+      }
+  }
+
+  // Responsive divider
+
+  &.#{$Layout}:not(.#{$Layout}--#{$Layout-prop-flow-horizontal}) {
     .#{$Layout}-region--line-divider {
       position: relative;
       padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
@@ -401,27 +465,6 @@ $Layout-prop-has-footer:               "has-footer" !default;
     }
   }
 
-  // TODO
-  // Remember to remove dividers if `splitAsPages` on `Pane`
-
-  /*
-  &.#{$Layout}--#{$Layout-prop-responsive-behavior}-flowVertical:not(.#{$Layout}--#{$Layout-prop-flow-horizontal}) {
-    // flow vertically on mobile
-
-    > .#{$Layout}-regions {
-      row-gap: var(--Layout-row-gap);
-    }
-
-    .#{$Layout}-header, .#{$Layout}-content, .#{$Layout}-pane, .#{$Layout}-footer {
-      margin-bottom: var(--Layout-row-gap);
-    }
-  }
-
-  &.#{$Layout}--#{$Layout-prop-responsive-behavior}-splitAsPages:not(.#{$Layout}--#{$Layout-prop-flow-horizontal}) {
-    // split as pages on mobile
-    //background: yellow;
-  }
-  */
 
   // Regions
 
