@@ -427,7 +427,9 @@ export const LayoutTemplate = ({
         <div className={clsx(
           layoutClassName + '-region',
           layoutClassName + '-pane',
-          (paneResponsivePosition === 'start' && paneResponsiveDivider) ? layoutClassName + '-region--' + paneResponsiveDivider + '-divider' : null
+          (paneResponsivePosition === 'end' && footerResponsiveDivider)
+            ? layoutClassName + '-region--' + footerResponsiveDivider + '-divider'
+            : (paneResponsivePosition === 'start' && paneResponsiveDivider) ? layoutClassName + '-region--' + paneResponsiveDivider + '-divider' : null
         )}>
           {paneChildren}
         </div>
