@@ -32,3 +32,22 @@
   outline: 2px solid var(--color-accent-fg);
   outline-offset: 2px;
 }
+
+@mixin min-touch-target {
+  content: '';
+  position: absolute;
+  background: rgba(255, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  min-height: 32px;
+  min-width: 32px;
+
+  @media (pointer: coarse) {
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
