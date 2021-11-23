@@ -26,10 +26,10 @@ export default {
       }
     },
     variant: {
-      options: [0, 1, 2], // iterator
+      options: [0, 1], // iterator
       mapping: ['', 'ActionList-item--danger'], // values
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['default', 'danger']
       },
       defaultValue: '',
@@ -64,7 +64,7 @@ export default {
       options: [0, 1, 2], // iterator
       mapping: ['ActionList-content--visual16', 'ActionList-content--visual20', 'ActionList-content--visual24'], // values
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['16px', '20px', '24px']
       },
       description: 'leading visual width',
@@ -102,7 +102,7 @@ export default {
     },
     ariaCurrent: {
       options: ['location', 'page'],
-      control: {type: 'select'},
+      control: {type: 'inline-radio'},
       description: 'location for anchor links, page for global page navigation',
       table: {
         category: 'HTML'
@@ -121,7 +121,7 @@ export default {
       options: [0, 1], // iterator
       mapping: ['', 'ActionList-item-descriptionWrap--inline'], // values
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['block', 'inline']
       },
       description: 'block (default), inline',
@@ -232,14 +232,14 @@ export const ListItemTemplate = ({
           ? undefined
           : href
           ? 'none'
-          : 'menuitem'
+          : undefined
       }
       id={id}
       aria-haspopup={collapsible ? 'true' : undefined}
       aria-expanded={collapsible ? (isCollapsed ? 'false' : 'true') : undefined}
       aria-checked={singleSelect || multiSelect ? (isChecked ? 'true' : 'false') : undefined}
       aria-selected={listSingleSelect || listMultiSelect ? (isChecked ? 'true' : 'false') : undefined}
-      aria-disabled={ariaDisabled}
+      aria-disabled={ariaDisabled ? 'true' : undefined}
     >
       {href ? (
         <>
@@ -337,92 +337,94 @@ export const ListItemTemplate = ({
         </>
       ) : (
         <>
-          <span
-            className={clsx(
-              text && 'ActionList-content',
-              size && `${size}`,
-              (leadingVisual || trailingVisual) && description && 'ActionList-content--blockDescription',
-              leadingVisual && leadingVisualSize && `${leadingVisualSize}`
-            )}
-          >
-            {(leadingAction || singleSelect || multiSelect || listSingleSelect || listMultiSelect) && (
-              <span className="ActionList-item-action ActionList-item-action--leading">
-                {(singleSelect || listSingleSelect) && (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    height="16"
-                    className="ActionList-item-singleSelectCheckmark"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"
-                    ></path>
-                  </svg>
-                )}
-                {(multiSelect || listMultiSelect) && (
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                    focusable="false"
-                    className="ActionList-item-multiSelectIcon"
-                  >
-                    <rect x="2" y="2" width="12" height="12" rx="4" className="ActionList-item-multiSelectIconRect" />
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.03231 8.69862C3.84775 8.20646 4.49385 7.77554 4.95539 7.77554C5.41693 7.77554 6.80154 9.85246 6.80154 9.85246C6.80154 9.85246 10.2631 4.314 10.4938 4.08323C10.7246 3.85246 11.8785 4.08323 11.4169 5.00631C11.0081 5.82388 7.26308 11.4678 7.26308 11.4678C7.26308 11.4678 6.80154 12.1602 6.34 11.4678C5.87846 10.7755 4.21687 9.19077 4.03231 8.69862Z"
-                      className="ActionList-item-multiSelectCheckmark"
-                    />
-                  </svg>
-                )}
-                {leadingAction}
-              </span>
-            )}
-            {leadingVisual && (
-              <span
-                className="ActionList-item-visual ActionList-item-visual--leading"
-                dangerouslySetInnerHTML={{__html: leadingVisual}}
-              />
-            )}
-            {description && (
-              <span className={clsx('ActionList-item-descriptionWrap', `${descriptionVariant}`)}>
-                <span className="ActionList-item-label">{text}</span>
-                <span className="ActionList-item-description">{description}</span>
-              </span>
-            )}
-            {!description && text && <span className="ActionList-item-label">{text}</span>}
-
-            {trailingVisual && (
-              <span
-                className="ActionList-item-visual ActionList-item-visual--trailing"
-                dangerouslySetInnerHTML={{__html: trailingVisual}}
-              />
-            )}
-            {trailingAction ||
-              (collapsible && (
-                <span className="ActionList-item-action ActionList-item-action--trailing">
-                  {collapsible && (
+          {text && (
+            <span
+              className={clsx(
+                text && 'ActionList-content',
+                size && `${size}`,
+                (leadingVisual || trailingVisual) && description && 'ActionList-content--blockDescription',
+                leadingVisual && leadingVisualSize && `${leadingVisualSize}`
+              )}
+            >
+              {(leadingAction || singleSelect || multiSelect || listSingleSelect || listMultiSelect) && (
+                <span className="ActionList-item-action ActionList-item-action--leading">
+                  {(singleSelect || listSingleSelect) && (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 16 16"
                       width="16"
                       height="16"
-                      className="ActionList-item-collapseIcon"
+                      className="ActionList-item-singleSelectCheckmark"
                     >
                       <path
                         fill-rule="evenodd"
-                        d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                        d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"
                       ></path>
                     </svg>
                   )}
-                  {trailingAction}
+                  {(multiSelect || listMultiSelect) && (
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      focusable="false"
+                      className="ActionList-item-multiSelectIcon"
+                    >
+                      <rect x="2" y="2" width="12" height="12" rx="4" className="ActionList-item-multiSelectIconRect" />
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.03231 8.69862C3.84775 8.20646 4.49385 7.77554 4.95539 7.77554C5.41693 7.77554 6.80154 9.85246 6.80154 9.85246C6.80154 9.85246 10.2631 4.314 10.4938 4.08323C10.7246 3.85246 11.8785 4.08323 11.4169 5.00631C11.0081 5.82388 7.26308 11.4678 7.26308 11.4678C7.26308 11.4678 6.80154 12.1602 6.34 11.4678C5.87846 10.7755 4.21687 9.19077 4.03231 8.69862Z"
+                        className="ActionList-item-multiSelectCheckmark"
+                      />
+                    </svg>
+                  )}
+                  {leadingAction}
                 </span>
-              ))}
-          </span>
+              )}
+              {leadingVisual && (
+                <span
+                  className="ActionList-item-visual ActionList-item-visual--leading"
+                  dangerouslySetInnerHTML={{__html: leadingVisual}}
+                />
+              )}
+              {description && (
+                <span className={clsx('ActionList-item-descriptionWrap', `${descriptionVariant}`)}>
+                  <span className="ActionList-item-label">{text}</span>
+                  <span className="ActionList-item-description">{description}</span>
+                </span>
+              )}
+              {!description && text && <span className="ActionList-item-label">{text}</span>}
+
+              {trailingVisual && (
+                <span
+                  className="ActionList-item-visual ActionList-item-visual--trailing"
+                  dangerouslySetInnerHTML={{__html: trailingVisual}}
+                />
+              )}
+              {trailingAction ||
+                (collapsible && (
+                  <span className="ActionList-item-action ActionList-item-action--trailing">
+                    {collapsible && (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        height="16"
+                        className="ActionList-item-collapseIcon"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
+                        ></path>
+                      </svg>
+                    )}
+                    {trailingAction}
+                  </span>
+                ))}
+            </span>
+          )}
           {children}
         </>
       )}
@@ -433,8 +435,11 @@ export const ListItemTemplate = ({
 export const Playground = ListItemTemplate.bind({})
 Playground.decorators = [
   Story => (
-    <ul className="ActionList" role="menu">
+    <ul className="ActionList">
       <Story />
     </ul>
   )
 ]
+Playground.args = {
+  id: null
+}

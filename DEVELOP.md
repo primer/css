@@ -41,6 +41,20 @@ The [docs directory](../docs/) contains all of the documentation files in our do
 ### Code blocks
 All `html` fenced code blocks in `src/**/*.md` will be rendered as stories and listed under the relevant module's name in the left-hand nav. File changes should trigger a live reload automatically (after a brief delay).
 
+## Storybook
+
+Primer CSS Storybook is used for designing and prototyping components. Stories are written in HTML and leverage the Storybook API for configuring conditional logic. 
+
+```sh
+npm storybook
+```
+
+### The Storybook directory
+Storybook configuration files live in [.storybook](../docs/.storybook). Addons and additional global config can be added to [main.js](../docs/.storybook/main.js) or [preview.js](../docs/.storybook/preview.js)
+
+### Stories
+Stories are individual `.jsx` or `.mdx` files that contain component HTML for prototyping, typically showcasing all possible variations of a component. Stories can be found in the [stories directory](../docs/src/stories/components) and are organized by component. Storybook will build and deploy a preview on any open Pull Request.
+
 ## Scripts
 Our [`package.json`](package.json) houses a collection of [run-scripts] that we use to maintain, test, build, and publish Primer CSS. Run `npm run <script>` with any of the following values for `<script>`:
 
@@ -51,6 +65,7 @@ Our [`package.json`](package.json) houses a collection of [run-scripts] that we 
 * `now-build` and `now-start` are run on [Now] to build and start the docs site server. `now-test` runs them both in order.
 * `start` runs the documentation site locally (alias: `dev`).
 * `test` runs our test suite.
+* `storybook` runs storybook local development server.
 
 The above list may not always be up-to-date. You can list all of the available scripts by calling `npm run` with no other arguments.
 

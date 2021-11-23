@@ -6,7 +6,7 @@ import {Meta, Story, Canvas} from '@storybook/addon-docs'
 
 An action list is a vertical list of interactive <strong>actions</strong> or <strong>options</strong>.
 
-|         |                                       |
+| Term    | Context                               |
 | :------ | :------------------------------------ |
 | Actions | links `a href` or events `onclick`    |
 | Options | checkbox role `checked` or `selected` |
@@ -31,11 +31,11 @@ In all cases, the basic structure is as follows:
 
 Pay close attention to `role` attributes throughout the documentation, and find the use case that best suits your needs.
 
-### Menu
+### Dropdown Menu
 
-[Menu spec](https://www.w3.org/TR/wai-aria-practices-1.1/#menu)
+[Menu spec](https://www.w3.org/TR/wai-aria-practices-1.2/examples/menu-button/menu-button-links.html)
 
-Note: JS is required for to provide keyboard handling along with [tab-index](https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_roving_tabindex)
+The `menu` role should be reserved for dropdown menu scenarios
 
 | Element | Role                            |
 | :------ | :------------------------------ |
@@ -50,21 +50,13 @@ Note: JS is required for to provide keyboard handling along with [tab-index](htt
   <Story id="components-actionlist-patterns--menu-with-section-divider" />
 </Canvas>
 
-### Navigational menu
+### Navigational list of links
 
-[Menu spec](https://www.w3.org/TR/wai-aria-practices-1.1/#menu)
+[Navigation spec](https://www.w3.org/TR/wai-aria-practices-1.2/examples/landmarks/navigation.html)
 
-Note: JS is required for to provide keyboard handling along with [tab-index](https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_roving_tabindex)
+Wrap `ActionList` in a `nav` element for site or page navigation, like a sidebar
 
-| Element | Role                                     |
-| :------ | :--------------------------------------- |
-| `nav`   | no role needed                           |
-| `ul`    | `role="menu"`                            |
-| `li`    | no child link `role="menuitem"`          |
-| `li`    | has child link `role="none"`             |
-| `li`    | nested menu `aria-haspopup="true"`       |
-| `li`    | nested menu `aria-expanded="true/false"` |
-| `a`     | `role="menuitem"`                        |
+No roles needed
 
 #### Example
 
@@ -72,17 +64,15 @@ Note: JS is required for to provide keyboard handling along with [tab-index](htt
   <Story id="components-actionlist-patterns--nav-with-sub-items" />
 </Canvas>
 
-### Multi select menu
+### Multi select dropdown menu
 
-[Menu spec](https://www.w3.org/TR/wai-aria-practices-1.1/examples/menubar/menubar-2/menubar-2.html)
+[Menu spec](https://www.w3.org/TR/wai-aria-practices-1.2/examples/menubar/menubar-2/menubar-2.html)
 
-Note: JS is required for to provide keyboard handling along with [tab-index](https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_roving_tabindex)
-
-| Element | Role                                    |
-| :------ | :-------------------------------------- |
-| `ul`    | `role="menu"`                           |
-| `li`    | no child link `role="menuitemcheckbox"` |
-| `li`    | `aria-checked="true/false"`             |
+| Element | Role                        |
+| :------ | :-------------------------- |
+| `ul`    | `role="menu"`               |
+| `li`    | `role="menuitemcheckbox"`   |
+| `li`    | `aria-checked="true/false"` |
 
 #### Example
 
@@ -90,17 +80,15 @@ Note: JS is required for to provide keyboard handling along with [tab-index](htt
   <Story id="components-actionlist-patterns--menu-multi-select" />
 </Canvas>
 
-### Single select menu
+### Single select dropdown menu
 
-[Menu spec](https://www.w3.org/TR/wai-aria-practices-1.1/examples/menubar/menubar-2/menubar-2.html)
+[Menu spec](https://www.w3.org/TR/wai-aria-practices-1.2/examples/menubar/menubar-2/menubar-2.html)
 
-Note: JS is required for to provide keyboard handling along with [tab-index](https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_roving_tabindex)
-
-| Element | Role                                 |
-| :------ | :----------------------------------- |
-| `ul`    | `role="menu"`                        |
-| `li`    | no child link `role="menuitemradio"` |
-| `li`    | `aria-checked="true/false"`          |
+| Element | Role                        |
+| :------ | :-------------------------- |
+| `ul`    | `role="menu"`               |
+| `li`    | `role="menuitemradio"`      |
+| `li`    | `aria-checked="true/false"` |
 
 #### Example
 
@@ -110,9 +98,7 @@ Note: JS is required for to provide keyboard handling along with [tab-index](htt
 
 ### Multi select listbox
 
-[Menu spec](https://www.w3.org/TR/wai-aria-practices-1.1/#Listbox)
-
-Note: JS is required for to provide [keyboard handling](https://www.w3.org/TR/wai-aria-practices-1.1/#listbox_kbd_interaction)
+[Listbox spec](https://www.w3.org/TR/wai-aria-practices-1.2/examples/listbox/listbox-collapsible.html)
 
 | Element | Role                          |
 | :------ | :---------------------------- |
@@ -129,7 +115,7 @@ Note: JS is required for to provide [keyboard handling](https://www.w3.org/TR/wa
 
 ### Single select listbox
 
-[Menu spec](https://www.w3.org/TR/wai-aria-practices-1.1/#Listbox)
+[Listbox spec](https://www.w3.org/TR/wai-aria-practices-1.2/examples/listbox/listbox-collapsible.html)
 
 Note: JS is required for to provide [keyboard handling](https://www.w3.org/TR/wai-aria-practices-1.1/#listbox_kbd_interaction)
 
