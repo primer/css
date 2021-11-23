@@ -1,35 +1,22 @@
 import React from 'react'
 import clsx from 'clsx'
-// import { StoryTemplateName } from './OtherStoryFile.stories' // import stories for component compositions
+import {UnderlineNavItemTemplate} from './UnderlineNavItem.stories'
 
 export default {
   title: 'Components/Navigation/UnderlineNav',
   excludeStories: ['UnderlineNavTemplate'],
   layout: 'padded',
   argTypes: {
-    booleanExample: {
-      control: {type: 'boolean'},
-      description: 'true/false toggle to controls',
-      table: {
-        category: 'Pick one: CSS, HTML, Interactive'
-      }
-    },
-    radioExample: {
-      options: ['string1', 'string2', 'string3', 'string4'],
+    variant: {
+      options: [0, 1, 2], // iterator
+      mapping: ['', 'UnderlineNav--right', 'UnderlineNav--full'], // values
       control: {
-        type: 'inline-radio'
+        type: 'inline-radio',
+        labels: ['default', 'align-right', 'fullwidth']
       },
-      description: 'radio buttons mapping to strings (example: use for variant class names)',
+      description: 'nav positioning options',
       table: {
-        category: 'Pick one: CSS, HTML, Interactive'
-      }
-    },
-    stringExample: {
-      name: 'stringExample',
-      type: 'string',
-      description: 'text box control',
-      table: {
-        category: 'Pick one: CSS, HTML, Interactive'
+        category: 'CSS'
       }
     },
     children: {
@@ -37,38 +24,50 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    actionStart: {
+      description: 'action to left of nav',
+      table: {
+        category: 'HTML'
+      }
+    },
+    actionEnd: {
+      description: 'action to right of nav',
+      table: {
+        category: 'HTML'
+      }
     }
   }
 }
 
-// build every component case here in the template (private api)
-export const UnderlineNavTemplate = ({booleanExample, radioExample, stringExample, children}) => (
-  <nav class="UnderlineNav">
-    <div class="UnderlineNav-body" role="tablist">
-      <button class="UnderlineNav-item" role="tab" type="button" aria-selected="true">
-        Item 1
-      </button>
-      <button class="UnderlineNav-item" role="tab" type="button">
-        Item 2
-      </button>
-      <button class="UnderlineNav-item" role="tab" type="button">
-        Item 3
-      </button>
-      <button class="UnderlineNav-item" role="tab" type="button">
-        Item 4
-      </button>
-    </div>
-  </nav>
+export const UnderlineNavTemplate = ({variant, children, actionStart, actionEnd}) => (
+  <>
+    <nav className={clsx('UnderlineNav', variant && `${variant}`)}>
+      {actionStart}
+      {variant === 'UnderlineNav--full' ? (
+        <div class="container-lg UnderlineNav-container">
+          <div class="UnderlineNav-body" role="tablist">
+            {children}
+          </div>
+        </div>
+      ) : (
+        <div class="UnderlineNav-body" role="tablist">
+          {children}
+        </div>
+      )}
+      {actionEnd}
+    </nav>
+  </>
 )
 
-// create a "playground" demo page that may set some defaults and allow story to access component controls
 export const Playground = UnderlineNavTemplate.bind({})
 Playground.args = {
-  stringExample: 'Default text',
-  booleanExample: false
-  //   children: (
-  //     <>
-  //       <StoryTemplateName {...StoryTemplateName.args} />
-  //     </>
-  //   )
+  variant: 0,
+  children: (
+    <>
+      <UnderlineNavItemTemplate label="Item" semanticItemType="button" selected />
+      <UnderlineNavItemTemplate label="Item" semanticItemType="button" />
+      <UnderlineNavItemTemplate label="Item" semanticItemType="button" />
+    </>
+  )
 }
