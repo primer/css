@@ -33,7 +33,8 @@
   outline-offset: 2px;
 }
 
-@mixin minTouchTarget($min-height: 32px, $min-width) {
+// if min-width is undefined, return only min-height
+@mixin minTouchTarget($min-height: 32px, $min-width: '') {
   content: '';
   position: absolute;
   width: 100%;
@@ -43,7 +44,7 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 
-  @if $min-width != 0 {
+  @if $min-width != '' {
     min-width: $min-width;
   }
 }
