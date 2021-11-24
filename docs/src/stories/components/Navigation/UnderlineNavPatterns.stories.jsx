@@ -78,3 +78,21 @@ ActionLeft.args = {
   ),
   actionStart: <UnderlineNavActionTemplate label="Action" semanticItemType="button" />
 }
+
+export const Overflow = UnderlineNavTemplate.bind({})
+Overflow.args = {
+  children: (
+    <>
+      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item" semanticItemType="link" selected />
+      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
+    </>
+  )
+}
