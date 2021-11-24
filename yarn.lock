@@ -970,14 +970,15 @@
   resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.1.0.tgz#944151afb8b0e8ffd33c1cfdc4f873b5dd46cbe5"
   integrity sha512-XVM535ieY+ohh82oMCZZwlebsnNtJORR5vpiUk/OLT1KX7pr2aRiSbitFwZ3umo0dw/L5tr6ebSJjRCXLu8UJg==
 
-"@primer/stylelint-config@0.0.0-2021102402654":
-  version "0.0.0-2021102402654"
-  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-0.0.0-2021102402654.tgz#45252126ad059d2381efa5e576b6a14c3be75c1d"
-  integrity sha512-Xc1DximDIsj+vQ4mbkzgBeVrwAIDIpVjTj+PAyHGoIwksa4o/voTmNnEOF/Tp9mrqYLBVI/2HEk6grKpoi3D+g==
+"@primer/stylelint-config@0.0.0-2021102417292":
+  version "0.0.0-2021102417292"
+  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-0.0.0-2021102417292.tgz#3af1691e596ae4a2e3e20826181150ae77bb9311"
+  integrity sha512-PJNT+eOUIuv34jjOebtvGQ/Pgj16jj1L1zLWdg7RmSzaF98bQQRKsVVlmlfD/hfv+mbnj5HWIAdMCfqdajqNQA==
   dependencies:
     anymatch "^3.1.1"
     globby "^11.0.1"
     lodash.kebabcase "^4.1.1"
+    postcss-scss "^4.0.2"
     postcss-value-parser "^4.0.2"
     string.prototype.matchall "^4.0.2"
     stylelint-config-standard "24.0.0"
@@ -4574,7 +4575,7 @@ postcss-safe-parser@^6.0.0:
   resolved "https://registry.yarnpkg.com/postcss-safe-parser/-/postcss-safe-parser-6.0.0.tgz#bb4c29894171a94bc5c996b9a30317ef402adaa1"
   integrity sha512-FARHN8pwH+WiS2OPCxJI8FuRJpTVnn6ZNFiqAM2aeW2LwTHWWmWgIyKC6cUo0L8aeKiF/14MNvnpls6R2PBeMQ==
 
-postcss-scss@4.0.2:
+postcss-scss@4.0.2, postcss-scss@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/postcss-scss/-/postcss-scss-4.0.2.tgz#39ddcc0ab32f155d5ab328ee91353d67a52d537b"
   integrity sha512-xfdkU128CkKKKVAwkyt0M8OdnelJ3MRcIRAPPQkRpoPeuzWY3RIeg7piRCpZ79MK7Q16diLXMMAD9dN5mauPlQ==
@@ -5270,7 +5271,7 @@ stylelint-order@^5.0.0:
     postcss "^8.3.11"
     postcss-sorting "^7.0.1"
 
-stylelint-scss@4.0.0, stylelint-scss@^4.0.0:
+stylelint-scss@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-4.0.0.tgz#4901ced92b9c68e37649799a39defbd5f2ac5bcd"
   integrity sha512-lIRhPqtI6I065EJ6aI4mWKsmQt8Krnu6aF9XSL9s8Nd2f/cDKImST0T9TfjnUul3ReKYWozkG9dlpNTZH2FB9w==

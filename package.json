@@ -42,7 +42,7 @@
     "@changesets/cli": "2.18.0",
     "@github/prettier-config": "0.0.4",
     "@koddsson/postcss-sass": "5.0.0",
-    "@primer/stylelint-config": "0.0.0-2021102402654",
+    "@primer/stylelint-config": "0.0.0-2021102417292",
     "autoprefixer": "10.4.0",
     "cssstats": "4.0.2",
     "eslint": "8.3.0",
@@ -64,7 +64,6 @@
     "prettier": "2.4.1",
     "semver": "7.3.5",
     "stylelint": "14.1.0",
-    "stylelint-scss": "4.0.0",
     "table": "6.7.3"
   },
   "jest": {
