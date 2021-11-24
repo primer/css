@@ -75,10 +75,10 @@ export default {
     },
     listPadding: {
       options: [0, 1], // iterator
-      mapping: ['', 'ActionList--inset'], // values
+      mapping: ['', 'ActionList--full'], // values
       control: {
         type: 'inline-radio',
-        labels: ['default', 'full-bleed']
+        labels: ['inset', 'full-bleed']
       },
       description: 'ActionList includes 8px padding by default, full-bleed removes all padding',
       table: {
