@@ -20,11 +20,9 @@ export default {
       }
     },
     role: {
-      options: [0, 1, 2, 3, 4, 5, 6], // iterator
-      mapping: ['menu', 'group', 'listbox', 'menubar', 'none', 'radiogroup', 'list'], // values
+      options: [null, 'menu', 'group', 'listbox', 'menubar', 'none', 'radiogroup', 'list'],
       control: {
-        type: 'select',
-        labels: ['menu', 'group', 'listbox', 'menubar', 'none', 'radiogroup', 'list']
+        type: 'inline-radio'
       },
       description: 'Semantic list role',
       table: {
@@ -69,7 +67,7 @@ export default {
     },
     listboxMultiSelect: {
       name: 'listboxMultiSelect',
-      type: 'string',
+      type: 'boolean',
       description: 'If ActionList has listbox role + multiselect children',
       table: {
         category: 'HTML'
@@ -100,10 +98,12 @@ export const ListTemplate = ({
 
 export const Playground = ListTemplate.bind({})
 Playground.args = {
-  role: 'menu',
   ariaLabel: 'Menu description',
   subGroup: false,
   showDividers: false,
+  listboxMultiSelect: false,
+  ariaLabelledBy: '',
+  groupId: '',
   children: (
     <>
       <ListItemTemplate text="Action list item" />
