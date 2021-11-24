@@ -777,3 +777,49 @@ NavWithSubItemsLeadingVisual16pxSubSections.decorators = [
     </nav>
   )
 ]
+
+export const ActionListFullBleed = ListTemplate.bind({})
+ActionListFullBleed.storyName = '[List] Full bleed Action List inside box'
+ActionListFullBleed.args = {
+  ...ListTemplate.args,
+  ...ListItemTemplate.args,
+  role: undefined,
+  ariaLabel: 'Main menu description',
+  showDividers: false,
+  listPadding: 'ActionList--inset',
+  children: (
+    <>
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+      <ListItemTemplate
+        listSemantic
+        collapsible
+        containsSubItem
+        text="Nav Item"
+        children={
+          <ListTemplate
+            subGroup
+            ariaLabel="Sub nav description"
+            children={
+              <>
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic ariaCurrent="page" />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic />
+              </>
+            }
+          />
+        }
+      />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+    </>
+  )
+}
+ActionListFullBleed.decorators = [
+  Story => (
+    <div className="Box">
+      <Story />
+    </div>
+  )
+]
