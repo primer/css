@@ -1,13 +1,11 @@
 // <ul>
 .ActionList {
-  --actionList-item-active-padding-horizontal: -#{$spacer-2};
   padding: $spacer-2;
+}
 
-  // full bleed
-  &.ActionList--inset {
-    --actionList-item-active-padding-horizontal: -6px;
-    padding: 0;
-  }
+// full bleed
+.ActionList--inset {
+  padding: 0;
 }
 
 // dividers

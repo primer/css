@@ -8,8 +8,7 @@
 @mixin activeIndicatorLine {
   position: absolute;
   top: calc(50% - 12px);
-  //   left: var(--actionList-item-active-padding-horizontal);
-  left: $actionList-item-active-padding-horizontal;
+  left: -$actionList-item-padding-horizontal;
   width: $spacer-1;
   height: $spacer-4;
   content: '';
