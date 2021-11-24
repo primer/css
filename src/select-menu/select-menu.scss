@@ -386,7 +386,7 @@ $SelectMenu-max-height: 480px !default;
 //
 // Visible when a user clicks/taps on a list item
 
-.SelectMenu-item[aria-checked=true] {
+.SelectMenu-item[aria-checked='true'] {
   font-weight: $font-weight-semibold;
   color: var(--color-fg-default);
 
@@ -402,7 +402,7 @@ $SelectMenu-max-height: 480px !default;
 // Prevent list items to be selected
 
 .SelectMenu-item:disabled,
-.SelectMenu-item[aria-disabled=true] {
+.SelectMenu-item[aria-disabled='true'] {
   color: var(--color-primer-fg-disabled);
   pointer-events: none;
 }
