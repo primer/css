@@ -51,6 +51,13 @@ export default {
         category: 'CSS'
       }
     },
+    containsActiveSubItem: {
+      defaultValue: false,
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
+    },
     leadingVisual: {
       defaultValue: '',
       name: 'leadingVisual',
@@ -207,7 +214,8 @@ export const ListItemTemplate = ({
   listSingleSelect,
   listMultiSelect,
   listSemantic,
-  ariaDisabled
+  ariaDisabled,
+  containsActiveSubItem
 }) => {
   const [isCollapsed, itemIsCollapsed] = useToggle()
   const [isChecked, itemIsChecked] = useToggle()
@@ -218,6 +226,7 @@ export const ListItemTemplate = ({
         ariaCurrent && 'ActionList-item--navActive',
         subItem && `ActionList-item--subItem`,
         containsSubItem && `ActionList-item--hasSubItem`,
+        containsActiveSubItem && `ActionList-item--hasActiveSubItem`,
         variant && `${variant}`
       )}
       onClick={collapsible ? itemIsCollapsed : itemIsChecked}
