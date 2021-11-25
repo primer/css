@@ -1,50 +1,60 @@
 // Component className
 
-$Layout: "LayoutBeta" !default;
+$Layout: 'LayoutBeta' !default;
 $Layout-divider-color: red !default; // var(--color-border-default)
 
 // Property modifier names
 
-$Layout-prop-outer-spacing:             "outer-spacing" !default;            // outer-m?
-$Layout-prop-inner-spacing:             "inner-spacing" !default;            // inner-p?
-$Layout-prop-column-gap:                "column-gap" !default;
-$Layout-prop-row-gap:                   "row-gap" !default;
+$Layout-prop-outer-spacing:             'outer-spacing' !default;            // outer-m?
+$Layout-prop-inner-spacing:             'inner-spacing' !default;            // inner-p?
+$Layout-prop-column-gap:                'column-gap' !default;
+$Layout-prop-row-gap:                   'row-gap' !default;
 
-$Layout-prop-pane-divider:              "pane-divider" !default;
-$Layout-prop-header-divider:            "header-divider" !default;
-$Layout-prop-footer-divider:            "footer-divider" !default;
+$Layout-prop-pane-divider:              'pane-divider' !default;
+$Layout-prop-header-divider:            'header-divider' !default;
+$Layout-prop-footer-divider:            'footer-divider' !default;
 
-$Layout-prop-pane-position:             "pane-position" !default;            // pane-pos?
-$Layout-prop-pane-width:                "pane-width" !default;               // pane-w?
-$Layout-prop-pane-is-sticky:            "pane-is-sticky" !default;           // pane-sticky?
-$Layout-prop-content-width:             "content-width" !default;            // content-w?
+$Layout-prop-pane-position:             'pane-position' !default;            // pane-pos?
+$Layout-prop-pane-width:                'pane-width' !default;               // pane-w?
+$Layout-prop-pane-is-sticky:            'pane-is-sticky' !default;           // pane-sticky?
+$Layout-prop-content-width:             'content-width' !default;            // content-w?
 
-$Layout-prop-flow-horizontal:           "flow-horizontal" !default;          // flow-h?
-$Layout-prop-responsive-behavior:       "responsive" !default;               // r?
-$Layout-prop-responsive-primary-region: "responsive-primary" !default;       // r-primary-region?
-$Layout-prop-responsive-pane-position:  "responsive-pane-position" !default; // r-pane-pos?
-$Layout-prop-responsive-at:             "responsive-at" !default;            // r-at?
+$Layout-prop-flow-horizontal:           'flow-horizontal' !default;          // flow-h?
+$Layout-prop-responsive-behavior:       'responsive' !default;               // r?
+$Layout-prop-responsive-primary-region: 'responsive-primary' !default;       // r-primary-region?
+$Layout-prop-responsive-pane-position:  'responsive-pane-position' !default; // r-pane-pos?
+$Layout-prop-responsive-at:             'responsive-at' !default;            // r-at?
 
-$Layout-prop-has-header:                "has-header" !default;
-$Layout-prop-has-footer:                "has-footer" !default;
+$Layout-prop-has-header:                'has-header' !default;
+$Layout-prop-has-footer:                'has-footer' !default;
 
+// Default Layout values
 
-.#{$Layout} {
+:root {
   --Layout-pane-width: #{map-get($sidebar-width, 'sm')};
   --Layout-content-width: 100%;
 
+  // stylelint-disable-next-line primer/no-undefined-vars
   --Layout-template-columns: 1fr var(--Layout-pane-width);
-  --Layout-template-areas: "content pane";
+  --Layout-template-areas: 'content pane';
 
   --Layout-column-gap: #{$spacer-3};
   --Layout-row-gap: #{$spacer-3};
 
+  // A `px` unit is needed here to define it as a length type when used
+  // with a `calc()` function. See https://stackoverflow.com/a/32518348
+  //
+  // stylelint-disable length-zero-no-unit
   --Layout-outer-spacing-x: 0px; // wrapper margin x
   --Layout-outer-spacing-y: 0px; // wrapper margin y
 
   --Layout-inner-spacing-min: 0px; // default region padding
   --Layout-inner-spacing-max: 0px; // relaxed content horizontal padding
+  // stylelint-enable length-zero-no-unit
+}
 
+.#{$Layout} {
+  // stylelint-disable-next-line primer/spacing
   margin: var(--Layout-outer-spacing-y) var(--Layout-outer-spacing-x);
 
   > .#{$Layout}-wrapper {
@@ -110,8 +120,10 @@ $Layout-prop-has-footer:                "has-footer" !default;
   }
 
   &.#{$Layout}--#{$Layout-prop-column-gap}-none {
-    // A `px` unit is needed here to define it as a length type
-    // See https://stackoverflow.com/a/32518348
+    // A `px` unit is needed here to define it as a length type when used
+    // with a `calc()` function. See https://stackoverflow.com/a/32518348
+    //
+    // stylelint-disable-next-line length-zero-no-unit
     --Layout-column-gap: 0px;
   }
 
@@ -126,8 +138,10 @@ $Layout-prop-has-footer:                "has-footer" !default;
   }
 
   &.#{$Layout}--#{$Layout-prop-row-gap}-none {
-    // A `px` unit is needed in here to define it as a length type
-    // See https://stackoverflow.com/a/32518348
+    // A `px` unit is needed here to define it as a length type when used
+    // with a `calc()` function. See https://stackoverflow.com/a/32518348
+    //
+    // stylelint-disable length-zero-no-unit
     --Layout-row-gap: 0px;
   }
 
@@ -202,11 +216,11 @@ $Layout-prop-has-footer:                "has-footer" !default;
   // Content width
 
   [class^="#{$Layout}-content-centered-"] {
-    margin-left: auto;
-    margin-right: auto;
     max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + var(--Layout-column-gap));
+    margin-right: auto;
+    margin-left: auto;
 
-    > [class^="container-"] {
+    > [class^='container-'] {
       margin-left: 0;
     }
   }
@@ -229,9 +243,9 @@ $Layout-prop-has-footer:                "has-footer" !default;
   &.#{$Layout}--#{$Layout-prop-pane-is-sticky} {
     .#{$Layout}-pane {
       position: sticky;
+      top: 0;
       max-height: 100vh;
       overflow: auto;
-      top: 0;
     }
   }
 
@@ -330,24 +344,22 @@ $Layout-prop-has-footer:                "has-footer" !default;
     */
   }
 
-
-
-
   // Regions
 
   .#{$Layout}-header, .#{$Layout}-content, .#{$Layout}-pane, .#{$Layout}-footer {
+    // stylelint-disable-next-line primer/spacing
     padding: var(--Layout-inner-spacing-min);
   }
   
-
   .#{$Layout}-header {
-    //grid-area: header;
     background: lightpink;
   }
 
   .#{$Layout}-content {
+    // stylelint-disable primer/spacing
     padding-left: var(--Layout-inner-spacing-max);
     padding-right: var(--Layout-inner-spacing-max);
+    // stylelint-enable primer/spacing
     grid-area: content;
     background: rgb(255, 197, 253);
   }
@@ -358,7 +370,6 @@ $Layout-prop-has-footer:                "has-footer" !default;
   }
 
   .#{$Layout}-footer {
-    //grid-area: footer;
     background: lightyellow;
   }
 
