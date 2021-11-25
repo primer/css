@@ -5,6 +5,7 @@ $Layout-divider-color: red !default; // var(--color-border-default)
 
 // Property modifier names
 
+// Wrapper & spacing
 $Layout-prop-outer-spacing:             'outer-spacing' !default;            // outer-m?
 $Layout-prop-inner-spacing:             'inner-spacing' !default;            // inner-p?
 $Layout-prop-column-gap:                'column-gap' !default;
@@ -14,19 +15,26 @@ $Layout-prop-pane-divider:              'pane-divider' !default;
 $Layout-prop-header-divider:            'header-divider' !default;
 $Layout-prop-footer-divider:            'footer-divider' !default;
 
+// Pane
 $Layout-prop-pane-position:             'pane-position' !default;            // pane-pos?
 $Layout-prop-pane-width:                'pane-width' !default;               // pane-w?
 $Layout-prop-pane-is-sticky:            'pane-is-sticky' !default;           // pane-sticky?
+
+// Content
 $Layout-prop-content-width:             'content-width' !default;            // content-w?
 
+
+// Responsive variants
 $Layout-prop-flow-horizontal:           'flow-horizontal' !default;          // flow-h?
 $Layout-prop-responsive-behavior:       'responsive' !default;               // r?
 $Layout-prop-responsive-primary-region: 'responsive-primary' !default;       // r-primary-region?
 $Layout-prop-responsive-pane-position:  'responsive-pane-position' !default; // r-pane-pos?
 $Layout-prop-responsive-at:             'responsive-at' !default;            // r-at?
 
+// Regions
 $Layout-prop-has-header:                'has-header' !default;
 $Layout-prop-has-footer:                'has-footer' !default;
+$Layout-prop-has-pane:                  'has-pane' !default;
 
 // Default Layout values
 
@@ -37,7 +45,6 @@ $Layout-prop-has-footer:                'has-footer' !default;
   // stylelint-disable-next-line primer/no-undefined-vars
   --Layout-template-columns: 1fr var(--Layout-pane-width);
   --Layout-template-areas: 'content pane';
-
   --Layout-column-gap: #{$spacer-3};
   --Layout-row-gap: #{$spacer-3};
 
@@ -149,6 +156,45 @@ $Layout-prop-has-footer:                'has-footer' !default;
     --Layout-row-gap: #{$spacer-3}; // 16px
   }
 
+
+  // Layout variants
+
+  // -- Desktop-level multi-columns
+
+  // Layout--variant-stackRegions
+  // Layout--variant-separateRegions
+
+  // Layout--variant-md-multiColumns
+  // Layout--variant-lg-multiColumns
+
+  // -- Flow vertical
+
+  &.#{$Layout}--#{$Layout-prop-responsive-behavior}-flowVertical {
+
+    &.#{$Layout}--flow-md-horizontal {
+      @include flow-vertical(md);
+    }
+
+    &.#{$Layout}--flow-lg-horizontal {
+      @include flow-vertical(lg);
+    }
+  }
+
+  // -- Split as pages
+
+  &.#{$Layout}--#{$Layout-prop-responsive-behavior}-splitAsPages {
+
+    &.#{$Layout}--flow-md-horizontal {
+      @include split-as-pages(md);
+    }
+
+    &.#{$Layout}--flow-lg-horizontal {
+      @include split-as-pages(lg);
+    }
+  }
+
+  // multiColumn
+
   // `flow-horizontal` determines whether `Layout` can render desktop-friendly
   // two-column layouts. It should appear by default for compatibility
   // with desktop browsers that have JavaScript disabled.
@@ -233,7 +279,7 @@ $Layout-prop-has-footer:                'has-footer' !default;
 
   @each $breakpoint in map-keys($breakpoints) {
     .#{$Layout}-content-centered-#{$breakpoint} {
-      --Layout-content-width: map-get($breakpoints, $breakpoint);
+      --Layout-content-width: #{map-get($breakpoints, $breakpoint)};
     }
   }
 
@@ -270,34 +316,6 @@ $Layout-prop-has-footer:                'has-footer' !default;
       @include breakpoint($breakpoint) {
         --Layout-pane-width: #{map-get($sidebar-wide-width, $breakpoint)};
       }
-    }
-  }
-
-  // Responsive behavior
-
-  // -- Flow vertical
-
-  &.#{$Layout}--#{$Layout-prop-responsive-behavior}-flowVertical {
-
-    &.#{$Layout}--flow-md-horizontal {
-      @include flow-vertical(md);
-    }
-
-    &.#{$Layout}--flow-lg-horizontal {
-      @include flow-vertical(lg);
-    }
-  }
-
-  // -- Split as pages
-
-  &.#{$Layout}--#{$Layout-prop-responsive-behavior}-splitAsPages {
-
-    &.#{$Layout}--flow-md-horizontal {
-      @include split-as-pages(md);
-    }
-
-    &.#{$Layout}--flow-lg-horizontal {
-      @include split-as-pages(lg);
     }
   }
 
