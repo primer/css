@@ -68,6 +68,13 @@
       opacity: 0.5 !important;
     }
   }
+
+  &.disabled,
+  &[disabled] {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+  }
 }
 
 .btn-muted-mktg {
