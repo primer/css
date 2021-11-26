@@ -3,6 +3,12 @@
 $Layout: 'LayoutBeta' !default;
 $Layout-divider-color: red !default; // var(--color-border-default)
 
+// Variant names
+
+$Layout-variant-stackRegions: 'stackRegions' !default;
+$Layout-variant-separateRegions: 'separateRegions' !default;
+$Layout-variant-multiColumn: 'multiColumns' !default;
+
 // Property modifier names
 
 // Wrapper & spacing
@@ -23,12 +29,18 @@ $Layout-prop-pane-is-sticky:            'pane-is-sticky' !default;           // 
 // Content
 $Layout-prop-content-width:             'content-width' !default;            // content-w?
 
+// Variants & responsive variants
 
-// Responsive variants
-$Layout-prop-flow-horizontal:           'flow-horizontal' !default;          // flow-h?
-$Layout-prop-responsive-behavior:       'responsive' !default;               // r?
-$Layout-prop-responsive-primary-region: 'responsive-primary' !default;       // r-primary-region?
-$Layout-prop-responsive-pane-position:  'responsive-pane-position' !default; // r-pane-pos?
+$Layout-prop-flow-horizontal:           'multiColumns' !default;          // flow-h?
+$Layout-prop-responsive-behavior:       'variant' !default;               // r?
+
+// stackRegions-specific variants
+$Layout-prop-stackRegions-pane-position:  'stackRegions-pane-position' !default; // r-pane-pos?
+
+// separateRegions-specific variants
+$Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-primary-region?
+
+// FIXME
 $Layout-prop-responsive-at:             'responsive-at' !default;            // r-at?
 
 // Regions
@@ -167,29 +179,29 @@ $Layout-prop-has-pane:                  'has-pane' !default;
   // Layout--variant-md-multiColumns
   // Layout--variant-lg-multiColumns
 
-  // -- Flow vertical
+  // -- Stack regions
 
-  &.#{$Layout}--#{$Layout-prop-responsive-behavior}-flowVertical {
+  &.#{$Layout}--#{$Layout-prop-responsive-behavior}-stackRegions {
 
-    &.#{$Layout}--flow-md-horizontal {
-      @include flow-vertical(md);
+    &.#{$Layout}--variant-md-multiColumns {
+      @include Layout-stackRegions(md);
     }
 
-    &.#{$Layout}--flow-lg-horizontal {
-      @include flow-vertical(lg);
+    &.#{$Layout}--variant-lg-multiColumns {
+      @include Layout-stackRegions(lg);
     }
   }
 
-  // -- Split as pages
+  // -- Separate regions variant
 
-  &.#{$Layout}--#{$Layout-prop-responsive-behavior}-splitAsPages {
+  &.#{$Layout}--#{$Layout-prop-responsive-behavior}-separateRegions {
 
-    &.#{$Layout}--flow-md-horizontal {
-      @include split-as-pages(md);
+    &.#{$Layout}--variant-md-multiColumns {
+      @include Layout-separateRegions(md);
     }
 
-    &.#{$Layout}--flow-lg-horizontal {
-      @include split-as-pages(lg);
+    &.#{$Layout}--variant-lg-multiColumns {
+      @include Layout-separateRegions(lg);
     }
   }
 
@@ -211,15 +223,15 @@ $Layout-prop-has-pane:                  'has-pane' !default;
   // FIXME - do we want to call this flowHorizontal??
   // at least call it `flow-md-horizontal` or something
 
-  &.#{$Layout}--flow-md-horizontal {
+  &.#{$Layout}--variant-md-multiColumns {
     @include breakpoint(md) {
-      @include flow-horizontal;
+      @include Layout-multiColumn;
     }
   }
   
-  &.#{$Layout}--flow-lg-horizontal {
+  &.#{$Layout}--variant-lg-multiColumns {
     @include breakpoint(lg) {
-      @include flow-horizontal;
+      @include Layout-multiColumn;
     }
   }
 
@@ -280,18 +292,6 @@ $Layout-prop-has-pane:                  'has-pane' !default;
   @each $breakpoint in map-keys($breakpoints) {
     .#{$Layout}-content-centered-#{$breakpoint} {
       --Layout-content-width: #{map-get($breakpoints, $breakpoint)};
-    }
-  }
-
-  // Sticky pane
-  // FIXME - this is currently broken if footer is present
-  // FIXME - needs to only happen on larger breakpoints
-  &.#{$Layout}--#{$Layout-prop-pane-is-sticky} {
-    .#{$Layout}-pane {
-      position: sticky;
-      top: 0;
-      max-height: 100vh;
-      overflow: auto;
     }
   }
 
@@ -411,14 +411,25 @@ $Layout-prop-has-pane:                  'has-pane' !default;
 .#{$Layout}--divider-line-before { 
   border-top: 10px solid purple;
 }
-.#{$Layout}--divider-filled-before {
-  border-top: 20px solid purple;
-}
 .#{$Layout}--divider-line-after {
   border-bottom: 10px solid orange;
 }
+
+.#{$Layout}--divider-filled-before {
+  border-top: 20px solid purple;
+}
 .#{$Layout}--divider-filled-after {
   border-bottom: 20px solid orange;
+}
+
+.#{$Layout}--variant-md-multiColumns {
+  @include breakpoint(md) {
+    .#{$Layout}-region--line-divider {
+      &:after {
+        display: none;
+      }
+    }
+  }
 }
 
 // FIXME -- this doesn't need to be CSS utilities. can use same approach with mixins I've used for responsive behaviors
