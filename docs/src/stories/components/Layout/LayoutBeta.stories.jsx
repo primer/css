@@ -17,7 +17,7 @@ export default {
       },
       description: 'Define the maximum width of the component. `fluid` sets it to full-width. Other values center `Layout` horizontally. Refer to [container utilities](https://primer.style/css/objects/grid#containers) for reference.',
       table: {
-        category: 'Wrapper'
+        category: 'Structure'
       }
     },
     outerSpacing: {
@@ -27,7 +27,7 @@ export default {
       },
       description: 'Sets wrapper margins surrounding the component to distance itself from the viewport edges. `normal` sets the margin to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the margin at 16px. `none` sets the margin to 0.',
       table: {
-        category: 'Wrapper'
+        category: 'Structure'
       }
     },
     innerSpacing: {
@@ -37,7 +37,7 @@ export default {
       },
       description: 'Sets padding to regions individually. `normal` sets padding to 16px, with the `content` region getting 24px horizontal padding on `lg` breakpoints and above. `condensed` keeps the padding always at `16px`. `none` sets the padding to 0.',
       table: {
-        category: 'Wrapper'
+        category: 'Structure'
       }
     },
     columnGap: {
@@ -47,7 +47,7 @@ export default {
       },
       description: 'Sets the gap between columns to distance them from each other. `normal` sets the gap to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the gap always at 16px. `none` sets the gap to 0.',
       table: {
-        category: 'Wrapper'
+        category: 'Structure'
       }
     },
     rowGap: {
@@ -57,7 +57,7 @@ export default {
       },
       description: 'Sets the gap below the header and above the footer. `normal` sets the gap to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the gap always at 16px. `none` sets the gap to 0.',
       table: {
-        category: 'Wrapper'
+        category: 'Structure'
       }
     },
 
@@ -96,6 +96,16 @@ export default {
 
     // Pane
 
+    paneWidth: {
+      options: ['default', 'narrow', 'wide'],
+      control: {
+      type: 'inline-radio'
+      },
+      description: 'Defines the width of the pane',
+      table: {
+        category: 'Pane'
+      }
+    },
     panePosition: {
       options: ['start', 'end'],
       control: {
@@ -112,16 +122,6 @@ export default {
         type: 'inline-radio',
       },
       description: 'If `responsiveVariant` is set to `stackRegions`, defines the position of the pane in the responsive variant. `start` puts the pane above `content`, and `end` puts it below `content`. `inherit` uses the same value from `panePosition`.',
-      table: {
-        category: 'Pane'
-      }
-    },
-    paneWidth: {
-      options: ['default', 'narrow', 'wide'],
-      control: {
-      type: 'inline-radio'
-      },
-      description: 'Defines the width of the pane',
       table: {
         category: 'Pane'
       }
@@ -183,11 +183,9 @@ export default {
     },
 
     headerResponsiveDivider: {
-      options: [0, 1, 2],
-      mapping: ['', 'line', 'filled'],
+      options: ['none', 'line', 'filled'],
       control: {
-        type: 'inline-radio',
-        labels: ['none', 'line', 'filled']
+        type: 'inline-radio'
       },
       description: 'Whether to show a divider below the `header` region if in responsive mode.',
       table: {
@@ -214,11 +212,9 @@ export default {
     },
 
     footerResponsiveDivider: {
-      options: [0, 1, 2],
-      mapping: ['', 'line', 'filled'],
+      options: ['none', 'line', 'filled'],
       control: {
-        type: 'inline-radio',
-        labels: ['none', 'line', 'filled']
+        type: 'inline-radio'
       },
       description: 'Whether to show a divider above the `footer` region if in responsive mode.',
       table: {
@@ -346,8 +342,6 @@ export const LayoutTemplate = ({
   // Leave `null` values for states that don't require a modifier class
   outerSpacing = (outerSpacing === 'none') ? null : outerSpacing;
   innerSpacing = (innerSpacing === 'none') ? null : innerSpacing;
-  columnGap = (columnGap === 'none') ? null : columnGap;
-  rowGap = (rowGap === 'none') ? null : rowGap;
   paneWidth = (paneWidth === 'default') ? null : paneWidth;
   contentWidth = (contentWidth === 'fluid') ? null : contentWidth;
   paneResponsiveDivider = (paneResponsiveDivider === 'none') ? null : paneResponsiveDivider;
@@ -483,9 +477,9 @@ Playground.args = {
   multiColumnsVariantAt: 'md',
   responsivePrimaryRegion: 'content',
 
+  paneWidth: 'default',
   panePosition: 'end',
   paneResponsivePosition: 'inherit',
-  paneWidth: 'default',
   paneDivider: false,
   paneResponsiveDivider: 'none',
   paneIsSticky: false,
@@ -500,87 +494,6 @@ Playground.args = {
   footerDivider: false,
   footerResponsiveDivider: 'none',
 
-  contentChildren: 'content',
-  paneChildren: 'pane',
-  headerChildren: 'header',
-  footerChildren: 'footer'
-}
-
-export const PresetDefault = LayoutTemplate.bind({});
-PresetDefault.storyName = 'Presets/Default';
-PresetDefault.parameters = {
-  layout: 'fullscreen',
-};
-PresetDefault.args = {
-  wrapperSizing: 'xl',
-  outerSpacing: 1, // normal
-  innerSpacing: 0, // none
-  columnGap: 1, // normal
-  rowGap: 1, // normal
-
-  responsiveBehavior: 0, // stackRegions
-  responsiveBehaviorAt: 2, // md
-
-  panePosition: 1, // end
-  paneResponsivePosition: 0, // inherit
-  paneWidth: 0, // default
-  paneDivider: false,
-  paneResponsiveDivider: 0, // none
-  paneIsSticky: false,
-
-  contentWidth: 0, // full
-
-  hasHeader: false,
-  headerDivider: false,
-  headerResponsiveDivider: 0, // none
-
-  hasFooter: false,
-  footerDivider: false,
-  footerResponsiveDivider: 0, // none
-
-  // Children
-  contentChildren: 'content',
-  paneChildren: 'pane',
-  headerChildren: 'header',
-  footerChildren: 'footer'
-}
-
-export const PresetSplitView = LayoutTemplate.bind({});
-PresetSplitView.storyName = 'Presets/Split view';
-PresetSplitView.parameters = {
-  layout: 'fullscreen',
-};
-PresetSplitView.args = {
-  //preset: 'splitView', // splitView
-
-  wrapperSizing: 'fluid',
-  outerSpacing: 0, // none
-  innerSpacing: 1, // normal
-  columnGap: 0, // none
-  rowGap: 0, // none
-
-  responsiveBehavior: 1, // separateRegions
-  responsiveBehaviorAt: 2, // md
-  responsivePrimaryRegion: 0, // content
-
-  panePosition: 0, // start
-  paneResponsivePosition: 0, // inherit
-  paneWidth: 2, // wide
-  paneDivider: true,
-  paneResponsiveDivider: 0, // none
-  paneIsSticky: false,
-
-  contentWidth: 0, // full
-
-  hasHeader: false,
-  headerDivider: true,
-  headerResponsiveDivider: 0, // none
-
-  hasFooter: false,
-  footerDivider: true,
-  footerResponsiveDivider: 0, // none
-
-  // Children
   contentChildren: 'content',
   paneChildren: 'pane',
   headerChildren: 'header',
