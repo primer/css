@@ -83,16 +83,16 @@ export const Overflow = UnderlineNavTemplate.bind({})
 Overflow.args = {
   children: (
     <>
-      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
-      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
-      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
-      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
-      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
-      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
-      <UnderlineNavItemTemplate label="Item" semanticItemType="link" selected />
-      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
-      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
-      <UnderlineNavItemTemplate label="Item" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item name 1" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item name 2" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item name 3" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item name 4" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item name 5" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item name 6" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item name 7" semanticItemType="link" selected />
+      <UnderlineNavItemTemplate label="Item name 8" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item name 9" semanticItemType="link" />
+      <UnderlineNavItemTemplate label="Item name 10" semanticItemType="link" />
     </>
   )
 }

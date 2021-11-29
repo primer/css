@@ -3,8 +3,6 @@ $nav-height: $spacer-3 * 3 !default; // 48px
 .UnderlineNav {
   display: flex;
   min-height: $nav-height;
-  overflow-x: auto;
-  overflow-y: hidden;
   // stylelint-disable-next-line primer/box-shadow
   box-shadow: inset 0 -1px 0 var(--color-border-muted);
   -webkit-overflow-scrolling: auto;
@@ -15,6 +13,9 @@ $nav-height: $spacer-3 * 3 !default; // 48px
   display: flex;
   align-items: center;
   gap: $spacer-2;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
 }
 
 .UnderlineNav-item {
@@ -29,6 +30,8 @@ $nav-height: $spacer-3 * 3 !default; // 48px
   background-color: transparent;
   border: 0;
   border-radius: $border-radius;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 
   // increase touch target area
   &::before {
@@ -71,7 +74,7 @@ $nav-height: $spacer-3 * 3 !default; // 48px
   &.focus,
   &:focus {
     @include focusOutline;
-    outline-offset: 0;
+    outline-offset: -2px;
   }
 
   .Counter {
