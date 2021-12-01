@@ -52,7 +52,7 @@
     "@storybook/addon-a11y": "6.4.2",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.4.3",
-    "@storybook/addon-links": "^6.4.2",
+    "@storybook/addon-links": "^6.4.3",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "6.3.12",
