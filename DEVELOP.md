@@ -46,7 +46,7 @@ All `html` fenced code blocks in `src/**/*.md` will be rendered as stories and l
 Primer CSS Storybook is used for designing and prototyping components. Stories are written in HTML and leverage the Storybook API for configuring conditional logic. 
 
 ```sh
-npm storybook
+npm run storybook
 ```
 
 ### The Storybook directory
