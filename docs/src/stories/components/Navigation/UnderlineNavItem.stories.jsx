@@ -1,5 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
+import useToggle from '../../helpers/useToggle.jsx'
 
 export default {
   title: 'Components/Navigation/UnderlineNav/Item',
@@ -56,13 +57,15 @@ export default {
 }
 
 export const UnderlineNavItemTemplate = ({semanticItemType, label, selected, focusElement, icon, counter}) => {
+  const [isSelected, itemisSelected] = useToggle()
   return (
     <>
       {semanticItemType === 'button' ? (
         <button
           className={clsx('UnderlineNav-item', focusElement && 'focus')}
           role="tab"
-          aria-selected={selected ? 'true' : undefined}
+          aria-selected={isSelected ? 'true' : undefined}
+          onClick={itemisSelected}
         >
           {icon && (
             <svg

@@ -96,3 +96,16 @@ Overflow.args = {
     </>
   )
 }
+
+export const Icons = UnderlineNavTemplate.bind({})
+Icons.args = {
+  children: (
+    <>
+      <UnderlineNavItemTemplate label="Item name" semanticItemType="button" icon />
+      <UnderlineNavItemTemplate label="Item name" semanticItemType="button" icon />
+      <UnderlineNavItemTemplate label="Item name" semanticItemType="button" icon />
+      <UnderlineNavItemTemplate label="Item name" semanticItemType="button" icon />
+      <UnderlineNavItemTemplate label="Item name" semanticItemType="button" icon />
+    </>
+  )
+}
