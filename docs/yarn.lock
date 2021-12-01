@@ -17477,10 +17477,10 @@ storybook-addon-outline@^1.4.1:
     "@storybook/core-events" "^6.3.0"
     ts-dedent "^2.1.1"
 
-storybook-color-picker@2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/storybook-color-picker/-/storybook-color-picker-2.1.4.tgz#32290cc2cecb4edd3062f0b125d4ccfeed60516e"
-  integrity sha512-YaIQv4XG27r3/WPm7+lrjxUhFNnUlfnLZ+MbE57Wg6cUycR5yYPQZX2swkCNgJLF0m36YmlNclL4CcQ3ZHeitA==
+storybook-color-picker@2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/storybook-color-picker/-/storybook-color-picker-2.1.5.tgz#74acb2a137a26494369df91e9eea7a12bb0ea8fc"
+  integrity sha512-LlWBS2v+EFs9gnavNQdjQMcsn18DXPxokU5hRNQWpeHA8CaZitmY2s6MNFtzJskvpu2CaKpy8i0qqlh+y3gxJg==
   dependencies:
     "@babel/cli" "^7.14.5"
     "@emotion/react" "^11.4.0"
