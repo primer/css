@@ -2,14 +2,14 @@ $nav-height: $spacer-3 * 3 !default; // 48px
 
 .UnderlineNav {
   display: flex;
-  list-style: none;
   min-height: $nav-height;
+  overflow-x: auto;
+  overflow-y: hidden;
+  list-style: none;
   // stylelint-disable-next-line primer/box-shadow
   box-shadow: inset 0 -1px 0 var(--color-border-muted);
   -webkit-overflow-scrolling: auto;
   justify-content: space-between;
-  overflow-x: auto;
-  overflow-y: hidden;
 }
 
 .UnderlineNav-body {
@@ -19,9 +19,8 @@ $nav-height: $spacer-3 * 3 !default; // 48px
 }
 
 .UnderlineNav-item {
-  display: flex;
-  align-items: center;
   position: relative;
+  display: flex;
   padding: 0 $spacer-2;
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
@@ -32,6 +31,7 @@ $nav-height: $spacer-3 * 3 !default; // 48px
   background-color: transparent;
   border: 0;
   border-radius: $border-radius;
+  align-items: center;
 
   // increase touch target area
   &::before {
@@ -110,8 +110,8 @@ $nav-height: $spacer-3 * 3 !default; // 48px
 
 .UnderlineNav-octicon {
   margin-right: $spacer-2;
-  fill: var(--color-fg-muted);
   color: var(--color-fg-muted);
+  fill: var(--color-fg-muted);
 }
 
 .UnderlineNav-container {
