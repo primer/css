@@ -52,13 +52,13 @@
     "@storybook/addon-a11y": "6.3.12",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
-    "@storybook/addon-links": "^6.3.12",
+    "@storybook/addon-links": "^6.4.2",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "6.3.12",
     "@whitespace/storybook-addon-html": "^5.0.0",
     "babel-loader": "^8.2.3",
     "storybook-addon-designs": "6.2.0",
-    "storybook-color-picker": "2.1.4"
+    "storybook-color-picker": "2.1.5"
   }
 }
