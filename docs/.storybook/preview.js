@@ -97,6 +97,16 @@ export const parameters = {
   viewport: {viewports: customViewports}
 }
 
+const themes = [
+  'light',
+  'light_colorblind',
+  'light_high_contrast',
+  'dark',
+  'dark_dimmed',
+  'dark_high_contrast',
+  'dark_colorblind'
+]
+
 export const globalTypes = {
   theme: {
     name: 'Theme',
@@ -104,16 +114,7 @@ export const globalTypes = {
     defaultValue: 'light',
     toolbar: {
       icon: 'circlehollow',
-      items: [
-        'light',
-        'light_colorblind',
-        'light_high_contrast',
-        'dark',
-        'dark_dimmed',
-        'dark_high_contrast',
-        'dark_colorblind',
-        'all'
-      ],
+      items: [...themes, 'all'],
       showName: true
     }
   }
@@ -121,99 +122,21 @@ export const globalTypes = {
 
 export const decorators = [
   (Story, context) => {
-    if (context.globals.theme === 'all') {
-      return (
-        <div class="theme-wrap">
-          <div data-color-mode="light" data-light-theme="light" className="story-wrap" id="story">
-            <Story {...context} />
-          </div>
-
-          <div data-color-mode="light" data-light-theme="light_colorblind" className="story-wrap" id="story">
-            <Story {...context} />
-          </div>
-
-          <div data-color-mode="light" data-light-theme="light_high_contrast" className="story-wrap" id="story">
-            <Story {...context} />
-          </div>
-
-          <div data-color-mode="dark" data-dark-theme="dark" className="story-wrap" id="story">
-            <Story {...context} />
-          </div>
-
-          <div data-color-mode="dark" data-dark-theme="dark_dimmed" className="story-wrap" id="story">
-            <Story {...context} />
-          </div>
-
-          <div data-color-mode="dark" data-dark-theme="dark_high_contrast" className="story-wrap" id="story">
-            <Story {...context} />
-          </div>
-
-          <div data-color-mode="dark" data-dark-theme="dark_colorblind" className="story-wrap" id="story">
-            <Story {...context} />
-          </div>
-        </div>
-      )
-    }
-
-    if (context.globals.theme === 'light') {
-      return (
-        <div data-color-mode="light" data-light-theme="light" className="story-wrap" id="story">
-          <Story {...context} />
-        </div>
-      )
-    }
-
-    if (context.globals.theme === 'light_colorblind') {
-      return (
-        <div data-color-mode="light" data-light-theme="light_colorblind" className="story-wrap" id="story">
-          <Story {...context} />
-        </div>
-      )
-    }
-
-    if (context.globals.theme === 'light_high_contrast') {
-      return (
-        <div data-color-mode="light" data-light-theme="light_high_contrast" className="story-wrap" id="story">
-          <Story {...context} />
-        </div>
-      )
-    }
-
-    if (context.globals.theme === 'dark') {
-      return (
-        <div data-color-mode="dark" data-dark-theme="dark" className="story-wrap" id="story">
-          <Story {...context} />
-        </div>
-      )
-    }
-
-    if (context.globals.theme === 'dark_dimmed') {
-      return (
-        <div data-color-mode="dark" data-dark-theme="dark_dimmed" className="story-wrap" id="story">
-          <Story {...context} />
-        </div>
-      )
-    }
-
-    if (context.globals.theme === 'dark_high_contrast') {
-      return (
-        <div data-color-mode="dark" data-dark-theme="dark_high_contrast" className="story-wrap" id="story">
-          <Story {...context} />
-        </div>
-      )
-    }
-
-    if (context.globals.theme === 'dark_colorblind') {
-      return (
-        <div data-color-mode="dark" data-dark-theme="dark_colorblind" className="story-wrap" id="story">
-          <Story {...context} />
-        </div>
-      )
-    }
-
     return (
-      <div className="story-wrap" id="story">
-        <Story {...context} />
+      <div class="theme-wrap">
+        { themes.map((theme) => {
+            if (context.globals.theme === theme || context.globals.theme === 'all') {
+              return <div
+                id="story"
+                className="story-wrap"
+                data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
+                data-light-theme={theme.startsWith('light') ? theme : undefined}
+                data-dark-theme={theme.startsWith('dark') ? theme : undefined}
+              >
+                <Story {...context} />
+              </div>
+            }
+          })}
       </div>
     )
   }
