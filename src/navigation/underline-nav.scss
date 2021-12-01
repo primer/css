@@ -38,12 +38,15 @@ $nav-height: $spacer-3 * 3 !default; // 48px
     @include minTouchTarget($min-height: $nav-height);
   }
 
-  &:hover {
-    color: var(--color-fg-default);
-    text-decoration: none;
-    background: var(--color-neutral-muted);
-    background: var(--color-action-list-item-default-hover-bg);
-    transition: background 0.12s ease-out;
+  // hover state was "sticking" on mobile after click
+  @media (pointer: fine) {
+    &:hover {
+      color: var(--color-fg-default);
+      text-decoration: none;
+      background: var(--color-neutral-muted);
+      background: var(--color-action-list-item-default-hover-bg);
+      transition: background 0.12s ease-out;
+    }
   }
 
   &.selected,
