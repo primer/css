@@ -2091,13 +2091,13 @@
   resolved "https://registry.yarnpkg.com/@primer/component-metadata/-/component-metadata-0.4.0.tgz#44b7d7b1285bea41c2a88621fd17f2c777a4c5e9"
   integrity sha512-yppmDSSDrN2CHwjq3h+RWhfpjehFQAx21JcEipYyNTp0f/kC+iazFVNCKZE6DOavAxv003ti7QIrp+QkPT9tpg==
 
-"@primer/components@31.1.0":
-  version "31.1.0"
-  resolved "https://registry.yarnpkg.com/@primer/components/-/components-31.1.0.tgz#743094a564dbd16d7d9055985fa122e2a6e9627c"
-  integrity sha512-7Be9x8xoDG5emKWbJ4Y6QOSxOozsipYTnbZPZsEpXq40X7IgIaS1sKaLAlyLfs7w399VFLfw5iCB80G2WkxfmA==
+"@primer/components@32.1.0":
+  version "32.1.0"
+  resolved "https://registry.yarnpkg.com/@primer/components/-/components-32.1.0.tgz#fe4ccdeaaea9ef817894a55936419b7956935cc0"
+  integrity sha512-Vffs3wt5W4FyipUGof38YmcHQFFoAA+Q7R71n+XzV7Og/SaFKY2MW9c4RFPj1wBhU60mtlyRAn54D7E33tLeHA==
   dependencies:
-    "@primer/octicons-react" "^13.0.0"
-    "@primer/primitives" "5.1.0"
+    "@primer/octicons-react" "^16.1.0"
+    "@primer/primitives" "7.1.1"
     "@radix-ui/react-polymorphic" "0.0.14"
     "@react-aria/ssr" "3.1.0"
     "@styled-system/css" "5.1.5"
@@ -2204,7 +2204,7 @@
   resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-13.0.0.tgz#a7f2288fd9cf9cabc1e75553a0dd9f00d74b68c1"
   integrity sha512-j5XppNRCvgaMZLPsVvvmp6GSh7P5pq6PUbsfLNBWi2Kz3KYDeoGDWbPr5MjoxFOGUn6Hjnt6qjHPRxahd11vLQ==
 
-"@primer/octicons-react@^16.0.0":
+"@primer/octicons-react@^16.0.0", "@primer/octicons-react@^16.1.0":
   version "16.1.1"
   resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-16.1.1.tgz#6a9eaffbbf46cb44d344a37a5ff2384973b82d3f"
   integrity sha512-xCxQ5z23ol7yDuJs85Lc4ARzyoay+b3zOhAKkEMU7chk0xi2hT2OnRP23QUudNNDPTGozX268RGYLexUa6P4xw==
@@ -2221,15 +2221,15 @@
   resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-4.8.1.tgz#05f76e47f67018514fd54b35ca615b9d27ef2a46"
   integrity sha512-mgr6+EKpn4DixuhLt3drk7QmNQO8M7RYONWovg1nkV7p56jklhDLfZmp1luLUee37eQGAxx3ToStL6gqINFjnQ==
 
-"@primer/primitives@5.1.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-5.1.0.tgz#698ad3a173f3a1d7090651cce0a7088e4b93da39"
-  integrity sha512-pW8DIh6rZV0/R7lxHnVRJ/tdN4kDVSpAtdcCecxKsvtgK5d9haekt3ERpM6i93xKwB5CJYy9ouuC9C0UqWPI0A==
-
 "@primer/primitives@6.1.0":
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-6.1.0.tgz#9fe385913b922b4e48cac19fe5e560e4ae9e284d"
   integrity sha512-gwSVf5rVf2CMa/bU3/47LZosDHNfODMRJfKi7uJOqHWABVNl6Lf+thDM7Jb8tS9sEQQsUnrLDiGNjCScS81IXA==
+
+"@primer/primitives@7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.1.1.tgz#46edb7f06fbe8809ebe2822bc692fc6c74dba98c"
+  integrity sha512-+Gwo89YK1OFi6oubTlah/zPxxzMNaMLy+inECAYI646KIFdzzhAsKWb3z5tSOu5Ff7no4isRV64rWfMSKLZclw==
 
 "@radix-ui/react-polymorphic@0.0.14":
   version "0.0.14"
