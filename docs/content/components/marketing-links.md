@@ -20,7 +20,7 @@ Marketing links are to be documented here...
 </p>
 
 <p>
-    <a href="#" class="link-mktg text-semibold d-inline-block f3-mktg">
+    <a href="#" class="link-mktg text-semibold d-inline-block f3-mktg link-mktg-symbol">
         Call to action
 
         <span class="link-mktg-symbol-large">

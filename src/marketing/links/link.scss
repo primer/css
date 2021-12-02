@@ -21,6 +21,10 @@
     transform-origin: 0 0;
   }
 
+  &.link-mktg-symbol::after {
+      width: calc(100% - 0.15em);
+  }
+
   &:hover,
   &:focus,
   &:active {
@@ -36,6 +40,34 @@
     margin-right: -$spacer-3;
     transition: transform 0.2s;
     transform: translateX(0);
+  }
+
+  .octicon-chevrow {
+    transition: transform 0.2s;
+    transform: translateX(0);
+  }
+
+  .octicon-chevrow-stem {
+    stroke-dasharray: 10;
+    stroke-dashoffset: 10;
+    transition: stroke-dashoffset 0.2s;
+  }
+
+  &:hover,
+  &:focus {
+    .octicon-chevrow {
+      transform: translateX(4px);
+    }
+
+    .octicon-chevrow-stem {
+      stroke-dashoffset: 20;
+    }
+  }
+
+  &:active {
+    .octicon-chevrow {
+      transform: translateX(6px);
+    }
   }
 }
 
