@@ -3,6 +3,10 @@
     outline: none;
   }
 
+  &:hover {
+    text-decoration: none;
+  }
+
   .octicon {
     position: relative;
     top: -1px;
@@ -42,19 +46,4 @@
   left: -2px;
   display: inline-block;
   margin-bottom: -2px;
-}
-
-.link-mktg-underlined {
-  .link-mktg-inner::before {
-    position: absolute;
-    bottom: -7px;
-    left: 0;
-    display: block;
-    width: calc(100% - 0.15em);
-    height: 2px;
-    pointer-events: none;
-    content: '';
-    background-color: currentColor;
-    opacity: 0.25;
-  }
 }
