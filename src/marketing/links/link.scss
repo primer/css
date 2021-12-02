@@ -1,4 +1,6 @@
 .link-mktg {
+  position: relative;
+
   &:active {
     outline: none;
   }
@@ -7,7 +9,9 @@
     text-decoration: none;
   }
 
-  &::after {
+  &::after,
+  &.underline-pale::before {
+    position: absolute;
     bottom: -7px;
     left: 0;
     display: block;
@@ -19,6 +23,11 @@
     transition: transform 0.3s ease;
     transform: scaleX(0);
     transform-origin: 0 0;
+  }
+
+  &.underline-pale::before {
+      transform: scaleX(1);
+      opacity: 0.2;
   }
 
   &.link-mktg-symbol::after {
