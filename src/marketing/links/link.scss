@@ -1,0 +1,60 @@
+.mktg-link {
+  &:active {
+    outline: none;
+  }
+
+  .octicon {
+    position: relative;
+    top: -1px;
+    left: 0;
+    margin-right: -$spacer-3;
+    transition: transform 0.2s;
+    transform: translateX(0);
+  }
+}
+
+.mktg-link-inner {
+  &::after {
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    display: block;
+    width: calc(100% - 0.15em);
+    height: 2px;
+    pointer-events: none;
+    content: '';
+    background-color: currentColor;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+  }
+
+  .mktg-link:hover &::after,
+  .mktg-link:focus &::after,
+  .mktg-link:active &::after {
+    transform: scaleX(1);
+  }
+}
+
+.mktg-link-symbol-large {
+  position: relative;
+  top: -1px;
+  left: -2px;
+  display: inline-block;
+  margin-bottom: -2px;
+}
+
+.mktg-link-underlined {
+  .mktg-link-inner::before {
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    display: block;
+    width: calc(100% - 0.15em);
+    height: 2px;
+    pointer-events: none;
+    content: '';
+    background-color: currentColor;
+    opacity: 0.25;
+  }
+}
