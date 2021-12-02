@@ -46,14 +46,14 @@ export const UnderlineNavTemplate = ({variant, children, actionStart, actionEnd}
       {actionStart}
       {variant === 'UnderlineNav--full' ? (
         <div class="container-lg UnderlineNav-container">
-          <div class="UnderlineNav-body" role="tablist">
+          <ul class="UnderlineNav-body" role="tablist">
             {children}
-          </div>
+          </ul>
         </div>
       ) : (
-        <div class="UnderlineNav-body" role="tablist">
+        <ul class="UnderlineNav-body" role="tablist">
           {children}
-        </div>
+        </ul>
       )}
       {actionEnd}
     </nav>
@@ -65,9 +65,9 @@ Playground.args = {
   variant: 0,
   children: (
     <>
-      <UnderlineNavItemTemplate label="Item" semanticItemType="button" selected />
-      <UnderlineNavItemTemplate label="Item" semanticItemType="button" />
-      <UnderlineNavItemTemplate label="Item" semanticItemType="button" />
+      <UnderlineNavItemTemplate label="Item" semanticItemType="button" selected usesDataContent />
+      <UnderlineNavItemTemplate label="Item" semanticItemType="button" usesDataContent />
+      <UnderlineNavItemTemplate label="Item" semanticItemType="button" usesDataContent />
     </>
   )
 }

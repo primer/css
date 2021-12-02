@@ -14,6 +14,13 @@ export default {
         category: 'CSS'
       }
     },
+    usesDataContent: {
+      control: {type: 'boolean'},
+      description: 'creates a hidden label to allow for bold text without layout shift',
+      table: {
+        category: 'CSS'
+      }
+    },
     semanticItemType: {
       options: ['button', 'link'],
       control: {
@@ -56,15 +63,23 @@ export default {
   }
 }
 
-export const UnderlineNavItemTemplate = ({semanticItemType, label, selected, focusElement, icon, counter}) => {
+export const UnderlineNavItemTemplate = ({
+  semanticItemType,
+  label,
+  selected,
+  focusElement,
+  icon,
+  counter,
+  usesDataContent
+}) => {
   const [isSelected, itemisSelected] = useToggle()
   return (
-    <>
+    <li className="d-inline-flex">
       {semanticItemType === 'button' ? (
         <button
           className={clsx('UnderlineNav-item', focusElement && 'focus')}
           role="tab"
-          aria-selected={isSelected ? 'true' : undefined}
+          aria-selected={selected || isSelected ? 'true' : undefined}
           onClick={itemisSelected}
         >
           {icon && (
@@ -81,14 +96,15 @@ export const UnderlineNavItemTemplate = ({semanticItemType, label, selected, foc
               ></path>
             </svg>
           )}
-          {label}
+          <span data-content={usesDataContent ? label : undefined}>{label}</span>
           {counter && <span class="Counter">10</span>}
         </button>
       ) : (
         <a
           className={clsx('UnderlineNav-item', focusElement && 'focus')}
-          href="/"
-          aria-current={selected ? 'page' : undefined}
+          aria-current={selected || isSelected ? 'true' : undefined}
+          onClick={itemisSelected}
+          //   aria-current={selected ? 'page' : undefined}
         >
           {icon && (
             <svg
@@ -104,11 +120,11 @@ export const UnderlineNavItemTemplate = ({semanticItemType, label, selected, foc
               ></path>
             </svg>
           )}
-          {label}
+          <span data-content={usesDataContent ? label : undefined}>{label}</span>
           {counter && <span class="Counter">10</span>}
         </a>
       )}
-    </>
+    </li>
   )
 }
 
@@ -119,5 +135,6 @@ Playground.args = {
   selected: false,
   focusElement: false,
   icon: false,
-  counter: false
+  counter: false,
+  usesDataContent: true
 }
