@@ -11,5 +11,5 @@ Marketing links are to be documented here...
 ## Links types
 
 ```html live
-<a href="#" class="mktg-link">Get started</a>
+<a href="#" class="link-mktg">Get started</a>
 ```

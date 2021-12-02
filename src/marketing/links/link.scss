@@ -1,4 +1,4 @@
-.mktg-link {
+.link-mktg {
   &:active {
     outline: none;
   }
@@ -13,7 +13,7 @@
   }
 }
 
-.mktg-link-inner {
+.link-mktg-inner {
   &::after {
     position: absolute;
     bottom: -7px;
@@ -29,14 +29,14 @@
     transform-origin: 0 0;
   }
 
-  .mktg-link:hover &::after,
-  .mktg-link:focus &::after,
-  .mktg-link:active &::after {
+  .link-mktg:hover &::after,
+  .link-mktg:focus &::after,
+  .link-mktg:active &::after {
     transform: scaleX(1);
   }
 }
 
-.mktg-link-symbol-large {
+.link-mktg-symbol-large {
   position: relative;
   top: -1px;
   left: -2px;
@@ -44,8 +44,8 @@
   margin-bottom: -2px;
 }
 
-.mktg-link-underlined {
-  .mktg-link-inner::before {
+.link-mktg-underlined {
+  .link-mktg-inner::before {
     position: absolute;
     bottom: -7px;
     left: 0;
