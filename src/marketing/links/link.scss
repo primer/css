@@ -1,4 +1,5 @@
 .link-mktg {
+  display: inline-block;
   position: relative;
 
   &:active {
@@ -15,7 +16,7 @@
     bottom: -7px;
     left: 0;
     display: block;
-    width: 100%;
+    width: calc(100% - 0.18em);
     height: 2px;
     pointer-events: none;
     content: '';
@@ -31,10 +32,6 @@
       opacity: 0.2;
   }
 
-  &.link-mktg-symbol::after {
-      width: calc(100% - 0.15em);
-  }
-
   &:hover,
   &:focus,
   &:active {
@@ -48,29 +45,27 @@
     top: -1px;
     left: 0;
     margin-right: -$spacer-3;
-    transition: transform 0.2s;
-    transform: translateX(0);
   }
 
   .octicon-chevrow {
     transition: transform 0.2s;
     transform: translateX(0);
-  }
 
-  .octicon-chevrow-stem {
-    stroke-dasharray: 10;
-    stroke-dashoffset: 10;
-    transition: stroke-dashoffset 0.2s;
+    path:last-child {
+      stroke-dasharray: 10;
+      stroke-dashoffset: 10;
+      transition: stroke-dashoffset 0.2s;
+    }
   }
 
   &:hover,
   &:focus {
     .octicon-chevrow {
       transform: translateX(4px);
-    }
 
-    .octicon-chevrow-stem {
-      stroke-dashoffset: 20;
+      path:last-child {
+        stroke-dashoffset: 20;
+      }
     }
   }
 
@@ -79,12 +74,4 @@
       transform: translateX(6px);
     }
   }
-}
-
-.link-mktg-symbol-large {
-  position: relative;
-  top: -1px;
-  left: -2px;
-  display: inline-block;
-  margin-bottom: -2px;
 }
