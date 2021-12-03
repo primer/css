@@ -17,7 +17,7 @@
 
   .arrow-symbol-mktg {
     transition: transform 0.2s;
-    transform: translateX(-4px);
+    transform: translateX(0);
 
     // stylelint-disable-next-line selector-max-type
     path:last-child {
@@ -30,7 +30,7 @@
   &:hover,
   &:focus {
     .arrow-symbol-mktg {
-      transform: translateX(0);
+      transform: translateX(4px);
 
       // stylelint-disable-next-line selector-max-type, selector-max-specificity
       path:last-child {
@@ -41,7 +41,7 @@
 
   &:active {
     .arrow-symbol-mktg {
-      transform: translateX(4px);
+      transform: translateX(6px);
     }
   }
 }

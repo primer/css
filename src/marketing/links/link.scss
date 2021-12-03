@@ -15,7 +15,7 @@
     position: absolute;
     bottom: -0.15em;
     left: 0;
-    width: calc(100% - 1.25em);
+    width: calc(100% - 1em);
     height: 2px;
     pointer-events: none;
     content: '';
@@ -36,6 +36,12 @@
   &:active {
     &::after {
       transform: scaleX(1);
+    }
+  }
+
+  &.arrow-target-mktg {
+    .arrow-symbol-mktg {
+      margin-left: -0.25em;
     }
   }
 }

@@ -46,7 +46,7 @@ Marketing buttons can be set to three different sizes:
 
 ## Animated arrow symbol
 
-Marketing buttons can include an animated arrow symbol:
+Marketing buttons can include an animated arrow symbol, by adding a class `arrow-target-mktg` and including the SVG symbol:
 
 ```html live
 <button class="btn-mktg arrow-target-mktg mr-3" type="button">
