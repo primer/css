@@ -1,6 +1,6 @@
 .link-mktg {
-  display: inline-block;
   position: relative;
+  display: inline-block;
 
   &:hover {
     text-decoration: none;
@@ -11,7 +11,6 @@
     position: absolute;
     bottom: -0.15em;
     left: 0;
-    display: block;
     width: calc(100% - 1.25em);
     height: 2px;
     pointer-events: none;
@@ -24,8 +23,8 @@
   }
 
   &.link-emphasis-mktg::before {
-    transform: scaleX(1);
     opacity: 0.2;
+    transform: scaleX(1);
   }
 
   &:hover,
@@ -45,7 +44,7 @@
     transition: transform 0.2s;
     transform: translateX(-4px);
 
-    // stylelint-disable-next-line selector-max-type, selector-max-specificity
+    // stylelint-disable-next-line selector-max-type
     path:last-child {
       stroke-dasharray: 10;
       stroke-dashoffset: 10;
