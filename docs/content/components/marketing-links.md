@@ -11,7 +11,7 @@ Marketing links can be produced by combining the base class `link-mktg` with a s
 
 ## Link sizes
 
-The marketing link size is defined with utility classes and come in "large" `.f3-mktg` and "small" `.f4-mktg`:
+The marketing link size is defined with utility classes and come in large (`.f3-mktg`) and small (`.f4-mktg`):
 
 ```html live
 <a href="#" class="link-mktg text-semibold f3-mktg">
