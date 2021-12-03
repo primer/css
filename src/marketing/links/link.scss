@@ -21,9 +21,12 @@
     content: '';
     // stylelint-disable-next-line primer/colors
     background-color: currentColor;
-    transition: transform 0.3s ease;
     transform: scaleX(0);
     transform-origin: 0 0;
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+      transition: transform 0.3s ease;
+    }
   }
 
   &.link-emphasis-mktg::before {

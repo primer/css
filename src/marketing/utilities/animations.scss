@@ -29,21 +29,23 @@
     }
   }
 
-  &:hover,
-  &:focus {
-    .arrow-symbol-mktg {
-      transform: translateX(4px);
+  @media screen and (prefers-reduced-motion: no-preference) {
+    &:hover,
+    &:focus {
+      .arrow-symbol-mktg {
+        transform: translateX(4px);
 
-      // stylelint-disable-next-line selector-max-type, selector-max-specificity
-      path:last-child {
-        stroke-dashoffset: 20;
+        // stylelint-disable-next-line selector-max-type, selector-max-specificity
+        path:last-child {
+          stroke-dashoffset: 20;
+        }
       }
     }
-  }
 
-  &:active {
-    .arrow-symbol-mktg {
-      transform: translateX(6px);
+    &:active {
+      .arrow-symbol-mktg {
+        transform: translateX(6px);
+      }
     }
   }
 }
