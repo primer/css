@@ -35,7 +35,9 @@ The marketing link size is defined with utility classes and come in large (`.f3-
 </a>
 ```
 
-## Link with pale underline
+## Link with emphasis
+
+Add class `link-emphasis-mktg` to the link, to give it a pale underline, that will fill up on hover.
 
 ```html live
 <a href="#" class="link-mktg arrow-target-mktg link-emphasis-mktg text-semibold f3-mktg">
