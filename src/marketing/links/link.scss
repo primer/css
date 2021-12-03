@@ -16,7 +16,7 @@
     bottom: -7px;
     left: 0;
     display: block;
-    width: 100%;
+    width: calc(100% - 1.25em);
     height: 2px;
     pointer-events: none;
     content: '';
@@ -41,11 +41,8 @@
   }
 
   .octicon {
-    position: absolute;
-    top: 0.25em;
     width: 1em;
     height: 1em;
-    margin-left: 0.1em;
   }
 
   .octicon-chevrow {
