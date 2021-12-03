@@ -40,7 +40,7 @@
     height: 1em;
   }
 
-  .octicon-chevrow {
+  .link-arrow-mktg {
     transition: transform 0.2s;
     transform: translateX(-4px);
 
@@ -54,7 +54,7 @@
 
   &:hover,
   &:focus {
-    .octicon-chevrow {
+    .link-arrow-mktg {
       transform: translateX(0);
 
       // stylelint-disable-next-line selector-max-type, selector-max-specificity
@@ -67,7 +67,7 @@
   &:active {
     outline: none;
 
-    .octicon-chevrow {
+    .link-arrow-mktg {
       transform: translateX(4px);
     }
   }
