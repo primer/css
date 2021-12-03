@@ -35,7 +35,7 @@
       .arrow-symbol-mktg {
         transform: translateX(4px);
 
-        // stylelint-disable-next-line selector-max-type, selector-max-specificity
+        // stylelint-disable-next-line selector-max-type, selector-max-specificity, max-nesting-depth
         path:last-child {
           stroke-dashoffset: 20;
         }
