@@ -6,10 +6,12 @@ source: 'https://github.com/primer/css/tree/main/src/marketing/links'
 bundle: marketing-links
 ---
 
-Marketing links are to be documented here...
+Marketing links can be produced by combining the base class `link-mktg` with a set of modifier classes to control the size and color.
 
 
-## Large link
+## Link sizes
+
+The marketing link size is defined with utility classes and come in "large" `.f3-mktg` and "small" `.f4-mktg`:
 
 ```html live
 <a href="#" class="link-mktg text-semibold f3-mktg">
@@ -22,9 +24,6 @@ Marketing links are to be documented here...
 </a>
 ```
 
-
-## Small link
-
 ```html live
 <a href="#" class="link-mktg text-semibold f4-mktg">
     Call to action
@@ -36,8 +35,7 @@ Marketing links are to be documented here...
 </a>
 ```
 
-
-## Large link with pale underline
+## Link with pale underline
 
 ```html live
 <a href="#" class="link-mktg text-semibold f3-mktg underline-pale">
