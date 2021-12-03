@@ -47,7 +47,7 @@
 
   .octicon-chevrow {
     transition: transform 0.2s;
-    transform: translateX(0);
+    transform: translateX(-4px);
 
     path:last-child {
       stroke-dasharray: 10;
@@ -59,7 +59,7 @@
   &:hover,
   &:focus {
     .octicon-chevrow {
-      transform: translateX(4px);
+      transform: translateX(0);
 
       path:last-child {
         stroke-dashoffset: 20;
