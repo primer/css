@@ -2,10 +2,6 @@
   display: inline-block;
   position: relative;
 
-  &:active {
-    outline: none;
-  }
-
   &:hover {
     text-decoration: none;
   }
@@ -49,6 +45,7 @@
     transition: transform 0.2s;
     transform: translateX(-4px);
 
+    // stylelint-disable-next-line selector-max-type selector-max-specificity
     path:last-child {
       stroke-dasharray: 10;
       stroke-dashoffset: 10;
@@ -61,6 +58,7 @@
     .octicon-chevrow {
       transform: translateX(0);
 
+      // stylelint-disable-next-line selector-max-type selector-max-specificity
       path:last-child {
         stroke-dashoffset: 20;
       }
@@ -68,6 +66,8 @@
   }
 
   &:active {
+    outline: none;
+
     .octicon-chevrow {
       transform: translateX(6px);
     }
