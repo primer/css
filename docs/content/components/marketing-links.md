@@ -38,7 +38,7 @@ The marketing link size is defined with utility classes and come in large (`.f3-
 ## Link with pale underline
 
 ```html live
-<a href="#" class="link-mktg text-semibold f3-mktg underline-pale">
+<a href="#" class="link-mktg link-emphasis-mktg text-semibold f3-mktg">
     Call to action
 
     <svg xmlns="http://www.w3.org/2000/svg" class="octicon octicon-chevrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -63,7 +63,7 @@ The link color is controlled with the [Primer color classes](/utilities/colors),
     </svg>
 </a>
 
-<a href="#" class="link-mktg text-semibold f4-mktg color-fg-default underline-pale">
+<a href="#" class="link-mktg link-emphasis-mktg text-semibold f4-mktg color-fg-default">
     Call to action
 
     <svg xmlns="http://www.w3.org/2000/svg" class="octicon octicon-chevrow" width="16" height="16" viewBox="0 0 16 16" fill="none">

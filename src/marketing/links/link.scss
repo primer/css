@@ -11,7 +11,7 @@
   }
 
   &::after,
-  &.underline-pale::before {
+  &.link-emphasis-mktg::before {
     position: absolute;
     bottom: -0.15em;
     left: 0;
@@ -27,7 +27,7 @@
     transform-origin: 0 0;
   }
 
-  &.underline-pale::before {
+  &.link-emphasis-mktg::before {
     transform: scaleX(1);
     opacity: 0.2;
   }
