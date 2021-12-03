@@ -19,6 +19,7 @@
     height: 2px;
     pointer-events: none;
     content: '';
+    // stylelint-disable-next-line primer/colors
     background-color: currentColor;
     transition: transform 0.3s ease;
     transform: scaleX(0);
