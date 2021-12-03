@@ -310,3 +310,16 @@
   width: 100%;
   text-align: center;
 }
+
+// Icon-only buttons
+.btn-icon {
+  display: inline-block;
+  // stylelint-disable-next-line primer/spacing
+  padding: 7px;
+  line-height: $lh-condensed-ultra;
+  vertical-align: middle;
+
+  &.btn-invisible {
+    padding: $spacer-2;
+  }
+}
