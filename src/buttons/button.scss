@@ -314,10 +314,10 @@
 // Icon-only buttons
 // default mobile sizing
 .btn--icon {
-  padding: 0;
-  height: 48px;
-  width: 48px;
   display: grid;
+  width: 48px;
+  height: 48px;
+  padding: 0;
   place-content: center;
 }
 
@@ -331,17 +331,17 @@
 // desktop friendly sizing
 @media (hover: hover) and (pointer: fine) {
   .btn--icon {
-    height: 32px;
     width: 32px;
+    height: 32px;
   }
 
   .btn--icon-sm {
-    height: 28px;
     width: 28px;
+    height: 28px;
   }
 
   .btn--icon-lg {
-    height: 40px;
     width: 40px;
+    height: 40px;
   }
 }
