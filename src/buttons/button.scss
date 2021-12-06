@@ -321,13 +321,6 @@
   place-content: center;
 }
 
-.btn--icon-sm {
-  .octicon {
-    width: 14px;
-    height: 14px;
-  }
-}
-
 // desktop friendly sizing
 @media (hover: hover) and (pointer: fine) {
   .btn--icon {
@@ -338,6 +331,11 @@
   .btn--icon-sm {
     height: 28px;
     width: 28px;
+
+    .octicon {
+      width: 14px;
+      height: 14px;
+    }
   }
 
   .btn--icon-lg {
