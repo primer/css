@@ -32,6 +32,7 @@ NavWithSubItems.args = {
         listSemantic
         collapsible
         containsSubItem
+        containsActiveSubItem
         text="Nav Item"
         children={
           <ListTemplate
@@ -51,6 +52,51 @@ NavWithSubItems.args = {
   )
 }
 NavWithSubItems.decorators = [
+  Story => (
+    <nav>
+      <Story />
+    </nav>
+  )
+]
+
+export const NavWithNoActiveSubItems = ListTemplate.bind({})
+NavWithNoActiveSubItems.storyName = '[Nav] Links + nested collapsible group w/ no active children'
+NavWithNoActiveSubItems.args = {
+  ...ListTemplate.args,
+  ...ListItemTemplate.args,
+  role: undefined,
+  ariaLabel: 'Main menu description',
+  showDividers: false,
+  children: (
+    <>
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+      <ListItemTemplate
+        listSemantic
+        collapsible
+        containsSubItem
+        text="Nav Item"
+        children={
+          <ListTemplate
+            subGroup
+            ariaLabel="Sub nav description"
+            children={
+              <>
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic />
+              </>
+            }
+          />
+        }
+      />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+    </>
+  )
+}
+NavWithNoActiveSubItems.decorators = [
   Story => (
     <nav>
       <Story />
@@ -92,6 +138,7 @@ NavWithSubItemsLeadingVisual16px.args = {
       <ListItemTemplate
         listSemantic
         containsSubItem
+        containsActiveSubItem
         collapsible
         text="Nav Item"
         href="/"
@@ -177,6 +224,7 @@ NavWithSubItemsLeadingVisual20px.args = {
       <ListItemTemplate
         listSemantic
         containsSubItem
+        containsActiveSubItem
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual20"
@@ -261,6 +309,7 @@ NavWithSubItemsLeadingVisual24px.args = {
       <ListItemTemplate
         listSemantic
         containsSubItem
+        containsActiveSubItem
         text="Nav Item"
         href="/"
         leadingVisualSize="ActionList-content--visual24"
@@ -389,6 +438,7 @@ MenuWithSectionDivider.args = {
       <DividerTemplate title="Section DividerTemplate (subtle)" id="some-unique-id" />
       <ListItemTemplate
         containsSubItem
+        containsActiveSubItem
         children={
           <ListTemplate
             ariaLabelledBy="some-unique-id"
@@ -616,6 +666,7 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
                 <ListItemTemplate
                   listSemantic
                   containsSubItem
+                  containsActiveSubItem
                   text="Moderation options"
                   //   href="/"
                   collapsible
@@ -626,6 +677,7 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
                   children={
                     <ListTemplate
                       containsSubItem
+                      containsActiveSubItem
                       subGroup
                       ariaLabel="Sub nav descrioption"
                       children={
@@ -725,3 +777,42 @@ NavWithSubItemsLeadingVisual16pxSubSections.decorators = [
     </nav>
   )
 ]
+
+export const ActionListFullBleed = ListTemplate.bind({})
+ActionListFullBleed.storyName = '[List] Full bleed Action List inside box'
+ActionListFullBleed.args = {
+  ...ListTemplate.args,
+  ...ListItemTemplate.args,
+  role: undefined,
+  ariaLabel: 'Main menu description',
+  showDividers: false,
+  listPadding: 'ActionList--full',
+  children: (
+    <>
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+      <ListItemTemplate
+        listSemantic
+        collapsible
+        containsSubItem
+        text="Nav Item"
+        children={
+          <ListTemplate
+            subGroup
+            ariaLabel="Sub nav description"
+            children={
+              <>
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic ariaCurrent="page" />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic />
+                <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic />
+              </>
+            }
+          />
+        }
+      />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+      <ListItemTemplate text="Nav Item" href="/" listSemantic />
+    </>
+  )
+}
