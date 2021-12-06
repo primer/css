@@ -1,0 +1,50 @@
+.link-mktg {
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  &::after,
+  &.link-emphasis-mktg::before {
+    position: absolute;
+    bottom: -0.15em;
+    left: 0;
+    width: calc(100% - 1em);
+    height: 2px;
+    pointer-events: none;
+    content: '';
+    // stylelint-disable-next-line primer/colors
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &.link-emphasis-mktg::before {
+    opacity: 0.2;
+    transform: scaleX(1);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &.arrow-target-mktg {
+    .arrow-symbol-mktg {
+      margin-left: -$em-spacer-3;
+    }
+  }
+}
