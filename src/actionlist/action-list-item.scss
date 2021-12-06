@@ -5,6 +5,17 @@
   box-shadow: 0 0 0 2px var(--color-accent-fg); // this color breaks convention
 }
 
+@mixin activeIndicatorLine {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: -$actionList-item-padding-horizontal;
+  width: $spacer-1;
+  height: $spacer-4;
+  content: '';
+  background: var(--color-accent-fg);
+  border-radius: $border-radius;
+}
+
 // <li>
 .ActionList-item {
   position: relative;
@@ -77,25 +88,26 @@
 
   // active state [aria-current]
 
-  &.ActionList-item--navActive:not(.ActionList-item--danger) {
-    background: var(--color-action-list-item-default-selected-bg);
-
-    // stylelint-disable-next-line selector-max-specificity
-    &::before,
-    + .ActionList-item::before {
-      visibility: hidden;
+  &.ActionList-item--navActive {
+    &:not(.ActionList-item--subItem) {
+      .ActionList-item-label {
+        font-weight: $font-weight-bold;
+      }
     }
 
-    // blue accent line
-    &::after {
-      position: absolute;
-      top: calc(50% - 12px);
-      left: -$actionList-item-padding-horizontal;
-      width: $spacer-1;
-      height: $spacer-4;
-      content: '';
-      background: var(--color-accent-fg);
-      border-radius: $border-radius;
+    &:not(.ActionList-item--danger) {
+      background: var(--color-action-list-item-default-selected-bg);
+
+      // stylelint-disable-next-line selector-max-specificity
+      &::before,
+      + .ActionList-item::before {
+        visibility: hidden;
+      }
+
+      // blue accent line
+      &::after {
+        @include activeIndicatorLine;
+      }
     }
   }
 
@@ -111,7 +123,7 @@
       display: block;
     }
 
-    &.ActionList-item--hasSubItem {
+    &.ActionList-item--hasActiveSubItem {
       // stylelint-disable-next-line selector-max-specificity
       > .ActionList-content > .ActionList-item-label {
         font-weight: $font-weight-bold;
@@ -127,6 +139,26 @@
 
     .ActionList--subGroup {
       display: none;
+    }
+
+    // show active indicator on parent collapse if child is active
+    &.ActionList-item--hasActiveSubItem {
+      background: var(--color-action-list-item-default-selected-bg);
+
+      .ActionList-item-label {
+        font-weight: $font-weight-bold;
+      }
+
+      // stylelint-disable-next-line selector-max-specificity
+      &::before,
+      + .ActionList-item::before {
+        visibility: hidden;
+      }
+
+      // blue accent line
+      &::after {
+        @include activeIndicatorLine;
+      }
     }
   }
 
