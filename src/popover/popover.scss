@@ -199,10 +199,10 @@
 @media (max-width: ($width-md - 1px)) {
   .Popover {
     position: fixed;
-    top: auto;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    top: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
   }
 
   .Popover-message {
@@ -210,7 +210,7 @@
     right: auto;
     bottom: auto;
     left: auto;
-    width: auto;
+    width: auto !important;
     margin: $spacer-2;
   }
 

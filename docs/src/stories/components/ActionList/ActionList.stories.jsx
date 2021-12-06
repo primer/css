@@ -72,6 +72,18 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    listPadding: {
+      options: [0, 1], // iterator
+      mapping: ['', 'ActionList--full'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['inset', 'full-bleed']
+      },
+      description: 'ActionList includes 8px padding by default, full-bleed removes all padding',
+      table: {
+        category: 'CSS'
+      }
     }
   }
 }
@@ -83,10 +95,16 @@ export const ListTemplate = ({
   ariaLabel,
   ariaLabelledBy,
   subGroup,
-  listboxMultiSelect
+  listboxMultiSelect,
+  listPadding
 }) => (
   <ul
-    className={clsx('ActionList', showDividers && 'ActionList--divided', subGroup && 'ActionList--subGroup')}
+    className={clsx(
+      'ActionList',
+      showDividers && 'ActionList--divided',
+      subGroup && 'ActionList--subGroup',
+      listPadding && `${listPadding}`
+    )}
     role={role}
     aria-label={ariaLabel && ariaLabel}
     aria-labelledby={ariaLabelledBy && ariaLabelledBy}
@@ -102,6 +120,7 @@ Playground.args = {
   subGroup: false,
   showDividers: false,
   listboxMultiSelect: false,
+  listPadding: '',
   ariaLabelledBy: '',
   groupId: '',
   children: (
