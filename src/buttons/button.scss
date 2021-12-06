@@ -24,7 +24,7 @@
 
   &:disabled,
   &.disabled,
-  &[aria-disabled=true] {
+  &[aria-disabled='true'] {
     cursor: default;
   }
 
@@ -84,14 +84,14 @@
   }
 
   &.selected,
-  &[aria-selected=true] {
+  &[aria-selected='true'] {
     background-color: var(--color-btn-selected-bg);
     box-shadow: var(--color-primer-shadow-inset);
   }
 
   &:disabled,
   &.disabled,
-  &[aria-disabled=true] {
+  &[aria-disabled='true'] {
     color: var(--color-primer-fg-disabled);
     background-color: var(--color-btn-bg);
     border-color: var(--color-btn-border);
@@ -127,14 +127,14 @@
 
   &:active,
   &.selected,
-  &[aria-selected=true] {
+  &[aria-selected='true'] {
     background-color: var(--color-btn-primary-selected-bg);
     box-shadow: var(--color-btn-primary-selected-shadow);
   }
 
   &:disabled,
   &.disabled,
-  &[aria-disabled=true] {
+  &[aria-disabled='true'] {
     color: var(--color-btn-primary-disabled-text);
     background-color: var(--color-btn-primary-disabled-bg);
     border-color: var(--color-btn-primary-disabled-border);
@@ -184,7 +184,7 @@
 
   &:active,
   &.selected,
-  &[aria-selected=true] {
+  &[aria-selected='true'] {
     color: var(--color-btn-outline-selected-text);
     background-color: var(--color-btn-outline-selected-bg);
     border-color: var(--color-btn-outline-selected-border);
@@ -193,7 +193,7 @@
 
   &:disabled,
   &.disabled,
-  &[aria-disabled=true] {
+  &[aria-disabled='true'] {
     color: var(--color-btn-outline-disabled-text);
     background-color: var(--color-btn-outline-disabled-bg);
     border-color: var(--color-btn-border);
@@ -242,7 +242,7 @@
 
   &:active,
   &.selected,
-  &[aria-selected=true] {
+  &[aria-selected='true'] {
     color: var(--color-btn-danger-selected-text);
     background-color: var(--color-btn-danger-selected-bg);
     border-color: var(--color-btn-danger-selected-border);
@@ -251,7 +251,7 @@
 
   &:disabled,
   &.disabled,
-  &[aria-disabled=true] {
+  &[aria-disabled='true'] {
     color: var(--color-btn-danger-disabled-text);
     background-color: var(--color-btn-danger-disabled-bg);
     border-color: var(--color-btn-border);
@@ -312,14 +312,36 @@
 }
 
 // Icon-only buttons
-.btn-icon {
-  display: inline-block;
-  // stylelint-disable-next-line primer/spacing
-  padding: 7px;
-  line-height: $lh-condensed-ultra;
-  vertical-align: middle;
+// default mobile sizing
+.btn--icon {
+  padding: 0;
+  height: 48px;
+  width: 48px;
+  display: grid;
+  place-content: center;
+}
 
-  &.btn-invisible {
-    padding: $spacer-2;
+.btn--icon-sm {
+  .octicon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+// desktop friendly sizing
+@media (hover: hover) and (pointer: fine) {
+  .btn--icon {
+    height: 32px;
+    width: 32px;
+  }
+
+  .btn--icon-sm {
+    height: 28px;
+    width: 28px;
+  }
+
+  .btn--icon-lg {
+    height: 40px;
+    width: 40px;
   }
 }

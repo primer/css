@@ -116,6 +116,13 @@ export default {
       table: {
         category: 'Interactive'
       }
+    },
+    btnGroupItem: {
+      defaultValue: false,
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
     }
   }
 }
@@ -139,7 +146,8 @@ export const ButtonTemplate = ({
   selected,
   closeBtn,
   focusElement,
-  focusAllElements
+  focusAllElements,
+  btnGroupItem
 }) => (
   <>
     <button
@@ -150,7 +158,8 @@ export const ButtonTemplate = ({
         size && `${size}`,
         fullWidth && 'btn-block',
         closeBtn && 'close-button',
-        focusAllElements && 'focus'
+        focusAllElements && 'focus',
+        btnGroupItem && 'BtnGroup-item'
       )}
       aria-selected={selected}
     >
