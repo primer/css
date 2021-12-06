@@ -59,8 +59,7 @@
     box-shadow: var(--color-btn-focus-shadow);
   }
 
-  &:active
-  &.zeroclipboard-is-active {
+  &:active &.zeroclipboard-is-active {
     background-color: var(--color-btn-selected-bg);
   }
 
