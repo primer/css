@@ -11,4 +11,4 @@ jobs:
       - name: Don't Merge
         run: |
           echo "Don't merge the next_major, changeset pr. Instead when you're ready to release a major version, merge next_major into main via a pr."
-          exit 0
+          exit 1
