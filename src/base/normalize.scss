@@ -161,7 +161,7 @@ h1 {
  */
 
 mark {
-  background-color: #ff0;
+  background-color: var(--color-attention-subtle);
   color: var(--color-text-primary);
 }
 

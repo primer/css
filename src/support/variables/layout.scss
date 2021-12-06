@@ -150,11 +150,11 @@ $breakpoints: (
 // breakpoints and create both responsive and non-responsive classes in one
 // loop:
 $responsive-variants: (
-  "": "",
-  sm: "-sm",
-  md: "-md",
-  lg: "-lg",
-  xl: "-xl",
+  '': '',
+  sm: '-sm',
+  md: '-md',
+  lg: '-lg',
+  xl: '-xl',
 ) !default;
 
 // responive utility position values
@@ -169,14 +169,12 @@ $responsive-positions: (
 $sidebar-width: (
   sm: 220px,
   md: 256px,
-  lg: 296px,
-  xl: 320px
+  lg: 296px
 ) !default;
 
 $sidebar-narrow-width: (
   md: 240px,
-  lg: 256px,
-  xl: 296px
+  lg: 256px
 ) !default;
 
 $sidebar-wide-width: (

@@ -10,7 +10,7 @@ VariantDefault.storyName = '[Variant] Default'
 VariantDefault.args = {
   text: 'Label text',
   inline: false,
-  variant: 'Label--default'
+  variant: ''
 }
 
 export const VariantPrimary = LabelTemplate.bind({})
@@ -21,12 +21,20 @@ VariantPrimary.args = {
   variant: 'Label--primary'
 }
 
-export const VariantInfo = LabelTemplate.bind({})
-VariantInfo.storyName = '[Variant] Info'
-VariantInfo.args = {
+export const VariantSecondary = LabelTemplate.bind({})
+VariantSecondary.storyName = '[Variant] Secondary'
+VariantSecondary.args = {
   text: 'Label text',
   inline: false,
-  variant: 'Label--info'
+  variant: 'Label--secondary'
+}
+
+export const VariantAccent = LabelTemplate.bind({})
+VariantAccent.storyName = '[Variant] Accent'
+VariantAccent.args = {
+  text: 'Label text',
+  inline: false,
+  variant: 'Label--accent'
 }
 
 export const VariantSuccess = LabelTemplate.bind({})
@@ -37,12 +45,20 @@ VariantSuccess.args = {
   variant: 'Label--success'
 }
 
-export const VariantWarning = LabelTemplate.bind({})
-VariantWarning.storyName = '[Variant] Warning'
-VariantWarning.args = {
+export const VariantAttention = LabelTemplate.bind({})
+VariantAttention.storyName = '[Variant] Attention'
+VariantAttention.args = {
   text: 'Label text',
   inline: false,
-  variant: 'Label--warning'
+  variant: 'Label--attention'
+}
+
+export const VariantSevere = LabelTemplate.bind({})
+VariantSevere.storyName = '[Variant] Severe'
+VariantSevere.args = {
+  text: 'Label text',
+  inline: false,
+  variant: 'Label--severe'
 }
 
 export const VariantDanger = LabelTemplate.bind({})
@@ -53,14 +69,34 @@ VariantDanger.args = {
   variant: 'Label--danger'
 }
 
+export const VariantDone = LabelTemplate.bind({})
+VariantDone.storyName = '[Variant] Done'
+VariantDone.args = {
+  text: 'Label text',
+  inline: false,
+  variant: 'Label--done'
+}
+
+export const VariantSponsors = LabelTemplate.bind({})
+VariantSponsors.storyName = '[Variant] Sponsors'
+VariantSponsors.args = {
+  text: 'Label text',
+  inline: false,
+  variant: 'Label--sponsors'
+}
+
 export const AllVariants = ({}) => (
   <>
-    <LabelTemplate text="Default" variant="Label--default" />
+    <LabelTemplate text="Default" />
     <LabelTemplate text="Primary" variant="Label--primary" />
-    <LabelTemplate text="Info" variant="Label--info" />
+    <LabelTemplate text="Secondary" variant="Label--secondary" />
+    <LabelTemplate text="Accent" variant="Label--accent" />
     <LabelTemplate text="Success" variant="Label--success" />
-    <LabelTemplate text="Warning" variant="Label--warning" />
+    <LabelTemplate text="Attention" variant="Label--attention" />
+    <LabelTemplate text="Severe" variant="Label--severe" />
     <LabelTemplate text="Danger" variant="Label--danger" />
+    <LabelTemplate text="Done" variant="Label--done" />
+    <LabelTemplate text="Sponsors" variant="Label--sponsors" />
   </>
 )
 AllVariants.decorators = [
