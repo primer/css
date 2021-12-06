@@ -65,7 +65,7 @@
     "semver": "7.3.5",
     "stylelint": "14.1.0",
     "stylelint-scss": "4.0.0",
-    "table": "6.7.3"
+    "table": "6.7.5"
   },
   "jest": {
     "testEnvironment": "node",
