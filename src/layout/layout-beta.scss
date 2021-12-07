@@ -5,9 +5,9 @@ $Layout-divider-color: red !default; // var(--color-border-default)
 
 // Variant names
 
-$Layout-variant-stackRegions: 'stackRegions' !default;
-$Layout-variant-separateRegions: 'separateRegions' !default;
-$Layout-variant-multiColumn: 'multiColumns' !default;
+$Layout-variant-stackRegions:           'stackRegions' !default;
+$Layout-variant-separateRegions:        'separateRegions' !default;
+$Layout-variant-multiColumn:            'multiColumns' !default;
 
 // Property modifier names
 
@@ -35,7 +35,7 @@ $Layout-prop-flow-horizontal:           'multiColumns' !default;          // flo
 $Layout-prop-responsive-behavior:       'variant' !default;               // r?
 
 // stackRegions-specific variants
-$Layout-prop-stackRegions-pane-position:  'stackRegions-pane-position' !default; // r-pane-pos?
+$Layout-prop-stackRegions-pane-position: 'stackRegions-pane-position' !default; // r-pane-pos?
 
 // separateRegions-specific variants
 $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-primary-region?
@@ -45,7 +45,6 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-prim
 :root {
   --Layout-pane-width: #{map-get($sidebar-width, 'sm')};
   --Layout-content-width: 100%;
-
   // stylelint-disable-next-line primer/no-undefined-vars
   --Layout-template-columns: 1fr var(--Layout-pane-width);
   --Layout-template-areas: 'content pane';
@@ -163,13 +162,11 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-prim
 
   // Layout variants
 
-  // -- Desktop-level multi-columns
-
-  // Layout--variant-stackRegions
-  // Layout--variant-separateRegions
-
-  // Layout--variant-md-multiColumns
-  // Layout--variant-lg-multiColumns
+  // Available options:
+  // - Layout--variant-stackRegions
+  // - Layout--variant-separateRegions
+  // - Layout--variant-md-multiColumns
+  // - Layout--variant-lg-multiColumns
 
   // -- Stack regions
 
