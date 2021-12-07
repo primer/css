@@ -1,46 +1,40 @@
-// Component className
+// component id
 
 $Layout: 'LayoutBeta' !default;
 $Layout-divider-color: red !default; // var(--color-border-default)
 
-// Variant names
+// Layout variants
 
-$Layout-variant-stackRegions:           'stackRegions' !default;
-$Layout-variant-separateRegions:        'separateRegions' !default;
-$Layout-variant-multiColumn:            'multiColumns' !default;
+$Layout-variant-stackRegions: 'stackRegions' !default;
+$Layout-variant-separateRegions: 'separateRegions' !default;
+$Layout-variant-multiColumn: 'multiColumns' !default;
 
-// Property modifier names
+// Prop names
 
-// Wrapper & spacing
-$Layout-prop-outer-spacing:             'outer-spacing' !default;            // outer-m?
-$Layout-prop-inner-spacing:             'inner-spacing' !default;            // inner-p?
-$Layout-prop-column-gap:                'column-gap' !default;
-$Layout-prop-row-gap:                   'row-gap' !default;
+// structure
+$Layout-prop-outer-spacing: 'outer-spacing' !default;
+$Layout-prop-inner-spacing: 'inner-spacing' !default;
+$Layout-prop-column-gap: 'column-gap' !default;
+$Layout-prop-row-gap: 'row-gap' !default;
 
-$Layout-prop-pane-divider:              'pane-divider' !default;
-$Layout-prop-header-divider:            'header-divider' !default;
-$Layout-prop-footer-divider:            'footer-divider' !default;
+// dividers
+$Layout-prop-pane-divider: 'pane-divider' !default;
+$Layout-prop-header-divider: 'header-divider' !default;
+$Layout-prop-footer-divider: 'footer-divider' !default;
 
-// Pane
-$Layout-prop-pane-position:             'pane-position' !default;            // pane-pos?
-$Layout-prop-pane-width:                'pane-width' !default;               // pane-w?
-$Layout-prop-pane-is-sticky:            'pane-is-sticky' !default;           // pane-sticky?
+// pane region
+$Layout-prop-pane-position: 'pane-position' !default;
+$Layout-prop-pane-width: 'pane-width' !default;
+$Layout-prop-pane-is-sticky: 'pane-is-sticky' !default;
 
-// Content
-$Layout-prop-content-width:             'content-width' !default;            // content-w?
-
-// Variants & responsive variants
-
-$Layout-prop-flow-horizontal:           'multiColumns' !default;          // flow-h?
-$Layout-prop-responsive-behavior:       'variant' !default;               // r?
+// content region
+$Layout-prop-content-width: 'content-width' !default;
 
 // stackRegions-specific variants
-$Layout-prop-stackRegions-pane-position: 'stackRegions-pane-position' !default; // r-pane-pos?
+$Layout-prop-stackRegions-pane-position: 'stackRegions-pane-position' !default;
 
 // separateRegions-specific variants
-$Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-primary-region?
-
-// Default Layout values
+$Layout-prop-separateRegions-primary-region: 'primary' !default;
 
 :root {
   --Layout-pane-width: #{map-get($sidebar-width, 'sm')};
@@ -82,7 +76,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-prim
     }
   }
 
-  // Outer spacing
+  // outer spacing
 
   &.#{$Layout}--#{$Layout-prop-outer-spacing}-normal {
     --Layout-outer-spacing-x: #{$spacer-3}; // 16px
@@ -99,7 +93,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-prim
     --Layout-outer-spacing-y: #{$spacer-3}; // 16px
   }
 
-  // Inner spacing
+  // inner spacing
 
   &.#{$Layout}--#{$Layout-prop-inner-spacing}-normal {
     --Layout-inner-spacing-min: #{$spacer-3}; // 16px
@@ -115,7 +109,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-prim
     --Layout-inner-spacing-max: #{$spacer-3}; // 16px
   }
 
-  // Column gap
+  // column gap
 
   &.#{$Layout}--#{$Layout-prop-column-gap}-normal {
     --Layout-column-gap: #{$spacer-3}; // 16px
@@ -137,7 +131,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-prim
     --Layout-column-gap: 0px;
   }
 
-  // Row gap
+  // row gap
 
   &.#{$Layout}--#{$Layout-prop-row-gap}-normal {
     --Layout-row-gap: #{$spacer-3}; // 16px
@@ -168,9 +162,9 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-prim
   // - Layout--variant-md-multiColumns
   // - Layout--variant-lg-multiColumns
 
-  // -- Stack regions
+  // variant: stackRegions
 
-  &.#{$Layout}--#{$Layout-prop-responsive-behavior}-stackRegions {
+  &.#{$Layout}--variant-stackRegions {
 
     &.#{$Layout}--variant-md-multiColumns {
       @include Layout-stackRegions(md);
@@ -181,9 +175,9 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-prim
     }
   }
 
-  // -- Separate regions variant
+  // variant: separateRegions
 
-  &.#{$Layout}--#{$Layout-prop-responsive-behavior}-separateRegions {
+  &.#{$Layout}--variant-separateRegions {
 
     &.#{$Layout}--variant-md-multiColumns {
       @include Layout-separateRegions(md);
@@ -194,23 +188,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-prim
     }
   }
 
-  // multiColumn
-
-  // `flow-horizontal` determines whether `Layout` can render desktop-friendly
-  // two-column layouts. It should appear by default for compatibility
-  // with desktop browsers that have JavaScript disabled.
-
-  // Use `responsive-behaviorAt` to determine in which breakpoint `Layout` will
-  // stop flowing horizontally. In these cases `flow-horizontal` class will be
-  // removed.
-
-  // The reason this is not a media query is because it's still not possible to
-  // use CSS variables to determine the breakpoint dinamically. (And the other
-  // option would be to duplicate too much code.)
-  
-
-  // FIXME - do we want to call this flowHorizontal??
-  // at least call it `flow-md-horizontal` or something
+  // variant: multiColumns (desktop version)
 
   &.#{$Layout}--variant-md-multiColumns {
     @include breakpoint(md) {
@@ -224,43 +202,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-prim
     }
   }
 
-  //&.#{$Layout}--#{$Layout-prop-flow-horizontal} {
-
-    /*
-    &.#{$Layout}--#{$Layout-prop-pane-position}-start {
-      --Layout-template-columns: var(--Layout-pane-width) 1fr;
-      --Layout-template-areas: "pane content";
-    }
-
-    &.#{$Layout}--#{$Layout-prop-pane-position}-end {
-      --Layout-template-columns: 1fr var(--Layout-pane-width);
-      --Layout-template-areas: "content pane";
-    }
-    */
-
-    // Pane divider
-    // FIXME
-
-    /*
-    FIXME - Use Layout-divider
-    // Header divider
-
-    &.#{$Layout}--#{$Layout-prop-header-divider} {
-      .#{$Layout}-header {
-        border-bottom: 1px solid $Layout-divider-color;
-      }
-    }
-
-    // Footer divider
-
-    &.#{$Layout}--#{$Layout-prop-footer-divider} {
-      .#{$Layout}-footer {
-        border-top: 1px solid $Layout-divider-color;
-      }
-    }
-    */
-
-  // Content width
+  // content width
 
   [class^="#{$Layout}-content-centered-"] {
     max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + var(--Layout-column-gap));
@@ -292,7 +234,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-prim
     }
   }
 
-  // pane-width
+  // pane width
 
   @each $breakpoint in map-keys($sidebar-width) {
     @include breakpoint($breakpoint) {
@@ -318,7 +260,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-prim
 
   // Responsive divider
 
-  &.#{$Layout}:not(.#{$Layout}--#{$Layout-prop-flow-horizontal}) {
+  // &.#{$Layout}:not(.#{$Layout}--#{$Layout-prop-flow-horizontal}) {
     
     /*
     .#{$Layout}-region--line-divider {
@@ -357,9 +299,9 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-prim
       }
     }
     */
-  }
+  // }
 
-  // Regions
+  // regions
 
   .#{$Layout}-header, .#{$Layout}-content, .#{$Layout}-pane, .#{$Layout}-footer {
     // stylelint-disable-next-line primer/spacing
