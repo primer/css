@@ -102,3 +102,19 @@ Add the `.Header-link` class to any anchor tags in the header to give them consi
   </div>
 </div>
 ```
+
+## Header-divider
+
+Add a `.Header-divider` to separate links and creating a "breadcrumb like" navigation.
+
+```html live
+<div class="Header">
+  <div class="Header-item">
+    <a href="#" class="Header-link">primer</a>
+    <span class="Header-divider">/</span>
+    <a href="#" class="Header-link">css</a>
+    <span class="Header-divider">/</span>
+    <a href="#" class="Header-link">Pull requests</a>
+  </div>
+</div>
+```

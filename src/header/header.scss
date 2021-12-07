@@ -25,13 +25,20 @@
 .Header-link {
   font-weight: $font-weight-bold;
   color: var(--color-header-logo);
-  white-space: nowrap;
+  white-space: nowrap;🐷
 
   &:hover,
   &:focus {
     color: var(--color-header-text);
     text-decoration: none;
   }
+}
+
+.Header-divider {
+  color: var(--color-header-divider);
+  margin-left: $spacer-2;
+  margin-right: $spacer-2;
+  cursor: default;
 }
 
 .Header-input {
