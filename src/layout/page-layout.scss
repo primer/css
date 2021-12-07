@@ -4,27 +4,6 @@ $Layout: 'PageLayout' !default;
 $Layout-divider-color: red !default; // var(--color-border-default)
 $Layout-responsive-variant-max-breakpoint: 'md';
 
-// Prop names
-
-// dividers
-$Layout-prop-pane-divider: 'has-pane-divider' !default;
-$Layout-prop-header-divider: 'has-header-divider' !default;
-$Layout-prop-footer-divider: 'has-footer-divider' !default;
-
-// pane region
-$Layout-prop-pane-position: 'pane-position' !default;
-$Layout-prop-pane-width: 'pane-width' !default;
-$Layout-prop-pane-is-sticky: 'is-pane-sticky' !default;
-
-// content region
-$Layout-prop-content-width: 'content-width' !default;
-
-// stackRegions-specific variants
-$Layout-prop-stackRegions-pane-position: 'stackRegions-pane-position' !default;
-
-// separateRegions-specific variants
-$Layout-prop-separateRegions-primary-region: 'primary' !default;
-
 :root {
   --Layout-pane-width: #{map-get($sidebar-width, 'sm')};
   --Layout-content-width: 100%;
@@ -65,7 +44,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
 
   // outer spacing
 
-  &.#{$Layout}--outer-spacing-normal {
+  &.#{$Layout}--outerSpacing-normal {
     --Layout-outer-spacing-x: #{$spacer-3}; // 16px
     --Layout-outer-spacing-y: #{$spacer-3}; // 16px
 
@@ -75,14 +54,14 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
     }
   }
 
-  &.#{$Layout}--outer-spacing-condensed {
+  &.#{$Layout}--outerSpacing-condensed {
     --Layout-outer-spacing-x: #{$spacer-3}; // 16px
     --Layout-outer-spacing-y: #{$spacer-3}; // 16px
   }
 
   // inner spacing
 
-  &.#{$Layout}--inner-spacing-normal {
+  &.#{$Layout}--innerSpacing-normal {
     --Layout-inner-spacing-min: #{$spacer-3}; // 16px
     --Layout-inner-spacing-max: #{$spacer-3}; // 16px
 
@@ -91,14 +70,14 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
     }
   }
 
-  &.#{$Layout}--inner-spacing-condensed {
+  &.#{$Layout}--innerSpacing-condensed {
     --Layout-inner-spacing-min: #{$spacer-3}; // 16px
     --Layout-inner-spacing-max: #{$spacer-3}; // 16px
   }
 
   // column gap
 
-  &.#{$Layout}--column-gap-normal {
+  &.#{$Layout}--columnGap-normal {
     --Layout-column-gap: #{$spacer-3}; // 16px
 
     @include breakpoint(lg) {
@@ -106,11 +85,11 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
     }
   }
 
-  &.#{$Layout}--column-gap-condensed {
+  &.#{$Layout}--columnGap-condensed {
     --Layout-column-gap: #{$spacer-3}; // 16px
   }
 
-  &.#{$Layout}--column-gap-none {
+  &.#{$Layout}--columnGap-none {
     // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
     // stylelint-disable-next-line length-zero-no-unit
     --Layout-column-gap: 0px;
@@ -118,7 +97,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
 
   // row gap
 
-  &.#{$Layout}--row-gap-normal {
+  &.#{$Layout}--rowGap-normal {
     --Layout-row-gap: #{$spacer-3}; // 16px
 
     @include breakpoint(lg) {
@@ -126,13 +105,13 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
     }
   }
 
-  &.#{$Layout}--row-gap-none {
+  &.#{$Layout}--rowGap-none {
     // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
     // stylelint-disable length-zero-no-unit
     --Layout-row-gap: 0px;
   }
 
-  &.#{$Layout}--row-gap-condensed {
+  &.#{$Layout}--rowGap-condensed {
     --Layout-row-gap: #{$spacer-3}; // 16px
   }
 
@@ -173,19 +152,19 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
     // `pane` is not yet loaded. See https://github.com/primer/css/pull/1818
     $Layout-content-full-width: minmax(0, calc(100% - var(--Layout-pane-width) - var(--Layout-column-gap)));
 
-    &.#{$Layout}--pane-position-start {
+    &.#{$Layout}--panePos-start {
       --Layout-template-columns: var(--Layout-pane-width) #{$Layout-content-full-width};
       --Layout-template-areas: "pane content";
     }
 
-    &.#{$Layout}--pane-position-end {
+    &.#{$Layout}--panePos-end {
       --Layout-template-columns: #{$Layout-content-full-width} var(--Layout-pane-width);
       --Layout-template-areas: "content pane";
     }
 
     // header divider
 
-    &.#{$Layout}--#{$Layout-prop-header-divider} {
+    &.#{$Layout}--hasHeaderDivider {
       .#{$Layout}-header {
         padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
         border-bottom: 1px solid $Layout-divider-color;
@@ -194,7 +173,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
 
     // footer divider
 
-    &.#{$Layout}--#{$Layout-prop-footer-divider} {
+    &.#{$Layout}--hasFooterDivider {
       .#{$Layout}-footer {
         padding-top: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
         border-top: 1px solid $Layout-divider-color;
@@ -204,13 +183,13 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
 
     // pane divider
 
-    &.#{$Layout}--#{$Layout-prop-pane-divider} {
-      &.#{$Layout}--pane-position-start {
+    &.#{$Layout}--hasPaneDivider {
+      &.#{$Layout}--panePos-start {
         .#{$Layout}-pane {
           border-right: 1px solid $Layout-divider-color;
         }
 
-        &:not(.#{$Layout}--column-gap-none) {
+        &:not(.#{$Layout}--columnGap-none) {
           .#{$Layout}-pane {
             margin-right: calc(var(--Layout-column-gap) * -1);
             padding-right: calc(var(--Layout-column-gap) - 1px);
@@ -221,12 +200,12 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
         }
       }
 
-      &.#{$Layout}--pane-position-end {
+      &.#{$Layout}--panePos-end {
         .#{$Layout}-pane {
           border-left: 1px solid $Layout-divider-color;
         }
 
-        &:not(.#{$Layout}--column-gap-none) {
+        &:not(.#{$Layout}--columnGap-none) {
           .#{$Layout}-pane {
             margin-left: calc(var(--Layout-column-gap) * -1);
             padding-left: calc(var(--Layout-column-gap) - 1px); 
@@ -240,7 +219,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
 
     // sticky pane
 
-    &.#{$Layout}--is-pane-sticky {
+    &.#{$Layout}--isPaneSticky {
       .#{$Layout}-pane {
         position: sticky;
         top: 0;
@@ -257,19 +236,19 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
       margin-left: auto;
     }
 
-    &.#{$Layout}--#{$Layout-prop-pane-divider} {
+    &.#{$Layout}--hasPaneDivider {
       [class^="#{$Layout}-content-centered-"] {
         max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + (var(--Layout-column-gap) * 2));
       }
     }
 
-    &.#{$Layout}--pane-position-start {
+    &.#{$Layout}--panePos-start {
       [class^="#{$Layout}-content-centered-"] > [class^='container-'] {
         margin-left: 0;
       }
     }
 
-    &.#{$Layout}--pane-position-end {
+    &.#{$Layout}--panePos-end {
       [class^="#{$Layout}-content-centered-"] > [class^='container-'] {
         margin-right: 0;
       }
@@ -289,7 +268,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
       }
     }
 
-    &.#{$Layout}--#{$Layout-prop-pane-width}-narrow {
+    &.#{$Layout}--paneWidth-narrow {
       @each $breakpoint in map-keys($sidebar-narrow-width) {
         @include breakpoint($breakpoint) {
           --Layout-pane-width: #{map-get($sidebar-narrow-width, $breakpoint)};
@@ -297,7 +276,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
       }
     }
 
-    &.#{$Layout}--#{$Layout-prop-pane-width}-wide {
+    &.#{$Layout}--paneWidth-wide {
       @each $breakpoint in map-keys($sidebar-wide-width) {
         @include breakpoint($breakpoint) {
           --Layout-pane-width: #{map-get($sidebar-wide-width, $breakpoint)};
@@ -315,11 +294,11 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
     &.#{$Layout}--variant-stackRegions {
       --Layout-template-columns: 1fr;
   
-      // responsive-pane-position: end (default)
+      // responsive-panePos: end (default)
       --Layout-template-areas: 'content' 'pane';
   
-      // responsive-pane-position: start
-      &.#{$Layout}--#{$Layout-prop-stackRegions-pane-position}-start {
+      // responsive-panePos: start
+      &.#{$Layout}--variant-stackRegions-panePos-start {
         --Layout-template-areas: 'pane' 'content';
       }
     }
@@ -330,14 +309,14 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
       --Layout-template-columns: 1fr;
       --Layout-template-areas: 'content';
 
-      &.#{$Layout}--#{$Layout-prop-separateRegions-primary-region}-content {
+      &.#{$Layout}--variant-separateRegions-primary-content {
         --Layout-template-areas: 'content';
         .#{$Layout}-pane {
           display: none;
         }
       }
 
-      &.#{$Layout}--#{$Layout-prop-separateRegions-primary-region}-pane {
+      &.#{$Layout}--variant-separateRegions-primary-pane {
         --Layout-template-areas: 'pane';
         .#{$Layout}-content {
           display: none;

@@ -346,23 +346,23 @@ export const LayoutTemplate = ({
   // use clsx for multiple classnames
   className={clsx(
     layoutClassName,
-    layoutClassName + '--variant-' + `${responsiveVariant}`,
-
-    responsiveVariant === 'separateRegions' && layoutClassName + '--primary-' + `${responsivePrimaryRegion}`,
-
-    outerSpacing && layoutClassName + '--outer-spacing-' + `${outerSpacing}`,
-    innerSpacing && layoutClassName + '--inner-spacing-' + `${innerSpacing}`,
-    columnGap && layoutClassName + '--column-gap-' + `${columnGap}`,
-    rowGap && layoutClassName + '--row-gap-' + `${rowGap}`,
     
-    paneWidth && layoutClassName + '--pane-width-' + `${paneWidth}`,
-    panePosition && layoutClassName + '--pane-position-' + `${panePosition}`,
-    responsiveVariant === 'stackRegions' && paneResponsivePosition && layoutClassName + '--stackRegions-pane-position-' + `${paneResponsivePosition}`,
-    paneDivider && layoutClassName + '--has-pane-divider',
-    paneIsSticky && layoutClassName + '--is-pane-sticky',
+    outerSpacing && layoutClassName + '--outerSpacing-' + `${outerSpacing}`,
+    innerSpacing && layoutClassName + '--innerSpacing-' + `${innerSpacing}`,
+    columnGap && layoutClassName + '--columnGap-' + `${columnGap}`,
+    rowGap && layoutClassName + '--rowGap-' + `${rowGap}`,
 
-    headerDivider && layoutClassName + '--has-header-divider',
-    footerDivider && layoutClassName + '--has-footer-divider'
+    paneWidth && layoutClassName + '--paneWidth-' + `${paneWidth}`,
+    panePosition && layoutClassName + '--panePos-' + `${panePosition}`,
+    paneDivider && layoutClassName + '--hasPaneDivider',
+    paneIsSticky && layoutClassName + '--isPaneSticky',
+
+    layoutClassName + '--variant-' + `${responsiveVariant}`,
+    responsiveVariant === 'separateRegions' && layoutClassName + '--variant-separateRegions-primary-' + `${responsivePrimaryRegion}`,
+    responsiveVariant === 'stackRegions' && paneResponsivePosition && layoutClassName + '--variant-stackRegions-panePos-' + `${paneResponsivePosition}`,
+
+    headerDivider && layoutClassName + '--hasHeaderDivider',
+    footerDivider && layoutClassName + '--hasFooterDivider'
   )}
 
   // use undefined for values that shouldn't be set if false
