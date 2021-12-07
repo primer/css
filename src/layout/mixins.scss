@@ -81,13 +81,18 @@
 // Layout beta mixins
 
 @mixin Layout-multiColumn {
+
+  // Set a `content` region width, to work with loading states when
+  // `pane` is not yet loaded. See https://github.com/primer/css/pull/1818
+  $Layout-content-full-width: minmax(0, calc(100% - var(--Layout-pane-width) - var(--Layout-column-gap)));
+
   &.#{$Layout}--#{$Layout-prop-pane-position}-start {
-    --Layout-template-columns: var(--Layout-pane-width) 1fr;
+    --Layout-template-columns: var(--Layout-pane-width) #{$Layout-content-full-width};
     --Layout-template-areas: "pane content";
   }
 
   &.#{$Layout}--#{$Layout-prop-pane-position}-end {
-    --Layout-template-columns: 1fr var(--Layout-pane-width);
+    --Layout-template-columns: #{$Layout-content-full-width} var(--Layout-pane-width);
     --Layout-template-areas: "content pane";
   }
 
