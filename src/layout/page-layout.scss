@@ -1,6 +1,5 @@
 // component id
 
-$Layout: 'PageLayout' !default;
 $Layout-divider-color: red !default; // var(--color-border-default)
 $Layout-responsive-variant-max-breakpoint: 'md';
 
@@ -23,16 +22,16 @@ $Layout-responsive-variant-max-breakpoint: 'md';
   // stylelint-enable length-zero-no-unit
 }
 
-.#{$Layout} {
+.PageLayout {
   // stylelint-disable-next-line primer/spacing
   margin: var(--Layout-outer-spacing-y) var(--Layout-outer-spacing-x);
 
-  > .#{$Layout}-wrapper {
+  > .PageLayout-wrapper {
     display: grid;
     grid: auto-flow / 1fr;
     row-gap: var(--Layout-row-gap);
 
-    > .#{$Layout}-columns {
+    > .PageLayout-columns {
       display: grid;
       column-gap: var(--Layout-column-gap);
       row-gap: var(--Layout-row-gap);
@@ -44,7 +43,7 @@ $Layout-responsive-variant-max-breakpoint: 'md';
 
   // outer spacing
 
-  &.#{$Layout}--outerSpacing-normal {
+  &.PageLayout--outerSpacing-normal {
     --Layout-outer-spacing-x: #{$spacer-3}; // 16px
     --Layout-outer-spacing-y: #{$spacer-3}; // 16px
 
@@ -54,14 +53,14 @@ $Layout-responsive-variant-max-breakpoint: 'md';
     }
   }
 
-  &.#{$Layout}--outerSpacing-condensed {
+  &.PageLayout--outerSpacing-condensed {
     --Layout-outer-spacing-x: #{$spacer-3}; // 16px
     --Layout-outer-spacing-y: #{$spacer-3}; // 16px
   }
 
   // inner spacing
 
-  &.#{$Layout}--innerSpacing-normal {
+  &.PageLayout--innerSpacing-normal {
     --Layout-inner-spacing-min: #{$spacer-3}; // 16px
     --Layout-inner-spacing-max: #{$spacer-3}; // 16px
 
@@ -70,14 +69,14 @@ $Layout-responsive-variant-max-breakpoint: 'md';
     }
   }
 
-  &.#{$Layout}--innerSpacing-condensed {
+  &.PageLayout--innerSpacing-condensed {
     --Layout-inner-spacing-min: #{$spacer-3}; // 16px
     --Layout-inner-spacing-max: #{$spacer-3}; // 16px
   }
 
   // column gap
 
-  &.#{$Layout}--columnGap-normal {
+  &.PageLayout--columnGap-normal {
     --Layout-column-gap: #{$spacer-3}; // 16px
 
     @include breakpoint(lg) {
@@ -85,11 +84,11 @@ $Layout-responsive-variant-max-breakpoint: 'md';
     }
   }
 
-  &.#{$Layout}--columnGap-condensed {
+  &.PageLayout--columnGap-condensed {
     --Layout-column-gap: #{$spacer-3}; // 16px
   }
 
-  &.#{$Layout}--columnGap-none {
+  &.PageLayout--columnGap-none {
     // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
     // stylelint-disable-next-line length-zero-no-unit
     --Layout-column-gap: 0px;
@@ -97,7 +96,7 @@ $Layout-responsive-variant-max-breakpoint: 'md';
 
   // row gap
 
-  &.#{$Layout}--rowGap-normal {
+  &.PageLayout--rowGap-normal {
     --Layout-row-gap: #{$spacer-3}; // 16px
 
     @include breakpoint(lg) {
@@ -105,28 +104,28 @@ $Layout-responsive-variant-max-breakpoint: 'md';
     }
   }
 
-  &.#{$Layout}--rowGap-none {
+  &.PageLayout--rowGap-none {
     // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
     // stylelint-disable length-zero-no-unit
     --Layout-row-gap: 0px;
   }
 
-  &.#{$Layout}--rowGap-condensed {
+  &.PageLayout--rowGap-condensed {
     --Layout-row-gap: #{$spacer-3}; // 16px
   }
 
   // regions
 
-  .#{$Layout}-header, .#{$Layout}-content, .#{$Layout}-pane, .#{$Layout}-footer {
+  .PageLayout-header, .PageLayout-content, .PageLayout-pane, .PageLayout-footer {
     // stylelint-disable-next-line primer/spacing
     padding: var(--Layout-inner-spacing-min);
   }
   
-  .#{$Layout}-header {
+  .PageLayout-header {
     background: lightpink;
   }
 
-  .#{$Layout}-content {
+  .PageLayout-content {
     // stylelint-disable primer/spacing
     padding-left: var(--Layout-inner-spacing-max);
     padding-right: var(--Layout-inner-spacing-max);
@@ -135,12 +134,12 @@ $Layout-responsive-variant-max-breakpoint: 'md';
     background: rgb(255, 197, 253);
   }
 
-  .#{$Layout}-pane {
+  .PageLayout-pane {
     grid-area: pane;
     background: rgb(215, 255, 233);
   }
 
-  .#{$Layout}-footer {
+  .PageLayout-footer {
     background: lightyellow;
   }
 
@@ -152,20 +151,20 @@ $Layout-responsive-variant-max-breakpoint: 'md';
     // `pane` is not yet loaded. See https://github.com/primer/css/pull/1818
     $Layout-content-full-width: minmax(0, calc(100% - var(--Layout-pane-width) - var(--Layout-column-gap)));
 
-    &.#{$Layout}--panePos-start {
+    &.PageLayout--panePos-start {
       --Layout-template-columns: var(--Layout-pane-width) #{$Layout-content-full-width};
       --Layout-template-areas: "pane content";
     }
 
-    &.#{$Layout}--panePos-end {
+    &.PageLayout--panePos-end {
       --Layout-template-columns: #{$Layout-content-full-width} var(--Layout-pane-width);
       --Layout-template-areas: "content pane";
     }
 
     // header divider
 
-    &.#{$Layout}--hasHeaderDivider {
-      .#{$Layout}-header {
+    &.PageLayout--hasHeaderDivider {
+      .PageLayout-header {
         padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
         border-bottom: 1px solid $Layout-divider-color;
       }
@@ -173,44 +172,43 @@ $Layout-responsive-variant-max-breakpoint: 'md';
 
     // footer divider
 
-    &.#{$Layout}--hasFooterDivider {
-      .#{$Layout}-footer {
+    &.PageLayout--hasFooterDivider {
+      .PageLayout-footer {
         padding-top: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
         border-top: 1px solid $Layout-divider-color;
       }
     }
 
-
     // pane divider
 
-    &.#{$Layout}--hasPaneDivider {
-      &.#{$Layout}--panePos-start {
-        .#{$Layout}-pane {
+    &.PageLayout--hasPaneDivider {
+      &.PageLayout--panePos-start {
+        .PageLayout-pane {
           border-right: 1px solid $Layout-divider-color;
         }
 
-        &:not(.#{$Layout}--columnGap-none) {
-          .#{$Layout}-pane {
+        &:not(.PageLayout--columnGap-none) {
+          .PageLayout-pane {
             margin-right: calc(var(--Layout-column-gap) * -1);
             padding-right: calc(var(--Layout-column-gap) - 1px);
           }
-          .#{$Layout}-content {
+          .PageLayout-content {
             margin-left: var(--Layout-column-gap);
           }
         }
       }
 
-      &.#{$Layout}--panePos-end {
-        .#{$Layout}-pane {
+      &.PageLayout--panePos-end {
+        .PageLayout-pane {
           border-left: 1px solid $Layout-divider-color;
         }
 
-        &:not(.#{$Layout}--columnGap-none) {
-          .#{$Layout}-pane {
+        &:not(.PageLayout--columnGap-none) {
+          .PageLayout-pane {
             margin-left: calc(var(--Layout-column-gap) * -1);
             padding-left: calc(var(--Layout-column-gap) - 1px); 
           }
-          .#{$Layout}-content {
+          .PageLayout-content {
             margin-right: var(--Layout-column-gap);
           }
         }
@@ -219,8 +217,8 @@ $Layout-responsive-variant-max-breakpoint: 'md';
 
     // sticky pane
 
-    &.#{$Layout}--isPaneSticky {
-      .#{$Layout}-pane {
+    &.PageLayout--isPaneSticky {
+      .PageLayout-pane {
         position: sticky;
         top: 0;
         max-height: 100vh;
@@ -236,26 +234,26 @@ $Layout-responsive-variant-max-breakpoint: 'md';
       margin-left: auto;
     }
 
-    &.#{$Layout}--hasPaneDivider {
+    &.PageLayout--hasPaneDivider {
       [class^="#{$Layout}-content-centered-"] {
         max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + (var(--Layout-column-gap) * 2));
       }
     }
 
-    &.#{$Layout}--panePos-start {
+    &.PageLayout--panePos-start {
       [class^="#{$Layout}-content-centered-"] > [class^='container-'] {
         margin-left: 0;
       }
     }
 
-    &.#{$Layout}--panePos-end {
+    &.PageLayout--panePos-end {
       [class^="#{$Layout}-content-centered-"] > [class^='container-'] {
         margin-right: 0;
       }
     }
 
     @each $breakpoint in map-keys($breakpoints) {
-      .#{$Layout}-content-centered-#{$breakpoint} {
+      .PageLayout-content-centered-#{$breakpoint} {
         --Layout-content-width: #{map-get($breakpoints, $breakpoint)};
       }
     }
@@ -268,7 +266,7 @@ $Layout-responsive-variant-max-breakpoint: 'md';
       }
     }
 
-    &.#{$Layout}--paneWidth-narrow {
+    &.PageLayout--paneWidth-narrow {
       @each $breakpoint in map-keys($sidebar-narrow-width) {
         @include breakpoint($breakpoint) {
           --Layout-pane-width: #{map-get($sidebar-narrow-width, $breakpoint)};
@@ -276,7 +274,7 @@ $Layout-responsive-variant-max-breakpoint: 'md';
       }
     }
 
-    &.#{$Layout}--paneWidth-wide {
+    &.PageLayout--paneWidth-wide {
       @each $breakpoint in map-keys($sidebar-wide-width) {
         @include breakpoint($breakpoint) {
           --Layout-pane-width: #{map-get($sidebar-wide-width, $breakpoint)};
@@ -291,34 +289,34 @@ $Layout-responsive-variant-max-breakpoint: 'md';
 
     // variant: stackRegions
 
-    &.#{$Layout}--variant-stackRegions {
+    &.PageLayout--variant-stackRegions {
       --Layout-template-columns: 1fr;
   
       // responsive-panePos: end (default)
       --Layout-template-areas: 'content' 'pane';
   
       // responsive-panePos: start
-      &.#{$Layout}--variant-stackRegions-panePos-start {
+      &.PageLayout--variant-stackRegions-panePos-start {
         --Layout-template-areas: 'pane' 'content';
       }
     }
 
     // variant: separateRegions
 
-    &.#{$Layout}--variant-separateRegions {
+    &.PageLayout--variant-separateRegions {
       --Layout-template-columns: 1fr;
       --Layout-template-areas: 'content';
 
-      &.#{$Layout}--variant-separateRegions-primary-content {
+      &.PageLayout--variant-separateRegions-primary-content {
         --Layout-template-areas: 'content';
-        .#{$Layout}-pane {
+        .PageLayout-pane {
           display: none;
         }
       }
 
-      &.#{$Layout}--variant-separateRegions-primary-pane {
+      &.PageLayout--variant-separateRegions-primary-pane {
         --Layout-template-areas: 'pane';
-        .#{$Layout}-content {
+        .PageLayout-content {
           display: none;
         }
       }
@@ -326,7 +324,7 @@ $Layout-responsive-variant-max-breakpoint: 'md';
 
     // region dividers for responsive variants
 
-    .#{$Layout}-region--hasDivider-line-before {
+    .PageLayout-region--hasDivider-line-before {
       position: relative;
       margin-top: var(--Layout-row-gap);
     
@@ -336,7 +334,7 @@ $Layout-responsive-variant-max-breakpoint: 'md';
       }
     }
     
-    .#{$Layout}-region--hasDivider-line-after {
+    .PageLayout-region--hasDivider-line-after {
       position: relative;
       margin-bottom: var(--Layout-row-gap);
     
@@ -346,7 +344,7 @@ $Layout-responsive-variant-max-breakpoint: 'md';
       } 
     }
     
-    .#{$Layout}-region--hasDivider-filled-before {
+    .PageLayout-region--hasDivider-filled-before {
       position: relative;
       margin-top: calc(#{$spacer-2} + var(--Layout-row-gap));
     
@@ -356,7 +354,7 @@ $Layout-responsive-variant-max-breakpoint: 'md';
       }
     }
     
-    .#{$Layout}-region--hasDivider-filled-after {
+    .PageLayout-region--hasDivider-filled-after {
       position: relative;
       margin-bottom: calc(#{$spacer-2} + var(--Layout-row-gap));
     
@@ -366,5 +364,4 @@ $Layout-responsive-variant-max-breakpoint: 'md';
       }
     }
   }
-
 }
