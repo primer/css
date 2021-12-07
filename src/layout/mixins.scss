@@ -80,6 +80,47 @@
 
 // Layout beta mixins
 
+// variant: stackRegions
+
+@mixin Layout-stackRegions($max-breakpoint) {
+  @media (max-width: calc(#{map-get($breakpoints, $max-breakpoint)} - 0.02px)) {
+    --Layout-template-columns: 1fr;
+
+    // responsive-pane-position: end (default)
+    --Layout-template-areas: 'content' 'pane';
+
+    // responsive-pane-position: start
+    &.#{$Layout}--#{$Layout-prop-stackRegions-pane-position}-start {
+      --Layout-template-areas: 'pane' 'content';
+    }
+  }
+}
+
+// variant: separateRegions
+
+@mixin Layout-separateRegions($max-breakpoint) {
+  @media (max-width: calc(#{map-get($breakpoints, $max-breakpoint)} - 0.02px)) {
+    --Layout-template-columns: 1fr;
+    --Layout-template-areas: 'content';
+
+    &.#{$Layout}--#{$Layout-prop-separateRegions-primary-region}-content {
+      --Layout-template-areas: 'content';
+      .#{$Layout}-pane {
+        display: none;
+      }
+    }
+
+    &.#{$Layout}--#{$Layout-prop-separateRegions-primary-region}-pane {
+      --Layout-template-areas: 'pane';
+      .#{$Layout}-content {
+        display: none;
+      }
+    }
+  }
+}
+
+// variant: multiColumn (desktop version)
+
 @mixin Layout-multiColumn {
 
   // Set a `content` region width, to work with loading states when
@@ -96,7 +137,7 @@
     --Layout-template-areas: "content pane";
   }
 
-  // Pane divider
+  // pane divider
 
   &.#{$Layout}--#{$Layout-prop-pane-divider} {
     &.#{$Layout}--#{$Layout-prop-pane-position}-start {
@@ -132,7 +173,7 @@
     }
   }
 
-  // Sticky pane
+  // sticky pane
 
   &.#{$Layout}--#{$Layout-prop-pane-is-sticky} {
     .#{$Layout}-pane {
@@ -142,39 +183,37 @@
       overflow: auto;
     }
   }
-}
 
-@mixin Layout-stackRegions($max-breakpoint) {
-  @media (max-width: calc(#{map-get($breakpoints, $max-breakpoint)} - 0.02px)) {
-    --Layout-template-columns: 1fr;
+  // region divider
 
-    // responsive-pane-position: end (default)
-    --Layout-template-areas: 'content' 'pane';
-
-    // responsive-pane-position: start
-    &.#{$Layout}--#{$Layout-prop-stackRegions-pane-position}-start {
-      --Layout-template-areas: 'pane' 'content';
-    }
+  .#{$Layout}--divider-line-before:before,
+  .#{$Layout}--divider-line-after:after,
+  .#{$Layout}--divider-filled-before:before,
+  .#{$Layout}--divider-filled-after:after {
+    display: none;
   }
 }
 
-@mixin Layout-separateRegions($max-breakpoint) {
-  @media (max-width: calc(#{map-get($breakpoints, $max-breakpoint)} - 0.02px)) {
-    --Layout-template-columns: 1fr;
-    --Layout-template-areas: 'content';
+// responsive region dividers
 
-    &.#{$Layout}--#{$Layout-prop-separateRegions-primary-region}-content {
-      --Layout-template-areas: 'content';
-      .#{$Layout}-pane {
-        display: none;
-      }
-    }
+@mixin Layout-line-divider {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: $Layout-divider-color;
+  width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
+  height: 1px;
+  left: calc(var(--Layout-outer-spacing-x) * -1);
+}
 
-    &.#{$Layout}--#{$Layout-prop-separateRegions-primary-region}-pane {
-      --Layout-template-areas: 'pane';
-      .#{$Layout}-content {
-        display: none;
-      }
-    }
-  }
+@mixin Layout-filled-divider {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(var(--Layout-outer-spacing-x) * -1);
+  bottom: calc(#{$spacer-2} * -1); // -8px
+  width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
+  height: #{$spacer-2}; // 8px
+  background-color: var(--color-canvas-inset);
+  box-shadow: inset 0 1px $Layout-divider-color, inset 0 -1px $Layout-divider-color;
 }

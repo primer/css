@@ -45,9 +45,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
   --Layout-column-gap: #{$spacer-3};
   --Layout-row-gap: #{$spacer-3};
 
-  // A `px` unit is needed here to define it as a length type when used
-  // with a `calc()` function. See https://stackoverflow.com/a/32518348
-  //
+  // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
   // stylelint-disable length-zero-no-unit
   --Layout-outer-spacing-x: 0px; // wrapper margin x
   --Layout-outer-spacing-y: 0px; // wrapper margin y
@@ -124,9 +122,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
   }
 
   &.#{$Layout}--#{$Layout-prop-column-gap}-none {
-    // A `px` unit is needed here to define it as a length type when used
-    // with a `calc()` function. See https://stackoverflow.com/a/32518348
-    //
+    // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
     // stylelint-disable-next-line length-zero-no-unit
     --Layout-column-gap: 0px;
   }
@@ -142,9 +138,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
   }
 
   &.#{$Layout}--#{$Layout-prop-row-gap}-none {
-    // A `px` unit is needed here to define it as a length type when used
-    // with a `calc()` function. See https://stackoverflow.com/a/32518348
-    //
+    // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
     // stylelint-disable length-zero-no-unit
     --Layout-row-gap: 0px;
   }
@@ -339,7 +333,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
 // `divider-divider-lg-line` for the filled line to be rendered as a thin line
 // on larger viewports.
 
-
+/*
 .#{$Layout}-divider-line {
 
 }
@@ -347,8 +341,14 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
 
 }
 
-.#{$Layout}--divider-line-before { 
-  border-top: 10px solid purple;
+.#{$Layout}--divider-line-before {
+  position: relative;
+  padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
+  border-bottom: 1px solid transparent;
+
+  &:before {
+    @include Layout-line-divider;
+  } 
 }
 .#{$Layout}--divider-line-after {
   border-bottom: 10px solid orange;
@@ -389,3 +389,52 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
 
 .#{$Layout}-divider-md-line-before { }
 .#{$Layout}-divider-md-line-after { }
+
+*/
+
+
+// pane responsive divider FIXME
+
+.#{$Layout}--divider-line-before {
+  position: relative;
+  padding-top: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
+  border-top: 1px solid transparent;
+
+  &:before {
+    @include Layout-line-divider;
+    top: -1px;
+  } 
+}
+
+.#{$Layout}--divider-line-after {
+  position: relative;
+  padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
+  border-bottom: 1px solid transparent;
+
+  &:after {
+    @include Layout-line-divider;
+    bottom: -1px;
+  } 
+}
+
+.#{$Layout}--divider-filled-before {
+  position: relative;
+  padding-top: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
+  margin-top: #{$spacer-2}; // 8px
+
+  &:after {
+    @include Layout-filled-divider;
+    top: $spacer-2 * -1; // -8px
+  }
+}
+
+.#{$Layout}--divider-filled-after {
+  position: relative;
+  padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
+  margin-bottom: #{$spacer-2}; // 8px
+
+  &:before {
+    @include Layout-filled-divider;
+    bottom: $spacer-2 * -1; // -8px
+  }
+}
