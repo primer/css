@@ -35,7 +35,7 @@
     "storybook": "cd docs && yarn && yarn storybook"
   },
   "dependencies": {
-    "@primer/primitives": "^7.1.0"
+    "@primer/primitives": "^7.2.0"
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.4.2",
@@ -45,7 +45,7 @@
     "@primer/stylelint-config": "12.1.1",
     "autoprefixer": "10.4.0",
     "cssstats": "4.0.2",
-    "eslint": "8.3.0",
+    "eslint": "8.4.0",
     "eslint-plugin-github": "4.3.5",
     "eslint-plugin-jest": "25.3.0",
     "eslint-plugin-prettier": "4.0.0",
@@ -53,7 +53,7 @@
     "front-matter": "4.0.2",
     "fs-extra": "10.0.0",
     "globby": "12.0.2",
-    "jest": "27.4.2",
+    "jest": "27.4.3",
     "js-yaml": "4.1.0",
     "postcss": "8.4.4",
     "postcss-calc": "8.0.0",
@@ -61,11 +61,11 @@
     "postcss-load-config": "3.1.0",
     "postcss-scss": "4.0.2",
     "postcss-simple-vars": "6.0.3",
-    "prettier": "2.5.0",
+    "prettier": "2.5.1",
     "semver": "7.3.5",
     "stylelint": "14.1.0",
     "stylelint-scss": "4.0.0",
-    "table": "6.7.3"
+    "table": "6.7.5"
   },
   "jest": {
     "testEnvironment": "node",

@@ -21,14 +21,23 @@ jobs:
       - name: Push up any fixes
         if: ${{ github.event_name == 'pull_request' }}
         run: |
-          git remote update
-          git fetch
-          git checkout --track origin/$GITHUB_HEAD_REF
-          git config --local user.email "actions@github.com"
-          git config --local user.name "Actions Auto Build"
-          git add src
-          git commit -m "Stylelint auto-fixes" || true
-          git push
+          set +e
+          git status | grep modified
+          if [ $? -eq 0 ]
+          then
+              set -e
+              git remote update
+              git fetch
+              git checkout --track origin/$GITHUB_HEAD_REF
+              git config --local user.email "actions@github.com"
+              git config --local user.name "Actions Auto Build"
+              git add src
+              git commit -m "Stylelint auto-fixes"
+              git push
+          else
+              set -e
+              echo "No changes since last run"
+          fi
 
   eslint:
     runs-on: ubuntu-latest
