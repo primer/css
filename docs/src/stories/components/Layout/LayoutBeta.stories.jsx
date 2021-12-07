@@ -241,7 +241,7 @@ export default {
   }
 }
 
-const layoutClassName = 'LayoutBeta';
+const layoutClassName = 'PageLayout';
 
 // build every component case here in the template (private api)
 export const LayoutTemplate = ({
