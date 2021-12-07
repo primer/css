@@ -315,31 +315,33 @@
 // default mobile sizing
 .btn--icon {
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
   padding: 0;
   place-content: center;
 }
 
+.btn--icon-sm {
+  width: 28px;
+  height: 28px;
+
+  .octicon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.btn--icon-lg {
+  width: 40px;
+  height: 40px;
+}
+
 // desktop friendly sizing
-@media (hover: hover) and (pointer: fine) {
+@media (pointer: course) {
   .btn--icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .btn--icon-sm {
-    width: 28px;
-    height: 28px;
-
-    .octicon {
-      width: 14px;
-      height: 14px;
+    &::before {
+      @include minTouchTarget(48px, 48px);
+      background: deeppink !important;
     }
-  }
-
-  .btn--icon-lg {
-    width: 40px;
-    height: 40px;
   }
 }
