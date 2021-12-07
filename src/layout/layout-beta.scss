@@ -269,15 +269,23 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;       // r-prim
     max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + var(--Layout-column-gap));
     margin-right: auto;
     margin-left: auto;
-
-    > [class^='container-'] {
-      margin-left: 0;
-    }
   }
 
   &.#{$Layout}--#{$Layout-prop-pane-divider} {
     [class^="#{$Layout}-content-centered-"] {
       max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + (var(--Layout-column-gap) * 2));
+    }
+  }
+
+  &.#{$Layout}--#{$Layout-prop-pane-position}-start {
+    [class^="#{$Layout}-content-centered-"] > [class^='container-'] {
+      margin-left: 0;
+    }
+  }
+
+  &.#{$Layout}--#{$Layout-prop-pane-position}-end {
+    [class^="#{$Layout}-content-centered-"] > [class^='container-'] {
+      margin-right: 0;
     }
   }
 
