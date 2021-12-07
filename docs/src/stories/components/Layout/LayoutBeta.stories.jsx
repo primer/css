@@ -73,16 +73,6 @@ export default {
         category: 'Responsive'
       }
     },
-    multiColumnsVariantAt: {
-      options: ['md', 'lg'],
-      control: {
-        type: 'inline-radio'
-      },
-      description: 'Defines in which breakpoint the two-column layout will kick in',
-      table: {
-        category: 'Responsive'
-      }
-    },
     responsivePrimaryRegion: {
       options: ['content', 'pane'],
       control: {
@@ -289,7 +279,6 @@ export const LayoutTemplate = ({
   // Responsive
   responsiveVariant,
   responsivePrimaryRegion,
-  multiColumnsVariantAt,
 
   // Pending options
   // - content/pane light gray backgrounds
@@ -337,7 +326,6 @@ export const LayoutTemplate = ({
   rowGap = rowGap ?? 'normal';
   panePosition = panePosition ?? 'end';
   responsiveVariant = responsiveVariant ?? 'stackRegions';
-  multiColumnsVariantAt = multiColumnsVariantAt ?? 'md';
 
   // Leave `null` values for states that don't require a modifier class
   outerSpacing = (outerSpacing === 'none') ? null : outerSpacing;
@@ -359,7 +347,6 @@ export const LayoutTemplate = ({
   className={clsx(
     layoutClassName,
     layoutClassName + '--variant-' + `${responsiveVariant}`,
-    layoutClassName + '--variant-' + multiColumnsVariantAt + '-multiColumns',
 
     responsiveVariant === 'separateRegions' && layoutClassName + '--primary-' + `${responsivePrimaryRegion}`,
 
@@ -371,11 +358,11 @@ export const LayoutTemplate = ({
     paneWidth && layoutClassName + '--pane-width-' + `${paneWidth}`,
     panePosition && layoutClassName + '--pane-position-' + `${panePosition}`,
     responsiveVariant === 'stackRegions' && paneResponsivePosition && layoutClassName + '--stackRegions-pane-position-' + `${paneResponsivePosition}`,
-    paneDivider && layoutClassName + '--pane-divider',
-    paneIsSticky && layoutClassName + '--pane-is-sticky',
+    paneDivider && layoutClassName + '--has-pane-divider',
+    paneIsSticky && layoutClassName + '--is-pane-sticky',
 
-    headerDivider && layoutClassName + '--header-divider',
-    footerDivider && layoutClassName + '--footer-divider'
+    headerDivider && layoutClassName + '--has-header-divider',
+    footerDivider && layoutClassName + '--has-footer-divider'
   )}
 
   // use undefined for values that shouldn't be set if false
@@ -392,17 +379,16 @@ export const LayoutTemplate = ({
       {/* Header */}
       {hasHeader &&
         <div className={clsx(
+          layoutClassName + '-region',
           layoutClassName + '-header',
-          headerResponsiveDivider && layoutClassName + '--divider-after' + (headerResponsiveDivider === 'filled' ? '-filled': ''),
-          headerResponsiveDivider && layoutClassName + '--divider-' + multiColumnsVariantAt + '-none'
-          /* FIXME - rename region responsive separator class name */
+          headerResponsiveDivider && layoutClassName + '-region--hasDivider-' + headerResponsiveDivider + '-after'
         )}>
           {headerChildren}
         </div>
       }
 
       <div className={clsx(
-        layoutClassName + '-regions'
+        layoutClassName + '-columns'
       )}>
 
         {/* Pane if rendered first */}
@@ -410,8 +396,7 @@ export const LayoutTemplate = ({
           <div className={clsx(
             layoutClassName + '-region',
             layoutClassName + '-pane',
-            paneResponsiveDivider && layoutClassName + '--divider-after' + (paneResponsiveDivider === 'filled' ? '-filled': ''),
-            paneResponsiveDivider && layoutClassName + '--divider-' + multiColumnsVariantAt + '-none'
+            paneResponsiveDivider && layoutClassName + '-region--hasDivider-' + paneResponsiveDivider + (paneResponsivePosition === 'start' ? '-after' : '-before') 
           )}>
             {paneChildren}
           </div>
@@ -442,8 +427,7 @@ export const LayoutTemplate = ({
         <div className={clsx(
           layoutClassName + '-region',
           layoutClassName + '-pane',
-          paneResponsiveDivider && layoutClassName + '--divider-before' + (paneResponsiveDivider === 'filled' ? '-filled': ''),
-          paneResponsiveDivider && layoutClassName + '--divider-' + multiColumnsVariantAt + '-none'
+          paneResponsiveDivider && layoutClassName + '-region--hasDivider-' + paneResponsiveDivider + (paneResponsivePosition === 'start' ? '-after' : '-before')
         )}>
           {paneChildren}
         </div>}
@@ -451,9 +435,9 @@ export const LayoutTemplate = ({
 
       {/* footer */}
       {hasFooter && <div className={clsx(
+        layoutClassName + '-region',
         layoutClassName + '-footer',
-        footerResponsiveDivider && layoutClassName + '--divider-before' + (footerResponsiveDivider === 'filled' ? '-filled': ''),
-        footerResponsiveDivider && layoutClassName + '--divider-' + multiColumnsVariantAt + '-none'
+        footerResponsiveDivider && layoutClassName + '-region--hasDivider-' + footerResponsiveDivider + '-before'
         )}>{footerChildren}</div>}
       </div>
     </>
@@ -474,7 +458,6 @@ Playground.args = {
   rowGap: 'normal',
 
   responsiveVariant: 'stackRegions',
-  multiColumnsVariantAt: 'md',
   responsivePrimaryRegion: 'content',
 
   paneWidth: 'default',

@@ -1,31 +1,20 @@
 // component id
 
-$Layout: 'LayoutBeta' !default;
+$Layout: 'PageLayout' !default;
 $Layout-divider-color: red !default; // var(--color-border-default)
-
-// Layout variants
-
-$Layout-variant-stackRegions: 'stackRegions' !default;
-$Layout-variant-separateRegions: 'separateRegions' !default;
-$Layout-variant-multiColumn: 'multiColumns' !default;
+$Layout-responsive-variant-max-breakpoint: 'md';
 
 // Prop names
 
-// structure
-$Layout-prop-outer-spacing: 'outer-spacing' !default;
-$Layout-prop-inner-spacing: 'inner-spacing' !default;
-$Layout-prop-column-gap: 'column-gap' !default;
-$Layout-prop-row-gap: 'row-gap' !default;
-
 // dividers
-$Layout-prop-pane-divider: 'pane-divider' !default;
-$Layout-prop-header-divider: 'header-divider' !default;
-$Layout-prop-footer-divider: 'footer-divider' !default;
+$Layout-prop-pane-divider: 'has-pane-divider' !default;
+$Layout-prop-header-divider: 'has-header-divider' !default;
+$Layout-prop-footer-divider: 'has-footer-divider' !default;
 
 // pane region
 $Layout-prop-pane-position: 'pane-position' !default;
 $Layout-prop-pane-width: 'pane-width' !default;
-$Layout-prop-pane-is-sticky: 'pane-is-sticky' !default;
+$Layout-prop-pane-is-sticky: 'is-pane-sticky' !default;
 
 // content region
 $Layout-prop-content-width: 'content-width' !default;
@@ -64,7 +53,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
     grid: auto-flow / 1fr;
     row-gap: var(--Layout-row-gap);
 
-    > .#{$Layout}-regions {
+    > .#{$Layout}-columns {
       display: grid;
       column-gap: var(--Layout-column-gap);
       row-gap: var(--Layout-row-gap);
@@ -76,7 +65,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
 
   // outer spacing
 
-  &.#{$Layout}--#{$Layout-prop-outer-spacing}-normal {
+  &.#{$Layout}--outer-spacing-normal {
     --Layout-outer-spacing-x: #{$spacer-3}; // 16px
     --Layout-outer-spacing-y: #{$spacer-3}; // 16px
 
@@ -86,14 +75,14 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
     }
   }
 
-  &.#{$Layout}--#{$Layout-prop-outer-spacing}-condensed {
+  &.#{$Layout}--outer-spacing-condensed {
     --Layout-outer-spacing-x: #{$spacer-3}; // 16px
     --Layout-outer-spacing-y: #{$spacer-3}; // 16px
   }
 
   // inner spacing
 
-  &.#{$Layout}--#{$Layout-prop-inner-spacing}-normal {
+  &.#{$Layout}--inner-spacing-normal {
     --Layout-inner-spacing-min: #{$spacer-3}; // 16px
     --Layout-inner-spacing-max: #{$spacer-3}; // 16px
 
@@ -102,14 +91,14 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
     }
   }
 
-  &.#{$Layout}--#{$Layout-prop-inner-spacing}-condensed {
+  &.#{$Layout}--inner-spacing-condensed {
     --Layout-inner-spacing-min: #{$spacer-3}; // 16px
     --Layout-inner-spacing-max: #{$spacer-3}; // 16px
   }
 
   // column gap
 
-  &.#{$Layout}--#{$Layout-prop-column-gap}-normal {
+  &.#{$Layout}--column-gap-normal {
     --Layout-column-gap: #{$spacer-3}; // 16px
 
     @include breakpoint(lg) {
@@ -117,11 +106,11 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
     }
   }
 
-  &.#{$Layout}--#{$Layout-prop-column-gap}-condensed {
+  &.#{$Layout}--column-gap-condensed {
     --Layout-column-gap: #{$spacer-3}; // 16px
   }
 
-  &.#{$Layout}--#{$Layout-prop-column-gap}-none {
+  &.#{$Layout}--column-gap-none {
     // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
     // stylelint-disable-next-line length-zero-no-unit
     --Layout-column-gap: 0px;
@@ -129,7 +118,7 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
 
   // row gap
 
-  &.#{$Layout}--#{$Layout-prop-row-gap}-normal {
+  &.#{$Layout}--row-gap-normal {
     --Layout-row-gap: #{$spacer-3}; // 16px
 
     @include breakpoint(lg) {
@@ -137,163 +126,15 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
     }
   }
 
-  &.#{$Layout}--#{$Layout-prop-row-gap}-none {
+  &.#{$Layout}--row-gap-none {
     // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
     // stylelint-disable length-zero-no-unit
     --Layout-row-gap: 0px;
   }
 
-  &.#{$Layout}--#{$Layout-prop-row-gap}-condensed {
+  &.#{$Layout}--row-gap-condensed {
     --Layout-row-gap: #{$spacer-3}; // 16px
   }
-
-
-  // Layout variants
-
-  // Available options:
-  // - Layout--variant-stackRegions
-  // - Layout--variant-separateRegions
-  // - Layout--variant-md-multiColumns
-  // - Layout--variant-lg-multiColumns
-
-  // variant: stackRegions
-
-  &.#{$Layout}--variant-stackRegions {
-
-    &.#{$Layout}--variant-md-multiColumns {
-      @include Layout-stackRegions(md);
-    }
-
-    &.#{$Layout}--variant-lg-multiColumns {
-      @include Layout-stackRegions(lg);
-    }
-  }
-
-  // variant: separateRegions
-
-  &.#{$Layout}--variant-separateRegions {
-
-    &.#{$Layout}--variant-md-multiColumns {
-      @include Layout-separateRegions(md);
-    }
-
-    &.#{$Layout}--variant-lg-multiColumns {
-      @include Layout-separateRegions(lg);
-    }
-  }
-
-  // variant: multiColumns (desktop version)
-
-  &.#{$Layout}--variant-md-multiColumns {
-    @include breakpoint(md) {
-      @include Layout-multiColumn;
-    }
-  }
-  
-  &.#{$Layout}--variant-lg-multiColumns {
-    @include breakpoint(lg) {
-      @include Layout-multiColumn;
-    }
-  }
-
-  // content width
-
-  [class^="#{$Layout}-content-centered-"] {
-    max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + var(--Layout-column-gap));
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  &.#{$Layout}--#{$Layout-prop-pane-divider} {
-    [class^="#{$Layout}-content-centered-"] {
-      max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + (var(--Layout-column-gap) * 2));
-    }
-  }
-
-  &.#{$Layout}--#{$Layout-prop-pane-position}-start {
-    [class^="#{$Layout}-content-centered-"] > [class^='container-'] {
-      margin-left: 0;
-    }
-  }
-
-  &.#{$Layout}--#{$Layout-prop-pane-position}-end {
-    [class^="#{$Layout}-content-centered-"] > [class^='container-'] {
-      margin-right: 0;
-    }
-  }
-
-  @each $breakpoint in map-keys($breakpoints) {
-    .#{$Layout}-content-centered-#{$breakpoint} {
-      --Layout-content-width: #{map-get($breakpoints, $breakpoint)};
-    }
-  }
-
-  // pane width
-
-  @each $breakpoint in map-keys($sidebar-width) {
-    @include breakpoint($breakpoint) {
-      --Layout-pane-width: #{map-get($sidebar-width, $breakpoint)};
-    }
-  }
-
-  &.#{$Layout}--#{$Layout-prop-pane-width}-narrow {
-    @each $breakpoint in map-keys($sidebar-narrow-width) {
-      @include breakpoint($breakpoint) {
-        --Layout-pane-width: #{map-get($sidebar-narrow-width, $breakpoint)};
-      }
-    }
-  }
-
-  &.#{$Layout}--#{$Layout-prop-pane-width}-wide {
-    @each $breakpoint in map-keys($sidebar-wide-width) {
-      @include breakpoint($breakpoint) {
-        --Layout-pane-width: #{map-get($sidebar-wide-width, $breakpoint)};
-      }
-    }
-  }
-
-  // Responsive divider
-
-  // &.#{$Layout}:not(.#{$Layout}--#{$Layout-prop-flow-horizontal}) {
-    
-    /*
-    .#{$Layout}-region--line-divider {
-      position: relative;
-      padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
-      border-bottom: 1px solid transparent;
-
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        background-color: var(--color-canvas-inset);
-        background-color: red;
-        width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
-        height: 1px;
-        left: calc(var(--Layout-outer-spacing-x) * -1);
-        bottom: -1px;
-      }
-    }
-
-    .#{$Layout}-region--shallow-divider {
-      position: relative;
-      padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
-      margin-bottom: #{$spacer-2}; // 8px
-
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        left: calc(var(--Layout-outer-spacing-x) * -1);
-        bottom: calc(#{$spacer-2} * -1); // -8px
-        width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
-        height: #{$spacer-2}; // 8px
-        background-color: var(--color-canvas-inset);
-        box-shadow: inset 0 1px $Layout-divider-color, inset 0 -1px $Layout-divider-color;
-      }
-    }
-    */
-  // }
 
   // regions
 
@@ -324,117 +165,227 @@ $Layout-prop-separateRegions-primary-region: 'primary' !default;
     background: lightyellow;
   }
 
-}
+  // multi-column desktop-friendly layout
 
-// Layout dividers
+  @include breakpoint($Layout-responsive-variant-max-breakpoint) {
 
-// an <hr> horizontal line to be loosely used anywhere. Accompanied by
-// ` divider-md-none` or ` divider-lg-none`, or `divider-divider-md-line` or
-// `divider-divider-lg-line` for the filled line to be rendered as a thin line
-// on larger viewports.
+    // Set a `content` region width, to work with loading states when
+    // `pane` is not yet loaded. See https://github.com/primer/css/pull/1818
+    $Layout-content-full-width: minmax(0, calc(100% - var(--Layout-pane-width) - var(--Layout-column-gap)));
 
-/*
-.#{$Layout}-divider-line {
+    &.#{$Layout}--pane-position-start {
+      --Layout-template-columns: var(--Layout-pane-width) #{$Layout-content-full-width};
+      --Layout-template-areas: "pane content";
+    }
 
-}
-.#{$Layout}-divider-filled {
+    &.#{$Layout}--pane-position-end {
+      --Layout-template-columns: #{$Layout-content-full-width} var(--Layout-pane-width);
+      --Layout-template-areas: "content pane";
+    }
 
-}
+    // header divider
 
-.#{$Layout}--divider-line-before {
-  position: relative;
-  padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
-  border-bottom: 1px solid transparent;
+    &.#{$Layout}--#{$Layout-prop-header-divider} {
+      .#{$Layout}-header {
+        padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
+        border-bottom: 1px solid $Layout-divider-color;
+      }
+    }
 
-  &:before {
-    @include Layout-line-divider;
-  } 
-}
-.#{$Layout}--divider-line-after {
-  border-bottom: 10px solid orange;
-}
+    // footer divider
 
-.#{$Layout}--divider-filled-before {
-  border-top: 20px solid purple;
-}
-.#{$Layout}--divider-filled-after {
-  border-bottom: 20px solid orange;
-}
+    &.#{$Layout}--#{$Layout-prop-footer-divider} {
+      .#{$Layout}-footer {
+        padding-top: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
+        border-top: 1px solid $Layout-divider-color;
+      }
+    }
 
-.#{$Layout}--variant-md-multiColumns {
-  @include breakpoint(md) {
-    .#{$Layout}-region--line-divider {
-      &:after {
-        display: none;
+
+    // pane divider
+
+    &.#{$Layout}--#{$Layout-prop-pane-divider} {
+      &.#{$Layout}--pane-position-start {
+        .#{$Layout}-pane {
+          border-right: 1px solid $Layout-divider-color;
+        }
+
+        &:not(.#{$Layout}--column-gap-none) {
+          .#{$Layout}-pane {
+            margin-right: calc(var(--Layout-column-gap) * -1);
+            padding-right: calc(var(--Layout-column-gap) - 1px);
+          }
+          .#{$Layout}-content {
+            margin-left: var(--Layout-column-gap);
+          }
+        }
+      }
+
+      &.#{$Layout}--pane-position-end {
+        .#{$Layout}-pane {
+          border-left: 1px solid $Layout-divider-color;
+        }
+
+        &:not(.#{$Layout}--column-gap-none) {
+          .#{$Layout}-pane {
+            margin-left: calc(var(--Layout-column-gap) * -1);
+            padding-left: calc(var(--Layout-column-gap) - 1px); 
+          }
+          .#{$Layout}-content {
+            margin-right: var(--Layout-column-gap);
+          }
+        }
+      }
+    }
+
+    // sticky pane
+
+    &.#{$Layout}--is-pane-sticky {
+      .#{$Layout}-pane {
+        position: sticky;
+        top: 0;
+        max-height: 100vh;
+        overflow: auto;
+      }
+    }
+
+    // content width
+
+    [class^="#{$Layout}-content-centered-"] {
+      max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + var(--Layout-column-gap));
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    &.#{$Layout}--#{$Layout-prop-pane-divider} {
+      [class^="#{$Layout}-content-centered-"] {
+        max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + (var(--Layout-column-gap) * 2));
+      }
+    }
+
+    &.#{$Layout}--pane-position-start {
+      [class^="#{$Layout}-content-centered-"] > [class^='container-'] {
+        margin-left: 0;
+      }
+    }
+
+    &.#{$Layout}--pane-position-end {
+      [class^="#{$Layout}-content-centered-"] > [class^='container-'] {
+        margin-right: 0;
+      }
+    }
+
+    @each $breakpoint in map-keys($breakpoints) {
+      .#{$Layout}-content-centered-#{$breakpoint} {
+        --Layout-content-width: #{map-get($breakpoints, $breakpoint)};
+      }
+    }
+
+    // pane width
+
+    @each $breakpoint in map-keys($sidebar-width) {
+      @include breakpoint($breakpoint) {
+        --Layout-pane-width: #{map-get($sidebar-width, $breakpoint)};
+      }
+    }
+
+    &.#{$Layout}--#{$Layout-prop-pane-width}-narrow {
+      @each $breakpoint in map-keys($sidebar-narrow-width) {
+        @include breakpoint($breakpoint) {
+          --Layout-pane-width: #{map-get($sidebar-narrow-width, $breakpoint)};
+        }
+      }
+    }
+
+    &.#{$Layout}--#{$Layout-prop-pane-width}-wide {
+      @each $breakpoint in map-keys($sidebar-wide-width) {
+        @include breakpoint($breakpoint) {
+          --Layout-pane-width: #{map-get($sidebar-wide-width, $breakpoint)};
+        }
       }
     }
   }
-}
 
-// FIXME -- this doesn't need to be CSS utilities. can use same approach with mixins I've used for responsive behaviors
+  // responsive variants
 
-.#{$Layout}--divider-md-none {
-  @include breakpoint(md) {
-    border-top: 0;
-    border-bottom: 0;
+  @media (max-width: #{map-get($breakpoints, $Layout-responsive-variant-max-breakpoint) - 0.02px}) {
+
+    // variant: stackRegions
+
+    &.#{$Layout}--variant-stackRegions {
+      --Layout-template-columns: 1fr;
+  
+      // responsive-pane-position: end (default)
+      --Layout-template-areas: 'content' 'pane';
+  
+      // responsive-pane-position: start
+      &.#{$Layout}--#{$Layout-prop-stackRegions-pane-position}-start {
+        --Layout-template-areas: 'pane' 'content';
+      }
+    }
+
+    // variant: separateRegions
+
+    &.#{$Layout}--variant-separateRegions {
+      --Layout-template-columns: 1fr;
+      --Layout-template-areas: 'content';
+
+      &.#{$Layout}--#{$Layout-prop-separateRegions-primary-region}-content {
+        --Layout-template-areas: 'content';
+        .#{$Layout}-pane {
+          display: none;
+        }
+      }
+
+      &.#{$Layout}--#{$Layout-prop-separateRegions-primary-region}-pane {
+        --Layout-template-areas: 'pane';
+        .#{$Layout}-content {
+          display: none;
+        }
+      }
+    }
+
+    // region dividers for responsive variants
+
+    .#{$Layout}-region--hasDivider-line-before {
+      position: relative;
+      margin-top: var(--Layout-row-gap);
+    
+      &:before {
+        @include Layout-line-divider;
+        top: calc(-1px - var(--Layout-row-gap));
+      }
+    }
+    
+    .#{$Layout}-region--hasDivider-line-after {
+      position: relative;
+      margin-bottom: var(--Layout-row-gap);
+    
+      &:after {
+        @include Layout-line-divider;
+        bottom: calc(-1px - var(--Layout-row-gap));
+      } 
+    }
+    
+    .#{$Layout}-region--hasDivider-filled-before {
+      position: relative;
+      margin-top: calc(#{$spacer-2} + var(--Layout-row-gap));
+    
+      &:after {
+        @include Layout-filled-divider;
+        top: calc(#{$spacer-2 * -1} - var(--Layout-row-gap));
+      }
+    }
+    
+    .#{$Layout}-region--hasDivider-filled-after {
+      position: relative;
+      margin-bottom: calc(#{$spacer-2} + var(--Layout-row-gap));
+    
+      &:before {
+        @include Layout-filled-divider;
+        bottom: calc(#{$spacer-2 * -1} - var(--Layout-row-gap));
+      }
+    }
   }
-}
 
-.#{$Layout}--divider-lg-none {
-  @include breakpoint(lg) {
-    border-top: 0;
-    border-bottom: 0;
-  }
-}
-
-.#{$Layout}-divider-md-line-before { }
-.#{$Layout}-divider-md-line-after { }
-
-*/
-
-
-// pane responsive divider FIXME
-
-.#{$Layout}--divider-line-before {
-  position: relative;
-  padding-top: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
-  border-top: 1px solid transparent;
-
-  &:before {
-    @include Layout-line-divider;
-    top: -1px;
-  } 
-}
-
-.#{$Layout}--divider-line-after {
-  position: relative;
-  padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
-  border-bottom: 1px solid transparent;
-
-  &:after {
-    @include Layout-line-divider;
-    bottom: -1px;
-  } 
-}
-
-.#{$Layout}--divider-filled-before {
-  position: relative;
-  padding-top: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
-  margin-top: #{$spacer-2}; // 8px
-
-  &:after {
-    @include Layout-filled-divider;
-    top: $spacer-2 * -1; // -8px
-  }
-}
-
-.#{$Layout}--divider-filled-after {
-  position: relative;
-  padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
-  margin-bottom: #{$spacer-2}; // 8px
-
-  &:before {
-    @include Layout-filled-divider;
-    bottom: $spacer-2 * -1; // -8px
-  }
 }
