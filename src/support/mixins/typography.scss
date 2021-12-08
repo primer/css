@@ -47,7 +47,6 @@
 
   // 32px on desktop
   @include breakpoint(md) { font-size: $h1-size; }
-
 }
 
 @mixin f2-responsive {
@@ -62,7 +61,6 @@
 
   // 20px on desktop
   @include breakpoint(md) { font-size: $h3-size; }
-
 }
 
 // These use the mixins from above for responsive heading sizes.
@@ -70,15 +68,18 @@
 // couple the responsive font-size with the font-weight.
 @mixin h1-responsive {
   @include f1-responsive;
+
   font-weight: $font-weight-bold;
 }
 
 @mixin h2-responsive {
   @include f2-responsive;
+
   font-weight: $font-weight-bold;
 }
 
 @mixin h3-responsive {
   @include f3-responsive;
+
   font-weight: $font-weight-bold;
 }

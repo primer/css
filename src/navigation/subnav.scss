@@ -40,8 +40,8 @@
   }
 
   &.selected,
-  &[aria-selected=true],
-  &[aria-current]:not([aria-current=false]) {
+  &[aria-selected='true'],
+  &[aria-current]:not([aria-current='false']) {
     z-index: 2;
     color: var(--color-fg-on-emphasis);
     background-color: var(--color-accent-emphasis);
