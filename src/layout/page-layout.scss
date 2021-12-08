@@ -1,7 +1,7 @@
 // component id
 
 $Layout-divider-color: red !default; // var(--color-border-default)
-$Layout-responsive-variant-max-breakpoint: 'md';
+$Layout-responsive-variant-max-breakpoint: 'md' !default;
 
 :root {
   --Layout-pane-width: #{map-get($sidebar-width, 'sm')};
@@ -116,11 +116,14 @@ $Layout-responsive-variant-max-breakpoint: 'md';
 
   // regions
 
-  .PageLayout-header, .PageLayout-content, .PageLayout-pane, .PageLayout-footer {
+  .PageLayout-header,
+  .PageLayout-content,
+  .PageLayout-pane,
+  .PageLayout-footer {
     // stylelint-disable-next-line primer/spacing
     padding: var(--Layout-inner-spacing-min);
   }
-  
+
   .PageLayout-header {
     background: lightpink;
   }
@@ -153,12 +156,12 @@ $Layout-responsive-variant-max-breakpoint: 'md';
 
     &.PageLayout--panePos-start {
       --Layout-template-columns: var(--Layout-pane-width) #{$Layout-content-full-width};
-      --Layout-template-areas: "pane content";
+      --Layout-template-areas: 'pane content';
     }
 
     &.PageLayout--panePos-end {
       --Layout-template-columns: #{$Layout-content-full-width} var(--Layout-pane-width);
-      --Layout-template-areas: "content pane";
+      --Layout-template-areas: 'content pane';
     }
 
     // header divider
@@ -189,8 +192,8 @@ $Layout-responsive-variant-max-breakpoint: 'md';
 
         &:not(.PageLayout--columnGap-none) {
           .PageLayout-pane {
-            margin-right: calc(var(--Layout-column-gap) * -1);
             padding-right: calc(var(--Layout-column-gap) - 1px);
+            margin-right: calc(var(--Layout-column-gap) * -1);
           }
           .PageLayout-content {
             margin-left: var(--Layout-column-gap);
@@ -228,26 +231,26 @@ $Layout-responsive-variant-max-breakpoint: 'md';
 
     // content width
 
-    [class^="#{$Layout}-content-centered-"] {
+    [class^="PageLayout-content-centered-"] {
       max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + var(--Layout-column-gap));
       margin-right: auto;
       margin-left: auto;
     }
 
     &.PageLayout--hasPaneDivider {
-      [class^="#{$Layout}-content-centered-"] {
+      [class^="PageLayout-content-centered-"] {
         max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + (var(--Layout-column-gap) * 2));
       }
     }
 
     &.PageLayout--panePos-start {
-      [class^="#{$Layout}-content-centered-"] > [class^='container-'] {
+      [class^="PageLayout-content-centered-"] > [class^='container-'] {
         margin-left: 0;
       }
     }
 
     &.PageLayout--panePos-end {
-      [class^="#{$Layout}-content-centered-"] > [class^='container-'] {
+      [class^="PageLayout-content-centered-"] > [class^='container-'] {
         margin-right: 0;
       }
     }
@@ -291,10 +294,10 @@ $Layout-responsive-variant-max-breakpoint: 'md';
 
     &.PageLayout--variant-stackRegions {
       --Layout-template-columns: 1fr;
-  
+
       // responsive-panePos: end (default)
       --Layout-template-areas: 'content' 'pane';
-  
+
       // responsive-panePos: start
       &.PageLayout--variant-stackRegions-panePos-start {
         --Layout-template-areas: 'pane' 'content';
@@ -333,7 +336,7 @@ $Layout-responsive-variant-max-breakpoint: 'md';
         top: calc(-1px - var(--Layout-row-gap));
       }
     }
-    
+
     .PageLayout-region--hasDivider-line-after {
       position: relative;
       margin-bottom: var(--Layout-row-gap);
@@ -343,7 +346,7 @@ $Layout-responsive-variant-max-breakpoint: 'md';
         bottom: calc(-1px - var(--Layout-row-gap));
       } 
     }
-    
+
     .PageLayout-region--hasDivider-filled-before {
       position: relative;
       margin-top: calc(#{$spacer-2} + var(--Layout-row-gap));
@@ -353,11 +356,11 @@ $Layout-responsive-variant-max-breakpoint: 'md';
         top: calc(#{$spacer-2 * -1} - var(--Layout-row-gap));
       }
     }
-    
+
     .PageLayout-region--hasDivider-filled-after {
       position: relative;
       margin-bottom: calc(#{$spacer-2} + var(--Layout-row-gap));
-    
+
       &:before {
         @include Layout-filled-divider;
         bottom: calc(#{$spacer-2 * -1} - var(--Layout-row-gap));
