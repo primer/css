@@ -1,135 +1,84 @@
 import React from 'react'
 import clsx from 'clsx'
 import {NavWithSubItems} from '../ActionList/ActionListPatterns.stories'
-import {Button} from '../Button/Button.stories'
 
 export default {
   title: 'Components/Layout/Beta',
   excludeStories: ['LayoutTemplate'],
   argTypes: {
 
-    // Preset
-
-    preset: {
-      options: ['default', 'splitView', 'nested'],
-      control: {
-        type: 'inline-radio'
-      },
-      description: 'Preset',
-      table: {
-        category: 'Preset'
-      }
-    },
-
     // Structure
 
     wrapperSizing: {
-      options: [0, 1, 2, 3],
-      mapping: ['', 'container-md', 'container-lg', 'container-xl'],
+      options: ['fluid', 'md', 'lg', 'xl'],
       control: {
         type: 'inline-radio',
         labels: ['fluid', 'md', 'lg', 'xl']
       },
       description: 'Define the maximum width of the component. `fluid` sets it to full-width. Other values center `Layout` horizontally. Refer to [container utilities](https://primer.style/css/objects/grid#containers) for reference.',
       table: {
-        category: 'Wrapper'
+        category: 'Structure'
       }
     },
     outerSpacing: {
-      options: [0, 1, 2],
-      mapping: ['', 'normal', 'condensed'],
+      options: ['none', 'normal', 'condensed'],
       control: {
-        type: 'inline-radio',
-        labels: ['none', 'normal', 'condensed']
+        type: 'inline-radio'
       },
       description: 'Sets wrapper margins surrounding the component to distance itself from the viewport edges. `normal` sets the margin to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the margin at 16px. `none` sets the margin to 0.',
       table: {
-        category: 'Wrapper'
+        category: 'Structure'
       }
     },
     innerSpacing: {
-      options: [0, 1, 2],
-      mapping: ['', 'normal', 'condensed'],
+      options: ['none', 'normal', 'condensed'],
       control: {
-        type: 'inline-radio',
-        labels: ['none', 'normal', 'condensed']
+        type: 'inline-radio'
       },
       description: 'Sets padding to regions individually. `normal` sets padding to 16px, with the `content` region getting 24px horizontal padding on `lg` breakpoints and above. `condensed` keeps the padding always at `16px`. `none` sets the padding to 0.',
       table: {
-        category: 'Wrapper'
+        category: 'Structure'
       }
     },
     columnGap: {
-      options: [0, 1, 2],
-      mapping: ['none', 'normal', 'condensed'],
+      options: ['none', 'normal', 'condensed'],
       control: {
-        type: 'inline-radio',
-        labels: ['none', 'normal', 'condensed']
+        type: 'inline-radio'
       },
       description: 'Sets the gap between columns to distance them from each other. `normal` sets the gap to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the gap always at 16px. `none` sets the gap to 0.',
       table: {
-        category: 'Wrapper'
+        category: 'Structure'
       }
     },
     rowGap: {
-      options: [0, 1, 2],
-      mapping: ['none', 'normal', 'condensed'],
+      options: ['none', 'normal', 'condensed'],
       control: {
-        type: 'inline-radio',
-        labels: ['none', 'normal', 'condensed']
+        type: 'inline-radio'
       },
       description: 'Sets the gap below the header and above the footer. `normal` sets the gap to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the gap always at 16px. `none` sets the gap to 0.',
       table: {
-        category: 'Wrapper'
+        category: 'Structure'
       }
     },
 
     // Responsive
 
-    // `flowHorizontal` should be set automatically depending on viewport size
-    // according to `responsiveBehaviorAt`. This manual property is here to
-    // emulate responsive behavior while this isn't hooked up.
-
-    flowHorizontal: {
-      control: { type: 'boolean' },
-      description: "TEMPORARY way to toggle between mobile-friendly and desktop-friendly behaviors. This should be automatically defined according to the viewport size based on `responsiveBehaviorAt`.",
-      table: {
-        category: 'Responsive'
-      }
-    },
-
-    responsiveBehavior: {
-      options: [0, 1],
-      mapping: ['flowVertical', 'splitAsPages'],
+    responsiveVariant: {
+      options: ['stackRegions', 'separateRegions'],
       control: {
-        type: 'inline-radio',
-        labels: ['flowVertical', 'splitAsPages']
+        type: 'inline-radio'
       },
-      description: '`responsiveBehavior` defines how the layout component adapts to smaller viewports. `flowVertical` presents the content in a vertical flow, with `pane` and `content` vertically arranged. `splitAsPages` presents `pane` and `content` as different pages on smaller viewports.',
-      table: {
-        category: 'Responsive'
-      }
-    },
-    responsiveBehaviorAt: {
-      options: [0, 1, 2, 3],
-      mapping: ['xs', 'sm', 'md', 'lg'],
-      control: {
-        type: 'inline-radio',
-        labels: ['xs', 'sm', 'md', 'lg']
-      },
-      description: 'Defines in which breakpoint the responsive behavior will kick in',
+      description: '`responsiveVariant` defines how the layout component adapts to smaller viewports. `stackRegions` presents the content in a vertical flow, with `pane` and `content` vertically arranged. `separateRegions` presents `pane` and `content` as different pages on smaller viewports.',
       table: {
         category: 'Responsive'
       }
     },
     responsivePrimaryRegion: {
-      options: [0, 1],
-      mapping: ['content', 'pane'],
+      options: ['content', 'pane'],
       control: {
-        type: 'inline-radio',
-        labels: ['content', 'pane']
+        type: 'inline-radio'
       },
-      description: 'When `responsiveBehavior` is set to `splitAsPages`, defines which region appears first on small viewports. `content` is default.',
+      description: 'When `responsiveVariant` is set to `separateRegions`, defines which region appears first on small viewports. `content` is default.',
       table: {
         category: 'Responsive'
       }
@@ -137,12 +86,20 @@ export default {
 
     // Pane
 
-    panePosition: {
-      options: [0, 1],
-      mapping: ['start', 'end'],
+    paneWidth: {
+      options: ['default', 'narrow', 'wide'],
       control: {
-        type: 'inline-radio',
-        labels: ['start', 'end']
+      type: 'inline-radio'
+      },
+      description: 'Defines the width of the pane',
+      table: {
+        category: 'Pane'
+      }
+    },
+    panePosition: {
+      options: ['start', 'end'],
+      control: {
+        type: 'inline-radio'
       },
       description: 'Defines the position of the pane. `start` puts the pane on the left, and `end` puts it on the right.',
       table: {
@@ -150,25 +107,11 @@ export default {
       }
     },
     paneResponsivePosition: {
-      options: [0, 1, 2],
-      mapping: ['', 'start', 'end'],
+      options: ['inherit', 'start', 'end'],
       control: {
         type: 'inline-radio',
-        labels: ['inherit', 'start', 'end']
       },
-      description: 'If `responsiveBehavior` is set to `flowVertical`, defines the position of the pane in the responsive variant. `start` puts the pane above `content`, and `end` puts it below `content`. `inherit` uses the same value from `panePosition`.',
-      table: {
-        category: 'Pane'
-      }
-    },
-    paneWidth: {
-      options: [0, 1, 2],
-      mapping: ['', 'narrow', 'wide'],
-      control: {
-      type: 'inline-radio',
-        labels: ['default', 'narrow', 'wide']
-      },
-      description: 'Defines the width of the pane',
+      description: 'If `responsiveVariant` is set to `stackRegions`, defines the position of the pane in the responsive variant. `start` puts the pane above `content`, and `end` puts it below `content`. `inherit` uses the same value from `panePosition`.',
       table: {
         category: 'Pane'
       }
@@ -181,13 +124,11 @@ export default {
       }
     },
     paneResponsiveDivider: {
-      options: [0, 1, 2],
-      mapping: ['', 'line', 'shallow'],
+      options: ['none', 'line', 'filled'],
       control: {
-        type: 'inline-radio',
-        labels: ['none', 'line', 'shallow']
+        type: 'inline-radio'
       },
-      description: 'Whether to show a divider between `pane` and `content` regions if `responsiveBehavior` is set to `flowVertical`. If `pane` appears above `content`, a `(...)-divider` class will be placed in the `pane` region. Otherwise it will be placed in the `content` region.',
+      description: 'Whether to show a divider between `pane` and `content` regions if `responsiveVariant` is set to `stackRegions`. If `pane` appears above `content`, a `(...)-divider` class will be placed in the `pane` region. Otherwise it will be placed in the `content` region.',
       table: {
         category: 'Pane'
       }
@@ -203,11 +144,9 @@ export default {
     // Content
 
     contentWidth: {
-      options: [0, 1, 2, 3, 4],
-      mapping: ['', 'sm', 'md', 'lg', 'xl'],
+      options: ['fluid', 'sm', 'md', 'lg', 'xl'],
       control: {
-      type: 'inline-radio',
-        labels: ['fluid', 'sm', 'md', 'lg', 'xl']
+        type: 'inline-radio'
       },
       description: 'Defines the maximum width of the content region. `fluid` sets it to full-width. Other values follow container widths from `sm` to `xl`. With smaller widths, the content region will try to stay centered to the viewport area.',
       table: {
@@ -234,11 +173,9 @@ export default {
     },
 
     headerResponsiveDivider: {
-      options: [0, 1, 2],
-      mapping: ['', 'line', 'shallow'],
+      options: ['none', 'line', 'filled'],
       control: {
-        type: 'inline-radio',
-        labels: ['none', 'line', 'shallow']
+        type: 'inline-radio'
       },
       description: 'Whether to show a divider below the `header` region if in responsive mode.',
       table: {
@@ -265,11 +202,9 @@ export default {
     },
 
     footerResponsiveDivider: {
-      options: [0, 1, 2],
-      mapping: ['', 'line', 'shallow'],
+      options: ['none', 'line', 'filled'],
       control: {
-        type: 'inline-radio',
-        labels: ['none', 'line', 'shallow']
+        type: 'inline-radio'
       },
       description: 'Whether to show a divider above the `footer` region if in responsive mode.',
       table: {
@@ -306,13 +241,10 @@ export default {
   }
 }
 
-const layoutClassName = 'LayoutBeta';
+const layoutClassName = 'PageLayout';
 
 // build every component case here in the template (private api)
 export const LayoutTemplate = ({
-
-  // Preset
-  preset,
   
   // Wrapper
   wrapperSizing,
@@ -345,10 +277,8 @@ export const LayoutTemplate = ({
   contentWidth,
 
   // Responsive
-  flowHorizontal,
-  responsiveBehavior,
+  responsiveVariant,
   responsivePrimaryRegion,
-  responsiveBehaviorAt,
 
   // Pending options
   // - content/pane light gray backgrounds
@@ -361,14 +291,21 @@ export const LayoutTemplate = ({
   footerChildren
 }) => {
 
+  const containerClass = {
+    'full': '',
+    'md': 'container-md',
+    'lg': 'container-lg',
+    'xl': 'container-xl'
+  };
 
+  /*
   if (preset === 'default' || !preset) {
-    wrapperSizing = wrapperSizing ?? 'container-xl';
+    wrapperSizing = wrapperSizing ?? 'xl';
     outerSpacing = outerSpacing ?? 'normal';
     columnGap = columnGap ?? 'normal';
     rowGap = rowGap ?? 'normal';
     panePosition = panePosition ?? 'end';
-    responsiveBehavior = responsiveBehavior ?? 'flowVertical';
+    responsiveVariant = responsiveVariant ?? 'stackRegions';
   } else if (preset === 'splitView') {
     wrapperSizing = wrapperSizing ?? '';
     innerSpacing = innerSpacing ?? 'normal';
@@ -377,12 +314,31 @@ export const LayoutTemplate = ({
     panePosition = panePosition ?? 'start';
     paneWidth = paneWidth ?? 'wide';
     paneDivider = paneDivider ?? true;
-    responsiveBehavior = responsiveBehavior ?? 'splitAsPages';
+    responsiveVariant = responsiveVariant ?? 'separateRegions';
   }
+  */
 
-  flowHorizontal = flowHorizontal ?? true;
+  // Default values
+  wrapperSizing = wrapperSizing ?? 'xl';
+  outerSpacing = outerSpacing ?? 'normal';
+  innerSpacing = innerSpacing ?? 'none';
+  columnGap = columnGap ?? 'normal';
+  rowGap = rowGap ?? 'normal';
+  panePosition = panePosition ?? 'end';
+  responsiveVariant = responsiveVariant ?? 'stackRegions';
 
-  paneResponsivePosition = (paneResponsivePosition === 'start' || paneResponsivePosition === 'end') ? paneResponsivePosition : panePosition;
+  // Leave `null` values for states that don't require a modifier class
+  outerSpacing = (outerSpacing === 'none') ? null : outerSpacing;
+  innerSpacing = (innerSpacing === 'none') ? null : innerSpacing;
+  paneWidth = (paneWidth === 'default') ? null : paneWidth;
+  contentWidth = (contentWidth === 'fluid') ? null : contentWidth;
+  paneResponsiveDivider = (paneResponsiveDivider === 'none') ? null : paneResponsiveDivider;
+  headerResponsiveDivider = (headerResponsiveDivider === 'none') ? null : headerResponsiveDivider;
+  footerResponsiveDivider = (footerResponsiveDivider === 'none') ? null : footerResponsiveDivider;
+
+
+  // Inherit value for responsive pane position
+  paneResponsivePosition = (paneResponsivePosition === 'inherit') ? panePosition : paneResponsivePosition;
 
 
   return (
@@ -390,27 +346,23 @@ export const LayoutTemplate = ({
   // use clsx for multiple classnames
   className={clsx(
     layoutClassName,
-    flowHorizontal && layoutClassName + '--flow-horizontal',
-    responsiveBehavior && layoutClassName + '--responsive-' + `${responsiveBehavior}`,
-    responsivePrimaryRegion && layoutClassName + '--responsive-primary-' + `${responsivePrimaryRegion}`,
-
-    outerSpacing && layoutClassName + '--outer-spacing-' + `${outerSpacing}`,
-    innerSpacing && layoutClassName + '--inner-spacing-' + `${innerSpacing}`,
-    columnGap && layoutClassName + '--column-gap-' + `${columnGap}`,
-    rowGap && layoutClassName + '--row-gap-' + `${rowGap}`,
     
-    paneWidth && layoutClassName + '--pane-width-' + `${paneWidth}`,
-    panePosition && layoutClassName + '--pane-position-' + `${panePosition}`,
-    paneResponsivePosition && layoutClassName + '--responsive-pane-position-' + `${paneResponsivePosition}`,
-    paneDivider && layoutClassName + '--pane-divider',
-    paneIsSticky && layoutClassName + '--pane-is-sticky',
+    outerSpacing && layoutClassName + '--outerSpacing-' + `${outerSpacing}`,
+    innerSpacing && layoutClassName + '--innerSpacing-' + `${innerSpacing}`,
+    columnGap && layoutClassName + '--columnGap-' + `${columnGap}`,
+    rowGap && layoutClassName + '--rowGap-' + `${rowGap}`,
 
-    
-    hasHeader && layoutClassName + '--has-header',
-    headerDivider && layoutClassName + '--header-divider',
+    paneWidth && layoutClassName + '--paneWidth-' + `${paneWidth}`,
+    panePosition && layoutClassName + '--panePos-' + `${panePosition}`,
+    paneDivider && layoutClassName + '--hasPaneDivider',
+    paneIsSticky && layoutClassName + '--isPaneSticky',
 
-    hasFooter && layoutClassName + '--has-footer',
-    footerDivider && layoutClassName + '--footer-divider'
+    layoutClassName + '--variant-' + `${responsiveVariant}`,
+    responsiveVariant === 'separateRegions' && layoutClassName + '--variant-separateRegions-primary-' + `${responsivePrimaryRegion}`,
+    responsiveVariant === 'stackRegions' && paneResponsivePosition && layoutClassName + '--variant-stackRegions-panePos-' + `${paneResponsivePosition}`,
+
+    headerDivider && layoutClassName + '--hasHeaderDivider',
+    footerDivider && layoutClassName + '--hasFooterDivider'
   )}
 
   // use undefined for values that shouldn't be set if false
@@ -418,80 +370,80 @@ export const LayoutTemplate = ({
   >
   {/* use {children} for wrapper component templates */}
   <>
-    <div className={clsx(
-      layoutClassName + '-regions',
-      wrapperSizing && wrapperSizing
-    )}>
 
+    <div className={clsx(
+      layoutClassName + '-wrapper',
+      wrapperSizing && containerClass[wrapperSizing]
+      )}>
+        
       {/* Header */}
       {hasHeader &&
         <div className={clsx(
           layoutClassName + '-region',
           layoutClassName + '-header',
-          headerResponsiveDivider && layoutClassName + '-region--' + headerResponsiveDivider + '-divider'
+          headerResponsiveDivider && layoutClassName + '-region--hasDivider-' + headerResponsiveDivider + '-after'
         )}>
           {headerChildren}
         </div>
       }
 
-      {/* Pane if rendered first */}
-      {panePosition === 'start' &&
+      <div className={clsx(
+        layoutClassName + '-columns'
+      )}>
+
+        {/* Pane if rendered first */}
+        {panePosition === 'start' &&
+          <div className={clsx(
+            layoutClassName + '-region',
+            layoutClassName + '-pane',
+            paneResponsiveDivider && layoutClassName + '-region--hasDivider-' + paneResponsiveDivider + (paneResponsivePosition === 'start' ? '-after' : '-before') 
+          )}>
+            {paneChildren}
+          </div>
+        }
+
+        {/* content */}
+        <div className={clsx(
+          layoutClassName + '-region',
+          layoutClassName + '-content'
+        )}>
+          {contentWidth ? (
+          <>
+            <div className={layoutClassName + '-content-centered-' + contentWidth}>
+              <div className={'container-' + contentWidth}>
+                {contentChildren}
+              </div>
+            </div>
+          </>
+          ) : (
+          <>
+            {contentChildren}
+          </>
+          )}
+        </div>
+
+        {/* Pane if rendered last */}
+        {panePosition === 'end' &&
         <div className={clsx(
           layoutClassName + '-region',
           layoutClassName + '-pane',
-          ((paneResponsivePosition === 'end' || responsiveBehavior === 'splitAsPages') && footerResponsiveDivider)
-            ? layoutClassName + '-region--' + footerResponsiveDivider + '-divider'
-            : (paneResponsivePosition === 'start' && paneResponsiveDivider) ? layoutClassName + '-region--' + paneResponsiveDivider + '-divider' : null
+          paneResponsiveDivider && layoutClassName + '-region--hasDivider-' + paneResponsiveDivider + (paneResponsivePosition === 'start' ? '-after' : '-before')
         )}>
           {paneChildren}
-        </div>
-      }
-
-      {/* content */}
-      <div className={clsx(
-        layoutClassName + '-region',
-        layoutClassName + '-content',
-        (paneResponsivePosition === 'end' && paneResponsiveDivider)
-          ? layoutClassName + '-region--' + paneResponsiveDivider + '-divider'
-          : ((paneResponsivePosition === 'start' || responsiveBehavior === 'splitAsPages') && footerResponsiveDivider) && layoutClassName + '-region--' + footerResponsiveDivider + '-divider'
-      )}>
-        {contentWidth ? (
-        <>
-          <div className={layoutClassName + '-content-centered-' + contentWidth}>
-            <div className={'container-' + contentWidth}>
-              {contentChildren}
-            </div>
-          </div>
-        </>
-        ) : (
-        <>
-          {contentChildren}
-        </>
-        )}
+        </div>}
       </div>
 
-      {/* Pane if rendered last */}
-      {panePosition === 'end' &&
-      <div className={clsx(
-        layoutClassName + '-region',
-        layoutClassName + '-pane',
-        ((paneResponsivePosition === 'end' || responsiveBehavior === 'splitAsPages') && footerResponsiveDivider)
-          ? layoutClassName + '-region--' + footerResponsiveDivider + '-divider'
-          : (paneResponsivePosition === 'start' && paneResponsiveDivider) ? layoutClassName + '-region--' + paneResponsiveDivider + '-divider' : null
-
-      )}>
-        {paneChildren}
-      </div>}
-
       {/* footer */}
-      {hasFooter && <div className={clsx(layoutClassName + '-region', layoutClassName + '-footer')}>{footerChildren}</div>}
-    </div>
+      {hasFooter && <div className={clsx(
+        layoutClassName + '-region',
+        layoutClassName + '-footer',
+        footerResponsiveDivider && layoutClassName + '-region--hasDivider-' + footerResponsiveDivider + '-before'
+        )}>{footerChildren}</div>}
+      </div>
     </>
   </div>
   );
 };
-
-// create a "playground" demo page that may set some defaults and allow story to access component controls
 
 export const Playground = LayoutTemplate.bind({});
 Playground.storyName = 'Playground';
@@ -499,94 +451,32 @@ Playground.parameters = {
   layout: 'fullscreen',
 };
 Playground.args = {
-  preset: 'default',
+  wrapperSizing: 'xl',
+  outerSpacing: 'normal',
+  innerSpacing: 'none',
+  columnGap: 'normal',
+  rowGap: 'normal',
+
+  responsiveVariant: 'stackRegions',
+  responsivePrimaryRegion: 'content',
+
+  paneWidth: 'default',
+  panePosition: 'end',
+  paneResponsivePosition: 'inherit',
+  paneDivider: false,
+  paneResponsiveDivider: 'none',
+  paneIsSticky: false,
+
+  contentWidth: 'fluid',
 
   hasHeader: true,
-  hasFooter: true,
-
-  contentChildren: 'content',
-  paneChildren: 'pane',
-  headerChildren: 'header',
-  footerChildren: 'footer'
-}
-
-export const PresetDefault = LayoutTemplate.bind({});
-PresetDefault.storyName = 'Presets/Default';
-PresetDefault.parameters = {
-  layout: 'fullscreen',
-};
-PresetDefault.args = {
-  preset: 'default',
-
-  wrapperSizing: 3, // xl
-  outerSpacing: 1, // normal
-  innerSpacing: 0, // none
-  columnGap: 1, // normal
-  rowGap: 1, // normal
-
-  responsiveBehavior: 0, // flowVertical
-  responsiveBehaviorAt: 2, // md
-
-  panePosition: 1, // end
-  paneResponsivePosition: 0, // inherit
-  paneWidth: 0, // default
-  paneDivider: false,
-  paneResponsiveDivider: 0, // none
-  paneIsSticky: false,
-
-  contentWidth: 0, // full
-
-  hasHeader: false,
   headerDivider: false,
-  headerResponsiveDivider: 0, // none
+  headerResponsiveDivider: 'none',
 
-  hasFooter: false,
+  hasFooter: true,
   footerDivider: false,
-  footerResponsiveDivider: 0, // none
+  footerResponsiveDivider: 'none',
 
-  // Children
-  contentChildren: 'content',
-  paneChildren: 'pane',
-  headerChildren: 'header',
-  footerChildren: 'footer'
-}
-
-export const PresetSplitView = LayoutTemplate.bind({});
-PresetSplitView.storyName = 'Presets/Split view';
-PresetSplitView.parameters = {
-  layout: 'fullscreen',
-};
-PresetSplitView.args = {
-  //preset: 'splitView', // splitView
-
-  wrapperSizing: 0, // full
-  outerSpacing: 0, // none
-  innerSpacing: 1, // normal
-  columnGap: 0, // none
-  rowGap: 0, // none
-
-  responsiveBehavior: 1, // splitAsPages
-  responsiveBehaviorAt: 2, // md
-  responsivePrimaryRegion: 0, // content
-
-  panePosition: 0, // start
-  paneResponsivePosition: 0, // inherit
-  paneWidth: 2, // wide
-  paneDivider: true,
-  paneResponsiveDivider: 0, // none
-  paneIsSticky: false,
-
-  contentWidth: 0, // full
-
-  hasHeader: false,
-  headerDivider: true,
-  headerResponsiveDivider: 0, // none
-
-  hasFooter: false,
-  footerDivider: true,
-  footerResponsiveDivider: 0, // none
-
-  // Children
   contentChildren: 'content',
   paneChildren: 'pane',
   headerChildren: 'header',
@@ -598,7 +488,6 @@ Settings.parameters = {
   layout: 'fullscreen',
 };
 Settings.args = {
-  preset: 'splitView',
   contentWidth: 2, // md
 
   // Children
