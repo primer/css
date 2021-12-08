@@ -83,6 +83,7 @@ $nav-height: $spacer-3 * 3 !default; // 48px
   &.focus,
   &:focus {
     @include focusOutline;
+
     outline-offset: -2px;
   }
 
