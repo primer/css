@@ -19,11 +19,13 @@ This method requires no dev environment set up and is useful for when you want t
   <head>
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://unpkg.com/@primer/css@^16.0.0/dist/primer.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@primer/css@^19.0.0/dist/primer.css" />
   </head>
   <body></body>
 </html>
 ```
+
+Note that the above loads a specific version of Primer CSS. You can also load the "latest" version with `https://unpkg.com/@primer/css/dist/primer.css`. Just be aware that it could include breaking changes. So for prototypes meant to last for a long time it's better to lock Primer CSS to a specific version.
 
 ## Jekyll prototyping with GitHub CSS and JavaScript
 
