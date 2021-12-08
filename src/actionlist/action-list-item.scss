@@ -204,7 +204,7 @@
       visibility: hidden;
       opacity: 0;
       transition:
- visibility 0 linear $actionList-item-checkmark-transition-timing,
+        visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 

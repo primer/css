@@ -42,7 +42,7 @@
 
   .current,
   .current:hover,
-  [aria-current]:not([aria-current=false]) {
+  [aria-current]:not([aria-current='false']) {
     color: var(--color-fg-on-emphasis);
     background-color: var(--color-accent-emphasis);
     border-color: transparent;
@@ -50,10 +50,10 @@
 
   .gap,
   .disabled,
-  [aria-disabled=true],
+  [aria-disabled='true'],
   .gap:hover,
   .disabled:hover,
-  [aria-disabled=true]:hover {
+  [aria-disabled='true']:hover {
     color: var(--color-primer-fg-disabled);
     cursor: default;
     border-color: transparent;

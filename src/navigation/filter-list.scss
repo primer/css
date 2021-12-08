@@ -41,8 +41,8 @@
   }
 
   &.selected,
-  &[aria-selected=true],
-  &[aria-current]:not([aria-current=false]) {
+  &[aria-selected='true'],
+  &[aria-current]:not([aria-current='false']) {
     color: var(--color-fg-on-emphasis);
     background-color: var(--color-accent-emphasis);
   }

@@ -28,8 +28,8 @@
   transition: color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
 
   &.selected,
-  &[aria-selected=true],
-  &[aria-current]:not([aria-current=false]) {
+  &[aria-selected='true'],
+  &[aria-current]:not([aria-current='false']) {
     color: var(--color-fg-default);
     background-color: var(--color-canvas-default); // cover bottom border
     border-color: var(--color-border-default);

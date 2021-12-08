@@ -10,12 +10,12 @@
     box-sizing: content-box;
     background-color: var(--color-canvas-default);
 
-    &[align=right] {
+    &[align='right'] {
       // stylelint-disable-next-line primer/spacing
       padding-left: 20px;
     }
 
-    &[align=left] {
+    &[align='left'] {
       // stylelint-disable-next-line primer/spacing
       padding-right: 20px;
     }

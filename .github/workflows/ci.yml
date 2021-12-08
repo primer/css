@@ -26,11 +26,13 @@ jobs:
           if [ $? -eq 0 ]
           then
               set -e
+              git stash
               git remote update
               git fetch
               git checkout --track origin/$GITHUB_HEAD_REF
               git config --local user.email "actions@github.com"
               git config --local user.name "Actions Auto Build"
+              git stash pop
               git add src
               git commit -m "Stylelint auto-fixes"
               git push
