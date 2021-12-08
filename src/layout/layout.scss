@@ -2,6 +2,7 @@
 
 .Layout {
   display: grid;
+
   --Layout-sidebar-width: #{map-get($sidebar-width, 'sm')};
   --Layout-gutter: 16px;
 
@@ -25,7 +26,6 @@
 
   grid-auto-flow: column;
   grid-template-columns: auto 0 1fr; // sidebar column, separator, main column
-  // stylelint-disable-next-line primer/no-undefined-vars
   grid-gap: var(--Layout-gutter);
 
   .Layout-sidebar {
@@ -146,7 +146,6 @@
 }
 
 .Layout-sidebar {
-  // stylelint-disable-next-line primer/no-undefined-vars
   width: var(--Layout-sidebar-width);
 }
 
@@ -169,17 +168,14 @@
   }
 
   .Layout-main-centered-md {
-    // stylelint-disable-next-line primer/no-undefined-vars
     max-width: calc(#{$container-md} + var(--Layout-sidebar-width) + var(--Layout-gutter));
   }
 
   .Layout-main-centered-lg {
-    // stylelint-disable-next-line primer/no-undefined-vars
     max-width: calc(#{$container-lg} + var(--Layout-sidebar-width) + var(--Layout-gutter));
   }
 
   .Layout-main-centered-xl {
-    // stylelint-disable-next-line primer/no-undefined-vars
     max-width: calc(#{$container-xl} + var(--Layout-sidebar-width) + var(--Layout-gutter));
   }
 }
