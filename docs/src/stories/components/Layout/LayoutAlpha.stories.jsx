@@ -3,15 +3,13 @@ import clsx from 'clsx'
 
 export default {
   title: 'Components/Layout/Alpha',
-  excludeStories: ['ComponentTemplateName'],
+  excludeStories: ['LayoutAlphaTemplate'],
   argTypes: {
     container: {
       control: { type: 'select' },
-      options: [0, 1, 2, 3],
-      mapping: ['', 'container-md', 'container-lg', 'container-xl'],
+      options: ['fluid', 'md', 'lg', 'xl'],
       control: {
-        type: 'select',
-        labels: ['Full-width', 'md', 'lg', 'xl']
+        type: 'inline-radio'
       },
       description: 'Wrapper around the entire component to define an optional maximum width.',
       table: {
@@ -26,11 +24,9 @@ export default {
       }
     },
     gutter: {
-      options: [0, 1, 2, 3], // iterator
-      mapping: ['', 'Layout--gutter-none', 'Layout--gutter-condensed', 'Layout--gutter-spacious'],
+      options: ['default', 'none', 'condensed', 'spacious'],
       control: {
-        type: 'select',
-        labels: ['default', 'none', 'condensed', 'spacious'] // public labels
+        type: 'inline-radio'
       },
       description: 'select menu mapping to strings (example: use for variant class names)',
       table: {
@@ -38,59 +34,43 @@ export default {
       }
     },
     sidebarPosition: {
-      options: [0, 1],
-      mapping: ['Layout--sidebarPosition-start', 'Layout--sidebarPosition-end'],
+      options: ['start', 'end'],
+      //mapping: ['Layout--sidebarPosition-start', 'Layout--sidebarPosition-end'],
       control: {
-        type: 'select',
-        labels: ['start', 'end']
+        type: 'inline-radio'
       },
       table: {
         category: 'CSS'
       }
     },
     sidebarWidth: {
-      options: [0, 1, 2],
-      mapping: ['', 'Layout--sidebar-narrow', 'Layout--sidebar-wide'],
+      options: ['default', 'narrow', 'wide'],
+      //mapping: ['', 'Layout--sidebar-narrow', 'Layout--sidebar-wide'],
       control: {
-        type: 'select',
-        labels: ['default', 'narrow', 'wide']
+        type: 'select'
       },
       table: {
         category: 'CSS'
       }
     },
     mainWidth: {
-      options: [0, 1, 2, 3],
-      mapping: ['', 'md', 'lg', 'xl'],
+      options: ['fluid', 'md', 'lg', 'xl'],
       control: {
-        type: 'select',
-        labels: ['Full-width', 'md', 'lg', 'xl']
+        type: 'select'
       },
       table: {
         category: 'CSS'
       }
     },
     flowRowUntil: {
-      options: [0, 1, 2],
-      mapping: ['', 'Layout--flowRow-until-md', 'Layout--flowRow-until-lg'],
+      options: ['sm', 'md', 'lg'],
       control: {
         type: 'select',
-        labels: ['sm', 'md', 'lg']
       },
       table: {
         category: 'CSS'
       }
     },
-    /*
-    stringExample: {
-      name: 'stringExample',
-      type: 'string',
-      description: 'text box control',
-      table: {
-        category: 'Pick one: CSS, HTML, Interactive'
-      }
-    },
-    */
     mainChildren: {
       description: 'creates a slot for main children',
       table: {
@@ -107,7 +87,7 @@ export default {
 }
 
 // build every component case here in the template (private api)
-export const ComponentTemplateName = ({
+export const LayoutAlphaTemplate = ({
   container,
   hasDivider,
   gutter,
@@ -117,43 +97,63 @@ export const ComponentTemplateName = ({
   flowRowUntil,
   mainChildren,
   sidebarChildren
-}) => (
-  <div
-    // use clsx for multiple classnames
-    className={clsx(
-      'Layout',
-      container && `${container}`,
-      gutter && `${gutter}`,
-      sidebarPosition && `${sidebarPosition}`,
-      sidebarWidth && `${sidebarWidth}`,
-      hasDivider && 'Layout--divided',
-      flowRowUntil && `${flowRowUntil}`
-    )}
-    // use undefined for values that shouldn't be set if false
-    aria-hidden={hasDivider ? 'true' : undefined}
-  >
-    {/* use {children} for wrapper component templates */}
-    <>
-    <div className="Layout-main">
-      {mainWidth ? (
-        <>
-          <div className={'Layout-main-centered-' + mainWidth}>
-            <div className={'container-' + mainWidth}>
-              {mainChildren}
-            </div>
-          </div>
-        </>
-      ) : (
-        <>
-          {mainChildren}
-        </>
+}) => {
+
+  // Default values
+  container = container ?? 'xl';
+  hasDivider = hasDivider ?? false;
+  gutter = gutter ?? 'default';
+  sidebarPosition = sidebarPosition ?? 'end';
+  sidebarWidth = sidebarWidth ?? 'default';
+  mainWidth = mainWidth ?? 'full';
+  flowRowUntil = flowRowUntil ?? 'md';
+
+  // Leave `null` values for states that don't require a modifier class
+  container = (container === 'full') ? null : container;
+  hasDivider = (hasDivider === false) ? null : hasDivider;
+  gutter = (gutter === 'default') ? null : gutter;
+  sidebarWidth = (sidebarWidth === 'default') ? null : sidebarWidth;
+  mainWidth = (mainWidth === 'full') ? null : mainWidth;
+  flowRowUntil = (flowRowUntil === 'sm') ? null : flowRowUntil;
+  
+  return (
+    <div
+      // use clsx for multiple classnames
+      className={clsx(
+        'Layout',
+        container && 'container' + `${container}`,
+        gutter && 'Layout--gutter-' + `${gutter}`,
+        sidebarPosition && 'Layout--sidebarPosition-' + `${sidebarPosition}`,
+        sidebarWidth && 'Layout--sidebar-' + `${sidebarWidth}`,
+        hasDivider && 'Layout--divided',
+        flowRowUntil && '' + 'Layout--flowRow-until-' + `${flowRowUntil}`
       )}
+      // use undefined for values that shouldn't be set if false
+      aria-hidden={hasDivider ? 'true' : undefined}
+    >
+      {/* use {children} for wrapper component templates */}
+      <>
+      <div className="Layout-main">
+        {mainWidth ? (
+          <>
+            <div className={'Layout-main-centered-' + mainWidth}>
+              <div className={clsx( mainWidth && 'container-' + mainWidth)}>
+                {mainChildren}
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            {mainChildren}
+          </>
+        )}
+      </div>
+      <div className="Layout-divider"></div>
+      <div className="Layout-sidebar">{sidebarChildren}</div>
+      </>
     </div>
-    <div className="Layout-divider"></div>
-    <div className="Layout-sidebar">{sidebarChildren}</div>
-    </>
-  </div>
-)
+  );
+};
 
 const sidebarPlaceholder =
   <>
@@ -188,45 +188,15 @@ const mainPlaceholder =
   </>;
 
 // create a "playground" demo page that may set some defaults and allow story to access component controls
-export const Playground = ComponentTemplateName.bind({})
+export const Playground = LayoutAlphaTemplate.bind({})
 Playground.args = {
-  container: '',
-  sidebarWidth: 0,
+  container: 'full',
   hasDivider: false,
-  mainChildren: mainPlaceholder,
-  sidebarChildren: sidebarPlaceholder
-}
-
-export const NavigationSidebar = ComponentTemplateName.bind({})
-NavigationSidebar.args = {
-  container: 3,
-  sidebarWidth: 0,
-  hasDivider: false,
-  mainChildren: mainPlaceholder,
-  sidebarChildren: sidebarPlaceholder
-}
-
-export const MetadataSidebar = ComponentTemplateName.bind({})
-MetadataSidebar.args = {
-  container: 3,
-  sidebarWidth: 0,
-  sidebarPosition: 1,
-  hasDivider: false,
-  mainChildren: mainPlaceholder,
-  sidebarChildren: sidebarPlaceholder
-}
-
-export const SplitLayout = ComponentTemplateName.bind({});
-
-SplitLayout.parameters = {
-  layout: 'fullscreen'
-};
-SplitLayout.args = {
-  container: '',
-  sidebarWidth: 0,
-  sidebarPosition: 0,
-  gutter: 1,
-  hasDivider: true,
+  gutter: 'default',
+  sidebarPosition: 'end',
+  sidebarWidth: 'default',
+  mainWidth: 'full',
+  flowRowUntil: 'md',
   mainChildren: mainPlaceholder,
   sidebarChildren: sidebarPlaceholder
 }

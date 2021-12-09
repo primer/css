@@ -2,6 +2,8 @@
 import React from 'react'
 import clsx from 'clsx'
 import {LayoutTemplate} from './LayoutBeta.stories'
+import {NavWithSubItems} from '../ActionList/ActionListPatterns.stories'
+
 
 export default {
   title: 'Components/Layout/Beta/SplitPageLayout',
@@ -65,7 +67,9 @@ export const SplitPageLayoutTemplate = ({
   responsivePrimaryRegion,
   paneWidth,
   paneIsSticky,
-  contentWidth
+  contentWidth,
+  contentChildren,
+  paneChildren
 }) => {
   return (
     <>
@@ -89,8 +93,8 @@ export const SplitPageLayoutTemplate = ({
 
         hasFooter={false}
 
-        contentChildren="content"
-        paneChildren="pane"
+        contentChildren={contentChildren}
+        paneChildren={paneChildren}
       />
     </>
   );
@@ -112,5 +116,9 @@ Playground.args = {
   paneWidth: 'wide',
 
   // Content
-  contentWidth: 'fluid'
+  contentWidth: 'fluid',
+
+  // Children
+  contentChildren: 'content',
+  paneChildren: 'pane'
 };

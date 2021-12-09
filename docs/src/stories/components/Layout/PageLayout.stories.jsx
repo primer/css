@@ -217,7 +217,11 @@ export const PageLayoutTemplate = ({
   headerResponsiveDivider,
   hasFooter,
   footerDivider,
-  footerResponsiveDivider
+  footerResponsiveDivider,
+  contentChildren,
+  paneChildren,
+  headerChildren,
+  footerChildren
 }) => {
   return (
     <>
@@ -247,10 +251,10 @@ export const PageLayoutTemplate = ({
         footerDivider={footerDivider}
         footerResponsiveDivider={footerResponsiveDivider}
 
-        contentChildren="content"
-        paneChildren="pane"
-        headerChildren="header"
-        footerChildren="footer"
+        contentChildren={contentChildren}
+        paneChildren={paneChildren}
+        headerChildren={headerChildren}
+        footerChildren={footerChildren}
       />
     </>
   );
@@ -290,5 +294,11 @@ Playground.args = {
   // Footer
   hasFooter: false,
   footerDivider: false,
-  footerResponsiveDivider: 'none'
+  footerResponsiveDivider: 'none',
+
+  contentChildren: 'content',
+  paneChildren: 'pane',
+  headerChildren: 'header',
+  footerChildren: 'footer'
+
 }

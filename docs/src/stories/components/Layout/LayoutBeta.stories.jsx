@@ -325,6 +325,7 @@ export const LayoutTemplate = ({
   columnGap = columnGap ?? 'normal';
   rowGap = rowGap ?? 'normal';
   panePosition = panePosition ?? 'end';
+  paneResponsivePosition = paneResponsivePosition ?? 'inherit';
   responsiveVariant = responsiveVariant ?? 'stackRegions';
 
   // Leave `null` values for states that don't require a modifier class
@@ -332,10 +333,8 @@ export const LayoutTemplate = ({
   innerSpacing = (innerSpacing === 'none') ? null : innerSpacing;
   paneWidth = (paneWidth === 'default') ? null : paneWidth;
   contentWidth = (contentWidth === 'fluid') ? null : contentWidth;
-  paneResponsiveDivider = (paneResponsiveDivider === 'none') ? null : paneResponsiveDivider;
   headerResponsiveDivider = (headerResponsiveDivider === 'none') ? null : headerResponsiveDivider;
   footerResponsiveDivider = (footerResponsiveDivider === 'none') ? null : footerResponsiveDivider;
-
 
   // Inherit value for responsive pane position
   paneResponsivePosition = (paneResponsivePosition === 'inherit') ? panePosition : paneResponsivePosition;
