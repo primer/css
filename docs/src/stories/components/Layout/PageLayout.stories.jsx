@@ -8,6 +8,13 @@ export default {
   excludeStories: ['PageLayoutTemplate'],
   argTypes: {
 
+    // Debug
+
+    _debug: {
+      control: 'boolean',
+      description: 'Show background colors in regions for debugging',
+    },
+
     // Structure
 
     wrapperSizing: {
@@ -200,6 +207,7 @@ export default {
 };
 
 export const PageLayoutTemplate = ({
+  _debug,
   wrapperSizing,
   outerSpacing,
   columnGap,
@@ -226,6 +234,7 @@ export const PageLayoutTemplate = ({
   return (
     <>
       <LayoutTemplate
+        _debug={_debug}
         wrapperSizing={wrapperSizing}
         outerSpacing={outerSpacing}
         innerSpacing='none'
@@ -266,6 +275,8 @@ Playground.parameters = {
   layout: 'fullscreen',
 };
 Playground.args = {
+  _debug: true,
+  
   // Structure
   wrapperSizing: 'xl',
   outerSpacing: 'normal',

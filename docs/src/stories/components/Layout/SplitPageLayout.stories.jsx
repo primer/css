@@ -63,6 +63,7 @@ export default {
 };
 
 export const SplitPageLayoutTemplate = ({
+  _debug,
   innerSpacing,
   responsivePrimaryRegion,
   paneWidth,
@@ -74,6 +75,7 @@ export const SplitPageLayoutTemplate = ({
   return (
     <>
       <LayoutTemplate
+        _debug={_debug}
         wrapperSizing='full'
         outerSpacing='none'
         innerSpacing={innerSpacing}
@@ -106,6 +108,8 @@ Playground.parameters = {
   layout: 'fullscreen',
 };
 Playground.args = {
+  _debug: true,
+  
   // Structure
   innerSpacing: 'normal',
 
