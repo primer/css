@@ -6,7 +6,7 @@ bundle: select-menu
 ---
 
 <Note>
-  Please note that this is a newer version and uses the `.SelectMenu` classes instead of the <a href="/css/components/select-menu-deprecated">deprecated select menu</a> classes. Check the <a href="/css/components/select-menu-deprecated">migration guide</a> to make sure your app is up to date.
+  Please note that this is a newer version and uses the .SelectMenu class instead of the <a href="/css/components/select-menu-deprecated">deprecated Select menu</a> class. Check the <a href="/css/components/select-menu-deprecated">migration guide</a> to make sure your app is up to date.
 </Note>
 
 
