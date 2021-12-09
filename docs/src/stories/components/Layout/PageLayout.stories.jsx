@@ -276,7 +276,7 @@ Playground.parameters = {
 };
 Playground.args = {
   _debug: true,
-  
+
   // Structure
   wrapperSizing: 'xl',
   outerSpacing: 'normal',

@@ -109,7 +109,7 @@ Playground.parameters = {
 };
 Playground.args = {
   _debug: true,
-  
+
   // Structure
   innerSpacing: 'normal',
 
