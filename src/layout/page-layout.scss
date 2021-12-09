@@ -1,7 +1,9 @@
 // stylelint-disable primer/no-undefined-vars
 // stylelint-disable max-nesting-depth
+// stylelint-disable selector-max-specificity
+// stylelint-disable no-duplicate-selectors
 
-$Layout-divider-color: red !default; // var(--color-border-default)
+$Layout-divider-color: var(--color-border-default) !default;
 $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
 :root {
@@ -124,26 +126,16 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
     padding: var(--Layout-inner-spacing-min);
   }
 
-  .PageLayout-header {
-    background: lightpink;
-  }
-
   .PageLayout-content {
     // stylelint-disable primer/spacing
     padding-right: var(--Layout-inner-spacing-max);
     padding-left: var(--Layout-inner-spacing-max);
     // stylelint-enable primer/spacing
     grid-area: content;
-    background: rgb(255, 197, 253);
   }
 
   .PageLayout-pane {
     grid-area: pane;
-    background: rgb(215, 255, 233);
-  }
-
-  .PageLayout-footer {
-    background: lightyellow;
   }
 
   // multi-column desktop-friendly layout
