@@ -19,7 +19,7 @@ Settings.args = {
   innerSpacing: 'normal',
 
   // Responsive
-  responsivePrimaryRegion: 'content',
+  responsivePrimaryRegion: 'pane',
 
   // Pane
   paneWidth: 'wide',

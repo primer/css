@@ -36,7 +36,7 @@ NavWithSubItems.args = {
           <ListTemplate
             role="menu"
             subGroup
-            ariaLabel="Sub nav descrioption"
+            ariaLabel="Sub nav decription"
             children={
               <>
                 <ListItemTemplate subItem text="Sub Nav Item" href="/" />
@@ -96,7 +96,7 @@ NavWithSubItemsLeadingVisual16px.args = {
         children={
           <ListTemplate
             subGroup
-            ariaLabel="Sub nav descrioption"
+            ariaLabel="Sub nav decription"
             children={
               <>
                 <ListItemTemplate subItem text="Sub Nav Item" href="/" />
@@ -173,7 +173,7 @@ NavWithSubItemsLeadingVisual20px.args = {
         children={
           <ListTemplate
             subGroup
-            ariaLabel="Sub nav descrioption"
+            ariaLabel="Sub nav decription"
             children={
               <>
                 <ListItemTemplate subItem text="Sub Nav Item" href="/" />
@@ -250,7 +250,7 @@ NavWithSubItemsLeadingVisual24px.args = {
         children={
           <ListTemplate
             subGroup
-            ariaLabel="Sub nav descrioption"
+            ariaLabel="Sub nav decription"
             children={
               <>
                 <ListItemTemplate subItem text="Sub Nav Item" href="/" />
@@ -511,7 +511,7 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
             subGroup
             role="menu"
             ariaLabelledBy="group-id-1"
-            ariaLabel="Sub nav descrioption"
+            ariaLabel="Sub nav decription"
             children={
               <>
                 <ListItemTemplate
@@ -536,7 +536,7 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
                       containsSubItem
                       role="menu"
                       subGroup
-                      ariaLabel="Sub nav descrioption"
+                      ariaLabel="Sub nav decription"
                       children={
                         <>
                           <ListItemTemplate
@@ -574,7 +574,7 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
           <ListTemplate
             subGroup
             role="menu"
-            ariaLabel="Sub nav descrioption"
+            ariaLabel="Sub nav decription"
             ariaLabelledBy="group-id-2"
             children={
               <>

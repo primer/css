@@ -1,6 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import {NavWithSubItems} from '../ActionList/ActionListPatterns.stories'
+import PageLayoutBehavior from '../../helpers/pageLayoutBehavior.jsx'
 
 export default {
   title: 'Components/Layout/Beta',
@@ -308,26 +309,6 @@ export const LayoutTemplate = ({
     'xl': 'container-xl'
   };
 
-  /*
-  if (preset === 'default' || !preset) {
-    wrapperSizing = wrapperSizing ?? 'xl';
-    outerSpacing = outerSpacing ?? 'normal';
-    columnGap = columnGap ?? 'normal';
-    rowGap = rowGap ?? 'normal';
-    panePosition = panePosition ?? 'end';
-    responsiveVariant = responsiveVariant ?? 'stackRegions';
-  } else if (preset === 'splitView') {
-    wrapperSizing = wrapperSizing ?? '';
-    innerSpacing = innerSpacing ?? 'normal';
-    columnGap = columnGap ?? 'none';
-    rowGap = rowGap ?? 'none';
-    panePosition = panePosition ?? 'start';
-    paneWidth = paneWidth ?? 'wide';
-    paneDivider = paneDivider ?? true;
-    responsiveVariant = responsiveVariant ?? 'separateRegions';
-  }
-  */
-
   // Default values
   wrapperSizing = wrapperSizing ?? 'xl';
   outerSpacing = outerSpacing ?? 'normal';
@@ -348,6 +329,8 @@ export const LayoutTemplate = ({
 
   // Inherit value for responsive pane position
   paneResponsivePosition = (paneResponsivePosition === 'inherit') ? panePosition : paneResponsivePosition;
+
+  PageLayoutBehavior();
 
   return (
     <>
@@ -501,33 +484,6 @@ Playground.args = {
 
   contentChildren: 'content',
   paneChildren: 'pane',
-  headerChildren: 'header',
-  footerChildren: 'footer'
-}
-
-export const Settings = LayoutTemplate.bind({});
-Settings.parameters = {
-  layout: 'fullscreen',
-};
-Settings.args = {
-  contentWidth: 2, // md
-
-  // Children
-  contentChildren: (
-    <>
-      <h2 className="f3 text-normal">General</h2>
-      <div className="Box mt-3 p-3">&nbsp;</div>
-      <div className="Box mt-3 p-3">&nbsp;</div>
-    </>
-  ),
-  paneChildren: (
-    <>
-      <h2 className="f3 ml-2 mr-2">Repository settings</h2>
-      <div className="ml-n2 mr-n2">
-        <NavWithSubItems {...NavWithSubItems.args} />
-      </div>
-    </>
-  ),
   headerChildren: 'header',
   footerChildren: 'footer'
 }
