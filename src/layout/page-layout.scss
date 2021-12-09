@@ -17,7 +17,6 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   // stylelint-disable length-zero-no-unit
   --Layout-outer-spacing-x: 0px; // wrapper margin x
   --Layout-outer-spacing-y: 0px; // wrapper margin y
-
   --Layout-inner-spacing-min: 0px; // default region padding
   --Layout-inner-spacing-max: 0px; // relaxed content horizontal padding
   // stylelint-enable length-zero-no-unit
@@ -341,6 +340,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
       &::before {
         @include Layout-line-divider;
+
         top: calc(#{$border-width * -1} - var(--Layout-row-gap));
       }
     }
@@ -352,6 +352,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
       &::after {
         @include Layout-line-divider;
+
         bottom: calc(#{$border-width * -1} - var(--Layout-row-gap));
       }
     }
@@ -363,6 +364,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
       &::after {
         @include Layout-filled-divider;
+
         top: calc(#{$spacer-2 * -1} - var(--Layout-row-gap));
       }
     }
@@ -374,6 +376,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
       &::before {
         @include Layout-filled-divider;
+
         bottom: calc(#{$spacer-2 * -1} - var(--Layout-row-gap));
       }
     }
