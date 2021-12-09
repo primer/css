@@ -7,6 +7,13 @@ export default {
   excludeStories: ['LayoutTemplate'],
   argTypes: {
 
+    // Debug
+
+    _debug: {
+      control: 'boolean',
+      description: 'Show background colors in regions for debugging',
+    },
+
     // Structure
 
     wrapperSizing: {
@@ -245,6 +252,9 @@ const layoutClassName = 'PageLayout';
 
 // build every component case here in the template (private api)
 export const LayoutTemplate = ({
+
+  // Debug
+  _debug,
   
   // Wrapper
   wrapperSizing,
@@ -339,108 +349,120 @@ export const LayoutTemplate = ({
   // Inherit value for responsive pane position
   paneResponsivePosition = (paneResponsivePosition === 'inherit') ? panePosition : paneResponsivePosition;
 
-
   return (
-  <div
-  // use clsx for multiple classnames
-  className={clsx(
-    layoutClassName,
-    
-    outerSpacing && layoutClassName + '--outerSpacing-' + `${outerSpacing}`,
-    innerSpacing && layoutClassName + '--innerSpacing-' + `${innerSpacing}`,
-    columnGap && layoutClassName + '--columnGap-' + `${columnGap}`,
-    rowGap && layoutClassName + '--rowGap-' + `${rowGap}`,
-
-    paneWidth && layoutClassName + '--paneWidth-' + `${paneWidth}`,
-    panePosition && layoutClassName + '--panePos-' + `${panePosition}`,
-    paneDivider && layoutClassName + '--hasPaneDivider',
-    paneIsSticky && layoutClassName + '--isPaneSticky',
-
-    layoutClassName + '--variant-' + `${responsiveVariant}`,
-    responsiveVariant === 'separateRegions' && layoutClassName + '--variant-separateRegions-primary-' + `${responsivePrimaryRegion}`,
-    responsiveVariant === 'stackRegions' && paneResponsivePosition && layoutClassName + '--variant-stackRegions-panePos-' + `${paneResponsivePosition}`,
-
-    headerDivider && layoutClassName + '--hasHeaderDivider',
-    footerDivider && layoutClassName + '--hasFooterDivider'
-  )}
-
-  // use undefined for values that shouldn't be set if false
-  // aria-hidden={hasDivider ? 'true' : undefined}
-  >
-  {/* use {children} for wrapper component templates */}
-  <>
-
-    <div className={clsx(
-      layoutClassName + '-wrapper',
-      wrapperSizing && containerClass[wrapperSizing]
-      )}>
+    <>
+      <div
+      // use clsx for multiple classnames
+      className={clsx(
+        layoutClassName,
         
-      {/* Header */}
-      {hasHeader &&
+        outerSpacing && layoutClassName + '--outerSpacing-' + `${outerSpacing}`,
+        innerSpacing && layoutClassName + '--innerSpacing-' + `${innerSpacing}`,
+        columnGap && layoutClassName + '--columnGap-' + `${columnGap}`,
+        rowGap && layoutClassName + '--rowGap-' + `${rowGap}`,
+
+        paneWidth && layoutClassName + '--paneWidth-' + `${paneWidth}`,
+        panePosition && layoutClassName + '--panePos-' + `${panePosition}`,
+        paneDivider && layoutClassName + '--hasPaneDivider',
+        paneIsSticky && layoutClassName + '--isPaneSticky',
+
+        layoutClassName + '--variant-' + `${responsiveVariant}`,
+        responsiveVariant === 'separateRegions' && layoutClassName + '--variant-separateRegions-primary-' + `${responsivePrimaryRegion}`,
+        responsiveVariant === 'stackRegions' && paneResponsivePosition && layoutClassName + '--variant-stackRegions-panePos-' + `${paneResponsivePosition}`,
+
+        headerDivider && layoutClassName + '--hasHeaderDivider',
+        footerDivider && layoutClassName + '--hasFooterDivider'
+      )}
+      >
         <div className={clsx(
-          layoutClassName + '-region',
-          layoutClassName + '-header',
-          headerResponsiveDivider && layoutClassName + '-region--hasDivider-' + headerResponsiveDivider + '-after'
-        )}>
-          {headerChildren}
-        </div>
-      }
-
-      <div className={clsx(
-        layoutClassName + '-columns'
-      )}>
-
-        {/* Pane if rendered first */}
-        {panePosition === 'start' &&
-          <div className={clsx(
-            layoutClassName + '-region',
-            layoutClassName + '-pane',
-            paneResponsiveDivider && layoutClassName + '-region--hasDivider-' + paneResponsiveDivider + (paneResponsivePosition === 'start' ? '-after' : '-before') 
+          layoutClassName + '-wrapper',
+          wrapperSizing && containerClass[wrapperSizing]
           )}>
-            {paneChildren}
-          </div>
-        }
-
-        {/* content */}
-        <div className={clsx(
-          layoutClassName + '-region',
-          layoutClassName + '-content'
-        )}>
-          {contentWidth ? (
-          <>
-            <div className={layoutClassName + '-content-centered-' + contentWidth}>
-              <div className={'container-' + contentWidth}>
-                {contentChildren}
-              </div>
+            
+          {/* Header */}
+          {hasHeader &&
+            <div className={clsx(
+              layoutClassName + '-region',
+              layoutClassName + '-header',
+              headerResponsiveDivider && layoutClassName + '-region--hasDivider-' + headerResponsiveDivider + '-after'
+            )}>
+              {headerChildren}
             </div>
-          </>
-          ) : (
-          <>
-            {contentChildren}
-          </>
-          )}
-        </div>
+          }
 
-        {/* Pane if rendered last */}
-        {panePosition === 'end' &&
-        <div className={clsx(
-          layoutClassName + '-region',
-          layoutClassName + '-pane',
-          paneResponsiveDivider && layoutClassName + '-region--hasDivider-' + paneResponsiveDivider + (paneResponsivePosition === 'start' ? '-after' : '-before')
-        )}>
-          {paneChildren}
-        </div>}
-      </div>
+          <div className={clsx(
+            layoutClassName + '-columns'
+          )}>
 
-      {/* footer */}
-      {hasFooter && <div className={clsx(
-        layoutClassName + '-region',
-        layoutClassName + '-footer',
-        footerResponsiveDivider && layoutClassName + '-region--hasDivider-' + footerResponsiveDivider + '-before'
-        )}>{footerChildren}</div>}
+            {/* Pane if rendered first */}
+            {panePosition === 'start' &&
+              <div className={clsx(
+                layoutClassName + '-region',
+                layoutClassName + '-pane',
+                paneResponsiveDivider && layoutClassName + '-region--hasDivider-' + paneResponsiveDivider + (paneResponsivePosition === 'start' ? '-after' : '-before') 
+              )}>
+                {paneChildren}
+              </div>
+            }
+
+            {/* content */}
+            <div className={clsx(
+              layoutClassName + '-region',
+              layoutClassName + '-content'
+            )}>
+              {contentWidth ? (
+              <>
+                <div className={layoutClassName + '-content-centered-' + contentWidth}>
+                  <div className={'container-' + contentWidth}>
+                    {contentChildren}
+                  </div>
+                </div>
+              </>
+              ) : (
+              <>
+                {contentChildren}
+              </>
+              )}
+            </div>
+
+            {/* Pane if rendered last */}
+            {panePosition === 'end' &&
+            <div className={clsx(
+              layoutClassName + '-region',
+              layoutClassName + '-pane',
+              paneResponsiveDivider && layoutClassName + '-region--hasDivider-' + paneResponsiveDivider + (paneResponsivePosition === 'start' ? '-after' : '-before')
+            )}>
+              {paneChildren}
+            </div>}
+          </div>
+
+          {/* footer */}
+          {hasFooter && <div className={clsx(
+            layoutClassName + '-region',
+            layoutClassName + '-footer',
+            footerResponsiveDivider && layoutClassName + '-region--hasDivider-' + footerResponsiveDivider + '-before'
+            )}>{footerChildren}</div>}
+          </div>
+
+          {/* debug */}
+          {_debug &&
+            <style type='text/css'>{`
+              .PageLayout-header {
+                background: lightpink;
+              }
+              .PageLayout-content {
+                background: rgb(255, 197, 253);
+              }
+              .PageLayout-pane {
+                background: rgb(215, 255, 233);
+              }
+              .PageLayout-footer {
+                background: lightyellow;
+              }
+            `}</style>
+          }
       </div>
     </>
-  </div>
   );
 };
 
@@ -450,6 +472,7 @@ Playground.parameters = {
   layout: 'fullscreen',
 };
 Playground.args = {
+  _debug: true,
   wrapperSizing: 'xl',
   outerSpacing: 'normal',
   innerSpacing: 'none',
