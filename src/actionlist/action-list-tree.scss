@@ -1,0 +1,98 @@
+// <ul>
+// tree-view variant
+// renders ActionList with default styling for tree-view
+// collapse/expand icons presents as leadingActions, rotate 90deg
+// connecting vertical lines between collapse groups
+// consisten font-size between nested groups
+
+@mixin treeConnectingLine($left) {
+  position: absolute;
+  content: '';
+  width: 1px;
+  background: var(--color-action-list-item-inline-divider);
+  left: $left;
+  height: 100%;
+}
+
+:root {
+  --ActionList-tree-depth: 1;
+}
+
+.ActionList--tree {
+  // move out
+  .ActionList-item--subItem > .ActionList-content {
+    font-size: $body-font-size;
+  }
+
+  .ActionList--subGroup {
+    position: relative;
+
+    .ActionList-content {
+      padding-left: calc(10px * var(--ActionList-tree-depth)) !important;
+    }
+  }
+
+  .ActionList-item--hasSubItem {
+    padding-left: 0 !important;
+  }
+
+  .ActionList-item--subItem {
+    padding-left: 0 !important;
+  }
+
+  // expand/collapse group
+  .ActionList-item--hasSubItem {
+    .ActionList-item--subItem:not(.ActionList-item--hasSubItem) {
+      .ActionList-content {
+        // increase child padding by targeting content first child span (add to ActionList-content padding, not replace)
+        > span:first-child {
+          padding-left: 16px !important;
+        }
+      }
+    }
+  }
+
+  // padding left
+  // no visuals
+  // 16px visual
+  // 20px visual
+  // 24px visual
+  // action 16px visual
+  // action 20px visual
+  // action 24px visual
+
+  // first subitem
+  > [aria-level='1'].ActionList-item--hasSubItem {
+    > .ActionList--subGroup {
+      &::before {
+        @include treeConnectingLine($left: 16px);
+      }
+    }
+  }
+
+  // all other subitems
+  .ActionList-item--hasSubItem:not([aria-level='1']) {
+    > .ActionList--subGroup {
+      &::before {
+        @include treeConnectingLine($left: calc(10px * (var(--ActionList-tree-depth)) + 7px));
+      }
+    }
+  }
+
+  // tree-view specific collapse icon positioning/animation
+  .ActionList-item {
+    &[aria-expanded='true'] {
+      .ActionList-item-collapseIcon {
+        transition: transform 120ms linear;
+        transform: rotate(0deg);
+      }
+    }
+
+    &[aria-expanded='false'] {
+      .ActionList-item-collapseIcon {
+        transition: transform 120ms linear;
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

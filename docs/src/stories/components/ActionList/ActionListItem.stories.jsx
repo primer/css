@@ -244,6 +244,9 @@ export const ListItemTemplate = ({
 }) => {
   const [isCollapsed, itemIsCollapsed] = useToggle()
   const [isChecked, itemIsChecked] = useToggle()
+  const itemStyle = {
+    '--ActionList-tree-depth': `${ariaLevel}`
+  }
   return (
     <li
       className={clsx(
@@ -255,6 +258,7 @@ export const ListItemTemplate = ({
         variant && `${variant}`
       )}
       aria-level={ariaLevel ? `${ariaLevel}` : undefined}
+      style={itemStyle}
       onClick={collapsible || collapsibleLeading ? itemIsCollapsed : itemIsChecked}
       role={
         singleSelect
