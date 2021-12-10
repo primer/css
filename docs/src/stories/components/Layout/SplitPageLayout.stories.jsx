@@ -58,8 +58,23 @@ export default {
       table: {
         category: 'Content'
       }
+    },
+
+    // HTML
+
+    contentChildren: {
+      description: 'creates a slot for content children',
+      table: {
+        category: 'HTML'
+      }
+    },
+    paneChildren: {
+      description: 'creates a slot for pane children',
+      table: {
+        category: 'HTML'
+      }
     }
-  },
+  }
 };
 
 export const SplitPageLayoutTemplate = ({

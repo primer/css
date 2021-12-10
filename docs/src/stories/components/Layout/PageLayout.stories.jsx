@@ -203,6 +203,33 @@ export default {
         category: 'Footer'
       }
     },
+
+    // HTML
+
+    headerChildren: {
+      description: 'creates a slot for header children',
+      table: {
+        category: 'HTML'
+      }
+    },
+    contentChildren: {
+      description: 'creates a slot for content children',
+      table: {
+        category: 'HTML'
+      }
+    },
+    paneChildren: {
+      description: 'creates a slot for pane children',
+      table: {
+        category: 'HTML'
+      }
+    },
+    footerChildren: {
+      description: 'creates a slot for footer children',
+      table: {
+        category: 'HTML'
+      }
+    }
   },
 };
 
