@@ -51,6 +51,13 @@ export default {
         category: 'CSS'
       }
     },
+    truncateItem: {
+      defaultValue: false,
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
+    },
     containsActiveSubItem: {
       defaultValue: false,
       control: {type: 'boolean'},
@@ -194,6 +201,14 @@ export default {
       table: {
         category: 'Interactive'
       }
+    },
+    ariaLevel: {
+      name: 'ariaLevel',
+      type: 'string',
+      description: 'number - nested subgroup',
+      table: {
+        category: 'HTML'
+      }
     }
   }
 }
@@ -223,7 +238,9 @@ export const ListItemTemplate = ({
   listSemantic,
   ariaDisabled,
   containsActiveSubItem,
-  collapsibleLeading
+  collapsibleLeading,
+  truncateItem,
+  ariaLevel
 }) => {
   const [isCollapsed, itemIsCollapsed] = useToggle()
   const [isChecked, itemIsChecked] = useToggle()
@@ -237,6 +254,7 @@ export const ListItemTemplate = ({
         containsActiveSubItem && `ActionList-item--hasActiveSubItem`,
         variant && `${variant}`
       )}
+      aria-level={ariaLevel ? `${ariaLevel}` : undefined}
       onClick={collapsible || collapsibleLeading ? itemIsCollapsed : itemIsChecked}
       role={
         singleSelect
@@ -337,11 +355,17 @@ export const ListItemTemplate = ({
             )}
             {description && (
               <span className={clsx('ActionList-item-descriptionWrap', `${descriptionVariant}`)}>
-                <span className="ActionList-item-label">{text}</span>
+                <span className={clsx('ActionList-item-label', truncateItem && 'ActionList-item-label--truncate')}>
+                  {text}
+                </span>
                 <span className="ActionList-item-description">{description}</span>
               </span>
             )}
-            {!description && text && <span className="ActionList-item-label">{text}</span>}
+            {!description && text && (
+              <span className={clsx('ActionList-item-label', truncateItem && 'ActionList-item-label--truncate')}>
+                {text}
+              </span>
+            )}
             {trailingVisual && (
               <span
                 className="ActionList-item-visual ActionList-item-visual--trailing"
@@ -446,11 +470,17 @@ export const ListItemTemplate = ({
               )}
               {description && (
                 <span className={clsx('ActionList-item-descriptionWrap', `${descriptionVariant}`)}>
-                  <span className="ActionList-item-label">{text}</span>
+                  <span className={clsx('ActionList-item-label', truncateItem && 'ActionList-item-label--truncate')}>
+                    {text}
+                  </span>
                   <span className="ActionList-item-description">{description}</span>
                 </span>
               )}
-              {!description && text && <span className="ActionList-item-label">{text}</span>}
+              {!description && text && (
+                <span className={clsx('ActionList-item-label', truncateItem && 'ActionList-item-label--truncate')}>
+                  {text}
+                </span>
+              )}
 
               {trailingVisual && (
                 <span
@@ -496,5 +526,6 @@ Playground.decorators = [
   )
 ]
 Playground.args = {
-  id: null
+  id: null,
+  truncateItem: false
 }

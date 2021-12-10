@@ -121,6 +121,15 @@
 
     .ActionList--subGroup {
       display: block;
+
+      //   &::before {
+      //     position: absolute;
+      //     content: '';
+      //     width: 1px;
+      //     background: deeppink;
+      //     left: 16px;
+      //     height: calc(100% - 28px);
+      //   }
     }
 
     &.ActionList-item--hasActiveSubItem {
@@ -203,8 +212,7 @@
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition:
- visibility 0 linear $actionList-item-checkmark-transition-timing,
+      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 
@@ -315,14 +323,15 @@
   // stylelint-disable-next-line primer/spacing
   padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
   font-weight: $font-weight-normal;
+  font-size: $body-font-size;
   color: var(--color-fg-default);
   user-select: none;
   border-radius: $border-radius;
   transition: $actionList-item-bg-transition;
   grid-template-rows: min-content;
   grid-template-areas: 'leadingAction leadingVisual label trailingVisual trailingAction';
-  grid-template-columns: min-content min-content minmax(min-content, auto) min-content min-content;
-  align-items: center;
+  grid-template-columns: min-content min-content minmax(0, auto) min-content min-content;
+  align-items: start;
 
   // column-gap persists with empty grid-areas, margin applies only when children exist
   > :not(:last-child) {
@@ -440,6 +449,12 @@
   color: var(--color-fg-default);
 }
 
+.ActionList-item-label--truncate {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 // nested lists (only supports 1 level currently)
 // target ActionList-item--subItem for padding-left to maintain :active :after state
 
@@ -474,3 +489,141 @@
     padding-left: $spacer-5;
   }
 }
+
+// padding left
+// no visuals
+// 16px visual
+// 20px visual
+// 24px visual
+// action 16px visual
+// action 20px visual
+// action 24px visual
+
+@mixin treeConnectingLine($left) {
+  position: absolute;
+  content: '';
+  width: 1px;
+  background: deeppink;
+  left: $left;
+  height: calc(100% - 28px);
+  z-index: 1000;
+}
+
+// [aria-level='1'].ActionList-item--hasSubItem {
+//   background: pink;
+
+//   > .ActionList--subGroup {
+//     &::before {
+//       position: absolute;
+//       content: '';
+//       width: 1px;
+//       background: deeppink;
+//       left: 16px;
+//       height: calc(100% - 28px);
+//       z-index: 1000;
+//     }
+//   }
+// }
+
+// [aria-level='2'].ActionList-item--hasSubItem {
+//   background: lightblue;
+
+//   > .ActionList--subGroup {
+//     &::before {
+//       position: absolute;
+//       content: '';
+//       width: 1px;
+//       background: darkcyan;
+//       left: 40px;
+//       height: calc(100% - 28px);
+//       z-index: 1000;
+//     }
+//   }
+// }
+
+// first subitem
+.ActionList--tree {
+  > [aria-level='1'].ActionList-item--hasSubItem {
+    background: pink;
+
+    > .ActionList--subGroup {
+      &::before {
+        position: absolute;
+        content: '';
+        width: 1px;
+        background: deeppink;
+        left: 16px;
+        height: calc(100% - 28px);
+        z-index: 1000;
+      }
+    }
+  }
+
+  // all other subitems
+  .ActionList-item--hasSubItem:not([aria-level='1']) {
+    background: plum;
+    > .ActionList--subGroup {
+      &::before {
+        position: absolute;
+        content: '';
+        width: 1px;
+        background: deeppink;
+        left: 40px;
+        height: calc(100% - 28px);
+        z-index: 1000;
+      }
+    }
+  }
+}
+
+//   .ActionList-item--hasSubItem:not(:nth-of-type(1)) {
+//     background: pink;
+
+//     > .ActionList--subGroup {
+//       &::before {
+//         position: absolute;
+//         content: '';
+//         width: 1px;
+//         background: darkmagenta;
+//         left: 40px;
+//         height: calc(100% - 28px);
+//         z-index: 1000;
+//       }
+//     }
+//   }
+
+.ActionList-item > .ActionList-content > .ActionList-item-action--leading {
+  background: deeppink;
+}
+
+// [aria-level='1'].ActionList-item--hasSubItem {
+//   background: pink;
+
+//   > .ActionList--subGroup {
+//     &::before {
+//       position: absolute;
+//       content: '';
+//       width: 1px;
+//       background: deeppink;
+//       left: 16px;
+//       height: calc(100% - 28px);
+//       z-index: 1000;
+//     }
+//   }
+// }
+
+// [aria-level='2'].ActionList-item--hasSubItem {
+//   background: lightblue;
+
+//   > .ActionList--subGroup {
+//     &::before {
+//       position: absolute;
+//       content: '';
+//       width: 1px;
+//       background: darkcyan;
+//       left: 40px;
+//       height: calc(100% - 28px);
+//       z-index: 1000;
+//     }
+//   }
+// }

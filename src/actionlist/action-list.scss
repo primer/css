@@ -8,6 +8,13 @@
   padding: 0;
 }
 
+// tree-view variant
+.ActionList--tree {
+  .ActionList-item--subItem > .ActionList-content {
+    font-size: $body-font-size;
+  }
+}
+
 // dividers
 
 .ActionList--divided {
