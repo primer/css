@@ -6,7 +6,7 @@ import {RepoSettings, DiscussionsPane} from '../ActionList/ActionListExamples.st
 import {LayoutAlphaTemplate} from './LayoutAlpha.stories'
 
 export default {
-  title: 'Components/Layout/Beta/Patterns'
+  title: 'Components/Layout/Beta/Examples'
 }
 
 export const Settings = SplitPageLayoutTemplate.bind({});
