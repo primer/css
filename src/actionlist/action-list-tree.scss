@@ -19,7 +19,7 @@
 }
 
 .ActionList--tree {
-  // move out
+  // TODO: remove with PVC implementation
   .ActionList-item--subItem > .ActionList-content {
     font-size: $body-font-size;
   }

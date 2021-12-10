@@ -209,6 +209,18 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    fontSize: {
+      options: [0, 1], // iterator
+      mapping: ['', 'ActionList-content--fontSmall'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['default', 'small']
+      },
+      description: 'Used to adjust font-size for subgroup items',
+      table: {
+        category: 'CSS'
+      }
     }
   }
 }
@@ -240,7 +252,8 @@ export const ListItemTemplate = ({
   containsActiveSubItem,
   collapsibleLeading,
   truncateItem,
-  ariaLevel
+  ariaLevel,
+  fontSize
 }) => {
   const [isCollapsed, itemIsCollapsed] = useToggle()
   const [isChecked, itemIsChecked] = useToggle()
@@ -289,6 +302,7 @@ export const ListItemTemplate = ({
             className={clsx(
               text && 'ActionList-content',
               size && `${size}`,
+              fontSize && `${fontSize}`,
               (leadingVisual || trailingVisual) && description && 'ActionList-content--blockDescription',
               leadingVisual && leadingVisualSize && `${leadingVisualSize}`
             )}
@@ -406,6 +420,7 @@ export const ListItemTemplate = ({
               className={clsx(
                 text && 'ActionList-content',
                 size && `${size}`,
+                fontSize && `${fontSize}`,
                 (leadingVisual || trailingVisual) && description && 'ActionList-content--blockDescription',
                 leadingVisual && leadingVisualSize && `${leadingVisualSize}`
               )}

@@ -347,6 +347,10 @@
     padding: $actionList-item-padding-vertical-lg $actionList-item-padding-horizontal;
   }
 
+  &.ActionList-content--fontSmall {
+    font-size: $font-size-small;
+  }
+
   // On pointer:coarse (mobile), all list items are large
   @media (pointer: coarse) {
     // stylelint-disable-next-line primer/spacing
@@ -449,6 +453,7 @@
 // nested lists (only supports 1 level currently)
 // target ActionList-item--subItem for padding-left to maintain :active :after state
 
+// TODO: remove with PVC implementation
 .ActionList-item--subItem > .ActionList-content {
   font-size: $font-size-small;
 }
