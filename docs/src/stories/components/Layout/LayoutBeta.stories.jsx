@@ -318,6 +318,7 @@ export const LayoutTemplate = ({
   panePosition = panePosition ?? 'end';
   paneResponsivePosition = paneResponsivePosition ?? 'inherit';
   responsiveVariant = responsiveVariant ?? 'stackRegions';
+  responsivePrimaryRegion = responsivePrimaryRegion ?? 'content';
 
   // Leave `null` values for states that don't require a modifier class
   outerSpacing = (outerSpacing === 'none') ? null : outerSpacing;

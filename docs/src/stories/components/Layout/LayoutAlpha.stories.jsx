@@ -121,7 +121,7 @@ export const LayoutAlphaTemplate = ({
       // use clsx for multiple classnames
       className={clsx(
         'Layout',
-        container && 'container' + `${container}`,
+        container && 'container-' + `${container}`,
         gutter && 'Layout--gutter-' + `${gutter}`,
         sidebarPosition && 'Layout--sidebarPosition-' + `${sidebarPosition}`,
         sidebarWidth && 'Layout--sidebar-' + `${sidebarWidth}`,
