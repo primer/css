@@ -291,10 +291,6 @@ export const LayoutTemplate = ({
   responsiveVariant,
   responsivePrimaryRegion,
 
-  // Pending options
-  // - content/pane light gray backgrounds
-
-
   // Children
   headerChildren,
   contentChildren,
@@ -336,7 +332,6 @@ export const LayoutTemplate = ({
   return (
     <>
       <div
-      // use clsx for multiple classnames
       className={clsx(
         layoutClassName,
         
@@ -378,7 +373,7 @@ export const LayoutTemplate = ({
             layoutClassName + '-columns'
           )}>
 
-            {/* Pane if rendered first */}
+            {/* pane if rendered first */}
             {panePosition === 'start' &&
               <div className={clsx(
                 layoutClassName + '-region',
@@ -409,7 +404,7 @@ export const LayoutTemplate = ({
               )}
             </div>
 
-            {/* Pane if rendered last */}
+            {/* pane if rendered last */}
             {panePosition === 'end' &&
             <div className={clsx(
               layoutClassName + '-region',
