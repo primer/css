@@ -1,6 +1,5 @@
-// stylelint-disable unit-no-unknown
 // Typography
-$marketing-font-path: "/fonts/" !default;
+$marketing-font-path: '/fonts/' !default;
 
 $font-mktg: $body-font !default;
 $font-weight-medium: 450 !default;
@@ -122,7 +121,7 @@ $transition-time: 0.4s !default;
 $ease-mktg: cubic-bezier(0.16, 1, 0.3, 1) !default;
 
 $marketing-position-variants: (
-  "": "",
-  md: "-md",
-  lg: "-lg",
+  '': '',
+  md: '-md',
+  lg: '-lg',
 ) !default;

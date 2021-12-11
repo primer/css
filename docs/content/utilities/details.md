@@ -26,7 +26,9 @@ Use `.details-overlay-dark` darken the click area overlay. Useful for modals.
 ```html live
 <details class="details-overlay details-overlay-dark">
   <summary class="btn">More</summary>
-  <div class="border p-3 mt-2">Hidden text</div>
+  <div class="position-relative color-bg-default rounded p-3 mt-2" style="z-index: 112;">
+    Hidden text
+  </div>
 </details>
 ```
 

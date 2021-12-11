@@ -22,7 +22,6 @@ function LivePreviewWrapper({children}) {
 
   return (
     <Frame>
-      <link rel="stylesheet" href="https://github.com/site/assets/styleguide.css" />
       <style>{primerStyles}</style>
       <div data-color-mode={colorMode} data-light-theme="light" data-dark-theme="dark">
         <Flex pt={2} px={2} justifyContent="flex-end">

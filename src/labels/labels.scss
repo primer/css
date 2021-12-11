@@ -10,7 +10,7 @@
 .label, // TODO: Deprecte
 .Label {
   @include labels-base;
-  background-color: transparent !important; // TODO: Remove again
+
   border-color: var(--color-border-default);
 
   &:hover {

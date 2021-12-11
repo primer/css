@@ -136,24 +136,24 @@ Use padding utilities to create gutters for more customized layouts.
 ```html live title="Gutters with padding"
 <div class="container-lg clearfix">
   <div class="col-3 float-left pr-2 mb-3">
-    <div class="border color-bg-attention-subtle">.pr-2</div>
+    <div class="border color-bg-attention">.pr-2</div>
   </div>
   <div class="col-3 float-left px-2 mb-3">
-    <div class="border color-bg-attention-subtle">.px-2</div>
+    <div class="border color-bg-attention">.px-2</div>
   </div>
   <div class="col-3 float-left px-2 mb-3">
-    <div class="border color-bg-attention-subtle">.px-2</div>
+    <div class="border color-bg-attention">.px-2</div>
   </div>
   <div class="col-3 float-left pl-2 mb-3">
-    <div class="border color-bg-attention-subtle">.pl-2</div>
+    <div class="border color-bg-attention">.pl-2</div>
   </div>
 </div>
 <div class="container-lg clearfix">
   <div class="col-3 float-left pr-2">
-    <div class="border color-bg-attention-subtle">.pr-2</div>
+    <div class="border color-bg-attention">.pr-2</div>
   </div>
   <div class="col-9 float-left pl-2">
-    <div class="border color-bg-attention-subtle">.pl-2</div>
+    <div class="border color-bg-attention">.pl-2</div>
   </div>
 </div>
 ```

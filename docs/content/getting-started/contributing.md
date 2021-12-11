@@ -95,6 +95,10 @@ source: 'https://github.com/primer/css/tree/main/src/alerts'
 
 A table of contents is automatically inserted at the top of every page published on [primer.style/css](https://primer.style/css).
 
+### Navigation
+
+For new components or doc pages, add the title and url to [nav.yml](https://github.com/primer/css/blob/main/docs/src/%40primer/gatsby-theme-doctocat/nav.yml).
+
 ### Live code
 
 Check out Doctocat's [live code](https://primer.style/doctocat/usage/live-code) documentation for more information about creating live code examples.

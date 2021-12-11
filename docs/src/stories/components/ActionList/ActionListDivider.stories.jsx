@@ -15,7 +15,7 @@ export default {
       options: [0, 1], // iterator
       mapping: ['', 'ActionList-sectionDivider--filled'], // values
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: ['subtle', 'filled']
       },
       table: {

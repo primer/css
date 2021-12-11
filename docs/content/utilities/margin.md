@@ -43,13 +43,13 @@ Use uniform spacing utilities to apply equal margin to all sides of an element. 
 
 ```html live
 <div class="d-flex flex-items-baseline flex-justify-around">
-  <div class="color-bg-attention-subtle"><div class="m-0 p-1 color-bg-subtle">.m-0</div></div>
-  <div class="color-bg-attention-subtle"><div class="m-1 p-1 color-bg-subtle">.m-1</div></div>
-  <div class="color-bg-attention-subtle"><div class="m-2 p-1 color-bg-subtle">.m-2</div></div>
-  <div class="color-bg-attention-subtle"><div class="m-3 p-1 color-bg-subtle">.m-3</div></div>
-  <div class="color-bg-attention-subtle"><div class="m-4 p-1 color-bg-subtle">.m-4</div></div>
-  <div class="color-bg-attention-subtle"><div class="m-5 p-1 color-bg-subtle">.m-5</div></div>
-  <div class="color-bg-attention-subtle"><div class="m-6 p-1 color-bg-subtle">.m-6</div></div>
+  <div class="color-bg-attention"><div class="m-0 p-1 color-bg-subtle">.m-0</div></div>
+  <div class="color-bg-attention"><div class="m-1 p-1 color-bg-subtle">.m-1</div></div>
+  <div class="color-bg-attention"><div class="m-2 p-1 color-bg-subtle">.m-2</div></div>
+  <div class="color-bg-attention"><div class="m-3 p-1 color-bg-subtle">.m-3</div></div>
+  <div class="color-bg-attention"><div class="m-4 p-1 color-bg-subtle">.m-4</div></div>
+  <div class="color-bg-attention"><div class="m-5 p-1 color-bg-subtle">.m-5</div></div>
+  <div class="color-bg-attention"><div class="m-6 p-1 color-bg-subtle">.m-6</div></div>
 </div>
 ```
 
@@ -59,12 +59,12 @@ Use directional utilities to apply margin to an individual side, or the X and Y 
 
 ```html live
 <div class="d-flex flex-items-baseline flex-justify-around">
-  <div class="color-bg-attention-subtle"><div class="mt-3 p-1 color-bg-subtle">.mt-3</div></div>
-  <div class="color-bg-attention-subtle"><div class="mr-3 p-1 color-bg-subtle">.mr-3</div></div>
-  <div class="color-bg-attention-subtle"><div class="mb-3 p-1 color-bg-subtle">.mb-3</div></div>
-  <div class="color-bg-attention-subtle"><div class="ml-3 p-1 color-bg-subtle">.ml-3</div></div>
-  <div class="color-bg-attention-subtle"><div class="mx-3 p-1 color-bg-subtle">.mx-3</div></div>
-  <div class="color-bg-attention-subtle"><div class="my-3 p-1 color-bg-subtle">.my-3</div></div>
+  <div class="color-bg-attention"><div class="mt-3 p-1 color-bg-subtle">.mt-3</div></div>
+  <div class="color-bg-attention"><div class="mr-3 p-1 color-bg-subtle">.mr-3</div></div>
+  <div class="color-bg-attention"><div class="mb-3 p-1 color-bg-subtle">.mb-3</div></div>
+  <div class="color-bg-attention"><div class="ml-3 p-1 color-bg-subtle">.ml-3</div></div>
+  <div class="color-bg-attention"><div class="mx-3 p-1 color-bg-subtle">.mx-3</div></div>
+  <div class="color-bg-attention"><div class="my-3 p-1 color-bg-subtle">.my-3</div></div>
 </div>
 ```
 
@@ -73,12 +73,12 @@ Use directional utilities to apply margin to an individual side, or the X and Y 
 The extended scale starts from spacer `7` up to `12`. **Note**: Only the y-axis (`mt`, `mb` and `my`) and its responsive variants are supported.
 
 ```html live
-<div class="color-bg-attention-subtle d-inline-block"><div class="mt-7  p-1 color-bg-subtle">.mb-7</div></div>
-<div class="color-bg-attention-subtle d-inline-block"><div class="mt-8  p-1 color-bg-subtle">.mb-8</div></div>
-<div class="color-bg-attention-subtle d-inline-block"><div class="mt-9  p-1 color-bg-subtle">.mb-9</div></div>
-<div class="color-bg-attention-subtle d-inline-block"><div class="mt-10 p-1 color-bg-subtle">.mb-10</div></div>
-<div class="color-bg-attention-subtle d-inline-block"><div class="mt-11 p-1 color-bg-subtle">.mb-11</div></div>
-<div class="color-bg-attention-subtle d-inline-block"><div class="mt-12 p-1 color-bg-subtle">.mb-12</div></div>
+<div class="color-bg-attention d-inline-block"><div class="mt-7  p-1 color-bg-subtle">.mb-7</div></div>
+<div class="color-bg-attention d-inline-block"><div class="mt-8  p-1 color-bg-subtle">.mb-8</div></div>
+<div class="color-bg-attention d-inline-block"><div class="mt-9  p-1 color-bg-subtle">.mb-9</div></div>
+<div class="color-bg-attention d-inline-block"><div class="mt-10 p-1 color-bg-subtle">.mb-10</div></div>
+<div class="color-bg-attention d-inline-block"><div class="mt-11 p-1 color-bg-subtle">.mb-11</div></div>
+<div class="color-bg-attention d-inline-block"><div class="mt-12 p-1 color-bg-subtle">.mb-12</div></div>
 ```
 
 ## Center elements
@@ -86,7 +86,7 @@ The extended scale starts from spacer `7` up to `12`. **Note**: Only the y-axis 
 Use `mx-auto`to center block elements with a set width.
 
 ```html live
-<div class="color-bg-attention-subtle">
+<div class="color-bg-attention">
   <div class="mx-auto color-bg-subtle text-center" style="max-width: 500px;">.mx-auto</div>
 </div>
 ```
@@ -109,7 +109,7 @@ We also provide directional margin auto. `mt-auto, mr-auto, mb-auto, ml-auto`
 Reset margins built into typography elements or other components with `m-0`, `mt-0`, `mr-0`, `mb-0`, `ml-0`, `mx-0`, and `my-0`.
 
 ```html live
-<div class="color-bg-attention-subtle border">
+<div class="color-bg-attention border">
   <p class="mb-0 color-bg-subtle p-1">No bottom margin on this paragraph.</p>
 </div>
 ```
@@ -119,7 +119,7 @@ Reset margins built into typography elements or other components with `m-0`, `mt
 All margin utilities can be adjusted per [breakpoint](/objects/grid#breakpoints) using the following formula: `m[direction]-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
 
 ```html live
-<div class="color-bg-attention-subtle d-inline-block">
+<div class="color-bg-attention d-inline-block">
   <div class="mx-sm-2 mx-md-4 color-bg-subtle p-1">
     .mx-sm-2 .mx-md-4
   </div>
@@ -132,7 +132,7 @@ You can add negative margins to the top, right, bottom, or left of an item by ad
 
 ```html live
 <div class="d-flex flex-justify-center">
-  <div class="color-bg-attention-subtle">
+  <div class="color-bg-attention">
     <div class="m-3 ml-n4 ml-md-n6 border-left color-border-danger color-bg-subtle p-2">
       .m-3 .ml-n4 .ml-md-n6
     </div>
@@ -146,7 +146,7 @@ You can use the extended spacing scale for `top` and `bottom` margins, ranging f
 
 ```html live
 <div class="d-flex flex-justify-center">
-  <div class="py-6 px-3 color-bg-attention-subtle">
+  <div class="py-6 px-3 color-bg-attention">
     <div class="mt-n8 border-left color-border-danger color-bg-subtle p-2">
       .mt-n8
     </div>

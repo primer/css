@@ -1,7 +1,7 @@
 // Responsive media queries
 
 @mixin breakpoint($breakpoint) {
-  @if $breakpoint == "" {
+  @if $breakpoint == '' {
     @content;
   }
 
@@ -19,8 +19,8 @@
 
     // If the key doesn't exist in the map
     @else {
-      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Please make sure it is defined in `$breakpoints` map.";
+      @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+        + 'Please make sure it is defined in `$breakpoints` map.';
     }
   }
 }
@@ -47,12 +47,12 @@
 @mixin clearfix {
   &::before {
     display: table;
-    content: "";
+    content: '';
   }
 
   &::after {
     display: table;
     clear: both;
-    content: "";
+    content: '';
   }
 }

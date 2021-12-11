@@ -1,0 +1,392 @@
+import {Meta} from '@storybook/addon-docs'
+
+<Meta title="Prototypes/Prototyping guide" />
+
+# Primer CSS Playground
+
+The Playground file contains an empty story configured to promote quick design prototyping with Primer CSS. It can be used with or without controls/args, and there are no rules! Work directly in the Playground file for temporary drafting and collaborating. If what you're building is more permanant, create a folder under Components or Patterns and move your work there.
+
+Use this guide as a reference for code snippets, Storybook controls, and configuring conditional logic for interactive prototypes
+
+### On this page
+
+<ul class="toc">
+<li>
+  <a href="#css-class-syntax">CSS class syntax</a>
+</li>
+<li><a href="#importing-other-stories">Importing other stories</a></li>
+<li><a href="#boolean-truefalse">argType: boolean (true/false)</a></li>
+
+<li>
+  <a href="#execute-function-if-boolean-is-true">argType: boolean with JS function</a>
+</li>
+
+<li>
+  <a href="#radio-options">argType: radio options (variants)</a>
+</li>
+
+<li>
+  <a href="#string">argType: string (labels, ids)</a>
+</li>
+
+<li>
+  <a href="#slots">argType: slot (child component)</a>
+</li>
+
+<li>
+  <a href="#collapseexpand">interactive: collapse/expand</a>
+</li>
+
+<li>
+  <a href="#openclose">interactive: open/close</a>
+</li>
+
+<li>
+  <a href="#html-attribute">interactive: HTML attribute (disabled, checked)</a>
+</li>
+
+<li><a href="#css-class">interactive: CSS class (animation)</a></li>
+<li><a href="#working-with-color">Working with color</a></li>
+</ul>
+
+### CSS class syntax
+
+```jsx
+// Ways to combine multiple CSS classes
+// simple Primer classes
+<div class="btn btn-primary"></div>
+
+// React/jsx syntax
+<div className={clsx('btn', 'btn-primary')}></div>
+
+// conditionally add arg string as css class
+<div className={clsx('btn', radioExample && `${radioExample}`)}></div>
+
+// conditionally set css class if arg is true/false (use !booleanExample for false)
+<div className={clsx('btn', booleanExample && 'someClass')}></div>
+```
+
+### Importing other stories
+
+```jsx
+import {StoryTemplateName} from './OtherStoryFile.stories'
+
+// import existing args from story
+<StoryTemplateName {...StoryTemplateName.args} />
+
+// optional: set new args
+<StoryTemplateName someProp='My override' />
+```
+
+### Conditional logic using Storybook controls
+
+Storybook controls can be used to mock interaction, state, and variants in a prototype. These are optional for prototyping, but can come in handy if you need a way to toggle state without writing custom javascript.
+
+The following examples show each Storybook argType available and a few ways to use them.
+
+#### Boolean (true/false)
+
+```jsx
+// YourStory.stories.jsx
+export default {
+  title: 'Prototypes/Playground',
+  argTypes: {
+    booleanExample: {
+      control: {type: 'boolean'},
+      description: 'true/false toggle to controls'
+    }
+  }
+}
+
+export const PlaygroundTemplate = ({booleanExample}) => {
+  return (
+    // render markup if true or !false
+    {booleanExample && <div></div>}
+    {!booleanExample && <div></div>}
+
+    // render css class 'true-class' if true else 'false-class'
+    // can also be undefined if false
+    <div className={booleanExample ? 'true-class' : 'false-class'}></div>
+    <div className={booleanExample ? 'true-class' : undefined}></div>
+
+    // set html attribute
+    <div hidden={booleanExample ? true : undefined}></div>
+    <div aria-expanded={booleanExample ? true : false}></div>
+  )
+}
+```
+
+### Execute function if boolean is true
+
+```jsx
+// YourStory.stories.jsx
+export default {
+  title: 'Prototypes/Playground',
+  argTypes: {
+    focusElement: {
+      control: {type: 'boolean'},
+      description: 'set focus on element',
+      table: {
+        category: 'Interactive'
+      }
+    }
+  }
+}
+
+// only one element can be focused at a time
+const focusMethod = function getFocus() {
+  // find the focusable element
+  var button = document.getElementsByTagName('button')[0]
+  // set focus on element
+  button.focus()
+}
+
+export const PlaygroundTemplate = ({focusElement}) => {
+  return (
+    <>
+      <button class="btn">Button</button>
+      {focusElement && focusMethod()}
+    </>
+  )
+}
+```
+
+#### Radio options
+
+`inline-radio` type control is great for setting CSS class variants on a component when multiple class options exist.
+
+```jsx
+// YourStory.stories.jsx
+export default {
+  title: 'Prototypes/Playground',
+  argTypes: {
+    radioExample: {
+      options: ['string1', 'string2', 'string3', 'string4'],
+      control: {
+        type: 'inline-radio'
+      },
+      description: 'radio buttons mapping to strings (example: use for variant class names)'
+    }
+  }
+}
+
+export const PlaygroundTemplate = ({radioExample}) => {
+  return (
+    // render css class from options
+    <div className={clsx(radioExample && `${radioExample}`)}></div>
+  )
+}
+```
+
+#### String
+
+```jsx
+// YourStory.stories.jsx
+export default {
+  title: 'Prototypes/Playground',
+  argTypes: {
+    stringExample: {
+      name: 'stringExample',
+      type: 'string',
+      description: 'text box control'
+    },
+  }
+}
+
+export const PlaygroundTemplate = ({stringExample}) => {
+  return (
+    // text
+    <p>{stringExample}</p>
+
+    // id
+    <div id={stringExample}></div>
+
+    // octicon container
+    <span dangerouslySetInnerHTML={{__html: stringExample}} />
+  )
+}
+```
+
+#### Slots
+
+```jsx
+// YourStory.stories.jsx
+export default {
+  title: 'Prototypes/Playground',
+  argTypes: {
+    slot: {
+      description: 'creates a slot for children'
+    }
+  }
+}
+
+export const PlaygroundTemplate = ({slot}) => {
+  return (
+    // creates a slot for markup or other components
+    <p>{slot}</p>
+  )
+}
+```
+
+### Interactive prototyping
+
+Sometimes you may want to prototype interations without relying on Storybook controls. One example of this is rendering a `button` that toggles an overlay to open. You can achieve this with a `boolean` control, but in this case you want to be able to click the button in the prototype (just like an interactive prototype in Figma)
+
+#### Collapse/expand
+
+```jsx
+// import the useToggle React hook
+import useToggle from '../helpers/useToggle.jsx'
+
+export const PlaygroundTemplate = ({}) => {
+  const [isCollapsed, itemIsCollapsed] = useToggle()
+  return (
+    <>
+      <button onClick={itemIsCollapsed} class="btn d-block mb-2">
+        Toggle collapse
+      </button>
+      <div aria-expanded={isCollapsed ? 'true' : 'false'} class={isCollapsed ? 'p-4 color-bg-accent' : undefined}></div>
+    </>
+  )
+}
+```
+
+#### Open/close
+
+```jsx
+// import the useToggle React hook
+import useToggle from '../helpers/useToggle.jsx'
+
+export const PlaygroundTemplate = ({}) => {
+  const [isOpen, itemisOpen] = useToggle()
+  return (
+    <>
+      <details class="details-overlay" onClick={isOpen} open={itemisOpen}>
+        <summary class="btn">More</summary>
+        <div class="border p-3 mt-2">Hidden text</div>
+      </details>
+    </>
+  )
+}
+```
+
+#### HTML attribute
+
+Toggle any HTML attribute, like `aria-etc`, `checked`, `hidden`, etc.
+
+```jsx
+// import the useToggle React hook
+import useToggle from '../helpers/useToggle.jsx'
+
+export const PlaygroundTemplate = ({}) => {
+  const [isDisabled, itemisDisabled] = useToggle()
+  return (
+    <>
+      <button onClick={itemisDisabled} class="btn d-block mb-2">
+        Toggle
+      </button>
+      <button disabled={isDisabled}>{isDisabled ? 'disabled' : 'button'}</button>
+    </>
+  )
+}
+```
+
+#### CSS class
+
+Toggle any CSS class to show interaction and/or animation
+
+```jsx
+// import the useToggle React hook
+import useToggle from '../helpers/useToggle.jsx'
+
+export const PlaygroundTemplate = ({}) => {
+  const [isRotating, itemisRotating] = useToggle()
+  return (
+    <>
+      <button onClick={itemisRotating} class="btn d-block mb-2">
+        Toggle
+      </button>
+      <svg
+        className={isRotating ? 'anim-rotate' : undefined}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 16 16"
+        width="16"
+        height="16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zM5 8a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zM5.32 9.636a.75.75 0 011.038.175l.007.009c.103.118.22.222.35.31.264.178.683.37 1.285.37.602 0 1.02-.192 1.285-.371.13-.088.247-.192.35-.31l.007-.008a.75.75 0 111.222.87l-.614-.431c.614.43.614.431.613.431v.001l-.001.002-.002.003-.005.007-.014.019a1.984 1.984 0 01-.184.213c-.16.166-.338.316-.53.445-.63.418-1.37.638-2.127.629-.946 0-1.652-.308-2.126-.63a3.32 3.32 0 01-.715-.657l-.014-.02-.005-.006-.002-.003v-.002h-.001l.613-.432-.614.43a.75.75 0 01.183-1.044h.001z"
+        ></path>
+      </svg>
+    </>
+  )
+}
+```
+
+### Working with color
+
+Stories have access to all distributed colors from Primer Primitives. Here are some ways you might like to utilize Storybook for testing and prototyping.
+
+#### View all themes
+
+In the Theme toolbar menu, selecting "all" will render the story in every theme. This gives you a quick overview of how color primitives interact in each theme, and is especially helpful for checking contrast ratios.
+
+#### Access the Storybook colorpicker
+
+Storybook includes a colorpicker control that may be useful for tweaking existing colors or prototyping something totally new.
+
+By setting the `backgroundColor`, the component also has access to the Primer Primitives color picker. Open the toolbar menu by clicking the paintbrush, and an option to replace `backgroundColor` should show up. From there, select a primitive from a given theme.
+
+```jsx
+// YourStory.stories.jsx
+export default {
+  title: 'Prototypes/Playground',
+  argTypes: {
+    backgroundColor: {
+      name: 'color',
+      control: 'color',
+      description: 'use with an inline style tag to access a colorpicker control'
+    }
+  }
+}
+
+export const PlaygroundTemplate = ({backgroundColor}) => {
+  return <div className="colorBlockItem" style={{backgroundColor: backgroundColor}}></div>
+}
+```
+
+#### ColorBlock component
+
+`ColorBlock` is a simple helper component that renders a square, intended to be used for quickly showing a block of color.
+
+```jsx
+// YourStory.stories.jsx
+import ColorBlock from '../helpers/ColorBlock'
+
+export default {
+  title: 'Prototypes/Playground',
+  argTypes: {
+    // optional arg
+    backgroundColor: {
+      name: 'color',
+      control: 'color',
+      description: 'use with an inline style tag to access a colorpicker control'
+    }
+  }
+}
+
+export const PlaygroundTemplate = ({backgroundColor}) => {
+  return (
+    <div className="colorBlockWrap">
+      // access the color picker + display the hex value as a label
+      <ColorBlock backgroundColor={backgroundColor} showValueLabel />
+      // pass in a primitive, hex value, etc.
+      <ColorBlock backgroundColor="var(--color-marketing-icon-primary)" />
+    </div>
+  )
+}
+```
+
+#### Color Playground
+
+If you'e just working with color, Color Playground is a quick start template for manipulating `ColorBlock`. Repeat `<ColorBlock />` as many times as you need to test combinations.

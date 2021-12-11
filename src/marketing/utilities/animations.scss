@@ -7,3 +7,45 @@
     transform: scale3d(1.025, 1.025, 1.025);
   }
 }
+
+// Animated arrow symbol, used in marketing links, buttons, etc.
+.btn-mktg,
+.link-mktg,
+.arrow-target-mktg {
+  .octicon {
+    width: 1em;
+    height: 1em;
+  }
+
+  .arrow-symbol-mktg {
+    transition: transform 0.2s;
+    transform: translateX(0);
+
+    // stylelint-disable-next-line selector-max-type
+    path:last-child {
+      stroke-dasharray: 10;
+      stroke-dashoffset: 10;
+      transition: stroke-dashoffset 0.2s;
+    }
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    &:hover,
+    &:focus {
+      .arrow-symbol-mktg {
+        transform: translateX(4px);
+
+        // stylelint-disable-next-line selector-max-type, selector-max-specificity, max-nesting-depth
+        path:last-child {
+          stroke-dashoffset: 20;
+        }
+      }
+    }
+
+    &:active {
+      .arrow-symbol-mktg {
+        transform: translateX(6px);
+      }
+    }
+  }
+}

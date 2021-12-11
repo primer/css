@@ -7,9 +7,9 @@
   .Layout-sidebar,
   .Layout-divider,
   .Layout-main {
-      width: 100% !important;
-      grid-column: 1 !important;
-    }
+    width: 100% !important;
+    grid-column: 1 !important;
+  }
 
   &.Layout--sidebarPosition-flowRow-start {
     .Layout-sidebar {
