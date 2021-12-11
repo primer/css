@@ -18,7 +18,7 @@ export default {
     },
     hasDivider: {
       control: { type: 'boolean' },
-      description: 'true/false toggle to show divider',
+      description: 'Whether to show a pane line divider.',
       table: {
         category: 'CSS'
       }
@@ -28,27 +28,27 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: 'select menu mapping to strings (example: use for variant class names)',
+      description: 'Sets the gap between columns.',
       table: {
         category: 'CSS'
       }
     },
     sidebarPosition: {
       options: ['start', 'end'],
-      //mapping: ['Layout--sidebarPosition-start', 'Layout--sidebarPosition-end'],
       control: {
         type: 'inline-radio'
       },
+      description: 'Sets the position of the sidebar.',
       table: {
         category: 'CSS'
       }
     },
     sidebarWidth: {
       options: ['default', 'narrow', 'wide'],
-      //mapping: ['', 'Layout--sidebar-narrow', 'Layout--sidebar-wide'],
       control: {
-        type: 'select'
+        type: 'inline-radio'
       },
+      description: 'Sets the width of the sidebar.',
       table: {
         category: 'CSS'
       }
@@ -56,8 +56,9 @@ export default {
     mainWidth: {
       options: ['fluid', 'md', 'lg', 'xl'],
       control: {
-        type: 'select'
+        type: 'inline-radio'
       },
+      description: 'Sets the width of the main content area.',
       table: {
         category: 'CSS'
       }
@@ -65,8 +66,9 @@ export default {
     flowRowUntil: {
       options: ['sm', 'md', 'lg'],
       control: {
-        type: 'select',
+        type: 'inline-radio',
       },
+      description: 'Sets the maximum breakpoint at which the layout will flow as row.',
       table: {
         category: 'CSS'
       }
