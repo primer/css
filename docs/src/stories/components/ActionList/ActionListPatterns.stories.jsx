@@ -719,7 +719,6 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
         children={
           <ListTemplate
             subGroup
-            role="menu"
             ariaLabel="Sub nav decription"
             ariaLabelledBy="group-id-2"
             children={
