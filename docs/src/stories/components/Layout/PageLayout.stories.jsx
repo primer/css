@@ -129,7 +129,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: 'Whether to show a divider between `pane` and `content` regions if `responsiveVariant` is set to `stackRegions`. If `pane` appears above `content`, a `(...)-divider` class will be placed in the `pane` region. Otherwise it will be placed in the `content` region.',
+      description: 'Whether to show a divider between `pane` and `content` regions if `responsiveVariant` is set to `stackRegions`. `line` adds a thin line between `content` and `pane` regions. `filled` adds a solid mobile-friendly separator instead. `none` is default.',
       table: {
         category: 'Pane'
       }
@@ -170,7 +170,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: 'Whether to show a divider below the `header` region if in responsive mode.',
+      description: 'Whether to show a divider below the `header` region in responsive variant. `line` adds a thin line between `content` and `pane` regions. `filled` adds a solid mobile-friendly separator instead. `none` is default.',
       table: {
         category: 'Header'
       }
@@ -198,7 +198,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: 'Whether to show a divider above the `footer` region if in responsive mode.',
+      description: 'Whether to show a divider above the `footer` region in responsive variant. `line` adds a thin line between `content` and `pane` regions. `filled` adds a solid mobile-friendly separator instead. `none` is default.',
       table: {
         category: 'Footer'
       }
