@@ -55,7 +55,7 @@
     "globby": "12.0.2",
     "jest": "27.4.4",
     "js-yaml": "4.1.0",
-    "postcss": "8.4.4",
+    "postcss": "8.4.5",
     "postcss-calc": "8.0.0",
     "postcss-import": "14.0.2",
     "postcss-load-config": "3.1.0",
