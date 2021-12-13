@@ -1,9 +1,17 @@
-First, briefly describe your proposal in the title and delete this line.
+### What are you trying to accomplish?
 
-If your proposal fixes any issues, please list them below, then delete this line:
+<!-- Please provide a short description of the changes and link to any related issues. Include screenshots or videos for visual changes.  -->
 
--  Fixes: # (type an issue number after the # if applicable)
+### What approach did you choose and why?
 
-Finally, tell us more about the change here, in the description.
+<!-- Here you can explain your approach and reasoning in more detail. -->
 
-/cc @primer/css-reviewers
+### What should reviewers focus on?
+
+<!-- Let reviewers know if there is anything that needs special attention. You can also describe any alternatives that you explored. -->
+
+### Are additional changes needed?
+
+<!-- Please add a ⚠️ note here if this PR depends on additional changes. For example an update from Primer Primitives. Or additional changes when shipping to "dotcom". This will make sure we don't forget to include them. -->
+
+- [ ] No, this PR should be ok to ship as is. 🚢 
