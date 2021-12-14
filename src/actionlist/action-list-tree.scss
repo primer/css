@@ -65,7 +65,7 @@
         // creates a slight indent of child items
         // stylelint-disable-next-line selector-max-specificity, selector-max-type, max-nesting-depth, selector-max-compound-selectors
         > span:first-child {
-          // stylelint-disable-next-line primer/spacing, max-nesting-depth, selector-max-compound-selectors
+          // stylelint-disable-next-line primer/spacing
           padding-left: 20px;
         }
       }
@@ -73,7 +73,6 @@
   }
 
   // first subitem
-  // stylelint-disable-next-line selector-max-specificity
   > [aria-level='1'].ActionList-item--hasSubItem {
     > .ActionList--subGroup {
       // stylelint-disable-next-line selector-max-specificity
@@ -85,7 +84,6 @@
 
   // all other subitems
   // center connecting line with parent (line is 1px (8px - 1px)
-  // stylelint-disable-next-line selector-max-specificity
   .ActionList-item--hasSubItem:not([aria-level='1']) {
     > .ActionList--subGroup {
       // stylelint-disable-next-line selector-max-specificity
