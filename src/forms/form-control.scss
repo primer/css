@@ -54,6 +54,7 @@ label {
   // Ensures inputs don't zoom on mobile iPhone but are body-font size on iPad
   @supports (-webkit-touch-callout: none) {
     font-size: $h4-size;
+
     @include breakpoint(md) {
       font-size: $body-font-size;
     }
@@ -181,6 +182,7 @@ textarea.form-control {
 .hfields {
   // stylelint-disable-next-line primer/spacing
   margin: 15px 0;
+
   @include clearfix;
 
   .form-group {

@@ -1,5 +1,31 @@
 # @primer/css
 
+## 19.1.0
+
+### Minor Changes
+
+- [#1759](https://github.com/primer/css/pull/1759) [`74724ce7`](https://github.com/primer/css/commit/74724ce7c72b1cb540a9ef3d845169f1df17b55e) Thanks [@langermank](https://github.com/langermank)! - Remove `popover` responsive hack
+
+* [#1807](https://github.com/primer/css/pull/1807) [`13a4654f`](https://github.com/primer/css/commit/13a4654fa0854accfaabbbd2f21d2e0a1c90442d) Thanks [@enstyled](https://github.com/enstyled)! - Marketing: Add link components
+  Marketing: Add animated arrow utility
+  Marketing: Document button components with arrows
+
+### Patch Changes
+
+- [#1780](https://github.com/primer/css/pull/1780) [`8e9ba62d`](https://github.com/primer/css/commit/8e9ba62d30ed10c012b99dd998751df01ad6aa99) Thanks [@langermank](https://github.com/langermank)! - ActionList followup
+
+* [#1805](https://github.com/primer/css/pull/1805) [`99537d31`](https://github.com/primer/css/commit/99537d317f04ff5474a076ab96d3ea315b2181e2) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Fix local dev (revert webpack 5.5.0 → 6.0.0)
+
+- [#1781](https://github.com/primer/css/pull/1781) [`4d8dcf24`](https://github.com/primer/css/commit/4d8dcf24bc9e0732a9a2f34c94f6bcad7d3382dd) Thanks [@simurai](https://github.com/simurai)! - Reformat `rgba()` colors for `.btn-mktg`
+
+* [#1768](https://github.com/primer/css/pull/1768) [`4abb1af9`](https://github.com/primer/css/commit/4abb1af95b9b3c8c38512fa5e1e4fae9e7d01f4f) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Add disabled states for buttons (and tweak hover)
+
+- [#1792](https://github.com/primer/css/pull/1792) [`b1c43f1f`](https://github.com/primer/css/commit/b1c43f1f8d9b07b58b275665ca69abd5d4f7a5fc) Thanks [@simurai](https://github.com/simurai)! - Use `counter-border` for LHC
+
+* [#1808](https://github.com/primer/css/pull/1808) [`ee27583f`](https://github.com/primer/css/commit/ee27583f594248bd44122ea5dc81b12382c02b09) Thanks [@manuelpuyol](https://github.com/manuelpuyol)! - Add hover and active states to btn-invisible
+
+- [#1818](https://github.com/primer/css/pull/1818) [`22c29e7a`](https://github.com/primer/css/commit/22c29e7a8b1b6a0df1dd61d400cc0dd132e0c909) Thanks [@vdepizzol](https://github.com/vdepizzol)! - [Layout component] Avoid resizing `main` while loading
+
 ## 19.0.0
 
 ### Major Changes

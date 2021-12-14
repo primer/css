@@ -21,7 +21,7 @@
   }
 
   &:disabled,
-  &[aria-disabled=true] {
+  &[aria-disabled='true'] {
     &,
     &:hover {
       color: var(--color-primer-fg-disabled);
@@ -50,7 +50,7 @@
   &:active,
   &:focus,
   &.selected,
-  &[aria-selected=true],
+  &[aria-selected='true'],
   &.zeroclipboard-is-active {
     color: var(--color-accent-fg);
     background-color: none;
@@ -59,14 +59,13 @@
     box-shadow: var(--color-btn-focus-shadow);
   }
 
-  &:active
-  &.zeroclipboard-is-active {
+  &:active &.zeroclipboard-is-active {
     background-color: var(--color-btn-selected-bg);
   }
 
   &:disabled,
   &.disabled,
-  &[aria-disabled=true] {
+  &[aria-disabled='true'] {
     color: var(--color-primer-fg-disabled);
     background-color: transparent;
   }
@@ -93,7 +92,7 @@
   &:hover { color: var(--color-accent-fg); }
 
   &.disabled,
-  &[aria-disabled=true] {
+  &[aria-disabled='true'] {
     color: var(--color-primer-fg-disabled);
     cursor: default;
 
