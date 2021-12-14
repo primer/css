@@ -1,5 +1,5 @@
 ---
-"@primer/css": minor
+"@primer/css": major
 ---
 
-Creating global focus styles
+Global CSS focus styles
