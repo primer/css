@@ -109,7 +109,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: 'Defines the position of the pane. `start` puts the pane on the left, and `end` puts it on the right.',
+      description: 'Defines the position of the pane. `start` renders the pane on the left, and `end` renders it on the right.',
       table: {
         category: 'Pane',
       }
