@@ -6,10 +6,6 @@
     text-decoration: none;
   }
 
-  &:active {
-    outline: none;
-  }
-
   &::after,
   &.link-emphasis-mktg::before {
     position: absolute;
@@ -36,6 +32,7 @@
 
   &:hover,
   &:focus,
+  &:focus-visible,
   &:active {
     &::after {
       transform: scaleX(1);
