@@ -3,15 +3,15 @@
 // renders ActionList with default styling for tree-view
 // collapse/expand icons presents as leadingActions, rotate 90deg
 // connecting vertical lines between collapse groups
-// consisten font-size between nested groups
+// consistent font-size between nested groups
 
 @mixin treeConnectingLine($left) {
   position: absolute;
-  content: '';
-  width: 1px;
-  background: var(--color-action-list-item-inline-divider);
   left: $left;
+  width: 1px;
   height: 100%;
+  content: '';
+  background: var(--color-action-list-item-inline-divider);
 }
 
 :root {
@@ -24,63 +24,23 @@
     font-size: $body-font-size;
   }
 
-  .ActionList--subGroup {
-    position: relative;
+  .ActionList-item {
+    // nesting (infinate levels)
+    // target items inside expanded subgroup
+    &[aria-expanded] {
+      .ActionList--subGroup {
+        position: relative;
 
-    .ActionList-content {
-      padding-left: calc(10px * var(--ActionList-tree-depth)) !important;
-    }
-  }
-
-  .ActionList-item--hasSubItem {
-    padding-left: 0 !important;
-  }
-
-  .ActionList-item--subItem {
-    padding-left: 0 !important;
-  }
-
-  // expand/collapse group
-  .ActionList-item--hasSubItem {
-    .ActionList-item--subItem:not(.ActionList-item--hasSubItem) {
-      .ActionList-content {
-        // increase child padding by targeting content first child span (add to ActionList-content padding, not replace)
-        > span:first-child {
-          padding-left: 16px !important;
+        // --ActionList-tree-depth is defined as an inline style referencing the aria-level of each item ie: aria-level="2"
+        // stylelint-disable-next-line selector-max-specificity, max-nesting-depth, selector-max-compound-selectors
+        .ActionList-content {
+          // stylelint-disable-next-line primer/spacing
+          padding-left: calc(10px * var(--ActionList-tree-depth));
         }
       }
     }
-  }
 
-  // padding left
-  // no visuals
-  // 16px visual
-  // 20px visual
-  // 24px visual
-  // action 16px visual
-  // action 20px visual
-  // action 24px visual
-
-  // first subitem
-  > [aria-level='1'].ActionList-item--hasSubItem {
-    > .ActionList--subGroup {
-      &::before {
-        @include treeConnectingLine($left: 16px);
-      }
-    }
-  }
-
-  // all other subitems
-  .ActionList-item--hasSubItem:not([aria-level='1']) {
-    > .ActionList--subGroup {
-      &::before {
-        @include treeConnectingLine($left: calc(10px * (var(--ActionList-tree-depth)) + 7px));
-      }
-    }
-  }
-
-  // tree-view specific collapse icon positioning/animation
-  .ActionList-item {
+    // tree-view specific collapse icon positioning/animation
     &[aria-expanded='true'] {
       .ActionList-item-collapseIcon {
         transition: transform 120ms linear;
@@ -92,6 +52,45 @@
       .ActionList-item-collapseIcon {
         transition: transform 120ms linear;
         transform: rotate(-90deg);
+      }
+    }
+  }
+
+  // expand/collapse group
+  .ActionList-item--hasSubItem {
+    .ActionList-item--subItem:not(.ActionList-item--hasSubItem) {
+      // stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors
+      .ActionList-content {
+        // increase child padding by targeting content first child span (add to ActionList-content padding, not replace)
+        // creates a slight indent of child items
+        // stylelint-disable-next-line selector-max-specificity, selector-max-type, max-nesting-depth, selector-max-compound-selectors
+        > span:first-child {
+          // stylelint-disable-next-line primer/spacing, max-nesting-depth, selector-max-compound-selectors
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+
+  // first subitem
+  // stylelint-disable-next-line selector-max-specificity
+  > [aria-level='1'].ActionList-item--hasSubItem {
+    > .ActionList--subGroup {
+      // stylelint-disable-next-line selector-max-specificity
+      &::before {
+        @include treeConnectingLine($left: $spacer-3);
+      }
+    }
+  }
+
+  // all other subitems
+  // center connecting line with parent (line is 1px (8px - 1px)
+  // stylelint-disable-next-line selector-max-specificity
+  .ActionList-item--hasSubItem:not([aria-level='1']) {
+    > .ActionList--subGroup {
+      // stylelint-disable-next-line selector-max-specificity
+      &::before {
+        @include treeConnectingLine($left: calc(10px * (var(--ActionList-tree-depth)) + 7px));
       }
     }
   }

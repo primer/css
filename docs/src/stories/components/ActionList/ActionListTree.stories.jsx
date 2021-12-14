@@ -41,7 +41,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
         containsSubItem
         text="pages"
         collapsibleLeading
-        leadingVisualSize="ActionList-content--visual16"
         leadingVisual={showGroupIcon && folder}
         children={
           <ListTemplate
@@ -57,8 +56,7 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                   role="treeitem"
                   text="file.tsx"
                   href="/"
-                  leadingVisualSize="ActionList-content--visual16"
-                  leadingVisual={showSubItemIcon && file}
+                  //   leadingVisual={showSubItemIcon && file}
                   trailingVisual={trailingVisual}
                 />
                 <ListItemTemplate
@@ -68,7 +66,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                   listSemantic
                   text="file.tsx"
                   href="/"
-                  leadingVisualSize="ActionList-content--visual16"
                   leadingVisual={showSubItemIcon && file}
                   trailingVisual={trailingVisual}
                 />
@@ -80,7 +77,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                   listSemantic
                   text="filewithreallylongnamewhoaaaaaaohmy.tsx"
                   href="/"
-                  leadingVisualSize="ActionList-content--visual16"
                   leadingVisual={showSubItemIcon && file}
                   trailingVisual={trailingVisual}
                 />
@@ -95,7 +91,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
         containsSubItem
         text="public"
         collapsibleLeading
-        leadingVisualSize="ActionList-content--visual16"
         leadingVisual={showGroupIcon && folder}
         children={
           <ListTemplate
@@ -112,7 +107,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                   listSemantic
                   text="file.tsx"
                   href="/"
-                  leadingVisualSize="ActionList-content--visual16"
                   leadingVisual={showSubItemIcon && file}
                   trailingVisual={trailingVisual}
                 />
@@ -125,7 +119,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                   collapsibleLeading
                   text="fonts"
                   href="/"
-                  leadingVisualSize="ActionList-content--visual16"
                   leadingVisual={showGroupIcon && folder}
                   trailingVisual={trailingVisual}
                   children={
@@ -144,7 +137,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                             collapsibleLeading
                             text="Inter"
                             href="/"
-                            leadingVisualSize="ActionList-content--visual16"
                             leadingVisual={showGroupIcon && folder}
                             trailingVisual={trailingVisual}
                             children={
@@ -161,7 +153,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                       listSemantic
                                       text="file.tsx"
                                       href="/"
-                                      leadingVisualSize="ActionList-content--visual16"
                                       leadingVisual={showSubItemIcon && file}
                                       trailingVisual={trailingVisual}
                                     />
@@ -171,7 +162,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                       listSemantic
                                       text="file.tsx"
                                       href="/"
-                                      leadingVisualSize="ActionList-content--visual16"
                                       leadingVisual={showSubItemIcon && file}
                                       trailingVisual={trailingVisual}
                                     />
@@ -181,7 +171,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                       listSemantic
                                       text="file.tsx"
                                       href="/"
-                                      leadingVisualSize="ActionList-content--visual16"
                                       leadingVisual={showSubItemIcon && file}
                                       trailingVisual={trailingVisual}
                                     />
@@ -194,7 +183,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                       collapsibleLeading
                                       text="fonts"
                                       href="/"
-                                      leadingVisualSize="ActionList-content--visual16"
                                       leadingVisual={showGroupIcon && folder}
                                       trailingVisual={trailingVisual}
                                       children={
@@ -213,7 +201,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                 collapsibleLeading
                                                 text="Inter"
                                                 href="/"
-                                                leadingVisualSize="ActionList-content--visual16"
                                                 leadingVisual={showGroupIcon && folder}
                                                 trailingVisual={trailingVisual}
                                                 children={
@@ -230,7 +217,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                           listSemantic
                                                           text="file.tsx"
                                                           href="/"
-                                                          leadingVisualSize="ActionList-content--visual16"
                                                           leadingVisual={showSubItemIcon && file}
                                                           trailingVisual={trailingVisual}
                                                         />
@@ -240,7 +226,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                           listSemantic
                                                           text="file.tsx"
                                                           href="/"
-                                                          leadingVisualSize="ActionList-content--visual16"
                                                           leadingVisual={showSubItemIcon && file}
                                                           trailingVisual={trailingVisual}
                                                         />
@@ -250,7 +235,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                           listSemantic
                                                           text="file.tsx"
                                                           href="/"
-                                                          leadingVisualSize="ActionList-content--visual16"
                                                           leadingVisual={showSubItemIcon && file}
                                                           trailingVisual={trailingVisual}
                                                         />
@@ -265,7 +249,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                 listSemantic
                                                 text="filex.tsx"
                                                 href="/"
-                                                leadingVisualSize="ActionList-content--visual16"
                                                 leadingVisual={showSubItemIcon && file}
                                                 trailingVisual={trailingVisual}
                                               />
@@ -278,7 +261,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                 collapsibleLeading
                                                 text="fonts"
                                                 href="/"
-                                                leadingVisualSize="ActionList-content--visual16"
                                                 leadingVisual={showGroupIcon && folder}
                                                 trailingVisual={trailingVisual}
                                                 children={
@@ -297,7 +279,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                           collapsibleLeading
                                                           text="Inter"
                                                           href="/"
-                                                          leadingVisualSize="ActionList-content--visual16"
                                                           leadingVisual={showGroupIcon && folder}
                                                           trailingVisual={trailingVisual}
                                                           children={
@@ -314,7 +295,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                     listSemantic
                                                                     text="file.tsx"
                                                                     href="/"
-                                                                    leadingVisualSize="ActionList-content--visual16"
                                                                     leadingVisual={showSubItemIcon && file}
                                                                     trailingVisual={trailingVisual}
                                                                   />
@@ -324,7 +304,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                     listSemantic
                                                                     text="file.tsx"
                                                                     href="/"
-                                                                    leadingVisualSize="ActionList-content--visual16"
                                                                     leadingVisual={showSubItemIcon && file}
                                                                     trailingVisual={trailingVisual}
                                                                   />
@@ -334,7 +313,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                     listSemantic
                                                                     text="file.tsx"
                                                                     href="/"
-                                                                    leadingVisualSize="ActionList-content--visual16"
                                                                     leadingVisual={showSubItemIcon && file}
                                                                     trailingVisual={trailingVisual}
                                                                   />
@@ -349,7 +327,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                           listSemantic
                                                           text="file3.tsx"
                                                           href="/"
-                                                          leadingVisualSize="ActionList-content--visual16"
                                                           leadingVisual={showSubItemIcon && file}
                                                           trailingVisual={trailingVisual}
                                                         />
@@ -362,7 +339,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                           collapsibleLeading
                                                           text="fonts"
                                                           href="/"
-                                                          leadingVisualSize="ActionList-content--visual16"
                                                           leadingVisual={showGroupIcon && folder}
                                                           trailingVisual={trailingVisual}
                                                           children={
@@ -381,7 +357,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                     collapsibleLeading
                                                                     text="Inter"
                                                                     href="/"
-                                                                    leadingVisualSize="ActionList-content--visual16"
                                                                     leadingVisual={showGroupIcon && folder}
                                                                     trailingVisual={trailingVisual}
                                                                     children={
@@ -398,7 +373,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                               listSemantic
                                                                               text="file.tsx"
                                                                               href="/"
-                                                                              leadingVisualSize="ActionList-content--visual16"
                                                                               leadingVisual={showSubItemIcon && file}
                                                                               trailingVisual={trailingVisual}
                                                                             />
@@ -408,7 +382,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                               listSemantic
                                                                               text="file.tsx"
                                                                               href="/"
-                                                                              leadingVisualSize="ActionList-content--visual16"
                                                                               leadingVisual={showSubItemIcon && file}
                                                                               trailingVisual={trailingVisual}
                                                                             />
@@ -418,7 +391,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                               listSemantic
                                                                               text="file.tsx"
                                                                               href="/"
-                                                                              leadingVisualSize="ActionList-content--visual16"
                                                                               leadingVisual={showSubItemIcon && file}
                                                                               trailingVisual={trailingVisual}
                                                                             />
@@ -433,7 +405,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                     listSemantic
                                                                     text="file4.tsx"
                                                                     href="/"
-                                                                    leadingVisualSize="ActionList-content--visual16"
                                                                     leadingVisual={showSubItemIcon && file}
                                                                     trailingVisual={trailingVisual}
                                                                   />
@@ -463,7 +434,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                             listSemantic
                             text="file.tsx"
                             href="/"
-                            leadingVisualSize="ActionList-content--visual16"
                             leadingVisual={showSubItemIcon && file}
                             trailingVisual={trailingVisual}
                           />
