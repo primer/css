@@ -70,11 +70,7 @@ textarea.form-control {
 
 // Inputs with contrast for easy light gray backgrounds against white.
 .input-contrast {
-  background-color: var(--color-canvas-inset);
-
-  &:focus {
-    background-color: var(--color-canvas-default);
-  }
+  background-color: var(--color-canvas-default);
 }
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
