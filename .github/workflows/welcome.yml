@@ -115,7 +115,7 @@ jobs:
             if (!currentLabels.includes(newLabel)) {
               const otherReleaseLabels = currentLabels.filter( l => l.endsWith(' release'))
               if (otherReleaseLabels.length) {
-                github.issues.removeLabel({
+                github.rest.issues.removeLabel({
                   issue_number: context.issue.number,
                   owner: context.repo.owner,
                   repo: context.repo.repo,
