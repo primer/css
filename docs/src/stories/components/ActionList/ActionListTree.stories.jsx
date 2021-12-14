@@ -32,12 +32,13 @@ const file = `<svg aria-hidden="true" role="img" class="octicon octicon-file" vi
 const trailingVisual = `<svg aria-hidden="true" role="img" class="color-fg-attention" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;overflow:visible"><path fill-rule="evenodd" d="M2.75 2.5h10.5a.25.25 0 01.25.25v10.5a.25.25 0 01-.25.25H2.75a.25.25 0 01-.25-.25V2.75a.25.25 0 01.25-.25zM13.25 1H2.75A1.75 1.75 0 001 2.75v10.5c0 .966.784 1.75 1.75 1.75h10.5A1.75 1.75 0 0015 13.25V2.75A1.75 1.75 0 0013.25 1zM8 10a2 2 0 100-4 2 2 0 000 4z"></path></svg>`
 
 export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => (
-  <ListTemplate ariaLabel="Some description" role="tree-view" variant="ActionList--tree">
+  <ListTemplate ariaLabel="Some description" role="tree" variant="ActionList--tree">
     <>
       <ListItemTemplate
         ariaLevel="1"
-        role="none"
-        listSemantic
+        ariaSetSize="2"
+        ariaPosInset="1"
+        treeitem
         containsSubItem
         text="pages"
         collapsibleLeading
@@ -52,29 +53,33 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
               <>
                 <ListItemTemplate
                   ariaLevel="2"
+                  ariaSetSize="3"
+                  ariaPosInset="1"
                   subItem
-                  role="treeitem"
-                  text="file.tsx"
-                  href="/"
-                  //   leadingVisual={showSubItemIcon && file}
-                  trailingVisual={trailingVisual}
-                />
-                <ListItemTemplate
-                  role="treeitem"
-                  ariaLevel="2"
-                  subItem
-                  listSemantic
+                  treeitem
                   text="file.tsx"
                   href="/"
                   leadingVisual={showSubItemIcon && file}
                   trailingVisual={trailingVisual}
                 />
                 <ListItemTemplate
-                  role="treeitem"
+                  treeitem
                   ariaLevel="2"
+                  ariaSetSize="3"
+                  ariaPosInset="2"
+                  subItem
+                  text="file.tsx"
+                  href="/"
+                  leadingVisual={showSubItemIcon && file}
+                  trailingVisual={trailingVisual}
+                />
+                <ListItemTemplate
+                  treeitem
+                  ariaLevel="2"
+                  ariaSetSize="3"
+                  ariaPosInset="3"
                   truncateItem
                   subItem
-                  listSemantic
                   text="filewithreallylongnamewhoaaaaaaohmy.tsx"
                   href="/"
                   leadingVisual={showSubItemIcon && file}
@@ -87,7 +92,9 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
       />
       <ListItemTemplate
         ariaLevel="1"
-        listSemantic
+        ariaSetSize="2"
+        ariaPosInset="2"
+        treeitem
         containsSubItem
         text="public"
         collapsibleLeading
@@ -102,9 +109,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
               <>
                 <ListItemTemplate
                   ariaLevel="2"
-                  role="treeitem"
+                  ariaSetSize="2"
+                  ariaPosInset="1"
+                  treeitem
                   subItem
-                  listSemantic
                   text="file.tsx"
                   href="/"
                   leadingVisual={showSubItemIcon && file}
@@ -112,10 +120,11 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                 />
                 <ListItemTemplate
                   ariaLevel="2"
-                  role="treeitem"
+                  ariaSetSize="2"
+                  ariaPosInset="2"
+                  treeitem
                   subItem
                   containsSubItem
-                  listSemantic
                   collapsibleLeading
                   text="fonts"
                   href="/"
@@ -131,8 +140,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                         <>
                           <ListItemTemplate
                             ariaLevel="3"
+                            ariaSetSize="2"
+                            ariaPosInset="1"
                             subItem
-                            listSemantic
+                            treeitem
                             containsSubItem
                             collapsibleLeading
                             text="Inter"
@@ -149,8 +160,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                   <>
                                     <ListItemTemplate
                                       ariaLevel="4"
+                                      ariaSetSize="4"
+                                      ariaPosInset="1"
                                       subItem
-                                      listSemantic
+                                      treeitem
                                       text="file.tsx"
                                       href="/"
                                       leadingVisual={showSubItemIcon && file}
@@ -158,8 +171,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                     />
                                     <ListItemTemplate
                                       ariaLevel="4"
+                                      ariaSetSize="4"
+                                      ariaPosInset="2"
                                       subItem
-                                      listSemantic
+                                      treeitem
                                       text="file.tsx"
                                       href="/"
                                       leadingVisual={showSubItemIcon && file}
@@ -167,8 +182,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                     />
                                     <ListItemTemplate
                                       ariaLevel="4"
+                                      ariaSetSize="4"
+                                      ariaPosInset="3"
                                       subItem
-                                      listSemantic
+                                      treeitem
                                       text="file.tsx"
                                       href="/"
                                       leadingVisual={showSubItemIcon && file}
@@ -176,10 +193,11 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                     />
                                     <ListItemTemplate
                                       ariaLevel="4"
-                                      role="treeitem"
+                                      ariaSetSize="4"
+                                      ariaPosInset="4"
+                                      treeitem
                                       subItem
                                       containsSubItem
-                                      listSemantic
                                       collapsibleLeading
                                       text="fonts"
                                       href="/"
@@ -195,8 +213,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                             <>
                                               <ListItemTemplate
                                                 ariaLevel="5"
+                                                ariaSetSize="3"
+                                                ariaPosInset="1"
                                                 subItem
-                                                listSemantic
+                                                treeitem
                                                 containsSubItem
                                                 collapsibleLeading
                                                 text="Inter"
@@ -213,8 +233,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                       <>
                                                         <ListItemTemplate
                                                           ariaLevel="6"
+                                                          ariaSetSize="3"
+                                                          ariaPosInset="1"
                                                           subItem
-                                                          listSemantic
+                                                          treeitem
                                                           text="file.tsx"
                                                           href="/"
                                                           leadingVisual={showSubItemIcon && file}
@@ -222,8 +244,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                         />
                                                         <ListItemTemplate
                                                           ariaLevel="6"
+                                                          ariaSetSize="3"
+                                                          ariaPosInset="2"
                                                           subItem
-                                                          listSemantic
+                                                          treeitem
                                                           text="file.tsx"
                                                           href="/"
                                                           leadingVisual={showSubItemIcon && file}
@@ -231,8 +255,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                         />
                                                         <ListItemTemplate
                                                           ariaLevel="6"
+                                                          ariaSetSize="3"
+                                                          ariaPosInset="3"
                                                           subItem
-                                                          listSemantic
+                                                          treeitem
                                                           text="file.tsx"
                                                           href="/"
                                                           leadingVisual={showSubItemIcon && file}
@@ -245,8 +271,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                               />
                                               <ListItemTemplate
                                                 ariaLevel="5"
+                                                ariaSetSize="3"
+                                                ariaPosInset="2"
                                                 subItem
-                                                listSemantic
+                                                treeitem
                                                 text="filex.tsx"
                                                 href="/"
                                                 leadingVisual={showSubItemIcon && file}
@@ -254,10 +282,12 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                               />
                                               <ListItemTemplate
                                                 ariaLevel="5"
-                                                role="treeitem"
+                                                ariaSetSize="3"
+                                                ariaPosInset="3"
+                                                treeitem
                                                 subItem
                                                 containsSubItem
-                                                listSemantic
+                                                treeitem
                                                 collapsibleLeading
                                                 text="fonts"
                                                 href="/"
@@ -273,8 +303,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                       <>
                                                         <ListItemTemplate
                                                           ariaLevel="6"
+                                                          ariaSetSize="3"
+                                                          ariaPosInset="1"
                                                           subItem
-                                                          listSemantic
+                                                          treeitem
                                                           containsSubItem
                                                           collapsibleLeading
                                                           text="Inter"
@@ -291,8 +323,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                 <>
                                                                   <ListItemTemplate
                                                                     ariaLevel="7"
+                                                                    ariaSetSize="3"
+                                                                    ariaPosInset="1"
                                                                     subItem
-                                                                    listSemantic
+                                                                    treeitem
                                                                     text="file.tsx"
                                                                     href="/"
                                                                     leadingVisual={showSubItemIcon && file}
@@ -300,8 +334,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                   />
                                                                   <ListItemTemplate
                                                                     ariaLevel="7"
+                                                                    ariaSetSize="3"
+                                                                    ariaPosInset="2"
                                                                     subItem
-                                                                    listSemantic
+                                                                    treeitem
                                                                     text="file.tsx"
                                                                     href="/"
                                                                     leadingVisual={showSubItemIcon && file}
@@ -309,8 +345,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                   />
                                                                   <ListItemTemplate
                                                                     ariaLevel="7"
+                                                                    ariaSetSize="3"
+                                                                    ariaPosInset="3"
                                                                     subItem
-                                                                    listSemantic
+                                                                    treeitem
                                                                     text="file.tsx"
                                                                     href="/"
                                                                     leadingVisual={showSubItemIcon && file}
@@ -323,8 +361,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                         />
                                                         <ListItemTemplate
                                                           ariaLevel="6"
+                                                          ariaSetSize="3"
+                                                          ariaPosInset="2"
                                                           subItem
-                                                          listSemantic
+                                                          treeitem
                                                           text="file3.tsx"
                                                           href="/"
                                                           leadingVisual={showSubItemIcon && file}
@@ -332,10 +372,12 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                         />
                                                         <ListItemTemplate
                                                           ariaLevel="6"
-                                                          role="treeitem"
+                                                          ariaSetSize="3"
+                                                          ariaPosInset="3"
+                                                          treeitem
                                                           subItem
                                                           containsSubItem
-                                                          listSemantic
+                                                          treeitemtreeitem
                                                           collapsibleLeading
                                                           text="fonts"
                                                           href="/"
@@ -351,8 +393,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                 <>
                                                                   <ListItemTemplate
                                                                     ariaLevel="7"
+                                                                    ariaSetSize="2"
+                                                                    ariaPosInset="1"
                                                                     subItem
-                                                                    listSemantic
+                                                                    treeitem
                                                                     containsSubItem
                                                                     collapsibleLeading
                                                                     text="Inter"
@@ -369,8 +413,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                           <>
                                                                             <ListItemTemplate
                                                                               ariaLevel="8"
+                                                                              ariaSetSize="3"
+                                                                              ariaPosInset="1"
                                                                               subItem
-                                                                              listSemantic
+                                                                              treeitem
                                                                               text="file.tsx"
                                                                               href="/"
                                                                               leadingVisual={showSubItemIcon && file}
@@ -378,8 +424,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                             />
                                                                             <ListItemTemplate
                                                                               ariaLevel="8"
+                                                                              ariaSetSize="3"
+                                                                              ariaPosInset="2"
                                                                               subItem
-                                                                              listSemantic
+                                                                              treeitem
                                                                               text="file.tsx"
                                                                               href="/"
                                                                               leadingVisual={showSubItemIcon && file}
@@ -387,8 +435,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                             />
                                                                             <ListItemTemplate
                                                                               ariaLevel="8"
+                                                                              ariaSetSize="3"
+                                                                              ariaPosInset="3"
                                                                               subItem
-                                                                              listSemantic
+                                                                              treeitemtreeitem
                                                                               text="file.tsx"
                                                                               href="/"
                                                                               leadingVisual={showSubItemIcon && file}
@@ -401,8 +451,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                   />
                                                                   <ListItemTemplate
                                                                     ariaLevel="3"
+                                                                    ariaSetSize="3"
+                                                                    ariaPosInset="2"
                                                                     subItem
-                                                                    listSemantic
+                                                                    treeitem
                                                                     text="file4.tsx"
                                                                     href="/"
                                                                     leadingVisual={showSubItemIcon && file}
@@ -430,8 +482,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                           />
                           <ListItemTemplate
                             ariaLevel="3"
+                            ariaSetSize="2"
+                            ariaPosInset="2"
+                            treeitem
                             subItem
-                            listSemantic
                             text="file.tsx"
                             href="/"
                             leadingVisual={showSubItemIcon && file}

@@ -195,6 +195,13 @@ export default {
         category: 'Interactive'
       }
     },
+    treeitem: {
+      defaultValue: false,
+      control: {type: 'boolean'},
+      table: {
+        category: 'HTML'
+      }
+    },
     ariaDisabled: {
       defaultValue: false,
       control: {type: 'boolean'},
@@ -206,6 +213,24 @@ export default {
       name: 'ariaLevel',
       type: 'string',
       description: 'number - nested subgroup',
+      table: {
+        category: 'HTML'
+      }
+    },
+    ariaSetSize: {
+      name: 'ariaSetSize',
+      type: 'string',
+      description:
+        'Defines the number of treeitem elements in the set of treeitem elements that are in the same branch and at the same level within the hierarchy',
+      table: {
+        category: 'HTML'
+      }
+    },
+    ariaPosInset: {
+      name: 'ariaPosInset',
+      type: 'string',
+      description:
+        'Defines the position of the element within the set of other treeitem elements that are in the same branch and at the same level within the hierarchy.',
       table: {
         category: 'HTML'
       }
@@ -253,7 +278,10 @@ export const ListItemTemplate = ({
   collapsibleLeading,
   truncateItem,
   ariaLevel,
-  fontSize
+  fontSize,
+  treeitem,
+  ariaSetSize,
+  ariaPosInset
 }) => {
   const [isCollapsed, itemIsCollapsed] = useToggle()
   const [isChecked, itemIsChecked] = useToggle()
@@ -271,6 +299,8 @@ export const ListItemTemplate = ({
         variant && `${variant}`
       )}
       aria-level={ariaLevel ? `${ariaLevel}` : undefined}
+      aria-setsize={ariaSetSize ? `${ariaSetSize}` : undefined}
+      aria-posinset={ariaPosInset ? `${ariaPosInset}` : undefined}
       style={itemStyle}
       onClick={collapsible || collapsibleLeading ? itemIsCollapsed : itemIsChecked}
       role={
@@ -284,6 +314,8 @@ export const ListItemTemplate = ({
           ? undefined
           : href
           ? 'none'
+          : treeitem
+          ? 'treeitem'
           : undefined
       }
       id={id}
@@ -297,7 +329,9 @@ export const ListItemTemplate = ({
         <>
           <a
             href={href}
-            role={href && !listSemantic ? 'menuitem' : undefined}
+            role={
+              href && !listSemantic && !treeitem ? 'menuitem' : undefined || (href && treeitem) ? 'treeitem' : undefined
+            }
             aria-current={ariaCurrent}
             className={clsx(
               text && 'ActionList-content',
