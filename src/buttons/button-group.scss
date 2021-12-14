@@ -6,6 +6,7 @@
 .BtnGroup {
   display: inline-block;
   vertical-align: middle;
+
   @include clearfix();
 
   // Proper spacing for multiple button groups (a la, gollum editor)
@@ -33,7 +34,7 @@
   }
 
   &.selected,
-  &[aria-selected=true],
+  &[aria-selected='true'],
   &:focus,
   &:active,
   &:hover {
@@ -66,7 +67,7 @@
   }
 
   &.selected,
-  &[aria-selected=true],
+  &[aria-selected='true'],
   &:focus,
   &:active,
   &:hover {

@@ -20,11 +20,9 @@ export default {
       }
     },
     role: {
-      options: [0, 1, 2, 3, 4, 5, 6], // iterator
-      mapping: ['menu', 'group', 'listbox', 'menubar', 'none', 'radiogroup', 'list'], // values
+      options: [null, 'menu', 'group', 'listbox', 'menubar', 'none', 'radiogroup', 'list'],
       control: {
-        type: 'select',
-        labels: ['menu', 'group', 'listbox', 'menubar', 'none', 'radiogroup', 'list']
+        type: 'inline-radio'
       },
       description: 'Semantic list role',
       table: {
@@ -69,10 +67,22 @@ export default {
     },
     listboxMultiSelect: {
       name: 'listboxMultiSelect',
-      type: 'string',
+      type: 'boolean',
       description: 'If ActionList has listbox role + multiselect children',
       table: {
         category: 'HTML'
+      }
+    },
+    listPadding: {
+      options: [0, 1], // iterator
+      mapping: ['', 'ActionList--full'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['inset', 'full-bleed']
+      },
+      description: 'ActionList includes 8px padding by default, full-bleed removes all padding',
+      table: {
+        category: 'CSS'
       }
     }
   }
@@ -85,10 +95,16 @@ export const ListTemplate = ({
   ariaLabel,
   ariaLabelledBy,
   subGroup,
-  listboxMultiSelect
+  listboxMultiSelect,
+  listPadding
 }) => (
   <ul
-    className={clsx('ActionList', showDividers && 'ActionList--divided', subGroup && 'ActionList--subGroup')}
+    className={clsx(
+      'ActionList',
+      showDividers && 'ActionList--divided',
+      subGroup && 'ActionList--subGroup',
+      listPadding && `${listPadding}`
+    )}
     role={role}
     aria-label={ariaLabel && ariaLabel}
     aria-labelledby={ariaLabelledBy && ariaLabelledBy}
@@ -100,10 +116,13 @@ export const ListTemplate = ({
 
 export const Playground = ListTemplate.bind({})
 Playground.args = {
-  role: 'menu',
   ariaLabel: 'Menu description',
   subGroup: false,
   showDividers: false,
+  listboxMultiSelect: false,
+  listPadding: '',
+  ariaLabelledBy: '',
+  groupId: '',
   children: (
     <>
       <ListItemTemplate text="Action list item" />

@@ -11,7 +11,7 @@
   color: var(--color-fg-default);
   text-align: center;
   background-color: var(--color-neutral-muted);
-  border: $border-width $border-style transparent; // Support Firefox custom colors
+  border: $border-width $border-style var(--color-counter-border);
   // stylelint-disable-next-line primer/borders
   border-radius: 2em;
 
