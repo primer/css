@@ -449,17 +449,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                                                       />
                                                                     }
                                                                   />
-                                                                  <ListItemTemplate
-                                                                    ariaLevel="3"
-                                                                    ariaSetSize="3"
-                                                                    ariaPosInset="2"
-                                                                    subItem
-                                                                    treeitem
-                                                                    text="file4.tsx"
-                                                                    href="/"
-                                                                    leadingVisual={showSubItemIcon && file}
-                                                                    trailingVisual={trailingVisual}
-                                                                  />
                                                                 </>
                                                               }
                                                             />
