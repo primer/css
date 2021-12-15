@@ -13,11 +13,8 @@
   background: var(--color-action-list-item-inline-divider);
 }
 
-:root {
-  --ActionList-tree-depth: 1;
-}
-
 .ActionList--tree {
+  --ActionList-tree-depth: 1;
   // TODO: remove with PVC implementation
   .ActionList-item--subItem > .ActionList-content {
     font-size: $body-font-size;
