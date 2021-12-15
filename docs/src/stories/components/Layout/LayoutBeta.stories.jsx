@@ -76,7 +76,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: '`responsiveVariant` defines how the layout component adapts to smaller viewports. `stackRegions` presents the content in a vertical flow, with `pane` and `content` vertically arranged. `separateRegions` presents `pane` and `content` as different pages on smaller viewports.',
+      description: '`responsiveVariant` defines how the layout component adapts to smaller viewports. `stackRegions` presents the content in a vertical flow, with `pane` and `content` vertically arranged. `separateRegions` presents `pane` and `content` as different pages on smaller viewports. Change the preview size from the toolbar to test it.',
       table: {
         category: 'Responsive'
       }
