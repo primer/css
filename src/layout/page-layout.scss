@@ -26,116 +26,6 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   // stylelint-disable-next-line primer/spacing
   margin: var(--Layout-outer-spacing-y) var(--Layout-outer-spacing-x);
 
-  > .PageLayout-wrapper {
-    display: grid;
-    grid: auto-flow / 1fr;
-    row-gap: var(--Layout-row-gap);
-
-    > .PageLayout-columns {
-      display: grid;
-      column-gap: var(--Layout-column-gap);
-      row-gap: var(--Layout-row-gap);
-      grid-template-columns: var(--Layout-template-columns);
-      grid-template-rows: 1fr;
-      grid-template-areas: var(--Layout-template-areas);
-    }
-  }
-
-  // outer spacing
-
-  &.PageLayout--outerSpacing-normal {
-    --Layout-outer-spacing-x: #{$spacer-3};
-    --Layout-outer-spacing-y: #{$spacer-3};
-
-    @include breakpoint(lg) {
-      --Layout-outer-spacing-x: #{$spacer-4};
-      --Layout-outer-spacing-y: #{$spacer-4};
-    }
-  }
-
-  &.PageLayout--outerSpacing-condensed {
-    --Layout-outer-spacing-x: #{$spacer-3};
-    --Layout-outer-spacing-y: #{$spacer-3};
-  }
-
-  // inner spacing
-
-  &.PageLayout--innerSpacing-normal {
-    --Layout-inner-spacing-min: #{$spacer-3};
-    --Layout-inner-spacing-max: #{$spacer-3};
-
-    @include breakpoint(lg) {
-      --Layout-inner-spacing-max: #{$spacer-4};
-    }
-  }
-
-  &.PageLayout--innerSpacing-condensed {
-    --Layout-inner-spacing-min: #{$spacer-3};
-    --Layout-inner-spacing-max: #{$spacer-3};
-  }
-
-  // column gap
-
-  &.PageLayout--columnGap-normal {
-    --Layout-column-gap: #{$spacer-3};
-
-    @include breakpoint(lg) {
-      --Layout-column-gap: #{$spacer-4};
-    }
-  }
-
-  &.PageLayout--columnGap-condensed {
-    --Layout-column-gap: #{$spacer-3};
-  }
-
-  &.PageLayout--columnGap-none {
-    // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
-    // stylelint-disable-next-line length-zero-no-unit
-    --Layout-column-gap: 0px;
-  }
-
-  // row gap
-
-  &.PageLayout--rowGap-normal {
-    --Layout-row-gap: #{$spacer-3};
-
-    @include breakpoint(lg) {
-      --Layout-row-gap: #{$spacer-4};
-    }
-  }
-
-  &.PageLayout--rowGap-none {
-    // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
-    // stylelint-disable length-zero-no-unit
-    --Layout-row-gap: 0px;
-  }
-
-  &.PageLayout--rowGap-condensed {
-    --Layout-row-gap: #{$spacer-3};
-  }
-
-  // regions
-
-  .PageLayout-header,
-  .PageLayout-content,
-  .PageLayout-pane,
-  .PageLayout-footer {
-    // stylelint-disable-next-line primer/spacing
-    padding: var(--Layout-inner-spacing-min);
-  }
-
-  .PageLayout-content {
-    // stylelint-disable primer/spacing
-    padding-right: var(--Layout-inner-spacing-max);
-    padding-left: var(--Layout-inner-spacing-max);
-    // stylelint-enable primer/spacing
-    grid-area: content;
-  }
-
-  .PageLayout-pane {
-    grid-area: pane;
-  }
-
   // multi-column desktop-friendly layout
 
   @include breakpoint($Layout-responsive-variant-max-breakpoint) {
@@ -381,4 +271,114 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
       }
     }
   }
+}
+
+.PageLayout-wrapper {
+  display: grid;
+  grid: auto-flow / 1fr;
+  row-gap: var(--Layout-row-gap);
+}
+
+.PageLayout-columns {
+  display: grid;
+  column-gap: var(--Layout-column-gap);
+  row-gap: var(--Layout-row-gap);
+  grid-template-columns: var(--Layout-template-columns);
+  grid-template-rows: 1fr;
+  grid-template-areas: var(--Layout-template-areas);
+}
+
+// outer spacing
+
+.PageLayout--outerSpacing-normal {
+  --Layout-outer-spacing-x: #{$spacer-3};
+  --Layout-outer-spacing-y: #{$spacer-3};
+
+  @include breakpoint(lg) {
+    --Layout-outer-spacing-x: #{$spacer-4};
+    --Layout-outer-spacing-y: #{$spacer-4};
+  }
+}
+
+.PageLayout--outerSpacing-condensed {
+  --Layout-outer-spacing-x: #{$spacer-3};
+  --Layout-outer-spacing-y: #{$spacer-3};
+}
+
+// inner spacing
+
+.PageLayout--innerSpacing-normal {
+  --Layout-inner-spacing-min: #{$spacer-3};
+  --Layout-inner-spacing-max: #{$spacer-3};
+
+  @include breakpoint(lg) {
+    --Layout-inner-spacing-max: #{$spacer-4};
+  }
+}
+
+.PageLayout--innerSpacing-condensed {
+  --Layout-inner-spacing-min: #{$spacer-3};
+  --Layout-inner-spacing-max: #{$spacer-3};
+}
+
+// column gap
+
+.PageLayout--columnGap-normal {
+  --Layout-column-gap: #{$spacer-3};
+
+  @include breakpoint(lg) {
+    --Layout-column-gap: #{$spacer-4};
+  }
+}
+
+.PageLayout--columnGap-condensed {
+  --Layout-column-gap: #{$spacer-3};
+}
+
+.PageLayout--columnGap-none {
+  // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
+  // stylelint-disable-next-line length-zero-no-unit
+  --Layout-column-gap: 0px;
+}
+
+// row gap
+
+.PageLayout--rowGap-normal {
+  --Layout-row-gap: #{$spacer-3};
+
+  @include breakpoint(lg) {
+    --Layout-row-gap: #{$spacer-4};
+  }
+}
+
+.PageLayout--rowGap-none {
+  // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
+  // stylelint-disable length-zero-no-unit
+  --Layout-row-gap: 0px;
+}
+
+.PageLayout--rowGap-condensed {
+  --Layout-row-gap: #{$spacer-3};
+}
+
+// regions
+
+.PageLayout-header,
+.PageLayout-content,
+.PageLayout-pane,
+.PageLayout-footer {
+  // stylelint-disable-next-line primer/spacing
+  padding: var(--Layout-inner-spacing-min);
+}
+
+.PageLayout-content {
+  // stylelint-disable primer/spacing
+  padding-right: var(--Layout-inner-spacing-max);
+  padding-left: var(--Layout-inner-spacing-max);
+  // stylelint-enable primer/spacing
+  grid-area: content;
+}
+
+.PageLayout-pane {
+  grid-area: pane;
 }
