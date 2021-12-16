@@ -29,6 +29,18 @@ export default {
         category: 'HTML'
       }
     },
+    variant: {
+      options: [0, 1], // iterator
+      mapping: [null, 'ActionList--tree'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['default', 'tree-view']
+      },
+      description: 'Specifies variants for different types of lists',
+      table: {
+        category: 'CSS'
+      }
+    },
     ariaLabel: {
       name: 'ariaLabel',
       type: 'string',
@@ -96,14 +108,16 @@ export const ListTemplate = ({
   ariaLabelledBy,
   subGroup,
   listboxMultiSelect,
-  listPadding
+  listPadding,
+  variant
 }) => (
   <ul
     className={clsx(
       'ActionList',
       showDividers && 'ActionList--divided',
       subGroup && 'ActionList--subGroup',
-      listPadding && `${listPadding}`
+      listPadding && `${listPadding}`,
+      variant && `${variant}`
     )}
     role={role}
     aria-label={ariaLabel && ariaLabel}
@@ -120,9 +134,10 @@ Playground.args = {
   subGroup: false,
   showDividers: false,
   listboxMultiSelect: false,
-  listPadding: '',
+  listPadding: 0,
   ariaLabelledBy: '',
   groupId: '',
+  variant: 0,
   children: (
     <>
       <ListItemTemplate text="Action list item" />
