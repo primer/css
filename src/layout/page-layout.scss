@@ -44,8 +44,8 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   // outer spacing
 
   &.PageLayout--outerSpacing-normal {
-    --Layout-outer-spacing-x: #{$spacer-3}; // 16px
-    --Layout-outer-spacing-y: #{$spacer-3}; // 16px
+    --Layout-outer-spacing-x: #{$spacer-3};
+    --Layout-outer-spacing-y: #{$spacer-3};
 
     @include breakpoint(lg) {
       --Layout-outer-spacing-x: #{$spacer-4}; // 24px
@@ -54,15 +54,15 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   }
 
   &.PageLayout--outerSpacing-condensed {
-    --Layout-outer-spacing-x: #{$spacer-3}; // 16px
-    --Layout-outer-spacing-y: #{$spacer-3}; // 16px
+    --Layout-outer-spacing-x: #{$spacer-3};
+    --Layout-outer-spacing-y: #{$spacer-3};
   }
 
   // inner spacing
 
   &.PageLayout--innerSpacing-normal {
-    --Layout-inner-spacing-min: #{$spacer-3}; // 16px
-    --Layout-inner-spacing-max: #{$spacer-3}; // 16px
+    --Layout-inner-spacing-min: #{$spacer-3};
+    --Layout-inner-spacing-max: #{$spacer-3};
 
     @include breakpoint(lg) {
       --Layout-inner-spacing-max: #{$spacer-4}; // 24px
@@ -70,14 +70,14 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   }
 
   &.PageLayout--innerSpacing-condensed {
-    --Layout-inner-spacing-min: #{$spacer-3}; // 16px
-    --Layout-inner-spacing-max: #{$spacer-3}; // 16px
+    --Layout-inner-spacing-min: #{$spacer-3};
+    --Layout-inner-spacing-max: #{$spacer-3};
   }
 
   // column gap
 
   &.PageLayout--columnGap-normal {
-    --Layout-column-gap: #{$spacer-3}; // 16px
+    --Layout-column-gap: #{$spacer-3};
 
     @include breakpoint(lg) {
       --Layout-column-gap: #{$spacer-4}; // 24px
@@ -85,7 +85,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   }
 
   &.PageLayout--columnGap-condensed {
-    --Layout-column-gap: #{$spacer-3}; // 16px
+    --Layout-column-gap: #{$spacer-3};
   }
 
   &.PageLayout--columnGap-none {
@@ -97,7 +97,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   // row gap
 
   &.PageLayout--rowGap-normal {
-    --Layout-row-gap: #{$spacer-3}; // 16px
+    --Layout-row-gap: #{$spacer-3};
 
     @include breakpoint(lg) {
       --Layout-row-gap: #{$spacer-4}; // 24px
@@ -111,7 +111,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   }
 
   &.PageLayout--rowGap-condensed {
-    --Layout-row-gap: #{$spacer-3}; // 16px
+    --Layout-row-gap: #{$spacer-3};
   }
 
   // regions
