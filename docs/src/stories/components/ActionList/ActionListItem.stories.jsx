@@ -51,6 +51,13 @@ export default {
         category: 'CSS'
       }
     },
+    truncateItem: {
+      defaultValue: false,
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
+    },
     containsActiveSubItem: {
       defaultValue: false,
       control: {type: 'boolean'},
@@ -188,11 +195,56 @@ export default {
         category: 'Interactive'
       }
     },
+    treeitem: {
+      defaultValue: false,
+      control: {type: 'boolean'},
+      table: {
+        category: 'HTML'
+      }
+    },
     ariaDisabled: {
       defaultValue: false,
       control: {type: 'boolean'},
       table: {
         category: 'Interactive'
+      }
+    },
+    ariaLevel: {
+      name: 'ariaLevel',
+      type: 'string',
+      description: 'number - nested subgroup',
+      table: {
+        category: 'HTML'
+      }
+    },
+    ariaSetSize: {
+      name: 'ariaSetSize',
+      type: 'string',
+      description:
+        'Defines the number of treeitem elements in the set of treeitem elements that are in the same branch and at the same level within the hierarchy',
+      table: {
+        category: 'HTML'
+      }
+    },
+    ariaPosInset: {
+      name: 'ariaPosInset',
+      type: 'string',
+      description:
+        'Defines the position of the element within the set of other treeitem elements that are in the same branch and at the same level within the hierarchy.',
+      table: {
+        category: 'HTML'
+      }
+    },
+    fontSize: {
+      options: [0, 1], // iterator
+      mapping: ['', 'ActionList-content--fontSmall'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['default', 'small']
+      },
+      description: 'Used to adjust font-size for subgroup items',
+      table: {
+        category: 'CSS'
       }
     }
   }
@@ -223,10 +275,19 @@ export const ListItemTemplate = ({
   listSemantic,
   ariaDisabled,
   containsActiveSubItem,
-  collapsibleLeading
+  collapsibleLeading,
+  truncateItem,
+  ariaLevel,
+  fontSize,
+  treeitem,
+  ariaSetSize,
+  ariaPosInset
 }) => {
   const [isCollapsed, itemIsCollapsed] = useToggle()
   const [isChecked, itemIsChecked] = useToggle()
+  const itemStyle = {
+    '--ActionList-tree-depth': `${ariaLevel}`
+  }
   return (
     <li
       className={clsx(
@@ -237,6 +298,10 @@ export const ListItemTemplate = ({
         containsActiveSubItem && `ActionList-item--hasActiveSubItem`,
         variant && `${variant}`
       )}
+      aria-level={ariaLevel ? `${ariaLevel}` : undefined}
+      aria-setsize={ariaSetSize ? `${ariaSetSize}` : undefined}
+      aria-posinset={ariaPosInset ? `${ariaPosInset}` : undefined}
+      style={itemStyle}
       onClick={collapsible || collapsibleLeading ? itemIsCollapsed : itemIsChecked}
       role={
         singleSelect
@@ -249,6 +314,8 @@ export const ListItemTemplate = ({
           ? undefined
           : href
           ? 'none'
+          : treeitem
+          ? 'treeitem'
           : undefined
       }
       id={id}
@@ -262,11 +329,14 @@ export const ListItemTemplate = ({
         <>
           <a
             href={href}
-            role={href && !listSemantic ? 'menuitem' : undefined}
+            role={
+              href && !listSemantic && !treeitem ? 'menuitem' : undefined || (href && treeitem) ? 'treeitem' : undefined
+            }
             aria-current={ariaCurrent}
             className={clsx(
               text && 'ActionList-content',
               size && `${size}`,
+              fontSize && `${fontSize}`,
               (leadingVisual || trailingVisual) && description && 'ActionList-content--blockDescription',
               leadingVisual && leadingVisualSize && `${leadingVisualSize}`
             )}
@@ -337,11 +407,17 @@ export const ListItemTemplate = ({
             )}
             {description && (
               <span className={clsx('ActionList-item-descriptionWrap', `${descriptionVariant}`)}>
-                <span className="ActionList-item-label">{text}</span>
+                <span className={clsx('ActionList-item-label', truncateItem && 'ActionList-item-label--truncate')}>
+                  {text}
+                </span>
                 <span className="ActionList-item-description">{description}</span>
               </span>
             )}
-            {!description && text && <span className="ActionList-item-label">{text}</span>}
+            {!description && text && (
+              <span className={clsx('ActionList-item-label', truncateItem && 'ActionList-item-label--truncate')}>
+                {text}
+              </span>
+            )}
             {trailingVisual && (
               <span
                 className="ActionList-item-visual ActionList-item-visual--trailing"
@@ -378,6 +454,7 @@ export const ListItemTemplate = ({
               className={clsx(
                 text && 'ActionList-content',
                 size && `${size}`,
+                fontSize && `${fontSize}`,
                 (leadingVisual || trailingVisual) && description && 'ActionList-content--blockDescription',
                 leadingVisual && leadingVisualSize && `${leadingVisualSize}`
               )}
@@ -446,11 +523,17 @@ export const ListItemTemplate = ({
               )}
               {description && (
                 <span className={clsx('ActionList-item-descriptionWrap', `${descriptionVariant}`)}>
-                  <span className="ActionList-item-label">{text}</span>
+                  <span className={clsx('ActionList-item-label', truncateItem && 'ActionList-item-label--truncate')}>
+                    {text}
+                  </span>
                   <span className="ActionList-item-description">{description}</span>
                 </span>
               )}
-              {!description && text && <span className="ActionList-item-label">{text}</span>}
+              {!description && text && (
+                <span className={clsx('ActionList-item-label', truncateItem && 'ActionList-item-label--truncate')}>
+                  {text}
+                </span>
+              )}
 
               {trailingVisual && (
                 <span
@@ -496,5 +579,6 @@ Playground.decorators = [
   )
 ]
 Playground.args = {
-  id: null
+  id: null,
+  truncateItem: false
 }
