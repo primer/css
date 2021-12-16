@@ -48,8 +48,8 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
     --Layout-outer-spacing-y: #{$spacer-3};
 
     @include breakpoint(lg) {
-      --Layout-outer-spacing-x: #{$spacer-4}; // 24px
-      --Layout-outer-spacing-y: #{$spacer-4}; // 24px
+      --Layout-outer-spacing-x: #{$spacer-4};
+      --Layout-outer-spacing-y: #{$spacer-4};
     }
   }
 
@@ -65,7 +65,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
     --Layout-inner-spacing-max: #{$spacer-3};
 
     @include breakpoint(lg) {
-      --Layout-inner-spacing-max: #{$spacer-4}; // 24px
+      --Layout-inner-spacing-max: #{$spacer-4};
     }
   }
 
@@ -80,7 +80,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
     --Layout-column-gap: #{$spacer-3};
 
     @include breakpoint(lg) {
-      --Layout-column-gap: #{$spacer-4}; // 24px
+      --Layout-column-gap: #{$spacer-4};
     }
   }
 
@@ -100,7 +100,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
     --Layout-row-gap: #{$spacer-3};
 
     @include breakpoint(lg) {
-      --Layout-row-gap: #{$spacer-4}; // 24px
+      --Layout-row-gap: #{$spacer-4};
     }
   }
 
