@@ -124,7 +124,7 @@ export default {
         category: 'Pane'
       }
     },
-    paneDivider: {
+    hasPaneDivider: {
       control: { type: 'boolean' },
       description: 'Whether to show a pane line divider.',
       table: {
@@ -172,7 +172,7 @@ export default {
       }
     },
 
-    headerDivider: {
+    hasHeaderDivider: {
       control: { type: 'boolean' },
       description: 'Whether to show a header divider',
       table: {
@@ -201,7 +201,7 @@ export default {
       }
     },
 
-    footerDivider: {
+    hasFooterDivider: {
       control: { type: 'boolean' },
       description: 'Whether to show a footer divider',
       table: {
@@ -270,18 +270,18 @@ export const LayoutTemplate = ({
   paneWidth,
   panePosition,
   paneResponsivePosition,
-  paneDivider,
+  hasPaneDivider,
   paneResponsiveDivider,
   paneIsSticky,
 
   // Header
   hasHeader,
-  headerDivider,
+  hasHeaderDivider,
   headerResponsiveDivider,
 
   // Footer
   hasFooter,
-  footerDivider,
+  hasFooterDivider,
   footerResponsiveDivider,
 
   // Content
@@ -342,15 +342,15 @@ export const LayoutTemplate = ({
 
         paneWidth && layoutClassName + '--paneWidth-' + `${paneWidth}`,
         panePosition && layoutClassName + '--panePos-' + `${panePosition}`,
-        paneDivider && layoutClassName + '--hasPaneDivider',
+        hasPaneDivider && layoutClassName + '--hasPaneDivider',
         paneIsSticky && layoutClassName + '--isPaneSticky',
 
         layoutClassName + '--variant-' + `${responsiveVariant}`,
         responsiveVariant === 'separateRegions' && layoutClassName + '--variant-separateRegions-primary-' + `${responsivePrimaryRegion}`,
         responsiveVariant === 'stackRegions' && paneResponsivePosition && layoutClassName + '--variant-stackRegions-panePos-' + `${paneResponsivePosition}`,
 
-        headerDivider && layoutClassName + '--hasHeaderDivider',
-        footerDivider && layoutClassName + '--hasFooterDivider'
+        hasHeaderDivider && layoutClassName + '--hasHeaderDivider',
+        hasFooterDivider && layoutClassName + '--hasFooterDivider'
       )}
       >
         <div className={clsx(
@@ -464,18 +464,18 @@ Playground.args = {
   paneWidth: 'default',
   panePosition: 'end',
   paneResponsivePosition: 'inherit',
-  paneDivider: false,
+  hasPaneDivider: false,
   paneResponsiveDivider: 'none',
   paneIsSticky: false,
 
   contentWidth: 'fluid',
 
   hasHeader: true,
-  headerDivider: false,
+  hasHeaderDivider: false,
   headerResponsiveDivider: 'none',
 
   hasFooter: true,
-  footerDivider: false,
+  hasFooterDivider: false,
   footerResponsiveDivider: 'none',
 
   contentChildren: 'content',

@@ -117,7 +117,7 @@ export default {
         category: 'Pane'
       }
     },
-    paneDivider: {
+    hasPaneDivider: {
       control: { type: 'boolean' },
       description: 'Whether to show a pane line divider.',
       table: {
@@ -157,7 +157,7 @@ export default {
       }
     },
 
-    headerDivider: {
+    hasHeaderDivider: {
       control: { type: 'boolean' },
       description: 'Whether to show a header divider',
       table: {
@@ -185,7 +185,7 @@ export default {
       }
     },
 
-    footerDivider: {
+    hasFooterDivider: {
       control: { type: 'boolean' },
       description: 'Whether to show a footer divider',
       table: {
@@ -244,11 +244,11 @@ export const PageLayoutTemplate = ({
   paneWidth,
   panePosition,
   paneResponsivePosition,
-  paneDivider,
+  hasPaneDivider,
   paneResponsiveDivider,
   contentWidth,
   hasHeader,
-  headerDivider,
+  hasHeaderDivider,
   headerResponsiveDivider,
   hasFooter,
   footerDivider,
@@ -274,17 +274,17 @@ export const PageLayoutTemplate = ({
         paneWidth={paneWidth}
         panePosition={panePosition}
         paneResponsivePosition={paneResponsivePosition}
-        paneDivider={paneDivider}
+        hasPaneDivider={hasPaneDivider}
         paneResponsiveDivider={paneResponsiveDivider}
 
         contentWidth={contentWidth}
 
         hasHeader={hasHeader}
-        headerDivider={headerDivider}
+        hasHeaderDivider={hasHeaderDivider}
         headerResponsiveDivider={headerResponsiveDivider}
 
         hasFooter={hasFooter}
-        footerDivider={footerDivider}
+        hasFooterDivider={footerDivider}
         footerResponsiveDivider={footerResponsiveDivider}
 
         contentChildren={contentChildren}
@@ -318,7 +318,7 @@ Playground.args = {
   panePosition: 'end',
   paneResponsivePosition: 'inherit',
   paneWidth: 'default',
-  paneDivider: false,
+  hasPaneDivider: false,
   paneResponsiveDivider: 'none',
 
   // Content
@@ -326,12 +326,12 @@ Playground.args = {
 
   // Header
   hasHeader: false,
-  headerDivider: false,
+  hasHeaderDivider: false,
   headerResponsiveDivider: 'none',
 
   // Footer
   hasFooter: false,
-  footerDivider: false,
+  hasFooterDivider: false,
   footerResponsiveDivider: 'none',
 
   contentChildren: 'content',

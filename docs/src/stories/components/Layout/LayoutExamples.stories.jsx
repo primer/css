@@ -135,7 +135,7 @@ IssueDetail.args = {
   panePosition: 'end',
   paneWidth: 'default',
   hasHeader: true,
-  headerDivider: true,
+  hasHeaderDivider: true,
   headerResponsiveDivider: 'filled',
   paneResponsiveDivider: 'filled',
   headerChildren: (
