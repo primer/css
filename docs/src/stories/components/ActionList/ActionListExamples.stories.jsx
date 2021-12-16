@@ -6,15 +6,7 @@ import {ListTemplate} from './ActionList.stories'
 
 export default {
   title: 'Components/ActionList/Examples'
-  //   decorators: [
-  //     Story => (
-  //       <nav>
-  //         <Story />
-  //       </nav>
-  //     )
-  //   ]
 }
-
 
 export const RepoSettings = ListTemplate.bind({})
 RepoSettings.storyName = 'Repository settings';
