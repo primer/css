@@ -1,5 +1,16 @@
 # @primer/css
 
+## 19.1.1
+
+### Patch Changes
+
+- [#1827](https://github.com/primer/css/pull/1827) [`69e1fc53`](https://github.com/primer/css/commit/69e1fc539e4bb2fdf78d34a18fc591ebdfddd2f5) Thanks [@simurai](https://github.com/simurai)! - Support fractional viewport sizes for `max-width` media queries
+
+* [#1803](https://github.com/primer/css/pull/1803) [`c46fe918`](https://github.com/primer/css/commit/c46fe9186efbcf6e4a482685529bdb0bda28aa9f) Thanks [@langermank](https://github.com/langermank)! - - Adds ActionList tree-view specific CSS
+  - Minor bug fixes for ActionList default
+
+- [#1827](https://github.com/primer/css/pull/1827) [`69e1fc53`](https://github.com/primer/css/commit/69e1fc539e4bb2fdf78d34a18fc591ebdfddd2f5) Thanks [@simurai](https://github.com/simurai)! - Support fractional viewport sizes for the `hide` utilities
+
 ## 19.1.0
 
 ### Minor Changes
