@@ -2234,6 +2234,11 @@
   resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.1.1.tgz#46edb7f06fbe8809ebe2822bc692fc6c74dba98c"
   integrity sha512-+Gwo89YK1OFi6oubTlah/zPxxzMNaMLy+inECAYI646KIFdzzhAsKWb3z5tSOu5Ff7no4isRV64rWfMSKLZclw==
 
+"@primer/primitives@7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.3.0.tgz#8e362465fa641ae8c840205e3c296635279c5786"
+  integrity sha512-A8iG4wL7jaSKWYnV/47IEsnNrKM4ZKgcFQba1rvOmuXBdCugmK3Iw/iskSy/CworC+rU/3fy5Z54hvilRxGM1w==
+
 "@radix-ui/react-polymorphic@0.0.14":
   version "0.0.14"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-polymorphic/-/react-polymorphic-0.0.14.tgz#fc6cefee6686db8c5a7ff14c8c1b9b5abdee325b"
