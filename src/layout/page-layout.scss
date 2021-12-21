@@ -1,0 +1,380 @@
+// stylelint-disable max-nesting-depth
+// stylelint-disable selector-max-specificity
+// stylelint-disable no-duplicate-selectors
+
+$Layout-divider-color: var(--color-border-default) !default;
+$Layout-responsive-variant-max-breakpoint: 'md' !default;
+
+:root {
+  --Layout-pane-width: #{map-get($sidebar-width, 'sm')};
+  --Layout-content-width: 100%;
+  --Layout-template-columns: 1fr var(--Layout-pane-width);
+  --Layout-template-areas: 'content pane';
+  --Layout-column-gap: #{$spacer-3};
+  --Layout-row-gap: #{$spacer-3};
+
+  // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
+  // stylelint-disable length-zero-no-unit
+  --Layout-outer-spacing-x: 0px; // wrapper margin x
+  --Layout-outer-spacing-y: 0px; // wrapper margin y
+  --Layout-inner-spacing-min: 0px; // default region padding
+  --Layout-inner-spacing-max: 0px; // relaxed content horizontal padding
+  // stylelint-enable length-zero-no-unit
+}
+
+.PageLayout {
+  // stylelint-disable-next-line primer/spacing
+  margin: var(--Layout-outer-spacing-y) var(--Layout-outer-spacing-x);
+
+  // multi-column desktop-friendly layout
+
+  @include breakpoint($Layout-responsive-variant-max-breakpoint) {
+
+    // Set a `content` region width, to work with loading states when
+    // `pane` is not yet loaded. See https://github.com/primer/css/pull/1818
+    $Layout-content-full-width: minmax(0, calc(100% - var(--Layout-pane-width) - var(--Layout-column-gap)));
+
+    &.PageLayout--panePos-start {
+      --Layout-template-columns: var(--Layout-pane-width) #{$Layout-content-full-width};
+      --Layout-template-areas: 'pane content';
+    }
+
+    &.PageLayout--panePos-end {
+      --Layout-template-columns: #{$Layout-content-full-width} var(--Layout-pane-width);
+      --Layout-template-areas: 'content pane';
+    }
+
+    // header divider
+
+    .PageLayout-header--hasDivider {
+      // stylelint-disable-next-line primer/spacing
+      padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
+      // stylelint-disable-next-line primer/borders
+      border-bottom: $border-width solid $Layout-divider-color;
+    }
+
+    // footer divider
+
+    .PageLayout-footer--hasDivider {
+      // stylelint-disable-next-line primer/spacing
+      padding-top: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
+      // stylelint-disable-next-line primer/borders
+      border-top: $border-width solid $Layout-divider-color;
+    }
+
+    // pane divider
+
+    &.PageLayout--hasPaneDivider {
+      &.PageLayout--panePos-start {
+        .PageLayout-pane {
+          // stylelint-disable-next-line primer/borders
+          border-right: $border-width solid $Layout-divider-color;
+        }
+
+        &:not(.PageLayout--columnGap-none) {
+          .PageLayout-pane {
+            // stylelint-disable-next-line primer/spacing
+            padding-right: calc(var(--Layout-column-gap) - #{$border-width});
+            // stylelint-disable-next-line primer/spacing
+            margin-right: calc(var(--Layout-column-gap) * -1);
+          }
+
+          .PageLayout-content {
+            // stylelint-disable-next-line primer/spacing
+            margin-left: var(--Layout-column-gap);
+          }
+        }
+      }
+
+      &.PageLayout--panePos-end {
+        .PageLayout-pane {
+          // stylelint-disable-next-line primer/borders
+          border-left: $border-width solid $Layout-divider-color;
+        }
+
+        &:not(.PageLayout--columnGap-none) {
+          .PageLayout-pane {
+            // stylelint-disable-next-line primer/spacing
+            padding-left: calc(var(--Layout-column-gap) - #{$border-width});
+            // stylelint-disable-next-line primer/spacing
+            margin-left: calc(var(--Layout-column-gap) * -1);
+          }
+
+          .PageLayout-content {
+            // stylelint-disable-next-line primer/spacing
+            margin-right: var(--Layout-column-gap);
+          }
+        }
+      }
+    }
+
+    // sticky pane
+
+    &.PageLayout--isPaneSticky {
+      .PageLayout-pane {
+        position: sticky;
+        top: 0;
+        max-height: 100vh;
+        overflow: auto;
+      }
+    }
+
+    // content width
+
+    [class^='PageLayout-content-centered-'] {
+      max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + var(--Layout-column-gap));
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    &.PageLayout--hasPaneDivider {
+      [class^='PageLayout-content-centered-'] {
+        max-width: calc(var(--Layout-content-width) + var(--Layout-pane-width) + (var(--Layout-column-gap) * 2));
+      }
+    }
+
+    &.PageLayout--panePos-start {
+      [class^='PageLayout-content-centered-'] > [class^='container-'] {
+        margin-left: 0;
+      }
+    }
+
+    &.PageLayout--panePos-end {
+      [class^='PageLayout-content-centered-'] > [class^='container-'] {
+        margin-right: 0;
+      }
+    }
+
+    @each $breakpoint in map-keys($breakpoints) {
+      .PageLayout-content-centered-#{$breakpoint} {
+        --Layout-content-width: #{map-get($breakpoints, $breakpoint)};
+      }
+    }
+
+    // pane width
+
+    @each $breakpoint in map-keys($sidebar-width) {
+      @include breakpoint($breakpoint) {
+        --Layout-pane-width: #{map-get($sidebar-width, $breakpoint)};
+      }
+    }
+
+    &.PageLayout--paneWidth-narrow {
+      @each $breakpoint in map-keys($sidebar-narrow-width) {
+        @include breakpoint($breakpoint) {
+          --Layout-pane-width: #{map-get($sidebar-narrow-width, $breakpoint)};
+        }
+      }
+    }
+
+    &.PageLayout--paneWidth-wide {
+      @each $breakpoint in map-keys($sidebar-wide-width) {
+        @include breakpoint($breakpoint) {
+          --Layout-pane-width: #{map-get($sidebar-wide-width, $breakpoint)};
+        }
+      }
+    }
+  }
+
+  // responsive behaviors on narrow viewports
+
+  @media (max-width: #{map-get($breakpoints, $Layout-responsive-variant-max-breakpoint) - 0.02px}) {
+
+    // variant: stackRegions
+
+    &.PageLayout--responsive-stackRegions {
+      --Layout-template-columns: 1fr;
+
+      // responsive-panePos: end (default)
+      --Layout-template-areas: 'content' 'pane';
+
+      // responsive-panePos: start
+      &.PageLayout--responsive-panePos-start {
+        --Layout-template-areas: 'pane' 'content';
+      }
+    }
+
+    // variant: separateRegions
+
+    &.PageLayout--responsive-separateRegions {
+      --Layout-template-columns: 1fr;
+      --Layout-template-areas: 'content';
+
+      &.PageLayout--responsive-primary-content {
+        --Layout-template-areas: 'content';
+
+        .PageLayout-pane {
+          display: none;
+        }
+      }
+
+      &.PageLayout--responsive-primary-pane {
+        --Layout-template-areas: 'pane';
+
+        .PageLayout-content {
+          display: none;
+        }
+      }
+    }
+
+    // region dividers on narrow viewports
+
+    .PageLayout-region--dividerNarrow-line-before {
+      position: relative;
+      // stylelint-disable-next-line primer/spacing
+      margin-top: var(--Layout-row-gap);
+
+      &::before {
+        @include Layout-line-divider;
+
+        top: calc(#{$border-width * -1} - var(--Layout-row-gap));
+      }
+    }
+
+    .PageLayout-region--dividerNarrow-line-after {
+      position: relative;
+      // stylelint-disable-next-line primer/spacing
+      margin-bottom: var(--Layout-row-gap);
+
+      &::after {
+        @include Layout-line-divider;
+
+        bottom: calc(#{$border-width * -1} - var(--Layout-row-gap));
+      }
+    }
+
+    .PageLayout-region--dividerNarrow-filled-before {
+      position: relative;
+      // stylelint-disable-next-line primer/spacing
+      margin-top: calc(#{$spacer-2} + var(--Layout-row-gap));
+
+      &::after {
+        @include Layout-filled-divider;
+
+        top: calc(#{$spacer-2 * -1} - var(--Layout-row-gap));
+      }
+    }
+
+    .PageLayout-region--dividerNarrow-filled-after {
+      position: relative;
+      // stylelint-disable-next-line primer/spacing
+      margin-bottom: calc(#{$spacer-2} + var(--Layout-row-gap));
+
+      &::before {
+        @include Layout-filled-divider;
+
+        bottom: calc(#{$spacer-2 * -1} - var(--Layout-row-gap));
+      }
+    }
+  }
+}
+
+.PageLayout-wrapper {
+  display: grid;
+  grid: auto-flow / 1fr;
+  row-gap: var(--Layout-row-gap);
+}
+
+.PageLayout-columns {
+  display: grid;
+  column-gap: var(--Layout-column-gap);
+  row-gap: var(--Layout-row-gap);
+  grid-template-columns: var(--Layout-template-columns);
+  grid-template-rows: 1fr;
+  grid-template-areas: var(--Layout-template-areas);
+}
+
+// outer spacing
+
+.PageLayout--outerSpacing-normal {
+  --Layout-outer-spacing-x: #{$spacer-3};
+  --Layout-outer-spacing-y: #{$spacer-3};
+
+  @include breakpoint(lg) {
+    --Layout-outer-spacing-x: #{$spacer-4};
+    --Layout-outer-spacing-y: #{$spacer-4};
+  }
+}
+
+.PageLayout--outerSpacing-condensed {
+  --Layout-outer-spacing-x: #{$spacer-3};
+  --Layout-outer-spacing-y: #{$spacer-3};
+}
+
+// inner spacing
+
+.PageLayout--innerSpacing-normal {
+  --Layout-inner-spacing-min: #{$spacer-3};
+  --Layout-inner-spacing-max: #{$spacer-3};
+
+  @include breakpoint(lg) {
+    --Layout-inner-spacing-max: #{$spacer-4};
+  }
+}
+
+.PageLayout--innerSpacing-condensed {
+  --Layout-inner-spacing-min: #{$spacer-3};
+  --Layout-inner-spacing-max: #{$spacer-3};
+}
+
+// column gap
+
+.PageLayout--columnGap-normal {
+  --Layout-column-gap: #{$spacer-3};
+
+  @include breakpoint(lg) {
+    --Layout-column-gap: #{$spacer-4};
+  }
+}
+
+.PageLayout--columnGap-condensed {
+  --Layout-column-gap: #{$spacer-3};
+}
+
+.PageLayout--columnGap-none {
+  // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
+  // stylelint-disable-next-line length-zero-no-unit
+  --Layout-column-gap: 0px;
+}
+
+// row gap
+
+.PageLayout--rowGap-normal {
+  --Layout-row-gap: #{$spacer-3};
+
+  @include breakpoint(lg) {
+    --Layout-row-gap: #{$spacer-4};
+  }
+}
+
+.PageLayout--rowGap-none {
+  // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
+  // stylelint-disable length-zero-no-unit
+  --Layout-row-gap: 0px;
+}
+
+.PageLayout--rowGap-condensed {
+  --Layout-row-gap: #{$spacer-3};
+}
+
+// regions
+
+.PageLayout-header,
+.PageLayout-content,
+.PageLayout-pane,
+.PageLayout-footer {
+  // stylelint-disable-next-line primer/spacing
+  padding: var(--Layout-inner-spacing-min);
+}
+
+.PageLayout-content {
+  // stylelint-disable primer/spacing
+  padding-right: var(--Layout-inner-spacing-max);
+  padding-left: var(--Layout-inner-spacing-max);
+  // stylelint-enable primer/spacing
+  grid-area: content;
+}
+
+.PageLayout-pane {
+  grid-area: pane;
+}
