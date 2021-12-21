@@ -2,7 +2,7 @@ import React from 'react'
 export default function PageLayoutBehavior() {
 
   const pageLayoutSelector = '.PageLayout.PageLayout--responsive-separateRegions';
-  const primaryRegionSelector = 'PageLayout--responsive-separateRegions-primary';
+  const primaryRegionSelector = 'PageLayout--responsive-primary';
 
   const detectPageLayoutHash = () => {
 
