@@ -17,10 +17,10 @@
     "@primer/gatsby-theme-doctocat": "3.0.1",
     "@primer/octicons": "16.2.0",
     "@primer/octicons-react": "16.0.0",
-    "@primer/primitives": "7.1.1",
+    "@primer/primitives": "7.3.0",
     "@svgr/webpack": "5.5.0",
     "autoprefixer": "10.4.0",
-    "babel-preset-gatsby": "^2.2.0",
+    "babel-preset-gatsby": "^2.4.0",
     "chroma-js": "^2.1.2",
     "clsx": "^1.1.1",
     "core-js": "^3.20.0",
@@ -48,7 +48,7 @@
     "node": ">= 10.x"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
+    "@babel/core": "^7.16.5",
     "@storybook/addon-a11y": "6.4.9",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.3",
