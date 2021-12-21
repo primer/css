@@ -39,7 +39,7 @@
     "raw-loader": "^4.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-frame-component": "^5.1.0",
+    "react-frame-component": "^5.2.1",
     "sass-loader": "10.1.1",
     "styled-components": "^4.3.2",
     "title-case": "^3.0.3"
