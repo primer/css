@@ -152,7 +152,7 @@ NavWithSubItemsLeadingVisual16px.args = {
         children={
           <ListTemplate
             subGroup
-            ariaLabel="Sub nav descrioption"
+            ariaLabel="Sub nav decription"
             children={
               <>
                 <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic ariaLevel="2" />
@@ -236,7 +236,7 @@ NavWithSubItemsLeadingVisual20px.args = {
         children={
           <ListTemplate
             subGroup
-            ariaLabel="Sub nav descrioption"
+            ariaLabel="Sub nav decription"
             children={
               <>
                 <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic ariaLevel="2" />
@@ -328,7 +328,7 @@ NavWithSubItemsLeadingVisual24px.args = {
         children={
           <ListTemplate
             subGroup
-            ariaLabel="Sub nav descrioption"
+            ariaLabel="Sub nav decription"
             children={
               <>
                 <ListItemTemplate subItem text="Sub Nav Item" href="/" listSemantic ariaLevel="2" />
@@ -671,7 +671,7 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
           <ListTemplate
             subGroup
             ariaLabelledBy="group-id-1"
-            ariaLabel="Sub nav descrioption"
+            ariaLabel="Sub nav decription"
             children={
               <>
                 <ListItemTemplate
@@ -701,7 +701,7 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
                       containsSubItem
                       containsActiveSubItem
                       subGroup
-                      ariaLabel="Sub nav descrioption"
+                      ariaLabel="Sub nav decription"
                       children={
                         <>
                           <ListItemTemplate
@@ -740,7 +740,7 @@ NavWithSubItemsLeadingVisual16pxSubSections.args = {
         children={
           <ListTemplate
             subGroup
-            ariaLabel="Sub nav descrioption"
+            ariaLabel="Sub nav decription"
             ariaLabelledBy="group-id-2"
             children={
               <>
