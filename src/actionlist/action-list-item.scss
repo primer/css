@@ -21,7 +21,6 @@
   position: relative;
   list-style: none;
   background-color: transparent;
-  outline: $border-style $border-width var(--color-action-list-item-default-hover-border);
   border-radius: $border-radius;
 
   &:hover,
@@ -36,6 +35,10 @@
 
   // only hover li without list as children
   &:not(.ActionList-item--hasSubItem) {
+    &:hover,
+    &:active {
+      outline: $border-style $border-width var(--color-action-list-item-default-hover-border);
+    }
     &:hover {
       cursor: pointer;
       background-color: var(--color-action-list-item-default-hover-bg);
