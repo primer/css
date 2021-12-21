@@ -29,7 +29,7 @@
     "gatsby-plugin-sass": "3.2.0",
     "gatsby-plugin-svgr": "2.1.0",
     "path": "0.12.7",
-    "postcss": "8.4.4",
+    "postcss": "8.4.5",
     "postcss-import": "14.0.2",
     "postcss-load-config": "3.1.0",
     "postcss-loader": "4.3.0",
