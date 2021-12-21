@@ -21,8 +21,8 @@
   position: relative;
   list-style: none;
   background-color: transparent;
-  outline: $border-style $border-width var(--color-action-list-item-default-hover-border);
   border-radius: $border-radius;
+  outline: $border-style $border-width var(--color-action-list-item-default-hover-border);
 
   &:hover,
   &:active {
@@ -204,7 +204,8 @@
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
+      transition:
+        visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 
