@@ -251,7 +251,7 @@ export const PageLayoutTemplate = ({
   hasHeaderDivider,
   headerDividerNarrow,
   hasFooter,
-  footerDivider,
+  hasFooterDivider,
   footerDividerNarrow,
   contentChildren,
   paneChildren,
@@ -284,7 +284,7 @@ export const PageLayoutTemplate = ({
         headerDividerNarrow={headerDividerNarrow}
 
         hasFooter={hasFooter}
-        hasFooterDivider={footerDivider}
+        hasFooterDivider={hasFooterDivider}
         footerDividerNarrow={footerDividerNarrow}
 
         contentChildren={contentChildren}
