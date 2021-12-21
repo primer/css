@@ -22,7 +22,6 @@
   list-style: none;
   background-color: transparent;
   border-radius: $border-radius;
-  outline: $border-style $border-width var(--color-action-list-item-default-hover-border);
 
   &:hover,
   &:active {
@@ -38,7 +37,9 @@
   &:not(.ActionList-item--hasSubItem) {
     &:hover,
     &:active {
-      outline: $border-style $border-width var(--color-action-list-item-default-hover-border);
+      &:not(.ActionList-item--navActive) {
+        outline: $border-style $border-width var(--color-action-list-item-default-hover-border);
+      }
     }
     &:hover {
       cursor: pointer;
@@ -87,6 +88,7 @@
     > .ActionList-content {
       &:hover {
         background-color: var(--color-action-list-item-default-hover-bg);
+        outline: $border-style $border-width var(--color-action-list-item-default-hover-border);
       }
     }
   }
@@ -117,40 +119,6 @@
   }
 
   // collapsible item [aria-expanded]
-
-  // nesting (single level)
-  // target items inside expanded subgroups
-  &[aria-expanded] {
-    .ActionList--subGroup {
-      .ActionList-content {
-        padding-left: $spacer-4;
-      }
-    }
-
-    // has 16px leading visual
-    .ActionList-content--visual16 + .ActionList--subGroup {
-      // stylelint-disable-next-line selector-max-compound-selectors, selector-max-specificity
-      .ActionList-content {
-        padding-left: $spacer-5;
-      }
-    }
-
-    // has 20px leading visual
-    .ActionList-content--visual20 + .ActionList--subGroup {
-      // stylelint-disable-next-line selector-max-compound-selectors, selector-max-specificity
-      .ActionList-content {
-        padding-left: $spacer-2 * 4.5; // 36px
-      }
-    }
-
-    // has 24px leading visual
-    .ActionList-content--visual24 + .ActionList--subGroup {
-      // stylelint-disable-next-line selector-max-compound-selectors, selector-max-specificity
-      .ActionList-content {
-        padding-left: $spacer-6;
-      }
-    }
-  }
 
   &[aria-expanded='true'] {
     .ActionList-item-collapseIcon {
@@ -242,8 +210,7 @@
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition:
-        visibility 0 linear $actionList-item-checkmark-transition-timing,
+      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 
@@ -353,7 +320,6 @@
   display: grid;
   // stylelint-disable-next-line primer/spacing
   padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
-  font-size: $body-font-size;
   font-weight: $font-weight-normal;
   color: var(--color-fg-default);
   user-select: none;
@@ -361,8 +327,8 @@
   transition: $actionList-item-bg-transition;
   grid-template-rows: min-content;
   grid-template-areas: 'leadingAction leadingVisual label trailingVisual trailingAction';
-  grid-template-columns: min-content min-content minmax(0, auto) min-content min-content;
-  align-items: start;
+  grid-template-columns: min-content min-content minmax(min-content, auto) min-content min-content;
+  align-items: center;
 
   // column-gap persists with empty grid-areas, margin applies only when children exist
   > :not(:last-child) {
@@ -385,10 +351,6 @@
     // 48px total height
     // stylelint-disable-next-line primer/spacing
     padding: $actionList-item-padding-vertical-lg $actionList-item-padding-horizontal;
-  }
-
-  &.ActionList-content--fontSmall {
-    font-size: $font-size-small;
   }
 
   // On pointer:coarse (mobile), all list items are large
@@ -484,16 +446,37 @@
   color: var(--color-fg-default);
 }
 
-.ActionList-item-label--truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 // nested lists (only supports 1 level currently)
 // target ActionList-item--subItem for padding-left to maintain :active :after state
 
-// TODO: remove with PVC implementation
 .ActionList-item--subItem > .ActionList-content {
   font-size: $font-size-small;
+}
+
+// no leading visual
+.ActionList--subGroup {
+  .ActionList-item--subItem {
+    padding-left: $spacer-3;
+  }
+}
+
+// has 16px leading visual
+.ActionList-content--visual16 + .ActionList--subGroup {
+  .ActionList-item--subItem {
+    padding-left: $spacer-4;
+  }
+}
+
+// has 20px leading visual
+.ActionList-content--visual20 + .ActionList--subGroup {
+  .ActionList-item--subItem {
+    padding-left: $spacer-3 * 1.75;
+  }
+}
+
+// has 24px leading visual
+.ActionList-content--visual24 + .ActionList--subGroup {
+  .ActionList-item--subItem {
+    padding-left: $spacer-5;
+  }
 }
