@@ -19,7 +19,7 @@ Settings.args = {
   innerSpacing: 'normal',
 
   // Responsive
-  responsivePrimaryRegion: 'pane',
+  primaryRegion: 'pane',
 
   // Pane
   paneWidth: 'wide',
@@ -136,8 +136,8 @@ IssueDetail.args = {
   paneWidth: 'default',
   hasHeader: true,
   hasHeaderDivider: true,
-  headerResponsiveDivider: 'filled',
-  paneResponsiveDivider: 'filled',
+  headerDividerNarrow: 'filled',
+  paneDividerNarrow: 'filled',
   headerChildren: (
     <>
       <h2 className="f2">

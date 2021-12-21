@@ -23,7 +23,7 @@ export default {
       }
     },
 
-    responsivePrimaryRegion: {
+    primaryRegion: {
       options: ['content', 'pane'],
       control: {
         type: 'inline-radio'
@@ -80,7 +80,7 @@ export default {
 export const SplitPageLayoutTemplate = ({
   _debug,
   innerSpacing,
-  responsivePrimaryRegion,
+  primaryRegion,
   paneWidth,
   paneIsSticky,
   contentWidth,
@@ -98,12 +98,12 @@ export const SplitPageLayoutTemplate = ({
         rowGap='none'
 
         responsiveVariant='separateRegions'
-        responsivePrimaryRegion={responsivePrimaryRegion}
+        primaryRegion={primaryRegion}
 
         paneWidth={paneWidth}
         paneIsSticky={paneIsSticky}
         panePosition='start'
-        paneDivider={true}
+        hasPaneDivider={true}
         contentWidth={contentWidth}
 
         hasHeader={false}
@@ -129,7 +129,7 @@ Playground.args = {
   innerSpacing: 'normal',
 
   // Responsive
-  responsivePrimaryRegion: 'content',
+  primaryRegion: 'content',
 
   // Pane
   paneWidth: 'wide',

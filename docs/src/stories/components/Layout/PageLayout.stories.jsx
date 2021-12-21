@@ -74,7 +74,7 @@ export default {
       }
     },
 
-    responsivePrimaryRegion: {
+    primaryRegion: {
       options: ['content', 'pane'],
       control: {
         type: 'inline-radio'
@@ -97,7 +97,7 @@ export default {
         category: 'Pane',
       }
     },
-    paneResponsivePosition: {
+    panePositionNarrow: {
       options: ['inherit', 'start', 'end'],
       control: {
         type: 'inline-radio',
@@ -124,7 +124,7 @@ export default {
         category: 'Pane'
       }
     },
-    paneResponsiveDivider: {
+    paneDividerNarrow: {
       options: ['none', 'line', 'filled'],
       control: {
         type: 'inline-radio'
@@ -165,7 +165,7 @@ export default {
       }
     },
 
-    headerResponsiveDivider: {
+    headerDividerNarrow: {
       options: ['none', 'line', 'filled'],
       control: {
         type: 'inline-radio'
@@ -193,7 +193,7 @@ export default {
       }
     },
 
-    footerResponsiveDivider: {
+    footerDividerNarrow: {
       options: ['none', 'line', 'filled'],
       control: {
         type: 'inline-radio'
@@ -240,19 +240,19 @@ export const PageLayoutTemplate = ({
   columnGap,
   rowGap,
   responsiveVariant,
-  responsivePrimaryRegion,
+  primaryRegion,
   paneWidth,
   panePosition,
-  paneResponsivePosition,
+  panePositionNarrow,
   hasPaneDivider,
-  paneResponsiveDivider,
+  paneDividerNarrow,
   contentWidth,
   hasHeader,
   hasHeaderDivider,
-  headerResponsiveDivider,
+  headerDividerNarrow,
   hasFooter,
   footerDivider,
-  footerResponsiveDivider,
+  footerDividerNarrow,
   contentChildren,
   paneChildren,
   headerChildren,
@@ -269,23 +269,23 @@ export const PageLayoutTemplate = ({
         rowGap={rowGap}
 
         responsiveVariant={responsiveVariant}
-        responsivePrimaryRegion={responsivePrimaryRegion}
+        primaryRegion={primaryRegion}
 
         paneWidth={paneWidth}
         panePosition={panePosition}
-        paneResponsivePosition={paneResponsivePosition}
+        panePositionNarrow={panePositionNarrow}
         hasPaneDivider={hasPaneDivider}
-        paneResponsiveDivider={paneResponsiveDivider}
+        paneDividerNarrow={paneDividerNarrow}
 
         contentWidth={contentWidth}
 
         hasHeader={hasHeader}
         hasHeaderDivider={hasHeaderDivider}
-        headerResponsiveDivider={headerResponsiveDivider}
+        headerDividerNarrow={headerDividerNarrow}
 
         hasFooter={hasFooter}
         hasFooterDivider={footerDivider}
-        footerResponsiveDivider={footerResponsiveDivider}
+        footerDividerNarrow={footerDividerNarrow}
 
         contentChildren={contentChildren}
         paneChildren={paneChildren}
@@ -312,14 +312,14 @@ Playground.args = {
 
   // Responsive
   responsiveVariant: 'stackRegions',
-  responsivePrimaryRegion: 'content',
+  primaryRegion: 'content',
 
   // Pane
   panePosition: 'end',
-  paneResponsivePosition: 'inherit',
+  panePositionNarrow: 'inherit',
   paneWidth: 'default',
   hasPaneDivider: false,
-  paneResponsiveDivider: 'none',
+  paneDividerNarrow: 'none',
 
   // Content
   contentWidth: 'fluid',
@@ -327,12 +327,12 @@ Playground.args = {
   // Header
   hasHeader: false,
   hasHeaderDivider: false,
-  headerResponsiveDivider: 'none',
+  headerDividerNarrow: 'none',
 
   // Footer
   hasFooter: false,
   hasFooterDivider: false,
-  footerResponsiveDivider: 'none',
+  footerDividerNarrow: 'none',
 
   contentChildren: 'content',
   paneChildren: 'pane',

@@ -180,31 +180,31 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
     }
   }
 
-  // responsive variants
+  // responsive behaviors on narrow viewports
 
   @media (max-width: #{map-get($breakpoints, $Layout-responsive-variant-max-breakpoint) - 0.02px}) {
 
     // variant: stackRegions
 
-    &.PageLayout--variant-stackRegions {
+    &.PageLayout--responsive-stackRegions {
       --Layout-template-columns: 1fr;
 
       // responsive-panePos: end (default)
       --Layout-template-areas: 'content' 'pane';
 
       // responsive-panePos: start
-      &.PageLayout--variant-stackRegions-panePos-start {
+      &.PageLayout--responsive-panePos-start {
         --Layout-template-areas: 'pane' 'content';
       }
     }
 
     // variant: separateRegions
 
-    &.PageLayout--variant-separateRegions {
+    &.PageLayout--responsive-separateRegions {
       --Layout-template-columns: 1fr;
       --Layout-template-areas: 'content';
 
-      &.PageLayout--variant-separateRegions-primary-content {
+      &.PageLayout--responsive-primary-content {
         --Layout-template-areas: 'content';
 
         .PageLayout-pane {
@@ -212,7 +212,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
         }
       }
 
-      &.PageLayout--variant-separateRegions-primary-pane {
+      &.PageLayout--responsive-primary-pane {
         --Layout-template-areas: 'pane';
 
         .PageLayout-content {
@@ -221,9 +221,9 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
       }
     }
 
-    // region dividers for responsive variants
+    // region dividers on narrow viewports
 
-    .PageLayout-region--hasDivider-line-before {
+    .PageLayout-region--dividerNarrow-line-before {
       position: relative;
       // stylelint-disable-next-line primer/spacing
       margin-top: var(--Layout-row-gap);
@@ -235,7 +235,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
       }
     }
 
-    .PageLayout-region--hasDivider-line-after {
+    .PageLayout-region--dividerNarrow-line-after {
       position: relative;
       // stylelint-disable-next-line primer/spacing
       margin-bottom: var(--Layout-row-gap);
@@ -247,7 +247,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
       }
     }
 
-    .PageLayout-region--hasDivider-filled-before {
+    .PageLayout-region--dividerNarrow-filled-before {
       position: relative;
       // stylelint-disable-next-line primer/spacing
       margin-top: calc(#{$spacer-2} + var(--Layout-row-gap));
@@ -259,7 +259,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
       }
     }
 
-    .PageLayout-region--hasDivider-filled-after {
+    .PageLayout-region--dividerNarrow-filled-after {
       position: relative;
       // stylelint-disable-next-line primer/spacing
       margin-bottom: calc(#{$spacer-2} + var(--Layout-row-gap));
