@@ -46,24 +46,20 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
     // header divider
 
-    &.PageLayout--hasHeaderDivider {
-      .PageLayout-header {
-        // stylelint-disable-next-line primer/spacing
-        padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
-        // stylelint-disable-next-line primer/borders
-        border-bottom: $border-width solid $Layout-divider-color;
-      }
+    .PageLayout-header--hasDivider {
+      // stylelint-disable-next-line primer/spacing
+      padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
+      // stylelint-disable-next-line primer/borders
+      border-bottom: $border-width solid $Layout-divider-color;
     }
 
     // footer divider
 
-    &.PageLayout--hasFooterDivider {
-      .PageLayout-footer {
-        // stylelint-disable-next-line primer/spacing
-        padding-top: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
-        // stylelint-disable-next-line primer/borders
-        border-top: $border-width solid $Layout-divider-color;
-      }
+    .PageLayout-footer--hasDivider {
+      // stylelint-disable-next-line primer/spacing
+      padding-top: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
+      // stylelint-disable-next-line primer/borders
+      border-top: $border-width solid $Layout-divider-color;
     }
 
     // pane divider

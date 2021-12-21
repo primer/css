@@ -212,12 +212,6 @@ DiscussionsPane.args = {
       <ListItemTemplate
         text="Announcements"
         href="/"
-
-        // POSSIBLE BUG
-        // `ActionList-content--visual16` doesn't seem to be reserving the leading visual space to have 16px.
-        // The emoji takes only 14px, instead it should appear centered in the `--visual-16` space.
-
-
         leadingVisualSize="ActionList-content--visual16"
         leadingVisual={`🔔`}
       />

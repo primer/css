@@ -28,7 +28,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: 'When `responsiveVariant` is set to `separateRegions`, defines which region appears first on small viewports. `content` is default.',
+      description: 'Defines which region appears first on small viewports. `content` is default.',
       table: {
         category: 'Responsive'
       }
@@ -41,7 +41,7 @@ export default {
       control: {
       type: 'inline-radio'
       },
-      description: 'Defines the width of the pane',
+      description: 'Defines the width of the pane.',
       table: {
         category: 'Pane'
       }

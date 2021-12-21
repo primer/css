@@ -119,7 +119,7 @@ export default {
       control: {
         type: 'inline-radio',
       },
-      description: 'If `responsiveVariant` is set to `stackRegions`, defines the position of the pane in the responsive variant. `start` puts the pane above `content`, and `end` puts it below `content`. `inherit` uses the same value from `panePosition`.',
+      description: 'If `responsiveVariant` is set to `stackRegions`, defines the position of the pane in narrow viewports. `start` puts the pane above `content`, and `end` puts it below `content`. `inherit` uses the same value from `panePosition`.',
       table: {
         category: 'Pane'
       }
@@ -203,7 +203,7 @@ export default {
 
     hasFooterDivider: {
       control: { type: 'boolean' },
-      description: 'Whether to show a footer divider',
+      description: 'Whether to show a footer divider.',
       table: {
         category: 'Footer'
       }
@@ -214,7 +214,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: 'Whether to show a divider above the `footer` region if `responsiveVariant` is active. `line` shows a single line. `filled` shows a thicker mobile-frienldy divider.',
+      description: 'Whether to show a divider above the `footer` region on narrow viewports. `line` shows a single line. `filled` shows a thicker mobile-frienldy divider.',
       table: {
         category: 'Footer'
       }
@@ -326,9 +326,24 @@ export const LayoutTemplate = ({
 
   // Inherit value for responsive props
   panePositionNarrow = (panePositionNarrow === 'inherit') ? panePosition : panePositionNarrow;
-  paneDividerNarrow = (paneDividerNarrow === 'inherit' && hasPaneDivider) ? 'line' : paneDividerNarrow;
-  headerDividerNarrow = (headerDividerNarrow === 'inherit' && hasHeaderDivider) ? 'line' : headerDividerNarrow;
-  footerDividerNarrow = (footerDividerNarrow === 'inherit' && hasFooterDivider) ? 'line' : footerDividerNarrow;
+
+  if (hasPaneDivider) {
+    paneDividerNarrow = (paneDividerNarrow === 'inherit') ? 'line' : paneDividerNarrow;
+  } else {
+    paneDividerNarrow = null;
+  }
+
+  if (hasHeaderDivider) {
+    headerDividerNarrow = (headerDividerNarrow === 'inherit') ? 'line' : headerDividerNarrow;
+  } else {
+    headerDividerNarrow = null;
+  }
+
+  if (hasFooterDivider) {
+    footerDividerNarrow = (footerDividerNarrow === 'inherit') ? 'line' : footerDividerNarrow;
+  } else {
+    footerDividerNarrow = null;
+  }
 
   PageLayoutBehavior();
 
@@ -351,9 +366,6 @@ export const LayoutTemplate = ({
         layoutClassName + '--responsive-' + `${responsiveVariant}`,
         responsiveVariant === 'separateRegions' && layoutClassName + '--responsive-primary-' + `${primaryRegion}`,
         responsiveVariant === 'stackRegions' && panePositionNarrow && layoutClassName + '--responsive-panePos-' + `${panePositionNarrow}`,
-
-        hasHeaderDivider && layoutClassName + '--hasHeaderDivider',
-        hasFooterDivider && layoutClassName + '--hasFooterDivider'
       )}
       >
         <div className={clsx(
@@ -366,6 +378,7 @@ export const LayoutTemplate = ({
             <div className={clsx(
               layoutClassName + '-region',
               layoutClassName + '-header',
+              hasHeaderDivider && layoutClassName + '-header--hasDivider',
               headerDividerNarrow && layoutClassName + '-region--dividerNarrow-' + headerDividerNarrow + '-after'
             )}>
               {headerChildren}
@@ -422,6 +435,7 @@ export const LayoutTemplate = ({
           {hasFooter && <div className={clsx(
             layoutClassName + '-region',
             layoutClassName + '-footer',
+            hasFooterDivider && layoutClassName + '-footer--hasDivider',
             footerDividerNarrow && layoutClassName + '-region--dividerNarrow-' + footerDividerNarrow + '-before'
             )}>{footerChildren}</div>}
           </div>
