@@ -2143,10 +2143,10 @@
     focus-visible "5.2.0"
     styled-system "5.1.5"
 
-"@primer/gatsby-theme-doctocat@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@primer/gatsby-theme-doctocat/-/gatsby-theme-doctocat-3.0.1.tgz#ae8229e57d29d5d4c6f087ad59345c753d62caac"
-  integrity sha512-4a0BCF+ddBzNX9eT/WR389MNbSo4j2I4qjs4yz8AI9z9+ImlLxfZuIAAthqDzwHyYQ0IGtkgfHyvr3Zobsk2jg==
+"@primer/gatsby-theme-doctocat@3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@primer/gatsby-theme-doctocat/-/gatsby-theme-doctocat-3.1.1.tgz#66dfaaff71a5ac21f7d6c1b06fbecec8edb67034"
+  integrity sha512-TQxb9RcDQEVp9aEY69ZplrTVoiNys6xTP7fHWJ+brOStJDc4g5RjPirBy3l3zEal8BPZk7A5NdwHBp9/hu2Uyw==
   dependencies:
     "@babel/preset-env" "^7.5.5"
     "@babel/preset-react" "^7.0.0"
@@ -2491,16 +2491,16 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-links@^6.4.3":
-  version "6.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-6.4.3.tgz#733c933bfd4e34755f665574401d9b725cbd7653"
-  integrity sha512-yjDqulTder966NSis/N+Q+2nTnuUYYfHpvt2LHmf6oHhhkNdWzzzQ3if95BUC2SJMe/CvKlownq2Or64TlsFpg==
+"@storybook/addon-links@^6.4.9":
+  version "6.4.9"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-6.4.9.tgz#2d0a7f813dcef160feb357f6548bb1a7ba425d7d"
+  integrity sha512-xXFz/bmw67u4+zPVqJdiJkCtGrO2wAhcsLc4QSTc2+Xgkvkk7ulcRguiujAy5bfinhPa6U1vpJrrg5GFGV+trA==
   dependencies:
-    "@storybook/addons" "6.4.3"
-    "@storybook/client-logger" "6.4.3"
-    "@storybook/core-events" "6.4.3"
+    "@storybook/addons" "6.4.9"
+    "@storybook/client-logger" "6.4.9"
+    "@storybook/core-events" "6.4.9"
     "@storybook/csf" "0.0.2--canary.87bc651.0"
-    "@storybook/router" "6.4.3"
+    "@storybook/router" "6.4.9"
     "@types/qs" "^6.9.5"
     core-js "^3.8.2"
     global "^4.4.0"
@@ -17476,18 +17476,7 @@ sane@^4.0.3:
     minimist "^1.1.1"
     walker "~1.0.5"
 
-sass-loader@10.1.1:
-  version "10.1.1"
-  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-10.1.1.tgz#4ddd5a3d7638e7949065dd6e9c7c04037f7e663d"
-  integrity sha512-W6gVDXAd5hR/WHsPicvZdjAWHBcEJ44UahgxcIE196fW2ong0ZHMPO1kZuI5q0VlvMQZh32gpv69PLWQm70qrw==
-  dependencies:
-    klona "^2.0.4"
-    loader-utils "^2.0.0"
-    neo-async "^2.6.2"
-    schema-utils "^3.0.0"
-    semver "^7.3.2"
-
-sass-loader@^10.1.0:
+sass-loader@10.2.0, sass-loader@^10.1.0:
   version "10.2.0"
   resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-10.2.0.tgz#3d64c1590f911013b3fa48a0b22a83d5e1494716"
   integrity sha512-kUceLzC1gIHz0zNJPpqRsJyisWatGYNFRmv2CKZK2/ngMJgLqxTbXwe/hJ85luyvZkgqU3VlJ33UVF2T/0g6mw==
