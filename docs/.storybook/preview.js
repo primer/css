@@ -8,6 +8,13 @@ const customViewports = {
   minXS: {
     name: 'XS (min)',
     styles: {
+      width: '320px',
+      height: '100%'
+    }
+  },
+  medXS: {
+    name: 'XS (med)',
+    styles: {
       width: '375px',
       height: '100%'
     }
