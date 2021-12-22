@@ -34,20 +34,24 @@
   }
 
   // only hover li without list as children
-  &:not(.ActionList-item--hasSubItem) {
-    &:hover,
-    &:active {
-      &:not(.ActionList-item--navActive) {
-        outline: $border-style $border-width var(--color-action-list-item-default-hover-border);
-      }
-    }
+  &:not(.ActionList-item--hasSubItem),
+  // target contents of first child li if sub-item (li wraps item label + nested ul)
+  &.ActionList-item--hasSubItem > .ActionList-content {
     &:hover {
       cursor: pointer;
       background-color: var(--color-action-list-item-default-hover-bg);
+      &:not(.ActionList-item--navActive) {
+        outline: $border-style $border-width var(--color-action-list-item-default-hover-border);
+        outline-offset: -$border-width;
+      }
     }
 
     &:active {
       background: var(--color-action-list-item-default-active-bg);
+      &:not(.ActionList-item--navActive) {
+        outline: $border-style $border-width var(--color-action-list-item-default-active-border);
+        outline-offset: -$border-width;
+      }
 
       @media screen and (prefers-reduced-motion: no-preference) {
         animation: ActionList-item-active-bg 4s forwards cubic-bezier(0.33, 1, 0.68, 1);
@@ -77,18 +81,6 @@
       .ActionList-item-label::before,
       + .ActionList-item .ActionList-item-label::before {
         visibility: hidden;
-      }
-    }
-  }
-
-  // target contents of li if sub-item (li wraps item label + nested ul)
-  // collapse styles here
-  &.ActionList-item--hasSubItem {
-    // first child
-    > .ActionList-content {
-      &:hover {
-        background-color: var(--color-action-list-item-default-hover-bg);
-        outline: $border-style $border-width var(--color-action-list-item-default-hover-border);
       }
     }
   }
