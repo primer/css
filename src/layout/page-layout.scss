@@ -386,28 +386,30 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   position: absolute;
   top: 0;
   left: calc(var(--Layout-pane-width) - 8px);
+  z-index: 10;
   width: 16px;
   height: 100%;
   cursor: col-resize;
   opacity: 0;
-  z-index: 10;
 
-  &:after {
-    content: "";
+  &::after {
     position: absolute;
     top: 0;
     left: calc(50% - 1px);
     width: 2px;
     height: 100%;
+    content: '';
     background: var(--color-accent-fg);
   }
 
   &:hover {
     animation: resizer-appear 80ms 300ms both;
+
     @keyframes resizer-appear {
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
