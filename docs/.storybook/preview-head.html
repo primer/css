@@ -9,7 +9,7 @@
 
   .theme-wrap {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     height: 100vh;
   }
 
@@ -20,6 +20,10 @@
 
   .sb-main-padded .theme-wrap {
     margin: -1rem;
+  }
+
+  .sb-main-fullscreen .theme-wrap .story-wrap {
+    padding: 0;
   }
 
   .sb-main-padded div:not(.theme-wrap) > [data-dark-theme] {
