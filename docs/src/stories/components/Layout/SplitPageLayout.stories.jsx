@@ -46,6 +46,20 @@ export default {
         category: 'Pane'
       }
     },
+    paneIsSticky: {
+      control: { type: 'boolean' },
+      description: 'Whether to make the pane sticky.',
+      table: {
+        category: 'Pane'
+      }
+    },
+    paneIsResizable: {
+      control: 'boolean',
+      description: 'Defines whether the pane width can be resized.',
+      table: {
+        category: 'Pane'
+      }
+    },
 
     // Content
 
@@ -83,6 +97,7 @@ export const SplitPageLayoutTemplate = ({
   primaryRegion,
   paneWidth,
   paneIsSticky,
+  paneIsResizable,
   contentWidth,
   contentChildren,
   paneChildren
@@ -102,6 +117,7 @@ export const SplitPageLayoutTemplate = ({
 
         paneWidth={paneWidth}
         paneIsSticky={paneIsSticky}
+        paneIsResizable={paneIsResizable}
         panePosition='start'
         hasPaneDivider={true}
         contentWidth={contentWidth}
@@ -133,6 +149,8 @@ Playground.args = {
 
   // Pane
   paneWidth: 'wide',
+  paneIsSticky: true,
+  paneIsResizable: false,
 
   // Content
   contentWidth: 'fluid',

@@ -97,7 +97,7 @@ export default {
     paneWidth: {
       options: ['default', 'narrow', 'wide'],
       control: {
-      type: 'inline-radio'
+        type: 'inline-radio'
       },
       description: 'Defines the width of the pane',
       table: {
@@ -144,6 +144,13 @@ export default {
     paneIsSticky: {
       control: { type: 'boolean' },
       description: 'Whether to make the pane sticky.',
+      table: {
+        category: 'Pane'
+      }
+    },
+    paneIsResizable: {
+      control: 'boolean',
+      description: 'Defines whether the pane width can be resized. Requires `paneDivider` to be set to `true`.',
       table: {
         category: 'Pane'
       }
@@ -273,6 +280,7 @@ export const LayoutTemplate = ({
   hasPaneDivider,
   paneDividerNarrow,
   paneIsSticky,
+  paneIsResizable,
 
   // Header
   hasHeader,
@@ -388,6 +396,10 @@ export const LayoutTemplate = ({
           <div className={clsx(
             layoutClassName + '-columns'
           )}>
+            
+            {paneIsResizable &&
+              <div className={clsx(layoutClassName + '-resizer')}></div>
+            }
 
             {/* pane if rendered first */}
             {panePosition === 'start' &&

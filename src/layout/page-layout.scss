@@ -276,6 +276,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 }
 
 .PageLayout-columns {
+  position: relative;
   display: grid;
   column-gap: var(--Layout-column-gap);
   row-gap: var(--Layout-row-gap);
@@ -377,4 +378,39 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
 .PageLayout-pane {
   grid-area: pane;
+}
+
+// resizable pane
+
+.PageLayout-resizer {
+  position: absolute;
+  top: 0;
+  left: calc(var(--Layout-pane-width) - 8px);
+  width: 16px;
+  height: 100%;
+  cursor: col-resize;
+  opacity: 0;
+  z-index: 10;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(50% - 1px);
+    width: 2px;
+    height: 100%;
+    background: var(--color-accent-fg);
+  }
+
+  &:hover {
+    animation: resizer-appear 80ms 300ms both;
+    @keyframes resizer-appear {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
 }
