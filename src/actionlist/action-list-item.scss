@@ -53,7 +53,7 @@
 
       // stylelint-disable-next-line selector-max-specificity
       &:not(.ActionList-item--navActive) {
-        outline: $border-style $border-width var(--color-action-list-item-default-active-border);
+        box-shadow: inset 0 0 0 $border-width var(--color-action-list-item-default-active-border);
         outline-offset: -$border-width;
       }
 
