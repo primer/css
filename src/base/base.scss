@@ -130,3 +130,10 @@ select {
     outline-offset: 0;
   }
 }
+
+// Windows High Contrast mode
+@media (forced-colors: active) {
+  *:focus {
+    outline: solid 1px transparent;
+  }
+}
