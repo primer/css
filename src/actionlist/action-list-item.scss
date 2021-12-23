@@ -67,7 +67,6 @@
         animation: ActionList-item-active-bg 4s forwards cubic-bezier(0.33, 1, 0.68, 1);
       }
 
-      // stylelint-disable primer/box-shadow
       @keyframes ActionList-item-active-bg {
         // stylelint-disable-next-line max-nesting-depth, selector-max-specificity
         50% {
