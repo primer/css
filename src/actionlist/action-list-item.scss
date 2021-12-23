@@ -56,7 +56,7 @@
 
       // stylelint-disable-next-line selector-max-specificity
       &:not(.ActionList-item--navActive) {
-        // Support for "Windows high contrast mode"
+        // Support for "Windows high contrast mode" https://sarahmhigley.com/writing/whcm-quick-tips/
         outline: $border-style $border-width transparent;
         outline-offset: -$border-width;
         // stylelint-disable-next-line primer/box-shadow
