@@ -65,3 +65,5 @@ You can find docs about our release process in [RELEASING.md](RELEASING.md).
 [npm]: https://www.npmjs.com/
 [primer]: https://primer.style/
 [sass]: http://sass-lang.com/
+
+Locked
