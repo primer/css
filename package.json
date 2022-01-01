@@ -43,7 +43,7 @@
     "@github/prettier-config": "0.0.4",
     "@koddsson/postcss-sass": "5.0.0",
     "@primer/stylelint-config": "12.2.0",
-    "autoprefixer": "10.4.0",
+    "autoprefixer": "10.4.1",
     "cssstats": "4.0.2",
     "eslint": "8.5.0",
     "eslint-plugin-github": "4.3.5",
