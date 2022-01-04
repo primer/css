@@ -11,7 +11,7 @@
     "build-storybook": "./script/build-storybook.sh"
   },
   "dependencies": {
-    "@babel/preset-react": "^7.16.5",
+    "@babel/preset-react": "^7.16.7",
     "@koddsson/postcss-sass": "5.0.0",
     "@primer/components": "32.1.0",
     "@primer/gatsby-theme-doctocat": "3.1.1",
@@ -35,7 +35,7 @@
     "postcss-loader": "4.3.0",
     "postcss-scss": "4.0.2",
     "postcss-simple-vars": "6.0.3",
-    "prop-types": "^15.7.2",
+    "prop-types": "^15.8.0",
     "raw-loader": "^4.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
