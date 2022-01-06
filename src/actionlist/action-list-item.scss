@@ -98,6 +98,10 @@
     &:not(.ActionList-item--danger) {
       background: var(--color-action-list-item-default-selected-bg);
 
+      &:hover {
+        background-color: var(--color-action-list-item-default-hover-bg);
+      }
+
       // stylelint-disable-next-line selector-max-specificity
       &::before,
       + .ActionList-item::before {
@@ -117,6 +121,12 @@
   // target items inside expanded subgroups
   &[aria-expanded] {
     .ActionList--subGroup {
+      transition: opacity 160ms cubic-bezier(0.25, 1, 0.5, 1), transform 160ms cubic-bezier(0.25, 1, 0.5, 1);
+
+      @media (prefers-reduced-motion) {
+        transition: none;
+      }
+
       .ActionList-content {
         padding-left: $spacer-4;
       }
@@ -154,7 +164,11 @@
     }
 
     .ActionList--subGroup {
-      display: block;
+      visibility: visible;
+      overflow: auto;
+      height: auto;
+      opacity: 1;
+      transform: translateY(0);
     }
 
     &.ActionList-item--hasActiveSubItem {
@@ -172,7 +186,12 @@
     }
 
     .ActionList--subGroup {
-      display: none;
+      display: block;
+      visibility: hidden;
+      overflow: hidden;
+      height: 0;
+      opacity: 0;
+      transform: translateY(-$spacer-3);
     }
 
     // show active indicator on parent collapse if child is active
