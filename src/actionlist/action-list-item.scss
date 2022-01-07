@@ -22,6 +22,8 @@
   list-style: none;
   background-color: transparent;
   border-radius: $border-radius;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover,
   &:active {
@@ -35,9 +37,11 @@
 
   // only hover li without list as children
   &:not(.ActionList-item--hasSubItem) {
-    &:hover {
-      cursor: pointer;
-      background-color: var(--color-action-list-item-default-hover-bg);
+    @media (hover: hover) {
+      &:hover {
+        cursor: pointer;
+        background-color: var(--color-action-list-item-default-hover-bg);
+      }
     }
 
     &:active {
@@ -63,10 +67,20 @@
       }
       // stylelint-enable primer/box-shadow
     }
+    
+    // hide dividers
 
-    &:hover,
+    @media (hover: hover) {
+      &:hover {
+        // stylelint-disable-next-line selector-max-specificity
+        .ActionList-item-label::before,
+        + .ActionList-item .ActionList-item-label::before {
+          visibility: hidden;
+        }
+      }
+    }
+
     &:active {
-      // hide dividers
       // stylelint-disable-next-line selector-max-specificity
       .ActionList-item-label::before,
       + .ActionList-item .ActionList-item-label::before {
@@ -80,8 +94,13 @@
   &.ActionList-item--hasSubItem {
     // first child
     > .ActionList-content {
-      &:hover {
-        background-color: var(--color-action-list-item-default-hover-bg);
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--color-action-list-item-default-hover-bg);
+        }
+      }
+      &:active {
+        background-color: var(--color-action-list-item-default-active-bg);
       }
     }
   }
@@ -98,8 +117,10 @@
     &:not(.ActionList-item--danger) {
       background: var(--color-action-list-item-default-selected-bg);
 
-      &:hover {
-        background-color: var(--color-action-list-item-default-hover-bg);
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--color-action-list-item-default-hover-bg);
+        }
       }
 
       // stylelint-disable-next-line selector-max-specificity
@@ -121,10 +142,8 @@
   // target items inside expanded subgroups
   &[aria-expanded] {
     .ActionList--subGroup {
-      transition: opacity 160ms cubic-bezier(0.25, 1, 0.5, 1), transform 160ms cubic-bezier(0.25, 1, 0.5, 1);
-
-      @media (prefers-reduced-motion) {
-        transition: none;
+      @media screen and (prefers-reduced-motion: no-preference) {
+        transition: opacity 160ms cubic-bezier(0.25, 1, 0.5, 1), transform 160ms cubic-bezier(0.25, 1, 0.5, 1);
       }
 
       .ActionList-content {
@@ -319,7 +338,7 @@
       color: var(--color-danger-fg);
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @media (hover: hover) {
       &:hover {
         background: var(--color-action-list-item-danger-hover-bg);
 
@@ -346,7 +365,7 @@
       fill: var(--color-primer-fg-disabled);
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @media (hover: hover) {
       &:hover {
         cursor: not-allowed;
         background-color: transparent;
@@ -371,6 +390,7 @@
   font-weight: $font-weight-normal;
   color: var(--color-fg-default);
   user-select: none;
+  touch-action: manipulation;
   border-radius: $border-radius;
   transition: $actionList-item-bg-transition;
   grid-template-rows: min-content;
