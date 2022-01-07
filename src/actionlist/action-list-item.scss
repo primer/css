@@ -94,6 +94,8 @@
   &.ActionList-item--hasSubItem {
     // first child
     > .ActionList-content {
+      z-index: 1;
+
       @media (hover: hover) {
         &:hover {
           background-color: var(--color-action-list-item-default-hover-bg);
