@@ -43,11 +43,11 @@
     "@github/prettier-config": "0.0.4",
     "@koddsson/postcss-sass": "5.0.0",
     "@primer/stylelint-config": "12.2.0",
-    "autoprefixer": "10.4.0",
+    "autoprefixer": "10.4.1",
     "cssstats": "4.0.2",
-    "eslint": "8.5.0",
+    "eslint": "8.6.0",
     "eslint-plugin-github": "4.3.5",
-    "eslint-plugin-jest": "25.3.0",
+    "eslint-plugin-jest": "25.3.3",
     "eslint-plugin-prettier": "4.0.0",
     "filesize": "8.0.6",
     "front-matter": "4.0.2",
@@ -63,7 +63,7 @@
     "postcss-simple-vars": "6.0.3",
     "prettier": "2.5.1",
     "semver": "7.3.5",
-    "stylelint": "14.1.0",
+    "stylelint": "14.2.0",
     "table": "6.7.5"
   },
   "jest": {
