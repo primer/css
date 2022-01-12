@@ -14,7 +14,7 @@ export default {
       mapping: [null, 'Link--primary', 'Link--secondary', 'Link--muted', 'Link--onHover'], // values
       control: {
         type: 'select',
-        labels: ['default', 'primary', 'secondar', 'muted', 'onHover', 'invisible', 'close', 'with-count']
+        labels: ['default', 'primary', 'secondary', 'muted', 'onHover', 'invisible', 'close', 'with-count']
       },
       table: {
         category: 'CSS'
