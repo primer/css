@@ -1,3 +1,5 @@
+// stylelint-disable max-nesting-depth, selector-max-specificity
+
 @mixin focusOutline {
   position: relative;
   z-index: 1;
@@ -22,6 +24,8 @@
   list-style: none;
   background-color: transparent;
   border-radius: $border-radius;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover,
   &:active {
@@ -35,9 +39,11 @@
 
   // only hover li without list as children
   &:not(.ActionList-item--hasSubItem) {
-    &:hover {
-      cursor: pointer;
-      background-color: var(--color-action-list-item-default-hover-bg);
+    @media (hover: hover) {
+      &:hover {
+        cursor: pointer;
+        background-color: var(--color-action-list-item-default-hover-bg);
+      }
     }
 
     &:active {
@@ -49,13 +55,11 @@
 
       // stylelint-disable primer/box-shadow
       @keyframes ActionList-item-active-bg {
-        // stylelint-disable-next-line max-nesting-depth
         50% {
           box-shadow: inset 0 0 0 rgba(#000, 0.04);
           transform: scale(1);
         }
 
-        // stylelint-disable-next-line max-nesting-depth
         100% {
           box-shadow: inset 0 3px 9px rgba(#000, 0.04);
           transform: scale(0.97);
@@ -64,10 +68,18 @@
       // stylelint-enable primer/box-shadow
     }
 
-    &:hover,
+    // hide dividers
+
+    @media (hover: hover) {
+      &:hover {
+        .ActionList-item-label::before,
+        + .ActionList-item .ActionList-item-label::before {
+          visibility: hidden;
+        }
+      }
+    }
+    // stylelint-disable-next-line no-duplicate-selectors
     &:active {
-      // hide dividers
-      // stylelint-disable-next-line selector-max-specificity
       .ActionList-item-label::before,
       + .ActionList-item .ActionList-item-label::before {
         visibility: hidden;
@@ -80,8 +92,16 @@
   &.ActionList-item--hasSubItem {
     // first child
     > .ActionList-content {
-      &:hover {
-        background-color: var(--color-action-list-item-default-hover-bg);
+      z-index: 1;
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--color-action-list-item-default-hover-bg);
+        }
+      }
+
+      &:active {
+        background-color: var(--color-action-list-item-default-active-bg);
       }
     }
   }
@@ -98,7 +118,12 @@
     &:not(.ActionList-item--danger) {
       background: var(--color-action-list-item-default-selected-bg);
 
-      // stylelint-disable-next-line selector-max-specificity
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--color-action-list-item-default-hover-bg);
+        }
+      }
+
       &::before,
       + .ActionList-item::before {
         visibility: hidden;
@@ -117,6 +142,10 @@
   // target items inside expanded subgroups
   &[aria-expanded] {
     .ActionList--subGroup {
+      @media screen and (prefers-reduced-motion: no-preference) {
+        transition: opacity 160ms cubic-bezier(0.25, 1, 0.5, 1), transform 160ms cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
       .ActionList-content {
         padding-left: $spacer-4;
       }
@@ -124,7 +153,7 @@
 
     // has 16px leading visual
     .ActionList-content--visual16 + .ActionList--subGroup {
-      // stylelint-disable-next-line selector-max-compound-selectors, selector-max-specificity
+      // stylelint-disable-next-line selector-max-compound-selectors
       .ActionList-content {
         padding-left: $spacer-5;
       }
@@ -132,7 +161,7 @@
 
     // has 20px leading visual
     .ActionList-content--visual20 + .ActionList--subGroup {
-      // stylelint-disable-next-line selector-max-compound-selectors, selector-max-specificity
+      // stylelint-disable-next-line selector-max-compound-selectors
       .ActionList-content {
         padding-left: $spacer-2 * 4.5; // 36px
       }
@@ -140,7 +169,7 @@
 
     // has 24px leading visual
     .ActionList-content--visual24 + .ActionList--subGroup {
-      // stylelint-disable-next-line selector-max-compound-selectors, selector-max-specificity
+      // stylelint-disable-next-line selector-max-compound-selectors
       .ActionList-content {
         padding-left: $spacer-6;
       }
@@ -154,11 +183,14 @@
     }
 
     .ActionList--subGroup {
-      display: block;
+      height: auto;
+      overflow: visible;
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
     }
 
     &.ActionList-item--hasActiveSubItem {
-      // stylelint-disable-next-line selector-max-specificity
       > .ActionList-content > .ActionList-item-label {
         font-weight: $font-weight-bold;
       }
@@ -172,7 +204,11 @@
     }
 
     .ActionList--subGroup {
-      display: none;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-$spacer-3);
     }
 
     // show active indicator on parent collapse if child is active
@@ -183,7 +219,6 @@
         font-weight: $font-weight-bold;
       }
 
-      // stylelint-disable-next-line selector-max-specificity
       &::before,
       + .ActionList-item::before {
         visibility: hidden;
@@ -300,11 +335,10 @@
       color: var(--color-danger-fg);
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @media (hover: hover) {
       &:hover {
         background: var(--color-action-list-item-danger-hover-bg);
 
-        // stylelint-disable-next-line max-nesting-depth
         .ActionList-item-label {
           color: var(--color-action-list-item-danger-hover-text);
         }
@@ -327,7 +361,7 @@
       fill: var(--color-primer-fg-disabled);
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @media (hover: hover) {
       &:hover {
         cursor: not-allowed;
         background-color: transparent;
@@ -352,6 +386,7 @@
   font-weight: $font-weight-normal;
   color: var(--color-fg-default);
   user-select: none;
+  touch-action: manipulation;
   border-radius: $border-radius;
   transition: $actionList-item-bg-transition;
   grid-template-rows: min-content;
