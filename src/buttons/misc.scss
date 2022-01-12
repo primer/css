@@ -55,7 +55,7 @@
     color: var(--color-accent-fg);
     background: none;
     border-color: var(--color-btn-active-border);
-    // this might be wrong here, test
+
     @include focusOutline;
   }
 

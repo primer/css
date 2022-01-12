@@ -31,6 +31,10 @@
   > summary::-webkit-details-marker {
     display: none;
   }
+
+  &:focus {
+    @include focusOutline;
+  }
 }
 
 .details-overlay > summary {
