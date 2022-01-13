@@ -7,7 +7,7 @@ export default {
     layout: 'padded'
   },
 
-  excludeStories: ['ButtonTemplate'],
+  excludeStories: ['MarketingButtonTemplate'],
   argTypes: {
     variant: {
       options: [0, 1, 2, 3], // iterator
@@ -77,7 +77,7 @@ const focusMethod = function getFocus() {
   button.focus()
 }
 
-export const ButtonTemplate = ({label, variant, disabled, size, animated, focusElement, focusAllElements}) => (
+export const MarketingButtonTemplate = ({label, variant, disabled, size, animated, focusElement, focusAllElements}) => (
   <>
     <button
       disabled={disabled}
@@ -111,7 +111,7 @@ export const ButtonTemplate = ({label, variant, disabled, size, animated, focusE
   </>
 )
 
-export const Playground = ButtonTemplate.bind({})
+export const Playground = MarketingButtonTemplate.bind({})
 Playground.args = {
   animated: false,
   focusElement: false,

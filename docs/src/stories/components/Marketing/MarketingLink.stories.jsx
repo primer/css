@@ -7,7 +7,7 @@ export default {
     layout: 'padded'
   },
 
-  excludeStories: ['LinkTemplate'],
+  excludeStories: ['MarketingLinkTemplate'],
   argTypes: {
     size: {
       options: [0, 1], // iterator
@@ -67,7 +67,7 @@ const focusMethod = function getFocus() {
   link.focus()
 }
 
-export const LinkTemplate = ({label, emphasis, href, size, focusElement, focusAllElements}) => (
+export const MarketingLinkTemplate = ({label, emphasis, href, size, focusElement, focusAllElements}) => (
   <>
     <a
       href={href}
@@ -98,7 +98,7 @@ export const LinkTemplate = ({label, emphasis, href, size, focusElement, focusAl
   </>
 )
 
-export const Playground = LinkTemplate.bind({})
+export const Playground = MarketingLinkTemplate.bind({})
 Playground.args = {
   label: 'Link label',
   href: '/',
