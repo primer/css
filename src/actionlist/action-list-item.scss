@@ -73,8 +73,7 @@
 
       @keyframes ActionList-item-active-bg {
         50% {
-          // this could work if primitive supported rgb (not valid right now)
-          // box-shadow: inset 0px 2px 12px 6px rgba(var(--color-canvas-default), 0.4), inset 0px 0px 0px 2px var(--color-action-list-item-default-active-border)
+          box-shadow: inset 0px 2px 12px 6px rgba(var(--color-canvas-default), 0.4);
           transform: scale(1);
         }
 
@@ -285,8 +284,7 @@
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition:
-        visibility 0 linear $actionList-item-checkmark-transition-timing,
+      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 
