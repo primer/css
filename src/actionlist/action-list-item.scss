@@ -1,4 +1,4 @@
-// stylelint-disable max-nesting-depth, selector-max-specificity
+// stylelint-disable max-nesting-depth, selector-max-specificity, selector-max-compound-selectors
 
 @mixin focusOutline {
   position: relative;
@@ -38,18 +38,27 @@
   }
 
   // only hover li without list as children
-  &:not(.ActionList-item--hasSubItem) {
+  &:not(.ActionList-item--hasSubItem),
+  // target contents of first child li if sub-item (li wraps item label + nested ul)
+  &.ActionList-item--hasSubItem > .ActionList-content {
     @media (hover: hover) {
       &:hover {
         cursor: pointer;
         background-color: var(--color-action-list-item-default-hover-bg);
+
+        &:not(.ActionList-item--navActive) {
+          // Support for "Windows high contrast mode"
+          outline: $border-style $border-width transparent;
+          outline-offset: -$border-width;
+          // stylelint-disable-next-line primer/box-shadow
+          box-shadow: inset 0 0 0 2px var(--color-action-list-item-default-active-border);
+        }
       }
     }
 
     &:active {
       background: var(--color-action-list-item-default-active-bg);
 
-      // stylelint-disable-next-line selector-max-specificity
       &:not(.ActionList-item--navActive) {
         // Support for "Windows high contrast mode" https://sarahmhigley.com/writing/whcm-quick-tips/
         outline: $border-style $border-width transparent;
@@ -73,7 +82,6 @@
           transform: scale(0.97);
         }
       }
-      // stylelint-enable primer/box-shadow
     }
 
     // hide dividers
@@ -161,7 +169,6 @@
 
     // has 16px leading visual
     .ActionList-content--visual16 + .ActionList--subGroup {
-      // stylelint-disable-next-line selector-max-compound-selectors
       .ActionList-content {
         padding-left: $spacer-5;
       }
@@ -169,7 +176,6 @@
 
     // has 20px leading visual
     .ActionList-content--visual20 + .ActionList--subGroup {
-      // stylelint-disable-next-line selector-max-compound-selectors
       .ActionList-content {
         padding-left: $spacer-2 * 4.5; // 36px
       }
@@ -177,7 +183,6 @@
 
     // has 24px leading visual
     .ActionList-content--visual24 + .ActionList--subGroup {
-      // stylelint-disable-next-line selector-max-compound-selectors
       .ActionList-content {
         padding-left: $spacer-6;
       }
@@ -280,7 +285,8 @@
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
+      transition:
+        visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 
