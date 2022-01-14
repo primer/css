@@ -22,6 +22,20 @@
   // Remove marker added by the display: list-item browser default
   > summary {
     list-style: none;
+    // fallback :focus state
+    &:focus {
+      @include focusOutline;
+
+      // remove fallback :focus if :focus-visible is supported
+      &:not(:focus-visible) {
+        outline: solid 1px transparent;
+      }
+    }
+
+    // default focus state
+    &:focus-visible {
+      @include focusOutline;
+    }
   }
   // Remove marker added by details polyfill
   > summary::before {
@@ -31,14 +45,21 @@
   > summary::-webkit-details-marker {
     display: none;
   }
-
-  &:focus {
-    @include focusOutline;
-  }
 }
 
 .details-overlay > summary {
+  // fallback :focus state
   &:focus {
+    @include focusOutline;
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      outline: solid 1px transparent;
+    }
+  }
+
+  // default focus state
+  &:focus-visible {
     @include focusOutline;
   }
 }
