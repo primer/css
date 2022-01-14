@@ -24,6 +24,7 @@
   ],
   "scripts": {
     "dist": "script/dist.js",
+    "dist:watch": "chokidar \"src/**/*.scss\" -c \"script/dist.js\"",
     "stylelint": "stylelint --quiet 'src/**/*.scss'",
     "eslint": "eslint deprecations.js __tests__ script",
     "prepublishOnly": "script/prepublish",
@@ -44,6 +45,7 @@
     "@koddsson/postcss-sass": "5.0.0",
     "@primer/stylelint-config": "12.2.0",
     "autoprefixer": "10.4.1",
+    "chokidar-cli": "3.0.0",
     "cssstats": "4.0.2",
     "eslint": "8.6.0",
     "eslint-plugin-github": "4.3.5",
