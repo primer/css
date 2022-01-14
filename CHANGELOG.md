@@ -1,5 +1,21 @@
 # @primer/css
 
+## 19.2.0
+
+### Minor Changes
+
+- [#1737](https://github.com/primer/css/pull/1737) [`6b4089d8`](https://github.com/primer/css/commit/6b4089d8b37174ca061762c56b5e4134a54cf4ef) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Adds new PageLayout component CSS with Storybook documentation
+
+### Patch Changes
+
+- [#1855](https://github.com/primer/css/pull/1855) [`8f2e7534`](https://github.com/primer/css/commit/8f2e7534ecbdb3d0e773d60c725b55dc4bb263e2) Thanks [@simurai](https://github.com/simurai)! - Bump primer/primitives to `7.4.0`
+
+* [#1869](https://github.com/primer/css/pull/1869) [`868f61a1`](https://github.com/primer/css/commit/868f61a199df14862922d52905de66cdb1e1c192) Thanks [@jdanyow](https://github.com/jdanyow)! - Minor bugfix for AvatarStack. Removing the box-shadow from the AvatarStack-body on hover.
+
+- [#1856](https://github.com/primer/css/pull/1856) [`cbe3fb56`](https://github.com/primer/css/commit/cbe3fb56e4c7ee6bfe803eb0c15e15ab95d84157) Thanks [@langermank](https://github.com/langermank)! - ActionList item outlines for high contrast theme
+
+* [#1870](https://github.com/primer/css/pull/1870) [`815daff9`](https://github.com/primer/css/commit/815daff9f07d8096d572cf75bee17284f36492f6) Thanks [@vdepizzol](https://github.com/vdepizzol)! - [ActionList] Add hover to `aria-current` elements and other micro interactions
+
 ## 19.1.1
 
 ### Patch Changes
