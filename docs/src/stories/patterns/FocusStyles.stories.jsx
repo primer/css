@@ -38,14 +38,14 @@ export const FocusStyles = ({}) => (
       <InputTemplate label="input" type="text" />
       <SelectTemplate label="select" />
       <TextareaTemplate label="textarea" />
-      <LinkTemplate label="Link" />
+      <LinkTemplate label="Link" href="/" />
       <MarketingButtonTemplate label="Marketing Button" />
-      <MarketingLinkTemplate label="Marketing Link" />
+      <MarketingLinkTemplate label="Marketing Link" href="/" />
     </div>
     <div>
       <TabNavTemplate>
         <TabNavItemTemplate text="First tab" ariaCurrent="location" href="#url" />
-        <TabNavItemTemplate text="Second tab" />
+        <TabNavItemTemplate text="Second tab" href="#url" />
       </TabNavTemplate>
     </div>
   </div>
