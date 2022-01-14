@@ -135,5 +135,6 @@ select {
 @media (forced-colors: active) {
   *:focus {
     outline: solid 1px transparent;
+    outline-offset: 2px;
   }
 }
