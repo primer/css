@@ -133,8 +133,17 @@ select {
 
 // Windows High Contrast mode
 @media (forced-colors: active) {
-  *:focus {
+  *:focus,
+  *:focus-visible {
     outline: solid 1px transparent;
-    outline-offset: 2px;
+  }
+
+  input:not([type='radio'], [type='checkbox']),
+  textarea,
+  select {
+    &:focus,
+    &:focus-visible {
+      outline-offset: 2px;
+    }
   }
 }
