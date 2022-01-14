@@ -28,8 +28,6 @@
 // global focus styles
 
 @mixin focusOutline {
-  position: relative;
-  z-index: 1;
   outline: 2px solid var(--color-accent-fg);
   outline-offset: 2px;
 }
