@@ -2,14 +2,11 @@
 import React from 'react'
 import clsx from 'clsx'
 import {LayoutTemplate} from './LayoutBeta.stories'
-import {NavWithSubItems} from '../ActionList/ActionListPatterns.stories'
-
 
 export default {
   title: 'Components/Layout/Beta/SplitPageLayout',
   excludeStories: ['SplitPageLayoutTemplate'],
   argTypes: {
-
     // Structure
 
     innerSpacing: {
@@ -17,7 +14,8 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: 'Sets padding to regions individually. `normal` sets padding to 16px, with the `content` region getting 24px horizontal padding on `lg` breakpoints and above. `condensed` keeps the padding always at `16px`.',
+      description:
+        'Sets padding to regions individually. `normal` sets padding to 16px, with the `content` region getting 24px horizontal padding on `lg` breakpoints and above. `condensed` keeps the padding always at `16px`.',
       table: {
         category: 'Structure'
       }
@@ -39,7 +37,7 @@ export default {
     paneWidth: {
       options: ['default', 'narrow', 'wide'],
       control: {
-      type: 'inline-radio'
+        type: 'inline-radio'
       },
       description: 'Defines the width of the pane.',
       table: {
@@ -54,7 +52,8 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: 'Defines the maximum width of the content region. `fluid` sets it to full-width. Other values follow container widths from `sm` to `xl`. With smaller widths, the content region will try to stay centered to the viewport area.',
+      description:
+        'Defines the maximum width of the content region. `fluid` sets it to full-width. Other values follow container widths from `sm` to `xl`. With smaller widths, the content region will try to stay centered to the viewport area.',
       table: {
         category: 'Content'
       }
@@ -75,7 +74,7 @@ export default {
       }
     }
   }
-};
+}
 
 export const SplitPageLayoutTemplate = ({
   _debug,
@@ -91,37 +90,32 @@ export const SplitPageLayoutTemplate = ({
     <>
       <LayoutTemplate
         _debug={_debug}
-        wrapperSizing='full'
-        outerSpacing='none'
+        wrapperSizing="full"
+        outerSpacing="none"
         innerSpacing={innerSpacing}
-        columnGap='none'
-        rowGap='none'
-
-        responsiveVariant='separateRegions'
+        columnGap="none"
+        rowGap="none"
+        responsiveVariant="separateRegions"
         primaryRegion={primaryRegion}
-
         paneWidth={paneWidth}
         paneIsSticky={paneIsSticky}
-        panePosition='start'
+        panePosition="start"
         hasPaneDivider={true}
         contentWidth={contentWidth}
-
         hasHeader={false}
-
         hasFooter={false}
-
         contentChildren={contentChildren}
         paneChildren={paneChildren}
       />
     </>
-  );
-};
+  )
+}
 
-export const Playground = SplitPageLayoutTemplate.bind({});
-Playground.storyName = 'Playground';
+export const Playground = SplitPageLayoutTemplate.bind({})
+Playground.storyName = 'Playground'
 Playground.parameters = {
-  layout: 'fullscreen',
-};
+  layout: 'fullscreen'
+}
 Playground.args = {
   _debug: true,
 
@@ -140,4 +134,4 @@ Playground.args = {
   // Children
   contentChildren: 'content',
   paneChildren: 'pane'
-};
+}
