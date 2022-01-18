@@ -265,6 +265,10 @@ bundle: markdown
       </tr>
     </tbody>
   </table>
+  
+  <hr />
+  
+  <p>The <code>&lt;samp&gt;</code> HTML element is used to enclose inline text which represents sample (or quoted) output from a computer program. Here an example of an error message: <samp>File not found</samp></p>
 
   <hr />
 
@@ -455,6 +459,10 @@ Inline code inside table cells should still be distinguishable.
 |-------------|--------------------|
 | Javascript  | `var foo = "bar";` |
 | Ruby        | `foo = "bar"`      |
+
+----------------
+
+The `<samp>` HTML element is used to enclose inline text which represents sample (or quoted) output from a computer program. Here an example of an error message: <samp>File not found</samp>
 
 ----------------
 
