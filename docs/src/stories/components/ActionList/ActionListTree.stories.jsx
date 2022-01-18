@@ -4,7 +4,7 @@ import {ListTemplate} from './ActionList.stories'
 import {ListItemTemplate} from './ActionListItem.stories'
 
 export default {
-  title: 'Components/ActionList/TreeView',
+  title: 'Components/ActionList/ActionTreeView',
   excludeStories: ['ActionListTreeViewTemplate'],
   layout: 'padded',
   argTypes: {
@@ -21,6 +21,22 @@ export default {
       table: {
         category: 'Interactive'
       }
+    },
+    text: {
+      defaultValue: '',
+      type: 'string',
+      name: 'title',
+      description: 'string',
+      table: {
+        category: 'HTML'
+      }
+    },
+    truncateItem: {
+      defaultValue: false,
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
     }
   }
 }
@@ -31,74 +47,20 @@ const file = `<svg aria-hidden="true" role="img" class="octicon octicon-file" vi
 
 const trailingVisual = `<svg aria-hidden="true" role="img" class="color-fg-attention" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;overflow:visible"><path fill-rule="evenodd" d="M2.75 2.5h10.5a.25.25 0 01.25.25v10.5a.25.25 0 01-.25.25H2.75a.25.25 0 01-.25-.25V2.75a.25.25 0 01.25-.25zM13.25 1H2.75A1.75 1.75 0 001 2.75v10.5c0 .966.784 1.75 1.75 1.75h10.5A1.75 1.75 0 0015 13.25V2.75A1.75 1.75 0 0013.25 1zM8 10a2 2 0 100-4 2 2 0 000 4z"></path></svg>`
 
-export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => (
+export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon, text, truncateItem}) => (
   <ListTemplate ariaLabel="Some description" role="tree" variant="ActionList--tree">
     <>
-      <ListItemTemplate
-        ariaLevel="1"
-        ariaSetSize="2"
-        ariaPosInset="1"
-        treeitem
-        containsSubItem
-        text="pages"
-        collapsibleLeading
-        leadingVisual={showGroupIcon && folder}
-        children={
-          <ListTemplate
-            role="group"
-            containsSubItem
-            subGroup
-            ariaLabel="Sub nav descrioption"
-            children={
-              <>
-                <ListItemTemplate
-                  ariaLevel="2"
-                  ariaSetSize="3"
-                  ariaPosInset="1"
-                  subItem
-                  treeitem
-                  text="file.tsx"
-                  href="/"
-                  leadingVisual={showSubItemIcon && file}
-                  trailingVisual={trailingVisual}
-                />
-                <ListItemTemplate
-                  treeitem
-                  ariaLevel="2"
-                  ariaSetSize="3"
-                  ariaPosInset="2"
-                  subItem
-                  text="file.tsx"
-                  href="/"
-                  leadingVisual={showSubItemIcon && file}
-                  trailingVisual={trailingVisual}
-                />
-                <ListItemTemplate
-                  treeitem
-                  ariaLevel="2"
-                  ariaSetSize="3"
-                  ariaPosInset="3"
-                  truncateItem
-                  subItem
-                  text="filewithreallylongnamewhoaaaaaaohmy.tsx"
-                  href="/"
-                  leadingVisual={showSubItemIcon && file}
-                  trailingVisual={trailingVisual}
-                />
-              </>
-            }
-          />
-        }
-      />
       <ListItemTemplate
         ariaLevel="1"
         ariaSetSize="2"
         ariaPosInset="2"
         treeitem
         containsSubItem
-        text="public"
+        text="level 1"
         collapsibleLeading
         leadingVisual={showGroupIcon && folder}
+        href=""
+        truncateItem={truncateItem}
         children={
           <ListTemplate
             role="group"
@@ -108,17 +70,19 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
             children={
               <>
                 <ListItemTemplate
+                  truncateItem={truncateItem}
                   ariaLevel="2"
                   ariaSetSize="2"
                   ariaPosInset="1"
                   treeitem
                   subItem
-                  text="file.tsx"
-                  href="/"
+                  text={text}
+                  href=""
                   leadingVisual={showSubItemIcon && file}
                   trailingVisual={trailingVisual}
                 />
                 <ListItemTemplate
+                  truncateItem={truncateItem}
                   ariaLevel="2"
                   ariaSetSize="2"
                   ariaPosInset="2"
@@ -126,8 +90,8 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                   subItem
                   containsSubItem
                   collapsibleLeading
-                  text="fonts"
-                  href="/"
+                  text="level 2"
+                  href=""
                   leadingVisual={showGroupIcon && folder}
                   trailingVisual={trailingVisual}
                   children={
@@ -139,6 +103,7 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                       children={
                         <>
                           <ListItemTemplate
+                            truncateItem={truncateItem}
                             ariaLevel="3"
                             ariaSetSize="2"
                             ariaPosInset="1"
@@ -146,8 +111,8 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                             treeitem
                             containsSubItem
                             collapsibleLeading
-                            text="Inter"
-                            href="/"
+                            text="level 3"
+                            href=""
                             leadingVisual={showGroupIcon && folder}
                             trailingVisual={trailingVisual}
                             children={
@@ -159,310 +124,40 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                                 children={
                                   <>
                                     <ListItemTemplate
+                                      truncateItem={truncateItem}
                                       ariaLevel="4"
                                       ariaSetSize="4"
                                       ariaPosInset="1"
                                       subItem
                                       treeitem
-                                      text="file.tsx"
-                                      href="/"
+                                      text={text}
+                                      href=""
                                       leadingVisual={showSubItemIcon && file}
                                       trailingVisual={trailingVisual}
                                     />
                                     <ListItemTemplate
+                                      truncateItem={truncateItem}
                                       ariaLevel="4"
                                       ariaSetSize="4"
                                       ariaPosInset="2"
                                       subItem
                                       treeitem
-                                      text="file.tsx"
-                                      href="/"
+                                      text={text}
+                                      href=""
                                       leadingVisual={showSubItemIcon && file}
                                       trailingVisual={trailingVisual}
                                     />
                                     <ListItemTemplate
+                                      truncateItem={truncateItem}
                                       ariaLevel="4"
                                       ariaSetSize="4"
                                       ariaPosInset="3"
                                       subItem
                                       treeitem
-                                      text="file.tsx"
-                                      href="/"
+                                      text={text}
+                                      href=""
                                       leadingVisual={showSubItemIcon && file}
                                       trailingVisual={trailingVisual}
-                                    />
-                                    <ListItemTemplate
-                                      ariaLevel="4"
-                                      ariaSetSize="4"
-                                      ariaPosInset="4"
-                                      treeitem
-                                      subItem
-                                      containsSubItem
-                                      collapsibleLeading
-                                      text="fonts"
-                                      href="/"
-                                      leadingVisual={showGroupIcon && folder}
-                                      trailingVisual={trailingVisual}
-                                      children={
-                                        <ListTemplate
-                                          role="group"
-                                          containsSubItem
-                                          subGroup
-                                          ariaLabel="Sub nav descrioption"
-                                          children={
-                                            <>
-                                              <ListItemTemplate
-                                                ariaLevel="5"
-                                                ariaSetSize="3"
-                                                ariaPosInset="1"
-                                                subItem
-                                                treeitem
-                                                containsSubItem
-                                                collapsibleLeading
-                                                text="Inter"
-                                                href="/"
-                                                leadingVisual={showGroupIcon && folder}
-                                                trailingVisual={trailingVisual}
-                                                children={
-                                                  <ListTemplate
-                                                    role="group"
-                                                    containsSubItem
-                                                    subGroup
-                                                    ariaLabel="Sub nav descrioption"
-                                                    children={
-                                                      <>
-                                                        <ListItemTemplate
-                                                          ariaLevel="6"
-                                                          ariaSetSize="3"
-                                                          ariaPosInset="1"
-                                                          subItem
-                                                          treeitem
-                                                          text="file.tsx"
-                                                          href="/"
-                                                          leadingVisual={showSubItemIcon && file}
-                                                          trailingVisual={trailingVisual}
-                                                        />
-                                                        <ListItemTemplate
-                                                          ariaLevel="6"
-                                                          ariaSetSize="3"
-                                                          ariaPosInset="2"
-                                                          subItem
-                                                          treeitem
-                                                          text="file.tsx"
-                                                          href="/"
-                                                          leadingVisual={showSubItemIcon && file}
-                                                          trailingVisual={trailingVisual}
-                                                        />
-                                                        <ListItemTemplate
-                                                          ariaLevel="6"
-                                                          ariaSetSize="3"
-                                                          ariaPosInset="3"
-                                                          subItem
-                                                          treeitem
-                                                          text="file.tsx"
-                                                          href="/"
-                                                          leadingVisual={showSubItemIcon && file}
-                                                          trailingVisual={trailingVisual}
-                                                        />
-                                                      </>
-                                                    }
-                                                  />
-                                                }
-                                              />
-                                              <ListItemTemplate
-                                                ariaLevel="5"
-                                                ariaSetSize="3"
-                                                ariaPosInset="2"
-                                                subItem
-                                                treeitem
-                                                text="filex.tsx"
-                                                href="/"
-                                                leadingVisual={showSubItemIcon && file}
-                                                trailingVisual={trailingVisual}
-                                              />
-                                              <ListItemTemplate
-                                                ariaLevel="5"
-                                                ariaSetSize="3"
-                                                ariaPosInset="3"
-                                                treeitem
-                                                subItem
-                                                containsSubItem
-                                                treeitem
-                                                collapsibleLeading
-                                                text="fonts"
-                                                href="/"
-                                                leadingVisual={showGroupIcon && folder}
-                                                trailingVisual={trailingVisual}
-                                                children={
-                                                  <ListTemplate
-                                                    role="group"
-                                                    containsSubItem
-                                                    subGroup
-                                                    ariaLabel="Sub nav descrioption"
-                                                    children={
-                                                      <>
-                                                        <ListItemTemplate
-                                                          ariaLevel="6"
-                                                          ariaSetSize="3"
-                                                          ariaPosInset="1"
-                                                          subItem
-                                                          treeitem
-                                                          containsSubItem
-                                                          collapsibleLeading
-                                                          text="Inter"
-                                                          href="/"
-                                                          leadingVisual={showGroupIcon && folder}
-                                                          trailingVisual={trailingVisual}
-                                                          children={
-                                                            <ListTemplate
-                                                              role="group"
-                                                              containsSubItem
-                                                              subGroup
-                                                              ariaLabel="Sub nav descrioption"
-                                                              children={
-                                                                <>
-                                                                  <ListItemTemplate
-                                                                    ariaLevel="7"
-                                                                    ariaSetSize="3"
-                                                                    ariaPosInset="1"
-                                                                    subItem
-                                                                    treeitem
-                                                                    text="file.tsx"
-                                                                    href="/"
-                                                                    leadingVisual={showSubItemIcon && file}
-                                                                    trailingVisual={trailingVisual}
-                                                                  />
-                                                                  <ListItemTemplate
-                                                                    ariaLevel="7"
-                                                                    ariaSetSize="3"
-                                                                    ariaPosInset="2"
-                                                                    subItem
-                                                                    treeitem
-                                                                    text="file.tsx"
-                                                                    href="/"
-                                                                    leadingVisual={showSubItemIcon && file}
-                                                                    trailingVisual={trailingVisual}
-                                                                  />
-                                                                  <ListItemTemplate
-                                                                    ariaLevel="7"
-                                                                    ariaSetSize="3"
-                                                                    ariaPosInset="3"
-                                                                    subItem
-                                                                    treeitem
-                                                                    text="file.tsx"
-                                                                    href="/"
-                                                                    leadingVisual={showSubItemIcon && file}
-                                                                    trailingVisual={trailingVisual}
-                                                                  />
-                                                                </>
-                                                              }
-                                                            />
-                                                          }
-                                                        />
-                                                        <ListItemTemplate
-                                                          ariaLevel="6"
-                                                          ariaSetSize="3"
-                                                          ariaPosInset="2"
-                                                          subItem
-                                                          treeitem
-                                                          text="file3.tsx"
-                                                          href="/"
-                                                          leadingVisual={showSubItemIcon && file}
-                                                          trailingVisual={trailingVisual}
-                                                        />
-                                                        <ListItemTemplate
-                                                          ariaLevel="6"
-                                                          ariaSetSize="3"
-                                                          ariaPosInset="3"
-                                                          treeitem
-                                                          subItem
-                                                          containsSubItem
-                                                          treeitemtreeitem
-                                                          collapsibleLeading
-                                                          text="fonts"
-                                                          href="/"
-                                                          leadingVisual={showGroupIcon && folder}
-                                                          trailingVisual={trailingVisual}
-                                                          children={
-                                                            <ListTemplate
-                                                              role="group"
-                                                              containsSubItem
-                                                              subGroup
-                                                              ariaLabel="Sub nav descrioption"
-                                                              children={
-                                                                <>
-                                                                  <ListItemTemplate
-                                                                    ariaLevel="7"
-                                                                    ariaSetSize="2"
-                                                                    ariaPosInset="1"
-                                                                    subItem
-                                                                    treeitem
-                                                                    containsSubItem
-                                                                    collapsibleLeading
-                                                                    text="Inter"
-                                                                    href="/"
-                                                                    leadingVisual={showGroupIcon && folder}
-                                                                    trailingVisual={trailingVisual}
-                                                                    children={
-                                                                      <ListTemplate
-                                                                        role="group"
-                                                                        containsSubItem
-                                                                        subGroup
-                                                                        ariaLabel="Sub nav descrioption"
-                                                                        children={
-                                                                          <>
-                                                                            <ListItemTemplate
-                                                                              ariaLevel="8"
-                                                                              ariaSetSize="3"
-                                                                              ariaPosInset="1"
-                                                                              subItem
-                                                                              treeitem
-                                                                              text="file.tsx"
-                                                                              href="/"
-                                                                              leadingVisual={showSubItemIcon && file}
-                                                                              trailingVisual={trailingVisual}
-                                                                            />
-                                                                            <ListItemTemplate
-                                                                              ariaLevel="8"
-                                                                              ariaSetSize="3"
-                                                                              ariaPosInset="2"
-                                                                              subItem
-                                                                              treeitem
-                                                                              text="file.tsx"
-                                                                              href="/"
-                                                                              leadingVisual={showSubItemIcon && file}
-                                                                              trailingVisual={trailingVisual}
-                                                                            />
-                                                                            <ListItemTemplate
-                                                                              ariaLevel="8"
-                                                                              ariaSetSize="3"
-                                                                              ariaPosInset="3"
-                                                                              subItem
-                                                                              treeitemtreeitem
-                                                                              text="file.tsx"
-                                                                              href="/"
-                                                                              leadingVisual={showSubItemIcon && file}
-                                                                              trailingVisual={trailingVisual}
-                                                                            />
-                                                                          </>
-                                                                        }
-                                                                      />
-                                                                    }
-                                                                  />
-                                                                </>
-                                                              }
-                                                            />
-                                                          }
-                                                        />
-                                                      </>
-                                                    }
-                                                  />
-                                                }
-                                              />
-                                            </>
-                                          }
-                                        />
-                                      }
                                     />
                                   </>
                                 }
@@ -470,13 +165,14 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
                             }
                           />
                           <ListItemTemplate
+                            truncateItem={truncateItem}
                             ariaLevel="3"
                             ariaSetSize="2"
                             ariaPosInset="2"
                             treeitem
                             subItem
-                            text="file.tsx"
-                            href="/"
+                            text={text}
+                            href=""
                             leadingVisual={showSubItemIcon && file}
                             trailingVisual={trailingVisual}
                           />
@@ -498,5 +194,6 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon}) => 
 export const Playground = ActionListTreeViewTemplate.bind({})
 Playground.args = {
   showSubItemIcon: true,
-  showGroupIcon: true
+  showGroupIcon: true,
+  text: 'item'
 }
