@@ -949,11 +949,16 @@ MenuContextMenu.args = {
   showDividers: false,
   children: (
     <>
-      <ListItemTemplate onClick={() => alert('Hello!')} text="Copy link" trailingVisual={`⌘⇧C`} />
-      <ListItemTemplate onClick={() => alert('Hello!')} text="Quote reply" trailingVisual={`⌘⇧R`} />
-      <ListItemTemplate onClick={() => alert('Hello!')} text="Edit comment" />
-      <DividerTemplate />
-      <ListItemTemplate onClick={() => alert('Hello!')} text="Delete comment" variant="ActionList-item--danger" />
+      <ListItemTemplate onClick={() => alert('Hello!')} text="Copy link" trailingVisual={`⌘⇧C`} menuItem />
+      <ListItemTemplate onClick={() => alert('Hello!')} text="Quote reply" trailingVisual={`⌘⇧R`} menuItem />
+      <ListItemTemplate onClick={() => alert('Hello!')} text="Edit comment" menuItem />
+      <DividerTemplate menuItem />
+      <ListItemTemplate
+        onClick={() => alert('Hello!')}
+        text="Delete comment"
+        variant="ActionList-item--danger"
+        menuItem
+      />
     </>
   )
 }

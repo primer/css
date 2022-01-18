@@ -281,7 +281,8 @@ export const ListItemTemplate = ({
   fontSize,
   treeitem,
   ariaSetSize,
-  ariaPosInset
+  ariaPosInset,
+  menuItem
 }) => {
   const [isCollapsed, itemIsCollapsed] = useToggle()
   const [isChecked, itemIsChecked] = useToggle()
@@ -301,7 +302,7 @@ export const ListItemTemplate = ({
       aria-level={ariaLevel ? `${ariaLevel}` : undefined}
       aria-setsize={ariaSetSize ? `${ariaSetSize}` : undefined}
       aria-posinset={ariaPosInset ? `${ariaPosInset}` : undefined}
-      style={itemStyle}
+      style={ariaLevel && itemStyle}
       onClick={collapsible || collapsibleLeading ? itemIsCollapsed : itemIsChecked}
       role={
         singleSelect
@@ -316,6 +317,8 @@ export const ListItemTemplate = ({
           ? 'none'
           : treeitem
           ? 'treeitem'
+          : menuItem
+          ? 'menuitem'
           : undefined
       }
       id={id}
@@ -409,8 +412,8 @@ export const ListItemTemplate = ({
               <span className={clsx('ActionList-item-descriptionWrap', `${descriptionVariant}`)}>
                 <span className={clsx('ActionList-item-label', truncateItem && 'ActionList-item-label--truncate')}>
                   {text}
+                  <span className="ActionList-item-description">{description}</span>
                 </span>
-                <span className="ActionList-item-description">{description}</span>
               </span>
             )}
             {!description && text && (
@@ -525,8 +528,9 @@ export const ListItemTemplate = ({
                 <span className={clsx('ActionList-item-descriptionWrap', `${descriptionVariant}`)}>
                   <span className={clsx('ActionList-item-label', truncateItem && 'ActionList-item-label--truncate')}>
                     {text}
+
+                    <span className="ActionList-item-description">{description}</span>
                   </span>
-                  <span className="ActionList-item-description">{description}</span>
                 </span>
               )}
               {!description && text && (
