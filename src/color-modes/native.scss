@@ -9,3 +9,10 @@
   color: var(--color-fg-default);
   background-color: var(--color-canvas-default);
 }
+
+@media (forced-colors: active) {
+  body {
+    --color-accent-emphasis: Highlight;
+    --color-fg-on-emphasis: LinkText;
+  }
+}
