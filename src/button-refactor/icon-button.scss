@@ -1,0 +1,10 @@
+.Button--iconOnly {
+  display: grid;
+  place-content: center;
+  padding: unset;
+  width: 32px;
+
+  &.Button--small {
+    width: 28px;
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 
 export default {
-  title: 'Explorations/Button',
+  title: 'Explorations/IconButton',
   parameters: {
     // design: {
     //   type: 'figma',
@@ -11,7 +11,7 @@ export default {
     layout: 'padded'
   },
 
-  excludeStories: ['ButtonTemplate'],
+  excludeStories: ['IconButtonTemplate'],
   argTypes: {
     variant: {
       options: [0, 1, 2, 3], // iterator
@@ -53,20 +53,11 @@ export default {
         '[Name TBD!] Controls where the leading or trailing visuals position themselves in a fullWidth button (lock to text label or button bounds)',
       defaultValue: 'Button-visual--fixed'
     },
-    label: {
-      defaultValue: 'Button',
-      type: 'string',
-      name: 'label',
-      description: 'Visible button label',
-      table: {
-        category: 'Slot'
-      }
-    },
     ariaLabel: {
       defaultValue: '',
       type: 'string',
       name: 'ariaLabel',
-      description: 'Hidden button label (in addition to visible label). Not required in all cases.',
+      description: 'Hidden button label (required)',
       table: {
         category: 'Slot'
       }
@@ -86,29 +77,11 @@ export default {
         category: 'CSS'
       }
     },
-    leadingVisual: {
-      name: 'leadingVisual',
+    visual: {
+      name: 'visual',
       control: {type: 'boolean'},
-      description: 'Slot for SVG icon or emoji (boolean only for testing purposes)',
-      defaultValue: false,
-      table: {
-        category: 'Slot'
-      }
-    },
-    trailingVisual: {
-      name: 'trailingVisual',
-      control: {type: 'boolean'},
-      description: 'Slot for SVG icon or emoji (boolean only for testing purposes)',
-      table: {
-        category: 'Slot'
-      },
-      defaultValue: false
-    },
-    trailingAction: {
-      defaultValue: false,
-      control: {type: 'boolean'},
-      description:
-        'Slot for SVG icon that indicates an action. Primarily used by other Primer components, like a DropdownMenu or overlay trigger (boolean only for testing purposes)',
+      description: 'Slot for SVG icon (boolean only for testing purposes)',
+      defaultValue: true,
       table: {
         category: 'Slot'
       }
@@ -159,51 +132,42 @@ const caret = (
   </svg>
 )
 
-export const ButtonTemplate = ({
-  label,
+export const IconButtonTemplate = ({
   variant,
   disabled,
   size,
-  fullWidth,
-  leadingVisual,
-  trailingVisual,
-  trailingAction,
+  visual,
   pressed,
   focusElement,
   focusAllElements,
-  visualPosition,
-  className
+  className,
+  ariaLabel
 }) => (
   <>
     <button
       disabled={disabled}
       className={clsx(
         'Button',
+        'Button--iconOnly',
         className && `${className}`,
         variant && `${variant}`,
         size && `${size}`,
-        fullWidth && 'Button--fullWidth',
-        focusAllElements && 'focus',
-        visualPosition && `${visualPosition}`
+        focusAllElements && 'focus'
       )}
       aria-pressed={pressed ? pressed : undefined}
-      aria-label={ariaLabel ? ariaLabel : undefined}
+      aria-label={ariaLabel}
     >
-      {/* {leadingVisual && <span className="" dangerouslySetInnerHTML={{__html: leadingVisual}} />} */}
-      {leadingVisual && <span className="Button-visual Button-leadingVisual">{star}</span>}
-      <span className="Button-label">{label}</span>
-      {trailingVisual && <span className="Button-visual Button-trailingVisual">{star}</span>}
-      {trailingAction && <span className="Button-visual Button-trailingAction">{caret}</span>}
+      {visual && <span className="Button-visual">{star}</span>}
     </button>
     {focusElement && focusMethod()}
   </>
 )
 
-export const Playground = ButtonTemplate.bind({})
+export const Playground = IconButtonTemplate.bind({})
 Playground.args = {
   focusElement: false,
   focusAllElements: false,
-  variant: 'Button--default'
+  ariaLabel: 'Button description'
   //   leadingVisual: false,
   //   trailingAction: false,
   //   trailingVisual: false

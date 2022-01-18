@@ -65,4 +65,63 @@ A few discussions were about naming and prop drilling (source here). We found th
 | `fullWidth` | boolean | `true/false` | `false` | |
 | `visualPosition` | one-of string | `fixed` `some-other-word` | `fixed` | lock icon to the text label or to the button container |
 
-## Component design specs
+
+### LinkStyledAsButton
+
+| prop | type | options | default | notes |
+| -- | -- | -- | -- | -- |
+| `variant` | one-of string | `primary` `secondary` `danger` `outline`? | `secondary` | |
+| `size` | one-of string | `small` `default` `large` | `default | |
+| `label` | string | button description | null | |
+| `leadingVisual` | children (slot) | octicon | null | |
+| `trailingVisual` | children (slot) | octicon | null | |
+| `trailingAction` | children (slot) | octicon | null | slot for caret to maintain leading/trailing visuals if they exist |
+| `fullWidth` | boolean | `true/false` | `false` | |
+| `visualPosition` | one-of string | `fixed` `some-other-word` | `fixed` | lock icon to the text label or to the button container |
+
+### IconButton
+
+| prop | type | options | default | notes |
+| -- | -- | -- | -- | -- |
+| `variant` | one-of string | `primary` `secondary` `danger` `outline`? | `secondary` | |
+| `size` | one-of string | `small` `default` `large` | `default | |
+| `aria-label` | string | button description for screen readers (required) | null | |
+| `visual` | children (slot) | octicon | null | |
+| `aria-pressed` | boolean | `true/false` | `false` | |
+
+### Link
+
+| prop | type | options | default | notes |
+| -- | -- | -- | -- | -- |
+| `variant` | one-of string | ?? we need to work on this (subtle and or muted) | |
+| `label` | string | button description | null | |
+| `showTrailingVisual` | boolean | specific octicon for new tab or new page (or anchor?) | null | |
+
+### ButtonStyledAsLink
+
+| prop | type | options | default | notes |
+| -- | -- | -- | -- | -- |
+| `variant` | one-of string | see above confusion | `secondary` | |
+| `size` | one-of string | `small` `default` `large` | `default | |
+| `label` | string | button description | null | |
+| `aria-label` | string | button description for screen readers | null | |
+| `aria-pressed` | boolean | `true/false` | `false` | |
+| `leadingVisual` | children (slot) | octicon | null | |
+| `trailingVisual` | children (slot) | octicon | null | |
+| `fullWidth` | boolean | `true/false` | `false` | |
+| `visualPosition` | one-of string | `fixed` `some-other-word` | `fixed` | I think this should be fixed for link styles (so maybe we dont need this prop) |
+
+### ButtonGroup
+
+| prop | type | options | default | notes |
+| -- | -- | -- | -- | -- |
+| | | | |
+
+## Notes
+[] Should Button have a `secondary` variant, or should it be the default with no additional class?
+[] How granular should icon positioning be?
+- If both trailingVisual and trailingAction exist, and visualPosition is `fixed`, the trailingVisual will "lock" to the trailingAction (unless we are more granular and specify different lock scenarios as props)
+- One idea would be to always lock trailingAction (always affix it to the right of a button which will only be visible on full width) and maintain visualPosition prop _only_ for visuals
+[] Thoughts on buttons with trailingAction having less margin-right?
+[] Should we think about underlining links with this work, or is that scope creep?
+[] Button styled as link is trickiest, and we need to decide how much logic that component can have compared to Button
