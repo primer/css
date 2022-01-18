@@ -172,7 +172,8 @@ export const ButtonTemplate = ({
   focusElement,
   focusAllElements,
   visualPosition,
-  className
+  className,
+  ariaLabel
 }) => (
   <>
     <button

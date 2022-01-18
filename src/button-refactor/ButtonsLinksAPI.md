@@ -43,7 +43,7 @@ A few discussions were about naming and prop drilling (source here). We found th
 | Button | standard `button` with variants, size, visual slots |
 | IconButton | `button` with icon only (square) and required `aria-label` |
 | ButtonStyledAsLink | `button` that visually looks like a link |
-| ReactionButton | `button` snowflake with specific styles/interaction design |
+| ReactionButton | `button` snowflake with specific styles/interaction design (round) potentially a variant |
 | ButtonGroup | wrapper to handle grouping buttons |
 | Link | `a` with variants, optional trailing visuals |
 | LinkStyledAsButton | `a` with button variants, required trailing visuals |
@@ -118,10 +118,23 @@ A few discussions were about naming and prop drilling (source here). We found th
 | | | | |
 
 ## Notes
-[] Should Button have a `secondary` variant, or should it be the default with no additional class?
+[] Should Button have a `secondary` but also default variant, or should it be the default with no additional class?
 [] How granular should icon positioning be?
 - If both trailingVisual and trailingAction exist, and visualPosition is `fixed`, the trailingVisual will "lock" to the trailingAction (unless we are more granular and specify different lock scenarios as props)
 - One idea would be to always lock trailingAction (always affix it to the right of a button which will only be visible on full width) and maintain visualPosition prop _only_ for visuals
 [] Thoughts on buttons with trailingAction having less margin-right?
 [] Should we think about underlining links with this work, or is that scope creep?
 [] Button styled as link is trickiest, and we need to decide how much logic that component can have compared to Button
+
+- Naming of trailingAction?
+- SplitButton
+  - Could be a composition or pattern?
+  - Accessibility
+- visualPosition trailingAction always locked to the right
+- trailingAction could be closer on the right (8px on the right)
+- compact button variant?
+- Giant words?
+- Large button 44px (when it could be used) 
+- requirement for invisible button with icon next to label
+- Maybe not need buttonstyledaslink
+- outline? ghost, muted, subtle
