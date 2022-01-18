@@ -47,6 +47,7 @@
   }
 
   &.Layout--gutter-none {
+    // stylelint-disable-next-line length-zero-no-unit
     --Layout-gutter: 0px;
   }
 
