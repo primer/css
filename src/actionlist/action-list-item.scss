@@ -489,15 +489,11 @@
 .ActionList-item-descriptionWrap--inline {
   flex-direction: row;
   align-items: baseline;
+  position: relative;
 
   .ActionList-item-description {
     // stylelint-disable-next-line primer/spacing
     margin-left: $actionList-item-padding-horizontal;
-  }
-
-  // label wraps description to handle list dividers
-  .ActionList-item-label {
-    flex: 1 0 auto;
   }
 }
 
