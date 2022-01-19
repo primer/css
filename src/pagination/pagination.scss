@@ -90,17 +90,17 @@
 
 .pagination {
   // Hide everything by default
-  & > * {
+  > * {
     display: none;
   }
 
   // 0 -> sm
   // Only show [Previous] [Next]
 
-  & > :first-child,
-  & > :last-child,
-  & > .previous_page,
-  & > .next_page {
+  > :first-child,
+  > :last-child,
+  > .previous_page,
+  > .next_page {
     display: inline-block;
   }
 
@@ -108,10 +108,10 @@
   // Also show [first] [last] [current number] and [...]
 
   @include breakpoint(sm) {
-    & > :nth-child(2),
-    & > :nth-last-child(2),
-    & > .current,
-    & > .gap {
+    > :nth-child(2),
+    > :nth-last-child(2),
+    > .current,
+    > .gap {
       display: inline-block;
     }
   }
@@ -120,7 +120,7 @@
   // Show everything
 
   @include breakpoint(md) {
-    & > * {
+    > * {
       display: inline-block;
     }
   }
