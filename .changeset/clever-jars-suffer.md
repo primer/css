@@ -2,4 +2,4 @@
 "@primer/css": patch
 ---
 
-Patch: ActionList divider conflict with inline description
+Patch: Fix ActionList--divided for label with inline description scenarios
