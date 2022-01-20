@@ -122,8 +122,6 @@
       url: /tools/deprecations
     - title: Linting
       url: /tools/linting
-    - title: Local development
-      url: /tools/local-primer
     - title: Prototyping
       url: /tools/prototyping
     - title: Testing resources
