@@ -19,6 +19,14 @@ const gridStyle = {
   justifyItems: 'start'
 }
 
+const gridStyleStretch = {
+  display: 'grid',
+  gridAutoFlow: 'column',
+  gap: '16px',
+  justifyItems: 'start',
+  width: '100%'
+}
+
 export const ExampleSheet = ({}) => (
   <div style={{display: 'grid', gap: '16px', justifyItems: 'start'}}>
     <h4>Standard</h4>
@@ -116,6 +124,293 @@ export const ExampleSheet = ({}) => (
       <ButtonTemplate variant="Button--primary" label="Primary" size="Button--large" trailingAction />
       <ButtonTemplate variant="Button--invisible" label="Invisible" size="Button--large" trailingAction />
       <ButtonTemplate variant="Button--danger" label="Danger" size="Button--large" trailingAction />
+    </div>
+
+    <h4>Fullwidth (all visual scenarios, one button size)</h4>
+    <div style={gridStyleStretch}>
+      <ButtonTemplate variant="Button--secondary" label="Secondary" trailingAction fullWidth />
+      <ButtonTemplate variant="Button--primary" label="Primary" trailingAction fullWidth />
+      <ButtonTemplate variant="Button--invisible" label="Invisible" trailingAction fullWidth />
+      <ButtonTemplate variant="Button--danger" label="Danger" trailingAction fullWidth />
+    </div>
+    <div style={gridStyleStretch}>
+      <ButtonTemplate variant="Button--secondary" label="Secondary" fullWidth leadingVisual />
+      <ButtonTemplate variant="Button--primary" label="Primary" fullWidth leadingVisual />
+      <ButtonTemplate variant="Button--invisible" label="Invisible" fullWidth leadingVisual />
+      <ButtonTemplate variant="Button--danger" label="Danger" fullWidth leadingVisual />
+    </div>
+    <div style={gridStyleStretch}>
+      <ButtonTemplate variant="Button--secondary" label="Secondary" fullWidth trailingVisual />
+      <ButtonTemplate variant="Button--primary" label="Primary" fullWidth trailingVisual />
+      <ButtonTemplate variant="Button--invisible" label="Invisible" fullWidth trailingVisual />
+      <ButtonTemplate variant="Button--danger" label="Danger" fullWidth trailingVisual />
+    </div>
+    <div style={gridStyleStretch}>
+      <ButtonTemplate variant="Button--secondary" label="Secondary" fullWidth trailingVisual leadingVisual />
+      <ButtonTemplate variant="Button--primary" label="Primary" fullWidth trailingVisual leadingVisual />
+      <ButtonTemplate variant="Button--invisible" label="Invisible" fullWidth trailingVisual leadingVisual />
+      <ButtonTemplate variant="Button--danger" label="Danger" fullWidth trailingVisual leadingVisual />
+    </div>
+    <div style={gridStyleStretch}>
+      <ButtonTemplate variant="Button--secondary" label="Secondary" trailingAction fullWidth />
+      <ButtonTemplate variant="Button--primary" label="Primary" trailingAction fullWidth />
+      <ButtonTemplate variant="Button--invisible" label="Invisible" trailingAction fullWidth />
+      <ButtonTemplate variant="Button--danger" label="Danger" trailingAction fullWidth />
+    </div>
+    <div style={gridStyleStretch}>
+      <ButtonTemplate variant="Button--secondary" label="Secondary" leadingVisual trailingAction fullWidth />
+      <ButtonTemplate variant="Button--primary" label="Primary" leadingVisual trailingAction fullWidth />
+      <ButtonTemplate variant="Button--invisible" label="Invisible" trailingAction fullWidth leadingVisual />
+      <ButtonTemplate variant="Button--danger" label="Danger" trailingAction fullWidth leadingVisual />
+    </div>
+    <div style={gridStyleStretch}>
+      <ButtonTemplate
+        variant="Button--secondary"
+        label="Secondary"
+        leadingVisual
+        trailingAction
+        fullWidth
+        trailingVisual
+      />
+      <ButtonTemplate variant="Button--primary" label="Primary" leadingVisual trailingAction fullWidth trailingVisual />
+      <ButtonTemplate
+        variant="Button--invisible"
+        label="Invisible"
+        trailingAction
+        fullWidth
+        leadingVisual
+        trailingVisual
+      />
+      <ButtonTemplate variant="Button--danger" label="Danger" trailingAction fullWidth leadingVisual trailingVisual />
+    </div>
+
+    <hr />
+    <h4>Fullwidth (all visual scenarios, one button size) visualPosition fixed</h4>
+    <div style={gridStyleStretch}>
+      <ButtonTemplate
+        variant="Button--secondary"
+        label="Secondary"
+        trailingAction
+        fullWidth
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--primary"
+        label="Primary"
+        trailingAction
+        fullWidth
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--invisible"
+        label="Invisible"
+        trailingAction
+        fullWidth
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--danger"
+        label="Danger"
+        trailingAction
+        fullWidth
+        visualPosition="Button-content--visualFixed"
+      />
+    </div>
+    <div style={gridStyleStretch}>
+      <ButtonTemplate
+        variant="Button--secondary"
+        label="Secondary"
+        fullWidth
+        leadingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--primary"
+        label="Primary"
+        fullWidth
+        leadingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--invisible"
+        label="Invisible"
+        fullWidth
+        leadingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--danger"
+        label="Danger"
+        fullWidth
+        leadingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+    </div>
+    <div style={gridStyleStretch}>
+      <ButtonTemplate
+        variant="Button--secondary"
+        label="Secondary"
+        fullWidth
+        trailingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--primary"
+        label="Primary"
+        fullWidth
+        trailingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--invisible"
+        label="Invisible"
+        fullWidth
+        trailingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--danger"
+        label="Danger"
+        fullWidth
+        trailingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+    </div>
+    <div style={gridStyleStretch}>
+      <ButtonTemplate
+        variant="Button--secondary"
+        label="Secondary"
+        fullWidth
+        trailingVisual
+        leadingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--primary"
+        label="Primary"
+        fullWidth
+        trailingVisual
+        leadingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--invisible"
+        label="Invisible"
+        fullWidth
+        trailingVisual
+        leadingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--danger"
+        label="Danger"
+        fullWidth
+        trailingVisual
+        leadingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+    </div>
+    <div style={gridStyleStretch}>
+      <ButtonTemplate
+        variant="Button--secondary"
+        label="Secondary"
+        trailingAction
+        fullWidth
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--primary"
+        label="Primary"
+        trailingAction
+        fullWidth
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--invisible"
+        label="Invisible"
+        trailingAction
+        fullWidth
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--danger"
+        label="Danger"
+        trailingAction
+        fullWidth
+        visualPosition="Button-content--visualFixed"
+      />
+    </div>
+    <div style={gridStyleStretch}>
+      <ButtonTemplate
+        variant="Button--secondary"
+        label="Secondary"
+        leadingVisual
+        trailingAction
+        fullWidth
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--primary"
+        label="Primary"
+        leadingVisual
+        trailingAction
+        fullWidth
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--invisible"
+        label="Invisible"
+        trailingAction
+        fullWidth
+        leadingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--danger"
+        label="Danger"
+        trailingAction
+        fullWidth
+        leadingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+    </div>
+    <div style={gridStyleStretch}>
+      <ButtonTemplate
+        variant="Button--secondary"
+        label="Secondary"
+        leadingVisual
+        trailingAction
+        fullWidth
+        trailingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--primary"
+        label="Primary"
+        leadingVisual
+        trailingAction
+        fullWidth
+        trailingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--invisible"
+        label="Invisible"
+        trailingAction
+        fullWidth
+        leadingVisual
+        trailingVisual
+        visualPosition="Button-content--visualFixed"
+      />
+      <ButtonTemplate
+        variant="Button--danger"
+        label="Danger"
+        trailingAction
+        fullWidth
+        leadingVisual
+        trailingVisual
+        visualPosition="Button-content--visualFixed"
+      />
     </div>
 
     <h4>Leading visual + action</h4>
