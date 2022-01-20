@@ -72,13 +72,7 @@ While linters shouldn't be disabled without consideration, essentially they act 
 
 ### Plugins
 
-Our linter runs on every commit, but finding you have a lint error after a push can be frustrating and waste time. To avoid this, a [collection of editor plugins](http://stylelint.io/user-guide/complementary-tools/) are available to help you lint while you code..
-
-The Design Systems team recommends using [Atom](https://atom.io/) with the [linter-stylelint](https://github.com/AtomLinter/linter-stylelint) package installed.
-
-![image](https://cloud.githubusercontent.com/assets/54012/21456489/6a10b370-c8f6-11e6-9199-bb3709e79794.png)
-
-We also have a [list of Atom packages](/tools/atom-packages) that we find useful for development.
+Our linter runs on every commit, but finding you have a lint error after a push can be frustrating and waste time. To avoid this, a [collection of editor plugins](https://stylelint.io/user-guide/integrations/editor) are available to help you lint while you code.
 
 ## HTML
 
