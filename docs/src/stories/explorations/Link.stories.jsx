@@ -14,11 +14,11 @@ export default {
   excludeStories: ['LinkTemplate'],
   argTypes: {
     variant: {
-      options: [0, 1, 2, 3], // iterator
-      mapping: ['Button--default', 'Button--primary', 'Button--outline', 'Button--danger'], // values
+      options: [0, 1], // iterator
+      mapping: [null, 'Link--muted'], // values
       control: {
         type: 'inline-radio',
-        labels: ['default', 'primary', 'outline', 'danger']
+        labels: ['default', 'muted']
       },
       table: {
         category: 'CSS'
@@ -53,7 +53,7 @@ export default {
         category: 'Slot'
       }
     },
-    showTrailingVisual: {
+    showTrailingAction: {
       defaultValue: false,
       control: {type: 'boolean'},
       description: '',
@@ -101,17 +101,17 @@ export const LinkTemplate = ({
   focusAllElements,
   className,
   href,
-  showTrailingVisual,
+  showTrailingAction,
   target
 }) => (
   <>
     <a
       className={clsx('Link', className && `${className}`, variant && `${variant}`, focusAllElements && 'focus')}
       href={href}
-      target={target}
+      target={target ? target : undefined}
     >
-      {showTrailingVisual ? (
-        <span className="Link--trailingVisual">
+      {showTrailingAction ? (
+        <span className="Link-trailingVisual">
           {label}
           {arrow}
         </span>
@@ -127,5 +127,4 @@ export const Playground = LinkTemplate.bind({})
 Playground.args = {
   focusElement: false,
   focusAllElements: false
-  //   variant: 'Button--default'
 }

@@ -24,3 +24,10 @@
     background-color: $border;
   }
 }
+
+// global focus styles (copy from open PR)
+
+@mixin focusOutline {
+  outline: 2px solid var(--color-accent-fg);
+  outline-offset: 2px;
+}

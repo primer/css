@@ -1,3 +1,4 @@
+// base button
 .Button {
   position: relative;
   font-size: $body-font-size;
@@ -11,49 +12,47 @@
   color: var(--color-btn-text);
   transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   transition-property: color, background-color, border-color;
+  text-align: center;
   height: 32px;
   padding: 0 16px;
 
+  // define grid slots for standard buttons
   &:not(.Button--iconOnly) {
     display: grid;
     grid-template-areas: 'leadingVisual text trailingVisual trailingAction';
     grid-template-columns: min-content minmax(0, auto) min-content min-content;
     align-items: center;
+
+    // column-gap persists with empty grid-areas, margin applies only when children exist
+    > :not(:last-child) {
+      margin-right: $spacer-2;
+    }
   }
 
-  // column-gap persists with empty grid-areas, margin applies only when children exist
-  > :not(:last-child) {
-    margin-right: $spacer-2;
-  }
+  // base states
 
   &:hover,
-  &.hover,
   [open] > & {
-    background-color: var(--color-btn-hover-bg);
-    border-color: var(--color-btn-hover-border);
     transition-duration: 0.1s;
   }
 
-  &:active {
-    background-color: var(--color-btn-active-bg);
-    border-color: var(--color-btn-active-border);
+  &:active,
+  &.Button--active {
     transition: none;
   }
 
-  &.Button--pressed,
-  &[aria-pressed='true'] {
-    background-color: var(--color-btn-selected-bg);
-    box-shadow: var(--color-primer-shadow-inset);
+  &:disabled,
+  &.Button--disabled,
+  &[aria-disabled='true'] {
+    cursor: not-allowed;
+    box-shadow: none;
   }
 
-  &:disabled,
-  &.disabled,
-  &[aria-disabled='true'] {
-    color: var(--color-primer-fg-disabled);
-    background-color: var(--color-btn-bg);
-    border-color: var(--color-btn-border);
-    fill: var(--color-primer-fg-disabled);
+  &:focus {
+    @include focusOutline;
   }
+
+  // sizes
 
   &.Button--small {
     height: 28px;
@@ -61,6 +60,7 @@
   }
 
   &.Button--large {
+    height: 44px;
   }
 
   &.Button--fullWidth {
@@ -71,36 +71,36 @@
     }
   }
 
-  &.Button--default {
-    color: var(--color-btn-text);
-    background-color: var(--color-btn-bg);
-    border: $border-width $border-style;
-    border-color: var(--color-btn-border);
-    box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
+  &.Button-visual--fixed {
+    grid-template-columns: min-content min-content min-content min-content;
+    place-content: center;
   }
 
+  // variants
+
+  // primary
   &.Button--primary {
     color: var(--color-btn-primary-text);
+    fill: var(--color-btn-primary-icon);
     background-color: var(--color-btn-primary-bg);
     border-color: var(--color-btn-primary-border);
     box-shadow: var(--color-btn-primary-shadow), var(--color-btn-primary-inset-shadow);
 
     &:hover,
-    &.hover,
     [open] > & {
       background-color: var(--color-btn-primary-hover-bg);
       border-color: var(--color-btn-primary-hover-border);
     }
 
     &:active,
-    &.Button--pressed,
-    &[aria-pressed='true'] {
+    &[aria-pressed='true'],
+    &.Button--pressed {
       background-color: var(--color-btn-primary-selected-bg);
       box-shadow: var(--color-btn-primary-selected-shadow);
     }
 
     &:disabled,
-    &.disabled,
+    &.Button--disabled,
     &[aria-disabled='true'] {
       color: var(--color-btn-primary-disabled-text);
       background-color: var(--color-btn-primary-disabled-bg);
@@ -109,58 +109,97 @@
     }
   }
 
+  // default (secondary)
   &.Button--secondary {
-  }
-
-  &.Button--outline {
-    color: var(--color-btn-outline-text);
+    color: var(--color-btn-text);
+    fill: var(--color-fg-muted); // help this
+    background-color: var(--color-btn-bg);
+    border: $border-width $border-style;
+    border-color: var(--color-btn-border);
+    box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
 
     &:hover,
     [open] > & {
-      color: var(--color-btn-outline-hover-text);
-      background-color: var(--color-btn-outline-hover-bg);
-      border-color: var(--color-btn-outline-hover-border);
-      box-shadow: var(--color-btn-outline-hover-shadow), var(--color-btn-outline-hover-inset-shadow);
+      background-color: var(--color-btn-hover-bg);
+      border-color: var(--color-btn-hover-border);
     }
 
     &:active,
-    &.Button--pressed,
-    &[aria-pressed='true'] {
-      color: var(--color-btn-outline-selected-text);
-      background-color: var(--color-btn-outline-selected-bg);
-      border-color: var(--color-btn-outline-selected-border);
-      box-shadow: var(--color-btn-outline-selected-shadow);
+    &.Button--active {
+      background-color: var(--color-btn-active-bg);
+      border-color: var(--color-btn-active-border);
+    }
+
+    &[aria-pressed='true'],
+    &.Button--pressed {
+      background-color: var(--color-btn-selected-bg);
+      box-shadow: var(--color-primer-shadow-inset);
     }
 
     &:disabled,
-    &.disabled,
+    &.Button--disabled,
     &[aria-disabled='true'] {
-      color: var(--color-btn-outline-disabled-text);
-      background-color: var(--color-btn-outline-disabled-bg);
+      color: var(--color-primer-fg-disabled);
+      background-color: var(--color-btn-bg);
       border-color: var(--color-btn-border);
-      box-shadow: none;
+      fill: var(--color-primer-fg-disabled);
     }
   }
 
+  &.Button--invisible {
+    color: var(--color-btn-outline-text);
+    fill: var(--color-btn-outline-text);
+    background-color: var(--color-canvas-default);
+    border: $border-width $border-style;
+    border-color: var(--color-canvas-default);
+
+    &:hover,
+    [open] > & {
+      background-color: var(--color-btn-hover-bg);
+      border-color: var(--color-btn-hover-bg);
+    }
+
+    &[aria-pressed='true'],
+    &:active,
+    &.Button--active,
+    &.Button--pressed {
+      background-color: var(--color-btn-selected-bg);
+      box-shadow: var(--color-primer-shadow-inset);
+    }
+
+    &:disabled,
+    &.Button--disabled,
+    &[aria-disabled='true'] {
+      color: var(--color-primer-fg-disabled);
+      background-color: var(--color-btn-bg);
+      border-color: var(--color-btn-border);
+      fill: var(--color-primer-fg-disabled);
+    }
+  }
+
+  // danger
   &.Button--danger {
     color: var(--color-btn-danger-text);
-
-    .octicon {
-      color: var(--color-btn-danger-icon);
-    }
+    fill: var(--color-btn-danger-icon);
+    background-color: var(--color-btn-bg);
+    border: $border-width $border-style;
+    border-color: var(--color-btn-border);
+    box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
 
     &:hover,
     [open] > & {
       color: var(--color-btn-danger-hover-text);
+      fill: var(--color-btn-danger-hover-text);
       background-color: var(--color-btn-danger-hover-bg);
       border-color: var(--color-btn-danger-hover-border);
       box-shadow: var(--color-btn-danger-hover-shadow), var(--color-btn-danger-hover-inset-shadow);
     }
 
     &:active,
-    &.Button--pressed,
-    &[aria-pressed='true'] {
+    &[aria-pressed='true'],
+    &.Button--pressed {
       color: var(--color-btn-danger-selected-text);
+      fill: var(--color-btn-danger-selected-text);
       background-color: var(--color-btn-danger-selected-bg);
       border-color: var(--color-btn-danger-selected-border);
       box-shadow: var(--color-btn-danger-selected-shadow);
@@ -170,25 +209,18 @@
     &.disabled,
     &[aria-disabled='true'] {
       color: var(--color-btn-danger-disabled-text);
+      fill: var(--color-btn-danger-disabled-text);
       background-color: var(--color-btn-danger-disabled-bg);
       border-color: var(--color-btn-border);
-      box-shadow: none;
     }
   }
 }
 
+// button child elements
+
 .Button-label {
   grid-area: text;
   white-space: nowrap;
-}
-
-.Button-visual {
-  display: flex;
-}
-
-.Button-visual--fixed {
-  grid-template-columns: min-content min-content min-content min-content;
-  place-content: center;
 }
 
 .Button-leadingVisual {
@@ -201,4 +233,9 @@
 
 .Button-trailingAction {
   grid-area: trailingAction;
+  margin-right: -8px;
+}
+
+.Button-visual {
+  display: flex;
 }

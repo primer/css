@@ -2,7 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 
 export default {
-  title: 'Explorations/Button',
+  title: 'Explorations/LinkStyledAsButton',
   parameters: {
     // design: {
     //   type: 'figma',
@@ -11,11 +11,16 @@ export default {
     layout: 'padded'
   },
 
-  excludeStories: ['ButtonTemplate'],
+  excludeStories: ['LinkStyledAsButtonTemplate'],
   argTypes: {
     variant: {
       options: [0, 1, 2, 3], // iterator
-      mapping: ['Button--secondary', 'Button--primary', 'Button--invisible', 'Button--danger'], // values
+      mapping: [
+        'LinkStyledAsButton--secondary',
+        'LinkStyledAsButton--primary',
+        'LinkStyledAsButton--invisible',
+        'LinkStyledAsButton--danger'
+      ], // values
       control: {
         type: 'inline-radio',
         labels: ['secondary', 'primary', 'invisible', 'danger']
@@ -24,11 +29,11 @@ export default {
         category: 'CSS'
       },
       description: 'Controls button color',
-      defaultValue: 'Button--secondary'
+      defaultValue: 'LinkStyledAsButton--secondary'
     },
     size: {
       options: [0, 1, 2], // iterator
-      mapping: [null, 'Button--small', 'Button--large'], // values
+      mapping: [null, 'LinkStyledAsButton--small', 'LinkStyledAsButton--large'], // values
       control: {
         type: 'inline-radio',
         labels: ['default [32px]', 'small [28px]', 'large [44px]']
@@ -54,7 +59,7 @@ export default {
       defaultValue: 'Button-visual--fixed'
     },
     label: {
-      defaultValue: 'Button',
+      defaultValue: 'Link',
       type: 'string',
       name: 'label',
       description: 'Visible button label',
@@ -62,11 +67,20 @@ export default {
         category: 'Slot'
       }
     },
-    ariaLabel: {
+    target: {
       defaultValue: '',
       type: 'string',
-      name: 'ariaLabel',
-      description: 'Hidden button label (in addition to visible label). Not required in all cases.',
+      name: 'target',
+      description: '_blank for new tab',
+      table: {
+        category: 'Slot'
+      }
+    },
+    href: {
+      defaultValue: '',
+      type: 'string',
+      name: 'href',
+      description: '',
       table: {
         category: 'Slot'
       }
@@ -104,7 +118,7 @@ export default {
       },
       defaultValue: false
     },
-    trailingAction: {
+    showTrailingAction: {
       defaultValue: false,
       control: {type: 'boolean'},
       description:
@@ -153,59 +167,62 @@ const star = (
   </svg>
 )
 
-const caret = (
+const arrow = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-    <path d="M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z"></path>
+    <path
+      fill-rule="evenodd"
+      d="M8.22 2.97a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06l2.97-2.97H3.75a.75.75 0 010-1.5h7.44L8.22 4.03a.75.75 0 010-1.06z"
+    ></path>
   </svg>
 )
 
-export const ButtonTemplate = ({
+export const LinkStyledAsButtonTemplate = ({
   label,
   variant,
-  disabled,
   size,
   fullWidth,
   leadingVisual,
   trailingVisual,
-  trailingAction,
-  pressed,
+  showTrailingAction,
   focusElement,
   active,
   visualPosition,
   className,
-  ariaLabel
+  href,
+  target
 }) => (
   <>
-    <button
-      disabled={disabled}
+    <a
+      href={href}
+      target={target ? target : undefined}
       className={clsx(
-        'Button',
+        'LinkStyledAsButton',
         className && `${className}`,
         variant && `${variant}`,
         size && `${size}`,
-        fullWidth && 'Button--fullWidth',
+        fullWidth && 'LinkStyledAsButton--fullWidth',
         visualPosition && `${visualPosition}`,
-        active && 'Button--active'
+        active && 'LinkStyledAsButton--active'
       )}
-      aria-pressed={pressed ? pressed : undefined}
-      aria-label={ariaLabel ? ariaLabel : undefined}
     >
       {/* {leadingVisual && <span className="" dangerouslySetInnerHTML={{__html: leadingVisual}} />} */}
-      {leadingVisual && <span className="Button-visual Button-leadingVisual">{star}</span>}
-      <span className="Button-label">{label}</span>
-      {trailingVisual && <span className="Button-visual Button-trailingVisual">{star}</span>}
-      {trailingAction && <span className="Button-visual Button-trailingAction">{caret}</span>}
-    </button>
+      {leadingVisual && <span className="LinkStyledAsButton-visual LinkStyledAsButton-leadingVisual">{star}</span>}
+      <span className="LinkStyledAsButton-label">{label}</span>
+      {trailingVisual && <span className="LinkStyledAsButton-visual LinkStyledAsButton-trailingVisual">{star}</span>}
+      {showTrailingAction && (
+        <span className="LinkStyledAsButton-visual LinkStyledAsButton-trailingAction">{arrow}</span>
+      )}
+    </a>
     {focusElement && focusMethod()}
   </>
 )
 
-export const Playground = ButtonTemplate.bind({})
+export const Playground = LinkStyledAsButtonTemplate.bind({})
 Playground.args = {
   focusElement: false,
   active: false,
-  variant: 'Button--secondary',
+  variant: 'LinkStyledAsButton--secondary',
   leadingVisual: false,
-  trailingAction: false,
+  showTrailingAction: false,
   trailingVisual: false
 }

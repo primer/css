@@ -15,7 +15,7 @@ export default {
   argTypes: {
     variant: {
       options: [0, 1, 2, 3], // iterator
-      mapping: ['Button--default', 'Button--primary', 'Button--outline', 'Button--danger'], // values
+      mapping: ['Button--secondary', 'Button--primary', 'Button--invisible', 'Button--danger'], // values
       control: {
         type: 'inline-radio',
         labels: ['default', 'primary', 'outline', 'danger']
@@ -24,34 +24,20 @@ export default {
         category: 'CSS'
       },
       description: 'Controls button color',
-      defaultValue: 0
+      defaultValue: 'Button--secondary'
     },
     size: {
       options: [0, 1, 2], // iterator
       mapping: [null, 'Button--small', 'Button--large'], // values
       control: {
         type: 'inline-radio',
-        labels: ['default [32px]', 'small [28px]', 'large']
+        labels: ['default [32px]', 'small [28px]', 'large [44px]']
       },
       table: {
         category: 'CSS'
       },
-      description: 'Controls button height',
+      description: 'Controls button height and width',
       defaultValue: 0
-    },
-    visualPosition: {
-      options: [0, 1], // iterator
-      mapping: [null, 'Button-visual--fixed'], // values
-      control: {
-        type: 'inline-radio',
-        labels: ['default', 'fixed']
-      },
-      table: {
-        category: 'CSS'
-      },
-      description:
-        '[Name TBD!] Controls where the leading or trailing visuals position themselves in a fullWidth button (lock to text label or button bounds)',
-      defaultValue: 'Button-visual--fixed'
     },
     ariaLabel: {
       defaultValue: '',
@@ -67,14 +53,6 @@ export default {
       control: {type: 'boolean'},
       table: {
         category: 'State'
-      }
-    },
-    fullWidth: {
-      defaultValue: true,
-      control: {type: 'boolean'},
-      description: 'Allow button to stretch and fill container',
-      table: {
-        category: 'CSS'
       }
     },
     visual: {
@@ -96,13 +74,6 @@ export default {
     focusElement: {
       control: {type: 'boolean'},
       description: 'set focus on one element',
-      table: {
-        category: 'State'
-      }
-    },
-    focusAllElements: {
-      control: {type: 'boolean'},
-      description: 'set focus on all elements for viewing in all themes',
       table: {
         category: 'State'
       }
@@ -132,17 +103,7 @@ const caret = (
   </svg>
 )
 
-export const IconButtonTemplate = ({
-  variant,
-  disabled,
-  size,
-  visual,
-  pressed,
-  focusElement,
-  focusAllElements,
-  className,
-  ariaLabel
-}) => (
+export const IconButtonTemplate = ({variant, disabled, size, visual, pressed, focusElement, className, ariaLabel}) => (
   <>
     <button
       disabled={disabled}
@@ -151,8 +112,7 @@ export const IconButtonTemplate = ({
         'Button--iconOnly',
         className && `${className}`,
         variant && `${variant}`,
-        size && `${size}`,
-        focusAllElements && 'focus'
+        size && `${size}`
       )}
       aria-pressed={pressed ? pressed : undefined}
       aria-label={ariaLabel}
@@ -166,9 +126,5 @@ export const IconButtonTemplate = ({
 export const Playground = IconButtonTemplate.bind({})
 Playground.args = {
   focusElement: false,
-  focusAllElements: false,
   ariaLabel: 'Button description'
-  //   leadingVisual: false,
-  //   trailingAction: false,
-  //   trailingVisual: false
 }
