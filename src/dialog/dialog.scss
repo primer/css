@@ -1,0 +1,98 @@
+.modal-dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running dialog-backdrop-appear;
+}
+modal-dialog {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(27 31 36 / 12%) 0px 1px 3px, rgb(66 74 83 / 12%) 0px 8px 24px;
+  min-width: 296px;
+  max-width: calc(100vw - 64px);
+  max-height: calc(100vh - 64px);
+  width: 640px;
+  height: auto;
+  border-radius: 12px;
+  opacity: 1;
+  animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running overlay--dialog-appear;
+}
+modal-dialog header {
+  box-shadow: rgb(208 215 222) 0px 1px 0px;
+  padding: 8px;
+  z-index: 1;
+  flex-shrink: 0;
+}
+modal-dialog header .header-container {
+  display: flex;
+}
+
+modal-dialog header .header-container .header-container-title {
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+}
+
+modal-dialog header .header-container .header-container-title .title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0px;
+}
+
+modal-dialog header .header-container .header-container-title .subtitle {
+  font-size: 12px;
+  color: rgb(87, 96, 106);
+  margin: 4px 0px 0px;
+}
+modal-dialog header .header-container .close-button {
+  position: relative;
+  display: inline-block;
+  font-family: inherit;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 4px;
+  background: transparent;
+  border: 0px;
+  vertical-align: middle;
+  color: rgb(87, 96, 106);
+  padding: 8px;
+  align-self: flex-start;
+  line-height: normal;
+  box-shadow: none;
+}
+modal-dialog header .header-container .close-button:hover,
+modal-dialog header .header-container .close-button:focus {
+  background-color: rgb(243, 244, 246);
+  border-color: rgba(27, 31, 36, 0.15);
+}
+modal-dialog .dialog-body {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  overflow: auto;
+  padding: 16px;
+}
+modal-dialog footer {
+  box-shadow: rgb(208 215 222) 0px -1px 0px;
+  padding: 16px;
+  display: flex;
+  flex-flow: wrap;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  z-index: 1;
+  flex-shrink: 0;
+}
