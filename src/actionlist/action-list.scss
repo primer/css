@@ -28,7 +28,7 @@
       top: -$actionList-item-padding-vertical;
       display: block;
       width: 100%;
-      height: 1px;
+      height: $border-width;
       content: '';
       background: var(--color-action-list-item-inline-divider);
     }
