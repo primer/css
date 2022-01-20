@@ -41,7 +41,7 @@ export default {
     },
     visualPosition: {
       options: [0, 1], // iterator
-      mapping: [null, 'Button-visual--fixed'], // values
+      mapping: [null, 'Button-content--visualFixed'], // values
       control: {
         type: 'inline-radio',
         labels: ['default', 'fixed']
@@ -51,7 +51,7 @@ export default {
       },
       description:
         '[Name TBD!] Controls where the leading or trailing visuals position themselves in a fullWidth button (lock to text label or button bounds)',
-      defaultValue: 'Button-visual--fixed'
+      defaultValue: 'Button-content--visualFixed'
     },
     label: {
       defaultValue: 'Button',
@@ -184,16 +184,17 @@ export const ButtonTemplate = ({
         variant && `${variant}`,
         size && `${size}`,
         fullWidth && 'Button--fullWidth',
-        visualPosition && `${visualPosition}`,
         active && 'Button--active'
       )}
       aria-pressed={pressed ? pressed : undefined}
       aria-label={ariaLabel ? ariaLabel : undefined}
     >
       {/* {leadingVisual && <span className="" dangerouslySetInnerHTML={{__html: leadingVisual}} />} */}
-      {leadingVisual && <span className="Button-visual Button-leadingVisual">{star}</span>}
-      <span className="Button-label">{label}</span>
-      {trailingVisual && <span className="Button-visual Button-trailingVisual">{star}</span>}
+      <span className={clsx(visualPosition && `${visualPosition}`, 'Button-content')}>
+        {leadingVisual && <span className="Button-visual Button-leadingVisual">{star}</span>}
+        <span className="Button-label">{label}</span>
+        {trailingVisual && <span className="Button-visual Button-trailingVisual">{star}</span>}
+      </span>
       {trailingAction && <span className="Button-visual Button-trailingAction">{caret}</span>}
     </button>
     {focusElement && focusMethod()}

@@ -1,235 +1,75 @@
-// base button
+// base link
 .LinkStyledAsButton {
-  position: relative;
-  font-size: $body-font-size;
-  font-weight: $font-weight-semibold;
-  cursor: pointer;
-  user-select: none;
-  background-color: transparent;
-  border: $border-width $border-style;
-  border-color: transparent;
-  border-radius: $border-radius;
-  color: var(--color-btn-text);
-  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-  transition-property: color, background-color, border-color;
-  text-align: center;
-  height: 32px;
-  padding: 0 16px;
+  @extend .Button;
+  display: inline-flex;
 
-  // define grid slots for standard buttons
-  &:not(.LinkStyledAsButton--iconOnly) {
-    display: inline-grid;
-    grid-template-areas: 'leadingVisual text trailingVisual trailingAction';
-    grid-template-columns: min-content minmax(0, auto) min-content min-content;
-    align-items: center;
-
-    // column-gap persists with empty grid-areas, margin applies only when children exist
-    > :not(:last-child) {
-      margin-right: $spacer-2;
-    }
-  }
-
-  // base states
-
-  &:hover,
-  [open] > & {
-    transition-duration: 0.1s;
+  &:hover {
     text-decoration: none;
-  }
-
-  &:active,
-  &.LinkStyledAsButton--active {
-    transition: none;
-  }
-
-  &:focus {
-    @include focusOutline;
-  }
-
-  // sizes
-
-  &.LinkStyledAsButton--small {
-    height: 28px;
-    font-size: $font-size-small;
-  }
-
-  &.LinkStyledAsButton--large {
-    height: 44px;
-  }
-
-  &.LinkStyledAsButton--fullWidth {
-    width: 100%;
-
-    .LinkStyledAsButton-trailingVisual {
-      margin-left: auto;
-    }
-  }
-
-  // variants
-
-  // primary
-  &.LinkStyledAsButton--primary {
-    color: var(--color-btn-primary-text);
-    fill: var(--color-btn-primary-icon);
-    background-color: var(--color-btn-primary-bg);
-    border-color: var(--color-btn-primary-border);
-    box-shadow: var(--color-btn-primary-shadow), var(--color-btn-primary-inset-shadow);
-
-    &:hover,
-    [open] > & {
-      background-color: var(--color-btn-primary-hover-bg);
-      border-color: var(--color-btn-primary-hover-border);
-    }
-
-    &:active,
-    &[aria-pressed='true'],
-    &.Button--pressed {
-      background-color: var(--color-btn-primary-selected-bg);
-      box-shadow: var(--color-btn-primary-selected-shadow);
-    }
-
-    &:disabled,
-    &.Button--disabled,
-    &[aria-disabled='true'] {
-      color: var(--color-btn-primary-disabled-text);
-      background-color: var(--color-btn-primary-disabled-bg);
-      border-color: var(--color-btn-primary-disabled-border);
-      fill: var(--color-btn-primary-disabled-text);
-    }
-  }
-
-  // default (secondary)
-  &.LinkStyledAsButton--secondary {
-    color: var(--color-btn-text);
-    fill: var(--color-fg-muted); // help this
-    background-color: var(--color-btn-bg);
-    border: $border-width $border-style;
-    border-color: var(--color-btn-border);
-    box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
-
-    &:hover,
-    [open] > & {
-      background-color: var(--color-btn-hover-bg);
-      border-color: var(--color-btn-hover-border);
-    }
-
-    &:active,
-    &.Button--active {
-      background-color: var(--color-btn-active-bg);
-      border-color: var(--color-btn-active-border);
-    }
-
-    &[aria-pressed='true'],
-    &.Button--pressed {
-      background-color: var(--color-btn-selected-bg);
-      box-shadow: var(--color-primer-shadow-inset);
-    }
-
-    &:disabled,
-    &.Button--disabled,
-    &[aria-disabled='true'] {
-      color: var(--color-primer-fg-disabled);
-      background-color: var(--color-btn-bg);
-      border-color: var(--color-btn-border);
-      fill: var(--color-primer-fg-disabled);
-    }
-  }
-
-  &.LinkStyledAsButton--invisible {
-    color: var(--color-btn-outline-text);
-    fill: var(--color-btn-outline-text);
-    background-color: var(--color-canvas-default);
-    border: $border-width $border-style;
-    border-color: var(--color-canvas-default);
-
-    &:hover,
-    [open] > & {
-      background-color: var(--color-btn-hover-bg);
-      border-color: var(--color-btn-hover-bg);
-    }
-
-    &[aria-pressed='true'],
-    &:active,
-    &.Button--active,
-    &.Button--pressed {
-      background-color: var(--color-btn-selected-bg);
-      box-shadow: var(--color-primer-shadow-inset);
-    }
-
-    &:disabled,
-    &.Button--disabled,
-    &[aria-disabled='true'] {
-      color: var(--color-primer-fg-disabled);
-      background-color: var(--color-btn-bg);
-      border-color: var(--color-btn-border);
-      fill: var(--color-primer-fg-disabled);
-    }
-  }
-
-  // danger
-  &.LinkStyledAsButton--danger {
-    color: var(--color-btn-danger-text);
-    fill: var(--color-btn-danger-icon);
-    background-color: var(--color-btn-bg);
-    border: $border-width $border-style;
-    border-color: var(--color-btn-border);
-    box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
-
-    &:hover,
-    [open] > & {
-      color: var(--color-btn-danger-hover-text);
-      fill: var(--color-btn-danger-hover-text);
-      background-color: var(--color-btn-danger-hover-bg);
-      border-color: var(--color-btn-danger-hover-border);
-      box-shadow: var(--color-btn-danger-hover-shadow), var(--color-btn-danger-hover-inset-shadow);
-    }
-
-    &:active,
-    &[aria-pressed='true'],
-    &.Button--pressed {
-      color: var(--color-btn-danger-selected-text);
-      fill: var(--color-btn-danger-selected-text);
-      background-color: var(--color-btn-danger-selected-bg);
-      border-color: var(--color-btn-danger-selected-border);
-      box-shadow: var(--color-btn-danger-selected-shadow);
-    }
-
-    &:disabled,
-    &.disabled,
-    &[aria-disabled='true'] {
-      color: var(--color-btn-danger-disabled-text);
-      fill: var(--color-btn-danger-disabled-text);
-      background-color: var(--color-btn-danger-disabled-bg);
-      border-color: var(--color-btn-border);
-    }
   }
 }
 
-// button child elements
+.LinkStyledAsButton-content {
+  @extend .Button-content;
+}
+
+.LinkStyledAsButton-content--visualFixed {
+  @extend .Button-content--visualFixed;
+}
+
+// link child elements
+
+.LinkStyledAsButton-visual {
+  @extend .Button-visual;
+}
 
 .LinkStyledAsButton-label {
-  grid-area: text;
-  white-space: nowrap;
+  @extend .Button-label;
 }
 
 .LinkStyledAsButton-leadingVisual {
-  grid-area: leadingVisual;
+  @extend .Button-leadingVisual;
 }
 
 .LinkStyledAsButton-trailingVisual {
-  grid-area: trailingVisual;
+  @extend .Button-trailingVisual;
 }
 
 .LinkStyledAsButton-trailingAction {
-  grid-area: trailingAction;
-  margin-right: -8px;
+  @extend .Button-trailingAction;
 }
 
-.LinkStyledAsButton-visual {
-  display: flex;
+// sizes
+
+.LinkStyledAsButton--small {
+  @extend .Button--small;
 }
 
-.LinkStyledAsButton-visual--fixed {
-  grid-template-columns: min-content min-content min-content min-content;
-  place-content: center;
+.LinkStyledAsButton--large {
+  @extend .Button--large;
+}
+
+.LinkStyledAsButton--fullWidth {
+  @extend .Button--fullWidth;
+}
+
+// variants
+
+// primary
+.LinkStyledAsButton--primary {
+  @extend .Button--primary;
+}
+
+// default (secondary)
+.LinkStyledAsButton--secondary {
+  @extend .Button--secondary;
+}
+
+// invisible
+.LinkStyledAsButton--invisible {
+  @extend .Button--invisible;
+}
+
+// danger
+.LinkStyledAsButton--danger {
+  @extend .Button--danger;
 }

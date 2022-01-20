@@ -46,7 +46,7 @@ export default {
     },
     visualPosition: {
       options: [0, 1], // iterator
-      mapping: [null, 'Button-visual--fixed'], // values
+      mapping: [null, 'LinkStyledAsButton-content--visualFixed'], // values
       control: {
         type: 'inline-radio',
         labels: ['default', 'fixed']
@@ -201,14 +201,15 @@ export const LinkStyledAsButtonTemplate = ({
         variant && `${variant}`,
         size && `${size}`,
         fullWidth && 'LinkStyledAsButton--fullWidth',
-        visualPosition && `${visualPosition}`,
         active && 'LinkStyledAsButton--active'
       )}
     >
       {/* {leadingVisual && <span className="" dangerouslySetInnerHTML={{__html: leadingVisual}} />} */}
-      {leadingVisual && <span className="LinkStyledAsButton-visual LinkStyledAsButton-leadingVisual">{star}</span>}
-      <span className="LinkStyledAsButton-label">{label}</span>
-      {trailingVisual && <span className="LinkStyledAsButton-visual LinkStyledAsButton-trailingVisual">{star}</span>}
+      <span className={clsx(visualPosition && `${visualPosition}`, 'LinkStyledAsButton-content')}>
+        {leadingVisual && <span className="LinkStyledAsButton-visual LinkStyledAsButton-leadingVisual">{star}</span>}
+        <span className="LinkStyledAsButton-label">{label}</span>
+        {trailingVisual && <span className="LinkStyledAsButton-visual LinkStyledAsButton-trailingVisual">{star}</span>}
+      </span>
       {showTrailingAction && (
         <span className="LinkStyledAsButton-visual LinkStyledAsButton-trailingAction">{arrow}</span>
       )}

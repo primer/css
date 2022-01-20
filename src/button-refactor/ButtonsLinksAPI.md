@@ -108,3 +108,4 @@ A few discussions were about naming and prop drilling (source here). We found th
 - [ ]  for `LinkStyledAsButton` should `trailingAction` slot be reserved for the > chevron indicating this is a link and not a button?
 - [ ]  What color should `invisible` button variant be? Blue or grey?
 - [ ]  No aria-label for `LinkStyledAsButton`
+- [ ]  Do we like `fullWidth` or `block` as a prop for width behavior?
