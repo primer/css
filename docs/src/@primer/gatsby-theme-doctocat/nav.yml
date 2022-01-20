@@ -120,8 +120,6 @@
   children:
     - title: Deprecation data
       url: /tools/deprecations
-    - title: Docset
-      url: /tools/docset
     - title: Linting
       url: /tools/linting
     - title: Local development
