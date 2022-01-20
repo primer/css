@@ -15,9 +15,6 @@
   text-align: center;
   height: 32px;
   padding: 0 16px;
-
-  // define grid slots and layout for standard button contents
-  //   &:not(.Button--iconOnly) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
