@@ -1,0 +1,27 @@
+.ButtonGroup {
+  display: flex;
+  flex-direction: row;
+}
+
+// reset border-radius
+.ButtonGroup-item {
+  border-right-width: 0;
+  border-radius: 0;
+
+  &:first-of-type {
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  &:last-of-type {
+    border-right-width: $border-width;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+
+  // ensure that the focus ring sits above the adjacent buttons
+  &:focus,
+  &:active {
+    z-index: 1;
+  }
+}

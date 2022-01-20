@@ -54,7 +54,7 @@ A few discussions were about naming and prop drilling (source here). We found th
 | prop | type | options | default | notes |
 | -- | -- | -- | -- | -- |
 | `variant` | one-of string | `primary` `secondary` `danger` `invisible` | `secondary` | |
-| `size` | one-of string | `small` `default` `large` | `default | |
+| `size` | one-of string | `small` `default` `large` | `default` | |
 | `label` | string | button description | null | |
 | `aria-label` | string | button description for screen readers | null | |
 | `aria-pressed` | boolean | `true/false` | `false` | |
@@ -70,7 +70,7 @@ A few discussions were about naming and prop drilling (source here). We found th
 | prop | type | options | default | notes |
 | -- | -- | -- | -- | -- |
 | `variant` | one-of string | `primary` `secondary` `danger` `invisible` | `secondary` | |
-| `size` | one-of string | `small` `default` `large` | `default | |
+| `size` | one-of string | `small` `default` `large` | `default` | |
 | `label` | string | button description | null | |
 | `leadingVisual` | children (slot) | octicon | null | |
 | `trailingVisual` | children (slot) | octicon | null | |
@@ -100,12 +100,13 @@ A few discussions were about naming and prop drilling (source here). We found th
 
 | prop | type | options | default | notes |
 | -- | -- | -- | -- | -- |
-| | | | |
+| `children` | child slot | | | |
 
 ## Next review session
 - [ ]  Help refine transition animations + tokenize
 - [ ]  Icon colors- same as button text, or specific?
-- [ ]  for `LinkStyledAsButton` should `trailingAction` slot be reserved for the > chevron indicating this is a link and not a button?
+- [ ]  for `LinkStyledAsButton` should `trailingAction` slot be reserved for the > chevron indicating this is a link and not a button? Or is it more of a `trailingVisual`?
 - [ ]  What color should `invisible` button variant be? Blue or grey?
 - [ ]  No aria-label for `LinkStyledAsButton`
 - [ ]  Do we like `fullWidth` or `block` as a prop for width behavior?
+- [ ]  Should `ButtonGroup` offer an option with gaps (more of a layout tool)
