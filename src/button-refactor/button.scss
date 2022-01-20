@@ -21,6 +21,13 @@
   align-items: center;
   gap: $spacer-2;
 
+  // mobile friendly sizing
+  @media (pointer: course) {
+    &::before {
+      @include minTouchTarget(48px, 48px);
+    }
+  }
+
   // base states
 
   &:hover,
