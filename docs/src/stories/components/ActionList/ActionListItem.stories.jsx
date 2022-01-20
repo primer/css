@@ -412,8 +412,8 @@ export const ListItemTemplate = ({
               <span className={clsx('ActionList-item-descriptionWrap', `${descriptionVariant}`)}>
                 <span className={clsx('ActionList-item-label', truncateItem && 'ActionList-item-label--truncate')}>
                   {text}
-                  <span className="ActionList-item-description">{description}</span>
                 </span>
+                <span className="ActionList-item-description">{description}</span>
               </span>
             )}
             {!description && text && (
@@ -528,9 +528,8 @@ export const ListItemTemplate = ({
                 <span className={clsx('ActionList-item-descriptionWrap', `${descriptionVariant}`)}>
                   <span className={clsx('ActionList-item-label', truncateItem && 'ActionList-item-label--truncate')}>
                     {text}
-
-                    <span className="ActionList-item-description">{description}</span>
                   </span>
+                  <span className="ActionList-item-description">{description}</span>
                 </span>
               )}
               {!description && text && (
