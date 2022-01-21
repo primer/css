@@ -29,24 +29,18 @@
       url: /utilities/colors
     - title: Details
       url: /utilities/details
-    - title: Filters (marketing)
-      url: /utilities/marketing-filters
     - title: Flexbox
       url: /utilities/flexbox
     - title: Grid
       url: /utilities/grid
     - title: Layout
       url: /utilities/layout
-    - title: Layout (marketing)
-      url: /utilities/marketing-layout
     - title: Margin
       url: /utilities/margin
     - title: Padding
       url: /utilities/padding
     - title: Typography
       url: /utilities/typography
-    - title: Typography (marketing)
-      url: /utilities/marketing-type
 - title: Components
   url: /components
   children:
@@ -70,8 +64,6 @@
       url: /components/breadcrumb
     - title: Buttons
       url: /components/buttons
-    - title: Buttons (marketing)
-      url: /components/marketing-buttons
     - title: Dropdown
       url: /components/dropdown
     - title: Forms
@@ -84,8 +76,6 @@
       url: /components/layout
     - title: Links
       url: /components/links
-    - title: Links (marketing)
-      url: /components/marketing-links
     - title: Loaders
       url: /components/loaders
     - title: Markdown
@@ -110,6 +100,19 @@
       url: /components/tooltips
     - title: Truncate
       url: /components/truncate
+- title: Marketing
+  url: /marketing
+  children:
+    - title: Buttons
+      url: /components/marketing-buttons
+    - title: Filters
+      url: /utilities/marketing-filters
+    - title: Layout
+      url: /utilities/marketing-layout
+    - title: Links
+      url: /components/marketing-links
+    - title: Typography
+      url: /utilities/marketing-type
 - title: Tools
   url: /tools
   children:
