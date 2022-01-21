@@ -1,0 +1,68 @@
+// stylelint-disable max-nesting-depth
+// stylelint-disable selector-max-specificity
+// stylelint-disable no-duplicate-selectors
+
+.Shell {
+
+  .Shell-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+  }
+  
+  .Shell-skip-to-content {
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    background: var(--color-accent-fg);
+    color: var(--color-fg-on-emphasis);
+    transform: translateX(-100%);
+
+    &:focus {
+      z-index: 20;
+      width: auto;
+      height: auto;
+      overflow: auto;
+      border-radius: $spacer-4; /* 24px */
+      height: $spacer-5; /* 32px */
+      margin-block-start: $spacer-3; /* 16px */
+      margin-inline-start: $spacer-3; /* 16px */
+      padding: calc((#{$spacer-5} - 20px) / 2) $spacer-3;
+      line-height: 20px;
+      transition: transform 120ms ease-out;
+      transform: translateX(0);
+    }
+  }
+
+  
+  .Shell-header {
+    flex: 0 0 auto;
+  }
+
+  .Shell-tray {
+    overflow: hidden;
+    flex: 0 0 auto;
+    border-bottom: $border-width $border-style var(--color-border-default);
+    background: linear-gradient(to bottom, var(--color-border-default) -#{$spacer-3}, var(--color-canvas-inset) #{$spacer-2});
+
+    @include breakpoint(md) {
+      padding: $spacer-2 $spacer-3;
+    }
+
+    @at-root :is([data-color-mode="light"][data-light-theme$='high_contrast'], [data-color-mode="dark"][data-dark-theme$='high_contrast']) & {
+      background: var(--color-canvas-inset);
+    }
+  }
+  
+  .Shell-body {
+    flex: 1 0;
+    height: 100%;
+  }
+  
+  .Shell-footer {
+
+  }
+}

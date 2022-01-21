@@ -141,6 +141,35 @@
   background-color: var(--color-canvas-default);
 }
 
+// A flash banner inside a Shell tray region
+
+.flash-tray {
+  margin: 0 -$border-width;
+  padding: 12px $spacer-3;
+  border-radius: 0;
+
+  @include breakpoint(md) {
+    margin: 0;
+    border-radius: $border-radius-2;
+    animation: flash-tray--appear 200ms 120ms both ease-out;
+
+    & + .flash-tray {
+      margin-top: $spacer-2;
+      animation-delay: 200ms;
+    }
+  }
+
+  @keyframes flash-tray--appear {
+    from {
+      opacity: 0;
+      transform: translateY(-$spacer-4);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
 // FIXME deprecate this
 .warning {
   padding: $em-spacer-5;
