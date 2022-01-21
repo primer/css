@@ -31,6 +31,8 @@
       url: /utilities/details
     - title: Flexbox
       url: /utilities/flexbox
+    - title: Grid
+      url: /utilities/grid
     - title: Layout
       url: /utilities/layout
     - title: Marketing layout
@@ -47,9 +49,6 @@
       url: /utilities/marketing-type
 - title: Objects
   url: /objects
-  children:
-    - title: Grid
-      url: /objects/grid
 - title: Components
   url: /components
   children:

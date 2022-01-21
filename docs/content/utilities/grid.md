@@ -1,6 +1,6 @@
 ---
 title: Grid
-path: objects/grid
+path: utilities/grid
 status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/88'
 source: 'https://github.com/primer/css/tree/main/src/layout/grid.scss'
