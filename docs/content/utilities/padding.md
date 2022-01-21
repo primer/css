@@ -37,7 +37,7 @@ Since padding utilities have many variations and will be used in many places, we
 | 11  | 112px |
 | 12  | 128px |
 
-_**Note:** The blue in the examples below represents the element, and the green represents the padding._
+_**Note:** The gray in the examples below represents the element, and the yellow represents the padding._
 
 ## Uniform padding
 
