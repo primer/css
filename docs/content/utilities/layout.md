@@ -121,7 +121,9 @@ Overflow utilities can also target x- and y-axes independently via:
 Overflow utilities can be applied or changed per [breakpoint](/utilities/grid#breakpoints). Each **responsive** overflow utility is applied to the specified breakpoint and up, using the following formula:  `overflow-[breakpoint]-[axis]-[property]`. For example: `overflow-x-scroll` or `overflow-md-x-visible`.
 
 ## Floats
-Use `.float-left` and `.float-right` to set floats, and `.clearfix` to clear.
+
+Using floats are discouraged since [flexbox](/utilities/flexbox) offers more features and doesn't need to be cleared. If you still need it, you can use `.float-left` and `.float-right` to set floats, and `.clearfix` to clear.
+
 ```html live
 <div class="clearfix border">
   <div class="float-left border">
