@@ -92,7 +92,7 @@ All padding utilities can be adjusted per [breakpoint](/support/breakpoints) usi
 
 ## Responsive container padding
 
-`.p-responsive` is a padding class that adds padding on the left and right sides of an element. It is intended to be used with [container styles](/objects/grid#containers).
+`.p-responsive` is a padding class that adds padding on the left and right sides of an element. It is intended to be used with [container styles](/utilities/grid#containers).
 
 - On **0 to sm** screens, it gives the element padding of `$spacer-3`
 - On **sm to lg** screens it gives the element padding of `$spacer-6`

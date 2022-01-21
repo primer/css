@@ -14,7 +14,7 @@ Every time new CSS is added it increases our CSS bloat, CSS maintenance, and can
 
 _If new styles are needed:_
 * Use global variables where appropriate, such as spacing, typography, and color variables.
-* Write styles in a way that can be folded back into the global style guide should it become a common pattern, i.e. following our principles for naming conventions, components, objects, and utilities as listed below.
+* Write styles in a way that can be folded back into the global style guide should it become a common pattern, i.e. following our principles for naming conventions, components, and utilities as listed below.
 
 
 ## Obvious and transparent
@@ -74,13 +74,9 @@ Components make it easier to mark up a set of elements that are commonly grouped
 .flash-error {...}
 ```
 
-## Objects
-
-Objects help us with common layout patterns but aren't concerned with thematic styles. Examples include the the grid, and the media object. Objects essentially provide some scaffolding for layouts and should be able to be used with other objects, components, and utilities.
-
 ## BEM-style naming and structure
 
-Components and objects should follow the [Block Element Modifier](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) (BEM) model in terms of structure. We've chosen to use a modified form of BEM syntax using [uppercase](https://en.wikipedia.org/wiki/Uppercase) for the block name, hyphens and lowercase for elements, and double-hyphens and lowercase for modifiers. When a block class requires two words use [Pascal case](https://en.wikipedia.org/wiki/PascalCase), for example `ProgressBar`. When an element or modifier class requires two words use [camel case](https://en.wikipedia.org/wiki/camelCase), for example `[Component]-closeButton` or `[Component]--extraLarge`.
+Components should follow the [Block Element Modifier](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) (BEM) model in terms of structure. We've chosen to use a modified form of BEM syntax using [uppercase](https://en.wikipedia.org/wiki/Uppercase) for the block name, hyphens and lowercase for elements, and double-hyphens and lowercase for modifiers. When a block class requires two words use [Pascal case](https://en.wikipedia.org/wiki/PascalCase), for example `ProgressBar`. When an element or modifier class requires two words use [camel case](https://en.wikipedia.org/wiki/camelCase), for example `[Component]-closeButton` or `[Component]--extraLarge`.
 
 * **Block**: A block includes all of the base styles you want shared across every variation of a component. Minimal thematic styling should be applied to blocks, particularly when variations of a component include visual variations. Apply additional styles with modifers rather than overriding base styles.
 * **Element**: An element is part of a component. Elements should work together with other elements and can have modifiers. Element styles should not override block styles - this often results in applying more styles directly to elements rather than having styles flow down from the parent level.
@@ -103,7 +99,7 @@ Components and objects should follow the [Block Element Modifier](http://csswiza
 ```
 
 ## Property order
-For base styles, components, and objects, follow the following property order.
+For base styles and components follow the following property order.
 
 ```scss
 .element {

@@ -22,7 +22,7 @@ export default {
         labels: ['fluid', 'md', 'lg', 'xl']
       },
       description:
-        'Define the maximum width of the component. `fluid` sets it to full-width. Other values center `Layout` horizontally. Refer to [container utilities](https://primer.style/css/objects/grid#containers) for reference.',
+        'Define the maximum width of the component. `fluid` sets it to full-width. Other values center `Layout` horizontally. Refer to [container utilities](https://primer.style/css/utilities/grid#containers) for reference.',
       table: {
         category: 'Structure'
       }

@@ -47,8 +47,6 @@
       url: /utilities/typography
     - title: Marketing typography
       url: /utilities/marketing-type
-- title: Objects
-  url: /objects
 - title: Components
   url: /components
   children:
