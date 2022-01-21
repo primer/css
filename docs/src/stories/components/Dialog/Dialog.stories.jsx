@@ -1,5 +1,5 @@
 import React from 'react'
-import clsx from 'clsx'
+// import clsx from 'clsx'
 
 export default {
   title: 'Components/Dialog',
@@ -39,22 +39,20 @@ export default {
 }
 
 const focusMethod = function getFocus() {
-  // find the focusable element
   var dialog = document.getElementsByTagName('modal-dialog')[0]
-  // set focus on the element
   dialog.focus()
 }
 
 
-export const DialogTemplate = ({title, description, buttons, variant, href, noUnderline, focusElement, focusAllElements}) => (
+export const DialogTemplate = ({title, description, focusElement}) => (
   <div class="modal-dialog-backdrop">
-    <modal-dialog width="xlarge" height="auto" role="dialog" aria-labelledby="react-aria8832355892-4" aria-describedby="react-aria8832355892-5" data-focus-trap="active" open>
-      <header>
+    <modal-dialog class="modal-dialog" width="xlarge" height="auto" role="dialog" aria-labelledby="react-aria8832355892-4" aria-describedby="react-aria8832355892-5" data-focus-trap="active" open>
+      <header class="dialog-header">
         <div class="header-container">
           <div class="header-container-title">
-            <h1 id={`dialog-`} class="title">{title}</h1>
+            <h1 id={`dialog-title`} class="title">{title}</h1>
             {description &&
-              <h2 id="<%= @description_id %>" class="subtitle">{description}</h2>
+              <h2 id={`dialog-description`} class="subtitle">{description}</h2>
             }
           </div>
           <button class="close-button" aria-label="Close">
@@ -67,14 +65,9 @@ export const DialogTemplate = ({title, description, buttons, variant, href, noUn
       <div class="dialog-body">
         This is the body of the dialog
       </div>
-        <footer>
-          <button class="btn"><span>Continue</span></button>
-          {/*
-          <% buttons.each do |button| %>
-            <%= button %>
-          <% end %>
-          */}
-        </footer>
+      <footer class="dialog-footer">
+        <button class="btn"><span>Continue</span></button>
+      </footer>
     </modal-dialog>
     {focusElement && focusMethod()}
   </div>
