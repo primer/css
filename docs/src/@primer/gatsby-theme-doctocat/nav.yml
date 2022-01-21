@@ -29,23 +29,23 @@
       url: /utilities/colors
     - title: Details
       url: /utilities/details
+    - title: Filters (marketing)
+      url: /utilities/marketing-filters
     - title: Flexbox
       url: /utilities/flexbox
     - title: Grid
       url: /utilities/grid
     - title: Layout
       url: /utilities/layout
-    - title: Marketing layout
+    - title: Layout (marketing)
       url: /utilities/marketing-layout
     - title: Margin
       url: /utilities/margin
-    - title: Marketing filters
-      url: /utilities/marketing-filters
     - title: Padding
       url: /utilities/padding
     - title: Typography
       url: /utilities/typography
-    - title: Marketing typography
+    - title: Typography (marketing)
       url: /utilities/marketing-type
 - title: Components
   url: /components
@@ -70,6 +70,8 @@
       url: /components/breadcrumb
     - title: Buttons
       url: /components/buttons
+    - title: Buttons (marketing)
+      url: /components/marketing-buttons
     - title: Dropdown
       url: /components/dropdown
     - title: Forms
@@ -82,14 +84,12 @@
       url: /components/layout
     - title: Links
       url: /components/links
+    - title: Links (marketing)
+      url: /components/marketing-links
     - title: Loaders
       url: /components/loaders
     - title: Markdown
       url: /components/markdown
-    - title: Marketing buttons
-      url: /components/marketing-buttons
-    - title: Marketing links
-      url: /components/marketing-links
     - title: Navigation
       url: /components/navigation
     - title: Pagination
