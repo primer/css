@@ -5,7 +5,7 @@ path: principles/index
 
 The CSS styleguide enables us to create a consistent user experience across GitHub, manage CSS bloat, and make our CSS easier to maintain. These principles should serve as guidelines for how we write and use CSS.
 
- 
+
 
 
 ## Styleguide driven design and development
@@ -76,20 +76,7 @@ Components make it easier to mark up a set of elements that are commonly grouped
 
 ## Objects
 
-Objects help us with common layout patterns but aren't concerned with thematic styles. Examples include the table object, the grid, and the media object. Objects essentially provide some scaffolding for layouts and should be able to be used with other objects, components, and utilities.
-
-Example:
-
-```html
-<div class="TableObject">
-  <div class="TableObject-item TableObject-item--primary">
-    <input class="input-block" type="text" placeholder="Long flexible input form">
-  </div>
-  <div class="TableObject-item">
-    <button class="btn ml-3" type="button">Button</button>
-  </div>
-</div>
-```
+Objects help us with common layout patterns but aren't concerned with thematic styles. Examples include the the grid, and the media object. Objects essentially provide some scaffolding for layouts and should be able to be used with other objects, components, and utilities.
 
 ## BEM-style naming and structure
 

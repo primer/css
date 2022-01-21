@@ -50,8 +50,6 @@
   children:
     - title: Grid
       url: /objects/grid
-    - title: Table object
-      url: /objects/table-object
 - title: Components
   url: /components
   children:
