@@ -2,16 +2,16 @@
 // stylelint-disable selector-max-specificity
 // stylelint-disable no-duplicate-selectors
 
-.Shell {
+.ApplicationFrame {
 
-  .Shell-main {
+  .ApplicationFrame-main {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     
   }
   
-  .Shell-skip-to-content {
+  .ApplicationFrame-skip-to-content {
     position: absolute;
     width: 0;
     height: 0;
@@ -38,11 +38,11 @@
   }
 
   
-  .Shell-header {
+  .ApplicationFrame-header {
     flex: 0 0 auto;
   }
 
-  .Shell-tray {
+  .ApplicationFrame-tray {
     overflow: hidden;
     flex: 0 0 auto;
     border-bottom: $border-width $border-style var(--color-border-default);
@@ -52,17 +52,22 @@
       padding: $spacer-2 $spacer-3;
     }
 
+    &:empty {
+      display: none;
+    }
+
+    // FIXME: use theme-high-contrast mixin
     @at-root :is([data-color-mode="light"][data-light-theme$='high_contrast'], [data-color-mode="dark"][data-dark-theme$='high_contrast']) & {
       background: var(--color-canvas-inset);
     }
   }
   
-  .Shell-body {
+  .ApplicationFrame-body {
     flex: 1 0;
     height: 100%;
   }
   
-  .Shell-footer {
+  .ApplicationFrame-footer {
 
   }
 }
