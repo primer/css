@@ -111,7 +111,7 @@
 // Mixin for applying high contrast-specific styles
 //
 // Example
-// 
+//
 // border-color: linear-gradient(...);
 //
 // @include theme-high-contrast {
@@ -119,18 +119,18 @@
 // }
 
 @mixin theme-high-contrast() {
-  @at-root :is([data-color-mode="light"][data-light-theme$='high_contrast'], [data-color-mode="dark"][data-dark-theme$='high_contrast']) & {
+  @at-root :is([data-color-mode='light'][data-light-theme$='high_contrast'], [data-color-mode='dark'][data-dark-theme$='high_contrast']) & {
     @content;
   }
 
   @media (prefers-color-scheme: light) {
-    @at-root [data-color-mode="auto"][data-light-theme$='high_contrast'] & {
+    @at-root [data-color-mode='auto'][data-light-theme$='high_contrast'] & {
       @content;
     }
   }
 
   @media (prefers-color-scheme: dark) {
-    @at-root [data-color-mode="auto"][data-dark-theme$='high_contrast'] & {
+    @at-root [data-color-mode='auto'][data-dark-theme$='high_contrast'] & {
       @content;
     }
   }
