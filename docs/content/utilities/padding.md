@@ -37,7 +37,7 @@ Since padding utilities have many variations and will be used in many places, we
 | 11  | 112px |
 | 12  | 128px |
 
-_**Note:** The blue in the examples below represents the element, and the green represents the padding._
+_**Note:** The gray in the examples below represents the element, and the yellow represents the padding._
 
 ## Uniform padding
 
@@ -92,7 +92,7 @@ All padding utilities can be adjusted per [breakpoint](/support/breakpoints) usi
 
 ## Responsive container padding
 
-`.p-responsive` is a padding class that adds padding on the left and right sides of an element. It is intended to be used with [container styles](/objects/grid#containers).
+`.p-responsive` is a padding class that adds padding on the left and right sides of an element. It is intended to be used with [container styles](/utilities/grid#containers).
 
 - On **0 to sm** screens, it gives the element padding of `$spacer-3`
 - On **sm to lg** screens it gives the element padding of `$spacer-6`
