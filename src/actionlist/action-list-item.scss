@@ -92,6 +92,11 @@
         + .ActionList-item .ActionList-item-label::before {
           visibility: hidden;
         }
+
+        .ActionList-item-descriptionWrap--inline::before,
+        + .ActionList-item .ActionList-item-descriptionWrap--inline::before {
+          visibility: hidden;
+        }
       }
     }
     // stylelint-disable-next-line no-duplicate-selectors
@@ -488,6 +493,7 @@
 
 // inline
 .ActionList-item-descriptionWrap--inline {
+  position: relative;
   flex-direction: row;
   align-items: baseline;
 
