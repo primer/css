@@ -15,6 +15,14 @@
 
 .ActionList--tree {
   --ActionList-tree-depth: 1;
+
+  // if direct sibling in ActionList--tree, and if not an expandible section (no chevron), indent to align with sibling icon or label
+  > .ActionList-item:not([aria-expanded]) {
+    .ActionList-content {
+      padding-left: $spacer-5;
+    }
+  }
+
   // TODO: remove with PVC implementation
   .ActionList-item--subItem > .ActionList-content {
     font-size: $body-font-size;
