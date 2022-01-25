@@ -16,12 +16,22 @@
 .ActionList--tree {
   --ActionList-tree-depth: 1;
 
-  // if direct sibling in ActionList--tree, and if not an expandible section (no chevron), indent to align with sibling icon or label
+  // if direct sibling in ActionList--tree, and if not an expandable section (no chevron), indent to align with sibling icon or label
+  > .ActionList-item[aria-expanded] ~ .ActionList-item:not([aria-expanded]) {
+    .ActionList-content {
+      padding-left: $spacer-5;
+      background-color: palevioletred;
+    }
+  }
+
   > .ActionList-item:not([aria-expanded]) {
     .ActionList-content {
       padding-left: $spacer-5;
+      background-color: darkkhaki;
     }
   }
+
+  //   .ActionList-item--rootSiblingItem
 
   // TODO: remove with PVC implementation
   .ActionList-item--subItem > .ActionList-content {

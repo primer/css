@@ -51,6 +51,17 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon, text
   <ListTemplate ariaLabel="Some description" role="tree" variant="ActionList--tree">
     <>
       <ListItemTemplate
+        truncateItem={truncateItem}
+        ariaLevel="3"
+        ariaSetSize="2"
+        ariaPosInset="2"
+        treeitem
+        text={text}
+        href=""
+        leadingVisual={showSubItemIcon && file}
+        trailingVisual={trailingVisual}
+      />
+      <ListItemTemplate
         ariaLevel="1"
         ariaSetSize="2"
         ariaPosInset="2"
