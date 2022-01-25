@@ -28,6 +28,8 @@ Existing issues
   -- Allie's thoughts on limiting icon only buttons and working towards encouraging visual labels
 - https://github.com/github/primer/discussions/477
   -- Buttons styled as links, links styled as buttons
+- https://github.com/github/primer/issues/65
+  -- Segmented control, pressed state discussion
 
 ## Specific notes from previous bugs to keep in mind
 - [ ]  Check all button variants have shadow present
@@ -110,3 +112,4 @@ A few discussions were about naming and prop drilling (source here). We found th
 - [ ]  No aria-label for `LinkStyledAsButton`
 - [ ]  Do we like `fullWidth` or `block` as a prop for width behavior?
 - [ ]  Should `ButtonGroup` offer an option with gaps (more of a layout tool)
+- [ ]  Should `Button` proper handle a `pressed` (formerly selected) state, or should we create a new component `SegmentedControl` that uses `Button` and provides specific design (color, shadows)?

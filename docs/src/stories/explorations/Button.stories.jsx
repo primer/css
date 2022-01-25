@@ -31,7 +31,7 @@ export default {
       mapping: [null, 'Button--small', 'Button--large'], // values
       control: {
         type: 'inline-radio',
-        labels: ['default [32px]', 'small [28px]', 'large [44px]']
+        labels: ['default [32px]', 'small [28px]', 'large [40px]']
       },
       table: {
         category: 'CSS'
