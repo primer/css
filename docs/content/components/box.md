@@ -554,7 +554,7 @@ You can put forms in boxes. Often form submission buttons are aligned to the bot
 </div>
 ```
 
-When a box is all by itself centered on a page you can use [column widths](/objects/grid) to control the width of the box. If needed, break the mold a little and use [typography utilities](/utilities/typography) instead of the built in box title styles.
+When a box is all by itself centered on a page you can use [column widths](/utilities/grid) to control the width of the box. If needed, break the mold a little and use [typography utilities](/utilities/typography) instead of the built in box title styles.
 
 ```html live
 <div class="Box Box--spacious col-6 mx-auto text-center">

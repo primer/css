@@ -9,13 +9,13 @@ While this contributing guide is for GitHub employees, all contributions from th
 
 ### Components
 
-[Components](/components) are frequently used visual patterns we've abstracted into a set of convenient styles, that would be otherwise difficult to achieve with utilities and layout objects.
+[Components](/components) are frequently used visual patterns we've abstracted into a set of convenient styles, that would be otherwise difficult to achieve with utilities.
 
 Decisions to add new components are made on a case-by-case basis, with help from the GitHub Design Systems team. Some questions that we use to guide these decisions include:
 
 - How often is this pattern used across the site?
-- Could these styles be achieved with existing components, objects, and utilities?
-- If your design is difficult to compose with current styles, does this highlight problems with existing components (such as overly-specific components, or missing objects and utilities)?
+- Could these styles be achieved with existing components and utilities?
+- If your design is difficult to compose with current styles, does this highlight problems with existing components (such as overly-specific components, or missing utilities)?
 - Is this a totally new pattern or should it be an extension of an existing component?
 - How is this pattern being implemented currently - have you identified problems with it’s current implementation that can be improved with adding a new pattern?
 - Is the desire for this new pattern a side-effect of lacking documentation or misunderstanding of use with current styles?
@@ -23,12 +23,11 @@ Decisions to add new components are made on a case-by-case basis, with help from
 - Is this something that would be better handled by other front-end code rather than CSS?
 - Every new addition of CSS means we ask our users to download a larger CSS file, and we increase the maintenance work of our CSS framework. Does the convenience of adding these new styles outweigh those costs?
 
-### Objects and utilities
+### Utilities
 
-Many of the same questions can be applied to objects and utilities, however the purpose of these styles is different:
+Many of the same questions can be applied to utilities, however the purpose of these styles is different:
 
-- [Objects](/objects) aren't concerned with thematic styles. They are for common display and positioning styles we find in page layouts and common content types.
-- [Utilities](/utilities) do one thing well and one thing only. These styles are immutable and therefore often use the `!important` tag. For this reason we aim not to change the properties of utilities very often. They often form the building blocks of our pages and when we introduce new ones we need to do so with care as we'll likely need to live with these styles for a long time. When assessing whether there is a need to add a new utility, consider these additional questions:
+[Utilities](/utilities) do one thing well and one thing only. These styles are immutable and therefore often use the `!important` tag. For this reason we aim not to change the properties of utilities very often. They often form the building blocks of our pages and when we introduce new ones we need to do so with care as we'll likely need to live with these styles for a long time. When assessing whether there is a need to add a new utility, consider these additional questions:
   - How does this new utility fit within our existing set of utilities? If it is an addition to an existing set then it should follow the same naming convention.
   - Is it for a property that would likely need to be changed at different breakpoints? If so it may need responsive options.
   - If this style is part of a family of properties, do we need to consider adding the full set? Reasons for adding a full set could be that the other property values are often used, or that there would be a need to switch the property on and off (such as display or visibility).
