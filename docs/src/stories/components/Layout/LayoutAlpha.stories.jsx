@@ -7,7 +7,7 @@ export default {
   argTypes: {
     container: {
       control: { type: 'select' },
-      options: ['fluid', 'md', 'lg', 'xl'],
+      options: ['full', 'md', 'lg', 'xl'],
       control: {
         type: 'inline-radio'
       },
@@ -54,7 +54,7 @@ export default {
       }
     },
     mainWidth: {
-      options: ['fluid', 'md', 'lg', 'xl'],
+      options: ['full', 'md', 'lg', 'xl'],
       control: {
         type: 'inline-radio'
       },
