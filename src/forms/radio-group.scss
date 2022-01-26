@@ -6,9 +6,7 @@
 
 .radio-label {
   float: left;
-  // stylelint-disable-next-line primer/spacing
   padding: 6px $spacer-3 6px ($spacer-3 + 12px + $spacer-2); // 12px is the size of the radio-input
-  // stylelint-disable-next-line primer/spacing
   margin-left: -1px;
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
@@ -43,7 +41,6 @@
 .radio-input {
   z-index: 3;
   float: left;
-  // stylelint-disable-next-line primer/spacing
   margin: 10px (-$spacer-5) 0 $spacer-3;
 
   &:disabled {
