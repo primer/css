@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import {ListItemTemplate} from './ActionListItem.stories'
 
 export default {
-  title: 'Components/ActionList',
+  title: 'Components/ActionList/ActionList',
   excludeStories: ['ListTemplate'],
   parameters: {
     design: {

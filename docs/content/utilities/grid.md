@@ -1,6 +1,6 @@
 ---
 title: Grid
-path: objects/grid
+path: utilities/grid
 status: Stable
 status_issue: 'https://github.com/github/design-systems/issues/88'
 source: 'https://github.com/primer/css/tree/main/src/layout/grid.scss'
@@ -8,6 +8,25 @@ bundle: layout
 ---
 
 The grid is 12 columns and percentage-based. The number of columns a container spans can be adjusted across breakpoints for responsive layouts. The grid system works with a variety of layout utilities to achieve different results.
+
+## Flexbox grids
+
+You can use [flex utilities](/utilities/flexbox) on the container and columns to create a flexbox grid.
+
+This can be useful for keeping columns the same height, justifying content and vertically aligning items. The flexbox grid is also great for working with responsive layouts.
+
+```html live title="Flexbox grid"
+<div class="d-flex flex-column flex-md-row flex-items-center flex-md-items-center">
+  <div class="col-2 d-flex flex-items-center flex-items-center flex-md-items-start">
+    <img class="width-full avatar mb-2 mb-md-0" src="https://github.com/github.png" alt="github" />
+  </div>
+  <div class="col-12 col-md-10 d-flex flex-column flex-justify-center flex-items-center flex-md-items-start pl-md-4">
+    <h1 class="text-normal lh-condensed">GitHub</h1>
+    <p class="h4 color-fg-muted text-normal mb-2">How people build software.</p>
+    <a class="color-fg-muted text-small" href="#url">https://github.com/about</a>
+  </div>
+</div>
+```
 
 ## Float based grid
 
@@ -27,7 +46,7 @@ Use `.clearfix` on the container and float utilities with columns for a floated 
 </div>
 ```
 
-### Reversed grid
+### Reversed float grid
 
 To reverse the order of columns, use `float-right` to float columns to the right.
 
@@ -280,25 +299,6 @@ Note that table cells will fill the width of their container even when the total
   -->
   <div class="col-2 d-table-cell border">
     .col-2 .d-table-cell
-  </div>
-</div>
-```
-
-## Flexbox grids
-
-You can use [flex utilities](/utilities/flexbox) on the container and columns to create a flexbox grid.
-
-This can be useful for keeping columns the same height, justifying content and vertically aligning items. The flexbox grid is also great for working with responsive layouts.
-
-```html live title="Flexbox grid"
-<div class="d-flex flex-column flex-md-row flex-items-center flex-md-items-center">
-  <div class="col-2 d-flex flex-items-center flex-items-center flex-md-items-start">
-    <img class="width-full avatar mb-2 mb-md-0" src="https://github.com/github.png" alt="github" />
-  </div>
-  <div class="col-12 col-md-10 d-flex flex-column flex-justify-center flex-items-center flex-md-items-start pl-md-4">
-    <h1 class="text-normal lh-condensed">GitHub</h1>
-    <p class="h4 color-fg-muted text-normal mb-2">How people build software.</p>
-    <a class="color-fg-muted text-small" href="#url">https://github.com/about</a>
   </div>
 </div>
 ```
