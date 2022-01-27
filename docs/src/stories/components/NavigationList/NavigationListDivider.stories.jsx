@@ -1,5 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
+import {NavigationListTemplate} from './NavigationList.stories'
 
 export default {
   title: 'Components/NavigationList/NavigationListDivider',
@@ -44,19 +45,12 @@ export default {
       defaultValue: '',
       type: 'string',
       name: 'id',
-      description: 'Used for aria-labelledby',
+      description: 'Provide label for NavigationList <ul> aria-labelledby',
       table: {
         category: 'HTML'
       }
     }
-  },
-  decorators: [
-    Story => (
-      <ul className="ActionList" role="menu">
-        <Story />
-      </ul>
-    )
-  ]
+  }
 }
 
 export const NavigationListDividerTemplate = ({title, description, variant, id}) => (
@@ -79,6 +73,12 @@ export const NavigationListDividerTemplate = ({title, description, variant, id})
 export const Playground = NavigationListDividerTemplate.bind({})
 Playground.args = {
   title: 'Section title',
-  description: 'Section description',
-  variant: 'subtle'
+  description: 'Section description'
 }
+Playground.decorators = [
+  Story => (
+    <NavigationListTemplate>
+      <Story />
+    </NavigationListTemplate>
+  )
+]
