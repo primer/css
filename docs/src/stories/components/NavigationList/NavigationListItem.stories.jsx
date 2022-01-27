@@ -10,7 +10,7 @@ export default {
       url: 'https://www.figma.com/file/oMiRuexZW6gqVbMhQd6lwP/Storybook-Docs?node-id=23%3A30843'
     }
   },
-  excludeStories: ['ListItemTemplate'],
+  excludeStories: ['NavigationListItemTemplate'],
   argTypes: {
     size: {
       options: [0, 1, 2], // iterator
@@ -189,7 +189,7 @@ export default {
   }
 }
 
-export const ListItemTemplate = ({
+export const NavigationListItemTemplate = ({
   text,
   size,
   leadingVisual,
@@ -395,7 +395,7 @@ export const ListItemTemplate = ({
   )
 }
 
-export const Playground = ListItemTemplate.bind({})
+export const Playground = NavigationListItemTemplate.bind({})
 Playground.decorators = [
   Story => (
     <ul className="ActionList">

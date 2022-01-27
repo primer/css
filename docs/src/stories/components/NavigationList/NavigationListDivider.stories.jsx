@@ -3,7 +3,7 @@ import clsx from 'clsx'
 
 export default {
   title: 'Components/NavigationList/NavigationListDivider',
-  excludeStories: ['DividerTemplate'],
+  excludeStories: ['NavigationListDividerTemplate'],
   parameters: {
     design: {
       type: 'figma',
@@ -59,21 +59,24 @@ export default {
   ]
 }
 
-export const DividerTemplate = ({title, description, variant, id}) => (
+export const NavigationListDividerTemplate = ({title, description, variant, id}) => (
   <>
     <span
       className={clsx('ActionList-sectionDivider', variant && `${variant}`)}
       role={title ? undefined : 'separator'}
-      id={id}
       aria-hidden={title ? undefined : true}
     >
-      {title && <h3 className="ActionList-sectionDivider-title">{title}</h3>}
+      {title && (
+        <h3 className="ActionList-sectionDivider-title" id={id}>
+          {title}
+        </h3>
+      )}
       {description && <span className="ActionList-item-description">{description}</span>}
     </span>
   </>
 )
 
-export const Playground = DividerTemplate.bind({})
+export const Playground = NavigationListDividerTemplate.bind({})
 Playground.args = {
   title: 'Section title',
   description: 'Section description',
