@@ -19,9 +19,9 @@
   height: auto;
   max-height: calc(100vh - 64px);
   flex-direction: column;
-  background-color: var(--color-fg-on-emphasis);
+  background-color: var(--color-canvas-default);
   border-radius: $border-radius-5;
-  box-shadow: rgb(27 31 36 / 0.12) 0 1px 3px, rgb(66 74 83 / 0.12) 0 8px 24px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
   opacity: 1;
   animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running overlay--dialog-appear;
 }
@@ -54,10 +54,10 @@
 .header-container-title .subtitle {
   margin: $spacer-1 $spacer-0 $spacer-0;
   font-size: $font-size-small;
-  color: rgb(87, 96, 106);
+  color: rgb(87, 96, 106); 
 }
 
-.close-button {
+.close-button { 
   position: relative;
   display: inline-block;
   padding: $spacer-2;
