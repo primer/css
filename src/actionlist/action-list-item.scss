@@ -384,7 +384,7 @@
     }
 
     &.ActionList-item--hasActiveSubItem {
-      > .ActionList-content > .ActionList-item-label {
+      > .ActionList-item-label {
         font-weight: $font-weight-bold;
       }
     }

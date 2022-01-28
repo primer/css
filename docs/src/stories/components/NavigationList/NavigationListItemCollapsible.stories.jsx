@@ -1,6 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import useToggle from '../../helpers/useToggle.jsx'
+import {NavigationListTemplate} from './NavigationList.stories'
 
 export default {
   title: 'Components/NavigationList/NavigationListItemCollapsible',
@@ -10,7 +11,7 @@ export default {
       url: 'https://www.figma.com/file/oMiRuexZW6gqVbMhQd6lwP/Storybook-Docs?node-id=23%3A30843'
     }
   },
-  excludeStories: ['ListItemCollapsibleTemplate'],
+  excludeStories: ['NavigationListItemCollapsibleTemplate'],
   argTypes: {
     size: {
       options: [0, 1, 2], // iterator
@@ -86,15 +87,6 @@ export default {
         category: 'HTML'
       }
     },
-    href: {
-      defaultValue: '',
-      type: 'string',
-      name: 'href',
-      description: 'Item link (href)',
-      table: {
-        category: 'HTML'
-      }
-    },
     description: {
       defaultValue: '',
       type: 'string',
@@ -121,7 +113,16 @@ export default {
       defaultValue: '',
       type: 'string',
       name: 'id',
-      description: 'Used for aria-labelledby if nested group within item',
+      description: 'Pass in ID of nested <ul> NavigationList',
+      table: {
+        category: 'HTML'
+      }
+    },
+    ariaControlsId: {
+      defaultValue: '',
+      type: 'string',
+      name: 'id',
+      description: 'Pass in ID of nested <ul> NavigationList',
       table: {
         category: 'HTML'
       }
@@ -136,30 +137,11 @@ export default {
       table: {
         category: 'HTML'
       }
-    },
-    ariaDisabled: {
-      defaultValue: false,
-      control: {type: 'boolean'},
-      table: {
-        category: 'Interactive'
-      }
-    },
-    fontSize: {
-      options: [0, 1], // iterator
-      mapping: ['', 'ActionList-content--fontSmall'], // values
-      control: {
-        type: 'inline-radio',
-        labels: ['default', 'small']
-      },
-      description: 'Used to adjust font-size for subgroup items',
-      table: {
-        category: 'CSS'
-      }
     }
   }
 }
 
-export const ListItemCollapsibleTemplate = ({
+export const NavigationListItemCollapsibleTemplate = ({
   text,
   size,
   leadingVisual,
@@ -170,34 +152,26 @@ export const ListItemCollapsibleTemplate = ({
   children,
   containsSubItem,
   id,
-  ariaDisabled,
   containsActiveSubItem,
   truncateItem,
-  fontSize,
-  collapsePosition
+  collapsePosition,
+  ariaControlsId
 }) => {
   const [isCollapsed, itemIsCollapsed] = useToggle()
-  console.log(collapsePosition)
   return (
-    <li
-      className={clsx(
-        'ActionList-item',
-        containsSubItem && `ActionList-item--hasSubItem`,
-        containsActiveSubItem && `ActionList-item--hasActiveSubItem`
-      )}
-      id={id}
-      aria-disabled={ariaDisabled ? 'true' : undefined}
-    >
+    <li className={clsx('ActionList-item', containsSubItem && `ActionList-item--hasSubItem`)}>
       <button
         onClick={itemIsCollapsed}
         aria-haspopup="true"
         aria-expanded={isCollapsed ? 'false' : 'true'}
+        aria-controls={ariaControlsId}
+        id={id}
         className={clsx(
           'ActionList-content',
           size && `${size}`,
-          fontSize && `${fontSize}`,
           (leadingVisual || trailingVisual) && description && 'ActionList-content--blockDescription',
-          leadingVisual && leadingVisualSize && `${leadingVisualSize}`
+          leadingVisual && leadingVisualSize && `${leadingVisualSize}`,
+          containsActiveSubItem && `ActionList-item--hasActiveSubItem`
         )}
       >
         {collapsePosition === 0 && (
@@ -263,12 +237,12 @@ export const ListItemCollapsibleTemplate = ({
   )
 }
 
-export const Playground = ListItemCollapsibleTemplate.bind({})
+export const Playground = NavigationListItemCollapsibleTemplate.bind({})
 Playground.decorators = [
   Story => (
-    <ul className="ActionList">
+    <NavigationListTemplate>
       <Story />
-    </ul>
+    </NavigationListTemplate>
   )
 ]
 Playground.args = {
