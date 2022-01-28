@@ -72,7 +72,7 @@ TrailingCollapsibleTrailingVis.args = {
 }
 
 export const LeadingCollapsible = NavigationListItemCollapsibleTemplate.bind({})
-LeadingCollapsible.storyName = '[Leading] Leading collapse'
+LeadingCollapsible.storyName = '[Leading] Text only'
 LeadingCollapsible.args = {
   ...NavigationListItemCollapsibleTemplate.args,
   text: 'Collapsible',
@@ -133,7 +133,7 @@ ConstainsSubItem.args = {
 }
 
 export const ConstainsActiveSubItem = NavigationListItemCollapsibleTemplate.bind({})
-ConstainsActiveSubItem.storyName = 'Has active sub item (render css class)'
+ConstainsActiveSubItem.storyName = 'Has active sub item'
 ConstainsActiveSubItem.args = {
   ...NavigationListItemCollapsibleTemplate.args,
   text: 'I have an active child',
