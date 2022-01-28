@@ -24,17 +24,10 @@
   list-style: none;
   background-color: transparent;
   border-radius: $border-radius;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
 
   &:hover,
   &:active {
     cursor: pointer;
-
-    // a href
-    .ActionList-content {
-      text-decoration: none;
-    }
   }
 
   // only hover li without list as children
@@ -270,9 +263,57 @@
       }
     }
 
-    &:active {
-      background: var(--color-action-list-item-danger-active-bg);
+    .ActionList-content {
+      &:active {
+        background: var(--color-action-list-item-danger-active-bg);
+      }
     }
+  }
+
+  // if nested list exists, remove default padding
+  .ActionList {
+    // stylelint-disable-next-line primer/spacing
+    padding: unset;
+  }
+}
+
+// button or a href
+.ActionList-content {
+  border: none;
+  background-color: transparent;
+  position: relative;
+  display: grid;
+  // stylelint-disable-next-line primer/spacing
+  padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
+  font-size: $body-font-size;
+  font-weight: $font-weight-normal;
+  color: var(--color-fg-default);
+  user-select: none;
+  touch-action: manipulation;
+  border-radius: $border-radius;
+  transition: $actionList-item-bg-transition;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  grid-template-rows: min-content;
+  grid-template-areas: 'leadingAction leadingVisual label trailingVisual trailingAction';
+  grid-template-columns: min-content min-content minmax(0, auto) min-content min-content;
+  align-items: start;
+  width: 100%;
+  text-align: left;
+
+  // column-gap persists with empty grid-areas, margin applies only when children exist
+  > :not(:last-child) {
+    margin-right: $spacer-2;
+  }
+
+  // state
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    @include focusOutline;
   }
 
   // disabled
@@ -292,44 +333,6 @@
         background-color: transparent;
       }
     }
-  }
-
-  // if nested list exists, remove default padding
-  .ActionList {
-    // stylelint-disable-next-line primer/spacing
-    padding: unset;
-  }
-}
-
-// span or a href
-.ActionList-content {
-  border: none;
-  background-color: transparent;
-  position: relative;
-  display: grid;
-  // stylelint-disable-next-line primer/spacing
-  padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
-  font-size: $body-font-size;
-  font-weight: $font-weight-normal;
-  color: var(--color-fg-default);
-  user-select: none;
-  touch-action: manipulation;
-  border-radius: $border-radius;
-  transition: $actionList-item-bg-transition;
-  grid-template-rows: min-content;
-  grid-template-areas: 'leadingAction leadingVisual label trailingVisual trailingAction';
-  grid-template-columns: min-content min-content minmax(0, auto) min-content min-content;
-  align-items: start;
-  width: 100%;
-  text-align: left;
-
-  // column-gap persists with empty grid-areas, margin applies only when children exist
-  > :not(:last-child) {
-    margin-right: $spacer-2;
-  }
-
-  &:focus-visible {
-    @include focusOutline;
   }
 
   // collapsible item [aria-expanded]
@@ -383,7 +386,7 @@
       transform: translateY(0);
     }
 
-    &.ActionList-item--hasActiveSubItem {
+    &.ActionList-content--hasActiveSubItem {
       > .ActionList-item-label {
         font-weight: $font-weight-bold;
       }
@@ -405,7 +408,7 @@
     }
 
     // show active indicator on parent collapse if child is active
-    &.ActionList-item--hasActiveSubItem {
+    &.ActionList-content--hasActiveSubItem {
       background: var(--color-action-list-item-default-selected-bg);
 
       .ActionList-item-label {

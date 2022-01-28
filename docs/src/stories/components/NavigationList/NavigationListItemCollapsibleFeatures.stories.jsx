@@ -136,7 +136,7 @@ export const ConstainsActiveSubItem = NavigationListItemCollapsibleTemplate.bind
 ConstainsActiveSubItem.storyName = 'Has active sub item (render css class)'
 ConstainsActiveSubItem.args = {
   ...NavigationListItemCollapsibleTemplate.args,
-  text: 'I am collapsible',
+  text: 'I have an active child',
   collapsePosition: 1,
   containsActiveSubItem: true
 }

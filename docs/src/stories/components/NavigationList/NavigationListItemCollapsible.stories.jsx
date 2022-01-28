@@ -171,7 +171,7 @@ export const NavigationListItemCollapsibleTemplate = ({
           size && `${size}`,
           (leadingVisual || trailingVisual) && description && 'ActionList-content--blockDescription',
           leadingVisual && leadingVisualSize && `${leadingVisualSize}`,
-          containsActiveSubItem && `ActionList-item--hasActiveSubItem`
+          containsActiveSubItem && `ActionList-content--hasActiveSubItem`
         )}
       >
         {collapsePosition === 0 && (
