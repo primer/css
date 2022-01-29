@@ -2,9 +2,10 @@ import React from 'react'
 import clsx from 'clsx'
 import {ListItemTemplate} from './ActionListItem.stories'
 import {DividerTemplate} from './ActionListDivider.stories'
+import {ListTemplate} from './ActionList.stories'
 
 export default {
-  title: 'Components/ActionList/ActionListItem/Features',
+  title: 'Patterns/ActionList/ActionListItem/Features',
   parameters: {
     design: {
       type: 'figma',
@@ -13,12 +14,26 @@ export default {
   },
   decorators: [
     Story => (
-      <ul className="ActionList" role="menu">
+      <ListTemplate>
         <Story />
-      </ul>
+      </ListTemplate>
     )
   ]
 }
+
+const leadingVisual = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+            <path
+              fill-rule="evenodd"
+              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
+            ></path>
+          </svg>`
+
+const trailingVisual = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+      <path
+        fill-rule="evenodd"
+        d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
+      ></path>
+    </svg>`
 
 export const TextOnly = ListItemTemplate.bind({})
 TextOnly.args = {
@@ -60,12 +75,7 @@ VisualLeading.storyName = '[Visuals] Leading'
 VisualLeading.args = {
   ...ListItemTemplate.args,
   text: 'Item with leading visual',
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-      <path
-        fill-rule="evenodd"
-        d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-      ></path>
-    </svg>`
+  leadingVisual: leadingVisual
 }
 
 export const VisualTrailing = ListItemTemplate.bind({})
@@ -73,12 +83,7 @@ VisualTrailing.storyName = '[Visuals] Trailing'
 VisualTrailing.args = {
   ...ListItemTemplate.args,
   text: 'Item with trailing visual',
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-      <path
-        fill-rule="evenodd"
-        d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-      ></path>
-    </svg>`
+  trailingVisual: trailingVisual
 }
 
 export const VisualTrailingText = ListItemTemplate.bind({})
@@ -94,18 +99,8 @@ VisualLeadingAndTrailing.storyName = '[Visuals] Leading & trailing'
 VisualLeadingAndTrailing.args = {
   ...ListItemTemplate.args,
   text: 'Item with trailing visual',
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-            ></path>
-          </svg>`,
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
+  trailingVisual: trailingVisual,
+  leadingVisual: leadingVisual
 }
 
 export const DescriptionBlock = ListItemTemplate.bind({})
@@ -124,12 +119,7 @@ DescriptionBlockWithLeadingVisual.args = {
   text: 'Item label',
   description: 'This is a description',
   descriptionVariant: 'ActionList-item-blockDescription',
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
+  leadingVisual: leadingVisual
 }
 
 export const DescriptionBlockWithTrailingVisual = ListItemTemplate.bind({})
@@ -139,12 +129,7 @@ DescriptionBlockWithTrailingVisual.args = {
   text: 'Item label',
   description: 'This is a description',
   descriptionVariant: 'ActionList-item-blockDescription',
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
+  trailingVisual: trailingVisual
 }
 
 export const DescriptionBlockWithLeadingAndTrailingVisual = ListItemTemplate.bind({})
@@ -154,18 +139,8 @@ DescriptionBlockWithLeadingAndTrailingVisual.args = {
   text: 'Item label',
   description: 'This is a description',
   descriptionVariant: 'ActionList-item-blockDescription',
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`,
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-            ></path>
-          </svg>`
+  trailingVisual: trailingVisual,
+  leadingVisual: leadingVisual
 }
 
 export const DescriptionInline = ListItemTemplate.bind({})
@@ -184,12 +159,7 @@ DescriptionInlineWithLeadingVisual.args = {
   text: 'Item label',
   description: 'This is a description',
   descriptionVariant: 'ActionList-item-descriptionWrap--inline',
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
+  leadingVisual: leadingVisual
 }
 
 export const DescriptionInlineWithTrailingVisual = ListItemTemplate.bind({})
@@ -199,12 +169,7 @@ DescriptionInlineWithTrailingVisual.args = {
   text: 'Item label',
   description: 'This is a description',
   descriptionVariant: 'ActionList-item-descriptionWrap--inline',
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
+  trailingVisual: trailingVisual
 }
 
 export const DescriptionInlineWithLeadingAndTrailingVisual = ListItemTemplate.bind({})
@@ -214,18 +179,8 @@ DescriptionInlineWithLeadingAndTrailingVisual.args = {
   text: 'Item label',
   description: 'This is a description',
   descriptionVariant: 'ActionList-item-descriptionWrap--inline',
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`,
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-          <path
-            fill-rule="evenodd"
-            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-          ></path>
-        </svg>`
+  trailingVisual: trailingVisual,
+  leadingVisual: leadingVisual
 }
 
 export const NavActiveAnchor = ListItemTemplate.bind({})
@@ -262,12 +217,7 @@ VariantDangerItemLeading.args = {
   ...ListItemTemplate.args,
   text: 'Danger danger',
   variant: 'ActionList-item--danger',
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-          <path
-            fill-rule="evenodd"
-            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-          ></path>
-        </svg>`
+  leadingVisual: leadingVisual
 }
 
 export const VariantDangerItemTrailing = ListItemTemplate.bind({})
@@ -276,12 +226,7 @@ VariantDangerItemTrailing.args = {
   ...ListItemTemplate.args,
   text: 'Danger danger',
   variant: 'ActionList-item--danger',
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
+  trailingVisual: trailingVisual
 }
 
 export const VariantDangerItemLeadingTrailing = ListItemTemplate.bind({})
@@ -290,18 +235,8 @@ VariantDangerItemLeadingTrailing.args = {
   ...ListItemTemplate.args,
   text: 'Danger danger',
   variant: 'ActionList-item--danger',
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-          <path
-            fill-rule="evenodd"
-            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-          ></path>
-        </svg>`,
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
+  trailingVisual: trailingVisual,
+  leadingVisual: leadingVisual
 }
 
 export const VariantDisabledItem = ListItemTemplate.bind({})
@@ -318,12 +253,7 @@ VariantDisabledItemLeading.args = {
   ...ListItemTemplate.args,
   text: 'Disabled',
   ariaDisabled: true,
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-          <path
-            fill-rule="evenodd"
-            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-          ></path>
-        </svg>`
+  leadingVisual: leadingVisual
 }
 
 export const VariantDisabledItemTrailing = ListItemTemplate.bind({})
@@ -332,12 +262,7 @@ VariantDisabledItemTrailing.args = {
   ...ListItemTemplate.args,
   text: 'Disabled',
   ariaDisabled: true,
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
+  trailingVisual: trailingVisual
 }
 
 export const VariantDisabledItemLeadingTrailing = ListItemTemplate.bind({})
@@ -346,18 +271,8 @@ VariantDisabledItemLeadingTrailing.args = {
   ...ListItemTemplate.args,
   text: 'Disabled',
   ariaDisabled: true,
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-          <path
-            fill-rule="evenodd"
-            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-          ></path>
-        </svg>`,
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
+  trailingVisual: trailingVisual,
+  leadingVisual: leadingVisual
 }
 
 export const ActionSingleSelectItem = ListItemTemplate.bind({})
@@ -372,12 +287,7 @@ ActionSingleSelectItemWithLeadingVisual.storyName = '[Actions] Single select + l
 ActionSingleSelectItemWithLeadingVisual.args = {
   text: 'Single select item',
   singleSelect: true,
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-          <path
-            fill-rule="evenodd"
-            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-          ></path>
-        </svg>`
+  leadingVisual: leadingVisual
 }
 
 export const ActionSingleSelectItemWithTrailingVisual = ListItemTemplate.bind({})
@@ -385,12 +295,7 @@ ActionSingleSelectItemWithTrailingVisual.storyName = '[Actions] Single select + 
 ActionSingleSelectItemWithTrailingVisual.args = {
   text: 'Single select item',
   singleSelect: true,
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
+  trailingVisual: trailingVisual
 }
 
 export const ActionSingleSelectItemWithLeadingAndTrailingVisual = ListItemTemplate.bind({})
@@ -398,18 +303,8 @@ ActionSingleSelectItemWithLeadingAndTrailingVisual.storyName = '[Actions] Single
 ActionSingleSelectItemWithLeadingAndTrailingVisual.args = {
   text: 'Single select item',
   singleSelect: true,
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-          <path
-            fill-rule="evenodd"
-            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-          ></path>
-        </svg>`,
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
+  trailingVisual: trailingVisual,
+  leadingVisual: leadingVisual
 }
 
 export const ActionMultiSelectItem = ListItemTemplate.bind({})
@@ -424,12 +319,7 @@ ActionMultiSelectItemWithLeadingVisual.storyName = '[Actions] Multi select + lea
 ActionMultiSelectItemWithLeadingVisual.args = {
   text: 'Multi select item',
   multiSelect: true,
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-          <path
-            fill-rule="evenodd"
-            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-          ></path>
-        </svg>`
+  leadingVisual: leadingVisual
 }
 
 export const ActionMultiSelectItemWithTrailingVisual = ListItemTemplate.bind({})
@@ -437,12 +327,7 @@ ActionMultiSelectItemWithTrailingVisual.storyName = '[Actions] Multi select + tr
 ActionMultiSelectItemWithTrailingVisual.args = {
   text: 'Multi select item',
   multiSelect: true,
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
+  trailingVisual: trailingVisual
 }
 
 export const ActionMultiSelectItemWithLeadingAndTrailingVisual = ListItemTemplate.bind({})
@@ -450,103 +335,8 @@ ActionMultiSelectItemWithLeadingAndTrailingVisual.storyName = '[Actions] Multi s
 ActionMultiSelectItemWithLeadingAndTrailingVisual.args = {
   text: 'Multi select item',
   multiSelect: true,
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`,
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-          <path
-            fill-rule="evenodd"
-            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-          ></path>
-        </svg>`
-}
-
-export const ActionCollapsible = ListItemTemplate.bind({})
-ActionCollapsible.storyName = '[Actions] Collapsible'
-ActionCollapsible.args = {
-  ...ListItemTemplate.args,
-  text: 'Collapsible',
-  collapsible: true,
-  collapsed: false
-}
-
-export const ActionCollapsibleWithLeadingVisual = ListItemTemplate.bind({})
-ActionCollapsibleWithLeadingVisual.storyName = '[Actions] Collapsible + leading visual'
-ActionCollapsibleWithLeadingVisual.args = {
-  ...ListItemTemplate.args,
-  text: 'Collapsible',
-  collapsible: true,
-  collapsed: false,
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-          <path
-            fill-rule="evenodd"
-            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-          ></path>
-        </svg>`
-}
-
-export const ActionCollapsibleWithTrailingVisual = ListItemTemplate.bind({})
-ActionCollapsibleWithTrailingVisual.storyName = '[Actions] Collapsible + trailing visual'
-ActionCollapsibleWithTrailingVisual.args = {
-  ...ListItemTemplate.args,
-  text: 'Collapsible',
-  collapsible: true,
-  collapsed: false,
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
-}
-
-export const ActionCollapsibleWithLeadingAndTrailingVisual = ListItemTemplate.bind({})
-ActionCollapsibleWithLeadingAndTrailingVisual.storyName = '[Actions] Collapsible + leading/trailing visual'
-ActionCollapsibleWithLeadingAndTrailingVisual.args = {
-  ...ListItemTemplate.args,
-  text: 'Collapsible',
-  collapsible: true,
-  collapsed: false,
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-            ></path>
-          </svg>`,
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
-}
-
-export const DividerEmpty = DividerTemplate.bind({})
-DividerEmpty.storyName = '[Divider] Empty default'
-DividerEmpty.args = {}
-
-export const DividerFilled = DividerTemplate.bind({})
-DividerFilled.storyName = '[Divider] Empty filled'
-DividerFilled.args = {
-  variant: 'ActionList-sectionDivider--filled'
-}
-
-export const DividerText = DividerTemplate.bind({})
-DividerText.storyName = '[Divider] Title'
-DividerText.args = {
-  title: 'Title',
-  id: 'some-id'
-}
-
-export const DividerTextFilled = DividerTemplate.bind({})
-DividerTextFilled.storyName = '[Divider] Title filled'
-DividerTextFilled.args = {
-  title: 'Title',
-  id: 'some-id',
-  variant: 'ActionList-sectionDivider--filled'
+  trailingVisual: trailingVisual,
+  leadingVisual: leadingVisual
 }
 
 export const TruncateText = ListItemTemplate.bind({})
@@ -554,19 +344,9 @@ TruncateText.storyName = 'Truncate text'
 TruncateText.args = {
   ...ListItemTemplate.args,
   truncateItem: true,
-  text: 'Item with trailing visual',
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-            ></path>
-          </svg>`,
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
+  text: 'This is a very long string of text that will wrap to another line on smaller screens',
+  trailingVisual: trailingVisual,
+  leadingVisual: leadingVisual
 }
 
 export const WrapText = ListItemTemplate.bind({})
@@ -574,16 +354,6 @@ WrapText.storyName = 'Wrap text'
 WrapText.args = {
   ...ListItemTemplate.args,
   text: 'This is a very long string of text that will wrap to another line on smaller screens',
-  trailingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-            ></path>
-          </svg>`,
-  leadingVisual: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-            <path
-              fill-rule="evenodd"
-              d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"
-            ></path>
-          </svg>`
+  trailingVisual: trailingVisual,
+  leadingVisual: leadingVisual
 }

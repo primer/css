@@ -4,7 +4,7 @@ import {ListTemplate} from './ActionList.stories'
 import {ListItemTemplate} from './ActionListItem.stories'
 
 export default {
-  title: 'Components/ActionList/ActionTreeView',
+  title: 'Patterns/ActionList/ActionTreeView',
   excludeStories: ['ActionListTreeViewTemplate'],
   layout: 'padded',
   argTypes: {

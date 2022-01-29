@@ -5,7 +5,7 @@ import {ListItemTemplate} from './ActionListItem.stories'
 import {ListTemplate} from './ActionList.stories'
 
 export default {
-  title: 'Components/ActionList/Examples'
+  title: 'Patterns/ActionList/Examples'
 }
 
 export const NavRepoSettings = ListTemplate.bind({})

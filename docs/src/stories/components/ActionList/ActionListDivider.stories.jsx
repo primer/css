@@ -1,8 +1,9 @@
 import React from 'react'
 import clsx from 'clsx'
+import {ListTemplate} from './ActionList.stories'
 
 export default {
-  title: 'Components/ActionList/ActionListDivider',
+  title: 'Patterns/ActionList/ActionListDivider',
   excludeStories: ['DividerTemplate'],
   parameters: {
     design: {
@@ -44,7 +45,7 @@ export default {
       defaultValue: '',
       type: 'string',
       name: 'id',
-      description: 'Used for aria-labelledby',
+      description: 'Provide label for NavigationList <ul> aria-labelledby',
       table: {
         category: 'HTML'
       }
@@ -61,15 +62,18 @@ export default {
 
 export const DividerTemplate = ({title, description, variant, id}) => (
   <>
-    <li
+    <span
       className={clsx('ActionList-sectionDivider', variant && `${variant}`)}
-      role={title ? 'presentation' : 'separator'}
-      id={id}
-      aria-hidden={title ? true : undefined}
+      role={title ? undefined : 'separator'}
+      aria-hidden={title ? undefined : true}
     >
-      {title}
+      {title && (
+        <h3 className="ActionList-sectionDivider-title" id={id}>
+          {title}
+        </h3>
+      )}
       {description && <span className="ActionList-item-description">{description}</span>}
-    </li>
+    </span>
   </>
 )
 
@@ -79,3 +83,10 @@ Playground.args = {
   description: 'Section description',
   variant: 'subtle'
 }
+Playground.decorators = [
+  Story => (
+    <ListTemplate>
+      <Story />
+    </ListTemplate>
+  )
+]

@@ -1,9 +1,10 @@
 import React from 'react'
 import clsx from 'clsx'
 import useToggle from '../../helpers/useToggle.jsx'
+import {ListTemplate} from './ActionList.stories.jsx'
 
 export default {
-  title: 'Components/ActionList/ActionListItem',
+  title: 'Patterns/ActionList/ActionListItem',
   parameters: {
     design: {
       type: 'figma',
@@ -44,21 +45,7 @@ export default {
         category: 'CSS'
       }
     },
-    containsSubItem: {
-      defaultValue: false,
-      control: {type: 'boolean'},
-      table: {
-        category: 'CSS'
-      }
-    },
     truncateItem: {
-      defaultValue: false,
-      control: {type: 'boolean'},
-      table: {
-        category: 'CSS'
-      }
-    },
-    containsActiveSubItem: {
       defaultValue: false,
       control: {type: 'boolean'},
       table: {
@@ -142,29 +129,6 @@ export default {
       defaultValue: 'ActionList-item-blockDescription',
       table: {
         category: 'CSS'
-      }
-    },
-    id: {
-      defaultValue: '',
-      type: 'string',
-      name: 'id',
-      description: 'Used for aria-labelledby if nested group within item',
-      table: {
-        category: 'HTML'
-      }
-    },
-    collapsible: {
-      defaultValue: false,
-      control: {type: 'boolean'},
-      table: {
-        category: 'Interactive'
-      }
-    },
-    collapsibleLeading: {
-      defaultValue: false,
-      control: {type: 'boolean'},
-      table: {
-        category: 'Interactive'
       }
     },
     singleSelect: {
@@ -263,9 +227,6 @@ export const ListItemTemplate = ({
   ariaCurrent,
   children,
   subItem,
-  containsSubItem,
-  id,
-  collapsible,
   trailingAction,
   leadingAction,
   singleSelect,
@@ -274,8 +235,6 @@ export const ListItemTemplate = ({
   listMultiSelect,
   listSemantic,
   ariaDisabled,
-  containsActiveSubItem,
-  collapsibleLeading,
   truncateItem,
   ariaLevel,
   fontSize,
@@ -284,7 +243,6 @@ export const ListItemTemplate = ({
   ariaPosInset,
   menuItem
 }) => {
-  const [isCollapsed, itemIsCollapsed] = useToggle()
   const [isChecked, itemIsChecked] = useToggle()
   const itemStyle = {
     '--ActionList-tree-depth': `${ariaLevel}`
@@ -295,15 +253,13 @@ export const ListItemTemplate = ({
         'ActionList-item',
         ariaCurrent && 'ActionList-item--navActive',
         subItem && `ActionList-item--subItem`,
-        containsSubItem && `ActionList-item--hasSubItem`,
-        containsActiveSubItem && `ActionList-item--hasActiveSubItem`,
         variant && `${variant}`
       )}
       aria-level={ariaLevel ? `${ariaLevel}` : undefined}
       aria-setsize={ariaSetSize ? `${ariaSetSize}` : undefined}
       aria-posinset={ariaPosInset ? `${ariaPosInset}` : undefined}
       style={ariaLevel && itemStyle}
-      onClick={collapsible || collapsibleLeading ? itemIsCollapsed : itemIsChecked}
+      onClick={itemIsChecked}
       role={
         singleSelect
           ? 'menuitemradio'
@@ -312,7 +268,7 @@ export const ListItemTemplate = ({
           : listSingleSelect || listMultiSelect
           ? 'option'
           : listSemantic
-          ? undefined
+          ? 'listitem'
           : href
           ? 'none'
           : treeitem
@@ -321,9 +277,6 @@ export const ListItemTemplate = ({
           ? 'menuitem'
           : undefined
       }
-      id={id}
-      aria-haspopup={collapsible || collapsibleLeading ? 'true' : undefined}
-      aria-expanded={collapsible || collapsibleLeading ? (isCollapsed ? 'false' : 'true') : undefined}
       aria-checked={singleSelect || multiSelect ? (isChecked ? 'true' : 'false') : undefined}
       aria-selected={listSingleSelect || listMultiSelect ? (isChecked ? 'true' : 'false') : undefined}
       aria-disabled={ariaDisabled ? 'true' : undefined}
@@ -344,12 +297,7 @@ export const ListItemTemplate = ({
               leadingVisual && leadingVisualSize && `${leadingVisualSize}`
             )}
           >
-            {(leadingAction ||
-              singleSelect ||
-              multiSelect ||
-              listSingleSelect ||
-              listMultiSelect ||
-              collapsibleLeading) && (
+            {(leadingAction || singleSelect || multiSelect || listSingleSelect || listMultiSelect) && (
               <span className="ActionList-item-action ActionList-item-action--leading">
                 {singleSelect ||
                   (listSingleSelect && (
@@ -385,20 +333,6 @@ export const ListItemTemplate = ({
                       />
                     </svg>
                   ))}
-                {collapsibleLeading && (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    height="16"
-                    className="ActionList-item-collapseIcon"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
-                    ></path>
-                  </svg>
-                )}
                 {leadingAction}
               </span>
             )}
@@ -427,26 +361,9 @@ export const ListItemTemplate = ({
                 dangerouslySetInnerHTML={{__html: trailingVisual}}
               />
             )}
-            {trailingAction ||
-              (collapsible && (
-                <span className="ActionList-item-action ActionList-item-action--trailing">
-                  {collapsible && (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 16 16"
-                      width="16"
-                      height="16"
-                      className="ActionList-item-collapseIcon"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
-                      ></path>
-                    </svg>
-                  )}
-                  {trailingAction}
-                </span>
-              ))}
+            {trailingAction && (
+              <span className="ActionList-item-action ActionList-item-action--trailing">{trailingAction}</span>
+            )}
           </a>
           {children}
         </>
@@ -462,12 +379,7 @@ export const ListItemTemplate = ({
                 leadingVisual && leadingVisualSize && `${leadingVisualSize}`
               )}
             >
-              {(leadingAction ||
-                singleSelect ||
-                multiSelect ||
-                listSingleSelect ||
-                listMultiSelect ||
-                collapsibleLeading) && (
+              {(leadingAction || singleSelect || multiSelect || listSingleSelect || listMultiSelect) && (
                 <span className="ActionList-item-action ActionList-item-action--leading">
                   {(singleSelect || listSingleSelect) && (
                     <svg
@@ -501,20 +413,6 @@ export const ListItemTemplate = ({
                       />
                     </svg>
                   )}
-                  {collapsibleLeading && (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 16 16"
-                      width="16"
-                      height="16"
-                      className="ActionList-item-collapseIcon"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
-                      ></path>
-                    </svg>
-                  )}
                   {leadingAction}
                 </span>
               )}
@@ -544,26 +442,9 @@ export const ListItemTemplate = ({
                   dangerouslySetInnerHTML={{__html: trailingVisual}}
                 />
               )}
-              {trailingAction ||
-                (collapsible && (
-                  <span className="ActionList-item-action ActionList-item-action--trailing">
-                    {collapsible && (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        height="16"
-                        className="ActionList-item-collapseIcon"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"
-                        ></path>
-                      </svg>
-                    )}
-                    {trailingAction}
-                  </span>
-                ))}
+              {trailingAction && (
+                <span className="ActionList-item-action ActionList-item-action--trailing">{trailingAction}</span>
+              )}
             </span>
           )}
           {children}
@@ -576,12 +457,11 @@ export const ListItemTemplate = ({
 export const Playground = ListItemTemplate.bind({})
 Playground.decorators = [
   Story => (
-    <ul className="ActionList">
+    <ListTemplate>
       <Story />
-    </ul>
+    </ListTemplate>
   )
 ]
 Playground.args = {
-  id: null,
   truncateItem: false
 }

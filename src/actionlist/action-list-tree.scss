@@ -105,6 +105,7 @@
       }
 
       // show active indicator on parent collapse if child is active
+      // this class has changed in non tree ActionList. Leaving for now until we hear about their a11y audit (if markup needs to change)
       &.ActionList-item--hasActiveSubItem {
         background: var(--color-action-list-item-default-selected-bg);
 

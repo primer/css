@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import {ListItemTemplate} from './ActionListItem.stories'
 
 export default {
-  title: 'Components/ActionList/ActionList',
+  title: 'Patterns/ActionList/ActionList',
   excludeStories: ['ListTemplate'],
   parameters: {
     design: {
@@ -52,29 +52,9 @@ export default {
     ariaLabelledBy: {
       name: 'ariaLabelledBy',
       type: 'string',
-      description: 'Reference ID of section divider',
+      description: 'Reference ID of NavigationListDivider',
       table: {
         category: 'HTML'
-      }
-    },
-    groupId: {
-      name: 'groupId',
-      type: 'string',
-      description: 'Menu group id',
-      table: {
-        category: 'HTML'
-      }
-    },
-    children: {
-      table: {
-        category: 'HTML'
-      }
-    },
-    subGroup: {
-      control: {type: 'boolean'},
-      description: 'If ActionList is nested within an ActionList',
-      table: {
-        category: 'CSS'
       }
     },
     listboxMultiSelect: {
@@ -87,7 +67,7 @@ export default {
     },
     listPadding: {
       options: [0, 1], // iterator
-      mapping: ['', 'ActionList--full'], // values
+      mapping: [null, 'ActionList--full'], // values
       control: {
         type: 'inline-radio',
         labels: ['inset', 'full-bleed']
@@ -95,6 +75,23 @@ export default {
       description: 'ActionList includes 8px padding by default, full-bleed removes all padding',
       table: {
         category: 'CSS'
+      }
+    },
+    listType: {
+      options: [0, 1], // iterator
+      mapping: ['parent', 'nested'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['parent', 'nested']
+      },
+      description: 'NavigationList can be a parent list with a <nav> or a nested list with just <ul>',
+      table: {
+        category: 'CSS'
+      }
+    },
+    children: {
+      table: {
+        disable: true
       }
     }
   }
@@ -106,16 +103,16 @@ export const ListTemplate = ({
   role,
   ariaLabel,
   ariaLabelledBy,
-  subGroup,
   listboxMultiSelect,
   listPadding,
-  variant
+  variant,
+  listType
 }) => (
   <ul
     className={clsx(
       'ActionList',
       showDividers && 'ActionList--divided',
-      subGroup && 'ActionList--subGroup',
+      listType === 'nested' && 'ActionList--subGroup',
       listPadding && `${listPadding}`,
       variant && `${variant}`
     )}
@@ -130,14 +127,12 @@ export const ListTemplate = ({
 
 export const Playground = ListTemplate.bind({})
 Playground.args = {
-  ariaLabel: 'Menu description',
-  subGroup: false,
+  listType: 'parent',
   showDividers: false,
   listboxMultiSelect: false,
   listPadding: 0,
-  ariaLabelledBy: '',
-  groupId: '',
   variant: 0,
+  role: 'list',
   children: (
     <>
       <ListItemTemplate text="Action list item" />
