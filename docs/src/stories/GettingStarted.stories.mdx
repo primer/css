@@ -15,3 +15,13 @@ Config files live in [.storybook](docs/.storybook)
 [preview.js](docs/.storybook/preview.js): customizations, decorators, global CSS imports
 
 [preview-head.html](docs/.storybook/preview-head.html): story-level "global" styles (within the story iframe)
+
+Breaking changes
+
+| Original                             | Refactor                                                     | Breaking |
+| ------------------------------------ | ------------------------------------------------------------ | -------- |
+| -                                    | `ActionList-sectionDivider-title` new class for title `<h3>` | No       |
+| `.ActionList-item--hasActiveSubItem` | `ActionList-content--hasActiveSubItem`                       | Yes      |
+
+- expand/collapse, disabled, and other `state` logic moved down one level to the `button` aka `ActionList-content`
+- adds specific `button` overrides to remove default browser styling
