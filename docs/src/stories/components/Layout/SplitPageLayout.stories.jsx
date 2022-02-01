@@ -48,12 +48,12 @@ export default {
     // Content
 
     contentWidth: {
-      options: ['fluid', 'sm', 'md', 'lg', 'xl'],
+      options: ['full', 'sm', 'md', 'lg', 'xl'],
       control: {
         type: 'inline-radio'
       },
       description:
-        'Defines the maximum width of the content region. `fluid` sets it to full-width. Other values follow container widths from `sm` to `xl`. With smaller widths, the content region will try to stay centered to the viewport area.',
+        'Defines the maximum width of the content region. `full` sets it to full-width. Other values follow container widths from `sm` to `xl`. With smaller widths, the content region will try to stay centered to the viewport area.',
       table: {
         category: 'Content'
       }
@@ -90,7 +90,7 @@ export const SplitPageLayoutTemplate = ({
     <>
       <LayoutTemplate
         _debug={_debug}
-        wrapperSizing="full"
+        containerWidth="full"
         outerSpacing="none"
         innerSpacing={innerSpacing}
         columnGap="none"
@@ -129,7 +129,7 @@ Playground.args = {
   paneWidth: 'wide',
 
   // Content
-  contentWidth: 'fluid',
+  contentWidth: 'full',
 
   // Children
   contentChildren: 'content',
