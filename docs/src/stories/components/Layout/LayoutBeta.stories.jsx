@@ -15,14 +15,14 @@ export default {
 
     // Structure
 
-    wrapperSizing: {
-      options: ['fluid', 'md', 'lg', 'xl'],
+    containerWidth: {
+      options: ['full', 'md', 'lg', 'xl'],
       control: {
         type: 'inline-radio',
-        labels: ['fluid', 'md', 'lg', 'xl']
+        labels: ['full', 'md', 'lg', 'xl']
       },
       description:
-        'Define the maximum width of the component. `fluid` sets it to full-width. Other values center `Layout` horizontally. Refer to [container utilities](https://primer.style/css/utilities/grid#containers) for reference.',
+        'The maximum width of the page component. `full` sets it to full-width. Other values center `Layout` horizontally. Refer to [container utilities](https://primer.style/css/utilities/grid#containers) for reference.',
       table: {
         category: 'Structure'
       }
@@ -120,7 +120,7 @@ export default {
         category: 'Pane'
       }
     },
-    panePositionNarrow: {
+    panePositionWhenNarrow: {
       options: ['inherit', 'start', 'end'],
       control: {
         type: 'inline-radio'
@@ -138,7 +138,7 @@ export default {
         category: 'Pane'
       }
     },
-    paneDividerNarrow: {
+    paneDividerWhenNarrow: {
       options: ['inherit', 'none', 'line', 'filled'],
       control: {
         type: 'inline-radio'
@@ -160,12 +160,12 @@ export default {
     // Content
 
     contentWidth: {
-      options: ['fluid', 'sm', 'md', 'lg', 'xl'],
+      options: ['full', 'sm', 'md', 'lg', 'xl'],
       control: {
         type: 'inline-radio'
       },
       description:
-        'Defines the maximum width of the content region. `fluid` sets it to full-width. Other values follow container widths from `sm` to `xl`. With smaller widths, the content region will try to stay centered to the viewport area.',
+        'Defines the maximum width of the content region. `full` sets it to full-width. Other values follow container widths from `sm` to `xl`. With smaller widths, the content region will try to stay centered to the viewport area.',
       table: {
         category: 'Content'
       }
@@ -188,7 +188,7 @@ export default {
       }
     },
 
-    headerDividerNarrow: {
+    headerDividerWhenNarrow: {
       options: ['inherit', 'none', 'line', 'filled'],
       control: {
         type: 'inline-radio'
@@ -217,7 +217,7 @@ export default {
       }
     },
 
-    footerDividerNarrow: {
+    footerDividerWhenNarrow: {
       options: ['inherit', 'none', 'line', 'filled'],
       control: {
         type: 'inline-radio'
@@ -266,7 +266,7 @@ export const LayoutTemplate = ({
   _debug,
 
   // Wrapper
-  wrapperSizing,
+  containerWidth,
 
   // Spacing and borders
   outerSpacing,
@@ -277,20 +277,20 @@ export const LayoutTemplate = ({
   // Pane
   paneWidth,
   panePosition,
-  panePositionNarrow,
+  panePositionWhenNarrow,
   hasPaneDivider,
-  paneDividerNarrow,
+  paneDividerWhenNarrow,
   paneIsSticky,
 
   // Header
   hasHeader,
   hasHeaderDivider,
-  headerDividerNarrow,
+  headerDividerWhenNarrow,
 
   // Footer
   hasFooter,
   hasFooterDivider,
-  footerDividerNarrow,
+  footerDividerWhenNarrow,
 
   // Content
   contentWidth,
@@ -313,13 +313,13 @@ export const LayoutTemplate = ({
   }
 
   // Default values
-  wrapperSizing = wrapperSizing ?? 'xl'
+  containerWidth = containerWidth ?? 'xl'
   outerSpacing = outerSpacing ?? 'normal'
   innerSpacing = innerSpacing ?? 'none'
   columnGap = columnGap ?? 'normal'
   rowGap = rowGap ?? 'normal'
   panePosition = panePosition ?? 'end'
-  panePositionNarrow = panePositionNarrow ?? 'inherit'
+  panePositionWhenNarrow = panePositionWhenNarrow ?? 'inherit'
   responsiveVariant = responsiveVariant ?? 'stackRegions'
   primaryRegion = primaryRegion ?? 'content'
 
@@ -327,29 +327,29 @@ export const LayoutTemplate = ({
   outerSpacing = outerSpacing === 'none' ? null : outerSpacing
   innerSpacing = innerSpacing === 'none' ? null : innerSpacing
   paneWidth = paneWidth === 'default' ? null : paneWidth
-  contentWidth = contentWidth === 'fluid' ? null : contentWidth
-  headerDividerNarrow = headerDividerNarrow === 'none' ? null : headerDividerNarrow
-  footerDividerNarrow = footerDividerNarrow === 'none' ? null : footerDividerNarrow
+  contentWidth = contentWidth === 'full' ? null : contentWidth
+  headerDividerWhenNarrow = headerDividerWhenNarrow === 'none' ? null : headerDividerWhenNarrow
+  footerDividerWhenNarrow = footerDividerWhenNarrow === 'none' ? null : footerDividerWhenNarrow
 
   // Inherit value for responsive props
-  panePositionNarrow = panePositionNarrow === 'inherit' ? panePosition : panePositionNarrow
+  panePositionWhenNarrow = panePositionWhenNarrow === 'inherit' ? panePosition : panePositionWhenNarrow
 
   if (hasPaneDivider) {
-    paneDividerNarrow = paneDividerNarrow === 'inherit' ? 'line' : paneDividerNarrow
+    paneDividerWhenNarrow = paneDividerWhenNarrow === 'inherit' ? 'line' : paneDividerWhenNarrow
   } else {
-    paneDividerNarrow = null
+    paneDividerWhenNarrow = null
   }
 
   if (hasHeaderDivider) {
-    headerDividerNarrow = headerDividerNarrow === 'inherit' ? 'line' : headerDividerNarrow
+    headerDividerWhenNarrow = headerDividerWhenNarrow === 'inherit' ? 'line' : headerDividerWhenNarrow
   } else {
-    headerDividerNarrow = null
+    headerDividerWhenNarrow = null
   }
 
   if (hasFooterDivider) {
-    footerDividerNarrow = footerDividerNarrow === 'inherit' ? 'line' : footerDividerNarrow
+    footerDividerWhenNarrow = footerDividerWhenNarrow === 'inherit' ? 'line' : footerDividerWhenNarrow
   } else {
-    footerDividerNarrow = null
+    footerDividerWhenNarrow = null
   }
 
   PageLayoutBehavior()
@@ -373,11 +373,11 @@ export const LayoutTemplate = ({
           layoutClassName + '--responsive-' + `${responsiveVariant}`,
           responsiveVariant === 'separateRegions' && layoutClassName + '--responsive-primary-' + `${primaryRegion}`,
           responsiveVariant === 'stackRegions' &&
-            panePositionNarrow &&
-            layoutClassName + '--responsive-panePos-' + `${panePositionNarrow}`
+            panePositionWhenNarrow &&
+            layoutClassName + '--responsive-panePos-' + `${panePositionWhenNarrow}`
         )}
       >
-        <div className={clsx(layoutClassName + '-wrapper', wrapperSizing && containerClass[wrapperSizing])}>
+        <div className={clsx(layoutClassName + '-wrapper', containerWidth && containerClass[containerWidth])}>
           {/* Header */}
           {hasHeader && (
             <div
@@ -385,7 +385,7 @@ export const LayoutTemplate = ({
                 layoutClassName + '-region',
                 layoutClassName + '-header',
                 hasHeaderDivider && layoutClassName + '-header--hasDivider',
-                headerDividerNarrow && layoutClassName + '-region--dividerNarrow-' + headerDividerNarrow + '-after'
+                headerDividerWhenNarrow && layoutClassName + '-region--dividerNarrow-' + headerDividerWhenNarrow + '-after'
               )}
             >
               {headerChildren}
@@ -399,11 +399,11 @@ export const LayoutTemplate = ({
                 className={clsx(
                   layoutClassName + '-region',
                   layoutClassName + '-pane',
-                  paneDividerNarrow &&
+                  paneDividerWhenNarrow &&
                     layoutClassName +
                       '-region--dividerNarrow-' +
-                      paneDividerNarrow +
-                      (panePositionNarrow === 'start' ? '-after' : '-before')
+                      paneDividerWhenNarrow +
+                      (panePositionWhenNarrow === 'start' ? '-after' : '-before')
                 )}
               >
                 {paneChildren}
@@ -429,11 +429,11 @@ export const LayoutTemplate = ({
                 className={clsx(
                   layoutClassName + '-region',
                   layoutClassName + '-pane',
-                  paneDividerNarrow &&
+                  paneDividerWhenNarrow &&
                     layoutClassName +
                       '-region--dividerNarrow-' +
-                      paneDividerNarrow +
-                      (panePositionNarrow === 'start' ? '-after' : '-before')
+                      paneDividerWhenNarrow +
+                      (panePositionWhenNarrow === 'start' ? '-after' : '-before')
                 )}
               >
                 {paneChildren}
@@ -448,7 +448,7 @@ export const LayoutTemplate = ({
                 layoutClassName + '-region',
                 layoutClassName + '-footer',
                 hasFooterDivider && layoutClassName + '-footer--hasDivider',
-                footerDividerNarrow && layoutClassName + '-region--dividerNarrow-' + footerDividerNarrow + '-before'
+                footerDividerWhenNarrow && layoutClassName + '-region--dividerNarrow-' + footerDividerWhenNarrow + '-before'
               )}
             >
               {footerChildren}
@@ -485,7 +485,7 @@ Playground.parameters = {
 }
 Playground.args = {
   _debug: true,
-  wrapperSizing: 'xl',
+  containerWidth: 'xl',
   outerSpacing: 'normal',
   innerSpacing: 'none',
   columnGap: 'normal',
@@ -496,20 +496,20 @@ Playground.args = {
 
   paneWidth: 'default',
   panePosition: 'end',
-  panePositionNarrow: 'inherit',
+  panePositionWhenNarrow: 'inherit',
   hasPaneDivider: false,
-  paneDividerNarrow: 'inherit',
+  paneDividerWhenNarrow: 'inherit',
   paneIsSticky: false,
 
-  contentWidth: 'fluid',
+  contentWidth: 'full',
 
   hasHeader: true,
   hasHeaderDivider: false,
-  headerDividerNarrow: 'inherit',
+  headerDividerWhenNarrow: 'inherit',
 
   hasFooter: true,
   hasFooterDivider: false,
-  footerDividerNarrow: 'inherit',
+  footerDividerWhenNarrow: 'inherit',
 
   contentChildren: 'content',
   paneChildren: 'pane',
