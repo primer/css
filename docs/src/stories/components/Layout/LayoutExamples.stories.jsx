@@ -136,8 +136,8 @@ IssueDetail.args = {
   paneWidth: 'default',
   hasHeader: true,
   hasHeaderDivider: true,
-  headerDividerNarrow: 'filled',
-  paneDividerNarrow: 'filled',
+  headerDividerWhenNarrow: 'filled',
+  paneDividerWhenNarrow: 'filled',
   headerChildren: (
     <>
       <h2 className="f2">
