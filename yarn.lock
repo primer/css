@@ -1153,10 +1153,10 @@
   resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.4.0.tgz#75df54a80233a432b687c0e3010e4be6bd60a82d"
   integrity sha512-gD6yHXN7YKox/bdUNgxhoSS/WXZVaORK1r4dOAyTrdoPrLV/ucIfRInPyVcTF+Mqr0zcTFJtiMtuA5Y8CSyOEg==
 
-"@primer/stylelint-config@12.2.0":
-  version "12.2.0"
-  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-12.2.0.tgz#361e60e09838b088a3f012edf260b52f3cdda90b"
-  integrity sha512-TzQR+8UNS39jqao2tCQOrjSiGSjWTaLyc4omEZpHhvSbVvYO1M+EmEQvK/1uoDK8IUSQpIRKvuDiQsHObpgD4Q==
+"@primer/stylelint-config@^12.3.0":
+  version "12.3.0"
+  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-12.3.0.tgz#de45e16f21f245f31a634ab76a5fcdef796495ac"
+  integrity sha512-BZG1ARFaWLQP8avLObAtpSj88z/CLAvhSND+Ts2H1KEYnKNmwkgqwc6CW5OVpLD5BUKqDwun+8OVa37+ueeSQA==
   dependencies:
     anymatch "^3.1.1"
     globby "^11.0.1"

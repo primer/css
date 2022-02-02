@@ -30,7 +30,6 @@
         // --ActionList-tree-depth is defined as an inline style referencing the aria-level of each item ie: aria-level="2"
         // stylelint-disable-next-line selector-max-specificity, max-nesting-depth, selector-max-compound-selectors
         .ActionList-content {
-          // stylelint-disable-next-line primer/spacing
           padding-left: calc(#{$spacer-2} * var(--ActionList-tree-depth));
         }
       }

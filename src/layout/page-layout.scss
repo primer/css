@@ -245,7 +245,6 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
     .PageLayout-region--dividerNarrow-filled-before {
       position: relative;
-      // stylelint-disable-next-line primer/spacing
       margin-top: calc(#{$spacer-2} + var(--Layout-row-gap));
 
       &::after {
@@ -257,7 +256,6 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
     .PageLayout-region--dividerNarrow-filled-after {
       position: relative;
-      // stylelint-disable-next-line primer/spacing
       margin-bottom: calc(#{$spacer-2} + var(--Layout-row-gap));
 
       &::before {
@@ -363,15 +361,12 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 .PageLayout-content,
 .PageLayout-pane,
 .PageLayout-footer {
-  // stylelint-disable-next-line primer/spacing
   padding: var(--Layout-inner-spacing-min);
 }
 
 .PageLayout-content {
-  // stylelint-disable primer/spacing
   padding-right: var(--Layout-inner-spacing-max);
   padding-left: var(--Layout-inner-spacing-max);
-  // stylelint-enable primer/spacing
   grid-area: content;
 }
 
