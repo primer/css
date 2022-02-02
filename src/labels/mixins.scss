@@ -31,6 +31,6 @@
 @mixin labels--inline {
   display: inline;
   // stylelint-disable-next-line primer/spacing
-  padding: 0.1667em $em-spacer-5;
-  font-size: 0.9em;
+  padding: 0.12em $em-spacer-5;
+  font-size: 85%;
 }
