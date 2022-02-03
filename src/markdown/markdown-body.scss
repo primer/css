@@ -93,12 +93,4 @@
       margin-bottom: 0;
     }
   }
-
-  sup > a::before {
-    content: '[';
-  }
-
-  sup > a::after {
-    content: ']';
-  }
 }
