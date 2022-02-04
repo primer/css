@@ -9,7 +9,7 @@ export default {
   argTypes: {
     // Structure
 
-    innerSpacing: {
+    padding: {
       options: ['normal', 'condensed'],
       control: {
         type: 'inline-radio'
@@ -78,7 +78,7 @@ export default {
 
 export const SplitPageLayoutTemplate = ({
   _debug,
-  innerSpacing,
+  padding,
   primaryRegion,
   paneWidth,
   paneIsSticky,
@@ -92,7 +92,7 @@ export const SplitPageLayoutTemplate = ({
         _debug={_debug}
         containerWidth="full"
         outerSpacing="none"
-        innerSpacing={innerSpacing}
+        innerSpacing={padding}
         columnGap="none"
         rowGap="none"
         responsiveVariant="separateRegions"
@@ -120,7 +120,7 @@ Playground.args = {
   _debug: true,
 
   // Structure
-  innerSpacing: 'normal',
+  padding: 'normal',
 
   // Responsive
   primaryRegion: 'content',

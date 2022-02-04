@@ -16,7 +16,7 @@ Settings.parameters = {
 };
 Settings.args = {
   // Structure
-  innerSpacing: 'normal',
+  padding: 'normal',
 
   // Responsive
   primaryRegion: 'pane',
