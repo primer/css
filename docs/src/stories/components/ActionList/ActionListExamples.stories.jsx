@@ -479,7 +479,6 @@ ActionListTreeViewTemplate.args = {
   ariaLabel: 'Main menu description',
   showDividers: false,
   variant: 'ActionList--tree',
-  listPadding: 'ActionList--full',
   children: (
     <>
       <ListItemTemplate
