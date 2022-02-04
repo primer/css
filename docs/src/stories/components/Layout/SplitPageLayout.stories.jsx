@@ -10,7 +10,7 @@ export default {
     // Structure
 
     padding: {
-      options: ['normal', 'condensed'],
+      options: ['normal', 'condensed', 'none'],
       control: {
         type: 'inline-radio'
       },

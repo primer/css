@@ -30,7 +30,7 @@ export default {
     },
 
     padding: {
-      options: ['normal', 'condensed'],
+      options: ['normal', 'condensed', 'none'],
       control: {
         type: 'inline-radio'
       },
