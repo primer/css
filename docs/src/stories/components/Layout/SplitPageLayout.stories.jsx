@@ -59,6 +59,24 @@ export default {
       }
     },
 
+    // Header
+
+    hasHeader: {
+      control: { type: 'boolean' },
+      table: {
+        category: 'Header'
+      }
+    },
+
+    // Footer
+
+    hasFooter: {
+      control: { type: 'boolean' },
+      table: {
+        category: 'Footer'
+      }
+    },    
+
     // HTML
 
     contentChildren: {
@@ -83,8 +101,12 @@ export const SplitPageLayoutTemplate = ({
   paneWidth,
   paneIsSticky,
   contentWidth,
+  hasHeader,
+  hasFooter,
   contentChildren,
-  paneChildren
+  paneChildren,
+  headerChildren,
+  footerChildren
 }) => {
   return (
     <>
@@ -102,10 +124,14 @@ export const SplitPageLayoutTemplate = ({
         panePosition="start"
         hasPaneDivider={true}
         contentWidth={contentWidth}
-        hasHeader={false}
-        hasFooter={false}
+        hasHeader={hasHeader}
+        hasHeaderDivider={true}
+        hasFooter={hasFooter}
+        hasFooterDivider={true}
         contentChildren={contentChildren}
         paneChildren={paneChildren}
+        headerChildren={headerChildren}
+        footerChildren={footerChildren}
       />
     </>
   )
@@ -131,7 +157,15 @@ Playground.args = {
   // Content
   contentWidth: 'full',
 
+  // Header
+  hasHeader: false,
+
+  // Footer
+  hasFooter: false,
+
   // Children
   contentChildren: 'content',
-  paneChildren: 'pane'
+  paneChildren: 'pane',
+  headerChildren: 'header',
+  footerChildren: 'footer',
 }

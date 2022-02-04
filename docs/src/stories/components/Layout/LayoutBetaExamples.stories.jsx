@@ -165,3 +165,49 @@ IssueDetail.args = {
     </>
   )
 };
+
+export const PullDetail = SplitPageLayoutTemplate.bind({});
+PullDetail.storyName = 'Pull request detail';
+PullDetail.parameters = {
+  layout: 'fullscreen',
+};
+PullDetail.args = {
+  padding: 'normal',
+  primaryRegion: 'content',
+  paneWidth: 'wide',
+  paneIsSticky: true,
+  contentWidth: 'full',
+  hasHeader: true,
+  hasFooter: true,
+  headerChildren: (
+    <>
+      <h2 className="f2">
+        Traverse does not calculate scope in object deconstructor
+        <span className="f2-light color-fg-muted"> #14024</span>
+      </h2>
+      <div className="d-flex flex-items-center flex-wrap mt-2" style={{gap: '8px'}}>
+        <span title="Status: Open" class="State State--open">
+          <svg height="16" class="octicon octicon-issue-opened" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path><path fill-rule="evenodd" d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z"></path></svg> Open
+        </span>
+        <span className="color-fg-muted"><strong class="color-fg-default">monalisa</strong> opened this issue 6 days ago</span>
+      </div>
+    </>
+  ),
+  contentChildren: (
+    <>
+      <div className="Box p-3" style={{minHeight: '1200px'}}> </div>
+    </>
+  ),
+  paneChildren: (
+    <>
+      <div className="Box p-3" style={{minHeight: '140px'}}> </div>
+      <div className="Box p-3 mt-3" style={{minHeight: '200px'}}> </div>
+      <div className="Box p-3 mt-3" style={{minHeight: '140px'}}> </div>
+    </>
+  ),
+  footerChildren: (
+    <>
+      footer
+    </>
+  )
+};
