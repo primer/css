@@ -1,11 +1,10 @@
 import React from 'react'
 import clsx from 'clsx'
-import {ListItemTemplate} from '../../private/ActionList/ActionListItem.stories'
-import {ListTemplate} from '../../private/ActionList/ActionList.stories.jsx'
+import {ListItemTemplate} from './ActionListItem.stories'
 
 export default {
-  title: 'Components/ActionList/ActionList',
-  excludeStories: ['ActionListTemplate'],
+  title: 'Private/ActionList/ActionList',
+  excludeStories: ['ListTemplate'],
   parameters: {
     design: {
       type: 'figma',
@@ -21,13 +20,25 @@ export default {
       }
     },
     role: {
-      options: ['list'],
+      options: [null, 'menu', 'group', 'listbox', 'menubar', 'none', 'radiogroup', 'list'],
       control: {
         type: 'inline-radio'
       },
       description: 'Semantic list role',
       table: {
         category: 'HTML'
+      }
+    },
+    variant: {
+      options: [0, 1], // iterator
+      mapping: [null, 'ActionList--tree'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['default', 'tree-view']
+      },
+      description: 'Specifies variants for different types of lists',
+      table: {
+        category: 'CSS'
       }
     },
     ariaLabel: {
@@ -42,6 +53,14 @@ export default {
       name: 'ariaLabelledBy',
       type: 'string',
       description: 'Reference ID of NavigationListDivider',
+      table: {
+        category: 'HTML'
+      }
+    },
+    listboxMultiSelect: {
+      name: 'listboxMultiSelect',
+      type: 'boolean',
+      description: 'If ActionList has listbox role + multiselect children',
       table: {
         category: 'HTML'
       }
@@ -78,13 +97,41 @@ export default {
   }
 }
 
-export const ActionListTemplate = ListTemplate.bind({})
+export const ListTemplate = ({
+  showDividers,
+  children,
+  role,
+  ariaLabel,
+  ariaLabelledBy,
+  listboxMultiSelect,
+  listPadding,
+  variant,
+  listType
+}) => (
+  <ul
+    className={clsx(
+      'ActionList',
+      showDividers && 'ActionList--divided',
+      listType === 'nested' && 'ActionList--subGroup',
+      listPadding && `${listPadding}`,
+      variant && `${variant}`
+    )}
+    role={role}
+    aria-label={ariaLabel && ariaLabel}
+    aria-labelledby={ariaLabelledBy && ariaLabelledBy}
+    aria-multiselectable={listboxMultiSelect ? 'true' : undefined}
+  >
+    <>{children}</>
+  </ul>
+)
 
-export const Playground = ActionListTemplate.bind({})
+export const Playground = ListTemplate.bind({})
 Playground.args = {
-  listType: 0,
+  listType: 'parent',
   showDividers: false,
+  listboxMultiSelect: false,
   listPadding: 0,
+  variant: 0,
   role: 'list',
   children: (
     <>

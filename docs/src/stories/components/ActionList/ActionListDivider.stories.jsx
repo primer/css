@@ -3,8 +3,8 @@ import clsx from 'clsx'
 import {ListTemplate} from './ActionList.stories'
 
 export default {
-  title: 'Patterns/ActionList/ActionListDivider',
-  excludeStories: ['DividerTemplate'],
+  title: 'Components/ActionList/ActionListDivider',
+  excludeStories: ['ActionDividerTemplate'],
   parameters: {
     design: {
       type: 'figma',
@@ -60,24 +60,9 @@ export default {
   ]
 }
 
-export const DividerTemplate = ({title, description, variant, id}) => (
-  <>
-    <span
-      className={clsx('ActionList-sectionDivider', variant && `${variant}`)}
-      role={title ? undefined : 'separator'}
-      aria-hidden={title ? undefined : true}
-    >
-      {title && (
-        <h3 className="ActionList-sectionDivider-title" id={id}>
-          {title}
-        </h3>
-      )}
-      {description && <span className="ActionList-item-description">{description}</span>}
-    </span>
-  </>
-)
+export const ActionDividerTemplate = DividerTemplate.bind({})
 
-export const Playground = DividerTemplate.bind({})
+export const Playground = ActionDividerTemplate.bind({})
 Playground.args = {
   title: 'Section title',
   description: 'Section description',

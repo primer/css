@@ -4,7 +4,7 @@ import useToggle from '../../helpers/useToggle.jsx'
 import {ListTemplate} from './ActionList.stories'
 
 export default {
-  title: 'Patterns/ActionList/ActionListItemCollapsible',
+  title: 'Private/ActionList/ActionListItemCollapsible',
   parameters: {
     design: {
       type: 'figma',

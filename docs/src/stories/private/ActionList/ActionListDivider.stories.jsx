@@ -1,10 +1,10 @@
 import React from 'react'
 import clsx from 'clsx'
-import {NavigationListTemplate} from './NavigationList.stories'
+import {ListTemplate} from './ActionList.stories'
 
 export default {
-  title: 'Components/NavigationList/NavigationListDivider',
-  excludeStories: ['NavigationListDividerTemplate'],
+  title: 'Private/ActionList/ActionListDivider',
+  excludeStories: ['DividerTemplate'],
   parameters: {
     design: {
       type: 'figma',
@@ -50,12 +50,19 @@ export default {
         category: 'HTML'
       }
     }
-  }
+  },
+  decorators: [
+    Story => (
+      <ul className="ActionList" role="menu">
+        <Story />
+      </ul>
+    )
+  ]
 }
 
-export const NavigationListDividerTemplate = ({title, description, variant, id}) => (
+export const DividerTemplate = ({title, description, variant, id}) => (
   <>
-    <li
+    <span
       className={clsx('ActionList-sectionDivider', variant && `${variant}`)}
       role={title ? undefined : 'separator'}
       aria-hidden={title ? undefined : true}
@@ -66,19 +73,20 @@ export const NavigationListDividerTemplate = ({title, description, variant, id})
         </h3>
       )}
       {description && <span className="ActionList-item-description">{description}</span>}
-    </li>
+    </span>
   </>
 )
 
-export const Playground = NavigationListDividerTemplate.bind({})
+export const Playground = DividerTemplate.bind({})
 Playground.args = {
   title: 'Section title',
-  description: 'Section description'
+  description: 'Section description',
+  variant: 'subtle'
 }
 Playground.decorators = [
   Story => (
-    <NavigationListTemplate>
+    <ListTemplate>
       <Story />
-    </NavigationListTemplate>
+    </ListTemplate>
   )
 ]

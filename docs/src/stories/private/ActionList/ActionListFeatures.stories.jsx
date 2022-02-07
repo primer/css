@@ -4,7 +4,7 @@ import {ListTemplate} from './ActionList.stories'
 import {ListItemTemplate} from './ActionListItem.stories'
 
 export default {
-  title: 'Components/ActionList/ActionList/Features'
+  title: 'Private/ActionList/ActionList/Features'
 }
 
 export const ShowDividers = ListTemplate.bind({})

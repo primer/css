@@ -6,7 +6,7 @@ import {DividerTemplate} from './ActionListDivider.stories'
 import {ActionListTreeViewTemplate} from './ActionListTree.stories'
 
 export default {
-  title: 'Patterns/ActionList/ActionTreeView/Features'
+  title: 'Private/ActionList/ActionTreeView/Features'
 }
 
 export const TruncateText = ActionListTreeViewTemplate.bind({})

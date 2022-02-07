@@ -5,7 +5,7 @@ import {ListItemTemplate} from './ActionListItem.stories'
 import {ActionListItemCollapsibleTemplate} from './ActionListItemCollapsible.stories'
 
 export default {
-  title: 'Patterns/ActionList/ActionTreeView',
+  title: 'Private/ActionList/ActionTreeView',
   excludeStories: ['ActionListTreeViewTemplate'],
   layout: 'padded',
   argTypes: {

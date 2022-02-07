@@ -5,7 +5,7 @@ import {ListItemTemplate} from './ActionListItem.stories'
 import {DividerTemplate} from './ActionListDivider.stories'
 
 export default {
-  title: 'Patterns/ActionList/ActionListDivider/Features',
+  title: 'Private/ActionList/ActionListDivider/Features',
   decorators: [
     Story => (
       <ListTemplate>
