@@ -1,111 +1,20 @@
-.modal-hide {
-  display: none !important;
-}
-
-.modal-dialog-backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-neutral-muted);
-  animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running dialog-backdrop-appear;
-}
-
-.modal-dialog {
-  display: flex;
-  width: 640px;
-  min-width: 296px;
-  max-width: calc(100vw - 64px);
-  height: auto;
-  max-height: calc(100vh - 64px);
-  flex-direction: column;
-  background-color: var(--color-canvas-default);
-  // stylelint-disable-next-line primer/borders
-  border-radius: $border-radius-5;
-  box-shadow: var(--color-shadow-extra-large);
-  opacity: 1;
+.Dialog {
   animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running overlay--dialog-appear;
+}
 
-  .dialog-header {
-    z-index: 1;
-    padding: $spacer-2;
-    border-bottom: $border-width $border-style var(--color-border-default);
-    flex-shrink: 0;
+.Dialog-footer {
+  justify-content: flex-end;
+  gap: 8px;
+}
 
-    .header-container {
-      display: flex;
-    }
+@keyframes overlay--dialog-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
   }
 
-  .header-container-title {
-    display: flex;
-    padding: $spacer-2;
-    flex-direction: column;
-    -webkit-box-flex: 1;
-    flex-grow: 1;
-
-    .title {
-      margin: $spacer-0;
-      font-size: $body-font-size;
-      font-weight: $font-weight-bold;
-    }
-
-    .subtitle {
-      margin: $spacer-1 $spacer-0 $spacer-0;
-      font-size: $font-size-small;
-      color: var(--color-fg-muted);
-    }
-  }
-
-  .close-button {
-    position: relative;
-    display: inline-block;
-    padding: $spacer-2;
-    font-family: inherit;
-    font-size: $body-font-size;
-    font-weight: $font-weight-bold;
-    line-height: $lh-normal;
-    color: var(--color-fg-muted);
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    user-select: none;
-    background: transparent;
-    border: $border-width $border-style transparent;
-    // stylelint-disable-next-line primer/borders
-    border-radius: $border-radius-1;
-    box-shadow: none;
-    appearance: none;
-    align-self: flex-start;
-
-    &:hover,
-    &:focus {
-      background-color: var(--color-canvas-inset);
-      border: $border-width $border-style var(--color-border-muted);
-    }
-  }
-
-  .dialog-body {
-    padding: $spacer-3;
-    -webkit-box-flex: 1;
-    flex-grow: 1;
-    overflow: auto;
-  }
-
-  .dialog-footer {
-    z-index: 1;
-    display: flex;
-    padding: $spacer-3;
-    border-top: $border-width $border-style var(--color-border-default);
-    flex-flow: wrap;
-    -webkit-box-pack: end;
-    justify-content: flex-end;
-    flex-shrink: 0;
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }

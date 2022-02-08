@@ -1,8 +1,8 @@
-import React from 'react'
 import clsx from 'clsx'
+import React from 'react'
 
 export default {
-  title: 'Components/Dialog',
+  title: 'Ui Patterns/Overlay',
   parameters: {
     layout: 'padded'
   },
@@ -30,6 +30,14 @@ export default {
     focusElement: {
       control: {type: 'boolean'},
       description: 'focus the dialog',
+      defaultValue: false,
+      table: {
+        category: 'Interactive'
+      }
+    },
+    toggleOverlay: {
+      control: {type: 'boolean'},
+      description: 'show/hide overlay',
       defaultValue: false,
       table: {
         category: 'Interactive'
@@ -73,21 +81,18 @@ export default {
         category: 'CSS'
       }
     },
-    showFooterDivider: {
-      control: {type: 'boolean'},
-      defaultValue: false,
-      description: 'Show dividers above footer',
+    position: {
+      options: [0, 1, 2, 3], // iterator
+      mapping: [null, 'Overlay-backdrop--positionCenter', 'Overlay-backdrop--positionBottom'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['none', 'center', 'bottom', 'side']
+      },
+      description: 'Positions overlay',
       table: {
         category: 'CSS'
-      }
-    },
-    showHeaderDivider: {
-      control: {type: 'boolean'},
-      defaultValue: false,
-      description: 'Show dividers below header',
-      table: {
-        category: 'CSS'
-      }
+      },
+      defaultValue: 'Overlay--position-center'
     },
     headerRegion: {
       control: {type: 'boolean'},
@@ -106,6 +111,30 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    showFooterDivider: {
+      control: {type: 'boolean'},
+      defaultValue: false,
+      description: 'Show dividers above footer',
+      table: {
+        category: 'CSS'
+      }
+    },
+    showHeaderDivider: {
+      control: {type: 'boolean'},
+      defaultValue: false,
+      description: 'Show dividers below header',
+      table: {
+        category: 'CSS'
+      }
+    },
+    showInputField: {
+      control: {type: 'boolean'},
+      defaultValue: false,
+      description: 'Slot for input field',
+      table: {
+        category: 'CSS'
+      }
     }
   }
 }
@@ -117,7 +146,7 @@ const focusMethod = function getFocus() {
 
 const toggleDialog = () => {
   const dialog = document.getElementById('modal-dialog-backdrop')
-  dialog.classList.toggle('Overlay-hidden')
+  dialog.classList.toggle('modal-hide')
   focusMethod()
 }
 
@@ -125,31 +154,22 @@ export const DialogTemplate = ({
   title,
   description,
   focusElement,
+  toggleOverlay,
   width,
   height,
   showFooterDivider,
   showHeaderDivider,
   headerRegion,
-  footerRegion
+  footerRegion,
+  position,
+  showInputField
 }) => (
   <>
-    <button class="btn modal-button" onClick={toggleDialog}>
-      <span>Open dialog</span>
-    </button>
     <div
       id="modal-dialog-backdrop"
-      className={clsx('Overlay-backdrop', 'Overlay-backdrop--positionCenter')}
-      role="dialog"
-      aria-labelledby="react-aria8832355892-4"
-      aria-describedby="react-aria8832355892-5"
-      data-focus-trap="active"
-      open
+      className={clsx(toggleOverlay && 'Overlay-hidden', 'Overlay-backdrop', position && `${position}`)}
     >
-      <div
-        className={clsx('Dialog', 'Overlay', width && `${width}`, height && `${height}`)}
-        data-focus-trap="active"
-        open
-      >
+      <div className={clsx('Overlay', width && `${width}`, height && `${height}`)} data-focus-trap="active" open>
         {headerRegion && (
           <header className={clsx('Overlay-header', showHeaderDivider && 'Overlay-header--divided')}>
             <div className="Overlay-header--contentWrap">
@@ -174,11 +194,16 @@ export const DialogTemplate = ({
                 </svg>
               </button>
             </div>
+            {showInputField && (
+              <div className="Overlay-header-inputField">
+                <input className="form-control input-block" />
+              </div>
+            )}
           </header>
         )}
         <div className="Overlay-body">This is the body of the dialog</div>
         {footerRegion && (
-          <footer className={clsx('Dialog-footer', 'Overlay-footer', showFooterDivider && 'Overlay-footer--divided')}>
+          <footer className={clsx('Overlay-footer', showFooterDivider && 'Overlay-footer--divided')}>
             <button class="btn" onClick={toggleDialog}>
               <span>Continue</span>
             </button>
