@@ -109,3 +109,19 @@
     flex-shrink: 0;
   }
 }
+
+@keyframes overlay--dialog-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.Dialog-footer {
+  justify-content: flex-end;
+  gap: 8px;
+}

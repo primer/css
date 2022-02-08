@@ -1,0 +1,182 @@
+.Overlay-hidden {
+  display: none !important;
+}
+
+.Overlay {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  max-width: calc(100vw - 64px);
+  background-color: var(--color-canvas-default);
+  border-radius: 12px;
+  box-shadow: var(--color-shadow-extra-large);
+  opacity: 1;
+  aspect-ratio: 1.6 / 1;
+
+  &.Overlay--height-auto {
+    height: auto;
+  }
+
+  &.Overlay--height-xsmall {
+    height: 192px;
+  }
+
+  &.Overlay--height-small {
+    height: 256px;
+  }
+
+  &.Overlay--height-medium {
+    height: 320px;
+  }
+
+  &.Overlay--height-large {
+    height: 432px;
+  }
+
+  &.Overlay--height-xlarge {
+    height: 600px;
+  }
+
+  &.Overlay--width-small {
+    width: 256px;
+  }
+
+  &.Overlay--width-medium {
+    width: 320px;
+  }
+
+  &.Overlay--width-large {
+    width: 480px;
+  }
+
+  &.Overlay--width-xlarge {
+    width: 640px;
+  }
+
+  &.Overlay--width-xxlarge {
+    width: 960px;
+  }
+}
+
+.Overlay-header {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+
+  &.Overlay-header--divided {
+    border-bottom: $border-width $border-style var(--color-border-default);
+  }
+
+  .Overlay-header--contentWrap {
+    display: flex;
+    gap: 8px;
+  }
+
+  .Overlay-header--titleWrap {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 8px;
+    padding: 16px 0px 16px 16px;
+
+    .Overlay-title {
+      font-size: $body-font-size;
+      font-weight: $font-weight-bold;
+      margin: 0;
+    }
+
+    .Overlay-description {
+      font-size: $font-size-small;
+      font-weight: $font-weight-normal;
+      color: var(--color-fg-muted);
+      margin: 0;
+    }
+  }
+
+  .Overlay-header-inputField {
+    padding: 0px 8px 8px 8px;
+  }
+}
+
+// generic body content slot
+.Overlay-body {
+  flex-grow: 1;
+  padding: 16px 16px 0 16px;
+  overflow: auto;
+}
+
+// generic footer slot
+.Overlay-footer {
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  padding: 16px;
+
+  &.Overlay-footer--divided {
+    border-top: $border-width $border-style var(--color-border-default);
+  }
+}
+
+// TODO: replace with refactored IconButton
+.Overlay-closeButton {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: grid;
+  place-content: center;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border-radius: $border-radius;
+  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  transition-property: color, background-color, border-color;
+  color: var(--color-fg-muted);
+  border: $border-width $border-style transparent;
+  align-self: flex-start;
+  margin-right: 8px;
+  margin-top: 8px;
+  flex-shrink: 0;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-btn-hover-bg);
+    border: $border-width $border-style var(--color-btn-hover-bg);
+  }
+}
+
+.Overlay-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  background-color: var(--color-neutral-muted);
+  animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running dialog-backdrop-appear;
+
+  @keyframes dialog-backdrop-appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &.Overlay-backdrop--positionCenter {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.Overlay-backdrop--positionBottom {
+    align-items: end;
+    justify-content: center;
+
+    .Overlay {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
