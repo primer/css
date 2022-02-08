@@ -4,7 +4,7 @@ import useToggle from '../../helpers/useToggle.jsx'
 import {ListTemplate} from './ActionList.stories.jsx'
 
 export default {
-  title: 'Private/ActionList/ActionListItem',
+  title: 'UI Patterns/ActionList/ActionListItem',
   parameters: {
     design: {
       type: 'figma',
@@ -370,7 +370,7 @@ export const ListItemTemplate = ({
       ) : (
         <>
           {text && (
-            <span
+            <button
               className={clsx(
                 text && 'ActionList-content',
                 size && `${size}`,
@@ -445,7 +445,7 @@ export const ListItemTemplate = ({
               {trailingAction && (
                 <span className="ActionList-item-action ActionList-item-action--trailing">{trailingAction}</span>
               )}
-            </span>
+            </button>
           )}
           {children}
         </>

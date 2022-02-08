@@ -4,7 +4,7 @@ import {ActionListItemCollapsibleTemplate} from './ActionListItemCollapsible.sto
 import {ListTemplate} from './ActionList.stories'
 
 export default {
-  title: 'Private/ActionList/ActionListItemCollapsible/Features',
+  title: 'UI Patterns/ActionList/ActionListItemCollapsible/Features',
   parameters: {
     design: {
       type: 'figma',

@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import {ListTemplate} from './ActionList.stories'
 
 export default {
-  title: 'Private/ActionList/ActionListDivider',
+  title: 'UI Patterns/ActionList/ActionListDivider',
   excludeStories: ['DividerTemplate'],
   parameters: {
     design: {

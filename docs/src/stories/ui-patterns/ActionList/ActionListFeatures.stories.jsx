@@ -4,11 +4,12 @@ import {ListTemplate} from './ActionList.stories'
 import {ListItemTemplate} from './ActionListItem.stories'
 
 export default {
-  title: 'Private/ActionList/ActionList/Features'
+  title: 'UI Patterns/ActionList/ActionList/Features'
 }
 
-export const ShowDividers = ListTemplate.bind({})
-ShowDividers.args = {
+export const PatternShowDividers = ListTemplate.bind({})
+PatternShowDividers.storyName = 'Show dividers'
+PatternShowDividers.args = {
   showDividers: true,
   children: (
     <>
@@ -19,8 +20,9 @@ ShowDividers.args = {
   )
 }
 
-export const InsetPadding = ListTemplate.bind({})
-InsetPadding.args = {
+export const PatternInsetPadding = ListTemplate.bind({})
+PatternInsetPadding.storyName = 'Inset padding'
+PatternInsetPadding.args = {
   listPadding: null,
   children: (
     <>
@@ -31,8 +33,9 @@ InsetPadding.args = {
   )
 }
 
-export const FullBleed = ListTemplate.bind({})
-FullBleed.args = {
+export const PatternFullBleed = ListTemplate.bind({})
+PatternFullBleed.storyName = 'Full bleed'
+PatternFullBleed.args = {
   listPadding: 'ActionList--full',
   children: (
     <>
@@ -43,8 +46,9 @@ FullBleed.args = {
   )
 }
 
-export const NestedGroup = ListTemplate.bind({})
-NestedGroup.args = {
+export const PatternNestedGroup = ListTemplate.bind({})
+PatternNestedGroup.storyName = 'Nested group'
+PatternNestedGroup.args = {
   listType: 'nested',
   children: (
     <>

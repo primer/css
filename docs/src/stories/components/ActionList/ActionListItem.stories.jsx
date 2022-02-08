@@ -1,17 +1,9 @@
 import React from 'react'
-import clsx from 'clsx'
-import useToggle from '../../helpers/useToggle.jsx'
-import {ListTemplate} from '../../private/ActionList/ActionList.stories.jsx'
-import {ListItemTemplate} from '../../private/ActionList/ActionListItem.stories.jsx'
+import {ListTemplate} from '../../ui-patterns/ActionList/ActionList.stories.jsx'
+import {ListItemTemplate} from '../../ui-patterns/ActionList/ActionListItem.stories.jsx'
 
 export default {
   title: 'Components/ActionList/ActionListItem',
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/oMiRuexZW6gqVbMhQd6lwP/Storybook-Docs?node-id=23%3A30843'
-    }
-  },
   excludeStories: ['ActionListItemTemplate'],
   argTypes: {
     size: {
@@ -35,13 +27,6 @@ export default {
         labels: ['default', 'danger']
       },
       defaultValue: '',
-      table: {
-        category: 'CSS'
-      }
-    },
-    subItem: {
-      defaultValue: false,
-      control: {type: 'boolean'},
       table: {
         category: 'CSS'
       }
@@ -149,5 +134,6 @@ Playground.args = {
   truncateItem: false,
   size: 0,
   variant: 0,
-  subItem: false
+  descriptionVariant: 0,
+  leadingVisualSize: 0
 }
