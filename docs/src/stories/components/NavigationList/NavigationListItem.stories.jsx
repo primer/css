@@ -44,6 +44,13 @@ export default {
         category: 'CSS'
       }
     },
+    hasSubItem: {
+      defaultValue: false,
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
+    },
     truncateItem: {
       defaultValue: false,
       control: {type: 'boolean'},
@@ -158,6 +165,7 @@ export const NavigationListItemTemplate = ({
   ariaCurrent,
   children,
   subItem,
+  hasSubItem,
   collapsible,
   trailingAction,
   leadingAction,
@@ -171,6 +179,7 @@ export const NavigationListItemTemplate = ({
         'ActionList-item',
         ariaCurrent && 'ActionList-item--navActive',
         subItem && `ActionList-item--subItem`,
+        hasSubItem && `ActionList-item--hasSubItem`,
         variant && `${variant}`
       )}
     >

@@ -62,7 +62,7 @@ export default {
 
 export const DividerTemplate = ({title, description, variant, id}) => (
   <>
-    <span
+    <li
       className={clsx('ActionList-sectionDivider', variant && `${variant}`)}
       role={title ? undefined : 'separator'}
       aria-hidden={title ? undefined : true}
@@ -73,7 +73,7 @@ export const DividerTemplate = ({title, description, variant, id}) => (
         </h3>
       )}
       {description && <span className="ActionList-item-description">{description}</span>}
-    </span>
+    </li>
   </>
 )
 
