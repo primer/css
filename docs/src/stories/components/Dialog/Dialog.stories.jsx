@@ -1,5 +1,5 @@
 import React from 'react'
-// import clsx from 'clsx'
+import clsx from 'clsx'
 
 export default {
   title: 'Components/Dialog',
@@ -11,9 +11,9 @@ export default {
   argTypes: {
     title: {
       name: 'title',
-      type: { name: 'string', required: false },
+      type: {name: 'string', required: false},
       description: 'The heading element of the dialog',
-      defaultValue: "",
+      defaultValue: '',
       table: {
         category: 'HTML'
       }
@@ -22,7 +22,7 @@ export default {
       name: 'description',
       type: 'string',
       description: 'The sub-heading element of the dialog',
-      defaultValue: "",
+      defaultValue: '',
       table: {
         category: 'HTML'
       }
@@ -35,6 +35,78 @@ export default {
         category: 'Interactive'
       }
     },
+    width: {
+      options: [0, 1, 2, 3, 4], // iterator
+      mapping: [
+        'Overlay--width-small',
+        'Overlay--width-medium',
+        'Overlay--width-large',
+        'Overlay--width-xlarge',
+        'Overlay--width-xxlarge'
+      ], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['small', 'medium', 'large', 'xlarge', 'xxlarge']
+      },
+      description: 'Width options: small: 256px, medium: 320px, large: 480px, xlarge: 640px, xxlarge: 960px',
+      table: {
+        category: 'CSS'
+      }
+    },
+    height: {
+      options: [0, 1, 2, 3, 4, 5], // iterator
+      mapping: [
+        'Overlay--height-auto',
+        'Overlay--height-xsmall',
+        'Overlay--height-small',
+        'Overlay--height-medium',
+        'Overlay--height-large',
+        'Overlay--height-xlarge'
+      ], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']
+      },
+      description:
+        'Height options: auto: adjusts to content, xsmall: 192px, small: 256px, medium: 320px, large: 432px, xlarge: 600px',
+      table: {
+        category: 'CSS'
+      }
+    },
+    showFooterDivider: {
+      control: {type: 'boolean'},
+      defaultValue: false,
+      description: 'Show dividers above footer',
+      table: {
+        category: 'CSS'
+      }
+    },
+    showHeaderDivider: {
+      control: {type: 'boolean'},
+      defaultValue: false,
+      description: 'Show dividers below header',
+      table: {
+        category: 'CSS'
+      }
+    },
+    headerRegion: {
+      control: {type: 'boolean'},
+      description:
+        'A header region may be used to provide context to the user by displaying a title, description, and offering an easy-to-escape route with a Close button. Headers may also provide ways for the user to interact with the content, such as with search and tabs.',
+      defaultValue: true,
+      table: {
+        category: 'HTML'
+      }
+    },
+    footerRegion: {
+      control: {type: 'boolean'},
+      description:
+        'The footer region may be used to show confirmation actions, navigation links, or other important elements that should appear outside of the content scrolling region.',
+      defaultValue: true,
+      table: {
+        category: 'HTML'
+      }
+    }
   }
 }
 
@@ -45,38 +117,74 @@ const focusMethod = function getFocus() {
 
 const toggleDialog = () => {
   const dialog = document.getElementById('modal-dialog-backdrop')
-  dialog.classList.toggle("modal-hide");
+  dialog.classList.toggle('Overlay-hidden')
   focusMethod()
 }
 
-
-export const DialogTemplate = ({title, description, focusElement}) => (
+export const DialogTemplate = ({
+  title,
+  description,
+  focusElement,
+  width,
+  height,
+  showFooterDivider,
+  showHeaderDivider,
+  headerRegion,
+  footerRegion
+}) => (
   <>
-    <button class="btn modal-button" onClick={toggleDialog}><span>Open dialog</span></button>
-    <div id="modal-dialog-backdrop" class="modal-dialog-backdrop modal-hide">
-      <modal-dialog class="modal-dialog " width="xlarge" height="auto" role="dialog" aria-labelledby="react-aria8832355892-4" aria-describedby="react-aria8832355892-5" data-focus-trap="active" open>
-        <header class="dialog-header">
-          <div class="header-container">
-            <div class="header-container-title">
-              <h1 id={`dialog-title`} class="title">{title}</h1>
-              {description &&
-                <h2 id={`dialog-description`} class="subtitle">{description}</h2>
-              }
+    <button class="btn modal-button" onClick={toggleDialog}>
+      <span>Open dialog</span>
+    </button>
+    <div
+      id="modal-dialog-backdrop"
+      className={clsx('Overlay-backdrop', 'Overlay-backdrop--positionCenter')}
+      role="dialog"
+      aria-labelledby="react-aria8832355892-4"
+      aria-describedby="react-aria8832355892-5"
+      data-focus-trap="active"
+      open
+    >
+      <div
+        className={clsx('Dialog', 'Overlay', width && `${width}`, height && `${height}`)}
+        data-focus-trap="active"
+        open
+      >
+        {headerRegion && (
+          <header className={clsx('Overlay-header', showHeaderDivider && 'Overlay-header--divided')}>
+            <div className="Overlay-header--contentWrap">
+              <div className="Overlay-header--titleWrap">
+                {title && (
+                  <h1 id={`dialog-title`} className="Overlay-title">
+                    {title}
+                  </h1>
+                )}
+                {description && (
+                  <h2 id={`dialog-description`} className="Overlay-description">
+                    {description}
+                  </h2>
+                )}
+              </div>
+              <button className="Overlay-closeButton" aria-label="Close" onClick={toggleDialog}>
+                <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                  <path
+                    fill-rule="evenodd"
+                    d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"
+                  ></path>
+                </svg>
+              </button>
             </div>
-            <button class="close-button" aria-label="Close" onClick={toggleDialog}>
-              <svg aria-hidden="true" role="img" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style={{"display": "inline-block", "user-select": "none", "vertical-align": "text-bottom", "overflow": "visible"}}>
-                <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
-              </svg>
+          </header>
+        )}
+        <div className="Overlay-body">This is the body of the dialog</div>
+        {footerRegion && (
+          <footer className={clsx('Dialog-footer', 'Overlay-footer', showFooterDivider && 'Overlay-footer--divided')}>
+            <button class="btn" onClick={toggleDialog}>
+              <span>Continue</span>
             </button>
-          </div>
-        </header>
-        <div class="dialog-body">
-          This is the body of the dialog
-        </div>
-        <footer class="dialog-footer">
-          <button class="btn" onClick={toggleDialog}><span>Continue</span></button>
-        </footer>
-      </modal-dialog>
+          </footer>
+        )}
+      </div>
       {focusElement && focusMethod()}
     </div>
   </>
@@ -86,5 +194,5 @@ export const Playground = DialogTemplate.bind({})
 Playground.args = {
   title: 'This is the title of the dialog',
   description: 'This is the subtitle of the dialog',
-  focusElement: false,
+  focusElement: false
 }
