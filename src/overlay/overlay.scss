@@ -4,10 +4,11 @@
 
 .Overlay {
   display: flex;
-  flex-direction: column;
   min-width: 320px;
   max-width: calc(100vw - 64px);
+  flex-direction: column;
   background-color: var(--color-canvas-default);
+  // stylelint-disable-next-line primer/borders
   border-radius: 12px;
   box-shadow: var(--color-shadow-extra-large);
   opacity: 1;
@@ -74,34 +75,34 @@
 
   .Overlay-header--titleWrap {
     display: flex;
+    padding: $spacer-3 0 $spacer-3 $spacer-3;
     flex-direction: column;
     flex-grow: 1;
     gap: 8px;
-    padding: 16px 0px 16px 16px;
 
     .Overlay-title {
+      margin: 0;
       font-size: $body-font-size;
       font-weight: $font-weight-bold;
-      margin: 0;
     }
 
     .Overlay-description {
+      margin: 0;
       font-size: $font-size-small;
       font-weight: $font-weight-normal;
       color: var(--color-fg-muted);
-      margin: 0;
     }
   }
 
   .Overlay-header-inputField {
-    padding: 0px 8px 8px 8px;
+    padding: 0 $spacer-2 $spacer-2 $spacer-2;
   }
 }
 
 // generic body content slot
 .Overlay-body {
   flex-grow: 1;
-  padding: 16px 16px 0 16px;
+  padding: $spacer-3 $spacer-3 0 $spacer-3;
   overflow: auto;
 }
 
@@ -109,9 +110,9 @@
 .Overlay-footer {
   z-index: 1;
   display: flex;
+  padding: $spacer-3;
   flex-direction: row;
   flex-shrink: 0;
-  padding: 16px;
 
   &.Overlay-footer--divided {
     border-top: $border-width $border-style var(--color-border-default);
@@ -120,23 +121,23 @@
 
 // TODO: replace with refactored IconButton
 .Overlay-closeButton {
+  position: relative;
+  display: grid;
   width: 32px;
   height: 32px;
   padding: 0;
-  display: grid;
-  place-content: center;
-  position: relative;
+  margin-top: $spacer-2;
+  margin-right: $spacer-2;
+  color: var(--color-fg-muted);
   cursor: pointer;
   user-select: none;
   background-color: transparent;
+  border: $border-width $border-style transparent;
   border-radius: $border-radius;
   transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   transition-property: color, background-color, border-color;
-  color: var(--color-fg-muted);
-  border: $border-width $border-style transparent;
+  place-content: center;
   align-self: flex-start;
-  margin-right: 8px;
-  margin-top: 8px;
   flex-shrink: 0;
 
   &:hover,
@@ -160,6 +161,7 @@
     0% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
@@ -175,8 +177,8 @@
     justify-content: center;
 
     .Overlay {
-      border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
     }
   }
 }
