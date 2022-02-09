@@ -191,7 +191,8 @@
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
+      transition:
+        visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 
@@ -279,27 +280,28 @@
 
 // button or a href
 .ActionList-content {
-  border: none;
-  background-color: transparent;
   position: relative;
   display: grid;
+  width: 100%;
   // stylelint-disable-next-line primer/spacing
   padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
   font-size: $body-font-size;
   font-weight: $font-weight-normal;
   color: var(--color-fg-default);
+  text-align: left;
   user-select: none;
-  touch-action: manipulation;
+  background-color: transparent;
+  // stylelint-disable-next-line declaration-property-value-disallowed-list
+  border: none;
   border-radius: $border-radius;
   transition: $actionList-item-bg-transition;
+  touch-action: manipulation;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   grid-template-rows: min-content;
   grid-template-areas: 'leadingAction leadingVisual label trailingVisual trailingAction';
   grid-template-columns: min-content min-content minmax(0, auto) min-content min-content;
   align-items: start;
-  width: 100%;
-  text-align: left;
 
   // column-gap persists with empty grid-areas, margin applies only when children exist
   > :not(:last-child) {
