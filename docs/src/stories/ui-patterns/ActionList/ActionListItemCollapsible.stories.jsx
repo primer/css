@@ -156,7 +156,6 @@ export const ActionListItemCollapsibleTemplate = ({
     <li className={clsx('ActionList-item', containsSubItem && `ActionList-item--hasSubItem`)}>
       <button
         onClick={itemIsCollapsed}
-        aria-haspopup="true"
         aria-expanded={isCollapsed ? 'false' : 'true'}
         aria-controls={ariaControlsId}
         id={id}

@@ -65,12 +65,12 @@ Action list is a `ul` list designed to contain list items.
 
 ```html live
 <nav>
-    <span class="ActionList-sectionDivider">
+    <li class="ActionList-sectionDivider">
       <h3 class="ActionList-sectionDivider-title" id="group-id-1">Access</h3>
-    </span>
+    </li>
     <ul class="ActionList" role="list" aria-labelledby="group-id-1">
         <li class="ActionList-item ActionList-item--hasSubItem">
-            <button aria-haspopup="true" aria-expanded="true" class="ActionList-content ActionList-content--visual16 ActionList-content--hasActiveSubItem">
+            <button aria-expanded="true" class="ActionList-content ActionList-content--visual16 ActionList-content--hasActiveSubItem">
                 <span class="ActionList-item-visual ActionList-item-visual--leading">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.5 2.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v5.5a.25.25 0 01-.25.25h-3.5a.75.75 0 00-.53.22L3.5 11.44V9.25a.75.75 0 00-.75-.75h-1a.25.25 0 01-.25-.25v-5.5zM1.75 1A1.75 1.75 0 000 2.75v5.5C0 9.216.784 10 1.75 10H2v1.543a1.457 1.457 0 002.487 1.03L7.061 10h3.189A1.75 1.75 0 0012 8.25v-5.5A1.75 1.75 0 0010.25 1h-8.5zM14.5 4.75a.25.25 0 00-.25-.25h-.5a.75.75 0 110-1.5h.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0114.25 12H14v1.543a1.457 1.457 0 01-2.487 1.03L9.22 12.28a.75.75 0 111.06-1.06l2.22 2.22v-2.19a.75.75 0 01.75-.75h1a.25.25 0 00.25-.25v-5.5z"></path></svg>
                 </span>
@@ -118,11 +118,11 @@ List item `li` for separating groups of content
 
 ```html live
 <ul class="ActionList">
-  <span
+  <li
     class="ActionList-sectionDivider"
     role="separator"
     aria-hidden="true"
-  ></span>
+  ></li>
 </ul>
 ```
 
@@ -130,11 +130,11 @@ List item `li` for separating groups of content
 
 ```html live
 <ul class="ActionList">
-  <span
+  <li
     class="ActionList-sectionDivider ActionList-sectionDivider--filled"
     role="separator"
     aria-hidden="true"
-  ></span>
+  ></li>
 </ul>
 ```
 ### Divider with label text
@@ -143,52 +143,58 @@ When using a section label for a group, give the `h3` an id to be referenced by 
 #### Filled with section label
 
 ```html live
-<span class="ActionList-sectionDivider ActionList-sectionDivider--filled">
-    <h3 class="ActionList-sectionDivider-title" id="group-id">
-    List group title
-    </h3>
-</span>
-<ul class="ActionList" aria-labelledby="group-id">
-    <li class="ActionList-item">
-        <a href="/" class="ActionList-content">
-            <span class="ActionList-item-label">Group Item</span>
-        </a>
+<ul>
+    <li class="ActionList-sectionDivider ActionList-sectionDivider--filled">
+        <h3 class="ActionList-sectionDivider-title" id="group-id">
+        List group title
+        </h3>
     </li>
+    <ul class="ActionList" aria-labelledby="group-id">
+        <li class="ActionList-item">
+            <a href="/" class="ActionList-content">
+                <span class="ActionList-item-label">Group Item</span>
+            </a>
+        </li>
+    </ul>
 </ul>
 ```
 
 #### Default with section label
 
 ```html live
-<span class="ActionList-sectionDivider">
-    <h3 class="ActionList-sectionDivider-title" id="group-id">
-      List group title
-    </h3>
-</span>
-<ul class="ActionList" aria-labelledby="group-id">
-    <li class="ActionList-item">
-        <a href="/" class="ActionList-content">
-            <span class="ActionList-item-label">Group Item</span>
-        </a>
+<ul>
+    <li class="ActionList-sectionDivider">
+        <h3 class="ActionList-sectionDivider-title" id="group-id">
+        List group title
+        </h3>
     </li>
+    <ul class="ActionList" aria-labelledby="group-id">
+        <li class="ActionList-item">
+            <a href="/" class="ActionList-content">
+                <span class="ActionList-item-label">Group Item</span>
+            </a>
+        </li>
+    </ul>
 </ul>
 ```
 
 #### Default with section label + description
 
 ```html live
-<span class="ActionList-sectionDivider">
-    <h3 class="ActionList-sectionDivider-title" id="group-id">
-        List group title
-    </h3>
-    <span class="ActionList-item-description">Group description</span>
-</span>
-<ul class="ActionList" aria-labelledby="group-id">
-    <li class="ActionList-item">
-        <a href="/" class="ActionList-content">
-            <span class="ActionList-item-label">Group Item</span>
-        </a>
+<ul>
+    <li class="ActionList-sectionDivider">
+        <h3 class="ActionList-sectionDivider-title" id="group-id">
+            List group title
+        </h3>
+        <span class="ActionList-item-description">Group description</span>
     </li>
+    <ul class="ActionList" aria-labelledby="group-id">
+        <li class="ActionList-item">
+            <a href="/" class="ActionList-content">
+                <span class="ActionList-item-label">Group Item</span>
+            </a>
+        </li>
+    </ul>
 </ul>
 ```
 
@@ -424,8 +430,8 @@ Contains and places all child elements within action list item. Can be either an
 
 ```html live
 <ul class="ActionList">
-  <li class="ActionList-item" aria-haspopup="true" aria-expanded="true">
-    <button class="ActionList-content">
+  <li class="ActionList-item">
+    <button class="ActionList-content" aria-expanded="true">
       <span class="ActionList-item-label">Collapsible</span>
       <span class="ActionList-item-action ActionList-item-action--trailing">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" class="ActionList-item-collapseIcon">

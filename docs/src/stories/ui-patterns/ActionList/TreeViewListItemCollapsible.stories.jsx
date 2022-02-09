@@ -34,13 +34,6 @@ export default {
         category: 'CSS'
       }
     },
-    containsActiveSubItem: {
-      defaultValue: false,
-      control: {type: 'boolean'},
-      table: {
-        category: 'CSS'
-      }
-    },
     leadingVisual: {
       defaultValue: '',
       name: 'leadingVisual',
@@ -179,10 +172,8 @@ export const TreeViewListItemCollapsibleTemplate = ({
   children,
   containsSubItem,
   id,
-  containsActiveSubItem,
   truncateItem,
   collapsePosition,
-  ariaControlsId,
   ariaSetSize,
   ariaPosInset,
   ariaLevel,
@@ -194,15 +185,10 @@ export const TreeViewListItemCollapsibleTemplate = ({
   }
   return (
     <li
-      className={clsx(
-        'ActionList-item',
-        containsSubItem && `ActionList-item--hasSubItem`,
-        containsActiveSubItem && `ActionList-item--hasActiveSubItem`
-      )}
+      className={clsx('ActionList-item', containsSubItem && `ActionList-item--hasSubItem`)}
       onClick={itemIsCollapsed}
       id={id}
       aria-disabled={ariaDisabled ? 'true' : undefined}
-      aria-haspopup="true"
       aria-expanded={isCollapsed ? 'false' : 'true'}
       aria-level={ariaLevel ? `${ariaLevel}` : undefined}
       aria-setsize={ariaSetSize ? `${ariaSetSize}` : undefined}

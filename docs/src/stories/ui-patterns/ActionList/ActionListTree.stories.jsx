@@ -69,7 +69,8 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon, text
             treeitem
             subItem
             text={text}
-            href=""
+            href="/"
+            ariaCurrent="page"
             leadingVisual={showSubItemIcon && file}
             trailingVisual={trailingVisual}
           />
