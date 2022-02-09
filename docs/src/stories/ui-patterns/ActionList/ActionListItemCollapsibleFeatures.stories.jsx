@@ -5,12 +5,6 @@ import {ListTemplate} from './ActionList.stories'
 
 export default {
   title: 'UI Patterns/ActionList/ActionListItemCollapsible/Features',
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/oMiRuexZW6gqVbMhQd6lwP/Storybook?node-id=2%3A2'
-    }
-  },
   decorators: [
     Story => (
       <ListTemplate>
@@ -34,26 +28,26 @@ const trailingVisual = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 
       ></path>
     </svg>`
 
-export const TrailingCollapsible = ActionListItemCollapsibleTemplate.bind({})
-TrailingCollapsible.storyName = '[Trailing] Text only'
-TrailingCollapsible.args = {
+export const PatternTrailingCollapsible = ActionListItemCollapsibleTemplate.bind({})
+PatternTrailingCollapsible.storyName = '[Trailing] Text only'
+PatternTrailingCollapsible.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'Collapsible',
   collapsePosition: 1
 }
 
-export const TrailingCollapsibleLeadingVis = ActionListItemCollapsibleTemplate.bind({})
-TrailingCollapsibleLeadingVis.storyName = '[Trailing] Leading visual'
-TrailingCollapsibleLeadingVis.args = {
+export const PatternTrailingCollapsibleLeadingVis = ActionListItemCollapsibleTemplate.bind({})
+PatternTrailingCollapsibleLeadingVis.storyName = '[Trailing] Leading visual'
+PatternTrailingCollapsibleLeadingVis.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'Collapsible',
   collapsePosition: 1,
   leadingVisual: leadingVisual
 }
 
-export const TrailingCollapsibleLeadingTrailingVis = ActionListItemCollapsibleTemplate.bind({})
-TrailingCollapsibleLeadingTrailingVis.storyName = '[Trailing] Leading + trailing visual'
-TrailingCollapsibleLeadingTrailingVis.args = {
+export const PatternTrailingCollapsibleLeadingTrailingVis = ActionListItemCollapsibleTemplate.bind({})
+PatternTrailingCollapsibleLeadingTrailingVis.storyName = '[Trailing] Leading + trailing visual'
+PatternTrailingCollapsibleLeadingTrailingVis.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'Collapsible',
   collapsePosition: 1,
@@ -61,35 +55,35 @@ TrailingCollapsibleLeadingTrailingVis.args = {
   trailingVisual: trailingVisual
 }
 
-export const TrailingCollapsibleTrailingVis = ActionListItemCollapsibleTemplate.bind({})
-TrailingCollapsibleTrailingVis.storyName = '[Trailing] Trailing visual'
-TrailingCollapsibleTrailingVis.args = {
+export const PatternTrailingCollapsibleTrailingVis = ActionListItemCollapsibleTemplate.bind({})
+PatternTrailingCollapsibleTrailingVis.storyName = '[Trailing] Trailing visual'
+PatternTrailingCollapsibleTrailingVis.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'Collapsible',
   collapsePosition: 1,
   trailingVisual: trailingVisual
 }
 
-export const LeadingCollapsible = ActionListItemCollapsibleTemplate.bind({})
-LeadingCollapsible.storyName = '[Leading] Text only'
-LeadingCollapsible.args = {
+export const PatternLeadingCollapsible = ActionListItemCollapsibleTemplate.bind({})
+PatternLeadingCollapsible.storyName = '[Leading] Text only'
+PatternLeadingCollapsible.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'Collapsible',
   collapsePosition: 0
 }
 
-export const LeadingCollapsibleLeadingVis = ActionListItemCollapsibleTemplate.bind({})
-LeadingCollapsibleLeadingVis.storyName = '[Leading] Leading visual'
-LeadingCollapsibleLeadingVis.args = {
+export const PatternLeadingCollapsibleLeadingVis = ActionListItemCollapsibleTemplate.bind({})
+PatternLeadingCollapsibleLeadingVis.storyName = '[Leading] Leading visual'
+PatternLeadingCollapsibleLeadingVis.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'Collapsible',
   collapsePosition: 0,
   leadingVisual: leadingVisual
 }
 
-export const LeadingCollapsibleLeadingTrailingVis = ActionListItemCollapsibleTemplate.bind({})
-LeadingCollapsibleLeadingTrailingVis.storyName = '[Leading] Leading + trailing visual'
-LeadingCollapsibleLeadingTrailingVis.args = {
+export const PatternLeadingCollapsibleLeadingTrailingVis = ActionListItemCollapsibleTemplate.bind({})
+PatternLeadingCollapsibleLeadingTrailingVis.storyName = '[Leading] Leading + trailing visual'
+PatternLeadingCollapsibleLeadingTrailingVis.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'Collapsible',
   collapsePosition: 0,
@@ -97,52 +91,54 @@ LeadingCollapsibleLeadingTrailingVis.args = {
   trailingVisual: trailingVisual
 }
 
-export const LeadingCollapsibleTrailingVis = ActionListItemCollapsibleTemplate.bind({})
-LeadingCollapsibleTrailingVis.storyName = '[Leading] Trailing visual'
-LeadingCollapsibleTrailingVis.args = {
+export const PatternLeadingCollapsibleTrailingVis = ActionListItemCollapsibleTemplate.bind({})
+PatternLeadingCollapsibleTrailingVis.storyName = '[Leading] Trailing visual'
+PatternLeadingCollapsibleTrailingVis.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'Collapsible',
   collapsePosition: 0,
   trailingVisual: trailingVisual
 }
 
-export const SizeMedium = ActionListItemCollapsibleTemplate.bind({})
-SizeMedium.args = {
+export const PatternSizeMedium = ActionListItemCollapsibleTemplate.bind({})
+PatternSizeMedium.storyName = '[Size] Medium'
+PatternSizeMedium.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'Medium item',
   size: 'ActionList-content--sizeMedium',
   collapsePosition: 1
 }
 
-export const SizeLarge = ActionListItemCollapsibleTemplate.bind({})
-SizeLarge.args = {
+export const PatternSizeLarge = ActionListItemCollapsibleTemplate.bind({})
+PatternSizeLarge.storyName = '[Size] Large'
+PatternSizeLarge.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'Large item',
   size: 'ActionList-content--sizeLarge',
   collapsePosition: 1
 }
 
-export const ConstainsSubItem = ActionListItemCollapsibleTemplate.bind({})
-ConstainsSubItem.storyName = 'Has sub item (render css class)'
-ConstainsSubItem.args = {
+export const PatternConstainsSubItem = ActionListItemCollapsibleTemplate.bind({})
+PatternConstainsSubItem.storyName = 'Has sub item (render css class)'
+PatternConstainsSubItem.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'I am collapsible',
   collapsePosition: 1,
   containsSubItem: true
 }
 
-export const ConstainsActiveSubItem = ActionListItemCollapsibleTemplate.bind({})
-ConstainsActiveSubItem.storyName = 'Has active sub item'
-ConstainsActiveSubItem.args = {
+export const PatternConstainsActiveSubItem = ActionListItemCollapsibleTemplate.bind({})
+PatternConstainsActiveSubItem.storyName = 'Has active sub item'
+PatternConstainsActiveSubItem.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'I have an active child',
   collapsePosition: 1,
   containsActiveSubItem: true
 }
 
-export const TruncateText = ActionListItemCollapsibleTemplate.bind({})
-TruncateText.storyName = 'Truncate text'
-TruncateText.args = {
+export const PatternTruncateText = ActionListItemCollapsibleTemplate.bind({})
+PatternTruncateText.storyName = 'Truncate text'
+PatternTruncateText.args = {
   ...ActionListItemCollapsibleTemplate.args,
   truncateItem: true,
   text: 'This is a very long string of text that will wrap to another line on smaller screens',
@@ -151,9 +147,9 @@ TruncateText.args = {
   collapsePosition: 1
 }
 
-export const WrapText = ActionListItemCollapsibleTemplate.bind({})
-WrapText.storyName = 'Wrap text'
-WrapText.args = {
+export const PatternWrapText = ActionListItemCollapsibleTemplate.bind({})
+PatternWrapText.storyName = 'Wrap text'
+PatternWrapText.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'This is a very long string of text that will wrap to another line on smaller screens',
   trailingVisual: trailingVisual,

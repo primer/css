@@ -6,12 +6,6 @@ import ConditionalWrapper from '../../helpers/ConditionalWrapper'
 export default {
   title: 'Components/NavigationList/NavigationList',
   excludeStories: ['NavigationListTemplate'],
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/oMiRuexZW6gqVbMhQd6lwP/Storybook-Docs?node-id=23%3A30843'
-    }
-  },
   argTypes: {
     showDividers: {
       control: {type: 'boolean'},

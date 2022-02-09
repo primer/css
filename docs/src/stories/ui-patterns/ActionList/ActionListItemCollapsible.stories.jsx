@@ -5,12 +5,6 @@ import {ListTemplate} from './ActionList.stories'
 
 export default {
   title: 'UI Patterns/ActionList/ActionListItemCollapsible',
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/oMiRuexZW6gqVbMhQd6lwP/Storybook-Docs?node-id=23%3A30843'
-    }
-  },
   excludeStories: ['ActionListItemCollapsibleTemplate'],
   argTypes: {
     size: {
