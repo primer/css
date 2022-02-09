@@ -99,6 +99,7 @@ NavDiscussionsPane.args = {
   children: (
     <>
       <NavigationListItemTemplate
+        listSemantic
         text="All discussions"
         href="/"
         ariaCurrent={true}
@@ -107,36 +108,42 @@ NavDiscussionsPane.args = {
       />
       <NavigationListDividerTemplate />
       <NavigationListItemTemplate
+        listSemantic
         text="Announcements"
         href="/"
         leadingVisualSize="ActionList-content--visual16"
         leadingVisual={`🔔`}
       />
       <NavigationListItemTemplate
+        listSemantic
         text="General"
         href="/"
         leadingVisualSize="ActionList-content--visual16"
         leadingVisual={`💬`}
       />
       <NavigationListItemTemplate
+        listSemantic
         text="Ideas"
         href="/"
         leadingVisualSize="ActionList-content--visual16"
         leadingVisual={`🏮`}
       />
       <NavigationListItemTemplate
+        listSemantic
         text="Questions and answers"
         href="/"
         leadingVisualSize="ActionList-content--visual16"
         leadingVisual={`🌻`}
       />
       <NavigationListItemTemplate
+        listSemantic
         text="Show and tell"
         href="/"
         leadingVisualSize="ActionList-content--visual16"
         leadingVisual={`👋`}
       />
       <NavigationListItemTemplate
+        listSemantic
         text="Polls"
         href="/"
         leadingVisualSize="ActionList-content--visual16"
