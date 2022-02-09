@@ -32,10 +32,7 @@
   }
 
   .ActionList-item {
-    // collapsible item [aria-expanded]
-
-    // nesting (single level)
-    // target items inside expanded subgroups
+    // start: copy from ActionList proper- backwards compatible for treeview with different markup structure
     &[aria-expanded] {
       .ActionList--subGroup {
         @media screen and (prefers-reduced-motion: no-preference) {
@@ -124,6 +121,7 @@
         }
       }
     }
+    // end copy
 
     // nesting (infinate levels)
     // target items inside expanded subgroup

@@ -1,5 +1,4 @@
 import React from 'react'
-import clsx from 'clsx'
 import {ListItemTemplate} from '../../ui-patterns/ActionList/ActionListItem.stories'
 import {ListTemplate} from '../../ui-patterns/ActionList/ActionList.stories.jsx'
 
@@ -64,7 +63,6 @@ export const ActionListTemplate = ListTemplate.bind({})
 
 export const Playground = ActionListTemplate.bind({})
 Playground.args = {
-  //   listType: 0,
   showDividers: false,
   listPadding: 0,
   role: 'list',

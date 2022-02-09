@@ -5,12 +5,6 @@ import {ListTemplate} from './ActionList.stories.jsx'
 
 export default {
   title: 'UI Patterns/ActionList/ActionListItem',
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/oMiRuexZW6gqVbMhQd6lwP/Storybook-Docs?node-id=23%3A30843'
-    }
-  },
   excludeStories: ['ListItemTemplate'],
   argTypes: {
     size: {
