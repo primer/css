@@ -122,6 +122,7 @@
 @mixin pullquote {
   padding-top: 0;
   padding-bottom: 0;
+  // stylelint-disable-next-line primer/spacing
   padding-left: $spacer;
   margin-bottom: $spacer-4;
   font-family: $mono-font;
@@ -131,8 +132,10 @@
   border-left: 3px solid var(--color-border-default);
 
   @include breakpoint(md) {
+    // stylelint-disable-next-line primer/spacing
     padding-left: $spacer * 1.5;
     margin-bottom: $spacer-5;
+    // stylelint-disable-next-line primer/spacing
     margin-left: (-$spacer * 1.5) - 3px;
     font-size: 18px;
     line-height: $lh-default;

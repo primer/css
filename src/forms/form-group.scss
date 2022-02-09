@@ -240,6 +240,7 @@
 // tooltip
 .note {
   min-height: 17px;
+  // stylelint-disable-next-line primer/spacing
   margin: $spacer-1 0 2px;
   font-size: $font-size-small;
   color: var(--color-fg-muted);
