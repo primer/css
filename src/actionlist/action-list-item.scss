@@ -389,6 +389,7 @@
 
   // if nested list exists, remove default padding
   .ActionList {
+    // stylelint-disable-next-line primer/spacing
     padding: unset;
   }
 }
@@ -397,6 +398,7 @@
 .ActionList-content {
   position: relative;
   display: grid;
+  // stylelint-disable-next-line primer/spacing
   padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
   font-size: $body-font-size;
   font-weight: $font-weight-normal;
@@ -423,11 +425,13 @@
 
   &.ActionList-content--sizeMedium {
     // 44px total height
+    // stylelint-disable-next-line primer/spacing
     padding: $actionList-item-padding-vertical-md $actionList-item-padding-horizontal;
   }
 
   &.ActionList-content--sizeLarge {
     // 48px total height
+    // stylelint-disable-next-line primer/spacing
     padding: $actionList-item-padding-vertical-lg $actionList-item-padding-horizontal;
   }
 
@@ -437,6 +441,7 @@
 
   // On pointer:coarse (mobile), all list items are large
   @media (pointer: coarse) {
+    // stylelint-disable-next-line primer/spacing
     padding: $actionList-item-padding-vertical-lg $actionList-item-padding-horizontal;
   }
 
@@ -493,6 +498,7 @@
   align-items: baseline;
 
   .ActionList-item-description {
+    // stylelint-disable-next-line primer/spacing
     margin-left: $actionList-item-padding-horizontal;
   }
 }
