@@ -146,7 +146,7 @@ export const DialogTemplate = ({
       open
     >
       <div
-        className={clsx('Dialog', 'Overlay', width && `${width}`, height && `${height}`)}
+        className={clsx('Dialog', 'Overlay', width && `${width}`, height && `${height}`, 'Overlay--motion-scaleFade')}
         data-focus-trap="active"
         open
       >
@@ -178,7 +178,14 @@ export const DialogTemplate = ({
         )}
         <div className="Overlay-body">This is the body of the dialog</div>
         {footerRegion && (
-          <footer className={clsx('Dialog-footer', 'Overlay-footer', showFooterDivider && 'Overlay-footer--divided')}>
+          <footer
+            className={clsx(
+              'Dialog-footer',
+              'Overlay-footer',
+              showFooterDivider && 'Overlay-footer--divided',
+              'Overlay-footer--alignEnd'
+            )}
+          >
             <button class="btn" onClick={toggleDialog}>
               <span>Continue</span>
             </button>

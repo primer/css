@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import React from 'react'
 
 export default {
-  title: 'Ui Patterns/Overlay',
+  title: 'UI Patterns/Overlay',
   parameters: {
     layout: 'padded'
   },
@@ -135,6 +135,30 @@ export default {
       table: {
         category: 'CSS'
       }
+    },
+    motion: {
+      options: [0, 1], // iterator
+      mapping: [null, 'Overlay--motion-scaleFade'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['none', 'scaleFade']
+      },
+      description: 'Animation options for show/hide overlay',
+      table: {
+        category: 'CSS'
+      }
+    },
+    footerContentAlign: {
+      options: [0, 1, 2], // iterator
+      mapping: ['Overlay-footer--alignStart', 'Overlay-footer--alignCenter', 'Overlay-footer--alignEnd'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['start', 'center', 'end']
+      },
+      description: 'Align footer contents',
+      table: {
+        category: 'CSS'
+      }
     }
   }
 }
@@ -162,16 +186,24 @@ export const DialogTemplate = ({
   headerRegion,
   footerRegion,
   position,
-  showInputField
+  showInputField,
+  motion,
+  footerContentAlign
 }) => (
   <>
     <div
       id="modal-dialog-backdrop"
       className={clsx(toggleOverlay && 'Overlay-hidden', 'Overlay-backdrop', position && `${position}`)}
     >
-      <div className={clsx('Overlay', width && `${width}`, height && `${height}`)} data-focus-trap="active" open>
+      <div
+        className={clsx('Overlay', width && `${width}`, height && `${height}`, motion && `${motion}`)}
+        data-focus-trap="active"
+        open
+      >
         {headerRegion && (
-          <header className={clsx('Overlay-header', showHeaderDivider && 'Overlay-header--divided')}>
+          <header
+            className={clsx('Overlay-header', showHeaderDivider && 'Overlay-header--divided', 'Overlay-header--large')}
+          >
             <div className="Overlay-header--contentWrap">
               <div className="Overlay-header--titleWrap">
                 {title && (
@@ -201,9 +233,19 @@ export const DialogTemplate = ({
             )}
           </header>
         )}
-        <div className="Overlay-body">This is the body of the dialog</div>
+        <div className="Overlay-body">
+          This is the body of the dialogThis is the body of the dialogThis is the body of the dialog This is the body of
+          the dialog This is the body of the dialog This is the body of the dialog This is the body of the dialog This
+          is the body of the dialog This is the body of the dialog
+        </div>
         {footerRegion && (
-          <footer className={clsx('Overlay-footer', showFooterDivider && 'Overlay-footer--divided')}>
+          <footer
+            className={clsx(
+              'Overlay-footer',
+              showFooterDivider && 'Overlay-footer--divided',
+              footerContentAlign && `${footerContentAlign}`
+            )}
+          >
             <button class="btn" onClick={toggleDialog}>
               <span>Continue</span>
             </button>
@@ -219,5 +261,8 @@ export const Playground = DialogTemplate.bind({})
 Playground.args = {
   title: 'This is the title of the dialog',
   description: 'This is the subtitle of the dialog',
-  focusElement: false
+  focusElement: false,
+  motion: 1,
+  footerContentAlign: 'end',
+  position: 'Overlay--position-center'
 }
