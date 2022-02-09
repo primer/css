@@ -55,27 +55,10 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon, text
         text="level 1"
         leadingVisual={showGroupIcon && folder}
         truncateItem={truncateItem}
-        containsSubItem
-      >
-        <ListTemplate listType="nested">
-          <ListItemTemplate
-            truncateItem={truncateItem}
-            ariaLevel="2"
-            ariaSetSize="2"
-            ariaPosInset="1"
-            treeitem
-            subItem
-            text={text}
-            href=""
-            leadingVisual={showSubItemIcon && file}
-            trailingVisual={trailingVisual}
-          />
-        </ListTemplate>
-      </ActionListItemCollapsibleTemplate>
-      <ActionListItemCollapsibleTemplate
-        text="level 1"
-        leadingVisual={showGroupIcon && folder}
-        truncateItem={truncateItem}
+        ariaLevel="1"
+        ariaSetSize="2"
+        ariaPosInset="2"
+        collapsePosition={0}
         containsSubItem
       >
         <ListTemplate listType="nested">
@@ -95,6 +78,103 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon, text
             text="level 2"
             leadingVisual={showGroupIcon && folder}
             truncateItem={truncateItem}
+            ariaLevel="2"
+            ariaSetSize="2"
+            ariaPosInset="2"
+            collapsePosition={0}
+            containsSubItem
+          >
+            <ListTemplate listType="nested">
+              <ActionListItemCollapsibleTemplate
+                text="level 3"
+                ariaLevel="3"
+                ariaSetSize="2"
+                ariaPosInset="1"
+                leadingVisual={showGroupIcon && folder}
+                truncateItem={truncateItem}
+                collapsePosition={0}
+                containsSubItem
+              >
+                <ListTemplate listType="nested">
+                  <ListItemTemplate
+                    truncateItem={truncateItem}
+                    ariaLevel="4"
+                    ariaSetSize="4"
+                    ariaPosInset="1"
+                    treeitem
+                    subItem
+                    text={text}
+                    href=""
+                    leadingVisual={showSubItemIcon && file}
+                    trailingVisual={trailingVisual}
+                  />
+                  <ListItemTemplate
+                    truncateItem={truncateItem}
+                    ariaLevel="4"
+                    ariaSetSize="4"
+                    ariaPosInset="2"
+                    treeitem
+                    subItem
+                    text={text}
+                    href=""
+                    leadingVisual={showSubItemIcon && file}
+                    trailingVisual={trailingVisual}
+                  />
+                  <ListItemTemplate
+                    truncateItem={truncateItem}
+                    ariaLevel="4"
+                    ariaSetSize="4"
+                    ariaPosInset="3"
+                    treeitem
+                    subItem
+                    text={text}
+                    href=""
+                    leadingVisual={showSubItemIcon && file}
+                    trailingVisual={trailingVisual}
+                  />
+                </ListTemplate>
+              </ActionListItemCollapsibleTemplate>
+              <ListItemTemplate
+                truncateItem={truncateItem}
+                ariaLevel="3"
+                ariaSetSize="2"
+                ariaPosInset="2"
+                treeitem
+                subItem
+                text={text}
+                href=""
+                leadingVisual={showSubItemIcon && file}
+                trailingVisual={trailingVisual}
+              />
+            </ListTemplate>
+          </ActionListItemCollapsibleTemplate>
+        </ListTemplate>
+      </ActionListItemCollapsibleTemplate>
+      {/* <ActionListItemCollapsibleTemplate
+        text="level 1"
+        leadingVisual={showGroupIcon && folder}
+        truncateItem={truncateItem}
+        collapsePosition={0}
+        containsSubItem
+      >
+        <ListTemplate listType="nested">
+          <ListItemTemplate
+            truncateItem={truncateItem}
+            ariaLevel="2"
+            ariaSetSize="2"
+            ariaPosInset="1"
+            treeitem
+            subItem
+            text={text}
+            href=""
+            leadingVisual={showSubItemIcon && file}
+            trailingVisual={trailingVisual}
+          />
+          <ActionListItemCollapsibleTemplate
+            text="level 2"
+            leadingVisual={showGroupIcon && folder}
+            truncateItem={truncateItem}
+            collapsePosition={0}
             containsSubItem
           >
             <ListTemplate listType="nested">
@@ -249,7 +329,7 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon, text
             }
           />
         }
-      />
+      /> */}
     </>
   </ListTemplate>
 )

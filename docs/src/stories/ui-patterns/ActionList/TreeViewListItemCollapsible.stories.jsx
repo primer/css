@@ -1,17 +1,11 @@
 import React from 'react'
 import clsx from 'clsx'
 import useToggle from '../../helpers/useToggle.jsx'
-import {ListTemplate} from './ActionList.stories'
+import {ListTemplate} from './ActionList.stories.jsx'
 
 export default {
-  title: 'UI Patterns/ActionList/ActionListItemCollapsible',
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/oMiRuexZW6gqVbMhQd6lwP/Storybook-Docs?node-id=23%3A30843'
-    }
-  },
-  excludeStories: ['ActionListItemCollapsibleTemplate'],
+  title: 'UI Patterns/ActionList/TreeViewListItemCollapsible',
+  excludeStories: ['TreeViewListItemCollapsibleTemplate'],
   argTypes: {
     size: {
       options: [0, 1, 2], // iterator
@@ -174,7 +168,7 @@ export default {
   }
 }
 
-export const ActionListItemCollapsibleTemplate = ({
+export const TreeViewListItemCollapsibleTemplate = ({
   text,
   size,
   leadingVisual,
@@ -200,25 +194,27 @@ export const ActionListItemCollapsibleTemplate = ({
   }
   return (
     <li
-      className={clsx('ActionList-item', containsSubItem && `ActionList-item--hasSubItem`)}
+      className={clsx(
+        'ActionList-item',
+        containsSubItem && `ActionList-item--hasSubItem`,
+        containsActiveSubItem && `ActionList-item--hasActiveSubItem`
+      )}
+      onClick={itemIsCollapsed}
+      id={id}
+      aria-disabled={ariaDisabled ? 'true' : undefined}
+      aria-haspopup="true"
+      aria-expanded={isCollapsed ? 'false' : 'true'}
       aria-level={ariaLevel ? `${ariaLevel}` : undefined}
       aria-setsize={ariaSetSize ? `${ariaSetSize}` : undefined}
       aria-posinset={ariaPosInset ? `${ariaPosInset}` : undefined}
       style={ariaLevel && itemStyle}
     >
-      <button
-        onClick={itemIsCollapsed}
-        aria-disabled={ariaDisabled ? 'true' : undefined}
-        aria-haspopup="true"
-        aria-expanded={isCollapsed ? 'false' : 'true'}
-        aria-controls={ariaControlsId}
-        id={id}
+      <span
         className={clsx(
           'ActionList-content',
           size && `${size}`,
           (leadingVisual || trailingVisual) && description && 'ActionList-content--blockDescription',
-          leadingVisual && leadingVisualSize && `${leadingVisualSize}`,
-          containsActiveSubItem && `ActionList-content--hasActiveSubItem`
+          leadingVisual && leadingVisualSize && `${leadingVisualSize}`
         )}
       >
         {collapsePosition === 0 && (
@@ -278,13 +274,13 @@ export const ActionListItemCollapsibleTemplate = ({
             </svg>
           </span>
         )}
-      </button>
+      </span>
       {children}
     </li>
   )
 }
 
-export const Playground = ActionListItemCollapsibleTemplate.bind({})
+export const Playground = TreeViewListItemCollapsibleTemplate.bind({})
 Playground.decorators = [
   Story => (
     <ListTemplate>

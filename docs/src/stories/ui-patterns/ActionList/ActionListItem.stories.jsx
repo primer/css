@@ -379,7 +379,7 @@ export const ListItemTemplate = ({
       ) : (
         <>
           {text && (
-            <button
+            <span
               className={clsx(
                 text && 'ActionList-content',
                 size && `${size}`,
@@ -454,7 +454,7 @@ export const ListItemTemplate = ({
               {trailingAction && (
                 <span className="ActionList-item-action ActionList-item-action--trailing">{trailingAction}</span>
               )}
-            </button>
+            </span>
           )}
           {children}
         </>
