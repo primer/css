@@ -137,39 +137,6 @@ export default {
       table: {
         category: 'HTML'
       }
-    },
-    ariaDisabled: {
-      defaultValue: false,
-      control: {type: 'boolean'},
-      table: {
-        category: 'Interactive'
-      }
-    },
-    ariaLevel: {
-      name: 'ariaLevel',
-      type: 'string',
-      description: 'number - nested subgroup',
-      table: {
-        category: 'HTML'
-      }
-    },
-    ariaSetSize: {
-      name: 'ariaSetSize',
-      type: 'string',
-      description:
-        'Defines the number of treeitem elements in the set of treeitem elements that are in the same branch and at the same level within the hierarchy',
-      table: {
-        category: 'HTML'
-      }
-    },
-    ariaPosInset: {
-      name: 'ariaPosInset',
-      type: 'string',
-      description:
-        'Defines the position of the element within the set of other treeitem elements that are in the same branch and at the same level within the hierarchy.',
-      table: {
-        category: 'HTML'
-      }
     }
   }
 }
@@ -188,27 +155,13 @@ export const ActionListItemCollapsibleTemplate = ({
   containsActiveSubItem,
   truncateItem,
   collapsePosition,
-  ariaControlsId,
-  ariaSetSize,
-  ariaPosInset,
-  ariaLevel,
-  ariaDisabled
+  ariaControlsId
 }) => {
   const [isCollapsed, itemIsCollapsed] = useToggle()
-  const itemStyle = {
-    '--ActionList-tree-depth': `${ariaLevel}`
-  }
   return (
-    <li
-      className={clsx('ActionList-item', containsSubItem && `ActionList-item--hasSubItem`)}
-      aria-level={ariaLevel ? `${ariaLevel}` : undefined}
-      aria-setsize={ariaSetSize ? `${ariaSetSize}` : undefined}
-      aria-posinset={ariaPosInset ? `${ariaPosInset}` : undefined}
-      style={ariaLevel && itemStyle}
-    >
+    <li className={clsx('ActionList-item', containsSubItem && `ActionList-item--hasSubItem`)}>
       <button
         onClick={itemIsCollapsed}
-        aria-disabled={ariaDisabled ? 'true' : undefined}
         aria-haspopup="true"
         aria-expanded={isCollapsed ? 'false' : 'true'}
         aria-controls={ariaControlsId}

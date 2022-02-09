@@ -4,7 +4,7 @@ import useToggle from '../../helpers/useToggle.jsx'
 import {ListTemplate} from './ActionList.stories.jsx'
 
 export default {
-  title: 'UI Patterns/ActionList/TreeViewListItemCollapsible',
+  title: 'UI Patterns/ActionList/ActionTreeView/TreeViewListItemCollapsible',
   excludeStories: ['TreeViewListItemCollapsibleTemplate'],
   argTypes: {
     size: {
