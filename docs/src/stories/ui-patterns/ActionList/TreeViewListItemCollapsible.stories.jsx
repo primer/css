@@ -157,6 +157,13 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    containsActiveSubItem: {
+      defaultValue: false,
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
     }
   }
 }
@@ -177,7 +184,8 @@ export const TreeViewListItemCollapsibleTemplate = ({
   ariaSetSize,
   ariaPosInset,
   ariaLevel,
-  ariaDisabled
+  ariaDisabled,
+  containsActiveSubItem
 }) => {
   const [isCollapsed, itemIsCollapsed] = useToggle()
   const itemStyle = {
@@ -185,7 +193,11 @@ export const TreeViewListItemCollapsibleTemplate = ({
   }
   return (
     <li
-      className={clsx('ActionList-item', containsSubItem && `ActionList-item--hasSubItem`)}
+      className={clsx(
+        'ActionList-item',
+        containsSubItem && `ActionList-item--hasSubItem`,
+        containsActiveSubItem && `ActionList-item--hasActiveSubItem`
+      )}
       onClick={itemIsCollapsed}
       id={id}
       aria-disabled={ariaDisabled ? 'true' : undefined}

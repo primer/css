@@ -167,6 +167,13 @@ export default {
         category: 'HTML'
       }
     },
+    treeItemSingleton: {
+      defaultValue: false,
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
+    },
     ariaDisabled: {
       defaultValue: false,
       control: {type: 'boolean'},
@@ -243,7 +250,8 @@ export const ListItemTemplate = ({
   treeitem,
   ariaSetSize,
   ariaPosInset,
-  menuItem
+  menuItem,
+  treeItemSingleton
 }) => {
   const [isChecked, itemIsChecked] = useToggle()
   const itemStyle = {
@@ -256,7 +264,8 @@ export const ListItemTemplate = ({
         ariaCurrent && 'ActionList-item--navActive',
         subItem && `ActionList-item--subItem`,
         hasSubItem && `ActionList-item--hasSubItem`,
-        variant && `${variant}`
+        variant && `${variant}`,
+        treeitem && treeItemSingleton && `ActionList-item--singleton`
       )}
       aria-level={ariaLevel ? `${ariaLevel}` : undefined}
       aria-setsize={ariaSetSize ? `${ariaSetSize}` : undefined}
@@ -466,5 +475,6 @@ Playground.decorators = [
   )
 ]
 Playground.args = {
-  truncateItem: false
+  truncateItem: false,
+  treeItemSingleton: false
 }

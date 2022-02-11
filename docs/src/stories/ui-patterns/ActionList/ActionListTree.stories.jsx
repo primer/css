@@ -50,6 +50,18 @@ const trailingVisual = `<svg aria-hidden="true" role="img" class="color-fg-atten
 export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon, text, truncateItem}) => (
   <ListTemplate ariaLabel="Some description" role="tree" variant="ActionList--tree">
     <>
+      <ListItemTemplate
+        truncateItem={truncateItem}
+        ariaLevel="1"
+        ariaSetSize="1"
+        ariaPosInset="1"
+        treeitem
+        text={text}
+        href="/"
+        leadingVisual={showSubItemIcon && file}
+        trailingVisual={trailingVisual}
+        treeItemSingleton
+      />
       <TreeViewListItemCollapsibleTemplate
         text="level 1"
         leadingVisual={showGroupIcon && folder}
@@ -59,6 +71,7 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon, text
         ariaPosInset="2"
         collapsePosition={0}
         containsSubItem
+        containsActiveSubItem
       >
         <ListTemplate listType="nested">
           <ListItemTemplate
@@ -150,6 +163,18 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon, text
           </TreeViewListItemCollapsibleTemplate>
         </ListTemplate>
       </TreeViewListItemCollapsibleTemplate>
+      <ListItemTemplate
+        truncateItem={truncateItem}
+        ariaLevel="1"
+        ariaSetSize="1"
+        ariaPosInset="1"
+        treeitem
+        text={text}
+        href="/"
+        leadingVisual={showSubItemIcon && file}
+        trailingVisual={trailingVisual}
+        treeItemSingleton
+      />
     </>
   </ListTemplate>
 )
