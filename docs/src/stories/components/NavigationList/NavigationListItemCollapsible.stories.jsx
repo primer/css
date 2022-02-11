@@ -1,10 +1,12 @@
 import React from 'react'
-import {ListTemplate} from '../../ui-patterns/ActionList/ActionList.stories.jsx'
-import {ListItemTemplate} from '../../ui-patterns/ActionList/ActionListItem.stories.jsx'
+import clsx from 'clsx'
+import useToggle from '../../helpers/useToggle.jsx'
+import {NavigationListTemplate} from './NavigationList.stories'
+import {ActionListItemCollapsibleTemplate} from '../../ui-patterns/ActionList/ActionListItemCollapsible.stories.jsx'
 
 export default {
-  title: 'Components/ActionList/ActionListItem',
-  excludeStories: ['ActionListItemTemplate'],
+  title: 'Components/NavigationList/NavigationListItemCollapsible',
+  excludeStories: ['NavigationListItemCollapsibleTemplate'],
   argTypes: {
     size: {
       options: [0, 1, 2], // iterator
@@ -19,19 +21,21 @@ export default {
         category: 'CSS'
       }
     },
-    variant: {
-      options: [0, 1], // iterator
-      mapping: ['', 'ActionList-item--danger'], // values
-      control: {
-        type: 'inline-radio',
-        labels: ['default', 'danger']
-      },
-      defaultValue: '',
+    containsSubItem: {
+      defaultValue: false,
+      control: {type: 'boolean'},
       table: {
         category: 'CSS'
       }
     },
     truncateItem: {
+      defaultValue: false,
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
+    },
+    containsActiveSubItem: {
       defaultValue: false,
       control: {type: 'boolean'},
       table: {
@@ -78,23 +82,6 @@ export default {
         category: 'HTML'
       }
     },
-    href: {
-      defaultValue: '',
-      type: 'string',
-      name: 'href',
-      description: 'Item link (href)',
-      table: {
-        category: 'HTML'
-      }
-    },
-    ariaCurrent: {
-      options: ['location', 'page'],
-      control: {type: 'inline-radio'},
-      description: 'location for anchor links, page for global page navigation',
-      table: {
-        category: 'HTML'
-      }
-    },
     description: {
       defaultValue: '',
       type: 'string',
@@ -116,24 +103,53 @@ export default {
       table: {
         category: 'CSS'
       }
+    },
+    id: {
+      defaultValue: '',
+      type: 'string',
+      name: 'id',
+      description: 'Pass in ID of nested <ul> NavigationList',
+      table: {
+        category: 'HTML'
+      }
+    },
+    ariaControlsId: {
+      defaultValue: '',
+      type: 'string',
+      name: 'id',
+      description: 'Pass in ID of nested <ul> NavigationList',
+      table: {
+        category: 'HTML'
+      }
+    },
+    collapsePosition: {
+      options: [0, 1], // iterator
+      control: {
+        type: 'inline-radio',
+        labels: ['leading', 'trailing']
+      },
+      description: 'Handle collapse action visual position',
+      table: {
+        category: 'HTML'
+      }
     }
   }
 }
 
-export const ActionListItemTemplate = ListItemTemplate.bind({})
+export const NavigationListItemCollapsibleTemplate = ActionListItemCollapsibleTemplate.bind({})
 
-export const Playground = ActionListItemTemplate.bind({})
+export const Playground = NavigationListItemCollapsibleTemplate.bind({})
 Playground.decorators = [
   Story => (
-    <ListTemplate>
+    <NavigationListTemplate>
       <Story />
-    </ListTemplate>
+    </NavigationListTemplate>
   )
 ]
 Playground.args = {
   truncateItem: false,
   size: 0,
-  variant: 0,
   descriptionVariant: 0,
-  leadingVisualSize: 0
+  leadingVisualSize: 0,
+  collapsePosition: 0
 }

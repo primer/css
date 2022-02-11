@@ -1,11 +1,10 @@
 import React from 'react'
 import clsx from 'clsx'
-import {ListTemplate} from '../../ui-patterns/ActionList/ActionList.stories.jsx'
-import {DividerTemplate} from '../../ui-patterns/ActionList/ActionListDivider.stories.jsx'
+import {ListTemplate} from './ActionList.stories'
 
 export default {
-  title: 'Components/ActionList/ActionListDivider',
-  excludeStories: ['ActionDividerTemplate'],
+  title: 'UI Patterns/ActionList/ActionListDivider',
+  excludeStories: ['DividerTemplate'],
   argTypes: {
     variant: {
       options: [0, 1], // iterator
@@ -45,16 +44,38 @@ export default {
         category: 'HTML'
       }
     }
-  }
+  },
+  decorators: [
+    Story => (
+      <ul className="ActionList" role="menu">
+        <Story />
+      </ul>
+    )
+  ]
 }
 
-export const ActionDividerTemplate = DividerTemplate.bind({})
+export const DividerTemplate = ({title, description, variant, id}) => (
+  <>
+    <li
+      className={clsx('ActionList-sectionDivider', variant && `${variant}`)}
+      role={title ? undefined : 'separator'}
+      aria-hidden={title ? undefined : true}
+    >
+      {title && (
+        <h3 className="ActionList-sectionDivider-title" id={id}>
+          {title}
+        </h3>
+      )}
+      {description && <span className="ActionList-item-description">{description}</span>}
+    </li>
+  </>
+)
 
-export const Playground = ActionDividerTemplate.bind({})
+export const Playground = DividerTemplate.bind({})
 Playground.args = {
   title: 'Section title',
   description: 'Section description',
-  variant: 0
+  variant: 'subtle'
 }
 Playground.decorators = [
   Story => (
