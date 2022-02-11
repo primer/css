@@ -52,7 +52,7 @@ Defaults to caret oriented top-center.
 <div class="position-relative text-center">
   <button class="btn btn-primary">UI</button>
   <div class="Popover right-0 left-0 position-relative">
-    <div class="Popover-message Popover-body mt-2">
+    <div class="Popover-message Popover-body Popover-body-caret-margin">
       <h4 class="Popover-heading">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -67,7 +67,7 @@ Defaults to caret oriented top-center.
 <div class="position-relative text-center">
   <button class="btn btn-primary">UI</button>
   <div class="Popover right-0 left-0 position-relative">
-    <div class="Popover-message Popover-body Popover-message--large mt-2">
+    <div class="Popover-message Popover-message--large Popover-body Popover-body-caret-margin">
       <h4 class="Popover-heading">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -81,7 +81,7 @@ Defaults to caret oriented top-center.
 ```html live title="Bottom"
 <div class="position-relative text-center">
   <div class="Popover position-relative">
-    <div class="Popover-message Popover-body Popover-message--bottom mb-2">
+    <div class="Popover-message Popover-message--bottom Popover-body Popover-body-caret-margin">
       <h4 class="Popover-heading">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -96,7 +96,7 @@ Defaults to caret oriented top-center.
 ```html live title="Bottom-right"
 <div class="position-relative text-right pr-2">
   <div class="Popover position-relative">
-    <div class="Popover-message Popover-body Popover-message--bottom-right mb-2">
+    <div class="Popover-message Popover-message--bottom-right Popover-body Popover-body-caret-margin">
       <h4 class="Popover-heading">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -110,7 +110,7 @@ Defaults to caret oriented top-center.
 
 ```html live title="Bottom-left"
 <div class="Popover position-relative pl-2">
-  <div class="Popover-message Popover-body Popover-message--bottom-left mb-2">
+  <div class="Popover-message Popover-message--bottom-left Popover-body Popover-body-caret-margin">
     <h4 class="Popover-heading">Popover heading</h4>
     <p>Message about this particular piece of UI.</p>
     <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -125,7 +125,7 @@ Defaults to caret oriented top-center.
 <div class="d-flex flex-justify-center flex-items-center">
   <button class="btn btn-primary">UI</button>
   <div class="Popover position-relative">
-    <div class="Popover-message Popover-body Popover-message--left ml-2">
+    <div class="Popover-message Popover-message--left Popover-body Popover-body-caret-margin">
       <h4 class="Popover-heading">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -140,7 +140,7 @@ Defaults to caret oriented top-center.
 <div class="d-flex flex-justify-center flex-items-end">
   <button class="btn btn-primary">UI</button>
   <div class="Popover position-relative">
-    <div class="Popover-message Popover-body Popover-message--left-bottom ml-2">
+    <div class="Popover-message Popover-message--left-bottom Popover-body Popover-body-caret-margin">
       <h4 class="Popover-heading">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -155,7 +155,7 @@ Defaults to caret oriented top-center.
 <div class="d-flex flex-justify-center flex-items-start">
   <button class="btn btn-primary">UI</button>
   <div class="Popover position-relative">
-    <div class="Popover-message Popover-body Popover-message--left-top ml-2">
+    <div class="Popover-message Popover-message--left-top Popover-body Popover-body-caret-margin">
       <h4 class="Popover-heading">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -169,7 +169,7 @@ Defaults to caret oriented top-center.
 ```html live title="Right"
 <div class="d-flex flex-justify-center flex-items-center">
   <div class="Popover position-relative">
-    <div class="Popover-message Popover-body Popover-message--right mr-2">
+    <div class="Popover-message Popover-message--right Popover-body Popover-body-caret-margin">
       <h4 class="Popover-heading">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -184,7 +184,7 @@ Defaults to caret oriented top-center.
 ```html live title="Right-bottom"
 <div class="d-flex flex-justify-center flex-items-end">
   <div class="Popover position-relative">
-    <div class="Popover-message Popover-body Popover-message--right-bottom mr-2">
+    <div class="Popover-message Popover-message--right-bottom Popover-body Popover-body-caret-margin">
       <h4 class="Popover-heading">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -199,7 +199,7 @@ Defaults to caret oriented top-center.
 ```html live title="Right-top"
 <div class="d-flex flex-justify-center flex-items-start">
   <div class="Popover position-relative">
-    <div class="Popover-message Popover-body Popover-message--right-top mr-2">
+    <div class="Popover-message Popover-message--right-top Popover-body Popover-body-caret-margin">
       <h4 class="Popover-heading">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -215,7 +215,7 @@ Defaults to caret oriented top-center.
 <div class="position-relative pl-2">
   <button class="btn btn-primary">UI</button>
   <div class="Popover position-relative">
-    <div class="Popover-message Popover-body Popover-message--top-left mt-2">
+    <div class="Popover-message Popover-message--top-left Popover-body Popover-body-caret-margin">
       <h4 class="Popover-heading">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>
@@ -230,7 +230,7 @@ Defaults to caret oriented top-center.
 <div class="position-relative text-right pr-2">
   <button class="btn btn-primary">UI</button>
   <div class="Popover right-0 position-relative">
-    <div class="Popover-message Popover-body Popover-message--top-right mt-2">
+    <div class="Popover-message Popover-message--top-right Popover-body Popover-body-caret-margin">
       <h4 class="Popover-heading">Popover heading</h4>
       <p>Message about this particular piece of UI.</p>
       <button type="submit" class="btn btn-outline mt-2 text-bold">Got it!</button>

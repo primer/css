@@ -13,6 +13,36 @@
   box-shadow: var(--color-shadow-large);
 }
 
+.Popover-body-caret-margin {
+  margin-top: $spacer-2;
+}
+
+.Popover-body-caret-margin.Popover-message--no-caret {
+  margin-top: 0;
+}
+
+.Popover-body-caret-margin.Popover-message--right,
+.Popover-body-caret-margin.Popover-message--right-top,
+.Popover-body-caret-margin.Popover-message--right-bottom {
+  margin-top: 0;
+  margin-right: $spacer-2;
+}
+
+.Popover-body-caret-margin.Popover-message--bottom,
+.Popover-body-caret-margin.Popover-message--bottom-right,
+.Popover-body-caret-margin.Popover-message--bottom-left {
+  margin-top: 0;
+  margin-bottom: $spacer-2;
+}
+
+
+.Popover-body-caret-margin.Popover-message--left,
+.Popover-body-caret-margin.Popover-message--left-top,
+.Popover-body-caret-margin.Popover-message--left-bottom {
+  margin-top: 0;
+  margin-left: $spacer-2;
+}
+
 .Popover-message {
   position: relative;
   width: 232px;
