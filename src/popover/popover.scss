@@ -3,6 +3,10 @@
   z-index: 100;
 }
 
+.Popover-heading {
+  margin-bottom: $spacer-2;
+}
+
 .Popover-message {
   position: relative;
   width: 232px;
