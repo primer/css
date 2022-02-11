@@ -6,8 +6,7 @@ export default {
   parameters: {
     layout: 'padded'
   },
-
-  excludeStories: ['DialogTemplate'],
+  excludeStories: ['OverlayTemplate'],
   argTypes: {
     title: {
       name: 'title',
@@ -62,7 +61,13 @@ export default {
       ], // values
       control: {
         type: 'inline-radio',
-        labels: ['small', 'medium', 'large', 'xlarge', 'xxlarge']
+        labels: [
+          'Overlay--width-small',
+          'Overlay--width-medium',
+          'Overlay--width-large',
+          'Overlay--width-xlarge',
+          'Overlay--width-xxlarge'
+        ]
       },
       description: 'Width options: small: 256px, medium: 320px, large: 480px, xlarge: 640px, xxlarge: 960px',
       table: {
@@ -121,6 +126,23 @@ export default {
         labels: ['none', 'center', 'bottom']
       },
       description: 'Positions overlay',
+      table: {
+        category: 'CSS'
+      },
+      defaultValue: 'center'
+    },
+    positionWhenNarrow: {
+      options: [0, 1, 2], // iterator
+      mapping: [
+        '',
+        'Overlay-backdrop-positionWhenNarrow-fullScreen',
+        'Overlay-backdrop-positionWhenNarrow-bottomSheet'
+      ], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['inherit', 'full-screen', 'bottom-sheet']
+      },
+      description: 'Positions overlay for narrow width screens. Inherit will keep the height/width props the same',
       table: {
         category: 'CSS'
       },
@@ -197,22 +219,64 @@ export default {
       table: {
         category: 'CSS'
       }
+    },
+    role: {
+      description: 'Semantic role',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
+    },
+    ariaLabelledy: {
+      description: 'aria-labelledby',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
+    },
+    ariaDescribedby: {
+      description: 'aria-describedby',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
+    },
+    dataFocusTrap: {
+      description: 'data-focus-trap',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
+    },
+    titleId: {
+      description: 'title id',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
+    },
+    descriptionId: {
+      description: 'description id',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
     }
   }
 }
 
 const focusMethod = function getFocus() {
-  const dialog = document.getElementsByTagName('modal-dialog')[0]
+  const dialog = document.getElementById('overlay-backdrop')[0]
   dialog.focus()
 }
 
 const toggleDialog = () => {
-  const dialog = document.getElementById('modal-dialog-backdrop')
-  dialog.classList.toggle('modal-hide')
+  const dialog = document.getElementById('overlay-backdrop')
+  dialog.classList.toggle('Overlay-hidden')
   focusMethod()
 }
 
-export const DialogTemplate = ({
+export const OverlayTemplate = ({
   title,
   description,
   focusElement,
@@ -230,21 +294,34 @@ export const DialogTemplate = ({
   showCloseButton,
   actionContentSlot,
   headerVariant,
-  bodyPaddingVariant
+  bodyPaddingVariant,
+  positionWhenNarrow,
+  role,
+  ariaLabelledby,
+  ariaDescribedby,
+  dataFocusTrap,
+  trigger,
+  titleId,
+  descriptionId
 }) => (
   <>
+    {trigger}
     <div
-      id="modal-dialog-backdrop"
+      id="overlay-backdrop"
       className={clsx(
         toggleOverlay && 'Overlay-hidden',
         'Overlay-backdrop',
         position && `${position}`,
-        'Overlay-backdrop--positionCenter'
+        positionWhenNarrow && `${positionWhenNarrow}`
       )}
+      role={role}
+      aria-labelledby={ariaLabelledby}
+      aria-describedby={ariaDescribedby}
+      data-focus-trap={dataFocusTrap}
     >
       <div
         className={clsx('Overlay', width && `${width}`, height && `${height}`, motion && `${motion}`)}
-        data-focus-trap="active"
+        data-focus-trap={dataFocusTrap}
         open
       >
         {headerRegion && (
@@ -258,12 +335,12 @@ export const DialogTemplate = ({
             <div className="Overlay-headerContentWrap">
               <div className="Overlay-titleWrap">
                 {title && (
-                  <h1 id={`dialog-title`} className="Overlay-title">
+                  <h1 id={titleId} className="Overlay-title">
                     {title}
                   </h1>
                 )}
                 {description && (
-                  <h2 id={`dialog-description`} className="Overlay-description">
+                  <h2 id={descriptionId} className="Overlay-description">
                     {description}
                   </h2>
                 )}
@@ -311,17 +388,29 @@ export const DialogTemplate = ({
   </>
 )
 
-export const Playground = DialogTemplate.bind({})
+export const Playground = OverlayTemplate.bind({})
 Playground.args = {
   title: 'This is the title of the dialog',
   description: 'This is the subtitle of the dialog',
-  //   focusElement: false,
-  //   motion: 1,
-  //   footerContentAlign: 'end',
-  position: 'center',
-  showCloseButton: true
-  //   headerContentSlot: '<input class="form-control input-block" />',
-  //   actionContentSlot: '<button class="btn" />',
-  //   headerVariant: 0,
-  //   bodyPaddingVariant: 0
+  focusElement: false,
+  motion: 1,
+  footerContentAlign: 2,
+  position: 1,
+  showCloseButton: true,
+  positionWhenNarrow: 0,
+  headerContentSlot: '',
+  actionContentSlot: '',
+  headerVariant: 0,
+  bodyPaddingVariant: 0,
+  width: 1,
+  height: 3,
+  headerVariant: 0,
+  headerRegion: true,
+  footerRegion: true,
+  showFooterDivider: false,
+  showHeaderDivider: false,
+  role: '',
+  ariaLabelledby: '',
+  ariaDescribedby: '',
+  dataFocusTrap: ''
 }

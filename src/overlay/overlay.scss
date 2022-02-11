@@ -1,3 +1,5 @@
+// stylelint-disable primer/box-shadow, primer/borders, primer/spacing, selector-max-compound-selectors
+
 .Overlay-hidden {
   display: none !important;
 }
@@ -9,14 +11,10 @@
   max-height: calc(100vh - 64px);
   flex-direction: column;
   background-color: var(--color-canvas-default);
-  // stylelint-disable-next-line primer/borders
   border-radius: 12px;
   box-shadow: var(--color-overlay-shadow);
   opacity: 1;
-  //   aspect-ratio: 1.6 / 1;
 
-  // auto as different prop
-  // max-height other props
   &.Overlay--height-auto {
     height: auto;
   }
@@ -86,13 +84,13 @@
   flex-direction: column;
 
   &.Overlay-header--divided {
+    padding-bottom: $spacer-2;
     box-shadow: inset 0 #{-$border-width} var(--color-border-default);
-    padding-bottom: 8px;
   }
 
   &.Overlay-header--large {
     .Overlay-titleWrap {
-      gap: 8px;
+      gap: $spacer-2;
 
       .Overlay-title {
         font-size: $h3-size;
@@ -107,16 +105,15 @@
   .Overlay-headerContentWrap {
     display: flex;
     align-items: start;
-    gap: 8px;
-    padding: 8px 8px 0px 8px;
+    gap: $spacer-2;
+    padding: $spacer-2 $spacer-2 0 $spacer-2;
 
     .Overlay-titleWrap {
       display: flex;
-      padding: 6px 0 6px 8px;
-      // padding: ((32px - 20px) / 2) 8px;
+      padding: ($spacer-2 * 0.75) 0 ($spacer-2 * 0.75) $spacer-2;
       flex-direction: column;
       flex-grow: 1;
-      gap: 4px;
+      gap: $spacer-1;
 
       .Overlay-title {
         margin: 0;
@@ -135,7 +132,7 @@
     .Overlay-actionWrap {
       display: flex;
       flex-direction: row;
-      gap: 8px;
+      gap: $spacer-2;
     }
   }
 
@@ -151,7 +148,7 @@
   overflow: auto;
 
   &.Overlay-body--paddingCondensed {
-    padding: 8px;
+    padding: $spacer-2;
   }
 
   &.Overlay-body--paddingNone {
@@ -168,23 +165,23 @@
   flex-shrink: 0;
 
   &.Overlay-footer--divided {
-    box-shadow: inset 0 $border-width var(--color-border-default);
     padding-top: $spacer-3;
+    box-shadow: inset 0 $border-width var(--color-border-default);
   }
 
   &.Overlay-footer--alignStart {
     justify-content: flex-start;
-    gap: 8px;
+    gap: $spacer-2;
   }
 
   &.Overlay-footer--alignCenter {
     justify-content: center;
-    gap: 8px;
+    gap: $spacer-2;
   }
 
   &.Overlay-footer--alignEnd {
     justify-content: flex-end;
-    gap: 8px;
+    gap: $spacer-2;
   }
 }
 
@@ -192,8 +189,8 @@
 .Overlay-closeButton {
   position: relative;
   display: grid;
-  width: 32px;
-  height: 32px;
+  width: $spacer-5;
+  height: $spacer-5;
   padding: 0;
   color: var(--color-fg-muted);
   cursor: pointer;
@@ -234,7 +231,6 @@
     }
   }
 
-  // positionWhenNarrow up to 767px
   &.Overlay-backdrop--positionCenter {
     align-items: center;
     justify-content: center;
@@ -247,6 +243,51 @@
     .Overlay {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
+    }
+  }
+
+  // 767px
+  @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
+    &.Overlay-backdrop-positionWhenNarrow-fullScreen {
+      .Overlay {
+        width: 100%;
+        max-width: 100vw;
+        height: 100%;
+        max-height: 100vh;
+        border-radius: unset;
+        flex-grow: 1;
+      }
+    }
+
+    &.Overlay-backdrop-positionWhenNarrow-bottomSheet {
+      align-items: end;
+      justify-content: center;
+
+      .Overlay {
+        width: 100%;
+        max-width: 100vw;
+        height: auto;
+        max-height: 100vh;
+        padding-bottom: env(safe-area-inset-bottom);
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    &.Overlay-backdrop-positionWhenNarrow-bottomSheet {
+      align-items: end;
+      justify-content: center;
+
+      .Overlay {
+        max-width: 480px;
+        height: auto;
+        max-height: 100vh;
+        padding-bottom: env(safe-area-inset-bottom);
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
     }
   }
 }

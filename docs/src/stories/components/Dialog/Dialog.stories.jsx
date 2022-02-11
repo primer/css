@@ -1,5 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
+import {OverlayTemplate} from '../../ui-patterns/Overlay/Overlay.stories'
 
 export default {
   title: 'Components/Dialog',
@@ -30,6 +31,22 @@ export default {
     focusElement: {
       control: {type: 'boolean'},
       description: 'focus the dialog',
+      defaultValue: false,
+      table: {
+        category: 'Interactive'
+      }
+    },
+    toggleOverlay: {
+      control: {type: 'boolean'},
+      description: 'show/hide overlay',
+      defaultValue: false,
+      table: {
+        category: 'Interactive'
+      }
+    },
+    showCloseButton: {
+      control: {type: 'boolean'},
+      description: 'show/hide close button',
       defaultValue: false,
       table: {
         category: 'Interactive'
@@ -73,21 +90,59 @@ export default {
         category: 'CSS'
       }
     },
-    showFooterDivider: {
-      control: {type: 'boolean'},
-      defaultValue: false,
-      description: 'Show dividers above footer',
+    headerVariant: {
+      options: [0, 1], // iterator
+      mapping: ['', 'Overlay-header--large'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['medium (default)', 'large']
+      },
+      description: 'medium (default), large header/description font-size + spacing',
       table: {
         category: 'CSS'
       }
     },
-    showHeaderDivider: {
-      control: {type: 'boolean'},
-      defaultValue: false,
-      description: 'Show dividers below header',
+    bodyPaddingVariant: {
+      options: [0, 1, 2], // iterator
+      mapping: ['', 'Overlay-body--paddingCondensed', 'Overlay-body--paddingNone'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['normal (default)', 'condensed', 'none']
+      },
+      description: 'body spacing',
       table: {
         category: 'CSS'
       }
+    },
+    position: {
+      options: [0, 1, 2], // iterator
+      mapping: ['', 'Overlay-backdrop--positionCenter', 'Overlay-backdrop--positionBottom'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['none', 'center', 'bottom']
+      },
+      description: 'Positions overlay',
+      table: {
+        category: 'CSS'
+      },
+      defaultValue: 'center'
+    },
+    positionWhenNarrow: {
+      options: [0, 1, 2], // iterator
+      mapping: [
+        '',
+        'Overlay-backdrop-positionWhenNarrow-fullScreen',
+        'Overlay-backdrop-positionWhenNarrow-bottomSheet'
+      ], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['inherit', 'full-screen', 'bottom-sheet']
+      },
+      description: 'Positions overlay for narrow width screens. Inherit will keep the height/width props the same',
+      table: {
+        category: 'CSS'
+      },
+      defaultValue: 'center'
     },
     headerRegion: {
       control: {type: 'boolean'},
@@ -106,100 +161,129 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    showFooterDivider: {
+      control: {type: 'boolean'},
+      defaultValue: false,
+      description: 'Show dividers above footer',
+      table: {
+        category: 'CSS'
+      }
+    },
+    showHeaderDivider: {
+      control: {type: 'boolean'},
+      defaultValue: false,
+      description: 'Show dividers below header',
+      table: {
+        category: 'CSS'
+      }
+    },
+    headerContentSlot: {
+      description: 'Slot for additional header content',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
+    },
+    actionContentSlot: {
+      description: 'Slot for additional header action',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
+    },
+    motion: {
+      options: [0, 1], // iterator
+      mapping: [null, 'Overlay--motion-scaleFade'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['none', 'scaleFade']
+      },
+      description: 'Animation options for show/hide overlay',
+      table: {
+        category: 'CSS'
+      }
+    },
+    footerContentAlign: {
+      options: [0, 1, 2], // iterator
+      mapping: ['Overlay-footer--alignStart', 'Overlay-footer--alignCenter', 'Overlay-footer--alignEnd'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['start', 'center', 'end']
+      },
+      description: 'Align footer contents',
+      table: {
+        category: 'CSS'
+      }
+    },
+    role: {
+      description: 'Semantic role',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
+    },
+    ariaLabelledy: {
+      description: 'aria-labelledby',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
+    },
+    ariaDescribedby: {
+      description: 'aria-describedby',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
+    },
+    dataFocusTrap: {
+      description: 'data-focus-trap',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
     }
   }
 }
 
 const focusMethod = function getFocus() {
-  const dialog = document.getElementsByTagName('modal-dialog')[0]
+  const dialog = document.getElementById('overlay-backdrop')[0]
   dialog.focus()
 }
 
 const toggleDialog = () => {
-  const dialog = document.getElementById('modal-dialog-backdrop')
+  const dialog = document.getElementById('overlay-backdrop')
   dialog.classList.toggle('Overlay-hidden')
   focusMethod()
 }
 
-export const DialogTemplate = ({
-  title,
-  description,
-  focusElement,
-  width,
-  height,
-  showFooterDivider,
-  showHeaderDivider,
-  headerRegion,
-  footerRegion
-}) => (
-  <>
-    <button class="btn modal-button" onClick={toggleDialog}>
-      <span>Open dialog</span>
-    </button>
-    <div
-      id="modal-dialog-backdrop"
-      className={clsx('Overlay-backdrop', 'Overlay-backdrop--positionCenter')}
-      role="dialog"
-      aria-labelledby="react-aria8832355892-4"
-      aria-describedby="react-aria8832355892-5"
-      data-focus-trap="active"
-      open
-    >
-      <div
-        className={clsx('Dialog', 'Overlay', width && `${width}`, height && `${height}`, 'Overlay--motion-scaleFade')}
-        data-focus-trap="active"
-        open
-      >
-        {headerRegion && (
-          <header className={clsx('Overlay-header', showHeaderDivider && 'Overlay-header--divided')}>
-            <div className="Overlay-header--contentWrap">
-              <div className="Overlay-header--titleWrap">
-                {title && (
-                  <h1 id={`dialog-title`} className="Overlay-title">
-                    {title}
-                  </h1>
-                )}
-                {description && (
-                  <h2 id={`dialog-description`} className="Overlay-description">
-                    {description}
-                  </h2>
-                )}
-              </div>
-              <button className="Overlay-closeButton" aria-label="Close" onClick={toggleDialog}>
-                <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
-                  <path
-                    fill-rule="evenodd"
-                    d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-          </header>
-        )}
-        <div className="Overlay-body">This is the body of the dialog</div>
-        {footerRegion && (
-          <footer
-            className={clsx(
-              'Dialog-footer',
-              'Overlay-footer',
-              showFooterDivider && 'Overlay-footer--divided',
-              'Overlay-footer--alignEnd'
-            )}
-          >
-            <button class="btn" onClick={toggleDialog}>
-              <span>Continue</span>
-            </button>
-          </footer>
-        )}
-      </div>
-      {focusElement && focusMethod()}
-    </div>
-  </>
-)
+export const DialogTemplate = OverlayTemplate.bind({})
 
 export const Playground = DialogTemplate.bind({})
 Playground.args = {
   title: 'This is the title of the dialog',
   description: 'This is the subtitle of the dialog',
-  focusElement: false
+  focusElement: false,
+  role: 'dialog',
+  width: 1,
+  height: 3,
+  ariaLabelledby: 'title-id',
+  ariaDescribedby: 'description-id',
+  dataFocusTrap: 'active',
+  footerContentAlign: 2,
+  showCloseButton: true,
+  position: 1,
+  positionWhenNarrow: 1,
+  headerVariant: 0,
+  bodyPaddingVariant: 0,
+  motion: 1,
+  descriptionId: 'description-id',
+  titleId: 'title-id',
+  showFooterDivider: true,
+  trigger: (
+    <button class="btn" onClick={toggleDialog}>
+      <span>Open dialog</span>
+    </button>
+  )
 }
