@@ -1,15 +1,16 @@
 ---
 title: Tooltips
 path: components/tooltips
-status: Stable
+status: Deprecated
 source: 'https://github.com/primer/css/tree/main/src/tooltips'
 bundle: tooltips
 ---
 
+<Note>
+  Please note that the `.tooltipped` component is **deprecated**.
+</Note>
 
-Add tooltips built entirely in CSS to nearly any element.
-
-
+Add tooltips built entirely in CSS to appropriate elements.
 
 ## Implementation and accessibility
 
@@ -17,7 +18,7 @@ Tooltips as a UI pattern should be our last resort for conveying information bec
 
 Before adding a tooltip, please consider: Is this information essential and necessary* Can the UI be made clearer? Can the information be shown on the page by default?
 
-**Attention**: we use `aria-label` for tooltip contents, because it is crucial that they are accessible to screen reader users. However, `aria-label` **replaces** the text content of an element in screen readers, so only use `.tooltipped` on elements with no existing text content, or consider using `title` for supplemental information.
+**Attention**: we use `aria-label` for tooltip contents, because it is crucial that they are accessible to screen reader users. However, `aria-label` **replaces** the text content of an element in screen readers, so only use `.tooltipped` on elements with no existing text content. **NEVER** use tooltips on static elements. They should only be used on interactive elements.
 
 **Note:** Tooltip classes will conflict with Octicon styles, and as such, must be applied to the parent element instead of the icon.
 
