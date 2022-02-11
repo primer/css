@@ -33,6 +33,13 @@
   }
 
   .ActionList-item {
+    // class for single tree items not within a group
+    &.ActionList-item--singleton {
+      .ActionList-content {
+        padding-left: $spacer-5;
+      }
+    }
+
     // start: copy from ActionList proper- backwards compatible for treeview with different markup structure
     &[aria-expanded] {
       .ActionList--subGroup {
