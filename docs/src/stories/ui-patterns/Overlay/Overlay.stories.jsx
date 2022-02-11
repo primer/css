@@ -43,6 +43,14 @@ export default {
         category: 'Interactive'
       }
     },
+    showCloseButton: {
+      control: {type: 'boolean'},
+      description: 'show/hide close button',
+      defaultValue: false,
+      table: {
+        category: 'Interactive'
+      }
+    },
     width: {
       options: [0, 1, 2, 3, 4], // iterator
       mapping: [
@@ -81,18 +89,42 @@ export default {
         category: 'CSS'
       }
     },
-    position: {
-      options: [0, 1, 2, 3], // iterator
-      mapping: [null, 'Overlay-backdrop--positionCenter', 'Overlay-backdrop--positionBottom'], // values
+    headerVariant: {
+      options: [0, 1], // iterator
+      mapping: ['', 'Overlay-header--large'], // values
       control: {
         type: 'inline-radio',
-        labels: ['none', 'center', 'bottom', 'side']
+        labels: ['medium (default)', 'large']
+      },
+      description: 'medium (default), large header/description font-size + spacing',
+      table: {
+        category: 'CSS'
+      }
+    },
+    bodyPaddingVariant: {
+      options: [0, 1, 2], // iterator
+      mapping: ['', 'Overlay-body--paddingCondensed', 'Overlay-body--paddingNone'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['normal (default)', 'condensed', 'none']
+      },
+      description: 'body spacing',
+      table: {
+        category: 'CSS'
+      }
+    },
+    position: {
+      options: [0, 1, 2], // iterator
+      mapping: ['', 'Overlay-backdrop--positionCenter', 'Overlay-backdrop--positionBottom'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['none', 'center', 'bottom']
       },
       description: 'Positions overlay',
       table: {
         category: 'CSS'
       },
-      defaultValue: 'Overlay--position-center'
+      defaultValue: 'center'
     },
     headerRegion: {
       control: {type: 'boolean'},
@@ -128,12 +160,18 @@ export default {
         category: 'CSS'
       }
     },
-    showInputField: {
-      control: {type: 'boolean'},
-      defaultValue: false,
-      description: 'Slot for input field',
+    headerContentSlot: {
+      description: 'Slot for additional header content',
+      control: {type: 'string'},
       table: {
-        category: 'CSS'
+        category: 'HTML'
+      }
+    },
+    actionContentSlot: {
+      description: 'Slot for additional header action',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
       }
     },
     motion: {
@@ -186,14 +224,23 @@ export const DialogTemplate = ({
   headerRegion,
   footerRegion,
   position,
-  showInputField,
+  headerContentSlot,
   motion,
-  footerContentAlign
+  footerContentAlign,
+  showCloseButton,
+  actionContentSlot,
+  headerVariant,
+  bodyPaddingVariant
 }) => (
   <>
     <div
       id="modal-dialog-backdrop"
-      className={clsx(toggleOverlay && 'Overlay-hidden', 'Overlay-backdrop', position && `${position}`)}
+      className={clsx(
+        toggleOverlay && 'Overlay-hidden',
+        'Overlay-backdrop',
+        position && `${position}`,
+        'Overlay-backdrop--positionCenter'
+      )}
     >
       <div
         className={clsx('Overlay', width && `${width}`, height && `${height}`, motion && `${motion}`)}
@@ -202,10 +249,14 @@ export const DialogTemplate = ({
       >
         {headerRegion && (
           <header
-            className={clsx('Overlay-header', showHeaderDivider && 'Overlay-header--divided', 'Overlay-header--large')}
+            className={clsx(
+              'Overlay-header',
+              showHeaderDivider && 'Overlay-header--divided',
+              headerVariant && `${headerVariant}`
+            )}
           >
-            <div className="Overlay-header--contentWrap">
-              <div className="Overlay-header--titleWrap">
+            <div className="Overlay-headerContentWrap">
+              <div className="Overlay-titleWrap">
                 {title && (
                   <h1 id={`dialog-title`} className="Overlay-title">
                     {title}
@@ -217,23 +268,26 @@ export const DialogTemplate = ({
                   </h2>
                 )}
               </div>
-              <button className="Overlay-closeButton" aria-label="Close" onClick={toggleDialog}>
-                <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
-                  <path
-                    fill-rule="evenodd"
-                    d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"
-                  ></path>
-                </svg>
-              </button>
+              {showCloseButton && (
+                <div className="Overlay-actionWrap">
+                  {actionContentSlot && <div dangerouslySetInnerHTML={{__html: actionContentSlot}} />}
+                  <button className="Overlay-closeButton" aria-label="Close" onClick={toggleDialog}>
+                    <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                      <path
+                        fill-rule="evenodd"
+                        d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              )}
             </div>
-            {showInputField && (
-              <div className="Overlay-header-inputField">
-                <input className="form-control input-block" />
-              </div>
+            {headerContentSlot && (
+              <div className="Overlay-headerContentSlot" dangerouslySetInnerHTML={{__html: headerContentSlot}} />
             )}
           </header>
         )}
-        <div className="Overlay-body">
+        <div className={clsx('Overlay-body', bodyPaddingVariant && `${bodyPaddingVariant}`)}>
           This is the body of the dialogThis is the body of the dialogThis is the body of the dialog This is the body of
           the dialog This is the body of the dialog This is the body of the dialog This is the body of the dialog This
           is the body of the dialog This is the body of the dialog
@@ -261,8 +315,13 @@ export const Playground = DialogTemplate.bind({})
 Playground.args = {
   title: 'This is the title of the dialog',
   description: 'This is the subtitle of the dialog',
-  focusElement: false,
-  motion: 1,
-  footerContentAlign: 'end',
-  position: 'Overlay--position-center'
+  //   focusElement: false,
+  //   motion: 1,
+  //   footerContentAlign: 'end',
+  position: 'center',
+  showCloseButton: true
+  //   headerContentSlot: '<input class="form-control input-block" />',
+  //   actionContentSlot: '<button class="btn" />',
+  //   headerVariant: 0,
+  //   bodyPaddingVariant: 0
 }

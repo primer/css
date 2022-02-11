@@ -6,6 +6,7 @@
   display: flex;
   min-width: 320px;
   max-width: calc(100vw - 64px);
+  max-height: calc(100vh - 64px);
   flex-direction: column;
   background-color: var(--color-canvas-default);
   // stylelint-disable-next-line primer/borders
@@ -86,10 +87,11 @@
 
   &.Overlay-header--divided {
     box-shadow: inset 0 #{-$border-width} var(--color-border-default);
+    padding-bottom: 8px;
   }
 
   &.Overlay-header--large {
-    .Overlay-header--titleWrap {
+    .Overlay-titleWrap {
       gap: 8px;
 
       .Overlay-title {
@@ -102,36 +104,43 @@
     }
   }
 
-  .Overlay-header--contentWrap {
+  .Overlay-headerContentWrap {
     display: flex;
+    align-items: start;
     gap: 8px;
-    padding: 8px;
-  }
+    padding: 8px 8px 0px 8px;
 
-  .Overlay-header--titleWrap {
-    display: flex;
-    padding: 6px 0 6px 8px;
-    // padding: ((32px - 20px) / 2) 8px;
-    flex-direction: column;
-    flex-grow: 1;
-    gap: 4px;
+    .Overlay-titleWrap {
+      display: flex;
+      padding: 6px 0 6px 8px;
+      // padding: ((32px - 20px) / 2) 8px;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 4px;
 
-    .Overlay-title {
-      margin: 0;
-      font-size: $body-font-size;
-      font-weight: $font-weight-bold;
+      .Overlay-title {
+        margin: 0;
+        font-size: $body-font-size;
+        font-weight: $font-weight-bold;
+      }
+
+      .Overlay-description {
+        margin: 0;
+        font-size: $font-size-small;
+        font-weight: $font-weight-normal;
+        color: var(--color-fg-muted);
+      }
     }
 
-    .Overlay-description {
-      margin: 0;
-      font-size: $font-size-small;
-      font-weight: $font-weight-normal;
-      color: var(--color-fg-muted);
+    .Overlay-actionWrap {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
     }
   }
 
-  .Overlay-header-inputField {
-    padding: 0 $spacer-2 $spacer-2 $spacer-2;
+  .Overlay-headerContentSlot {
+    padding: 0 $spacer-2 0 $spacer-2;
   }
 }
 
@@ -142,6 +151,7 @@
   overflow: auto;
 
   &.Overlay-body--paddingCondensed {
+    padding: 8px;
   }
 
   &.Overlay-body--paddingNone {
@@ -153,14 +163,13 @@
 .Overlay-footer {
   z-index: 1;
   display: flex;
-  padding: $spacer-3;
+  padding: 0 $spacer-3 $spacer-3 $spacer-3;
   flex-direction: row;
   flex-shrink: 0;
 
-  // if false remove padding top
-  // same body padding logic
   &.Overlay-footer--divided {
     box-shadow: inset 0 $border-width var(--color-border-default);
+    padding-top: $spacer-3;
   }
 
   &.Overlay-footer--alignStart {
@@ -168,7 +177,6 @@
     gap: 8px;
   }
 
-  // fullwidth (stretch)
   &.Overlay-footer--alignCenter {
     justify-content: center;
     gap: 8px;
@@ -187,8 +195,6 @@
   width: 32px;
   height: 32px;
   padding: 0;
-  //   margin-top: $spacer-2;
-  //   margin-right: $spacer-2;
   color: var(--color-fg-muted);
   cursor: pointer;
   user-select: none;
