@@ -7,6 +7,12 @@
   margin-bottom: $spacer-2;
 }
 
+.Popover-body {
+  padding: $spacer-4;
+  text-align: left;
+  box-shadow: var(--color-shadow-large);
+}
+
 .Popover-message {
   position: relative;
   width: 232px;
