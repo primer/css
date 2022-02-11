@@ -13,12 +13,19 @@
 
   // no children
   &:empty {
+    display: block;
     height: 1px;
     padding: 0;
     margin: ($spacer-2 - 1px) ($spacer-2 * -1) $spacer-2;
     list-style: none;
     background: var(--color-action-list-item-inline-divider);
     border: 0;
+  }
+
+  .ActionList-sectionDivider-title {
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    color: var(--color-fg-muted);
   }
 }
 

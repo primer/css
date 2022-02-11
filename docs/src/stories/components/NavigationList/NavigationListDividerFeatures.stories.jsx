@@ -1,6 +1,5 @@
 import React from 'react'
-import {ListTemplate} from '../../ui-patterns/ActionList/ActionList.stories.jsx'
-
+import {NavigationListTemplate} from './NavigationList.stories'
 import {
   PatternTitle,
   PatternFilled,
@@ -9,12 +8,12 @@ import {
 } from '../../ui-patterns/ActionList/ActionListDividerFeatures.stories.jsx'
 
 export default {
-  title: 'Components/ActionList/ActionListDivider/Features',
+  title: 'Components/NavigationList/NavigationListDivider/Features',
   decorators: [
     Story => (
-      <ListTemplate>
+      <NavigationListTemplate>
         <Story />
-      </ListTemplate>
+      </NavigationListTemplate>
     )
   ]
 }

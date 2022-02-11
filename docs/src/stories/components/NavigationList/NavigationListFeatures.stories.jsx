@@ -2,11 +2,12 @@ import React from 'react'
 import {
   PatternShowDividers,
   PatternInsetPadding,
-  PatternFullBleed
+  PatternFullBleed,
+  PatternNestedGroup
 } from '../../ui-patterns/ActionList/ActionListFeatures.stories.jsx'
 
 export default {
-  title: 'Components/ActionList/ActionList/Features'
+  title: 'Components/NavigationList/NavigationList/Features'
 }
 
 export const ShowDividers = ({}) => <PatternShowDividers {...PatternShowDividers.args} />
@@ -14,3 +15,5 @@ export const ShowDividers = ({}) => <PatternShowDividers {...PatternShowDividers
 export const InsetPadding = ({}) => <PatternInsetPadding {...PatternInsetPadding.args} />
 
 export const FullBleed = ({}) => <PatternFullBleed {...PatternFullBleed.args} />
+
+export const NestedGroup = ({}) => <PatternNestedGroup {...PatternNestedGroup.args} />

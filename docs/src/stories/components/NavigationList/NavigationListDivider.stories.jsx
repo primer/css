@@ -1,11 +1,10 @@
 import React from 'react'
-import clsx from 'clsx'
-import {ListTemplate} from '../../ui-patterns/ActionList/ActionList.stories.jsx'
+import {NavigationListTemplate} from './NavigationList.stories'
 import {DividerTemplate} from '../../ui-patterns/ActionList/ActionListDivider.stories.jsx'
 
 export default {
-  title: 'Components/ActionList/ActionListDivider',
-  excludeStories: ['ActionDividerTemplate'],
+  title: 'Components/NavigationList/NavigationListDivider',
+  excludeStories: ['NavigationListDividerTemplate'],
   argTypes: {
     variant: {
       options: [0, 1], // iterator
@@ -48,18 +47,17 @@ export default {
   }
 }
 
-export const ActionDividerTemplate = DividerTemplate.bind({})
+export const NavigationListDividerTemplate = DividerTemplate.bind({})
 
-export const Playground = ActionDividerTemplate.bind({})
+export const Playground = NavigationListDividerTemplate.bind({})
 Playground.args = {
   title: 'Section title',
-  description: 'Section description',
-  variant: 0
+  description: 'Section description'
 }
 Playground.decorators = [
   Story => (
-    <ListTemplate>
+    <NavigationListTemplate>
       <Story />
-    </ListTemplate>
+    </NavigationListTemplate>
   )
 ]
