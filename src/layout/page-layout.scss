@@ -361,11 +361,14 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 .PageLayout-content,
 .PageLayout-pane,
 .PageLayout-footer {
+  // stylelint-disable-next-line primer/spacing
   padding: var(--Layout-inner-spacing-min);
 }
 
 .PageLayout-content {
+  // stylelint-disable-next-line primer/spacing
   padding-right: var(--Layout-inner-spacing-max);
+  // stylelint-disable-next-line primer/spacing
   padding-left: var(--Layout-inner-spacing-max);
   grid-area: content;
 }
