@@ -1,5 +1,19 @@
 # @primer/css
 
+## 19.4.0
+
+### Minor Changes
+
+- [#1937](https://github.com/primer/css/pull/1937) [`67f08009`](https://github.com/primer/css/commit/67f08009ef458088b9fda6267ab25ad6d0a514aa) Thanks [@langermank](https://github.com/langermank)! - TreeView single item nesting
+
+* [#1905](https://github.com/primer/css/pull/1905) [`50221a54`](https://github.com/primer/css/commit/50221a5486d28c54dc1f578b459addd867bd01d3) Thanks [@langermank](https://github.com/langermank)! - Refactors NavigationList to better handle accessibility. Backwards compatible for TreeView CSS.
+
+- [#1936](https://github.com/primer/css/pull/1936) [`c53ecdff`](https://github.com/primer/css/commit/c53ecdff5442cf4ac5da0d1e2ba45871ab662855) Thanks [@khiga8](https://github.com/khiga8)! - Deprecating `.tooltipped` CSS classes
+
+### Patch Changes
+
+- [#1928](https://github.com/primer/css/pull/1928) [`0fb67895`](https://github.com/primer/css/commit/0fb6789555652860cfa5178b60433eb2c3d2575c) Thanks [@simurai](https://github.com/simurai)! - Fix `<sup><a>` from getting wrapped with `[ ]`
+
 ## 19.3.0
 
 ### Minor Changes
