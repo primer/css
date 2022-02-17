@@ -2,18 +2,18 @@ import React from 'react'
 import clsx from 'clsx'
 import {PageLayoutTemplate} from './PageLayout.stories'
 import {SplitPageLayoutTemplate} from './SplitPageLayout.stories'
-import {NavRepoSettings, NavDiscussionsPane, ActionListTreeViewTemplate} from '../ActionList/ActionListExamples.stories'
+import {RepoSettings, DiscussionsPane, ActionListTreeViewTemplate} from '../ActionList/ActionListExamples.stories'
 import {LayoutAlphaTemplate} from './LayoutAlpha.stories'
 
 export default {
   title: 'Components/Layout/Beta/Examples'
 }
 
-export const Settings = SplitPageLayoutTemplate.bind({});
-Settings.storyName = 'Settings';
+export const Settings = SplitPageLayoutTemplate.bind({})
+Settings.storyName = 'Settings'
 Settings.parameters = {
-  layout: 'fullscreen',
-};
+  layout: 'fullscreen'
+}
 Settings.args = {
   // Structure
   padding: 'normal',
@@ -53,11 +53,11 @@ Settings.args = {
   )
 }
 
-export const Discussions = PageLayoutTemplate.bind({});
+export const Discussions = PageLayoutTemplate.bind({})
 Discussions.parameters = {
-  layout: 'fullscreen',
-};
-Discussions.storyName = 'Discussions';
+  layout: 'fullscreen'
+}
+Discussions.storyName = 'Discussions'
 Discussions.args = {
   responsiveVariant: 'separateRegions',
   panePosition: 'start',
@@ -125,10 +125,10 @@ Discussions.args = {
   contentChildren: (
     <>
       <LayoutAlphaTemplate
-        container='xl'
-        sidebarPosition='end'
-        sidebarWidth='narrow'
-        flowRowUntil='lg'
+        container="xl"
+        sidebarPosition="end"
+        sidebarWidth="narrow"
+        flowRowUntil="lg"
         mainChildren={
           <>
             <div className="Box p-3" style={{minHeight: '800px'}}>
@@ -151,11 +151,11 @@ Discussions.args = {
   )
 }
 
-export const IssueDetail = PageLayoutTemplate.bind({});
-IssueDetail.storyName = 'Issue detail';
+export const IssueDetail = PageLayoutTemplate.bind({})
+IssueDetail.storyName = 'Issue detail'
 IssueDetail.parameters = {
-  layout: 'fullscreen',
-};
+  layout: 'fullscreen'
+}
 IssueDetail.args = {
   panePosition: 'end',
   paneWidth: 'default',
