@@ -9,8 +9,8 @@ export default {
   argTypes: {
     // Structure
 
-    innerSpacing: {
-      options: ['normal', 'condensed'],
+    padding: {
+      options: ['normal', 'condensed', 'none'],
       control: {
         type: 'inline-radio'
       },
@@ -59,6 +59,24 @@ export default {
       }
     },
 
+    // Header
+
+    hasHeader: {
+      control: { type: 'boolean' },
+      table: {
+        category: 'Header'
+      }
+    },
+
+    // Footer
+
+    hasFooter: {
+      control: { type: 'boolean' },
+      table: {
+        category: 'Footer'
+      }
+    },    
+
     // HTML
 
     contentChildren: {
@@ -78,13 +96,17 @@ export default {
 
 export const SplitPageLayoutTemplate = ({
   _debug,
-  innerSpacing,
+  padding,
   primaryRegion,
   paneWidth,
   paneIsSticky,
   contentWidth,
+  hasHeader,
+  hasFooter,
   contentChildren,
-  paneChildren
+  paneChildren,
+  headerChildren,
+  footerChildren
 }) => {
   return (
     <>
@@ -92,7 +114,7 @@ export const SplitPageLayoutTemplate = ({
         _debug={_debug}
         containerWidth="full"
         outerSpacing="none"
-        innerSpacing={innerSpacing}
+        innerSpacing={padding}
         columnGap="none"
         rowGap="none"
         responsiveVariant="separateRegions"
@@ -102,10 +124,14 @@ export const SplitPageLayoutTemplate = ({
         panePosition="start"
         hasPaneDivider={true}
         contentWidth={contentWidth}
-        hasHeader={false}
-        hasFooter={false}
+        hasHeader={hasHeader}
+        hasHeaderDivider={true}
+        hasFooter={hasFooter}
+        hasFooterDivider={true}
         contentChildren={contentChildren}
         paneChildren={paneChildren}
+        headerChildren={headerChildren}
+        footerChildren={footerChildren}
       />
     </>
   )
@@ -120,7 +146,7 @@ Playground.args = {
   _debug: true,
 
   // Structure
-  innerSpacing: 'normal',
+  padding: 'normal',
 
   // Responsive
   primaryRegion: 'content',
@@ -131,7 +157,15 @@ Playground.args = {
   // Content
   contentWidth: 'full',
 
+  // Header
+  hasHeader: false,
+
+  // Footer
+  hasFooter: false,
+
   // Children
   contentChildren: 'content',
-  paneChildren: 'pane'
+  paneChildren: 'pane',
+  headerChildren: 'header',
+  footerChildren: 'footer',
 }

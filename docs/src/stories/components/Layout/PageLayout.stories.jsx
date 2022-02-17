@@ -29,12 +29,12 @@ export default {
       }
     },
 
-    outerSpacing: {
-      options: ['normal', 'condensed'],
+    padding: {
+      options: ['normal', 'condensed', 'none'],
       control: {
         type: 'inline-radio'
       },
-      description: 'Sets wrapper margins surrounding the component to distance itself from the viewport edges. `normal` sets the margin to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the margin at 16px.',
+      description: 'Sets container spacing surrounding the component to distance itself from the viewport edges. `normal` sets the spacing to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the spacing at 16px.',
       table: {
         category: 'Structure'
       }
@@ -236,7 +236,7 @@ export default {
 export const PageLayoutTemplate = ({
   _debug,
   containerWidth,
-  outerSpacing,
+  padding,
   columnGap,
   rowGap,
   responsiveVariant,
@@ -263,7 +263,7 @@ export const PageLayoutTemplate = ({
       <LayoutTemplate
         _debug={_debug}
         containerWidth={containerWidth}
-        outerSpacing={outerSpacing}
+        outerSpacing={padding}
         innerSpacing='none'
         columnGap={columnGap}
         rowGap={rowGap}
@@ -306,7 +306,7 @@ Playground.args = {
 
   // Structure
   containerWidth: 'xl',
-  outerSpacing: 'normal',
+  padding: 'normal',
   columnGap: 'normal',
   rowGap: 'normal',
 
