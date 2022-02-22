@@ -95,6 +95,8 @@ export const AllVariants = ({}) => (
     <LabelTemplate text="Attention" variant="Label--attention" />
     <LabelTemplate text="Severe" variant="Label--severe" />
     <LabelTemplate text="Danger" variant="Label--danger" />
+    <LabelTemplate text="Open" variant="Label--open" />
+    <LabelTemplate text="Closed" variant="Label--closed" />
     <LabelTemplate text="Done" variant="Label--done" />
     <LabelTemplate text="Sponsors" variant="Label--sponsors" />
   </>
