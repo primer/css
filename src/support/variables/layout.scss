@@ -141,17 +141,17 @@ $width-xl: 1280px !default;
 }
 
 // Responsive container widths
-$container-sm: $width-sm !default;
-$container-md: $width-md !default;
-$container-lg: $width-lg !default;
-$container-xl: $width-xl !default;
+$container-sm: var(--width-sm) !default;
+$container-md: var(--width-md) !default;
+$container-lg: var(--width-lg) !default;
+$container-xl: var(--width-xl) !default;
 
 // Breakpoints in the form (name: length)
 $breakpoints: (
-  sm: $width-sm,
-  md: $width-md,
-  lg: $width-lg,
-  xl: $width-xl
+  sm: var(--width-sm),
+  md: var(--width-md),
+  lg: var(--width-lg),
+  xl: var(--width-xl)
 ) !default;
 
 // This map in the form (breakpoint: variant) is used to iterate over
