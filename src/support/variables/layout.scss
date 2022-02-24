@@ -132,6 +132,14 @@ $width-lg: 1012px !default;
 // Extra large screen / wide desktop
 $width-xl: 1280px !default;
 
+:root {
+  --width-xs: #{$width-xs};
+  --width-sm: #{$width-sm};
+  --width-md: #{$width-md};
+  --width-lg: #{$width-lg};
+  --width-xl: #{$width-xl};
+}
+
 // Responsive container widths
 $container-sm: $width-sm !default;
 $container-md: $width-md !default;
