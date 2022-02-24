@@ -79,7 +79,7 @@
 // Responsive
 
 .page-responsive {
-  @media (max-width: $width-sm) {
+  @media (max-width: var(--width-sm)) {
     .suggester-container {
       right: $spacer-2 !important;
       left: $spacer-2 !important;

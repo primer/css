@@ -3,7 +3,7 @@
 
 // 544px
 .container-sm {
-  max-width: $width-sm;
+  max-width: var(--width-sm);
   margin-right: auto;
   margin-left: auto;
 }
