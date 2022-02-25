@@ -81,6 +81,17 @@
   color: var(--color-fg-default);
   text-overflow: ellipsis;
   white-space: nowrap;
+  cursor: pointer;
+
+  &[disabled] {
+    color: var(--color-fg-subtle);
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: var(--color-bg-default);
+      color: var(--color-fg-subtle);
+    }
+  }
 
   &:focus,
   &:hover {
