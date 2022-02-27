@@ -258,10 +258,10 @@ export const PlaygroundTemplate = ({}) => {
 import useToggle from '../helpers/useToggle.jsx'
 
 export const PlaygroundTemplate = ({}) => {
-  const [isOpen, itemisOpen] = useToggle()
+  const [isOpen, itemIsOpen] = useToggle()
   return (
     <>
-      <details class="details-overlay" onClick={isOpen} open={itemisOpen}>
+      <details class="details-overlay" onClick={isOpen} open={itemIsOpen}>
         <summary class="btn">More</summary>
         <div class="border p-3 mt-2">Hidden text</div>
       </details>
@@ -279,10 +279,10 @@ Toggle any HTML attribute, like `aria-etc`, `checked`, `hidden`, etc.
 import useToggle from '../helpers/useToggle.jsx'
 
 export const PlaygroundTemplate = ({}) => {
-  const [isDisabled, itemisDisabled] = useToggle()
+  const [isDisabled, itemIsDisabled] = useToggle()
   return (
     <>
-      <button onClick={itemisDisabled} class="btn d-block mb-2">
+      <button onClick={itemIsDisabled} class="btn d-block mb-2">
         Toggle
       </button>
       <button disabled={isDisabled}>{isDisabled ? 'disabled' : 'button'}</button>
@@ -300,10 +300,10 @@ Toggle any CSS class to show interaction and/or animation
 import useToggle from '../helpers/useToggle.jsx'
 
 export const PlaygroundTemplate = ({}) => {
-  const [isRotating, itemisRotating] = useToggle()
+  const [isRotating, itemIsRotating] = useToggle()
   return (
     <>
-      <button onClick={itemisRotating} class="btn d-block mb-2">
+      <button onClick={itemIsRotating} class="btn d-block mb-2">
         Toggle
       </button>
       <svg
