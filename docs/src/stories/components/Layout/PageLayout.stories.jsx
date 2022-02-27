@@ -129,7 +129,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: 'Whether to show a divider between `pane` and `content` regions if `responsiveVariant` is set to `stackRegions`. `line` shows a single line. `filled` shows a thicker mobile-frienldy divider.',
+      description: 'Whether to show a divider between `pane` and `content` regions if `responsiveVariant` is set to `stackRegions`. `line` shows a single line. `filled` shows a thicker mobile-friendly divider.',
       table: {
         category: 'Pane'
       }
@@ -198,7 +198,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: 'Whether to show a divider above the `footer` region on narrow viewports. `line` shows a single line. `filled` shows a thicker mobile-frienldy divider.',
+      description: 'Whether to show a divider above the `footer` region on narrow viewports. `line` shows a single line. `filled` shows a thicker mobile-friendly divider.',
       table: {
         category: 'Footer'
       }
