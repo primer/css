@@ -118,18 +118,18 @@ PatternSizeLarge.args = {
   collapsePosition: 1
 }
 
-export const PatternConstainsSubItem = ActionListItemCollapsibleTemplate.bind({})
-PatternConstainsSubItem.storyName = 'Has sub item (render css class)'
-PatternConstainsSubItem.args = {
+export const PatternContainsSubItem = ActionListItemCollapsibleTemplate.bind({})
+PatternContainsSubItem.storyName = 'Has sub item (render css class)'
+PatternContainsSubItem.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'I am collapsible',
   collapsePosition: 1,
   containsSubItem: true
 }
 
-export const PatternConstainsActiveSubItem = ActionListItemCollapsibleTemplate.bind({})
-PatternConstainsActiveSubItem.storyName = 'Has active sub item'
-PatternConstainsActiveSubItem.args = {
+export const PatternContainsActiveSubItem = ActionListItemCollapsibleTemplate.bind({})
+PatternContainsActiveSubItem.storyName = 'Has active sub item'
+PatternContainsActiveSubItem.args = {
   ...ActionListItemCollapsibleTemplate.args,
   text: 'I have an active child',
   collapsePosition: 1,
