@@ -1,5 +1,5 @@
 import React from 'react'
-import {ListTemplate} from '../../ui-patterns/ActionList/ActionList.stories.jsx'
+import {NavigationListTemplate} from './NavigationList.stories'
 import {
   PatternTextOnly,
   PatternSizeMedium,
@@ -20,21 +20,17 @@ import {
   PatternDescriptionInlineWithLeadingAndTrailingVisual,
   PatternNavActiveAnchor,
   PatternNavActivePage,
-  PatternVariantDangerItem,
-  PatternVariantDangerItemLeading,
-  PatternVariantDangerItemTrailing,
-  PatternVariantDangerItemLeadingTrailing,
   PatternTruncateText,
   PatternWrapText
 } from '../../ui-patterns/ActionList/ActionListItemFeatures.stories.jsx'
 
 export default {
-  title: 'Components/ActionList/ActionListItem/Features',
+  title: 'Components/NavigationList/NavigationListItem/Features',
   decorators: [
     Story => (
-      <ListTemplate>
+      <NavigationListTemplate>
         <Story />
-      </ListTemplate>
+      </NavigationListTemplate>
     )
   ]
 }
@@ -96,34 +92,6 @@ export const DescriptionInlineWithLeadingAndTrailingVisual = ({}) => (
 export const NavActiveAnchor = ({}) => <PatternNavActiveAnchor {...PatternNavActiveAnchor.args} />
 
 export const NavActivePage = ({}) => <PatternNavActivePage {...PatternNavActivePage.args} />
-
-export const VariantDangerItem = ({}) => <PatternVariantDangerItem {...PatternVariantDangerItem.args} />
-
-export const VariantDangerItemLeading = ({}) => (
-  <PatternVariantDangerItemLeading {...PatternVariantDangerItemLeading.args} />
-)
-
-export const VariantDangerItemTrailing = ({}) => (
-  <PatternVariantDangerItemTrailing {...PatternVariantDangerItemTrailing.args} />
-)
-
-export const VariantDangerItemLeadingTrailing = ({}) => (
-  <PatternVariantDangerItemLeadingTrailing {...PatternVariantDangerItemLeadingTrailing.args} />
-)
-
-export const VariantDisabledItem = ({}) => <PatternVariantDisabledItem {...PatternVariantDisabledItem.args} />
-
-export const VariantDisabledItemLeading = ({}) => (
-  <PatternVariantDisabledItemLeading {...PatternVariantDisabledItemLeading.args} />
-)
-
-export const VariantDisabledItemTrailing = ({}) => (
-  <PatternVariantDisabledItemTrailing {...PatternVariantDisabledItemTrailing.args} />
-)
-
-export const VariantDisabledItemLeadingTrailing = ({}) => (
-  <PatternVariantDisabledItemLeadingTrailing {...PatternVariantDisabledItemLeadingTrailing.args} />
-)
 
 export const TruncateText = ({}) => <PatternTruncateText {...PatternTruncateText.args} />
 

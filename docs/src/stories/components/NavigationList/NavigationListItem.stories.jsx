@@ -1,10 +1,10 @@
 import React from 'react'
-import {ListTemplate} from '../../ui-patterns/ActionList/ActionList.stories.jsx'
+import {NavigationListTemplate} from './NavigationList.stories'
 import {ListItemTemplate} from '../../ui-patterns/ActionList/ActionListItem.stories.jsx'
 
 export default {
-  title: 'Components/ActionList/ActionListItem',
-  excludeStories: ['ActionListItemTemplate'],
+  title: 'Components/NavigationList/NavigationListItem',
+  excludeStories: ['NavigationListItemTemplate'],
   argTypes: {
     size: {
       options: [0, 1, 2], // iterator
@@ -27,6 +27,20 @@ export default {
         labels: ['default', 'danger']
       },
       defaultValue: '',
+      table: {
+        category: 'CSS'
+      }
+    },
+    subItem: {
+      defaultValue: false,
+      control: {type: 'boolean'},
+      table: {
+        category: 'CSS'
+      }
+    },
+    hasSubItem: {
+      defaultValue: false,
+      control: {type: 'boolean'},
       table: {
         category: 'CSS'
       }
@@ -88,7 +102,7 @@ export default {
       }
     },
     ariaCurrent: {
-      options: ['location', 'page'],
+      options: ['location', 'page', null],
       control: {type: 'inline-radio'},
       description: 'location for anchor links, page for global page navigation',
       table: {
@@ -116,18 +130,30 @@ export default {
       table: {
         category: 'CSS'
       }
+    },
+    fontSize: {
+      options: [0, 1], // iterator
+      mapping: ['', 'ActionList-content--fontSmall'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['default', 'small']
+      },
+      description: 'Used to adjust font-size for subgroup items',
+      table: {
+        category: 'CSS'
+      }
     }
   }
 }
 
-export const ActionListItemTemplate = ListItemTemplate.bind({})
+export const NavigationListItemTemplate = ListItemTemplate.bind({})
 
-export const Playground = ActionListItemTemplate.bind({})
+export const Playground = NavigationListItemTemplate.bind({})
 Playground.decorators = [
   Story => (
-    <ListTemplate>
+    <NavigationListTemplate>
       <Story />
-    </ListTemplate>
+    </NavigationListTemplate>
   )
 ]
 Playground.args = {
@@ -135,5 +161,7 @@ Playground.args = {
   size: 0,
   variant: 0,
   descriptionVariant: 0,
+  fontSize: 0,
+  ariaCurrent: null,
   leadingVisualSize: 0
 }
