@@ -84,7 +84,7 @@
   cursor: pointer;
 
   &[disabled] {
-    color: var(--color-fg-subtle);
+    color: var(--color-primer-fg-disabled);
     cursor: not-allowed;
 
     &:hover {
