@@ -23,6 +23,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 }
 
 .PageLayout {
+  display: block;
   // stylelint-disable-next-line primer/spacing
   margin: var(--Layout-outer-spacing-y) var(--Layout-outer-spacing-x);
 
