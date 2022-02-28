@@ -30,12 +30,14 @@
 
     tt,
     code {
+      // stylelint-disable-next-line primer/spacing
       padding: 0 0.2em;
       font-size: inherit;
     }
   }
 
   h1 {
+    // stylelint-disable-next-line primer/spacing
     padding-bottom: 0.3em;
     // stylelint-disable-next-line primer/typography
     font-size: 2em;
@@ -43,6 +45,7 @@
   }
 
   h2 {
+    // stylelint-disable-next-line primer/spacing
     padding-bottom: 0.3em;
     // stylelint-disable-next-line primer/typography
     font-size: 1.5em;

@@ -144,6 +144,7 @@
 // FIXME deprecate this
 .warning {
   padding: $em-spacer-5;
+  // stylelint-disable-next-line primer/spacing
   margin-bottom: 0.8em;
   font-weight: $font-weight-bold;
   background-color: var(--color-attention-subtle);
