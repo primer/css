@@ -1967,10 +1967,10 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@koddsson/postcss-sass@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@koddsson/postcss-sass/-/postcss-sass-5.0.0.tgz#0ef31d860903db4240239f4386dcc3a7e2c3c2f6"
-  integrity sha512-99SJIhXpGZcs3ZlorpH5kBlz3+yb8ASY5JVILw2WNOSmyND51OgraV8U7mahcCgU9cdIshsgieFoBfwfLOv/HQ==
+"@koddsson/postcss-sass@5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@koddsson/postcss-sass/-/postcss-sass-5.0.1.tgz#e3831ec5e11485b267ff9633bfb8c0b4fd411c67"
+  integrity sha512-Ak4tZ8+aGA1GpkCghzepPGcpQOsYkl/sTDdL9U0z2FikKwBA+fwzzMqGsoMDYQA0RIPxMWmZnFDAMYVGKD/yMg==
   dependencies:
     "@csstools/sass-import-resolve" "^1.0.0"
     sass "^1.32.4"
