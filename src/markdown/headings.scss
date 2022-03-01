@@ -9,10 +9,9 @@
   h4,
   h5,
   h6 {
-    margin-top: $spacer-4;
-    margin-bottom: $spacer-3;
+    margin-top: var(--base-size-24);
+    margin-bottom: var(--base-size-16);
     font-weight: $font-weight-bold;
-    line-height: $lh-condensed;
 
     .octicon-link {
       color: var(--color-fg-default);
@@ -38,37 +37,43 @@
 
   h1 {
     // stylelint-disable-next-line primer/spacing
-    padding-bottom: 0.3em;
+    padding-bottom: var(--base-size-12);
     // stylelint-disable-next-line primer/typography
-    font-size: 2em;
+    font-size: var(--text-h1-fontSize);
+    line-height: var(--text-h1-lineHeight);
     border-bottom: $border-width $border-style var(--color-border-muted);
   }
 
   h2 {
     // stylelint-disable-next-line primer/spacing
-    padding-bottom: 0.3em;
+    padding-bottom: var(--base-size-8);
     // stylelint-disable-next-line primer/typography
-    font-size: 1.5em;
+    font-size: var(--text-h2-fontSize);
+    line-height: var(--text-h2-lineHeight);
     border-bottom: $border-width $border-style var(--color-border-muted);
   }
 
   h3 {
     // stylelint-disable-next-line primer/typography
-    font-size: 1.25em;
+    font-size: var(--text-h3-fontSize);
+    line-height: var(--text-h3-lineHeight);
   }
 
   h4 {
-    font-size: 1em;
+    font-size: var(--text-h4-fontSize);
+    line-height: var(--text-h4-lineHeight);
   }
 
   h5 {
     // stylelint-disable-next-line primer/typography
-    font-size: 0.875em;
+    font-size: var(--text-h5-fontSize);
+    line-height: var(--text-h5-lineHeight);
   }
 
   h6 {
     // stylelint-disable-next-line primer/typography
-    font-size: 0.85em;
+    font-size: var(--text-h6-fontSize);
+    line-height: var(--text-h6-lineHeight);
     color: var(--color-fg-muted);
   }
 }
