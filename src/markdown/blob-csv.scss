@@ -3,7 +3,7 @@
   td,
   th {
     // stylelint-disable-next-line primer/spacing
-    padding: 5px;
+    padding: var(--base-size-4);
     overflow: hidden;
     font-size: $font-size-small;
     line-height: $lh-condensed-ultra;
@@ -13,7 +13,7 @@
 
   .blob-num {
     // stylelint-disable-next-line primer/spacing
-    padding: 10px $spacer-2 9px;
+    padding: var(--base-size-8);
     text-align: right;
     background: var(--color-canvas-default);
     border: 0;
