@@ -55,7 +55,7 @@
     "@storybook/addon-links": "^6.4.12",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "6.4.12",
+    "@storybook/react": "6.4.19",
     "@whitespace/storybook-addon-html": "^5.0.0",
     "babel-loader": "^8.2.3",
     "storybook-addon-designs": "6.2.1",
