@@ -66,7 +66,8 @@
   dl,
   table,
   pre,
-  details {
+  details,
+  div {
     margin-top: 0;
     margin-bottom: var(--base-size-16);
   }
@@ -92,6 +93,29 @@
 
     > :last-child {
       margin-bottom: 0;
+    }
+  }
+
+  &.markdown-body--condensed {
+    font-size: var(--text-body-fontSize);
+    line-height: max(1.5, var(--text-body-lineHeight));
+  }
+
+  &.markdown-body--spacious {
+    p,
+    blockquote,
+    ul,
+    ol,
+    dl,
+    table,
+    pre,
+    details,
+    div {
+      margin-bottom: var(--base-size-24);
+    }
+
+    hr {
+      margin: var(--base-size-40) 0;
     }
   }
 }

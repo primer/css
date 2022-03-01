@@ -76,4 +76,24 @@
     line-height: var(--text-h6-lineHeight);
     color: var(--color-fg-muted);
   }
+
+  &.markdown-body--spacious {
+    h1 {
+      margin-top: var(--base-size-48);
+    }
+
+    h2, h3 {
+      margin-top: var(--base-size-48);
+    }
+
+    h4, h5, h6 {
+      margin-top: var(--base-size-32);
+    }
+
+    > h1:first-child {
+      font-size: var(--text-display-fontSize);
+      line-height: var(--text-display-lineHeight);
+      font-weight: var(--text-display-fontWeight);
+    }
+  }
 }

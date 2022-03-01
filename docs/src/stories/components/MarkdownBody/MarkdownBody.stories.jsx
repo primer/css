@@ -10,10 +10,10 @@ export default {
   excludeStories: ['MarkdownBodyTemplate'],
   argTypes: {
     variant: {
-      options: ['normal', 'spacious'], // iterator
+      options: ['condensed', 'normal', 'spacious'], // iterator
       control: {
         type: 'inline-radio',
-        labels: ['normal', 'spacious']
+        labels: ['condensed', 'normal', 'spacious']
       },
       table: {
         category: 'CSS'
@@ -54,6 +54,13 @@ controller classes are derived from <code>ActionController::Base</code>. Action 
 are bundled together in <a href="/rails/rails/blob/main/actionpack/README.rdoc">Action Pack</a>.</p>
 </blockquote>
 
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>&lt;!-- option A --&gt;
+&lt;button aria-label="{ usage.screenreaderText }"&gt;{ usage.visibleText }&lt;/button&gt;
+
+&lt;!-- option B --&gt;
+&lt;button title="{ usage.screenreaderText }"&gt;&lt;img /&gt;&lt;/button&gt;
+</code></pre></div>
+
 <p>Text can be <b>bold</b>, <i>italic</i>, or <s>strikethrough</s>. <a href="https://github.com">Links </a> should be blue with no underlines (unless hovered over).</p>
 
 <h1>Header 1</h1>
@@ -69,6 +76,15 @@ are bundled together in <a href="/rails/rails/blob/main/actionpack/README.rdoc">
 <h3>Header 3</h3>
 
 <pre><code>npm run storybook</code></pre>
+
+<blockquote>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>&lt;!-- option A --&gt;
+&lt;button aria-label="{ usage.screenreaderText }"&gt;{ usage.visibleText }&lt;/button&gt;
+
+&lt;!-- option B --&gt;
+&lt;button title="{ usage.screenreaderText }"&gt;&lt;img /&gt;&lt;/button&gt;
+</code></pre></div>
+</blockquote>
 
 <h4>Header 4</h4>
 
@@ -342,7 +358,7 @@ And a nested list:
 export const MarkdownBodyTemplate = ({variant}) => (
   <>
     <div className="container-md">
-      <p>{variant}</p>
+      {/* pending styles: CSV, video upload, checklists, new html tags */}
       <div dangerouslySetInnerHTML={{__html: `<div class="markdown-body markdown-body--${variant}">${markdownBodySamples}</div>`}}></div>
     </div>
   </>
