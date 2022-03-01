@@ -1,3 +1,98 @@
+:root {
+
+  // base scale, to be provided by primer primitives
+  --base-size-4: 0.25rem;
+  --base-size-8: 0.5rem;
+  --base-size-12: 0.75rem;
+  --base-size-16: 1rem;
+  --base-size-20: 1.25rem;
+  --base-size-24: 1.5rem;
+  --base-size-28: 1.75rem;
+  --base-size-32: 2rem;
+  --base-size-36: 2.25rem;
+  --base-size-40: 2.5rem;
+  --base-size-44: 2.75rem;
+  --base-size-48: 3rem;
+
+  // display
+  --text-display-fontSize: 2rem; /* 32px */
+  --text-display-fontWeight: 400;
+  --text-display-lineHeight: calc(48 / 32);
+  --text-display-lineBoxHeight: 3rem; /* 48px */
+
+  // title
+  --text-title-fontSize: 1.5rem; /* 24px */
+  --text-title-font-weight: 600;
+  --text-title-lineHeight: calc(36 / 24);
+  --text-title-lineBoxHeight: 2.25rem; /* 36px */
+
+  // subtitle
+  --text-subtitle-fontSize: 1.125rem; /* 18px */
+  --text-subtitle-font-weight: 500;
+  --text-subtitle-line-height: calc(28 / 18);
+  --text-subtitle-lineBoxHeight: 1.75rem; /* 28px */
+
+  // bodylarge
+  --text-bodylarge-fontSize: 1rem; /* 16px */
+  --text-bodylarge-font-weight: 400;
+  --text-bodylarge-lineHeight: calc(24 / 16);
+  --text-bodylarge-lineBoxHeight: 1.5rem; /* 24px */
+
+  // body
+  --text-body-fontSize: 0.875rem; /* 14px */
+  --text-body-fontWeight: 400;
+  --text-body-lineHeight: calc(20 / 14);
+  --text-body-lineBoxHeight: 1.25rem; /* 20px */
+
+  // body-small
+  --text-bodySmall-fontSize: 0.75rem; /* 12px */
+  --text-bodySmall-fontWeight: 400;
+  --text-bodySmall-lineHeight: calc(20 / 12);
+  --text-bodySmall-lineBoxHeight: 1.25rem; /* 20px */
+
+  // caption
+  --text-caption-fontSize: 0.75rem; /* 12px */
+  --text-caption-fontWeight: 400;
+  --text-caption-lineHeight: calc(20 / 12);
+  --text-caption-lineBoxHeight: 1.25rem; /* 20px */
+
+  // heading 1
+  --text-h1-fontSize: 2rem; /* 32px */
+  --text-h1-fontWeight: 600;
+  --text-h1-lineHeight: calc(40 / 32);
+  --text-h1-lineBoxHeight: 2.5rem; /* 40px */
+
+  // heading 2
+  --text-h2-fontSize: 1.5rem; /* 24px */
+  --text-h2-fontWeight: 600;
+  --text-h2-lineHeight: calc(36 / 24);
+  --text-h2-lineBoxHeight: 2.25rem; /* 36px */
+
+  // heading 3
+  --text-h3-fontSize: 1.25rem; /* 20px */
+  --text-h3-fontWeight: 600;
+  --text-h3-lineHeight: calc(32 / 20);
+  --text-h3-lineBoxHeight: 2rem; /* 32px */
+
+  // heading 4
+  --text-h4-fontSize: 1rem; /* 16px */
+  --text-h4-fontWeight: 600;
+  --text-h4-lineHeight: calc(24 / 16);
+  --text-h4-lineBoxHeight: 1.5rem; /* 24px */
+
+  // heading 5
+  --text-h5-fontSize: 0.875rem; /* 14px */
+  --text-h5-fontWeight: 600;
+  --text-h5-lineHeight: calc(20 / 14);
+  --text-h5-lineBoxHeight: 1.25rem; /* 20px */
+
+  // heading 6
+  --text-h6-fontSize: 0.75rem; /* 12px */
+  --text-h6-fontWeight: 600;
+  --text-h6-lineHeight: calc(20 / 12);
+  --text-h6-lineBoxHeight: 1.25rem; /* 20px */
+}
+
 @import '../support/index.scss';
 @import './markdown-body.scss';
 @import './headings.scss';
