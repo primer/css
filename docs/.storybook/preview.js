@@ -2,6 +2,10 @@ import '../../src/docs.scss'
 import '../../src/index.scss'
 import '../../src/base/index.scss'
 import '../src/stories/helpers/storybook-styles.scss'
+import '!style-loader!css-loader!resolve-url-loader!@primer/primitives/dist/css/tokens/functional/size/size.css'
+import '!style-loader!css-loader!resolve-url-loader!@primer/primitives/dist/css/tokens/base/size/size.css'
+import '!style-loader!css-loader!resolve-url-loader!@primer/primitives/dist/css/tokens/base/size/border.css'
+import '!style-loader!css-loader!resolve-url-loader!@primer/primitives/dist/css/tokens/functional/size/border.css'
 import renderToHTML from '../src/stories/helpers/code-snippet-html-helper'
 
 const customViewports = {

@@ -191,8 +191,7 @@
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition:
-        visibility 0 linear $actionList-item-checkmark-transition-timing,
+      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 
@@ -284,7 +283,9 @@
   display: grid;
   width: 100%;
   // stylelint-disable-next-line primer/spacing
-  padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
+  padding-block: var(--gh-control-small-paddingBlock);
+  padding-inline: var(--gh-control-small-paddingInline-condensed);
+  //   padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
   font-size: $body-font-size;
   font-weight: $font-weight-normal;
   color: var(--color-fg-default);

@@ -1148,10 +1148,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@primer/primitives@^7.4.0":
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.4.0.tgz#75df54a80233a432b687c0e3010e4be6bd60a82d"
-  integrity sha512-gD6yHXN7YKox/bdUNgxhoSS/WXZVaORK1r4dOAyTrdoPrLV/ucIfRInPyVcTF+Mqr0zcTFJtiMtuA5Y8CSyOEg==
+"@primer/primitives@0.0.0-20221251746":
+  version "0.0.0-20221251746"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-0.0.0-20221251746.tgz#ac9460b63e0bc23ada8cef8b1115ba2f4745122b"
+  integrity sha512-MScubVzzQ5/F4eb1+cKiDBgWPJpS+6UTXUvz7uEt6SFMiLw3QTWFPbdnP819+C9Y+GSMpkFOT/2TLHrkdF3zXw==
 
 "@primer/stylelint-config@^12.3.1":
   version "12.3.1"

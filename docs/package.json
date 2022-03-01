@@ -17,7 +17,7 @@
     "@primer/gatsby-theme-doctocat": "3.1.1",
     "@primer/octicons": "16.3.0",
     "@primer/octicons-react": "16.0.0",
-    "@primer/primitives": "7.3.0",
+    "@primer/primitives": "0.0.0-2022125225040",
     "@svgr/webpack": "5.5.0",
     "autoprefixer": "10.4.2",
     "babel-preset-gatsby": "^2.4.0",
@@ -58,6 +58,7 @@
     "@storybook/react": "6.4.12",
     "@whitespace/storybook-addon-html": "^5.0.0",
     "babel-loader": "^8.2.3",
+    "resolve-url-loader": "^5.0.0",
     "storybook-addon-designs": "6.2.1",
     "storybook-color-picker": "2.3.0"
   }
