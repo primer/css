@@ -7,8 +7,8 @@
 
 .markdown-body {
   font-family: $body-font;
-  font-size: var(--text-bodylarge-fontSize);
-  line-height: var(--text-bodylarge-lineHeight);
+  font-size: var(--gh-text-body-large-fontSize);
+  line-height: var(--gh-text-body-large-lineHeight);
   word-wrap: break-word;
 
   // Clearfix on the markdown body
@@ -97,8 +97,8 @@
   }
 
   &.markdown-body--condensed {
-    font-size: var(--text-body-fontSize);
-    line-height: max(1.5, var(--text-body-lineHeight));
+    font-size: var(--gh-text-body-fontSize);
+    line-height: max(1.5, var(--gh-text-body-lineHeight));
   }
 
   &.markdown-body--spacious {

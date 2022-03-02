@@ -39,8 +39,8 @@
     // stylelint-disable-next-line primer/spacing
     padding-bottom: var(--base-size-12);
     // stylelint-disable-next-line primer/typography
-    font-size: var(--text-h1-fontSize);
-    line-height: var(--text-h1-lineHeight);
+    font-size: var(--gh-text-h1-fontSize);
+    line-height: var(--gh-text-h1-lineHeight);
     border-bottom: $border-width $border-style var(--color-border-muted);
   }
 
@@ -48,32 +48,32 @@
     // stylelint-disable-next-line primer/spacing
     padding-bottom: var(--base-size-8);
     // stylelint-disable-next-line primer/typography
-    font-size: var(--text-h2-fontSize);
-    line-height: var(--text-h2-lineHeight);
+    font-size: var(--gh-text-h2-fontSize);
+    line-height: var(--gh-text-h2-lineHeight);
     border-bottom: $border-width $border-style var(--color-border-muted);
   }
 
   h3 {
     // stylelint-disable-next-line primer/typography
-    font-size: var(--text-h3-fontSize);
-    line-height: var(--text-h3-lineHeight);
+    font-size: var(--gh-text-h3-fontSize);
+    line-height: var(--gh-text-h3-lineHeight);
   }
 
   h4 {
-    font-size: var(--text-h4-fontSize);
-    line-height: var(--text-h4-lineHeight);
+    font-size: var(--gh-text-h4-fontSize);
+    line-height: var(--gh-text-h4-lineHeight);
   }
 
   h5 {
     // stylelint-disable-next-line primer/typography
-    font-size: var(--text-h5-fontSize);
-    line-height: var(--text-h5-lineHeight);
+    font-size: var(--gh-text-h5-fontSize);
+    line-height: var(--gh-text-h5-lineHeight);
   }
 
   h6 {
     // stylelint-disable-next-line primer/typography
-    font-size: var(--text-h6-fontSize);
-    line-height: var(--text-h6-lineHeight);
+    font-size: var(--gh-text-h6-fontSize);
+    line-height: var(--gh-text-h6-lineHeight);
     color: var(--color-fg-muted);
   }
 
@@ -91,9 +91,9 @@
     }
 
     > h1:first-child {
-      font-size: var(--text-display-fontSize);
-      line-height: var(--text-display-lineHeight);
-      font-weight: var(--text-display-fontWeight);
+      font-size: var(--gh-text-display-fontSize);
+      line-height: var(--gh-text-display-lineHeight);
+      font-weight: var(--gh-text-display-fontWeight);
     }
   }
 }
