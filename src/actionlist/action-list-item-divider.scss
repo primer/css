@@ -16,6 +16,7 @@
     display: block;
     height: 1px;
     padding: 0;
+    // stylelint-disable-next-line primer/spacing
     margin: ($spacer-2 - 1px) ($spacer-2 * -1) $spacer-2;
     list-style: none;
     background: var(--color-action-list-item-inline-divider);
