@@ -68,6 +68,8 @@
   }
   
   .ApplicationFrame-footer {
-
+    border-top: $border-width $border-style var(--color-border-default);
+    background: var(--color-canvas-inset);
+    padding: $spacer-3;
   }
 }

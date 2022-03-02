@@ -76,11 +76,12 @@ export const ApplicationFrameTemplate = ({
         )}
         <div className={clsx('ApplicationFrame-body')}>
           {/* {bodyChildren} */}
-          <a href="#">body</a>
+          [Body placeholder]
         </div>
       </div>
       <div className={clsx('ApplicationFrame-footer')}>
         {/* {footerChildren} */}
+        [Footer placeholder]
       </div>
     </div>
   </>
