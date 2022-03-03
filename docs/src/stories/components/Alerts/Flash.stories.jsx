@@ -16,7 +16,7 @@ export default {
   argTypes: {
     variant: {
       control: 'inline-radio',
-      options: ['info', 'warn', 'error', 'success'],
+      options: ['info', 'warning', 'error', 'success'],
     },
     message: {
       control: 'text',
@@ -30,12 +30,12 @@ export default {
     hasCloseButton: {
       control: 'boolean',
     },
-    isFullWidth: {
+    isFull: {
       control: 'boolean',
     },
-    inTray: {
+    isFullWhenNarrow: {
       control: 'boolean',
-    }
+    },
   },
 }
 
@@ -45,13 +45,13 @@ export const FlashTemplate = ({
   hasIcon,
   hasAction,
   hasCloseButton,
-  isFullWidth,
-  inTray,
+  isFull,
+  isFullWhenNarrow,
 }) => {
 
   const defaultMessages = {
     'info': 'This is an info message',
-    'warn': 'This is a warning message',
+    'warning': 'This is a warning message',
     'error': 'This is an error message',
     'success': 'Your site is published at <a href="#">https://monalisa.github.io/</a>',
   };
@@ -61,26 +61,31 @@ export const FlashTemplate = ({
 
   return (
     <>
-      <div className={clsx('flash', variant && `flash-${variant}`, isFullWidth && `flash-full`, inTray && `flash-tray`)}>
+      <div className={clsx('Flash', variant && `Flash--${variant}`, isFull && `Flash--full`, isFullWhenNarrow && `Flash--full-whenNarrow`)}>
         {hasIcon && (
-          <>
+          <div className={clsx('Flash-visual')}>
             {variant === 'info' && (<InfoIcon />)}
-            {variant === 'warn' && (<AlertIcon />)}
+            {variant === 'warning' && (<AlertIcon />)}
             {variant === 'error' && (<StopIcon />)}
             {variant === 'success' && (<CheckIcon />)}
-          </>
+          </div>
         )}
 
-        <span dangerouslySetInnerHTML={{__html: message}}></span>
+        <div className={clsx('Flash-message')} dangerouslySetInnerHTML={{__html: message}}></div>
 
         {hasAction && (
-          <button class="btn flash-action" type="submit">Action</button>
+          <div className={clsx('Flash-actions')}>
+            <button className="btn" type="submit">Action</button>
+          </div>
         )}
 
         {hasCloseButton && (
-          <button class="flash-close js-flash-close" type="button" aria-label="Close">
-            <XIcon />
-          </button>
+          <div className={clsx('Flash-close')}>
+            {/* Replace with new IconButton component */}
+            <button className="btn btn-octicon p-2" type="button" aria-label="Close">
+              <XIcon />
+            </button>
+          </div>
         )}
       </div>
     </>
@@ -94,5 +99,6 @@ Playground.args = {
   hasIcon: true,
   hasAction: false,
   hasCloseButton: true,
-  isFullWidth: false,
+  isFull: false,
+  isFullWhenNarrow: false,
 };
