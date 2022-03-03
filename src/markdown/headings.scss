@@ -76,7 +76,24 @@
     line-height: var(--gh-text-h6-lineHeight);
     color: var(--color-fg-muted);
   }
+  
+  summary {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      display: inline-block;
+    }
 
+    h1,
+    h2 {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+  
   &.markdown-body--spacious {
     h1 {
       margin-top: var(--base-size-48);

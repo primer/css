@@ -18,6 +18,7 @@
   font-size: $h2-size;
   font-weight: $font-weight-normal;
   flex: 1 1 auto;
+  order: 0;
 }
 
 // Make the text bold and red for dangerous content
@@ -31,6 +32,7 @@
   font-size: $body-font-size;
   color: var(--color-fg-muted);
   flex: 1 100%;
+  order: 2;
 }
 
 // Add 1 or 2 buttons to the right of the heading
@@ -38,6 +40,7 @@
   margin: $spacer-1 0 $spacer-1 $spacer-1;
   align-self: center;
   justify-content: flex-end;
+  order: 1;
 
   + .Subhead-description {
     margin-top: $spacer-1;
