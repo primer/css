@@ -1,5 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
+import {ZapIcon} from '@primer/octicons-react'
+import { FlashTemplate } from '../Alerts/Flash.stories'
 
 export default {
   title: 'Components/ApplicationFrame',
@@ -24,13 +26,13 @@ export default {
         options: ['classic', 'themeable', 'primer'],
       },
     },
-    hasTray: {
-      control: 'boolean',
-      description: 'Show the mesaging tray',
-    },
-    alerts: {
+    alertType: {
       control: 'radio',
-      options: ['none', 'success', 'error', 'info', 'account-2fa'],
+      options: ['none', 'info', 'warn', 'error', 'success'],
+    },
+    alertMessage: {
+      control: 'text',
+      description: 'The message to alert',
     }
   },
 }
@@ -38,8 +40,8 @@ export default {
 export const ApplicationFrameTemplate = ({
   hasServerStats,
   headerTemplate,
-  hasTray,
-  trayChildren,
+  alertType,
+  alertMessage,
 }) => (
   <>
     <div className={clsx('ApplicationFrame')}>
@@ -67,16 +69,17 @@ export const ApplicationFrameTemplate = ({
         </div>
         <div id="start-of-content"></div>
 
-        {hasTray && (
+        {alertType !== 'none' && (
           <div className={clsx('ApplicationFrame-tray')}>
               <div className="container-md">
-                {trayChildren}
+                <FlashTemplate variant={alertType} message={alertMessage} hasIcon={true} hasCloseButton={true} inTray={true} />
               </div>
           </div>
         )}
         <div className={clsx('ApplicationFrame-body')}>
           {/* {bodyChildren} */}
           [Body placeholder]
+          <ZapIcon />
         </div>
       </div>
       <div className={clsx('ApplicationFrame-footer')}>
@@ -139,33 +142,11 @@ const headerPrimer =
   </div>
 </>;
 
-const TrayChildren =
-  <>
-    <div className="flash flash-tray">
-      <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-
-      Marked pull request as ready for review.
-
-      <button class="flash-close js-flash-close" type="button" aria-label="Close">
-        <svg class="octicon octicon-x" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.75.75 0 1 1 1.06 1.06L9.06 8l3.22 3.22a.75.75 0 1 1-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"/></svg>
-      </button>
-    </div>
-    {/* <div className="flash flash-tray">
-      <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-
-      Flash message goes here.
-
-      <button class="flash-close js-flash-close" type="button" aria-label="Close">
-        <svg class="octicon octicon-x" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.75.75 0 1 1 1.06 1.06L9.06 8l3.22 3.22a.75.75 0 1 1-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"/></svg>
-      </button>
-    </div> */}
-  </>;
-
 
 export const Playground = ApplicationFrameTemplate.bind({})
+
 Playground.args = {
   hasServerStats: false,
-  hasTray: false,
   headerTemplate: 'classic',
-  trayChildren: TrayChildren,
+  alertType: 'none'
 };
