@@ -30,8 +30,13 @@
   .Flash-visual {
     grid-area: visual;
     // stylelint-disable-next-line primer/spacing
-    padding: calc((#{$spacer-5} - 16px) / 2) $spacer-2;
+    padding: calc((#{$spacer-5} - 20px) / 2) $spacer-2;
     display: grid;
+    align-self: start;
+
+    > .octicon {
+      margin-block: calc((#{$spacer-1}) / 2);
+    }
     
     > * {
       align-self: center;
@@ -51,6 +56,10 @@
 
   .Flash-actions {
     grid-area: actions;
+
+    &:last-child {
+      align-self: end;
+    }
   }
 
   .Flash-close {

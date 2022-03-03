@@ -22,7 +22,7 @@ export default {
       control: 'text',
       description: 'The message to alert',
     },
-    hasIcon: {
+    hasVisual: {
       control: {
         type: 'boolean',
       },
@@ -36,17 +36,25 @@ export default {
     isFullWhenNarrow: {
       control: 'boolean',
     },
+    visualChildren: {
+      description: 'creates a slot for custom visuals',
+    },
+    actionChildren: {
+      description: 'creates a slot for action buttons',
+    }
   },
 }
 
 export const FlashTemplate = ({
   variant,
   message,
-  hasIcon,
+  hasVisual,
   hasAction,
   hasCloseButton,
   isFull,
   isFullWhenNarrow,
+  visualChildren,
+  actionChildren
 }) => {
 
   const defaultMessages = {
@@ -58,16 +66,26 @@ export const FlashTemplate = ({
 
   variant = variant ?? 'info';
   message = message ?? defaultMessages[variant];
+  hasVisual = hasVisual ?? true;
+
 
   return (
     <>
       <div className={clsx('Flash', variant && `Flash--${variant}`, isFull && `Flash--full`, isFullWhenNarrow && `Flash--full-whenNarrow`)}>
-        {hasIcon && (
+        {hasVisual && (
           <div className={clsx('Flash-visual')}>
-            {variant === 'info' && (<InfoIcon />)}
-            {variant === 'warning' && (<AlertIcon />)}
-            {variant === 'error' && (<StopIcon />)}
-            {variant === 'success' && (<CheckIcon />)}
+            {visualChildren && (
+              <>
+                {visualChildren}
+              </>
+            ) || (
+              <>
+                {variant === 'info' && (<InfoIcon />)}
+                {variant === 'warning' && (<AlertIcon />)}
+                {variant === 'error' && (<StopIcon />)}
+                {variant === 'success' && (<CheckIcon />)}
+              </>
+            )}
           </div>
         )}
 
@@ -75,7 +93,15 @@ export const FlashTemplate = ({
 
         {hasAction && (
           <div className={clsx('Flash-actions')}>
-            <button className="btn" type="submit">Action</button>
+            {actionChildren && (
+              <>
+                {actionChildren}
+              </>
+            ) || (
+              <>
+                <button className="btn" type="submit">Action</button>
+              </>
+            )}
           </div>
         )}
 
@@ -96,7 +122,7 @@ export const Playground = FlashTemplate.bind({})
 
 Playground.args = {
   variant: 'info',
-  hasIcon: true,
+  hasVisual: true,
   hasAction: false,
   hasCloseButton: true,
   isFull: false,

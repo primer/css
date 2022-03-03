@@ -101,7 +101,7 @@ export const ApplicationFrameTemplate = ({
           {alertType !== undefined && alertType !== 'none' && (
             <div className={clsx('ApplicationFrame-tray')}>
                 <div className="container-md">
-                  <FlashTemplate variant={alertType} message={alertMessage} hasIcon={true} hasCloseButton={true} isFullWhenNarrow={true} />
+                  <FlashTemplate variant={alertType} message={alertMessage} hasVisual={true} hasCloseButton={true} isFullWhenNarrow={true} />
                 </div>
             </div>
           )}
