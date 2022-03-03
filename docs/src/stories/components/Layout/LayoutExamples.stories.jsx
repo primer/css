@@ -2,7 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 import { PageLayoutTemplate } from './PageLayout.stories'
 import {SplitPageLayoutTemplate} from './SplitPageLayout.stories'
-import {RepoSettings, DiscussionsPane} from '../ActionList/ActionListExamples.stories'
+import {NavRepoSettings, NavDiscussionsPane} from '../ActionList/ActionListExamples.stories'
 import {LayoutAlphaTemplate} from './LayoutAlpha.stories'
 
 export default {
@@ -32,7 +32,7 @@ Settings.args = {
     <>
       <h2 className="h3 ml-2 mr-2">Repository settings</h2>
       <div className="ml-n2 mr-n2">
-        <RepoSettings {...RepoSettings.args} />
+        <NavRepoSettings {...NavRepoSettings.args} />
       </div>
     </>
   ),
@@ -97,7 +97,7 @@ Discussions.args = {
   paneChildren: (
     <>
       <div className="ml-n2 mr-n2 mt-n2 mb-n2">
-        <DiscussionsPane {...DiscussionsPane.args} />
+        <NavDiscussionsPane {...NavDiscussionsPane.args} />
       </div>
     </>
   ),
