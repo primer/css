@@ -29,9 +29,8 @@
 
   .Flash-visual {
     grid-area: visual;
-    padding: 0 $spacer-2;
     // stylelint-disable-next-line primer/spacing
-    height: 32px;
+    padding: calc((#{$spacer-5} - 16px) / 2) $spacer-2;
     display: grid;
     
     > * {
