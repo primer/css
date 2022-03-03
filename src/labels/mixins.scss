@@ -13,6 +13,7 @@
   line-height: 18px;
   border: $border-width $border-style transparent;
   border-radius: 2em;
+  white-space: nowrap;
 }
 
 @mixin labels-large {
