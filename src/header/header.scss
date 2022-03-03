@@ -59,17 +59,33 @@
   box-shadow: inset 0 -1px var(--color-border-default);
   color: var(--color-fg-default);
 
-  .Header-logo {
+  .Header-logo, .Header-user {
     border-radius: 100%;
-
-    svg {
-      display: block;
-      fill: var(--color-fg-default);
-    }
 
     &:focus {
       outline: none;
       box-shadow: 0 0 0 2px var(--color-custom-header-matchTheme), 0 0 0 4px var(--color-accent-fg);
     }
+  }
+
+  .Header-logo {
+    margin-right: $spacer-3;
+
+    svg {
+      display: block;
+      fill: var(--color-fg-default);
+    }
+  }
+
+  .Header-user {
+    margin-left: $spacer-3;
+
+    img {
+      display: block;
+    }
+  }
+
+  .Header-title {
+    font-size: $h4-size;
   }
 }

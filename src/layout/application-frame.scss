@@ -37,6 +37,17 @@
     }
   }
 
+  .ApplicationFrame-header-wrapper {
+    position: relative;
+    overflow: visible; 
+    height: min-content;
+
+    .ApplicationFrame-header {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+  }
   
   .ApplicationFrame-header {
     flex: 0 0 auto;
