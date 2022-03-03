@@ -31,7 +31,7 @@ export default {
 
     alertType: {
       control: 'radio',
-      options: ['none', 'info', 'warn', 'error', 'success'],
+      options: ['none', 'info', 'warning', 'error', 'success'],
     },
     alertMessage: {
       control: 'text',

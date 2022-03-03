@@ -58,9 +58,28 @@
     flex: 0 0 auto;
     background: linear-gradient(to bottom, var(--color-border-default) -#{$spacer-3}, var(--color-canvas-inset) #{$spacer-2});
 
+    @keyframes flash-tray--appear {
+      from {
+        opacity: 0;
+        transform: translateY(-$spacer-4);
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
     @include breakpoint(md) {
       padding: $spacer-2 $spacer-3;
       border-bottom: $border-width $border-style var(--color-border-default);
+
+      .Flash {
+        animation: flash-tray--appear 160ms 80ms both cubic-bezier(0.33, 1, 0.68, 1);
+
+        & + .Flash {
+          margin-top: $spacer-2;
+          animation-delay: 160ms;
+        }
+      }
     }
 
     &:empty {
