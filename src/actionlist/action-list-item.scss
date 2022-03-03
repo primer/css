@@ -191,8 +191,7 @@
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition:
-        visibility 0 linear $actionList-item-checkmark-transition-timing,
+      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 
@@ -528,6 +527,7 @@
   color: var(--color-fg-muted); // if visual is text
   fill: var(--color-fg-muted);
   align-items: center;
+  pointer-events: none;
 }
 
 // text
