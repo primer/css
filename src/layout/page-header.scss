@@ -1,0 +1,53 @@
+.PageHeader {
+  outline: 1px solid red;
+  display: grid;
+  grid-template-areas:
+    'parentLink parentLinkActions'
+    'title titleActions'
+    'description';
+  
+  .PageHeader-title {
+    
+    // Replace with Primer primitives
+
+    // title-large
+    --gh-text-title-large-fontSize: 2rem; /* 32px */
+    --gh-text-title-large-fontWeight: 600;
+    --gh-text-title-large-lineHeight: calc(40 / 32);
+    --gh-text-title-large-lineBoxHeight: 2.5rem; /* 40px */
+
+    // title-medium
+    --gh-text-title-medium-fontSize: 1.25rem; /* 20px */
+    --gh-text-title-medium-fontWeight: 600;
+    --gh-text-title-medium-lineHeight: calc(32 / 20);
+    --gh-text-title-medium-lineBoxHeight: 2rem; /* 32px */
+
+    // subtitle
+    --gh-text-subtitle-fontSize: 1.25rem; /* 20px */
+    --gh-text-subtitle-fontWeight: 400;
+    --gh-text-subtitle-lineHeight: calc(32 / 20);
+    --gh-text-subtitle-lineBoxHeight: 2rem; /* 32px */
+
+    &.PageHeader-title--large {
+      font-size: var(--gh-text-title-large-fontSize);
+      line-height: var(--gh-text-title-large-lineHeight);
+      font-weight: var(--gh-text-title-large-fontWeight);
+    }
+    &.PageHeader-title--medium {
+      font-size: var(--gh-text-title-medium-fontSize);
+      line-height: var(--gh-text-title-medium-lineHeight);
+      font-weight: var(--gh-text-title-medium-fontWeight);
+    }
+    &.PageHeader-title--subtitle {
+      font-size: var(--gh-text-subtitle-fontSize);
+      line-height: var(--gh-text-subtitle-lineHeight);
+      font-weight: var(--gh-text-subtitle-fontWeight);
+    }
+
+    h1, h2, h3, h4 {
+      font-size: inherit;
+      line-height: inherit;
+      font-weight: inherit;
+    }
+  }
+}
