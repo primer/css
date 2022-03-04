@@ -3,9 +3,10 @@
 .Flash {
   position: relative;
   display: grid;
-  // stylelint-disable-next-line primer/spacing
   padding: $spacer-2;
-  border: $border-width $border-style;
+  color: var(--color-fg-default);
+  background-image: linear-gradient(var(--color-accent-subtle), var(--color-accent-subtle));
+  border: $border-width $border-style var(--color-accent-muted);
   border-radius: $border-radius;
   grid-auto-flow: column;
   grid-template-areas: 'visual message actions close';
@@ -15,8 +16,8 @@
   // `sm` breakpoint variantion
   @media (max-width: #{map-get($breakpoints, 'sm') - 0.02px}) {
     grid-template-areas:
-    'visual message close'
-    '  .    actions actions';
+      'visual message close'
+      '  .    actions actions';
     grid-template-columns: min-content 1fr min-content;
     grid-template-rows: min-content min-content;
 
@@ -28,16 +29,16 @@
   // Elements
 
   .Flash-visual {
-    grid-area: visual;
+    display: grid;
     // stylelint-disable-next-line primer/spacing
     padding: calc((#{$spacer-5} - 20px) / 2) $spacer-2;
-    display: grid;
+    grid-area: visual;
     align-self: start;
 
     > .octicon {
       margin-block: calc((#{$spacer-1}) / 2);
     }
-    
+
     > * {
       align-self: center;
     }
@@ -72,12 +73,6 @@
       }
     }
   }
-
-  // Variants
-
-  color: var(--color-fg-default);
-  background-image: linear-gradient(var(--color-accent-subtle), var(--color-accent-subtle));
-  border-color: var(--color-accent-muted);
 
   .Flash-visual .octicon {
     color: var(--color-accent-fg);
@@ -117,8 +112,8 @@
 
   &.Flash--full {
     margin-top: ($border-width * -1);
-    border-left: 0;
     border-right: 0;
+    border-left: 0;
     border-radius: 0;
   }
 
@@ -126,8 +121,8 @@
   @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
     &.Flash--full-whenNarrow {
       margin-top: ($border-width * -1);
-      border-left: 0;
       border-right: 0;
+      border-left: 0;
       border-radius: 0;
     }
   }
