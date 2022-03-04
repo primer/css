@@ -1,3 +1,5 @@
+// stylelint-disable selector-max-type
+
 // Flash alert
 
 .Flash {
@@ -111,6 +113,7 @@
   // Full-width
 
   &.Flash--full {
+    // stylelint-disable-next-line primer/spacing
     margin-top: ($border-width * -1);
     border-right: 0;
     border-left: 0;
@@ -120,6 +123,7 @@
   // Replace with Primitives' Narrow viewport range
   @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
     &.Flash--full-whenNarrow {
+      // stylelint-disable-next-line primer/spacing
       margin-top: ($border-width * -1);
       border-right: 0;
       border-left: 0;
