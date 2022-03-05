@@ -32,6 +32,8 @@
 
   .Flash-visual {
     display: grid;
+    // Migrate to design tokens when available
+    // calc((var(--gh-control-medium-size) - var(--gh-text-body-medium-lineBoxHeight)) / 2)
     // stylelint-disable-next-line primer/spacing
     padding: calc((#{$spacer-5} - 20px) / 2) $spacer-2;
     grid-area: visual;
@@ -47,6 +49,8 @@
   }
 
   .Flash-message {
+    // Migrate to design tokens when available
+    // calc((var(--gh-control-medium-size) - var(--gh-text-body-medium-lineBoxHeight)) / 2)
     // stylelint-disable-next-line primer/spacing
     padding: calc((#{$spacer-5} - 20px) / 2) $spacer-2;
     grid-area: message;
