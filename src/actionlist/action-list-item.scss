@@ -23,12 +23,6 @@
     cursor: pointer;
   }
 
-  // li only: focus, a href: focus-within on li
-  &:focus,
-  &:focus-within {
-    @include focusOutline;
-  }
-
   // only hover li without list as children
   &:not(.ActionList-item--hasSubItem),
   // target contents of first child li if sub-item (li wraps item label + nested ul)
@@ -312,8 +306,9 @@
     text-decoration: none;
   }
 
+  &:focus,
   &:focus-visible {
-    @include focusOutline;
+    outline-offset: -2px;
   }
 
   // disabled
