@@ -1,5 +1,33 @@
 # @primer/css
 
+## 19.5.0
+
+### Minor Changes
+
+- [#1948](https://github.com/primer/css/pull/1948) [`6a83a92b`](https://github.com/primer/css/commit/6a83a92b4332d577cdd72eee084e3f2c41b588ee) Thanks [@simurai](https://github.com/simurai)! - Add `open` and `closed` color roles
+
+* [#1961](https://github.com/primer/css/pull/1961) [`a35a8bdc`](https://github.com/primer/css/commit/a35a8bdcc17906848fcb486842d2345db0441c7c) Thanks [@jonrohan](https://github.com/jonrohan)! - Default .PageLayout to display block
+
+### Patch Changes
+
+- [#1954](https://github.com/primer/css/pull/1954) [`30f29d38`](https://github.com/primer/css/commit/30f29d383256a7d4023a859fdeee44471307159d) Thanks [@simurai](https://github.com/simurai)! - Fix `input-block` in `form-group`
+
+* [#1956](https://github.com/primer/css/pull/1956) [`39063461`](https://github.com/primer/css/commit/3906346182ed983d9725fd95da41b21424378b3e) Thanks [@jonrohan](https://github.com/jonrohan)! - Upgrading @primer/stylelint-config@12.3.2
+
+- [#1931](https://github.com/primer/css/pull/1931) [`e5c5312e`](https://github.com/primer/css/commit/e5c5312ec8bf139f6c94d2f70ceecd4b3cd9fd82) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Page layout api updates renaming spacing options in storybook
+
+* [#1950](https://github.com/primer/css/pull/1950) [`7c85c500`](https://github.com/primer/css/commit/7c85c500569fe6e1b29665c2eed37d58625ab06f) Thanks [@hectahertz](https://github.com/hectahertz)! - Fix sequence of content in Subhead
+
+- [#1942](https://github.com/primer/css/pull/1942) [`0450ccbb`](https://github.com/primer/css/commit/0450ccbb86104564c7d4038eb68989f370014fa1) Thanks [@reeceatkinson](https://github.com/reeceatkinson)! - Added line break to docs
+
+* [#1953](https://github.com/primer/css/pull/1953) [`3a91a29a`](https://github.com/primer/css/commit/3a91a29a822a28ea9679fbbb90250fc039057f23) Thanks [@hectahertz](https://github.com/hectahertz)! - Use `<h2>` instead of `<div>` on Subhead-heading docs
+
+- [#1949](https://github.com/primer/css/pull/1949) [`dab83198`](https://github.com/primer/css/commit/dab83198c3bf1c7e03826b8cd498b8c48c9a2869) Thanks [@heiskr](https://github.com/heiskr)! - Render headings inline when in a `<summary>`
+
+* [#1978](https://github.com/primer/css/pull/1978) [`a00e6bce`](https://github.com/primer/css/commit/a00e6bce01b368d9cb6da5ec2af1d833f4d785c1) Thanks [@langermank](https://github.com/langermank)! - Handle pointer-events on ActionList visuals
+
+- [#1977](https://github.com/primer/css/pull/1977) [`80bf9d9d`](https://github.com/primer/css/commit/80bf9d9dea6fe7fbb0837fea265ec95cbbbd75d6) Thanks [@jonrohan](https://github.com/jonrohan)! - [Bug Fix] Adding white-space nowrap to Labels
+
 ## 19.4.0
 
 ### Minor Changes

@@ -65,8 +65,8 @@ Use all the elements together to create a Subhead with actions and a description
 ```html live title="Subhead with actions and description"
 <div class="Subhead">
   <h2 class="Subhead-heading">Subhead with actions and description</h2>
-  <div class="Subhead-actions"><a href="#url" class="btn btn-sm btn-primary" role="button">Action</a></div>
   <div class="Subhead-description">The subhead is a subdued header style with a light bottom border.</div>
+  <div class="Subhead-actions"><a href="#url" class="btn btn-sm btn-primary" role="button">Action</a></div>
 </div>
 ```
 
