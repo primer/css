@@ -113,12 +113,10 @@ select {
   }
 }
 
-input:not([type='radio'], [type='checkbox']),
-textarea,
-select {
+a {
   &:focus,
   &:focus-visible {
-    outline-offset: 0;
+    outline-offset: 2px;
   }
 }
 

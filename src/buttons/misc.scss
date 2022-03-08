@@ -20,6 +20,11 @@
     text-decoration: underline;
   }
 
+  &:focus,
+  &:focus-visible {
+    outline-offset: 2px;
+  }
+
   &:disabled,
   &[aria-disabled='true'] {
     &,

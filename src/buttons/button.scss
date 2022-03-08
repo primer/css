@@ -117,6 +117,21 @@
     border-color: var(--color-btn-primary-hover-border);
   }
 
+  // fallback :focus state
+  &:focus {
+    @include focusOutline(var(--color-fg-on-emphasis), -4px);
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      outline: solid 1px transparent;
+    }
+  }
+
+  // default focus state
+  &:focus-visible {
+    @include focusOutline(var(--color-fg-on-emphasis), -4px);
+  }
+
   &:active,
   &.selected,
   &[aria-selected='true'] {

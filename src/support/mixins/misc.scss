@@ -27,7 +27,7 @@
 
 // global focus styles
 
-@mixin focusOutline {
-  outline: 2px solid var(--color-accent-fg);
-  outline-offset: 2px;
+@mixin focusOutline($outlineColor: var(--color-accent-fg), $outlineOffset: -2px) {
+  outline: 2px solid $outlineColor;
+  outline-offset: $outlineOffset;
 }
