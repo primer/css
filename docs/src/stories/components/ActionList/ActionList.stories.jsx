@@ -1,16 +1,10 @@
 import React from 'react'
-import clsx from 'clsx'
-import {ListItemTemplate} from './ActionListItem.stories'
+import {ListItemTemplate} from '../../ui-patterns/ActionList/ActionListItem.stories'
+import {ListTemplate} from '../../ui-patterns/ActionList/ActionList.stories.jsx'
 
 export default {
-  title: 'Components/ActionList',
-  excludeStories: ['ListTemplate'],
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/oMiRuexZW6gqVbMhQd6lwP/Storybook-Docs?node-id=23%3A30843'
-    }
-  },
+  title: 'Components/ActionList/ActionList',
+  excludeStories: ['ActionListTemplate'],
   argTypes: {
     showDividers: {
       control: {type: 'boolean'},
@@ -20,7 +14,7 @@ export default {
       }
     },
     role: {
-      options: [null, 'menu', 'group', 'listbox', 'menubar', 'none', 'radiogroup', 'list'],
+      options: ['list'],
       control: {
         type: 'inline-radio'
       },
@@ -29,22 +23,10 @@ export default {
         category: 'HTML'
       }
     },
-    variant: {
-      options: [0, 1], // iterator
-      mapping: [null, 'ActionList--tree'], // values
-      control: {
-        type: 'inline-radio',
-        labels: ['default', 'tree-view']
-      },
-      description: 'Specifies variants for different types of lists',
-      table: {
-        category: 'CSS'
-      }
-    },
     ariaLabel: {
       name: 'ariaLabel',
       type: 'string',
-      description: 'Descriptive label for menu contents',
+      description: 'If no list ActionListDivider is provided, include an aria-label',
       table: {
         category: 'HTML'
       }
@@ -52,42 +34,14 @@ export default {
     ariaLabelledBy: {
       name: 'ariaLabelledBy',
       type: 'string',
-      description: 'Reference ID of section divider',
-      table: {
-        category: 'HTML'
-      }
-    },
-    groupId: {
-      name: 'groupId',
-      type: 'string',
-      description: 'Menu group id',
-      table: {
-        category: 'HTML'
-      }
-    },
-    children: {
-      table: {
-        category: 'HTML'
-      }
-    },
-    subGroup: {
-      control: {type: 'boolean'},
-      description: 'If ActionList is nested within an ActionList',
-      table: {
-        category: 'CSS'
-      }
-    },
-    listboxMultiSelect: {
-      name: 'listboxMultiSelect',
-      type: 'boolean',
-      description: 'If ActionList has listbox role + multiselect children',
+      description: 'Reference ID of ActionListDivider',
       table: {
         category: 'HTML'
       }
     },
     listPadding: {
       options: [0, 1], // iterator
-      mapping: ['', 'ActionList--full'], // values
+      mapping: [null, 'ActionList--full'], // values
       control: {
         type: 'inline-radio',
         labels: ['inset', 'full-bleed']
@@ -96,48 +50,24 @@ export default {
       table: {
         category: 'CSS'
       }
+    },
+    children: {
+      table: {
+        disable: true
+      }
     }
   }
 }
 
-export const ListTemplate = ({
-  showDividers,
-  children,
-  role,
-  ariaLabel,
-  ariaLabelledBy,
-  subGroup,
-  listboxMultiSelect,
-  listPadding,
-  variant
-}) => (
-  <ul
-    className={clsx(
-      'ActionList',
-      showDividers && 'ActionList--divided',
-      subGroup && 'ActionList--subGroup',
-      listPadding && `${listPadding}`,
-      variant && `${variant}`
-    )}
-    role={role}
-    aria-label={ariaLabel && ariaLabel}
-    aria-labelledby={ariaLabelledBy && ariaLabelledBy}
-    aria-multiselectable={listboxMultiSelect ? 'true' : undefined}
-  >
-    <>{children}</>
-  </ul>
-)
+export const ActionListTemplate = ListTemplate.bind({})
 
-export const Playground = ListTemplate.bind({})
+export const Playground = ActionListTemplate.bind({})
 Playground.args = {
-  ariaLabel: 'Menu description',
-  subGroup: false,
   showDividers: false,
-  listboxMultiSelect: false,
   listPadding: 0,
+  role: 'list',
+  ariaLabel: '',
   ariaLabelledBy: '',
-  groupId: '',
-  variant: 0,
   children: (
     <>
       <ListItemTemplate text="Action list item" />

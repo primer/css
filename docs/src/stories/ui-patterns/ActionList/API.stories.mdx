@@ -1,8 +1,10 @@
 import {Meta, Story, Canvas} from '@storybook/addon-docs'
 
-<Meta title="Components/ActionList/Accessibility" />
+<Meta title="UI Patterns/ActionList/API" />
 
-### Action List
+### Action list
+
+`ActionList` CSS is primarily used as the building blocks for compositional components, such as NavigationList. Below is an overview of how the markup may look for specific kinds of implementations and contexts.
 
 An action list is a vertical list of interactive <strong>actions</strong> or <strong>options</strong>.
 
@@ -13,13 +15,13 @@ An action list is a vertical list of interactive <strong>actions</strong> or <st
 
 ### Semantic markup
 
-The markup for Action List changes depending on the intended use case.
+The markup for Action list changes depending on the intended use case.
 
 In all cases, the basic structure is as follows:
 
 ```html
 <ul>
-  <li><span>Content with action</span></li>
+  <li><button>Content with action</button></li>
   <li><a href="/">Content as link</a></li>
   <li>
     <ul>
@@ -29,13 +31,11 @@ In all cases, the basic structure is as follows:
 </ul>
 ```
 
-Pay close attention to `role` attributes throughout the documentation, and find the use case that best suits your needs.
-
-### Dropdown Menu
+### Menu
 
 [Menu spec](https://www.w3.org/TR/wai-aria-practices-1.2/examples/menu-button/menu-button-links.html)
 
-The `menu` role should be reserved for dropdown menu scenarios
+The `menu` role should be reserved for menu scenarios
 
 | Element | Role                            |
 | :------ | :------------------------------ |
@@ -44,27 +44,20 @@ The `menu` role should be reserved for dropdown menu scenarios
 | `li`    | has child link `role="none"`    |
 | `a`     | `role="menuitem"`               |
 
-#### Example
-
-<Canvas>
-  <Story id="components-actionlist-patterns--menu-with-section-divider" />
-</Canvas>
-
 ### Navigational list of links
 
 [Navigation spec](https://www.w3.org/TR/wai-aria-practices-1.2/examples/landmarks/navigation.html)
 
 Wrap `ActionList` in a `nav` element for site or page navigation, like a sidebar
 
-No roles needed
+| Element | Role          |
+| :------ | :------------ |
+| `ul`    | `role="list"` |
+| `li`    | no role       |
+| `li`    | no role       |
+| `a`     | no role       |
 
-#### Example
-
-<Canvas>
-  <Story id="components-actionlist-patterns--nav-with-sub-items" />
-</Canvas>
-
-### Multi select dropdown menu
+### Multi select menu
 
 [Menu spec](https://www.w3.org/TR/wai-aria-practices-1.2/examples/menubar/menubar-2/menubar-2.html)
 
@@ -74,13 +67,7 @@ No roles needed
 | `li`    | `role="menuitemcheckbox"`   |
 | `li`    | `aria-checked="true/false"` |
 
-#### Example
-
-<Canvas>
-  <Story id="components-actionlist-patterns--menu-multi-select" />
-</Canvas>
-
-### Single select dropdown menu
+### Single select menu
 
 [Menu spec](https://www.w3.org/TR/wai-aria-practices-1.2/examples/menubar/menubar-2/menubar-2.html)
 
@@ -89,12 +76,6 @@ No roles needed
 | `ul`    | `role="menu"`               |
 | `li`    | `role="menuitemradio"`      |
 | `li`    | `aria-checked="true/false"` |
-
-#### Example
-
-<Canvas>
-  <Story id="components-actionlist-patterns--menu-single-select" />
-</Canvas>
 
 ### Multi select listbox
 
@@ -106,12 +87,6 @@ No roles needed
 | `ul`    | `aria-multiselectable="true"` |
 | `li`    | `role="option"`               |
 | `li`    | `aria-selected="true/false"`  |
-
-#### Example
-
-<Canvas>
-  <Story id="components-actionlist-patterns--list-multi-select" />
-</Canvas>
 
 ### Single select listbox
 
@@ -125,42 +100,12 @@ Note: JS is required for to provide [keyboard handling](https://www.w3.org/TR/wa
 | `li`    | `role="option"`              |
 | `li`    | `aria-selected="true/false"` |
 
-#### Example
-
-<Canvas>
-  <Story id="components-actionlist-patterns--list-single-select" />
-</Canvas>
-
-### List of links
-
-No roles needed
-
-#### Example
-
-<Canvas>
-  <Story id="components-actionlist-patterns--list" />
-</Canvas>
-
 ### Dividers
 
-| Element | Role               |
-| :------ | :----------------- |
-| `li`    | `role="separator"` |
+| Element | Role                                    |
+| :------ | :-------------------------------------- |
+| `li`    | `role="separator"` `aria-hidden="true"` |
 
-#### Empty example
-
-<Canvas>
-  <Story id="components-actionlist-actionlistitem-features--divider-empty" />
-</Canvas>
-
-| Element | Role                                        |
-| :------ | :------------------------------------------ |
-| `li`    | `role="presentation"`                       |
-| `li`    | id for nested group `id="group-id"`         |
-| `li`    | if it has id for group `aria-hidden="true"` |
-
-#### With title example
-
-<Canvas>
-  <Story id="components-actionlist-actionlistitem-features--divider-text" />
-</Canvas>
+| Element | Role |
+| :------ | :--- |
+| `h3`    | id   |

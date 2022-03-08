@@ -17,24 +17,24 @@ export default {
 
     // Structure
 
-    wrapperSizing: {
-      options: ['fluid', 'md', 'lg', 'xl'],
+    containerWidth: {
+      options: ['full', 'md', 'lg', 'xl'],
       control: {
         type: 'inline-radio',
-        labels: ['fluid', 'md', 'lg', 'xl']
+        labels: ['full', 'md', 'lg', 'xl']
       },
-      description: 'Define the maximum width of the component. `fluid` sets it to full-width. Other values center `Layout` horizontally. Refer to [container utilities](https://primer.style/css/objects/grid#containers) for reference.',
+      description: 'Define the maximum width of the component. `full` sets it to full-width. Other values center `Layout` horizontally. Refer to [container utilities](https://primer.style/css/utilities/grid#containers) for reference.',
       table: {
         category: 'Structure'
       }
     },
 
-    outerSpacing: {
-      options: ['normal', 'condensed'],
+    padding: {
+      options: ['normal', 'condensed', 'none'],
       control: {
         type: 'inline-radio'
       },
-      description: 'Sets wrapper margins surrounding the component to distance itself from the viewport edges. `normal` sets the margin to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the margin at 16px.',
+      description: 'Sets container spacing surrounding the component to distance itself from the viewport edges. `normal` sets the spacing to 16px, and to 24px on `lg` breakpoints and above. `condensed` keeps the spacing at 16px.',
       table: {
         category: 'Structure'
       }
@@ -97,7 +97,7 @@ export default {
         category: 'Pane',
       }
     },
-    panePositionNarrow: {
+    panePositionWhenNarrow: {
       options: ['inherit', 'start', 'end'],
       control: {
         type: 'inline-radio',
@@ -124,12 +124,12 @@ export default {
         category: 'Pane'
       }
     },
-    paneDividerNarrow: {
+    paneDividerWhenNarrow: {
       options: ['inherit', 'none', 'line', 'filled'],
       control: {
         type: 'inline-radio'
       },
-      description: 'Whether to show a divider between `pane` and `content` regions if `responsiveVariant` is set to `stackRegions`. `line` shows a single line. `filled` shows a thicker mobile-frienldy divider.',
+      description: 'Whether to show a divider between `pane` and `content` regions if `responsiveVariant` is set to `stackRegions`. `line` shows a single line. `filled` shows a thicker mobile-friendly divider.',
       table: {
         category: 'Pane'
       }
@@ -138,11 +138,11 @@ export default {
     // Content
 
     contentWidth: {
-      options: ['fluid', 'sm', 'md', 'lg', 'xl'],
+      options: ['full', 'sm', 'md', 'lg', 'xl'],
       control: {
         type: 'inline-radio'
       },
-      description: 'Defines the maximum width of the content region. `fluid` sets it to full-width. Other values follow container widths from `sm` to `xl`. With smaller widths, the content region will try to stay centered to the viewport area.',
+      description: 'Defines the maximum width of the content region. `full` sets it to full-width. Other values follow container widths from `sm` to `xl`. With smaller widths, the content region will try to stay centered to the viewport area.',
       table: {
         category: 'Content'
       }
@@ -165,7 +165,7 @@ export default {
       }
     },
 
-    headerDividerNarrow: {
+    headerDividerWhenNarrow: {
       options: ['inherit', 'none', 'line', 'filled'],
       control: {
         type: 'inline-radio'
@@ -193,12 +193,12 @@ export default {
       }
     },
 
-    footerDividerNarrow: {
+    footerDividerWhenNarrow: {
       options: ['inherit', 'none', 'line', 'filled'],
       control: {
         type: 'inline-radio'
       },
-      description: 'Whether to show a divider above the `footer` region on narrow viewports. `line` shows a single line. `filled` shows a thicker mobile-frienldy divider.',
+      description: 'Whether to show a divider above the `footer` region on narrow viewports. `line` shows a single line. `filled` shows a thicker mobile-friendly divider.',
       table: {
         category: 'Footer'
       }
@@ -235,24 +235,24 @@ export default {
 
 export const PageLayoutTemplate = ({
   _debug,
-  wrapperSizing,
-  outerSpacing,
+  containerWidth,
+  padding,
   columnGap,
   rowGap,
   responsiveVariant,
   primaryRegion,
   paneWidth,
   panePosition,
-  panePositionNarrow,
+  panePositionWhenNarrow,
   hasPaneDivider,
-  paneDividerNarrow,
+  paneDividerWhenNarrow,
   contentWidth,
   hasHeader,
   hasHeaderDivider,
-  headerDividerNarrow,
+  headerDividerWhenNarrow,
   hasFooter,
   hasFooterDivider,
-  footerDividerNarrow,
+  footerDividerWhenNarrow,
   contentChildren,
   paneChildren,
   headerChildren,
@@ -262,8 +262,8 @@ export const PageLayoutTemplate = ({
     <>
       <LayoutTemplate
         _debug={_debug}
-        wrapperSizing={wrapperSizing}
-        outerSpacing={outerSpacing}
+        containerWidth={containerWidth}
+        outerSpacing={padding}
         innerSpacing='none'
         columnGap={columnGap}
         rowGap={rowGap}
@@ -273,19 +273,19 @@ export const PageLayoutTemplate = ({
 
         paneWidth={paneWidth}
         panePosition={panePosition}
-        panePositionNarrow={panePositionNarrow}
+        panePositionWhenNarrow={panePositionWhenNarrow}
         hasPaneDivider={hasPaneDivider}
-        paneDividerNarrow={paneDividerNarrow}
+        paneDividerWhenNarrow={paneDividerWhenNarrow}
 
         contentWidth={contentWidth}
 
         hasHeader={hasHeader}
         hasHeaderDivider={hasHeaderDivider}
-        headerDividerNarrow={headerDividerNarrow}
+        headerDividerWhenNarrow={headerDividerWhenNarrow}
 
         hasFooter={hasFooter}
         hasFooterDivider={hasFooterDivider}
-        footerDividerNarrow={footerDividerNarrow}
+        footerDividerWhenNarrow={footerDividerWhenNarrow}
 
         contentChildren={contentChildren}
         paneChildren={paneChildren}
@@ -305,8 +305,8 @@ Playground.args = {
   _debug: true,
 
   // Structure
-  wrapperSizing: 'xl',
-  outerSpacing: 'normal',
+  containerWidth: 'xl',
+  padding: 'normal',
   columnGap: 'normal',
   rowGap: 'normal',
 
@@ -316,23 +316,23 @@ Playground.args = {
 
   // Pane
   panePosition: 'end',
-  panePositionNarrow: 'inherit',
+  panePositionWhenNarrow: 'inherit',
   paneWidth: 'default',
   hasPaneDivider: false,
-  paneDividerNarrow: 'inherit',
+  paneDividerWhenNarrow: 'inherit',
 
   // Content
-  contentWidth: 'fluid',
+  contentWidth: 'full',
 
   // Header
   hasHeader: false,
   hasHeaderDivider: false,
-  headerDividerNarrow: 'inherit',
+  headerDividerWhenNarrow: 'inherit',
 
   // Footer
   hasFooter: false,
   hasFooterDivider: false,
-  footerDividerNarrow: 'inherit',
+  footerDividerWhenNarrow: 'inherit',
 
   contentChildren: 'content',
   paneChildren: 'pane',

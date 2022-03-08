@@ -23,6 +23,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 }
 
 .PageLayout {
+  display: block;
   // stylelint-disable-next-line primer/spacing
   margin: var(--Layout-outer-spacing-y) var(--Layout-outer-spacing-x);
 
@@ -368,10 +369,10 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 }
 
 .PageLayout-content {
-  // stylelint-disable primer/spacing
+  // stylelint-disable-next-line primer/spacing
   padding-right: var(--Layout-inner-spacing-max);
+  // stylelint-disable-next-line primer/spacing
   padding-left: var(--Layout-inner-spacing-max);
-  // stylelint-enable primer/spacing
   grid-area: content;
 }
 

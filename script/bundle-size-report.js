@@ -16,7 +16,7 @@ function getBundles(path) {
   const meta = JSON.parse(fs.readFileSync(join(path, './dist/meta.json')))
   let metaBundles = Object.values(meta.bundles)
 
-  // fitler out support bundles, since they don't generate CSS
+  // filter out support bundles, since they don't generate CSS
   metaBundles = metaBundles.filter(bundle => !isSupportBundleName(bundle.name))
   const bundles = {}
   for (const bundle of metaBundles) {

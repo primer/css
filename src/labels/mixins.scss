@@ -6,16 +6,20 @@
 
 @mixin labels-base {
   display: inline-block;
+  // stylelint-disable-next-line primer/spacing
   padding: 0 7px;
   font-size: $font-size-small;
   font-weight: $font-weight-semibold;
   line-height: 18px;
+  white-space: nowrap;
   border: $border-width $border-style transparent;
   border-radius: 2em;
 }
 
 @mixin labels-large {
+  // stylelint-disable-next-line primer/spacing
   padding-right: 10px;
+  // stylelint-disable-next-line primer/spacing
   padding-left: 10px;
   line-height: 22px;
 }
@@ -27,6 +31,7 @@
 
 @mixin labels--inline {
   display: inline;
-  padding: 0.1667em 0.5em;
-  font-size: 0.9em;
+  // stylelint-disable-next-line primer/spacing
+  padding: 0.12em $em-spacer-5;
+  font-size: 85%;
 }

@@ -96,7 +96,7 @@ Rows can be used with or without `Box-header`, `Box-footer`, or `Box-body`.
 
 ### Box row markup structure
 
-Box rows have some reliance on markup structure in order to target the first and last rows. Box rows are given a top border that is lighter in color than other box elements so the first row is targeted to apply a darker border color. An inner border-radius is applied to the first and last rows that that row corners don't poke outside the `Box`, this can be particularly noticeable when using a highlight on box rows.
+Box rows have some reliance on markup structure in order to target the first and last rows. Box rows are given a top border that is lighter in color than other box elements so the first row is targeted to apply a darker border color. An inner border-radius is applied to the first and last rows that row corners don't poke outside the `Box`, this can be particularly noticeable when using a highlight on box rows.
 
 Using an unordered list is recommended in order to target the first and last rows, however, if you need to use a `<div>` for your rows, you may want to place your rows inside a parent `<div>` so that the first and last rows are styled appropriately.
 
@@ -554,7 +554,7 @@ You can put forms in boxes. Often form submission buttons are aligned to the bot
 </div>
 ```
 
-When a box is all by itself centered on a page you can use [column widths](/objects/grid) to control the width of the box. If needed, break the mold a little and use [typography utilities](/utilities/typography) instead of the built in box title styles.
+When a box is all by itself centered on a page you can use [column widths](/utilities/grid) to control the width of the box. If needed, break the mold a little and use [typography utilities](/utilities/typography) instead of the built in box title styles.
 
 ```html live
 <div class="Box Box--spacious col-6 mx-auto text-center">

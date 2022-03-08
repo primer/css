@@ -205,7 +205,7 @@ Use `.UnderlineNav--full` in combination with container styles and `.UnderlineNa
 
 ## Side Nav
 
-The Side Nav is a vertical list of navigational links, typically used on the left side of a page. For maximum flexibility, **Side Nav elements have no default width or positioning**. We suggest using [column grid](../objects/grid) classes or an inline `width` style for sizing, and [flexbox utilities](../utilities/flexbox) for positioning alongside content.
+The Side Nav is a vertical list of navigational links, typically used on the left side of a page. For maximum flexibility, **Side Nav elements have no default width or positioning**. We suggest using [column grid](../utilities/grid) classes or an inline `width` style for sizing, and [flexbox utilities](../utilities/flexbox) for positioning alongside content.
 
 - You can use a **border** if the parent element doesn't have it already.
 - Add `aria-current="page"` to show a link as selected. Selected button elements in tab-like UIs should instead have `aria-selected="true"`.

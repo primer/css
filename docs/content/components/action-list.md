@@ -7,11 +7,11 @@ bundle: action-list
 storybook: https://primer.style/css/storybook/?path=/story/components-actionlist-actionlistitem--playground
 ---
 
-Reference the [Action list interface guidelines](https://primer.style/design/components/action-list) for details on where and how to use Action List.
+Reference the [Action list interface guidelines](https://primer.style/design/components/action-list) for details on where and how to use Action list.
 
 ## Action list
 
-Action List is a `ul` list designed to contain Action List Items.
+Action list is a `ul` list designed to contain list items.
 
 ### Variants
 
@@ -20,6 +20,7 @@ Action List is a `ul` list designed to contain Action List Items.
 | `ActionList` | Default styles |
 | `ActionList--divided` | Show dividers between items |
 | `ActionList--subGroup` | If Action List is nested as a sub-list |
+| `ActionList--tree` | Tree-view specific styles |
 
 #### Default
 
@@ -27,12 +28,12 @@ Action List is a `ul` list designed to contain Action List Items.
 <ul class="ActionList">
   <li class="ActionList-item">
     <span class="ActionList-content">
-      <span class="ActionList-item-label">Item label</span>
+      <span class="ActionList-item-label">Action list item</span>
     </span>
   </li>
   <li class="ActionList-item">
     <span class="ActionList-content">
-      <span class="ActionList-item-label">Item label</span>
+      <span class="ActionList-item-label">Action list item</span>
     </span>
   </li>
 </ul>
@@ -41,21 +42,21 @@ Action List is a `ul` list designed to contain Action List Items.
 #### Item dividers
 
 ```html live
-<ul class="ActionList ActionList--divided" aria-label="Menu description">
+<ul class="ActionList ActionList--divided">
   <li class="ActionList-item">
-    <span class="ActionList-content">
-      <span class="ActionList-item-label">Action list item</span>
-    </span>
+    <a href="/" class="ActionList-content">
+      <span class="ActionList-item-label">Item 1</span>
+    </a>
   </li>
   <li class="ActionList-item">
-    <span class="ActionList-content">
-      <span class="ActionList-item-label">Action list item</span>
-    </span>
+    <a href="/" class="ActionList-content">
+      <span class="ActionList-item-label">Item 2</span>
+    </a>
   </li>
-   <li class="ActionList-item">
-    <span class="ActionList-content">
-      <span class="ActionList-item-label">Action list item</span>
-    </span>
+  <li class="ActionList-item">
+    <a href="/" class="ActionList-content">
+      <span class="ActionList-item-label">Item 3</span>
+    </a>
   </li>
 </ul>
 ```
@@ -63,30 +64,41 @@ Action List is a `ul` list designed to contain Action List Items.
 #### Nested sub list
 
 ```html live
-<ul class="ActionList" aria-label="Menu description">
-  <li class="ActionList-item">
-    <span class="ActionList-content">
-      <span class="ActionList-item-label">Action list item</span>
-    </span>
-  </li>
-  <li class="ActionList-item ActionList-item--hasSubItem">
-    <span class="ActionList-content">
-      <span class="ActionList-item-label">Sub menu label</span>
-    </span>
-    <ul class="ActionList ActionList--subGroup" aria-label="Menu description">
-        <li class="ActionList-item ActionList-item--subItem">
-            <span class="ActionList-content">
-            <span class="ActionList-item-label">Sub menu item</span>
-            </span>
-        </li>
-        <li class="ActionList-item ActionList-item--subItem">
-            <span class="ActionList-content">
-            <span class="ActionList-item-label">Sub menu item</span>
-            </span>
+<nav>
+    <li class="ActionList-sectionDivider">
+      <h3 class="ActionList-sectionDivider-title" id="group-id-1">Access</h3>
+    </li>
+    <ul class="ActionList" role="list" aria-labelledby="group-id-1">
+        <li class="ActionList-item ActionList-item--hasSubItem">
+            <button aria-expanded="true" class="ActionList-content ActionList-content--visual16 ActionList-content--hasActiveSubItem">
+                <span class="ActionList-item-visual ActionList-item-visual--leading">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.5 2.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v5.5a.25.25 0 01-.25.25h-3.5a.75.75 0 00-.53.22L3.5 11.44V9.25a.75.75 0 00-.75-.75h-1a.25.25 0 01-.25-.25v-5.5zM1.75 1A1.75 1.75 0 000 2.75v5.5C0 9.216.784 10 1.75 10H2v1.543a1.457 1.457 0 002.487 1.03L7.061 10h3.189A1.75 1.75 0 0012 8.25v-5.5A1.75 1.75 0 0010.25 1h-8.5zM14.5 4.75a.25.25 0 00-.25-.25h-.5a.75.75 0 110-1.5h.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0114.25 12H14v1.543a1.457 1.457 0 01-2.487 1.03L9.22 12.28a.75.75 0 111.06-1.06l2.22 2.22v-2.19a.75.75 0 01.75-.75h1a.25.25 0 00.25-.25v-5.5z"></path></svg>
+                </span>
+                <span class="ActionList-item-label">Moderation</span>
+                <span class="ActionList-item-action ActionList-item-action--trailing">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" class="ActionList-item-collapseIcon"><path fill-rule="evenodd" d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"></path></svg>
+                </span>
+            </button>
+            <ul class="ActionList ActionList--subGroup" role="list">
+                <li class="ActionList-item ActionList-item--subItem">
+                    <a href="#" class="ActionList-content">
+                        <span class="ActionList-item-label">Interaction limits</span>
+                    </a>
+                </li>
+                <li class="ActionList-item ActionList-item--navActive ActionList-item--subItem">
+                    <a href="#" aria-current="page" class="ActionList-content">
+                        <span class="ActionList-item-label">Code review limits</span>
+                    </a>
+                </li>
+                <li class="ActionList-item ActionList-item--subItem">
+                    <a href="#" class="ActionList-content">
+                        <span class="ActionList-item-label">Reported content</span>
+                    </a>
+                </li>
+            </ul>
         </li>
     </ul>
-  </li>
-</ul>
+</nav>
 ```
 
 
@@ -106,7 +118,11 @@ List item `li` for separating groups of content
 
 ```html live
 <ul class="ActionList">
-  <li class="ActionList-sectionDivider" role="separator"></li>
+  <li
+    class="ActionList-sectionDivider"
+    role="separator"
+    aria-hidden="true"
+  ></li>
 </ul>
 ```
 
@@ -114,65 +130,71 @@ List item `li` for separating groups of content
 
 ```html live
 <ul class="ActionList">
-  <li class="ActionList-sectionDivider ActionList-sectionDivider--filled" role="separator"></li>
+  <li
+    class="ActionList-sectionDivider ActionList-sectionDivider--filled"
+    role="separator"
+    aria-hidden="true"
+  ></li>
 </ul>
 ```
 ### Divider with label text
 
-When using a section label for a group, give the `li` an id to be referenced by the group `ul`
+When using a section label for a group, give the `h3` an id to be referenced by the group `ul`
 #### Filled with section label
 
 ```html live
-<ul class="ActionList">
-  <li class="ActionList-sectionDivider ActionList-sectionDivider--filled" role="presentation" id="nested-group-id" aria-hidden="true">Section label</li>
-  <li class="ActionList-item">
-      <ul class="ActionList" aria-labelledby="nested-group-id">
-        <li class="ActionList-item">
-          <a href="/" class="ActionList-content">
-            <span class="ActionList-item-label">Group Item</span>
-          </a>
-        </li>
-      </ul>
+<ul>
+    <li class="ActionList-sectionDivider ActionList-sectionDivider--filled">
+        <h3 class="ActionList-sectionDivider-title" id="group-id">
+        List group title
+        </h3>
     </li>
+    <ul class="ActionList" aria-labelledby="group-id">
+        <li class="ActionList-item">
+            <a href="/" class="ActionList-content">
+                <span class="ActionList-item-label">Group Item</span>
+            </a>
+        </li>
+    </ul>
 </ul>
 ```
 
 #### Default with section label
 
 ```html live
-<ul class="ActionList">
-  <li class="ActionList-sectionDivider" role="presentation" id="nested-group-id" aria-hidden="true">Section label</li>
-  <li class="ActionList-item">
-      <ul class="ActionList" aria-labelledby="nested-group-id">
-        <li class="ActionList-item">
-          <a href="/" class="ActionList-content">
-            <span class="ActionList-item-label">Group Item</span>
-          </a>
-        </li>
-      </ul>
+<ul>
+    <li class="ActionList-sectionDivider">
+        <h3 class="ActionList-sectionDivider-title" id="group-id">
+        List group title
+        </h3>
     </li>
+    <ul class="ActionList" aria-labelledby="group-id">
+        <li class="ActionList-item">
+            <a href="/" class="ActionList-content">
+                <span class="ActionList-item-label">Group Item</span>
+            </a>
+        </li>
+    </ul>
 </ul>
 ```
 
 #### Default with section label + description
 
 ```html live
-<ul class="ActionList">
-  <li class="ActionList-sectionDivider" role="presentation" id="nested-group-id" aria-hidden="true">
-    Section label
-    <span class="ActionList-item-description">
-      Section description
-    </span>
-  </li>
-  <li class="ActionList-item">
-      <ul class="ActionList" aria-labelledby="nested-group-id">
-        <li class="ActionList-item">
-          <a href="/" class="ActionList-content">
-            <span class="ActionList-item-label">Group Item</span>
-          </a>
-        </li>
-      </ul>
+<ul>
+    <li class="ActionList-sectionDivider">
+        <h3 class="ActionList-sectionDivider-title" id="group-id">
+            List group title
+        </h3>
+        <span class="ActionList-item-description">Group description</span>
     </li>
+    <ul class="ActionList" aria-labelledby="group-id">
+        <li class="ActionList-item">
+            <a href="/" class="ActionList-content">
+                <span class="ActionList-item-label">Group Item</span>
+            </a>
+        </li>
+    </ul>
 </ul>
 ```
 
@@ -190,79 +212,10 @@ List item `li` handling semantics, state and interactions
 | `ActionList-item--navActive` | Nav item and `aria-current` |
 | `ActionList-item--danger` | Item is destructive |
 
-Kitchen sink
-
-```html live
-<nav>
-  <ul class="ActionList" aria-label="Main menu description">
-    <li class="ActionList-item">
-      <a href="/" class="ActionList-content">
-        <span class="ActionList-item-label">Nav Item</span>
-      </a>
-    </li>
-    <li class="ActionList-item" >
-      <a href="/" class="ActionList-content">
-        <span class="ActionList-item-label">Nav Item</span>
-      </a>
-    </li>
-    <li class="ActionList-item" >
-      <a href="/" class="ActionList-content">
-        <span class="ActionList-item-label">Nav Item</span>
-      </a>
-    </li>
-    <li class="ActionList-sectionDivider" role="presentation" id="some-unique-id" aria-hidden="true">Section Divider</li>
-    <li class="ActionList-item ActionList-item--hasSubItem">
-      <ul class="ActionList" aria-labelledby="some-unique-id">
-        <li class="ActionList-item" >
-          <a href="/" class="ActionList-content">
-            <span class="ActionList-item-label">Nav Item</span>
-          </a>
-        </li>
-        <li aria-disabled="true" class="ActionList-item" >
-          <a href="/" class="ActionList-content">
-            <span class="ActionList-item-label">Disabled Item</span>
-          </a>
-        </li>
-        <li class="ActionList-item ActionList-item--navActive" >
-            <a href="#" aria-current="location" class="ActionList-content">
-            <span class="ActionList-item-label">Nav Item</span>
-          </a>
-        </li>
-        <li class="ActionList-item ActionList-item--danger" >
-          <a href="/" class="ActionList-content">
-            <span class="ActionList-item-label">Danger Item</span>
-          </a>
-        </li>
-      </ul>
-    </li>
-    <li class="ActionList-sectionDivider" role="presentation" id="some-unique-id" aria-hidden="true">Section Divider</li>
-    <li class="ActionList-item ActionList-item--hasSubItem">
-      <ul class="ActionList ActionList--subGroup" aria-labelledby="some-unique-id">
-        <li class="ActionList-item ActionList-item--subItem" >
-          <a href="/" class="ActionList-content">
-            <span class="ActionList-item-label">Nav Item</span>
-          </a>
-        </li>
-        <li class="ActionList-item ActionList-item--subItem" >
-            <a href="#" class="ActionList-content">
-            <span class="ActionList-item-label">Nav Item</span>
-          </a>
-        </li>
-        <li class="ActionList-item ActionList-item--subItem" >
-          <a href="/" class="ActionList-content">
-            <span class="ActionList-item-label">Nav Item</span>
-          </a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-
-```
 
 ## Action list item content
 
-Contains and places all child content within Action List Item. Can be either an `a href` tag for list link items, or a `span` for items that provide an event on Action List Item `li`.
+Contains and places all child elements within action list item. Can be either an `a href` tag for list link items, or a `button` for items that provide an event on Action List Item `li`.
 
 ### Variants
 
@@ -274,6 +227,7 @@ Contains and places all child content within Action List Item. Can be either an 
 | `ActionList-content--visual16` | Creates left padding for sub list if leading visual exists |
 | `ActionList-content--visual20` | Creates left padding for sub list if leading visual exists |
 | `ActionList-content--visual24` | Creates left padding for sub list if leading visual exists |
+| `ActionList-content--hasActiveSubItem` | Handles active nav state if child item is active |
 | `ActionList-item-action` | min-height + default styles for visual slot |
 | `ActionList-item-action--leading` | Slot: multi/single select |
 | `ActionList-item-action--trailing` | Slot: Button, collapse icon |
@@ -373,7 +327,7 @@ Contains and places all child content within Action List Item. Can be either an 
 
 ```html live
 <nav>
-  <ul class="ActionList" aria-label="Main menu description">
+  <ul class="ActionList">
     <li class="ActionList-item">
       <a href="/" class="ActionList-content">
         <span class="ActionList-item-label">Nav Item</span>
@@ -476,8 +430,8 @@ Contains and places all child content within Action List Item. Can be either an 
 
 ```html live
 <ul class="ActionList">
-  <li class="ActionList-item" aria-haspopup="true" aria-expanded="true">
-    <span class="ActionList-content">
+  <li class="ActionList-item">
+    <button class="ActionList-content" aria-expanded="true">
       <span class="ActionList-item-label">Collapsible</span>
       <span class="ActionList-item-action ActionList-item-action--trailing">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" class="ActionList-item-collapseIcon">
@@ -485,36 +439,7 @@ Contains and places all child content within Action List Item. Can be either an 
           ></path>
         </svg>
       </span>
-    </span>
+    </button>
   </li>
 </ul>
 ```
-
-## Accessibility
-### Semantic markup
-
-The markup for Action List changes depending on the intended use case.
-
-In all cases, the basic structure is as follows:
-
-```html
-<ul>
-    <li><span>Content with action (onclick)</span></li>
-    <li><a href="/">Content as link</a></li>
-    <li>
-        <ul>
-            <li>Nested list</li>
-        </ul>
-    </li>
-</ul>
-```
-
-Pay close attention to `role` attributes throughout the documentation. The `role` attribute may change depending on the context in which Action List is used. Some common use case specs:
-
-[Dropdown menu](https://www.w3.org/TR/wai-aria-practices-1.2/examples/menu-button/menu-button-links.html)
-
-[Multi/Single select dropdown menu](https://www.w3.org/TR/wai-aria-practices-1.2/examples/menubar/menubar-2/menubar-2.html)
-
-[Single select listbox](https://www.w3.org/TR/wai-aria-practices-1.2/examples/listbox/listbox-collapsible.html)
-
-Note: JS is required to make Action List keyboard accessible.
