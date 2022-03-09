@@ -68,7 +68,7 @@
     "postcss-simple-vars": "6.0.3",
     "prettier": "2.5.1",
     "semver": "7.3.5",
-    "stylelint": "14.3.0",
+    "stylelint": "14.5.3",
     "table": "6.7.5"
   },
   "jest": {
