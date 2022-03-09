@@ -1,5 +1,11 @@
 # @primer/css
 
+## 19.5.1
+
+### Patch Changes
+
+- [#1983](https://github.com/primer/css/pull/1983) [`07bc069e`](https://github.com/primer/css/commit/07bc069ec0faae9c0e4530e5171e3346fa643a10) Thanks [@simurai](https://github.com/simurai)! - Bump `primer/primitives` to `^7.5.1`
+
 ## 19.5.0
 
 ### Minor Changes
