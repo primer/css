@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import {ArrowLeftIcon} from '@primer/octicons-react'
+import {ChevronLeftIcon} from '@primer/octicons-react'
 
 export default {
   title: 'Components/Layout/Page Header',
@@ -26,10 +26,6 @@ export default {
       control: 'inline-radio',
       options: ['title-medium', 'subtitle'],
     },
-    titleSize: {
-      control: 'inline-radio',
-      options: ['large', 'medium'],
-    },
     leadingVisual: {
       control: 'inline-radio',
 
@@ -37,13 +33,17 @@ export default {
     hasParentLink: {
       control: 'boolean',
     },
+    parentLinkVariant: {
+      control: 'inline-radio',
+      options: ['eyebrowText', 'iconButton'],
+    },
     trailingActions: {
       control: 'inline-radio',
       options: ['none', 'info'],
     },
-    trailingPosition: {
+    trailingActionPosition: {
       control: 'inline-radio',
-      options: ['byParentLink', 'byTitle'],
+      options: ['eyebrow', 'title'],
     },
     isTitleInteractive: {
       control: 'boolean',
@@ -61,12 +61,16 @@ export const PageHeaderTemplate = ({
   title,
   titleVariant,
   titleVariantWhenNarrow,
+  parentLinkVariant,
+  trailingActionPosition,
 }) => {
 
   const pageHeaderClassName = 'PageHeader';
 
+  // Default values
   titleVariant = titleVariant ?? 'title-medium';
   titleVariantWhenNarrow = titleVariantWhenNarrow ?? 'title-medium';
+  trailingActionPosition = trailingActionPosition ?? 'title';
 
   const titleVariantClassName =
     (titleVariant.startsWith('title'))
@@ -81,32 +85,46 @@ export const PageHeaderTemplate = ({
   return (
     <>
       <div className={clsx(pageHeaderClassName, titleVariant && `PageHeader--${titleVariant}`)}>
-        <div className={clsx(`${pageHeaderClassName}-parentLink`)}>
-          <a href="#"><ArrowLeftIcon /> Parent link</a>
-        </div>
+        <div className={clsx(`${pageHeaderClassName}-titleWrap`)}>
 
-        <div className={
-          clsx(
-            `${pageHeaderClassName}-title`, 
-            `${pageHeaderClassName}-title--${titleVariantClassName}`,
-            `${pageHeaderClassName}-title--${titleVariantWhenNarrowClassName}-whenNarrow`
-          )}
-        >
-          {titleVariant === 'title-large' || titleVariant === 'title-medium' ? (
-            <>
-              <h1>{title}</h1>
-            </>
-          ) : (
-            <>
-              <h2>{title}</h2>
-            </>
-          )}
-        </div>
+          {/* Eyebrow */}
+          <div className={clsx(`${pageHeaderClassName}-eyebrow`)}>
+            {parentLinkVariant === 'eyebrowText' && (
+              <>
+                <div className={clsx(`${pageHeaderClassName}-parentLink`)}>
+                  <a href="#" aria-label="Back to :parent_link"><ChevronLeftIcon /> Parent link</a>
+                </div>
+              </>
+            )}
+          </div>
 
-        <div className={clsx(`${pageHeaderClassName}-actions`)}>
-          <button className="btn">Button</button>
-        </div>
+          {/* Title */}
+          <div className={
+            clsx(
+              `${pageHeaderClassName}-title`, 
+              `${pageHeaderClassName}-title--${titleVariantClassName}`,
+              `${pageHeaderClassName}-title--${titleVariantWhenNarrowClassName}-whenNarrow`
+            )}
+          >
+            {titleVariant === 'title-large' || titleVariant === 'title-medium' ? (
+              <>
+                <h1>{title}</h1>
+              </>
+            ) : (
+              <>
+                <h2>{title}</h2>
+              </>
+            )}
+          </div>
 
+          {/* Trailing actions */}
+          <div className={clsx(
+            `${pageHeaderClassName}-actions`,
+            `${pageHeaderClassName}-actions--pos-${trailingActionPosition}`
+          )}>
+            <button className="btn">Button</button>
+          </div>
+        </div>
       </div>
     </>
   )
@@ -117,5 +135,7 @@ export const Playground = PageHeaderTemplate.bind({})
 Playground.args = {
   titleVariant: 'title-large',
   titleVariantWhenNarrow: 'title-medium',
-  title: 'Vinicius',
+  title: 'Title',
+  parentLinkVariant: 'eyebrowText',
+  trailingActionPosition: 'eyebrow',
 };
