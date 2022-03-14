@@ -1,8 +1,8 @@
 // stylelint-disable selector-max-type
 
-// Flash alert
+// Banner alert
 
-.Flash {
+.Banner {
   position: relative;
   display: grid;
   padding: $spacer-2;
@@ -23,14 +23,14 @@
     grid-template-columns: min-content 1fr min-content;
     grid-template-rows: min-content min-content;
 
-    .Flash-actions {
+    .Banner-actions {
       margin: $spacer-2 0 0 $spacer-2;
     }
   }
 
   // Elements
 
-  .Flash-visual {
+  .Banner-visual {
     display: grid;
     // Migrate to design tokens when available
     // calc((var(--gh-control-medium-size) - var(--gh-text-body-medium-lineBoxHeight)) / 2)
@@ -48,7 +48,7 @@
     }
   }
 
-  .Flash-message {
+  .Banner-message {
     // Migrate to design tokens when available
     // calc((var(--gh-control-medium-size) - var(--gh-text-body-medium-lineBoxHeight)) / 2)
     // stylelint-disable-next-line primer/spacing
@@ -59,9 +59,14 @@
     p:last-child {
       margin-bottom: 0;
     }
+
+    .Banner-title:not(:only-child) {
+      font-weight: $font-weight-bold;
+      margin-bottom: 0;
+    }
   }
 
-  .Flash-actions {
+  .Banner-actions {
     grid-area: actions;
 
     &:last-child {
@@ -69,7 +74,7 @@
     }
   }
 
-  .Flash-close {
+  .Banner-close {
     grid-area: close;
     margin: 0 0 0 $spacer-2;
 
@@ -80,43 +85,43 @@
     }
   }
 
-  .Flash-visual .octicon {
+  .Banner-visual .octicon {
     color: var(--color-accent-fg);
   }
 
-  &.Flash--warning {
+  &.Banner--warning {
     color: var(--color-fg-default);
     background-image: linear-gradient(var(--color-attention-subtle), var(--color-attention-subtle));
     border-color: var(--color-attention-muted);
 
-    .Flash-visual .octicon {
+    .Banner-visual .octicon {
       color: var(--color-attention-fg);
     }
   }
 
-  &.Flash--error {
+  &.Banner--error {
     color: var(--color-fg-default);
     background-image: linear-gradient(var(--color-danger-subtle), var(--color-danger-subtle));
     border-color: var(--color-danger-muted);
 
-    .Flash-visual .octicon {
+    .Banner-visual .octicon {
       color: var(--color-danger-fg);
     }
   }
 
-  &.Flash--success {
+  &.Banner--success {
     color: var(--color-fg-default);
     background-image: linear-gradient(var(--color-success-subtle), var(--color-success-subtle));
     border-color: var(--color-success-muted);
 
-    .Flash-visual .octicon {
+    .Banner-visual .octicon {
       color: var(--color-success-fg);
     }
   }
 
   // Full-width
 
-  &.Flash--full {
+  &.Banner--full {
     // stylelint-disable-next-line primer/spacing
     margin-top: ($border-width * -1);
     border-right: 0;
@@ -126,7 +131,7 @@
 
   // Replace with Primitives' Narrow viewport range
   @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
-    &.Flash--full-whenNarrow {
+    &.Banner--full-whenNarrow {
       // stylelint-disable-next-line primer/spacing
       margin-top: ($border-width * -1);
       border-right: 0;

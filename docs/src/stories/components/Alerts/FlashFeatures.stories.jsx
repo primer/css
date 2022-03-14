@@ -4,7 +4,7 @@ import {FlashTemplate} from './Flash.stories'
 
 
 export default {
-  title: 'Components/Alerts/Flash/Features',
+  title: 'Components/Alerts/Banner/Features',
   parameters: {
     // design: {
     //   type: 'figma',
@@ -14,7 +14,7 @@ export default {
   },
 }
 
-export const WithTitleAndAction = FlashTemplate.bind({})
+export const WithTitleAndAction = BannerTemplate.bind({})
 WithTitleAndAction.args = {
   variant: 'error',
   message:
@@ -28,7 +28,7 @@ WithTitleAndAction.args = {
   )
 }
 
-export const WithPrimaryButton = FlashTemplate.bind({})
+export const WithPrimaryButton = BannerTemplate.bind({})
 WithPrimaryButton.args = {
   variant: 'info',
   hasVisual: false,
@@ -42,9 +42,9 @@ WithPrimaryButton.args = {
   )
 }
 
-export const WithCloseButton = FlashTemplate.bind({})
+export const WithCloseButton = BannerTemplate.bind({})
 WithCloseButton.args = {
   variant: 'info',
   message: `The repository default branch has been updated to <strong>main</strong>.`,
-  hasCloseButton: true,
+  hasDismissButton: true,
 }

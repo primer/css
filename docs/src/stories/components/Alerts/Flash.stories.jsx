@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import {InfoIcon, AlertIcon, StopIcon, CheckIcon, XIcon} from '@primer/octicons-react'
 
 export default {
-  title: 'Components/Alerts/Flash',
+  title: 'Components/Alerts/Banner',
   parameters: {
     // design: {
     //   type: 'figma',
@@ -12,22 +12,26 @@ export default {
     layout: 'padded'
   },
 
-  excludeStories: ['FlashTemplate'],
+  excludeStories: ['BannerTemplate'],
   argTypes: {
     variant: {
       control: 'inline-radio',
       options: ['info', 'warning', 'error', 'success'],
     },
-    message: {
+    title: {
       control: 'text',
-      description: 'The message to alert',
+      description: 'The banner title.',
+    },
+    description: {
+      control: 'text',
+      description: 'The banner description. Optional.',
     },
     hasVisual: {
       control: {
         type: 'boolean',
       },
     },
-    hasCloseButton: {
+    hasDismissButton: {
       control: 'boolean',
     },
     isFull: {
@@ -45,19 +49,20 @@ export default {
   },
 }
 
-export const FlashTemplate = ({
+export const BannerTemplate = ({
   variant,
-  message,
+  title,
+  description,
   hasVisual,
   hasAction,
-  hasCloseButton,
+  hasDismissButton,
   isFull,
   isFullWhenNarrow,
   visualChildren,
   actionChildren
 }) => {
 
-  const defaultMessages = {
+  const defaultTitles = {
     'info': 'This is an info message',
     'warning': 'This is a warning message',
     'error': 'This is an error message',
@@ -65,15 +70,24 @@ export const FlashTemplate = ({
   };
 
   variant = variant ?? 'info';
-  message = message ?? defaultMessages[variant];
+  title = title ?? defaultTitles[variant];
   hasVisual = hasVisual ?? true;
 
 
   return (
     <>
-      <div className={clsx('Flash', variant && `Flash--${variant}`, isFull && `Flash--full`, isFullWhenNarrow && `Flash--full-whenNarrow`)}>
+      <div
+        tabIndex="0"
+        aria-labelledby="Banner-title_id"
+        aria-describedby="Banner-description_id"
+        className={clsx(
+          'Banner',
+          variant && `Banner--${variant}`,
+          isFull && `Banner--full`,
+          isFullWhenNarrow && `Banner--full-whenNarrow`
+        )}>
         {hasVisual && (
-          <div className={clsx('Flash-visual')}>
+          <div className={clsx('Banner-visual')}>
             {visualChildren && (
               <>
                 {visualChildren}
@@ -89,10 +103,17 @@ export const FlashTemplate = ({
           </div>
         )}
 
-        <div className={clsx('Flash-message')} dangerouslySetInnerHTML={{__html: message}}></div>
+        <div className={clsx('Banner-message')}>
+          <p id="Banner-title_id" className={clsx('Banner-title')} dangerouslySetInnerHTML={{__html: title}}></p>
+          {description && (
+            <>
+              <p id="Banner-description_id" className={clsx('Banner-description')} dangerouslySetInnerHTML={{__html: description}}></p>
+            </>
+          )}
+        </div>
 
         {hasAction && (
-          <div className={clsx('Flash-actions')}>
+          <div className={clsx('Banner-actions')}>
             {actionChildren && (
               <>
                 {actionChildren}
@@ -105,8 +126,8 @@ export const FlashTemplate = ({
           </div>
         )}
 
-        {hasCloseButton && (
-          <div className={clsx('Flash-close')}>
+        {hasDismissButton && (
+          <div className={clsx('Banner-close')}>
             {/* Replace with new IconButton component */}
             <button className="btn btn-octicon p-2" type="button" aria-label="Close">
               <XIcon />
@@ -118,13 +139,13 @@ export const FlashTemplate = ({
   )
 }
 
-export const Playground = FlashTemplate.bind({})
+export const Playground = BannerTemplate.bind({})
 
 Playground.args = {
   variant: 'info',
   hasVisual: true,
   hasAction: false,
-  hasCloseButton: true,
+  hasDismissButton: true,
   isFull: false,
   isFullWhenNarrow: false,
 };
