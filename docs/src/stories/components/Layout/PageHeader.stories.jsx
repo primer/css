@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import {ChevronLeftIcon} from '@primer/octicons-react'
+import {ArrowLeftIcon} from '@primer/octicons-react'
 
 export default {
   title: 'Components/Layout/Page Header',
@@ -14,45 +14,93 @@ export default {
 
   excludeStories: ['PageHeaderTemplate'],
   argTypes: {
+
+    // Parent link
+
+    hasParentLink: {
+      control: 'boolean',
+      table: {
+        category: 'Parent link',
+      },
+    },
+    parentLinkPlacement: {
+      control: 'inline-radio',
+      options: ['contextBar', 'title'],
+      table: {
+        category: 'Parent link'
+      },
+    },
+
+    // Context bar
+
+
+
+    // Title
+
     title: {
       control: 'text',
       description: 'The page title',
+      table: {
+        category: 'Title'
+      },
     },
     titleVariant: {
       options: ['title-large', 'title-medium', 'subtitle'],
       control: 'inline-radio',
+      table: {
+        category: 'Title'
+      },
     },
     titleVariantWhenNarrow: {
       control: 'inline-radio',
       options: ['title-medium', 'subtitle'],
+      table: {
+        category: 'Title'
+      },
+    },
+    isTitleInteractive: {
+      control: 'boolean',
+      table: {
+        category: 'Title'
+      },
     },
     leadingVisual: {
       control: 'inline-radio',
+      table: {
+        category: 'Title'
+      },
+    },
 
-    },
-    hasParentLink: {
-      control: 'boolean',
-    },
-    parentLinkVariant: {
-      control: 'inline-radio',
-      options: ['eyebrowText', 'iconButton'],
-    },
+    // Trailing actions
+
     trailingActions: {
       control: 'inline-radio',
       options: ['none', 'info'],
+      table: {
+        category: 'Trailing actions'
+      },
     },
     trailingActionPosition: {
       control: 'inline-radio',
       options: ['eyebrow', 'title'],
+      table: {
+        category: 'Trailing actions'
+      },
     },
-    isTitleInteractive: {
-      control: 'boolean',
-    },
+
+    // Children
+
     visualChildren: {
       description: 'creates a slot for custom visuals',
+      table: {
+        category: 'Slots'
+      },
     },
     actionChildren: {
       description: 'creates a slot for action buttons',
+      table: {
+        category: 'Slots'
+      },
     }
   },
 }
@@ -61,6 +109,7 @@ export const PageHeaderTemplate = ({
   title,
   titleVariant,
   titleVariantWhenNarrow,
+  hasParentLink,
   parentLinkVariant,
   trailingActionPosition,
 }) => {
@@ -89,10 +138,10 @@ export const PageHeaderTemplate = ({
 
           {/* Eyebrow */}
           <div className={clsx(`${pageHeaderClassName}-eyebrow`)}>
-            {parentLinkVariant === 'eyebrowText' && (
+            {hasParentLink && parentLinkVariant === 'eyebrowText' && (
               <>
                 <div className={clsx(`${pageHeaderClassName}-parentLink`)}>
-                  <a href="#" aria-label="Back to :parent_link"><ChevronLeftIcon /> Parent link</a>
+                  <a href="#" aria-label="Back to :parent_link"><ArrowLeftIcon /> Parent link</a>
                 </div>
               </>
             )}
@@ -103,9 +152,17 @@ export const PageHeaderTemplate = ({
             clsx(
               `${pageHeaderClassName}-title`, 
               `${pageHeaderClassName}-title--${titleVariantClassName}`,
-              `${pageHeaderClassName}-title--${titleVariantWhenNarrowClassName}-whenNarrow`
+              `${pageHeaderClassName}-title--${titleVariantWhenNarrowClassName}-whenNarrow`,
+              hasParentLink && parentLinkVariant === 'backButton' && `${pageHeaderClassName}-title--hasBackButton`
             )}
           >
+            {hasParentLink && parentLinkVariant === 'backButton' && (
+              <>
+                <div className={clsx(`${pageHeaderClassName}-backButton`)}>
+                  <a href="#" aria-label="Back to :parent_link"><ArrowLeftIcon /></a>
+                </div>
+              </>
+            )}
             {titleVariant === 'title-large' || titleVariant === 'title-medium' ? (
               <>
                 <h1>{title}</h1>
@@ -133,9 +190,13 @@ export const PageHeaderTemplate = ({
 export const Playground = PageHeaderTemplate.bind({})
 
 Playground.args = {
-  titleVariant: 'title-large',
+  // Title
+  title: 'Page title',
+  titleVariant: 'title-medium',
   titleVariantWhenNarrow: 'title-medium',
-  title: 'Title',
+
+  // Parent link
+  hasParentLink: true,
   parentLinkVariant: 'eyebrowText',
   trailingActionPosition: 'eyebrow',
 };

@@ -16,6 +16,7 @@
     grid-template-areas:
       'eyebrow eyebrowActions'
       'title titleActions';
+    column-gap: 8px;
   }
 
   // Title/eyebrow
@@ -68,9 +69,15 @@
       }
     }
   }
+
+  // Title
   
   .PageHeader-title {
-    
+    display: inline-grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto;
+    gap: 8px;
+
     // Replace with Primer primitives
 
     // title-large
@@ -95,6 +102,10 @@
       font-size: var(--gh-text-title-large-fontSize);
       line-height: var(--gh-text-title-large-lineHeight);
       font-weight: var(--gh-text-title-large-fontWeight);
+
+      .PageHeader-backButton a {
+        height: var(--gh-text-title-large-lineBoxHeight);
+      }
     }
     &.PageHeader-title--medium {
       font-size: var(--gh-text-title-medium-fontSize);
@@ -107,10 +118,53 @@
       font-weight: var(--gh-text-subtitle-fontWeight);
     }
 
+    &.PageHeader-title--hasLeadingVisual {
+      background: pink;
+    }
+
+    &.PageHeader-title--hasBackButton {
+      //background: yellow;
+      //margin-left: -8px;
+      grid-template-columns: min-content auto;
+    }
+
+    &.PageHeader-title--hasInteractiveTitle {
+      background: orange;
+    }
+
     h1, h2, h3, h4 {
       font-size: inherit;
       line-height: inherit;
       font-weight: inherit;
+      //outline: 1px solid red;
+    }
+  }
+
+  // Back button
+
+  .PageHeader-backButton {
+    a {
+      display: grid;
+      width: 16px;
+      height: var(--gh-text-title-medium-lineBoxHeight);
+      //background: red;
+      align-items: center;
+      border-radius: 6px;
+      color: inherit;
+      position: relative;
+
+      &:hover {
+        background: orange;
+      }
+
+      @media (pointer: coarse) {
+        &:after {
+          position: absolute;
+          content: "";
+          inset: 0;
+          background: red;
+        }
+      }
     }
   }
 }
