@@ -1,5 +1,17 @@
 # @primer/css
 
+## 19.6.0
+
+### Minor Changes
+
+- [#1989](https://github.com/primer/css/pull/1989) [`f544ef85`](https://github.com/primer/css/commit/f544ef8574a4d6e12cccf94d534ad66df3e9249a) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Make `pane` an optional region for PageLayout component
+
+### Patch Changes
+
+- [#1988](https://github.com/primer/css/pull/1988) [`e3443f1a`](https://github.com/primer/css/commit/e3443f1a69ba5a23d3e3804bf4e22d384783c443) Thanks [@simurai](https://github.com/simurai)! - Fix color-fg utilities in links
+
+* [#1985](https://github.com/primer/css/pull/1985) [`c2bd6bc9`](https://github.com/primer/css/commit/c2bd6bc9bf90686f258af11c102097d7da000a5b) Thanks [@cheshire137](https://github.com/cheshire137)! - Adding .color-bg-transparent utility class
+
 ## 19.5.1
 
 ### Patch Changes
