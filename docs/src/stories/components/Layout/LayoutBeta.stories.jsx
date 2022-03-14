@@ -336,20 +336,14 @@ export const LayoutTemplate = ({
 
   if (hasPaneDivider) {
     paneDividerWhenNarrow = paneDividerWhenNarrow === 'inherit' ? 'line' : paneDividerWhenNarrow
-  } else {
-    paneDividerWhenNarrow = null
   }
 
   if (hasHeaderDivider) {
     headerDividerWhenNarrow = headerDividerWhenNarrow === 'inherit' ? 'line' : headerDividerWhenNarrow
-  } else {
-    headerDividerWhenNarrow = null
   }
 
   if (hasFooterDivider) {
     footerDividerWhenNarrow = footerDividerWhenNarrow === 'inherit' ? 'line' : footerDividerWhenNarrow
-  } else {
-    footerDividerWhenNarrow = null
   }
 
   PageLayoutBehavior()
