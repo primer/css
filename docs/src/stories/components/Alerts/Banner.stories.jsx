@@ -77,9 +77,6 @@ export const BannerTemplate = ({
   return (
     <>
       <div
-        tabIndex="0"
-        aria-labelledby="Banner-title_id"
-        aria-describedby="Banner-description_id"
         className={clsx(
           'Banner',
           variant && `Banner--${variant}`,
@@ -104,10 +101,10 @@ export const BannerTemplate = ({
         )}
 
         <div className={clsx('Banner-message')}>
-          <p id="Banner-title_id" className={clsx('Banner-title')} dangerouslySetInnerHTML={{__html: title}}></p>
+          <p className={clsx('Banner-title')} dangerouslySetInnerHTML={{__html: title}}></p>
           {description && (
             <>
-              <p id="Banner-description_id" className={clsx('Banner-description')} dangerouslySetInnerHTML={{__html: description}}></p>
+              <p className={clsx('Banner-description')} dangerouslySetInnerHTML={{__html: description}}></p>
             </>
           )}
         </div>
@@ -129,7 +126,7 @@ export const BannerTemplate = ({
         {hasDismissButton && (
           <div className={clsx('Banner-close')}>
             {/* Replace with new IconButton component */}
-            <button className="btn btn-octicon p-2" type="button" aria-label="Close">
+            <button className="btn btn-octicon p-2" type="button" aria-label="Dismiss">
               <XIcon />
             </button>
           </div>
