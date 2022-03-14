@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import {FlashTemplate} from './Flash.stories'
+import {BannerTemplate} from './Banner.stories'
 
 
 export default {
