@@ -86,6 +86,13 @@ export default {
     },
 
     // Pane
+    
+    hasPane: {
+      control: {type: 'boolean'},
+      table: {
+        category: 'Pane'
+      }
+    },
 
     panePosition: {
       options: ['start', 'end'],
@@ -241,6 +248,7 @@ export const PageLayoutTemplate = ({
   rowGap,
   responsiveVariant,
   primaryRegion,
+  hasPane,
   paneWidth,
   panePosition,
   panePositionWhenNarrow,
@@ -271,6 +279,7 @@ export const PageLayoutTemplate = ({
         responsiveVariant={responsiveVariant}
         primaryRegion={primaryRegion}
 
+        hasPane={hasPane}
         paneWidth={paneWidth}
         panePosition={panePosition}
         panePositionWhenNarrow={panePositionWhenNarrow}
@@ -315,6 +324,7 @@ Playground.args = {
   primaryRegion: 'content',
 
   // Pane
+  hasPane: true,
   panePosition: 'end',
   panePositionWhenNarrow: 'inherit',
   paneWidth: 'default',
