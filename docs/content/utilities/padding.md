@@ -98,7 +98,7 @@ All padding utilities can be adjusted per [breakpoint](/support/breakpoints) usi
 - On **sm to lg** screens it gives the element padding of `$spacer-6`
 - On **lg and wider** screens, it gives the element padding of `$spacer-3`
 
-It's the equvilent of adding the `.px-3 .px-sm-6 .px-lg-3` utility classes.
+It's the equivalent of adding the `.px-3 .px-sm-6 .px-lg-3` utility classes.
 
 ```html live
 <div class="p-responsive color-bg-attention">

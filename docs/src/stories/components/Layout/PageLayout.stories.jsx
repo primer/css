@@ -41,7 +41,7 @@ export default {
     },
 
     columnGap: {
-      options: ['normal', 'condensed'],
+      options: ['normal', 'condensed', 'none'],
       control: {
         type: 'inline-radio'
       },
@@ -51,7 +51,7 @@ export default {
       }
     },
     rowGap: {
-      options: ['normal', 'condensed'],
+      options: ['normal', 'condensed', 'none'],
       control: {
         type: 'inline-radio'
       },
@@ -86,6 +86,13 @@ export default {
     },
 
     // Pane
+    
+    hasPane: {
+      control: {type: 'boolean'},
+      table: {
+        category: 'Pane'
+      }
+    },
 
     panePosition: {
       options: ['start', 'end'],
@@ -129,7 +136,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: 'Whether to show a divider between `pane` and `content` regions if `responsiveVariant` is set to `stackRegions`. `line` shows a single line. `filled` shows a thicker mobile-frienldy divider.',
+      description: 'Whether to show a divider between `pane` and `content` regions if `responsiveVariant` is set to `stackRegions`. `line` shows a single line. `filled` shows a thicker mobile-friendly divider.',
       table: {
         category: 'Pane'
       }
@@ -198,7 +205,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: 'Whether to show a divider above the `footer` region on narrow viewports. `line` shows a single line. `filled` shows a thicker mobile-frienldy divider.',
+      description: 'Whether to show a divider above the `footer` region on narrow viewports. `line` shows a single line. `filled` shows a thicker mobile-friendly divider.',
       table: {
         category: 'Footer'
       }
@@ -241,6 +248,7 @@ export const PageLayoutTemplate = ({
   rowGap,
   responsiveVariant,
   primaryRegion,
+  hasPane,
   paneWidth,
   panePosition,
   panePositionWhenNarrow,
@@ -271,6 +279,7 @@ export const PageLayoutTemplate = ({
         responsiveVariant={responsiveVariant}
         primaryRegion={primaryRegion}
 
+        hasPane={hasPane}
         paneWidth={paneWidth}
         panePosition={panePosition}
         panePositionWhenNarrow={panePositionWhenNarrow}
@@ -315,6 +324,7 @@ Playground.args = {
   primaryRegion: 'content',
 
   // Pane
+  hasPane: true,
   panePosition: 'end',
   panePositionWhenNarrow: 'inherit',
   paneWidth: 'default',

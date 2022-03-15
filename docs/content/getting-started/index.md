@@ -115,7 +115,7 @@ sass:
   implementation: sass-embedded
 ```
 
-Since Github pages is currently [locked to version `1.5.2` of `jekyll-sass-converter`](https://pages.github.com/versions/). If you run into errors you should look into [using the built CSS](#using-primer-css-on-a-static-site).
+Since GitHub pages is currently [locked to version `1.5.2` of `jekyll-sass-converter`](https://pages.github.com/versions/). If you run into errors you should look into [using the built CSS](#using-primer-css-on-a-static-site).
 
 ## Using Primer CSS on a static site
 

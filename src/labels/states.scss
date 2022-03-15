@@ -28,7 +28,7 @@
 
 .State--open {
   color: var(--color-fg-on-emphasis);
-  background-color: var(--color-success-emphasis);
+  background-color: var(--color-open-emphasis);
 }
 
 .State--merged {
@@ -38,7 +38,7 @@
 
 .State--closed {
   color: var(--color-fg-on-emphasis);
-  background-color: var(--color-danger-emphasis);
+  background-color: var(--color-closed-emphasis);
 }
 
 // Small

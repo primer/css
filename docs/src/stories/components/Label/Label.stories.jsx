@@ -13,7 +13,7 @@ export default {
       }
     },
     variant: {
-      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], // iterator
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], // iterator
       mapping: [
         '',
         'Label--primary',
@@ -23,12 +23,14 @@ export default {
         'Label--attention',
         'Label--severe',
         'Label--danger',
+        'Label--open',
+        'Label--closed',
         'Label--done',
         'Label--sponsors'
       ], // values
       control: {
         type: 'select',
-        labels: ['default', 'primary', 'secondary', 'accent', 'success', 'attention', 'severe', 'danger', 'done', 'sponsors']
+        labels: ['default', 'primary', 'secondary', 'accent', 'success', 'attention', 'severe', 'danger', 'open', 'closed', 'done', 'sponsors']
       },
       description: 'Colors',
       table: {
