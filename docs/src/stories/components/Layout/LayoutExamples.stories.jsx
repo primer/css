@@ -2,7 +2,8 @@ import React from 'react'
 import clsx from 'clsx'
 import {PageLayoutTemplate} from './PageLayout.stories'
 import {SplitPageLayoutTemplate} from './SplitPageLayout.stories'
-import {RepoSettings, DiscussionsPane, ActionListTreeViewTemplate} from '../ActionList/ActionListExamples.stories'
+import {ActionListTreeViewTemplate} from '../../ui-patterns/ActionList/ActionListTree.stories'
+import {RepoSettings, NavDiscussionsPane} from '../NavigationList/NavigationListExamples.stories'
 import {LayoutAlphaTemplate} from './LayoutAlpha.stories'
 
 export default {
@@ -32,7 +33,7 @@ Settings.args = {
     <>
       <h2 className="h3 ml-2 mr-2">Repository settings</h2>
       <div className="ml-n2 mr-n2">
-        <NavRepoSettings {...NavRepoSettings.args} />
+        <RepoSettings {...RepoSettings.args} />
       </div>
     </>
   ),

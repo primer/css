@@ -11,6 +11,7 @@
   font-size: $font-size-small;
   font-weight: $font-weight-semibold;
   line-height: 18px;
+  white-space: nowrap;
   border: $border-width $border-style transparent;
   border-radius: 2em;
 }
