@@ -17,9 +17,8 @@ export default {
 export const WithTitleAndAction = BannerTemplate.bind({})
 WithTitleAndAction.args = {
   variant: 'error',
-  message:
-    `<strong>You’ve used 100% of your spending limit.</strong><br />
-     To continue using metered services uninterrupted, update your spending limit.`,
+  title: 'You’ve used 100% of your spending limit.',
+  description: 'To continue using metered services uninterrupted, update your spending limit.',
   hasAction: true,
   actionChildren: (
     <>
@@ -32,8 +31,7 @@ export const WithPrimaryButton = BannerTemplate.bind({})
 WithPrimaryButton.args = {
   variant: 'info',
   hasVisual: false,
-  message:
-    `<strong>vdepizzol</strong> requested your review on this pull request.`,
+  title: `<strong>vdepizzol</strong> requested your review on this pull request.`,
   hasAction: true,
   actionChildren: (
     <>
@@ -45,6 +43,6 @@ WithPrimaryButton.args = {
 export const WithCloseButton = BannerTemplate.bind({})
 WithCloseButton.args = {
   variant: 'info',
-  message: `The repository default branch has been updated to <strong>main</strong>.`,
+  title: `The repository default branch has been updated to <strong>main</strong>.`,
   hasDismissButton: true,
 }
