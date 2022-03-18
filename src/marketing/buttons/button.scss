@@ -13,8 +13,7 @@
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%),
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%),
     var(--color-mktg-btn-bg) !important;
   border: 0;
   // stylelint-disable-next-line primer/borders
@@ -51,6 +50,21 @@
     &::before {
       opacity: 1;
     }
+  }
+
+  // fallback :focus state
+  &:focus {
+    @include focusOutlineOnEmphasis;
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      outline: solid 1px transparent;
+    }
+  }
+
+  // default focus state
+  &:focus-visible {
+    @include focusOutlineOnEmphasis;
   }
 
   &:active {

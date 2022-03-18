@@ -48,5 +48,33 @@ export const FocusStyles = ({}) => (
         <TabNavItemTemplate text="Second tab" href="#url" />
       </TabNavTemplate>
     </div>
+    <div class="BtnGroup">
+      <a href="/" class="btn-sm btn BtnGroup-item">
+        One
+      </a>
+      <a href="/" class="btn-sm btn BtnGroup-item">
+        Two
+      </a>
+    </div>
+    <div class="Box faketarget">:target styles</div>
+    <nav class="UnderlineNav" aria-label="Foo bar">
+      <div class="UnderlineNav-body">
+        <a class="UnderlineNav-item" href="#url" aria-current="page">
+          Item 1
+        </a>
+        <a class="UnderlineNav-item" href="#url">
+          Item 2
+        </a>
+        <a class="UnderlineNav-item" href="#url">
+          Item 3
+        </a>
+        <a class="UnderlineNav-item" href="#url">
+          Item 4
+        </a>
+      </div>
+      <div class="UnderlineNav-actions">
+        <a class="btn btn-sm">Button</a>
+      </div>
+    </nav>
   </div>
 )

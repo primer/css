@@ -29,8 +29,7 @@
     color: var(--color-fg-default);
     text-decoration: none;
     border-bottom-color: var(--color-neutral-muted);
-    outline: 1px dotted transparent; // Support Firefox custom colors
-    outline-offset: -1px;
+    outline-offset: -8px;
     transition: border-bottom-color 0.12s ease-out;
   }
 
@@ -40,8 +39,7 @@
     font-weight: $font-weight-bold;
     color: var(--color-fg-default);
     border-bottom-color: var(--color-primer-border-active);
-    outline: 1px dotted transparent; // Support Firefox custom colors
-    outline-offset: -1px;
+    outline-offset: -8px;
 
     .UnderlineNav-octicon {
       color: var(--color-fg-muted);

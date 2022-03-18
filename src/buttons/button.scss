@@ -119,7 +119,7 @@
 
   // fallback :focus state
   &:focus {
-    @include focusOutline(var(--color-fg-on-emphasis), -4px);
+    @include focusOutlineOnEmphasis;
 
     // remove fallback :focus if :focus-visible is supported
     &:not(:focus-visible) {
@@ -129,7 +129,7 @@
 
   // default focus state
   &:focus-visible {
-    @include focusOutline(var(--color-fg-on-emphasis), -4px);
+    @include focusOutlineOnEmphasis;
   }
 
   &:active,
