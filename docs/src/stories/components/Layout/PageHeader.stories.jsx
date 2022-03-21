@@ -23,9 +23,15 @@ export default {
         category: 'Parent link',
       },
     },
-    parentLinkPlacement: {
-      control: 'inline-radio',
-      options: ['contextBar', 'title'],
+    parentLinkLabel: {
+      control: 'text',
+      table: {
+        category: 'Parent link',
+      },
+    },
+    parentLinkDisplay: {
+      control: 'check',
+      options: ['narrow', 'regular'],
       table: {
         category: 'Parent link'
       },
@@ -58,7 +64,14 @@ export default {
         category: 'Title'
       },
     },
-    isTitleInteractive: {
+    titleTag: {
+      control: 'inline-radio',
+      options: ['h1', 'h2', 'h3'],
+      table: {
+        category: 'Title'
+      },
+    },
+    titleInteractiveWhenNarrow: {
       control: 'boolean',
       table: {
         category: 'Title'
@@ -71,92 +84,137 @@ export default {
       },
     },
 
-    // Trailing actions
+    // Actions
 
-    trailingActions: {
+    actions: {
       control: 'inline-radio',
       options: ['none', 'info'],
       table: {
-        category: 'Trailing actions'
-      },
-    },
-    trailingActionPosition: {
-      control: 'inline-radio',
-      options: ['eyebrow', 'title'],
-      table: {
-        category: 'Trailing actions'
+        category: 'Actions'
       },
     },
 
     // Children
 
-    visualChildren: {
-      description: 'creates a slot for custom visuals',
+    contextBarChildren: {
+      description: 'creates a slot for the context bar',
       table: {
         category: 'Slots'
       },
     },
-    actionChildren: {
+    contextBarActionsChildren: {
+      description: 'creates a slot for actions in the context bar',
+      table: {
+        category: 'Slots'
+      },
+    },
+    leadingVisualChildren: {
+      description: 'creates a slot for custom leading visuals',
+      table: {
+        category: 'Slots'
+      },
+    },
+    actionsChildren: {
       description: 'creates a slot for action buttons',
       table: {
         category: 'Slots'
       },
-    }
+    },
+    descriptionChildren: {
+      description: 'creates a slot for the description region',
+      table: {
+        category: 'Slots'
+      },
+    },
+    navigationChildren: {
+      description: 'creates a slot for the navigation region',
+      table: {
+        category: 'Slots'
+      },
+    },
   },
 }
 
 export const PageHeaderTemplate = ({
+  // Title
   title,
   titleVariant,
   titleVariantWhenNarrow,
+
+  // Parent link
   hasParentLink,
-  parentLinkVariant,
-  trailingActionPosition,
+  parentLinkLabel,
+  parentLinkDisplay,
+
+  // Children
+  contextBarChildren,
+  contextBarActionsChildren,
+  leadingVisualChildren,
+  actionsChildren,
+  descriptionChildren,
+  navigationChildren,
 }) => {
 
   const pageHeaderClassName = 'PageHeader';
 
-  // Default values
+  // Default title variant
   titleVariant = titleVariant ?? 'title-medium';
   titleVariantWhenNarrow = titleVariantWhenNarrow ?? 'title-medium';
-  trailingActionPosition = trailingActionPosition ?? 'title';
+  titleVariantWhenNarrow = titleVariant === titleVariantWhenNarrow ? null : titleVariantWhenNarrow;
 
   const titleVariantClassName =
-    (titleVariant.startsWith('title'))
+    (titleVariant && titleVariant.startsWith('title'))
       ? titleVariant.split('-')[1]
       : titleVariant;
 
   const titleVariantWhenNarrowClassName =
-    (titleVariantWhenNarrow.startsWith('title'))
+    (titleVariantWhenNarrow && titleVariantWhenNarrow.startsWith('title'))
       ? titleVariantWhenNarrow.split('-')[1]
       : titleVariantWhenNarrow;
 
   return (
     <>
-      <div className={clsx(pageHeaderClassName, titleVariant && `PageHeader--${titleVariant}`)}>
-        <div className={clsx(`${pageHeaderClassName}-titleWrap`)}>
+      <div className={clsx(pageHeaderClassName)}>
 
-          {/* Eyebrow */}
-          <div className={clsx(`${pageHeaderClassName}-eyebrow`)}>
-            {hasParentLink && parentLinkVariant === 'eyebrowText' && (
+        {/* Context bar */}
+        <div className={clsx(`${pageHeaderClassName}-contextBar`)}>
+            {hasParentLink && (
               <>
                 <div className={clsx(`${pageHeaderClassName}-parentLink`)}>
-                  <a href="#" aria-label="Back to :parent_link"><ArrowLeftIcon /> Parent link</a>
+                  <a href="#" aria-label={`Back to ${parentLinkLabel}`}>
+                    <span class={clsx(`${pageHeaderClassName}-parentLink-icon`)}>
+                      <ArrowLeftIcon />
+                    </span>
+                    <span class={clsx(`${pageHeaderClassName}-parentLink-label`)}>{parentLinkLabel}</span>
+                  </a>
+                </div>
+              </>
+            )}
+            
+            {contextBarActionsChildren && (
+              <>
+                <div className={clsx(
+                  `${pageHeaderClassName}-actions`,
+                  `${pageHeaderClassName}-actions-posContextBar`,
+                )}>
+                  {contextBarActionsChildren}
                 </div>
               </>
             )}
           </div>
+
+        <div className={clsx(`${pageHeaderClassName}-titleBar`)}>
 
           {/* Title */}
           <div className={
             clsx(
               `${pageHeaderClassName}-title`, 
               `${pageHeaderClassName}-title--${titleVariantClassName}`,
-              `${pageHeaderClassName}-title--${titleVariantWhenNarrowClassName}-whenNarrow`,
-              hasParentLink && parentLinkVariant === 'backButton' && `${pageHeaderClassName}-title--hasBackButton`
+              (titleVariantWhenNarrow && `${pageHeaderClassName}-title--${titleVariantWhenNarrowClassName}-whenNarrow`),
+              hasParentLink && parentLinkDisplay === 'backButton' && `${pageHeaderClassName}-title--hasBackButton`
             )}
           >
-            {hasParentLink && parentLinkVariant === 'backButton' && (
+            {hasParentLink && parentLinkDisplay === 'backButton' && (
               <>
                 <div className={clsx(`${pageHeaderClassName}-backButton`)}>
                   <a href="#" aria-label="Back to :parent_link"><ArrowLeftIcon /></a>
@@ -174,13 +232,15 @@ export const PageHeaderTemplate = ({
             )}
           </div>
 
-          {/* Trailing actions */}
-          <div className={clsx(
-            `${pageHeaderClassName}-actions`,
-            `${pageHeaderClassName}-actions--pos-${trailingActionPosition}`
-          )}>
-            <button className="btn">Button</button>
-          </div>
+          {/* Actions */}
+          {actionsChildren && (
+            <div className={clsx(
+              `${pageHeaderClassName}-actions`,
+              `${pageHeaderClassName}-actions-posTitleBar`,
+            )}>
+              {actionsChildren}
+            </div>
+          )}
         </div>
       </div>
     </>
@@ -194,9 +254,12 @@ Playground.args = {
   title: 'Page title',
   titleVariant: 'title-medium',
   titleVariantWhenNarrow: 'title-medium',
+  titleTag: 'h1',
+  titleInteractiveWhenNarrow: false,
 
   // Parent link
   hasParentLink: true,
-  parentLinkVariant: 'eyebrowText',
-  trailingActionPosition: 'eyebrow',
+  parentLinkLabel: 'Parent link',
+  parentLinkDisplay: ['narrow'],
+  actionsPositionWhenNarrow: 'titleBar',
 };

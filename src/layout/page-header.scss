@@ -1,42 +1,61 @@
 .PageHeader {
   display: grid;
-  grid-template-columns: 1fr min-content;
+  grid-template-columns: 1fr;
   grid-template-areas:
-    'titleWrap'
+    'contextBar',
+    'titleBar'
     'description'
-    'navigationWrap';
+    'navigation';
   
 
   // Title
 
-  .PageHeader-titleWrap {
-    display: grid;
-    grid-area: titleWrap;
-    grid-template-columns: 1fr min-content;
-    grid-template-areas:
-      'eyebrow eyebrowActions'
-      'title titleActions';
-    column-gap: 8px;
-  }
+  // titleWrap shouldn't be a grid, since contextBar elements will continue
+  // taking over the column space...
 
-  // Title/eyebrow
+  // .PageHeader-titleWrap {
+  //   display: grid;
+  //   grid-area: titleWrap;
+  //   grid-template-columns: 1fr min-content;
+  //   grid-template-areas:
+  //     'contextBar contextBarActions'
+  //     'title titleActions';
+  //   column-gap: 8px;
+  // }
 
-  .PageHeader-eyebrow {
-    grid-area: eyebrow;
-    align-self: center;
-  }
+  // Context bar
 
-  .PageHeader-actions {
-    grid-area: titleActions;
+  .PageHeader-contextBar {
+    display: flex;
+    column-gap: 16px;
+    align-items: center;
 
-    &.PageHeader-actions--pos-title {
-      grid-area: titleActions;
+    .PageHeader-parentLink {
+      flex: 1 1 auto;
     }
 
-    &.PageHeader-actions--pos-eyebrow {
-      grid-area: eyebrowActions;
+    .PageHeader-actions {
+      flex: 0 0 auto;
     }
   }
+
+  // Title bar
+
+  .PageHeader-titleBar {
+    display: flex;
+    column-gap: 16px;
+
+    .PageHeader-title {
+      flex: 1 1 auto;
+    }
+
+    .PageHeader-actions {
+      flex: 0 0 auto;
+      background: yellow;
+    }
+  }
+
+  // Title
 
   .PageHeader-title {
     grid-area: title;
@@ -55,9 +74,6 @@
       color: var(--color-fg-muted);
       font-size: var(--gh-text-caption-size);
       line-height: var(--gh-text-caption-lineHeight);
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
       padding: 4px 8px;
       margin: -4px -8px;
       border-radius: 6px;
@@ -67,6 +83,12 @@
         text-decoration: none;
         background: #ececec; //fixme
       }
+    }
+
+    .PageHeader-parentLink-label {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
 
@@ -78,44 +100,39 @@
     grid-template-columns: auto;
     gap: 8px;
 
-    // Replace with Primer primitives
-
-    // title-large
-    --gh-text-title-large-fontSize: 2rem; /* 32px */
-    --gh-text-title-large-fontWeight: 600;
-    --gh-text-title-large-lineHeight: calc(40 / 32);
-    --gh-text-title-large-lineBoxHeight: 2.5rem; /* 40px */
-
-    // title-medium
-    --gh-text-title-medium-fontSize: 1.25rem; /* 20px */
-    --gh-text-title-medium-fontWeight: 600;
-    --gh-text-title-medium-lineHeight: calc(32 / 20);
-    --gh-text-title-medium-lineBoxHeight: 2rem; /* 32px */
-
-    // subtitle
-    --gh-text-subtitle-fontSize: 1.25rem; /* 20px */
-    --gh-text-subtitle-fontWeight: 400;
-    --gh-text-subtitle-lineHeight: calc(32 / 20);
-    --gh-text-subtitle-lineBoxHeight: 2rem; /* 32px */
+    // Title variants
 
     &.PageHeader-title--large {
-      font-size: var(--gh-text-title-large-fontSize);
-      line-height: var(--gh-text-title-large-lineHeight);
-      font-weight: var(--gh-text-title-large-fontWeight);
+      // Replace with Primer primitives design tokens: `title-large` 
+      font: 400 2rem/calc(40 / 32) $body-font;
 
       .PageHeader-backButton a {
-        height: var(--gh-text-title-large-lineBoxHeight);
+        // Replace with Primer primitives `title-large` lineBoxHeight
+        height: 2.5rem;
       }
     }
     &.PageHeader-title--medium {
-      font-size: var(--gh-text-title-medium-fontSize);
-      line-height: var(--gh-text-title-medium-lineHeight);
-      font-weight: var(--gh-text-title-medium-fontWeight);
+      // Replace with Primer primitives design tokens: `title-medium` 
+      font: 600 1.25rem/calc(32 / 20) $body-font;
     }
     &.PageHeader-title--subtitle {
-      font-size: var(--gh-text-subtitle-fontSize);
-      line-height: var(--gh-text-subtitle-lineHeight);
-      font-weight: var(--gh-text-subtitle-fontWeight);
+      // Replace with Primer primitives design tokens: `subtitle` 
+      font: 400 1.25rem/calc(32 / 20) $body-font;
+    }
+
+    // Reponsive title variants
+
+    // Replace with viewport range variables: `narrow`
+    @media (max-width: 768px) {
+      &.PageHeader-title--medium-whenNarrow {
+        // Replace with Primer primitives design tokens: `title-medium` 
+        font: 600 1.25rem/calc(32 / 20) $body-font;
+      }
+
+      &.PageHeader-title--subtitle-whenNarrow {
+        // Replace with Primer primitives design tokens: `title-medium` 
+        font: 400 1.25rem/calc(32 / 20) $body-font;
+      }
     }
 
     &.PageHeader-title--hasLeadingVisual {
