@@ -7,22 +7,6 @@
     'description'
     'navigation';
   
-
-  // Title
-
-  // titleWrap shouldn't be a grid, since contextBar elements will continue
-  // taking over the column space...
-
-  // .PageHeader-titleWrap {
-  //   display: grid;
-  //   grid-area: titleWrap;
-  //   grid-template-columns: 1fr min-content;
-  //   grid-template-areas:
-  //     'contextBar contextBarActions'
-  //     'title titleActions';
-  //   column-gap: 8px;
-  // }
-
   // Context bar
 
   .PageHeader-contextBar {
@@ -51,7 +35,6 @@
 
     .PageHeader-actions {
       flex: 0 0 auto;
-      background: yellow;
     }
   }
 
@@ -109,6 +92,18 @@
       .PageHeader-backButton a {
         // Replace with Primer primitives `title-large` lineBoxHeight
         height: 2.5rem;
+      }
+
+      + .PageHeader-actions {
+        // Replace with viewport range variables: `regular`
+        @media (min-width: 768px) {
+          // This centralizes vertically the action in a 40px tall line height
+          // for a title-large.
+          //
+          // Replace with Primer primitives `title-large` lineBoxHeight
+          // calc((titleLarge-lineBoxHeight - uiControl-medium-size) / 2)
+          padding-block: calc((2.5rem - 2rem) / 2) 0;
+        }
       }
     }
     &.PageHeader-title--medium {
@@ -183,5 +178,19 @@
         }
       }
     }
+  }
+
+  // Description slot
+
+  .PageHeader-description {
+    margin-top: 8px;
+    overflow: auto;
+  }
+
+  // Navigation slot
+
+  .PageHeader-navigation {
+    margin-top: 16px;
+    overflow: auto;
   }
 }

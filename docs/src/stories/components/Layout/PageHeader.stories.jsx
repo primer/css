@@ -157,6 +157,10 @@ export const PageHeaderTemplate = ({
 
   const pageHeaderClassName = 'PageHeader';
 
+  // Replace with Primer primitives viewport ranges
+  const showWhenNarrow = 'd-block d-md-none d-lg-none d-xl-none';
+  const showWhenRegular = 'd-none d-md-block d-lg-block d-xl-block';
+
   // Default title variant
   titleVariant = titleVariant ?? 'title-medium';
   titleVariantWhenNarrow = titleVariantWhenNarrow ?? 'title-medium';
@@ -177,20 +181,27 @@ export const PageHeaderTemplate = ({
       <div className={clsx(pageHeaderClassName)}>
 
         {/* Context bar */}
-        <div className={clsx(`${pageHeaderClassName}-contextBar`)}>
+        {(contextBarChildren || hasParentLink || contextBarActionsChildren) && (
+          <div className={clsx(`${pageHeaderClassName}-contextBar`)}>
             {hasParentLink && (
               <>
-                <div className={clsx(`${pageHeaderClassName}-parentLink`)}>
-                  <a href="#" aria-label={`Back to ${parentLinkLabel}`}>
-                    <span class={clsx(`${pageHeaderClassName}-parentLink-icon`)}>
-                      <ArrowLeftIcon />
-                    </span>
-                    <span class={clsx(`${pageHeaderClassName}-parentLink-label`)}>{parentLinkLabel}</span>
-                  </a>
+                <div className={showWhenNarrow}>
+                  <div className={clsx(`${pageHeaderClassName}-parentLink`)}>
+                    <a href="#" aria-label={`Back to ${parentLinkLabel}`}>
+                      <span class={clsx(`${pageHeaderClassName}-parentLink-icon`)}>
+                        <ArrowLeftIcon />
+                      </span>
+                      <span class={clsx(`${pageHeaderClassName}-parentLink-label`)}>{parentLinkLabel}</span>
+                    </a>
+                  </div>
                 </div>
               </>
             )}
-            
+
+            {contextBarChildren && (
+              {contextBarChildren}
+            )}
+
             {contextBarActionsChildren && (
               <>
                 <div className={clsx(
@@ -202,6 +213,7 @@ export const PageHeaderTemplate = ({
               </>
             )}
           </div>
+        )}
 
         <div className={clsx(`${pageHeaderClassName}-titleBar`)}>
 
@@ -242,6 +254,20 @@ export const PageHeaderTemplate = ({
             </div>
           )}
         </div>
+
+        {/* Description */}
+        {descriptionChildren && (
+          <div className={clsx(`${pageHeaderClassName}-description`)}>
+            {descriptionChildren}
+          </div>
+        )}
+
+        {/* Navigation */}
+        {navigationChildren && (
+          <div className={clsx(`${pageHeaderClassName}-navigation`)}>
+            {navigationChildren}
+          </div>
+        )}
       </div>
     </>
   )
@@ -261,5 +287,4 @@ Playground.args = {
   hasParentLink: true,
   parentLinkLabel: 'Parent link',
   parentLinkDisplay: ['narrow'],
-  actionsPositionWhenNarrow: 'titleBar',
 };
