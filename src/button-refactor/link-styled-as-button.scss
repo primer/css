@@ -12,8 +12,8 @@
   @extend .Button-content;
 }
 
-.LinkStyledAsButton-content--visualFixed {
-  @extend .Button-content--visualFixed;
+.LinkStyledAsButton-content--alignStart {
+  @extend .Button-content--alignStart;
 }
 
 // link child elements

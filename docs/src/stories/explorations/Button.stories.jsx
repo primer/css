@@ -4,10 +4,6 @@ import clsx from 'clsx'
 export default {
   title: 'Explorations/Button',
   parameters: {
-    // design: {
-    //   type: 'figma',
-    //   url: 'https://www.figma.com/file/GCvY3Qv8czRgZgvl1dG6lp/Primer-Web?node-id=4371%3A7128'
-    // },
     layout: 'padded'
   },
 
@@ -39,19 +35,19 @@ export default {
       description: 'Controls button height',
       defaultValue: 0
     },
-    visualPosition: {
+    alignContent: {
       options: [0, 1], // iterator
-      mapping: [null, 'Button-content--visualFixed'], // values
+      mapping: [null, 'Button-content--alignStart'], // values
       control: {
         type: 'inline-radio',
-        labels: ['default', 'fixed']
+        labels: ['center [default]', 'start']
       },
       table: {
         category: 'CSS'
       },
       description:
-        '[Name TBD!] Controls where the leading or trailing visuals position themselves in a fullWidth button (lock to text label or button bounds)',
-      defaultValue: 'Button-content--visualFixed'
+        'Align button label + visuals to the center (default for CTA buttons) or start for select/dropdown button scenarios',
+      defaultValue: 0
     },
     label: {
       defaultValue: 'Button',
@@ -171,9 +167,9 @@ export const ButtonTemplate = ({
   pressed,
   focusElement,
   active,
-  visualPosition,
   className,
-  ariaLabel
+  ariaLabel,
+  alignContent
 }) => (
   <>
     <button
@@ -189,8 +185,7 @@ export const ButtonTemplate = ({
       aria-pressed={pressed ? pressed : undefined}
       aria-label={ariaLabel ? ariaLabel : undefined}
     >
-      {/* {leadingVisual && <span className="" dangerouslySetInnerHTML={{__html: leadingVisual}} />} */}
-      <span className={clsx(visualPosition && `${visualPosition}`, 'Button-content')}>
+      <span className={clsx('Button-content', alignContent && `${alignContent}`)}>
         {leadingVisual && <span className="Button-visual Button-leadingVisual">{star}</span>}
         <span className="Button-label">{label}</span>
         {trailingVisual && <span className="Button-visual Button-trailingVisual">{star}</span>}

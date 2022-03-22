@@ -1,3 +1,58 @@
+// temporary, pre primitives release
+:root {
+  --base-size-128: 8rem;
+  --base-size-112: 7rem;
+  --base-size-96: 6rem;
+  --base-size-80: 5rem;
+  --base-size-64: 4rem;
+  --base-size-48: 3rem;
+  --base-size-44: 2.75rem;
+  --base-size-40: 2.5rem;
+  --base-size-36: 2.25rem;
+  --base-size-32: 2rem;
+  --base-size-28: 1.75rem;
+  --base-size-24: 1.5rem;
+  --base-size-20: 1.25rem;
+  --base-size-16: 1rem;
+  --base-size-12: 0.75rem;
+  --base-size-8: 0.5rem;
+  --base-size-4: 0.25rem;
+  --gh-control-xlarge-gap: var(--base-size-8);
+  --gh-control-xlarge-paddingInline-spacious: var(--base-size-16);
+  --gh-control-xlarge-paddingInline-normal: var(--base-size-12);
+  --gh-control-xlarge-lineBoxHeight: var(--base-size-20);
+  --gh-control-xlarge-size: var(--base-size-48);
+  --gh-control-large-gap: var(--base-size-8);
+  --gh-control-large-paddingInline-spacious: var(--base-size-16);
+  --gh-control-large-paddingInline-normal: var(--base-size-12);
+  --gh-control-large-lineBoxHeight: var(--base-size-20);
+  --gh-control-large-size: var(--base-size-40);
+  --gh-control-medium-gap: var(--base-size-8);
+  --gh-control-medium-paddingInline-spacious: var(--base-size-16);
+  --gh-control-medium-paddingInline-normal: var(--base-size-12);
+  --gh-control-medium-paddingInline-condensed: var(--base-size-8);
+  --gh-control-medium-lineBoxHeight: var(--base-size-20);
+  --gh-control-medium-size: var(--base-size-32);
+  --gh-control-small-gap: var(--base-size-4);
+  --gh-control-small-paddingInline-normal: var(--base-size-12);
+  --gh-control-small-paddingInline-condensed: var(--base-size-8);
+  --gh-control-small-lineBoxHeight: var(--base-size-20);
+  --gh-control-small-size: var(--base-size-28);
+  --gh-control-xsmall-gap: var(--base-size-4);
+  --gh-control-xsmall-paddingInline-spacious: var(--base-size-12);
+  --gh-control-xsmall-paddingInline-normal: var(--base-size-8);
+  --gh-control-xsmall-paddingInline-condensed: var(--base-size-4);
+  --gh-control-xsmall-lineBoxHeight: var(--base-size-20);
+  --gh-control-xsmall-size: var(--base-size-24);
+  --gh-control-minTarget-coarse: var(--base-size-44);
+  --gh-control-minTarget-fine: var(--base-size-16);
+  --gh-control-xlarge-paddingBlock: calc((var(--gh-control-xlarge-size) - var(--gh-control-xlarge-lineBoxHeight)) / 2);
+  --gh-control-large-paddingBlock: calc((var(--gh-control-large-size) - var(--gh-control-large-lineBoxHeight)) / 2);
+  --gh-control-medium-paddingBlock: calc((var(--gh-control-medium-size) - var(--gh-control-medium-lineBoxHeight)) / 2);
+  --gh-control-small-paddingBlock: calc((var(--gh-control-small-size) - var(--gh-control-small-lineBoxHeight)) / 2);
+  --gh-control-xsmall-paddingBlock: calc((var(--gh-control-xsmall-size) - var(--gh-control-xsmall-lineBoxHeight)) / 2);
+}
+
 // base button
 .Button {
   position: relative;
@@ -13,13 +68,13 @@
   transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   transition-property: color, background-color, border-color;
   text-align: center;
-  height: 32px;
-  padding: 0 16px;
+  height: var(--gh-control-medium-size);
+  padding: 0 var(--gh-control-medium-paddingInline-normal);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: $spacer-2;
+  gap: var(--gh-control-medium-gap);
 
   // mobile friendly sizing
   @media (pointer: course) {
@@ -59,15 +114,16 @@
   grid-template-areas: 'leadingVisual text trailingVisual';
   grid-template-columns: min-content minmax(0, auto) min-content;
   align-items: center;
+  place-content: center;
 
   > :not(:last-child) {
-    margin-right: $spacer-2;
+    margin-right: var(--gh-control-medium-gap);
   }
 }
 
 // center child elements for fullWidth
-.Button-content--visualFixed {
-  place-content: center;
+.Button-content--alignStart {
+  justify-content: start;
 }
 
 // button child elements
@@ -80,6 +136,7 @@
 .Button-label {
   grid-area: text;
   white-space: nowrap;
+  line-height: var(--gh-control-medium-lineBoxHeight);
 }
 
 .Button-leadingVisual {
@@ -91,18 +148,44 @@
 }
 
 .Button-trailingAction {
-  margin-right: -8px;
+  margin-right: -6px;
 }
 
 // sizes
 
 .Button--small {
-  height: 28px;
+  //   height: 28px;
   font-size: $font-size-small;
+  height: var(--gh-control-small-size);
+  padding: 0 var(--gh-control-small-paddingInline-normal);
+  gap: var(--gh-control-small-gap);
+
+  .Button-label {
+    line-height: var(--gh-control-small-lineBoxHeight);
+  }
+
+  .Button-content {
+    > :not(:last-child) {
+      margin-right: var(--gh-control-small-gap);
+    }
+  }
 }
 
 .Button--large {
-  height: 40px;
+  //   height: 40px;
+  height: var(--gh-control-large-size);
+  padding: 0 var(--gh-control-large-paddingInline-normal);
+  gap: var(--gh-control-large-gap);
+
+  .Button-label {
+    line-height: var(--gh-control-large-lineBoxHeight);
+  }
+
+  .Button-content {
+    > :not(:last-child) {
+      margin-right: var(--gh-control-large-gap);
+    }
+  }
 }
 
 .Button--fullWidth {

@@ -44,19 +44,19 @@ export default {
       description: 'Controls button height',
       defaultValue: 0
     },
-    visualPosition: {
+    alignContent: {
       options: [0, 1], // iterator
-      mapping: [null, 'LinkStyledAsButton-content--visualFixed'], // values
+      mapping: [null, 'Button-content--alignStart'], // values
       control: {
         type: 'inline-radio',
-        labels: ['default', 'fixed']
+        labels: ['center [default]', 'start']
       },
       table: {
         category: 'CSS'
       },
       description:
-        '[Name TBD!] Controls where the leading or trailing visuals position themselves in a fullWidth button (lock to text label or button bounds)',
-      defaultValue: 'Button-visual--fixed'
+        'Align button label + visuals to the center (default for CTA buttons) or start for select/dropdown button scenarios',
+      defaultValue: 0
     },
     label: {
       defaultValue: 'Link',
@@ -186,7 +186,7 @@ export const LinkStyledAsButtonTemplate = ({
   showTrailingAction,
   focusElement,
   active,
-  visualPosition,
+  alignContent,
   className,
   href,
   target
@@ -204,8 +204,7 @@ export const LinkStyledAsButtonTemplate = ({
         active && 'LinkStyledAsButton--active'
       )}
     >
-      {/* {leadingVisual && <span className="" dangerouslySetInnerHTML={{__html: leadingVisual}} />} */}
-      <span className={clsx(visualPosition && `${visualPosition}`, 'LinkStyledAsButton-content')}>
+      <span className={clsx(alignContent && `${alignContent}`, 'LinkStyledAsButton-content')}>
         {leadingVisual && <span className="LinkStyledAsButton-visual LinkStyledAsButton-leadingVisual">{star}</span>}
         <span className="LinkStyledAsButton-label">{label}</span>
         {trailingVisual && <span className="LinkStyledAsButton-visual LinkStyledAsButton-trailingVisual">{star}</span>}
