@@ -63,8 +63,12 @@
     color: var(--color-fg-muted);
   }
 
-  &.btn-primary .octicon {
-    color: inherit;
+  &.btn-primary {
+    background-clip: border-box;
+
+    .octicon {
+      color: inherit;
+    }
   }
 }
 
