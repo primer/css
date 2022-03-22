@@ -93,18 +93,6 @@
         // Replace with Primer primitives `title-large` lineBoxHeight
         height: 2.5rem;
       }
-
-      + .PageHeader-actions {
-        // Replace with viewport range variables: `regular`
-        @media (min-width: 768px) {
-          // This centralizes vertically the action in a 40px tall line height
-          // for a title-large.
-          //
-          // Replace with Primer primitives `title-large` lineBoxHeight
-          // calc((titleLarge-lineBoxHeight - uiControl-medium-size) / 2)
-          padding-block: calc((2.5rem - 2rem) / 2) 0;
-        }
-      }
     }
     &.PageHeader-title--medium {
       // Replace with Primer primitives design tokens: `title-medium` 
