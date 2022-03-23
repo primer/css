@@ -10,24 +10,84 @@ bundle: autocomplete
 
 A list of items used to show autocompleted results. Use the [`<auto-complete>`](https://github.com/github/auto-complete-element) element to add functionality.
 
+### Default (stacked label)
+
 ```html live
 <div class="position-relative">
-  <input class="form-control input-block" type="text" aria-label="Search" placeholder="Search">
-  <ul class="autocomplete-results">
-    <li class="autocomplete-item" aria-selected="true">Option 1</li>
-    <li class="autocomplete-item">Option 2</li>
-    <li class="autocomplete-item">Option 3</li>
-  </ul>
+  <label>Search by user</label>
+  <span class="autocomplete-body">
+    <input class="form-control" type="text">
+    <ul class="autocomplete-results">
+      <li class="autocomplete-item" aria-selected="true">Option 1</li>
+      <li class="autocomplete-item">Option 2</li>
+      <li class="autocomplete-item">Option 3</li>
+    </ul>
+  </span>
 </div>
 
-<style>.frame-example {width:300px;height:160px;}</style>
+<style>.frame-example {height:160px;}</style>
 ```
 
+### Inline label
+
+```html live
+<div class="position-relative">
+  <label class="autocomplete-label-inline">Search by team</label>
+  <span class="autocomplete-body">
+    <input class="form-control" type="text">
+    <ul class="autocomplete-results">
+      <li class="autocomplete-item" aria-selected="true">Option 1</li>
+      <li class="autocomplete-item">Option 2</li>
+      <li class="autocomplete-item">Option 3</li>
+    </ul>
+  </span>
+</div>
+
+<style>.frame-example {height:160px;}</style>
+```
+
+On smaller viewport, we switch to stacking.
+
+```html live
+<div class="position-relative">
+  <label class="autocomplete-label-inline">Search by team</label>
+  <span class="autocomplete-body">
+    <input class="form-control" type="text">
+    <ul class="autocomplete-results">
+      <li class="autocomplete-item" aria-selected="true">Option 1</li>
+      <li class="autocomplete-item">Option 2</li>
+      <li class="autocomplete-item">Option 3</li>
+    </ul>
+  </span>
+</div>
+
+<style>.frame-example {height:160px;width:300px;}</style>
+```
+
+### Embedded icon with hidden label
+
+```html live
+<div class="position-relative">
+  <label class="sr-only">Search by org</label>
+  <span class="autocomplete-body">
+    <input class="form-control" type="text">
+    <ul class="autocomplete-results">
+      <li class="autocomplete-item" aria-selected="true">Option 1</li>
+      <li class="autocomplete-item">Option 2</li>
+      <li class="autocomplete-item">Option 3</li>
+    </ul>
+  </span>
+</div>
+
+<style>.frame-example {height:160px;}</style>
+```
+
+### Additional content
 Autocomplete items can contain additional content, like an `.avatar`. Or use utility classes to customize the text style.
 
 ```html live
 <div class="position-relative">
-  <input class="form-control input-block" type="text" aria-label="Search by user" placeholder="Search by user">
+  <input class="form-control" type="text" aria-label="Search by user" placeholder="Search by user">
   <ul class="autocomplete-results">
     <li class="autocomplete-item" aria-selected="true">
       <img src="https://github.com/github.png" width="20" class="avatar mr-1" alt="">
