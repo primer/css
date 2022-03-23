@@ -6,11 +6,9 @@ source: 'https://github.com/primer/css/tree/main/src/autocomplete'
 bundle: autocomplete
 ---
 
-## Autocomplete
-
 A list of items used to show autocompleted results. Use the [`<auto-complete>`](https://github.com/github/auto-complete-element) element to add functionality.
 
-### Default (stacked label)
+## Default (stacked label)
 
 ```html live
 <div class="position-relative">
@@ -28,7 +26,7 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
 <style>.frame-example {height:160px;}</style>
 ```
 
-### Inline label
+## Inline label
 
 ```html live
 <div class="position-relative">
@@ -36,9 +34,9 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
   <span class="autocomplete-body">
     <input class="form-control" type="text">
     <ul class="autocomplete-results">
-      <li class="autocomplete-item" aria-selected="true">Option 1</li>
-      <li class="autocomplete-item">Option 2</li>
-      <li class="autocomplete-item">Option 3</li>
+      <li class="autocomplete-item" aria-selected="true">Team 1 (works on Ruby architecture)</li>
+      <li class="autocomplete-item">Team 2 (works on frontend JS architecture) </li>
+      <li class="autocomplete-item">Team 3 (this team works on design systems)</li>
     </ul>
   </span>
 </div>
@@ -54,9 +52,9 @@ On smaller viewport, we switch to stacking.
   <span class="autocomplete-body">
     <input class="form-control" type="text">
     <ul class="autocomplete-results">
-      <li class="autocomplete-item" aria-selected="true">Option 1</li>
-      <li class="autocomplete-item">Option 2</li>
-      <li class="autocomplete-item">Option 3</li>
+      <li class="autocomplete-item" aria-selected="true">Team 1 (works on Ruby architecture)</li>
+      <li class="autocomplete-item">Team 2 (works on frontend JS architecture) </li>
+      <li class="autocomplete-item">Team 3 (this team works on design systems)</li>
     </ul>
   </span>
 </div>
@@ -64,7 +62,7 @@ On smaller viewport, we switch to stacking.
 <style>.frame-example {height:160px;width:300px;}</style>
 ```
 
-### Embedded icon with hidden label
+## Embedded icon with hidden label
 
 ```html live
 <div class="position-relative">
@@ -82,7 +80,7 @@ On smaller viewport, we switch to stacking.
 <style>.frame-example {height:160px;}</style>
 ```
 
-### Additional content
+## Additional content
 Autocomplete items can contain additional content, like an `.avatar`. Or use utility classes to customize the text style.
 
 ```html live
