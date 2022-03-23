@@ -18,7 +18,7 @@
 }
 
 // Embedded icon
-.autocomplete-embedded-icon { 
+.autocomplete-embedded-icon {
   position: absolute;
   left: 0;
 }
@@ -28,8 +28,8 @@
   position: absolute;
   left: 0;
   z-index: 99;
-  min-width: 100%;
   width: max-content;
+  min-width: 100%;
   max-height: 20em;
   overflow-y: auto;
   // stylelint-disable-next-line primer/typography
@@ -42,7 +42,7 @@
 }
 
 .autocomplete-results--embedded-icon {
- // to do: define
+  // to do: define
 }
 
 // One of the items that appears within an autocomplete group
