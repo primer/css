@@ -8,8 +8,11 @@
 .autocomplete-label-inline {
   display: inline;
   margin-right: $spacer-2 * 0.75;
+}
 
-  @media (max-width: $width-sm) {
+// Switch to stacked at smaller viewport
+@media (max-width: $width-sm) {
+  .autocomplete-label-inline {
     display: block;
     margin-bottom: $spacer-2 * 0.75;
   }
