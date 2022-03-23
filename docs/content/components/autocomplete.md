@@ -62,14 +62,34 @@ On smaller viewport, we switch to stacking.
 <style>.frame-example {height:160px;width:300px;}</style>
 ```
 
+## Embedded icon with visible label
+
+```html live
+<div class="position-relative">
+  <label>Search by org</label>
+  <span class="autocomplete-body">
+    <svg class="octicon autocomplete-embedded-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"></path></svg>
+    <input class="form-control" type="text">
+    <ul class="autocomplete-results autocomplete-results--embedded-icon">
+      <li class="autocomplete-item" aria-selected="true">Option 1</li>
+      <li class="autocomplete-item">Option 2</li>
+      <li class="autocomplete-item">Option 3</li>
+    </ul>
+  </span>
+</div>
+
+<style>.frame-example {height:160px;}</style>
+```
+
 ## Embedded icon with hidden label
 
 ```html live
 <div class="position-relative">
   <label class="sr-only">Search by org</label>
   <span class="autocomplete-body">
+    <svg aria-hidden="true" class="octicon autocomplete-embedded-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"></path></svg>
     <input class="form-control" type="text">
-    <ul class="autocomplete-results">
+    <ul class="autocomplete-results autocomplete-results--embedded-icon">
       <li class="autocomplete-item" aria-selected="true">Option 1</li>
       <li class="autocomplete-item">Option 2</li>
       <li class="autocomplete-item">Option 3</li>

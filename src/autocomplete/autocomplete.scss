@@ -12,6 +12,12 @@
   position: relative;
 }
 
+// Embedded icon
+.autocomplete-embedded-icon { 
+  position: absolute;
+  left: 0;
+}
+
 // A pop up list of items used to show autocompleted results
 .autocomplete-results {
   position: absolute;
@@ -28,6 +34,10 @@
   border: $border-width $border-style var(--color-border-default);
   border-radius: $border-radius;
   box-shadow: var(--color-shadow-medium);
+}
+
+.autocomplete-results--embedded-icon {
+ // to do: define
 }
 
 // One of the items that appears within an autocomplete group
