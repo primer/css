@@ -20,11 +20,11 @@
 // Embedded icon
 .autocomplete-embedded-icon {
   position: absolute;
-  left: 5%;
   top: 15%;
+  left: 5%;
 
-  + input {
-    padding-left: 30px;
+  + .form-control {
+    padding-left: $spacer-5;
   }
 }
 
