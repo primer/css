@@ -1,4 +1,4 @@
-// label
+// Inline label (non-default)
 .autocomplete-label-inline {
   display: inline;
 
@@ -7,6 +7,7 @@
   }
 }
 
+// Wrapper for the input and result elements to ensure alignment
 .autocomplete-body {
   position: relative;
 }
@@ -16,7 +17,7 @@
   position: absolute;
   left: 0;
   z-index: 99;
-  width: 100%;
+  width: max-content;
   max-height: 20em;
   overflow-y: auto;
   // stylelint-disable-next-line primer/typography
