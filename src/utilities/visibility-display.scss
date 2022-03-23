@@ -65,6 +65,8 @@
   }
 }
 
+// The width of a `wide` viewport range may change as we're finalizing
+// the Primer primitives viewport ranges proposal
 @media (min-width: $width-xl) {
   .show-whenWide {
     display: block !important;
