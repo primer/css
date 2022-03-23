@@ -7,7 +7,7 @@
 // Inline label (non-default)
 .autocomplete-label-inline {
   display: inline;
-
+ margin-right: $spacer-2 * .75;
   @media (max-width: $width-sm) {
     display: block;
   }
