@@ -10,6 +10,7 @@
  margin-right: $spacer-2 * .75;
   @media (max-width: $width-sm) {
     display: block;
+     margin-bottom: $spacer-2 * .75;
   }
 }
 
