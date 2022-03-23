@@ -1,5 +1,6 @@
 .Link {
   color: var(--color-accent-fg);
+  fill: var(--color-accent-fg);
 
   &:hover {
     text-decoration: underline;
@@ -10,9 +11,11 @@
 
   &.Link--muted {
     color: var(--color-fg-muted);
+    fill: var(--color-fg-muted);
 
     &:hover {
       color: var(--color-accent-fg);
+      fill: var(--color-accent-fg);
     }
   }
 }
@@ -21,5 +24,5 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 4px;
+  gap: 0.25em;
 }

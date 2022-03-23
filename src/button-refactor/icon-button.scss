@@ -2,13 +2,13 @@
   display: grid;
   place-content: center;
   padding: unset;
-  width: 32px;
+  width: var(--gh-control-medium-size);
 
   &.Button--small {
-    width: 28px;
+    width: var(--gh-control-small-size);
   }
 
   &.Button--large {
-    width: 44px;
+    width: var(--gh-control-large-size);
   }
 }

@@ -30,6 +30,7 @@ Existing issues
   -- Buttons styled as links, links styled as buttons
 - https://github.com/github/primer/issues/65
   -- Segmented control, pressed state discussion
+  https://github.com/primer/design/pull/193
 
 ## Specific notes from previous bugs to keep in mind
 - [ ]  Check all button variants have shadow present
