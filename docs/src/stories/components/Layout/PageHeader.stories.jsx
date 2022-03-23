@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import {ArrowLeftIcon} from '@primer/octicons-react'
+import {ArrowLeftIcon, TriangleDownIcon} from '@primer/octicons-react'
 
 export default {
   title: 'Components/Layout/Page Header',
@@ -19,18 +19,21 @@ export default {
 
     hasParentLink: {
       control: 'boolean',
+      description: 'Whether to show a link to the parent page above the title. This is useful for mobile-friendly navigation, and by default it is only shown on narrow viewports.',
       table: {
         category: 'Parent link',
       },
     },
     parentLinkLabel: {
       control: 'text',
+      description: 'The text used to reference the parent link. Use a compact label that is descriptive of the parent page.',
       table: {
         category: 'Parent link',
       },
     },
-    parentLinkDisplay: {
+    parentLinkShow: {
       control: 'check',
+      description: 'Defines which viewport ranges the parent link is shown on. By default it is only shown on narrow viewports.',
       options: ['narrow', 'regular'],
       table: {
         category: 'Parent link'
@@ -52,6 +55,7 @@ export default {
     },
     titleVariant: {
       options: ['title-large', 'title-medium', 'subtitle'],
+      description: 'The title style variant. Use `title-large` for user-generated content such as issues, pull requests, or discussions. Use `title-medium` for static references and most other pages. Use `subtitle` when rendering a second PageHeader in a SplitPageLayout.',
       control: 'inline-radio',
       table: {
         category: 'Title'
@@ -60,25 +64,29 @@ export default {
     titleVariantWhenNarrow: {
       control: 'inline-radio',
       options: ['title-medium', 'subtitle'],
+      description: 'The title style variant when the viewport is narrow. `title-medium` is the default.',
       table: {
         category: 'Title'
       },
     },
     titleTag: {
       control: 'inline-radio',
+      description: 'The HTML tag to use for the heading. `h1` is the default.',
       options: ['h1', 'h2', 'h3'],
       table: {
         category: 'Title'
       },
     },
-    titleInteractiveWhenNarrow: {
+    titleIsInteractiveWhenNarrow: {
       control: 'boolean',
+      description: 'Whether the title should be interactive when the viewport is narrow. This is useful for linking to a navigation panel in mobile-friendly scenarios.',
       table: {
         category: 'Title'
       },
     },
-    leadingVisual: {
-      control: 'inline-radio',
+    hasLeadingVisual: {
+      control: 'boolean',
+      description: 'A leading visual next to the title. Use it for rendering a logo, status, or a representation of an item or object. Don’t use leading visuals to represent page categories.',
       table: {
         category: 'Title'
       },
@@ -140,6 +148,9 @@ export const PageHeaderTemplate = ({
   title,
   titleVariant,
   titleVariantWhenNarrow,
+  titleTag,
+  titleIsInteractiveWhenNarrow,
+  hasLeadingVisual,
 
   // Parent link
   hasParentLink,
@@ -165,6 +176,9 @@ export const PageHeaderTemplate = ({
   titleVariant = titleVariant ?? 'title-medium';
   titleVariantWhenNarrow = titleVariantWhenNarrow ?? 'title-medium';
   titleVariantWhenNarrow = titleVariant === titleVariantWhenNarrow ? null : titleVariantWhenNarrow;
+
+  // default titleTag
+  const TitleTag = titleTag ?? 'h1';
 
   const titleVariantClassName =
     (titleVariant && titleVariant.startsWith('title'))
@@ -220,10 +234,11 @@ export const PageHeaderTemplate = ({
           {/* Title */}
           <div className={
             clsx(
-              `${pageHeaderClassName}-title`, 
-              `${pageHeaderClassName}-title--${titleVariantClassName}`,
-              (titleVariantWhenNarrow && `${pageHeaderClassName}-title--${titleVariantWhenNarrowClassName}-whenNarrow`),
-              hasParentLink && parentLinkDisplay === 'backButton' && `${pageHeaderClassName}-title--hasBackButton`
+              `${pageHeaderClassName}-titleWrap`, 
+              `${pageHeaderClassName}-titleWrap--${titleVariantClassName}`,
+              titleVariantWhenNarrow && `${pageHeaderClassName}-titleWrap--${titleVariantWhenNarrowClassName}-whenNarrow`,
+              hasParentLink && parentLinkDisplay === 'backButton' && `${pageHeaderClassName}-titleWrap--hasBackButton`,
+              titleIsInteractiveWhenNarrow && `${pageHeaderClassName}-titleWrap--isInteractiveWhenNarrow`,
             )}
           >
             {hasParentLink && parentLinkDisplay === 'backButton' && (
@@ -233,13 +248,34 @@ export const PageHeaderTemplate = ({
                 </div>
               </>
             )}
-            {titleVariant === 'title-large' || titleVariant === 'title-medium' ? (
+
+            <TitleTag className={clsx(
+              `${pageHeaderClassName}-title`,
+              titleIsInteractiveWhenNarrow && `hide-whenNarrow`,
+            )}>
+              {hasLeadingVisual && (
+                <div className={clsx(
+                  `${pageHeaderClassName}-leadingVisual`,
+                )}>
+                  {leadingVisualChildren}
+                </div>
+              )}
+
+              {title}
+            </TitleTag>
+            
+            {titleIsInteractiveWhenNarrow && (
               <>
-                <h1>{title}</h1>
-              </>
-            ) : (
-              <>
-                <h2>{title}</h2>
+                <TitleTag className="sr-only show-whenNarrow">{title}</TitleTag>
+                <div className="show-whenNarrow">
+                  <a className={clsx(
+                    `${pageHeaderClassName}-title`,
+                    `${pageHeaderClassName}-title--interactive`,
+                  )} href="#" aria-label="Open navigation pane">
+                    {title}
+                    <TriangleDownIcon />
+                  </a>
+                </div>
               </>
             )}
           </div>
@@ -281,10 +317,10 @@ Playground.args = {
   titleVariant: 'title-medium',
   titleVariantWhenNarrow: 'title-medium',
   titleTag: 'h1',
-  titleInteractiveWhenNarrow: false,
+  titleIsInteractiveWhenNarrow: false,
 
   // Parent link
   hasParentLink: true,
   parentLinkLabel: 'Parent link',
-  parentLinkDisplay: ['narrow'],
+  parentLinkShow: ['narrow'],
 };

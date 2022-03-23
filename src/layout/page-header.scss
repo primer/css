@@ -29,7 +29,7 @@
     display: flex;
     column-gap: 16px;
 
-    .PageHeader-title {
+    .PageHeader-titleWrap {
       flex: 1 1 auto;
     }
 
@@ -37,13 +37,7 @@
       flex: 0 0 auto;
     }
   }
-
-  // Title
-
-  .PageHeader-title {
-    grid-area: title;
-  }
-
+  
   //////////////
 
   .PageHeader-parentLink {
@@ -75,17 +69,13 @@
     }
   }
 
-  // Title
+  // Title wrap
   
-  .PageHeader-title {
-    display: inline-grid;
-    grid-auto-flow: column;
-    grid-template-columns: auto;
-    gap: 8px;
+  .PageHeader-titleWrap {
 
     // Title variants
 
-    &.PageHeader-title--large {
+    &.PageHeader-titleWrap--large {
       // Replace with Primer primitives design tokens: `title-large` 
       font: 400 2rem/calc(40 / 32) $body-font;
 
@@ -93,12 +83,17 @@
         // Replace with Primer primitives `title-large` lineBoxHeight
         height: 2.5rem;
       }
+
+      .PageHeader-leadingVisual {
+        // Replace with Primer primitives `title-large` lineBoxHeight
+        max-height: 2.5rem;
+      }
     }
-    &.PageHeader-title--medium {
+    &.PageHeader-titleWrap--medium {
       // Replace with Primer primitives design tokens: `title-medium` 
       font: 600 1.25rem/calc(32 / 20) $body-font;
     }
-    &.PageHeader-title--subtitle {
+    &.PageHeader-titleWrap--subtitle {
       // Replace with Primer primitives design tokens: `subtitle` 
       font: 400 1.25rem/calc(32 / 20) $body-font;
     }
@@ -107,37 +102,59 @@
 
     // Replace with viewport range variables: `narrow`
     @media (max-width: 768px) {
-      &.PageHeader-title--medium-whenNarrow {
+      &.PageHeader-titleWrap--medium-whenNarrow {
         // Replace with Primer primitives design tokens: `title-medium` 
         font: 600 1.25rem/calc(32 / 20) $body-font;
       }
 
-      &.PageHeader-title--subtitle-whenNarrow {
+      &.PageHeader-titleWrap--subtitle-whenNarrow {
         // Replace with Primer primitives design tokens: `title-medium` 
         font: 400 1.25rem/calc(32 / 20) $body-font;
       }
     }
 
-    &.PageHeader-title--hasLeadingVisual {
+    &.PageHeader-titleWrap--hasLeadingVisual {
       background: pink;
     }
 
-    &.PageHeader-title--hasBackButton {
+    &.PageHeader-titleWrap--hasBackButton {
       //background: yellow;
       //margin-left: -8px;
       grid-template-columns: min-content auto;
     }
 
-    &.PageHeader-title--hasInteractiveTitle {
+    &.PageHeader-titleWrap--hasInteractiveTitle {
       background: orange;
     }
 
-    h1, h2, h3, h4 {
+    h1, h2, h3 {
       font-size: inherit;
       line-height: inherit;
       font-weight: inherit;
       //outline: 1px solid red;
     }
+
+    .PageHeader-title {
+      display: inline-grid;
+      grid-auto-flow: column;
+      grid-template-columns: auto;
+      gap: 8px;
+    }
+
+    .PageHeader-leadingVisual {
+      display: grid;
+      align-items: center;
+      // Replace with Primer primitives design token: `title-lineBoxHeight`
+      max-height: 2rem;
+    }
+
+    .PageHeader-title--interactive {
+      background: pink;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
   }
 
   // Back button

@@ -9,7 +9,7 @@ export default {
 
 export const Actions = PageHeaderTemplate.bind({});
 Actions.args = {
-  title: 'Webooks',
+  title: 'Webhooks',
 
   hasParentLink: true,
   parentLinkLabel: 'Repository settings',
@@ -18,6 +18,16 @@ Actions.args = {
     <>
       <button className="btn btn-primary">
         {/* Replace with Primer Primitives viewport ranges */}
+        
+        <span className="show-whenNarrow">
+          
+        </span>
+
+        <span className="hide-whenRegular">
+          
+        </span>
+
+
         <span className="d-block d-md-none d-lg-none d-xl-none">Add</span>
         <span className="d-none d-md-block d-lg-block d-xl-block">Add webhook</span>
       </button>
