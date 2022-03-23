@@ -40,10 +40,15 @@
 
 // Show/Hide Viewport range utilities
 
-.show-whenNarrow, .show-whenRegular, .show-whenWide {
+.show-whenNarrow,
+.show-whenRegular,
+.show-whenWide {
   display: none !important;
 }
-.hide-whenNarrow, .hide-whenRegular, .hide-whenWide {
+
+.hide-whenNarrow,
+.hide-whenRegular,
+.hide-whenWide {
   display: block !important;
 }
 
@@ -51,6 +56,7 @@
   .show-whenNarrow {
     display: block !important;
   }
+
   .hide-whenNarrow {
     display: none !important;
   }
@@ -60,6 +66,7 @@
   .show-whenRegular {
     display: block !important;
   }
+
   .hide-whenRegular {
     display: none !important;
   }
@@ -71,11 +78,11 @@
   .show-whenWide {
     display: block !important;
   }
+
   .hide-whenWide {
     display: none !important;
   }
 }
-
 
 /* Set the table-layout to fixed */
 .table-fixed { table-layout: fixed !important; }
