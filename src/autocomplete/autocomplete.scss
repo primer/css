@@ -20,7 +20,12 @@
 // Embedded icon
 .autocomplete-embedded-icon {
   position: absolute;
-  left: 0;
+  left: 5%;
+  top: 15%;
+
+  + input {
+    padding-left: 30px;
+  }
 }
 
 // A pop up list of items used to show autocompleted results
