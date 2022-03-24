@@ -1,5 +1,15 @@
 # @primer/css
 
+## 19.7.0
+
+### Minor Changes
+
+- [#1994](https://github.com/primer/css/pull/1994) [`69fe8c65`](https://github.com/primer/css/commit/69fe8c6512a3f0bbdbfdf7080b916a39173c2df9) Thanks [@khiga8](https://github.com/khiga8)! - Add support for inline, stack label in autocomplete
+
+### Patch Changes
+
+- [#1991](https://github.com/primer/css/pull/1991) [`5e87effa`](https://github.com/primer/css/commit/5e87effa671b194e188f699a79b246bdf61bd191) Thanks [@simurai](https://github.com/simurai)! - Fix `btn-primary` in flash alerts
+
 ## 19.6.0
 
 ### Minor Changes
