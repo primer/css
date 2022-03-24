@@ -20,6 +20,7 @@
 
 // Wrapper for the input and result elements to ensure alignment
 .autocomplete-body {
+  display: inline-block;
   position: relative;
 }
 
