@@ -26,8 +26,8 @@
 
 // Wrapper and conditional styles for when an icon is added
 .autocomplete-embedded-icon-wrap {
-  padding: 4px 12px;
   display: inline-flex;
+  padding: $spacer-1 $spacer-2;
   align-items: center;
 
   &:focus-within {
@@ -37,10 +37,11 @@
   }
 
   .form-control {
-    border: none;
-    box-shadow: none;
     padding: 0;
     margin-left: $spacer-2;
+    // stylelint-disable-next-line
+    border: none;
+    box-shadow: none;
 
     &:focus {
       box-shadow: none;
