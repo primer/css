@@ -23,14 +23,27 @@
   position: relative;
 }
 
-// Embedded icon
-.autocomplete-embedded-icon {
-  position: absolute;
-  top: 15%;
-  left: 5%;
+// Wrapper and conditional styles for when an icon is added
+.autocomplete-embedded-icon-wrap {
+  padding: 4px 12px;
+  display: inline-flex;
+  align-items: center;
 
-  + .form-control {
-    padding-left: $spacer-5;
+  &:focus-within {
+    border-color: var(--color-accent-emphasis);
+    outline: none;
+    box-shadow: var(--color-primer-shadow-focus);
+  }
+
+  .form-control {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin-left: $spacer-2;
+
+    &:focus {
+      box-shadow: none;
+    }
   }
 }
 
