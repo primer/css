@@ -32,6 +32,8 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
 
 ## Inline label
 
+**Note**: On smaller screen sizes, the labels will be stacked.
+
 ```html live
 <div class="position-relative">
   <label class="autocomplete-label-inline">Search by team</label>
@@ -51,8 +53,6 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
   }
 </style>
 ```
-
-On smaller screen sizes, the labels will be stacked.
 
 ## Embedded icon with visible label
 
