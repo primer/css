@@ -52,28 +52,7 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
 </style>
 ```
 
-On smaller viewport, we switch to stacking.
-
-```html live
-<div class="position-relative">
-  <label class="autocomplete-label-inline">Search by team</label>
-  <span class="autocomplete-body">
-    <input class="form-control" type="text" />
-    <ul class="autocomplete-results">
-      <li class="autocomplete-item" aria-selected="true">Team 1 (works on Ruby architecture)</li>
-      <li class="autocomplete-item">Team 2 (works on frontend JS architecture)</li>
-      <li class="autocomplete-item">Team 3 (this team works on design systems)</li>
-    </ul>
-  </span>
-</div>
-
-<style>
-  .frame-example {
-    height: 160px;
-    width: 300px;
-  }
-</style>
-```
+On smaller screen sizes, the labels will be stacked.
 
 ## Embedded icon with visible label
 
