@@ -40,86 +40,13 @@
       }
     }
 
-    // start: copy from ActionList proper- backwards compatible for treeview with different markup structure
-    &[aria-expanded] {
-      .ActionList--subGroup {
-        @media screen and (prefers-reduced-motion: no-preference) {
-          transition: opacity 160ms cubic-bezier(0.25, 1, 0.5, 1), transform 160ms cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .ActionList-content {
-          padding-left: $spacer-4;
-        }
-      }
-
-      // has 16px leading visual
-      .ActionList-content--visual16 + .ActionList--subGroup {
-        .ActionList-content {
-          padding-left: $spacer-5;
-        }
-      }
-
-      // has 20px leading visual
-      .ActionList-content--visual20 + .ActionList--subGroup {
-        .ActionList-content {
-          padding-left: $spacer-2 * 4.5; // 36px
-        }
-      }
-
-      // has 24px leading visual
-      .ActionList-content--visual24 + .ActionList--subGroup {
-        .ActionList-content {
-          padding-left: $spacer-6;
-        }
+    // normal font-weight for any active item
+    &.ActionList-item--navActive {
+    &:not(.ActionList-item--subItem) {
+      .ActionList-item-label {
+        font-weight: $font-weight-normal;
       }
     }
-
-    &[aria-expanded='true'] {
-      .ActionList-item-collapseIcon {
-        transition: transform 120ms linear;
-        transform: scaleY(-1);
-      }
-
-      .ActionList--subGroup {
-        height: auto;
-        overflow: visible;
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    &[aria-expanded='false'] {
-      .ActionList-item-collapseIcon {
-        transition: transform 120ms linear;
-        transform: scaleY(1);
-      }
-
-      .ActionList--subGroup {
-        height: 0;
-        overflow: hidden;
-        visibility: hidden;
-        opacity: 0;
-        transform: translateY(-$spacer-3);
-      }
-
-      // show active indicator on parent collapse if child is active
-      // this class changed in ActionList proper
-      &.ActionList-item--hasActiveSubItem {
-        background: var(--color-action-list-item-default-selected-bg);
-
-        &::before,
-        + .ActionList-item::before {
-          visibility: hidden;
-        }
-
-        // blue accent line
-        &::after {
-          @include activeIndicatorLine;
-        }
-      }
-    }
-    // end copy
 
     // nesting (infinite levels)
     // target items inside expanded subgroup
