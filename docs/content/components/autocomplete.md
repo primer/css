@@ -56,7 +56,7 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
 
 ## Embedded icon with visible label
 
-Stacked label
+### Stacked label
 
 ```html live
 <div class="position-relative">
@@ -93,7 +93,7 @@ Stacked label
 </style>
 ```
 
-Inline label
+### Inline label
 
 ```html live
 <div class="position-relative">
@@ -163,6 +163,175 @@ Inline label
 <style>
   .frame-example {
     height: 160px;
+  }
+</style>
+```
+
+## Within form group
+
+```html live
+<div class="form-group">
+  <div class="form-group-body">
+    <div class="position-relative">
+      <label class="autocomplete-label-stacked">Search by org</label>
+      <span class="autocomplete-body">
+        <div class="form-control autocomplete-embedded-icon-wrap">
+          <svg
+            class="octicon"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            width="16"
+            height="16"
+          ><path
+              fill-rule="evenodd"
+              d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"
+            ></path></svg>
+          <input class="form-control" type="text" />
+        </div>
+        <ul class="autocomplete-results">
+          <li class="autocomplete-item" aria-selected="true">Option 1</li>
+          <li class="autocomplete-item">Option 2</li>
+          <li class="autocomplete-item">Option 3</li>
+        </ul>
+      </span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .frame-example {
+    height: 180px;
+  }
+</style>
+```
+
+## Within input group
+
+When rendering `Autocomplete` with embedded icon within an [input group](https://primer.style/css/components/forms#input-group), add `.input-group-button--autocomplete-embedded-icon` to `.input-group-button`.
+
+### Stacked
+
+```html live
+<div class="input-group">
+  <div class="position-relative">
+    <label class="autocomplete-label-stacked">Search by org</label>
+    <span class="autocomplete-body">
+      <div class="form-control autocomplete-embedded-icon-wrap">
+        <svg
+          class="octicon"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          width="16"
+          height="16"
+        ><path
+            fill-rule="evenodd"
+            d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"
+          ></path></svg>
+        <input class="form-control" type="text" />
+      </div>
+      <ul class="autocomplete-results">
+        <li class="autocomplete-item" aria-selected="true">Option 1</li>
+        <li class="autocomplete-item">Option 2</li>
+        <li class="autocomplete-item">Option 3</li>
+      </ul>
+    </span>
+  </div>
+  <span class="input-group-button input-group-button--autocomplete-embedded-icon">
+    <button class="btn" type="button" aria-label="Copy to clipboard">
+        <svg class="octicon octicon-clippy" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></svg>
+    </button>
+  </span>
+</div>
+
+<style>
+  .frame-example {
+    height: 180px;
+  }
+</style>
+```
+
+### Inline
+```html live
+<div class="input-group">
+  <div class="position-relative">
+    <label class="autocomplete-label-inline">Search by org</label>
+    <span class="autocomplete-body">
+      <div class="form-control autocomplete-embedded-icon-wrap">
+        <svg
+          class="octicon"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          width="16"
+          height="16"
+        ><path
+            fill-rule="evenodd"
+            d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"
+          ></path></svg>
+        <input class="form-control" type="text" />
+      </div>
+      <ul class="autocomplete-results">
+        <li class="autocomplete-item" aria-selected="true">Option 1</li>
+        <li class="autocomplete-item">Option 2</li>
+        <li class="autocomplete-item">Option 3</li>
+      </ul>
+    </span>
+  </div>
+  <span class="input-group-button input-group-button--autocomplete-embedded-icon">
+    <button class="btn" type="button" aria-label="Copy to clipboard">
+        <svg class="octicon octicon-clippy" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></svg>
+    </button>
+  </span>
+</div>
+
+<style>
+  .frame-example {
+    height: 160px;
+  }
+</style>
+```
+
+## Container with `max-width`
+
+```html live
+<div class="Box" style="max-width: 440px;">
+  <div class="Box-body">
+    <div class="form-group">
+      <div class="form-group-body">
+        <div class="position-relative">
+          <label class="autocomplete-label-stacked">Search by org</label>
+          <span class="autocomplete-body">
+            <div class="form-control autocomplete-embedded-icon-wrap">
+              <svg
+                class="octicon"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                width="16"
+                height="16"
+              ><path
+                  fill-rule="evenodd"
+                  d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"
+                ></path></svg>
+              <input class="form-control" type="text" />
+            </div>
+            <ul class="autocomplete-results">
+              <li class="autocomplete-item" aria-selected="true">Option 1</li>
+              <li class="autocomplete-item">Option 2</li>
+              <li class="autocomplete-item">Option 3</li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .frame-example {
+    height: 220px;
   }
 </style>
 ```
