@@ -11,6 +11,8 @@
 .color-fg-attention { color: var(--color-attention-fg) !important; }
 .color-fg-severe    { color: var(--color-severe-fg) !important; }
 .color-fg-danger    { color: var(--color-danger-fg) !important; }
+.color-fg-open      { color: var(--color-open-fg) !important; }
+.color-fg-closed    { color: var(--color-closed-fg) !important; }
 .color-fg-done      { color: var(--color-done-fg) !important; }
 .color-fg-sponsors  { color: var(--color-sponsors-fg) !important; }
 
@@ -39,11 +41,19 @@
 .color-bg-danger          { background-color: var(--color-danger-subtle) !important; }
 .color-bg-danger-emphasis { background-color: var(--color-danger-emphasis) !important; }
 
+.color-bg-open          { background-color: var(--color-open-subtle) !important; }
+.color-bg-open-emphasis { background-color: var(--color-open-emphasis) !important; }
+
+.color-bg-closed          { background-color: var(--color-closed-subtle) !important; }
+.color-bg-closed-emphasis { background-color: var(--color-closed-emphasis) !important; }
+
 .color-bg-done          { background-color: var(--color-done-subtle) !important; }
 .color-bg-done-emphasis { background-color: var(--color-done-emphasis) !important; }
 
 .color-bg-sponsors          { background-color: var(--color-sponsors-subtle) !important; }
 .color-bg-sponsors-emphasis { background-color: var(--color-sponsors-emphasis) !important; }
+
+.color-bg-transparent { background-color: transparent !important; }
 
 // Border
 
@@ -65,6 +75,12 @@
 
 .color-border-danger          { border-color: var(--color-danger-muted) !important; }
 .color-border-danger-emphasis { border-color: var(--color-danger-emphasis) !important; }
+
+.color-border-open          { border-color: var(--color-open-muted) !important; }
+.color-border-open-emphasis { border-color: var(--color-open-emphasis) !important; }
+
+.color-border-closed          { border-color: var(--color-closed-muted) !important; }
+.color-border-closed-emphasis { border-color: var(--color-closed-emphasis) !important; }
 
 .color-border-done          { border-color: var(--color-done-muted) !important; }
 .color-border-done-emphasis { border-color: var(--color-done-emphasis) !important; }
