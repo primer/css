@@ -12,10 +12,10 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
 
 ```html live
 <div class="position-relative">
-  <label class="autocomplete-label-stacked">Search by user</label>
+  <label for="input-0" class="autocomplete-label-stacked">Search by user</label>
   <span class="autocomplete-body">
-    <input class="form-control" type="text" />
-    <ul class="autocomplete-results">
+    <input id="input-0" class="form-control" type="text" />
+    <ul role="listbox" aria-label="Results" class="autocomplete-results">
       <li class="autocomplete-item" aria-selected="true">Option 1</li>
       <li class="autocomplete-item">Option 2</li>
       <li class="autocomplete-item">Option 3</li>
@@ -36,10 +36,10 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
 
 ```html live
 <div class="position-relative">
-  <label class="autocomplete-label-inline">Search by team</label>
+  <label for="input-1" class="autocomplete-label-inline">Search by team</label>
   <span class="autocomplete-body">
-    <input class="form-control" type="text" />
-    <ul class="autocomplete-results">
+    <input id="input-1" class="form-control" type="text" />
+    <ul role="listbox" aria-label="Results" class="autocomplete-results">
       <li class="autocomplete-item" aria-selected="true">Team 1 (works on Ruby architecture)</li>
       <li class="autocomplete-item">Team 2 (works on frontend JS architecture)</li>
       <li class="autocomplete-item">Team 3 (this team works on design systems)</li>
@@ -60,7 +60,7 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
 
 ```html live
 <div class="position-relative">
-  <label class="autocomplete-label-stacked">Search by org</label>
+  <label for="input-2" class="autocomplete-label-stacked">Search by org</label>
   <span class="autocomplete-body">
     <div class="form-control autocomplete-embedded-icon-wrap">
       <svg
@@ -76,9 +76,9 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
           d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"
         ></path>
       </svg>
-      <input class="form-control" type="text" />
+      <input id="input-2" class="form-control" type="text" />
     </div>
-    <ul class="autocomplete-results">
+    <ul role="listbox" aria-label="Results" class="autocomplete-results">
       <li class="autocomplete-item" aria-selected="true">Option 1</li>
       <li class="autocomplete-item">Option 2</li>
       <li class="autocomplete-item">Option 3</li>
@@ -97,7 +97,7 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
 
 ```html live
 <div class="position-relative">
-  <label class="autocomplete-label-inline">Search by org</label>
+  <label for="input-3" class="autocomplete-label-inline">Search by org</label>
   <span class="autocomplete-body">
     <div class="form-control autocomplete-embedded-icon-wrap">
       <svg
@@ -113,9 +113,9 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
           d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"
         ></path>
       </svg>
-      <input class="form-control" type="text" />
+      <input id="input-3" class="form-control" type="text" />
     </div>
-    <ul class="autocomplete-results">
+    <ul role="listbox" aria-label="Results" class="autocomplete-results">
       <li class="autocomplete-item" aria-selected="true">Option 1</li>
       <li class="autocomplete-item">Option 2</li>
       <li class="autocomplete-item">Option 3</li>
@@ -134,7 +134,7 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
 
 ```html live
 <div class="position-relative">
-  <label class="autocomplete-label-stacked sr-only">Search by org</label>
+  <label for="input-4" class="autocomplete-label-stacked sr-only">Search by org</label>
   <span class="autocomplete-body">
     <div class="form-control autocomplete-embedded-icon-wrap">
       <svg
@@ -150,9 +150,9 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
           d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"
         ></path>
       </svg>
-      <input class="form-control" type="text" />
+      <input id="input-4" class="form-control" type="text" />
     </div>
-    <ul class="autocomplete-results">
+    <ul role="listbox" aria-label="Results" class="autocomplete-results">
       <li class="autocomplete-item" aria-selected="true">Option 1</li>
       <li class="autocomplete-item">Option 2</li>
       <li class="autocomplete-item">Option 3</li>
@@ -173,7 +173,7 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
 <div class="form-group">
   <div class="form-group-body">
     <div class="position-relative">
-      <label class="autocomplete-label-stacked">Search by org</label>
+      <label for="input-5" class="autocomplete-label-stacked">Search by org</label>
       <span class="autocomplete-body">
         <div class="form-control autocomplete-embedded-icon-wrap">
           <svg
@@ -187,9 +187,9 @@ A list of items used to show autocompleted results. Use the [`<auto-complete>`](
               fill-rule="evenodd"
               d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"
             ></path></svg>
-          <input class="form-control" type="text" />
+          <input id="input-5" class="form-control" type="text" />
         </div>
-        <ul class="autocomplete-results">
+        <ul role="listbox" aria-label="Results" class="autocomplete-results">
           <li class="autocomplete-item" aria-selected="true">Option 1</li>
           <li class="autocomplete-item">Option 2</li>
           <li class="autocomplete-item">Option 3</li>
@@ -215,7 +215,7 @@ When rendering `Autocomplete` with embedded icon within an [input group](https:/
 ```html live
 <div class="input-group">
   <div class="position-relative">
-    <label class="autocomplete-label-stacked">Search by org</label>
+    <label for="input-6" class="autocomplete-label-stacked">Search by org</label>
     <span class="autocomplete-body">
       <div class="form-control autocomplete-embedded-icon-wrap">
         <svg
@@ -229,9 +229,9 @@ When rendering `Autocomplete` with embedded icon within an [input group](https:/
             fill-rule="evenodd"
             d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"
           ></path></svg>
-        <input class="form-control" type="text" />
+        <input id="input-6" class="form-control" type="text" />
       </div>
-      <ul class="autocomplete-results">
+      <ul role="listbox" aria-label="Results" class="autocomplete-results">
         <li class="autocomplete-item" aria-selected="true">Option 1</li>
         <li class="autocomplete-item">Option 2</li>
         <li class="autocomplete-item">Option 3</li>
@@ -256,7 +256,7 @@ When rendering `Autocomplete` with embedded icon within an [input group](https:/
 ```html live
 <div class="input-group">
   <div class="position-relative">
-    <label class="autocomplete-label-inline">Search by org</label>
+    <label for="input-7" class="autocomplete-label-inline">Search by org</label>
     <span class="autocomplete-body">
       <div class="form-control autocomplete-embedded-icon-wrap">
         <svg
@@ -270,9 +270,9 @@ When rendering `Autocomplete` with embedded icon within an [input group](https:/
             fill-rule="evenodd"
             d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"
           ></path></svg>
-        <input class="form-control" type="text" />
+        <input id="input-7" class="form-control" type="text" />
       </div>
-      <ul class="autocomplete-results">
+      <ul role="listbox" aria-label="Results" class="autocomplete-results">
         <li class="autocomplete-item" aria-selected="true">Option 1</li>
         <li class="autocomplete-item">Option 2</li>
         <li class="autocomplete-item">Option 3</li>
@@ -301,7 +301,7 @@ When rendering `Autocomplete` with embedded icon within an [input group](https:/
     <div class="form-group">
       <div class="form-group-body">
         <div class="position-relative">
-          <label class="autocomplete-label-stacked">Search by org</label>
+          <label for="input-8" class="autocomplete-label-stacked">Search by org</label>
           <span class="autocomplete-body">
             <div class="form-control autocomplete-embedded-icon-wrap">
               <svg
@@ -315,9 +315,9 @@ When rendering `Autocomplete` with embedded icon within an [input group](https:/
                   fill-rule="evenodd"
                   d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"
                 ></path></svg>
-              <input class="form-control" type="text" />
+              <input id="input-8" class="form-control" type="text" />
             </div>
-            <ul class="autocomplete-results">
+            <ul role="listbox" aria-label="Results" class="autocomplete-results">
               <li class="autocomplete-item" aria-selected="true">Option 1</li>
               <li class="autocomplete-item">Option 2</li>
               <li class="autocomplete-item">Option 3</li>
@@ -343,7 +343,7 @@ Autocomplete items can contain additional content, like an `.avatar`. Or use uti
 ```html live
 <div class="position-relative">
   <input class="form-control" type="text" aria-label="Search by user" placeholder="Search by user" />
-  <ul class="autocomplete-results">
+  <ul role="listbox" aria-label="Results" class="autocomplete-results">
     <li class="autocomplete-item" aria-selected="true">
       <img src="https://github.com/github.png" width="20" class="avatar mr-1" alt="" />
       <span>GitHub Inc.</span>
@@ -379,7 +379,7 @@ The `.suggester` component is meant for showing suggestions while typing in a la
   <textarea class="form-control width-full" placeholder="Leave a comment" aria-label="Comment body">
 This is on top of #</textarea
   >
-  <ul class="suggester suggester-container" role="listbox" style="top: 4px; left: 125px;">
+  <ul aria-label="Results" class="suggester suggester-container" role="listbox" style="top: 4px; left: 125px;">
     <li aria-selected="true">
       <svg
         class="octicon color-fg-subtle"
