@@ -32,7 +32,7 @@ export default {
       },
     },
     parentLinkShow: {
-      control: 'check',
+      control: 'inline-check',
       description: 'Defines which viewport ranges the parent link is shown on. By default it is only shown on narrow viewports.',
       options: ['narrow', 'regular'],
       table: {
@@ -42,13 +42,20 @@ export default {
 
     // Context bar
 
-
+    contextBarShow: {
+      control: 'inline-check',
+      description: 'Defines which viewport ranges context bar appears. By default it is only shown on narrow viewports.',
+      options: ['narrow', 'regular'],
+      table: {
+        category: 'Context bar'
+      },
+    },
 
     // Title
 
     title: {
       control: 'text',
-      description: 'The page title',
+      description: 'The title contents.',
       table: {
         category: 'Title'
       },
@@ -77,9 +84,23 @@ export default {
         category: 'Title'
       },
     },
+    titleLabel: {
+      control: 'text',
+      description: 'An accessible text-only version of the title. Use it when `title` has interactive elements inside.',
+      table: {
+        category: 'Title'
+      },
+    },
     titleIsInteractiveWhenNarrow: {
       control: 'boolean',
       description: 'Whether the title should be interactive when the viewport is narrow. This is useful for linking to a navigation panel in mobile-friendly scenarios.',
+      table: {
+        category: 'Title'
+      },
+    },
+    titleInteractiveHref: {
+      control: 'text',
+      description: 'The URL to link to when the title is interactive. Default to `#pane`.',
       table: {
         category: 'Title'
       },
@@ -89,16 +110,6 @@ export default {
       description: 'A leading visual next to the title. Use it for rendering a logo, status, or a representation of an item or object. Don’t use leading visuals to represent page categories.',
       table: {
         category: 'Title'
-      },
-    },
-
-    // Actions
-
-    actions: {
-      control: 'inline-radio',
-      options: ['none', 'info'],
-      table: {
-        category: 'Actions'
       },
     },
 
@@ -146,6 +157,7 @@ export default {
 export const PageHeaderTemplate = ({
   // Title
   title,
+  titleLabel,
   titleVariant,
   titleVariantWhenNarrow,
   titleTag,
@@ -155,7 +167,10 @@ export const PageHeaderTemplate = ({
   // Parent link
   hasParentLink,
   parentLinkLabel,
-  parentLinkDisplay,
+  parentLinkShow,
+
+  // Context bar
+  contextBarShow,
 
   // Children
   contextBarChildren,
@@ -167,17 +182,30 @@ export const PageHeaderTemplate = ({
 }) => {
 
   const pageHeaderClassName = 'PageHeader';
+  const showWhenNarrowClassName = 'show-whenNarrow';
+  const showWhenRegularClassName = 'show-whenRegular';
 
-  // Replace with Primer primitives viewport ranges
-  const showWhenNarrow = 'd-block d-md-none d-lg-none d-xl-none';
-  const showWhenRegular = 'd-none d-md-block d-lg-block d-xl-block';
+  // Parent link
 
-  // Default title variant
+  if (!parentLinkShow || parentLinkShow.length === 0) {
+    // default option
+    parentLinkShow = ['narrow'];
+  }
+
+  // empty class name means that the link is shown regardless of viewport ranges
+  let parentLinkShowClassName = '';
+  if (parentLinkShow.length === 1) {
+    parentLinkShowClassName = parentLinkShow.includes('narrow') 
+      ? showWhenNarrowClassName 
+      : showWhenRegularClassName;
+  }
+
+  // Title
   titleVariant = titleVariant ?? 'title-medium';
   titleVariantWhenNarrow = titleVariantWhenNarrow ?? 'title-medium';
   titleVariantWhenNarrow = titleVariant === titleVariantWhenNarrow ? null : titleVariantWhenNarrow;
-
-  // default titleTag
+  titleLabel = titleLabel ?? title;
+  
   const TitleTag = titleTag ?? 'h1';
 
   const titleVariantClassName =
@@ -199,7 +227,7 @@ export const PageHeaderTemplate = ({
           <div className={clsx(`${pageHeaderClassName}-contextBar`)}>
             {hasParentLink && (
               <>
-                <div className={showWhenNarrow}>
+                <div className={parentLinkShowClassName}>
                   <div className={clsx(`${pageHeaderClassName}-parentLink`)}>
                     <a href="#" aria-label={`Back to ${parentLinkLabel}`}>
                       <span class={clsx(`${pageHeaderClassName}-parentLink-icon`)}>
@@ -218,6 +246,7 @@ export const PageHeaderTemplate = ({
 
             {contextBarActionsChildren && (
               <>
+                {/* FIXME: Show when Narrow only? */}
                 <div className={clsx(
                   `${pageHeaderClassName}-actions`,
                   `${pageHeaderClassName}-actions-posContextBar`,
@@ -229,19 +258,21 @@ export const PageHeaderTemplate = ({
           </div>
         )}
 
+        {/* Title bar */}
         <div className={clsx(`${pageHeaderClassName}-titleBar`)}>
 
-          {/* Title */}
+          {/* Title wrap */}
           <div className={
             clsx(
               `${pageHeaderClassName}-titleWrap`, 
               `${pageHeaderClassName}-titleWrap--${titleVariantClassName}`,
               titleVariantWhenNarrow && `${pageHeaderClassName}-titleWrap--${titleVariantWhenNarrowClassName}-whenNarrow`,
-              hasParentLink && parentLinkDisplay === 'backButton' && `${pageHeaderClassName}-titleWrap--hasBackButton`,
               titleIsInteractiveWhenNarrow && `${pageHeaderClassName}-titleWrap--isInteractiveWhenNarrow`,
             )}
           >
-            {hasParentLink && parentLinkDisplay === 'backButton' && (
+            
+            {/* FIXME: back button as independent item */}
+            {hasParentLink && parentLinkShow === 'backButton' && (
               <>
                 <div className={clsx(`${pageHeaderClassName}-backButton`)}>
                   <a href="#" aria-label="Back to :parent_link"><ArrowLeftIcon /></a>
@@ -249,10 +280,12 @@ export const PageHeaderTemplate = ({
               </>
             )}
 
+            {/* Title */}
             <TitleTag className={clsx(
               `${pageHeaderClassName}-title`,
               titleIsInteractiveWhenNarrow && `hide-whenNarrow`,
             )}>
+              {/* Title leading visual */}
               {hasLeadingVisual && (
                 <div className={clsx(
                   `${pageHeaderClassName}-leadingVisual`,
@@ -264,15 +297,17 @@ export const PageHeaderTemplate = ({
               {title}
             </TitleTag>
             
+            {/* Interactive title when narrow */}
             {titleIsInteractiveWhenNarrow && (
               <>
-                <TitleTag className="sr-only show-whenNarrow">{title}</TitleTag>
+                {/* Screen-reader title above interactive element */}
+                <TitleTag className="sr-only show-whenNarrow">{titleLabel}</TitleTag>
                 <div className="show-whenNarrow">
                   <a className={clsx(
                     `${pageHeaderClassName}-title`,
                     `${pageHeaderClassName}-title--interactive`,
                   )} href="#" aria-label="Open navigation pane">
-                    {title}
+                    <span>{title}</span>
                     <TriangleDownIcon />
                   </a>
                 </div>

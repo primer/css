@@ -17,19 +17,8 @@ Actions.args = {
   actionsChildren: (
     <>
       <button className="btn btn-primary">
-        {/* Replace with Primer Primitives viewport ranges */}
-        
-        <span className="show-whenNarrow">
-          
-        </span>
-
-        <span className="hide-whenRegular">
-          
-        </span>
-
-
-        <span className="d-block d-md-none d-lg-none d-xl-none">Add</span>
-        <span className="d-none d-md-block d-lg-block d-xl-block">Add webhook</span>
+        <span className="show-whenNarrow">Add</span>
+        <span className="show-whenRegular">Add webhook</span>
       </button>
     </>
   )
@@ -47,13 +36,15 @@ PageHeaderSettings.args = {
   // Parent link
   hasParentLink: true,
   parentLinkLabel: 'Repository settings',
-  parentLinkDisplay: ['narrow'],
+  parentLinkShow: ['narrow'],
 
+  /*
   contextBarActionsChildren: (
     <>
       <button className="btn">asd</button>
     </>
   ),
+  */
 
   descriptionChildren: (
     <>
@@ -93,19 +84,17 @@ prDetail.args = {
   // Parent link
   hasParentLink: true,
   parentLinkLabel: 'Issues',
-  parentLinkDisplay: ['narrow'],
+  parentLinkShow: ['narrow'],
 
   actionsChildren: (
     <>
-      {/* Replace with new `Narrow` viewport range components */}
-      <div className="d-block d-md-none d-lg-none d-xl-none">
+      <div className="show-whenNarrow">
         <button className="btn p-1" style={{width: '32px', height: '32px'}}>
           <KebabHorizontalIcon />
         </button>
       </div>
 
-      {/* Replace with `Regular` viewport range components */}
-      <div className="d-none d-md-block d-lg-block d-xl-block">
+      <div className="show-whenRegular">
         <button className="btn">Edit</button>
       </div>
     </>

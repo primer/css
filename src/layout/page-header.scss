@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
-    'contextBar',
+    'contextBar'
     'titleBar'
     'description'
     'navigation';
@@ -149,10 +149,36 @@
     }
 
     .PageHeader-title--interactive {
-      background: pink;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      position: relative;
+      align-items: center;
+      color: inherit;
+      padding: 0 8px;
+      margin: 0 -8px;
+      border-radius: 6px;
+
+      &:hover {
+        // Replace with Primer primitives generic control hover bg
+        background-color: var(--color-action-list-item-default-hover-bg);
+        text-decoration: none;
+      }
+
+      @media (pointer: coarse) {
+        // Replace with minTouchTarget mixin
+        &:after {
+          content: "";
+          position: absolute;
+          // Replace with Primer primitives `gh-minTouchTarget`
+          min-height: 44px;
+          margin-top: -22px;
+          inset: 50% 0 0 0;
+        }
+      }
+
+      > span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
 
   }
