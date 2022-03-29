@@ -10,6 +10,7 @@
   color: var(--color-fg-muted);
   background-color: var(--color-accent-subtle);
   border-radius: $border-radius;
+  word-break: break-all;
 
   .octicon {
     // stylelint-disable-next-line primer/spacing
