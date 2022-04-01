@@ -14,7 +14,7 @@ jobs:
     name: Preview
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: chrnorm/deployment-action@v1.2.0
         name: Create GitHub deployment
         id: deployment
