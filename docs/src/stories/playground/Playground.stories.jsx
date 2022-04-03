@@ -1,11 +1,13 @@
 import React from 'react'
 import clsx from 'clsx'
 import DarkColorblind from '@primer/primitives/dist/json/colors/dark_colorblind.json'
+import DarkTritanopia from '@primer/primitives/dist/json/colors/dark_tritanopia.json'
 import DarkDimmed from '@primer/primitives/dist/json/colors/dark_dimmed.json'
 import DarkHighContrast from '@primer/primitives/dist/json/colors/dark_high_contrast.json'
 import Dark from '@primer/primitives/dist/json/colors/dark.json'
 import Light from '@primer/primitives/dist/json/colors/light.json'
 import LightColorblind from '@primer/primitives/dist/json/colors/light_colorblind.json'
+import LightTritanopia from '@primer/primitives/dist/json/colors/light_tritanopia.json'
 // import useToggle from '../helpers/useToggle.jsx'
 // import ColorBlock from '../helpers/ColorBlock'
 // import { StoryTemplateName } from './OtherStoryFile.stories' // import stories for component compositions
@@ -87,6 +89,10 @@ Playground.parameters = {
         palette: DarkColorblind
       },
       {
+        name: 'dark_tritanopia',
+        palette: DarkTritanopia
+      },
+      {
         name: 'dark_dimmed',
         palette: DarkDimmed
       },
@@ -105,6 +111,10 @@ Playground.parameters = {
       {
         name: 'light_colorblind',
         palette: LightColorblind
+      },
+      {
+        name: 'light_tritanopia',
+        palette: LightTritanopia
       }
     ]
   }
