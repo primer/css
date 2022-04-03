@@ -1,5 +1,15 @@
 # @primer/css
 
+## 19.7.1
+
+### Patch Changes
+
+- [#2001](https://github.com/primer/css/pull/2001) [`47cec404`](https://github.com/primer/css/commit/47cec40472173b412df59e6990c0ac1b1ed43d04) Thanks [@jdanyow](https://github.com/jdanyow)! - Remove IE11 support in tooltip
+
+* [#1995](https://github.com/primer/css/pull/1995) [`557b100a`](https://github.com/primer/css/commit/557b100a77a4befe6d07fac14cb48b08bed18356) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Add narrow/regular/wide viewport range utilities
+
+- [#2000](https://github.com/primer/css/pull/2000) [`264a89a5`](https://github.com/primer/css/commit/264a89a51a75eefa6a371e6ad11518519cd98b36) Thanks [@khiga8](https://github.com/khiga8)! - More CSS updates to `Autocomplete`
+
 ## 19.7.0
 
 ### Minor Changes
