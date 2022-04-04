@@ -1,0 +1,27 @@
+name: axe
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  axe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: cd docs
+      - run: yarn install
+      - run: yarn develop & npx wait-on http://localhost:8000
+      - name: Run axe
+        run: |
+          script/axe-docs
+      - name: Upload @axe-core/cli check results
+        uses: actions/upload-artifact@master
+        with:
+          path: docs-example-accessibility.json
