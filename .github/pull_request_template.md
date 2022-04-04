@@ -10,8 +10,8 @@
 
 <!-- Let reviewers know if there is anything that needs special attention. You can also describe any alternatives that you explored. -->
 
-### Are additional changes needed?
+### Can these changes ship as is?
 
 <!-- Please add a ⚠️ note here if this PR depends on additional changes. For example an update from Primer Primitives. Or additional changes when shipping to "dotcom". This will make sure we don't forget to include them. -->
 
-- [ ] No, this PR should be ok to ship as is. 🚢 
+- [ ] Yes, this PR does not depend on additional changes. 🚢 
