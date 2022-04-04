@@ -2256,10 +2256,10 @@
     styled-system "^5.0.18"
     worker-loader "^3.0.2"
 
-"@primer/octicons-react@16.0.0":
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-16.0.0.tgz#964cf7eac896cf2afdc79dcdd900e6f7471424be"
-  integrity sha512-1/DszHbG39lJO5w5el/Eej3Qu2TW0ecDDeYGq5T1cwNsgCWgJmtk2bmyPYJRQyRtGzRQQ8db03E8OeM7ATPSbQ==
+"@primer/octicons-react@17.0.0":
+  version "17.0.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-17.0.0.tgz#c16ac8671edee682a513b1afa8a004c7c5b1d767"
+  integrity sha512-/9VLaNVNWwmTFgFlaxO3r+4GbqiG05ytkDLbKxBAdBiOJLadUPo6P0k+/zJdp8No/S2bBNvEtZNNk5zQj87H4w==
 
 "@primer/octicons-react@^13.0.0":
   version "13.0.0"
