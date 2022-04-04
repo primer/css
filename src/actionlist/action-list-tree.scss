@@ -68,6 +68,13 @@
         transition: transform 120ms linear;
         transform: rotate(0deg);
       }
+
+      // normal weight for parent folder containing active child
+      .ActionList-content--hasActiveSubItem {
+        >.ActionList-item-label {
+          font-weight: $font-weight-normal;
+        }
+      }
     }
 
     &[aria-expanded='false'] {
