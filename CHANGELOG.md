@@ -1,5 +1,15 @@
 # @primer/css
 
+## 19.8.0
+
+### Minor Changes
+
+- [#1997](https://github.com/primer/css/pull/1997) [`9806b54b`](https://github.com/primer/css/commit/9806b54b3829219c9ad141efd2fcd99fc5c08751) Thanks [@simurai](https://github.com/simurai)! - Add Tritanopia theme
+
+### Patch Changes
+
+- [#2002](https://github.com/primer/css/pull/2002) [`a3bc51f6`](https://github.com/primer/css/commit/a3bc51f6c4af0d45a9ce39f00c3cf3297b090067) Thanks [@simurai](https://github.com/simurai)! - Always break long `branch-name`s
+
 ## 19.7.1
 
 ### Patch Changes
