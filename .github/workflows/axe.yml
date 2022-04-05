@@ -18,7 +18,7 @@ jobs:
       - run: yarn
       - run: yarn dist
       - name: Run docs site
-      - run: |
+        run: |
           npm run dev
           npx wait-on --timeout 5000 http://localhost:8000
           script/axe-docs
