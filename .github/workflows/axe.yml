@@ -14,19 +14,17 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 15
+          node-version: 14
       - run: yarn
       - run: yarn dist
       - name: Run docs site
         run: |
-          npm run dev
-          npx wait-on --timeout 5000 http://localhost:8000
-          script/axe-docs
-      - name: Run axe
+          npm run dev & npx wait-on http://localhost:8000
+      - uses: actions/checkout@v2
+      - name: Run axe script
         run: |
           script/axe-docs
       - name: Upload @axe-core/cli check results
         uses: actions/upload-artifact@master
         with:
           path: docs-example-accessibility.json
-

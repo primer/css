@@ -49,11 +49,10 @@ do
   if [[ " ${needs_to_be_fixed[*]} " =~ " ${i} " ]]; then
     continue
   else
-    doc_url="primer.style/css$i"
+    doc_url="http://localhost:8000$i"
     doc_url="${doc_url//\"/}"
     doc_urls+=($doc_url)
   fi
 done
 
 axe $doc_urls --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors
-# axe $doc_urls --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main
