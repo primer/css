@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# This workflow is intended to help catch accesibility violations by running axe on every documentation example.
+# Developers frequently copy and paste examples from documentation so it's important to ensure the examples are
+# accessible.
+# Learn more about @axe-core/cli here: https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
+
 npm install -g @axe-core/cli
 
 # https://stackoverflow.com/a/21189044
@@ -27,11 +32,11 @@ containsElement () {
   return 1
 }
 
-# Find all paths for component or utilities pages because they contain examples.
+# Finds all paths for component or utilities pages because they contain examples.
 nav_paths=($(parse_yaml docs/src/@primer/gatsby-theme-doctocat/nav.yml | grep -e "/components/" -e "/utilities/" | awk -F "=" '{print $2}'))
 
 # Starting point violations
-# DO NOT ADD TO THIS LIST
+# DO NOT ADD TO THIS LIST!
 needs_to_be_fixed=(
   /components/autocomplete
   /components/avatars
@@ -69,7 +74,5 @@ do
 done
 
 # https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
-# We exclude axe rules that depend on full page context.
-# axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors
-
+# We exclude rules that depend on full page context.
 axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --show-errors
