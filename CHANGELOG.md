@@ -1,5 +1,11 @@
 # @primer/css
 
+## 19.8.1
+
+### Patch Changes
+
+- [#1996](https://github.com/primer/css/pull/1996) [`a4293bf9`](https://github.com/primer/css/commit/a4293bf921ebcb74c6973e3f50f07e470f495bd0) Thanks [@langermank](https://github.com/langermank)! - TreeView: remove bold active items + markup changes
+
 ## 19.8.0
 
 ### Minor Changes
