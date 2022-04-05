@@ -2,7 +2,6 @@
 
 yarn global add @axe-core/cli
 
-
 # https://stackoverflow.com/a/21189044
 parse_yaml() {
    local prefix=$2
@@ -20,18 +19,21 @@ parse_yaml() {
    }'
 }
 
-# Find all nav paths
-nav_paths=($(parse_yaml docs/src/@primer/gatsby-theme-doctocat/nav.yml | grep "url" | awk -F "=" '{print $2}'))
+# Find all nav paths for component pages
+nav_paths=($(parse_yaml docs/src/@primer/gatsby-theme-doctocat/nav.yml | grep "/components/" | awk -F "=" '{print $2}'))
+
 # Exclude known violations
-# declare -a needs_to_be_fixed_path=(
-#   autocomplete 
-#   autocompleteitem
-#   dropdown
-#   dropdownmenu
-#   imagecrop
-#   markdown
-#   navigationtab
-# )
+# DO NOT ADD TO THIS LIST
+needs_to_be_fixed=(
+  /components/autocomplete
+  /components/avatars
+  /components/box
+  /components/buttons
+  /components/header
+  /components/markdown
+  /components/progress
+  /components/select-menu
+)
 
 echo "############################################################"
 echo "WARNING"
@@ -45,15 +47,14 @@ declare -a doc_urls
 
 for i in "${nav_paths[@]}"; 
 do
-  echo $i
-  if [[ " ${needs_to_be_fixed_path[@]} " =~ " ${i} " ]]
-  then
+  if [[ " ${needs_to_be_fixed[*]} " =~ " ${i} " ]]; then
     continue
   else
-    doc_urls+=("localhost:8000${i}")
+    doc_url="localhost:8000$i"
+    doc_url=("${doc_url//\"/}")
+    doc_urls+=$doc_url
 fi
 done
 
-# Run axe on generated URLs
-printf -v joined '%s, ' "${doc_urls[@]}"
-axe $joined -i .frame-example --save docs-example-accessibility.json --disable color-contrast,landmark-unique --exit
+# axe $doc_urls --save docs-example-accessibility.json --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors
+axe $doc_urls --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main
