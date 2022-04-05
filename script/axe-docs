@@ -19,10 +19,18 @@ parse_yaml() {
    }'
 }
 
-# Find all nav paths for component pages
+# https://stackoverflow.com/a/8574392
+containsElement () {
+  local e match="$1"
+  shift
+  for e; do [[ "$e" == "$match" ]] && return 0; done
+  return 1
+}
+
+# Find all paths for component pages
 nav_paths=($(parse_yaml docs/src/@primer/gatsby-theme-doctocat/nav.yml | grep "/components/" | awk -F "=" '{print $2}'))
 
-# Exclude known violations
+# Starting point violations
 # DO NOT ADD TO THIS LIST
 needs_to_be_fixed=(
   /components/autocomplete
@@ -46,7 +54,7 @@ echo "############################################################"
 doc_urls=()
 for i in "${nav_paths[@]}"; 
 do
-  if [[ " ${needs_to_be_fixed[*]} " =~ " ${i} " ]]; then
+  if containsElement "${i//\"/}" "${needs_to_be_fixed[@]}"; then
     continue
   else
     doc_url="http://localhost:8000$i"
@@ -55,4 +63,5 @@ do
   fi
 done
 
-axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --save docs-example-accessibility.json --exit --show-errors
+# We disable rules that depend on full page context.
+axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors

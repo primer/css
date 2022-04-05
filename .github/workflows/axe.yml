@@ -23,7 +23,3 @@ jobs:
       - name: Run axe script
         run: |
           script/axe-docs
-      - name: Upload @axe-core/cli check results
-        uses: actions/upload-artifact@master
-        with:
-          path: docs-example-accessibility.json
