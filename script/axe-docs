@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # This workflow is intended to help catch accesibility violations by running axe on every documentation example.
-# Developers frequently copy and paste examples from documentation so it's important to ensure the examples are
-# accessible.
+# Developers frequently copy and paste examples from documentation so it's important to ensure the examples are accessible.
 # Learn more about @axe-core/cli here: https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
 
 npm install -g @axe-core/cli
