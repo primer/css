@@ -8,6 +8,7 @@
   padding: 2px 6px;
   font: 12px $mono-font;
   color: var(--color-fg-muted);
+  word-break: break-all;
   background-color: var(--color-accent-subtle);
   border-radius: $border-radius;
 
