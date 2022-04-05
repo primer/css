@@ -41,6 +41,9 @@ needs_to_be_fixed=(
   /components/markdown
   /components/progress
   /components/select-menu
+  /components/labels
+  /components/timeline
+  /components/toasts
 )
 
 echo "############################################################"
@@ -63,5 +66,8 @@ do
   fi
 done
 
-# We disable rules that depend on full page context.
+# https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
+# We exclude axe rules that depend on full page context.
+# We only run on component pages because those reliably contains `iframe` examples.
+# axe-cli will error when run on pages without the specified selector.
 axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors
