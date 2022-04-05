@@ -20,7 +20,6 @@ jobs:
       - name: Run docs site
         run: |
           npm run dev & npx wait-on http://localhost:8000
-      - uses: actions/checkout@v2
       - name: Run axe script
         run: |
           script/axe-docs
