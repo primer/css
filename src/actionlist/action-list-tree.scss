@@ -73,6 +73,12 @@
         transition: transform 120ms linear;
         transform: rotate(-90deg);
       }
+
+      &.ActionList-content--hasActiveSubItem {
+        > .ActionList-item-label {
+          font-weight: $font-weight-normal;
+        }
+      }
     }
   }
 
