@@ -27,8 +27,8 @@ containsElement () {
   return 1
 }
 
-# Find all paths for component pages
-nav_paths=($(parse_yaml docs/src/@primer/gatsby-theme-doctocat/nav.yml | grep "/components/" | awk -F "=" '{print $2}'))
+# Find all paths for component or utilities pages because they contain examples.
+nav_paths=($(parse_yaml docs/src/@primer/gatsby-theme-doctocat/nav.yml | grep -e "/components/" -e "/utilities/" | awk -F "=" '{print $2}'))
 
 # Starting point violations
 # DO NOT ADD TO THIS LIST
@@ -44,6 +44,8 @@ needs_to_be_fixed=(
   /components/labels
   /components/timeline
   /components/toasts
+  /utilities/flexbox
+  /utilities/layout 
 )
 
 echo "############################################################"
@@ -60,7 +62,7 @@ do
   if containsElement "${i//\"/}" "${needs_to_be_fixed[@]}"; then
     continue
   else
-    doc_url="http://localhost:8000$i"
+    doc_url="primer.style/css$i"
     doc_url="${doc_url//\"/}"
     doc_urls+=($doc_url)
   fi
@@ -68,6 +70,6 @@ done
 
 # https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
 # We exclude axe rules that depend on full page context.
-# We only run on component pages because those reliably contains `iframe` examples.
-# axe-cli will error when run on pages without the specified selector.
-axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors
+# axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors
+
+axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --show-errors
