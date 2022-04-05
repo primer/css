@@ -55,4 +55,4 @@ do
   fi
 done
 
-axe $doc_urls --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors
+axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --save docs-example-accessibility.json --exit --show-errors
