@@ -1,20 +1,9 @@
-// stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-max-specificity, no-duplicate-selectors, selector-max-type
+// stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-max-specificity, selector-max-type, primer/spacing
 // tree-view variant
 // renders ActionList with default styling for tree-view
 // collapse/expand icons presents as leadingActions, rotate 90deg
 // connecting vertical lines between collapse groups
 // consistent font-size between nested groups
-
-@mixin activeIndicatorLine {
-  position: absolute;
-  top: calc(50% - 12px);
-  left: -$actionList-item-padding-horizontal;
-  width: $spacer-1;
-  height: $spacer-4;
-  content: '';
-  background: var(--color-accent-fg);
-  border-radius: $border-radius;
-}
 
 @mixin treeConnectingLine($left) {
   position: absolute;
@@ -40,96 +29,25 @@
       }
     }
 
-    // start: copy from ActionList proper- backwards compatible for treeview with different markup structure
-    &[aria-expanded] {
-      .ActionList--subGroup {
-        @media screen and (prefers-reduced-motion: no-preference) {
-          transition: opacity 160ms cubic-bezier(0.25, 1, 0.5, 1), transform 160ms cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .ActionList-content {
-          padding-left: $spacer-4;
-        }
-      }
-
-      // has 16px leading visual
-      .ActionList-content--visual16 + .ActionList--subGroup {
-        .ActionList-content {
-          padding-left: $spacer-5;
-        }
-      }
-
-      // has 20px leading visual
-      .ActionList-content--visual20 + .ActionList--subGroup {
-        .ActionList-content {
-          padding-left: $spacer-2 * 4.5; // 36px
-        }
-      }
-
-      // has 24px leading visual
-      .ActionList-content--visual24 + .ActionList--subGroup {
-        .ActionList-content {
-          padding-left: $spacer-6;
+    // normal font-weight for any active item
+    &.ActionList-item--navActive {
+      &:not(.ActionList-item--subItem) {
+        .ActionList-item-label {
+          font-weight: $font-weight-normal;
         }
       }
     }
+  }
 
-    &[aria-expanded='true'] {
-      .ActionList-item-collapseIcon {
-        transition: transform 120ms linear;
-        transform: scaleY(-1);
-      }
-
-      .ActionList--subGroup {
-        height: auto;
-        overflow: visible;
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    &[aria-expanded='false'] {
-      .ActionList-item-collapseIcon {
-        transition: transform 120ms linear;
-        transform: scaleY(1);
-      }
-
-      .ActionList--subGroup {
-        height: 0;
-        overflow: hidden;
-        visibility: hidden;
-        opacity: 0;
-        transform: translateY(-$spacer-3);
-      }
-
-      // show active indicator on parent collapse if child is active
-      // this class changed in ActionList proper
-      &.ActionList-item--hasActiveSubItem {
-        background: var(--color-action-list-item-default-selected-bg);
-
-        &::before,
-        + .ActionList-item::before {
-          visibility: hidden;
-        }
-
-        // blue accent line
-        &::after {
-          @include activeIndicatorLine;
-        }
-      }
-    }
-    // end copy
-
+  .ActionList-content {
     // nesting (infinite levels)
     // target items inside expanded subgroup
     &[aria-expanded] {
-      .ActionList--subGroup {
+      + .ActionList--subGroup {
         position: relative;
 
         // --ActionList-tree-depth is defined as an inline style referencing the aria-level of each item ie: aria-level="2"
         .ActionList-content {
-          // stylelint-disable-next-line primer/spacing
           padding-left: calc(#{$spacer-2} * var(--ActionList-tree-depth));
         }
       }
@@ -141,12 +59,25 @@
         transition: transform 120ms linear;
         transform: rotate(0deg);
       }
+
+      // normal weight for parent folder containing active child
+      &.ActionList-content--hasActiveSubItem {
+        > .ActionList-item-label {
+          font-weight: $font-weight-normal;
+        }
+      }
     }
 
     &[aria-expanded='false'] {
       .ActionList-item-collapseIcon {
         transition: transform 120ms linear;
         transform: rotate(-90deg);
+      }
+
+      &.ActionList-content--hasActiveSubItem {
+        > .ActionList-item-label {
+          font-weight: $font-weight-normal;
+        }
       }
     }
   }
