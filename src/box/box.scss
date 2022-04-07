@@ -108,12 +108,12 @@
   border-top-style: $border-style;
   border-top-width: $border-width;
 
-  &:first-of-type {
+  &:first-child {
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
   }
 
-  &:last-of-type {
+  &:last-child {
     border-bottom-right-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
   }
