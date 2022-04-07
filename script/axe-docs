@@ -6,7 +6,7 @@
 
 # See which files were modified not including deleted files
 
-${{ steps.changed-files.outputs.all_changed_files }} > files.txt
+$CHANGED_FILES > files.txt
 
 # Grab the paths of pages we care about
 relevant_nav_paths=()
@@ -97,9 +97,7 @@ if [ ${#doc_urls[@]} -eq 0 ]; then
   exit
 else
   echo 
-  npm install -g @axe-core/cli
   # https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
   # We exclude rules that depend on full page context.
-  npm run dev & npx wait-on http://localhost:8000
   axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --show-errors
 fi

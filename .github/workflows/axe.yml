@@ -16,12 +16,18 @@ jobs:
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v18.6
+      - name: Save changed files
+        run: |
+          echo "CHANGED_FILES=${{ steps.changed-files.outputs.all_changed_files }}" >> $GITHUB_ENV
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 14
       - run: yarn
       - run: yarn dist
+      - name: Run docs site	
+        run: |	
+          npm run dev & npx wait-on http://localhost:8000
       - name: Run axe script
         run: |
           script/axe-docs
