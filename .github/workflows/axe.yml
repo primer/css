@@ -16,18 +16,30 @@ jobs:
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v18.6
+        with:
+          files: |
+            docs/content/components/**/*.md
+            docs/content/utilities/**/*.md
+          files_ignore: |
+            docs/content/components/index.md
+            docs/content/utilities/index.md
       - name: Save changed files
         run: |
-          echo "CHANGED_FILES=${{ steps.changed-files.outputs.all_changed_files }}" >> $GITHUB_ENV
+          echo "MODIFIED_COMPONENT_OR_UTILITIES_PATHS=${{ steps.changed-files.outputs.all_changed_files }}" >> $GITHUB_ENV
       - name: Use Node.js
+        if: steps.changed-files.outputs.any_changed == 'true'
         uses: actions/setup-node@v3
         with:
           node-version: 14
       - run: yarn
+        if: steps.changed-files.outputs.any_changed == 'true'
       - run: yarn dist
+        if: steps.changed-files.outputs.any_changed == 'true'
       - name: Run docs site	
+        if: steps.changed-files.outputs.any_changed == 'true'
         run: |	
           npm run dev & npx wait-on http://localhost:8000
       - name: Run axe script
+        if: steps.changed-files.outputs.any_changed == 'true'
         run: |
-          script/axe-docs $CHANGED_FILES
+          script/axe-docs $MODIFIED_COMPONENT_OR_UTILITIES_PATHS
