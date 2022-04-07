@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# This workflow is intended to help catch accesibility violations by running axe on examples on documentation.
+# This workflow runs axe checks when doc paths with examples are modified.
 # Developers frequently copy and paste examples from documentation so it's important to ensure the examples are accessible.
 # Learn more about @axe-core/cli here: https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
 
-# See which files were modified, excluding removed files
-git diff --name-only --diff-filter=d origin..HEAD > files.txt
-relevant_nav_paths=()
+# See which files were modified not including deleted files
+git diff --name-only --diff-filter=d HEAD^ HEAD > files.txt
 
-# Get the paths of pages we care about
+# Grab the paths of pages we care about
+relevant_nav_paths=()
 while IFS= read -r file
 do
   if [[ $file == docs/content/components/* ]] || [[ $file == docs/content/utilities/* ]] ; then
@@ -30,10 +30,11 @@ do
     echo "*"
   fi
 done < files.txt
+rm files.txt
 
 skip_axe_message = "Skipping axe testing because there were no changes to documentation pages we care about"
 
-# Early return if there are no pages to test.
+# Return early if no relevant files were modified
 if [ ${#relevant_nav_paths[@]} -eq 0 ]; then
   echo $skip_axe_message
   exit
@@ -76,7 +77,7 @@ echo "They contain known violations and should be addressed:"
 printf '%s\n' "${needs_to_be_fixed[@]}"
 echo "############################################################"
 
-# Generate doc urls 
+# Generate doc urls for testing
 doc_urls=()
 for i in "${relevant_nav_paths[@]}"; 
 do
@@ -89,6 +90,7 @@ do
   fi
 done
 
+# Run axe checks only if there are pages to run it on
 if [ ${#doc_urls[@]} -eq 0 ]; then
   echo $skip_axe_message
   exit
