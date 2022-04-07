@@ -1,27 +1,47 @@
 #!/bin/bash
 
-# This workflow is intended to help catch accesibility violations by running axe on every documentation example.
+# This workflow is intended to help catch accesibility violations by running axe on examples on documentation.
 # Developers frequently copy and paste examples from documentation so it's important to ensure the examples are accessible.
 # Learn more about @axe-core/cli here: https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
 
-npm install -g @axe-core/cli
+# See which files were modified, excluding removed files
+git diff --name-only --diff-filter=d origin..HEAD > files.txt
+relevant_nav_paths=()
 
-# https://stackoverflow.com/a/21189044
-parse_yaml() {
-   local prefix=$2
-   local s='[[:space:]]*' w='[a-zA-Z0-9_]*' fs=$(echo @|tr @ '\034')
-   sed -ne "s|^\($s\)\($w\)$s:$s\"\(.*\)\"$s\$|\1$fs\2$fs\3|p" \
-        -e "s|^\($s\)\($w\)$s:$s\(.*\)$s\$|\1$fs\2$fs\3|p"  $1 |
-   awk -F$fs '{
-      indent = length($1)/2;
-      vname[indent] = $2;
-      for (i in vname) {if (i > indent) {delete vname[i]}}
-      if (length($3) > 0) {
-         vn=""; for (i=0; i<indent; i++) {vn=(vn)(vname[i])("_")}
-         printf("%s%s%s=\"%s\"\n", "'$prefix'",vn, $2, $3);
-      }
-   }'
-}
+# Get the paths of pages we care about
+while IFS= read -r file
+do
+  if [[ $file == docs/content/components/* ]] || [[ $file == docs/content/utilities/* ]] ; then
+    if [[ $file == docs/content/components/index.md ]] || [[ $file == docs/content/utilities/index.md ]] ; then
+      echo "Skipping $file"
+      echo "*"
+      echo "*"
+      continue
+    else
+      prefix="docs/content"
+      suffix=".md"
+      doc_path=${file#"$prefix"}
+      doc_path=${doc_path%"$suffix"}
+      relevant_nav_paths+=($doc_path)
+    fi
+  else
+    echo "Skipping $file"
+    echo "*"
+    echo "*"
+  fi
+done < files.txt
+
+skip_axe_message = "Skipping axe testing because there were no changes to documentation pages we care about"
+
+# Early return if there are no pages to test.
+if [ ${#relevant_nav_paths[@]} -eq 0 ]; then
+  echo $skip_axe_message
+  exit
+else
+  echo "Verify whether the check is part of starting point violation"
+  echo "*"
+  echo "*"
+fi
 
 # https://stackoverflow.com/a/8574392
 containsElement () {
@@ -30,9 +50,6 @@ containsElement () {
   for e; do [[ "$e" == "$match" ]] && return 0; done
   return 1
 }
-
-# Finds all paths for component or utilities pages because they contain examples.
-nav_paths=($(parse_yaml docs/src/@primer/gatsby-theme-doctocat/nav.yml | grep -e "/components/" -e "/utilities/" | awk -F "=" '{print $2}'))
 
 # Starting point violations
 # DO NOT ADD TO THIS LIST!
@@ -54,14 +71,14 @@ needs_to_be_fixed=(
 
 echo "############################################################"
 echo "WARNING"
-echo "The following paths will be excluded from this automated accessibility check."
+echo "The following paths are excluded from this automated accessibility check."
 echo "They contain known violations and should be addressed:"
 printf '%s\n' "${needs_to_be_fixed[@]}"
 echo "############################################################"
 
 # Generate doc urls 
 doc_urls=()
-for i in "${nav_paths[@]}"; 
+for i in "${relevant_nav_paths[@]}"; 
 do
   if containsElement "${i//\"/}" "${needs_to_be_fixed[@]}"; then
     continue
@@ -72,6 +89,13 @@ do
   fi
 done
 
-# https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
-# We exclude rules that depend on full page context.
-axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --show-errors
+if [ ${#doc_urls[@]} -eq 0 ]; then
+  echo $skip_axe_message
+  exit
+else
+  echo 
+  npm install -g @axe-core/cli
+  # https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
+  # We exclude rules that depend on full page context.
+  axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --show-errors
+fi
