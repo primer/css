@@ -26,7 +26,7 @@ These variables are encouraged to be used within components and custom CSS. The 
 
 ### Extended spacing scale
 
-These are primarily useful for achieving bigger vertical spacing between sections. This scale first steps up with `8px` for spacer 7, then steps in incremets of `16px` from spacer 8 up to 12.
+These are primarily useful for achieving bigger vertical spacing between sections. This scale first steps up with `8px` for spacer 7, then steps in increments of `16px` from spacer 8 up to 12.
 
 | Variable     | Scale | Value |
 | ------------ |-------|-------|
