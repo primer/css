@@ -6,7 +6,6 @@
 
 array=($MODIFIED_COMPONENT_OR_UTILITIES_PATHS)
 printf "%s\n" "${array[@]}" > temp.txt
-skip_axe_message="Skipping axe testing because there were no changes to documentation pages we care about"
 
 # Store the paths of pages we care about
 nav_paths=()
@@ -35,7 +34,7 @@ containsElement () {
 
 # Starting point violations
 # DO NOT ADD TO THIS LIST!
-needs_to_be_fixed=(
+skipped=(
   /components/autocomplete
   /components/avatars
   /components/box
@@ -51,18 +50,13 @@ needs_to_be_fixed=(
   /utilities/layout 
 )
 
-echo "############################################################"
-echo "WARNING"
-echo "The following paths are excluded from this automated accessibility check."
-echo "They contain known violations and should be addressed:"
-printf '%s\n' "${needs_to_be_fixed[@]}"
-echo "############################################################"
-
 # Generate doc urls for testing
 doc_urls=()
+skipped=()
 for i in "${nav_paths[@]}"; 
 do
   if containsElement "${i//\"/}" "${needs_to_be_fixed[@]}"; then
+    skipped+=($i)
     continue
   else
     doc_url="http://localhost:8000$i"
@@ -71,9 +65,21 @@ do
   fi
 done
 
+if (( ${#skipped[@]} )); then
+  echo "############################################################"
+  echo "WARNING"
+  echo "The following paths are excluded from axe checks because they are part of starting point violations:"
+  printf '%s\n' "${needs_to_be_fixed[@]}"
+  echo ""
+  echo ""
+  echo "While you're working in:"
+  printf '%s\n' "${skipped[@]}"
+  echo "will you consider fixing the accessibility issues so we can remove it from the list? ❤️"
+  echo "############################################################"
+fi
+
 # Run axe checks only if there are pages to run it on
 if [ ${#doc_urls[@]} -eq 0 ]; then
-  echo $skip_axe_message
   exit
 else
   npm install -g @axe-core/cli
