@@ -6,7 +6,7 @@
 
 # See which files were modified not including deleted files
 
-$CHANGED_FILES > files.txt
+${{ steps.changed-files.outputs.all_changed_files }} > files.txt
 
 # Grab the paths of pages we care about
 relevant_nav_paths=()
