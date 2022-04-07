@@ -85,5 +85,5 @@ else
   npm install -g @axe-core/cli
   # https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
   # We exclude rules that depend on full page context.
-  axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --show-errors
+  axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors
 fi
