@@ -1,12 +1,11 @@
 #!/bin/bash
 
-# This workflow runs axe checks when doc paths with examples are modified.
+# This workflow runs axe checks on modified doc/content/components/* or doc/content/components/* pages because those include code examples.
 # Developers frequently copy and paste examples from documentation so it's important to ensure the examples are accessible.
-# Learn more about @axe-core/cli here: https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
+# Learn about @axe-core/cli: https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
 
-printf "%s\n" "${MODIFIED_COMPONENT_OR_UTILITIES_PATHS[@]}" > temp.txt
-echo "Changed files: ${MODIFIED_COMPONENT_OR_UTILITIES_PATHS[@]}"
-
+array=($MODIFIED_COMPONENT_OR_UTILITIES_PATHS)
+printf "%s\n" "${array[@]}" > temp.txt
 skip_axe_message="Skipping axe testing because there were no changes to documentation pages we care about"
 
 # Store the paths of pages we care about
