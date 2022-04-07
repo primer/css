@@ -17,7 +17,7 @@ If you like to override the default link styles you can do so with the following
 
 ## Primary link
 
-Use `.Link--primary` to turn the link color to blue only on hover.
+Use `.Link--primary` to turn the link color to blue only on hover.asdfasdf
 
 ```html live
 <p class="color-fg-muted">Some text with a <a class="Link--primary" href="#url">Link--primary</a></p>
