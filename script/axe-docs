@@ -4,20 +4,22 @@
 # Developers frequently copy and paste examples from documentation so it's important to ensure the examples are accessible.
 # Learn more about @axe-core/cli here: https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
 
-# See which files were modified not including deleted files
+CHANGED_FILES=(.github/workflows/axe.yml docs/content/components/index.md docs/content/components/links.md docs/content/components/progress.md docs/content/components/subhead.md docs/content/support/spacing.md script/axe-docs)
 
-$CHANGED_FILES > files.txt
+printf "%s\n" "${CHANGED_FILES[@]}" > temp.txt
+echo "Changed files: ${CHANGED_FILES[@]}"
 
-# Grab the paths of pages we care about
+skip_axe_message="Skipping axe testing because there were no changes to documentation pages we care about"
+
+# Store the paths of pages we care about
 relevant_nav_paths=()
 while IFS= read -r file
 do
-  if [[ $file == docs/content/components/* ]] || [[ $file == docs/content/utilities/* ]] ; then
-    if [[ $file == docs/content/components/index.md ]] || [[ $file == docs/content/utilities/index.md ]] ; then
+  if [[ "$file" == docs/content/components/* ]] || [[ "$file" == docs/content/utilities/* ]] ; then
+    if [[ "$file" == docs/content/components/index.md ]] || [[ "$file" == docs/content/utilities/index.md ]] ; then
       echo "Skipping $file"
       echo "*"
       echo "*"
-      continue
     else
       prefix="docs/content"
       suffix=".md"
@@ -30,17 +32,15 @@ do
     echo "*"
     echo "*"
   fi
-done < files.txt
-rm files.txt
-
-skip_axe_message="Skipping axe testing because there were no changes to documentation pages we care about"
+done < temp.txt
+rm temp.txt
 
 # Return early if no relevant files were modified
 if [ ${#relevant_nav_paths[@]} -eq 0 ]; then
   echo $skip_axe_message
   exit
 else
-  echo "Verify whether the check is part of starting point violation"
+  echo "Verify whether ${relevant_nav_paths[@]} is part of starting point violation"
   echo "*"
   echo "*"
 fi

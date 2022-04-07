@@ -30,4 +30,4 @@ jobs:
           npm run dev & npx wait-on http://localhost:8000
       - name: Run axe script
         run: |
-          script/axe-docs
+          script/axe-docs $CHANGED_FILES
