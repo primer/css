@@ -297,9 +297,7 @@ export const ListItemTemplate = ({
         <>
           <a
             href={href}
-            role={
-              href && !listSemantic && !treeitem ? 'menuitem' : undefined || (href && treeitem) ? 'treeitem' : undefined
-            }
+            role={href && !listSemantic && !treeitem ? 'menuitem' : undefined}
             aria-current={ariaCurrent}
             className={clsx(
               text && 'ActionList-content',
