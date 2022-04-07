@@ -5,7 +5,8 @@
 # Learn more about @axe-core/cli here: https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
 
 # See which files were modified not including deleted files
-git diff --name-only --diff-filter=d HEAD^ HEAD > files.txt
+
+$CHANGED_FILES > files.txt
 
 # Grab the paths of pages we care about
 relevant_nav_paths=()
@@ -32,7 +33,7 @@ do
 done < files.txt
 rm files.txt
 
-skip_axe_message = "Skipping axe testing because there were no changes to documentation pages we care about"
+skip_axe_message="Skipping axe testing because there were no changes to documentation pages we care about"
 
 # Return early if no relevant files were modified
 if [ ${#relevant_nav_paths[@]} -eq 0 ]; then
@@ -99,5 +100,6 @@ else
   npm install -g @axe-core/cli
   # https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
   # We exclude rules that depend on full page context.
+  npm run dev & npx wait-on http://localhost:8000
   axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --show-errors
 fi
