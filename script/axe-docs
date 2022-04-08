@@ -4,12 +4,10 @@
 # Developers frequently copy and paste examples from documentation so it's important to ensure the examples are accessible.
 # Learn about @axe-core/cli: https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
 
-if [ ${#CHANGED_DOCS_PATH[@]} -eq 0 ]; then
-  echo "CHANGED_DOCS_PATH must be set to run axe checks."
-  exit
-fi
+array=($MODIFIED_COMPONENT_OR_UTILITIES_PATHS)
+printf "%s\n" "${array[@]}" > temp.txt
 
-printf "%s\n" "${CHANGED_DOCS_PATH[@]}" > temp.txt
+# Store the paths of pages we care about
 nav_paths=()
 while IFS= read -r file
 do
@@ -21,7 +19,11 @@ do
 done < temp.txt
 rm temp.txt
 
-echo $nav_paths
+# Return early if no relevant files were modified
+echo "Verify whether ${nav_paths[@]} is part of starting point violation"
+echo "*"
+echo "*"
+
 # https://stackoverflow.com/a/8574392
 containsElement () {
   local e match="$1"
@@ -30,9 +32,9 @@ containsElement () {
   return 1
 }
 
-# Starting point violations list
+# Starting point violations
 # DO NOT ADD TO THIS LIST!
-needs_to_be_fixed=(
+skipped=(
   /components/autocomplete
   /components/avatars
   /components/box
@@ -54,8 +56,8 @@ skipped=()
 for i in "${nav_paths[@]}"; 
 do
   if containsElement "${i//\"/}" "${needs_to_be_fixed[@]}"; then
-    echo "Skipping $i"
     skipped+=($i)
+    continue
   else
     doc_url="http://localhost:8000$i"
     doc_url="${doc_url//\"/}"
@@ -64,18 +66,16 @@ do
 done
 
 if (( ${#skipped[@]} )); then
-  echo "==========================================================================================="
+  echo "############################################################"
   echo "WARNING"
+  echo "The following paths are excluded from axe checks because they are part of starting point violations:"
+  printf '%s\n' "${needs_to_be_fixed[@]}"
   echo ""
-  echo "Oh no! We had to skip accessibility checks on:"
   echo ""
+  echo "While you're working in:"
   printf '%s\n' "${skipped[@]}"
-  echo ""
-  echo "because they are part of the starting point violations list."
-  echo ""
-  echo "Help us get one closer to getting rid of this list!"
-  echo "Consider addressing the accessibility issues on the examples of these pages as part of your PR ❤️"
-  echo "==========================================================================================="
+  echo "will you consider fixing the accessibility issues so we can remove it from the list? ❤️"
+  echo "############################################################"
 fi
 
 # Run axe checks only if there are pages to run it on
