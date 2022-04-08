@@ -13,7 +13,7 @@ else
   printf "%s\n" "${array[@]}" > temp.txt
 fi
 
-echo "Parsing paths from the filenames..."
+# Parsing paths from the filenames...
 nav_paths=()
 while IFS= read -r file
 do
@@ -51,7 +51,7 @@ needs_to_be_fixed=(
   /utilities/layout 
 )
 
-echo "Removing paths that are part of the starting point violations list:"
+echo "Pages that included in this starting point violations list are excluded from checks:"
 printf '%s\n' "${needs_to_be_fixed[@]}"
 
 doc_urls=()
@@ -72,7 +72,7 @@ if (( ${#skipped[@]} )); then
   echo "==========================================================================================="
   echo "WARNING"
   echo ""
-  echo "Oh no! We had to skip accessibility checks on:"
+  echo "Oh no! We have to skip accessibility checks on these doc pages you updated:"
   echo ""
   printf '%s\n' "${skipped[@]}"
   echo ""
