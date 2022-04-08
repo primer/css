@@ -8,7 +8,7 @@ bundle: subhead
 ---
 
 
-The basic Subhead consists of a `.Subhead` container, which has a light gray asdfasdfbottom border. Use `.Subhead-heading` for the heading itself. It is styled as an `<h2>` sized heading with normal font-weight.
+The basic Subhead consists of a `.Subhead` container, which has a light gray bottom border. Use `.Subhead-heading` for the heading itself. It is styled as an `<h2>` sized heading with normal font-weight.
 
 Use a heading element whenever possible as they can be used as navigation for assistive technologies, and avoid skipping levels.
 
