@@ -25,7 +25,7 @@ jobs:
             docs/content/utilities/index.md
       - name: Save changed files
         run: |
-          echo "MODIFIED_COMPONENT_OR_UTILITIES_PATHS=${{ steps.changed-files.outputs.all_changed_files }}" >> $GITHUB_ENV
+          echo "STRING_OF_PATHS_WE_CARE_ABOUT=${{ steps.changed-files.outputs.all_changed_files }}" >> $GITHUB_ENV
       - name: Use Node.js
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: actions/setup-node@v3
@@ -42,4 +42,4 @@ jobs:
       - name: Run axe script
         if: steps.changed-files.outputs.any_changed == 'true'
         run: |
-          script/axe-docs $MODIFIED_COMPONENT_OR_UTILITIES_PATHS
+          script/axe-docs $STRING_OF_PATHS_WE_CARE_ABOUT
