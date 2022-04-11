@@ -48,6 +48,7 @@
 
   &:focus,
   &:focus-visible {
+    border-radius: $border-radius $border-radius 0 0 !important;
     outline-offset: -6px;
   }
 

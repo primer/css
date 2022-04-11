@@ -184,8 +184,7 @@
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition:
-        visibility 0 linear $actionList-item-checkmark-transition-timing,
+      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 
@@ -307,9 +306,18 @@
     text-decoration: none;
   }
 
-  &:focus,
+  &:focus {
+    @include focusOutline;
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      outline: solid 1px transparent;
+    }
+  }
+
+  // default focus state
   &:focus-visible {
-    outline-offset: -2px;
+    @include focusOutline;
   }
 
   // disabled

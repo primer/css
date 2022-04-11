@@ -66,8 +66,8 @@
   background-color: var(--color-btn-bg);
   border-color: var(--color-btn-border);
   box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
-  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-  transition-property: color, background-color, border-color;
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
 
   &:hover,
   &.hover,
@@ -124,6 +124,7 @@
     // remove fallback :focus if :focus-visible is supported
     &:not(:focus-visible) {
       outline: solid 1px transparent;
+      box-shadow: none;
     }
   }
 
@@ -158,6 +159,25 @@
 
   .octicon {
     color: var(--color-btn-primary-icon);
+  }
+}
+
+// ensure links styled as button primary gets proper focus style
+a.btn-primary {
+  // fallback :focus state
+  &:focus {
+    @include focusOutlineOnEmphasis;
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      outline: solid 1px transparent;
+      box-shadow: none;
+    }
+  }
+
+  // default focus state
+  &:focus-visible {
+    @include focusOutlineOnEmphasis;
   }
 }
 

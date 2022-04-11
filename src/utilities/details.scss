@@ -21,6 +21,8 @@
 .details-reset {
   // Remove marker added by the display: list-item browser default
   > summary {
+    transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+    transition-property: color, background-color, box-shadow, border-color;
     list-style: none;
     // fallback :focus state
     &:focus {
@@ -36,6 +38,24 @@
     &:focus-visible {
       @include focusOutline;
     }
+
+    &.btn-primary {
+      // fallback :focus state
+      &:focus {
+        @include focusOutlineOnEmphasis;
+
+        // remove fallback :focus if :focus-visible is supported
+        &:not(:focus-visible) {
+          outline: solid 1px transparent;
+          box-shadow: none;
+        }
+      }
+
+      // default focus state
+      &:focus-visible {
+        @include focusOutlineOnEmphasis;
+      }
+    }
   }
   // Remove marker added by details polyfill
   > summary::before {
@@ -48,6 +68,8 @@
 }
 
 .details-overlay > summary {
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
   // fallback :focus state
   &:focus {
     @include focusOutline;
@@ -61,5 +83,23 @@
   // default focus state
   &:focus-visible {
     @include focusOutline;
+  }
+
+  &.btn-primary {
+    // fallback :focus state
+    &:focus {
+      @include focusOutlineOnEmphasis;
+
+      // remove fallback :focus if :focus-visible is supported
+      &:not(:focus-visible) {
+        outline: solid 1px transparent;
+        box-shadow: none;
+      }
+    }
+
+    // default focus state
+    &:focus-visible {
+      @include focusOutlineOnEmphasis;
+    }
   }
 }

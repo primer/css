@@ -20,17 +20,19 @@
     text-decoration: underline;
   }
 
-  &:focus,
-  &:focus-visible {
-    outline-offset: 2px;
-  }
-
   &:disabled,
   &[aria-disabled='true'] {
     &,
     &:hover {
       color: var(--color-primer-fg-disabled);
       cursor: default;
+    }
+  }
+
+  &:not(.dropdown-item, .social-reaction-summary-item) {
+    &:focus,
+    &:focus-visible {
+      border-radius: $border-radius;
     }
   }
 }
@@ -96,6 +98,11 @@
 
   &:hover {
     color: var(--color-accent-fg);
+  }
+
+  &:focus,
+  &:focus-visible {
+    border-radius: $border-radius;
   }
 
   &.disabled,

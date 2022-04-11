@@ -59,6 +59,7 @@
     // remove fallback :focus if :focus-visible is supported
     &:not(:focus-visible) {
       outline: solid 1px transparent;
+      box-shadow: none;
     }
   }
 
@@ -128,6 +129,22 @@
   &::before {
     // stylelint-disable-next-line primer/colors
     background: linear-gradient(180deg, rgba(52, 183, 89, 0.15) 0%, rgba(46, 164, 79, 0) 100%) !important;
+  }
+
+  // fallback :focus state
+  &:focus {
+    @include focusOutlineOnEmphasis;
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      outline: solid 1px transparent;
+      box-shadow: none;
+    }
+  }
+
+  // default focus state
+  &:focus-visible {
+    @include focusOutlineOnEmphasis;
   }
 }
 

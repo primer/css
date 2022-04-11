@@ -30,6 +30,23 @@ label {
   border: $border-width $border-style var(--color-border-default);
   border-radius: $border-radius;
   box-shadow: var(--color-primer-shadow-inset);
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
+
+  &:focus {
+    @include focusBoxShadowInset;
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      border-color: transparent;
+      @include focusBoxShadowInset(1px, transparent);
+    }
+  }
+
+  // default focus state
+  &:focus-visible {
+    @include focusBoxShadowInset;
+  }
 
   &[disabled] {
     color: var(--color-primer-fg-disabled);

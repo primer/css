@@ -25,7 +25,8 @@
   border-bottom: 2px $border-style transparent;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:focus-visible {
     color: var(--color-fg-default);
     text-decoration: none;
     border-bottom-color: var(--color-neutral-muted);
