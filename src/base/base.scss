@@ -91,15 +91,6 @@ details {
 
 // global focus styles
 
-@mixin focusBoxShadowInset($outlineWidth: 1px, $outlineColor: var(--color-accent-fg)) {
-  border-color: var(--color-accent-fg);
-  outline: none;
-  box-shadow: inset 0 0 0 $outlineWidth $outlineColor;
-}
-
-// form controls
-// target styles
-
 a,
 button,
 [role='button'],
