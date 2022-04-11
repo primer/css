@@ -42,6 +42,7 @@ export const FocusStyles = ({}) => (
       <CheckboxTemplate label="checkbox" type="checkbox" />
       <CheckboxTemplate label="radio" type="radio" />
       <InputTemplate label="input" type="text" />
+      <input className="form-control border-0" placeholder="no border form control"></input>
       <SelectTemplate label="select" />
       <TextareaTemplate label="textarea" />
       <LinkTemplate label="Primer link" href="/" />

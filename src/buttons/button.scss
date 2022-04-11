@@ -163,6 +163,7 @@
 }
 
 // ensure links styled as button primary gets proper focus style
+// stylelint-disable-next-line selector-no-qualifying-type
 a.btn-primary {
   // fallback :focus state
   &:focus {

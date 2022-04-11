@@ -33,6 +33,7 @@
     &:focus,
     &:focus-visible {
       border-radius: $border-radius;
+      outline-offset: 0;
     }
   }
 }

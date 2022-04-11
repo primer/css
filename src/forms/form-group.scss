@@ -209,11 +209,7 @@
   &.successed {
     .success {
       color: var(--color-fg-default);
-      background-color:
-        var(
-          --color-canvas-default
-        ); // Makes sure the background is opaque to cover any content underneath
-
+      background-color: var(--color-canvas-default); // Makes sure the background is opaque to cover any content underneath
       background-image: linear-gradient(var(--color-success-subtle), var(--color-success-subtle));
       border-color: var(--color-success-muted);
 
@@ -234,11 +230,7 @@
 
     .warning {
       color: var(--color-fg-default);
-      background-color:
-        var(
-          --color-canvas-default
-        ); // Makes sure the background is opaque to cover any content underneath
-
+      background-color: var(--color-canvas-default); // Makes sure the background is opaque to cover any content underneath
       background-image: linear-gradient(var(--color-attention-subtle), var(--color-attention-subtle));
       border-color: var(--color-attention-muted);
 
@@ -263,11 +255,7 @@
 
     .error {
       color: var(--color-fg-default);
-      background-color:
-        var(
-          --color-canvas-default
-        ); // Makes sure the background is opaque to cover any content underneath
-
+      background-color: var(--color-canvas-default); // Makes sure the background is opaque to cover any content underneath
       background-image: linear-gradient(var(--color-danger-subtle), var(--color-danger-subtle));
       border-color: var(--color-danger-muted);
 

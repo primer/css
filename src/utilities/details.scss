@@ -1,4 +1,4 @@
-// stylelint-disable selector-max-type
+// stylelint-disable selector-max-type, selector-max-specificity, max-nesting-depth, selector-no-qualifying-type
 
 .details-overlay[open] > summary::before {
   position: fixed;
@@ -21,9 +21,9 @@
 .details-reset {
   // Remove marker added by the display: list-item browser default
   > summary {
+    list-style: none;
     transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
     transition-property: color, background-color, box-shadow, border-color;
-    list-style: none;
     // fallback :focus state
     &:focus {
       @include focusOutline;

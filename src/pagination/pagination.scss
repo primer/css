@@ -24,7 +24,6 @@
     &:focus {
       text-decoration: none;
       border-color: var(--color-border-default);
-      outline: 0;
       transition-duration: 0.1s;
     }
 
@@ -74,13 +73,35 @@
     // chevron-left
     .previous_page::before {
       margin-right: $spacer-1;
-      clip-path: polygon(9.8px 12.8px, 8.7px 12.8px, 4.5px 8.5px, 4.5px 7.5px, 8.7px 3.2px, 9.8px 4.3px, 6.1px 8px, 9.8px 11.7px, 9.8px 12.8px);
+      clip-path:
+        polygon(
+          9.8px 12.8px,
+          8.7px 12.8px,
+          4.5px 8.5px,
+          4.5px 7.5px,
+          8.7px 3.2px,
+          9.8px 4.3px,
+          6.1px 8px,
+          9.8px 11.7px,
+          9.8px 12.8px
+        );
     }
 
     // chevron-right
     .next_page::after {
       margin-left: $spacer-1;
-      clip-path: polygon(6.2px 3.2px, 7.3px 3.2px, 11.5px 7.5px, 11.5px 8.5px, 7.3px 12.8px, 6.2px 11.7px, 9.9px 8px, 6.2px 4.3px, 6.2px 3.2px);
+      clip-path:
+        polygon(
+          6.2px 3.2px,
+          7.3px 3.2px,
+          11.5px 7.5px,
+          11.5px 8.5px,
+          7.3px 12.8px,
+          6.2px 11.7px,
+          9.9px 8px,
+          6.2px 4.3px,
+          6.2px 3.2px
+        );
     }
   }
 
