@@ -5,17 +5,6 @@
 // connecting vertical lines between collapse groups
 // consistent font-size between nested groups
 
-@mixin activeIndicatorLine {
-  position: absolute;
-  top: calc(50% - 12px);
-  left: -$actionList-item-padding-horizontal;
-  width: $spacer-1;
-  height: $spacer-4;
-  content: '';
-  background: var(--color-accent-fg);
-  border-radius: $border-radius;
-}
-
 @mixin treeConnectingLine($left) {
   position: absolute;
   left: $left;
@@ -48,11 +37,13 @@
         }
       }
     }
+  }
 
+  .ActionList-content {
     // nesting (infinite levels)
     // target items inside expanded subgroup
     &[aria-expanded] {
-      .ActionList--subGroup {
+      + .ActionList--subGroup {
         position: relative;
 
         // --ActionList-tree-depth is defined as an inline style referencing the aria-level of each item ie: aria-level="2"
@@ -70,8 +61,8 @@
       }
 
       // normal weight for parent folder containing active child
-      .ActionList-content--hasActiveSubItem {
-        >.ActionList-item-label {
+      &.ActionList-content--hasActiveSubItem {
+        > .ActionList-item-label {
           font-weight: $font-weight-normal;
         }
       }
@@ -81,6 +72,12 @@
       .ActionList-item-collapseIcon {
         transition: transform 120ms linear;
         transform: rotate(-90deg);
+      }
+
+      &.ActionList-content--hasActiveSubItem {
+        > .ActionList-item-label {
+          font-weight: $font-weight-normal;
+        }
       }
     }
   }

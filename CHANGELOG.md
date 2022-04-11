@@ -1,5 +1,11 @@
 # @primer/css
 
+## 19.8.2
+
+### Patch Changes
+
+- [#2019](https://github.com/primer/css/pull/2019) [`57be2d50`](https://github.com/primer/css/commit/57be2d50212b71f87ce612039375bcd5273eca53) Thanks [@langermank](https://github.com/langermank)! - [Bug] TreeView animation and padding fix
+
 ## 19.8.1
 
 ### Patch Changes
