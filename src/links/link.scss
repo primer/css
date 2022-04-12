@@ -49,7 +49,7 @@
 .Link--secondary,
 .Link--primary,
 .Link--muted {
-  &:hover [class*='color-text'] {
+  &:hover [class*='color-fg'] {
     color: inherit !important;
   }
 }

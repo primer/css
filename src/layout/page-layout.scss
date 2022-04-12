@@ -270,12 +270,15 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   }
 }
 
+// PageLayout-wrapper bundles header, footer, pane, and content regions
 .PageLayout-wrapper {
   display: grid;
   grid: auto-flow / 1fr;
   row-gap: var(--Layout-row-gap);
 }
 
+// PageLayout-columns wrap pane and content regions
+// If layout has no pane, PageLayout-columns is not present
 .PageLayout-columns {
   display: grid;
   column-gap: var(--Layout-column-gap);
@@ -283,6 +286,18 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   grid-template-columns: var(--Layout-template-columns);
   grid-template-rows: 1fr;
   grid-template-areas: var(--Layout-template-areas);
+
+  .PageLayout-content {
+    // stylelint-disable-next-line primer/spacing
+    padding-right: var(--Layout-inner-spacing-max);
+    // stylelint-disable-next-line primer/spacing
+    padding-left: var(--Layout-inner-spacing-max);
+    grid-area: content;
+  }
+
+  .PageLayout-pane {
+    grid-area: pane;
+  }
 }
 
 // outer spacing
@@ -366,16 +381,4 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 .PageLayout-footer {
   // stylelint-disable-next-line primer/spacing
   padding: var(--Layout-inner-spacing-min);
-}
-
-.PageLayout-content {
-  // stylelint-disable-next-line primer/spacing
-  padding-right: var(--Layout-inner-spacing-max);
-  // stylelint-disable-next-line primer/spacing
-  padding-left: var(--Layout-inner-spacing-max);
-  grid-area: content;
-}
-
-.PageLayout-pane {
-  grid-area: pane;
 }

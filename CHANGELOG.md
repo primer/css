@@ -1,5 +1,59 @@
 # @primer/css
 
+## 19.8.2
+
+### Patch Changes
+
+- [#2019](https://github.com/primer/css/pull/2019) [`57be2d50`](https://github.com/primer/css/commit/57be2d50212b71f87ce612039375bcd5273eca53) Thanks [@langermank](https://github.com/langermank)! - [Bug] TreeView animation and padding fix
+
+## 19.8.1
+
+### Patch Changes
+
+- [#1996](https://github.com/primer/css/pull/1996) [`a4293bf9`](https://github.com/primer/css/commit/a4293bf921ebcb74c6973e3f50f07e470f495bd0) Thanks [@langermank](https://github.com/langermank)! - TreeView: remove bold active items + markup changes
+
+## 19.8.0
+
+### Minor Changes
+
+- [#1997](https://github.com/primer/css/pull/1997) [`9806b54b`](https://github.com/primer/css/commit/9806b54b3829219c9ad141efd2fcd99fc5c08751) Thanks [@simurai](https://github.com/simurai)! - Add Tritanopia theme
+
+### Patch Changes
+
+- [#2002](https://github.com/primer/css/pull/2002) [`a3bc51f6`](https://github.com/primer/css/commit/a3bc51f6c4af0d45a9ce39f00c3cf3297b090067) Thanks [@simurai](https://github.com/simurai)! - Always break long `branch-name`s
+
+## 19.7.1
+
+### Patch Changes
+
+- [#2001](https://github.com/primer/css/pull/2001) [`47cec404`](https://github.com/primer/css/commit/47cec40472173b412df59e6990c0ac1b1ed43d04) Thanks [@jdanyow](https://github.com/jdanyow)! - Remove IE11 support in tooltip
+
+* [#1995](https://github.com/primer/css/pull/1995) [`557b100a`](https://github.com/primer/css/commit/557b100a77a4befe6d07fac14cb48b08bed18356) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Add narrow/regular/wide viewport range utilities
+
+- [#2000](https://github.com/primer/css/pull/2000) [`264a89a5`](https://github.com/primer/css/commit/264a89a51a75eefa6a371e6ad11518519cd98b36) Thanks [@khiga8](https://github.com/khiga8)! - More CSS updates to `Autocomplete`
+
+## 19.7.0
+
+### Minor Changes
+
+- [#1994](https://github.com/primer/css/pull/1994) [`69fe8c65`](https://github.com/primer/css/commit/69fe8c6512a3f0bbdbfdf7080b916a39173c2df9) Thanks [@khiga8](https://github.com/khiga8)! - Add support for inline, stack label in autocomplete
+
+### Patch Changes
+
+- [#1991](https://github.com/primer/css/pull/1991) [`5e87effa`](https://github.com/primer/css/commit/5e87effa671b194e188f699a79b246bdf61bd191) Thanks [@simurai](https://github.com/simurai)! - Fix `btn-primary` in flash alerts
+
+## 19.6.0
+
+### Minor Changes
+
+- [#1989](https://github.com/primer/css/pull/1989) [`f544ef85`](https://github.com/primer/css/commit/f544ef8574a4d6e12cccf94d534ad66df3e9249a) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Make `pane` an optional region for PageLayout component
+
+### Patch Changes
+
+- [#1988](https://github.com/primer/css/pull/1988) [`e3443f1a`](https://github.com/primer/css/commit/e3443f1a69ba5a23d3e3804bf4e22d384783c443) Thanks [@simurai](https://github.com/simurai)! - Fix color-fg utilities in links
+
+* [#1985](https://github.com/primer/css/pull/1985) [`c2bd6bc9`](https://github.com/primer/css/commit/c2bd6bc9bf90686f258af11c102097d7da000a5b) Thanks [@cheshire137](https://github.com/cheshire137)! - Adding .color-bg-transparent utility class
+
 ## 19.5.1
 
 ### Patch Changes

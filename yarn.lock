@@ -702,13 +702,13 @@
     "@manypkg/get-packages" "^1.1.3"
     semver "^5.4.1"
 
-"@changesets/changelog-github@0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@changesets/changelog-github/-/changelog-github-0.4.3.tgz#a6f48e75931fbb0625484111d986a15b4e74cb3a"
-  integrity sha512-93X4arork7DV4+tVYeNlOTrw7HOXIvvd41yRPY9atJ+nS32W0uS+ewkZdc6WThuqmwGx9xaU+pxHtVLeYJTF0A==
+"@changesets/changelog-github@0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@changesets/changelog-github/-/changelog-github-0.4.4.tgz#a3d59b30ccc6bfa3f0b381cda7cd4017c5590a9a"
+  integrity sha512-htSILqCkyYtTB5/LoVKwx7GCJQGxAiBcYbfUKWiz/QoDARuM01owYtMXhV6/iytJZq/Dqqz3PjMZUNB4MphpbQ==
   dependencies:
     "@changesets/get-github-info" "^0.5.0"
-    "@changesets/types" "^4.1.0"
+    "@changesets/types" "^5.0.0"
     dotenv "^8.1.0"
 
 "@changesets/cli@2.20.0":
@@ -856,10 +856,15 @@
     fs-extra "^7.0.1"
     p-filter "^2.1.0"
 
-"@changesets/types@^4.0.1", "@changesets/types@^4.0.2", "@changesets/types@^4.1.0":
+"@changesets/types@^4.0.1", "@changesets/types@^4.0.2":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@changesets/types/-/types-4.1.0.tgz#fb8f7ca2324fd54954824e864f9a61a82cb78fe0"
   integrity sha512-LDQvVDv5Kb50ny2s25Fhm3d9QSZimsoUGBsUioj6MC3qbMUCuC8GPIvk/M6IvXx3lYhAs0lwWUQLb+VIEUCECw==
+
+"@changesets/types@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@changesets/types/-/types-5.0.0.tgz#d5eb52d074bc0358ce47d54bca54370b907812a0"
+  integrity sha512-IT1kBLSbAgTS4WtpU6P5ko054hq12vk4tgeIFRVE7Vnm4a/wgbNvBalgiKP0MjEXbCkZbItiGQHkCGxYWR55sA==
 
 "@changesets/write@^0.1.6":
   version "0.1.6"
@@ -1148,10 +1153,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@primer/primitives@^7.5.1":
-  version "7.5.1"
-  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.5.1.tgz#18aa8a0f3a3f7fd49fcad31a7efb86688bffb9de"
-  integrity sha512-1pFKR+FcYRPXJ+zK/qtidrCJB7WmTaAX4sG7zE5LvGWjS5latue4pzZrK0FxxGGBdAU3HpoabANsGjv7T7sRRg==
+"@primer/primitives@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.7.0.tgz#4e838afaf997036720a43ebab0211d2de77b1606"
+  integrity sha512-LSd96U2/A70obilbdYiEKI8D/wXUtZnKmUI/ScLOlGDju4iuwd3pJsmFoBwM1Us6vV23V6mapIG+lh27RzauaA==
 
 "@primer/stylelint-config@^12.3.3":
   version "12.3.3"
@@ -1516,9 +1521,9 @@ ansi-escapes@^4.2.1:
     type-fest "^0.21.3"
 
 ansi-regex@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.1.0.tgz#8b9f8f08cf1acb843756a839ca8c7e3168c51997"
-  integrity sha512-1apePfXM1UOSqw0o9IiFAovVz9M5S1Dg+4TrDwfMewQ6p/rmMueb7tWZjQ1rx4Loy1ArBggoqGpfqqdI4rondg==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.1.1.tgz#164daac87ab2d6f6db3a29875e2d1766582dabed"
+  integrity sha512-ILlv4k/3f6vfQ4OoP2AGvirOktlQ98ZEL1k9FaQjxa3L1abBgbuTDAdPOpvbGncC0BTVQrl+OM8xZGK6tWXt7g==
 
 ansi-regex@^5.0.1:
   version "5.0.1"
@@ -4348,9 +4353,9 @@ minimist-options@4.1.0, minimist-options@^4.0.2:
     kind-of "^6.0.3"
 
 minimist@^1.2.0, minimist@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
+  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
 mixme@^0.5.1:
   version "0.5.4"
