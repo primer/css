@@ -1,6 +1,6 @@
 {
   "name": "@primer/css",
-  "version": "19.7.1",
+  "version": "19.8.2",
   "description": "The CSS implementation of GitHub's Primer Design System",
   "homepage": "https://primer.style/css",
   "author": "GitHub, Inc.",
@@ -39,10 +39,10 @@
     "storybook": "cd docs && yarn && yarn storybook"
   },
   "dependencies": {
-    "@primer/primitives": "^7.5.1"
+    "@primer/primitives": "^7.7.0"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "0.4.3",
+    "@changesets/changelog-github": "0.4.4",
     "@changesets/cli": "2.20.0",
     "@github/prettier-config": "0.0.4",
     "@koddsson/postcss-sass": "5.0.1",
@@ -58,7 +58,7 @@
     "front-matter": "4.0.2",
     "fs-extra": "10.0.1",
     "globby": "13.1.0",
-    "jest": "27.4.7",
+    "jest": "27.5.1",
     "js-yaml": "4.1.0",
     "postcss": "8.4.7",
     "postcss-calc": "8.2.4",

@@ -1,7 +1,7 @@
 import React from 'react'
 import {ListTemplate} from './ActionList.stories'
 import {ListItemTemplate} from './ActionListItem.stories'
-import {TreeViewListItemCollapsibleTemplate} from './TreeViewListItemCollapsible.stories'
+import {ActionListItemCollapsibleTemplate} from '../../ui-patterns/ActionList/ActionListItemCollapsible.stories.jsx'
 
 export default {
   title: 'UI Patterns/ActionList/ActionTreeView',
@@ -53,22 +53,17 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon, text
       <ListItemTemplate
         truncateItem={truncateItem}
         ariaLevel="1"
-        ariaSetSize="1"
-        ariaPosInset="1"
         treeitem
         text={text}
-        href="/"
         leadingVisual={showSubItemIcon && file}
         trailingVisual={trailingVisual}
         treeItemSingleton
       />
-      <TreeViewListItemCollapsibleTemplate
+      <ActionListItemCollapsibleTemplate
         text="level 1"
         leadingVisual={showGroupIcon && folder}
         truncateItem={truncateItem}
         ariaLevel="1"
-        ariaSetSize="2"
-        ariaPosInset="2"
         collapsePosition={0}
         containsSubItem
         containsActiveSubItem
@@ -77,32 +72,25 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon, text
           <ListItemTemplate
             truncateItem={truncateItem}
             ariaLevel="2"
-            ariaSetSize="2"
-            ariaPosInset="1"
             treeitem
             subItem
             text={text}
-            href="/"
             ariaCurrent="page"
             leadingVisual={showSubItemIcon && file}
             trailingVisual={trailingVisual}
           />
-          <TreeViewListItemCollapsibleTemplate
+          <ActionListItemCollapsibleTemplate
             text="level 2"
             leadingVisual={showGroupIcon && folder}
             truncateItem={truncateItem}
             ariaLevel="2"
-            ariaSetSize="2"
-            ariaPosInset="2"
             collapsePosition={0}
             containsSubItem
           >
             <ListTemplate listType="nested">
-              <TreeViewListItemCollapsibleTemplate
+              <ActionListItemCollapsibleTemplate
                 text="level 3"
                 ariaLevel="3"
-                ariaSetSize="2"
-                ariaPosInset="1"
                 leadingVisual={showGroupIcon && folder}
                 truncateItem={truncateItem}
                 collapsePosition={0}
@@ -112,65 +100,50 @@ export const ActionListTreeViewTemplate = ({showGroupIcon, showSubItemIcon, text
                   <ListItemTemplate
                     truncateItem={truncateItem}
                     ariaLevel="4"
-                    ariaSetSize="4"
-                    ariaPosInset="1"
                     treeitem
                     subItem
                     text={text}
-                    href=""
                     leadingVisual={showSubItemIcon && file}
                     trailingVisual={trailingVisual}
                   />
                   <ListItemTemplate
                     truncateItem={truncateItem}
                     ariaLevel="4"
-                    ariaSetSize="4"
-                    ariaPosInset="2"
                     treeitem
                     subItem
                     text={text}
-                    href=""
                     leadingVisual={showSubItemIcon && file}
                     trailingVisual={trailingVisual}
                   />
                   <ListItemTemplate
                     truncateItem={truncateItem}
                     ariaLevel="4"
-                    ariaSetSize="4"
-                    ariaPosInset="3"
                     treeitem
                     subItem
                     text={text}
-                    href=""
                     leadingVisual={showSubItemIcon && file}
                     trailingVisual={trailingVisual}
                   />
                 </ListTemplate>
-              </TreeViewListItemCollapsibleTemplate>
+              </ActionListItemCollapsibleTemplate>
               <ListItemTemplate
                 truncateItem={truncateItem}
                 ariaLevel="3"
-                ariaSetSize="2"
-                ariaPosInset="2"
                 treeitem
                 subItem
                 text={text}
-                href=""
                 leadingVisual={showSubItemIcon && file}
                 trailingVisual={trailingVisual}
               />
             </ListTemplate>
-          </TreeViewListItemCollapsibleTemplate>
+          </ActionListItemCollapsibleTemplate>
         </ListTemplate>
-      </TreeViewListItemCollapsibleTemplate>
+      </ActionListItemCollapsibleTemplate>
       <ListItemTemplate
         truncateItem={truncateItem}
         ariaLevel="1"
-        ariaSetSize="1"
-        ariaPosInset="1"
         treeitem
         text={text}
-        href="/"
         leadingVisual={showSubItemIcon && file}
         trailingVisual={trailingVisual}
         treeItemSingleton
