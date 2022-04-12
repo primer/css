@@ -1,0 +1,96 @@
+#!/bin/bash
+
+# This workflow runs axe checks on modified doc/content/components/* or doc/content/components/* pages because those include code examples.
+# Developers frequently copy and paste examples directly so it's important to ensure the examples are accessible.
+# Learn about @axe-core/cli: https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
+
+if [ -z "$STRING_OF_PATHS_WE_CARE_ABOUT" ]; then
+  echo "The script cannot run because STRING_OF_PATHS_WE_CARE_ABOUT is not correctly set for some reason"
+  echo "Exiting..."
+  exit 1
+else
+  array=($STRING_OF_PATHS_WE_CARE_ABOUT)
+  printf "%s\n" "${array[@]}" > temp.txt
+fi
+
+# Parsing paths from the filenames...
+nav_paths=()
+while IFS= read -r file
+do
+  prefix="docs/content"
+  suffix=".md"
+  doc_path=${file#"$prefix"}
+  doc_path=${doc_path%"$suffix"}
+  nav_paths+=($doc_path)
+done < temp.txt
+rm temp.txt
+
+# https://stackoverflow.com/a/8574392
+containsElement () {
+  local e match="$1"
+  shift
+  for e; do [[ "$e" == "$match" ]] && return 0; done
+  return 1
+}
+
+# Starting point violations
+# DO NOT ADD TO THIS LIST!
+needs_to_be_fixed=(
+  /components/autocomplete
+  /components/avatars
+  /components/box
+  /components/buttons
+  /components/header
+  /components/markdown
+  /components/progress
+  /components/select-menu
+  /components/labels
+  /components/timeline
+  /components/toasts
+  /utilities/flexbox
+  /utilities/layout 
+)
+
+echo "Pages that included in this starting point violations list are excluded from checks:"
+printf '%s\n' "${needs_to_be_fixed[@]}"
+
+doc_urls=()
+skipped=()
+for i in "${nav_paths[@]}"; 
+do
+  if containsElement "${i//\"/}" "${needs_to_be_fixed[@]}"; then
+    skipped+=($i)
+    continue
+  else
+    doc_url="http://localhost:8000$i"
+    doc_url="${doc_url//\"/}"
+    doc_urls+=($doc_url)
+  fi
+done
+
+if (( ${#skipped[@]} )); then
+  echo "==========================================================================================="
+  echo "WARNING"
+  echo ""
+  echo "Oh no! We have to skip accessibility checks on these doc pages you updated:"
+  echo ""
+  printf '%s\n' "${skipped[@]}"
+  echo ""
+  echo "because they are part of the starting point violations list."
+  echo ""
+  echo "Help us get one closer to getting rid of this list!"
+  echo "Consider addressing the accessibility issues on the examples of these pages as part of your PR ❤️"
+  echo "==========================================================================================="
+fi
+
+# Run axe checks only if there are pages to run it on
+if [ ${#doc_urls[@]} -eq 0 ]; then
+  exit
+else
+  echo "Installing axe..."
+  npm install -g @axe-core/cli
+  # https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
+  # We exclude rules that depend on full page context.
+  echo "Running axe..."
+  axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors
+fi
