@@ -99,6 +99,13 @@ export default {
 
     // Pane
 
+    hasPane: {
+      control: {type: 'boolean'},
+      table: {
+        category: 'Pane'
+      }
+    },
+
     paneWidth: {
       options: ['default', 'narrow', 'wide'],
       control: {
@@ -144,7 +151,7 @@ export default {
         type: 'inline-radio'
       },
       description:
-        'Whether to show a divider between `pane` and `content` regions if `responsiveVariant` is set to `stackRegions`. `line` shows a single line. `filled` shows a thicker mobile-frienldy divider.',
+        'Whether to show a divider between `pane` and `content` regions if `responsiveVariant` is set to `stackRegions`. `line` shows a single line. `filled` shows a thicker mobile-friendly divider.',
       table: {
         category: 'Pane'
       }
@@ -223,7 +230,7 @@ export default {
         type: 'inline-radio'
       },
       description:
-        'Whether to show a divider above the `footer` region on narrow viewports. `line` shows a single line. `filled` shows a thicker mobile-frienldy divider.',
+        'Whether to show a divider above the `footer` region on narrow viewports. `line` shows a single line. `filled` shows a thicker mobile-friendly divider.',
       table: {
         category: 'Footer'
       }
@@ -275,6 +282,7 @@ export const LayoutTemplate = ({
   rowGap,
 
   // Pane
+  hasPane,
   paneWidth,
   panePosition,
   panePositionWhenNarrow,
@@ -336,20 +344,14 @@ export const LayoutTemplate = ({
 
   if (hasPaneDivider) {
     paneDividerWhenNarrow = paneDividerWhenNarrow === 'inherit' ? 'line' : paneDividerWhenNarrow
-  } else {
-    paneDividerWhenNarrow = null
   }
 
   if (hasHeaderDivider) {
     headerDividerWhenNarrow = headerDividerWhenNarrow === 'inherit' ? 'line' : headerDividerWhenNarrow
-  } else {
-    headerDividerWhenNarrow = null
   }
 
   if (hasFooterDivider) {
     footerDividerWhenNarrow = footerDividerWhenNarrow === 'inherit' ? 'line' : footerDividerWhenNarrow
-  } else {
-    footerDividerWhenNarrow = null
   }
 
   PageLayoutBehavior()
@@ -392,54 +394,69 @@ export const LayoutTemplate = ({
             </div>
           )}
 
-          <div className={clsx(layoutClassName + '-columns')}>
-            {/* pane if rendered first */}
-            {panePosition === 'start' && (
-              <div
-                className={clsx(
-                  layoutClassName + '-region',
-                  layoutClassName + '-pane',
-                  paneDividerWhenNarrow &&
-                    layoutClassName +
-                      '-region--dividerNarrow-' +
-                      paneDividerWhenNarrow +
-                      (panePositionWhenNarrow === 'start' ? '-after' : '-before')
-                )}
-              >
-                {paneChildren}
-              </div>
-            )}
+          {hasPane && (
+            <div className={clsx(layoutClassName + '-columns')}>
+              {/* pane if rendered first */}
+              {panePosition === 'start' && (
+                <div
+                  className={clsx(
+                    layoutClassName + '-region',
+                    layoutClassName + '-pane',
+                    paneDividerWhenNarrow &&
+                      layoutClassName +
+                        '-region--dividerNarrow-' +
+                        paneDividerWhenNarrow +
+                        (panePositionWhenNarrow === 'start' ? '-after' : '-before')
+                  )}
+                >
+                  {paneChildren}
+                </div>
+              )}
 
-            {/* content */}
-            <div className={clsx(layoutClassName + '-region', layoutClassName + '-content')}>
-              {contentWidth ? (
-                <>
-                  <div className={layoutClassName + '-content-centered-' + contentWidth}>
-                    <div className={'container-' + contentWidth}>{contentChildren}</div>
-                  </div>
-                </>
-              ) : (
-                <>{contentChildren}</>
+              {/* content */}
+              <div className={clsx(layoutClassName + '-region', layoutClassName + '-content')}>
+                {contentWidth ? (
+                  <>
+                    <div className={layoutClassName + '-content-centered-' + contentWidth}>
+                      <div className={'container-' + contentWidth}>{contentChildren}</div>
+                    </div>
+                  </>
+                ) : (
+                  <>{contentChildren}</>
+                )}
+              </div>
+
+              {/* pane if rendered last */}
+              {panePosition === 'end' && (
+                <div
+                  className={clsx(
+                    layoutClassName + '-region',
+                    layoutClassName + '-pane',
+                    paneDividerWhenNarrow &&
+                      layoutClassName +
+                        '-region--dividerNarrow-' +
+                        paneDividerWhenNarrow +
+                        (panePositionWhenNarrow === 'start' ? '-after' : '-before')
+                  )}
+                >
+                  {paneChildren}
+                </div>
               )}
             </div>
-
-            {/* pane if rendered last */}
-            {panePosition === 'end' && (
-              <div
-                className={clsx(
-                  layoutClassName + '-region',
-                  layoutClassName + '-pane',
-                  paneDividerWhenNarrow &&
-                    layoutClassName +
-                      '-region--dividerNarrow-' +
-                      paneDividerWhenNarrow +
-                      (panePositionWhenNarrow === 'start' ? '-after' : '-before')
+          ) || (
+            <>
+              {/* single-column layout */}
+              <div className={clsx(layoutClassName + '-region', layoutClassName + '-content')}>
+                {contentWidth ? (
+                  <>
+                    <div className={'container-' + contentWidth}>{contentChildren}</div>
+                  </>
+                ) : (
+                  <>{contentChildren}</>
                 )}
-              >
-                {paneChildren}
               </div>
-            )}
-          </div>
+            </>
+          )}
 
           {/* footer */}
           {hasFooter && (
@@ -494,6 +511,7 @@ Playground.args = {
   responsiveVariant: 'stackRegions',
   primaryRegion: 'content',
 
+  hasPane: true,
   paneWidth: 'default',
   panePosition: 'end',
   panePositionWhenNarrow: 'inherit',

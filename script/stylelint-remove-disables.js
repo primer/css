@@ -12,7 +12,7 @@ const REMOVED = `===REMOVED@${Date.now()}===`
 
 execFile('stylelint', ['--rd', '--quiet', '--formatter', 'json', process.argv[2]], (error, stdout) => {
 
-  // Filter to only needless diables comments
+  // Filter to only needless disables comments
   const results = JSON.parse(stdout)
     .filter(result => result.warnings.length > 0)
     .map(({source, warnings}) => {

@@ -96,7 +96,7 @@ Rows can be used with or without `Box-header`, `Box-footer`, or `Box-body`.
 
 ### Box row markup structure
 
-Box rows have some reliance on markup structure in order to target the first and last rows. Box rows are given a top border that is lighter in color than other box elements so the first row is targeted to apply a darker border color. An inner border-radius is applied to the first and last rows that that row corners don't poke outside the `Box`, this can be particularly noticeable when using a highlight on box rows.
+Box rows have some reliance on markup structure in order to target the first and last rows. Box rows are given a top border that is lighter in color than other box elements so the first row is targeted to apply a darker border color. An inner border-radius is applied to the first and last rows that row corners don't poke outside the `Box`, this can be particularly noticeable when using a highlight on box rows.
 
 Using an unordered list is recommended in order to target the first and last rows, however, if you need to use a `<div>` for your rows, you may want to place your rows inside a parent `<div>` so that the first and last rows are styled appropriately.
 

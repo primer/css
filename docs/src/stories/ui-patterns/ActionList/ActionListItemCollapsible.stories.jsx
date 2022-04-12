@@ -131,6 +131,14 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    ariaLevel: {
+      name: 'ariaLevel',
+      type: 'string',
+      description: 'number - nested subgroup',
+      table: {
+        category: 'HTML'
+      }
     }
   }
 }
@@ -149,11 +157,20 @@ export const ActionListItemCollapsibleTemplate = ({
   containsActiveSubItem,
   truncateItem,
   collapsePosition,
-  ariaControlsId
+  ariaControlsId,
+  ariaLevel
 }) => {
   const [isCollapsed, itemIsCollapsed] = useToggle()
+  const itemStyle = {
+    '--ActionList-tree-depth': `${ariaLevel}`
+  }
   return (
-    <li className={clsx('ActionList-item', containsSubItem && `ActionList-item--hasSubItem`)}>
+    <li
+      className={clsx('ActionList-item', containsSubItem && `ActionList-item--hasSubItem`)}
+      style={ariaLevel && itemStyle}
+      aria-level={ariaLevel ? `${ariaLevel}` : undefined}
+      role={ariaLevel ? 'treeitem' : undefined}
+    >
       <button
         onClick={itemIsCollapsed}
         aria-expanded={isCollapsed ? 'false' : 'true'}

@@ -526,6 +526,7 @@
   display: flex;
   min-height: $actionList-item-height-sm;
   color: var(--color-fg-muted); // if visual is text
+  pointer-events: none;
   fill: var(--color-fg-muted);
   align-items: center;
 }

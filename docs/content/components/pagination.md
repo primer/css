@@ -29,7 +29,7 @@ To do this, add anchor links to the `pagination` element. Previous and Next butt
 
 As always, make sure to include the appropriate `aria` attributes to make the element accessible.
 
-- Add `aria-label="Pagination"` to the the `paginate-container` element.
+- Add `aria-label="Pagination"` to the `paginate-container` element.
 - Add `aria-label="Page X"` to each anchor link.
 
 ```html live

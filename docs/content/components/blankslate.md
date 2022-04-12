@@ -112,7 +112,7 @@ Add an additional optional class to the `.blankslate` to change its appearance.
 
 ### Add border
 
-To add a border, wrap the blankstate component with the [Box component](/components/box).
+To add a border, wrap the blankslate component with the [Box component](/components/box).
 
 ```html live
 <div class="Box">

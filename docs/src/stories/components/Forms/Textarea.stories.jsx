@@ -48,7 +48,7 @@ export default {
       }
     },
     hideWebKit: {
-      description: 'hude WebKit autofill icon',
+      description: 'hide WebKit autofill icon',
       control: {type: 'boolean'},
       table: {
         category: 'Interactive'
