@@ -2999,10 +2999,10 @@ globals@^13.6.0, globals@^13.9.0:
   dependencies:
     type-fest "^0.20.2"
 
-globby@13.1.0:
-  version "13.1.0"
-  resolved "https://registry.yarnpkg.com/globby/-/globby-13.1.0.tgz#7a5390411c5c13a844875d94fbd1988ddc6ac9c8"
-  integrity sha512-BECc0Q0jlCk2BLaY2DuHFCdKo+Es6OzOHECV4KpNtVtgXZobl4jmLThiBPY+RiHoOFeI0pd1G035CFLFP/o2Fg==
+globby@13.1.1:
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/globby/-/globby-13.1.1.tgz#7c44a93869b0b7612e38f22ed532bfe37b25ea6f"
+  integrity sha512-XMzoDZbGZ37tufiv7g0N4F/zp3zkwdFtVbV3EHsVl1KQr4RPLfNoT068/97RPshz2J5xYNEjLKKBKaGHifBd3Q==
   dependencies:
     dir-glob "^3.0.1"
     fast-glob "^3.2.11"
