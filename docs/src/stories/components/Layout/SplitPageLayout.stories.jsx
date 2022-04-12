@@ -34,6 +34,13 @@ export default {
 
     // Pane
 
+    hasPane: {
+      control: {type: 'boolean'},
+      table: {
+        category: 'Pane'
+      }
+    },
+
     paneWidth: {
       options: ['default', 'narrow', 'wide'],
       control: {
@@ -98,6 +105,7 @@ export const SplitPageLayoutTemplate = ({
   _debug,
   padding,
   primaryRegion,
+  hasPane,
   paneWidth,
   paneIsSticky,
   contentWidth,
@@ -119,6 +127,7 @@ export const SplitPageLayoutTemplate = ({
         rowGap="none"
         responsiveVariant="separateRegions"
         primaryRegion={primaryRegion}
+        hasPane={hasPane}
         paneWidth={paneWidth}
         paneIsSticky={paneIsSticky}
         panePosition="start"
@@ -152,6 +161,7 @@ Playground.args = {
   primaryRegion: 'content',
 
   // Pane
+  hasPane: true,
   paneWidth: 'wide',
 
   // Content

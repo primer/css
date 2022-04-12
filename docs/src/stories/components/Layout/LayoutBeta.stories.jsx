@@ -326,6 +326,7 @@ export const LayoutTemplate = ({
   innerSpacing = innerSpacing ?? 'none'
   columnGap = columnGap ?? 'normal'
   rowGap = rowGap ?? 'normal'
+  hasPane = hasPane ?? true
   panePosition = panePosition ?? 'end'
   panePositionWhenNarrow = panePositionWhenNarrow ?? 'inherit'
   responsiveVariant = responsiveVariant ?? 'stackRegions'
