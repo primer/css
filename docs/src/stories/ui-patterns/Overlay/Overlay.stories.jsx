@@ -389,6 +389,7 @@ export const OverlayTemplate = ({
 )
 
 export const Playground = OverlayTemplate.bind({})
+Playground.storyName = 'Playground'
 Playground.args = {
   title: 'This is the title of the dialog',
   description: 'This is the subtitle of the dialog',
@@ -413,4 +414,10 @@ Playground.args = {
   ariaLabelledby: '',
   ariaDescribedby: '',
   dataFocusTrap: ''
+}
+
+export const OverlayMenu = OverlayTemplate.bind({})
+OverlayMenu.storyName = 'Overlay menu'
+OverlayMenu.args = {
+  trigger: <button className="btn">Open Overlay</button>
 }

@@ -191,8 +191,7 @@
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition:
-        visibility 0 linear $actionList-item-checkmark-transition-timing,
+      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 
@@ -301,7 +300,7 @@
   grid-template-rows: min-content;
   grid-template-areas: 'leadingAction leadingVisual label trailingVisual trailingAction';
   grid-template-columns: min-content min-content minmax(0, auto) min-content min-content;
-  align-items: flex-start;
+  align-items: start;
 
   // column-gap persists with empty grid-areas, margin applies only when children exist
   > :not(:last-child) {

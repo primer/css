@@ -1,17 +1,5 @@
 // stylelint-disable selector-max-compound-selectors, max-nesting-depth, selector-max-specificity
 
-@keyframes overlay--dialog-appear {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 .Overlay-hidden {
   display: none !important;
 }
