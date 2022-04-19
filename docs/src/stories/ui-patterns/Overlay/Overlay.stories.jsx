@@ -118,12 +118,20 @@ export default {
         category: 'CSS'
       }
     },
+    showBackdrop: {
+      control: {type: 'boolean'},
+      description: 'Show backdrop and handle positioning for dialogs.',
+      defaultValue: true,
+      table: {
+        category: 'CSS'
+      }
+    },
     position: {
       options: [0, 1, 2], // iterator
-      mapping: ['', 'Overlay-backdrop--positionCenter', 'Overlay-backdrop--positionBottom'], // values
+      mapping: ['Overlay-positionAbsolute', 'Overlay-backdrop--positionCenter', 'Overlay-backdrop--positionBottom'], // values
       control: {
         type: 'inline-radio',
-        labels: ['none', 'center', 'bottom']
+        labels: ['absolute', 'center', 'bottom']
       },
       description: 'Positions overlay',
       table: {
@@ -302,7 +310,8 @@ export const OverlayTemplate = ({
   dataFocusTrap,
   trigger,
   titleId,
-  descriptionId
+  descriptionId,
+  showBackdrop
 }) => (
   <>
     {trigger}
@@ -310,7 +319,7 @@ export const OverlayTemplate = ({
       id="overlay-backdrop"
       className={clsx(
         toggleOverlay && 'Overlay-hidden',
-        'Overlay-backdrop',
+        showBackdrop && 'Overlay-backdrop',
         position && `${position}`,
         positionWhenNarrow && `${positionWhenNarrow}`
       )}
@@ -413,7 +422,8 @@ Playground.args = {
   role: '',
   ariaLabelledby: '',
   ariaDescribedby: '',
-  dataFocusTrap: ''
+  dataFocusTrap: '',
+  showBackdrop: true
 }
 
 export const OverlayMenu = OverlayTemplate.bind({})

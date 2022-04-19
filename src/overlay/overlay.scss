@@ -249,6 +249,10 @@
     }
   }
 
+  .Overlay-positionAbsolute {
+    position: absolute;
+  }
+
   // 767px
   @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
     &.Overlay-backdrop-positionWhenNarrow-fullScreen {
