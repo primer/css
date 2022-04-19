@@ -1,7 +1,11 @@
 #!/bin/bash
-
+set -e
 # Add base url to be able to serve static files
-echo '<base href="/css/storybook/" />' >> .storybook/manager-head.html
+if [ -n "$1" ]; then
+  echo '<base href="/storybook/" />' >> .storybook/manager-head.html
+else
+  echo '<base href="/css/storybook/" />' >> .storybook/manager-head.html
+fi
 
 # Build storybook inside docs
 ./node_modules/.bin/build-storybook -o public/storybook -s public/static
