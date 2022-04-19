@@ -5,10 +5,8 @@
   "scripts": {
     "clean": "gatsby clean",
     "develop": "ln -sf ../dist . && gatsby develop -H 0.0.0.0",
-    "build-content": "gatsby build --prefix-paths",
-    "build": "./script/now-build.sh && ./script/build-storybook.sh",
     "storybook": "NODE_ENV=test start-storybook -p 6006",
-    "build-storybook": "./script/build-storybook.sh"
+    "build:storybook": "script/build-storybook"
   },
   "dependencies": {
     "@babel/preset-react": "^7.16.7",

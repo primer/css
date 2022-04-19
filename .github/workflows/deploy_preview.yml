@@ -1,74 +1,57 @@
 name: Deploy
 on:
-  push:
-    branches-ignore:
-      - 'main'
-    paths:
-      - 'src/**'
-      - 'docs/**'
-      - '.github/workflows/deploy*.yml'
-      - 'package.json'
+  pull_request:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  deployments: write
+  issues: write
+  statuses: write
+  checks: write
+
 jobs:
-  deploy-preview:
+  deploy:
     if: ${{ github.repository == 'primer/css' }}
-    name: Preview
+    uses: primer/.github/.github/workflows/deploy_preview.yml@rezrah/add-outputs
+    name: Deploy preview
+    with:
+      node_version: 14
+      install: yarn
+      build: yarn build:docs:preview
+      output_dir: docs/public
+
+  deploy-storybook:
+    if: ${{ github.repository == 'primer/css' }}
+    name: Preview Storybook
     runs-on: ubuntu-latest
+    needs: deploy
     steps:
       - uses: actions/checkout@v3
-      - uses: chrnorm/deployment-action@v1.2.0
-        name: Create GitHub deployment
-        id: deployment
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          environment: Preview
+
       - uses: chrnorm/deployment-action@v1.2.0
         name: Create GitHub deployment for storybook
         id: storybook
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment: Storybook Preview
+          target_url: '${{ needs.deploy.outputs.deployment_url }}/storybook'
 
-      - name: Vercel Action
-        uses: amondnet/vercel-action@v20
-        id: vercel-action
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-token: ${{ secrets.VERCEL_TOKEN_SHARED }}
-          github-comment: false
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID_SHARED }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-
-      - name: Update deployment status (success)
-        if: success()
-        uses: chrnorm/deployment-status@v1.0.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          environment_url: ${{ steps.vercel-action.outputs.preview-url }}
-          state: "success"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          
       - name: Update storybook deployment status (success)
         if: success()
         uses: chrnorm/deployment-status@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          environment_url: '${{ steps.vercel-action.outputs.preview-url }}/css/storybook'
-          state: "success"
+          environment_url: '${{ needs.deploy.outputs.deployment_url }}/storybook'
+          target_url: '${{ needs.deploy.outputs.deployment_url }}/storybook'
+          state: 'success'
           deployment_id: ${{ steps.storybook.outputs.deployment_id }}
 
-      - name: Update deployment status (failure)
-        if: failure()
-        uses: chrnorm/deployment-status@v1.0.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          state: "failure"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          
       - name: Update storybook deployment status (failure)
         if: failure()
         uses: chrnorm/deployment-status@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          state: "failure"
+          state: 'failure'
           deployment_id: ${{ steps.storybook.outputs.deployment_id }}
-

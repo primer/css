@@ -23,6 +23,8 @@
     "design-system"
   ],
   "scripts": {
+    "build:docs": "script/build-docs",
+    "build:docs:preview": "script/build-docs preview",
     "dist": "script/dist.js",
     "dist:watch": "chokidar \"src/**/*.scss\" -c \"script/dist.js\"",
     "stylelint": "stylelint --quiet --rd 'src/**/*.scss'",
@@ -33,6 +35,7 @@
     "prepublishOnly": "script/prepublish",
     "start": "yarn dev",
     "dev": "cd docs && yarn && yarn develop",
+    "postinstall": "cd docs && yarn",
     "pretest": "yarn dist && script/pretest",
     "test": "NODE_OPTIONS=--experimental-vm-modules yarn jest",
     "release": "changeset publish",
