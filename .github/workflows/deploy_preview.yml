@@ -8,32 +8,38 @@ permissions:
   id-token: write
 
 jobs:
-  deploy-preview:
+  deploy:
     if: ${{ github.repository == 'primer/css' }}
-    name: Preview
+    uses: primer/.github/.github/workflows/deploy_preview.yml@rezrah/add-outputs
+    name: Deploy preview
+    with:
+      node_version: 14
+      install: yarn
+      build: yarn build:docs:preview
+      output_dir: docs/public
+
+  deploy-storybook:
+    if: ${{ github.repository == 'primer/css' }}
+    name: Preview Storybook
+    runs-on: ubuntu-latest
+    needs: deploy
     steps:
       - uses: chrnorm/deployment-action@v1.2.0
         name: Create GitHub deployment for storybook
         id: storybook
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          environment: Storybook Preview
-      - uses: primer/.github/.github/workflows/deploy_preview.yml@rezrah/add-outputs
-        name: Deploy preview
-        id: deploy
-        with:
-          node_version: 14
-          install: yarn
-          build: yarn build:docs:preview
-          output_dir: docs/public
+          environment: Storybook
+
       - name: Update storybook deployment status (success)
         if: success()
         uses: chrnorm/deployment-status@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          environment_url: '${{ steps.deploy.outputs.deployment_url }}/css/storybook'
+          environment_url: '${{ needs.deploy.outputs.deployment_url }}/css/storybook'
           state: 'success'
           deployment_id: ${{ steps.storybook.outputs.deployment_id }}
+
       - name: Update storybook deployment status (failure)
         if: failure()
         uses: chrnorm/deployment-status@v1.0.0
