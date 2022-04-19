@@ -1,13 +1,6 @@
 name: Deploy
 on:
   pull_request:
-    branches-ignore:
-      - 'main'
-    paths:
-      - 'src/**'
-      - 'docs/**'
-      - '.github/workflows/deploy*.yml'
-      - 'package.json'
 
 permissions:
   contents: read
