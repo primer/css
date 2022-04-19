@@ -11,7 +11,7 @@ jobs:
   deploy-preview:
     if: ${{ github.repository == 'primer/css' }}
     name: Preview
-    uses: primer/.github/.github/workflows/deploy_preview.yml@main
+    uses: primer/.github/.github/workflows/deploy_preview.yml@rezrah/add-outputs
     with:
       node_version: 14
       install: yarn
