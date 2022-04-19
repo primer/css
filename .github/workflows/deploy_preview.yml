@@ -30,12 +30,29 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Get git output names
+        id: git
+        shell: bash
+        run: |
+          if [[ "${{ github.ref }}" != "refs/tags/"* ]]; then
+            if [[ ${{ github.event_name }} == 'pull_request' ]]; then
+              echo "::set-output name=current_branch::$HEAD_REF"
+            else
+              echo "::set-output name=current_branch::$REF_BRANCH"
+            fi
+          else
+            REF=$(printf "%q" "${{ github.ref }}")
+            REF_BRANCH=${REF/refs\/tags\/${{ inputs.strip_tag_prefix }}/}
+            echo "::set-output name=current_branch::$(eval printf "%s" "$REF_BRANCH")"
+          fi
+
       - uses: chrnorm/deployment-action@v1.2.0
         name: Create GitHub deployment for storybook
         id: storybook
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment: Storybook Preview
+          ref: ${{ steps.git.outputs.current_branch }}
 
       - name: Update storybook deployment status (success)
         if: success()
@@ -45,6 +62,7 @@ jobs:
           environment_url: '${{ needs.deploy.outputs.deployment_url }}/storybook'
           state: 'success'
           deployment_id: ${{ steps.storybook.outputs.deployment_id }}
+          ref: ${{ steps.git.outputs.current_branch }}
 
       - name: Update storybook deployment status (failure)
         if: failure()
@@ -53,3 +71,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           state: 'failure'
           deployment_id: ${{ steps.storybook.outputs.deployment_id }}
+          ref: ${{ steps.git.outputs.current_branch }}
