@@ -52,7 +52,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment: Storybook Preview
-          ref: ${{ steps.git.outputs.current_branch }}
+          ref: 'rezrah/github-pages'
           target_url: '${{ needs.deploy.outputs.deployment_url }}/storybook'
 
       - name: Update storybook deployment status (success)
@@ -61,9 +61,10 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment_url: '${{ needs.deploy.outputs.deployment_url }}/storybook'
+          target_url: '${{ needs.deploy.outputs.deployment_url }}/storybook'
           state: 'success'
           deployment_id: ${{ steps.storybook.outputs.deployment_id }}
-          ref: ${{ steps.git.outputs.current_branch }}
+          ref: 'rezrah/github-pages'
 
       - name: Update storybook deployment status (failure)
         if: failure()
@@ -72,4 +73,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           state: 'failure'
           deployment_id: ${{ steps.storybook.outputs.deployment_id }}
-          ref: ${{ steps.git.outputs.current_branch }}
+          ref: 'rezrah/github-pages'
