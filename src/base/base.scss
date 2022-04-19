@@ -119,12 +119,8 @@ input[type='radio'],
 input[type='checkbox'] {
   &:focus,
   &:focus-visible {
-    outline-offset: 2px;
+    outline-offset: 0;
   }
-}
-
-.faketarget {
-  @include focusBoxShadowInset;
 }
 
 // for handling focus conditionally

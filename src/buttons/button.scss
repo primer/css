@@ -210,6 +210,22 @@ a.btn-primary {
     background-color: var(--color-btn-outline-selected-bg);
     border-color: var(--color-btn-outline-selected-border);
     box-shadow: var(--color-btn-outline-selected-shadow);
+
+    // fallback :focus state
+    &:focus {
+      @include focusOutlineOnEmphasis;
+
+      // remove fallback :focus if :focus-visible is supported
+      &:not(:focus-visible) {
+        outline: solid 1px transparent;
+        box-shadow: none;
+      }
+    }
+
+    // default focus state
+    &:focus-visible {
+      @include focusOutlineOnEmphasis;
+    }
   }
 
   &:disabled,

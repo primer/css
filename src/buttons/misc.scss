@@ -29,7 +29,7 @@
     }
   }
 
-  &:not(.dropdown-item, .social-reaction-summary-item) {
+  &:not(.dropdown-item) {
     &:focus,
     &:focus-visible {
       border-radius: $border-radius;
