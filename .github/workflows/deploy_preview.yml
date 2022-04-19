@@ -16,7 +16,6 @@ permissions:
 
 jobs:
   deploy-preview:
-  deploy-preview:
     if: ${{ github.repository == 'primer/css' }}
     name: Preview
     uses: primer/.github/.github/workflows/deploy_preview.yml@main
@@ -25,4 +24,3 @@ jobs:
       install: yarn
       build: yarn build:docs:preview
       output_dir: docs/public
-
