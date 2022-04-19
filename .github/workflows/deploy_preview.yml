@@ -53,6 +53,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment: Storybook Preview
           ref: ${{ steps.git.outputs.current_branch }}
+          target_url: '${{ needs.deploy.outputs.deployment_url }}/storybook'
 
       - name: Update storybook deployment status (success)
         if: success()
