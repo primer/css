@@ -35,7 +35,6 @@
     "prepublishOnly": "script/prepublish",
     "start": "yarn dev",
     "dev": "cd docs && yarn && yarn develop",
-    "postinstall": "cd docs && yarn",
     "pretest": "yarn dist && script/pretest",
     "test": "NODE_OPTIONS=--experimental-vm-modules yarn jest",
     "release": "changeset publish",
