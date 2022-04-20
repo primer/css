@@ -36,7 +36,7 @@ jobs:
       - name: Log guard output
         run: echo ${{ needs.guard.outputs.should_deploy }}
   deploy:
-    if: ${{ github.repository == 'primer/css' && needs.guard.outputs.should_deploy == true }}
+    if: ${{ github.repository == 'primer/css' }}
     name: Production
     needs: [guard]
     uses: primer/.github/.github/workflows/deploy_preview.yml@main
