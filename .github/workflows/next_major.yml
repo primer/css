@@ -1,0 +1,14 @@
+name: Next Major Pull Request
+on:
+  push:
+    branches:
+      - 'changeset-release/next_major'
+
+jobs:
+  next_major_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Don't Merge
+        run: |
+          echo "Don't merge the next_major, changeset pr into next_major. Instead when you're ready to release a new major version, change the base of this pr to main, and merge."
+          exit 1
