@@ -7,7 +7,7 @@
 
 // Default label
 
-.label, // TODO: Deprecte
+.label, // TODO: Deprecate
 .Label {
   @include labels-base;
 
@@ -69,6 +69,16 @@
 .Label--danger {
   color: var(--color-danger-fg);
   border-color: var(--color-danger-emphasis);
+}
+
+.Label--open {
+  color: var(--color-open-fg);
+  border-color: var(--color-open-emphasis);
+}
+
+.Label--closed {
+  color: var(--color-closed-fg);
+  border-color: var(--color-closed-emphasis);
 }
 
 .Label--done {

@@ -6,18 +6,18 @@
   --Layout-sidebar-width: #{map-get($sidebar-width, 'sm')};
   --Layout-gutter: 16px;
 
-  @media (max-width: calc(#{$width-sm} - 1px)) {
+  @media (max-width: calc(#{$width-sm} - 0.02px)) {
     @include flow-as-row;
   }
 
   &.Layout--flowRow-until-md {
-    @media (max-width: calc(#{$width-md} - 1px)) {
+    @media (max-width: calc(#{$width-md} - 0.02px)) {
       @include flow-as-row;
     }
   }
 
   &.Layout--flowRow-until-lg {
-    @media (max-width: calc(#{$width-lg} - 1px)) {
+    @media (max-width: calc(#{$width-lg} - 0.02px)) {
       @include flow-as-row;
     }
   }
@@ -47,7 +47,8 @@
   }
 
   &.Layout--gutter-none {
-    --Layout-gutter: 0;
+    // stylelint-disable-next-line length-zero-no-unit
+    --Layout-gutter: 0px;
   }
 
   &.Layout--gutter-condensed {

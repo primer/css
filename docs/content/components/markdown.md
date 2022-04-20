@@ -268,6 +268,10 @@ bundle: markdown
 
   <hr />
 
+  <p>The <code>samp</code> HTML element is used to enclose inline text which represents sample (or quoted) output from a computer program. Here an example of an error message: <samp>File not found</samp></p>
+
+  <hr />
+
   <p>Small images should be shown at their actual size.</p>
 
   <p><img src="http://placekitten.com/g/300/200/"></p>
@@ -453,8 +457,12 @@ Inline code inside table cells should still be distinguishable.
 
 | Language    | Code               |
 |-------------|--------------------|
-| Javascript  | `var foo = "bar";` |
+| JavaScript  | `var foo = "bar";` |
 | Ruby        | `foo = "bar"`      |
+
+----------------
+
+The `<samp>` HTML element is used to enclose inline text which represents sample (or quoted) output from a computer program. Here an example of an error message: <samp>File not found</samp>
 
 ----------------
 

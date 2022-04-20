@@ -14,19 +14,19 @@
 
 // Hide utilities for each breakpoint
 // Each hide utility only applies to one breakpoint range.
-@media (max-width: $width-sm - 1px) {
+@media (max-width: $width-sm - 0.02px) {
   .hide-sm {
     display: none !important;
   }
 }
 
-@media (min-width: $width-sm) and (max-width: $width-md - 1px) {
+@media (min-width: $width-sm) and (max-width: $width-md - 0.02px) {
   .hide-md {
     display: none !important;
   }
 }
 
-@media (min-width: $width-md) and (max-width: $width-lg - 1px) {
+@media (min-width: $width-md) and (max-width: $width-lg - 0.02px) {
   .hide-lg {
     display: none !important;
   }
@@ -34,6 +34,55 @@
 
 @media (min-width: $width-lg) {
   .hide-xl {
+    display: none !important;
+  }
+}
+
+// Show/Hide Viewport range utilities
+
+.show-whenNarrow,
+.show-whenRegular,
+.show-whenWide,
+.show-whenRegular.hide-whenWide {
+  display: none !important;
+}
+
+.hide-whenNarrow,
+.hide-whenRegular,
+.hide-whenWide {
+  display: block !important;
+}
+
+@media (max-width: $width-md - 0.02px) {
+  .show-whenNarrow {
+    display: block !important;
+  }
+
+  .hide-whenNarrow {
+    display: none !important;
+  }
+}
+
+@media (min-width: $width-md) {
+  .show-whenRegular,
+  .show-whenRegular.hide-whenWide {
+    display: block !important;
+  }
+
+  .hide-whenRegular {
+    display: none !important;
+  }
+}
+
+// The width of a `wide` viewport range may change as we're finalizing
+// the Primer primitives viewport ranges proposal
+@media (min-width: $width-xl) {
+  .show-whenWide {
+    display: block !important;
+  }
+
+  .hide-whenWide,
+  .show-whenRegular.hide-whenWide {
     display: none !important;
   }
 }

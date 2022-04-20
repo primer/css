@@ -8,6 +8,13 @@ const customViewports = {
   minXS: {
     name: 'XS (min)',
     styles: {
+      width: '320px',
+      height: '100%'
+    }
+  },
+  medXS: {
+    name: 'XS (med)',
+    styles: {
       width: '375px',
       height: '100%'
     }
@@ -94,7 +101,19 @@ export const parameters = {
   html: {
     root: '#story' // target id for html tab (should be direct parent of <Story /> for easy copy/paste)
   },
-  viewport: {viewports: customViewports}
+  viewport: {viewports: customViewports},
+  options: {
+    storySort: (storyA, storyB) => {
+      if (storyA[1].title.includes('Examples')) {
+        // if both are stories, sort alphabetically
+        if (storyB[1].title.includes('Examples')) return -1
+        // if only 1 is a story, push the examples story down
+        else return 1
+      }
+      // sort as usual = alphabetical
+      return -1
+    }
+  }
 }
 
 const themes = [
@@ -124,9 +143,10 @@ export const decorators = [
   (Story, context) => {
     return (
       <div class="theme-wrap">
-        { themes.map((theme) => {
-            if (context.globals.theme === theme || context.globals.theme === 'all') {
-              return <div
+        {themes.map(theme => {
+          if (context.globals.theme === theme || context.globals.theme === 'all') {
+            return (
+              <div
                 id="story"
                 className="story-wrap"
                 data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
@@ -135,8 +155,9 @@ export const decorators = [
               >
                 <Story {...context} />
               </div>
-            }
-          })}
+            )
+          }
+        })}
       </div>
     )
   }

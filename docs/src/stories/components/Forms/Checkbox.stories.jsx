@@ -117,5 +117,6 @@ Playground.args = {
   highlight: false,
   note: '',
   type: 'checkbox',
-  focusAllElements: false
+  focusAllElements: false,
+  type: 'checkbox'
 }

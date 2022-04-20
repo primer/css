@@ -243,6 +243,7 @@ input::-webkit-inner-spin-button {
 }
 
 .form-warning {
+  // stylelint-disable-next-line primer/spacing
   padding: $spacer-2 10px;
   // stylelint-disable-next-line primer/spacing
   margin: 10px 0;

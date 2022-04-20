@@ -94,11 +94,33 @@ Don't forget to add the compiled CSS to the `<head>` section of your page.
 ```html
 <link href="path/to/style.css" rel="stylesheet" />
 ```
+### Troubleshooting Jekyll errors
+
+Currently [jekyll-sass-converter](https://github.com/jekyll/jekyll-sass-converter) uses the [deprecated  `LibSass` library](https://github.com/jekyll/jekyll-sass-converter#sass-implementations). Due to this you might run into issues. One way to deal with this is to use an experimental version of `jekyll-sass-converter` which uses [dart sass](https://sass-lang.com/dart-sass).
+
+1. Add `jekyll-sass-converter` and `sass-embedded` to `Gemfile`:
+```ruby
+group :jekyll_plugins do
+  gem 'jekyll-sass-converter', github: 'jekyll/jekyll-sass-converter'
+  gem 'sass-embedded'
+end
+```
+2. Run `bundle install`
+```bash
+$ bundle install
+```
+3. Update your `_config.yml`:
+```yml
+sass:
+  implementation: sass-embedded
+```
+
+Since GitHub pages is currently [locked to version `1.5.2` of `jekyll-sass-converter`](https://pages.github.com/versions/). If you run into errors you should look into [using the built CSS](#using-primer-css-on-a-static-site).
 
 ## Using Primer CSS on a static site
 
 You won't need to install any node modules or Sass compilers for a static site; you can use the built CSS. The best thing to do is to [download the built CSS](https://unpkg.com/@primer/css/dist/primer.css) from the [unpkg.com](https://unpkg.com) and host it yourself. If that's not an option, you can include a CDN link in your HTML:
 
 ```html
-<link href="https://unpkg.com/@primer/css@^16.0.0/dist/primer.css" rel="stylesheet" />
+<link href="https://unpkg.com/@primer/css@^19.0.0/dist/primer.css" rel="stylesheet" />
 ```

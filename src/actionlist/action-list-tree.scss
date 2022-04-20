@@ -1,0 +1,118 @@
+// stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-max-specificity, selector-max-type, primer/spacing
+// tree-view variant
+// renders ActionList with default styling for tree-view
+// collapse/expand icons presents as leadingActions, rotate 90deg
+// connecting vertical lines between collapse groups
+// consistent font-size between nested groups
+
+@mixin treeConnectingLine($left) {
+  position: absolute;
+  left: $left;
+  width: 1px;
+  height: 100%;
+  content: '';
+  background: var(--color-action-list-item-inline-divider);
+}
+
+.ActionList--tree {
+  --ActionList-tree-depth: 1;
+  // TODO: remove with PVC implementation
+  .ActionList-item--subItem > .ActionList-content {
+    font-size: $body-font-size;
+  }
+
+  .ActionList-item {
+    // class for single tree items not within a group
+    &.ActionList-item--singleton {
+      .ActionList-content {
+        padding-left: $spacer-5;
+      }
+    }
+
+    // normal font-weight for any active item
+    &.ActionList-item--navActive {
+      &:not(.ActionList-item--subItem) {
+        .ActionList-item-label {
+          font-weight: $font-weight-normal;
+        }
+      }
+    }
+  }
+
+  .ActionList-content {
+    // nesting (infinite levels)
+    // target items inside expanded subgroup
+    &[aria-expanded] {
+      + .ActionList--subGroup {
+        position: relative;
+
+        // --ActionList-tree-depth is defined as an inline style referencing the aria-level of each item ie: aria-level="2"
+        .ActionList-content {
+          padding-left: calc(#{$spacer-2} * var(--ActionList-tree-depth));
+        }
+      }
+    }
+
+    // tree-view specific collapse icon positioning/animation
+    &[aria-expanded='true'] {
+      .ActionList-item-collapseIcon {
+        transition: transform 120ms linear;
+        transform: rotate(0deg);
+      }
+
+      // normal weight for parent folder containing active child
+      &.ActionList-content--hasActiveSubItem {
+        > .ActionList-item-label {
+          font-weight: $font-weight-normal;
+        }
+      }
+    }
+
+    &[aria-expanded='false'] {
+      .ActionList-item-collapseIcon {
+        transition: transform 120ms linear;
+        transform: rotate(-90deg);
+      }
+
+      &.ActionList-content--hasActiveSubItem {
+        > .ActionList-item-label {
+          font-weight: $font-weight-normal;
+        }
+      }
+    }
+  }
+
+  // expand/collapse group
+  .ActionList-item--hasSubItem {
+    .ActionList-item--subItem:not(.ActionList-item--hasSubItem) {
+      .ActionList-content {
+        // increase child padding by targeting content first child span (add to ActionList-content padding, not replace)
+        // creates a slight indent of child items
+        > span:first-child {
+          padding-left: $spacer-4;
+        }
+      }
+    }
+  }
+
+  // first subitem
+  > [aria-level='1'].ActionList-item--hasSubItem {
+    > .ActionList--subGroup {
+      &::before {
+        @include treeConnectingLine($left: $spacer-3);
+      }
+    }
+  }
+
+  // all other subitems
+  // center connecting line with parent (line is 1px (8px - 1px)
+  .ActionList-item--hasSubItem:not([aria-level='1']) {
+    > .ActionList--subGroup {
+      &::before {
+        @include treeConnectingLine(
+          $left: calc(#{$spacer-2} * (var(--ActionList-tree-depth)) + #{$spacer-2 - $border-width})
+        );
+      }
+    }
+  }
+}

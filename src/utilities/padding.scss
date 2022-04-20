@@ -1,5 +1,7 @@
 // Padding spacer utilities
-// stylelint-disable block-opening-brace-space-before, comment-empty-line-before
+// stylelint-disable block-opening-brace-space-before
+// stylelint-disable comment-empty-line-before
+// stylelint-disable primer/spacing
 
 // Responsive padding spacer utilities
 @each $breakpoint, $variant in $responsive-variants {

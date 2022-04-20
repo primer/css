@@ -28,7 +28,6 @@
   .Box-btn-octicon {
     &.btn-octicon {
       padding: $spacer-2 $spacer-3;
-      // stylelint-disable-next-line primer/spacing
       margin: (-$spacer-2) (-$spacer-3);
       line-height: $lh-condensed;
     }
@@ -60,7 +59,6 @@
   .Box-btn-octicon {
     &.btn-octicon {
       padding: $spacer-4;
-      // stylelint-disable-next-line primer/spacing
       margin: (-$spacer-4) (-$spacer-4);
     }
   }
@@ -285,7 +283,6 @@
   // Increase specificity when btn-octicon is used because comes after .Box in the cascade
   &.btn-octicon {
     padding: $spacer-3 $spacer-3;
-    // stylelint-disable-next-line primer/spacing
     margin: (-$spacer-3) (-$spacer-3);
     line-height: $lh-default; // override btn-octicon line-height
   }

@@ -42,6 +42,8 @@ Labels come in a few different functional classes. Use to communicate the conten
 - `Label--attention`
 - `Label--severe`
 - `Label--danger`
+- `Label--open`
+- `Label--closed`
 - `Label--done`
 - `Label--sponsors`
 
@@ -51,6 +53,8 @@ Labels come in a few different functional classes. Use to communicate the conten
 <span class="Label mr-1 Label--attention">Attention</span>
 <span class="Label mr-1 Label--severe">Severe</span>
 <span class="Label mr-1 Label--danger">Danger</span>
+<span class="Label mr-1 Label--open">Open</span>
+<span class="Label mr-1 Label--closed">Closed</span>
 <span class="Label mr-1 Label--done">Done</span>
 <span class="Label mr-1 Label--sponsors">Sponsors</span>
 ```

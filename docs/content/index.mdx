@@ -6,7 +6,6 @@ import {HeroLayout} from '@primer/gatsby-theme-doctocat'
 import {Grid, Box, Heading, Text, ButtonOutline, BorderBox} from '@primer/components'
 import {Link} from 'gatsby'
 import utilitiesImage from '../src/utilities-image.svg'
-import objectsImage from '../src/objects-image.svg'
 import componentsImage from '../src/components-image.svg'
 import typographyImage from '../src/typography-image.png'
 import colorImage from '../src/color-image.svg'
@@ -22,14 +21,13 @@ Our goal is to create a system that enables us to build consistent user experien
 
 Styles can be mixed and matched to achieve many different layouts, independent of their location. These styles fall into three categories:
 
-<Grid gridTemplateColumns={['1fr', '1fr', 'repeat(3, 1fr)']} gridGap={5} my={5}>
+<Grid gridTemplateColumns={['1fr', '1fr', 'repeat(2, 1fr)']} gridGap={5} my={5}>
   {[
     {
       name: 'Utilities',
       description: 'Single purpose, immutable styles, that do one thing well.',
       image: utilitiesImage
     },
-    {name: 'Objects', description: 'Scaffolding for common page and content layouts.', image: objectsImage},
     {name: 'Components', description: 'Abstracted patterns for frequently used visual styles.', image: componentsImage}
   ].map(({name, description, image}) => (
     <Box>
@@ -94,6 +92,7 @@ Primer CSS is published to npm as `@primer/css`. Each of Primer CSS's "modules" 
   <Text as="p" m={0}>
     Pick and choose what you need. Install the entire Primer CSS bundle or import individual folders.
   </Text>
+  <br/>
   <ButtonOutline as={Link} to="/getting-started" mt={4} style={{textDecoration: 'none'}}>
     Installation instructions
   </ButtonOutline>

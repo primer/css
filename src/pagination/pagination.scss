@@ -4,7 +4,6 @@
   a,
   span,
   em {
-    display: inline-block;
     min-width: 32px;
     // stylelint-disable-next-line primer/spacing
     padding: 5px 10px;
@@ -82,6 +81,44 @@
     .next_page::after {
       margin-left: $spacer-1;
       clip-path: polygon(6.2px 3.2px, 7.3px 3.2px, 11.5px 7.5px, 11.5px 8.5px, 7.3px 12.8px, 6.2px 11.7px, 9.9px 8px, 6.2px 4.3px, 6.2px 3.2px);
+    }
+  }
+
+  // Responsive
+
+  // Hide everything by default
+  > * {
+    display: none;
+  }
+
+  // 0 -> sm
+  // Only show [Previous] [Next]
+
+  > :first-child,
+  > :last-child,
+  > .previous_page,
+  > .next_page {
+    display: inline-block;
+  }
+
+  // sm -> md
+  // Also show [first] [last] [current number] and [...]
+
+  @include breakpoint(sm) {
+    > :nth-child(2),
+    > :nth-last-child(2),
+    > .current,
+    > .gap {
+      display: inline-block;
+    }
+  }
+
+  // md -> or more
+  // Show everything
+
+  @include breakpoint(md) {
+    > * {
+      display: inline-block;
     }
   }
 }

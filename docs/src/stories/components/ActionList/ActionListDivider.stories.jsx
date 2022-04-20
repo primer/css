@@ -1,15 +1,11 @@
 import React from 'react'
 import clsx from 'clsx'
+import {ListTemplate} from '../../ui-patterns/ActionList/ActionList.stories.jsx'
+import {DividerTemplate} from '../../ui-patterns/ActionList/ActionListDivider.stories.jsx'
 
 export default {
   title: 'Components/ActionList/ActionListDivider',
-  excludeStories: ['DividerTemplate'],
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/oMiRuexZW6gqVbMhQd6lwP/Storybook?node-id=2%3A2'
-    }
-  },
+  excludeStories: ['ActionDividerTemplate'],
   argTypes: {
     variant: {
       options: [0, 1], // iterator
@@ -44,38 +40,26 @@ export default {
       defaultValue: '',
       type: 'string',
       name: 'id',
-      description: 'Used for aria-labelledby',
+      description: 'Provide label for NavigationList <ul> aria-labelledby',
       table: {
         category: 'HTML'
       }
     }
-  },
-  decorators: [
-    Story => (
-      <ul className="ActionList" role="menu">
-        <Story />
-      </ul>
-    )
-  ]
+  }
 }
 
-export const DividerTemplate = ({title, description, variant, id}) => (
-  <>
-    <li
-      className={clsx('ActionList-sectionDivider', variant && `${variant}`)}
-      role={title ? 'presentation' : 'separator'}
-      id={id}
-      aria-hidden={title ? true : undefined}
-    >
-      {title}
-      {description && <span className="ActionList-item-description">{description}</span>}
-    </li>
-  </>
-)
+export const ActionDividerTemplate = DividerTemplate.bind({})
 
-export const Playground = DividerTemplate.bind({})
+export const Playground = ActionDividerTemplate.bind({})
 Playground.args = {
   title: 'Section title',
   description: 'Section description',
-  variant: 'subtle'
+  variant: 0
 }
+Playground.decorators = [
+  Story => (
+    <ListTemplate>
+      <Story />
+    </ListTemplate>
+  )
+]

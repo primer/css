@@ -294,6 +294,7 @@
 
 // Large button adds more padding around text. Use font-size utils to increase font-size.. e.g, <p class="text-gamma"><button class="btn btn-large btn-primary" type="button">Big green button</button></p>
 .btn-large {
+  // stylelint-disable-next-line primer/spacing
   padding: $em-spacer-6 1.5em;
   font-size: inherit;
   line-height: $lh-default;

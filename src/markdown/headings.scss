@@ -71,4 +71,21 @@
     font-size: 0.85em;
     color: var(--color-fg-muted);
   }
+
+  summary {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      display: inline-block;
+    }
+
+    h1,
+    h2 {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
 }

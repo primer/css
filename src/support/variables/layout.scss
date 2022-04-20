@@ -157,7 +157,7 @@ $responsive-variants: (
   xl: '-xl',
 ) !default;
 
-// responive utility position values
+// responsive utility position values
 $responsive-positions: (
   static,
   relative,
@@ -178,9 +178,8 @@ $sidebar-narrow-width: (
 ) !default;
 
 $sidebar-wide-width: (
-  md: 296px,
   lg: 320px,
-  xl: 344px
+  xl: 336px
 ) !default;
 
 $gutter: (

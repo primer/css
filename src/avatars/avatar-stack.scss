@@ -36,6 +36,7 @@
     border-right: $border-width $border-style var(--color-canvas-default);
     // stylelint-disable-next-line primer/borders
     border-radius: $border-radius-1;
+    box-shadow: none;
     transition: margin 0.1s ease-in-out;
 
     &:first-child {

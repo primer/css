@@ -122,7 +122,6 @@
   }
 
   &::before {
-    // stylelint-disable-next-line primer/spacing
     margin-top: -($spacer-2 + 1);
   }
 
@@ -196,7 +195,7 @@
 // Responsive Popover
 // For < md it will show full-width anchored to the bottom
 
-@media (max-width: ($width-md - 1px)) {
+@media (max-width: ($width-md - 0.02px)) {
   .Popover {
     position: fixed;
     top: auto !important;
