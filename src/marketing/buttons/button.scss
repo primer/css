@@ -19,7 +19,7 @@
   border: 0;
   // stylelint-disable-next-line primer/borders
   border-radius: 0.375rem;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, outline 0.2s ease;
   appearance: none !important;
 
   &::before {

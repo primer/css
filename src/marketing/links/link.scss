@@ -31,12 +31,15 @@
   }
 
   &:hover,
-  &:focus,
-  &:focus-visible,
   &:active {
     &::after {
       transform: scaleX(1);
     }
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline-offset: 2px;
   }
 
   &.arrow-target-mktg {
