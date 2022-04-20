@@ -40,9 +40,7 @@
   background-color: transparent;
   border: 0;
 
-  &:focus,
   &:hover {
-    outline: none;
     opacity: 0.7;
   }
 
@@ -119,6 +117,11 @@
 }
 
 @keyframes Toast--spinner {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

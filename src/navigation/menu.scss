@@ -22,7 +22,9 @@
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
 
-    &::before { border-top-left-radius: $border-radius; }
+    &::before {
+      border-top-left-radius: $border-radius;
+    }
   }
 
   &:last-child {
@@ -30,13 +32,9 @@
     border-bottom-right-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
 
-    &::before { border-bottom-left-radius: $border-radius; }
-  }
-
-  &:focus {
-    z-index: 1;
-    outline: none;
-    box-shadow: var(--color-primer-shadow-focus);
+    &::before {
+      border-bottom-left-radius: $border-radius;
+    }
   }
 
   &:hover {
