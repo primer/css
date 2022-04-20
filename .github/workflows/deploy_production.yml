@@ -10,9 +10,13 @@ on:
       - 'package.json'
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
+  deployments: write
+  issues: write
+  statuses: write
+  checks: write
 
 jobs:
   guard:
@@ -39,7 +43,7 @@ jobs:
     if: ${{ github.repository == 'primer/css' }}
     name: Production
     needs: [guard]
-    uses: primer/.github/.github/workflows/deploy_preview.yml@main
+    uses: primer/.github/.github/workflows/deploy.yml@main
     with:
       node_version: 14
       install: yarn
