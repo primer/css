@@ -1,5 +1,15 @@
 # @primer/css
 
+## 20.0.0
+
+### Major Changes
+
+- [#1767](https://github.com/primer/css/pull/1767) [`7e01db97`](https://github.com/primer/css/commit/7e01db97f3f2b9d9383f66385ca16f0bdc06abd1) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Remove unused pullquote selector
+
+* [#1821](https://github.com/primer/css/pull/1821) [`daa2685c`](https://github.com/primer/css/commit/daa2685c596d894b3bae1896bf97c3319cd9816c) Thanks [@jonrohan](https://github.com/jonrohan)! - UnderlineNav `:focus` styles
+  Refactor selected state and spacing
+  Add selected bold state override from github/github
+
 ## 19.8.2
 
 ### Patch Changes
