@@ -3,13 +3,24 @@ import clsx from 'clsx'
 import {OverlayTemplate} from '../../ui-patterns/Overlay/Overlay.stories'
 
 export default {
-  title: 'Components/Dialog',
+  title: 'Experimental/Popover',
   parameters: {
     layout: 'padded'
   },
-
   excludeStories: ['DialogTemplate'],
   argTypes: {
+    variant: {
+      options: [0, 1], // iterator
+      mapping: ['dialog', 'popover'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['dialog', 'popover']
+      },
+      description: '',
+      table: {
+        category: 'Type'
+      }
+    },
     title: {
       name: 'title',
       type: {name: 'string', required: false},
@@ -33,7 +44,7 @@ export default {
       description: 'focus the dialog',
       defaultValue: false,
       table: {
-        category: 'Interactive'
+        category: 'Demo'
       }
     },
     toggleOverlay: {
@@ -41,7 +52,7 @@ export default {
       description: 'show/hide overlay',
       defaultValue: false,
       table: {
-        category: 'Interactive'
+        category: 'Demo'
       }
     },
     showCloseButton: {
@@ -63,7 +74,13 @@ export default {
       ], // values
       control: {
         type: 'inline-radio',
-        labels: ['small', 'medium', 'large', 'xlarge', 'xxlarge']
+        labels: [
+          'Overlay--width-small',
+          'Overlay--width-medium',
+          'Overlay--width-large',
+          'Overlay--width-xlarge',
+          'Overlay--width-xxlarge'
+        ]
       },
       description: 'Width options: small: 256px, medium: 320px, large: 480px, xlarge: 640px, xxlarge: 960px',
       table: {
@@ -114,35 +131,52 @@ export default {
         category: 'CSS'
       }
     },
-    position: {
-      options: [0, 1, 2], // iterator
-      mapping: ['', 'Overlay-backdrop--positionCenter', 'Overlay-backdrop--positionBottom'], // values
-      control: {
-        type: 'inline-radio',
-        labels: ['none', 'center', 'bottom']
-      },
-      description: 'Positions overlay',
+    showBackdrop: {
+      control: {type: 'boolean'},
+      description: 'Show backdrop and handle positioning for dialogs.',
+      defaultValue: true,
       table: {
-        category: 'CSS'
-      },
-      defaultValue: 'center'
+        category: 'Demo'
+      }
     },
-    positionWhenNarrow: {
-      options: [0, 1, 2], // iterator
+    narrow: {
+      options: [0, 1],
       mapping: [
-        '',
-        'Overlay-backdrop-positionWhenNarrow-fullScreen',
-        'Overlay-backdrop-positionWhenNarrow-bottomSheet'
-      ], // values
+        'Overlay-backdrop--position-bottomSheet-whenNarrow',
+        'Overlay-backdrop--position-fullscreen-whenNarrow'
+      ],
       control: {
         type: 'inline-radio',
-        labels: ['inherit', 'full-screen', 'bottom-sheet']
+        labels: ['bottomSheet', 'fullScreen']
       },
-      description: 'Positions overlay for narrow width screens. Inherit will keep the height/width props the same',
+      description: 'Positions overlay for narrow viewport range',
       table: {
-        category: 'CSS'
+        category: 'Position'
+      }
+    },
+    regular: {
+      options: [0, 1],
+      mapping: ['Overlay-backdrop--position-center', ''],
+      control: {
+        type: 'inline-radio',
+        labels: ['center', 'absolute']
       },
-      defaultValue: 'center'
+      description: 'Positions overlay for regular viewport range',
+      table: {
+        category: 'Position'
+      }
+    },
+    wide: {
+      options: [0, 1],
+      mapping: ['Overlay-backdrop--position-center', ''],
+      control: {
+        type: 'inline-radio',
+        labels: ['center', 'absolute']
+      },
+      description: 'Positions overlay for wide viewport range',
+      table: {
+        category: 'Position'
+      }
     },
     headerRegion: {
       control: {type: 'boolean'},
@@ -150,7 +184,7 @@ export default {
         'A header region may be used to provide context to the user by displaying a title, description, and offering an easy-to-escape route with a Close button. Headers may also provide ways for the user to interact with the content, such as with search and tabs.',
       defaultValue: true,
       table: {
-        category: 'HTML'
+        category: 'Demo'
       }
     },
     footerRegion: {
@@ -159,7 +193,7 @@ export default {
         'The footer region may be used to show confirmation actions, navigation links, or other important elements that should appear outside of the content scrolling region.',
       defaultValue: true,
       table: {
-        category: 'HTML'
+        category: 'Demo'
       }
     },
     showFooterDivider: {
@@ -243,6 +277,32 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    titleId: {
+      description: 'title id',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
+    },
+    descriptionId: {
+      description: 'description id',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
+    },
+    anchorOffset: {
+      options: [0], // iterator
+      mapping: ['Overlay-backdrop-offset--normal'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['4px']
+      },
+      description: 'The offset sets the spacing between the source and the popover',
+      table: {
+        category: 'POPOVER'
+      }
     }
   }
 }
@@ -258,60 +318,46 @@ const toggleDialog = () => {
   focusMethod()
 }
 
-export const DialogTemplate = OverlayTemplate.bind({})
-
-export const Playground = ({
-  toggleOverlay,
-  showBackdrop,
-  position,
-  positionWhenNarrow,
-  role,
-  ariaLabelledby,
-  ariaDescribedby,
-  dataFocusTrap
-}) => (
-  <>
-    <button class="btn" onClick={toggleDialog}>
-      <span>Open dialog</span>
-    </button>
-    <div
-      id="overlay-backdrop"
-      className={clsx(
-        toggleOverlay && 'Overlay-hidden',
-        'Overlay-backdrop',
-        position && `${position}`,
-        positionWhenNarrow && `${positionWhenNarrow}`
-      )}
-      role="dialog"
-      aria-labelledby={ariaLabelledby}
-      aria-describedby={ariaDescribedby}
-      data-focus-trap={dataFocusTrap}
-    >
-      <OverlayTemplate {...OverlayTemplate.args} />
-    </div>
-  </>
-)
+export const Playground = OverlayTemplate.bind({...OverlayTemplate.args})
 Playground.args = {
   title: 'This is the title of the dialog',
   description: 'This is the subtitle of the dialog',
   focusElement: false,
-  width: 1,
-  height: 3,
-  ariaLabelledby: 'title-id',
-  ariaDescribedby: 'description-id',
-  dataFocusTrap: 'active',
+  motion: 1,
   footerContentAlign: 2,
+  //   position: 1,
   showCloseButton: true,
-  position: 1,
-  positionWhenNarrow: 1,
+  //   positionWhenNarrow: 0,
+  headerContentSlot: '',
+  actionContentSlot: '',
   headerVariant: 0,
   bodyPaddingVariant: 0,
-  motion: 1,
-  descriptionId: 'description-id',
-  titleId: 'title-id',
-  showFooterDivider: true,
-  children: <p>hey</p>
+  width: 1,
+  height: 3,
+  headerVariant: 0,
+  headerRegion: true,
+  footerRegion: true,
+  showFooterDivider: false,
+  showHeaderDivider: false,
+  role: '',
+  ariaLabelledby: '',
+  ariaDescribedby: '',
+  dataFocusTrap: '',
+  showBackdrop: true,
+  variant: 'popover',
+  narrow: 'fullScreen',
+  regular: 'absolute',
+  wide: 'absolute'
 }
+
+// export const Playground2 = ({}) => (
+//   <>
+//     <div>
+//       <OverlayTemplate {...OverlayTemplate.args} />
+//     </div>
+//   </>
+// )
+// Playground2.args = {}
 
 // export const Playground = DialogTemplate.bind({})
 // Playground.args = {

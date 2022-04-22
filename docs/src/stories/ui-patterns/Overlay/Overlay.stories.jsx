@@ -1,6 +1,8 @@
 import clsx from 'clsx'
 import React from 'react'
-
+import ConditionalWrapper from '../../helpers/ConditionalWrapper'
+import {PatternFullBleed} from '../ActionList/ActionListFeatures.stories.jsx'
+const variant = {}
 export default {
   title: 'UI Patterns/Overlay',
   parameters: {
@@ -31,7 +33,7 @@ export default {
       description: 'focus the dialog',
       defaultValue: false,
       table: {
-        category: 'Interactive'
+        category: 'Demo'
       }
     },
     toggleOverlay: {
@@ -39,7 +41,7 @@ export default {
       description: 'show/hide overlay',
       defaultValue: false,
       table: {
-        category: 'Interactive'
+        category: 'Demo'
       }
     },
     showCloseButton: {
@@ -123,38 +125,187 @@ export default {
       description: 'Show backdrop and handle positioning for dialogs.',
       defaultValue: true,
       table: {
-        category: 'CSS'
+        category: 'Demo'
       }
     },
-    position: {
-      options: [0, 1, 2], // iterator
-      mapping: ['Overlay-positionAbsolute', 'Overlay-backdrop--positionCenter', 'Overlay-backdrop--positionBottom'], // values
-      control: {
-        type: 'inline-radio',
-        labels: ['absolute', 'center', 'bottom']
-      },
-      description: 'Positions overlay',
-      table: {
-        category: 'CSS'
-      },
-      defaultValue: 'center'
-    },
-    positionWhenNarrow: {
-      options: [0, 1, 2], // iterator
+    variantNarrow: {
+      options: [0, 1, 2, 3], // iterator
       mapping: [
+        'Overlay-backdrop--position-center',
+        'Overlay-backdrop--position-anchor',
         '',
-        'Overlay-backdrop-positionWhenNarrow-fullScreen',
-        'Overlay-backdrop-positionWhenNarrow-bottomSheet'
+        'Overlay-backdrop--position-fullscreen-whenNarrow'
       ], // values
       control: {
         type: 'inline-radio',
-        labels: ['inherit', 'full-screen', 'bottom-sheet']
+        labels: ['center', 'anchored', 'side', 'full']
       },
-      description: 'Positions overlay for narrow width screens. Inherit will keep the height/width props the same',
+      description: '',
       table: {
-        category: 'CSS'
+        category: 'Variant'
+      }
+    },
+    variantRegular: {
+      options: [0, 1, 2], // iterator
+      mapping: ['Overlay-backdrop--position-center', 'Overlay-backdrop--position-anchor', ''], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['center', 'anchored', 'side']
       },
-      defaultValue: 'center'
+      description: '',
+      table: {
+        category: 'Variant'
+      }
+    },
+    variantWide: {
+      options: [0, 1, 2], // iterator
+      mapping: ['Overlay-backdrop--position-center', 'Overlay-backdrop--position-anchor', ''], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['center', 'anchored', 'side']
+      },
+      description: '',
+      table: {
+        category: 'Variant'
+      }
+    },
+    placementNarrow: {
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      mapping: [
+        '',
+        '',
+        '',
+        '',
+        'Overlay-backdrop--position-bottomSheet-whenNarrow',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        ''
+      ],
+      control: {
+        type: 'inline-radio',
+        labels: [
+          'top',
+          'top-start',
+          'top-center',
+          'top-end',
+          'bottom',
+          'bottom-start',
+          'bottom-center',
+          'bottom-end',
+          'right',
+          'right-start',
+          'right-center',
+          'right-end',
+          'left',
+          'left-start',
+          'left-center',
+          'left-end'
+        ]
+      },
+      description: 'Positions overlay for narrow viewport range',
+      table: {
+        category: 'Placement'
+      }
+    },
+    placementRegular: {
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      mapping: [
+        '',
+        '',
+        '',
+        '',
+        'Overlay-backdrop--position-bottomSheet-whenNarrow',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        ''
+      ],
+      control: {
+        type: 'inline-radio',
+        labels: [
+          'top',
+          'top-start',
+          'top-center',
+          'top-end',
+          'bottom',
+          'bottom-start',
+          'bottom-center',
+          'bottom-end',
+          'right',
+          'right-start',
+          'right-center',
+          'right-end',
+          'left',
+          'left-start',
+          'left-center',
+          'left-end'
+        ]
+      },
+      description: 'Positions overlay for regular viewport range',
+      table: {
+        category: 'Placement'
+      }
+    },
+    placementWide: {
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      mapping: [
+        '',
+        '',
+        '',
+        '',
+        'Overlay-backdrop--position-bottomSheet-whenNarrow',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        ''
+      ],
+      control: {
+        type: 'inline-radio',
+        labels: [
+          'top',
+          'top-start',
+          'top-center',
+          'top-end',
+          'bottom',
+          'bottom-start',
+          'bottom-center',
+          'bottom-end',
+          'right',
+          'right-start',
+          'right-center',
+          'right-end',
+          'left',
+          'left-start',
+          'left-center',
+          'left-end'
+        ]
+      },
+      description: 'Positions overlay for wide viewport range',
+      table: {
+        category: 'Placement'
+      }
     },
     headerRegion: {
       control: {type: 'boolean'},
@@ -162,7 +313,7 @@ export default {
         'A header region may be used to provide context to the user by displaying a title, description, and offering an easy-to-escape route with a Close button. Headers may also provide ways for the user to interact with the content, such as with search and tabs.',
       defaultValue: true,
       table: {
-        category: 'HTML'
+        category: 'Demo'
       }
     },
     footerRegion: {
@@ -171,7 +322,7 @@ export default {
         'The footer region may be used to show confirmation actions, navigation links, or other important elements that should appear outside of the content scrolling region.',
       defaultValue: true,
       table: {
-        category: 'HTML'
+        category: 'Demo'
       }
     },
     showFooterDivider: {
@@ -269,6 +420,18 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    anchorOffset: {
+      options: [0], // iterator
+      mapping: ['Overlay-backdrop-offset--normal'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['4px']
+      },
+      description: 'The offset sets the spacing between the source and the popover',
+      table: {
+        category: 'POPOVER'
+      }
     }
   }
 }
@@ -309,28 +472,47 @@ export const OverlayTemplate = ({
   ariaDescribedby,
   dataFocusTrap,
   trigger,
+  children,
   titleId,
   descriptionId,
-  showBackdrop
+  variant = 'popover',
+  anchorOffset,
+  narrow,
+  regular,
+  wide,
+  variantNarrow,
+  variantRegular,
+  variantWide,
+  placementNarrow,
+  placementRegular,
+  placementWide
 }) => (
   <>
-    {trigger}
+    <button class="btn" onClick={toggleDialog}>
+      <span>Open dialog</span>
+    </button>
     <div
       id="overlay-backdrop"
       className={clsx(
         toggleOverlay && 'Overlay-hidden',
-        showBackdrop && 'Overlay-backdrop',
-        position && `${position}`,
-        positionWhenNarrow && `${positionWhenNarrow}`
+        'Overlay-backdrop',
+        // position && `${position}`,
+        // positionWhenNarrow && `${positionWhenNarrow}`,
+        anchorOffset && `${anchorOffset}`,
+        variantNarrow && `${variantNarrow}`,
+        variantRegular && `${variantRegular}`,
+        variantWide && `${variantWide}`,
+        placementNarrow && `${placementNarrow}`,
+        placementRegular && `${placementRegular}`,
+        placementWide && `${placementWide}`
       )}
-      role={role}
-      aria-labelledby={ariaLabelledby}
-      aria-describedby={ariaDescribedby}
-      data-focus-trap={dataFocusTrap}
     >
       <div
         className={clsx('Overlay', width && `${width}`, height && `${height}`, motion && `${motion}`)}
         data-focus-trap={dataFocusTrap}
+        role={role}
+        aria-labelledby={ariaLabelledby}
+        aria-describedby={ariaDescribedby}
         open
       >
         {headerRegion && (
@@ -373,11 +555,7 @@ export const OverlayTemplate = ({
             )}
           </header>
         )}
-        <div className={clsx('Overlay-body', bodyPaddingVariant && `${bodyPaddingVariant}`)}>
-          This is the body of the dialogThis is the body of the dialogThis is the body of the dialog This is the body of
-          the dialog This is the body of the dialog This is the body of the dialog This is the body of the dialog This
-          is the body of the dialog This is the body of the dialog
-        </div>
+        <div className={clsx('Overlay-body', bodyPaddingVariant && `${bodyPaddingVariant}`)}>{children}</div>
         {footerRegion && (
           <footer
             className={clsx(
@@ -386,13 +564,12 @@ export const OverlayTemplate = ({
               footerContentAlign && `${footerContentAlign}`
             )}
           >
-            <button class="btn" onClick={toggleDialog}>
-              <span>Continue</span>
-            </button>
+            {/* <button class="btn" onClick={toggleDialog}>
+            <span>Continue</span>
+          </button> */}
           </footer>
         )}
       </div>
-      {focusElement && focusMethod()}
     </div>
   </>
 )
@@ -405,9 +582,9 @@ Playground.args = {
   focusElement: false,
   motion: 1,
   footerContentAlign: 2,
-  position: 1,
+  //   position: 1,
   showCloseButton: true,
-  positionWhenNarrow: 0,
+  //   positionWhenNarrow: 0,
   headerContentSlot: '',
   actionContentSlot: '',
   headerVariant: 0,
@@ -423,11 +600,6 @@ Playground.args = {
   ariaLabelledby: '',
   ariaDescribedby: '',
   dataFocusTrap: '',
-  showBackdrop: true
-}
-
-export const OverlayMenu = OverlayTemplate.bind({})
-OverlayMenu.storyName = 'Overlay menu'
-OverlayMenu.args = {
-  trigger: <button className="btn">Open Overlay</button>
+  showBackdrop: true,
+  variant: 'popover'
 }

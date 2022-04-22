@@ -7,8 +7,6 @@
 .Overlay {
   display: flex;
   min-width: 320px;
-  max-width: calc(100vw - 64px);
-  max-height: calc(100vh - 64px);
   flex-direction: column;
   background-color: var(--color-canvas-default);
   // stylelint-disable-next-line primer/borders
@@ -213,33 +211,42 @@
   }
 }
 
+// this needs to move to a design token and be inline with JS
+// position will depend on conditional positioning logic
+.Overlay-backdrop-offset--normal {
+  top: 4px;
+}
+
 .Overlay-backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  display: flex;
-  background-color: var(--color-neutral-muted);
-  animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running dialog-backdrop-appear;
+  &.Overlay-backdrop--position-bottom,
+  &.Overlay-backdrop--position-center {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    background-color: var(--color-neutral-muted);
+    animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running dialog-backdrop-appear;
 
-  @keyframes dialog-backdrop-appear {
-    0% {
-      opacity: 0;
-    }
+    @keyframes dialog-backdrop-appear {
+      0% {
+        opacity: 0;
+      }
 
-    100% {
-      opacity: 1;
+      100% {
+        opacity: 1;
+      }
     }
   }
 
-  &.Overlay-backdrop--positionCenter {
+  &.Overlay-backdrop--position-center {
     align-items: center;
     justify-content: center;
   }
 
-  &.Overlay-backdrop--positionBottom {
+  &.Overlay-backdrop--position-bottom {
     align-items: end;
     justify-content: center;
 
@@ -249,13 +256,59 @@
     }
   }
 
-  .Overlay-positionAbsolute {
+  .Overlay-backdrop--position-anchor {
     position: absolute;
+    display: block;
+    background-color: transparent;
+    background-color: pink;
+    border-radius: 12px;
+
+    // 767px
+    @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
+      &.Overlay-backdrop--position-fullscreen-whenNarrow {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        display: flex;
+      }
+
+      &.Overlay-backdrop--position-bottomSheet-whenNarrow {
+        align-items: end;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        display: flex;
+        background-color: var(--color-neutral-muted);
+      }
+    }
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+      &.Overlay-backdrop--position-bottomSheet-whenNarrow {
+        align-items: end;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        display: flex;
+        background-color: var(--color-neutral-muted);
+      }
+    }
   }
 
   // 767px
+  // narrow viewport range
   @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
-    &.Overlay-backdrop-positionWhenNarrow-fullScreen {
+    &.Overlay-backdrop--position-fullscreen-whenNarrow {
       .Overlay {
         width: 100%;
         max-width: 100vw;
@@ -267,7 +320,7 @@
       }
     }
 
-    &.Overlay-backdrop-positionWhenNarrow-bottomSheet {
+    &.Overlay-backdrop--position-bottomSheet-whenNarrow {
       align-items: end;
       justify-content: center;
 
@@ -285,7 +338,7 @@
   }
 
   @media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-    &.Overlay-backdrop-positionWhenNarrow-bottomSheet {
+    &.Overlay-backdrop--position-bottomSheet-whenNarrow {
       align-items: end;
       justify-content: center;
 
@@ -301,3 +354,101 @@
     }
   }
 }
+
+// dialog variant
+.Overlay-backdrop--dialog {
+  //   position: fixed;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   z-index: 999;
+  //   display: flex;
+  //   background-color: var(--color-neutral-muted);
+  //   animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running dialog-backdrop-appear;
+
+  //   @keyframes dialog-backdrop-appear {
+  //     0% {
+  //       opacity: 0;
+  //     }
+
+  //     100% {
+  //       opacity: 1;
+  //     }
+  //   }
+
+  //   &.Overlay-backdrop--position-center {
+  //     align-items: center;
+  //     justify-content: center;
+  //   }
+
+  //   &.Overlay-backdrop--position-bottom {
+  //     align-items: end;
+  //     justify-content: center;
+
+  //     .Overlay {
+  //       border-bottom-right-radius: 0;
+  //       border-bottom-left-radius: 0;
+  //     }
+  //   }
+
+  //   .Overlay-positionAbsolute {
+  //     position: absolute;
+  //   }
+
+  //   // 767px
+  //   @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
+  //     &.Overlay-backdrop--position-fullscreen-whenNarrow {
+  //       .Overlay {
+  //         width: 100%;
+  //         max-width: 100vw;
+  //         height: 100%;
+  //         max-height: 100vh;
+  //         // stylelint-disable-next-line primer/borders
+  //         border-radius: unset;
+  //         flex-grow: 1;
+  //       }
+  //     }
+
+  //     &.Overlay-backdrop--position-bottomSheet-whenNarrow {
+  //       align-items: end;
+  //       justify-content: center;
+
+  //       .Overlay {
+  //         width: 100%;
+  //         max-width: 100vw;
+  //         height: auto;
+  //         max-height: 100vh;
+  //         // stylelint-disable-next-line primer/spacing
+  //         padding-bottom: env(safe-area-inset-bottom);
+  //         border-bottom-right-radius: 0;
+  //         border-bottom-left-radius: 0;
+  //       }
+  //     }
+  //   }
+
+  //   @media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  //     &.Overlay-backdrop--position-bottomSheet-whenNarrow {
+  //       align-items: end;
+  //       justify-content: center;
+
+  //       .Overlay {
+  //         max-width: 480px;
+  //         height: auto;
+  //         max-height: 100vh;
+  //         // stylelint-disable-next-line primer/spacing
+  //         padding-bottom: env(safe-area-inset-bottom);
+  //         border-bottom-right-radius: 0;
+  //         border-bottom-left-radius: 0;
+  //       }
+  //     }
+  //   }
+
+  .Overlay {
+    max-width: calc(100vw - 64px);
+    max-height: calc(100vh - 64px);
+  }
+}
+
+// Popover variant
+// .Overlay-backdrop--popover {
