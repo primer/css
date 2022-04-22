@@ -1,4 +1,6 @@
-// stylelint-disable selector-max-compound-selectors, max-nesting-depth, selector-max-specificity
+// stylelint-disable selector-max-compound-selectors, max-nesting-depth, selector-max-specificity, primer/borders
+// replace with primitive
+$primer-borderRadius-large: 0.75rem;
 
 .Overlay-hidden {
   display: none !important;
@@ -6,11 +8,10 @@
 
 .Overlay {
   display: flex;
-  min-width: 320px;
+  min-width: 192px;
   flex-direction: column;
   background-color: var(--color-canvas-default);
-  // stylelint-disable-next-line primer/borders
-  border-radius: 12px;
+  border-radius: $primer-borderRadius-large;
   box-shadow: var(--color-overlay-shadow);
   opacity: 1;
 
@@ -39,23 +40,23 @@
   }
 
   &.Overlay--width-small {
-    width: 256px;
+    min-width: 256px;
   }
 
   &.Overlay--width-medium {
-    width: 320px;
+    min-width: 320px;
   }
 
   &.Overlay--width-large {
-    width: 480px;
+    min-width: 480px;
   }
 
   &.Overlay--width-xlarge {
-    width: 640px;
+    min-width: 640px;
   }
 
   &.Overlay--width-xxlarge {
-    width: 960px;
+    min-width: 960px;
   }
 
   &.Overlay--motion-scaleFade {
@@ -228,7 +229,7 @@
   background-color: var(--color-neutral-muted);
 }
 
-@mixin Overlay-backdrop--hidden() {
+@mixin Overlay-backdrop--transparent() {
   position: absolute;
   background-color: transparent;
 }
@@ -243,11 +244,20 @@
 
   align-items: center;
   justify-content: center;
+
+  .Overlay {
+    max-width: calc(100vw - 64px);
+    max-height: calc(100vh - 64px);
+  }
 }
 
 // anchor
 @mixin Overlay-backdrop--anchor {
-  @include Overlay-backdrop--hidden;
+  @include Overlay-backdrop--transparent;
+
+  .Overlay {
+    width: auto;
+  }
 }
 
 // anchor side(s)
@@ -263,7 +273,7 @@
     justify-content: left;
 
     .Overlay#{$responsiveVariant} {
-      border-radius: 12px;
+      border-radius: $primer-borderRadius-large;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
@@ -274,7 +284,7 @@
     justify-content: right;
 
     .Overlay#{$responsiveVariant} {
-      border-radius: 12px;
+      border-radius: $primer-borderRadius-large;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
@@ -285,7 +295,7 @@
     justify-content: center;
 
     .Overlay#{$responsiveVariant} {
-      border-radius: 12px;
+      border-radius: $primer-borderRadius-large;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
     }
@@ -296,7 +306,7 @@
     justify-content: center;
 
     .Overlay#{$responsiveVariant} {
-      border-radius: 12px;
+      border-radius: $primer-borderRadius-large;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
     }
@@ -353,8 +363,3 @@
     @include Overlay-backdrop--full;
   }
 }
-
-// .Overlay {
-//   max-width: calc(100vw - 64px);
-//   max-height: calc(100vh - 64px);
-// }

@@ -120,14 +120,6 @@ export default {
         category: 'CSS'
       }
     },
-    showBackdrop: {
-      control: {type: 'boolean'},
-      description: 'Show backdrop and handle positioning for dialogs.',
-      defaultValue: true,
-      table: {
-        category: 'Demo'
-      }
-    },
     variantNarrow: {
       options: [0, 1, 2, 3], // iterator
       mapping: [
@@ -162,20 +154,8 @@ export default {
         category: 'Variant'
       }
     },
-    variantWide: {
-      options: [0, 1, 2], // iterator
-      mapping: ['Overlay-backdrop--position-center', 'Overlay-backdrop--position-anchor', ''], // values
-      control: {
-        type: 'inline-radio',
-        labels: ['center', 'anchored', 'side']
-      },
-      description: '',
-      table: {
-        category: 'Variant'
-      }
-    },
     placementNarrow: {
-      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
       mapping: [
         'Overlay-backdrop--placement-top-whenNarrow',
         '',
@@ -192,6 +172,7 @@ export default {
         'Overlay-backdrop--placement-left-whenNarrow',
         '',
         '',
+        '',
         ''
       ],
       control: {
@@ -212,7 +193,8 @@ export default {
           'left',
           'left-start',
           'left-center',
-          'left-end'
+          'left-end',
+          'reset'
         ]
       },
       description: 'Positions overlay for narrow viewport range',
@@ -221,7 +203,7 @@ export default {
       }
     },
     placementRegular: {
-      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
       mapping: [
         'Overlay-backdrop--placement-top',
         '',
@@ -238,6 +220,7 @@ export default {
         'Overlay-backdrop--placement-left',
         '',
         '',
+        '',
         ''
       ],
       control: {
@@ -258,56 +241,11 @@ export default {
           'left',
           'left-start',
           'left-center',
-          'left-end'
+          'left-end',
+          'reset'
         ]
       },
       description: 'Positions overlay for narrow viewport range',
-      table: {
-        category: 'Placement'
-      }
-    },
-    placementWide: {
-      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-      mapping: [
-        '',
-        '',
-        '',
-        '',
-        'Overlay-backdrop--position-bottomSheet-whenNarrow',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        ''
-      ],
-      control: {
-        type: 'inline-radio',
-        labels: [
-          'top',
-          'top-start',
-          'top-center',
-          'top-end',
-          'bottom',
-          'bottom-start',
-          'bottom-center',
-          'bottom-end',
-          'right',
-          'right-start',
-          'right-center',
-          'right-end',
-          'left',
-          'left-start',
-          'left-center',
-          'left-end'
-        ]
-      },
-      description: 'Positions overlay for wide viewport range',
       table: {
         category: 'Placement'
       }
@@ -425,18 +363,6 @@ export default {
       table: {
         category: 'HTML'
       }
-    },
-    anchorOffset: {
-      options: [0], // iterator
-      mapping: ['Overlay-backdrop-offset--normal'], // values
-      control: {
-        type: 'inline-radio',
-        labels: ['4px']
-      },
-      description: 'The offset sets the spacing between the source and the popover',
-      table: {
-        category: 'POPOVER'
-      }
     }
   }
 }
@@ -455,7 +381,6 @@ const toggleDialog = () => {
 export const OverlayTemplate = ({
   title,
   description,
-  focusElement,
   toggleOverlay,
   width,
   height,
@@ -463,7 +388,6 @@ export const OverlayTemplate = ({
   showHeaderDivider,
   headerRegion,
   footerRegion,
-  position,
   headerContentSlot,
   motion,
   footerContentAlign,
@@ -471,26 +395,17 @@ export const OverlayTemplate = ({
   actionContentSlot,
   headerVariant,
   bodyPaddingVariant,
-  positionWhenNarrow,
   role,
   ariaLabelledby,
   ariaDescribedby,
   dataFocusTrap,
-  trigger,
   children,
   titleId,
   descriptionId,
-  variant = 'popover',
-  anchorOffset,
-  narrow,
-  regular,
-  wide,
   variantNarrow,
   variantRegular,
-  variantWide,
   placementNarrow,
-  placementRegular,
-  placementWide
+  placementRegular
 }) => (
   <>
     <button class="btn" onClick={toggleDialog}>
@@ -501,15 +416,10 @@ export const OverlayTemplate = ({
       className={clsx(
         toggleOverlay && 'Overlay-hidden',
         'Overlay-backdrop',
-        // position && `${position}`,
-        // positionWhenNarrow && `${positionWhenNarrow}`,
-        anchorOffset && `${anchorOffset}`,
         variantNarrow && `${variantNarrow}`,
         variantRegular && `${variantRegular}`,
-        // variantWide && `${variantWide}`,
         placementNarrow && `${placementNarrow}`,
         placementRegular && `${placementRegular}`
-        // placementWide && `${placementWide}`
       )}
     >
       <div
