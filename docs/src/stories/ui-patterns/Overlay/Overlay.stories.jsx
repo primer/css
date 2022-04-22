@@ -131,10 +131,10 @@ export default {
     variantNarrow: {
       options: [0, 1, 2, 3], // iterator
       mapping: [
-        'Overlay-backdrop--position-center',
-        'Overlay-backdrop--position-anchor',
-        '',
-        'Overlay-backdrop--position-fullscreen-whenNarrow'
+        'Overlay-backdrop--center-whenNarrow',
+        'Overlay-backdrop--anchor-whenNarrow',
+        'Overlay-backdrop--side-whenNarrow',
+        'Overlay-backdrop--full-whenNarrow'
       ], // values
       control: {
         type: 'inline-radio',
@@ -146,11 +146,16 @@ export default {
       }
     },
     variantRegular: {
-      options: [0, 1, 2], // iterator
-      mapping: ['Overlay-backdrop--position-center', 'Overlay-backdrop--position-anchor', ''], // values
+      options: [0, 1, 2, 3], // iterator
+      mapping: [
+        'Overlay-backdrop--center',
+        'Overlay-backdrop--anchor',
+        'Overlay-backdrop--side',
+        'Overlay-backdrop--full'
+      ], // values
       control: {
         type: 'inline-radio',
-        labels: ['center', 'anchored', 'side']
+        labels: ['center', 'anchored', 'side', 'full']
       },
       description: '',
       table: {
@@ -172,19 +177,19 @@ export default {
     placementNarrow: {
       options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
       mapping: [
+        'Overlay-backdrop--placement-top',
         '',
         '',
         '',
-        '',
-        'Overlay-backdrop--position-bottomSheet-whenNarrow',
-        '',
+        'Overlay-backdrop--placement-bottom',
         '',
         '',
         '',
+        'Overlay-backdrop--placement-right',
         '',
         '',
         '',
-        '',
+        'Overlay-backdrop--placement-left',
         '',
         '',
         ''
@@ -501,10 +506,10 @@ export const OverlayTemplate = ({
         anchorOffset && `${anchorOffset}`,
         variantNarrow && `${variantNarrow}`,
         variantRegular && `${variantRegular}`,
-        variantWide && `${variantWide}`,
-        placementNarrow && `${placementNarrow}`,
-        placementRegular && `${placementRegular}`,
-        placementWide && `${placementWide}`
+        // variantWide && `${variantWide}`,
+        placementNarrow && `${placementNarrow}`
+        // placementRegular && `${placementRegular}`,
+        // placementWide && `${placementWide}`
       )}
     >
       <div
