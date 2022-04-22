@@ -177,6 +177,52 @@ export default {
     placementNarrow: {
       options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
       mapping: [
+        'Overlay-backdrop--placement-top-whenNarrow',
+        '',
+        '',
+        '',
+        'Overlay-backdrop--placement-bottom-whenNarrow',
+        '',
+        '',
+        '',
+        'Overlay-backdrop--placement-right-whenNarrow',
+        '',
+        '',
+        '',
+        'Overlay-backdrop--placement-left-whenNarrow',
+        '',
+        '',
+        ''
+      ],
+      control: {
+        type: 'inline-radio',
+        labels: [
+          'top',
+          'top-start',
+          'top-center',
+          'top-end',
+          'bottom',
+          'bottom-start',
+          'bottom-center',
+          'bottom-end',
+          'right',
+          'right-start',
+          'right-center',
+          'right-end',
+          'left',
+          'left-start',
+          'left-center',
+          'left-end'
+        ]
+      },
+      description: 'Positions overlay for narrow viewport range',
+      table: {
+        category: 'Placement'
+      }
+    },
+    placementRegular: {
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      mapping: [
         'Overlay-backdrop--placement-top',
         '',
         '',
@@ -216,52 +262,6 @@ export default {
         ]
       },
       description: 'Positions overlay for narrow viewport range',
-      table: {
-        category: 'Placement'
-      }
-    },
-    placementRegular: {
-      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-      mapping: [
-        '',
-        '',
-        '',
-        '',
-        'Overlay-backdrop--position-bottomSheet-whenNarrow',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        ''
-      ],
-      control: {
-        type: 'inline-radio',
-        labels: [
-          'top',
-          'top-start',
-          'top-center',
-          'top-end',
-          'bottom',
-          'bottom-start',
-          'bottom-center',
-          'bottom-end',
-          'right',
-          'right-start',
-          'right-center',
-          'right-end',
-          'left',
-          'left-start',
-          'left-center',
-          'left-end'
-        ]
-      },
-      description: 'Positions overlay for regular viewport range',
       table: {
         category: 'Placement'
       }
@@ -507,13 +507,19 @@ export const OverlayTemplate = ({
         variantNarrow && `${variantNarrow}`,
         variantRegular && `${variantRegular}`,
         // variantWide && `${variantWide}`,
-        placementNarrow && `${placementNarrow}`
-        // placementRegular && `${placementRegular}`,
+        placementNarrow && `${placementNarrow}`,
+        placementRegular && `${placementRegular}`
         // placementWide && `${placementWide}`
       )}
     >
       <div
-        className={clsx('Overlay', width && `${width}`, height && `${height}`, motion && `${motion}`)}
+        className={clsx(
+          'Overlay',
+          width && `${width}`,
+          height && `${height}`,
+          motion && `${motion}`,
+          variantNarrow && 'Overlay-whenNarrow'
+        )}
         data-focus-trap={dataFocusTrap}
         role={role}
         aria-labelledby={ariaLabelledby}
