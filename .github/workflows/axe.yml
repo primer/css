@@ -1,0 +1,45 @@
+name: axe
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  axe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v18.6
+        with:
+          files: |
+            docs/content/components/**/*.md
+            docs/content/utilities/**/*.md
+          files_ignore: |
+            docs/content/components/index.md
+            docs/content/utilities/index.md
+      - name: Save changed files
+        run: |
+          echo "STRING_OF_PATHS_WE_CARE_ABOUT=${{ steps.changed-files.outputs.all_changed_files }}" >> $GITHUB_ENV
+      - name: Use Node.js
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - run: yarn
+        if: steps.changed-files.outputs.any_changed == 'true'
+      - run: yarn dist
+        if: steps.changed-files.outputs.any_changed == 'true'
+      - name: Run docs site	
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |	
+          npm run dev & npx wait-on http://localhost:8000
+      - name: Run axe script
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          script/axe-docs $STRING_OF_PATHS_WE_CARE_ABOUT

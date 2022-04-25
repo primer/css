@@ -11,8 +11,8 @@ import {
   PatternLeadingCollapsibleTrailingVis,
   PatternSizeMedium,
   PatternSizeLarge,
-  PatternConstainsSubItem,
-  PatternConstainsActiveSubItem,
+  PatternContainsSubItem,
+  PatternContainsActiveSubItem,
   PatternTruncateText,
   PatternWrapText
 } from '../../ui-patterns/ActionList/ActionListItemCollapsibleFeatures.stories.jsx'
@@ -60,9 +60,9 @@ export const SizeMedium = ({}) => <PatternSizeMedium {...PatternSizeMedium.args}
 
 export const SizeLarge = ({}) => <PatternSizeLarge {...PatternSizeLarge.args} />
 
-export const ConstainsSubItem = ({}) => <PatternConstainsSubItem {...PatternConstainsSubItem.args} />
+export const ContainsSubItem = ({}) => <PatternContainsSubItem {...PatternContainsSubItem.args} />
 
-export const ConstainsActiveSubItem = ({}) => <PatternConstainsActiveSubItem {...PatternConstainsActiveSubItem.args} />
+export const ContainsActiveSubItem = ({}) => <PatternContainsActiveSubItem {...PatternContainsActiveSubItem.args} />
 
 export const TruncateText = ({}) => <PatternTruncateText {...PatternTruncateText.args} />
 
