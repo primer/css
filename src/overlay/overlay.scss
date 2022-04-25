@@ -6,6 +6,13 @@ $primer-borderRadius-large: 0.75rem;
   display: none !important;
 }
 
+.Overlay-visibilityHidden {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+}
+
 .Overlay {
   display: flex;
   min-width: 192px;
@@ -37,6 +44,10 @@ $primer-borderRadius-large: 0.75rem;
 
   &.Overlay--height-xlarge {
     height: 600px;
+  }
+
+  &.Overlay--width-auto {
+    width: auto;
   }
 
   &.Overlay--width-small {
