@@ -42,7 +42,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Output candidate version number
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             const package = require(`${process.env.GITHUB_WORKSPACE}/package.json`)
