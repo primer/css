@@ -27,23 +27,23 @@ $primer-borderRadius-large: 0.75rem;
   }
 
   &.Overlay--height-xsmall {
-    height: 192px;
+    height: min(192px, 100% - 2rem);
   }
 
   &.Overlay--height-small {
-    height: 256px;
+    height: min(256px, 100% - 2rem);
   }
 
   &.Overlay--height-medium {
-    height: 320px;
+    height: min(320px, 100% - 2rem);
   }
 
   &.Overlay--height-large {
-    height: 432px;
+    height: min(432px, 100% - 2rem);
   }
 
   &.Overlay--height-xlarge {
-    height: 600px;
+    height: min(600px, 100% - 2rem);
   }
 
   &.Overlay--width-auto {
@@ -51,23 +51,23 @@ $primer-borderRadius-large: 0.75rem;
   }
 
   &.Overlay--width-small {
-    min-width: 256px;
+    width: min(256px, 100% - 2rem);
   }
 
   &.Overlay--width-medium {
-    min-width: 320px;
+    width: min(320px, 100% - 2rem);
   }
 
   &.Overlay--width-large {
-    min-width: 480px;
+    width: min(480px, 100% - 2rem);
   }
 
   &.Overlay--width-xlarge {
-    min-width: 640px;
+    width: min(640px, 100% - 2rem);
   }
 
   &.Overlay--width-xxlarge {
-    min-width: 960px;
+    width: min(960px, 100% - 2rem);
   }
 
   &.Overlay--motion-scaleFade {
@@ -153,9 +153,10 @@ $primer-borderRadius-large: 0.75rem;
 
 // generic body content slot
 .Overlay-body {
-  flex-grow: 1;
   padding: $spacer-3;
+  overflow-y: auto;
   font-size: $body-font-size;
+  flex-grow: 1;
 
   &.Overlay-body--paddingCondensed {
     padding: $spacer-2;
@@ -256,10 +257,10 @@ $primer-borderRadius-large: 0.75rem;
   align-items: center;
   justify-content: center;
 
-  .Overlay {
-    max-width: calc(100vw - 64px);
-    max-height: calc(100vh - 64px);
-  }
+  //   .Overlay {
+  //     max-width: calc(100vw - 64px);
+  //     max-height: calc(100vh - 64px);
+  //   }
 }
 
 // anchor

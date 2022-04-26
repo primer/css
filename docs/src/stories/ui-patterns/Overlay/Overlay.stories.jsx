@@ -64,7 +64,7 @@ export default {
       ], // values
       control: {
         type: 'inline-radio',
-        labels: ['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']
+        labels: ['auto', 'small', 'medium', 'large', 'xlarge', 'xxlarge']
       },
       description: 'Width options: small: 256px, medium: 320px, large: 480px, xlarge: 640px, xxlarge: 960px',
       table: {
