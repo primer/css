@@ -62,8 +62,6 @@
       url: /components/breadcrumb
     - title: Buttons
       url: /components/buttons
-    - title: Dialog
-      url: /components/dialog
     - title: Dropdown
       url: /components/dropdown
     - title: Forms
