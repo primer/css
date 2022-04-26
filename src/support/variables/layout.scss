@@ -82,6 +82,7 @@ $spacers-large: (
   12: $spacer-12,
 ) !default;
 
+// stylelint-disable-next-line function-no-unknown
 $spacer-map-extended: map-merge(
   (
     0: 0,
