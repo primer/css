@@ -2,11 +2,13 @@ import React from 'react'
 import clsx from 'clsx'
 import ColorBlock from '../helpers/ColorBlock'
 import DarkColorblind from '@primer/primitives/dist/json/colors/dark_colorblind.json'
+import DarkTritanopia from '@primer/primitives/dist/json/colors/dark_tritanopia.json'
 import DarkDimmed from '@primer/primitives/dist/json/colors/dark_dimmed.json'
 import DarkHighContrast from '@primer/primitives/dist/json/colors/dark_high_contrast.json'
 import Dark from '@primer/primitives/dist/json/colors/dark.json'
 import Light from '@primer/primitives/dist/json/colors/light.json'
 import LightColorblind from '@primer/primitives/dist/json/colors/light_colorblind.json'
+import LightTritanopia from '@primer/primitives/dist/json/colors/light_tritanopia.json'
 
 /*
 * Welcome to the Primer CSS Playground!
@@ -54,6 +56,10 @@ Color.parameters = {
         palette: DarkColorblind
       },
       {
+        name: 'dark_tritanopia',
+        palette: DarkTritanopia
+      },
+      {
         name: 'dark_dimmed',
         palette: DarkDimmed
       },
@@ -72,6 +78,10 @@ Color.parameters = {
       {
         name: 'light_colorblind',
         palette: LightColorblind
+      },
+      {
+        name: 'light_tritanopia',
+        palette: LightTritanopia
       }
     ]
   }

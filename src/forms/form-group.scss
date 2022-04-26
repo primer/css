@@ -14,6 +14,13 @@
   // stylelint-disable-next-line primer/spacing
   margin: 15px 0;
 
+  // Autocomplete with embedded icon
+  .form-control.autocomplete-embedded-icon-wrap {
+    &:focus-within {
+      background-color: var(--color-canvas-default);
+    }
+  }
+
   // Text fields
   .form-control {
     width: 440px;

@@ -1,0 +1,14 @@
+#!/bin/bash -e
+
+# Build the base project so we can pull out the JSON data
+yarn dist
+cp -rf dist docs
+
+# Now build the docs site using that data
+cd docs
+
+if [ -n "$1" ]; then
+  CI=true yarn gatsby build && yarn build:storybook preview
+else
+  CI=true yarn gatsby build --prefix-paths && yarn build:storybook
+fi
