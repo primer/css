@@ -28,33 +28,34 @@ export default {
         category: 'HTML'
       }
     },
-    focusElement: {
-      control: {type: 'boolean'},
-      description: 'focus the dialog',
-      defaultValue: false,
-      table: {
-        category: 'Interactive'
-      }
-    },
     toggleOverlay: {
       control: {type: 'boolean'},
       description: 'show/hide overlay',
       defaultValue: false,
       table: {
-        category: 'Interactive'
+        category: 'Demo'
       }
     },
     showCloseButton: {
       control: {type: 'boolean'},
       description: 'show/hide close button',
+      defaultValue: true,
+      table: {
+        category: 'Demo'
+      }
+    },
+    showFooterButton: {
+      control: {type: 'boolean'},
+      description: 'show/hide footer button',
       defaultValue: false,
       table: {
-        category: 'Interactive'
+        category: 'Demo'
       }
     },
     width: {
-      options: [0, 1, 2, 3, 4], // iterator
+      options: [0, 1, 2, 3, 4, 5], // iterator
       mapping: [
+        'Overlay--width-auto',
         'Overlay--width-small',
         'Overlay--width-medium',
         'Overlay--width-large',
@@ -63,7 +64,7 @@ export default {
       ], // values
       control: {
         type: 'inline-radio',
-        labels: ['small', 'medium', 'large', 'xlarge', 'xxlarge']
+        labels: ['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']
       },
       description: 'Width options: small: 256px, medium: 320px, large: 480px, xlarge: 640px, xxlarge: 960px',
       table: {
@@ -114,35 +115,135 @@ export default {
         category: 'CSS'
       }
     },
-    position: {
-      options: [0, 1, 2], // iterator
-      mapping: ['', 'Overlay-backdrop--positionCenter', 'Overlay-backdrop--positionBottom'], // values
-      control: {
-        type: 'inline-radio',
-        labels: ['none', 'center', 'bottom']
-      },
-      description: 'Positions overlay',
-      table: {
-        category: 'CSS'
-      },
-      defaultValue: 'center'
-    },
-    positionWhenNarrow: {
-      options: [0, 1, 2], // iterator
+    variantNarrow: {
+      options: [0, 1, 2, 3], // iterator
       mapping: [
-        '',
-        'Overlay-backdrop-positionWhenNarrow-fullScreen',
-        'Overlay-backdrop-positionWhenNarrow-bottomSheet'
+        'Overlay-backdrop--center-whenNarrow',
+        'Overlay-backdrop--anchor-whenNarrow',
+        'Overlay-backdrop--side-whenNarrow',
+        'Overlay-backdrop--full-whenNarrow'
       ], // values
       control: {
         type: 'inline-radio',
-        labels: ['inherit', 'full-screen', 'bottom-sheet']
+        labels: ['center', 'anchored', 'side', 'full']
       },
-      description: 'Positions overlay for narrow width screens. Inherit will keep the height/width props the same',
+      description: '',
       table: {
-        category: 'CSS'
+        category: 'Variant'
+      }
+    },
+    variantRegular: {
+      options: [0, 1, 2, 3], // iterator
+      mapping: [
+        'Overlay-backdrop--center',
+        'Overlay-backdrop--anchor',
+        'Overlay-backdrop--side',
+        'Overlay-backdrop--full'
+      ], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['center', 'anchored', 'side', 'full']
       },
-      defaultValue: 'center'
+      description: '',
+      table: {
+        category: 'Variant'
+      }
+    },
+    placementNarrow: {
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+      mapping: [
+        'Overlay-backdrop--placement-top-whenNarrow',
+        '',
+        '',
+        '',
+        'Overlay-backdrop--placement-bottom-whenNarrow',
+        '',
+        '',
+        '',
+        'Overlay-backdrop--placement-right-whenNarrow',
+        '',
+        '',
+        '',
+        'Overlay-backdrop--placement-left-whenNarrow',
+        '',
+        '',
+        '',
+        ''
+      ],
+      control: {
+        type: 'inline-radio',
+        labels: [
+          'top',
+          'top-start',
+          'top-center',
+          'top-end',
+          'bottom',
+          'bottom-start',
+          'bottom-center',
+          'bottom-end',
+          'right',
+          'right-start',
+          'right-center',
+          'right-end',
+          'left',
+          'left-start',
+          'left-center',
+          'left-end',
+          'reset'
+        ]
+      },
+      description: 'Positions overlay for narrow viewport range',
+      table: {
+        category: 'Placement'
+      }
+    },
+    placementRegular: {
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+      mapping: [
+        'Overlay-backdrop--placement-top',
+        '',
+        '',
+        '',
+        'Overlay-backdrop--placement-bottom',
+        '',
+        '',
+        '',
+        'Overlay-backdrop--placement-right',
+        '',
+        '',
+        '',
+        'Overlay-backdrop--placement-left',
+        '',
+        '',
+        '',
+        ''
+      ],
+      control: {
+        type: 'inline-radio',
+        labels: [
+          'top',
+          'top-start',
+          'top-center',
+          'top-end',
+          'bottom',
+          'bottom-start',
+          'bottom-center',
+          'bottom-end',
+          'right',
+          'right-start',
+          'right-center',
+          'right-end',
+          'left',
+          'left-start',
+          'left-center',
+          'left-end',
+          'reset'
+        ]
+      },
+      description: 'Positions overlay for narrow viewport range',
+      table: {
+        category: 'Placement'
+      }
     },
     headerRegion: {
       control: {type: 'boolean'},
@@ -150,7 +251,7 @@ export default {
         'A header region may be used to provide context to the user by displaying a title, description, and offering an easy-to-escape route with a Close button. Headers may also provide ways for the user to interact with the content, such as with search and tabs.',
       defaultValue: true,
       table: {
-        category: 'HTML'
+        category: 'Demo'
       }
     },
     footerRegion: {
@@ -159,7 +260,7 @@ export default {
         'The footer region may be used to show confirmation actions, navigation links, or other important elements that should appear outside of the content scrolling region.',
       defaultValue: true,
       table: {
-        category: 'HTML'
+        category: 'Demo'
       }
     },
     showFooterDivider: {
@@ -243,101 +344,45 @@ export default {
       table: {
         category: 'HTML'
       }
+    },
+    titleId: {
+      description: 'title id',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
+    },
+    descriptionId: {
+      description: 'description id',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
     }
   }
 }
 
-const focusMethod = function getFocus() {
-  const dialog = document.getElementById('overlay-backdrop')[0]
-  dialog.focus()
-}
-
-const toggleDialog = () => {
-  const dialog = document.getElementById('overlay-backdrop')
-  dialog.classList.toggle('Overlay-hidden')
-  focusMethod()
-}
-
-export const DialogTemplate = OverlayTemplate.bind({})
-
-export const Playground = ({
-  toggleOverlay,
-  showBackdrop,
-  position,
-  positionWhenNarrow,
-  role,
-  ariaLabelledby,
-  ariaDescribedby,
-  dataFocusTrap
-}) => (
-  <>
-    <button class="btn" onClick={toggleDialog}>
-      <span>Open dialog</span>
-    </button>
-    <div
-      id="overlay-backdrop"
-      className={clsx(
-        toggleOverlay && 'Overlay-hidden',
-        'Overlay-backdrop',
-        position && `${position}`,
-        positionWhenNarrow && `${positionWhenNarrow}`
-      )}
-      role="dialog"
-      aria-labelledby={ariaLabelledby}
-      aria-describedby={ariaDescribedby}
-      data-focus-trap={dataFocusTrap}
-    >
-      <OverlayTemplate {...OverlayTemplate.args} />
-    </div>
-  </>
-)
+export const Playground = OverlayTemplate.bind({})
 Playground.args = {
-  title: 'This is the title of the dialog',
-  description: 'This is the subtitle of the dialog',
-  focusElement: false,
-  width: 1,
+  ...OverlayTemplate.args,
+  title: 'Dialog title',
+  description: 'Optional dialog description',
+  role: 'dialog',
+  width: 2,
   height: 3,
   ariaLabelledby: 'title-id',
   ariaDescribedby: 'description-id',
   dataFocusTrap: 'active',
   footerContentAlign: 2,
   showCloseButton: true,
-  position: 1,
-  positionWhenNarrow: 1,
   headerVariant: 0,
   bodyPaddingVariant: 0,
   motion: 1,
   descriptionId: 'description-id',
   titleId: 'title-id',
-  showFooterDivider: true,
-  children: <p>hey</p>
+  showFooterDivider: false,
+  children: <p>Dialog body</p>,
+  headerRegion: true,
+  variantNarrow: 3,
+  variantRegular: 0
 }
-
-// export const Playground = DialogTemplate.bind({})
-// Playground.args = {
-//   title: 'This is the title of the dialog',
-//   description: 'This is the subtitle of the dialog',
-//   focusElement: false,
-//   role: 'dialog',
-//   width: 1,
-//   height: 3,
-//   ariaLabelledby: 'title-id',
-//   ariaDescribedby: 'description-id',
-//   dataFocusTrap: 'active',
-//   footerContentAlign: 2,
-//   showCloseButton: true,
-//   position: 1,
-//   positionWhenNarrow: 1,
-//   headerVariant: 0,
-//   bodyPaddingVariant: 0,
-//   motion: 1,
-//   descriptionId: 'description-id',
-//   titleId: 'title-id',
-//   showFooterDivider: true,
-//   showBackdrop: true,
-//   trigger: (
-//     <button class="btn" onClick={toggleDialog}>
-//       <span>Open dialog</span>
-//     </button>
-//   )
-// }
