@@ -8,15 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 14.x
 
       - name: Get or Create Comment
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -42,8 +42,8 @@ jobs:
     needs: release-template
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 14
       - run: yarn
@@ -85,7 +85,7 @@ jobs:
     name: Semantic Version Label
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v5
+      - uses: actions/github-script@v6
         id: version-result
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
@@ -93,12 +93,12 @@ jobs:
           script: |
             const diff_url = context.payload.pull_request.diff_url
             const result = await github.request(diff_url)
-            const match = [...result.data.matchAll(/^\+['"]@primer\/css['"]:\s(patch|minor|major)/m)]
+            const match = [...result.data.matchAll(/^\+['"]@primer\/css['"]:\s(patch|minor|major)/mg)]
             if (match && match[0]) {
               return match[0][1]
             }
 
-      - uses: actions/github-script@v5
+      - uses: actions/github-script@v6
         env:
           RELEASE: ${{ steps.version-result.outputs.result }}
         with:
