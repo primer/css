@@ -28,14 +28,6 @@ export default {
         category: 'HTML'
       }
     },
-    focusElement: {
-      control: {type: 'boolean'},
-      description: 'focus the dialog',
-      defaultValue: false,
-      table: {
-        category: 'Demo'
-      }
-    },
     toggleOverlay: {
       control: {type: 'boolean'},
       description: 'show/hide overlay',
@@ -49,12 +41,21 @@ export default {
       description: 'show/hide close button',
       defaultValue: false,
       table: {
-        category: 'Interactive'
+        category: 'Demo'
+      }
+    },
+    showFooterButton: {
+      control: {type: 'boolean'},
+      description: 'show/hide footer button',
+      defaultValue: false,
+      table: {
+        category: 'Demo'
       }
     },
     width: {
-      options: [0, 1, 2, 3, 4], // iterator
+      options: [0, 1, 2, 3, 4, 5], // iterator
       mapping: [
+        'Overlay--width-auto',
         'Overlay--width-small',
         'Overlay--width-medium',
         'Overlay--width-large',
@@ -63,13 +64,7 @@ export default {
       ], // values
       control: {
         type: 'inline-radio',
-        labels: [
-          'Overlay--width-small',
-          'Overlay--width-medium',
-          'Overlay--width-large',
-          'Overlay--width-xlarge',
-          'Overlay--width-xxlarge'
-        ]
+        labels: ['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']
       },
       description: 'Width options: small: 256px, medium: 320px, large: 480px, xlarge: 640px, xxlarge: 960px',
       table: {
@@ -392,6 +387,7 @@ export const OverlayTemplate = ({
   motion,
   footerContentAlign,
   showCloseButton,
+  showFooterButton,
   actionContentSlot,
   headerVariant,
   bodyPaddingVariant,
@@ -409,7 +405,7 @@ export const OverlayTemplate = ({
 }) => (
   <>
     <button class="btn" onClick={toggleDialog}>
-      <span>Open dialog</span>
+      <span>Open overlay</span>
     </button>
     <div
       id="overlay-backdrop"
@@ -485,9 +481,11 @@ export const OverlayTemplate = ({
               footerContentAlign && `${footerContentAlign}`
             )}
           >
-            {/* <button class="btn" onClick={toggleDialog}>
-            <span>Continue</span>
-          </button> */}
+            {showFooterButton && (
+              <button class="btn" onClick={toggleDialog}>
+                <span>Continue</span>
+              </button>
+            )}
           </footer>
         )}
       </div>
@@ -500,12 +498,10 @@ Playground.storyName = 'Playground'
 Playground.args = {
   title: 'This is the title of the dialog',
   description: 'This is the subtitle of the dialog',
-  focusElement: false,
   motion: 1,
   footerContentAlign: 2,
-  //   position: 1,
   showCloseButton: true,
-  //   positionWhenNarrow: 0,
+  showFooterButton: false,
   headerContentSlot: '',
   actionContentSlot: '',
   headerVariant: 0,
@@ -518,9 +514,6 @@ Playground.args = {
   showFooterDivider: false,
   showHeaderDivider: false,
   role: '',
-  ariaLabelledby: '',
   ariaDescribedby: '',
-  dataFocusTrap: '',
-  showBackdrop: true,
-  variant: 'popover'
+  dataFocusTrap: ''
 }
