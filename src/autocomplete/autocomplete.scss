@@ -46,6 +46,10 @@
     &:focus {
       box-shadow: none;
     }
+
+    &:focus-visible {
+      box-shadow: none;
+    }
   }
 }
 
