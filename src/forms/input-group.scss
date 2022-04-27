@@ -36,6 +36,10 @@
   vertical-align: middle; // Match the inputs
 }
 
+.input-group-button .btn:not(.btn-primary) {
+  border-color: var(--color-control-border);
+}
+
 .input-group-button--autocomplete-embedded-icon {
   vertical-align: bottom;
 }
