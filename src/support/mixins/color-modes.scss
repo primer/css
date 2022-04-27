@@ -84,10 +84,12 @@
   @each $name, $value in $color-map {
     @each $type, $color in $value {
       @if $type == dark {
+        // stylelint-disable-next-line function-no-unknown
         $dark-colors: append($dark-colors, (--color-#{$name}, #{$color}));
       }
 
       @else {
+        // stylelint-disable-next-line function-no-unknown
         $light-colors: append($light-colors, (--color-#{$name}, #{$color}));
       }
     }

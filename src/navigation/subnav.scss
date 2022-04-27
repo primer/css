@@ -1,3 +1,5 @@
+// stylelint-disable selector-max-specificity
+
 // Needs refactoring
 // Sub nav
 .subnav {
@@ -46,6 +48,22 @@
     color: var(--color-fg-on-emphasis);
     background-color: var(--color-accent-emphasis);
     border-color: var(--color-accent-emphasis);
+
+    // fallback :focus state
+    &:focus {
+      @include focusOutlineOnEmphasis;
+
+      // remove fallback :focus if :focus-visible is supported
+      &:not(:focus-visible) {
+        outline: solid 1px transparent;
+        box-shadow: none;
+      }
+    }
+
+    // default focus state
+    &:focus-visible {
+      @include focusOutlineOnEmphasis;
+    }
   }
 
   &:first-child {
@@ -72,6 +90,7 @@
 }
 
 .subnav-search-input-wide {
+  // stylelint-disable-next-line primer/responsive-widths
   width: 500px;
 }
 

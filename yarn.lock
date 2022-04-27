@@ -1167,10 +1167,10 @@
   resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.7.0.tgz#4e838afaf997036720a43ebab0211d2de77b1606"
   integrity sha512-LSd96U2/A70obilbdYiEKI8D/wXUtZnKmUI/ScLOlGDju4iuwd3pJsmFoBwM1Us6vV23V6mapIG+lh27RzauaA==
 
-"@primer/stylelint-config@^12.3.3":
-  version "12.3.3"
-  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-12.3.3.tgz#f4ef0548a7884229358e5243d746d6d3af6a73a5"
-  integrity sha512-PHcBGEM/8mToW9aVrcRi9RVZN0WpW8zHN1C8+deP6tozclP06jzHsdprJG02buyR6N1BmDllsEBYZ2KK4Y71Bg==
+"@primer/stylelint-config@^12.4.0":
+  version "12.4.0"
+  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-12.4.0.tgz#3a9e8ed20673ed6ea17c703bb754b95b82a8a0f4"
+  integrity sha512-7fjs9KBnMdXLlWbPO7Q9WLS1y4kFitmISdVoADtvLxx0k5bY9XWc0sOhEiazioYo9ipwk80VwF4LlijeaZT7JA==
   dependencies:
     anymatch "^3.1.1"
     globby "^11.0.1"
@@ -1178,7 +1178,7 @@
     postcss-scss "^4.0.2"
     postcss-value-parser "^4.0.2"
     string.prototype.matchall "^4.0.2"
-    stylelint-config-standard "24.0.0"
+    stylelint-config-standard "25.0.0"
     stylelint-no-unsupported-browser-features "^5.0.1"
     stylelint-order "^5.0.0"
     stylelint-scss "^4.0.0"
@@ -5383,17 +5383,17 @@ style-search@^0.1.0:
   resolved "https://registry.yarnpkg.com/style-search/-/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
   integrity sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=
 
-stylelint-config-recommended@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-recommended/-/stylelint-config-recommended-6.0.0.tgz#fd2523a322836005ad9bf473d3e5534719c09f9d"
-  integrity sha512-ZorSSdyMcxWpROYUvLEMm0vSZud2uB7tX1hzBZwvVY9SV/uly4AvvJPPhCcymZL3fcQhEQG5AELmrxWqtmzacw==
+stylelint-config-recommended@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-recommended/-/stylelint-config-recommended-7.0.0.tgz#7497372ae83ab7a6fffc18d7d7b424c6480ae15e"
+  integrity sha512-yGn84Bf/q41J4luis1AZ95gj0EQwRX8lWmGmBwkwBNSkpGSpl66XcPTulxGa/Z91aPoNGuIGBmFkcM1MejMo9Q==
 
-stylelint-config-standard@24.0.0:
-  version "24.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-standard/-/stylelint-config-standard-24.0.0.tgz#6823f207ab997ae0b641f9a636d007cc44d77541"
-  integrity sha512-+RtU7fbNT+VlNbdXJvnjc3USNPZRiRVp/d2DxOF/vBDDTi0kH5RX2Ny6errdtZJH3boO+bmqIYEllEmok4jiuw==
+stylelint-config-standard@25.0.0:
+  version "25.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-standard/-/stylelint-config-standard-25.0.0.tgz#2c916984e6655d40d6e8748b19baa8603b680bff"
+  integrity sha512-21HnP3VSpaT1wFjFvv9VjvOGDtAviv47uTp3uFmzcN+3Lt+RYRv6oAplLaV51Kf792JSxJ6svCJh/G18E9VnCA==
   dependencies:
-    stylelint-config-recommended "^6.0.0"
+    stylelint-config-recommended "^7.0.0"
 
 stylelint-no-unsupported-browser-features@^5.0.1:
   version "5.0.2"

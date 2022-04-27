@@ -1,4 +1,5 @@
 .Box--overlay {
+  // stylelint-disable-next-line primer/responsive-widths
   width: 448px;
   margin-right: auto;
   margin-left: auto;
@@ -22,6 +23,7 @@
 }
 
 .Box-overlay--wide {
+  // stylelint-disable-next-line primer/responsive-widths
   width: 640px;
 }
 
