@@ -2,11 +2,11 @@
 // replace with primitive
 $primer-borderRadius-large: 0.75rem;
 
-.Overlay-hidden {
+.Overlay--hidden {
   display: none !important;
 }
 
-.Overlay-visibilityHidden {
+.Overlay--visibilityHidden {
   height: 0;
   overflow: hidden;
   visibility: hidden;
@@ -17,7 +17,7 @@ $primer-borderRadius-large: 0.75rem;
   display: flex;
   min-width: 192px;
   flex-direction: column;
-  background-color: var(--color-canvas-default);
+  background-color: var(--color-canvas-overlay);
   border-radius: $primer-borderRadius-large;
   box-shadow: var(--color-overlay-shadow);
   opacity: 1;
@@ -72,11 +72,11 @@ $primer-borderRadius-large: 0.75rem;
 
   &.Overlay--motion-scaleFade {
     @media screen and (prefers-reduced-motion: no-preference) {
-      animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running motion--scaleFade;
+      animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running Overlay--motion-scaleFade;
     }
   }
 
-  @keyframes motion--scaleFade {
+  @keyframes Overlay--motion-scaleFade {
     0% {
       opacity: 0;
       transform: scale(0.5);
@@ -229,12 +229,6 @@ $primer-borderRadius-large: 0.75rem;
     background-color: var(--color-btn-hover-bg);
     border: $border-width $border-style var(--color-btn-hover-bg);
   }
-}
-
-// this needs to move to a design token and be inline with JS
-// position will depend on conditional positioning logic
-.Overlay-backdrop-offset--normal {
-  top: 4px;
 }
 
 @mixin Overlay-backdrop() {

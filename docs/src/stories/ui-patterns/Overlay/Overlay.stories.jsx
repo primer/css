@@ -369,7 +369,7 @@ const focusMethod = function getFocus() {
 
 const toggleDialog = () => {
   const dialog = document.getElementById('overlay-backdrop')
-  dialog.classList.toggle('Overlay-hidden')
+  dialog.classList.toggle('Overlay--hidden')
   focusMethod()
 }
 
@@ -410,8 +410,7 @@ export const OverlayTemplate = ({
     <div
       id="overlay-backdrop"
       className={clsx(
-        toggleOverlay && 'Overlay-hidden',
-        'Overlay-backdrop',
+        toggleOverlay && 'Overlay--hidden',
         variantNarrow && `${variantNarrow}`,
         variantRegular && `${variantRegular}`,
         placementNarrow && `${placementNarrow}`,
