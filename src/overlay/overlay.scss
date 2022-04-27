@@ -159,7 +159,7 @@ $primer-borderRadius-large: 0.75rem;
 .Overlay-body {
   padding: $spacer-3;
   padding-top: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-width: thin;
   font-size: $body-font-size;
   flex-grow: 1;
