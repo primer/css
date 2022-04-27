@@ -3,11 +3,6 @@ on:
   push:
     branches:
       - 'main'
-    paths:
-      - 'src/**'
-      - 'docs/**'
-      - '.github/workflows/deploy*.yml'
-      - 'package.json'
 
 permissions:
   contents: write
@@ -46,6 +41,6 @@ jobs:
     uses: primer/.github/.github/workflows/deploy.yml@main
     with:
       node_version: 14
-      install: yarn
+      install: yarn && cd docs && yarn && cd ..
       build: yarn build:docs
       output_dir: docs/public
