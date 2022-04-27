@@ -42,6 +42,14 @@
     // stylelint-disable-next-line
     border: none;
     box-shadow: none;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      box-shadow: none;
+    }
   }
 }
 
