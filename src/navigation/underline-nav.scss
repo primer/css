@@ -10,6 +10,17 @@ $nav-height: $spacer-3 * 3 !default; // 48px
   box-shadow: inset 0 -1px 0 var(--color-border-muted);
   -webkit-overflow-scrolling: auto;
   justify-content: space-between;
+
+  .Counter {
+    margin-left: $spacer-2;
+    color: var(--color-fg-default);
+    background-color: var(--color-neutral-muted);
+
+    &--primary {
+      color: var(--color-fg-on-emphasis);
+      background-color: var(--color-neutral-emphasis);
+    }
+  }
 }
 
 .UnderlineNav-body {
@@ -41,65 +52,54 @@ $nav-height: $spacer-3 * 3 !default; // 48px
     color: var(--color-fg-default);
     text-decoration: none;
     border-bottom-color: var(--color-neutral-muted);
-    outline-offset: -8px;
+    outline-offset: -2px;
     transition: border-bottom-color 0.12s ease-out;
+  }
 
-    // renders a visibly hidden "copy" of the label in bold, reserving box space for when label becomes bold on selected
-    [data-content]::before {
-      display: block;
-      height: 0;
-      font-weight: $font-weight-bold;
-      visibility: hidden;
-      content: attr(data-content);
-    }
+  // renders a visibly hidden "copy" of the label in bold, reserving box space for when label becomes bold on selected
+  [data-content]::before {
+    display: block;
+    height: 0;
+    font-weight: $font-weight-bold;
+    visibility: hidden;
+    content: attr(data-content);
+  }
 
-    // increase touch target area
-    &::before {
-      @include minTouchTarget($min-height: $nav-height);
-    }
+  // increase touch target area
+  &::before {
+    @include minTouchTarget($min-height: $nav-height);
+  }
 
-    // hover state was "sticking" on mobile after click
-    @media (pointer: fine) {
-      &:hover {
-        color: var(--color-fg-default);
-        text-decoration: none;
-        background: var(--color-action-list-item-default-hover-bg);
-        transition: background 0.12s ease-out;
-      }
-    }
-
-    &.selected,
-    &[role='tab'][aria-selected='true'],
-    &[aria-current]:not([aria-current='false']) {
-      font-weight: $font-weight-bold;
+  // hover state was "sticking" on mobile after click
+  @media (pointer: fine) {
+    &:hover {
       color: var(--color-fg-default);
-      border-bottom-color: var(--color-primer-border-active);
-      outline-offset: -8px;
-
-      // current/selected underline
-      &::after {
-        position: absolute;
-        right: 50%;
-        // 48px total height / 2 (24px) + 1px
-        bottom: calc(50% - 25px);
-        width: 100%;
-        height: 2px;
-        content: '';
-        background: var(--color-primer-border-active);
-        border-radius: $border-radius;
-        transform: translate(50%, -50%);
-      }
+      text-decoration: none;
+      background: var(--color-action-list-item-default-hover-bg);
+      transition: background 0.12s ease-out;
     }
   }
 
-  .Counter {
-    margin-left: $spacer-2;
+  &.selected,
+  &[role='tab'][aria-selected='true'],
+  &[aria-current]:not([aria-current='false']) {
+    font-weight: $font-weight-bold;
     color: var(--color-fg-default);
-    background-color: var(--color-neutral-muted);
+    border-bottom-color: var(--color-primer-border-active);
+    outline-offset: -8px;
 
-    &--primary {
-      color: var(--color-fg-on-emphasis);
-      background-color: var(--color-neutral-emphasis);
+    // current/selected underline
+    &::after {
+      position: absolute;
+      right: 50%;
+      // 48px total height / 2 (24px) + 1px
+      bottom: calc(50% - 25px);
+      width: 100%;
+      height: 2px;
+      content: '';
+      background: var(--color-primer-border-active);
+      border-radius: $border-radius;
+      transform: translate(50%, -50%);
     }
   }
 }
