@@ -80,6 +80,10 @@
     h5,
     h6 {
       display: inline-block;
+
+      .anchor {
+        margin-left: -40px;
+      }
     }
 
     h1,
