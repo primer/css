@@ -235,7 +235,10 @@ dl.form-group > dd, // TODO: Deprecate
   }
 
   &.focused {
-    @include focusBoxShadowInset(2px, var(--color-accent-fg));
+    border-color: var(--color-accent-fg);
+    border-radius: $border-radius;
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-accent-fg);
 
     .form-control {
       border-color: transparent;
