@@ -238,6 +238,7 @@ dl.form-group > dd, // TODO: Deprecate
     border-color: var(--color-accent-fg);
     border-radius: $border-radius;
     outline: none;
+    // stylelint-disable-next-line primer/borders
     box-shadow: 0 0 0 2px var(--color-accent-fg);
 
     .form-control {
