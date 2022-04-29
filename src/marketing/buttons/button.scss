@@ -13,11 +13,13 @@
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%), var(--color-mktg-btn-bg) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%),
+    var(--color-mktg-btn-bg) !important;
   border: 0;
   // stylelint-disable-next-line primer/borders
   border-radius: 0.375rem;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, outline 0.2s ease;
   appearance: none !important;
 
   &::before {
@@ -42,29 +44,32 @@
     box-shadow: var(--color-mktg-btn-shadow-hover) !important;
   }
 
-  &:focus,
-  &.focus {
-    outline: 0;
-    box-shadow: var(--color-mktg-btn-shadow-focus), var(--color-mktg-btn-shadow-hover) !important;
-  }
-
   &:hover,
   &:focus,
+  &:focus-visible,
   &.focus {
     &::before {
       opacity: 1;
     }
+  }
 
-    &:disabled {
-      box-shadow: none !important;
+  // fallback :focus state
+  &:focus {
+    @include focusOutline(2px, var(--color-accent-fg));
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      outline: solid 1px transparent;
+      box-shadow: none;
     }
   }
 
-  &:active {
-    outline: none;
-    // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 transparent;
+  // default focus state
+  &:focus-visible {
+    @include focusOutline(2px, var(--color-accent-fg));
+  }
 
+  &:active {
     &::before {
       opacity: 0.5 !important;
     }
@@ -91,11 +96,6 @@
     box-shadow: var(--color-mktg-btn-shadow-hover-muted) !important;
   }
 
-  &:focus,
-  &.focus {
-    box-shadow: var(--color-mktg-btn-shadow-hover-muted), var(--color-mktg-btn-shadow-focus) !important;
-  }
-
   &:active {
     // stylelint-disable-next-line primer/box-shadow
     box-shadow: var(--color-fg-default) 0 0 0 3px inset !important;
@@ -119,11 +119,6 @@
   &:hover {
     box-shadow: var(--color-mktg-btn-shadow-hover-muted) !important;
   }
-
-  &:focus,
-  .focus {
-    box-shadow: var(--color-mktg-btn-shadow-hover-muted), var(--color-mktg-btn-shadow-focus) !important;
-  }
 }
 
 .btn-signup-mktg {
@@ -137,9 +132,20 @@
     background: linear-gradient(180deg, rgba(52, 183, 89, 0.15) 0%, rgba(46, 164, 79, 0) 100%) !important;
   }
 
+  // fallback :focus state
   &:focus {
-    // stylelint-disable-next-line primer/box-shadow
-    box-shadow: rgba(46, 164, 79, 0.45) 0 0 0 4px !important;
+    @include focusOutline(2px, var(--color-accent-fg));
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      outline: solid 1px transparent;
+      box-shadow: none;
+    }
+  }
+
+  // default focus state
+  &:focus-visible {
+    @include focusOutline(2px, var(--color-accent-fg));
   }
 }
 

@@ -31,9 +31,9 @@
   align-items: center;
 
   &:focus-within {
-    border-color: var(--color-accent-emphasis);
-    outline: none;
-    box-shadow: var(--color-primer-shadow-focus);
+    border-color: var(--color-accent-fg);
+
+    @include focusBoxShadowInset;
   }
 
   .form-control {
@@ -44,6 +44,10 @@
     box-shadow: none;
 
     &:focus {
+      box-shadow: none;
+    }
+
+    &:focus-visible {
       box-shadow: none;
     }
   }
