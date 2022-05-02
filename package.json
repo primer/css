@@ -66,11 +66,11 @@
     "postcss-calc": "8.2.4",
     "postcss-import": "14.1.0",
     "postcss-load-config": "3.1.4",
-    "postcss-scss": "4.0.3",
+    "postcss-scss": "4.0.4",
     "postcss-simple-vars": "6.0.3",
     "prettier": "2.6.2",
     "semver": "7.3.7",
-    "stylelint": "14.6.1",
+    "stylelint": "14.8.1",
     "table": "6.8.0"
   },
   "jest": {
