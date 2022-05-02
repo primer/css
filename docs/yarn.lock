@@ -5708,10 +5708,10 @@ babel-preset-gatsby@^0.12.3:
     gatsby-core-utils "^1.10.1"
     gatsby-legacy-polyfills "^0.7.1"
 
-babel-preset-gatsby@^2.11.1:
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-2.11.1.tgz#860d8d9903df38c314fa6f0cfdb197d02555c4e4"
-  integrity sha512-NGUNAIb3hzD1Mt97q5T3gSSuVuaqnYFSm7AvgByDa3Mk2ohF5Ni86sCLVPRIntIzJvgU5OWY4Qz+6rrI1SwprQ==
+babel-preset-gatsby@^2.13.0:
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-2.13.0.tgz#b9eec01768a993bb037967303cfadddadbf4f630"
+  integrity sha512-KmWU7iScVWPhWa2V1rWAGwIxn7wZI+lzEF2NsfGSUl8dwHxlXoqPy+RP1ISqgmdgeddHFA4uFwMoOkhCNS17EQ==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.14.0"
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.14.5"
@@ -5726,8 +5726,8 @@ babel-preset-gatsby@^2.11.1:
     babel-plugin-dynamic-import-node "^2.3.3"
     babel-plugin-macros "^2.8.0"
     babel-plugin-transform-react-remove-prop-types "^0.4.24"
-    gatsby-core-utils "^3.11.1"
-    gatsby-legacy-polyfills "^2.11.0"
+    gatsby-core-utils "^3.13.0"
+    gatsby-legacy-polyfills "^2.13.0"
 
 babel-preset-jest@^24.9.0:
   version "24.9.0"
@@ -9687,10 +9687,10 @@ gatsby-core-utils@^1.10.1:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-core-utils@^3.11.1:
-  version "3.11.1"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.11.1.tgz#ea87c1d3aa45c26c9ea32b8e8b029afe6a56f8c7"
-  integrity sha512-Op9/uihtcsDLlZDfRsGJ1ya2mFx2YH9Zmx93bawElZ0YpIzKjCkNTp+I5i5UANxvs5I+Fljl0WHQRudMWg+fWA==
+gatsby-core-utils@^3.13.0:
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.13.0.tgz#b6137bbd285e41a6811ccd33fcd5d5f6a5a17aef"
+  integrity sha512-uAyy54t9dYAUHjLq38QfX/pxyWxsqDiWN/+Ppg/KXTbE83LUQlD0PctdNxz9jFmJ8CgE1BUbfUKpmemh8BLkjw==
   dependencies:
     "@babel/runtime" "^7.15.4"
     ci-info "2.0.0"
@@ -9700,7 +9700,7 @@ gatsby-core-utils@^3.11.1:
     fs-extra "^10.0.0"
     got "^11.8.3"
     import-from "^4.0.0"
-    lmdb "^2.2.4"
+    lmdb "^2.2.6"
     lock "^1.1.0"
     node-object-hash "^2.3.10"
     proper-lockfile "^4.1.2"
@@ -9722,10 +9722,10 @@ gatsby-legacy-polyfills@^0.7.1:
   dependencies:
     core-js-compat "^3.6.5"
 
-gatsby-legacy-polyfills@^2.11.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/gatsby-legacy-polyfills/-/gatsby-legacy-polyfills-2.11.0.tgz#8b2afc4d97f44eb5767fe9b49f55ff675055ffd2"
-  integrity sha512-ulkRNCitwFjwUM4f2ufljH0WjELm6QEIOGRryNRt9LKJEB9QGmdm+KUAWIv7xrFUqKq1Pn6is64wcfXDw21zSA==
+gatsby-legacy-polyfills@^2.13.0:
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/gatsby-legacy-polyfills/-/gatsby-legacy-polyfills-2.13.0.tgz#19cbab4aad02b2a97b814a8526d188a6b040f581"
+  integrity sha512-n5Lle2Asbc2oIaShbWMtxCkXsP0rPtkl3r5jgfJZICK2I2j7QBICnItiUu2swziE0xu6HnURNIZZNPhWlJvyvw==
   dependencies:
     "@babel/runtime" "^7.15.4"
     core-js-compat "3.9.0"
@@ -12996,16 +12996,54 @@ lit-html@^1.1.1:
   resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.4.1.tgz#0c6f3ee4ad4eb610a49831787f0478ad8e9ae5e0"
   integrity sha512-B9btcSgPYb1q4oSOb/PrOT6Z/H+r6xuNzfH4lFli/AWhYwdtrgQkQWBbIc6mdnf6E2IL3gDXdkkqNktpU0OZQA==
 
-lmdb@^2.2.4:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/lmdb/-/lmdb-2.2.6.tgz#a52ef533812b8abcbe0033fc9d74d215e7dfc0a0"
-  integrity sha512-UmQV0oZZcV3EN6rjcAjIiuWcc3MYZGWQ0GUYz46Ron5fuTa/dUow7WSQa6leFkvZIKVUdECBWVw96tckfEzUFQ==
+lmdb-darwin-arm64@2.3.8:
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/lmdb-darwin-arm64/-/lmdb-darwin-arm64-2.3.8.tgz#ea36ca37ff98c769e43875c3d4087a6bcf59715e"
+  integrity sha512-QFFnLQlQn1WjSyWSKU4pdOQNPLea2/iL8LcR979LGp3y4OKmuC9fNLIiCTqp+t5QBVBOKfJZ8sqFd/5KHmDFYg==
+
+lmdb-darwin-x64@2.3.8:
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/lmdb-darwin-x64/-/lmdb-darwin-x64-2.3.8.tgz#8ecb86dfdb410f246a4e2261f6fb49156ed0ac73"
+  integrity sha512-cPVym3ZUXJurjv9YnZ40fsJuszPzn8mvIWjcqZuhXonUXAgSxvGloAwH5HCtFF7oIT6r/iXZejfgVL1MbM97tw==
+
+lmdb-linux-arm64@2.3.8:
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/lmdb-linux-arm64/-/lmdb-linux-arm64-2.3.8.tgz#84ce1ba84fb5546fd8a361e0b4efd5c9f2a046c4"
+  integrity sha512-9kgNOm7xhGmji2pH4UgeBbojBuH+0KeJ7C51kL7zEBxVXB/xD3IMZV42+MdSFzJJcmgEe3XuIdxt/TFSXhEEIw==
+
+lmdb-linux-arm@2.3.8:
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/lmdb-linux-arm/-/lmdb-linux-arm-2.3.8.tgz#1a970d0836d27994836b4cbba165175bc45bc52a"
+  integrity sha512-jriO1nsPIPEBZjJ4OgshLRmi1br5E6CWnPTwSz3XO1UvDh6GEj87IL/brQxJq6HlpUj01wrQCqpvJMBTMtk+Ew==
+
+lmdb-linux-x64@2.3.8:
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/lmdb-linux-x64/-/lmdb-linux-x64-2.3.8.tgz#84196d4d3dee37b43dc19a290bc9605412c30799"
+  integrity sha512-qTdGkBKhuROMNxrOsI31YInjBEr3b29tI80XutD3kcO3UgBXE/I1Jy57WOde6ghEdPlfh3pkycme6+Q+tsmhyA==
+
+lmdb-win32-x64@2.3.8:
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/lmdb-win32-x64/-/lmdb-win32-x64-2.3.8.tgz#50e7fd5da1ed693af5153ff0046895f8b75112b2"
+  integrity sha512-IalYsXztvgjjPmXxFEkmZ3Tio0QmDCOxYBgxQDvAghpqa4RwufbS6unbkxO+aYK6ZWjzEZbsNKFSSb/vVgkn2A==
+
+lmdb@^2.2.6:
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/lmdb/-/lmdb-2.3.8.tgz#24167e33fed9aad479dd6ee3e98e9a0334d75623"
+  integrity sha512-SoYYrcmJWJgIG4PSkVJiXot3m9035zE0FRUgqhgzZIO6LnikbORzBznxbSrN7SaogR95w9lgTm+LwW+Os4mN5Q==
   dependencies:
     msgpackr "^1.5.4"
     nan "^2.14.2"
-    node-gyp-build "^4.2.3"
+    node-addon-api "^4.3.0"
+    node-gyp-build-optional-packages "^4.3.2"
     ordered-binary "^1.2.4"
     weak-lru-cache "^1.2.2"
+  optionalDependencies:
+    lmdb-darwin-arm64 "2.3.8"
+    lmdb-darwin-x64 "2.3.8"
+    lmdb-linux-arm "2.3.8"
+    lmdb-linux-arm64 "2.3.8"
+    lmdb-linux-x64 "2.3.8"
+    lmdb-win32-x64 "2.3.8"
 
 load-json-file@^4.0.0:
   version "4.0.0"
@@ -14376,6 +14414,11 @@ node-addon-api@^3.1.0:
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-3.2.1.tgz#81325e0a2117789c0128dab65e7e38f07ceba161"
   integrity sha512-mmcei9JghVNDYydghQmeDX8KoAm0FAiYyIcUt/N4nhyAipB17pllZQDOJD2fotxABnt4Mdz+dKTO7eftLg4d0A==
 
+node-addon-api@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-4.3.0.tgz#52a1a0b475193e0928e98e0426a0d1254782b77f"
+  integrity sha512-73sE9+3UaLYYFmDsFZnqCInzPyh3MqIwZO9cw58yIqAZhONrrabrYyYe3TuIqtIiOuTXVhsGau8hcrhhwSsDIQ==
+
 node-dir@^0.1.10:
   version "0.1.17"
   resolved "https://registry.yarnpkg.com/node-dir/-/node-dir-0.1.17.tgz#5f5665d93351335caabef8f1c554516cf5f1e4e5"
@@ -14404,6 +14447,11 @@ node-forge@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.10.0.tgz#32dea2afb3e9926f02ee5ce8794902691a676bf3"
   integrity sha512-PPmu8eEeG9saEUvI97fm4OYxXVB6bFvyNTyiUOBichBpFG8A1Ljw3bY62+5oOjDEMHRnd0Y7HQ+x7uzxOzC6JA==
+
+node-gyp-build-optional-packages@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/node-gyp-build-optional-packages/-/node-gyp-build-optional-packages-4.3.2.tgz#82de9bdf9b1ad042457533afb2f67469dc2264bb"
+  integrity sha512-P5Ep3ISdmwcCkZIaBaQamQtWAG0facC89phWZgi5Z3hBU//J6S48OIvyZWSPPf6yQMklLZiqoosWAZUj7N+esA==
 
 node-gyp-build@^4.2.3:
   version "4.3.0"
