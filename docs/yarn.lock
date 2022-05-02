@@ -2271,10 +2271,10 @@
   resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-16.1.1.tgz#6a9eaffbbf46cb44d344a37a5ff2384973b82d3f"
   integrity sha512-xCxQ5z23ol7yDuJs85Lc4ARzyoay+b3zOhAKkEMU7chk0xi2hT2OnRP23QUudNNDPTGozX268RGYLexUa6P4xw==
 
-"@primer/octicons@16.3.0":
-  version "16.3.0"
-  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-16.3.0.tgz#355483478ad86871045e41a8f3dc79fca5e6f213"
-  integrity sha512-kOVIGDkd7s2hx0E4FHyJblzGSTiOX+a//eu9CPSM0hYr26Sr+m0bIiTYHNPVLDh9apF9WdK8ub/eqgrE8U4iEA==
+"@primer/octicons@17.0.0":
+  version "17.0.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-17.0.0.tgz#9dc752aeb3d2269f7c7827f04148ef5e55555374"
+  integrity sha512-DiIjtous4XPuR2deTctD3/RVZy/vRzVYBgYYvHV313MmTfkbVP60qLH5txrT3/bYNvnb0poNDelLS6U0kqlvHA==
   dependencies:
     object-assign "^4.1.1"
 
@@ -6562,12 +6562,10 @@ chownr@^2.0.0:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-2.0.0.tgz#15bfbe53d2eab4cf70f18a8cd68ebe5b3cb1dece"
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
-chroma-js@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-2.1.2.tgz#1075cb9ae25bcb2017c109394168b5cf3aa500ec"
-  integrity sha512-ri/ouYDWuxfus3UcaMxC1Tfp3IE9K5iQzxc2hSxbBRVNQFut1UuGAsZmiAf2mOUubzGJwgMSv9lHg+XqLaz1QQ==
-  dependencies:
-    cross-env "^6.0.3"
+chroma-js@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-2.4.2.tgz#dffc214ed0c11fa8eefca2c36651d8e57cbfb2b0"
+  integrity sha512-U9eDw6+wt7V8z5NncY2jJfZa+hUH8XEj8FQHgFJTrUFnJfXYf4Ml4adI2vXZOjqRDpFWtYVWypDfZwnJ+HIR4A==
 
 chrome-trace-event@^1.0.2:
   version "1.0.3"
@@ -7236,13 +7234,6 @@ create-require@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/create-require/-/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
   integrity sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==
-
-cross-env@^6.0.3:
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-6.0.3.tgz#4256b71e49b3a40637a0ce70768a6ef5c72ae941"
-  integrity sha512-+KqxF6LCvfhWvADcDPqo64yVIB31gv/jQulX2NGzKS/g3GEVz6/pt4wjHFtFWsHMddebWD/sDthJemzM4MaAag==
-  dependencies:
-    cross-spawn "^7.0.0"
 
 cross-fetch@3.1.4:
   version "3.1.4"
