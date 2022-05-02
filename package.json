@@ -54,7 +54,7 @@
     "cssstats": "4.0.5",
     "eslint": "8.13.0",
     "eslint-plugin-github": "4.3.6",
-    "eslint-plugin-jest": "26.0.0",
+    "eslint-plugin-jest": "26.1.5",
     "eslint-plugin-prettier": "4.0.0",
     "filesize": "8.0.7",
     "front-matter": "4.0.2",
