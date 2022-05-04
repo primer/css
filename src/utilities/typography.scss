@@ -243,3 +243,8 @@
 .user-select-none {
   user-select: none !important;
 }
+
+/* Make text capitalized (transforms first character to uppercase) */
+.text-capitalize {
+  text-transform: capitalize !important;
+}
