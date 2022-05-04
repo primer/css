@@ -89,6 +89,14 @@ $primer-borderRadius-large: 0.75rem;
   }
 }
 
+// for <form> that wraps entire contents of overlay
+.Overlay-form {
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .Overlay-header {
   z-index: 1;
   display: flex;
