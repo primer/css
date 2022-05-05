@@ -1,0 +1,295 @@
+.ToggleSwitch {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: row;
+
+  &:hover,
+  &:focus:focus-visible {
+    .ToggleSwitch--knob {
+      background-color: var(--color-btn-hover-bg);
+    }
+  }
+
+  &:active,
+  &:active:focus-visible {
+    .ToggleSwitch--knob {
+      background-color: var(--color-btn-active-bg);
+    }
+  }
+
+  &.ToggleSwitch--checked {
+    &.ToggleSwitch--disabled {
+      .ToggleSwitch--knob {
+        background-color: var(--color-switch-knob-checked-disabled-bg);
+
+        &:hover,
+        &:focus:focus-visible {
+          background-color: var(--color-switch-knob-checked-disabled-bg);
+        }
+      }
+
+      .ToggleSwitch--switch {
+        background-color: var(--color-canvas-subtle);
+        border-color: var(--color-border-subtle);
+
+        &:hover,
+        &:focus:focus-visible {
+          .ToggleSwitch--knob {
+            background-color: var(--color-switch-knob-checked-disabled-bg);
+          }
+        }
+      }
+
+      &:hover,
+      &:focus:focus-visible {
+        .ToggleSwitch--switch {
+          background-color: var(--color-canvas-subtle);
+          border-color: var(--color-border-subtle);
+        }
+
+        .ToggleSwitch--knob {
+          background-color: var(--color-switch-knob-checked-disabled-bg);
+        }
+      }
+
+      &:active,
+      &:active:focus-visible {
+        .ToggleSwitch--knob {
+          background-color: var(--color-switch-knob-checked-disabled-bg);
+        }
+      }
+    }
+
+    .ToggleSwitch--switch {
+      background-color: var(--color-switch-track-checked-bg);
+      border-color: var(--color-switch-track-checked-border);
+    }
+
+    .ToggleSwitch--knob {
+      background-color: var(--color-switch-knob-checked-bg);
+      border: 0;
+      transform: translateX(0);
+    }
+
+    .ToggleSwitch--lineIcon {
+      transform: translateX(0);
+    }
+
+    .ToggleSwitch--circleIcon {
+      transform: translateX(100%);
+    }
+
+    .ToggleSwitch--knob {
+      transform: translateX(calc(100% + 1px));
+    }
+
+    .ToggleSwitch--onLabel {
+      visibility: visible;
+      height: auto;
+    }
+
+    .ToggleSwitch--offLabel {
+      visibility: hidden;
+      height: 0;
+    }
+
+    &:hover,
+    &:focus:focus-visible {
+      .ToggleSwitch--switch {
+        background-color: var(--color-switch-track-checked-hover-bg);
+      }
+    }
+
+    &:active,
+    &:active:focus-visible {
+      .ToggleSwitch--switch {
+        background-color: var(--color-switch-track-checked-active-bg);
+      }
+    }
+  }
+
+  &.ToggleSwitch--disabled {
+    .ToggleSwitch--switch {
+      background-color: var(--color-canvas-subtle);
+      border-color: var(--color-border-subtle);
+      cursor: not-allowed;
+      transition-property: none;
+    }
+
+    &:hover,
+    &:focus:focus-visible {
+      .ToggleSwitch--knob {
+        background-color: var(--color-btn-bg);
+      }
+    }
+
+    &:active,
+    &:active:focus-visible {
+      .ToggleSwitch--knob {
+        background-color: var(--color-btn-bg);
+      }
+    }
+
+    .ToggleSwitch--knob {
+      border-color: var(--color-border-default);
+      box-shadow: none;
+
+      &:hover,
+      &:focus:focus-visible {
+        background-color: var(--color-btn-bg);
+      }
+
+      &:active,
+      &:active:focus-visible {
+        background-color: var(--color-btn-bg);
+      }
+    }
+
+    .ToggleSwitch--lineIcon {
+      color: var(--color-fg-subtle);
+    }
+
+    .ToggleSwitch--circleIcon {
+      color: var(--color-fg-subtle);
+    }
+
+    .ToggleSwitch--labels {
+      color: var(--color-fg-muted);
+    }
+  }
+}
+
+.ToggleSwitch--switch {
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  text-decoration: none;
+  padding: 0;
+  transition-property: background-color, border-color;
+  transition-duration: 80ms;
+  transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+  border-radius: $border-radius-2;
+  border-style: solid;
+  border-width: 1px;
+  display: block;
+  height: 32px;
+  width: 64px;
+  outline-offset: 2px;
+  position: relative;
+
+  background-color: var(--color-switch-track-bg);
+  border-color: var(--color-switch-track-border);
+
+  @media (pointer: coarse) {
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      top: 50%;
+      min-height: 44px;
+    }
+  }
+
+  @media (prefers-reduced-motion) {
+    transition: none;
+    * {
+      transition: none;
+    }
+  }
+
+  &:after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: calc($border-radius-2 - 1px); /* -1px to account for 1px border around the control */
+  }
+}
+
+.ToggleSwitch--bg {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ToggleSwitch--lineIcon {
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: 50%;
+  color: var(--color-accent-fg);
+  line-height: 0;
+  transition-property: transform;
+  transition-duration: 80ms;
+  transform: translateX(-100%)
+}
+
+.ToggleSwitch--circleIcon {
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: 50%;
+  color: var(--color-fg-default);
+  line-height: 0;
+  transition-property: transform;
+  transition-duration: 80ms;
+  transform: translateX(0)
+}
+
+.ToggleSwitch--knob {
+  background-color: var(--color-btn-bg);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-switch-track-border);
+  border-radius: calc($border-radius-2 - 1px); /* -1px to account for 1px border around the control */
+  box-shadow: var(--color-shadow-medium), var(--color-btn-inset-shadow);
+  width: 50%;
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  transition-property: transform;
+  transition-duration: 80ms;
+  transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+  transform: -1px;
+  z-index: 1;
+
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
+}
+
+.ToggleSwitch--labels {
+  color: var(--color-fg-default);
+  font-size: $body-font-size;
+  position: relative;
+  line-height: 1.5;
+  margin-left: $spacer-2;
+  margin-right: $spacer-2;
+}
+
+.ToggleSwitch--small {
+  .ToggleSwitch--labels {
+    font-size: $font-size-small;
+  }
+
+  .ToggleSwitch--switch {
+    height: 24px;
+    width: 48px;
+  }
+}
+
+.ToggleSwitch--onLabel {
+  visibility: hidden;
+  height: 0;
+}
+
+.ToggleSwitch--offLabel {
+  visibility: visible;
+  height: auto;
+}
