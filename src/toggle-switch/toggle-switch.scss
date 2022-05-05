@@ -84,13 +84,13 @@
     }
 
     .ToggleSwitch--onLabel {
-      visibility: visible;
       height: auto;
+      visibility: visible;
     }
 
     .ToggleSwitch--offLabel {
-      visibility: hidden;
       height: 0;
+      visibility: hidden;
     }
 
     &:hover,
@@ -110,9 +110,9 @@
 
   &.ToggleSwitch--disabled {
     .ToggleSwitch--switch {
+      cursor: not-allowed;
       background-color: var(--color-canvas-subtle);
       border-color: var(--color-border-subtle);
-      cursor: not-allowed;
       transition-property: none;
     }
 
@@ -160,54 +160,54 @@
 }
 
 .ToggleSwitch--switch {
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 32px;
+  padding: 0;
+  text-decoration: none;
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  appearance: none;
-  text-decoration: none;
-  padding: 0;
-  transition-property: background-color, border-color;
-  transition-duration: 80ms;
-  transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
-  border-radius: $border-radius-2;
-  border-style: solid;
-  border-width: 1px;
-  display: block;
-  height: 32px;
-  width: 64px;
-  outline-offset: 2px;
-  position: relative;
-
   background-color: var(--color-switch-track-bg);
   border-color: var(--color-switch-track-border);
+  border-style: $border-style;
+  border-width: $border-width;
+  border-radius: $border-radius;
+  outline-offset: 2px;
+  transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+  transition-duration: 80ms;
+  transition-property: background-color, border-color;
+  appearance: none;
 
   @media (pointer: coarse) {
-    &:before {
-      content: '';
+    &::before {
       position: absolute;
-      left: 0;
-      right: 0;
-      transform: translateY(-50%);
       top: 50%;
+      right: 0;
+      left: 0;
       min-height: 44px;
+      content: '';
+      transform: translateY(-50%);
     }
   }
 
   @media (prefers-reduced-motion) {
     transition: none;
+
     * {
       transition: none;
     }
   }
 
-  &:after {
-    content: '';
-    box-sizing: border-box;
+  &::after {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
+    content: '';
     border-radius: calc($border-radius-2 - 1px); /* -1px to account for 1px border around the control */
   }
 }
@@ -221,43 +221,43 @@
 }
 
 .ToggleSwitch--lineIcon {
+  line-height: 0;
+  color: var(--color-accent-fg);
+  transition-duration: 80ms;
+  transition-property: transform;
+  transform: translateX(-100%);
   flex-shrink: 0;
   flex-grow: 1;
   flex-basis: 50%;
-  color: var(--color-accent-fg);
-  line-height: 0;
-  transition-property: transform;
-  transition-duration: 80ms;
-  transform: translateX(-100%)
 }
 
 .ToggleSwitch--circleIcon {
+  line-height: 0;
+  color: var(--color-fg-default);
+  transition-duration: 80ms;
+  transition-property: transform;
+  transform: translateX(0);
   flex-shrink: 0;
   flex-grow: 1;
   flex-basis: 50%;
-  color: var(--color-fg-default);
-  line-height: 0;
-  transition-property: transform;
-  transition-duration: 80ms;
-  transform: translateX(0)
 }
 
 .ToggleSwitch--knob {
-  background-color: var(--color-btn-bg);
-  border-width: 1px;
-  border-style: solid;
-  border-color: var(--color-switch-track-border);
-  border-radius: calc($border-radius-2 - 1px); /* -1px to account for 1px border around the control */
-  box-shadow: var(--color-shadow-medium), var(--color-btn-inset-shadow);
-  width: 50%;
   position: absolute;
   top: -1px;
   bottom: -1px;
-  transition-property: transform;
-  transition-duration: 80ms;
-  transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
-  transform: -1px;
   z-index: 1;
+  width: 50%;
+  background-color: var(--color-btn-bg);
+  border-color: var(--color-switch-track-border);
+  border-style: $border-style;
+  border-width: $border-width;
+  border-radius: calc($border-radius-2 - 1px); /* -1px to account for 1px border around the control */
+  box-shadow: var(--color-shadow-medium), var(--color-btn-inset-shadow);
+  transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+  transition-duration: 80ms;
+  transition-property: transform;
+  transform: -1px;
 
   @media (prefers-reduced-motion) {
     transition: none;
@@ -265,12 +265,12 @@
 }
 
 .ToggleSwitch--labels {
-  color: var(--color-fg-default);
-  font-size: $body-font-size;
   position: relative;
-  line-height: 1.5;
-  margin-left: $spacer-2;
   margin-right: $spacer-2;
+  margin-left: $spacer-2;
+  font-size: $body-font-size;
+  line-height: $body-line-height;
+  color: var(--color-fg-default);
 }
 
 .ToggleSwitch--small {
@@ -279,17 +279,17 @@
   }
 
   .ToggleSwitch--switch {
-    height: 24px;
     width: 48px;
+    height: 24px;
   }
 }
 
 .ToggleSwitch--onLabel {
-  visibility: hidden;
   height: 0;
+  visibility: hidden;
 }
 
 .ToggleSwitch--offLabel {
-  visibility: visible;
   height: auto;
+  visibility: visible;
 }
