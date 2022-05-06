@@ -24,6 +24,8 @@
 @import '../pagination/index.scss';
 @import '../tooltips/index.scss';
 @import '../truncate/index.scss';
+@import '../form-control/form-control.scss';
 
 // Utilities always go last so that they can override components
 @import '../utilities/index.scss';
+@import '../primitives/index.scss';

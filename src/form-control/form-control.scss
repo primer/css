@@ -1,0 +1,30 @@
+// size
+// label placement
+// hidden label
+// placeholder
+// leading visual
+// clear button
+// invisible?
+// focus-within
+// state
+
+.FormControl {
+  border: solid var(--primer-borderWidth-thin) var(--color-border-default);
+  border-radius: var(--primer-borderRadius-medium);
+  height: var(--primer-control-medium-size);
+  padding-inline: var(--primer-control-medium-paddingInline-normal);
+}
+
+// size
+
+.FormControl--small {
+  height: var(--primer-control-small-size);
+}
+
+.FormControl--medium {
+  height: var(--primer-control-medium-size);
+}
+
+.FormControl--large {
+  height: var(--primer-control-large-size);
+}
