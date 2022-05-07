@@ -39,8 +39,18 @@
 }
 
 .FormGroup {
-  display: grid;
+  display: inline-flex;
+  flex-direction: column;
   gap: var(--primer-controlStack-medium-gap-condensed);
+}
+
+.FormGroup--inline {
+  flex-direction: row;
+  align-items: center;
+}
+
+.FormGroup--fullWidth {
+  display: flex;
 }
 
 .FormControl-fieldWrap {
