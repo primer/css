@@ -16,6 +16,30 @@
   border-radius: var(--primer-borderRadius-medium);
   padding-inline: var(--primer-control-medium-paddingInline-normal);
   background-color: var(--color-canvas-default);
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
+
+  &[disabled] {
+    color: var(--color-primer-fg-disabled);
+    background-color: var(--color-input-disabled-bg);
+    border-color: var(--color-border-default);
+    -webkit-text-fill-color: var(--color-primer-fg-disabled); // Fix for Safari
+    opacity: 1; // Fix for Safari iOS
+
+    &::placeholder {
+      color: var(--color-primer-fg-disabled);
+    }
+  }
+
+  &[invalid] {
+    border-color: var(--color-attention-emphasis);
+  }
+
+  // Custom styling for HTML5 validation bubbles (WebKit only)
+  ::placeholder {
+    color: var(--color-fg-subtle);
+    opacity: 1; // override opacity in normalize.css
+  }
 }
 
 // size
@@ -23,16 +47,31 @@
 .FormControl-fieldWrap.FormControl--small,
 .FormControl--small {
   height: var(--primer-control-small-size);
+  font-size: var(--primer-text-body-size-small);
+
+  .FormControl-trailingAction {
+    width: calc(var(--primer-control-small-size) - 8px);
+    height: calc(var(--primer-control-small-size) - 8px);
+  }
 }
 
 .FormControl-fieldWrap.FormControl--medium,
 .FormControl--medium {
   height: var(--primer-control-medium-size);
+
+  .FormControl-trailingAction {
+    width: calc(var(--primer-control-medium-size) - 8px);
+    height: calc(var(--primer-control-medium-size) - 8px);
+  }
 }
 
 .FormControl-fieldWrap.FormControl--large,
 .FormControl--large {
   height: var(--primer-control-large-size);
+  .FormControl-trailingAction {
+    width: calc(var(--primer-control-large-size) - 8px);
+    height: calc(var(--primer-control-large-size) - 8px);
+  }
 }
 
 .FormControl-label {
@@ -67,14 +106,15 @@
   grid-template-rows: auto;
   gap: var(--primer-controlStack-medium-gap-condensed);
   align-items: center;
+  align-content: center;
   height: var(--primer-control-medium-size);
   //   border: solid var(--primer-borderWidth-thin) var(--color-border-default);
   border-radius: var(--primer-borderRadius-medium);
   box-shadow: var(--primer-borderInset-thin) var(--color-border-default);
   padding-inline: var(--primer-control-medium-paddingInline-normal);
-  overflow: hidden;
+  //   overflow: hidden;
   background-color: var(--color-canvas-default);
-  padding-bottom: 1px; // optical alignment for firefox
+  //   padding-bottom: 1px; // optical alignment for firefox
 
   .FormControl-leadingVisual {
     grid-area: leadingVisual;
@@ -97,8 +137,8 @@
   .FormControl-trailingAction {
     grid-area: trailingAction;
     display: grid;
-    width: calc(var(--primer-control-medium-size) - 2px);
-    height: calc(var(--primer-control-medium-size) - 2px);
+    width: calc(var(--primer-control-medium-size) - 4px);
+    height: calc(var(--primer-control-medium-size) - 4px);
     color: var(--color-fg-muted);
     cursor: pointer;
     user-select: none;
@@ -109,6 +149,8 @@
     transition-property: color, background-color, border-color;
     place-content: center;
     margin-right: calc(var(--primer-control-medium-paddingInline-normal) * -1);
+    margin-right: -8px;
+    padding: 0;
 
     &:hover {
       background-color: var(--color-btn-hover-bg);
@@ -120,5 +162,14 @@
     // box-shadow: var(--primer-borderInset-thin) var(--color-accent-fg);
 
     @include focusBoxShadowInset(2px, var(--color-accent-fg));
+  }
+
+  &.FormControl-fieldWrap--disabled {
+    color: var(--color-primer-fg-disabled);
+    background-color: var(--color-input-disabled-bg);
+  }
+
+  &.FormControl-fieldWrap--invalid {
+    box-shadow: var(--primer-borderInset-thin) var(--color-danger-emphasis);
   }
 }
