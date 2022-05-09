@@ -1,0 +1,102 @@
+:root {
+  accent-color: var(--color-accent-fg);
+}
+
+.FormControl {
+  background-color: var(--color-canvas-default);
+  border: solid var(--primer-borderWidth-thin) var(--color-border-default);
+
+  &[disabled] {
+    color: var(--color-primer-fg-disabled);
+    background-color: var(--color-input-disabled-bg);
+    border-color: var(--color-border-default);
+    -webkit-text-fill-color: var(--color-primer-fg-disabled); // Fix for Safari
+    opacity: 1; // Fix for Safari iOS
+  }
+
+  &[invalid] {
+    border-color: var(--color-attention-emphasis);
+  }
+}
+
+// size
+
+.FormControl-fieldWrap.FormControl--small,
+.FormControl--small {
+  height: var(--primer-control-small-size);
+  font-size: var(--primer-text-body-size-small);
+
+  .FormControl--input-trailingAction {
+    width: calc(var(--primer-control-small-size) - 8px);
+    height: calc(var(--primer-control-small-size) - 8px);
+  }
+}
+
+.FormControl-fieldWrap.FormControl--medium,
+.FormControl--medium {
+  height: var(--primer-control-medium-size);
+
+  .FormControl--input-trailingAction {
+    width: calc(var(--primer-control-medium-size) - 8px);
+    height: calc(var(--primer-control-medium-size) - 8px);
+  }
+}
+
+.FormControl-fieldWrap.FormControl--large,
+.FormControl--large {
+  height: var(--primer-control-large-size);
+
+  .FormControl--input-trailingAction {
+    width: calc(var(--primer-control-large-size) - 8px);
+    height: calc(var(--primer-control-large-size) - 8px);
+  }
+}
+
+// <label>
+.FormControl-label {
+  display: flex;
+  font-size: var(--primer-text-body-size-medium);
+  font-weight: var(--base-text-weight-semibold);
+  line-height: var(--primer-text-body-lineHeight-medium);
+  flex-direction: column;
+  user-select: none;
+  gap: 4px;
+}
+
+.FormControl-label--hint {
+  margin-bottom: 0;
+  font-size: var(--primer-text-body-size-small);
+  font-weight: var(--base-text-weight-normal);
+  color: var(--color-fg-muted);
+}
+
+// group label and field
+.FormGroup {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--primer-controlStack-medium-gap-condensed);
+}
+
+.FormGroup--inline {
+  flex-direction: row;
+  align-items: center;
+}
+
+.FormGroup--formControls {
+  flex-direction: row;
+  align-items: start;
+
+  .FormControl[type='checkbox'],
+  .FormControl[type='radio'] {
+    flex-shrink: 0;
+    margin-top: 0.15625rem;
+  }
+}
+
+.FormGroup--fullWidth {
+  display: flex;
+
+  .FormControl-fieldWrap {
+    flex-grow: 1;
+  }
+}

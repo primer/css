@@ -1,0 +1,20 @@
+// checkbox + radio specific styles
+.FormControl--checkbox,
+.FormControl--radio {
+  display: block;
+  width: var(--base-size-16);
+  height: var(--base-size-16);
+  background: var(--color-canvas-default);
+  border: solid var(--primer-borderWidth-thin) var(--color-border-default);
+  border-radius: var(--primer-borderRadius-small);
+
+  &:disabled {
+    & + .FormControl-label {
+      color: var(--color-primer-fg-disabled);
+    }
+  }
+}
+
+.FormControl--radio {
+  border-radius: var(--primer-borderRadius-full);
+}

@@ -1,0 +1,133 @@
+// input + select specific styles
+.FormControl--input,
+.FormControl--select,
+.FormControl--textarea {
+  height: var(--primer-control-medium-size);
+  font-size: var(--primer-text-body-size-medium);
+  line-height: var(--primer-text-body-lineHeight-medium);
+  border-radius: var(--primer-borderRadius-medium);
+  padding-inline: var(--primer-control-medium-paddingInline-normal);
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
+
+  &[disabled] {
+    &::placeholder {
+      color: var(--color-primer-fg-disabled);
+    }
+  }
+
+  // Custom styling for HTML5 validation bubbles (WebKit only)
+  ::placeholder {
+    color: var(--color-fg-subtle);
+    opacity: 1; // override opacity in normalize.css
+  }
+}
+
+// pseudo input styles to allow for visual and action slots
+.FormControl-fieldWrap {
+  display: inline-grid;
+  grid-template-rows: auto;
+  gap: var(--primer-controlStack-medium-gap-condensed);
+  align-items: center;
+  align-content: center;
+  height: var(--primer-control-medium-size);
+  border-radius: var(--primer-borderRadius-medium);
+  box-shadow: var(--primer-borderInset-thin) var(--color-border-default);
+  padding-inline: var(--primer-control-medium-paddingInline-normal);
+  background-color: var(--color-canvas-default);
+  //   padding-bottom: 1px; // optical alignment for firefox
+
+  .FormControl {
+    border: 0;
+    padding: unset;
+    height: 100%;
+    background-color: transparent;
+
+    &:focus-visible,
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  &:focus-within {
+    @include focusBoxShadowInset(2px, var(--color-accent-fg));
+  }
+
+  &.FormControl-fieldWrap--disabled {
+    color: var(--color-primer-fg-disabled);
+    background-color: var(--color-input-disabled-bg);
+  }
+
+  &.FormControl-fieldWrap--invalid {
+    box-shadow: var(--primer-borderInset-thin) var(--color-danger-emphasis);
+  }
+}
+
+.FormControl-fieldWrap--input {
+  grid-template-areas: 'leadingVisual input trailingAction';
+  grid-template-columns: min-content minmax(0, auto) min-content;
+
+  .FormControl--input-leadingVisual {
+    grid-area: leadingVisual;
+  }
+
+  .FormControl--input {
+    grid-area: input;
+  }
+
+  // TODO: replace with new Button component
+  .FormControl--input-trailingAction {
+    grid-area: trailingAction;
+    display: grid;
+    width: calc(var(--primer-control-medium-size) - 4px);
+    height: calc(var(--primer-control-medium-size) - 4px);
+    color: var(--color-fg-muted);
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: solid var(--primer-borderWidth-thin) transparent;
+    border-radius: var(--primer-borderRadius-medium);
+    transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    transition-property: color, background-color, border-color;
+    place-content: center;
+    margin-right: calc(var(--primer-control-medium-paddingInline-normal) * -1);
+    margin-right: -8px;
+    padding: 0;
+
+    &:hover {
+      background-color: var(--color-btn-hover-bg);
+      border: $border-width $border-style var(--color-btn-hover-bg);
+    }
+
+    &[disabled] {
+      color: var(--color-primer-fg-disabled);
+      pointer-events: none;
+    }
+  }
+}
+
+.FormControl-fieldWrap--select {
+  grid-template-columns: minmax(0, auto) var(--base-size-16);
+  padding-inline-end: var(--primer-control-medium-paddingInline-condensed);
+
+  &::after {
+    content: '';
+    mask: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0iIzU4NjA2OSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNC40MjcgOS40MjdsMy4zOTYgMy4zOTZhLjI1MS4yNTEgMCAwMC4zNTQgMGwzLjM5Ni0zLjM5NkEuMjUuMjUgMCAwMDExLjM5NiA5SDQuNjA0YS4yNS4yNSAwIDAwLS4xNzcuNDI3ek00LjQyMyA2LjQ3TDcuODIgMy4wNzJhLjI1LjI1IDAgMDEuMzU0IDBMMTEuNTcgNi40N2EuMjUuMjUgMCAwMS0uMTc3LjQyN0g0LjZhLjI1LjI1IDAgMDEtLjE3Ny0uNDI3eiIgLz48L3N2Zz4=');
+    background-color: var(--color-fg-muted);
+    height: var(--base-size-16);
+    width: var(--base-size-16);
+    mask-size: cover;
+    pointer-events: none;
+    grid-column: 2;
+    grid-row: 1;
+    place-self: center end;
+  }
+
+  .FormControl {
+    grid-column: 1/-1;
+    grid-row: 1;
+    appearance: none;
+    padding-right: var(--base-size-16);
+  }
+}
