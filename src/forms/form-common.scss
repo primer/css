@@ -54,32 +54,37 @@
 
 // <label>
 .FormControl-label {
-  display: flex;
+  //   display: flex;
   font-size: var(--primer-text-body-size-medium);
   font-weight: var(--base-text-weight-semibold);
   line-height: var(--primer-text-body-lineHeight-medium);
-  flex-direction: column;
+  //   flex-direction: column;
   user-select: none;
-  gap: 4px;
+  //   gap: 4px;
+  grid-area: label;
 }
 
-.FormControl-label--hint {
+.FormControl-label--caption {
   margin-bottom: 0;
   font-size: var(--primer-text-body-size-small);
   font-weight: var(--base-text-weight-normal);
   color: var(--color-fg-muted);
+  grid-area: caption;
 }
 
 // group label and field
 .FormGroup {
   display: inline-flex;
+  display: inline-grid;
   flex-direction: column;
   gap: var(--primer-controlStack-medium-gap-condensed);
+  grid-template-areas: 'label' 'field' 'caption';
 }
 
 .FormGroup--inline {
   flex-direction: row;
   align-items: center;
+  grid-template-areas: 'label field' '. caption';
 }
 
 .FormGroup--formControls {
@@ -95,6 +100,7 @@
 
 .FormGroup--fullWidth {
   display: flex;
+  display: grid;
 
   .FormControl-fieldWrap {
     flex-grow: 1;
