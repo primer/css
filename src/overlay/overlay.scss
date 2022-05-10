@@ -59,14 +59,17 @@ $primer-borderRadius-large: 0.75rem;
   }
 
   &.Overlay--width-large {
+    // stylelint-disable-next-line primer/responsive-widths
     width: min(480px, 100% - 2rem);
   }
 
   &.Overlay--width-xlarge {
+    // stylelint-disable-next-line primer/responsive-widths
     width: min(640px, 100% - 2rem);
   }
 
   &.Overlay--width-xxlarge {
+    // stylelint-disable-next-line primer/responsive-widths
     width: min(960px, 100% - 2rem);
   }
 
