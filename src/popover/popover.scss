@@ -122,6 +122,7 @@
   }
 
   &::before {
+    // stylelint-disable-next-line function-no-unknown
     margin-top: -($spacer-2 + 1);
   }
 

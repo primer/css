@@ -40,11 +40,16 @@
     }
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: var(--color-fg-default);
     text-decoration: none;
     transition-duration: 0.1s;
+  }
+
+  &:focus,
+  &:focus-visible {
+    border-radius: $border-radius $border-radius 0 0 !important;
+    outline-offset: -6px;
   }
 
   &:active {

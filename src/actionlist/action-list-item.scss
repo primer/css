@@ -1,12 +1,5 @@
 // stylelint-disable max-nesting-depth, selector-max-specificity, selector-max-compound-selectors
 
-@mixin focusOutline {
-  position: relative;
-  z-index: 1;
-  outline: none;
-  box-shadow: 0 0 0 2px var(--color-accent-fg); // this color breaks convention
-}
-
 @mixin activeIndicatorLine {
   position: absolute;
   top: calc(50% - 12px);
@@ -314,6 +307,16 @@
     text-decoration: none;
   }
 
+  &:focus {
+    @include focusOutline;
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      outline: solid 1px transparent;
+    }
+  }
+
+  // default focus state
   &:focus-visible {
     @include focusOutline;
   }
