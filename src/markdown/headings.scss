@@ -80,6 +80,11 @@
     h5,
     h6 {
       display: inline-block;
+
+      .anchor {
+        // stylelint-disable-next-line primer/spacing
+        margin-left: -40px;
+      }
     }
 
     h1,
