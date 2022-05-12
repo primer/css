@@ -30,6 +30,10 @@
     width: calc(var(--primer-control-small-size) - 8px);
     height: calc(var(--primer-control-small-size) - 8px);
   }
+
+  &.FormControl--input {
+    padding-inline-start: calc(1rem + var(--primer-control-small-paddingInline-condensed));
+  }
 }
 
 .FormControl-fieldWrap.FormControl--medium,
@@ -40,15 +44,24 @@
     width: calc(var(--primer-control-medium-size) - 8px);
     height: calc(var(--primer-control-medium-size) - 8px);
   }
+
+  &.FormControl--input {
+    padding-inline-start: calc(1rem + var(--primer-control-medium-paddingInline-condensed));
+  }
 }
 
 .FormControl-fieldWrap.FormControl--large,
 .FormControl--large {
   height: var(--primer-control-large-size);
+  //   padding-inline-start: calc(1rem + var(--primer-control-large-paddingInline-normal));
 
   .FormControl--input-trailingAction {
     width: calc(var(--primer-control-large-size) - 8px);
     height: calc(var(--primer-control-large-size) - 8px);
+  }
+
+  &.FormControl--input {
+    padding-inline-start: calc(1rem + var(--primer-control-large-paddingInline-normal));
   }
 }
 
