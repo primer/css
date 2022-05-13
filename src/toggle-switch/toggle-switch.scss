@@ -3,158 +3,15 @@
   display: inline-flex;
   flex-direction: row;
 
-  &:hover,
-  &:focus:focus-visible {
+  &:hover {
     .ToggleSwitch--knob {
       background-color: var(--color-btn-hover-bg);
     }
   }
 
-  &:active,
-  &:active:focus-visible {
+  &:active {
     .ToggleSwitch--knob {
       background-color: var(--color-btn-active-bg);
-    }
-  }
-
-  &.ToggleSwitch--checked {
-    &.ToggleSwitch--disabled {
-      .ToggleSwitch--knob {
-        background-color: var(--color-switch-knob-checked-disabled-bg);
-
-        &:hover,
-        &:focus:focus-visible {
-          background-color: var(--color-switch-knob-checked-disabled-bg);
-        }
-      }
-
-      .ToggleSwitch--switch {
-        background-color: var(--color-canvas-subtle);
-        border-color: var(--color-border-subtle);
-
-        &:hover,
-        &:focus:focus-visible {
-          .ToggleSwitch--knob {
-            background-color: var(--color-switch-knob-checked-disabled-bg);
-          }
-        }
-      }
-
-      &:hover,
-      &:focus:focus-visible {
-        .ToggleSwitch--switch {
-          background-color: var(--color-canvas-subtle);
-          border-color: var(--color-border-subtle);
-        }
-
-        .ToggleSwitch--knob {
-          background-color: var(--color-switch-knob-checked-disabled-bg);
-        }
-      }
-
-      &:active,
-      &:active:focus-visible {
-        .ToggleSwitch--knob {
-          background-color: var(--color-switch-knob-checked-disabled-bg);
-        }
-      }
-    }
-
-    .ToggleSwitch--switch {
-      background-color: var(--color-switch-track-checked-bg);
-      border-color: var(--color-switch-track-checked-border);
-    }
-
-    .ToggleSwitch--knob {
-      background-color: var(--color-switch-knob-checked-bg);
-      border: 0;
-      transform: translateX(0);
-    }
-
-    .ToggleSwitch--lineIcon {
-      transform: translateX(0);
-    }
-
-    .ToggleSwitch--circleIcon {
-      transform: translateX(100%);
-    }
-
-    .ToggleSwitch--knob {
-      transform: translateX(calc(100% + 1px));
-    }
-
-    .ToggleSwitch--onLabel {
-      height: auto;
-      visibility: visible;
-    }
-
-    .ToggleSwitch--offLabel {
-      height: 0;
-      visibility: hidden;
-    }
-
-    &:hover,
-    &:focus:focus-visible {
-      .ToggleSwitch--switch {
-        background-color: var(--color-switch-track-checked-hover-bg);
-      }
-    }
-
-    &:active,
-    &:active:focus-visible {
-      .ToggleSwitch--switch {
-        background-color: var(--color-switch-track-checked-active-bg);
-      }
-    }
-  }
-
-  &.ToggleSwitch--disabled {
-    .ToggleSwitch--switch {
-      cursor: not-allowed;
-      background-color: var(--color-canvas-subtle);
-      border-color: var(--color-border-subtle);
-      transition-property: none;
-    }
-
-    &:hover,
-    &:focus:focus-visible {
-      .ToggleSwitch--knob {
-        background-color: var(--color-btn-bg);
-      }
-    }
-
-    &:active,
-    &:active:focus-visible {
-      .ToggleSwitch--knob {
-        background-color: var(--color-btn-bg);
-      }
-    }
-
-    .ToggleSwitch--knob {
-      border-color: var(--color-border-default);
-      box-shadow: none;
-
-      &:hover,
-      &:focus:focus-visible {
-        background-color: var(--color-btn-bg);
-      }
-
-      &:active,
-      &:active:focus-visible {
-        background-color: var(--color-btn-bg);
-      }
-    }
-
-    .ToggleSwitch--lineIcon {
-      color: var(--color-fg-subtle);
-    }
-
-    .ToggleSwitch--circleIcon {
-      color: var(--color-fg-subtle);
-    }
-
-    .ToggleSwitch--labels {
-      color: var(--color-fg-muted);
     }
   }
 }
@@ -166,7 +23,6 @@
   height: 32px;
   padding: 0;
   text-decoration: none;
-  vertical-align: middle;
   cursor: pointer;
   user-select: none;
   background-color: var(--color-switch-track-bg);
@@ -208,7 +64,92 @@
     height: 100%;
     box-sizing: border-box;
     content: '';
-    border-radius: calc($border-radius-2 - 1px); /* -1px to account for 1px border around the control */
+    border-radius: $border-radius;
+  }
+}
+
+.ToggleSwitch--switch[aria-checked='true'][aria-disabled='true'] {
+  background-color: var(--color-canvas-subtle);
+  border-color: var(--color-border-subtle);
+
+  &:hover,
+  &:active {
+    background-color: var(--color-canvas-subtle);
+
+    // This is the most straightforward way of setting the knob's styles when the
+    // switch is both checked and disabled.
+
+    // stylelint-disable-next-line selector-max-specificity
+    .ToggleSwitch--knob {
+      background-color: var(--color-switch-knob-checked-disabled-bg);
+    }
+  }
+
+  .ToggleSwitch--knob {
+    background-color: var(--color-switch-knob-checked-disabled-bg);
+  }
+}
+
+.ToggleSwitch--switch[aria-checked='true'] {
+  background-color: var(--color-switch-track-checked-bg);
+  border-color: var(--color-switch-track-checked-border);
+
+  &:hover {
+    background-color: var(--color-switch-track-checked-hover-bg);
+  }
+
+  &:active {
+    background-color: var(--color-switch-track-checked-active-bg);
+  }
+
+  .ToggleSwitch--knob {
+    background-color: var(--color-switch-knob-checked-bg);
+    border: 0;
+    transform: translateX(calc(100% + 1px));
+  }
+
+  .ToggleSwitch--lineIcon {
+    transform: translateX(0%);
+  }
+
+  .ToggleSwitch--circleIcon {
+    transform: translateX(100%);
+  }
+}
+
+.ToggleSwitch--switch[aria-disabled='true'] {
+  cursor: not-allowed;
+  background-color: var(--color-canvas-subtle);
+  border-color: var(--color-border-subtle);
+  transition-property: none;
+
+  &:hover,
+  &:active {
+    .ToggleSwitch--knob {
+      background-color: var(--color-btn-bg);
+    }
+  }
+
+  .ToggleSwitch--knob {
+    border-color: var(--color-border-default);
+    box-shadow: none;
+
+    &:hover,
+    &:active {
+      background-color: var(--color-btn-bg);
+    }
+  }
+
+  .ToggleSwitch--lineIcon {
+    color: var(--color-fg-subtle);
+  }
+
+  .ToggleSwitch--circleIcon {
+    color: var(--color-fg-subtle);
+  }
+
+  .ToggleSwitch--labels {
+    color: var(--color-fg-muted);
   }
 }
 
@@ -252,12 +193,12 @@
   border-color: var(--color-switch-track-border);
   border-style: $border-style;
   border-width: $border-width;
-  border-radius: calc($border-radius-2 - 1px); /* -1px to account for 1px border around the control */
+  border-radius: $border-radius;
   box-shadow: var(--color-shadow-medium), var(--color-btn-inset-shadow);
   transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
   transition-duration: 80ms;
   transition-property: transform;
-  transform: -1px;
+  transform: translateX(-1px);
 
   @media (prefers-reduced-motion) {
     transition: none;

@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['@primer/stylelint-config'],
-  ignoreFiles: ['**/*.js', '**/*.cjs', 'src/toggle-switch/toggle-switch.scss'],
+  ignoreFiles: ['**/*.js', '**/*.cjs'],
   rules: {
     'primer/no-override': false
   }
