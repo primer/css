@@ -8,13 +8,13 @@ export default {
   excludeStories: ['ToggleSwitchTemplate'],
   controls: { expanded: true },
   argTypes: {
-    disabled: {
-      description: 'disabled field',
-      control: {type: 'boolean'}
-    },
     checked: {
       control: {type: 'boolean'},
       description: 'checkbox state'
+    },
+    disabled: {
+      description: 'disabled field',
+      control: {type: 'boolean'}
     },
     size: {
       options: ['medium', 'small'],
@@ -57,20 +57,19 @@ function classNamesForSwitch(disabled, checked, size, labelPosition) {
 export const ToggleSwitchTemplate = ({disabled, checked, size, labelPosition}) => (
   <>
     <toggle-switch class={classNamesForSwitch(disabled, checked, size, labelPosition)}>
-      <span aria-hidden="true" className="ToggleSwitch--labels">
-        <div className="text-right ToggleSwitch--onLabel" style={{visibility: checked ? 'visible' : 'hidden' }}>On</div>
-        <div className="text-right ToggleSwitch--offLabel" style={{visibility: checked ? 'hidden' : 'visible' }}>Off</div>
+      <span aria-hidden="true" className="ToggleSwitch-labels">
+        <div className="text-right ToggleSwitch-onLabel" style={{visibility: checked ? 'visible' : 'hidden' }}>On</div>
+        <div className="text-right ToggleSwitch-offLabel" style={{visibility: checked ? 'hidden' : 'visible' }}>Off</div>
       </span>
 
       <button
-        className="ToggleSwitch--switch"
+        className="ToggleSwitch-track"
         role="switch"
-        data-target="toggle-switch.switch"
         aria-checked={checked ? 'true' : 'false'}
         aria-disabled={disabled ? "true" : "false"}>
         <span class="sr-only">{checked ? "On" : "Off"}</span>
-        <div className="ToggleSwitch--bg" aria-hidden="true">
-          <div className="ToggleSwitch--lineIcon">
+        <div className="ToggleSwitch-bg" aria-hidden="true">
+          <div className="ToggleSwitch-lineIcon">
             <svg
               width={size === 'small' ? 12 : 16}
               height={size === 'small' ? 12 : 16}
@@ -81,7 +80,7 @@ export const ToggleSwitchTemplate = ({disabled, checked, size, labelPosition}) =
             </svg>
           </div>
 
-          <div className="ToggleSwitch--circleIcon">
+          <div className="ToggleSwitch-circleIcon">
             <svg
               width={size === 'small' ? 12 : 16}
               height={size === 'small' ? 12 : 16}
@@ -93,7 +92,7 @@ export const ToggleSwitchTemplate = ({disabled, checked, size, labelPosition}) =
           </div>
         </div>
 
-        <div className="ToggleSwitch--knob" />
+        <div className="ToggleSwitch-knob" />
       </button>
     </toggle-switch>
   </>
