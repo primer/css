@@ -15,7 +15,7 @@
     "@primer/gatsby-theme-doctocat": "3.1.1",
     "@primer/octicons": "17.0.0",
     "@primer/octicons-react": "17.0.0",
-    "@primer/primitives": "7.3.0",
+    "@primer/primitives": "7.8.3",
     "@svgr/webpack": "5.5.0",
     "autoprefixer": "10.4.2",
     "babel-preset-gatsby": "^2.11.1",
@@ -47,16 +47,18 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
-    "@storybook/addon-a11y": "6.4.19",
-    "@storybook/addon-actions": "^6.4.12",
-    "@storybook/addon-essentials": "^6.4.12",
-    "@storybook/addon-links": "^6.4.12",
+    "@storybook/addon-a11y": "6.5.0",
+    "@storybook/addon-actions": "^6.5.0",
+    "@storybook/addon-essentials": "^6.5.0",
+    "@storybook/addon-links": "^6.5.0",
     "@storybook/addon-postcss": "2.0.0",
+    "@storybook/builder-webpack5": "^6.5.0",
+    "@storybook/manager-webpack5": "^6.5.0",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "6.4.19",
+    "@storybook/react": "6.5.0",
     "@whitespace/storybook-addon-html": "^5.0.0",
     "babel-loader": "^8.2.3",
     "storybook-addon-designs": "6.2.1",
-    "storybook-color-picker": "2.3.0"
+    "storybook-color-picker": "2.3.1"
   }
 }
