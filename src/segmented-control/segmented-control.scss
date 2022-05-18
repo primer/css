@@ -1,0 +1,51 @@
+// SegmentedControl
+
+.SegmentedControl {
+  display: inline-flex;
+  background-color: var(--color-neutral-muted);
+  border-radius: $border-radius;
+  // stylelint-disable-next-line primer/box-shadow
+  box-shadow: inset 0 0 0 $border-width var(--color-border-default);
+}
+
+// Item -----------------------------------------
+
+.SegmentedControl-item {
+  position: relative;
+
+  &[aria-pressed='true'] {
+    background-color: var(--color-btn-bg);
+    box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
+  }
+
+  &:not([aria-pressed='true']) {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+
+    &:hover {
+      background-color: var(--color-neutral-muted);
+    }
+
+    &:active {
+      background-color: var(--color-neutral-subtle);
+    }
+  }
+
+  & + .SegmentedControl-item::before {
+    content: '';
+    position: absolute;
+    left: -2px; // TODO: Fix
+    height: 20px; // TODO: Replace
+    border-left: $border-width $border-style var(--color-border-default);
+  }
+}
+
+// Variants -----------------------------------------
+
+.SegmentedControl--fullWidth {
+  display: flex;
+  .SegmentedControl-item {
+    flex: 1;
+  }
+}
