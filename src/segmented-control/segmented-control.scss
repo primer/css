@@ -24,20 +24,34 @@
     box-shadow: none;
 
     &:hover {
-      background-color: var(--color-neutral-muted);
+      background-color: var(--color-action-list-item-default-hover-bg); // TODO: Replace
     }
 
     &:active {
-      background-color: var(--color-neutral-subtle);
+      background-color: var(--color-action-list-item-default-active-bg); // TODO: Replace
     }
   }
 
   & + .SegmentedControl-item::before {
     content: '';
     position: absolute;
-    left: -2px; // TODO: Fix
-    height: 20px; // TODO: Replace
+    left: -1px;
+    top: 5px;
+    height: 16px; // TODO: Replace
     border-left: $border-width $border-style var(--color-border-default);
+  }
+
+  // Remove dividers
+  &[aria-pressed='true'] + .SegmentedControl-item::before {
+    border-color: transparent;
+  }
+
+  &:hover,
+  &:active {
+    &::before,
+    & + .SegmentedControl-item::before {
+      border-color: transparent;
+    }
   }
 }
 
