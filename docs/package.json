@@ -57,7 +57,7 @@
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "6.5.0",
     "@whitespace/storybook-addon-html": "^5.0.0",
-    "babel-loader": "^8.2.3",
+    "babel-loader": "^8.2.5",
     "storybook-addon-designs": "6.2.1",
     "storybook-color-picker": "2.3.1"
   }
