@@ -42,7 +42,7 @@ export const SegmentedControlTemplate = ({disabled, fullWidth, ariaLabel}) => (
     <segmented-control role="group" aria-label={ariaLabel} class={classNames(disabled, fullWidth)}>
       <SegmentedControlItemTemplate text="Outline" ariaPressed />
       <SegmentedControlItemTemplate text="Write" />
-      <SegmentedControlItemTemplate text="Preview" />
+      <SegmentedControlItemTemplate text="Preview" leadingVisual />
       <SegmentedControlItemTemplate text="Publish" />
     </segmented-control>
   </>

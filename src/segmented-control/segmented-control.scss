@@ -2,9 +2,8 @@
 
 .SegmentedControl {
   display: inline-flex;
-  background-color: var(--color-neutral-muted);
+  background-color: var(--color-scale-gray-1); // TODO: Create Primitive
   border-radius: $border-radius;
-  // stylelint-disable-next-line primer/box-shadow
   box-shadow: inset 0 0 0 $border-width var(--color-border-default);
 }
 
@@ -12,47 +11,69 @@
 
 .SegmentedControl-item {
   position: relative;
+  padding: 7px 12px; // TODO: Replace
+  font-size: $body-font-size;
+  line-height: 16px; // TODO: Replace with Primitive
+  color: var(--color-fg-default);
+  background-color: transparent;
+  border-radius: $border-radius;
+  border: $border-width $border-style transparent;
+  transition: border-color, background-color 180ms cubic-bezier(0.3, 0.1, 0.5, 1);
+
+  &:hover {
+    background-color: var(--color-neutral-muted); // TODO: Replace?
+    transition-duration: 120ms;
+  }
+
+  &:active {
+    background-color: hsl(210deg 13% 72% / 40%); // TODO: Replace
+    border-color: var(--color-scale-gray-3); // TODO: Remove?
+    transition-duration: 60ms;
+  }
+
+  // Pressed
 
   &[aria-pressed='true'] {
-    background-color: var(--color-btn-bg);
-    box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
+    font-weight: 600;
+    background-color: var(--color-canvas-subtle);  // TODO: Create Primitive?
+    border-color: var(--color-scale-gray-4); // TODO: Create Primitive
+    box-shadow: var(--color-shadow-medium);
   }
 
-  &:not([aria-pressed='true']) {
-    background-color: transparent;
-    border-color: transparent;
-    box-shadow: none;
-
-    &:hover {
-      background-color: var(--color-action-list-item-default-hover-bg); // TODO: Replace
-    }
-
-    &:active {
-      background-color: var(--color-action-list-item-default-active-bg); // TODO: Replace
-    }
-  }
+  // Divider
 
   & + .SegmentedControl-item::before {
     content: '';
     position: absolute;
     left: -1px;
-    top: 5px;
+    top: 7px;
     height: 16px; // TODO: Replace
     border-left: $border-width $border-style var(--color-border-default);
+    transition: border-color 180ms cubic-bezier(0.3, 0.1, 0.5, 1);
   }
 
   // Remove dividers
+
   &[aria-pressed='true'] + .SegmentedControl-item::before {
     border-color: transparent;
   }
 
   &:hover,
-  &:active {
+  &:active,
+  &:focus-visible {
     &::before,
     & + .SegmentedControl-item::before {
       border-color: transparent;
+      transition-duration: 60ms;
     }
   }
+}
+
+// Icon -----------------------------------------
+
+.SegmentedControl-leadingVisual {
+  margin-right: $spacer-2;
+  color: var(--color-fg-muted);
 }
 
 // Variants -----------------------------------------
