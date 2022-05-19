@@ -70,7 +70,7 @@
     "postcss-simple-vars": "6.0.3",
     "prettier": "2.6.2",
     "semver": "7.3.7",
-    "stylelint": "14.6.1",
+    "stylelint": "14.8.2",
     "table": "6.8.0"
   },
   "jest": {
