@@ -38,7 +38,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-frame-component": "^5.2.1",
-    "sass-loader": "10.2.0",
+    "sass-loader": "13.0.0",
     "styled-components": "^4.3.2",
     "title-case": "^3.0.3"
   },
