@@ -1,3 +1,5 @@
+// rename file FormControl
+
 // input + select specific styles
 .FormControl--input,
 .FormControl--select,
@@ -64,27 +66,42 @@
   }
 }
 
+.FormControl-fieldWrap--leadingVisual {
+  grid-template-columns: 1rem minmax(0, auto);
+
+  &.FormControl-fieldWrap--trailingAction {
+    grid-template-columns: 1rem minmax(0, auto) min-content;
+  }
+}
+
+.FormControl-fieldWrap--trailingAction {
+  grid-template-columns: minmax(0, auto) min-content;
+}
+
 .FormControl-fieldWrap--input {
   //   grid-template-areas: 'leadingVisual input trailingAction';
-  grid-template-columns: 1rem minmax(0, auto) min-content;
+  //   grid-auto-columns: minmax(0, auto) minmax(0, auto) min-content;
   grid-template-rows: max-content;
 
   .FormControl--input-leadingVisual {
     // grid-area: leadingVisual;
-    grid-column: 1;
+    grid-column: 1 / 2;
     grid-row: 1;
   }
 
   .FormControl--input {
     // grid-area: input;
-    grid-column: 1/-1;
+    grid-column: 1 / -1;
+    // grid-column-start: 1;
     grid-row: 1;
     padding-inline-start: calc(1rem + var(--primer-control-medium-paddingInline-condensed));
   }
 
   // TODO: replace with new Button component
   .FormControl--input-trailingAction {
-    grid-area: trailingAction;
+    // grid-area: trailingAction;
+    // grid-column: 3 / 4;
+    grid-row: 1;
     display: grid;
     width: calc(var(--primer-control-medium-size) - 4px);
     height: calc(var(--primer-control-medium-size) - 4px);
@@ -136,4 +153,199 @@
     appearance: none;
     padding-right: var(--base-size-16);
   }
+}
+
+:root {
+  accent-color: var(--color-accent-fg);
+}
+
+.FormControl {
+  background-color: var(--color-canvas-default);
+  border: solid var(--primer-borderWidth-thin) var(--color-border-default);
+
+  &[disabled] {
+    color: var(--color-primer-fg-disabled);
+    background-color: var(--color-input-disabled-bg);
+    border-color: var(--color-border-default);
+    -webkit-text-fill-color: var(--color-primer-fg-disabled); // Fix for Safari
+    opacity: 1; // Fix for Safari iOS
+  }
+
+  &[invalid] {
+    border-color: var(--color-attention-emphasis);
+  }
+}
+
+// size
+
+.FormControl-fieldWrap.FormControl--small,
+.FormControl--small {
+  height: var(--primer-control-small-size);
+  font-size: var(--primer-text-body-size-small);
+
+  .FormControl--input-trailingAction {
+    width: calc(var(--primer-control-small-size) - 8px);
+    height: calc(var(--primer-control-small-size) - 8px);
+  }
+
+  &.FormControl--input {
+    padding-inline-start: calc(1rem + var(--primer-control-small-paddingInline-condensed));
+  }
+}
+
+.FormControl-fieldWrap.FormControl--medium,
+.FormControl--medium {
+  height: var(--primer-control-medium-size);
+
+  .FormControl--input-trailingAction {
+    width: calc(var(--primer-control-medium-size) - 8px);
+    height: calc(var(--primer-control-medium-size) - 8px);
+  }
+
+  &.FormControl--input {
+    padding-inline-start: calc(1rem + var(--primer-control-medium-paddingInline-condensed));
+  }
+}
+
+.FormControl-fieldWrap.FormControl--large,
+.FormControl--large {
+  height: var(--primer-control-large-size);
+  //   padding-inline-start: calc(1rem + var(--primer-control-large-paddingInline-normal));
+
+  .FormControl--input-trailingAction {
+    width: calc(var(--primer-control-large-size) - 8px);
+    height: calc(var(--primer-control-large-size) - 8px);
+  }
+
+  &.FormControl--input {
+    padding-inline-start: calc(1rem + var(--primer-control-large-paddingInline-normal));
+  }
+}
+
+// <label>
+.FormControl-label {
+  //   display: flex;
+  font-size: var(--primer-text-body-size-medium);
+  font-weight: var(--base-text-weight-semibold);
+  line-height: var(--primer-text-body-lineHeight-medium);
+  //   flex-direction: column;
+  user-select: none;
+  //   gap: 4px;
+  grid-area: label;
+}
+
+.FormControl-label--caption {
+  margin-bottom: 0;
+  font-size: var(--primer-text-body-size-small);
+  font-weight: var(--base-text-weight-normal);
+  color: var(--color-fg-muted);
+  grid-area: caption;
+}
+
+// group label and field
+.FormGroup {
+  display: inline-flex;
+  display: inline-grid;
+  flex-direction: column;
+  gap: var(--primer-controlStack-medium-gap-condensed);
+  grid-template-areas: 'label' 'field' 'caption';
+}
+
+.FormGroup--inline {
+  flex-direction: row;
+  align-items: center;
+  grid-template-areas: 'label field' '. caption';
+}
+
+.FormGroup--formControls {
+  flex-direction: row;
+  align-items: start;
+
+  .FormControl[type='checkbox'],
+  .FormControl[type='radio'] {
+    flex-shrink: 0;
+    margin-top: 0.15625rem;
+  }
+}
+
+.FormGroup--fullWidth {
+  display: flex;
+  display: grid;
+
+  .FormControl-fieldWrap {
+    flex-grow: 1;
+  }
+}
+
+// checkbox + radio specific styles
+.FormControl--checkbox,
+.FormControl--radio {
+  display: block;
+  width: var(--base-size-16);
+  height: var(--base-size-16);
+  background: var(--color-canvas-default);
+  border: solid var(--primer-borderWidth-thin) var(--color-border-default);
+  border-radius: var(--primer-borderRadius-small);
+
+  &:disabled {
+    & + .FormControl-label {
+      color: var(--color-primer-fg-disabled);
+    }
+  }
+}
+
+.FormControl--radio {
+  border-radius: var(--primer-borderRadius-full);
+}
+
+// remove default checkbox/radio styling
+input[type='checkbox'] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--form-background);
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type='checkbox']::before {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+}
+
+input[type='checkbox']:checked::before {
+  transform: scale(1);
+}
+
+input[type='checkbox']:focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+}
+
+input[type='checkbox']:disabled {
+  --form-control-color: var(--form-control-disabled);
+
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
 }
