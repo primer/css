@@ -1,31 +1,104 @@
 // rename file FormControl
 
-// input + select specific styles
-.FormControl--input,
-.FormControl--select,
-.FormControl--textarea {
-  height: var(--primer-control-medium-size);
+//todo
+// add fallbacks
+// copy html to docs
+
+:root {
+  accent-color: var(--color-accent-fg);
+}
+
+// group label, field, caption and error message
+.FormGroup {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--primer-controlStack-medium-gap-condensed);
+}
+
+// fill container
+.FormGroup--fullWidth {
+  display: flex;
+
+  // stretch field to fill container
+  .FormControl-fieldWrap {
+    flex-grow: 1;
+  }
+}
+
+// <label>
+.FormControl-label {
   font-size: var(--primer-text-body-size-medium);
+  font-weight: var(--base-text-weight-semibold);
   line-height: var(--primer-text-body-lineHeight-medium);
-  border-radius: var(--primer-borderRadius-medium);
-  padding-inline: var(--primer-control-medium-paddingInline-normal);
-  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
-  transition-property: color, background-color, box-shadow, border-color;
+  user-select: none;
+}
+
+// optional caption
+.FormControl-caption {
+  margin-bottom: 0;
+  font-size: var(--primer-text-body-size-small);
+  font-weight: var(--base-text-weight-normal);
+  color: var(--color-fg-muted);
+}
+
+// shared among all form control components (input, select, textarea, checkbox, radio)
+.FormControl {
+  background-color: var(--color-canvas-default);
+  border: solid var(--primer-borderWidth-thin) var(--color-border-default);
 
   &[disabled] {
-    &::placeholder {
-      color: var(--color-primer-fg-disabled);
+    color: var(--color-primer-fg-disabled);
+    background-color: var(--color-input-disabled-bg);
+    border-color: var(--color-border-default);
+    -webkit-text-fill-color: var(--color-primer-fg-disabled); // Fix for Safari
+    opacity: 1; // Fix for Safari iOS
+  }
+
+  &[invalid] {
+    border-color: var(--color-attention-emphasis);
+  }
+
+  &.FormControl--input,
+  &.FormControl--select {
+    height: var(--primer-control-medium-size);
+    font-size: var(--primer-text-body-size-medium);
+    line-height: var(--primer-text-body-lineHeight-medium);
+    border-radius: var(--primer-borderRadius-medium);
+    padding-inline: var(--primer-control-medium-paddingInline-condensed);
+    transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+    transition-property: color, background-color, box-shadow, border-color;
+
+    &[disabled] {
+      &::placeholder {
+        color: var(--color-primer-fg-disabled);
+      }
+    }
+
+    ::placeholder {
+      color: var(--color-fg-subtle);
+      opacity: 1;
     }
   }
 
-  // Custom styling for HTML5 validation bubbles (WebKit only)
-  ::placeholder {
-    color: var(--color-fg-subtle);
-    opacity: 1; // override opacity in normalize.css
+  // sizes
+
+  &.FormControl--small {
+    height: var(--primer-control-small-size);
+    font-size: var(--primer-text-body-size-small);
+  }
+
+  &.FormControl--medium {
+    height: var(--primer-control-medium-size);
+  }
+
+  &.FormControl--large {
+    height: var(--primer-control-large-size);
+    padding-inline: var(--primer-control-large-paddingInline-normal);
   }
 }
 
 // pseudo input styles to allow for visual and action slots
+// set input styles on -fieldWrap, remove styles from <input>
 .FormControl-fieldWrap {
   display: inline-grid;
   grid-template-rows: auto;
@@ -37,7 +110,6 @@
   box-shadow: var(--primer-borderInset-thin) var(--color-border-default);
   padding-inline: var(--primer-control-medium-paddingInline-condensed);
   background-color: var(--color-canvas-default);
-  //   padding-bottom: 1px; // optical alignment for firefox
 
   .FormControl {
     border: 0;
@@ -64,68 +136,102 @@
   &.FormControl-fieldWrap--invalid {
     box-shadow: var(--primer-borderInset-thin) var(--color-danger-emphasis);
   }
-}
 
-.FormControl-fieldWrap--leadingVisual {
-  grid-template-columns: 1rem minmax(0, auto);
+  // if leadingVisual is present
+  &.FormControl-fieldWrap--input-leadingVisual {
+    grid-template-columns: 1rem minmax(0, auto);
 
-  &.FormControl-fieldWrap--trailingAction {
-    grid-template-columns: 1rem minmax(0, auto) min-content;
-  }
-}
-
-.FormControl-fieldWrap--trailingAction {
-  grid-template-columns: minmax(0, auto) min-content;
-}
-
-.FormControl-fieldWrap--input {
-  //   grid-template-areas: 'leadingVisual input trailingAction';
-  //   grid-auto-columns: minmax(0, auto) minmax(0, auto) min-content;
-  grid-template-rows: max-content;
-
-  .FormControl--input-leadingVisual {
-    // grid-area: leadingVisual;
-    grid-column: 1 / 2;
-    grid-row: 1;
-  }
-
-  .FormControl--input {
-    // grid-area: input;
-    grid-column: 1 / -1;
-    // grid-column-start: 1;
-    grid-row: 1;
-    padding-inline-start: calc(1rem + var(--primer-control-medium-paddingInline-condensed));
-  }
-
-  // TODO: replace with new Button component
-  .FormControl--input-trailingAction {
-    // grid-area: trailingAction;
-    // grid-column: 3 / 4;
-    grid-row: 1;
-    display: grid;
-    width: calc(var(--primer-control-medium-size) - 4px);
-    height: calc(var(--primer-control-medium-size) - 4px);
-    color: var(--color-fg-muted);
-    cursor: pointer;
-    user-select: none;
-    background-color: transparent;
-    border: solid var(--primer-borderWidth-thin) transparent;
-    border-radius: var(--primer-borderRadius-medium);
-    transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-    transition-property: color, background-color, border-color;
-    place-content: center;
-    margin-right: calc(var(--primer-control-medium-paddingInline-normal) * -1);
-    margin-right: -8px;
-    padding: 0;
-
-    &:hover {
-      background-color: var(--color-btn-hover-bg);
-      border: $border-width $border-style var(--color-btn-hover-bg);
+    .FormControl--input {
+      padding-inline-start: calc(1rem + var(--primer-control-medium-paddingInline-condensed));
     }
 
-    &[disabled] {
-      color: var(--color-primer-fg-disabled);
-      pointer-events: none;
+    // if leadingVisual and trailingAction are present
+    &.FormControl-fieldWrap--input-trailingAction {
+      grid-template-columns: 1rem minmax(0, auto) min-content;
+    }
+  }
+
+  // if trailingAction is present
+  &.FormControl-fieldWrap--input-trailingAction {
+    grid-template-columns: minmax(0, auto) min-content;
+  }
+
+  &.FormControl-fieldWrap--input {
+    grid-template-rows: max-content;
+
+    .FormControl--input-leadingVisual {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+
+    // <input> spans entire grid
+    .FormControl--input {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+
+    // TODO: replace with new Button component
+    // trailingAction will auto fill last grid slot
+    .FormControl--input-trailingAction {
+      grid-row: 1;
+      display: grid;
+      width: calc(var(--primer-control-medium-size) - 4px);
+      height: calc(var(--primer-control-medium-size) - 4px);
+      color: var(--color-fg-muted);
+      cursor: pointer;
+      user-select: none;
+      background-color: transparent;
+      border: solid var(--primer-borderWidth-thin) transparent;
+      border-radius: var(--primer-borderRadius-medium);
+      transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+      transition-property: color, background-color, border-color;
+      place-content: center;
+      // optically align the icon with field padding
+      margin-right: calc(calc(var(--primer-control-medium-paddingInline-condensed) - 0.125rem) * -1);
+      padding: 0;
+
+      &:hover {
+        background-color: var(--color-btn-hover-bg);
+        border: $border-width $border-style var(--color-btn-hover-bg);
+      }
+
+      &[disabled] {
+        color: var(--color-primer-fg-disabled);
+        pointer-events: none;
+      }
+    }
+
+    // sizes
+
+    // these selectors can be refactored to use :has()
+    &.FormControl--small {
+      height: var(--primer-control-small-size);
+      font-size: var(--primer-text-body-size-small);
+
+      .FormControl--input-trailingAction {
+        width: calc(var(--primer-control-small-size) - var(--base-size-8));
+        height: calc(var(--primer-control-small-size) - var(--base-size-8));
+      }
+    }
+
+    &.FormControl--medium {
+      height: var(--primer-control-medium-size);
+
+      .FormControl--input-trailingAction {
+        width: calc(var(--primer-control-medium-size) - var(--base-size-8));
+        height: calc(var(--primer-control-medium-size) - var(--base-size-8));
+      }
+    }
+
+    &.FormControl--large {
+      height: var(--primer-control-large-size);
+      padding-inline: var(--primer-control-large-paddingInline-normal);
+
+      .FormControl--input-trailingAction {
+        width: calc(var(--primer-control-large-size) - var(--base-size-8));
+        height: calc(var(--primer-control-large-size) - var(--base-size-8));
+        margin-right: calc(calc(var(--primer-control-medium-paddingInline-normal) - 0.125rem) * -1);
+      }
     }
   }
 }
@@ -152,128 +258,6 @@
     grid-row: 1;
     appearance: none;
     padding-right: var(--base-size-16);
-  }
-}
-
-:root {
-  accent-color: var(--color-accent-fg);
-}
-
-.FormControl {
-  background-color: var(--color-canvas-default);
-  border: solid var(--primer-borderWidth-thin) var(--color-border-default);
-
-  &[disabled] {
-    color: var(--color-primer-fg-disabled);
-    background-color: var(--color-input-disabled-bg);
-    border-color: var(--color-border-default);
-    -webkit-text-fill-color: var(--color-primer-fg-disabled); // Fix for Safari
-    opacity: 1; // Fix for Safari iOS
-  }
-
-  &[invalid] {
-    border-color: var(--color-attention-emphasis);
-  }
-}
-
-// size
-
-.FormControl-fieldWrap.FormControl--small,
-.FormControl--small {
-  height: var(--primer-control-small-size);
-  font-size: var(--primer-text-body-size-small);
-
-  .FormControl--input-trailingAction {
-    width: calc(var(--primer-control-small-size) - 8px);
-    height: calc(var(--primer-control-small-size) - 8px);
-  }
-
-  &.FormControl--input {
-    padding-inline-start: calc(1rem + var(--primer-control-small-paddingInline-condensed));
-  }
-}
-
-.FormControl-fieldWrap.FormControl--medium,
-.FormControl--medium {
-  height: var(--primer-control-medium-size);
-
-  .FormControl--input-trailingAction {
-    width: calc(var(--primer-control-medium-size) - 8px);
-    height: calc(var(--primer-control-medium-size) - 8px);
-  }
-
-  &.FormControl--input {
-    padding-inline-start: calc(1rem + var(--primer-control-medium-paddingInline-condensed));
-  }
-}
-
-.FormControl-fieldWrap.FormControl--large,
-.FormControl--large {
-  height: var(--primer-control-large-size);
-  //   padding-inline-start: calc(1rem + var(--primer-control-large-paddingInline-normal));
-
-  .FormControl--input-trailingAction {
-    width: calc(var(--primer-control-large-size) - 8px);
-    height: calc(var(--primer-control-large-size) - 8px);
-  }
-
-  &.FormControl--input {
-    padding-inline-start: calc(1rem + var(--primer-control-large-paddingInline-normal));
-  }
-}
-
-// <label>
-.FormControl-label {
-  //   display: flex;
-  font-size: var(--primer-text-body-size-medium);
-  font-weight: var(--base-text-weight-semibold);
-  line-height: var(--primer-text-body-lineHeight-medium);
-  //   flex-direction: column;
-  user-select: none;
-  //   gap: 4px;
-  grid-area: label;
-}
-
-.FormControl-label--caption {
-  margin-bottom: 0;
-  font-size: var(--primer-text-body-size-small);
-  font-weight: var(--base-text-weight-normal);
-  color: var(--color-fg-muted);
-  grid-area: caption;
-}
-
-// group label and field
-.FormGroup {
-  display: inline-flex;
-  display: inline-grid;
-  flex-direction: column;
-  gap: var(--primer-controlStack-medium-gap-condensed);
-  grid-template-areas: 'label' 'field' 'caption';
-}
-
-.FormGroup--inline {
-  flex-direction: row;
-  align-items: center;
-  grid-template-areas: 'label field' '. caption';
-}
-
-.FormGroup--formControls {
-  flex-direction: row;
-  align-items: start;
-
-  .FormControl[type='checkbox'],
-  .FormControl[type='radio'] {
-    flex-shrink: 0;
-    margin-top: 0.15625rem;
-  }
-}
-
-.FormGroup--fullWidth {
-  display: flex;
-  display: grid;
-
-  .FormControl-fieldWrap {
-    flex-grow: 1;
   }
 }
 
@@ -348,4 +332,15 @@ input[type='checkbox']:disabled {
 
   color: var(--form-control-disabled);
   cursor: not-allowed;
+}
+
+.FormControl-caption {
+  flex-direction: row;
+  align-items: start;
+
+  .FormControl[type='checkbox'],
+  .FormControl[type='radio'] {
+    flex-shrink: 0;
+    margin-top: 0.15625rem;
+  }
 }
