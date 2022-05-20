@@ -1,5 +1,11 @@
 # @primer/css
 
+## 20.1.1
+
+### Patch Changes
+
+- [#2078](https://github.com/primer/css/pull/2078) [`92ac0e39`](https://github.com/primer/css/commit/92ac0e39e6f5aae0314397890c8f78227a6c6ba0) Thanks [@langermank](https://github.com/langermank)! - Setup new `primer-primitive` bundle
+
 ## 20.1.0
 
 ### Minor Changes

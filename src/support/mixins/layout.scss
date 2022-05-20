@@ -7,7 +7,6 @@
 
   @else {
     // Retrieves the value from the key
-    // stylelint-disable-next-line function-no-unknown
     $value: map-get($breakpoints, $breakpoint);
 
     // If the key exists in the map
