@@ -1,0 +1,168 @@
+// stylelint-disable max-nesting-depth
+// stylelint-disable selector-max-specificity
+// stylelint-disable no-duplicate-selectors
+
+.AppFrame {
+
+  // Accessibility navigation
+
+  .AppFrame-a11yNav {
+    position: absolute;
+    padding: 8px 24px 8px 8px;
+    inset: -200px auto auto 8px;
+    background: #F6F8FA; /* fixme */
+    z-index: 1000;
+    min-width: 50vw;
+
+    ul, li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &:focus-within {
+      inset-block-start: 8px;
+
+      // Narrow viewport
+      @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
+        inset-inline-end: 8px;
+
+        ul {
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .AppFrame-a11yLink {
+    transition: none;
+
+    &:not(:focus) {
+      width: 8px;
+      height: 8px;
+      display: block;
+      overflow: hidden;
+      text-indent: 20em;
+      border-radius: 100%;
+      background: var(--color-border-default);
+      user-select: none;
+    }
+
+    &:focus {
+      display: block;
+      z-index: 20;
+      width: auto;
+      height: auto;
+      overflow: auto;
+      border-radius: $spacer-4; /* 24px */
+      min-height: $spacer-5; /* 32px */
+      padding: calc((#{$spacer-5} - 20px) / 2) $spacer-3;
+      line-height: 20px;
+      background: var(--color-accent-fg);
+      color: var(--color-fg-on-emphasis);
+
+      @media (prefers-reduced-motion: no-preference) {
+        animation: AppFrame-a11yLink-focus 200ms ease-out;
+      }
+
+      @keyframes AppFrame-a11yLink-focus {
+        0% {
+          transform: scale(0.3, 0.25);
+          color: var(--color-accent-fg);
+        }
+        50% {
+          transform: scale(1, 1);
+          color: var(--color-accent-fg);
+        }
+        55% {
+          color: var(--color-fg-on-emphasis);
+        }
+        100% {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  &:has(.AppFrame-a11yNav:focus-within) .AppHeader-context {
+    opacity: 0;
+  }
+
+  .AppFrame-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .AppFrame-header-wrapper {
+    position: relative;
+    overflow: visible; 
+    height: min-content;
+
+    .AppFrame-header {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+  }
+
+  .AppFrame-header {
+    flex: 0 0 auto;
+  }
+
+  .AppFrame-tray {
+    overflow: hidden;
+    flex: 0 0 auto;
+    background: linear-gradient(to bottom, var(--color-border-default) -#{$spacer-3}, var(--color-canvas-inset) #{$spacer-2});
+
+    @keyframes flash-tray--appear {
+      from {
+        opacity: 0;
+        transform: translateY(-$spacer-4);
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @include breakpoint(md) {
+      padding: $spacer-2 $spacer-3;
+      border-bottom: $border-width $border-style var(--color-border-default);
+
+      .Flash {
+        animation: flash-tray--appear 160ms 80ms both cubic-bezier(0.33, 1, 0.68, 1);
+
+        & + .Flash {
+          margin-top: $spacer-2;
+          animation-delay: 160ms;
+        }
+      }
+    }
+
+    &:empty {
+      display: none;
+    }
+
+    // FIXME: use theme-high-contrast mixin
+    @at-root :is([data-color-mode="light"][data-light-theme$='high_contrast'], [data-color-mode="dark"][data-dark-theme$='high_contrast']) & {
+      background: var(--color-canvas-inset);
+    }
+  }
+
+  .AppFrame-body {
+    flex: 1 0;
+    height: 100%;
+  }
+
+  .AppFrame-footer {
+    border-top: $border-width $border-style var(--color-border-default);
+    background: var(--color-canvas-inset);
+    padding: $spacer-3;
+  }
+}
