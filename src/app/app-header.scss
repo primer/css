@@ -7,50 +7,55 @@
   // Global bar
 
   .AppHeader-globalBar {
-    padding: 16px;
+    padding: var(--base-size-16); // Replace with `base-size-16`
     display: flex;
-    gap: 16px;
+    gap: 16px; // Replace with `base-size-16`
 
-    .AppHeader-logo {
+    // GitHub logo + user avatar
+
+    .AppHeader-logo, .AppHeader-user {
       flex: 0 0 auto;
       display: grid;
 
       button, a {
         grid-area: 1 / 1;
         display: block;
-        width: 32px;
-        height: 32px;
+        width: var(--base-size-32);
+        height: var(--base-size-32);
       }
 
       button {
+        background: transparent;
         padding: 0;
         border: none;
         border-radius: 100%;
-        outline-offset: 2px;
+        outline-offset: var(--primer-borderWidth-normal);
       }
 
       a {
         grid-area: 1 / 1;
+        position: relative;
         overflow: hidden;
-        text-indent: 20em;
+        text-indent: var(--base-size-128);
         color: transparent;
+
+        @media (pointer: coarse) {
+          &:after {
+            // pull from minTouchTarget design token
+            @include minTouchTarget(var(--primer-control-minTarget-coarse), var(--primer-control-minTarget-coarse));
+          }
+        }
       }
     }
 
-    .AppHeader-context {
-      flex: 1 1 auto;
-      height: 32px;
-      //background: #ececec;
+    .AppHeader-logo svg {
+      width: var(--base-size-32);
+      height: var(--base-size-32);
     }
 
     .AppHeader-user {
-      flex: 0 0 auto;
-      width: 32px;
-      height: 32px;
-      border: none;
-      border-radius: 100%;
-      outline-offset: 2px;
       background: var(--color-neutral-muted);
+      border-radius: 100%;
 
       img {
         display: block;
@@ -59,19 +64,23 @@
         border-radius: 100%;
       }
     }
+
+    // Context region
+    // Breadcrumb, title, any contextual information directly after the logo
+
+    .AppHeader-context {
+      flex: 1 1 auto;
+      height: var(--base-size-32);
+      //background: #ececec;
+    }
   }
 
   // Local bar
 
   .AppHeader-localBar {
-    padding: 0 16px 16px;
+    padding: 0 var(--base-size-16) var(--base-size-16);
     //background: lightcyan;
-    box-shadow: inset 0 -1px var(--color-border-default);
-  }
-
-  .AppHeader-logo {
-    border-radius: 100%;
-    outline-offset: -2px;
+    box-shadow: inset 0 calc(var(--primer-borderWidth-thin) * -1) var(--color-border-default);
   }
 
   // AppHeader items
@@ -86,18 +95,21 @@
   }
 
   .AppHeader-button {
-    display: block;
-    width: 32px;
-    height: 32px;
-    border: 1px solid var(--color-border-default);
-    padding: 8px;
-    border-radius: 6px;
+    position: relative;
+    display: grid;
+    width: var(--base-size-32);
+    height: var(--base-size-32);
+    border: var(--primer-borderWidth-thin) solid var(--color-border-default);
+    border-radius: var(--primer-borderRadius-medium);
     color: var(--color-fg-muted);
+    align-items: center;
+    justify-content: center;
 
     svg {
-      color: inherit;
       display: block !important;
       color: inherit !important;
+      width: var(--base-size-16);
+      height: var(--base-size-16);
     }
 
     &:hover {
@@ -106,6 +118,13 @@
 
     &:active {
       background: var(--color-action-list-item-default-active-bg);
+    }
+
+    @media (pointer: coarse) {
+      &:after {
+        // pull from minTouchTarget design token
+        @include minTouchTarget(var(--primer-control-minTarget-coarse), var(--primer-control-minTarget-coarse));
+      }
     }
   }
 }

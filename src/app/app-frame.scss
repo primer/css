@@ -8,11 +8,12 @@
 
   .AppFrame-a11yNav {
     position: absolute;
-    padding: 8px 24px 8px 8px;
-    inset: -200px auto auto 8px;
+    padding: var(--base-size-16) var(--base-size-16) var(--base-size-8);
+    top: calc(var(--base-size-128) * -1);
+    left: 0;
     background: #F6F8FA; /* fixme */
     z-index: 1000;
-    min-width: 50vw;
+    width: 100%;
 
     ul, li {
       list-style: none;
@@ -23,16 +24,14 @@
     ul {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: var(--base-size-8);
     }
 
     &:focus-within {
-      inset-block-start: 8px;
+      top: 0;
 
       // Narrow viewport
       @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
-        inset-inline-end: 8px;
-
         ul {
           justify-content: center;
         }
@@ -44,28 +43,35 @@
     transition: none;
 
     &:not(:focus) {
-      width: 8px;
-      height: 8px;
+      width: var(--base-size-8);
+      height: var(--base-size-8);
       display: block;
       overflow: hidden;
-      text-indent: 20em;
+      text-indent: var(--base-size-128);
       border-radius: 100%;
       background: var(--color-border-default);
-      user-select: none;
+      pointer-events: none;
     }
 
     &:focus {
-      display: block;
+      display: grid;
       z-index: 20;
       width: auto;
       height: auto;
       overflow: auto;
-      border-radius: $spacer-4; /* 24px */
-      min-height: $spacer-5; /* 32px */
-      padding: calc((#{$spacer-5} - 20px) / 2) $spacer-3;
-      line-height: 20px;
+      border-radius: var(--base-size-24);
+      min-height: var(--base-size-32);
+      align-items: center;
+      padding: 0 var(--base-size-16);
       background: var(--color-accent-fg);
       color: var(--color-fg-on-emphasis);
+
+      @media (pointer: coarse) {
+        &:after {
+          // pull from minTouchTarget design token
+          @include minTouchTarget(var(--primer-control-minTarget-coarse));
+        }
+      }
 
       @media (prefers-reduced-motion: no-preference) {
         animation: AppFrame-a11yLink-focus 200ms ease-out;
@@ -88,10 +94,6 @@
         }
       }
     }
-  }
-
-  &:has(.AppFrame-a11yNav:focus-within) .AppHeader-context {
-    opacity: 0;
   }
 
   .AppFrame-main {

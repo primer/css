@@ -24,29 +24,48 @@ export const AppHeaderTemplate = ({
 }) => (
   <>
     <div className={clsx('AppHeader')}>
+
+      {/*
+        * AppHeader-globalBar
+        * -----------------
+        * The GitHub global bar contains the logo and user avatar, with
+        * contextual navigation + actions
+        */}
       <div className={clsx('AppHeader-globalBar')}>
+        {/*
+          * AppHeader-logo
+          * -----------------
+          * The GitHub interactive logo region
+          */}
         <div className="AppHeader-logo">
           {/*
-            * The button element gets focused and contains all
-            * accessibility-related aria attributes. 
+            * The button element can be focusable. Click event opens side sheet
+            * with main global menu
             * */}
           <button aria-expanded="false" aria-haspopup="dialog" aria-label="Open main menu">
-            <MarkGithubIcon size="32" />
+            <MarkGithubIcon />
           </button>
 
           {/*
-            * The anchor element is not focusable, yet handles pointer events
-            * such as ctrl+click, middle click, right-click, for users to handle
-            * the homepage URL as they're used to.
+            * The anchor element is not focusable, yet handles mouse pointer
+            * events such as ctrl+click, middle click, right-click, for users to
+            * handle the homepage URL when interacting with the website logo as
+            * they're used to.
             * 
             * See https://codepen.io/team/GitHub/pen/OJQgyqo for interactive
-            * example including `mouseup` event listener.
+            * example including the expected `mouseup` event listener.
             */}
           <a href="/" tabindex="-1" aria-hidden>GitHub homepage</a>
         </div>
 
+        {/*
+          * AppHeader-context
+          * -----------------
+          * Required region right after the GitHub logo. May be a breadcrumb or
+          * page title, placed left-aligned.
+          */}
         <div class="AppHeader-context">
-          {/* context */}
+          <nav aria-label=""></nav>
         </div>
 
         <a className="AppHeader-button" href="#">
@@ -57,11 +76,19 @@ export const AppHeaderTemplate = ({
           <PlusIcon />
         </a>
 
+        {/*
+          * AppHeader-user
+          * --------------
+          * Same as the AppHeader-logo structure, with button and anchor
+          * elements working together to enable fully accessible interaction
+          * with keyboard + mouse
+          */}
         <div class="AppHeader-user">
+          <button aria-expanded="false" aria-haspopup="dialog" aria-label="Open user menu">
+            <img alt="@octocat" src="https://github.com/octocat.png" />
+          </button>
           
-          <img alt="@octocat" src="https://github.com/octocat.png" />
-
-
+          <a href="/octocat" tabindex="-1" aria-hidden>octocat profile</a>
         </div>
       </div>
 
