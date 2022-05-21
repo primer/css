@@ -3,11 +3,6 @@ on:
   push:
     branches:
       - 'main'
-    paths:
-      - 'src/**'
-      - 'docs/**'
-      - '.github/workflows/deploy*.yml'
-      - 'package.json'
 
 permissions:
   contents: write
@@ -27,7 +22,7 @@ jobs:
       # If it's 0, we deploy.
       should_deploy: ${{ steps.changeset-count.outputs.change_count == 0 }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - id: changeset-count
         run: echo "::set-output name=change_count::$(ls .changeset/*.md | grep -v README | wc -l | xargs)"

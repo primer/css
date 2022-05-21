@@ -111,12 +111,15 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
     // sticky pane
 
-    &.PageLayout--isPaneSticky {
-      .PageLayout-pane {
-        position: sticky;
-        top: 0;
-        max-height: 100vh;
-        overflow: auto;
+    .PageLayout-pane--sticky {
+      position: sticky;
+      top: 0;
+      max-height: 100vh;
+      overflow: auto;
+      scrollbar-width: thin;
+
+      @supports (max-height: 100dvh) {
+        max-height: 100dvh;
       }
     }
 

@@ -371,7 +371,6 @@ export const LayoutTemplate = ({
           paneWidth && layoutClassName + '--paneWidth-' + `${paneWidth}`,
           panePosition && layoutClassName + '--panePos-' + `${panePosition}`,
           hasPaneDivider && layoutClassName + '--hasPaneDivider',
-          paneIsSticky && layoutClassName + '--isPaneSticky',
 
           layoutClassName + '--responsive-' + `${responsiveVariant}`,
           responsiveVariant === 'separateRegions' && layoutClassName + '--responsive-primary-' + `${primaryRegion}`,
@@ -403,6 +402,7 @@ export const LayoutTemplate = ({
                   className={clsx(
                     layoutClassName + '-region',
                     layoutClassName + '-pane',
+                    paneIsSticky && layoutClassName + '-pane--sticky',
                     paneDividerWhenNarrow &&
                       layoutClassName +
                         '-region--dividerNarrow-' +
@@ -433,6 +433,7 @@ export const LayoutTemplate = ({
                   className={clsx(
                     layoutClassName + '-region',
                     layoutClassName + '-pane',
+                    paneIsSticky && layoutClassName + '-pane--sticky',
                     paneDividerWhenNarrow &&
                       layoutClassName +
                         '-region--dividerNarrow-' +

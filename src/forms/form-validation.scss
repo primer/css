@@ -235,15 +235,20 @@ dl.form-group > dd, // TODO: Deprecate
   }
 
   &.focused {
+    border-color: var(--color-accent-fg);
     border-radius: $border-radius;
-    box-shadow: var(--color-primer-shadow-inset), var(--color-primer-shadow-focus);
+    outline: none;
+    // stylelint-disable-next-line primer/box-shadow
+    box-shadow: 0 0 0 2px var(--color-accent-fg);
 
     .form-control {
+      border-color: transparent;
+      border-bottom-color: var(--color-accent-fg);
       box-shadow: none;
     }
 
     .drag-and-drop {
-      border-color: var(--color-accent-emphasis);
+      border-color: transparent;
     }
   }
 }
@@ -272,7 +277,9 @@ dl.form-group > dd, // TODO: Deprecate
     border: $border-width $border-style var(--color-border-default);
   }
 
-  .comment-form-error { margin-bottom: $spacer-2; }
+  .comment-form-error {
+    margin-bottom: $spacer-2;
+  }
 
   .write-content,
   .preview-content {
@@ -317,8 +324,10 @@ div.composer {
   min-height: 200px;
 }
 
-// stylelint-disable-next-line primer/spacing
-.composer .tabnav { margin: 0 0 10px; }
+.composer .tabnav {
+  // stylelint-disable-next-line primer/spacing
+  margin: 0 0 10px;
+}
 
 // Misc CSS
 //

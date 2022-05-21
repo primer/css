@@ -1,5 +1,43 @@
 # @primer/css
 
+## 20.1.1
+
+### Patch Changes
+
+- [#2078](https://github.com/primer/css/pull/2078) [`92ac0e39`](https://github.com/primer/css/commit/92ac0e39e6f5aae0314397890c8f78227a6c6ba0) Thanks [@langermank](https://github.com/langermank)! - Setup new `primer-primitive` bundle
+
+## 20.1.0
+
+### Minor Changes
+
+- [#2072](https://github.com/primer/css/pull/2072) [`ab6f0840`](https://github.com/primer/css/commit/ab6f0840f0131b370fb8871551720afa20fb466e) Thanks [@JasonEtco](https://github.com/JasonEtco)! - Add `.text-capitalize` utility class
+
+* [#1998](https://github.com/primer/css/pull/1998) [`51e087aa`](https://github.com/primer/css/commit/51e087aa31f049c1cb148df6f04fdbc6de434cf0) Thanks [@bolonio](https://github.com/bolonio)! - Styles for the new Dialog Component
+
+## 20.0.0
+
+### Major Changes
+
+- [#2049](https://github.com/primer/css/pull/2049) [`f4dba96e`](https://github.com/primer/css/commit/f4dba96e0cb78d3d451226cf60b01187678ced45) Thanks [@langermank](https://github.com/langermank)! - Comment box upload focus border-radius
+
+* [#1744](https://github.com/primer/css/pull/1744) [`942f65a4`](https://github.com/primer/css/commit/942f65a45a18b7042ba1ce2703688b62d874cf18) Thanks [@langermank](https://github.com/langermank)! - Global CSS focus styles
+
+- [#1767](https://github.com/primer/css/pull/1767) [`7e01db97`](https://github.com/primer/css/commit/7e01db97f3f2b9d9383f66385ca16f0bdc06abd1) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Remove unused pullquote selector
+
+* [#1821](https://github.com/primer/css/pull/1821) [`daa2685c`](https://github.com/primer/css/commit/daa2685c596d894b3bae1896bf97c3319cd9816c) Thanks [@jonrohan](https://github.com/jonrohan)! - UnderlineNav `:focus` styles
+  Refactor selected state and spacing
+  Add selected bold state override from github/github
+
+- [#2047](https://github.com/primer/css/pull/2047) [`553d72cc`](https://github.com/primer/css/commit/553d72cc1baaf43a4c743c50cc8881f3811123e9) Thanks [@langermank](https://github.com/langermank)! - UnderlineNav bug fix
+
+* [#2046](https://github.com/primer/css/pull/2046) [`55e2b069`](https://github.com/primer/css/commit/55e2b069a4cbd225af676bef918bbbe2e6cd73b7) Thanks [@langermank](https://github.com/langermank)! - Global focus style CSS from feature flag (next major)
+
+### Patch Changes
+
+- [#2048](https://github.com/primer/css/pull/2048) [`dc529e31`](https://github.com/primer/css/commit/dc529e3102788d5caa136a9d30c58e56721427a7) Thanks [@simurai](https://github.com/simurai)! - Fix headings with an anchor in a summary
+
+* [#2041](https://github.com/primer/css/pull/2041) [`20550bbf`](https://github.com/primer/css/commit/20550bbfaa236ac197ca58805542eaab0bf38fd4) Thanks [@jonrohan](https://github.com/jonrohan)! - Upgrading to stylelint-config-12.4.0
+
 ## 19.8.2
 
 ### Patch Changes
