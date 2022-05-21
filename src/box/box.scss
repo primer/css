@@ -7,6 +7,7 @@
   border-style: $border-style;
   border-width: $border-width;
   border-radius: $border-radius;
+  overflow: hidden;
 }
 
 // Box padding density options
@@ -109,13 +110,15 @@
   border-top-width: $border-width;
 
   &:first-child {
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
+    // Disabled because of parent element's overflow declaration.
+    // border-top-left-radius: $border-radius;
+    // border-top-right-radius: $border-radius;
   }
 
   &:last-child {
-    border-bottom-right-radius: $border-radius;
-    border-bottom-left-radius: $border-radius;
+    // Disabled because of parent element's overflow declaration.
+    // border-bottom-right-radius: $border-radius;
+    // border-bottom-left-radius: $border-radius;
   }
 
   // Adds a blue vertical line to the left of the row
