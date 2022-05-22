@@ -161,6 +161,10 @@
     // if leadingVisual and trailingAction are present
     &.FormControl-fieldWrap--input-trailingAction {
       grid-template-columns: var(--base-size-16, 16px) minmax(0, auto) min-content;
+
+      .FormControl--input-trailingAction {
+          grid-column: 3 / 4;
+      }
     }
   }
 
@@ -203,6 +207,7 @@
       grid-row: 1;
       place-content: center;
       place-self: center end;
+      grid-column: 2 / 3;
 
       &:hover {
         background-color: var(--color-btn-hover-bg);
