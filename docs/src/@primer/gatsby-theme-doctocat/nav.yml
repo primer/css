@@ -46,8 +46,6 @@
   children:
     - title: Alerts
       url: /components/alerts
-    - title: Autocomplete
-      url: /components/autocomplete
     - title: Avatars
       url: /components/avatars
     - title: Blankslate
