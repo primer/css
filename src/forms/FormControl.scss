@@ -163,7 +163,7 @@
       grid-template-columns: var(--base-size-16, 16px) minmax(0, auto) min-content;
 
       .FormControl--input-trailingAction {
-          grid-column: 3 / 4;
+        grid-column: 3 / 4;
       }
     }
   }
