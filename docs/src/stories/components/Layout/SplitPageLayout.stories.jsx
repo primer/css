@@ -163,6 +163,7 @@ Playground.args = {
   // Pane
   hasPane: true,
   paneWidth: 'wide',
+  paneIsSticky: true,
 
   // Content
   contentWidth: 'full',
