@@ -46,9 +46,7 @@ function classNamesForSwitch(disabled, checked, size, labelPosition) {
     classNames.push("ToggleSwitch--small")
   }
   if (labelPosition === 'end') {
-    classNames.push('flex-row-reverse')
-  } else {
-    classNames.push('flex-row')
+    classNames.push('ToggleSwitch--statusAtEnd')
   }
 
   return classNames.join(' ')
@@ -57,9 +55,9 @@ function classNamesForSwitch(disabled, checked, size, labelPosition) {
 export const ToggleSwitchTemplate = ({disabled, checked, size, labelPosition}) => (
   <>
     <toggle-switch class={classNamesForSwitch(disabled, checked, size, labelPosition)}>
-      <span aria-hidden="true" className="ToggleSwitch-labels">
-        <div className="text-right ToggleSwitch-onLabel" style={{visibility: checked ? 'visible' : 'hidden' }}>On</div>
-        <div className="text-right ToggleSwitch-offLabel" style={{visibility: checked ? 'hidden' : 'visible' }}>Off</div>
+      <span aria-hidden="true" className="ToggleSwitch-status">
+        <div className="ToggleSwitch-statusOn" style={{visibility: checked ? 'visible' : 'hidden' }}>On</div>
+        <div className="ToggleSwitch-statusOff" style={{visibility: checked ? 'hidden' : 'visible' }}>Off</div>
       </span>
 
       <button
@@ -68,7 +66,7 @@ export const ToggleSwitchTemplate = ({disabled, checked, size, labelPosition}) =
         aria-checked={checked ? 'true' : 'false'}
         aria-disabled={disabled ? "true" : "false"}>
         <span class="sr-only">{checked ? "On" : "Off"}</span>
-        <div className="ToggleSwitch-bg" aria-hidden="true">
+        <div className="ToggleSwitch-icons" aria-hidden="true">
           <div className="ToggleSwitch-lineIcon">
             <svg
               width={size === 'small' ? 12 : 16}
