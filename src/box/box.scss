@@ -10,7 +10,7 @@
   
   *:not(:first-child),
   *:not(:last-child),
-  *:not(:first-child:last-child) {
+  *:not(:only-child) {
     .Box-row {
       &:first-child {
         --box-row-top-left-radius: 0;
