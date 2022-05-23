@@ -9,7 +9,8 @@
   border-radius: $border-radius;
   
   *:not(:first-child),
-  *:not(:last-child) {
+  *:not(:last-child),
+  *:not(:first-child:last-child) {
     .Box-row {
       &:first-child {
         --box-row-top-left-radius: 0;
