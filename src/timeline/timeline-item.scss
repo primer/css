@@ -57,7 +57,6 @@
 
 .TimelineItem-avatar {
   position: absolute;
-  // stylelint-disable-next-line function-no-unknown
   left: -($spacer-6 + $spacer-5);
   z-index: 1;
 }
@@ -68,7 +67,6 @@
   height: $spacer-4;
   margin: 0;
   margin-bottom: -$spacer-3;
-  // stylelint-disable-next-line function-no-unknown
   margin-left: -($spacer-6 + $spacer-3);
   background-color: var(--color-canvas-default);
   border: 0;

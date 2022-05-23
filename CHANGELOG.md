@@ -1,5 +1,19 @@
 # @primer/css
 
+## 20.1.1
+
+### Patch Changes
+
+- [#2078](https://github.com/primer/css/pull/2078) [`92ac0e39`](https://github.com/primer/css/commit/92ac0e39e6f5aae0314397890c8f78227a6c6ba0) Thanks [@langermank](https://github.com/langermank)! - Setup new `primer-primitive` bundle
+
+## 20.1.0
+
+### Minor Changes
+
+- [#2072](https://github.com/primer/css/pull/2072) [`ab6f0840`](https://github.com/primer/css/commit/ab6f0840f0131b370fb8871551720afa20fb466e) Thanks [@JasonEtco](https://github.com/JasonEtco)! - Add `.text-capitalize` utility class
+
+* [#1998](https://github.com/primer/css/pull/1998) [`51e087aa`](https://github.com/primer/css/commit/51e087aa31f049c1cb148df6f04fdbc6de434cf0) Thanks [@bolonio](https://github.com/bolonio)! - Styles for the new Dialog Component
+
 ## 20.0.0
 
 ### Major Changes
