@@ -7,7 +7,21 @@
   border-style: $border-style;
   border-width: $border-width;
   border-radius: $border-radius;
-  overflow: hidden;
+  
+  *:not(:first-child),
+  *:not(:last-child) {
+    .Box-row {
+      &:first-child {
+        --box-row-top-left-radius: 0;
+        --box-row-top-right-radius: 0;
+      }
+  
+      &:last-child {
+        --box-row-bottom-right-radius: 0;
+        --box-row-bottom-left-radius: 0;
+      }
+    }
+  }
 }
 
 // Box padding density options
@@ -108,17 +122,15 @@
   border-top-color: var(--color-border-muted);
   border-top-style: $border-style;
   border-top-width: $border-width;
-
+  
   &:first-child {
-    // Disabled because of parent element's overflow declaration.
-    // border-top-left-radius: $border-radius;
-    // border-top-right-radius: $border-radius;
+    border-top-left-radius: var(--box-row-top-left-radius, #{$border-radius});
+    border-top-right-radius: var(--box-row-top-right-radius, #{$border-radius});
   }
-
+  
   &:last-child {
-    // Disabled because of parent element's overflow declaration.
-    // border-bottom-right-radius: $border-radius;
-    // border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: var(--box-row-bottom-right-radius, #{$border-radius});
+    border-bottom-left-radius: var(--box-row-bottom-left-radius, #{$border-radius});
   }
 
   // Adds a blue vertical line to the left of the row
