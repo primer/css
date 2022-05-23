@@ -27,9 +27,7 @@
   cursor: pointer;
   user-select: none;
   background-color: var(--color-switch-track-bg);
-  border-color: var(--color-switch-track-border);
-  border-style: $border-style;
-  border-width: $border-width;
+  border: $border-width $border-style var(--color-switch-track-border);
   border-radius: $border-radius;
   transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
   transition-duration: 80ms;
@@ -170,9 +168,7 @@
   z-index: 1;
   width: 50%;
   background-color: var(--color-btn-bg);
-  border-color: var(--color-switch-track-border);
-  border-style: $border-style;
-  border-width: $border-width;
+  border: $border-width $border-style var(--color-switch-track-border);
   border-radius: $border-radius;
   box-shadow: var(--color-shadow-medium), var(--color-btn-inset-shadow);
   transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
