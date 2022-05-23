@@ -65,7 +65,6 @@ export const ToggleSwitchTemplate = ({disabled, checked, size, labelPosition}) =
         role="switch"
         aria-checked={checked ? 'true' : 'false'}
         aria-disabled={disabled ? "true" : "false"}>
-        <span class="sr-only">{checked ? "On" : "Off"}</span>
         <div className="ToggleSwitch-icons" aria-hidden="true">
           <div className="ToggleSwitch-lineIcon">
             <svg
