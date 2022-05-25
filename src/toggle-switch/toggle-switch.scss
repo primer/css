@@ -1,3 +1,5 @@
+// This is a hack to prevent Catalyst styles from setting display: block in dotcom
+// stylelint-disable-next-line selector-max-type
 toggle-switch:is(toggle-switch) {
   display: inline-flex;
 }
