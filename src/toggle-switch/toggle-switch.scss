@@ -1,3 +1,7 @@
+toggle-switch:is(toggle-switch) {
+  display: inline-flex;
+}
+
 .ToggleSwitch {
   align-items: center;
   display: inline-flex;
@@ -13,6 +17,18 @@
     .ToggleSwitch-knob {
       background-color: var(--color-btn-active-bg);
     }
+  }
+}
+
+.ToggleSwitch--checked {
+  .ToggleSwitch-statusOn {
+    height: auto;
+    visibility: visible;
+  }
+
+  .ToggleSwitch-statusOff {
+    height: 0;
+    visibility: hidden;
   }
 }
 
