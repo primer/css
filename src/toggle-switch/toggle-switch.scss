@@ -1,3 +1,9 @@
+// Catalyst in dotcom applies a display: block to all web component elements. This
+// rule overrides it so the status label and toggle switch are laid out correctly.
+.ToggleSwitch.ToggleSwitch {
+  display: inline-flex;
+}
+
 .ToggleSwitch {
   align-items: center;
   display: inline-flex;
