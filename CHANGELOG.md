@@ -1,5 +1,13 @@
 # @primer/css
 
+## 20.2.1
+
+### Patch Changes
+
+- [#2094](https://github.com/primer/css/pull/2094) [`33f799f1`](https://github.com/primer/css/commit/33f799f13edad2e7434425913a8d445aa27213de) Thanks [@camertron](https://github.com/camertron)! - Add missing ToggleSwitch--checked styles
+
+* [#2091](https://github.com/primer/css/pull/2091) [`f740d008`](https://github.com/primer/css/commit/f740d00827fa854062f6ce3449ca6745fae9bea8) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Bump font size of large buttons
+
 ## 20.2.0
 
 ### Minor Changes
