@@ -16,6 +16,18 @@
   }
 }
 
+.ToggleSwitch--checked {
+  .ToggleSwitch-statusOn {
+    height: auto;
+    visibility: visible;
+  }
+
+  .ToggleSwitch-statusOff {
+    height: 0;
+    visibility: hidden;
+  }
+}
+
 .ToggleSwitch-track {
   position: relative;
   display: block;
