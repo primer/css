@@ -23,10 +23,10 @@ export default {
 const FieldsetTemplate = ({disabled}) => (
     <fieldset disabled={disabled}>
       <label htmlFor="email">Email</label>
-      <input className="form-control" id="email"/>
+      <input className="form-control" id="email" placeholder="email"/>
 
       <label htmlFor="username">Username</label>
-      <input className="form-control" id="username"/>
+      <input className="form-control" id="username" placeholder="username"/>
     </fieldset>
 )
 

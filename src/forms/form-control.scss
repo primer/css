@@ -5,26 +5,10 @@
 //
 // Overrides for common inputs for easier styling.
 
-@mixin disabled {
-  color: var(--color-primer-fg-disabled);
-  background-color: var(--color-input-disabled-bg);
-  border-color: var(--color-border-default);
-  -webkit-text-fill-color: var(--color-primer-fg-disabled); // Fix for Safari
-  opacity: 1; // Fix for Safari iOS
-
-  &::placeholder {
-    color: var(--color-primer-fg-disabled);
-  }
-}
-
 fieldset {
   padding: 0;
   margin: 0;
   border: 0;
-
-  &:disabled .form-control {
-    @include disabled;
-  }
 }
 
 label {
@@ -73,8 +57,17 @@ label {
     }
   }
 
-  &[disabled] {
-    @include disabled;
+  &[disabled],
+  fieldset[disabled] & {
+    color: var(--color-primer-fg-disabled);
+    background-color: var(--color-input-disabled-bg);
+    border-color: var(--color-border-default);
+    -webkit-text-fill-color: var(--color-primer-fg-disabled); // Fix for Safari
+    opacity: 1; // Fix for Safari iOS
+
+    &::placeholder {
+      color: var(--color-primer-fg-disabled);
+    }
   }
 
   // Ensures inputs don't zoom on mobile iPhone but are body-font size on iPad
