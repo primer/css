@@ -40,10 +40,10 @@ function classNames(disabled, fullWidth) {
 export const SegmentedControlTemplate = ({disabled, fullWidth, ariaLabel}) => (
   <>
     <segmented-control role="group" aria-label={ariaLabel} class={classNames(disabled, fullWidth)}>
-      <SegmentedControlButtonTemplate text="Outline" ariaPressed />
-      <SegmentedControlButtonTemplate text="Write" />
-      <SegmentedControlButtonTemplate text="Preview" leadingIcon />
-      <SegmentedControlButtonTemplate text="Publish" />
+      <SegmentedControlButtonTemplate label="Outline" ariaPressed />
+      <SegmentedControlButtonTemplate label="Write" />
+      <SegmentedControlButtonTemplate label="Preview" leadingIcon />
+      <SegmentedControlButtonTemplate label="Publish" />
     </segmented-control>
   </>
 )
