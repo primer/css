@@ -1,5 +1,11 @@
 # @primer/css
 
+## 20.2.2
+
+### Patch Changes
+
+- [#2075](https://github.com/primer/css/pull/2075) [`9f576a3c`](https://github.com/primer/css/commit/9f576a3c33479fa0beb5ef4fe9b794f67a58070c) Thanks [@langermank](https://github.com/langermank)! - FormControl + Autocomplete component updates
+
 ## 20.2.1
 
 ### Patch Changes
