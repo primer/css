@@ -1,3 +1,6 @@
+// This file can be deprecated when AutoComplete is upstreamed to PVC + rolled out to dotcom https://github.com/github/primer/issues/796
+// AutoComplete relies on FormControl, Overlay and ActionList CSS
+
 // Stacked label (default)
 .autocomplete-label-stacked {
   display: block;
