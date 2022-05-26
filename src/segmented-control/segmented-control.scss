@@ -7,9 +7,9 @@
   box-shadow: inset 0 0 0 $border-width var(--color-border-default);
 }
 
-// Item -----------------------------------------
+// Button -----------------------------------------
 
-.SegmentedControl-item {
+.SegmentedControl-button {
   position: relative;
   padding: 7px 12px; // TODO: Replace
   font-size: $body-font-size;
@@ -42,7 +42,7 @@
 
   // Divider
 
-  & + .SegmentedControl-item::before {
+  & + .SegmentedControl-button::before {
     content: '';
     position: absolute;
     left: -1px;
@@ -54,7 +54,7 @@
 
   // Remove dividers
 
-  &[aria-pressed='true'] + .SegmentedControl-item::before {
+  &[aria-pressed='true'] + .SegmentedControl-button::before {
     border-color: transparent;
   }
 
@@ -62,7 +62,7 @@
   &:active,
   &:focus-visible {
     &::before,
-    & + .SegmentedControl-item::before {
+    & + .SegmentedControl-button::before {
       border-color: transparent;
       transition-duration: 60ms;
     }
@@ -80,7 +80,7 @@
 
 .SegmentedControl--fullWidth {
   display: flex;
-  .SegmentedControl-item {
+  .SegmentedControl-button {
     flex: 1;
   }
 }

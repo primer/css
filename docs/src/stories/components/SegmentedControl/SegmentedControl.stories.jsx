@@ -1,5 +1,5 @@
 import React from 'react'
-import {SegmentedControlItemTemplate} from './SegmentedControlItem.stories' // import stories for component compositions
+import {SegmentedControlButtonTemplate} from './SegmentedControlButton.stories' // import stories for component compositions
 
 export default {
   title: 'Components/SegmentedControl',
@@ -40,10 +40,10 @@ function classNames(disabled, fullWidth) {
 export const SegmentedControlTemplate = ({disabled, fullWidth, ariaLabel}) => (
   <>
     <segmented-control role="group" aria-label={ariaLabel} class={classNames(disabled, fullWidth)}>
-      <SegmentedControlItemTemplate text="Outline" ariaPressed />
-      <SegmentedControlItemTemplate text="Write" />
-      <SegmentedControlItemTemplate text="Preview" leadingVisual />
-      <SegmentedControlItemTemplate text="Publish" />
+      <SegmentedControlButtonTemplate text="Outline" ariaPressed />
+      <SegmentedControlButtonTemplate text="Write" />
+      <SegmentedControlButtonTemplate text="Preview" leadingVisual />
+      <SegmentedControlButtonTemplate text="Publish" />
     </segmented-control>
   </>
 )
