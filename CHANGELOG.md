@@ -1,5 +1,33 @@
 # @primer/css
 
+## 20.2.2
+
+### Patch Changes
+
+- [#2075](https://github.com/primer/css/pull/2075) [`9f576a3c`](https://github.com/primer/css/commit/9f576a3c33479fa0beb5ef4fe9b794f67a58070c) Thanks [@langermank](https://github.com/langermank)! - FormControl + Autocomplete component updates
+
+## 20.2.1
+
+### Patch Changes
+
+- [#2094](https://github.com/primer/css/pull/2094) [`33f799f1`](https://github.com/primer/css/commit/33f799f13edad2e7434425913a8d445aa27213de) Thanks [@camertron](https://github.com/camertron)! - Add missing ToggleSwitch--checked styles
+
+* [#2091](https://github.com/primer/css/pull/2091) [`f740d008`](https://github.com/primer/css/commit/f740d00827fa854062f6ce3449ca6745fae9bea8) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Bump font size of large buttons
+
+## 20.2.0
+
+### Minor Changes
+
+- [#2087](https://github.com/primer/css/pull/2087) [`8354de5c`](https://github.com/primer/css/commit/8354de5c5eeb60e447712c04e25c2ef370206488) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Changing `PageLayout--isPaneSticky` to `PageLayout--sticky`.
+
+* [#2074](https://github.com/primer/css/pull/2074) [`5cfae2c2`](https://github.com/primer/css/commit/5cfae2c2193885c34af97dd61da201c400bc8549) Thanks [@camertron](https://github.com/camertron)! - Add styles for the ToggleSwitch component
+
+## 20.1.1
+
+### Patch Changes
+
+- [#2078](https://github.com/primer/css/pull/2078) [`92ac0e39`](https://github.com/primer/css/commit/92ac0e39e6f5aae0314397890c8f78227a6c6ba0) Thanks [@langermank](https://github.com/langermank)! - Setup new `primer-primitive` bundle
+
 ## 20.1.0
 
 ### Minor Changes
