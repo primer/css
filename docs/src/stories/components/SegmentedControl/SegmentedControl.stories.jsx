@@ -43,6 +43,7 @@ export const SegmentedControlTemplate = ({disabled, fullWidth, ariaLabel}) => (
       <SegmentedControlButtonTemplate label="Outline" ariaPressed />
       <SegmentedControlButtonTemplate label="Write" />
       <SegmentedControlButtonTemplate label="Preview" leadingIcon />
+      <SegmentedControlButtonTemplate label="Preview" leadingIcon iconOnly />
       <SegmentedControlButtonTemplate label="Publish" />
     </segmented-control>
   </>
