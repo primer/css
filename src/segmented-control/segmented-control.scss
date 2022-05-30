@@ -83,6 +83,7 @@
 
 // Variants -----------------------------------------
 
+// fullWidth
 .SegmentedControl--fullWidth {
   display: flex;
   .SegmentedControl-button {
@@ -90,8 +91,25 @@
   }
 }
 
+
+// Icon only
 .SegmentedControl-button--iconOnly {
   padding-left: 0;
   padding-right: 0;
   width: var(--primer-control-medium-size, 32px);
+}
+
+// Icon only when narrow
+@media (max-width: $width-md) { // TODO: use token
+  .SegmentedControl--iconOnly-whenNarrow {
+    .SegmentedControl-button {
+      padding-left: 0;
+      padding-right: 0;
+      width: var(--primer-control-medium-size, 32px);
+    }
+
+    .SegmentedControl-label {
+      display: none;
+    }
+  }
 }

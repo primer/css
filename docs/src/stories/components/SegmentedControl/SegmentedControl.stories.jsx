@@ -9,6 +9,10 @@ export default {
   excludeStories: ['SegmentedControlTemplate'],
   controls: { expanded: true },
   argTypes: {
+    ariaLabel: {
+      type: 'string',
+      description: 'Aria label',
+    },
     disabled: {
       control: {type: 'boolean'},
       description: 'disabled',
@@ -17,14 +21,14 @@ export default {
       control: {type: 'boolean'},
       description: 'full width',
     },
-    ariaLabel: {
-      type: 'string',
-      description: 'Aria label',
+    iconOnlyWhenNarrow: {
+      control: {type: 'boolean'},
+      description: 'icon only when narrow',
     },
   }
 }
 
-function classNames(disabled, fullWidth) {
+function classNames(disabled, fullWidth, iconOnlyWhenNarrow) {
   const classNames = ['SegmentedControl'];
 
   if (disabled) {
@@ -33,13 +37,16 @@ function classNames(disabled, fullWidth) {
   if (fullWidth) {
     classNames.push("SegmentedControl--fullWidth")
   }
+  if (iconOnlyWhenNarrow) {
+    classNames.push("SegmentedControl--iconOnly-whenNarrow")
+  }
 
   return classNames.join(' ')
 }
 
-export const SegmentedControlTemplate = ({disabled, fullWidth, ariaLabel}) => (
+export const SegmentedControlTemplate = ({disabled, fullWidth, ariaLabel, iconOnlyWhenNarrow}) => (
   <>
-    <segmented-control role="group" aria-label={ariaLabel} class={classNames(disabled, fullWidth)}>
+    <segmented-control role="group" aria-label={ariaLabel} class={classNames(disabled, fullWidth, iconOnlyWhenNarrow)}>
       <SegmentedControlButtonTemplate label="Outline" ariaPressed />
       <SegmentedControlButtonTemplate label="Write" />
       <SegmentedControlButtonTemplate label="Preview" leadingIcon />
@@ -51,7 +58,8 @@ export const SegmentedControlTemplate = ({disabled, fullWidth, ariaLabel}) => (
 
 export const Playground = SegmentedControlTemplate.bind({})
 Playground.args = {
+  ariaLabel: "Label",
   disabled: false,
   fullWidth: false,
-  ariaLabel: "Label"
+  iconOnlyWhenNarrow: false,
 }
