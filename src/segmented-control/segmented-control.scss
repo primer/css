@@ -39,7 +39,7 @@
 
   // TODO: Change to aria-current or aria-selected?
   &[aria-pressed='true'] {
-    font-weight: var(--base-text-weight-semibold, 600);
+    font-weight: var(--base-text-weight-semibold, $font-weight-bold);
     background-color: var(--color-canvas-subtle);  // TODO: Create Primitive?
     border-color: var(--color-scale-gray-4); // TODO: Create Primitive
     box-shadow: var(--color-shadow-medium);
@@ -79,6 +79,19 @@
 
 .SegmentedControl-leadingIcon {
   color: var(--color-fg-muted);
+}
+
+// Label -----------------------------------------
+
+.SegmentedControl-label {
+  // renders a visibly hidden "copy" of the label in bold, reserving box space for when label becomes bold on selected
+  &[data-content]::before {
+    display: block;
+    height: 0;
+    font-weight: var(--base-text-weight-semibold, $font-weight-bold);;
+    visibility: hidden;
+    content: attr(data-content);
+  }
 }
 
 // Variants -----------------------------------------
