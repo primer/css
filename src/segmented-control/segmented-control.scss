@@ -3,7 +3,9 @@
 .SegmentedControl {
   display: inline-flex;
   background-color: var(--color-scale-gray-1); // TODO: Create Primitive
+  // stylelint-disable-next-line primer/borders
   border-radius: var(--primer-borderRadius-medium, $border-radius);
+  // stylelint-disable-next-line primer/box-shadow
   box-shadow: var(--primer-borderInset-thin, inset 0 0 0 $border-width) var(--color-border-default);
 }
 
@@ -12,17 +14,21 @@
 .SegmentedControl-button {
   position: relative;
   display: inline-flex;
+  height: var(--primer-control-medium-size, 32px);
+  // stylelint-disable-next-line primer/spacing
+  padding: 0 var(--primer-control-medium-paddingInline-normal, 12px);
+  // stylelint-disable-next-line primer/typography
+  font-size: var(--primer-text-body-size-medium, $body-font-size);
+  color: var(--color-fg-default);
+  background-color: transparent;
+  // stylelint-disable-next-line primer/borders
+  border: var(--primer-borderWidth-thin, $border-width) $border-style transparent;
+  // stylelint-disable-next-line primer/borders
+  border-radius: var(--primer-borderRadius-medium, $border-radius);
+  transition: border-color, background-color 180ms cubic-bezier(0.3, 0.1, 0.5, 1);
   align-items: center;
   justify-content: center;
   gap: var(--primer-control-medium-gap, $spacer-2);
-  padding: 0 var(--primer-control-medium-paddingInline-normal, 12px);
-  font-size: var(--primer-text-body-size-medium, $body-font-size);
-  height: var(--primer-control-medium-size, 32px);
-  color: var(--color-fg-default);
-  background-color: transparent;
-  border-radius: var(--primer-borderRadius-medium, $border-radius);
-  border: var(--primer-borderWidth-thin, $border-width) $border-style transparent;
-  transition: border-color, background-color 180ms cubic-bezier(0.3, 0.1, 0.5, 1);
 
   &:hover {
     background-color: var(--color-neutral-muted); // TODO: Replace?
@@ -30,7 +36,8 @@
   }
 
   &:active {
-    background-color: hsl(210deg 13% 72% / 40%); // TODO: Replace
+    // stylelint-disable-next-line primer/colors
+    background-color: hsl(210deg 13% 72% / 0.4); // TODO: Replace
     border-color: var(--color-scale-gray-3); // TODO: Remove?
     transition-duration: 60ms;
   }
@@ -39,6 +46,7 @@
 
   // TODO: Change to aria-current or aria-selected?
   &[aria-pressed='true'] {
+    // stylelint-disable-next-line primer/typography
     font-weight: var(--base-text-weight-semibold, $font-weight-bold);
     background-color: var(--color-canvas-subtle);  // TODO: Create Primitive?
     border-color: var(--color-scale-gray-4); // TODO: Create Primitive
@@ -47,13 +55,16 @@
 
   // Divider
 
+  // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
   & + .SegmentedControl-button::before {
-    content: '';
     position: absolute;
-    left: -1px;
     top: 1px; // Account for border width
-    margin-top: var(--primer-control-medium-paddingBlock, 6px);
+    left: -1px;
     height: var(--primer-text-body-size-large, 16px);
+    // stylelint-disable-next-line primer/spacing
+    margin-top: var(--primer-control-medium-paddingBlock, 6px);
+    content: '';
+    // stylelint-disable-next-line primer/borders
     border-left: var(--primer-borderWidth-thin, $border-width) $border-style var(--color-border-default);
     transition: border-color 180ms cubic-bezier(0.3, 0.1, 0.5, 1);
   }
@@ -68,7 +79,7 @@
   &:active,
   &:focus-visible {
     &::before,
-    & + .SegmentedControl-button::before {
+    + .SegmentedControl-button::before {
       border-color: transparent;
       transition-duration: 60ms;
     }
@@ -88,7 +99,8 @@
   &[data-content]::before {
     display: block;
     height: 0;
-    font-weight: var(--base-text-weight-semibold, $font-weight-bold);;
+    // stylelint-disable-next-line primer/typography
+    font-weight: var(--base-text-weight-semibold, $font-weight-bold);
     visibility: hidden;
     content: attr(data-content);
   }
@@ -126,6 +138,7 @@
 // fullWidth
 .SegmentedControl--fullWidth {
   display: flex;
+
   .SegmentedControl-button {
     flex: 1;
   }
@@ -133,18 +146,18 @@
 
 // Icon only
 .SegmentedControl-button--iconOnly {
-  padding-left: 0;
-  padding-right: 0;
   width: var(--primer-control-medium-size, 32px);
+  padding-right: 0;
+  padding-left: 0;
 }
 
 // Icon only when narrow
 @media (max-width: $width-md) { // TODO: use token
   .SegmentedControl--iconOnly-whenNarrow {
     .SegmentedControl-button {
-      padding-left: 0;
-      padding-right: 0;
       width: var(--primer-control-medium-size, 32px);
+      padding-right: 0;
+      padding-left: 0;
     }
 
     .SegmentedControl-label {
