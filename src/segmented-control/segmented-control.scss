@@ -91,7 +91,6 @@
   }
 }
 
-
 // Icon only
 .SegmentedControl-button--iconOnly {
   padding-left: 0;
@@ -110,6 +109,15 @@
 
     .SegmentedControl-label {
       display: none;
+    }
+  }
+}
+
+// Increase touch target
+@media (pointer: coarse) {
+  .SegmentedControl-button {
+    &::after {
+      @include minTouchTarget($min-height: 44px);
     }
   }
 }
