@@ -12,6 +12,12 @@ Buttons are used for **actions**, like in forms, while textual hyperlinks are us
 <button class="btn" type="button">Button</button>
 ```
 
+Note: When using a `<button>` element, **always specify a `type`**.
+
+```html live
+<button class="btn mr-2" type="button">Button button</button>
+```
+
 ## Button types
 
 ### Default
