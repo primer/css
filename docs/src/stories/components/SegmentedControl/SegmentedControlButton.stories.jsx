@@ -42,7 +42,6 @@ export const SegmentedControlButtonTemplate = ({ariaPressed, isLoading, label, l
         iconOnly && `SegmentedControl-button--iconOnly`,
         isLoading && `SegmentedControl-button--isLoading`,
       )}
-      type="button"
       aria-pressed={ariaPressed}
       aria-label={iconOnly && label}
     >
