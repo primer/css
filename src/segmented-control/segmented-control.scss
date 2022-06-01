@@ -2,7 +2,7 @@
 
 .SegmentedControl {
   display: inline-flex;
-  background-color: var(--color-scale-gray-1); // TODO: Create Primitive
+  background-color: var(--color-segmented-control-bg);
   // stylelint-disable-next-line primer/borders
   border-radius: var(--primer-borderRadius-medium, $border-radius);
   // stylelint-disable-next-line primer/box-shadow
@@ -31,14 +31,14 @@
   gap: var(--primer-control-medium-gap, $spacer-2);
 
   &:hover {
-    background-color: var(--color-neutral-muted); // TODO: Replace?
+    background-color: var(--color-segmented-control-hover-bg);
     transition-duration: 120ms;
   }
 
   &:active {
     // stylelint-disable-next-line primer/colors
-    background-color: hsl(210deg 13% 72% / 0.4); // TODO: Replace
-    border-color: var(--color-scale-gray-3); // TODO: Remove?
+    background-color: var(--color-segmented-control-active-bg);
+    border-color: var(--color-segmented-control-active-border);
     transition-duration: 60ms;
   }
 
@@ -48,8 +48,8 @@
   &[aria-pressed='true'] {
     // stylelint-disable-next-line primer/typography
     font-weight: var(--base-text-weight-semibold, $font-weight-bold);
-    background-color: var(--color-canvas-subtle);  // TODO: Create Primitive?
-    border-color: var(--color-scale-gray-4); // TODO: Create Primitive
+    background-color: var(--color-segmented-control-pressed-bg);
+    border-color: var(--color-segmented-control-pressed-border);
     box-shadow: var(--color-shadow-medium);
   }
 
