@@ -283,6 +283,12 @@
   grid-template-areas: 'field label' '. caption';
   gap: var(--base-size-8, 8px);
 
+  .FormControl--checkbox-labelWrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--base-size-4, 4px);
+  }
+
   .FormControl-label {
     grid-area: label;
   }
@@ -306,14 +312,15 @@
       .FormControl--checkbox-background {
         fill: var(--color-accent-fg);
         stroke: var(--color-accent-fg);
+        transition: all 80ms cubic-bezier(0.3, 0, 0.5, 1);
       }
 
       .FormControl--checkbox-check {
-        fill: var(--color-fg-on-emphasis);
         visibility: visible;
+        transition: visibility 0s linear 0s;
 
         @media screen and (prefers-reduced-motion: no-preference) {
-          animation: checkmarkIn 200ms cubic-bezier(0.11, 0, 0.5, 0) forwards;
+          animation: checkmarkIn 240ms cubic-bezier(0.65, 0, 0.35, 1) forwards 80ms;
         }
       }
     }
@@ -332,26 +339,6 @@
       }
     }
   }
-
-  @keyframes checkmarkIn {
-    from {
-      clip-path: inset(16px 0 0 0);
-    }
-
-    to {
-      clip-path: inset(0 0 0 0);
-    }
-  }
-
-  @keyframes checkmarkOut {
-    from {
-      clip-path: inset(0 0 0 0);
-    }
-
-    to {
-      clip-path: inset(16px 0 0 0);
-    }
-  }
 }
 
 .FormControl--checkbox-svg {
@@ -363,20 +350,42 @@
   .FormControl--checkbox-background {
     fill: var(--color-canvas-default);
     stroke: var(--color-border-default);
+    transition: all 0ms cubic-bezier(0.65, 0, 0.35, 1) 230ms;
   }
 
   .FormControl--checkbox-check {
     visibility: hidden;
-    transition: visibility 0s linear 200ms;
+    fill: var(--color-fg-on-emphasis);
+    transition: visibility 0s linear 230ms;
     clip-path: inset(16px 0 0 0);
 
     @media screen and (prefers-reduced-motion: no-preference) {
-      animation: checkmarkOut 200ms cubic-bezier(0.11, 0, 0.5, 0) forwards;
+      animation: checkmarkOut 220ms cubic-bezier(0.65, 0, 0.35, 1) forwards; // slightly snappier animation out
     }
   }
 
   .FormControl--checkbox-indeterminate {
     fill: transparent;
     visibility: hidden;
+  }
+}
+
+@keyframes checkmarkIn {
+  from {
+    clip-path: inset(16px 0 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes checkmarkOut {
+  from {
+    clip-path: inset(0 0 0 0);
+  }
+
+  to {
+    clip-path: inset(16px 0 0 0);
   }
 }
