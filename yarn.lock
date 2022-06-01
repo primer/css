@@ -1082,9 +1082,9 @@
   integrity sha512-04ZwfJhpZ0QFwDrJfCuLX6iOh0BflWDTvuoRA80lQH9xk0RtIg16INbruwwtnbSgnKKXXRSykRRJ5BbxnqufRA==
 
 "@primer/stylelint-config@^12.4.0":
-  version "12.5.0"
-  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-12.5.0.tgz#c437be20bcb30eda536678abfcc2a7400bb3ce07"
-  integrity sha512-mTAKvPaCmqBVWPFmYHD/om6korx+JVNRE/6PdwzuFNmCRiEjkOggYEtCMLak0UnENdP7Sum3cMp6fI8fyYgTzw==
+  version "12.6.1"
+  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-12.6.1.tgz#6ae755eff675c135900d16ae836404a83925df85"
+  integrity sha512-nLVPzVqq+cHqtm6JFqSqSVGbE7w6DZqpx3bHINYlwzCvBNZNoSUjMYiI/PjCufIAbBc4ia8gRfmn6J7hJbf6Kw==
   dependencies:
     anymatch "^3.1.1"
     globby "^11.0.1"
