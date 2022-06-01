@@ -57,7 +57,8 @@ label {
     }
   }
 
-  &[disabled] {
+  &[disabled],
+  fieldset[disabled] & {
     color: var(--color-primer-fg-disabled);
     background-color: var(--color-input-disabled-bg);
     border-color: var(--color-border-default);
