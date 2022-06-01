@@ -46,7 +46,7 @@
     "node": ">= 10.x"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.7",
+    "@babel/core": "^7.18.2",
     "@storybook/addon-a11y": "6.5.0",
     "@storybook/addon-actions": "^6.5.0",
     "@storybook/addon-essentials": "^6.5.0",
