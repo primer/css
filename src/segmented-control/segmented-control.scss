@@ -36,7 +36,6 @@
   }
 
   &:active {
-    // stylelint-disable-next-line primer/colors
     background-color: var(--color-segmented-control-active-bg);
     border-color: var(--color-segmented-control-active-border);
     transition-duration: 60ms;
