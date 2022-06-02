@@ -37,7 +37,7 @@
           outline: $border-style $border-width transparent;
           outline-offset: -$border-width;
           // stylelint-disable-next-line primer/box-shadow
-          box-shadow: inset 0 0 0 2px var(--color-action-list-item-default-active-border);
+          box-shadow: inset 0 0 0 $border-width var(--color-action-list-item-default-active-border);
         }
       }
     }
@@ -50,7 +50,7 @@
         outline: $border-style $border-width transparent;
         outline-offset: -$border-width;
         // stylelint-disable-next-line primer/box-shadow
-        box-shadow: inset 0 0 0 2px var(--color-action-list-item-default-active-border);
+        box-shadow: inset 0 0 0 $border-width var(--color-action-list-item-default-active-border);
       }
 
       @media screen and (prefers-reduced-motion: no-preference) {
