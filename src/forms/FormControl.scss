@@ -55,12 +55,13 @@
   background-color: var(--color-canvas-default);
   border: solid var(--primer-borderWidth-thin, 1px) var(--color-border-default);
 
-  &[disabled] {
+  &:not([type='radio']):not([type='checkbox'])[disabled] {
     color: var(--color-primer-fg-disabled);
     background-color: var(--color-input-disabled-bg);
     border-color: var(--color-border-default);
     -webkit-text-fill-color: var(--color-primer-fg-disabled);
     opacity: 1;
+    cursor: not-allowed;
   }
 
   &:not(:focus)[invalid] {
@@ -306,6 +307,18 @@
   width: var(--base-size-16, 16px);
   height: var(--base-size-16, 16px);
   opacity: 0;
+
+  &[disabled] {
+    cursor: not-allowed;
+    + .FormControl--checkbox-svg,
+    + .FormControl--radio-svg {
+      .FormControl--checkbox-background,
+      .FormControl--radio-background {
+        fill: var(--color-input-disabled-bg);
+        stroke: var(--color-border-default);
+      }
+    }
+  }
 
   &:checked {
     + .FormControl--checkbox-svg,
