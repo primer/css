@@ -40,7 +40,7 @@ jobs:
 
       - name: Update storybook deployment status (success)
         if: success()
-        uses: chrnorm/deployment-status@v1.0.0
+        uses: chrnorm/deployment-status@v2.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment_url: '${{ needs.deploy.outputs.deployment_url }}/storybook'
@@ -50,7 +50,7 @@ jobs:
 
       - name: Update storybook deployment status (failure)
         if: failure()
-        uses: chrnorm/deployment-status@v1.0.0
+        uses: chrnorm/deployment-status@v2.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           state: 'failure'
