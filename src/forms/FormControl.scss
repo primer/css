@@ -308,11 +308,22 @@
   opacity: 0;
 
   &:checked {
-    + .FormControl--checkbox-svg {
-      .FormControl--checkbox-background {
+    + .FormControl--checkbox-svg,
+    + .FormControl--radio-svg {
+      .FormControl--checkbox-background,
+      .FormControl--radio-background {
         fill: var(--color-accent-fg);
         stroke: var(--color-accent-fg);
         transition: all 80ms cubic-bezier(0.3, 0, 0.5, 1);
+      }
+
+      .FormControl--radio-circle {
+        visibility: visible;
+        transition: visibility 0s linear 0s;
+
+        @media screen and (prefers-reduced-motion: no-preference) {
+          animation: radioIn 240ms cubic-bezier(0.65, 0, 0.35, 1) forwards 80ms;
+        }
       }
 
       .FormControl--checkbox-check {
@@ -341,16 +352,29 @@
   }
 }
 
-.FormControl--checkbox-svg {
+.FormControl--checkbox-svg,
+.FormControl--radio-svg {
   width: var(--base-size-16, 16px);
   height: var(--base-size-16, 16px);
   margin-top: 0.125rem;
   cursor: pointer;
 
-  .FormControl--checkbox-background {
+  .FormControl--checkbox-background,
+  .FormControl--radio-background {
     fill: var(--color-canvas-default);
     stroke: var(--color-border-default);
     transition: all 0ms cubic-bezier(0.65, 0, 0.35, 1) 230ms;
+  }
+
+  .FormControl--radio-circle {
+    visibility: hidden;
+    fill: var(--color-fg-on-emphasis);
+    transition: visibility 0s linear 230ms;
+    clip-path: circle(0%);
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+      animation: radioOut 220ms cubic-bezier(0.65, 0, 0.35, 1) forwards; // slightly snappier animation out
+    }
   }
 
   .FormControl--checkbox-check {
@@ -387,5 +411,25 @@
 
   to {
     clip-path: inset(16px 0 0 0);
+  }
+}
+
+@keyframes radioIn {
+  from {
+    clip-path: circle(0%);
+  }
+
+  to {
+    clip-path: circle(100%);
+  }
+}
+
+@keyframes radioOut {
+  from {
+    clip-path: circle(100%);
+  }
+
+  to {
+    clip-path: circle(0%);
   }
 }
