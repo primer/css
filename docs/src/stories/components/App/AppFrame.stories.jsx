@@ -61,7 +61,6 @@ export const AppFrameTemplate = ({
       <div className={clsx('AppFrame-a11yNav')}>
         <ul>
           <li><a href="#start-of-content" className={clsx('AppFrame-a11yLink')}>Skip to content</a></li>
-          <li><a href="#search" className={clsx('AppFrame-a11yLink')}>Skip to search</a></li>
           <li><a href="/" className={clsx('AppFrame-a11yLink')}>GitHub homepage</a></li>
         </ul>
 

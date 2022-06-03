@@ -1,5 +1,6 @@
 .AppHeader {
   --AppHeader-bg: #F6F8FA; /* bg.subtle? */
+  --AppHeader-bg: var(--color-canvas-inset);
 
   background: var(--AppHeader-bg);
   color: var(--color-fg-default);
@@ -7,9 +8,9 @@
   // Global bar
 
   .AppHeader-globalBar {
-    padding: var(--base-size-16); // Replace with `base-size-16`
+    padding: var(--base-size-16, 16px); // Replace with `base-size-16`
     display: flex;
-    gap: 16px; // Replace with `base-size-16`
+    gap: var(--base-size-16, 16px); // Replace with `base-size-16`
 
     // GitHub logo + user avatar
 
@@ -20,8 +21,8 @@
       button, a {
         grid-area: 1 / 1;
         display: block;
-        width: var(--base-size-32);
-        height: var(--base-size-32);
+        width: var(--base-size-32, 32px);
+        height: var(--base-size-32, 32px);
       }
 
       button {
@@ -29,39 +30,55 @@
         padding: 0;
         border: none;
         border-radius: 100%;
-        outline-offset: var(--primer-borderWidth-normal);
+        outline-offset: var(--primer-borderWidth-normal, 2px);
       }
 
       a {
         grid-area: 1 / 1;
         position: relative;
         overflow: hidden;
-        text-indent: var(--base-size-128);
+        text-indent: var(--base-size-128, 128px);
         color: transparent;
 
         @media (pointer: coarse) {
           &:after {
             // pull from minTouchTarget design token
-            @include minTouchTarget(var(--primer-control-minTarget-coarse), var(--primer-control-minTarget-coarse));
+            @include minTouchTarget(var(--primer-control-minTarget-coarse, 44px), var(--primer-control-minTarget-coarse, 44px));
           }
         }
       }
     }
 
     .AppHeader-logo svg {
-      width: var(--base-size-32);
-      height: var(--base-size-32);
+      width: var(--base-size-32, 32px);
+      height: var(--base-size-32, 32px);
     }
 
     .AppHeader-user {
       background: var(--color-neutral-muted);
       border-radius: 100%;
+      position: relative;
 
       img {
         display: block;
+        position: relative;
         width: 100%;
         height: 100%;
         border-radius: 100%;
+      }
+
+      &:before {
+        pointer-events: none;
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        box-shadow: inset 0 0 0 var(--primer-borderWidth-thin, 1px) var(--color-border-subtle);
       }
     }
 
@@ -70,7 +87,7 @@
 
     .AppHeader-context {
       flex: 1 1 auto;
-      height: var(--base-size-32);
+      height: var(--base-size-32, 32px);
       //background: #ececec;
     }
   }
@@ -78,9 +95,9 @@
   // Local bar
 
   .AppHeader-localBar {
-    padding: 0 var(--base-size-16) var(--base-size-16);
+    padding: 0 var(--base-size-16, 16px) var(--base-size-16, 16px);
     //background: lightcyan;
-    box-shadow: inset 0 calc(var(--primer-borderWidth-thin) * -1) var(--color-border-default);
+    box-shadow: inset 0 calc(var(--primer-borderWidth-thin, 1px) * -1) var(--color-border-default);
   }
 
   // AppHeader items
@@ -99,8 +116,8 @@
     display: grid;
     width: var(--base-size-32);
     height: var(--base-size-32);
-    border: var(--primer-borderWidth-thin) solid var(--color-border-default);
-    border-radius: var(--primer-borderRadius-medium);
+    border: var(--primer-borderWidth-thin, 1px) solid var(--color-border-default);
+    border-radius: var(--primer-borderRadius-medium, 6px);
     color: var(--color-fg-muted);
     align-items: center;
     justify-content: center;
@@ -123,8 +140,22 @@
     @media (pointer: coarse) {
       &:after {
         // pull from minTouchTarget design token
-        @include minTouchTarget(var(--primer-control-minTarget-coarse), var(--primer-control-minTarget-coarse));
+        @include minTouchTarget(var(--primer-control-minTarget-coarse, 44px), var(--primer-control-minTarget-coarse, 44px));
       }
+    }
+
+    &.AppHeader-button--hasIndicator:before {
+      position: absolute;
+      content: "";
+      display: block;
+      top: -2px;
+      right: -2px;
+      z-index: 2;
+      background: var(--color-accent-fg);
+      border-radius: 100%;
+      width: 8px;
+      height: 8px;
+      box-shadow: 0 0 0 2px var(--AppHeader-bg);
     }
   }
 }

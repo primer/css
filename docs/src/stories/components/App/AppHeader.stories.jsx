@@ -16,11 +16,16 @@ export default {
       options: ['none', 'info', 'warning', 'error', 'success'],
     },
 
+    bellHasIndicator: {
+      control: 'boolean',
+    },
+
   },
 }
 
 export const AppHeaderTemplate = ({
   context,
+  bellHasIndicator
 }) => (
   <>
     <div className={clsx('AppHeader')}>
@@ -43,6 +48,10 @@ export const AppHeaderTemplate = ({
             * with main global menu
             * */}
           <button aria-expanded="false" aria-haspopup="dialog" aria-label="Open main menu">
+            {/*
+              * Replace with ViewComponent:
+              * <%= render(Primer::OcticonComponent.new(:"mark-github")) %>
+              */}
             <MarkGithubIcon />
           </button>
 
@@ -68,11 +77,19 @@ export const AppHeaderTemplate = ({
           <nav aria-label=""></nav>
         </div>
 
-        <a className="AppHeader-button" href="#">
+        <a className={clsx('AppHeader-button', bellHasIndicator && 'AppHeader-button--hasIndicator')} href="#">
+          {/*
+            * Replace with ViewComponent:
+            * <%= render(Primer::OcticonComponent.new(:"bell")) %>
+            */}
           <BellIcon />
         </a>
 
         <a className="AppHeader-button" href="#">
+          {/*
+            * Replace with ViewComponent:
+            * <%= render(Primer::OcticonComponent.new(:"plus")) %>
+            */}
           <PlusIcon />
         </a>
 
