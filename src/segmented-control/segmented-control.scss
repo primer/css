@@ -41,10 +41,9 @@
     transition-duration: 60ms;
   }
 
-  // Pressed
+  // Selected
 
-  // TODO: Change to aria-current or aria-selected?
-  &[aria-pressed='true'] {
+  &[aria-current='true'] {
     // stylelint-disable-next-line primer/typography
     font-weight: var(--base-text-weight-semibold, $font-weight-bold);
     background-color: var(--color-btn-bg);
@@ -70,7 +69,7 @@
 
   // Remove dividers
 
-  &[aria-pressed='true'] + .SegmentedControl-button::before {
+  &[aria-current='true'] + .SegmentedControl-button::before {
     border-color: transparent;
   }
 
@@ -114,7 +113,7 @@
     pointer-events: none;
     cursor: default;
 
-    &[aria-pressed='true'] {
+    &[aria-current='true'] {
       border-color: var(--color-border-default);
     }
   }

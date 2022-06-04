@@ -46,8 +46,8 @@ function classNames(disabled, fullWidth, iconOnlyWhenNarrow) {
 
 export const BasicTemplate = ({disabled, fullWidth, ariaLabel}) => (
   <>
-    <segmented-control role="group" aria-label={ariaLabel} class={classNames(disabled, fullWidth)}>
-      <SegmentedControlButtonTemplate label="Outline" ariaPressed />
+    <segmented-control role="toolbar" aria-label={ariaLabel} class={classNames(disabled, fullWidth)}>
+      <SegmentedControlButtonTemplate label="Outline" ariaCurrent />
       <SegmentedControlButtonTemplate label="Write" />
       <SegmentedControlButtonTemplate label="Preview" />
       <SegmentedControlButtonTemplate label="Publish" />
@@ -65,8 +65,8 @@ Basic.args = {
 
 export const IconsAndLabelsTemplate = ({disabled, fullWidth, ariaLabel, iconOnlyWhenNarrow}) => (
   <>
-    <segmented-control role="group" aria-label={ariaLabel} class={classNames(disabled, fullWidth, iconOnlyWhenNarrow)}>
-      <SegmentedControlButtonTemplate label="Outline" leadingIcon ariaPressed />
+    <segmented-control role="toolbar" aria-label={ariaLabel} class={classNames(disabled, fullWidth, iconOnlyWhenNarrow)}>
+      <SegmentedControlButtonTemplate label="Outline" leadingIcon ariaCurrent />
       <SegmentedControlButtonTemplate label="Write" leadingIcon />
       <SegmentedControlButtonTemplate label="Preview" leadingIcon />
       <SegmentedControlButtonTemplate label="Publish" leadingIcon />
@@ -84,8 +84,8 @@ IconsAndLabels.args = {
 
 export const IconsOnlyTemplate = ({disabled, fullWidth, ariaLabel, iconOnlyWhenNarrow}) => (
   <>
-    <segmented-control role="group" aria-label={ariaLabel} class={classNames(disabled, fullWidth, iconOnlyWhenNarrow)}>
-      <SegmentedControlButtonTemplate label="Outline" leadingIcon iconOnly ariaPressed />
+    <segmented-control role="toolbar" aria-label={ariaLabel} class={classNames(disabled, fullWidth, iconOnlyWhenNarrow)}>
+      <SegmentedControlButtonTemplate label="Outline" leadingIcon iconOnly ariaCurrent />
       <SegmentedControlButtonTemplate label="Write" leadingIcon iconOnly />
       <SegmentedControlButtonTemplate label="Preview" leadingIcon iconOnly />
       <SegmentedControlButtonTemplate label="Publish" leadingIcon iconOnly />
