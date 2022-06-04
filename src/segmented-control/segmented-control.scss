@@ -31,13 +31,13 @@
   gap: var(--primer-control-medium-gap, $spacer-2);
 
   &:hover {
-    background-color: var(--color-segmented-control-hover-bg);
+    background-color: var(--color-segmented-control-button-hover-bg);
     transition-duration: 120ms;
   }
 
   &:active {
-    background-color: var(--color-segmented-control-active-bg);
-    border-color: var(--color-segmented-control-active-border);
+    background-color: var(--color-segmented-control-button-active-bg);
+    border-color: var(--color-segmented-control-button-active-border);
     transition-duration: 60ms;
   }
 
@@ -47,8 +47,8 @@
   &[aria-pressed='true'] {
     // stylelint-disable-next-line primer/typography
     font-weight: var(--base-text-weight-semibold, $font-weight-bold);
-    background-color: var(--color-segmented-control-pressed-bg);
-    border-color: var(--color-segmented-control-pressed-border);
+    background-color: var(--color-btn-bg);
+    border-color: var(--color-segmented-control-button-selected-border);
     box-shadow: var(--color-shadow-medium);
   }
 
