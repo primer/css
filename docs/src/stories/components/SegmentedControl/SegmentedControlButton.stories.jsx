@@ -11,10 +11,6 @@ export default {
       control: {type: 'boolean'},
       description: 'Currently selected item',
     },
-    isLoading: {
-      control: {type: 'boolean'},
-      description: 'Pressed item is loading',
-    },
     label: {
       defaultValue: 'Item',
       type: 'string',
@@ -35,12 +31,11 @@ export default {
 }
 
 // build every component case here in the template (private api)
-export const SegmentedControlButtonTemplate = ({ariaCurrent, isLoading, label, leadingIcon, iconOnly }) => (
+export const SegmentedControlButtonTemplate = ({ariaCurrent, label, leadingIcon, iconOnly }) => (
   <>
     <button className={clsx(
         'SegmentedControl-button',
         iconOnly && `SegmentedControl-button--iconOnly`,
-        isLoading && `SegmentedControl-button--isLoading`,
       )}
       aria-current={ariaCurrent}
       aria-label={iconOnly && label}
@@ -50,9 +45,6 @@ export const SegmentedControlButtonTemplate = ({ariaCurrent, isLoading, label, l
       )}
       {!iconOnly && (
         <span class="SegmentedControl-label" data-content={label}>{label}</span>
-      )}
-      {isLoading && (
-        <svg style={{boxSizing: "content-box", color: "var(--color-icon-primary)"}} width="16" height="16" viewBox="0 0 16 16" fill="none" data-view-component="true" class="anim-rotate">  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.25" stroke-width="2" vector-effect="non-scaling-stroke"></circle>  <path d="M15 8a7.002 7.002 0 00-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg>
       )}
     </button>
   </>
@@ -64,5 +56,4 @@ Playground.args = {
   label: 'Preview',
   leadingIcon: true,
   ariaCurrent: true,
-  isLoading: false,
 }

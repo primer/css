@@ -123,16 +123,6 @@
   }
 }
 
-.SegmentedControl-button--isLoading.SegmentedControl-button--isLoading {
-  pointer-events: none;
-  cursor: default;
-
-  .SegmentedControl-label,
-  .SegmentedControl-leadingIcon {
-    color: var(--color-primer-fg-disabled);
-  }
-}
-
 // fullWidth
 .SegmentedControl--fullWidth {
   display: flex;
