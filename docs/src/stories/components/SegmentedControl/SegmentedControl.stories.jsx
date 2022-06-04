@@ -6,7 +6,7 @@ export default {
   parameters: {
     layout: 'padded'
   },
-  excludeStories: ['BasicTemplate', 'IconsAndLabelsTemplate', 'IconsOnlyTemplate'],
+  excludeStories: ['BasicTemplate', 'IconsAndTextTemplate', 'IconsOnlyTemplate'],
   controls: { expanded: true },
   argTypes: {
     ariaLabel: {
@@ -47,10 +47,10 @@ function classNames(disabled, fullWidth, iconOnlyWhenNarrow) {
 export const BasicTemplate = ({disabled, fullWidth, ariaLabel}) => (
   <>
     <segmented-control role="toolbar" aria-label={ariaLabel} class={classNames(disabled, fullWidth)}>
-      <SegmentedControlButtonTemplate label="Outline" ariaCurrent />
-      <SegmentedControlButtonTemplate label="Write" />
-      <SegmentedControlButtonTemplate label="Preview" />
-      <SegmentedControlButtonTemplate label="Publish" />
+      <SegmentedControlButtonTemplate text="Outline" ariaCurrent />
+      <SegmentedControlButtonTemplate text="Write" />
+      <SegmentedControlButtonTemplate text="Preview" />
+      <SegmentedControlButtonTemplate text="Publish" />
     </segmented-control>
   </>
 )
@@ -63,19 +63,19 @@ Basic.args = {
   iconOnlyWhenNarrow: false,
 }
 
-export const IconsAndLabelsTemplate = ({disabled, fullWidth, ariaLabel, iconOnlyWhenNarrow}) => (
+export const IconsAndTextTemplate = ({disabled, fullWidth, ariaLabel, iconOnlyWhenNarrow}) => (
   <>
     <segmented-control role="toolbar" aria-label={ariaLabel} class={classNames(disabled, fullWidth, iconOnlyWhenNarrow)}>
-      <SegmentedControlButtonTemplate label="Outline" leadingVisual ariaCurrent />
-      <SegmentedControlButtonTemplate label="Write" leadingVisual />
-      <SegmentedControlButtonTemplate label="Preview" leadingVisual />
-      <SegmentedControlButtonTemplate label="Publish" leadingVisual />
+      <SegmentedControlButtonTemplate text="Outline" leadingVisual ariaCurrent />
+      <SegmentedControlButtonTemplate text="Write" leadingVisual />
+      <SegmentedControlButtonTemplate text="Preview" leadingVisual />
+      <SegmentedControlButtonTemplate text="Publish" leadingVisual />
     </segmented-control>
   </>
 )
 
-export const IconsAndLabels = IconsAndLabelsTemplate.bind({})
-IconsAndLabels.args = {
+export const IconsAndText = IconsAndTextTemplate.bind({})
+IconsAndText.args = {
   ariaLabel: "Label",
   disabled: false,
   fullWidth: false,
@@ -85,10 +85,10 @@ IconsAndLabels.args = {
 export const IconsOnlyTemplate = ({disabled, fullWidth, ariaLabel, iconOnlyWhenNarrow}) => (
   <>
     <segmented-control role="toolbar" aria-label={ariaLabel} class={classNames(disabled, fullWidth, iconOnlyWhenNarrow)}>
-      <SegmentedControlButtonTemplate label="Outline" leadingVisual iconOnly ariaCurrent />
-      <SegmentedControlButtonTemplate label="Write" leadingVisual iconOnly />
-      <SegmentedControlButtonTemplate label="Preview" leadingVisual iconOnly />
-      <SegmentedControlButtonTemplate label="Publish" leadingVisual iconOnly />
+      <SegmentedControlButtonTemplate text="Outline" leadingVisual iconOnly ariaCurrent />
+      <SegmentedControlButtonTemplate text="Write" leadingVisual iconOnly />
+      <SegmentedControlButtonTemplate text="Preview" leadingVisual iconOnly />
+      <SegmentedControlButtonTemplate text="Publish" leadingVisual iconOnly />
     </segmented-control>
   </>
 )

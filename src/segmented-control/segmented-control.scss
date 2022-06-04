@@ -90,10 +90,10 @@
   color: var(--color-fg-muted);
 }
 
-// Label -----------------------------------------
+// Text -----------------------------------------
 
-.SegmentedControl-label {
-  // renders a visibly hidden "copy" of the label in bold, reserving box space for when label becomes bold on selected
+.SegmentedControl-text {
+  // renders a visibly hidden "copy" of the text in bold, reserving box space for when text becomes bold on selected
   &[data-content]::before {
     display: block;
     height: 0;
@@ -148,7 +148,7 @@
       padding-left: 0;
     }
 
-    .SegmentedControl-label {
+    .SegmentedControl-text {
       display: none;
     }
   }
