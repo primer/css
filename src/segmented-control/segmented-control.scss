@@ -84,9 +84,9 @@
   }
 }
 
-// Icon -----------------------------------------
+// Leading visual -----------------------------------------
 
-.SegmentedControl-leadingIcon {
+.SegmentedControl-leadingVisual {
   color: var(--color-fg-muted);
 }
 
@@ -118,7 +118,7 @@
     }
   }
 
-  .SegmentedControl-leadingIcon {
+  .SegmentedControl-leadingVisual {
     color: var(--color-primer-fg-disabled);
   }
 }
