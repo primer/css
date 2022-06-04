@@ -55,8 +55,7 @@
   // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
   & + .SegmentedControl-button::before {
     position: absolute;
-    top: 1px; // Account for border width
-    left: -1px;
+    inset: var(--primer-borderWidth-thin, 1px) 0 0 calc(var(--primer-borderWidth-thin, 1px) * -1);
     height: var(--primer-text-body-size-large, 16px);
     // stylelint-disable-next-line primer/spacing
     margin-top: var(--primer-control-medium-paddingBlock, 6px);
