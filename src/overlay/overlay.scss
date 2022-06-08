@@ -256,6 +256,7 @@ $primer-borderRadius-large: 0.75rem;
 @mixin Overlay-backdrop--transparent() {
   position: absolute;
   background-color: transparent;
+  z-index: 999;
 }
 
 // variants must be mixins so we can extend within a media query (@extend is not supported inside media queries)
