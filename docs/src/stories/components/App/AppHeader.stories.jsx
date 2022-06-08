@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import {MarkGithubIcon, BellIcon, PlusIcon} from '@primer/octicons-react'
+import {MarkGithubIcon, SearchIcon, TerminalIcon, BellIcon, PlusIcon} from '@primer/octicons-react'
 //import { FlashTemplate } from '../Alerts/Flash.stories'
 
 export default {
@@ -45,7 +45,8 @@ export const AppHeaderTemplate = ({
         <div className="AppHeader-logo">
           {/*
             * The button element can be focusable. Click event opens side sheet
-            * with main global menu
+            * with main global menu. A direct link to the GitHub homepage is
+            * available before the global header, in the AppFrame component.
             * */}
           <button aria-expanded="false" aria-haspopup="dialog" aria-label="Open main menu">
             {/*
@@ -73,9 +74,40 @@ export const AppHeaderTemplate = ({
           * Required region right after the GitHub logo. May be a breadcrumb or
           * page title, placed left-aligned.
           */}
-        <div class="AppHeader-context">
+        <div className="AppHeader-context">
           <nav aria-label=""></nav>
         </div>
+        
+
+        {/*
+          * AppHeader-search
+          * -----------------
+          */}
+        <div className="AppHeader-search">
+          <form>
+            {/*
+              * AppHeader-search-wrap needs to have two direct children:
+              * - AppHeader-search-label
+              * - AppHeader-search-control
+             */}
+            <div className="AppHeader-search-wrap">
+              <label className="AppHeader-search-label" for="AppHeader-searchInput">Type <kbd>/</kbd> to search</label>
+              <div className="AppHeader-search-control">
+                <span className="AppHeader-search-visual--leading"><SearchIcon /></span>
+                <input name="q" className="form-control input-contrast" id="AppHeader-searchInput" type="search" placeholder="Search or jump to..." />
+              </div>
+              <button className="AppHeader-search-action--trailing">
+              {/*
+                * Replace with ViewComponent:
+                * <%= render(Primer::OcticonComponent.new(:"xxxxx")) %>
+                */}
+                <TerminalIcon />
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div className="AppHeader-divider"></div>
 
         <a className={clsx('AppHeader-button', bellHasIndicator && 'AppHeader-button--hasIndicator')} href="#">
           {/*

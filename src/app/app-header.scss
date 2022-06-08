@@ -10,13 +10,15 @@
   .AppHeader-globalBar {
     padding: var(--base-size-16, 16px); // Replace with `base-size-16`
     display: flex;
-    gap: var(--base-size-16, 16px); // Replace with `base-size-16`
+    gap: var(--base-size-8, 8px); // Replace with `base-size-16`
 
-    // GitHub logo + user avatar
+    // #region [ logo + avatar ]
 
     .AppHeader-logo, .AppHeader-user {
       flex: 0 0 auto;
       display: grid;
+      width: var(--base-size-32, 32px);
+      height: var(--base-size-32, 32px);
 
       button, a {
         grid-area: 1 / 1;
@@ -82,7 +84,9 @@
       }
     }
 
-    // Context region
+    // #endregion [ logo + avatar ]
+
+    // #region [ Context ]
     // Breadcrumb, title, any contextual information directly after the logo
 
     .AppHeader-context {
@@ -90,6 +94,167 @@
       height: var(--base-size-32, 32px);
       //background: #ececec;
     }
+
+    // #endregion [ Context ]
+
+    // #region [ Search ]
+
+    .AppHeader-search {
+      position: relative;
+      width: 400px;
+
+      .AppHeader-search-wrap {
+        display: grid;
+      }
+
+      .AppHeader-search-label {
+        grid-area: 1 / 1;
+        display: block;
+        font-weight: normal;
+        color: var(--color-fg-subtle); // non-essential
+        pointer-events: none;
+        z-index: 1;
+        padding-block: var(--primer-control-medium-paddingBlock);
+        padding-inline: calc(var(--primer-control-medium-paddingInline-condensed) + var(--base-size-16) + var(--primer-control-medium-gap));
+        line-height: var(--primer-text-body-lineHeight-medium, 20px);
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+
+        kbd {
+          display: inline-grid;
+          align-items: center;
+          justify-content: center;
+          background: transparent;
+          border-radius: var(--primer-borderRadius-small);
+          vertical-align: baseline;
+          width: var(--base-size-12);
+          height: var(--base-size-16);
+          border: var(--primer-borderWidth-thin, 1px) solid var(--color-fg-subtle);
+          color: inherit;
+          padding: 0;
+          box-shadow: none;
+        }
+      }
+
+      .AppHeader-search-control {
+        grid-area: 1 / 1;
+        position: relative;
+        z-index: 2;
+      }
+
+      .AppHeader-search-visual--leading {
+        position: absolute;
+        display: block;
+        width: var(--base-size-16, 16px);
+        height: var(--base-size-16, 16px);
+        top: var(--base-size-8, 8px);
+        left: var(--base-size-8, 8px);
+        color: var(--color-fg-muted);
+        pointer-events: none;
+
+        svg {
+          display: block !important;
+        }
+      }
+
+      input[type="search"] {
+        width: 100%;
+        padding-block: calc(var(--primer-control-medium-paddingBlock) - var(--primer-borderWidth-thin));
+        padding-inline: calc(var(--primer-control-medium-paddingInline-condensed) + var(--base-size-16) + var(--primer-control-medium-gap) - var(--primer-borderWidth-thin));
+
+        &:placeholder-shown {
+          background: transparent;
+        }
+
+        &:not(:placeholder-shown) {
+          background: var(--color-canvas-default);
+        }
+
+        &::placeholder {
+          opacity: 1;
+          color: transparent;
+        }
+
+        &:focus {
+          background: var(--color-canvas-default);
+
+          &::placeholder {
+            color: var(--color-fg-subtle);
+            transition: color 120ms linear;
+          }
+
+          &:-moz-placeholder {
+            opacity: 1;
+            color: var(--color-fg-subtle);
+            transition: color 120ms linear;
+          }
+        }
+      }
+
+      .AppHeader-search-action--trailing {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: var(--base-size-4, 4px);
+        right: var(--base-size-4, 4px);
+        z-index: 4;
+        width: var(--primer-control-xsmall-size, 24px);
+        height: var(--primer-control-xsmall-size, 24px);
+        padding: 0;
+        border: none;
+        border-radius: var(--primer-borderRadius-small);
+        background: transparent;
+        color: var(--color-fg-muted);
+
+        &:hover {
+          background: var(--color-action-list-item-default-hover-bg);
+        }
+
+        &:active {
+          background: var(--color-action-list-item-default-active-bg);
+        }
+
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: calc((var(--primer-control-xsmall-size) - var(--base-size-16)) / 2);
+          left: calc(var(--base-size-4, 4px) * -1);
+          width: var(--primer-borderWidth-thin);
+          height: var(--base-size-16);
+          background: var(--color-border-default);
+        }
+
+        &:after {
+          @include minTouchTarget(var(--primer-control-medium-size), var(--primer-control-medium-size));
+
+          @media (pointer: coarse) {
+            min-width: var(--primer-control-minTarget-coarse);
+            min-height: var(--primer-control-minTarget-coarse);
+          }
+        }
+
+        svg {
+          color: inherit;
+        }
+      }
+    }
+    // #endregion [ Search ] 
+
+    // #region [ Actions ]
+
+    .AppHeader-divider {
+      height: var(--base-size-20, 20px);
+      width: var(--primer-borderWidth-thin, 1px);
+      height: var(--base-size-20, 20px);
+      background: var(--color-border-default);
+      margin: calc((var(--primer-control-medium-size) - var(--base-size-20)) / 2) 0;
+    }
+
+    // #endregion [ Actions ]
+
   }
 
   // Local bar
