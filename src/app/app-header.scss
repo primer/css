@@ -131,6 +131,8 @@
           vertical-align: baseline;
           width: var(--base-size-12);
           height: var(--base-size-16);
+          font-size: var(--primer-text-caption-size);
+          line-height: var(--primer-text-caption-lineHeight);
           border: var(--primer-borderWidth-thin, 1px) solid var(--color-fg-subtle);
           color: inherit;
           padding: 0;
