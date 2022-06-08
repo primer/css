@@ -8,9 +8,9 @@
   // Global bar
 
   .AppHeader-globalBar {
-    padding: var(--base-size-16, 16px); // Replace with `base-size-16`
+    padding: var(--base-size-16, 16px);
     display: flex;
-    gap: var(--base-size-8, 8px); // Replace with `base-size-16`
+    gap: var(--base-size-12, 12px);
 
     // #region [ logo + avatar ]
 
@@ -120,6 +120,7 @@
         width: 100%;
         white-space: nowrap;
         overflow: hidden;
+        text-overflow: ellipsis;
 
         kbd {
           display: inline-grid;
@@ -162,6 +163,7 @@
         width: 100%;
         padding-block: calc(var(--primer-control-medium-paddingBlock) - var(--primer-borderWidth-thin));
         padding-inline: calc(var(--primer-control-medium-paddingInline-condensed) + var(--base-size-16) + var(--primer-control-medium-gap) - var(--primer-borderWidth-thin));
+        transition: none;
 
         &:placeholder-shown {
           background: transparent;
@@ -181,13 +183,11 @@
 
           &::placeholder {
             color: var(--color-fg-subtle);
-            transition: color 120ms linear;
           }
 
           &:-moz-placeholder {
             opacity: 1;
             color: var(--color-fg-subtle);
-            transition: color 120ms linear;
           }
         }
       }
@@ -251,6 +251,12 @@
       height: var(--base-size-20, 20px);
       background: var(--color-border-default);
       margin: calc((var(--primer-control-medium-size) - var(--base-size-20)) / 2) 0;
+    }
+
+    .AppHeader-actions {
+      display: grid;
+      grid-auto-flow: column;
+      gap: var(--primer-controlStack-medium-gap-auto);
     }
 
     // #endregion [ Actions ]

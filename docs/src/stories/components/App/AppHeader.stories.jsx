@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import {MarkGithubIcon, SearchIcon, TerminalIcon, BellIcon, PlusIcon} from '@primer/octicons-react'
+import {MarkGithubIcon, SearchIcon, TerminalIcon, BellIcon, PlusIcon, InboxIcon} from '@primer/octicons-react'
 //import { FlashTemplate } from '../Alerts/Flash.stories'
 
 export default {
@@ -16,7 +16,7 @@ export default {
       options: ['none', 'info', 'warning', 'error', 'success'],
     },
 
-    bellHasIndicator: {
+    notificationsHasIndicator: {
       control: 'boolean',
     },
 
@@ -25,7 +25,7 @@ export default {
 
 export const AppHeaderTemplate = ({
   context,
-  bellHasIndicator
+  notificationsHasIndicator
 }) => (
   <>
     <div className={clsx('AppHeader')}>
@@ -109,35 +109,37 @@ export const AppHeaderTemplate = ({
 
         <div className="AppHeader-divider"></div>
 
-        <a className={clsx('AppHeader-button', bellHasIndicator && 'AppHeader-button--hasIndicator')} href="#">
-          {/*
-            * Replace with ViewComponent:
-            * <%= render(Primer::OcticonComponent.new(:"bell")) %>
-            */}
-          <BellIcon />
-        </a>
+        <div className="AppHeader-actions">
+          <a className={clsx('AppHeader-button', notificationsHasIndicator && 'AppHeader-button--hasIndicator')} href="#">
+            {/*
+              * Replace with ViewComponent:
+              * <%= render(Primer::OcticonComponent.new(:"bell")) %>
+              */}
+            <InboxIcon />
+          </a>
 
-        <a className="AppHeader-button" href="#">
-          {/*
-            * Replace with ViewComponent:
-            * <%= render(Primer::OcticonComponent.new(:"plus")) %>
-            */}
-          <PlusIcon />
-        </a>
+          <a className="AppHeader-button" href="#">
+            {/*
+              * Replace with ViewComponent:
+              * <%= render(Primer::OcticonComponent.new(:"plus")) %>
+              */}
+            <PlusIcon />
+          </a>
 
-        {/*
-          * AppHeader-user
-          * --------------
-          * Same as the AppHeader-logo structure, with button and anchor
-          * elements working together to enable fully accessible interaction
-          * with keyboard + mouse
-          */}
-        <div class="AppHeader-user">
-          <button aria-expanded="false" aria-haspopup="dialog" aria-label="Open user menu">
-            <img alt="@octocat" src="https://github.com/octocat.png" />
-          </button>
-          
-          <a href="/octocat" tabindex="-1" aria-hidden>octocat profile</a>
+          {/*
+            * AppHeader-user
+            * --------------
+            * Same as the AppHeader-logo structure, with button and anchor
+            * elements working together to enable fully accessible interaction
+            * with keyboard + mouse
+            */}
+          <div class="AppHeader-user">
+            <button aria-expanded="false" aria-haspopup="dialog" aria-label="Open user menu">
+              <img alt="@octocat" src="https://github.com/octocat.png" />
+            </button>
+            
+            <a href="/octocat" tabindex="-1" aria-hidden>octocat profile</a>
+          </div>
         </div>
       </div>
 
