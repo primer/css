@@ -5,12 +5,45 @@
   background: var(--AppHeader-bg);
   color: var(--color-fg-default);
 
+  // AppHeader structure
+  // ===================
+  // 
+  // .AppHeader
+  // ├─ .AppHeader-globalBar
+  // │  ├─ .AppHeader-globalBar-start
+  // │  │  ├─ .AppHeader-logo
+  // │  │  ├─ .AppHeader-context
+  // │  │  │  ├─ .AppHeader-context-item
+  // │  ├─ .AppHeader-globalBar-end
+  // │  │  ├─ .AppHeader-search
+  // │  │  │  ├─ .AppHeader-search-whenNarrow
+  // │  │  │  ├─ .AppHeader-search-whenRegular
+  // │  │  │  │  ├─ .AppHeader-search-wrap
+  // │  │  │  │  │  ├─ .AppHeader-search-label
+  // │  │  │  │  │  ├─ .AppHeader-search-control
+  // │  │  ├─ .AppHeader-actions
+  // │  │  ├─ .AppHeader-user
+  // ├─ .AppHeader-localBar
+
+
   // Global bar
 
   .AppHeader-globalBar {
     padding: var(--base-size-16, 16px);
     display: flex;
-    gap: var(--base-size-12, 12px);
+    gap: var(--base-size-16, 16px);
+
+    .AppHeader-globalBar-start {
+      flex: 1 1 auto;
+      display: flex;
+      gap: var(--base-size-8, 8px);
+    }
+
+    .AppHeader-globalBar-end {
+      flex: 1 1 auto;
+      display: flex;
+      gap: var(--primer-controlStack-medium-gap-auto, 8px);
+    }
 
     // #region [ logo + avatar ]
 
@@ -92,7 +125,7 @@
     .AppHeader-context {
       flex: 1 1 auto;
       height: var(--base-size-32, 32px);
-      //background: #ececec;
+      background: pink;
 
       ul, li {
         list-style: none;
@@ -141,14 +174,13 @@
     .AppHeader-search {
       display: flex;
       position: relative;
-      max-width: 400px;
       flex: 1 1 auto;
       justify-content: flex-end;
 
       // Narrow viewports
 
       @media (min-width: #{map-get($breakpoints, 'md')}) {
-        .AppHeader-search-button-whenNarrow {
+        .AppHeader-search-whenNarrow {
           display: none;
         }
       }
@@ -156,15 +188,15 @@
       // Regular viewports
 
       @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
-        .AppHeader-search-form {
+        .AppHeader-search-whenRegular {
           display: none;
         }
       }
 
-      .AppHeader-search-form {
+      .AppHeader-search-whenRegular {
         flex: 1 1 auto;
-        max-width: 400px;
-        min-width: 144px;
+        max-width: 24rem; /* 384px */
+        min-width: 12rem; /* 192px */
       }
 
       .AppHeader-search-wrap {
@@ -329,7 +361,27 @@
     .AppHeader-actions {
       display: grid;
       grid-auto-flow: column;
-      gap: var(--primer-controlStack-medium-gap-auto);
+      gap: var(--primer-controlStack-medium-gap-auto, 8px);
+
+      &:before {
+        content: "";
+        display: block;
+        height: var(--base-size-20, 20px);
+        width: var(--primer-borderWidth-thin, 1px);
+        height: var(--base-size-20, 20px);
+        background: var(--color-border-default);
+        margin-block: calc((var(--primer-control-medium-size) - var(--base-size-20)) / 2);
+
+        @media (pointer: fine) {
+          margin-inline: var(--base-size-4, 4px);
+        }
+      }
+
+      // Hide actions on base-breakpoint-small	 (444px)
+      
+      @media (max-width: #{map-get($breakpoints, 'sm') - 0.02px}) {
+        display: none;
+      }
     }
 
     // #endregion [ Actions ]
