@@ -67,6 +67,7 @@
 
   // Remove dividers
 
+  &.SegmentedControl-button--selected::before,
   &.SegmentedControl-button--selected + .SegmentedControl-button::before {
     border-color: transparent;
   }
