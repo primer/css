@@ -86,66 +86,62 @@ export const AppHeaderTemplate = ({
         {/*
           * AppHeader-search
           * -----------------
+          * This region shows a search input on regular viewports, and search
+          * button on narrow viewports.
           */}
         <div className="AppHeader-search">
-          <div className="show-whenNarrow">
-            <a className={clsx('AppHeader-button')} href="#" aria-label="Search or jump to...">
-                {/*
-                  * Replace with ViewComponent:
-                  * <%= render(Primer::OcticonComponent.new(:"bell")) %>
-                  */}
-                <SearchIcon />
-              </a>
-          </div>
-          <div className="show-whenRegular">
-            <form>
+          {/* Narrow viewport-specific search button */}
+          <button className={clsx('AppHeader-button', 'AppHeader-search-button-whenNarrow')} aria-label="Search or jump to...">
+            {/*
+              * Replace with ViewComponent:
+              * <%= render(Primer::OcticonComponent.new(:"search")) %>
+              */}
+            <SearchIcon />
+          </button>
+
+          {/* Regular viewport search input */}
+          <form className="AppHeader-search-form">
+            
+            <div className="AppHeader-search-wrap AppHeader-search-wrap--hasTrailing">
               {/*
                 * AppHeader-search-wrap needs to have two direct children:
                 * - AppHeader-search-label
                 * - AppHeader-search-control
-              */}
-              <div className="AppHeader-search-wrap">
-                <label className="AppHeader-search-label" for="AppHeader-searchInput">Type <kbd>/</kbd> to search</label>
-                <div className="AppHeader-search-control">
-                  <span className="AppHeader-search-visual--leading"><SearchIcon /></span>
-                  <input name="q" className="form-control input-contrast" id="AppHeader-searchInput" type="search" placeholder="Search or jump to..." />
-                </div>
-                <button className="AppHeader-search-action--trailing">
-                {/*
-                  * Replace with ViewComponent:
-                  * <%= render(Primer::OcticonComponent.new(:"xxxxx")) %>
-                  */}
-                  <TerminalIcon />
-                </button>
+                */}
+              <label className="AppHeader-search-label" for="AppHeader-searchInput">Type <kbd>/</kbd> to search</label>
+              <div className="AppHeader-search-control">
+                <span className="AppHeader-search-visual--leading"><SearchIcon /></span>
+                <input name="q" className="form-control input-contrast" id="AppHeader-searchInput" type="search" placeholder="Search or jump to..." />
               </div>
-            </form>
-          </div>
+              <button className="AppHeader-search-action--trailing">
+              {/*
+                * Replace with ViewComponent:
+                * <%= render(Primer::OcticonComponent.new(:"xxxxx")) %>
+                */}
+                <TerminalIcon />
+              </button>
+            </div>
+          </form>
         </div>
         
-        <div className="show-whenRegular">
-          <div className="AppHeader-divider"></div>
-        </div>
+        <div className="AppHeader-divider"></div>
 
         <div className="AppHeader-actions">
-          <div className="show-whenRegular">
-            <a className={clsx('AppHeader-button', notificationsHasIndicator && 'AppHeader-button--hasIndicator')} href="#">
-              {/*
-                * Replace with ViewComponent:
-                * <%= render(Primer::OcticonComponent.new(:"bell")) %>
-                */}
-              <InboxIcon />
-            </a>
-          </div>
+          <a className={clsx('AppHeader-button', notificationsHasIndicator && 'AppHeader-button--hasIndicator')} href="#">
+            {/*
+              * Replace with ViewComponent:
+              * <%= render(Primer::OcticonComponent.new(:"bell")) %>
+              */}
+            <InboxIcon />
+          </a>
           
-          <div className="show-whenRegular">
-            <a className="AppHeader-button" href="#">
-              {/*
-                * Replace with ViewComponent:
-                * <%= render(Primer::OcticonComponent.new(:"plus")) %>
-                */}
-              <PlusIcon />
-            </a>
-          </div>
+          <a className="AppHeader-button" href="#">
+            {/*
+              * Replace with ViewComponent:
+              * <%= render(Primer::OcticonComponent.new(:"plus")) %>
+              */}
+            <PlusIcon />
+          </a>
 
           {/*
             * AppHeader-user

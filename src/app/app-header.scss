@@ -106,6 +106,7 @@
 
         &:not(:last-child):after {
           display: inline-block;
+          white-space: nowrap;
           content: "/";
         }
 
@@ -138,11 +139,42 @@
     // #region [ Search ]
 
     .AppHeader-search {
+      display: flex;
       position: relative;
-      width: 400px;
+      max-width: 400px;
+      flex: 1 1 auto;
+      justify-content: flex-end;
+
+      // Narrow viewports
+
+      @media (min-width: #{map-get($breakpoints, 'md')}) {
+        .AppHeader-search-button-whenNarrow {
+          display: none;
+        }
+      }
+
+      // Regular viewports
+
+      @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
+        .AppHeader-search-form {
+          display: none;
+        }
+      }
+
+      .AppHeader-search-form {
+        flex: 1 1 auto;
+        max-width: 400px;
+        min-width: 144px;
+      }
 
       .AppHeader-search-wrap {
         display: grid;
+
+        &.AppHeader-search-wrap--hasTrailing {
+          input[type="search"] {
+            padding-inline-end: calc(var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) + var(--primer-control-medium-gap, 8px) - var(--primer-borderWidth-thin, 1px));
+          }
+        }
       }
 
       .AppHeader-search-label {
@@ -201,8 +233,9 @@
 
       input[type="search"] {
         width: 100%;
-        padding-block: calc(var(--primer-control-medium-paddingBlock) - var(--primer-borderWidth-thin));
-        padding-inline: calc(var(--primer-control-medium-paddingInline-condensed) + var(--base-size-16) + var(--primer-control-medium-gap) - var(--primer-borderWidth-thin));
+        padding-block: calc(var(--primer-control-medium-paddingBlock, 6px) - var(--primer-borderWidth-thin, 1px));
+        padding-inline-start: calc(var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) + var(--primer-control-medium-gap, 8px) - var(--primer-borderWidth-thin, 1px));
+        padding-inline-end: var(--primer-control-medium-paddingInline-condensed, 8px);
         transition: none;
 
         &:placeholder-shown {
@@ -330,6 +363,7 @@
     border: var(--primer-borderWidth-thin, 1px) solid var(--color-border-default);
     border-radius: var(--primer-borderRadius-medium, 6px);
     color: var(--color-fg-muted);
+    background: transparent;
     align-items: center;
     justify-content: center;
 
