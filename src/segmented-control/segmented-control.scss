@@ -121,7 +121,7 @@
 }
 
 // Icon only when narrow
-@media (max-width: $width-md) { // TODO: use token
+@media (max-width: $width-md) {
   .SegmentedControl--iconOnly-whenNarrow {
     .SegmentedControl-button {
       width: var(--primer-control-medium-size, 32px);
