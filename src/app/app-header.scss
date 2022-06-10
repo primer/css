@@ -93,6 +93,44 @@
       flex: 1 1 auto;
       height: var(--base-size-32, 32px);
       //background: #ececec;
+
+      ul, li {
+        list-style: none;
+      }
+
+      ul {
+        display: flex;
+      }
+      li {
+        flex: 0 1 auto;
+
+        &:not(:last-child):after {
+          display: inline-block;
+          content: "/";
+        }
+
+        &:last-child .AppHeader-context-item {
+          font-weight: var(--base-text-weight-semibold, 600);
+        }
+      }
+
+      .AppHeader-context-item {
+        color: inherit;
+        display: inline-block;
+        padding-inline: var(--primer-control-medium-paddingInline-condensed, 8px);
+        padding-block: var(--primer-control-medium-paddingBlock, 6px);
+        line-height: var(--primer-text-body-lineHeight-medium, calc(20 / 14));
+        border-radius: var(--primer-borderRadius-medium, 6px);
+        text-decoration: none !important;
+
+        &:hover {
+          background: var(--color-action-list-item-default-hover-bg);
+        }
+
+        &:active {
+          background: var(--color-action-list-item-default-active-bg);
+        }
+      }
     }
 
     // #endregion [ Context ]
@@ -268,7 +306,7 @@
   // Local bar
 
   .AppHeader-localBar {
-    padding: 0 var(--base-size-16, 16px) var(--base-size-16, 16px);
+    padding: 0 var(--base-size-16, 16px);
     //background: lightcyan;
     box-shadow: inset 0 calc(var(--primer-borderWidth-thin, 1px) * -1) var(--color-border-default);
   }

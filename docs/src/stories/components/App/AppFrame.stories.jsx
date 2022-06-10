@@ -162,6 +162,19 @@ Playground.args = {
   bannerType: 'none',
   headerChildren:
     <>
-      <AppHeader />
+      <AppHeader localBarChildren={
+        <>
+          <nav aria-label="Default with nav element" data-view-component="true" class="UnderlineNav">
+            <ul data-view-component="true" class="UnderlineNav-body list-style-none">
+              <li data-view-component="true" class="d-inline-flex">
+                <a href="#" aria-current="page" data-view-component="true" class="UnderlineNav-item">Item 1</a>
+              </li>
+              <li data-view-component="true" class="d-inline-flex">
+                <a href="#" data-view-component="true" class="UnderlineNav-item">Item 2</a>
+              </li>
+            </ul>
+          </nav>
+        </>
+      } />
     </>
 };
