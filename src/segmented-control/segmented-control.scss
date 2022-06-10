@@ -104,23 +104,6 @@
 
 // Variants -----------------------------------------
 
-// disabled
-.SegmentedControl--disabled { // TODO: Replace with aria-disabled?
-  .SegmentedControl-button {
-    color: var(--color-primer-fg-disabled);
-    pointer-events: none;
-    cursor: default;
-
-    &.SegmentedControl-button--selected {
-      border-color: var(--color-border-default);
-    }
-  }
-
-  .SegmentedControl-leadingVisual {
-    color: var(--color-primer-fg-disabled);
-  }
-}
-
 // fullWidth
 .SegmentedControl--fullWidth {
   display: flex;
