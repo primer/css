@@ -25,20 +25,20 @@
   border: var(--primer-borderWidth-thin, $border-width) $border-style transparent;
   // stylelint-disable-next-line primer/borders
   border-radius: var(--primer-borderRadius-medium, $border-radius);
-  transition: border-color, background-color 180ms cubic-bezier(0.3, 0.1, 0.5, 1);
+  transition: border-color, background-color var(--primer-duration-medium, 160ms) cubic-bezier(0.3, 0.1, 0.5, 1);
   align-items: center;
   justify-content: center;
   gap: var(--primer-control-medium-gap, $spacer-2);
 
   &:hover {
     background-color: var(--color-segmented-control-button-hover-bg);
-    transition-duration: 120ms;
+    transition-duration: var(--primer-duration-fast, 80ms);
   }
 
   &:active {
     background-color: var(--color-segmented-control-button-active-bg);
     border-color: var(--color-segmented-control-button-active-border);
-    transition-duration: 60ms;
+    transition-duration: 0;
   }
 
   // Selected
@@ -62,7 +62,7 @@
     content: '';
     // stylelint-disable-next-line primer/borders
     border-left: var(--primer-borderWidth-thin, $border-width) $border-style var(--color-border-default);
-    transition: border-color 180ms cubic-bezier(0.3, 0.1, 0.5, 1);
+    transition: border-color var(--primer-duration-medium, 160ms) cubic-bezier(0.3, 0.1, 0.5, 1);
   }
 
   // Remove dividers
@@ -77,7 +77,7 @@
     &::before,
     + .SegmentedControl-button::before {
       border-color: transparent;
-      transition-duration: 60ms;
+      transition-duration: var(--primer-duration-fast, 80ms);
     }
   }
 }
