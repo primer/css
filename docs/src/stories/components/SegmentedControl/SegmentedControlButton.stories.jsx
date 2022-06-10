@@ -7,7 +7,7 @@ export default {
   layout: 'padded',
 
   argTypes: {
-    ariaCurrent: {
+    selected: {
       control: {type: 'boolean'},
       description: 'Currently selected item',
     },
@@ -31,13 +31,14 @@ export default {
 }
 
 // build every component case here in the template (private api)
-export const SegmentedControlButtonTemplate = ({ariaCurrent, text, leadingVisual, iconOnly }) => (
+export const SegmentedControlButtonTemplate = ({selected, text, leadingVisual, iconOnly }) => (
   <>
     <button className={clsx(
         'SegmentedControl-button',
         iconOnly && `SegmentedControl-button--iconOnly`,
+        selected && `SegmentedControl-button--selected`,
       )}
-      aria-current={ariaCurrent}
+      aria-current={selected}
       aria-label={iconOnly && text}
     >
       {leadingVisual && (
@@ -55,5 +56,5 @@ export const Playground = SegmentedControlButtonTemplate.bind({})
 Playground.args = {
   text: 'Preview',
   leadingVisual: true,
-  ariaCurrent: true,
+  selected: true,
 }

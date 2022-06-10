@@ -43,7 +43,7 @@
 
   // Selected
 
-  &[aria-current='true'] {
+  &.SegmentedControl-button--selected {
     // stylelint-disable-next-line primer/typography
     font-weight: var(--base-text-weight-semibold, $font-weight-bold);
     background-color: var(--color-btn-bg);
@@ -67,7 +67,7 @@
 
   // Remove dividers
 
-  &[aria-current='true'] + .SegmentedControl-button::before {
+  &.SegmentedControl-button--selected + .SegmentedControl-button::before {
     border-color: transparent;
   }
 
@@ -111,7 +111,7 @@
     pointer-events: none;
     cursor: default;
 
-    &[aria-current='true'] {
+    &.SegmentedControl-button--selected {
       border-color: var(--color-border-default);
     }
   }
