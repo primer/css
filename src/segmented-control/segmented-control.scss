@@ -137,7 +137,17 @@
 
 // Increase touch target
 @media (pointer: coarse) {
-  .SegmentedControl-button::after {
-    @include minTouchTarget($min-height: var(--primer-control-minTarget-coarse, 44px));
+  .SegmentedControl-button {
+    min-width: var(--primer-control-minTarget-coarse, 44px);
+
+    &::after {
+      @include minTouchTarget($min-height: var(--primer-control-minTarget-coarse, 44px));
+    }
+  }
+
+  // reset for icon-only buttons
+  .SegmentedControl-button--iconOnly,
+  .SegmentedControl--iconOnly-whenNarrow .SegmentedControl-button {
+    min-width: unset;
   }
 }
