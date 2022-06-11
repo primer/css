@@ -13,7 +13,9 @@
   // │  ├─ .AppHeader-globalBar-start
   // │  │  ├─ .AppHeader-logo
   // │  │  ├─ .AppHeader-context
-  // │  │  │  ├─ .AppHeader-context-item
+  // │  │  │  ├─ .AppHeader-context-compact
+  // │  │  │  ├─ .AppHeader-context-full
+  // │  │  │  │  ├─ .AppHeader-context-item
   // │  ├─ .AppHeader-globalBar-end
   // │  │  ├─ .AppHeader-search
   // │  │  │  ├─ .AppHeader-search-whenNarrow
@@ -42,7 +44,12 @@
     .AppHeader-globalBar-end {
       flex: 1 1 auto;
       display: flex;
+      justify-content: flex-end;
       gap: var(--primer-controlStack-medium-gap-auto, 8px);
+
+      @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
+        flex-grow: 0;
+      }
     }
 
     // #region [ logo + avatar ]
@@ -125,7 +132,6 @@
     .AppHeader-context {
       flex: 1 1 auto;
       height: var(--base-size-32, 32px);
-      background: pink;
 
       ul, li {
         list-style: none;
@@ -141,10 +147,57 @@
           display: inline-block;
           white-space: nowrap;
           content: "/";
+          color: var(--color-fg-muted);
         }
 
         &:last-child .AppHeader-context-item {
           font-weight: var(--base-text-weight-semibold, 600);
+        }
+      }
+
+      @media (min-width: #{map-get($breakpoints, 'md')}) {
+        .AppHeader-context-compact {
+          display: none;
+        }
+      }
+
+      @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
+        .AppHeader-context-full {
+          display: none;
+        }
+      }
+
+      .AppHeader-context-compact {
+        a {
+          display: block;
+          color: inherit;
+          height: 48px;
+          margin: -8px 0;
+          padding-block: 6px;
+          padding-inline: var(--primer-control-medium-paddingInline-condensed, 8px);
+          border-radius: 6px;
+          text-decoration: none;
+
+          &:hover {
+            background: var(--color-action-list-item-default-hover-bg);
+          }
+  
+          &:active {
+            background: var(--color-action-list-item-default-active-bg);
+          }
+        }
+
+        // fixme
+        .AppHeader-context-compact-lead {
+          display: block;
+          font-size: 12px;
+          line-height: 16px;
+          color: var(--color-fg-muted);
+        }
+
+        strong {
+          display: block;
+          line-height: 20px;
         }
       }
 
@@ -177,17 +230,14 @@
       flex: 1 1 auto;
       justify-content: flex-end;
 
-      // Narrow viewports
-
       @media (min-width: #{map-get($breakpoints, 'md')}) {
         .AppHeader-search-whenNarrow {
           display: none;
         }
       }
 
-      // Regular viewports
-
       @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
+        flex-grow: 0;
         .AppHeader-search-whenRegular {
           display: none;
         }

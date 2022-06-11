@@ -76,12 +76,20 @@ export const AppHeaderTemplate = ({
             * page title, placed left-aligned.
             */}
           <div className="AppHeader-context">
-            <nav aria-label="">
-              <ul>
-                <li><a className="AppHeader-context-item" href="#">item 1</a></li>
-                <li><a className="AppHeader-context-item" href="#">item 2</a></li>
-              </ul>
-            </nav>
+            <div className="AppHeader-context-compact">
+              <a href="#">
+                <span className="AppHeader-context-compact-lead">torvalds/</span>
+                <strong>linux</strong>
+              </a>
+            </div>
+            <div className="AppHeader-context-full">
+              <nav aria-label="">
+                <ul>
+                  <li><a className="AppHeader-context-item" href="#">torvalds<span className="sr-only">/</span></a></li>
+                  <li><a className="AppHeader-context-item" href="#">linux</a></li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
 
