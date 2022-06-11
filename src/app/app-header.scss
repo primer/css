@@ -7,6 +7,9 @@
 
   // AppHeader structure
   // ===================
+  //
+  // Here's the markup structure of AppHeader:
+  //
   // 
   // .AppHeader
   // ├─ .AppHeader-globalBar
@@ -71,7 +74,7 @@
         background: transparent;
         padding: 0;
         border: none;
-        border-radius: 100%;
+        border-radius: 6px;
         outline-offset: var(--primer-borderWidth-normal, 2px);
       }
 
@@ -126,48 +129,30 @@
 
     // #endregion [ logo + avatar ]
 
-    // #region [ Context ]
-    // Breadcrumb, title, any contextual information directly after the logo
+    // #region [ Context region ]
+
+    // The context region is where the page title or the "breadcrumb" appears,
+    // right after the logo. It has two modes, that change on
+    // `base-breakpoint-small` breakpoint:
+    // 
+    // - compact: 
+    //   Up to 2 levels of hierarchy are displayed, with a single anchor.
+    //
+    // - full:
+    //   multiple levels can be shown, with individual anchors for each level.
 
     .AppHeader-context {
       flex: 1 1 auto;
       height: var(--base-size-32, 32px);
 
-      ul, li {
-        list-style: none;
-      }
-
-      ul {
-        display: flex;
-      }
-      li {
-        flex: 0 1 auto;
-
-        &:not(:last-child):after {
-          display: inline-block;
-          white-space: nowrap;
-          content: "/";
-          color: var(--color-fg-muted);
-        }
-
-        &:last-child .AppHeader-context-item {
-          font-weight: var(--base-text-weight-semibold, 600);
-        }
-      }
-
-      @media (min-width: #{map-get($breakpoints, 'md')}) {
-        .AppHeader-context-compact {
-          display: none;
-        }
-      }
-
-      @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
-        .AppHeader-context-full {
-          display: none;
-        }
-      }
-
       .AppHeader-context-compact {
+
+        // Fixme: change to design token syntax when 
+       // @custom-media --base-
+        @media (min-width: #{map-get($breakpoints, 'sm')}) {
+          display: none;
+        }
+
         a {
           display: block;
           color: inherit;
@@ -187,28 +172,74 @@
           }
         }
 
-        // fixme
         .AppHeader-context-compact-lead {
-          display: block;
+          display: flex; // Todo: fix ellipsis
           font-size: 12px;
-          line-height: 16px;
+          line-height: 16px; // Todo: Replace with design token, `caption` style
           color: var(--color-fg-muted);
+
         }
 
-        strong {
+        .AppHeader-context-compact-lead--parentItem {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        .AppHeader-context-compact-lead--mainItem {
           display: block;
-          line-height: 20px;
+          line-height: 20px; // Todo: replace with design token, `body-medium` style
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .AppHeader-context-full {
+        display: inline-flex;
+        min-width: 0;
+        max-width: 100%;
+
+        @media (max-width: #{map-get($breakpoints, 'sm') - 0.02px}) {
+          display: none;
+      }
+
+        ul, li {
+          list-style: none;
+        }
+  
+        ul {
+          display: flex;
+        }
+        li {
+          flex: 0 1 auto;
+  
+          &:not(:last-child):after {
+            white-space: nowrap;
+            content: "/";
+            color: var(--color-fg-muted);
+          }
+  
+          &:last-child .AppHeader-context-item {
+            font-weight: var(--base-text-weight-semibold, 600);
+            flex-basis: 200%;
+          }
         }
       }
 
       .AppHeader-context-item {
         color: inherit;
-        display: inline-block;
+        display: inline-flex;
         padding-inline: var(--primer-control-medium-paddingInline-condensed, 8px);
         padding-block: var(--primer-control-medium-paddingBlock, 6px);
         line-height: var(--primer-text-body-lineHeight-medium, calc(20 / 14));
         border-radius: var(--primer-borderRadius-medium, 6px);
         text-decoration: none !important;
+        min-width: 1ch;
+        max-width: fit-content;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
 
         &:hover {
           background: var(--color-action-list-item-default-hover-bg);
@@ -220,7 +251,7 @@
       }
     }
 
-    // #endregion [ Context ]
+    // #endregion [ Context region ]
 
     // #region [ Search ]
 

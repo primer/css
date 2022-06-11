@@ -78,14 +78,16 @@ export const AppHeaderTemplate = ({
           <div className="AppHeader-context">
             <div className="AppHeader-context-compact">
               <a href="#">
-                <span className="AppHeader-context-compact-lead">torvalds/</span>
-                <strong>linux</strong>
+                <span className="AppHeader-context-compact-lead">
+                  <span className="AppHeader-context-compact-lead--parentItem">torvalds_the_great_productive_old_man</span>/
+                </span>
+                <strong className="AppHeader-context-compact-lead--mainItem">linux</strong>
               </a>
             </div>
             <div className="AppHeader-context-full">
               <nav aria-label="">
                 <ul>
-                  <li><a className="AppHeader-context-item" href="#">torvalds<span className="sr-only">/</span></a></li>
+                  <li><a className="AppHeader-context-item" href="#">torvalds_the_great_productive_old_man<span className="sr-only">/</span></a></li>
                   <li><a className="AppHeader-context-item" href="#">linux</a></li>
                 </ul>
               </nav>

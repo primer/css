@@ -6,7 +6,7 @@ $nav-height: $spacer-3 * 3 !default; // 48px
   overflow-x: auto;
   overflow-y: hidden;
   // stylelint-disable-next-line primer/box-shadow
-  box-shadow: inset 0 -1px 0 var(--color-border-muted);
+  box-shadow: inset 0 calc(var(--primer-borderWidth-thin, 1px) * -1) var(--color-border-muted);
   -webkit-overflow-scrolling: auto;
   justify-content: space-between;
 
