@@ -141,7 +141,7 @@ export const AppHeaderTemplate = ({
           {/* <div className="AppHeader-divider"></div> */}
           
           <div className="AppHeader-actions">
-            <a className={clsx('AppHeader-button', notificationsHasIndicator && 'AppHeader-button--hasIndicator', 'AppHeader-button-whenRegular')} href="#">
+            <a className={clsx('AppHeader-button', notificationsHasIndicator && 'AppHeader-button--hasIndicator')} href="#">
               {/*
                 * Replace with ViewComponent:
                 * <%= render(Primer::OcticonComponent.new(:"inbox")) %>
