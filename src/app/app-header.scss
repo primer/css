@@ -4,6 +4,7 @@
 
   background: var(--AppHeader-bg);
   color: var(--color-fg-default);
+  box-shadow: inset 0 calc(var(--primer-borderWidth-thin, 1px) * -1) var(--color-border-default);
 
   // AppHeader structure
   // ===================
@@ -148,7 +149,7 @@
       .AppHeader-context-compact {
 
         // Fixme: change to design token syntax when 
-       // @custom-media --base-
+       // @custom-media --base-breakpoint-sm
         @media (min-width: #{map-get($breakpoints, 'sm')}) {
           display: none;
         }
@@ -199,6 +200,7 @@
         display: inline-flex;
         min-width: 0;
         max-width: 100%;
+        resize: both;
 
         @media (max-width: #{map-get($breakpoints, 'sm') - 0.02px}) {
           display: none;
@@ -473,8 +475,6 @@
 
   .AppHeader-localBar {
     padding: 0 var(--base-size-16, 16px);
-    //background: lightcyan;
-    box-shadow: inset 0 calc(var(--primer-borderWidth-thin, 1px) * -1) var(--color-border-default);
   }
 
   // AppHeader items
