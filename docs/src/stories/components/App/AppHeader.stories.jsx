@@ -137,8 +137,6 @@ export const AppHeaderTemplate = ({
               </div>
             </form>
           </div>
-
-          {/* <div className="AppHeader-divider"></div> */}
           
           <div className="AppHeader-actions">
             <a className={clsx('AppHeader-button', notificationsHasIndicator && 'AppHeader-button--hasIndicator')} href="#">
