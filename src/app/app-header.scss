@@ -37,7 +37,7 @@
   .AppHeader-globalBar {
     padding: var(--base-size-16, 16px);
     display: flex;
-    gap: var(--base-size-16, 16px);
+    gap: var(--base-size-12, 12px);
 
     .AppHeader-globalBar-start {
       flex: 1 1 auto;
@@ -145,6 +145,7 @@
     .AppHeader-context {
       flex: 1 1 auto;
       height: var(--base-size-32, 32px);
+      min-width: 0;
 
       .AppHeader-context-compact {
 
@@ -155,7 +156,7 @@
         }
 
         a {
-          display: block;
+          display: grid;
           color: inherit;
           height: 48px;
           margin: -8px 0;
@@ -174,14 +175,18 @@
         }
 
         .AppHeader-context-compact-lead {
-          display: flex; // Todo: fix ellipsis
+          display: grid; // Todo: fix ellipsis
+          grid-auto-flow: column;
+          align-items: center;
           font-size: 12px;
           line-height: 16px; // Todo: Replace with design token, `caption` style
           color: var(--color-fg-muted);
+          width: fit-content;
 
         }
 
         .AppHeader-context-compact-lead--parentItem {
+          display: inline;
           overflow: hidden;
           white-space: nowrap;
           text-overflow: ellipsis;
@@ -200,7 +205,6 @@
         display: inline-flex;
         min-width: 0;
         max-width: 100%;
-        resize: both;
 
         @media (max-width: #{map-get($breakpoints, 'sm') - 0.02px}) {
           display: none;
@@ -211,10 +215,13 @@
         }
   
         ul {
-          display: flex;
+          display: inline-grid;
+          grid-auto-flow: column;
         }
         li {
-          flex: 0 1 auto;
+          display: inline-grid;
+          grid-auto-flow: column;
+          align-items: center;
   
           &:not(:last-child):after {
             white-space: nowrap;
@@ -224,14 +231,14 @@
   
           &:last-child .AppHeader-context-item {
             font-weight: var(--base-text-weight-semibold, 600);
-            flex-basis: 200%;
+            //flex-basis: 200%;
           }
         }
       }
 
       .AppHeader-context-item {
         color: inherit;
-        display: inline-flex;
+        display: block;
         padding-inline: var(--primer-control-medium-paddingInline-condensed, 8px);
         padding-block: var(--primer-control-medium-paddingBlock, 6px);
         line-height: var(--primer-text-body-lineHeight-medium, calc(20 / 14));
