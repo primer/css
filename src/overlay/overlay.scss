@@ -101,6 +101,10 @@ $Overlay-height: (
     width: auto;
   }
 
+  &.Overlay--width-xsmall {
+    width: min(#{map-get($Overlay-width, 'xsmall')}, 100vw - 2rem);
+  }
+
   &.Overlay--width-small {
     width: min(#{map-get($Overlay-width, 'small')}, 100vw - 2rem);
   }
@@ -324,7 +328,7 @@ $Overlay-height: (
   @include Overlay-backdrop--transparent;
 
   .Overlay {
-    width: auto;
+    //width: auto;
   }
 }
 

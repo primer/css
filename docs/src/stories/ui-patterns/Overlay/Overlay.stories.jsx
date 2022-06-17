@@ -71,17 +71,17 @@ export default {
     // Properties
 
     width: {
-      options: ['auto', 'small', 'medium', 'large', 'xlarge', 'xxlarge'],
+      options: ['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'],
       control: {
         type: 'inline-radio',
       },
-      description: 'Width options: small: 256px, medium: 320px, large: 480px, xlarge: 640px, xxlarge: 960px',
+      description: 'Width options: xsmall: 192px, small: 256px, medium: 320px, large: 480px, xlarge: 640px, xxlarge: 960px',
       table: {
         category: 'Properties'
       }
     },
     height: {
-      options: ['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'],
+      options: ['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge'],
       control: {
         type: 'inline-radio',
       },
@@ -224,22 +224,22 @@ export default {
         category: 'Placement'
       }
     },
-    headerRegion: {
+    hasHeader: {
       control: {type: 'boolean'},
       description:
         'A header region may be used to provide context to the user by displaying a title, description, and offering an easy-to-escape route with a Close button. Headers may also provide ways for the user to interact with the content, such as with search and tabs.',
       defaultValue: true,
       table: {
-        category: 'Demo'
+        category: 'Header'
       }
     },
-    footerRegion: {
+    hasFooter: {
       control: {type: 'boolean'},
       description:
         'The footer region may be used to show confirmation actions, navigation links, or other important elements that should appear outside of the content scrolling region.',
       defaultValue: true,
       table: {
-        category: 'Demo'
+        category: 'Footer'
       }
     },
     showFooterDivider: {
@@ -360,8 +360,8 @@ export const OverlayTemplate = ({
   height,
   showFooterDivider,
   showHeaderDivider,
-  headerRegion,
-  footerRegion,
+  hasHeader,
+  hasFooter,
   headerContentSlot,
   motion,
   footerContentAlign,
@@ -387,9 +387,14 @@ export const OverlayTemplate = ({
   motion = motion ?? 'auto';
   variant = variant ?? 'center';
   variantWhenNarrow = variantWhenNarrow ?? 'inherit';
+  headerVariant = headerVariant ?? 'medium';
 
   // Inherit values
   variantWhenNarrow = variantWhenNarrow === 'inherit' ? variant : variantWhenNarrow;
+
+  // Leave `null` values for states that don't require a modifier class
+  headerVariant = headerVariant === 'medium' ? null : headerVariant;
+
 
   return (
   <>
@@ -419,12 +424,12 @@ export const OverlayTemplate = ({
         aria-describedby={ariaDescribedby}
         open
       >
-        {headerRegion && (
+        {hasHeader && (
           <header
             className={clsx(
               'Overlay-header',
               showHeaderDivider && 'Overlay-header--divided',
-              headerVariant && `${headerVariant}`
+              headerVariant && `Overlay-header--${headerVariant}`
             )}
           >
             <div className="Overlay-headerContentWrap">
@@ -460,7 +465,7 @@ export const OverlayTemplate = ({
           </header>
         )}
         <div className={clsx('Overlay-body', bodyPaddingVariant && `${bodyPaddingVariant}`)}>{children}</div>
-        {footerRegion && (
+        {hasFooter && (
           <footer
             className={clsx(
               'Overlay-footer',
@@ -497,8 +502,8 @@ Playground.args = {
   width: 'small',
   height: 'small',
   headerVariant: 0,
-  headerRegion: true,
-  footerRegion: true,
+  hasHeader: true,
+  hasFooter: true,
   showFooterDivider: false,
   showHeaderDivider: false,
   role: '',
@@ -510,9 +515,17 @@ export const Dialog = OverlayTemplate.bind();
 Dialog.storyName = 'Dialog';
 Dialog.args = {
   variant: 'center',
+
+  // Header
+  hasHeader: true,
   title: 'Dialog title',
   description: 'This is the subtitle of the dialog',
+
+  // Properties
+  width: 'medium',
+  height: 'small',
   motion: 'auto',
+
   footerContentAlign: 2,
   showCloseButton: true,
   showFooterButton: false,
@@ -520,11 +533,8 @@ Dialog.args = {
   actionContentSlot: '',
   headerVariant: 0,
   bodyPaddingVariant: 0,
-  width: 'medium',
-  height: 'small',
   headerVariant: 0,
-  headerRegion: true,
-  footerRegion: true,
+  hasFooter: false,
   showFooterDivider: false,
   showHeaderDivider: false,
   role: '',
@@ -532,11 +542,11 @@ Dialog.args = {
   dataFocusTrap: '',
   children: (
     <>
-      <p>Lorem ipsum dolor sit amet.</p>
-      <p>Lorem ipsum dolor sit amet.</p>
-      <p>Lorem ipsum dolor sit amet.</p>
-      <p>Lorem ipsum dolor sit amet.</p>
-      <p>Lorem ipsum dolor sit amet.</p>
+      <div>Lorem ipsum dolor sit amet.</div>
+      <div>Lorem ipsum dolor sit amet.</div>
+      <div>Lorem ipsum dolor sit amet.</div>
+      <div>Lorem ipsum dolor sit amet.</div>
+      <div>Lorem ipsum dolor sit amet.</div>
     </>
   )
 };
