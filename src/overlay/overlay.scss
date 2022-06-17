@@ -42,6 +42,20 @@ $Overlay-height: (
 // - Overlay-form?
 // - Deprecate Overlay-closeButton in favor of redesigned iconButton
 
+// Visibility
+// Todo: these are applied to `Overlay-backdrop`, not to `Overlay`
+
+.Overlay--hidden {
+  display: none !important;
+}
+
+.Overlay--visibilityHidden {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+}
+
 .Overlay {
   display: flex;
   min-width: #{map-get($Overlay-width, 'xsmall')};
@@ -54,19 +68,6 @@ $Overlay-height: (
 
   @supports (height: 100dvh) {
     max-height: 100dvh;
-  }
-
-  // Visibility
-
-  &.Overlay--hidden {
-    display: none;
-  }
-  
-  &.Overlay--visibilityHidden {
-    height: 0;
-    overflow: hidden;
-    visibility: hidden;
-    opacity: 0;
   }
 
   // Dimensions

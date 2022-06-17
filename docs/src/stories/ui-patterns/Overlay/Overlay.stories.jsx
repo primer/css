@@ -10,13 +10,16 @@ export default {
   },
   excludeStories: ['OverlayTemplate'],
   argTypes: {
+
+    // Header
+
     title: {
       name: 'title',
-      type: {name: 'string', required: false},
+      type: {name: 'string', required: true},
       description: 'The heading element of the overlay',
-      defaultValue: '',
+      defaultValue: 'Title',
       table: {
-        category: 'HTML'
+        category: 'Header'
       }
     },
     description: {
@@ -25,9 +28,21 @@ export default {
       description: 'The sub-heading element of the overlay',
       defaultValue: '',
       table: {
-        category: 'HTML'
+        category: 'Header'
       }
     },
+    headerVariant: {
+      options: ['medium', 'large'],
+      defaultValue: 'medium',
+      control: {
+        type: 'inline-radio',
+      },
+      description: 'medium (default), large header/description font-size + spacing',
+      table: {
+        category: 'Header'
+      }
+    },
+
     toggleOverlay: {
       control: {type: 'boolean'},
       description: 'show/hide overlay',
@@ -52,56 +67,27 @@ export default {
         category: 'Demo'
       }
     },
+
+    // Properties
+
     width: {
-      // options: ['auto', 'small', 'medium', 'large', 'xlarge', 'xxlarge'],
-      options: [0, 1, 2, 3, 4, 5], // iterator
-      mapping: [
-        'Overlay--width-auto',
-        'Overlay--width-small',
-        'Overlay--width-medium',
-        'Overlay--width-large',
-        'Overlay--width-xlarge',
-        'Overlay--width-xxlarge'
-      ], // values
+      options: ['auto', 'small', 'medium', 'large', 'xlarge', 'xxlarge'],
       control: {
         type: 'inline-radio',
-        labels: ['auto', 'small', 'medium', 'large', 'xlarge', 'xxlarge']
       },
       description: 'Width options: small: 256px, medium: 320px, large: 480px, xlarge: 640px, xxlarge: 960px',
       table: {
-        category: 'CSS'
+        category: 'Properties'
       }
     },
     height: {
-      options: [0, 1, 2, 3, 4, 5], // iterator
-      mapping: [
-        'Overlay--height-auto',
-        'Overlay--height-xsmall',
-        'Overlay--height-small',
-        'Overlay--height-medium',
-        'Overlay--height-large',
-        'Overlay--height-xlarge'
-      ], // values
+      options: ['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'],
       control: {
         type: 'inline-radio',
-        labels: ['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']
       },
-      description:
-        'Height options: auto: adjusts to content, xsmall: 192px, small: 256px, medium: 320px, large: 432px, xlarge: 600px',
+      description: 'Height options: auto: adjusts to content, xsmall: 192px, small: 256px, medium: 320px, large: 432px, xlarge: 600px',
       table: {
-        category: 'CSS'
-      }
-    },
-    headerVariant: {
-      options: [0, 1], // iterator
-      mapping: ['', 'Overlay-header--large'], // values
-      control: {
-        type: 'inline-radio',
-        labels: ['medium (default)', 'large']
-      },
-      description: 'medium (default), large header/description font-size + spacing',
-      table: {
-        category: 'CSS'
+        category: 'Properties'
       }
     },
     bodyPaddingVariant: {
@@ -116,10 +102,14 @@ export default {
         category: 'CSS'
       }
     },
+
+    // Variant
+
     variant: {
       options: ['center', 'anchor', 'side', 'full'],
-      control: {
-        type: 'inline-radio',
+      type: {
+        name: 'select',
+        required: true,
       },
       description: '',
       table: {
@@ -128,8 +118,10 @@ export default {
     },
     variantWhenNarrow: {
       options: ['inherit', 'center', 'anchor', 'side', 'full'],
-      control: {
-        type: 'inline-radio',
+      defaultValue: 'inherit',
+      type: {
+        name: 'select',
+        required: false,
       },
       description: '',
       table: {
@@ -227,7 +219,7 @@ export default {
           'reset'
         ]
       },
-      description: 'Positions overlay for narrow viewport range',
+      description: 'Positions overlay for regular viewport range',
       table: {
         category: 'Placement'
       }
@@ -263,7 +255,7 @@ export default {
       defaultValue: false,
       description: 'Show dividers below header',
       table: {
-        category: 'CSS'
+        category: 'Header'
       }
     },
     headerContentSlot: {
@@ -281,15 +273,13 @@ export default {
       }
     },
     motion: {
-      options: [0, 1], // iterator
-      mapping: [null, 'Overlay--motion-scaleFade'], // values
+      options: ['auto', 'none', 'scaleFade', 'slide', 'slideFade'],
       control: {
         type: 'inline-radio',
-        labels: ['none', 'scaleFade']
       },
       description: 'Animation options for show/hide overlay',
       table: {
-        category: 'CSS'
+        category: 'Properties'
       }
     },
     footerContentAlign: {
@@ -301,7 +291,7 @@ export default {
       },
       description: 'Align footer contents',
       table: {
-        category: 'CSS'
+        category: 'Footer'
       }
     },
     role: {
@@ -364,6 +354,8 @@ export const OverlayTemplate = ({
   title,
   description,
   toggleOverlay,
+  variantWhenNarrow,
+  variant,
   width,
   height,
   showFooterDivider,
@@ -385,14 +377,14 @@ export const OverlayTemplate = ({
   children,
   titleId,
   descriptionId,
-  variantWhenNarrow,
-  variant,
   placementNarrow,
   placementRegular
 }) => {
 
   // Default values
   width = width ?? 'auto';
+  height = height ?? 'auto';
+  motion = motion ?? 'auto';
   variant = variant ?? 'center';
   variantWhenNarrow = variantWhenNarrow ?? 'inherit';
 
@@ -417,9 +409,9 @@ export const OverlayTemplate = ({
       <div
         className={clsx(
           'Overlay',
-          width && `${width}`,
-          height && `${height}`,
-          motion && `${motion}`,
+          width && `Overlay--width-${width}`,
+          height && `Overlay--height-${height}`,
+          motion && `Overlay--motion-${motion}`,
         )}
         data-focus-trap={dataFocusTrap}
         role={role}
@@ -489,8 +481,8 @@ export const OverlayTemplate = ({
   );
 };
 
-export const Playground = OverlayTemplate.bind({})
-Playground.storyName = 'Playground'
+export const Playground = OverlayTemplate.bind();
+Playground.storyName = 'Playground';
 Playground.args = {
   title: 'This is the title of the dialog',
   description: 'This is the subtitle of the dialog',
@@ -502,8 +494,8 @@ Playground.args = {
   actionContentSlot: '',
   headerVariant: 0,
   bodyPaddingVariant: 0,
-  width: 1,
-  height: 3,
+  width: 'small',
+  height: 'small',
   headerVariant: 0,
   headerRegion: true,
   footerRegion: true,
@@ -512,4 +504,39 @@ Playground.args = {
   role: '',
   ariaDescribedby: '',
   dataFocusTrap: ''
-}
+};
+
+export const Dialog = OverlayTemplate.bind();
+Dialog.storyName = 'Dialog';
+Dialog.args = {
+  variant: 'center',
+  title: 'Dialog title',
+  description: 'This is the subtitle of the dialog',
+  motion: 'auto',
+  footerContentAlign: 2,
+  showCloseButton: true,
+  showFooterButton: false,
+  headerContentSlot: '',
+  actionContentSlot: '',
+  headerVariant: 0,
+  bodyPaddingVariant: 0,
+  width: 'medium',
+  height: 'small',
+  headerVariant: 0,
+  headerRegion: true,
+  footerRegion: true,
+  showFooterDivider: false,
+  showHeaderDivider: false,
+  role: '',
+  ariaDescribedby: '',
+  dataFocusTrap: '',
+  children: (
+    <>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </>
+  )
+};
