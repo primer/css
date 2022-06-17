@@ -13,7 +13,7 @@ export default {
     title: {
       name: 'title',
       type: {name: 'string', required: false},
-      description: 'The heading element of the dialog',
+      description: 'The heading element of the overlay',
       defaultValue: '',
       table: {
         category: 'HTML'
@@ -22,7 +22,7 @@ export default {
     description: {
       name: 'description',
       type: 'string',
-      description: 'The sub-heading element of the dialog',
+      description: 'The sub-heading element of the overlay',
       defaultValue: '',
       table: {
         category: 'HTML'
@@ -53,6 +53,7 @@ export default {
       }
     },
     width: {
+      // options: ['auto', 'small', 'medium', 'large', 'xlarge', 'xxlarge'],
       options: [0, 1, 2, 3, 4, 5], // iterator
       mapping: [
         'Overlay--width-auto',
@@ -115,34 +116,20 @@ export default {
         category: 'CSS'
       }
     },
-    variantNarrow: {
-      options: [0, 1, 2, 3], // iterator
-      mapping: [
-        'Overlay-backdrop--center-whenNarrow',
-        'Overlay-backdrop--anchor-whenNarrow',
-        'Overlay-backdrop--side-whenNarrow',
-        'Overlay-backdrop--full-whenNarrow'
-      ], // values
+    variant: {
+      options: ['center', 'anchor', 'side', 'full'],
       control: {
         type: 'inline-radio',
-        labels: ['center', 'anchored', 'side', 'full']
       },
       description: '',
       table: {
         category: 'Variant'
       }
     },
-    variantRegular: {
-      options: [0, 1, 2, 3], // iterator
-      mapping: [
-        'Overlay-backdrop--center',
-        'Overlay-backdrop--anchor',
-        'Overlay-backdrop--side',
-        'Overlay-backdrop--full'
-      ], // values
+    variantWhenNarrow: {
+      options: ['inherit', 'center', 'anchor', 'side', 'full'],
       control: {
         type: 'inline-radio',
-        labels: ['center', 'anchored', 'side', 'full']
       },
       description: '',
       table: {
@@ -398,11 +385,21 @@ export const OverlayTemplate = ({
   children,
   titleId,
   descriptionId,
-  variantNarrow,
-  variantRegular,
+  variantWhenNarrow,
+  variant,
   placementNarrow,
   placementRegular
-}) => (
+}) => {
+
+  // Default values
+  width = width ?? 'auto';
+  variant = variant ?? 'center';
+  variantWhenNarrow = variantWhenNarrow ?? 'inherit';
+
+  // Inherit values
+  variantWhenNarrow = variantWhenNarrow === 'inherit' ? variant : variantWhenNarrow;
+
+  return (
   <>
     <button class="btn" onClick={toggleDialog}>
       <span>Open overlay</span>
@@ -410,11 +407,11 @@ export const OverlayTemplate = ({
     <div
       id="overlay-backdrop"
       className={clsx(
-        toggleOverlay && 'Overlay--hidden',
-        variantNarrow && `${variantNarrow}`,
-        variantRegular && `${variantRegular}`,
-        placementNarrow && `${placementNarrow}`,
-        placementRegular && `${placementRegular}`
+        toggleOverlay     && 'Overlay--hidden',
+        variant           && `Overlay-backdrop--${variant}`,
+        variantWhenNarrow && `Overlay-backdrop--${variantWhenNarrow}-whenNarrow`,
+        placementRegular  && `${placementRegular}`,
+        placementNarrow   && `${placementNarrow}`,
       )}
     >
       <div
@@ -423,7 +420,6 @@ export const OverlayTemplate = ({
           width && `${width}`,
           height && `${height}`,
           motion && `${motion}`,
-          variantNarrow && 'Overlay-whenNarrow'
         )}
         data-focus-trap={dataFocusTrap}
         role={role}
@@ -490,7 +486,8 @@ export const OverlayTemplate = ({
       </div>
     </div>
   </>
-)
+  );
+};
 
 export const Playground = OverlayTemplate.bind({})
 Playground.storyName = 'Playground'

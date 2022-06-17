@@ -414,20 +414,23 @@ $Overlay-height: (
 }
 
 // Overlay variant classnames
-.Overlay-backdrop--center {
-  @include Overlay-backdrop--center;
-}
+@media (min-width: #{map-get($breakpoints, 'md')}) {
+  // Regular viewports
+  .Overlay-backdrop--center {
+    @include Overlay-backdrop--center;
+  }
 
-.Overlay-backdrop--anchor {
-  @include Overlay-backdrop--anchor;
-}
+  .Overlay-backdrop--anchor {
+    @include Overlay-backdrop--anchor;
+  }
 
-.Overlay-backdrop--side {
-  @include Overlay-backdrop--side;
-}
+  .Overlay-backdrop--side {
+    @include Overlay-backdrop--side;
+  }
 
-.Overlay-backdrop--full {
-  @include Overlay-backdrop--full;
+  .Overlay-backdrop--full {
+    @include Overlay-backdrop--full;
+  }
 }
 
 // responsive variants
