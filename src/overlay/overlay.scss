@@ -2,24 +2,41 @@
 // replace with primitive
 $primer-borderRadius-large: 0.75rem;
 
-  // Overlay structure
-  // =================
-  //
-  // .Overlay-backdrop
-  // ├─ .Overlay
-  // │  ├─ .Overlay-header
-  // │  │  ├─ .Overlay-headerContentWrap
-  // │  │  │  ├─ .Overlay-titleWrap
-  // │  │  │  │  ├─ .Overlay-title
-  // │  │  │  │  ├─ .Overlay-description
-  // │  │  ├─ .Overlay-actionWrap
-  // │  │  │  ├─ .Overlay-closeButton
-  // │  ├─ .Overlay-body
-  // │  ├─ .Overlay-footer
-  //
-  // Todo:
-  // - Overlay-form?
-  // - Deprecate Overlay-closeButton in favor of redesigned iconButton
+$Overlay-width: (
+  xsmall: 192px,
+  small: 256px,
+  medium: 320px,
+  large: 480px,
+  xlarge: 640px,
+  xxlarge: 960px
+) !default;
+
+$Overlay-height: (
+  xsmall: 192px,
+  small: 256px,
+  medium: 320px,
+  large: 432px,
+  xlarge: 600px
+) !default;
+
+// Overlay structure
+// =================
+//
+// .Overlay-backdrop
+// ├─ .Overlay
+// │  ├─ .Overlay-header
+// │  │  ├─ .Overlay-headerContentWrap
+// │  │  │  ├─ .Overlay-titleWrap
+// │  │  │  │  ├─ .Overlay-title
+// │  │  │  │  ├─ .Overlay-description
+// │  │  ├─ .Overlay-actionWrap
+// │  │  │  ├─ .Overlay-closeButton
+// │  ├─ .Overlay-body
+// │  ├─ .Overlay-footer
+//
+// Todo:
+// - Overlay-form?
+// - Deprecate Overlay-closeButton in favor of redesigned iconButton
 
 .Overlay--hidden {
   display: none !important;
@@ -34,7 +51,7 @@ $primer-borderRadius-large: 0.75rem;
 
 .Overlay {
   display: flex;
-  min-width: 192px;
+  min-width: #{map-get($Overlay-width, 'xsmall')};
   flex-direction: column;
   background-color: var(--color-canvas-overlay);
   border-radius: $primer-borderRadius-large;
@@ -47,24 +64,25 @@ $primer-borderRadius-large: 0.75rem;
     height: auto;
   }
 
+
   &.Overlay--height-xsmall {
-    height: min(192px, 100vh - 2rem);
+    height: min(#{map-get($Overlay-height, 'xsmall')}, 100vh - 2rem);
   }
 
   &.Overlay--height-small {
-    height: min(256px, 100vh - 2rem);
+    height: min(#{map-get($Overlay-height, 'small')}, 100vh - 2rem);
   }
 
   &.Overlay--height-medium {
-    height: min(320px, 100vh - 2rem);
+    height: min(#{map-get($Overlay-height, 'medium')}, 100vh - 2rem);
   }
 
   &.Overlay--height-large {
-    height: min(432px, 100vh - 2rem);
+    height: min(#{map-get($Overlay-height, 'large')}, 100vh - 2rem);
   }
 
   &.Overlay--height-xlarge {
-    height: min(600px, 100vh - 2rem);
+    height: min(#{map-get($Overlay-height, 'xlarge')}, 100vh - 2rem);
   }
 
   &.Overlay--width-auto {
@@ -72,43 +90,31 @@ $primer-borderRadius-large: 0.75rem;
   }
 
   &.Overlay--width-small {
-    width: min(256px, 100vw - 2rem);
+    width: min(#{map-get($Overlay-width, 'small')}, 100vw - 2rem);
   }
 
   &.Overlay--width-medium {
-    width: min(320px, 100vw - 2rem);
+    width: min(#{map-get($Overlay-width, 'medium')}, 100vw - 2rem);
   }
 
   &.Overlay--width-large {
     // stylelint-disable-next-line primer/responsive-widths
-    width: min(480px, 100vw - 2rem);
+    width: min(#{map-get($Overlay-width, 'large')}, 100vw - 2rem);
   }
 
   &.Overlay--width-xlarge {
     // stylelint-disable-next-line primer/responsive-widths
-    width: min(640px, 100vw - 2rem);
+    width: min(#{map-get($Overlay-width, 'xlarge')}, 100vw - 2rem);
   }
 
   &.Overlay--width-xxlarge {
     // stylelint-disable-next-line primer/responsive-widths
-    width: min(960px, 100vw - 2rem);
+    width: min(#{map-get($Overlay-width, 'xxlarge')}, 100vw - 2rem);
   }
 
   &.Overlay--motion-scaleFade {
     @media screen and (prefers-reduced-motion: no-preference) {
       animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running Overlay--motion-scaleFade;
-    }
-  }
-
-  @keyframes Overlay--motion-scaleFade {
-    0% {
-      opacity: 0;
-      transform: scale(0.5);
-    }
-
-    100% {
-      opacity: 1;
-      transform: scale(1);
     }
   }
 }
@@ -317,11 +323,6 @@ $primer-borderRadius-large: 0.75rem;
       border-radius: $primer-borderRadius-large;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      height: 100vh;
-
-      @supports(height: 100dvh) {
-        height: 100dvh;
-      }
     }
   }
 
@@ -417,5 +418,34 @@ $primer-borderRadius-large: 0.75rem;
 
   .Overlay-backdrop--full-whenNarrow {
     @include Overlay-backdrop--full;
+  }
+}
+
+
+// Animations
+// ==========
+// Todo: Replace with Primer Primitives motion tokens
+
+@keyframes Overlay--motion-slideInUp {
+  from { transform: translateY(100%) }
+}
+@keyframes Overlay--motion-slideInDown {
+  from { transform: translateY(-100%) }
+}
+@keyframes Overlay--motion-slideInRight {
+  from { transform: translateX(-100%) }
+}
+@keyframes Overlay--motion-slideInLeft {
+  from { transform: translateX(100%) }
+}
+@keyframes Overlay--motion-scaleFade {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
