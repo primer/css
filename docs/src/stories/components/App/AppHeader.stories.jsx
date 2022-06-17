@@ -109,8 +109,8 @@ export const AppHeaderTemplate = ({
               <div className="AppHeader-context-full">
                 <nav aria-label="">
                   <ul>
-                    <li><a className="AppHeader-context-item" href="#">loremipsumdolorsitametavecconsequer<span className="sr-only">/</span></a></li>
-                    <li><a className="AppHeader-context-item" href="#">loremipsumdolorsitametavecconsequer</a></li>
+                    <li><a className="AppHeader-context-item" title="loremipsum..." href="#">loremipsumdolorsitametavecconsequer<span className="sr-only">/</span></a></li>
+                    <li><a className="AppHeader-context-item" title="loremipsum..." href="#">loremipsumdolorsitametavecconsequer</a></li>
                   </ul>
                 </nav>
               </div>

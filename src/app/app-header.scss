@@ -217,6 +217,7 @@
         ul {
           display: inline-grid;
           grid-auto-flow: column;
+          grid-auto-columns: minmax(5em, 1fr);
         }
         li {
           display: inline-grid;
@@ -228,10 +229,11 @@
             content: "/";
             color: var(--color-fg-muted);
           }
-  
-          &:last-child .AppHeader-context-item {
-            font-weight: var(--base-text-weight-semibold, 600);
-            //flex-basis: 200%;
+
+          &:last-child {
+            .AppHeader-context-item {
+              font-weight: var(--base-text-weight-semibold, 600);
+            }
           }
         }
       }
