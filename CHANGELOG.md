@@ -1,5 +1,15 @@
 # @primer/css
 
+## 20.2.3
+
+### Patch Changes
+
+- [#2124](https://github.com/primer/css/pull/2124) [`f1b3e55f`](https://github.com/primer/css/commit/f1b3e55f141ddaa5719d223d4670d935bf9d5337) Thanks [@langermank](https://github.com/langermank)! - FormControl + Overlay bug fixes
+
+* [#2129](https://github.com/primer/css/pull/2129) [`2cc18d03`](https://github.com/primer/css/commit/2cc18d0348dc667961c9374886c8a82e95334d6f) Thanks [@camertron](https://github.com/camertron)! - Fix preview deploys
+
+- [#2077](https://github.com/primer/css/pull/2077) [`ab078a58`](https://github.com/primer/css/commit/ab078a58c6ebe4118f917bed4c71fbbb56f0634f) Thanks [@mlynam](https://github.com/mlynam)! - Make .form-control elements render as disabled when a parent fieldset is disabled
+
 ## 20.2.2
 
 ### Patch Changes
