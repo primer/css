@@ -2,6 +2,25 @@
 // replace with primitive
 $primer-borderRadius-large: 0.75rem;
 
+  // Overlay structure
+  // =================
+  //
+  // .Overlay-backdrop
+  // ├─ .Overlay
+  // │  ├─ .Overlay-header
+  // │  │  ├─ .Overlay-headerContentWrap
+  // │  │  │  ├─ .Overlay-titleWrap
+  // │  │  │  │  ├─ .Overlay-title
+  // │  │  │  │  ├─ .Overlay-description
+  // │  │  ├─ .Overlay-actionWrap
+  // │  │  │  ├─ .Overlay-closeButton
+  // │  ├─ .Overlay-body
+  // │  ├─ .Overlay-footer
+  //
+  // Todo:
+  // - Overlay-form?
+  // - Deprecate Overlay-closeButton in favor of redesigned iconButton
+
 .Overlay--hidden {
   display: none !important;
 }
@@ -21,6 +40,8 @@ $primer-borderRadius-large: 0.75rem;
   border-radius: $primer-borderRadius-large;
   box-shadow: var(--color-overlay-shadow);
   opacity: 1;
+
+  // Overlay dimensions
 
   &.Overlay--height-auto {
     height: auto;
@@ -281,51 +302,61 @@ $primer-borderRadius-large: 0.75rem;
 }
 
 // anchor side(s)
-@mixin Overlay-backdrop--side($responsiveVariant: '') {
+@mixin Overlay-backdrop--side($viewportRange: '') {
   @include Overlay-backdrop;
 
   // default left
   align-items: center;
   justify-content: left;
 
-  &.Overlay-backdrop--placement-left#{$responsiveVariant} {
+  &.Overlay-backdrop--placement-left#{$viewportRange} {
     align-items: center;
     justify-content: left;
 
-    .Overlay#{$responsiveVariant} {
+    .Overlay {
       border-radius: $primer-borderRadius-large;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+      height: 100vh;
+
+      @supports(height: 100dvh) {
+        height: 100dvh;
+      }
     }
   }
 
-  &.Overlay-backdrop--placement-right#{$responsiveVariant} {
+  &.Overlay-backdrop--placement-right#{$viewportRange} {
     align-items: center;
     justify-content: right;
 
-    .Overlay#{$responsiveVariant} {
+    .Overlay {
       border-radius: $primer-borderRadius-large;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
+      height: 100vh;
+
+      @supports(height: 100dvh) {
+        height: 100dvh;
+      }
     }
   }
 
-  &.Overlay-backdrop--placement-bottom#{$responsiveVariant} {
+  &.Overlay-backdrop--placement-bottom#{$viewportRange} {
     align-items: end;
     justify-content: center;
 
-    .Overlay#{$responsiveVariant} {
+    .Overlay {
       border-radius: $primer-borderRadius-large;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
     }
   }
 
-  &.Overlay-backdrop--placement-top#{$responsiveVariant} {
+  &.Overlay-backdrop--placement-top#{$viewportRange} {
     align-items: start;
     justify-content: center;
 
-    .Overlay#{$responsiveVariant} {
+    .Overlay {
       border-radius: $primer-borderRadius-large;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
@@ -344,6 +375,11 @@ $primer-borderRadius-large: 0.75rem;
     max-height: 100vh;
     border-radius: unset;
     flex-grow: 1;
+
+    @supports(height: 100dvh) {
+      max-width: 100dvw;
+      max-height: 100dvh;
+    }
   }
 }
 
