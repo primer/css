@@ -85,7 +85,6 @@ $nav-height: $spacer-3 * 3 !default; // 48px
     font-weight: $font-weight-bold;
     color: var(--color-fg-default);
     border-bottom-color: var(--color-primer-border-active);
-    outline-offset: -8px;
 
     // current/selected underline
     &::after {
