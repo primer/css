@@ -1,6 +1,10 @@
 // stylelint-disable selector-max-compound-selectors, max-nesting-depth, selector-max-specificity, primer/borders
-// replace with primitive
+// replace with primitives
 $primer-borderRadius-large: 0.75rem;
+
+// https://github.com/github/primer/issues/1026
+$primer-duration-slow: 250ms;
+$primer-easing-out: cubic-bezier(0.33, 1, 0.68, 1);
 
 $Overlay-width: (
   xsmall: 192px,
@@ -38,17 +42,6 @@ $Overlay-height: (
 // - Overlay-form?
 // - Deprecate Overlay-closeButton in favor of redesigned iconButton
 
-.Overlay--hidden {
-  display: none !important;
-}
-
-.Overlay--visibilityHidden {
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-}
-
 .Overlay {
   display: flex;
   min-width: #{map-get($Overlay-width, 'xsmall')};
@@ -57,13 +50,31 @@ $Overlay-height: (
   border-radius: $primer-borderRadius-large;
   box-shadow: var(--color-overlay-shadow);
   opacity: 1;
+  max-height: 100vh;
 
-  // Overlay dimensions
+  @supports (height: 100dvh) {
+    max-height: 100dvh;
+  }
+
+  // Visibility
+
+  &.Overlay--hidden {
+    display: none;
+  }
+  
+  &.Overlay--visibilityHidden {
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  // Dimensions
+  // Todo: auto-generate based on Scss variables?
 
   &.Overlay--height-auto {
     height: auto;
   }
-
 
   &.Overlay--height-xsmall {
     height: min(#{map-get($Overlay-height, 'xsmall')}, 100vh - 2rem);
@@ -112,11 +123,20 @@ $Overlay-height: (
     width: min(#{map-get($Overlay-width, 'xxlarge')}, 100vw - 2rem);
   }
 
+  // Motion
+
   &.Overlay--motion-scaleFade {
-    @media screen and (prefers-reduced-motion: no-preference) {
-      animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running Overlay--motion-scaleFade;
+    @media (prefers-reduced-motion: no-preference) {
+      // Todo: replace with primer-duration-slow token
+      animation: $primer-duration-slow $primer-easing-out Overlay--motion-scaleFade;
     }
   }
+
+  // &.Overlay--motion-slide {
+  //   @media (prefers-reduced-motion: no-preference) {
+  //     animation: $primer-duration-slow $primer-easing-out Overlay--motion-slide;
+  //   }
+  // }
 }
 
 // for <form> element that wraps entire contents of overlay
@@ -320,9 +340,15 @@ $Overlay-height: (
     justify-content: left;
 
     .Overlay {
+      animation: $primer-duration-slow $primer-easing-out Overlay--motion-slideInRight;
       border-radius: $primer-borderRadius-large;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+      height: 100vh;
+
+      @supports(height: 100dvh) {
+        height: 100dvh;
+      }
     }
   }
 
@@ -331,6 +357,7 @@ $Overlay-height: (
     justify-content: right;
 
     .Overlay {
+      animation: $primer-duration-slow $primer-easing-out Overlay--motion-slideInLeft;
       border-radius: $primer-borderRadius-large;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
@@ -347,6 +374,7 @@ $Overlay-height: (
     justify-content: center;
 
     .Overlay {
+      animation: $primer-duration-slow $primer-easing-out Overlay--motion-slideInUp;
       border-radius: $primer-borderRadius-large;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
@@ -358,6 +386,7 @@ $Overlay-height: (
     justify-content: center;
 
     .Overlay {
+      animation: $primer-duration-slow $primer-easing-out Overlay--motion-slideInDown;
       border-radius: $primer-borderRadius-large;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
