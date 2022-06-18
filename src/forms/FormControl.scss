@@ -93,8 +93,8 @@
 
   // <select> and <input>
   &.FormControl--input,
-  &.FormControl--select {
-    height: var(--primer-control-medium-size, 32px);
+  &.FormControl--select,
+  &.FormControl--textarea {
     font-size: var(--primer-text-body-size-medium, 14px);
     line-height: var(--primer-text-body-lineHeight-medium, 20px);
     border-radius: var(--primer-borderRadius-medium, 6px);
@@ -114,6 +114,12 @@
       color: var(--color-fg-subtle);
       opacity: 1;
     }
+  }
+
+  // <select> and <input>
+  &.FormControl--input,
+  &.FormControl--select {
+    height: var(--primer-control-medium-size, 32px);
   }
 
   // sizes
@@ -331,7 +337,8 @@
   }
 }
 
-.FormGroup--checkbox {
+.FormGroup--checkbox,
+.FormGroup--radio {
   display: inline-grid;
   grid-template-areas: 'field label' '. caption';
   gap: var(--base-size-8, 8px);
@@ -353,21 +360,35 @@
 
 // checkbox + radio specific styles
 
+.FormControl--radio-svgGradient {
+  visibility: hidden;
+}
+
 .FormControl--checkbox,
 .FormControl--radio {
   position: absolute;
   width: var(--base-size-16, 16px);
   height: var(--base-size-16, 16px);
   opacity: 0;
+  overflow: visible !important;
 
   &:focus-visible {
-    + .FormControl--checkbox-svg,
-    + .FormControl--radio-svg {
-      .FormControl--checkbox-background,
-      .FormControl--radio-background {
+    + .FormControl--checkbox-svg {
+      .FormControl--checkbox-background {
         stroke: var(--color-accent-fg);
         border-radius: 4px;
         position: relative;
+      }
+    }
+
+    + .FormControl--radio-svg {
+      .FormControl--radio-background {
+        stroke-width: 2;
+        stroke: revert-layer;
+      }
+
+      .FormControl--radio-svgGradient {
+        visibility: visible;
       }
     }
   }
@@ -386,13 +407,23 @@
 
   &:checked {
     &:focus-visible {
-      + .FormControl--checkbox-svg,
-      + .FormControl--radio-svg {
+      + .FormControl--checkbox-svg {
         overflow: visible;
-        .FormControl--checkbox-background,
-        .FormControl--radio-background {
+
+        .FormControl--checkbox-background {
           outline: 1px solid var(--color-accent-fg);
           outline-offset: 2px;
+        }
+      }
+
+      + .FormControl--radio-svg {
+        .FormControl--radio-background {
+          stroke-width: 2;
+          stroke: revert-layer;
+        }
+
+        .FormControl--radio-svgGradient {
+          visibility: visible;
         }
       }
     }
