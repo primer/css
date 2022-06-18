@@ -10,11 +10,6 @@
 // fill container
 .FormGroup--fullWidth {
   display: flex;
-
-  // stretch field to fill container
-  .FormControl-fieldWrap {
-    flex-grow: 1;
-  }
 }
 
 // <label>
@@ -84,6 +79,10 @@
     @include focusBoxShadowInset;
   }
 
+  .FormControl--inset {
+    background-color: var(--color-canvas-inset);
+  }
+
   // <select> and <input>
   &.FormControl--input,
   &.FormControl--select {
@@ -94,8 +93,8 @@
     padding-inline: var(--primer-control-medium-paddingInline-condensed, 8px);
     transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
     transition-property: color, background-color, box-shadow, border-color;
-
     padding-block: calc(var(--primer-control-medium-paddingBlock, 6px) - var(--primer-borderWidth-thin, 1px));
+    width: 100%;
 
     &[disabled] {
       &::placeholder {
@@ -113,6 +112,8 @@
 
   &.FormControl--small {
     height: var(--primer-control-small-size, 28px);
+    padding-inline: var(--primer-control-small-paddingInline-normal, 8px);
+    padding-block: var(--primer-control-small-paddingBlock, 4px);
     font-size: var(--primer-text-body-size-small, 12px);
   }
 
@@ -123,23 +124,14 @@
   &.FormControl--large {
     height: var(--primer-control-large-size, 40px);
     padding-inline: var(--primer-control-large-paddingInline-normal, 12px);
+    padding-block: var(--primer-control-large-paddingBlock, 10px);
   }
 }
 
-// pseudo input styles to allow for visual and action slots
-// set input styles on -fieldWrap, remove styles from <input>
+// positioning for leading/trailing items
 .FormControl-fieldWrap {
   display: grid;
   position: relative;
-  //   height: var(--primer-control-medium-size, 32px);
-  //   background-color: var(--color-canvas-default);
-  //   border-radius: var(--primer-borderRadius-medium, 6px);
-  //   box-shadow: var(--primer-borderInset-thin, inset 0 0 0 max(1px, 0.0625rem)) var(--color-border-default);
-  //   grid-template-rows: auto;
-  //   gap: var(--primer-controlStack-medium-gap-condensed, 8px);
-  //   align-items: center;
-  //   align-content: center;
-  //   padding-inline: var(--primer-control-medium-paddingInline-condensed, 8px);
 
   .FormControl--input-leadingVisualWrap {
     position: absolute;
@@ -150,62 +142,85 @@
     left: var(--base-size-8, 8px);
     color: var(--color-fg-muted);
     pointer-events: none;
-  }
 
-  .FormControl--input-leadingVisual {
-    display: block;
-  }
-
-  .FormControl {
-    // padding: unset;
-    // background-color: transparent;
-    // border: 0;
-
-    &:focus-visible,
-    &:focus {
-      //   outline: none;
-      //   box-shadow: none;
+    // octicon
+    .FormControl--input-leadingVisual {
+      display: block;
+      user-select: none;
     }
   }
 
-  //   &:focus-within {
-  //     @include focusBoxShadowInset(2px, var(--color-accent-fg));
-  //   }
+  // TODO: replace with new Button component
+  .FormControl--input-trailingAction {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: var(--base-size-4, 4px);
+    right: var(--base-size-4, 4px);
+    z-index: 4;
+    width: var(--primer-control-xsmall-size, 24px);
+    height: var(--primer-control-xsmall-size, 24px);
+    padding: 0;
+    border: none;
+    border-radius: var(--primer-borderRadius-small);
+    background: transparent;
+    color: var(--color-fg-muted);
+    cursor: pointer;
+    transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    transition-property: color, background-color, border-color;
 
-  &.FormControl-fieldWrap--disabled {
-    color: var(--color-primer-fg-disabled);
-    background-color: var(--color-input-disabled-bg);
-  }
+    svg {
+      user-select: none;
+    }
 
-  &.FormControl-fieldWrap--invalid:not(:focus-within) {
-    box-shadow: var(--primer-borderInset-thin, inset 0 0 0 max(1px, 0.0625rem)) var(--color-danger-emphasis);
+    &[disabled] {
+      color: var(--color-primer-fg-disabled);
+      pointer-events: none;
+    }
+
+    &:hover {
+      background: var(--color-action-list-item-default-hover-bg);
+    }
+
+    &:active {
+      background: var(--color-action-list-item-default-active-bg);
+    }
+
+    // show vertical divider line between field and button
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: calc((var(--primer-control-xsmall-size) - var(--base-size-16)) / 2);
+      left: calc(var(--base-size-4, 4px) * -1);
+      width: var(--primer-borderWidth-thin);
+      height: var(--base-size-16);
+      background: var(--color-border-default);
+    }
+
+    &:after {
+      @include minTouchTarget(var(--primer-control-medium-size), var(--primer-control-medium-size));
+
+      @media (pointer: coarse) {
+        min-width: var(--primer-control-minTarget-coarse);
+        min-height: var(--primer-control-minTarget-coarse);
+      }
+    }
   }
 
   // if leadingVisual is present
   &.FormControl-fieldWrap--input-leadingVisual {
-    // grid-template-columns: var(--base-size-16, 16px) minmax(0, auto);
-
     .FormControl--input {
       padding-inline-start: calc(
         var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
           var(--primer-control-medium-gap, 8px) - var(--primer-borderWidth-thin, 1px)
       );
     }
-
-    // if leadingVisual and trailingAction are present
-    &.FormControl-fieldWrap--input-trailingAction {
-      //   grid-template-columns: var(--base-size-16, 16px) minmax(0, auto) min-content;
-
-      .FormControl--input-trailingAction {
-        // grid-column: 3 / 4;
-      }
-    }
   }
 
   // if trailingAction is present
   &.FormControl-fieldWrap--input-trailingAction {
-    // grid-template-columns: minmax(0, auto) min-content;
-
     .FormControl--input {
       padding-inline-end: calc(
         var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
@@ -214,143 +229,86 @@
     }
   }
 
+  // size modifications can be refactored with :has() - FormControl-fieldWrap:has(.FormControl--large)
+  // sizes
   &.FormControl-fieldWrap--input {
-    // grid-template-rows: max-content;
-
-    .FormControl--input-leadingVisual {
-      //   grid-column: 1 / 2;
-      //   grid-row: 1;
-    }
-
-    // <input> spans entire grid
-    .FormControl--input {
-      //   grid-column: 1 / -1;
-      //   grid-row: 1;
-    }
-
-    // sizes
-
-    // these selectors can be refactored to use :has()
     &.FormControl--small {
-      height: var(--primer-control-small-size, 28px);
-      font-size: var(--primer-text-body-size-small, 12px);
+      .FormControl--input-leadingVisualWrap {
+        top: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
+        left: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
+      }
+
+      &.FormControl-fieldWrap--input-trailingAction {
+        .FormControl--input.FormControl--small {
+          padding-inline-end: calc(
+            var(----primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+              var(--primer-control-small-gap, 8px) - var(--primer-borderWidth-thin, 1px)
+          ); /* 27px */
+        }
+      }
 
       .FormControl--input-trailingAction {
         width: calc(var(--primer-control-small-size, 28px) - var(--base-size-8, 8px));
         height: calc(var(--primer-control-small-size, 28px) - var(--base-size-8, 8px));
+
+        &:before {
+          top: calc((var(--primer-control-xsmall-size) - var(--base-size-16)) / 4); /* 2px */
+        }
       }
     }
-
-    // &.FormControl--medium {
-    //   height: var(--primer-control-medium-size, 32px);
-
-    //   .FormControl--input-trailingAction {
-    //     width: calc(var(--primer-control-medium-size, 32px) - var(--base-size-8, 8px));
-    //     height: calc(var(--primer-control-medium-size, 32px) - var(--base-size-8, 8px));
-    //   }
-    // }
 
     &.FormControl--large {
-      height: var(--primer-control-large-size, 40px);
-      padding-inline: var(--primer-control-large-paddingInline-normal, 12px);
+      .FormControl--input-leadingVisualWrap {
+        top: var(--primer-control-medium-paddingInline-normal, 12px);
+        left: var(--primer-control-medium-paddingInline-normal, 12px);
+      }
+
+      &.FormControl-fieldWrap--input-leadingVisual {
+        .FormControl--input.FormControl--large {
+          padding-inline-start: calc(
+            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+              var(--primer-control-large-gap, 8px) - var(--primer-borderWidth-thin, 1px)
+          ); /* 31px */
+        }
+      }
+
+      &.FormControl-fieldWrap--input-trailingAction {
+        .FormControl--input.FormControl--large {
+          padding-inline-end: calc(
+            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+              var(--primer-control-large-gap, 8px)
+          ); /* 36px */
+        }
+      }
 
       .FormControl--input-trailingAction {
-        width: calc(var(--primer-control-large-size, 40px) - var(--base-size-8, 8px));
-        height: calc(var(--primer-control-large-size, 40px) - var(--base-size-8, 8px));
-        margin-right: calc(calc(var(--primer-control-medium-paddingInline-normal, 12px) - 0.125rem) * -1);
+        width: var(--primer-control-small-size, 28px);
+        height: var(--primer-control-small-size, 28px);
+        top: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
+        right: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
+
+        &:before {
+          height: var(--base-size-20);
+          top: unset;
+        }
       }
-    }
-  }
-}
-
-// TODO: replace with new Button component
-// trailingAction will auto fill last grid slot
-.FormControl--input-trailingAction {
-  display: grid;
-  //   width: calc(var(--primer-control-medium-size, 32px) - var(--base-size-4, 4px));
-  //   height: calc(var(--primer-control-medium-size, 32px) - var(--base-size-4, 4px));
-  //   padding: 0;
-  // optically align the icon with field padding
-  //   margin-right: calc(calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem) * -1);
-  //   color: var(--color-fg-muted);
-  //   cursor: pointer;
-  //   user-select: none;
-  //   background-color: transparent;
-  //   border: solid var(--primer-borderWidth-thin, 1px) transparent;
-  //   border-radius: var(--primer-borderRadius-medium, 6px);
-  //   transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-  //   transition-property: color, background-color, border-color;
-  //   grid-row: 1;
-  //   place-content: center;
-  //   place-self: center end;
-  //   grid-column: 2 / 3;
-
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: var(--base-size-4, 4px);
-  right: var(--base-size-4, 4px);
-  z-index: 4;
-  width: var(--primer-control-xsmall-size, 24px);
-  height: var(--primer-control-xsmall-size, 24px);
-  padding: 0;
-  border: none;
-  border-radius: var(--primer-borderRadius-small);
-  background: transparent;
-  color: var(--color-fg-muted);
-
-  //   &:hover {
-  //     background-color: var(--color-btn-hover-bg);
-  //     border: solid var(--primer-borderWidth-thin, 1px) var(--color-btn-hover-bg);
-  //   }
-
-  &[disabled] {
-    color: var(--color-primer-fg-disabled);
-    pointer-events: none;
-  }
-
-  &:hover {
-    background: var(--color-action-list-item-default-hover-bg);
-  }
-
-  &:active {
-    background: var(--color-action-list-item-default-active-bg);
-  }
-
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: calc((var(--primer-control-xsmall-size) - var(--base-size-16)) / 2);
-    left: calc(var(--base-size-4, 4px) * -1);
-    width: var(--primer-borderWidth-thin);
-    height: var(--base-size-16);
-    background: var(--color-border-default);
-  }
-
-  &:after {
-    @include minTouchTarget(var(--primer-control-medium-size), var(--primer-control-medium-size));
-
-    @media (pointer: coarse) {
-      min-width: var(--primer-control-minTarget-coarse);
-      min-height: var(--primer-control-minTarget-coarse);
     }
   }
 }
 
 .FormControl-fieldWrap--select {
   grid-template-columns: minmax(0, auto) var(--base-size-16, 16px);
-  padding-inline-end: var(--primer-control-medium-paddingInline-condensed, 8px);
 
   // mask allows for background-color to respect themes
   &::after {
     width: var(--base-size-16, 16px);
     height: var(--base-size-16, 16px);
+    padding-right: var(--base-size-4, 4px);
     pointer-events: none;
     content: '';
     background-color: var(--color-fg-muted);
     mask: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0iIzU4NjA2OSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNC40MjcgOS40MjdsMy4zOTYgMy4zOTZhLjI1MS4yNTEgMCAwMC4zNTQgMGwzLjM5Ni0zLjM5NkEuMjUuMjUgMCAwMDExLjM5NiA5SDQuNjA0YS4yNS4yNSAwIDAwLS4xNzcuNDI3ek00LjQyMyA2LjQ3TDcuODIgMy4wNzJhLjI1LjI1IDAgMDEuMzU0IDBMMTEuNTcgNi40N2EuMjUuMjUgMCAwMS0uMTc3LjQyN0g0LjZhLjI1LjI1IDAgMDEtLjE3Ny0uNDI3eiIgLz48L3N2Zz4=');
-    mask-size: cover;
+    mask-size: contain;
     grid-column: 2;
     grid-row: 1;
     place-self: center end;
@@ -361,7 +319,7 @@
     grid-column: 1/-1;
     grid-row: 1;
     appearance: none;
-    padding-right: var(--base-size-16, 16px);
+    padding-right: var(--base-size-20, 20px);
   }
 }
 
