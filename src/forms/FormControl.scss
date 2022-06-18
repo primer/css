@@ -115,7 +115,7 @@
   height: var(--primer-control-medium-size, 32px);
   background-color: var(--color-canvas-default);
   border-radius: var(--primer-borderRadius-medium, 6px);
-  box-shadow: var(--primer-borderInset-thin, 1px) var(--color-border-default);
+  box-shadow: var(--primer-borderInset-thin, inset 0 0 0 max(1px, 0.0625rem)) var(--color-border-default);
   grid-template-rows: auto;
   gap: var(--primer-controlStack-medium-gap-condensed, 8px);
   align-items: center;
@@ -144,7 +144,7 @@
   }
 
   &.FormControl-fieldWrap--invalid:not(:focus-within) {
-    box-shadow: var(--primer-borderInset-thin, 1px) var(--color-danger-emphasis);
+    box-shadow: var(--primer-borderInset-thin, inset 0 0 0 max(1px, 0.0625rem)) var(--color-danger-emphasis);
   }
 
   // if leadingVisual is present

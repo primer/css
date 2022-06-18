@@ -40,18 +40,17 @@ jobs:
 
       - name: Update storybook deployment status (success)
         if: success()
-        uses: chrnorm/deployment-status@v1.0.0
+        uses: chrnorm/deployment-status@v2.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          environment_url: '${{ needs.deploy.outputs.deployment_url }}/storybook'
-          target_url: '${{ needs.deploy.outputs.deployment_url }}/storybook'
+          environment-url: '${{ needs.deploy.outputs.deployment_url }}/storybook'
           state: 'success'
-          deployment_id: ${{ steps.storybook.outputs.deployment_id }}
+          deployment-id: ${{ steps.storybook.outputs.deployment_id }}
 
       - name: Update storybook deployment status (failure)
         if: failure()
-        uses: chrnorm/deployment-status@v1.0.0
+        uses: chrnorm/deployment-status@v2.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           state: 'failure'
-          deployment_id: ${{ steps.storybook.outputs.deployment_id }}
+          deployment-id: ${{ steps.storybook.outputs.deployment_id }}
