@@ -14,6 +14,7 @@
 
 // <label>
 .FormControl-label {
+  color: var(--color-fg-default);
   font-size: var(--primer-text-body-size-medium, 14px);
   font-weight: var(--base-text-weight-semibold, 600);
   line-height: var(--primer-text-body-lineHeight-medium, 20px);
@@ -79,8 +80,15 @@
     @include focusBoxShadowInset;
   }
 
-  .FormControl--inset {
+  &.FormControl--inset {
     background-color: var(--color-canvas-inset);
+  }
+
+  &.FormControl--monospace {
+    font-family: var(
+      --primer-fontStack-monospace,
+      'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace'
+    );
   }
 
   // <select> and <input>
@@ -352,6 +360,18 @@
   height: var(--base-size-16, 16px);
   opacity: 0;
 
+  &:focus-visible {
+    + .FormControl--checkbox-svg,
+    + .FormControl--radio-svg {
+      .FormControl--checkbox-background,
+      .FormControl--radio-background {
+        stroke: var(--color-accent-fg);
+        border-radius: 4px;
+        position: relative;
+      }
+    }
+  }
+
   &[disabled] {
     cursor: not-allowed;
     + .FormControl--checkbox-svg,
@@ -365,6 +385,17 @@
   }
 
   &:checked {
+    &:focus-visible {
+      + .FormControl--checkbox-svg,
+      + .FormControl--radio-svg {
+        overflow: visible;
+        .FormControl--checkbox-background,
+        .FormControl--radio-background {
+          outline: 1px solid var(--color-accent-fg);
+          outline-offset: 2px;
+        }
+      }
+    }
     + .FormControl--checkbox-svg,
     + .FormControl--radio-svg {
       .FormControl--checkbox-background,
