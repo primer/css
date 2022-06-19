@@ -13,7 +13,7 @@ export default {
       </form>
     )
   ],
-  excludeStories: ['InputTemplate'],
+  excludeStories: ['RadioTemplate'],
   argTypes: {
     disabled: {
       description: 'disabled field',
@@ -92,7 +92,7 @@ const focusMethod = function getFocus() {
   input.focus()
 }
 
-export const InputTemplate = ({
+export const RadioTemplate = ({
   label,
   id,
   placeholder,
@@ -131,7 +131,7 @@ export const InputTemplate = ({
   </>
 )
 
-export const Playground = InputTemplate.bind({})
+export const Playground = RadioTemplate.bind({})
 Playground.args = {
   id: 'some-id',
   placeholder: 'Email address',

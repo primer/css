@@ -344,6 +344,7 @@
 .FormGroup--radio {
   display: inline-grid;
   grid-template-areas: 'field label' '. caption';
+  grid-template-columns: min-content auto;
   gap: var(--base-size-8, 8px);
 
   .FormControl--checkbox-labelWrap,
@@ -373,6 +374,7 @@ input[type='radio'].FormControl--radio {
   display: grid;
   place-content: center;
   transition: all 80ms cubic-bezier(0.3, 0, 0.5, 1) 240ms !important;
+  grid-area: field;
 
   &:before {
     content: '';
