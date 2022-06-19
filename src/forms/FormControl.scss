@@ -1,4 +1,4 @@
-// stylelint-disable primer/typography, primer/borders, primer/spacing, primer/box-shadow, max-nesting-depth
+// stylelint-disable primer/typography, primer/borders, primer/spacing, max-nesting-depth, selector-max-type, selector-max-specificity, selector-no-qualifying-type
 
 // group label, field, caption and error message
 .FormGroup {
@@ -14,10 +14,10 @@
 
 // <label>
 .FormControl-label {
-  color: var(--color-fg-default);
   font-size: var(--primer-text-body-size-medium, 14px);
   font-weight: var(--base-text-weight-semibold, 600);
   line-height: var(--primer-text-body-lineHeight-medium, 20px);
+  color: var(--color-fg-default);
   user-select: none;
 }
 
@@ -40,7 +40,6 @@
   align-items: center;
   gap: var(--base-size-4, 4px);
 
-  // stylelint-disable-next-line selector-max-type
   p {
     margin-bottom: 0;
   }
@@ -53,11 +52,11 @@
 
   &[disabled] {
     color: var(--color-primer-fg-disabled);
+    cursor: not-allowed;
     background-color: var(--color-input-disabled-bg);
     border-color: var(--color-border-default);
-    -webkit-text-fill-color: var(--color-primer-fg-disabled);
     opacity: 1;
-    cursor: not-allowed;
+    -webkit-text-fill-color: var(--color-primer-fg-disabled);
   }
 
   &:not(:focus)[invalid] {
@@ -85,24 +84,25 @@
   }
 
   &.FormControl--monospace {
-    font-family: var(
-      --primer-fontStack-monospace,
-      'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace'
-    );
+    font-family:
+      var(
+        --primer-fontStack-monospace,
+        'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace'
+      );
   }
 
   // <select> and <input>
   &.FormControl--input,
   &.FormControl--select,
   &.FormControl--textarea {
+    width: 100%;
     font-size: var(--primer-text-body-size-medium, 14px);
     line-height: var(--primer-text-body-lineHeight-medium, 20px);
     border-radius: var(--primer-borderRadius-medium, 6px);
-    padding-inline: var(--primer-control-medium-paddingInline-condensed, 8px);
     transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
     transition-property: color, background-color, box-shadow, border-color;
+    padding-inline: var(--primer-control-medium-paddingInline-condensed, 8px);
     padding-block: calc(var(--primer-control-medium-paddingBlock, 6px) - var(--primer-borderWidth-thin, 1px));
-    width: 100%;
 
     &[disabled] {
       &::placeholder {
@@ -144,16 +144,16 @@
 
 // positioning for leading/trailing items
 .FormControl-fieldWrap {
-  display: grid;
   position: relative;
+  display: grid;
 
   .FormControl--input-leadingVisualWrap {
     position: absolute;
+    top: var(--base-size-8, 8px);
+    left: var(--base-size-8, 8px);
     display: block;
     width: var(--base-size-16, 16px);
     height: var(--base-size-16, 16px);
-    top: var(--base-size-8, 8px);
-    left: var(--base-size-8, 8px);
     color: var(--color-fg-muted);
     pointer-events: none;
 
@@ -166,23 +166,23 @@
 
   // TODO: replace with new Button component
   .FormControl--input-trailingAction {
-    display: grid;
-    align-items: center;
-    justify-content: center;
     position: absolute;
     top: var(--base-size-4, 4px);
     right: var(--base-size-4, 4px);
     z-index: 4;
+    display: grid;
     width: var(--primer-control-xsmall-size, 24px);
     height: var(--primer-control-xsmall-size, 24px);
     padding: 0;
-    border: none;
-    border-radius: var(--primer-borderRadius-small);
-    background: transparent;
     color: var(--color-fg-muted);
     cursor: pointer;
+    background: transparent;
+    border: 0;
+    border-radius: var(--primer-borderRadius-small);
     transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
     transition-property: color, background-color, border-color;
+    align-items: center;
+    justify-content: center;
 
     svg {
       user-select: none;
@@ -202,18 +202,18 @@
     }
 
     // show vertical divider line between field and button
-    &:before {
-      content: '';
-      display: block;
+    &::before {
       position: absolute;
       top: calc((var(--primer-control-xsmall-size) - var(--base-size-16)) / 2);
       left: calc(var(--base-size-4, 4px) * -1);
+      display: block;
       width: var(--primer-borderWidth-thin);
       height: var(--base-size-16);
+      content: '';
       background: var(--color-border-default);
     }
 
-    &:after {
+    &::after {
       @include minTouchTarget(var(--primer-control-medium-size), var(--primer-control-medium-size));
 
       @media (pointer: coarse) {
@@ -226,20 +226,22 @@
   // if leadingVisual is present
   &.FormControl-fieldWrap--input-leadingVisual {
     .FormControl--input {
-      padding-inline-start: calc(
-        var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+      padding-inline-start:
+        calc(
+          var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
           var(--primer-control-medium-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-      );
+        );
     }
   }
 
   // if trailingAction is present
   &.FormControl-fieldWrap--input-trailingAction {
     .FormControl--input {
-      padding-inline-end: calc(
-        var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+      padding-inline-end:
+        calc(
+          var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
           var(--primer-control-medium-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-      );
+        );
     }
   }
 
@@ -254,10 +256,11 @@
 
       &.FormControl-fieldWrap--input-trailingAction {
         .FormControl--input.FormControl--small {
-          padding-inline-end: calc(
-            var(----primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+          padding-inline-end:
+            calc(
+              var(----primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
               var(--primer-control-small-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-          ); /* 27px */
+            ); /* 27px */
         }
       }
 
@@ -265,7 +268,7 @@
         width: calc(var(--primer-control-small-size, 28px) - var(--base-size-8, 8px));
         height: calc(var(--primer-control-small-size, 28px) - var(--base-size-8, 8px));
 
-        &:before {
+        &::before {
           top: calc((var(--primer-control-xsmall-size) - var(--base-size-16)) / 4); /* 2px */
         }
       }
@@ -279,31 +282,33 @@
 
       &.FormControl-fieldWrap--input-leadingVisual {
         .FormControl--input.FormControl--large {
-          padding-inline-start: calc(
-            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+          padding-inline-start:
+            calc(
+              var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
               var(--primer-control-large-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-          ); /* 31px */
+            ); /* 31px */
         }
       }
 
       &.FormControl-fieldWrap--input-trailingAction {
         .FormControl--input.FormControl--large {
-          padding-inline-end: calc(
-            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+          padding-inline-end:
+            calc(
+              var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
               var(--primer-control-large-gap, 8px)
-          ); /* 36px */
+            ); /* 36px */
         }
       }
 
       .FormControl--input-trailingAction {
-        width: var(--primer-control-small-size, 28px);
-        height: var(--primer-control-small-size, 28px);
         top: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
         right: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
+        width: var(--primer-control-small-size, 28px);
+        height: var(--primer-control-small-size, 28px);
 
-        &:before {
-          height: var(--base-size-20);
+        &::before {
           top: unset;
+          height: var(--base-size-20);
         }
       }
     }
@@ -363,28 +368,31 @@
   }
 }
 
+// these selectors are temporary to override base.scss
+// once FormControl styles are widely adopted, we can adjust this and the global base styles
 input[type='checkbox'].FormControl--checkbox,
 input[type='radio'].FormControl--radio {
-  appearance: none;
+  display: grid;
   width: var(--base-size-16, 16px);
   height: var(--base-size-16, 16px);
+  margin: 0;
   border: solid var(--primer-borderWidth-thin, 1px) var(--color-border-default);
   border-radius: var(--primer-borderRadius-small, 3px);
-  margin: 0;
-  display: grid;
-  place-content: center;
+  // stylelint-disable-next-line declaration-property-value-disallowed-list
   transition: all 80ms cubic-bezier(0.3, 0, 0.5, 1) 240ms !important;
+  appearance: none;
+  place-content: center;
   grid-area: field;
 
-  &:before {
-    content: '';
+  &::before {
     width: var(--base-size-12, 12px);
     height: var(--base-size-12, 12px);
     visibility: hidden;
+    content: '';
+    background-color: var(--color-fg-on-emphasis);
     transition: visibility 0s linear 230ms;
     clip-path: inset(var(--base-size-12, 12px) 0 0 0);
     mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuNzgwMyAwLjIxOTYyNUMxMS45MjEgMC4zNjA0MjcgMTIgMC41NTEzMDUgMTIgMC43NTAzMTNDMTIgMC45NDkzMjEgMTEuOTIxIDEuMTQwMTkgMTEuNzgwMyAxLjI4MUw0LjUxODYgOC41NDA0MkM0LjM3Nzc1IDguNjgxIDQuMTg2ODIgOC43NiAzLjk4Nzc0IDguNzZDMy43ODg2NyA4Ljc2IDMuNTk3NzMgOC42ODEgMy40NTY4OSA4LjU0MDQyTDAuMjAxNjIyIDUuMjg2MkMwLjA2ODkyNzcgNS4xNDM4MyAtMC4wMDMzMDkwNSA0Ljk1NTU1IDAuMDAwMTE2NDkzIDQuNzYwOThDMC4wMDM1NTIwNSA0LjU2NjQzIDAuMDgyMzg5NCA0LjM4MDgxIDAuMjIwMDMyIDQuMjQzMjFDMC4zNTc2NjUgNC4xMDU2MiAwLjU0MzM1NSA0LjAyNjgxIDAuNzM3OTcgNC4wMjMzOEMwLjkzMjU4NCA0LjAxOTk0IDEuMTIwOTMgNC4wOTIxNyAxLjI2MzM0IDQuMjI0ODJMMy45ODc3NCA2Ljk0ODM1TDEwLjcxODYgMC4yMTk2MjVDMTAuODU5NSAwLjA3ODk5MjMgMTEuMDUwNCAwIDExLjI0OTUgMEMxMS40NDg1IDAgMTEuNjM5NSAwLjA3ODk5MjMgMTEuNzgwMyAwLjIxOTYyNVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo='); // octicon checkmark image
-    background-color: var(--color-fg-on-emphasis);
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
@@ -397,12 +405,13 @@ input[type='radio'].FormControl--radio {
   &:checked {
     background: var(--color-accent-fg);
     border-color: var(--color-accent-fg);
+    // stylelint-disable-next-line declaration-property-value-disallowed-list
+    transition: all 80ms cubic-bezier(0.3, 0, 0.5, 1) 0ms !important;
     transition-delay: 0s;
     transition-duration: 0s;
-    transition: all 80ms cubic-bezier(0.3, 0, 0.5, 1) 0ms !important;
     // transition: all 80ms cubic-bezier(0.3, 0, 0.5, 1);
 
-    &:before {
+    &::before {
       visibility: visible;
       transition: visibility 0s linear 0s;
 
@@ -420,7 +429,7 @@ input[type='radio'].FormControl--radio {
   }
 
   &:indeterminate {
-    &:before {
+    &::before {
       mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMiIgdmlld0JveD0iMCAwIDEwIDIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMCAxQzAgMC40NDc3MTUgMC40NDc3MTUgMCAxIDBIOUM5LjU1MjI5IDAgMTAgMC40NDc3MTUgMTAgMUMxMCAxLjU1MjI4IDkuNTUyMjkgMiA5IDJIMUMwLjQ0NzcxNSAyIDAgMS41NTIyOCAwIDFaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K');
       visibility: visible;
     }
@@ -430,7 +439,7 @@ input[type='radio'].FormControl--radio {
 input[type='radio'].FormControl--radio {
   border-radius: var(--primer-borderRadius-full, 100vh);
 
-  &:before {
+  &::before {
     clip-path: circle(0%);
     mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgOS4zNzVDNy40MTYyMiA5LjM3NSA5LjM3NSA3LjQxNjIyIDkuMzc1IDVDOS4zNzUgMi41ODM3NiA3LjQxNjIyIDAuNjI1IDUgMC42MjVDMi41ODM3NiAwLjYyNSAwLjYyNSAyLjU4Mzc2IDAuNjI1IDVDMC42MjUgNy40MTYyMiAyLjU4Mzc2IDkuMzc1IDUgOS4zNzVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'); // checked circle image
 
@@ -440,7 +449,7 @@ input[type='radio'].FormControl--radio {
   }
 
   &:checked {
-    &:before {
+    &::before {
       @media screen and (prefers-reduced-motion: no-preference) {
         animation: radioIn 240ms cubic-bezier(0.65, 0, 0.35, 1) forwards 80ms;
       }
