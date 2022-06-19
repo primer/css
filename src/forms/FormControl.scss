@@ -343,7 +343,8 @@
   grid-template-areas: 'field label' '. caption';
   gap: var(--base-size-8, 8px);
 
-  .FormControl--checkbox-labelWrap {
+  .FormControl--checkbox-labelWrap,
+  .FormControl--radio-labelWrap {
     display: flex;
     flex-direction: column;
     gap: var(--base-size-4, 4px);
@@ -366,11 +367,53 @@
 
 .FormControl--checkbox,
 .FormControl--radio {
-  position: absolute;
+  //   position: absolute;
+  appearance: none;
   width: var(--base-size-16, 16px);
   height: var(--base-size-16, 16px);
-  opacity: 0;
-  overflow: visible !important;
+  border: solid var(--primer-borderWidth-thin, 1px) var(--color-border-default);
+  border-radius: var(--primer-borderRadius-small, 3px);
+  //   opacity: 0;
+  //   overflow: visible !important;
+  margin: 0;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+
+  &:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    clip-path: polygon(
+      98.169% 1.83%,
+      100% 6.253%,
+      98.169% 10.675%,
+      37.655% 71.17%,
+      33.231% 73%,
+      28.807% 71.17%,
+      1.68% 44.052%,
+      0.001% 39.675%,
+      1.834% 35.36%,
+      6.15% 33.528%,
+      10.528% 35.207%,
+      33.231% 57.903%,
+      89.322% 1.83%,
+      93.746% 0%,
+      98.169% 1.83%
+    );
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em deeppink;
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+  }
+
+  &:checked {
+    &:before {
+      transform: scale(1) translateY(2px);
+    }
+  }
 
   &:focus-visible {
     + .FormControl--checkbox-svg {
