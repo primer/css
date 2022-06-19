@@ -51,7 +51,7 @@
   background-color: var(--color-canvas-default);
   border: solid var(--primer-borderWidth-thin, 1px) var(--color-border-default);
 
-  &:not([type='radio']):not([type='checkbox'])[disabled] {
+  &[disabled] {
     color: var(--color-primer-fg-disabled);
     background-color: var(--color-input-disabled-bg);
     border-color: var(--color-border-default);
@@ -64,7 +64,7 @@
     border-color: var(--color-danger-emphasis);
   }
 
-  &:focus {
+  &:not([type='checkbox']):not([type='radio']):focus {
     @include focusBoxShadowInset;
 
     // remove fallback :focus if :focus-visible is supported
@@ -323,6 +323,7 @@
     background-color: var(--color-fg-muted);
     mask: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0iIzU4NjA2OSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNC40MjcgOS40MjdsMy4zOTYgMy4zOTZhLjI1MS4yNTEgMCAwMC4zNTQgMGwzLjM5Ni0zLjM5NkEuMjUuMjUgMCAwMDExLjM5NiA5SDQuNjA0YS4yNS4yNSAwIDAwLS4xNzcuNDI3ek00LjQyMyA2LjQ3TDcuODIgMy4wNzJhLjI1LjI1IDAgMDEuMzU0IDBMMTEuNTcgNi40N2EuMjUuMjUgMCAwMS0uMTc3LjQyN0g0LjZhLjI1LjI1IDAgMDEtLjE3Ny0uNDI3eiIgLz48L3N2Zz4=');
     mask-size: contain;
+    mask-repeat: no-repeat;
     grid-column: 2;
     grid-row: 1;
     place-self: center end;
@@ -336,6 +337,8 @@
     padding-right: var(--base-size-20, 20px);
   }
 }
+
+// checkbox + radio specific styles
 
 .FormGroup--checkbox,
 .FormGroup--radio {
@@ -359,206 +362,93 @@
   }
 }
 
-// checkbox + radio specific styles
-
-.FormControl--radio-svgGradient {
-  visibility: hidden;
-}
-
-.FormControl--checkbox,
-.FormControl--radio {
-  //   position: absolute;
+input[type='checkbox'].FormControl--checkbox,
+input[type='radio'].FormControl--radio {
   appearance: none;
   width: var(--base-size-16, 16px);
   height: var(--base-size-16, 16px);
   border: solid var(--primer-borderWidth-thin, 1px) var(--color-border-default);
   border-radius: var(--primer-borderRadius-small, 3px);
-  //   opacity: 0;
-  //   overflow: visible !important;
   margin: 0;
-  transform: translateY(-0.075em);
   display: grid;
   place-content: center;
+  transition: all 80ms cubic-bezier(0.3, 0, 0.5, 1) 240ms !important;
 
   &:before {
     content: '';
-    width: 12px;
-    height: 12px;
-    clip-path: polygon(
-      98.169% 1.83%,
-      100% 6.253%,
-      98.169% 10.675%,
-      37.655% 71.17%,
-      33.231% 73%,
-      28.807% 71.17%,
-      1.68% 44.052%,
-      0.001% 39.675%,
-      1.834% 35.36%,
-      6.15% 33.528%,
-      10.528% 35.207%,
-      33.231% 57.903%,
-      89.322% 1.83%,
-      93.746% 0%,
-      98.169% 1.83%
-    );
-    transform: scale(0);
-    transform-origin: bottom left;
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em deeppink;
-    /* Windows High Contrast Mode */
-    background-color: CanvasText;
-  }
-
-  &:checked {
-    &:before {
-      transform: scale(1) translateY(2px);
-    }
-  }
-
-  &:focus-visible {
-    + .FormControl--checkbox-svg {
-      .FormControl--checkbox-background {
-        stroke: var(--color-accent-fg);
-        border-radius: 4px;
-        position: relative;
-      }
-    }
-
-    + .FormControl--radio-svg {
-      .FormControl--radio-background {
-        stroke-width: 2;
-        stroke: revert-layer;
-      }
-
-      .FormControl--radio-svgGradient {
-        visibility: visible;
-      }
-    }
-  }
-
-  &[disabled] {
-    cursor: not-allowed;
-    + .FormControl--checkbox-svg,
-    + .FormControl--radio-svg {
-      .FormControl--checkbox-background,
-      .FormControl--radio-background {
-        fill: var(--color-input-disabled-bg);
-        stroke: var(--color-border-default);
-      }
-    }
-  }
-
-  &:checked {
-    &:focus-visible {
-      + .FormControl--checkbox-svg {
-        overflow: visible;
-
-        .FormControl--checkbox-background {
-          outline: 1px solid var(--color-accent-fg);
-          outline-offset: 2px;
-        }
-      }
-
-      + .FormControl--radio-svg {
-        .FormControl--radio-background {
-          stroke-width: 2;
-          stroke: revert-layer;
-        }
-
-        .FormControl--radio-svgGradient {
-          visibility: visible;
-        }
-      }
-    }
-    + .FormControl--checkbox-svg,
-    + .FormControl--radio-svg {
-      .FormControl--checkbox-background,
-      .FormControl--radio-background {
-        fill: var(--color-accent-fg);
-        stroke: var(--color-accent-fg);
-        transition: all 80ms cubic-bezier(0.3, 0, 0.5, 1);
-      }
-
-      .FormControl--radio-circle {
-        visibility: visible;
-        transition: visibility 0s linear 0s;
-
-        @media screen and (prefers-reduced-motion: no-preference) {
-          animation: radioIn 240ms cubic-bezier(0.65, 0, 0.35, 1) forwards 80ms;
-        }
-      }
-
-      .FormControl--checkbox-check {
-        visibility: visible;
-        transition: visibility 0s linear 0s;
-
-        @media screen and (prefers-reduced-motion: no-preference) {
-          animation: checkmarkIn 240ms cubic-bezier(0.65, 0, 0.35, 1) forwards 80ms;
-        }
-      }
-    }
-  }
-
-  &:indeterminate {
-    + .FormControl--checkbox-svg {
-      .FormControl--checkbox-background {
-        fill: var(--color-accent-fg);
-        stroke: var(--color-accent-fg);
-      }
-
-      .FormControl--checkbox-indeterminate {
-        fill: var(--color-fg-on-emphasis);
-        visibility: visible;
-      }
-    }
-  }
-}
-
-.FormControl--checkbox-svg,
-.FormControl--radio-svg {
-  width: var(--base-size-16, 16px);
-  height: var(--base-size-16, 16px);
-  margin-top: 0.125rem;
-  cursor: pointer;
-
-  .FormControl--checkbox-background,
-  .FormControl--radio-background {
-    fill: var(--color-canvas-default);
-    stroke: var(--color-border-default);
-    transition: all 0ms cubic-bezier(0.65, 0, 0.35, 1) 230ms;
-  }
-
-  .FormControl--radio-circle {
+    width: var(--base-size-12, 12px);
+    height: var(--base-size-12, 12px);
     visibility: hidden;
-    fill: var(--color-fg-on-emphasis);
     transition: visibility 0s linear 230ms;
-    clip-path: circle(0%);
-
-    @media screen and (prefers-reduced-motion: no-preference) {
-      animation: radioOut 220ms cubic-bezier(0.65, 0, 0.35, 1) forwards; // slightly snappier animation out
-    }
-  }
-
-  .FormControl--checkbox-check {
-    visibility: hidden;
-    fill: var(--color-fg-on-emphasis);
-    transition: visibility 0s linear 230ms;
-    clip-path: inset(16px 0 0 0);
+    clip-path: inset(var(--base-size-12, 12px) 0 0 0);
+    mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuNzgwMyAwLjIxOTYyNUMxMS45MjEgMC4zNjA0MjcgMTIgMC41NTEzMDUgMTIgMC43NTAzMTNDMTIgMC45NDkzMjEgMTEuOTIxIDEuMTQwMTkgMTEuNzgwMyAxLjI4MUw0LjUxODYgOC41NDA0MkM0LjM3Nzc1IDguNjgxIDQuMTg2ODIgOC43NiAzLjk4Nzc0IDguNzZDMy43ODg2NyA4Ljc2IDMuNTk3NzMgOC42ODEgMy40NTY4OSA4LjU0MDQyTDAuMjAxNjIyIDUuMjg2MkMwLjA2ODkyNzcgNS4xNDM4MyAtMC4wMDMzMDkwNSA0Ljk1NTU1IDAuMDAwMTE2NDkzIDQuNzYwOThDMC4wMDM1NTIwNSA0LjU2NjQzIDAuMDgyMzg5NCA0LjM4MDgxIDAuMjIwMDMyIDQuMjQzMjFDMC4zNTc2NjUgNC4xMDU2MiAwLjU0MzM1NSA0LjAyNjgxIDAuNzM3OTcgNC4wMjMzOEMwLjkzMjU4NCA0LjAxOTk0IDEuMTIwOTMgNC4wOTIxNyAxLjI2MzM0IDQuMjI0ODJMMy45ODc3NCA2Ljk0ODM1TDEwLjcxODYgMC4yMTk2MjVDMTAuODU5NSAwLjA3ODk5MjMgMTEuMDUwNCAwIDExLjI0OTUgMEMxMS40NDg1IDAgMTEuNjM5NSAwLjA3ODk5MjMgMTEuNzgwMyAwLjIxOTYyNVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo='); // octicon checkmark image
+    background-color: var(--color-fg-on-emphasis);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
 
     @media screen and (prefers-reduced-motion: no-preference) {
       animation: checkmarkOut 220ms cubic-bezier(0.65, 0, 0.35, 1) forwards; // slightly snappier animation out
     }
   }
 
-  .FormControl--checkbox-indeterminate {
-    fill: transparent;
-    visibility: hidden;
+  &:checked {
+    background: var(--color-accent-fg);
+    border-color: var(--color-accent-fg);
+    transition-delay: 0s;
+    transition-duration: 0s;
+    transition: all 80ms cubic-bezier(0.3, 0, 0.5, 1) 0ms !important;
+    // transition: all 80ms cubic-bezier(0.3, 0, 0.5, 1);
+
+    &:before {
+      visibility: visible;
+      transition: visibility 0s linear 0s;
+
+      @media screen and (prefers-reduced-motion: no-preference) {
+        animation: checkmarkIn 240ms cubic-bezier(0.65, 0, 0.35, 1) forwards 80ms;
+      }
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline-offset: 2px;
+    // border-color: revert-layer;
+    // box-shadow: unset;
+  }
+
+  &:indeterminate {
+    &:before {
+      mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMiIgdmlld0JveD0iMCAwIDEwIDIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMCAxQzAgMC40NDc3MTUgMC40NDc3MTUgMCAxIDBIOUM5LjU1MjI5IDAgMTAgMC40NDc3MTUgMTAgMUMxMCAxLjU1MjI4IDkuNTUyMjkgMiA5IDJIMUMwLjQ0NzcxNSAyIDAgMS41NTIyOCAwIDFaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K');
+      visibility: visible;
+    }
+  }
+}
+
+input[type='radio'].FormControl--radio {
+  border-radius: var(--primer-borderRadius-full, 100vh);
+
+  &:before {
+    clip-path: circle(0%);
+    mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgOS4zNzVDNy40MTYyMiA5LjM3NSA5LjM3NSA3LjQxNjIyIDkuMzc1IDVDOS4zNzUgMi41ODM3NiA3LjQxNjIyIDAuNjI1IDUgMC42MjVDMi41ODM3NiAwLjYyNSAwLjYyNSAyLjU4Mzc2IDAuNjI1IDVDMC42MjUgNy40MTYyMiAyLjU4Mzc2IDkuMzc1IDUgOS4zNzVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'); // checked circle image
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+      animation: radioOut 220ms cubic-bezier(0.65, 0, 0.35, 1) forwards; // slightly snappier animation out
+    }
+  }
+
+  &:checked {
+    &:before {
+      @media screen and (prefers-reduced-motion: no-preference) {
+        animation: radioIn 240ms cubic-bezier(0.65, 0, 0.35, 1) forwards 80ms;
+      }
+    }
   }
 }
 
 @keyframes checkmarkIn {
   from {
-    clip-path: inset(16px 0 0 0);
+    clip-path: inset(var(--base-size-12, 12px) 0 0 0);
   }
 
   to {
@@ -572,7 +462,7 @@
   }
 
   to {
-    clip-path: inset(16px 0 0 0);
+    clip-path: inset(var(--base-size-12, 12px) 0 0 0);
   }
 }
 

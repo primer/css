@@ -115,13 +115,13 @@ export const InputTemplate = ({
     <div data-view-component="true" class="FormGroup FormGroup--checkbox FormControl-caption">
       <input
         placeholder={placeholder}
-        id={id}
+        id="input-id"
         name="input-id"
         type="checkbox"
         disabled={disabled}
         invalid={invalid ? 'true' : undefined}
         class="FormControl FormControl--checkbox"
-        checked={checked}
+        checked={checked ? 'true' : undefined}
         indeterminate={indeterminate ? 'true' : undefined}
       />
       <span class="FormControl--checkbox-labelWrap">

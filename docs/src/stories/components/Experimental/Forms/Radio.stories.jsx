@@ -104,56 +104,17 @@ export const InputTemplate = ({
   checked
 }) => (
   <>
-    <div data-view-component="true" class="FormGroup FormGroup--radio FormControl-caption">
+    <div data-view-component="true" class="FormGroup FormGroup--radio">
       <input
         placeholder={placeholder}
-        id={id}
+        id="input-id"
         name="input-id"
         type="radio"
         disabled={disabled}
         invalid={invalid ? 'true' : undefined}
         class="FormControl FormControl--radio"
-        checked={checked}
+        checked={checked ? 'true' : undefined}
       />
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 18 18"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-        focusable="false"
-        class="FormControl--radio-svg"
-        style={{overflow: 'visible'}}
-      >
-        <defs>
-          <radialGradient
-            id="paint0_radial_14515_53881"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientUnits="userSpaceOnUse"
-            gradientTransform="translate(9 9) rotate(90) scale(8.5)"
-            class="FormControl--radio-svgGradient"
-          >
-            <stop offset="0.828125" stop-color="white" />
-            <stop offset="0.828225" stop-color="var(--color-accent-fg)" />
-          </radialGradient>
-        </defs>
-        <circle
-          cx="9"
-          cy="9"
-          r="7"
-          fill="#0969DA"
-          stroke="url(#paint0_radial_14515_53881)"
-          stroke-width="1"
-          class="FormControl--radio-background"
-        />
-        <path
-          d="M9 13.375C11.4162 13.375 13.375 11.4162 13.375 9C13.375 6.58376 11.4162 4.625 9 4.625C6.58376 4.625 4.625 6.58376 4.625 9C4.625 11.4162 6.58376 13.375 9 13.375Z"
-          class="FormControl--radio-circle"
-        />
-      </svg>
       <span class="FormControl--radio-labelWrap">
         <label htmlFor="input-id" className={clsx('FormControl-label', visuallyHideLabel && 'sr-only')}>
           {label}
