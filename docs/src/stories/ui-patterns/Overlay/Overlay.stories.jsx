@@ -32,12 +32,12 @@ export default {
       }
     },
     headerVariant: {
-      options: ['medium', 'large'],
+      options: ['medium', 'large', 'custom'],
       defaultValue: 'medium',
       control: {
         type: 'inline-radio',
       },
-      description: 'medium (default), large header/description font-size + spacing',
+      description: 'medium title (default), large title, or custom header',
       table: {
         category: 'Header'
       }
@@ -258,8 +258,8 @@ export default {
         category: 'Header'
       }
     },
-    headerContentSlot: {
-      description: 'Slot for additional header content',
+    headerSlot: {
+      description: 'Slot for custom header content. If header variant is set to `custom`, this slot visually replaces the title. Otherwise it appears below the title.',
       control: {type: 'string'},
       table: {
         category: 'HTML'
@@ -362,7 +362,7 @@ export const OverlayTemplate = ({
   showHeaderDivider,
   hasHeader,
   hasFooter,
-  headerContentSlot,
+  headerSlot,
   motion,
   footerContentAlign,
   showCloseButton,
@@ -374,7 +374,7 @@ export const OverlayTemplate = ({
   ariaLabelledby,
   ariaDescribedby,
   dataFocusTrap,
-  children,
+  bodySlot,
   titleId,
   descriptionId,
   placementNarrow,
@@ -431,6 +431,7 @@ export const OverlayTemplate = ({
               showHeaderDivider && 'Overlay-header--divided',
               headerVariant && `Overlay-header--${headerVariant}`
             )}
+            aria-role="none"
           >
             <div className="Overlay-headerContentWrap">
               <div className="Overlay-titleWrap">
@@ -443,6 +444,12 @@ export const OverlayTemplate = ({
                   <h2 id={descriptionId} className="Overlay-description">
                     {description}
                   </h2>
+                )}
+
+                {headerVariant == 'custom' && headerSlot && (
+                  <div className="Overlay-customTitle">
+                    {headerSlot}
+                  </div>
                 )}
               </div>
               {showCloseButton && (
@@ -459,12 +466,15 @@ export const OverlayTemplate = ({
                 </div>
               )}
             </div>
-            {headerContentSlot && (
-              <div className="Overlay-headerContentSlot" dangerouslySetInnerHTML={{__html: headerContentSlot}} />
+
+            {headerVariant != 'custom' && headerSlot && (
+              <div className="Overlay-headerSlot">
+                {headerSlot}
+              </div>
             )}
           </header>
         )}
-        <div className={clsx('Overlay-body', bodyPaddingVariant && `${bodyPaddingVariant}`)}>{children}</div>
+        <div className={clsx('Overlay-body', bodyPaddingVariant && `${bodyPaddingVariant}`)}>{bodySlot}</div>
         {hasFooter && (
           <footer
             className={clsx(
@@ -495,13 +505,12 @@ Playground.args = {
   footerContentAlign: 2,
   showCloseButton: true,
   showFooterButton: false,
-  headerContentSlot: '',
+  headerSlot: '',
   actionContentSlot: '',
-  headerVariant: 0,
+  headerVariant: 'medium',
   bodyPaddingVariant: 0,
   width: 'small',
   height: 'small',
-  headerVariant: 0,
   hasHeader: true,
   hasFooter: true,
   showFooterDivider: false,
@@ -529,18 +538,62 @@ Dialog.args = {
   footerContentAlign: 2,
   showCloseButton: true,
   showFooterButton: false,
-  headerContentSlot: '',
+  headerSlot: '',
   actionContentSlot: '',
-  headerVariant: 0,
+  headerVariant: 'large',
   bodyPaddingVariant: 0,
-  headerVariant: 0,
   hasFooter: false,
   showFooterDivider: false,
   showHeaderDivider: false,
   role: '',
   ariaDescribedby: '',
   dataFocusTrap: '',
-  children: (
+  bodySlot: (
+    <>
+      <div>Lorem ipsum dolor sit amet.</div>
+      <div>Lorem ipsum dolor sit amet.</div>
+      <div>Lorem ipsum dolor sit amet.</div>
+      <div>Lorem ipsum dolor sit amet.</div>
+      <div>Lorem ipsum dolor sit amet.</div>
+    </>
+  )
+};
+
+export const CustomHeader = OverlayTemplate.bind();
+CustomHeader.storyName = 'Custom header';
+CustomHeader.args = {
+  variant: 'center',
+
+  // Header
+  hasHeader: true,
+  title: 'Dialog title',
+  description: 'This is the subtitle of the dialog',
+
+  // Properties
+  width: 'medium',
+  height: 'small',
+  motion: 'auto',
+
+  footerContentAlign: 2,
+  showCloseButton: true,
+  showFooterButton: false,
+  actionContentSlot: '',
+  headerVariant: 'medium',
+  bodyPaddingVariant: 0,
+  hasFooter: false,
+  showFooterDivider: false,
+  showHeaderDivider: false,
+  role: '',
+  ariaDescribedby: '',
+  dataFocusTrap: '',
+  headerSlot: (
+    <>
+      <div style={{background: 'pink', height: '32px', width: '100%'}}>
+        Custom header
+      </div>
+    </>
+  ),
+  bodySlot: (
     <>
       <div>Lorem ipsum dolor sit amet.</div>
       <div>Lorem ipsum dolor sit amet.</div>

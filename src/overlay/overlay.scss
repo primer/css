@@ -57,6 +57,7 @@ $Overlay-height: (
 }
 
 .Overlay {
+  position: relative;
   display: flex;
   min-width: #{map-get($Overlay-width, 'xsmall')};
   flex-direction: column;
@@ -162,6 +163,10 @@ $Overlay-height: (
     // stylelint-disable-next-line primer/box-shadow
     box-shadow: inset 0 #{-$border-width} var(--color-border-default);
 
+    .Overlay-headerSlot {
+      margin-bottom: -$spacer-2;
+    }
+
     + .Overlay-body {
       padding-top: $spacer-3;
     }
@@ -180,6 +185,12 @@ $Overlay-height: (
           font-size: $body-font-size;
         }
       }
+    }
+  }
+
+  &.Overlay-header--custom {
+    .Overlay-title, .Overlay-description {
+      display: none !important;
     }
   }
 
@@ -464,16 +475,16 @@ $Overlay-height: (
 // Todo: Replace with Primer Primitives motion tokens
 
 @keyframes Overlay--motion-slideInUp {
-  from { transform: translateY(100%) }
+  from { transform: translateY(25%) }
 }
 @keyframes Overlay--motion-slideInDown {
-  from { transform: translateY(-100%) }
+  from { transform: translateY(-25%) }
 }
 @keyframes Overlay--motion-slideInRight {
-  from { transform: translateX(-100%) }
+  from { transform: translateX(-25%) }
 }
 @keyframes Overlay--motion-slideInLeft {
-  from { transform: translateX(100%) }
+  from { transform: translateX(25%) }
 }
 @keyframes Overlay--motion-scaleFade {
   from {
