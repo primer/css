@@ -259,7 +259,14 @@ export default {
       }
     },
     headerSlot: {
-      description: 'Slot for custom header content. If header variant is set to `custom`, this slot visually replaces the title. Otherwise it appears below the title.',
+      description: 'Slot for custom header content. Only shown if header variant is set to `custom`.',
+      control: {type: 'string'},
+      table: {
+        category: 'HTML'
+      }
+    },
+    subHeaderSlot: {
+      description: 'Slot for sub header content, present below the header and before the body.',
       control: {type: 'string'},
       table: {
         category: 'HTML'
@@ -363,6 +370,7 @@ export const OverlayTemplate = ({
   hasHeader,
   hasFooter,
   headerSlot,
+  subHeaderSlot,
   motion,
   footerContentAlign,
   showCloseButton,
@@ -447,7 +455,7 @@ export const OverlayTemplate = ({
                 )}
 
                 {headerVariant == 'custom' && headerSlot && (
-                  <div className="Overlay-customTitle">
+                  <div className="Overlay-customHeader">
                     {headerSlot}
                   </div>
                 )}
@@ -467,9 +475,9 @@ export const OverlayTemplate = ({
               )}
             </div>
 
-            {headerVariant != 'custom' && headerSlot && (
-              <div className="Overlay-headerSlot">
-                {headerSlot}
+            {subHeaderSlot && (
+              <div className="Overlay-subHeader">
+                {subHeaderSlot}
               </div>
             )}
           </header>
@@ -574,11 +582,19 @@ CustomHeader.args = {
   height: 'small',
   motion: 'auto',
 
+  // Header
+  headerVariant: 'custom',
+  headerSlot: (
+    <><div style={{background: 'pink', height: '32px', width: '100%'}}>Custom header</div></>
+  ),
+  subHeaderSlot: (
+    <>UnderlineNav</>
+  ),
+
   footerContentAlign: 2,
   showCloseButton: true,
   showFooterButton: false,
   actionContentSlot: '',
-  headerVariant: 'medium',
   bodyPaddingVariant: 0,
   hasFooter: false,
   showFooterDivider: false,
@@ -586,13 +602,7 @@ CustomHeader.args = {
   role: '',
   ariaDescribedby: '',
   dataFocusTrap: '',
-  headerSlot: (
-    <>
-      <div style={{background: 'pink', height: '32px', width: '100%'}}>
-        Custom header
-      </div>
-    </>
-  ),
+
   bodySlot: (
     <>
       <div>Lorem ipsum dolor sit amet.</div>
