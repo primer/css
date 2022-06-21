@@ -84,10 +84,11 @@
   }
 
   &.FormControl--monospace {
-    font-family: var(
-      --primer-fontStack-monospace,
-      'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace'
-    );
+    font-family:
+      var(
+        --primer-fontStack-monospace,
+        'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace'
+      );
   }
 
   // <select> and <input>
@@ -225,20 +226,22 @@
   // if leadingVisual is present
   &.FormControl-fieldWrap--input-leadingVisual {
     .FormControl--input {
-      padding-inline-start: calc(
-        var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+      padding-inline-start:
+        calc(
+          var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
           var(--primer-control-medium-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-      );
+        );
     }
   }
 
   // if trailingAction is present
   &.FormControl-fieldWrap--input-trailingAction {
     .FormControl--input {
-      padding-inline-end: calc(
-        var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+      padding-inline-end:
+        calc(
+          var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
           var(--primer-control-medium-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-      );
+        );
     }
   }
 
@@ -253,10 +256,11 @@
 
       &.FormControl-fieldWrap--input-trailingAction {
         .FormControl--input.FormControl--small {
-          padding-inline-end: calc(
-            var(----primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+          padding-inline-end:
+            calc(
+              var(----primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
               var(--primer-control-small-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-          ); /* 27px */
+            ); /* 27px */
         }
       }
 
@@ -278,19 +282,21 @@
 
       &.FormControl-fieldWrap--input-leadingVisual {
         .FormControl--input.FormControl--large {
-          padding-inline-start: calc(
-            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+          padding-inline-start:
+            calc(
+              var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
               var(--primer-control-large-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-          ); /* 31px */
+            ); /* 31px */
         }
       }
 
       &.FormControl-fieldWrap--input-trailingAction {
         .FormControl--input.FormControl--large {
-          padding-inline-end: calc(
-            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+          padding-inline-end:
+            calc(
+              var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
               var(--primer-control-large-gap, 8px)
-          ); /* 36px */
+            ); /* 36px */
         }
       }
 
