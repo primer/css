@@ -370,7 +370,7 @@ input[type='radio'].FormControl--radio {
   width: var(--base-size-16, 16px);
   height: var(--base-size-16, 16px);
   margin: 0;
-  margin-top: 0.125rem; // 2px to center align with label (20px line-height
+  margin-top: 0.125rem; // 2px to center align with label (20px line-height)
   border: solid var(--primer-borderWidth-thin, 1px) var(--color-border-default);
   border-radius: var(--primer-borderRadius-small, 3px);
   // stylelint-disable-next-line declaration-property-value-disallowed-list
@@ -380,13 +380,13 @@ input[type='radio'].FormControl--radio {
   grid-area: field;
 
   &::before {
-    width: var(--base-size-12, 12px);
-    height: var(--base-size-12, 12px);
+    width: var(--base-size-16, 16px);
+    height: var(--base-size-16, 16px);
     visibility: hidden;
     content: '';
     background-color: var(--color-fg-on-emphasis);
     transition: visibility 0s linear 230ms;
-    clip-path: inset(var(--base-size-12, 12px) 0 0 0);
+    clip-path: inset(var(--base-size-16, 16px) 0 0 0);
     mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuNzgwMyAwLjIxOTYyNUMxMS45MjEgMC4zNjA0MjcgMTIgMC41NTEzMDUgMTIgMC43NTAzMTNDMTIgMC45NDkzMjEgMTEuOTIxIDEuMTQwMTkgMTEuNzgwMyAxLjI4MUw0LjUxODYgOC41NDA0MkM0LjM3Nzc1IDguNjgxIDQuMTg2ODIgOC43NiAzLjk4Nzc0IDguNzZDMy43ODg2NyA4Ljc2IDMuNTk3NzMgOC42ODEgMy40NTY4OSA4LjU0MDQyTDAuMjAxNjIyIDUuMjg2MkMwLjA2ODkyNzcgNS4xNDM4MyAtMC4wMDMzMDkwNSA0Ljk1NTU1IDAuMDAwMTE2NDkzIDQuNzYwOThDMC4wMDM1NTIwNSA0LjU2NjQzIDAuMDgyMzg5NCA0LjM4MDgxIDAuMjIwMDMyIDQuMjQzMjFDMC4zNTc2NjUgNC4xMDU2MiAwLjU0MzM1NSA0LjAyNjgxIDAuNzM3OTcgNC4wMjMzOEMwLjkzMjU4NCA0LjAxOTk0IDEuMTIwOTMgNC4wOTIxNyAxLjI2MzM0IDQuMjI0ODJMMy45ODc3NCA2Ljk0ODM1TDEwLjcxODYgMC4yMTk2MjVDMTAuODU5NSAwLjA3ODk5MjMgMTEuMDUwNCAwIDExLjI0OTUgMEMxMS40NDg1IDAgMTEuNjM5NSAwLjA3ODk5MjMgMTEuNzgwMyAwLjIxOTYyNVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo='); // octicon checkmark image
     mask-size: contain;
     mask-repeat: no-repeat;
@@ -432,6 +432,7 @@ input[type='radio'].FormControl--radio {
   &::before {
     clip-path: circle(0%);
     mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgOS4zNzVDNy40MTYyMiA5LjM3NSA5LjM3NSA3LjQxNjIyIDkuMzc1IDVDOS4zNzUgMi41ODM3NiA3LjQxNjIyIDAuNjI1IDUgMC42MjVDMi41ODM3NiAwLjYyNSAwLjYyNSAyLjU4Mzc2IDAuNjI1IDVDMC42MjUgNy40MTYyMiAyLjU4Mzc2IDkuMzc1IDUgOS4zNzVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'); // checked circle image
+    mask-size: 65%;
 
     @media screen and (prefers-reduced-motion: no-preference) {
       animation: radioOut 80ms cubic-bezier(0.65, 0, 0.35, 1) forwards; // slightly snappier animation out
@@ -449,7 +450,7 @@ input[type='radio'].FormControl--radio {
 
 @keyframes checkmarkIn {
   from {
-    clip-path: inset(var(--base-size-12, 12px) 0 0 0);
+    clip-path: inset(var(--base-size-16, 16px) 0 0 0);
   }
 
   to {
@@ -463,7 +464,7 @@ input[type='radio'].FormControl--radio {
   }
 
   to {
-    clip-path: inset(var(--base-size-12, 12px) 0 0 0);
+    clip-path: inset(var(--base-size-16, 16px) 0 0 0);
   }
 }
 
