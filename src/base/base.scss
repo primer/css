@@ -96,8 +96,6 @@ button,
 [role='button'],
 input[type='radio'],
 input[type='checkbox'] {
-  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
-  transition-property: color, background-color, box-shadow, border-color;
   // fallback :focus state
   &:focus {
     @include focusOutline;

@@ -84,11 +84,10 @@
   }
 
   &.FormControl--monospace {
-    font-family:
-      var(
-        --primer-fontStack-monospace,
-        'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace'
-      );
+    font-family: var(
+      --primer-fontStack-monospace,
+      'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace'
+    );
   }
 
   // <select> and <input>
@@ -226,22 +225,20 @@
   // if leadingVisual is present
   &.FormControl-fieldWrap--input-leadingVisual {
     .FormControl--input {
-      padding-inline-start:
-        calc(
-          var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+      padding-inline-start: calc(
+        var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
           var(--primer-control-medium-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-        );
+      );
     }
   }
 
   // if trailingAction is present
   &.FormControl-fieldWrap--input-trailingAction {
     .FormControl--input {
-      padding-inline-end:
-        calc(
-          var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+      padding-inline-end: calc(
+        var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
           var(--primer-control-medium-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-        );
+      );
     }
   }
 
@@ -256,11 +253,10 @@
 
       &.FormControl-fieldWrap--input-trailingAction {
         .FormControl--input.FormControl--small {
-          padding-inline-end:
-            calc(
-              var(----primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+          padding-inline-end: calc(
+            var(----primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
               var(--primer-control-small-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-            ); /* 27px */
+          ); /* 27px */
         }
       }
 
@@ -282,21 +278,19 @@
 
       &.FormControl-fieldWrap--input-leadingVisual {
         .FormControl--input.FormControl--large {
-          padding-inline-start:
-            calc(
-              var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+          padding-inline-start: calc(
+            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
               var(--primer-control-large-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-            ); /* 31px */
+          ); /* 31px */
         }
       }
 
       &.FormControl-fieldWrap--input-trailingAction {
         .FormControl--input.FormControl--large {
-          padding-inline-end:
-            calc(
-              var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+          padding-inline-end: calc(
+            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
               var(--primer-control-large-gap, 8px)
-            ); /* 36px */
+          ); /* 36px */
         }
       }
 
@@ -376,10 +370,11 @@ input[type='radio'].FormControl--radio {
   width: var(--base-size-16, 16px);
   height: var(--base-size-16, 16px);
   margin: 0;
+  margin-top: 0.125rem; // 2px to center align with label (20px line-height
   border: solid var(--primer-borderWidth-thin, 1px) var(--color-border-default);
   border-radius: var(--primer-borderRadius-small, 3px);
   // stylelint-disable-next-line declaration-property-value-disallowed-list
-  transition: all 80ms cubic-bezier(0.3, 0, 0.5, 1) 240ms !important;
+  transition: border-color, background 80ms cubic-bezier(0.33, 1, 0.68, 1) 120ms; // checked -> unchecked
   appearance: none;
   place-content: center;
   grid-area: field;
@@ -398,7 +393,7 @@ input[type='radio'].FormControl--radio {
     mask-position: center;
 
     @media screen and (prefers-reduced-motion: no-preference) {
-      animation: checkmarkOut 220ms cubic-bezier(0.65, 0, 0.35, 1) forwards; // slightly snappier animation out
+      animation: checkmarkOut 80ms cubic-bezier(0.65, 0, 0.35, 1) forwards; // slightly snappier animation out
     }
   }
 
@@ -406,17 +401,14 @@ input[type='radio'].FormControl--radio {
     background: var(--color-accent-fg);
     border-color: var(--color-accent-fg);
     // stylelint-disable-next-line declaration-property-value-disallowed-list
-    transition: all 80ms cubic-bezier(0.3, 0, 0.5, 1) 0ms !important;
-    transition-delay: 0s;
-    transition-duration: 0s;
-    // transition: all 80ms cubic-bezier(0.3, 0, 0.5, 1);
+    transition: border-color, background 80ms cubic-bezier(0.32, 0, 0.67, 0) 0ms; // unchecked -> checked
 
     &::before {
       visibility: visible;
       transition: visibility 0s linear 0s;
 
       @media screen and (prefers-reduced-motion: no-preference) {
-        animation: checkmarkIn 240ms cubic-bezier(0.65, 0, 0.35, 1) forwards 80ms;
+        animation: checkmarkIn 80ms cubic-bezier(0.65, 0, 0.35, 1) forwards 80ms;
       }
     }
   }
@@ -424,8 +416,6 @@ input[type='radio'].FormControl--radio {
   &:focus,
   &:focus-visible {
     outline-offset: 2px;
-    // border-color: revert-layer;
-    // box-shadow: unset;
   }
 
   &:indeterminate {
@@ -444,14 +434,14 @@ input[type='radio'].FormControl--radio {
     mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgOS4zNzVDNy40MTYyMiA5LjM3NSA5LjM3NSA3LjQxNjIyIDkuMzc1IDVDOS4zNzUgMi41ODM3NiA3LjQxNjIyIDAuNjI1IDUgMC42MjVDMi41ODM3NiAwLjYyNSAwLjYyNSAyLjU4Mzc2IDAuNjI1IDVDMC42MjUgNy40MTYyMiAyLjU4Mzc2IDkuMzc1IDUgOS4zNzVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'); // checked circle image
 
     @media screen and (prefers-reduced-motion: no-preference) {
-      animation: radioOut 220ms cubic-bezier(0.65, 0, 0.35, 1) forwards; // slightly snappier animation out
+      animation: radioOut 80ms cubic-bezier(0.65, 0, 0.35, 1) forwards; // slightly snappier animation out
     }
   }
 
   &:checked {
     &::before {
       @media screen and (prefers-reduced-motion: no-preference) {
-        animation: radioIn 240ms cubic-bezier(0.65, 0, 0.35, 1) forwards 80ms;
+        animation: radioIn 80ms cubic-bezier(0.65, 0, 0.35, 1) forwards 80ms;
       }
     }
   }
