@@ -373,7 +373,6 @@ input[type='radio'].FormControl--radio {
   margin-top: 0.125rem; // 2px to center align with label (20px line-height)
   border: solid var(--primer-borderWidth-thin, 1px) var(--color-border-default);
   border-radius: var(--primer-borderRadius-small, 3px);
-  // stylelint-disable-next-line declaration-property-value-disallowed-list
   transition: border-color, background 80ms cubic-bezier(0.33, 1, 0.68, 1) 120ms; // checked -> unchecked
   appearance: none;
   place-content: center;
@@ -400,7 +399,6 @@ input[type='radio'].FormControl--radio {
   &:checked {
     background: var(--color-accent-fg);
     border-color: var(--color-accent-fg);
-    // stylelint-disable-next-line declaration-property-value-disallowed-list
     transition: border-color, background 80ms cubic-bezier(0.32, 0, 0.67, 0) 0ms; // unchecked -> checked
 
     &::before {
