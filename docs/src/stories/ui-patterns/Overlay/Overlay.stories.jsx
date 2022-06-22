@@ -525,7 +525,12 @@ Playground.args = {
   showHeaderDivider: false,
   role: '',
   ariaDescribedby: '',
-  dataFocusTrap: ''
+  dataFocusTrap: '',
+  bodySlot: (
+    <>
+      <p>This is the body of the dialog</p>
+    </>
+  )
 };
 
 export const Dialog = OverlayTemplate.bind();
