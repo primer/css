@@ -17,7 +17,7 @@ export default {
   argTypes: {
     size: {
       options: [0, 1, 2], // iterator
-      mapping: ['FormControl--small', 'FormControl--medium', 'FormControl--large'], // values
+      mapping: ['Field--small', 'Field--medium', 'Field--large'], // values
       control: {
         type: 'inline-radio',
         labels: ['small', 'medium', 'large']
@@ -140,21 +140,21 @@ export const InputTemplate = ({
   caption
 }) => (
   <>
-    <div className={clsx('FormGroup', fullWidth && 'FormGroup--fullWidth')}>
+    <div className={clsx('FormControl', fullWidth && 'FormControl--fullWidth')}>
       <label htmlFor={id} className={clsx('FormControl-label', visuallyHideLabel && 'sr-only')}>
         {label}
       </label>
-      <div className={clsx('FormControl-fieldWrap', 'FormControl-fieldWrap--select', size && `${size}`)}>
+      <div className={clsx('Field-wrap', 'Field-wrap--select', size && `${size}`)}>
         <select
           placeholder={placeholder}
           id={id}
           name="input-id"
           className={clsx(
-            'FormControl',
-            'FormControl--select',
+            'Field',
+            'Field--select',
             size && `${size}`,
-            inset && 'FormControl--inset',
-            monospace && 'FormControl--monospace'
+            inset && 'Field--inset',
+            monospace && 'Field--monospace'
           )}
           disabled={disabled}
           invalid={invalid ? 'true' : undefined}

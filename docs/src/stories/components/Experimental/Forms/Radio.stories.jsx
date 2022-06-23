@@ -104,7 +104,7 @@ export const RadioTemplate = ({
   checked
 }) => (
   <>
-    <div data-view-component="true" class="FormGroup FormGroup--radio">
+    <div data-view-component="true" class="FormControl FormControl--radio">
       <input
         placeholder={placeholder}
         id="input-id"
@@ -112,10 +112,10 @@ export const RadioTemplate = ({
         type="radio"
         disabled={disabled}
         invalid={invalid ? 'true' : undefined}
-        class="FormControl FormControl--radio"
+        class="Field Field--radio"
         checked={checked ? 'true' : undefined}
       />
-      <span class="FormControl--radio-labelWrap">
+      <span class="Field--radio-labelWrap">
         <label htmlFor="input-id" className={clsx('FormControl-label', visuallyHideLabel && 'sr-only')}>
           {label}
         </label>

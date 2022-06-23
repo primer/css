@@ -128,21 +128,16 @@ export const InputTemplate = ({
   caption
 }) => (
   <>
-    <div className={clsx('FormGroup', fullWidth && 'FormGroup--fullWidth')}>
+    <div className={clsx('FormControl', fullWidth && 'FormControl--fullWidth')}>
       <label htmlFor={id} className={clsx('FormControl-label', visuallyHideLabel && 'sr-only')}>
         {label}
       </label>
-      <div className={clsx('FormControl-fieldWrap')}>
+      <div className={clsx('Field-wrap')}>
         <textarea
           placeholder={placeholder}
           id={id}
           name="input-id"
-          className={clsx(
-            'FormControl',
-            'FormControl--textarea',
-            inset && 'FormControl--inset',
-            monospace && 'FormControl--monospace'
-          )}
+          className={clsx('Field', 'Field--textarea', inset && 'Field--inset', monospace && 'Field--monospace')}
           disabled={disabled}
           invalid={invalid ? 'true' : undefined}
         />

@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import {InputTemplate} from './Input.stories'
 
 export default {
-  title: 'Components/Forms/FormGroup',
+  title: 'Components/Forms/FormControl',
   parameters: {
     layout: 'padded'
   },
@@ -14,7 +14,7 @@ export default {
       </form>
     )
   ],
-  excludeStories: ['FormGroupTemplate'],
+  excludeStories: ['FormControlTemplate'],
   argTypes: {
     size: {
       options: [0, 1, 2], // iterator
@@ -118,7 +118,7 @@ const focusMethod = function getFocus() {
   input.focus()
 }
 
-export const FormGroupTemplate = ({
+export const FormControlTemplate = ({
   label,
   type,
   id,
@@ -149,7 +149,7 @@ export const FormGroupTemplate = ({
   </>
 )
 
-export const Playground = FormGroupTemplate.bind({})
+export const Playground = FormControlTemplate.bind({})
 Playground.args = {
   type: 'email',
   id: 'some-id',

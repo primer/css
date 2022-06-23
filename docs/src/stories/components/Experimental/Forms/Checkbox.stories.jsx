@@ -112,7 +112,7 @@ export const InputTemplate = ({
   indeterminate
 }) => (
   <>
-    <div data-view-component="true" class="FormGroup FormGroup--checkbox FormControl-caption">
+    <div data-view-component="true" class="FormControl FormControl--checkbox">
       <input
         placeholder={placeholder}
         id="input-id"
@@ -120,11 +120,11 @@ export const InputTemplate = ({
         type="checkbox"
         disabled={disabled}
         invalid={invalid ? 'true' : undefined}
-        class="FormControl FormControl--checkbox"
+        class="Field Field--checkbox"
         checked={checked ? 'true' : undefined}
         indeterminate={indeterminate ? 'true' : undefined}
       />
-      <span class="FormControl--checkbox-labelWrap">
+      <span class="Field--checkbox-labelWrap">
         <label htmlFor="input-id" className={clsx('FormControl-label', visuallyHideLabel && 'sr-only')}>
           {label}
         </label>

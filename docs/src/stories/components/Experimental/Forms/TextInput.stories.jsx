@@ -2,7 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 
 export default {
-  title: 'Components/Experimental/Forms/Input',
+  title: 'Components/Experimental/Forms/TextInput',
   parameters: {
     layout: 'padded'
   },
@@ -17,7 +17,7 @@ export default {
   argTypes: {
     size: {
       options: [0, 1, 2], // iterator
-      mapping: ['FormControl--small', 'FormControl--medium', 'FormControl--large'], // values
+      mapping: ['Field--small', 'Field--medium', 'Field--large'], // values
       control: {
         type: 'inline-radio',
         labels: ['small', 'medium', 'large']
@@ -158,22 +158,22 @@ export const InputTemplate = ({
   caption
 }) => (
   <>
-    <div className={clsx('FormGroup', fullWidth && 'FormGroup--fullWidth')}>
+    <div className={clsx('FormControl', fullWidth && 'FormControl--fullWidth')}>
       <label htmlFor={id} className={clsx('FormControl-label', visuallyHideLabel && 'sr-only')}>
         {label}
       </label>
       {showClearButton || leadingVisual ? (
         <div
           className={clsx(
-            'FormControl-fieldWrap',
-            'FormControl-fieldWrap--input',
-            showClearButton && 'FormControl-fieldWrap--input-trailingAction',
+            'Field-wrap',
+            'Field-wrap--input',
+            showClearButton && 'Field-wrap--input-trailingAction',
             size && `${size}`,
-            leadingVisual && 'FormControl-fieldWrap--input-leadingVisual'
+            leadingVisual && 'Field-wrap--input-leadingVisual'
           )}
         >
           {leadingVisual && (
-            <span class="FormControl--input-leadingVisualWrap">
+            <span class="Field--input-leadingVisualWrap">
               <svg
                 aria-hidden="true"
                 height="16"
@@ -181,7 +181,7 @@ export const InputTemplate = ({
                 version="1.1"
                 width="16"
                 data-view-component="true"
-                class="octicon octicon-search FormControl--input-leadingVisual"
+                class="octicon octicon-search Field--input-leadingVisual"
               >
                 <path
                   fill-rule="evenodd"
@@ -196,17 +196,17 @@ export const InputTemplate = ({
             name="input-id"
             type={type}
             className={clsx(
-              'FormControl',
-              'FormControl--input',
+              'Field',
+              'Field--input',
               size && `${size}`,
-              inset && 'FormControl--inset',
-              monospace && 'FormControl--monospace'
+              inset && 'Field--inset',
+              monospace && 'Field--monospace'
             )}
             disabled={disabled}
             invalid={invalid ? 'true' : undefined}
           />
           {showClearButton && (
-            <button id="input-id-clear" class="FormControl--input-trailingAction" aria-label="Clear">
+            <button id="input-id-clear" class="Field--input-trailingAction" aria-label="Clear">
               <svg
                 aria-hidden="true"
                 height="16"
@@ -231,11 +231,11 @@ export const InputTemplate = ({
           name="input-id"
           type={type}
           className={clsx(
-            'FormControl',
-            'FormControl--input',
+            'Field',
+            'Field--input',
             size && `${size}`,
-            inset && 'FormControl--inset',
-            monospace && 'FormControl--monospace'
+            inset && 'Field--inset',
+            monospace && 'Field--monospace'
           )}
         />
       )}
