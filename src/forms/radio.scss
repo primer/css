@@ -1,0 +1,46 @@
+.Radio-labelWrap {
+  @include CheckboxRadioLabelWrap();
+}
+
+input[type='radio'].Radio {
+  @include CheckboxRadio();
+  border-radius: var(--primer-borderRadius-full, 100vh);
+
+  &::before {
+    clip-path: circle(0%);
+    mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgOS4zNzVDNy40MTYyMiA5LjM3NSA5LjM3NSA3LjQxNjIyIDkuMzc1IDVDOS4zNzUgMi41ODM3NiA3LjQxNjIyIDAuNjI1IDUgMC42MjVDMi41ODM3NiAwLjYyNSAwLjYyNSAyLjU4Mzc2IDAuNjI1IDVDMC42MjUgNy40MTYyMiAyLjU4Mzc2IDkuMzc1IDUgOS4zNzVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'); // checked circle image
+    mask-size: 65%;
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+      animation: radioOut 80ms cubic-bezier(0.65, 0, 0.35, 1) forwards; // slightly snappier animation out
+    }
+  }
+
+  &:checked {
+    &::before {
+      @media screen and (prefers-reduced-motion: no-preference) {
+        animation: radioIn 80ms cubic-bezier(0.65, 0, 0.35, 1) forwards 80ms;
+      }
+    }
+  }
+}
+
+@keyframes radioIn {
+  from {
+    clip-path: circle(0%);
+  }
+
+  to {
+    clip-path: circle(100%);
+  }
+}
+
+@keyframes radioOut {
+  from {
+    clip-path: circle(100%);
+  }
+
+  to {
+    clip-path: circle(0%);
+  }
+}

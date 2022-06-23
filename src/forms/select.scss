@@ -1,0 +1,51 @@
+.SelectWrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, auto) var(--base-size-16, 16px);
+
+  // mask allows for background-color to respect themes
+  &::after {
+    width: var(--base-size-16, 16px);
+    height: var(--base-size-16, 16px);
+    padding-right: var(--base-size-4, 4px);
+    pointer-events: none;
+    content: '';
+    background-color: var(--color-fg-muted);
+    mask: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0iIzU4NjA2OSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNC40MjcgOS40MjdsMy4zOTYgMy4zOTZhLjI1MS4yNTEgMCAwMC4zNTQgMGwzLjM5Ni0zLjM5NkEuMjUuMjUgMCAwMDExLjM5NiA5SDQuNjA0YS4yNS4yNSAwIDAwLS4xNzcuNDI3ek00LjQyMyA2LjQ3TDcuODIgMy4wNzJhLjI1LjI1IDAgMDEuMzU0IDBMMTEuNTcgNi40N2EuMjUuMjUgMCAwMS0uMTc3LjQyN0g0LjZhLjI1LjI1IDAgMDEtLjE3Ny0uNDI3eiIgLz48L3N2Zz4=');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    grid-column: 2;
+    grid-row: 1;
+    place-self: center end;
+  }
+
+  // spans entire grid below mask
+  .Select {
+    @include Field();
+    @include Field--input_select_textarea();
+    grid-column: 1/-1;
+    grid-row: 1;
+    appearance: none;
+    padding-right: var(--base-size-20, 20px);
+
+    &.Select--small {
+      @include Field--small();
+    }
+
+    &.Select--medium {
+      @include Field--medium();
+    }
+
+    &.Select--large {
+      @include Field--large();
+    }
+
+    &.Select--inset {
+      @include Field--inset();
+    }
+
+    &.Select--monospace {
+      @include Field--monospace();
+    }
+  }
+}
