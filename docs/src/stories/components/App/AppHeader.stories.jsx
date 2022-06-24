@@ -100,8 +100,31 @@ export const AppHeaderTemplate = ({
             <div className="AppHeader-context">
               <div className="AppHeader-context-compact">
                 <a href="#">
+                  {/* 
+                    * For one-level context regions:
+                    * <strong className="AppHeader-context-compact-lead--mainItem">username</strong>
+                    * 
+                    * For two-level context regions:
+                    * <span className="AppHeader-context-compact-lead">
+                    *   <span className="AppHeader-context-compact-lead--parentItem">owner</span>/ 
+                    * </span>
+                    * <strong className="AppHeader-context-compact-lead--mainItem">repository</strong>
+                    * 
+                    * For three-level context regions:
+                    * <span className="AppHeader-context-compact-lead">
+                    *   <span className="AppHeader-context-compact-lead--parentItem">orgName</span>/ Projects /
+                    * </span>
+                    * <strong className="AppHeader-context-compact-lead--mainItem">ProjectTitle</strong>
+                    * 
+                    * For even deeper context regions:
+                    * <span className="AppHeader-context-compact-lead">
+                    *   <span className="AppHeader-context-compact-lead--parentItem">orgName</span>/ Teams / ... /
+                    * </span>
+                    * <strong className="AppHeader-context-compact-lead--mainItem">TeamName</strong>
+                    * 
+                    */}
                   <span className="AppHeader-context-compact-lead">
-                    <span className="AppHeader-context-compact-lead--parentItem">loremipsumdolorsitametavecconsequer</span>/
+                    <span className="AppHeader-context-compact-lead--parentItem">loremipsumdolorsitametavecconsequer</span>/ Teams / ... /
                   </span>
                   <strong className="AppHeader-context-compact-lead--mainItem">loremipsumdolorsitametavecconsequer</strong>
                 </a>
