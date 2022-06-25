@@ -49,7 +49,7 @@ export const AppHeaderTemplate = ({
 
   return (
     <>
-      <div className={clsx('AppHeader')}>
+      <header className={clsx('AppHeader')}>
 
         {/*
           * AppHeader-globalBar
@@ -99,41 +99,49 @@ export const AppHeaderTemplate = ({
               */}
             <div className="AppHeader-context">
               <div className="AppHeader-context-compact">
-                <a href="#">
+                <button className="AppHeader-context-compact-trigger" aria-label="Todo: mobile context region trigger label" aria-expanded="false" aria-haspopup="true">
                   {/* 
                     * For one-level context regions:
-                    * <strong className="AppHeader-context-compact-lead--mainItem">username</strong>
+                    * <strong className="AppHeader-context-compact-mainItem">username</strong>
                     * 
                     * For two-level context regions:
                     * <span className="AppHeader-context-compact-lead">
-                    *   <span className="AppHeader-context-compact-lead--parentItem">owner</span>/ 
+                    *   <span className="AppHeader-context-compact-parentItem">owner</span>
+                    *   <span className="AppHeader-context-compact-separator">&nbsp;/</span>
                     * </span>
-                    * <strong className="AppHeader-context-compact-lead--mainItem">repository</strong>
+                    * <strong className="AppHeader-context-compact-mainItem">repository</strong>
                     * 
                     * For three-level context regions:
                     * <span className="AppHeader-context-compact-lead">
-                    *   <span className="AppHeader-context-compact-lead--parentItem">orgName</span>/ Projects /
+                    *   <span className="AppHeader-context-compact-parentItem">orgName</span>
+                    *   <span className="AppHeader-context-compact-separator">&nbsp;/&nbsp;</span>
+                    *   <span className="AppHeader-context-compact-parentItem">Projects</span>
+                    *   <span className="AppHeader-context-compact-separator">&nbsp;/</span>
                     * </span>
-                    * <strong className="AppHeader-context-compact-lead--mainItem">ProjectTitle</strong>
+                    * <strong className="AppHeader-context-compact-mainItem">ProjectTitle</strong>
                     * 
                     * For even deeper context regions:
                     * <span className="AppHeader-context-compact-lead">
-                    *   <span className="AppHeader-context-compact-lead--parentItem">orgName</span>/ Teams / ... /
+                    *   <span className="AppHeader-context-compact-parentItem">orgName</span>
+                    *   <span className="AppHeader-context-compact-separator">&nbsp;/&nbsp;</span>
+                    *   <span className="AppHeader-context-compact-parentItem">Teams / &hellip;</span>
+                    *   <span className="AppHeader-context-compact-separator">&nbsp;/</span>
                     * </span>
-                    * <strong className="AppHeader-context-compact-lead--mainItem">TeamName</strong>
+                    * <strong className="AppHeader-context-compact-mainItem">TeamName</strong>
                     * 
                     */}
                   <span className="AppHeader-context-compact-lead">
-                    <span className="AppHeader-context-compact-lead--parentItem">loremipsumdolorsitametavecconsequer</span>/ Teams / ... /
+                    <span className="AppHeader-context-compact-parentItem">owner</span>
+                    <span className="AppHeader-context-compact-separator">&nbsp;/</span>
                   </span>
-                  <strong className="AppHeader-context-compact-lead--mainItem">loremipsumdolorsitametavecconsequer</strong>
-                </a>
+                  <strong className="AppHeader-context-compact-mainItem">repository</strong>
+                </button>
               </div>
               <div className="AppHeader-context-full">
-                <nav aria-label="">
+                <nav aria-label="Context region">
                   <ul>
-                    <li><a className="AppHeader-context-item" title="loremipsum..." href="#">loremipsumdolorsitametavecconsequer<span className="sr-only">/</span></a></li>
-                    <li><a className="AppHeader-context-item" title="loremipsum..." href="#">loremipsumdolorsitametavecconsequer</a></li>
+                    <li><a className="AppHeader-context-item" title="loremipsum..." href="#">owner</a></li>
+                    <li><a className="AppHeader-context-item" title="loremipsum..." href="#">repository</a></li>
                   </ul>
                 </nav>
               </div>
@@ -221,7 +229,7 @@ export const AppHeaderTemplate = ({
         <div className={clsx('AppHeader-localBar')}>
           {localBarChildren}
         </div>
-      </div>
+      </header>
     </>
   );
 };
