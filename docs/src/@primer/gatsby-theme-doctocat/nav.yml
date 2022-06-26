@@ -44,6 +44,8 @@
 - title: Components
   url: /components
   children:
+    - title: Action List
+      url: /components/action-list
     - title: Alerts
       url: /components/alerts
     - title: Avatars
