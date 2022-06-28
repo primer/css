@@ -2,7 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 
 export default {
-  title: 'Components/Experimental/Forms/Radio',
+  title: 'Rails Forms/Radio',
   parameters: {
     layout: 'padded'
   },
@@ -22,26 +22,11 @@ export default {
         category: 'CSS'
       }
     },
-    invalid: {
-      description: 'invalid field',
-      control: {type: 'boolean'},
-      table: {
-        category: 'CSS'
-      }
-    },
-    visuallyHideLabel: {
+    visuallyHidden: {
       description: 'visually hide label',
       control: {type: 'boolean'},
       table: {
         category: 'CSS'
-      }
-    },
-    placeholder: {
-      type: 'string',
-      name: 'placeholder',
-      description: 'string',
-      table: {
-        category: 'HTML'
       }
     },
     label: {
@@ -52,20 +37,20 @@ export default {
         category: 'HTML'
       }
     },
-    id: {
-      name: 'id',
-      type: 'string',
-      description: 'id',
-      table: {
-        category: 'HTML'
-      }
-    },
     caption: {
       name: 'caption',
       type: 'string',
       description: 'caption',
       table: {
         category: 'HTML'
+      }
+    },
+    id: {
+      name: 'id',
+      type: 'string',
+      description: 'id',
+      table: {
+        category: 'Radio'
       }
     },
     focusElement: {
@@ -81,6 +66,13 @@ export default {
       table: {
         category: 'Interactive'
       }
+    },
+    indeterminate: {
+      control: {type: 'boolean'},
+      description: 'indeterminate',
+      table: {
+        category: 'Interactive'
+      }
     }
   }
 }
@@ -92,31 +84,21 @@ const focusMethod = function getFocus() {
   input.focus()
 }
 
-export const RadioTemplate = ({
-  label,
-  id,
-  placeholder,
-  disabled,
-  visuallyHideLabel,
-  focusElement,
-  invalid,
-  caption,
-  checked
-}) => (
+export const RadioTemplate = ({label, disabled, visuallyHidden, focusElement, caption, checked, indeterminate, id}) => (
   <>
-    <div data-view-component="true" class="FormControl FormControl--radio">
+    <div class="FormControl-radio-wrap">
       <input
-        placeholder={placeholder}
-        id="input-id"
-        name="input-id"
+        id={id}
+        name={id}
         type="radio"
         disabled={disabled}
-        invalid={invalid ? 'true' : undefined}
-        class="Field Field--radio"
+        class="FormControl-radio"
         checked={checked ? 'true' : undefined}
+        indeterminate={indeterminate ? 'true' : undefined}
+        ariaDescribedBy={caption ? 'caption-ebb67985' : undefined}
       />
       <span class="Field--radio-labelWrap">
-        <label htmlFor="input-id" className={clsx('FormControl-label', visuallyHideLabel && 'sr-only')}>
+        <label htmlFor={id} className={clsx('FormControl-label', visuallyHidden && 'sr-only')}>
           {label}
         </label>
         {caption && (
@@ -134,12 +116,12 @@ export const RadioTemplate = ({
 export const Playground = RadioTemplate.bind({})
 Playground.args = {
   id: 'some-id',
-  placeholder: 'Email address',
-  label: 'Enter email address',
+  label: 'Select an option',
   disabled: false,
   focusElement: false,
   caption: 'Caption',
   invalid: false,
-  visuallyHideLabel: false,
-  checked: false
+  visuallyHidden: false,
+  checked: false,
+  indeterminate: false
 }

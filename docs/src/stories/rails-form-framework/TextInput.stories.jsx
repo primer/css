@@ -2,7 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 
 export default {
-  title: 'Components/Experimental/Forms/TextInput',
+  title: 'Rails Forms/TextInput',
   parameters: {
     layout: 'padded'
   },
@@ -17,62 +17,87 @@ export default {
   argTypes: {
     size: {
       options: [0, 1, 2], // iterator
-      mapping: ['Field--small', 'Field--medium', 'Field--large'], // values
+      mapping: ['FormControl-small', 'FormControl-medium', 'FormControl-large'], // values
       control: {
         type: 'inline-radio',
         labels: ['small', 'medium', 'large']
       },
       table: {
-        category: 'CSS'
+        category: 'Input'
+      }
+    },
+    validationStatus: {
+      options: [0, 1, 2, 3], // iterator
+      mapping: ['', 'FormControl-error', 'FormControl-success', 'FormControl-warning'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['undefined', 'error', 'success', 'warning']
+      },
+      table: {
+        category: 'Validation'
       }
     },
     fullWidth: {
-      description: 'full width',
+      description: 'formerly called Block',
       control: {type: 'boolean'},
       table: {
-        category: 'CSS'
+        category: 'Input'
       }
     },
     showClearButton: {
       description: 'show clear button',
       control: {type: 'boolean'},
       table: {
-        category: 'CSS'
+        category: 'Input'
+      }
+    },
+    trailingActionDivider: {
+      description: 'divider between input and trailing action',
+      control: {type: 'boolean'},
+      table: {
+        category: 'Input'
       }
     },
     monospace: {
       description: 'monospace text',
       control: {type: 'boolean'},
       table: {
-        category: 'CSS'
+        category: 'Input'
       }
     },
     inset: {
-      description: 'change input background to light gray',
+      description: 'formerly called Contrast',
       control: {type: 'boolean'},
       table: {
-        category: 'CSS'
+        category: 'Input'
       }
     },
     disabled: {
       description: 'disabled field',
       control: {type: 'boolean'},
       table: {
-        category: 'CSS'
+        category: 'Input'
+      }
+    },
+    required: {
+      description: 'required field',
+      control: {type: 'boolean'},
+      table: {
+        category: 'Input'
       }
     },
     invalid: {
       description: 'invalid field',
       control: {type: 'boolean'},
       table: {
-        category: 'CSS'
+        category: 'Validation'
       }
     },
-    visuallyHideLabel: {
+    visuallyHidden: {
       description: 'visually hide label',
       control: {type: 'boolean'},
       table: {
-        category: 'CSS'
+        category: 'Label'
       }
     },
     placeholder: {
@@ -80,7 +105,7 @@ export default {
       name: 'placeholder',
       description: 'string',
       table: {
-        category: 'HTML'
+        category: 'Input'
       }
     },
     label: {
@@ -88,23 +113,7 @@ export default {
       name: 'label',
       description: 'string',
       table: {
-        category: 'HTML'
-      }
-    },
-    type: {
-      name: 'type',
-      type: 'string',
-      description: 'type',
-      table: {
-        category: 'HTML'
-      }
-    },
-    id: {
-      name: 'id',
-      type: 'string',
-      description: 'id',
-      table: {
-        category: 'HTML'
+        category: 'Label'
       }
     },
     caption: {
@@ -112,7 +121,15 @@ export default {
       type: 'string',
       description: 'caption',
       table: {
-        category: 'HTML'
+        category: 'Caption'
+      }
+    },
+    validation: {
+      type: 'string',
+      name: 'label',
+      description: 'string',
+      table: {
+        category: 'Validation'
       }
     },
     focusElement: {
@@ -127,7 +144,7 @@ export default {
       type: 'boolean',
       description: 'octicon',
       table: {
-        category: 'HTML'
+        category: 'Input'
       }
     }
   }
@@ -142,38 +159,38 @@ const focusMethod = function getFocus() {
 
 export const InputTemplate = ({
   label,
-  type,
-  id,
   size,
   fullWidth,
   placeholder,
   inset,
   disabled,
-  visuallyHideLabel,
+  visuallyHidden,
   monospace,
   focusElement,
   showClearButton,
   leadingVisual,
   invalid,
-  caption
+  caption,
+  validation,
+  trailingActionDivider,
+  validationStatus
 }) => (
   <>
     <div className={clsx('FormControl', fullWidth && 'FormControl--fullWidth')}>
-      <label htmlFor={id} className={clsx('FormControl-label', visuallyHideLabel && 'sr-only')}>
+      <label htmlFor="input-id" className={clsx('FormControl-label', visuallyHidden && 'sr-only')}>
         {label}
       </label>
       {showClearButton || leadingVisual ? (
         <div
           className={clsx(
-            'Field-wrap',
-            'Field-wrap--input',
-            showClearButton && 'Field-wrap--input-trailingAction',
+            'FormControl-input-wrap',
+            showClearButton && 'FormControl-input-wrap--trailingAction',
             size && `${size}`,
-            leadingVisual && 'Field-wrap--input-leadingVisual'
+            leadingVisual && 'FormControl-input-wrap--leadingVisual'
           )}
         >
           {leadingVisual && (
-            <span class="Field--input-leadingVisualWrap">
+            <span class="FormControl-input-leadingVisualWrap">
               <svg
                 aria-hidden="true"
                 height="16"
@@ -181,7 +198,7 @@ export const InputTemplate = ({
                 version="1.1"
                 width="16"
                 data-view-component="true"
-                class="octicon octicon-search Field--input-leadingVisual"
+                class="octicon octicon-search FormControl-input-leadingVisual"
               >
                 <path
                   fill-rule="evenodd"
@@ -192,21 +209,26 @@ export const InputTemplate = ({
           )}
           <input
             placeholder={placeholder}
-            id={id}
-            name="input-id"
-            type={type}
+            id="input-id"
+            type="text"
             className={clsx(
-              'Field',
-              'Field--input',
+              'FormControl-input',
               size && `${size}`,
               inset && 'Field--inset',
               monospace && 'Field--monospace'
             )}
-            disabled={disabled}
+            disabled={disabled ? 'true' : undefined}
             invalid={invalid ? 'true' : undefined}
           />
           {showClearButton && (
-            <button id="input-id-clear" class="Field--input-trailingAction" aria-label="Clear">
+            <button
+              id="input-id-clear"
+              className={clsx(
+                'FormControl-input-trailingAction',
+                trailingActionDivider && 'FormControl-input-trailingAction--divider'
+              )}
+              aria-label="Clear"
+            >
               <svg
                 aria-hidden="true"
                 height="16"
@@ -227,20 +249,20 @@ export const InputTemplate = ({
       ) : (
         <input
           placeholder={placeholder}
-          id={id}
-          name="input-id"
-          type={type}
+          id="input-id"
+          type="text"
+          disabled={disabled ? 'true' : undefined}
           className={clsx(
-            'Field',
-            'Field--input',
+            'FormControl-input',
             size && `${size}`,
-            inset && 'Field--inset',
-            monospace && 'Field--monospace'
+            validationStatus && `${validationStatus}`,
+            inset && 'FormControl-inset',
+            monospace && 'FormControl-monospace'
           )}
         />
       )}
       {invalid && (
-        <span className="FormControl-validation">
+        <span className="FormControl-inlineValidation">
           <svg
             aria-hidden="true"
             height="12"
@@ -254,12 +276,12 @@ export const InputTemplate = ({
               d="M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z"
             ></path>
           </svg>
-          <p id="validation-5e6e1c8a">Something went wrong</p>
+          <p id="validation-5e6e1c8a">{validation}</p>
         </span>
       )}
       {caption && (
         <p className="FormControl-caption" id="caption-ebb67985">
-          Hint text
+          {caption}
         </p>
       )}
     </div>
@@ -269,8 +291,6 @@ export const InputTemplate = ({
 
 export const Playground = InputTemplate.bind({})
 Playground.args = {
-  type: 'email',
-  id: 'some-id',
   placeholder: 'Email address',
   label: 'Enter email address',
   fullWidth: false,
@@ -283,5 +303,8 @@ Playground.args = {
   caption: 'Caption',
   showClearButton: false,
   invalid: false,
-  visuallyHideLabel: false
+  visuallyHidden: false,
+  validation: '',
+  trailingActionDivider: false,
+  validationStatus: 0
 }

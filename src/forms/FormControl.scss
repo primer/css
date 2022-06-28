@@ -30,7 +30,8 @@
   color: var(--color-fg-muted);
 }
 
-.FormControl-validation {
+// inline validation message
+.FormControl-inlineValidation {
   display: flex;
   font-size: var(--primer-text-caption-size, 12px);
   font-weight: var(--base-text-weight-semibold, 600);
@@ -46,7 +47,7 @@
 }
 
 // shared among all form control components (input, select, textarea, checkbox, radio)
-.Field {
+@mixin Field {
   background-color: var(--color-canvas-default);
   border: solid var(--primer-borderWidth-thin, 1px) var(--color-border-default);
 
@@ -78,75 +79,86 @@
   &:focus-visible {
     @include focusBoxShadowInset;
   }
+}
 
-  &.Field--inset {
-    background-color: var(--color-canvas-inset);
-  }
+// <select> and <input>
+.FormControl-input,
+.FormControl-select,
+.FormControl-textarea {
+  @include Field;
+  width: 100%;
+  font-size: var(--primer-text-body-size-medium, 14px);
+  line-height: var(--primer-text-body-lineHeight-medium, 20px);
+  border-radius: var(--primer-borderRadius-medium, 6px);
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
+  padding-inline: var(--primer-control-medium-paddingInline-condensed, 8px);
+  padding-block: calc(var(--primer-control-medium-paddingBlock, 6px) - var(--primer-borderWidth-thin, 1px));
 
-  &.Field--monospace {
-    font-family: var(
-      --primer-fontStack-monospace,
-      'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace'
-    );
-  }
-
-  // <select> and <input>
-  &.Field--input,
-  &.Field--select,
-  &.Field--textarea {
-    width: 100%;
-    font-size: var(--primer-text-body-size-medium, 14px);
-    line-height: var(--primer-text-body-lineHeight-medium, 20px);
-    border-radius: var(--primer-borderRadius-medium, 6px);
-    transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
-    transition-property: color, background-color, box-shadow, border-color;
-    padding-inline: var(--primer-control-medium-paddingInline-condensed, 8px);
-    padding-block: calc(var(--primer-control-medium-paddingBlock, 6px) - var(--primer-borderWidth-thin, 1px));
-
-    &[disabled] {
-      &::placeholder {
-        color: var(--color-primer-fg-disabled);
-      }
-    }
-
-    ::placeholder {
-      color: var(--color-fg-subtle);
-      opacity: 1;
+  &[disabled] {
+    &::placeholder {
+      color: var(--color-primer-fg-disabled);
     }
   }
 
-  // <select> and <input>
-  &.Field--input,
-  &.Field--select {
-    height: var(--primer-control-medium-size, 32px);
+  ::placeholder {
+    color: var(--color-fg-subtle);
+    opacity: 1;
   }
 
   // sizes
 
-  &.Field--small {
+  &.FormControl-small {
     height: var(--primer-control-small-size, 28px);
     padding-inline: var(--primer-control-small-paddingInline-normal, 8px);
     padding-block: var(--primer-control-small-paddingBlock, 4px);
     font-size: var(--primer-text-body-size-small, 12px);
   }
 
-  &.Field--medium {
+  &.FormControl-medium {
     height: var(--primer-control-medium-size, 32px);
   }
 
-  &.Field--large {
+  &.FormControl-large {
     height: var(--primer-control-large-size, 40px);
     padding-inline: var(--primer-control-large-paddingInline-normal, 12px);
     padding-block: var(--primer-control-large-paddingBlock, 10px);
   }
+
+  // variants
+
+  &.FormControl-inset {
+    background-color: var(--color-canvas-inset);
+  }
+
+  &.FormControl-monospace {
+    font-family: var(
+      --primer-fontStack-monospace,
+      'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace'
+    );
+  }
+
+  // validation states
+
+  &.FormControl-error {
+    border-color: var(--color-danger-emphasis);
+  }
+
+  &.FormControl-success {
+    border-color: var(--color-success-emphasis);
+  }
+
+  &.FormControl-warning {
+    border-color: var(--color-attention-emphasis);
+  }
 }
 
-// positioning for leading/trailing items
-.Field-wrap {
+// positioning for leading/trailing items for TextInput
+.FormControl-input-wrap {
   position: relative;
   display: grid;
 
-  .Field--input-leadingVisualWrap {
+  .FormControl-input-leadingVisualWrap {
     position: absolute;
     top: var(--base-size-8, 8px);
     left: var(--base-size-8, 8px);
@@ -157,14 +169,14 @@
     pointer-events: none;
 
     // octicon
-    .Field--input-leadingVisual {
+    .FormControl-input-leadingVisual {
       display: block;
       user-select: none;
     }
   }
 
   // TODO: replace with new Button component
-  .Field--input-trailingAction {
+  .FormControl-input-trailingAction {
     position: absolute;
     top: var(--base-size-4, 4px);
     right: var(--base-size-4, 4px);
@@ -201,15 +213,17 @@
     }
 
     // show vertical divider line between field and button
-    &::before {
-      position: absolute;
-      top: calc((var(--primer-control-xsmall-size) - var(--base-size-16)) / 2);
-      left: calc(var(--base-size-4, 4px) * -1);
-      display: block;
-      width: var(--primer-borderWidth-thin);
-      height: var(--base-size-16);
-      content: '';
-      background: var(--color-border-default);
+    &.FormControl-input-trailingAction--divider {
+      &::before {
+        position: absolute;
+        top: calc((var(--primer-control-xsmall-size) - var(--base-size-16)) / 2);
+        left: calc(var(--base-size-4, 4px) * -1);
+        display: block;
+        width: var(--primer-borderWidth-thin);
+        height: var(--base-size-16);
+        content: '';
+        background: var(--color-border-default);
+      }
     }
 
     &::after {
@@ -223,8 +237,8 @@
   }
 
   // if leadingVisual is present
-  &.Field-wrap--input-leadingVisual {
-    .Field--input {
+  &.FormControl-input-wrap--leadingVisual {
+    .FormControl-input {
       padding-inline-start: calc(
         var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
           var(--primer-control-medium-gap, 8px) - var(--primer-borderWidth-thin, 1px)
@@ -233,8 +247,8 @@
   }
 
   // if trailingAction is present
-  &.Field-wrap--input-trailingAction {
-    .Field--input {
+  &.FormControl-input-wrap--trailingAction {
+    .FormControl-input {
       padding-inline-end: calc(
         var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
           var(--primer-control-medium-gap, 8px) - var(--primer-borderWidth-thin, 1px)
@@ -242,74 +256,73 @@
     }
   }
 
-  // size modifications can be refactored with :has() - Field-wrap:has(.Field--large)
+  // size modifications can be refactored with :has() - Field-wrap:has(.FormControl-large)
   // sizes
-  &.Field-wrap--input {
-    &.Field--small {
-      .Field--input-leadingVisualWrap {
-        top: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
-        left: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
-      }
+  &.FormControl-small {
+    .FormControl-input-leadingVisualWrap {
+      top: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
+      left: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
+    }
 
-      &.Field-wrap--input-trailingAction {
-        .Field--input.Field--small {
-          padding-inline-end: calc(
-            var(----primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
-              var(--primer-control-small-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-          ); /* 27px */
-        }
-      }
-
-      .Field--input-trailingAction {
-        width: calc(var(--primer-control-small-size, 28px) - var(--base-size-8, 8px));
-        height: calc(var(--primer-control-small-size, 28px) - var(--base-size-8, 8px));
-
-        &::before {
-          top: calc((var(--primer-control-xsmall-size) - var(--base-size-16)) / 4); /* 2px */
-        }
+    &.FormControl-input-wrap--trailingAction {
+      .FormControl-input.FormControl-small {
+        padding-inline-end: calc(
+          var(----primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+            var(--primer-control-small-gap, 8px) - var(--primer-borderWidth-thin, 1px)
+        ); /* 27px */
       }
     }
 
-    &.Field--large {
-      .Field--input-leadingVisualWrap {
-        top: var(--primer-control-medium-paddingInline-normal, 12px);
-        left: var(--primer-control-medium-paddingInline-normal, 12px);
+    .FormControl-input-trailingAction {
+      width: calc(var(--primer-control-small-size, 28px) - var(--base-size-8, 8px));
+      height: calc(var(--primer-control-small-size, 28px) - var(--base-size-8, 8px));
+
+      &::before {
+        top: calc((var(--primer-control-xsmall-size) - var(--base-size-16)) / 4); /* 2px */
       }
+    }
+  }
 
-      &.Field-wrap--input-leadingVisual {
-        .Field--input.Field--large {
-          padding-inline-start: calc(
-            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
-              var(--primer-control-large-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-          ); /* 31px */
-        }
+  &.FormControl-large {
+    .FormControl-input-leadingVisualWrap {
+      top: var(--primer-control-medium-paddingInline-normal, 12px);
+      left: var(--primer-control-medium-paddingInline-normal, 12px);
+    }
+
+    &.FormControl-input-wrap--leadingVisual {
+      .FormControl-input.FormControl-large {
+        padding-inline-start: calc(
+          var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+            var(--primer-control-large-gap, 8px) - var(--primer-borderWidth-thin, 1px)
+        ); /* 31px */
       }
+    }
 
-      &.Field-wrap--input-trailingAction {
-        .Field--input.Field--large {
-          padding-inline-end: calc(
-            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
-              var(--primer-control-large-gap, 8px)
-          ); /* 36px */
-        }
+    &.FormControl-input-wrap--trailingAction {
+      .FormControl-input.FormControl-large {
+        padding-inline-end: calc(
+          var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+            var(--primer-control-large-gap, 8px)
+        ); /* 36px */
       }
+    }
 
-      .Field--input-trailingAction {
-        top: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
-        right: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
-        width: var(--primer-control-small-size, 28px);
-        height: var(--primer-control-small-size, 28px);
+    .FormControl-input-trailingAction {
+      top: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
+      right: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
+      width: var(--primer-control-small-size, 28px);
+      height: var(--primer-control-small-size, 28px);
 
-        &::before {
-          top: unset;
-          height: var(--base-size-20);
-        }
+      &::before {
+        top: unset;
+        height: var(--base-size-20);
       }
     }
   }
 }
 
-.Field-wrap--select {
+.FormControl-select-wrap {
+  display: grid;
   grid-template-columns: minmax(0, auto) var(--base-size-16, 16px);
 
   // mask allows for background-color to respect themes
@@ -329,7 +342,7 @@
   }
 
   // spans entire grid below mask
-  .Field {
+  .FormControl-select {
     grid-column: 1/-1;
     grid-row: 1;
     appearance: none;
@@ -339,33 +352,34 @@
 
 // checkbox + radio specific styles
 
-.FormControl--checkbox,
-.FormControl--radio {
+.FormControl-checkbox-wrap,
+.FormControl-radio-wrap {
   display: inline-grid;
   grid-template-areas: 'field label' '. caption';
   grid-template-columns: min-content auto;
   gap: var(--base-size-8, 8px);
 
-  .Field--checkbox-labelWrap,
-  .Field--radio-labelWrap {
+  .FormControl-checkbox-labelWrap,
+  .FormControl-radio-labelWrap {
     display: flex;
     flex-direction: column;
     gap: var(--base-size-4, 4px);
   }
 
-  .Field-label {
+  .FormControl-label {
     grid-area: label;
   }
 
-  .Field-caption {
+  .FormControl-caption {
     grid-area: caption;
   }
 }
 
 // these selectors are temporary to override base.scss
 // once Field styles are widely adopted, we can adjust this and the global base styles
-input[type='checkbox'].Field--checkbox,
-input[type='radio'].Field--radio {
+input[type='checkbox'].FormControl-checkbox,
+input[type='radio'].FormControl-radio {
+  @include Field;
   display: grid;
   width: var(--base-size-16, 16px);
   height: var(--base-size-16, 16px);
@@ -424,7 +438,7 @@ input[type='radio'].Field--radio {
   }
 }
 
-input[type='radio'].Field--radio {
+input[type='radio'].FormControl-radio {
   border-radius: var(--primer-borderRadius-full, 100vh);
 
   &::before {

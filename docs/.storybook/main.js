@@ -7,7 +7,8 @@ module.exports = {
     '@storybook/preset-scss',
     '@whitespace/storybook-addon-html',
     'storybook-addon-designs',
-    'storybook-color-picker'
+    'storybook-color-picker',
+    'storybook-addon-variants/preset.js'
   ],
   framework: '@storybook/react',
   core: {

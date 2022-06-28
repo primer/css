@@ -2,7 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 
 export default {
-  title: 'Components/Experimental/Forms/Textarea',
+  title: 'Rails Forms/Textarea',
   parameters: {
     layout: 'padded'
   },
@@ -15,46 +15,64 @@ export default {
   ],
   excludeStories: ['InputTemplate'],
   argTypes: {
+    validationStatus: {
+      options: [0, 1, 2, 3], // iterator
+      mapping: ['', 'FormControl-error', 'FormControl-success', 'FormControl-warning'], // values
+      control: {
+        type: 'inline-radio',
+        labels: ['undefined', 'error', 'success', 'warning']
+      },
+      table: {
+        category: 'Validation'
+      }
+    },
     fullWidth: {
-      description: 'full width',
+      description: 'formerly called Block',
       control: {type: 'boolean'},
       table: {
-        category: 'CSS'
+        category: 'Input'
       }
     },
     monospace: {
       description: 'monospace text',
       control: {type: 'boolean'},
       table: {
-        category: 'CSS'
+        category: 'Input'
       }
     },
     inset: {
-      description: 'change input background to light gray',
+      description: 'formerly called Contrast',
       control: {type: 'boolean'},
       table: {
-        category: 'CSS'
+        category: 'Input'
       }
     },
     disabled: {
       description: 'disabled field',
       control: {type: 'boolean'},
       table: {
-        category: 'CSS'
+        category: 'Input'
+      }
+    },
+    required: {
+      description: 'required field',
+      control: {type: 'boolean'},
+      table: {
+        category: 'Input'
       }
     },
     invalid: {
       description: 'invalid field',
       control: {type: 'boolean'},
       table: {
-        category: 'CSS'
+        category: 'Validation'
       }
     },
-    visuallyHideLabel: {
+    visuallyHidden: {
       description: 'visually hide label',
       control: {type: 'boolean'},
       table: {
-        category: 'CSS'
+        category: 'Label'
       }
     },
     placeholder: {
@@ -62,7 +80,7 @@ export default {
       name: 'placeholder',
       description: 'string',
       table: {
-        category: 'HTML'
+        category: 'Input'
       }
     },
     label: {
@@ -70,23 +88,7 @@ export default {
       name: 'label',
       description: 'string',
       table: {
-        category: 'HTML'
-      }
-    },
-    type: {
-      name: 'type',
-      type: 'string',
-      description: 'type',
-      table: {
-        category: 'HTML'
-      }
-    },
-    id: {
-      name: 'id',
-      type: 'string',
-      description: 'id',
-      table: {
-        category: 'HTML'
+        category: 'Label'
       }
     },
     caption: {
@@ -94,7 +96,15 @@ export default {
       type: 'string',
       description: 'caption',
       table: {
-        category: 'HTML'
+        category: 'Caption'
+      }
+    },
+    validation: {
+      type: 'string',
+      name: 'label',
+      description: 'string',
+      table: {
+        category: 'Validation'
       }
     },
     focusElement: {
@@ -116,34 +126,36 @@ const focusMethod = function getFocus() {
 
 export const InputTemplate = ({
   label,
-  id,
   fullWidth,
   placeholder,
   inset,
   disabled,
-  visuallyHideLabel,
+  visuallyHidden,
   monospace,
   focusElement,
   invalid,
-  caption
+  caption,
+  validation,
+  validationStatus
 }) => (
   <>
     <div className={clsx('FormControl', fullWidth && 'FormControl--fullWidth')}>
-      <label htmlFor={id} className={clsx('FormControl-label', visuallyHideLabel && 'sr-only')}>
+      <label htmlFor="input-id" className={clsx('FormControl-label', visuallyHidden && 'sr-only')}>
         {label}
       </label>
-      <div className={clsx('Field-wrap')}>
-        <textarea
-          placeholder={placeholder}
-          id={id}
-          name="input-id"
-          className={clsx('Field', 'Field--textarea', inset && 'Field--inset', monospace && 'Field--monospace')}
-          disabled={disabled}
-          invalid={invalid ? 'true' : undefined}
-        />
-      </div>
+      <textarea
+        placeholder={placeholder}
+        id="input-id"
+        disabled={disabled ? 'true' : undefined}
+        className={clsx(
+          'FormControl-textarea',
+          inset && 'FormControl-inset',
+          monospace && 'FormControl-monospace',
+          validationStatus && `${validationStatus}`
+        )}
+      />
       {invalid && (
-        <span className="FormControl-validation">
+        <span className="FormControl-inlineValidation">
           <svg
             aria-hidden="true"
             height="12"
@@ -157,7 +169,7 @@ export const InputTemplate = ({
               d="M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z"
             ></path>
           </svg>
-          <p id="validation-5e6e1c8a">Something went wrong</p>
+          <p id="validation-5e6e1c8a">{validation}</p>
         </span>
       )}
       {caption && (
@@ -172,8 +184,6 @@ export const InputTemplate = ({
 
 export const Playground = InputTemplate.bind({})
 Playground.args = {
-  type: 'email',
-  id: 'some-id',
   placeholder: 'Email address',
   label: 'Enter email address',
   fullWidth: false,
@@ -183,5 +193,7 @@ Playground.args = {
   focusElement: false,
   caption: 'Caption',
   invalid: false,
-  visuallyHideLabel: false
+  visuallyHidden: false,
+  validation: '',
+  validationStatus: 0
 }

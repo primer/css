@@ -2,7 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 
 export default {
-  title: 'Components/Experimental/Forms/Checkbox',
+  title: 'Rails Forms/Checkbox',
   parameters: {
     layout: 'padded'
   },
@@ -22,40 +22,17 @@ export default {
         category: 'CSS'
       }
     },
-    invalid: {
-      description: 'invalid field',
-      control: {type: 'boolean'},
-      table: {
-        category: 'CSS'
-      }
-    },
-    visuallyHideLabel: {
+    visuallyHidden: {
       description: 'visually hide label',
       control: {type: 'boolean'},
       table: {
         category: 'CSS'
       }
     },
-    placeholder: {
-      type: 'string',
-      name: 'placeholder',
-      description: 'string',
-      table: {
-        category: 'HTML'
-      }
-    },
     label: {
       type: 'string',
       name: 'label',
       description: 'string',
-      table: {
-        category: 'HTML'
-      }
-    },
-    id: {
-      name: 'id',
-      type: 'string',
-      description: 'id',
       table: {
         category: 'HTML'
       }
@@ -99,33 +76,20 @@ const focusMethod = function getFocus() {
   input.focus()
 }
 
-export const InputTemplate = ({
-  label,
-  id,
-  placeholder,
-  disabled,
-  visuallyHideLabel,
-  focusElement,
-  invalid,
-  caption,
-  checked,
-  indeterminate
-}) => (
+export const InputTemplate = ({label, disabled, visuallyHidden, focusElement, caption, checked, indeterminate}) => (
   <>
-    <div data-view-component="true" class="FormControl FormControl--checkbox">
+    <div data-view-component="true" class="FormControl-checkbox-wrap">
       <input
-        placeholder={placeholder}
         id="input-id"
-        name="input-id"
         type="checkbox"
         disabled={disabled}
-        invalid={invalid ? 'true' : undefined}
-        class="Field Field--checkbox"
+        class="FormControl-checkbox"
         checked={checked ? 'true' : undefined}
         indeterminate={indeterminate ? 'true' : undefined}
+        ariaDescribedBy={caption ? 'caption-ebb67985' : undefined}
       />
       <span class="Field--checkbox-labelWrap">
-        <label htmlFor="input-id" className={clsx('FormControl-label', visuallyHideLabel && 'sr-only')}>
+        <label htmlFor="input-id" className={clsx('FormControl-label', visuallyHidden && 'sr-only')}>
           {label}
         </label>
         {caption && (
@@ -142,14 +106,12 @@ export const InputTemplate = ({
 
 export const Playground = InputTemplate.bind({})
 Playground.args = {
-  id: 'some-id',
-  placeholder: 'Email address',
-  label: 'Enter email address',
+  label: 'Select an option',
   disabled: false,
   focusElement: false,
   caption: 'Caption',
   invalid: false,
-  visuallyHideLabel: false,
+  visuallyHidden: false,
   checked: false,
   indeterminate: false
 }
