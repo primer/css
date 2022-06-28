@@ -1,4 +1,4 @@
-// stylelint-disable primer/typography, primer/borders, primer/spacing, max-nesting-depth, selector-max-type, selector-max-specificity, selector-no-qualifying-type
+// stylelint-disable primer/typography, primer/borders, primer/spacing, selector-max-type, selector-max-specificity, selector-no-qualifying-type
 
 // group label, field, caption and error message
 .FormControl {
@@ -86,6 +86,7 @@
 .FormControl-select,
 .FormControl-textarea {
   @include Field;
+
   width: 100%;
   font-size: var(--primer-text-body-size-medium, 14px);
   line-height: var(--primer-text-body-lineHeight-medium, 20px);
@@ -380,6 +381,7 @@
 input[type='checkbox'].FormControl-checkbox,
 input[type='radio'].FormControl-radio {
   @include Field;
+
   display: grid;
   width: var(--base-size-16, 16px);
   height: var(--base-size-16, 16px);
