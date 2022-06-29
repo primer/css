@@ -23,40 +23,171 @@ $Overlay-height: (
   xlarge: 600px
 ) !default;
 
+// Helpers
+
+@mixin Overlay--fullViewportHeight() {
+  height: 100vh;
+  height: -webkit-fill-available;
+  max-height: 100vh;
+
+  @supports(height: 100dvh) {
+    height: 100dvh;
+    max-height: 100dvh;
+  }
+}
+
 // Overlay structure
 // =================
 //
-// .Overlay-backdrop
-// ├─ .Overlay
-// │  ├─ .Overlay-header
-// │  │  ├─ .Overlay-headerContentWrap
-// │  │  │  ├─ .Overlay-titleWrap
-// │  │  │  │  ├─ .Overlay-title
-// │  │  │  │  ├─ .Overlay-description
-// │  │  ├─ .Overlay-actionWrap
-// │  │  │  ├─ .Overlay-closeButton
-// │  ├─ .Overlay-body
-// │  ├─ .Overlay-footer
-//
-// Todo:
-// - Overlay-form?
-// - Deprecate Overlay-closeButton in favor of redesigned iconButton
-
-// Visibility
-// Todo: these are applied to `Overlay-backdrop`, not to `Overlay`
-
-.Overlay--hidden {
-  display: none !important;
-}
-
-.Overlay--visibilityHidden {
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-}
+// .Overlay
+// ├─ .Overlay-wrapper
+// │  │  ├─ .Overlay-content
+// ├─ .Overlay-backdrop
 
 .Overlay {
+  isolation: isolate;
+  position: absolute;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  @include Overlay--fullViewportHeight;
+}
+.Overlay--open {
+  visibility: visible;
+  display: flex;
+}
+
+// Overlay-wrapper
+
+.Overlay-wrapper {
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+.Overlay--anchor {
+  // Todo: anchored position
+  outline: 10px solid pink;
+}
+
+.Overlay--center {
+  align-items: center;
+  justify-content: center;
+}
+
+.Overlay--full {
+  .Overlay-wrapper {
+    width: 100%;
+  }
+  .Overlay-content {
+    flex-grow: 1;
+    border-radius: unset;
+    width: 100%;
+    max-width: 100vw;
+
+    @include Overlay--fullViewportHeight;
+  }
+}
+
+.Overlay--top {
+  align-items: start;
+  justify-content: center;
+
+  .Overlay-content {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: $primer-duration-slow $primer-easing-out Overlay--motion-slideInDown;
+    }
+    border-radius: $primer-borderRadius-large;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+
+.Overlay--left {
+  align-items: center;
+  justify-content: left;
+
+  .Overlay-content {
+    border-radius: $primer-borderRadius-large;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    @include Overlay--fullViewportHeight;
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: $primer-duration-slow $primer-easing-out Overlay--motion-slideInRight;
+    }
+  }
+}
+
+.Overlay--bottom {
+  align-items: end;
+  justify-content: center;
+
+  .Overlay-content {
+    border-radius: $primer-borderRadius-large;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: $primer-duration-slow $primer-easing-out Overlay--motion-slideInUp;
+    }
+  }
+}
+
+.Overlay--right {
+  align-items: center;
+  justify-content: right;
+
+  .Overlay-content {
+    border-radius: $primer-borderRadius-large;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    @include Overlay--fullViewportHeight;
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: $primer-duration-slow $primer-easing-out Overlay--motion-slideInLeft;
+    }
+  }
+}
+
+// Overlay-backdrop
+
+.Overlay-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: var(--color-neutral-muted);
+
+  @include Overlay--fullViewportHeight;
+}
+
+.Overlay-backdrop--transparent {
+  background-color: transparent;
+}
+
+
+// .Overlay--hidden {
+//   display: none !important;
+// }
+
+// Question: what's visibilityHidden used for?
+// .Overlay--visibilityHidden {
+//   height: 0;
+//   overflow: hidden;
+//   visibility: hidden;
+//   opacity: 0;
+// }
+
+// Overlay-content
+
+.Overlay-content {
   position: relative;
   display: flex;
   min-width: #{map-get($Overlay-width, 'xsmall')};
@@ -70,88 +201,95 @@ $Overlay-height: (
   @supports (height: 100dvh) {
     max-height: 100dvh;
   }
-
-  // Dimensions
-  // Todo: auto-generate based on Scss variables?
-
-  &.Overlay--height-auto {
-    height: auto;
-  }
-
-  &.Overlay--height-xsmall {
-    height: min(#{map-get($Overlay-height, 'xsmall')}, 100vh - 2rem);
-  }
-
-  &.Overlay--height-small {
-    height: min(#{map-get($Overlay-height, 'small')}, 100vh - 2rem);
-  }
-
-  &.Overlay--height-medium {
-    height: min(#{map-get($Overlay-height, 'medium')}, 100vh - 2rem);
-  }
-
-  &.Overlay--height-large {
-    height: min(#{map-get($Overlay-height, 'large')}, 100vh - 2rem);
-  }
-
-  &.Overlay--height-xlarge {
-    height: min(#{map-get($Overlay-height, 'xlarge')}, 100vh - 2rem);
-  }
-
-  &.Overlay--width-auto {
-    width: auto;
-  }
-
-  &.Overlay--width-xsmall {
-    width: min(#{map-get($Overlay-width, 'xsmall')}, 100vw - 2rem);
-  }
-
-  &.Overlay--width-small {
-    width: min(#{map-get($Overlay-width, 'small')}, 100vw - 2rem);
-  }
-
-  &.Overlay--width-medium {
-    width: min(#{map-get($Overlay-width, 'medium')}, 100vw - 2rem);
-  }
-
-  &.Overlay--width-large {
-    // stylelint-disable-next-line primer/responsive-widths
-    width: min(#{map-get($Overlay-width, 'large')}, 100vw - 2rem);
-  }
-
-  &.Overlay--width-xlarge {
-    // stylelint-disable-next-line primer/responsive-widths
-    width: min(#{map-get($Overlay-width, 'xlarge')}, 100vw - 2rem);
-  }
-
-  &.Overlay--width-xxlarge {
-    // stylelint-disable-next-line primer/responsive-widths
-    width: min(#{map-get($Overlay-width, 'xxlarge')}, 100vw - 2rem);
-  }
-
-  // Motion
-
-  &.Overlay--motion-scaleFade {
-    @media (prefers-reduced-motion: no-preference) {
-      // Todo: replace with primer-duration-slow token
-      animation: $primer-duration-slow $primer-easing-out Overlay--motion-scaleFade;
-    }
-  }
-
-  // &.Overlay--motion-slide {
-  //   @media (prefers-reduced-motion: no-preference) {
-  //     animation: $primer-duration-slow $primer-easing-out Overlay--motion-slide;
-  //   }
-  // }
 }
+
+// Dimensions
+
+.Overlay-content--height-auto {
+  height: auto;
+}
+
+.Overlay-content--height-xsmall {
+  height: min(#{map-get($Overlay-height, 'xsmall')}, 100vh - 2rem);
+}
+
+.Overlay-content--height-small {
+  height: min(#{map-get($Overlay-height, 'small')}, 100vh - 2rem);
+}
+
+.Overlay-content--height-medium {
+  height: min(#{map-get($Overlay-height, 'medium')}, 100vh - 2rem);
+}
+
+.Overlay-content--height-large {
+  height: min(#{map-get($Overlay-height, 'large')}, 100vh - 2rem);
+}
+
+.Overlay-content--height-xlarge {
+  height: min(#{map-get($Overlay-height, 'xlarge')}, 100vh - 2rem);
+}
+
+.Overlay-content--width-auto {
+  width: auto;
+}
+
+.Overlay-content--width-xsmall {
+  width: min(#{map-get($Overlay-width, 'xsmall')}, 100vw - 2rem);
+}
+
+.Overlay-content--width-small {
+  width: min(#{map-get($Overlay-width, 'small')}, 100vw - 2rem);
+}
+
+.Overlay-content--width-medium {
+  width: min(#{map-get($Overlay-width, 'medium')}, 100vw - 2rem);
+}
+
+.Overlay-content--width-large {
+  // stylelint-disable-next-line primer/responsive-widths
+  width: min(#{map-get($Overlay-width, 'large')}, 100vw - 2rem);
+}
+
+.Overlay-content--width-xlarge {
+  // stylelint-disable-next-line primer/responsive-widths
+  width: min(#{map-get($Overlay-width, 'xlarge')}, 100vw - 2rem);
+}
+
+.Overlay-content--width-xxlarge {
+  // stylelint-disable-next-line primer/responsive-widths
+  width: min(#{map-get($Overlay-width, 'xxlarge')}, 100vw - 2rem);
+}
+
+// Motion
+
+.Overlay--motion-auto {
+  // Todo: Apply animation to Overlay-wrapper?
+  @media (prefers-reduced-motion: no-preference) {
+    // Todo: replace with primer-duration-slow token
+    animation: $primer-duration-slow $primer-easing-out Overlay--motion-scaleFade;
+  }
+}
+
+.Overlay--motion-none {
+  animation: none;
+}
+
+
+// &.Overlay--motion-slide {
+//   @media (prefers-reduced-motion: no-preference) {
+//     animation: $primer-duration-slow $primer-easing-out Overlay--motion-slide;
+//   }
+// }
 
 // for <form> element that wraps entire contents of overlay
-.Overlay-form {
-  display: flex;
-  overflow: auto;
-  flex-direction: column;
-  flex-grow: 1;
-}
+// .Overlay-form {
+//   display: flex;
+//   overflow: auto;
+//   flex-direction: column;
+//   flex-grow: 1;
+// }
+
+// Move overlay header to specialized dialog component?
 
 .Overlay-header {
   z-index: 1;
