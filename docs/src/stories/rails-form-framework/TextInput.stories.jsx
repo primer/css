@@ -185,6 +185,7 @@ export const InputTemplate = ({
           className={clsx(
             'FormControl-input-wrap',
             showClearButton && 'FormControl-input-wrap--trailingAction',
+            trailingActionDivider && 'FormControl-input-wrap-trailingAction--divider',
             size && `${size}`,
             leadingVisual && 'FormControl-input-wrap--leadingVisual'
           )}
@@ -214,8 +215,8 @@ export const InputTemplate = ({
             className={clsx(
               'FormControl-input',
               size && `${size}`,
-              inset && 'Field--inset',
-              monospace && 'Field--monospace'
+              inset && 'FormControl--inset',
+              monospace && 'FormControl--monospace'
             )}
             disabled={disabled ? 'true' : undefined}
             invalid={invalid ? 'true' : undefined}

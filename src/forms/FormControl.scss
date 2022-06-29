@@ -1,6 +1,6 @@
-// stylelint-disable primer/typography, primer/borders, primer/spacing, selector-max-type, selector-max-specificity, selector-no-qualifying-type
+// stylelint-disable primer/typography, primer/borders, primer/spacing, selector-max-type, selector-max-specificity, selector-no-qualifying-type,  max-nesting-depth
 
-// group label, field, caption and error message
+// groups label, field, caption and inline error message
 .FormControl {
   display: inline-flex;
   flex-direction: column;
@@ -81,7 +81,38 @@
   }
 }
 
-// <select> and <input>
+// TextInput structure
+// ===================
+//
+// .FormControl
+// ├─ .FormControl-label
+// │  ├─ .FormControl-input-wrap
+// │  │  ├─ .FormControl-input-leadingVisualWrap
+// │  │  │  ├─ .FormControl-input-leadingVisual
+// │  │  ├─ .FormControl-input
+// │  │  ├─ .FormControl-input-trailingAction
+// ├─ .FormControl-inlineValidation
+// ├─ .FormControl-caption
+
+// Select structure
+// ===================
+//
+// .FormControl
+// ├─ .FormControl-label
+// │  ├─ .FormControl-select-wrap
+// │  │  ├─ .FormControl-select
+// ├─ .FormControl-inlineValidation
+// ├─ .FormControl-caption
+
+// Textarea structure
+// ===================
+//
+// .FormControl
+// ├─ .FormControl-label
+// ├─ .FormControl-textarea
+// ├─ .FormControl-inlineValidation
+// ├─ .FormControl-caption
+
 .FormControl-input,
 .FormControl-select,
 .FormControl-textarea {
@@ -133,10 +164,11 @@
   }
 
   &.FormControl-monospace {
-    font-family: var(
-      --primer-fontStack-monospace,
-      'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace'
-    );
+    font-family:
+      var(
+        --primer-fontStack-monospace,
+        'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace'
+      );
   }
 
   // validation states
@@ -228,36 +260,73 @@
     }
 
     &::after {
-      @include minTouchTarget(var(--primer-control-medium-size), var(--primer-control-medium-size));
+      @include minTouchTarget(var(--primer-control-medium-size, 32px), var(--primer-control-medium-size, 32px));
 
       @media (pointer: coarse) {
-        min-width: var(--primer-control-minTarget-coarse);
-        min-height: var(--primer-control-minTarget-coarse);
+        min-width: var(--primer-control-minTarget-coarse, 44px);
+        min-height: var(--primer-control-minTarget-coarse, 44px);
       }
     }
   }
 
   // if leadingVisual is present
+
+  /*
+	┌──32px──┬────────────────────┐
+	╎  ┌───┐   ┌────────────────┐ ╎
+	╎   16px    16px                ╎
+	╎  └───┘   └────────────────┘ ╎
+	└───────8px───────────────────┘
+	*/
   &.FormControl-input-wrap--leadingVisual {
     .FormControl-input {
-      padding-inline-start: calc(
-        var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
-          var(--primer-control-medium-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-      );
+      padding-inline-start:
+        calc(
+          var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+          var(--primer-control-medium-gap, 8px)
+        ); /* 32px */
     }
   }
 
+  /*
+	┌──────────────────┬──32px──┐
+	╎  ┌──────────────┐  ┌────┐ ╎
+	╎   24px               24px   ╎
+	╎  └──────────────┘  └────┘ ╎
+	└──────────────────┴────────┘
+  */
   // if trailingAction is present
   &.FormControl-input-wrap--trailingAction {
     .FormControl-input {
-      padding-inline-end: calc(
-        var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
-          var(--primer-control-medium-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-      );
+      padding-inline-end:
+        calc(
+          var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+          var(--primer-control-medium-gap, 8px)
+        ); /* 32px */
+    }
+
+    /*
+		32px + 1px border
+		┌──────────────────┬──33px──┐
+		╎  ┌──────────────┐  ┌────┐ ╎
+		╎   24px               24px   ╎
+		╎  └──────────────┘  └────┘ ╎
+		└──────────────────┴────────┘
+		*/
+    // if trailingAction divider is present, add 1px padding to accomodate input field text
+    // can be refactored to has(.FormControl-input-trailingAction--divider)
+    &.FormControl-input-wrap-trailingAction--divider {
+      .FormControl-input {
+        padding-inline-end:
+          calc(
+            var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+            var(--primer-control-medium-gap, 8px) + var(--primer-borderWidth-thin, 1px)
+          ); /* 33px */
+      }
     }
   }
 
-  // size modifications can be refactored with :has() - Field-wrap:has(.FormControl-large)
+  // size modifications can be refactored with :has() - FormControl-input-wrap:has(.FormControl-large)
   // sizes
   &.FormControl-small {
     .FormControl-input-leadingVisualWrap {
@@ -265,12 +334,38 @@
       left: calc(var(--primer-control-medium-paddingInline-condensed, 8px) - 0.125rem); /* 6px */
     }
 
+    /*
+    ┌──────────────────┬──28px──┐
+    ╎  ┌──────────────┐  ┌────┐ ╎
+    ╎   20px               20px   ╎
+    ╎  └──────────────┘  └────┘ ╎
+    └──────────────────┴────────┘
+    */
     &.FormControl-input-wrap--trailingAction {
       .FormControl-input.FormControl-small {
-        padding-inline-end: calc(
-          var(----primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
-            var(--primer-control-small-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-        ); /* 27px */
+        padding-inline-end:
+          calc(
+            var(--primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+            var(--primer-control-small-gap, 8px)
+          ); /* 28px */
+      }
+
+      /*
+			28px + 1px border
+			┌──────────────────┬──29px──┐
+			╎  ┌──────────────┐  ┌────┐ ╎
+			╎   20px               20px   ╎
+			╎  └──────────────┘  └────┘ ╎
+			└──────────────────┴────────┘
+			*/
+      &.FormControl-input-wrap-trailingAction--divider {
+        .FormControl-input.FormControl-small {
+          padding-inline-end:
+            calc(
+              var(--primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+              var(--primer-control-small-gap, 8px) + var(--primer-borderWidth-thin, 1px)
+            ); /* 29px */
+        }
       }
     }
 
@@ -290,21 +385,54 @@
       left: var(--primer-control-medium-paddingInline-normal, 12px);
     }
 
+    /*
+    ┌──36px──┬───12px padding──────┐
+    ╎  ┌───┐   ┌────────────────┐ ╎
+    ╎   16px    16px                ╎
+    ╎  └───┘   └────────────────┘ ╎
+    └12px───8px───────────────────┘
+    */
     &.FormControl-input-wrap--leadingVisual {
       .FormControl-input.FormControl-large {
-        padding-inline-start: calc(
-          var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
-            var(--primer-control-large-gap, 8px) - var(--primer-borderWidth-thin, 1px)
-        ); /* 31px */
+        padding-inline-start:
+          calc(
+            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+            var(--primer-control-large-gap, 8px)
+          ); /* 36px */
       }
     }
 
+    /*
+    ┌──────────────────┬──36px──┐
+    ╎  ┌──────────────┐  ┌────┐ ╎
+    ╎   28px               28px   ╎
+    ╎  └──────────────┘  └────┘ ╎
+    └──────────────────┴────────┘
+    */
     &.FormControl-input-wrap--trailingAction {
       .FormControl-input.FormControl-large {
-        padding-inline-end: calc(
-          var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+        padding-inline-end:
+          calc(
+            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
             var(--primer-control-large-gap, 8px)
-        ); /* 36px */
+          ); /* 36px */
+      }
+
+      /*
+			┌──────────────────┬──37px──┐
+			╎  ┌──────────────┐  ┌────┐ ╎
+			╎   28px               28px   ╎
+			╎  └──────────────┘  └────┘ ╎
+			└──────────────────┴────────┘
+			*/
+      &.FormControl-input-wrap-trailingAction--divider {
+        .FormControl-input.FormControl-large {
+          padding-inline-end:
+            calc(
+              var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+              var(--primer-control-large-gap, 8px) + var(--primer-borderWidth-thin, 1px)
+            ); /* 37px */
+        }
       }
     }
 
@@ -353,6 +481,15 @@
 
 // checkbox + radio specific styles
 
+// Checkbox + Radio structure
+// ===================
+//
+// .FormControl-radio-wrap
+// ├─ .FormControl-radio
+// ├─ .FormControl-radio-labelWrap
+// │  ├─ .FormControl-label
+// │  ├─ .FormControl-caption
+
 .FormControl-checkbox-wrap,
 .FormControl-radio-wrap {
   display: inline-grid;
@@ -389,7 +526,7 @@ input[type='radio'].FormControl-radio {
   margin-top: 0.125rem; // 2px to center align with label (20px line-height)
   border: solid var(--primer-borderWidth-thin, 1px) var(--color-border-default);
   border-radius: var(--primer-borderRadius-small, 3px);
-  transition: border-color, background 80ms cubic-bezier(0.33, 1, 0.68, 1) 120ms; // checked -> unchecked
+  transition: background-color, border-color 80ms cubic-bezier(0.33, 1, 0.68, 1); // checked -> unchecked - add 120ms delay to fully see animation-out
   appearance: none;
   place-content: center;
   grid-area: field;
@@ -415,7 +552,7 @@ input[type='radio'].FormControl-radio {
   &:checked {
     background: var(--color-accent-fg);
     border-color: var(--color-accent-fg);
-    transition: border-color, background 80ms cubic-bezier(0.32, 0, 0.67, 0) 0ms; // unchecked -> checked
+    transition: background-color, border-color 80ms cubic-bezier(0.32, 0, 0.67, 0) 0ms; // unchecked -> checked
 
     &::before {
       visibility: visible;
@@ -458,6 +595,12 @@ input[type='radio'].FormControl-radio {
       @media screen and (prefers-reduced-motion: no-preference) {
         animation: radioIn 80ms cubic-bezier(0.65, 0, 0.35, 1) forwards 80ms;
       }
+    }
+  }
+
+  &:indeterminate {
+    &::before {
+      visibility: hidden;
     }
   }
 }

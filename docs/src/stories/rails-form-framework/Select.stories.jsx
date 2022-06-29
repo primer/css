@@ -155,8 +155,8 @@ export const InputTemplate = ({
             'FormControl-select',
             size && `${size}`,
             validationStatus && `${validationStatus}`,
-            inset && 'Field--inset',
-            monospace && 'Field--monospace'
+            inset && 'FormControl--inset',
+            monospace && 'FormControl--monospace'
           )}
           disabled={disabled ? 'true' : undefined}
           invalid={invalid ? 'true' : undefined}

@@ -89,7 +89,7 @@ export const RadioTemplate = ({label, disabled, visuallyHidden, focusElement, ca
     <div class="FormControl-radio-wrap">
       <input
         id={id}
-        name={id}
+        name="radio"
         type="radio"
         disabled={disabled}
         class="FormControl-radio"
@@ -97,7 +97,7 @@ export const RadioTemplate = ({label, disabled, visuallyHidden, focusElement, ca
         indeterminate={indeterminate ? 'true' : undefined}
         ariaDescribedBy={caption ? 'caption-ebb67985' : undefined}
       />
-      <span class="Field--radio-labelWrap">
+      <span class="FormControl-radio-labelWrap">
         <label htmlFor={id} className={clsx('FormControl-label', visuallyHidden && 'sr-only')}>
           {label}
         </label>

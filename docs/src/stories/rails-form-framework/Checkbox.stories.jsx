@@ -88,7 +88,7 @@ export const InputTemplate = ({label, disabled, visuallyHidden, focusElement, ca
         indeterminate={indeterminate ? 'true' : undefined}
         ariaDescribedBy={caption ? 'caption-ebb67985' : undefined}
       />
-      <span class="Field--checkbox-labelWrap">
+      <span class="FormControl-checkbox-labelWrap">
         <label htmlFor="input-id" className={clsx('FormControl-label', visuallyHidden && 'sr-only')}>
           {label}
         </label>
