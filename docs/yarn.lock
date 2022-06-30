@@ -6304,6 +6304,13 @@ capture-exit@^2.0.0:
   dependencies:
     rsvp "^4.8.4"
 
+cartesian@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/cartesian/-/cartesian-1.0.1.tgz#ae3fc8a63e2ba7e2c4989ce696207457bcae65af"
+  integrity sha512-tR3qKRYpRJ6FXEGuoBwpuCYcwydrk1N2rduy7eWg1Msepi3i5fCxheryw4VBlCqjCbk3Vhjh3eg+IGHtl5H74A==
+  dependencies:
+    xtend "^4.0.1"
+
 case-sensitive-paths-webpack-plugin@^2.3.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.4.0.tgz#db64066c6422eed2e08cc14b986ca43796dbc6d4"
@@ -18591,6 +18598,13 @@ storybook-addon-designs@6.2.1:
   integrity sha512-ihsscab8185HnxqTNZlM4TfrCPVsO7AimVA8BapuqT/sfZQF9m5H9C0plT3kbECdIMh2cmzMBF1Tc9ckWRgpWg==
   dependencies:
     "@figspec/react" "^1.0.0"
+
+storybook-addon-variants@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/storybook-addon-variants/-/storybook-addon-variants-0.0.5.tgz#cd2b221999d0044b3a39a150180f1e738bb504ad"
+  integrity sha512-MSQeVcliKCx/w5MiA7mcW5d7GqeL6kN4oSYKbULo4UldXkNUt3AjmjjuMMfVVcF7TdwWjAgmsHAXPo/vBIXyiQ==
+  dependencies:
+    cartesian "^1.0.1"
 
 storybook-color-picker@2.3.1:
   version "2.3.1"

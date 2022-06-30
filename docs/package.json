@@ -59,6 +59,7 @@
     "@whitespace/storybook-addon-html": "^5.0.0",
     "babel-loader": "^8.2.5",
     "storybook-addon-designs": "6.2.1",
+    "storybook-addon-variants": "^0.0.5",
     "storybook-color-picker": "2.3.1"
   }
 }
