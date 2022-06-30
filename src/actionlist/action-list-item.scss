@@ -237,7 +237,7 @@
 
   // disabled
   &[aria-disabled='true'] {
-    .ActionList-item-content {
+    .ActionList-content {
       .ActionList-item-label,
       .ActionList-item-description {
         color: var(--color-primer-fg-disabled);
@@ -246,14 +246,14 @@
       .ActionList-item-visual {
         fill: var(--color-primer-fg-disabled);
       }
+    }
 
-      @media (hover: hover) {
+    @media (hover: hover) {
         &:hover {
           cursor: not-allowed;
           background-color: transparent;
         }
       }
-    }
   }
 
   // variants
