@@ -1,5 +1,19 @@
 # @primer/css
 
+## 20.2.4
+
+### Patch Changes
+
+- [#2136](https://github.com/primer/css/pull/2136) [`89846844`](https://github.com/primer/css/commit/8984684470dc2e6cc69e7c80e4ce4a0e70e57eb3) Thanks [@langermank](https://github.com/langermank)! - Bug: ActionList-item disabled state
+
+* [#2130](https://github.com/primer/css/pull/2130) [`544fb277`](https://github.com/primer/css/commit/544fb2773dbadd934a34232637970946de3c536d) Thanks [@renbaoshuo](https://github.com/renbaoshuo)! - Add link to source code in Timeline's doc
+
+- [#2114](https://github.com/primer/css/pull/2114) [`facb9682`](https://github.com/primer/css/commit/facb96823a344369afdace1365dda38bb5312f2b) Thanks [@langermank](https://github.com/langermank)! - - Updates stories to reflect markup for Rails
+  - Clean up FormControl classes
+  - Add Radio and Checkbox custom styles
+
+* [#2132](https://github.com/primer/css/pull/2132) [`c898103e`](https://github.com/primer/css/commit/c898103e0e942b7ab07f43b83496f019163458f1) Thanks [@vzrenggamani](https://github.com/vzrenggamani)! - docs: update deployment location of docs
+
 ## 20.2.3
 
 ### Patch Changes
