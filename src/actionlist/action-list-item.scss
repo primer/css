@@ -249,11 +249,11 @@
     }
 
     @media (hover: hover) {
-        &:hover {
-          cursor: not-allowed;
-          background-color: transparent;
-        }
+      &:hover {
+        cursor: not-allowed;
+        background-color: transparent;
       }
+    }
   }
 
   // variants
