@@ -66,7 +66,7 @@
       text-indent: var(--base-size-128, 128px);
       pointer-events: none;
       background: var(--color-border-default);
-      border-radius: 50%;
+      border-radius: var(--primer-borderRadius-full, 100vh);
     }
 
     &:focus {
