@@ -63,7 +63,7 @@
       width: var(--base-size-8, 8px);
       height: var(--base-size-8, 8px);
       overflow: hidden;
-      text-indent: var(--base-size-128);
+      text-indent: var(--base-size-128, 128px);
       pointer-events: none;
       background: var(--color-border-default);
       border-radius: 50%;
