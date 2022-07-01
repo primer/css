@@ -1,0 +1,153 @@
+// stylelint-disable max-nesting-depth
+// stylelint-disable selector-max-specificity
+// stylelint-disable no-duplicate-selectors
+
+.AppFrame {
+
+  // AppFrame structure
+  // ===================
+  // 
+  // .AppFrame
+  // ├─ .AppFrame-a11yNav
+  // │  ├─ .AppFrame-a11yLink
+  // │
+  // ├─ .AppFrame-main
+  // │  ├─ .AppFrame-header-wrapper
+  // │  │   ├─ .AppFrame-header
+  // │  │   ├─ .AppFrame-subheader
+  // │  │
+  // │  ├─ #start-of-content
+  // │  ├─ .AppFrame-body
+  // │  ├─ .AppFrame-footer
+
+  
+  // Accessibility navigation
+
+  .AppFrame-a11yNav {
+    position: absolute;
+    padding: var(--base-size-16, 16px);
+    padding-block-end: calc(var(--base-size-16, 16px) - var(--primer-borderWidth-thin, 1px));
+    background: var(--color-canvas-inset);
+    isolation: isolate;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--base-size-8, 8px);
+
+    &:not(:focus-within) {
+      clip: rect(1px, 1px, 1px, 1px);
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    &:focus-within {
+      top: 0;
+      left: 0;
+
+      // Narrow viewport
+      @media (max-width: #{map-get($breakpoints, 'md') - 0.02px}) {
+        justify-content: center;
+      }
+    }
+  }
+
+  .AppFrame-a11yLink {
+    transition: none;
+
+    &:not(:focus) {
+      width: var(--base-size-8, 8px);
+      height: var(--base-size-8, 8px);
+      display: block;
+      overflow: hidden;
+      text-indent: var(--base-size-128);
+      border-radius: 100%;
+      background: var(--color-border-default);
+      pointer-events: none;
+    }
+
+    &:focus {
+      display: grid;
+      z-index: 20;
+      width: auto;
+      height: auto;
+      overflow: auto;
+      border-radius: var(--primer-borderRadius-full, 100vh);
+      min-height: var(--primer-control-medium-size, 32px);
+      align-items: center;
+      padding: 0 var(--primer-control-medium-paddingInline-spacious, 16px);
+      background: var(--color-accent-emphasis);
+      color: var(--color-fg-on-emphasis);
+
+      @media (pointer: coarse) {
+        &:after {
+          @include minTouchTarget(var(--primer-control-minTarget-coarse, 44px));
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        animation: AppFrame-a11yLink-focus 200ms ease-out;
+      }
+
+      @keyframes AppFrame-a11yLink-focus {
+        0% {
+          transform: scale(0.3, 0.25);
+          color: var(--color-accent-emphasis);
+        }
+        50% {
+          transform: scale(1, 1);
+          color: var(--color-accent-emphasis);
+        }
+        55% {
+          color: var(--color-fg-on-emphasis);
+        }
+        100% {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  .AppFrame-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    @supports (height: 100dvh) {
+      min-height: 100dvh;
+    }
+  }
+
+  .AppFrame-header-wrapper {
+    position: relative;
+    overflow: visible; 
+    height: min-content;
+
+    .AppFrame-header {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+  }
+
+  .AppFrame-header {
+    flex: 0 0 auto;
+  }
+
+  .AppFrame-subheader {
+    flex: 0 0 auto;
+  }
+
+  .AppFrame-body {
+    flex: 1 0;
+    height: 100%;
+  }
+
+  .AppFrame-footer {
+    flex: 0 0 auto;
+  }
+}
