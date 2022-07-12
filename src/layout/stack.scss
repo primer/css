@@ -18,6 +18,7 @@
 .Stack--inline {
   flex-flow: row;
 }
+
 .Stack--block {
   flex-flow: column;
 }
@@ -37,26 +38,30 @@
 .Stack--none {
   --Stack-gap: 0;
 }
+
 .Stack--condensed {
   --Stack-gap: var(--primer-stack-gap-condensed, 8px);
 }
+
 .Stack--normal {
   --Stack-gap: var(--primer-stack-gap-normal, 16px);
 }
-  
+
 @media ($viewport-regular) {
   .Stack--spacious {
     --Stack-gap: var(--primer-stack-gap-spacious, 24px);
-  } 
+  }
 }
 
 @media ($viewport-narrow) {
   .Stack--none-whenNarrow {
     --Stack-gap-whenNarrow: 0;
   }
+
   .Stack--condensed-whenNarrow {
     --Stack-gap-whenNarrow: var(--primer-stack-gap-condensed, 8px);
   }
+
   .Stack--normal-whenNarrow {
     --Stack-gap-whenNarrow: var(--primer-stack-gap-normal, 16px);
   }
@@ -68,10 +73,12 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 .Stack--center {
   align-items: center;
   justify-content: center;
 }
+
 .Stack--end {
   align-items: flex-end;
   justify-content: flex-end;
@@ -81,9 +88,11 @@
   .Stack--start-whenNarrow {
     align-items: flex-start;
   }
+
   .Stack--center-whenNarrow {
     align-items: center;
   }
+
   .Stack--end-whenNarrow {
     align-items: flex-end;
   }
@@ -94,6 +103,7 @@
 .Stack--wrap {
   flex-wrap: wrap;
 }
+
 .Stack--nowrap {
   flex-wrap: nowrap;
 }
@@ -102,6 +112,7 @@
   .Stack--wrap-whenNarrow {
     flex-wrap: wrap;
   }
+
   .Stack--nowrap-whenNarrow {
     flex-wrap: nowrap;
   }
