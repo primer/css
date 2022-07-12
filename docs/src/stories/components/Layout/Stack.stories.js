@@ -24,6 +24,11 @@ export default {
       control: {
         type: 'inline-radio',
       },
+      table: {
+        defaultValue: {
+          summary: 'block',
+        }
+      }
     },
     narrow_direction: {
       options: ['inline', 'block'],
@@ -42,6 +47,11 @@ export default {
       control: {
         type: 'inline-radio',
       },
+      table: {
+        defaultValue: {
+          summary: 'normal',
+        }
+      }
     },
     narrow_gap: {
       options: ['none', 'condensed', 'normal', 'custom'],
@@ -54,12 +64,12 @@ export default {
     },
     gap_custom: {
       control: {
-        type: 'string'
+        type: 'text'
       },
     },
     narrow_gap_custom: {
       control: {
-        type: 'string'
+        type: 'text'
       },
       table: {
         category: 'Narrow viewport'
@@ -69,10 +79,15 @@ export default {
     // Align
 
     align: {
-      options: ['start', 'center', 'end'],
+      options: ['normal', 'start', 'center', 'end'],
       control: {
         type: 'inline-radio'
       },
+      table: {
+        defaultValue: {
+          summary: 'normal',
+        }
+      }
     },
     narrow_align: {
       options: ['start', 'center', 'end'],
@@ -91,6 +106,11 @@ export default {
       control: {
         type: 'inline-radio'
       },
+      table: {
+        defaultValue: {
+          summary: 'nowrap',
+        }
+      }
     },
     narrow_wrap: {
       options: ['wrap', 'nowrap'],
@@ -108,6 +128,22 @@ export default {
       control: {
         type: 'boolean'
       },
+      table: {
+        defaultValue: {
+          summary: 'false',
+        }
+      }
+    },
+    divider_role: {
+      options: ['presentation', 'separator', 'none'],
+      control: {
+        type: 'inline-radio'
+      },
+      table: {
+        defaultValue: {
+          summary: 'presentation',
+        }
+      }
     },
     narrow_divider: {
       control: {
@@ -137,25 +173,53 @@ export const StackTemplate = ({
   narrow_divider
 }) => {
 
+  let custom_styles  = {};
 
+  // Gap
+  if (gap === 'custom') {
+    custom_styles['--Stack-gap'] = gap_custom;
+  }
+  if (narrow_gap === 'custom') {
+    custom_styles['--Stack-gap-whenNarrow'] = narrow_gap_custom;
+  }
+
+  // Null values for states that don't require a modifier class
+  align = align === 'normal' ? null : align
 
   return (
     <>
-      <div className={clsx(
+      <div
+        className={clsx(
           'Stack',
-          direction && 'Stack--' + `${direction}`,
-          gap && 'Stack--' + `${gap}`,
-          align && 'Stack--' + `${align}`,
+          direction && 'Stack--dir-' + `${direction}`,
+          narrow_direction && 'Stack--dir-' + `${narrow_direction}-whenNarrow`,
+
+          gap && 'Stack--gap-' + `${gap}`,
+          narrow_gap && 'Stack--gap-' + `${narrow_gap}-whenNarrow`,
+
+          align && 'Stack--align-' + `${align}`,
+          narrow_align && 'Stack--align-' + `${narrow_align}-whenNarrow`,
+
           wrap && 'Stack--' + `${wrap}`,
+          narrow_wrap && 'Stack--' + `${narrow_wrap}-whenNarrow`,
+
+          divider && 'Stack--showDividers',
+          narrow_divider && 'Stack--showDividers-whenNarrow' // Todo: how about hide dividers when narrow?
+
         )}
+        style={custom_styles}
       >
-        
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
+        <div className="_debug _debug-item-1">1</div>
+        {divider && ( <><hr className="Stack-divider" role="presentation" /></> )}
+        <div className="_debug _debug-item-2">2</div>
+        {divider && ( <><hr className="Stack-divider" role="presentation" /></> )}
+        <div className="_debug _debug-item-3">3</div>
+        {divider && ( <><hr className="Stack-divider" role="presentation" /></> )}
+        <div className="_debug _debug-item-4">4</div>
+        {divider && ( <><hr className="Stack-divider" role="presentation" /></> )}
+        <div className="_debug _debug-item-5">5</div>
+        {divider && ( <><hr className="Stack-divider" role="presentation" /></> )}
+        <div className="_debug _debug-item-6">6</div>
       </div>
 
       {_debug && (
@@ -164,33 +228,39 @@ export const StackTemplate = ({
             .Stack {
               background: beige;
             }
-            .Stack > * {
+            .Stack ._debug {
               padding: 8px;
               border-radius: 6px;
             }
-            .Stack :nth-child(1) {
+            .Stack ._debug-item-1 {
               background: lightblue;
-              width: 6ch;
+              min-inline-size: 6ch;
+              font-size: 1rem;
             }
-            .Stack :nth-child(2) {
+            .Stack ._debug-item-2 {
               background: coral;
-              width: 9ch;
+              min-inline-size: 9ch;
+              font-size: 1.25rem;
             }
-            .Stack :nth-child(3) {
+            .Stack ._debug-item-3 {
               background: darkseagreen;
-              width: 8ch;
+              inline-size: 8ch;
+              font-size: 1rem;
             }
-            .Stack :nth-child(4) {
+            .Stack ._debug-item-4 {
               background: khaki;
-              width: 7ch;
+              inline-size: 7ch;
+              font-size: 1.25rem;
             }
-            .Stack :nth-child(5) {
+            .Stack ._debug-item-5 {
               background: lightpink;
-              width: 10ch;
+              inline-size: 10ch;
+              font-size: 1rem;
             }
-            .Stack :nth-child(6) {
+            .Stack ._debug-item-6 {
               background: lightsalmon;
-              width: 6ch;
+              inline-size: 6ch;
+              font-size: 1.25rem;
             }
           `}</style>
         </>
@@ -205,5 +275,6 @@ Playground.args = {
   _debug: true,
   direction: "block",
   gap: "normal",
-  align: "start",
+  gap_custom: undefined,
+  align: "normal",
 };
