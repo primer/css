@@ -146,6 +146,12 @@ $breakpoints: (
   xl: $width-xl
 ) !default;
 
+// Viewport ranges
+// Soon to be provided by Primer Primitives directly
+// https://github.com/primer/primitives/blob/main/tokens/functional/size/viewport.json
+$viewport-narrow: 'max-width: #{$width-md - 0.02px}' !default;
+$viewport-regular: 'min-width: #{$width-md}' !default;
+
 // This map in the form (breakpoint: variant) is used to iterate over
 // breakpoints and create both responsive and non-responsive classes in one
 // loop:
