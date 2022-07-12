@@ -1,11 +1,11 @@
 // Stack layout helper
 
 // Tasks:
-// - [ ] Storybook narrow values
-// - [ ] Storybook examples
+// - [x] Storybook narrow values
+// - [x] Storybook examples
 // - [x] Custom gap
 // - [ ] Figure out `align` prop for inline Stack
-// - [ ] Finish dividers (including narrow viewports configuration)
+// - [x] Finish dividers (including narrow viewports configuration)
 
 .Stack {
   --Stack-gap: var(--primer-stack-gap-normal, 16px);
@@ -131,6 +131,9 @@
 @media ($viewport-narrow) {
   .Stack--showDividers-whenNarrow .Stack-divider {
     display: block;
+  }
+  .Stack--hideDividers-whenNarrow .Stack-divider {
+    display: none;
   }
 }
 
