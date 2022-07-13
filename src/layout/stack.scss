@@ -1,13 +1,23 @@
-// Stack layout helper
-
-// Tasks:
-// - [x] Storybook narrow values
-// - [x] Storybook examples
-// - [x] Custom gap
-// - [ ] Figure out `align` prop for inline Stack
-// - [x] Finish dividers (including narrow viewports configuration)
+// Stack layout helper component
 
 .Stack {
+  
+  // Structure
+  // =========
+  //
+  // .Stack
+  // ├─ &.Stack--dir-[ inline | block ] [ -whenNarrow ]
+  // ├─ &.Stack--gap-[ none | condensed | normal | spacious ] [ -whenNarrow ]
+  // ├─ &.Stack--align-[ start | center | end | baseline ] [ -whenNarrow ]
+  // ├─ &.Stack--alignWrap-[ start | center | end | distribute | distributeEvenly ] [ -whenNarrow ]
+  // ├─ &.Stack--spread-[ start | center | end | distribute | distributeEvenly ] [ -whenNarrow ]
+  // ├─ &.Stack--wrap [ -whenNarrow ]
+  // ├─ &.Stack--nowrap [ -whenNarrow ]
+  // ├─ &.Stack--showDividers [ -whenNarrow ]
+  // ├─ &.Stack--hideDividers-whenNarrow
+  // │
+  // ├─ .Stack-divider
+
   --Stack-gap: var(--primer-stack-gap-normal, 16px);
   --Stack-gap-whenNarrow: var(--Stack-gap);
   --Stack-divider-color: var(--color-border-default);
@@ -134,7 +144,23 @@
 }
 
 @media ($viewport-narrow) {
-  // Todo
+  .Stack--alignWrap-start-whenNarrow {
+    align-content: flex-start;
+  }
+  
+  .Stack--alignWrap-center-whenNarrow {
+    align-content: center;
+  }
+  
+  .Stack--alignWrap-end-whenNarrow {
+    align-content: flex-end;
+  }
+  .Stack--alignWrap-distribute-whenNarrow {
+    align-content: space-between;
+  }
+  .Stack--alignWrap-distributeEvenly-whenNarrow {
+    align-content: space-evenly;
+  }
 }
 
 /* Spread */
@@ -156,7 +182,21 @@
 }
 
 @media ($viewport-narrow) {
-  // Todo
+  .Stack--spread-start-whenNarrow {
+    justify-content: flex-start;
+  }
+  .Stack--spread-center-whenNarrow {
+    justify-content: center;
+  }
+  .Stack--spread-end-whenNarrow {
+    justify-content: flex-end;
+  }
+  .Stack--spread-distribute-whenNarrow {
+    justify-content: space-between;
+  }
+  .Stack--spread-distributeEvenly-whenNarrow {
+    justify-content: space-evenly;
+  }
 }
 
 /* Wrap */

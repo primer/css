@@ -37,6 +37,7 @@ export default {
       control: {
         type: 'inline-radio',
       },
+      description: 'Override `direction` on narrow viewports',
       table: {
         category: 'Narrow viewport properties',
         defaultValue: {
@@ -52,7 +53,7 @@ export default {
       control: {
         type: 'inline-radio',
       },
-      description: `Sets the spacing gap between elements inside \`Stack\`. All sizes are rendered in \`rem\` units.
+      description: `Sets the spacing gap between direct children of \`Stack\`. All sizes are rendered in \`rem\` units.
 - \`none\`: 0
 - \`condensed\`: 8px
 - \`normal\`: 16px (default)
@@ -71,6 +72,7 @@ export default {
       control: {
         type: 'inline-radio',
       },
+      description: 'Override `gap` on narrow viewports',
       table: {
         category: 'Narrow viewport properties',
         defaultValue: {
@@ -91,6 +93,7 @@ export default {
       control: {
         type: 'text'
       },
+      description: 'Override a custom value for `gap` for narrow viewports',
       table: {
         category: 'Narrow viewport properties'
       },
@@ -101,6 +104,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
+      description: 'Sets the alignment between direct children of a `Stack`. ',
       table: {
         category: 'Properties',
         defaultValue: {
@@ -316,11 +320,13 @@ export const StackTemplate = ({
           narrow_gap && 'Stack--gap-' + `${narrow_gap}-whenNarrow`,
 
           align && 'Stack--align-' + `${align}`,
-          alignWrap && 'Stack--alignWrap-' + `${alignWrap}`,
           narrow_align && 'Stack--align-' + `${narrow_align}-whenNarrow`,
-          narrow_align && 'Stack--alignWrap-' + `${narrow_align}-whenNarrow`,
+
+          alignWrap && 'Stack--alignWrap-' + `${alignWrap}`,
+          narrow_alignWrap && 'Stack--alignWrap-' + `${narrow_alignWrap}-whenNarrow`,
+          
           spread && 'Stack--spread-' + `${spread}`,
-          narrow_spread && 'Stack--spread-' + `${spread}-whenNarrow`,
+          narrow_spread && 'Stack--spread-' + `${narrow_spread}-whenNarrow`,
 
           wrap && 'Stack--' + `${wrap}`,
           narrow_wrap && 'Stack--' + `${narrow_wrap}-whenNarrow`,
