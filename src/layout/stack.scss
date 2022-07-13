@@ -15,6 +15,9 @@
   display: flex;
   flex-flow: column;
   gap: var(--Stack-gap);
+  min-block-size: fit-content;
+  min-inline-size: fit-content;
+  align-items: stretch;
 
   @media ($viewport-narrow) {
     gap: var(--Stack-gap-whenNarrow);
@@ -89,6 +92,10 @@
   align-items: flex-end;
 }
 
+.Stack--align-baseline {
+  align-items: baseline;
+}
+
 @media ($viewport-narrow) {
   .Stack--align-start-whenNarrow {
     align-items: flex-start;
@@ -101,6 +108,55 @@
   .Stack--align-end-whenNarrow {
     align-items: flex-end;
   }
+  .Stack--align-baseline-whenNarrow {
+    align-items: baseline;
+  }
+}
+
+/* AlignWrap */
+
+.Stack--alignWrap-start {
+  align-content: flex-start;
+}
+
+.Stack--alignWrap-center {
+  align-content: center;
+}
+
+.Stack--alignWrap-end {
+  align-content: flex-end;
+}
+.Stack--alignWrap-distribute {
+  align-content: space-between;
+}
+.Stack--alignWrap-distributeEvenly {
+  align-content: space-evenly;
+}
+
+@media ($viewport-narrow) {
+  // Todo
+}
+
+/* Spread */
+
+.Stack--spread-start {
+  justify-content: flex-start;
+}
+.Stack--spread-center {
+  justify-content: center;
+}
+.Stack--spread-end {
+  justify-content: flex-end;
+}
+.Stack--spread-distribute {
+  justify-content: space-between;
+}
+.Stack--spread-distributeEvenly {
+  justify-content: space-evenly;
+}
+
+@media ($viewport-narrow) {
+  // Todo
 }
 
 /* Wrap */
@@ -142,6 +198,7 @@
   padding: 0;
   border: none;
   display: none;
+  align-self: stretch;
 }
 
 .Stack--dir-block .Stack-divider {

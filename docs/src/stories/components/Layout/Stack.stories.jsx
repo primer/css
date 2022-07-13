@@ -38,7 +38,10 @@ export default {
         type: 'inline-radio',
       },
       table: {
-        category: 'Narrow viewport properties'
+        category: 'Narrow viewport properties',
+        defaultValue: {
+          summary: 'inherit'
+        }
       },
     },
 
@@ -69,7 +72,10 @@ export default {
         type: 'inline-radio',
       },
       table: {
-        category: 'Narrow viewport properties'
+        category: 'Narrow viewport properties',
+        defaultValue: {
+          summary: 'inherit'
+        }
       },
     },
     gap_custom: {
@@ -90,22 +96,20 @@ export default {
       },
     },
 
-    // Align
-
     align: {
-      options: ['normal', 'start', 'center', 'end'],
+      options: ['stretch', 'start', 'center', 'end', 'baseline'],
       control: {
         type: 'inline-radio'
       },
       table: {
         category: 'Properties',
         defaultValue: {
-          summary: 'normal',
+          summary: 'stretch',
         }
       }
     },
     narrow_align: {
-      options: ['inherit', 'normal', 'start', 'center', 'end'],
+      options: ['inherit', 'stretch', 'start', 'center', 'end', 'baseline'],
       control: {
         type: 'inline-radio'
       },
@@ -113,6 +117,62 @@ export default {
         category: 'Narrow viewport properties',
         defaultValue: {
           summary: 'inherit',
+        }
+      },
+    },
+
+    // Align wrap
+
+    alignWrap: {
+      options: ['start', 'center', 'end', 'distribute', 'distributeEvenly'],
+      control: {
+        type: 'inline-radio'
+      },
+      table: {
+        category: 'Properties',
+        defaultValue: {
+          summary: 'start',
+        }
+      }
+    },
+
+    narrow_alignWrap: {
+      options: ['inherit', 'start', 'center', 'end', 'distribute', 'distributeEvenly'],
+      control: {
+        type: 'inline-radio'
+      },
+      table: {
+        category: 'Narrow viewport properties',
+        defaultValue: {
+          summary: 'inherit',
+        }
+      },
+    },
+
+    // Spread
+
+    spread: {
+      options: ['start', 'center', 'end', 'distribute', 'distributeEvenly'],
+      control: {
+        type: 'inline-radio',
+      },
+      table: {
+        category: 'Properties',
+        defaultValue: {
+          summary: 'start',
+        },
+      },
+    },
+
+    narrow_spread: {
+      options: ['inherit', 'start', 'center', 'end', 'distribute', 'distributeEvenly'],
+      control: {
+        type: 'inline-radio',
+      },
+      table: {
+        category: 'Narrow viewport properties',
+        defaultValue: {
+          summary: 'inherit'
         }
       },
     },
@@ -137,13 +197,16 @@ export default {
         type: 'inline-radio'
       },
       table: {
-        category: 'Narrow viewport properties'
+        category: 'Narrow viewport properties',
+        defaultValue: {
+          summary: 'inherit'
+        }
       },
     },
 
     // Divider
 
-    divider: {
+    showDividers: {
       control: {
         type: 'boolean'
       },
@@ -154,7 +217,7 @@ export default {
         }
       }
     },
-    divider_role: {
+    dividerAriaRole: {
       options: ['presentation', 'separator', 'none'],
       control: {
         type: 'inline-radio'
@@ -166,18 +229,24 @@ export default {
         }
       }
     },
-    narrow_divider: {
+    narrow_showDividers: {
       control: {
         type: 'boolean'
       },
       table: {
-        category: 'Narrow viewport properties'
+        category: 'Narrow viewport properties',
+        defaultValue: {
+          summary: 'inherit'
+        }
       },
     },
 
     // Children
     children: {
-      description: 'A slot for children elements.'
+      description: 'A slot for children elements.',
+      table: {
+        category: 'HTML'
+      }
     }
   },
 };
@@ -188,25 +257,31 @@ export const StackTemplate = ({
   gap,
   gap_custom,
   align,
+  alignWrap,
+  spread,
   wrap,
-  divider,
+  showDividers,
+  dividerAriaRole,
 
   narrow_direction,
   narrow_gap,
   narrow_gap_custom,
   narrow_align,
+  narrow_alignWrap,
+  narrow_spread,
   narrow_wrap,
-  narrow_divider,
+  narrow_showDividers,
 
   children
 }) => {
 
   let custom_styles  = {};
-  const hasDividers = divider || narrow_divider;
+  const hasDividers = showDividers || narrow_showDividers;
 
   // Default values
   direction = direction ?? 'block'
   gap = gap ?? 'normal'
+  dividerAriaRole = dividerAriaRole ?? 'presentation'
 
   // Gap
   if (gap === 'custom') {
@@ -217,14 +292,17 @@ export const StackTemplate = ({
   }
 
   // Null value for states that don't require a modifier class
-  align = align === 'normal' ? null : align
+  align = align === 'stretch' ? null : align;
+  spread = spread === 'start' ? null : spread;
 
   // Null value for inherit responsive values
   narrow_direction = narrow_direction === 'inherit' ? null : narrow_direction;
   narrow_gap = narrow_gap === 'inherit' ? null : narrow_gap;
   narrow_align = narrow_align === 'inherit' ? null : narrow_align;
+  narrow_alignWrap = narrow_alignWrap === 'inherit' ? null : narrow_alignWrap;
+  narrow_spread = narrow_spread === 'inherit' ? null : narrow_spread;
   narrow_wrap = narrow_wrap === 'inherit' ? null : narrow_wrap;
-  narrow_divider = narrow_divider === 'inherit' ? null : narrow_divider;
+  narrow_showDividers = narrow_showDividers === 'inherit' ? null : narrow_showDividers;
 
   return (
     <>
@@ -238,14 +316,18 @@ export const StackTemplate = ({
           narrow_gap && 'Stack--gap-' + `${narrow_gap}-whenNarrow`,
 
           align && 'Stack--align-' + `${align}`,
+          alignWrap && 'Stack--alignWrap-' + `${alignWrap}`,
           narrow_align && 'Stack--align-' + `${narrow_align}-whenNarrow`,
+          narrow_align && 'Stack--alignWrap-' + `${narrow_align}-whenNarrow`,
+          spread && 'Stack--spread-' + `${spread}`,
+          narrow_spread && 'Stack--spread-' + `${spread}-whenNarrow`,
 
           wrap && 'Stack--' + `${wrap}`,
           narrow_wrap && 'Stack--' + `${narrow_wrap}-whenNarrow`,
 
-          divider && 'Stack--showDividers',
-          narrow_divider === true && 'Stack--showDividers-whenNarrow',
-          narrow_divider === false && 'Stack--hideDividers-whenNarrow',
+          showDividers && 'Stack--showDividers',
+          narrow_showDividers === true && 'Stack--showDividers-whenNarrow',
+          narrow_showDividers === false && 'Stack--hideDividers-whenNarrow',
 
         )}
         style={custom_styles}
@@ -255,15 +337,15 @@ export const StackTemplate = ({
         {!children && (
           <>
             <div className="_debug _debug-item-1">1</div>
-            {hasDividers && ( <><hr className="Stack-divider" role="presentation" /></> )}
+            {hasDividers && ( <><hr className="Stack-divider" role={dividerAriaRole} /></> )}
             <div className="_debug _debug-item-2">2</div>
-            {hasDividers && ( <><hr className="Stack-divider" role="presentation" /></> )}
+            {hasDividers && ( <><hr className="Stack-divider" role={dividerAriaRole} /></> )}
             <div className="_debug _debug-item-3">3</div>
-            {hasDividers && ( <><hr className="Stack-divider" role="presentation" /></> )}
+            {hasDividers && ( <><hr className="Stack-divider" role={dividerAriaRole} /></> )}
             <div className="_debug _debug-item-4">4</div>
-            {hasDividers && ( <><hr className="Stack-divider" role="presentation" /></> )}
+            {hasDividers && ( <><hr className="Stack-divider" role={dividerAriaRole} /></> )}
             <div className="_debug _debug-item-5">5</div>
-            {hasDividers && ( <><hr className="Stack-divider" role="presentation" /></> )}
+            {hasDividers && ( <><hr className="Stack-divider" role={dividerAriaRole} /></> )}
             <div className="_debug _debug-item-6">6</div>
           </>
         )}
