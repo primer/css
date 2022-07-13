@@ -24,10 +24,11 @@
 
   display: flex;
   flex-flow: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
   gap: var(--Stack-gap);
   min-block-size: fit-content;
   min-inline-size: fit-content;
-  align-items: stretch;
 
   @media ($viewport-narrow) {
     gap: var(--Stack-gap-whenNarrow);
@@ -36,12 +37,14 @@
 
 /* Direction */
 
-.Stack--dir-inline {
-  flex-flow: row;
-}
+@media ($viewport-regular) {
+  .Stack--dir-inline-whenRegular {
+    flex-flow: row;
+  }
 
-.Stack--dir-block {
-  flex-flow: column;
+  .Stack--dir-block-whenRegular {
+    flex-flow: column;
+  }
 }
 
 @media ($viewport-narrow) {
@@ -56,20 +59,20 @@
 
 /* Gap */
 
-.Stack--gap-none {
-  --Stack-gap: 0;
-}
-
-.Stack--gap-condensed {
-  --Stack-gap: var(--primer-stack-gap-condensed, 8px);
-}
-
-.Stack--gap-normal {
-  --Stack-gap: var(--primer-stack-gap-normal, 16px);
-}
-
 @media ($viewport-regular) {
-  .Stack--gap-spacious {
+  .Stack--gap-none-whenRegular {
+    --Stack-gap: 0;
+  }
+  
+  .Stack--gap-condensed-whenRegular {
+    --Stack-gap: var(--primer-stack-gap-condensed, 8px);
+  }
+  
+  .Stack--gap-normal-whenRegular {
+    --Stack-gap: var(--primer-stack-gap-normal, 16px);
+  }
+
+  .Stack--gap-spacious-whenRegular {
     --Stack-gap: var(--primer-stack-gap-spacious, 24px);
   }
 }
@@ -86,24 +89,29 @@
   .Stack--gap-normal-whenNarrow {
     --Stack-gap-whenNarrow: var(--primer-stack-gap-normal, 16px);
   }
+
+  // There's no .Stack--gap-spacious-whenNarrow
+  // Narrow viewports render `spacious` gap as `normal`
 }
 
 /* Align */
 
-.Stack--align-start {
-  align-items: flex-start;
-}
+@media ($viewport-regular) {
+  .Stack--align-start-whenRegular {
+    align-items: flex-start;
+  }
 
-.Stack--align-center {
-  align-items: center;
-}
+  .Stack--align-center-whenRegular {
+    align-items: center;
+  }
 
-.Stack--align-end {
-  align-items: flex-end;
-}
+  .Stack--align-end-whenRegular {
+    align-items: flex-end;
+  }
 
-.Stack--align-baseline {
-  align-items: baseline;
+  .Stack--align-baseline-whenRegular {
+    align-items: baseline;
+  }
 }
 
 @media ($viewport-narrow) {
@@ -125,22 +133,24 @@
 
 /* AlignWrap */
 
-.Stack--alignWrap-start {
-  align-content: flex-start;
-}
+@media ($viewport-regular) {
+  .Stack--alignWrap-start-whenRegular {
+    align-content: flex-start;
+  }
 
-.Stack--alignWrap-center {
-  align-content: center;
-}
+  .Stack--alignWrap-center-whenRegular {
+    align-content: center;
+  }
 
-.Stack--alignWrap-end {
-  align-content: flex-end;
-}
-.Stack--alignWrap-distribute {
-  align-content: space-between;
-}
-.Stack--alignWrap-distributeEvenly {
-  align-content: space-evenly;
+  .Stack--alignWrap-end-whenRegular {
+    align-content: flex-end;
+  }
+  .Stack--alignWrap-distribute-whenRegular {
+    align-content: space-between;
+  }
+  .Stack--alignWrap-distributeEvenly-whenRegular {
+    align-content: space-evenly;
+  }
 }
 
 @media ($viewport-narrow) {
@@ -165,20 +175,22 @@
 
 /* Spread */
 
-.Stack--spread-start {
-  justify-content: flex-start;
-}
-.Stack--spread-center {
-  justify-content: center;
-}
-.Stack--spread-end {
-  justify-content: flex-end;
-}
-.Stack--spread-distribute {
-  justify-content: space-between;
-}
-.Stack--spread-distributeEvenly {
-  justify-content: space-evenly;
+@media ($viewport-regular) {
+  .Stack--spread-start-whenRegular {
+    justify-content: flex-start;
+  }
+  .Stack--spread-center-whenRegular {
+    justify-content: center;
+  }
+  .Stack--spread-end-whenRegular {
+    justify-content: flex-end;
+  }
+  .Stack--spread-distribute-whenRegular {
+    justify-content: space-between;
+  }
+  .Stack--spread-distributeEvenly-whenRegular {
+    justify-content: space-evenly;
+  }
 }
 
 @media ($viewport-narrow) {
@@ -201,12 +213,14 @@
 
 /* Wrap */
 
-.Stack--wrap {
-  flex-wrap: wrap;
-}
+@media ($viewport-regular) {
+  .Stack--wrap-whenRegular {
+    flex-wrap: wrap;
+  }
 
-.Stack--nowrap {
-  flex-wrap: nowrap;
+  .Stack--nowrap-whenRegular {
+    flex-wrap: nowrap;
+  }
 }
 
 @media ($viewport-narrow) {
@@ -221,15 +235,14 @@
 
 /* Divider */
 
-.Stack--showDividers .Stack-divider {
-  display: block;
+@media ($viewport-regular) {
+  .Stack--showDividers-whenRegular .Stack-divider {
+    display: block;
+  }
 }
 @media ($viewport-narrow) {
   .Stack--showDividers-whenNarrow .Stack-divider {
     display: block;
-  }
-  .Stack--hideDividers-whenNarrow .Stack-divider {
-    display: none;
   }
 }
 
@@ -241,30 +254,28 @@
   align-self: stretch;
 }
 
-.Stack--dir-block .Stack-divider {
-  border-inline-end: none;
-  border-block-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
-  inline-size: auto;
-  block-size: 0;
-}
+@media ($viewport-regular) {
+  .Stack--dir-block-whenRegular .Stack-divider {
+    border-block-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
+    inline-size: auto;
+    block-size: 0;
+  }
 
-.Stack--dir-inline .Stack-divider {
-  border-inline-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
-  border-block-end: none;
-  inline-size: 0;
-  block-size: auto;
+  .Stack--dir-inline-whenRegular .Stack-divider {
+    border-inline-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
+    inline-size: 0;
+    block-size: auto;
+  }
 }
 
 @media ($viewport-narrow) {
   .Stack--dir-block-whenNarrow .Stack-divider {
-    border-inline-end: none;
     border-block-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
     inline-size: auto;
     block-size: 0;
   }
   .Stack--dir-inline-whenNarrow .Stack-divider {
     border-inline-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
-    border-block-end: none;
     inline-size: 0;
     block-size: auto;
   }

@@ -287,6 +287,15 @@ export const StackTemplate = ({
   gap = gap ?? 'normal'
   dividerAriaRole = dividerAriaRole ?? 'presentation'
 
+  // Default narrow values
+  narrow_direction = narrow_direction ?? 'inherit';
+  narrow_gap = narrow_gap ?? 'inherit';
+  narrow_align = narrow_align ?? 'inherit';
+  narrow_alignWrap = narrow_alignWrap ?? 'inherit';
+  narrow_spread = narrow_spread ?? 'inherit';
+  narrow_wrap = narrow_wrap ?? 'inherit';
+  narrow_showDividers = narrow_showDividers ?? 'inherit';
+
   // Gap
   if (gap === 'custom') {
     custom_styles['--Stack-gap'] = gap_custom;
@@ -298,42 +307,43 @@ export const StackTemplate = ({
   // Null value for states that don't require a modifier class
   align = align === 'stretch' ? null : align;
   spread = spread === 'start' ? null : spread;
+  wrap = wrap === 'nowrap' ? null : wrap;
+  gap = gap === 'normal' ? null : wrap;
 
   // Null value for inherit responsive values
-  narrow_direction = narrow_direction === 'inherit' ? null : narrow_direction;
-  narrow_gap = narrow_gap === 'inherit' ? null : narrow_gap;
-  narrow_align = narrow_align === 'inherit' ? null : narrow_align;
-  narrow_alignWrap = narrow_alignWrap === 'inherit' ? null : narrow_alignWrap;
-  narrow_spread = narrow_spread === 'inherit' ? null : narrow_spread;
-  narrow_wrap = narrow_wrap === 'inherit' ? null : narrow_wrap;
-  narrow_showDividers = narrow_showDividers === 'inherit' ? null : narrow_showDividers;
+  narrow_direction = narrow_direction === 'inherit' ? direction : narrow_direction;
+  narrow_gap = narrow_gap === 'inherit' ? gap : narrow_gap;
+  narrow_align = narrow_align === 'inherit' ? align : narrow_align;
+  narrow_alignWrap = narrow_alignWrap === 'inherit' ? alignWrap : narrow_alignWrap;
+  narrow_spread = narrow_spread === 'inherit' ? spread : narrow_spread;
+  narrow_wrap = narrow_wrap === 'inherit' ? wrap : narrow_wrap;
+  narrow_showDividers = narrow_showDividers === 'inherit' ? showDividers : narrow_showDividers;
 
   return (
     <>
       <div
         className={clsx(
           'Stack',
-          direction && 'Stack--dir-' + `${direction}`,
+          direction && 'Stack--dir-' + `${direction}-whenRegular`,
           narrow_direction && 'Stack--dir-' + `${narrow_direction}-whenNarrow`,
 
-          gap && 'Stack--gap-' + `${gap}`,
+          gap && 'Stack--gap-' + `${gap}-whenRegular`,
           narrow_gap && 'Stack--gap-' + `${narrow_gap}-whenNarrow`,
 
-          align && 'Stack--align-' + `${align}`,
+          align && 'Stack--align-' + `${align}-whenRegular`,
           narrow_align && 'Stack--align-' + `${narrow_align}-whenNarrow`,
 
-          alignWrap && 'Stack--alignWrap-' + `${alignWrap}`,
+          alignWrap && 'Stack--alignWrap-' + `${alignWrap}-whenRegular`,
           narrow_alignWrap && 'Stack--alignWrap-' + `${narrow_alignWrap}-whenNarrow`,
           
-          spread && 'Stack--spread-' + `${spread}`,
+          spread && 'Stack--spread-' + `${spread}-whenRegular`,
           narrow_spread && 'Stack--spread-' + `${narrow_spread}-whenNarrow`,
 
-          wrap && 'Stack--' + `${wrap}`,
+          wrap && 'Stack--' + `${wrap}-whenRegular`,
           narrow_wrap && 'Stack--' + `${narrow_wrap}-whenNarrow`,
 
-          showDividers && 'Stack--showDividers',
-          narrow_showDividers === true && 'Stack--showDividers-whenNarrow',
-          narrow_showDividers === false && 'Stack--hideDividers-whenNarrow',
+          showDividers && 'Stack--showDividers-whenRegular',
+          narrow_showDividers && 'Stack--showDividers-whenNarrow',
 
         )}
         style={custom_styles}
@@ -410,5 +420,5 @@ Playground.args = {
   direction: "block",
   gap: "normal",
   gap_custom: undefined,
-  align: "normal",
+  align: "stretch",
 };
