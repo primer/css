@@ -1,82 +1,31 @@
 // temporary, pre primitives release
 :root {
-  --base-size-128: 8rem;
-  --base-size-112: 7rem;
-  --base-size-96: 6rem;
-  --base-size-80: 5rem;
-  --base-size-64: 4rem;
-  --base-size-48: 3rem;
-  --base-size-44: 2.75rem;
-  --base-size-40: 2.5rem;
-  --base-size-36: 2.25rem;
-  --base-size-32: 2rem;
-  --base-size-28: 1.75rem;
-  --base-size-24: 1.5rem;
-  --base-size-20: 1.25rem;
-  --base-size-16: 1rem;
-  --base-size-12: 0.75rem;
-  --base-size-8: 0.5rem;
-  --base-size-4: 0.25rem;
-  --gh-control-xlarge-gap: var(--base-size-8);
-  --gh-control-xlarge-paddingInline-spacious: var(--base-size-16);
-  --gh-control-xlarge-paddingInline-normal: var(--base-size-12);
-  --gh-control-xlarge-lineBoxHeight: var(--base-size-20);
-  --gh-control-xlarge-size: var(--base-size-48);
-  --gh-control-large-gap: var(--base-size-8);
-  --gh-control-large-paddingInline-spacious: var(--base-size-16);
-  --gh-control-large-paddingInline-normal: var(--base-size-12);
-  --gh-control-large-lineBoxHeight: var(--base-size-20);
-  --gh-control-large-size: var(--base-size-40);
-  --gh-control-medium-gap: var(--base-size-8);
-  --gh-control-medium-paddingInline-spacious: var(--base-size-16);
-  --gh-control-medium-paddingInline-normal: var(--base-size-12);
-  --gh-control-medium-paddingInline-condensed: var(--base-size-8);
-  --gh-control-medium-lineBoxHeight: var(--base-size-20);
-  --gh-control-medium-size: var(--base-size-32);
-  --gh-control-small-gap: var(--base-size-4);
-  --gh-control-small-paddingInline-normal: var(--base-size-12);
-  --gh-control-small-paddingInline-condensed: var(--base-size-8);
-  --gh-control-small-lineBoxHeight: var(--base-size-20);
-  --gh-control-small-size: var(--base-size-28);
-  --gh-control-xsmall-gap: var(--base-size-4);
-  --gh-control-xsmall-paddingInline-spacious: var(--base-size-12);
-  --gh-control-xsmall-paddingInline-normal: var(--base-size-8);
-  --gh-control-xsmall-paddingInline-condensed: var(--base-size-4);
-  --gh-control-xsmall-lineBoxHeight: var(--base-size-20);
-  --gh-control-xsmall-size: var(--base-size-24);
-  --gh-control-minTarget-coarse: var(--base-size-44);
-  --gh-control-minTarget-fine: var(--base-size-16);
-  --gh-control-xlarge-paddingBlock: calc((var(--gh-control-xlarge-size) - var(--gh-control-xlarge-lineBoxHeight)) / 2);
-  --gh-control-large-paddingBlock: calc((var(--gh-control-large-size) - var(--gh-control-large-lineBoxHeight)) / 2);
-  --gh-control-medium-paddingBlock: calc((var(--gh-control-medium-size) - var(--gh-control-medium-lineBoxHeight)) / 2);
-  --gh-control-small-paddingBlock: calc((var(--gh-control-small-size) - var(--gh-control-small-lineBoxHeight)) / 2);
-  --gh-control-xsmall-paddingBlock: calc((var(--gh-control-xsmall-size) - var(--gh-control-xsmall-lineBoxHeight)) / 2);
-  --gh-duration-fast: 80ms;
-  --gh-easing-easeInOut: cubic-bezier(0.65, 0, 0.35, 1);
+  --primer-duration-fast: 80ms;
+  --primer-easing-easeInOut: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 // base button
 .Button {
   position: relative;
-  font-size: 0.875rem;
-  font-weight: $font-weight-semibold;
+  font-size: var(--primer-text-body-size-medium);
+  font-weight: var(--base-text-weight-medium);
   cursor: pointer;
   user-select: none;
   background-color: transparent;
-  border: $border-width $border-style;
+  border: var(--primer-borderWidth-thin) solid;
   border-color: transparent;
-  border-radius: $border-radius;
+  border-radius: var(--primer-borderRadius-medium);
   color: var(--color-btn-text);
-  transition: var(--gh-duration-fast) var(--gh-easing-easeInOut);
+  transition: var(--primer-duration-fast) var(--primer-easing-easeInOut);
   transition-property: color, fill, background-color, border-color;
   text-align: center;
-  height: var(--gh-control-medium-size);
-  padding: 0 var(--gh-control-medium-paddingInline-normal);
+  height: var(--primer-control-medium-size);
+  padding: 0 var(--primer-control-medium-paddingInline-normal);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: var(--gh-control-medium-gap);
+  gap: var(--primer-control-medium-gap);
 
   // mobile friendly sizing
   @media (pointer: course) {
@@ -89,7 +38,7 @@
 
   &:hover,
   [open] > & {
-    transition-duration: var(--gh-duration-fast);
+    transition-duration: var(--primer-duration-fast);
   }
 
   &:active,
@@ -109,6 +58,15 @@
   }
 }
 
+a.Button,
+summary.Button {
+  display: inline-flex;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 // wrap grid content to allow trailingAction to lock-right
 .Button-content {
   flex: 1 0 auto;
@@ -117,10 +75,10 @@
   grid-template-columns: min-content minmax(0, auto) min-content;
   align-items: center;
   place-content: center;
-  padding-bottom: 1px; // optical alignment for firefox
+  //   padding-bottom: 1px; // optical alignment for firefox
 
   > :not(:last-child) {
-    margin-right: var(--gh-control-medium-gap);
+    margin-right: var(--primer-control-medium-gap);
   }
 }
 
@@ -140,7 +98,7 @@
 .Button-label {
   grid-area: text;
   white-space: nowrap;
-  line-height: var(--gh-control-medium-lineBoxHeight);
+  line-height: var(--primer-text-body-lineHeight-medium);
 }
 
 .Button-leadingVisual {
@@ -158,34 +116,34 @@
 // sizes
 
 .Button--small {
-  font-size: $font-size-small;
-  height: var(--gh-control-small-size);
-  padding: 0 var(--gh-control-small-paddingInline-normal);
-  gap: var(--gh-control-small-gap);
+  font-size: var(--primer-text-body-size-small);
+  height: var(--primer-control-small-size);
+  padding: 0 var(--primer-control-small-paddingInline-normal);
+  gap: var(--primer-control-small-gap);
 
   .Button-label {
-    line-height: var(--gh-control-small-lineBoxHeight);
+    line-height: var(--primer-text-body-lineHeight-small);
   }
 
   .Button-content {
     > :not(:last-child) {
-      margin-right: var(--gh-control-small-gap);
+      margin-right: var(--primer-control-small-gap);
     }
   }
 }
 
 .Button--large {
-  height: var(--gh-control-large-size);
-  padding: 0 var(--gh-control-large-paddingInline-normal);
-  gap: var(--gh-control-large-gap);
+  height: var(--primer-control-large-size);
+  padding: 0 var(--primer-control-large-paddingInline-normal);
+  gap: var(--primer-control-large-gap);
 
   .Button-label {
-    line-height: var(--gh-control-large-lineBoxHeight);
+    line-height: var(--primer-text-body-lineHeight-large);
   }
 
   .Button-content {
     > :not(:last-child) {
-      margin-right: var(--gh-control-large-gap);
+      margin-right: var(--primer-control-large-gap);
     }
   }
 }
@@ -232,7 +190,6 @@
   color: var(--color-btn-text);
   fill: var(--color-fg-muted); // help this
   background-color: var(--color-btn-bg);
-  border: $border-width $border-style;
   border-color: var(--color-btn-border);
   box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
 
@@ -310,7 +267,6 @@
   color: var(--color-btn-danger-text);
   fill: var(--color-btn-danger-icon);
   background-color: var(--color-btn-bg);
-  border: $border-width $border-style;
   border-color: var(--color-btn-border);
   box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
 
