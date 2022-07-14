@@ -1,5 +1,229 @@
 # @primer/css
 
+## 20.2.4
+
+### Patch Changes
+
+- [#2136](https://github.com/primer/css/pull/2136) [`89846844`](https://github.com/primer/css/commit/8984684470dc2e6cc69e7c80e4ce4a0e70e57eb3) Thanks [@langermank](https://github.com/langermank)! - Bug: ActionList-item disabled state
+
+* [#2130](https://github.com/primer/css/pull/2130) [`544fb277`](https://github.com/primer/css/commit/544fb2773dbadd934a34232637970946de3c536d) Thanks [@renbaoshuo](https://github.com/renbaoshuo)! - Add link to source code in Timeline's doc
+
+- [#2114](https://github.com/primer/css/pull/2114) [`facb9682`](https://github.com/primer/css/commit/facb96823a344369afdace1365dda38bb5312f2b) Thanks [@langermank](https://github.com/langermank)! - - Updates stories to reflect markup for Rails
+  - Clean up FormControl classes
+  - Add Radio and Checkbox custom styles
+
+* [#2132](https://github.com/primer/css/pull/2132) [`c898103e`](https://github.com/primer/css/commit/c898103e0e942b7ab07f43b83496f019163458f1) Thanks [@vzrenggamani](https://github.com/vzrenggamani)! - docs: update deployment location of docs
+
+## 20.2.3
+
+### Patch Changes
+
+- [#2124](https://github.com/primer/css/pull/2124) [`f1b3e55f`](https://github.com/primer/css/commit/f1b3e55f141ddaa5719d223d4670d935bf9d5337) Thanks [@langermank](https://github.com/langermank)! - FormControl + Overlay bug fixes
+
+* [#2129](https://github.com/primer/css/pull/2129) [`2cc18d03`](https://github.com/primer/css/commit/2cc18d0348dc667961c9374886c8a82e95334d6f) Thanks [@camertron](https://github.com/camertron)! - Fix preview deploys
+
+- [#2077](https://github.com/primer/css/pull/2077) [`ab078a58`](https://github.com/primer/css/commit/ab078a58c6ebe4118f917bed4c71fbbb56f0634f) Thanks [@mlynam](https://github.com/mlynam)! - Make .form-control elements render as disabled when a parent fieldset is disabled
+
+## 20.2.2
+
+### Patch Changes
+
+- [#2075](https://github.com/primer/css/pull/2075) [`9f576a3c`](https://github.com/primer/css/commit/9f576a3c33479fa0beb5ef4fe9b794f67a58070c) Thanks [@langermank](https://github.com/langermank)! - FormControl + Autocomplete component updates
+
+## 20.2.1
+
+### Patch Changes
+
+- [#2094](https://github.com/primer/css/pull/2094) [`33f799f1`](https://github.com/primer/css/commit/33f799f13edad2e7434425913a8d445aa27213de) Thanks [@camertron](https://github.com/camertron)! - Add missing ToggleSwitch--checked styles
+
+* [#2091](https://github.com/primer/css/pull/2091) [`f740d008`](https://github.com/primer/css/commit/f740d00827fa854062f6ce3449ca6745fae9bea8) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Bump font size of large buttons
+
+## 20.2.0
+
+### Minor Changes
+
+- [#2087](https://github.com/primer/css/pull/2087) [`8354de5c`](https://github.com/primer/css/commit/8354de5c5eeb60e447712c04e25c2ef370206488) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Changing `PageLayout--isPaneSticky` to `PageLayout--sticky`.
+
+* [#2074](https://github.com/primer/css/pull/2074) [`5cfae2c2`](https://github.com/primer/css/commit/5cfae2c2193885c34af97dd61da201c400bc8549) Thanks [@camertron](https://github.com/camertron)! - Add styles for the ToggleSwitch component
+
+## 20.1.1
+
+### Patch Changes
+
+- [#2078](https://github.com/primer/css/pull/2078) [`92ac0e39`](https://github.com/primer/css/commit/92ac0e39e6f5aae0314397890c8f78227a6c6ba0) Thanks [@langermank](https://github.com/langermank)! - Setup new `primer-primitive` bundle
+
+## 20.1.0
+
+### Minor Changes
+
+- [#2072](https://github.com/primer/css/pull/2072) [`ab6f0840`](https://github.com/primer/css/commit/ab6f0840f0131b370fb8871551720afa20fb466e) Thanks [@JasonEtco](https://github.com/JasonEtco)! - Add `.text-capitalize` utility class
+
+* [#1998](https://github.com/primer/css/pull/1998) [`51e087aa`](https://github.com/primer/css/commit/51e087aa31f049c1cb148df6f04fdbc6de434cf0) Thanks [@bolonio](https://github.com/bolonio)! - Styles for the new Dialog Component
+
+## 20.0.0
+
+### Major Changes
+
+- [#2049](https://github.com/primer/css/pull/2049) [`f4dba96e`](https://github.com/primer/css/commit/f4dba96e0cb78d3d451226cf60b01187678ced45) Thanks [@langermank](https://github.com/langermank)! - Comment box upload focus border-radius
+
+* [#1744](https://github.com/primer/css/pull/1744) [`942f65a4`](https://github.com/primer/css/commit/942f65a45a18b7042ba1ce2703688b62d874cf18) Thanks [@langermank](https://github.com/langermank)! - Global CSS focus styles
+
+- [#1767](https://github.com/primer/css/pull/1767) [`7e01db97`](https://github.com/primer/css/commit/7e01db97f3f2b9d9383f66385ca16f0bdc06abd1) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Remove unused pullquote selector
+
+* [#1821](https://github.com/primer/css/pull/1821) [`daa2685c`](https://github.com/primer/css/commit/daa2685c596d894b3bae1896bf97c3319cd9816c) Thanks [@jonrohan](https://github.com/jonrohan)! - UnderlineNav `:focus` styles
+  Refactor selected state and spacing
+  Add selected bold state override from github/github
+
+- [#2047](https://github.com/primer/css/pull/2047) [`553d72cc`](https://github.com/primer/css/commit/553d72cc1baaf43a4c743c50cc8881f3811123e9) Thanks [@langermank](https://github.com/langermank)! - UnderlineNav bug fix
+
+* [#2046](https://github.com/primer/css/pull/2046) [`55e2b069`](https://github.com/primer/css/commit/55e2b069a4cbd225af676bef918bbbe2e6cd73b7) Thanks [@langermank](https://github.com/langermank)! - Global focus style CSS from feature flag (next major)
+
+### Patch Changes
+
+- [#2048](https://github.com/primer/css/pull/2048) [`dc529e31`](https://github.com/primer/css/commit/dc529e3102788d5caa136a9d30c58e56721427a7) Thanks [@simurai](https://github.com/simurai)! - Fix headings with an anchor in a summary
+
+* [#2041](https://github.com/primer/css/pull/2041) [`20550bbf`](https://github.com/primer/css/commit/20550bbfaa236ac197ca58805542eaab0bf38fd4) Thanks [@jonrohan](https://github.com/jonrohan)! - Upgrading to stylelint-config-12.4.0
+
+## 19.8.2
+
+### Patch Changes
+
+- [#2019](https://github.com/primer/css/pull/2019) [`57be2d50`](https://github.com/primer/css/commit/57be2d50212b71f87ce612039375bcd5273eca53) Thanks [@langermank](https://github.com/langermank)! - [Bug] TreeView animation and padding fix
+
+## 19.8.1
+
+### Patch Changes
+
+- [#1996](https://github.com/primer/css/pull/1996) [`a4293bf9`](https://github.com/primer/css/commit/a4293bf921ebcb74c6973e3f50f07e470f495bd0) Thanks [@langermank](https://github.com/langermank)! - TreeView: remove bold active items + markup changes
+
+## 19.8.0
+
+### Minor Changes
+
+- [#1997](https://github.com/primer/css/pull/1997) [`9806b54b`](https://github.com/primer/css/commit/9806b54b3829219c9ad141efd2fcd99fc5c08751) Thanks [@simurai](https://github.com/simurai)! - Add Tritanopia theme
+
+### Patch Changes
+
+- [#2002](https://github.com/primer/css/pull/2002) [`a3bc51f6`](https://github.com/primer/css/commit/a3bc51f6c4af0d45a9ce39f00c3cf3297b090067) Thanks [@simurai](https://github.com/simurai)! - Always break long `branch-name`s
+
+## 19.7.1
+
+### Patch Changes
+
+- [#2001](https://github.com/primer/css/pull/2001) [`47cec404`](https://github.com/primer/css/commit/47cec40472173b412df59e6990c0ac1b1ed43d04) Thanks [@jdanyow](https://github.com/jdanyow)! - Remove IE11 support in tooltip
+
+* [#1995](https://github.com/primer/css/pull/1995) [`557b100a`](https://github.com/primer/css/commit/557b100a77a4befe6d07fac14cb48b08bed18356) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Add narrow/regular/wide viewport range utilities
+
+- [#2000](https://github.com/primer/css/pull/2000) [`264a89a5`](https://github.com/primer/css/commit/264a89a51a75eefa6a371e6ad11518519cd98b36) Thanks [@khiga8](https://github.com/khiga8)! - More CSS updates to `Autocomplete`
+
+## 19.7.0
+
+### Minor Changes
+
+- [#1994](https://github.com/primer/css/pull/1994) [`69fe8c65`](https://github.com/primer/css/commit/69fe8c6512a3f0bbdbfdf7080b916a39173c2df9) Thanks [@khiga8](https://github.com/khiga8)! - Add support for inline, stack label in autocomplete
+
+### Patch Changes
+
+- [#1991](https://github.com/primer/css/pull/1991) [`5e87effa`](https://github.com/primer/css/commit/5e87effa671b194e188f699a79b246bdf61bd191) Thanks [@simurai](https://github.com/simurai)! - Fix `btn-primary` in flash alerts
+
+## 19.6.0
+
+### Minor Changes
+
+- [#1989](https://github.com/primer/css/pull/1989) [`f544ef85`](https://github.com/primer/css/commit/f544ef8574a4d6e12cccf94d534ad66df3e9249a) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Make `pane` an optional region for PageLayout component
+
+### Patch Changes
+
+- [#1988](https://github.com/primer/css/pull/1988) [`e3443f1a`](https://github.com/primer/css/commit/e3443f1a69ba5a23d3e3804bf4e22d384783c443) Thanks [@simurai](https://github.com/simurai)! - Fix color-fg utilities in links
+
+* [#1985](https://github.com/primer/css/pull/1985) [`c2bd6bc9`](https://github.com/primer/css/commit/c2bd6bc9bf90686f258af11c102097d7da000a5b) Thanks [@cheshire137](https://github.com/cheshire137)! - Adding .color-bg-transparent utility class
+
+## 19.5.1
+
+### Patch Changes
+
+- [#1983](https://github.com/primer/css/pull/1983) [`07bc069e`](https://github.com/primer/css/commit/07bc069ec0faae9c0e4530e5171e3346fa643a10) Thanks [@simurai](https://github.com/simurai)! - Bump `primer/primitives` to `^7.5.1`
+
+## 19.5.0
+
+### Minor Changes
+
+- [#1948](https://github.com/primer/css/pull/1948) [`6a83a92b`](https://github.com/primer/css/commit/6a83a92b4332d577cdd72eee084e3f2c41b588ee) Thanks [@simurai](https://github.com/simurai)! - Add `open` and `closed` color roles
+
+* [#1961](https://github.com/primer/css/pull/1961) [`a35a8bdc`](https://github.com/primer/css/commit/a35a8bdcc17906848fcb486842d2345db0441c7c) Thanks [@jonrohan](https://github.com/jonrohan)! - Default .PageLayout to display block
+
+### Patch Changes
+
+- [#1954](https://github.com/primer/css/pull/1954) [`30f29d38`](https://github.com/primer/css/commit/30f29d383256a7d4023a859fdeee44471307159d) Thanks [@simurai](https://github.com/simurai)! - Fix `input-block` in `form-group`
+
+* [#1956](https://github.com/primer/css/pull/1956) [`39063461`](https://github.com/primer/css/commit/3906346182ed983d9725fd95da41b21424378b3e) Thanks [@jonrohan](https://github.com/jonrohan)! - Upgrading @primer/stylelint-config@12.3.2
+
+- [#1931](https://github.com/primer/css/pull/1931) [`e5c5312e`](https://github.com/primer/css/commit/e5c5312ec8bf139f6c94d2f70ceecd4b3cd9fd82) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Page layout api updates renaming spacing options in storybook
+
+* [#1950](https://github.com/primer/css/pull/1950) [`7c85c500`](https://github.com/primer/css/commit/7c85c500569fe6e1b29665c2eed37d58625ab06f) Thanks [@hectahertz](https://github.com/hectahertz)! - Fix sequence of content in Subhead
+
+- [#1942](https://github.com/primer/css/pull/1942) [`0450ccbb`](https://github.com/primer/css/commit/0450ccbb86104564c7d4038eb68989f370014fa1) Thanks [@reeceatkinson](https://github.com/reeceatkinson)! - Added line break to docs
+
+* [#1953](https://github.com/primer/css/pull/1953) [`3a91a29a`](https://github.com/primer/css/commit/3a91a29a822a28ea9679fbbb90250fc039057f23) Thanks [@hectahertz](https://github.com/hectahertz)! - Use `<h2>` instead of `<div>` on Subhead-heading docs
+
+- [#1949](https://github.com/primer/css/pull/1949) [`dab83198`](https://github.com/primer/css/commit/dab83198c3bf1c7e03826b8cd498b8c48c9a2869) Thanks [@heiskr](https://github.com/heiskr)! - Render headings inline when in a `<summary>`
+
+* [#1978](https://github.com/primer/css/pull/1978) [`a00e6bce`](https://github.com/primer/css/commit/a00e6bce01b368d9cb6da5ec2af1d833f4d785c1) Thanks [@langermank](https://github.com/langermank)! - Handle pointer-events on ActionList visuals
+
+- [#1977](https://github.com/primer/css/pull/1977) [`80bf9d9d`](https://github.com/primer/css/commit/80bf9d9dea6fe7fbb0837fea265ec95cbbbd75d6) Thanks [@jonrohan](https://github.com/jonrohan)! - [Bug Fix] Adding white-space nowrap to Labels
+
+## 19.4.0
+
+### Minor Changes
+
+- [#1937](https://github.com/primer/css/pull/1937) [`67f08009`](https://github.com/primer/css/commit/67f08009ef458088b9fda6267ab25ad6d0a514aa) Thanks [@langermank](https://github.com/langermank)! - TreeView single item nesting
+
+* [#1905](https://github.com/primer/css/pull/1905) [`50221a54`](https://github.com/primer/css/commit/50221a5486d28c54dc1f578b459addd867bd01d3) Thanks [@langermank](https://github.com/langermank)! - Refactors NavigationList to better handle accessibility. Backwards compatible for TreeView CSS.
+
+- [#1936](https://github.com/primer/css/pull/1936) [`c53ecdff`](https://github.com/primer/css/commit/c53ecdff5442cf4ac5da0d1e2ba45871ab662855) Thanks [@khiga8](https://github.com/khiga8)! - Deprecating `.tooltipped` CSS classes
+
+### Patch Changes
+
+- [#1928](https://github.com/primer/css/pull/1928) [`0fb67895`](https://github.com/primer/css/commit/0fb6789555652860cfa5178b60433eb2c3d2575c) Thanks [@simurai](https://github.com/simurai)! - Fix `<sup><a>` from getting wrapped with `[ ]`
+
+## 19.3.0
+
+### Minor Changes
+
+- [#1876](https://github.com/primer/css/pull/1876) [`bcf447ab`](https://github.com/primer/css/commit/bcf447ab226e6043dd47c1fcc395ba104af866d4) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Add mono font stack to <samp> tag
+
+* [#1919](https://github.com/primer/css/pull/1919) [`21085f5c`](https://github.com/primer/css/commit/21085f5c6cc538b5014a47de76642554a4291cc6) Thanks [@hectahertz](https://github.com/hectahertz)! - Add blankslate classes to replace utilities
+
+### Patch Changes
+
+- [#1892](https://github.com/primer/css/pull/1892) [`55bd498b`](https://github.com/primer/css/commit/55bd498b7357e86659ac574f0f745f7b420fb6d3) Thanks [@langermank](https://github.com/langermank)! - Patch: Fix ActionList--divided for label with inline description scenarios
+
+* [#1906](https://github.com/primer/css/pull/1906) [`f02d9a3e`](https://github.com/primer/css/commit/f02d9a3e4e86c2659a9f507995bcb90c5226e34e) Thanks [@jonrohan](https://github.com/jonrohan)! - Upgrading @primer/stylelint-config@12.3.0 and fixing violations
+
+- [#1908](https://github.com/primer/css/pull/1908) [`84581e96`](https://github.com/primer/css/commit/84581e96aee50ff3883907dfe1069701edd1c24a) Thanks [@simurai](https://github.com/simurai)! - Reduce size of `Label--inline`
+
+* [#1890](https://github.com/primer/css/pull/1890) [`74d0438b`](https://github.com/primer/css/commit/74d0438bd4dbaed447b553c5d3c8b945da282836) Thanks [@andrialexandrou](https://github.com/andrialexandrou)! - Adds --color-accent-emphasis and --color-fg-on-emphasis rules for Windows High Contrast Mode
+
+- [#1882](https://github.com/primer/css/pull/1882) [`4a06aba1`](https://github.com/primer/css/commit/4a06aba1d3f80bcc228ff4360d0e02d5ace158ff) Thanks [@tqwewe](https://github.com/tqwewe)! - Fix layout gutter none styles
+
+* [#1894](https://github.com/primer/css/pull/1894) [`d1adf595`](https://github.com/primer/css/commit/d1adf595308afb97f83c5ca172222944189a5961) Thanks [@simurai](https://github.com/simurai)! - Make `pagination` responsive by default
+
+## 19.2.0
+
+### Minor Changes
+
+- [#1737](https://github.com/primer/css/pull/1737) [`6b4089d8`](https://github.com/primer/css/commit/6b4089d8b37174ca061762c56b5e4134a54cf4ef) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Adds new PageLayout component CSS with Storybook documentation
+
+### Patch Changes
+
+- [#1855](https://github.com/primer/css/pull/1855) [`8f2e7534`](https://github.com/primer/css/commit/8f2e7534ecbdb3d0e773d60c725b55dc4bb263e2) Thanks [@simurai](https://github.com/simurai)! - Bump primer/primitives to `7.4.0`
+
+* [#1869](https://github.com/primer/css/pull/1869) [`868f61a1`](https://github.com/primer/css/commit/868f61a199df14862922d52905de66cdb1e1c192) Thanks [@jdanyow](https://github.com/jdanyow)! - Minor bugfix for AvatarStack. Removing the box-shadow from the AvatarStack-body on hover.
+
+- [#1856](https://github.com/primer/css/pull/1856) [`cbe3fb56`](https://github.com/primer/css/commit/cbe3fb56e4c7ee6bfe803eb0c15e15ab95d84157) Thanks [@langermank](https://github.com/langermank)! - ActionList item outlines for high contrast theme
+
+* [#1870](https://github.com/primer/css/pull/1870) [`815daff9`](https://github.com/primer/css/commit/815daff9f07d8096d572cf75bee17284f36492f6) Thanks [@vdepizzol](https://github.com/vdepizzol)! - [ActionList] Add hover to `aria-current` elements and other micro interactions
+
 ## 19.1.1
 
 ### Patch Changes
@@ -237,7 +461,7 @@
 
 ### Patch Changes
 
-- [#1540](https://github.com/primer/css/pull/1540) [`6b6e89a8`](https://github.com/primer/css/commit/6b6e89a8bff2319ef75d25217dafc272a5e597f0) Thanks [@joelhawksley](https://github.com/joelhawksley)! - Use standard lifecyle milestones for statuses.
+- [#1540](https://github.com/primer/css/pull/1540) [`6b6e89a8`](https://github.com/primer/css/commit/6b6e89a8bff2319ef75d25217dafc272a5e597f0) Thanks [@joelhawksley](https://github.com/joelhawksley)! - Use standard lifecycle milestones for statuses.
 
 * [#1528](https://github.com/primer/css/pull/1528) [`303cacae`](https://github.com/primer/css/commit/303cacae77244a9e0de02b4caee2a8c01097aced) Thanks [@koddsson](https://github.com/koddsson)! - Convert package to a ES module
 

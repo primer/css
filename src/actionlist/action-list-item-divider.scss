@@ -1,10 +1,9 @@
-// emtpy divider
+// empty divider
 
 .ActionList-sectionDivider {
   // has children
   &:not(:empty) {
     display: flex;
-    // stylelint-disable-next-line primer/spacing
     padding: ($spacer-1 * 1.5) $spacer-2;
     font-size: $font-size-small;
     font-weight: $font-weight-bold;
@@ -14,6 +13,7 @@
 
   // no children
   &:empty {
+    display: block;
     height: 1px;
     padding: 0;
     // stylelint-disable-next-line primer/spacing
@@ -21,6 +21,12 @@
     list-style: none;
     background: var(--color-action-list-item-inline-divider);
     border: 0;
+  }
+
+  .ActionList-sectionDivider-title {
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    color: var(--color-fg-muted);
   }
 }
 

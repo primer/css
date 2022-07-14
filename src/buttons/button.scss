@@ -66,8 +66,8 @@
   background-color: var(--color-btn-bg);
   border-color: var(--color-btn-border);
   box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
-  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-  transition-property: color, background-color, border-color;
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
 
   &:hover,
   &.hover,
@@ -100,14 +100,6 @@
       color: var(--color-primer-fg-disabled);
     }
   }
-
-  // Keep :focus after :disabled. Allows to see the focus ring even on disabled buttons
-  &:focus,
-  &.focus {
-    border-color: var(--color-btn-focus-border);
-    outline: none;
-    box-shadow: var(--color-btn-focus-shadow);
-  }
 }
 
 // Primary button
@@ -123,6 +115,22 @@
   [open] > & {
     background-color: var(--color-btn-primary-hover-bg);
     border-color: var(--color-btn-primary-hover-border);
+  }
+
+  // fallback :focus state
+  &:focus {
+    @include focusOutlineOnEmphasis;
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      outline: solid 1px transparent;
+      box-shadow: none;
+    }
+  }
+
+  // default focus state
+  &:focus-visible {
+    @include focusOutlineOnEmphasis;
   }
 
   &:active,
@@ -144,13 +152,6 @@
     }
   }
 
-  &:focus,
-  &.focus {
-    background-color: var(--color-btn-primary-focus-bg);
-    border-color: var(--color-btn-primary-focus-border);
-    box-shadow: var(--color-btn-primary-focus-shadow);
-  }
-
   .Counter {
     color: inherit;
     background-color: var(--color-btn-primary-counter-bg);
@@ -158,6 +159,26 @@
 
   .octicon {
     color: var(--color-btn-primary-icon);
+  }
+}
+
+// ensure links styled as button primary gets proper focus style
+// stylelint-disable-next-line selector-no-qualifying-type
+a.btn-primary {
+  // fallback :focus state
+  &:focus {
+    @include focusOutlineOnEmphasis;
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      outline: solid 1px transparent;
+      box-shadow: none;
+    }
+  }
+
+  // default focus state
+  &:focus-visible {
+    @include focusOutlineOnEmphasis;
   }
 }
 
@@ -189,6 +210,22 @@
     background-color: var(--color-btn-outline-selected-bg);
     border-color: var(--color-btn-outline-selected-border);
     box-shadow: var(--color-btn-outline-selected-shadow);
+
+    // fallback :focus state
+    &:focus {
+      @include focusOutlineOnEmphasis;
+
+      // remove fallback :focus if :focus-visible is supported
+      &:not(:focus-visible) {
+        outline: solid 1px transparent;
+        box-shadow: none;
+      }
+    }
+
+    // default focus state
+    &:focus-visible {
+      @include focusOutlineOnEmphasis;
+    }
   }
 
   &:disabled,
@@ -202,11 +239,6 @@
     .Counter {
       background-color: var(--color-btn-outline-disabled-counter-bg);
     }
-  }
-
-  &:focus {
-    border-color: var(--color-btn-outline-focus-border);
-    box-shadow: var(--color-btn-outline-focus-shadow);
   }
 
   .Counter {
@@ -266,11 +298,6 @@
     }
   }
 
-  &:focus {
-    border-color: var(--color-btn-danger-focus-border);
-    box-shadow: var(--color-btn-danger-focus-shadow);
-  }
-
   .Counter {
     color: inherit;
     background-color: var(--color-btn-danger-counter-bg);
@@ -294,6 +321,7 @@
 
 // Large button adds more padding around text. Use font-size utils to increase font-size.. e.g, <p class="text-gamma"><button class="btn btn-large btn-primary" type="button">Big green button</button></p>
 .btn-large {
+  // stylelint-disable-next-line primer/spacing
   padding: $em-spacer-6 1.5em;
   font-size: inherit;
   line-height: $lh-default;

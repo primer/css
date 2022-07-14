@@ -3,31 +3,44 @@ on:
   push:
     branches:
       - 'main'
-    paths:
-      - 'src/**'
-      - 'docs/**'
-      - '.github/workflows/deploy*.yml'
-      - 'package.json'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  deployments: write
+  issues: write
+  statuses: write
+  checks: write
+
 jobs:
+  guard:
+    name: Guard
+    runs-on: ubuntu-latest
+    outputs:
+      # To avoid deploying documentation for unrelease changes, we check the number of changeset files.
+      # If it's 0, we deploy.
+      should_deploy: ${{ steps.changeset-count.outputs.change_count == 0 }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - id: changeset-count
+        run: echo "::set-output name=change_count::$(ls .changeset/*.md | grep -v README | wc -l | xargs)"
+
+      # Log changeset count for debugging purposes
+      - name: Log changeset count
+        run: echo ${{ steps.changeset-count.outputs.change_count }}
+
+      # Log guard output for debugging purposes
+      - name: Log guard output
+        run: echo ${{ needs.guard.outputs.should_deploy }}
   deploy:
     if: ${{ github.repository == 'primer/css' }}
     name: Production
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      # Check the number of changeset files, if it's 0 we deploy
-      - id: changeset-count
-        run: echo "::set-output name=CHANGE_COUNT::$(ls .changeset/*.md | grep -v README | wc -l | xargs)"
-
-      - if: ${{ steps.changeset-count.outputs.CHANGE_COUNT == 0 }}
-        name: Vercel Action
-        uses: amondnet/vercel-action@v20
-        id: vercel-action
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-token: ${{ secrets.VERCEL_TOKEN_SHARED }}
-          vercel-args: '--prod'
-          github-comment: false
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID_SHARED }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+    needs: [guard]
+    uses: primer/.github/.github/workflows/deploy.yml@main
+    with:
+      node_version: 14
+      install: yarn && cd docs && yarn && cd ..
+      build: yarn build:docs
+      output_dir: docs/public

@@ -14,8 +14,16 @@
   // stylelint-disable-next-line primer/spacing
   margin: 15px 0;
 
+  // Autocomplete with embedded icon
+  .form-control.autocomplete-embedded-icon-wrap {
+    &:focus-within {
+      background-color: var(--color-canvas-default);
+    }
+  }
+
   // Text fields
   .form-control {
+    // stylelint-disable-next-line primer/responsive-widths
     width: 440px;
     max-width: 100%;
     // stylelint-disable-next-line primer/spacing
@@ -26,11 +34,18 @@
       background-color: var(--color-canvas-default);
     }
 
-    &.shorter { width: 130px; }
+    &.shorter {
+      width: 130px;
+    }
 
-    &.short { width: 250px; }
+    &.short {
+      width: 250px;
+    }
 
-    &.long { width: 100%; }
+    &.input-block,
+    &.long {
+      width: 100%;
+    }
   }
 
   // Textarea
@@ -81,9 +96,13 @@
     h4 {
       margin: $spacer-1 0 0;
 
-      &.is-error { color: var(--color-danger-fg); }
+      &.is-error {
+        color: var(--color-danger-fg);
+      }
 
-      &.is-success { color: var(--color-success-fg); }
+      &.is-success {
+        color: var(--color-success-fg);
+      }
 
       + .note {
         margin-top: 0;
@@ -195,13 +214,18 @@
       background-image: linear-gradient(var(--color-success-subtle), var(--color-success-subtle));
       border-color: var(--color-success-muted);
 
-      &::after { border-bottom-color: var(--color-success-subtle); }
-      &::before { border-bottom-color: var(--color-success-muted); }
+      &::after {
+        border-bottom-color: var(--color-success-subtle);
+      }
+
+      &::before {
+        border-bottom-color: var(--color-success-muted);
+      }
     }
   }
 
   &.warn {
-    .form-control {
+    .form-control:not(:focus, :focus-visible) {
       border-color: var(--color-attention-emphasis);
     }
 
@@ -211,13 +235,18 @@
       background-image: linear-gradient(var(--color-attention-subtle), var(--color-attention-subtle));
       border-color: var(--color-attention-muted);
 
-      &::after { border-bottom-color: var(--color-attention-subtle); }
-      &::before { border-bottom-color: var(--color-attention-muted); }
+      &::after {
+        border-bottom-color: var(--color-attention-subtle);
+      }
+
+      &::before {
+        border-bottom-color: var(--color-attention-muted);
+      }
     }
   }
 
   &.errored {
-    .form-control {
+    .form-control:not(:focus, :focus-visible) {
       border-color: var(--color-danger-emphasis);
     }
 
@@ -231,8 +260,13 @@
       background-image: linear-gradient(var(--color-danger-subtle), var(--color-danger-subtle));
       border-color: var(--color-danger-muted);
 
-      &::after { border-bottom-color: var(--color-danger-subtle); }
-      &::before { border-bottom-color: var(--color-danger-muted); }
+      &::after {
+        border-bottom-color: var(--color-danger-subtle);
+      }
+
+      &::before {
+        border-bottom-color: var(--color-danger-muted);
+      }
     }
   }
 }
@@ -240,6 +274,7 @@
 // tooltip
 .note {
   min-height: 17px;
+  // stylelint-disable-next-line primer/spacing
   margin: $spacer-1 0 2px;
   font-size: $font-size-small;
   color: var(--color-fg-muted);

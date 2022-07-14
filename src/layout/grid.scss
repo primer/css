@@ -33,6 +33,7 @@
 
 // Gutters
 // Apply padding and a negative margin to the outside of the container
+// stylelint-disable primer/spacing
 @mixin gutters ($gutter-width: $spacer-3) {
   margin-right: -$gutter-width;
   margin-left: -$gutter-width;

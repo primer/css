@@ -7,6 +7,11 @@
     text-decoration: underline;
     cursor: pointer;
   }
+
+  &:focus,
+  &:focus-visible {
+    outline-offset: 0;
+  }
 }
 
 .Link--primary {
@@ -49,7 +54,7 @@
 .Link--secondary,
 .Link--primary,
 .Link--muted {
-  &:hover [class*='color-text'] {
+  &:hover [class*='color-fg'] {
     color: inherit !important;
   }
 }

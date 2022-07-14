@@ -8,6 +8,11 @@
   padding: 0;
 }
 
+// nested list within main ActionList
+.ActionList--subGroup {
+  padding: 0;
+}
+
 // dividers
 
 .ActionList--divided {
@@ -19,6 +24,24 @@
     height: 1px;
     content: '';
     background: var(--color-action-list-item-inline-divider);
+  }
+
+  // if descriptionWrap--inline exists, move pseudo divider to wrapper
+  .ActionList-item-descriptionWrap--inline {
+    &::before {
+      position: absolute;
+      top: -$actionList-item-padding-vertical;
+      display: block;
+      width: 100%;
+      height: $border-width;
+      content: '';
+      background: var(--color-action-list-item-inline-divider);
+    }
+
+    // unset the default label pseudo
+    .ActionList-item-label::before {
+      content: unset;
+    }
   }
 
   // hide divider if item is active
@@ -34,5 +57,11 @@
 // hide if item is first of type with label::before, or is the first item after a sectionDivider
 .ActionList-item:first-of-type .ActionList-item-label::before,
 .ActionList-sectionDivider + .ActionList-item .ActionList-item-label::before {
+  visibility: hidden;
+}
+
+// hide if item is first of type with label::before, or is the first item after a sectionDivider
+.ActionList-item:first-of-type .ActionList-item-descriptionWrap--inline::before,
+.ActionList-sectionDivider + .ActionList-item .ActionList-item-descriptionWrap--inline::before {
   visibility: hidden;
 }

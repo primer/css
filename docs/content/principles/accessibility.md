@@ -55,7 +55,7 @@ The `tabindex` attribute should only be used when absolutely necessary.
 
 - `tabindex=0/-1` makes an element focusable, while `tabindex=0` also includes the element in the normal tab order. In both cases, keyboard triggers of the element still require scripting, so where possible, use [interactive content](http://w3c.github.io/html/dom.html#kinds-of-content-interactive-content) instead.
 
-- `tabindex=1+` takes an element to the very front of the default tab order. When it's applied, the element's visual positioning is no longer indicative of its tab order, and the only way to find out where an element is would be by tabbing through the page. Therefore, unless a page is carefully designed around elements with positive tabindex, it is very error-proned, and thus currently prohibited in github.com.
+- `tabindex=1+` takes an element to the very front of the default tab order. When it's applied, the element's visual positioning is no longer indicative of its tab order, and the only way to find out where an element is would be by tabbing through the page. Therefore, unless a page is carefully designed around elements with positive tabindex, it is very error-prone, and thus currently prohibited in github.com.
 
 Finally, bear in mind that some assistive technologies have keyboard combinations of their own that will override the combination on the web page, so don't rely on keyboard shortcuts as the only alternative to mouse actions.
 

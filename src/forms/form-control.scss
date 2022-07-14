@@ -29,17 +29,36 @@ label {
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
   border: $border-width $border-style var(--color-border-default);
   border-radius: $border-radius;
-  outline: none;
   box-shadow: var(--color-primer-shadow-inset);
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
 
-  &.focus,
   &:focus {
-    border-color: var(--color-accent-emphasis);
-    outline: none;
-    box-shadow: var(--color-primer-shadow-focus);
+    @include focusBoxShadowInset;
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      border-color: transparent;
+
+      @include focusBoxShadowInset(1px, transparent);
+    }
   }
 
-  &[disabled] {
+  // default focus state
+  &:focus-visible {
+    @include focusBoxShadowInset;
+  }
+
+  // override form controls with no border in focused state
+  &.border-0 {
+    &:focus,
+    &:focus-visible {
+      border: $border-width $border-style var(--color-accent-fg) !important;
+    }
+  }
+
+  &[disabled],
+  fieldset[disabled] & {
     color: var(--color-primer-fg-disabled);
     background-color: var(--color-input-disabled-bg);
     border-color: var(--color-border-default);
@@ -243,6 +262,7 @@ input::-webkit-inner-spin-button {
 }
 
 .form-warning {
+  // stylelint-disable-next-line primer/spacing
   padding: $spacer-2 10px;
   // stylelint-disable-next-line primer/spacing
   margin: 10px 0;

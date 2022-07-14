@@ -16,6 +16,11 @@
 
   del code { text-decoration: inherit; }
 
+  samp {
+    // stylelint-disable-next-line primer/typography
+    font-size: 85%;
+  }
+
   pre {
     word-wrap: normal;
 

@@ -31,36 +31,21 @@
       url: /utilities/details
     - title: Flexbox
       url: /utilities/flexbox
+    - title: Grid
+      url: /utilities/grid
     - title: Layout
       url: /utilities/layout
-    - title: Marketing layout
-      url: /utilities/marketing-layout
     - title: Margin
       url: /utilities/margin
-    - title: Marketing filters
-      url: /utilities/marketing-filters
     - title: Padding
       url: /utilities/padding
     - title: Typography
       url: /utilities/typography
-    - title: Marketing typography
-      url: /utilities/marketing-type
-- title: Objects
-  url: /objects
-  children:
-    - title: Grid
-      url: /objects/grid
-    - title: Table object
-      url: /objects/table-object
 - title: Components
   url: /components
   children:
-    - title: Action List
-      url: /components/action-list
     - title: Alerts
       url: /components/alerts
-    - title: Autocomplete
-      url: /components/autocomplete
     - title: Avatars
       url: /components/avatars
     - title: Blankslate
@@ -91,10 +76,6 @@
       url: /components/loaders
     - title: Markdown
       url: /components/markdown
-    - title: Marketing buttons
-      url: /components/marketing-buttons
-    - title: Marketing links
-      url: /components/marketing-links
     - title: Navigation
       url: /components/navigation
     - title: Pagination
@@ -115,19 +96,26 @@
       url: /components/tooltips
     - title: Truncate
       url: /components/truncate
+- title: Marketing
+  url: /marketing
+  children:
+    - title: Buttons
+      url: /components/marketing-buttons
+    - title: Filters
+      url: /utilities/marketing-filters
+    - title: Layout
+      url: /utilities/marketing-layout
+    - title: Links
+      url: /components/marketing-links
+    - title: Typography
+      url: /utilities/marketing-type
 - title: Tools
   url: /tools
   children:
-    - title: Atom packages
-      url: /tools/atom-packages
     - title: Deprecation data
       url: /tools/deprecations
-    - title: Docset
-      url: /tools/docset
     - title: Linting
       url: /tools/linting
-    - title: Local development
-      url: /tools/local-primer
     - title: Prototyping
       url: /tools/prototyping
     - title: Testing resources

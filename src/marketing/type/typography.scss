@@ -116,29 +116,3 @@
 .text-medium {
   font-weight: $font-weight-medium !important;
 }
-
-// Pullquote
-
-@mixin pullquote {
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: $spacer;
-  margin-bottom: $spacer-4;
-  font-family: $mono-font;
-  font-size: $h4-size;
-  line-height: 1.4;
-  color: var(--color-color-text-secondary);
-  border-left: 3px solid var(--color-border-default);
-
-  @include breakpoint(md) {
-    padding-left: $spacer * 1.5;
-    margin-bottom: $spacer-5;
-    margin-left: (-$spacer * 1.5) - 3px;
-    font-size: 18px;
-    line-height: $lh-default;
-  }
-}
-
-.pullquote {
-  @include pullquote;
-}

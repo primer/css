@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="300px" src="./docs/src/readme.png">
+  <img width="300px" alt="" src="./docs/src/readme.png">
 </p>
 
 <h1 align="center">Primer CSS</h1>
@@ -14,7 +14,7 @@
     <img alt="" src="https://github.com/primer/css/actions/workflows/ci.yml/badge.svg">
   </a>
   <a aria-label="contributors graph" href="https://github.com/primer/css/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/primer/css.svg">
+    <img alt="" src="https://img.shields.io/github/contributors/primer/css.svg">
   </a>
   <a aria-label="last commit" href="https://github.com/primer/css/commits/main">
     <img alt="" src="https://img.shields.io/github/last-commit/primer/css.svg">

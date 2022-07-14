@@ -28,6 +28,14 @@
       cursor: default;
     }
   }
+
+  &:not(.dropdown-item) {
+    &:focus,
+    &:focus-visible {
+      border-radius: $border-radius;
+      outline-offset: 0;
+    }
+  }
 }
 
 // Invisible button
@@ -37,6 +45,7 @@
   color: var(--color-accent-fg);
   background-color: transparent; // Reset default gradient backgrounds and colors
   border: 0;
+  border-radius: $border-radius;
   box-shadow: none;
 
   &:hover,
@@ -48,15 +57,14 @@
   }
 
   &:active,
-  &:focus,
   &.selected,
   &[aria-selected='true'],
   &.zeroclipboard-is-active {
     color: var(--color-accent-fg);
-    background-color: none;
+    background: none;
     border-color: var(--color-btn-active-border);
-    outline: none;
-    box-shadow: var(--color-btn-focus-shadow);
+
+    @include focusOutline;
   }
 
   &:active &.zeroclipboard-is-active {
@@ -89,14 +97,23 @@
   border: 0;
   box-shadow: none;
 
-  &:hover { color: var(--color-accent-fg); }
+  &:hover {
+    color: var(--color-accent-fg);
+  }
+
+  &:focus,
+  &:focus-visible {
+    border-radius: $border-radius;
+  }
 
   &.disabled,
   &[aria-disabled='true'] {
     color: var(--color-primer-fg-disabled);
     cursor: default;
 
-    &:hover { color: var(--color-primer-fg-disabled); }
+    &:hover {
+      color: var(--color-primer-fg-disabled);
+    }
   }
 }
 
@@ -112,18 +129,13 @@
   color: var(--color-fg-muted);
   background: transparent;
   border: 0;
-  outline: none;
 
   &:hover {
     color: var(--color-fg-default);
   }
 
-  &:active,
-  &:focus {
-    color: var(--color-fg-muted);
-    border-color: var(--color-btn-active-border);
-    outline: none;
-    box-shadow: var(--color-btn-focus-shadow);
+  &:active {
+    @include focusOutline;
   }
 }
 
@@ -215,11 +227,5 @@
   &:hover {
     color: var(--color-accent-fg);
     cursor: pointer;
-  }
-
-  &:focus {
-    z-index: 1;
-    outline: 0;
-    box-shadow: var(--color-primer-shadow-focus);
   }
 }

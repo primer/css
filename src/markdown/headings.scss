@@ -71,4 +71,26 @@
     font-size: 0.85em;
     color: var(--color-fg-muted);
   }
+
+  summary {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      display: inline-block;
+
+      .anchor {
+        // stylelint-disable-next-line primer/spacing
+        margin-left: -40px;
+      }
+    }
+
+    h1,
+    h2 {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
 }

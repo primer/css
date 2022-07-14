@@ -18,6 +18,20 @@
   &.inline {
     display: inline-table;
   }
+
+  // within input group, if button exists change focus styles to match input (no offset)
+  &:focus-within {
+    // stylelint-disable-next-line selector-max-type
+    button {
+      outline-offset: 0;
+    }
+  }
+
+  // Autocomplete with embedded icon
+  .form-control.autocomplete-embedded-icon-wrap {
+    display: inline-flex;
+    padding: $spacer-1 * 1.25 $spacer-2;
+  }
 }
 
 .input-group .form-control,
@@ -28,6 +42,10 @@
 .input-group-button {
   width: 1%;
   vertical-align: middle; // Match the inputs
+}
+
+.input-group-button--autocomplete-embedded-icon {
+  vertical-align: bottom;
 }
 
 .input-group .form-control:first-child,

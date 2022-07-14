@@ -54,7 +54,7 @@ element.classList.toggle('d-inline', visible)
 
 ### `display:table` wrapping issues
 
-There are known issues with using `display:table` and wrapping long strings, particularly in Firefox. You may need to use `table-fixed` on elements with `d-table` and apply column widths to table cells, which you can do with our [column width styles](/objects/grid#column-widths).
+There are known issues with using `display:table` and wrapping long strings, particularly in Firefox. You may need to use `table-fixed` on elements with `d-table` and apply column widths to table cells, which you can do with our [column width styles](/utilities/grid#column-widths).
 
 ```html live
 <div class="d-table table-fixed width-full">
@@ -68,7 +68,7 @@ There are known issues with using `display:table` and wrapping long strings, par
 ```
 
 ### Responsive display
-A selection of display utilities are able to be applied or changed per [breakpoint](/objects/grid#breakpoints). `.d-block`, `.d-none`, `.d-inline`, and `.d-inline-block` are available as responsive utilities using the following formula: `d-[breakpoint]-[property]`. For example: `d-md-inline-block`. Each responsive display utility is applied to the specified breakpoint and up.
+A selection of display utilities are able to be applied or changed per [breakpoint](/utilities/grid#breakpoints). `.d-block`, `.d-none`, `.d-inline`, and `.d-inline-block` are available as responsive utilities using the following formula: `d-[breakpoint]-[property]`. For example: `d-md-inline-block`. Each responsive display utility is applied to the specified breakpoint and up.
 
 In the following example, the `ul` element switches from `display: block` on mobile to  `display: inline-block` at the `md` breakpoint, while the list items remain inline.
 
@@ -118,10 +118,12 @@ Overflow utilities can also target x- and y-axes independently via:
 * `.overflow-y-scroll`
 * `.overflow-y-visible`
 
-Overflow utilities can be applied or changed per [breakpoint](/objects/grid#breakpoints). Each **responsive** overflow utility is applied to the specified breakpoint and up, using the following formula:  `overflow-[breakpoint]-[axis]-[property]`. For example: `overflow-x-scroll` or `overflow-md-x-visible`.
+Overflow utilities can be applied or changed per [breakpoint](/utilities/grid#breakpoints). Each **responsive** overflow utility is applied to the specified breakpoint and up, using the following formula:  `overflow-[breakpoint]-[axis]-[property]`. For example: `overflow-x-scroll` or `overflow-md-x-visible`.
 
 ## Floats
-Use `.float-left` and `.float-right` to set floats, and `.clearfix` to clear.
+
+Using floats are discouraged since [flexbox](/utilities/flexbox) offers more features and doesn't need to be cleared. If you still need it, you can use `.float-left` and `.float-right` to set floats, and `.clearfix` to clear.
+
 ```html live
 <div class="clearfix border">
   <div class="float-left border">
@@ -133,7 +135,7 @@ Use `.float-left` and `.float-right` to set floats, and `.clearfix` to clear.
 </div>
 ```
 ### Responsive floats
-Float utilities can be applied or changed per [breakpoint](/objects/grid#breakpoints). This can be useful for responsive layouts when you want an element to be full width on mobile but floated at a larger breakpoint.
+Float utilities can be applied or changed per [breakpoint](/utilities/grid#breakpoints). This can be useful for responsive layouts when you want an element to be full width on mobile but floated at a larger breakpoint.
 
 Each responsive float utility is applied to the specified breakpoint and up, using the following formula:  `float-[breakpoint]-[property]`. For example: `float-md-left`. Remember to use `.clearfix` to clear.
 

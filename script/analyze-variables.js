@@ -43,9 +43,9 @@ async function analyzeVariables(fileName) {
 
 function checkNode(node) {
   const allowedFuncts = ['var', 'round', 'cubic-bezier']
-  const functMatch = node.value.match(/([^\s]*)\(/)
+  const funcMatch = node.value.match(/([^\s]*)\(/)
   let approvedMatch = true
-  if (functMatch && !allowedFuncts.includes(functMatch[1])) {
+  if (funcMatch && !allowedFuncts.includes(funcMatch[1])) {
     approvedMatch = false
   }
   return node.variable && approvedMatch

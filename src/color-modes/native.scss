@@ -9,3 +9,14 @@
   color: var(--color-fg-default);
   background-color: var(--color-canvas-default);
 }
+
+// Windows High Contrast mode
+
+// Improves focus state for various components when Windows High Contrast mode is enabled
+// stylelint-disable selector-max-type
+@media (forced-colors: active) {
+  body {
+    --color-accent-emphasis: Highlight;
+    --color-fg-on-emphasis: LinkText;
+  }
+}

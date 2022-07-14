@@ -71,7 +71,7 @@ export const LinkTemplate = ({label, variant, href, noUnderline, focusElement, f
   <>
     <a
       href={href}
-      className={clsx(variant && `${variant}`, noUnderline && 'no-underline', focusAllElements && 'focus')}
+      className={clsx('Link', variant && `${variant}`, noUnderline && 'no-underline', focusAllElements && 'focus')}
     >
       {label}
     </a>

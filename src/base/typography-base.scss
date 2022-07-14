@@ -62,11 +62,12 @@ dd {
   margin-left: 0;
 }
 
-// Code
+// Monospaced
 // --------------------------------------------------
 
 tt,
-code {
+code,
+samp {
   font-family: $mono-font;
   font-size: $font-size-small;
 }

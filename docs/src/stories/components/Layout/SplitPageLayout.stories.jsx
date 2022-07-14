@@ -2,22 +2,20 @@
 import React from 'react'
 import clsx from 'clsx'
 import {LayoutTemplate} from './LayoutBeta.stories'
-import {NavWithSubItems} from '../ActionList/ActionListPatterns.stories'
-
 
 export default {
   title: 'Components/Layout/Beta/SplitPageLayout',
   excludeStories: ['SplitPageLayoutTemplate'],
   argTypes: {
-
     // Structure
 
-    innerSpacing: {
-      options: ['normal', 'condensed'],
+    padding: {
+      options: ['normal', 'condensed', 'none'],
       control: {
         type: 'inline-radio'
       },
-      description: 'Sets padding to regions individually. `normal` sets padding to 16px, with the `content` region getting 24px horizontal padding on `lg` breakpoints and above. `condensed` keeps the padding always at `16px`.',
+      description:
+        'Sets padding to regions individually. `normal` sets padding to 16px, with the `content` region getting 24px horizontal padding on `lg` breakpoints and above. `condensed` keeps the padding always at `16px`.',
       table: {
         category: 'Structure'
       }
@@ -36,10 +34,17 @@ export default {
 
     // Pane
 
+    hasPane: {
+      control: {type: 'boolean'},
+      table: {
+        category: 'Pane'
+      }
+    },
+
     paneWidth: {
       options: ['default', 'narrow', 'wide'],
       control: {
-      type: 'inline-radio'
+        type: 'inline-radio'
       },
       description: 'Defines the width of the pane.',
       table: {
@@ -50,15 +55,34 @@ export default {
     // Content
 
     contentWidth: {
-      options: ['fluid', 'sm', 'md', 'lg', 'xl'],
+      options: ['full', 'sm', 'md', 'lg', 'xl'],
       control: {
         type: 'inline-radio'
       },
-      description: 'Defines the maximum width of the content region. `fluid` sets it to full-width. Other values follow container widths from `sm` to `xl`. With smaller widths, the content region will try to stay centered to the viewport area.',
+      description:
+        'Defines the maximum width of the content region. `full` sets it to full-width. Other values follow container widths from `sm` to `xl`. With smaller widths, the content region will try to stay centered to the viewport area.',
       table: {
         category: 'Content'
       }
     },
+
+    // Header
+
+    hasHeader: {
+      control: { type: 'boolean' },
+      table: {
+        category: 'Header'
+      }
+    },
+
+    // Footer
+
+    hasFooter: {
+      control: { type: 'boolean' },
+      table: {
+        category: 'Footer'
+      }
+    },    
 
     // HTML
 
@@ -75,69 +99,84 @@ export default {
       }
     }
   }
-};
+}
 
 export const SplitPageLayoutTemplate = ({
   _debug,
-  innerSpacing,
+  padding,
   primaryRegion,
+  hasPane,
   paneWidth,
   paneIsSticky,
   contentWidth,
+  hasHeader,
+  hasFooter,
   contentChildren,
-  paneChildren
+  paneChildren,
+  headerChildren,
+  footerChildren
 }) => {
   return (
     <>
       <LayoutTemplate
         _debug={_debug}
-        wrapperSizing='full'
-        outerSpacing='none'
-        innerSpacing={innerSpacing}
-        columnGap='none'
-        rowGap='none'
-
-        responsiveVariant='separateRegions'
+        containerWidth="full"
+        outerSpacing="none"
+        innerSpacing={padding}
+        columnGap="none"
+        rowGap="none"
+        responsiveVariant="separateRegions"
         primaryRegion={primaryRegion}
-
+        hasPane={hasPane}
         paneWidth={paneWidth}
         paneIsSticky={paneIsSticky}
-        panePosition='start'
+        panePosition="start"
         hasPaneDivider={true}
         contentWidth={contentWidth}
-
-        hasHeader={false}
-
-        hasFooter={false}
-
+        hasHeader={hasHeader}
+        hasHeaderDivider={true}
+        hasFooter={hasFooter}
+        hasFooterDivider={true}
         contentChildren={contentChildren}
         paneChildren={paneChildren}
+        headerChildren={headerChildren}
+        footerChildren={footerChildren}
       />
     </>
-  );
-};
+  )
+}
 
-export const Playground = SplitPageLayoutTemplate.bind({});
-Playground.storyName = 'Playground';
+export const Playground = SplitPageLayoutTemplate.bind({})
+Playground.storyName = 'Playground'
 Playground.parameters = {
-  layout: 'fullscreen',
-};
+  layout: 'fullscreen'
+}
 Playground.args = {
   _debug: true,
 
   // Structure
-  innerSpacing: 'normal',
+  padding: 'normal',
 
   // Responsive
   primaryRegion: 'content',
 
   // Pane
+  hasPane: true,
   paneWidth: 'wide',
+  paneIsSticky: true,
 
   // Content
-  contentWidth: 'fluid',
+  contentWidth: 'full',
+
+  // Header
+  hasHeader: false,
+
+  // Footer
+  hasFooter: false,
 
   // Children
   contentChildren: 'content',
-  paneChildren: 'pane'
-};
+  paneChildren: 'pane',
+  headerChildren: 'header',
+  footerChildren: 'footer',
+}

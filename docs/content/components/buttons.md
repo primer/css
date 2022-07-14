@@ -12,11 +12,10 @@ Buttons are used for **actions**, like in forms, while textual hyperlinks are us
 <button class="btn" type="button">Button</button>
 ```
 
-Note: When using a `<button>` element, **always specify a `type`**. When using a `<a>` element, **always add `role="button"` for accessibility**.
+Note: When using a `<button>` element, **always specify a `type`**.
 
 ```html live
 <button class="btn mr-2" type="button">Button button</button>
-<a class="btn" href="#url" role="button">Link button</a>
 ```
 
 ## Button types
@@ -88,7 +87,7 @@ Disable `<button>` and `<a>` elements with the `aria-disabled="true"` attribute.
 
 ### Sizes
 
-Next to the default size there is also a `.btn-sm` (small) and `.btn-large` option. Use them to decrese or increase the button size. This is useful for fitting a button next to an input or turning a button into a prominent call to action in hero sections.
+Next to the default size there is also a `.btn-sm` (small) and `.btn-large` option. Use them to decrease or increase the button size. This is useful for fitting a button next to an input or turning a button into a prominent call to action in hero sections.
 
 [Type scale utilities](/support/typography#type-scale) can be used to alter the font-size if needed. Padding is applied in em's so that it scales proportionally with the font-size.
 

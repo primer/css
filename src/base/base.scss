@@ -1,4 +1,4 @@
-// stylelint-disable selector-max-type
+// stylelint-disable selector-max-type, selector-no-qualifying-type
 * {
   box-sizing: border-box;
 }
@@ -77,10 +77,68 @@ button {
 }
 
 details {
-  summary { cursor: pointer; }
+  summary {
+    cursor: pointer;
+  }
 
   &:not([open]) {
     // Set details content hidden by default for browsers that don't do this
-    > *:not(summary) { display: none !important; }
+    > *:not(summary) {
+      display: none !important;
+    }
+  }
+}
+
+// global focus styles
+
+a,
+button,
+[role='button'],
+input[type='radio'],
+input[type='checkbox'] {
+  // fallback :focus state
+  &:focus {
+    @include focusOutline;
+
+    // remove fallback :focus if :focus-visible is supported
+    &:not(:focus-visible) {
+      outline: solid 1px transparent;
+    }
+  }
+
+  // default focus state
+  &:focus-visible {
+    @include focusOutline;
+  }
+}
+
+a:not([class]),
+input[type='radio'],
+input[type='checkbox'] {
+  &:focus,
+  &:focus-visible {
+    outline-offset: 0;
+  }
+}
+
+// for handling focus conditionally
+.focus {
+  @include focusBoxShadowInset;
+}
+
+// Windows High Contrast mode
+@media (forced-colors: active) {
+  *:focus,
+  *:focus-visible {
+    outline: solid 1px transparent;
+  }
+
+  input:not([type='radio'], [type='checkbox']),
+  textarea,
+  select {
+    &:focus,
+    &:focus-visible {
+      outline-offset: 2px;
+    }
   }
 }

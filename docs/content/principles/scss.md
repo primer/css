@@ -1,6 +1,6 @@
 ---
 title: SCSS
-path: priniciples/scss
+path: principles/scss
 ---
 
  

@@ -47,7 +47,8 @@
   }
 
   &.Layout--gutter-none {
-    --Layout-gutter: 0;
+    // stylelint-disable-next-line length-zero-no-unit
+    --Layout-gutter: 0px;
   }
 
   &.Layout--gutter-condensed {

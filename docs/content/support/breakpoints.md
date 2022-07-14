@@ -17,7 +17,7 @@ We use abbreviations for each breakpoint to keep the class names concise. This a
 | Large       | lg     | `1012px`  |
 | Extra-large | xl     | `1280px`  |
 
-Responsive styles are available for [margin](/utilities/margin#responsive-margins), [padding](/utilities/padding#responsive-padding), [layout](/utilities/layout), [flexbox](/utilities/flexbox#responsive-flex-utilities), the [grid](/objects/grid#responsive-grids) system, and many more.
+Responsive styles are available for [margin](/utilities/margin#responsive-margins), [padding](/utilities/padding#responsive-padding), [layout](/utilities/layout), [flexbox](/utilities/flexbox#responsive-flex-utilities), the [grid](/utilities/grid#responsive-grids) system, and many more.
 
 ## Breakpoint and up... 🛫
 

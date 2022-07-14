@@ -30,12 +30,31 @@
   color: var(--color-fg-muted);
 }
 
+.blankslate-image {
+  margin-bottom: $spacer-3;
+}
+
+.blankslate-heading {
+  margin-bottom: $spacer-1;
+}
+
+.blankslate-action {
+  margin-top: $spacer-3;
+
+  &:first-of-type {
+    margin-top: $spacer-4;
+  }
+
+  &:last-of-type {
+    margin-bottom: $spacer-2;
+  }
+}
+
 .blankslate-capped {
   border-radius: 0 0 $border-radius $border-radius;
 }
 
 .blankslate-spacious {
-  // stylelint-disable-next-line primer/spacing
   padding: ($spacer-6 * 2) $spacer-6;
 }
 
