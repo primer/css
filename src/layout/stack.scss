@@ -6,15 +6,14 @@
   // =========
   //
   // .Stack
-  // ├─ &.Stack--dir-[ inline | block ] [ -whenNarrow ]
-  // ├─ &.Stack--gap-[ none | condensed | normal | spacious ] [ -whenNarrow ]
-  // ├─ &.Stack--align-[ start | center | end | baseline ] [ -whenNarrow ]
-  // ├─ &.Stack--alignWrap-[ start | center | end | distribute | distributeEvenly ] [ -whenNarrow ]
-  // ├─ &.Stack--spread-[ start | center | end | distribute | distributeEvenly ] [ -whenNarrow ]
-  // ├─ &.Stack--wrap [ -whenNarrow ]
-  // ├─ &.Stack--nowrap [ -whenNarrow ]
-  // ├─ &.Stack--showDividers [ -whenNarrow ]
-  // ├─ &.Stack--hideDividers-whenNarrow
+  // ├─ &.Stack--dir-[ inline | block ]-[ whenRegular | whenNarrow ]
+  // ├─ &.Stack--gap-[ none | condensed | normal | spacious ]-[ whenRegular | whenNarrow ]
+  // ├─ &.Stack--align-[ start | center | end | baseline ]-[ whenRegular | whenNarrow ]
+  // ├─ &.Stack--alignWrap-[ start | center | end | distribute | distributeEvenly ]-[ whenRegular | whenNarrow ]
+  // ├─ &.Stack--spread-[ start | center | end | distribute | distributeEvenly ]-[ whenRegular | whenNarrow ]
+  // ├─ &.Stack--wrap-[ whenRegular | whenNarrow ]
+  // ├─ &.Stack--nowrap-[ whenRegular | whenNarrow ]
+  // ├─ &.Stack--showDividers-[ whenRegular | whenNarrow ]
   // │
   // ├─ .Stack-divider
 
