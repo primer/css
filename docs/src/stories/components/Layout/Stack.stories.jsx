@@ -73,10 +73,10 @@ export default {
       },
       description: `Sets the spacing gap between items. All sizes are rendered in \`rem\` units.
 - \`none\`: 0
-- \`condensed\`: 8px
-- \`normal\`: 16px (default)
-- \`spacious\`: 24px (on regular viewports, otherwise 16px on narrow viewports)
-- \`custom\`: set a custom size. In ViewComponent or React, a custom value can be passed directly.
+- \`condensed\`: \`var(--primer-stack-gap-condensed, 8px)\`,
+- \`normal\`: \`var(--primer-stack-gap-normal, 16px)\` (default)
+- \`spacious\`: \`var(--primer-stack-gap-spacious, 24px)\` (on regular viewports, otherwise it appears as \`normal\` on narrow viewports)
+- \`custom\`: set a custom size. When using with a framework such as ViewComponent or React, a custom value can be passed directly to the property.
  `,
       table: {
         category: 'Properties',
@@ -123,7 +123,7 @@ export default {
         type: 'inline-radio'
       },
       description: `Sets the alignment between items in the cross-axis of the specified direction. For example:
-- If \`direction\` is set to \`block\` (stacks vertically), it controls the horizontal aligment (left, center, right).
+- If \`direction\` is set to \`block\` (stacks vertically), it controls the horizontal alignment (left, center, right).
 - If \`direction\` is set to \`inline\` (stacks horizontally), it controls the vertical alignment (top, center, bottom).
 
 This property behavior is equivalent to the \`align-items\` Flexbox property.`,
