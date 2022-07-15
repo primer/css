@@ -1,7 +1,7 @@
 // Stack layout helper component
 
 .Stack {
-  
+
   // A Stack component lays elements horizontally or vertically on the page.
   //
   // Stack is a simple abstraction of CSS' Flexbox. Use it to structure elements
@@ -65,11 +65,11 @@
   .Stack--gap-none-whenRegular {
     --Stack-gap: 0;
   }
-  
+
   .Stack--gap-condensed-whenRegular {
     --Stack-gap: var(--primer-stack-gap-condensed, 8px);
   }
-  
+
   .Stack--gap-normal-whenRegular {
     --Stack-gap: var(--primer-stack-gap-normal, 16px);
   }
@@ -128,6 +128,7 @@
   .Stack--align-end-whenNarrow {
     align-items: flex-end;
   }
+
   .Stack--align-baseline-whenNarrow {
     align-items: baseline;
   }
@@ -147,9 +148,11 @@
   .Stack--alignWrap-end-whenRegular {
     align-content: flex-end;
   }
+
   .Stack--alignWrap-distribute-whenRegular {
     align-content: space-between;
   }
+
   .Stack--alignWrap-distributeEvenly-whenRegular {
     align-content: space-evenly;
   }
@@ -159,17 +162,19 @@
   .Stack--alignWrap-start-whenNarrow {
     align-content: flex-start;
   }
-  
+
   .Stack--alignWrap-center-whenNarrow {
     align-content: center;
   }
-  
+
   .Stack--alignWrap-end-whenNarrow {
     align-content: flex-end;
   }
+
   .Stack--alignWrap-distribute-whenNarrow {
     align-content: space-between;
   }
+
   .Stack--alignWrap-distributeEvenly-whenNarrow {
     align-content: space-evenly;
   }
@@ -181,15 +186,19 @@
   .Stack--spread-start-whenRegular {
     justify-content: flex-start;
   }
+
   .Stack--spread-center-whenRegular {
     justify-content: center;
   }
+
   .Stack--spread-end-whenRegular {
     justify-content: flex-end;
   }
+
   .Stack--spread-distribute-whenRegular {
     justify-content: space-between;
   }
+
   .Stack--spread-distributeEvenly-whenRegular {
     justify-content: space-evenly;
   }
@@ -199,15 +208,19 @@
   .Stack--spread-start-whenNarrow {
     justify-content: flex-start;
   }
+
   .Stack--spread-center-whenNarrow {
     justify-content: center;
   }
+
   .Stack--spread-end-whenNarrow {
     justify-content: flex-end;
   }
+
   .Stack--spread-distribute-whenNarrow {
     justify-content: space-between;
   }
+
   .Stack--spread-distributeEvenly-whenNarrow {
     justify-content: space-evenly;
   }
@@ -242,6 +255,7 @@
     display: block;
   }
 }
+
 @media ($viewport-narrow) {
   .Stack--showDividers-whenNarrow .Stack-divider {
     display: block;
@@ -249,10 +263,10 @@
 }
 
 .Stack-divider {
-  margin: 0;
-  padding: 0;
-  border: none;
   display: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
   align-self: stretch;
 }
 
@@ -276,6 +290,7 @@
     inline-size: auto;
     block-size: 0;
   }
+
   .Stack--dir-inline-whenNarrow .Stack-divider {
     border-inline-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
     inline-size: 0;
