@@ -31,8 +31,6 @@
   flex-wrap: nowrap;
   align-items: stretch;
   gap: var(--Stack-gap);
-  // min-block-size: fit-content;
-  // min-inline-size: fit-content;
 
   @media ($viewport-narrow) {
     gap: var(--Stack-gap-whenNarrow);
