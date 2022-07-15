@@ -17,6 +17,24 @@ export default {
       },
     },
 
+    _height: {
+      control: {
+        type: 'number',
+      },
+      table: {
+        category: 'Debug'
+      },
+    },
+
+    _width: {
+      control: {
+        type: 'number',
+      },
+      table: {
+        category: 'Debug'
+      },
+    },
+
     // Direction
 
     direction: {
@@ -24,7 +42,7 @@ export default {
       control: {
         type: 'inline-radio',
       },
-      description: 'Sets how elements inside `Stack` are placed, either horizontally (`inline`) or vertically (`block`).',
+      description: 'Sets how elements inside `Stack` are placed, either horizontally (`inline`) or vertically (`block`). This property follows the writing mode.',
       table: {
         category: 'Properties',
         defaultValue: {
@@ -53,7 +71,7 @@ export default {
       control: {
         type: 'inline-radio',
       },
-      description: `Sets the spacing gap between direct children of \`Stack\`. All sizes are rendered in \`rem\` units.
+      description: `Sets the spacing gap between items. All sizes are rendered in \`rem\` units.
 - \`none\`: 0
 - \`condensed\`: 8px
 - \`normal\`: 16px (default)
@@ -104,7 +122,11 @@ export default {
       control: {
         type: 'inline-radio'
       },
-      description: 'Sets the alignment between direct children of a `Stack`. ',
+      description: `Sets the alignment between items in the cross-axis of the specified direction. For example:
+- If \`direction\` is set to \`block\` (stacks vertically), it controls the horizontal aligment (left, center, right).
+- If \`direction\` is set to \`inline\` (stacks horizontally), it controls the vertical alignment (top, center, bottom).
+
+This property behavior is equivalent to the \`align-items\` Flexbox property.`,
       table: {
         category: 'Properties',
         defaultValue: {
@@ -132,6 +154,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
+      description: 'Sets how stack lines are distributed, if they `wrap` into multiple lines. This has equivalent behavior to the `align-content` Flexbox property.',
       table: {
         category: 'Properties',
         defaultValue: {
@@ -160,6 +183,7 @@ export default {
       control: {
         type: 'inline-radio',
       },
+      description: 'Sets how items will be distributed in the stacking direction.', 
       table: {
         category: 'Properties',
         defaultValue: {
@@ -188,6 +212,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
+      description: 'Sets whether items are forced onto one line or can wrap onto multiple lines.',
       table: {
         category: 'Properties',
         defaultValue: {
@@ -214,6 +239,9 @@ export default {
       control: {
         type: 'boolean'
       },
+      description: `Whether a divider between items is shown or not.
+
+_Note: the presence of a divider duplicates the \`gap\` between items._`,
       table: {
         category: 'Properties',
         defaultValue: {
@@ -226,6 +254,7 @@ export default {
       control: {
         type: 'inline-radio'
       },
+      description: 'Sets which ARIA role will be used for the divider.',
       table: {
         category: 'Properties',
         defaultValue: {
@@ -257,6 +286,8 @@ export default {
 
 export const StackTemplate = ({
   _debug,
+  _height,
+  _width,
   direction,
   gap,
   gap_custom,
@@ -280,12 +311,12 @@ export const StackTemplate = ({
 }) => {
 
   let custom_styles  = {};
-  const hasDividers = showDividers || narrow_showDividers;
 
   // Default values
-  direction = direction ?? 'block'
-  gap = gap ?? 'normal'
-  dividerAriaRole = dividerAriaRole ?? 'presentation'
+  direction = direction ?? 'block';
+  gap = gap ?? 'normal';
+  alignWrap = alignWrap ?? 'start';
+  dividerAriaRole = dividerAriaRole ?? 'presentation';
 
   // Default narrow values
   narrow_direction = narrow_direction ?? 'inherit';
@@ -306,9 +337,10 @@ export const StackTemplate = ({
 
   // Null value for states that don't require a modifier class
   align = align === 'stretch' ? null : align;
+  alignWrap = alignWrap === 'start' ? null : alignWrap;
   spread = spread === 'start' ? null : spread;
   wrap = wrap === 'nowrap' ? null : wrap;
-  gap = gap === 'normal' ? null : wrap;
+  gap = gap === 'normal' ? null : gap;
 
   // Null value for inherit responsive values
   narrow_direction = narrow_direction === 'inherit' ? direction : narrow_direction;
@@ -318,6 +350,12 @@ export const StackTemplate = ({
   narrow_spread = narrow_spread === 'inherit' ? spread : narrow_spread;
   narrow_wrap = narrow_wrap === 'inherit' ? wrap : narrow_wrap;
   narrow_showDividers = narrow_showDividers === 'inherit' ? showDividers : narrow_showDividers;
+
+  // Dividers logic
+  showDividers = wrap === 'wrap' ? false : showDividers;
+  narrow_showDividers = narrow_wrap === 'wrap' ? false : narrow_showDividers;
+
+  const hasDividers = showDividers || narrow_showDividers;
 
   return (
     <>
@@ -372,6 +410,8 @@ export const StackTemplate = ({
           <style type="text/css">{`
             .Stack {
               background: beige;
+              ${_height ? 'height: '+ _height + 'px;': ''}
+              ${_width ? 'width: '+ _width + 'px;': ''}
             }
             .Stack ._debug {
               padding: 8px;
