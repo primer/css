@@ -74,7 +74,9 @@
   justify-content: center;
   gap: var(--primer-control-medium-gap, $spacer-2);
   height: 100%;
+  // stylelint-disable-next-line primer/spacing
   padding: 0 var(--primer-control-medium-paddingInline-condensed, 8px);
+  // stylelint-disable-next-line primer/borders
   border-radius: var(--primer-borderRadius-medium, $border-radius);
   transition: background-color var(--primer-duration-medium, 160ms) cubic-bezier(0.3, 0.1, 0.5, 1);
 }
