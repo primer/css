@@ -362,7 +362,7 @@ export const StackTemplate = ({
       <div
         className={clsx(
           'Stack',
-          direction && 'Stack--dir-' + `${direction}-whenRegular`,
+          direction && `Stack--dir-${direction}-whenRegular`,
           narrow_direction && 'Stack--dir-' + `${narrow_direction}-whenNarrow`,
 
           gap && 'Stack--gap-' + `${gap}-whenRegular`,
