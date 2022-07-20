@@ -16,7 +16,7 @@
   display: inline-flex;
   height: var(--primer-control-medium-size, 32px);
   // stylelint-disable-next-line primer/spacing
-  padding: var(--primer-control-xsmall-paddingInline-condensed, 4px);
+  padding: calc(var(--primer-control-xsmall-paddingInline-condensed, 4px) - var(--primer-borderWidth-thin, 1px));
   // stylelint-disable-next-line primer/typography
   font-size: var(--primer-text-body-size-medium, $body-font-size);
   color: var(--color-fg-default);
@@ -25,9 +25,6 @@
   border: var(--primer-borderWidth-thin, $border-width) $border-style transparent;
   // stylelint-disable-next-line primer/borders
   border-radius: var(--primer-borderRadius-medium, $border-radius);
-  align-items: center;
-  justify-content: center;
-  gap: var(--primer-control-medium-gap, $spacer-2);
 
   &:not(.SegmentedControl-button--selected):hover .SegmentedControl-content {
     background-color: var(--color-segmented-control-button-hover-bg);
@@ -62,12 +59,20 @@
     border-left: var(--primer-borderWidth-thin, $border-width) $border-style var(--color-border-default);
     transition: border-color var(--primer-duration-medium, 160ms) cubic-bezier(0.3, 0.1, 0.5, 1);
   }
+
+  &.SegmentedControl-button--selected::before,
+  &.SegmentedControl-button--selected + .SegmentedControl-button::before {
+    border-color: transparent;
+  }
 }
 
 // Content -----------------------------------------
 
 .SegmentedControl-content {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--primer-control-medium-gap, $spacer-2);
   height: 100%;
   padding: 0 var(--primer-control-medium-paddingInline-condensed, 8px);
   border-radius: var(--primer-borderRadius-medium, $border-radius);
@@ -102,14 +107,18 @@
 
   .SegmentedControl-button {
     flex: 1;
+    justify-content: center;
   }
 }
 
 // Icon only
 .SegmentedControl-button--iconOnly {
   width: var(--primer-control-medium-size, 32px);
-  padding-right: 0;
-  padding-left: 0;
+
+  .SegmentedControl-content {
+    padding: 0;
+    flex: 1;
+  }
 }
 
 // Icon only when narrow
@@ -117,8 +126,11 @@
   .SegmentedControl--iconOnly-whenNarrow {
     .SegmentedControl-button {
       width: var(--primer-control-medium-size, 32px);
-      padding-right: 0;
-      padding-left: 0;
+    }
+
+    .SegmentedControl-content {
+      padding: 0;
+      flex: 1;
     }
 
     .SegmentedControl-text {
