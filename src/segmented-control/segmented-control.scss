@@ -29,12 +29,12 @@
   justify-content: center;
   gap: var(--primer-control-medium-gap, $spacer-2);
 
-  &:hover .SegmentedControl-content {
+  &:not(.SegmentedControl-button--selected):hover .SegmentedControl-content {
     background-color: var(--color-segmented-control-button-hover-bg);
     transition-duration: var(--primer-duration-fast, 80ms);
   }
 
-  &:active .SegmentedControl-content {
+  &:not(.SegmentedControl-button--selected):active .SegmentedControl-content {
     background-color: var(--color-segmented-control-button-active-bg);
     transition-duration: 0;
   }
