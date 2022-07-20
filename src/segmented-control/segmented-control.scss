@@ -62,23 +62,6 @@
     border-left: var(--primer-borderWidth-thin, $border-width) $border-style var(--color-border-default);
     transition: border-color var(--primer-duration-medium, 160ms) cubic-bezier(0.3, 0.1, 0.5, 1);
   }
-
-  // Remove dividers
-
-  &.SegmentedControl-button--selected::before,
-  &.SegmentedControl-button--selected + .SegmentedControl-button::before {
-    border-color: transparent;
-  }
-
-  &:hover,
-  &:active,
-  &:focus-visible {
-    &::before,
-    + .SegmentedControl-button::before {
-      border-color: transparent;
-      transition-duration: var(--primer-duration-fast, 80ms);
-    }
-  }
 }
 
 // Content -----------------------------------------
