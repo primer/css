@@ -250,7 +250,7 @@ _Note: the presence of a divider duplicates the \`gap\` between items._`,
       }
     },
     dividerAriaRole: {
-      options: ['presentation', 'separator', 'none'],
+      options: ['presentation', 'separator'],
       control: {
         type: 'inline-radio'
       },
