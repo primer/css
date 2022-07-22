@@ -41,7 +41,6 @@
 }
 
 @mixin Stack--modifiers($viewportRange: '') {
-
   /* direction */
 
   .Stack--dir-inline#{$viewportRange} {
@@ -151,7 +150,7 @@
   .Stack--showDividers#{$viewportRange} > .Stack-divider {
     display: block;
   }
-  
+
   :not(.Stack--dir-inline#{$viewportRange}) > .Stack-divider {
     border-block-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
     inline-size: auto;
@@ -163,7 +162,6 @@
     inline-size: 0;
     block-size: auto;
   }
-
 }
 
 /* Stack-divider */
@@ -188,11 +186,10 @@
   .Stack-item--expand#{$viewportRange} {
     flex-grow: 1;
   }
-  
+
   .Stack-item--keepSize#{$viewportRange} {
     flex-shrink: 0;
   }
-
 }
 
 // Responsive composition
