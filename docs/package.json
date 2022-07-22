@@ -53,7 +53,7 @@
     "@storybook/addon-links": "^6.5.0",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/builder-webpack5": "^6.5.0",
-    "@storybook/manager-webpack5": "^6.5.0",
+    "@storybook/manager-webpack5": "^6.5.9",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "6.5.0",
     "@whitespace/storybook-addon-html": "^5.0.0",
