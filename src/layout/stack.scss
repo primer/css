@@ -8,7 +8,7 @@
   // that are visually grouped, following the same direction.
   //
   // Markup structure
-  // =========
+  // ================
   //
   // .Stack
   // ├─ &.Stack--dir-[ inline | block ]-[ whenRegular | whenNarrow ]
@@ -21,6 +21,9 @@
   // ├─ &.Stack--showDividers-[ whenRegular | whenNarrow ]
   // │
   // ├─ .Stack-divider
+  // ├─ .Stack-item
+  // │  ├─ &.Stack-item--expand-[ whenRegular | whenNarrow ]
+  // │  ├─ &.Stack-item--shrink-[ whenRegular | whenNarrow ]
 
   --Stack-gap: var(--primer-stack-gap-normal, 16px);
   --Stack-gap-whenNarrow: var(--Stack-gap);
@@ -28,8 +31,8 @@
 
   display: flex;
   flex-flow: column;
-  flex-wrap: nowrap;
   align-items: stretch;
+  align-content: start;
   gap: var(--Stack-gap);
 
   @media ($viewport-narrow) {
@@ -37,230 +40,133 @@
   }
 }
 
-/* Direction */
+@mixin Stack--modifiers($viewportRange: '') {
 
-@media ($viewport-regular) {
-  .Stack--dir-inline-whenRegular {
+  /* direction */
+
+  .Stack--dir-inline#{$viewportRange} {
     flex-flow: row;
   }
 
-  .Stack--dir-block-whenRegular {
+  .Stack--dir-block#{$viewportRange} {
     flex-flow: column;
   }
-}
 
-@media ($viewport-narrow) {
-  .Stack--dir-inline-whenNarrow {
-    flex-flow: row;
-  }
+  /* gap */
 
-  .Stack--dir-block-whenNarrow {
-    flex-flow: column;
-  }
-}
-
-/* Gap */
-
-@media ($viewport-regular) {
-  .Stack--gap-none-whenRegular {
+  .Stack--gap-none#{$viewportRange} {
     --Stack-gap: 0;
   }
 
-  .Stack--gap-condensed-whenRegular {
+  .Stack--gap-condensed#{$viewportRange} {
     --Stack-gap: var(--primer-stack-gap-condensed, 8px);
   }
 
-  .Stack--gap-normal-whenRegular {
+  .Stack--gap-normal#{$viewportRange} {
     --Stack-gap: var(--primer-stack-gap-normal, 16px);
-  }
-
-  .Stack--gap-spacious-whenRegular {
-    --Stack-gap: var(--primer-stack-gap-spacious, 24px);
-  }
-}
-
-@media ($viewport-narrow) {
-  .Stack--gap-none-whenNarrow {
-    --Stack-gap-whenNarrow: 0;
-  }
-
-  .Stack--gap-condensed-whenNarrow {
-    --Stack-gap-whenNarrow: var(--primer-stack-gap-condensed, 8px);
-  }
-
-  .Stack--gap-normal-whenNarrow {
-    --Stack-gap-whenNarrow: var(--primer-stack-gap-normal, 16px);
   }
 
   // There's no .Stack--gap-spacious-whenNarrow
   // Narrow viewports render `spacious` gap as `normal`
-}
+  @if $viewportRange != '-whenNarrow' {
+    .Stack--gap-spacious#{$viewportRange} {
+      --Stack-gap: var(--primer-stack-gap-spacious, 24px);
+    }
+  }
 
-/* Align */
+  /* align */
 
-@media ($viewport-regular) {
-  .Stack--align-start-whenRegular {
+  .Stack--align-start#{$viewportRange} {
     align-items: flex-start;
   }
 
-  .Stack--align-center-whenRegular {
+  .Stack--align-center#{$viewportRange} {
     align-items: center;
   }
 
-  .Stack--align-end-whenRegular {
+  .Stack--align-end#{$viewportRange} {
     align-items: flex-end;
   }
 
-  .Stack--align-baseline-whenRegular {
+  .Stack--align-baseline#{$viewportRange} {
     align-items: baseline;
   }
-}
 
-@media ($viewport-narrow) {
-  .Stack--align-start-whenNarrow {
-    align-items: flex-start;
-  }
+  /* alignWrap */
 
-  .Stack--align-center-whenNarrow {
-    align-items: center;
-  }
-
-  .Stack--align-end-whenNarrow {
-    align-items: flex-end;
-  }
-
-  .Stack--align-baseline-whenNarrow {
-    align-items: baseline;
-  }
-}
-
-/* AlignWrap */
-
-@media ($viewport-regular) {
-  .Stack--alignWrap-start-whenRegular {
+  .Stack--alignWrap-start#{$viewportRange} {
     align-content: flex-start;
   }
 
-  .Stack--alignWrap-center-whenRegular {
+  .Stack--alignWrap-center#{$viewportRange} {
     align-content: center;
   }
 
-  .Stack--alignWrap-end-whenRegular {
+  .Stack--alignWrap-end#{$viewportRange} {
     align-content: flex-end;
   }
 
-  .Stack--alignWrap-distribute-whenRegular {
+  .Stack--alignWrap-distribute#{$viewportRange} {
     align-content: space-between;
   }
 
-  .Stack--alignWrap-distributeEvenly-whenRegular {
+  .Stack--alignWrap-distributeEvenly#{$viewportRange} {
     align-content: space-evenly;
   }
-}
 
-@media ($viewport-narrow) {
-  .Stack--alignWrap-start-whenNarrow {
-    align-content: flex-start;
-  }
+  /* spread */
 
-  .Stack--alignWrap-center-whenNarrow {
-    align-content: center;
-  }
-
-  .Stack--alignWrap-end-whenNarrow {
-    align-content: flex-end;
-  }
-
-  .Stack--alignWrap-distribute-whenNarrow {
-    align-content: space-between;
-  }
-
-  .Stack--alignWrap-distributeEvenly-whenNarrow {
-    align-content: space-evenly;
-  }
-}
-
-/* Spread */
-
-@media ($viewport-regular) {
-  .Stack--spread-start-whenRegular {
+  .Stack--spread-start#{$viewportRange} {
     justify-content: flex-start;
   }
 
-  .Stack--spread-center-whenRegular {
+  .Stack--spread-center#{$viewportRange} {
     justify-content: center;
   }
 
-  .Stack--spread-end-whenRegular {
+  .Stack--spread-end#{$viewportRange} {
     justify-content: flex-end;
   }
 
-  .Stack--spread-distribute-whenRegular {
+  .Stack--spread-distribute#{$viewportRange} {
     justify-content: space-between;
   }
 
-  .Stack--spread-distributeEvenly-whenRegular {
+  .Stack--spread-distributeEvenly#{$viewportRange} {
     justify-content: space-evenly;
   }
-}
 
-@media ($viewport-narrow) {
-  .Stack--spread-start-whenNarrow {
-    justify-content: flex-start;
-  }
+  /* wrap */
 
-  .Stack--spread-center-whenNarrow {
-    justify-content: center;
-  }
-
-  .Stack--spread-end-whenNarrow {
-    justify-content: flex-end;
-  }
-
-  .Stack--spread-distribute-whenNarrow {
-    justify-content: space-between;
-  }
-
-  .Stack--spread-distributeEvenly-whenNarrow {
-    justify-content: space-evenly;
-  }
-}
-
-/* Wrap */
-
-@media ($viewport-regular) {
-  .Stack--wrap-whenRegular {
+  .Stack--wrap#{$viewportRange} {
     flex-wrap: wrap;
   }
 
-  .Stack--nowrap-whenRegular {
+  .Stack--nowrap#{$viewportRange} {
     flex-wrap: nowrap;
   }
-}
 
-@media ($viewport-narrow) {
-  .Stack--wrap-whenNarrow {
-    flex-wrap: wrap;
-  }
+  /* showDividers */
 
-  .Stack--nowrap-whenNarrow {
-    flex-wrap: nowrap;
-  }
-}
-
-/* Divider */
-
-@media ($viewport-regular) {
-  .Stack--showDividers-whenRegular .Stack-divider {
+  .Stack--showDividers#{$viewportRange} > .Stack-divider {
     display: block;
   }
+  
+  :not(.Stack--dir-inline#{$viewportRange}) > .Stack-divider {
+    border-block-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
+    inline-size: auto;
+    block-size: 0;
+  }
+
+  .Stack--dir-inline#{$viewportRange} > .Stack-divider {
+    border-inline-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
+    inline-size: 0;
+    block-size: auto;
+  }
+
 }
 
-@media ($viewport-narrow) {
-  .Stack--showDividers-whenNarrow .Stack-divider {
-    display: block;
-  }
-}
+/* Stack-divider */
 
 .Stack-divider {
   display: none;
@@ -270,30 +176,33 @@
   align-self: stretch;
 }
 
-@media ($viewport-regular) {
-  .Stack--dir-block-whenRegular .Stack-divider {
-    border-block-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
-    inline-size: auto;
-    block-size: 0;
-  }
+/* Stack-item */
 
-  .Stack--dir-inline-whenRegular .Stack-divider {
-    border-inline-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
-    inline-size: 0;
-    block-size: auto;
-  }
+.Stack-item {
+  flex: 0 1 auto;
+  min-inline-size: 0;
 }
 
-@media ($viewport-narrow) {
-  .Stack--dir-block-whenNarrow .Stack-divider {
-    border-block-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
-    inline-size: auto;
-    block-size: 0;
+@mixin Stack-item--modifiers($viewportRange: '') {
+
+  .Stack-item--expand#{$viewportRange} {
+    flex-grow: 1;
+  }
+  
+  .Stack-item--keepSize#{$viewportRange} {
+    flex-shrink: 0;
   }
 
-  .Stack--dir-inline-whenNarrow .Stack-divider {
-    border-inline-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
-    inline-size: 0;
-    block-size: auto;
-  }
+}
+
+// Responsive composition
+
+@media ($viewport-narrow) {
+  @include Stack--modifiers('-whenNarrow');
+  @include Stack-item--modifiers('-whenNarrow');
+}
+
+@media ($viewport-regular) {
+  @include Stack--modifiers('-whenRegular');
+  @include Stack-item--modifiers('-whenRegular');
 }
