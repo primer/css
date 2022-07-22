@@ -390,17 +390,17 @@ export const StackTemplate = ({
         
         {!children && (
           <>
-            <div className="_debug _debug-item-1">1</div>
-            {hasDividers && ( <><hr className="Stack-divider" role={dividerAriaRole} /></> )}
-            <div className="_debug _debug-item-2">2</div>
-            {hasDividers && ( <><hr className="Stack-divider" role={dividerAriaRole} /></> )}
-            <div className="_debug _debug-item-3">3</div>
-            {hasDividers && ( <><hr className="Stack-divider" role={dividerAriaRole} /></> )}
-            <div className="_debug _debug-item-4">4</div>
-            {hasDividers && ( <><hr className="Stack-divider" role={dividerAriaRole} /></> )}
-            <div className="_debug _debug-item-5">5</div>
-            {hasDividers && ( <><hr className="Stack-divider" role={dividerAriaRole} /></> )}
-            <div className="_debug _debug-item-6">6</div>
+            <div className="Stack-item _debug _debug-item-1">1</div>
+            {hasDividers && ( <hr className="Stack-divider" role={dividerAriaRole} /> )}
+            <div className="Stack-item _debug _debug-item-2">2</div>
+            {hasDividers && ( <hr className="Stack-divider" role={dividerAriaRole} /> )}
+            <div className="Stack-item _debug _debug-item-3">3</div>
+            {hasDividers && ( <hr className="Stack-divider" role={dividerAriaRole} /> )}
+            <div className="Stack-item _debug _debug-item-4">4</div>
+            {hasDividers && ( <hr className="Stack-divider" role={dividerAriaRole} /> )}
+            <div className="Stack-item _debug _debug-item-5">5</div>
+            {hasDividers && ( <hr className="Stack-divider" role={dividerAriaRole} /> )}
+            <div className="Stack-item _debug _debug-item-6">6</div>
           </>
         )}
       </div>
