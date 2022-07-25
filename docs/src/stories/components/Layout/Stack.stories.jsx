@@ -52,7 +52,7 @@ export default {
 
     // Gap
     gap: {
-      options: ['none', 'condensed', 'normal', 'spacious', 'custom'],
+      options: ['none', 'condensed', 'normal', 'spacious'],
       control: {
         type: 'inline-radio',
       },
@@ -61,7 +61,7 @@ export default {
 - \`condensed\`: \`var(--primer-stack-gap-condensed, 8px)\`,
 - \`normal\`: \`var(--primer-stack-gap-normal, 16px)\` (default)
 - \`spacious\`: \`var(--primer-stack-gap-spacious, 24px)\` (on regular viewports, otherwise it appears as \`normal\` on narrow viewports)
-- \`custom\`: set a custom size. When using with a framework such as ViewComponent or React, a custom value can be passed directly to the property.
+<!-- - \`custom\`: set a custom size. When using with a framework such as ViewComponent or React, a custom value can be passed directly to the property. -->
  `,
       table: {
         category: 'Properties',
@@ -70,15 +70,15 @@ export default {
         }
       }
     },
-    gap_custom: {
-      control: {
-        type: 'text'
-      },
-      description: 'A custom value to `gap`. Refer to [Primer Primitives](https://primer.style/primitives/spacing) for other spacing tokens. Example: `var(--base-size-12, 12px)`.',
-      table: {
-        category: 'Properties',
-      },
-    },
+    // gap_custom: {
+    //   control: {
+    //     type: 'text'
+    //   },
+    //   description: 'A custom value to `gap`. Refer to [Primer Primitives](https://primer.style/primitives/spacing) for other spacing tokens. Example: `var(--base-size-12, 12px)`.',
+    //   table: {
+    //     category: 'Properties',
+    //   },
+    // },
 
     // Align
     align: {
@@ -190,7 +190,7 @@ _Note: the presence of a divider duplicates the \`gap\` between items._`,
     },
 
     narrow_gap: {
-      options: ['inherit', 'none', 'condensed', 'normal', 'custom'],
+      options: ['inherit', 'none', 'condensed', 'normal'],
       control: {
         type: 'inline-radio',
       },
@@ -203,15 +203,15 @@ _Note: the presence of a divider duplicates the \`gap\` between items._`,
       },
     },
 
-    narrow_gap_custom: {
-      control: {
-        type: 'text'
-      },
-      description: 'Override a custom value for `gap` for narrow viewports',
-      table: {
-        category: 'Narrow viewport properties'
-      },
-    },
+    // narrow_gap_custom: {
+    //   control: {
+    //     type: 'text'
+    //   },
+    //   description: 'Override a custom value for `gap` for narrow viewports',
+    //   table: {
+    //     category: 'Narrow viewport properties'
+    //   },
+    // },
 
     narrow_align: {
       options: ['inherit', 'stretch', 'start', 'center', 'end', 'baseline'],
@@ -294,7 +294,7 @@ _Note: the presence of a divider duplicates the \`gap\` between items._`,
     },
 
     wide_gap: {
-      options: ['inherit', 'none', 'condensed', 'normal', 'spacious', 'custom'],
+      options: ['inherit', 'none', 'condensed', 'normal', 'spacious'],
       control: {
         type: 'inline-radio',
       },
@@ -307,15 +307,15 @@ _Note: the presence of a divider duplicates the \`gap\` between items._`,
       },
     },
 
-    wide_gap_custom: {
-      control: {
-        type: 'text'
-      },
-      description: 'Override a custom value for `gap` for wide viewports',
-      table: {
-        category: 'wide viewport properties'
-      },
-    },
+    // wide_gap_custom: {
+    //   control: {
+    //     type: 'text'
+    //   },
+    //   description: 'Override a custom value for `gap` for wide viewports',
+    //   table: {
+    //     category: 'wide viewport properties'
+    //   },
+    // },
 
     wide_align: {
       options: ['inherit', 'stretch', 'start', 'center', 'end', 'baseline'],
@@ -397,7 +397,7 @@ export const StackTemplate = ({
   _width,
   direction,
   gap,
-  gap_custom,
+  //gap_custom,
   align,
   alignWrap,
   spread,
@@ -407,7 +407,7 @@ export const StackTemplate = ({
 
   narrow_direction,
   narrow_gap,
-  narrow_gap_custom,
+  //narrow_gap_custom,
   narrow_align,
   narrow_alignWrap,
   narrow_spread,
@@ -416,7 +416,7 @@ export const StackTemplate = ({
 
   wide_direction,
   wide_gap,
-  wide_gap_custom,
+  //wide_gap_custom,
   wide_align,
   wide_alignWrap,
   wide_spread,
@@ -452,16 +452,16 @@ export const StackTemplate = ({
   wide_wrap = wide_wrap ?? 'inherit';
   wide_showDividers = wide_showDividers ?? 'inherit';
 
-  // Gap
-  if (gap === 'custom') {
-    custom_styles['--Stack-gap-whenRegular'] = gap_custom;
-  }
-  if (narrow_gap === 'custom') {
-    custom_styles['--Stack-gap-whenNarrow'] = narrow_gap_custom;
-  }
-  if (wide_gap === 'custom') {
-    custom_styles['--Stack-gap-whenWide'] = wide_gap_custom;
-  }
+  // Custom gap - not available
+  // if (gap === 'custom') {
+  //   custom_styles['--Stack-gap-whenRegular'] = gap_custom;
+  // }
+  // if (narrow_gap === 'custom') {
+  //   custom_styles['--Stack-gap-whenNarrow'] = narrow_gap_custom;
+  // }
+  // if (wide_gap === 'custom') {
+  //   custom_styles['--Stack-gap-whenWide'] = wide_gap_custom;
+  // }
 
   // Null value for states that don't require a modifier class
   align = align === 'stretch' ? null : align;
@@ -528,7 +528,7 @@ export const StackTemplate = ({
           wide_showDividers && 'Stack--showDividers-whenWide',
 
         )}
-        style={custom_styles}
+        //style={custom_styles}
       >
         {children}
         
@@ -603,6 +603,5 @@ Playground.args = {
   _debug: true,
   direction: "block",
   gap: "normal",
-  gap_custom: undefined,
   align: "stretch",
 };
