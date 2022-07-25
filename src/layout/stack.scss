@@ -1,0 +1,220 @@
+// Stack layout helper component
+
+.Stack {
+
+  // A Stack component lays elements horizontally or vertically on the page.
+  //
+  // Stack is a simple abstraction of CSS' Flexbox. Use it to structure elements
+  // that are visually grouped, following the same direction.
+  //
+  // Markup structure
+  // ================
+  //
+  // .Stack
+  // ├─ &.Stack--dir-[ inline | block ]-[ whenNarrow | whenRegular | whenWide ]
+  // ├─ &.Stack--gap-[ none | condensed | normal | spacious ]-[ whenNarrow | whenRegular | whenWide ]
+  // ├─ &.Stack--align-[ start | center | end | baseline ]-[ whenNarrow | whenRegular | whenWide ]
+  // ├─ &.Stack--alignWrap-[ start | center | end | distribute | distributeEvenly ]-[ whenNarrow | whenRegular | whenWide ]
+  // ├─ &.Stack--spread-[ start | center | end | distribute | distributeEvenly ]-[ whenNarrow | whenRegular | whenWide ]
+  // ├─ &.Stack--wrap-[ whenNarrow | whenRegular | whenWide ]
+  // ├─ &.Stack--nowrap-[ whenNarrow | whenRegular | whenWide ]
+  // ├─ &.Stack--showDividers-[ whenNarrow | whenRegular | whenWide ]
+  // │
+  // ├─ .Stack-divider
+  // ├─ .Stack-item
+  // │  ├─ &.Stack-item--expand-[ whenNarrow | whenRegular | whenWide ]
+  // │  ├─ &.Stack-item--keepSize-[ whenNarrow | whenRegular | whenWide ]
+
+  $Stack-gap-default: var(--primer-stack-gap-normal, 16px);
+
+  --Stack-gap-whenRegular: #{$Stack-gap-default};
+  --Stack-gap-whenNarrow: #{$Stack-gap-default};
+  --Stack-gap-whenWide: var(--Stack-gap-whenRegular);
+  --Stack-divider-color: var(--color-border-default);
+
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  align-content: start;
+  gap: var(--Stack-gap-whenRegular);
+
+  @media ($viewport-narrow) {
+    gap: var(--Stack-gap-whenNarrow);
+  }
+
+  @media ($viewport-wide) {
+    gap: var(--Stack-gap-whenWide);
+  }
+}
+
+@mixin Stack--modifiers($viewportRange: '') {
+  // direction
+
+  .Stack--dir-inline#{$viewportRange} {
+    flex-flow: row;
+  }
+
+  .Stack--dir-block#{$viewportRange} {
+    flex-flow: column;
+  }
+
+  // gap
+
+  .Stack--gap-none#{$viewportRange} {
+    --Stack-gap#{$viewportRange}: 0;
+  }
+
+  .Stack--gap-condensed#{$viewportRange} {
+    --Stack-gap#{$viewportRange}: var(--primer-stack-gap-condensed, 8px);
+  }
+
+  .Stack--gap-normal#{$viewportRange} {
+    --Stack-gap#{$viewportRange}: var(--primer-stack-gap-normal, 16px);
+  }
+
+  // There's no .Stack--gap-spacious-whenNarrow
+  // Narrow viewports render `spacious` gap as `normal`
+  @if $viewportRange != '-whenNarrow' {
+    .Stack--gap-spacious#{$viewportRange} {
+      --Stack-gap#{$viewportRange}: var(--primer-stack-gap-spacious, 24px);
+    }
+  }
+
+  // align
+
+  .Stack--align-start#{$viewportRange} {
+    align-items: flex-start;
+  }
+
+  .Stack--align-center#{$viewportRange} {
+    align-items: center;
+  }
+
+  .Stack--align-end#{$viewportRange} {
+    align-items: flex-end;
+  }
+
+  .Stack--align-baseline#{$viewportRange} {
+    align-items: baseline;
+  }
+
+  // alignWrap
+
+  .Stack--alignWrap-start#{$viewportRange} {
+    align-content: flex-start;
+  }
+
+  .Stack--alignWrap-center#{$viewportRange} {
+    align-content: center;
+  }
+
+  .Stack--alignWrap-end#{$viewportRange} {
+    align-content: flex-end;
+  }
+
+  .Stack--alignWrap-distribute#{$viewportRange} {
+    align-content: space-between;
+  }
+
+  .Stack--alignWrap-distributeEvenly#{$viewportRange} {
+    align-content: space-evenly;
+  }
+
+  // spread
+
+  .Stack--spread-start#{$viewportRange} {
+    justify-content: flex-start;
+  }
+
+  .Stack--spread-center#{$viewportRange} {
+    justify-content: center;
+  }
+
+  .Stack--spread-end#{$viewportRange} {
+    justify-content: flex-end;
+  }
+
+  .Stack--spread-distribute#{$viewportRange} {
+    justify-content: space-between;
+  }
+
+  .Stack--spread-distributeEvenly#{$viewportRange} {
+    justify-content: space-evenly;
+  }
+
+  // wrap
+
+  .Stack--wrap#{$viewportRange} {
+    flex-wrap: wrap;
+  }
+
+  .Stack--nowrap#{$viewportRange} {
+    flex-wrap: nowrap;
+  }
+
+  // showDividers
+
+  .Stack--showDividers#{$viewportRange} > .Stack-divider,
+  .Stack--showDividers#{$viewportRange} > .Stack-item > .Stack-divider {
+    display: block;
+  }
+
+  :not(.Stack--dir-inline#{$viewportRange}) > .Stack-divider,
+  :not(.Stack--dir-inline#{$viewportRange}) > .Stack-item > .Stack-divider {
+    border-block-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
+    inline-size: auto;
+    block-size: 0;
+  }
+
+  .Stack--dir-inline#{$viewportRange} > .Stack-divider,
+  .Stack--dir-inline#{$viewportRange} > .Stack-item > .Stack-divider {
+    border-inline-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
+    inline-size: 0;
+    block-size: auto;
+  }
+}
+
+// Stack-divider
+
+.Stack-divider {
+  display: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  align-self: stretch;
+}
+
+// Stack-item
+
+.Stack-item {
+  flex: 0 1 auto;
+  min-inline-size: 0;
+}
+
+@mixin Stack-item--modifiers($viewportRange: '') {
+
+  .Stack-item--expand#{$viewportRange} {
+    flex-grow: 1;
+  }
+
+  .Stack-item--keepSize#{$viewportRange} {
+    flex-shrink: 0;
+  }
+}
+
+// Responsive composition
+
+@media ($viewport-narrow) {
+  @include Stack--modifiers('-whenNarrow');
+  @include Stack-item--modifiers('-whenNarrow');
+}
+
+@media ($viewport-regular) {
+  @include Stack--modifiers('-whenRegular');
+  @include Stack-item--modifiers('-whenRegular');
+}
+
+@media ($viewport-wide) {
+  @include Stack--modifiers('-whenWide');
+  @include Stack-item--modifiers('-whenWide');
+}
