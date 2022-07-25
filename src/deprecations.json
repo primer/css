@@ -340,6 +340,7 @@
     "btn-outline-mktg": "btn-muted-mktg",
     "btn-transparent": "btn-subtle-mktg",
     "text-pending": "text-yellow",
+    "tooltipped": null,
     "bg-pending": "bg-yellow-dark",
     "container": null,
     "columns": null,
