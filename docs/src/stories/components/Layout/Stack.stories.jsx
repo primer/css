@@ -36,7 +36,6 @@ export default {
     },
 
     // Direction
-
     direction: {
       options: ['inline', 'block'],
       control: {
@@ -50,22 +49,8 @@ export default {
         }
       }
     },
-    narrow_direction: {
-      options: ['inherit', 'inline', 'block'],
-      control: {
-        type: 'inline-radio',
-      },
-      description: 'Override `direction` on narrow viewports',
-      table: {
-        category: 'Narrow viewport properties',
-        defaultValue: {
-          summary: 'inherit'
-        }
-      },
-    },
 
     // Gap
-
     gap: {
       options: ['none', 'condensed', 'normal', 'spacious', 'custom'],
       control: {
@@ -85,19 +70,6 @@ export default {
         }
       }
     },
-    narrow_gap: {
-      options: ['inherit', 'none', 'condensed', 'normal', 'custom'],
-      control: {
-        type: 'inline-radio',
-      },
-      description: 'Override `gap` on narrow viewports',
-      table: {
-        category: 'Narrow viewport properties',
-        defaultValue: {
-          summary: 'inherit'
-        }
-      },
-    },
     gap_custom: {
       control: {
         type: 'text'
@@ -107,16 +79,8 @@ export default {
         category: 'Properties',
       },
     },
-    narrow_gap_custom: {
-      control: {
-        type: 'text'
-      },
-      description: 'Override a custom value for `gap` for narrow viewports',
-      table: {
-        category: 'Narrow viewport properties'
-      },
-    },
 
+    // Align
     align: {
       options: ['stretch', 'start', 'center', 'end', 'baseline'],
       control: {
@@ -134,21 +98,8 @@ This property behavior is equivalent to the \`align-items\` Flexbox property.`,
         }
       }
     },
-    narrow_align: {
-      options: ['inherit', 'stretch', 'start', 'center', 'end', 'baseline'],
-      control: {
-        type: 'inline-radio'
-      },
-      table: {
-        category: 'Narrow viewport properties',
-        defaultValue: {
-          summary: 'inherit',
-        }
-      },
-    },
 
     // Align wrap
-
     alignWrap: {
       options: ['start', 'center', 'end', 'distribute', 'distributeEvenly'],
       control: {
@@ -163,21 +114,7 @@ This property behavior is equivalent to the \`align-items\` Flexbox property.`,
       }
     },
 
-    narrow_alignWrap: {
-      options: ['inherit', 'start', 'center', 'end', 'distribute', 'distributeEvenly'],
-      control: {
-        type: 'inline-radio'
-      },
-      table: {
-        category: 'Narrow viewport properties',
-        defaultValue: {
-          summary: 'inherit',
-        }
-      },
-    },
-
     // Spread
-
     spread: {
       options: ['start', 'center', 'end', 'distribute', 'distributeEvenly'],
       control: {
@@ -192,21 +129,7 @@ This property behavior is equivalent to the \`align-items\` Flexbox property.`,
       },
     },
 
-    narrow_spread: {
-      options: ['inherit', 'start', 'center', 'end', 'distribute', 'distributeEvenly'],
-      control: {
-        type: 'inline-radio',
-      },
-      table: {
-        category: 'Narrow viewport properties',
-        defaultValue: {
-          summary: 'inherit'
-        }
-      },
-    },
-
     // Wrap
-
     wrap: {
       options: ['wrap', 'nowrap'],
       control: {
@@ -220,21 +143,8 @@ This property behavior is equivalent to the \`align-items\` Flexbox property.`,
         }
       }
     },
-    narrow_wrap: {
-      options: ['inherit', 'wrap', 'nowrap'],
-      control: {
-        type: 'inline-radio'
-      },
-      table: {
-        category: 'Narrow viewport properties',
-        defaultValue: {
-          summary: 'inherit'
-        }
-      },
-    },
 
     // Divider
-
     showDividers: {
       control: {
         type: 'boolean'
@@ -262,12 +172,209 @@ _Note: the presence of a divider duplicates the \`gap\` between items._`,
         }
       }
     },
+
+    // Responsive properties / narrow
+
+    narrow_direction: {
+      options: ['inherit', 'inline', 'block'],
+      control: {
+        type: 'inline-radio',
+      },
+      description: 'Override `direction` on narrow viewports',
+      table: {
+        category: 'Narrow viewport properties',
+        defaultValue: {
+          summary: 'inherit'
+        }
+      },
+    },
+
+    narrow_gap: {
+      options: ['inherit', 'none', 'condensed', 'normal', 'custom'],
+      control: {
+        type: 'inline-radio',
+      },
+      description: 'Override `gap` on narrow viewports',
+      table: {
+        category: 'Narrow viewport properties',
+        defaultValue: {
+          summary: 'inherit'
+        }
+      },
+    },
+
+    narrow_gap_custom: {
+      control: {
+        type: 'text'
+      },
+      description: 'Override a custom value for `gap` for narrow viewports',
+      table: {
+        category: 'Narrow viewport properties'
+      },
+    },
+
+    narrow_align: {
+      options: ['inherit', 'stretch', 'start', 'center', 'end', 'baseline'],
+      control: {
+        type: 'inline-radio'
+      },
+      table: {
+        category: 'Narrow viewport properties',
+        defaultValue: {
+          summary: 'inherit',
+        }
+      },
+    },
+
+    narrow_alignWrap: {
+      options: ['inherit', 'start', 'center', 'end', 'distribute', 'distributeEvenly'],
+      control: {
+        type: 'inline-radio'
+      },
+      table: {
+        category: 'Narrow viewport properties',
+        defaultValue: {
+          summary: 'inherit',
+        }
+      },
+    },
+
+    narrow_spread: {
+      options: ['inherit', 'start', 'center', 'end', 'distribute', 'distributeEvenly'],
+      control: {
+        type: 'inline-radio',
+      },
+      table: {
+        category: 'Narrow viewport properties',
+        defaultValue: {
+          summary: 'inherit'
+        }
+      },
+    },
+
+    narrow_wrap: {
+      options: ['inherit', 'wrap', 'nowrap'],
+      control: {
+        type: 'inline-radio'
+      },
+      table: {
+        category: 'Narrow viewport properties',
+        defaultValue: {
+          summary: 'inherit'
+        }
+      },
+    },
+
     narrow_showDividers: {
       control: {
         type: 'boolean'
       },
       table: {
         category: 'Narrow viewport properties',
+        defaultValue: {
+          summary: 'inherit'
+        }
+      },
+    },
+
+    // Responsive properties / wide
+
+    wide_direction: {
+      options: ['inherit', 'inline', 'block'],
+      control: {
+        type: 'inline-radio',
+      },
+      description: 'Override `direction` on wide viewports',
+      table: {
+        category: 'wide viewport properties',
+        defaultValue: {
+          summary: 'inherit'
+        }
+      },
+    },
+
+    wide_gap: {
+      options: ['inherit', 'none', 'condensed', 'normal', 'spacious', 'custom'],
+      control: {
+        type: 'inline-radio',
+      },
+      description: 'Override `gap` on wide viewports',
+      table: {
+        category: 'wide viewport properties',
+        defaultValue: {
+          summary: 'inherit'
+        }
+      },
+    },
+
+    wide_gap_custom: {
+      control: {
+        type: 'text'
+      },
+      description: 'Override a custom value for `gap` for wide viewports',
+      table: {
+        category: 'wide viewport properties'
+      },
+    },
+
+    wide_align: {
+      options: ['inherit', 'stretch', 'start', 'center', 'end', 'baseline'],
+      control: {
+        type: 'inline-radio'
+      },
+      table: {
+        category: 'wide viewport properties',
+        defaultValue: {
+          summary: 'inherit',
+        }
+      },
+    },
+
+    wide_alignWrap: {
+      options: ['inherit', 'start', 'center', 'end', 'distribute', 'distributeEvenly'],
+      control: {
+        type: 'inline-radio'
+      },
+      table: {
+        category: 'wide viewport properties',
+        defaultValue: {
+          summary: 'inherit',
+        }
+      },
+    },
+
+    wide_spread: {
+      options: ['inherit', 'start', 'center', 'end', 'distribute', 'distributeEvenly'],
+      control: {
+        type: 'inline-radio',
+      },
+      table: {
+        category: 'wide viewport properties',
+        defaultValue: {
+          summary: 'inherit'
+        }
+      },
+    },
+
+    wide_wrap: {
+      options: ['inherit', 'wrap', 'nowrap'],
+      control: {
+        type: 'inline-radio'
+      },
+      table: {
+        category: 'wide viewport properties',
+        defaultValue: {
+          summary: 'inherit'
+        }
+      },
+    },
+
+    wide_showDividers: {
+      control: {
+        type: 'boolean'
+      },
+      table: {
+        category: 'wide viewport properties',
         defaultValue: {
           summary: 'inherit'
         }
@@ -307,6 +414,15 @@ export const StackTemplate = ({
   narrow_wrap,
   narrow_showDividers,
 
+  wide_direction,
+  wide_gap,
+  wide_gap_custom,
+  wide_align,
+  wide_alignWrap,
+  wide_spread,
+  wide_wrap,
+  wide_showDividers,
+
   children
 }) => {
 
@@ -327,12 +443,24 @@ export const StackTemplate = ({
   narrow_wrap = narrow_wrap ?? 'inherit';
   narrow_showDividers = narrow_showDividers ?? 'inherit';
 
+  // Default wide values
+  wide_direction = wide_direction ?? 'inherit';
+  wide_gap = wide_gap ?? 'inherit';
+  wide_align = wide_align ?? 'inherit';
+  wide_alignWrap = wide_alignWrap ?? 'inherit';
+  wide_spread = wide_spread ?? 'inherit';
+  wide_wrap = wide_wrap ?? 'inherit';
+  wide_showDividers = wide_showDividers ?? 'inherit';
+
   // Gap
   if (gap === 'custom') {
-    custom_styles['--Stack-gap'] = gap_custom;
+    custom_styles['--Stack-gap-whenRegular'] = gap_custom;
   }
   if (narrow_gap === 'custom') {
     custom_styles['--Stack-gap-whenNarrow'] = narrow_gap_custom;
+  }
+  if (wide_gap === 'custom') {
+    custom_styles['--Stack-gap-whenWide'] = wide_gap_custom;
   }
 
   // Null value for states that don't require a modifier class
@@ -351,11 +479,20 @@ export const StackTemplate = ({
   narrow_wrap = narrow_wrap === 'inherit' ? wrap : narrow_wrap;
   narrow_showDividers = narrow_showDividers === 'inherit' ? showDividers : narrow_showDividers;
 
+  wide_direction = wide_direction === 'inherit' ? null : wide_direction;
+  wide_gap = wide_gap === 'inherit' ? null : wide_gap;
+  wide_align = wide_align === 'inherit' ? null : wide_align;
+  wide_alignWrap = wide_alignWrap === 'inherit' ? null : wide_alignWrap;
+  wide_spread = wide_spread === 'inherit' ? null : wide_spread;
+  wide_wrap = wide_wrap === 'inherit' ? null : wide_wrap;
+  wide_showDividers = wide_showDividers === 'inherit' ? null : wide_showDividers;
+
   // Dividers logic
   showDividers = wrap === 'wrap' ? false : showDividers;
   narrow_showDividers = narrow_wrap === 'wrap' ? false : narrow_showDividers;
+  wide_showDividers = wide_wrap === 'wrap' ? false : wide_showDividers;
 
-  const hasDividers = showDividers || narrow_showDividers;
+  const hasDividers = showDividers || narrow_showDividers || wide_showDividers;
 
   return (
     <>
@@ -364,24 +501,31 @@ export const StackTemplate = ({
           'Stack',
           direction && `Stack--dir-${direction}-whenRegular`,
           narrow_direction && 'Stack--dir-' + `${narrow_direction}-whenNarrow`,
+          wide_direction && 'Stack--dir-' + `${wide_direction}-whenWide`,
 
           gap && 'Stack--gap-' + `${gap}-whenRegular`,
           narrow_gap && 'Stack--gap-' + `${narrow_gap}-whenNarrow`,
+          wide_gap && 'Stack--gap-' + `${wide_gap}-whenWide`,
 
           align && 'Stack--align-' + `${align}-whenRegular`,
           narrow_align && 'Stack--align-' + `${narrow_align}-whenNarrow`,
+          wide_align && 'Stack--align-' + `${wide_align}-whenWide`,
 
           alignWrap && 'Stack--alignWrap-' + `${alignWrap}-whenRegular`,
           narrow_alignWrap && 'Stack--alignWrap-' + `${narrow_alignWrap}-whenNarrow`,
+          wide_alignWrap && 'Stack--alignWrap-' + `${wide_alignWrap}-whenWide`,
           
           spread && 'Stack--spread-' + `${spread}-whenRegular`,
           narrow_spread && 'Stack--spread-' + `${narrow_spread}-whenNarrow`,
+          wide_spread && 'Stack--spread-' + `${wide_spread}-whenWide`,
 
           wrap && 'Stack--' + `${wrap}-whenRegular`,
           narrow_wrap && 'Stack--' + `${narrow_wrap}-whenNarrow`,
+          wide_wrap && 'Stack--' + `${wide_wrap}-whenWide`,
 
           showDividers && 'Stack--showDividers-whenRegular',
           narrow_showDividers && 'Stack--showDividers-whenNarrow',
+          wide_showDividers && 'Stack--showDividers-whenWide',
 
         )}
         style={custom_styles}

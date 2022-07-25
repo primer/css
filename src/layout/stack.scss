@@ -11,32 +11,40 @@
   // ================
   //
   // .Stack
-  // ├─ &.Stack--dir-[ inline | block ]-[ whenRegular | whenNarrow ]
-  // ├─ &.Stack--gap-[ none | condensed | normal | spacious ]-[ whenRegular | whenNarrow ]
-  // ├─ &.Stack--align-[ start | center | end | baseline ]-[ whenRegular | whenNarrow ]
-  // ├─ &.Stack--alignWrap-[ start | center | end | distribute | distributeEvenly ]-[ whenRegular | whenNarrow ]
-  // ├─ &.Stack--spread-[ start | center | end | distribute | distributeEvenly ]-[ whenRegular | whenNarrow ]
-  // ├─ &.Stack--wrap-[ whenRegular | whenNarrow ]
-  // ├─ &.Stack--nowrap-[ whenRegular | whenNarrow ]
-  // ├─ &.Stack--showDividers-[ whenRegular | whenNarrow ]
+  // ├─ &.Stack--dir-[ inline | block ]-[ whenNarrow | whenRegular | whenWide ]
+  // ├─ &.Stack--gap-[ none | condensed | normal | spacious ]-[ whenNarrow | whenRegular | whenWide ]
+  // ├─ &.Stack--align-[ start | center | end | baseline ]-[ whenNarrow | whenRegular | whenWide ]
+  // ├─ &.Stack--alignWrap-[ start | center | end | distribute | distributeEvenly ]-[ whenNarrow | whenRegular | whenWide ]
+  // ├─ &.Stack--spread-[ start | center | end | distribute | distributeEvenly ]-[ whenNarrow | whenRegular | whenWide ]
+  // ├─ &.Stack--wrap-[ whenNarrow | whenRegular | whenWide ]
+  // ├─ &.Stack--nowrap-[ whenNarrow | whenRegular | whenWide ]
+  // ├─ &.Stack--showDividers-[ whenNarrow | whenRegular | whenWide ]
   // │
   // ├─ .Stack-divider
   // ├─ .Stack-item
-  // │  ├─ &.Stack-item--expand-[ whenRegular | whenNarrow ]
-  // │  ├─ &.Stack-item--shrink-[ whenRegular | whenNarrow ]
+  // │  ├─ &.Stack-item--expand-[ whenNarrow | whenRegular | whenWide ]
+  // │  ├─ &.Stack-item--keepSize-[ whenNarrow | whenRegular | whenWide ]
 
-  --Stack-gap: var(--primer-stack-gap-normal, 16px);
-  --Stack-gap-whenNarrow: var(--Stack-gap);
+  $Stack-gap-default: var(--primer-stack-gap-normal, 16px);
+
+  --Stack-gap-whenRegular: #{$Stack-gap-default};
+  --Stack-gap-whenNarrow: #{$Stack-gap-default};
+  --Stack-gap-whenWide: var(--Stack-gap-whenRegular);
+  
   --Stack-divider-color: var(--color-border-default);
 
   display: flex;
   flex-flow: column;
   align-items: stretch;
   align-content: start;
-  gap: var(--Stack-gap);
+  gap: var(--Stack-gap-whenRegular);
 
   @media ($viewport-narrow) {
     gap: var(--Stack-gap-whenNarrow);
+  }
+
+  @media ($viewport-wide) {
+    gap: var(--Stack-gap-whenWide);
   }
 }
 
@@ -54,22 +62,22 @@
   /* gap */
 
   .Stack--gap-none#{$viewportRange} {
-    --Stack-gap: 0;
+    --Stack-gap#{$viewportRange}: 0;
   }
 
   .Stack--gap-condensed#{$viewportRange} {
-    --Stack-gap: var(--primer-stack-gap-condensed, 8px);
+    --Stack-gap#{$viewportRange}: var(--primer-stack-gap-condensed, 8px);
   }
 
   .Stack--gap-normal#{$viewportRange} {
-    --Stack-gap: var(--primer-stack-gap-normal, 16px);
+    --Stack-gap#{$viewportRange}: var(--primer-stack-gap-normal, 16px);
   }
 
   // There's no .Stack--gap-spacious-whenNarrow
   // Narrow viewports render `spacious` gap as `normal`
   @if $viewportRange != '-whenNarrow' {
     .Stack--gap-spacious#{$viewportRange} {
-      --Stack-gap: var(--primer-stack-gap-spacious, 24px);
+      --Stack-gap#{$viewportRange}: var(--primer-stack-gap-spacious, 24px);
     }
   }
 
@@ -147,17 +155,20 @@
 
   /* showDividers */
 
-  .Stack--showDividers#{$viewportRange} > .Stack-divider {
+  .Stack--showDividers#{$viewportRange} > .Stack-divider,
+  .Stack--showDividers#{$viewportRange} > .Stack-item > .Stack-divider {
     display: block;
   }
 
-  :not(.Stack--dir-inline#{$viewportRange}) > .Stack-divider {
+  :not(.Stack--dir-inline#{$viewportRange}) > .Stack-divider,
+  :not(.Stack--dir-inline#{$viewportRange}) > .Stack-item > .Stack-divider {
     border-block-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
     inline-size: auto;
     block-size: 0;
   }
 
-  .Stack--dir-inline#{$viewportRange} > .Stack-divider {
+  .Stack--dir-inline#{$viewportRange} > .Stack-divider,
+  .Stack--dir-inline#{$viewportRange} > .Stack-item > .Stack-divider {
     border-inline-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
     inline-size: 0;
     block-size: auto;
@@ -202,4 +213,9 @@
 @media ($viewport-regular) {
   @include Stack--modifiers('-whenRegular');
   @include Stack-item--modifiers('-whenRegular');
+}
+
+@media ($viewport-wide) {
+  @include Stack--modifiers('-whenWide');
+  @include Stack-item--modifiers('-whenWide');
 }
