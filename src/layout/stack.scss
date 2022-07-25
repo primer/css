@@ -48,7 +48,7 @@
 }
 
 @mixin Stack--modifiers($viewportRange: '') {
-  /* direction */
+  // direction
 
   .Stack--dir-inline#{$viewportRange} {
     flex-flow: row;
@@ -58,7 +58,7 @@
     flex-flow: column;
   }
 
-  /* gap */
+  // gap
 
   .Stack--gap-none#{$viewportRange} {
     --Stack-gap#{$viewportRange}: 0;
@@ -80,7 +80,7 @@
     }
   }
 
-  /* align */
+  // align
 
   .Stack--align-start#{$viewportRange} {
     align-items: flex-start;
@@ -98,7 +98,7 @@
     align-items: baseline;
   }
 
-  /* alignWrap */
+  // alignWrap
 
   .Stack--alignWrap-start#{$viewportRange} {
     align-content: flex-start;
@@ -120,7 +120,7 @@
     align-content: space-evenly;
   }
 
-  /* spread */
+  // spread
 
   .Stack--spread-start#{$viewportRange} {
     justify-content: flex-start;
@@ -142,7 +142,7 @@
     justify-content: space-evenly;
   }
 
-  /* wrap */
+  // wrap
 
   .Stack--wrap#{$viewportRange} {
     flex-wrap: wrap;
@@ -152,7 +152,7 @@
     flex-wrap: nowrap;
   }
 
-  /* showDividers */
+  // showDividers
 
   .Stack--showDividers#{$viewportRange} > .Stack-divider,
   .Stack--showDividers#{$viewportRange} > .Stack-item > .Stack-divider {
@@ -174,7 +174,7 @@
   }
 }
 
-/* Stack-divider */
+// Stack-divider
 
 .Stack-divider {
   display: none;
@@ -184,7 +184,7 @@
   align-self: stretch;
 }
 
-/* Stack-item */
+// Stack-item
 
 .Stack-item {
   flex: 0 1 auto;
