@@ -466,12 +466,15 @@ export const OverlayTemplate = ({
                 </div>
               )}
             </div>
-            {headerContentSlot && (
+            {/* {headerContentSlot && (
               <div className="Overlay-headerContentSlot" dangerouslySetInnerHTML={{__html: headerContentSlot}} />
-            )}
+            )} */}
+            {/* <div className="Overlay-headerContentSlot">
+              <input class="form-control" />
+            </div> */}
           </header>
         )}
-        <div className={clsx('Overlay-body', bodyPaddingVariant && `${bodyPaddingVariant}`)}>{children}</div>
+        <div className={clsx('Overlay-body', bodyPaddingVariant && `${bodyPaddingVariant}`)}>body</div>
         {footerRegion && (
           <footer
             className={clsx(
@@ -501,7 +504,7 @@ Playground.args = {
   footerContentAlign: 2,
   showCloseButton: true,
   showFooterButton: false,
-  headerContentSlot: '',
+  //   headerContentSlot: '',
   actionContentSlot: '',
   headerVariant: 0,
   bodyPaddingVariant: 0,
