@@ -12,11 +12,10 @@ Buttons are used for **actions**, like in forms, while textual hyperlinks are us
 <button class="btn" type="button">Button</button>
 ```
 
-Note: When using a `<button>` element, **always specify a `type`**. When using a `<a>` element, **always add `role="button"` for accessibility**.
+Note: When using a `<button>` element, **always specify a `type`**.
 
 ```html live
 <button class="btn mr-2" type="button">Button button</button>
-<a class="btn" href="#url" role="button">Link button</a>
 ```
 
 ## Button types

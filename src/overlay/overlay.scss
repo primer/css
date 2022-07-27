@@ -27,23 +27,23 @@ $primer-borderRadius-large: 0.75rem;
   }
 
   &.Overlay--height-xsmall {
-    height: min(192px, 100% - 2rem);
+    height: min(192px, 100vh - 2rem);
   }
 
   &.Overlay--height-small {
-    height: min(256px, 100% - 2rem);
+    height: min(256px, 100vh - 2rem);
   }
 
   &.Overlay--height-medium {
-    height: min(320px, 100% - 2rem);
+    height: min(320px, 100vh - 2rem);
   }
 
   &.Overlay--height-large {
-    height: min(432px, 100% - 2rem);
+    height: min(432px, 100vh - 2rem);
   }
 
   &.Overlay--height-xlarge {
-    height: min(600px, 100% - 2rem);
+    height: min(600px, 100vh - 2rem);
   }
 
   &.Overlay--width-auto {
@@ -51,26 +51,26 @@ $primer-borderRadius-large: 0.75rem;
   }
 
   &.Overlay--width-small {
-    width: min(256px, 100% - 2rem);
+    width: min(256px, 100vw - 2rem);
   }
 
   &.Overlay--width-medium {
-    width: min(320px, 100% - 2rem);
+    width: min(320px, 100vw - 2rem);
   }
 
   &.Overlay--width-large {
     // stylelint-disable-next-line primer/responsive-widths
-    width: min(480px, 100% - 2rem);
+    width: min(480px, 100vw - 2rem);
   }
 
   &.Overlay--width-xlarge {
     // stylelint-disable-next-line primer/responsive-widths
-    width: min(640px, 100% - 2rem);
+    width: min(640px, 100vw - 2rem);
   }
 
   &.Overlay--width-xxlarge {
     // stylelint-disable-next-line primer/responsive-widths
-    width: min(960px, 100% - 2rem);
+    width: min(960px, 100vw - 2rem);
   }
 
   &.Overlay--motion-scaleFade {
@@ -255,6 +255,7 @@ $primer-borderRadius-large: 0.75rem;
 
 @mixin Overlay-backdrop--transparent() {
   position: absolute;
+  z-index: 999;
   background-color: transparent;
 }
 

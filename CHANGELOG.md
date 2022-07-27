@@ -1,5 +1,63 @@
 # @primer/css
 
+## 20.3.0
+
+### Minor Changes
+
+- [#2147](https://github.com/primer/css/pull/2147) [`9dd2a49e`](https://github.com/primer/css/commit/9dd2a49e2633f337c2316a43907f17dfd5c3173b) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Add AppFrame component
+
+### Patch Changes
+
+- [#2083](https://github.com/primer/css/pull/2083) [`13be7ef1`](https://github.com/primer/css/commit/13be7ef18d2d9874e7a08f20d9f93538752517c6) Thanks [@simurai](https://github.com/simurai)! - Add `SegmentedControl` component
+
+* [#2171](https://github.com/primer/css/pull/2171) [`d2b4d698`](https://github.com/primer/css/commit/d2b4d698882f57a6c4a08e66c10bdca27924046f) Thanks [@khiga8](https://github.com/khiga8)! - Add .tooltipped to deprecations json
+
+## 20.2.4
+
+### Patch Changes
+
+- [#2136](https://github.com/primer/css/pull/2136) [`89846844`](https://github.com/primer/css/commit/8984684470dc2e6cc69e7c80e4ce4a0e70e57eb3) Thanks [@langermank](https://github.com/langermank)! - Bug: ActionList-item disabled state
+
+* [#2130](https://github.com/primer/css/pull/2130) [`544fb277`](https://github.com/primer/css/commit/544fb2773dbadd934a34232637970946de3c536d) Thanks [@renbaoshuo](https://github.com/renbaoshuo)! - Add link to source code in Timeline's doc
+
+- [#2114](https://github.com/primer/css/pull/2114) [`facb9682`](https://github.com/primer/css/commit/facb96823a344369afdace1365dda38bb5312f2b) Thanks [@langermank](https://github.com/langermank)! - - Updates stories to reflect markup for Rails
+  - Clean up FormControl classes
+  - Add Radio and Checkbox custom styles
+
+* [#2132](https://github.com/primer/css/pull/2132) [`c898103e`](https://github.com/primer/css/commit/c898103e0e942b7ab07f43b83496f019163458f1) Thanks [@vzrenggamani](https://github.com/vzrenggamani)! - docs: update deployment location of docs
+
+## 20.2.3
+
+### Patch Changes
+
+- [#2124](https://github.com/primer/css/pull/2124) [`f1b3e55f`](https://github.com/primer/css/commit/f1b3e55f141ddaa5719d223d4670d935bf9d5337) Thanks [@langermank](https://github.com/langermank)! - FormControl + Overlay bug fixes
+
+* [#2129](https://github.com/primer/css/pull/2129) [`2cc18d03`](https://github.com/primer/css/commit/2cc18d0348dc667961c9374886c8a82e95334d6f) Thanks [@camertron](https://github.com/camertron)! - Fix preview deploys
+
+- [#2077](https://github.com/primer/css/pull/2077) [`ab078a58`](https://github.com/primer/css/commit/ab078a58c6ebe4118f917bed4c71fbbb56f0634f) Thanks [@mlynam](https://github.com/mlynam)! - Make .form-control elements render as disabled when a parent fieldset is disabled
+
+## 20.2.2
+
+### Patch Changes
+
+- [#2075](https://github.com/primer/css/pull/2075) [`9f576a3c`](https://github.com/primer/css/commit/9f576a3c33479fa0beb5ef4fe9b794f67a58070c) Thanks [@langermank](https://github.com/langermank)! - FormControl + Autocomplete component updates
+
+## 20.2.1
+
+### Patch Changes
+
+- [#2094](https://github.com/primer/css/pull/2094) [`33f799f1`](https://github.com/primer/css/commit/33f799f13edad2e7434425913a8d445aa27213de) Thanks [@camertron](https://github.com/camertron)! - Add missing ToggleSwitch--checked styles
+
+* [#2091](https://github.com/primer/css/pull/2091) [`f740d008`](https://github.com/primer/css/commit/f740d00827fa854062f6ce3449ca6745fae9bea8) Thanks [@tobiasahlin](https://github.com/tobiasahlin)! - Marketing: Bump font size of large buttons
+
+## 20.2.0
+
+### Minor Changes
+
+- [#2087](https://github.com/primer/css/pull/2087) [`8354de5c`](https://github.com/primer/css/commit/8354de5c5eeb60e447712c04e25c2ef370206488) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Changing `PageLayout--isPaneSticky` to `PageLayout--sticky`.
+
+* [#2074](https://github.com/primer/css/pull/2074) [`5cfae2c2`](https://github.com/primer/css/commit/5cfae2c2193885c34af97dd61da201c400bc8549) Thanks [@camertron](https://github.com/camertron)! - Add styles for the ToggleSwitch component
+
 ## 20.1.1
 
 ### Patch Changes

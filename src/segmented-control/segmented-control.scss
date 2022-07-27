@@ -1,0 +1,159 @@
+// SegmentedControl
+
+.SegmentedControl {
+  display: inline-flex;
+  background-color: var(--color-segmented-control-bg);
+  // stylelint-disable-next-line primer/borders
+  border-radius: var(--primer-borderRadius-medium, $border-radius);
+  // stylelint-disable-next-line primer/box-shadow
+  box-shadow: var(--primer-borderInset-thin, inset 0 0 0 $border-width) var(--color-border-default);
+}
+
+// Button -----------------------------------------
+
+.SegmentedControl-button {
+  position: relative;
+  display: inline-flex;
+  height: var(--primer-control-medium-size, 32px);
+  // stylelint-disable-next-line primer/spacing
+  padding: calc(var(--primer-control-xsmall-paddingInline-condensed, 4px) - var(--primer-borderWidth-thin, 1px));
+  // stylelint-disable-next-line primer/typography
+  font-size: var(--primer-text-body-size-medium, $body-font-size);
+  color: var(--color-fg-default);
+  background-color: transparent;
+  // stylelint-disable-next-line primer/borders
+  border: var(--primer-borderWidth-thin, $border-width) $border-style transparent;
+  // stylelint-disable-next-line primer/borders
+  border-radius: var(--primer-borderRadius-medium, $border-radius);
+
+  &:not(.SegmentedControl-button--selected):hover .SegmentedControl-content {
+    background-color: var(--color-segmented-control-button-hover-bg);
+    transition-duration: var(--primer-duration-fast, 80ms);
+  }
+
+  &:not(.SegmentedControl-button--selected):active .SegmentedControl-content {
+    background-color: var(--color-segmented-control-button-active-bg);
+    transition-duration: 0;
+  }
+
+  // Selected
+
+  &.SegmentedControl-button--selected {
+    // stylelint-disable-next-line primer/typography
+    font-weight: var(--base-text-weight-semibold, $font-weight-bold);
+    background-color: var(--color-btn-bg);
+    border-color: var(--color-segmented-control-button-selected-border);
+  }
+
+  // Divider
+
+  // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
+  & + .SegmentedControl-button::before {
+    position: absolute;
+    inset: var(--primer-borderWidth-thin, 1px) 0 0 calc(var(--primer-borderWidth-thin, 1px) * -1);
+    height: var(--primer-text-body-size-large, 16px);
+    // stylelint-disable-next-line primer/spacing
+    margin-top: var(--primer-control-medium-paddingBlock, 6px);
+    content: '';
+    // stylelint-disable-next-line primer/borders
+    border-left: var(--primer-borderWidth-thin, $border-width) $border-style var(--color-border-default);
+    transition: border-color var(--primer-duration-medium, 160ms) cubic-bezier(0.3, 0.1, 0.5, 1);
+  }
+
+  &.SegmentedControl-button--selected::before,
+  &.SegmentedControl-button--selected + .SegmentedControl-button::before {
+    border-color: transparent;
+  }
+}
+
+// Content -----------------------------------------
+
+.SegmentedControl-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--primer-control-medium-gap, $spacer-2);
+  height: 100%;
+  // stylelint-disable-next-line primer/spacing
+  padding: 0 var(--primer-control-medium-paddingInline-condensed, 8px);
+  // stylelint-disable-next-line primer/borders
+  border-radius: var(--primer-borderRadius-medium, $border-radius);
+  transition: background-color var(--primer-duration-medium, 160ms) cubic-bezier(0.3, 0.1, 0.5, 1);
+}
+
+// Leading visual -----------------------------------------
+
+.SegmentedControl-leadingVisual {
+  color: var(--color-fg-muted);
+}
+
+// Text -----------------------------------------
+
+.SegmentedControl-text {
+  // renders a visibly hidden "copy" of the text in bold, reserving box space for when text becomes bold on selected
+  &[data-content]::before {
+    display: block;
+    height: 0;
+    // stylelint-disable-next-line primer/typography
+    font-weight: var(--base-text-weight-semibold, $font-weight-bold);
+    visibility: hidden;
+    content: attr(data-content);
+  }
+}
+
+// Variants -----------------------------------------
+
+// fullWidth
+.SegmentedControl--fullWidth {
+  display: flex;
+
+  .SegmentedControl-button {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+// Icon only
+.SegmentedControl-button--iconOnly {
+  width: var(--primer-control-medium-size, 32px);
+
+  .SegmentedControl-content {
+    padding: 0;
+    flex: 1;
+  }
+}
+
+// Icon only when narrow
+@media (max-width: $width-md) {
+  .SegmentedControl--iconOnly-whenNarrow {
+    .SegmentedControl-button {
+      width: var(--primer-control-medium-size, 32px);
+    }
+
+    .SegmentedControl-content {
+      padding: 0;
+      flex: 1;
+    }
+
+    .SegmentedControl-text {
+      display: none;
+    }
+  }
+}
+
+// Increase touch target
+@media (pointer: coarse) {
+  .SegmentedControl-button {
+    min-width: var(--primer-control-minTarget-coarse, 44px);
+
+    &::after {
+      @include minTouchTarget($min-height: var(--primer-control-minTarget-coarse, 44px));
+    }
+  }
+
+  // reset for icon-only buttons
+  .SegmentedControl-button--iconOnly,
+  .SegmentedControl--iconOnly-whenNarrow .SegmentedControl-button {
+    min-width: unset;
+  }
+}
