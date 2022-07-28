@@ -2,4 +2,4 @@
 "@primer/css": patch
 ---
 
-Autocomplete item selected state
+Autocomplete item selected state 
