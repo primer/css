@@ -115,7 +115,8 @@
 
   // active state [aria-current]
 
-  &.ActionList-item--navActive {
+  &.ActionList-item--navActive,
+  &[aria-selected='true'] {
     &:not(.ActionList-item--subItem) {
       .ActionList-item-label {
         font-weight: $font-weight-bold;
