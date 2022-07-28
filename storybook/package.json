@@ -5,7 +5,7 @@
   "description": "A simple web component",
   "main": "my-element.js",
   "module": "my-element.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
@@ -30,7 +30,9 @@
     "test:watch": "wtr --watch",
     "test:prod": "MODE=prod wtr",
     "test:prod:watch": "MODE=prod wtr --watch",
-    "checksize": "rollup -c ; cat my-element.bundled.js | gzip -9 | wc -c ; rm my-element.bundled.js"
+    "checksize": "rollup -c ; cat my-element.bundled.js | gzip -9 | wc -c ; rm my-element.bundled.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "keywords": [
     "web-components",
@@ -46,10 +48,17 @@
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "@babel/core": "^7.18.9",
     "@custom-elements-manifest/analyzer": "^0.6.3",
     "@open-wc/testing": "^3.1.5",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-replace": "^4.0.0",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack4": "^6.5.9",
+    "@storybook/manager-webpack4": "^6.5.9",
+    "@storybook/web-components": "^6.5.9",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "@web/dev-server": "^0.1.31",
@@ -57,8 +66,10 @@
     "@web/test-runner": "^0.13.27",
     "@web/test-runner-playwright": "^0.8.8",
     "@webcomponents/webcomponentsjs": "^2.6.0",
+    "babel-loader": "^8.2.5",
     "eslint": "^8.15.0",
     "lit-analyzer": "^1.2.1",
+    "lit-html": "^2.2.7",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.73.0",
