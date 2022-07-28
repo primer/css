@@ -1,5 +1,23 @@
 # @primer/css
 
+## 20.4.0
+
+### Minor Changes
+
+- [#2152](https://github.com/primer/css/pull/2152) [`edac9edb`](https://github.com/primer/css/commit/edac9edbcf833fc76d406d225b6cf6abfa2b7f99) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Add Stack component
+
+### Patch Changes
+
+- [#2177](https://github.com/primer/css/pull/2177) [`add769c9`](https://github.com/primer/css/commit/add769c97193b387de2fbfb4b0a66c7157826563) Thanks [@langermank](https://github.com/langermank)! - Autocomplete item selected state
+
+* [#2174](https://github.com/primer/css/pull/2174) [`97f178d7`](https://github.com/primer/css/commit/97f178d7dedb92c713f1e684384db089c71eeae6) Thanks [@simurai](https://github.com/simurai)! - Prevent `SegmentedControl-text` from wrapping
+
+- [#2168](https://github.com/primer/css/pull/2168) [`a52afe7e`](https://github.com/primer/css/commit/a52afe7e7d34cccf550b43c052777a392bb7229f) Thanks [@owenniblock](https://github.com/owenniblock)! - Increases z-index for .show-on-focus
+
+* [#2176](https://github.com/primer/css/pull/2176) [`d8c218ab`](https://github.com/primer/css/commit/d8c218aba8b16a80a96b39ca086df34ed4c307df) Thanks [@langermank](https://github.com/langermank)! - Add `aria-selected` to ActionList-item for Autocomplete
+
+- [#2090](https://github.com/primer/css/pull/2090) [`8016e3c5`](https://github.com/primer/css/commit/8016e3c507d8e72be1b32520cc548c362290a73c) Thanks [@Luckz](https://github.com/Luckz)! - Remove article
+
 ## 20.3.0
 
 ### Minor Changes
