@@ -1,5 +1,11 @@
 # @primer/css
 
+## 20.4.1
+
+### Patch Changes
+
+- [#2178](https://github.com/primer/css/pull/2178) [`2df59776`](https://github.com/primer/css/commit/2df5977613d4b196e0eb08c49f290d18f74dd412) Thanks [@jonrohan](https://github.com/jonrohan)! - Fix: autoprefix giving a warning about align-content
+
 ## 20.4.0
 
 ### Minor Changes
