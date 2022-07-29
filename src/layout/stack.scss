@@ -35,7 +35,7 @@
   display: flex;
   flex-flow: column;
   align-items: stretch;
-  align-content: start;
+  align-content: flex-start;
   gap: var(--Stack-gap-whenRegular);
 
   @media ($viewport-narrow) {
