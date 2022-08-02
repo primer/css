@@ -7,7 +7,6 @@
 .h5-mktg,
 .h6-mktg {
   font-family: $font-mktg;
-  font-feature-settings: $mktg-font-feature-settings;
   // stylelint-disable-next-line primer/typography
   font-weight: $mktg-header-weight-default !important;
   letter-spacing: $mktg-header-spacing-default !important;
@@ -64,7 +63,6 @@
 .f5-mktg,
 .f6-mktg {
   font-family: $font-mktg;
-  font-feature-settings: $mktg-font-feature-settings;
   font-weight: $font-weight-normal;
 }
 
