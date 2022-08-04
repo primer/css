@@ -1,11 +1,15 @@
-- title: Getting started
-  url: /getting-started
+- title: Introduction
+  url: /
   children:
+    - title: Getting started
+      url: /getting-started
     - title: Contributing
       url: /getting-started/contributing
 - title: Support
   url: /support
   children:
+    - title: Introduction
+      url: /support
     - title: Breakpoints
       url: /support/breakpoints
     - title: Spacing
@@ -19,6 +23,8 @@
 - title: Utilities
   url: /utilities
   children:
+    - title: Introduction
+      url: /utilities
     - title: Animations
       url: /utilities/animations
     - title: Borders
@@ -44,6 +50,8 @@
 - title: Components
   url: /components
   children:
+    - title: Introduction
+      url: /components
     - title: Alerts
       url: /components/alerts
     - title: Avatars
@@ -99,6 +107,8 @@
 - title: Marketing
   url: /marketing
   children:
+    - title: Introduction
+      url: /marketing
     - title: Buttons
       url: /components/marketing-buttons
     - title: Filters
@@ -112,6 +122,8 @@
 - title: Tools
   url: /tools
   children:
+    - title: Introduction
+      url: /tools
     - title: Deprecation data
       url: /tools/deprecations
     - title: Linting
@@ -123,6 +135,8 @@
 - title: Principles
   url: /principles
   children:
+    - title: Introduction
+      url: /principles
     - title: Accessibility
       url: /principles/accessibility
     - title: HTML
