@@ -207,8 +207,7 @@
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
       opacity: 0;
-      transition:
-        visibility 0 linear $actionList-item-checkmark-transition-timing,
+      transition: visibility 0 linear $actionList-item-checkmark-transition-timing,
         opacity $actionList-item-checkmark-transition-timing;
     }
 
@@ -601,4 +600,51 @@
 // TODO: remove with PVC implementation
 .ActionList-item--subItem > .ActionList-content {
   font-size: $font-size-small;
+}
+
+// TODO: replace with refactored IconButton
+.ActionList-item-button {
+  position: relative;
+  display: grid;
+  width: $spacer-5;
+  height: $spacer-5;
+  padding: 0;
+  color: var(--color-fg-muted);
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: $border-width $border-style transparent;
+  border-radius: $border-radius;
+  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  transition-property: color, background-color, border-color;
+  place-content: center;
+  align-self: flex-start;
+  flex-shrink: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-btn-hover-bg);
+    background-color: var(--color-action-list-item-default-hover-bg);
+    border: $border-width $border-style var(--color-btn-hover-bg);
+  }
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    min-height: 32px;
+    content: '';
+    transform: translateX(-50%) translateY(-50%);
+    background-color: aqua;
+    // background-color: var(--color-action-list-item-default-hover-bg);
+    // opacity: 0;
+    // transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    // transition-property: opacity;
+    // visibility: hidden;
+  }
 }
