@@ -623,6 +623,7 @@
   position: absolute;
   right: 0;
   top: 0;
+  visibility: hidden;
 
   &:hover,
   &:focus {
@@ -630,21 +631,18 @@
     background-color: var(--color-action-list-item-default-hover-bg);
     border: $border-width $border-style var(--color-btn-hover-bg);
   }
+}
 
-  &::before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    min-height: 32px;
-    content: '';
-    transform: translateX(-50%) translateY(-50%);
-    background-color: aqua;
-    // background-color: var(--color-action-list-item-default-hover-bg);
-    // opacity: 0;
-    // transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-    // transition-property: opacity;
-    // visibility: hidden;
+.ActionList-item {
+  &:hover,
+  &:focus-within {
+    .ActionList-item-button {
+      visibility: visible;
+    }
   }
 }
+
+// notes to katie
+// offer hover prop for leading/trailing action
+// button styles
+// sub-group items etc etc
