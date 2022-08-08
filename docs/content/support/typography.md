@@ -53,7 +53,7 @@ $h6-size: 12px;
 ### Font weight variables
 
 ```scss
-$font-weight-bold: 700 !default;
+$font-weight-semibold: 600 !default;
 $font-weight-light: 300 !default;
 ```
 
