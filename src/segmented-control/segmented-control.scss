@@ -97,7 +97,7 @@
     display: block;
     height: 0;
     // stylelint-disable-next-line primer/typography
-    font-weight: var(--base-text-weight-semibold, $font-weight-bold);
+    font-weight: var(--base-text-weight-semibold, $font-weight-semibold);
     visibility: hidden;
     content: attr(data-content);
   }
