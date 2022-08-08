@@ -40,7 +40,7 @@
 
   &.SegmentedControl-button--selected {
     // stylelint-disable-next-line primer/typography
-    font-weight: var(--base-text-weight-semibold, $font-weight-bold);
+    font-weight: var(--base-text-weight-semibold, $font-weight-semibold);
     background-color: var(--color-btn-bg);
     border-color: var(--color-segmented-control-button-selected-border);
   }

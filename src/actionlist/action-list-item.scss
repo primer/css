@@ -141,7 +141,7 @@
   &.ActionList-item--navActive {
     &:not(.ActionList-item--subItem) {
       .ActionList-item-label {
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-semibold;
       }
     }
 
@@ -437,7 +437,7 @@
 
     &.ActionList-content--hasActiveSubItem {
       > .ActionList-item-label {
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-semibold;
       }
     }
   }
@@ -461,7 +461,7 @@
       background: var(--color-action-list-item-default-selected-bg);
 
       .ActionList-item-label {
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-semibold;
       }
 
       &::before,
@@ -542,7 +542,7 @@
   }
 
   .ActionList-item-label {
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-semibold;
   }
 }
 

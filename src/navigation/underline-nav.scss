@@ -59,7 +59,7 @@ $nav-height: $spacer-3 * 3 !default; // 48px
   [data-content]::before {
     display: block;
     height: 0;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-semibold;
     visibility: hidden;
     content: attr(data-content);
   }

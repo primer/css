@@ -11,32 +11,32 @@
 // These match heading utilities in utilities/typography
 @mixin h1 {
   font-size: $h1-size;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
 }
 
 @mixin h2 {
   font-size: $h2-size;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
 }
 
 @mixin h3 {
   font-size: $h3-size;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
 }
 
 @mixin h4 {
   font-size: $h4-size;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
 }
 
 @mixin h5 {
   font-size: $h5-size;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
 }
 
 @mixin h6 {
   font-size: $h6-size;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
 }
 
 // Responsive heading mixins
@@ -69,17 +69,17 @@
 @mixin h1-responsive {
   @include f1-responsive;
 
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
 }
 
 @mixin h2-responsive {
   @include f2-responsive;
 
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
 }
 
 @mixin h3-responsive {
   @include f3-responsive;
 
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
 }

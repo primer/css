@@ -58,7 +58,7 @@
 .h3,
 .h4,
 .h5,
-.h6 { font-weight: $font-weight-bold !important; }
+.h6 { font-weight: $font-weight-semibold !important; }
 
 // Type utilities that match type sale
 /* Set the font size to 26px */
@@ -228,7 +228,7 @@
 .wb-break-all { word-break: break-all !important; }
 
 .text-emphasized {
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
 }
 
 // List styles

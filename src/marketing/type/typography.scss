@@ -77,7 +77,7 @@
 
     @if (map-get($pairing, 'size') >= $mktg-body-spacing-threshold) { letter-spacing: $mktg-body-spacing-large !important; }
 
-    @if (map-get($pairing, 'size') >= $mktg-body-weight-threshold) { font-weight: $font-weight-semibold; }
+    @if (map-get($pairing, 'size') >= $mktg-body-weight-threshold) { font-weight: $font-weight-medium; }
 
     @if (nth($sizes, 1) != nth($sizes, 2)) {
       @include breakpoint(md) {

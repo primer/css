@@ -7,7 +7,7 @@
   // stylelint-disable-next-line primer/spacing
   padding: 5px $spacer-3;
   font-size: $body-font-size;
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-medium;
   // stylelint-disable-next-line primer/typography
   line-height: 20px; // Specifically not inherit our `<body>` default
   white-space: nowrap;
@@ -30,7 +30,7 @@
 
   i {
     font-style: normal;
-    font-weight: $font-weight-semibold;
+    font-weight: $font-weight-medium;
     opacity: 0.75;
   }
 

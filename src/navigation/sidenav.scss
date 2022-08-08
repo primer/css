@@ -94,6 +94,6 @@
 
 .SideNav-subItem[aria-current]:not([aria-current='false']),
 .SideNav-subItem[aria-selected='true'] {
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-medium;
   color: var(--color-fg-default);
 }

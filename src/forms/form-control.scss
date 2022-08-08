@@ -12,7 +12,7 @@ fieldset {
 }
 
 label {
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
 }
 
 .form-control,
@@ -278,6 +278,6 @@ input::-webkit-inner-spin-button {
   }
 
   a {
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-semibold;
   }
 }

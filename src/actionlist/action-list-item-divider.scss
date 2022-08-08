@@ -6,7 +6,7 @@
     display: flex;
     padding: ($spacer-1 * 1.5) $spacer-2;
     font-size: $font-size-small;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-semibold;
     color: var(--color-fg-muted);
     flex-direction: column;
   }
@@ -25,7 +25,7 @@
 
   .ActionList-sectionDivider-title {
     font-size: $font-size-small;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-semibold;
     color: var(--color-fg-muted);
   }
 }

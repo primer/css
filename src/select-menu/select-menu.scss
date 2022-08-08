@@ -115,7 +115,7 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-title {
   flex: 1;
   font-size: $body-font-size;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
 
   @include breakpoint(sm) {
     font-size: inherit;
@@ -251,7 +251,7 @@ $SelectMenu-max-height: 480px !default;
   flex: 1;
   padding: $spacer-2 $spacer-3;
   font-size: $font-size-small;
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-medium;
   color: var(--color-fg-muted);
   text-align: center;
   background-color: transparent;
@@ -314,7 +314,7 @@ $SelectMenu-max-height: 480px !default;
   padding: $spacer-1 $spacer-3;
   margin: 0;
   font-size: $font-size-small;
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-medium;
   color: var(--color-fg-muted);
   background-color: var(--color-canvas-subtle);
   border-bottom: $border-width $border-style var(--color-border-muted);
@@ -387,7 +387,7 @@ $SelectMenu-max-height: 480px !default;
 // Visible when a user clicks/taps on a list item
 
 .SelectMenu-item[aria-checked='true'] {
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-medium;
   color: var(--color-fg-default);
 
   .SelectMenu-icon--check {
