@@ -1,13 +1,13 @@
 // SegmentedControl
 
 .SegmentedControl {
+  position: relative;
   display: inline-flex;
   background-color: var(--color-segmented-control-bg);
   // stylelint-disable-next-line primer/borders
   border-radius: var(--primer-borderRadius-medium, $border-radius);
   // stylelint-disable-next-line primer/box-shadow
   box-shadow: var(--primer-borderInset-thin, inset 0 0 0 $border-width) var(--color-border-default);
-  position: relative;
 }
 
 // Button -----------------------------------------
