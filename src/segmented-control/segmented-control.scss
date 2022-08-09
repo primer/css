@@ -1,13 +1,19 @@
 // SegmentedControl
+// stylelint-disable selector-max-type
 
 .SegmentedControl {
-  position: relative;
   display: inline-flex;
+  list-style: none;
   background-color: var(--color-segmented-control-bg);
   // stylelint-disable-next-line primer/borders
   border-radius: var(--primer-borderRadius-medium, $border-radius);
   // stylelint-disable-next-line primer/box-shadow
   box-shadow: var(--primer-borderInset-thin, inset 0 0 0 $border-width) var(--color-border-default);
+
+  li {
+    position: relative;
+    display: inline-flex;
+  }
 }
 
 // Button -----------------------------------------
@@ -110,7 +116,8 @@
 .SegmentedControl--fullWidth {
   display: flex;
 
-  .SegmentedControl-button {
+  .SegmentedControl-button,
+  li {
     flex: 1;
     justify-content: center;
   }
