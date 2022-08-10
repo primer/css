@@ -1,6 +1,7 @@
 // SegmentedControl
 
 .SegmentedControl {
+  position: relative;
   display: inline-flex;
   background-color: var(--color-segmented-control-bg);
   // stylelint-disable-next-line primer/borders
