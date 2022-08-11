@@ -16,6 +16,8 @@ jobs:
     if: ${{ github.repository == 'primer/css' }}
     uses: primer/.github/.github/workflows/deploy_preview.yml@main
     name: Deploy preview
+    secrets:
+      gh_token: ${{ secrets.GITHUB_TOKEN }}
     with:
       node_version: 14
       install: yarn && cd docs && yarn && cd ..
