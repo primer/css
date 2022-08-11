@@ -1,5 +1,15 @@
 # @primer/css
 
+## 20.4.2
+
+### Patch Changes
+
+- [#2180](https://github.com/primer/css/pull/2180) [`c71e7df0`](https://github.com/primer/css/commit/c71e7df03b9f6816dd2ce7f3d343f92edbc8cf00) Thanks [@dgreif](https://github.com/dgreif)! - Fail dist build when for postcss warnings
+
+* [#2194](https://github.com/primer/css/pull/2194) [`5ee33aca`](https://github.com/primer/css/commit/5ee33acac56156eec990e50be0ecdfb370005b8e) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding position relative to SegmentedControl
+
+- [#2195](https://github.com/primer/css/pull/2195) [`f9e5db5e`](https://github.com/primer/css/commit/f9e5db5e4a01b2b0dae64a4d00d36cfe1df58792) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating the SegmentedControl component to role=list and use `ul`.
+
 ## 20.4.1
 
 ### Patch Changes
