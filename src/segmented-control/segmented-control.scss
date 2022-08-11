@@ -1,13 +1,19 @@
 // SegmentedControl
+// stylelint-disable selector-max-type
 
 .SegmentedControl {
-  position: relative;
   display: inline-flex;
+  list-style: none;
   background-color: var(--color-segmented-control-bg);
   // stylelint-disable-next-line primer/borders
   border-radius: var(--primer-borderRadius-medium, $border-radius);
   // stylelint-disable-next-line primer/box-shadow
   box-shadow: var(--primer-borderInset-thin, inset 0 0 0 $border-width) var(--color-border-default);
+
+  li {
+    position: relative;
+    display: inline-flex;
+  }
 }
 
 // Button -----------------------------------------
@@ -27,19 +33,19 @@
   // stylelint-disable-next-line primer/borders
   border-radius: var(--primer-borderRadius-medium, $border-radius);
 
-  &:not(.SegmentedControl-button--selected):hover .SegmentedControl-content {
+  &[aria-current='false']:hover .SegmentedControl-content {
     background-color: var(--color-segmented-control-button-hover-bg);
     transition-duration: var(--primer-duration-fast, 80ms);
   }
 
-  &:not(.SegmentedControl-button--selected):active .SegmentedControl-content {
+  &[aria-current='false']:active .SegmentedControl-content {
     background-color: var(--color-segmented-control-button-active-bg);
     transition-duration: 0;
   }
 
   // Selected
 
-  &.SegmentedControl-button--selected {
+  &[aria-current='true'] {
     // stylelint-disable-next-line primer/typography
     font-weight: var(--base-text-weight-semibold, $font-weight-bold);
     background-color: var(--color-btn-bg);
@@ -61,8 +67,8 @@
     transition: border-color var(--primer-duration-medium, 160ms) cubic-bezier(0.3, 0.1, 0.5, 1);
   }
 
-  &.SegmentedControl-button--selected::before,
-  &.SegmentedControl-button--selected + .SegmentedControl-button::before {
+  &[aria-current='true']::before,
+  &[aria-current='true'] + .SegmentedControl-button::before {
     border-color: transparent;
   }
 }
@@ -110,7 +116,8 @@
 .SegmentedControl--fullWidth {
   display: flex;
 
-  .SegmentedControl-button {
+  .SegmentedControl-button,
+  li {
     flex: 1;
     justify-content: center;
   }
