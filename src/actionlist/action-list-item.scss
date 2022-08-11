@@ -603,8 +603,8 @@
 }
 
 // TODO: replace with refactored IconButton
-.ActionList-item-button {
-  position: relative;
+button.ActionList-item-button {
+  //   position: relative;
   display: grid;
   width: $spacer-5;
   height: $spacer-5;
@@ -612,7 +612,7 @@
   color: var(--color-fg-muted);
   cursor: pointer;
   user-select: none;
-  background-color: transparent;
+  background: transparent;
   border: $border-width $border-style transparent;
   border-radius: $border-radius;
   transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
@@ -620,29 +620,48 @@
   place-content: center;
   align-self: flex-start;
   flex-shrink: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  visibility: hidden;
+  margin-left: 0;
+  line-height: unset;
 
   &:hover,
   &:focus {
     background-color: var(--color-btn-hover-bg);
     background-color: var(--color-action-list-item-default-hover-bg);
     border: $border-width $border-style var(--color-btn-hover-bg);
+    color: var(--color-fg-muted);
+  }
+
+  &.ActionList-item-button--leading {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &.ActionList-item-button--trailing {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &.ActionList-item-button--onHover {
+    visibility: hidden;
+
+    &:hover,
+    &:focus-within {
+      .ActionList-item-button {
+        visibility: visible;
+      }
+    }
   }
 }
 
-.ActionList-item {
-  &:hover,
-  &:focus-within {
-    .ActionList-item-button {
-      visibility: visible;
-    }
-  }
+.ActionList-item--withActions {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 // notes to katie
 // offer hover prop for leading/trailing action
 // button styles
 // sub-group items etc etc
+// action button height set per size option
+// move single and multi select to own component
