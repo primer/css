@@ -26,7 +26,7 @@
     "build:docs": "script/build-docs",
     "build:docs:preview": "script/build-docs preview",
     "dist": "script/dist.js",
-    "dist:watch": "chokidar \"src/**/*.scss\" -c \"script/dist.js\"",
+    "dist:watch": "chokidar \"src/**/*.scss\" -c \"script/build-css.js\"",
     "stylelint": "stylelint --quiet --rd 'src/**/*.scss'",
     "stylelint:fix": "yarn stylelint -- --fix",
     "stylelint:remove-disables": "script/stylelint-remove-disables.js 'src/**/*.scss'",
