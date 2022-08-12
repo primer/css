@@ -135,10 +135,8 @@
 
 // Icon only when narrow
 @media (max-width: $width-md) {
-  .SegmentedControl--iconOnly-whenNarrow {
-    .SegmentedControl-button {
-      width: var(--primer-control-medium-size, 32px);
-    }
+  .SegmentedControl-button--iconOnly-whenNarrow {
+    width: var(--primer-control-medium-size, 32px);
 
     .SegmentedControl-content {
       padding: 0;
@@ -163,7 +161,7 @@
 
   // reset for icon-only buttons
   .SegmentedControl-button--iconOnly,
-  .SegmentedControl--iconOnly-whenNarrow .SegmentedControl-button {
+  .SegmentedControl-button--iconOnly-whenNarrow {
     min-width: unset;
   }
 }
