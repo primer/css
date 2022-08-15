@@ -1,0 +1,18 @@
+// Gap spacer utilities
+// stylelint-disable block-opening-brace-space-before
+// stylelint-disable declaration-colon-space-before
+// stylelint-disable comment-empty-line-before
+// stylelint-disable primer/spacing
+
+// Loop through the breakpoint values
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    // Loop through the spacer values
+    @each $scale, $size in $spacer-map-extended {
+      @if ($scale < length($spacer-map)) {
+        /* Set a $size gap at $breakpoint */
+        .g#{$variant}-#{$scale}  { gap: $size !important; }
+      }
+    }
+  }
+}
