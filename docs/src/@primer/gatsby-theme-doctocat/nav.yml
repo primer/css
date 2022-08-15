@@ -39,6 +39,8 @@
       url: /utilities/margin
     - title: Padding
       url: /utilities/padding
+    - title: Gap
+      url: /utilities/gap
     - title: Typography
       url: /utilities/typography
 - title: Components
