@@ -13,6 +13,10 @@
   li {
     position: relative;
     display: inline-flex;
+
+    &:has([aria-current='true']) + li .SegmentedControl-button::before {
+      border-color: transparent;
+    }
   }
 }
 
@@ -54,8 +58,7 @@
 
   // Divider
 
-  // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
-  & + .SegmentedControl-button::before {
+  &[aria-current='false']::before {
     position: absolute;
     inset: var(--primer-borderWidth-thin, 1px) 0 0 calc(var(--primer-borderWidth-thin, 1px) * -1);
     height: var(--primer-text-body-size-large, 16px);
@@ -67,8 +70,7 @@
     transition: border-color var(--primer-duration-medium, 160ms) cubic-bezier(0.3, 0.1, 0.5, 1);
   }
 
-  &[aria-current='true']::before,
-  &[aria-current='true'] + .SegmentedControl-button::before {
+  &[aria-current='true']::before {
     border-color: transparent;
   }
 }
@@ -79,6 +81,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
   gap: var(--primer-control-medium-gap, $spacer-2);
   height: 100%;
   // stylelint-disable-next-line primer/spacing
