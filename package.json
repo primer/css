@@ -25,6 +25,7 @@
   "scripts": {
     "build:docs": "script/build-docs",
     "build:docs:preview": "script/build-docs preview",
+    "build:css": "script/build-css.js",
     "dist": "script/dist.js",
     "dist:watch": "chokidar \"src/**/*.scss\" -c \"script/dist.js\"",
     "stylelint": "stylelint --quiet --rd 'src/**/*.scss'",
