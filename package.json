@@ -1,6 +1,6 @@
 {
   "name": "@primer/css",
-  "version": "20.4.1",
+  "version": "20.4.2",
   "description": "The CSS implementation of GitHub's Primer Design System",
   "homepage": "https://primer.style/css",
   "author": "GitHub, Inc.",
@@ -25,6 +25,7 @@
   "scripts": {
     "build:docs": "script/build-docs",
     "build:docs:preview": "script/build-docs preview",
+    "build:css": "script/build-css.js",
     "dist": "script/dist.js",
     "dist:watch": "chokidar \"src/**/*.scss\" -c \"script/dist.js\"",
     "stylelint": "stylelint --quiet --rd 'src/**/*.scss'",
@@ -62,7 +63,7 @@
     "globby": "13.1.2",
     "jest": "28.1.3",
     "js-yaml": "4.1.0",
-    "postcss": "8.4.14",
+    "postcss": "8.4.16",
     "postcss-calc": "8.2.4",
     "postcss-import": "14.1.0",
     "postcss-load-config": "4.0.1",
