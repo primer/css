@@ -19,9 +19,11 @@
     font-size: map-get($pairing, 'size') !important;
     line-height: map-get($pairing, 'lh') !important;
 
-    @if (map-get($pairing, 'size') >= $mktg-header-weight-threshold) { 
+    @if (map-get($pairing, 'size') >= $mktg-header-weight-threshold) {
       font-weight: $mktg-header-weight-large;
-    } @else {
+    }
+
+    @else {
       font-weight: $mktg-header-weight-default;
     }
 
