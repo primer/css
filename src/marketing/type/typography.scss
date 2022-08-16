@@ -130,3 +130,16 @@
 .text-heavy {
   font-weight: $font-weight-heavy !important;
 }
+
+// Font width utilities
+.text-extra-condensed {
+  font-stretch: 75%;
+}
+
+.text-condensed {
+  font-stretch: 87.5%;
+}
+
+.text-expanded {
+  font-stretch: 125%;
+}
