@@ -7,8 +7,6 @@
 .h5-mktg,
 .h6-mktg {
   font-family: $font-mktg;
-  // stylelint-disable-next-line primer/typography
-  font-weight: $mktg-header-weight-default !important;
   letter-spacing: $mktg-header-spacing-default !important;
 }
 
@@ -21,7 +19,11 @@
     font-size: map-get($pairing, 'size') !important;
     line-height: map-get($pairing, 'lh') !important;
 
-    @if (map-get($pairing, 'size') >= $mktg-header-weight-threshold) { font-weight: $mktg-header-weight-large !important; }
+    @if (map-get($pairing, 'size') >= $mktg-header-weight-threshold) { 
+      font-weight: $mktg-header-weight-large;
+    } @else {
+      font-weight: $mktg-header-weight-default;
+    }
 
     @if (nth($sizes, 1) != nth($sizes, 2)) {
       @include breakpoint(md) {
@@ -33,7 +35,7 @@
         }
 
         @if (map-get($pairing-md, 'size') >= $mktg-header-weight-threshold and map-get($pairing, 'size') < $mktg-header-weight-threshold) {
-          font-weight: $mktg-header-weight-large !important;
+          font-weight: $mktg-header-weight-large;
         }
       }
     }
@@ -48,7 +50,7 @@
         }
 
         @if (map-get($pairing-lg, 'size') >= $mktg-header-weight-threshold and map-get($pairing-md, 'size') < $mktg-header-weight-threshold) {
-          font-weight: $mktg-header-weight-large !important;
+          font-weight: $mktg-header-weight-large;
         }
       }
     }
