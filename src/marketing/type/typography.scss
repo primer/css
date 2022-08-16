@@ -1,4 +1,4 @@
-// Headings
+// Headers
 .h0-mktg,
 .h1-mktg,
 .h2-mktg,
@@ -57,6 +57,7 @@
   }
 }
 
+// Body text
 .f0-mktg,
 .f1-mktg,
 .f2-mktg,
@@ -113,6 +114,7 @@
   }
 }
 
+// Font weight utilities
 .text-extra-light {
   font-weight: $font-weight-ultra-light !important;
 }
