@@ -21,9 +21,7 @@
 
     @if (map-get($pairing, 'size') >= $mktg-header-weight-threshold) {
       font-weight: $mktg-header-weight-large;
-    }
-
-    @else {
+    } @else {
       font-weight: $mktg-header-weight-default;
     }
 
