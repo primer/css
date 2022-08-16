@@ -9,30 +9,11 @@
   border-radius: var(--primer-borderRadius-medium, $border-radius);
   // stylelint-disable-next-line primer/box-shadow
   box-shadow: var(--primer-borderInset-thin, inset 0 0 0 $border-width) var(--color-border-default);
-
-  li {
-    position: relative;
-    display: inline-flex;
-
-    // stylelint-disable-next-line selector-max-compound-selectors
-    &:has([aria-current='true']) + li .SegmentedControl-button::before {
-      border-color: transparent;
-    }
-  }
 }
 
-// Button -----------------------------------------
-
-.SegmentedControl-button {
+.SegmentedControl-item {
   position: relative;
   display: inline-flex;
-  height: var(--primer-control-medium-size, 32px);
-  // stylelint-disable-next-line primer/spacing
-  padding: calc(var(--primer-control-xsmall-paddingInline-condensed, 4px) - var(--primer-borderWidth-thin, 1px));
-  // stylelint-disable-next-line primer/typography
-  font-size: var(--primer-text-body-size-medium, $body-font-size);
-  color: var(--color-fg-default);
-  background-color: transparent;
   // stylelint-disable-next-line primer/borders
   border: var(--primer-borderWidth-thin, $border-width) $border-style transparent;
   // stylelint-disable-next-line primer/borders
@@ -55,6 +36,10 @@
     font-weight: var(--base-text-weight-semibold, $font-weight-bold);
     background-color: var(--color-btn-bg);
     border-color: var(--color-segmented-control-button-selected-border);
+
+    + .SegmentedControl-item::before {
+      border-color: transparent;
+    }
   }
 
   // Divider
@@ -73,6 +58,28 @@
 
   &[aria-current='true']::before {
     border-color: transparent;
+  }
+}
+
+// Button -----------------------------------------
+
+.SegmentedControl-button {
+  position: relative;
+  display: inline-flex;
+  height: var(--primer-control-medium-size, 32px);
+  // stylelint-disable-next-line primer/spacing
+  padding: calc(var(--primer-control-xsmall-paddingInline-condensed, 4px) - var(--primer-borderWidth-thin, 1px));
+  // stylelint-disable-next-line primer/typography
+  font-size: var(--primer-text-body-size-medium, $body-font-size);
+  color: var(--color-fg-default);
+  background-color: transparent;
+  // stylelint-disable-next-line primer/borders
+  border: transparent;
+  // stylelint-disable-next-line primer/borders
+  border-radius: var(--primer-borderRadius-medium, $border-radius);
+
+  &:focus-visible {
+    outline-offset: -1px;
   }
 }
 
