@@ -20,8 +20,8 @@ $edges: (
   left: (bottom-left, top-left)
 ) !default;
 
-// These are our margin and padding utility spacers. The default step size we
-// use is 8px. This gives us a key of:
+// These are our margin, padding, and gap utility spacers. The default step
+// size we use is 8px. This gives us a key of:
 //    0 => 0px
 //    1 => 4px
 //    2 => 8px

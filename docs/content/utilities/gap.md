@@ -6,7 +6,7 @@ source: 'https://github.com/primer/css/blob/main/src/utilities/gap.scss'
 bundle: utilities
 ---
 
-Gap utilities can be used on elements with a display type of `flex` or `grid` to create consistent gaps between child elements. This can replace the need for using margins in many cases.
+Gap utilities can be used on elements with a display type of `flex` or `grid` to create consistent spacing between child elements. This can replace the need for using margins in many cases.
 
 Gap utilities are based on a global [spacing scale](/support/spacing) which helps keep spacing consistent. These utilities help us reduce the amount of custom CSS that share the same properties, and allows to achieve many different page layouts using the same styles.
 
