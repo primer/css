@@ -24,12 +24,6 @@ Since gap utilities have many variations and will be used in many places, we use
 | 4   | 24px  |
 | 5   | 32px  |
 | 6   | 40px  |
-| 7   | 48px  |
-| 8   | 64px  |
-| 9   | 80px  |
-| 10  | 96px  |
-| 11  | 112px |
-| 12  | 128px |
 
 
 ## Reset gap
