@@ -26,6 +26,49 @@ Since gap utilities have many variations and will be used in many places, we use
 | 6   | 40px  |
 
 
+## Gap utilities
+
+Use gap utilities on parent elements to apply equal spacing between all of their child elements. These utilities can be used with a spacing scale from 0-6.
+
+```html live
+<div class="mt-3 color-bg-attention d-flex gap-0">
+  <div class="color-bg-subtle p-1">.gap-0</div>
+  <div class="color-bg-subtle p-1">.gap-0</div>
+  <div class="color-bg-subtle p-1">.gap-0</div>
+</div>
+<div class="mt-3 color-bg-attention d-flex gap-1">
+  <div class="color-bg-subtle p-1">.gap-1</div>
+  <div class="color-bg-subtle p-1">.gap-1</div>
+  <div class="color-bg-subtle p-1">.gap-1</div>
+</div>
+<div class="mt-3 color-bg-attention d-flex gap-2">
+  <div class="color-bg-subtle p-1">.gap-2</div>
+  <div class="color-bg-subtle p-1">.gap-2</div>
+  <div class="color-bg-subtle p-1">.gap-2</div>
+</div>
+<div class="mt-3 color-bg-attention d-flex gap-3">
+  <div class="color-bg-subtle p-1">.gap-3</div>
+  <div class="color-bg-subtle p-1">.gap-3</div>
+  <div class="color-bg-subtle p-1">.gap-3</div>
+</div>
+<div class="mt-3 color-bg-attention d-flex gap-4">
+  <div class="color-bg-subtle p-1">.gap-4</div>
+  <div class="color-bg-subtle p-1">.gap-4</div>
+  <div class="color-bg-subtle p-1">.gap-4</div>
+</div>
+<div class="mt-3 color-bg-attention d-flex gap-5">
+  <div class="color-bg-subtle p-1">.gap-5</div>
+  <div class="color-bg-subtle p-1">.gap-5</div>
+  <div class="color-bg-subtle p-1">.gap-5</div>
+</div>
+<div class="mt-3 color-bg-attention d-flex gap-6">
+  <div class="color-bg-subtle p-1">.gap-6</div>
+  <div class="color-bg-subtle p-1">.gap-6</div>
+  <div class="color-bg-subtle p-1">.gap-6</div>
+</div>
+```
+
+
 ## Reset gap
 Reset gap values built into components with `gap-0`.
 
