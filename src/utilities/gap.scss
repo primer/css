@@ -8,11 +8,8 @@
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
     // Loop through the spacer values
-    @each $scale, $size in $spacer-map-extended {
-      @if ($scale < length($spacer-map)) {
-        /* Set a $size gap at $breakpoint */
-        .gap#{$variant}-#{$scale}  { gap: $size !important; }
-      }
+    @each $scale, $size in $spacer-map {
+      .gap#{$variant}-#{$scale}  { gap: $size !important; }
     }
   }
 }
