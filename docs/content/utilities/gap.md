@@ -17,7 +17,6 @@ Since gap utilities have many variations and will be used in many places, we use
 
 | Shorthand | Description |
 | --- | --- |
-| g   | gap   |
 | 0   | 0     |
 | 1   | 4px   |
 | 2   | 8px   |
@@ -34,9 +33,9 @@ Since gap utilities have many variations and will be used in many places, we use
 
 
 ## Reset gap
-Reset gap values built into components with `g-0`.
+Reset gap values built into components with `gap-0`.
 
 
 ## Responsive gaps
 
-All gap utilities can be adjusted per [breakpoint](/utilities/grid#breakpoints) using the following formula: `g-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.
+All gap utilities can be adjusted per [breakpoint](/utilities/grid#breakpoints) using the following formula: `gap-[breakpoint]-[spacer]`. Each responsive style is applied to the specified breakpoint and up.

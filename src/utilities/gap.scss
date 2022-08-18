@@ -11,7 +11,7 @@
     @each $scale, $size in $spacer-map-extended {
       @if ($scale < length($spacer-map)) {
         /* Set a $size gap at $breakpoint */
-        .g#{$variant}-#{$scale}  { gap: $size !important; }
+        .gap#{$variant}-#{$scale}  { gap: $size !important; }
       }
     }
   }
