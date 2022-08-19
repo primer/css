@@ -24,10 +24,6 @@
 @import '../pagination/index.scss';
 @import '../tooltips/index.scss';
 @import '../truncate/index.scss';
-@import '../button-refactor/button.scss';
-@import '../button-refactor/link.scss';
-@import '../button-refactor/icon-button.scss';
-@import '../button-refactor/link-styled-as-button.scss';
-@import '../button-refactor/button-group.scss';
+@import '../button-refactor/index.scss';
 // Utilities always go last so that they can override components
 @import '../utilities/index.scss';

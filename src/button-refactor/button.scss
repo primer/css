@@ -58,6 +58,11 @@
   }
 }
 
+.Button-withTooltip {
+    position: relative;
+    display: inline-block;
+}
+
 a.Button,
 summary.Button {
   display: inline-flex;
@@ -223,21 +228,21 @@ summary.Button {
 
 // link color without svg
 .Button--invisible {
-  color: var(--color-accent-fg);
-  fill: var(--color-fg-muted);
+  color: var(--color-fg-default);
+  fill: var(--color-fg-default);
   border: none;
 
   &:hover,
   [open] > & {
-    background-color: var(--color-action-list-item-default-hover-bg);
+    background-color: var(--color-segmented-control-button-hover-bg);
   }
 
   &[aria-pressed='true'],
   &:active,
   &.Button--active,
   &.Button--pressed {
-    background-color: var(--color-btn-selected-bg);
-    box-shadow: var(--color-primer-shadow-inset);
+    background-color: var(--color-segmented-control-button-active-bg);
+    // box-shadow: var(--color-primer-shadow-inset);
   }
 
   &:disabled,
