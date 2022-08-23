@@ -191,6 +191,7 @@
 /* Set the font weight to normal */
 .text-normal { font-weight: $font-weight-normal !important; }
 /* Set the font weight to other weights */
+.text-bold { font-weight: $font-weight-semibold !important; } /* Deprecated for now, remapped to semibold */
 .text-semibold { font-weight: $font-weight-semibold !important; }
 .text-medium { font-weight: $font-weight-medium !important; }
 .text-light { font-weight: $font-weight-light !important; }
