@@ -1,5 +1,15 @@
 # @primer/css
 
+## 20.4.3
+
+### Patch Changes
+
+- [#2208](https://github.com/primer/css/pull/2208) [`83e43486`](https://github.com/primer/css/commit/83e43486d83350b331953f3c3be450ee79eaa783) Thanks [@jonrohan](https://github.com/jonrohan)! - Moving segmented_control.css to primer_view_components
+
+* [#2202](https://github.com/primer/css/pull/2202) [`b74e78b2`](https://github.com/primer/css/commit/b74e78b2539925956ec19aa3efbf2410dc1167e0) Thanks [@jonrohan](https://github.com/jonrohan)! - Rename SegmentedControl--iconOnly-whenNarrow to SegmentedControl-button--iconOnly-whenNarrow and place on button
+
+- [#2191](https://github.com/primer/css/pull/2191) [`e175f69d`](https://github.com/primer/css/commit/e175f69dd87fb3b54f46130dbdae18b75e9263ad) Thanks [@josepmartins](https://github.com/josepmartins)! - Bump @primer/gatsby-theme-doctocat from 3.1.1 to 4.0.0 in /docs
+
 ## 20.4.2
 
 ### Patch Changes
