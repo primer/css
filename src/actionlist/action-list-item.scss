@@ -1,9 +1,9 @@
 // stylelint-disable max-nesting-depth, selector-max-specificity, selector-max-compound-selectors
 
-@mixin activeIndicatorLine {
+@mixin activeIndicatorLine($padding-left: -$actionList-item-padding-horizontal) {
   position: absolute;
   top: calc(50% - 12px);
-  left: -$actionList-item-padding-horizontal;
+  left: $padding-left;
   width: $spacer-1;
   height: $spacer-4;
   content: '';
@@ -110,6 +110,29 @@
       &:active {
         background-color: var(--color-action-list-item-default-active-bg);
       }
+    }
+  }
+
+  // Autocomplete [aria-selected] items
+
+  &[aria-selected='true'] {
+    font-weight: $font-weight-normal;
+    background: var(--color-action-list-item-default-selected-bg);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-action-list-item-default-hover-bg);
+      }
+    }
+
+    &::before,
+    + .ActionList-item::before {
+      visibility: hidden;
+    }
+
+    // blue accent line
+    &::after {
+      @include activeIndicatorLine(-$spacer-1);
     }
   }
 

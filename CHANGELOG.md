@@ -1,5 +1,61 @@
 # @primer/css
 
+## 20.4.3
+
+### Patch Changes
+
+- [#2208](https://github.com/primer/css/pull/2208) [`83e43486`](https://github.com/primer/css/commit/83e43486d83350b331953f3c3be450ee79eaa783) Thanks [@jonrohan](https://github.com/jonrohan)! - Moving segmented_control.css to primer_view_components
+
+* [#2202](https://github.com/primer/css/pull/2202) [`b74e78b2`](https://github.com/primer/css/commit/b74e78b2539925956ec19aa3efbf2410dc1167e0) Thanks [@jonrohan](https://github.com/jonrohan)! - Rename SegmentedControl--iconOnly-whenNarrow to SegmentedControl-button--iconOnly-whenNarrow and place on button
+
+- [#2191](https://github.com/primer/css/pull/2191) [`e175f69d`](https://github.com/primer/css/commit/e175f69dd87fb3b54f46130dbdae18b75e9263ad) Thanks [@josepmartins](https://github.com/josepmartins)! - Bump @primer/gatsby-theme-doctocat from 3.1.1 to 4.0.0 in /docs
+
+## 20.4.2
+
+### Patch Changes
+
+- [#2180](https://github.com/primer/css/pull/2180) [`c71e7df0`](https://github.com/primer/css/commit/c71e7df03b9f6816dd2ce7f3d343f92edbc8cf00) Thanks [@dgreif](https://github.com/dgreif)! - Fail dist build when for postcss warnings
+
+* [#2194](https://github.com/primer/css/pull/2194) [`5ee33aca`](https://github.com/primer/css/commit/5ee33acac56156eec990e50be0ecdfb370005b8e) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding position relative to SegmentedControl
+
+- [#2195](https://github.com/primer/css/pull/2195) [`f9e5db5e`](https://github.com/primer/css/commit/f9e5db5e4a01b2b0dae64a4d00d36cfe1df58792) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating the SegmentedControl component to role=list and use `ul`.
+
+## 20.4.1
+
+### Patch Changes
+
+- [#2178](https://github.com/primer/css/pull/2178) [`2df59776`](https://github.com/primer/css/commit/2df5977613d4b196e0eb08c49f290d18f74dd412) Thanks [@jonrohan](https://github.com/jonrohan)! - Fix: autoprefix giving a warning about align-content
+
+## 20.4.0
+
+### Minor Changes
+
+- [#2152](https://github.com/primer/css/pull/2152) [`edac9edb`](https://github.com/primer/css/commit/edac9edbcf833fc76d406d225b6cf6abfa2b7f99) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Add Stack component
+
+### Patch Changes
+
+- [#2177](https://github.com/primer/css/pull/2177) [`add769c9`](https://github.com/primer/css/commit/add769c97193b387de2fbfb4b0a66c7157826563) Thanks [@langermank](https://github.com/langermank)! - Autocomplete item selected state
+
+* [#2174](https://github.com/primer/css/pull/2174) [`97f178d7`](https://github.com/primer/css/commit/97f178d7dedb92c713f1e684384db089c71eeae6) Thanks [@simurai](https://github.com/simurai)! - Prevent `SegmentedControl-text` from wrapping
+
+- [#2168](https://github.com/primer/css/pull/2168) [`a52afe7e`](https://github.com/primer/css/commit/a52afe7e7d34cccf550b43c052777a392bb7229f) Thanks [@owenniblock](https://github.com/owenniblock)! - Increases z-index for .show-on-focus
+
+* [#2176](https://github.com/primer/css/pull/2176) [`d8c218ab`](https://github.com/primer/css/commit/d8c218aba8b16a80a96b39ca086df34ed4c307df) Thanks [@langermank](https://github.com/langermank)! - Add `aria-selected` to ActionList-item for Autocomplete
+
+- [#2090](https://github.com/primer/css/pull/2090) [`8016e3c5`](https://github.com/primer/css/commit/8016e3c507d8e72be1b32520cc548c362290a73c) Thanks [@Luckz](https://github.com/Luckz)! - Remove article
+
+## 20.3.0
+
+### Minor Changes
+
+- [#2147](https://github.com/primer/css/pull/2147) [`9dd2a49e`](https://github.com/primer/css/commit/9dd2a49e2633f337c2316a43907f17dfd5c3173b) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Add AppFrame component
+
+### Patch Changes
+
+- [#2083](https://github.com/primer/css/pull/2083) [`13be7ef1`](https://github.com/primer/css/commit/13be7ef18d2d9874e7a08f20d9f93538752517c6) Thanks [@simurai](https://github.com/simurai)! - Add `SegmentedControl` component
+
+* [#2171](https://github.com/primer/css/pull/2171) [`d2b4d698`](https://github.com/primer/css/commit/d2b4d698882f57a6c4a08e66c10bdca27924046f) Thanks [@khiga8](https://github.com/khiga8)! - Add .tooltipped to deprecations json
+
 ## 20.2.4
 
 ### Patch Changes
