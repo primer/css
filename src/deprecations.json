@@ -1,5 +1,6 @@
 {
   "selectors": {
+    "text-bold": "text-semibold",
     "color-text-primary": "color-fg-default",
     "color-text-secondary": "color-fg-muted",
     "color-text-tertiary": "color-fg-muted",
@@ -355,6 +356,7 @@
   },
 
   "variables": {
+    "$font-weight-bold": "$font-weight-semibold",
     "$h000-size": null,
     "$h000-size-mobile": null,
     "$bg-black": null,
