@@ -146,6 +146,13 @@ export default {
       table: {
         category: 'Input'
       }
+    },
+    readOnly: {
+      description: 'readonly styles',
+      control: {type: 'boolean'},
+      table: {
+        category: 'Input'
+      }
     }
   }
 }
@@ -173,7 +180,8 @@ export const InputTemplate = ({
   caption,
   validation,
   trailingActionDivider,
-  validationStatus
+  validationStatus,
+  readOnly
 }) => (
   <>
     <div className={clsx('FormControl', fullWidth && 'FormControl--fullWidth')}>
@@ -212,6 +220,7 @@ export const InputTemplate = ({
             placeholder={placeholder}
             id="input-id"
             type="text"
+            readonly={readOnly ? 'true' : 'false'}
             className={clsx(
               'FormControl-input',
               size && `${size}`,
@@ -253,6 +262,7 @@ export const InputTemplate = ({
           id="input-id"
           type="text"
           disabled={disabled ? 'true' : undefined}
+          readonly={readOnly ? 'true' : 'false'}
           className={clsx(
             'FormControl-input',
             size && `${size}`,
@@ -307,5 +317,6 @@ Playground.args = {
   visuallyHidden: false,
   validation: '',
   trailingActionDivider: false,
-  validationStatus: 0
+  validationStatus: 0,
+  readOnly: false
 }

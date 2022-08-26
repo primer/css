@@ -165,14 +165,18 @@
 
   &.FormControl-inset {
     background-color: var(--color-canvas-inset);
+
+    &:focus-visible,
+    &:focus {
+      background-color: var(--color-canvas-default);
+    }
   }
 
   &.FormControl-monospace {
-    font-family:
-      var(
-        --primer-fontStack-monospace,
-        'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace'
-      );
+    font-family: var(
+      --primer-fontStack-monospace,
+      'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace'
+    );
   }
 
   // validation states
@@ -284,11 +288,10 @@
 	*/
   &.FormControl-input-wrap--leadingVisual {
     .FormControl-input {
-      padding-inline-start:
-        calc(
-          var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+      padding-inline-start: calc(
+        var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
           var(--primer-control-medium-gap, 8px)
-        ); /* 32px */
+      ); /* 32px */
     }
   }
 
@@ -302,11 +305,10 @@
   // if trailingAction is present
   &.FormControl-input-wrap--trailingAction {
     .FormControl-input {
-      padding-inline-end:
-        calc(
-          var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+      padding-inline-end: calc(
+        var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
           var(--primer-control-medium-gap, 8px)
-        ); /* 32px */
+      ); /* 32px */
     }
 
     /*
@@ -321,11 +323,10 @@
     // can be refactored to has(.FormControl-input-trailingAction--divider)
     &.FormControl-input-wrap-trailingAction--divider {
       .FormControl-input {
-        padding-inline-end:
-          calc(
-            var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+        padding-inline-end: calc(
+          var(--primer-control-medium-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
             var(--primer-control-medium-gap, 8px) + var(--primer-borderWidth-thin, 1px)
-          ); /* 33px */
+        ); /* 33px */
       }
     }
   }
@@ -347,11 +348,10 @@
     */
     &.FormControl-input-wrap--trailingAction {
       .FormControl-input.FormControl-small {
-        padding-inline-end:
-          calc(
-            var(--primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+        padding-inline-end: calc(
+          var(--primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
             var(--primer-control-small-gap, 8px)
-          ); /* 28px */
+        ); /* 28px */
       }
 
       /*
@@ -364,11 +364,10 @@
 			*/
       &.FormControl-input-wrap-trailingAction--divider {
         .FormControl-input.FormControl-small {
-          padding-inline-end:
-            calc(
-              var(--primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
+          padding-inline-end: calc(
+            var(--primer-control-small-paddingInline-condensed, 8px) + var(--base-size-16, 16px) +
               var(--primer-control-small-gap, 8px) + var(--primer-borderWidth-thin, 1px)
-            ); /* 29px */
+          ); /* 29px */
         }
       }
     }
@@ -398,11 +397,10 @@
     */
     &.FormControl-input-wrap--leadingVisual {
       .FormControl-input.FormControl-large {
-        padding-inline-start:
-          calc(
-            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+        padding-inline-start: calc(
+          var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
             var(--primer-control-large-gap, 8px)
-          ); /* 36px */
+        ); /* 36px */
       }
     }
 
@@ -415,11 +413,10 @@
     */
     &.FormControl-input-wrap--trailingAction {
       .FormControl-input.FormControl-large {
-        padding-inline-end:
-          calc(
-            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+        padding-inline-end: calc(
+          var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
             var(--primer-control-large-gap, 8px)
-          ); /* 36px */
+        ); /* 36px */
       }
 
       /*
@@ -431,11 +428,10 @@
 			*/
       &.FormControl-input-wrap-trailingAction--divider {
         .FormControl-input.FormControl-large {
-          padding-inline-end:
-            calc(
-              var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
+          padding-inline-end: calc(
+            var(--primer-control-large-paddingInline-normal, 12px) + var(--base-size-16, 16px) +
               var(--primer-control-large-gap, 8px) + var(--primer-borderWidth-thin, 1px)
-            ); /* 37px */
+          ); /* 37px */
         }
       }
     }
