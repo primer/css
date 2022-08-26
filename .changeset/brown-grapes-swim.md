@@ -3,4 +3,4 @@
 ---
 
 - Adding readonly styles
-- Fixing focus background color for inset field
+- Fixing focus background color for inset field 
