@@ -134,8 +134,7 @@
   }
 
   &[readonly] {
-    background-color: var(--color-primer-fg-disabled);
-    border-color: var(--color-primer-fg-disabled);
+    background-color: var(--color-input-disabled-bg);
   }
 
   ::placeholder {
