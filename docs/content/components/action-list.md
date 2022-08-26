@@ -149,13 +149,15 @@ When using a section label for a group, give the `h3` an id to be referenced by 
         List group title
         </h3>
     </li>
-    <ul class="ActionList" aria-labelledby="group-id">
-        <li class="ActionList-item">
-            <a href="/" class="ActionList-content">
-                <span class="ActionList-item-label">Group Item</span>
-            </a>
-        </li>
-    </ul>
+    <li>
+      <ul class="ActionList" aria-labelledby="group-id">
+          <li class="ActionList-item">
+              <a href="/" class="ActionList-content">
+                  <span class="ActionList-item-label">Group Item</span>
+              </a>
+         </li>
+      </ul>
+    </li>
 </ul>
 ```
 
@@ -168,13 +170,15 @@ When using a section label for a group, give the `h3` an id to be referenced by 
         List group title
         </h3>
     </li>
-    <ul class="ActionList" aria-labelledby="group-id">
-        <li class="ActionList-item">
-            <a href="/" class="ActionList-content">
-                <span class="ActionList-item-label">Group Item</span>
-            </a>
-        </li>
-    </ul>
+    <li>
+      <ul class="ActionList" aria-labelledby="group-id">
+          <li class="ActionList-item">
+              <a href="/" class="ActionList-content">
+                  <span class="ActionList-item-label">Group Item</span>
+              </a>
+          </li>
+      </ul>
+    </li>
 </ul>
 ```
 
