@@ -220,7 +220,7 @@ export const InputTemplate = ({
             placeholder={placeholder}
             id="input-id"
             type="text"
-            readonly={readOnly ? 'true' : 'false'}
+            readonly={readOnly ? 'true' : undefined}
             className={clsx(
               'FormControl-input',
               size && `${size}`,
@@ -262,7 +262,7 @@ export const InputTemplate = ({
           id="input-id"
           type="text"
           disabled={disabled ? 'true' : undefined}
-          readonly={readOnly ? 'true' : 'false'}
+          readonly={readOnly ? 'true' : undefined}
           className={clsx(
             'FormControl-input',
             size && `${size}`,
