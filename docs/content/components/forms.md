@@ -56,15 +56,15 @@ Form controls in Primer CSS currently have no basic layout specified (this is by
 <form>
   <label for="name">Name</label>
   <input class="form-control" type="text" id="name" />
-
+  <br />
   <label for="email">Email address</label>
   <input class="form-control" type="email" id="email" />
-
+  <br />
   <label> <input type="checkbox" /> Remember me </label>
-
+  <br />
   <label> <input type="radio" id="potato" name="radio-group-example" checked /> Potato </label>
   <label> <input type="radio" id="tomato" name="radio-group-example" /> Tomato </label>
-
+  <br />
   <button class="btn" type="submit">Submit</button>
 </form>
 ```
