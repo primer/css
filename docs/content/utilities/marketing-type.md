@@ -6,20 +6,20 @@ source: 'https://github.com/primer/css/tree/main/src/marketing/type'
 bundle: marketing-type
 ---
 
-The typography for our marketing pages differs from Primer CSS's core—it is responsive, on a slightly different scale, and headlines are set in the [defined marketing font](https://github.com/primer/css/blob/main/src/marketing/support/variables.scss).
+The typography for our marketing pages differs from Primer CSS's core. It is responsive, on a slightly different scale, and headlines are set in the [defined marketing font](https://github.com/primer/css/blob/main/src/marketing/support/variables.scss).
 
 ## Heading utilities
 
 Use `.h0-mktg` – `.h6-mktg` to change an element's font, size, and weight on marketing pages.
 
 ```html live title="Heading Utilities"
-<p class="h0-mktg">This is a heading 0</p>
-<p class="h1-mktg">This is a heading 1</p>
-<p class="h2-mktg">This is a heading 2</p>
-<p class="h3-mktg">This is a heading 3</p>
-<p class="h4-mktg">This is a heading 4</p>
-<p class="h5-mktg">This is a heading 5</p>
-<p class="h6-mktg">This is a heading 6</p>
+<p class="h0-mktg">This is heading 0</p>
+<p class="h1-mktg">This is heading 1</p>
+<p class="h2-mktg">This is heading 2</p>
+<p class="h3-mktg">This is heading 3</p>
+<p class="h4-mktg">This is heading 4</p>
+<p class="h5-mktg">This is heading 5</p>
+<p class="h6-mktg">This is heading 6</p>
 ```
 
 ## Body content utilities
