@@ -161,7 +161,7 @@ $primer-borderRadius-large: 0.75rem;
 		// stylelint-disable-next-line primer/box-shadow
 		box-shadow: inset 0 #{-$border-width} var(--color-border-default);
 
-		+.Overlay-body {
+		+ .Overlay-body {
 			padding-top: $spacer-3;
 		}
 	}
