@@ -133,6 +133,10 @@
     }
   }
 
+  &[readonly] {
+    background-color: var(--color-input-disabled-bg);
+  }
+
   ::placeholder {
     color: var(--color-fg-subtle);
     opacity: 1;
@@ -161,6 +165,11 @@
 
   &.FormControl-inset {
     background-color: var(--color-canvas-inset);
+
+    &:focus-visible,
+    &:focus {
+      background-color: var(--color-canvas-default);
+    }
   }
 
   &.FormControl-monospace {
