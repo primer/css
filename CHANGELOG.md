@@ -1,5 +1,23 @@
 # @primer/css
 
+## 20.4.4
+
+### Patch Changes
+
+- [#2218](https://github.com/primer/css/pull/2218) [`6205337b`](https://github.com/primer/css/commit/6205337b4c871b6ce431c8b211ddb0bbd176946f) Thanks [@langermank](https://github.com/langermank)! - - Adding readonly styles
+  - Fixing focus background color for inset field
+
+* [#2211](https://github.com/primer/css/pull/2211) [`8e5f6224`](https://github.com/primer/css/commit/8e5f62244192a8e2a191be7e7ad20d00f4b4bedb) Thanks [@imjohnbo](https://github.com/imjohnbo)! - Remove outline reset of `.SelectMenu-closeButton`
+
+- [#2220](https://github.com/primer/css/pull/2220) [`1a8e7db5`](https://github.com/primer/css/commit/1a8e7db5f6c7b369fcfb6598df2edc42d0511da7) Thanks [@reeceatkinson](https://github.com/reeceatkinson)! - Update Marketing Typography (marketing-type.md)
+
+* [#2229](https://github.com/primer/css/pull/2229) [`8a4c0878`](https://github.com/primer/css/commit/8a4c0878857ff65447906bf7d969211f96715197) Thanks [@jonrohan](https://github.com/jonrohan)! - ActionList hide the first divider if there's hidden items in front of it.
+
+- [#2225](https://github.com/primer/css/pull/2225) [`56ea4ab1`](https://github.com/primer/css/commit/56ea4ab17644ad0d521373f700d551d66217268a) Thanks [@langermank](https://github.com/langermank)! - Overlay updates for Alpha::Dialog
+  - Size improvements
+  - Support buttom and side sheets
+  - Preliminary animations for sheets
+
 ## 20.4.3
 
 ### Patch Changes
