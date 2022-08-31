@@ -1,6 +1,6 @@
 {
   "name": "@primer/css",
-  "version": "20.4.1",
+  "version": "20.4.4",
   "description": "The CSS implementation of GitHub's Primer Design System",
   "homepage": "https://primer.style/css",
   "author": "GitHub, Inc.",
@@ -25,6 +25,7 @@
   "scripts": {
     "build:docs": "script/build-docs",
     "build:docs:preview": "script/build-docs preview",
+    "build:css": "script/build-css.js",
     "dist": "script/dist.js",
     "dist:watch": "chokidar \"src/**/*.scss\" -c \"script/dist.js\"",
     "stylelint": "stylelint --quiet --rd 'src/**/*.scss'",
@@ -44,17 +45,17 @@
     "@primer/primitives": "^7.9.0"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "0.4.5",
-    "@changesets/cli": "2.23.2",
+    "@changesets/changelog-github": "0.4.6",
+    "@changesets/cli": "2.24.2",
     "@github/prettier-config": "0.0.4",
     "@koddsson/postcss-sass": "5.0.1",
     "@primer/stylelint-config": "^12.4.0",
-    "autoprefixer": "10.4.7",
+    "autoprefixer": "10.4.8",
     "chokidar-cli": "3.0.0",
     "cssstats": "4.0.5",
-    "eslint": "8.20.0",
-    "eslint-plugin-github": "4.3.6",
-    "eslint-plugin-jest": "26.6.0",
+    "eslint": "8.21.0",
+    "eslint-plugin-github": "4.3.7",
+    "eslint-plugin-jest": "26.8.2",
     "eslint-plugin-prettier": "4.2.1",
     "filesize": "9.0.11",
     "front-matter": "4.0.2",
@@ -62,7 +63,7 @@
     "globby": "13.1.2",
     "jest": "28.1.3",
     "js-yaml": "4.1.0",
-    "postcss": "8.4.14",
+    "postcss": "8.4.16",
     "postcss-calc": "8.2.4",
     "postcss-import": "14.1.0",
     "postcss-load-config": "4.0.1",
@@ -70,7 +71,7 @@
     "postcss-simple-vars": "6.0.3",
     "prettier": "2.7.1",
     "semver": "7.3.7",
-    "stylelint": "14.9.1",
+    "stylelint": "14.10.0",
     "table": "6.8.0"
   },
   "jest": {

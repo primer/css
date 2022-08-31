@@ -1,5 +1,43 @@
 # @primer/css
 
+## 20.4.4
+
+### Patch Changes
+
+- [#2218](https://github.com/primer/css/pull/2218) [`6205337b`](https://github.com/primer/css/commit/6205337b4c871b6ce431c8b211ddb0bbd176946f) Thanks [@langermank](https://github.com/langermank)! - - Adding readonly styles
+  - Fixing focus background color for inset field
+
+* [#2211](https://github.com/primer/css/pull/2211) [`8e5f6224`](https://github.com/primer/css/commit/8e5f62244192a8e2a191be7e7ad20d00f4b4bedb) Thanks [@imjohnbo](https://github.com/imjohnbo)! - Remove outline reset of `.SelectMenu-closeButton`
+
+- [#2220](https://github.com/primer/css/pull/2220) [`1a8e7db5`](https://github.com/primer/css/commit/1a8e7db5f6c7b369fcfb6598df2edc42d0511da7) Thanks [@reeceatkinson](https://github.com/reeceatkinson)! - Update Marketing Typography (marketing-type.md)
+
+* [#2229](https://github.com/primer/css/pull/2229) [`8a4c0878`](https://github.com/primer/css/commit/8a4c0878857ff65447906bf7d969211f96715197) Thanks [@jonrohan](https://github.com/jonrohan)! - ActionList hide the first divider if there's hidden items in front of it.
+
+- [#2225](https://github.com/primer/css/pull/2225) [`56ea4ab1`](https://github.com/primer/css/commit/56ea4ab17644ad0d521373f700d551d66217268a) Thanks [@langermank](https://github.com/langermank)! - Overlay updates for Alpha::Dialog
+  - Size improvements
+  - Support buttom and side sheets
+  - Preliminary animations for sheets
+
+## 20.4.3
+
+### Patch Changes
+
+- [#2208](https://github.com/primer/css/pull/2208) [`83e43486`](https://github.com/primer/css/commit/83e43486d83350b331953f3c3be450ee79eaa783) Thanks [@jonrohan](https://github.com/jonrohan)! - Moving segmented_control.css to primer_view_components
+
+* [#2202](https://github.com/primer/css/pull/2202) [`b74e78b2`](https://github.com/primer/css/commit/b74e78b2539925956ec19aa3efbf2410dc1167e0) Thanks [@jonrohan](https://github.com/jonrohan)! - Rename SegmentedControl--iconOnly-whenNarrow to SegmentedControl-button--iconOnly-whenNarrow and place on button
+
+- [#2191](https://github.com/primer/css/pull/2191) [`e175f69d`](https://github.com/primer/css/commit/e175f69dd87fb3b54f46130dbdae18b75e9263ad) Thanks [@josepmartins](https://github.com/josepmartins)! - Bump @primer/gatsby-theme-doctocat from 3.1.1 to 4.0.0 in /docs
+
+## 20.4.2
+
+### Patch Changes
+
+- [#2180](https://github.com/primer/css/pull/2180) [`c71e7df0`](https://github.com/primer/css/commit/c71e7df03b9f6816dd2ce7f3d343f92edbc8cf00) Thanks [@dgreif](https://github.com/dgreif)! - Fail dist build when for postcss warnings
+
+* [#2194](https://github.com/primer/css/pull/2194) [`5ee33aca`](https://github.com/primer/css/commit/5ee33acac56156eec990e50be0ecdfb370005b8e) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding position relative to SegmentedControl
+
+- [#2195](https://github.com/primer/css/pull/2195) [`f9e5db5e`](https://github.com/primer/css/commit/f9e5db5e4a01b2b0dae64a4d00d36cfe1df58792) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating the SegmentedControl component to role=list and use `ul`.
+
 ## 20.4.1
 
 ### Patch Changes
