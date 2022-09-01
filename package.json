@@ -65,7 +65,7 @@
     "js-yaml": "4.1.0",
     "postcss": "8.4.16",
     "postcss-calc": "8.2.4",
-    "postcss-import": "14.1.0",
+    "postcss-import": "15.0.0",
     "postcss-load-config": "4.0.1",
     "postcss-scss": "4.0.4",
     "postcss-simple-vars": "6.0.3",
