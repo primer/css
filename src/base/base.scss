@@ -15,7 +15,7 @@ button {
 body {
   font-family: $body-font;
   font-size: $body-font-size;
-  line-height: $body-line-height;
+  line-height: var(--primer-text-body-lineHeight-medium, $body-line-height);
   color: var(--color-fg-default);
   background-color: var(--color-canvas-default);
 }
@@ -41,7 +41,7 @@ hr,
 .rule {
   height: 0;
   // stylelint-disable-next-line primer/spacing
-  margin: 15px 0;
+  margin: var(--base-size-16, 15px) 0;
   overflow: hidden;
   background: transparent;
   border: 0;
@@ -82,8 +82,9 @@ details {
   }
 
   &:not([open]) {
+
     // Set details content hidden by default for browsers that don't do this
-    > *:not(summary) {
+    >*:not(summary) {
       display: none !important;
     }
   }
@@ -96,6 +97,7 @@ button,
 [role='button'],
 input[type='radio'],
 input[type='checkbox'] {
+
   // fallback :focus state
   &:focus {
     @include focusOutline;
@@ -115,6 +117,7 @@ input[type='checkbox'] {
 a:not([class]),
 input[type='radio'],
 input[type='checkbox'] {
+
   &:focus,
   &:focus-visible {
     outline-offset: 0;
@@ -128,6 +131,7 @@ input[type='checkbox'] {
 
 // Windows High Contrast mode
 @media (forced-colors: active) {
+
   *:focus,
   *:focus-visible {
     outline: solid 1px transparent;
@@ -136,6 +140,7 @@ input[type='checkbox'] {
   input:not([type='radio'], [type='checkbox']),
   textarea,
   select {
+
     &:focus,
     &:focus-visible {
       outline-offset: 2px;

@@ -11,12 +11,41 @@ h6 {
   margin-bottom: 0;
 }
 
-h1 { @include h1; }
-h2 { @include h2; }
-h3 { @include h3; }
-h4 { @include h4; }
-h5 { @include h5; }
-h6 { @include h6; }
+h1 {
+  font-size: $h1-size;
+  line-height: var(--primer-text-title-lineHeight-large);
+  font-weight: var(--primer-text-title-weight, 600);
+}
+
+h2 {
+  font-size: $h2-size;
+  line-height: var(--primer-text-title-lineHeight-medium);
+  font-weight: var(--primer-text-title-weight, 600);
+}
+
+h3 {
+  font-size: $h3-size ;
+  line-height: var(--primer-text-subtitle-lineHeight);
+  font-weight: var(--primer-text-subtitle-weight, 600);
+}
+
+h4 {
+  font-size: $h4-size ;
+  line-height: var(--primer-text-body-lineHeight-large);
+  font-weight: var(--primer-text-body-weight, 600);
+}
+
+h5 {
+  font-size: $h5-size ;
+  line-height: var(--primer-text-body-lineHeight-medium);
+  font-weight: var(--primer-text-body-weight, 600);
+}
+
+h6 {
+  font-size: $h6-size ;
+  line-height: var(--primer-text-body-lineHeight-small);
+  font-weight: var(--primer-text-body-weight, 600);
+}
 
 // Body text
 // --------------------------------------------------
@@ -24,7 +53,7 @@ h6 { @include h6; }
 p {
   margin-top: 0;
   // stylelint-disable-next-line primer/spacing
-  margin-bottom: 10px;
+  margin-bottom: var(--base-size-8, 10px);
 }
 
 small {
