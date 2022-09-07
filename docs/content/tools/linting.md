@@ -20,7 +20,7 @@ npm install -g stylelint
 Whether you work on `github/github` or not, it's useful to see lint errors locally. The easiest way to lint your code is to install a [plugin](#plugins) in your workflow. If you prefer to run stylelint manually, pass it a glob pattern of the files you want to lint. If you work on `github/github`, you can run stylelint from the command line:
 
 ```
-bin/stylelint "app/assets/stylesheets/**/*.scss" --syntax scss
+bin/stylelint "app/assets/stylesheets/**/*.scss"
 ```
 
 For more advanced usage, we recommend reading the [stylelint user guide](http://stylelint.io/user-guide/) and checking out our [primer stylelint configuration](https://github.com/primer/stylelint-config).

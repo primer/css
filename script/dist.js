@@ -51,6 +51,15 @@ async function dist() {
       const scss = await readFile(from, encoding)
       meta.imports = getExternalImports(scss, path).map(getPathName)
       const result = await compiler(scss, {from, to})
+      const warnings = result.warnings()
+
+      // We don't want to release changes that cause warnings with postcss. Fail the dist build if any warnings are detected.
+      if (warnings.length) {
+        for (const warning of warnings) {
+          console.warn(warning.toString())
+        }
+        throw new Error(`Warnings while compiling ${from}.  See output above.`)
+      }
 
       await Promise.all([
         writeFile(to, result.css, encoding),

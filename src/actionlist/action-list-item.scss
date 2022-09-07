@@ -1,9 +1,9 @@
 // stylelint-disable max-nesting-depth, selector-max-specificity, selector-max-compound-selectors
 
-@mixin activeIndicatorLine {
+@mixin activeIndicatorLine($padding-left: -$actionList-item-padding-horizontal) {
   position: absolute;
   top: calc(50% - 12px);
-  left: -$actionList-item-padding-horizontal;
+  left: $padding-left;
   width: $spacer-1;
   height: $spacer-4;
   content: '';
@@ -110,6 +110,34 @@
       &:active {
         background-color: var(--color-action-list-item-default-active-bg);
       }
+    }
+  }
+
+  // Make sure that the first visible item isn't a divider
+  &[hidden] + .ActionList-sectionDivider {
+    display: none;
+  }
+
+  // Autocomplete [aria-selected] items
+
+  &[aria-selected='true'] {
+    font-weight: $font-weight-normal;
+    background: var(--color-action-list-item-default-selected-bg);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-action-list-item-default-hover-bg);
+      }
+    }
+
+    &::before,
+    + .ActionList-item::before {
+      visibility: hidden;
+    }
+
+    // blue accent line
+    &::after {
+      @include activeIndicatorLine(-$spacer-1);
     }
   }
 
@@ -237,7 +265,7 @@
 
   // disabled
   &[aria-disabled='true'] {
-    .ActionList-item-content {
+    .ActionList-content {
       .ActionList-item-label,
       .ActionList-item-description {
         color: var(--color-primer-fg-disabled);
@@ -246,12 +274,12 @@
       .ActionList-item-visual {
         fill: var(--color-primer-fg-disabled);
       }
+    }
 
-      @media (hover: hover) {
-        &:hover {
-          cursor: not-allowed;
-          background-color: transparent;
-        }
+    @media (hover: hover) {
+      &:hover {
+        cursor: not-allowed;
+        background-color: transparent;
       }
     }
   }

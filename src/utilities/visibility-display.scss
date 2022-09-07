@@ -115,7 +115,7 @@
   clip: rect(1px, 1px, 1px, 1px);
 
   &:focus {
-    z-index: 20;
+    z-index: 999;
     width: auto;
     height: auto;
     clip: auto;

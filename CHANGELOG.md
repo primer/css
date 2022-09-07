@@ -1,5 +1,93 @@
 # @primer/css
 
+## 20.4.4
+
+### Patch Changes
+
+- [#2218](https://github.com/primer/css/pull/2218) [`6205337b`](https://github.com/primer/css/commit/6205337b4c871b6ce431c8b211ddb0bbd176946f) Thanks [@langermank](https://github.com/langermank)! - - Adding readonly styles
+  - Fixing focus background color for inset field
+
+* [#2211](https://github.com/primer/css/pull/2211) [`8e5f6224`](https://github.com/primer/css/commit/8e5f62244192a8e2a191be7e7ad20d00f4b4bedb) Thanks [@imjohnbo](https://github.com/imjohnbo)! - Remove outline reset of `.SelectMenu-closeButton`
+
+- [#2220](https://github.com/primer/css/pull/2220) [`1a8e7db5`](https://github.com/primer/css/commit/1a8e7db5f6c7b369fcfb6598df2edc42d0511da7) Thanks [@reeceatkinson](https://github.com/reeceatkinson)! - Update Marketing Typography (marketing-type.md)
+
+* [#2229](https://github.com/primer/css/pull/2229) [`8a4c0878`](https://github.com/primer/css/commit/8a4c0878857ff65447906bf7d969211f96715197) Thanks [@jonrohan](https://github.com/jonrohan)! - ActionList hide the first divider if there's hidden items in front of it.
+
+- [#2225](https://github.com/primer/css/pull/2225) [`56ea4ab1`](https://github.com/primer/css/commit/56ea4ab17644ad0d521373f700d551d66217268a) Thanks [@langermank](https://github.com/langermank)! - Overlay updates for Alpha::Dialog
+  - Size improvements
+  - Support buttom and side sheets
+  - Preliminary animations for sheets
+
+## 20.4.3
+
+### Patch Changes
+
+- [#2208](https://github.com/primer/css/pull/2208) [`83e43486`](https://github.com/primer/css/commit/83e43486d83350b331953f3c3be450ee79eaa783) Thanks [@jonrohan](https://github.com/jonrohan)! - Moving segmented_control.css to primer_view_components
+
+* [#2202](https://github.com/primer/css/pull/2202) [`b74e78b2`](https://github.com/primer/css/commit/b74e78b2539925956ec19aa3efbf2410dc1167e0) Thanks [@jonrohan](https://github.com/jonrohan)! - Rename SegmentedControl--iconOnly-whenNarrow to SegmentedControl-button--iconOnly-whenNarrow and place on button
+
+- [#2191](https://github.com/primer/css/pull/2191) [`e175f69d`](https://github.com/primer/css/commit/e175f69dd87fb3b54f46130dbdae18b75e9263ad) Thanks [@josepmartins](https://github.com/josepmartins)! - Bump @primer/gatsby-theme-doctocat from 3.1.1 to 4.0.0 in /docs
+
+## 20.4.2
+
+### Patch Changes
+
+- [#2180](https://github.com/primer/css/pull/2180) [`c71e7df0`](https://github.com/primer/css/commit/c71e7df03b9f6816dd2ce7f3d343f92edbc8cf00) Thanks [@dgreif](https://github.com/dgreif)! - Fail dist build when for postcss warnings
+
+* [#2194](https://github.com/primer/css/pull/2194) [`5ee33aca`](https://github.com/primer/css/commit/5ee33acac56156eec990e50be0ecdfb370005b8e) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding position relative to SegmentedControl
+
+- [#2195](https://github.com/primer/css/pull/2195) [`f9e5db5e`](https://github.com/primer/css/commit/f9e5db5e4a01b2b0dae64a4d00d36cfe1df58792) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating the SegmentedControl component to role=list and use `ul`.
+
+## 20.4.1
+
+### Patch Changes
+
+- [#2178](https://github.com/primer/css/pull/2178) [`2df59776`](https://github.com/primer/css/commit/2df5977613d4b196e0eb08c49f290d18f74dd412) Thanks [@jonrohan](https://github.com/jonrohan)! - Fix: autoprefix giving a warning about align-content
+
+## 20.4.0
+
+### Minor Changes
+
+- [#2152](https://github.com/primer/css/pull/2152) [`edac9edb`](https://github.com/primer/css/commit/edac9edbcf833fc76d406d225b6cf6abfa2b7f99) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Add Stack component
+
+### Patch Changes
+
+- [#2177](https://github.com/primer/css/pull/2177) [`add769c9`](https://github.com/primer/css/commit/add769c97193b387de2fbfb4b0a66c7157826563) Thanks [@langermank](https://github.com/langermank)! - Autocomplete item selected state
+
+* [#2174](https://github.com/primer/css/pull/2174) [`97f178d7`](https://github.com/primer/css/commit/97f178d7dedb92c713f1e684384db089c71eeae6) Thanks [@simurai](https://github.com/simurai)! - Prevent `SegmentedControl-text` from wrapping
+
+- [#2168](https://github.com/primer/css/pull/2168) [`a52afe7e`](https://github.com/primer/css/commit/a52afe7e7d34cccf550b43c052777a392bb7229f) Thanks [@owenniblock](https://github.com/owenniblock)! - Increases z-index for .show-on-focus
+
+* [#2176](https://github.com/primer/css/pull/2176) [`d8c218ab`](https://github.com/primer/css/commit/d8c218aba8b16a80a96b39ca086df34ed4c307df) Thanks [@langermank](https://github.com/langermank)! - Add `aria-selected` to ActionList-item for Autocomplete
+
+- [#2090](https://github.com/primer/css/pull/2090) [`8016e3c5`](https://github.com/primer/css/commit/8016e3c507d8e72be1b32520cc548c362290a73c) Thanks [@Luckz](https://github.com/Luckz)! - Remove article
+
+## 20.3.0
+
+### Minor Changes
+
+- [#2147](https://github.com/primer/css/pull/2147) [`9dd2a49e`](https://github.com/primer/css/commit/9dd2a49e2633f337c2316a43907f17dfd5c3173b) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Add AppFrame component
+
+### Patch Changes
+
+- [#2083](https://github.com/primer/css/pull/2083) [`13be7ef1`](https://github.com/primer/css/commit/13be7ef18d2d9874e7a08f20d9f93538752517c6) Thanks [@simurai](https://github.com/simurai)! - Add `SegmentedControl` component
+
+* [#2171](https://github.com/primer/css/pull/2171) [`d2b4d698`](https://github.com/primer/css/commit/d2b4d698882f57a6c4a08e66c10bdca27924046f) Thanks [@khiga8](https://github.com/khiga8)! - Add .tooltipped to deprecations json
+
+## 20.2.4
+
+### Patch Changes
+
+- [#2136](https://github.com/primer/css/pull/2136) [`89846844`](https://github.com/primer/css/commit/8984684470dc2e6cc69e7c80e4ce4a0e70e57eb3) Thanks [@langermank](https://github.com/langermank)! - Bug: ActionList-item disabled state
+
+* [#2130](https://github.com/primer/css/pull/2130) [`544fb277`](https://github.com/primer/css/commit/544fb2773dbadd934a34232637970946de3c536d) Thanks [@renbaoshuo](https://github.com/renbaoshuo)! - Add link to source code in Timeline's doc
+
+- [#2114](https://github.com/primer/css/pull/2114) [`facb9682`](https://github.com/primer/css/commit/facb96823a344369afdace1365dda38bb5312f2b) Thanks [@langermank](https://github.com/langermank)! - - Updates stories to reflect markup for Rails
+  - Clean up FormControl classes
+  - Add Radio and Checkbox custom styles
+
+* [#2132](https://github.com/primer/css/pull/2132) [`c898103e`](https://github.com/primer/css/commit/c898103e0e942b7ab07f43b83496f019163458f1) Thanks [@vzrenggamani](https://github.com/vzrenggamani)! - docs: update deployment location of docs
+
 ## 20.2.3
 
 ### Patch Changes

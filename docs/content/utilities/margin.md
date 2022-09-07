@@ -73,12 +73,12 @@ Use directional utilities to apply margin to an individual side, or the X and Y 
 The extended scale starts from spacer `7` up to `12`. **Note**: Only the y-axis (`mt`, `mb` and `my`) and its responsive variants are supported.
 
 ```html live
-<div class="color-bg-attention d-inline-block"><div class="mt-7  p-1 color-bg-subtle">.mb-7</div></div>
-<div class="color-bg-attention d-inline-block"><div class="mt-8  p-1 color-bg-subtle">.mb-8</div></div>
-<div class="color-bg-attention d-inline-block"><div class="mt-9  p-1 color-bg-subtle">.mb-9</div></div>
-<div class="color-bg-attention d-inline-block"><div class="mt-10 p-1 color-bg-subtle">.mb-10</div></div>
-<div class="color-bg-attention d-inline-block"><div class="mt-11 p-1 color-bg-subtle">.mb-11</div></div>
-<div class="color-bg-attention d-inline-block"><div class="mt-12 p-1 color-bg-subtle">.mb-12</div></div>
+<div class="color-bg-attention d-inline-block"><div class="mt-7  p-1 color-bg-subtle">.mt-7</div></div>
+<div class="color-bg-attention d-inline-block"><div class="mt-8  p-1 color-bg-subtle">.mt-8</div></div>
+<div class="color-bg-attention d-inline-block"><div class="mt-9  p-1 color-bg-subtle">.mt-9</div></div>
+<div class="color-bg-attention d-inline-block"><div class="mt-10 p-1 color-bg-subtle">.mt-10</div></div>
+<div class="color-bg-attention d-inline-block"><div class="mt-11 p-1 color-bg-subtle">.mt-11</div></div>
+<div class="color-bg-attention d-inline-block"><div class="mt-12 p-1 color-bg-subtle">.mt-12</div></div>
 ```
 
 ## Center elements
