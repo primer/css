@@ -84,7 +84,7 @@ details {
   &:not([open]) {
 
     // Set details content hidden by default for browsers that don't do this
-    >*:not(summary) {
+    > *:not(summary) {
       display: none !important;
     }
   }
