@@ -1,5 +1,11 @@
 # @primer/css
 
+## 20.4.5
+
+### Patch Changes
+
+- [#2242](https://github.com/primer/css/pull/2242) [`ef31fd98`](https://github.com/primer/css/commit/ef31fd988d52391317cc8982caf06ef45732ca70) Thanks [@JoshBowdenConcepts](https://github.com/JoshBowdenConcepts)! - This border change was made to ensure that assignee avatars would stack next to one another correctly.
+
 ## 20.4.4
 
 ### Patch Changes
