@@ -2,23 +2,23 @@
 
 // Heading sizes - mobile
 // h4-h6 remain the same size on both mobile & desktop
-$h00-size-mobile: 40px !default;
-$h0-size-mobile: 32px !default;
-$h1-size-mobile: 26px !default;
-$h2-size-mobile: 22px !default;
-$h3-size-mobile: 18px !default;
+$h00-size-mobile: var(--primer-text-display-size, 40px) !default;
+$h0-size-mobile: var(--primer-text-title-size-large, 32px) !default;
+$h1-size-mobile: var(--primer-text-title-size-large, 26px) !default;
+$h2-size-mobile: var(--primer-text-title-size-medium, 22px) !default;
+$h3-size-mobile: var(--primer-text-title-size-medium, 18px) !default;
 
 // Heading sizes - desktop
-$h00-size: 48px !default;
-$h0-size: 40px !default;
-$h1-size: 32px !default;
-$h2-size: 24px !default;
-$h3-size: 20px !default;
-$h4-size: 16px !default;
-$h5-size: 14px !default;
-$h6-size: 12px !default;
+$h00-size: var(--primer-text-display-size, 48px) !default;
+$h0-size: var(--primer-text-display-size, 40px) !default;
+$h1-size: var(--primer-text-title-size-large, 32px) !default;
+$h2-size: var(--primer-text-title-size-medium, 24px) !default;
+$h3-size: var(--primer-text-subtitle-size, 20px) !default;
+$h4-size: var(--primer-text-body-size-large, 16px) !default;
+$h5-size: var(--primer-text-body-size-medium, 14px) !default;
+$h6-size: var(--primer-text-body-size-small, 12px) !default;
 
-$font-size-small: 12px !default;
+$font-size-small: var(--primer-text-body-size-small, 12px) !default;
 
 // Font weights
 $font-weight-bold: 600 !default;
@@ -32,12 +32,12 @@ $lh-condensed: 1.25 !default;
 $lh-default: 1.5 !default;
 
 // Font stacks
-$body-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji' !default;
+$body-font: var(--primer-fontStack-system, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji') !default;
 
 // Monospace font stack
 // Note: SFMono-Regular needs to come before SF Mono to fix an older version of the font in Chrome
-$mono-font: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace !default;
+$mono-font: var(--primer-fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace) !default;
 
 // The base body size
-$body-font-size: 14px !default;
-$body-line-height: $lh-default !default;
+$body-font-size: var(--primer-text-body-size-medium, 14px) !default;
+$body-line-height: $lh-default  !default;
