@@ -119,7 +119,7 @@
       margin-left: 3px;
     }
 
-    &:last-child {
+    &:not(:last-child) {
       border-left: 0;
     }
   }
