@@ -1,6 +1,6 @@
 // Headings
 // --------------------------------------------------
-// stylelint-disable selector-max-type
+// stylelint-disable selector-max-type primer/typography
 h1,
 h2,
 h3,
@@ -13,38 +13,38 @@ h6 {
 
 h1 {
   font-size: $h1-size;
-  line-height: var(--primer-text-title-lineHeight-large);
   font-weight: var(--primer-text-title-weight, 600);
+  line-height: var(--primer-text-title-lineHeight-large);
 }
 
 h2 {
   font-size: $h2-size;
-  line-height: var(--primer-text-title-lineHeight-medium);
   font-weight: var(--primer-text-title-weight, 600);
+  line-height: var(--primer-text-title-lineHeight-medium);
 }
 
 h3 {
-  font-size: $h3-size ;
-  line-height: var(--primer-text-subtitle-lineHeight);
+  font-size: $h3-size;
   font-weight: var(--primer-text-subtitle-weight, 600);
+  line-height: var(--primer-text-subtitle-lineHeight);
 }
 
 h4 {
-  font-size: $h4-size ;
-  line-height: var(--primer-text-body-lineHeight-large);
+  font-size: $h4-size;
   font-weight: var(--primer-text-body-weight, 600);
+  line-height: var(--primer-text-body-lineHeight-large);
 }
 
 h5 {
-  font-size: $h5-size ;
-  line-height: var(--primer-text-body-lineHeight-medium);
+  font-size: $h5-size;
   font-weight: var(--primer-text-body-weight, 600);
+  line-height: var(--primer-text-body-lineHeight-medium);
 }
 
 h6 {
-  font-size: $h6-size ;
-  line-height: var(--primer-text-body-lineHeight-small);
+  font-size: $h6-size;
   font-weight: var(--primer-text-body-weight, 600);
+  line-height: var(--primer-text-body-lineHeight-small);
 }
 
 // Body text
