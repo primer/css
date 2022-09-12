@@ -2,4 +2,5 @@
 "@primer/css": patch
 ---
 
-Make sure to apply backdrops only to the top level Overlay
+Increase specificy for Overlay styles as they relate to the backdrop and positioning options
+- If a Dialog opens a second Dialog, each Dialog properties should be contained to its own scope
