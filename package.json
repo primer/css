@@ -50,7 +50,7 @@
     "@github/prettier-config": "0.0.4",
     "@koddsson/postcss-sass": "5.0.1",
     "@primer/stylelint-config": "^12.4.0",
-    "autoprefixer": "10.4.8",
+    "autoprefixer": "10.4.9",
     "chokidar-cli": "3.0.0",
     "cssstats": "4.0.5",
     "eslint": "8.21.0",
@@ -71,7 +71,7 @@
     "postcss-simple-vars": "6.0.3",
     "prettier": "2.7.1",
     "semver": "7.3.7",
-    "stylelint": "14.10.0",
+    "stylelint": "14.11.0",
     "table": "6.8.0"
   },
   "jest": {
