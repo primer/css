@@ -21,7 +21,7 @@ label {
   padding: 5px 12px;
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
-  line-height: 20px;
+  line-height: var(--primer-text-body-lineHeight-medium, 20px);
   color: var(--color-fg-default);
   vertical-align: middle;
   background-color: var(--color-canvas-default);
@@ -76,6 +76,7 @@ label {
 
     @include breakpoint(md) {
       font-size: $body-font-size;
+      line-height: var(--primer-text-body-lineHeight-medium, 1.5);
     }
   }
 }
@@ -186,9 +187,10 @@ textarea.form-control {
 
 .form-checkbox-details-trigger {
   &:checked {
+
     // child of sibling or sibling
-    ~ * .form-checkbox-details,
-    ~ .form-checkbox-details {
+    ~* .form-checkbox-details,
+    ~.form-checkbox-details {
       display: block;
     }
   }
@@ -209,7 +211,8 @@ textarea.form-control {
     // stylelint-disable-next-line primer/spacing
     margin: 0 30px 0 0;
 
-    dt, // TODO: Deprecate
+    dt,
+    // TODO: Deprecate
     .form-group-header {
       label {
         display: inline-block;
@@ -254,7 +257,7 @@ input::-webkit-inner-spin-button {
   .btn {
     float: right;
 
-    + .btn {
+    +.btn {
       // stylelint-disable-next-line primer/spacing
       margin-right: 5px;
     }

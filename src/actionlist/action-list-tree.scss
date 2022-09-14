@@ -16,12 +16,15 @@
 
 .ActionList--tree {
   --ActionList-tree-depth: 1;
+
   // TODO: remove with PVC implementation
   .ActionList-item--subItem > .ActionList-content {
     font-size: $body-font-size;
+    line-height: var(--primer-text-body-lineHeight-medium, 1.5);
   }
 
   .ActionList-item {
+
     // class for single tree items not within a group
     &.ActionList-item--singleton {
       .ActionList-content {
@@ -40,10 +43,11 @@
   }
 
   .ActionList-content {
+
     // nesting (infinite levels)
     // target items inside expanded subgroup
     &[aria-expanded] {
-      + .ActionList--subGroup {
+      +.ActionList--subGroup {
         position: relative;
 
         // --ActionList-tree-depth is defined as an inline style referencing the aria-level of each item ie: aria-level="2"
@@ -62,7 +66,7 @@
 
       // normal weight for parent folder containing active child
       &.ActionList-content--hasActiveSubItem {
-        > .ActionList-item-label {
+        >.ActionList-item-label {
           font-weight: $font-weight-normal;
         }
       }
@@ -75,7 +79,7 @@
       }
 
       &.ActionList-content--hasActiveSubItem {
-        > .ActionList-item-label {
+        >.ActionList-item-label {
           font-weight: $font-weight-normal;
         }
       }
@@ -86,9 +90,10 @@
   .ActionList-item--hasSubItem {
     .ActionList-item--subItem:not(.ActionList-item--hasSubItem) {
       .ActionList-content {
+
         // increase child padding by targeting content first child span (add to ActionList-content padding, not replace)
         // creates a slight indent of child items
-        > span:first-child {
+        >span:first-child {
           padding-left: $spacer-4;
         }
       }
@@ -96,8 +101,8 @@
   }
 
   // first subitem
-  > [aria-level='1'].ActionList-item--hasSubItem {
-    > .ActionList--subGroup {
+  >[aria-level='1'].ActionList-item--hasSubItem {
+    >.ActionList--subGroup {
       &::before {
         @include treeConnectingLine($left: $spacer-3);
       }
@@ -107,11 +112,9 @@
   // all other subitems
   // center connecting line with parent (line is 1px (8px - 1px)
   .ActionList-item--hasSubItem:not([aria-level='1']) {
-    > .ActionList--subGroup {
+    >.ActionList--subGroup {
       &::before {
-        @include treeConnectingLine(
-          $left: calc(#{$spacer-2} * (var(--ActionList-tree-depth)) + #{$spacer-2 - $border-width})
-        );
+        @include treeConnectingLine($left: calc(#{$spacer-2} * (var(--ActionList-tree-depth)) + #{$spacer-2 - $border-width}));
       }
     }
   }

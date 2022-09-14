@@ -17,180 +17,185 @@
 
 /* Set the font size to 26px */
 .h1 {
-  font-size: $h1-size-mobile  !important;
+  font-size: $h1-size-mobile !important;
   font-weight: var(--primer-text-title-weight, 600) !important;
   line-height: var(--primer-text-title-lineHeight-large) !important;
 
   @include breakpoint(md) {
-    font-size: $h1-size  !important;
+    font-size: $h1-size !important;
   }
 }
 
 /* Set the font size to 22px */
 .h2 {
-  font-size: $h2-size-mobile  !important;
+  font-size: $h2-size-mobile !important;
   font-weight: var(--primer-text-title-weight, 600) !important;
   line-height: var(--primer-text-title-lineHeight-medium) !important;
 
   @include breakpoint(md) {
-    font-size: $h2-size  !important;
+    font-size: $h2-size !important;
   }
 }
 
 /* Set the font size to 18px */
 .h3 {
-  font-size: $h3-size-mobile  !important;
+  font-size: $h3-size-mobile !important;
   font-weight: var(--primer-text-subtitle-weight, 600) !important;
   line-height: var(--primer-text-subtitle-lineHeight) !important;
 
   @include breakpoint(md) {
-    font-size: $h3-size  !important;
+    font-size: $h3-size !important;
   }
 }
 
 /* Set the font size to #{$h4-size} */
 .h4 {
-  font-size: $h4-size  !important;
+  font-size: $h4-size !important;
   font-weight: var(--primer-text-body-weight, 600) !important;
   line-height: var(--primer-text-body-lineHeight-large) !important;
 }
 
 /* Set the font size to #{$h5-size} */
 .h5 {
-  font-size: $h5-size  !important;
+  font-size: $h5-size !important;
   font-weight: var(--primer-text-body-weight, 600) !important;
   line-height: var(--primer-text-body-lineHeight-medium) !important;
 }
 
 // Does not include color property like typography base
 // styles, color should be applied with color utilities.
+
 /* Set the font size to #{$h6-size} */
 .h6 {
-  font-size: $h6-size  !important;
+  font-size: $h6-size !important;
   font-weight: var(--primer-text-body-weight, 600) !important;
   line-height: var(--primer-text-body-lineHeight-small) !important;
 }
 
 // Type utilities that match type sale
+
 /* Set the font size to 26px */
 .f1 {
-  font-size: $h1-size-mobile  !important;
+  font-size: $h1-size-mobile !important;
   font-weight: var(--primer-text-title-weight) !important;
   line-height: var(--primer-text-title-lineHeight-large) !important;
 
   @include breakpoint(md) {
-    font-size: $h1-size  !important;
+    font-size: $h1-size !important;
   }
 }
 
 /* Set the font size to 22px */
 .f2 {
-  font-size: $h2-size-mobile  !important;
+  font-size: $h2-size-mobile !important;
   font-weight: var(--primer-text-title-weight) !important;
   line-height: var(--primer-text-title-lineHeight-medium) !important;
 
   @include breakpoint(md) {
-    font-size: $h2-size  !important;
+    font-size: $h2-size !important;
   }
 }
 
 /* Set the font size to 18px */
 .f3 {
-  font-size: $h3-size-mobile  !important;
+  font-size: $h3-size-mobile !important;
   font-weight: var(--primer-text-subtitle-weight) !important;
   line-height: var(--primer-text-subtitle-lineHeight) !important;
 
   @include breakpoint(md) {
-    font-size: $h3-size  !important;
+    font-size: $h3-size !important;
   }
 }
 
 /* Set the font size to #{$h4-size} */
 .f4 {
-  font-size: $h4-size  !important;
+  font-size: $h4-size !important;
   font-weight: var(--primer-text-body-weight) !important;
   line-height: var(--primer-text-body-lineHeight-large) !important;
 
   @include breakpoint(md) {
-    font-size: $h4-size  !important;
+    font-size: $h4-size !important;
   }
 }
 
 /* Set the font size to #{$h5-size} */
 .f5 {
-  font-size: $h5-size  !important;
+  font-size: $h5-size !important;
   font-weight: var(--primer-text-body-weight) !important;
   line-height: var(--primer-text-body-lineHeight-medium) !important;
 }
 
 /* Set the font size to #{$h6-size} */
 .f6 {
-  font-size: $h6-size  !important;
+  font-size: $h6-size !important;
   font-weight: var(--primer-text-body-weight) !important;
   line-height: var(--primer-text-body-lineHeight-small) !important;
 }
 
 // Type utils with light weight that match type scale
+
 /* Set the font size to 40px and weight to light */
 .f00-light {
-  font-size: $h00-size-mobile  !important;
+  font-size: $h00-size-mobile !important;
   font-weight: var(--base-text-weight-light, 300) !important;
   line-height: var(----primer-text-display-lineHeight) !important;
 
   @include breakpoint(md) {
-    font-size: $h00-size  !important;
+    font-size: $h00-size !important;
   }
 }
 
 /* Set the font size to 32px and weight to light */
 .f0-light {
-  font-size: $h0-size-mobile  !important;
+  font-size: $h0-size-mobile !important;
   font-weight: var(--base-text-weight-light, 300) !important;
   line-height: var(----primer-text-display-lineHeight) !important;
 
   @include breakpoint(md) {
-    font-size: $h0-size  !important;
+    font-size: $h0-size !important;
   }
 }
 
 /* Set the font size to 26px and weight to light */
 .f1-light {
-  font-size: $h1-size-mobile  !important;
+  font-size: $h1-size-mobile !important;
   font-weight: var(--base-text-weight-light, 300) !important;
   line-height: var(--primer-text-title-lineHeight-large) !important;
 
   @include breakpoint(md) {
-    font-size: $h1-size  !important;
+    font-size: $h1-size !important;
   }
 }
 
 /* Set the font size to 22px and weight to light */
 .f2-light {
-  font-size: $h2-size-mobile  !important;
+  font-size: $h2-size-mobile !important;
   font-weight: var(--base-text-weight-light, 300) !important;
   line-height: var(--primer-text-title-lineHeight-medium) !important;
 
   @include breakpoint(md) {
-    font-size: $h2-size  !important;
+    font-size: $h2-size !important;
   }
 }
 
 // Same size and weight as .lead but without color property
+
 /* Set the font size to 18px and weight to light */
 .f3-light {
-  font-size: $h3-size-mobile  !important;
+  font-size: $h3-size-mobile !important;
   font-weight: var(--base-text-weight-light, 300) !important;
   line-height: var(--primer-text-subtitle-lineHeight) !important;
 
   @include breakpoint(md) {
-    font-size: $h3-size  !important;
+    font-size: $h3-size !important;
   }
 }
 
 // Smallest text size
+
 /* Set the font size to ${#h6-size} */
 .text-small {
-  font-size: $h6-size  !important;
+  font-size: $h6-size !important;
   line-height: var(--primer-text-body-lineHeight-small) !important;
 }
 
@@ -211,22 +216,21 @@
 // Will be improved with future typography scale updates.
 // Responsive line-height
 @each $breakpoint,
-$variant in $responsive-variants {
+  $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
-
     /* Set the line height to ultra condensed */
     .lh#{$variant}-condensed-ultra {
-      line-height: $lh-condensed-ultra  !important;
+      line-height: $lh-condensed-ultra !important;
     }
 
     /* Set the line height to condensed */
     .lh#{$variant}-condensed {
-      line-height: $lh-condensed  !important;
+      line-height: $lh-condensed !important;
     }
 
     /* Set the line height to default */
     .lh#{$variant}-default {
-      line-height: $lh-default  !important;
+      line-height: $lh-default !important;
     }
 
     /* Set the line height to zero */
@@ -239,9 +243,8 @@ $variant in $responsive-variants {
 // Text alignments
 // Responsive text alignment
 @each $breakpoint,
-$variant in $responsive-variants {
+  $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
-
     /* Text align to the right */
     .text#{$variant}-right {
       text-align: right !important;
@@ -260,6 +263,7 @@ $variant in $responsive-variants {
 }
 
 // Text styles
+
 /* Set the font weight to normal */
 .text-normal {
   font-weight: var(--base-text-weight-normal, 400) !important;
@@ -341,7 +345,7 @@ $variant in $responsive-variants {
 
 /* Set to monospace font */
 .text-mono {
-  font-family: $mono-font  !important;
+  font-family: $mono-font !important;
 }
 
 /* Disallow user from selecting text */

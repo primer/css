@@ -30,6 +30,7 @@
 // One-liner of supporting text
 .Subhead-description {
   font-size: $body-font-size;
+  line-height: var(--primer-text-body-lineHeight-medium, 1.5);
   color: var(--color-fg-muted);
   flex: 1 100%;
   order: 2;
@@ -42,7 +43,7 @@
   justify-content: flex-end;
   order: 1;
 
-  + .Subhead-description {
+  +.Subhead-description {
     margin-top: $spacer-1;
   }
 }

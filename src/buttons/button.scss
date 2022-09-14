@@ -8,6 +8,7 @@
   padding: 5px $spacer-3;
   font-size: $body-font-size;
   font-weight: $font-weight-semibold;
+  line-height: var(--primer-text-body-lineHeight-medium, 1.5);
   // stylelint-disable-next-line primer/typography
   line-height: 20px; // Specifically not inherit our `<body>` default
   white-space: nowrap;
@@ -165,6 +166,7 @@
 // ensure links styled as button primary gets proper focus style
 // stylelint-disable-next-line selector-no-qualifying-type
 a.btn-primary {
+
   // fallback :focus state
   &:focus {
     @include focusOutlineOnEmphasis;

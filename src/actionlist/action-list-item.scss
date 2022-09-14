@@ -26,7 +26,7 @@
   // only hover li without list as children
   &:not(.ActionList-item--hasSubItem),
   // target contents of first child li if sub-item (li wraps item label + nested ul)
-  &.ActionList-item--hasSubItem > .ActionList-content {
+  &.ActionList-item--hasSubItem>.ActionList-content {
     @media (hover: hover) {
       &:hover {
         cursor: pointer;
@@ -75,20 +75,21 @@
     @media (hover: hover) {
       &:hover {
         .ActionList-item-label::before,
-        + .ActionList-item .ActionList-item-label::before {
+        +.ActionList-item .ActionList-item-label::before {
           visibility: hidden;
         }
 
         .ActionList-item-descriptionWrap--inline::before,
-        + .ActionList-item .ActionList-item-descriptionWrap--inline::before {
+        +.ActionList-item .ActionList-item-descriptionWrap--inline::before {
           visibility: hidden;
         }
       }
     }
+
     // stylelint-disable-next-line no-duplicate-selectors
     &:active {
       .ActionList-item-label::before,
-      + .ActionList-item .ActionList-item-label::before {
+      +.ActionList-item .ActionList-item-label::before {
         visibility: hidden;
       }
     }
@@ -97,8 +98,9 @@
   // target contents of li if sub-item (li wraps item label + nested ul)
   // collapse styles here
   &.ActionList-item--hasSubItem {
+
     // first child
-    > .ActionList-content {
+    >.ActionList-content {
       z-index: 1;
 
       @media (hover: hover) {
@@ -131,7 +133,7 @@
     }
 
     &::before,
-    + .ActionList-item::before {
+    +.ActionList-item::before {
       visibility: hidden;
     }
 
@@ -160,7 +162,7 @@
       }
 
       &::before,
-      + .ActionList-item::before {
+      +.ActionList-item::before {
         visibility: hidden;
       }
 
@@ -176,6 +178,7 @@
 
   &[aria-checked='true'],
   &[aria-selected='true'] {
+
     // multiselect checkmark
     .ActionList-item-multiSelectCheckmark {
       visibility: visible;
@@ -208,6 +211,7 @@
 
   &[aria-checked='false'],
   &[aria-selected='false'] {
+
     // multiselect checkmark
     .ActionList-item-multiSelectCheckmark {
       visibility: hidden;
@@ -329,6 +333,7 @@
   padding: $actionList-item-padding-vertical $actionList-item-padding-horizontal;
   font-size: $body-font-size;
   font-weight: $font-weight-normal;
+  line-height: var(--primer-text-body-lineHeight-medium, 1.5);
   color: var(--color-fg-default);
   text-align: left;
   user-select: none;
@@ -394,7 +399,7 @@
   // nesting (single level)
   // target items inside expanded subgroups
   &[aria-expanded] {
-    + .ActionList--subGroup {
+    +.ActionList--subGroup {
       @media screen and (prefers-reduced-motion: no-preference) {
         transition: opacity 160ms cubic-bezier(0.25, 1, 0.5, 1), transform 160ms cubic-bezier(0.25, 1, 0.5, 1);
       }
@@ -432,7 +437,7 @@
       transform: scaleY(-1);
     }
 
-    + .ActionList--subGroup {
+    +.ActionList--subGroup {
       height: auto;
       overflow: visible;
       visibility: visible;
@@ -441,7 +446,7 @@
     }
 
     &.ActionList-content--hasActiveSubItem {
-      > .ActionList-item-label {
+      >.ActionList-item-label {
         font-weight: $font-weight-bold;
       }
     }
@@ -453,7 +458,7 @@
       transform: scaleY(1);
     }
 
-    + .ActionList--subGroup {
+    +.ActionList--subGroup {
       height: 0;
       overflow: hidden;
       visibility: hidden;
@@ -470,7 +475,7 @@
       }
 
       &::before,
-      + .ActionList-item::before {
+      +.ActionList-item::before {
         visibility: hidden;
       }
 
@@ -506,6 +511,7 @@
   }
 
   &.ActionList-content--blockDescription {
+
     // if leading/trailing visual, align with first line of content
     .ActionList-item-visual {
       place-self: start;

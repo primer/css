@@ -3,7 +3,8 @@
 // Default 32px
 // Small 24px
 
-.state, // TODO: Deprecate
+.state,
+// TODO: Deprecate
 .State {
   display: inline-block;
   // stylelint-disable-next-line primer/spacing
@@ -11,14 +12,15 @@
   font-size: $body-font-size;
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
-  line-height: 20px;
+  line-height: var(--primer-text-body-lineHeight-medium, 20px);
   text-align: center;
   white-space: nowrap;
   // stylelint-disable-next-line primer/borders
   border-radius: 2em;
 }
 
-.state, // TODO: Deprecate
+.state,
+// TODO: Deprecate
 .State,
 .State--draft {
   color: var(--color-fg-on-emphasis);

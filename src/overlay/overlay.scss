@@ -178,6 +178,7 @@ $primer-borderRadius-large: 0.75rem;
 
         .Overlay-description {
           font-size: $body-font-size;
+          line-height: var(--primer-text-body-lineHeight-medium, 1.5);
         }
       }
     }
@@ -206,6 +207,7 @@ $primer-borderRadius-large: 0.75rem;
         margin: 0;
         font-size: $body-font-size;
         font-weight: $font-weight-bold;
+        line-height: var(--primer-text-body-lineHeight-medium, 1.5);
       }
 
       .Overlay-description {
@@ -226,6 +228,7 @@ $primer-borderRadius-large: 0.75rem;
   scrollbar-width: thin;
   scrollbar-gutter: stable;
   font-size: $body-font-size;
+  line-height: var(--primer-text-body-lineHeight-medium, 1.5);
   flex-grow: 1;
 
   &.Overlay-body--paddingCondensed {

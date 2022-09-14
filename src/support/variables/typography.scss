@@ -3,7 +3,7 @@
 // Heading sizes - mobile
 // h4-h6 remain the same size on both mobile & desktop
 $h00-size-mobile: var(--primer-text-display-size, 40px) !default;
-$h0-size-mobile: var(--primer-text-display-size, 32px) !default;
+$h0-size-mobile: var(--primer-text-title-size-large, 32px) !default;
 $h1-size-mobile: var(--primer-text-title-size-large, 26px) !default;
 $h2-size-mobile: var(--primer-text-title-size-medium, 22px) !default;
 $h3-size-mobile: var(--primer-text-subtitle-size, 18px) !default;

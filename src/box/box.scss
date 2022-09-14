@@ -83,6 +83,7 @@
 .Box-title {
   font-size: $body-font-size;
   font-weight: $font-weight-bold;
+  line-height: var(--primer-text-body-lineHeight-medium, 1.5);
 }
 
 .Box-body {
@@ -128,6 +129,7 @@
   }
 
   &.navigation-focus {
+
     // Focus styles for when drag icon
     .Box-row--drag-button {
       color: var(--color-accent-fg);
@@ -280,6 +282,7 @@
 
 //Box with btn-octicon
 .Box-btn-octicon {
+
   // Increase specificity when btn-octicon is used because comes after .Box in the cascade
   &.btn-octicon {
     padding: $spacer-3 $spacer-3;

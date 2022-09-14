@@ -113,9 +113,10 @@ $SelectMenu-max-height: 480px !default;
 }
 
 .SelectMenu-title {
-  flex: 1;
   font-size: $body-font-size;
   font-weight: $font-weight-bold;
+  line-height: var(--primer-text-body-lineHeight-medium, 1.5);
+  flex: 1;
 
   @include breakpoint(sm) {
     font-size: inherit;

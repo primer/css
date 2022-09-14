@@ -12,7 +12,7 @@
   margin-left: -1px;
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
-  line-height: 20px; // Specifically not inherit our `<body>` default
+  line-height: var(--primer-text-body-lineHeight-medium, 20px);
   color: var(--color-fg-default);
   cursor: pointer;
   border: $border-width $border-style var(--color-border-default);
@@ -49,7 +49,7 @@
   &:disabled {
     position: relative; // enables z-index
 
-    + .radio-label {
+    +.radio-label {
       color: var(--color-primer-fg-disabled);
       cursor: default;
       background-color: var(--color-neutral-subtle);
