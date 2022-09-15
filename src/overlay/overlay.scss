@@ -193,6 +193,7 @@ $primer-borderRadius-large: 0.75rem;
       display: flex;
       flex-direction: row;
       gap: $spacer-2;
+      align-self: center;
     }
 
     .Overlay-titleWrap {
