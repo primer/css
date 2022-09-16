@@ -345,7 +345,7 @@ $primer-borderRadius-large: 0.75rem;
     align-items: center;
     justify-content: left;
 
-    .Overlay#{$responsiveVariant} {
+    > .Overlay#{$responsiveVariant} {
       height: 100vh;
       max-height: unset;
       border-radius: $primer-borderRadius-large;
@@ -362,7 +362,7 @@ $primer-borderRadius-large: 0.75rem;
     align-items: center;
     justify-content: right;
 
-    .Overlay#{$responsiveVariant} {
+    > .Overlay#{$responsiveVariant} {
       height: 100vh;
       max-height: unset;
       border-radius: $primer-borderRadius-large;
@@ -379,7 +379,7 @@ $primer-borderRadius-large: 0.75rem;
     align-items: end;
     justify-content: center;
 
-    .Overlay#{$responsiveVariant} {
+    > .Overlay#{$responsiveVariant} {
       width: 100vw;
       height: auto;
       max-height: calc(100vh - 2rem);
@@ -397,7 +397,7 @@ $primer-borderRadius-large: 0.75rem;
     align-items: start;
     justify-content: center;
 
-    .Overlay#{$responsiveVariant} {
+    > .Overlay#{$responsiveVariant} {
       border-radius: $primer-borderRadius-large;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
