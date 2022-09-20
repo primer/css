@@ -13,6 +13,6 @@ We use Sass variables to keep color, typography, spacing, and other foundations 
 We've documented variables, mixins, and the systems they are built on for the following:
 
 - [Breakpoints](/support/breakpoints)
-- [Colors](/support/color-system)
 - [Spacing](/support/spacing)
+- [Theming](/support/theming)
 - [Typography](/support/typography)
