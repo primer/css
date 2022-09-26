@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.4.6",
-    "@changesets/cli": "2.24.2",
+    "@changesets/cli": "2.24.4",
     "@github/prettier-config": "0.0.4",
     "@koddsson/postcss-sass": "5.0.1",
     "@primer/stylelint-config": "^12.4.0",
