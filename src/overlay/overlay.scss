@@ -162,7 +162,7 @@ $primer-borderRadius-large: 0.75rem;
     // stylelint-disable-next-line primer/box-shadow
     box-shadow: inset 0 #{-$border-width} var(--color-border-default);
 
-    + .Overlay-body {
+    +.Overlay-body {
       padding-top: $spacer-3;
     }
   }
@@ -224,7 +224,6 @@ $primer-borderRadius-large: 0.75rem;
   padding-top: 0;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-gutter: stable;
   font-size: $body-font-size;
   flex-grow: 1;
 
@@ -345,7 +344,7 @@ $primer-borderRadius-large: 0.75rem;
     align-items: center;
     justify-content: left;
 
-    > .Overlay#{$responsiveVariant} {
+    >.Overlay#{$responsiveVariant} {
       height: 100vh;
       max-height: unset;
       border-radius: $primer-borderRadius-large;
@@ -362,7 +361,7 @@ $primer-borderRadius-large: 0.75rem;
     align-items: center;
     justify-content: right;
 
-    > .Overlay#{$responsiveVariant} {
+    >.Overlay#{$responsiveVariant} {
       height: 100vh;
       max-height: unset;
       border-radius: $primer-borderRadius-large;
@@ -379,7 +378,7 @@ $primer-borderRadius-large: 0.75rem;
     align-items: end;
     justify-content: center;
 
-    > .Overlay#{$responsiveVariant} {
+    >.Overlay#{$responsiveVariant} {
       width: 100vw;
       height: auto;
       max-height: calc(100vh - 2rem);
@@ -397,7 +396,7 @@ $primer-borderRadius-large: 0.75rem;
     align-items: start;
     justify-content: center;
 
-    > .Overlay#{$responsiveVariant} {
+    >.Overlay#{$responsiveVariant} {
       border-radius: $primer-borderRadius-large;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
