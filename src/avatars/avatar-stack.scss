@@ -22,6 +22,8 @@
 .AvatarStack-body {
   display: flex;
   background: var(--color-canvas-default);
+  // stylelint-disable-next-line primer/borders
+  border-radius: 100px;
 
   .avatar {
     position: relative;
