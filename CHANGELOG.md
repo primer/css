@@ -1,5 +1,16 @@
 # @primer/css
 
+## 20.4.6
+
+### Patch Changes
+
+- [#2266](https://github.com/primer/css/pull/2266) [`c28cdf7e`](https://github.com/primer/css/commit/c28cdf7effbd3bd750585543ff774e1e7c84873a) Thanks [@langermank](https://github.com/langermank)! - Remove scrollbar CSS property from Overlay
+
+* [#2255](https://github.com/primer/css/pull/2255) [`1a9a6689`](https://github.com/primer/css/commit/1a9a668931c51cb4ca0867173af78f1e18d2662d) Thanks [@jdrush89](https://github.com/jdrush89)! - Fixing ActionList Item hover focus style
+
+- [#2249](https://github.com/primer/css/pull/2249) [`81083778`](https://github.com/primer/css/commit/81083778a73c1d1f0f37b4efefe5359926ce4269) Thanks [@koddsson](https://github.com/koddsson)! - Increase specificy for Overlay styles as they relate to the backdrop and positioning options
+  - If a Dialog opens a second Dialog, each Dialog properties should be contained to its own scope
+
 ## 20.4.5
 
 ### Patch Changes
