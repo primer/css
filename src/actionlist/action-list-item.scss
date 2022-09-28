@@ -32,7 +32,7 @@
         cursor: pointer;
         background-color: var(--color-action-list-item-default-hover-bg);
 
-        &:not(.ActionList-item--navActive) {
+        &:not(.ActionList-item--navActive):not(:focus-visible) {
           // Support for "Windows high contrast mode"
           outline: $border-style $border-width transparent;
           outline-offset: -$border-width;
@@ -111,6 +111,11 @@
         background-color: var(--color-action-list-item-default-active-bg);
       }
     }
+  }
+
+  // Make sure that the first visible item isn't a divider
+  &[hidden] + .ActionList-sectionDivider {
+    display: none;
   }
 
   // Autocomplete [aria-selected] items

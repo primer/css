@@ -1,5 +1,40 @@
 # @primer/css
 
+## 20.4.6
+
+### Patch Changes
+
+- [#2266](https://github.com/primer/css/pull/2266) [`c28cdf7e`](https://github.com/primer/css/commit/c28cdf7effbd3bd750585543ff774e1e7c84873a) Thanks [@langermank](https://github.com/langermank)! - Remove scrollbar CSS property from Overlay
+
+* [#2255](https://github.com/primer/css/pull/2255) [`1a9a6689`](https://github.com/primer/css/commit/1a9a668931c51cb4ca0867173af78f1e18d2662d) Thanks [@jdrush89](https://github.com/jdrush89)! - Fixing ActionList Item hover focus style
+
+- [#2249](https://github.com/primer/css/pull/2249) [`81083778`](https://github.com/primer/css/commit/81083778a73c1d1f0f37b4efefe5359926ce4269) Thanks [@koddsson](https://github.com/koddsson)! - Increase specificy for Overlay styles as they relate to the backdrop and positioning options
+  - If a Dialog opens a second Dialog, each Dialog properties should be contained to its own scope
+
+## 20.4.5
+
+### Patch Changes
+
+- [#2242](https://github.com/primer/css/pull/2242) [`ef31fd98`](https://github.com/primer/css/commit/ef31fd988d52391317cc8982caf06ef45732ca70) Thanks [@JoshBowdenConcepts](https://github.com/JoshBowdenConcepts)! - This border change was made to ensure that assignee avatars would stack next to one another correctly.
+
+## 20.4.4
+
+### Patch Changes
+
+- [#2218](https://github.com/primer/css/pull/2218) [`6205337b`](https://github.com/primer/css/commit/6205337b4c871b6ce431c8b211ddb0bbd176946f) Thanks [@langermank](https://github.com/langermank)! - - Adding readonly styles
+  - Fixing focus background color for inset field
+
+* [#2211](https://github.com/primer/css/pull/2211) [`8e5f6224`](https://github.com/primer/css/commit/8e5f62244192a8e2a191be7e7ad20d00f4b4bedb) Thanks [@imjohnbo](https://github.com/imjohnbo)! - Remove outline reset of `.SelectMenu-closeButton`
+
+- [#2220](https://github.com/primer/css/pull/2220) [`1a8e7db5`](https://github.com/primer/css/commit/1a8e7db5f6c7b369fcfb6598df2edc42d0511da7) Thanks [@reeceatkinson](https://github.com/reeceatkinson)! - Update Marketing Typography (marketing-type.md)
+
+* [#2229](https://github.com/primer/css/pull/2229) [`8a4c0878`](https://github.com/primer/css/commit/8a4c0878857ff65447906bf7d969211f96715197) Thanks [@jonrohan](https://github.com/jonrohan)! - ActionList hide the first divider if there's hidden items in front of it.
+
+- [#2225](https://github.com/primer/css/pull/2225) [`56ea4ab1`](https://github.com/primer/css/commit/56ea4ab17644ad0d521373f700d551d66217268a) Thanks [@langermank](https://github.com/langermank)! - Overlay updates for Alpha::Dialog
+  - Size improvements
+  - Support buttom and side sheets
+  - Preliminary animations for sheets
+
 ## 20.4.3
 
 ### Patch Changes
