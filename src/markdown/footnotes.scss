@@ -19,6 +19,12 @@
 
     ol {
       padding-left: $spacer-3;
+
+      ul {
+        display: inline-block;
+        padding-left: $spacer-3;
+        margin-top: $spacer-3;
+      }
     }
 
     li {
