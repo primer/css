@@ -48,6 +48,7 @@
 
 // shared among all form control components (input, select, textarea, checkbox, radio)
 @mixin Field {
+  color: var(--color-fg-default);
   background-color: var(--color-canvas-default);
   border: solid var(--primer-borderWidth-thin, 1px) var(--color-border-default);
 
