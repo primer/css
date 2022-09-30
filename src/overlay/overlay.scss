@@ -352,7 +352,7 @@ $primer-borderRadius-large: 0.75rem;
       border-bottom-left-radius: 0;
 
       @media screen and (prefers-reduced-motion: no-preference) {
-        animation: 160ms cubic-bezier(0.32, 0, 0.67, 0) 0s 1 normal none running Overlay--motion-slideInRight;
+        animation: 250ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running Overlay--motion-slideInRight;
       }
     }
   }
@@ -369,7 +369,7 @@ $primer-borderRadius-large: 0.75rem;
       border-bottom-right-radius: 0;
 
       @media screen and (prefers-reduced-motion: no-preference) {
-        animation: 160ms cubic-bezier(0.32, 0, 0.67, 0) 0s 1 normal none running Overlay--motion-slideInLeft;
+        animation: 250ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running Overlay--motion-slideInLeft;
       }
     }
   }
@@ -387,7 +387,7 @@ $primer-borderRadius-large: 0.75rem;
       border-bottom-left-radius: 0;
 
       @media screen and (prefers-reduced-motion: no-preference) {
-        animation: 160ms cubic-bezier(0.32, 0, 0.67, 0) 0s 1 normal none running Overlay--motion-slideUp;
+        animation: 250ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running Overlay--motion-slideUp;
       }
     }
   }
@@ -400,6 +400,10 @@ $primer-borderRadius-large: 0.75rem;
       border-radius: $primer-borderRadius-large;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
+
+      @media screen and (prefers-reduced-motion: no-preference) {
+        animation: 250ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running Overlay--motion-slideDown;
+      }
     }
   }
 }
@@ -452,6 +456,12 @@ $primer-borderRadius-large: 0.75rem;
 
   .Overlay-backdrop--full-whenNarrow {
     @include Overlay-backdrop--full;
+  }
+}
+
+@keyframes Overlay--motion-slideDown {
+  from {
+    transform: translateY(-100%);
   }
 }
 
