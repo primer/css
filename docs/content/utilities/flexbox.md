@@ -199,7 +199,7 @@ Use these classes to distribute space between and around flex items along the **
 
 ### CSS
 
-```CSS
+```css
 .flex-justify-start    { justify-content: flex-start; }
 .flex-justify-end      { justify-content: flex-end; }
 .flex-justify-center   { justify-content: center; }
