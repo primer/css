@@ -7,7 +7,7 @@ bundle: tooltips
 ---
 
 <Note>
-  Please note that the `.tooltipped` component is **deprecated**.
+  Please note that the `.tooltipped` component is **deprecated**. We recommend using the [Tooltip component](https://primer.style/view-components/components/alpha/tooltip) instead.
 </Note>
 
 Add tooltips built entirely in CSS to appropriate elements.
