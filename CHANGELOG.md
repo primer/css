@@ -1,5 +1,17 @@
 # @primer/css
 
+## 20.4.7
+
+### Patch Changes
+
+- [#2228](https://github.com/primer/css/pull/2228) [`b087282e`](https://github.com/primer/css/commit/b087282e5040a53a48b707bd94151a3b896659db) Thanks [@simurai](https://github.com/simurai)! - Improve `AvatarStack` when hovering
+
+* [#2269](https://github.com/primer/css/pull/2269) [`27266fcd`](https://github.com/primer/css/commit/27266fcd212af6256511a912fb85c303e1b3a4d9) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Fix Overlay easing animation
+
+- [#2260](https://github.com/primer/css/pull/2260) [`6569fb3a`](https://github.com/primer/css/commit/6569fb3a048e324fea63674077fee587b6b9912a) Thanks [@simurai](https://github.com/simurai)! - Fix nested `<ul>` in footnotes
+
+* [#2268](https://github.com/primer/css/pull/2268) [`2e2bc71b`](https://github.com/primer/css/commit/2e2bc71b78806e0ce81005e42871bc21ec829526) Thanks [@simurai](https://github.com/simurai)! - Set FormControl color
+
 ## 20.4.6
 
 ### Patch Changes
