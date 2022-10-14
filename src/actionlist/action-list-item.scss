@@ -52,22 +52,6 @@
         // stylelint-disable-next-line primer/box-shadow
         box-shadow: inset 0 0 0 $border-width var(--color-action-list-item-default-active-border);
       }
-
-      @media screen and (prefers-reduced-motion: no-preference) {
-        animation: ActionList-item-active-bg 4s forwards cubic-bezier(0.33, 1, 0.68, 1);
-      }
-
-      @keyframes ActionList-item-active-bg {
-        50% {
-          // stylelint-disable-next-line primer/box-shadow
-          box-shadow: inset 0 2px 12px 6px rgba(var(--color-canvas-default), 0.4);
-          transform: scale(1);
-        }
-
-        100% {
-          transform: scale(0.97);
-        }
-      }
     }
 
     // hide dividers
