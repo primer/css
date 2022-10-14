@@ -153,7 +153,6 @@ $primer-borderRadius-large: 0.75rem;
 }
 
 .Overlay-header {
-  z-index: 1;
   display: flex;
   flex-direction: column;
 
@@ -239,7 +238,6 @@ $primer-borderRadius-large: 0.75rem;
 
 // generic footer slot
 .Overlay-footer {
-  z-index: 1;
   display: flex;
   padding: 0 $spacer-3 $spacer-3 $spacer-3;
   flex-direction: row;
