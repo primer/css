@@ -1,5 +1,11 @@
 # @primer/css
 
+## 20.4.8
+
+### Patch Changes
+
+- [#2284](https://github.com/primer/css/pull/2284) [`8336334d`](https://github.com/primer/css/commit/8336334d12ba3a1dac323c853b9fdcaacd480b68) Thanks [@koddsson](https://github.com/koddsson)! - Remove action list item animation
+
 ## 20.4.7
 
 ### Patch Changes
