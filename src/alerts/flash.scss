@@ -1,7 +1,7 @@
 // stylelint-disable selector-max-type, no-duplicate-selectors
 
 // Default flash
-.flash {
+.flash:not(.Banner) {
   position: relative;
   // stylelint-disable-next-line primer/spacing
   padding: 20px $spacer-3;
@@ -76,7 +76,7 @@
 // Color variations
 //
 
-.flash {
+.flash:not(.Banner) {
   color: var(--color-fg-default);
   background-image: linear-gradient(var(--color-accent-subtle), var(--color-accent-subtle));
   border-color: var(--color-accent-muted);
@@ -86,7 +86,7 @@
   }
 }
 
-.flash-warn {
+.flash-warn:not(.Banner) {
   color: var(--color-fg-default);
   background-image: linear-gradient(var(--color-attention-subtle), var(--color-attention-subtle));
   border-color: var(--color-attention-muted);
@@ -96,7 +96,7 @@
   }
 }
 
-.flash-error {
+.flash-error:not(.Banner) {
   color: var(--color-fg-default);
   background-image: linear-gradient(var(--color-danger-subtle), var(--color-danger-subtle));
   border-color: var(--color-danger-muted);
@@ -106,7 +106,7 @@
   }
 }
 
-.flash-success {
+.flash-success:not(.Banner) {
   color: var(--color-fg-default);
   background-image: linear-gradient(var(--color-success-subtle), var(--color-success-subtle));
   border-color: var(--color-success-muted);
@@ -120,7 +120,7 @@
 // Layout variations
 //
 
-.flash-full {
+.flash-full:not(.Banner) {
   // stylelint-disable-next-line primer/spacing
   margin-top: -1px;
   border-width: $border-width 0;
