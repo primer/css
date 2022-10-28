@@ -1,5 +1,11 @@
 # @primer/css
 
+## 20.5.0
+
+### Minor Changes
+
+- [#2289](https://github.com/primer/css/pull/2289) [`c23346b9`](https://github.com/primer/css/commit/c23346b9a401beb3c2b0cbc853574a5259db42a5) Thanks [@camertron](https://github.com/camertron)! - Don't apply flash\* classes to banners
+
 ## 20.4.8
 
 ### Patch Changes
