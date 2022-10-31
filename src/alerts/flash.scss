@@ -25,7 +25,7 @@
 }
 
 // Close button
-.flash-close {
+.flash-close:not(.Banner-close) {
   float: right;
   padding: $spacer-3;
   margin: -$spacer-3;
@@ -51,7 +51,7 @@
 }
 
 // Action button
-.flash-action {
+.flash-action:not(.Banner-actions) {
   float: right;
   // stylelint-disable-next-line primer/spacing
   margin-top: -3px;
