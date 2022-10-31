@@ -1,5 +1,11 @@
 # @primer/css
 
+## 20.5.1
+
+### Patch Changes
+
+- [#2292](https://github.com/primer/css/pull/2292) [`9a4f2ff7`](https://github.com/primer/css/commit/9a4f2ff78073be69127664b36d469c4b1ddf0c7c) Thanks [@camertron](https://github.com/camertron)! - Add additional :not selectors for flash classes
+
 ## 20.5.0
 
 ### Minor Changes
