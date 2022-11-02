@@ -252,20 +252,20 @@ $variant in $responsive-variants {
 // Text styles
 /* Set the font weight to normal */
 .text-normal {
-  font-weight: var(--base-text-weight-normal, $font-weight-normal) !important;
+  font-weight: $font-weight-normal !important;
 }
 
 /* Set the font weight to bold */
 .text-bold {
-  font-weight: var(--base-text-weight-semibold, $font-weight-bold) !important;
+  font-weight: $font-weight-bold !important;
 }
 
 .text-semibold {
-  font-weight: var(--base-text-weight-medium, $font-weight-semibold) !important;
+  font-weight: $font-weight-semibold !important;
 }
 
 .text-light {
-  font-weight: var(--base-text-weight-light, $font-weight-light) !important;
+  font-weight: $font-weight-light !important;
 }
 
 /* Set the font to italic */
