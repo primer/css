@@ -232,7 +232,11 @@ Use the `.select-sm` class to resize both default and custom `<select>`s to matc
 </form>
 ```
 
-## Form group validation
+## Form group validation (deprecated)
+
+<Note>
+  These form validation styles are deprecated. Please use the <a href="https://primer.style/view-components/components/alpha/textfield#with-a-validation-message">TextField</a> ViewComponent instead or refer to the <a href="https://primer.style/design/ui-patterns/forms#validation">design guidelines</a>.
+</Note>
 
 Convey success, errors and warnings for form groups. For github.com consider using the [`<auto-check>`](https://github.github.io/web-systems-documentation/#custom-elements-auto-check-md) element to perform server-side validation on an input.
 
