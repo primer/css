@@ -72,7 +72,6 @@
 // Type utilities that match type sale
 /* Set the font size to 26px */
 .f1 {
-
   font-size: var(--h1-size-mobile, $h1-size-mobile) !important;
 
   @include breakpoint(md) {
@@ -82,7 +81,6 @@
 
 /* Set the font size to 22px */
 .f2 {
-
   font-size: var(--h2-size-mobile, $h2-size-mobile) !important;
 
   @include breakpoint(md) {
@@ -92,7 +90,6 @@
 
 /* Set the font size to 18px */
 .f3 {
-
   font-size: var(--h3-size-mobile, $h3-size-mobile) !important;
 
   @include breakpoint(md) {
@@ -132,7 +129,6 @@
 
 /* Set the font size to 32px and weight to light */
 .f0-light {
-
   font-size: var(--h0-size-mobile, $h0-size-mobile) !important;
   font-weight: var(--base-text-weight-light, $font-weight-light) !important;
 
@@ -143,7 +139,6 @@
 
 /* Set the font size to 26px and weight to light */
 .f1-light {
-
   font-size: var(--h1-size-mobile, $h1-size-mobile) !important;
   font-weight: var(--base-text-weight-light, $font-weight-light) !important;
 
@@ -154,7 +149,6 @@
 
 /* Set the font size to 22px and weight to light */
 .f2-light {
-
   font-size: var(--h2-size-mobile, $h2-size-mobile) !important;
   font-weight: var(--base-text-weight-light, $font-weight-light) !important;
 
