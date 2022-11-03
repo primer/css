@@ -1,4 +1,4 @@
-// stylelint-disable comment-empty-line-before
+// stylelint-disable comment-empty-line-before, primer/typography
 
 // Type scale variables found in ../support/lib/variables.scss
 // $h00-size-mobile: 40px;
@@ -200,8 +200,7 @@
 // combined with type size equate to whole pixels.
 // Will be improved with future typography scale updates.
 // Responsive line-height
-@each $breakpoint,
-$variant in $responsive-variants {
+@each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
 
     /* Set the line height to ultra condensed */
@@ -228,8 +227,7 @@ $variant in $responsive-variants {
 
 // Text alignments
 // Responsive text alignment
-@each $breakpoint,
-$variant in $responsive-variants {
+@each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
 
     /* Text align to the right */
