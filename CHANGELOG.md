@@ -1,5 +1,11 @@
 # @primer/css
 
+## 20.6.0
+
+### Minor Changes
+
+- [#2300](https://github.com/primer/css/pull/2300) [`5a0b9b29`](https://github.com/primer/css/commit/5a0b9b2939c1428430d249aeeb9adb0ba8bc18ce) Thanks [@simurai](https://github.com/simurai)! - Add `Noto Sans` to the body font stack
+
 ## 20.5.1
 
 ### Patch Changes
