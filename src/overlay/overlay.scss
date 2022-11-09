@@ -18,12 +18,12 @@ $primer-borderRadius-large: 0.75rem;
   width: min(var(--overlay-width), 100vw - 2rem);
   min-width: 192px;
   max-height: min(calc(100vh - 2rem), var(--overlay-height));
+  white-space: normal;
   flex-direction: column;
   background-color: var(--color-canvas-overlay);
   border-radius: $primer-borderRadius-large;
   box-shadow: var(--color-overlay-shadow);
   opacity: 1;
-  white-space: normal;
 
   &.Overlay--size-auto {
     min-width: 192px;
