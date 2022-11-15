@@ -41,7 +41,7 @@ blockquote {
 
 ul,
 ol {
-  padding-left: 0;
+  padding-inline-start: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -59,8 +59,7 @@ ol ol ol {
 }
 
 dd {
-  margin-left: 0;
-  margin-right: 0;
+  margin-inline-start: 0;
 }
 
 // Monospaced
