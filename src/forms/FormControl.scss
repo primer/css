@@ -624,21 +624,21 @@ input[type='radio'].FormControl-radio {
   margin: 0;
   margin-top: 0.125rem; // 2px to center align with label (20px line-height)
   cursor: pointer;
+  border-radius: var(--primer-borderRadius-full, 100vh);
   transition: background-color, border-color 80ms cubic-bezier(0.33, 1, 0.68, 1); // checked -> unchecked - add 120ms delay to fully see animation-out
   appearance: none;
-  border-radius: var(--primer-borderRadius-full, 100vh);
 
   &::after {
     @include minTouchTarget(var(--primer-control-medium-size, 32px), var(--primer-control-medium-size, 32px));
   }
 
   &:checked {
-    border-width: var(--base-size-4, 4px);
     border-color: var(--color-accent-fg);
+    border-width: var(--base-size-4, 4px);
 
     &:disabled {
-      border-color: var(--color-primer-fg-disabled);
       cursor: not-allowed;
+      border-color: var(--color-primer-fg-disabled);
     }
   }
 
