@@ -77,7 +77,7 @@
   }
 
   // default focus state
-  &:focus-visible {
+  &:not([type='checkbox']):not([type='radio']):focus-visible {
     @include focusBoxShadowInset;
   }
 }
@@ -520,8 +520,7 @@
 
 // these selectors are temporary to override base.scss
 // once Field styles are widely adopted, we can adjust this and the global base styles
-input[type='checkbox'].FormControl-checkbox,
-input[type='radio'].FormControl-radio {
+input[type='checkbox'].FormControl-checkbox {
   @include Field;
 
   position: relative;
@@ -604,9 +603,8 @@ input[type='radio'].FormControl-radio {
     // stylelint-enable primer/colors
   }
 
-  &:focus,
   &:focus-visible {
-    outline-offset: 2px;
+    @include focusOutline(2px);
   }
 
   &:indeterminate {
@@ -618,31 +616,43 @@ input[type='radio'].FormControl-radio {
 }
 
 input[type='radio'].FormControl-radio {
+  @include Field;
+
+  position: relative;
+  width: var(--base-size-16, 16px);
+  height: var(--base-size-16, 16px);
+  margin: 0;
+  margin-top: 0.125rem; // 2px to center align with label (20px line-height)
+  cursor: pointer;
   border-radius: var(--primer-borderRadius-full, 100vh);
+  transition: background-color, border-color 80ms cubic-bezier(0.33, 1, 0.68, 1); // checked -> unchecked - add 120ms delay to fully see animation-out
+  appearance: none;
 
-  &::before {
-    clip-path: circle(0%);
-    mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgOS4zNzVDNy40MTYyMiA5LjM3NSA5LjM3NSA3LjQxNjIyIDkuMzc1IDVDOS4zNzUgMi41ODM3NiA3LjQxNjIyIDAuNjI1IDUgMC42MjVDMi41ODM3NiAwLjYyNSAwLjYyNSAyLjU4Mzc2IDAuNjI1IDVDMC42MjUgNy40MTYyMiAyLjU4Mzc2IDkuMzc1IDUgOS4zNzVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'); // checked circle image
-    mask-size: 65%;
-
-    @media screen and (prefers-reduced-motion: no-preference) {
-      animation: radioOut 80ms cubic-bezier(0.65, 0, 0.35, 1) forwards; // slightly snappier animation out
-    }
+  &::after {
+    @include minTouchTarget(var(--primer-control-medium-size, 32px), var(--primer-control-medium-size, 32px));
   }
 
   &:checked {
-    &::before {
-      @media screen and (prefers-reduced-motion: no-preference) {
-        animation: radioIn 80ms cubic-bezier(0.65, 0, 0.35, 1) forwards 80ms;
-      }
+    border-color: var(--color-accent-fg);
+    border-width: var(--base-size-4, 4px);
+
+    &:disabled {
+      cursor: not-allowed;
+      border-color: var(--color-primer-fg-disabled);
     }
   }
 
-  &:indeterminate {
-    &::before {
-      visibility: hidden;
-    }
+  &:focus-visible {
+    @include focusOutline(2px);
   }
+
+  // Windows High Contrast mode
+  // stylelint-disable primer/colors
+  @media (forced-colors: active) {
+    background-color: CanvasText;
+    border-color: CanvasText;
+  }
+  // stylelint-enable primer/colors
 }
 
 @keyframes checkmarkIn {
@@ -662,25 +672,5 @@ input[type='radio'].FormControl-radio {
 
   to {
     clip-path: inset(var(--base-size-16, 16px) 0 0 0);
-  }
-}
-
-@keyframes radioIn {
-  from {
-    clip-path: circle(0%);
-  }
-
-  to {
-    clip-path: circle(100%);
-  }
-}
-
-@keyframes radioOut {
-  from {
-    clip-path: circle(100%);
-  }
-
-  to {
-    clip-path: circle(0%);
   }
 }
