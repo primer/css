@@ -4,6 +4,7 @@
 $border-width: 1px !default;
 $border-style: solid !default;
 $border: $border-width $border-style var(--color-border-default) !default;
+$border-rem: var(--primer-borderWidth-thin, 1px) solid var(--color-border-default) !default;
 
 // Border Radius
 $border-radius-1:  4px !default;
