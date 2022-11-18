@@ -624,8 +624,8 @@ input[type='radio'].FormControl-radio {
   margin: 0;
   margin-top: 0.125rem; // 2px to center align with label (20px line-height)
   cursor: pointer;
-  border-radius: var(--primer-borderRadius-full, 100vh);
   border-color: var(--color-neutral-emphasis);
+  border-radius: var(--primer-borderRadius-full, 100vh);
   transition: background-color, border-color 80ms cubic-bezier(0.33, 1, 0.68, 1); // checked -> unchecked - add 120ms delay to fully see animation-out
   appearance: none;
 
