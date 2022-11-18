@@ -1,5 +1,19 @@
 # @primer/css
 
+## 20.6.1
+
+### Patch Changes
+
+- [#2305](https://github.com/primer/css/pull/2305) [`12355f87`](https://github.com/primer/css/commit/12355f87ac8955da0707f6be6fa06a936c26b2fd) Thanks [@vdepizzol](https://github.com/vdepizzol)! - Add upper-roman and upper-alpha list types
+
+- [#2307](https://github.com/primer/css/pull/2307) [`0370244f`](https://github.com/primer/css/commit/0370244f49322863534c62b5b5589128c551ccc7) Thanks [@jonrohan](https://github.com/jonrohan)! - Bugfix: Adding `white-space: normal` to Overlay compontn to reset wrapping.
+
+- [#2316](https://github.com/primer/css/pull/2316) [`f3acb2b1`](https://github.com/primer/css/commit/f3acb2b116f10955e1ba4f1a35aa874eed019ceb) Thanks [@langermank](https://github.com/langermank)! - Increase Checkbox/Radio border contrast
+
+- [#2314](https://github.com/primer/css/pull/2314) [`c8100be7`](https://github.com/primer/css/commit/c8100be771634093fe3a4d36481fc43c0d966015) Thanks [@langermank](https://github.com/langermank)! - [Bug] Radio checked + focus state fixes
+
+- [#2310](https://github.com/primer/css/pull/2310) [`551492eb`](https://github.com/primer/css/commit/551492ebf420b3ea8872e9a101bd874d8b4e8a1d) Thanks [@jdanyow](https://github.com/jdanyow)! - Update dropdown hover selector
+
 ## 20.6.0
 
 ### Minor Changes
