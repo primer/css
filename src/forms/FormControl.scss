@@ -50,7 +50,7 @@
 @mixin Field {
   color: var(--color-fg-default);
   background-color: var(--color-canvas-default);
-  border: solid var(--primer-borderWidth-thin, 1px) var(--color-border-default);
+  border: var(--primer-borderWidth-thin, 1px) solid var(--color-border-default);
 
   &[disabled] {
     color: var(--color-primer-fg-disabled);
@@ -530,7 +530,7 @@ input[type='checkbox'].FormControl-checkbox {
   margin: 0;
   margin-top: 0.125rem; // 2px to center align with label (20px line-height)
   cursor: pointer;
-  border: solid var(--primer-borderWidth-thin, 1px) var(--color-border-default);
+  border-color: var(--color-neutral-emphasis);
   border-radius: var(--primer-borderRadius-small, 3px);
   transition: background-color, border-color 80ms cubic-bezier(0.33, 1, 0.68, 1); // checked -> unchecked - add 120ms delay to fully see animation-out
   appearance: none;
@@ -624,6 +624,7 @@ input[type='radio'].FormControl-radio {
   margin: 0;
   margin-top: 0.125rem; // 2px to center align with label (20px line-height)
   cursor: pointer;
+  border-color: var(--color-neutral-emphasis);
   border-radius: var(--primer-borderRadius-full, 100vh);
   transition: background-color, border-color 80ms cubic-bezier(0.33, 1, 0.68, 1); // checked -> unchecked - add 120ms delay to fully see animation-out
   appearance: none;
