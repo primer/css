@@ -64,7 +64,7 @@ Action list is a `ul` list designed to contain list items.
 #### Nested sub list
 
 ```html live
-<nav>
+<ul>
     <li class="ActionList-sectionDivider">
       <h3 class="ActionList-sectionDivider-title" id="group-id-1">Access</h3>
     </li>
@@ -98,7 +98,7 @@ Action list is a `ul` list designed to contain list items.
             </ul>
         </li>
     </ul>
-</nav>
+</ul>
 ```
 
 
