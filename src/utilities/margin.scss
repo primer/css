@@ -8,8 +8,8 @@
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
     // Loop through the spacer values
-    @each $scale, $size in $spacer-map-extended {
-      @if ($scale < length($spacer-map)) {
+    @each $scale, $size in $spacer-map-rem-extended {
+      @if ($scale < length($spacer-map-rem)) {
         /* Set a $size margin to all sides at $breakpoint */
         .m#{$variant}-#{$scale}  { margin: $size !important; }
       }
@@ -19,7 +19,7 @@
       /* Set a $size margin on the bottom at $breakpoint */
       .mb#{$variant}-#{$scale} { margin-bottom: $size !important; }
 
-      @if ($scale < length($spacer-map)) {
+      @if ($scale < length($spacer-map-rem)) {
         /* Set a $size margin on the right at $breakpoint */
         .mr#{$variant}-#{$scale} { margin-right: $size !important; }
         /* Set a $size margin on the left at $breakpoint */
@@ -28,19 +28,19 @@
 
       @if ($size != 0) {
         /* Set a negative $size margin on top at $breakpoint */
-        .mt#{$variant}-n#{$scale} { margin-top: -$size !important; }
+        .mt#{$variant}-n#{$scale} { margin-top: calc(-1 * $size) !important; }
         /* Set a negative $size margin on the bottom at $breakpoint */
-        .mb#{$variant}-n#{$scale} { margin-bottom: -$size !important; }
+        .mb#{$variant}-n#{$scale} { margin-bottom: calc(-1 * $size) !important; }
 
-        @if ($scale < length($spacer-map)) {
+        @if ($scale < length($spacer-map-rem)) {
           /* Set a negative $size margin on the right at $breakpoint */
-          .mr#{$variant}-n#{$scale} { margin-right : -$size !important; }
+          .mr#{$variant}-n#{$scale} { margin-right : calc(-1 * $size) !important; }
           /* Set a negative $size margin on the left at $breakpoint */
-          .ml#{$variant}-n#{$scale} { margin-left  : -$size !important; }
+          .ml#{$variant}-n#{$scale} { margin-left  : calc(-1 * $size) !important; }
         }
       }
 
-      @if ($scale < length($spacer-map)) {
+      @if ($scale < length($spacer-map-rem)) {
         /* Set a $size margin on the left & right at $breakpoint */
         .mx#{$variant}-#{$scale} {
           margin-right: $size !important;

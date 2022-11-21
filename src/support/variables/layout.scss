@@ -9,16 +9,14 @@ $display-values: (
   inline-flex,
   none,
   table,
-  table-cell
-) !default;
+  table-cell) !default;
 
 // maps edges to respective corners for border-radius
 $edges: (
   top: (top-left, top-right),
   right: (top-right, bottom-right),
   bottom: (bottom-right, bottom-left),
-  left: (bottom-left, top-left)
-) !default;
+  left: (bottom-left, top-left)) !default;
 
 // These are our margin and padding utility spacers. The default step size we
 // use is 8px. This gives us a key of:
@@ -32,13 +30,13 @@ $edges: (
 $spacer: 8px !default;
 
 // Our spacing scale
-$spacer-0: 0 !default;                  // 0
-$spacer-1: $spacer * 0.5 !default;      // 4px
-$spacer-2: $spacer !default;            // 8px
-$spacer-3: $spacer * 2 !default;        // 16px
-$spacer-4: $spacer * 3 !default;        // 24px
-$spacer-5: $spacer * 4 !default;        // 32px
-$spacer-6: $spacer * 5 !default;        // 40px
+$spacer-0: 0 !default; // 0
+$spacer-1: $spacer * 0.5 !default; // 4px
+$spacer-2: $spacer !default; // 8px
+$spacer-3: $spacer * 2 !default; // 16px
+$spacer-4: $spacer * 3 !default; // 24px
+$spacer-5: $spacer * 4 !default; // 32px
+$spacer-6: $spacer * 5 !default; // 40px
 
 // The list of spacer values
 $spacers: (
@@ -66,9 +64,9 @@ $spacer-map: (
 // Increases the core spacing scale first by 8px for $spacer-7, then by 16px
 // increments from $spacer-8 to $spacer-12, i.e. after 40px, we have 48, 64,
 // 80, 96, etc.
-$spacer-7:  $spacer * 6 !default;  // 48px
-$spacer-8:  $spacer * 8 !default;  // 64px
-$spacer-9:  $spacer * 10 !default; // 80px
+$spacer-7: $spacer * 6 !default; // 48px
+$spacer-8: $spacer * 8 !default; // 64px
+$spacer-9: $spacer * 10 !default; // 80px
 $spacer-10: $spacer * 12 !default; // 96px
 $spacer-11: $spacer * 14 !default; // 112px
 $spacer-12: $spacer * 16 !default; // 128px
@@ -83,43 +81,42 @@ $spacers-large: (
 ) !default;
 
 $spacer-map-extended: map-merge(
-  (
-    0: 0,
-    1: $spacer-1,
-    2: $spacer-2,
-    3: $spacer-3,
-    4: $spacer-4,
-    5: $spacer-5,
-    6: $spacer-6,
-  ),
-  $spacers-large,
+  (0: 0,
+  1: $spacer-1,
+  2: $spacer-2,
+  3: $spacer-3,
+  4: $spacer-4,
+  5: $spacer-5,
+  6: $spacer-6,
+),
+$spacers-large,
 ) !default;
 
 // Em spacer variables
 $em-spacer-1: 0.0625em !default; // 1/16
-$em-spacer-2: 0.125em !default;  // 1/8
-$em-spacer-3: 0.25em !default;   // 1/4
-$em-spacer-4: 0.375em !default;  // 3/8
-$em-spacer-5: 0.5em !default;    // 1/2
-$em-spacer-6: 0.75em !default;   // 3/4
+$em-spacer-2: 0.125em !default; // 1/8
+$em-spacer-3: 0.25em !default; // 1/4
+$em-spacer-4: 0.375em !default; // 3/8
+$em-spacer-5: 0.5em !default; // 1/2
+$em-spacer-6: 0.75em !default; // 3/4
 
 // Size scale
 // Used for buttons, inputs, labels, avatars etc.
 $size: 16px !default;
 
 $size-0: 0 !default;
-$size-1: $size !default;           // 16px
-$size-2: $size-1 +  4px !default;  // 20px
-$size-3: $size-2 +  4px !default;  // 24px
-$size-4: $size-3 +  4px !default;  // 28px
-$size-5: $size-4 +  4px !default;  // 32px
-$size-6: $size-5 +  8px !default;  // 40px
-$size-7: $size-6 +  8px !default;  // 48px
-$size-8: $size-7 + 16px !default;  // 64px
+$size-1: $size !default; // 16px
+$size-2: $size-1 + 4px !default; // 20px
+$size-3: $size-2 + 4px !default; // 24px
+$size-4: $size-3 + 4px !default; // 28px
+$size-5: $size-4 + 4px !default; // 32px
+$size-6: $size-5 + 8px !default; // 40px
+$size-7: $size-6 + 8px !default; // 48px
+$size-8: $size-7 + 16px !default; // 64px
 
 // Fixed-width container variables
 $container-width: 980px !default;
-$grid-gutter:     10px !default;
+$grid-gutter: 10px !default;
 
 // Breakpoint widths
 $width-xs: 0 !default;
@@ -143,8 +140,7 @@ $breakpoints: (
   sm: $width-sm,
   md: $width-md,
   lg: $width-lg,
-  xl: $width-xl
-) !default;
+  xl: $width-xl) !default;
 
 // Viewport ranges
 // Soon to be provided by Primer Primitives directly
@@ -170,39 +166,65 @@ $responsive-positions: (
   relative,
   absolute,
   fixed,
-  sticky
-) !default;
+  sticky) !default;
 
 $sidebar-width: (
   sm: 220px,
   md: 256px,
-  lg: 296px
-) !default;
+  lg: 296px) !default;
 
 $sidebar-narrow-width: (
   md: 240px,
-  lg: 256px
-) !default;
+  lg: 256px) !default;
 
 $sidebar-wide-width: (
   lg: 320px,
-  xl: 336px
-) !default;
+  xl: 336px) !default;
 
 $gutter: (
   md: $spacer-3,
   lg: $spacer-4,
-  xl: $spacer-5
-) !default;
+  xl: $spacer-5) !default;
 
 $gutter-condensed: (
   md: $spacer-3,
   lg: $spacer-3,
-  xl: $spacer-4
-) !default;
+  xl: $spacer-4) !default;
 
 $gutter-spacious: (
   md: $spacer-4,
   lg: $spacer-5,
-  xl: $spacer-6
+  xl: $spacer-6) !default;
+
+// rem unit support
+
+$spacer-map-rem: (
+  0: 0,
+  1: var(--base-size-4, 4px),
+  2: var(--base-size-8, 8px),
+  3: var(--base-size-16, 16px),
+  4: var(--base-size-24, 24px),
+  5: var(--base-size-32, 32px),
+  6: var(--base-size-40, 40px),
+) !default;
+
+$spacers-large-rem: (
+  7: var(--base-size-48, 48px),
+  8: var(--base-size-64, 64px),
+  9: var(--base-size-80, 80px),
+  10: var(--base-size-96, 96px),
+  11: var(--base-size-112, 112px),
+  12: var(--base-size-128, 128px),
+) !default;
+
+$spacer-map-rem-extended: map-merge(
+  (0: 0,
+  1: var(--base-size-4, 4px),
+  2: var(--base-size-8, 8px),
+  3: var(--base-size-16, 16px),
+  4: var(--base-size-24, 24px),
+  5: var(--base-size-32, 32px),
+  6: var(--base-size-40, 40px),
+),
+$spacers-large-rem,
 ) !default;
