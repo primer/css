@@ -1,5 +1,15 @@
 # @primer/css
 
+## 20.7.0
+
+### Minor Changes
+
+- [#2311](https://github.com/primer/css/pull/2311) [`3b397d98`](https://github.com/primer/css/commit/3b397d985c23592d0e18d14fe75d71ea7572aa18) Thanks [@langermank](https://github.com/langermank)! - [WIP] Convert margin utilities to rem units with fallbacks
+
+- [`46016601`](https://github.com/primer/css/commit/46016601e89d8b777e06dc7d6cd4a272dba17f7d) Thanks [@langermank](https://github.com/langermank)! - Convert padding and border utilities to use `rem` units with `px` fallbacks
+
+- [#2302](https://github.com/primer/css/pull/2302) [`412d7820`](https://github.com/primer/css/commit/412d78208ba76e7a1cdc0872a2adcadabc3d0414) Thanks [@langermank](https://github.com/langermank)! - Convert typography to use `rem` units with `px` fallbacks
+
 ## 20.6.1
 
 ### Patch Changes
