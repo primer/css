@@ -1,4 +1,4 @@
-// stylelint-disable selector-max-type, selector-no-qualifying-type
+// stylelint-disable selector-max-type, selector-no-qualifying-type, primer/typography
 * {
   box-sizing: border-box;
 }
@@ -14,7 +14,7 @@ button {
 
 body {
   font-family: $body-font;
-  font-size: $body-font-size;
+  font-size: var(--body-font-size, $body-font-size);
   line-height: $body-line-height;
   color: var(--color-fg-default);
   background-color: var(--color-canvas-default);
