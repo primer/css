@@ -1,0 +1,22 @@
+// Temporary typography vars in rem units variables
+:root {
+  // Heading sizes - mobile
+  // h4-h6 remain the same size on both mobile & desktop
+  --h00-size-mobile: 2.5rem;
+  --h0-size-mobile: 2rem;
+  --h1-size-mobile: 1.625rem;
+  --h2-size-mobile: 1.375rem;
+  --h3-size-mobile: 1.125rem;
+
+  // Heading sizes - desktop
+  --h00-size: 3rem;
+  --h0-size: 2.5rem;
+  --h1-size: 2rem;
+  --h2-size: 1.5rem;
+  --h3-size: 1.25rem;
+  --h4-size: 1rem;
+  --h5-size: 0.875rem;
+  --h6-size: 0.75rem;
+  --body-font-size: 0.875rem;
+  --font-size-small: 0.75rem;
+}
