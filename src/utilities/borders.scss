@@ -35,7 +35,7 @@
     .rounded#{$variant}-0 { border-radius: 0 !important; }
     .rounded#{$variant}-1 { border-radius: var(--primer-borderRadius-small,  $border-radius-1) !important; }
     .rounded#{$variant}-2 { border-radius: var(--primer-borderRadius-medium,  $border-radius-2) !important; }
-    .rounded#{$variant}-3 { border-radius: var(--primer-borderRadius-medium,  $border-radius-3) !important; }
+    .rounded#{$variant}-3 { border-radius: var(--primer-borderRadius-large,  $border-radius-3) !important; }
 
     @each $edge, $corners in $edges {
       .rounded#{$variant}-#{$edge}-0 {
