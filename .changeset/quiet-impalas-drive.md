@@ -1,5 +1,5 @@
 ---
-"@primer/css": patch
+"@primer/css": minor
 ---
 
 Import blankslate styles from primer/view-components
