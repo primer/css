@@ -1,5 +1,11 @@
 # @primer/css
 
+## 20.7.1
+
+### Patch Changes
+
+- [#2322](https://github.com/primer/css/pull/2322) [`1259ddd4`](https://github.com/primer/css/commit/1259ddd408a415a74b740992a8d64197b48bf1f4) Thanks [@langermank](https://github.com/langermank)! - Use correct weight token for typography utilities
+
 ## 20.7.0
 
 ### Minor Changes
