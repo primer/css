@@ -1199,10 +1199,10 @@
     stylelint-scss "^4.0.0"
     tap-map "^1.0.0"
 
-"@primer/view-components@^0.0.111":
-  version "0.0.111"
-  resolved "https://registry.yarnpkg.com/@primer/view-components/-/view-components-0.0.111.tgz#99753e40523983c1964a0cbbc264fc2d5df303d8"
-  integrity sha512-C2M7sKXeOd4lH6NXsQgPHlwoV1zRJOGateLjTaRRIvw6mOFe75m4Y6sqMazvTyu+mj+ibzqHEW21rWE9irWQqA==
+"@primer/view-components@0.0.0-20221123214850":
+  version "0.0.0-20221123214850"
+  resolved "https://registry.yarnpkg.com/@primer/view-components/-/view-components-0.0.0-20221123214850.tgz#3dc5af0177eeab615c679c5d981e92f08d4405c1"
+  integrity sha512-fpdcnKdsvlJx5f/Ea8HKzpXqkOkLIIUa3cphgtH3uicJGCsrxfbK7nMEIuSPZcvyZMEOXJByQFXpA3dQcFcmwA==
   dependencies:
     "@github/auto-complete-element" "^3.3.4"
     "@github/catalyst" "^1.6.0"
