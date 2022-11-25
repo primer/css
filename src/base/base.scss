@@ -44,6 +44,12 @@ label {
   font-weight: $font-weight-bold;
 }
 
+// Custom styling for HTML5 validation bubbles (WebKit only)
+::placeholder {
+  color: var(--color-fg-subtle);
+  opacity: 1; // override opacity in normalize.css
+}
+
 // Horizontal lines
 //
 // TODO-MDO: Remove `.rule` from everywhere and replace with `<hr>`s
