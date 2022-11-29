@@ -10,6 +10,7 @@
     font-size: 85%;
     background-color: var(--color-neutral-muted);
     border-radius: $border-radius;
+    white-space: break-spaces;
 
     br { display: none; }
   }
