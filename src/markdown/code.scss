@@ -10,6 +10,7 @@
     font-size: 85%;
     background-color: var(--color-neutral-muted);
     border-radius: $border-radius;
+    white-space: break-spaces; // keeps rendering spaces, but breaks them onto multiple lines 
 
     br { display: none; }
   }
