@@ -16,7 +16,7 @@ Add tooltips built entirely in CSS to appropriate elements.
 
 Tooltips as a UI pattern should be our last resort for conveying information because it is hidden by default and often with zero or little visual indicator of its existence.
 
-Before adding a tooltip, please consider: Is this information essential and necessary* Can the UI be made clearer? Can the information be shown on the page by default?
+Before adding a tooltip, please consider: Is this information essential and necessary* Can the UI be made clearer? Can the information be shown on the page by default? And check out [alternatives to Tooltips](https://primer.style/design/accessibility/tooltip-alternatives) to explore your options.
 
 ### Attention
 
