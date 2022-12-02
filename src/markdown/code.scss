@@ -8,6 +8,7 @@
     margin: 0;
     // stylelint-disable-next-line primer/typography
     font-size: 85%;
+    white-space: break-spaces; // keeps rendering spaces, but breaks them onto multiple lines
     background-color: var(--color-neutral-muted);
     border-radius: $border-radius;
 
