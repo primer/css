@@ -825,15 +825,15 @@
   resolved "https://registry.yarnpkg.com/@github/prettier-config/-/prettier-config-0.0.4.tgz#cbfddb36a7f29a81c5af155dc5827e95b23b9ccd"
   integrity sha512-ZOJ+U771Mw68qp2GPbcqPt2Xg0LEl0YwiIFHXwVLAFm2TgDnsgcCHhXO8PIxOWPqSFO4S7xIMD9CBobfaWGASA==
 
+"@github/relative-time-element@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@github/relative-time-element/-/relative-time-element-4.0.0.tgz#18ca051f0385142e8c13096cd57e8637012c99ef"
+  integrity sha512-A//nGe6GFciGP0GxSZZKZbULwSZuENZ19cTaAkvRU3Ptqgdpo95VF6YS5TPi54NVM/zt8q6KtDTOMyjdFQHj0g==
+
 "@github/tab-container-element@^3.1.2":
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@github/tab-container-element/-/tab-container-element-3.2.0.tgz#d2d33da09ee3d7f4245a9f77479fe4969b137ae5"
   integrity sha512-to5ZJuywKK3KX53X1ifOcWjvUTQcBGdQ6Qkhm8L97xQ3ovICag1048M3YMpc+QSdr8xWeCBMnLeMnENqotB0Og==
-
-"@github/time-elements@^3.1.2":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@github/time-elements/-/time-elements-3.3.0.tgz#134d69e359bc150938a5edfe6525e051e0b5ed35"
-  integrity sha512-ru9YsaRfikuljnLWv69Ao7FrQ8dyxf7gDcqQ+3peGOMYMKIQMb4VPpM2ULR9vzxuTDLsqvoEFJVQ7Teu1wdy4A==
 
 "@humanwhocodes/config-array@^0.10.5":
   version "0.10.7"
@@ -1198,10 +1198,10 @@
     stylelint-scss "^4.0.0"
     tap-map "^1.0.0"
 
-"@primer/view-components@^0.0.112":
-  version "0.0.112"
-  resolved "https://registry.yarnpkg.com/@primer/view-components/-/view-components-0.0.112.tgz#fe469883c8e2d4da3aba8e17002890b081ab6cd7"
-  integrity sha512-YWvZkEy6pQSfA3kcY5NVYGxR/mFmrbhufLhp/XYuXkf1Uoj1AEa4FESfiPqJhkIomZh5o2B4XAwBCqPsJie9nA==
+"@primer/view-components@^0.0.114":
+  version "0.0.114"
+  resolved "https://registry.yarnpkg.com/@primer/view-components/-/view-components-0.0.114.tgz#44b847740dd7cb14209b78d99f25e51077aa14d2"
+  integrity sha512-ATDaosRz7/5g2PCZo00dgbz6GRVIg8L43bwyOJ7M/3YQ9uaHkiVjQ9xIc0voRx870HAaGwstRP+qfCsJr/7gNw==
   dependencies:
     "@github/auto-complete-element" "^3.3.4"
     "@github/catalyst" "^1.6.0"
@@ -1209,8 +1209,8 @@
     "@github/details-menu-element" "^1.0.12"
     "@github/image-crop-element" "^5.0.0"
     "@github/mini-throttle" "^2.1.0"
+    "@github/relative-time-element" "^4.0.0"
     "@github/tab-container-element" "^3.1.2"
-    "@github/time-elements" "^3.1.2"
     "@primer/behaviors" "^1.2.0"
 
 "@sinclair/typebox@^0.24.1":
