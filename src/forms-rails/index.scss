@@ -1,0 +1,18 @@
+// This is the same as `forms/` except without the `FormControl.scss` import.
+// It's used for PVC's Lookbook that already has the FormControl styles.
+
+// ## TODO
+// Remove `forms-rails/` again when:
+// - Either `Primer::Alpha::AutoComplete` is removed or doesn't use `form-control`.
+// - Or in the next major version of PCSS we can probably remove the `FormControl.scss` again.
+
+@import '../support/index.scss';
+@import '../forms/form-control.scss';
+@import '../forms/form-select.scss';
+@import '../forms/form-group.scss';
+@import '../forms/form-validation.scss';
+@import '../forms/input-group.scss';
+@import '../forms/radio-group.scss';
+
+// new pvc components
+// @import '../forms/FormControl.scss';
