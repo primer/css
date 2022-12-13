@@ -3,6 +3,7 @@ title: Breadcrumbs
 path: components/breadcrumb
 status: Stable
 source: 'https://github.com/primer/css/tree/main/src/breadcrumb'
+rails: 'https://primer.style/view-components/components/beta/breadcrumbs'
 bundle: breadcrumb
 ---
 

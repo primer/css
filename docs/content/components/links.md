@@ -3,6 +3,7 @@ title: Links
 path: components/links
 status: Beta
 source: 'https://github.com/primer/css/tree/main/src/links'
+rails: 'https://primer.style/view-components/components/beta/link'
 bundle: links
 ---
 

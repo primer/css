@@ -3,6 +3,7 @@ title: Alerts
 path: components/alerts
 status: Stable
 source: 'https://github.com/primer/css/tree/main/src/alerts'
+rails: 'https://primer.style/view-components/components/alpha/banner'
 bundle: alerts
 ---
 

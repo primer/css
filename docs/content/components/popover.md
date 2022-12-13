@@ -4,6 +4,7 @@ path: components/popover
 status: Alpha
 source: 'https://github.com/primer/css/tree/main/src/popover'
 storybook: 'https://primer.style/css/storybook/?path=/story/components-popover--playground'
+rails: 'https://primer.style/view-components/components/beta/popover'
 bundle: popover
 ---
 
