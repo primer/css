@@ -16,7 +16,7 @@
     "@primer/octicons": "17.0.0",
     "@primer/octicons-react": "17.0.0",
     "@primer/primitives": "7.8.3",
-    "@primer/view-components": "^0.0.112",
+    "@primer/view-components": "^0.0.114",
     "@svgr/webpack": "5.5.0",
     "autoprefixer": "10.4.2",
     "babel-preset-gatsby": "^2.14.0",
