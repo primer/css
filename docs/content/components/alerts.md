@@ -13,7 +13,7 @@ Flash messages, or alerts, inform users of successful or pending actions. Use th
 Flash messages start off looking decently neutral—they're just light blue rounded rectangles.
 
 ```html live
-<div class="flash">
+<div class="flash mt-3">
   Flash message goes here.
 </div>
 ```
