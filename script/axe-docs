@@ -92,6 +92,6 @@ else
   # https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
   # We exclude rules that depend on full page context.
   echo "Running axe..."
-  # TODO: Remove chromedriver-path once ChromeDriver bug is fixed in @axe-core/cli
-  axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors --chromedriver-path https://chromedriver.storage.googleapis.com/108.0.5359.22/chromedriver_linux64.zip
+  # TODO: Remove `--browser edge` once the ChromeDriver bug is fixed in @axe-core/cli
+  axe ${doc_urls[@]} --browser edge --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors
 fi
