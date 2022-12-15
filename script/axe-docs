@@ -92,6 +92,5 @@ else
   # https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
   # We exclude rules that depend on full page context.
   echo "Running axe..."
-  # TODO: Remove `--browser firefox` once the ChromeDriver bug is fixed in @axe-core/cli
-  axe ${doc_urls[@]} --browser firefox --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors
+  axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors
 fi
