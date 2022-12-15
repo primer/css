@@ -89,7 +89,7 @@ if [ ${#doc_urls[@]} -eq 0 ]; then
 else
   echo "Installing axe..."
   # TODO: Remove pinned version once ChromeDriver bug is fixed
-  npm install -g @axe-core/cli@4.4.5
+  npm install -g @axe-core/cli@4.3.2
   # https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
   # We exclude rules that depend on full page context.
   echo "Running axe..."
