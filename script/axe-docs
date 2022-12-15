@@ -88,10 +88,10 @@ if [ ${#doc_urls[@]} -eq 0 ]; then
   exit
 else
   echo "Installing axe..."
-  # TODO: Remove pinned version once ChromeDriver bug is fixed
-  npm install -g @axe-core/cli@4.4.3
+  npm install -g @axe-core/cli
   # https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
   # We exclude rules that depend on full page context.
   echo "Running axe..."
-  axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors
+  # TODO: Remove chromedriver-path once ChromeDriver bug is fixed in @axe-core/cli
+  axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors --chromedriver-path https://chromedriver.storage.googleapis.com/108.0.5359.22/chromedriver_linux64.zip
 fi
