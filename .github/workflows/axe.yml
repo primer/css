@@ -29,6 +29,8 @@ jobs:
       - name: Use Node.js
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: actions/setup-node@v3
+        with:
+          node-version: 14
       - run: yarn
         if: steps.changed-files.outputs.any_changed == 'true'
       - run: yarn dist
