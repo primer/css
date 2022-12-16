@@ -1,5 +1,37 @@
 # @primer/css
 
+## 20.8.0
+
+### Minor Changes
+
+- [`d7a4c343`](https://github.com/primer/css/commit/d7a4c343ab1bc0d7f55ff85d735c93d9825419ae) Thanks [@jonrohan](https://github.com/jonrohan)! - Importing more styles from Primer View Components
+
+  - https://github.com/primer/view_components/pull/1587
+  - https://github.com/primer/view_components/pull/1590
+  - https://github.com/primer/view_components/pull/1592
+  - https://github.com/primer/view_components/pull/1593
+  - https://github.com/primer/view_components/pull/1594
+  - https://github.com/primer/view_components/pull/1598
+  - https://github.com/primer/view_components/pull/1599
+  - https://github.com/primer/view_components/pull/1600
+  - https://github.com/primer/view_components/pull/1601
+  - https://github.com/primer/view_components/pull/1607
+  - https://github.com/primer/view_components/pull/1609
+  - https://github.com/primer/view_components/pull/1618
+  - https://github.com/primer/view_components/pull/1626
+
+- [#2318](https://github.com/primer/css/pull/2318) [`aee4b6f5`](https://github.com/primer/css/commit/aee4b6f571d88f391fcf98170857c4eed7b1ae82) Thanks [@jonrohan](https://github.com/jonrohan)! - Import blankslate styles from primer/view-components
+
+### Patch Changes
+
+- [#2309](https://github.com/primer/css/pull/2309) [`f76e7858`](https://github.com/primer/css/commit/f76e785807d9c9c64530201f858798e67668afe2) Thanks [@jdanyow](https://github.com/jdanyow)! - Use `--color-fg-default` for `mark`
+
+- [#2330](https://github.com/primer/css/pull/2330) [`83250f82`](https://github.com/primer/css/commit/83250f82751092cc9ad3a8fb46262a0f0f2a3a96) Thanks [@stevenlaidlaw](https://github.com/stevenlaidlaw)! - Fix collapsing spaces within inline code blocks
+
+- [#2327](https://github.com/primer/css/pull/2327) [`8cf13e98`](https://github.com/primer/css/commit/8cf13e984ca27a286a706fd2b7243980d3de7985) Thanks [@simurai](https://github.com/simurai)! - Move `fieldset` + `label` styles to `base.scss`
+
+- [#2340](https://github.com/primer/css/pull/2340) [`ecbcbb1b`](https://github.com/primer/css/commit/ecbcbb1b04e72fc2006be7ea8211aae0732d3530) Thanks [@simurai](https://github.com/simurai)! - Import `Layout` from PVC
+
 ## 20.7.1
 
 ### Patch Changes
