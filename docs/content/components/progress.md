@@ -3,6 +3,7 @@ title: Progress
 path: components/progress
 status: Beta
 source: 'https://github.com/primer/css/tree/main/src/progress'
+rails: 'https://primer.style/view-components/components/beta/progressbar'
 bundle: progress
 ---
 

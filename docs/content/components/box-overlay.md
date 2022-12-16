@@ -4,6 +4,7 @@ path: components/box-overlay
 status: Alpha
 status_issue: 'https://github.com/github/design-systems/issues/374'
 source: 'https://github.com/github/github/tree/master/app/assets/stylesheets/components/box-overlay.scss'
+rails: 'https://primer.style/view-components/components/alpha/dialog'
 symbols: [Box--overlay, Box-header, Box-overlay--narrow, Box-overlay--wide]
 keywords: [box, overlay]
 ---

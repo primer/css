@@ -3,6 +3,7 @@ title: Blankslate
 path: components/blankslate
 status: Stable
 source: 'https://github.com/primer/css/tree/main/src/blankslate'
+rails: 'https://primer.style/view-components/components/beta/blankslate'
 bundle: blankslate
 ---
 

@@ -3,6 +3,7 @@ title: Truncate
 path: components/truncate
 status: Alpha
 source: 'https://github.com/primer/css/tree/main/src/truncate'
+rails: 'https://primer.style/view-components/components/beta/truncate'
 bundle: truncate
 ---
 

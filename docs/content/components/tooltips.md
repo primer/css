@@ -3,6 +3,7 @@ title: Tooltips
 path: components/tooltips
 status: Deprecated
 source: 'https://github.com/primer/css/tree/main/src/tooltips'
+rails: 'https://primer.style/view-components/components/alpha/tooltip'
 bundle: tooltips
 ---
 

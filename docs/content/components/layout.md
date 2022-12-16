@@ -3,6 +3,7 @@ title: Layout
 path: components/layout
 status: Alpha
 source: 'https://github.com/primer/css/tree/main/src/layout/layout.scss'
+rails: 'https://primer.style/view-components/components/alpha/layout'
 bundle: layout
 ---
 

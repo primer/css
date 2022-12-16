@@ -55,6 +55,8 @@
       url: /components/alerts
     - title: Avatars
       url: /components/avatars
+    - title: AvatarStack
+      url: /components/avatar-stack
     - title: Blankslate
       url: /components/blankslate
     - title: Box overlay
@@ -67,8 +69,14 @@
       url: /components/breadcrumb
     - title: Buttons
       url: /components/buttons
+    - title: ButtonGroup
+      url: /components/button-group
+    - title: Counter
+      url: /components/counter
     - title: Dropdown
       url: /components/dropdown
+    - title: Filter list
+      url: /components/filter-list
     - title: Forms
       url: /components/forms
     - title: Header
@@ -83,6 +91,8 @@
       url: /components/loaders
     - title: Markdown
       url: /components/markdown
+    - title: Menu
+      url: /components/menu
     - title: Navigation
       url: /components/navigation
     - title: Pagination
@@ -93,8 +103,16 @@
       url: /components/progress
     - title: Select menu
       url: /components/select-menu
+    - title: Side nav
+      url: /components/side-nav
+    - title: State
+      url: /components/state
     - title: Subhead
       url: /components/subhead
+    - title: Subnav
+      url: /components/subnav
+    - title: Tabnav
+      url: /components/tabnav
     - title: Timeline
       url: /components/timeline
     - title: Toasts
@@ -103,6 +121,8 @@
       url: /components/tooltips
     - title: Truncate
       url: /components/truncate
+    - title: UnderlineNav
+      url: /components/underline-nav
 - title: Marketing
   url: /marketing
   children:

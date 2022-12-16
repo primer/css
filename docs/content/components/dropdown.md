@@ -1,6 +1,8 @@
 ---
 title: Dropdown
 status: Beta
+source: 'https://github.com/primer/css/tree/main/src/dropdown'
+rails: 'https://primer.style/view-components/components/alpha/dropdown'
 ---
 
 Dropdowns are lightweight context menus for housing navigation and actions. They're great for instances where you don't need the full power (and code) of the select menu.
