@@ -838,9 +838,9 @@
   integrity sha512-ZOJ+U771Mw68qp2GPbcqPt2Xg0LEl0YwiIFHXwVLAFm2TgDnsgcCHhXO8PIxOWPqSFO4S7xIMD9CBobfaWGASA==
 
 "@github/relative-time-element@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@github/relative-time-element/-/relative-time-element-4.0.0.tgz#18ca051f0385142e8c13096cd57e8637012c99ef"
-  integrity sha512-A//nGe6GFciGP0GxSZZKZbULwSZuENZ19cTaAkvRU3Ptqgdpo95VF6YS5TPi54NVM/zt8q6KtDTOMyjdFQHj0g==
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/@github/relative-time-element/-/relative-time-element-4.1.5.tgz#4eaa3707568696661eae1dbe1d134fa2ffde1121"
+  integrity sha512-WAf1EQV5Sn6jGuAIQur/ztKlEV9R+VHDNwqEbeaOb6s9fiwM5z7+ujlWNZtgFkDp3lF0H8D/f0vdiPlfHz0ZTQ==
 
 "@github/tab-container-element@^3.1.2":
   version "3.2.0"
@@ -1210,10 +1210,10 @@
     stylelint-scss "^4.0.0"
     tap-map "^1.0.0"
 
-"@primer/view-components@^0.0.115":
-  version "0.0.115"
-  resolved "https://registry.yarnpkg.com/@primer/view-components/-/view-components-0.0.115.tgz#79f36c14327742c6eac1b73ff2eb3bb5206984fa"
-  integrity sha512-Qo6vNE0/UK6azsu9wTpb9AneHpM2FkA/saZ6UB1kvRttD5M0d/xto8sqq6b45QkKukqIlS4MhzyyvLIvC6rI1g==
+"@primer/view-components@^0.0.117":
+  version "0.0.117"
+  resolved "https://registry.yarnpkg.com/@primer/view-components/-/view-components-0.0.117.tgz#bb077f8233b5e6562ea8617f7e90b92559896012"
+  integrity sha512-srCp6BeSaCSELxvD6P+xp8/NGtiHoj9iY4y9duI1SS5wdc11JtaCXm5Iq/8SQaFZ9ONaIQnyeAveSuUCE7Jb8A==
   dependencies:
     "@github/auto-check-element" "^5.2.0"
     "@github/auto-complete-element" "^3.3.4"
