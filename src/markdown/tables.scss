@@ -20,6 +20,12 @@
       border: $border-width $border-style var(--color-border-default);
     }
 
+    td {
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+
     tr {
       background-color: var(--color-canvas-default);
       border-top: $border-width $border-style var(--color-border-muted);

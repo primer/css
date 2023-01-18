@@ -78,12 +78,6 @@
     border: 0;
   }
 
-  td {
-    > :last-child {
-      margin-bottom: 0;
-    }
-  }
-
   blockquote {
     // stylelint-disable-next-line primer/spacing
     padding: 0 1em;
