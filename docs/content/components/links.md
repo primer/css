@@ -10,7 +10,7 @@ bundle: links
 By default `<a>` elements already use the right link color and apply an underline on hover. So in most cases the `.Link` class is not really needed.
 
 ```html live
-Some text with a <a href="#url">link</a>
+Some text with a <a href="#url">link</a>   
 Some text with a <a href="#url" class="Link">link</a>
 ```
 
