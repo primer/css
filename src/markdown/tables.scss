@@ -1,5 +1,5 @@
 // Needs refactoring
-// stylelint-disable selector-max-type
+// stylelint-disable selector-max-type, selector-max-compound-selectors
 .markdown-body {
   // Tables
   table {
@@ -18,6 +18,12 @@
       // stylelint-disable-next-line primer/spacing
       padding: 6px 13px;
       border: $border-width $border-style var(--color-border-default);
+    }
+
+    td {
+      > :last-child {
+        margin-bottom: 0;
+      }
     }
 
     tr {
