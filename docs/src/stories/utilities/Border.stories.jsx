@@ -1,5 +1,5 @@
 export default {
-  title: 'Utilities/Borders'
+  title: 'Utilities/Border'
 }
 
 export const Default = ({}) => (

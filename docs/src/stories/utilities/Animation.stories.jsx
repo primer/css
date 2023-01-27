@@ -1,5 +1,5 @@
 export default {
-  title: 'Utilities/Animations'
+  title: 'Utilities/Animation'
 }
 
 export const FadeIn = ({}) => (
