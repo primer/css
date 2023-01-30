@@ -25,7 +25,7 @@ export const Directional = ({}) => (
   </div>
 )
 
-export const Extended = ({}) => (
+export const DirectionalExtended = ({}) => (
   <div>
     <div class="color-bg-attention d-inline-block"><div class="mt-7  p-1 color-bg-subtle">.mt-7</div></div>
     <div class="color-bg-attention d-inline-block"><div class="mt-8  p-1 color-bg-subtle">.mt-8</div></div>
