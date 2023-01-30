@@ -1,5 +1,13 @@
 # @primer/css
 
+## 20.8.1
+
+### Patch Changes
+
+- [#2365](https://github.com/primer/css/pull/2365) [`4b94fbb7`](https://github.com/primer/css/commit/4b94fbb759e163abb9495777973b5a6e700769f7) Thanks [@jackbrewer](https://github.com/jackbrewer)! - Remove trailing margin from last-child within a markdown table cell
+
+- [#2351](https://github.com/primer/css/pull/2351) [`1b6694c4`](https://github.com/primer/css/commit/1b6694c40903eae4e107cd9d59faf5020a42f944) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating to primer view components 0.0.117
+
 ## 20.8.0
 
 ### Minor Changes
