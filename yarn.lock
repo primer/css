@@ -1216,10 +1216,10 @@
     stylelint-scss "^4.0.0"
     tap-map "^1.0.0"
 
-"@primer/view-components@^0.0.117":
-  version "0.0.117"
-  resolved "https://registry.yarnpkg.com/@primer/view-components/-/view-components-0.0.117.tgz#bb077f8233b5e6562ea8617f7e90b92559896012"
-  integrity sha512-srCp6BeSaCSELxvD6P+xp8/NGtiHoj9iY4y9duI1SS5wdc11JtaCXm5Iq/8SQaFZ9ONaIQnyeAveSuUCE7Jb8A==
+"@primer/view-components@^0.0.120":
+  version "0.0.120"
+  resolved "https://registry.yarnpkg.com/@primer/view-components/-/view-components-0.0.120.tgz#84ebc8df62934b2a6ba8cbeb6a3d931cd69753de"
+  integrity sha512-C90cNtB3Zl8B+nLPkztYYMBNTaGxUWLrVroG3a8dIEcpGdEZOhsOPOfeptpyPMolX7DWag/hfzBXBp0i7TawDg==
   dependencies:
     "@github/auto-check-element" "^5.2.0"
     "@github/auto-complete-element" "^3.3.4"
