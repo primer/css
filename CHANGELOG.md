@@ -1,5 +1,11 @@
 # @primer/css
 
+## 20.8.2
+
+### Patch Changes
+
+- [#2380](https://github.com/primer/css/pull/2380) [`3010e199`](https://github.com/primer/css/commit/3010e199bb5068838eb46e73e748d1e5e2f0143c) Thanks [@langermank](https://github.com/langermank)! - Bump Primitives v7.11.1
+
 ## 20.8.1
 
 ### Patch Changes
