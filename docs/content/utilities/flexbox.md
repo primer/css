@@ -141,8 +141,8 @@ You can choose whether flex items are forced into a single line or wrapped onto 
 
 | Class | Description |
 | --- | --- |
-| `.flex-wrap` | Flex items will break onto multiple lines (default) |
-| `.flex-nowrap` | Flex items are laid out in a single line, even if they overflow |
+| `.flex-wrap` | Flex items will break onto multiple lines |
+| `.flex-nowrap` | Flex items are laid out in a single line, even if they overflow (default) |
 | `.flex-wrap-reverse` | Behaves the same as wrap but cross-start and cross-end are permuted. |
 
 ### `flex-wrap` example
