@@ -1,5 +1,17 @@
 # @primer/css
 
+## 20.8.3
+
+### Patch Changes
+
+- [#2390](https://github.com/primer/css/pull/2390) [`73ae8ec4`](https://github.com/primer/css/commit/73ae8ec45bc7d92ecfe58226d233176856f7bca9) Thanks [@simurai](https://github.com/simurai)! - Remove `autocheck` + `status-indicator` styles
+
+- [#2388](https://github.com/primer/css/pull/2388) [`3ceb1964`](https://github.com/primer/css/commit/3ceb19648b651f2a5b2f571d066aa895af8f443e) Thanks [@arelia](https://github.com/arelia)! - update default for flex wrap styles
+
+- [#2378](https://github.com/primer/css/pull/2378) [`55f35e1d`](https://github.com/primer/css/commit/55f35e1d0fc9a441f14f29b61ac5fbefbf3c4884) Thanks [@simurai](https://github.com/simurai)! - Fix code block color inside a `<blockquote>`
+
+- [#2386](https://github.com/primer/css/pull/2386) [`1b53e23e`](https://github.com/primer/css/commit/1b53e23ed39fc2c001b07d810ebe516f2957f325) Thanks [@josepmartins](https://github.com/josepmartins)! - Add responsive `border-radius` story
+
 ## 20.8.2
 
 ### Patch Changes
