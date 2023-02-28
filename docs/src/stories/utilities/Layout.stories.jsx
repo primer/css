@@ -285,6 +285,13 @@ export const ScreenReaderOnly = ({}) => (
   </div>
 )
 
+export const ShowOnFocus = ({}) => (
+  <div>
+    <div class="mb-2">Click here and press tab to make the ".show-on-focus" element appear</div>
+    <button type="button" class="btn show-on-focus">.show-on-focus</button>
+  </div>
+)
+
 export const MediaObject = ({}) => (
   <div class="clearfix p-3 border">
     <div class="float-left p-3 mr-3 color-bg-subtle">

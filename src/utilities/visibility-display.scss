@@ -107,17 +107,18 @@
 
 // Only display content on focus
 .show-on-focus {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: 0;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+
+  &:not(:focus) {
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    border: 0 !important;
+  }
 
   &:focus {
     z-index: 999;
-    width: auto;
-    height: auto;
-    clip: auto;
   }
 }
