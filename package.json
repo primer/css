@@ -54,7 +54,7 @@
     "autoprefixer": "10.4.13",
     "chokidar-cli": "3.0.0",
     "cssstats": "4.0.5",
-    "eslint": "8.25.0",
+    "eslint": "8.35.0",
     "eslint-plugin-github": "4.6.0",
     "eslint-plugin-jest": "27.1.6",
     "eslint-plugin-prettier": "4.2.1",
