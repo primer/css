@@ -19,7 +19,7 @@ Flash messages start off looking decently neutral—they're just light blue roun
 </div>
 ```
 
-You can put multiple paragraphs of text in a flash message—the last paragraph's bottom `margin` will be automatically override.
+You can put multiple paragraphs of text in a flash message—the last paragraph's bottom `margin` will be automatically overridden.
 
 ```html live
 <div class="flash">
