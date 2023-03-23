@@ -258,8 +258,3 @@ p.explain {
     float: right;
   }
 }
-
-// fix for chrome bug, see https://github.com/github/github/issues/53931
-.form-group label {
-  position: static;
-}

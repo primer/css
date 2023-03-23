@@ -285,3 +285,8 @@
     vertical-align: middle;
   }
 }
+
+  // fix for chrome bug, see https://github.com/github/github/issues/53931
+  .form-group label {
+    position: static;
+  }
