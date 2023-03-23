@@ -73,6 +73,8 @@
       url: /components/button-group
     - title: Counter
       url: /components/counter
+    - title: DiffStat
+      url: /components/diff-stat
     - title: Dropdown
       url: /components/dropdown
     - title: Filter list
