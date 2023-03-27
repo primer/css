@@ -128,22 +128,3 @@ The base <span class="Label Label--inline"> label </span> component styles the t
 <span class="Counter Counter--small mr-1 Counter--gray">456</span>
 <span class="Counter Counter--small mr-1">1.5K</span>
 ```
-
-### Diffstat
-
-```html live
-<span class="diffstat tooltipped tooltipped-e" aria-label="6 changes: 3 additions &amp; 3 deletions">
-  6
-  <span class="diffstat-block-added"></span><span class="diffstat-block-added"></span><span class="diffstat-block-deleted"></span><span class="diffstat-block-deleted"></span><span class="diffstat-block-neutral"></span>
-</span>
-
-<div class="my-4"></div><!-- Spacer ------------------------ -->
-
-<span class="diffstat">
-    <span class="color-fg-success">+7</span>
-    <span class="color-fg-danger">−2</span>
-    <span class="tooltipped tooltipped-e" aria-label="9 lines changed">
-      <span class="diffstat-block-added"></span><span class="diffstat-block-added"></span><span class="diffstat-block-added"></span><span class="diffstat-block-deleted"></span><span class="diffstat-block-neutral"></span>
-    </span>
-</span>
-```
