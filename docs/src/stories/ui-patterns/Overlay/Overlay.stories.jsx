@@ -1,7 +1,6 @@
 import clsx from 'clsx'
 import React from 'react'
 import ConditionalWrapper from '../../helpers/ConditionalWrapper'
-import {PatternFullBleed} from '../ActionList/ActionListFeatures.stories.jsx'
 const variant = {}
 export default {
   title: 'UI Patterns/Overlay',
