@@ -2239,10 +2239,10 @@
     focus-visible "5.2.0"
     styled-system "5.1.5"
 
-"@primer/gatsby-theme-doctocat@4.2.3":
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/@primer/gatsby-theme-doctocat/-/gatsby-theme-doctocat-4.2.3.tgz#70b79c1ee713d4e69d0c23daee716f82c0462c4f"
-  integrity sha512-c6422dJwaolMaA/1zCpNdJnZvAY2sL+fv51pNWN0BC6DiMsX1o83dUjTcpTs9XKSJPbhmNEWfKpSXW4lA6ht1A==
+"@primer/gatsby-theme-doctocat@4.4.0":
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/@primer/gatsby-theme-doctocat/-/gatsby-theme-doctocat-4.4.0.tgz#d46835087b7db4f49768b82395b6ecfc5f7bdbab"
+  integrity sha512-Tc+XSXGFLA+S0IsXaZYEsXorZN9jygV7gwEIC2pwma7151ylSQTV+XDm0c2hvsSnTW1sBU/uk0pqsFm6gep4DA==
   dependencies:
     "@babel/preset-env" "^7.5.5"
     "@babel/preset-react" "^7.0.0"
@@ -2418,9 +2418,9 @@
     "@hapi/hoek" "^9.0.0"
 
 "@sideway/formula@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@sideway/formula/-/formula-3.0.0.tgz#fe158aee32e6bd5de85044be615bc08478a0a13c"
-  integrity sha512-vHe7wZ4NOXVfkoRb8T5otiENVlT7a3IAiw7H5M2+GO+9CDgcVUUsX1zalAztCmwyOr2RUTGJdgB+ZvSVqmdHmg==
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@sideway/formula/-/formula-3.0.1.tgz#80fcbcbaf7ce031e0ef2dd29b1bfc7c3f583611f"
+  integrity sha512-/poHZJJVjx3L+zVD6g9KgHfYnb443oi7wLu/XKojDviHy6HOEOA6z1Trk5aR1dGcmPenJEgb2sK2I80LeS3MIg==
 
 "@sideway/pinpoint@^2.0.0":
   version "2.0.0"
