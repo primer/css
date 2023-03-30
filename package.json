@@ -42,7 +42,7 @@
     "storybook": "cd docs && yarn && yarn storybook"
   },
   "dependencies": {
-    "@primer/primitives": "^7.11.2",
+    "@primer/primitives": "^7.11.3",
     "@primer/view-components": "^0.1.0"
   },
   "devDependencies": {
