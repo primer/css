@@ -1,5 +1,28 @@
 # @primer/css
 
+## 21.0.0
+
+### Major Changes
+
+- [#2403](https://github.com/primer/css/pull/2403) [`256affcf`](https://github.com/primer/css/commit/256affcf3404c97d3db199a0b3cf32d3b864627c) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - ## Removed DiffStat component
+
+  - the diffStat component is removed from primer/css
+  - the component is very specific to this use-case, it is not generic enough to be part of the primer design system and was thus chosen for removal
+  - the component will be added to the github codebase directly so that it is still available
+  - if you are working within github.com you should be ale to use diffStat just like before. On other projects you will need to copy the diffStat code and add it to your codebase
+
+- [#2402](https://github.com/primer/css/pull/2402) [`c6e214b7`](https://github.com/primer/css/commit/c6e214b75b5a25d3ebb7f41ca922c93d395ac109) Thanks [@simurai](https://github.com/simurai)! - Remove `form-validation` styles
+
+- [#2405](https://github.com/primer/css/pull/2405) [`85f31cc8`](https://github.com/primer/css/commit/85f31cc8f8d4423a712fda166421eb0ac7d6d562) Thanks [@simurai](https://github.com/simurai)! - Remove `ActionList`
+
+### Patch Changes
+
+- [#2407](https://github.com/primer/css/pull/2407) [`607337cc`](https://github.com/primer/css/commit/607337cce57e59c7bee00486b63fa43ce845aff2) Thanks [@simurai](https://github.com/simurai)! - Bump @primer/primitives to `7.11.2`
+
+- [#2409](https://github.com/primer/css/pull/2409) [`cf38a932`](https://github.com/primer/css/commit/cf38a932e76e00a8c83c351bbb5f1ae23649d1b4) Thanks [@simurai](https://github.com/simurai)! - Bump @primer/primitives to `7.11.3`
+
+- [#2391](https://github.com/primer/css/pull/2391) [`95ab0d0f`](https://github.com/primer/css/commit/95ab0d0f48fde360a9f0b0f6a8af0323b3e891da) Thanks [@simurai](https://github.com/simurai)! - Prevent `.show-on-focus` to change width/height
+
 ## 20.8.3
 
 ### Patch Changes
