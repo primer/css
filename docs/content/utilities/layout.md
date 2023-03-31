@@ -204,6 +204,14 @@ Use `.width-auto` to reset width to `auto` (initial value). Typically used with 
 </div>
 ```
 
+Use `.width-comfortable` to set width to `65ch`. This can be used on text elements to shorten the line length for better readability.
+
+```html live
+<p class="width-comfortable">
+  Bacon ipsum dolor amet meatball flank beef tail pig boudin ham hock chicken capicola. Shoulder ham spare ribs turducken pork tongue. Bresaola corned beef sausage jowl ribeye kielbasa tenderloin andouille leberkas tongue. Ribeye tri-tip tenderloin pig, chuck ground round chicken tongue corned beef biltong.
+</p>
+```
+
 Use `.height-fit` to set max-height 100%.
 
 ```html live
