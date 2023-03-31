@@ -39,7 +39,7 @@ The release process is automated by [changesets]. After you familiarize yourself
 1. Install the latest published version in the same `primer-<version>` branch created earlier with:
 
     ```
-    bin/npm install @primer/css@<version>
+    bin/npm install @primer/css@<version> -w ./npm-workspaces/primer/
     ```
 
     Then commit and push the changes to `package.json`, `package-lock.json`, `LICENSE` and `vendor/npm`.
