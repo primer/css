@@ -589,10 +589,10 @@
     "@changesets/types" "^5.2.1"
     dotenv "^8.1.0"
 
-"@changesets/cli@2.26.0":
-  version "2.26.0"
-  resolved "https://registry.yarnpkg.com/@changesets/cli/-/cli-2.26.0.tgz#f215ddb2b41574ffd0dda9cd77fac927ba048fd3"
-  integrity sha512-0cbTiDms+ICTVtEwAFLNW0jBNex9f5+fFv3I771nBvdnV/mOjd1QJ4+f8KtVSOrwD9SJkk9xbDkWFb0oXd8d1Q==
+"@changesets/cli@2.26.1":
+  version "2.26.1"
+  resolved "https://registry.yarnpkg.com/@changesets/cli/-/cli-2.26.1.tgz#2d10858d7d32314a524e383111c96d831eb0402f"
+  integrity sha512-XnTa+b51vt057fyAudvDKGB0Sh72xutQZNAdXkCqPBKO2zvs2yYZx5hFZj1u9cbtpwM6Sxtcr02/FQJfZOzemQ==
   dependencies:
     "@babel/runtime" "^7.20.1"
     "@changesets/apply-release-plan" "^6.1.3"
