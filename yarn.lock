@@ -789,15 +789,74 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.35.0.tgz#b7569632b0b788a0ca0e438235154e45d42813a7"
   integrity sha512-JXdzbRiWclLVoD8sNUjR443VVlYqiYmDVT6rGUEIEHU5YJW0gaVZwV2xgM7D4arkvASqD0IlLUVjHiFuxaftRw==
 
+"@github/auto-check-element@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@github/auto-check-element/-/auto-check-element-5.2.0.tgz#293c2240cb3098e7e6ca10c801e4df76d644f6f9"
+  integrity sha512-YODZZUSeoZVJQ04p73MAohrEK37SJlVRDUTaFiPYse9K3z3bNEm+ekq5qYCIyDKGgX7hUhr3WZF35qHxr/zu0Q==
+  dependencies:
+    "@github/mini-throttle" "^1.0.7"
+
+"@github/auto-complete-element@^3.3.4":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@github/auto-complete-element/-/auto-complete-element-3.4.0.tgz#916da061b32428ef6f868164a8eb0a787283c4a4"
+  integrity sha512-iJ5D/0rwhPnoGPqFNWhY5NlJlxZKt/lMnIRuL6TRfJqu4ieDApWQdcVfJ0yPRDKAzJqmb0MgMkOtH84ZBLu9og==
+  dependencies:
+    "@github/combobox-nav" "^2.0.2"
+
 "@github/browserslist-config@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@github/browserslist-config/-/browserslist-config-1.0.0.tgz#952fe6da3e6b8ed6a368f3a1a08a9d2ef84e8d04"
   integrity sha512-gIhjdJp/c2beaIWWIlsXdqXVRUz3r2BxBCpfz/F3JXHvSAQ1paMYjLH+maEATtENg+k5eLV7gA+9yPp762ieuw==
 
+"@github/catalyst@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@github/catalyst/-/catalyst-1.6.0.tgz#378734d1d2b6a85af169d7e66c1a2a604bf1e82c"
+  integrity sha512-u8A+DameixqpeyHzvnJWTGj+wfiskQOYHzSiJscCWVfMkIT3rxnbHMtGh3lMthaRY21nbUOK71WcsCnCrXhBJQ==
+
+"@github/clipboard-copy-element@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@github/clipboard-copy-element/-/clipboard-copy-element-1.1.2.tgz#7a6e8042749471504d4e7cfcc47097a781db2bdb"
+  integrity sha512-L6CMrcA5we0udafvoSuRCE/Ci/3xrLWKYRGup2IlhxF771bQYsQ2EB1of182pI8ZWM4oxgwzu37+igMeoZjN/A==
+
+"@github/combobox-nav@^2.0.2":
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/@github/combobox-nav/-/combobox-nav-2.1.7.tgz#ae7d895291dee847ce6218063d2c286fcfb2235e"
+  integrity sha512-Webx0W5iTpkk5Chy9dB/1BEUORQ0qrwui8HaaVBiy75W2VOJg96WTuKj1rXENAJ3XTMhdEF53bn0LYfvP0EKvg==
+
+"@github/details-menu-element@^1.0.12":
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/@github/details-menu-element/-/details-menu-element-1.0.13.tgz#d62263077b16bc7edc386e7b23f0ce41af1301b4"
+  integrity sha512-gMkii86w/oUP5dq8yOWZn1sgbgtFj3AYETxxtpsqRggZktgd8te4+npAn4Hm+936c/lxmEzXqfjARL/CzGR4+w==
+
+"@github/image-crop-element@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@github/image-crop-element/-/image-crop-element-5.0.0.tgz#6ae2c31f1e7dc355c41c3140554fb76ca7a71ef7"
+  integrity sha512-Vgm2OwWAs1ESoib/t5sjxsAYo6YTOxxAjWDRxswX7qrqoyCejTZ3hshdo4Ep5e+Mz/GVTZC3rdMtg06dk/eT4g==
+
+"@github/mini-throttle@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@github/mini-throttle/-/mini-throttle-1.0.7.tgz#938d6eb45d00d07043a669baabfcafa072833f10"
+  integrity sha512-1fzCDXpxI4J59pNmO0r0Y1g+R8Sa2B5ersce8AuFu5STMu7b++9osdedK0zWduYowBIgsPQZihJBN19WrAF64g==
+
+"@github/mini-throttle@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@github/mini-throttle/-/mini-throttle-2.1.0.tgz#583a1d5e383caa21a1c067a649f15f7ab575dccf"
+  integrity sha512-iEeR2OdVCPkdIPUszL8gJnKNu4MR8ANh7y0u/LPyaatYezgaWxUZEzhFntloqQq+HE6MZkFy+cl+xzCNuljOdw==
+
 "@github/prettier-config@0.0.6":
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/@github/prettier-config/-/prettier-config-0.0.6.tgz#5118e6e9f67fef9c2cd74574da7a4d86229ffb44"
   integrity sha512-Sdb089z+QbGnFF2NivbDeaJ62ooPlD31wE6Fkb/ESjAOXSjNJo+gjqzYYhlM7G3ERJmKFZRUJYMlsqB7Tym8lQ==
+
+"@github/relative-time-element@^4.0.0":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@github/relative-time-element/-/relative-time-element-4.2.4.tgz#4c63cd05d458e38e4d7504a616881aca10f454bc"
+  integrity sha512-18qgH9FYUHYN9K3z4s35auDHww1dKTU6TacI8JkA5OuvHVa1lTMuSTZ4hIoJngD5+mizcoRMOs6p/yZYMIjsyg==
+
+"@github/tab-container-element@^3.1.2":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@github/tab-container-element/-/tab-container-element-3.2.0.tgz#d2d33da09ee3d7f4245a9f77479fe4969b137ae5"
+  integrity sha512-to5ZJuywKK3KX53X1ifOcWjvUTQcBGdQ6Qkhm8L97xQ3ovICag1048M3YMpc+QSdr8xWeCBMnLeMnENqotB0Og==
 
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
@@ -1134,6 +1193,16 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@oddbird/popover-polyfill@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@oddbird/popover-polyfill/-/popover-polyfill-0.0.10.tgz#1e6d928390205319fe7aa11f66e70214ee72dd53"
+  integrity sha512-jkfX/35EsxDe9ruTx3He59FyE+y5WDF5S4YJ7TABj0c8egHV2FLeADavknvr12CnSu0QTybv9ufKfPJDsYZYNw==
+
+"@primer/behaviors@^1.2.0":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@primer/behaviors/-/behaviors-1.3.3.tgz#eddaec0d8d6056c7730ace74250fecd7533017a0"
+  integrity sha512-iHMRuu8YWDJIdqCi1krx0cyFNeqszNKTOb0dXFu2wQ5BeIqxqPJLD7rjZ2Vjf/+YaPSbWuIQE1H6TaGMMsDfdA==
+
 "@primer/primitives@^7.11.3":
   version "7.11.3"
   resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.11.3.tgz#ec41816368cd827a5902a5a933b1535204b47194"
@@ -1156,6 +1225,23 @@
     stylelint-order "^5.0.0"
     stylelint-scss "^4.0.0"
     tap-map "^1.0.0"
+
+"@primer/view-components@^0.1.0":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@primer/view-components/-/view-components-0.1.4.tgz#2d45fc6c98a95cb9d62fce90b6f252be3476eed1"
+  integrity sha512-Z5rqs84o7Qox0pEMe5LJW5C/Pgn/YMV7cRjaWJxwvPrlMGtBIk1ds7IcgymcEH2DY/6Jvsm4WQIEwA2AIiHVlg==
+  dependencies:
+    "@github/auto-check-element" "^5.2.0"
+    "@github/auto-complete-element" "^3.3.4"
+    "@github/catalyst" "^1.6.0"
+    "@github/clipboard-copy-element" "^1.1.2"
+    "@github/details-menu-element" "^1.0.12"
+    "@github/image-crop-element" "^5.0.0"
+    "@github/mini-throttle" "^2.1.0"
+    "@github/relative-time-element" "^4.0.0"
+    "@github/tab-container-element" "^3.1.2"
+    "@oddbird/popover-polyfill" "^0.0.10"
+    "@primer/behaviors" "^1.2.0"
 
 "@sinclair/typebox@^0.24.1":
   version "0.24.20"

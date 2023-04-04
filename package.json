@@ -73,6 +73,7 @@
     "postcss-scss": "4.0.5",
     "postcss-simple-vars": "6.0.3",
     "prettier": "2.7.1",
+    "@primer/view-components": "^0.1.0",
     "semver": "7.3.8",
     "stylelint": "14.15.0",
     "table": "6.8.1"
