@@ -2,5 +2,5 @@
 @import '@primer/primitives/dist/scss/colors/_dark_tritanopia.scss';
 
 @include color-mode-theme(dark_tritanopia) {
-  @include primer-colors-dark_tritanopia;
+@include primer-colors-dark_tritanopia;
 }
