@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@primer/primitives": "^7.11.3",
-    "@primer/view-components": "^0.1.0"
+    "@primer/view-components": "0.0.0-20230404201328"
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.4.8",
