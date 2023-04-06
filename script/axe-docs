@@ -48,7 +48,7 @@ needs_to_be_fixed=(
   /components/timeline
   /components/toasts
   /utilities/flexbox
-  /utilities/layout 
+  /utilities/layout
 )
 
 echo "Pages that included in this starting point violations list are excluded from checks:"
@@ -56,7 +56,7 @@ printf '%s\n' "${needs_to_be_fixed[@]}"
 
 doc_urls=()
 skipped=()
-for i in "${nav_paths[@]}"; 
+for i in "${nav_paths[@]}";
 do
   if containsElement "${i//\"/}" "${needs_to_be_fixed[@]}"; then
     skipped+=($i)
@@ -92,5 +92,5 @@ else
   # https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
   # We exclude rules that depend on full page context.
   echo "Running axe..."
-  axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,color-contrast,landmark-unique,landmark-one-main --exit --show-errors
+  axe ${doc_urls[@]} --include "iframe" --disable html-has-lang,frame-title,page-has-heading-one,region,landmark-unique,landmark-one-main --exit --show-errors
 fi
