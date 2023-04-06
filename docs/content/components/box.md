@@ -15,7 +15,7 @@ The `.Box` component can be used for something as simple as a rounded corner box
 A `.Box` is a container with a white background, a light gray border, and rounded corners. By default there are no additional styles such as padding, these can be added as needed with utility classes. Other styles and layouts can be achieved with box elements and modifiers shown in the documentation below.
 
 ```html live
-<div class="Box">
+<div class="Box color-bg-emphasis">
   This is a box.
 </div>
 ```

@@ -15,7 +15,7 @@ Flash messages start off looking decently neutral—they're just light blue roun
 
 ```html live
 <div class="flash">
-  Flash message goes here!
+  Flash message goes here.
 </div>
 ```
 
