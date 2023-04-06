@@ -70,7 +70,7 @@
     "postcss-load-config": "4.0.1",
     "postcss-scss": "4.0.5",
     "postcss-simple-vars": "7.0.1",
-    "prettier": "2.7.1",
+    "prettier": "2.8.7",
     "semver": "7.3.8",
     "stylelint": "14.15.0",
     "table": "6.8.1"
