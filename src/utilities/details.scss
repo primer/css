@@ -15,7 +15,7 @@
 
 .details-overlay-dark[open] > summary::before {
   z-index: 111;
-  background: var(--color-primer-canvas-backdrop);
+  background: var(--overlay-backdrop-bgColor, var(--color-primer-canvas-backdrop));
 }
 
 .details-reset {

@@ -43,7 +43,7 @@
 
   // Link Colors
   .absent {
-    color: var(--color-danger-fg);
+    color: var(--fgColor-danger, var(--color-danger-fg));
   }
 
   .anchor {
@@ -81,9 +81,9 @@
   blockquote {
     // stylelint-disable-next-line primer/spacing
     padding: 0 1em;
-    color: var(--color-fg-muted);
+    color: var(--fgColor-muted, var(--color-fg-muted));
     // stylelint-disable-next-line primer/borders
-    border-left: 0.25em $border-style var(--color-border-default);
+    border-left: 0.25em $border-style var(--borderColor-default, var(--color-border-default));
 
     > :first-child {
       margin-top: 0;

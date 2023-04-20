@@ -10,7 +10,7 @@
   padding: $em-spacer-5 $em-spacer-6;
   font: normal normal 11px/1.5 $body-font;
   -webkit-font-smoothing: subpixel-antialiased;
-  color: var(--color-fg-on-emphasis);
+  color: var(--fgColor-onEmphasis, var(--color-fg-on-emphasis));
   text-align: center;
   text-decoration: none;
   text-shadow: none;
@@ -20,7 +20,7 @@
   white-space: pre;
   pointer-events: none;
   content: attr(aria-label);
-  background: var(--color-neutral-emphasis-plus);
+  background: var(--bgColor-emphasis, var(--color-neutral-emphasis-plus));
   border-radius: $border-radius;
   opacity: 0;
 }

@@ -7,12 +7,12 @@ kbd {
   font: 11px $mono-font;
   // stylelint-disable-next-line primer/typography
   line-height: 10px;
-  color: var(--color-fg-default);
+  color: var(--fgColor-default, var(--color-fg-default));
   vertical-align: middle;
-  background-color: var(--color-canvas-subtle);
+  background-color: var(--bgColor-muted, var(--color-canvas-subtle));
   // stylelint-disable-next-line primer/borders
-  border: $border-style $border-width var(--color-neutral-muted);
-  border-bottom-color: var(--color-neutral-muted);
+  border: $border-style $border-width var(--borderColor-neutral-muted, var(--color-neutral-muted));
+  border-bottom-color: var(--borderColor-neutral-muted, var(--color-neutral-muted));
   border-radius: $border-radius;
   // stylelint-disable-next-line primer/box-shadow
   box-shadow: inset 0 -1px 0 var(--color-neutral-muted);

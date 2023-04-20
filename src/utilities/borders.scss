@@ -31,11 +31,11 @@
     .border#{$variant}-left-0   { border-left: 0 !important; }
 
     // Rounded corners
-    .rounded#{$variant}   { border-radius: var(--primer-borderRadius-medium, $border-radius-2) !important; }
+    .rounded#{$variant}   { border-radius: var(--borderRadius-medium, $border-radius-2) !important; }
     .rounded#{$variant}-0 { border-radius: 0 !important; }
-    .rounded#{$variant}-1 { border-radius: var(--primer-borderRadius-small, $border-radius-1) !important; }
-    .rounded#{$variant}-2 { border-radius: var(--primer-borderRadius-medium, $border-radius-2) !important; }
-    .rounded#{$variant}-3 { border-radius: var(--primer-borderRadius-large, $border-radius-3) !important; }
+    .rounded#{$variant}-1 { border-radius: var(--borderRadius-small, $border-radius-1) !important; }
+    .rounded#{$variant}-2 { border-radius: var(--borderRadius-medium, $border-radius-2) !important; }
+    .rounded#{$variant}-3 { border-radius: var(--borderRadius-large, $border-radius-3) !important; }
 
     @each $edge, $corners in $edges {
       .rounded#{$variant}-#{$edge}-0 {
@@ -46,19 +46,19 @@
 
       .rounded#{$variant}-#{$edge}-1 {
         @each $corner in $corners {
-          border-#{$corner}-radius: var(--primer-borderRadius-small, $border-radius-1) !important;
+          border-#{$corner}-radius: var(--borderRadius-small, $border-radius-1) !important;
         }
       }
 
       .rounded#{$variant}-#{$edge}-2 {
         @each $corner in $corners {
-          border-#{$corner}-radius: var(--primer-borderRadius-medium, $border-radius-2) !important;
+          border-#{$corner}-radius: var(--borderRadius-medium, $border-radius-2) !important;
         }
       }
 
       .rounded#{$variant}-#{$edge}-3 {
         @each $corner in $corners {
-          border-#{$corner}-radius: var(--primer-borderRadius-medium, $border-radius-3) !important;
+          border-#{$corner}-radius: var(--borderRadius-medium, $border-radius-3) !important;
         }
       }
     }
@@ -66,7 +66,7 @@
 }
 
 /* Add a 50% border-radius to make something into a circle */
-.circle { border-radius: var(--primer-borderRadius-full, 50%) !important; }
+.circle { border-radius: var(--borderRadius-full, 50%) !important; }
 
 /* Change the border style to dashed, in conjunction with another utility */
 .border-dashed {

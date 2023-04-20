@@ -6,8 +6,8 @@
 @include color-mode(dark) { color-scheme: dark; }
 
 [data-color-mode] {
-  color: var(--color-fg-default);
-  background-color: var(--color-canvas-default);
+  color: var(--fgColor-default, var(--color-fg-default));
+  background-color: var(--bgColor-default, var(--color-canvas-default));
 }
 
 // Windows High Contrast mode

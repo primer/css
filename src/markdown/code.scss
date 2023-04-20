@@ -58,8 +58,8 @@
     font-size: 85%;
     // stylelint-disable-next-line primer/typography
     line-height: 1.45;
-    color: var(--color-fg-default);
-    background-color: var(--color-canvas-subtle);
+    color: var(--fgColor-default, var(--color-fg-default));
+    background-color: var(--bgColor-muted, var(--color-canvas-subtle));
     border-radius: $border-radius;
   }
 

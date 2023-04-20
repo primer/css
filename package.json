@@ -42,7 +42,7 @@
     "storybook": "cd docs && yarn && yarn storybook"
   },
   "dependencies": {
-    "@primer/primitives": "^7.11.5",
+    "@primer/primitives": "^7.11.7",
     "@primer/view-components": "^0.1.0"
   },
   "devDependencies": {
@@ -50,7 +50,7 @@
     "@changesets/cli": "2.26.1",
     "@github/prettier-config": "0.0.6",
     "@koddsson/postcss-sass": "5.0.1",
-    "@primer/stylelint-config": "^12.4.0",
+    "@primer/stylelint-config": "0.0.0-20230420153251",
     "autoprefixer": "10.4.13",
     "chokidar-cli": "3.0.0",
     "cssstats": "4.0.5",
