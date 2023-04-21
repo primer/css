@@ -2,4 +2,5 @@
 "@primer/css": patch
 ---
 
-Update size tokens to Primitives pre-v8 release
+- Bump primitives to v7.11.7
+- Update size tokens to Primitives pre-v8 release
