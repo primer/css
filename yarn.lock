@@ -1222,10 +1222,10 @@
   dependencies:
     markdown-table-ts "^1.0.3"
 
-"@primer/stylelint-config@0.0.0-20230420153251":
-  version "0.0.0-20230420153251"
-  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-0.0.0-20230420153251.tgz#5b527c8ccf597105a457b2a8e29eeac16b662e62"
-  integrity sha512-dhsMZ0jxTbXu06qCuIkuEzSxQdfE39Mr9o0fP6pAxFhQKFPYcxvnqtY1PQSvCzicJV3+e4KmOHM0YO9Vp2xL/g==
+"@primer/stylelint-config@0.0.0-20230420164534":
+  version "0.0.0-20230420164534"
+  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-0.0.0-20230420164534.tgz#acca5d97db15f40455c7ddb0d0b1884886109a04"
+  integrity sha512-R0Hv4A7wkgMBJEh9LFKcqgYSLqG8HcIK0pzJSsKFUqXOz6Z7PCqqRPWTehcUKpM/KOfkE4Ps2WFZpv69keXJQg==
   dependencies:
     anymatch "^3.1.1"
     globby "^11.0.1"
