@@ -25,7 +25,7 @@
   // │  ├─ &.Stack-item--expand-[ whenNarrow | whenRegular | whenWide ]
   // │  ├─ &.Stack-item--keepSize-[ whenNarrow | whenRegular | whenWide ]
 
-  $Stack-gap-default: var(--primer-stack-gap-normal, 16px);
+  $Stack-gap-default: var(--stack-gap-normal, 16px);
 
   --Stack-gap-whenRegular: #{$Stack-gap-default};
   --Stack-gap-whenNarrow: #{$Stack-gap-default};
@@ -65,18 +65,18 @@
   }
 
   .Stack--gap-condensed#{$viewportRange} {
-    --Stack-gap#{$viewportRange}: var(--primer-stack-gap-condensed, 8px);
+    --Stack-gap#{$viewportRange}: var(--stack-gap-condensed, 8px);
   }
 
   .Stack--gap-normal#{$viewportRange} {
-    --Stack-gap#{$viewportRange}: var(--primer-stack-gap-normal, 16px);
+    --Stack-gap#{$viewportRange}: var(--stack-gap-normal, 16px);
   }
 
   // There's no .Stack--gap-spacious-whenNarrow
   // Narrow viewports render `spacious` gap as `normal`
   @if $viewportRange != '-whenNarrow' {
     .Stack--gap-spacious#{$viewportRange} {
-      --Stack-gap#{$viewportRange}: var(--primer-stack-gap-spacious, 24px);
+      --Stack-gap#{$viewportRange}: var(--stack-gap-spacious, 24px);
     }
   }
 
@@ -161,14 +161,14 @@
 
   :not(.Stack--dir-inline#{$viewportRange}) > .Stack-divider,
   :not(.Stack--dir-inline#{$viewportRange}) > .Stack-item > .Stack-divider {
-    border-block-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
+    border-block-end: var(--borderWidth-thin, 1px) solid var(--Stack-divider-color);
     inline-size: auto;
     block-size: 0;
   }
 
   .Stack--dir-inline#{$viewportRange} > .Stack-divider,
   .Stack--dir-inline#{$viewportRange} > .Stack-item > .Stack-divider {
-    border-inline-end: var(--primer-borderWidth-thin, 1px) solid var(--Stack-divider-color);
+    border-inline-end: var(--borderWidth-thin, 1px) solid var(--Stack-divider-color);
     inline-size: 0;
     block-size: auto;
   }
