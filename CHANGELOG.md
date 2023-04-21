@@ -1,5 +1,18 @@
 # @primer/css
 
+## 21.0.1
+
+### Patch Changes
+
+- [#2421](https://github.com/primer/css/pull/2421) [`7dfcb0c5`](https://github.com/primer/css/commit/7dfcb0c595881439c15a38389168272da5aab59d) Thanks [@simurai](https://github.com/simurai)! - Bump @primer/primitives to `7.11.5`
+
+- [#2404](https://github.com/primer/css/pull/2404) [`ae9d71b1`](https://github.com/primer/css/commit/ae9d71b117bf37e8f618db4474efd87c75a2f531) Thanks [@langermank](https://github.com/langermank)! - Add `font-size` to `html` tag to make rem units "safe"
+
+- [#2418](https://github.com/primer/css/pull/2418) [`bce38dee`](https://github.com/primer/css/commit/bce38dee01027c6ac6dd3dbcec644eec153fd2ba) Thanks [@simurai](https://github.com/simurai)! - Make list type selector case sensitive
+
+- [#2425](https://github.com/primer/css/pull/2425) [`718f1aa6`](https://github.com/primer/css/commit/718f1aa6a6f8b5823e55b6b2616a729f59392e83) Thanks [@langermank](https://github.com/langermank)! - - Bump primitives to v7.11.7
+  - Update size tokens to Primitives pre-v8 release
+
 ## 21.0.0
 
 ### Major Changes
