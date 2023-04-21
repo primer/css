@@ -30,7 +30,7 @@
     width: 100%;
     padding: var(--base-size-16, 16px);
     background: var(--color-canvas-inset);
-    padding-block-end: calc(var(--base-size-16, 16px) - var(--primer-borderWidth-thin, 1px));
+    padding-block-end: calc(var(--base-size-16, 16px) - var(--borderWidth-thin, 1px));
     isolation: isolate;
     align-items: center;
     gap: var(--base-size-8, 8px);
@@ -67,7 +67,7 @@
       text-indent: var(--base-size-128, 128px);
       pointer-events: none;
       background: var(--color-border-default);
-      border-radius: var(--primer-borderRadius-full, 100vh);
+      border-radius: var(--borderRadius-full, 100vh);
     }
 
     &:focus {
@@ -75,17 +75,17 @@
       display: grid;
       width: auto;
       height: auto;
-      min-height: var(--primer-control-medium-size, 32px);
-      padding: 0 var(--primer-control-medium-paddingInline-spacious, 16px);
+      min-height: var(--control-medium-size, 32px);
+      padding: 0 var(--control-medium-paddingInline-spacious, 16px);
       overflow: auto;
       color: var(--color-fg-on-emphasis);
       background: var(--color-accent-emphasis);
-      border-radius: var(--primer-borderRadius-full, 100vh);
+      border-radius: var(--borderRadius-full, 100vh);
       align-items: center;
 
       @media (pointer: coarse) {
         &::after {
-          @include minTouchTarget(var(--primer-control-minTarget-coarse, 44px));
+          @include minTouchTarget(var(--control-minTarget-coarse, 44px));
         }
       }
 

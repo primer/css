@@ -58,9 +58,9 @@ export default {
       },
       description: `Sets the spacing gap between items. All sizes are rendered in \`rem\` units.
 - \`none\`: 0
-- \`condensed\`: \`var(--primer-stack-gap-condensed, 8px)\`,
-- \`normal\`: \`var(--primer-stack-gap-normal, 16px)\` (default)
-- \`spacious\`: \`var(--primer-stack-gap-spacious, 24px)\` (on regular viewports, otherwise it appears as \`normal\` on narrow viewports)
+- \`condensed\`: \`var(--stack-gap-condensed, 8px)\`,
+- \`normal\`: \`var(--stack-gap-normal, 16px)\` (default)
+- \`spacious\`: \`var(--stack-gap-spacious, 24px)\` (on regular viewports, otherwise it appears as \`normal\` on narrow viewports)
 <!-- - \`custom\`: set a custom size. When using with a framework such as ViewComponent or React, a custom value can be passed directly to the property. -->
  `,
       table: {
@@ -120,7 +120,7 @@ This property behavior is equivalent to the \`align-items\` Flexbox property.`,
       control: {
         type: 'inline-radio',
       },
-      description: 'Sets how items will be distributed in the stacking direction.', 
+      description: 'Sets how items will be distributed in the stacking direction.',
       table: {
         category: 'Properties',
         defaultValue: {
@@ -514,7 +514,7 @@ export const StackTemplate = ({
           alignWrap && 'Stack--alignWrap-' + `${alignWrap}-whenRegular`,
           narrow_alignWrap && 'Stack--alignWrap-' + `${narrow_alignWrap}-whenNarrow`,
           wide_alignWrap && 'Stack--alignWrap-' + `${wide_alignWrap}-whenWide`,
-          
+
           spread && 'Stack--spread-' + `${spread}-whenRegular`,
           narrow_spread && 'Stack--spread-' + `${narrow_spread}-whenNarrow`,
           wide_spread && 'Stack--spread-' + `${wide_spread}-whenWide`,
@@ -531,7 +531,7 @@ export const StackTemplate = ({
         //style={custom_styles}
       >
         {children}
-        
+
         {!children && (
           <>
             <div className="Stack-item _debug _debug-item-1">1</div>
