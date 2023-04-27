@@ -66,7 +66,7 @@
 .h4,
 .h5,
 .h6 {
-  font-weight: var(--base-text-weight-semibold, $font-weight-bold) !important;
+  font-weight: $font-weight-bold !important;
 }
 
 // Type utilities that match type sale
@@ -120,7 +120,7 @@
 /* Set the font size to 40px and weight to light */
 .f00-light {
   font-size: var(--h00-size-mobile, $h00-size-mobile) !important;
-  font-weight: var(--base-text-weight-light, $font-weight-light) !important;
+  font-weight: $font-weight-light !important;
 
   @include breakpoint(md) {
     font-size: var(--h00-size, $h00-size) !important;
@@ -130,7 +130,7 @@
 /* Set the font size to 32px and weight to light */
 .f0-light {
   font-size: var(--h0-size-mobile, $h0-size-mobile) !important;
-  font-weight: var(--base-text-weight-light, $font-weight-light) !important;
+  font-weight: $font-weight-light !important;
 
   @include breakpoint(md) {
     font-size: var(--h0-size, $h0-size) !important;
@@ -140,7 +140,7 @@
 /* Set the font size to 26px and weight to light */
 .f1-light {
   font-size: var(--h1-size-mobile, $h1-size-mobile) !important;
-  font-weight: var(--base-text-weight-light, $font-weight-light) !important;
+  font-weight: $font-weight-light !important;
 
   @include breakpoint(md) {
     font-size: var(--h1-size, $h1-size) !important;
@@ -150,7 +150,7 @@
 /* Set the font size to 22px and weight to light */
 .f2-light {
   font-size: var(--h2-size-mobile, $h2-size-mobile) !important;
-  font-weight: var(--base-text-weight-light, $font-weight-light) !important;
+  font-weight: $font-weight-light !important;
 
   @include breakpoint(md) {
     font-size: var(--h2-size, $h2-size) !important;
@@ -161,7 +161,7 @@
 /* Set the font size to 18px and weight to light */
 .f3-light {
   font-size: var(--h3-size-mobile, $h3-size-mobile) !important;
-  font-weight: var(--base-text-weight-light, $font-weight-light) !important;
+  font-weight: $font-weight-light !important;
 
   @include breakpoint(md) {
     font-size: var(--h3-size, $h3-size) !important;
@@ -181,7 +181,7 @@
   // stylelint-disable-next-line primer/spacing
   margin-bottom: 30px;
   font-size: var(--h3-size, $h3-size);
-  font-weight: var(--base-text-weight-light, $font-weight-light);
+  font-weight: $font-weight-light;
 }
 
 // Line-height variations
@@ -308,7 +308,7 @@
 }
 
 .text-emphasized {
-  font-weight: var(--base-text-weight-semibold, $font-weight-bold);
+  font-weight: $font-weight-bold;
 }
 
 // List styles
