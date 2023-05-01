@@ -168,14 +168,14 @@
   color: var(--fgColor-default, var(--color-fg-default));
   text-decoration: none;
   vertical-align: middle;
-  background: var(--color-neutral-muted);
+  background: var(--control-bgColor-rest, var(--color-neutral-muted));
   border: 0;
   // stylelint-disable-next-line primer/borders
   border-radius: 1px;
 
   &:hover {
     text-decoration: none;
-    background-color: var(--color-accent-muted);
+    background-color: var(--control-bgColor-hover, var(--color-accent-muted));
   }
 
   &:active {

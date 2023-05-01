@@ -52,7 +52,7 @@
     color: var(--fgColor-disabled, var(--color-primer-fg-disabled));
     background-color: var(--control-bgColor-disabled, var(--color-input-disabled-bg));
     border-color: var(--borderColor-default, var(--color-border-default));
-    -webkit-text-fill-color: var(--color-primer-fg-disabled); // Fix for Safari
+    -webkit-text-fill-color: var(--fgColor-disabled, var(--color-primer-fg-disabled)); // Fix for Safari
     opacity: 1; // Fix for Safari iOS
 
     &::placeholder {
