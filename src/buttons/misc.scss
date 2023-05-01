@@ -68,7 +68,7 @@
   }
 
   &:active &.zeroclipboard-is-active {
-    background-color: var(--color-btn-selected-bg);
+    background-color: var(--button-default-bgColor-selected, var(--color-btn-selected-bg));
   }
 
   &:disabled,

@@ -43,7 +43,7 @@
   &.border-0 {
     &:focus,
     &:focus-visible {
-      border: $border-width $border-style var(--color-accent-fg) !important;
+      border: $border-width $border-style var(--borderColor-accent-emphasis, var(--color-accent-fg)) !important;
     }
   }
 

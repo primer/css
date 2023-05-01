@@ -85,7 +85,7 @@
 
   &.selected,
   &[aria-selected='true'] {
-    background-color: var(--color-btn-selected-bg);
+    background-color: var(--button-default-bgColor-selected, var(--color-btn-selected-bg));
     box-shadow: var(--shadow-inset, var(--color-primer-shadow-inset));
   }
 
@@ -285,7 +285,7 @@ a.btn-primary {
   &.disabled,
   &[aria-disabled='true'] {
     color: var(--button-danger-fgColor-disabled, var(--color-btn-danger-disabled-text));
-    background-color: var(--color-btn-danger-disabled-bg);
+    background-color: var(--button-danger-bgColor-disabled, var(--color-btn-danger-disabled-bg));
     border-color: var(--button-default-borderColor-rest, var(--color-btn-border));
     box-shadow: none;
 

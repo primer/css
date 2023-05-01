@@ -95,12 +95,12 @@
 
       @keyframes AppFrame-a11yLink-focus {
         0% {
-          color: var(--color-accent-emphasis);
+          color: var(--fgColor-accent, var(--color-accent-emphasis));
           transform: scale(0.3, 0.25);
         }
 
         50% {
-          color: var(--color-accent-emphasis);
+          color: var(--fgColor-accent, var(--color-accent-emphasis));
           transform: scale(1, 1);
         }
 
