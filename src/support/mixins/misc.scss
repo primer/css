@@ -17,7 +17,7 @@
   &::after {
     // stylelint-disable-next-line primer/spacing
     margin-left: 2px;
-    background-color: var(--color-canvas-default);
+    background-color: var(--bgColor-default, var(--color-canvas-default));
     background-image: linear-gradient($background, $background);
   }
 

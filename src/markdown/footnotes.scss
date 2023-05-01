@@ -14,7 +14,7 @@
 
   .footnotes {
     font-size: $h6-size;
-    color: var(--color-fg-muted);
+    color: var(--fgColor-muted, var(--color-fg-muted));
     border-top: $border;
 
     ol {
@@ -40,12 +40,12 @@
       pointer-events: none;
       content: '';
       // stylelint-disable-next-line primer/borders
-      border: 2px $border-style var(--color-accent-emphasis);
+      border: 2px $border-style var(--borderColor-accent-emphasis, var(--color-accent-emphasis));
       border-radius: $border-radius;
     }
 
     li:target {
-      color: var(--color-fg-default);
+      color: var(--fgColor-default, var(--color-fg-default));
     }
 
     .data-footnote-backref g-emoji {

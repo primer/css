@@ -12,14 +12,14 @@
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: var(--color-fg-default);
+  color: var(--fgColor-default, var(--color-fg-default));
   vertical-align: middle;
-  background-color: var(--color-canvas-default);
+  background-color: var(--bgColor-default, var(--color-canvas-default));
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
-  border: $border-width $border-style var(--color-border-default);
+  border: $border-width $border-style var(--borderColor-default, var(--color-border-default));
   border-radius: $border-radius;
-  box-shadow: var(--color-primer-shadow-inset);
+  box-shadow: var(--shadow-inset, var(--color-primer-shadow-inset));
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
   transition-property: color, background-color, box-shadow, border-color;
 
@@ -49,14 +49,14 @@
 
   &[disabled],
   fieldset[disabled] & {
-    color: var(--color-primer-fg-disabled);
-    background-color: var(--color-input-disabled-bg);
-    border-color: var(--color-border-default);
+    color: var(--fgColor-disabled, var(--color-primer-fg-disabled));
+    background-color: var(--control-bgColor-disabled, var(--color-input-disabled-bg));
+    border-color: var(--borderColor-default, var(--color-border-default));
     -webkit-text-fill-color: var(--color-primer-fg-disabled); // Fix for Safari
     opacity: 1; // Fix for Safari iOS
 
     &::placeholder {
-      color: var(--color-primer-fg-disabled);
+      color: var(--fgColor-disabled, var(--color-primer-fg-disabled));
     }
   }
 
@@ -79,10 +79,10 @@ textarea.form-control {
 
 // Inputs with contrast for easy light gray backgrounds against white.
 .input-contrast {
-  background-color: var(--color-canvas-inset);
+  background-color: var(--bgColor-muted, var(--color-canvas-inset));
 
   &:focus {
-    background-color: var(--color-canvas-default);
+    background-color: var(--bgColor-default, var(--color-canvas-default));
   }
 }
 
@@ -142,7 +142,7 @@ textarea.form-control {
       // stylelint-disable-next-line primer/spacing
       padding: 2px $spacer-1;
       font-style: normal;
-      background: var(--color-attention-subtle);
+      background: var(--bgColor-attention-muted, var(--color-attention-subtle));
       border-radius: $border-radius;
     }
   }
@@ -160,7 +160,7 @@ textarea.form-control {
     margin: 0;
     font-size: $font-size-small;
     font-weight: $font-weight-normal;
-    color: var(--color-fg-muted);
+    color: var(--fgColor-muted, var(--color-fg-muted));
   }
 }
 
@@ -199,7 +199,7 @@ textarea.form-control {
         display: inline-block;
         // stylelint-disable-next-line primer/spacing
         margin: 5px 0 0;
-        color: var(--color-fg-muted);
+        color: var(--fgColor-muted, var(--color-fg-muted));
       }
 
       img {
@@ -251,9 +251,9 @@ input::-webkit-inner-spin-button {
   // stylelint-disable-next-line primer/spacing
   margin: 10px 0;
   font-size: $h5-size;
-  color: var(--color-attention-fg);
-  background: var(--color-attention-subtle);
-  border: $border-width $border-style var(--color-attention-emphasis);
+  color: var(--fgColor-attention, var(--color-attention-fg));
+  background: var(--bgColor-attention-muted, var(--color-attention-subtle));
+  border: $border-width $border-style var(--borderColor-attention-emphasis, var(--color-attention-emphasis));
   border-radius: $border-radius;
 
   p {
