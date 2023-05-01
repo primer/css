@@ -845,6 +845,11 @@
   resolved "https://registry.yarnpkg.com/@github/image-crop-element/-/image-crop-element-5.0.0.tgz#6ae2c31f1e7dc355c41c3140554fb76ca7a71ef7"
   integrity sha512-Vgm2OwWAs1ESoib/t5sjxsAYo6YTOxxAjWDRxswX7qrqoyCejTZ3hshdo4Ep5e+Mz/GVTZC3rdMtg06dk/eT4g==
 
+"@github/include-fragment-element@^6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@github/include-fragment-element/-/include-fragment-element-6.1.1.tgz#75ac07dd7ee0e56997e6c910d9ad9663c4889c30"
+  integrity sha512-JTRVhMJlgcojYjj/bBuWKaYa2EQL3CvmdIkEiOeZUuu1xjutBaSEhpONL1MBAT77zUOy6VwniKjZGQn1IT7dbg==
+
 "@github/mini-throttle@^1.0.7":
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/@github/mini-throttle/-/mini-throttle-1.0.7.tgz#938d6eb45d00d07043a669baabfcafa072833f10"
@@ -1205,10 +1210,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@oddbird/popover-polyfill@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@oddbird/popover-polyfill/-/popover-polyfill-0.0.8.tgz#9abd07f46306550356113556a9a05302c3785226"
-  integrity sha512-d5DhYFRlcF5O/lUL8mB2h2R60XV71qCWKwXGKKQZNhShPb1gpX4HfPCnpjv6BL/cbQSVUQyafAoO55/rATbfpg==
+"@oddbird/popover-polyfill@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@oddbird/popover-polyfill/-/popover-polyfill-0.1.1.tgz#2d8c11dc8f7b12ae7fce9599168984e5f2381b5c"
+  integrity sha512-X9gxiwKtN1ZumOoe9KRLpe37nshLtwHm/IJflIxgjanXz/FqKb0DQ7BlWu+iqUn/O0/jWYgkKnTLtsC9JlgwQg==
 
 "@primer/behaviors@^1.2.0":
   version "1.3.1"
@@ -1241,9 +1246,9 @@
     tap-map "^1.0.0"
 
 "@primer/view-components@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@primer/view-components/-/view-components-0.1.0.tgz#6e2ed1e0acad6e7e805da1369ca7ed5ce40588f3"
-  integrity sha512-wunGnMDsuEmilPj2A05+kwhOsy49mTmLLq4sgzZ6Do5qh6eIDSvZXIv8HcgjvDk33JcBgEtLgnPu/GTLz910aA==
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@primer/view-components/-/view-components-0.1.7.tgz#34a7729add3f43a7ee6abb9041b1ff83ffe5b1eb"
+  integrity sha512-OwN/3OFEoq2OmyTlZnaHKlV/iDswZUa1ax0dL2uMJntfykesLbhMVZ/q00+HjKQaSTfCWFRrEswagryphkP81Q==
   dependencies:
     "@github/auto-check-element" "^5.2.0"
     "@github/auto-complete-element" "^3.3.4"
@@ -1251,10 +1256,11 @@
     "@github/clipboard-copy-element" "^1.1.2"
     "@github/details-menu-element" "^1.0.12"
     "@github/image-crop-element" "^5.0.0"
+    "@github/include-fragment-element" "^6.1.1"
     "@github/mini-throttle" "^2.1.0"
     "@github/relative-time-element" "^4.0.0"
     "@github/tab-container-element" "^3.1.2"
-    "@oddbird/popover-polyfill" "^0.0.8"
+    "@oddbird/popover-polyfill" "^0.1.1"
     "@primer/behaviors" "^1.2.0"
 
 "@sinclair/typebox@^0.25.16":
