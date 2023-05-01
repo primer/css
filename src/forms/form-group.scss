@@ -216,7 +216,7 @@
       border-color: var(--borderColor-success-muted, var(--color-success-muted));
 
       &::after {
-        border-bottom-color: var(--color-success-subtle);
+        border-bottom-color: var(--bgColor-success-muted, var(--color-success-subtle));
       }
 
       &::before {
