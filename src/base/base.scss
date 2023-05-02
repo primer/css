@@ -21,7 +21,7 @@ body {
 }
 
 a {
-  color: var(--fgColor-accent, var(--color-accent-fg));
+  color: var(--fgColor-link-rest, var(--color-accent-fg));
   text-decoration: none;
 
   &:hover {
