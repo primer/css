@@ -17,7 +17,6 @@
   border: $border-width $border-style;
   border-radius: $border-radius;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
-  background-color: var(--bgColor-default);
 
   &:hover {
     text-decoration: none;
