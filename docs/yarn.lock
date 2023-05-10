@@ -2284,10 +2284,10 @@
   resolved "https://registry.npmjs.org/@primer/primitives/-/primitives-7.1.1.tgz"
   integrity sha512-+Gwo89YK1OFi6oubTlah/zPxxzMNaMLy+inECAYI646KIFdzzhAsKWb3z5tSOu5Ff7no4isRV64rWfMSKLZclw==
 
-"@primer/primitives@7.11.8":
-  version "7.11.8"
-  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.11.8.tgz#a5de163d7cb5ffb9688886e9bf64fb69e2d6fd93"
-  integrity sha512-LSR/xRGFz0v1j337hXr1ZqcaY55glkHfDELdT4WEnuhRFLiYKUtWIhkTa858KYbaih5AUvw3wk0PYJeh6O7aDg==
+"@primer/primitives@7.11.9":
+  version "7.11.9"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.11.9.tgz#a52bdbc305b22f19cabcb3f1afe2c59aceeaf166"
+  integrity sha512-smCpmNXAs2/vIlFrf6SaAn5UuP/GX2tO5HnlMqZc6Gus+SZW2MTUacHl2t8OoR5SVNgrOLs/bS8fi/cldkjIGg==
 
 "@primer/primitives@7.8.4":
   version "7.8.4"
