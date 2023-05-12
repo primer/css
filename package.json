@@ -65,7 +65,7 @@
     "jest": "29.5.0",
     "js-yaml": "4.1.0",
     "postcss": "8.4.5",
-    "postcss-calc": "8.2.4",
+    "postcss-calc": "9.0.1",
     "postcss-import": "15.0.0",
     "postcss-load-config": "4.0.1",
     "postcss-scss": "4.0.5",
