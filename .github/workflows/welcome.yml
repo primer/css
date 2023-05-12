@@ -46,8 +46,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      - run: yarn
-      - run: yarn pretest
+      - run: npm i
+      - run: npm run pretest
       - name: Reporting bundle sizes
         uses: primer/comment-token-update@main
         env:

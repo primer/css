@@ -31,13 +31,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14
-      - run: yarn
+      - run: npm i
         if: steps.changed-files.outputs.any_changed == 'true'
-      - run: yarn dist
+      - run: npm run dist
         if: steps.changed-files.outputs.any_changed == 'true'
-      - name: Run docs site	
+      - name: Run docs site
         if: steps.changed-files.outputs.any_changed == 'true'
-        run: |	
+        run: |
           npm run dev & npx wait-on http://localhost:8000
       - name: Run axe script
         if: steps.changed-files.outputs.any_changed == 'true'

@@ -4,4 +4,4 @@ set -e
 mkdir -p tmp
 cd tmp
 echo "{\"package\":\"tmp\",\"version\":\"0.0.0\"}" > package.json
-yarn add --force @primer/css@latest
+npm i @primer/css@latest --force

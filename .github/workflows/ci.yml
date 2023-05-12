@@ -12,12 +12,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      - run: yarn
-      - run: yarn dist
+      - run: npm i
+      - run: npm run dist
       - name: Lint source files
-        run: yarn stylelint --fix
+        run: npx stylelint --fix
       - name: Look for unused stylelint:disable lines
-        run: yarn stylelint -- --report-needless-disables
+        run: npm run stylelint -- --report-needless-disables
       - name: Push up any fixes
         if: ${{ github.event_name == 'pull_request' }}
         run: |
@@ -48,9 +48,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      - run: yarn
+      - run: npm i
       - name: Lint workflow files
-        run: yarn eslint
+        run: npm run eslint
 
   test:
     runs-on: ubuntu-latest
@@ -59,6 +59,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      - run: yarn
+      - run: npm i
       - name: Jest
-        run: yarn test
+        run: npm test

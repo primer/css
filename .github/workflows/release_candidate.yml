@@ -23,7 +23,7 @@ jobs:
           node-version: 14.x
 
       - name: Install dependencies
-        run: yarn
+        run: npm i
 
       - name: Create .npmrc
         run: |
@@ -37,7 +37,7 @@ jobs:
         run: |
           version=$(jq -r .version package.json)
           echo "$( jq ".version = \"$(echo $version)-rc.$(git rev-parse --short HEAD)\"" package.json )" > package.json
-          yarn publish --tag next
+          npm publish --tag next
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

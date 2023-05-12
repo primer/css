@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@babel/preset-react": "^7.16.7",
-    "@koddsson/postcss-sass": "5.0.1",
+    "@csstools/postcss-sass": "5.0.1",
     "@primer/components": "32.1.0",
     "@primer/gatsby-theme-doctocat": "4.4.0",
     "@primer/octicons": "17.0.0",
