@@ -42,7 +42,7 @@ jobs:
     secrets:
       gh_token: ${{ secrets.GITHUB_TOKEN }}
     with:
-      node_version: 14
+      node_version: 18
       install: npm ci && cd docs && npm ci && cd ..
       build: npm run build:docs
       output_dir: docs/public
