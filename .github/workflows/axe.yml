@@ -30,7 +30,7 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 18
           cache: 'npm'
       - run: npm ci
         if: steps.changed-files.outputs.any_changed == 'true'
