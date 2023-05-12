@@ -12,7 +12,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      - run: npm i
+          cache: 'npm'
+      - run: npm ci
       - run: npm run dist
       - name: Lint source files
         run: npx stylelint --fix
@@ -35,7 +36,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      - run: npm i
+          cache: 'npm'
+      - run: npm ci
       - name: Lint workflow files
         run: npm run eslint
 
@@ -46,6 +48,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      - run: npm i
+          cache: 'npm'
+      - run: npm ci
       - name: Jest
         run: npm test

@@ -14,6 +14,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14.x
+          cache: 'npm'
 
       - name: Get or Create Comment
         uses: actions/github-script@v6
@@ -46,7 +47,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      - run: npm i
+          cache: 'npm'
+      - run: npm ci
       - run: npm run pretest
       - name: Reporting bundle sizes
         uses: primer/comment-token-update@main
