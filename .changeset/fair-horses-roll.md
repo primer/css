@@ -2,4 +2,4 @@
 "@primer/css": patch
 ---
 
-Bump primitives v7.11.8
+Bump primitives v7.11.10
