@@ -2,6 +2,7 @@
 @import './variables/typography.scss';
 @import './variables/layout.scss';
 @import './variables/misc.scss';
+@import '../primitives/temp-typography-tokens.scss';
 
 // mixins
 @import './mixins/color-modes.scss';
