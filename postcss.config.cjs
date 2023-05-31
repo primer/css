@@ -2,7 +2,8 @@ const autoprefixer = require('autoprefixer')
 const sass = require('@csstools/postcss-sass')
 const scss = require('postcss-scss')
 const scssImport = require('postcss-import')
-const {join} = require('path')
+const { join } = require('path')
+const importedJSONFromPrimitives = require('./node_modules/@primer/primitives/tokens-next-private/fallbacks/color-fallbacks.json')
 
 module.exports = {
   map: {
@@ -18,5 +19,10 @@ module.exports = {
       outputStyle: process.env.CSS_MINIFY === '0' ? 'expanded' : 'compressed'
     }),
     autoprefixer,
+    require('postcss-custom-properties-fallback')({
+      importFrom: {
+        customProperties: importedJSONFromPrimitives
+      },
+    }),
   ]
 }

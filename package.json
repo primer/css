@@ -42,7 +42,7 @@
     "storybook": "cd docs && yarn && yarn storybook"
   },
   "dependencies": {
-    "@primer/primitives": "^7.11.7",
+    "@primer/primitives": "^7.11.10",
     "@primer/view-components": "^0.1.0"
   },
   "devDependencies": {
@@ -70,6 +70,7 @@
     "postcss-load-config": "4.0.1",
     "postcss-scss": "4.0.5",
     "postcss-simple-vars": "7.0.1",
+    "postcss-custom-properties-fallback": "^1.0.2",
     "prettier": "2.8.8",
     "semver": "7.3.8",
     "stylelint": "14.15.0",
