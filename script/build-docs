@@ -8,7 +8,7 @@ cp -rf dist docs
 cd docs
 
 if [ -n "$1" ]; then
-  CI=true npx gatsby build && npm run build:storybook preview
+  CI=true yarn gatsby build && yarn build:storybook preview
 else
-  CI=true npx gatsby build --prefix-paths && npm run build:storybook
+  CI=true yarn gatsby build --prefix-paths && yarn build:storybook
 fi

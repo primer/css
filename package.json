@@ -35,11 +35,11 @@
     "eslint": "eslint deprecations.js __tests__ script",
     "prepublishOnly": "script/prepublish",
     "start": "npm run dev",
-    "dev": "cd docs && npm i && npm run develop",
+    "dev": "cd docs && yarn && yarn develop",
     "pretest": "npm run dist && script/pretest",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
     "release": "changeset publish",
-    "storybook": "cd docs && npm i && npx storybook"
+    "storybook": "cd docs && yarn && yarn storybook"
   },
   "dependencies": {
     "@primer/primitives": "^7.11.10",
