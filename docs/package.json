@@ -23,7 +23,7 @@
     "chroma-js": "^2.4.2",
     "clsx": "^1.1.1",
     "core-js": "^3.20.3",
-    "gatsby": "2.32.13",
+    "gatsby": "4.25.7",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-sass": "3.2.0",
     "gatsby-plugin-svgr": "2.1.0",
