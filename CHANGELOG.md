@@ -1,5 +1,15 @@
 # @primer/css
 
+## 21.0.3
+
+### Patch Changes
+
+- [#2461](https://github.com/primer/css/pull/2461) [`abc89659`](https://github.com/primer/css/commit/abc8965913313bbb969db9e1148fb5add9327ec9) Thanks [@langermank](https://github.com/langermank)! - Add default `::selection` color
+
+- [#2410](https://github.com/primer/css/pull/2410) [`344224fc`](https://github.com/primer/css/commit/344224fccdef2f3a37ed931c512e400b47301ea2) Thanks [@dylanatsmith](https://github.com/dylanatsmith)! - Add width utility to limit line length for readability
+
+- [#2457](https://github.com/primer/css/pull/2457) [`352ed7b7`](https://github.com/primer/css/commit/352ed7b75585c686c996a5e7c2c29e20e41d0672) Thanks [@langermank](https://github.com/langermank)! - Add new PostCSS fallback config
+
 ## 21.0.2
 
 ### Patch Changes
