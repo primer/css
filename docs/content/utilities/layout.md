@@ -204,7 +204,7 @@ Use `.width-auto` to reset width to `auto` (initial value). Typically used with 
 </div>
 ```
 
-Use `.width-comfortable` to set width to `65ch`. This can be used on text elements to shorten the line length for better readability.
+Use `.width-comfortable` to set max width to `65ch`. This can be used on text elements to shorten the line length for better readability.
 
 ```html live
 <p class="width-comfortable">
