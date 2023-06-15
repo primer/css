@@ -4,8 +4,8 @@
   padding: $spacer-3;
   font-size: $h5-size;
   line-height: $lh-default;
-  color: var(--color-header-text);
-  background-color: var(--color-header-bg);
+  color: var(--header-fgColor-default);
+  background-color: var(--header-bgColor);
   align-items: center;
   flex-wrap: nowrap;
 }
@@ -24,20 +24,20 @@
 
 .Header-link {
   font-weight: $font-weight-bold;
-  color: var(--color-header-logo);
+  color: var(--header-fgColor-logo);
   white-space: nowrap;
 
   &:hover,
   &:focus {
-    color: var(--color-header-text);
+    color: var(--header-fgColor-default);
     text-decoration: none;
   }
 }
 
 .Header-input {
-  color: var(--color-header-text);
-  background-color: var(--color-header-search-bg);
-  border: $border-width $border-style var(--color-header-search-border);
+  color: var(--header-fgColor-default);
+  background-color: var(--headerSearch-bgColor);
+  border: $border-width $border-style var(--headerSearch-borderColor);
   box-shadow: none;
 
   &::placeholder {

@@ -11,20 +11,20 @@
   margin-top: $spacer-4;
   list-style: none;
   cursor: pointer;
-  background: var(--color-canvas-overlay);
-  border: $border-width $border-style var(--color-border-default);
+  background: var(--overlay-bgColor);
+  border: $border-width $border-style var(--borderColor-default);
   border-radius: $border-radius;
-  box-shadow: var(--color-shadow-medium);
+  box-shadow: var(--shadow-resting-medium);
 
   li {
     display: block;
     padding: $spacer-1 $spacer-2;
     font-weight: $font-weight-semibold;
-    border-bottom: $border-width $border-style var(--color-border-muted);
+    border-bottom: $border-width $border-style var(--borderColor-muted);
 
     small {
       font-weight: $font-weight-normal;
-      color: var(--color-fg-muted);
+      color: var(--fgColor-muted);
     }
 
     &:last-child {
@@ -39,12 +39,12 @@
     }
 
     &:hover {
-      color: var(--color-fg-on-emphasis);
+      color: var(--fgColor-onEmphasis);
       text-decoration: none;
-      background: var(--color-accent-emphasis);
+      background: var(--bgColor-accent-emphasis);
 
       small {
-        color: var(--color-fg-on-emphasis);
+        color: var(--fgColor-onEmphasis);
       }
 
       .octicon {
@@ -54,12 +54,12 @@
 
     &[aria-selected='true'],
     &.navigation-focus {
-      color: var(--color-fg-on-emphasis);
+      color: var(--fgColor-onEmphasis);
       text-decoration: none;
-      background: var(--color-accent-emphasis);
+      background: var(--bgColor-accent-emphasis);
 
       small {
-        color: var(--color-fg-on-emphasis);
+        color: var(--fgColor-onEmphasis);
       }
 
       .octicon {

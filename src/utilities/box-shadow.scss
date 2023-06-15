@@ -3,19 +3,19 @@
 // Box shadows
 
 .color-shadow-small {
-  box-shadow: var(--color-shadow-small) !important;
+  box-shadow: var(--shadow-resting-small) !important;
 }
 
 .color-shadow-medium {
-  box-shadow: var(--color-shadow-medium) !important;
+  box-shadow: var(--shadow-resting-medium) !important;
 }
 
 .color-shadow-large {
-  box-shadow: var(--color-shadow-large) !important;
+  box-shadow: var(--shadow-floating-large) !important;
 }
 
 .color-shadow-extra-large {
-  box-shadow: var(--color-shadow-extra-large) !important;
+  box-shadow: var(--shadow-floating-xlarge) !important;
 }
 
 // Turn off box shadow

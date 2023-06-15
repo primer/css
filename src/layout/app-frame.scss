@@ -29,7 +29,7 @@
     display: flex;
     width: 100%;
     padding: var(--base-size-16, 16px);
-    background: var(--color-canvas-inset);
+    background: var(--bgColor-muted);
     padding-block-end: calc(var(--base-size-16, 16px) - var(--borderWidth-thin, 1px));
     isolation: isolate;
     align-items: center;
@@ -66,7 +66,7 @@
       overflow: hidden;
       text-indent: var(--base-size-128, 128px);
       pointer-events: none;
-      background: var(--color-border-default);
+      background: var(--borderColor-default);
       border-radius: var(--borderRadius-full, 100vh);
     }
 
@@ -78,8 +78,8 @@
       min-height: var(--control-medium-size, 32px);
       padding: 0 var(--control-medium-paddingInline-spacious, 16px);
       overflow: auto;
-      color: var(--color-fg-on-emphasis);
-      background: var(--color-accent-emphasis);
+      color: var(--fgColor-onEmphasis);
+      background: var(--bgColor-accent-emphasis);
       border-radius: var(--borderRadius-full, 100vh);
       align-items: center;
 
@@ -95,17 +95,17 @@
 
       @keyframes AppFrame-a11yLink-focus {
         0% {
-          color: var(--color-accent-emphasis);
+          color: var(--fgColor-accent);
           transform: scale(0.3, 0.25);
         }
 
         50% {
-          color: var(--color-accent-emphasis);
+          color: var(--fgColor-accent);
           transform: scale(1, 1);
         }
 
         55% {
-          color: var(--color-fg-on-emphasis);
+          color: var(--fgColor-onEmphasis);
         }
 
         100% {

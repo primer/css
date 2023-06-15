@@ -7,7 +7,7 @@
   display: inline-block;
   padding: 0;
   font-size: inherit;
-  color: var(--color-accent-fg);
+  color: var(--fgColor-accent);
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
@@ -24,7 +24,7 @@
   &[aria-disabled='true'] {
     &,
     &:hover {
-      color: var(--color-primer-fg-disabled);
+      color: var(--fgColor-disabled);
       cursor: default;
     }
   }
@@ -42,7 +42,7 @@
 //
 // Typically used as a "cancel" button next to a .btn
 .btn-invisible {
-  color: var(--color-accent-fg);
+  color: var(--fgColor-accent);
   background-color: transparent; // Reset default gradient backgrounds and colors
   border: 0;
   border-radius: $border-radius;
@@ -50,8 +50,8 @@
 
   &:hover,
   &.zeroclipboard-is-hover {
-    color: var(--color-accent-fg);
-    background-color: var(--color-btn-hover-bg);
+    color: var(--fgColor-accent);
+    background-color: var(--button-default-bgColor-hover);
     outline: none;
     box-shadow: none;
   }
@@ -60,21 +60,21 @@
   &.selected,
   &[aria-selected='true'],
   &.zeroclipboard-is-active {
-    color: var(--color-accent-fg);
+    color: var(--fgColor-accent);
     background: none;
-    border-color: var(--color-btn-active-border);
+    border-color: var(--button-default-borderColor-active);
 
     @include focusOutline;
   }
 
   &:active &.zeroclipboard-is-active {
-    background-color: var(--color-btn-selected-bg);
+    background-color: var(--button-default-bgColor-selected);
   }
 
   &:disabled,
   &.disabled,
   &[aria-disabled='true'] {
-    color: var(--color-primer-fg-disabled);
+    color: var(--fgColor-disabled);
     background-color: transparent;
   }
 }
@@ -89,7 +89,7 @@
   // stylelint-disable-next-line primer/spacing
   margin-left: 5px;
   line-height: $lh-condensed-ultra;
-  color: var(--color-fg-muted);
+  color: var(--fgColor-muted);
   vertical-align: middle;
 
   // For `<button>` elements
@@ -98,7 +98,7 @@
   box-shadow: none;
 
   &:hover {
-    color: var(--color-accent-fg);
+    color: var(--fgColor-accent);
   }
 
   &:focus,
@@ -108,17 +108,17 @@
 
   &.disabled,
   &[aria-disabled='true'] {
-    color: var(--color-primer-fg-disabled);
+    color: var(--fgColor-disabled);
     cursor: default;
 
     &:hover {
-      color: var(--color-primer-fg-disabled);
+      color: var(--fgColor-disabled);
     }
   }
 }
 
 .btn-octicon-danger:hover {
-  color: var(--color-danger-fg);
+  color: var(--fgColor-danger);
 }
 
 // Close button
@@ -126,12 +126,12 @@
 // Typically used with an octicon-x
 .close-button {
   padding: 0;
-  color: var(--color-fg-muted);
+  color: var(--fgColor-muted);
   background: transparent;
   border: 0;
 
   &:hover {
-    color: var(--color-fg-default);
+    color: var(--fgColor-default);
   }
 
   &:active {
@@ -165,22 +165,22 @@
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/typography
   line-height: 6px;
-  color: var(--color-fg-default);
+  color: var(--fgColor-default);
   text-decoration: none;
   vertical-align: middle;
-  background: var(--color-neutral-muted);
+  background: var(--bgColor-neutral-muted);
   border: 0;
   // stylelint-disable-next-line primer/borders
   border-radius: 1px;
 
   &:hover {
     text-decoration: none;
-    background-color: var(--color-accent-muted);
+    background-color: var(--bgColor-accent-muted);
   }
 
   &:active {
-    color: var(--color-fg-on-emphasis);
-    background-color: var(--color-accent-emphasis);
+    color: var(--fgColor-onEmphasis);
+    background-color: var(--bgColor-accent-emphasis);
   }
 }
 
@@ -210,14 +210,14 @@
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: var(--color-fg-default);
+  color: var(--fgColor-default);
   vertical-align: middle;
-  background-color: var(--color-canvas-default);
-  border: $border-width $border-style var(--color-btn-border);
+  background-color: var(--bgColor-default);
+  border: $border-width $border-style var(--button-default-borderColor-rest);
   border-left: 0;
   border-top-right-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
-  box-shadow: var(--color-shadow-small), var(--color-primer-shadow-highlight);
+  box-shadow: var(--shadow-resting-small), var(--shadow-highlight);
 
   &:hover,
   &:active {
@@ -225,7 +225,7 @@
   }
 
   &:hover {
-    color: var(--color-accent-fg);
+    color: var(--fgColor-accent);
     cursor: pointer;
   }
 }

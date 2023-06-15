@@ -12,7 +12,7 @@
 .subnav-bordered {
   // stylelint-disable-next-line primer/spacing
   padding-bottom: 20px;
-  border-bottom: $border-width $border-style var(--color-border-muted);
+  border-bottom: $border-width $border-style var(--borderColor-muted);
 }
 
 .subnav-flush {
@@ -27,8 +27,8 @@
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
-  color: var(--color-fg-default);
-  border: $border-width $border-style var(--color-border-default);
+  color: var(--fgColor-default);
+  border: $border-width $border-style var(--borderColor-default);
 
   + .subnav-item {
     // stylelint-disable-next-line primer/spacing
@@ -38,16 +38,16 @@
   &:hover,
   &:focus {
     text-decoration: none;
-    background-color: var(--color-canvas-subtle);
+    background-color: var(--bgColor-muted);
   }
 
   &.selected,
   &[aria-selected='true'],
   &[aria-current]:not([aria-current='false']) {
     z-index: 2;
-    color: var(--color-fg-on-emphasis);
-    background-color: var(--color-accent-emphasis);
-    border-color: var(--color-accent-emphasis);
+    color: var(--fgColor-onEmphasis);
+    background-color: var(--bgColor-accent-emphasis);
+    border-color: var(--borderColor-accent-emphasis);
 
     // fallback :focus state
     &:focus {
@@ -86,7 +86,7 @@
 .subnav-search-input {
   width: 320px;
   padding-left: $spacer-5;
-  color: var(--color-fg-muted);
+  color: var(--fgColor-muted);
 }
 
 .subnav-search-input-wide {
@@ -99,7 +99,7 @@
   top: 9px;
   left: 8px;
   display: block;
-  color: var(--color-fg-muted);
+  color: var(--fgColor-muted);
   text-align: center;
   pointer-events: none;
 }

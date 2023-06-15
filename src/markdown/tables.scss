@@ -17,7 +17,7 @@
     td {
       // stylelint-disable-next-line primer/spacing
       padding: 6px 13px;
-      border: $border-width $border-style var(--color-border-default);
+      border: $border-width $border-style var(--borderColor-default);
     }
 
     td {
@@ -27,11 +27,11 @@
     }
 
     tr {
-      background-color: var(--color-canvas-default);
-      border-top: $border-width $border-style var(--color-border-muted);
+      background-color: var(--bgColor-default);
+      border-top: $border-width $border-style var(--borderColor-muted);
 
       &:nth-child(2n) {
-        background-color: var(--color-canvas-subtle);
+        background-color: var(--bgColor-muted);
       }
     }
 

@@ -43,7 +43,7 @@
 
   // Link Colors
   .absent {
-    color: var(--color-danger-fg);
+    color: var(--fgColor-danger);
   }
 
   .anchor {
@@ -74,16 +74,16 @@
     height: $em-spacer-3;
     padding: 0;
     margin: $spacer-4 0;
-    background-color: var(--color-border-default);
+    background-color: var(--borderColor-default);
     border: 0;
   }
 
   blockquote {
     // stylelint-disable-next-line primer/spacing
     padding: 0 1em;
-    color: var(--color-fg-muted);
+    color: var(--fgColor-muted);
     // stylelint-disable-next-line primer/borders
-    border-left: 0.25em $border-style var(--color-border-default);
+    border-left: 0.25em $border-style var(--borderColor-default);
 
     > :first-child {
       margin-top: 0;

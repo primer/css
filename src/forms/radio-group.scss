@@ -13,14 +13,14 @@
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 20px; // Specifically not inherit our `<body>` default
-  color: var(--color-fg-default);
+  color: var(--fgColor-default);
   cursor: pointer;
-  border: $border-width $border-style var(--color-border-default);
+  border: $border-width $border-style var(--borderColor-default);
 
   :checked + & {
     position: relative;
     z-index: 1;
-    border-color: var(--color-accent-emphasis);
+    border-color: var(--borderColor-accent-emphasis);
   }
 
   &:first-of-type {
@@ -36,7 +36,7 @@
 
   .octicon {
     margin-left: $spacer-1;
-    color: var(--color-fg-subtle);
+    color: var(--fgColor-muted);
   }
 }
 
@@ -50,9 +50,9 @@
     position: relative; // enables z-index
 
     + .radio-label {
-      color: var(--color-primer-fg-disabled);
+      color: var(--fgColor-disabled);
       cursor: default;
-      background-color: var(--color-neutral-subtle);
+      background-color: var(--bgColor-neutral-muted);
 
       .octicon {
         color: inherit;

@@ -2,7 +2,7 @@
 // stylelint-disable selector-max-specificity
 // stylelint-disable no-duplicate-selectors
 
-$Layout-divider-color: var(--color-border-default) !default;
+$Layout-divider-color: var(--borderColor-default) !default;
 $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
 :root {
@@ -44,7 +44,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
   height: #{$spacer-2}; // 8px
   content: '';
-  background-color: var(--color-canvas-inset);
+  background-color: var(--bgColor-muted);
   box-shadow: inset 0 1px $Layout-divider-color, inset 0 -1px $Layout-divider-color;
 }
 

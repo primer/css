@@ -4,7 +4,7 @@
 }
 
 *::selection {
-  background-color: var(--color-accent-subtle);
+  background-color: var(--bgColor-accent-muted);
 }
 
 input,
@@ -20,12 +20,12 @@ body {
   font-family: $body-font;
   font-size: var(--body-font-size, $body-font-size);
   line-height: $body-line-height;
-  color: var(--color-fg-default);
-  background-color: var(--color-canvas-default);
+  color: var(--fgColor-default);
+  background-color: var(--bgColor-default);
 }
 
 a {
-  color: var(--color-accent-fg);
+  color: var(--fgColor-accent);
   text-decoration: none;
 
   &:hover {
@@ -50,7 +50,7 @@ label {
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
 ::placeholder {
-  color: var(--color-fg-subtle);
+  color: var(--fgColor-muted);
   opacity: 1; // override opacity in normalize.css
 }
 
@@ -65,7 +65,7 @@ hr,
   overflow: hidden;
   background: transparent;
   border: 0;
-  border-bottom: $border-width $border-style var(--color-border-muted);
+  border-bottom: $border-width $border-style var(--borderColor-muted);
 
   @include clearfix();
 }

@@ -6,8 +6,8 @@
 @include color-mode(dark) { color-scheme: dark; }
 
 [data-color-mode] {
-  color: var(--color-fg-default);
-  background-color: var(--color-canvas-default);
+  color: var(--fgColor-default);
+  background-color: var(--bgColor-default);
 }
 
 // Windows High Contrast mode
@@ -18,5 +18,7 @@
   body {
     --color-accent-emphasis: Highlight;
     --color-fg-on-emphasis: LinkText;
+    --focusColor-outline: Highlight;
+    --fgColor-onEmphasis: LinkText;
   }
 }

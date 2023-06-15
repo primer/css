@@ -13,12 +13,12 @@
   }
 
   &.pjax-active .filter-item {
-    color: var(--color-fg-muted);
+    color: var(--fgColor-muted);
     background-color: transparent;
 
     &.pjax-active {
-      color: var(--color-fg-on-emphasis);
-      background-color: var(--color-accent-emphasis);
+      color: var(--fgColor-onEmphasis);
+      background-color: var(--bgColor-accent-emphasis);
     }
   }
 }
@@ -30,7 +30,7 @@
   margin-bottom: $spacer-1;
   overflow: hidden;
   font-size: $h5-size;
-  color: var(--color-fg-muted);
+  color: var(--fgColor-muted);
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -39,14 +39,14 @@
 
   &:hover {
     text-decoration: none;
-    background-color: var(--color-canvas-subtle);
+    background-color: var(--bgColor-muted);
   }
 
   &.selected,
   &[aria-selected='true'],
   &[aria-current]:not([aria-current='false']) {
-    color: var(--color-fg-on-emphasis);
-    background-color: var(--color-accent-emphasis);
+    color: var(--fgColor-onEmphasis);
+    background-color: var(--bgColor-accent-emphasis);
 
     // fallback :focus state
     &:focus {
@@ -77,6 +77,6 @@
     bottom: 2px;
     z-index: -1;
     display: inline-block;
-    background-color: var(--color-neutral-subtle);
+    background-color: var(--bgColor-neutral-muted);
   }
 }

@@ -7,25 +7,25 @@
   // stylelint-disable-next-line primer/spacing
   padding: 2px 6px;
   font: 12px $mono-font;
-  color: var(--color-fg-muted);
+  color: var(--fgColor-muted);
   word-break: break-all;
-  background-color: var(--color-accent-subtle);
+  background-color: var(--bgColor-accent-muted);
   border-radius: $border-radius;
 
   .octicon {
     // stylelint-disable-next-line primer/spacing
     margin: 1px -2px 0 0;
-    color: var(--color-fg-muted);
+    color: var(--fgColor-muted);
   }
 }
 
 // When a branch name is a link
 
 a.branch-name {
-  color: var(--color-accent-fg);
-  background-color: var(--color-accent-subtle);
+  color: var(--fgColor-accent);
+  background-color: var(--bgColor-accent-muted);
 
   .octicon {
-    color: var(--color-accent-fg);
+    color: var(--fgColor-accent);
   }
 }
