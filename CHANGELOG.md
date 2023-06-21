@@ -1,5 +1,11 @@
 # @primer/css
 
+## 21.0.4
+
+### Patch Changes
+
+- [#2466](https://github.com/primer/css/pull/2466) [`92047014`](https://github.com/primer/css/commit/9204701416b547255a1ebaeb2bd8a20056ffb8d4) Thanks [@langermank](https://github.com/langermank)! - Use `@primer/primitives` v8 colors with fallbacks
+
 ## 21.0.3
 
 ### Patch Changes
