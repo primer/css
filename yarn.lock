@@ -980,14 +980,13 @@
   resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.11.12.tgz#1a36354e789f8cc3c178b66b2d100b64d4fb209d"
   integrity sha512-AvTiuLHvvby2KPZbwwJ7GrtRJYgWyepF6XAOMw7G7Kc2iP3E32OHmaFukwh3gY+OqwcxY7st2tHWll2brk1vfQ==
 
-"@primer/stylelint-config@^12.4.0":
-  version "12.7.0"
-  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-12.7.0.tgz#4fb7b77d543ebde78074a50f983b402379bb812b"
-  integrity sha512-aFIosv6VXKHRH/0JQLDHDV9UmUPgvPlHOE26IJz/UDZVT5KHtqj5sWf01XgKpwgp+Bbryxr7WgwKyCo6SvgC4A==
+"@primer/stylelint-config@^12.7.1":
+  version "12.7.1"
+  resolved "https://registry.yarnpkg.com/@primer/stylelint-config/-/stylelint-config-12.7.1.tgz#b98f428957bd53867d248b463f2221c174afd606"
+  integrity sha512-jHuxjRpyZ0K02kwz+SUpw/cBMnU67AzPhC2FSj9dEq8hZTZHnyN2tN/CQk3C4I/5Mlgc8y1cl+x0FKXjO15dQQ==
   dependencies:
     anymatch "^3.1.1"
     globby "^11.0.1"
-    lodash.kebabcase "^4.1.1"
     postcss-scss "^4.0.2"
     postcss-value-parser "^4.0.2"
     string.prototype.matchall "^4.0.2"
@@ -3975,7 +3974,7 @@ lodash.debounce@^4.0.8:
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
   integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
 
-lodash.kebabcase@4.1.1, lodash.kebabcase@^4.1.1:
+lodash.kebabcase@4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
   integrity sha512-N8XRTIMMqqDgSy4VLKPnJ/+hpGZN+PHQiJnSenYqPaVV/NCqEogTnAdZLQiGKhxX+JCs8waWq2t1XHWKOmlY8g==
