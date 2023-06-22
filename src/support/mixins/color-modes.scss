@@ -1,7 +1,6 @@
 @mixin color-mode-theme($theme-name, $include-root: false) {
   @if $include-root {
     :root,
-    ::selection,
     [data-color-mode="light"][data-light-theme="#{$theme-name}"],
     [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
       @content;
@@ -33,7 +32,6 @@
 @mixin color-mode($mode) {
   @if $mode == light {
     :root,
-    ::selection,
     [data-color-mode="light"][data-light-theme*="#{$mode}"],
     [data-color-mode="dark"][data-dark-theme*="#{$mode}"] {
       @content;
