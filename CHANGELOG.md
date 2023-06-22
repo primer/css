@@ -1,5 +1,11 @@
 # @primer/css
 
+## 21.0.5
+
+### Patch Changes
+
+- [#2468](https://github.com/primer/css/pull/2468) [`c6d5d1df`](https://github.com/primer/css/commit/c6d5d1dfd3eafe44197ddc262f605dc5373437ac) Thanks [@keithamus](https://github.com/keithamus)! - Fix bug with `color-mode` mixin not applying correctly due to `::selection`
+
 ## 21.0.4
 
 ### Patch Changes
