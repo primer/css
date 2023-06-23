@@ -52,6 +52,35 @@
   }
 }
 
+// This mixin wraps styles with light or dark mode selectors
+// If possible, use a color variable instead.
+//
+// Example:
+//
+// @include color-mode('dark') {
+//   .my-class {
+//     color: red;
+//   }
+// }
+//
+// Returns:
+//
+// [data-color-mode=light][data-light-theme*=dark] .my-class,
+// [data-color-mode=dark][data-dark-theme*=dark] .my-class {
+//   color: red;
+// }
+//
+// @media (prefers-color-scheme: light) {
+//   [data-color-mode=auto][data-light-theme*=dark] .my-class {
+//     color: red;
+//   }
+// }
+// @media (prefers-color-scheme: dark) {
+//   [data-color-mode=auto][data-dark-theme*=dark] .my-class {
+//     color: red;
+//   }
+// }
+
 @mixin color-mode($mode) {
   @if $mode == light {
     :root,
