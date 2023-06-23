@@ -3,10 +3,6 @@
   box-sizing: border-box;
 }
 
-*::selection {
-  background-color: var(--bgColor-accent-muted, var(--color-accent-subtle));
-}
-
 input,
 select,
 textarea,
