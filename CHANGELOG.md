@@ -1,5 +1,11 @@
 # @primer/css
 
+## 21.0.6
+
+### Patch Changes
+
+- [#2470](https://github.com/primer/css/pull/2470) [`03e1a26c`](https://github.com/primer/css/commit/03e1a26c0d4fcc85450998f0f1f8120a1db48acc) Thanks [@langermank](https://github.com/langermank)! - Revert #2461 default selection color
+
 ## 21.0.5
 
 ### Patch Changes
