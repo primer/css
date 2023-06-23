@@ -1,9 +1,23 @@
+// This mixin is used to output the tokens/variables from Primitives
+//
+// Warning: Don't use this mixin with a class as @content since
+// the `::selection` will make the selector invalid
+//
+// Example:
+//
+// @include color-mode-theme(dark) {
+//   --color: black;
+// }
+
 @mixin color-mode-theme($theme-name, $include-root: false) {
   @if $include-root {
     :root,
     [data-color-mode="light"][data-light-theme="#{$theme-name}"],
     [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
-      @content;
+      &,
+      &::selection {
+        @content;
+      }
 
       /*! */ // This is a fix for a cssstats bug see https://github.com/cssstats/cssstats/issues/331
     }
@@ -12,19 +26,28 @@
   @else {
     [data-color-mode="light"][data-light-theme="#{$theme-name}"],
     [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
-      @content;
+      &,
+      &::selection {
+        @content;
+      }
     }
   }
 
   @media (prefers-color-scheme: light) {
     [data-color-mode="auto"][data-light-theme="#{$theme-name}"] {
-      @content;
+      &,
+      &::selection {
+        @content;
+      }
     }
   }
 
   @media (prefers-color-scheme: dark) {
     [data-color-mode="auto"][data-dark-theme="#{$theme-name}"] {
-      @content;
+      &,
+      &::selection {
+        @content;
+      }
     }
   }
 }
