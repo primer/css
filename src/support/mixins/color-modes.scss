@@ -1,13 +1,21 @@
 // This mixin is used to output the tokens/variables from Primitives
 //
-// Warning: Don't use this mixin with a class as @content since
-// the `::selection` will make the selector invalid
-//
 // Example:
 //
 // @include color-mode-theme(dark) {
 //   --color: black;
 // }
+//
+// Warning!!!
+// Don't use this mixin with a class. E.g.
+// @include color-mode-theme(dark) {
+//   .my-class {
+//     color: red;
+//   }
+// }
+//
+// The outputted `::selection .my-class` will make the selector invalid and the entire ruleset is disregarded.
+// At some point we hopefully can remove the need for `&, &::selection {}` again (once the spec/implementation changes).
 
 @mixin color-mode-theme($theme-name, $include-root: false) {
   @if $include-root {
