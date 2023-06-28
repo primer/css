@@ -70,6 +70,7 @@ export const TypographicStyles = ({}) => (
     <p class="text-mono">Monospace</p>
     <p class="user-select-none">User Select None</p>
     <p class="text-capitalize">capitalize</p>
+    <p class="text-tabular-nums">Tabular numbers 111</p>
   </div>
 )
 

@@ -330,3 +330,8 @@
 .text-capitalize {
   text-transform: capitalize !important;
 }
+
+/* Use alternate glyphs for numbers of equal width (when font supports it) */
+.text-tabular-nums {
+  font-variant-numeric: tabular-nums !important;
+}
