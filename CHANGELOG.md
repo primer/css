@@ -1,5 +1,11 @@
 # @primer/css
 
+## 21.0.7
+
+### Patch Changes
+
+- [#2472](https://github.com/primer/css/pull/2472) [`3ee117e1`](https://github.com/primer/css/commit/3ee117e1bd67675a5bdc2739bbe4d05f4e297c30) Thanks [@simurai](https://github.com/simurai)! - Add `::selection` to `color-mode-theme()` mixin
+
 ## 21.0.6
 
 ### Patch Changes
