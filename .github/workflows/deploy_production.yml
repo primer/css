@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - id: changeset-count
-        run: echo "::set-output name=change_count::$(ls .changeset/*.md | grep -v README | wc -l | xargs)"
+        run: echo "change_count=$(ls .changeset/*.md | grep -v README | wc -l | xargs)" >> $GITHUB_OUTPUT
 
       # Log changeset count for debugging purposes
       - name: Log changeset count
