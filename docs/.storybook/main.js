@@ -5,13 +5,15 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/preset-scss',
-    '@whitespace/storybook-addon-html',
-    'storybook-addon-designs',
     'storybook-color-picker',
-    'storybook-addon-variants/preset.js'
+    'storybook-addon-variants/preset.js',
+    '@storybook/addon-mdx-gfm',
   ],
-  framework: '@storybook/react',
-  core: {
-    builder: 'webpack5'
-  }
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {},
+  },
+  docs: {
+    autodocs: false,
+  },
 }

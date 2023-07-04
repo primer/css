@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "gatsby clean",
     "develop": "ln -sf ../dist . && gatsby develop -H 0.0.0.0",
-    "storybook": "NODE_ENV=test start-storybook -p 6006",
+    "storybook": "NODE_ENV=test storybook dev -p 6006",
     "build:storybook": "script/build-storybook"
   },
   "dependencies": {
@@ -48,19 +48,19 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
-    "@storybook/addon-a11y": "6.5.9",
-    "@storybook/addon-actions": "^6.5.0",
-    "@storybook/addon-essentials": "^6.5.0",
-    "@storybook/addon-links": "^6.5.0",
+    "@storybook/addon-a11y": "7.0.25",
+    "@storybook/addon-actions": "^7.0.25",
+    "@storybook/addon-essentials": "^7.0.25",
+    "@storybook/addon-links": "^7.0.25",
+    "@storybook/addon-mdx-gfm": "7.0.25",
     "@storybook/addon-postcss": "2.0.0",
-    "@storybook/builder-webpack5": "^6.5.0",
-    "@storybook/manager-webpack5": "^6.5.9",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "6.5.0",
-    "@whitespace/storybook-addon-html": "^5.0.0",
+    "@storybook/react": "7.0.25",
+    "@storybook/react-webpack5": "7.0.25",
     "babel-loader": "^8.2.5",
-    "storybook-addon-designs": "6.2.1",
-    "storybook-addon-variants": "^0.0.5",
-    "storybook-color-picker": "2.3.1"
+    "eslint-plugin-storybook": "^0.6.12",
+    "storybook": "7.0.25",
+    "storybook-addon-variants": "^0.2.0",
+    "storybook-color-picker": "3.1.0"
   }
 }
