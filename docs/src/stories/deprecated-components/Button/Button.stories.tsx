@@ -301,3 +301,74 @@ export const ButtonWithCounts = () => {
     </>
   )
 }
+
+export const ButtonGroup = () => {
+  return (
+    <>
+      <div className="BtnGroup d-block mb-2">
+        <button className="BtnGroup-item btn" type="button">
+          Button
+        </button>
+        <button className="BtnGroup-item btn" type="button">
+          Button
+        </button>
+        <button className="BtnGroup-item btn btn-danger" type="button">
+          Danger
+        </button>
+      </div>
+
+      <div className="BtnGroup d-block mb-2 ml-0">
+        <button className="BtnGroup-item btn btn-outline" type="button">
+          Button
+        </button>
+        <button className="BtnGroup-item btn btn-outline" type="button">
+          Button
+        </button>
+        <button className="BtnGroup-item btn btn-outline" type="button">
+          Button
+        </button>
+      </div>
+    </>
+  )
+}
+
+export const ButtonGroupSmall = () => {
+  return (
+    <>
+      <div className="BtnGroup">
+        <button className="BtnGroup-item btn btn-sm" type="button">
+          Button
+        </button>
+        <button className="BtnGroup-item btn btn-sm" type="button">
+          Button
+        </button>
+        <button className="BtnGroup-item btn btn-sm" type="button">
+          Button
+        </button>
+      </div>
+    </>
+  )
+}
+
+export const ButtonGroupParent = () => {
+  return (
+    <>
+      <div className="BtnGroup">
+        <button className="btn BtnGroup-item" type="button">
+          Button
+        </button>
+        <form className="BtnGroup-parent">
+          <button className="btn BtnGroup-item" type="button">
+            Button in a form
+          </button>
+        </form>
+        <button className="btn BtnGroup-item" type="button">
+          Button
+        </button>
+        <button className="btn BtnGroup-item" type="button">
+          Button
+        </button>
+      </div>
+    </>
+  )
+}
