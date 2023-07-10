@@ -39,16 +39,14 @@
     "pretest": "yarn dist && script/pretest",
     "test": "NODE_OPTIONS=--experimental-vm-modules yarn jest",
     "release": "changeset publish",
-    "storybook": "cd docs && yarn storybook",
-    "build-storybook": "cd docs && yarn build-storybook"
+    "storybook": "cd docs && yarn && yarn storybook",
+    "build-storybook": "cd docs && yarn && yarn build-storybook"
   },
   "dependencies": {
     "@primer/primitives": "^7.11.12",
     "@primer/view-components": "^0.1.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.22.7",
-    "@babel/preset-react": "^7.22.5",
     "@changesets/changelog-github": "0.4.8",
     "@changesets/cli": "2.26.1",
     "@csstools/postcss-sass": "5.0.1",
@@ -56,7 +54,6 @@
     "@primer/stylelint-config": "^12.7.1",
     "autoprefixer": "10.4.13",
     "chokidar-cli": "3.0.0",
-    "clsx": "^1.2.1",
     "cssstats": "4.0.5",
     "eslint": "8.37.0",
     "eslint-plugin-github": "4.6.0",
@@ -76,9 +73,6 @@
     "postcss-scss": "4.0.5",
     "postcss-simple-vars": "7.0.1",
     "prettier": "2.8.8",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "semver": "7.3.8",
     "stylelint": "15.7.0",
     "table": "6.8.1"
