@@ -3,5 +3,9 @@
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": "latest"
-  }
+  },
+  "extends": [
+    null,
+    "plugin:storybook/recommended"
+  ]
 }
