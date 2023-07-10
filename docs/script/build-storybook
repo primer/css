@@ -11,7 +11,7 @@ fi
 # yarn gatsby build
 
 # Build storybook inside docs
-./node_modules/.bin/storybook build -o public/storybook public/static
+npx storybook build -o public/storybook public/static
 
 # Remove manager-head after build to not interfere with dev builds
 rm .storybook/manager-head.html
