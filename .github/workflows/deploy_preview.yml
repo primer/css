@@ -19,7 +19,7 @@ jobs:
     secrets:
       gh_token: ${{ secrets.GITHUB_TOKEN }}
     with:
-      node_version: 14
+      node_version: 16
       install: yarn && cd docs && yarn && cd ..
       build: yarn build:docs:preview
       output_dir: docs/public
