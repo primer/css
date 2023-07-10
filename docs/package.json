@@ -6,7 +6,7 @@
     "clean": "gatsby clean",
     "develop": "ln -sf ../dist . && gatsby develop -H 0.0.0.0",
     "storybook": "NODE_ENV=test storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build:storybook": "script/build-storybook"
   },
   "dependencies": {
     "@babel/preset-react": "^7.16.7",
@@ -14,7 +14,7 @@
     "@csstools/postcss-sass": "5.0.1",
     "@primer/components": "32.1.0",
     "@primer/react": "^35.26.1",
-    "@primer/gatsby-theme-doctocat": "4.4.0",
+    "@primer/gatsby-theme-doctocat": "4.4.3",
     "@primer/octicons": "17.0.0",
     "@primer/octicons-react": "17.0.0",
     "@primer/primitives": "7.11.10",

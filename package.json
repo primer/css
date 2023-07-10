@@ -39,8 +39,8 @@
     "pretest": "yarn dist && script/pretest",
     "test": "NODE_OPTIONS=--experimental-vm-modules yarn jest",
     "release": "changeset publish",
-    "storybook": "cd docs && yarn && yarn storybook",
-    "build-storybook": "cd docs && yarn && yarn build-storybook"
+    "storybook": "cd docs && yarn && yarn storybook build",
+    "build:storybook": "cd docs && yarn && yarn build-storybook"
   },
   "dependencies": {
     "@primer/primitives": "^7.11.12",
