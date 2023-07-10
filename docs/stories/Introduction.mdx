@@ -1,0 +1,70 @@
+<img src="hero-illustration.svg" alt="" class="mb-3" />
+
+# Introduction
+
+Our goal is to create a system that enables us to build consistent user experiences with ease, yet with enough flexibility to support the broad spectrum of GitHub websites. This goal is embedded in our design and code decisions. Our approach to CSS is influenced by Object Oriented CSS principles, functional CSS, and BEM architecture.
+
+## Highly reusable, flexible styles
+
+Styles can be mixed and matched to achieve many different layouts, independent of their location. These styles fall into two categories:
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gridGap: '2rem', marginBlock: '2rem'}}>
+  <div>
+    <img src="utilities-image.svg" height="60" alt="" />
+    <h3 class="mt-1">Utilities</h3>
+    <p class="m-0">Single purpose, immutable styles, that do one thing well.</p>
+  </div>
+  <div>
+    <img src="components-image.svg" height="60" alt="" />
+    <h3 class="mt-1">Components</h3>
+    <p class="m-0">Abstracted patterns for frequently used visual styles.</p>
+  </div>
+</div>
+
+## Systematically designed for GitHub
+
+Primer CSS is built upon systems that form the foundation of our styles such as spacing, typography, and color. This systematic approach helps ensure our styles are consistent and interoperable with each other.
+
+<div class="my-5">
+  <div style={{display: 'grid', gridTemplateColumns: '70px auto', gridGap: '2rem', alignItems: 'center'}}>
+    <img src="spacing-image.svg" width="70" alt="" />
+    <div>
+      <h3 class="m-0">Highly composable spacing scale</h3>
+      <p>
+        The base-8 spacing scale is highly composable and works with the density of GitHub’s content. Margin and padding
+        spacers bring consistency to vertical and horizontal rhythm, while remaining flexible so you can tweak layouts
+        to work for every context.
+      </p>
+    </div>
+  </div>
+  <div style={{display: 'grid', gridTemplateColumns: '70px auto', gridGap: '2rem', alignItems: 'center'}}>
+    <img src="typography-image.png" width="70" alt="" />
+    <div>
+      <h3 class="m-0">Customizable typography</h3>
+      <p>
+        Font size and line-height options work together to result in more sensible numbers. Font styles come in a range
+        of weights and sizes so that we can style appropriately for content and readability. Type utilities allow us to
+        change the visual styles while keeping markup semantic.
+      </p>
+    </div>
+  </div>
+  <div style={{display: 'grid', gridTemplateColumns: '70px auto', gridGap: '2rem', alignItems: 'center'}}>
+    <img src="color-image.svg" width="70" alt="" />
+    <div>
+      <h3 class="m-0">Meaningful color</h3>
+      <p>
+        The color system allows us to add meaningful signals to content and interactions. Color variables and utilities
+        offer thematic styling options without being tied to structure. Text and background colors come in a range of
+        accessible combinations to ensure we build inclusive interfaces.
+      </p>
+    </div>
+  </div>
+</div>
+
+## Structure
+
+Primer CSS is published to npm as `@primer/css`. Each of Primer CSS's "modules" lives in a subfolder under `src/` with an `index.scss` in it. Generally speaking, the styles are divided into three primary themes:
+
+- **Core** styles (in `core/`) are common dependencies, which include support variables, native element and typography styles, buttons, navigation, tooltips, etc.
+- **Product** styles (in `product/`) are specific to github.com, and include components such as avatars, labels, markdown styles, popovers, and progress indicators.
+- **Marketing** styles (in `marketing/`) are specific to GitHub marketing efforts, including international and event-focused sites as well as the more design-heavy feature pages on github.com. Marketing styles include new colors and button styles, and extend the core typography and whitespace scales.

@@ -1,0 +1,43 @@
+While this contributing guide is for GitHub employees, all contributions from the community are welcome.
+
+## Adding new utilities
+
+Utilities do one thing well and one thing only. These styles are immutable and therefore often use the `!important` tag. For this reason we aim not to change the properties of utilities very often. They often form the building blocks of our pages and when we introduce new ones we need to do so with care as we'll likely need to live with these styles for a long time. When assessing whether there is a need to add a new utility, consider these additional questions:
+
+- How does this new utility fit within our existing set of utilities? If it is an addition to an existing set then it should follow the same naming convention.
+- Is it for a property that would likely need to be changed at different breakpoints? If so it may need responsive options.
+- If this style is part of a family of properties, do we need to consider adding the full set? Reasons for adding a full set could be that the other property values are often used, or that there would be a need to switch the property on and off (such as display or visibility).
+- Does introducing this new utility cause any clashes or potential confusion with the use of existing utilities? If so, what steps can we take to avoid those issues.
+- Does the utility have a connection with a set of variables? If so do the corresponding variables need to be updated?
+
+## Step-by-step instructions for adding new styles
+
+### Step 1: Open an issue
+
+It's usually better to open an issue before investing time in spiking out a new pattern. This gives the design systems team a heads up and allows other designers to share thoughts. Here's an outline of what's helpful to include in a new style issue:
+
+1. What the pattern is, and how it's being used on GitHub.com. Post screenshots and/or URLs whenever possible. If you need help identifying where the pattern is used, call that out in the issue.
+2. Why you think a new pattern is needed (this should answer the relevant questions above).
+3. If you intend to work on these new styles yourself, let us know what your timeline and next steps are. If you need help and this is a dependency for shipping another project, please make that clear here and what the timeline is.
+
+### Step 2: Design and build the new styles
+
+- When you're ready, spike out a branch and build out your new utility according to the style guide principles, ensuring you follow our naming convention for each of the styles.
+- Refactor parts of the product where you think those new styles could be used to test they work for each use case. This does not mean for every instance, but enough of the key use cases to be sure the styles are flexible enough. To avoid blowing out your initial pull request we recommend you do larger amounts of refactoring in an additional branch.
+- When you're ready for review, change your pull request from "Draft" to "Ready for review"
+
+## Storybook
+
+We use [Storybook](https://storybook.js.org/) to document and test our CSS. You can run Storybook locally by running `yarn storybook` and visiting the localhost server that is automatically started.
+
+Stories are written with React for better compatibility with Storybook. Each utility should have a story that demonstrates its use. Stories are located in the `stories` directory.
+
+### Versioning
+
+Primer CSS follows [semantic versioning](http://semver.org/) conventions. This helps others know when a change is a patch, minor, or breaking change.
+
+To understand what choice to make, you'll need to understand semver and know if one of the changes shown is a major, minor, or patch. Semver is confusing at first, so we recommend reviewing [semver](http://semver.org/) and/or asking the team by [opening an issue](#step-1-open-an-issue).
+
+[semantic versioning]: https://semver.org
+[script/test-deprecations.js]: https://github.com/primer/css/tree/main/script/test-deprecations.js
+[deprecations.js]: https://github.com/primer/css/tree/main/deprecations.js
