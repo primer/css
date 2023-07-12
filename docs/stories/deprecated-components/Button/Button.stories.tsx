@@ -2,10 +2,6 @@ import React from 'react'
 
 export default {
   title: 'Deprecated/Button',
-<<<<<<< HEAD:docs/stories/deprecated-components/Button/Button.stories.tsx
-=======
-  // docs: {inlineStories: true},
->>>>>>> main:docs/src/stories/deprecated-components/Button/Button.stories.tsx
 }
 
 export const Default = () => {
