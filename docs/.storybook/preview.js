@@ -12,7 +12,6 @@ import '@primer/primitives/tokens-next-private/css/functional/size/size-fine.css
 import '@primer/primitives/tokens-next-private/css/functional/size/size.css'
 import '@primer/primitives/tokens-next-private/css/functional/size/viewport.css'
 import '@primer/primitives/tokens-next-private/css/functional/typography/typography.css'
-import renderToHTML from '../src/stories/helpers/code-snippet-html-helper'
 
 const customViewports = {
   minXS: {
@@ -96,9 +95,9 @@ const customViewports = {
 
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
-  docs: {
-    transformSource: (src, storyContext) => renderToHTML(storyContext.storyFn),
-  },
+  // docs: {
+  //   transformSource: (src, storyContext) => renderToHTML(storyContext.storyFn),
+  // },
   controls: {
     matchers: {
       color: /(background|color)$/i,
