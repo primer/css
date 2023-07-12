@@ -1,17 +1,22 @@
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: false,
+        controls: false,
+        docs: true,
+        viewport: true,
+      },
+    },
     '@storybook/addon-a11y',
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
     '@storybook/preset-scss',
-    '@whitespace/storybook-addon-html',
-    'storybook-addon-designs',
-    'storybook-color-picker',
-    'storybook-addon-variants/preset.js'
   ],
   framework: '@storybook/react',
   core: {
-    builder: 'webpack5'
-  }
+    builder: 'webpack5',
+  },
+  staticDirs: ['../src/stories/static'],
 }
