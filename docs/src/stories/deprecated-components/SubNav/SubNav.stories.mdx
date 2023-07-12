@@ -1,0 +1,19 @@
+import {Meta, Story} from '@storybook/addon-docs'
+
+import * as SubNavStories from './SubNav.stories'
+
+<Meta title="Deprecated/SubNav" />
+
+# SubNav
+
+`.subnav` is navigation that is typically used when on a dashboard type interface with another set of navigation above it. This helps distinguish navigation hierarchy.
+
+<Story story={SubNavStories.Default} />
+
+You can have `subnav-search` in the subnav bar.
+
+<Story story={SubNavStories.Search} />
+
+You can also use a `subnav-search-context` to display search help in a select menu.
+
+<Story story={SubNavStories.SearchContext} />

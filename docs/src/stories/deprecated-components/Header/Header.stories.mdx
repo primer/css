@@ -1,0 +1,35 @@
+import {Meta, Story} from '@storybook/addon-docs'
+
+import * as HeaderStories from './Header.stories'
+
+<Meta title="Deprecated/Header" />
+
+# Header
+
+Use the Header component to create a header that has all of its items aligned vertically with consistent horizontal spacing.
+
+## Header
+
+The `.Header` class is the wrapping class that aligns all the items properly and gives the header its dark background. Each direct child of the `.Header` component is expected to be a `.Header-item` component. The component utilizes flexbox CSS to align all these items properly and applies spacing scale margin.
+
+<Story story={HeaderStories.Default} />
+
+## Header-item
+
+All items directly under the `.Header` component should be a `.Header-item` component. Inside these components can be anything (text, forms, images...), and the `.Header-item` component will make sure these elements vertically align with each other.
+
+`.Header-item` elements have a built-in margin that will need to be overridden with the `mr-0` utility class for the last element in the container. We relied on the utility classes here instead of `:last-child` because the last child isn't always the item visible. On responsive pages, there's a mobile menu that gets presented to the user at smaller breakpoints.
+
+<Story story={HeaderStories.HeaderItem} />
+
+### Header-item--full
+
+The `.Header-item` element has a modifier class, `.Header-item--full`, that stretches it to fill the available space and push any remaining items to the right.
+
+<Story story={HeaderStories.HeaderItemFull} />
+
+## Header-link
+
+Add the `.Header-link` class to any anchor tags in the header to give them consistent styling and hover opacity. This class makes the links white, bold and 70% fade on hover.
+
+<Story story={HeaderStories.HeaderLink} />

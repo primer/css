@@ -1,0 +1,15 @@
+import {Meta, Story} from '@storybook/addon-docs'
+
+import * as IssueLabelStories from './IssueLabel.stories'
+
+<Meta title="Deprecated/IssueLabel" />
+
+# IssueLabel
+
+Issue labels are used for adding labels to issues and pull requests. They also come with emoji support.
+
+<Story story={IssueLabelStories.Default} />
+
+If an issue label needs to be bigger, add the `.IssueLabel--big` modifier.
+
+<Story story={IssueLabelStories.Big} />

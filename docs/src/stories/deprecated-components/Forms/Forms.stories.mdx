@@ -1,0 +1,130 @@
+import {Meta, Story} from '@storybook/addon-docs'
+
+import * as FormsStories from './Forms.stories'
+
+<Meta title="Deprecated/Forms" />
+
+# Forms
+
+Style individual form controls and utilize common layouts.
+
+Overview:
+
+- We reset several elements' default styles for cross browser consistency and easier manipulation later. This includes `<fieldset>`s, WebKit validation bubbles, and most textual `<input>`s.
+- Specific types of textual `<input>`s are styled automatically, but `.form-control` is available should you need it.
+- Always declare a `type` on your `<button>`s.
+- Form layouts rely on form groups.
+
+## Kitchen sink
+
+All our inputs and buttons side-by-side for easy testing of sizing and alignment with one another.
+
+<Story story={FormsStories.KitchenSink} />
+
+## Example form
+
+Form controls in Primer CSS currently have no basic layout specified (this is by design). You'll need to use `<fieldset>`s, `<div>`s, or other elements and styles to rearrange them.
+
+<Story story={FormsStories.BasicForm} />
+
+## Inputs
+
+### Sizing
+
+Make inputs smaller, larger, or full-width with an additional class.
+
+<Story story={FormsStories.Sizes} />
+
+### Input group
+
+Attached an input and button to one another.
+
+<Story story={FormsStories.InputGroup} />
+
+## Customization
+
+### Form contrast
+
+Textual form controls have a white background by default. You can change this to a light gray with `.input-contrast`.
+
+<Story story={FormsStories.Contrast} />
+
+### Disabled state
+
+Add the `disabled` attribute to make a `.form-control` appear disabled.
+
+<Story story={FormsStories.Disabled} />
+
+### Hide WebKit's contact info autofill icon
+
+WebKit sometimes gets confused and tries to add an icon/dropdown to autofill contact information on fields that may not be appropriate (such as input for number of users). Use this class to override the display of this icon.
+
+<Story story={FormsStories.HideWebkitAutofill} />
+
+## Selects
+
+Primer CSS adds light `height` and `vertical-align` styles to `<select>`s for all browsers to render them consistently with textual inputs.
+
+<Story story={FormsStories.Select} />
+
+### Small
+
+Use the `.select-sm` class to resize both default and custom `<select>`s to match the size of [our small buttons](./buttons#default-buttons).
+
+<Story story={FormsStories.SelectSmall} />
+
+## Form groups
+
+<Story story={FormsStories.FormGroup} />
+
+## Form group validation (deprecated)
+
+These form validation styles are deprecated. Please use the <a href="https://primer.style/view-components/components/alpha/textfield#with-a-validation-message">TextField</a> ViewComponent instead or refer to the <a href="https://primer.style/design/ui-patterns/forms#validation">design guidelines</a>.
+
+Convey success, errors and warnings for form groups. For github.com consider using the [`<auto-check>`](https://github.github.io/web-systems-documentation/#custom-elements-auto-check-md) element to perform server-side validation on an input.
+
+### Success
+
+If the input is **valid**, add the `.successed` class to the `<div class="form-group">` element. Next add/update a success message to the `.note` element, as well as the `.success` class.
+
+<Story story={FormsStories.ValidationSuccess} />
+
+### Error
+
+If the input is **not valid**, add the `.errored` class to the `<div class="form-group">` element. Next add/update an error message to the `.note` element, as well as the `.error` class.
+
+<Story story={FormsStories.ValidationError} />
+
+### Warning
+
+If the input should show a **warning**, add the `.warn` class to the `<div class="form-group">` element. Next add/update a warning message to the `.note` element, as well as the `.warning` class.
+
+<Story story={FormsStories.ValidationWarning} />
+
+### Form actions
+
+Align buttons to the right—via `float: right` on the buttons—in forms with `.form-actions`. The floats are automatically cleared for you.
+
+<Story story={FormsStories.FormActions} />
+
+## Checkboxes and radios
+
+Utilities to control alignment and styling of checkbox and radio controls.
+
+<Story story={FormsStories.CheckboxAndRadios} />
+
+### Toggle content visibility based on a checkbox or radio button state
+
+Content that is hidden by default should only be done so if it is non-essential for the context of the surrounding content. Be sure to use the `aria-live="polite"` attribute on the parent label for added content to be announced when displayed.
+
+<Story story={FormsStories.ToggleVisibility} />
+
+## Radio group
+
+Radio groups are tab like controls. Their blue border gives extra emphasis to what is selected.
+
+<Story story={FormsStories.RadioGroup} />
+
+Adding `octicon` icons is also supported. To disable an option, use the `disabled` attribute.
+
+<Story story={FormsStories.WithOcticons} />
