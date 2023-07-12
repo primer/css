@@ -2,6 +2,10 @@ import React from 'react'
 
 export default {
   title: 'Deprecated/BranchName',
+  parameters: {
+    storyType: 'banner',
+    controls: {hideNoControlsWarning: true},
+  },
 }
 
 export const Default = () => {

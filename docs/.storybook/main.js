@@ -6,6 +6,7 @@ const config = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     'storybook-addon-pseudo-states',
+    '@storybook/addon-storysource',
     {
       name: '@storybook/addon-styling',
       options: {

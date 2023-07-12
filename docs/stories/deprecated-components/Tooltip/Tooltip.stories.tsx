@@ -2,6 +2,10 @@ import React from 'react'
 
 export default {
   title: 'Deprecated/Tooltip',
+  parameters: {
+    storyType: 'banner',
+    controls: {hideNoControlsWarning: true},
+  },
 }
 
 export const Default = () => {

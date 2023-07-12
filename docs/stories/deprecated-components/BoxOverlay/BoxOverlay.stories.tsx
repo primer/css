@@ -3,6 +3,7 @@ import React from 'react'
 export default {
   title: 'Deprecated/BoxOverlay',
   parameters: {
+    storyType: 'banner',
     controls: {hideNoControlsWarning: true},
   },
 }

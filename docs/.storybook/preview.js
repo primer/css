@@ -51,6 +51,9 @@ export const globalTypes = {
 
 export const decorators = [
   (Story, context) => {
+    const {parameters} = context
+    const defaultStoryType = 'banner'
+    const storyType = parameters.storyType || defaultStoryType
     document.body.setAttribute('data-color-mode', context.globals.theme.startsWith('light') ? 'light' : 'dark')
     document.body.setAttribute(
       'data-light-theme',
@@ -78,6 +81,12 @@ export const decorators = [
           ))
         ) : (
           <div className="story-wrap">
+            {parameters.storyType === 'banner' && (
+              <div className="color-fg-danger border rounded-2 color-bg-danger p-3 color-border-danger-emphasis mb-5">
+                Note: For the most up to date component documentation and guidelines, please reference Primer's core
+                documentation site at <a href="https://primer.style">primer.style</a>.
+              </div>
+            )}
             <Story {...context} />
           </div>
         )}
