@@ -2,6 +2,7 @@ import React from 'react'
 
 export default {
   title: 'Deprecated/Button',
+  // docs: {inlineStories: true},
 }
 
 export const Default = () => {

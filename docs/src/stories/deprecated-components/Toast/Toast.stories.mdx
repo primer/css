@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/addon-docs'
+import {Meta, Story, Canvas} from '@storybook/addon-docs'
 
 import * as ToastStories from './Toast.stories'
 
@@ -12,7 +12,9 @@ Toasts are used to show live, time-sensitive feedback to users.
 
 To create a default toast, use `.Toast`. Always use the `info` icon for default messages.
 
-<Story story={ToastStories.Default} />
+<Canvas>
+  <Story story={ToastStories.Default} />
+</Canvas>
 
 The Toast content is formattable. We recommend keeping your message under 140 characters.
 
@@ -22,39 +24,53 @@ Use the success, warning, and error modifiers to communicate different states.
 
 Always use the `check` octicon for success states.
 
-<Story story={ToastStories.Success} />
+<Canvas>
+  <Story story={ToastStories.Success} />
+</Canvas>
 
 Always use the `alert` octicon for warning states.
 
-<Story story={ToastStories.Alert} />
+<Canvas>
+  <Story story={ToastStories.Alert} />
+</Canvas>
 
 Always use the `stop` octicon for error states.
 
-<Story story={ToastStories.Error} />
+<Canvas>
+  <Story story={ToastStories.Error} />
+</Canvas>
 
 ## Toast with dismiss
 
 Use `.Toast-dismissButton` to allow a user to explicitly dismiss a Toast.
 
-<Story story={ToastStories.Dismiss} />
+<Canvas>
+  <Story story={ToastStories.Dismiss} />
+</Canvas>
 
 ## Toast with link
 
 Include a link to allow users to take actions within a Toast.
 
-<Story story={ToastStories.WithLink} />
+<Canvas>
+  <Story story={ToastStories.WithLink} />
+</Canvas>
 
 ## Toast animation in
 
 The `Toast--animateIn` and `Toast--animateOut` modifier classes can be used to animate the toast in and out from the bottom.
 
-<Story story={ToastStories.AnimationIn} />
+<Canvas>
+  <Story story={ToastStories.AnimationIn} />
+</Canvas>
 
 ## Toast with loading animation
 
 Add the `Toast--spinner` modifier class on the `Toast-icon` `svg` to communicate a loading state.
 
-<Story story={ToastStories.Loading} />
+<Canvas>
+  <Story story={ToastStories.Loading} />
+</Canvas>
 
 ## Toast position
 

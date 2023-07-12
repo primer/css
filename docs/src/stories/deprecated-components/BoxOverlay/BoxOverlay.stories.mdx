@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/addon-docs'
+import {Meta, Story, Canvas} from '@storybook/addon-docs'
 
 import * as BoxOverlayStories from './BoxOverlay.stories'
 
@@ -12,4 +12,6 @@ Box overlays come in three widths. The default `Box--overlay` is 440px wide, `Bo
 
 See [aria attributes](https://www.w3.org/TR/html-aria/#allowed-aria-roles-states-and-properties)
 
-<Story story={BoxOverlayStories.Default} />
+<Canvas>
+  <Story story={BoxOverlayStories.Default} />
+</Canvas>

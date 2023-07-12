@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/addon-docs'
+import {Meta, Story, Canvas} from '@storybook/addon-docs'
 
 import * as SelectMenuStories from './SelectMenu.stories'
 
@@ -14,7 +14,9 @@ The `SelectMenu` component provides advanced support for navigation, filtering, 
 
 Use a `<details>` element to toggle the select menu. The `<summary>` element can be styled in many ways. In the example below it's a `.btn`.
 
-<Story story={SelectMenuStories.Default} />
+<Canvas>
+  <Story story={SelectMenuStories.Default} />
+</Canvas>
 
 Add a `.SelectMenu-header` to house a clear title and a close button. Note that the close button is only shown on narrow screens (mobile).
 
@@ -22,31 +24,41 @@ Add a `.SelectMenu-header` to house a clear title and a close button. Note that 
 
 In case the select menu should be aligned to the right, use `SelectMenu right-0`.
 
-<Story story={SelectMenuStories.RightAligned} />
+<Canvas>
+  <Story story={SelectMenuStories.RightAligned} />
+</Canvas>
 
 ## Selected state
 
 If the `SelectMenu` should show a check icon for selected items, use the `SelectMenu-icon SelectMenu-icon--check` classes. It will make the check icon show when `aria-checked="true"` is set.
 
-<Story story={SelectMenuStories.SelectedState} />
+<Canvas>
+  <Story story={SelectMenuStories.SelectedState} />
+</Canvas>
 
 ## Borderless
 
 Use the `.SelectMenu-list--borderless` modifier to remove the borders between list items. Note: It's better to keep the borders if a list contains items with multiple lines of text. It will make it easier to see where the items start and end.
 
-<Story story={SelectMenuStories.Borderless} />
+<Canvas>
+  <Story story={SelectMenuStories.Borderless} />
+</Canvas>
 
 ## Header
 
 Add a `.SelectMenu-header` at the top to house a clear title and a close button.
 
-<Story story={SelectMenuStories.Header} />
+<Canvas>
+  <Story story={SelectMenuStories.Header} />
+</Canvas>
 
 ## List items
 
 The list of items is arguably the most important subcomponent within the menu. Build them out of anchors, buttons, or just about any [interactive content](http://w3c.github.io/html/dom.html#interactive-content). List items are also customizable with options for avatars, additional icons, and multiple lines of text. Use utility classes in case more custom styling is needed.
 
-<Story story={SelectMenuStories.ListItems} />
+<Canvas>
+  <Story story={SelectMenuStories.ListItems} />
+</Canvas>
 
 ## Divider
 
@@ -54,49 +66,65 @@ The select menu's list can be divided into multiple parts by adding a `.SelectMe
 
 Dividers are also supported when using the `.SelectMenu-list--borderless` modifier.
 
-<Story story={SelectMenuStories.Divider} />
+<Canvas>
+  <Story story={SelectMenuStories.Divider} />
+</Canvas>
 
 ## Footer
 
 Use a `.SelectMenu-footer` at the bottom for additional information. As a side effect it can greatly improve the scrolling performance because the list doesn't need to be repainted due to the rounded corners.
 
-<Story story={SelectMenuStories.Footer} />
+<Canvas>
+  <Story story={SelectMenuStories.Footer} />
+</Canvas>
 
 ## Filter
 
 If the list is expected to get long, consider adding a `.SelectMenu-filter` input. Be sure to also include the `.SelectMenu--hasFilter` modifier class. On mobile devices it will add a fixed height and anchor the select menu to the top of the screen. This makes sure the filter input stays at the same position while typing.
 
-<Story story={SelectMenuStories.Filter} />
+<Canvas>
+  <Story story={SelectMenuStories.Filter} />
+</Canvas>
 
 ## Tabs
 
 Sometimes you need two or more lists of items in your select menu, e.g. branches and tags. Select menu lists can be tabbed with the addition of `.SelectMenu-tabs` above the menu.
 
-<Story story={SelectMenuStories.Tabs} />
+<Canvas>
+  <Story story={SelectMenuStories.Tabs} />
+</Canvas>
 
 ## Message
 
 A `SelectMenu-message` can be used to show different kind of messages to a user. Use utility classes to further style the message.
 
-<Story story={SelectMenuStories.Message} />
+<Canvas>
+  <Story story={SelectMenuStories.Message} />
+</Canvas>
 
 ## Loading
 
 When fetching large lists, consider showing a `.SelectMenu-loading` animation.
 
-<Story story={SelectMenuStories.Loading} />
+<Canvas>
+  <Story story={SelectMenuStories.Loading} />
+</Canvas>
 
 ## Disabled
 
 To disable a list item, use the `disabled` attribute for `<button>`s. For `<a>`s replace the `href` with an `aria-disabled="true"` attribute. Note: If not obvious, try to communicate to the user why an item is disabled.
 
-<Story story={SelectMenuStories.Disabled} />
+<Canvas>
+  <Story story={SelectMenuStories.Disabled} />
+</Canvas>
 
 ## Blankslate
 
 Sometimes a select menu needs to communicate a "blank slate" where there's no content in the menu's list. Usually these include a clear call to action to add said content to the list. Swap out the contents of a `.SelectMenu-list` with a `.SelectMenu-blankslate` and customize its contents as needed.
 
-<Story story={SelectMenuStories.BlankSlate} />
+<Canvas>
+  <Story story={SelectMenuStories.BlankSlate} />
+</Canvas>
 
 ## github.com usage
 

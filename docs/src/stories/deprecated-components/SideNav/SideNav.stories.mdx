@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/addon-docs'
+import {Meta, Story, Canvas} from '@storybook/addon-docs'
 
 import * as SideNavStories from './SideNav.stories'
 
@@ -11,16 +11,24 @@ The Side Nav is a vertical list of navigational links, typically used on the lef
 - You can use a **border** if the parent element doesn't have it already.
 - Add `aria-current="page"` to show a link as selected. Selected button elements in tab-like UIs should instead have `aria-selected="true"`.
 
-<Story story={SideNavStories.Default} />
+<Canvas>
+  <Story story={SideNavStories.Default} />
+</Canvas>
 
 Different kind of content can be added inside a Side Nav item. Use utility classes to further style them if needed.
 
-<Story story={SideNavStories.Options} />
+<Canvas>
+  <Story story={SideNavStories.Options} />
+</Canvas>
 
 The `.SideNav-subItem` is an alternative, more lightweight version without borders and more condensed. It can be used stand-alone.
 
-<Story story={SideNavStories.SubItem} />
+<Canvas>
+  <Story story={SideNavStories.SubItem} />
+</Canvas>
 
 Or also appear nested, as a sub navigation. Use margin/padding utility classes to add indentation.
 
-<Story story={SideNavStories.Nested} />
+<Canvas>
+  <Story story={SideNavStories.Nested} />
+</Canvas>

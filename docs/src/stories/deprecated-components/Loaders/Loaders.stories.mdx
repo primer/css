@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/addon-docs'
+import {Meta, Story, Canvas} from '@storybook/addon-docs'
 
 import * as LoaderStories from './Loaders.stories'
 
@@ -10,4 +10,6 @@ Loaders inform users that an action is still in progress and might take a while 
 
 Add an animated ellipsis at the end of text with `<span class="AnimatedEllipsis"></span>`.
 
-<Story story={LoaderStories.Default} />
+<Canvas>
+  <Story story={LoaderStories.Default} />
+</Canvas>

@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/addon-docs'
+import {Meta, Story, Canvas} from '@storybook/addon-docs'
 
 import * as PaginationStories from './Pagination.stories'
 
@@ -12,7 +12,9 @@ Use the pagination component to apply button styles to a connected set of links 
 
 You can make a very simple pagination container with just the Previous and Next buttons. Add the `aria-disabled="true"` attribute to the `Previous` button if there isn't a preceding page, or to the `Next` button if there isn't a succeeding page.
 
-<Story story={PaginationStories.Default} />
+<Canvas>
+  <Story story={PaginationStories.Default} />
+</Canvas>
 
 ## Numbered pagination
 
@@ -25,4 +27,6 @@ As always, make sure to include the appropriate `aria` attributes to make the el
 - Add `aria-label="Pagination"` to the `paginate-container` element.
 - Add `aria-label="Page X"` to each anchor link.
 
-<Story story={PaginationStories.Numbered} />
+<Canvas>
+  <Story story={PaginationStories.Numbered} />
+</Canvas>

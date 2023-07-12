@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/addon-docs'
+import {Meta, Story, Canvas} from '@storybook/addon-docs'
 
 import * as MarketingStories from './Marketing.stories'
 
@@ -8,7 +8,9 @@ import * as MarketingStories from './Marketing.stories'
 
 Marketing links can be produced by combining the base class `link-mktg` with a set of modifier classes to control the size and color.
 
-<Story story={MarketingStories.Link} />
+<Canvas>
+  <Story story={MarketingStories.Link} />
+</Canvas>
 
 ## Link sizes
 
@@ -18,10 +20,14 @@ The marketing link size is defined with utility classes and come in large (`.f3-
 
 Add class `link-emphasis-mktg` to the link, to give it a pale underline, that will fill up on hover.
 
-<Story story={MarketingStories.LinkEmphasis} />
+<Canvas>
+  <Story story={MarketingStories.LinkEmphasis} />
+</Canvas>
 
 ## Link colors
 
 The link color is controlled with the [Primer color classes](/utilities/colors), while the symbol and underline styling will follow:
 
-<Story story={MarketingStories.LinkColors} />
+<Canvas>
+  <Story story={MarketingStories.LinkColors} />
+</Canvas>

@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/addon-docs'
+import {Meta, Story, Canvas} from '@storybook/addon-docs'
 
 import * as FilterListStories from './FilterList.stories'
 
@@ -8,4 +8,6 @@ import * as FilterListStories from './FilterList.stories'
 
 A vertical list of filters. Grey text on white background. Selecting a filter from the list will fill its background with blue and make the text white.
 
-<Story story={FilterListStories.Default} />
+<Canvas>
+  <Story story={FilterListStories.Default} />
+</Canvas>
