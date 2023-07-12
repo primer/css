@@ -8,7 +8,7 @@ cp -rf dist docs
 cd docs
 
 if [ -n "$1" ]; then
-  CI=true yarn gatsby build && yarn build:storybook preview
+  CI=true yarn build:storybook preview
 else
-  CI=true yarn gatsby build --prefix-paths && yarn build:storybook
+  CI=true yarn build:storybook
 fi
