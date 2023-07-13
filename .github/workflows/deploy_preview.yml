@@ -16,7 +16,6 @@ jobs:
     if: ${{ github.repository == 'primer/css' }}
     name: Preview Storybook
     runs-on: ubuntu-latest
-    needs: deploy
     steps:
       - uses: actions/checkout@v3
 
