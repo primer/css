@@ -1,0 +1,15 @@
+import {Canvas, Meta} from '@storybook/blocks'
+
+import * as MarketingFiltersStories from './MarketingFilters.stories'
+
+<Meta of={MarketingFiltersStories} />
+
+# Marketing filters
+
+Filter utility classes can be applied to divs or images to apply visual effects.
+
+## Grayscale
+
+Applying `.grayscale` to an element will remove all of its colors, and make it render in black and white.
+
+<Canvas of={MarketingFiltersStories.Grayscale} />

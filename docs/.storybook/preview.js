@@ -1,140 +1,54 @@
 import '../../src/docs.scss'
 import '../../src/index.scss'
 import '../../src/base/index.scss'
-import '../src/stories/helpers/storybook-styles.scss'
-// temporary import until primitives moves to core bundle
-// importing the index from /css didn't play nice with Storybook
-import '@primer/primitives/tokens-next-private/css/base/size/size.css';
-import '@primer/primitives/tokens-next-private/css/base/typography/typography.css';
-import '@primer/primitives/tokens-next-private/css/functional/size/border.css';
-import '@primer/primitives/tokens-next-private/css/functional/size/breakpoints.css';
-import '@primer/primitives/tokens-next-private/css/functional/size/size-coarse.css';
-import '@primer/primitives/tokens-next-private/css/functional/size/size-fine.css';
-import '@primer/primitives/tokens-next-private/css/functional/size/size.css';
-import '@primer/primitives/tokens-next-private/css/functional/size/viewport.css';
-import '@primer/primitives/tokens-next-private/css/functional/typography/typography.css';
-import renderToHTML from '../src/stories/helpers/code-snippet-html-helper'
+import './preview.css'
+import './storybook.css'
+import clsx from 'clsx'
+import {BADGE, BadgesConfig} from '@geometricpanda/storybook-addon-badges'
 
-const customViewports = {
-  minXS: {
-    name: 'XS (min)',
-    styles: {
-      width: '320px',
-      height: '100%'
-    }
-  },
-  medXS: {
-    name: 'XS (med)',
-    styles: {
-      width: '375px',
-      height: '100%'
-    }
-  },
-  maxXS: {
-    name: 'XS (max)',
-    styles: {
-      width: '543px',
-      height: '100%'
-    }
-  },
-  minSM: {
-    name: 'SM (min)',
-    styles: {
-      width: '544px',
-      height: '100%'
-    }
-  },
-  maxSM: {
-    name: 'SM (max)',
-    styles: {
-      width: '767px',
-      height: '100%'
-    }
-  },
-  minMD: {
-    name: 'MD (min)',
-    styles: {
-      width: '768px',
-      height: '100%'
-    }
-  },
-  maxMD: {
-    name: 'MD (max)',
-    styles: {
-      width: '1011px',
-      height: '100%'
-    }
-  },
-  minLG: {
-    name: 'LG (min)',
-    styles: {
-      width: '1012px',
-      height: '100%'
-    }
-  },
-  maxLG: {
-    name: 'LG (max)',
-    styles: {
-      width: '1279px',
-      height: '100%'
-    }
-  },
-  minXL: {
-    name: 'XL (min)',
-    styles: {
-      width: '1280px',
-      height: '100%'
-    }
-  },
-  medXL: {
-    name: 'XL (med)',
-    styles: {
-      width: '1440px',
-      height: '100%'
-    }
-  }
-}
-
-export const parameters = {
-  actions: {argTypesRegex: '^on[A-Z].*'},
-  docs: {
-    transformSource: (src, storyContext) => renderToHTML(storyContext.storyFn)
-  },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/
+/** @type { import('@storybook/react').Preview } */
+const preview = {
+  parameters: {
+    actions: {argTypesRegex: '^on[A-Z].*'},
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
     },
-    expanded: true
+    options: {
+      storySort: {
+        order: ['Introduction', 'GettingStarting', 'Contributing', 'Utilities'],
+      },
+    },
+    badgesConfig: {
+      [BADGE.DEPRECATED]: {
+        title: 'Deprecated',
+        tooltip: {
+          desc: 'Please use a Primer View Component instead',
+          links: [{title: 'See docs', href: 'https://primer.style/design/components'}],
+        },
+      },
+      [BADGE.OBSOLETE]: {
+        title: 'Outdated',
+        tooltip: {
+          desc: 'Information in this document may be outdated.',
+        },
+      },
+    },
   },
-
-  layout: 'padded',
-  html: {
-    root: '#story' // target id for html tab (should be direct parent of <Story /> for easy copy/paste)
-  },
-  viewport: {viewports: customViewports},
-  options: {
-    storySort: (storyA, storyB) => {
-      if (storyA[1].title.includes('Examples')) {
-        // if both are stories, sort alphabetically
-        if (storyB[1].title.includes('Examples')) return -1
-        // if only 1 is a story, push the examples story down
-        else return 1
-      }
-      // sort as usual = alphabetical
-      return -1
-    }
-  }
 }
 
-const themes = [
-  'light',
-  'light_colorblind',
-  'light_high_contrast',
-  'dark',
-  'dark_dimmed',
-  'dark_high_contrast',
-  'dark_colorblind'
+const primerThemes = [
+  {value: 'light', left: '☀️', title: 'Light'},
+  {value: 'light_colorblind', left: '☀️', title: 'Light Protanopia & Deuteranopia'},
+  {value: 'light_tritanopia', left: '☀️', title: 'Light Tritanopia'},
+  {value: 'light_high_contrast', left: '☀️', title: 'Light High Contrast'},
+  {value: 'dark', left: '🌗', title: 'Dark'},
+  {value: 'dark_dimmed', left: '🌗', title: 'Dark Dimmed'},
+  {value: 'dark_colorblind', left: '🌗', title: 'Dark Protanopia & Deuteranopia'},
+  {value: 'dark_tritanopia', left: '🌗', title: 'Dark Tritanopia'},
+  {value: 'dark_high_contrast', left: '🌗', title: 'Dark High Contrast'},
 ]
 
 export const globalTypes = {
@@ -143,33 +57,58 @@ export const globalTypes = {
     description: 'Switch themes',
     defaultValue: 'light',
     toolbar: {
-      icon: 'circlehollow',
-      items: [...themes, 'all'],
-      showName: true
-    }
-  }
+      icon: 'contrast',
+      items: [...primerThemes, {value: 'all', left: '', title: 'All'}],
+      showName: true,
+      dynamicTitle: true,
+    },
+  },
 }
 
 export const decorators = [
   (Story, context) => {
-    return (
-      <div class="theme-wrap">
-        {themes.map(theme => {
-          if (context.globals.theme === theme || context.globals.theme === 'all') {
-            return (
-              <div
-                id="story"
-                className="story-wrap"
-                data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
-                data-light-theme={theme.startsWith('light') ? theme : undefined}
-                data-dark-theme={theme.startsWith('dark') ? theme : undefined}
-              >
-                <Story {...context} />
-              </div>
-            )
-          }
-        })}
-      </div>
+    const {parameters} = context
+    const defaultStoryType = 'banner'
+    const storyType = parameters.storyType || defaultStoryType
+    document.body.setAttribute('data-color-mode', context.globals.theme.startsWith('light') ? 'light' : 'dark')
+    document.body.setAttribute(
+      'data-light-theme',
+      context.globals.theme.startsWith('light') ? context.globals.theme : undefined,
     )
-  }
+    document.body.setAttribute(
+      'data-dark-theme',
+      context.globals.theme.startsWith('dark') ? context.globals.theme : undefined,
+    )
+    return (
+      <>
+        {context.globals.theme === 'all' ? (
+          primerThemes.map(({value: theme}) => (
+            <div
+              key={theme}
+              id="story"
+              className={clsx(context.globals.theme === 'all' && 'story-wrap-grid', 'story-wrap')}
+              data-color-mode={theme.startsWith('dark') ? 'dark' : 'light'}
+              data-light-theme={theme.startsWith('light') ? theme : undefined}
+              data-dark-theme={theme.startsWith('dark') ? theme : undefined}
+            >
+              <Story {...context} />
+              {context.globals.theme === 'all' && <p className="theme-name">{theme}</p>}
+            </div>
+          ))
+        ) : (
+          <div className="story-wrap">
+            {/* {parameters.storyType === 'banner' && (
+              <div className="color-fg-danger border rounded-2 color-bg-danger p-3 color-border-danger-emphasis mb-5">
+                Note: For the most up to date component documentation and guidelines, please reference Primer's core
+                documentation site at <a href="https://primer.style">primer.style</a>.
+              </div>
+            )} */}
+            <Story {...context} />
+          </div>
+        )}
+      </>
+    )
+  },
 ]
+
+export default preview

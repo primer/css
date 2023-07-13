@@ -71,13 +71,15 @@
 // Width and height utilities, helpful in combination
 // with display-table utilities and images
 /* Max width 100% */
-.width-fit   { max-width: 100% !important; }
+.width-fit         { max-width: 100% !important; }
 /* Set the width to 100% */
-.width-full  { width: 100% !important; }
+.width-full        { width: 100% !important; }
+/* Set the max-width to 65 characters */
+.width-comfortable { max-width: 65ch !important; }
 /* Max height 100% */
-.height-fit  { max-height: 100% !important; }
+.height-fit        { max-height: 100% !important; }
 /* Set the height to 100% */
-.height-full { height: 100% !important; }
+.height-full       { height: 100% !important; }
 
 /* Remove min-width from element */
 .min-width-0 { min-width: 0 !important; }

@@ -3,7 +3,7 @@
 // A vertical list of navigational links, typically used on the left side of a page.
 
 .SideNav {
-  background-color: var(--color-canvas-subtle);
+  background-color: var(--bgColor-muted, var(--color-canvas-subtle));
 }
 
 .SideNav-item {
@@ -12,11 +12,11 @@
   width: 100%;
   // stylelint-disable-next-line primer/spacing
   padding: 12px $spacer-3;
-  color: var(--color-fg-default);
+  color: var(--fgColor-default, var(--color-fg-default));
   text-align: left;
   background-color: transparent;
   border: 0;
-  border-top: $border-width $border-style var(--color-border-muted);
+  border-top: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
 
   &:first-child {
     border-top: 0;
@@ -25,7 +25,7 @@
   &:last-child {
     // makes sure there is a "bottom border" in case the list is not long enough
     // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 $border-width 0 var(--color-border-default);
+    box-shadow: 0 $border-width 0 var(--borderColor-default, var(--color-border-default));
   }
 
   // Bar on the left
@@ -45,20 +45,20 @@
 
 .SideNav-item:hover {
   text-decoration: none;
-  background-color: var(--color-neutral-subtle);
+  background-color: var(--bgColor-neutral-muted, var(--color-neutral-subtle));
 }
 
 .SideNav-item:active {
-  background-color: var(--color-canvas-subtle);
+  background-color: var(--bgColor-muted, var(--color-canvas-subtle));
 }
 
 .SideNav-item[aria-current]:not([aria-current='false']),
 .SideNav-item[aria-selected='true'] {
-  background-color: var(--color-sidenav-selected-bg);
+  background-color: var(--sideNav-bgColor-selected, var(--color-sidenav-selected-bg));
 
   // Bar on the left
   &::before {
-    background-color: var(--color-primer-border-active);
+    background-color: var(--underlineNav-borderColor-active, var(--color-primer-border-active));
   }
 }
 
@@ -69,7 +69,7 @@
 .SideNav-icon {
   width: 16px;
   margin-right: $spacer-2;
-  color: var(--color-fg-muted);
+  color: var(--fgColor-muted, var(--color-fg-muted));
 }
 
 // Sub Nav
@@ -81,19 +81,19 @@
   display: block;
   width: 100%;
   padding: $spacer-1 0;
-  color: var(--color-accent-fg);
+  color: var(--fgColor-accent, var(--color-accent-fg));
   text-align: left;
   background-color: transparent;
   border: 0;
 }
 
 .SideNav-subItem:hover {
-  color: var(--color-fg-default);
+  color: var(--fgColor-default, var(--color-fg-default));
   text-decoration: none;
 }
 
 .SideNav-subItem[aria-current]:not([aria-current='false']),
 .SideNav-subItem[aria-selected='true'] {
   font-weight: $font-weight-semibold;
-  color: var(--color-fg-default);
+  color: var(--fgColor-default, var(--color-fg-default));
 }

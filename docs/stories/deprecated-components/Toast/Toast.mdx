@@ -1,0 +1,61 @@
+import {Canvas, Meta, Story} from '@storybook/blocks'
+
+import * as ToastStories from './Toast.stories'
+
+<Meta of={ToastStories} />
+
+# Toast
+
+Toasts are used to show live, time-sensitive feedback to users.
+
+## Default
+
+To create a default toast, use `.Toast`. Always use the `info` icon for default messages.
+
+<Canvas of={ToastStories.Default} />
+
+The Toast content is formattable. We recommend keeping your message under 140 characters.
+
+## Variations
+
+Use the success, warning, and error modifiers to communicate different states.
+
+Always use the `check` octicon for success states.
+
+<Canvas of={ToastStories.Success} />
+
+Always use the `alert` octicon for warning states.
+
+<Canvas of={ToastStories.Alert} />
+
+Always use the `stop` octicon for error states.
+
+<Canvas of={ToastStories.Error} />
+
+## Toast with dismiss
+
+Use `.Toast-dismissButton` to allow a user to explicitly dismiss a Toast.
+
+<Canvas of={ToastStories.Dismiss} />
+
+## Toast with link
+
+Include a link to allow users to take actions within a Toast.
+
+<Canvas of={ToastStories.WithLink} />
+
+## Toast animation in
+
+The `Toast--animateIn` and `Toast--animateOut` modifier classes can be used to animate the toast in and out from the bottom.
+
+<Canvas of={ToastStories.AnimationIn} />
+
+## Toast with loading animation
+
+Add the `Toast--spinner` modifier class on the `Toast-icon` `svg` to communicate a loading state.
+
+<Canvas of={ToastStories.Loading} />
+
+## Toast position
+
+Use the `position-fixed bottom-0 left-0` utility classes on a wrapper element to position Toasts at the **bottom left** of the viewport.

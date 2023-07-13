@@ -1,10 +1,31 @@
+// This mixin is used to output the tokens/variables from Primitives
+//
+// Example:
+//
+// @include color-mode-theme(dark) {
+//   --color: black;
+// }
+//
+// Warning!!!
+// Don't use this mixin with a class. E.g.
+// @include color-mode-theme(dark) {
+//   .my-class {
+//     color: red;
+//   }
+// }
+//
+// The outputted `::selection .my-class` will make the selector invalid and the entire ruleset is disregarded.
+// At some point we hopefully can remove the need for `&, &::selection {}` again (once the spec/implementation changes).
+
 @mixin color-mode-theme($theme-name, $include-root: false) {
   @if $include-root {
     :root,
-    ::selection,
     [data-color-mode="light"][data-light-theme="#{$theme-name}"],
     [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
-      @content;
+      &,
+      &::selection {
+        @content;
+      }
 
       /*! */ // This is a fix for a cssstats bug see https://github.com/cssstats/cssstats/issues/331
     }
@@ -13,27 +34,64 @@
   @else {
     [data-color-mode="light"][data-light-theme="#{$theme-name}"],
     [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
-      @content;
+      &,
+      &::selection {
+        @content;
+      }
     }
   }
 
   @media (prefers-color-scheme: light) {
     [data-color-mode="auto"][data-light-theme="#{$theme-name}"] {
-      @content;
+      &,
+      &::selection {
+        @content;
+      }
     }
   }
 
   @media (prefers-color-scheme: dark) {
     [data-color-mode="auto"][data-dark-theme="#{$theme-name}"] {
-      @content;
+      &,
+      &::selection {
+        @content;
+      }
     }
   }
 }
 
+// This mixin wraps styles with light or dark mode selectors
+// If possible, use a color variable instead.
+//
+// Example:
+//
+// @include color-mode('dark') {
+//   .my-class {
+//     color: red;
+//   }
+// }
+//
+// Returns:
+//
+// [data-color-mode=light][data-light-theme*=dark] .my-class,
+// [data-color-mode=dark][data-dark-theme*=dark] .my-class {
+//   color: red;
+// }
+//
+// @media (prefers-color-scheme: light) {
+//   [data-color-mode=auto][data-light-theme*=dark] .my-class {
+//     color: red;
+//   }
+// }
+// @media (prefers-color-scheme: dark) {
+//   [data-color-mode=auto][data-dark-theme*=dark] .my-class {
+//     color: red;
+//   }
+// }
+
 @mixin color-mode($mode) {
   @if $mode == light {
     :root,
-    ::selection,
     [data-color-mode="light"][data-light-theme*="#{$mode}"],
     [data-color-mode="dark"][data-dark-theme*="#{$mode}"] {
       @content;

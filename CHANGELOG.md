@@ -1,5 +1,39 @@
 # @primer/css
 
+## 21.0.7
+
+### Patch Changes
+
+- [#2472](https://github.com/primer/css/pull/2472) [`3ee117e1`](https://github.com/primer/css/commit/3ee117e1bd67675a5bdc2739bbe4d05f4e297c30) Thanks [@simurai](https://github.com/simurai)! - Add `::selection` to `color-mode-theme()` mixin
+
+## 21.0.6
+
+### Patch Changes
+
+- [#2470](https://github.com/primer/css/pull/2470) [`03e1a26c`](https://github.com/primer/css/commit/03e1a26c0d4fcc85450998f0f1f8120a1db48acc) Thanks [@langermank](https://github.com/langermank)! - Revert #2461 default selection color
+
+## 21.0.5
+
+### Patch Changes
+
+- [#2468](https://github.com/primer/css/pull/2468) [`c6d5d1df`](https://github.com/primer/css/commit/c6d5d1dfd3eafe44197ddc262f605dc5373437ac) Thanks [@keithamus](https://github.com/keithamus)! - Fix bug with `color-mode` mixin not applying correctly due to `::selection`
+
+## 21.0.4
+
+### Patch Changes
+
+- [#2466](https://github.com/primer/css/pull/2466) [`92047014`](https://github.com/primer/css/commit/9204701416b547255a1ebaeb2bd8a20056ffb8d4) Thanks [@langermank](https://github.com/langermank)! - Use `@primer/primitives` v8 colors with fallbacks
+
+## 21.0.3
+
+### Patch Changes
+
+- [#2461](https://github.com/primer/css/pull/2461) [`abc89659`](https://github.com/primer/css/commit/abc8965913313bbb969db9e1148fb5add9327ec9) Thanks [@langermank](https://github.com/langermank)! - Add default `::selection` color
+
+- [#2410](https://github.com/primer/css/pull/2410) [`344224fc`](https://github.com/primer/css/commit/344224fccdef2f3a37ed931c512e400b47301ea2) Thanks [@dylanatsmith](https://github.com/dylanatsmith)! - Add width utility to limit line length for readability
+
+- [#2457](https://github.com/primer/css/pull/2457) [`352ed7b7`](https://github.com/primer/css/commit/352ed7b75585c686c996a5e7c2c29e20e41d0672) Thanks [@langermank](https://github.com/langermank)! - Add new PostCSS fallback config
+
 ## 21.0.2
 
 ### Patch Changes

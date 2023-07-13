@@ -1,0 +1,27 @@
+import {Canvas, Meta, Story} from '@storybook/blocks'
+
+import * as MarketingStories from './Marketing.stories'
+
+<Meta of={MarketingStories} />
+
+# Marketing links
+
+Marketing links can be produced by combining the base class `link-mktg` with a set of modifier classes to control the size and color.
+
+<Canvas of={MarketingStories.Link} />
+
+## Link sizes
+
+The marketing link size is defined with utility classes and come in large (`.f3-mktg`) and small (`.f4-mktg`):
+
+## Link with emphasis
+
+Add class `link-emphasis-mktg` to the link, to give it a pale underline, that will fill up on hover.
+
+<Canvas of={MarketingStories.LinkEmphasis} />
+
+## Link colors
+
+The link color is controlled with the [Primer color classes](/utilities/colors), while the symbol and underline styling will follow:
+
+<Canvas of={MarketingStories.LinkColors} />

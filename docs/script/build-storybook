@@ -7,8 +7,11 @@ else
   echo '<base href="/css/storybook/" />' >> .storybook/manager-head.html
 fi
 
+# Make Gatsby happy
+# yarn gatsby build
+
 # Build storybook inside docs
-./node_modules/.bin/build-storybook -o public/storybook -s public/static
+npx storybook build -o public/storybook public/static
 
 # Remove manager-head after build to not interfere with dev builds
 rm .storybook/manager-head.html
