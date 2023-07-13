@@ -7,9 +7,6 @@ else
   echo '<base href="/css/storybook/" />' >> .storybook/manager-head.html
 fi
 
-# Make Gatsby happy
-# yarn gatsby build
-
 # Build storybook inside docs
 npx storybook build -o public/storybook public/static
 

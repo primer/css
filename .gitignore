@@ -15,5 +15,3 @@ public/
 searchIndex.js
 tmp
 yarn.lock
-!docs/yarn.lock
-docs/package-lock.json

@@ -38,8 +38,8 @@
     "pretest": "npm run dist && script/pretest",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
     "release": "changeset publish",
-    "storybook": "cd docs && yarn && yarn storybook build",
-    "build:storybook": "cd docs && yarn && yarn build:storybook"
+    "storybook": "cd docs && npm i && npx storybook build",
+    "build:storybook": "cd docs && npm i && npm run build:storybook"
   },
   "dependencies": {
     "@primer/primitives": "^7.11.12",
