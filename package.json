@@ -35,11 +35,11 @@
     "eslint": "eslint deprecations.js __tests__ script",
     "prepublishOnly": "script/prepublish",
     "start": "yarn dev",
-    "dev": "cd docs && yarn && yarn develop",
     "pretest": "yarn dist && script/pretest",
     "test": "NODE_OPTIONS=--experimental-vm-modules yarn jest",
     "release": "changeset publish",
-    "storybook": "cd docs && yarn && yarn storybook"
+    "storybook": "cd docs && yarn && yarn storybook build",
+    "build:storybook": "cd docs && yarn && yarn build:storybook"
   },
   "dependencies": {
     "@primer/primitives": "^7.11.12",
@@ -66,11 +66,11 @@
     "js-yaml": "4.1.0",
     "postcss": "8.4.5",
     "postcss-calc": "8.2.4",
+    "postcss-custom-properties-fallback": "^1.0.2",
     "postcss-import": "15.0.0",
     "postcss-load-config": "4.0.1",
     "postcss-scss": "4.0.5",
     "postcss-simple-vars": "7.0.1",
-    "postcss-custom-properties-fallback": "^1.0.2",
     "prettier": "2.8.8",
     "semver": "7.3.8",
     "stylelint": "15.7.0",

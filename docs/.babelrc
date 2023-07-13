@@ -1,6 +1,14 @@
 {
+  "sourceType": "unambiguous",
   "presets": [
-    "babel-preset-gatsby",
-    "@babel/preset-react"
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "chrome": 100
+        }
+      }
+    ]
   ]
 }
