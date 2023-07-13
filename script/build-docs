@@ -1,14 +1,14 @@
 #!/bin/bash -e
 
 # Build the base project so we can pull out the JSON data
-yarn dist
+npm run dist
 cp -rf dist docs
 
 # Now build the docs site using that data
 cd docs
 
 if [ -n "$1" ]; then
-  CI=true yarn build:storybook preview
+  CI=true npm run build:storybook preview
 else
-  CI=true yarn build:storybook
+  CI=true npm run build:storybook
 fi

@@ -6,42 +6,12 @@
     "storybook": "NODE_ENV=test storybook dev -p 6006",
     "build:storybook": "script/build-storybook"
   },
-  "dependencies": {
-    "@babel/preset-env": "^7.22.7",
-    "@babel/preset-react": "^7.16.7",
-    "@csstools/postcss-sass": "5.0.1",
-    "@geometricpanda/storybook-addon-badges": "^2.0.0",
-    "@primer/octicons": "17.0.0",
-    "@primer/octicons-react": "17.0.0",
-    "@primer/primitives": "7.11.10",
-    "@primer/react": "^35.26.1",
-    "@primer/view-components": "^0.0.114",
-    "@svgr/webpack": "5.5.0",
-    "autoprefixer": "10.4.2",
-    "chroma-js": "^2.4.2",
-    "clsx": "^1.2.1",
-    "core-js": "^3.20.3",
-    "path": "0.12.7",
-    "postcss": "8.4.5",
-    "postcss-import": "14.1.0",
-    "postcss-load-config": "3.1.0",
-    "postcss-loader": "4.3.0",
-    "postcss-scss": "4.0.3",
-    "postcss-simple-vars": "6.0.3",
-    "prop-types": "^15.8.1",
-    "raw-loader": "^4.0.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-frame-component": "^5.2.1",
-    "sass-loader": "13.0.0",
-    "styled-components": "^4.3.2",
-    "title-case": "^3.0.3"
-  },
   "engines": {
-    "node": ">= 10.x"
+    "node": ">= 16.x"
   },
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.16.7",
+    "@geometricpanda/storybook-addon-badges": "^2.0.0",
     "@storybook/addon-essentials": "^7.0.26",
     "@storybook/addon-interactions": "^7.0.26",
     "@storybook/addon-links": "^7.0.26",
@@ -52,6 +22,7 @@
     "@storybook/react-webpack5": "^7.0.26",
     "@storybook/testing-library": "^0.0.14-next.2",
     "babel-loader": "^8.2.5",
+    "clsx": "^1.2.1",
     "eslint-plugin-storybook": "^0.6.12",
     "storybook": "^7.0.26",
     "storybook-addon-pseudo-states": "^2.1.0"

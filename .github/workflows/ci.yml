@@ -11,35 +11,23 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 14
-      - run: yarn
-      - run: yarn dist
+          node-version: 18
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run dist
       - name: Lint source files
-        run: yarn stylelint --fix
+        run: npx stylelint --fix
       - name: Look for unused stylelint:disable lines
-        run: yarn stylelint -- --report-needless-disables
+        run: npm run stylelint -- --report-needless-disables
       - name: Push up any fixes
         if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          set +e
-          git status | grep modified
-          if [ $? -eq 0 ]
-          then
-              set -e
-              git stash
-              git remote update
-              git fetch
-              git checkout --track origin/$GITHUB_HEAD_REF
-              git config --local user.email "actions@github.com"
-              git config --local user.name "Actions Auto Build"
-              git stash pop
-              git add src
-              git commit -m "Stylelint auto-fixes"
-              git push
-          else
-              set -e
-              echo "No changes since last run"
-          fi
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Fixing stylelint issues
+          commit_user_name: GitHub Design Engineering Bot
+          commit_user_email: primer-css@users.noreply.github.com
+          commit_author: primer-css <primer-css@users.noreply.github.com>
+          file_pattern: src/**/*.scss
 
   eslint:
     runs-on: ubuntu-latest
@@ -47,10 +35,11 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 14
-      - run: yarn
+          node-version: 18
+          cache: 'npm'
+      - run: npm ci
       - name: Lint workflow files
-        run: yarn eslint
+        run: npm run eslint
 
   test:
     runs-on: ubuntu-latest
@@ -58,7 +47,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 14
-      - run: yarn
+          node-version: 18
+          cache: 'npm'
+      - run: npm ci
       - name: Jest
-        run: yarn test
+        run: npm test

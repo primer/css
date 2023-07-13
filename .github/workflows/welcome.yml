@@ -13,7 +13,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 18.x
+          cache: 'npm'
 
       - name: Get or Create Comment
         uses: actions/github-script@v6
@@ -45,9 +46,10 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 14
-      - run: yarn
-      - run: yarn pretest
+          node-version: 18
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run pretest
       - name: Reporting bundle sizes
         uses: primer/comment-token-update@main
         env:

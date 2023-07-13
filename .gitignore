@@ -13,5 +13,5 @@ docs/dist
 node_modules/
 public/
 searchIndex.js
-package-lock.json
 tmp
+yarn.lock

@@ -20,10 +20,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 18.x
+          cache: 'npm'
 
       - name: Install dependencies
-        run: yarn
+        run: npm ci
 
       - name: Create .npmrc
         run: |
@@ -37,7 +38,7 @@ jobs:
         run: |
           version=$(jq -r .version package.json)
           echo "$( jq ".version = \"$(echo $version)-rc.$(git rev-parse --short HEAD)\"" package.json )" > package.json
-          yarn publish --tag next
+          npm publish --tag next
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

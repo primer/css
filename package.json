@@ -29,17 +29,17 @@
     "dist": "script/dist.js",
     "dist:watch": "chokidar \"src/**/*.scss\" -c \"script/dist.js\"",
     "stylelint": "stylelint --quiet --rd 'src/**/*.scss'",
-    "stylelint:fix": "yarn stylelint -- --fix",
+    "stylelint:fix": "npm run stylelint -- --fix",
     "stylelint:remove-disables": "script/stylelint-remove-disables.js 'src/**/*.scss'",
     "stylelint:add-disables": "script/stylelint-add-disables.js 'src/**/*.scss'",
     "eslint": "eslint deprecations.js __tests__ script",
     "prepublishOnly": "script/prepublish",
-    "start": "yarn dev",
-    "pretest": "yarn dist && script/pretest",
-    "test": "NODE_OPTIONS=--experimental-vm-modules yarn jest",
+    "start": "npm run dev",
+    "pretest": "npm run dist && script/pretest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
     "release": "changeset publish",
-    "storybook": "cd docs && yarn && yarn storybook build",
-    "build:storybook": "cd docs && yarn && yarn build:storybook"
+    "storybook": "cd docs && npm i && npx storybook build",
+    "build:storybook": "cd docs && npm i && npm run build:storybook"
   },
   "dependencies": {
     "@primer/primitives": "^7.11.12",
