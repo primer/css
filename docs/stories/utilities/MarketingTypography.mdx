@@ -1,0 +1,27 @@
+import {Canvas, Meta, Story} from '@storybook/blocks'
+
+import * as MarketingTypographyStories from './MarketingTypography.stories'
+
+<Meta of={MarketingTypographyStories} />
+
+# Marketing typography
+
+The typography for our marketing pages differs from Primer CSS's core. It is responsive, on a slightly different scale, and headlines are set in the [defined marketing font](https://github.com/primer/css/blob/main/src/marketing/support/variables.scss).
+
+## Heading utilities
+
+<Canvas of={MarketingTypographyStories.HeadingUtilities} />
+
+Use `.h0-mktg` to `.h6-mktg` to change an element's font, size, and weight on marketing pages.
+
+## Body content utilities
+
+<Canvas of={MarketingTypographyStories.BoxContentUtilities} />
+
+Use `.f0-mktg` to `.f6-mktg` to change an element's body font, size, and weight on marketing pages.
+
+## Typographic utilities
+
+These utilities are meant to be used in addition to Primer CSS's core utilities.
+
+<Canvas of={MarketingTypographyStories.TypographicUtilities} />

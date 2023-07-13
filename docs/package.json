@@ -10,6 +10,7 @@
     "@babel/preset-env": "^7.22.7",
     "@babel/preset-react": "^7.16.7",
     "@csstools/postcss-sass": "5.0.1",
+    "@geometricpanda/storybook-addon-badges": "^2.0.0",
     "@primer/octicons": "17.0.0",
     "@primer/octicons-react": "17.0.0",
     "@primer/primitives": "7.11.10",

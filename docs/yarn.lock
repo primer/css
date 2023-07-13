@@ -1726,6 +1726,11 @@
   resolved "https://registry.yarnpkg.com/@fal-works/esbuild-plugin-global-externals/-/esbuild-plugin-global-externals-2.1.2.tgz#c05ed35ad82df8e6ac616c68b92c2282bd083ba4"
   integrity sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==
 
+"@geometricpanda/storybook-addon-badges@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@geometricpanda/storybook-addon-badges/-/storybook-addon-badges-2.0.0.tgz#668663240246aacc7579c8706e94f0473df36567"
+  integrity sha512-M1CQabr1/IDG6ku0/+n6kZBvWTCSun7LndkGsaB89nTNaCcflWxflgY2HdcbjblLL8W0iT7QiW9TgWP4kcpn5Q==
+
 "@github/auto-complete-element@^3.3.4":
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/@github/auto-complete-element/-/auto-complete-element-3.5.1.tgz#ea14029cf4a8cc322e6e2121d08c2f35b0d49cdc"

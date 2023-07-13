@@ -1,10 +1,12 @@
 import React from 'react'
+import {BADGE} from '@geometricpanda/storybook-addon-badges'
 
 export default {
   title: 'Deprecated/Forms',
   parameters: {
     storyType: 'banner',
     controls: {hideNoControlsWarning: true},
+    badges: [BADGE.DEPRECATED],
   },
 }
 

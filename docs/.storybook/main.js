@@ -7,6 +7,7 @@ const config = {
     '@storybook/addon-interactions',
     'storybook-addon-pseudo-states',
     '@storybook/addon-storysource',
+    '@geometricpanda/storybook-addon-badges',
     {
       name: '@storybook/addon-styling',
       options: {

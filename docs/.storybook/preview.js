@@ -4,6 +4,7 @@ import '../../src/base/index.scss'
 import './preview.css'
 import './storybook.css'
 import clsx from 'clsx'
+import {BADGE, BadgesConfig} from '@geometricpanda/storybook-addon-badges'
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {
@@ -18,6 +19,21 @@ const preview = {
     options: {
       storySort: {
         order: ['Introduction', 'GettingStarting', 'Contributing', 'Utilities'],
+      },
+    },
+    badgesConfig: {
+      [BADGE.DEPRECATED]: {
+        title: 'Deprecated',
+        tooltip: {
+          desc: 'Please use a Primer View Component instead',
+          links: [{title: 'See docs', href: 'https://primer.style/design/components'}],
+        },
+      },
+      [BADGE.OBSOLETE]: {
+        title: 'Outdated',
+        tooltip: {
+          desc: 'Information in this document may be outdated.',
+        },
       },
     },
   },
@@ -81,12 +97,12 @@ export const decorators = [
           ))
         ) : (
           <div className="story-wrap">
-            {parameters.storyType === 'banner' && (
+            {/* {parameters.storyType === 'banner' && (
               <div className="color-fg-danger border rounded-2 color-bg-danger p-3 color-border-danger-emphasis mb-5">
                 Note: For the most up to date component documentation and guidelines, please reference Primer's core
                 documentation site at <a href="https://primer.style">primer.style</a>.
               </div>
-            )}
+            )} */}
             <Story {...context} />
           </div>
         )}
