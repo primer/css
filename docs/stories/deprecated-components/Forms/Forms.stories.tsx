@@ -13,7 +13,7 @@ export default {
 export const KitchenSink = () => {
   return (
     <>
-      <div>
+      <div className="kitchen-sink-btn-container" style={btnContainerStyles}>
         <button className="btn" type="button">
           Button
         </button>
@@ -28,7 +28,8 @@ export const KitchenSink = () => {
           <option value="option 2">Option 2</option>
         </select>
       </div>
-      <div>
+
+      <div className="kitchen-sink-btn-container"  style={btnContainerStyles}>
         <button className="btn btn-sm" type="button">
           Small button
         </button>
@@ -49,6 +50,13 @@ export const KitchenSink = () => {
       </div>
     </>
   )
+}
+
+const btnContainerStyles = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '5px',
+
 }
 
 export const BasicForm = () => {
