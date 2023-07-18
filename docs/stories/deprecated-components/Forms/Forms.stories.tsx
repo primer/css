@@ -55,7 +55,7 @@ export const KitchenSink = () => {
 const btnContainerStyles = {
   display: 'flex',
   flexWrap: 'wrap',
-  gap: '5px',
+  gap: '2px',
 
 }
 
