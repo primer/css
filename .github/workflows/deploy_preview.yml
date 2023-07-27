@@ -19,12 +19,12 @@ jobs:
       - name: Checkout default branch
         uses: actions/checkout@v2
         with:
-          version: 18
+          version: 14
 
       - name: Set up Node
         uses: actions/setup-node@v2
         with:
-          node-version: 18
+          node-version: 14
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -48,7 +48,7 @@ jobs:
         with:
           ref: 3ee117e1bd67675a5bdc2739bbe4d05f4e297c30
           path: temp-legacy-site
-          version: 18
+          version: 14
 
       - name: Install dependencies for legacy site
         run: cd temp-legacy-site/docs && npm install --legacy-peer-deps

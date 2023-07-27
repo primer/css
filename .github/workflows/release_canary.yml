@@ -17,6 +17,7 @@ on:
 
 jobs:
   release-canary:
+    if: false
     name: Canary
     uses: primer/.github/.github/workflows/release_canary.yml@main
     with:

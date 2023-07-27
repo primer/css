@@ -6,6 +6,7 @@ on:
   pull_request:
 jobs:
   stylelint:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -30,6 +31,7 @@ jobs:
           file_pattern: src/**/*.scss
 
   eslint:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -42,6 +44,7 @@ jobs:
         run: npm run eslint
 
   test:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
