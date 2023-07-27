@@ -43,21 +43,23 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Legacy site
-      - name: Checkout code
+      - name: Checkout legacy site
         uses: actions/checkout@v2
         with:
           ref: 3ee117e1bd67675a5bdc2739bbe4d05f4e297c30
           path: temp-legacy-site
+          version: 18
 
-      - name: Install dependencies
+      - name: Install dependencies for legacy site
         run: cd temp-legacy-site/docs && npm install --legacy-peer-deps
 
-      - name: Build
+      - name: Build legacy site
         run: |
           yarn dist
           cp -rf dist temp-legacy-site/docs
           cd temp-legacy-site/docs
-          yarn gatsby build --output-path=../../docs/public/legacy
+          yarn gatsby build 
+          cp -r public /docs/public/legacy
 
       - name: Archive build output
         run: 'tar --dereference --directory docs/public -cvf artifact.tar .'
