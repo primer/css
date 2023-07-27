@@ -12,17 +12,81 @@ permissions:
   checks: write
 
 jobs:
+  build:
+    name: Build preview
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@v2
+        with:
+          version: 18
+
+      - name: Set up Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm ci && cd docs && npm ci && cd ..
+
+      - name: Build
+        run: npm run build:docs:preview
+        env:
+          GITHUB_TOKEN: ${{ secrets.gh_token }}
+
+      # Legacy site
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: 3ee117e1bd67675a5bdc2739bbe4d05f4e297c30
+          path: temp-legacy-site
+
+      - name: Install dependencies
+        run: cd temp-legacy-site/docs && npm install --legacy-peer-deps
+
+      - name: Build
+        run: |
+          yarn dist
+          cp -rf dist temp-legacy-site/docs
+          cd temp-legacy-site/docs
+          yarn gatsby build --output-path=../../docs/public/legacy
+
+      - name: Archive build output
+        run: 'tar --dereference --directory docs/public -cvf artifact.tar .'
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@main
+        with:
+          name: github-pages
+          path: artifact.tar
+
   deploy:
-    if: ${{ github.repository == 'primer/css' }}
-    uses: primer/.github/.github/workflows/deploy_preview.yml@main
-    name: Deploy preview
-    secrets:
-      gh_token: ${{ secrets.GITHUB_TOKEN }}
-    with:
-      node_version: 18
-      install: npm ci && cd docs && npm ci && cd ..
-      build: npm run build:docs:preview
-      output_dir: docs/public
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    outputs:
+      deployment_url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+        with:
+          preview: true
 
   deploy-storybook:
     if: ${{ github.repository == 'primer/css' }}
