@@ -40,7 +40,7 @@ jobs:
       - name: Build
         run: npm run build:docs:preview
         env:
-          GITHUB_TOKEN: ${{ secrets.gh_token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Legacy site
       - name: Checkout code
