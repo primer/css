@@ -44,7 +44,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
   height: #{$spacer-2}; // 8px
   content: '';
-  background-color: var(--bgColor-muted, var(--color-canvas-inset));
+  background-color: var(--bgColor-inset, var(--color-canvas-inset));
   box-shadow: inset 0 1px $Layout-divider-color, inset 0 -1px $Layout-divider-color;
 }
 
