@@ -1,4 +1,3 @@
-// stylelint-disable block-opening-brace-space-before
 
 // Foreground
 
@@ -22,7 +21,7 @@
 
 .color-bg-default  { background-color: var(--bgColor-default, var(--color-canvas-default)) !important; }
 .color-bg-overlay  { background-color: var(--overlay-bgColor, var(--color-canvas-overlay)) !important; }
-.color-bg-inset    { background-color: var(--bgColor-muted, var(--color-canvas-inset)) !important; }
+.color-bg-inset    { background-color: var(--bgColor-inset, var(--color-canvas-inset)) !important; }
 .color-bg-subtle   { background-color: var(--bgColor-muted, var(--color-canvas-subtle)) !important; }
 .color-bg-emphasis { background-color: var(--bgColor-emphasis, var(--color-neutral-emphasis-plus)) !important; }
 

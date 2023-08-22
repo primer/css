@@ -29,7 +29,7 @@
     display: flex;
     width: 100%;
     padding: var(--base-size-16, 16px);
-    background: var(--bgColor-muted, var(--color-canvas-inset));
+    background: var(--bgColor-inset, var(--color-canvas-inset));
     padding-block-end: calc(var(--base-size-16, 16px) - var(--borderWidth-thin, 1px));
     isolation: isolate;
     align-items: center;
