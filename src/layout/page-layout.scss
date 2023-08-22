@@ -14,12 +14,10 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   --Layout-row-gap: #{$spacer-3};
 
   // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
-  // stylelint-disable length-zero-no-unit
   --Layout-outer-spacing-x: 0px; // wrapper margin x
   --Layout-outer-spacing-y: 0px; // wrapper margin y
   --Layout-inner-spacing-min: 0px; // default region padding
   --Layout-inner-spacing-max: 0px; // relaxed content horizontal padding
-  // stylelint-enable length-zero-no-unit
 }
 
 // Layout beta mixins
@@ -378,7 +376,6 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
 .PageLayout--columnGap-none {
   // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
-  // stylelint-disable-next-line length-zero-no-unit
   --Layout-column-gap: 0px;
 }
 
@@ -394,7 +391,6 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
 .PageLayout--rowGap-none {
   // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
-  // stylelint-disable length-zero-no-unit
   --Layout-row-gap: 0px;
 }
 
