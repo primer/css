@@ -27,6 +27,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - id: get-access-token
+        uses: camertron/github-app-installation-auth-action@v1
+        with:
+          app-id: ${{ vars.PRIMER_ISSUE_TRIAGE_APP_ID }}
+          private-key: ${{ secrets.PRIMER_ISSUE_TRIAGE_APP_PRIVATE_KEY }}
+          client-id: ${{ vars.PRIMER_ISSUE_TRIAGE_APP_CLIENT_ID }}
+          client-secret: ${{ secrets.PRIMER_ISSUE_TRIAGE_APP_CLIENT_SECRET }}
+          installation-id: ${{ vars.PRIMER_ISSUE_TRIAGE_APP_INSTALLATION_ID }}
+
       - name: Create release pull request or publish to npm
         id: changesets
         uses: changesets/action@master
@@ -35,5 +44,5 @@ jobs:
           # This expects you to have a script called release which does a build for your packages and calls changeset publish
           publish: npm run release
         env:
-          GITHUB_TOKEN: ${{ secrets.GPR_AUTH_TOKEN_SHARED }}
+          GITHUB_TOKEN: ${{ steps.get-access-token.outputs.access-token }}
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_SHARED }}
