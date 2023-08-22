@@ -1,5 +1,15 @@
 # @primer/css
 
+## 21.0.8
+
+### Patch Changes
+
+- [#2510](https://github.com/primer/css/pull/2510) [`49e81506`](https://github.com/primer/css/commit/49e81506a99bd83c05a8459a49f1fd3ae60da20b) Thanks [@langermank](https://github.com/langermank)! - Use `control` tokens for legacy form CSS border-color
+
+- [#2508](https://github.com/primer/css/pull/2508) [`a8b1bed2`](https://github.com/primer/css/commit/a8b1bed2ead5824fb6332f61c6728f324b51d32c) Thanks [@langermank](https://github.com/langermank)! - Bump Primitive v7.12.0
+
+- [#2443](https://github.com/primer/css/pull/2443) [`e1b3f4f4`](https://github.com/primer/css/commit/e1b3f4f4bd041c6858b275142b8321c383c6aa54) Thanks [@jonrohan](https://github.com/jonrohan)! - Remove yarn in favor of npm
+
 ## 21.0.7
 
 ### Patch Changes
