@@ -29,6 +29,14 @@
 
       /*! */ // This is a fix for a cssstats bug see https://github.com/cssstats/cssstats/issues/331
     }
+
+    ::backdrop,
+    [data-color-mode="light"][data-light-theme="#{$theme-name}"],
+    [data-color-mode="dark"][data-dark-theme="#{$theme-name}"]::backdrop {
+      @content;
+
+      /*! */ // Must remain separate from the above selector to not break browsers which don't support ::backdrop, e.g. Safari 14.
+    }
   }
 
   @else {
