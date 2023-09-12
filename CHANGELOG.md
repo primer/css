@@ -1,5 +1,11 @@
 # @primer/css
 
+## 21.0.9
+
+### Patch Changes
+
+- [#2520](https://github.com/primer/css/pull/2520) [`7e2622fe`](https://github.com/primer/css/commit/7e2622fe9679969dd195438f5dd7108d2e8991c5) Thanks [@langermank](https://github.com/langermank)! - Use `control` border on default btn in an input group
+
 ## 21.0.8
 
 ### Patch Changes
