@@ -4,6 +4,8 @@ on:
     branches:
       - 'main'
       - 'next_major'
+  workflow_dispatch:
+
 jobs:
   release:
     name: Final
