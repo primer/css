@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - 'changeset-release/**'
+  workflow_dispatch:
 
 jobs:
   release-candidate:
