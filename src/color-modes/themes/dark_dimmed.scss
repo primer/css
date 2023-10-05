@@ -1,5 +1,5 @@
 @import '../../support/index.scss';
-@import '@primer/primitives/dist/scss/colors/_dark_dimmed.scss';
+@import './colors_deprecated/_dark_dimmed.scss';
 
 @include color-mode-theme(dark_dimmed) {
   @include primer-colors-dark_dimmed;
