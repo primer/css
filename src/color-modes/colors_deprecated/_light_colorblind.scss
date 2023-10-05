@@ -1,3 +1,4 @@
+/* stylelint-disable scss/selector-no-redundant-nesting-selector, hue-degree-notation, color-hex-length, alpha-value-notation */
 @mixin primer-colors-light_colorblind {
   & {
     --color-canvas-default-transparent: rgba(255,255,255,0);
