@@ -1,5 +1,5 @@
 @import '../../support/index.scss';
-@import './colors_deprecated/_light_tritanopia.scss';
+@import '../colors_deprecated/_light_tritanopia.scss';
 
 @include color-mode-theme(light_tritanopia) {
   @include primer-colors-light_tritanopia;

@@ -1,5 +1,5 @@
 @import '../../support/index.scss';
-@import './colors_deprecated/_dark_colorblind.scss';
+@import '../colors_deprecated/_dark_colorblind.scss';
 
 @include color-mode-theme(dark_colorblind) {
   @include primer-colors-dark_colorblind;

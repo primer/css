@@ -1,5 +1,5 @@
 @import '../../support/index.scss';
-@import './colors_deprecated/_light.scss';
+@import '../colors_deprecated/_light.scss';
 
 @include color-mode-theme(light, true) {
   @include primer-colors-light;
