@@ -1,3 +1,5 @@
+/* stylelint-disable primer/spacing */
+
 .tooltipped {
   position: relative;
 }
@@ -76,7 +78,6 @@
   &::after {
     top: 100%;
     right: 50%;
-    // stylelint-disable-next-line primer/spacing
     margin-top: 6px;
   }
 }
@@ -100,7 +101,6 @@
   &::after {
     right: 50%;
     bottom: 100%;
-    // stylelint-disable-next-line primer/spacing
     margin-bottom: 6px;
   }
 }
@@ -128,7 +128,6 @@
   &::after {
     right: 100%;
     bottom: 50%;
-    // stylelint-disable-next-line primer/spacing
     margin-right: 6px;
     transform: translateY(50%);
   }
@@ -139,7 +138,6 @@
   &::after {
     bottom: 50%;
     left: 100%;
-    // stylelint-disable-next-line primer/spacing
     margin-left: 6px;
     transform: translateY(50%);
   }
