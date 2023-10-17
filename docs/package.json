@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/core": "^7.16.7",
     "@geometricpanda/storybook-addon-badges": "^2.0.0",
-    "@storybook/addon-essentials": "^7.0.26",
+    "@storybook/addon-essentials": "^7.5.0",
     "@storybook/addon-interactions": "^7.0.26",
     "@storybook/addon-links": "^7.0.26",
     "@storybook/addon-storysource": "^7.0.27",
@@ -24,7 +24,7 @@
     "babel-loader": "^8.2.5",
     "clsx": "^1.2.1",
     "eslint-plugin-storybook": "^0.6.12",
-    "storybook": "^7.0.26",
+    "storybook": "^7.5.0",
     "storybook-addon-pseudo-states": "^2.1.0"
   }
 }
