@@ -1,5 +1,11 @@
 # @primer/css
 
+## 21.0.10
+
+### Patch Changes
+
+- [#2549](https://github.com/primer/css/pull/2549) [`df764e1a`](https://github.com/primer/css/commit/df764e1a617d13af34d97bd7b4f06b8a478facd2) Thanks [@keithamus](https://github.com/keithamus)! - Fix styles for ::backdrop
+
 ## 21.0.9
 
 ### Patch Changes
