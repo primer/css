@@ -34,7 +34,6 @@
     "stylelint:add-disables": "script/stylelint-add-disables.js 'src/**/*.scss'",
     "eslint": "eslint deprecations.js __tests__ script",
     "prepublishOnly": "script/prepublish",
-    "start": "npm run dev",
     "pretest": "npm run dist && script/pretest",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
     "release": "changeset publish",
