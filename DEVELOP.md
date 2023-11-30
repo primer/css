@@ -27,16 +27,6 @@ Here's what you need to know about how the files are structured in both git and 
 
 Run `npm install` to install the npm dependencies.
 
-## Docs site
-
-The Primer CSS docs are built with React using [Doctocat](https://primer.style/doctocat) and automatically deployed on every push to this repo with [Now]. You can run the server locally with:
-
-```sh
-npm start
-```
-
-Then visit http://localhost:8000 to view the site.
-
 ### The docs directory
 
 The [docs directory](../docs/) contains all of the documentation files in our docs site. Files are nested in the `/content` folder.
@@ -66,10 +56,8 @@ Stories are individual `.jsx` or `.mdx` files that contain component HTML for pr
 Our [`package.json`](package.json) houses a collection of [run-scripts] that we use to maintain, test, build, and publish Primer CSS. Run `npm run <script>` with any of the following values for `<script>`:
 
 - `dist` runs `script/dist`, which creates CSS bundles of all the `index.scss` files in `src/`.
-- `check-links` runs a link checker on your local development server (`localhost:3000`, started with `npm start`).
 - `stylelint` lints the CSS source files.
 - `eslint` lints the JavaScript source files.
-- `start` runs the documentation site locally (alias: `dev`).
 - `test` runs our test suite.
 - `storybook` runs storybook local development server.
 
