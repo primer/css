@@ -67,7 +67,7 @@
     "postcss-calc": "^8.2.4",
     "postcss-custom-properties-fallback": "^1.0.2",
     "postcss-import": "^15.0.0",
-    "postcss-load-config": "^4.0.1",
+    "postcss-load-config": "^5.0.0",
     "postcss-scss": "^4.0.5",
     "postcss-simple-vars": "^7.0.1",
     "prettier": "^2.8.8",
