@@ -1,5 +1,11 @@
 # @primer/css
 
+## 21.1.0
+
+### Minor Changes
+
+- [#2554](https://github.com/primer/css/pull/2554) [`f0b0d208`](https://github.com/primer/css/commit/f0b0d208cf04cbf77bfc46b40d65d5f53b109aaa) Thanks [@jonrohan](https://github.com/jonrohan)! - Remove primitives css tokens import from support package
+
 ## 21.0.10
 
 ### Patch Changes
