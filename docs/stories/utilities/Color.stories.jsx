@@ -26,7 +26,6 @@ export const NewText = ({}) => (
   <div style={{display: 'inline-flex', flexDirection: 'column', gap: '0.25rem'}}>
     <div class="fgColor-default">.fgColor-default</div>
     <div class="fgColor-muted">.fgColor-muted</div>
-    <div class="fgColor-subtle">.fgColor-subtle</div>
 
     <div class="fgColor-accent mt-3">.fgColor-accent</div>
     <div class="fgColor-success">.fgColor-success</div>
