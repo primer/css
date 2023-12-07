@@ -1,5 +1,13 @@
 # @primer/css
 
+## 21.1.1
+
+### Patch Changes
+
+- [#2563](https://github.com/primer/css/pull/2563) [`41952457`](https://github.com/primer/css/commit/4195245722defddf9563fe32b0cbe5c9ae5d42d4) Thanks [@langermank](https://github.com/langermank)! - fix backdrop selector
+
+- [#2564](https://github.com/primer/css/pull/2564) [`8757be58`](https://github.com/primer/css/commit/8757be584db2ddda8153566dc1906451832d3833) Thanks [@langermank](https://github.com/langermank)! - Add new color utility classes
+
 ## 21.1.0
 
 ### Minor Changes
