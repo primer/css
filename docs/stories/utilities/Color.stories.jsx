@@ -36,12 +36,6 @@ export const NewText = ({}) => (
     <div class="fgColor-closed">.fgColor-closed</div>
     <div class="fgColor-done">.fgColor-done</div>
     <div class="fgColor-sponsors">.fgColor-sponsors</div>
-    <div class="fgColor-success">
-      This text is green,{' '}
-      <a href="#" class="fgColor-inherit">
-        including the link
-      </a>
-    </div>
 
     <div class="fgColor-onEmphasis fgColor-accent-emphasis p-2 rounded mt-3">.fgColor-onEmphasis</div>
   </div>
