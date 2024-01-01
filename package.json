@@ -60,7 +60,7 @@
     "filesize": "^10.0.5",
     "front-matter": "^4.0.2",
     "fs-extra": "^11.1.0",
-    "globby": "^13.1.4",
+    "globby": "^14.0.0",
     "jest": "^29.5.0",
     "js-yaml": "^4.1.0",
     "postcss": "^8.4.5",
