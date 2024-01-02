@@ -3,7 +3,7 @@ import { join } from 'path'
 import { table } from 'table'
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
-import filesize  from 'filesize'
+import {filesize} from 'filesize'
 import fs from 'fs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -113,6 +113,7 @@ const posNeg = v => (v > 0 ? '+ ' : v < 0 ? '- ' : '')
 
   // Beautify the data
   data = data.map(row => {
+    console.log(row)
     row[2] = posNeg(row[2]) + `${row[2]}`.replace('-', '')
     row[3] = prettySize(row[3])
     row[4] = posNeg(row[4]) + `${prettySize(row[4])}`.replace('-', '')
