@@ -8,16 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18.x
           cache: 'npm'
 
       - name: Get or Create Comment
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -43,8 +43,8 @@ jobs:
     needs: release-template
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: 'npm'
@@ -87,7 +87,7 @@ jobs:
     name: Semantic Version Label
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@v7
         id: version-result
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
@@ -100,7 +100,7 @@ jobs:
               return match[0][1]
             }
 
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@v7
         env:
           RELEASE: ${{ steps.version-result.outputs.result }}
         with:
