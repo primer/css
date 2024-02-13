@@ -1,3 +1,5 @@
+/* stylelint-disable primer/spacing */
+
 .tooltipped {
   position: relative;
 }
@@ -7,8 +9,8 @@
   position: absolute;
   z-index: 1000000;
   display: none;
-  padding: $em-spacer-5 $em-spacer-6;
-  font: normal normal 11px/1.5 $body-font;
+  padding: var(--overlay-paddingBlock-condensed, 0.25rem) var(--overlay-padding-condensed, 0.5rem);
+  font: var(--text-body-shorthand-small, normal normal 11px/1.5 $body-font);
   -webkit-font-smoothing: subpixel-antialiased;
   color: var(--fgColor-onEmphasis, var(--color-fg-on-emphasis));
   text-align: center;
@@ -21,22 +23,8 @@
   pointer-events: none;
   content: attr(aria-label);
   background: var(--bgColor-emphasis, var(--color-neutral-emphasis-plus));
-  border-radius: $border-radius;
-  opacity: 0;
-}
-
-// This is the tooltip arrow
-.tooltipped::before {
-  position: absolute;
-  z-index: 1000001;
-  display: none;
-  width: 0;
-  height: 0;
-  color: var(--bgColor-emphasis, var(--color-neutral-emphasis-plus));
-  pointer-events: none;
-  content: '';
   // stylelint-disable-next-line primer/borders
-  border: 6px $border-style transparent;
+  border-radius: var(--borderRadius-medium);
   opacity: 0;
 }
 
@@ -63,7 +51,6 @@
     animation-duration: $tooltip-duration;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
-    animation-delay: $tooltip-delay;
   }
 }
 
@@ -91,17 +78,7 @@
   &::after {
     top: 100%;
     right: 50%;
-    // stylelint-disable-next-line primer/spacing
     margin-top: 6px;
-  }
-
-  &::before {
-    top: auto;
-    right: 50%;
-    bottom: -7px;
-    // stylelint-disable-next-line primer/spacing
-    margin-right: -6px;
-    border-bottom-color: var(--bgColor-emphasis, var(--color-neutral-emphasis-plus));
   }
 }
 
@@ -124,17 +101,7 @@
   &::after {
     right: 50%;
     bottom: 100%;
-    // stylelint-disable-next-line primer/spacing
     margin-bottom: 6px;
-  }
-
-  &::before {
-    top: -7px;
-    right: 50%;
-    bottom: auto;
-    // stylelint-disable-next-line primer/spacing
-    margin-right: -6px;
-    border-top-color: var(--bgColor-emphasis, var(--color-neutral-emphasis-plus));
   }
 }
 
@@ -161,18 +128,8 @@
   &::after {
     right: 100%;
     bottom: 50%;
-    // stylelint-disable-next-line primer/spacing
     margin-right: 6px;
     transform: translateY(50%);
-  }
-
-  &::before {
-    top: 50%;
-    bottom: 50%;
-    left: -7px;
-    // stylelint-disable-next-line primer/spacing
-    margin-top: -6px;
-    border-left-color: var(--bgColor-emphasis, var(--color-neutral-emphasis-plus));
   }
 }
 
@@ -181,18 +138,8 @@
   &::after {
     bottom: 50%;
     left: 100%;
-    // stylelint-disable-next-line primer/spacing
     margin-left: 6px;
     transform: translateY(50%);
-  }
-
-  &::before {
-    top: 50%;
-    right: -7px;
-    bottom: 50%;
-    // stylelint-disable-next-line primer/spacing
-    margin-top: -6px;
-    border-right-color: var(--bgColor-emphasis, var(--color-neutral-emphasis-plus));
   }
 }
 
@@ -218,7 +165,7 @@
 }
 
 .tooltipped-align-left-1,
-.tooltipped-align-left-2, {
+.tooltipped-align-left-2 {
   &::after {
     left: 0;
     margin-left: 0;
@@ -245,7 +192,7 @@
 .tooltipped-multiline {
   &::after {
     width: max-content;
-    max-width: $tooltip-max-width;
+    max-width: var(--overlay-width-small, 20rem);
     word-wrap: break-word;
     white-space: pre-line;
     border-collapse: separate;
