@@ -1,5 +1,15 @@
 # @primer/css
 
+## 21.2.0
+
+### Minor Changes
+
+- [#2532](https://github.com/primer/css/pull/2532) [`51666ea3`](https://github.com/primer/css/commit/51666ea3b4a00239ff60e420782b5b647484b264) Thanks [@langermank](https://github.com/langermank)! - Tooltip visual refresh
+
+### Patch Changes
+
+- [#2566](https://github.com/primer/css/pull/2566) [`407c5676`](https://github.com/primer/css/commit/407c5676d61985d9061adb77ed2de5bfcc0312ec) Thanks [@langermank](https://github.com/langermank)! - Add `monospace` CSS var to global scss var
+
 ## 21.1.1
 
 ### Patch Changes
