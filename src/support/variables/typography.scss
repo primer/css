@@ -36,7 +36,7 @@ $body-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetic
 
 // Monospace font stack
 // Note: SFMono-Regular needs to come before SF Mono to fix an older version of the font in Chrome
-$mono-font: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace !default;
+$mono-font: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace) !default;
 
 // The base body size
 $body-font-size: 14px !default;
