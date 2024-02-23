@@ -18,6 +18,10 @@
   box-shadow: var(--shadow-floating-xlarge, var(--color-shadow-extra-large)) !important;
 }
 
+.shadow-floating-small {
+  box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow)) !important;
+}
+
 // Turn off box shadow
 
 .box-shadow-none {
