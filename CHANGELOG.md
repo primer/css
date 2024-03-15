@@ -1,5 +1,13 @@
 # @primer/css
 
+## 21.2.1
+
+### Patch Changes
+
+- [#2581](https://github.com/primer/css/pull/2581) [`5d8a030`](https://github.com/primer/css/commit/5d8a030319fa64c99f0d3bed85079884d7086474) Thanks [@langermank](https://github.com/langermank)! - Update shadow utils
+
+- [#2588](https://github.com/primer/css/pull/2588) [`7a25839`](https://github.com/primer/css/commit/7a2583942001decfa3d8172833a5f6b55469c56b) Thanks [@langermank](https://github.com/langermank)! - Bump Primitives + fix selectmenu box-shadow
+
 ## 21.2.0
 
 ### Minor Changes
