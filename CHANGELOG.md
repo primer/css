@@ -1,5 +1,11 @@
 # @primer/css
 
+## 21.2.2
+
+### Patch Changes
+
+- [#2590](https://github.com/primer/css/pull/2590) [`d75a512`](https://github.com/primer/css/commit/d75a512298f087e49cac1787fd131501cc308f07) Thanks [@langermank](https://github.com/langermank)! - Use legacy shadow for all floating shadows
+
 ## 21.2.1
 
 ### Patch Changes
