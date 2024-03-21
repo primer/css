@@ -93,7 +93,7 @@ export const NewBackground = ({}) => (
   <div style={{display: 'inline-flex', flexDirection: 'column'}}>
     <div class="bgColor-default p-2 rounded mb-2">.bgColor-default</div>
     <div class="bgColor-inset p-2 rounded mb-2">.bgColor-inset</div>
-    <div class="bgColor-muted p-2 rounded mb-2">.bgColor-subtle</div>
+    <div class="bgColor-muted p-2 rounded mb-2">.bgColor-muted</div>
     <div class="bgColor-emphasis fgColor-onEmphasis p-2 rounded mb-4">.bgColor-emphasis</div>
 
     <div class="bgColor-accent-muted p-2 rounded mb-2">.bgColor-accent-muted</div>
