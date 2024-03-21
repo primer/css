@@ -96,13 +96,6 @@ details {
   summary {
     cursor: pointer;
   }
-
-  &:not([open]) {
-    // Set details content hidden by default for browsers that don't do this
-    > *:not(summary) {
-      display: none !important;
-    }
-  }
 }
 
 // global focus styles
