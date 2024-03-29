@@ -132,8 +132,6 @@ $mktg-btn-shadow-hover-dark: 0 4px 7px rgba(0, 0, 0, 0.15), 0 100px 80px rgba(25
 @include color-variables(
   (
     (mktg-btn-shadow-outline, (light: rgb(0,0,0,0.15) 0 0 0 1px inset, dark: rgb(255,255,255,0.25) 0 0 0 1px inset)),
-    (marketing-icon-primary, (light: var(--color-scale-blue-4), dark: var(--color-scale-blue-2))),
-    (marketing-icon-secondary, (light: var(--color-scale-blue-3), dark: var(--color-scale-blue-5))),
     (mktg-btn-bg, (light: #1b1f23, dark: #f6f8fa)),
     (mktg-btn-shadow-focus, (light: rgb(0 0 0 / 15%) 0 0 0 4px, dark: rgb(255 255 255 / 25%) 0 0 0 4px)),
     (mktg-btn-shadow-hover, (light: $mktg-btn-shadow-hover-light, dark: $mktg-btn-shadow-hover-dark)),
