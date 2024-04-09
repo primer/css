@@ -65,7 +65,6 @@
     "js-yaml": "^4.1.0",
     "postcss": "^8.4.35",
     "postcss-calc": "^9.0.1",
-    "postcss-custom-properties-fallback": "^1.0.2",
     "postcss-import": "^16.0.1",
     "postcss-load-config": "^5.0.3",
     "postcss-scss": "^4.0.5",
