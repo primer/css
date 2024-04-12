@@ -39,7 +39,7 @@ jobs:
     if: ${{ github.repository == 'primer/css' }}
     name: Production
     needs: [guard]
-    uses: primer/.github/.github/workflows/deploy.yml@v1
+    uses: primer/.github/.github/workflows/deploy.yml@v1.0.0
     secrets:
       gh_token: ${{ secrets.GITHUB_TOKEN }}
     with:
