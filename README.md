@@ -31,7 +31,9 @@
 Our documentation site lives at [primer.style/css](https://primer.style/css). You'll be able to find detailed documentation on getting started, all of the components, our theme, our principles, and more.
 
 ## Install
-This repository is distributed with [npm]. After [installing npm][install-npm], you can install `@primer/css` with this command:
+This repository is distributed with [```ruby
+npm
+```]. After [installing npm][install-npm], you can install `@primer/css` with this command:
 
 ```sh
 npm install --save @primer/css
