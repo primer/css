@@ -41,7 +41,7 @@
     "build:storybook": "cd docs && npm i && npm run build:storybook"
   },
   "dependencies": {
-    "@primer/primitives": "^7.15.12",
+    "@primer/primitives": "^8.1.0",
     "@primer/view-components": "^0.22.0"
   },
   "devDependencies": {
