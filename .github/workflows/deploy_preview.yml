@@ -14,13 +14,13 @@ permissions:
 jobs:
   deploy:
     if: ${{ github.repository == 'primer/css' }}
-    uses: primer/.github/.github/workflows/deploy_preview.yml@v1.0.0
+    uses: primer/.github/.github/workflows/deploy_preview.yml@v2.0.0
     name: Deploy preview
     secrets:
       gh_token: ${{ secrets.GITHUB_TOKEN }}
     with:
       node_version: 20
-      install: npm ci && cd docs && npm ci && cd ..
+      install: npm i && cd docs && npm i && cd ..
       build: npm run build:docs:preview
       output_dir: docs/public
 
