@@ -20,7 +20,7 @@ jobs:
       gh_token: ${{ secrets.GITHUB_TOKEN }}
     with:
       node_version: 20
-      install: npm ci && cd docs && npm ci && cd ..
+      install: npm i && cd docs && npm i && cd ..
       build: npm run build:docs:preview
       output_dir: docs/public
 
