@@ -1,5 +1,17 @@
 # @primer/css
 
+## 21.3.0
+
+### Minor Changes
+
+- [#2598](https://github.com/primer/css/pull/2598) [`434fcac`](https://github.com/primer/css/commit/434fcac6c296ddd3155945420f785a6b48eb693c) Thanks [@langermank](https://github.com/langermank)! - Remove marketing icon variables
+
+- [#2596](https://github.com/primer/css/pull/2596) [`9896c79`](https://github.com/primer/css/commit/9896c79a846cbaa633d21573be252b8e4812e79d) Thanks [@jonrohan](https://github.com/jonrohan)! - Move native color styles from the color-modes bundle to the base bundle
+
+### Patch Changes
+
+- [#2606](https://github.com/primer/css/pull/2606) [`a03827b`](https://github.com/primer/css/commit/a03827b0a0c76c6df8d15d04ea2ec7976799cc92) Thanks [@langermank](https://github.com/langermank)! - Cleanup old Primitive imports
+
 ## 21.2.2
 
 ### Patch Changes
