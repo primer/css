@@ -1,5 +1,13 @@
 # @primer/css
 
+## 21.3.1
+
+### Patch Changes
+
+- [#2613](https://github.com/primer/css/pull/2613) [`2eabfde`](https://github.com/primer/css/commit/2eabfdea85667c041e86e13376f1d2823b64fcb1) Thanks [@stamat](https://github.com/stamat)! - removing !important from letter-spacing marketing typography
+
+- [#2611](https://github.com/primer/css/pull/2611) [`e867934`](https://github.com/primer/css/commit/e8679348ca29c85b470a6b04a821d7143d4acf16) Thanks [@keithamus](https://github.com/keithamus)! - drop !important from details styling
+
 ## 21.3.0
 
 ### Minor Changes
