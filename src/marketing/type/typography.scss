@@ -10,7 +10,7 @@
   font-feature-settings: $mktg-font-feature-settings;
   // stylelint-disable-next-line primer/typography
   font-weight: $mktg-header-weight-default !important;
-  letter-spacing: $mktg-header-spacing-default !important;
+  letter-spacing: $mktg-header-spacing-default;
 }
 
 @each $header, $sizes in $mktg-headers {
@@ -30,7 +30,7 @@
         line-height: map-get($pairing-md, 'lh') !important;
 
         @if (map-get($pairing-md, 'size') >= $mktg-header-spacing-threshold and map-get($pairing, 'size') < $mktg-header-spacing-threshold) {
-          letter-spacing: $mktg-header-spacing-large !important;
+          letter-spacing: $mktg-header-spacing-large;
         }
 
         @if (map-get($pairing-md, 'size') >= $mktg-header-weight-threshold and map-get($pairing, 'size') < $mktg-header-weight-threshold) {
@@ -45,7 +45,7 @@
         line-height: map-get($pairing-lg, 'lh') !important;
 
         @if (map-get($pairing-lg, 'size') >= $mktg-header-spacing-threshold and map-get($pairing-md, 'size') < $mktg-header-spacing-threshold) {
-          letter-spacing: $mktg-header-spacing-large !important;
+          letter-spacing: $mktg-header-spacing-large;
         }
 
         @if (map-get($pairing-lg, 'size') >= $mktg-header-weight-threshold and map-get($pairing-md, 'size') < $mktg-header-weight-threshold) {
@@ -77,7 +77,7 @@
     font-size: map-get($pairing, 'size') !important;
     line-height: map-get($pairing, 'lh') !important;
 
-    @if (map-get($pairing, 'size') >= $mktg-body-spacing-threshold) { letter-spacing: $mktg-body-spacing-large !important; }
+    @if (map-get($pairing, 'size') >= $mktg-body-spacing-threshold) { letter-spacing: $mktg-body-spacing-large; }
 
     @if (map-get($pairing, 'size') >= $mktg-body-weight-threshold) { font-weight: $font-weight-semibold; }
 
@@ -87,7 +87,7 @@
         line-height: map-get($pairing-md, 'lh') !important;
 
         @if (map-get($pairing-md, 'size') >= $mktg-body-spacing-threshold and map-get($pairing, 'size') < $mktg-body-spacing-threshold) {
-          letter-spacing: $mktg-body-spacing-large !important;
+          letter-spacing: $mktg-body-spacing-large;
         }
 
         @if (map-get($pairing-md, 'size') >= $mktg-body-weight-threshold and map-get($pairing, 'size') < $mktg-body-weight-threshold) {
@@ -102,7 +102,7 @@
         line-height: map-get($pairing-lg, 'lh') !important;
 
         @if (map-get($pairing-lg, 'size') >= $mktg-body-spacing-threshold and map-get($pairing-md, 'size') < $mktg-body-spacing-threshold) {
-          letter-spacing: $mktg-body-spacing-large !important;
+          letter-spacing: $mktg-body-spacing-large;
         }
 
         @if (map-get($pairing-lg, 'size') >= $mktg-body-weight-threshold and map-get($pairing-md, 'size') < $mktg-body-weight-threshold) {
