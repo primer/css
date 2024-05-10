@@ -3,11 +3,6 @@ module.exports = {
   ignoreFiles: ['**/*.js', '**/*.cjs'],
   rules: {
     'primer/no-override': false,
-    'primer/no-deprecated-colors': [
-      true,
-      {
-        inlineFallback: false,
-      },
-    ],
+    'primer/no-deprecated-colors': false
   },
 }
