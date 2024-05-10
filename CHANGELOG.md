@@ -776,7 +776,7 @@
 
 - [#1581](https://github.com/primer/css/pull/1581) [`be518b80`](https://github.com/primer/css/commit/be518b8023b56802b1fc67ccc8a5b8398d1b279c) Thanks [@jonrohan](https://github.com/jonrohan)! - Updating deprecations.js file to be more straightforward
 
-* [#1579](https://github.com/primer/css/pull/1579) [`c3b4a0c3`](https://github.com/primer/css/commit/c3b4a0c36302af7bb06ca996f37a63470ab99c62) Thanks [@jonrohan](https://github.com/jonrohan)! - Removing v2 color mode css var fallbacks. `var(--color-v2)` becomes `var(--color-v2)`
+* [#1579](https://github.com/primer/css/pull/1579) [`c3b4a0c3`](https://github.com/primer/css/commit/c3b4a0c36302af7bb06ca996f37a63470ab99c62) Thanks [@jonrohan](https://github.com/jonrohan)! - Removing v2 color mode css var fallbacks. `var(--color-v2, var(--color-v1))` becomes `var(--color-v2)`
 
 ## 17.8.0
 
