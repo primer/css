@@ -17,7 +17,7 @@
   // Autocomplete with embedded icon
   .form-control.autocomplete-embedded-icon-wrap {
     &:focus-within {
-      background-color: var(--bgColor-default, var(--color-canvas-default));
+      background-color: var(--bgColor-default);
     }
   }
 
@@ -28,10 +28,10 @@
     max-width: 100%;
     // stylelint-disable-next-line primer/spacing
     margin-right: 5px;
-    background-color: var(--bgColor-muted, var(--color-canvas-inset));
+    background-color: var(--bgColor-muted);
 
     &:focus {
-      background-color: var(--bgColor-default, var(--color-canvas-default));
+      background-color: var(--bgColor-default);
     }
 
     &.shorter {
@@ -98,11 +98,11 @@
       margin: $spacer-1 0 0;
 
       &.is-error {
-        color: var(--fgColor-danger, var(--color-danger-fg));
+        color: var(--fgColor-danger);
       }
 
       &.is-success {
-        color: var(--fgColor-success, var(--color-success-fg));
+        color: var(--fgColor-success);
       }
 
       + .note {
@@ -121,7 +121,7 @@
     .form-group-header label::after {
       // stylelint-disable-next-line primer/spacing
       padding-left: 5px;
-      color: var(--fgColor-danger, var(--color-danger-fg));
+      color: var(--fgColor-danger);
       content: '*';
     }
   }
@@ -154,7 +154,7 @@
   &.successful {
     .success {
       display: inline;
-      color: var(--fgColor-success, var(--color-success-fg));
+      color: var(--fgColor-success);
     }
   }
 
@@ -210,63 +210,63 @@
 
   &.successed {
     .success {
-      color: var(--fgColor-default, var(--color-fg-default));
-      background-color: var(--bgColor-default, var(--color-canvas-default)); // Makes sure the background is opaque to cover any content underneath
-      background-image: linear-gradient(var(--bgColor-success-muted, var(--bgColor-success-muted, var(--color-success-subtle))), var(--color-success-subtle));
-      border-color: var(--borderColor-success-muted, var(--color-success-muted));
+      color: var(--fgColor-default);
+      background-color: var(--bgColor-default); // Makes sure the background is opaque to cover any content underneath
+      background-image: linear-gradient(var(--bgColor-success-muted, var(--bgColor-success-muted)));
+      border-color: var(--borderColor-success-muted);
 
       &::after {
-        border-bottom-color: var(--borderColor-success-muted, var(--color-success-muted));
+        border-bottom-color: var(--borderColor-success-muted);
       }
 
       &::before {
-        border-bottom-color: var(--borderColor-success-muted, var(--color-success-muted));
+        border-bottom-color: var(--borderColor-success-muted);
       }
     }
   }
 
   &.warn {
     .form-control:not(:focus, :focus-visible) {
-      border-color: var(--borderColor-attention-emphasis, var(--color-attention-emphasis));
+      border-color: var(--borderColor-attention-emphasis);
     }
 
     .warning {
-      color: var(--fgColor-default, var(--color-fg-default));
-      background-color: var(--bgColor-default, var(--color-canvas-default)); // Makes sure the background is opaque to cover any content underneath
-      background-image: linear-gradient(var(--bgColor-attention-muted, var(--bgColor-attention-muted, var(--color-attention-subtle))), var(--color-attention-subtle));
-      border-color: var(--borderColor-attention-muted, var(--color-attention-muted));
+      color: var(--fgColor-default);
+      background-color: var(--bgColor-default); // Makes sure the background is opaque to cover any content underneath
+      background-image: linear-gradient(var(--bgColor-attention-muted, var(--bgColor-attention-muted)));
+      border-color: var(--borderColor-attention-muted);
 
       &::after {
-        border-bottom-color: var(--borderColor-attention-muted, var(--color-attention-muted));
+        border-bottom-color: var(--borderColor-attention-muted);
       }
 
       &::before {
-        border-bottom-color: var(--borderColor-attention-muted, var(--color-attention-muted));
+        border-bottom-color: var(--borderColor-attention-muted);
       }
     }
   }
 
   &.errored {
     .form-control:not(:focus, :focus-visible) {
-      border-color: var(--borderColor-danger-emphasis, var(--color-danger-emphasis));
+      border-color: var(--borderColor-danger-emphasis);
     }
 
     label {
-      color: var(--fgColor-danger, var(--color-danger-fg));
+      color: var(--fgColor-danger);
     }
 
     .error {
-      color: var(--fgColor-default, var(--color-fg-default));
-      background-color: var(--bgColor-default, var(--color-canvas-default)); // Makes sure the background is opaque to cover any content underneath
-      background-image: linear-gradient(var(--bgColor-danger-muted, var(--bgColor-danger-muted, var(--color-danger-subtle))), var(--color-danger-subtle));
-      border-color: var(--borderColor-danger-muted, var(--color-danger-muted));
+      color: var(--fgColor-default);
+      background-color: var(--bgColor-default); // Makes sure the background is opaque to cover any content underneath
+      background-image: linear-gradient(var(--bgColor-danger-muted, var(--bgColor-danger-muted)));
+      border-color: var(--borderColor-danger-muted);
 
       &::after {
-        border-bottom-color: var(--borderColor-danger-muted, var(--color-danger-muted));
+        border-bottom-color: var(--borderColor-danger-muted);
       }
 
       &::before {
-        border-bottom-color: var(--borderColor-danger-muted, var(--color-danger-muted));
+        border-bottom-color: var(--borderColor-danger-muted);
       }
     }
   }
@@ -278,7 +278,7 @@
   // stylelint-disable-next-line primer/spacing
   margin: $spacer-1 0 2px;
   font-size: $font-size-small;
-  color: var(--fgColor-muted, var(--color-fg-muted));
+  color: var(--fgColor-muted);
 
   .spinner {
     // stylelint-disable-next-line primer/spacing

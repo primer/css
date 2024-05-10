@@ -36,7 +36,7 @@
 
   .octicon {
     margin-right: $spacer-1;
-    color: var(--fgColor-muted, var(--color-fg-muted));
+    color: var(--fgColor-muted);
     vertical-align: text-bottom;
 
     &:only-child {
@@ -50,7 +50,7 @@
     color: inherit;
     text-shadow: none;
     vertical-align: top;
-    background-color: var(--buttonCounter-default-bgColor-rest, var(--color-btn-counter-bg));
+    background-color: var(--buttonCounter-default-bgColor-rest);
   }
 
   .dropdown-caret {
@@ -62,42 +62,42 @@
 // Default button
 
 .btn {
-  color: var(--button-default-fgColor-rest, var(--color-btn-text));
-  background-color: var(--button-default-bgColor-rest, var(--color-btn-bg));
-  border-color: var(--button-default-borderColor-rest, var(--color-btn-border));
-  box-shadow: var(--button-default-shadow-resting, var(--color-btn-shadow)), var(--button-default-shadow-inset, var(--color-btn-inset-shadow));
+  color: var(--button-default-fgColor-rest);
+  background-color: var(--button-default-bgColor-rest);
+  border-color: var(--button-default-borderColor-rest);
+  box-shadow: var(--button-default-shadow-resting), var(--button-default-shadow-inset);
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
   transition-property: color, background-color, box-shadow, border-color;
 
   &:hover,
   &.hover,
   [open] > & {
-    background-color: var(--button-default-bgColor-hover, var(--color-btn-hover-bg));
-    border-color: var(--button-default-borderColor-hover, var(--color-btn-hover-border));
+    background-color: var(--button-default-bgColor-hover);
+    border-color: var(--button-default-borderColor-hover);
     transition-duration: 0.1s;
   }
 
   &:active {
-    background-color: var(--button-default-bgColor-active, var(--color-btn-active-bg));
-    border-color: var(--button-default-borderColor-active, var(--color-btn-active-border));
+    background-color: var(--button-default-bgColor-active);
+    border-color: var(--button-default-borderColor-active);
     transition: none;
   }
 
   &.selected,
   &[aria-selected='true'] {
-    background-color: var(--button-default-bgColor-selected, var(--color-btn-selected-bg));
-    box-shadow: var(--shadow-inset, var(--color-primer-shadow-inset));
+    background-color: var(--button-default-bgColor-selected);
+    box-shadow: var(--shadow-inset);
   }
 
   &:disabled,
   &.disabled,
   &[aria-disabled='true'] {
-    color: var(--fgColor-disabled, var(--color-primer-fg-disabled));
-    background-color: var(--button-default-bgColor-rest, var(--color-btn-bg));
-    border-color: var(--button-default-borderColor-rest, var(--color-btn-border));
+    color: var(--fgColor-disabled);
+    background-color: var(--button-default-bgColor-rest);
+    border-color: var(--button-default-borderColor-rest);
 
     .octicon {
-      color: var(--fgColor-disabled, var(--color-primer-fg-disabled));
+      color: var(--fgColor-disabled);
     }
   }
 }
@@ -105,16 +105,16 @@
 // Primary button
 
 .btn-primary {
-  color: var(--button-primary-fgColor-rest, var(--color-btn-primary-text));
-  background-color: var(--button-primary-bgColor-rest, var(--color-btn-primary-bg));
-  border-color: var(--button-primary-borderColor-rest, var(--color-btn-primary-border));
-  box-shadow: var(--shadow-resting-small, var(--color-btn-primary-shadow)), var(--shadow-highlight, var(--color-btn-primary-inset-shadow));
+  color: var(--button-primary-fgColor-rest);
+  background-color: var(--button-primary-bgColor-rest);
+  border-color: var(--button-primary-borderColor-rest);
+  box-shadow: var(--shadow-resting-small), var(--shadow-highlight);
 
   &:hover,
   &.hover,
   [open] > & {
-    background-color: var(--button-primary-bgColor-hover, var(--color-btn-primary-hover-bg));
-    border-color: var(--button-primary-borderColor-hover, var(--color-btn-primary-hover-border));
+    background-color: var(--button-primary-bgColor-hover);
+    border-color: var(--button-primary-borderColor-hover);
   }
 
   // fallback :focus state
@@ -136,29 +136,29 @@
   &:active,
   &.selected,
   &[aria-selected='true'] {
-    background-color: var(--button-primary-bgColor-active, var(--color-btn-primary-selected-bg));
-    box-shadow: var(--button-primary-shadow-selected, var(--color-btn-primary-selected-shadow));
+    background-color: var(--button-primary-bgColor-active);
+    box-shadow: var(--button-primary-shadow-selected);
   }
 
   &:disabled,
   &.disabled,
   &[aria-disabled='true'] {
-    color: var(--button-primary-fgColor-disabled, var(--color-btn-primary-disabled-text));
-    background-color: var(--button-primary-bgColor-disabled, var(--color-btn-primary-disabled-bg));
-    border-color: var(--button-primary-borderColor-disabled, var(--color-btn-primary-disabled-border));
+    color: var(--button-primary-fgColor-disabled);
+    background-color: var(--button-primary-bgColor-disabled);
+    border-color: var(--button-primary-borderColor-disabled);
 
     .octicon {
-      color: var(--button-primary-fgColor-disabled, var(--color-btn-primary-disabled-text));
+      color: var(--button-primary-fgColor-disabled);
     }
   }
 
   .Counter {
     color: inherit;
-    background-color: var(--buttonCounter-primary-bgColor-rest, var(--color-btn-primary-counter-bg));
+    background-color: var(--buttonCounter-primary-bgColor-rest);
   }
 
   .octicon {
-    color: var(--button-primary-iconColor-rest, var(--color-btn-primary-icon));
+    color: var(--button-primary-iconColor-rest);
   }
 }
 
@@ -185,17 +185,17 @@ a.btn-primary {
 // Outline button
 
 .btn-outline {
-  color: var(--button-outline-fgColor-rest, var(--color-btn-outline-text));
+  color: var(--button-outline-fgColor-rest);
 
   &:hover,
   [open] > & {
-    color: var(--button-outline-fgColor-hover, var(--color-btn-outline-hover-text));
-    background-color: var(--button-outline-bgColor-hover, var(--color-btn-outline-hover-bg));
-    border-color: var(--button-outline-borderColor-hover, var(--color-btn-outline-hover-border));
-    box-shadow: var(--shadow-resting-small, var(--color-btn-outline-hover-shadow)), var(--shadow-highlight, var(--color-btn-outline-hover-inset-shadow));
+    color: var(--button-outline-fgColor-hover);
+    background-color: var(--button-outline-bgColor-hover);
+    border-color: var(--button-outline-borderColor-hover);
+    box-shadow: var(--shadow-resting-small), var(--shadow-highlight);
 
     .Counter {
-      background-color: var(--buttonCounter-outline-bgColor-hover, var(--color-btn-outline-hover-counter-bg));
+      background-color: var(--buttonCounter-outline-bgColor-hover);
     }
 
     .octicon {
@@ -206,10 +206,10 @@ a.btn-primary {
   &:active,
   &.selected,
   &[aria-selected='true'] {
-    color: var(--button-outline-fgColor-active, var(--color-btn-outline-selected-text));
-    background-color: var(--button-outline-bgColor-active, var(--color-btn-outline-selected-bg));
-    border-color: var(--button-outline-borderColor-active, var(--color-btn-outline-selected-border));
-    box-shadow: var(--button-outline-shadow-selected, var(--color-btn-outline-selected-shadow));
+    color: var(--button-outline-fgColor-active);
+    background-color: var(--button-outline-bgColor-active);
+    border-color: var(--button-outline-borderColor-active);
+    box-shadow: var(--button-outline-shadow-selected);
 
     // fallback :focus state
     &:focus {
@@ -231,76 +231,76 @@ a.btn-primary {
   &:disabled,
   &.disabled,
   &[aria-disabled='true'] {
-    color: var(--button-outline-fgColor-disabled, var(--color-btn-outline-disabled-text));
-    background-color: var(--button-outline-bgColor-disabled, var(--color-btn-outline-disabled-bg));
-    border-color: var(--button-default-borderColor-rest, var(--color-btn-border));
+    color: var(--button-outline-fgColor-disabled);
+    background-color: var(--button-outline-bgColor-disabled);
+    border-color: var(--button-default-borderColor-rest);
     box-shadow: none;
 
     .Counter {
-      background-color: var(--buttonCounter-outline-bgColor-disabled, var(--color-btn-outline-disabled-counter-bg));
+      background-color: var(--buttonCounter-outline-bgColor-disabled);
     }
   }
 
   .Counter {
     color: inherit;
-    background-color: var(--buttonCounter-outline-bgColor-rest, var(--color-btn-outline-counter-bg));
+    background-color: var(--buttonCounter-outline-bgColor-rest);
   }
 }
 
 // Danger button
 
 .btn-danger {
-  color: var(--button-danger-fgColor-rest, var(--color-btn-danger-text));
+  color: var(--button-danger-fgColor-rest);
 
   .octicon {
-    color: var(--button-danger-iconColor-rest, var(--color-btn-danger-icon));
+    color: var(--button-danger-iconColor-rest);
   }
 
   &:hover,
   [open] > & {
-    color: var(--button-danger-fgColor-hover, var(--color-btn-danger-hover-text));
-    background-color: var(--button-danger-bgColor-hover, var(--color-btn-danger-hover-bg));
-    border-color: var(--button-danger-borderColor-hover, var(--color-btn-danger-hover-border));
-    box-shadow: var(--shadow-resting-small, var(--color-btn-danger-hover-shadow)), var(--shadow-highlight, var(--color-btn-danger-hover-inset-shadow));
+    color: var(--button-danger-fgColor-hover);
+    background-color: var(--button-danger-bgColor-hover);
+    border-color: var(--button-danger-borderColor-hover);
+    box-shadow: var(--shadow-resting-small), var(--shadow-highlight);
 
     .Counter {
-      background-color: var(--buttonCounter-danger-bgColor-hover, var(--color-btn-danger-hover-counter-bg));
+      background-color: var(--buttonCounter-danger-bgColor-hover);
     }
 
     .octicon {
-      color: var(--button-danger-iconColor-hover, var(--color-btn-danger-hover-icon));
+      color: var(--button-danger-iconColor-hover);
     }
   }
 
   &:active,
   &.selected,
   &[aria-selected='true'] {
-    color: var(--button-danger-fgColor-active, var(--color-btn-danger-selected-text));
-    background-color: var(--button-danger-bgColor-active, var(--color-btn-danger-selected-bg));
-    border-color: var(--button-danger-borderColor-active, var(--color-btn-danger-selected-border));
-    box-shadow: var(--button-danger-shadow-selected, var(--color-btn-danger-selected-shadow));
+    color: var(--button-danger-fgColor-active);
+    background-color: var(--button-danger-bgColor-active);
+    border-color: var(--button-danger-borderColor-active);
+    box-shadow: var(--button-danger-shadow-selected);
   }
 
   &:disabled,
   &.disabled,
   &[aria-disabled='true'] {
-    color: var(--button-danger-fgColor-disabled, var(--color-btn-danger-disabled-text));
-    background-color: var(--button-danger-bgColor-disabled, var(--color-btn-danger-disabled-bg));
-    border-color: var(--button-default-borderColor-rest, var(--color-btn-border));
+    color: var(--button-danger-fgColor-disabled);
+    background-color: var(--button-danger-bgColor-disabled);
+    border-color: var(--button-default-borderColor-rest);
     box-shadow: none;
 
     .Counter {
-      background-color: var(--buttonCounter-danger-bgColor-disabled, var(--color-btn-danger-disabled-counter-bg));
+      background-color: var(--buttonCounter-danger-bgColor-disabled);
     }
 
     .octicon {
-      color: var(--button-danger-fgColor-disabled, var(--color-btn-danger-disabled-text));
+      color: var(--button-danger-fgColor-disabled);
     }
   }
 
   .Counter {
     color: inherit;
-    background-color: var(--buttonCounter-danger-bgColor-rest, var(--color-btn-danger-counter-bg));
+    background-color: var(--buttonCounter-danger-bgColor-rest);
   }
 }
 

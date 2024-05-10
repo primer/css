@@ -30,7 +30,7 @@
   --Stack-gap-whenRegular: #{$Stack-gap-default};
   --Stack-gap-whenNarrow: #{$Stack-gap-default};
   --Stack-gap-whenWide: var(--Stack-gap-whenRegular);
-  --Stack-divider-color: var(--borderColor-default, var(--color-border-default));
+  --Stack-divider-color: var(--borderColor-default);
 
   display: flex;
   flex-flow: column;

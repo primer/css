@@ -12,7 +12,7 @@
   padding: var(--overlay-paddingBlock-condensed, 0.25rem) var(--overlay-padding-condensed, 0.5rem);
   font: var(--text-body-shorthand-small, normal normal 11px/1.5 $body-font);
   -webkit-font-smoothing: subpixel-antialiased;
-  color: var(--fgColor-onEmphasis, var(--color-fg-on-emphasis));
+  color: var(--fgColor-onEmphasis);
   text-align: center;
   text-decoration: none;
   text-shadow: none;
@@ -22,7 +22,7 @@
   white-space: pre;
   pointer-events: none;
   content: attr(aria-label);
-  background: var(--bgColor-emphasis, var(--color-neutral-emphasis-plus));
+  background: var(--bgColor-emphasis);
   // stylelint-disable-next-line primer/borders
   border-radius: var(--borderRadius-medium);
   opacity: 0;

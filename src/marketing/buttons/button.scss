@@ -8,7 +8,7 @@
   font-size: 1rem;
   font-weight: $font-weight-bold;
   line-height: 1;
-  color: var(--bgColor-default, var(--color-canvas-default));
+  color: var(--bgColor-default);
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -55,7 +55,7 @@
 
   // fallback :focus state
   &:focus {
-    @include focusOutline(2px, var(--focus-outlineColor, var(--color-accent-fg)));
+    @include focusOutline(2px, var(--focus-outlineColor));
 
     // remove fallback :focus if :focus-visible is supported
     &:not(:focus-visible) {
@@ -66,7 +66,7 @@
 
   // default focus state
   &:focus-visible {
-    @include focusOutline(2px, var(--focus-outlineColor, var(--color-accent-fg)));
+    @include focusOutline(2px, var(--focus-outlineColor));
   }
 
   &:active {
@@ -84,7 +84,7 @@
 }
 
 .btn-muted-mktg {
-  color: var(--fgColor-default, var(--color-fg-default)) !important;
+  color: var(--fgColor-default) !important;
   background: none !important;
   box-shadow: var(--color-mktg-btn-shadow-outline);
 
@@ -98,17 +98,17 @@
 
   &:active {
     // stylelint-disable-next-line primer/box-shadow
-    box-shadow: var(--fgColor-default, var(--color-fg-default)) 0 0 0 3px inset !important;
+    box-shadow: var(--fgColor-default) 0 0 0 3px inset !important;
   }
 
   &:disabled {
     // stylelint-disable-next-line primer/box-shadow
-    box-shadow: var(--fgColor-muted, var(--color-fg-subtle)) 0 0 0 1px inset !important;
+    box-shadow: var(--fgColor-muted) 0 0 0 1px inset !important;
   }
 }
 
 .btn-subtle-mktg {
-  color: var(--fgColor-default, var(--color-fg-default)) !important;
+  color: var(--fgColor-default) !important;
   background: none !important;
   box-shadow: none !important;
 
@@ -134,7 +134,7 @@
 
   // fallback :focus state
   &:focus {
-    @include focusOutline(2px, var(--focus-outlineColor, var(--color-accent-fg)));
+    @include focusOutline(2px, var(--focus-outlineColor));
 
     // remove fallback :focus if :focus-visible is supported
     &:not(:focus-visible) {
@@ -145,7 +145,7 @@
 
   // default focus state
   &:focus-visible {
-    @include focusOutline(2px, var(--focus-outlineColor, var(--color-accent-fg)));
+    @include focusOutline(2px, var(--focus-outlineColor));
   }
 }
 

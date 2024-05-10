@@ -6,7 +6,7 @@ module.exports = {
     'primer/no-deprecated-colors': [
       true,
       {
-        inlineFallback: true,
+        inlineFallback: false,
       },
     ],
   },
