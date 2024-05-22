@@ -14,6 +14,6 @@ on:
 jobs:
   release-tracking:
     name: Release Tracking
-    uses: primer/.github/.github/workflows/release_tracking.yml@create_release_tracking_workflow
+    uses: primer/.github/.github/workflows/release_tracking.yml@v2.1.0
     secrets:
       datadog_api_key: ${{ secrets.DATADOG_API_KEY }}
