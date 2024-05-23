@@ -1,109 +1,94 @@
-// stylelint-disable selector-max-type, no-duplicate-selectors
-
-// Base button styles
+/* Base button styles */
 .btn {
   position: relative;
   display: inline-block;
-  // stylelint-disable-next-line primer/spacing
   padding: 5px $spacer-3;
   font-size: $body-font-size;
   font-weight: $font-weight-semibold;
-  // stylelint-disable-next-line primer/typography
-  line-height: 20px; // Specifically not inherit our `<body>` default
+  line-height: 20px;
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
   border: $border-width $border-style;
   border-radius: $border-radius;
-  appearance: none; // Corrects inability to style clickable `input` types in iOS.
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  &:disabled,
-  &.disabled,
-  &[aria-disabled='true'] {
-    cursor: default;
-  }
-
-  i {
-    font-style: normal;
-    font-weight: $font-weight-semibold;
-    opacity: 0.75;
-  }
-
-  .octicon {
-    margin-right: $spacer-1;
-    color: var(--fgColor-muted, var(--color-fg-muted));
-    vertical-align: text-bottom;
-
-    &:only-child {
-      margin-right: 0;
-    }
-  }
-
-  .Counter {
-    // stylelint-disable-next-line primer/spacing
-    margin-left: 2px;
-    color: inherit;
-    text-shadow: none;
-    vertical-align: top;
-    background-color: var(--buttonCounter-default-bgColor-rest, var(--color-btn-counter-bg));
-  }
-
-  .dropdown-caret {
-    margin-left: $spacer-1;
-    opacity: 0.8;
-  }
+  appearance: none;
 }
 
-// Default button
+.btn:hover {
+  text-decoration: none;
+}
 
-.btn {
+.btn:disabled,
+.btn.disabled,
+.btn[aria-disabled='true'] {
+  cursor: default;
+}
+
+.btn i {
+  font-style: normal;
+  font-weight: $font-weight-semibold;
+  opacity: 0.75;
+}
+
+.btn .octicon {
+  margin-right: $spacer-1;
+  color: var(--fgColor-muted, var(--color-fg-muted));
+  vertical-align: text-bottom;
+}
+
+.btn .Counter {
+  margin-left: 2px;
+  color: inherit;
+  text-shadow: none;
+  vertical-align: top;
+  background-color: var(--buttonCounter-default-bgColor-rest, var(--color-btn-counter-bg));
+}
+
+.btn .dropdown-caret {
+  margin-left: $spacer-1;
+  opacity: 0.8;
+}
+
+/* Default button */
+.btn-default {
   color: var(--button-default-fgColor-rest, var(--color-btn-text));
   background-color: var(--button-default-bgColor-rest, var(--color-btn-bg));
   border-color: var(--button-default-borderColor-rest, var(--color-btn-border));
   box-shadow: var(--button-default-shadow-resting, var(--color-btn-shadow)), var(--button-default-shadow-inset, var(--color-btn-inset-shadow));
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
   transition-property: color, background-color, box-shadow, border-color;
-
-  &:hover,
-  &.hover,
-  [open] > & {
-    background-color: var(--button-default-bgColor-hover, var(--color-btn-hover-bg));
-    border-color: var(--button-default-borderColor-hover, var(--color-btn-hover-border));
-    transition-duration: 0.1s;
-  }
-
-  &:active {
-    background-color: var(--button-default-bgColor-active, var(--color-btn-active-bg));
-    border-color: var(--button-default-borderColor-active, var(--color-btn-active-border));
-    transition: none;
-  }
-
-  &.selected,
-  &[aria-selected='true'] {
-    background-color: var(--button-default-bgColor-selected, var(--color-btn-selected-bg));
-    box-shadow: var(--shadow-inset, var(--color-primer-shadow-inset));
-  }
-
-  &:disabled,
-  &.disabled,
-  &[aria-disabled='true'] {
-    color: var(--fgColor-disabled, var(--color-primer-fg-disabled));
-    background-color: var(--button-default-bgColor-rest, var(--color-btn-bg));
-    border-color: var(--button-default-borderColor-rest, var(--color-btn-border));
-
-    .octicon {
-      color: var(--fgColor-disabled, var(--color-primer-fg-disabled));
-    }
-  }
 }
 
-// Primary button
+.btn-default:hover,
+.btn-default.hover,
+[open] > .btn-default {
+  background-color: var(--button-default-bgColor-hover, var(--color-btn-hover-bg));
+  border-color: var(--button-default-borderColor-hover, var(--color-btn-hover-border));
+  transition-duration: 0.1s;
+}
 
+.btn-default:active {
+  background-color: var(--button-default-bgColor-active, var(--color-btn-active-bg));
+  border-color: var(--button-default-borderColor-active, var(--color-btn-active-border));
+  transition: none;
+}
+
+.btn-default.selected,
+.btn-default[aria-selected='true'] {
+  background-color: var(--button-default-bgColor-selected, var(--color-btn-selected-bg));
+  box-shadow: var(--shadow-inset, var(--color-primer-shadow-inset));
+}
+
+.btn-default:disabled,
+.btn-default.disabled,
+.btn-default[aria-disabled='true'] {
+  color: var(--fgColor-disabled, var(--color-primer-fg-disabled));
+  background-color: var(--button-default-bgColor-rest, var(--color-btn-bg));
+  border-color: var(--button-default-borderColor-rest, var(--color-btn-border));
+}
+
+/* Primary button */
 .btn-primary {
   color: var(--button-primary-fgColor-rest, var(--color-btn-primary-text));
   background-color: var(--button-primary-bgColor-rest, var(--color-btn-primary-bg));
@@ -151,17 +136,14 @@
       color: var(--button-primary-fgColor-disabled, var(--color-btn-primary-disabled-text));
     }
   }
-
   .Counter {
     color: inherit;
     background-color: var(--buttonCounter-primary-bgColor-rest, var(--color-btn-primary-counter-bg));
   }
-
   .octicon {
     color: var(--button-primary-iconColor-rest, var(--color-btn-primary-icon));
   }
 }
-
 // ensure links styled as button primary gets proper focus style
 // stylelint-disable-next-line selector-no-qualifying-type
 a.btn-primary {
@@ -182,8 +164,7 @@ a.btn-primary {
   }
 }
 
-// Outline button
-
+/* Outline button */
 .btn-outline {
   color: var(--button-outline-fgColor-rest, var(--color-btn-outline-text));
 
@@ -241,98 +222,38 @@ a.btn-primary {
     }
   }
 
+  
+  .octicon {
+    color: var(--button-danger-fgColor-disabled, var(--color-btn-danger-disabled-text));
+  }
+
+
   .Counter {
     color: inherit;
     background-color: var(--buttonCounter-outline-bgColor-rest, var(--color-btn-outline-counter-bg));
   }
 }
 
-// Danger button
-
-.btn-danger {
-  color: var(--button-danger-fgColor-rest, var(--color-btn-danger-text));
-
-  .octicon {
-    color: var(--button-danger-iconColor-rest, var(--color-btn-danger-icon));
-  }
-
-  &:hover,
-  [open] > & {
-    color: var(--button-danger-fgColor-hover, var(--color-btn-danger-hover-text));
-    background-color: var(--button-danger-bgColor-hover, var(--color-btn-danger-hover-bg));
-    border-color: var(--button-danger-borderColor-hover, var(--color-btn-danger-hover-border));
-    box-shadow: var(--shadow-resting-small, var(--color-btn-danger-hover-shadow)), var(--shadow-highlight, var(--color-btn-danger-hover-inset-shadow));
-
-    .Counter {
-      background-color: var(--buttonCounter-danger-bgColor-hover, var(--color-btn-danger-hover-counter-bg));
-    }
-
-    .octicon {
-      color: var(--button-danger-iconColor-hover, var(--color-btn-danger-hover-icon));
-    }
-  }
-
-  &:active,
-  &.selected,
-  &[aria-selected='true'] {
-    color: var(--button-danger-fgColor-active, var(--color-btn-danger-selected-text));
-    background-color: var(--button-danger-bgColor-active, var(--color-btn-danger-selected-bg));
-    border-color: var(--button-danger-borderColor-active, var(--color-btn-danger-selected-border));
-    box-shadow: var(--button-danger-shadow-selected, var(--color-btn-danger-selected-shadow));
-  }
-
-  &:disabled,
-  &.disabled,
-  &[aria-disabled='true'] {
-    color: var(--button-danger-fgColor-disabled, var(--color-btn-danger-disabled-text));
-    background-color: var(--button-danger-bgColor-disabled, var(--color-btn-danger-disabled-bg));
-    border-color: var(--button-default-borderColor-rest, var(--color-btn-border));
-    box-shadow: none;
-
-    .Counter {
-      background-color: var(--buttonCounter-danger-bgColor-disabled, var(--color-btn-danger-disabled-counter-bg));
-    }
-
-    .octicon {
-      color: var(--button-danger-fgColor-disabled, var(--color-btn-danger-disabled-text));
-    }
-  }
-
-  .Counter {
-    color: inherit;
-    background-color: var(--buttonCounter-danger-bgColor-rest, var(--color-btn-danger-counter-bg));
-  }
-}
-
-// Sizes
-//
 // Tweak `line-height` to make them smaller.
+
+/* Sizes */
 .btn-sm {
-  // stylelint-disable-next-line primer/spacing
   padding: 3px 12px;
   font-size: $font-size-small;
-  // stylelint-disable-next-line primer/typography
   line-height: 20px;
-
+  
   .octicon {
     vertical-align: text-top;
   }
 }
 
-// Large button adds more padding around text. Use font-size utils to increase font-size.. e.g, <p class="text-gamma"><button class="btn btn-large btn-primary" type="button">Big green button</button></p>
 .btn-large {
-  // stylelint-disable-next-line primer/spacing
   padding: $em-spacer-6 1.5em;
   font-size: inherit;
   line-height: $lh-default;
-
-  // stylelint-disable-next-line primer/borders
   border-radius: 0.5em;
 }
 
-// Full-width button
-//
-// These buttons expand to the full width of their parent container
 .btn-block {
   display: block;
   width: 100%;
