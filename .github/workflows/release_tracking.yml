@@ -3,8 +3,6 @@ name: Release Event Tracking
 
 on:
   pull_request:
-    branches:
-      - 'changeset-release/main'
     types:
       - closed
       - opened
