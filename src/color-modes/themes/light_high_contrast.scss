@@ -1,6 +1,1 @@
-@import '../../support/index.scss';
-@import '@primer/primitives/dist/scss/colors/_light_high_contrast.scss';
-
-@include color-mode-theme(light_high_contrast) {
-  @include primer-colors-light_high_contrast;
-}
+@import '@primer/primitives/dist/css/functional/themes/light-high-contrast.css';
