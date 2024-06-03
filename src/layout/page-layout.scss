@@ -284,7 +284,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
         @include Layout-filled-divider;
 
         // stylelint-disable-next-line primer/spacing
-        top: calc(var(--base-size-8) * -1 - var(--Layout-row-gap));
+        top: calc(calc(var(--base-size-8) * -1) - var(--Layout-row-gap));
       }
     }
 
@@ -297,7 +297,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
         @include Layout-filled-divider;
 
         // stylelint-disable-next-line primer/spacing
-        bottom: calc(var(--base-size-8) * -1 - var(--Layout-row-gap));
+        bottom: calc(calc(var(--base-size-8) * -1) - var(--Layout-row-gap));
       }
     }
   }
