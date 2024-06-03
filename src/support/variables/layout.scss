@@ -40,25 +40,25 @@ $spacer-6: $spacer * 5 !default; // 40px
 
 // The list of spacer values
 $spacers: (
-  $spacer-0,
-  $spacer-1,
-  $spacer-2,
-  $spacer-3,
-  $spacer-4,
-  $spacer-5,
-  $spacer-6,
+  0,
+  var(--base-size-4),
+  var(--base-size-8),
+  var(--base-size-16),
+  var(--base-size-24),
+  var(--base-size-32),
+  var(--base-size-40),
 ) !default;
 
 // And the map of spacers, for easier looping:
 // @each $scale, $length in $spacer-map { ... }
 $spacer-map: (
-  0: $spacer-0,
-  1: $spacer-1,
-  2: $spacer-2,
-  3: $spacer-3,
-  4: $spacer-4,
-  5: $spacer-5,
-  6: $spacer-6,
+  0: 0,
+  1: var(--base-size-4),
+  2: var(--base-size-8),
+  3: var(--base-size-16),
+  4: var(--base-size-24),
+  5: var(--base-size-32),
+  6: var(--base-size-40),
 ) !default;
 
 // Increases the core spacing scale first by 8px for $spacer-7, then by 16px
@@ -72,22 +72,22 @@ $spacer-11: $spacer * 14 !default; // 112px
 $spacer-12: $spacer * 16 !default; // 128px
 
 $spacers-large: (
-  7: $spacer-7,
-  8: $spacer-8,
-  9: $spacer-9,
-  10: $spacer-10,
-  11: $spacer-11,
-  12: $spacer-12,
+  7: var(--base-size-48),
+  8: var(--base-size-64),
+  9: var(--base-size-80),
+  10: var(--base-size-96),
+  11: var(--base-size-112),
+  12: var(--base-size-128),
 ) !default;
 
 $spacer-map-extended: map-merge(
   (0: 0,
-  1: $spacer-1,
-  2: $spacer-2,
-  3: $spacer-3,
-  4: $spacer-4,
-  5: $spacer-5,
-  6: $spacer-6,
+  1: var(--base-size-4),
+  2: var(--base-size-8),
+  3: var(--base-size-16),
+  4: var(--base-size-24),
+  5: var(--base-size-32),
+  6: var(--base-size-40),
 ),
 $spacers-large,
 ) !default;
@@ -182,19 +182,19 @@ $sidebar-wide-width: (
   xl: 336px) !default;
 
 $gutter: (
-  md: $spacer-3,
-  lg: $spacer-4,
-  xl: $spacer-5) !default;
+  md: var(--base-size-16),
+  lg: var(--base-size-24),
+  xl: var(--base-size-32)) !default;
 
 $gutter-condensed: (
-  md: $spacer-3,
-  lg: $spacer-3,
-  xl: $spacer-4) !default;
+  md: var(--base-size-16),
+  lg: var(--base-size-16),
+  xl: var(--base-size-24)) !default;
 
 $gutter-spacious: (
-  md: $spacer-4,
-  lg: $spacer-5,
-  xl: $spacer-6) !default;
+  md: var(--base-size-24),
+  lg: var(--base-size-32),
+  xl: var(--base-size-40)) !default;
 
 // rem unit support
 

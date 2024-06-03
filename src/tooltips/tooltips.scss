@@ -86,12 +86,12 @@
   &::after {
     right: auto;
     left: 50%;
-    margin-left: -$spacer-3;
+    margin-left: calc(var(--base-size-16) * -1);
   }
 }
 
 .tooltipped-sw::after {
-  margin-right: -$spacer-3;
+  margin-right: calc(var(--base-size-16) * -1);
 }
 
 // Tooltips above the object
@@ -109,12 +109,12 @@
   &::after {
     right: auto;
     left: 50%;
-    margin-left: -$spacer-3;
+    margin-left: calc(var(--base-size-16) * -1);
   }
 }
 
 .tooltipped-nw::after {
-  margin-right: -$spacer-3;
+  margin-right: calc(var(--base-size-16) * -1);
 }
 
 // Move the tooltip body to the center of the object.

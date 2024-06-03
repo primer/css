@@ -8,7 +8,7 @@
   min-width: 180px;
   padding: 0;
   margin: 0;
-  margin-top: $spacer-4;
+  margin-top: var(--base-size-24);
   list-style: none;
   cursor: pointer;
   background: var(--overlay-bgColor, var(--color-canvas-overlay));
@@ -18,7 +18,7 @@
 
   li {
     display: block;
-    padding: $spacer-1 $spacer-2;
+    padding: var(--base-size-4) var(--base-size-8);
     font-weight: $font-weight-semibold;
     border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
 
@@ -81,12 +81,12 @@
 .page-responsive {
   @media (max-width: $width-sm) {
     .suggester-container {
-      right: $spacer-2 !important;
-      left: $spacer-2 !important;
+      right: var(--base-size-8) !important;
+      left: var(--base-size-8) !important;
     }
 
     .suggester li {
-      padding: $spacer-2 $spacer-3;
+      padding: var(--base-size-8) var(--base-size-16);
     }
   }
 }

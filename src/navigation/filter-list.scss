@@ -26,8 +26,8 @@
 .filter-item {
   position: relative;
   display: block;
-  padding: $spacer-2 $spacer-3;
-  margin-bottom: $spacer-1;
+  padding: var(--base-size-8) var(--base-size-16);
+  margin-bottom: var(--base-size-4);
   overflow: hidden;
   font-size: $h5-size;
   color: var(--fgColor-muted, var(--color-fg-muted));
