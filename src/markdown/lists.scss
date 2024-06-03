@@ -76,6 +76,7 @@
   }
 
   li + li {
+    // stylelint-disable-next-line primer/spacing
     margin-top: $em-spacer-3;
   }
 

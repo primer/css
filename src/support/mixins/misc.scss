@@ -3,6 +3,7 @@
   &::after,
   &::before {
     position: absolute;
+    // stylelint-disable-next-line primer/spacing
     top: 11px;
     right: 100%;
     left: calc(var(--base-size-8) * -1);

@@ -96,6 +96,7 @@
 
 .subnav-search-icon {
   position: absolute;
+  // stylelint-disable-next-line primer/spacing
   top: 9px;
   left: var(--base-size-8);
   display: block;

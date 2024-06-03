@@ -6,16 +6,24 @@
   @include breakpoint($breakpoint) {
     @each $scale, $size in $spacer-map-extended {
       @if ($size != 0 or $variant != '') {
+        // stylelint-disable-next-line primer/spacing
         .top#{$variant}-#{$scale}     { top: $size !important; }
+        // stylelint-disable-next-line primer/spacing
         .right#{$variant}-#{$scale}   { right: $size !important; }
+        // stylelint-disable-next-line primer/spacing
         .bottom#{$variant}-#{$scale}  { bottom: $size !important; }
+        // stylelint-disable-next-line primer/spacing
         .left#{$variant}-#{$scale}    { left: $size !important; }
       }
 
       @if ($size != 0) {
+        // stylelint-disable-next-line primer/spacing
         .top#{$variant}-n#{$scale}     { top: -$size !important; }
+        // stylelint-disable-next-line primer/spacing
         .right#{$variant}-n#{$scale}   { right: -$size !important; }
+        // stylelint-disable-next-line primer/spacing
         .bottom#{$variant}-n#{$scale}  { bottom: -$size !important; }
+        // stylelint-disable-next-line primer/spacing
         .left#{$variant}-n#{$scale}    { left: -$size !important; }
       }
     }

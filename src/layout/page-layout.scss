@@ -26,6 +26,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
 @mixin Layout-line-divider {
   position: absolute;
+  // stylelint-disable-next-line primer/spacing
   left: calc(var(--Layout-outer-spacing-x) * -1);
   display: block;
   width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
@@ -37,6 +38,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 @mixin Layout-filled-divider {
   position: absolute;
   bottom: calc(var(--base-size-8) * -1);
+  // stylelint-disable-next-line primer/spacing
   left: calc(var(--Layout-outer-spacing-x) * -1);
   display: block;
   width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
@@ -255,6 +257,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
       &::before {
         @include Layout-line-divider;
 
+        // stylelint-disable-next-line primer/spacing
         top: calc(#{$border-width * -1} - var(--Layout-row-gap));
       }
     }
@@ -267,6 +270,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
       &::after {
         @include Layout-line-divider;
 
+        // stylelint-disable-next-line primer/spacing
         bottom: calc(#{$border-width * -1} - var(--Layout-row-gap));
       }
     }
@@ -279,6 +283,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
       &::after {
         @include Layout-filled-divider;
 
+        // stylelint-disable-next-line primer/spacing
         top: calc(var(--base-size-8) * -1 - var(--Layout-row-gap));
       }
     }
@@ -291,6 +296,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
       &::before {
         @include Layout-filled-divider;
 
+        // stylelint-disable-next-line primer/spacing
         bottom: calc(var(--base-size-8) * -1 - var(--Layout-row-gap));
       }
     }

@@ -184,6 +184,7 @@
       &::before {
         position: absolute;
         bottom: 100%;
+        // stylelint-disable-next-line primer/spacing
         left: 10px;
         z-index: 15;
         width: 0;
