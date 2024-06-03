@@ -72,9 +72,9 @@
 
   .bar {
     position: absolute;
-    top: 2px;
+    top: var(--base-size-2);
     right: 0;
-    bottom: 2px;
+    bottom: var(--base-size-2);
     z-index: -1;
     display: inline-block;
     background-color: var(--bgColor-neutral-muted, var(--color-neutral-subtle));

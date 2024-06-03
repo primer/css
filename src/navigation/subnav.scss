@@ -97,7 +97,7 @@
 .subnav-search-icon {
   position: absolute;
   top: 9px;
-  left: 8px;
+  left: var(--base-size-8);
   display: block;
   color: var(--fgColor-muted, var(--color-fg-muted));
   text-align: center;

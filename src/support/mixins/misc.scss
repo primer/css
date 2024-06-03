@@ -5,7 +5,7 @@
     position: absolute;
     top: 11px;
     right: 100%;
-    left: -8px;
+    left: calc(var(--base-size-8) * -1);
     display: block;
     width: 8px;
     height: 16px;
