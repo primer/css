@@ -4,12 +4,12 @@ export default {
 
 export const Heading = ({}) => (
   <div>
-    <p class="h1">Pizza 1</p>
-    <p class="h2">Pizza 2</p>
-    <p class="h3">Pizza 3</p>
-    <p class="h4">Pizza 4</p>
-    <p class="h5">Pizza 5</p>
-    <p class="h6">Pizza 6</p>
+    <p class="h1">Pizza .h1</p>
+    <p class="h2">Pizza .h2</p>
+    <p class="h3">Pizza .h3</p>
+    <p class="h4">Pizza .h4</p>
+    <p class="h5">Pizza .h5</p>
+    <p class="h6">Pizza .h6</p>
   </div>
 )
 
@@ -19,57 +19,57 @@ export const HeadingSemantic = ({}) => (
 
 export const FontSize = ({}) => (
   <div>
-    <p class="f1">Focaccia</p>
-    <p class="f2">Focaccia</p>
-    <p class="f3">Focaccia</p>
-    <p class="f4">Focaccia</p>
-    <p class="f5">Focaccia</p>
-    <p class="f6">Focaccia</p>
+    <p class="f1">Focaccia .f1</p>
+    <p class="f2">Focaccia .f2</p>
+    <p class="f3">Focaccia .f3</p>
+    <p class="f4">Focaccia .f4</p>
+    <p class="f5">Focaccia .f5</p>
+    <p class="f6">Focaccia .f6</p>
   </div>
 )
 
 export const FontSizeLight = ({}) => (
   <div>
-    <h1 class="f00-light">Potato chips</h1>
-    <h1 class="f0-light">Potato chips</h1>
-    <h1 class="f1-light">Potato chips</h1>
-    <h1 class="f2-light">Potato chips</h1>
-    <h1 class="f3-light">Potato chips</h1>
+    <h1 class="f00-light">Potato chips .f00-light</h1>
+    <h1 class="f0-light">Potato chips .f0-light</h1>
+    <h1 class="f1-light">Potato chips .f1-light</h1>
+    <h1 class="f2-light">Potato chips .f2-light</h1>
+    <h1 class="f3-light">Potato chips .f3-light</h1>
   </div>
 )
 
 export const LineHeight = ({}) => (
   <div>
     <p class="lh-default">
-      Bacon ipsum dolor amet tri-tip chicken kielbasa, cow swine beef corned beef ground round prosciutto hamburger porchetta sausage alcatra tail. Jowl chuck biltong flank meatball, beef short ribs. Jowl tenderloin ground round, short loin tri-tip ribeye picanha filet mignon pig chicken kielbasa t-bone fatback. Beef ribs meatball chicken corned beef salami.
+      .lh-default Bacon ipsum dolor amet tri-tip chicken kielbasa, cow swine beef corned beef ground round prosciutto hamburger porchetta sausage alcatra tail. Jowl chuck biltong flank meatball, beef short ribs. Jowl tenderloin ground round, short loin tri-tip ribeye picanha filet mignon pig chicken kielbasa t-bone fatback. Beef ribs meatball chicken corned beef salami.
     </p>
     <p class="lh-condensed">
-      Bacon ipsum dolor amet tri-tip chicken kielbasa, cow swine beef corned beef ground round prosciutto hamburger porchetta sausage alcatra tail. Jowl chuck biltong flank meatball, beef short ribs. Jowl tenderloin ground round, short loin tri-tip ribeye picanha filet mignon pig chicken kielbasa t-bone fatback. Beef ribs meatball chicken corned beef salami.
+      .lh-condensed Bacon ipsum dolor amet tri-tip chicken kielbasa, cow swine beef corned beef ground round prosciutto hamburger porchetta sausage alcatra tail. Jowl chuck biltong flank meatball, beef short ribs. Jowl tenderloin ground round, short loin tri-tip ribeye picanha filet mignon pig chicken kielbasa t-bone fatback. Beef ribs meatball chicken corned beef salami.
     </p>
     <p class="lh-condensed-ultra">
-      Bacon ipsum dolor amet tri-tip chicken kielbasa, cow swine beef corned beef ground round prosciutto hamburger porchetta sausage alcatra tail. Jowl chuck biltong flank meatball, beef short ribs. Jowl tenderloin ground round, short loin tri-tip ribeye picanha filet mignon pig chicken kielbasa t-bone fatback. Beef ribs meatball chicken corned beef salami.
+      .lh-condensed-ultra Bacon ipsum dolor amet tri-tip chicken kielbasa, cow swine beef corned beef ground round prosciutto hamburger porchetta sausage alcatra tail. Jowl chuck biltong flank meatball, beef short ribs. Jowl tenderloin ground round, short loin tri-tip ribeye picanha filet mignon pig chicken kielbasa t-bone fatback. Beef ribs meatball chicken corned beef salami.
     </p>
   </div>
 )
 
 export const TypographicStyles = ({}) => (
   <div>
-    <p class="text-normal">Normal</p>
-    <p class="text-italic">Italic</p>
-    <p class="text-bold">Bold</p>
-    <p class="text-semibold">Semi-bold</p>
-    <p class="text-light">Light</p>
-    <p class="text-uppercase">Uppercase</p>
-    <p class="no-wrap">No wrap</p>
-    <p class="ws-normal">Normal whitespace</p>
-    <p class="text-underline">Text underline</p>
-    <p class="no-underline">No underline</p>
-    <p class="text-emphasized">Emphasized</p>
-    <p class="text-small">Small</p>
-    <p class="lead">Bacon ipsum dolor amet tri-tip chicken kielbasa, cow swine beef corned beef ground round prosciutto hamburger porchetta sausage alcatra tail.</p>
-    <p class="text-mono">Monospace</p>
-    <p class="user-select-none">User Select None</p>
-    <p class="text-capitalize">capitalize</p>
+    <p class="text-normal">.text-normal</p>
+    <p class="text-italic">.text-italic</p>
+    <p class="text-bold">.text-bold</p>
+    <p class="text-semibold">.text-semibold</p>
+    <p class="text-light">.text-light</p>
+    <p class="text-uppercase">.text-uppercase</p>
+    <p class="no-wrap">.no-wrap</p>
+    <p class="ws-normal">.ws-normal</p>
+    <p class="text-underline">.text-underline</p>
+    <p class="no-underline">.no-underline</p>
+    <p class="text-emphasized">.text-emphasized</p>
+    <p class="text-small">.text-small</p>
+    <p class="lead">.lead Bacon ipsum dolor amet tri-tip chicken kielbasa, cow swine beef corned beef ground round prosciutto hamburger porchetta sausage alcatra tail.</p>
+    <p class="text-mono">.text-mono</p>
+    <p class="user-select-none">.user-select-none</p>
+    <p class="text-capitalize">.text-capitalize</p>
   </div>
 )
 
@@ -82,9 +82,9 @@ export const WordBreak = ({}) => (
 
 export const TextAlignment = ({}) => (
   <div>
-    <p class="text-left">Left align</p>
-    <p class="text-center">Center</p>
-    <p class="text-right">Right align</p>
+    <p class="text-left">.text-left</p>
+    <p class="text-center">.text-center</p>
+    <p class="text-right">.text-right</p>
   </div>
 )
 
