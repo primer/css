@@ -23,7 +23,7 @@
   position: relative;
   float: left;
   // stylelint-disable-next-line primer/spacing
-  padding: 5px $spacer-3;
+  padding: 5px var(--base-size-16);
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
@@ -85,7 +85,7 @@
 
 .subnav-search-input {
   width: 320px;
-  padding-left: $spacer-5;
+  padding-left: var(--base-size-32);
   color: var(--fgColor-muted, var(--color-fg-muted));
 }
 
@@ -96,8 +96,9 @@
 
 .subnav-search-icon {
   position: absolute;
+  // stylelint-disable-next-line primer/spacing
   top: 9px;
-  left: 8px;
+  left: var(--base-size-8);
   display: block;
   color: var(--fgColor-muted, var(--color-fg-muted));
   text-align: center;

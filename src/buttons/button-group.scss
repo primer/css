@@ -12,7 +12,7 @@
   // Proper spacing for multiple button groups (a la, gollum editor)
   + .BtnGroup,
   + .btn {
-    margin-left: $spacer-1;
+    margin-left: var(--base-size-4);
   }
 }
 

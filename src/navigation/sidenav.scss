@@ -11,7 +11,7 @@
   display: block;
   width: 100%;
   // stylelint-disable-next-line primer/spacing
-  padding: 12px $spacer-3;
+  padding: 12px var(--base-size-16);
   color: var(--fgColor-default, var(--color-fg-default));
   text-align: left;
   background-color: transparent;
@@ -68,7 +68,7 @@
 
 .SideNav-icon {
   width: 16px;
-  margin-right: $spacer-2;
+  margin-right: var(--base-size-8);
   color: var(--fgColor-muted, var(--color-fg-muted));
 }
 
@@ -80,7 +80,7 @@
   position: relative;
   display: block;
   width: 100%;
-  padding: $spacer-1 0;
+  padding: var(--base-size-4) 0;
   color: var(--fgColor-accent, var(--color-accent-fg));
   text-align: left;
   background-color: transparent;

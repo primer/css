@@ -41,7 +41,7 @@
     "build:storybook": "cd docs && npm i && npm run build:storybook"
   },
   "dependencies": {
-    "@primer/primitives": "^7.15.12",
+    "@primer/primitives": "^8.2.0",
     "@primer/view-components": "^0.22.0"
   },
   "devDependencies": {
@@ -49,7 +49,7 @@
     "@changesets/cli": "^2.27.1",
     "@csstools/postcss-sass": "^5.1.1",
     "@github/prettier-config": "^0.0.6",
-    "@primer/stylelint-config": "^12.9.1",
+    "@primer/stylelint-config": "^13.0.0-rc.af5663d",
     "autoprefixer": "^10.4.18",
     "chokidar-cli": "^3.0.0",
     "cssstats": "^4.0.5",
@@ -71,7 +71,7 @@
     "postcss-simple-vars": "^7.0.1",
     "prettier": "^3.2.5",
     "semver": "^7.6.0",
-    "stylelint": "^15.11.0",
+    "stylelint": "^16.6.1",
     "table": "^6.8.1"
   },
   "jest": {

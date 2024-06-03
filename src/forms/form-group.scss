@@ -95,7 +95,7 @@
   dd, // TODO: Deprecate
   .form-group-body {
     h4 {
-      margin: $spacer-1 0 0;
+      margin: var(--base-size-4) 0 0;
 
       &.is-error {
         color: var(--fgColor-danger, var(--color-danger-fg));
@@ -172,8 +172,8 @@
       z-index: 10;
       display: block; // Show up in errored/warn state
       max-width: 450px; // Keep our long errors readable
-      padding: $spacer-1 $spacer-2;
-      margin: $spacer-2 0 0;
+      padding: var(--base-size-4) var(--base-size-8);
+      margin: var(--base-size-8) 0 0;
       font-size: $font-size-small;
       font-weight: $font-weight-normal;
       border-style: $border-style;
@@ -184,6 +184,7 @@
       &::before {
         position: absolute;
         bottom: 100%;
+        // stylelint-disable-next-line primer/spacing
         left: 10px;
         z-index: 15;
         width: 0;
@@ -276,7 +277,7 @@
 .note {
   min-height: 17px;
   // stylelint-disable-next-line primer/spacing
-  margin: $spacer-1 0 2px;
+  margin: var(--base-size-4) 0 2px;
   font-size: $font-size-small;
   color: var(--fgColor-muted, var(--color-fg-muted));
 

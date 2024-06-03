@@ -34,9 +34,9 @@
 // Gutters
 // Apply padding and a negative margin to the outside of the container
 // stylelint-disable primer/spacing
-@mixin gutters ($gutter-width: $spacer-3) {
-  margin-right: -$gutter-width;
-  margin-left: -$gutter-width;
+@mixin gutters ($gutter-width: var(--base-size-16)) {
+  margin-right: calc($gutter-width * -1);
+  margin-left: calc($gutter-width * -1);
 
   > [class*='col-'] {
     padding-right: $gutter-width !important;
@@ -45,21 +45,21 @@
 }
 
 .gutter {
-  @include gutters($spacer-3);
+  @include gutters(var(--base-size-16));
 }
 
 .gutter-condensed {
-  @include gutters($spacer-2);
+  @include gutters(var(--base-size-8));
 }
 
 .gutter-spacious {
-  @include gutters($spacer-4);
+  @include gutters(var(--base-size-24));
 }
 
 @each $breakpoint in map-keys($breakpoints) {
   @include breakpoint($breakpoint) {
-    .gutter-#{$breakpoint} { @include gutters($spacer-3); }
-    .gutter-#{$breakpoint}-condensed { @include gutters($spacer-2); }
-    .gutter-#{$breakpoint}-spacious { @include gutters($spacer-4); }
+    .gutter-#{$breakpoint} { @include gutters(var(--base-size-16)); }
+    .gutter-#{$breakpoint}-condensed { @include gutters(var(--base-size-8)); }
+    .gutter-#{$breakpoint}-spacious { @include gutters(var(--base-size-24)); }
   }
 }

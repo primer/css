@@ -9,8 +9,8 @@
   h4,
   h5,
   h6 {
-    margin-top: $spacer-4;
-    margin-bottom: $spacer-3;
+    margin-top: var(--base-size-24);
+    margin-bottom: var(--base-size-16);
     font-weight: $font-weight-bold;
     line-height: $lh-condensed;
 

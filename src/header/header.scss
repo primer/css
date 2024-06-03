@@ -1,7 +1,7 @@
 .Header {
   z-index: 32; // TODO: Figure out z-index system
   display: flex;
-  padding: $spacer-3;
+  padding: var(--base-size-16);
   font-size: $h5-size;
   line-height: $lh-default;
   color: var(--header-fgColor-default, var(--color-header-text));
@@ -12,7 +12,7 @@
 
 .Header-item {
   display: flex;
-  margin-right: $spacer-3;
+  margin-right: var(--base-size-16);
   align-self: stretch;
   align-items: center;
   flex-wrap: nowrap;

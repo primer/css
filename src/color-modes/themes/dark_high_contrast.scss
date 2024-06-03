@@ -1,6 +1,1 @@
-@import '../../support/index.scss';
-@import '@primer/primitives/dist/scss/colors/_dark_high_contrast.scss';
-
-@include color-mode-theme(dark_high_contrast) {
-  @include primer-colors-dark_high_contrast;
-}
+@import '@primer/primitives/dist/css/functional/themes/dark-high-contrast.css';

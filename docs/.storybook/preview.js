@@ -70,15 +70,12 @@ export const decorators = [
     const {parameters} = context
     const defaultStoryType = 'banner'
     const storyType = parameters.storyType || defaultStoryType
-    document.body.setAttribute('data-color-mode', context.globals.theme.startsWith('light') ? 'light' : 'dark')
-    document.body.setAttribute(
-      'data-light-theme',
-      context.globals.theme.startsWith('light') ? context.globals.theme : undefined,
-    )
-    document.body.setAttribute(
-      'data-dark-theme',
-      context.globals.theme.startsWith('dark') ? context.globals.theme : undefined,
-    )
+    const colorMode = context.globals.theme === '' ? 'light' : (context.globals.theme.startsWith('light') ? 'light' : 'dark')
+    const lightTheme = context.globals.theme === '' ? 'light' : (colorMode === 'light' ? context.globals.theme : undefined)
+    const darkTheme = context.globals.theme === '' ? 'dark' : (colorMode === 'dark' ? context.globals.theme : undefined)
+    document.body.setAttribute('data-color-mode', colorMode)
+    document.body.setAttribute('data-light-theme', lightTheme)
+    document.body.setAttribute('data-dark-theme', darkTheme)
     return (
       <>
         {context.globals.theme === 'all' ? (

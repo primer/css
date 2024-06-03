@@ -48,7 +48,7 @@
 
   .anchor {
     float: left;
-    padding-right: $spacer-1;
+    padding-right: var(--base-size-4);
     // stylelint-disable-next-line primer/spacing
     margin-left: -20px;
     line-height: $lh-condensed-ultra;
@@ -67,13 +67,13 @@
   pre,
   details {
     margin-top: 0;
-    margin-bottom: $spacer-3;
+    margin-bottom: var(--base-size-16);
   }
 
   hr {
     height: $em-spacer-3;
     padding: 0;
-    margin: $spacer-4 0;
+    margin: var(--base-size-24) 0;
     background-color: var(--borderColor-default, var(--color-border-default));
     border: 0;
   }

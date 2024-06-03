@@ -10,8 +10,8 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   --Layout-content-width: 100%;
   --Layout-template-columns: 1fr var(--Layout-pane-width);
   --Layout-template-areas: 'content pane';
-  --Layout-column-gap: #{$spacer-3};
-  --Layout-row-gap: #{$spacer-3};
+  --Layout-column-gap: var(--base-size-16);
+  --Layout-row-gap: var(--base-size-16);
 
   // the `px` unit is mandatory for `calc()` execution. See https://stackoverflow.com/a/32518348
   --Layout-outer-spacing-x: 0px; // wrapper margin x
@@ -26,6 +26,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
 @mixin Layout-line-divider {
   position: absolute;
+  // stylelint-disable-next-line primer/spacing
   left: calc(var(--Layout-outer-spacing-x) * -1);
   display: block;
   width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
@@ -36,11 +37,12 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
 @mixin Layout-filled-divider {
   position: absolute;
-  bottom: calc(#{$spacer-2} * -1); // -8px
+  bottom: calc(var(--base-size-8) * -1);
+  // stylelint-disable-next-line primer/spacing
   left: calc(var(--Layout-outer-spacing-x) * -1);
   display: block;
   width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
-  height: #{$spacer-2}; // 8px
+  height: var(--base-size-8);
   content: '';
   background-color: var(--bgColor-inset, var(--color-canvas-inset));
   box-shadow: inset 0 1px $Layout-divider-color, inset 0 -1px $Layout-divider-color;
@@ -255,6 +257,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
       &::before {
         @include Layout-line-divider;
 
+        // stylelint-disable-next-line primer/spacing
         top: calc(#{$border-width * -1} - var(--Layout-row-gap));
       }
     }
@@ -267,6 +270,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
       &::after {
         @include Layout-line-divider;
 
+        // stylelint-disable-next-line primer/spacing
         bottom: calc(#{$border-width * -1} - var(--Layout-row-gap));
       }
     }
@@ -274,24 +278,26 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
     .PageLayout-region--dividerNarrow-filled-before {
       position: relative;
       // stylelint-disable-next-line primer/spacing
-      margin-top: calc(#{$spacer-2} + var(--Layout-row-gap));
+      margin-top: calc(var(--base-size-8) + var(--Layout-row-gap));
 
       &::after {
         @include Layout-filled-divider;
 
-        top: calc(#{$spacer-2 * -1} - var(--Layout-row-gap));
+        // stylelint-disable-next-line primer/spacing
+        top: calc(calc(var(--base-size-8) * -1) - var(--Layout-row-gap));
       }
     }
 
     .PageLayout-region--dividerNarrow-filled-after {
       position: relative;
       // stylelint-disable-next-line primer/spacing
-      margin-bottom: calc(#{$spacer-2} + var(--Layout-row-gap));
+      margin-bottom: calc(var(--base-size-8) + var(--Layout-row-gap));
 
       &::before {
         @include Layout-filled-divider;
 
-        bottom: calc(#{$spacer-2 * -1} - var(--Layout-row-gap));
+        // stylelint-disable-next-line primer/spacing
+        bottom: calc(calc(var(--base-size-8) * -1) - var(--Layout-row-gap));
       }
     }
   }
@@ -330,48 +336,48 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 // outer spacing
 
 .PageLayout--outerSpacing-normal {
-  --Layout-outer-spacing-x: #{$spacer-3};
-  --Layout-outer-spacing-y: #{$spacer-3};
+  --Layout-outer-spacing-x: var(--base-size-16);
+  --Layout-outer-spacing-y: var(--base-size-16);
 
   @include breakpoint(lg) {
-    --Layout-outer-spacing-x: #{$spacer-4};
-    --Layout-outer-spacing-y: #{$spacer-4};
+    --Layout-outer-spacing-x: var(--base-size-24);
+    --Layout-outer-spacing-y: var(--base-size-24);
   }
 }
 
 .PageLayout--outerSpacing-condensed {
-  --Layout-outer-spacing-x: #{$spacer-3};
-  --Layout-outer-spacing-y: #{$spacer-3};
+  --Layout-outer-spacing-x: var(--base-size-16);
+  --Layout-outer-spacing-y: var(--base-size-16);
 }
 
 // inner spacing
 
 .PageLayout--innerSpacing-normal {
-  --Layout-inner-spacing-min: #{$spacer-3};
-  --Layout-inner-spacing-max: #{$spacer-3};
+  --Layout-inner-spacing-min: var(--base-size-16);
+  --Layout-inner-spacing-max: var(--base-size-16);
 
   @include breakpoint(lg) {
-    --Layout-inner-spacing-max: #{$spacer-4};
+    --Layout-inner-spacing-max: var(--base-size-24);
   }
 }
 
 .PageLayout--innerSpacing-condensed {
-  --Layout-inner-spacing-min: #{$spacer-3};
-  --Layout-inner-spacing-max: #{$spacer-3};
+  --Layout-inner-spacing-min: var(--base-size-16);
+  --Layout-inner-spacing-max: var(--base-size-16);
 }
 
 // column gap
 
 .PageLayout--columnGap-normal {
-  --Layout-column-gap: #{$spacer-3};
+  --Layout-column-gap: var(--base-size-16);
 
   @include breakpoint(lg) {
-    --Layout-column-gap: #{$spacer-4};
+    --Layout-column-gap: var(--base-size-24);
   }
 }
 
 .PageLayout--columnGap-condensed {
-  --Layout-column-gap: #{$spacer-3};
+  --Layout-column-gap: var(--base-size-16);
 }
 
 .PageLayout--columnGap-none {
@@ -382,10 +388,10 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 // row gap
 
 .PageLayout--rowGap-normal {
-  --Layout-row-gap: #{$spacer-3};
+  --Layout-row-gap: var(--base-size-16);
 
   @include breakpoint(lg) {
-    --Layout-row-gap: #{$spacer-4};
+    --Layout-row-gap: var(--base-size-24);
   }
 }
 
@@ -395,7 +401,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 }
 
 .PageLayout--rowGap-condensed {
-  --Layout-row-gap: #{$spacer-3};
+  --Layout-row-gap: var(--base-size-16);
 }
 
 // regions

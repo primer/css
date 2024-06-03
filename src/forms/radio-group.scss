@@ -7,7 +7,7 @@
 .radio-label {
   float: left;
   // stylelint-disable-next-line primer/spacing
-  padding: 6px $spacer-3 6px ($spacer-3 + 12px + $spacer-2); // 12px is the size of the radio-input
+  padding: 6px var(--base-size-16) 6px clac(var(--base-size-16) + 12px + var(--base-size-8)); // 12px is the size of the radio-input
   // stylelint-disable-next-line primer/spacing
   margin-left: -1px;
   font-size: $body-font-size;
@@ -35,7 +35,7 @@
   }
 
   .octicon {
-    margin-left: $spacer-1;
+    margin-left: var(--base-size-4);
     color: var(--fgColor-muted, var(--color-fg-subtle));
   }
 }
@@ -44,7 +44,7 @@
   z-index: 3;
   float: left;
   // stylelint-disable-next-line primer/spacing
-  margin: 10px (-$spacer-5) 0 $spacer-3;
+  margin: 10px calc(var(--base-size-32) * -1) 0 var(--base-size-16);
 
   &:disabled {
     position: relative; // enables z-index
