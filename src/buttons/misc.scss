@@ -147,6 +147,7 @@
 
   &.inline {
     position: relative;
+    // stylelint-disable-next-line primer/spacing
     top: -1px;
     display: inline-block;
     // stylelint-disable-next-line primer/spacing

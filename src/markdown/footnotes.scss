@@ -18,12 +18,12 @@
     border-top: $border;
 
     ol {
-      padding-left: $spacer-3;
+      padding-left: var(--base-size-16);
 
       ul {
         display: inline-block;
-        padding-left: $spacer-3;
-        margin-top: $spacer-3;
+        padding-left: var(--base-size-16);
+        margin-top: var(--base-size-16);
       }
     }
 
@@ -33,10 +33,10 @@
 
     li:target::before {
       position: absolute;
-      top: -$spacer-2;
-      right: -$spacer-2;
-      bottom: -$spacer-2;
-      left: -$spacer-4;
+      top: calc(var(--base-size-8) * -1);
+      right: calc(var(--base-size-8) * -1);
+      bottom: calc(var(--base-size-8) * -1);
+      left: calc(var(--base-size-24) * -1);
       pointer-events: none;
       content: '';
       // stylelint-disable-next-line primer/borders

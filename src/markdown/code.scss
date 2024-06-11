@@ -42,7 +42,7 @@
   }
 
   .highlight {
-    margin-bottom: $spacer-3;
+    margin-bottom: var(--base-size-16);
 
     pre {
       margin-bottom: 0;
@@ -52,7 +52,7 @@
 
   .highlight pre,
   pre {
-    padding: $spacer-3;
+    padding: var(--base-size-16);
     overflow: auto;
     // stylelint-disable-next-line primer/typography
     font-size: 85%;

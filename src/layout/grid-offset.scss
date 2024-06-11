@@ -2,7 +2,6 @@
 
 // Offset Columns
 
-// stylelint-disable primer/spacing
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
     .offset#{$variant}-1 { margin-left: (1 * 0.0833333333 * 100%) !important; }

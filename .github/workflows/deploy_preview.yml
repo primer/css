@@ -14,13 +14,13 @@ permissions:
 jobs:
   deploy:
     if: ${{ github.repository == 'primer/css' }}
-    uses: primer/.github/.github/workflows/deploy_preview.yml@main
+    uses: primer/.github/.github/workflows/deploy_preview.yml@v2.1.0
     name: Deploy preview
     secrets:
       gh_token: ${{ secrets.GITHUB_TOKEN }}
     with:
-      node_version: 18
-      install: npm ci && cd docs && npm ci && cd ..
+      node_version: 20
+      install: npm i && cd docs && npm i && cd ..
       build: npm run build:docs:preview
       output_dir: docs/public
 
@@ -32,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: chrnorm/deployment-action@v2.0.5
+      - uses: chrnorm/deployment-action@v2.0.7
         name: Create GitHub deployment for storybook
         id: storybook
         with:
@@ -42,7 +42,7 @@ jobs:
 
       - name: Update storybook deployment status (success)
         if: success()
-        uses: chrnorm/deployment-status@v2.0.1
+        uses: chrnorm/deployment-status@v2.0.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment-url: '${{ needs.deploy.outputs.deployment_url }}/storybook'
@@ -51,7 +51,7 @@ jobs:
 
       - name: Update storybook deployment status (failure)
         if: failure()
-        uses: chrnorm/deployment-status@v2.0.1
+        uses: chrnorm/deployment-status@v2.0.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           state: 'failure'

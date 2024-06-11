@@ -5,7 +5,7 @@
   position: relative;
   display: inline-block;
   // stylelint-disable-next-line primer/spacing
-  padding: 5px $spacer-3;
+  padding: 5px var(--base-size-16);
   font-size: $body-font-size;
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
@@ -35,7 +35,7 @@
   }
 
   .octicon {
-    margin-right: $spacer-1;
+    margin-right: var(--base-size-4);
     color: var(--fgColor-muted);
     vertical-align: text-bottom;
 
@@ -54,7 +54,7 @@
   }
 
   .dropdown-caret {
-    margin-left: $spacer-1;
+    margin-left: var(--base-size-4);
     opacity: 0.8;
   }
 }

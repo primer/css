@@ -72,7 +72,7 @@
 
     // chevron-left
     .previous_page::before {
-      margin-right: $spacer-1;
+      margin-right: var(--base-size-4);
       clip-path:
         polygon(
           9.8px 12.8px,
@@ -89,7 +89,7 @@
 
     // chevron-right
     .next_page::after {
-      margin-left: $spacer-1;
+      margin-left: var(--base-size-4);
       clip-path:
         polygon(
           6.2px 3.2px,
@@ -146,8 +146,8 @@
 
 // Unified centered pagination across the site
 .paginate-container {
-  margin-top: $spacer-3;
-  margin-bottom: $spacer-3;
+  margin-top: var(--base-size-16);
+  margin-bottom: var(--base-size-16);
   text-align: center;
 
   .pagination {

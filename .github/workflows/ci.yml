@@ -16,9 +16,7 @@ jobs:
       - run: npm ci
       - run: npm run dist
       - name: Lint source files
-        run: npx stylelint --fix
-      - name: Look for unused stylelint:disable lines
-        run: npm run stylelint -- --report-needless-disables
+        run: npm run stylelint:fix
       - name: Push up any fixes
         if: ${{ github.event_name == 'pull_request' }}
         uses: stefanzweifel/git-auto-commit-action@v5

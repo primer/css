@@ -2,7 +2,7 @@
 
 .Toast {
   display: flex;
-  margin: $spacer-2;
+  margin: var(--base-size-8);
   color: var(--fgColor-default);
   background-color: var(--bgColor-default);
   border-radius: $border-radius;
@@ -11,7 +11,7 @@
   @include breakpoint(sm) {
     width: max-content;
     max-width: 450px;
-    margin: $spacer-3;
+    margin: var(--base-size-16);
   }
 }
 
@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: $spacer-3 * 3;
+  width: calc(var(--base-size-16) * 3);
   flex-shrink: 0;
   color: var(--fgColor-onEmphasis);
   background-color: var(--bgColor-accent-emphasis);
@@ -30,12 +30,12 @@
 }
 
 .Toast-content {
-  padding: $spacer-3;
+  padding: var(--base-size-16);
 }
 
 .Toast-dismissButton {
   max-height: 54px; // keeps button aligned to the top
-  padding: $spacer-3;
+  padding: var(--base-size-16);
   color: inherit;
   background-color: transparent;
   border: 0;

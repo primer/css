@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env -S NODE_NO_WARNINGS=1 node
 // Disables stylelint rules in SASS/CSS files with next-line comments. This is
 // useful when introducing a new rule that causes many failures. The comments
 // can be fixed and removed at while updating the file later.
@@ -10,8 +10,8 @@
 import fs from 'fs'
 import {execFile} from 'child_process'
 
-execFile('stylelint', ['--quiet', '--formatter', 'json', process.argv[2]], (error, stdout) => {
-  for (const result of JSON.parse(stdout)) {
+execFile('stylelint', ['--quiet', '--formatter', 'json', process.argv[2]], (error, stdout, stderr) => {
+  for (const result of JSON.parse(stdout || stderr || '[]')) {
     const filename = result.source
     const jsLines = fs.readFileSync(filename, 'utf8').split('\n')
     const offensesByLine = {}

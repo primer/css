@@ -30,7 +30,7 @@
   // Autocomplete with embedded icon
   .form-control.autocomplete-embedded-icon-wrap {
     display: inline-flex;
-    padding: $spacer-1 * 1.25 $spacer-2;
+    padding: calc(var(--base-size-4) * 1.25) var(--base-size-8);
   }
 }
 
