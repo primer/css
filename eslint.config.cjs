@@ -1,4 +1,4 @@
-{
+export.default = {
   "root": true,
   "parserOptions": {
     "sourceType": "module",
