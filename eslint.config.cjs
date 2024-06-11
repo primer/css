@@ -1,7 +1,6 @@
-module.exports = {
-  "root": true,
-  "parserOptions": {
+module.exports = [{
+  "languageOptions": {
     "sourceType": "module",
     "ecmaVersion": "latest"
   }
-}
+}]
