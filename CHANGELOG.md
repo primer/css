@@ -1,5 +1,11 @@
 # @primer/css
 
+## 21.3.3
+
+### Patch Changes
+
+- [#2644](https://github.com/primer/css/pull/2644) [`eba2b2c`](https://github.com/primer/css/commit/eba2b2c157efc2e16a7bf36db0882c6f330b7bd4) Thanks [@camertron](https://github.com/camertron)! - Fix 'clac' -> 'calc' typo
+
 ## 21.3.2
 
 ### Patch Changes
