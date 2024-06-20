@@ -28,7 +28,7 @@
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
   color: var(--fgColor-default, var(--color-fg-default));
-  border: $border-width $border-style var(--borderColor-default, var(--color-border-default));
+  border: $border-width $border-style var(--control-borderColor-rest, var(--color-border-default));
 
   + .subnav-item {
     // stylelint-disable-next-line primer/spacing
