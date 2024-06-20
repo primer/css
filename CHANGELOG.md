@@ -1,5 +1,13 @@
 # @primer/css
 
+## 21.3.2
+
+### Patch Changes
+
+- [#2643](https://github.com/primer/css/pull/2643) [`ab6076c`](https://github.com/primer/css/commit/ab6076c62bac967d5d0c805744e50cc8d73d4171) Thanks [@langermank](https://github.com/langermank)! - Use `control` borders for subnav + disabled button fix
+
+- [#2634](https://github.com/primer/css/pull/2634) [`af3ab76`](https://github.com/primer/css/commit/af3ab76454fd3045315082a14cdc5bdfcabd860a) Thanks [@jonrohan](https://github.com/jonrohan)! - Upgrade to @primer/primtives@8.2.0 and @primer/stylelint-config@13.0.0-rc
+
 ## 21.3.1
 
 ### Patch Changes
