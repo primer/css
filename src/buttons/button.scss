@@ -93,8 +93,8 @@
   &.disabled,
   &[aria-disabled='true'] {
     color: var(--fgColor-disabled);
-    background-color: var(--button-default-bgColor-rest);
-    border-color: var(--button-default-borderColor-rest);
+    background-color: var(--button-default-bgColor-disabled);
+    border-color: var(--button-default-borderColor-disabled);
 
     .octicon {
       color: var(--fgColor-disabled);

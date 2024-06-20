@@ -7,7 +7,7 @@
 .radio-label {
   float: left;
   // stylelint-disable-next-line primer/spacing
-  padding: 6px var(--base-size-16) 6px clac(var(--base-size-16) + 12px + var(--base-size-8)); // 12px is the size of the radio-input
+  padding: 6px var(--base-size-16) 6px calc(var(--base-size-16) + 12px + var(--base-size-8)); // 12px is the size of the radio-input
   // stylelint-disable-next-line primer/spacing
   margin-left: -1px;
   font-size: $body-font-size;
