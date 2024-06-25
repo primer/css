@@ -1,5 +1,11 @@
 # @primer/css
 
+## 21.3.4
+
+### Patch Changes
+
+- [#2651](https://github.com/primer/css/pull/2651) [`e329973`](https://github.com/primer/css/commit/e329973d4d788b8b6d2688a907f88c8458b6db7a) Thanks [@jonrohan](https://github.com/jonrohan)! - Bug fix: Removing complex padding calc on kbd
+
 ## 21.3.3
 
 ### Patch Changes
