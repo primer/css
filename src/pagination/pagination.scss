@@ -10,7 +10,7 @@
     font-style: normal;
     // stylelint-disable-next-line primer/typography
     line-height: 20px;
-    color: var(--fgColor-default, var(--color-fg-default));
+    color: var(--fgColor-default);
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -23,26 +23,26 @@
     &:hover,
     &:focus {
       text-decoration: none;
-      border-color: var(--borderColor-default, var(--color-border-default));
+      border-color: var(--borderColor-default);
       transition-duration: 0.1s;
     }
 
     &:active {
-      border-color: var(--borderColor-muted, var(--color-border-muted));
+      border-color: var(--borderColor-muted);
       transition: none;
     }
   }
 
   .previous_page,
   .next_page {
-    color: var(--fgColor-accent, var(--color-accent-fg));
+    color: var(--fgColor-accent);
   }
 
   .current,
   .current:hover,
   [aria-current]:not([aria-current='false']) {
-    color: var(--fgColor-onEmphasis, var(--color-fg-on-emphasis));
-    background-color: var(--bgColor-accent-emphasis, var(--color-accent-emphasis));
+    color: var(--fgColor-onEmphasis);
+    background-color: var(--bgColor-accent-emphasis);
     border-color: transparent;
   }
 
@@ -52,7 +52,7 @@
   .gap:hover,
   .disabled:hover,
   [aria-disabled='true']:hover {
-    color: var(--fgColor-disabled, var(--color-primer-fg-disabled));
+    color: var(--fgColor-disabled);
     cursor: default;
     border-color: transparent;
   }
