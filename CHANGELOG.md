@@ -1,5 +1,11 @@
 # @primer/css
 
+## 21.3.5
+
+### Patch Changes
+
+- [#2657](https://github.com/primer/css/pull/2657) [`b87c379`](https://github.com/primer/css/commit/b87c3796fbb7b2127c98e3fda086f9f1cfd8bc9b) Thanks [@jonrohan](https://github.com/jonrohan)! - Import `primitives/index.scss` in the main `primer.css` file.
+
 ## 21.3.4
 
 ### Patch Changes
