@@ -1,5 +1,11 @@
 # @primer/css
 
+## 21.3.6
+
+### Patch Changes
+
+- [#2624](https://github.com/primer/css/pull/2624) [`7e62532`](https://github.com/primer/css/commit/7e6253292c3de10a1f333cfc4e6e3216e6a53ab8) Thanks [@sideshowbarker](https://github.com/sideshowbarker)! - drop “display: none” from details element contents styling
+
 ## 21.3.5
 
 ### Patch Changes
