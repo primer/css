@@ -8,6 +8,7 @@
     width: max-content;
     max-width: 100%;
     overflow: auto;
+    font-variant: tabular-nums;
 
     th {
       font-weight: $font-weight-bold;
