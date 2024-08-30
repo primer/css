@@ -1,6 +1,14 @@
 name: Welcome
 on:
   pull_request:
+    types:
+      # On by default if you specify no types.
+      - "opened"
+      - "reopened"
+      - "synchronize"
+      # For `skip-label` only.
+      - "labeled"
+      - "unlabeled"
 
 jobs:
   release-template:
@@ -39,6 +47,22 @@ jobs:
               })
             }
 
+  check-for-changeset:
+    name: Check for changeset
+    runs-on: ubuntu-latest
+    env:
+      SKIP_LABEL: "skip changeset"
+    steps:
+      - if: "contains(github.event.pull_request.labels.*.name, 'skip changeset')"
+        run: echo "passed"; exit 0;
+      - if: "!contains(github.event.pull_request.labels.*.name, 'skip changeset')"
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - if: "!contains(github.event.pull_request.labels.*.name, 'skip changeset')"
+        name: "Check for changeset"
+        run: script/check-for-changeset
+        
   bundle-stats:
     needs: release-template
     runs-on: ubuntu-latest
