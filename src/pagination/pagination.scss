@@ -16,7 +16,9 @@
     vertical-align: middle;
     cursor: pointer;
     user-select: none;
+    // stylelint-disable-next-line primer/borders
     border: $border-width $border-style transparent;
+    // stylelint-disable-next-line primer/borders
     border-radius: $border-radius;
     transition: border-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
 

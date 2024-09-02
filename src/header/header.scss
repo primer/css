@@ -37,6 +37,7 @@
 .Header-input {
   color: var(--header-fgColor-default, var(--color-header-text));
   background-color: var(--headerSearch-bgColor, var(--color-header-search-bg));
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style var(--headerSearch-borderColor, var(--color-header-search-border));
   box-shadow: none;
 

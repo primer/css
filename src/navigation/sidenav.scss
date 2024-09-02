@@ -16,6 +16,7 @@
   text-align: left;
   background-color: transparent;
   border: 0;
+  // stylelint-disable-next-line primer/borders
   border-top: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
 
   &:first-child {
