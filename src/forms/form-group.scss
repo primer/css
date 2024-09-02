@@ -176,8 +176,11 @@
       margin: var(--base-size-8) 0 0;
       font-size: $font-size-small;
       font-weight: $font-weight-normal;
+      // stylelint-disable-next-line primer/borders
       border-style: $border-style;
+      // stylelint-disable-next-line primer/borders
       border-width: $border-width;
+      // stylelint-disable-next-line primer/borders
       border-radius: $border-radius;
 
       &::after,

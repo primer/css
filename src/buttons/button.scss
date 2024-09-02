@@ -14,7 +14,9 @@
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style;
+  // stylelint-disable-next-line primer/borders
   border-radius: $border-radius;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 

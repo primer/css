@@ -15,6 +15,7 @@
   line-height: 20px; // Specifically not inherit our `<body>` default
   color: var(--fgColor-default, var(--color-fg-default));
   cursor: pointer;
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style var(--borderColor-default, var(--color-border-default));
 
   :checked + & {
@@ -25,12 +26,16 @@
 
   &:first-of-type {
     margin-left: 0;
+    // stylelint-disable-next-line primer/borders
     border-top-left-radius: $border-radius;
+    // stylelint-disable-next-line primer/borders
     border-bottom-left-radius: $border-radius;
   }
 
   &:last-of-type {
+    // stylelint-disable-next-line primer/borders
     border-top-right-radius: $border-radius;
+    // stylelint-disable-next-line primer/borders
     border-bottom-right-radius: $border-radius;
   }
 

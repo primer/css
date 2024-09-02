@@ -12,6 +12,7 @@
 .subnav-bordered {
   // stylelint-disable-next-line primer/spacing
   padding-bottom: 20px;
+  // stylelint-disable-next-line primer/borders
   border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
 }
 
@@ -28,6 +29,7 @@
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
   color: var(--fgColor-default, var(--color-fg-default));
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style var(--control-borderColor-rest, var(--color-border-default));
 
   + .subnav-item {
@@ -67,12 +69,16 @@
   }
 
   &:first-child {
+    // stylelint-disable-next-line primer/borders
     border-top-left-radius: $border-radius;
+    // stylelint-disable-next-line primer/borders
     border-bottom-left-radius: $border-radius;
   }
 
   &:last-child {
+    // stylelint-disable-next-line primer/borders
     border-top-right-radius: $border-radius;
+    // stylelint-disable-next-line primer/borders
     border-bottom-right-radius: $border-radius;
   }
 }
