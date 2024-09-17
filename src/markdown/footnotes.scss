@@ -13,6 +13,7 @@
   }
 
   .footnotes {
+    // stylelint-disable-next-line primer/typography
     font-size: $h6-size;
     color: var(--fgColor-muted, var(--color-fg-muted));
     // stylelint-disable-next-line primer/borders
@@ -51,6 +52,7 @@
     }
 
     .data-footnote-backref g-emoji {
+      // stylelint-disable-next-line primer/typography
       font-family: monospace;
     }
   }

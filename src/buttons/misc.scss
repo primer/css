@@ -90,6 +90,7 @@
   padding: 5px;
   // stylelint-disable-next-line primer/spacing
   margin-left: 5px;
+  // stylelint-disable-next-line primer/typography
   line-height: $lh-condensed-ultra;
   color: var(--fgColor-muted, var(--color-fg-muted));
   vertical-align: middle;
@@ -155,6 +156,7 @@
     display: inline-block;
     // stylelint-disable-next-line primer/spacing
     margin-left: 5px;
+    // stylelint-disable-next-line primer/typography
     line-height: 0;
   }
 }
@@ -165,7 +167,9 @@
   height: 12px;
   // stylelint-disable-next-line primer/spacing
   padding: 0 5px 5px;
+  // stylelint-disable-next-line primer/typography
   font-size: $font-size-small;
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/typography
   line-height: 6px;
@@ -210,7 +214,9 @@
   float: left;
   // stylelint-disable-next-line primer/spacing
   padding: 3px 12px;
+  // stylelint-disable-next-line primer/typography
   font-size: $font-size-small;
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;

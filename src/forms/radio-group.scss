@@ -10,6 +10,7 @@
   padding: 6px var(--base-size-16) 6px calc(var(--base-size-16) + 12px + var(--base-size-8)); // 12px is the size of the radio-input
   // stylelint-disable-next-line primer/spacing
   margin-left: -1px;
+  // stylelint-disable-next-line primer/typography
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 20px; // Specifically not inherit our `<body>` default
