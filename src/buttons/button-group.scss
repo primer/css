@@ -23,13 +23,18 @@
   border-radius: 0;
 
   &:first-child {
+    // stylelint-disable-next-line primer/borders
     border-top-left-radius: $border-radius;
+    // stylelint-disable-next-line primer/borders
     border-bottom-left-radius: $border-radius;
   }
 
   &:last-child {
+    // stylelint-disable-next-line primer/borders
     border-right-width: $border-width;
+    // stylelint-disable-next-line primer/borders
     border-top-right-radius: $border-radius;
+    // stylelint-disable-next-line primer/borders
     border-bottom-right-radius: $border-radius;
   }
 
@@ -38,6 +43,7 @@
   &:focus,
   &:active,
   &:hover {
+    // stylelint-disable-next-line primer/borders
     border-right-width: $border-width;
 
     + .BtnGroup-item,
@@ -51,13 +57,18 @@
   float: left;
 
   &:first-child .BtnGroup-item {
+    // stylelint-disable-next-line primer/borders
     border-top-left-radius: $border-radius;
+    // stylelint-disable-next-line primer/borders
     border-bottom-left-radius: $border-radius;
   }
 
   &:last-child .BtnGroup-item {
+    // stylelint-disable-next-line primer/borders
     border-right-width: $border-width;
+    // stylelint-disable-next-line primer/borders
     border-top-right-radius: $border-radius;
+    // stylelint-disable-next-line primer/borders
     border-bottom-right-radius: $border-radius;
   }
 
@@ -72,6 +83,7 @@
   &:active,
   &:hover {
     .BtnGroup-item {
+      // stylelint-disable-next-line primer/borders
       border-right-width: $border-width;
     }
 

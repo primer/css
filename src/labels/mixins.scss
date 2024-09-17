@@ -12,7 +12,9 @@
   font-weight: $font-weight-semibold;
   line-height: 18px;
   white-space: nowrap;
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style transparent;
+  // stylelint-disable-next-line primer/borders
   border-radius: 2em;
 }
 

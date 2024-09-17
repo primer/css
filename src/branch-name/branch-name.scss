@@ -10,6 +10,7 @@
   color: var(--fgColor-muted, var(--color-fg-muted));
   word-break: break-all;
   background-color: var(--bgColor-accent-muted, var(--color-accent-subtle));
+  // stylelint-disable-next-line primer/borders
   border-radius: $border-radius;
 
   .octicon {

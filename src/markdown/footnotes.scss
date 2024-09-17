@@ -15,6 +15,7 @@
   .footnotes {
     font-size: $h6-size;
     color: var(--fgColor-muted, var(--color-fg-muted));
+    // stylelint-disable-next-line primer/borders
     border-top: $border;
 
     ol {
@@ -41,6 +42,7 @@
       content: '';
       // stylelint-disable-next-line primer/borders
       border: 2px $border-style var(--borderColor-accent-emphasis, var(--color-accent-emphasis));
+      // stylelint-disable-next-line primer/borders
       border-radius: $border-radius;
     }
 

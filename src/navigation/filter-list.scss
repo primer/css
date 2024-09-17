@@ -35,6 +35,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
+  // stylelint-disable-next-line primer/borders
   border-radius: $border-radius;
 
   &:hover {

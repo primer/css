@@ -17,7 +17,9 @@
   background-color: var(--bgColor-default, var(--color-canvas-default));
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style var(--control-borderColor-rest, var(--color-border-default));
+  // stylelint-disable-next-line primer/borders
   border-radius: $border-radius;
   box-shadow: var(--shadow-inset, var(--color-primer-shadow-inset));
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
@@ -43,6 +45,7 @@
   &.border-0 {
     &:focus,
     &:focus-visible {
+      // stylelint-disable-next-line primer/borders
       border: $border-width $border-style var(--borderColor-accent-emphasis, var(--color-accent-fg)) !important;
     }
   }
@@ -143,6 +146,7 @@ textarea.form-control {
       padding: 2px var(--base-size-4);
       font-style: normal;
       background: var(--bgColor-attention-muted, var(--color-attention-subtle));
+      // stylelint-disable-next-line primer/borders
       border-radius: $border-radius;
     }
   }
@@ -254,7 +258,9 @@ input::-webkit-inner-spin-button {
   font-size: $h5-size;
   color: var(--fgColor-attention, var(--color-attention-fg));
   background: var(--bgColor-attention-muted, var(--color-attention-subtle));
+  // stylelint-disable-next-line primer/borders
   border: $border-width $border-style var(--borderColor-attention-emphasis, var(--color-attention-emphasis));
+  // stylelint-disable-next-line primer/borders
   border-radius: $border-radius;
 
   p {
