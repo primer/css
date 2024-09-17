@@ -1,0 +1,28 @@
+#! /bin/bash
+
+DEEPEN_LENGTH=${DEEPEN_LENGTH:-10}
+MAX_DEPTH=${MAX_DEPTH:-300}
+
+depth=0
+
+# Fetch the base ref, i.e. main
+git fetch --no-tags --progress --depth=1 origin "+refs/heads/$GITHUB_BASE_REF:refs/heads/$GITHUB_BASE_REF"
+
+# Keep fetching more commits until a merge base can be found
+while [ -z "$(git merge-base "$GITHUB_BASE_REF" "origin/$GITHUB_HEAD_REF")" ]; do
+  git fetch --no-tags -q --deepen="$DEEPEN_LENGTH" origin "$GITHUB_BASE_REF" "$GITHUB_HEAD_REF" > /dev/null
+  depth=$(( depth + $DEEPEN_LENGTH ))
+
+  # Make sure we don't end up in an infinite loop
+  if [[ "$depth" -ge "$MAX_DEPTH" ]]; then
+    echo "Could not find merge base, max depth exceeded."
+    exit 1
+  fi
+done
+
+# Check for added .md files in the .changeset directory
+git diff --name-only origin/${GITHUB_BASE_REF}...origin/${GITHUB_HEAD_REF} | grep '.changeset/.*.md' > /dev/null || (
+  exit_code=$?
+  echo "No changeset found. If these changes should not result in a new version, apply the ${SKIP_LABEL} label to this pull request. If these changes should result in a version bump, please add a changeset https://git.io/J6QvQ"
+  exit "${exit_code}"
+)
