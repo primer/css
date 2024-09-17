@@ -45,6 +45,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   height: var(--base-size-8);
   content: '';
   background-color: var(--bgColor-inset, var(--color-canvas-inset));
+  // stylelint-disable-next-line primer/box-shadow
   box-shadow: inset 0 1px $Layout-divider-color, inset 0 -1px $Layout-divider-color;
 }
 

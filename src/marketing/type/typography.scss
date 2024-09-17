@@ -6,7 +6,9 @@
 .h4-mktg,
 .h5-mktg,
 .h6-mktg {
+  // stylelint-disable-next-line primer/typography
   font-family: $font-mktg;
+  // stylelint-disable-next-line primer/typography
   font-feature-settings: $mktg-font-feature-settings;
   // stylelint-disable-next-line primer/typography
   font-weight: $mktg-header-weight-default !important;
@@ -19,14 +21,19 @@
     $pairing-md: map-get($mktg-header-pairings, nth($sizes, 2));
     $pairing-lg: map-get($mktg-header-pairings, nth($sizes, 3));
 
+    // stylelint-disable-next-line primer/typography
     font-size: map-get($pairing, 'size') !important;
+    // stylelint-disable-next-line primer/typography
     line-height: map-get($pairing, 'lh') !important;
 
+    // stylelint-disable-next-line primer/typography
     @if (map-get($pairing, 'size') >= $mktg-header-weight-threshold) { font-weight: $mktg-header-weight-large !important; }
 
     @if (nth($sizes, 1) != nth($sizes, 2)) {
       @include breakpoint(md) {
+        // stylelint-disable-next-line primer/typography
         font-size: map-get($pairing-md, 'size') !important;
+        // stylelint-disable-next-line primer/typography
         line-height: map-get($pairing-md, 'lh') !important;
 
         @if (map-get($pairing-md, 'size') >= $mktg-header-spacing-threshold and map-get($pairing, 'size') < $mktg-header-spacing-threshold) {
@@ -34,6 +41,7 @@
         }
 
         @if (map-get($pairing-md, 'size') >= $mktg-header-weight-threshold and map-get($pairing, 'size') < $mktg-header-weight-threshold) {
+          // stylelint-disable-next-line primer/typography
           font-weight: $mktg-header-weight-large !important;
         }
       }
@@ -41,7 +49,9 @@
 
     @if (nth($sizes, 2) != nth($sizes, 3)) {
       @include breakpoint(lg) {
+        // stylelint-disable-next-line primer/typography
         font-size: map-get($pairing-lg, 'size') !important;
+        // stylelint-disable-next-line primer/typography
         line-height: map-get($pairing-lg, 'lh') !important;
 
         @if (map-get($pairing-lg, 'size') >= $mktg-header-spacing-threshold and map-get($pairing-md, 'size') < $mktg-header-spacing-threshold) {
@@ -49,6 +59,7 @@
         }
 
         @if (map-get($pairing-lg, 'size') >= $mktg-header-weight-threshold and map-get($pairing-md, 'size') < $mktg-header-weight-threshold) {
+          // stylelint-disable-next-line primer/typography
           font-weight: $mktg-header-weight-large !important;
         }
       }
@@ -63,8 +74,11 @@
 .f4-mktg,
 .f5-mktg,
 .f6-mktg {
+  // stylelint-disable-next-line primer/typography
   font-family: $font-mktg;
+  // stylelint-disable-next-line primer/typography
   font-feature-settings: $mktg-font-feature-settings;
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-normal;
 }
 
@@ -74,16 +88,21 @@
     $pairing-md: map-get($mktg-body-pairings, nth($sizes, 2));
     $pairing-lg: map-get($mktg-body-pairings, nth($sizes, 3));
 
+    // stylelint-disable-next-line primer/typography
     font-size: map-get($pairing, 'size') !important;
+    // stylelint-disable-next-line primer/typography
     line-height: map-get($pairing, 'lh') !important;
 
     @if (map-get($pairing, 'size') >= $mktg-body-spacing-threshold) { letter-spacing: $mktg-body-spacing-large; }
 
+    // stylelint-disable-next-line primer/typography
     @if (map-get($pairing, 'size') >= $mktg-body-weight-threshold) { font-weight: $font-weight-semibold; }
 
     @if (nth($sizes, 1) != nth($sizes, 2)) {
       @include breakpoint(md) {
+        // stylelint-disable-next-line primer/typography
         font-size: map-get($pairing-md, 'size') !important;
+        // stylelint-disable-next-line primer/typography
         line-height: map-get($pairing-md, 'lh') !important;
 
         @if (map-get($pairing-md, 'size') >= $mktg-body-spacing-threshold and map-get($pairing, 'size') < $mktg-body-spacing-threshold) {
@@ -91,6 +110,7 @@
         }
 
         @if (map-get($pairing-md, 'size') >= $mktg-body-weight-threshold and map-get($pairing, 'size') < $mktg-body-weight-threshold) {
+          // stylelint-disable-next-line primer/typography
           font-weight: $font-weight-medium;
         }
       }
@@ -98,7 +118,9 @@
 
     @if (nth($sizes, 2) != nth($sizes, 3)) {
       @include breakpoint(lg) {
+        // stylelint-disable-next-line primer/typography
         font-size: map-get($pairing-lg, 'size') !important;
+        // stylelint-disable-next-line primer/typography
         line-height: map-get($pairing-lg, 'lh') !important;
 
         @if (map-get($pairing-lg, 'size') >= $mktg-body-spacing-threshold and map-get($pairing-md, 'size') < $mktg-body-spacing-threshold) {
@@ -106,6 +128,7 @@
         }
 
         @if (map-get($pairing-lg, 'size') >= $mktg-body-weight-threshold and map-get($pairing-md, 'size') < $mktg-body-weight-threshold) {
+          // stylelint-disable-next-line primer/typography
           font-weight: $font-weight-medium;
         }
       }
@@ -114,5 +137,6 @@
 }
 
 .text-medium {
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-medium !important;
 }

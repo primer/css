@@ -11,7 +11,9 @@
   h6 {
     margin-top: var(--base-size-24);
     margin-bottom: var(--base-size-16);
+    // stylelint-disable-next-line primer/typography
     font-weight: $font-weight-bold;
+    // stylelint-disable-next-line primer/typography
     line-height: $lh-condensed;
 
     .octicon-link {
@@ -60,6 +62,7 @@
   }
 
   h4 {
+    // stylelint-disable-next-line primer/typography
     font-size: 1em;
   }
 

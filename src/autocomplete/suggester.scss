@@ -21,11 +21,13 @@
   li {
     display: block;
     padding: var(--base-size-4) var(--base-size-8);
+    // stylelint-disable-next-line primer/typography
     font-weight: $font-weight-semibold;
     // stylelint-disable-next-line primer/borders
     border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
 
     small {
+      // stylelint-disable-next-line primer/typography
       font-weight: $font-weight-normal;
       color: var(--fgColor-muted, var(--color-fg-muted));
     }

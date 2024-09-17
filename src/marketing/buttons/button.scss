@@ -6,7 +6,9 @@
   padding: 0.9rem 1.5rem 1.1rem;
   // stylelint-disable-next-line primer/typography
   font-size: 1rem;
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/typography
   line-height: 1;
   color: var(--bgColor-default, var(--color-canvas-default));
   text-align: center;
@@ -41,6 +43,7 @@
 
   &:hover {
     text-decoration: none;
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: var(--color-mktg-btn-shadow-hover) !important;
   }
 
@@ -86,6 +89,7 @@
 .btn-muted-mktg {
   color: var(--fgColor-default, var(--color-fg-default)) !important;
   background: none !important;
+  // stylelint-disable-next-line primer/box-shadow
   box-shadow: var(--color-mktg-btn-shadow-outline);
 
   &::before {
@@ -93,6 +97,7 @@
   }
 
   &:hover {
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: var(--color-mktg-btn-shadow-hover-muted) !important;
   }
 
@@ -117,6 +122,7 @@
   }
 
   &:hover {
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: var(--color-mktg-btn-shadow-hover-muted) !important;
   }
 }
