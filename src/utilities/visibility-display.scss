@@ -99,9 +99,9 @@
   height: 1px;
   padding: 0;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip-path: rect(0 0 0 0);
   // Workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=1241631
-  word-wrap: normal;
+  overflow-wrap: normal;
   border: 0;
 }
 
