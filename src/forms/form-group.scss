@@ -198,7 +198,7 @@
         height: 0;
         pointer-events: none;
         content: ' ';
-        // stylelint-disable-next-line primer/borders
+        // stylelint-disable-next-line primer/borders, primer/colors
         border: $border-style transparent;
       }
 

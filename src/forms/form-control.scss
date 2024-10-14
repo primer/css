@@ -18,7 +18,7 @@
   background-color: var(--bgColor-default, var(--color-canvas-default));
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
-  // stylelint-disable-next-line primer/borders
+  // stylelint-disable-next-line primer/borders, primer/colors
   border: $border-width $border-style var(--control-borderColor-rest, var(--color-border-default));
   // stylelint-disable-next-line primer/borders
   border-radius: $border-radius;
@@ -46,7 +46,7 @@
   &.border-0 {
     &:focus,
     &:focus-visible {
-      // stylelint-disable-next-line primer/borders
+      // stylelint-disable-next-line primer/borders, primer/colors
       border: $border-width $border-style var(--borderColor-accent-emphasis, var(--color-accent-fg)) !important;
     }
   }
@@ -268,7 +268,7 @@ input::-webkit-inner-spin-button {
   font-size: $h5-size;
   color: var(--fgColor-attention, var(--color-attention-fg));
   background: var(--bgColor-attention-muted, var(--color-attention-subtle));
-  // stylelint-disable-next-line primer/borders
+  // stylelint-disable-next-line primer/borders, primer/colors
   border: $border-width $border-style var(--borderColor-attention-emphasis, var(--color-attention-emphasis));
   // stylelint-disable-next-line primer/borders
   border-radius: $border-radius;

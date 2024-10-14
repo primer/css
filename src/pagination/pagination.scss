@@ -16,7 +16,7 @@
     vertical-align: middle;
     cursor: pointer;
     user-select: none;
-    // stylelint-disable-next-line primer/borders
+    // stylelint-disable-next-line primer/borders, primer/colors
     border: $border-width $border-style transparent;
     // stylelint-disable-next-line primer/borders
     border-radius: $border-radius;
@@ -68,7 +68,6 @@
       height: 16px;
       vertical-align: text-bottom;
       content: '';
-      // stylelint-disable-next-line primer/colors
       background-color: currentColor;
     }
 

@@ -32,6 +32,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
   height: 1px;
   content: '';
+  // stylelint-disable-next-line primer/colors
   background-color: $Layout-divider-color;
 }
 
@@ -77,7 +78,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
     .PageLayout-header--hasDivider {
       // stylelint-disable-next-line primer/spacing
       padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
-      // stylelint-disable-next-line primer/borders
+      // stylelint-disable-next-line primer/borders, primer/colors
       border-bottom: $border-width solid $Layout-divider-color;
     }
 
@@ -86,7 +87,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
     .PageLayout-footer--hasDivider {
       // stylelint-disable-next-line primer/spacing
       padding-top: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
-      // stylelint-disable-next-line primer/borders
+      // stylelint-disable-next-line primer/borders, primer/colors
       border-top: $border-width solid $Layout-divider-color;
     }
 
@@ -95,7 +96,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
     &.PageLayout--hasPaneDivider {
       &.PageLayout--panePos-start {
         .PageLayout-pane {
-          // stylelint-disable-next-line primer/borders
+          // stylelint-disable-next-line primer/borders, primer/colors
           border-right: $border-width solid $Layout-divider-color;
         }
 
@@ -116,7 +117,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
       &.PageLayout--panePos-end {
         .PageLayout-pane {
-          // stylelint-disable-next-line primer/borders
+          // stylelint-disable-next-line primer/borders, primer/colors
           border-left: $border-width solid $Layout-divider-color;
         }
 

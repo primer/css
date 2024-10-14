@@ -12,7 +12,7 @@
 .subnav-bordered {
   // stylelint-disable-next-line primer/spacing
   padding-bottom: 20px;
-  // stylelint-disable-next-line primer/borders
+  // stylelint-disable-next-line primer/borders, primer/colors
   border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
 }
 
@@ -30,7 +30,7 @@
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
   color: var(--fgColor-default, var(--color-fg-default));
-  // stylelint-disable-next-line primer/borders
+  // stylelint-disable-next-line primer/borders, primer/colors
   border: $border-width $border-style var(--control-borderColor-rest, var(--color-border-default));
 
   + .subnav-item {

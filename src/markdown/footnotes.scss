@@ -16,7 +16,7 @@
     // stylelint-disable-next-line primer/typography
     font-size: $h6-size;
     color: var(--fgColor-muted, var(--color-fg-muted));
-    // stylelint-disable-next-line primer/borders
+    // stylelint-disable-next-line primer/borders, primer/colors
     border-top: $border;
 
     ol {
@@ -41,7 +41,7 @@
       left: calc(var(--base-size-24) * -1);
       pointer-events: none;
       content: '';
-      // stylelint-disable-next-line primer/borders
+      // stylelint-disable-next-line primer/borders, primer/colors
       border: 2px $border-style var(--borderColor-accent-emphasis, var(--color-accent-emphasis));
       // stylelint-disable-next-line primer/borders
       border-radius: $border-radius;

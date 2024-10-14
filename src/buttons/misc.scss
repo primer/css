@@ -223,7 +223,7 @@
   color: var(--fgColor-default, var(--color-fg-default));
   vertical-align: middle;
   background-color: var(--bgColor-default, var(--color-canvas-default));
-  // stylelint-disable-next-line primer/borders
+  // stylelint-disable-next-line primer/borders, primer/colors
   border: $border-width $border-style var(--button-default-borderColor-rest, var(--color-btn-border));
   border-left: 0;
   // stylelint-disable-next-line primer/borders

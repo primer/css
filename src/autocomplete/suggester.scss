@@ -12,7 +12,7 @@
   list-style: none;
   cursor: pointer;
   background: var(--overlay-bgColor, var(--color-canvas-overlay));
-  // stylelint-disable-next-line primer/borders
+  // stylelint-disable-next-line primer/borders, primer/colors
   border: $border-width $border-style var(--borderColor-default, var(--color-border-default));
   // stylelint-disable-next-line primer/borders
   border-radius: $border-radius;
@@ -23,7 +23,7 @@
     padding: var(--base-size-4) var(--base-size-8);
     // stylelint-disable-next-line primer/typography
     font-weight: $font-weight-semibold;
-    // stylelint-disable-next-line primer/borders
+    // stylelint-disable-next-line primer/borders, primer/colors
     border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
 
     small {

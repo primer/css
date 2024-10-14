@@ -43,7 +43,7 @@
     padding-bottom: 0.3em;
     // stylelint-disable-next-line primer/typography
     font-size: 2em;
-    // stylelint-disable-next-line primer/borders
+    // stylelint-disable-next-line primer/borders, primer/colors
     border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
   }
 
@@ -52,7 +52,7 @@
     padding-bottom: 0.3em;
     // stylelint-disable-next-line primer/typography
     font-size: 1.5em;
-    // stylelint-disable-next-line primer/borders
+    // stylelint-disable-next-line primer/borders, primer/colors
     border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
   }
 

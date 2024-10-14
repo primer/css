@@ -10,13 +10,14 @@
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/typography
   line-height: 1;
+  // stylelint-disable-next-line primer/colors
   color: var(--bgColor-default, var(--color-canvas-default));
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%), // stylelint-disable-line primer/colors
     var(--color-mktg-btn-bg) !important;
   border: 0;
   // stylelint-disable-next-line primer/borders
