@@ -23,6 +23,7 @@
   }
 
   &::before {
+    // stylelint-disable-next-line primer/colors
     background-color: $border;
   }
 }
@@ -31,6 +32,7 @@
 
 // inset box-shadow for form controls
 @mixin focusBoxShadowInset($outlineWidth: 1px, $outlineColor: var(--focus-outlineColor, var(--color-accent-fg))) {
+  // stylelint-disable-next-line primer/colors
   border-color: var(--focus-outlineColor, var(--color-accent-fg));
   outline: none;
   // stylelint-disable-next-line primer/box-shadow

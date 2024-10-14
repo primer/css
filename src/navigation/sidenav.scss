@@ -16,7 +16,7 @@
   text-align: left;
   background-color: transparent;
   border: 0;
-  // stylelint-disable-next-line primer/borders
+  // stylelint-disable-next-line primer/borders, primer/colors
   border-top: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
 
   &:first-child {
@@ -59,6 +59,7 @@
 
   // Bar on the left
   &::before {
+    // stylelint-disable-next-line primer/colors
     background-color: var(--underlineNav-borderColor-active, var(--color-primer-border-active));
   }
 }

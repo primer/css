@@ -24,7 +24,7 @@
   flex-shrink: 0;
   color: var(--fgColor-onEmphasis, var(--color-fg-on-emphasis));
   background-color: var(--bgColor-accent-emphasis, var(--color-accent-emphasis));
-  // stylelint-disable-next-line primer/borders
+  // stylelint-disable-next-line primer/borders, primer/colors
   border: $border-width $border-style transparent;
   border-right: 0;
   border-top-left-radius: inherit;
