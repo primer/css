@@ -1,5 +1,11 @@
 # @primer/css
 
+## 21.5.0
+
+### Minor Changes
+
+- [#2724](https://github.com/primer/css/pull/2724) [`30d144b`](https://github.com/primer/css/commit/30d144b507d75e5b5ef6d4ec156978acaeb9fad4) Thanks [@camertron](https://github.com/camertron)! - Move prod @primer/\* dependencies to dev
+
 ## 21.4.0
 
 ### Minor Changes
