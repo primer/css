@@ -12,8 +12,11 @@
   .Box-header {
     margin: 0;
     border-width: 0;
+    // stylelint-disable-next-line primer/borders
     border-bottom-width: $border-width;
+    // stylelint-disable-next-line primer/borders
     border-top-left-radius: $border-radius;
+    // stylelint-disable-next-line primer/borders
     border-top-right-radius: $border-radius;
   }
 }

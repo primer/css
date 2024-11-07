@@ -5,8 +5,11 @@
 // container with .markdown-body on it should render generally well. It also
 // includes some GitHub Flavored Markdown specific styling (like @mentions)
 .markdown-body {
+  // stylelint-disable-next-line primer/typography
   font-family: $body-font;
+  // stylelint-disable-next-line primer/typography
   font-size: $h4-size;
+  // stylelint-disable-next-line primer/typography
   line-height: $body-line-height;
   word-wrap: break-word;
 
@@ -51,6 +54,7 @@
     padding-right: var(--base-size-4);
     // stylelint-disable-next-line primer/spacing
     margin-left: -20px;
+    // stylelint-disable-next-line primer/typography
     line-height: $lh-condensed-ultra;
 
     &:focus {
@@ -74,6 +78,7 @@
     height: $em-spacer-3;
     padding: 0;
     margin: var(--base-size-24) 0;
+    // stylelint-disable-next-line primer/colors
     background-color: var(--borderColor-default, var(--color-border-default));
     border: 0;
   }
@@ -82,7 +87,7 @@
     // stylelint-disable-next-line primer/spacing
     padding: 0 1em;
     color: var(--fgColor-muted, var(--color-fg-muted));
-    // stylelint-disable-next-line primer/borders
+    // stylelint-disable-next-line primer/borders, primer/colors
     border-left: 0.25em $border-style var(--borderColor-default, var(--color-border-default));
 
     > :first-child {

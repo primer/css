@@ -61,6 +61,7 @@ hr,
   overflow: hidden;
   background: transparent;
   border: 0;
+  // stylelint-disable-next-line primer/borders, primer/colors
   border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
 
   @include clearfix();
@@ -72,6 +73,7 @@ hr,
 
 table {
   border-spacing: 0;
+  // stylelint-disable-next-line primer/borders
   border-collapse: collapse;
 }
 

@@ -9,6 +9,7 @@
 .form-select {
   // stylelint-disable-next-line primer/spacing
   padding: 5px 12px;
+  // stylelint-disable-next-line primer/typography
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
@@ -17,7 +18,9 @@
   background-color: var(--bgColor-default, var(--color-canvas-default));
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
+  // stylelint-disable-next-line primer/borders, primer/colors
   border: $border-width $border-style var(--control-borderColor-rest, var(--color-border-default));
+  // stylelint-disable-next-line primer/borders
   border-radius: $border-radius;
   box-shadow: var(--shadow-inset, var(--color-primer-shadow-inset));
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
@@ -43,6 +46,7 @@
   &.border-0 {
     &:focus,
     &:focus-visible {
+      // stylelint-disable-next-line primer/borders, primer/colors
       border: $border-width $border-style var(--borderColor-accent-emphasis, var(--color-accent-fg)) !important;
     }
   }
@@ -62,9 +66,11 @@
 
   // Ensures inputs don't zoom on mobile iPhone but are body-font size on iPad
   @supports (-webkit-touch-callout: none) {
+    // stylelint-disable-next-line primer/typography
     font-size: $h4-size;
 
     @include breakpoint(md) {
+      // stylelint-disable-next-line primer/typography
       font-size: $body-font-size;
     }
   }
@@ -74,6 +80,7 @@
 textarea.form-control {
   padding-top: var(--base-size-8);
   padding-bottom: var(--base-size-8);
+  // stylelint-disable-next-line primer/typography
   line-height: $lh-default;
 }
 
@@ -93,6 +100,7 @@ textarea.form-control {
   padding-top: 3px;
   // stylelint-disable-next-line primer/spacing
   padding-bottom: 3px;
+  // stylelint-disable-next-line primer/typography
   font-size: $font-size-small;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
@@ -100,6 +108,7 @@ textarea.form-control {
 
 // Large inputs
 .input-lg {
+  // stylelint-disable-next-line primer/typography
   font-size: $h4-size;
 }
 
@@ -111,6 +120,7 @@ textarea.form-control {
 
 // Inputs with monospace text
 .input-monospace {
+  // stylelint-disable-next-line primer/typography
   font-family: $mono-font;
 }
 
@@ -143,6 +153,7 @@ textarea.form-control {
       padding: 2px var(--base-size-4);
       font-style: normal;
       background: var(--bgColor-attention-muted, var(--color-attention-subtle));
+      // stylelint-disable-next-line primer/borders
       border-radius: $border-radius;
     }
   }
@@ -158,7 +169,9 @@ textarea.form-control {
   .note {
     display: block;
     margin: 0;
+    // stylelint-disable-next-line primer/typography
     font-size: $font-size-small;
+    // stylelint-disable-next-line primer/typography
     font-weight: $font-weight-normal;
     color: var(--fgColor-muted, var(--color-fg-muted));
   }
@@ -251,18 +264,23 @@ input::-webkit-inner-spin-button {
   padding: var(--base-size-8) 10px;
   // stylelint-disable-next-line primer/spacing
   margin: 10px 0;
+  // stylelint-disable-next-line primer/typography
   font-size: $h5-size;
   color: var(--fgColor-attention, var(--color-attention-fg));
   background: var(--bgColor-attention-muted, var(--color-attention-subtle));
+  // stylelint-disable-next-line primer/borders, primer/colors
   border: $border-width $border-style var(--borderColor-attention-emphasis, var(--color-attention-emphasis));
+  // stylelint-disable-next-line primer/borders
   border-radius: $border-radius;
 
   p {
     margin: 0;
+    // stylelint-disable-next-line primer/typography
     line-height: $lh-default;
   }
 
   a {
+    // stylelint-disable-next-line primer/typography
     font-weight: $font-weight-bold;
   }
 }

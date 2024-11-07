@@ -12,29 +12,38 @@
   list-style: none;
   cursor: pointer;
   background: var(--overlay-bgColor, var(--color-canvas-overlay));
+  // stylelint-disable-next-line primer/borders, primer/colors
   border: $border-width $border-style var(--borderColor-default, var(--color-border-default));
+  // stylelint-disable-next-line primer/borders
   border-radius: $border-radius;
   box-shadow: var(--shadow-resting-medium, var(--color-shadow-medium));
 
   li {
     display: block;
     padding: var(--base-size-4) var(--base-size-8);
+    // stylelint-disable-next-line primer/typography
     font-weight: $font-weight-semibold;
+    // stylelint-disable-next-line primer/borders, primer/colors
     border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
 
     small {
+      // stylelint-disable-next-line primer/typography
       font-weight: $font-weight-normal;
       color: var(--fgColor-muted, var(--color-fg-muted));
     }
 
     &:last-child {
       border-bottom: 0;
+      // stylelint-disable-next-line primer/borders
       border-bottom-right-radius: $border-radius;
+      // stylelint-disable-next-line primer/borders
       border-bottom-left-radius: $border-radius;
     }
 
     &:first-child {
+      // stylelint-disable-next-line primer/borders
       border-top-left-radius: $border-radius;
+      // stylelint-disable-next-line primer/borders
       border-top-right-radius: $border-radius;
     }
 

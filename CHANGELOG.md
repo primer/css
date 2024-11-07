@@ -1,5 +1,21 @@
 # @primer/css
 
+## 21.5.0
+
+### Minor Changes
+
+- [#2724](https://github.com/primer/css/pull/2724) [`30d144b`](https://github.com/primer/css/commit/30d144b507d75e5b5ef6d4ec156978acaeb9fad4) Thanks [@camertron](https://github.com/camertron)! - Move prod @primer/\* dependencies to dev
+
+## 21.4.0
+
+### Minor Changes
+
+- [#2691](https://github.com/primer/css/pull/2691) [`5097430`](https://github.com/primer/css/commit/50974300dfe8cf636e1b15b5fbd5b0dc5adf4f2e) Thanks [@dylanatsmith](https://github.com/dylanatsmith)! - Remove background behind images in markdown-body
+
+### Patch Changes
+
+- [#2710](https://github.com/primer/css/pull/2710) [`3017831`](https://github.com/primer/css/commit/30178319550ecbf318ecbfa36675c80b6e95e3ba) Thanks [@smockle](https://github.com/smockle)! - Replace deprecated CSS properties in '.sr-only'
+
 ## 21.3.6
 
 ### Patch Changes

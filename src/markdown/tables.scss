@@ -11,6 +11,7 @@
     font-variant: tabular-nums;
 
     th {
+      // stylelint-disable-next-line primer/typography
       font-weight: $font-weight-bold;
     }
 
@@ -18,6 +19,7 @@
     td {
       // stylelint-disable-next-line primer/spacing
       padding: 6px 13px;
+      // stylelint-disable-next-line primer/borders, primer/colors
       border: $border-width $border-style var(--borderColor-default, var(--color-border-default));
     }
 
@@ -29,6 +31,7 @@
 
     tr {
       background-color: var(--bgColor-default, var(--color-canvas-default));
+      // stylelint-disable-next-line primer/borders, primer/colors
       border-top: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
 
       &:nth-child(2n) {

@@ -1,6 +1,5 @@
 // stylelint-disable max-nesting-depth
 // stylelint-disable primer/spacing
-// stylelint-disable primer/borders
 
 .AppFrame {
 
@@ -66,6 +65,7 @@
       overflow: hidden;
       text-indent: var(--base-size-128, 128px);
       pointer-events: none;
+      // stylelint-disable-next-line primer/colors
       background: var(--borderColor-default, var(--color-border-default));
       border-radius: var(--borderRadius-full, 100vh);
     }
