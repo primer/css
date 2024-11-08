@@ -1,5 +1,15 @@
 # @primer/css
 
+## 21.5.1
+
+### Patch Changes
+
+- [#2727](https://github.com/primer/css/pull/2727) [`7d4cd40`](https://github.com/primer/css/commit/7d4cd4061a0ffb70355944d33ea49883819da26a) Thanks [@kawakamimoeki](https://github.com/kawakamimoeki)! - Removed .css extension from @import and modified @primer/primitives to be output as Sass code.
+
+- [#2728](https://github.com/primer/css/pull/2728) [`7eaba91`](https://github.com/primer/css/commit/7eaba91768f8e31cf6b0c5538230ce2d04e9bfec) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update primer/primitives to allow for version 9 and 10
+
+- [#2680](https://github.com/primer/css/pull/2680) [`1eb467e`](https://github.com/primer/css/commit/1eb467e9edb3d9ddb84c47bfbf9a21cb9950bf06) Thanks [@robinwhittleton](https://github.com/robinwhittleton)! - Use tabular numbers in tables
+
 ## 21.5.0
 
 ### Minor Changes
