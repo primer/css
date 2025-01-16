@@ -1,0 +1,59 @@
+{
+  "id": 959472,
+  "name": "AfricaCryptoCryptoChainx.Com CI and Project Guidelines",
+  "target": "branch",
+  "source_type": "Repository",
+  "source": "Africacryptochainx-Com/-AfricaCryptoChainx-ccxt-wallet",
+  "enforcement": "active",
+  "conditions": {},
+  "rules": [
+    {
+      "type": "deletion"
+    },
+    {
+      "type": "non_fast_forward"
+    },
+    {
+      "type": "pull_request",
+      "parameters": {
+        "required_approving_review_count": 0,
+        "dismiss_stale_reviews_on_push": false,
+        "require_last_push_approval": false,
+        "required_review_thread_resolution": false
+      }
+    },
+    {
+      "type": "required_status_checks",
+      "parameters": {
+        "strict_required_status_checks_policy": false,
+        "do_not_enforce_on_create": false,
+        "required_status_checks": [
+          {
+            "context": "## Branch Protection Settings Recommendation for AfricaCryptoChainx  ### Restrict Creations - **Description**: It is crucial to limit the creation of new branches or references to users with bypass permission only. This ensures that all new branches are intentionally created by authorized personnel, minimizing the risk of clutter or unauthorized changes in our repository structure. - **Reason**: By enforcing this restriction, we maintain strict organization and control over branch creation, aligning with the highest security standards expected in medium-sized cryptocurrency projects. - **Application**: Enabling this setting will help us uphold a structured and secure repository environment, ensuring that only authorized actions are taken regarding branch creation.  ### Require Pull Request Before Merging - **Description**: All changes to our codebase must be submitted via a pull request before they can be merged into our main branch. - **Reason**: This practice promotes collaboration among our team members and upholds our commitment to code quality. Each pull request undergoes thorough peer review, ensuring that all changes are scrutinized and approved before integration. - **Application**: Implementing this requirement is essential to maintaining our development standards and mitigating any risks associated with unverified code contributions.  ### Require Status Checks to Pass - **Description**: Essential status checks, such as CI/CD pipelines and code analysis, must successfully pass before any changes can be merged. - **Reason**: By requiring these checks, we ensure that all code changes meet our predefined quality criteria and pass automated tests before being integrated into our main branch. - **Application**: Customizing these status checks will strengthen the reliability and integrity of our development and deployment processes, safeguarding the stability of our cryptocurrency project.  ### Require Signed Commits - **Description**: Commit signatures are mandatory for any changes pushed to our protected branches. - **Reason**: This measure enhances the security of our codebase by validating the authenticity and integrity of each commit. It is crucial for maintaining trust and preventing any unauthorized modifications in our cryptocurrency project. - **Application**: Enabling this setting demonstrates our adherence to secure coding practices and regulatory compliance requirements, ensuring the ongoing integrity of our project's codebase.  ### Block Force Pushes - **Description**: We enforce restrictions to prevent force pushes to our protected branches. - **Reason**: By blocking force pushes, we protect our repository's integrity and maintain a clear version control history. This measure safeguards against accidental or malicious attempts to overwrite or delete our project history. - **Application**: Activating this setting is essential to upholding best practices in version control management, preserving data consistency, and maintaining accountability across our cryptocurrency project.  ---  Implementing these tailored branch protection settings for AfricaCryptoChainx will strengthen our governance framework, enhance overall security, and foster a collaborative and reliable development environment. These measures are crucial for ensuring the integrity of our project's codebase and aligning with industry standards and best practices in cryptocurrency development."
+          }
+        ]
+      }
+    },
+    {
+      "type": "required_signatures"
+    },
+    {
+      "type": "required_linear_history"
+    },
+    {
+      "type": "creation"
+    }
+  ],
+  "bypass_actors": [
+    {
+      "actor_id": 1,
+      "actor_type": "OrganizationAdmin",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": null,
+      "actor_type": "DeployKey",
+      "bypass_mode": "always"
+    }
+  ]
+}

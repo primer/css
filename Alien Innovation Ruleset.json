@@ -1,0 +1,134 @@
+{
+  "id": 2906759,
+  "name": "Alien Innovation Ruleset",
+  "target": "branch",
+  "source_type": "Repository",
+  "source": "TeachMastermindPati/Alien-AfricaCryptoChainx-Core-Innovator-",
+  "enforcement": "active",
+  "conditions": {
+    "ref_name": {
+      "exclude": [],
+      "include": [
+        "~DEFAULT_BRANCH",
+        "~ALL",
+        "refs/heads/Feature/AfricaCryptoChainx"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "type": "deletion"
+    },
+    {
+      "type": "non_fast_forward"
+    },
+    {
+      "type": "creation"
+    },
+    {
+      "type": "update"
+    },
+    {
+      "type": "required_linear_history"
+    },
+    {
+      "type": "required_signatures"
+    },
+    {
+      "type": "pull_request",
+      "parameters": {
+        "required_approving_review_count": 10,
+        "dismiss_stale_reviews_on_push": true,
+        "require_last_push_approval": true,
+        "required_review_thread_resolution": true,
+        "automatic_copilot_code_review_enabled": true,
+        "allowed_merge_methods": [
+          "squash",
+          "rebase",
+          "merge"
+        ]
+      }
+    },
+    {
+      "type": "required_status_checks",
+      "parameters": {
+        "strict_required_status_checks_policy": true,
+        "do_not_enforce_on_create": true,
+        "required_status_checks": [
+          {
+            "context": "### Add Check Feature with Project Information  #### Bot Logic: ```python import discord from discord.ext import commands  bot = commands.Bot(command_prefix='!')  maintainers = {     \"Teachmastermindpat\": {\"project\": \"Project XYZ\", \"sponsorship\": 100},     \"maintainerUsername1\": {\"project\": \"Project ABC\", \"sponsorship\": 100},     \"maintainerUsername2\": {\"project\": \"Project DEF\", \"sponsorship\": 100} }  @bot.event async def on_ready():     print(f'Logged in as {bot.user}')  @bot.command() async def add_maintainer(ctx, username, project, sponsorship):     if username in maintainers:         await ctx.send(f'{username} already exists in the list.')     else:         maintainers[username] = {\"project\": project, \"sponsorship\": sponsorship}         await ctx.send(f'{username} added successfully with project {project} and sponsorship {sponsorship}.')  bot.run('YOUR_DISCORD_BOT_TOKEN') ```  ### Additional Project Roles: ``` MaintainRole Always allow Select bypass mode  WriteRole Always allow Select bypass mode  Dependabot DependabotApp • GitHub Always allow Select bypass mode  Imgbot ImgbotApp Always allow Select bypass mode ```  ### Project Information: [Project Information](https://github.com/ccxt/ccxt/issues/24369#issue-2692122566)"
+          }
+        ]
+      }
+    },
+    {
+      "type": "code_scanning",
+      "parameters": {
+        "code_scanning_tools": [
+          {
+            "tool": "CodeQL",
+            "security_alerts_threshold": "high_or_higher",
+            "alerts_threshold": "errors"
+          },
+          {
+            "tool": "CodeQL ",
+            "security_alerts_threshold": "high_or_higher",
+            "alerts_threshold": "errors"
+          },
+          {
+            "tool": "Dependabot ",
+            "security_alerts_threshold": "high_or_higher",
+            "alerts_threshold": "errors"
+          },
+          {
+            "tool": "GitHub Action ",
+            "security_alerts_threshold": "high_or_higher",
+            "alerts_threshold": "errors"
+          },
+          {
+            "tool": "Imgbot ",
+            "security_alerts_threshold": "high_or_higher",
+            "alerts_threshold": "errors"
+          }
+        ]
+      }
+    }
+  ],
+  "bypass_actors": [
+    {
+      "actor_id": 2,
+      "actor_type": "RepositoryRole",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": 4,
+      "actor_type": "RepositoryRole",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": 5,
+      "actor_type": "RepositoryRole",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": 4706,
+      "actor_type": "Integration",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": 29110,
+      "actor_type": "Integration",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": 1,
+      "actor_type": "OrganizationAdmin",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": null,
+      "actor_type": "DeployKey",
+      "bypass_mode": "always"
+    }
+  ]
+}

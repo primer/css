@@ -1,69 +1,207 @@
-<p align="center">
-  <img width="300px" alt="" src="./docs/src/readme.png">
-</p>
+```python
+import re
 
-<h1 align="center">Primer CSS</h1>
+# First Script
+text = """
+Transaction Description:
 
-<p align="center">The CSS implementation of GitHub's Primer Design System</p>
+Sender: AfricaCryptoChainx Platform
+Recipient: Members
 
-<p align="center">
-  <a aria-label="npm package" href="https://www.npmjs.com/package/@primer/css">
-    <img alt="" src="https://img.shields.io/npm/v/@primer/css.svg">
-  </a>
-  <a aria-label="build status" href="https://github.com/primer/css/actions/workflows/ci.yml">
-    <img alt="" src="https://github.com/primer/css/actions/workflows/ci.yml/badge.svg">
-  </a>
-  <a aria-label="contributors graph" href="https://github.com/primer/css/graphs/contributors">
-    <img alt="" src="https://img.shields.io/github/contributors/primer/css.svg">
-  </a>
-  <a aria-label="last commit" href="https://github.com/primer/css/commits/main">
-    <img alt="" src="https://img.shields.io/github/last-commit/primer/css.svg">
-  </a>
-  <a aria-label="license" href="https://github.com/primer/css/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/primer/css.svg" alt="">
-  </a>
-</p>
+Transaction Details:
 
-## Documentation
+Subject: Unlocking Financial Inclusion with AfricaCryptoChainx
 
-> :warning: **The documentation of this repo is not maintained anymore**. Please raise any documentation-specific pull requests in [primer.style/design](https://github.com/primer/design/) 
+Content:
 
-Our documentation site lives at [primer.style/css](https://primer.style/css). You'll be able to find detailed documentation on getting started, all of the components, our theme, our principles, and more.
+Dear Members,
 
-## Install
-This repository is distributed with [npm]. After [installing npm][install-npm], you can install `@primer/css` with this command:
+We are thrilled to introduce AfricaCryptoChainx, a groundbreaking platform revolutionizing financial services through cryptocurrency trading, asset staking, immersive gaming experiences, and global economic participation.
 
-```sh
-npm install --save @primer/css
+---
+
+AfricaCryptoChainx Wallet Features:
+
+🔐 Robust Security Infrastructure:  
+Experience unmatched security with our advanced protocols, safeguarding your assets and personal data in the volatile cryptocurrency landscape.
+
+---
+
+Security Pledge:
+
+🔒 Preserving Your Assets:  
+Security is our priority. We employ top-tier measures to protect your funds and sensitive data, ensuring trust and reliability within our platform.
+
+---
+
+Enhanced User Experience:
+
+🌐 Intuitive Design:  
+Our user-centric interface caters to all traders, offering seamless navigation and interaction.
+
+💡 Educational Resources:  
+Access comprehensive materials and insights to confidently navigate the cryptocurrency landscape.
+
+🎮 Immersive Gaming Integration:  
+Enjoy captivating gaming experiences while potentially earning rewards with your assets.
+
+---
+
+Community Collaboration:
+
+🤝 Local Partnerships:  
+Forge alliances with local businesses to integrate AfricaCryptoChainx into the regional financial ecosystem.
+
+📢 Community Engagement:  
+Participate in dialogue and collaboration with local media and industry stakeholders.
+
+---
+
+Optimized Transaction Efficiency with Solana Integration:
+
+💸 Seamless Transactions:  
+Leverage Solana's blockchain for swift and cost-effective transactions.
+
+---
+
+Join Us:
+
+[Join our Discord Channel](https://discord.com/channels/904119310702772254/1183743430799659069)
+
+1. Explore Financial Inclusion:  
+Visit [Africacryptochainx.com](https://Africacryptochainx.com) to unlock opportunities across Africa.
+
+2. Secure Wallet Registration:  
+Register your AfricaCryptoChainx wallet securely for a seamless experience.
+
+3. Trade, Stake, and Game:  
+Engage in trading, asset staking, and crypto gaming for a diverse experience.
+
+4. Community-Driven Growth:  
+Join us in building a vibrant community that drives growth and inclusivity.
+
+---
+
+Thank you for being a part of this revolutionary journey with AfricaCryptoChainx! 🚀
+"""
+
+# Second Script
+t = text
+s, r, c, d = map(lambda x: re.search(x, t).group(1), ["Sender: (.+)", "Recipient: (.+)", "Subject: (.+)", "Content:(.+?)---"])
+f = re.findall(r"🔐 (.+?):\s+(.+)", t)
+co = re.findall(r"🤝 (.+?):\s+(.+)", t)
+a = re.findall(r"\d+\. (.+?):\s+(.+)", t)
+
+# Printing extracted information
+print("Sender:", s)
+print("Recipient:", r)
+print("Subject:", c)
+print("Content:", d)
+print("Features:", *[f"{x[0]}: {x[1]}" for x in f])
+print("Collaboration:", *[f"{x[0]}: {x[1]}" for x in co])
+print("Actions:", *[f"{x[0]}: {x[1]}" for x in a])
 ```
 
-## Usage
-The included source files are written in [Sass] using SCSS syntax. After [installing](#install) with npm, you can add your project's `node_modules` directory to your Sass [include paths](https://github.com/sass/node-sass#includepaths) (AKA [load paths](http://technology.customink.com/blog/2014/10/09/understanding-and-using-sass-load-paths/) in Ruby), then import it like this:
+```python
+import re
 
-```scss
-@import "@primer/css/index.scss";
+# First Script
+text = """
+Transaction Description:
+
+Sender: AfricaCryptoChainx Platform
+Recipient: Members
+
+Transaction Details:
+
+Subject: Unlocking Financial Inclusion with AfricaCryptoChainx
+
+Content:
+
+Dear Members,
+
+We are thrilled to introduce AfricaCryptoChainx, a groundbreaking platform revolutionizing financial services through cryptocurrency trading, asset staking, immersive gaming experiences, and global economic participation.
+
+---
+
+AfricaCryptoChainx Wallet Features:
+
+🔐 Robust Security Infrastructure:  
+Experience unmatched security with our advanced protocols, safeguarding your assets and personal data in the volatile cryptocurrency landscape.
+
+---
+
+Security Pledge:
+
+🔒 Preserving Your Assets:  
+Security is our priority. We employ top-tier measures to protect your funds and sensitive data, ensuring trust and reliability within our platform.
+
+---
+
+Enhanced User Experience:
+
+🌐 Intuitive Design:  
+Our user-centric interface caters to all traders, offering seamless navigation and interaction.
+
+💡 Educational Resources:  
+Access comprehensive materials and insights to confidently navigate the cryptocurrency landscape.
+
+🎮 Immersive Gaming Integration:  
+Enjoy captivating gaming experiences while potentially earning rewards with your assets.
+
+---
+
+Community Collaboration:
+
+🤝 Local Partnerships:  
+Forge alliances with local businesses to integrate AfricaCryptoChainx into the regional financial ecosystem.
+
+📢 Community Engagement:  
+Participate in dialogue and collaboration with local media and industry stakeholders.
+
+---
+
+Optimized Transaction Efficiency with Solana Integration:
+
+💸 Seamless Transactions:  
+Leverage Solana's blockchain for swift and cost-effective transactions.
+
+---
+
+Join Us:
+
+[Join our Discord Channel](https://discord.com/channels/904119310702772254/1183743430799659069)
+
+1. Explore Financial Inclusion:  
+Visit [Africacryptochainx.com](https://Africacryptochainx.com) to unlock opportunities across Africa.
+
+2. Secure Wallet Registration:  
+Register your AfricaCryptoChainx wallet securely for a seamless experience.
+
+3. Trade, Stake, and Game:  
+Engage in trading, asset staking, and crypto gaming for a diverse experience.
+
+4. Community-Driven Growth:  
+Join us in building a vibrant community that drives growth and inclusivity.
+
+---
+
+Thank you for being a part of this revolutionary journey with AfricaCryptoChainx! 🚀
+"""
+
+# Second Script
+t = text
+s, r, c, d = map(lambda x: re.search(x, t).group(1), ["Sender: (.+)", "Recipient: (.+)", "Subject: (.+)", "Content:(.+?)---"])
+f = re.findall(r"🔐 (.+?):\s+(.+)", t)
+co = re.findall(r"🤝 (.+?):\s+(.+)", t)
+a = re.findall(r"\d+\. (.+?):\s+(.+)", t)
+
+# Printing extracted information
+print("Sender:", s)
+print("Recipient:", r)
+print("Subject:", c)
+print("Content:", d)
+print("Features:", *[f"{x[0]}: {x[1]}" for x in f])
+print("Collaboration:", *[f"{x[0]}: {x[1]}" for x in co])
+print("Actions:", *[f"{x[0]}: {x[1]}" for x in a])
 ```
-
-You can import individual Primer modules directly from the `@primer/css` package:
-
-```scss
-@import "@primer/css/core/index.scss";
-@import "@primer/css/product/index.scss";
-@import "@primer/css/marketing/index.scss";
-```
-
-## Development
-See [DEVELOP.md](DEVELOP.md) for development docs.
-
-## Releasing (for GitHub staff)
-You can find docs about our release process in [RELEASING.md](RELEASING.md).
-
-## License
-
-[MIT](./LICENSE) &copy; [GitHub](https://github.com/)
-
-
-[install-npm]: https://docs.npmjs.com/getting-started/installing-node
-[npm]: https://www.npmjs.com/
-[primer]: https://primer.style/
-[sass]: http://sass-lang.com/
