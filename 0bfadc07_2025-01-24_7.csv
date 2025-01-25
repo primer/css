@@ -1,0 +1,8 @@
+Date,Product,SKU,Quantity,Unit Type,Price Per Unit ($),Multiplier,Owner,Repository Slug,Username,Actions Workflow,Notes
+2025-01-23,Actions,Compute - UBUNTU,2,minute,0.008,1.0,PatforJesus,.github-private,PatforJesus,.github/workflows/deploy_production.yml,
+2025-01-23,Actions,Compute - UBUNTU,2,minute,0.008,1.0,PatforJesus,.github-private,PatforJesus,.github/workflows/axe.yml,
+2025-01-23,Actions,Compute - UBUNTU,6,minute,0.008,1.0,PatforJesus,.github-private,PatforJesus,.github/workflows/ci.yml,
+2025-01-23,Actions,Compute - UBUNTU,4,minute,0.008,1.0,PatforJesus,.github-private,PatforJesus,.github/workflows/codeql.yml,
+2025-01-23,Codespaces - Linux,Storage,0.038,gb-month,0.07,1.0,PatforJesus,codespaces-react,PatforJesus,,
+2025-01-23,Codespaces - Linux,Compute - 4 core,1.0105,hour,0.36,1.0,PatforJesus,codespaces-react,PatforJesus,,
+2025-01-24,Codespaces - Linux,Storage,0.033,gb-month,0.07,1.0,PatforJesus,codespaces-react,PatforJesus,,
