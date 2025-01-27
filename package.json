@@ -46,7 +46,7 @@
     "@csstools/postcss-sass": "^5.1.1",
     "@github/prettier-config": "^0.0.6",
     "@primer/primitives": "^10.3.4",
-    "@primer/stylelint-config": "^13.2.2",
+    "@primer/stylelint-config": "^13.2.3-rc.ddad505",
     "@primer/view-components": "^0.36.5",
     "autoprefixer": "^10.4.18",
     "chokidar-cli": "^3.0.0",
