@@ -87,7 +87,7 @@
     // stylelint-disable-next-line primer/spacing
     padding: 0 1em;
     color: var(--fgColor-muted, var(--color-fg-muted));
-    // stylelint-disable-next-line primer/borders, primer/colors
+    // stylelint-disable-next-line primer/borders, primer/colors, declaration-property-value-no-unknown
     border-left: 0.25em $border-style var(--borderColor-default, var(--color-border-default));
 
     > :first-child {
