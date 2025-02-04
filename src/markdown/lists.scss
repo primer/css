@@ -1,4 +1,6 @@
 // Base styles
+@use '../support/index.scss' as *;
+
 // stylelint-disable selector-no-qualifying-type
 // stylelint-disable selector-max-type
 .markdown-body {

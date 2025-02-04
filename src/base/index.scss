@@ -1,7 +1,6 @@
-@import '../support/index.scss';
-@import './native-colors.scss';
-@import './normalize.scss';
-@import './base.scss';
-@import './kbd.scss';
-@import './typography-base.scss';
-@import './octicons.scss';
+@use './native-colors.scss';
+@use './normalize.scss';
+@use './base.scss';
+@use './kbd.scss';
+@use './typography-base.scss';
+@use './octicons.scss';

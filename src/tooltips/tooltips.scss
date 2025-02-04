@@ -1,4 +1,5 @@
 /* stylelint-disable primer/spacing */
+@use '../support/index.scss' as *;
 
 .tooltipped {
   position: relative;

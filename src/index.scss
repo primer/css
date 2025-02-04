@@ -11,10 +11,10 @@
 // Should you need specific files, you can easily use separate `@import`s.
 
 // CSS color variables
-@import './color-modes/index.scss';
-@import './primitives/index.scss';
+@use 'color-modes';
+@use 'primitives';
 
 // Global requirements
-@import './core/index.scss';
-@import './product/index.scss';
-@import './marketing/index.scss';
+@use 'core';
+@use 'product';
+@use 'marketing';

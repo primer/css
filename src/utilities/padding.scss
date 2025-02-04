@@ -1,5 +1,6 @@
 // Padding spacer utilities
 // stylelint-disable primer/spacing
+@use '../support/index.scss' as *;
 
 // Responsive padding spacer utilities
 @each $breakpoint, $variant in $responsive-variants {

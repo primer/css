@@ -1,6 +1,8 @@
 // Custom select
 //
 // Apply `.select` to any `<select>` element for custom styles.
+@use '../support/index.scss' as *;
+
 .form-select {
   display: inline-block;
   max-width: 100%;

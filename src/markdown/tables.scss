@@ -1,4 +1,6 @@
 // Needs refactoring
+@use '../support/index.scss' as *;
+
 // stylelint-disable selector-max-type, selector-max-compound-selectors
 .markdown-body {
   // Tables

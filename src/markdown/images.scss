@@ -1,4 +1,6 @@
 // Need to target base styles
+@use '../support/index.scss' as *;
+
 // stylelint-disable selector-max-compound-selectors, selector-no-qualifying-type
 // stylelint-disable selector-max-type
 .markdown-body {

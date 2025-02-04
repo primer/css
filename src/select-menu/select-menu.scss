@@ -1,5 +1,6 @@
 // stylelint-disable selector-max-type
 // selector-max-type is needed for body:not(.intent-mouse) to target keyboard only styles.
+@use '../support/index.scss' as *;
 
 $SelectMenu-max-height: 480px !default;
 

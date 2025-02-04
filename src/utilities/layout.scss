@@ -1,4 +1,5 @@
 // Layout
+@use '../support/index.scss' as *;
 
 /* Position */
 @each $breakpoint, $variant in $responsive-variants {

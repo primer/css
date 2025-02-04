@@ -1,5 +1,3 @@
-@import '../support/index.scss';
-
 // Avatars
-@import './avatar-parent-child.scss';
-@import './circle-badge.scss';
+@use './avatar-parent-child.scss';
+@use './circle-badge.scss';

@@ -1,6 +1,7 @@
 // Optional offset options to work with grid.scss
 
 // Offset Columns
+@use '../support/index.scss' as *;
 
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {

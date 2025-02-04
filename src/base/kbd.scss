@@ -1,5 +1,6 @@
 // Keyboard shortcuts
 // stylelint-disable selector-max-type
+@use '../support/index.scss' as *;
 
 kbd {
   display: inline-block;

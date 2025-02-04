@@ -1,4 +1,6 @@
 // Flex utility classes
+@use '../support/index.scss' as *;
+
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
     // Flexbox classes

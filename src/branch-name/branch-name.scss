@@ -1,4 +1,5 @@
 // stylelint-disable selector-max-type, selector-no-qualifying-type
+@use '../support/index.scss' as *;
 
 // A nice way to display branch names inside the UI. Can be a link or not.
 

@@ -1,5 +1,4 @@
-@import '../support/index.scss';
 // Navigation
-@import './filter-list.scss';
-@import './sidenav.scss';
-@import './subnav.scss';
+@use './filter-list.scss';
+@use './sidenav.scss';
+@use './subnav.scss';

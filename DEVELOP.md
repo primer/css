@@ -18,7 +18,7 @@ Here's what you need to know about how the files are structured in both git and 
 - When published, all of the files in `src/` are "hoisted" to the package root so that you can import, say, utilities with:
 
   ```scss
-  @import '@primer/css/utilities/index.scss';
+  @use '@primer/css/utilities' as utilities;
   ```
 
 - All bundle interdependencies within Primer CSS are defined as relative imports (e.g. with `../`), so everything should work fine as long as the `@primer/css` directory is in one of your Sass include paths (i.e. `node_modules`).

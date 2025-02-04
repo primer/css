@@ -1,4 +1,7 @@
 // Layout utilities
+@use '../../support/index.scss' as *;
+@use '../support/variables.scss' as *;
+
 
 // Responsive utilities to position content
 // No utilities for sm and xl breakpoints

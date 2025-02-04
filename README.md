@@ -43,15 +43,15 @@ npm install --save @primer/css
 The included source files are written in [Sass] using SCSS syntax. After [installing](#install) with npm, you can add your project's `node_modules` directory to your Sass [include paths](https://github.com/sass/node-sass#includepaths) (AKA [load paths](http://technology.customink.com/blog/2014/10/09/understanding-and-using-sass-load-paths/) in Ruby), then import it like this:
 
 ```scss
-@import "@primer/css/index.scss";
+@use "@primer/css" as primer;
 ```
 
 You can import individual Primer modules directly from the `@primer/css` package:
 
 ```scss
-@import "@primer/css/core/index.scss";
-@import "@primer/css/product/index.scss";
-@import "@primer/css/marketing/index.scss";
+@use "@primer/css/core" as primer-core;
+@use "@primer/css/product" as primer-product;
+@use "@primer/css/marketing" as primer-marketing;
 ```
 
 ## Development

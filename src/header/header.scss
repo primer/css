@@ -1,3 +1,5 @@
+@use '../support/index.scss' as *;
+
 .Header {
   z-index: 32; // TODO: Figure out z-index system
   display: flex;

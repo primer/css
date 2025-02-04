@@ -1,14 +1,13 @@
-@import '../support/index.scss';
 // utilities
-@import './animations.scss';
-@import './borders.scss';
-@import './box-shadow.scss';
-@import './colors.scss';
-@import './details.scss';
-@import './flexbox.scss';
-@import './layout.scss';
-@import './margin.scss';
-@import './padding.scss';
-@import './typography.scss';
+@use './animations.scss';
+@use './borders.scss';
+@use './box-shadow.scss';
+@use './colors.scss';
+@use './details.scss';
+@use './flexbox.scss';
+@use './layout.scss';
+@use './margin.scss';
+@use './padding.scss';
+@use './typography.scss';
 // Visibility and display should always come last in the imports so that they override other utilities with !important
-@import './visibility-display.scss';
+@use './visibility-display.scss';

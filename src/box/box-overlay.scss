@@ -1,3 +1,5 @@
+@use '../support/index.scss' as *;
+
 .Box--overlay {
   // stylelint-disable-next-line primer/responsive-widths
   width: 448px;

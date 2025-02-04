@@ -5,21 +5,16 @@
  * Released under MIT license. Copyright (c) 2019 GitHub Inc.
  */
 
-// Global requirements
-@import '../support/index.scss';
-
-// Color modes
-
 // Core modules
-@import '../base/index.scss';
-@import '../box/index.scss';
-@import '../buttons/index.scss';
-@import '../table-object/index.scss';
-@import '../forms/index.scss';
-@import '../layout/index.scss';
-@import '../navigation/index.scss';
-@import '../pagination/index.scss';
-@import '../tooltips/index.scss';
+@use '../base/index.scss' as base;
+@use '../box/index.scss' as box;
+@use '../buttons/index.scss' as buttons;
+@use '../table-object/index.scss' as table-object;
+@use '../forms/index.scss' as forms;
+@use '../layout/index.scss' as layout;
+@use '../navigation/index.scss' as navigation;
+@use '../pagination/index.scss' as pagination;
+@use '../tooltips/index.scss' as tooltips;
 
 // Utilities always go last so that they can override components
-@import '../utilities/index.scss';
+@use '../utilities/index.scss' as utilities;

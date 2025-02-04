@@ -1,5 +1,6 @@
 // Core border utilities
 // stylelint-disable primer/borders
+@use '../support/index.scss' as *;
 
 /* Add a gray border to the left and right */
 .border-x {

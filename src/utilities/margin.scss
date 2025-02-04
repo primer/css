@@ -1,5 +1,6 @@
 // Margin spacer utilities
 // stylelint-disable primer/spacing
+@use '../support/index.scss' as *;
 
 // Loop through the breakpoint values
 @each $breakpoint, $variant in $responsive-variants {

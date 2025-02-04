@@ -1,6 +1,5 @@
-@import '../support/index.scss';
-@import './form-control.scss';
-@import './form-select.scss';
-@import './form-group.scss';
-@import './input-group.scss';
-@import './radio-group.scss';
+@use './form-control.scss';
+@use './form-select.scss';
+@use './form-group.scss';
+@use './input-group.scss';
+@use './radio-group.scss';

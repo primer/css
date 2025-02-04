@@ -1,6 +1,8 @@
 // Headings
 // --------------------------------------------------
 // stylelint-disable selector-max-type
+@use '../support/index.scss' as *;
+
 h1,
 h2,
 h3,

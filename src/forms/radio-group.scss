@@ -1,4 +1,5 @@
 // Tab like radio group
+@use '../support/index.scss' as *;
 
 .radio-group {
   @include clearfix;

@@ -1,4 +1,6 @@
 // stylelint-disable selector-max-type
+@use '../support/index.scss' as *;
+
 .markdown-body {
   // Inline code snippets
   code,

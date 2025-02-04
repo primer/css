@@ -1,7 +1,6 @@
-@import '../support/index.scss';
-@import './app-frame.scss';
-@import './container.scss';
-@import './grid.scss';
-@import './grid-offset.scss';
-@import './page-layout.scss';
-@import './stack.scss';
+@use './app-frame.scss';
+@use './container.scss';
+@use './grid.scss';
+@use './grid-offset.scss';
+@use './page-layout.scss';
+@use './stack.scss';
