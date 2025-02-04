@@ -1,0 +1,19 @@
+name: Release Event Tracking
+# Measure a datadog event every time a release occurs
+
+on:
+  pull_request:
+    types:
+      - closed
+      - opened
+      - reopened
+
+  release:
+    types: [published]
+
+jobs:
+  release-tracking:
+    name: Release Tracking
+    uses: primer/.github/.github/workflows/release_tracking.yml@v2.1.1
+    secrets:
+      datadog_api_key: ${{ secrets.DATADOG_API_KEY }}
