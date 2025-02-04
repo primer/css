@@ -13,17 +13,13 @@
 // Core modules
 @import '../base/index.scss';
 @import '../box/index.scss';
-@import '../breadcrumb/index.scss';
 @import '../buttons/index.scss';
 @import '../table-object/index.scss';
 @import '../forms/index.scss';
 @import '../layout/index.scss';
-@import '../links/index.scss';
 @import '../navigation/index.scss';
 @import '../pagination/index.scss';
 @import '../tooltips/index.scss';
-@import '../truncate/index.scss';
-@import '../overlay/index.scss';
 
 // Utilities always go last so that they can override components
 @import '../utilities/index.scss';
