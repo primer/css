@@ -1,8 +1,8 @@
-@import '@primer/primitives/dist/css/base/size/size';
-@import '@primer/primitives/dist/css/base/typography/typography';
-@import '@primer/primitives/dist/css/functional/size/border';
-@import '@primer/primitives/dist/css/functional/size/breakpoints';
-@import '@primer/primitives/dist/css/functional/size/size';
-@import '@primer/primitives/dist/css/functional/size/viewport';
-@import '@primer/primitives/dist/css/functional/typography/typography';
-@import './temp-typography-tokens.scss';
+@use '@primer/primitives/dist/css/base/size/size' as baseSize;
+@use '@primer/primitives/dist/css/base/typography/typography' as baseTypography;
+@use '@primer/primitives/dist/css/functional/size/border' as border;
+@use '@primer/primitives/dist/css/functional/size/breakpoints' as breakpoints;
+@use '@primer/primitives/dist/css/functional/size/size' as functionalSize;
+@use '@primer/primitives/dist/css/functional/size/viewport' as viewport;
+@use '@primer/primitives/dist/css/functional/typography/typography' as functionalTypography;
+@use './temp-typography-tokens.scss' as typographyTokens;

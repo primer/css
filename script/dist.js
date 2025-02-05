@@ -87,7 +87,7 @@ function getExternalImports(scss, relativeTo) {
   const dir = dirname(relativeTo)
   // XXX: this might *seem* fragile, but since we enforce double quotes via
   // stylelint, I think it's kosher.
-  scss.replace(/@import "(.+)\/index\.scss";/g, (_, dep) => {
+  scss.replace(/@use "(.+)\/index\.scss";/g, (_, dep) => {
     imports.push(join(dir, dep))
   })
   return imports

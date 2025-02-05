@@ -1,5 +1,6 @@
 // Needs refactoring
 // stylelint-disable selector-max-type, selector-no-qualifying-type
+@use '../support/index.scss' as *;
 
 .suggester {
   position: relative;
