@@ -2,10 +2,8 @@
   z-index: 32; // TODO: Figure out z-index system
   display: flex;
   padding: var(--base-size-16);
-  // stylelint-disable-next-line primer/typography
-  font-size: $h5-size;
-  // stylelint-disable-next-line primer/typography
-  line-height: $lh-default;
+  font-size: var(--h5-size);
+  line-height: 1.5;
   color: var(--header-fgColor-default, var(--color-header-text));
   background-color: var(--header-bgColor, var(--color-header-bg));
   align-items: center;
@@ -25,8 +23,7 @@
 }
 
 .Header-link {
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-bold;
+  font-weight: var(--base-text-weight-light);
   color: var(--header-fgColor-logo, var(--color-header-logo));
   white-space: nowrap;
 
@@ -40,8 +37,7 @@
 .Header-input {
   color: var(--header-fgColor-default, var(--color-header-text));
   background-color: var(--headerSearch-bgColor, var(--color-header-search-bg));
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border: $border-width $border-style var(--headerSearch-borderColor, var(--color-header-search-border));
+  border: var(--borderWidth-default) solid var(--headerSearch-borderColor, var(--color-header-search-border));
   box-shadow: none;
 
   &::placeholder {

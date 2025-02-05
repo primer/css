@@ -11,10 +11,8 @@
   h6 {
     margin-top: var(--base-size-24);
     margin-bottom: var(--base-size-16);
-    // stylelint-disable-next-line primer/typography
-    font-weight: $font-weight-bold;
-    // stylelint-disable-next-line primer/typography
-    line-height: $lh-condensed;
+    font-weight: var(--base-text-weight-light);
+    line-height: 1.25;
 
     .octicon-link {
       color: var(--fgColor-default, var(--color-fg-default));
@@ -32,47 +30,36 @@
 
     tt,
     code {
-      // stylelint-disable-next-line primer/spacing
       padding: 0 0.2em;
       font-size: inherit;
     }
   }
 
   h1 {
-    // stylelint-disable-next-line primer/spacing
     padding-bottom: 0.3em;
-    // stylelint-disable-next-line primer/typography
     font-size: 2em;
-    // stylelint-disable-next-line primer/borders, primer/colors
-    border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+    border-bottom: var(--borderWidth-default) solid var(--borderColor-muted, var(--color-border-muted));
   }
 
   h2 {
-    // stylelint-disable-next-line primer/spacing
     padding-bottom: 0.3em;
-    // stylelint-disable-next-line primer/typography
     font-size: 1.5em;
-    // stylelint-disable-next-line primer/borders, primer/colors
-    border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+    border-bottom: var(--borderWidth-default) solid var(--borderColor-muted, var(--color-border-muted));
   }
 
   h3 {
-    // stylelint-disable-next-line primer/typography
     font-size: 1.25em;
   }
 
   h4 {
-    // stylelint-disable-next-line primer/typography
     font-size: 1em;
   }
 
   h5 {
-    // stylelint-disable-next-line primer/typography
     font-size: 0.875em;
   }
 
   h6 {
-    // stylelint-disable-next-line primer/typography
     font-size: 0.85em;
     color: var(--fgColor-muted, var(--color-fg-muted));
   }
@@ -87,7 +74,6 @@
       display: inline-block;
 
       .anchor {
-        // stylelint-disable-next-line primer/spacing
         margin-left: -40px;
       }
     }

@@ -26,7 +26,6 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
 @mixin Layout-line-divider {
   position: absolute;
-  // stylelint-disable-next-line primer/spacing
   left: calc(var(--Layout-outer-spacing-x) * -1);
   display: block;
   width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
@@ -39,7 +38,6 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 @mixin Layout-filled-divider {
   position: absolute;
   bottom: calc(var(--base-size-8) * -1);
-  // stylelint-disable-next-line primer/spacing
   left: calc(var(--Layout-outer-spacing-x) * -1);
   display: block;
   width: calc(100% + (var(--Layout-outer-spacing-x) * 2));
@@ -52,7 +50,6 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
 .PageLayout {
   display: block;
-  // stylelint-disable-next-line primer/spacing
   margin: var(--Layout-outer-spacing-y) var(--Layout-outer-spacing-x);
 
   // multi-column desktop-friendly layout
@@ -76,19 +73,15 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
     // header divider
 
     .PageLayout-header--hasDivider {
-      // stylelint-disable-next-line primer/spacing
       padding-bottom: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
-      // stylelint-disable-next-line primer/borders, primer/colors
-      border-bottom: $border-width solid $Layout-divider-color;
+      border-bottom: var(--borderWidth-default) solid $Layout-divider-color;
     }
 
     // footer divider
 
     .PageLayout-footer--hasDivider {
-      // stylelint-disable-next-line primer/spacing
       padding-top: max(var(--Layout-row-gap), var(--Layout-inner-spacing-min));
-      // stylelint-disable-next-line primer/borders, primer/colors
-      border-top: $border-width solid $Layout-divider-color;
+      border-top: var(--borderWidth-default) solid $Layout-divider-color;
     }
 
     // pane divider
@@ -96,20 +89,16 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
     &.PageLayout--hasPaneDivider {
       &.PageLayout--panePos-start {
         .PageLayout-pane {
-          // stylelint-disable-next-line primer/borders, primer/colors
-          border-right: $border-width solid $Layout-divider-color;
+          border-right: var(--borderWidth-default) solid $Layout-divider-color;
         }
 
         &:not(.PageLayout--columnGap-none) {
           .PageLayout-pane {
-            // stylelint-disable-next-line primer/spacing
             padding-right: calc(var(--Layout-column-gap) - #{$border-width});
-            // stylelint-disable-next-line primer/spacing
             margin-right: calc(var(--Layout-column-gap) * -1);
           }
 
           .PageLayout-content {
-            // stylelint-disable-next-line primer/spacing
             margin-left: var(--Layout-column-gap);
           }
         }
@@ -117,20 +106,16 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
       &.PageLayout--panePos-end {
         .PageLayout-pane {
-          // stylelint-disable-next-line primer/borders, primer/colors
           border-left: $border-width solid $Layout-divider-color;
         }
 
         &:not(.PageLayout--columnGap-none) {
           .PageLayout-pane {
-            // stylelint-disable-next-line primer/spacing
             padding-left: calc(var(--Layout-column-gap) - #{$border-width});
-            // stylelint-disable-next-line primer/spacing
             margin-left: calc(var(--Layout-column-gap) * -1);
           }
 
           .PageLayout-content {
-            // stylelint-disable-next-line primer/spacing
             margin-right: var(--Layout-column-gap);
           }
         }
@@ -253,52 +238,48 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 
     .PageLayout-region--dividerNarrow-line-before {
       position: relative;
-      // stylelint-disable-next-line primer/spacing
       margin-top: var(--Layout-row-gap);
 
       &::before {
         @include Layout-line-divider;
 
-        // stylelint-disable-next-line primer/spacing
+
         top: calc(#{$border-width * -1} - var(--Layout-row-gap));
       }
     }
 
     .PageLayout-region--dividerNarrow-line-after {
       position: relative;
-      // stylelint-disable-next-line primer/spacing
       margin-bottom: var(--Layout-row-gap);
 
       &::after {
         @include Layout-line-divider;
 
-        // stylelint-disable-next-line primer/spacing
+
         bottom: calc(#{$border-width * -1} - var(--Layout-row-gap));
       }
     }
 
     .PageLayout-region--dividerNarrow-filled-before {
       position: relative;
-      // stylelint-disable-next-line primer/spacing
       margin-top: calc(var(--base-size-8) + var(--Layout-row-gap));
 
       &::after {
         @include Layout-filled-divider;
 
-        // stylelint-disable-next-line primer/spacing
+
         top: calc(calc(var(--base-size-8) * -1) - var(--Layout-row-gap));
       }
     }
 
     .PageLayout-region--dividerNarrow-filled-after {
       position: relative;
-      // stylelint-disable-next-line primer/spacing
       margin-bottom: calc(var(--base-size-8) + var(--Layout-row-gap));
 
       &::before {
         @include Layout-filled-divider;
 
-        // stylelint-disable-next-line primer/spacing
+
         bottom: calc(calc(var(--base-size-8) * -1) - var(--Layout-row-gap));
       }
     }
@@ -323,9 +304,7 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
   grid-template-areas: var(--Layout-template-areas);
 
   .PageLayout-content {
-    // stylelint-disable-next-line primer/spacing
     padding-right: var(--Layout-inner-spacing-max);
-    // stylelint-disable-next-line primer/spacing
     padding-left: var(--Layout-inner-spacing-max);
     grid-area: content;
   }
@@ -412,6 +391,5 @@ $Layout-responsive-variant-max-breakpoint: 'md' !default;
 .PageLayout-content,
 .PageLayout-pane,
 .PageLayout-footer {
-  // stylelint-disable-next-line primer/spacing
   padding: var(--Layout-inner-spacing-min);
 }

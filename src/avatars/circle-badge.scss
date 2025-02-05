@@ -45,8 +45,7 @@
     left: 0;
     width: 100%;
     content: '';
-    // stylelint-disable-next-line primer/borders
-    border-bottom: 2px dashed var(--borderColor-default, var(--color-border-default));
+    border-bottom: var(--borderWidth-thick) dashed var(--borderColor-default, var(--color-border-default));
   }
 
   .CircleBadge {

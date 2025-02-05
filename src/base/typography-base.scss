@@ -23,12 +23,13 @@ h6 { @include h6; }
 
 p {
   margin-top: 0;
-  // stylelint-disable-next-line primer/spacing
+
+  /* stylelint-disable-next-line primer/spacing */
   margin-bottom: 10px;
 }
 
 small {
-  // stylelint-disable-next-line primer/typography
+  /* stylelint-disable-next-line primer/typography */
   font-size: 90%;
 }
 
@@ -68,19 +69,15 @@ dd {
 tt,
 code,
 samp {
-  // stylelint-disable-next-line primer/typography
-  font-family: $mono-font;
-  // stylelint-disable-next-line primer/typography
-  font-size: $font-size-small;
+  font-family: var(--fontStack-monospace);
+  font-size: var(--text-body-size-small);
 }
 
 pre {
   margin-top: 0;
   margin-bottom: 0;
-  // stylelint-disable-next-line primer/typography
-  font-family: $mono-font;
-  // stylelint-disable-next-line primer/typography
-  font-size: $font-size-small;
+  font-family: var(--fontStack-monospace);
+  font-size: var(--text-body-size-small);
 }
 
 // Octicons

@@ -9,7 +9,6 @@
   &::after,
   &.link-emphasis-mktg::before {
     position: absolute;
-    // stylelint-disable-next-line primer/spacing
     bottom: -0.15em;
     left: 0;
     width: calc(100% - 1em);
@@ -44,7 +43,6 @@
 
   &.arrow-target-mktg {
     .arrow-symbol-mktg {
-      // stylelint-disable-next-line primer/spacing
       margin-left: -$em-spacer-3;
     }
   }

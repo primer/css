@@ -1,0 +1,27 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.formatOnSave": true,
+  "[postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": "explicit"
+    }
+  },
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
+  "cssvar.ignore": [
+    // exclude all but light theme, to avoid stacking suggestions
+    "node_modules/@primer/primitives/dist/css/functional/themes/dark-colorblind.css",
+    "node_modules/@primer/primitives/dist/css/functional/themes/dark-dimmed.css",
+    "node_modules/@primer/primitives/dist/css/functional/themes/dark-high-contrast.css",
+    "node_modules/@primer/primitives/dist/css/functional/themes/dark-tritanopia.css",
+    "node_modules/@primer/primitives/dist/css/functional/themes/dark.css",
+    "node_modules/@primer/primitives/dist/css/functional/themes/light-colorblind.css",
+    "node_modules/@primer/primitives/dist/css/functional/themes/light-high-contrast.css",
+    "node_modules/@primer/primitives/dist/css/functional/themes/light-tritanopia.css"
+  ],
+  "cssvar.files": ["node_modules/@primer/primitives/dist/css/**/*.css"]
+}

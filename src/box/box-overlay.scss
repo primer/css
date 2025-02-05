@@ -12,12 +12,9 @@
   .Box-header {
     margin: 0;
     border-width: 0;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-width: $border-width;
-    // stylelint-disable-next-line primer/borders
-    border-top-left-radius: $border-radius;
-    // stylelint-disable-next-line primer/borders
-    border-top-right-radius: $border-radius;
+    border-bottom-width: var(--borderWidth-default);
+    border-top-left-radius: var(--borderRadius-default);
+    border-top-right-radius: var(--borderRadius-default);
   }
 }
 

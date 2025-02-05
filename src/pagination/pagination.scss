@@ -5,10 +5,8 @@
   span,
   em {
     min-width: 32px;
-    // stylelint-disable-next-line primer/spacing
-    padding: 5px 10px;
+    padding: var(--base-size-4) 10px;
     font-style: normal;
-    // stylelint-disable-next-line primer/typography
     line-height: 20px;
     color: var(--fgColor-default, var(--color-fg-default));
     text-align: center;
@@ -16,10 +14,8 @@
     vertical-align: middle;
     cursor: pointer;
     user-select: none;
-    // stylelint-disable-next-line primer/borders, primer/colors
-    border: $border-width $border-style transparent;
-    // stylelint-disable-next-line primer/borders
-    border-radius: $border-radius;
+    border: var(--borderWidth-default) solid transparent;
+    border-radius: var(--borderRadius-default);
     transition: border-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
 
     &:hover,

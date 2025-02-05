@@ -4,22 +4,16 @@
 .btn {
   position: relative;
   display: inline-block;
-  // stylelint-disable-next-line primer/spacing
-  padding: 5px var(--base-size-16);
-  // stylelint-disable-next-line primer/typography
-  font-size: $body-font-size;
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-semibold;
-  // stylelint-disable-next-line primer/typography
+  padding: var(--base-size-4) var(--base-size-16);
+  font-size: var(--body-font-size);
+  font-weight: var(--base-text-weight-light);
   line-height: 20px; // Specifically not inherit our `<body>` default
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border: $border-width $border-style;
-  // stylelint-disable-next-line primer/borders
-  border-radius: $border-radius;
+  border: var(--borderWidth-default) solid;
+  border-radius: var(--borderRadius-default);
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
   &:hover {
@@ -34,8 +28,7 @@
 
   i {
     font-style: normal;
-    // stylelint-disable-next-line primer/typography
-    font-weight: $font-weight-semibold;
+    font-weight: var(--base-text-weight-light);
     opacity: 0.75;
   }
 
@@ -50,8 +43,7 @@
   }
 
   .Counter {
-    // stylelint-disable-next-line primer/spacing
-    margin-left: 2px;
+    margin-left: var(--base-size-2);
     color: inherit;
     text-shadow: none;
     vertical-align: top;
@@ -313,11 +305,8 @@ a.btn-primary {
 //
 // Tweak `line-height` to make them smaller.
 .btn-sm {
-  // stylelint-disable-next-line primer/spacing
-  padding: 3px 12px;
-  // stylelint-disable-next-line primer/typography
-  font-size: $font-size-small;
-  // stylelint-disable-next-line primer/typography
+  padding: var(--base-size-4) var(--base-size-12);
+  font-size: var(--text-body-size-small);
   line-height: 20px;
 
   .octicon {
@@ -327,13 +316,9 @@ a.btn-primary {
 
 // Large button adds more padding around text. Use font-size utils to increase font-size.. e.g, <p class="text-gamma"><button class="btn btn-large btn-primary" type="button">Big green button</button></p>
 .btn-large {
-  // stylelint-disable-next-line primer/spacing
   padding: $em-spacer-6 1.5em;
   font-size: inherit;
-  // stylelint-disable-next-line primer/typography
-  line-height: $lh-default;
-
-  // stylelint-disable-next-line primer/borders
+  line-height: 1.5;
   border-radius: 0.5em;
 }
 

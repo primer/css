@@ -261,7 +261,7 @@ textarea {
  */
 
 optgroup {
-  font-weight: $font-weight-bold;
+  font-weight: var(--base-text-weight-semibold);
 }
 
 /**
@@ -304,7 +304,7 @@ html [type="button"], /* 1 */
  */
 
 fieldset {
-  border: $border-width $border-style #c0c0c0;
+  border: var(--borderWidth-default) solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em $em-spacer-6;
 }

@@ -7,10 +7,8 @@
   list-style-type: none;
 
   &.small .filter-item {
-    // stylelint-disable-next-line primer/spacing
-    padding: 6px 12px;
-    // stylelint-disable-next-line primer/typography
-    font-size: $font-size-small;
+    padding: var(--base-size-6) var(--base-size-12);
+    font-size: var(--text-body-size-small);
   }
 
   &.pjax-active .filter-item {
@@ -30,15 +28,13 @@
   padding: var(--base-size-8) var(--base-size-16);
   margin-bottom: var(--base-size-4);
   overflow: hidden;
-  // stylelint-disable-next-line primer/typography
-  font-size: $h5-size;
+  font-size: var(--h5-size);
   color: var(--fgColor-muted, var(--color-fg-muted));
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
-  // stylelint-disable-next-line primer/borders
-  border-radius: $border-radius;
+  border-radius: var(--borderRadius-default);
 
   &:hover {
     text-decoration: none;
@@ -70,8 +66,7 @@
 
   .count {
     float: right;
-    // stylelint-disable-next-line primer/typography
-    font-weight: $font-weight-bold;
+    font-weight: var(--base-text-weight-light);
   }
 
   .bar {

@@ -33,12 +33,9 @@
 
 .select-sm {
   height: $size-4;
-  // stylelint-disable-next-line primer/spacing
-  padding-top: 3px;
-  // stylelint-disable-next-line primer/spacing
-  padding-bottom: 3px;
-  // stylelint-disable-next-line primer/typography
-  font-size: $font-size-small;
+  padding-top: var(--base-size-4);
+  padding-bottom: var(--base-size-4);
+  font-size: var(--text-body-size-small);
 
   &[multiple] {
     height: auto;

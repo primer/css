@@ -23,19 +23,14 @@
   border-radius: 0;
 
   &:first-child {
-    // stylelint-disable-next-line primer/borders
-    border-top-left-radius: $border-radius;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-left-radius: $border-radius;
+    border-top-left-radius: var(--borderRadius-default);
+    border-bottom-left-radius: var(--borderRadius-default);
   }
 
   &:last-child {
-    // stylelint-disable-next-line primer/borders
-    border-right-width: $border-width;
-    // stylelint-disable-next-line primer/borders
-    border-top-right-radius: $border-radius;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-right-radius: $border-radius;
+    border-right-width: var(--borderWidth-default);
+    border-top-right-radius: var(--borderRadius-default);
+    border-bottom-right-radius: var(--borderRadius-default);
   }
 
   &.selected,
@@ -43,8 +38,7 @@
   &:focus,
   &:active,
   &:hover {
-    // stylelint-disable-next-line primer/borders
-    border-right-width: $border-width;
+    border-right-width: var(--borderWidth-default);
 
     + .BtnGroup-item,
     + .BtnGroup-parent .BtnGroup-item {
@@ -57,19 +51,14 @@
   float: left;
 
   &:first-child .BtnGroup-item {
-    // stylelint-disable-next-line primer/borders
-    border-top-left-radius: $border-radius;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-left-radius: $border-radius;
+    border-top-left-radius: var(--borderRadius-default);
+    border-bottom-left-radius: var(--borderRadius-default);
   }
 
   &:last-child .BtnGroup-item {
-    // stylelint-disable-next-line primer/borders
-    border-right-width: $border-width;
-    // stylelint-disable-next-line primer/borders
-    border-top-right-radius: $border-radius;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-right-radius: $border-radius;
+    border-right-width: var(--borderWidth-default);
+    border-top-right-radius: var(--borderRadius-default);
+    border-bottom-right-radius: var(--borderRadius-default);
   }
 
   .BtnGroup-item {
@@ -83,8 +72,7 @@
   &:active,
   &:hover {
     .BtnGroup-item {
-      // stylelint-disable-next-line primer/borders
-      border-right-width: $border-width;
+      border-right-width: var(--borderWidth-default);
     }
 
     + .BtnGroup-item,

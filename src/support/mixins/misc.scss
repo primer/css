@@ -3,8 +3,7 @@
   &::after,
   &::before {
     position: absolute;
-    // stylelint-disable-next-line primer/spacing
-    top: 11px;
+    top: var(--base-size-12);
     right: 100%;
     left: calc(var(--base-size-8) * -1);
     display: block;
@@ -16,8 +15,7 @@
   }
 
   &::after {
-    // stylelint-disable-next-line primer/spacing
-    margin-left: 2px;
+    margin-left: var(--base-size-2);
     background-color: var(--bgColor-default, var(--color-canvas-default));
     background-image: linear-gradient($background, $background);
   }

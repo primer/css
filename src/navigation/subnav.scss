@@ -3,17 +3,14 @@
 // Needs refactoring
 // Sub nav
 .subnav {
-  // stylelint-disable-next-line primer/spacing
-  margin-bottom: 20px;
+  margin-bottom: var(--base-size-20);
 
   @include clearfix();
 }
 
 .subnav-bordered {
-  // stylelint-disable-next-line primer/spacing
-  padding-bottom: 20px;
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  padding-bottom: var(--base-size-20);
+  border-bottom: var(--borderWidth-default) solid var(--borderColor-muted, var(--color-border-muted));
 }
 
 .subnav-flush {
@@ -23,18 +20,13 @@
 .subnav-item {
   position: relative;
   float: left;
-  // stylelint-disable-next-line primer/spacing
-  padding: 5px var(--base-size-16);
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-semibold;
-  // stylelint-disable-next-line primer/typography
+  padding: var(--base-size-4) var(--base-size-16);
+  font-weight: var(--base-text-weight-light);
   line-height: 20px;
   color: var(--fgColor-default, var(--color-fg-default));
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border: $border-width $border-style var(--control-borderColor-rest, var(--color-border-default));
+  border: var(--borderWidth-default) solid var(--control-borderColor-rest, var(--color-border-default));
 
   + .subnav-item {
-    // stylelint-disable-next-line primer/spacing
     margin-left: -1px;
   }
 
@@ -70,24 +62,19 @@
   }
 
   &:first-child {
-    // stylelint-disable-next-line primer/borders
-    border-top-left-radius: $border-radius;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-left-radius: $border-radius;
+    border-top-left-radius: var(--borderRadius-default);
+    border-bottom-left-radius: var(--borderRadius-default);
   }
 
   &:last-child {
-    // stylelint-disable-next-line primer/borders
-    border-top-right-radius: $border-radius;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-right-radius: $border-radius;
+    border-top-right-radius: var(--borderRadius-default);
+    border-bottom-right-radius: var(--borderRadius-default);
   }
 }
 
 .subnav-search {
   position: relative;
-  // stylelint-disable-next-line primer/spacing
-  margin-left: 12px;
+  margin-left: var(--base-size-12);
 }
 
 .subnav-search-input {
@@ -103,8 +90,7 @@
 
 .subnav-search-icon {
   position: absolute;
-  // stylelint-disable-next-line primer/spacing
-  top: 9px;
+  top: var(--base-size-8);
   left: var(--base-size-8);
   display: block;
   color: var(--fgColor-muted, var(--color-fg-muted));
@@ -126,7 +112,6 @@
   }
 
   + .subnav-search {
-    // stylelint-disable-next-line primer/spacing
     margin-left: -1px;
 
     .subnav-search-input {
@@ -149,6 +134,5 @@
 }
 
 .subnav-spacer-right {
-  // stylelint-disable-next-line primer/spacing
-  padding-right: 12px;
+  padding-right: var(--base-size-12);
 }

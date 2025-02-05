@@ -10,79 +10,61 @@
 // Heading mixins for use within components
 // These match heading utilities in utilities/typography
 @mixin h1 {
-  // stylelint-disable-next-line primer/typography
   font-size: var(--h1-size, $h1-size);
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-bold;
+  font-weight: var(--base-text-weight-light);
 }
 
 @mixin h2 {
-  // stylelint-disable-next-line primer/typography
   font-size: var(--h2-size, $h2-size);
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-bold;
+  font-weight: var(--base-text-weight-light);
 }
 
 @mixin h3 {
-  // stylelint-disable-next-line primer/typography
   font-size: var(--h3-size, $h3-size);
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-bold;
+  font-weight: var(--base-text-weight-light);
 }
 
 @mixin h4 {
-  // stylelint-disable-next-line primer/typography
   font-size: var(--h4-size, $h4-size);
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-bold;
+  font-weight: var(--base-text-weight-light);
 }
 
 @mixin h5 {
-  // stylelint-disable-next-line primer/typography
   font-size: var(--h5-size, $h5-size);
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-bold;
+  font-weight: var(--base-text-weight-light);
 }
 
 @mixin h6 {
-  // stylelint-disable-next-line primer/typography
   font-size: var(--h6-size, $h6-size);
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-bold;
+  font-weight: var(--base-text-weight-light);
 }
 
 // Responsive heading mixins
 // There are no responsive mixins for h4-h6 because they are small
 // and don't need to be smaller on mobile.
 @mixin f1-responsive {
-  // stylelint-disable-next-line primer/typography
   font-size: var(--h1-size-mobile, $h1-size-mobile);
 
   // 32px on desktop
   @include breakpoint(md) {
-    // stylelint-disable-next-line primer/typography
     font-size: var(--h1-size, $h1-size);
   }
 }
 
 @mixin f2-responsive {
-  // stylelint-disable-next-line primer/typography
   font-size: var(--h2-size-mobile, $h2-size-mobile);
 
   // 24px on desktop
   @include breakpoint(md) {
-    // stylelint-disable-next-line primer/typography
     font-size: var(--h2-size, $h2-size);
   }
 }
 
 @mixin f3-responsive {
-  // stylelint-disable-next-line primer/typography
   font-size: var(--h3-size-mobile, $h3-size-mobile);
 
   // 20px on desktop
   @include breakpoint(md) {
-    // stylelint-disable-next-line primer/typography
     font-size: var(--h3-size, $h3-size);
   }
 }
@@ -93,20 +75,20 @@
 @mixin h1-responsive {
   @include f1-responsive;
 
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-bold;
+
+  font-weight: var(--base-text-weight-light);
 }
 
 @mixin h2-responsive {
   @include f2-responsive;
 
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-bold;
+
+  font-weight: var(--base-text-weight-light);
 }
 
 @mixin h3-responsive {
   @include f3-responsive;
 
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-bold;
+
+  font-weight: var(--base-text-weight-light);
 }

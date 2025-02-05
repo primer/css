@@ -4,18 +4,18 @@
 
 .branch-name {
   display: inline-block;
-  // stylelint-disable-next-line primer/spacing
+
   padding: 2px 6px;
-  // stylelint-disable-next-line primer/typography, declaration-property-value-no-unknown
-  font: 12px $mono-font;
+  , declaration-property-value-no-unknown
+  font: 12px var(--fontStack-monospace);
   color: var(--fgColor-muted, var(--color-fg-muted));
   word-break: break-all;
   background-color: var(--bgColor-accent-muted, var(--color-accent-subtle));
-  // stylelint-disable-next-line primer/borders
-  border-radius: $border-radius;
+
+  border-radius: var(--borderRadius-default);
 
   .octicon {
-    // stylelint-disable-next-line primer/spacing
+
     margin: 1px -2px 0 0;
     color: var(--fgColor-muted, var(--color-fg-muted));
   }

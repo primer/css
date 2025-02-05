@@ -62,10 +62,8 @@ $SelectMenu-max-height: 480px !default;
   pointer-events: auto;
   flex-direction: column;
   background-color: var(--overlay-bgColor, var(--color-canvas-overlay));
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border: $border-width $border-style var(--selectMenu-borderColor, var(--color-select-menu-backdrop-border));
-  // stylelint-disable-next-line primer/borders
-  border-radius: $border-radius * 2;
+  border: var(--borderWidth-default) solid var(--selectMenu-borderColor, var(--color-select-menu-backdrop-border));
+  border-radius: calc(var(--borderRadius-default) * 2);
   box-shadow: var(--shadow-floating-legacy, var(--color-overlay-shadow));
   animation: SelectMenu-modal-animation 0.12s cubic-bezier(0, 0.1, 0.1, 1) backwards;
 
@@ -88,11 +86,9 @@ $SelectMenu-max-height: 480px !default;
     height: auto;
     max-height: $SelectMenu-max-height;
     margin: var(--base-size-8) 0 var(--base-size-16) 0;
-    // stylelint-disable-next-line primer/typography
-    font-size: $font-size-small;
+    font-size: var(--text-body-size-small);
     border-color: var(--borderColor-default, var(--color-border-default));
-    // stylelint-disable-next-line primer/borders
-    border-radius: $border-radius;
+    border-radius: var(--borderRadius-default);
     box-shadow: var(--shadow-floating-legacy, var(--color-overlay-shadow));
     animation-name: SelectMenu-modal-animation--sm;
   }
@@ -107,21 +103,17 @@ $SelectMenu-max-height: 480px !default;
   padding: var(--base-size-16);
   flex: none; // fixes header from getting squeezed in Safari iOS
   align-items: center;
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  border-bottom: var(--borderWidth-default) solid var(--borderColor-muted, var(--color-border-muted));
 
   @include breakpoint(sm) {
-    // stylelint-disable-next-line primer/spacing
-    padding: 7px 7px 7px var(--base-size-16);
+    padding: var(--base-size-8) var(--base-size-8) var(--base-size-8) var(--base-size-16);
   }
 }
 
 .SelectMenu-title {
   flex: 1;
-  // stylelint-disable-next-line primer/typography
-  font-size: $body-font-size;
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-bold;
+  font-size: var(--body-font-size);
+  font-weight: var(--base-text-weight-light);
 
   @include breakpoint(sm) {
     font-size: inherit;
@@ -131,7 +123,6 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-closeButton {
   padding: var(--base-size-16);
   margin: calc(var(--base-size-16) * -1);
-  // stylelint-disable-next-line primer/typography
   line-height: 1;
   color: var(--fgColor-muted, var(--color-fg-muted));
   background-color: transparent;
@@ -139,7 +130,6 @@ $SelectMenu-max-height: 480px !default;
 
   @include breakpoint(sm) {
     padding: var(--base-size-8);
-    // stylelint-disable-next-line primer/spacing
     margin: calc(var(--base-size-8) * -1) (-7px); // Using -7px fixes a :focus glitch
   }
 }
@@ -151,8 +141,7 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-filter {
   padding: var(--base-size-16);
   margin: 0;
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  border-bottom: var(--borderWidth-default) solid var(--borderColor-muted, var(--color-border-muted));
 
   @include breakpoint(sm) {
     padding: var(--base-size-8);
@@ -164,8 +153,7 @@ $SelectMenu-max-height: 480px !default;
   width: 100%;
 
   @include breakpoint(sm) {
-    // stylelint-disable-next-line primer/typography
-    font-size: $h5-size;
+    font-size: var(--h5-size);
   }
 }
 
@@ -177,8 +165,7 @@ $SelectMenu-max-height: 480px !default;
   position: relative;
   padding: 0;
   margin: 0;
-  // stylelint-disable-next-line primer/spacing
-  margin-bottom: -$border-width; // Hides the last border in the list
+  margin-bottom: -var(--borderWidth-default); // Hides the last border in the list
   flex: auto;
   overflow-x: hidden;
   overflow-y: auto;
@@ -201,14 +188,11 @@ $SelectMenu-max-height: 480px !default;
   cursor: pointer;
   background-color: var(--overlay-bgColor, var(--color-canvas-overlay));
   border: 0;
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  border-bottom: var(--borderWidth-default) solid var(--borderColor-muted, var(--color-border-muted));
 
   @include breakpoint(sm) {
-    // stylelint-disable-next-line primer/spacing
-    padding-top: 7px;
-    // stylelint-disable-next-line primer/spacing
-    padding-bottom: 7px;
+    padding-top: var(--base-size-8);
+    padding-bottom: var(--base-size-8);
   }
 
   // Borderless
@@ -260,10 +244,8 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-tab {
   flex: 1;
   padding: var(--base-size-8) var(--base-size-16);
-  // stylelint-disable-next-line primer/typography
-  font-size: $font-size-small;
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-semibold;
+  font-size: var(--text-body-size-small);
+  font-weight: var(--base-text-weight-light);
   color: var(--fgColor-muted, var(--color-fg-muted));
   text-align: center;
   background-color: transparent;
@@ -274,13 +256,10 @@ $SelectMenu-max-height: 480px !default;
   @include breakpoint(sm) {
     flex: none;
     padding: var(--base-size-4) var(--base-size-16);
-    // stylelint-disable-next-line primer/borders, primer/colors
-    border: $border-width $border-style transparent;
+    border: var(--borderWidth-default) solid transparent;
     border-bottom-width: 0;
-    // stylelint-disable-next-line primer/borders
-    border-top-left-radius: $border-radius;
-    // stylelint-disable-next-line primer/borders
-    border-top-right-radius: $border-radius;
+    border-top-left-radius: var(--borderRadius-default);
+    border-top-right-radius: var(--borderRadius-default);
   }
 
   &[aria-selected='true'] {
@@ -303,12 +282,10 @@ $SelectMenu-max-height: 480px !default;
 // A container used to show different kinds of text messages.
 
 .SelectMenu-message {
-  // stylelint-disable-next-line primer/spacing
-  padding: 7px var(--base-size-16);
+  padding: var(--base-size-8) var(--base-size-16);
   text-align: center;
   background-color: var(--overlay-bgColor, var(--color-canvas-overlay));
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  border-bottom: var(--borderWidth-default) solid var(--borderColor-muted, var(--color-border-muted));
 }
 
 // Blankslate and Loading
@@ -329,19 +306,15 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-divider {
   padding: var(--base-size-4) var(--base-size-16);
   margin: 0;
-  // stylelint-disable-next-line primer/typography
-  font-size: $font-size-small;
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-semibold;
+  font-size: var(--text-body-size-small);
+  font-weight: var(--base-text-weight-light);
   color: var(--fgColor-muted, var(--color-fg-muted));
   background-color: var(--bgColor-muted, var(--color-canvas-subtle));
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  border-bottom: var(--borderWidth-default) solid var(--borderColor-muted, var(--color-border-muted));
 
   // Borderless
   .SelectMenu-list--borderless & {
-    // stylelint-disable-next-line primer/borders, primer/colors
-    border-top: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+    border-top: var(--borderWidth-default) solid var(--borderColor-muted, var(--color-border-muted));
 
     &:empty {
       padding: 0;
@@ -357,16 +330,13 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-footer {
   z-index: 0; // Avoid top border from getting covered by the negative margin of the list
   padding: var(--base-size-8) var(--base-size-16);
-  // stylelint-disable-next-line primer/typography
-  font-size: $font-size-small;
+  font-size: var(--text-body-size-small);
   color: var(--fgColor-muted, var(--color-fg-muted));
   text-align: center;
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-top: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  border-top: var(--borderWidth-default) solid var(--borderColor-muted, var(--color-border-muted));
 
   @include breakpoint(sm) {
-    // stylelint-disable-next-line primer/spacing
-    padding: 7px var(--base-size-16);
+    padding: var(--base-size-8) var(--base-size-16);
   }
 }
 
@@ -408,8 +378,7 @@ $SelectMenu-max-height: 480px !default;
 // Visible when a user clicks/taps on a list item
 
 .SelectMenu-item[aria-checked='true'] {
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-semibold;
+  font-weight: var(--base-text-weight-light);
   color: var(--fgColor-default, var(--color-fg-default));
 
   .SelectMenu-icon--check {

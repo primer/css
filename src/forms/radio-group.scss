@@ -6,18 +6,13 @@
 
 .radio-label {
   float: left;
-  // stylelint-disable-next-line primer/spacing
-  padding: 6px var(--base-size-16) 6px calc(var(--base-size-16) + 12px + var(--base-size-8)); // 12px is the size of the radio-input
-  // stylelint-disable-next-line primer/spacing
+  padding: var(--base-size-6) var(--base-size-16) var(--base-size-6) calc(var(--base-size-16) + var(--base-size-12) + var(--base-size-8)); // 12px is the size of the radio-input
   margin-left: -1px;
-  // stylelint-disable-next-line primer/typography
-  font-size: $body-font-size;
-  // stylelint-disable-next-line primer/typography
+  font-size: var(--body-font-size);
   line-height: 20px; // Specifically not inherit our `<body>` default
   color: var(--fgColor-default, var(--color-fg-default));
   cursor: pointer;
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border: $border-width $border-style var(--borderColor-default, var(--color-border-default));
+  border: var(--borderWidth-default) solid var(--borderColor-default, var(--color-border-default));
 
   :checked + & {
     position: relative;
@@ -27,17 +22,13 @@
 
   &:first-of-type {
     margin-left: 0;
-    // stylelint-disable-next-line primer/borders
-    border-top-left-radius: $border-radius;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-left-radius: $border-radius;
+    border-top-left-radius: var(--borderRadius-default);
+    border-bottom-left-radius: var(--borderRadius-default);
   }
 
   &:last-of-type {
-    // stylelint-disable-next-line primer/borders
-    border-top-right-radius: $border-radius;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-right-radius: $border-radius;
+    border-top-right-radius: var(--borderRadius-default);
+    border-bottom-right-radius: var(--borderRadius-default);
   }
 
   .octicon {
@@ -49,7 +40,6 @@
 .radio-input {
   z-index: 3;
   float: left;
-  // stylelint-disable-next-line primer/spacing
   margin: 10px calc(var(--base-size-32) * -1) 0 var(--base-size-16);
 
   &:disabled {

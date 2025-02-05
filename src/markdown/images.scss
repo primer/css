@@ -10,13 +10,11 @@
     box-sizing: content-box;
 
     &[align='right'] {
-      // stylelint-disable-next-line primer/spacing
-      padding-left: 20px;
+      padding-left: var(--base-size-20);
     }
 
     &[align='left'] {
-      // stylelint-disable-next-line primer/spacing
-      padding-right: 20px;
+      padding-right: var(--base-size-20);
     }
   }
 
@@ -38,13 +36,10 @@
       display: block;
       float: left;
       width: auto;
-      // stylelint-disable-next-line primer/spacing
-      padding: 7px;
-      // stylelint-disable-next-line primer/spacing
-      margin: 13px 0 0;
+      padding: var(--base-size-8);
+      margin: var(--base-size-12) 0 0;
       overflow: hidden;
-      // stylelint-disable-next-line primer/borders, primer/colors
-      border: $border-width $border-style var(--borderColor-default, var(--color-border-default));
+      border: var(--borderWidth-default) solid var(--borderColor-default, var(--color-border-default));
     }
 
     span img {
@@ -54,8 +49,7 @@
 
     span span {
       display: block;
-      // stylelint-disable-next-line primer/spacing
-      padding: 5px 0 0;
+      padding: var(--base-size-4) 0 0;
       clear: both;
       color: var(--fgColor-default, var(--color-fg-default));
     }
@@ -68,8 +62,7 @@
 
     > span {
       display: block;
-      // stylelint-disable-next-line primer/spacing
-      margin: 13px auto 0;
+      margin: var(--base-size-12) auto 0;
       overflow: hidden;
       text-align: center;
     }
@@ -87,8 +80,7 @@
 
     > span {
       display: block;
-      // stylelint-disable-next-line primer/spacing
-      margin: 13px 0 0;
+      margin: var(--base-size-12) 0 0;
       overflow: hidden;
       text-align: right;
     }
@@ -102,27 +94,23 @@
   span.float-left {
     display: block;
     float: left;
-    // stylelint-disable-next-line primer/spacing
-    margin-right: 13px;
+    margin-right: var(--base-size-12);
     overflow: hidden;
 
     span {
-      // stylelint-disable-next-line primer/spacing
-      margin: 13px 0 0;
+      margin: var(--base-size-12) 0 0;
     }
   }
 
   span.float-right {
     display: block;
     float: right;
-    // stylelint-disable-next-line primer/spacing
-    margin-left: 13px;
+    margin-left: var(--base-size-12);
     overflow: hidden;
 
     > span {
       display: block;
-      // stylelint-disable-next-line primer/spacing
-      margin: 13px auto 0;
+      margin: var(--base-size-12) auto 0;
       overflow: hidden;
       text-align: right;
     }

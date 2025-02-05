@@ -7,21 +7,16 @@
 
 .form-control,
 .form-select {
-  // stylelint-disable-next-line primer/spacing
-  padding: 5px 12px;
-  // stylelint-disable-next-line primer/typography
-  font-size: $body-font-size;
-  // stylelint-disable-next-line primer/typography
+  padding: var(--base-size-4) var(--base-size-12);
+  font-size: var(--body-font-size);
   line-height: 20px;
   color: var(--fgColor-default, var(--color-fg-default));
   vertical-align: middle;
   background-color: var(--bgColor-default, var(--color-canvas-default));
   background-repeat: no-repeat; // Repeat and position set for form states (success, error, etc)
   background-position: right 8px center; // For form validation. This keeps images 8px from right and centered vertically.
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border: $border-width $border-style var(--control-borderColor-rest, var(--color-border-default));
-  // stylelint-disable-next-line primer/borders
-  border-radius: $border-radius;
+  border: var(--borderWidth-default) solid var(--control-borderColor-rest, var(--color-border-default));
+  border-radius: var(--borderRadius-default);
   box-shadow: var(--shadow-inset, var(--color-primer-shadow-inset));
   transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
   transition-property: color, background-color, box-shadow, border-color;
@@ -46,8 +41,7 @@
   &.border-0 {
     &:focus,
     &:focus-visible {
-      // stylelint-disable-next-line primer/borders, primer/colors
-      border: $border-width $border-style var(--borderColor-accent-emphasis, var(--color-accent-fg)) !important;
+      border: var(--borderWidth-default) solid var(--borderColor-accent-emphasis, var(--color-accent-fg)) !important;
     }
   }
 
@@ -66,12 +60,10 @@
 
   // Ensures inputs don't zoom on mobile iPhone but are body-font size on iPad
   @supports (-webkit-touch-callout: none) {
-    // stylelint-disable-next-line primer/typography
-    font-size: $h4-size;
+    font-size: var(--h4-size);
 
     @include breakpoint(md) {
-      // stylelint-disable-next-line primer/typography
-      font-size: $body-font-size;
+      font-size: var(--body-font-size);
     }
   }
 }
@@ -80,8 +72,7 @@
 textarea.form-control {
   padding-top: var(--base-size-8);
   padding-bottom: var(--base-size-8);
-  // stylelint-disable-next-line primer/typography
-  line-height: $lh-default;
+  line-height: 1.5;
 }
 
 // Inputs with contrast for easy light gray backgrounds against white.
@@ -96,20 +87,15 @@ textarea.form-control {
 // Mini inputs, to match .minibutton
 .input-sm {
   min-height: $size-4;
-  // stylelint-disable-next-line primer/spacing
-  padding-top: 3px;
-  // stylelint-disable-next-line primer/spacing
-  padding-bottom: 3px;
-  // stylelint-disable-next-line primer/typography
-  font-size: $font-size-small;
-  // stylelint-disable-next-line primer/typography
+  padding-top: var(--base-size-4);
+  padding-bottom: var(--base-size-4);
+  font-size: var(--text-body-size-small);
   line-height: 20px;
 }
 
 // Large inputs
 .input-lg {
-  // stylelint-disable-next-line primer/typography
-  font-size: $h4-size;
+  font-size: var(--h4-size);
 }
 
 // Full-width inputs
@@ -120,8 +106,7 @@ textarea.form-control {
 
 // Inputs with monospace text
 .input-monospace {
-  // stylelint-disable-next-line primer/typography
-  font-family: $mono-font;
+  font-family: var(--fontStack-monospace);
 }
 
 // Hide the icon that tries to autofill contact info in webkit
@@ -139,40 +124,33 @@ textarea.form-control {
 //
 // For checkboxes and radio button selections.
 .form-checkbox {
-  // stylelint-disable-next-line primer/spacing
-  padding-left: 20px;
-  // stylelint-disable-next-line primer/spacing
-  margin: 15px 0;
+  padding-left: var(--base-size-20);
+  margin: var(--base-size-16) 0;
   vertical-align: middle;
 
   label {
     em.highlight {
       position: relative;
       left: calc(var(--base-size-4) * -1);
-      // stylelint-disable-next-line primer/spacing
-      padding: 2px var(--base-size-4);
+      padding: var(--base-size-2) var(--base-size-4);
       font-style: normal;
       background: var(--bgColor-attention-muted, var(--color-attention-subtle));
-      // stylelint-disable-next-line primer/borders
-      border-radius: $border-radius;
+      border-radius: var(--borderRadius-default);
     }
   }
 
   input[type='checkbox'],
   input[type='radio'] {
     float: left;
-    // stylelint-disable-next-line primer/spacing
-    margin: 5px 0 0 -20px;
+    margin: var(--base-size-4) 0 0 -20px;
     vertical-align: middle;
   }
 
   .note {
     display: block;
     margin: 0;
-    // stylelint-disable-next-line primer/typography
-    font-size: $font-size-small;
-    // stylelint-disable-next-line primer/typography
-    font-weight: $font-weight-normal;
+    font-size: var(--text-body-size-small);
+    font-weight: var(--base-text-weight-light);
     color: var(--fgColor-muted, var(--color-fg-muted));
   }
 }
@@ -196,28 +174,24 @@ textarea.form-control {
 // Wrap field groups in `<div.hfields>` to lay them out horizontally - great for
 // the top of pages with autosave.
 .hfields {
-  // stylelint-disable-next-line primer/spacing
-  margin: 15px 0;
+  margin: var(--base-size-16) 0;
 
   @include clearfix;
 
   .form-group {
     float: left;
-    // stylelint-disable-next-line primer/spacing
     margin: 0 30px 0 0;
 
     dt, // TODO: Deprecate
     .form-group-header {
       label {
         display: inline-block;
-        // stylelint-disable-next-line primer/spacing
-        margin: 5px 0 0;
+        margin: var(--base-size-4) 0 0;
         color: var(--fgColor-muted, var(--color-fg-muted));
       }
 
       img {
         position: relative;
-        // stylelint-disable-next-line primer/spacing
         top: -2px;
       }
     }
@@ -225,13 +199,11 @@ textarea.form-control {
 
   .btn {
     float: left;
-    // stylelint-disable-next-line primer/spacing
-    margin: 28px 25px 0 -20px;
+    margin: var(--base-size-28) var(--base-size-24) 0 -20px;
   }
 
   .form-select {
-    // stylelint-disable-next-line primer/spacing
-    margin-top: 5px;
+    margin-top: var(--base-size-4);
   }
 }
 
@@ -253,34 +225,26 @@ input::-webkit-inner-spin-button {
     float: right;
 
     + .btn {
-      // stylelint-disable-next-line primer/spacing
-      margin-right: 5px;
+      margin-right: var(--base-size-4);
     }
   }
 }
 
 .form-warning {
-  // stylelint-disable-next-line primer/spacing
   padding: var(--base-size-8) 10px;
-  // stylelint-disable-next-line primer/spacing
   margin: 10px 0;
-  // stylelint-disable-next-line primer/typography
-  font-size: $h5-size;
+  font-size: var(--h5-size);
   color: var(--fgColor-attention, var(--color-attention-fg));
   background: var(--bgColor-attention-muted, var(--color-attention-subtle));
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border: $border-width $border-style var(--borderColor-attention-emphasis, var(--color-attention-emphasis));
-  // stylelint-disable-next-line primer/borders
-  border-radius: $border-radius;
+  border: var(--borderWidth-default) solid var(--borderColor-attention-emphasis, var(--color-attention-emphasis));
+  border-radius: var(--borderRadius-default);
 
   p {
     margin: 0;
-    // stylelint-disable-next-line primer/typography
-    line-height: $lh-default;
+    line-height: 1.5;
   }
 
   a {
-    // stylelint-disable-next-line primer/typography
-    font-weight: $font-weight-bold;
+    font-weight: var(--base-text-weight-light);
   }
 }

@@ -5,7 +5,6 @@
   // Lists, Blockquotes & Such
   ul,
   ol {
-    // stylelint-disable-next-line primer/spacing
     padding-left: 2em;
 
     &.no-list {
@@ -76,7 +75,6 @@
   }
 
   li + li {
-    // stylelint-disable-next-line primer/spacing
     margin-top: $em-spacer-3;
   }
 
@@ -86,11 +84,9 @@
     dt {
       padding: 0;
       margin-top: var(--base-size-16);
-      // stylelint-disable-next-line primer/typography
       font-size: 1em;
       font-style: italic;
-      // stylelint-disable-next-line primer/typography
-      font-weight: $font-weight-bold;
+      font-weight: var(--base-text-weight-light);
     }
 
     dd {

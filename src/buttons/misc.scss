@@ -32,8 +32,7 @@
   &:not(.dropdown-item) {
     &:focus,
     &:focus-visible {
-      // stylelint-disable-next-line primer/borders
-      border-radius: $border-radius;
+      border-radius: var(--borderRadius-default);
       outline-offset: 0;
     }
   }
@@ -46,8 +45,7 @@
   color: var(--fgColor-accent, var(--color-accent-fg));
   background-color: transparent; // Reset default gradient backgrounds and colors
   border: 0;
-  // stylelint-disable-next-line primer/borders
-  border-radius: $border-radius;
+  border-radius: var(--borderRadius-default);
   box-shadow: none;
 
   &:hover,
@@ -86,12 +84,9 @@
 // Icon-only buttons
 .btn-octicon {
   display: inline-block;
-  // stylelint-disable-next-line primer/spacing
-  padding: 5px;
-  // stylelint-disable-next-line primer/spacing
-  margin-left: 5px;
-  // stylelint-disable-next-line primer/typography
-  line-height: $lh-condensed-ultra;
+  padding: var(--base-size-4);
+  margin-left: var(--base-size-4);
+  line-height: 1;
   color: var(--fgColor-muted, var(--color-fg-muted));
   vertical-align: middle;
 
@@ -106,8 +101,7 @@
 
   &:focus,
   &:focus-visible {
-    // stylelint-disable-next-line primer/borders
-    border-radius: $border-radius;
+    border-radius: var(--borderRadius-default);
   }
 
   &.disabled,
@@ -151,12 +145,9 @@
 
   &.inline {
     position: relative;
-    // stylelint-disable-next-line primer/spacing
     top: -1px;
     display: inline-block;
-    // stylelint-disable-next-line primer/spacing
-    margin-left: 5px;
-    // stylelint-disable-next-line primer/typography
+    margin-left: var(--base-size-4);
     line-height: 0;
   }
 }
@@ -165,20 +156,15 @@
 .ellipsis-expander {
   display: inline-block;
   height: 12px;
-  // stylelint-disable-next-line primer/spacing
-  padding: 0 5px 5px;
-  // stylelint-disable-next-line primer/typography
-  font-size: $font-size-small;
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-bold;
-  // stylelint-disable-next-line primer/typography
+  padding: 0 var(--base-size-4) var(--base-size-4);
+  font-size: var(--text-body-size-small);
+  font-weight: var(--base-text-weight-light);
   line-height: 6px;
   color: var(--fgColor-default, var(--color-fg-default));
   text-decoration: none;
   vertical-align: middle;
   background: var(--bgColor-neutral-muted, var(--color-neutral-muted));
   border: 0;
-  // stylelint-disable-next-line primer/borders
   border-radius: 1px;
 
   &:hover {
@@ -212,24 +198,17 @@
 .social-count {
   position: relative;
   float: left;
-  // stylelint-disable-next-line primer/spacing
-  padding: 3px 12px;
-  // stylelint-disable-next-line primer/typography
-  font-size: $font-size-small;
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-bold;
-  // stylelint-disable-next-line primer/typography
+  padding: var(--base-size-4) var(--base-size-12);
+  font-size: var(--text-body-size-small);
+  font-weight: var(--base-text-weight-light);
   line-height: 20px;
   color: var(--fgColor-default, var(--color-fg-default));
   vertical-align: middle;
   background-color: var(--bgColor-default, var(--color-canvas-default));
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border: $border-width $border-style var(--button-default-borderColor-rest, var(--color-btn-border));
+  border: var(--borderWidth-default) solid var(--button-default-borderColor-rest, var(--color-btn-border));
   border-left: 0;
-  // stylelint-disable-next-line primer/borders
-  border-top-right-radius: $border-radius;
-  // stylelint-disable-next-line primer/borders
-  border-bottom-right-radius: $border-radius;
+  border-top-right-radius: var(--borderRadius-default);
+  border-bottom-right-radius: var(--borderRadius-default);
   box-shadow: var(--shadow-resting-small, var(--color-shadow-small)), var(--shadow-highlight, var(--color-primer-shadow-highlight));
 
   &:hover,

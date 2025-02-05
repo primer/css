@@ -11,7 +11,6 @@
   right: -15%;
   bottom: -9%;
   background-color: var(--bgColor-default, var(--color-canvas-default)); // For transparent backgrounds
-  // stylelint-disable-next-line primer/borders
-  border-radius: $border-radius-1;
+  border-radius: var(--borderRadius-default);;
   box-shadow: var(--avatar-shadow, var(--color-avatar-child-shadow));
 }

@@ -3,15 +3,12 @@
   // Inline code snippets
   code,
   tt {
-    // stylelint-disable-next-line primer/spacing
     padding: 0.2em 0.4em;
     margin: 0;
-    // stylelint-disable-next-line primer/typography
     font-size: 85%;
     white-space: break-spaces; // keeps rendering spaces, but breaks them onto multiple lines
     background-color: var(--bgColor-neutral-muted, var(--color-neutral-muted));
-    // stylelint-disable-next-line primer/borders
-    border-radius: $border-radius;
+    border-radius: var(--borderRadius-default);
 
     br { display: none; }
   }
@@ -19,7 +16,6 @@
   del code { text-decoration: inherit; }
 
   samp {
-    // stylelint-disable-next-line primer/typography
     font-size: 85%;
   }
 
@@ -27,7 +23,6 @@
     word-wrap: normal;
 
     code {
-      // stylelint-disable-next-line primer/typography
       font-size: 100%;
     }
 
@@ -55,14 +50,11 @@
   pre {
     padding: var(--base-size-16);
     overflow: auto;
-    // stylelint-disable-next-line primer/typography
     font-size: 85%;
-    // stylelint-disable-next-line primer/typography
     line-height: 1.45;
     color: var(--fgColor-default, var(--color-fg-default));
     background-color: var(--bgColor-muted, var(--color-canvas-subtle));
-    // stylelint-disable-next-line primer/borders
-    border-radius: $border-radius;
+    border-radius: var(--borderRadius-default);
   }
 
   pre code,

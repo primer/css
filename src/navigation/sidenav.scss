@@ -10,14 +10,12 @@
   position: relative;
   display: block;
   width: 100%;
-  // stylelint-disable-next-line primer/spacing
-  padding: 12px var(--base-size-16);
+  padding: var(--base-size-12) var(--base-size-16);
   color: var(--fgColor-default, var(--color-fg-default));
   text-align: left;
   background-color: transparent;
   border: 0;
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-top: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  border-top: var(--borderWidth-default) solid var(--borderColor-muted, var(--color-border-muted));
 
   &:first-child {
     border-top: 0;
@@ -26,7 +24,7 @@
   &:last-child {
     // makes sure there is a "bottom border" in case the list is not long enough
     // stylelint-disable-next-line primer/box-shadow, declaration-property-value-no-unknown
-    box-shadow: 0 $border-width 0 var(--borderColor-default, var(--color-border-default));
+    box-shadow: 0 var(--borderWidth-default) 0 var(--borderColor-default, var(--color-border-default));
   }
 
   // Bar on the left
@@ -96,7 +94,6 @@
 
 .SideNav-subItem[aria-current]:not([aria-current='false']),
 .SideNav-subItem[aria-selected='true'] {
-  // stylelint-disable-next-line primer/typography
-  font-weight: $font-weight-semibold;
+  font-weight: var(--base-text-weight-light);
   color: var(--fgColor-default, var(--color-fg-default));
 }

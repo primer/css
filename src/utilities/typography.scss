@@ -66,7 +66,7 @@
 .h4,
 .h5,
 .h6 {
-  font-weight: $font-weight-bold !important;
+  font-weight: var(--base-text-weight-semibold) !important;
 }
 
 // Type utilities that match type sale
@@ -120,7 +120,7 @@
 /* Set the font size to 40px and weight to light */
 .f00-light {
   font-size: var(--h00-size-mobile, $h00-size-mobile) !important;
-  font-weight: $font-weight-light !important;
+  font-weight: var(--base-text-weight-light) !important;
 
   @include breakpoint(md) {
     font-size: var(--h00-size, $h00-size) !important;
@@ -130,7 +130,7 @@
 /* Set the font size to 32px and weight to light */
 .f0-light {
   font-size: var(--h0-size-mobile, $h0-size-mobile) !important;
-  font-weight: $font-weight-light !important;
+  font-weight: var(--base-text-weight-light) !important;
 
   @include breakpoint(md) {
     font-size: var(--h0-size, $h0-size) !important;
@@ -140,7 +140,7 @@
 /* Set the font size to 26px and weight to light */
 .f1-light {
   font-size: var(--h1-size-mobile, $h1-size-mobile) !important;
-  font-weight: $font-weight-light !important;
+  font-weight: var(--base-text-weight-light) !important;
 
   @include breakpoint(md) {
     font-size: var(--h1-size, $h1-size) !important;
@@ -150,7 +150,7 @@
 /* Set the font size to 22px and weight to light */
 .f2-light {
   font-size: var(--h2-size-mobile, $h2-size-mobile) !important;
-  font-weight: $font-weight-light !important;
+  font-weight: var(--base-text-weight-light) !important;
 
   @include breakpoint(md) {
     font-size: var(--h2-size, $h2-size) !important;
@@ -161,7 +161,7 @@
 /* Set the font size to 18px and weight to light */
 .f3-light {
   font-size: var(--h3-size-mobile, $h3-size-mobile) !important;
-  font-weight: $font-weight-light !important;
+  font-weight: var(--base-text-weight-light) !important;
 
   @include breakpoint(md) {
     font-size: var(--h3-size, $h3-size) !important;
@@ -178,10 +178,9 @@
 
 /* Large leading paragraphs */
 .lead {
-  // stylelint-disable-next-line primer/spacing
   margin-bottom: 30px;
   font-size: var(--h3-size, $h3-size);
-  font-weight: $font-weight-light;
+  font-weight: var(--base-text-weight-light);
 }
 
 // Line-height variations
@@ -194,17 +193,17 @@
 
     /* Set the line height to ultra condensed */
     .lh#{$variant}-condensed-ultra {
-      line-height: $lh-condensed-ultra !important;
+      line-height: 1 !important;
     }
 
     /* Set the line height to condensed */
     .lh#{$variant}-condensed {
-      line-height: $lh-condensed !important;
+      line-height: 1.25 !important;
     }
 
     /* Set the line height to default */
     .lh#{$variant}-default {
-      line-height: $lh-default !important;
+      line-height: 1.5 !important;
     }
 
     /* Set the line height to zero */
@@ -239,20 +238,20 @@
 // Text styles
 /* Set the font weight to normal */
 .text-normal {
-  font-weight: $font-weight-normal !important;
+  font-weight: var(--base-text-weight-normal) !important;
 }
 
 /* Set the font weight to bold */
 .text-bold {
-  font-weight: $font-weight-bold !important;
+  font-weight: var(--base-text-weight-semibold) !important;
 }
 
 .text-semibold {
-  font-weight: $font-weight-semibold !important;
+  font-weight: var(--base-text-weight-medium) !important;
 }
 
 .text-light {
-  font-weight: $font-weight-light !important;
+  font-weight: var(--base-text-weight-light) !important;
 }
 
 /* Set the font to italic */
@@ -309,7 +308,7 @@
 }
 
 .text-emphasized {
-  font-weight: $font-weight-bold;
+  font-weight: var(--base-text-weight-semibold);
 }
 
 // List styles
@@ -319,7 +318,7 @@
 
 /* Set to monospace font */
 .text-mono {
-  font-family: $mono-font !important;
+  font-family: var(--fontStack-monospace) !important;
 }
 
 /* Disallow user from selecting text */

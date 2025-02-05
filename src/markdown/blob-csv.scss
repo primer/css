@@ -2,20 +2,16 @@
 .markdown-body .csv-data {
   td,
   th {
-    // stylelint-disable-next-line primer/spacing
-    padding: 5px;
+    padding: var(--base-size-4);
     overflow: hidden;
-    // stylelint-disable-next-line primer/typography
-    font-size: $font-size-small;
-    // stylelint-disable-next-line primer/typography
-    line-height: $lh-condensed-ultra;
+    font-size: var(--text-body-size-small);
+    line-height: 1;
     text-align: left;
     white-space: nowrap;
   }
 
   .blob-num {
-    // stylelint-disable-next-line primer/spacing
-    padding: 10px var(--base-size-8) 9px;
+    padding: 10px var(--base-size-8) var(--base-size-8);
     text-align: right;
     background: var(--bgColor-default, var(--color-canvas-default));
     border: 0;
@@ -24,8 +20,7 @@
   tr { border-top: 0; }
 
   th {
-    // stylelint-disable-next-line primer/typography
-    font-weight: $font-weight-bold;
+    font-weight: var(--base-text-weight-light);
     background: var(--bgColor-muted, var(--color-canvas-subtle));
     border-top: 0;
   }

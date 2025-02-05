@@ -11,8 +11,7 @@
 // </div>
 
 .form-group {
-  // stylelint-disable-next-line primer/spacing
-  margin: 15px 0;
+  margin: var(--base-size-16) 0;
 
   // Autocomplete with embedded icon
   .form-control.autocomplete-embedded-icon-wrap {
@@ -26,8 +25,7 @@
     // stylelint-disable-next-line primer/responsive-widths
     width: 440px;
     max-width: 100%;
-    // stylelint-disable-next-line primer/spacing
-    margin-right: 5px;
+    margin-right: var(--base-size-4);
     background-color: var(--bgColor-muted, var(--color-canvas-inset));
 
     &:focus {
@@ -65,8 +63,7 @@
   // The Label
   dt, // TODO: Deprecate
   .form-group-header {
-    // stylelint-disable-next-line primer/spacing
-    margin: 0 0 6px;
+    margin: 0 0 var(--base-size-6);
   }
 
   label {
@@ -78,13 +75,11 @@
   &.flattened .form-group-header {
     float: left;
     margin: 0;
-    // stylelint-disable-next-line primer/typography
     line-height: 32px;
   }
 
   &.flattened dd, // TODO: Deprecate
   &.flattened .form-group-body {
-    // stylelint-disable-next-line primer/typography
     line-height: 32px;
   }
 
@@ -119,8 +114,7 @@
   &.required {
     dt label::after, // TODO: Deprecate
     .form-group-header label::after {
-      // stylelint-disable-next-line primer/spacing
-      padding-left: 5px;
+      padding-left: var(--base-size-4);
       color: var(--fgColor-danger, var(--color-danger-fg));
       content: '*';
     }
@@ -134,10 +128,8 @@
   .error,
   .indicator {
     display: none;
-    // stylelint-disable-next-line primer/typography
-    font-size: $font-size-small;
-    // stylelint-disable-next-line primer/typography
-    font-weight: $font-weight-bold;
+    font-size: var(--text-body-size-small);
+    font-weight: var(--base-text-weight-light);
   }
 
   &.loading {
@@ -176,41 +168,31 @@
       max-width: 450px; // Keep our long errors readable
       padding: var(--base-size-4) var(--base-size-8);
       margin: var(--base-size-8) 0 0;
-      // stylelint-disable-next-line primer/typography
-      font-size: $font-size-small;
-      // stylelint-disable-next-line primer/typography
-      font-weight: $font-weight-normal;
-      // stylelint-disable-next-line primer/borders
+      font-size: var(--text-body-size-small);
+      font-weight: var(--base-text-weight-light);
       border-style: $border-style;
-      // stylelint-disable-next-line primer/borders
-      border-width: $border-width;
-      // stylelint-disable-next-line primer/borders
-      border-radius: $border-radius;
+      border-width: var(--borderWidth-default);
+      border-radius: var(--borderRadius-default);
 
       &::after,
       &::before {
         position: absolute;
         bottom: 100%;
-        // stylelint-disable-next-line primer/spacing
         left: 10px;
         z-index: 15;
         width: 0;
         height: 0;
         pointer-events: none;
         content: ' ';
-        // stylelint-disable-next-line primer/borders, primer/colors
         border: $border-style transparent;
       }
 
       &::after {
-        // stylelint-disable-next-line primer/borders
         border-width: 5px;
       }
 
       &::before {
-        // stylelint-disable-next-line primer/spacing
         margin-left: -1px;
-        // stylelint-disable-next-line primer/borders
         border-width: 6px;
       }
     }
@@ -283,15 +265,12 @@
 // tooltip
 .note {
   min-height: 17px;
-  // stylelint-disable-next-line primer/spacing
-  margin: var(--base-size-4) 0 2px;
-  // stylelint-disable-next-line primer/typography
-  font-size: $font-size-small;
+  margin: var(--base-size-4) 0 var(--base-size-2);
+  font-size: var(--text-body-size-small);
   color: var(--fgColor-muted, var(--color-fg-muted));
 
   .spinner {
-    // stylelint-disable-next-line primer/spacing
-    margin-right: 3px;
+    margin-right: var(--base-size-4);
     vertical-align: middle;
   }
 }

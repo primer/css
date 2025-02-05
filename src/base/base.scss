@@ -13,9 +13,9 @@ button {
 }
 
 body {
-  font-family: $body-font;
-  font-size: var(--body-font-size, $body-font-size);
-  line-height: $body-line-height;
+  font-family: var(--fontStack-sansSerif);
+  font-size: var(--body-font-size);
+  line-height: 1.5;
   color: var(--fgColor-default, var(--color-fg-default));
   background-color: var(--bgColor-default, var(--color-canvas-default));
 }
@@ -31,7 +31,7 @@ a {
 
 b,
 strong {
-  font-weight: $font-weight-bold;
+  font-weight: var(--base-text-weight-semibold);
 }
 
 fieldset {
@@ -41,7 +41,7 @@ fieldset {
 }
 
 label {
-  font-weight: $font-weight-bold;
+  font-weight: var(--base-text-weight-semibold);
 }
 
 // Custom styling for HTML5 validation bubbles (WebKit only)
@@ -56,13 +56,11 @@ label {
 hr,
 .rule {
   height: 0;
-  // stylelint-disable-next-line primer/spacing
-  margin: 15px 0;
+  margin: var(--base-size-16) 0;
   overflow: hidden;
   background: transparent;
   border: 0;
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  border-bottom: var(--borderWidth-default) solid var(--borderColor-muted, var(--color-border-muted));
 
   @include clearfix();
 }
@@ -73,7 +71,6 @@ hr,
 
 table {
   border-spacing: 0;
-  // stylelint-disable-next-line primer/borders
   border-collapse: collapse;
 }
 
