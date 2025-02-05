@@ -195,6 +195,7 @@
     max-width: var(--overlay-width-small, 20rem);
     word-wrap: break-word;
     white-space: pre-line;
+    // stylelint-disable-next-line primer/borders
     border-collapse: separate;
   }
 

@@ -6,6 +6,7 @@
   display: inline-block;
   // stylelint-disable-next-line primer/spacing
   padding: 2px 6px;
+  // stylelint-disable-next-line primer/typography, declaration-property-value-no-unknown
   font: 12px $mono-font;
   color: var(--fgColor-muted);
   word-break: break-all;

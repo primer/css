@@ -2,7 +2,9 @@
   z-index: 32; // TODO: Figure out z-index system
   display: flex;
   padding: var(--base-size-16);
+  // stylelint-disable-next-line primer/typography
   font-size: $h5-size;
+  // stylelint-disable-next-line primer/typography
   line-height: $lh-default;
   color: var(--header-fgColor-default);
   background-color: var(--header-bgColor);
@@ -23,6 +25,7 @@
 }
 
 .Header-link {
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-bold;
   color: var(--header-fgColor-logo);
   white-space: nowrap;

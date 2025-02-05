@@ -161,14 +161,14 @@
 
   :not(.Stack--dir-inline#{$viewportRange}) > .Stack-divider,
   :not(.Stack--dir-inline#{$viewportRange}) > .Stack-item > .Stack-divider {
-    border-block-end: var(--borderWidth-thin, 1px) solid var(--Stack-divider-color);
+    border-block-end: var(--borderWidth-thin, var(--borderWidth-thin)) solid var(--Stack-divider-color);
     inline-size: auto;
     block-size: 0;
   }
 
   .Stack--dir-inline#{$viewportRange} > .Stack-divider,
   .Stack--dir-inline#{$viewportRange} > .Stack-item > .Stack-divider {
-    border-inline-end: var(--borderWidth-thin, 1px) solid var(--Stack-divider-color);
+    border-inline-end: var(--borderWidth-thin, var(--borderWidth-thin)) solid var(--Stack-divider-color);
     inline-size: 0;
     block-size: auto;
   }

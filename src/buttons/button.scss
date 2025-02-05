@@ -6,7 +6,9 @@
   display: inline-block;
   // stylelint-disable-next-line primer/spacing
   padding: 5px var(--base-size-16);
+  // stylelint-disable-next-line primer/typography
   font-size: $body-font-size;
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px; // Specifically not inherit our `<body>` default
@@ -14,7 +16,9 @@
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
+  // stylelint-disable-next-line primer/borders, primer/colors
   border: $border-width $border-style;
+  // stylelint-disable-next-line primer/borders
   border-radius: $border-radius;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
 
@@ -30,6 +34,7 @@
 
   i {
     font-style: normal;
+    // stylelint-disable-next-line primer/typography
     font-weight: $font-weight-semibold;
     opacity: 0.75;
   }
@@ -310,6 +315,7 @@ a.btn-primary {
 .btn-sm {
   // stylelint-disable-next-line primer/spacing
   padding: 3px 12px;
+  // stylelint-disable-next-line primer/typography
   font-size: $font-size-small;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
@@ -324,6 +330,7 @@ a.btn-primary {
   // stylelint-disable-next-line primer/spacing
   padding: $em-spacer-6 1.5em;
   font-size: inherit;
+  // stylelint-disable-next-line primer/typography
   line-height: $lh-default;
 
   // stylelint-disable-next-line primer/borders

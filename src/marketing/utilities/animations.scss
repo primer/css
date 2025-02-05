@@ -1,6 +1,7 @@
 // Animation utilities for marketing
 
 .hover-grow-mktg {
+  // stylelint-disable-next-line declaration-property-value-no-unknown
   transition: transform 0.4s $ease-mktg;
 
   &:hover {

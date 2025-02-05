@@ -9,6 +9,7 @@
 .form-select {
   // stylelint-disable-next-line primer/spacing
   padding: 5px 12px;
+  // stylelint-disable-next-line primer/typography
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
@@ -62,9 +63,11 @@
 
   // Ensures inputs don't zoom on mobile iPhone but are body-font size on iPad
   @supports (-webkit-touch-callout: none) {
+    // stylelint-disable-next-line primer/typography
     font-size: $h4-size;
 
     @include breakpoint(md) {
+      // stylelint-disable-next-line primer/typography
       font-size: $body-font-size;
     }
   }
@@ -74,6 +77,7 @@
 textarea.form-control {
   padding-top: var(--base-size-8);
   padding-bottom: var(--base-size-8);
+  // stylelint-disable-next-line primer/typography
   line-height: $lh-default;
 }
 
@@ -93,6 +97,7 @@ textarea.form-control {
   padding-top: 3px;
   // stylelint-disable-next-line primer/spacing
   padding-bottom: 3px;
+  // stylelint-disable-next-line primer/typography
   font-size: $font-size-small;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
@@ -100,6 +105,7 @@ textarea.form-control {
 
 // Large inputs
 .input-lg {
+  // stylelint-disable-next-line primer/typography
   font-size: $h4-size;
 }
 
@@ -111,6 +117,7 @@ textarea.form-control {
 
 // Inputs with monospace text
 .input-monospace {
+  // stylelint-disable-next-line primer/typography
   font-family: $mono-font;
 }
 
@@ -158,7 +165,9 @@ textarea.form-control {
   .note {
     display: block;
     margin: 0;
+    // stylelint-disable-next-line primer/typography
     font-size: $font-size-small;
+    // stylelint-disable-next-line primer/typography
     font-weight: $font-weight-normal;
     color: var(--fgColor-muted);
   }
@@ -251,6 +260,7 @@ input::-webkit-inner-spin-button {
   padding: var(--base-size-8) 10px;
   // stylelint-disable-next-line primer/spacing
   margin: 10px 0;
+  // stylelint-disable-next-line primer/typography
   font-size: $h5-size;
   color: var(--fgColor-attention);
   background: var(--bgColor-attention-muted);
@@ -259,10 +269,12 @@ input::-webkit-inner-spin-button {
 
   p {
     margin: 0;
+    // stylelint-disable-next-line primer/typography
     line-height: $lh-default;
   }
 
   a {
+    // stylelint-disable-next-line primer/typography
     font-weight: $font-weight-bold;
   }
 }

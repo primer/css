@@ -87,6 +87,7 @@ $SelectMenu-max-height: 480px !default;
     height: auto;
     max-height: $SelectMenu-max-height;
     margin: var(--base-size-8) 0 var(--base-size-16) 0;
+    // stylelint-disable-next-line primer/typography
     font-size: $font-size-small;
     border-color: var(--borderColor-default);
     border-radius: $border-radius;
@@ -114,7 +115,9 @@ $SelectMenu-max-height: 480px !default;
 
 .SelectMenu-title {
   flex: 1;
+  // stylelint-disable-next-line primer/typography
   font-size: $body-font-size;
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-bold;
 
   @include breakpoint(sm) {
@@ -125,6 +128,7 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-closeButton {
   padding: var(--base-size-16);
   margin: calc(var(--base-size-16) * -1);
+  // stylelint-disable-next-line primer/typography
   line-height: 1;
   color: var(--fgColor-muted);
   background-color: transparent;
@@ -156,6 +160,7 @@ $SelectMenu-max-height: 480px !default;
   width: 100%;
 
   @include breakpoint(sm) {
+    // stylelint-disable-next-line primer/typography
     font-size: $h5-size;
   }
 }
@@ -250,7 +255,9 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-tab {
   flex: 1;
   padding: var(--base-size-8) var(--base-size-16);
+  // stylelint-disable-next-line primer/typography
   font-size: $font-size-small;
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-semibold;
   color: var(--fgColor-muted);
   text-align: center;
@@ -262,9 +269,12 @@ $SelectMenu-max-height: 480px !default;
   @include breakpoint(sm) {
     flex: none;
     padding: var(--base-size-4) var(--base-size-16);
+    // stylelint-disable-next-line primer/borders, primer/colors
     border: $border-width $border-style transparent;
     border-bottom-width: 0;
+    // stylelint-disable-next-line primer/borders
     border-top-left-radius: $border-radius;
+    // stylelint-disable-next-line primer/borders
     border-top-right-radius: $border-radius;
   }
 
@@ -313,7 +323,9 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-divider {
   padding: var(--base-size-4) var(--base-size-16);
   margin: 0;
+  // stylelint-disable-next-line primer/typography
   font-size: $font-size-small;
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-semibold;
   color: var(--fgColor-muted);
   background-color: var(--bgColor-muted);
@@ -337,6 +349,7 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-footer {
   z-index: 0; // Avoid top border from getting covered by the negative margin of the list
   padding: var(--base-size-8) var(--base-size-16);
+  // stylelint-disable-next-line primer/typography
   font-size: $font-size-small;
   color: var(--fgColor-muted);
   text-align: center;
@@ -386,6 +399,7 @@ $SelectMenu-max-height: 480px !default;
 // Visible when a user clicks/taps on a list item
 
 .SelectMenu-item[aria-checked='true'] {
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-semibold;
   color: var(--fgColor-default);
 

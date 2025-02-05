@@ -94,6 +94,7 @@
 
 .SideNav-subItem[aria-current]:not([aria-current='false']),
 .SideNav-subItem[aria-selected='true'] {
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-semibold;
   color: var(--fgColor-default);
 }

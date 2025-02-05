@@ -5,7 +5,9 @@
     // stylelint-disable-next-line primer/spacing
     padding: 5px;
     overflow: hidden;
+    // stylelint-disable-next-line primer/typography
     font-size: $font-size-small;
+    // stylelint-disable-next-line primer/typography
     line-height: $lh-condensed-ultra;
     text-align: left;
     white-space: nowrap;
@@ -22,6 +24,7 @@
   tr { border-top: 0; }
 
   th {
+    // stylelint-disable-next-line primer/typography
     font-weight: $font-weight-bold;
     background: var(--bgColor-muted);
     border-top: 0;

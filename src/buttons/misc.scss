@@ -32,6 +32,7 @@
   &:not(.dropdown-item) {
     &:focus,
     &:focus-visible {
+      // stylelint-disable-next-line primer/borders
       border-radius: $border-radius;
       outline-offset: 0;
     }
@@ -45,6 +46,7 @@
   color: var(--fgColor-accent);
   background-color: transparent; // Reset default gradient backgrounds and colors
   border: 0;
+  // stylelint-disable-next-line primer/borders
   border-radius: $border-radius;
   box-shadow: none;
 
@@ -88,6 +90,7 @@
   padding: 5px;
   // stylelint-disable-next-line primer/spacing
   margin-left: 5px;
+  // stylelint-disable-next-line primer/typography
   line-height: $lh-condensed-ultra;
   color: var(--fgColor-muted);
   vertical-align: middle;
@@ -103,6 +106,7 @@
 
   &:focus,
   &:focus-visible {
+    // stylelint-disable-next-line primer/borders
     border-radius: $border-radius;
   }
 
@@ -152,6 +156,7 @@
     display: inline-block;
     // stylelint-disable-next-line primer/spacing
     margin-left: 5px;
+    // stylelint-disable-next-line primer/typography
     line-height: 0;
   }
 }
@@ -162,7 +167,9 @@
   height: 12px;
   // stylelint-disable-next-line primer/spacing
   padding: 0 5px 5px;
+  // stylelint-disable-next-line primer/typography
   font-size: $font-size-small;
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/typography
   line-height: 6px;
@@ -207,7 +214,9 @@
   float: left;
   // stylelint-disable-next-line primer/spacing
   padding: 3px 12px;
+  // stylelint-disable-next-line primer/typography
   font-size: $font-size-small;
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
@@ -216,7 +225,9 @@
   background-color: var(--bgColor-default);
   border: $border-width $border-style var(--button-default-borderColor-rest);
   border-left: 0;
+  // stylelint-disable-next-line primer/borders
   border-top-right-radius: $border-radius;
+  // stylelint-disable-next-line primer/borders
   border-bottom-right-radius: $border-radius;
   box-shadow: var(--shadow-resting-small), var(--shadow-highlight);
 

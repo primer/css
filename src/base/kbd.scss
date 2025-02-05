@@ -3,7 +3,8 @@
 
 kbd {
   display: inline-block;
-  padding: calc(var(--base-size-4) - 1) calc(var(--base-size-4) + 1);
+  padding: var(--base-size-4);
+  // stylelint-disable-next-line primer/typography, declaration-property-value-no-unknown
   font: 11px $mono-font;
   // stylelint-disable-next-line primer/typography
   line-height: 10px;

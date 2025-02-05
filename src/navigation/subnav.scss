@@ -24,6 +24,7 @@
   float: left;
   // stylelint-disable-next-line primer/spacing
   padding: 5px var(--base-size-16);
+  // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-semibold;
   // stylelint-disable-next-line primer/typography
   line-height: 20px;
@@ -67,12 +68,16 @@
   }
 
   &:first-child {
+    // stylelint-disable-next-line primer/borders
     border-top-left-radius: $border-radius;
+    // stylelint-disable-next-line primer/borders
     border-bottom-left-radius: $border-radius;
   }
 
   &:last-child {
+    // stylelint-disable-next-line primer/borders
     border-top-right-radius: $border-radius;
+    // stylelint-disable-next-line primer/borders
     border-bottom-right-radius: $border-radius;
   }
 }

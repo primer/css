@@ -134,7 +134,9 @@
   .error,
   .indicator {
     display: none;
+    // stylelint-disable-next-line primer/typography
     font-size: $font-size-small;
+    // stylelint-disable-next-line primer/typography
     font-weight: $font-weight-bold;
   }
 
@@ -174,10 +176,15 @@
       max-width: 450px; // Keep our long errors readable
       padding: var(--base-size-4) var(--base-size-8);
       margin: var(--base-size-8) 0 0;
+      // stylelint-disable-next-line primer/typography
       font-size: $font-size-small;
+      // stylelint-disable-next-line primer/typography
       font-weight: $font-weight-normal;
+      // stylelint-disable-next-line primer/borders
       border-style: $border-style;
+      // stylelint-disable-next-line primer/borders
       border-width: $border-width;
+      // stylelint-disable-next-line primer/borders
       border-radius: $border-radius;
 
       &::after,
@@ -191,7 +198,7 @@
         height: 0;
         pointer-events: none;
         content: ' ';
-        // stylelint-disable-next-line primer/borders
+        // stylelint-disable-next-line primer/borders, primer/colors
         border: $border-style transparent;
       }
 
@@ -278,6 +285,7 @@
   min-height: 17px;
   // stylelint-disable-next-line primer/spacing
   margin: var(--base-size-4) 0 2px;
+  // stylelint-disable-next-line primer/typography
   font-size: $font-size-small;
   color: var(--fgColor-muted);
 

@@ -1,5 +1,55 @@
 # @primer/css
 
+## 21.5.1
+
+### Patch Changes
+
+- [#2727](https://github.com/primer/css/pull/2727) [`7d4cd40`](https://github.com/primer/css/commit/7d4cd4061a0ffb70355944d33ea49883819da26a) Thanks [@kawakamimoeki](https://github.com/kawakamimoeki)! - Removed .css extension from @import and modified @primer/primitives to be output as Sass code.
+
+- [#2728](https://github.com/primer/css/pull/2728) [`7eaba91`](https://github.com/primer/css/commit/7eaba91768f8e31cf6b0c5538230ce2d04e9bfec) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update primer/primitives to allow for version 9 and 10
+
+- [#2680](https://github.com/primer/css/pull/2680) [`1eb467e`](https://github.com/primer/css/commit/1eb467e9edb3d9ddb84c47bfbf9a21cb9950bf06) Thanks [@robinwhittleton](https://github.com/robinwhittleton)! - Use tabular numbers in tables
+
+## 21.5.0
+
+### Minor Changes
+
+- [#2724](https://github.com/primer/css/pull/2724) [`30d144b`](https://github.com/primer/css/commit/30d144b507d75e5b5ef6d4ec156978acaeb9fad4) Thanks [@camertron](https://github.com/camertron)! - Move prod @primer/\* dependencies to dev
+
+## 21.4.0
+
+### Minor Changes
+
+- [#2691](https://github.com/primer/css/pull/2691) [`5097430`](https://github.com/primer/css/commit/50974300dfe8cf636e1b15b5fbd5b0dc5adf4f2e) Thanks [@dylanatsmith](https://github.com/dylanatsmith)! - Remove background behind images in markdown-body
+
+### Patch Changes
+
+- [#2710](https://github.com/primer/css/pull/2710) [`3017831`](https://github.com/primer/css/commit/30178319550ecbf318ecbfa36675c80b6e95e3ba) Thanks [@smockle](https://github.com/smockle)! - Replace deprecated CSS properties in '.sr-only'
+
+## 21.3.6
+
+### Patch Changes
+
+- [#2624](https://github.com/primer/css/pull/2624) [`7e62532`](https://github.com/primer/css/commit/7e6253292c3de10a1f333cfc4e6e3216e6a53ab8) Thanks [@sideshowbarker](https://github.com/sideshowbarker)! - drop “display: none” from details element contents styling
+
+## 21.3.5
+
+### Patch Changes
+
+- [#2657](https://github.com/primer/css/pull/2657) [`b87c379`](https://github.com/primer/css/commit/b87c3796fbb7b2127c98e3fda086f9f1cfd8bc9b) Thanks [@jonrohan](https://github.com/jonrohan)! - Import `primitives/index.scss` in the main `primer.css` file.
+
+## 21.3.4
+
+### Patch Changes
+
+- [#2651](https://github.com/primer/css/pull/2651) [`e329973`](https://github.com/primer/css/commit/e329973d4d788b8b6d2688a907f88c8458b6db7a) Thanks [@jonrohan](https://github.com/jonrohan)! - Bug fix: Removing complex padding calc on kbd
+
+## 21.3.3
+
+### Patch Changes
+
+- [#2644](https://github.com/primer/css/pull/2644) [`eba2b2c`](https://github.com/primer/css/commit/eba2b2c157efc2e16a7bf36db0882c6f330b7bd4) Thanks [@camertron](https://github.com/camertron)! - Fix 'clac' -> 'calc' typo
+
 ## 21.3.2
 
 ### Patch Changes

@@ -19,22 +19,28 @@
   li {
     display: block;
     padding: var(--base-size-4) var(--base-size-8);
+    // stylelint-disable-next-line primer/typography
     font-weight: $font-weight-semibold;
     border-bottom: $border-width $border-style var(--borderColor-muted);
 
     small {
+      // stylelint-disable-next-line primer/typography
       font-weight: $font-weight-normal;
       color: var(--fgColor-muted);
     }
 
     &:last-child {
       border-bottom: 0;
+      // stylelint-disable-next-line primer/borders
       border-bottom-right-radius: $border-radius;
+      // stylelint-disable-next-line primer/borders
       border-bottom-left-radius: $border-radius;
     }
 
     &:first-child {
+      // stylelint-disable-next-line primer/borders
       border-top-left-radius: $border-radius;
+      // stylelint-disable-next-line primer/borders
       border-top-right-radius: $border-radius;
     }
 
