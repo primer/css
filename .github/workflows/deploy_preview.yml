@@ -14,7 +14,7 @@ permissions:
 jobs:
   deploy:
     if: ${{ github.repository == 'primer/css' }}
-    uses: primer/.github/.github/workflows/deploy_preview.yml@v2.1.1
+    uses: primer/.github/.github/workflows/deploy_preview.yml@v2.2.0
     name: Deploy preview
     secrets:
       gh_token: ${{ secrets.GITHUB_TOKEN }}
