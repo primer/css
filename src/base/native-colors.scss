@@ -1,5 +1,6 @@
 // color-scheme
 // Enables color modes for native elements
+@use '../support/mixins/color-modes.scss' as *;
 
 @include color-mode(light) { color-scheme: light; }
 
