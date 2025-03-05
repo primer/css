@@ -1,6 +1,5 @@
-@import '../support/index.scss';
 // utilities
-@import './animations.scss';
-@import './borders.scss';
-@import './filters.scss';
-@import './layout.scss';
+@use './animations.scss';
+@use './borders.scss';
+@use './filters.scss';
+@use './layout.scss';

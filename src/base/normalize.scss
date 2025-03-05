@@ -1,5 +1,6 @@
 // stylelint-disable
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+@use '../support/index.scss' as *;
 
 /**
  * 1. Change the default font family in all browsers (opinionated).

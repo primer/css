@@ -1,4 +1,5 @@
 // stylelint-disable selector-max-type, no-duplicate-selectors
+@use '../support/index.scss' as *;
 
 // Base button styles
 .btn {
