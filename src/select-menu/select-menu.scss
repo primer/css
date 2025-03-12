@@ -41,7 +41,7 @@ $SelectMenu-max-height: 480px !default;
   left: 0;
   pointer-events: none;
   content: '';
-  background-color: var(--overlay-backdrop-bgColor, var(--color-primer-canvas-backdrop));
+  background-color: var(--overlay-backdrop-bgColor);
 
   @include breakpoint(sm) {
     display: none;
@@ -61,12 +61,11 @@ $SelectMenu-max-height: 480px !default;
   overflow: hidden; // Enables border radius on scrollable child elements
   pointer-events: auto;
   flex-direction: column;
-  background-color: var(--overlay-bgColor, var(--color-canvas-overlay));
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border: $border-width $border-style var(--selectMenu-borderColor, var(--color-select-menu-backdrop-border));
+  background-color: var(--overlay-bgColor);
+  border: $border-width $border-style var(--selectMenu-borderColor);
   // stylelint-disable-next-line primer/borders
   border-radius: $border-radius * 2;
-  box-shadow: var(--shadow-floating-legacy, var(--color-overlay-shadow));
+  box-shadow: var(--shadow-floating-legacy);
   animation: SelectMenu-modal-animation 0.12s cubic-bezier(0, 0.1, 0.1, 1) backwards;
 
   @keyframes SelectMenu-modal-animation {
@@ -90,10 +89,9 @@ $SelectMenu-max-height: 480px !default;
     margin: var(--base-size-8) 0 var(--base-size-16) 0;
     // stylelint-disable-next-line primer/typography
     font-size: $font-size-small;
-    border-color: var(--borderColor-default, var(--color-border-default));
-    // stylelint-disable-next-line primer/borders
+    border-color: var(--borderColor-default);
     border-radius: $border-radius;
-    box-shadow: var(--shadow-floating-legacy, var(--color-overlay-shadow));
+    box-shadow: var(--shadow-floating-legacy);
     animation-name: SelectMenu-modal-animation--sm;
   }
 }
@@ -107,8 +105,7 @@ $SelectMenu-max-height: 480px !default;
   padding: var(--base-size-16);
   flex: none; // fixes header from getting squeezed in Safari iOS
   align-items: center;
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  border-bottom: $border-width $border-style var(--borderColor-muted);
 
   @include breakpoint(sm) {
     // stylelint-disable-next-line primer/spacing
@@ -133,7 +130,7 @@ $SelectMenu-max-height: 480px !default;
   margin: calc(var(--base-size-16) * -1);
   // stylelint-disable-next-line primer/typography
   line-height: 1;
-  color: var(--fgColor-muted, var(--color-fg-muted));
+  color: var(--fgColor-muted);
   background-color: transparent;
   border: 0;
 
@@ -151,8 +148,7 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-filter {
   padding: var(--base-size-16);
   margin: 0;
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  border-bottom: $border-width $border-style var(--borderColor-muted);
 
   @include breakpoint(sm) {
     padding: var(--base-size-8);
@@ -182,7 +178,7 @@ $SelectMenu-max-height: 480px !default;
   flex: auto;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: var(--overlay-bgColor, var(--color-canvas-overlay));
+  background-color: var(--overlay-bgColor);
   -webkit-overflow-scrolling: touch; // Adds momentum + bouncy scrolling
 }
 
@@ -196,13 +192,12 @@ $SelectMenu-max-height: 480px !default;
   width: 100%;
   padding: var(--base-size-16);
   overflow: hidden;
-  color: var(--fgColor-default, var(--color-fg-default));
+  color: var(--fgColor-default);
   text-align: left;
   cursor: pointer;
-  background-color: var(--overlay-bgColor, var(--color-canvas-overlay));
+  background-color: var(--overlay-bgColor);
   border: 0;
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  border-bottom: $border-width $border-style var(--borderColor-muted);
 
   @include breakpoint(sm) {
     // stylelint-disable-next-line primer/spacing
@@ -244,7 +239,7 @@ $SelectMenu-max-height: 480px !default;
   overflow-x: auto;
   overflow-y: hidden;
   // stylelint-disable-next-line primer/box-shadow
-  box-shadow: inset 0 -1px 0 var(--borderColor-muted, var(--color-border-muted));
+  box-shadow: inset 0 -1px 0 var(--borderColor-muted);
   -webkit-overflow-scrolling: touch;
 
   // Hide scrollbar so it doesn't cover the text
@@ -264,12 +259,12 @@ $SelectMenu-max-height: 480px !default;
   font-size: $font-size-small;
   // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-semibold;
-  color: var(--fgColor-muted, var(--color-fg-muted));
+  color: var(--fgColor-muted);
   text-align: center;
   background-color: transparent;
   border: 0;
   // stylelint-disable-next-line primer/box-shadow
-  box-shadow: inset 0 -1px 0 var(--borderColor-muted, var(--color-border-muted));
+  box-shadow: inset 0 -1px 0 var(--borderColor-muted);
 
   @include breakpoint(sm) {
     flex: none;
@@ -285,14 +280,14 @@ $SelectMenu-max-height: 480px !default;
 
   &[aria-selected='true'] {
     z-index: 1; // Keeps box-shadow visible when hovering
-    color: var(--fgColor-default, var(--color-fg-default));
+    color: var(--fgColor-default);
     cursor: default;
-    background-color: var(--overlay-bgColor, var(--color-canvas-overlay));
+    background-color: var(--overlay-bgColor);
     // stylelint-disable-next-line primer/box-shadow
-    box-shadow: 0 0 0 1px var(--borderColor-muted, var(--color-border-muted));
+    box-shadow: 0 0 0 1px var(--borderColor-muted);
 
     @include breakpoint(sm) {
-      border-color: var(--borderColor-muted, var(--color-border-muted));
+      border-color: var(--borderColor-muted);
       box-shadow: none;
     }
   }
@@ -306,9 +301,8 @@ $SelectMenu-max-height: 480px !default;
   // stylelint-disable-next-line primer/spacing
   padding: 7px var(--base-size-16);
   text-align: center;
-  background-color: var(--overlay-bgColor, var(--color-canvas-overlay));
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  background-color: var(--overlay-bgColor);
+  border-bottom: $border-width $border-style var(--borderColor-muted);
 }
 
 // Blankslate and Loading
@@ -319,7 +313,7 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-loading {
   padding: var(--base-size-24) var(--base-size-16);
   text-align: center;
-  background-color: var(--overlay-bgColor, var(--color-canvas-overlay));
+  background-color: var(--overlay-bgColor);
 }
 
 // Divider
@@ -333,15 +327,13 @@ $SelectMenu-max-height: 480px !default;
   font-size: $font-size-small;
   // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-semibold;
-  color: var(--fgColor-muted, var(--color-fg-muted));
-  background-color: var(--bgColor-muted, var(--color-canvas-subtle));
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-bottom: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  color: var(--fgColor-muted);
+  background-color: var(--bgColor-muted);
+  border-bottom: $border-width $border-style var(--borderColor-muted);
 
   // Borderless
   .SelectMenu-list--borderless & {
-    // stylelint-disable-next-line primer/borders, primer/colors
-    border-top: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+    border-top: $border-width $border-style var(--borderColor-muted);
 
     &:empty {
       padding: 0;
@@ -359,10 +351,9 @@ $SelectMenu-max-height: 480px !default;
   padding: var(--base-size-8) var(--base-size-16);
   // stylelint-disable-next-line primer/typography
   font-size: $font-size-small;
-  color: var(--fgColor-muted, var(--color-fg-muted));
+  color: var(--fgColor-muted);
   text-align: center;
-  // stylelint-disable-next-line primer/borders, primer/colors
-  border-top: $border-width $border-style var(--borderColor-muted, var(--color-border-muted));
+  border-top: $border-width $border-style var(--borderColor-muted);
 
   @include breakpoint(sm) {
     // stylelint-disable-next-line primer/spacing
@@ -410,7 +401,7 @@ $SelectMenu-max-height: 480px !default;
 .SelectMenu-item[aria-checked='true'] {
   // stylelint-disable-next-line primer/typography
   font-weight: $font-weight-semibold;
-  color: var(--fgColor-default, var(--color-fg-default));
+  color: var(--fgColor-default);
 
   .SelectMenu-icon--check {
     visibility: visible;
@@ -425,7 +416,7 @@ $SelectMenu-max-height: 480px !default;
 
 .SelectMenu-item:disabled,
 .SelectMenu-item[aria-disabled='true'] {
-  color: var(--fgColor-disabled, var(--color-primer-fg-disabled));
+  color: var(--fgColor-disabled);
   pointer-events: none;
 }
 
@@ -436,33 +427,33 @@ $SelectMenu-max-height: 480px !default;
 @media (hover: hover) {
   body:not(.intent-mouse) .SelectMenu-closeButton:focus,
   .SelectMenu-closeButton:hover {
-    color: var(--fgColor-default, var(--color-fg-default));
+    color: var(--fgColor-default);
   }
 
   .SelectMenu-closeButton:active {
-    color: var(--fgColor-muted, var(--color-fg-muted));
+    color: var(--fgColor-muted);
   }
 
   body:not(.intent-mouse) .SelectMenu-item:focus,
   .SelectMenu-item:hover {
-    background-color: var(--bgColor-neutral-muted, var(--color-neutral-subtle));
+    background-color: var(--bgColor-neutral-muted);
   }
 
   .SelectMenu-item:active {
-    background-color: var(--bgColor-muted, var(--color-canvas-subtle));
+    background-color: var(--bgColor-muted);
   }
 
   body:not(.intent-mouse) .SelectMenu-tab:focus {
-    background-color: var(--selectMenu-bgColor-active, var(--color-select-menu-tap-focus-bg));
+    background-color: var(--selectMenu-bgColor-active);
   }
 
   .SelectMenu-tab:hover {
-    color: var(--fgColor-default, var(--color-fg-default));
+    color: var(--fgColor-default);
   }
 
   .SelectMenu-tab:not([aria-selected='true']):active {
-    color: var(--fgColor-default, var(--color-fg-default));
-    background-color: var(--bgColor-muted, var(--color-canvas-subtle));
+    color: var(--fgColor-default);
+    background-color: var(--bgColor-muted);
   }
 }
 
@@ -474,13 +465,13 @@ $SelectMenu-max-height: 480px !default;
   // Android
   .SelectMenu-item:focus,
   .SelectMenu-item:active {
-    background-color: var(--bgColor-muted, var(--color-canvas-subtle));
+    background-color: var(--bgColor-muted);
   }
 
   // iOS Safari
   // :active would work if ontouchstart is added to the button
   // Instead this tweaks the "native" highlight color
   .SelectMenu-item {
-    -webkit-tap-highlight-color: var(--control-bgColor-active, var(--color-select-menu-tap-highlight));
+    -webkit-tap-highlight-color: var(--control-bgColor-active);
   }
 }

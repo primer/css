@@ -6,8 +6,8 @@
 @include color-mode(dark) { color-scheme: dark; }
 
 [data-color-mode] {
-  color: var(--fgColor-default, var(--color-fg-default));
-  background-color: var(--bgColor-default, var(--color-canvas-default));
+  color: var(--fgColor-default);
+  background-color: var(--bgColor-default);
 }
 
 // Windows High Contrast mode
@@ -16,8 +16,6 @@
 // stylelint-disable selector-max-type
 @media (forced-colors: active) {
   body {
-    --color-accent-emphasis: Highlight;
-    --color-fg-on-emphasis: LinkText;
     --fgColor-onEmphasis: LinkText;
     --fgColor-accent: Highlight;
   }
