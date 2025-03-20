@@ -1,6 +1,7 @@
 // Side Nav
 //
 // A vertical list of navigational links, typically used on the left side of a page.
+@use '../support/index.scss' as *;
 
 .SideNav {
   background-color: var(--bgColor-muted, var(--color-canvas-subtle));
