@@ -56,7 +56,7 @@
 
 .input-group .form-control:first-child,
 .input-group-button:first-child .btn:not(.btn-primary) {
-  border-color: var(--control-borderColor-rest, var(--color-border-default));
+  border-color: var(--control-borderColor-rest);
 }
 
 .input-group-button:first-child .btn {
@@ -72,7 +72,7 @@
 
 .input-group .form-control:last-child,
 .input-group-button:last-child .btn:not(.btn-primary) {
-  border-color: var(--control-borderColor-rest, var(--color-border-default));
+  border-color: var(--control-borderColor-rest);
 }
 
 .input-group-button:last-child .btn {
