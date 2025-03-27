@@ -10,7 +10,7 @@ generated: true
 Primer CSS source files are written in [SCSS]. To include this Primer CSS module in your own build, ensure that your `node_modules` directory is listed in your Sass include paths, then import it with:
 
 ```scss
-@import "@primer/css/buttons/index.scss";
+@use "@primer/css/buttons/index.scss";
 ```
 
 ## Build

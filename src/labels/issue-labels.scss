@@ -1,6 +1,8 @@
 // Issue Labels
 
 // TODO: Replace with .Label once solid backgrounds are supported
+@use '../support/index.scss' as *;
+@use './mixins.scss' as *;
 
 .IssueLabel {
   @include labels-base;

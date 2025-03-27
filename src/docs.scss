@@ -9,9 +9,9 @@
 // Only meant for the docs at https://primer.style/css
 
 // CSS color variables
-@import './color-modes/index.scss';
+@use './color-modes/index.scss' as color-modes;
 
 // Global requirements
-@import './core/index.scss';
-@import './product/index.scss';
-@import './marketing/index.scss';
+@use './core/index.scss' as core;
+@use './product/index.scss' as product;
+@use './marketing/index.scss' as marketing;

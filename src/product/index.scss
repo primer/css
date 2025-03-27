@@ -5,16 +5,13 @@
  * Released under MIT license. Copyright (c) 2019 GitHub Inc.
  */
 
-// Global requirements
-@import '../support/index.scss';
-
 // Product specific css modules
-@import '../autocomplete/index.scss';
-@import '../avatars/index.scss';
-@import '../branch-name/index.scss';
-@import '../header/index.scss';
-@import '../labels/index.scss';
-@import '../loaders/index.scss';
-@import '../markdown/index.scss';
-@import '../select-menu/index.scss';
-@import '../toasts/index.scss';
+@use '../autocomplete/index.scss' as autocomplete;
+@use '../avatars/index.scss' as avatars;
+@use '../branch-name/index.scss' as branch-name;
+@use '../header/index.scss' as header;
+@use '../labels/index.scss' as labels;
+@use '../loaders/index.scss' as loaders;
+@use '../markdown/index.scss' as markdown;
+@use '../select-menu/index.scss' as select-menu;
+@use '../toasts/index.scss' as toasts;

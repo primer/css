@@ -5,11 +5,8 @@
  * Released under MIT license. Copyright (c) 2019 GitHub Inc.
  */
 
-// Global requirements
-@import './support/index.scss';
-
 // marketing specific css modules
-@import './type/index.scss';
-@import './buttons/index.scss';
-@import './links/index.scss';
-@import './utilities/index.scss';
+@use './type/index.scss' as type;
+@use './buttons/index.scss' as buttons;
+@use './links/index.scss' as links;
+@use './utilities/index.scss' as utilities;
