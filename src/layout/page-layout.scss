@@ -1,6 +1,7 @@
 // stylelint-disable max-nesting-depth
 // stylelint-disable selector-max-specificity
 // stylelint-disable no-duplicate-selectors
+@use '../support/index.scss' as *;
 
 $Layout-divider-color: var(--borderColor-default, var(--color-border-default)) !default;
 $Layout-responsive-variant-max-breakpoint: 'md' !default;

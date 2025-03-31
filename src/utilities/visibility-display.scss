@@ -1,4 +1,5 @@
 // Visibility and display utilities
+@use '../support/index.scss' as *;
 
 // Responsive display utilities
 @each $breakpoint, $variant in $responsive-variants {

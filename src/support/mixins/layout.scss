@@ -1,4 +1,5 @@
 // Responsive media queries
+@use '../variables/layout.scss' as *;
 
 @mixin breakpoint($breakpoint) {
   @if $breakpoint == '' {

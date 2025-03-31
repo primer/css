@@ -1,4 +1,6 @@
 // stylelint-disable selector-max-type, selector-no-qualifying-type, primer/typography
+@use '../support/index.scss' as *;
+
 * {
   box-sizing: border-box;
 }
