@@ -153,8 +153,8 @@ h1 {
  */
 
 mark {
-  background-color: var(--bgColor-attention-muted, var(--color-attention-subtle));
-  color: var(--fgColor-default, var(--color-fg-default));
+  background-color: var(--bgColor-attention-muted);
+  color: var(--fgColor-default);
 }
 
 /**
