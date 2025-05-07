@@ -2,7 +2,7 @@
   <img width="300px" alt="" src="./docs/src/readme.png">
 </p>
 
-<h1 align="center">Primer CSS</h1>
+<h1 align="center">Basab CSS</h1>
 
 <p align="center">The CSS implementation of GitHub's Primer Design System</p>
 
