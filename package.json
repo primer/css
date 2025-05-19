@@ -51,7 +51,7 @@
     "chokidar-cli": "^3.0.0",
     "cssstats": "^4.0.5",
     "eslint": "^9.18.0",
-    "eslint-plugin-github": "^5.1.5",
+    "eslint-plugin-github": "^6.0.0",
     "eslint-plugin-jest": "^28.11.0",
     "eslint-plugin-prettier": "^5.2.3",
     "filesize": "^10.0.5",
