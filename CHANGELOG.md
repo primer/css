@@ -1,5 +1,11 @@
 # @primer/css
 
+## 22.0.0
+
+### Major Changes
+
+- [#2789](https://github.com/primer/css/pull/2789) [`4113637`](https://github.com/primer/css/commit/4113637b3bb60cad1e2dca82e70d92ad05694399) Thanks [@jonrohan](https://github.com/jonrohan)! - Remove @primer/view-components imports for styles moved to primer/view_components
+
 ## 21.5.1
 
 ### Patch Changes
