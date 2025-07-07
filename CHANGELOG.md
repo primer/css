@@ -1,5 +1,11 @@
 # @primer/css
 
+## 22.0.1
+
+### Patch Changes
+
+- [#2864](https://github.com/primer/css/pull/2864) [`0311c08`](https://github.com/primer/css/commit/0311c0849cdfc0fcb18ee0ed96ce2a3ba5c136d6) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add --fontStack-sansSerif to $body-font variable
+
 ## 22.0.0
 
 ### Major Changes
