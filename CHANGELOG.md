@@ -1,5 +1,13 @@
 # @primer/css
 
+## 22.0.2
+
+### Patch Changes
+
+- [#2866](https://github.com/primer/css/pull/2866) [`d43c856`](https://github.com/primer/css/commit/d43c85624326770d91e8239c0c5e6693700e4481) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update @primer/primitives peerDependencies to 10.x || 11.x
+
+- [#2871](https://github.com/primer/css/pull/2871) [`0d2eb58`](https://github.com/primer/css/commit/0d2eb58fbf18092c2ef4ba252522fea98a6aaa1f) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add default font weight (--base-text-weight-normal, 400) to body
+
 ## 22.0.1
 
 ### Patch Changes
