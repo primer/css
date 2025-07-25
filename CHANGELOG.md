@@ -1,5 +1,25 @@
 # @primer/css
 
+## 22.0.2
+
+### Patch Changes
+
+- [#2866](https://github.com/primer/css/pull/2866) [`d43c856`](https://github.com/primer/css/commit/d43c85624326770d91e8239c0c5e6693700e4481) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Update @primer/primitives peerDependencies to 10.x || 11.x
+
+- [#2871](https://github.com/primer/css/pull/2871) [`0d2eb58`](https://github.com/primer/css/commit/0d2eb58fbf18092c2ef4ba252522fea98a6aaa1f) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add default font weight (--base-text-weight-normal, 400) to body
+
+## 22.0.1
+
+### Patch Changes
+
+- [#2864](https://github.com/primer/css/pull/2864) [`0311c08`](https://github.com/primer/css/commit/0311c0849cdfc0fcb18ee0ed96ce2a3ba5c136d6) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - Add --fontStack-sansSerif to $body-font variable
+
+## 22.0.0
+
+### Major Changes
+
+- [#2789](https://github.com/primer/css/pull/2789) [`4113637`](https://github.com/primer/css/commit/4113637b3bb60cad1e2dca82e70d92ad05694399) Thanks [@jonrohan](https://github.com/jonrohan)! - Remove @primer/view-components imports for styles moved to primer/view_components
+
 ## 21.5.1
 
 ### Patch Changes
