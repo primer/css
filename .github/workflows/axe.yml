@@ -28,7 +28,7 @@ jobs:
           echo "STRING_OF_PATHS_WE_CARE_ABOUT=${{ steps.changed-files.outputs.all_changed_files }}" >> $GITHUB_ENV
       - name: Use Node.js
         if: steps.changed-files.outputs.any_changed == 'true'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 18
           cache: 'npm'
