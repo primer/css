@@ -8,8 +8,8 @@ jobs:
   stylelint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 18
           cache: 'npm'
@@ -19,7 +19,7 @@ jobs:
         run: npm run stylelint:fix
       - name: Push up any fixes
         if: ${{ github.event_name == 'pull_request' }}
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: Fixing stylelint issues
           commit_user_name: GitHub Design Engineering Bot
@@ -30,8 +30,8 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 18
           cache: 'npm'
@@ -42,8 +42,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 18
           cache: 'npm'
