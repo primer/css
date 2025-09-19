@@ -72,7 +72,7 @@
     "table": "^6.8.1"
   },
   "peerDependencies": {
-    "@primer/primitives": "10.x || 11.x"
+    "@primer/primitives": "0.0.0-20250916142458"
   },
   "jest": {
     "testEnvironment": "node",
