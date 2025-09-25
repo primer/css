@@ -7,7 +7,7 @@ The CSS implementation of GitHub's Primer Design System
 [![last commit](https://img.shields.io/github/last-commit/primer/css.svg)](https://github.com/primer/css/commits/main)
 [![license](https://img.shields.io/github/license/primer/css.svg)](https://github.com/primer/css/blob/main/LICENSE)
 
-> :warning: **This project is in KTLO mode!** Please use [primer/react](https://github.com/primer/react) and [primer/view_components](https://github.com/primer/view_components) for styling and markup instead.
+> :warning: **This project is in KTLO mode!** Use existing utility classes from this project where needed. For more complete patterns that include styling and markup, please use [primer/react](https://github.com/primer/react) or, if necessary, [primer/view_components](https://github.com/primer/view_components).
 
 ## Documentation
 Our documentation site lives at [primer.style/css](https://primer.style/css). You'll be able to find detailed documentation on getting started, all of the components, our theme, our principles, and more.
