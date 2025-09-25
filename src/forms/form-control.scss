@@ -85,8 +85,9 @@ textarea.form-control {
 }
 
 // Inputs with contrast for easy light gray backgrounds against white.
+// changing the value to default as to not remove the class all together, but deprecate the visual distinction for "contrast"
 .input-contrast {
-  background-color: var(--bgColor-muted, var(--color-canvas-inset));
+  background-color: var(--bgColor-default);
 
   &:focus {
     background-color: var(--bgColor-default, var(--color-canvas-default));
