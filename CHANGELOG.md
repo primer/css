@@ -1,5 +1,11 @@
 # @primer/css
 
+## 22.1.0
+
+### Minor Changes
+
+- [#2907](https://github.com/primer/css/pull/2907) [`67109bd`](https://github.com/primer/css/commit/67109bda0dcd7e191c3071f5eb58006fdbe4e3c8) Thanks [@langermank](https://github.com/langermank)! - Change `contrast` input background to `bgColor-default`
+
 ## 22.0.2
 
 ### Patch Changes
