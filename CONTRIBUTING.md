@@ -1,5 +1,8 @@
 ## Contributing
 
+> [!WARNING] 
+> **This project is in KTLO mode!** New features, functionalities, or major enhancements are unlikely to be accepted. Use existing utility classes from this project where needed. For more complete patterns that include styling and markup, please use [primer/react](https://github.com/primer/react) or, if necessary, [primer/view_components](https://github.com/primer/view_components).
+
 Hi there! We're thrilled that you'd like to contribute to this project. Your help is essential for keeping it great.
 
 ## Using the issue tracker

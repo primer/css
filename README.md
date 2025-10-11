@@ -1,35 +1,15 @@
-<p align="center">
-  <img width="300px" alt="" src="./docs/src/readme.png">
-</p>
+# Primer CSS
+The CSS implementation of GitHub's Primer Design System
 
-<h1 align="center">Primer CSS</h1>
+[![npm package](https://img.shields.io/npm/v/@primer/css.svg)](https://www.npmjs.com/package/@primer/css)
+[![build status](https://github.com/primer/css/actions/workflows/ci.yml/badge.svg)](https://github.com/primer/css/actions/workflows/ci.yml)
+[![contributors graph](https://img.shields.io/github/contributors/primer/css.svg)](https://github.com/primer/css/graphs/contributors)
+[![last commit](https://img.shields.io/github/last-commit/primer/css.svg)](https://github.com/primer/css/commits/main)
+[![license](https://img.shields.io/github/license/primer/css.svg)](https://github.com/primer/css/blob/main/LICENSE)
 
-<p align="center">The CSS implementation of GitHub's Primer Design System</p>
-
-<p align="center">
-  <a aria-label="npm package" href="https://www.npmjs.com/package/@primer/css">
-    <img alt="" src="https://img.shields.io/npm/v/@primer/css.svg">
-  </a>
-  <a aria-label="build status" href="https://github.com/primer/css/actions/workflows/ci.yml">
-    <img alt="" src="https://github.com/primer/css/actions/workflows/ci.yml/badge.svg">
-  </a>
-  <a aria-label="contributors graph" href="https://github.com/primer/css/graphs/contributors">
-    <img alt="" src="https://img.shields.io/github/contributors/primer/css.svg">
-  </a>
-  <a aria-label="last commit" href="https://github.com/primer/css/commits/main">
-    <img alt="" src="https://img.shields.io/github/last-commit/primer/css.svg">
-  </a>
-  <a aria-label="license" href="https://github.com/primer/css/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/primer/css.svg" alt="">
-  </a>
-</p>
+> :warning: **This project is in KTLO mode!** Use existing utility classes from this project where needed. For more complete patterns that include styling and markup, please use [primer/react](https://github.com/primer/react) or, if necessary, [primer/view_components](https://github.com/primer/view_components).
 
 ## Documentation
-
-> :warning: It is encouraged that you use [primer/react](https://github.com/primer/react) and [primer/view_components](https://github.com/primer/view_components) for styling and markup.
-
-> :warning: **The documentation of this repo is not maintained anymore**. Please raise any documentation-specific pull requests in [primer.style/design](https://github.com/primer/design/)
-
 Our documentation site lives at [primer.style/css](https://primer.style/css). You'll be able to find detailed documentation on getting started, all of the components, our theme, our principles, and more.
 
 ## Install
@@ -40,7 +20,7 @@ npm install --save @primer/css
 ```
 
 ## Usage
-The included source files are written in [Sass] using SCSS syntax. After [installing](#install) with npm, you can add your project's `node_modules` directory to your Sass [include paths](https://github.com/sass/node-sass#includepaths) (AKA [load paths](http://technology.customink.com/blog/2014/10/09/understanding-and-using-sass-load-paths/) in Ruby), then import it like this:
+The included source files are written in [Sass] using SCSS syntax. Once installed, you can add your project's `node_modules` directory to your Sass [include paths](https://github.com/sass/node-sass#includepaths) (AKA [load paths](http://technology.customink.com/blog/2014/10/09/understanding-and-using-sass-load-paths/) in Ruby), then import it like this:
 
 ```scss
 @import "@primer/css/index.scss";
@@ -67,5 +47,4 @@ You can find docs about our release process in [RELEASING.md](RELEASING.md).
 
 [install-npm]: https://docs.npmjs.com/getting-started/installing-node
 [npm]: https://www.npmjs.com/
-[primer]: https://primer.style/
 [sass]: http://sass-lang.com/
