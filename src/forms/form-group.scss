@@ -224,11 +224,11 @@
       border-color: var(--borderColor-success-muted, var(--color-success-muted));
 
       &::after {
-        border-bottom-color: var(--borderColor-success-muted, var(--color-success-muted));
+        border-bottom-color: pink;
       }
 
       &::before {
-        border-bottom-color: var(--borderColor-success-muted, var(--color-success-muted));
+        border-bottom-color: rgb(255, 255, 255);
       }
     }
   }
