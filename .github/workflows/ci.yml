@@ -19,7 +19,7 @@ jobs:
         run: npm run stylelint:fix
       - name: Push up any fixes
         if: ${{ github.event_name == 'pull_request' }}
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Fixing stylelint issues
           commit_user_name: GitHub Design Engineering Bot
