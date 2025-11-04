@@ -104,7 +104,7 @@ jobs:
   release-canary:
     name: Canary
     if: ${{ github.repository == 'primer/css' && github.ref_name != 'main' && github.ref_name != 'changeset-release/main' }}
-    uses: primer/.github/.github/workflows/release_canary.yml@v2.2.0
+    uses: primer/.github/.github/workflows/release_canary.yml@v2.2.1
     with:
       install: npm ci
     secrets:
