@@ -45,7 +45,7 @@
     "@changesets/cli": "^2.27.12",
     "@csstools/postcss-sass": "^5.1.1",
     "@github/prettier-config": "^0.0.6",
-    "@primer/primitives": "^10.3.4",
+    "@primer/primitives": "0.0.0-20250916142458",
     "@primer/stylelint-config": "^13.2.3",
     "autoprefixer": "^10.4.18",
     "chokidar-cli": "^3.0.0",
@@ -72,7 +72,7 @@
     "table": "^6.8.1"
   },
   "peerDependencies": {
-    "@primer/primitives": "10.x || 11.x"
+    "@primer/primitives": "0.0.0-20250916142458"
   },
   "jest": {
     "testEnvironment": "node",
