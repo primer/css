@@ -7,7 +7,7 @@
   background-clip: padding-box;
   border-color: var(--borderColor-default, var(--color-border-default));
   // stylelint-disable-next-line primer/box-shadow
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 18px rgb(0, 0, 0, 0.4);
 
   .Box-header {
     margin: 0;
