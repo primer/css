@@ -105,5 +105,8 @@
       "ecmaVersion": 2017,
       "requireConfigFile": false
     }
+  },
+  "dependencies": {
+    "tslib": "^2.8.1"
   }
 }
