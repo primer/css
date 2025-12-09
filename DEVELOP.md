@@ -1,5 +1,8 @@
 # Primer CSS Development
 
+> [!WARNING]
+> **This project is in KTLO mode!** New features, functionalities, or major enhancements are unlikely to be accepted. Use existing utility classes from this project where needed. For more complete patterns that include styling and markup, please use [primer/react](https://github.com/primer/react) or, if necessary, [primer/view_components](https://github.com/primer/view_components).
+
 If you've made it this far, **thank you**! We appreciate your contribution, and hope that this document helps you along the way. If you have any questions or problems, don't hesitate to [file an issue](https://github.com/primer/css/issues/new).
 
 ## Structure
