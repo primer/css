@@ -51,6 +51,19 @@ label {
   opacity: 1; // override opacity in normalize.css
 }
 
+// Global selection styling
+// Variables inherit from the element's theme context set by [data-color-mode] ancestors
+::selection {
+  color: var(--fgColor-onEmphasis, var(--color-fg-on-emphasis));
+  background-color: var(--bgColor-accent-emphasis, var(--color-accent-emphasis));
+}
+
+// Global backdrop styling for dialogs/modals
+// Variables inherit from the element's theme context
+::backdrop {
+  background-color: var(--overlay-backdrop-bgColor, var(--color-primer-canvas-backdrop));
+}
+
 // Horizontal lines
 //
 // TODO-MDO: Remove `.rule` from everywhere and replace with `<hr>`s

@@ -5,85 +5,34 @@
 // @include color-mode-theme(dark) {
 //   --color: black;
 // }
-//
-// Warning!!!
-// Don't use this mixin with a class. E.g.
-// @include color-mode-theme(dark) {
-//   .my-class {
-//     color: red;
-//   }
-// }
-//
-// The outputted `::selection .my-class` will make the selector invalid and the entire ruleset is disregarded.
-// At some point we hopefully can remove the need for `&, &::selection {}` again (once the spec/implementation changes).
 
 @mixin color-mode-theme($theme-name, $include-root: false) {
   @if $include-root {
     :root,
     [data-color-mode="light"][data-light-theme="#{$theme-name}"],
     [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
-      &,
-      &::selection {
-        @content;
-      }
-
-      /*! */ // This is a fix for a cssstats bug see https://github.com/cssstats/cssstats/issues/331
-    }
-
-    ::backdrop,
-    [data-color-mode="light"][data-light-theme="#{$theme-name}"] ::backdrop,
-    [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] ::backdrop {
       @content;
 
-      /*! */ // Must remain separate from the above selector to not break browsers which don't support ::backdrop, e.g. Safari 14.
+      /*! */ // This is a fix for a cssstats bug see https://github.com/cssstats/cssstats/issues/331
     }
   }
 
   @else {
     [data-color-mode="light"][data-light-theme="#{$theme-name}"],
     [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
-      &,
-      &::selection {
-        @content;
-      }
-    }
-
-    ::backdrop,
-    [data-color-mode="light"][data-light-theme="#{$theme-name}"] ::backdrop,
-    [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] ::backdrop {
       @content;
-
-      /*! */ // Must remain separate from the above selector to not break browsers which don't support ::backdrop, e.g. Safari 14.
     }
   }
 
   @media (prefers-color-scheme: light) {
     [data-color-mode="auto"][data-light-theme="#{$theme-name}"] {
-      &,
-      &::selection {
-        @content;
-      }
-    }
-
-    [data-color-mode="auto"][data-light-theme="#{$theme-name}"] ::backdrop {
       @content;
-
-      /*! */ // Must remain separate from the above selector to not break browsers which don't support ::backdrop, e.g. Safari 14.
     }
   }
 
   @media (prefers-color-scheme: dark) {
     [data-color-mode="auto"][data-dark-theme="#{$theme-name}"] {
-      &,
-      &::selection {
-        @content;
-      }
-    }
-
-    [data-color-mode="auto"][data-light-theme="#{$theme-name}"] ::backdrop {
       @content;
-
-      /*! */ // Must remain separate from the above selector to not break browsers which don't support ::backdrop, e.g. Safari 14.
     }
   }
 }
