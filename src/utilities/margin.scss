@@ -8,43 +8,33 @@
     @each $scale, $size in $spacer-map-rem-extended {
       @if ($scale < length($spacer-map-rem)) {
         /* Set a $size margin to all sides at $breakpoint */
-        .m#{$variant}-#{$scale} {
-          margin: $size !important;
-        }
+        .m#{$variant}-#{$scale},
         .pr-m#{$variant}-#{$scale} {
           margin: $size !important;
         }
       }
 
       /* Set a $size margin on the top at $breakpoint */
-      .mt#{$variant}-#{$scale} {
-        margin-top: $size !important;
-      }
+      .mt#{$variant}-#{$scale},
       .pr-mt#{$variant}-#{$scale} {
         margin-top: $size !important;
       }
 
       /* Set a $size margin on the bottom at $breakpoint */
-      .mb#{$variant}-#{$scale} {
-        margin-bottom: $size !important;
-      }
+      .mb#{$variant}-#{$scale},
       .pr-mb#{$variant}-#{$scale} {
         margin-bottom: $size !important;
       }
 
       @if ($scale < length($spacer-map-rem)) {
         /* Set a $size margin on the right at $breakpoint */
-        .mr#{$variant}-#{$scale} {
-          margin-right: $size !important;
-        }
+        .mr#{$variant}-#{$scale},
         .pr-mr#{$variant}-#{$scale} {
           margin-right: $size !important;
         }
 
         /* Set a $size margin on the left at $breakpoint */
-        .ml#{$variant}-#{$scale} {
-          margin-left: $size !important;
-        }
+        .ml#{$variant}-#{$scale},
         .pr-ml#{$variant}-#{$scale} {
           margin-left: $size !important;
         }
@@ -52,33 +42,26 @@
 
       @if ($size != 0) {
         /* Set a negative $size margin on top at $breakpoint */
-        .mt#{$variant}-n#{$scale} {
-          margin-top: calc(-1 * $size) !important;
-        }
+        .mt#{$variant}-n#{$scale},
         .pr-mt#{$variant}-n#{$scale} {
           margin-top: calc(-1 * $size) !important;
         }
+
         /* Set a negative $size margin on the bottom at $breakpoint */
-        .mb#{$variant}-n#{$scale} {
-          margin-bottom: calc(-1 * $size) !important;
-        }
+        .mb#{$variant}-n#{$scale},
         .pr-mb#{$variant}-n#{$scale} {
           margin-bottom: calc(-1 * $size) !important;
         }
 
         @if ($scale < length($spacer-map-rem)) {
           /* Set a negative $size margin on the right at $breakpoint */
-          .mr#{$variant}-n#{$scale} {
-            margin-right: calc(-1 * $size) !important;
-          }
+          .mr#{$variant}-n#{$scale},
           .pr-mr#{$variant}-n#{$scale} {
             margin-right: calc(-1 * $size) !important;
           }
 
           /* Set a negative $size margin on the left at $breakpoint */
-          .ml#{$variant}-n#{$scale} {
-            margin-left: calc(-1 * $size) !important;
-          }
+          .ml#{$variant}-n#{$scale},
           .pr-ml#{$variant}-n#{$scale} {
             margin-left: calc(-1 * $size) !important;
           }
@@ -87,11 +70,7 @@
 
       @if ($scale < length($spacer-map-rem)) {
         /* Set a $size margin on the left & right at $breakpoint */
-        .mx#{$variant}-#{$scale} {
-          margin-right: $size !important;
-          margin-left: $size !important;
-        }
-
+        .mx#{$variant}-#{$scale},
         .pr-mx#{$variant}-#{$scale} {
           margin-right: $size !important;
           margin-left: $size !important;
@@ -99,11 +78,7 @@
       }
 
       /* Set a $size margin on the top & bottom at $breakpoint */
-      .my#{$variant}-#{$scale} {
-        margin-top: $size !important;
-        margin-bottom: $size !important;
-      }
-
+      .my#{$variant}-#{$scale},
       .pr-my#{$variant}-#{$scale} {
         margin-top: $size !important;
         margin-bottom: $size !important;
@@ -111,11 +86,7 @@
     }
 
     /* responsive horizontal auto margins */
-    .mx#{$variant}-auto {
-      margin-right: auto !important;
-      margin-left: auto !important;
-    }
-
+    .mx#{$variant}-auto,
     .pr-mx#{$variant}-auto {
       margin-right: auto !important;
       margin-left: auto !important;
