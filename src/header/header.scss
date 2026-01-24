@@ -18,6 +18,9 @@
   align-self: stretch;
   align-items: center;
   flex-wrap: nowrap;
+  top: fixed;
+  left: 0;
+  right: 0;
 }
 
 .Header-item--full {
@@ -33,7 +36,7 @@
   &:hover,
   &:focus {
     color: var(--header-fgColor-default, var(--color-header-text));
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 

@@ -32,6 +32,7 @@
     padding-block-end: calc(var(--base-size-16, 16px) - var(--borderWidth-thin, 1px));
     isolation: isolate;
     align-items: center;
+    justify-content: center;
     gap: var(--base-size-8, 8px);
 
     &:not(:focus-within) {
