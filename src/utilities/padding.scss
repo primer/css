@@ -8,28 +8,48 @@
     @each $scale, $size in $spacer-map-rem-extended {
       @if ($scale < length($spacer-map-rem)) {
         /* Set a $size padding to all sides at $breakpoint */
-        .p#{$variant}-#{$scale}  { padding: $size !important; }
+        .p#{$variant}-#{$scale},
+        .pr-p#{$variant}-#{$scale} {
+          padding: $size !important;
+        }
       }
 
       /* Set a $size padding to the top at $breakpoint */
-      .pt#{$variant}-#{$scale} { padding-top: $size !important; }
+      .pt#{$variant}-#{$scale},
+      .pr-pt#{$variant}-#{$scale} {
+        padding-top: $size !important;
+      }
+
       /* Set a $size padding to the right at $breakpoint */
-      .pr#{$variant}-#{$scale} { padding-right: $size !important; }
+      .pr#{$variant}-#{$scale},
+      .pr-pr#{$variant}-#{$scale} {
+        padding-right: $size !important;
+      }
+
       /* Set a $size padding to the bottom at $breakpoint */
-      .pb#{$variant}-#{$scale} { padding-bottom: $size !important; }
+      .pb#{$variant}-#{$scale},
+      .pr-pb#{$variant}-#{$scale} {
+        padding-bottom: $size !important;
+      }
+
       /* Set a $size padding to the left at $breakpoint */
-      .pl#{$variant}-#{$scale} { padding-left: $size !important; }
+      .pl#{$variant}-#{$scale},
+      .pr-pl#{$variant}-#{$scale} {
+        padding-left: $size !important;
+      }
 
       @if ($scale < length($spacer-map-rem)) {
         /* Set a $size padding to the left & right at $breakpoint */
-        .px#{$variant}-#{$scale} {
+        .px#{$variant}-#{$scale},
+        .pr-px#{$variant}-#{$scale} {
           padding-right: $size !important;
           padding-left: $size !important;
         }
       }
 
       /* Set a $size padding to the top & bottom at $breakpoint */
-      .py#{$variant}-#{$scale} {
+      .py#{$variant}-#{$scale},
+      .pr-py#{$variant}-#{$scale} {
         padding-top: $size !important;
         padding-bottom: $size !important;
       }
