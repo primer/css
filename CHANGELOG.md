@@ -1,5 +1,11 @@
 # @primer/css
 
+## 22.2.0
+
+### Minor Changes
+
+- [#2962](https://github.com/primer/css/pull/2962) [`5a16f92`](https://github.com/primer/css/commit/5a16f9216ea7e6707fa2a8bee9ca978044c946d3) Thanks [@adierkens](https://github.com/adierkens)! - Adds `pr-` namespace for spacing utilities (margin and padding)
+
 ## 22.1.0
 
 ### Minor Changes
