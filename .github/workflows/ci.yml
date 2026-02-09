@@ -8,10 +8,10 @@ jobs:
   stylelint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version: 20
           cache: 'npm'
       - run: npm ci
       - run: npm run dist
@@ -30,10 +30,10 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version: 20
           cache: 'npm'
       - run: npm ci
       - name: Lint workflow files
@@ -42,10 +42,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version: 20
           cache: 'npm'
       - run: npm ci
       - name: Jest

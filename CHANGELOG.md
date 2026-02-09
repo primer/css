@@ -1,5 +1,11 @@
 # @primer/css
 
+## 22.1.0
+
+### Minor Changes
+
+- [#2907](https://github.com/primer/css/pull/2907) [`67109bd`](https://github.com/primer/css/commit/67109bda0dcd7e191c3071f5eb58006fdbe4e3c8) Thanks [@langermank](https://github.com/langermank)! - Change `contrast` input background to `bgColor-default`
+
 ## 22.0.2
 
 ### Patch Changes
@@ -224,7 +230,6 @@
 ### Major Changes
 
 - [#2403](https://github.com/primer/css/pull/2403) [`256affcf`](https://github.com/primer/css/commit/256affcf3404c97d3db199a0b3cf32d3b864627c) Thanks [@lukasoppermann](https://github.com/lukasoppermann)! - ## Removed DiffStat component
-
   - the diffStat component is removed from primer/css
   - the component is very specific to this use-case, it is not generic enough to be part of the primer design system and was thus chosen for removal
   - the component will be added to the github codebase directly so that it is still available
@@ -273,7 +278,6 @@
 ### Minor Changes
 
 - [`d7a4c343`](https://github.com/primer/css/commit/d7a4c343ab1bc0d7f55ff85d735c93d9825419ae) Thanks [@jonrohan](https://github.com/jonrohan)! - Importing more styles from Primer View Components
-
   - https://github.com/primer/view_components/pull/1587
   - https://github.com/primer/view_components/pull/1590
   - https://github.com/primer/view_components/pull/1592
@@ -865,7 +869,6 @@
 - [#1575](https://github.com/primer/css/pull/1575) [`c7ea6448`](https://github.com/primer/css/commit/c7ea6448c114065627299db7ba65418799d4a59b) Thanks [@jonrohan](https://github.com/jonrohan)! - Replacing deprecated variables with color v2 variables
 
 * [#1573](https://github.com/primer/css/pull/1573) [`386dfa01`](https://github.com/primer/css/commit/386dfa0145a64e2c6edbdf8ab09d9fc3f7151f6a) Thanks [@simurai](https://github.com/simurai)! - Improve the font stack on Windows
-
   - `Segoe UI Variable` -> `Segoe UI Variable Text`.
     - "Segoe UI Variable Text" seems to be the better option for a lot of text (markdown). In the future we might can consider having a UI and a "text" font stack.
   - Add `Meiryo` before `system-ui`.
