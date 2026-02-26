@@ -25,7 +25,7 @@
 
   &:last-child {
     // makes sure there is a "bottom border" in case the list is not long enough
-    // stylelint-disable-next-line primer/box-shadow, declaration-property-value-no-unknown
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: 0 $border-width 0 var(--borderColor-default, var(--color-border-default));
   }
 
