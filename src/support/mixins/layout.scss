@@ -45,6 +45,7 @@
 // Clears floats via mixin.
 
 @mixin clearfix {
+  // stylelint-disable nesting-selector-no-missing-scoping-root
   &::before {
     display: table;
     content: '';
@@ -55,4 +56,5 @@
     clear: both;
     content: '';
   }
+  // stylelint-enable nesting-selector-no-missing-scoping-root
 }

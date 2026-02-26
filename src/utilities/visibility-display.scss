@@ -114,7 +114,7 @@
     height: 1px !important;
     padding: 0 !important;
     overflow: hidden !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
+    clip: rect(1px, 1px, 1px, 1px) !important; /* stylelint-disable-line property-no-deprecated */
     border: 0 !important;
   }
 

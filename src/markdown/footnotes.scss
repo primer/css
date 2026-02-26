@@ -40,7 +40,7 @@
       left: calc(var(--base-size-24) * -1);
       pointer-events: none;
       content: '';
-      // stylelint-disable-next-line primer/borders, primer/colors, declaration-property-value-no-unknown
+      // stylelint-disable-next-line primer/borders, primer/colors
       border: 2px $border-style var(--borderColor-accent-emphasis, var(--color-accent-emphasis));
       // stylelint-disable-next-line primer/borders
       border-radius: $border-radius;
