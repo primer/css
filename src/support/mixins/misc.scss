@@ -1,5 +1,6 @@
 // Generate a two-color caret for any element.
 @mixin double-caret($background: var(--bgColor-default, var(--color-canvas-default)), $border: var(--borderColor-default, var(--color-border-default))) {
+  // stylelint-disable nesting-selector-no-missing-scoping-root
   &::after,
   &::before {
     position: absolute;
@@ -26,6 +27,7 @@
     // stylelint-disable-next-line primer/colors
     background-color: $border;
   }
+  // stylelint-enable nesting-selector-no-missing-scoping-root
 }
 
 // global focus styles

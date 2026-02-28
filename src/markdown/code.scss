@@ -24,7 +24,7 @@
   }
 
   pre {
-    word-wrap: normal;
+    overflow-wrap: normal;
 
     code {
       // stylelint-disable-next-line primer/typography
@@ -72,7 +72,7 @@
     margin: 0;
     overflow: visible;
     line-height: inherit;
-    word-wrap: normal;
+    overflow-wrap: normal;
     background-color: transparent;
     border: 0;
   }

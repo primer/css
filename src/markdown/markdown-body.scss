@@ -11,7 +11,7 @@
   font-size: $h4-size;
   // stylelint-disable-next-line primer/typography
   line-height: $body-line-height;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 
   // Clearfix on the markdown body
   &::before {
@@ -88,7 +88,7 @@
     // stylelint-disable-next-line primer/spacing
     padding: 0 1em;
     color: var(--fgColor-muted, var(--color-fg-muted));
-    // stylelint-disable-next-line primer/borders, primer/colors, declaration-property-value-no-unknown
+    // stylelint-disable-next-line primer/borders, primer/colors
     border-left: 0.25em $border-style var(--borderColor-default, var(--color-border-default));
 
     > :first-child {

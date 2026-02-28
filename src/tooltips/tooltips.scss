@@ -18,7 +18,7 @@
   text-shadow: none;
   text-transform: none;
   letter-spacing: normal;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
   white-space: pre;
   pointer-events: none;
   content: attr(aria-label);
@@ -192,7 +192,7 @@
   &::after {
     width: max-content;
     max-width: var(--overlay-width-small, 20rem);
-    word-wrap: break-word;
+    overflow-wrap: break-word;
     white-space: pre-line;
     // stylelint-disable-next-line primer/borders
     border-collapse: separate;
