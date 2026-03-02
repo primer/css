@@ -93,6 +93,10 @@
       font-weight: $font-weight-bold;
     }
 
+    dt + dt {
+      margin-top: 0;
+    }
+
     dd {
       padding: 0 var(--base-size-16);
       margin-bottom: var(--base-size-16);
