@@ -44,7 +44,7 @@ export const NewText = ({}) => (
 export const TextInherit = ({}) => (
   <div class="color-fg-success">
     This text is green,{' '}
-    <a href="#" class="color-fg-inherit">
+    <a href="#" class="color-fg-inherit text-underline">
       including the link
     </a>
   </div>
