@@ -1,3 +1,5 @@
+import sass from 'sass';
+
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
 const config = {
   stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -12,7 +14,7 @@ const config = {
       name: '@storybook/addon-styling',
       options: {
         sass: {
-          implementation: require('sass'),
+          implementation: sass,
         },
       },
     },
