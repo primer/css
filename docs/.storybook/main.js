@@ -1,23 +1,17 @@
 import sass from 'sass'
+import {createRequire} from 'module'
+import {fileURLToPath} from 'url'
+
+const require = createRequire(import.meta.url)
 
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
 const config = {
   stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
+    '@storybook/addon-webpack5-compiler-babel',
+    '@storybook/addon-docs',
     'storybook-addon-pseudo-states',
-    '@storybook/addon-storysource',
     '@geometricpanda/storybook-addon-badges',
-    {
-      name: '@storybook/addon-styling',
-      options: {
-        sass: {
-          implementation: sass,
-        },
-      },
-    },
   ],
   framework: {
     name: '@storybook/react-webpack5',
@@ -27,5 +21,30 @@ const config = {
     autodocs: 'tag',
   },
   staticDirs: ['../stories/static'],
+  async webpackFinal(webpackConfig) {
+    // Alias @storybook/blocks to the v10-compatible addon-docs/blocks
+    webpackConfig.resolve = webpackConfig.resolve || {}
+    webpackConfig.resolve.alias = {
+      ...webpackConfig.resolve.alias,
+      '@storybook/blocks': fileURLToPath(import.meta.resolve('@storybook/addon-docs/blocks')),
+    }
+
+    // Add SCSS support using sass-loader
+    webpackConfig.module.rules.push({
+      test: /\.s[ac]ss$/,
+      use: [
+        require.resolve('style-loader'),
+        require.resolve('css-loader'),
+        {
+          loader: require.resolve('sass-loader'),
+          options: {
+            implementation: sass,
+          },
+        },
+      ],
+      sideEffects: true,
+    })
+    return webpackConfig
+  },
 }
 export default config
