@@ -19,16 +19,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const nodeModules = resolve(__dirname, '../node_modules')
 
 const patches = [
-  {
-    pkg: '@storybook/manager-api',
-    shimMjs: "export * from 'storybook/manager-api';\n",
-    shimCjs: "module.exports = require('./shim-cjs-helper.js');\n",
-  },
-  {
-    pkg: '@storybook/theming',
-    shimMjs: "export * from 'storybook/theming';\n",
-    shimCjs: "module.exports = require('./shim-cjs-helper.js');\n",
-  },
+  {pkg: '@storybook/manager-api', shimMjs: "export * from 'storybook/manager-api';\n"},
+  {pkg: '@storybook/theming', shimMjs: "export * from 'storybook/theming';\n"},
 ]
 
 for (const {pkg, shimMjs} of patches) {

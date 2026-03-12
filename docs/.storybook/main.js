@@ -5,7 +5,7 @@ import {fileURLToPath} from 'url'
 const require = createRequire(import.meta.url)
 
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
-const storybookConfig = {
+const config = {
   stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-webpack5-compiler-babel',
@@ -47,4 +47,4 @@ const storybookConfig = {
     return webpackConfig
   },
 }
-export default storybookConfig
+export default config
