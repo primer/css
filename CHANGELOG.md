@@ -1,5 +1,13 @@
 # @primer/css
 
+## 22.1.1
+
+### Patch Changes
+
+- [#3012](https://github.com/primer/css/pull/3012) [`31df244`](https://github.com/primer/css/commit/31df2449f00048c949811b4b4dbe51665567811c) Thanks [@francinelucca](https://github.com/francinelucca)! - Add max-width to kbd styles
+
+- [#2811](https://github.com/primer/css/pull/2811) [`0de15b2`](https://github.com/primer/css/commit/0de15b2e32a741908a4a8d1e8126a891b3d74e07) Thanks [@FloEdelmann](https://github.com/FloEdelmann)! - Reduce spacing between consecutive `<dt>` elements
+
 ## 22.1.0
 
 ### Minor Changes
