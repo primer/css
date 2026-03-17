@@ -18,4 +18,5 @@ kbd {
   border-radius: $border-radius;
   // stylelint-disable-next-line primer/box-shadow
   box-shadow: inset 0 -1px 0 var(--borderColor-neutral-muted, var(--color-neutral-muted));
+  max-width: 100%;
 }
