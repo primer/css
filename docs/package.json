@@ -28,5 +28,8 @@
     "react-dom": "^18.2.0",
     "storybook": "^7.6.21",
     "storybook-addon-pseudo-states": "^2.1.0"
+  },
+  "overrides": {
+    "tar": ">=7.5.11"
   }
 }
