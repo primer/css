@@ -12,7 +12,10 @@
   "sass": "index.scss",
   "type": "module",
   "main": "dist/primer.js",
-  "repository": "https://github.com/primer/css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/primer/css.git"
+  },
   "bugs": {
     "url": "https://github.com/primer/css/issues"
   },
