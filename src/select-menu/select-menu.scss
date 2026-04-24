@@ -66,6 +66,7 @@ $SelectMenu-max-height: 480px !default;
   border: $border-width $border-style var(--selectMenu-borderColor, var(--color-select-menu-backdrop-border));
   // stylelint-disable-next-line primer/borders
   border-radius: $border-radius * 2;
+  // stylelint-disable-next-line primer/box-shadow
   box-shadow: var(--shadow-floating-legacy, var(--color-overlay-shadow));
   animation: SelectMenu-modal-animation 0.12s cubic-bezier(0, 0.1, 0.1, 1) backwards;
 
@@ -93,6 +94,7 @@ $SelectMenu-max-height: 480px !default;
     border-color: var(--borderColor-default, var(--color-border-default));
     // stylelint-disable-next-line primer/borders
     border-radius: $border-radius;
+    // stylelint-disable-next-line primer/box-shadow
     box-shadow: var(--shadow-floating-legacy, var(--color-overlay-shadow));
     animation-name: SelectMenu-modal-animation--sm;
   }
