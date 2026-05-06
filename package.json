@@ -44,7 +44,7 @@
     "build:storybook": "cd docs && npm i && npm run build:storybook"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.6.0",
+    "@changesets/changelog-github": "^0.7.0",
     "@changesets/cli": "^2.27.12",
     "@csstools/postcss-sass": "^5.1.1",
     "@github/prettier-config": "^0.0.6",
