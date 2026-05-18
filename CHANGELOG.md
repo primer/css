@@ -1,5 +1,11 @@
 # @primer/css
 
+## 22.2.0
+
+### Minor Changes
+
+- [#3059](https://github.com/primer/css/pull/3059) [`e97b2ee`](https://github.com/primer/css/commit/e97b2eeb75c8fa8dcc06ecac9c82bce91227e9c1) Thanks [@jonrohan](https://github.com/jonrohan)! - Remove default color styles for data-color-mode
+
 ## 22.1.1
 
 ### Patch Changes
