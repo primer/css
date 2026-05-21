@@ -1,5 +1,11 @@
 # @primer/css
 
+## 22.2.1
+
+### Patch Changes
+
+- [#3063](https://github.com/primer/css/pull/3063) [`b8db962`](https://github.com/primer/css/commit/b8db96254347bef318b62dca54996a4f9a76ee08) Thanks [@llastflowers](https://github.com/llastflowers)! - Set `text-rendering: optimizeSpeed` globally to fix font fallback bug
+
 ## 22.2.0
 
 ### Minor Changes
