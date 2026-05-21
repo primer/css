@@ -19,13 +19,7 @@ body {
   line-height: $body-line-height;
   color: var(--fgColor-default, var(--color-fg-default));
   background-color: var(--bgColor-default, var(--color-canvas-default));
-}
-
-@supports (-webkit-touch-callout: none) {
-  body {
-    // WebKit-only workaround for macOS text fallback/rendering issues
-    text-rendering: optimizeSpeed;
-  }
+  text-rendering: optimizeSpeed;
 }
 
 a {
