@@ -5,6 +5,11 @@
 
 @include color-mode(dark) { color-scheme: dark; }
 
+[data-color-mode] {
+  color: var(--fgColor-default, var(--color-fg-default));
+  background-color: var(--bgColor-default, var(--color-canvas-default));
+}
+
 // Windows High Contrast mode
 
 // Improves focus state for various components when Windows High Contrast mode is enabled
