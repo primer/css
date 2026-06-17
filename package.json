@@ -12,6 +12,15 @@
   "sass": "index.scss",
   "type": "module",
   "main": "dist/primer.js",
+  "exports": {
+    ".": "./dist/primer.js",
+    "./classnames": {
+      "types": "./dist/classnames.d.ts",
+      "import": "./dist/classnames.js",
+      "require": "./dist/classnames.cjs"
+    },
+    "./*": "./*"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/primer/css.git"
