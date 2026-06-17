@@ -1,5 +1,15 @@
 # @primer/css
 
+## 22.3.0
+
+### Minor Changes
+
+- [#3080](https://github.com/primer/css/pull/3080) [`5cb880b`](https://github.com/primer/css/commit/5cb880b74ae633bf880adf45e6b80b7aa30d173c) Thanks [@jonrohan](https://github.com/jonrohan)! - Adding a classnames export that has a list of all unique CSS classes in the library
+
+### Patch Changes
+
+- [#3079](https://github.com/primer/css/pull/3079) [`d735d75`](https://github.com/primer/css/commit/d735d758679dc5161435e33a3cfc254168f39b8a) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - Replace the universal `*` subject in the `.pagination` responsive rules with tag-bucketed selectors (`> a, > span, > em`). A universal subject compound (`.pagination > *`) forces Blink to test the rule against every direct child on every style recalc; bucketing by the actual child tags lets the engine fast-reject it, reducing wasted selector-matching time without changing the rendered output.
+
 ## 22.2.1
 
 ### Patch Changes
