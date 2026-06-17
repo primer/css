@@ -14,7 +14,11 @@
   "main": "dist/primer.js",
   "exports": {
     ".": "./dist/primer.js",
-    "./classnames": "./dist/classnames.js",
+    "./classnames": {
+      "types": "./dist/classnames.d.ts",
+      "import": "./dist/classnames.js",
+      "require": "./dist/classnames.cjs"
+    },
     "./*": "./*"
   },
   "repository": {

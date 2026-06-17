@@ -6,6 +6,7 @@ import {
   currentVersionDeprecations
 } from './utils/css'
 import semver from 'semver'
+import {createRequire} from 'module'
 
 let selectorsDiff, variablesDiff, version
 
@@ -54,5 +55,12 @@ describe('classnames', () => {
     for (const className of classNames) {
       expect(className.startsWith('.')).toBe(false)
     }
+  })
+
+  it('exposes the same Set from the CommonJS build', () => {
+    const require = createRequire(import.meta.url)
+    const cjsClassNames = require('../dist/classnames.cjs')
+    expect(cjsClassNames).toBeInstanceOf(Set)
+    expect([...cjsClassNames].sort()).toEqual([...classNames].sort())
   })
 })

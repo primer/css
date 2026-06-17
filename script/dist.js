@@ -120,8 +120,16 @@ function getClassNames(selectors) {
 
 async function writeClassNames(classNames) {
   const sorted = [...classNames].sort()
-  const contents = `export default new Set(${JSON.stringify(sorted, null, 2)})\n`
-  await writeFile(join(outDir, 'classnames.js'), contents, encoding)
+  const list = JSON.stringify(sorted, null, 2)
+  await Promise.all([
+    writeFile(join(outDir, 'classnames.js'), `export default new Set(${list})\n`, encoding),
+    writeFile(join(outDir, 'classnames.cjs'), `module.exports = new Set(${list})\n`, encoding),
+    writeFile(
+      join(outDir, 'classnames.d.ts'),
+      `declare const classNames: Set<string>\nexport default classNames\n`,
+      encoding
+    )
+  ])
 }
 
 dist()
