@@ -26,6 +26,7 @@ const bundleNames = {
 async function dist() {
   try {
     const bundles = {}
+    const classNames = new Set()
 
     await remove(outDir)
     await mkdirp(statsDir)
@@ -61,9 +62,14 @@ async function dist() {
         throw new Error(`Warnings while compiling ${from}.  See output above.`)
       }
 
+      const stats = cssstats(result.css)
+      for (const className of getClassNames(stats.selectors.values)) {
+        classNames.add(className)
+      }
+
       await Promise.all([
         writeFile(to, result.css, encoding),
-        writeFile(meta.stats, JSON.stringify(cssstats(result.css)), encoding),
+        writeFile(meta.stats, JSON.stringify(stats), encoding),
         writeFile(meta.js, `export {cssstats: require('./stats/${name}.json')}`, encoding),
         result.map ? writeFile(meta.map, result.map.toString(), encoding) : null
       ])
@@ -74,6 +80,7 @@ async function dist() {
 
     const meta = {bundles}
     await writeFile(join(outDir, 'meta.json'), JSON.stringify(meta, null, 2), encoding)
+    await writeClassNames(classNames)
     await writeVariableData()
     await copy(join(inDir, 'deprecations.json'), join(outDir, 'deprecations.json'))
   } catch (error) {
@@ -95,6 +102,26 @@ function getExternalImports(scss, relativeTo) {
 
 function getPathName(path) {
   return path.replace(/\//g, '-')
+}
+
+// Extract the bare class tokens (without the leading dot) from a list of
+// selector strings, e.g. ".Box-row:hover .btn" -> ["Box-row", "btn"].
+function getClassNames(selectors) {
+  const names = new Set()
+  const pattern = /\.((?:\\.|[\w-])+)/g
+  for (const selector of selectors) {
+    let match
+    while ((match = pattern.exec(selector)) !== null) {
+      names.add(match[1].replace(/\\(.)/g, '$1'))
+    }
+  }
+  return names
+}
+
+async function writeClassNames(classNames) {
+  const sorted = [...classNames].sort()
+  const contents = `export default new Set(${JSON.stringify(sorted, null, 2)})\n`
+  await writeFile(join(outDir, 'classnames.js'), contents, encoding)
 }
 
 dist()
