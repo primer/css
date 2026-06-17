@@ -109,7 +109,11 @@
   // Responsive
 
   // Hide everything by default
-  > * {
+  // Bucket on the child tag (a/span/em) instead of a universal `*` subject so
+  // Blink can fast-reject this rule during style recalc.
+  > a,
+  > span,
+  > em {
     display: none;
   }
 
@@ -139,7 +143,9 @@
   // Show everything
 
   @include breakpoint(md) {
-    > * {
+    > a,
+    > span,
+    > em {
       display: inline-block;
     }
   }
