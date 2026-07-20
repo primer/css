@@ -3,4 +3,10 @@
   overflow: visible !important;
   vertical-align: text-bottom;
   fill: currentColor;
+  /* Icon svg elements have `height="16" width="16"` set, hardcoding their dimensions to 16px.
+  This is useful for sizing in case CSS is missing/not yet loaded, but prevents icons from
+  responding to changes in font size/zoom. Using base-size applies the same size by default
+  but allows for dynamic sizing when base font size changes. */
+  height: var(--base-size-16);
+  width: var(--base-size-16);
 }
