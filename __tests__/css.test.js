@@ -3,8 +3,9 @@ import {
   getPackageStats,
   getSelectorDiff,
   getVariableDiff,
-  currentVersionDeprecations
+  currentVersionDeprecations,
 } from './utils/css'
+import fs from 'fs'
 import semver from 'semver'
 import {createRequire} from 'module'
 
@@ -36,8 +37,8 @@ describe('utilities', () => {
 describe('deprecations', () => {
   it('expects deprecations and their replacement to not be equal.', () => {
     const deprecations = currentVersionDeprecations()
-    Object.keys(deprecations["selectors"]).forEach(deprecation => {
-      const replacement = deprecations["selectors"][deprecation]
+    Object.keys(deprecations['selectors']).forEach(deprecation => {
+      const replacement = deprecations['selectors'][deprecation]
       expect(deprecation).not.toEqual(replacement)
     })
   })
