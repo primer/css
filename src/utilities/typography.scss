@@ -17,46 +17,46 @@
 
 /* Set the font size to 26px */
 .h1 {
-  font-size: var(--h1-size-mobile, $h1-size-mobile) !important;
+  font-size: var(--h1-size-mobile, $h1-size-mobile);
 
   @include breakpoint(md) {
-    font-size: var(--h1-size, $h1-size) !important;
+    font-size: var(--h1-size, $h1-size);
   }
 }
 
 /* Set the font size to 22px */
 .h2 {
-  font-size: var(--h2-size-mobile, $h2-size-mobile) !important;
+  font-size: var(--h2-size-mobile, $h2-size-mobile);
 
   @include breakpoint(md) {
-    font-size: var(--h2-size, $h2-size) !important;
+    font-size: var(--h2-size, $h2-size);
   }
 }
 
 /* Set the font size to 18px */
 .h3 {
-  font-size: var(--h3-size-mobile, $h3-size-mobile) !important;
+  font-size: var(--h3-size-mobile, $h3-size-mobile);
 
   @include breakpoint(md) {
-    font-size: var(--h3-size, $h3-size) !important;
+    font-size: var(--h3-size, $h3-size);
   }
 }
 
 /* Set the font size to #{$h4-size} */
 .h4 {
-  font-size: var(--h4-size, $h4-size) !important;
+  font-size: var(--h4-size, $h4-size);
 }
 
 /* Set the font size to #{$h5-size} */
 .h5 {
-  font-size: var(--h5-size, $h5-size) !important;
+  font-size: var(--h5-size, $h5-size);
 }
 
 // Does not include color property like typography base
 // styles, color should be applied with color utilities.
 /* Set the font size to #{$h6-size} */
 .h6 {
-  font-size: var(--h6-size, $h6-size) !important;
+  font-size: var(--h6-size, $h6-size);
 }
 
 // Heading utilities
@@ -66,112 +66,112 @@
 .h4,
 .h5,
 .h6 {
-  font-weight: $font-weight-bold !important;
+  font-weight: $font-weight-bold;
 }
 
 // Type utilities that match type sale
 /* Set the font size to 26px */
 .f1 {
-  font-size: var(--h1-size-mobile, $h1-size-mobile) !important;
+  font-size: var(--h1-size-mobile, $h1-size-mobile);
 
   @include breakpoint(md) {
-    font-size: var(--h1-size, $h1-size) !important;
+    font-size: var(--h1-size, $h1-size);
   }
 }
 
 /* Set the font size to 22px */
 .f2 {
-  font-size: var(--h2-size-mobile, $h2-size-mobile) !important;
+  font-size: var(--h2-size-mobile, $h2-size-mobile);
 
   @include breakpoint(md) {
-    font-size: var(--h2-size, $h2-size) !important;
+    font-size: var(--h2-size, $h2-size);
   }
 }
 
 /* Set the font size to 18px */
 .f3 {
-  font-size: var(--h3-size-mobile, $h3-size-mobile) !important;
+  font-size: var(--h3-size-mobile, $h3-size-mobile);
 
   @include breakpoint(md) {
-    font-size: var(--h3-size, $h3-size) !important;
+    font-size: var(--h3-size, $h3-size);
   }
 }
 
 /* Set the font size to #{$h4-size} */
 .f4 {
-  font-size: var(--h4-size, $h4-size) !important;
+  font-size: var(--h4-size, $h4-size);
 
   @include breakpoint(md) {
-    font-size: var(--h4-size, $h4-size) !important;
+    font-size: var(--h4-size, $h4-size);
   }
 }
 
 /* Set the font size to #{$h5-size} */
 .f5 {
-  font-size: var(--h5-size, $h5-size) !important;
+  font-size: var(--h5-size, $h5-size);
 }
 
 /* Set the font size to #{$h6-size} */
 .f6 {
-  font-size: var(--h6-size, $h6-size) !important;
+  font-size: var(--h6-size, $h6-size);
 }
 
 // Type utils with light weight that match type scale
 /* Set the font size to 40px and weight to light */
 .f00-light {
-  font-size: var(--h00-size-mobile, $h00-size-mobile) !important;
-  font-weight: $font-weight-light !important;
+  font-size: var(--h00-size-mobile, $h00-size-mobile);
+  font-weight: $font-weight-light;
 
   @include breakpoint(md) {
-    font-size: var(--h00-size, $h00-size) !important;
+    font-size: var(--h00-size, $h00-size);
   }
 }
 
 /* Set the font size to 32px and weight to light */
 .f0-light {
-  font-size: var(--h0-size-mobile, $h0-size-mobile) !important;
-  font-weight: $font-weight-light !important;
+  font-size: var(--h0-size-mobile, $h0-size-mobile);
+  font-weight: $font-weight-light;
 
   @include breakpoint(md) {
-    font-size: var(--h0-size, $h0-size) !important;
+    font-size: var(--h0-size, $h0-size);
   }
 }
 
 /* Set the font size to 26px and weight to light */
 .f1-light {
-  font-size: var(--h1-size-mobile, $h1-size-mobile) !important;
-  font-weight: $font-weight-light !important;
+  font-size: var(--h1-size-mobile, $h1-size-mobile);
+  font-weight: $font-weight-light;
 
   @include breakpoint(md) {
-    font-size: var(--h1-size, $h1-size) !important;
+    font-size: var(--h1-size, $h1-size);
   }
 }
 
 /* Set the font size to 22px and weight to light */
 .f2-light {
-  font-size: var(--h2-size-mobile, $h2-size-mobile) !important;
-  font-weight: $font-weight-light !important;
+  font-size: var(--h2-size-mobile, $h2-size-mobile);
+  font-weight: $font-weight-light;
 
   @include breakpoint(md) {
-    font-size: var(--h2-size, $h2-size) !important;
+    font-size: var(--h2-size, $h2-size);
   }
 }
 
 // Same size and weight as .lead but without color property
 /* Set the font size to 18px and weight to light */
 .f3-light {
-  font-size: var(--h3-size-mobile, $h3-size-mobile) !important;
-  font-weight: $font-weight-light !important;
+  font-size: var(--h3-size-mobile, $h3-size-mobile);
+  font-weight: $font-weight-light;
 
   @include breakpoint(md) {
-    font-size: var(--h3-size, $h3-size) !important;
+    font-size: var(--h3-size, $h3-size);
   }
 }
 
 // Smallest text size
 /* Set the font size to ${#h6-size} */
 .text-small {
-  font-size: var(--h6-size, $h6-size) !important;
+  font-size: var(--h6-size, $h6-size);
 }
 
 // 12px
@@ -194,22 +194,22 @@
 
     /* Set the line height to ultra condensed */
     .lh#{$variant}-condensed-ultra {
-      line-height: $lh-condensed-ultra !important;
+      line-height: $lh-condensed-ultra;
     }
 
     /* Set the line height to condensed */
     .lh#{$variant}-condensed {
-      line-height: $lh-condensed !important;
+      line-height: $lh-condensed;
     }
 
     /* Set the line height to default */
     .lh#{$variant}-default {
-      line-height: $lh-default !important;
+      line-height: $lh-default;
     }
 
     /* Set the line height to zero */
     .lh#{$variant}-0 {
-      line-height: 0 !important;
+      line-height: 0;
     }
   }
 }
@@ -221,17 +221,17 @@
 
     /* Text align to the right */
     .text#{$variant}-right {
-      text-align: right !important;
+      text-align: right;
     }
 
     /* Text align to the left */
     .text#{$variant}-left {
-      text-align: left !important;
+      text-align: left;
     }
 
     /* Text align to the center */
     .text#{$variant}-center {
-      text-align: center !important;
+      text-align: center;
     }
   }
 }
@@ -239,57 +239,57 @@
 // Text styles
 /* Set the font weight to normal */
 .text-normal {
-  font-weight: $font-weight-normal !important;
+  font-weight: $font-weight-normal;
 }
 
 /* Set the font weight to bold */
 .text-bold {
-  font-weight: $font-weight-bold !important;
+  font-weight: $font-weight-bold;
 }
 
 .text-semibold {
-  font-weight: $font-weight-semibold !important;
+  font-weight: $font-weight-semibold;
 }
 
 .text-light {
-  font-weight: $font-weight-light !important;
+  font-weight: $font-weight-light;
 }
 
 /* Set the font to italic */
 .text-italic {
-  font-style: italic !important;
+  font-style: italic;
 }
 
 /* Make text uppercase */
 .text-uppercase {
-  text-transform: uppercase !important;
+  text-transform: uppercase;
 }
 
 /* Underline text */
 .text-underline {
-  text-decoration: underline !important;
+  text-decoration: underline;
 }
 
 /* Don't underline text */
 .no-underline {
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 /* Don't wrap white space */
 .no-wrap {
-  white-space: nowrap !important;
+  white-space: nowrap;
 }
 
 /* Normal white space */
 .ws-normal {
-  white-space: normal !important;
+  white-space: normal;
 }
 
 /* Force long "words" to wrap if they exceed the width of the container */
 .wb-break-word {
     // stylelint-disable-next-line declaration-property-value-keyword-no-deprecated
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /*
@@ -303,7 +303,7 @@
  * see: https://developer.mozilla.org/en-US/docs/Web/CSS/word-break#Values
  */
 .wb-break-all {
-  word-break: break-all !important;
+  word-break: break-all;
 }
 
 .text-emphasized {
@@ -312,20 +312,20 @@
 
 // List styles
 .list-style-none {
-  list-style: none !important;
+  list-style: none;
 }
 
 /* Set to monospace font */
 .text-mono {
-  font-family: $mono-font !important;
+  font-family: $mono-font;
 }
 
 /* Disallow user from selecting text */
 .user-select-none {
-  user-select: none !important;
+  user-select: none;
 }
 
 /* Make text capitalized (transforms first character to uppercase) */
 .text-capitalize {
-  text-transform: capitalize !important;
+  text-transform: capitalize;
 }

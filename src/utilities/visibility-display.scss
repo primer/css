@@ -4,37 +4,37 @@
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
     @each $display in $display-values {
-      .d#{$variant}-#{$display} { display: $display !important; }
+      .d#{$variant}-#{$display} { display: $display; }
     }
   }
 }
 
-.v-hidden { visibility: hidden !important; }
-.v-visible { visibility: visible !important; }
+.v-hidden { visibility: hidden; }
+.v-visible { visibility: visible; }
 
 // Hide utilities for each breakpoint
 // Each hide utility only applies to one breakpoint range.
 @media (max-width: $width-sm - 0.02px) {
   .hide-sm {
-    display: none !important;
+    display: none;
   }
 }
 
 @media (min-width: $width-sm) and (max-width: $width-md - 0.02px) {
   .hide-md {
-    display: none !important;
+    display: none;
   }
 }
 
 @media (min-width: $width-md) and (max-width: $width-lg - 0.02px) {
   .hide-lg {
-    display: none !important;
+    display: none;
   }
 }
 
 @media (min-width: $width-lg) {
   .hide-xl {
-    display: none !important;
+    display: none;
   }
 }
 
@@ -44,33 +44,33 @@
 .show-whenRegular,
 .show-whenWide,
 .show-whenRegular.hide-whenWide {
-  display: none !important;
+  display: none;
 }
 
 .hide-whenNarrow,
 .hide-whenRegular,
 .hide-whenWide {
-  display: block !important;
+  display: block;
 }
 
 @media (max-width: $width-md - 0.02px) {
   .show-whenNarrow {
-    display: block !important;
+    display: block;
   }
 
   .hide-whenNarrow {
-    display: none !important;
+    display: none;
   }
 }
 
 @media (min-width: $width-md) {
   .show-whenRegular,
   .show-whenRegular.hide-whenWide {
-    display: block !important;
+    display: block;
   }
 
   .hide-whenRegular {
-    display: none !important;
+    display: none;
   }
 }
 
@@ -78,17 +78,17 @@
 // the Primer primitives viewport ranges proposal
 @media (min-width: $width-xl) {
   .show-whenWide {
-    display: block !important;
+    display: block;
   }
 
   .hide-whenWide,
   .show-whenRegular.hide-whenWide {
-    display: none !important;
+    display: none;
   }
 }
 
 /* Set the table-layout to fixed */
-.table-fixed { table-layout: fixed !important; }
+.table-fixed { table-layout: fixed; }
 
 // Only display content to screen readers
 //
@@ -107,15 +107,15 @@
 
 // Only display content on focus
 .show-on-focus {
-  position: absolute !important;
+  position: absolute;
 
   &:not(:focus) {
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    clip: rect(1px, 1px, 1px, 1px) !important; /* stylelint-disable-line property-no-deprecated */
-    border: 0 !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px); /* stylelint-disable-line property-no-deprecated */
+    border: 0;
   }
 
   &:focus {

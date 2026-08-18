@@ -23,6 +23,16 @@ describe('css', () => {
   })
 })
 
+describe('utilities', () => {
+  it('contains no !important annotations', () => {
+    const files = getFiles('./src/utilities')
+
+    for (const file of files) {
+      expect(fs.readFileSync(file, 'utf8')).not.toContain('!important')
+    }
+  })
+})
+
 describe('deprecations', () => {
   it('expects deprecations and their replacement to not be equal.', () => {
     const deprecations = currentVersionDeprecations()
@@ -64,3 +74,11 @@ describe('classnames', () => {
     expect([...cjsClassNames].sort()).toEqual([...classNames].sort())
   })
 })
+
+function getFiles(directory) {
+  return fs.readdirSync(directory, {withFileTypes: true}).flatMap(entry => {
+    const file = `${directory}/${entry.name}`
+
+    return entry.isDirectory() ? getFiles(file) : file
+  })
+}
