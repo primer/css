@@ -10,5 +10,5 @@
 @import './margin.scss';
 @import './padding.scss';
 @import './typography.scss';
-// Visibility and display should always come last in the imports so that they can override other utilities
+// Visibility and display should always come last in the imports so equal-specificity declarations take precedence
 @import './visibility-display.scss';
