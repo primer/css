@@ -10,6 +10,7 @@ import semver from 'semver'
 import {createRequire} from 'module'
 
 let selectorsDiff, variablesDiff, version
+const showOnFocusSelector = '.show-on-focus {'
 
 beforeAll(async () => {
   selectorsDiff = getSelectorDiff()
@@ -106,19 +107,23 @@ function getFiles(directory) {
 }
 
 function stripShowOnFocus(content) {
-  const showOnFocus = getShowOnFocus(content)
+  const showOnFocus = getShowOnFocusRange(content)
 
   if (showOnFocus === null) {
     return content
   }
 
-  const start = content.indexOf('.show-on-focus {')
-
-  return `${content.slice(0, start)}${content.slice(start + showOnFocus.length)}`
+  return `${content.slice(0, showOnFocus.start)}${content.slice(showOnFocus.end)}`
 }
 
 function getShowOnFocus(content) {
-  const start = content.indexOf('.show-on-focus {')
+  const range = getShowOnFocusRange(content)
+
+  return range === null ? null : content.slice(range.start, range.end)
+}
+
+function getShowOnFocusRange(content) {
+  const start = content.indexOf(showOnFocusSelector)
 
   if (start === -1) {
     return null
@@ -135,7 +140,7 @@ function getShowOnFocus(content) {
     }
 
     if (depth === 0) {
-      return content.slice(start, index + 1)
+      return {start, end: index + 1}
     }
   }
 
