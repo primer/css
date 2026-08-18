@@ -30,6 +30,10 @@ describe('utilities', () => {
     const content = fs.readFileSync('./src/utilities/visibility-display.scss', 'utf8')
     const showOnFocus = getShowOnFocus(content)
 
+    if (showOnFocus === null) {
+      throw new Error('Could not find .show-on-focus block')
+    }
+
     for (const declaration of [
       'position: absolute !important;',
       'width: 1px !important;',
