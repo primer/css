@@ -148,5 +148,5 @@ function getShowOnFocusRange(content) {
     }
   }
 
-  return null
+  throw new Error('Could not find closing brace for .show-on-focus block')
 }
