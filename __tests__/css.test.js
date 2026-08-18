@@ -29,7 +29,9 @@ describe('utilities', () => {
     const files = getFiles('./src/utilities')
 
     for (const file of files) {
-      expect(fs.readFileSync(file, 'utf8')).not.toContain('!important')
+      if (fs.readFileSync(file, 'utf8').includes('!important')) {
+        throw new Error(`${file} contains !important`)
+      }
     }
   })
 })
