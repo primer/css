@@ -25,12 +25,31 @@ describe('css', () => {
 })
 
 describe('utilities', () => {
-  it('contains no !important annotations', () => {
-    const files = getFiles('./src/utilities')
+  it('keeps show-on-focus declarations important', () => {
+    const content = fs.readFileSync('./src/utilities/visibility-display.scss', 'utf8')
+    const showOnFocus = getShowOnFocus(content)
+
+    for (const declaration of [
+      'position: absolute !important;',
+      'width: 1px !important;',
+      'height: 1px !important;',
+      'padding: 0 !important;',
+      'overflow: hidden !important;',
+      'clip: rect(1px, 1px, 1px, 1px) !important;',
+      'border: 0 !important;',
+    ]) {
+      expect(showOnFocus).toContain(declaration)
+    }
+  })
+
+  it('contains !important annotations only in show-on-focus', () => {
+    const files = getFiles('./src/utilities').filter(file => file.endsWith('.scss'))
 
     for (const file of files) {
-      if (fs.readFileSync(file, 'utf8').includes('!important')) {
-        throw new Error(`${file} contains !important`)
+      const content = stripShowOnFocus(fs.readFileSync(file, 'utf8'))
+
+      if (content.includes('!important')) {
+        throw new Error(`${file} contains !important outside show-on-focus`)
       }
     }
   })
@@ -84,4 +103,41 @@ function getFiles(directory) {
 
     return entry.isDirectory() ? getFiles(file) : file
   })
+}
+
+function stripShowOnFocus(content) {
+  const showOnFocus = getShowOnFocus(content)
+
+  if (showOnFocus === null) {
+    return content
+  }
+
+  const start = content.indexOf('.show-on-focus {')
+
+  return `${content.slice(0, start)}${content.slice(start + showOnFocus.length)}`
+}
+
+function getShowOnFocus(content) {
+  const start = content.indexOf('.show-on-focus {')
+
+  if (start === -1) {
+    return null
+  }
+
+  const blockStart = content.indexOf('{', start)
+  let depth = 0
+
+  for (let index = blockStart; index < content.length; index++) {
+    if (content[index] === '{') {
+      depth++
+    } else if (content[index] === '}') {
+      depth--
+    }
+
+    if (depth === 0) {
+      return content.slice(start, index + 1)
+    }
+  }
+
+  return null
 }
