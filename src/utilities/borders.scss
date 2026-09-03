@@ -4,17 +4,17 @@
 /* Add a gray border to the left and right */
 .border-x {
   // stylelint-disable-next-line primer/colors
-  border-right: $border-rem !important;
+  border-right: $border-rem;
   // stylelint-disable-next-line primer/colors
-  border-left: $border-rem !important;
+  border-left: $border-rem;
 }
 
 /* Add a gray border to the top and bottom */
 .border-y {
   // stylelint-disable-next-line primer/colors
-  border-top: $border-rem !important;
+  border-top: $border-rem;
   // stylelint-disable-next-line primer/colors
-  border-bottom: $border-rem !important;
+  border-bottom: $border-rem;
 }
 
 /* Responsive gray borders */
@@ -22,52 +22,52 @@
   @include breakpoint($breakpoint) {
     /* Add a gray border on all sides at/above this breakpoint */
     // stylelint-disable-next-line primer/colors
-    .border#{$variant}        { border: $border-rem !important; }
-    .border#{$variant}-0      { border: 0 !important; }
+    .border#{$variant}        { border: $border-rem; }
+    .border#{$variant}-0      { border: 0; }
 
     // stylelint-disable-next-line primer/colors
-    .border#{$variant}-top    { border-top: $border-rem !important; }
+    .border#{$variant}-top    { border-top: $border-rem; }
     // stylelint-disable-next-line primer/colors
-    .border#{$variant}-right  { border-right: $border-rem !important; }
+    .border#{$variant}-right  { border-right: $border-rem; }
     // stylelint-disable-next-line primer/colors
-    .border#{$variant}-bottom { border-bottom: $border-rem !important; }
+    .border#{$variant}-bottom { border-bottom: $border-rem; }
     // stylelint-disable-next-line primer/colors
-    .border#{$variant}-left   { border-left: $border-rem !important; }
+    .border#{$variant}-left   { border-left: $border-rem; }
 
-    .border#{$variant}-top-0    { border-top: 0 !important; }
-    .border#{$variant}-right-0  { border-right: 0 !important; }
-    .border#{$variant}-bottom-0 { border-bottom: 0 !important; }
-    .border#{$variant}-left-0   { border-left: 0 !important; }
+    .border#{$variant}-top-0    { border-top: 0; }
+    .border#{$variant}-right-0  { border-right: 0; }
+    .border#{$variant}-bottom-0 { border-bottom: 0; }
+    .border#{$variant}-left-0   { border-left: 0; }
 
     // Rounded corners
-    .rounded#{$variant}   { border-radius: var(--borderRadius-medium, $border-radius-2) !important; }
-    .rounded#{$variant}-0 { border-radius: 0 !important; }
-    .rounded#{$variant}-1 { border-radius: var(--borderRadius-small, $border-radius-1) !important; }
-    .rounded#{$variant}-2 { border-radius: var(--borderRadius-medium, $border-radius-2) !important; }
-    .rounded#{$variant}-3 { border-radius: var(--borderRadius-large, $border-radius-3) !important; }
+    .rounded#{$variant}   { border-radius: var(--borderRadius-medium, $border-radius-2); }
+    .rounded#{$variant}-0 { border-radius: 0; }
+    .rounded#{$variant}-1 { border-radius: var(--borderRadius-small, $border-radius-1); }
+    .rounded#{$variant}-2 { border-radius: var(--borderRadius-medium, $border-radius-2); }
+    .rounded#{$variant}-3 { border-radius: var(--borderRadius-large, $border-radius-3); }
 
     @each $edge, $corners in $edges {
       .rounded#{$variant}-#{$edge}-0 {
         @each $corner in $corners {
-          border-#{$corner}-radius: 0 !important;
+          border-#{$corner}-radius: 0;
         }
       }
 
       .rounded#{$variant}-#{$edge}-1 {
         @each $corner in $corners {
-          border-#{$corner}-radius: var(--borderRadius-small, $border-radius-1) !important;
+          border-#{$corner}-radius: var(--borderRadius-small, $border-radius-1);
         }
       }
 
       .rounded#{$variant}-#{$edge}-2 {
         @each $corner in $corners {
-          border-#{$corner}-radius: var(--borderRadius-medium, $border-radius-2) !important;
+          border-#{$corner}-radius: var(--borderRadius-medium, $border-radius-2);
         }
       }
 
       .rounded#{$variant}-#{$edge}-3 {
         @each $corner in $corners {
-          border-#{$corner}-radius: var(--borderRadius-medium, $border-radius-3) !important;
+          border-#{$corner}-radius: var(--borderRadius-medium, $border-radius-3);
         }
       }
     }
@@ -75,9 +75,9 @@
 }
 
 /* Add a 50% border-radius to make something into a circle */
-.circle { border-radius: var(--borderRadius-full, 50%) !important; }
+.circle { border-radius: var(--borderRadius-full, 50%); }
 
 /* Change the border style to dashed, in conjunction with another utility */
 .border-dashed {
-  border-style: dashed !important;
+  border-style: dashed;
 }
