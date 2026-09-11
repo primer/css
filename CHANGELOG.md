@@ -1,5 +1,11 @@
 # @primer/css
 
+## 22.3.1
+
+### Patch Changes
+
+- [#3169](https://github.com/primer/css/pull/3169) [`553066d`](https://github.com/primer/css/commit/553066d582a7fcc7150aeafbab4d055c3f61dba7) Thanks [@dependabot](https://github.com/apps/dependabot)! - Update js-yaml to address security vulnerabilities.
+
 ## 22.3.0
 
 ### Minor Changes
