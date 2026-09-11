@@ -76,7 +76,7 @@
   }
 
   hr {
-    height: $em-spacer-3;
+    height: $border-width;
     padding: 0;
     margin: var(--base-size-24) 0;
     // stylelint-disable-next-line primer/colors
