@@ -19,9 +19,11 @@ updates:
 
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
-    directory: "/"
+    directories:
+      - "/"
+      - "/docs"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     groups:
       all:
         patterns:
