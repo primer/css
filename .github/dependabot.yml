@@ -28,3 +28,12 @@ updates:
         - "*"
     labels:
       - 'skip changeset'
+
+  # Configure security updates for docs
+  - package-ecosystem: "npm"
+    directory: "/docs"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 0
+    labels:
+      - 'skip changeset'
