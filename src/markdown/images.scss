@@ -2,7 +2,9 @@
 // stylelint-disable selector-no-qualifying-type
 // stylelint-disable selector-max-type
 .markdown-body {
-  // Images & Stuff
+  a[href]:has(img) {
+    display: inline-flex;
+  }
   img {
     max-width: 100%;
     // because we put padding on the images to hide header lines, and some people
