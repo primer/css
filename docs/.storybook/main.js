@@ -7,15 +7,19 @@ const config = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    '@storybook/addon-webpack5-compiler-babel',
     'storybook-addon-pseudo-states',
     '@storybook/addon-storysource',
     '@geometricpanda/storybook-addon-badges',
     {
-      name: '@storybook/addon-styling',
+      name: '@storybook/addon-styling-webpack',
       options: {
-        sass: {
-          implementation: sass,
-        },
+        rules: [
+          {
+            test: /\.s[ac]ss$/i,
+            use: ['style-loader', 'css-loader', {loader: 'sass-loader', options: {implementation: sass}}],
+          },
+        ],
       },
     },
   ],
