@@ -1,5 +1,11 @@
 # @primer/css
 
+## 22.3.2
+
+### Patch Changes
+
+- [#3157](https://github.com/primer/css/pull/3157) [`b304ffd`](https://github.com/primer/css/commit/b304ffdb1e76f599aad3af43d9c54798670ad8de) Thanks [@dapirian](https://github.com/dapirian)! - Set the markdown `<hr>` (thematic break) thickness to 1px using `$border-width`, down from 4px, so it matches Primer's line weight and the ~1px used by other markdown renderers.
+
 ## 22.3.1
 
 ### Patch Changes
