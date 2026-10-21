@@ -1,5 +1,11 @@
 # @primer/css
 
+## 22.3.3
+
+### Patch Changes
+
+- [#3217](https://github.com/primer/css/pull/3217) [`731e564`](https://github.com/primer/css/commit/731e564ffe253e3f5847f8e1f4f38592dd73a600) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bump `launch-editor` to `2.14.2` for a security update.
+
 ## 22.3.2
 
 ### Patch Changes
