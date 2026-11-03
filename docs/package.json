@@ -30,7 +30,7 @@
     "eslint-plugin-storybook": "^0.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.86.3",
+    "sass": "^1.107.0",
     "sass-loader": "^13.3.3",
     "storybook": "8.6.19",
     "storybook-addon-pseudo-states": "^4.0.4",
