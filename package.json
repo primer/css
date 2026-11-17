@@ -40,7 +40,7 @@
     "build:css": "script/build-css.js",
     "dist": "script/dist.js",
     "dist:watch": "chokidar \"src/**/*.scss\" -c \"script/dist.js\"",
-    "stylelint": "stylelint --quiet --rd 'src/**/*.scss'",
+    "stylelint": "stylelint --quiet --report-needless-disables 'src/**/*.scss'",
     "stylelint:fix": "npm run stylelint -- --fix",
     "stylelint:remove-disables": "script/stylelint-remove-disables.js 'src/**/*.scss'",
     "stylelint:add-disables": "script/stylelint-add-disables.js 'src/**/*.scss'",
