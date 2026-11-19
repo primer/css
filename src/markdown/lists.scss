@@ -14,6 +14,33 @@
     }
   }
 
+  // Count list nesting from .markdown-body so lists outside it (for example,
+  // markdown rendered inside an <li>) don't change the markers. :where() keeps
+  // these one class strong, so the [type] rules below and component classes win.
+  :where(ol:not([type])) {
+    list-style-type: decimal;
+  }
+
+  :where(ol, ul) :where(ol:not([type])) {
+    list-style-type: lower-roman;
+  }
+
+  :where(ol, ul) :where(ol, ul) :where(ol:not([type])) {
+    list-style-type: lower-alpha;
+  }
+
+  :where(ul) {
+    list-style-type: disc;
+  }
+
+  :where(ol, ul) :where(ul) {
+    list-style-type: circle;
+  }
+
+  :where(ol, ul) :where(ol, ul) :where(ul) {
+    list-style-type: square;
+  }
+
   ol[type='a s'] {
     list-style-type: lower-alpha;
   }
