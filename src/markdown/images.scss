@@ -27,6 +27,14 @@
     background-color: transparent;
   }
 
+  // An anchor that wraps an image and nothing else. Authored as nested HTML,
+  // the line break and indentation between the tags survive as text nodes
+  // inside the link, inherit its `text-decoration` and paint as underlined
+  // gaps around the image. `inline-flex` drops the whitespace-only children.
+  a[href]:has(> img) {
+    display: inline-flex;
+  }
+
   // Gollum Image Tags
 
   // Framed
