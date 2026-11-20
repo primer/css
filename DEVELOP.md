@@ -32,7 +32,7 @@ Run `npm install` to install the npm dependencies.
 
 ### The docs directory
 
-The [docs directory](../docs/) contains all of the documentation files in our docs site. Files are nested in the `/content` folder.
+The [docs directory](docs/) contains all of the documentation files in our docs site. Files are nested in the `/stories` folder.
 
 ### Code blocks
 
@@ -48,11 +48,11 @@ npm run storybook
 
 ### The Storybook directory
 
-Storybook configuration files live in [.storybook](../docs/.storybook). Addons and additional global config can be added to [main.js](../docs/.storybook/main.js) or [preview.js](../docs/.storybook/preview.js)
+Storybook configuration files live in [.storybook](docs/.storybook). Addons and additional global config can be added to [main.js](docs/.storybook/main.js) or [preview.js](docs/.storybook/preview.js)
 
 ### Stories
 
-Stories are individual `.jsx` or `.mdx` files that contain component HTML for prototyping, typically showcasing all possible variations of a component. Stories can be found in the [stories directory](../docs/src/stories/components) and are organized by component. Storybook will build and deploy a preview on any open Pull Request.
+Stories are individual `.jsx` or `.mdx` files that contain component HTML for prototyping, typically showcasing all possible variations of a component. Stories can be found in the [stories directory](docs/stories/components) and are organized by component. Storybook will build and deploy a preview on any open Pull Request.
 
 ## Scripts
 
