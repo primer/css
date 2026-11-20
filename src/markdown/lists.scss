@@ -17,6 +17,8 @@
   // Count list nesting from .markdown-body so lists outside it (for example,
   // markdown rendered inside an <li>) don't change the markers. :where() keeps
   // these one class strong, so the [type] rules below and component classes win.
+  // The :not([type]) guards keep the type attribute working. Unordered lists also
+  // count menu and dir as levels, matching browser defaults.
   :where(ol:not([type])) {
     list-style-type: decimal;
   }
@@ -29,15 +31,15 @@
     list-style-type: lower-alpha;
   }
 
-  :where(ul) {
+  :where(ul:not([type])) {
     list-style-type: disc;
   }
 
-  :where(ol, ul) :where(ul) {
+  :where(ol, ul, menu, dir) :where(ul:not([type])) {
     list-style-type: circle;
   }
 
-  :where(ol, ul) :where(ol, ul) :where(ul) {
+  :where(ol, ul, menu, dir) :where(ol, ul, menu, dir) :where(ul:not([type])) {
     list-style-type: square;
   }
 

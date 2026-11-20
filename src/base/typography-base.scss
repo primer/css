@@ -46,17 +46,21 @@ ol {
   margin-bottom: 0;
 }
 
-ol ol,
-ul ol {
+// Skip ol[type] so the type attribute sets the marker. :where() keeps the
+// original specificity, so component classes still win.
+// stylelint-disable selector-no-qualifying-type
+ol ol:where(:not([type])),
+ul ol:where(:not([type])) {
   list-style-type: lower-roman;
 }
 
-ul ul ol,
-ul ol ol,
-ol ul ol,
-ol ol ol {
+ul ul ol:where(:not([type])),
+ul ol ol:where(:not([type])),
+ol ul ol:where(:not([type])),
+ol ol ol:where(:not([type])) {
   list-style-type: lower-alpha;
 }
+// stylelint-enable selector-no-qualifying-type
 
 dd {
   margin-left: 0;
