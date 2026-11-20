@@ -19,28 +19,29 @@
   // these one class strong, so the [type] rules below and component classes win.
   // The :not([type]) guards keep the type attribute working. Unordered lists also
   // count menu and dir as levels, matching browser defaults.
-  :where(ol:not([type])) {
-    list-style-type: decimal;
-  }
+  //
+  // Markers repeat every three levels. CSS can't count depth, so each level gets
+  // its own rule. They share one specificity, so the deepest matching rule wins
+  // on source order. Lists deeper than the last generated level (three cycles,
+  // nine levels) keep that level's marker.
+  $markdown-list-markers: (decimal disc) (lower-roman circle) (lower-alpha square);
+  $markdown-list-cycles: 3;
+  $ol-ancestors: '';
+  $ul-ancestors: '';
 
-  :where(ol, ul) :where(ol:not([type])) {
-    list-style-type: lower-roman;
-  }
+  @for $cycle from 1 through $markdown-list-cycles {
+    @each $ol-marker, $ul-marker in $markdown-list-markers {
+      #{$ol-ancestors}:where(ol:not([type])) {
+        list-style-type: $ol-marker;
+      }
 
-  :where(ol, ul) :where(ol, ul) :where(ol:not([type])) {
-    list-style-type: lower-alpha;
-  }
+      #{$ul-ancestors}:where(ul:not([type])) {
+        list-style-type: $ul-marker;
+      }
 
-  :where(ul:not([type])) {
-    list-style-type: disc;
-  }
-
-  :where(ol, ul, menu, dir) :where(ul:not([type])) {
-    list-style-type: circle;
-  }
-
-  :where(ol, ul, menu, dir) :where(ol, ul, menu, dir) :where(ul:not([type])) {
-    list-style-type: square;
+      $ol-ancestors: $ol-ancestors + ':where(ol, ul) ';
+      $ul-ancestors: $ul-ancestors + ':where(ol, ul, menu, dir) ';
+    }
   }
 
   ol[type='a s'] {
