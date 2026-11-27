@@ -20,6 +20,13 @@
     }
   }
 
+  // Anchors wrapping images (e.g. badge rows written across multiple
+  // lines) should not paint underlined whitespace from the newline
+  // and indentation between the tags
+  a[href]:has(img) {
+    display: inline-flex;
+  }
+
   .emoji {
     max-width: none;
     vertical-align: text-top;
